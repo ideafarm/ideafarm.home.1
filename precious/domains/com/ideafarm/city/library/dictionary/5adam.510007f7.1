@@ -1,0 +1,67 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+THREADmODE5rESTORE
+}
+    etThread.traceF( tinP , T("[pbOut2]:    ")+T(pbOut2) ) ;
+
+    etThread.hushDecryptF( tinP , pbOut2 , cbOut2 , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed                      , hKeyPrivate ) ;
+    etThread.hushEncryptF( tinP                   , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed , pbIn , sizeof pbIn , hKeyPublic  ) ;
+
+    etThread.hushWritePublicKeyToFileF(  tinP , T("///d/tmp/scratch.adam.ether.key.public.verify.pem")  , hKeyPublic  ) ;
+    etThread.hushWritePrivateKeyToFileF( tinP , T("///d/tmp/scratch.adam.ether.key.private.verify.pem") , hKeyPrivate ) ;
+
+    etThread.hushReadPublicKeyFromFileF(  tinP , hKeyPublic  , T("///d/tmp/scratch.adam.ether.key.public.pem")  ) ;
+    etThread.hushReadPrivateKeyFromFileF( tinP , hKeyPrivate , T("///d/tmp/scratch.adam.ether.key.private.pem") ) ;
+
+    etThread.hushWritePublicKeyToFileF(  tinP , T("///d/tmp/scratch.adam.ether.key.public.pem")  , hKeyPair ) ;
+    etThread.hushWritePrivateKeyToFileF( tinP , T("///d/tmp/scratch.adam.ether.key.private.pem") , hKeyPair ) ;
+
+    etThread.traceF( tinP , T("generated") ) ;
+    etThread.hushMakeKeyPairF( tinP , hKeyPair , 0x400 ) ;
+    thirdC::openSslCrypto_keyPairIF( tinP , hKeyPair , 0x400 ) ;
+    etThread.traceF( tinP , T("generating...") ) ;
+
+    handleC hKeyPublic(  tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
+    handleC hKeyPrivate( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
+    handleC hKeyPair(    tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
+{
+THREADmODE5oN( flTHREADmODE5_ARMoPENsSL )
+
+TODO
+
+countT cbOut2 = sizeof pbOut2 ;
+countT cbOut1 = sizeof pbOut1 ;
+
+byteT  pbOut2[ TUCK ] ;
+byteT  pbOut1[ TUCK ] ;
+
+countT cbInnerKey = sizeof pbInnerKey ;
+byteT  pbInnerKey[ TUCK ] ;
+byteT  pbSeed[ CBhUSHsEEDaLLOCATION ] ;
+
+byteT  pbIn[] = "thank you, Jesus!" ;
+
+
+/*1*/WAKEsHOWtEXT( "example.simplest.openssl.encryption.decryption.using.etherC" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

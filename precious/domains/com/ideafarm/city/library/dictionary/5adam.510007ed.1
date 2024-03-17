@@ -1,0 +1,140 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+etThread.traceF( tinP , T("mp3 [cHit]:    ")+TF2(cHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tinP , T("walked  ")+tRoot+T(" [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.diskWalkF( tinP , cDirs , cFiles , tRoot , ether , flDISKwALK_null , workCBF , pcArgInner , 0 , 0 ) ;
+ZE( countT , cFiles ) ;
+ZE( countT , cDirs ) ;
+etThread.traceF( tinP , T("walking ")+tRoot ) ;
+
+countT pcArgInner[] = { (countT)&etThread , (countT)&cHit , (countT)&tb4 , (countT)&tExtWant , (countT)&sttCR } ;
+
+ZE( countT , cHit ) ;
+
+strokeS sttCR( '\r' ) ;
+TN( tExtWant , "currentname" ) ;
+TN( tb4  , "    " ) ;
+TN( tRoot , "///e/ideafarm.archives/" ) ;
+
+TODO
+
+
+}
+    return 0 ;
+
+    }
+        }
+            etherP.delF( tinP , psttLine ) ;
+            etherP.traceF( tinP , tSay , flTRACE_NOpREFIX ) ;
+
+            tSay += tb4P+T(psttLine) ;
+
+            etherP.strWordF( tinP , psttLine , T(pbw) , sttq , sttCRP , 1 , 0 ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            ZE( strokeS* , psttLine ) ;
+
+            fwsIn.getF( tinP , pbw , cbw , TUCK << 1 ) ;
+            ZE( countT , cbw ) ;
+            ZE( byteT* , pbw ) ;
+            fileWindowsC fwsIn( tinP , etherP , tName ) ;
+
+            //etherP.traceF( tinP , tShortest , flTRACE_NOpREFIX ) ;
+
+            TN( tSay , (strokeS*)tShortest ) ;
+
+            }
+                etherP.delF( tinP , psttnu ) ;
+                etherP.delF( tinP , psttShortest ) ;
+
+                tShortest  = T(psttShortest) ;
+                etherP.strBisectF( tinP , psttShortest , psttnu , tName , T(".") , - 3 , flSTRbISECT_null ) ; ___( psttShortest ) ; ___( psttnu ) ;
+                ZE( strokeS* , psttnu ) ;
+                ZE( strokeS* , psttShortest ) ;
+            {
+            TN( tShortest  , "" ) ;
+
+            cHitP ++ ;
+        {
+        if( bWant )
+
+        boolT bWant = !etherP.strCompareF( tinP , tExt , tExtWantP ) ;
+
+        //etherP.traceF( tinP , T("ext  :    ")+tExt ) ;
+
+        }
+            etherP.delF( tinP , psttExt ) ;
+            etherP.delF( tinP , psttShorter ) ;
+            tExt = T(psttExt) ;
+            etherP.strConvertToLowerCaseF( tinP , psttExt ) ;
+
+            tShorter  = T(psttShorter) ;
+            etherP.strBisectF( tinP , psttShorter , psttExt , tName , T(".") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShorter ) ; ___( psttExt ) ;
+            ZE( strokeS* , psttExt ) ;
+            ZE( strokeS* , psttShorter ) ;
+        {
+        TN( tExt , "" ) ;
+        TN( tShorter  , "" ) ;
+
+        }
+            etherP.delF( tinP , psttShort ) ;
+            etherP.delF( tinP , psttPath ) ;
+            tShort = T(psttShort) ;
+            tPath  = T(psttPath) ;
+            etherP.strBisectF( tinP , psttPath , psttShort , tName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+            ZE( strokeS* , psttShort ) ;
+            ZE( strokeS* , psttPath ) ;
+        {
+        TN( tShort , "" ) ;
+        TN( tPath  , "" ) ;
+                                                                            
+        //etherP.traceF( tinP , T("file :    ")+tName ) ;
+
+        TN( tName , ifName ) ;
+        ifFileNameC ifName( tinP , *tinP.pEther , postNameP ) ;
+    {
+    else
+    }
+        //etherP.traceF( tinP , T("directory:    ")+tName ) ;
+
+        TN( tName , ifName ) ;
+        ifFileNameC ifName( tinP , etherP , postNameP ) ;
+    {
+    else if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] == '\\' ) // IF DIRECTORY
+    }
+        //etherP.traceF( tinP , T("scan completed for a directory") ) ;
+    {
+    if( !postNameP )
+
+    strokeS& sttCRP    = *(strokeS*)pcArgP[ 4 ] ;
+    textC&  tExtWantP  =   *(textC*)pcArgP[ 3 ] ;
+    textC&  tb4P       =   *(textC*)pcArgP[ 2 ] ;
+    countT& cHitP      =  *(countT*)pcArgP[ 1 ] ;
+    etherC& etherP     =  *(etherC*)pcArgP[ 0 ] ;
+{
+boolT workCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+
+
+/*1*/WAKEsHOWtEXT( "tool.accumulate.currentnames" )/*1*/
+/**/
+*/
+parameter: !dir: the directory to scan, in ipdos file name format
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

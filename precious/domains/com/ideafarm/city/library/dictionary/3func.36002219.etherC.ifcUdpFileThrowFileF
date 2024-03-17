@@ -1,0 +1,181 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+}
+    }
+        }
+            }
+                osSleepF( tinP , TOCK >> 3 ) ;
+                sThrow.writeF( tinP , ifcIDpORT_UDPfILEcATCHER , nnFactory1 , pbGram , head.cbThisGram ) ;
+                traceF( tinP , T("throwing name") ) ;
+            {
+            while( !bQuitP && cDo -- )
+            countT cDo = 8 ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+            head.cbThisGram = sizeof head + cbPayload ;
+            head.idFileHi   = 0 ;
+            head.idFileLo   = idFileLo ;
+            head.secret     = secretToUseP ;
+            head.idCmd      = ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME ;
+
+            countT cbPayload = thirdC::c_strlenIF( tinP , pbPayload ) ;
+            thirdC::c_strcpyIF( tinP , pbPayload , tNameIn ) ;
+
+            udpFileGramHeadBaseOSFileNameS& head      = *(udpFileGramHeadBaseOSFileNameS*)pbGram ;
+            byteT*                          pbPayload = pbGram + sizeof( udpFileGramHeadBaseOSFileNameS ) ;
+            byteT                           pbGram[ sizeof( udpFileGramHeadBaseOSFileNameS ) + CBuDPfILEnAMEpAYLOAD ] ;
+
+            TN( tNameIn , "" ) ; tNameIn = T("///ideafarm/files.in/")+tSuffix ;
+        {
+        if( !bQuitP )
+
+        }
+            delF( tinP , psttHash ) ;
+
+            }
+                osSleepF( tinP , TOCK >> 3 ) ;
+                sThrow.writeF( tinP , ifcIDpORT_UDPfILEcATCHER , nnFactory1 , (byteT*)&head , sizeof head ) ;
+                traceF( tinP , T("throwing hash") ) ;
+            {
+            while( !bQuitP && cDo -- )
+            countT cDo = 8 ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+            thirdC::c_memcpyIF( tinP , head.postHash , T(psttHash) , sizeof head.postHash ) ;
+            head.cbFileHi   = (countT)( cbDone >> 0x20 ) ;
+            head.cbFileLo   = (countT)cbDone ;
+            head.idFileHi   = 0 ;
+            head.idFileLo   = idFileLo ;
+            head.secret     = secretToUseP ;
+            head.idCmd      = ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT ;
+            head.cbThisGram = sizeof head ;
+            if( psttHash && psttHash->idAdam != sizeof head.postHash ) { BLAMMO ; }
+            udpFileGramHeadHashOfContentS head ;
+
+            hasher.queryStringF( tinP , psttHash ) ; ___( psttHash ) ;
+            ZE( strokeS* , psttHash ) ;
+        {
+        if( !bQuitP )
+
+        }
+            }
+                }
+                    cbDone += cbNow ;
+                    pbc    += cbNow ;
+
+                    cb04ThrownP += cbGram ;
+                    cThrownP ++ ;
+
+                    }
+                        sThrow.writeF( tinP , ifcIDpORT_UDPfILEcATCHER  , nnFactory1 , pbGram , cbGram ) ;
+                        traceF( tinP , T("throwing window [secretToUse]:    ")+TF2(secretToUseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    {
+                    while( cDo -- )
+                    countT cDo = 8 ;
+
+                    //if( !( idGramP % TUCK ) ) traceF( tinP , T("sending [idGramP,cbNow,cbGram]:    ")+TF2(idGramP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    countT cbGram = sizeof( udpFileGramHeadFileWindowS ) + cbNow ;
+                    //CONoUTrAW( "!" ) ;
+                    memCopyF( tinP , pbPayload , pbc , cbNow ) ;
+                    head.secret = secretToUseP ;
+                    head.len    = cbNow  ;
+                    head.off    = cbDone ;
+                    head.cbThisGram = sizeof head + cbNow ;
+
+                    //CONoUTrAW( "+" ) ;
+
+                    idGramP ++ ;
+
+                    cbDo -= cbNow ;
+
+                    ;
+                        : CBuDPfILEpAYLOAD
+                        ? cbDo
+                    countT cbNow = cbDo < CBuDPfILEpAYLOAD
+
+                    traceF( tinP , T("waited for a secret 2 [&secretToUseP,secretToUseP]:    ")+TF2((countT)&secretToUseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(secretToUseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    }
+                        thirdC::dosSleepWinkIF( tinP , 0 ) ;
+                    {
+                    while( !secretToUseP )
+                    traceF( tinP , T("waiting for a secret 2 [&secretToUseP]:    ")+TF2((countT)&secretToUseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                {
+                while( cbDo )
+                countT cbDo = cbw ;
+                byteT* pbc = pbw ;
+
+                //boxPutF( tinP , tTestFileToThrow+T(".window.")+tIdWindow , pbw , cbw ) ;
+                //traceF( tinP , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                TN( tIdWindow , "" ) ; tIdWindow = TF3(++idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
+
+                hasher.eatF( tinP , pbw , cbw ) ;
+            {
+            else
+            if( !pbw || !cbw ) break ;
+
+            fwsIn.getF( tinP , pbw , cbw ) ;
+            ZE( countT , cbw ) ;
+            ZE( byteT* , pbw ) ;
+        {
+        while( !bQuitP )
+        nicNameC nnFactory1 = socketC::nicNameIF( tinP , *this , T("factory1.ideafarm.com") ) ;
+        ZE( count04T , cbDone ) ;
+        ZE( countT , idWindow ) ;
+        hasherC hasher( tinP , *this ) ;
+
+        head.idMeta     = 0 ;
+        head.idMetaType = ifcIDuDPfILEmETAtYPE_CONTENT ;
+        head.idFileHi     = 0 ;
+        head.idFileLo     = idFileLo ;
+        head.idCmd      = ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW ;
+
+        countT idFileLo = 1 + incv02AM( idFileLoLath ) ;
+        static countT idFileLoLath ; //U::MAKE THIS GLOBALLY UNIQUE WITHIN A NAMESPACE, E.G. THE NAMESPACE FOR EACH WIGHT
+
+        udpFileGramHeadFileWindowS& head      = *(udpFileGramHeadFileWindowS*)pbGram ;
+        byteT*                      pbPayload = pbGram + sizeof( udpFileGramHeadFileWindowS ) ;
+        byteT                       pbGram[ sizeof( udpFileGramHeadFileWindowS ) + CBuDPfILEpAYLOAD ] ;
+
+        fileWindowsC fwsIn( tinP , *this , psttLongP ) ;
+
+        sThrow.bindF( tinP ) ;
+        socketC sThrow( tinP , *this , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+
+        }
+            delF( tinP , psttSuffix ) ;
+            tSuffix = T(psttSuffix) ;
+            strSubstringF( tinP , psttSuffix , idf , idl , psttLongP ) ; ___( psttSuffix ) ;
+            ZE( countT , idl ) ;
+            countT idf = tPathPrefixAllowed.csF( tinP ) + 1 ;
+            ZE( strokeS* , psttSuffix ) ;
+        {
+        TN( tSuffix , "" ) ;
+    {
+    if( 1 == strIdF( tinP , tPathPrefixAllowed , psttLongP ) )
+
+    }
+        delF( tinP , psttm ) ;
+        tPathPrefixAllowed = T(psttm) ;
+        diskMapFileNameF( tinP , psttm , T("///ideafarm/files.out/") ) ; ___( psttm ) ;
+        ZE( strokeS* , psttm ) ;
+    {
+    TN( tPathPrefixAllowed , "" ) ;
+{
+/*1*/voidT etherC::ifcUdpFileThrowFileF( tinS& tinP , const boolT& bQuitP , countT& idGramP , countT& secretToUseP , countT& cThrownP , count04T& cb04ThrownP , const strokeS* const psttLongP )/*1*/
+
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

@@ -1,0 +1,41 @@
+@echo off
+
+rem %1: volume
+rem %2: year
+
+if not %2z == z goto :DOyEAR
+if not %1z == z goto :DOdEVICE
+
+
+d:
+cd D:\ideafarm.home.101\devices\%1
+for /d %%d in (*) do @call t.bat %%d
+goto :FIN
+
+
+:DOdEVICE
+
+echo DOdEVICE %1
+d:
+cd              D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm
+if not %cd%z == D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarmz goto :FIN
+for /d %%d in (2010 2011 2012) do @start "%1" t.bat %1 %%d
+goto :FIN
+
+
+:DOyEAR
+
+echo DOyEAR %1 %2
+d:
+if not exist    D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\%2\* goto :EXIT
+cd              D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\%2
+if not %cd%z == D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\%2z goto :EXIT
+del /s *.meta.datafiletimes
+rd recover
+
+:EXIT
+exit
+goto :FIN
+
+
+:FIN

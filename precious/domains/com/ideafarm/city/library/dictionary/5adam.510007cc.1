@@ -1,0 +1,253 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+                            
+REST
+
+ether.loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+}
+    ++ s ; ether.osSleepF( tinP , TOCK << 2 ) ;
+
+    etThread.traceF( tinP , T("walked  ")+tRoot+T(" [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.diskWalkF( tinP , cDirs , cFiles , tRoot , ether , flDISKwALK_null , workCBF , pcArgInner , 0 , 0 ) ;
+    ZE( countT , cFiles ) ;
+    ZE( countT , cDirs ) ;
+    etThread.traceF( tinP , T("walking ")+tRoot ) ;
+{
+while( !ether )
+sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+countT pcArgInner[] = { (countT)&etThread , (countT)&tb4 , (countT)&tMetaName , (countT)&tMetaHash } ;
+
+TN( tRoot , "///ideafarm/ephemeral/domains/com/ideafarm/udp.file.specs.in/") ;
+TN( tMetaHash , "" ) ; tMetaHash = TF3(ifcIDuDPfILEmETAtYPE_HASHoFcONTENT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) ;
+TN( tMetaName , "" ) ; tMetaName = TF3(ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) ;
+TN( tb4 , "    " ) ;
+
+TODO
+
+
+
+}
+    return 0 ;
+
+    }
+        etherP.delF( tinP , psttMetaType ) ;
+
+        }
+            }
+                break ;
+
+                }
+                    etherP.delF( tinP , psttAfter    ) ;
+                    etherP.delF( tinP , psttHashFile ) ;
+                    etherP.delF( tinP , psttNameFile ) ;
+                    etherP.delF( tinP , psttBefore   ) ;
+
+                    }
+                        etherP.delF( tinP , posth ) ;
+
+                        }
+
+                            }
+                                etherP.traceF( tinP , T("moved  [to,tmp]:    ")+tFileTo+tb4P+tFileTmp ) ;
+                                etherP.diskMoveFileOrDirF( tinP , tFileTo , tFileTmp ) ;
+                                etherP.traceF( tinP , T("moving [to,tmp]:    ")+tFileTo+tb4P+tFileTmp ) ;
+                                if( etherP.diskFileExistsF( tinP , tFileTo ) ) etherP.boxZapF( tinP , tFileTo ) ;
+                            {
+                            else
+                            }
+                                etherP.boxZapF( tinP , tFileTmp ) ;
+                                etherP.traceF( tinP , T("not moving because final hash check failed (perhaps because new update partially received) [to,tmp]:    ")+tFileTo+tb4P+tFileTmp ) ;
+                            {
+                            if( etherP.strCompareF( tinP , tHashFinal , tHashCalculated ) )
+
+                            }
+                                etherP.delF( tinP , psttHashFinal ) ;
+                                tHashFinal = T(psttHashFinal) ;
+                                hasher.queryStringF( tinP , psttHashFinal ) ; ___( psttHashFinal ) ;
+                                ZE( strokeS* , psttHashFinal ) ;
+
+                                }
+                                    hasher.eatF( tinP , pbo , cbi ) ;
+                                    thirdC::c_memcpyIF( tinP , pbo , pbi , cbi ) ;
+
+                                    if( cbo - cbi    ) { BLAMMO ; }
+                                    if( !pbo || !cbo ) { BLAMMO ; }
+
+                                    fwTmp.getF( tinP , pbo , cbo , cbi ) ;
+                                    ZE( countT , cbo ) ;
+                                    ZE( byteT* , pbo ) ;
+
+                                    if( !pbi || !cbi ) break ;
+
+                                    fwReceived.getF( tinP , pbi , cbi ) ;
+                                    ZE( countT , cbi ) ;
+                                    ZE( byteT* , pbi ) ;
+                                {
+                                while( !bQuitP )
+                                hasherC hasher( tinP , etherP ) ;
+
+                                fileWindowsC fwTmp(      tinP , etherP , tFileTmp , flFILEwINDOW_WRITE ) ;
+                                fileWindowsC fwReceived( tinP , etherP , tName , flFILEwINDOW_null ) ;
+                            {
+                            TN( tHashFinal , "" ) ;
+
+                            etherP.delF( tinP , psttu ) ;
+                            TN( tFileTmp , "///ideafarm/tmp/udp.file.unverified." ) ; tFileTmp += T(psttu) ;
+
+                            etherP.strUniqueF( tinP , psttu ) ; ___( psttu ) ;
+                            ZE( strokeS* , psttu ) ;
+
+                            }
+                                etherP.traceF( tinP , T("name attached:    ")+tFileTo ) ;
+                                etherP.delF( tinP , postn ) ;
+                                tFileTo = T(postn) ;
+                                etherP.boxGetShadowF( tinP , postn , costn , psttNameFile ) ; ___( postn ) ;
+                                ZE( countT   , costn ) ;
+                                ZE( osTextT* , postn ) ;
+                            {
+                            TN( tFileTo , "" ) ;
+
+                            etherP.traceF( tinP , T("hash matches") ) ;
+                        {
+                        else
+                        }
+                            etherP.traceF( tinP , T("hash does not match") ) ;
+                        {
+                        if( thirdC::c_memcmpIF( tinP , tHashCalculated , posth , costh ) )
+
+                        etherP.traceF( tinP , T("hash attached:    ")+T(posth) ) ;
+                        etherP.boxGetShadowF( tinP , posth , costh , psttHashFile ) ; ___( posth ) ;
+                        ZE( countT   , costh ) ;
+                        ZE( osTextT* , posth ) ;
+
+                        etherP.traceF( tinP , T("name and hash files exist") ) ;
+                    {
+                    if( etherP.diskFileExistsF( tinP , psttNameFile ) && etherP.diskFileExistsF( tinP , psttHashFile ) )
+
+                    etherP.traceF( tinP , T("[psttHashFile]:    ")+T(psttHashFile) ) ;
+                    etherP.traceF( tinP , T("[psttNameFile]:    ")+T(psttNameFile) ) ;
+                    etherP.traceF( tinP , T("[tPath]:    ")+tPath ) ;
+
+                    etherP.strFuseF( tinP      , psttHashFile , psttAfter  ) ;
+                    etherP.strFuseF( tinP      , psttHashFile , tMetaHashP ) ;
+                    etherP.strFuseF( tinP      , psttHashFile , psttBefore ) ;
+                    etherP.strMakeF( tinP , LF , psttHashFile , tPath , psttBefore->idAdam + tMetaHashP.csF( tinP ) + psttAfter->idAdam ) ; ___( psttHashFile ) ;
+                    ZE( strokeS* , psttHashFile ) ;
+
+                    etherP.strFuseF( tinP      , psttNameFile , psttAfter  ) ;
+                    etherP.strFuseF( tinP      , psttNameFile , tMetaNameP ) ;
+                    etherP.strFuseF( tinP      , psttNameFile , psttBefore ) ;
+                    etherP.strMakeF( tinP , LF , psttNameFile , tPath , psttBefore->idAdam + tMetaNameP.csF( tinP ) + psttAfter->idAdam ) ; ___( psttNameFile ) ;
+                    ZE( strokeS* , psttNameFile ) ;
+
+                    etherP.strSubstringF( tinP , psttAfter , idf , idl , tShort ) ; ___( psttAfter ) ;
+                    idl = 0 ;
+                    idf = 0x29 ;
+
+                    etherP.strSubstringF( tinP , psttBefore , idf , idl , tShort ) ; ___( psttBefore ) ;
+                    countT idl = 0x20 ;
+                    countT idf = 0x1 ;
+
+                    ZE( strokeS* , psttAfter  ) ;
+                    ZE( strokeS* , psttBefore ) ;
+
+                    etherP.traceF( tinP , T("hash try:         ")+tHashCalculated ) ;
+                {
+                if( !bQuitP )
+
+                }
+                    etherP.delF( tinP , psttHashCalculated ) ;
+                    tHashCalculated = T(psttHashCalculated) ;
+                    hasher.queryStringF( tinP , psttHashCalculated ) ; ___( psttHashCalculated ) ;
+                    ZE( strokeS* , psttHashCalculated ) ;
+
+                    }
+                        }
+                            cbDone += cbw ;
+                            hasher.eatF( tinP , pbw , cbw ) ;
+                        {
+                        else
+                        if( !pbw || !cbw ) break ;
+
+                        fwsIn.getF( tinP , pbw , cbw ) ;
+                        ZE( countT , cbw ) ;
+                        ZE( byteT* , pbw ) ;
+                    {
+                    while( !bQuitP )
+                    ZE( count04T , cbDone ) ;
+
+                    fileWindowsC fwsIn( tinP , etherP , tName ) ;
+                    hasherC      hasher( tinP , etherP ) ;
+                {
+                TN( tHashCalculated , "" ) ;
+
+                etherP.traceF( tinP , T("type:    CONTENT") ) ;
+            {
+            case ifcIDuDPfILEmETAtYPE_CONTENT :
+        {
+        switch( idMetaType )
+
+        countT idMetaType = etherP.strDigitsToSCountF( tinP , psttMetaType , 0 , 1 ) ;
+        etherP.traceF( tinP , T("type:    ")+T(psttMetaType) ) ;
+        etherP.strSubstringF( tinP , psttMetaType , idf , idl , tShort ) ; ___( psttMetaType ) ;
+        countT idl = 0x28 ;
+        countT idf = 0x21 ;
+        ZE( strokeS* , psttMetaType ) ;                                     
+
+        }
+            etherP.delF( tinP , psttPath  ) ;
+            etherP.delF( tinP , psttShort ) ;
+            tShort = T(psttShort) ;
+            tPath  = T(psttPath) ;
+            etherP.strBisectF( tinP , psttPath , psttShort , tName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+            ZE( strokeS* , psttShort ) ;
+            ZE( strokeS* , psttPath ) ;                                     // udp.file.spec.00000000.00000001.00000001.00000000
+        {                                                                   // 123456789abcdef0123456789abcdef0123456789abcdef0
+        TN( tShort , "" ) ;                                                 // 0              1               2               3
+        TN( tPath  , "" ) ;
+                                                                            
+        etherP.traceF( tinP , T("file:    ")+tName ) ;
+
+        TN( tName , ifName ) ;
+        ifFileNameC ifName( tinP , *tinP.pEther , postNameP ) ;
+    {
+    else
+    }
+        etherP.traceF( tinP , T("directory:    ")+tName ) ;
+
+        TN( tName , ifName ) ;
+        ifFileNameC ifName( tinP , etherP , postNameP ) ;
+    {
+    else if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] == '\\' ) // IF DIRECTORY
+    }
+        etherP.traceF( tinP , T("scan completed for a directory") ) ;
+    {
+    if( !postNameP )
+
+    textC&  tMetaHashP =  *(textC*)pcArgP[ 3 ] ;
+    textC&  tMetaNameP =  *(textC*)pcArgP[ 2 ] ;
+    textC&  tb4P       =  *(textC*)pcArgP[ 1 ] ;
+    etherC& etherP     = *(etherC*)pcArgP[ 0 ] ;
+{
+boolT workCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+
+/*1*/WAKEhIDE( "udp.files.creates.file.after.verifying.incoming.hash" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

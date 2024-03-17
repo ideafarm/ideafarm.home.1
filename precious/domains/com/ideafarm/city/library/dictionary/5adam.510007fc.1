@@ -1,0 +1,362 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+}
+    sorta.traceRangeF( tinP , pbArray , cbArray , T("after") ) ;
+    sorta.sortF( tinP ) ;
+    sorta.traceRangeF( tinP , pbArray , cbArray , T("before") ) ;
+    sortaC sorta( tinP , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , sizeof( countT ) , sizeof( countT ) ) ;
+    ZE( boolT , bQuit ) ;
+
+    }
+        }
+            case 2 : { pcArray[ offca ] = 0x33333333                                                      ; break ; }
+            case 1 : { pcArray[ offca ] = ruChallenge /*; if( offca / 3 == 0xa ) pcArray[ offca ] = - 1*/ ; break ; }
+            case 0 : { pcArray[ offca ] = 0x11111111                                                      ; break ; }
+        {
+        switch( offca % 3 )
+    {
+    for( countT offca = 0 ; offca < ccArray ; offca ++ )
+
+    ranUniC ruChallenge( tinP , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
+    cSeedLath = cSeed ;
+    countT cSeed = 0xBA6D6DB9 /* slab.trueRandom*/ ;
+{
+while( !ether )
+countT  ccArray = sizeof pbArray / sizeof( countT ) ;
+countT* pcArray = (countT*)pbArray ;
+slabS& slab = slabS::slabIF() ;
+
+TODO
+
+countT cSeedLath ; // TO FIND A BUG
+
+countT cbArray = sizeof pbArray ;
+byteT  pbArray[ sizeof( countT ) * 0x30 ] ;
+
+}
+    if( cbArray >= ( cbElt << 1 ) * modulo ) doBitF( tinP , pbArray , cbArray , cbKey * SB - 1 ) ;
+{
+voidT sortaC::sortF( tinS& tinP )
+
+}
+    }
+        shiftP ++ ;
+
+        }
+            doBitF( tinP , pbHighs , cbP - cbLows , shiftP ) ;
+            doBitF( tinP , pbP     , cbLows , shiftP ) ;
+            countT cbLows = pbHighs - pbP ;
+        {
+        else
+        }
+            doBitF( tinP , pbP , cbP , shiftP ) ;
+        {
+        if( !pbHighs || pbHighs == pbP )
+
+        shiftP -- ;
+    {
+    if( shiftP )
+
+    while( idError ) ;
+    }
+        pbHighs = swapF( tinP , pbP , cbP , shiftP ) ;
+        idError = 0 ;
+    {
+    do
+    ZE( byteT* , pbHighs ) ;
+{
+voidT sortaC::doBitF( tinS& tinP , byteT* pbP , countT cbP , countT shiftP )
+
+}
+    return pbHighs ;
+
+    }
+        countT foo = 2 ;
+    {
+    if( offeh == 3 )
+
+    //tinP.pEther->traceF( tinP , T("swapF returning [offEltHighs]:    ")+TF3(offeh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    ;
+        : ( pbHighs - pbArray ) / cbElt ;
+        ? - 1
+    countT offeh = !pbHighs
+
+    }
+        }
+            verifySortF( tinP , pbP , cbP , shiftP ) ;
+            //traceRangeIsSortedF( tinP , pbP , cbP , shiftP ) ;
+        {
+        if( !bNestedP )
+
+        }
+            }
+                }
+                    }
+                        break ;
+                        pbHighs = pbc ;
+                    {
+                    if( *(countT*)( pbc + cbPrefix ) >> shiftP & 1 )
+                {
+                for( byteT* pbc = pbP ; pbc < pbe ; pbc += cbElt * modulo )
+                byteT* pbe = pbP + cbP ;
+            {
+            else
+            if( pbHighsInner ) pbHighs = pbHighsInner ;
+
+            }
+                }
+                    pbHighsInner = swapF( tinP , pbInner , cbInner , shiftP , 1 ) ;                     // RANGE THAT IS ENCLOSED BY THE SWAP THAT I JUST DID
+                {
+                if( cbInner >= ( cbElt << 1 ) * modulo )                                                // IF THE NEW RANGE CONTAINS AT LEAST OO * modulo ELEMENTS THEN RECURSIVELY CALL MYSELF
+                countT cbInner = pbDn - pbUp - cbElt * modulo ;
+                byteT* pbInner = pbUp + cbElt * modulo ;
+            {
+            ZE( byteT* , pbHighsInner ) ;
+
+            //traceRangeF( tinP , pbP , cbP , T("after  swap") ) ;
+            memcpy(                      pbUp , pbScratch , cbElt ) ;
+            memcpy(              pbDn , pbUp              , cbElt ) ;
+            memcpy( pbScratch , pbDn                      , cbElt ) ;            // DO THE SWAP
+            //traceMarkSelectedElementsF( tinP , ppbUpDn ) ;
+            //traceRangeF( tinP , pbP , cbP , T("before swap") ) ;
+
+            byteT* ppbUpDn[] = { pbUp , pbDn } ;
+        {
+        else if( pbUp && pbDn && pbUp < pbDn )                  // THE WO'TH HIGH ELEMENT IS BELOW THE LATH LOW ELEMENT, SO SWAP THEM AND THEN CALL MYSELF FOR THE ENCLOSED RANGE
+        else if( !pbDn ) pbHighs = pbUp ;                       // NO LOW  ELEMENTS WERE FOUND (ALL ELEMENTS ARE HIGH)
+        else if( !pbUp )                ;                       // NO HIGH ELEMENTS WERE FOUND (ALL ELEMENTS ARE LOW )
+        if( !pbUp && !pbDn ) ;                                  // RETRYING CONSUMED THE ENTIRE RANGE
+
+        }
+            }
+                if( bDone ) break ;
+                }
+                    else pbUp = pbDn = 0 ;                          // ELSE CONTINUE LOOKING FOR A SWAP PAIR
+                    }
+                        break ;
+                        bDone = 1 ;
+                    {
+                    )                                               // THEN EITHER DON'T HAVE A PAIR OR THE FOCUS BIT ORDER IS ALSO THE MASK ORDER
+                        ( mask & *(countT*)( pbDn + cbPrefix ) )
+                        >
+                        ( mask & *(countT*)( pbUp + cbPrefix ) )
+                        ||
+                        !pbUp || !pbDn
+                    (
+                    if                                              // IF THE CANDIDATE SWAP ELEMENTS ARE TRULY OUT OF ORDER
+
+                    }
+                        }
+                            break ;
+                            pbDn = pbP + offi ;
+                        {
+                        if( !( *(countT*)( pbP + offi + cbPrefix ) >> shiftP & 1 ) )
+                        if( cDoSkipDn && cDoSkipDn -- ) continue ;
+                    {
+                    else for( sCountT offi = offStartDn ; offi > offStopDn ; offi -= cbElt * modulo )      // ACCEPT THIS ELEMENT AS AN "DOWN CANDIDATE" SINCE THE FOCUS BIT IS NOT SET
+                    }
+                        break ;
+                        if( pbUp ) pbUp = 0 ;
+                    {
+                    if( offStartDn <= offStopDn )
+                    sCountT offStopDn  = - 1 + remainderUse ;
+                    sCountT offStartDn = offLath ;
+
+                    }
+                        else                                               offLath -= cbElt ;
+                        if( remainderUse == ( offLath / cbElt ) % modulo ) break            ;
+                    {
+                    for(;;)
+                    countT offLath = cbP - cbElt ;
+
+                    }
+                        }
+                            break ;
+                            pbUp = pbP + offi ;
+                        {
+                        if( *(countT*)( pbP + offi + cbPrefix ) >> shiftP & 1 )                 // ACCEPT THIS ELEMENT AS AN "UP CANDIDATE" SINCE THE FOCUS BIT IS SET
+                        if( cDoSkipUp && cDoSkipUp -- ) continue ;
+                    {
+                    else for( countT offi = offStartUp ; offi < offStopUp ; offi += cbElt * modulo )
+                    if( offStartUp >= offStopUp ) break ;
+                    countT offStopUp = cbP ;
+                    countT offStartUp = remainderUse * cbElt ;
+
+                    countT cDoSkipDn = cSkipDn ;
+                    countT cDoSkipUp = cSkipUp ;
+                {
+                for( countT cSkipDn = 0 ; cSkipDn <= cEltsNow - cSkipUp - 2 ; cSkipDn ++ )
+            {
+            for( countT cSkipUp = 0 ; cSkipUp <= cEltsNow - 2 ; cSkipUp ++ )
+            ZE( boolT , bDone ) ;
+            countT cEltsNow = cbP / cbElt ;
+
+            countT mask = (countT)( - 1 ) << shiftP ;
+        {
+        ZE( byteT* , pbDn ) ;                                                               // SET pbDn TO THE LATH LOW ELEMENT
+        ZE( byteT* , pbUp ) ;                                                               // SET pbUp TO THE WOTH HIGH ELEMENT
+    {
+    ZE( byteT* , pbHighs ) ;
+
+    }
+        remainderUse = ( cEltsBefore - remainder ) % modulo ;
+        countT cEltsBefore = ( pbP - pbArray ) / cbElt ;
+
+        if( ( pbP - pbArray ) % cbElt ) { BLAMMO ; }
+    {
+    ZE( countT , remainderUse ) ;
+{
+byteT* sortaC::swapF( tinS& tinP , byteT* const pbP , const countT cbP , const countT shiftP , const boolT bNestedP )
+
+}
+    }
+        }
+            pbc += cbElt ;
+            else                  keyLath = keyMe ;
+            if( keyLath > keyMe ) { BLAMMO ; }
+            countT keyMe = *(countT*)( pbc + cbPrefix ) & mask ;
+        {
+        while( pbc < pbe )
+        byteT* pbc = pbP ;
+        ZE( countT , keyLath ) ;
+        byteT* pbe = pbP + cbP ;
+
+        countT mask = (countT)( - 1 ) << shiftP ;
+
+        // 0x1d     0xe0000000  0b11100000 00000000 ...
+        // 0x1e     0xc0000000  0b11000000 00000000 ...
+        // 0x1f     0x80000000  0b10000000 00000000 ...
+        // shiftP   mask
+        //
+        //EXAMPLES
+    {
+    ZE( byteT* , pbUpNew ) ;
+    ZE( boolT , bMaskChanged ) ;
+{
+voidT sortaC::verifySortF( tinS& tinP , byteT* pbP , countT cbP , const countT shiftP )
+
+
+}
+    }
+        countT foo = 2 ;
+    {
+    if( ( pbP - pbArray ) / cbElt == 0xa && bit == 0x10000000 )
+
+    tinP.pEther->delF( tinP , psttd ) ;
+    tinP.pEther->traceF( tinP , T("range is sorted by bit ")+TF3(bit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tIndent+T(psttd) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("33333333") , T(" <<<<<<<") ) ;   ___( psttd ) ;
+    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("11111111") , T(">>>>>>> ") ) ;   ___( psttd ) ;
+    etherC::strDumpIF( tinP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * 0x10 , cbElt , 0 , 0 ) ;  ___( psttd ) ;
+    ZE( strokeS* , psttd ) ;
+
+    countT bit = 1 << shiftP ;
+
+    textC tIndent( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , 7 + myOff * 2 + myOff / cbElt ) ;
+    countT myOff = pbP - pbArray ;
+{
+voidT sortaC::traceRangeIsSortedF( tinS& tinP , byteT* pbP , countT cbP , const countT shiftP )
+
+}
+    }
+        tinP.pEther->traceF( tinP , T("        ")+tIndent2+tMark+tIndent3+tMark , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        textC tIndent3( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndentDelta ) ;
+        textC tIndent2( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndent2 ) ;
+        countT csttIndentDelta = csttIndent3 - csttIndent2 - ( cbElt << 1 ) ;
+        countT csttIndent3 = myOff3 * 2 + myOff3 / cbElt + 0x1e ;
+        countT csttIndent2 = myOff2 * 2 + myOff2 / cbElt + 0x1e ;
+        countT myOff3 = ppbP[ 1 ] - pbArray ;
+        countT myOff2 = ppbP[ 0 ] - pbArray ;
+        TN( tMark , "" ) ; tMark = TPS("|",cbElt<<1,'|') ;
+    {
+    else
+    else if( ppbP[ 0 ] >= ppbP[ 1 ] ) { BLAMMO ; }
+    else if( cpbP != 2 ) { BLAMMO ; }
+    if( !ppbP ) { BLAMMO ; }
+{
+voidT sortaC::traceMarkSelectedElementsF(  tinS& tinP , byteT** ppbP , countT cpbP )
+
+}
+    tinP.pEther->delF( tinP , psttd ) ;
+    tinP.pEther->traceF( tinP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("33333333") , T(" <------") ) ;   ___( psttd ) ;
+    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("11111111") , T("------> ") ) ;   ___( psttd ) ;
+    etherC::strDumpIF( tinP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * 0x10 , cbElt , 0 , 0 ) ;  ___( psttd ) ;
+    ZE( strokeS* , psttd ) ;
+    textC tIndent( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , myOff * 2 + myOff / cbElt ) ;
+    countT myOff = pbP - pbArray ;
+{
+voidT sortaC::traceRangeF( tinS& tinP , byteT* pbP , countT cbP , strokeS* psttSayP )
+
+}
+    if( cbArrayP % cbElt ) { BLAMMO ; }
+{
+remainder( remainderP                     )
+modulo(    moduloP                        ) ,
+cElts(     cbArray / cbElt                ) ,
+cbElt(     cbPrefixP + cbKeyP + cbSuffixP ) ,
+cbKey(     cbKeyP                         ) ,
+cbPrefix(  cbPrefixP                      ) ,
+cbSuffix(  cbSuffixP                      ) ,
+cbArray(   cbArrayP                       ) ,
+pbArray(   pbArrayP                       ) ,
+sortaC::sortaC( tinS& tinP , etherC& etherP , const boolT& bQuitP , byteT* pbArrayP , countT cbArrayP , countT cbSuffixP , countT cbPrefixP , countT cbKeyP , countT moduloP , countT remainderP ) :
+
+;
+}
+    voidT  traceRangeF( tinS& tinP , byteT* pbP , countT cbP , strokeS* psttSayP ) ;
+    voidT  sortF( tinS& tinP ) ;
+    sortaC( tinS& tinP , etherC& etherP , const boolT& bQuitP , byteT* pbArrayP , countT cbArrayP , countT cbSuffixP , countT cbPrefixP , countT cbKeyP , countT moduloP = 1 , countT remainderP = 0 ) ;
+
+    public :
+
+    voidT  verifySortF( tinS& tinP , byteT* pbP , countT cbP , const countT shiftP ) ;
+    voidT  traceRangeIsSortedF( tinS& tinP , byteT* pbP , countT cbP , const countT shiftP ) ;
+    voidT  traceMarkSelectedElementsF(  tinS& tinP , byteT** ppbP , countT cpbP = 2 ) ;
+    byteT* swapF( tinS& tinP , byteT* const pbP , const countT cbP , const countT shiftP , const boolT bNestedP = 0 ) ;
+    voidT  doBitF( tinS& tinP , byteT* pbP , countT cbP , countT shiftP ) ;
+
+    byteT        pbScratch[ TUCK ] ;
+
+    countT       idError           ;
+    const countT remainder         ;
+    const countT modulo            ;
+    const countT cElts             ;
+    const countT cbElt             ;
+    const countT cbKey             ;
+    const countT cbPrefix          ;    
+    const countT cbSuffix          ;    
+    const countT cbArray           ;
+    byteT* const pbArray           ;
+{
+class sortaC
+
+#define IDeRROR_STACKeXHAUSTED    0x1
+
+/*1*/WAKEsHOW( "dut.sortaC" )/*1*/
+/**/
+*/
+ i forgot the essence of the design concept, which is that if sorting and bisection on the focus bit is done correctly, the higher bits will all be identical within each range
+ this snapshot stupidly went down a dead end
+aborted craftwork
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

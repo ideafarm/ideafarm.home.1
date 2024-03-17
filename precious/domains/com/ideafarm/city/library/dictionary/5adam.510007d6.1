@@ -1,0 +1,111 @@
+
+REST
+
+etherC::loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+}
+    ++ s ; ether.osSleepF( tinP , TOCK ) ;
+
+        }
+            break ;
+            sThrow.writeF( tinP , /*0xfade*/0x80 , pnnToRackServer[ offn ] /*nicNameC()*/ , (byteT*)&idSayLathRackServer , sizeof idSayLathRackServer ) ;               // 64222_9
+            etThread.traceF( tinP , T("throwing ")+TF2(++idSayLathRackServer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF4(idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" to ")+T(pnnToRackServer[offn]) ) ;
+        {
+        for( countT offn = 0 ; offn < cnnToRackServer ; offn ++ )
+
+        }
+            break ;
+            sThrow.writeF( tinP , /*0xfade*/0x80 , pnnToLapBlackOut[ offn ] /*nicNameC()*/ , (byteT*)&idSayLathLapBlackOut , sizeof idSayLathLapBlackOut ) ;               // 64222_9
+            etThread.traceF( tinP , T("throwing ")+TF2(++idSayLathLapBlackOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF4(idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" to ")+T(pnnToLapBlackOut[offn]) ) ;
+        {
+        for( countT offn = 0 ; offn < cnnToLapBlackOut ; offn ++ )
+
+        }
+            break ;
+            sThrow.writeF( tinP , /*0xfade*/0x80 , pnnToLapBlackIn[ offn ] /*nicNameC()*/ , (byteT*)&idSayLathLapBlackIn , sizeof idSayLathLapBlackIn ) ;               // 64222_9
+            etThread.traceF( tinP , T("throwing ")+TF2(++idSayLathLapBlackIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF4(idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" to ")+T(pnnToLapBlackIn[offn]) ) ;
+        {
+        for( countT offn = 0 ; offn < cnnToLapBlackIn ; offn ++ )
+
+    #endif
+
+        }
+            break ;
+            sThrow.writeF( tinP , /*0xfade*/0x80 , pnnTo3[ offn ] /*nicNameC()*/ , (byteT*)&idSayLath3 , sizeof idSayLath3 ) ;               // 64222_9
+            etThread.traceF( tinP , T("throwing ")+TF2(++idSayLath3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF4(idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" to ")+T(pnnTo3[offn]) ) ;
+        {
+        for( countT offn = 0 ; offn < cnnTo3 ; offn ++ )
+
+        }
+            break ;
+            sThrow.writeF( tinP , /*0xfade*/0x80 , pnnTo1[ offn ] /*nicNameC()*/ , (byteT*)&idSayLath2 , sizeof idSayLath2 ) ;               // 64222_9
+            etThread.traceF( tinP , T("throwing ")+TF2(++idSayLath2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF4(idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" to ")+T(pnnTo1[offn]) ) ;
+        {
+        for( countT offn = 0 ; offn < cnnTo1 ; offn ++ )
+
+    #if defined( NEVERdEFINED )
+{
+while( !ether )
+sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+countT idSayLath3           = 0x50000 ;
+countT idSayLath2           = 0x40000 ;
+countT idSayLathRackServer  = 0x30000 ;
+countT idSayLathLapBlackOut = 0x20000 ;
+countT idSayLathLapBlackIn  = 0x10000 ;
+
+countT idPort = sThrow.bindF( tinP ) ;
+socketC sThrow( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+
+socketC::nicNameIF( tinP , etThread , pnnToRackServer , cnnToRackServer , psttToRackServer ) ;
+ZE( countT    , cnnToRackServer ) ;
+ZE( nicNameC* , pnnToRackServer ) ;
+
+socketC::nicNameIF( tinP , etThread , pnnToLapBlackOut , cnnToLapBlackOut , psttToLapBlackOut ) ;
+ZE( countT    , cnnToLapBlackOut ) ;
+ZE( nicNameC* , pnnToLapBlackOut ) ;
+
+socketC::nicNameIF( tinP , etThread , pnnToLapBlackIn , cnnToLapBlackIn , psttToLapBlackIn ) ;
+ZE( countT    , cnnToLapBlackIn ) ;
+ZE( nicNameC* , pnnToLapBlackIn ) ;
+
+socketC::nicNameIF( tinP , etThread , pnnTo3 , cnnTo3 , psttTo3 ) ;
+ZE( countT    , cnnTo3 ) ;
+ZE( nicNameC* , pnnTo3 ) ;
+
+socketC::nicNameIF( tinP , etThread , pnnTo1 , cnnTo1 , psttTo1 ) ;
+ZE( countT    , cnnTo1 ) ;
+ZE( nicNameC* , pnnTo1 ) ;
+
+
+strokeS* psttToRackServer   = tToRackServer ;
+strokeS* psttToLapBlackOut  = tToLapBlackOut   ;
+strokeS* psttToLapBlackIn   = tToLapBlackIn   ;
+strokeS* psttTo3            = tTo3          ;
+strokeS* psttTo1            = tTo1          ;
+TN( tToRackServer , "2001:4802:7803:104:be76:4eff:fe20:644" ) ;
+TN( tToLapBlackOut , "2600:387:6:807::ad" ) ;
+//TN( tToLapBlackOut , "2600:387:6:807::94" ) ;
+TN( tToLapBlackIn , "2600:380:862f:cfb9:f53b:c730:f95f:58a4" ) ;
+TN( tTo3 , "2001:550:2:c::8b:13" ) ;
+TN( tTo1 , "2001:550:2:c::8b:111" ) ;
+//G:TN( tTo , "10.2.0.102" ) ;
+//TN( tTo , "38.111.147.102" ) ;
+//TN( tTo , "38.111.147.105" ) ;
+//TN( tTo , "38.111.147.102" ) ;
+//TN( tTo , "38.111.147.101" ) ;
+//TN( tTo , "38.111.147.199" ) ;
+
+TODO
+
+/*1*/WAKEsHOWtEXT( "dut.throw.udp.datagram" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

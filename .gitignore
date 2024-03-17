@@ -1,0 +1,33 @@
+# Prerequisites
+*.d
+
+#not precious
+precious.zipped/
+controls/
+devices/
+ephemeral/
+tmp/
+files.out/
+files.in/
+settings.*
+*.map
+*.obj
+
+#ignore *.dbg only if not in watcom binaries folders
+*.dbg
+!precious/domains/com/ideafarm/city/workshop/watcom/binl/*.dbg
+!precious/domains/com/ideafarm/city/workshop/watcom/binl64/*.dbg
+!precious/domains/com/ideafarm/city/workshop/watcom/binnt/*.dbg
+!precious/domains/com/ideafarm/city/workshop/watcom/binp/*.dbg
+!precious/domains/com/ideafarm/city/workshop/watcom/binw/*.dbg
+!precious/domains/com/ideafarm/city/workshop/watcom/rdos/*.dbg
+
+#the next 2 lines would break wdw.exe for virgin clones
+#precious/domains/com/ideafarm/city/workshop/watcom/binw/setup.dbg
+#precious/domains/com/ideafarm/city/workshop/watcom/binnt/setup.dbg
+
+#ignore soil or pem files, because settings soil files, and pem files, can contain credentials
+*.soil.*
+*.soil
+*.pem.*
+*.pem

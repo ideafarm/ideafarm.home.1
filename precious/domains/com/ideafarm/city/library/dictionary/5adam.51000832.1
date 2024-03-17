@@ -1,0 +1,124 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+            etThread.delF( tinP , pstto ) ;
+            etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/")+tValueEmail+T("///bcc@ideafarm.com") , T(pstto) ) ;
+
+            etThread.delF( tinP , psttKey2 ) ;
+            etThread.delF( tinP , psttKey1 ) ;
+
+            etThread.strFuseF( tinP , pstto , T(posto4) ) ;
+            etThread.strFuseF( tinP , pstto , psttKey2 ) ;
+            etThread.strFuseF( tinP , pstto , T(posto3) ) ;
+            etThread.strFuseF( tinP , pstto , psttKey1 ) ;
+            etThread.strFuseF( tinP , pstto , T(posto2) ) ;
+            etThread.strFuseF( tinP , pstto , TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.strFuseF( tinP , pstto , T(posto1) ) ;
+            etThread.strMakeF( tinP , LF , pstto , 0 , TUCK << 4 ) ; ___( pstto ) ;
+            ZE( strokeS* , pstto ) ;
+
+            ;
+
+                "\r\n"
+                "Follow the instructions on https://github.com/ideafarm/ipdos to install the above active key into your production IPDOS (tm) home."
+                "\r\n\r\n"
+                "  Best practice is to do this immediately so that you know that it works and how to do it, and then periodically, such as every other quarter."
+                "If the backup key is ever used, the active key will be immediately disabled, the backup key will become the active key, and a new backup key will be immediately dispensed."
+                "\r\n\r\n"
+                "  The backup key should be stored securely both on paper and on a thumb drive that is not used for any other purpose and is NEVER connected to a computer."
+                "The active key is to be stored electronically within the home as a setting."
+                "\r\n\r\n"
+                "In a typical installation of IPDOS (tm), there will be an unpaid or paid craftwork home, \"X:\\ideafarm.home.1\", and wo or more paid production homes, such as \"X:\\ideafarm.home.101\" and \"X:\\ideafarm.home.102\"."
+                "\r\n\r\n"
+                "  Each paid home has a globally unique idgHome, is fully enabled, and is associated with an active key and a backup key."
+                "  If a computer has more than one such folder, each such home is either \"paid\" or \"unpaid\"."
+                "An IPDOS (tm) \"home\" is a folder, such as \"c:\\ideafarm.home.101\", on a personal computer's or server's disk or SSD storage."
+                "\r\n\r\n"
+                "Instructions:"
+                "\r\n\r\n"
+
+            const osTextT* posto4 =
+
+            ;
+
+                "\r\n\r\n"
+                "Backup key:"
+                "\r\n\r\n"
+
+            const osTextT* posto3 =
+
+            ;
+
+                "\r\n\r\n"
+                "Active key:"
+                "\r\n\r\n"
+
+            const osTextT* posto2 =
+
+            ;
+
+                "Global Home Id:    "
+                "\r\n\r\n"
+                "  For maximum security, delete this message after storing the keys; do not retain this message in your email archive."
+                "  There is no record of these keys in the global IPDOS (tm) system and, if you do not save them right now, they cannot be recovered."
+                "  This is your only opportunity to copy and paste these instructions and the following id and keys to secure storage."
+                "WARNING:"
+                "Subject: Confidential Notification from IDEAFARM.COM (delivery of keys to your IPDOS (tm) home)\r\n\r\n"
+
+            const osTextT* posto1 =
+
+            // IF BOTH KEYS ARE LOST, THERE IS NO WAY TO RECOVER ACCESS TO THE HOME'S IDENTITY IN THE SYSTEM AND, TO CONTINUE TO USE THE HOME, A NEW HOME IDENTITY MUST BE PURCHASED
+            // IF PUBLIC KEY 2 IS EVER USED, IT WILL IMMEDIATELY DISABLE PUBLIC KEY 1, WILL BECOME THE ACTIVE KEY, AND A NEW BACKUP KEY WILL BE IMMEDIATELY DISPENSED
+            // PUBLIC KEY 2 IS THE BACKUP KEY ; IT IS NEVER TO BE USED AND SHOULD BE SECURED SO THAT IT IS NEVER DISCLOSED
+            // PUBLIC KEY 1 IS THE ACTIVE KEY AND IS USED BY PRESENTING THE IDGhOME VALUE AND THE KEY
+            // THESE BINARY KEYS ARE DISPENSED TO THE PURCHASER IN BASE64 ENCODED TEXT
+            //
+            // USAGE SCENARIO
+
+            //U: NOTIFY THE PURCHASER OF THESE PUBLIC KEYS HERE ; ONCE I DELETE THESE BLOBS, THERE IS NO WAY TO RECOVER THEM (THEY ARE NOT STORED ANYWHERE)
+
+            etThread.traceF( tinP , T("[idjHomeIdg]:    ")+TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            etThread.delF( tinP , pbPublicKey2 ) ;
+            etThread.strEncodeBlobToRFC4648F( tinP , psttKey2 , pbPublicKey2 , cbPublicKey2 ) ; ___( psttKey2 ) ;
+            ZE( strokeS* , psttKey2 ) ;
+
+            etThread.delF( tinP , pbPublicKey1 ) ;
+            etThread.strEncodeBlobToRFC4648F( tinP , psttKey1 , pbPublicKey1 , cbPublicKey1 ) ; ___( psttKey1 ) ;
+            ZE( strokeS* , psttKey1 ) ;
+
+            etThread.ifcCreateNewHomeF( tinP , idgHome , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
+            ZE( countT , cbPublicKey2  ) ;
+            ZE( byteT* , pbPublicKey2  ) ;
+            ZE( countT , cbPublicKey1  ) ;
+            ZE( byteT* , pbPublicKey1  ) ;
+            ZE( countT , idgHome ) ;
+
+            etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment received from [email]:    ")+tValueEmail+T("\r\n") ) ;
+TN( tValueEmail , "joe@ideafarm.com" ) ;
+
+
+TODO
+
+/*1*/WAKEsHOW( "scr" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

@@ -1,0 +1,299 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tinP ) ;
+
+etThread.delF( tinP , pNicNameWhite ) ;
+etThread.traceF( tinP , T("ok") ) ;
+sgnDone_tmUdpFilesEndpointThrowerF.waitF( tinP ) ;
+
+etThread.traceF( tinP , T("waiting for endpoints to end") ) ;
+bQuit = 1 ;
+
+}
+    break ; //REMOVE FOR BURN-IN TESTING
+
+    etThread.traceF( tinP , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinP , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinP , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinP , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+    measureT mGBits = (measureT)( cb04Thrown << 3 ) / ( TICK << 2 ) ;
+
+    measureT mTocksE = (measureT)timeE1 / TOCK ;
+    measureT mTocksT = (measureT)timeT1 / TOCK ;
+
+    etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
+    etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+    ZE( sCountT , timeE2 ) ;
+    ZE( countT  , timeE1 ) ;
+
+    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+    etThread.osTimeSubtractF( tinP , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
+    etThread.osTimeNowF( tinP , timeT1 , timeT2 ) ;
+    ZE( sCountT , timeT2 ) ;
+    ZE( countT  , timeT1 ) ;
+
+    }
+        }
+            etThread.delF( tinP , psttName ) ;
+
+            }
+                ether.osSleepF( tinP , TOCK >> 3 ) ;
+                    sThrow.writeF( tinP , ifcIDpORT_UDPfILEcATCHER , nnFactory1 , pbGram , head.cbThisGram ) ;
+                //G:sThrow.write F( tinP , slab.id PortUdpFileCatcher , nicNameC() , pbGram , head.cbThisGram ) ;
+                etThread.traceF( tinP , T("throwing name") ) ;
+            {
+            while( !ether && cDo -- )
+            countT cDo = 8 ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+            head.cbThisGram = sizeof head + cbPayload ;
+            head.idFileHi   = 0 ;
+            head.idFileLo   = 1 ;
+            head.secret     = secretToUse ;
+            head.idCmd      = ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME ;
+
+            countT cbPayload = thirdC::c_strlenIF( tinP , pbPayload ) ;
+            thirdC::c_strcpyIF( tinP , pbPayload , T(psttName) ) ;
+
+            udpFileGramHeadBaseOSFileNameS& head      = *(udpFileGramHeadBaseOSFileNameS*)pbGram ;
+            byteT*                          pbPayload = pbGram + sizeof( udpFileGramHeadBaseOSFileNameS ) ;
+            byteT                           pbGram[ sizeof( udpFileGramHeadBaseOSFileNameS ) + CBuDPfILEnAMEpAYLOAD ] ;
+
+            etThread.strMakeF( tinP , LF , psttName , tTestFileCaught ) ; ___( psttName ) ;
+            ZE( strokeS* , psttName ) ;
+        {
+        if( !ether )
+
+        }
+            etThread.delF( tinP , psttHash ) ;
+
+            }
+                ether.osSleepF( tinP , TOCK >> 3 ) ;
+                    sThrow.writeF( tinP , ifcIDpORT_UDPfILEcATCHER , nnFactory1 , (byteT*)&gram , sizeof gram ) ;
+                //G:sThrow.write F( tinP , slab.id PortUdpFileCatcher , nicNameC() , (byteT*)&gram , sizeof gram ) ;
+                etThread.traceF( tinP , T("throwing hash") ) ;
+            {
+            while( !ether && cDo -- )
+            countT cDo = 8 ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+            thirdC::c_memcpyIF( tinP , gram.postHash , T(psttHash) , sizeof gram.postHash ) ;
+            gram.cbFileHi   = (countT)( cbDone >> 0x20 ) ;
+            gram.cbFileLo   = (countT)cbDone ;
+            gram.idFileHi   = 0 ;
+            gram.idFileLo   = 1 ;
+            gram.secret     = secretToUse ;
+            gram.idCmd      = ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT ;
+            gram.cbThisGram = sizeof gram ;
+            if( psttHash && psttHash->idAdam != sizeof gram.postHash ) { BLAMMO ; }
+            udpFileGramHeadHashOfContentS gram ;
+
+            hasher.queryStringF( tinP , psttHash ) ; ___( psttHash ) ;
+            ZE( strokeS* , psttHash ) ;
+        {
+        if( !ether )
+
+        }
+            }
+                }
+                    cbDone += cbNow ;
+                    pbc    += cbNow ;
+
+                    cb04Thrown += cbGram ;
+                    cThrown ++ ;
+
+                    }
+                            sThrow.writeF( tinP , ifcIDpORT_UDPfILEcATCHER  , nnFactory1 , pbGram , cbGram ) ;
+                        //G:sThrow.write F( tinP , ifcIDpORT_UDPfILEcATCHER  , nicNameC() , pbGram , cbGram ) ;
+
+                        //U::B: SENDS FROM IPv6 FOR factory1:  sThrow.write F( tinP , ifcIDpORT_UDPfILEcATCHER  , nnFactory1 , pbGram , cbGram ) ;
+                        etThread.traceF( tinP , T("throwing window [secretToUse]:    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    {
+                    while( cDo -- )
+                    countT cDo = 8 ;
+
+                    //THROW TO FACTORY1:    sThrow.write F( tinP , ifcIDpORT_UDPfILEcATCHER  , nnFactory1 , pbGram , cbGram ) ;
+                    //THROW TO LOCAL HOST:  sThrow.write F( tinP , slab.id PortUdpFileCatcher , nicNameC() , pbGram , cbGram ) ;
+
+                    //if( !( idGram % TUCK ) ) etThread.traceF( tinP , T("sending [idGram,cbNow,cbGram]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    countT cbGram = sizeof( udpFileGramHeadFileWindowS ) + cbNow ;
+                    //CONoUTrAW( "!" ) ;
+                    etThread.memCopyF( tinP , pbPayload , pbc , cbNow ) ;
+                    head.secret = secretToUse ;
+                    head.len    = cbNow  ;
+                    head.off    = cbDone ;
+                    head.cbThisGram = sizeof head + cbNow ;
+
+                    //CONoUTrAW( "+" ) ;
+
+                    idGram ++ ;
+
+                    cbDo -= cbNow ;
+
+                    ;
+                        : CBuDPfILEpAYLOAD
+                        ? cbDo
+                    countT cbNow = cbDo < CBuDPfILEpAYLOAD
+
+                    etThread.traceF( tinP , T("waited  for a secret") ) ;
+                    }
+                        Sleep( 100 ) ;
+                    {
+                    while( !secretToUse )
+                    etThread.traceF( tinP , T("waiting for a secret") ) ;
+                {
+                while( cbDo )
+                countT cbDo = cbw ;
+                byteT* pbc = pbw ;
+
+                //etThread.boxPutF( tinP , tTestFileToThrow+T(".window.")+tIdWindow , pbw , cbw ) ;
+                //etThread.traceF( tinP , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                TN( tIdWindow , "" ) ; tIdWindow = TF3(++idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
+
+                hasher.eatF( tinP , pbw , cbw ) ;
+            {
+            else
+            if( !pbw || !cbw ) break ;
+
+            fwsIn.getF( tinP , pbw , cbw ) ;
+            ZE( countT , cbw ) ;
+            ZE( byteT* , pbw ) ;
+        {
+        while( !ether )
+        nicNameC nnFactory1 = socketC::nicNameIF( tinP , etThread , T("factory1.ideafarm.com") ) ;
+        ZE( count04T , cbDone ) ;
+        ZE( countT , idWindow ) ;
+        hasherC hasher( tinP , etThread ) ;
+
+        head.idMeta     = 0 ;
+        head.idMetaType = ifcIDuDPfILEmETAtYPE_CONTENT ;
+        head.idFileHi     = 0 ;
+        head.idFileLo     = 1 ;
+        head.idCmd      = ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW ;
+
+        udpFileGramHeadFileWindowS& head      = *(udpFileGramHeadFileWindowS*)pbGram ;
+        byteT*                      pbPayload = pbGram + sizeof( udpFileGramHeadFileWindowS ) ;
+        byteT                       pbGram[ sizeof( udpFileGramHeadFileWindowS ) + CBuDPfILEpAYLOAD ] ;
+
+        fileWindowsC fwsIn( tinP , etThread , tTestFileToThrow ) ;
+
+        sThrow.bindF( tinP ) ;
+        socketC sThrow( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    {
+    ZE( countT , idGram ) ;
+
+    etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+    ZE( sCountT , timeA2 ) ;
+    ZE( countT  , timeA1 ) ;
+{
+while( !ether )
+ZE( count04T , cb04Thrown ) ;
+ZE( countT , cThrown ) ;
+
+//etThread.boxPutF( tinP , tTestFileToThrow , T("hello at ")+TT(timeN1,timeN2)+T("\r\n") ) ;
+etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+ZE( sCountT , timeN2 ) ;
+ZE( countT  , timeN1 ) ;
+
+TN( tTestFileCaught  , "///ideafarm/files.in/settings.production.factory1.101.push.exedll.soil" ) ;
+TN( tTestFileToThrow , "///ideafarm/files.out/settings.production.factory1.101.push.exedll.soil" ) ;
+
+//++ s ; ether.osSleepF( tinP , TICK << 4 ) ;         //U:: TO FIND A BUG
+++ s ; ether.osSleepF( tinP , TOCK << 2 ) ;         // LET WORKER THREADS GET SET UP
+
+etThread.traceF( tinP , T("waited  for woth secret") ) ;
+}
+    ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
+{
+while( !secretToUse && !ether )
+etThread.traceF( tinP , T("waiting for woth secret") ) ;
+
+CONoUTrAW( "\r\n" ) ;
+
+//}
+//    ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
+//{
+//while( ( !slab.id PortUdpFileCatcher || !psoEndpointThrower ) && !ether )
+sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+static slabS& slab = slabS::slabIF() ;
+
+etThread.osThreadF( TaRG2sGNdONE( tmUdpFilesEndpointThrowerF , sgnDone_tmUdpFilesEndpointThrowerF ) , (countT)&bQuit , (countT)&psoEndpointThrower , (countT)&grab_psoEndpointThrower , (countT)&pNicNameWhite , (countT)&cNicNameWhite , (countT)&grab_pNicNameWhite , (countT)&nicNameToUse , (countT)&secretToUse ) ;
+signC sgnDone_tmUdpFilesEndpointThrowerF(   tinP , TAG( TAGiDnULL ) ) ;
+ZE( boolT , bQuit ) ;
+grabC grab_psoEndpointThrower(   tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
+ZE( socketC* , psoEndpointThrower ) ;
+ZE( countT , secretToUse ) ;
+nicNameC nicNameToUse ;
+TN( tb4 , "    " ) ;
+
+//}
+//    if( !cNicNameWhite ) { BLAMMO ; }
+//    if( !pNicNameWhite ) { BLAMMO ; }
+//
+//    }
+//        etThread.traceF( tinP , T("white:    ")+T(pNicNameWhite[offa]) ) ;
+//    {
+//    for( countT offa = 0 ; offa < cNicNameWhite ; offa ++ )
+//
+//    socketC::nicNameIF( tinP , etThread , pNicNameWhite , cNicNameWhite , tListWhite ) ; ___( pNicNameWhite ) ;
+//
+//    tListWhite += T("factory9.ideafarm.com") ;
+//    tListWhite += T("factory8.ideafarm.com") ;
+//    tListWhite += T("factory7.ideafarm.com") ;
+//    tListWhite += T("factory6.ideafarm.com") ;
+//    tListWhite += T("factory5.ideafarm.com") ;
+//    tListWhite += T("factory4.ideafarm.com") ;
+//    tListWhite += T("factory3.ideafarm.com") ;
+//    tListWhite += T("factory2.ideafarm.com") ;
+//    tListWhite += T("factory1.ideafarm.com") ;
+//    tListWhite += T("127.0.0.1") ;
+//    TlIST( tListWhite ) ;
+//{
+ZE( countT    , cNicNameWhite ) ;
+ZE( nicNameC* , pNicNameWhite ) ;
+grabC grab_pNicNameWhite( tinP , TAG( TAGiDnULL ) ) ;
+
+TODO
+
+DONE( tmUdpFilesEndpointThrowerF )
+}
+    etThread.ifcUdpFilesEndpointF( tinP , bQuitP , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , pNicNameToUseP , pSecretToUseP ) ;
+    ZE( countT , idPortEndpointThrowerNU ) ;
+
+    countT*          pSecretToUseP         =           (countT*)pTaskP->c8 ;
+    nicNameC*        pNicNameToUseP        =         (nicNameC*)pTaskP->c7 ;
+    grabC&           grab_pNicNameWhiteP   =           *(grabC*)pTaskP->c6 ;
+    countT&          cNicNameWhiteP        =          *(countT*)pTaskP->c5 ;
+    const nicNameC*& pNicNameWhiteP        = *(const nicNameC**)pTaskP->c4 ;
+    grabC&           grab_psoEndpointP     =           *(grabC*)pTaskP->c3 ;
+    socketC*&        psoEndpointP          =        *(socketC**)pTaskP->c2 ;
+    boolT&           bQuitP                =           *(boolT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 )
+TASK( tmUdpFilesEndpointThrowerF )
+
+
+//BASELINE: 510007ce
+
+/*1*/WAKEsHOWtEXT( "example.dut.throwing.files.via.udp" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

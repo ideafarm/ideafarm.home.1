@@ -1,0 +1,444 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+}
+    }
+        strParseJson_wordF( tinP , *this , pSwPathValueP , psttPathP , stPath , tIn , tQuote ) ;
+        //traceF( tinP , T("strParseJsonF [psttPathP]:    ")+T(psttPathP) ) ;
+        stackC stPath( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+
+        }
+            }
+                }
+                    tIn = T(postJson) ;
+
+                    }
+                        }
+                            case '}' : { if( !( -- idLevel ) ) bNix = 1 ; break ; }
+                            case ']' :
+
+                            case '{' : {        ++ idLevel              ; break ; }
+                            case '[' :
+                        {
+                        switch( *postc )
+
+                        }
+                            break ;
+                            *postc = 0 ;
+                        {
+                        if( bNix )
+                    {
+                    for( osTextT* postc = postJson ; *postc ; postc ++ )
+                    ZE( boolT  , bNix ) ;
+                    ZE( countT , idLevel ) ;
+                {
+                if( postJson )
+
+                if( postJsonSq && postJsonSq < postJson ) postJson = postJsonSq ;
+                osTextT* postJson   = thirdC::c_strstrIF( tinP , postInP , "{" ) ;
+                osTextT* postJsonSq = thirdC::c_strstrIF( tinP , postInP , "[" ) ;
+            {
+            if( postInP )
+        {
+        TN( tIn , "" ) ; // WILL CONTAIN A SINGLE, TRIMMED JSON WORD
+        TN( tQuote , "\"") ;
+    {
+    if( !POOP )
+
+    __Z( pSwPathValueP ) ;
+    pSwPathValueP = new( 0 , tinP , LF ) switchC( tinP , *this , TAG( TAGiDnULL ) , flagsSwitchP , psttPathP ) ; ___( pSwPathValueP ) ;
+
+    }
+        if( POOP ) return ;
+        __Z( *postInP ) ;
+        if( POOP ) return ;
+        __Z( postInP ) ;
+        __NZ( pSwPathValueP ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL
+{
+/*1*/voidT etherC::strParseJsonF( tinS& tinP , switchC*& pSwPathValueP , strokeS*& psttPathP , osTextT* postInP , const flagsT flagsSwitchP )/*1*/
+
+}
+    }
+        }
+            //}
+            //    etherP.traceF( tinP , T("[ids,idLevel]:    ")+TF2(ids,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idLevel,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            //{
+            //if( idLevelLag != idLevel )
+
+            }
+                }
+                    }
+                        ;
+                            : 0
+                            ? ids + 1
+                        idPairWoth = ids + 1 < idWordLath
+
+                        etherP.delF( tinP , psttPair ) ;
+                        strParseJson_pairF( tinP , etherP , pSwPathValueP , psttPathP , stPathP , psttPair , psttQuoteP ) ;
+                        etherP.strTrimF( tinP , psttPair ) ; ___( psttPair ) ;
+                        etherP.strSubstringF( tinP , psttPair , idPairWoth , idPairLath , psttP ) ; ___( psttPair ) ;
+                        ZE( strokeS* , psttPair ) ;
+
+                        countT idPairLath = ids - 1 ;
+                    {
+                    if( !idLevel || ( idLevel == 1 && ostc == ',' ) )
+                {
+                case ',' :
+
+                case '}' : { -- idLevel ; } // INTENTIONAL FALLTHROUGH
+
+                case '{' : { ++ idLevel ; break ; }
+
+                case ']' : { -- idLevel ; break ; }
+
+                case '[' : { ++ idLevel ; break ; }
+            {
+            switch( ostc )
+
+            if( bIgnore ) continue ;
+
+            }
+                //}
+                //    etherP.delF( tinP , psttIgnored ) ;
+                //    etherP.traceF( tinP , T("ignored:    ")+T(psttIgnored) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                //    etherP.strSubstringF( tinP , psttIgnored , idf , idl , psttP ) ; ___( psttIgnored ) ;
+                //    ZE( strokeS* , psttIgnored ) ;
+                //
+                //    countT idl = ids ;
+                //    countT idf = idsIgnoreWoth ;
+                //{
+                //else
+                //if( bIgnore ) idsIgnoreWoth = ids ;
+
+                bIgnore = !bIgnore ;
+            {
+            if( ostc == '"' )
+
+            countT ostc = psttP[ CSpREFIX - 1 + ids ].idAdam ;
+            idLevelLag = idLevel ;
+        {
+        for( countT ids = idWordWoth ; ids <= idWordLath ; ids ++ )
+        //ZE( countT , idsIgnoreWoth ) ;
+        ZE( boolT , bIgnore ) ;
+        countT idPairWoth = idWordWoth + 1 ;
+        ZE( countT , idLevelLag ) ;
+        ZE( countT , idLevel ) ;
+
+        const countT idWordLath = psttP->idAdam ;
+        const countT idWordWoth = 1 ;
+    {
+    if( psttP->idAdam > 2 )
+
+    if( psttP[ CSpREFIX ].idAdam != '{' || psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) { BLAMMO ; }
+    //VERIFY THAT psttP BEGINS WITH '{' AND ENDS WITH '}'
+
+    //
+    // value := [ word , word , ... ]
+    //
+    // value := word
+    // 
+    // pair := key : value
+    //
+    // word := { pair , pair , ... }
+    //
+    // INPUT IS EXACTLY WO word
+    // INPUT FORMAT SPECIFICATION
+    // 
+    // RECIPE
+
+    //etherP.traceF( tinP , T("strParseJson_wordF [psttP]:    ")+T(psttP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+{
+voidT strParseJson_wordF( tinS& tinP , etherC& etherP , switchC*& pSwPathValueP , strokeS*& psttPathP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP )
+
+}
+    }
+        }
+            idValueWoth = 0 ;
+            etherP.delF( tinP , psttValue ) ;
+            strParseJson_valueF( tinP , etherP , pSwPathValueP , psttPathP , stPathP , psttValue , psttQuoteP ) ;
+            etherP.strTrimF( tinP , psttValue , 0 , 0 , psttQuoteP ) ; ___( psttValue ) ;
+            etherP.strTrimF( tinP , psttValue                            ) ; ___( psttValue ) ;
+            etherP.strSubstringF( tinP , psttValue , idValueWoth , idValueLath , psttP ) ; ___( psttValue ) ;
+            ZE( countT , idValueLath ) ;
+            ZE( strokeS* , psttValue ) ;
+        {
+        if( !idLevel && idValueWoth )
+
+        }
+            }
+                }
+                    break ;
+
+                    }
+                        ;
+                            : 0
+                            ? ids + 1
+                        idValueWoth = ids + 1 <= idPairLath
+
+                        idKeyWoth = 0 ;
+                        etherP.delF( tinP , psttKey ) ;
+                        strParseJson_keyF( tinP , etherP , stPathP , psttKey , psttQuoteP ) ;
+                        etherP.strTrimF( tinP , psttKey , 0 , 0 , psttQuoteP ) ; ___( psttKey ) ;
+                        etherP.strTrimF( tinP , psttKey                            ) ; ___( psttKey ) ;
+                        etherP.strSubstringF( tinP , psttKey , idKeyWoth , idKeyLath , psttP ) ; ___( psttKey ) ;
+                        ZE( strokeS* , psttKey ) ;
+
+                        countT idKeyLath = ids - 1 ;
+                    {
+                    if( !idLevel && idKeyWoth )
+                {
+                case ':' :
+
+                case '}' : { -- idLevel ; break ; }
+                case ']' :
+
+                case '{' : { ++ idLevel ; break ; }
+                case '[' :
+            {
+            switch( ostc )
+
+            if( bIgnore ) continue ;
+            if( ostc == '"' ) bIgnore = !bIgnore ;
+
+            countT ostc = psttP[ CSpREFIX - 1 + ids ].idAdam ;
+        {
+        for( countT ids = idPairWoth ; ids <= idPairLath ; ids ++ )
+        //ZE( countT , idsIgnoreWoth ) ;
+        ZE( boolT  , bIgnore ) ;
+        ZE( countT , idValueWoth ) ;
+        countT idKeyWoth = idPairWoth ;
+        ZE( countT , idLevel ) ;
+
+        const countT idPairLath = psttP->idAdam ;
+        const countT idPairWoth = 1 ;
+    {
+    if( psttP->idAdam > 2 )
+
+    //
+    // value := [ word , word , ... ]
+    //
+    // value := word
+    // 
+    // pair := key : value
+    //
+    // INPUT IS EXACTLY WO word
+    // INPUT FORMAT SPECIFICATION
+    // 
+    // RECIPE
+
+    //etherP.traceF( tinP , T("strParseJson_pairF [pair]:    ")+T(psttP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+{
+voidT strParseJson_pairF( tinS& tinP , etherC& etherP , switchC*& pSwPathValueP , strokeS*& psttPathP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP )
+
+}
+    }
+        etherP.delF( tinP , psttKey ) ;
+        stPathP >> psttKey ;
+        ZE( strokeS* , psttKey ) ;
+    {
+    if( stPathP )
+
+    }
+        }
+            break ;
+            strParseJson_wordF( tinP , etherP , pSwPathValueP , psttPathP , stPathP , psttP , psttQuoteP ) ;
+            if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) { BLAMMO ; }
+        {
+        case '{' :
+        }
+            break ;
+            etherP.delF( tinP , psttList ) ;
+            strParseJson_listF( tinP , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
+            etherP.strSubstringF( tinP , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+            countT idl = psttP->idAdam - 1 ;
+            countT idf = 2 ;
+            ZE( strokeS* , psttList ) ;
+
+            if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != ']' ) { BLAMMO ; }
+        {
+        case '[' :
+    {
+    if( psttP->idAdam ) switch( psttP[ CSpREFIX ].idAdam )
+
+    }
+        etherP.strMakeF( tinP , LF , psttFlavor , psttP ) ; ___( psttFlavor ) ;
+        etherP.delF( tinP , psttFlavor ) ;                                          //PS:PERSONALITY: IF MULTIPLE VALUES ARE ENCOUNTERED FOR A PATH, I WILL RETAIN THE LATH VALUE ENCOUNTERED
+        strokeS*& psttFlavor = *(strokeS**)&(countT&)*pSwPathValueP ;
+    {
+
+    psttPathP = tPath ;
+
+    //etherP.traceF( tinP , T("strParseJson_valueF [value]:    ")+T(psttP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ; //20240206@1430: ADDED W/O ANALYSIS
+
+    //etherP.traceF( tinP , T("strParseJson_valueF [tPath]:    ")+tPath , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+
+    }
+        while( ~hWalk ) ;
+        do tPath += T((strokeS*)stPathP.upF(tinP,hWalk))+T("/") ;
+    {
+    if( stPathP )
+    TN( tPath , "" ) ;
+    handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+{
+voidT strParseJson_valueF( tinS& tinP , etherC& etherP , switchC*& pSwPathValueP , strokeS*& psttPathP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP )
+
+}
+    stPathP << psttw ;
+    etherP.strMakeF( tinP , LF , psttw , T(psttQuoteP)+T(psttP)+T(psttQuoteP) ) ; ___( psttw ) ;
+    ZE( strokeS* , psttw ) ;
+
+    //etherP.traceF( tinP , T("strParseJson_keyF [key]:    ")+T(psttP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+{
+voidT strParseJson_keyF( tinS& tinP , etherC& etherP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP )
+
+}
+    }
+        }
+            etherP.delF( tinP , psttItem ) ;
+            strParseJson_itemF( tinP , etherP , pSwPathValueP , psttPathP , stPathP , psttItem , psttQuoteP , idItemLath ) ;
+            etherP.strTrimF( tinP , psttItem ) ; ___( psttItem ) ;
+            etherP.strSubstringF( tinP , psttItem , idsItemWoth , idsItemLath , psttP ) ; ___( psttItem ) ;
+            ZE( countT , idsItemLath ) ;
+            ZE( strokeS* , psttItem ) ;
+        {
+        if( idsItemWoth )
+
+        }
+            }
+                }
+                    break ;
+
+                    }
+                        ;
+                            : 0
+                            ? ids + 1
+                        idsItemWoth = ids + 1 <= idsListLath
+
+                        etherP.delF( tinP , psttItem ) ;
+                        strParseJson_itemF( tinP , etherP , pSwPathValueP , psttPathP , stPathP , psttItem , psttQuoteP , idItemLath ) ;
+                        etherP.strTrimF( tinP , psttItem ) ; ___( psttItem ) ;
+                        etherP.strSubstringF( tinP , psttItem , idsItemWoth , idsItemLath , psttP ) ; ___( psttItem ) ;
+                        ZE( strokeS* , psttItem ) ;
+
+                        countT idsItemLath = ids - 1 ;
+                    {
+                    if( !idLevel )
+                {
+                case ',' :
+
+                case '}' : { -- idLevel ; break ; }
+                case ']' :
+
+                case '{' : { ++ idLevel ; break ; }
+                case '[' :
+            {
+            switch( ostc )
+
+            if( bIgnore ) continue ;
+            if( ostc == '"' ) bIgnore = !bIgnore ;
+
+            countT ostc = psttP[ CSpREFIX - 1 + ids ].idAdam ;
+        {
+        for( countT ids = idsListWoth ; ids <= idsListLath ; ids ++ )
+        ZE( countT , idItemLath ) ;
+        ZE( countT , idsItemLath ) ;
+        //ZE( countT , idsIgnoreWoth ) ;
+        ZE( boolT  , bIgnore ) ;
+        countT idsItemWoth = idsListWoth ;
+        ZE( countT , idLevel ) ;
+
+        const countT idsListLath = psttP->idAdam ;
+        const countT idsListWoth = 1 ;
+    {
+    if( psttP->idAdam > 2 )
+
+    //etherP.traceF( tinP , T("strParseJson_listF [path,list]:    ")+T(psttPathP)+T("    ")+T(psttP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+{
+voidT strParseJson_listF( tinS& tinP , etherC& etherP , switchC*& pSwPathValueP , strokeS*& psttPathP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP )
+
+}
+    }
+        etherP.delF( tinP , psttKey ) ;
+        stPathP >> psttKey ;
+        ZE( strokeS* , psttKey ) ;
+    {
+    if( stPathP )
+
+    }
+        }
+            }
+                break ;
+                strParseJson_wordF( tinP , etherP , pSwPathValueP , psttPathP , stPathP , psttP , psttQuoteP ) ;
+                if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) { BLAMMO ; }
+            {
+            case '{' :
+            }
+                break ;
+                etherP.delF( tinP , psttList ) ;
+                strParseJson_listF( tinP , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
+                etherP.strSubstringF( tinP , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+                countT idl = psttP->idAdam - 1 ;
+                countT idf = 2 ;
+                ZE( strokeS* , psttList ) ;
+
+                if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != ']' ) { BLAMMO ; }
+            {
+            case '[' :
+        {
+        switch( psttP[ CSpREFIX ].idAdam )
+    {
+    if( psttP->idAdam )
+
+    }
+        //etherP.traceF( tinP , T("strParseJson_itemF / setting flavor [path,new]:    ")+tPath+T("    ")+T(psttFlavor) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etherP.strTrimF( tinP , psttFlavor , 0 , 0 , psttQuoteP ) ; ___( psttFlavor ) ;
+        etherP.strMakeF( tinP , LF , psttFlavor , psttP ) ; ___( psttFlavor ) ;
+        etherP.delF( tinP , psttFlavor ) ;                                          //PS:PERSONALITY: IF MULTIPLE VALUES ARE ENCOUNTERED FOR A PATH, I WILL RETAIN THE LATH VALUE ENCOUNTERED
+        //etherP.traceF( tinP , T("strParseJson_itemF / setting flavor [path,old]:    ")+tPath+T("    ")+T(psttFlavor) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        strokeS*& psttFlavor = *(strokeS**)&(countT&)*pSwPathValueP ;
+    {
+
+    psttPathP = tPath ;
+
+    //etherP.traceF( tinP , T("strParseJson_itemF [path,item]:    ")+tPath+T("    ")+T(psttP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+
+    }
+        while( ~hWalk ) ;
+        do tPath += T((strokeS*)stPathP.upF(tinP,hWalk))+T("/") ;
+    {
+    if( stPathP )
+    TN( tPath , "" ) ;
+    handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+
+    stPathP << psttw ;
+    etherP.strMakeF( tinP , LF , psttw , T("item.")+TF3(idItemThis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( psttw ) ;
+    ZE( strokeS* , psttw ) ;
+
+    countT idItemThis = ++ idItemP ;
+    //U::
+{
+voidT strParseJson_itemF( tinS& tinP , etherC& etherP , switchC*& pSwPathValueP , strokeS*& psttPathP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP , countT& idItemP )
+
+voidT strParseJson_wordF( tinS& tinP , etherC& etherP , switchC*& pSwPathValueP , strokeS*& psttPathP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP ) ;
+voidT strParseJson_listF( tinS& tinP , etherC& etherP , switchC*& pSwPathValueP , strokeS*& psttPathP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP ) ;
+
+
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

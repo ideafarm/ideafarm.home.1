@@ -1,0 +1,61 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+
+}
+    etThread.delF( tinP , psttd ) ;
+    etThread.traceF( tinP , T("line or delimiter [cstt,dump]:    ")+TF2(psttc1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttd) , /*flTRACE_KEEPcRlF |*/ flTRACE_NOpREFIX ) ;
+    //etThread.traceF( tinP , T("line or delimiter [cstt,value]:    ")+TF2(psttc1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttc1)+T("\"") , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
+
+    etThread.strDumpStrokesIF( tinP , psttd , psttc1 , 0 ) ; ___( psttd ) ;
+    ZE( strokeS* , psttd ) ;
+{
+FORsTRINGSiN1( pstt1w )
+
+//tinP.pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+etThread.strWordsF( tinP , pstt1w , psttzIn , sttq , psttvDelim , flSTRwORDS_DELIMITERsTRING | flSTRwORDS_DELIMITERS , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
+//tinP.pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+ZE( strokeS* , pstt1w ) ;
+
+strokeS* psttvDelim = tDelim ;
+TN( tDelim , "ab" ) ;
+//TN( tDelim , "\r\n" ) ;
+
+
+etThread.traceF( tinP , T("dut input: [cstt,value]:    ")+TF2(psttzIn->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttzIn)+T("\"") , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
+static strokeS* psttzIn = tIn ;
+//TN( tIn , "a\r\nbb\r\n\r\nccc\r\n\r\n\r\ndddd\r\n\r\n\r\n\r\n" ) ;
+
+TN( tIn , "abab" ) ;
+//G:TN( tIn , "abcab" ) ;
+//?:TN( tIn , "bb" ) ;
+//G:TN( tIn , "aba" ) ;
+//G:TN( tIn , "\r\n" "z" "\r\n" ) ;
+//B:TN( tIn , "\r\n" "\r\n" ) ;
+//G:TN( tIn , "\r\n" ) ;
+
+TODO
+
+/*1*/WAKEsHOW( "dut.strWordsF.bug" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

@@ -1,0 +1,49 @@
+@echo off
+
+rem %1: volume
+rem %2: year
+rem %3: udir
+
+if not %3z == z goto :DOuDIR
+if not %2z == z goto :DOyEAR
+if not %1z == z goto :DOdEVICE
+
+
+d:
+cd D:\ideafarm.home.101\devices\%1
+for /d %%d in (*) do @call t.bat %%d
+goto :FIN
+
+
+:DOdEVICE
+
+echo DOdEVICE %1
+d:
+cd D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm
+if not %cd%z == D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarmz goto :FIN
+for /d %%d in (*) do @call t.bat %1 %%d
+goto :FIN
+
+
+:DOyEAR
+
+echo DOyEAR %1 %2
+d:
+if not exist D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\%2\recover\* goto :FIN
+cd              D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\%2\recover
+if not %cd%z == D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\%2\recoverz goto :FIN
+for /d %%d in (*) do @if %%dz == unzipped.2z start "%1.%2" t.bat %1 %2 %%d
+goto :FIN
+
+
+:DOuDIR
+echo DOuDIR %1 %2 %3
+d:
+cd              D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\%2\recover\%3
+if not %cd%z == D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\%2\recover\%3z goto :FIN
+if not exist * echo files do not exist
+for %%f in (*) do @fc %%f ..\unzipped\%%f
+goto :FIN
+
+
+:FIN

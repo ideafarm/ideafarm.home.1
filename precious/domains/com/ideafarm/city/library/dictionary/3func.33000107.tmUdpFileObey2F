@@ -1,0 +1,436 @@
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+
+DONE( tmUdpFileObey2F )
+}
+    }
+        if( !bQuitP ) ether.osSleepF( tinP , TOCK ) ;
+
+        }
+            DEL( pDoomed ) ;
+            fileWindowsC*& pDoomed = *(fileWindowsC**)&(countT&)swFwsOut ;
+            pbLeverFN = (const byteT*)swFwsOut.leverF( tinP , idf ) ;
+            etThread.traceF( tinP , T("deleting fws") ) ;
+        {
+        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+        countT cFlavors = swFwsOut.cFlavorsF( tinP ) ;
+
+        }
+            if( bNap ) break ;
+
+            }
+                //etThread.traceF( tinP , T("inner: moving input window") ) ;
+                cb04BufferDone += pbci - pbciSave ;
+
+                }
+                    }
+                        }
+                            }
+                                break ;
+                                etThread.traceF( tinP , T("!exception: unexpected command [idCmd]:    ")+TF2(head.idCmd,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            {
+                            default :
+                            }
+                                break ;
+                            {
+                            case ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET :
+                            case ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME :
+                            }
+                                break ;
+                                *pSecretToUseP = head.secret ;        //A:ASSUME: ATOMIC (secretToUseP MUST ALWAYS CONTAIN A VALID SECRET)
+                                etThread.traceF( tinP , T("ifcIDcMDuDPfILEgRAM_USEtHISsECRET received [secret]:    ")+TF2(head.secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                udpFileGramHeadSecretS& head = *(udpFileGramHeadSecretS*)pbData ;
+                            {
+                            case ifcIDcMDuDPfILEgRAM_USEtHISsECRET :
+                            }
+                                break ;
+                                *pNicNameToUseP = head.nicName ;                                            // THIS WON'T BE ATOMIC SO TARGET INSTANCE CAN CONTAIN AN INVALID nicNameC IMAGE
+                                etThread.traceF( tinP , T("ifcIDcMDuDPfILEgRAM_USEtHISnICnAME received [nicName]:    ")+T(head.nicName) ) ;
+                                udpFileGramHeadNicNameS& head = *(udpFileGramHeadNicNameS*)pbData ;
+                            {
+                            case ifcIDcMDuDPfILEgRAM_USEtHISnICnAME :
+                        {
+                        else switch( head.idCmd )
+                        }
+                            }
+                                break ;
+
+                                }
+                                    etThread.delF( tinP , psttf ) ;
+                                    etThread.boxPutF( tinP , psttf , pbPayload , head.cbThisGram - sizeof head ) ;
+
+                                    etThread.traceF( tinP , T("hash file name:    ")+T(psttf) ) ;
+                                    etThread.strReplaceF( tinP , psttf , 0 , tColon , tDot ) ;
+                                    etThread.strFuseF( tinP , psttf , TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                    etThread.strFuseF( tinP , psttf , tDot ) ;
+                                    etThread.strFuseF( tinP , psttf , TF3(ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                    etThread.strFuseF( tinP , psttf , tDot ) ;
+                                    etThread.strFuseF( tinP , psttf , TF3(head.idFileLo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                    etThread.strFuseF( tinP , psttf , tDot ) ;
+                                    etThread.strFuseF( tinP , psttf , TF3(head.idFileHi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                    etThread.strFuseF( tinP , psttf , tfns1 ) ;
+                                    etThread.strFuseF( tinP , psttf , T(nnFrom) ) ;
+                                    etThread.strMakeF( tinP , LF , psttf , tfnp , TUCK ) ; ___( psttf ) ;
+                                    ZE( strokeS* , psttf ) ;
+                                {
+                                else
+                                if( !bOk ) etThread.traceF( tinP , T("secret rejected [head.secret]:    ")+TF2(head.secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                }
+                                    }
+                                        break ;
+                                        bOk = 1 ;
+                                        etThread.traceF( tinP , T(" !!!! [secretTry,secretOk,offSecret,offEpochSlot]:    ")+TF2(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochSlot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    {
+                                    else
+                                    if( secretTry != secretOk ) etThread.traceF( tinP , T(" nope [secretTry,secretOk,offSecret,offEpochSlot]:    ")+TF2(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochSlot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                    countT secretOk  = ppcSecretsP[ offEpochSlot ][ offSecret ] ;
+                                    countT secretTry = head.secret ;
+                                    countT offSecret = etThread.ifcUdpFileOffSecretForThisNnF( tinP , nnFrom , offEpochSlot , ppcHashSecretsP ) ;
+                                    countT offEpochSlot   = offEpochHonor % CuDPfILEePOCHsLOTS ;
+                                {
+                                for( countT offEpochHonor = OFFuDPfILEePOCHhONOR_MIN ; offEpochHonor <= OFFuDPfILEePOCHhONOR_MAX ; offEpochHonor ++ )           //U:: NEED TO HANDLE WRAP OF offEpochHonor EVERY 136 YEARS
+                                ZE( boolT , bOk ) ;
+
+                                etThread.traceF( tinP , T("received PUTbASEosfILEnAME command [postName]:    ")+T(pbPayload) ) ;
+                                byteT* pbPayload = pbData + sizeof head ;
+                                udpFileGramHeadBaseOSFileNameS& head = *(udpFileGramHeadBaseOSFileNameS*)pbData ;
+                            {
+                            case ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME :
+                            }
+                                break ;
+
+                                }
+                                    etThread.delF( tinP , psttf ) ;
+                                    etThread.boxPutF( tinP , psttf , gram.postHash , sizeof gram.postHash ) ;
+
+                                    etThread.traceF( tinP , T("hash file name:    ")+T(psttf) ) ;
+                                    etThread.strReplaceF( tinP , psttf , 0 , tColon , tDot ) ;
+                                    etThread.strFuseF( tinP , psttf , TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                    etThread.strFuseF( tinP , psttf , tDot ) ;
+                                    etThread.strFuseF( tinP , psttf , TF3(ifcIDuDPfILEmETAtYPE_HASHoFcONTENT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                    etThread.strFuseF( tinP , psttf , tDot ) ;
+                                    etThread.strFuseF( tinP , psttf , TF3(gram.idFileLo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                    etThread.strFuseF( tinP , psttf , tDot ) ;
+                                    etThread.strFuseF( tinP , psttf , TF3(gram.idFileHi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                    etThread.strFuseF( tinP , psttf , tfns1 ) ;
+                                    etThread.strFuseF( tinP , psttf , T(nnFrom) ) ;
+                                    etThread.strMakeF( tinP , LF , psttf , tfnp , TUCK ) ; ___( psttf ) ;
+                                    ZE( strokeS* , psttf ) ;
+                                {
+                                else
+                                if( !bOk ) etThread.traceF( tinP , T("secret rejected [gram.secret]:    ")+TF2(gram.secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                }
+                                    }
+                                        break ;
+                                        bOk = 1 ;
+                                        etThread.traceF( tinP , T(" !!!! [secretTry,secretOk,offSecret,offEpochSlot]:    ")+TF2(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochSlot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    {
+                                    else
+                                    if( secretTry != secretOk ) etThread.traceF( tinP , T(" nope [secretTry,secretOk,offSecret,offEpochSlot]:    ")+TF2(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochSlot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                    countT secretOk  = ppcSecretsP[ offEpochSlot ][ offSecret ] ;
+                                    countT secretTry = gram.secret ;
+                                    countT offSecret = etThread.ifcUdpFileOffSecretForThisNnF( tinP , nnFrom , offEpochSlot , ppcHashSecretsP ) ;
+                                    countT offEpochSlot   = offEpochHonor % CuDPfILEePOCHsLOTS ;
+                                {
+                                for( countT offEpochHonor = OFFuDPfILEePOCHhONOR_MIN ; offEpochHonor <= OFFuDPfILEePOCHhONOR_MAX ; offEpochHonor ++ )           //U:: NEED TO HANDLE WRAP OF offEpochHonor EVERY 136 YEARS
+                                ZE( boolT , bOk ) ;
+
+                                etThread.traceF( tinP , T("received PUThASHoFcONTENT command [postHash]:    ")+T(gram.postHash) ) ;
+                                udpFileGramHeadHashOfContentS& gram = *(udpFileGramHeadHashOfContentS*)pbData ;
+                            {
+                            case ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT :
+                            }
+                                break ;
+                                }
+                                    }
+                                        if( pbw && cbw == head.len ) etThread.memCopyF( tinP , pbw , pbPayload , head.len ) ;
+
+                                        fwsOut.getF( tinP , pbw , cbw , head.len , head.off ) ;
+                                        ZE( countT , cbw ) ;
+                                        ZE( byteT* , pbw ) ;
+
+                                        fileWindowsC& fwsOut = *(fileWindowsC*)(countT)swFwsOut ;
+                                    {
+
+                                    }
+                                        etThread.delF( tinP , psttf ) ;
+                                        swFwsOut = (countT)pFws ;
+                                        fileWindowsC* pFws = new( 0 , tinP , LF ) fileWindowsC( tinP , etThread , psttf , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ; ___( pFws ) ;
+
+                                        etThread.traceF( tinP , T("file name:    ")+T(psttf) ) ;
+                                        etThread.strReplaceF( tinP , psttf , 0 , tColon , tDot ) ;
+                                        etThread.strFuseF( tinP , psttf , TF3(head.idMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                        etThread.strFuseF( tinP , psttf , tDot ) ;
+                                        etThread.strFuseF( tinP , psttf , TF3(head.idMetaType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                        etThread.strFuseF( tinP , psttf , tDot ) ;
+                                        etThread.strFuseF( tinP , psttf , TF3(head.idFileLo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                        etThread.strFuseF( tinP , psttf , tDot ) ;
+                                        etThread.strFuseF( tinP , psttf , TF3(head.idFileHi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+                                        etThread.strFuseF( tinP , psttf , tfns1 ) ;
+                                        etThread.strFuseF( tinP , psttf , T(nnFrom) ) ;
+                                        etThread.strMakeF( tinP , LF , psttf , tfnp , TUCK ) ; ___( psttf ) ;
+                                        ZE( strokeS* , psttf ) ;
+                                    {
+                                    if( !swFwsOut.idSlotOfLeverF( tinP , (countT)pbLeverFN ) )
+                                    pbLeverFN = (byteT*)&fn ;
+
+                                    fn.idMeta       = head.idMeta     ;
+                                    fn.idMetaType   = head.idMetaType ;
+                                    fn.idFileHi     = head.idFileHi   ;
+                                    fn.idFileLo     = head.idFileLo   ;
+                                    fn.nnFrom       = nnFrom          ;
+                                    udpFileNameS fn ;
+
+                                    inc02AM( *pcReceivedFileWindowsP ) ;
+
+                                    byteT* pbPayload = pbData + sizeof( udpFileGramHeadFileWindowS ) ;
+                                {
+                                else
+                                if( !bOk ) etThread.traceF( tinP , T("secret rejected [head.secret]:    ")+TF2(head.secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                }
+                                    }
+                                        break ;
+                                        bOk = 1 ;
+                                        etThread.traceF( tinP , T(" !!!! [secretTry,secretOk,offSecret,offEpochSlot]:    ")+TF2(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochSlot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    {
+                                    else
+                                    if( secretTry != secretOk ) etThread.traceF( tinP , T(" nope [secretTry,secretOk,offSecret,offEpochSlot]:    ")+TF2(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochSlot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                    countT secretOk  = ppcSecretsP[ offEpochSlot ][ offSecret ] ;
+                                    countT secretTry = head.secret ;
+                                    countT offSecret = etThread.ifcUdpFileOffSecretForThisNnF( tinP , nnFrom , offEpochSlot , ppcHashSecretsP ) ;
+                                    countT offEpochSlot   = offEpochHonor % CuDPfILEePOCHsLOTS ;
+                                {
+                                for( countT offEpochHonor = OFFuDPfILEePOCHhONOR_MIN ; offEpochHonor <= OFFuDPfILEePOCHhONOR_MAX ; offEpochHonor ++ )           //U:: NEED TO HANDLE WRAP OF offEpochHonor EVERY 136 YEARS
+                                ZE( boolT , bOk ) ;
+                                etThread.traceF( tinP , T("PUTfILEwINDOW ---------------------------------------------------------------------------------") ) ;
+
+                                udpFileGramHeadFileWindowS& head = *(udpFileGramHeadFileWindowS*)pbData ;
+                            {
+                            case ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW :
+                            }
+                                break ;
+                                while( cDo -- ) sThrow.writeF( tinP , ifcIDpORT_UDPfILEcATCHER , nnFrom , (byteT*)&gram , sizeof gram ) ;
+                                countT cDo = 1 ; //U:: 8
+
+                                gram.secret = secret ;
+                                gram.idCmd = ifcIDcMDuDPfILEgRAM_USEtHISsECRET ;
+                                gram.cbThisGram = sizeof gram ;
+                                udpFileGramHeadSecretS gram ;
+
+                                etThread.traceF( tinP , T("dispensing secret to port ifcIDpORT_UDPfILEcATCHER [idpFrom,nnFrom,offEpochSlotHonorNewest,offSecret,secret]:    ")+TF2(idpFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnFrom)+tb4+TF2(offEpochSlotHonorNewest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                countT secret    = ppcSecretsP[ offEpochSlotHonorNewest ][ offSecret ] ;
+                                countT offSecret = etThread.ifcUdpFileOffSecretForThisNnF( tinP , nnFrom , offEpochSlotHonorNewest , ppcHashSecretsP ) ;
+                                countT offEpochSlotHonorNewest = OFFuDPfILEePOCHhONOR_MAX   % CuDPfILEePOCHsLOTS ;
+                            {
+                            case ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET :
+                            }
+                                break ;
+                                while( cDo -- ) sThrow.writeF( tinP , ifcIDpORT_UDPfILEcATCHER , nnFrom , (byteT*)&gram , sizeof gram ) ;
+                                countT cDo = 1 ; //U:: 8
+
+                                gram.nicName = nnFrom ;
+                                gram.idCmd = ifcIDcMDuDPfILEgRAM_USEtHISnICnAME ;
+                                gram.cbThisGram = sizeof gram ;
+                                udpFileGramHeadNicNameS gram ;
+
+                                etThread.traceF( tinP , T("dispensing nnFrom to port ifcIDpORT_UDPfILEcATCHER [idpFrom,nnFrom]:    ")+TF2(idpFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnFrom) ) ;
+                            {
+                            case ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME :
+                        {
+                        if( bCatch ) switch( head.idCmd )
+                        udpFileGramHeadS& head = *(udpFileGramHeadS*)pbData ;
+                    {
+                    else
+                    if( !bWhite ) etThread.traceF( tinP , T("not white:    ")+T(nnFrom) ) ;
+
+                    grab_pNicNameWhiteP.ungrabF( tinP ) ;
+                    }
+                        }
+                            }
+                                break ;
+                                bWhite = 1 ;
+                            {
+                            if( pNicNameWhiteP[ offw ] == nnFrom )
+                        {
+                        for( countT offw = 0 ; offw < cNicNameWhiteP ; offw ++ )
+                    {
+                    else
+                    if( !pNicNameWhiteP || !cNicNameWhiteP ) bWhite = 1 ;                          //20240216@1429: ADDED W/O ANALYSIS TO SUPPORT APPLICATIONS THAT DO NOT USE AN ALLOWlIST
+                    grab_pNicNameWhiteP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    ZE( boolT , bWhite ) ;
+
+                    }
+
+                        }
+                            }
+                                break ;
+                                BLAMMO ;
+                                etThread.traceF( tinP , T("received unexpected [from.sin6_family,nnFrom]:    ")+TF2(from.sin6_family,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(nnFrom) ) ;
+                            {
+                            default :
+                            }
+                                break ;
+                                BLAMMO ;
+                                etThread.traceF( tinP , T("received AF_INET [from.sin6_family,nnFrom]:    ")+TF2(from.sin6_family,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(nnFrom) ) ;
+                            {
+                            case AF_INET :
+                            }
+                                break ;
+
+                                etThread.traceF( tinP , T("received AF_INET [idpFrom,nnFrom,from.sin6_family                   ]:    ")+TF2(idpFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnFrom)+tb4+TF2(from.sin6_family,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                if( !nnFrom ) nnFrom = NICnAMElOCAL ;
+
+                                }
+                                    pcOut[ 3 - offi ] = tinP.brcRaw ;
+                                    BOSdOnOTtEST( WHATgbo , ntohl( pcIn[ offi ] ) )
+                                {
+                                for( countT offi = 0 ; offi < 4 ; offi ++ )
+                                countT* pcOut = (countT*)(const countT*)nnFrom ;
+                                countT* pcIn  = (countT*)from.sin6_addr.u.Byte ;
+
+                                idpFrom = tinP.brcRaw ;
+                                BOSdOnOTtEST( WHATgbo , ntohs( from.sin6_port ) )
+                            {
+                            case AF_INET6 :
+                        {
+                        switch( from.sin6_family )
+                    {
+                    nicNameC nnFrom ;
+                    ZE( countT , idpFrom ) ;
+
+                    if( from.sin6_family != AF_INET6 ) { BLAMMO ; }
+
+                    sockaddr_in6& from   = *(sockaddr_in6*)pbci ; pbci += sizeof( sockaddr_in6 ) ;
+                    byteT*        pbData = pbci                 ; pbci += cbData                 ;
+
+                    pbci += 4 * sizeof( countT ) ;
+
+                    if( !idGram ) { BLAMMO ; }
+
+                    countT& cbData    = ((countT*)pbci)[ 3 ] ;
+                    countT& rc        = ((countT*)pbci)[ 2 ] ;
+                    countT& idGram    = ((countT*)pbci)[ 1 ] ;
+                    countT& offNextNU = ((countT*)pbci)[ 0 ] ;      // THIS POINTS INTO THE CIRCULAR BUFFER USED BY s_readF AND IS USELESS TO ME
+
+                    //
+                    //  01+cbData sizeof( sockaddr_in6 )    from
+                    //  01        cbData                    data
+                    //  c         4                         cbData
+                    //  8         4                         rc
+                    //  4         4                         idGram (serial number)
+                    //  0         4                         offNextNU
+                    //
+                    //  offset    length                    description
+                    //
+
+                    //CONoUTrAW( "+" ) ;
+                {
+                else
+                if( cIn % cWorkersP != offWorkerP ) pbci += cbThis ;
+
+                cIn ++ ;
+
+                if( bFail1 || bFail2 ) break ;     // CLOSES THE CURRENT FILE WINDOW AND, IN THE NEXT ITERATION, OPENING A NEW FILE WINDOW POSITIONED AT THE BEGINNING OF THE CURRENT RECORD
+
+                boolT  bFail2 = bFail1 ? 0 : pbci + cbThis > pbcie ;
+                countT cbThis = bFail1 ? 0 : 4 * sizeof( countT ) + ((countT*)pbci)[ 3 ] + sizeof( sockaddr_in6 ) ;
+                boolT  bFail1 = pbci + 4 * sizeof( countT ) > pbcie ;
+                
+                byteT* pbciSave = pbci ;
+
+                etThread.traceF( tinP , T("[cIn,idGramPouredLathP]:    ")+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idGramPouredLathP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                }
+                    break ;
+                    bNap = 1 ;
+                {
+                if( cIn == idGramPouredLathP )
+            {
+            while( pbci < pbcie )
+            ZE( boolT , bNap ) ;
+
+            byteT* pbcie = pbBufw + cbBufw ;
+            byteT* pbci  = pbBufw ;
+
+            if( !pbBufw || !cbBufw ) break ;
+
+            //etThread.traceF( tinP , T("window [cb04BufferDone,cbBufw]:    ")+TF2((countT)cb04BufferDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbBufw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            fwsBuffer.getF( tinP , pbBufw , cbBufw , 0 , cb04BufferDone ) ;
+            ZE( countT , cbBufw ) ;
+            ZE( byteT* , pbBufw ) ;
+
+            fileWindowsC fwsBuffer( tinP , etThread , tFileBuffer , flFILEwINDOW_DOnOTvALIDATE ) ;
+        {
+        while( !bQuitP )  // FOR EACH INPUT FILE WINDOW (SELECTED WITH cb04BufferDone)
+
+        switchC swFwsOut( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pbLeverFN , sizeof( udpFileNameS ) ) ;
+        ZE( const byteT* , pbLeverFN ) ;
+    {
+    while( !bQuitP )
+    ZE( countT , cAccepted ) ;
+    ZE( countT , cIn       ) ;
+    ZE( count04T , cb04BufferDone ) ;
+
+    etThread.delF( tinP , psttFileBufferP ) ;
+    TN( tFileBuffer , psttFileBufferP ) ;
+
+    TN( tfns1 , "/udp.file.spec.") ;
+    TN( tfnp , "///ideafarm/ephemeral/domains/com/ideafarm/udp.file.specs.in/") ;
+    TN( tColon , ":" ) ;
+    TN( tDot , "." ) ;
+    TN( tb4  , "    " ) ;
+    const countT cbMin = 0xc + ifcCBdATAGRAMmAX + sizeof( sockaddr_in6 ) ;
+
+    socketC& sThrow = *psoEndpointP ;
+
+    //etThread.traceF( tinP , T("[bCatch]:    ")+TF2(bCatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+    if( bCatch && !pcReceivedFileWindowsP ) { BLAMMO ; }
+
+    const boolT bCatch = !pSecretToUseP ;
+
+    grabC&           grab_pNicNameWhiteP    =           *(grabC*)pTaskP->c01    ;
+    countT&          cNicNameWhiteP         =          *(countT*)pTaskP->cf     ;
+    const nicNameC*& pNicNameWhiteP         = *(const nicNameC**)pTaskP->ce     ;
+    strokeS*         psttFileBufferP        =          (strokeS*)pTaskP->cd     ;
+    countT&          offEpochFresheningP    =          *(countT*)pTaskP->cc     ;
+    const countT**   ppcHashSecretsP        =    (const countT**)pTaskP->cb     ;
+    const countT**   ppcSecretsP            =    (const countT**)pTaskP->ca     ;
+    countT&          idGramPouredLathP      =          *(countT*)pTaskP->c9     ;
+    const countT     cWorkersP              =                    pTaskP->c8     ;
+    const countT     offWorkerP             =                    pTaskP->c7 - 1 ;
+    countT*          pcReceivedFileWindowsP =           (countT*)pTaskP->c6     ;
+    countT*          pSecretToUseP          =           (countT*)pTaskP->c5     ;
+    nicNameC*        pNicNameToUseP         =         (nicNameC*)pTaskP->c4     ;
+    grabC&           grab_psoEndpointP      =           *(grabC*)pTaskP->c3     ;
+    socketC*&        psoEndpointP           =        *(socketC**)pTaskP->c2     ;
+    boolT&           bQuitP                 =           *(boolT*)pTaskP->c1     ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->cc /*&& pTaskP->cd*/ && pTaskP->ce && pTaskP->cf && pTaskP->c01 )
+/*1*/TASK( tmUdpFileObey2F )/*1*/
+
+/**/
+
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

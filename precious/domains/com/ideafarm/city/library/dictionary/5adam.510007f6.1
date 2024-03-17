@@ -1,0 +1,66 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+THREADmODE5rESTORE
+}
+    etThread.traceF( tinP , T("[pbOut2]:    ")+T(pbOut2) ) ;
+
+    thirdC::openSslCrypto_decryptIF( tinP , pbOut2 , cbOut2 , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed                      , hKeyPrivate ) ;
+    thirdC::openSslCrypto_encryptIF( tinP                   , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed , pbIn , sizeof pbIn , hKeyPublic  ) ;
+
+    thirdC::openSslCrypto_writePublicKeyToFileIF(  tinP , "\\tmp\\scratch.adam.4.key.public.verify.pem"  , hKeyPublic  ) ;
+    thirdC::openSslCrypto_writePrivateKeyToFileIF( tinP , "\\tmp\\scratch.adam.4.key.private.verify.pem" , hKeyPrivate ) ;
+
+    thirdC::openSslCrypto_readPublicKeyFromFileIF(  tinP , hKeyPublic  , "\\tmp\\scratch.adam.4.key.public.pem"  ) ;
+    thirdC::openSslCrypto_readPrivateKeyFromFileIF( tinP , hKeyPrivate , "\\tmp\\scratch.adam.4.key.private.pem" ) ;
+
+    thirdC::openSslCrypto_writePublicKeyToFileIF(  tinP , "\\tmp\\scratch.adam.4.key.public.pem"         , hKeyPair    ) ;
+    thirdC::openSslCrypto_writePrivateKeyToFileIF( tinP , "\\tmp\\scratch.adam.4.key.private.pem"        , hKeyPair    ) ;
+
+    etThread.traceF( tinP , T("generated") ) ;
+    thirdC::openSslCrypto_keyPairIF( tinP , hKeyPair , 0x400 ) ;
+    etThread.traceF( tinP , T("generating...") ) ;
+
+    handleC hKeyPublic(  tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
+    handleC hKeyPrivate( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
+    handleC hKeyPair(    tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
+{
+THREADmODE5oN( flTHREADmODE5_ARMoPENsSL )
+
+TODO
+
+countT cbOut2 = sizeof pbOut2 ;
+countT cbOut1 = sizeof pbOut1 ;
+
+byteT  pbOut2[ TUCK ] ;
+byteT  pbOut1[ TUCK ] ;
+
+countT cbInnerKey = sizeof pbInnerKey ;
+byteT  pbInnerKey[ TUCK ] ;
+byteT  pbSeed[ CBhUSHsEEDaLLOCATION ] ;
+
+byteT  pbIn[] = "thank you, Jesus!" ;
+
+
+/*1*/WAKEsHOWtEXT( "example.simplest.openssl.encryption.decryption.using.thirdC" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

@@ -1,0 +1,137 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+}
+    return idKeysFound ;
+
+    //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("[idKeysFound]:    ")+TF3(((countT*)&idKeysFound)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3(((countT*)&idKeysFound)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+
+    }
+        }
+            CloseHandle( osh ) ;
+
+            }
+                if( bAccepted && cFound < sizeof idKeysFound ) *( pbo ++ ) = (byteT)( 1 + postDrive[ 4 ] - 'a' ) ;
+
+                DEL( pInfoDisk1 ) ;
+                }
+                    }
+                        while( ~hFind ) ;
+                        }
+                            if( !bAccepted ) break ;
+                            DEL( pInfo ) ;
+                            }
+                                bAccepted = 0 ;
+                                )
+                                    && c_strcmpIF( tinP , postOk3 , pInfo->postOsName )
+                                    && c_strcmpIF( tinP , postOk2 , pInfo->postOsName )
+                                       c_strcmpIF( tinP , postOk1 , pInfo->postOsName )
+                                (
+                                if
+
+                                //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("found:    ")+T(pInfo->postOsName) ) ;
+                            {
+                            if( pInfo )
+                            dosFindFileOrDirF( tinP , pInfo , hFind , postLike ) ;
+                            ZE( infoFileS* , pInfo ) ;
+                        {
+                        do
+                        handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+
+                        *postOk2 = *postOk1 = *postLike = postDrive[ 4 ] ;
+                        osTextT postOk3[] = "|:\\ideafarm.key.folder\\" ;
+                        osTextT postOk2[] = "|:\\System Volume Information\\" ;
+                        osTextT postOk1[] = "|:\\$RECYCLE.BIN\\" ;
+                        osTextT postLike[] = "|:\\*" ;
+                    
+                        TN( tLike , "|:\\*" ) ;
+                    {
+                    else
+                    /*else*/ if( c_strcmpIF( tinP , postIDEAFARMkEYvOLUMEnAME , pInfoDisk1->postVolumeName ) ) bAccepted = 0 ;
+                    //if( c04BytesFree < (count04T)1024 * 1024 * 1024 * 1024 ) bAccepted = 0 ;
+                    count04T c04BytesFree = pInfoDisk1->cBytesPerSector * pInfoDisk1->cSectorsPerAllocationUnit * pInfoDisk1->cUnusedUnits ;
+                    bAccepted = 1 ;
+
+                    thirdC::c_strlwrIF( tinP , pInfoDisk1->postVolumeName ) ;
+
+                    //pInfoDisk1->traceF( tinP ) ;
+                {
+                if( pInfoDisk1 )
+                ZE( boolT , bAccepted ) ;
+
+                }
+                    if( POOP ) POOPR ;
+
+                    ((thirdC&)*tinP.pEtScratch).dosQueryFSInfoF( tinP , pInfoDisk1 , postDrive2 , !bThumb ? 0 : ( TUCK >> 4 ) ) ;
+
+                    SCOOPS
+                {
+                IFsCRATCH
+
+                postDrive2[ 3 ] = postDrive[ 4 ] ;
+                osTextT postDrive2[] = "///|" ;
+                ZE( infoDisk1S* , pInfoDisk1 ) ;
+            {
+            if( info.TrimEnabled || bThumb )
+            //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("[TrimEnabled]:    ")+T(postDrive)+tb4+TF2(info.TrimEnabled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                bThumb = 1 ;
+                //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("query failed [rc]:    ")+T(postDrive)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                countT rc = GetLastError() ;
+            {
+            if( !bOk ) //THIS WILL HAPPEN FOR USB THUMB DRIVES
+            BOOL bOk = DeviceIoControl( osh , IOCTL_STORAGE_QUERY_PROPERTY , &query , sizeof pbQuery , pbInfo , sizeof pbInfo , &cbInfo , 0 ) ;
+            ZE( boolT , bThumb ) ;
+        {
+        else
+        }
+            //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("open failed [rc]:    ")+T(postDrive)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            countT rc = GetLastError() ;
+        {
+        if( osh == INVALID_HANDLE_VALUE )
+
+        HANDLE osh = CreateFile( postDrive , GENERIC_READ , FILE_SHARE_READ | FILE_SHARE_WRITE , 0 , OPEN_EXISTING , FILE_ATTRIBUTE_NORMAL , 0 ) ;
+    {
+    for( postDrive[ 4 ] = 'a' ; postDrive[ 4 ] <= 'z' ; postDrive[ 4 ] ++ )
+    osTextT postDrive[] = "\\\\.\\|:" ;
+    TN( tb4 , "    " ) ;
+
+    query.QueryType = PropertyStandardQuery ;
+    query.PropertyId = StorageDeviceTrimProperty ;
+
+    c_memsetIF( tinP , pbQuery , sizeof pbQuery ) ;
+    byteT* pbAfter = pbQuery + sizeof( STORAGE_PROPERTY_QUERY ) ;
+    STORAGE_PROPERTY_QUERY& query = *(STORAGE_PROPERTY_QUERY*)pbQuery ;
+    byteT pbQuery[ sizeof( STORAGE_PROPERTY_QUERY ) + ( TUCK >> 4 ) ] ;
+
+    c_memsetIF( tinP , pbInfo , sizeof pbInfo ) ;
+    DEVICE_TRIM_DESCRIPTOR& info = *(DEVICE_TRIM_DESCRIPTOR*)pbInfo ;
+    byteT pbInfo[ sizeof( DEVICE_TRIM_DESCRIPTOR ) + ( TUCK >> 6 ) ] ;
+    DWORD cbInfo ;
+
+    ZE( countT , cFound ) ;
+    byteT* pbo = (byteT*)&idKeysFound ;
+    ZE( count04T , idKeysFound ) ;
+
+    _IO_
+{
+/*1*/count04T thirdC::idIdeaFarmKeysF( tinS& tinP )/*1*/
+
+/**/
+*/
+/*
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//

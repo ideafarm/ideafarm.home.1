@@ -1,0 +1,120 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+}
+    *(flagsT*)&flagsCt |= flBOOKc_FILEiScONSTRUCTED ;
+
+    THREADmODE3rESTORE
+    new( 0 , tinP , pbFile , sizeof pbFile ) fileC( tinP , ostoName , access , share , flagsDetails , how , flFILEaTTR_null , F(flagsCt) & flBOOKc_DELETE ? flFILEc_DELETE : flFILEc_null ) ;
+    THREADmODE3oN( flTHREADmODE3_DISALLOWpUSE )
+
+    /*if( F(flagsCt) & ( flBOOKc_DOnOTuSEpUSE | flBOOKc_DOnOTrEGISTERfILE ) )*/ flagsDetails |= flOPENdETAILS_DOnOTrEGISTER ;    
+    flagsT flagsDetails = flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_LOCsEQ | flOPENdETAILS_NOcACHE ;
+    countT how          = F(flagsCt) & flBOOKc_WRITER ? ifcOPENhOW_nCeO : ifcOPENhOW_nFeO ;
+    countT share        = ifcOPENsHARE_WR ;
+    countT access       = ifcOPENaCCESS_WR ; //CANNOT SPECIFY READ ONLY HERE BECAUSE napkinC MIGHT NEED TO FORMAT ITSELF EVEN IF I AM ONLY GOING TO READ THE DATA SECTION OF THE NAPKIN
+
+    //}
+    //    OStEXTA( ostoName , osName ) ;
+    //
+    //    ether.delF( tinP , psttm ) ;
+    //    osFileNameC osName( tinP , ether , T(psttm) ) ;
+    //    ether.diskMapFileNameF( tinP , psttm , tName ) ; ___( psttm ) ;
+    //    ZE( strokeS* , psttm ) ;
+    //    etherC& ether = *tinP.pEther ;
+    //
+    //    ctFileNameIF( tinP , tName , postShortP , postPathP , idStateSpaceP , idMemorySpaceP , flagsCt ) ;
+    //    TN( tName , "" ) ;
+    //{
+    //else
+    //20171113@0847: TO ELIMINATE NONMONOTONIC GRABBING, ELIMINATE ALL USE OF poolC BY booksC bookC
+    }
+        }
+            tinP.pEther->diskMakeDirIfNeededF( tinP , T(iffn) ) ;  //DO THIS ONLY IF EXPLICIT PATH, WHICH SHOULD AVOID NONMONOTONIC GRABBING SINCE IT WILL AVOID bksTelemetry AND bksTrace* booksC FILES
+            ifFileNameC iffn( tinP , *tinP.pEther , ostoName ) ;
+
+            OStEXTAK( ostoName , ".bookC" ) ;
+            OStEXTA(  ostoName , postShortP ) ;
+            }
+                OStEXTAK( ostoName , "." ) ;
+                OStEXTC(  ostoName , idStateSpaceP , 0 ) ;
+                OStEXTAK( ostoName , "." ) ;
+                OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : tinP.pag1->idMemorySpace , '0' ) ;
+                OStEXTAK( ostoName , "." ) ;
+                OStEXTA(  ostoName , thirdC::postUserNameIF() ) ;
+            {
+            if( !( F(flagsCt) & flBOOKc_NOsHORTfILENAMEpREFIX ) )
+            OStEXTA(  ostoName , postPathP ) ;
+
+            if( POOP ) { BLAMMO ; }
+
+            SCOOP
+            poopC poop ;
+        {
+        else
+        }
+            OStEXTAK( ostoName , ".bookC" ) ;
+            OStEXTA(  ostoName , postShortP ) ;
+            OStEXTAK( ostoName , "\\" ) ;
+            OStEXTC(  ostoName , idStateSpaceP , 0 ) ;                                                              thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\" ) ;
+            OStEXTAK( ostoName , "\\stateSpaces" ) ;                                                                thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : tinP.pag1->idMemorySpace , '0' ) ;       thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\" ) ;
+            OStEXTA(  ostoName , thirdC::postUserNameIF() ) ;                                                       thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\" ) ;
+            OStEXTAK( ostoName , "\\memorySpaces" ) ;                                                               thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\ipdos" ) ;                                                                      thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\ideafarm" ) ;                                                                   thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\com" ) ;                                                                        thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\domains" ) ;                                                                    thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\backed.up.daily" ) ;                                                            thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTAK( ostoName , "\\ephemeral" ) ;                                                                  thirdC::dosCreateDirIF( tinP , ostoName ) ;
+            OStEXTA(  ostoName , postHome ) ;                                                                       thirdC::dosCreateDirIF( tinP , ostoName ) ;
+
+            if( POOP ) { BLAMMO ; }
+            thirdC::diskFindHomeIF( tinP , postHome , sizeof postHome , "ideafarm" ) ;
+            osTextT postHome[ TUCK << 1 ] ;
+
+            SCOOP
+            poopC poop ;
+        {
+        if( !postPathP )
+        //CS:CODEsYNC: 350fa004 360fa005 360fb012
+    {
+    //if( F(flagsCt) & ( flBOOKc_DOnOTuSEpUSE ) )
+    OStEXT( ostoName , TUCK << 2 )
+
+    _IO_
+
+    }
+        if( POOP ) return ;
+        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __Z( idStateSpaceP ) ;
+        __Z( postShortP ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL    
+
+    //if( !idMemorySpaceP ) idMemorySpaceP = tinP.pag1->idMemorySpace ;
+    //20200417@1855: KEEP idMemorySpaceP NULL SO THAT CALLER DOES NOT HAVE TO SET flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE
+{
+/*1*/voidT bookC::ctFileF( tinS& tinP , const osTextT* const postShortP , const osTextT* const postPathP , const countT idStateSpaceP , countT idMemorySpaceP )/*1*/
+
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+

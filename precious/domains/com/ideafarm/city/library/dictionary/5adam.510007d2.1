@@ -1,0 +1,209 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tinP ) ;
+etThread.traceF( tinP , T("ok") ) ;
+
+}
+    }
+        }
+            ++ s ; ether.osSleepF( tinP , TOCK ) ;
+        {
+        else
+        }
+            if( etThread.diskFileExistsF( tinP , tFileSecretReceived ) ) etThread.boxZapF( tinP , tFileSecretReceived ) ;
+            if( etThread.diskFileExistsF( tinP , tFileSecret         ) ) etThread.boxZapF( tinP , tFileSecret         ) ;
+
+            }
+                }
+                    etThread.traceF( tinP , T("could not close RDP") ) ;
+                    etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("Could not close RDP.") ) ;
+                {
+                else
+                }
+                    etThread.traceF( tinP , T("closed RDP aok") ) ;
+                    etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("Closed RDP aok.") ) ;
+                {
+                if( bOk )
+                bOk = sendCommandF( tinP , etThread , tHeadEnable , tBodyEnable ) ;
+                etThread.traceF( tinP , T("closing rdp") ) ;
+
+                ++ s ; ether.osSleepF( tinP , TICK ) ;
+                etThread.traceF( tinP , T("napping for a tick") ) ;
+
+                }
+                    etThread.traceF( tinP , T("could not open RDP") ) ;
+                    etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("Could not open RDP.") ) ;
+                {
+                else
+                }
+                    etThread.traceF( tinP , T("opened RDP aok") ) ;
+                    etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("Opened RDP aok.") ) ;
+                {
+                if( bOk )
+                boolT bOk = sendCommandF( tinP , etThread , tHeadDisable , tBodyDisable ) ;
+                etThread.traceF( tinP , T("opening rdp") ) ;
+            {
+            else
+            }
+                etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("I did not receive the correct secret, so will not open RDP.") ) ;
+                etThread.traceF( tinP , T("i did not receive the correct secret, so will not open RDP.") ) ;
+            {
+            if( /*!bAlways &&*/ !etThread.diskFileExistsF( tinP , tFileSecretReceived ) )
+            //boolT bAlways = 1 ;     //U:: REMOVE THIS WHEN HTTP SERVICE IS STABLE
+
+            ++ s ; ether.osSleepF( tinP , TICK << 1 ) ;
+
+            etThread.traceF( tinP , T("napping for 2 tick before opening rdp") ) ;
+            //U:: PROD: etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://www.ideafarm.com/admin.rdp.open.house?secret=")+tSecret ) ;
+            etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://38.111.147.102/admin.rdp.open.house?secret=")+tSecret ) ; //U:: WORKAROUND TO FIND A BUG
+
+            TN( tSecret , "" ) ; tSecret = TF2(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+
+            if( etThread.diskFileExistsF( tinP , tFileSecretReceived ) ) etThread.boxZapF( tinP , tFileSecretReceived ) ;
+        
+            etThread.boxPutF( tinP , tFileSecret , (byteT*)&secret , sizeof secret ) ;
+            countT secret = slab.trueRandom ;
+
+            time2L = time2N ;
+            time1L = time1N ;
+        {
+        if( time2E || time1E > ( TICK << 4 ) )
+        etThread.osTimeSubtractF( tinP , time1E , time2E , time1L , time2L ) ;
+
+        sCountT time2E = time2N ;
+        countT  time1E = time1N ;
+        etThread.osTimeNowF( tinP , time1N , time2N ) ;
+        ZE( sCountT , time2N ) ;
+        ZE( countT  , time1N ) ;
+    {
+    while( !ether )
+    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ZE( countT , time2L ) ;
+    ZE( countT , time1L ) ;
+
+    TN( tFileSecretReceived , "///ideafarm/ephemeral/domains/com/ideafarm/rdp.open.house/secret.received" ) ;
+    TN( tFileSecret         , "///ideafarm/ephemeral/domains/com/ideafarm/rdp.open.house/secret"          ) ;
+
+    ) ;
+
+        "\r\n"
+        "Content-Length: ")+TF4(tBodyEnable.csF(tinP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
+        "Content-Type: application/json\r\n"
+        "Authorization: Basic ")+tPass+T("\r\n"
+        "accept: */*\r\n"
+        "User-Agent: IPDOS (tm)\r\n"
+        "Host: 10.1.0.1:8080\r\n"
+        "PATCH /rest/config/v1/forwarding-firewall/rules/internet2factoriesrdprefuse?expand=false&lock=false&envelope=false HTTP/1.1\r\n"
+
+    TN( tHeadEnable , "" ) ; tHeadEnable = T(
+
+    ) ;
+
+        "\r\n"
+        "Content-Length: ")+TF4(tBodyDisable.csF(tinP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
+        "Content-Type: application/json\r\n"
+        "Authorization: Basic ")+tPass+T("\r\n"
+        "accept: */*\r\n"
+        "User-Agent: IPDOS (tm)\r\n"
+        "Host: 10.1.0.1:8080\r\n"
+        "PATCH /rest/config/v1/forwarding-firewall/rules/internet2factoriesrdprefuse?expand=false&lock=false&envelope=false HTTP/1.1\r\n"
+
+    TN( tHeadDisable , "" ) ; tHeadDisable = T(
+
+    TN( tBodyEnable  , "{ \"deactivated\": false }" ) ;
+    TN( tBodyDisable , "{ \"deactivated\": true }" ) ;
+{
+if( tPass.csF( tinP ) )
+
+}
+    etThread.delF( tinP , psttPass ) ;
+    if( psttPass && psttPass->idAdam ) tPass = T(psttPass) ;
+    ZE( strokeS* , psttPass ) ; etThread.querySettingF( tinP , psttPass , T("!ipdos.barracuda.firewall.credentials64")  ) ; ___( psttPass ) ;
+{
+TN( tPass , "" ) ;
+
+homeS& home = homeS::homeIF() ;
+slabS& slab = slabS::slabIF() ;
+
+TODO
+
+}
+    return bOk ;
+
+    }
+        }
+            }
+                etherP.delF( tinP , psttr ) ;
+                bOk = 1 == etherP.strIdF( tinP , T("HTTP/1.1 204 No Content") , psttr ) ;
+
+                }
+                    }
+                        }
+                            }
+                                }
+                                    else          break ;
+                                    if( !bArmed ) bArmed = 1 ;
+                                {
+                                if( *post2 == '\n' )
+                            {
+                            else
+                            if( *post2 != '\r' && *post2 != '\n' ) bArmed = 0 ;
+
+                            etherP.strFuseF( tinP , psttr , T(post2) ) ;
+                        {
+                        else
+                        }
+                            break ;
+                            POOPRqUIET ;
+                        {    
+                        if( POOP )
+
+                        ss.readF( tinP , post2 , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+                        osTextT post2[] = { 0 , 0 } ;
+                    {
+                    for(;;)
+                    ZE( boolT , bArmed ) ;
+                {
+                etherP.strMakeF( tinP , LF , psttr , 0 , TUCK << 4 ) ; ___( psttr ) ;
+                ZE( strokeS* , psttr ) ;
+            {
+            else
+            if( POOP ) { POOPRqUIET ; }
+
+            ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+        {
+        else
+        if( POOP ) { POOPRqUIET ; }
+
+        ss.connectF( tinP , 8080 , socketC::nicNameIF( tinP , *tinP.pEtScratch , T("10.1.0.9") ) ) ;
+        socketC ss( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+
+        SCOOPS
+    {
+    IFsCRATCH
+    ZE( boolT , bOk ) ;
+
+    TN( tSay , "" ) ; tSay = tHeadP + tBodyP ;
+{
+boolT sendCommandF( tinS& tinP , etherC& etherP , textC& tHeadP , textC& tBodyP )
+
+/*1*/WAKEhIDE( "ifcIDaDAM_REMOTEdESKTOPoPENhOUSE" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
