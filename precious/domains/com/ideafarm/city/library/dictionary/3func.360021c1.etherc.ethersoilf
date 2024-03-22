@@ -3795,11 +3795,12 @@
 /*N2D*/                                                     delF( tinP , psttlt ) ;
 /*N2D*/                                                     soulBody << psttlt ;
 /*N2D*/
-/*N2D*/                                                     //traceF( tinP , T("[trimmed]: \"")+T(psttlt)+T("\"\r\n") ) ;
+/*N2D*/                                                     traceF( tinP , T("3  [trunc] : |")+T(psttlt)+T("|") ) ;
 /*N2D*/                                                     delF( tinP , psttl ) ;
 /*N2D*/                                                     strSubstringF( tinP , psttlt , countTC( idWothMin ) , countTC() , psttl ) ; ___( psttlt ) ;
 /*N2D*/                                                     ZE( strokeS* , psttlt ) ;
 /*N2D*/
+/*N2D*/                                                     traceF( tinP , T("2  [lag]   : |")+T(psttl)+T("|") ) ;
 /*N2D*/                                                     soulLinesLazy >> psttl ; ___( psttl ) ;
 /*N2D*/                                                     ZE( strokeS* , psttl ) ;
 /*N2D*/                                                 {
@@ -3821,6 +3822,7 @@
 /*N2D*/
 /*N2D*/                                                     delF( tinP , psttLag ) ;
 /*N2D*/                                                     soulLinesLazy << psttLag ;
+/*N2D*/                                                     traceF( tinP , T("1B [lag]   : |")+T(psttLag)+T("|") ) ;
 /*N2D*/                                                     if( idModeP != ifcIDmODEeTHERsOIL_REPORT ) soulOut << psttLag ;
 /*N2D*/
 /*N2D*/                                                     }
@@ -3829,13 +3831,13 @@
 /*N2D*/                                                     {
 /*N2D*/                                                     if( idModeP == ifcIDmODEeTHERsOIL_LINT && bLabel && ++ cFlag1 <= CfLAG1mAX ) //EXPLICIT LABEL IS NOT ALLOWED ON THE ROOT BRANCH OF A KT
 /*N2D*/
-/*N2D*/                                                 }
-/*N2D*/                                                     delF( tinP , pstttLag ) ;
-/*N2D*/                                                     bLabel = pstttLag && pstttLag[ CSpREFIX ] == S2(':',0) ;
-/*N2D*/                                                     strTrimF( tinP , pstttLag , psttLag ) ; ___( pstttLag ) ;
-/*N2D*/                                                     ZE( strokeS* , pstttLag ) ;
-/*N2D*/                                                 {
-/*N2D*/                                                 ZE( boolT , bLabel ) ;
+/*N2D*/                                                     }
+/*N2D*/                                                         delF( tinP , pstttLag ) ;
+/*N2D*/                                                         bLabel = pstttLag && pstttLag[ CSpREFIX ] == S2(':',0) ;
+/*N2D*/                                                         strTrimF( tinP , pstttLag , psttLag ) ; ___( pstttLag ) ;
+/*N2D*/                                                         ZE( strokeS* , pstttLag ) ;
+/*N2D*/                                                     {
+/*N2D*/                                                     ZE( boolT , bLabel ) ;
 /*N2D*/                                                 {
 /*N2D*/                                                 if( psttLag )
 /*N2D*/
@@ -3860,6 +3862,7 @@
 /*N2D*/
 /*N2D*/                                                                 delF( tinP , psttLag ) ;
 /*N2D*/                                                                 soulLinesLazy << psttLag ;
+/*N2D*/                                                                 traceF( tinP , T("1A [lag]   : |")+T(psttLag)+T("|") ) ;
 /*N2D*/                                                                 if( idModeP != ifcIDmODEeTHERsOIL_REPORT ) soulOut << psttLag ;
 /*N2D*/                                                                        
 /*N2D*/                                                                 }
@@ -3890,13 +3893,14 @@
 /*N2D*/                                                         else
 /*N2D*/                                                         if( !idWoth ) { stq_psttlDelimiterOrBlankAfterLag << psttl ; psttl = 0 ; }
 /*N2D*/
-/*N2D*/                                                         countT idWoth = strIdAnyF( tinP , 0 , flSTRmATCH_null , countTC( 1 ) , sttq , tbcrb , psttl , 0 , 1 , flSTRiDaNY_NOT ) ;
+/*N2D*/                                                         countT idWoth = strIdAnyF( tinP , 0 , flSTRmATCH_null , countTC( 1 ) , sttq , tbcrlfb , psttl , 0 , 1 , flSTRiDaNY_NOT ) ;
 /*N2D*/                                                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 /*N2D*/
 /*N2D*/                                                         /**/if( bTrace && !( soulLines % TUCK ) ) traceF( tinP , T("processing body with ")+TF2((countT)soulLines,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" lines remaining") ) ;
 /*N2D*/                                                     {
 /*N2D*/                                                     if( !POOP )
 /*N2D*/                                                     __Z( psttl ) ;
+/*N2D*/                                                     traceF( tinP , T("soulLines >>    ||||")+T(psttl)+T("||||") ) ;
 /*N2D*/                                                     soulLines >> psttl ; ___( psttl ) ;
 /*N2D*/                                                     ZE( strokeS* , psttl ) ;
 /*N2D*/                                                 {
@@ -6158,7 +6162,7 @@
                 TN( tUser , thirdC::postUserNameIF() ) ;
                 TN( tFile , "" ) ;
                 TN( tDomain , "" ) ;
-                TN( tbcrb , " \r\n" ) ; tbcrb += tBreakMark ;
+                TN( tbcrlfb , " \r\n" ) ; tbcrlfb += tBreakMark ;
                 TN( tStarDotData , "*.data" ) ;
                 TN( tStar , "*" ) ;
                 TN( tcr , "\r\n" ) ;
