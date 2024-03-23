@@ -40,7 +40,7 @@ etThread.traceF( tinP , T("ok") ) ;
     TN( tSlash , "/" ) ;
     ZE( boolT , bYearDo ) ;
     ZE( boolT , bYear ) ;
-    TN( tYearTest , "" ) ;  // E.G. "2011"
+    TN( tYearTest , "2018,2019,2020,2021,2022,2023,2099" ) ;  // E.G. "2011" OR "2012,2013,2014"
     TN( tArchives , "ideafarm.archives" ) ;
     ZE( countT , cSetsDone ) ;
     ZE( boolT , bQuit ) ;
@@ -287,7 +287,7 @@ TODO
                     bYearDoP = 1 ;
                     etherP.traceF( tinP , T("year to do:    ")+tYearP ) ;
                 {
-                if( !psttYearTestP->idAdam || !etherP.strCompareF( tinP , tYearP , psttYearTestP ) )
+                if( !psttYearTestP->idAdam || etherP.strIdF( tinP , tYearP , psttYearTestP , 1 ) )
 
                 etherP.traceF( tinP , T("year      :    ")+tYearP ) ;
                 }

@@ -1379,6 +1379,7 @@
 /*N2U*/
 /*N2U*/                                                                 delF( tinP , psttv ) ; // CAN BE LARGE, AND DON'T NEED IT ANY MORE
 /*N2U*/                                                                 soulValue << psttv ;
+/*N2U*/                                                                 if( strIdF( tinP , T("C:") , psttv ) ) traceF( tinP , T("!DEBUG: soulValue <<    ||||")+T(psttv)+T("||||") ) ;
 /*N2U*/                                                                 //traceF( tinP , T("pushing [psttv]: \"")+T(psttv)+T("\"\r\n") ) ;
 /*N2U*/                                                             {
 /*N2U*/                                                             case ifcIDmODEeTHERsOIL_REPORT :
@@ -3670,6 +3671,7 @@
                         bDone = 1 ;
 
                         soulValue << psttWord ;
+                        if( strIdF( tinP , T("C:") , psttWord ) ) traceF( tinP , T("!DEBUG: soulValue <<    ||||")+T(psttWord)+T("||||") ) ;
                         //traceF( tinP , T("pushing [psttv]: \"")+T(psttWord)+T("\"\r\n") ) ;
 
                         obeyReplacementsF( tinP , *this , psttWord , swReplace , psttzLeverReplace ) ;
@@ -3693,6 +3695,7 @@
 
                         else            strFuseF( tinP , soulOut , psttWord ) ;
                         if( soulValue ) soulValue << psttWord ;
+                        if( strIdF( tinP , T("C:") , psttWord ) ) traceF( tinP , T("!DEBUG: soulValue <<    ||||")+T(psttWord)+T("||||") ) ;
                     {
                     else if( !strCompareF( tinP , psttWord , tBreakMark ) )
                     }
@@ -3794,13 +3797,13 @@
 /*N2D*/                                                 }
 /*N2D*/                                                     delF( tinP , psttlt ) ;
 /*N2D*/                                                     soulBody << psttlt ;
+/*N2D*/                                                     if( strIdF( tinP , T("C:") , psttlt ) ) traceF( tinP , T("!DEBUG: soulBody << ||||")+T(psttlt)+T("||||") ) ;
 /*N2D*/
-/*N2D*/                                                     //traceF( tinP , T("3  [trunc] : |")+T(psttlt)+T("|") ) ;
 /*N2D*/                                                     delF( tinP , psttl ) ;
 /*N2D*/                                                     strSubstringF( tinP , psttlt , countTC( idWothMin ) , countTC() , psttl ) ; ___( psttlt ) ;
 /*N2D*/                                                     ZE( strokeS* , psttlt ) ;
 /*N2D*/
-/*N2D*/                                                     //traceF( tinP , T("2  [lag]   : |")+T(psttl)+T("|") ) ;
+/*N2D*/                                                     if( strIdF( tinP , T("C:") , psttl ) ) traceF( tinP , T("!DEBUG: soulLinesLazy >> ||||")+T(psttl)+T("||||") ) ;
 /*N2D*/                                                     soulLinesLazy >> psttl ; ___( psttl ) ;
 /*N2D*/                                                     ZE( strokeS* , psttl ) ;
 /*N2D*/                                                 {
@@ -3822,7 +3825,7 @@
 /*N2D*/
 /*N2D*/                                                     delF( tinP , psttLag ) ;
 /*N2D*/                                                     soulLinesLazy << psttLag ;
-/*N2D*/                                                     //traceF( tinP , T("1B [lag]   : |")+T(psttLag)+T("|") ) ;
+/*N2D*/                                                     if( strIdF( tinP , T("C:") , psttLag ) ) traceF( tinP , T("!DEBUG: 2 soulLinesLazy <<  ||||")+T(psttLag)+T("||||") ) ;
 /*N2D*/                                                     if( idModeP != ifcIDmODEeTHERsOIL_REPORT ) soulOut << psttLag ;
 /*N2D*/
 /*N2D*/                                                     }
@@ -3862,7 +3865,7 @@
 /*N2D*/
 /*N2D*/                                                                 delF( tinP , psttLag ) ;
 /*N2D*/                                                                 soulLinesLazy << psttLag ;
-/*N2D*/                                                                 //traceF( tinP , T("1A [lag]   : |")+T(psttLag)+T("|") ) ;
+/*N2D*/                                                                 if( strIdF( tinP , T("C:") , psttLag ) ) traceF( tinP , T("!DEBUG: 1 soulLinesLazy <<  ||||")+T(psttLag)+T("||||") ) ;
 /*N2D*/                                                                 if( idModeP != ifcIDmODEeTHERsOIL_REPORT ) soulOut << psttLag ;
 /*N2D*/                                                                        
 /*N2D*/                                                                 }
@@ -3900,7 +3903,7 @@
 /*N2D*/                                                     {
 /*N2D*/                                                     if( !POOP )
 /*N2D*/                                                     __Z( psttl ) ;
-/*N2D*/                                                     traceF( tinP , T("DEBUG: soulLines >>    ||||")+T(psttl)+T("||||") ) ;
+/*N2D*/                                                     if( strIdF( tinP , T("C:") , psttl ) ) traceF( tinP , T("!DEBUG: soulLines >>    ||||")+T(psttl)+T("||||") ) ;
 /*N2D*/                                                     soulLines >> psttl ; ___( psttl ) ;
 /*N2D*/                                                     ZE( strokeS* , psttl ) ;
 /*N2D*/                                                 {
@@ -6080,6 +6083,8 @@
                         countT cRemaining = soulWords ;
                     {
 
+                    if( strIdF( tinP , T("C:") , psttWord ) ) traceF( tinP , T("!DEBUG: soulWords >>    ||||")+T(psttWord)+T("||||") ) ;
+
                     soulWords >> psttWord ; ___( psttWord ) ;
                     ZE( strokeS* , psttWord ) ;
 
@@ -6487,6 +6492,35 @@
                     if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tbo   , tm7   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL LITERAL {
                     if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tbb   , tm6   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL LITERAL BACKSLASH
                     if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tbs   , tm5   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL LITERAL SPACE ' '
+
+                    //
+                    //     Q: DOES THE CODE IN THE NEXT BLOCK CORRECTLY INVERT THE OUTPUT OF THIS BLOCK TO OBTAIN THE ORIGINAL ASCII INPUT?
+                    //
+                    //     STUDY HOW THIS BLOCK OPERATES WITH INPUT THAT CONTAINS SUCH SEQUENCES: IS SUCH INPUT PROCESSED CORRECTLY?
+                    //
+                    //     Q: ESCAPE SEQUENCES SUCH AS \r ARE ALLOWED IN INPUT ; DOES THIS BLOCK INTERFERE WITH THAT BY PRODUCING SPURIOUS \r FROM INPUT SUCH AS \\r ?
+                    //
+                    //     FOR EXAMPLE, THE EXPRESSION TO PRODUCE "C:\" SHOULD NOT CONTAIN A BLANK AND SHOULD NOT RELY ON AN INTERMEDIATE STEP THAT PRODUCES A HARD BLANK BY CONSUMING A \{blank} IN WHICH THE \ IS INTENDED TO ASSOCIATE WITH THE \ THAT PRECEEDS IT
+                    //     TO DO: STUDY THE CURRENT CODE AND THEN DESIGN A REWRITE THAT IS ELEGANT, MEANING THAT ALL IMAGINABLE OUTPUT CAN BE EXPRESSED AND THE EXPRESSION IS LOGICAL
+                    //     THIS IS COUNTERINTUITIVE CODING TO GET THE DESIRED "C:\"
+                    //
+                    // DISCUSSION
+                    //     
+                    //     EACH tm6     IS REPLACED WITH \  , PRODUCING:                                             \r\"C:\\5\"
+                    //
+                    //     EACH \\      IS REPLACED WITH tm6, PRODUCING:                                             \r6"C:6\56"
+                    //
+                    //     THE \{space} IS REPLACED WITH tm5, PRODUCING:                                             \r\\"C:\\\5\\"
+                    //
+                    // THIS BLOCK PROCESSES AS FOLLOWS:
+                    //
+                    // TO GET THIS VALUE, USE THIS VALUE FOR THE BODY ELEMENT WITHIN THE SOIL INPUT FILE:            \r\\"C:\\\\ \\"
+                    //
+                    // DESIRED OUTPUT VALUE:                                                                         "C:\"
+                    //
+                    // THIS EXAMPLE ILLUSTRATES THE ISSUE:
+                    //
+                    //U:: 20240323@1556: RECODE THIS BLOCK SO THAT PARSING OF INPUT IS ELEGANT AND WORKS AS EXPECTED
                 {
                 if( bNative )
                 ///**/if( bTrace ) traceF( tinP , T("etherSoilF / setting up 1 / ifcIDmODEeTHERsOIL_NATIVEfROMaSCII / loop / 3") ) ;
@@ -7068,7 +7102,7 @@
                     {
                     if( idMatch1 )
 
-                    traceF( tinP , T("!DEBUG: [idHit1,idMatch1]:    ")+TF2(idHit1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idMatch1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //traceF( tinP , T("!D EBUG: [idHit1,idMatch1]:    ")+TF2(idHit1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idMatch1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT idMatch1 = strIdMatchingF( tinP , flagsState , idf , sttq , psttAll , 1 ) ;
                     flagsT flagsState = flSTRiDmATCHINGf_null ;
                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
