@@ -10,7 +10,7 @@
 }
     }
         if( F(pP.flags) & flBRANCHspUTfILEf_BEEP ) etherP.beeClickF( tinP ) ;
-        etherP.traceF( tinP , T("put""FileIF/ - edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        //etherP.traceF( tinP , T("put""FileIF/ - edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
 
         }
             }
@@ -184,7 +184,7 @@
                 sCountT capRemainHi = 0x1 ;
                 countT  capRemainLo = 0x18244F00 ; // 4.7 GB (4700000000_9 BYTES)
                 CONoUTrAW( "------------ SORTED:\r\n" ) ;
-                if( ( bWoth && bWoth -- ) || !( stFile % TUCK ) ) etherP.traceF( tinP , T("put""FileIF/ + edition ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": zipping [stFile,stLater]: ")+TF2(stFile,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(stLater,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                //if( ( bWoth && bWoth -- ) || !( stFile % TUCK ) ) etherP.traceF( tinP , T("put""FileIF/ + edition ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": zipping [stFile,stLater]: ")+TF2(stFile,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(stLater,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
             {
             while( stFile ) // WHILE I STILL NEED TO EMIT ANOTHER VOLUME
             stackC stLater( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE ) ; // USED TO POUR SOME BACK INTO stFile, PRESERVING THE DECREASING ORDER OF FILE SIZE
@@ -230,7 +230,7 @@
             pP.pswUrlReferenced->grabF( tinP , TAG( TAGiDnULL ) ) ;
 
             stackC stFile( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE ) ; //WILL CONTAIN fileSizeNameS* POINTERS, IN DECREASING ORDER OF FILE SIZE
-            etherP.traceF( tinP , T("put""FileIF/ + edition ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": loading stFile") ) ;
+            //etherP.traceF( tinP , T("put""FileIF/ + edition ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": loading stFile") ) ;
 
             hoverC hover2( tinP , etherP , tPathArchive ) ;
             TN( tPathArchive , "" ) ; tPathArchive = T("///ideafarm/IdeaFarm " "(tm)/Drop Files Here To Archive/" ) ;
@@ -411,8 +411,8 @@
         {                                                                                   // WRITE THE INPUT FILE AS AN HTML FILE SO THAT IT CAN BE VIEWED IN A BROWSER
         if( postSourceP && costSourceP )
 
-        etherP.traceF( tinP , T("put""FileIF/ [psttFile]:    ")+T(pP.psttFile) ) ;
-        etherP.traceF( tinP , T("put""FileIF/ + edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        //etherP.traceF( tinP , T("put""FileIF/ [psttFile]:    ")+T(pP.psttFile) ) ;
+        //etherP.traceF( tinP , T("put""FileIF/ + edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     {
     //for( countT idEdition = 1 ; idEdition <= 5 && !bQuitP ; idEdition ++ )
     for( countT idEdition = 3 ; idEdition <= 3 && !bQuitP ; idEdition ++ )
@@ -444,13 +444,13 @@ THREADmODE4rESTORE
         }
             st_putFileJob_P.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
-            if( bWhereP ) etThread.traceF( tinP , T("bWhere is set / called  putFileIF") ) ;
+            //if( bWhereP ) etThread.traceF( tinP , T("bWhere is set / called  putFileIF") ) ;
 
             etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
 
             dec02AM( cPendingP ) ;
             branchS::putFileIF( tinP , etThread , countTC() , cPendingP , st_putFileJob_P , pP , job.offLevel , job.jMe , job.jDad , job.jGrandDad , cLeverBranchP , swFileP , job.cNest , job.idEdition , psttzTimeStampP , psttzBanner1P , psttzBanner2P , psttzNameSpaceP ) ;
-            if( bWhereP ) etThread.traceF( tinP , T("bWhere is set / calling putFileIF") ) ;
+            //if( bWhereP ) etThread.traceF( tinP , T("bWhere is set / calling putFileIF") ) ;
 
             etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
 
@@ -470,7 +470,7 @@ THREADmODE4rESTORE
 
     etThread.delF( tinP , pcArgP ) ;
 
-    if( bWhereP ) etThread.traceF( tinP , T("bWhere is set") ) ;
+    //if( bWhereP ) etThread.traceF( tinP , T("bWhere is set") ) ;
 
     //20180119@1634: 0->1 WITHOUT ANALYSIS
     bWhereP = 1 ; //U::20140808@1625: DISABLED PENDING MIGRATION TO NEW BLOB FUNCTIONALITY FOR switchC ; ENABLE AFTER Where HAS BEEN MODIFIED TO CONFORM TO THE NEW FUNCTIONALITY (THE LEVER WILL BE A POINTER RATHER THAN A PLACE WHERE A VALUE IS WRITTEN)
