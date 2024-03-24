@@ -27,13 +27,29 @@ etThread.traceF( tinP , T("ok") ) ;
     {
     IFsCRATCH
 
-    countT pcArg[] = { (countT)&cSetsDone , (countT)(strokeS*)tArchives , (countT)(strokeS*)tYearTest , (countT)&bYear , (countT)&bYearDo , (countT)&tSlash , (countT)&tn , (countT)&tb4 , (countT)&tDot , (countT)&tPath , (countT)&pJotUnsortedShort , (countT)&cYearKidDirectories , (countT)&bArmDoNames , (countT)&tDevice , (countT)&tYear } ;
+    countT pcArg[] = { (countT)&cSetsDone , (countT)(strokeS*)tArchives , (countT)(strokeS*)tYearTest , (countT)&bYear , (countT)&bYearDo , (countT)&tSlash , (countT)&tn , (countT)&tb4 , (countT)&tDot , (countT)&tData , (countT)&tMeta , (countT)&tPath , (countT)&tHeyIdeaFarm , (countT)&t9 , (countT)&ta , (countT)&t2 , (countT)&pJotUnsortedShort , (countT)&cYearKidDirectories , (countT)&bArmDoNames , (countT)&tDevice , (countT)&tYear , (countT)&tMigrateSortedPrefix , (countT)&tMigrateUnsortedPrefix , (countT)&tHeyIdeaFarmDot , (countT)&tDotHeyDotControlDot , (countT)&tHeyIdeaFarmDotADot , (countT)&tHeyIdeaFarmDot9Dot , (countT)&tDotMetaDotDatafiletimes , (countT)&tDotFsetDotZip , (countT)&tDot20 , (countT)&tUscore20 } ;
 
+    TN( tUscore20 , "_20" ) ;
+    TN( tDot20 , ".20" ) ;
+    TN( tDotFsetDotZip , ".fset.zip" ) ;
+    TN( tDotMetaDotDatafiletimes , ".meta.datafiletimes" ) ;
+    TN( tHeyIdeaFarmDot9Dot , "!ideafarm.9." ) ;
+    TN( tHeyIdeaFarmDotADot , "!ideafarm.a." ) ;
+    TN( tDotHeyDotControlDot , ".!.control." ) ;
+    TN( tHeyIdeaFarmDot , "!ideafarm." ) ;
+    TN( tMigrateUnsortedPrefix , "migrate.unsorted.short.filenames." ) ;
+    TN( tMigrateSortedPrefix   , "migrate.sorted.short.filenames."   ) ;
     TN( tYear , "" ) ;
     ZE( boolT , bArmDoNames ) ;
     ZE( countT , cYearKidDirectories ) ;
     ZE( jotC* , pJotUnsortedShort ) ;
+    TN( t2 , "2" ) ;
+    TN( ta , "a" ) ;
+    TN( t9 , "9" ) ;
+    TN( tHeyIdeaFarm , "!ideafarm" ) ;
     TN( tPath , "" ) ;
+    TN( tMeta , "meta" ) ;
+    TN( tData , "data" ) ;
     TN( tDot , "." ) ;
     TN( tb4 , "    " ) ;
     TN( tn , "" ) ;
@@ -195,6 +211,111 @@ TODO
                 if( tShortNew.csF( tinP ) )
 
                 }
+                    etherP.delF( tinP , pstt1w ) ;
+                    }
+                        }
+                            tShortNew = tnP ;
+                            etherP.delF( tinP , psttShortNew ) ;
+                            if( cHits ) etherP.diskMoveFileOrDirF( tinP , tPathP+T(psttShortNew) , tPathP+tShort , 0 ) ;
+                            countT cHits = etherP.strReplaceF( tinP , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                            ZE( strokeS* , psttShortNew ) ;
+                            //CS:CODEsYNC: DUPLICATE CODE: 5101200f 5101200f
+                        {
+                        if( bFail )
+
+                        }
+                            if( bFail ) break ;
+
+                            }
+                                }
+                                    break ;
+                                    bFail = !bData && !bMeta ;
+                                    boolT bMeta = !etherP.strCompareF( tinP , psttc1 , tMetaP ) ;
+                                    boolT bData = !etherP.strCompareF( tinP , psttc1 , tDataP ) ;
+                                {
+                                case 0xa :
+                                }
+                                    break ;
+                                    bFail = psttc1->idAdam != 3 ;
+                                {
+                                case 0x9 :
+                                }
+                                    break ;
+                                    bFail = psttc1->idAdam != 0x20 ;
+                                {
+                                case 0x8 :
+                                }
+                                    break ;
+                                    bFail = psttc1->idAdam != 0xd ;
+                                {
+                                case 0x7 :
+                                case 0x6 :
+                                }
+                                    break ;
+                                    bFail = psttc1->idAdam != 8 ;
+                                {
+                                case 0x5 :
+                                case 0x4 :
+                                }
+                                    break ;
+                                    bFail = !!etherP.strCompareF( tinP , psttc1 , t2P ) ;
+                                {
+                                case 0x3 :
+                                }
+                                    break ;
+                                    bFail = etherP.strCompareF( tinP , psttc1 , t9P ) && etherP.strCompareF( tinP , psttc1 , taP ) ;
+                                {
+                                case 0x2 :
+                                }
+                                    break ;
+                                    bFail = !!etherP.strCompareF( tinP , psttc1 , tHeyIdeaFarmP ) ;
+                                {
+                                case 0x1 :
+                            {
+                            switch( ++ idw )
+                            //etherP.traceF( tinP , tb4+T(psttc1) ) ;
+                            _IO_
+                        {
+                        FORsTRINGSiN1( pstt1w )
+                        ZE( countT , idw ) ;
+                        ZE( boolT , bFail ) ;
+                        _IO_
+                    {
+                    else
+                    }
+                        tShortNew = tnP ;
+                        etherP.delF( tinP , psttShortNew ) ;
+                        if( cHits ) etherP.diskMoveFileOrDirF( tinP , tPathP+T(psttShortNew) , tPathP+tShort , 0 ) ;
+                        countT cHits = etherP.strReplaceF( tinP , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                        ZE( strokeS* , psttShortNew ) ;
+                        _IO_
+                    {
+                    if( cWords < 0xb )
+                    //etherP.traceF( tinP , T("cWords:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    countT cWords = etherP.strWordsF( tinP , pstt1w , tShortNew , sttq , tDotP , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
+                    strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                    ZE( strokeS* , pstt1w ) ;
+
+                    // b    jpg
+                    // a    data
+                    // 9    001
+                    // 8    2a24e441984f7650ef8982bc85155e1c
+                    // 7    20170131@0012
+                    // 6    00000000@0000
+                    // 5    00000001
+                    // 4    00000000
+                    // 3    2
+                    // 2    9
+                    // 1   !ideafarm
+                    //
+                    // !ideafarm.9.2.00000000.00000001.00000000@0000.20170131@0012.2a24e441984f7650ef8982bc85155e1c.001.data.jpg
+                    // EXPECTED INPUT, PARSED TO WORDS
+
+                    _IO_
+                {
+                if( tShortNew.csF( tinP ) )
+
+                }
                     }
                         }
                             }
@@ -221,34 +342,34 @@ TODO
                     TN( tLongNew , "" ) ; tLongNew = tPathP+tShortNew ;
                     etherP.delF( tinP , psttShortNew ) ;
                     tShortNew = T(psttShortNew) ;
-                    countT cHits = etherP.strReplaceF( tinP , psttShortNew , tShort , T("_20") , T(".20") , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                    countT cHits = etherP.strReplaceF( tinP , psttShortNew , tShort , tUscore20P , tDot20P , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
                     ZE( strokeS* , psttShortNew ) ;
                     _IO_
                 {
                 TN( tShortNew , "" ) ;
             {
-            else if( !etherP.strIdF( tinP , T(".fset.zip") , tShort ) )
+            else if( !etherP.strIdF( tinP , tDotFsetDotZipP , tShort ) )
             }
                 etherP.traceF( tinP , T("!exception: zapped  unexpected file [tLong]:    ")+tPathP+tShort ) ;
                 etherP.boxZapF( tinP , tPathP+tShort ) ;
                 etherP.traceF( tinP , T("!exception: zapping unexpected file [tLong]:    ")+tPathP+tShort ) ;
                 _IO_
             {
-            else if( etherP.strIdF( tinP , T(".meta.datafiletimes") , tShort ) )
+            else if( etherP.strIdF( tinP , tDotMetaDotDatafiletimesP , tShort ) )
             }
                 etherP.delF( tinP , psttShortNew ) ;
                 if( cHits ) etherP.diskMoveFileOrDirF( tinP , tPath+T(psttShortNew) , tPath+tShort , 0 ) ;
-                countT cHits = etherP.strReplaceF( tinP , psttShortNew , tShort , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                countT cHits = etherP.strReplaceF( tinP , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
                 ZE( strokeS* , psttShortNew ) ;
                 //CS:CODEsYNC: DUPLICATE CODE: 5101200f 5101200f
                 _IO_
             {
-            else if( etherP.strIdF( tinP , T(".!.control.") , tShort ) )
+            else if( etherP.strIdF( tinP , tDotHeyDotControlDotP , tShort ) )
             }
                 _IO_
                 etherP.traceF( tinP , T("!exception: file ignored (name does not begin with !ideafarm.) [tLong]:    ")+tPathP+tShort ) ;
             {
-            if( 1 != etherP.strIdF( tinP , T("!ideafarm.") , tShort ) )
+            if( 1 != etherP.strIdF( tinP , tHeyIdeaFarmDotP , tShort ) )
 
             else { __NZ( etherP.strCompareF( tinP , tPath , tPathP ) ) ; }
             }
@@ -282,7 +403,7 @@ TODO
             }
                 }
                     pJotUnsortedShortP = new( 0 , tinP , LF ) jotC( tinP , tPart2 , flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_WRITE | flJOTc_PURGEoNcT | flJOTc_PATCHbOOKSfLAGStOpURGEoNdT , 1 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ; ___( pJotUnsortedShortP ) ;
-                    TN( tPart2  , "" ) ; tPart2  = T("migrate.unsorted.short.filenames.")+tDeviceP+tDotP+tYearP ;
+                    TN( tPart2  , "" ) ; tPart2  = tMigrateUnsortedPrefixP+tDeviceP+tDotP+tYearP ;
 
                     bYearDoP = 1 ;
                     etherP.traceF( tinP , T("year to do:    ")+tYearP ) ;
@@ -355,7 +476,7 @@ TODO
                     if( pJotUnsortedShortP ) pJotUnsortedShortP->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;
                     if( !bQuitP && etPrime ) *(boolT*)&bQuitP = 1 ;
                     if( pJotSortedShort ) pJotSortedShort->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;
-                    sortF( tinP , etherP , etPrime , pJotSortedShort , *pJotUnsortedShortP , psttName , T("migrate.sorted.short.filenames.")+tDeviceP+tDotP+tYearP , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES , TUCK << 0 , flSORTERc_SILENTLYsUPPRESSdUPLICATES , flJOTc_null , cShortNames , 0 ) ; ___( pJotSortedShort ) ;
+                    sortF( tinP , etherP , etPrime , pJotSortedShort , *pJotUnsortedShortP , psttName , tMigrateSortedPrefixP+tDeviceP+tDotP+tYearP , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES , TUCK << 0 , flSORTERc_SILENTLYsUPPRESSdUPLICATES , flJOTc_null , cShortNames , 0 ) ; ___( pJotSortedShort ) ;
                     ZE( strokeS* , psttName ) ;
                     //etherP.traceF( tinP , T("sorting short names [cShortNames]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
@@ -407,21 +528,37 @@ TODO
 
     if( etPrime ) *(boolT*)&bQuitP = 1 ;
 
-    textC&         tYearP               =        *(textC*)pcArgP[ 0x0e ] ;
-    textC&         tDeviceP             =        *(textC*)pcArgP[ 0x0d ] ;
-    boolT&         bArmDoNamesP         =        *(boolT*)pcArgP[ 0x0c ] ;
-    countT&        cYearKidDirectoriesP =       *(countT*)pcArgP[ 0x0b ] ;
-    jotC*&         pJotUnsortedShortP   =        *(jotC**)pcArgP[ 0x0a ] ;
-    textC&         tPathP               =        *(textC*)pcArgP[ 0x09 ] ;
-    textC&         tDotP                =        *(textC*)pcArgP[ 0x08 ] ;
-    textC&         tb4P                 =        *(textC*)pcArgP[ 0x07 ] ;
-    textC&         tnP                  =        *(textC*)pcArgP[ 0x06 ] ;
-    textC&         tSlashP              =        *(textC*)pcArgP[ 0x05 ] ;
-    boolT&         bYearDoP             =        *(boolT*)pcArgP[ 0x04 ] ;
-    boolT&         bYearP               =        *(boolT*)pcArgP[ 0x03 ] ;
-    const strokeS* psttYearTestP        = (const strokeS*)pcArgP[ 0x02 ] ;
-    const strokeS* psttzArchivesP       = (const strokeS*)pcArgP[ 0x01 ] ;
-    countT&        cSetsDoneP           =       *(countT*)pcArgP[ 0x00 ] ;
+    textC&         tUscore20P                =        *(textC*)pcArgP[ 0x1e ] ;
+    textC&         tDot20P                   =        *(textC*)pcArgP[ 0x1d ] ;
+    textC&         tDotFsetDotZipP           =        *(textC*)pcArgP[ 0x1c ] ;
+    textC&         tDotMetaDotDatafiletimesP =        *(textC*)pcArgP[ 0x1b ] ;
+    textC&         tHeyIdeaFarmDot9DotP      =        *(textC*)pcArgP[ 0x1a ] ;
+    textC&         tHeyIdeaFarmDotADotP      =        *(textC*)pcArgP[ 0x19 ] ;
+    textC&         tDotHeyDotControlDotP     =        *(textC*)pcArgP[ 0x18 ] ;
+    textC&         tHeyIdeaFarmDotP          =        *(textC*)pcArgP[ 0x17 ] ;
+    textC&         tMigrateUnsortedPrefixP   =        *(textC*)pcArgP[ 0x16 ] ;
+    textC&         tMigrateSortedPrefixP     =        *(textC*)pcArgP[ 0x15 ] ;
+    textC&         tYearP                    =        *(textC*)pcArgP[ 0x14 ] ;
+    textC&         tDeviceP                  =        *(textC*)pcArgP[ 0x13 ] ;
+    boolT&         bArmDoNamesP              =        *(boolT*)pcArgP[ 0x12 ] ;
+    countT&        cYearKidDirectoriesP      =       *(countT*)pcArgP[ 0x11 ] ;
+    jotC*&         pJotUnsortedShortP        =        *(jotC**)pcArgP[ 0x10 ] ;
+    textC&         t2P                       =        *(textC*)pcArgP[ 0x0f ] ;
+    textC&         taP                       =        *(textC*)pcArgP[ 0x0e ] ;
+    textC&         t9P                       =        *(textC*)pcArgP[ 0x0d ] ;
+    textC&         tHeyIdeaFarmP             =        *(textC*)pcArgP[ 0x0c ] ;
+    textC&         tPathP                    =        *(textC*)pcArgP[ 0x0b ] ;
+    textC&         tMetaP                    =        *(textC*)pcArgP[ 0x0a ] ;
+    textC&         tDataP                    =        *(textC*)pcArgP[ 0x09 ] ;
+    textC&         tDotP                     =        *(textC*)pcArgP[ 0x08 ] ;
+    textC&         tb4P                      =        *(textC*)pcArgP[ 0x07 ] ;
+    textC&         tnP                       =        *(textC*)pcArgP[ 0x06 ] ;
+    textC&         tSlashP                   =        *(textC*)pcArgP[ 0x05 ] ;
+    boolT&         bYearDoP                  =        *(boolT*)pcArgP[ 0x04 ] ;
+    boolT&         bYearP                    =        *(boolT*)pcArgP[ 0x03 ] ;
+    const strokeS* psttYearTestP             = (const strokeS*)pcArgP[ 0x02 ] ;
+    const strokeS* psttzArchivesP            = (const strokeS*)pcArgP[ 0x01 ] ;
+    countT&        cSetsDoneP                =       *(countT*)pcArgP[ 0x00 ] ;
 
     etherC& etPrime = etherC::etPrimeIF() ;
     etherC& etherP = *tinP.pEther ;
@@ -436,159 +573,64 @@ boolT walkCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQui
     }
         }
             }
-                etherP.delF( tinP , pstt1w ) ;
+                }
+                    bQuitP = 1 ;
+                    etherP.delF( tinP , psttShort ) ;
+                    etherP.traceF( tinP , T("!exception: could not sink ; aborting [psttShort]:    ")+T(psttShort) ) ;
+                {
+                else
+                if( ids ) ; //etherP.traceF( tinP , T("sinked (aok)  [psttShort]:    ")+T(psttShort) ) ;
+                stShort.sinkF( tinP , ids , psttShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                ZE( countT , ids ) ;
+                //etherP.traceF( tinP , T("sinking       [psttShort]:    ")+T(psttShort) ) ;
+                etherP.strMakeF( tinP , LF , psttShort , tShort ) ; ___( psttShort ) ;
+                ZE( strokeS* , psttShort ) ;
+                //etherP.traceF( tinP , T("about to push [tShort]:    ")+tShort ) ;
+                // IF GET HERE THEN THIS FILE IS ACCEPTED AS A MEMBER OF A FORMAT 9 FILESET
+            {
+            if( !bQuitP )
+
+            }
                 }
                     }
                         }
+                            etherP.traceF( tinP , T("!exception: could not get file time [tShort]:    ")+tShort ) ;
                             bQuitP = 1 ;
-                            etherP.delF( tinP , psttShort ) ;
-                            etherP.traceF( tinP , T("!exception: could not sink ; aborting [psttShort]:    ")+T(psttShort) ) ;
+                            POOPRqUIET
                         {
-                        else
-                        if( ids ) ; //etherP.traceF( tinP , T("sinked (aok)  [psttShort]:    ")+T(psttShort) ) ;
-                        stShort.sinkF( tinP , ids , psttShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
-                        ZE( countT , ids ) ;
-                        //etherP.traceF( tinP , T("sinking       [psttShort]:    ")+T(psttShort) ) ;
-                        etherP.strMakeF( tinP , LF , psttShort , tShort ) ; ___( psttShort ) ;
-                        ZE( strokeS* , psttShort ) ;
-                        //etherP.traceF( tinP , T("about to push [tShort]:    ")+tShort ) ;
-                        // IF GET HERE THEN THIS FILE IS ACCEPTED AS A MEMBER OF A FORMAT 9 FILESET
+                        if( POOP )
+
+                        //etherP.traceF( tinP , T("      data file time written: ")+TT(timeDataWritten.time1,timeDataWritten.time2) ) ;
+                        thirdC::getFileTimeIF( tinP , fiWo , &timeDataWritten , 0 , 0 ) ;
+                        timeDataWritten = timeS() ;
                     {
                     else
                     }
+                        etherP.traceF( tinP , T("!exception: could not open data file [tShort]:    ")+tShort ) ;
                         bQuitP = 1 ;
-                        etherP.delF( tinP , psttShortNew ) ;
-                        if( cHits ) etherP.diskMoveFileOrDirF( tinP , tPathP+T(psttShortNew) , tPathP+tShort , 0 ) ;
-                        countT cHits = etherP.strReplaceF( tinP , psttShortNew , tShort , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
-                        ZE( strokeS* , psttShortNew ) ;
-                        //CS:CODEsYNC: DUPLICATE CODE: 5101200f 5101200f
+                        POOPRqUIET
                     {
-                    if( bFail )
+                    if( POOP )
 
-                    }
-                        if( bFail ) break ;
+                    fileC fiWo( tinP , (strokeS*)( tPathP+tShort ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 1 , 0 ) ;
 
-                        }
-                            }
-                                break ;
-
-                                }
-                                    }
-                                        }
-                                            }
-                                                etherP.traceF( tinP , T("!exception: could not get file time [tShort]:    ")+tShort ) ;
-                                                bFail = 1 ;
-                                                POOPRqUIET
-                                            {
-                                            if( POOP )
-
-                                            //etherP.traceF( tinP , T("      data file time written: ")+TT(timeDataWritten.time1,timeDataWritten.time2) ) ;
-                                            thirdC::getFileTimeIF( tinP , fiWo , &timeDataWritten , 0 , 0 ) ;
-                                            timeDataWritten = timeS() ;
-                                        {
-                                        else
-                                        }
-                                            etherP.traceF( tinP , T("!exception: could not open data file [tShort]:    ")+tShort ) ;
-                                            bFail = 1 ;
-                                            POOPRqUIET
-                                        {
-                                        if( POOP )
-
-                                        fileC fiWo( tinP , (strokeS*)( tPathP+tShort ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 1 , 0 ) ;
-
-                                        SCOOPS
-                                        _IO_
-                                    {
-                                    IFsCRATCH
-                                    _IO_
-                                {
-                                if( bData )
-
-                                bFail = !bData && !bMeta ;
-                                boolT bMeta = !etherP.strCompareF( tinP , psttc1 , tMeta ) ;
-                                boolT bData = !etherP.strCompareF( tinP , psttc1 , tData ) ;
-                            {
-                            case 0xa :
-                            }
-                                break ;
-                                bFail = psttc1->idAdam != 3 ;
-                            {
-                            case 0x9 :
-                            }
-                                break ;
-                                bFail = psttc1->idAdam != 0x20 ;
-                            {
-                            case 0x8 :
-                            }
-                                break ;
-                                bFail = psttc1->idAdam != 0xd ;
-                            {
-                            case 0x7 :
-                            case 0x6 :
-                            }
-                                break ;
-                                bFail = psttc1->idAdam != 8 ;
-                            {
-                            case 0x5 :
-                            case 0x4 :
-                            }
-                                break ;
-                                bFail = !!etherP.strCompareF( tinP , psttc1 , t2 ) ;
-                            {
-                            case 0x3 :
-                            }
-                                break ;
-                                bFail = etherP.strCompareF( tinP , psttc1 , t9 ) && etherP.strCompareF( tinP , psttc1 , ta ) ;
-                            {
-                            case 0x2 :
-                            }
-                                break ;
-                                bFail = !!etherP.strCompareF( tinP , psttc1 , tHeyIdeaFarm ) ;
-                            {
-                            case 0x1 :
-                        {
-                        switch( ++ idw )
-                        //etherP.traceF( tinP , tb4+T(psttc1) ) ;
-                        _IO_
-                    {
-                    FORsTRINGSiN1( pstt1w )
-                    ZE( countT , idw ) ;
-                    ZE( boolT , bFail ) ;
+                    SCOOPS
                     _IO_
                 {
-                else
-                }
-                    etherP.delF( tinP , psttShortNew ) ;
-                    if( cHits ) etherP.diskMoveFileOrDirF( tinP , tPathP+T(psttShortNew) , tPathP+tShort , 0 ) ;
-                    countT cHits = etherP.strReplaceF( tinP , psttShortNew , tShort , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
-                    ZE( strokeS* , psttShortNew ) ;
-                    _IO_
-                {
-                if( cWords < 0xb )
-                //etherP.traceF( tinP , T("cWords:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                countT cWords = etherP.strWordsF( tinP , pstt1w , tShort , sttq , tDot , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
-                strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                ZE( strokeS* , pstt1w ) ;
-
-                // b    jpg
-                // a    data
-                // 9    001
-                // 8    2a24e441984f7650ef8982bc85155e1c
-                // 7    20170131@0012
-                // 6    00000000@0000
-                // 5    00000001
-                // 4    00000000
-                // 3    2
-                // 2    9
-                // 1   !ideafarm
-                //
-                // !ideafarm.9.2.00000000.00000001.00000000@0000.20170131@0012.2a24e441984f7650ef8982bc85155e1c.001.data.jpg
-                // EXPECTED INPUT, PARSED TO WORDS
+                IFsCRATCH
                 _IO_
             {
-            if( !POOP )
+            if( !bQuitP && bData )
+
+            bQuitP = !bData && !bMeta ;
+            boolT bMeta = 1 == etherP.strIdF( tinP , tMeta , tShortAfterPrefix ) ;
+            boolT bData = 1 == etherP.strIdF( tinP , tData , tShortAfterPrefix ) ;
+
+            //20240324@1122: FILE NAME VALIDATION MOVED FROM HERE TO walkCBF IN ORDER TO AVOID THE NEED TO QUIT IF A NONCONFORMING FILE NAME IS ENCOUNTERED ; NOW THOSE FILES ARE JUST IGNORED
+
             _IO_
         {
+        if( !POOP )
 
         }
             break ;
@@ -615,16 +657,17 @@ boolT walkCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQui
 
         //etherP.traceF( tinP , T("the prefix of this file is:                     ")+tShortPrefix ) ;
         }
-            etherP.delF( tinP , psttnu ) ;
-            etherP.delF( tinP , psttShortPrefix ) ;
-    
-            tShortPrefix  = T(psttShortPrefix) ;
-            etherP.strBisectF( tinP , psttShortPrefix , psttnu , tShort , tDot , 9 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShortPrefix ) ; ___( psttnu ) ;                                      // tDot
-            ZE( strokeS* , psttnu ) ;
-            ZE( strokeS* , psttShortPrefix ) ;
+            etherP.delF( tinP , psttAfterPrefix ) ;
+            etherP.delF( tinP , psttPrefix ) ;
+            tShortAfterPrefix  = T(psttAfterPrefix) ;
+            tShortPrefix       = T(psttPrefix) ;
+            etherP.strBisectF( tinP , psttPrefix , psttAfterPrefix , tShort , tDot , 9 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPrefix ) ; ___( psttAfterPrefix ) ;                                      // tDot
+            ZE( strokeS* , psttAfterPrefix ) ;
+            ZE( strokeS* , psttPrefix ) ;
             _IO_
         {
-        TN( tShortPrefix  , "" ) ;
+        TN( tShortAfterPrefix , "" ) ;
+        TN( tShortPrefix      , "" ) ;
 
         etherP.traceF( tinP , T("consuming sorted [tShort]:    ")+tShort ) ;
         
