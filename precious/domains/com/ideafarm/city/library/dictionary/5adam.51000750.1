@@ -1118,21 +1118,22 @@ const countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
             etThread.traceF( tinP , T("ROOTmAILoUT: hiring ifcIDaDAM_HEALaRCHIVES") ) ;
         {
         else
-        if( !bHeal ) etThread.traceF( tinP , T("ROOTmAILoUT: NOT hiring ifcIDaDAM_HEALaRCHIVES") ) ;
+        if( bNoHeal ) etThread.traceF( tinP , T("ROOTmAILoUT: NOT hiring ifcIDaDAM_HEALaRCHIVES") ) ;
 
+        //20240325@1619: HEALaRCHIVES IS ALWAYS LAUNCHED, AS MARKETING POLICY ("BARTERWARE")
         //20240320@2127: TO WORK AROUND A BUG, HEALaRCHIVES IS ONLY LAUNCHED WHEN EXPLICITLY COMMANDED
         //20221229@1429: HEALaRCHIVES IS ALWAYS LAUNCHED, AS MARKETING POLICY ("BARTERWARE")
 
-        etThread.traceF( tinP , T("ROOTmAILoUT: [bHeal]:    ")+TF2(bHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tinP , T("ROOTmAILoUT: [bNoHeal]:    ")+TF2(bNoHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         }
             etThread.delF( tinP , psttHeal ) ;
-            bHeal = psttHeal && !etThread.strCompareF( tinP , psttHeal , T("yes") ) ;
+            bNoHeal = psttHeal && !etThread.strCompareF( tinP , psttHeal , T("no") ) ;
             //tinP.pc Utility[ 0 ] -- ; //U::
             ZE( strokeS* , psttHeal ) ; etThread.querySettingF( tinP , psttHeal , T("!ipdos.heal")  ) ; ___( psttHeal ) ;
             //tinP.pc Utility[ 0 ] ++ ; //U::
         {
-        ZE( boolT , bHeal ) ;
+        ZE( boolT , bNoHeal ) ;
 
         etThread.traceF( tinP , T("debug 1") ) ;
     {
