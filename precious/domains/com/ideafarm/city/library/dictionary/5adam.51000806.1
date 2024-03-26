@@ -39,8 +39,10 @@ REST
         new( 0 , tinP , pbz , sizeof pbz ) jobHealFileS( tinP , etThread , cnu , *(paramHealFileS*)0 , 0 , 0 , 0 ) ;
         byteT pbz[ sizeof( jobHealFileS ) ] ;
         ZE( countT , cnu ) ;
-        FIREmYSELF              // THIS IS TO ENSURE THAT ether IS IMPOTENT
     {
+    while( cWorkersHeal )
+
+    FIREmYSELF              // THIS IS TO ENSURE THAT ether IS IMPOTENT
 
     }
         }
@@ -1175,6 +1177,7 @@ DONE( tmExecutiveHealYearF )
                             //*******************************************************************************************************************************************************************************************************************************************************************************
                             //*******************************************************************************************************************************************************************************************************************************************************************************
 
+                            /*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("---- [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             etThread.delF( tinP , psttShort ) ;
                             }
                                 #endif
@@ -1183,9 +1186,9 @@ DONE( tmExecutiveHealYearF )
                                 #if defined( IFCtESTING )
 
                                 }
-                                    //etThread.traceF( tinP , T("wrote   to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    etThread.traceF( tinP , T("wrote   to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     funJobHealFileP.writeF( tinP , pbz ) ;
-                                    //etThread.traceF( tinP , T("writing to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    etThread.traceF( tinP , T("writing to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     new( 0 , tinP , pbz , sizeof pbz ) jobHealFileS( tinP , etThread , cJobsPendingHeal , infoYear , psttShort , idName , cShortNames ) ;
                                     byteT pbz[ sizeof( jobHealFileS ) ] ;
                                 {
@@ -1243,7 +1246,7 @@ DONE( tmExecutiveHealYearF )
                             count04T c4CbUsed = *(count04T*)( pcElt + 1 ) ;
                             countT   idJot    =              *pcElt       ;
 
-                            /*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("[idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            /*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("++++ [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             if( ++ idName <= idNameSkipBeyond ) continue ;
 
                             //*******************************************************************************************************************************************************************************************************************************************************************************
@@ -2049,6 +2052,7 @@ DONE( tmUpdateYearCheckpointF )
             TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/status.")+tArchiveP+tDot+tYearP+T(".lath.idName.completed.ttt") ;
 
             //etThread.traceF( tinP , T("lath done [idNameLathDoneInSequenceNew]:    ")+TF2(idNameLathDoneInSequenceNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            _IO_
         {
         if( idNameLathDoneInSequenceNew )
 
@@ -2062,6 +2066,7 @@ DONE( tmUpdateYearCheckpointF )
                     jobHealFileS* pzDoomed = pzJob ;
                     idNameLathDoneInSequenceNew = idNameConsecutiveLathDoneP = pzJob->idName ;
                     st_pzJobHealFileDoneP.extractF( 0 , tinP ) ;
+                    _IO_
                 {
                 else if( idNameConsecutiveLathDoneP + 1 == pzJob->idName )
                 }
@@ -2069,24 +2074,30 @@ DONE( tmUpdateYearCheckpointF )
                     DELzOMBIE( pzJob ) ;
                     jobHealFileS* pzDoomed = pzJob ;
                     st_pzJobHealFileDoneP.extractF( 0 , tinP ) ;
+                    _IO_
                 {
                 if( ether )  //20231126@2016: ADDED ; IF I'VE BEEN FIRED, tmWorkerHealFileF MIGHT HAVE DELETED SOME JOBS SO I CANNOT RELY ON ALL idName VALUES BEING PRESENT IN st_pzJobHealFileDoneP ; IF ( idNameConsecutiveLathDoneP + 1 ) IS NOT PRESENT THEN THIS LOOP WILL SPIN FOREVER
 
                 //etThread.traceF( tinP , T("walking stack of done jobs [idName,short]:    ")+TF3(pzJob->idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T(pzJob->psttShort) ) ;
                 jobHealFileS* pzJob = (jobHealFileS*)st_pzJobHealFileDoneP.downF( tinP , hStk ) ;
+                _IO_
             {
             do
             handleC hStk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             //bDo = 1 ;
+            _IO_
         {
         if( st_pzJobHealFileDoneP )
         st_pzJobHealFileDoneP.grabF( tinP , TAG( TAGiDnULL ) ) ;
         ZE( countT , idNameLathDoneInSequenceNew ) ;
+        _IO_
     {
     while( !bFireCheckpointUpdateP )
     //ZE( boolT , bDo ) ;
     TN( tDot , "." ) ;
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+    _IO_
 
     textC&       tYearP                     =       *(textC*)pTaskP->c6 ;
     textC&       tArchiveP                  =       *(textC*)pTaskP->c5 ;
@@ -2106,6 +2117,7 @@ DONE( tmWorkerMemCompareF )
         DEL( pJob ) ;
         stJobCompareP >> *(countT*)&pJob ;
         ZE( jobCompareOoImagesS* , pJob ) ;
+        _IO_
     {
     while( stJobCompareP )
     stJobCompareP.grabF( tinP , TAG( TAGiDnULL ) ) ;
@@ -2121,6 +2133,7 @@ DONE( tmWorkerMemCompareF )
             ++ s ; thirdC::dosSleepWinkIF( tinP , 0 ) ;
             if( cYearsHealingP && !( ++ cIdle % TOCK ) ) etThread.traceF( tinP , T("years are healing but i have nothing to do (no memory compare jobs) [cIdle]:    ")+TF2(cIdle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             stJobCompareP.ungrabF( tinP ) ;
+            _IO_
         {
         if( !cDone )
 
@@ -2157,11 +2170,13 @@ DONE( tmWorkerMemCompareF )
                 //{
                 //if( !bWatching )
             #if defined( IFCtESTING )
+            _IO_
         {
         while( stJobCompareP )
         //ZE( boolT , bWatching ) ;
         ZE( countT , cDone ) ;
         stJobCompareP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        _IO_
     {
     while( !ether )
     ZE( countT , cIdle ) ;
@@ -2171,6 +2186,8 @@ DONE( tmWorkerMemCompareF )
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
     TN( tIndent3 , "|           " ) ;
+
+    _IO_
 
     countT&       cYearsHealingP                  = *(countT*)pTaskP->c6 ;
     flagsT        flagsModeP                      =   (flagsT)pTaskP->c5 ;
@@ -2192,6 +2209,7 @@ DONE( tmWorkerFileInfoF )
         jobFileInfoS* pzDoomed = pzJob ;
         if( !pzJob ) break ;
         jobFileInfoS* pzJob = (jobFileInfoS*)funJobFileInfoP.readF( tinP , flFUNNELhORNcrEAD_NOwAIT ) ;
+        _IO_
     {
     for(;;)
 
@@ -2213,11 +2231,13 @@ DONE( tmWorkerFileInfoF )
                         bAbortP = 1 ;
                         etThread.traceF( tinP , T("!exception:  diskFileQueryF [tLong]:    ")+T(pzJob->psttLong) ) ;
                         POOPRqUIET
+                        _IO_
                     {
                     else
                     if( !POOP ) pzJob->pInfo = pInfoFile ;
                     tinP.pEtScratch->diskFileQueryF( tinP , pInfoFile , fi ) ; ___( pInfoFile ) ;
                     ZE( infoFileS* , pInfoFile ) ;
+                    _IO_
                 {
                 else if( bOk )
                 }
@@ -2226,6 +2246,7 @@ DONE( tmWorkerFileInfoF )
                     etThread.traceF( tinP , T("!exception:  fileC::fileC [POOP,tLong]:    ")+TF2(save,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pzJob->psttLong) ) ;
                     POOPRqUIET
                     countT save = POOP ;
+                    _IO_
                 {
                 if( POOP )
 
@@ -2250,9 +2271,11 @@ DONE( tmWorkerFileInfoF )
                 fileC fi( tinP , pzJob->psttLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 1 ) ;
 
                 SCOOPS
+                _IO_
             {
             IFsCRATCH
             boolT bOk = 1 ;
+            _IO_
         {
         if( !bQuitP )
 
@@ -2269,12 +2292,15 @@ DONE( tmWorkerFileInfoF )
         etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
+        _IO_
     {
     while( !bQuitP )
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
     TN( tb4 , "    " ) ;
     TN( tIndent3 , "|           " ) ;
+
+    _IO_
 
     flagsT        flagsModeP                      =         (flagsT)pTaskP->c6 ;
     funnelHornC&  funJobFileInfoP                 =  *(funnelHornC*)pTaskP->c5 ;
@@ -2296,6 +2322,7 @@ DONE( tmWorkerHealFileF )
         jobHealFileS* pzDoomed = pzJob ;
         if( !pzJob ) break ;
         jobHealFileS* pzJob = (jobHealFileS*)funJobHealFileP.readF( tinP , flFUNNELhORNcrEAD_NOwAIT ) ;
+        _IO_
     {
     for(;;)
 
@@ -2305,6 +2332,7 @@ DONE( tmWorkerHealFileF )
             funJobHealFileP.readDoneF( (byteT*)pzDoomed ) ;
             DELzOMBIE( pzJob ) ;
             jobHealFileS* pzDoomed = pzJob ;
+            _IO_
         {
         if( !ids )
 
@@ -2316,6 +2344,7 @@ DONE( tmWorkerHealFileF )
             {
             if( ids )
             pzJob->info.st_pzJobHealFileDone.sinkF( tinP , ids , (countT)pzJob , flSTACKsINK_UNIQUE , subtractHealFileJobF ) ;
+            _IO_
         {
         while( !ether )
         ZE( countT , ids ) ;
@@ -2326,6 +2355,7 @@ DONE( tmWorkerHealFileF )
             // /*if( !( idIn % TUCK ) )*/ etThread.traceF( tinP , T("calling healShortNameF [idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             //countT idIn = 1 + incv02AM( idInLath ) ;
             //static countT idInLath ;
+            _IO_
         {
         TN( tShort , pzJob->psttShort ) ;
 
@@ -2338,11 +2368,13 @@ DONE( tmWorkerHealFileF )
                 funJobHealFileP.readDoneF( (byteT*)pzDoomed ) ;
                 DELzOMBIE( pzJob ) ;
                 jobHealFileS* pzDoomed = pzJob ;
+                _IO_
             {
             if( pzJob )
         {
         if( !pzJob || ether )
         jobHealFileS* pzJob = (jobHealFileS*)funJobHealFileP.readF( tinP ) ;
+        _IO_
     {
     while( !ether )
     ZE( countT , cIdle ) ;
@@ -2358,6 +2390,8 @@ DONE( tmWorkerHealFileF )
     boolT bChatter = idIn == 1 ;
     countT idIn = 1 + incv02AM( idInLath ) ;
     static countT idInLath ;
+
+    _IO_
 
     countT        cToHireCompareP                 =                 pTaskP->c8 ;
     countT        cToHireHealP                    =                 pTaskP->c7 ;

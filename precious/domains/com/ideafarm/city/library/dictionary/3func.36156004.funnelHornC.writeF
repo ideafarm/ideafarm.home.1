@@ -20,8 +20,10 @@
 
     }
         ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
+        tinP.pEther->traceF( tinP , T("writeF / slot has not yet been read, so napping for a wink [idWink]:    ")+TF2(++idWink,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( *(countT*)pbo && !bQuit )                                                    // NAP UNTIL THE SLOT'S "NOT YET READ" FLAG HAS BEEN RESET
+    ZE( countT , idWink ) ;
     sleepC  s( tinP , TAG( TAGiDnULL ) ) ;
 
     byteT* pbo = pbBuffer + offo * cbItemGross ;
