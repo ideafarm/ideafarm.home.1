@@ -1,5 +1,4 @@
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
 //
@@ -11,9 +10,9 @@
 REST
 
 }
-    #endif
-        //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
-    #if defined( IFCtESTING )
+    // #endif
+    //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
+    // #if defined( IFC tESTING )
 
     }
         }
@@ -194,7 +193,7 @@ REST
                                     //             !etThread.strCompareF( tinP , psttzYear , T("2012") )
                                     //
                                     //    boolT bIgnore = 
-                                    //#if defined( IFCtESTING )
+                                    //#if defined( IFC tESTING )
 
                                     psttzYear = (strokeS*)swTallyByYear.leverF( tinP , idf ) ;
                                     _IO_
@@ -272,17 +271,18 @@ REST
                 swsPathToArchivesByArchiveName.ungrabF( tinP ) ;
                 countT cFlavors = swsPathToArchivesByArchiveName.cFlavorsF( tinP ) ;
                 swsPathToArchivesByArchiveName.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                //#endif
+                #endif
                     TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
-                //#else
-                //    //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
-                //    //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
-                //      TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
-                //    //TN( tYearPattern , "2023/" ) ;
-                //    //TN( tYearPattern , "2008/" ) ;
-                //    //TN( tYearPattern , "1999/" ) ;
-                //    //TN( tYearPattern , "1234/" ) ;
-                //#if defined( IFCtESTING )
+                #else
+                    //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
+                    //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
+                    //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
+                    //TN( tYearPattern , "2023/" ) ;
+                      TN( tYearPattern , "2022/" ) ;
+                    //TN( tYearPattern , "2008/" ) ;
+                    //TN( tYearPattern , "1999/" ) ;
+                    //TN( tYearPattern , "1234/" ) ;
+                #if defined( IFCtESTING )
                 _IO_
             {
             if( !bAbort )
@@ -640,9 +640,9 @@ REST
     ZE( countT , cWorkersCompare ) ;
     ZE( countT , cYearsHealing   ) ;
 
-    #endif
-        //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cToHireHeal ) ;
-    #if defined( IFCtESTING )
+    // #endif
+    //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cToHireHeal ) ;
+    // #if defined( IFC tESTING )
 
     }
         etThread.traceF( tinP , T("HEALaRCHIVES: [bKeepNames,bFireOs,bStrict,bNoImageCompare,bNoMoveOrReplace,bLonelyIsOk]:    ")+tb4+TF2(bKeepNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bFireOs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bStrict,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bNoImageCompare,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bNoMoveOrReplace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bLonelyIsOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -660,7 +660,7 @@ REST
     //#endif
     //    flagsMode &= ~( F(flHEALmODE_FIREoS) ) ;
     //    *(countT*)&cToHireHeal = 0x1 ;
-    //#if defined( IFCtESTING )
+    //#if defined( IFC tESTING )
 
     ;
         : CtOhIREcOMPARE
@@ -1072,9 +1072,9 @@ TASK( tmObeyPauseSemaphoreFileF )
 
 DONE( tmExecutiveHealYearF )
 }
-    #endif
-        //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
-    #if defined( IFCtESTING )
+    // #endif
+    //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
+    // #if defined( IFC tESTING )
 
     dec02AM( cExecutiveHealYearP ) ;
     }
@@ -1155,7 +1155,7 @@ DONE( tmExecutiveHealYearF )
 
                         ++ s ; thirdC::dosSleepWinkIF( tinP , 0 ) ;
 
-                        etThread.traceF( tinP , T("waiting for pending heal jobs [cJobsPendingHeal,stDone]:    ")+TF2(cJobsPendingHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(st_pzJobHealFileDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+                        //etThread.traceF( tinP , T("waiting for pending heal jobs [cJobsPendingHeal,stDone]:    ")+TF2(cJobsPendingHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(st_pzJobHealFileDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
 
                         _IO_
                     {
@@ -1180,10 +1180,10 @@ DONE( tmExecutiveHealYearF )
                             /*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("---- [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             etThread.delF( tinP , psttShort ) ;
                             }
-                                #endif
-                                    //etThread.traceF( tinP , T("---- watch") ) ;
-                                    //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
-                                #if defined( IFCtESTING )
+                                // #endif
+                                //     //etThread.traceF( tinP , T("---- watch") ) ;
+                                //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+                                // #if defined( IFC tESTING )
 
                                 }
                                     etThread.traceF( tinP , T("wrote   to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1194,10 +1194,10 @@ DONE( tmExecutiveHealYearF )
                                 {
                                 if( !ether && !bAbortP )
 
-                                #endif
-                                    //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
-                                    //etThread.traceF( tinP , T("++++ watch") ) ;
-                                #if defined( IFCtESTING )
+                                // #endif
+                                //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
+                                //     //etThread.traceF( tinP , T("++++ watch") ) ;
+                                // #if defined( IFC tESTING )
 
                                 //}
                                 //    etThread.traceF( tinP , T("healing [archive,year,cShortNames,idName,perTuck,tShort]:    ")+tArchive+tb4+tYear+tb4+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tPerTuck+tb4+tShort ) ;
@@ -1521,13 +1521,20 @@ DONE( tmExecutiveHealYearF )
                                             {
                                             if( POOP )
 
-                                              tinP.pEtScratch->diskFindFileOrDirF( tinP , ppif[ offh ] , *pphff[ offh ] , ppsttPathToYear[ offh ]        ) ; ___( ppif[ offh ] ) ;
-                                            //tinP.pEtScratch->diskFindFileOrDirF( tinP , ppif[ offh ] , *pphff[ offh ] , ppsttPathToYear[ offh ] , &pat ) ; ___( ppif[ offh ] ) ; //FOR TESTING
+                                            // #endif
 
-                                            //patternC pat( tinP , etThread , T("!ideafarm.9.2.00000000.00000001.20990007@0000.20220225@1343.ab155b6a3666b3c92434e1d1d650e2cf.001.data.zip") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; //LARGEST FILE IN THE ARCHIVE
-                                            //patternC pat( tinP , etThread , T("!ideafarm.9.2.00000000.00000001.20990013@0000.20210119@0000.014c4e4d37bea606de6c6ac99d8d50c2.001.data.iso") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; // 1,004,306,432 BYTES
-                                            //patternC pat( tinP , etThread , T("!ideafarm.9.2.00000000.00000001.20131226@1827.20170306@1754.8e00e6d01d529344e90f3e984315b7ce.001.data.mp3") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; //    10,000,635 BYTES
-                                            // FOR TESTING
+                                                tinP.pEtScratch->diskFindFileOrDirF( tinP , ppif[ offh ] , *pphff[ offh ] , ppsttPathToYear[ offh ]        ) ; ___( ppif[ offh ] ) ;
+
+                                            // #else
+                                            // 
+                                            //     tinP.pEtScratch->diskFindFileOrDirF( tinP , ppif[ offh ] , *pphff[ offh ] , ppsttPathToYear[ offh ] , &pat ) ; ___( ppif[ offh ] ) ; //FOR TESTING
+                                            // 
+                                            //       patternC pat( tinP , etThread , T("!ideafarm.a.2.00000000.00000001.20220904@1430.20220912@1742.70cfa724f22dae220ecc078ad6538c5c.001.fset.zip") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; //DUT 20240326@1715
+                                            //     //patternC pat( tinP , etThread , T("!ideafarm.9.2.00000000.00000001.20990007@0000.20220225@1343.ab155b6a3666b3c92434e1d1d650e2cf.001.data.zip") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; //LARGEST FILE IN THE ARCHIVE
+                                            //     //patternC pat( tinP , etThread , T("!ideafarm.9.2.00000000.00000001.20990013@0000.20210119@0000.014c4e4d37bea606de6c6ac99d8d50c2.001.data.iso") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; // 1,004,306,432 BYTES
+                                            //     //patternC pat( tinP , etThread , T("!ideafarm.9.2.00000000.00000001.20131226@1827.20170306@1754.8e00e6d01d529344e90f3e984315b7ce.001.data.mp3") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; //    10,000,635 BYTES
+                                            // 
+                                            // #if defined( IFC tESTING )
 
                                             SCOOPS
                                         {
@@ -2004,9 +2011,9 @@ DONE( tmExecutiveHealYearF )
     {
     if( !POOP )
 
-    #endif
-        //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
-    #if defined( IFCtESTING )
+    // #endif
+    //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
+    // #if defined( IFC tESTING )
     const countT cProcessors = thirdC::osProcessorsIF( tinP ) ;
 
     __Z( psttzArchiveP->idAdam ) ;
@@ -2122,9 +2129,9 @@ DONE( tmWorkerMemCompareF )
     while( stJobCompareP )
     stJobCompareP.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
-    #endif
-        //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
-    #if defined( IFCtESTING )
+    // #endif
+    //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
+    // #if defined( IFC tESTING )
     }
         stJobCompareP.ungrabF( tinP ) ;
 
@@ -2137,14 +2144,14 @@ DONE( tmWorkerMemCompareF )
         {
         if( !cDone )
 
-        #endif
-            //}
-            //    etThread.traceF( tinP , T("---- watch") ) ;
-            //    etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
-            //    bWatching = 0 ;
-            //{
-            //if( bWatching )
-        #if defined( IFCtESTING )
+        // #endif
+        //     //}
+        //     //    etThread.traceF( tinP , T("---- watch") ) ;
+        //     //    etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+        //     //    bWatching = 0 ;
+        //     //{
+        //     //if( bWatching )
+        // #if defined( IFC tESTING )
 
         }
             stJobCompareP.grabF( tinP , TAG( TAGiDnULL ) ) ;
@@ -2162,14 +2169,14 @@ DONE( tmWorkerMemCompareF )
             stJobCompareP >> *(countT*)&pJob ;
             ZE( jobCompareOoImagesS* , pJob ) ;
 
-            #endif
-                //}
-                //    etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
-                //    etThread.traceF( tinP , T("++++ watch") ) ;
-                //    bWatching = 1 ;
-                //{
-                //if( !bWatching )
-            #if defined( IFCtESTING )
+            // #endif
+            //     //}
+            //     //    etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
+            //     //    etThread.traceF( tinP , T("++++ watch") ) ;
+            //     //    bWatching = 1 ;
+            //     //{
+            //     //if( !bWatching )
+            // #if defined( IFC tESTING )
             _IO_
         {
         while( stJobCompareP )
@@ -2180,9 +2187,9 @@ DONE( tmWorkerMemCompareF )
     {
     while( !ether )
     ZE( countT , cIdle ) ;
-    #endif
-        //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
-    #if defined( IFCtESTING )
+    // #endif
+    //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
+    // #if defined( IFC tESTING )
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
     TN( tIndent3 , "|           " ) ;
@@ -2414,7 +2421,7 @@ TASK( tmWorkerHealFileF )
 countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
-    // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing /         --------") ) ;
+    /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing /         --------") ) ;
     }
         }
             //tinP.pc Utility[ 0 ] -- ;
@@ -3114,18 +3121,18 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         if( !pP.bAbort )
 
                                         }
-                                            #endif
-                                                // //pP.ether.traceF( tinP , pP.tIndent3+T("[idInner,resultHeInMine]:    ")+TF2(1+offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tResultHeInMine ) ;
-                                        
-                                                }
-                                                    case BITSrESULT_ALLbITS  : { tResultHeInMine = T("allBits")  ; break ; }
-                                                    case BITSrESULT_EQUAL    : { tResultHeInMine = T("equal")    ; break ; }
-                                                    case BITSrESULT_NOTeQUAL : { tResultHeInMine = T("notEqual") ; break ; }
-                                                    case BITSrESULT_UNKNOWN  : { tResultHeInMine = T("unknown")  ; break ; }
-                                                {
-                                                switch( resultHeInMine )
-                                                TN( tResultHeInMine , "" ) ;
-                                            #if defined( IFCtESTING )
+                                            // #endif
+                                            //     // //pP.ether.traceF( tinP , pP.tIndent3+T("[idInner,resultHeInMine]:    ")+TF2(1+offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tResultHeInMine ) ;
+                                            //     // 
+                                            //     // }
+                                            //     //     case BITSrESULT_ALLbITS  : { tResultHeInMine = T("allBits")  ; break ; }
+                                            //     //     case BITSrESULT_EQUAL    : { tResultHeInMine = T("equal")    ; break ; }
+                                            //     //     case BITSrESULT_NOTeQUAL : { tResultHeInMine = T("notEqual") ; break ; }
+                                            //     //     case BITSrESULT_UNKNOWN  : { tResultHeInMine = T("unknown")  ; break ; }
+                                            //     // {
+                                            //     // switch( resultHeInMine )
+                                            //     // TN( tResultHeInMine , "" ) ;
+                                            // #if defined( IFC tESTING )
 
                                             }
                                         
@@ -3624,16 +3631,16 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                 if( pP.bAbort ) break ;
 
                                 }
-                                    // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / c2 /                         DDDDDDDD [idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / c2 /                         DDDDDDDD [idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     while( !etPrime && !pP.bAbort && ~hStkInner ) ;
                                     }
-                                        // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / c2") ) ;
+                                        /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / c2") ) ;
                                         }
                                             }
                                                 break ;
 
                                                 }
-                                                    // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2 / maked  and sinked  psttLongInner") ) ;
+                                                    /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2 / maked  and sinked  psttLongInner") ) ;
                                                     }
                                                         pP.bAbort = 1 ;                                                    
                                                         pP.ether.traceF( tinP , pP.tIndent3+T("!exception: iSlotLongInnr is null") ) ;
@@ -3645,7 +3652,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 
                                                     pP.ether.strMakeF( tinP , LF , psttLongInner , tLongInner ) ; ___( psttLongInner ) ;
                                                     ZE( strokeS* , psttLongInner ) ;
-                                                    // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2 / making and sinking psttLongInner") ) ;
+                                                    /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2 / making and sinking psttLongInner") ) ;
 
                                                     offResult ++ ;
 
@@ -3693,9 +3700,9 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         switch( idPass )
 
                                         // /*if( idPass == 3 )*/ pP.ether.traceF( tinP , pP.tIndent3+T("    [idPass,idInner,tLongInner]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++idInner,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongInner ) ;
-                                        // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2 / calculated  tLongInner by querying stack[]") ) ;
+                                        /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2 / calculated  tLongInner by querying stack[]") ) ;
                                         TN( tLongInner , "" ) ; tLongInner = T(pP.pzpsttPathToYear[pfmInner->idSlotPathToYear-1])+tShortP ;
-                                        // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2 / calculating tLongInner by querying stack[]") ) ;
+                                        /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2 / calculating tLongInner by querying stack[]") ) ;
 
                                         countT maskHeInMine = BITSrESULT_ALLbITS << cBitsShiftLeftHeInMine ;
                                         countT maskMeInHis  = BITSrESULT_ALLbITS << cBitsShiftLeftMeInHis  ;
@@ -3721,10 +3728,10 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 
                                         if( pP.bAbort ) break ;
                                         pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
-                                        // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2") ) ;
+                                        /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2") ) ;
                                     {
                                     do
-                                    // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / e2 /                 CCCCCCCC         [idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / e2 /                 CCCCCCCC         [idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     handleC hStkInner( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                     ZE( countT , idInner ) ;
                                 {
@@ -3895,7 +3902,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
             for( countT offh = 0 ; !pP.bAbort && !etPrime && offh < pP.cPathsToYear ; offh ++ )
             ZE( countT , cbUsedHighMax ) ;
             ZE( countT , cbUsedMax ) ;
-            // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / 13 /         BBBBBBBB") ) ;
+            /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / 13 /         BBBBBBBB") ) ;
 
             if( etPrime ) pP.bAbort = 1 ;
 
@@ -3989,15 +3996,17 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
         if( bChatterP )
     {
 
-    )
-        && !pP.ether.strIdF( tinP , T("!ideafarm.a."       ) , tShortP , 1 )
-        && !pP.ether.strIdF( tinP , T(".meta.datafiletimes") , tShortP , 1 )
-           !pP.ether.strIdF( tinP , T(".fset.zip"          ) , tShortP , 1 )
-    (
-    if
+    //)
+    //    && !pP.ether.strIdF( tinP , T("!ideafarm.a."       ) , tShortP , 1 )
+    //    && !pP.ether.strIdF( tinP , T(".meta.datafiletimes") , tShortP , 1 )
+    //       !pP.ether.strIdF( tinP , T(".fset.zip"          ) , tShortP , 1 )
+    //(
+    //if
     /*U::COMMENT OUT IN PRODUCTION:*/
 
-    // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / ++++++++") ) ;
+    /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / ++++++++") ) ;
+
+    //bChatterP = 1 ; //U:: TO FIND A BUG
 {
 voidT healShortNameF( tinS& tinP , paramHealFileS& pP , textC& tShortP , const flagsT flagsModeP , const countT idNameP , const countT cShortNamesP , const countT cToHireHealP , const countT cToHireCompareP , boolT bChatterP )
 
