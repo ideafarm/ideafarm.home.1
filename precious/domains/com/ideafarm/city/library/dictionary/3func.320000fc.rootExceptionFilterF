@@ -11,14 +11,19 @@
 
 }
     return rc ;
+
     //CONoUTrAW( "rootExceptionFilterF/-\r\n" ) ;
 
     }
-        //thirdC::dosExitProcessIF( exitCode ) ;
-        //putNegAM( exitCode , FINGERnEG_EXITpROCESSiMPOTENT ) ;
-        //ZE( countT , exitCode ) ;
-        //flagsResult |= flEXCEPTIONrESULT_EXITpROCESScALLED ;
-        //CONoUTrAW( "rootExceptionFilterF: calling ExitProcess\r\n" ) ;
+        thirdC::dosExitProcessIF( exitCode ) ;
+        putNegAM( exitCode , FINGERnEG_EXITpROCESSeXCEPTION ) ;
+        ZE( countT , exitCode ) ;
+        flagsResult |= flEXCEPTIONrESULT_EXITpROCESScALLED ;
+
+        Sleep( 10 * 1000 ) ; //U:: TO FIND A BUG
+
+        CONoUTrAW( "rootExceptionFilterF: calling ExitProcess\r\n" ) ;
+        LOGrAW(    "rootExceptionFilterF: calling ExitProcess\r\n" ) ;
     {
     if( rc == EXCEPTION_CONTINUE_SEARCH )
 
@@ -309,9 +314,10 @@
         ZE( countT , exitCode ) ;
     {
     if( F(flagsResult) & flEXCEPTIONrESULT_EXITpROCESScALLED )
-    static flagsT flagsResult = flEXCEPTIONrESULT_null ;
 
+                                                //20240327@2239:  ENABLED CALL TO dosExitProcessIF AT END OF ME SO THAT THE PRECEDING COMMENT IS NOW OBSOLETE ; THERE WILL BE NO SECOND CHANCE DEBUG EVENT
     countT rc = EXCEPTION_CONTINUE_SEARCH ;     //20210716@1607:  CHANGED "EXCEPTION_EXECUTE_HANDLER" TO "EXCEPTION_CONTINUE_SEARCH" WITHOUT ANALYSIS SO THAT KERNEL MONITOR WILL RECEIVE OOTH CHANCE DEBUG EVENT NOTICE
+    static flagsT flagsResult = flEXCEPTIONrESULT_null ;
 
     //CONoUTrAW( "rootExceptionFilterF/+\r\n" ) ;
 {

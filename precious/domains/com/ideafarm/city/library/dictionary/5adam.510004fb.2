@@ -88,20 +88,43 @@ DONE( tmHireF )
                         (
                         &&
                         )
-                            || ( info3.dwDebugEventCode == EXCEPTION_DEBUG_EVENT    && !info3.u.Exception.dwFirstChance                                                                                        )
-                               ( info3.dwDebugEventCode == EXIT_PROCESS_DEBUG_EVENT && getNegAM( processExitCode ) != FINGERnEG_EXITpROCESSaOK && getNegAM( processExitCode ) != FINGERnEG_EXITpROCESSiMPOTENT ) // IF THE EXIT CODE IS NOT EXPECTED
+                            || ( info3.dwDebugEventCode == EXCEPTION_DEBUG_EVENT    && !info3.u.Exception.dwFirstChance                                                                )      //P:PERSONALITY: IF THE PROCESS EXITS EXPLICITLY THEN IT IS RESPONSIBLE FOR GLASS (REVEALING WHY)
+                               ( info3.dwDebugEventCode == EXIT_PROCESS_DEBUG_EVENT && ( exitCodeTest <= FINGERnEG_EXITpROCESStOOlOW || exitCodeTest >= FINGERnEG_EXITpROCESStOOhIGH ) )      //P:PERSONALITY: GET FREEZE REPORTS ONLY IF UNEXPECTED EXIT CODE (INTENDED TO GLASS WHEN PROCESS DIES SILENTLY)
                         (
                         &&
                         !ether
-                        &&
-                        bNever
+                        //&&
+                        //bNever
                     (
                     if
-                    ZE( boolT , bNever ) ;
+                    //ZE( boolT , bNever ) ;
                     //20230809@1252: ENABLED THIS BECAUSE HEAL DIED ACCESS VIOLATION WITH NO EXCEPTION REPORT
 
-                    else etThread.traceF( tinP , T("event (debug) [cBegun,cEnded,osPid,osTid,event]:    ")+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4((countT)info3.dwThreadId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+tEvent ) ;
-                         etThread.traceF( tinP , T("event         [cBegun,cEnded,osPid,osTid,event]:    ")+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4((countT)info3.dwThreadId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+tEvent ) ;
+                    }
+                        etThread.traceF( tinP , T("process [exitCode]:    ")+tExitCode ) ;
+                        }
+                            default                                                  : { tExitCode = TF2(exitCodeTest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED  ) ; break ; }
+                            case FINGERnEG_EXITpROCESStOOhIGH                        : { tExitCode = T("EXITpROCESStOOhIGH"                                     ) ; break ; }
+                            case FINGERnEG_EXITpROCESSaOK                            : { tExitCode = T("EXITpROCESSaOK"                                         ) ; break ; }
+                            case FINGERnEG_EXITpROCESSiMPOTENT                       : { tExitCode = T("EXITpROCESSiMPOTENT"                                    ) ; break ; }
+                            case FINGERnEG_EXITpROCESSeXCEPTION                      : { tExitCode = T("EXITpROCESSeXCEPTION"                                   ) ; break ; }
+                            case FINGERnEG_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP   : { tExitCode = T("EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP"                ) ; break ; }
+                            case FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOmE          : { tExitCode = T("EXITpROCESSdTtINSnOTpOINTINGtOmE"                       ) ; break ; }
+                            case FINGERnEG_EXITpROCESSdTtINSsOMETHINGgRABBED         : { tExitCode = T("EXITpROCESSdTtINSsOMETHINGgRABBED"                      ) ; break ; }
+                            case FINGERnEG_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE    : { tExitCode = T("EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE"                 ) ; break ; }
+                            case FINGERnEG_EXITpROCESSdTtINSpOURfAILED               : { tExitCode = T("EXITpROCESSdTtINSpOURfAILED"                            ) ; break ; }
+                            case FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOeLDER       : { tExitCode = T("EXITpROCESSdTtINSnOTpOINTINGtOeLDER"                    ) ; break ; }
+                            case FINGERnEG_EXITpROCESStOOlOW                         : { tExitCode = T("EXITpROCESStOOlOW"                                      ) ; break ; }
+                        {
+                        switch( exitCodeTest )
+                        TN( tExitCode , "" ) ;
+                    {
+                    if( info3.dwDebugEventCode == EXIT_PROCESS_DEBUG_EVENT )
+
+                    countT exitCodeTest = getNegAM( processExitCode ) ;
+
+                    else etThread.traceF( tinP , T("event (debug) [cBegun,cEnded,osPid,osTid,chance,event]:    ")+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4((countT)info3.dwThreadId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(info3.u.Exception.dwFirstChance?"    WOTH        ":"        OOTH    ")+tEvent ) ;
+                         etThread.traceF( tinP , T("event         [cBegun,cEnded,osPid,osTid,chance,event]:    ")+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4((countT)info3.dwThreadId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(info3.u.Exception.dwFirstChance?"    WOTH        ":"        OOTH    ")+tEvent ) ;
                     )
                         )
                             !info3.u.Exception.dwFirstChance                    //P:PERSONALITY: I AM SILENT FOR WOTH CHANCE EXCEPTION EVENTS BECAUSE THESE MIGHT BE WAD WAC ("WORKING AS DESIGNED WORKING AS CODED").  I AM ONLY INTERESTED IN EXCEPTIONS THAT THE MONITORED PROCESS DOES NOT HANDLE

@@ -10033,12 +10033,21 @@ flHIRE_SHOW
 #define FINGERnEG_jotFilePartC                          ((countT)-(sCountT)0xcccc006e)
 #define FINGERnEG_jotFileNameC                          ((countT)-(sCountT)0xcccc006f)
 #define FINGERnEG_jotFileBranchC                        ((countT)-(sCountT)0xcccc0070)
-#define FINGERnEG_fileWindowsC                          ((countT)-(sCountT)0xcccc0071)
-#define FINGERnEG_EXITpROCESSaOK                        ((countT)-(sCountT)0xcccc00fe)
-#define FINGERnEG_EXITpROCESSiMPOTENT                   ((countT)-(sCountT)0xcccc00ff)
+#define FINGERnEG_fileWindowsC                              ((countT)-(sCountT)0xcccc0071)
+#define FINGERnEG_EXITpROCESStOOhIGH                        ((countT)-(sCountT)0xcccc0072)
+#define FINGERnEG_EXITpROCESSaOK                            ((countT)-(sCountT)0xcccc0073)
+#define FINGERnEG_EXITpROCESSiMPOTENT                       ((countT)-(sCountT)0xcccc0074)
+#define FINGERnEG_EXITpROCESSeXCEPTION                      ((countT)-(sCountT)0xcccc0075)
+#define FINGERnEG_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP   ((countT)-(sCountT)0xcccc0076)
+#define FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOmE          ((countT)-(sCountT)0xcccc0077)
+#define FINGERnEG_EXITpROCESSdTtINSsOMETHINGgRABBED         ((countT)-(sCountT)0xcccc0078)
+#define FINGERnEG_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE    ((countT)-(sCountT)0xcccc0079)
+#define FINGERnEG_EXITpROCESSdTtINSpOURfAILED               ((countT)-(sCountT)0xcccc007a)
+#define FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOeLDER       ((countT)-(sCountT)0xcccc007b)
+#define FINGERnEG_EXITpROCESStOOlOW                         ((countT)-(sCountT)0xcccc007c)
 /*3*/
 #define FINGERnEG_min     0xcccc0001
-#define FINGERnEG_max     0xcccc0073
+#define FINGERnEG_max     0xcccc007c
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -51396,30 +51405,3 @@ enable it to set bits in processGlobal2S::pbMemoryBits*
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
-values at and above 00ff are used by spouseC to encode literal byte values
-*/
-/**/
-/*1*//*CBcIRCLEdFLT*//*1*/
-
-#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
