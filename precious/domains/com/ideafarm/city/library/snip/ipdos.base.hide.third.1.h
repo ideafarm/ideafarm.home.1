@@ -14856,7 +14856,7 @@ arguments
 #define ifcIDtYPEtELLsYS_ERRORbADcODEsTYLEsTROKEfUSEbUFFEReXHAUSTED     0xdddd0517
 #define ifcIDtYPEtELLsYS_ERRORiMPOTENCE                                 0xdddd0518
 #define ifcIDtYPEtELLsYS_ERRORgLOBALnEWoPERATORuSED                     0xdddd0519
-#define ifcIDtYPEtELLsYS_READYtOdIE                                     0xdddd051a
+#define ifcIDtYPEtELLsYS_READYtOdIEnu                                   0xdddd051a
 #define ifcIDtYPEtELLsYS_OShANDLEcT                                     0xdddd051b
 #define ifcIDtYPEtELLsYS_OShANDLEdT                                     0xdddd051c
 #define ifcIDtYPEtELLsYS_HANDOFFoLDaTTACH                               0xdddd051d

@@ -5372,15 +5372,16 @@ BOOL __stdcall controlInterruptHandlerF( DWORD idEventP )
     {
         case CTRL_C_EVENT :
         case CTRL_BREAK_EVENT :
-        case CTRL_SHUTDOWN_EVENT :
         {
             _beginthread( tmAbortF , 0x10000 , (void*)0 ) ;
-            if( idEventP == CTRL_CLOSE_EVENT ) Sleep( 8000 ) ;
             bHandled = 1 ;
             break ;
         }
         case CTRL_CLOSE_EVENT :
+        case CTRL_LOGOFF_EVENT :
+        case CTRL_SHUTDOWN_EVENT :
         {
+            //if( idEventP == CTRL_CLOSE_EVENT ) Sleep( 8000 ) ;
             tmAbortF( 0 ) ;
             break ;
         }
