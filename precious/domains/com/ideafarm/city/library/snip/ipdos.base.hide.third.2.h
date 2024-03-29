@@ -15507,7 +15507,7 @@ TASK0PROTO( tmRelayOldBlowTeatF ) ;
 */
 /**/
 
-/*1*/countT _export dosGetInfoBlocksIdProcessIF( tinS& tinP ) ;/*1*/
+/*1*/countT _export osPidIF( tinS& tinP ) ;/*1*/
 
 
 //
@@ -15532,7 +15532,7 @@ TASK0PROTO( tmRelayOldBlowTeatF ) ;
 */
 /**/
 
-/*1*/countT _export dosGetInfoBlocksIdThreadIF( voidT ) ;/*1*/
+/*1*/countT _export osTidIF( voidT ) ;/*1*/
 
 
 //
@@ -18629,17 +18629,17 @@ examples
  inline operator >>( handle0111C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; }                hP.cNote = cNote ; hP.c1 = c2AppNote.c1 ; hP.c2 = c2AppNote.c2 ; resetF() ; }
  inline operator >>( handle1111C& hP ) { if( osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb11 ; } hP.osh = osh ; hP.cNote = cNote ; hP.c1 = c2AppNote.c1 ; hP.c2 = c2AppNote.c2 ; resetF() ; }
 
- inline operator <<( handle1000C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = dosGetInfoBlocksIdProcessIF( tinP ) ; osh = hP.osh                                                                  ; }
+ inline operator <<( handle1000C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tinP ) ; osh = hP.osh                                                                  ; }
  inline operator <<( handle0100C& hP ) { tinS& tinP = *pTinF() ;                                                                                                                                                       ; cNote = hP.cNote                                               ; }
- inline operator <<( handle1100C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = dosGetInfoBlocksIdProcessIF( tinP ) ; osh = hP.osh ; cNote = hP.cNote                                               ; }
+ inline operator <<( handle1100C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tinP ) ; osh = hP.osh ; cNote = hP.cNote                                               ; }
  inline operator <<( handle0010C& hP ) { tinS& tinP = *pTinF() ;                                                                                                                                                                          ; c2AppNote.c1 = hP.c1                        ; }
- inline operator <<( handle1010C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = dosGetInfoBlocksIdProcessIF( tinP ) ; osh = hP.osh                    ; c2AppNote.c1 = hP.c1                        ; }
+ inline operator <<( handle1010C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tinP ) ; osh = hP.osh                    ; c2AppNote.c1 = hP.c1                        ; }
  inline operator <<( handle0110C& hP ) { tinS& tinP = *pTinF() ;                                                                                                                                                       ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1                        ; }
- inline operator <<( handle1110C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = dosGetInfoBlocksIdProcessIF( tinP ) ; osh = hP.osh ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1                        ; }
+ inline operator <<( handle1110C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tinP ) ; osh = hP.osh ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1                        ; }
  inline operator <<( handle0011C& hP ) { tinS& tinP = *pTinF() ;                                                                                                                                                                          ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
- inline operator <<( handle1011C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = dosGetInfoBlocksIdProcessIF( tinP ) ; osh = hP.osh                    ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
+ inline operator <<( handle1011C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tinP ) ; osh = hP.osh                    ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
  inline operator <<( handle0111C& hP ) { tinS& tinP = *pTinF() ;                                                                                                                                                       ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
- inline operator <<( handle1111C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = dosGetInfoBlocksIdProcessIF( tinP ) ; osh = hP.osh ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
+ inline operator <<( handle1111C& hP ) { tinS& tinP = *pTinF() ; if( hP.osh == oshInvalid ) { ZE( countT* , pcb ) ; *pcb = 0xbbaabb33 ; } closeIfF() ; osPidOwner = osPidIF( tinP ) ; osh = hP.osh ; cNote = hP.cNote ; c2AppNote.c1 = hP.c1 ; c2AppNote.c2 = hP.c2 ; }
 
  static countT cInstancesIF( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34015.handleC.cInstancesIF!||

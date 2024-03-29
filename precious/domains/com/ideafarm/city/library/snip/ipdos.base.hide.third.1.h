@@ -13516,12 +13516,13 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 /*3*/
 #define flPROCESSsTATE_OUTPUTwINDOWiSvISIBLE        0xe000012d
 #define flPROCESSsTATE_WM_CLOSE_RECEIVED            0xe000022d
-#define flPROCESSsTATE_CTRL_C_RECEIVED              0xe000042d
-#define flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE  0xe000082d
-#define flPROCESSsTATE_tmWindowsF_HASeNDED          0xe000102d
-#define flPROCESSsTATE_GLOBALdESTRUCTIONiScOMPLETE  0xe000202d
-#define flPROCESSsTATE_MAINtHREADiSaLONE            0xe000402d
-#define flPROCESSsTATE_EXCEPTIONnOThANDLED          0xe000802d
+#define flPROCESSsTATE_SIGNAL_TO_QUIT               0xe000042d
+#define flPROCESSsTATE_SIGNAL_TO_GASP               0xe000082d
+#define flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE  0xe000102d
+#define flPROCESSsTATE_tmWindowsF_HASeNDED          0xe000202d
+#define flPROCESSsTATE_GLOBALdESTRUCTIONiScOMPLETE  0xe000402d
+#define flPROCESSsTATE_MAINtHREADiSaLONE            0xe000802d
+#define flPROCESSsTATE_EXCEPTIONnOThANDLED          0xe001002d
 /*3*/
 #define flPROCESSsTATE_null    0xe000002d
 
@@ -15493,9 +15494,9 @@ see QUITO
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdThreadIF() , ' ' ) ;                                           \
+        OStEXTC( ostoBuf , osTidIF() , ' ' ) ;                                           \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdProcessIF( tinP ) , ' ' ) ;                                          \
+        OStEXTC( ostoBuf , osPidIF( tinP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
         OStEXTA( ostoBuf , tinP.postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
@@ -15562,9 +15563,9 @@ see QUITO
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdThreadIF() , ' ' ) ;                                           \
+        OStEXTC( ostoBuf , osTidIF() , ' ' ) ;                                           \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdProcessIF( tinP ) , ' ' ) ;                                          \
+        OStEXTC( ostoBuf , osPidIF( tinP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
         OStEXTA( ostoBuf , tinP.postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
@@ -15606,9 +15607,9 @@ see QUITO
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdThreadIF() , ' ' ) ;                                           \
+        OStEXTC( ostoBuf , osTidIF() , ' ' ) ;                                           \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdProcessIF( tinP ) , ' ' ) ;                                          \
+        OStEXTC( ostoBuf , osPidIF( tinP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
         OStEXTA( ostoBuf , tinP.postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
@@ -15686,9 +15687,9 @@ see QUITO
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdThreadIF() , ' ' ) ;                                           \
+        OStEXTC( ostoBuf , osTidIF() , ' ' ) ;                                           \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdProcessIF( tinP ) , ' ' ) ;                                          \
+        OStEXTC( ostoBuf , osPidIF( tinP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " |  " ) ;                                                                                     \
         OStEXTA( ostoBuf , postP ) ;                                                                                      \
         OStEXTAK( ostoBuf , "\r\n" ) ;                                                                                     \
@@ -15725,9 +15726,9 @@ see QUITO
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdThreadIF() , ' ' ) ;                                           \
+        OStEXTC( ostoBuf , osTidIF() , ' ' ) ;                                           \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdProcessIF( tinP ) , ' ' ) ;                                          \
+        OStEXTC( ostoBuf , osPidIF( tinP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " |  " ) ;                                                                                     \
         OStEXTA( ostoBuf , postP ) ;                                                                                      \
         OStEXTC( ostoBuf , cP , 0 ) ;                                                                                     \
@@ -16087,9 +16088,9 @@ these flag values are used by oo flagsT objects
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdThreadIF() , ' ' ) ;                                           \
+        OStEXTC( ostoBuf , osTidIF() , ' ' ) ;                                           \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdProcessIF( tinP ) , ' ' ) ;                                          \
+        OStEXTC( ostoBuf , osPidIF( tinP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
         OStEXTA( ostoBuf , tinP.postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
@@ -16134,9 +16135,9 @@ these flag values are used by oo flagsT objects
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdThreadIF() , ' ' ) ;                                           \
+        OStEXTC( ostoBuf , osTidIF() , ' ' ) ;                                           \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdProcessIF( tinP ) , ' ' ) ;                                          \
+        OStEXTC( ostoBuf , osPidIF( tinP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
         OStEXTA( ostoBuf , tinP.postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
@@ -16183,9 +16184,9 @@ these flag values are used by oo flagsT objects
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdThreadIF() , ' ' ) ;                                           \
+        OStEXTC( ostoBuf , osTidIF() , ' ' ) ;                                           \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-        OStEXTC( ostoBuf , dosGetInfoBlocksIdProcessIF( tinP ) , ' ' ) ;                                          \
+        OStEXTC( ostoBuf , osPidIF( tinP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
         OStEXTA( ostoBuf , tinP.postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \

@@ -122,7 +122,7 @@
 
                     tinS& tinP = *this ;
                 {
-                if( this == &tinSelfOrElderP && idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI && idTinNamed != ifcIDtINnAMED_tinVeryVeryEarlyLateMainI )
+                //if( this == &tinSelfOrElderP && idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI && idTinNamed != ifcIDtINnAMED_tinVeryVeryEarlyLateMainI )
 
                 }
                     case ifcIDtINnAMED_tinInPoolMain             : { processGlobal2I.flCt |= flCTdTg_tinMainInPool             ; break ; }
@@ -355,8 +355,8 @@ cManna( 0 ) ,
 cRain( 0 ) ,
 time2( 0 ) ,
 time1( 0 ) ,
-osPid( dosGetInfoBlocksIdProcessIF( tinSelfOrElderP ) ) ,
-osTid( ( putNegAM( fingerprint , FINGERnEG_TINszOMBIE ) , ( this == &processGlobal6I.tinBreak || this == &processGlobal5I.tinHeart ) ? 0 : dosGetInfoBlocksIdThreadIF() ) ) ,
+osPid( osPidIF( tinSelfOrElderP ) ) ,
+osTid( ( putNegAM( fingerprint , FINGERnEG_TINszOMBIE ) , ( this == &processGlobal6I.tinBreak || this == &processGlobal5I.tinHeart ) ? 0 : osTidIF() ) ) ,
 idDesireProcess( 0 ) ,
 idDesire( 0 ) ,
 fingerprint( 0 ) ,

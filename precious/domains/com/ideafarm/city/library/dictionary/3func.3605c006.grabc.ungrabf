@@ -84,11 +84,11 @@
                             thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ; //THIS WILL GIVE THE WANTER TIME TO GET TO SLEEP
                         
                             if( !hThreadWant ) { BLAMMO ; }
-                            hThreadWant.cloneF( processGlobal2I._grabC_pgw[ ogw ].hThread , dosGetInfoBlocksIdProcessIF( tinP ) , hProcessMe , hProcessWant ) ;
+                            hThreadWant.cloneF( processGlobal2I._grabC_pgw[ ogw ].hThread , osPidIF( tinP ) , hProcessMe , hProcessWant ) ;
                             handleC hThreadWant( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
         
                             if( !hProcessWant ) { BLAMMO ; }
-                            handleC hProcessWant = hProcessF( tinP , processGlobal2I._grabC_pgw[ ogw ].osPid , dosGetInfoBlocksIdProcessIF( tinP ) ) ;
+                            handleC hProcessWant = hProcessF( tinP , processGlobal2I._grabC_pgw[ ogw ].osPid , osPidIF( tinP ) ) ;
         
                             hProcessMe.osF( ifcIDtYPEhANDLE_PROCESS , (countT)thirdC::osOpenProcessIF() ) ;
                             handleC hProcessMe( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;

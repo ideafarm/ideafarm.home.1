@@ -18,8 +18,8 @@
                 pGrabA->grabNotes.cAttach = 0 ;
                 pGrabA->grabNotes.flags   = bIsSign ? flGRABnOTES_CTaSsIGNc : flGRABnOTES_CTaSbATONc ;
                 pGrabA->grabNotes.idCt    = grabNotesS::idNextF( tinP ) ;
-                pGrabA->grabNotes.osPidCt = dosGetInfoBlocksIdProcessIF( tinP ) ;
-                pGrabA->grabNotes.osTidCt = dosGetInfoBlocksIdThreadIF() ;
+                pGrabA->grabNotes.osPidCt = osPidIF( tinP ) ;
+                pGrabA->grabNotes.osTidCt = osTidIF() ;
     
                 pGrabA->formatF( tinP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , flagsGrab , idGrabLayerP ) ;
             {
@@ -40,8 +40,8 @@
             pGrabA->grabNotes.cAttach = 0 ;
             pGrabA->grabNotes.flags   = bIsSign ? flGRABnOTES_CTaSsIGNc : flGRABnOTES_CTaSbATONc ;
             pGrabA->grabNotes.idCt    = grabNotesS::idNextF( tinP ) ;
-            pGrabA->grabNotes.osPidCt = dosGetInfoBlocksIdProcessIF( tinP ) ;
-            pGrabA->grabNotes.osTidCt = dosGetInfoBlocksIdThreadIF() ;
+            pGrabA->grabNotes.osPidCt = osPidIF( tinP ) ;
+            pGrabA->grabNotes.osTidCt = osTidIF() ;
     
             else                    grabA.formatF( tinP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , flagsGrab , idGrabLayerP ) ;
             if( pGrabInPoolOrHeap ) pGrabA = pGrabInPoolOrHeap ;
@@ -75,8 +75,8 @@
                 pGrabA->grabNotes.cAttach = 0 ;
                 pGrabA->grabNotes.flags   = bIsSign ? flGRABnOTES_CTaSsIGNc : flGRABnOTES_CTaSbATONc ;
                 pGrabA->grabNotes.idCt    = grabNotesS::idNextF( tinP ) ;
-                pGrabA->grabNotes.osPidCt = dosGetInfoBlocksIdProcessIF( tinP ) ;
-                pGrabA->grabNotes.osTidCt = dosGetInfoBlocksIdThreadIF() ;
+                pGrabA->grabNotes.osPidCt = osPidIF( tinP ) ;
+                pGrabA->grabNotes.osTidCt = osTidIF() ;
     
                 pGrabA->formatF( tinP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , flagsGrab & ~( F(flGRABc_GRABBED) ) , idGrabLayerP ) ;
             {

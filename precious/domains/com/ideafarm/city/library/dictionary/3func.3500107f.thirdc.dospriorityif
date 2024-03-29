@@ -13,13 +13,13 @@
     tinP.idDesire = idDesire ;
 
     }
-        BLAMMO ;
-        LOGrAW5( "\r\ndosPriorityIF: BLAMMO BECAUSE: [tinDesire,actualDesire]:    " , tinP.idDesire , "    " , idDesire , "\r\n" ) ;
-        CONoUTrAW5( "\r\ndosPriorityIF: BLAMMO BECAUSE: [tinDesire,actualDesire]:    " , tinP.idDesire , "    " , idDesire , "\r\n" ) ;
+        BLAMMOiD( 0x1f1f1f1f ) ;
+        LOGrAW7(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [tinDesire,actualDesire,osTidIF()]:    " , tinP.idDesire , "    " , osTidIF() , "    " , idDesire , "\r\n" ) ;
+        CONoUTrAW7( "\r\ndosPriorityIF: BLAMMO BECAUSE: [tinDesire,actualDesire,osTidIF()]:    " , tinP.idDesire , "    " , osTidIF() , "    " , idDesire , "\r\n" ) ;
 
         if( &tinP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinP , (strokeS*)"dosPriorityIF USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
     {
-    if( tinP.idDesire && idDesire != tinP.idDesire )     //U:: TO FIND A BUG
+    if( tinP.idDesire && idDesire != tinP.idDesire && !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_SIGNAL_TO_GASP ) )     //U:: TO FIND A BUG
 
     #endif
         }

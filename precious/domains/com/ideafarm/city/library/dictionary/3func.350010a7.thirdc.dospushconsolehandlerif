@@ -57,16 +57,13 @@
 
         }
             }
-                thirdC::dosExitProcessIF( exitCode ) ;                  //THIS IS ONLY TO ENSURE THAT A KNOWN PROCESS EXIT CODE IS RECEIVED BY THE KERNEL MONITOR ; IT ISN'T REALLY NEEDED AND CAN BE COMMENTED OUT TO GIVE THE PROCESS MORE TIME TO TERMINATE
+                thirdC::dosExitProcessIF( exitCode ) ;                  //THIS IS TO ENSURE THAT A KNOWN PROCESS EXIT CODE IS RECEIVED BY THE KERNEL MONITOR ; CALLED IMMEDIATELY FOR DETERMINATE BEHAVIOR SINCE PROCESS WILL BE KILLED AFTER A TIMEOUT THAT IS TOO SHORT FOR IPDOS PROCESSES TO FULLY TERMINATE
                 putNegAM( exitCode , FINGERnEG_EXITpROCESSsIGNAL ) ;
                 ZE( countT , exitCode ) ;
-
-                //B:Sleep( 8000 ) ;
-                Sleep( 4000 ) ;                                         //A:ASSUME: AWAKENS BEFORE BASE OS KILLS PROCESS DUE TO TIMEOUT ; THIS IS NOT LONG ENOUGH TO PERMIT IPDOS PROCESSES TO COMPLETELY TERMINATE AS OF 20240328@1804
-                //G:Sleep( 1000 ) ;
+                processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;
             {
             if( bGasp )
-            processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_CTRL_C_RECEIVED ;
+            processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;
         {
         if( bQuit )
 
@@ -90,14 +87,28 @@
         ZE( boolT , bGasp ) ;
         ZE( boolT , bQuit ) ;
 
+        }
+            //NO CAN DO CAUSE RAW THREAD: ((etherC*)0)->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+
+            CONoUTrAW( ostoSay ) ;
+            OStEXTAK( ostoSay , "\r\n" ) ;
+            OStEXTC(  ostoSay , osTidIF() , 0 ) ;
+            OStEXTAK( ostoSay , "\r\nsignal thread [osTid]:    " ) ;
+            OStEXT(   ostoSay , TUCK ) ;
+        {
+
         _IO_
         TELL( "consoleHandlerDfltF/+" )
-        tinP.osTid = tinP.brcRaw ;
-        BOSpOOP
-        BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
-        if( tinP.monitor.idThread - ifcIDtHREADlOW_break ) { BLAMMO ; }
+        tinP.osTid = osTidIF() ;
+        //BOSpOOP
+        //BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
+        if( tinP.monitor.idThread - ifcIDtHREADlOW_break ) { BLAMMOiD( 0x77773333 ) ; }
         if( !( ++ processGlobal2I.pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-        tinS& tinP = processGlobal6I.tinBreak ; //ASSUME: I AM CALLED SERIALLY (NEVER BY MULTIPLE THREADS SIMULTANEOUSLY) U:: ADD CODE TO SERIALIZE, JUST TO MAKE SURE
+        //tinS& tinP = processGlobal6I.tinBreak ; //ASSUME: I AM CALLED SERIALLY (NEVER BY MULTIPLE THREADS SIMULTANEOUSLY) U:: ADD CODE TO SERIALIZE, JUST TO MAKE SURE
+
+        tinS& tinP = *(tinS*)pbTin ;
+        thirdC::c_memcpyIF( pbTin , (byteT*)&processGlobal6I.tinBreak , sizeof pbTin ) ;
+        byteT pbTin[ sizeof( tinS ) ] ;
     {
     BOOL OSF consoleHandlerDfltF( DWORD idType ) // thirdC::thPrimeIF( tinP ) IS NOT STORED, BECAUSE THIS FUNCTION COULD EXECUTE LATE
 
