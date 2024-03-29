@@ -32639,8 +32639,8 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
     TELL( "waiting for all child threads except tmWindowsF tmAnimateSadamsOnPaperF to end" ) ;                                                              \
     {                                                                                                                                                       \
         const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tinP))    & flADAMmODE1_tmWindows          ) ;                                  \
-        const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF(tinP)) & flMODEpROCESS1_SERVICE         ) ;                                  \
-        const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess2I_IF(tinP)) & flMODEpROCESS2_NOsYSTEMtHREADS ) ;                                  \
+        const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                  \
+        const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_NOsYSTEMtHREADS ) ;                                  \
         /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
         countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tinP ) ;                                                                                \
         countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tinP ) ;                                                                             \

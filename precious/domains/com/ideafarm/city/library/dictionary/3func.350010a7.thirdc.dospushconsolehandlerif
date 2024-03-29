@@ -53,14 +53,14 @@
 #endif
 
     }
-        return 1 ; // BhANDLED
+        return 0 ;
 
         }
             }
-                thirdC::dosExitProcessIF( exitCode ) ;                  //THIS IS TO ENSURE THAT A KNOWN PROCESS EXIT CODE IS RECEIVED BY THE KERNEL MONITOR ; CALLED IMMEDIATELY FOR DETERMINATE BEHAVIOR SINCE PROCESS WILL BE KILLED AFTER A TIMEOUT THAT IS TOO SHORT FOR IPDOS PROCESSES TO FULLY TERMINATE
-                putNegAM( exitCode , FINGERnEG_EXITpROCESSsIGNAL ) ;
-                ZE( countT , exitCode ) ;
-                processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;
+                //thirdC::dosExitProcessIF( exitCode ) ;                  //THIS IS TO ENSURE THAT A KNOWN PROCESS EXIT CODE IS RECEIVED BY THE KERNEL MONITOR ; CALLED IMMEDIATELY FOR DETERMINATE BEHAVIOR SINCE PROCESS WILL BE KILLED AFTER A TIMEOUT THAT IS TOO SHORT FOR IPDOS PROCESSES TO FULLY TERMINATE
+                //putNegAM( exitCode , FINGERnEG_EXITpROCESSsIGNAL ) ;
+                //ZE( countT , exitCode ) ;
+                //processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;
             {
             if( bGasp )
             processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;
@@ -73,14 +73,11 @@
                 bGasp = bQuit = 1 ;
             {
             default:
-            case CTRL_SHUTDOWN_EVENT :
-            case CTRL_LOGOFF_EVENT   :
             case CTRL_CLOSE_EVENT    :
             }
                 break ;
-                if( !( F(thirdC::third_flagsModeProcess1I_IF(tinP)) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) ) bQuit = 1 ;
+                if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) ) bQuit = 1 ;
             {
-            case CTRL_BREAK_EVENT    :
             case CTRL_C_EVENT        :
         {
         switch( idType )
@@ -88,27 +85,12 @@
         ZE( boolT , bQuit ) ;
 
         }
-            //NO CAN DO CAUSE RAW THREAD: ((etherC*)0)->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
-
             CONoUTrAW( ostoSay ) ;
             OStEXTAK( ostoSay , "\r\n" ) ;
             OStEXTC(  ostoSay , osTidIF() , 0 ) ;
             OStEXTAK( ostoSay , "\r\nsignal thread [osTid]:    " ) ;
             OStEXT(   ostoSay , TUCK ) ;
         {
-
-        _IO_
-        TELL( "consoleHandlerDfltF/+" )
-        tinP.osTid = osTidIF() ;
-        //BOSpOOP
-        //BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
-        if( tinP.monitor.idThread - ifcIDtHREADlOW_break ) { BLAMMOiD( 0x77773333 ) ; }
-        if( !( ++ processGlobal2I.pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-        //tinS& tinP = processGlobal6I.tinBreak ; //ASSUME: I AM CALLED SERIALLY (NEVER BY MULTIPLE THREADS SIMULTANEOUSLY) U:: ADD CODE TO SERIALIZE, JUST TO MAKE SURE
-
-        tinS& tinP = *(tinS*)pbTin ;
-        thirdC::c_memcpyIF( pbTin , (byteT*)&processGlobal6I.tinBreak , sizeof pbTin ) ;
-        byteT pbTin[ sizeof( tinS ) ] ;
     {
     BOOL OSF consoleHandlerDfltF( DWORD idType ) // thirdC::thPrimeIF( tinP ) IS NOT STORED, BECAUSE THIS FUNCTION COULD EXECUTE LATE
 

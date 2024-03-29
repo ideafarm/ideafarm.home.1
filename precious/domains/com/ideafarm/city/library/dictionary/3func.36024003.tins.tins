@@ -123,7 +123,10 @@
                     tinS& tinP = *this ;
                 {
                 //if( this == &tinSelfOrElderP && idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI && idTinNamed != ifcIDtINnAMED_tinVeryVeryEarlyLateMainI )
+            {
+            if( F(processGlobal2I.flCt) & flCTdTg_exceptionHandlerRegistered && !( F(processGlobal2I.flDt) & flCTdTg_exceptionHandlerRegistered ) )             //THIS IS TO AVOID CLUTTERING THE LOG FILE
 
+            }
                 }
                     case ifcIDtINnAMED_tinInPoolMain             : { processGlobal2I.flCt |= flCTdTg_tinMainInPool             ; break ; }
                     case ifcIDtINnAMED_tinVeryEarlyLateMainI     : { processGlobal2I.flCt |= flCTdTg_tinVeryEarlyLateMainI     ; break ; }

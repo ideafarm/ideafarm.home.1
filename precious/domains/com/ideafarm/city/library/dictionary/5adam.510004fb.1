@@ -47,7 +47,7 @@ REST
             bQuitConsole = memorySpaceKernel.bQuitMonitor = memorySpaceKernel.bQuitEating = 1 ;
             memorySpaceS& memorySpaceKernel = *(memorySpaceS*)&(countT&)swMemorySpace ;
             cLeverIdMemory = ifcIDmEMORYsPACE_KERNEL ;
-            thirdC::third_flagsModeProcess2I_IF(tinP) |= flMODEpROCESS2_SUPPRESStELLS ; //RACE: A THREAD MIGHT HAVE ALREADY INSPECTED THE FLAGS BUT NOT YET WRITTEN TO THE MONITOR; THE CONSEQUENCE IS THAT SOME MESSAGES AREN'T PULLED;  THIS IS AOK AS LONG AS THE QUEUE ISN'T FILLED
+            thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_SUPPRESStELLS ; //RACE: A THREAD MIGHT HAVE ALREADY INSPECTED THE FLAGS BUT NOT YET WRITTEN TO THE MONITOR; THE CONSEQUENCE IS THAT SOME MESSAGES AREN'T PULLED;  THIS IS AOK AS LONG AS THE QUEUE ISN'T FILLED
             //CONoUTrAW( "firing kernel monitor\r\n" ) ;
         {
         etThread.traceF( tinP , T("firing kernel queue monitor") ) ;
@@ -226,7 +226,7 @@ REST
         etThread.osDriverRemoveOldF( tinP , DDNUMB ) ;
         unregisterObsoleteDriversF( tinP , etThread , DDNUMB ) ;
     {
-    if( F(thirdC::third_flagsModeProcess1I_IF(tinP)) & flMODEpROCESS1_DRIVER ) //WILL FAIL IF I AM HIRED AT THE COMMAND LINE
+    if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DRIVER ) //WILL FAIL IF I AM HIRED AT THE COMMAND LINE
     const countT cKidsAtStart = tinP.cKidThreads ;
     //etThread.traceF( tinP , T("removing obsolete drivers") ) ;
     
@@ -254,7 +254,7 @@ REST
 {
 if( !ether )
 
-//thirdC::third_flagsModeProcess2I_IF( tinP ) |= flMODEpROCESS2_GRABoNLYwO ;
+//thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_GRABoNLYwO ;
 etherC& etRock = etherC::etRockIF( tinP ) ;
 
 //}
