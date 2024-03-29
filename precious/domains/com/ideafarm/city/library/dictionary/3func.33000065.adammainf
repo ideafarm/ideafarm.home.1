@@ -10,6 +10,8 @@
 }
     return exitCode ;
 
+    ((etherC*)0)->traceF( tinP , (strokeS*)"============================================================================= adamMainF ----" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+
     //Sleep( 10 * 1000 ) ;
     //CONoUTrAW3( "[exitCode]:    " , exitCode , "\r\n" ) ;
     //LOGrAW3( "[exitCode]:    " , exitCode , "\r\n" ) ;
@@ -183,7 +185,9 @@
                                                         cryC cry0d( TOCK + 0x0d ) ;
                                                         ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN1 ) ;
                                                         }
+                                                            etThread.traceF( tinP , (strokeS*)"============================================================================================ adamDll ----" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
                                                             (*pMainF)( &main ) ; // ASSUME: WILL NOT RETURN UNTIL ALL KID THREADS HAVE ENDED, INCLUDING tmWatchF
+                                                            //etThread.traceF( tinP , (strokeS*)"============================================================================================ adamDll ++++" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
 
                                                             }
                                                                 }
@@ -1004,6 +1008,7 @@
     //COMMENT OUT IN PROD
 
     //if( tinP.monitor.idThread == 1 ) etherC::os_cAllKidThreadsI_IF( tinP ) = BM_HIGH ; //U:: TO FIND A BUG
+    //((etherC*)0)->traceF( tinP , (strokeS*)"============================================================================= adamMainF ++++" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
 {
 /*1*/countT adamMainF( tinS& tinP , const countT idTypeP , countT cHowP , const osTextT** ppostHowP , countT hWindowingClientIP , countT hPreviousWindowingClientP , const osTextT* postP , countT idCmdShowP )/*1*/
 

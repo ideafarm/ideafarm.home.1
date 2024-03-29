@@ -10037,17 +10037,18 @@ flHIRE_SHOW
 #define FINGERnEG_EXITpROCESStOOhIGH                        ((countT)-(sCountT)0xcccc0072)
 #define FINGERnEG_EXITpROCESSaOK                            ((countT)-(sCountT)0xcccc0073)
 #define FINGERnEG_EXITpROCESSiMPOTENT                       ((countT)-(sCountT)0xcccc0074)
-#define FINGERnEG_EXITpROCESSeXCEPTION                      ((countT)-(sCountT)0xcccc0075)
-#define FINGERnEG_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP   ((countT)-(sCountT)0xcccc0076)
-#define FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOmE          ((countT)-(sCountT)0xcccc0077)
-#define FINGERnEG_EXITpROCESSdTtINSsOMETHINGgRABBED         ((countT)-(sCountT)0xcccc0078)
-#define FINGERnEG_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE    ((countT)-(sCountT)0xcccc0079)
-#define FINGERnEG_EXITpROCESSdTtINSpOURfAILED               ((countT)-(sCountT)0xcccc007a)
-#define FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOeLDER       ((countT)-(sCountT)0xcccc007b)
-#define FINGERnEG_EXITpROCESStOOlOW                         ((countT)-(sCountT)0xcccc007c)
+#define FINGERnEG_EXITpROCESSsIGNAL                         ((countT)-(sCountT)0xcccc0075)
+#define FINGERnEG_EXITpROCESSeXCEPTION                      ((countT)-(sCountT)0xcccc0076)
+#define FINGERnEG_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP   ((countT)-(sCountT)0xcccc0077)
+#define FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOmE          ((countT)-(sCountT)0xcccc0078)
+#define FINGERnEG_EXITpROCESSdTtINSsOMETHINGgRABBED         ((countT)-(sCountT)0xcccc0079)
+#define FINGERnEG_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE    ((countT)-(sCountT)0xcccc007a)
+#define FINGERnEG_EXITpROCESSdTtINSpOURfAILED               ((countT)-(sCountT)0xcccc007b)
+#define FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOeLDER       ((countT)-(sCountT)0xcccc007c)
+#define FINGERnEG_EXITpROCESStOOlOW                         ((countT)-(sCountT)0xcccc007d)
 /*3*/
 #define FINGERnEG_min     0xcccc0001
-#define FINGERnEG_max     0xcccc007c
+#define FINGERnEG_max     0xcccc007d
 
 //
 // Respecting the rights of other people is an important part of empowering one another.

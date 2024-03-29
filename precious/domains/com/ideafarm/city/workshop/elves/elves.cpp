@@ -1,4 +1,4 @@
-#define DEBUG
+//#define DEBUG
 
 //U::ENABLE THESE PREPROCESSOR IF/ENDIF IN PRODUCTION
 #if not defined( DEBUG )
@@ -5620,7 +5620,8 @@ void tmAbortF( void* pnuP )
     while( elfC::cElvesIF() > 1 ) Sleep( 0x100 ) ;
     SetConsoleTitle( "" ) ;
     ether.sayF( 0 , postTHANKyOU , flSAY_NOwRAP ) ;
-    Sleep( 1000 ) ;
+    Sleep( 1000 * 30 ) ;
+    //Sleep( 1000 ) ;
 
     TOUCH( pnuP )
 }
