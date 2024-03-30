@@ -170,8 +170,11 @@
                 break ;
                 #endif
 
-                    BOSpOOP
-                    BOS( WHATgbo , BOSoK , SetConsoleCtrlHandler( (PHANDLER_ROUTINE)handleP.osh , 0 ) )
+                    }
+                        BOSpOOP
+                        BOS( WHATgbo , BOSoK , SetConsoleCtrlHandler( (PHANDLER_ROUTINE)handleP.osh , 0 ) )     // IF flPROCESSsTATE_SIGNAL_TO_GASP THEN THIS WOULD BLOCK UNTIL THE SLEEP IN THE HANDLER TERMINATED SO THAT THE HANDLER RETURNED
+                    {
+                    if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_SIGNAL_TO_GASP ) )
 
                 #elif defined( __NT__ )
                 #if defined( __OS2__ )

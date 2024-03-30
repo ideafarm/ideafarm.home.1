@@ -23573,7 +23573,6 @@ examples
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120027c.ifcidphasetopsecret END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120027d.firemyself BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
 //
@@ -23588,13 +23587,14 @@ examples
 */
 
 
-#define FIREmYSELF                                                                                                                      \
-                                                                                                                                        \
-    {                                                                                                                                   \
-        tinP.pag1->flagsAdamState |= flADAMsTATE_FIRED ;                                                                        \
-        etherC* pEtPrime = &etherC::etPrimeIF() ;                                                                                       \
-        if( !pEtPrime ) { BLAMMO ; }                                                                                                    \
-        else            ((poopC&)(const poopC&)*pEtPrime).gruntF( tinP , TAG( TAGiDnULL ) , ifcIDsUBtYPEpOOP_FIREDbYsELF , ifcIDtYPEpOOP_FIRED ) ;    \
+#define FIREmYSELF                                                                                                                                      \
+                                                                                                                                                        \
+    {                                                                                                                                                   \
+        processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;                                             \
+        tinP.pag1->flagsAdamState |= flADAMsTATE_FIRED ;                                                                                                \
+        etherC* pEtPrime = &etherC::etPrimeIF() ;                                                                                                       \
+        if( !pEtPrime ) { BLAMMO ; }                                                                                                                    \
+        else            ((poopC&)(const poopC&)*pEtPrime).gruntF( tinP , TAG( TAGiDnULL ) , ifcIDsUBtYPEpOOP_FIREDbYsELF , ifcIDtYPEpOOP_FIRED ) ;      \
     }
 
 //
