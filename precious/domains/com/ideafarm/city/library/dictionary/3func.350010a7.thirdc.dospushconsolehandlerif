@@ -60,7 +60,10 @@
                 //thirdC::dosExitProcessIF( exitCode ) ;                  //THIS IS TO ENSURE THAT A KNOWN PROCESS EXIT CODE IS RECEIVED BY THE KERNEL MONITOR ; CALLED IMMEDIATELY FOR DETERMINATE BEHAVIOR SINCE PROCESS WILL BE KILLED AFTER A TIMEOUT THAT IS TOO SHORT FOR IPDOS PROCESSES TO FULLY TERMINATE
                 //putNegAM( exitCode , FINGERnEG_EXITpROCESSsIGNAL ) ;
                 //ZE( countT , exitCode ) ;
-                //processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;
+
+                Sleep( 30 * 1000 ) ; //BASE OS WILL TIMEOUT AND KILL PROCESS
+
+                processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;
             {
             if( bGasp )
             processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;
