@@ -37156,16 +37156,17 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 #define flBOOKSc_UNZIP                              0xe00004b8
 #define flBOOKSc_WRITER                             0xe00008b8
 #define flBOOKSc_DOnOTuSEpUSE                       0xe00010b8
-#define flBOOKSc_PURGEoNcT                          0xe00020b8
-#define flBOOKSc_PURGEoNdT                          0xe00040b8
-#define flBOOKSc_DOnOTrEGISTERfILE                  0xe00080b8
-#define flBOOKSc_USEgRABmEMORYsPACEoVERRIDE         0xe00100b8
-#define flBOOKSc_DOnOTiNITIALIZEdATA                0xe00200b8
-#define flBOOKSc_LOCK                               0xe00400b8
-#define flBOOKSc_CYCLE                              0xe00800b8
-#define flBOOKSc_DOnOTsERIALIZEnAPKINS              0xe01000b8
-#define flBOOKSc_RESETcREFoNcT                      0xe02000b8
-#define flBOOKSc_NOsHORTfILENAMEpREFIX              0xe04000b8
+#define flBOOKSc_PURGEoNcTiFwOTHcELL                0xe00020b8
+#define flBOOKSc_PURGEoNcT                          0xe00040b8
+#define flBOOKSc_PURGEoNdT                          0xe00080b8
+#define flBOOKSc_DOnOTrEGISTERfILE                  0xe00100b8
+#define flBOOKSc_USEgRABmEMORYsPACEoVERRIDE         0xe00200b8
+#define flBOOKSc_DOnOTiNITIALIZEdATA                0xe00400b8
+#define flBOOKSc_LOCK                               0xe00800b8
+#define flBOOKSc_CYCLE                              0xe01000b8
+#define flBOOKSc_DOnOTsERIALIZEnAPKINS              0xe02000b8
+#define flBOOKSc_RESETcREFoNcT                      0xe04000b8
+#define flBOOKSc_NOsHORTfILENAMEpREFIX              0xe08000b8
 /*3*/
 #define flBOOKSc_null    0xe00000b8
 

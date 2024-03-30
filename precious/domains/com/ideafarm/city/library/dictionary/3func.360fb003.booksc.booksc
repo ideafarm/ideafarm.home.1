@@ -204,7 +204,10 @@
     }
         if( POOP ) return ;
         __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+
+        //20240330@1559: ADDED flBOOKSc_PURGEoNcTiFwOTHcELL
         //U:: DESIGN PROBLEM: INSTANCE SHARED BY MULTIPLE PROCESSES CANNOT PURGEoNcT: __NZ( F(flagsCt) & flBOOKSc_CYCLE && !( F(flagsCt) & flBOOKSc_PURGEoNcT ) ) ;
+
         __NZ( cbP && !( F(flagsP) & flBOOKSc_WRITER ) ) ;
         FV( flBOOKSc , flagsP ) ;
         }
@@ -256,7 +259,7 @@ postBookNameScratch( 0 ) ,
     ( F(flagsP) & flBOOKSc_DELETE                     ? flBOOKc_DELETE                     : flBOOKc_null ) |
 (
 flagsCtBook
-flagsCt( flagsP ) ,
+flagsCt( F(flagsP) & flBOOKSc_PURGEoNcTiFwOTHcELL && rootAdamGlobal1I.idCell == 1 ? flagsP | flBOOKSc_PURGEoNcT : flagsP ) ,
 offBookBackNow( - 1 ) ,
 pbFlagsiBookBackCt( 0 ) ,
 pbBookBack( 0 ) ,
