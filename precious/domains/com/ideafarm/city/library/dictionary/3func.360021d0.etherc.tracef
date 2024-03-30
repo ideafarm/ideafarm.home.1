@@ -99,9 +99,11 @@
                         _restart.flags |= flRESTARTc_QUIET ;
                         RESTART
                     {
-                    if( F(processGlobal2I.flCt) & flCTdTg_exceptionHandlerRegistered && !( F(processGlobal2I.flDt) & flCTdTg_exceptionHandlerRegistered ) && !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_SIGNAL_TO_GASP ) )
+                    if( F(processGlobal2I.flCt) & flCTdTg_exceptionHandlerRegistered && !( F(processGlobal2I.flDt) & flCTdTg_exceptionHandlerRegistered ) )
                 {
-                if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_SIGNAL_TO_GASP ) )
+                if( !( F(flagsP) & flTRACE_NObOOK ) )
+
+                //if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_ RECEIVEDsIGNALtObEfIRED ) )
                 //20240328@2327: NO CAN DO
                 //20240328@2326: NEVER LOG ; THIS IS TO ELIMINATE LOG FILE CLUTTER ; IF EXCEPTIONS ARE OBSERVED, THE TEST CAN  BE ENABLED TO USE SAFE LOGGING RATHER THAN UNSAFE booksC WRITING
 

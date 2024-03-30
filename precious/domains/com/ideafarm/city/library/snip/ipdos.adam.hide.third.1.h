@@ -13525,8 +13525,7 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 /*3*/
 #define flPROCESSsTATE_OUTPUTwINDOWiSvISIBLE        0xe000012d
 #define flPROCESSsTATE_WM_CLOSE_RECEIVED            0xe000022d
-#define flPROCESSsTATE_SIGNAL_TO_QUIT               0xe000042d
-#define flPROCESSsTATE_SIGNAL_TO_GASP               0xe000082d
+#define flPROCESSsTATE_RECEIVEDsIGNALtObEfIRED      0xe000082d
 #define flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE  0xe000102d
 #define flPROCESSsTATE_tmWindowsF_HASeNDED          0xe000202d
 #define flPROCESSsTATE_GLOBALdESTRUCTIONiScOMPLETE  0xe000402d
@@ -16806,6 +16805,7 @@ after i return, that countT object will contain 1
 #define flMODEpROCESS2_DOnOTdISPLAYtHIRDpARTYaDS       0xe0020044
 #define flMODEpROCESS2_CHECKtINuTILITYeLEMENTS         0xe0040044
 #define flMODEpROCESS2_GRABoNLYwO                      0xe0080044
+#define flMODEpROCESS2_SUPPRESSiNoUTfRAMEc             0xe0100044
 /*3*/
 #define flMODEpROCESS2_null    0xe0000044
 
@@ -23590,7 +23590,7 @@ examples
 #define FIREmYSELF                                                                                                                                      \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        /*processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;*/                                         \
+        thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ;                                                                   \
         tinP.pag1->flagsAdamState |= flADAMsTATE_FIRED ;                                                                                                \
         etherC* pEtPrime = &etherC::etPrimeIF() ;                                                                                                       \
         if( !pEtPrime ) { BLAMMO ; }                                                                                                                    \
@@ -45092,15 +45092,16 @@ arguments
 #define flTRACE_NOpREFIX             0xe00004ee
 #define flTRACE_KEEPcRlF             0xe00008ee
 #define flTRACE_NOcONSOLE            0xe00010ee
-#define flTRACE_NOtELL               0xe00020ee
-#define flTRACE_LOOP                 0xe00040ee
-#define flTRACE_HOMEeCHO             0xe00080ee
-#define flTRACE_HOMEeCHOdEADMAN1     0xe00100ee
-#define flTRACE_HOMEeCHOdEADMAN2     0xe00200ee
-#define flTRACE_HOMEeCHOgORILLAhOME  0xe00400ee
-#define flTRACE_ECHOoNLY             0xe00800ee
-#define flTRACE_FORCEdIVERT          0xe01000ee
-#define flTRACE_FORCEnOsILENCE       0xe02000ee
+#define flTRACE_NObOOK               0xe00020ee
+#define flTRACE_NOtELL               0xe00040ee
+#define flTRACE_LOOP                 0xe00080ee
+#define flTRACE_HOMEeCHO             0xe00100ee
+#define flTRACE_HOMEeCHOdEADMAN1     0xe00200ee
+#define flTRACE_HOMEeCHOdEADMAN2     0xe00400ee
+#define flTRACE_HOMEeCHOgORILLAhOME  0xe00800ee
+#define flTRACE_ECHOoNLY             0xe01000ee
+#define flTRACE_FORCEdIVERT          0xe02000ee
+#define flTRACE_FORCEnOsILENCE       0xe04000ee
 /*3*/
 #define flTRACE_null    0xe00000ee
 

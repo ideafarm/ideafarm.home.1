@@ -56,33 +56,9 @@
         return 0 ;                //A:ASSUME: THAT IS ENOUGH TIME FOR THIS PROCESS TO TERMINATE (DT OF processGlobal1I)
         Sleep( 1000 * 60 * 60 ) ; //A:ASSUME: BASE OS WILL TIMEOUT AND KILL PROCESS IN ABOUT 5000 MS
 
-        }
-            if( bGasp ) processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;
-                        processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;
-        {
-        if( bQuit )
-
-        }
-            default               : {                                                                                           bGasp = bQuit = 1 ; break ; }
-            case CTRL_CLOSE_EVENT :
-            case CTRL_C_EVENT     : { if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) )         bQuit = 1 ; break ; }
-        {
-        switch( idType )
-        ZE( boolT , bGasp ) ;
-        ZE( boolT , bQuit ) ;
-
-        }
-            CONoUTrAW( ostoSay ) ;
-            OStEXTAK( ostoSay , "\r\n" ) ;
-            OStEXTC(  ostoSay , osTidIF() , 0 ) ;
-            OStEXTAK( ostoSay , "\r\nsignal thread [osTid]:    " ) ;
-            OStEXT(   ostoSay , TUCK ) ;
-        {
+        processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_RECEIVEDsIGNALtObEfIRED ;
     {
     BOOL OSF consoleHandlerDfltF( DWORD idType ) // thirdC::thPrimeIF( tinP ) IS NOT STORED, BECAUSE THIS FUNCTION COULD EXECUTE LATE
-
-    //CONJ: THE STACK FOR THE O.S. THREAD THAT WILL CALL ME IS SMALL.  I CANNOT USE FUNCTIONS SUCH AS boxC::boxC
-    //THIS MUST RETURN QUICKLY (E.G. NOT SLEEP) BECAUSE THE O.S. BROADCASTS SHUTDOWN AND LOGOFF NOTICES SERIALLY
 
 #elif defined( __NT__ )
 
