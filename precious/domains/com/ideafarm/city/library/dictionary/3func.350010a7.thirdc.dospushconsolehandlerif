@@ -53,8 +53,8 @@
 #endif
 
     }
-        return 0 ;
-        Sleep( 1000 * 60 * 60 ) ; //BASE OS WILL TIMEOUT AND KILL PROCESS
+        return 0 ;                //A:ASSUME: THAT IS ENOUGH TIME FOR THIS PROCESS TO TERMINATE (DT OF processGlobal1I)
+        Sleep( 1000 * 60 * 60 ) ; //A:ASSUME: BASE OS WILL TIMEOUT AND KILL PROCESS IN ABOUT 5000 MS
 
         }
             if( bGasp ) processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;

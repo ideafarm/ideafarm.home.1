@@ -47,7 +47,7 @@ REST
             bQuitConsole = memorySpaceKernel.bQuitMonitor = memorySpaceKernel.bQuitEating = 1 ;
             memorySpaceS& memorySpaceKernel = *(memorySpaceS*)&(countT&)swMemorySpace ;
             cLeverIdMemory = ifcIDmEMORYsPACE_KERNEL ;
-            thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_SUPPRESStELLS ; //RACE: A THREAD MIGHT HAVE ALREADY INSPECTED THE FLAGS BUT NOT YET WRITTEN TO THE MONITOR; THE CONSEQUENCE IS THAT SOME MESSAGES AREN'T PULLED;  THIS IS AOK AS LONG AS THE QUEUE ISN'T FILLED
+            thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_SUPPRESStELLS ; //RACE: A THREAD MIGHT HAVE ALREADY INSPECTED THE FLAGS BUT NOT YET WRITTEN TO THE MONITOR; THE CONSEQUENCE IS THAT SOME MESSAGES AREN'T PULLED;  THIS IS AOK AS LONG AS THE QUEUE ISN'T FILLED
             //CONoUTrAW( "firing kernel monitor\r\n" ) ;
         {
         etThread.traceF( tinP , T("firing kernel queue monitor") ) ;

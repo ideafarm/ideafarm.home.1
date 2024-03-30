@@ -8787,6 +8787,15 @@ it is illegal to refer to this symbol in the definition of an adam
 #define flMODEpROCESS1_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY       0xe0010018
 #define flMODEpROCESS1_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY       0xe0020018
 #define flMODEpROCESS1_SLABsEESaLLsESSIONS                      0xe0040018
+#define flMODEpROCESS1_FAILtELLS                                0xe0080018
+#define flMODEpROCESS1_SUPPRESStELLS                            0xe0100018
+#define flMODEpROCESS1_NOsYNCHRONOUStELLS                       0xe0200018
+#define flMODEpROCESS1_NOsYSTEMtHREADS                          0xe0400018
+#define flMODEpROCESS1_HIDEwITHiCON                             0xe0800018
+#define flMODEpROCESS1_IDhOSTsEARCH                             0xe1000018
+#define flMODEpROCESS1_DEBUG                                    0xe2000018
+#define flMODEpROCESS1_ENABLEsECURITYsHUTDOWN                   0xe4000018
+#define flMODEpROCESS1_DOnOThIREaDAMS                           0xe8000018
 /*3*/
 #define flMODEpROCESS1_null    0xe0000018
 
@@ -16794,15 +16803,6 @@ after i return, that countT object will contain 1
 
 /*1*//*flMODEpROCESS2*//*1*/
 /*3*/
-#define flMODEpROCESS2_FAILtELLS                       0xe0000144
-#define flMODEpROCESS2_SUPPRESStELLS                   0xe0000244
-#define flMODEpROCESS2_NOsYNCHRONOUStELLS              0xe0000444
-#define flMODEpROCESS2_NOsYSTEMtHREADS                 0xe0000844
-#define flMODEpROCESS2_HIDEwITHiCON                    0xe0001044
-#define flMODEpROCESS2_IDhOSTsEARCH                    0xe0002044
-#define flMODEpROCESS2_DEBUG                           0xe0004044
-#define flMODEpROCESS2_ENABLEsECURITYsHUTDOWN          0xe0008044
-#define flMODEpROCESS2_DOnOThIREaDAMS                  0xe0010044
 #define flMODEpROCESS2_DOnOTdISPLAYtHIRDpARTYaDS       0xe0020044
 #define flMODEpROCESS2_CHECKtINuTILITYeLEMENTS         0xe0040044
 #define flMODEpROCESS2_GRABoNLYwO                      0xe0080044
@@ -32639,9 +32639,9 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
     TELL( "waiting for all child threads except tmWindowsF tmAnimateSadamsOnPaperF to end" ) ;                                                              \
     {                                                                                                                                                       \
         const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tinP))    & flADAMmODE1_tmWindows          ) ;                                  \
-        const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                  \
-        const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_NOsYSTEMtHREADS ) ;                                  \
-        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
+        const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                      \
+        const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                      \
+        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */                     \
         countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tinP ) ;                                                                                \
         countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tinP ) ;                                                                             \
         IFsCRATCH                                                                                                                                           \
@@ -32656,7 +32656,7 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
                                                                                                                                                             \
             if( POOP ) POOPR                                                                                                                                \
         }                                                                                                                                                   \
-        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/ending wait\r\n" ) ;*/                            \
+        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/ending wait\r\n" ) ;*/                                    \
         /* ONLY main,tmWindowsF,tmWatchF,tmKillSocketF REMAIN */                                                                                            \
     }                                                                                                                                                       \
 

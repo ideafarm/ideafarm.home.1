@@ -118,7 +118,7 @@
         else
         }
             //THE BASIC IDEA WAS TO SEARCH FOR A MEMORY SPACE NOT OCCUPIED BY A MONITOR (1050104)
-            // COMMENTED OUT CAUSE I DON'T SEE WHY I WOULD EVER WANT TO SEARCH FOR AN INACTIVE HOME: if( !( processGlobal2I.idHome & fliIDhOME_HOMELESS ) ) processGlobal2I._thirdC_flagsModeProcess2 |= flMODEpROCESS2_IDhOSTsEARCH ; //U::USED TO ONLY BE DONE WHEN idHomeDiskOverrideG IS SET; THIS LINE MUST BE EDITED TO RESTORE THE ORIGINAL INTENDED FUNCTIONALITY, WHATEVER THAT WAS
+            // COMMENTED OUT CAUSE I DON'T SEE WHY I WOULD EVER WANT TO SEARCH FOR AN INACTIVE HOME: if( !( processGlobal2I.idHome & fliIDhOME_HOMELESS ) ) processGlobal2I._thirdC_flagsModeProcess1 |= flMODEpROCESS1_IDhOSTsEARCH ; //U::USED TO ONLY BE DONE WHEN idHomeDiskOverrideG IS SET; THIS LINE MUST BE EDITED TO RESTORE THE ORIGINAL INTENDED FUNCTIONALITY, WHATEVER THAT WAS
 
             if( costaToP >= 0x9 ) thirdC::c_itoaIF( postToP , (countT)ifcIDaDAM_KERNEL1DRIVER ) ;
         {
@@ -128,7 +128,11 @@
         {
         if( bFiler )
 
-        if( processGlobal2I.idHome & fliIDhOME_HOMELESS ) processGlobal2I._thirdC_flagsModeProcess2 |= /*flMODEpROCESS2_DOnOThIREaDAMS |*/ flMODEpROCESS2_DOnOTdISPLAYtHIRDpARTYaDS ;
+        }
+              processGlobal2I._thirdC_flagsModeProcess2 |= flMODEpROCESS2_DOnOTdISPLAYtHIRDpARTYaDS ;
+            //processGlobal2I._thirdC_flagsModeProcess1 |= flMODEpROCESS1_DOnOThIREaDAMS            ;
+        {
+        if( processGlobal2I.idHome & fliIDhOME_HOMELESS )
 
         }
             bDriver = 1 ;
