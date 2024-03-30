@@ -113,7 +113,7 @@ DONE( tmWatchF )
     //DUPLICATE CODE: 33000008 33000008
 
     }
-        ++ s ; etThread.osSleepF( tinP , /*!ether ? TOCK : TOCK >> 3*/ TOCK ) ; //20231126@1044: U:: TO FIND A BUG ; PRODUCTION IS CONDITIONAL TOCK OR TOCK >> 3
+        ++ s ; etThread.osSleepF( tinP , !ether ? TOCK : TOCK >> 3 ) ;
         TELL( "napping for a tock" ) ;
 
         //thirdC::osLogWrongNodeIF( tinP ) ;

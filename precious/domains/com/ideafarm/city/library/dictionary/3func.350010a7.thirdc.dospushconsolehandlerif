@@ -54,34 +54,18 @@
 
     }
         return 0 ;
+        Sleep( 1000 * 60 * 60 ) ; //BASE OS WILL TIMEOUT AND KILL PROCESS
 
         }
-            }
-                //thirdC::dosExitProcessIF( exitCode ) ;                  //THIS IS TO ENSURE THAT A KNOWN PROCESS EXIT CODE IS RECEIVED BY THE KERNEL MONITOR ; CALLED IMMEDIATELY FOR DETERMINATE BEHAVIOR SINCE PROCESS WILL BE KILLED AFTER A TIMEOUT THAT IS TOO SHORT FOR IPDOS PROCESSES TO FULLY TERMINATE
-                //putNegAM( exitCode , FINGERnEG_EXITpROCESSsIGNAL ) ;
-                //ZE( countT , exitCode ) ;
-
-                Sleep( 30 * 1000 ) ; //BASE OS WILL TIMEOUT AND KILL PROCESS
-
-                processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;
-            {
-            if( bGasp )
-            processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;
+            if( bGasp ) processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_GASP ;
+                        processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;
         {
         if( bQuit )
 
         }
-            }
-                break ;
-                bGasp = bQuit = 1 ;
-            {
-            default:
-            case CTRL_CLOSE_EVENT    :
-            }
-                break ;
-                if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) ) bQuit = 1 ;
-            {
-            case CTRL_C_EVENT        :
+            default               : {                                                                                           bGasp = bQuit = 1 ; break ; }
+            case CTRL_CLOSE_EVENT :
+            case CTRL_C_EVENT     : { if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) )         bQuit = 1 ; break ; }
         {
         switch( idType )
         ZE( boolT , bGasp ) ;
