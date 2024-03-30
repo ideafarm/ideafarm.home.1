@@ -23590,7 +23590,7 @@ examples
 #define FIREmYSELF                                                                                                                                      \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;                                             \
+        /*processGlobal2S::_processGlobal2I_IF()._thirdC_flagsProcessState |= flPROCESSsTATE_SIGNAL_TO_QUIT ;*/                                         \
         tinP.pag1->flagsAdamState |= flADAMsTATE_FIRED ;                                                                                                \
         etherC* pEtPrime = &etherC::etPrimeIF() ;                                                                                                       \
         if( !pEtPrime ) { BLAMMO ; }                                                                                                                    \
