@@ -2421,7 +2421,7 @@ TASK( tmWorkerHealFileF )
 countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
-    /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing /         --------") ) ;
+    /* if( bChatterP )*/ pP.ether.traceF( tinP , T("healed  ---- [idName]:    ")+TF2(idNameP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
         }
             //tinP.pc Utility[ 0 ] -- ;
@@ -3481,7 +3481,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         }
                                             }
                                                 ++ s ; thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 , flYIELD_ANYtHREADdESIRE ) ;
-                                                if( !( idIn % TUCK ) ) pP.ether.traceF( tinP , T("napping: too many pending compare jobs [idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                if( !( idIn % TOCK ) ) pP.ether.traceF( tinP , T("napping: too many pending compare jobs [idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 countT idIn = 1 + incv02AM( idInLath ) ;
                                             {
                                             while( pP.stJobCompare >= pP.cPathsToYear )
@@ -4004,7 +4004,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
     //if
     /*U::COMMENT OUT IN PRODUCTION:*/
 
-    /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / ++++++++") ) ;
+    /* if( bChatterP )*/ pP.ether.traceF( tinP , T("healing ++++ [idName]:    ")+TF2(idNameP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //bChatterP = 1 ; //U:: TO FIND A BUG
 {
