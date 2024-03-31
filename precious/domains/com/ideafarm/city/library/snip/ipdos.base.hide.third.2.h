@@ -29391,6 +29391,7 @@ applications should avoid using thirdC objects
  voidT dosCopyF( tinS& tinP , const osTextT* const postNewP , const osTextT* const postOldP , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340cc.thirdC.dosCopyF!||
  boolT dosCreateDirF( tinS& tinP , const osTextT* const postP ) ;
+ static voidT dosCreatePathIF( tinS& tinP , osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401a.thirdC.dosCreateDirF!||
  static voidT dosCreateDirIF( tinS& tinP , const osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34185.thirdC.dosCreateDirIF!||
