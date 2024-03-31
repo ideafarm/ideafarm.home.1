@@ -9930,118 +9930,118 @@ flHIRE_SHOW
 
 /*1*//*FINGERnEG*//*1*/
 /*3*/
-#define FINGERnEG_STATEc                                ((countT)-(sCountT)0xcccc0001)
-#define FINGERnEG_NOTuSEDdROPnOTEs1                     ((countT)-(sCountT)0xcccc0002)
-#define FINGERnEG_NOTuSEDdROPnOTEs1zOMBIE               ((countT)-(sCountT)0xcccc0003)
-#define FINGERnEG_NOTuSEDdROPnOTEs2                     ((countT)-(sCountT)0xcccc0004)
-#define FINGERnEG_NOTuSEDdROPnOTEs2zOMBIE               ((countT)-(sCountT)0xcccc0005)
-#define FINGERnEG_TINs                                  ((countT)-(sCountT)0xcccc0006)
-#define FINGERnEG_TINszOMBIE                            ((countT)-(sCountT)0xcccc0007)
-#define FINGERnEG_NOTuSEDpOOLcpOOLoLDhEADER             ((countT)-(sCountT)0xcccc0008)
-#define FINGERnEG_TELEMETRY1                            ((countT)-(sCountT)0xcccc0009)
-#define FINGERnEG_TELEMETRY1zOMBIEoBSOLETE              ((countT)-(sCountT)0xcccc000a)
-#define FINGERnEG_BLAMMO                                ((countT)-(sCountT)0xcccc000b)
-#define FINGERnEG_BASEgRABc                             ((countT)-(sCountT)0xcccc000c)
-#define FINGERnEG_BASEgRABczOMBIE                       ((countT)-(sCountT)0xcccc000d)
-#define FINGERnEG_BACKgRABmEMORYsPACEc1                 ((countT)-(sCountT)0xcccc000e)
-#define FINGERnEG_BACKgRABmEMORYsPACEc2                 ((countT)-(sCountT)0xcccc000f)
-#define FINGERnEG_NAPfIREcELLmONITOR                    ((countT)-(sCountT)0xcccc0010)
-#define FINGERnEG_CYRCLEoLDwRITE                        ((countT)-(sCountT)0xcccc0011)
-#define FINGERnEG_CYRCLEoLDwRITEeND                     ((countT)-(sCountT)0xcccc0012)
-#define FINGERnEG_CYRCLEoLDwRITEsMUDGE                  ((countT)-(sCountT)0xcccc0013)
-#define FINGERnEG_NOTuSEDrELAY                          ((countT)-(sCountT)0xcccc0014)
-#define FINGERnEG_TLSeND                                ((countT)-(sCountT)0xcccc0015)
-#define FINGERnEG_THIRDc                                ((countT)-(sCountT)0xcccc0016)
-#define FINGERnEG_THIRDczOMBIE                          ((countT)-(sCountT)0xcccc0017)
-#define FINGERnEG_FOOTc1                                ((countT)-(sCountT)0xcccc0018)
-#define FINGERnEG_FOOTc1zOMBIE                          ((countT)-(sCountT)0xcccc0019)
-#define FINGERnEG_FOOTc2                                ((countT)-(sCountT)0xcccc001a)
-#define FINGERnEG_FOOTc2zOMBIE                          ((countT)-(sCountT)0xcccc001b)
-#define FINGERnEG_FOOTc3                                ((countT)-(sCountT)0xcccc001c)
-#define FINGERnEG_FOOTc3zOMBIE                          ((countT)-(sCountT)0xcccc001d)
-#define FINGERnEG_POOPc                                 ((countT)-(sCountT)0xcccc001e)
-#define FINGERnEG_POOPczOMBIE                           ((countT)-(sCountT)0xcccc001f)
-#define FINGERnEG_SOCKETsECREThANDSHAKE                 0xcccc0020
-#define FINGERnEG_TREEoLDcsOUL                          0xcccc0021
-#define FINGERnEG_STReNCODEf                            0xcccc0022
-#define FINGERnEG_SOULc                                 ((countT)-(sCountT)0xcccc0023)
-#define FINGERnEG_TREEcsNAP                             ((countT)-(sCountT)0xcccc0024)
-#define FINGERnEG_NAPwORD                               ((countT)-(sCountT)0xcccc0025)
-#define FINGERnEG_SADAMsTROKEcT                         0xcccc0026
-#define FINGERnEG_PERSONALkEY                           0xcccc0027
-#define FINGERnEG_SESSIONcsOUL                          0xcccc0028
-#define FINGERnEG_LINKc                                 ((countT)-(sCountT)0xcccc0029)
-#define FINGERnEG_LINKczOMBIE                           ((countT)-(sCountT)0xcccc002a)
-#define FINGERnEG_TICKET                                0xcccc002b
-#define FINGERnEG_POOLcfACE                             ((countT)-(sCountT)0xcccc002c)
-#define FINGERnEG_APTlISTINGcoLDnOTuSED                 ((countT)-(sCountT)0xcccc002d)
-#define FINGERnEG_SERIALnUMBERdISPENSERcMD              0xcccc002e
-#define FINGERnEG_SERIALnUMBERdISPENSERrEPLY            0xcccc002f
-#define FINGERnEG_LISTsERVERcMD                         0xcccc0030
-#define FINGERnEG_LISTsERVERrEPLY                       0xcccc0031
-#define FINGERnEG_HOMEs                                 ((countT)-(sCountT)0xcccc0032)
-#define FINGERnEG_THREADlOCALsTORAGE                    ((countT)-(sCountT)0xcccc0033)
-#define FINGERnEG_THREADlOCALsTORAGElOCATION            ((countT)-(sCountT)0xcccc0034)
-#define FINGERnEG_THREADlOCALsTORAGEvERIFY              ((countT)-(sCountT)0xcccc0035)
-#define FINGERnEG_NAPKINiSfORMATTED                     ((countT)-(sCountT)0xcccc0036)
-#define FINGERnEG_BKmONITOR                             ((countT)-(sCountT)0xcccc0037)
-#define FINGERnEG_BOOKhEADs                             ((countT)-(sCountT)0xcccc0038)
-#define FINGERnEG_BOOK0cwRITEhEAD1                      ((countT)-(sCountT)0xcccc0039)
-#define FINGERnEG_BOOK0cwRITEhEAD2                      ((countT)-(sCountT)0xcccc003a)
-#define FINGERnEG_BOOK0cwRITEtAIL                       ((countT)-(sCountT)0xcccc003b)
-#define FINGERnEG_TELEMETRY2                            ((countT)-(sCountT)0xcccc003c)
-#define FINGERnEG_GRABc                                 ((countT)-(sCountT)0xcccc003d)
-#define FINGERnEG_GRABczOMBIE                           ((countT)-(sCountT)0xcccc003e)
-#define FINGERnEG_GRABITc                               ((countT)-(sCountT)0xcccc003f)
-#define FINGERnEG_GRABITczOMBIE                         ((countT)-(sCountT)0xcccc0040)
-#define FINGERnEG_GRABOTc                               ((countT)-(sCountT)0xcccc0041)
-#define FINGERnEG_GRABOTczOMBIE                         ((countT)-(sCountT)0xcccc0042)
-#define FINGERnEG_LINKEDc                               ((countT)-(sCountT)0xcccc0043)
-#define FINGERnEG_LINKEDczOMBIE                         ((countT)-(sCountT)0xcccc0044)
-#define FINGERnEG_HOMEszOMBIE                           ((countT)-(sCountT)0xcccc0045)
-#define FINGERnEG_SLABs                                 ((countT)-(sCountT)0xcccc0046)
-#define FINGERnEG_SLABszOMBIE                           ((countT)-(sCountT)0xcccc0047)
-#define FINGERnEG_CLEANc                                ((countT)-(sCountT)0xcccc0048)
-#define FINGERnEG_CLEANczOMBIE                          ((countT)-(sCountT)0xcccc0049)
-#define FINGERnEG_RENDERsTATEc                          ((countT)-(sCountT)0xcccc004a)
-#define FINGERnEG_RENDERsTATEczOMBIE                    ((countT)-(sCountT)0xcccc004b)
-#define FINGERnEG_PAPERc                                ((countT)-(sCountT)0xcccc004c)
-#define FINGERnEG_PAPERczOMBIE                          ((countT)-(sCountT)0xcccc004d)
-#define FINGERnEG_ASSvIEWc                              ((countT)-(sCountT)0xcccc004e)
-#define FINGERnEG_ASSvIEWczOMBIE                        ((countT)-(sCountT)0xcccc004f)
-#define FINGERnEG_HANDLEbOOKSjOT                        ((countT)-(sCountT)0xcccc0050)
-#define FINGERnEG_KTlINKfILEiNNER                       ((countT)-(sCountT)0xcccc0051)
-#define FINGERnEG_KTlINKfILEoUTER                       ((countT)-(sCountT)0xcccc0052)
-#define FINGERnEG_BASEc                                 ((countT)-(sCountT)0xcccc0053)
-#define FINGERnEG_BASEczOMBIE                           ((countT)-(sCountT)0xcccc0054)
-#define FINGERnEG_ACCESSeVENTrAW                        ((countT)-(sCountT)0xcccc0055)
-#define FINGERnEG_ACCESSeVENTiDjOTfORmOstsTRINGS        ((countT)-(sCountT)0xcccc0056)
-#define FINGERnEG_ACCESSeVENTiDjOTfORaLLsTRINGS         ((countT)-(sCountT)0xcccc0057)
-#define FINGERnEG_WOtABLEuNCONFIRMEDeMAIL               ((countT)-(sCountT)0xcccc0058)
-#define FINGERnEG_WOtABLEcONFIRMEDeMAIL                 ((countT)-(sCountT)0xcccc0059)
-#define FINGERnEG_DATUMgORILLAiDEAFARMcOM               ((countT)-(sCountT)0xcccc005a)
-#define FINGERnEG_CLOAKcOMMAND                          ((countT)-(sCountT)0xcccc005b)
-#define FINGERnEG_CLOAKrEPLY                            ((countT)-(sCountT)0xcccc005c)
-#define FINGERnEG_CLOAKsIMPLEcONNECTION                 ((countT)-(sCountT)0xcccc005d)
-#define FINGERnEG_WOtABLEsAID                           ((countT)-(sCountT)0xcccc005e)
-#define FINGERnEG_WOtABLEsAIDaNON                       ((countT)-(sCountT)0xcccc005f)
-#define FINGERnEG_WOtABLEsAIDtOPIC                      ((countT)-(sCountT)0xcccc0060)
-#define FINGERnEG_WOtABLEnEWtOPICcERTIFIED              ((countT)-(sCountT)0xcccc0061)
-#define FINGERnEG_dropNoteSsexC1                        ((countT)-(sCountT)0xcccc0062)
-#define FINGERnEG_dropNoteSsexC2                        ((countT)-(sCountT)0xcccc0063)
-#define FINGERnEG_dropNoteSslotsC1                      ((countT)-(sCountT)0xcccc0064)
-#define FINGERnEG_dropNoteSslotsC2                      ((countT)-(sCountT)0xcccc0065)
-#define FINGERnEG_dropNoteSpoolC1                       ((countT)-(sCountT)0xcccc0066)
-#define FINGERnEG_dropNoteSpoolC2                       ((countT)-(sCountT)0xcccc0067)
-#define FINGERnEG_dropNoteSdeleted                      ((countT)-(sCountT)0xcccc0068)
-#define FINGERnEG_dropSeparator                         ((countT)-(sCountT)0xcccc0069)
-#define FINGERnEG_dropHeaderInitialize                  ((countT)-(sCountT)0xcccc006a)
-#define FINGERnEG_nodeC                                 ((countT)-(sCountT)0xcccc006b)
-#define FINGERnEG_echoPacketS                           ((countT)-(sCountT)0xcccc006c)
-#define FINGERnEG_jotFileSoilC                          ((countT)-(sCountT)0xcccc006d)
-#define FINGERnEG_jotFilePartC                          ((countT)-(sCountT)0xcccc006e)
-#define FINGERnEG_jotFileNameC                          ((countT)-(sCountT)0xcccc006f)
-#define FINGERnEG_jotFileBranchC                        ((countT)-(sCountT)0xcccc0070)
+#define FINGERnEG_STATEc                                    ((countT)-(sCountT)0xcccc0001)
+#define FINGERnEG_NOTuSEDdROPnOTEs1                         ((countT)-(sCountT)0xcccc0002)
+#define FINGERnEG_NOTuSEDdROPnOTEs1zOMBIE                   ((countT)-(sCountT)0xcccc0003)
+#define FINGERnEG_NOTuSEDdROPnOTEs2                         ((countT)-(sCountT)0xcccc0004)
+#define FINGERnEG_NOTuSEDdROPnOTEs2zOMBIE                   ((countT)-(sCountT)0xcccc0005)
+#define FINGERnEG_TINs                                      ((countT)-(sCountT)0xcccc0006)
+#define FINGERnEG_TINszOMBIE                                ((countT)-(sCountT)0xcccc0007)
+#define FINGERnEG_NOTuSEDpOOLcpOOLoLDhEADER                 ((countT)-(sCountT)0xcccc0008)
+#define FINGERnEG_TELEMETRY1                                ((countT)-(sCountT)0xcccc0009)
+#define FINGERnEG_TELEMETRY1zOMBIEoBSOLETE                  ((countT)-(sCountT)0xcccc000a)
+#define FINGERnEG_BLAMMO                                    ((countT)-(sCountT)0xcccc000b)
+#define FINGERnEG_BASEgRABc                                 ((countT)-(sCountT)0xcccc000c)
+#define FINGERnEG_BASEgRABczOMBIE                           ((countT)-(sCountT)0xcccc000d)
+#define FINGERnEG_BACKgRABmEMORYsPACEc1                     ((countT)-(sCountT)0xcccc000e)
+#define FINGERnEG_BACKgRABmEMORYsPACEc2                     ((countT)-(sCountT)0xcccc000f)
+#define FINGERnEG_NAPfIREcELLmONITOR                        ((countT)-(sCountT)0xcccc0010)
+#define FINGERnEG_CYRCLEoLDwRITE                            ((countT)-(sCountT)0xcccc0011)
+#define FINGERnEG_CYRCLEoLDwRITEeND                         ((countT)-(sCountT)0xcccc0012)
+#define FINGERnEG_CYRCLEoLDwRITEsMUDGE                      ((countT)-(sCountT)0xcccc0013)
+#define FINGERnEG_NOTuSEDrELAY                              ((countT)-(sCountT)0xcccc0014)
+#define FINGERnEG_TLSeND                                    ((countT)-(sCountT)0xcccc0015)
+#define FINGERnEG_THIRDc                                    ((countT)-(sCountT)0xcccc0016)
+#define FINGERnEG_THIRDczOMBIE                              ((countT)-(sCountT)0xcccc0017)
+#define FINGERnEG_FOOTc1                                    ((countT)-(sCountT)0xcccc0018)
+#define FINGERnEG_FOOTc1zOMBIE                              ((countT)-(sCountT)0xcccc0019)
+#define FINGERnEG_FOOTc2                                    ((countT)-(sCountT)0xcccc001a)
+#define FINGERnEG_FOOTc2zOMBIE                              ((countT)-(sCountT)0xcccc001b)
+#define FINGERnEG_FOOTc3                                    ((countT)-(sCountT)0xcccc001c)
+#define FINGERnEG_FOOTc3zOMBIE                              ((countT)-(sCountT)0xcccc001d)
+#define FINGERnEG_POOPc                                     ((countT)-(sCountT)0xcccc001e)
+#define FINGERnEG_POOPczOMBIE                               ((countT)-(sCountT)0xcccc001f)
+#define FINGERnEG_SOCKETsECREThANDSHAKE                     0xcccc0020
+#define FINGERnEG_TREEoLDcsOUL                              0xcccc0021
+#define FINGERnEG_STReNCODEf                                0xcccc0022
+#define FINGERnEG_SOULc                                     ((countT)-(sCountT)0xcccc0023)
+#define FINGERnEG_TREEcsNAP                                 ((countT)-(sCountT)0xcccc0024)
+#define FINGERnEG_NAPwORD                                   ((countT)-(sCountT)0xcccc0025)
+#define FINGERnEG_SADAMsTROKEcT                             0xcccc0026
+#define FINGERnEG_PERSONALkEY                               0xcccc0027
+#define FINGERnEG_SESSIONcsOUL                              0xcccc0028
+#define FINGERnEG_LINKc                                     ((countT)-(sCountT)0xcccc0029)
+#define FINGERnEG_LINKczOMBIE                               ((countT)-(sCountT)0xcccc002a)
+#define FINGERnEG_TICKET                                    0xcccc002b
+#define FINGERnEG_POOLcfACE                                 ((countT)-(sCountT)0xcccc002c)
+#define FINGERnEG_APTlISTINGcoLDnOTuSED                     ((countT)-(sCountT)0xcccc002d)
+#define FINGERnEG_SERIALnUMBERdISPENSERcMD                  0xcccc002e
+#define FINGERnEG_SERIALnUMBERdISPENSERrEPLY                0xcccc002f
+#define FINGERnEG_LISTsERVERcMD                             0xcccc0030
+#define FINGERnEG_LISTsERVERrEPLY                           0xcccc0031
+#define FINGERnEG_HOMEs                                     ((countT)-(sCountT)0xcccc0032)
+#define FINGERnEG_THREADlOCALsTORAGE                        ((countT)-(sCountT)0xcccc0033)
+#define FINGERnEG_THREADlOCALsTORAGElOCATION                ((countT)-(sCountT)0xcccc0034)
+#define FINGERnEG_THREADlOCALsTORAGEvERIFY                  ((countT)-(sCountT)0xcccc0035)
+#define FINGERnEG_NAPKINiSfORMATTED                         ((countT)-(sCountT)0xcccc0036)
+#define FINGERnEG_BKmONITOR                                 ((countT)-(sCountT)0xcccc0037)
+#define FINGERnEG_BOOKhEADs                                 ((countT)-(sCountT)0xcccc0038)
+#define FINGERnEG_BOOK0cwRITEhEAD1                          ((countT)-(sCountT)0xcccc0039)
+#define FINGERnEG_BOOK0cwRITEhEAD2                          ((countT)-(sCountT)0xcccc003a)
+#define FINGERnEG_BOOK0cwRITEtAIL                           ((countT)-(sCountT)0xcccc003b)
+#define FINGERnEG_TELEMETRY2                                ((countT)-(sCountT)0xcccc003c)
+#define FINGERnEG_GRABc                                     ((countT)-(sCountT)0xcccc003d)
+#define FINGERnEG_GRABczOMBIE                               ((countT)-(sCountT)0xcccc003e)
+#define FINGERnEG_GRABITc                                   ((countT)-(sCountT)0xcccc003f)
+#define FINGERnEG_GRABITczOMBIE                             ((countT)-(sCountT)0xcccc0040)
+#define FINGERnEG_GRABOTc                                   ((countT)-(sCountT)0xcccc0041)
+#define FINGERnEG_GRABOTczOMBIE                             ((countT)-(sCountT)0xcccc0042)
+#define FINGERnEG_LINKEDc                                   ((countT)-(sCountT)0xcccc0043)
+#define FINGERnEG_LINKEDczOMBIE                             ((countT)-(sCountT)0xcccc0044)
+#define FINGERnEG_HOMEszOMBIE                               ((countT)-(sCountT)0xcccc0045)
+#define FINGERnEG_SLABs                                     ((countT)-(sCountT)0xcccc0046)
+#define FINGERnEG_SLABszOMBIE                               ((countT)-(sCountT)0xcccc0047)
+#define FINGERnEG_CLEANc                                    ((countT)-(sCountT)0xcccc0048)
+#define FINGERnEG_CLEANczOMBIE                              ((countT)-(sCountT)0xcccc0049)
+#define FINGERnEG_RENDERsTATEc                              ((countT)-(sCountT)0xcccc004a)
+#define FINGERnEG_RENDERsTATEczOMBIE                        ((countT)-(sCountT)0xcccc004b)
+#define FINGERnEG_PAPERc                                    ((countT)-(sCountT)0xcccc004c)
+#define FINGERnEG_PAPERczOMBIE                              ((countT)-(sCountT)0xcccc004d)
+#define FINGERnEG_ASSvIEWc                                  ((countT)-(sCountT)0xcccc004e)
+#define FINGERnEG_ASSvIEWczOMBIE                            ((countT)-(sCountT)0xcccc004f)
+#define FINGERnEG_HANDLEbOOKSjOT                            ((countT)-(sCountT)0xcccc0050)
+#define FINGERnEG_KTlINKfILEiNNER                           ((countT)-(sCountT)0xcccc0051)
+#define FINGERnEG_KTlINKfILEoUTER                           ((countT)-(sCountT)0xcccc0052)
+#define FINGERnEG_BASEc                                     ((countT)-(sCountT)0xcccc0053)
+#define FINGERnEG_BASEczOMBIE                               ((countT)-(sCountT)0xcccc0054)
+#define FINGERnEG_ACCESSeVENTrAW                            ((countT)-(sCountT)0xcccc0055)
+#define FINGERnEG_ACCESSeVENTiDjOTfORmOstsTRINGS            ((countT)-(sCountT)0xcccc0056)
+#define FINGERnEG_ACCESSeVENTiDjOTfORaLLsTRINGS             ((countT)-(sCountT)0xcccc0057)
+#define FINGERnEG_WOtABLEuNCONFIRMEDeMAIL                   ((countT)-(sCountT)0xcccc0058)
+#define FINGERnEG_WOtABLEcONFIRMEDeMAIL                     ((countT)-(sCountT)0xcccc0059)
+#define FINGERnEG_DATUMgORILLAiDEAFARMcOM                   ((countT)-(sCountT)0xcccc005a)
+#define FINGERnEG_CLOAKcOMMAND                              ((countT)-(sCountT)0xcccc005b)
+#define FINGERnEG_CLOAKrEPLY                                ((countT)-(sCountT)0xcccc005c)
+#define FINGERnEG_CLOAKsIMPLEcONNECTION                     ((countT)-(sCountT)0xcccc005d)
+#define FINGERnEG_WOtABLEsAID                               ((countT)-(sCountT)0xcccc005e)
+#define FINGERnEG_WOtABLEsAIDaNON                           ((countT)-(sCountT)0xcccc005f)
+#define FINGERnEG_WOtABLEsAIDtOPIC                          ((countT)-(sCountT)0xcccc0060)
+#define FINGERnEG_WOtABLEnEWtOPICcERTIFIED                  ((countT)-(sCountT)0xcccc0061)
+#define FINGERnEG_dropNoteSsexC1                            ((countT)-(sCountT)0xcccc0062)
+#define FINGERnEG_dropNoteSsexC2                            ((countT)-(sCountT)0xcccc0063)
+#define FINGERnEG_dropNoteSslotsC1                          ((countT)-(sCountT)0xcccc0064)
+#define FINGERnEG_dropNoteSslotsC2                          ((countT)-(sCountT)0xcccc0065)
+#define FINGERnEG_dropNoteSpoolC1                           ((countT)-(sCountT)0xcccc0066)
+#define FINGERnEG_dropNoteSpoolC2                           ((countT)-(sCountT)0xcccc0067)
+#define FINGERnEG_dropNoteSdeleted                          ((countT)-(sCountT)0xcccc0068)
+#define FINGERnEG_dropSeparator                             ((countT)-(sCountT)0xcccc0069)
+#define FINGERnEG_dropHeaderInitialize                      ((countT)-(sCountT)0xcccc006a)
+#define FINGERnEG_nodeC                                     ((countT)-(sCountT)0xcccc006b)
+#define FINGERnEG_echoPacketS                               ((countT)-(sCountT)0xcccc006c)
+#define FINGERnEG_jotFileSoilC                              ((countT)-(sCountT)0xcccc006d)
+#define FINGERnEG_jotFilePartC                              ((countT)-(sCountT)0xcccc006e)
+#define FINGERnEG_jotFileNameC                              ((countT)-(sCountT)0xcccc006f)
+#define FINGERnEG_jotFileBranchC                            ((countT)-(sCountT)0xcccc0070)
 #define FINGERnEG_fileWindowsC                              ((countT)-(sCountT)0xcccc0071)
 #define FINGERnEG_EXITpROCESStOOhIGH                        ((countT)-(sCountT)0xcccc0072)
 #define FINGERnEG_EXITpROCESSaOK                            ((countT)-(sCountT)0xcccc0073)
@@ -10058,6 +10058,8 @@ flHIRE_SHOW
 /*3*/
 #define FINGERnEG_min     0xcccc0001
 #define FINGERnEG_max     0xcccc007d
+
+//CS:CODEsYNC: 510004FB 112000EF
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -13525,12 +13527,12 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 /*3*/
 #define flPROCESSsTATE_OUTPUTwINDOWiSvISIBLE        0xe000012d
 #define flPROCESSsTATE_WM_CLOSE_RECEIVED            0xe000022d
-#define flPROCESSsTATE_RECEIVEDsIGNALtObEfIRED      0xe000082d
-#define flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE  0xe000102d
-#define flPROCESSsTATE_tmWindowsF_HASeNDED          0xe000202d
-#define flPROCESSsTATE_GLOBALdESTRUCTIONiScOMPLETE  0xe000402d
-#define flPROCESSsTATE_MAINtHREADiSaLONE            0xe000802d
-#define flPROCESSsTATE_EXCEPTIONnOThANDLED          0xe001002d
+#define flPROCESSsTATE_RECEIVEDsIGNALtObEfIRED      0xe000042d
+#define flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE  0xe000082d
+#define flPROCESSsTATE_tmWindowsF_HASeNDED          0xe000102d
+#define flPROCESSsTATE_GLOBALdESTRUCTIONiScOMPLETE  0xe000202d
+#define flPROCESSsTATE_MAINtHREADiSaLONE            0xe000402d
+#define flPROCESSsTATE_EXCEPTIONnOThANDLED          0xe000802d
 /*3*/
 #define flPROCESSsTATE_null    0xe000002d
 
@@ -16802,10 +16804,10 @@ after i return, that countT object will contain 1
 
 /*1*//*flMODEpROCESS2*//*1*/
 /*3*/
-#define flMODEpROCESS2_DOnOTdISPLAYtHIRDpARTYaDS       0xe0020044
-#define flMODEpROCESS2_CHECKtINuTILITYeLEMENTS         0xe0040044
-#define flMODEpROCESS2_GRABoNLYwO                      0xe0080044
-#define flMODEpROCESS2_SUPPRESSiNoUTfRAMEc             0xe0100044
+#define flMODEpROCESS2_DOnOTdISPLAYtHIRDpARTYaDS       0xe0000144
+#define flMODEpROCESS2_CHECKtINuTILITYeLEMENTS         0xe0000244
+#define flMODEpROCESS2_GRABoNLYwO                      0xe0000444
+#define flMODEpROCESS2_SUPPRESSiNoUTfRAMEc             0xe0000844
 /*3*/
 #define flMODEpROCESS2_null    0xe0000044
 
@@ -23572,6 +23574,7 @@ examples
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120027c.ifcidphasetopsecret END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120027d.firemyself BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
@@ -32639,9 +32642,9 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
     TELL( "waiting for all child threads except tmWindowsF tmAnimateSadamsOnPaperF to end" ) ;                                                              \
     {                                                                                                                                                       \
         const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tinP))    & flADAMmODE1_tmWindows          ) ;                                  \
-        const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                      \
-        const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                      \
-        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */                     \
+        const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                  \
+        const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                  \
+        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
         countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tinP ) ;                                                                                \
         countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tinP ) ;                                                                             \
         IFsCRATCH                                                                                                                                           \
@@ -32656,7 +32659,7 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
                                                                                                                                                             \
             if( POOP ) POOPR                                                                                                                                \
         }                                                                                                                                                   \
-        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/ending wait\r\n" ) ;*/                                    \
+        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , tinP.pag1->idAdam , "/ending wait\r\n" ) ;*/                            \
         /* ONLY main,tmWindowsF,tmWatchF,tmKillSocketF REMAIN */                                                                                            \
     }                                                                                                                                                       \
 

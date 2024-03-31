@@ -775,6 +775,22 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
+    TN( tNameSoixlOld , "ifcCreateNewHomeF_31@31@3" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)ifcCreateNewHomeF_31P31P3_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
+    TN( tNameSoixlOld , "ifcCreateNewWightF_31@31@3" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)ifcCreateNewWightF_31P31P3_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
     TN( tNameSoixlOld , "ifcSortaF_61@33337" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
@@ -1855,6 +1871,22 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
+    TN( tNameSoixlOld , "strEncodeBlobToRFC4648F_4@1@3" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)strEncodeBlobToRFC4648F_4P1P3_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
+    TN( tNameSoixlOld , "strDecodeBlobFromRFC4648F_1@34@" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)strDecodeBlobFromRFC4648F_1P34P_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
     TN( tNameSoixlOld , "sssTestF_64@4@334@4@" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
@@ -1951,6 +1983,22 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
+    TN( tNameSoixlOld , "hushGetPublicKeyF_1@3b" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)hushGetPublicKeyF_1P3b_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
+    TN( tNameSoixlOld , "hushGetPrivateKeyF_1@3b" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)hushGetPrivateKeyF_1P3b_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
     TN( tNameSoixlOld , "hushReadPrivateKeyFromFileF_b4@" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
@@ -1972,29 +2020,5 @@
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
     *_pSwSoixlOldApi = (countT)hushEncryptF_1P31P31P31P3b_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
-    TN( tNameSoixlOld , "hushDecryptF_1@31@31@31@3b" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushDecryptF_1P31P31P31P3b_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
-    TN( tNameSoixlOld , "hushMakeKeyPairF_b3" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushMakeKeyPairF_b3_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
-    TN( tNameSoixlOld , "hushWothNonceF_6333b" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushWothNonceF_6333b_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }

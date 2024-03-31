@@ -3078,6 +3078,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.sorterC"                         ,
                     "1snip.15*.archiveDigestS"                  ,
                     "1snip.15*.armSslC"                         ,
+                    "1snip.15*.udpFileGramHeadNicNameS"    ,
                     "1snip.15*.udpFileGramHeadBaseOSFileNameS"  ,
                     "1snip.15*.udpFileGramHeadHashOfContentS"   ,
                     "1snip.15*.udpFileGramHeadFileWindowS"      ,

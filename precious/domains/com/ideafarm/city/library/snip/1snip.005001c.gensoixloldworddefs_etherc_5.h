@@ -1,4 +1,140 @@
 
+voidT strDigitsToNicNameF_4P36_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+
+    ZE( countT , defaultRadixP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                defaultRadixP = 0 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tinP , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+                if( !POOP ) { slP >> defaultRadixP ; idArgNext ++ ; }
+            }
+        }
+    }
+
+    ZE( boolT , bForeignP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0x0 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                bForeignP = 0 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tinP , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0x0 , etherC )
+                if( !POOP ) { slP >> bForeignP ; idArgNext ++ ; }
+            }
+        }
+    }
+
+    nicNameC noName ;
+    if( !POOP ) noName = etherP.strDigitsToNicNameF( tinP , psttP , defaultRadixP , bForeignP ) ;
+    etherP.delF( tinP , psttP ) ;
+
+    noName >> slP ;
+}
+
+voidT strDigitsToMeasureF_4P36_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+
+    ZE( countT , defaultRadixP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                defaultRadixP = 0 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tinP , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+                if( !POOP ) { slP >> defaultRadixP ; idArgNext ++ ; }
+            }
+        }
+    }
+
+    ZE( boolT , bForeignP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0x0 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                bForeignP = 0 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tinP , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0x0 , etherC )
+                if( !POOP ) { slP >> bForeignP ; idArgNext ++ ; }
+            }
+        }
+    }
+
+    ZE( measureT , noName ) ;
+    if( !POOP ) noName = etherP.strDigitsToMeasureF( tinP , psttP , defaultRadixP , bForeignP ) ;
+    etherP.delF( tinP , psttP ) ;
+
+    slP << noName ;
+}
+
 voidT strEvaluateF_4P34P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2695,6 +2831,64 @@ voidT strFileMatchF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
     slP << noName ;
 }
 
+voidT strEncodeBlobToRFC4648F_4P1P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbP ) ;
+    if( !POOP ) { slP >> pbP ; ___( pbP ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbP ) ;
+    if( !POOP ) { slP >> cbP ; idArgNext ++ ; }
+    if( !POOP ) etherP.strEncodeBlobToRFC4648F( tinP , psttP , pbP , cbP ) ;
+    etherP.delF( tinP , pbP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tinP , psttP ) ;
+}
+
+voidT strDecodeBlobFromRFC4648F_1P34P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbP ) ;
+    if( !POOP ) { slP >> pbP ; ___( pbP ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbP ) ;
+    if( !POOP ) { slP >> cbP ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.strDecodeBlobFromRFC4648F( tinP , pbP , cbP , psttP ) ;
+    etherP.delF( tinP , psttP ) ;
+
+    if( !POOP ) slP << pbP ;
+    etherP.delF( tinP , pbP ) ;
+}
+
 voidT sssTestF_64P4P334P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -3095,6 +3289,62 @@ voidT hushWritePublicKeyToFileF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP
     etherP.delF( tinP , psttFileP ) ;
 }
 
+voidT hushGetPublicKeyF_1P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbP ) ;
+    if( !POOP ) { slP >> pbP ; ___( pbP ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbP ) ;
+    if( !POOP ) { slP >> cbP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
+    handleC handleP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
+    if( !POOP ) { handleP << slP ; idArgNext ++ ; }
+    if( !POOP ) etherP.hushGetPublicKeyF( tinP , pbP , cbP , handleP ) ;
+
+    if( !POOP ) slP << pbP ;
+    etherP.delF( tinP , pbP ) ;
+}
+
+voidT hushGetPrivateKeyF_1P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbP ) ;
+    if( !POOP ) { slP >> pbP ; ___( pbP ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbP ) ;
+    if( !POOP ) { slP >> cbP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
+    handleC handleP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
+    if( !POOP ) { handleP << slP ; idArgNext ++ ; }
+    if( !POOP ) etherP.hushGetPrivateKeyF( tinP , pbP , cbP , handleP ) ;
+
+    if( !POOP ) slP << pbP ;
+    etherP.delF( tinP , pbP ) ;
+}
+
 voidT hushReadPrivateKeyFromFileF_b4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -3196,143 +3446,4 @@ voidT hushEncryptF_1P31P31P31P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , 
 
     if( !POOP ) slP << pbSymCypherTextP ;
     etherP.delF( tinP , pbSymCypherTextP ) ;
-}
-
-voidT hushDecryptF_1P31P31P31P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
-    ZE( byteT* , pbPlainTextP ) ;
-    if( !POOP ) { slP >> pbPlainTextP ; ___( pbPlainTextP ) ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , cbPlainTextP ) ;
-    if( !POOP ) { slP >> cbPlainTextP ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
-    ZE( byteT* , pbSymCypherTextP ) ;
-    if( !POOP ) { slP >> pbSymCypherTextP ; ___( pbSymCypherTextP ) ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , cbSymCypherTextP ) ;
-    if( !POOP ) { slP >> cbSymCypherTextP ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
-    ZE( byteT* , pbHushedSymKeyP ) ;
-    if( !POOP ) { slP >> pbHushedSymKeyP ; ___( pbHushedSymKeyP ) ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , cbHushedSymKeyP ) ;
-    if( !POOP ) { slP >> cbHushedSymKeyP ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
-    ZE( byteT* , pbSeedP ) ;
-    if( !POOP ) { slP >> pbSeedP ; ___( pbSeedP ) ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , cbSeedP ) ;
-    if( !POOP ) { slP >> cbSeedP ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
-    if( !POOP ) { handleP << slP ; idArgNext ++ ; }
-    if( !POOP ) etherP.hushDecryptF( tinP , pbPlainTextP , cbPlainTextP , pbSymCypherTextP , cbSymCypherTextP , pbHushedSymKeyP , cbHushedSymKeyP , pbSeedP , cbSeedP , handleP ) ;
-    etherP.delF( tinP , pbSeedP ) ;
-    etherP.delF( tinP , pbHushedSymKeyP ) ;
-    etherP.delF( tinP , pbSymCypherTextP ) ;
-
-    if( !POOP ) slP << pbPlainTextP ;
-    etherP.delF( tinP , pbPlainTextP ) ;
-}
-
-voidT hushMakeKeyPairF_b3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC hKeyPairP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
-    if( !POOP ) { hKeyPairP << slP ; idArgNext ++ ; }
-
-    ZE( countT , cBitsP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                cBitsP = HUSHbITSdEFAULT ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinP , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-                if( !POOP ) { slP >> cBitsP ; idArgNext ++ ; }
-            }
-        }
-    }
-    if( !POOP ) etherP.hushMakeKeyPairF( tinP , hKeyPairP , cBitsP ) ;
-}
-
-voidT hushWothNonceF_6333b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-   SOIXLoLDtESTeMPTY( 0x0 , etherC )
-   SOIXLoLDtESTtYPE( 0x0 , etherC )
-    ZE( boolT , bQuitP ) ;
-    if( !POOP ) { slP >> bQuitP ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , moduloP ) ;
-    if( !POOP ) { slP >> moduloP ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , randomP ) ;
-    if( !POOP ) { slP >> randomP ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , maxP ) ;
-    if( !POOP ) { slP >> maxP ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
-    if( !POOP ) { handleP << slP ; idArgNext ++ ; }
-
-    ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.hushWothNonceF( tinP , bQuitP , moduloP , randomP , maxP , handleP ) ;
-
-    slP << noName ;
 }

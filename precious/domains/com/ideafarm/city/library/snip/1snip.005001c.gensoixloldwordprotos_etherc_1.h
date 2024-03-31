@@ -193,6 +193,10 @@ voidT ifcGetNextSerialNumberF_2P_GF( tinS& tinP , etherC& etherP , soulC& slP , 
 
 voidT ifcIdCopyF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT ifcCreateNewHomeF_31P31P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT ifcCreateNewWightF_31P31P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT ifcSortaF_61P33337_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT querySettingF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
@@ -463,6 +467,10 @@ voidT strBisectF_4P4P4P4P373_GF( tinS& tinP , etherC& etherP , soulC& slP , cons
 
 voidT strFileMatchF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT strEncodeBlobToRFC4648F_4P1P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT strDecodeBlobFromRFC4648F_1P34P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT sssTestF_64P4P334P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT winAppendTitleF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
@@ -486,6 +494,10 @@ voidT traceMemoryGrainRptF__GF( tinS& tinP , etherC& etherP , soulC& slP , const
 voidT hushWritePrivateKeyToFileF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT hushWritePublicKeyToFileF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT hushGetPublicKeyF_1P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT hushGetPrivateKeyF_1P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT hushReadPrivateKeyFromFileF_b4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

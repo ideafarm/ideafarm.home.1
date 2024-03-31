@@ -1951,6 +1951,88 @@ voidT ifcIdCopyF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS
     slP << noName ;
 }
 
+voidT ifcCreateNewHomeF_31P31P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , idgHomeP ) ;
+    if( !POOP ) { slP >> idgHomeP ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbPublicKey1P ) ;
+    if( !POOP ) { slP >> pbPublicKey1P ; ___( pbPublicKey1P ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbPublicKey1P ) ;
+    if( !POOP ) { slP >> cbPublicKey1P ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbPublicKey2P ) ;
+    if( !POOP ) { slP >> pbPublicKey2P ; ___( pbPublicKey2P ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbPublicKey2P ) ;
+    if( !POOP ) { slP >> cbPublicKey2P ; idArgNext ++ ; }
+    if( !POOP ) etherP.ifcCreateNewHomeF( tinP , idgHomeP , pbPublicKey1P , cbPublicKey1P , pbPublicKey2P , cbPublicKey2P ) ;
+
+    if( !POOP ) slP << pbPublicKey2P ;
+    etherP.delF( tinP , pbPublicKey2P ) ;
+
+    if( !POOP ) slP << pbPublicKey1P ;
+    etherP.delF( tinP , pbPublicKey1P ) ;
+}
+
+voidT ifcCreateNewWightF_31P31P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , idgWightP ) ;
+    if( !POOP ) { slP >> idgWightP ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbPublicKey1P ) ;
+    if( !POOP ) { slP >> pbPublicKey1P ; ___( pbPublicKey1P ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbPublicKey1P ) ;
+    if( !POOP ) { slP >> cbPublicKey1P ; idArgNext ++ ; }
+
+    SOIXLoLDtESTeMPTY( 0xdddd8015 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
+    ZE( byteT* , pbPublicKey2P ) ;
+    if( !POOP ) { slP >> pbPublicKey2P ; ___( pbPublicKey2P ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , cbPublicKey2P ) ;
+    if( !POOP ) { slP >> cbPublicKey2P ; idArgNext ++ ; }
+    if( !POOP ) etherP.ifcCreateNewWightF( tinP , idgWightP , pbPublicKey1P , cbPublicKey1P , pbPublicKey2P , cbPublicKey2P ) ;
+
+    if( !POOP ) slP << pbPublicKey2P ;
+    etherP.delF( tinP , pbPublicKey2P ) ;
+
+    if( !POOP ) slP << pbPublicKey1P ;
+    etherP.delF( tinP , pbPublicKey1P ) ;
+}
+
 voidT ifcSortaF_61P33337_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2109,73 +2191,4 @@ voidT osClipboardWriteF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const 
     if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
     if( !POOP ) etherP.osClipboardWriteF( tinP , psttP ) ;
     etherP.delF( tinP , psttP ) ;
-}
-
-voidT osDoNothingF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.osDoNothingF( tinP ) ;
-    if( tinP.fingerprint && _psttNameP && slP ) ;
-}
-
-voidT osDoNothingLoopF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    ZE( countT , cToDoP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                cToDoP = 0 ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinP , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-                if( !POOP ) { slP >> cToDoP ; idArgNext ++ ; }
-            }
-        }
-    }
-
-    ZE( countT , msSleepP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                msSleepP = 0 ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinP , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-                if( !POOP ) { slP >> msSleepP ; idArgNext ++ ; }
-            }
-        }
-    }
-    if( !POOP ) etherP.osDoNothingLoopF( tinP , cToDoP , msSleepP ) ;
 }
