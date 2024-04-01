@@ -711,7 +711,8 @@ DONE( tmFireAllF )
         }
             }
                 }
-                    ++ s ; etThread.osSleepF( tinP , TOCK >> 2 ) ; //PRESUMED DEAD IF STOPPED FOR TOCK >> 2
+                    ++ s ; etThread.osSleepF( tinP , TOCK >> 0 ) ; //PRESUMED DEAD IF NO CHANGE DURING THIS INTERVAL
+                    //20240331@1737: >> 2 ----> >> 0
 
                     cHeartBeatsLag = cHeartBeatsNow ;
 
@@ -738,13 +739,13 @@ DONE( tmFireAllF )
 
                     }
                         break ;
-                        LOGrAW( "tmFireAllF/etThread is impotent\r\n" ) ;
+                        etRock.traceF( tinP , T("etThread is impotent") ) ;
                     {
                     if( etThread )
 
                     }
                         break ;
-                        LOGrAW( "tmFireAllF/POOP is set\r\n" ) ;
+                        etRock.traceF( tinP , T("POOP is set") ) ;
                     {
                     if( POOP )
                 {
@@ -753,7 +754,7 @@ DONE( tmFireAllF )
                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
                 etThread.etherFireGroupIF( tinP , idg ) ;
-                //etThread.strokeF( tinP , T("firing group ")+TF1(idg)+tc ) ;
+                etThread.traceF( tinP , T("firing group ")+TF1(idg) ) ;
 
                 //etThread.beeClickF( tinP , TUCK + 0x10 * ( idg - 1 ) , TOCK * 4 ) ;
                 etRock.traceF( tinP , T("firing group by setting home.pFireAll[ idg - 1 ].bFire [idg]:    ")+TF2(idg,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
