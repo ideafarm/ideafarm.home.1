@@ -564,8 +564,8 @@ REST
             ZE( countT , cArchive ) ;
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
             #endif
-                TN( tLikePseudoVolumes , "///ideafarm/devices/"          ) ;
-                //TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
+                //TN( tLikePseudoVolumes , "///ideafarm/devices/"          ) ;
+                TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
             #else
                 TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
             #if defined( IFCtESTING )
@@ -1753,8 +1753,8 @@ DONE( tmExecutiveHealYearF )
                         etThread.delF( tinP , psttd ) ;
                         tPathDevices = T(psttd) ;
                         #endif
-                            etThread.diskMapFileNameF( tinP , psttd , T("///ideafarm/devices/")            ) ; ___( psttd ) ;
-                            //etThread.diskMapFileNameF( tinP , psttd , T("///d/ideafarm.home.101/devices/") ) ; ___( psttd ) ;
+                            //etThread.diskMapFileNameF( tinP , psttd , T("///ideafarm/devices/")            ) ; ___( psttd ) ;
+                            etThread.diskMapFileNameF( tinP , psttd , T("///d/ideafarm.home.101/devices/") ) ; ___( psttd ) ;
                         #else
                             etThread.diskMapFileNameF( tinP , psttd , T("///d/ideafarm.home.101/devices/") ) ; ___( psttd ) ;
                         #if defined( IFCtESTING )
@@ -4471,6 +4471,7 @@ struct paramHealFileS
 //B: WORSE:  CPU NOT PEGGED: #define CyEARSiNpARALLEL  0x1
 
 #define CyEARSiNpARALLEL  0x8
+
 //B:MEMORY EXHAUSTION: #define CyEARSiNpARALLEL  0x10
 
 //B:MEMORY EXHAUSTION: #define CyEARSiNpARALLEL  0x18
@@ -4516,9 +4517,15 @@ struct paramHealFileS
 
 #define INFOfILEnOTaVAILABLE ( (infoFileS*)( - 1 ) )
 
-#define CtOhIREcOMPARE 8
+#endif
+    #define CtOhIREhEAL    0x10
+    #define CtOhIREcOMPARE 8
+#else
+    #define CtOhIREhEAL    1
+    #define CtOhIREcOMPARE 1
+#if defined( IFCtESTING )
 
-#define CtOhIREhEAL    0x10
+
 //U::G: #define CtOhIREhEAL    8
 //U::G: BUT DOES NOT PEG CPU: #define CtOhIREhEAL    4
 
