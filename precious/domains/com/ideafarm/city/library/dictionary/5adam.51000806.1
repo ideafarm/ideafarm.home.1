@@ -274,11 +274,11 @@ REST
                 #endif
                     TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
                 #else
-                    //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
+                      TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
                     //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
                     //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
                     //TN( tYearPattern , "2023/" ) ;
-                      TN( tYearPattern , "2022/" ) ;
+                    //TN( tYearPattern , "2022/" ) ;
                     //TN( tYearPattern , "2008/" ) ;
                     //TN( tYearPattern , "1999/" ) ;
                     //TN( tYearPattern , "1234/" ) ;
@@ -1621,7 +1621,7 @@ DONE( tmExecutiveHealYearF )
                     {
                     while( !ether && cTries -- )
                     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-                    countT cTries = ( F(flagsModeP) & flHEALmODE_STRICT ) ? 1 : TUCK >> 4 ;
+                    countT cTries = ( F(flagsModeP) & flHEALmODE_STRICT ) ? 1 : CtRIESiFnOTsTRICT ;
                 {
                 else
                 else if( pJotSortedShort ) ;//etThread.traceF( tinP , T("reusing a sorted list of short names") ) ;
@@ -2159,7 +2159,7 @@ DONE( tmWorkerMemCompareF )
             DEL( pJob ) ;
             }
                 //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
-                compareOoImagesF( tinP , etThread , bAbortP , cPauseP , pJob->bEqual , flagsModeP , pJob->pbwOuter , pJob->pbwInner , pJob->cbwOuter /*, T(pJob->psttLongOuter) , T(pJob->psttLongInner) , tIndent3*/ ) ; // bEqual MIGHT BE RESET DUE TO A PREVIOUS JOB ; THIS CAN HAPPEN DUE TO RACE BETWEEN ME AND THE THREAD THAT PUSHES JOBS ; SOMETIMES compareOoImagesF WILL BE CALLED UNNECESSARILY BUT THIS IS HARMLESS
+                compareOoImagesF( tinP , ether , etThread , bAbortP , cPauseP , pJob->bEqual , flagsModeP , pJob->pbwOuter , pJob->pbwInner , pJob->cbwOuter /*, T(pJob->psttLongOuter) , T(pJob->psttLongInner) , tIndent3*/ ) ; // bEqual MIGHT BE RESET DUE TO A PREVIOUS JOB ; THIS CAN HAPPEN DUE TO RACE BETWEEN ME AND THE THREAD THAT PUSHES JOBS ; SOMETIMES compareOoImagesF WILL BE CALLED UNNECESSARILY BUT THIS IS HARMLESS
                 //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
                 _IO_
             {
@@ -2358,7 +2358,7 @@ DONE( tmWorkerHealFileF )
 
         }
             // if( bChatter ) etThread.traceF( tinP , T("done [idName,tShort]:    ")+TF2(pzJob->idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
-            healShortNameF( tinP , pzJob->info , tShort , flagsModeP , pzJob->idName , pzJob->cShortNames , cToHireHealP , cToHireCompareP , bChatter ) ;
+            healShortNameF( tinP , ether , pzJob->info , tShort , flagsModeP , pzJob->idName , pzJob->cShortNames , cToHireHealP , cToHireCompareP , bChatter ) ;
             // /*if( !( idIn % TUCK ) )*/ etThread.traceF( tinP , T("calling healShortNameF [idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             //countT idIn = 1 + incv02AM( idInLath ) ;
             //static countT idInLath ;
@@ -3310,7 +3310,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                         {
                                                         else
                                                         }
-                                                            compareOoImagesF( tinP , pP.ether , pP.bAbort , pP.cPause , pEqual[ offi ] , flagsModeP , pbwOuter , ppbwInner[ offi ] , cbwOuter /*U::, tLongOuter , T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) , pP.tIndent3*/ ) ;
+                                                            compareOoImagesF( tinP , etPrimeP , pP.ether , pP.bAbort , pP.cPause , pEqual[ offi ] , flagsModeP , pbwOuter , ppbwInner[ offi ] , cbwOuter /*U::, tLongOuter , T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) , pP.tIndent3*/ ) ;
                                                             if( !pEqual[ offi ] ) { BLAMMO ; } //SHOULD BE IMPOSSIBLE BECAUSE THIS FILE IS BEING COMPARED SYNCHRONOUSLY
                                                         {
                                                         if( !bLargeFile )
@@ -4008,7 +4008,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 
     //bChatterP = 1 ; //U:: TO FIND A BUG
 {
-voidT healShortNameF( tinS& tinP , paramHealFileS& pP , textC& tShortP , const flagsT flagsModeP , const countT idNameP , const countT cShortNamesP , const countT cToHireHealP , const countT cToHireCompareP , boolT bChatterP )
+voidT healShortNameF( tinS& tinP , etherC& etPrimeP , paramHealFileS& pP , textC& tShortP , const flagsT flagsModeP , const countT idNameP , const countT cShortNamesP , const countT cToHireHealP , const countT cToHireCompareP , boolT bChatterP )
 
 }
     }
@@ -4044,13 +4044,15 @@ voidT healShortNameF( tinS& tinP , paramHealFileS& pP , textC& tShortP , const f
     //countT idIn = 1 + incv02AM( idInLath ) ;
     //static countT idInLath ;
     
+    if( etPrimeP ) bAbortP = 1 ;
+
     }
         }
             }
                 }
                     etherP.traceF( tinP , T("decremented cPause after nap after exception [was]:    ")+TF2(was,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     was = decv02AM( cPauseP ) ;
-                    ++ s ; etherP.osSleepF( tinP , TIMEpAUSEoNfAIL ) ;
+                    ++ s ; etPrimeP.osSleepF( tinP , TIMEpAUSEoNfAIL ) ;
                     etherP.traceF( tinP , T("incremented cPause on exception [was]:    ")+TF2(was,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT was = incv02AM( cPauseP ) ;
                 {
@@ -4059,7 +4061,11 @@ voidT healShortNameF( tinS& tinP , paramHealFileS& pP , textC& tShortP , const f
                     break ;
                     bAbortP = 1 ;
                 {
-                if( !cTries )
+                else if( !cTries )
+                if( bAbortP ) break ;
+
+                if( etPrimeP ) bAbortP = 1 ;
+
                 //etherP.traceF( tinP , tIndent3P+T("!exception / memCompareF impotence ; aborting if !cTries [cTries,idCulprit,tLongOuter,tLongInner]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idCulprit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuterP+tb4+tLongInnerP ) ;
                 POOPRqUIET
     
@@ -4082,9 +4088,9 @@ voidT healShortNameF( tinS& tinP , paramHealFileS& pP , textC& tShortP , const f
             sgn = tinP.pEtScratch->memCompareF( tinP , pbwOuterP , pbwInnerP , cbwOuterP ) ;
             //etherP.traceF( tinP , T("calling memCompareF [cb]:    ")+TF2(cbwOuterP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
-        while( bEqualP && cTries -- )
+        while( bEqualP && !etPrimeP && !bAbortP && cTries -- )
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-        countT cTries = ( F(flagsModeP) & flHEALmODE_STRICT ) ? 1 : TUCK >> 4 ;
+        countT cTries = ( F(flagsModeP) & flHEALmODE_STRICT ) ? 1 : CtRIESiFnOTsTRICT ;
     
         SCOOPS
     {
@@ -4092,7 +4098,7 @@ voidT healShortNameF( tinS& tinP , paramHealFileS& pP , textC& tShortP , const f
     //TN( tb4 , "    " ) ;
     ZE( sCountT , sgn ) ;
 {
-voidT compareOoImagesF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT& cPauseP , boolT& bEqualP , const flagsT flagsModeP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP /*U::, const textC& tLongOuterP , const textC& tLongInnerP , textC& tIndent3P*/ )
+voidT compareOoImagesF( tinS& tinP , etherC& etPrimeP , etherC& etherP , boolT& bAbortP , countT& cPauseP , boolT& bEqualP , const flagsT flagsModeP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP /*U::, const textC& tLongOuterP , const textC& tLongInnerP , textC& tIndent3P*/ )
 
 countT cbNewlyCompared ;
 
@@ -4120,11 +4126,11 @@ voidT deleteEqualArrayFwsInnerArrayF( tinS& tinP , etherC& etherP , boolT*& pEqu
         }
             ++ s ; ether.osSleepF( tinP , TOCK ) ;
         {
-        while( cPauseP )
+        while( cPauseP && !ether )
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
         inc02AM( cExecutiveHealYearPausedP ) ;
     {
-    if( cPauseP && !bAbortP )
+    if( cPauseP && !ether && !bAbortP )
     etherC& ether = etherC::etPrimeIF( tinP ) ;
 {
 voidT pauseIfF( tinS& tinP , boolT& bAbortP , countT& cExecutiveHealYearPausedP , countT& cPauseP )
@@ -4523,6 +4529,8 @@ struct paramHealFileS
 #define BITSrESULT_EQUAL          2
 #define BITSrESULT_NOTeQUAL       1
 #define BITSrESULT_UNKNOWN        0
+
+#define CtRIESiFnOTsTRICT   ( TUCK >> 5 )
 
 #define flHEALmODE_LONELYiSoK         0xe00020ff
 #define flHEALmODE_NOmOVEoRrEPLACE    0xe00010ff

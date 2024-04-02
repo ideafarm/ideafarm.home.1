@@ -19,8 +19,16 @@
                 idFail = ifcIDiMPOTENCEmEMcMP_COMPARE0 ;
             {
             else
-            else if( pb2P <= pbHit && pbHit < pb2P + cbP ) idFail = ifcIDiMPOTENCEmEMcMP_COMPARE2 ;
-            else if( pb1P <= pbHit && pbHit < pb1P + cbP ) idFail = ifcIDiMPOTENCEmEMcMP_COMPARE1 ;
+            }
+                etherC::etRockIF( tinP ).traceF( tinP , T("!exception: ifcIDiMPOTENCEmEMcMP_COMPARE2 [pbHit,pb1P,pb1P+cbP,pb2P,pb2P+cbP]:     ")+TF3((countT)pbHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb1P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb2P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                idFail = ifcIDiMPOTENCEmEMcMP_COMPARE2 ;
+            {
+            else if( pb2P <= pbHit && pbHit < pb2P + cbP )
+            }
+                etherC::etRockIF( tinP ).traceF( tinP , T("!exception: ifcIDiMPOTENCEmEMcMP_COMPARE1 [pbHit,pb1P,pb1P+cbP,pb2P,pb2P+cbP]:     ")+TF3((countT)pbHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb1P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb2P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                idFail = ifcIDiMPOTENCEmEMcMP_COMPARE1 ;
+            {
+            else if( pb1P <= pbHit && pbHit < pb1P + cbP )
             }
                 diff = _brcRaw ;
                 BOSnOtIN( memcmp( pb1P , pb2P , cbP ) )
@@ -37,43 +45,68 @@
         if( !idFail )
 
         }
-            else idFail = ifcIDiMPOTENCEmEMcMP_LATHbYTE2 ;
+            }
+                etherC::etRockIF( tinP ).traceF( tinP , T("!exception: ifcIDiMPOTENCEmEMcMP_LATHbYTE2 [pbHit,pb1P,pb1P+cbP,pb2P,pb2P+cbP]:     ")+TF3((countT)pbHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb1P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb2P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                idFail = ifcIDiMPOTENCEmEMcMP_LATHbYTE2 ;
+            {
+            else
             }
                 byteT bTest = pb2P[ cbP - 1 ] ;
             {
             if( !_restart )
             _restart.flags |= flRESTARTc_QUIET ;
-            RESTART
+
+            RESTARTiFqUERY( bAcceptEvent_c_memcmpIF_F , (countT*)&pbHit )
+            ZE( byteT* , pbHit ) ;
+
             //_IO_
         {
         if( !idFail )
 
         }
-            else idFail = ifcIDiMPOTENCEmEMcMP_LATHbYTE1 ;
+            }
+                etherC::etRockIF( tinP ).traceF( tinP , T("!exception: ifcIDiMPOTENCEmEMcMP_LATHbYTE1 [pbHit,pb1P,pb1P+cbP,pb2P,pb2P+cbP]:     ")+TF3((countT)pbHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb1P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb2P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                idFail = ifcIDiMPOTENCEmEMcMP_LATHbYTE1 ;
+            {
+            else
             }
                 byteT bTest = pb1P[ cbP - 1 ] ;
             {
             if( !_restart )
             _restart.flags |= flRESTARTc_QUIET ;
-            RESTART
+
+            RESTARTiFqUERY( bAcceptEvent_c_memcmpIF_F , (countT*)&pbHit )
+            ZE( byteT* , pbHit ) ;
+
             //_IO_
         {
         if( !idFail )
 
         }
-            else idFail = ifcIDiMPOTENCEmEMcMP_WOTHbYTE2 ;
+            }
+                etherC::etRockIF( tinP ).traceF( tinP , T("!exception: ifcIDiMPOTENCEmEMcMP_WOTHbYTE2 [pbHit,pb1P,pb1P+cbP,pb2P,pb2P+cbP]:     ")+TF3((countT)pbHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb1P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb2P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                idFail = ifcIDiMPOTENCEmEMcMP_WOTHbYTE2 ;
+            {
+            else
             }
                 byteT bTest = *pb2P ;
             {
             if( !_restart )
             _restart.flags |= flRESTARTc_QUIET ;
-            RESTART
+
+            RESTARTiFqUERY( bAcceptEvent_c_memcmpIF_F , (countT*)&pbHit )
+            ZE( byteT* , pbHit ) ;
+
             //_IO_
         {
         if( !idFail )
 
         }
-            else idFail = ifcIDiMPOTENCEmEMcMP_WOTHbYTE1 ;
+            }
+                etherC::etRockIF( tinP ).traceF( tinP , T("!exception: ifcIDiMPOTENCEmEMcMP_WOTHbYTE1 [pbHit,pb1P,pb1P+cbP,pb2P,pb2P+cbP]:     ")+TF3((countT)pbHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb1P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)pb2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3((countT)(pb2P+cbP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                idFail = ifcIDiMPOTENCEmEMcMP_WOTHbYTE1 ;
+            {
+            else
             }
                 byteT bTest = *pb1P ;
 
@@ -89,7 +122,10 @@
             {
             if( !_restart )
             _restart.flags |= flRESTARTc_QUIET ;
-            RESTART
+
+            RESTARTiFqUERY( bAcceptEvent_c_memcmpIF_F , (countT*)&pbHit )
+            ZE( byteT* , pbHit ) ;
+
             //_IO_
         {
         ZE( countT , idFail ) ;
@@ -142,8 +178,8 @@
     {
     else
     }
-        else                                                                    etherC::etRockIF( tinP ).traceF( tinP , T("!exception: ifcIDiMPOTENCEmEMcMP_COMPARE0 INpAGEeRROR "  "[pbHitP,ntErrorCode]:     ")+TF3((countT)pbHitP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF2(infoP.pcInfo[2],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        if( infoP.idException == ifcIDeVENTeXCEPTIONmONITORED_ACCESSvIOLATION ) etherC::etRockIF( tinP ).traceF( tinP , T("!exception: ifcIDiMPOTENCEmEMcMP_COMPARE0 ACCESSvIOLATION [pbHitP]:"          "     ")+TF3((countT)pbHitP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+        else                                                                    etherC::etRockIF( tinP ).traceF( tinP , T("!exception: c_memcmpIF INpAGEeRROR "  "[pbHitP,ntErrorCode]:     ")+TF3((countT)pbHitP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF2(infoP.pcInfo[2],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        if( infoP.idException == ifcIDeVENTeXCEPTIONmONITORED_ACCESSvIOLATION ) etherC::etRockIF( tinP ).traceF( tinP , T("!exception: c_memcmpIF ACCESSvIOLATION [pbHitP]:"          "     ")+TF3((countT)pbHitP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
         if( infoP.ccInfo > 1 ) pbHitP = (byteT*)infoP.pcInfo[ 1 ] ;
     {
     )
