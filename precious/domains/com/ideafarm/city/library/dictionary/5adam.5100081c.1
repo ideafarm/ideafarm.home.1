@@ -56,7 +56,7 @@ etThread.traceF( tinP , T("ok") ) ;
     TN( tSlash , "/" ) ;
     ZE( boolT , bYearDo ) ;
     ZE( boolT , bYear ) ;
-    TN( tYearTest , "2020" ) ;  // E.G. "2011" OR "2012,2013,2014"
+    TN( tYearTest , "" ) ;  // E.G. "2011" OR "2012,2013,2014"
     //TN( tYearTest , "2018,2019,2020,2021,2022,2023,2099" ) ;  // E.G. "2011" OR "2012,2013,2014"
     TN( tArchives , "ideafarm.archives" ) ;
     ZE( countT , cSetsDone ) ;
@@ -140,7 +140,7 @@ else
 
                     if( !tDeviceFailed.csF( tinP ) || !etThread.strCompareF( tinP , psttc1 , tDeviceFailed ) ) bSkip = 0 ;
 
-                    //if( etThread.strCompareF( tinP , psttc1 , T("///d/ideafarm.home.101/devices/ssd4.arc.20240214/") ) ) continue ; //U:: TO FIND A BUG
+                    //if( etThread.strCompareF( tinP , psttc1 , T("///d/ideafarm.home.101/devices/ssd4.arc.20240214/") ) ) continue ; //TO FIND A BUG
                     //etThread.traceF( tinP , psttc1 ) ;
                 {
                 FORsTRINGSiN1( pstt1d )
@@ -653,7 +653,7 @@ boolT walkCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQui
             bTimeToQuit = !!etPrimeP ;     // THE INTENTION IS TO QUIT ONLY AT FILESET BOUNDARY, SO I INSPECT ether HERE
             _IO_
         {
-        if( etherP.strCompareF( tinP , tShortPrefix , tShortPrefixLag ) )     //U:: THIS CODE ERRONEOUSLY ASSUMES THAT THE FILE SYSTEM (E.G. NTFS) WILL PRESENT THE FILES IN SORTED ORDER; THESE NAMES NEED TO BE SORTED BEFORE PROCESSING THEM INTO FILESETS (LIKE HEAL DOES)
+        if( etherP.strCompareF( tinP , tShortPrefix , tShortPrefixLag ) )     //A:ASSUME: THIS CODE ASSUMES THAT THE FILES ARE PRESENTED IN SORTED ORDER
         ZE( boolT , bTimeToQuit ) ;
 
         //etherP.traceF( tinP , T("the prefix of this file is:                     ")+tShortPrefix ) ;
@@ -729,164 +729,157 @@ voidT consumeSortedShortF( tinS& tinP , etherC& etherP , etherC& etPrimeP , bool
     //etherP.traceF( tinP , T("purging stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     }
-        }
-            //etherP.traceF( tinP , T("flush [cDone]:    ")+TF2(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            countT cDone = 1 + incv02AM( cSetsDoneP ) ;
-
-            }
-                THREADmODE2rESTORE
-                //etherP.traceF( tinP , T("setted  zip file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
-                ((thirdC&)etherP).setFileTimeF( tinP , fiZip , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
-                //etherP.traceF( tinP , T("setting zip file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
-                fileC fiZip(   tinP , (strokeS*)( tPathP+tShortZip ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                _IO_
-            {
-
-            //etherP.traceF( tinP , T("called  disZipF [tArgsPkZip]:    ")+tArgsPkZip ) ;
-            }
-                THREADmODE2rESTORE
-                etherP.diskZipF( tArgsInfoZip , tinP , tArgsPkZip ) ;
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                _IO_
-            {
-        {
-        if( !bFail && !bDoNothing )
-
-        //etherP.traceF( tinP , T("calling disZipF [tArgsPkZip]:    ")+tArgsPkZip ) ;
+        THREADmODE2rESTORE
         }
             }
-                etherP.delF( tinP , psttShortNew ) ;
-
-                tArgsPkZip   += tbP+T(psttShortNew) ;
-                tArgsInfoZip += tbP+T(psttShortNew) ;
-                //etherP.traceF( tinP , T("moved [old]:    ")+tShort ) ;
-                //etherP.traceF( tinP , T("moved [new]:    ")+T(psttShortNew) ) ;
+                //etherP.traceF( tinP , T("flush [cDone]:    ")+TF2(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                countT cDone = 1 + incv02AM( cSetsDoneP ) ;
 
                 }
-                    THREADmODE2rESTORE
-                    etherP.diskMoveFileOrDirF( tinP , tLongNew , tPathP+tShort , 0 ) ;
-                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                    //etherP.traceF( tinP , T("setted  zip file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                    ((thirdC&)etherP).setFileTimeF( tinP , fiZip , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
+                    //etherP.traceF( tinP , T("setting zip file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                    fileC fiZip(   tinP , (strokeS*)( tPathP+tShortZip ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+                    _IO_
                 {
 
-                //etherP.traceF( tinP , T("moving from:    ")+tPathP+tShort ) ;
-                //etherP.traceF( tinP , T("moving to  :    ")+tLongNew ) ;
-
-                TN( tLongNew , "" ) ; tLongNew = tPathP+T(psttShortNew) ;
-                etherP.strReplaceF( tinP , psttShortNew , tShort , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
-                ZE( strokeS* , psttShortNew ) ;
-                _IO_
+                //etherP.traceF( tinP , T("called  disZipF [tArgsPkZip]:    ")+tArgsPkZip ) ;
+                }
+                    etherP.diskZipF( tArgsInfoZip , tinP , tArgsPkZip ) ;
+                    _IO_
+                {
             {
-            else
-            }
-                break ;
-                bDoNothing = 1 ;
-                etherP.traceF( tinP , T("    doing nothing with this prefix") ) ;
-                etherP.traceF( tinP , T("    ")+tShort ) ;
-                etherP.traceF( tinP , T("    ")+tShortPrefixP ) ;
-                etherP.traceF( tinP , T("!exception: not expected for current fileset [tShortPrefix,tShort]:") ) ;
-            {
-            if( 1 != etherP.strIdF( tinP , tShortPrefixP , tShort , 1 ) )
+            if( !bFail && !bDoNothing )
 
+            //etherP.traceF( tinP , T("calling disZipF [tArgsPkZip]:    ")+tArgsPkZip ) ;
             }
-                THREADmODE2rESTORE
+                }
+                    etherP.delF( tinP , psttShortNew ) ;
+
+                    tArgsPkZip   += tbP+T(psttShortNew) ;
+                    tArgsInfoZip += tbP+T(psttShortNew) ;
+                    //etherP.traceF( tinP , T("moved [old]:    ")+tShort ) ;
+                    //etherP.traceF( tinP , T("moved [new]:    ")+T(psttShortNew) ) ;
+
+                    }
+                        etherP.diskMoveFileOrDirF( tinP , tLongNew , tPathP+tShort , 0 ) ;
+                    {
+
+                    //etherP.traceF( tinP , T("moving from:    ")+tPathP+tShort ) ;
+                    //etherP.traceF( tinP , T("moving to  :    ")+tLongNew ) ;
+
+                    TN( tLongNew , "" ) ; tLongNew = tPathP+T(psttShortNew) ;
+                    etherP.strReplaceF( tinP , psttShortNew , tShort , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                    ZE( strokeS* , psttShortNew ) ;
+                    _IO_
+                {
+                else
+                }
+                    break ;
+                    bDoNothing = 1 ;
+                    etherP.traceF( tinP , T("    doing nothing with this prefix") ) ;
+                    etherP.traceF( tinP , T("    ")+tShort ) ;
+                    etherP.traceF( tinP , T("    ")+tShortPrefixP ) ;
+                    etherP.traceF( tinP , T("!exception: not expected for current fileset [tShortPrefix,tShort]:") ) ;
+                {
+                if( 1 != etherP.strIdF( tinP , tShortPrefixP , tShort , 1 ) )
+
                 }
                     }
                         }
-                            etherP.traceF( tinP , T("!exception: could set file time [tShort]:    ")+tShort ) ;
+                            }
+                                etherP.traceF( tinP , T("!exception: could set file time [tShort]:    ")+tShort ) ;
+                                bFail = 1 ;
+                                POOPRqUIET
+                            {
+                            if( POOP )
+
+                            //etherP.traceF( tinP , T("setted  file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                            ((thirdC&)*tinP.pEtScratch).setFileTimeF( tinP , fiWo , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
+                            //etherP.traceF( tinP , T("setting file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                        {
+                        else
+                        }
+                            etherP.traceF( tinP , T("!exception: could not open [tShort]:    ")+tShort ) ;
                             bFail = 1 ;
                             POOPRqUIET
                         {
                         if( POOP )
 
-                        //etherP.traceF( tinP , T("setted  file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
-                        ((thirdC&)*tinP.pEtScratch).setFileTimeF( tinP , fiWo , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
-                        //etherP.traceF( tinP , T("setting file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                        fileC fiWo( tinP , (strokeS*)( tPathP + tShort ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 1 , 0 ) ;
+
+                        SCOOPS
+                        _IO_
                     {
-                    else
+                    IFsCRATCH
+                    _IO_
+                {
+                // IOW, ALL FILES IN EACH FILESET ARE DATED ONLY WITH THE TIME MODIFIED VALUE OF THE DATA FILE
+                // THIS IS TO SUPPRESS DIFFERENCES IN META DATA ACROSS VOLUMES THAT ARE DUE TO ACCESSING OR DUE TO AD HOC DATA RECOVERY AND MIGRATION ACTIVITIES
+                //PS:PERSONALITY: I CLOBBER FILE TIME METADATA SO THAT TIME WRITTEN, ACCESSED, AND CREATED FOR EVERY FILE IN THE FILESET ARE ALL SMUDGED TO THE TIME WRITTEN VALUE OF THE DATA FILE
+
+                //etherP.traceF( tinP , T("popped [tShort]:    ")+tShort ) ;
+                }
+                    etherP.delF( tinP , psttShort ) ;
+                    tShort = T(psttShort) ;
+                    stShortP >> psttShort ;
+                    ZE( strokeS* , psttShort ) ;
+                {
+                TN( tShort , "" ) ;
+                _IO_
+            {
+            while( !bFail && stShortP )
+            ZE( boolT , bDoNothing ) ;
+            //etherP.traceF( tinP , T("popping from stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+            }
+                }
+                    etherP.delF( tinP , psttShort ) ;
+                    etherP.traceF( tinP , T("!exception: sink unique failed [psttShort]:    ")+T(psttShort) ) ;
+                {
+                else
+                if( ids ) ; //etherP.traceF( tinP , T("sinked (aok)  [psttShort]:    ")+T(psttShort) ) ;
+                stShortP.sinkF( tinP , ids , psttShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                ZE( countT , ids ) ;
+                //etherP.traceF( tinP , T("sinking       [psttShort]:    ")+T(psttShort) ) ;
+                etherP.strMakeF( tinP , LF , psttShort , tShortTimes ) ; ___( psttShort ) ;
+                ZE( strokeS* , psttShort ) ;
+                _IO_
+            {
+            if( !bFail )
+
+            }
+                }
                     }
-                        etherP.traceF( tinP , T("!exception: could not open [tShort]:    ")+tShort ) ;
+                        etherP.traceF( tinP , T("!exception: could not write the file times metafile") ) ;
                         bFail = 1 ;
                         POOPRqUIET
                     {
                     if( POOP )
-
-                    fileC fiWo( tinP , (strokeS*)( tPathP + tShort ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 1 , 0 ) ;
-
-                    SCOOPS
-                    _IO_
+                    tinP.pEtScratch->fileWriteF( tinP , fiTimes , (byteT*)&timeDataWrittenP  , sizeof( timeS ) ) ;
                 {
-                IFsCRATCH
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                _IO_
-            {
-            // IOW, ALL FILES IN EACH FILESET ARE DATED ONLY WITH THE TIME MODIFIED VALUE OF THE DATA FILE
-            // THIS IS TO SUPPRESS DIFFERENCES IN META DATA ACROSS VOLUMES THAT ARE DUE TO ACCESSING OR DUE TO AD HOC DATA RECOVERY AND MIGRATION ACTIVITIES
-            //PS:PERSONALITY: I CLOBBER FILE TIME METADATA SO THAT TIME WRITTEN, ACCESSED, AND CREATED FOR EVERY FILE IN THE FILESET ARE ALL SMUDGED TO THE TIME WRITTEN VALUE OF THE DATA FILE
-
-            //etherP.traceF( tinP , T("popped [tShort]:    ")+tShort ) ;
-            }
-                etherP.delF( tinP , psttShort ) ;
-                tShort = T(psttShort) ;
-                stShortP >> psttShort ;
-                ZE( strokeS* , psttShort ) ;
-            {
-            TN( tShort , "" ) ;
-            _IO_
-        {
-        while( !bFail && stShortP )
-        ZE( boolT , bDoNothing ) ;
-        //etherP.traceF( tinP , T("popping from stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-        }
-            }
-                etherP.delF( tinP , psttShort ) ;
-                etherP.traceF( tinP , T("!exception: sink unique failed [psttShort]:    ")+T(psttShort) ) ;
-            {
-            else
-            if( ids ) ; //etherP.traceF( tinP , T("sinked (aok)  [psttShort]:    ")+T(psttShort) ) ;
-            stShortP.sinkF( tinP , ids , psttShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
-            ZE( countT , ids ) ;
-            //etherP.traceF( tinP , T("sinking       [psttShort]:    ")+T(psttShort) ) ;
-            etherP.strMakeF( tinP , LF , psttShort , tShortTimes ) ; ___( psttShort ) ;
-            ZE( strokeS* , psttShort ) ;
-            _IO_
-        {
-        if( !bFail )
-
-        THREADmODE2rESTORE
-        }
-            }
+                else
                 }
-                    etherP.traceF( tinP , T("!exception: could not write the file times metafile") ) ;
+                    etherP.traceF( tinP , T("!exception: could not create the file times metafile") ) ;
                     bFail = 1 ;
                     POOPRqUIET
                 {
                 if( POOP )
-                tinP.pEtScratch->fileWriteF( tinP , fiTimes , (byteT*)&timeDataWrittenP  , sizeof( timeS ) ) ;
-            {
-            else
-            }
-                etherP.traceF( tinP , T("!exception: could not create the file times metafile") ) ;
-                bFail = 1 ;
-                POOPRqUIET
-            {
-            if( POOP )
 
-            fileC fiTimes( tinP , (strokeS*)( tPathP + tShortTimes ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeF , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+                fileC fiTimes( tinP , (strokeS*)( tPathP + tShortTimes ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeF , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
 
-            SCOOPS
-            _IO_
+                SCOOPS
+                _IO_
+            {
+            IFsCRATCH
+            TN( tShortTimes , "" ) ; tShortTimes = tShortPrefixP + T("meta.datafiletimes") ;
+            etherP.boxZapF( tinP , tPathP+tShortZip ) ;
+            TN( tArgsPkZip   , "" ) ; tArgsPkZip   = T("-max -add -move ") + tShortZip ;
+            TN( tArgsInfoZip , "" ) ; tArgsInfoZip = T("-9m "            ) + tShortZip ;
+
+            hoverC hover( tinP , etherP , tPathP ) ;
         {
-        IFsCRATCH
-        TN( tShortTimes , "" ) ; tShortTimes = tShortPrefixP + T("meta.datafiletimes") ;
-        etherP.boxZapF( tinP , tPathP+tShortZip ) ;
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-        TN( tArgsPkZip   , "" ) ; tArgsPkZip   = T("-max -add -move ") + tShortZip ;
-        TN( tArgsInfoZip , "" ) ; tArgsInfoZip = T("-9m "            ) + tShortZip ;
-
-
-        hoverC hover( tinP , etherP , tPathP ) ;
 
         etherP.delF( tinP , psttShortPrefixNew ) ;
         TN( tShortZip , "" ) ; tShortZip = T(psttShortPrefixNew) + T("fset.zip") ;
