@@ -8298,36 +8298,6 @@ it is illegal to refer to this symbol in the definition of an adam
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000c6.task2 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000c8.ifcexitcodethreadaok BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.001012e.1.0.html\"\>definition\</A\>
-this arbitrary value is wo of oo legal exit codes for a thread
-it is illegal to exit a thread at any execution point other than in DONE
-it is illegal to kill an ifc thread
-it is illegal to specify this exit code value anywhere other than in DONE
-*/
-/*1*//*ifcEXITcODEtHREADaOK*//*1*/
-/**/
-#define ifcEXITcODEtHREADaOK 0x93519937
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000c8.ifcexitcodethreadaok END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000c9.debugparm BEGIN
 
 
@@ -9582,36 +9552,6 @@ ifcIDpHASEhANDOFFoLD_ATTACHEDtOsTATE and ifcIDpHASEhANDOFFoLD_STATEiSfROZEN are 
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000df.ifcidphasehandoff END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000e1.ifcexitcodethreadimpotent BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010153.1.0.html\"\>definition\</A\>
-this arbitrary value is wo of oo legal exit codes for a thread
-it is illegal to exit a thread at any execution point other than in DONE
-it is illegal to kill an ifc thread
-it is illegal to specify this exit code value anywhere other than in DONE
-*/
-/*1*//*ifcEXITcODEtHREADiMPOTENT*//*1*/
-/**/
-#define ifcEXITcODEtHREADiMPOTENT (ifcEXITcODEtHREADaOK+1)
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000e1.ifcexitcodethreadimpotent END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000e2.flstate BEGIN
 
 
@@ -16325,7 +16265,7 @@ these flag values are used by oo flagsT objects
                 TINSL ;                                                                             \
                 idSubType = POOP ;                                                                  \
             }                                                                                       \
-            return POOP ? ifcEXITcODEtHREADiMPOTENT : ifcEXITcODEtHREADaOK ;                        \
+            return POOP ? ifcEXITcODE_THREADiMPOTENT : ifcEXITcODE_THREADaOK ;                        \
         }
 
 #endif
@@ -51439,3 +51379,28 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*SOCKETtIMEOUTdEFAULTwANiMPATIENT*//*1*/
+
+#define SOCKETtIMEOUTdEFAULTwANiMPATIENT ( TOCK << 0 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END

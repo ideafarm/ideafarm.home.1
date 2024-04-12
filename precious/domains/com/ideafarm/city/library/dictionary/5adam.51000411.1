@@ -3096,7 +3096,7 @@ voidT purgeWhereInfoF( tinS& tinP , tinS* pTinEventP , processWhereInfoS& proces
         //bwP.stPhrases << psttOldC( tinP , etThread , T("A process terminated early.  This was a naughty thing to do.\r\n") ) ;
         bwP.flagsComment |= fliCOMMENT_SIN ;
     {
-    if( !bwP.bAdoptedKid && getNegAM( infoP.osExitCodeProcess ) != FINGERnEG_EXITpROCESSaOK && getNegAM( infoP.osExitCodeProcess ) != FINGERnEG_EXITpROCESSiMPOTENT )
+    if( !bwP.bAdoptedKid && getNegAM( infoP.osExitCodeProcess ) != ifcEXITcODE_EXITpROCESSaOK && getNegAM( infoP.osExitCodeProcess ) != ifcEXITcODE_EXITpROCESSiMPOTENT )
     etherC& etThread = bwP.ether ;
 {
 countT hanDelProcessF( tinS& tinP , bookWoS& bwP , ifcMonitorEventS& infoP )
@@ -3120,7 +3120,7 @@ countT hanDelProcessF( tinS& tinP , bookWoS& bwP , ifcMonitorEventS& infoP )
         //bwP.stPhrases << psttOldC( tinP , etThread , T("A thread terminated early.  This was a naughty thing to do.\r\n") ) ;
         bwP.flagsComment |= fliCOMMENT_SIN ;
     {
-    if( infoP.osExitCodeThread != ifcEXITcODEtHREADaOK && infoP.osExitCodeThread != ifcEXITcODEtHREADiMPOTENT && bwP.pTinEvent ) // IF !bwP.pTinEvent THEN WE ARE ASSUMING THAT THIS IS A THREAD LAUNCHED BY THE OS (EXAMPLE: Ctrl-C WILL CAUSE WINDOWS-32 TO LAUNCH A THREAD AND THEN CALL THE PROCESS'S HANDLERS)
+    if( infoP.osExitCodeThread != ifcEXITcODE_THREADaOK && infoP.osExitCodeThread != ifcEXITcODE_THREADiMPOTENT && bwP.pTinEvent ) // IF !bwP.pTinEvent THEN WE ARE ASSUMING THAT THIS IS A THREAD LAUNCHED BY THE OS (EXAMPLE: Ctrl-C WILL CAUSE WINDOWS-32 TO LAUNCH A THREAD AND THEN CALL THE PROCESS'S HANDLERS)
 
     bwP.flagsComment |= fliCOMMENT_CLOSEtHREADhANDLE ;
 
