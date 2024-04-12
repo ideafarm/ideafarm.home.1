@@ -9857,8 +9857,8 @@ flHIRE_SHOW
 //CS:CODEsYNC: bench/2.1.ideafarm 0010163 0030149
 
 // NOTE FOR PROCESS EXIT CODES
-//    FINGERnEG_EXITpROCESSaOK
-//    FINGERnEG_EXITpROCESSiMPOTENT
+//    FINGERnEG_ EXITpROCESSaOK
+//    FINGERnEG_ EXITpROCESSiMPOTENT
 //    THE NEGATIVE OF THESE OO VALUES ARE THE ONLY LEGAL EXIT CODES FOR A PROCESS
 //    IT IS ILLEGAL TO EXIT AT ANY EXECUTION POINT OTHER THAN THE RETURN FROM main
 //    IT IS ILLEGAL TO KILL AN IFC PROCESS
@@ -9983,21 +9983,9 @@ flHIRE_SHOW
 #define FINGERnEG_jotFileNameC                              ((countT)-(sCountT)0xcccc006f)
 #define FINGERnEG_jotFileBranchC                            ((countT)-(sCountT)0xcccc0070)
 #define FINGERnEG_fileWindowsC                              ((countT)-(sCountT)0xcccc0071)
-#define FINGERnEG_EXITpROCESStOOhIGH                        ((countT)-(sCountT)0xcccc0072)
-#define FINGERnEG_EXITpROCESSaOK                            ((countT)-(sCountT)0xcccc0073)
-#define FINGERnEG_EXITpROCESSiMPOTENT                       ((countT)-(sCountT)0xcccc0074)
-#define FINGERnEG_EXITpROCESSsIGNAL                         ((countT)-(sCountT)0xcccc0075)
-#define FINGERnEG_EXITpROCESSeXCEPTION                      ((countT)-(sCountT)0xcccc0076)
-#define FINGERnEG_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP   ((countT)-(sCountT)0xcccc0077)
-#define FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOmE          ((countT)-(sCountT)0xcccc0078)
-#define FINGERnEG_EXITpROCESSdTtINSsOMETHINGgRABBED         ((countT)-(sCountT)0xcccc0079)
-#define FINGERnEG_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE    ((countT)-(sCountT)0xcccc007a)
-#define FINGERnEG_EXITpROCESSdTtINSpOURfAILED               ((countT)-(sCountT)0xcccc007b)
-#define FINGERnEG_EXITpROCESSdTtINSnOTpOINTINGtOeLDER       ((countT)-(sCountT)0xcccc007c)
-#define FINGERnEG_EXITpROCESStOOlOW                         ((countT)-(sCountT)0xcccc007d)
 /*3*/
 #define FINGERnEG_min     0xcccc0001
-#define FINGERnEG_max     0xcccc007d
+#define FINGERnEG_max     0xcccc0071
 
 //CS:CODEsYNC: 510004FB 112000EF
 
@@ -51404,3 +51392,39 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
+
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c2c
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c2d
+#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c2e
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c2f
+#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c30
+#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c31
+#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c32
+#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c33
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c2c
+#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c33                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END

@@ -1,39 +1,3 @@
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
-
-/*3*/
-#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c2c
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c2d
-#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c2e
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c2f
-#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c30
-#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c31
-#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c32
-#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c33
-/*3*/
-#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c2c
-#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c33                                                               
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
 
 
