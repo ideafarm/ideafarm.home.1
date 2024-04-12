@@ -126,15 +126,43 @@
             //U::SEARCH FOR: T("///?/")+T(psttKeyP)+T(".home.")+TF1(idHomeDisk)+T("/")
 
             }
+                CONoUTrAW( ostoSay ) ;
+
+                OStEXTAK( ostoSay , "\r\n" ) ;
+                OStEXTA(  ostoSay , postP ) ;
+                OStEXTAK( ostoSay , "\r\ndiskFindHomeIF [found]:    " ) ;
+                OStEXT(   ostoSay , TUCK << 2 ) ;
+            {
+
+            *postP = ostSticky ;
+            }
                 }
                     BLAMMOiD( 0x1111ffff ) ;
-                    LOGrAW(    "\r\ndiskFindHomeIF: found on multiple devices ; executing BLAMMO\r\n" ) ;
-                    CONoUTrAW( "\r\ndiskFindHomeIF: found on multiple devices ; executing BLAMMO\r\n" ) ;
+
+                    LOGrAW(    ostoSay ) ;
+                    CONoUTrAW( ostoSay ) ;
+
+                    OStEXTAK( ostoSay , "\r\n" ) ;
+                    OStEXTA(  ostoSay , postP ) ;
+                    *postP = ostSticky ;
+                    OStEXTAK( ostoSay , "    " ) ;
+                    OStEXTA(  ostoSay , postP ) ;
+                    OStEXTAK( ostoSay , "\r\n!exception: diskFindHomeIF multiple devices so blammo [postNew,postOld]:    " ) ;
+                    OStEXT(   ostoSay , TUCK << 2 ) ;
                 {
-                if( POOP )
+                else
+                }
+                    if( ostSticky ) *postP = ostSticky ;
+                {
+                if( !POOP )
+
+                __( ostSticky && *postP ) ; // ALREADY HAD A DEVICE LETTER HIT AND NOW I HAVE ANOTHER HIT (THE SEARCH HITS ON MULTIPLE DEVICES)
 
                 thirdC::dosFindFileOrDirSimpleIF( tinP , postP , costaP , hFind , postLike ) ;          //WILL INTENTIONALLY FAIL IF ALREADY FOUND ON ANOTHER DEVICE
                 handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+
+                                                       *postP = 0 ;
+                if( !ostSticky && *postP ) ostSticky = *postP ;
 
                 if( DRIVE_FIXED != tinP.brcRaw ) continue ;
 
@@ -145,6 +173,7 @@
                 osTextT postRoot[] = ".:\\" ;
             {
             for( postLike[ 0 ] = 'c' ; /*!postP[ 0 ] &&*/ postLike[ 0 ] <= 'z' ; postLike[ 0 ] ++ ) //U:: 2011.10.24: c->z (RATHER THAN z->c) SO THAT PERMANENT DRIVES WILL BE FOUND BEFORE UNMOUNTABLE EXTERNAL DRIVES USED FOR BACKUP VIA XCOPY
+            ZE( osTextT , ostSticky ) ;
 
             }
                 thirdC::c_strcpyIF( tinP , postLike , ostoLike ) ;
