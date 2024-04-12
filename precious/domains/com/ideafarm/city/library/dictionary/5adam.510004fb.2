@@ -91,7 +91,7 @@ DONE( tmHireF )
                             ( info3.dwDebugEventCode == EXCEPTION_DEBUG_EVENT    && !info3.u.Exception.dwFirstChance                                                                )      //P:PERSONALITY: IF THE PROCESS EXITS EXPLICITLY THEN IT IS RESPONSIBLE FOR GLASS (REVEALING WHY)
 
                             //||
-                            //( info3.dwDebugEventCode == EXIT_PROCESS_DEBUG_EVENT && ( negExitCode <= FINGERnEG_EXITpROCESStOOlOW || negExitCode >= FINGERnEG_EXITpROCESStOOhIGH ) )      //P:PERSONALITY: GET FREEZE REPORTS ONLY IF UNEXPECTED EXIT CODE (INTENDED TO GLASS WHEN PROCESS DIES SILENTLY)
+                            //( info3.dwDebugEventCode == EXIT_PROCESS_DEBUG_EVENT && ( negExitCode <= ifcEXITcODE_EXITpROCESStOOlOW || negExitCode >= ifcEXITcODE_EXITpROCESStOOhIGH ) )      //P:PERSONALITY: GET FREEZE REPORTS ONLY IF UNEXPECTED EXIT CODE (INTENDED TO GLASS WHEN PROCESS DIES SILENTLY)
                             //THERE IS NO POINT TO THIS BECAUSE THE PROCESS IS GONE
                         (
                         &&
@@ -108,7 +108,7 @@ DONE( tmHireF )
 
                         }
                             default                                                  : { bHuh = 1 ; tExitCode = TF2((countT)-negExitCode,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED  ) ; break ; }
-                            case FINGERnEG_EXITpROCESStOOlOW                         : {            tExitCode = T("EXITpROCESStOOlOW"                                              ) ; break ; }
+                            case ifcEXITcODE_EXITpROCESStOOlOW                         : {            tExitCode = T("EXITpROCESStOOlOW"                                              ) ; break ; }
                             case ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER       : {            tExitCode = T("EXITpROCESSdTtINSnOTpOINTINGtOeLDER"                            ) ; break ; }
                             case ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED               : {            tExitCode = T("EXITpROCESSdTtINSpOURfAILED"                                    ) ; break ; }
                             case ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE    : {            tExitCode = T("EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE"                         ) ; break ; }
@@ -119,7 +119,7 @@ DONE( tmHireF )
                             case ifcEXITcODE_EXITpROCESSsIGNAL                         : {            tExitCode = T("EXITpROCESSsIGNAL"                                              ) ; break ; }
                             case ifcEXITcODE_EXITpROCESSiMPOTENT                       : {            tExitCode = T("EXITpROCESSiMPOTENT"                                            ) ; break ; }
                             case ifcEXITcODE_EXITpROCESSaOK                            : {            tExitCode = T("EXITpROCESSaOK"                                                 ) ; break ; }
-                            case FINGERnEG_EXITpROCESStOOhIGH                        : {            tExitCode = T("EXITpROCESStOOhIGH"                                             ) ; break ; }
+                            case ifcEXITcODE_EXITpROCESStOOhIGH                        : {            tExitCode = T("EXITpROCESStOOhIGH"                                             ) ; break ; }
                             //CS:CODEsYNC: 510004FB 112000EF
                         {
                         switch( negExitCode )
