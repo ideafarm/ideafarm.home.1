@@ -2022,3 +2022,27 @@
     *_pSwSoixlOldApi = (countT)hushEncryptF_1P31P31P31P3b_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
+{
+    TN( tNameSoixlOld , "hushDecryptF_1@31@31@31@3b" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)hushDecryptF_1P31P31P31P3b_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
+    TN( tNameSoixlOld , "hushMakeKeyPairF_b3" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)hushMakeKeyPairF_b3_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
+    TN( tNameSoixlOld , "hushWothNonceF_6333b" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)hushWothNonceF_6333b_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}

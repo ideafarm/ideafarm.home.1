@@ -16248,12 +16248,12 @@ these flag values are used by oo flagsT objects
 
     #define DONE1                                                                                   \
                                                                                                     \
-            ZE( countT , idSubType ) ;                                                            \
+            ZE( countT , idSubType ) ;                                                              \
             {                                                                                       \
                 TINSL ;                                                                             \
                 idSubType = POOP ;                                                                  \
             }                                                                                       \
-            return POOP ? ifcEXITcODE_THREADiMPOTENT : ifcEXITcODE_THREADaOK ;                        \
+            return POOP ? ifcEXITcODE_THREADiMPOTENT : ifcEXITcODE_THREADaOK ;                      \
         }
 
 #endif

@@ -11084,3 +11084,143 @@
    *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinP , *this , tDoc ) ;
    _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"hushDecryptF_1@31@31@31@3b\"\r\n"
+        "\r\n"
+        "Subject: Command word \"hushDecryptF_1@31@31@31@3b\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"hushDecryptF_1@31@31@31@3b\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  9:    handleC          handleP\r\n"
+        "    Pop  8:    countT           cbSeedP\r\n"
+        "    Pop  7:    byteT*           pbSeedP\r\n"
+        "    Pop  6:    countT           cbHushedSymKeyP\r\n"
+        "    Pop  5:    byteT*           pbHushedSymKeyP\r\n"
+        "    Pop  4:    countT           cbSymCypherTextP\r\n"
+        "    Pop  3:    byteT*           pbSymCypherTextP\r\n"
+        "    Pop  2:    countT           cbPlainTextP\r\n"
+        "    Pop  1:    byteT*           pbPlainTextP\r\n"
+        "\r\n"
+        "    Push 1:    byteT*           pbPlainTextP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"hushDecryptF_1@31@31@31@3b\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "hushDecryptF_1@31@31@31@3b" ) ;
+   _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinP , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"hushMakeKeyPairF_b3\"\r\n"
+        "\r\n"
+        "Subject: Command word \"hushMakeKeyPairF_b3\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"hushMakeKeyPairF_b3\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  2:    countT           cBitsP                          (defaults to HUSHbITSdEFAULT)\r\n"
+        "    Pop  1:    handleC          hKeyPairP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"hushMakeKeyPairF_b3\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "hushMakeKeyPairF_b3" ) ;
+   _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinP , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"hushWothNonceF_6333b\"\r\n"
+        "\r\n"
+        "Subject: Command word \"hushWothNonceF_6333b\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"hushWothNonceF_6333b\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  5:    handleC          handleP\r\n"
+        "    Pop  4:    countT           maxP\r\n"
+        "    Pop  3:    countT           randomP\r\n"
+        "    Pop  2:    countT           moduloP\r\n"
+        "    Pop  1:    boolT            bQuitP\r\n"
+        "\r\n"
+        "    Push 1:    countT           noName\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"hushWothNonceF_6333b\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "hushWothNonceF_6333b" ) ;
+   _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinP , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tinP ) ;
+}

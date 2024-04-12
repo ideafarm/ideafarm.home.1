@@ -5511,6 +5511,48 @@ these "status codes" are returned by some MS Windows api's
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e0.ifcPATHgLOBALdATABASEhOMESaNDwIGHTS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e1.ifcEXITcODE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcEXITcODE*//*1*/
+
+/*3*/
+#define ifcEXITcODE_THREADaOK                                           0xdddd1205
+#define ifcEXITcODE_THREADiMPOTENT                                      0xdddd1206
+#define ifcEXITcODE_EXITpROCESStOOlOW                                   0xdddd1207
+#define ifcEXITcODE_EXITpROCESSaOK                                      0xdddd1208
+#define ifcEXITcODE_EXITpROCESSiMPOTENT                                 0xdddd1209
+#define ifcEXITcODE_EXITpROCESSsIGNAL                                   0xdddd120a
+#define ifcEXITcODE_EXITpROCESSeXCEPTION                                0xdddd120b
+#define ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP             0xdddd120c
+#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOmE                    0xdddd120d
+#define ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED                   0xdddd120e
+#define ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE              0xdddd120f
+#define ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED                         0xdddd1210
+#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER                 0xdddd1211
+#define ifcEXITcODE_EXITpROCESStOOhIGH                                  0xdddd1212
+/*3*/
+#define ifcEXITcODE_min     0xdddd1205
+#define ifcEXITcODE_max     0xdddd1212                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e1.ifcEXITcODE END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -29303,10 +29345,10 @@ applications should avoid using thirdC objects
  voidT dosCopyF( tinS& tinP , const osTextT* const postNewP , const osTextT* const postOldP , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340cc.thirdC.dosCopyF!||
  boolT dosCreateDirF( tinS& tinP , const osTextT* const postP ) ;
- static voidT dosCreatePathIF( tinS& tinP , osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401a.thirdC.dosCreateDirF!||
  static voidT dosCreateDirIF( tinS& tinP , const osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34185.thirdC.dosCreateDirIF!||
+ static voidT dosCreatePathIF( tinS& tinP , osTextT* const postP ) ;
  voidT dosCreateNPipeF( tinS& tinP , handleC& handleP , const osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34058.thirdC.dosCreateNPipeF!||
  static voidT dosCreateMutexSemIF( tinS& tinP , handleC& handleP , boolT& bCreatorP , const osTextT* const postP = 0 , const boolT bGrabbedP = 0 ) ;
@@ -46329,6 +46371,8 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.udpFileGramHeadBaseOSFileNameS : 1snip.15000197.udpFileGramHeadBaseOSFileNameS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.udpFileGramHeadNicNameS : 1snip.150001a9.udpFileGramHeadNicNameS BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
@@ -46356,6 +46400,7 @@ i am nonconformant in that all of my member function definitions are in a single
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
 //
 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.udpFileGramHeadNicNameS : 1snip.150001a9.udpFileGramHeadNicNameS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.armSslC : 1snip.15000198.armSslC BEGIN
 
 //
@@ -47099,40 +47144,3 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.wightIdgC : 1snip.150001a8.wightIdgC END
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/*1*//*ifcEXITcODE*//*1*/
-
-/*3*/
-#define ifcEXITcODE_THREADaOK                                           0x1
-#define ifcEXITcODE_THREADiMPOTENT                                      0x2
-#define ifcEXITcODE_EXITpROCESStOOlOW                                   0x3
-#define ifcEXITcODE_EXITpROCESSaOK                                      0x4
-#define ifcEXITcODE_EXITpROCESSiMPOTENT                                 0x5
-#define ifcEXITcODE_EXITpROCESSsIGNAL                                   0x6
-#define ifcEXITcODE_EXITpROCESSeXCEPTION                                0x7
-#define ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP             0x8
-#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOmE                    0x9
-#define ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED                   0xa
-#define ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE              0xb
-#define ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED                         0xc
-#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER                 0xd
-#define ifcEXITcODE_EXITpROCESStOOhIGH                                  0xe
-/*3*/                                                               
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
-//
-
