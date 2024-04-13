@@ -14,6 +14,7 @@ DONE( tmHireF )
     }
         etThread.traceF( tinP , T("event capture ended [cEnded,cBegun,cIgnored1,cIgnored2]:    ")+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         }
+            bKidsSuspendedP = 0 ;
             }
                 }
                     etThread.traceF( tinP , T("ContinueDebugEvent failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -307,6 +308,7 @@ DONE( tmHireF )
             {
             if( !bOk )
 
+            bKidsSuspendedP = 1 ;
             bOk = WaitForDebugEvent( &info3 , INFINITE ) ;
             //etThread.traceF( tinP , T("calling WaitForDebugEvent") ) ;
         {
@@ -487,6 +489,7 @@ DONE( tmHireF )
     
     //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( tinP.monitor.idThread - ifcIDtHREADlOW_tmHireF ) ; }
 
+    boolT&   bKidsSuspendedP            =  *(boolT*)pTaskP->ca ;
     boolT    bConsoleP                  =    (boolT)pTaskP->c9 ;
     stackC&  stOsPidZombieP             = *(stackC*)pTaskP->c8 ;
     stackC&  stOsPidP                   = *(stackC*)pTaskP->c7 ;
@@ -497,7 +500,7 @@ DONE( tmHireF )
     flagsT&  fliPendingSnapShotRequestP = *(flagsT*)pTaskP->c2 ;
     countT&  cHamburgersP               = *(countT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->ca )
 TASK( tmHireF )
 
 DONE( tmChatterF )
@@ -707,32 +710,35 @@ DONE( tmFireAllF )
         }
             }
                 }
-                    ++ s ; etThread.osSleepF( tinP , TOCK >> 0 ) ; //PRESUMED DEAD IF NO CHANGE DURING THIS INTERVAL
+                    ++ s ; etThread.osSleepF( tinP , TOCK >> 0 ) ; //PRESUMED DEAD IF NO CHANGE DURING THIS INTERVAL AND !bKidsSuspendedP
                     //20240331@1737: >> 2 ----> >> 0
 
-                    cHeartBeatsLag = cHeartBeatsNow ;
-
                     }
-                        }
-                            etRock.traceF( tinP , T("some beating hearts remain [idg,cHearts,cHeartBeatsNow,cHeartBeatsLag]:    ")+TF2(idg,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHearts,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHeartBeatsNow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHeartBeatsLag,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-                        {
-                        else
-                        }
-                            //U::TO FIND A BUG, THIS IS DISABLED: break ;
+                        cHeartBeatsLag = cHeartBeatsNow ;
 
-                            //U:: EDIT THIS CODE TO IGNORE UNCHANGED HEARTbEATS IF A DEBUGGING EVENT HAS OCCURRED (WHICH WOULD SUSPEND EXECUTION)
-
-                            etRock.traceF( tinP , T("some hearts remain but none of them are beating [idg,cHearts,cHeartBeatsNow,cHeartBeatsLag]:    ")+TF2(idg,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHearts,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHeartBeatsNow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHeartBeatsLag,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-                        {
-                        else if( cHeartBeatsNow == cHeartBeatsLag )
                         }
-                            break ;
-                            etRock.traceF( tinP , T("0 hearts remain [idg]:    ")+TF2(idg,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                            }
+                                etRock.traceF( tinP , T("some beating hearts remain [idg,cHearts,cHeartBeatsNow,cHeartBeatsLag]:    ")+TF2(idg,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHearts,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHeartBeatsNow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHeartBeatsLag,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                            {
+                            else
+                            }
+                                //U::TO FIND A BUG, THIS IS DISABLED: break ;
+
+                                //U:: EDIT THIS CODE TO IGNORE UNCHANGED HEARTbEATS IF A DEBUGGING EVENT HAS OCCURRED (WHICH WOULD SUSPEND EXECUTION)
+
+                                etRock.traceF( tinP , T("some hearts remain but none of them are beating [idg,cHearts,cHeartBeatsNow,cHeartBeatsLag]:    ")+TF2(idg,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHearts,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHeartBeatsNow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHeartBeatsLag,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                            {
+                            else if( cHeartBeatsNow == cHeartBeatsLag )
+                            }
+                                break ;
+                                etRock.traceF( tinP , T("0 hearts remain [idg]:    ")+TF2(idg,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                            {
+                            if( !cHearts )
+                            countT cHearts = home.pFireAll[ idg - 1 ].cHearts ;
                         {
-                        if( !cHearts )
-                        countT cHearts = home.pFireAll[ idg - 1 ].cHearts ;
+                        if( cHeartBeatsLag )
                     {
-                    if( cHeartBeatsLag )
+                    if( !bKidsSuspendedP )
 
                     countT cHeartBeatsNow = home.pFireAll[ idg - 1 ].cHeartBeats ;
 
@@ -828,8 +834,10 @@ DONE( tmFireAllF )
 
     //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( tinP.monitor.idThread - ifcIDtHREADlOW_tmFireAllF ) ; }
     etherC& etRock = etherC::etRockIF( tinP ) ;
+
+    boolT& bKidsSuspendedP = *(boolT*)pTaskP->c1 ;
 {
-if( pTaskP )
+if( pTaskP && pTaskP->c1 )
 TASK( tmFireAllF )
 
 DONE( tmEatTelemetrySysF )

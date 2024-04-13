@@ -152,10 +152,11 @@ REST
         //grabC grabFoo1( tinP , TAG( TAGiDnULL ) ) ;
         //etThread.traceF( tinP , T("launching grabC deadlocker threads") ) ;
 
-        etThread.osThreadF( TaRG1( tmHireF ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidZombie , bConsoleP ) ;
+        etThread.osThreadF( TaRG1( tmHireF ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidZombie , bConsoleP , (countT)&bKidsSuspended ) ;
 
         //U::TO QUIET THE CONSOLE FOR CRAFTWORK: etThread.osThreadF( TaRG1( tmConsoleF ) , (countT)&bQuitConsole , (countT)&cLeverIdMemory , (countT)&swMemorySpace ) ;
-        etThread.osThreadF( tinP , countTC() , tmFireAllF , &sgnDone_tmFireAllF_ ) ;
+        etThread.osThreadF( tinP , countTC() , tmFireAllF , &sgnDone_tmFireAllF_ , (countT)&bKidsSuspended ) ;
+        ZE( boolT , bKidsSuspended ) ;
         signC sgnDone_tmFireAllF_( tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC2 ) ;
         //etThread.osThreadF( tinP , countTC() , tmKillYourselfImmediatelyF ) ;
         //etThread.osThreadF( tinP , countTC() , tmTestImpotenceF ) ;
