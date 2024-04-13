@@ -37087,7 +37087,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 #define flBOOKSc_UNZIP                              0xe00004b8
 #define flBOOKSc_WRITER                             0xe00008b8
 #define flBOOKSc_DOnOTuSEpUSE                       0xe00010b8
-#define flBOOKSc_PURGEoNcTiFcLOAK                   0xe00020b8
+#define flBOOKSc_PURGEoNcTiFwOTHcELL                0xe00020b8
 #define flBOOKSc_PURGEoNcT                          0xe00040b8
 #define flBOOKSc_PURGEoNdT                          0xe00080b8
 #define flBOOKSc_DOnOTrEGISTERfILE                  0xe00100b8
