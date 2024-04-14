@@ -10196,7 +10196,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 //MUST BE COMMENTED OUT IN PRODUCTION
 //EVE WILL COMMENT THIS LINE OUT IF IT IS NOT COMMENTED OUT, AFTER SHE COMPLETES PHASE 1 OF A "DOaLL" BUILD
-#define FVsUPPRESS
+//#define FVsUPPRESS
 
 #if defined( FVsUPPRESS )
 

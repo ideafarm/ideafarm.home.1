@@ -5782,6 +5782,7 @@
 0x36157003 , 0x00001696 ,   // 3func.36157003.nicNamesAllowedStripeWebHookNotificationsC.nicNamesAllowedStripeWebHookNotificationsC
 0x36157004 , 0x00001697 ,   // 3func.36157004.nicNamesAllowedStripeWebHookNotificationsC.operator_bitand
 0x36157005 , 0x00001698 ,   // 3func.36157005.nicNamesAllowedStripeWebHookNotificationsC.traceF
-0x41000001 , 0x00001699 ,   // 4boot.41000001.citygate
-0x41000002 , 0x0000169a ,   // 4boot.41000002.citizenconsoledriver
-0x41000003 , 0x0000169b ,   // 4boot.41000003.citizenguidriver
+0x36158001 , 0x00001699 ,   // 3func.36158001.gensoil
+0x41000001 , 0x0000169a ,   // 4boot.41000001.citygate
+0x41000002 , 0x0000169b ,   // 4boot.41000002.citizenconsoledriver
+0x41000003 , 0x0000169c ,   // 4boot.41000003.citizenguidriver

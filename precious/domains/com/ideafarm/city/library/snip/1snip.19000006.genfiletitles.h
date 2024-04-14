@@ -5287,7 +5287,7 @@
 0x000014a7 , "\0\0\0\0tellS::tellS( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const countT cbNoteP ) :" ,
 0x000014a8 , "\0\0\0\0ipMapPortS::ipMapPortS( voidT ) :" ,
 0x000014a9 , "\0\0\0\0ipMapHomeS::ipMapHomeS( tinS& tinP ) :" ,
-0x000014aa , "\0\0\0\0genSoixlOldWordDefs, genSoixlOldWordProtos (included) part 4" ,
+0x000014aa , "\0\0\0\0genSoixlOldWordDefs, genSoixlOldWordProtos (included) part 5" ,
 0x000014ab , "\0\0\0\0sexHeadS::~sexHeadS( voidT )" ,
 0x000014ac , "\0\0\0\0sexHeadS::sexHeadS( tinS& tinP , const countT expCbDropP , const countT expSlotsP , const osTextT* const postP , const flagsT flagsCtP ) :" ,
 0x000014ad , "\0\0\0\0voidT sexHeadS::glassF( tinS& tinP , strokeS*& psttP ) const" ,
@@ -5782,6 +5782,7 @@
 0x00001696 , "\0\0\0\0nicNamesAllowedStripeWebHookNotificationsC::nicNamesAllowedStripeWebHookNotificationsC( tinS& tinP , etherC& etherP , const boolT& bQuitP , countT time1NapP ) :" ,
 0x00001697 , "\0\0\0\0boolT nicNamesAllowedStripeWebHookNotificationsC::operator &( const nicNameC& nnP )" ,
 0x00001698 , "\0\0\0\0voidT nicNamesAllowedStripeWebHookNotificationsC::traceF( tinS& tinP )" ,
-0x00001699 , "\0\0\0\0citizen gui driver" ,
-0x0000169a , "\0\0\0\0citizen detached process driver" ,
-0x0000169b , "\0\0\0\0citizen gui driver"
+0x00001699 , "\0\0\0\0genSoixlOldWordDefs, genSoixlOldWordProtos (included) part 6" ,
+0x0000169a , "\0\0\0\0citizen gui driver" ,
+0x0000169b , "\0\0\0\0citizen detached process driver" ,
+0x0000169c , "\0\0\0\0citizen gui driver"
