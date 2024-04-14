@@ -6458,106 +6458,85 @@
                 if( !bQuitP ) soulOutP << psttp ;
 
                 ///**/if( bTrace ) traceF( tinP , T("etherSoilF / setting up 1 / ifcIDmODEeTHERsOIL_NATIVEfROMaSCII / loop / 2") ) ;
+
+                tinP.pcUtility[ 0 ] -- ; //U:: TO FIND A BUG
                 }
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmNativeTextBreak   , tr6  , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // DECODE ALL |
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmNative04   , tr4   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // DECODE ALL ]
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmNative03   , tr3   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // DECODE ALL [
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmNative02   , tr2    , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // DECODE ALL }
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmNative01   , tr1    , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // DECODE ALL {
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr6  , ter6 , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ESCAPE THE ESCAPED |
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr4   , ter4  , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ESCAPE THE ESCAPED ]
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr3   , ter3  , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ESCAPE THE ESCAPED [
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr2    , ter2   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ESCAPE THE ESCAPED }
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr1    , ter1   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ESCAPE THE ESCAPED {
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tb    , ter5   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ESCAPE THE ESCAPED BACKSLASH
-                    if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmNative05   , tr5   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // DECODE ALL ESCAPED SPACE ' '
+
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tmHideEscBack        , teBack               , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNHIDE ALL ESCAPED BACKSLASH
+                    for( sCountT ii = TUCK - 1 ; !bQuitP && ii >= 0 ; ii -- ) { if( !strCompareF( tinP , teBack , ptEscChar[ ii ] ) ) continue ; cHits = strReplaceF( tinP , psttp , 0 , ptmHideEscChar[ ii ] , ptEscChar[ ii ]      , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNHIDE ALL ESCAPED OTHER CHAR
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tmOpenCurly          , tOpenCurly           , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNENCODE
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tmCloseCurly         , tCloseCurly          , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNENCODE
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tmOpenSquare         , tOpenSquare          , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNENCODE
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tmCloseSquare        , tCloseSquare         , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNENCODE
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tmBar                , tBar                 , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNENCODE
+                    for( countT ii = 0 ; !bQuitP && ii < TUCK ; ii ++ )       { if( !strCompareF( tinP , teBack , ptEscChar[ ii ] ) ) continue ; cHits = strReplaceF( tinP , psttp , 0 , ptEscChar[ ii ]      , ptmHideEscChar[ ii ] , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNSHOW ALL ESCAPED OTHER CHAR
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , teBack               , tmHideEscBack        , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     // UNSHOW ALL ESCAPED BACKSLASH
                 {
                 else
                 }
-                    #endif
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tmHideEscBack        , teBack               , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   SHOW ALL ESCAPED BACKSLASH
+                    for( sCountT ii = TUCK - 1 ; !bQuitP && ii >= 0 ; ii -- ) { if( !strCompareF( tinP , teBack , ptEscChar[ ii ] ) ) continue ; cHits = strReplaceF( tinP , psttp , 0 , ptmHideEscChar[ ii ] , ptEscChar[ ii ]      , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   SHOW ALL ESCAPED OTHER CHAR
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tBar                 , tmBar                , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   ENCODE
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tCloseSquare         , tmCloseSquare        , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   ENCODE
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tOpenSquare          , tmOpenSquare         , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   ENCODE
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tCloseCurly          , tmCloseCurly         , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   ENCODE
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , tOpenCurly           , tmOpenCurly          , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   ENCODE
+                    for( countT ii = 0 ; !bQuitP && ii < TUCK ; ii ++ )       { if( !strCompareF( tinP , teBack , ptEscChar[ ii ] ) ) continue ; cHits = strReplaceF( tinP , psttp , 0 , ptEscChar[ ii ]      , ptmHideEscChar[ ii ] , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   HIDE ALL ESCAPED OTHER CHAR
+                    if( !bQuitP )                                             {                                                                  cHits = strReplaceF( tinP , psttp , 0 , teBack               , tmHideEscBack        , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; }     //   HIDE ALL ESCAPED BACKSLASH
 
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide26   , tr6  , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED |
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide25   , tr4   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED ]
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide24   , tr3   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED [
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide23   , tr2    , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED }
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide22   , tr1    , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED {
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide21   , tb    , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED BACKSLASH
+                    //}
+                    //    delF( tinP , psttd ) ;
+                    //    traceF( tinP , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //    strDumpStrokesIF( tinP , psttd , psttp , T("STEP 5:  ---- AFTER SHOWING ALL ESCAPED BACKSLASH") ) ;
+                    //    ZE( strokeS* , psttd ) ;
+                    //{
+                    //if( strIdF( tinP , T("c:") , psttp ) )
 
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr6  , tmNativeTextBreak   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL |
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr4   , tmNative04   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL ]
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr3   , tmNative03   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL [
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr2    , tmNative02   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL }
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr1    , tmNative01   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL {
+                    //}
+                    //    delF( tinP , psttd ) ;
+                    //    traceF( tinP , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //    strDumpStrokesIF( tinP , psttd , psttp , T("STEP 4:  ---- AFTER SHOWING ALL ESCAPED OTHHER") ) ;
+                    //    ZE( strokeS* , psttd ) ;
+                    //{
+                    //if( strIdF( tinP , T("c:") , psttp ) )
 
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter6 , tmHide26   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED |
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter4  , tmHide25   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED ]
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter3  , tmHide24   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED [
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter2   , tmHide23   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED }
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter1   , tmHide22   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED {
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter5   , tmHide21   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED BACKSLASH
+                    //}
+                    //    delF( tinP , psttd ) ;
+                    //    traceF( tinP , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //    strDumpStrokesIF( tinP , psttd , psttp , T("STEP 3:  ---- AFTER ENCODING BRACKETS AND BAR") ) ;
+                    //    ZE( strokeS* , psttd ) ;
+                    //{
+                    //if( strIdF( tinP , T("c:") , psttp ) )
 
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr5   , tmNative05   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL ESCAPED SPACE ' '
+                    //}
+                    //    delF( tinP , psttd ) ;
+                    //    traceF( tinP , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //    strDumpStrokesIF( tinP , psttd , psttp , T("STEP 2:  ---- AFTER HIDING ALL ESCAPED CHARS") ) ;
+                    //    ZE( strokeS* , psttd ) ;
+                    //{
+                    //if( strIdF( tinP , T("c:") , psttp ) )
 
-                        //20240413@2037: THIS IS THE OLD CODE THAT I WANT TO REORDER FOR ELEGANT PARSING
+                    //}
+                    //    delF( tinP , psttd ) ;
+                    //    traceF( tinP , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //    strDumpStrokesIF( tinP , psttd , psttp , T("STEP 1:  ---- AFTER HIDING ALL ESCAPED BACKSLASH") ) ;
+                    //    ZE( strokeS* , psttd ) ;
+                    //{
+                    //if( strIdF( tinP , T("c:") , psttp ) )
 
-                    #else
-
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide26   , tr6  , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED |
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide25   , tr4   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED ]
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide24   , tr3   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED [
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide23   , tr2    , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED }
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide22   , tr1    , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED {
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tmHide21   , tb    , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // SHOW ALL ESCAPED BACKSLASH
-
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr6  , tmNativeTextBreak   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL |
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr4   , tmNative04   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL ]
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr3   , tmNative03   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL [
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr2    , tmNative02   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL }
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr1    , tmNative01   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL {
-
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter6 , tmHide26   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED |
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter4  , tmHide25   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED ]
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter3  , tmHide24   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED [
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter2   , tmHide23   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED }
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter1   , tmHide22   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED {
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , ter5   , tmHide21   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // HIDE ALL ESCAPED BACKSLASH
-
-                        if( !bQuitP ) { strReplaceF( tinP , psttp , 0 , tr5   , tmNative05   , 0 , flSTRrEPLACE_IGNOREqUOTES | flSTRrEPLACE_USEjOT ) ; ___( psttp ) ; } // ENCODE ALL ESCAPED SPACE ' '
-
-                        //20240413@2037: THIS IS *** NEW *** CODE
-
-                    #if !defined( NEVERdEFINED )
-
-                    //
-                    //     Q: DOES THE CODE IN THE NEXT BLOCK CORRECTLY INVERT THE OUTPUT OF THIS BLOCK TO OBTAIN THE ORIGINAL ASCII INPUT?
-                    //
-                    //     STUDY HOW THIS BLOCK OPERATES WITH INPUT THAT CONTAINS SUCH SEQUENCES: IS SUCH INPUT PROCESSED CORRECTLY?
-                    //
-                    //     Q: ESCAPE SEQUENCES SUCH AS \r ARE ALLOWED IN INPUT ; DOES THIS BLOCK INTERFERE WITH THAT BY PRODUCING SPURIOUS \r FROM INPUT SUCH AS \\r ?
-                    //
-                    //     FOR EXAMPLE, THE EXPRESSION TO PRODUCE "C:\" SHOULD NOT CONTAIN A BLANK AND SHOULD NOT RELY ON AN INTERMEDIATE STEP THAT PRODUCES A HARD BLANK BY CONSUMING A \{blank} IN WHICH THE \ IS INTENDED TO ASSOCIATE WITH THE \ THAT PRECEEDS IT
-                    //     TO DO: STUDY THE CURRENT CODE AND THEN DESIGN A REWRITE THAT IS ELEGANT, MEANING THAT ALL IMAGINABLE OUTPUT CAN BE EXPRESSED AND THE EXPRESSION IS LOGICAL
-                    //     THIS IS COUNTERINTUITIVE CODING TO GET THE DESIRED "C:\"
-                    //
-                    // DISCUSSION
-                    //     
-                    //     EACH tmHide21     IS REPLACED WITH \  , PRODUCING:                                             \r\"C:\\5\"
-                    //
-                    //     EACH \\      IS REPLACED WITH tmHide21, PRODUCING:                                             \r6"C:6\56"
-                    //
-                    //     THE \{space} IS REPLACED WITH tmNative05, PRODUCING:                                             \r\\"C:\\\5\\"
-                    //
-                    // THIS BLOCK PROCESSES AS FOLLOWS:
-                    //
-                    // TO GET THIS VALUE, USE THIS VALUE FOR THE BODY ELEMENT WITHIN THE SOIL INPUT FILE:            \r\\"C:\\\\ \\"
-                    //
-                    // DESIRED OUTPUT VALUE:                                                                         "C:\"
-                    //
-                    // THIS EXAMPLE ILLUSTRATES THE ISSUE:
-                    //
-                    //U:: 20240323@1556: RECODE THIS BLOCK SO THAT PARSING OF INPUT IS ELEGANT AND WORKS AS EXPECTED
+                    //}
+                    //    delF( tinP , psttd ) ;
+                    //    traceF( tinP , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //    strDumpStrokesIF( tinP , psttd , psttp , T("STEP 0:  ---- BEFORE DOING ANYTHING") ) ;
+                    //    ZE( strokeS* , psttd ) ;
+                    //{
+                    //if( strIdF( tinP , T("c:") , psttp ) )
                 {
                 if( bWantNative )
+                tinP.pcUtility[ 0 ] ++ ; //U:: TO FIND A BUG
+                cHits = 0 ;
+                static countT cHits ;
+
                 ///**/if( bTrace ) traceF( tinP , T("etherSoilF / setting up 1 / ifcIDmODEeTHERsOIL_NATIVEfROMaSCII / loop / 3") ) ;
 
                 soult1 >> psttp ; ___( psttp ) ;
@@ -6580,27 +6559,88 @@
             soulC soult1( tinP , TAG( TAGiDnULL ) , flSOUL_null , "soul.t1" ) ;
             /**/if( bTrace ) traceF( tinP , T("etherSoilF / setting up 1 / ifcIDmODEeTHERsOIL_NATIVEfROMaSCII / 2") ) ;
 
-            TN( tmHide26   , ""     ) ; tmHide26 = T("")+S2(0x26,sc_MARK) ; //LITERAL BAR: ter6 -> tmHide26
+            TN( tmBar             , "" ) ; tmBar             = T("")+S2(sa_MARKsYSTEMbREAK,sc_MARKsYSTEM) ;         TN( tBar              , "|"   ) ;
+            TN( tmCloseSquare     , "" ) ; tmCloseSquare     = T("")+S2(0x04              ,sc_MARK      ) ;         TN( tCloseSquare      , "]"   ) ;
+            TN( tmOpenSquare      , "" ) ; tmOpenSquare      = T("")+S2(0x03              ,sc_MARK      ) ;         TN( tOpenSquare       , "["   ) ;
+            TN( tmCloseCurly      , "" ) ; tmCloseCurly      = T("")+S2(0x02              ,sc_MARK      ) ;         TN( tCloseCurly       , "}"   ) ;
+            TN( tmOpenCurly       , "" ) ; tmOpenCurly       = T("")+S2(0x01              ,sc_MARK      ) ;         TN( tOpenCurly        , "{"   ) ;
+
+            TN( tmHideEscBack , "" ) ; tmHideEscBack = T("")+S2(0x200,sc_MARK)  ;     TN( teBack     , "\\\\" ) ;     TN( tBack     , "\\" ) ;
+
+            }
+                tChar         = T("")+S1C(ii)             ;
+                tmHideEscChar = T("")+S2((countT)(TUCK+ii),sc_MARK) ;
+                tEscChar      = T("\\")+S1C(ii)           ;
+
+                textC& tChar         = *new( 0 , tinP , (byteT*)( ptChar         + ii ) , sizeof( textC ) ) textC( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ;
+                textC& tmHideEscChar = *new( 0 , tinP , (byteT*)( ptmHideEscChar + ii ) , sizeof( textC ) ) textC( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ;
+                textC& tEscChar      = *new( 0 , tinP , (byteT*)( ptEscChar      + ii ) , sizeof( textC ) ) textC( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ;
+            {
+            for( countT ii = 0 ; ii < TUCK ; ii ++ )
+
+            textC*    ptChar         = (textC*)pb_ptChar         ;
+            textC*    ptmHideEscChar = (textC*)pb_ptmHideEscChar ;
+            textC*    ptEscChar      = (textC*)pb_ptEscChar      ;
+
+            byteT  pb_ptChar[         TUCK * sizeof( textC ) ] ;
+            byteT  pb_ptmHideEscChar[ TUCK * sizeof( textC ) ] ;
+            byteT  pb_ptEscChar[      TUCK * sizeof( textC ) ] ;
+
+            // AN ARRAY OF TUCK textC USED TO HIDE ALL ESCAPED CHAR [0,ff] ; THIS CODE PERMITS ANY ASCII CHAR TO BE ESCAPED EVEN THOUGH SUCH CHARS ARE NOT ALLOWED AS INPUT ; CAN BE RESTRICTED TO ALLOWED INPUT CHARS IF NECESSARY FOR SPEED
+
+#endif
+            TN( tmHide26   , ""     ) ; tmHide26 = T("")+S2(0x26,sc_MARK) ;
             TN( tmHide25   , ""     ) ; tmHide25 = T("")+S2(0x25,sc_MARK) ;
             TN( tmHide24   , ""     ) ; tmHide24 = T("")+S2(0x24,sc_MARK) ;
             TN( tmHide23   , ""     ) ; tmHide23 = T("")+S2(0x23,sc_MARK) ;
             TN( tmHide22   , ""     ) ; tmHide22 = T("")+S2(0x22,sc_MARK) ;
             TN( tmHide21   , ""     ) ; tmHide21 = T("")+S2(0x21,sc_MARK) ;
 
-            TN( tmNativeTextBreak , "" ) ; tmNativeTextBreak = T("")+S2(sa_MARKsYSTEMbREAK,sc_MARKsYSTEM) ;         TN( tr6 , "|"   ) ;             TN( ter6 , "\\|"  ) ;
-            TN( tmNative05        , "" ) ; tmNative05        = T("")+S2(0x05              ,sc_MARK      ) ;         TN( tr5 , "\\ " ) ;             
-            TN( tmNative04        , "" ) ; tmNative04        = T("")+S2(0x04              ,sc_MARK      ) ;         TN( tr4 , "]"   ) ;             TN( ter4 , "\\]"  ) ;
-            TN( tmNative03        , "" ) ; tmNative03        = T("")+S2(0x03              ,sc_MARK      ) ;         TN( tr3 , "["   ) ;             TN( ter3 , "\\["  ) ;
-            TN( tmNative02        , "" ) ; tmNative02        = T("")+S2(0x02              ,sc_MARK      ) ;         TN( tr2 , "}"   ) ;             TN( ter2 , "\\}"  ) ;
-            TN( tmNative01        , "" ) ; tmNative01        = T("")+S2(0x01              ,sc_MARK      ) ;         TN( tr1 , "{"   ) ;             TN( ter1 , "\\{"  ) ;
             // ---- CODES FOR RESERVED STROKES ------------------------------------------------------------         ---- RESERVED STROKES ----      ---- ESCAPED RESERVED STROKES ----
             
             TN( tb    , "\\"    ) ;
             // RESERVED STROKES (THESE STROKE VALUES CONTROL THE INTERPRETATION OF IdeaFarm (tm) SOIL INPUT
 
+            TN( ter5 , "\\\\" ) ;
+#if defined( NEVERdEFINED )
+
             //CS:CODEsYNC: 360021c1 360021c1
 
-            TN( ter5 , "\\\\" ) ;
+            //   
+            //   |              S2(sa_MARKsYSTEMbREAK,sc_MARKsYSTEM)
+            //   ]              S2(0x04,sc_MARK)
+            //   [              S2(0x03,sc_MARK)
+            //   }              S2(0x02,sc_MARK)
+            //   {              S2(0x01,sc_MARK)
+            //
+            //   BEFORE         AFTER
+            //
+            // ASCII TO NATIVE (WHEN NOT ESCAPED)
+
+            // 
+            //   4. ALL HIDDEN ESCAPES ARE SHOWN (WITHOUT THE ESCAPE CHAR)
+            // 
+            //   3. ALL SPECIAL CHARS ARE ENCODED
+            // 
+            //   2. ALL ESCAPED OTHER CHARS ARE HIDDEN
+            // 
+            //   1. ALL ESCAPED BACKSLASHES ARE HIDDEN
+            // 
+            //   AN ESCAPED BACKSLASH PRODUCES A "HARD BACKSLASH", WHICH IS A BACKSLASH THAT IS A LITERAL, THAT IS NOT TREATED AS AN ESCAPE
+            // 
+            // PARSING RULES
+            // 
+            // 3. THIS IS DONE USING THE BACKSLASH CHARACTER AS AN ESCAPE: THE SPECIAL MEANING, IF ANY, IS SUPPRESSED IF A CHAR IS PRECEDED BY A BACKSLASH (A BACKSLASH BEFORE ANY OTHER CHAR PRODUCES THAT CHAR)
+            // 
+            // 2. SOME ASCII CHARACTERS HAVE SPECIAL MEANING
+            // 
+            // 1. ENTIRE SPACE OF ASCII OUTPUT CAN BE EXPRESSED
+            // 
+            // OVERALL FUNCTIONALITY
+            // 
+            // RECIPE
+            // 
+            // 20240414@0936: RETHINK EXTERNAL SPECS FOR MAPPING ASCII TO NATIVE
 
             //
             //      \}          }
@@ -6614,6 +6654,8 @@
             //      BEFORE      AFTER
             //
             // ASCII TO NATIVE
+            //U:: THIS TABLE IS OBSOLETE AND IS FROM BEFORE THE REDESIGN ON 20240414@0936
+
             /**/if( bTrace ) traceF( tinP , T("etherSoilF / setting up 1 / ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE ifcIDmODEeTHERsOIL_NATIVEfROMaSCII / +") ) ;
         {
         case ifcIDmODEeTHERsOIL_NATIVEfROMaSCII :

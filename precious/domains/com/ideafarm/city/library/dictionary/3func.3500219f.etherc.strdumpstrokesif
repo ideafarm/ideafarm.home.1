@@ -32,7 +32,7 @@
             tpo+
             T(processGlobal4I.mapCaste(sttc.idCaste))+
             (bIdAdam?tb4+TF2(ids,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tColon+tb4:tn)+
-            (ids==1?td:tn)+
+            (ids==1?td:tn)+tcr+                                                                   //20240414@1514: ADDED tcr TO PRETTY UP THE FORMAT
 
         ether.strFuseF( tinP , psttP , 
 
@@ -51,6 +51,7 @@
     TN( tco , " , " ) ;
     TN( tpc , " )" ) ;
     TN( tpo , "( " ) ;
+    TN( tcr , "\r\n" ) ;
 
     const boolT bIdAdam = 1 ;  //U:: USE A flagsP PARAMETER TO DECIDE
     //const boolT bIdAdam = !ether.strCompareF( tinP , td , T("\r\n") ) ;
@@ -59,6 +60,8 @@
         ether.strMakeF( tinP , LF , psttP , T("") , cstta ) ; //CALLER MUST TAG ___( psttP ) ;
         const countT cstta = psttInP->idAdam * ( td.csF( tinP ) + processGlobal4I.mapCaste.costMaxF() + processGlobal4I.mapAdam.costMaxF() /*+ 3 + 0x10*/ + 0x40/*U::USE EXACT REQUIREMENT; THIS LINE WAS EDITED WHEN EDITED DEF TO DISPLAY measureT VALUES*/ ) ;
     {
+
+    ether.traceF( tinP , T("[delimiter]:  >>>>")+td+T("<<<<") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
     TN( td , "    " ) ; if( psttDelimiterP ) td = T(psttDelimiterP) ;
 
     //FORMAT: "idCaste(idAdam,cNote) idCaste(idAdam,cNote) idCaste(idAdam,cNote) ..."
