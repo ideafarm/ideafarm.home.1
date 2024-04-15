@@ -5406,6 +5406,8 @@
 /*N1D*/                                                     if( POOP )
 /*N1D*/                                                 
 /*N1D*/                                                     }
+/*N1D*/                                                         delF( tinP , psttTimeT ) ;
+/*N1D*/                                                         delF( tinP , psttTimeN ) ;
 /*N1D*/                                                         delF( tinP , psttBanner2 ) ;
 /*N1D*/                                                         delF( tinP , psttBanner1 ) ;
 /*N1D*/
@@ -5578,6 +5580,7 @@
 
 /*N1D*/                                                     }
 /*N1D*/                                                         }
+/*N1D*/                                                             delF( tinP , postp ) ;
 /*N1D*/                                                             fileWriteF( tinP , hFile2 , postp , costp ) ;
 /*N1D*/    
 /*N1D*/                                                             delF( tinP , psttp ) ;
@@ -6455,6 +6458,17 @@
         default :
         }
             break ;
+
+            }
+                DELzOMBIE( ptDoomed3 ) ;
+                DELzOMBIE( ptDoomed2 ) ;
+                DELzOMBIE( ptDoomed1 ) ;
+
+                textC* ptDoomed3 = ptChar         + ii ;
+                textC* ptDoomed2 = ptmHideEscChar + ii ;
+                textC* ptDoomed1 = ptEscChar      + ii ;
+            {
+            for( countT ii = 0 ; ii < TUCK ; ii ++ )
 
             /**/if( bTrace ) traceF( tinP , T("etherSoilF / setting up 1 / ifcIDmODEeTHERsOIL_NATIVEfROMaSCII / -") ) ;
             }
