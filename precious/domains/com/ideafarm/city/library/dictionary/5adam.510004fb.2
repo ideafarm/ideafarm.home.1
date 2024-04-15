@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -355,6 +355,8 @@ DONE( tmHireF )
 
             //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_SCRATCH0f , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
+            //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_SCRATCH0c , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+
             //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_SCRATCH06 , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
             //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_HEALaRCHIVES , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
@@ -365,7 +367,7 @@ DONE( tmHireF )
 
             //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_GORILLAbANG , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
-            //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_KERNEL3BANG , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+            //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_3BANG , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
             //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
@@ -389,7 +391,7 @@ DONE( tmHireF )
             
             //etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , 0x4010ffe , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
             
-            //else                                             etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_KERNEL3PANICdOOR , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+            //else                                             etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_3PANICdOOR , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
             //if( 0xffffff == etherC::ifc_idHomeI_IF() ) etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_TIMEcARD         , T("!noTells !ignoreFireByOperator")   , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
             
             //else                                             etScratch.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_NEWcONSOLE , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
@@ -537,7 +539,7 @@ DONE( tmChatterF )
         }
             if( bChattering != bChatteringLag ) etThread.traceF( tinP , T("chattering") ) ;
             etThread.boxPutF( tinP , tFileChattering , tSay , tSay.csF( tinP ) + 1 ) ;
-            TN( tSay , "IdeaFarm (tm) Kernel Monitor is currently chattering." ) ;
+            TN( tSay , "IdeaFarm (tm) Glass2 is currently chattering." ) ;
             bChattering = 1 ;
         {
         if( bChatterP )
@@ -561,7 +563,7 @@ DONE( tmChatterF )
 
     }
         etThread.boxPutF( tinP , tFileChatterOff , tSay , tSay.csF( tinP ) + 1 ) ;
-        TN( tSay , "To tell IdeaFarm (tm) Kernel Monitor to chatter, move this file from the \"off\" folder to the \"on\" folder.\r\nTo suppress chattering, move this file back to the \"off\" folder.\r\nThe contents of this file have no effect." ) ;
+        TN( tSay , "To tell IdeaFarm (tm) Glass2 to chatter, move this file from the \"off\" folder to the \"on\" folder.\r\nTo suppress chattering, move this file back to the \"off\" folder.\r\nThe contents of this file have no effect." ) ;
     {
     )
         && !etThread.diskFileExistsF( tinP , tFileChatterOff )
@@ -767,7 +769,7 @@ DONE( tmFireAllF )
             {
             if( home.pFireAll[ idg - 1 ].cHearts && home.pFireAll[ idg - 1 ].cHeartBeats )
         {
-        for( countT idg = 1 ; idg <= CfIREaLLrANKS - 2 ; idg ++ ) //I DO NOT FIRE THE HIGHEST OO GROUPS, WHICH ARE USED BY CLOAK AND ME
+        for( countT idg = 1 ; idg <= CfIREaLLrANKS - 3 ; idg ++ ) //I DO NOT FIRE THE HIGHEST RE GROUPS, WHICH ARE USED BY CLOAK AND GLASS1 AND ME
         homeS& home = homeS::homeIF() ;
     {
     //CODE SYNC: ec40104 ME
@@ -801,11 +803,11 @@ DONE( tmFireAllF )
         //etRock.traceF( tinP , T("tmFireAllF calling FIREmYSELF") ) ;
 
         //}
-        //    etRock.traceF( tinP , T("tmFireAllF/ perhaps connected to idPortKernelMonitor") ) ;
-        //    sockm.connectF( tinP , home.idPortKernelMonitor , socketC::nicNameIF( tinP , etThread , T("10.1.1.1") ) ) ;
+        //    etRock.traceF( tinP , T("tmFireAllF/ perhaps connected to idPortGlass2") ) ;
+        //    sockm.connectF( tinP , home.idPortGlass2 , socketC::nicNameIF( tinP , etThread , T("10.1.1.1") ) ) ;
         //    socketC sockm( tinP , etThread , TAG( TAGiDnULL ) ) ;
         //
-        //    etRock.traceF( tinP , T("tmFireAllF/ awakened ; connecting to idPortKernelMonitor: ")+TF2(home.idPortKernelMonitor,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        //    etRock.traceF( tinP , T("tmFireAllF/ awakened ; connecting to idPortGlass2: ")+TF2(home.idPortGlass2,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
         //{   //20160419@1731: ADDED THIS BLOCK AND REMOVED idpKiller VARIABLE WHICH WAS NOT USED; DONE TO FIX QUIT QUALITY ; CONJ: THIS BLOCK WAS ACCIDENTALLY DELETED
         //THIS IS NOT NEEDED BECAUSE sListen IS A QUITTER SOCKET SO tmWatchF WILL CONNECT TO IT
 
@@ -869,7 +871,7 @@ TELL( "cleaning up 0" )
     //etRock.traceF( tinP , T("tmEatTelemetrySysF / 4 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
         //etRock.traceF( tinP , T("tmEatTelemetrySysF / 5 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        if( idMemorySpaceP == ifcIDmEMORYsPACE_KERNEL ) bksTelemetrySys.fileFlagsRefF() &= ~flFILEc_DELETE ; // I AM PROBABLY READING THE CURRENT bookC, WHICH IS STILL OPEN FOR WRITING SO CANNOT BE DELETED NOW
+        if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ) bksTelemetrySys.fileFlagsRefF() &= ~flFILEc_DELETE ; // I AM PROBABLY READING THE CURRENT bookC, WHICH IS STILL OPEN FOR WRITING SO CANNOT BE DELETED NOW
         //U::THE NEXT LINE NO LONGER WILL WORK BECAUSE THE DELETE FLAG HAS ALREADY BEEN SPECIFIED WHEN CT fileC ; IT ALSO WOULDN'T WORK BECAUSE IT DOES NOT CHANGE THE FLAGS THAT ARE USED TO CT bookC INSTANCE
 
         }
@@ -1424,7 +1426,7 @@ TELL( "cleaning up 0" )
         if( !(const poopC&)bksTelemetrySys )
 
         //etRock.traceF( tinP , T("tmEatTelemetrySysF / ct'ed bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        booksC bksTelemetrySys( tinP , TAG( TAGiDnULL ) , "bksTelemetrySys" , ifcIDsTATEsPACE_MULTIPLEaDAMS , idMemorySpaceP == ifcIDmEMORYsPACE_KERNEL ? flBOOKSc_null : flBOOKSc_USEgRABmEMORYsPACEoVERRIDE , 0 , 0 , 0 , 0 , 0 , idMemorySpaceP , &bQuitEatingP ) ;
+        booksC bksTelemetrySys( tinP , TAG( TAGiDnULL ) , "bksTelemetrySys" , ifcIDsTATEsPACE_MULTIPLEaDAMS , idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ? flBOOKSc_null : flBOOKSc_USEgRABmEMORYsPACEoVERRIDE , 0 , 0 , 0 , 0 , 0 , idMemorySpaceP , &bQuitEatingP ) ;
         //etRock.traceF( tinP , T("tmEatTelemetrySysF / ct'ing bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         //U:: THE NEXT LINE USED TO SPECIFY THE DELETE FLAG, BUT AS OF 20131222@1558 THIS CAUSES FAILURES ; DELETE FLAG REMOVED WITHOUT ANALYSIS
@@ -1472,7 +1474,7 @@ TELL( "cleaning up 0" )
     etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
     TELL( "setting rush" )
 
-    //if( idMemorySpaceP == ifcIDmEMORYsPACE_KERNEL ) etThread.osThreadF( TaRG1( tmYellF ) ) ;
+    //if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ) etThread.osThreadF( TaRG1( tmYellF ) ) ;
 
     //etRock.traceF( tinP , T("tmEatTelemetrySysF / ++ [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
@@ -1672,7 +1674,7 @@ DONE( tmReportF )
                             if( bSnapShot )
                             //etRock.traceF( tinP , T("tmReportF 4/ ") ) ; //U:: TO FIND A BUG
 
-                            tFile += T(".rpt.kernel.idMemorySpace.")+TF3(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,3)+tDot+TF2(idMinute,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE)+T(".txt") ;
+                            tFile += T(".rpt.idMemorySpace.")+TF3(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,3)+tDot+TF2(idMinute,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE)+T(".txt") ;
                             if( bEvent ) tFile += T(".event") ;
                             else                                                              tFile += T("minute") ;
                             if( bSnapShot || F(home.flagsUtility) & flHOMEsuTILITY_SNAPsHOT ) tFile += T(postSnapShotRequestP&&*postSnapShotRequestP?postSnapShotRequestP:"snapshot") ;  //U:: BUG: RACE: THIS CODE RACES WITH REQUESTOR SETTING STRING
@@ -2757,9 +2759,9 @@ DONE( tmReportF )
     switchC swTinCopy( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverOsTid , 0 , sizeof( copyHeadS ) + sizeof( tinS ) ) ;
     ZE( countT , cLeverOsTid ) ;
 
-    //booksC bkReport( tinP , TAG( TAGiDnULL ) , tBooks , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TICK ) ; //A SEPARATE BOOKS OBJECT IS USED FOR EACH MEMORY SPACE TO ELIMINATE SERIALIZATION COLLISIONS; WHICH ARE SUPPORTED BUT WHY TAKE A CHANCE WITH THE KERNEL!
+    //booksC bkReport( tinP , TAG( TAGiDnULL ) , tBooks , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TICK ) ; //A SEPARATE BOOKS OBJECT IS USED FOR EACH MEMORY SPACE TO ELIMINATE SERIALIZATION COLLISIONS; WHICH ARE SUPPORTED BUT WHY TAKE A CHANCE WITH THE GLASS2!
     //bkReport IS COMMENTED OUT BECAUSE NEVER USED AND CONSUMES SSD SPACE AND WEAR AND TEAR OF SSD
-    tBooks = T("kernel.minute.reports.memoryspace.")+TF3(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,3) ;
+    tBooks = T("minute.reports.memoryspace.")+TF3(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,3) ;
     TN( tBooks , "" ) ;
     TN( tb4 , "    " ) ;
 
@@ -3105,11 +3107,11 @@ TASK( tmcMonitorServerF ) //REN tmServerF
 
 #include postADAMhEADER
 
-/*1*//*ifcIDaDAM_KERNEL2MONITOR 2*//*1*/
+/*1*//*ifcIDaDAM_2GLASS2 2*//*1*/
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //

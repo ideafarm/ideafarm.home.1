@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -40,32 +40,32 @@ REST
 
         }    
             DELzOMBIE( pms ) ;
-            memorySpaceS* pms = &memorySpaceKernel ;
-            //CONoUTrAW( "kernel monitor is gone\r\n" ) ;
+            memorySpaceS* pms = &memorySpaceGlass2 ;
+            //CONoUTrAW( "glass2 is gone\r\n" ) ;
             WAITuNTILaLMOSTaLONE( 1 )
-            memorySpaceKernel.sgnDone_tmEatTelemetrySysF_.waitF( tinP ) ;
-            bQuitConsole = memorySpaceKernel.bQuitMonitor = memorySpaceKernel.bQuitEating = 1 ;
-            memorySpaceS& memorySpaceKernel = *(memorySpaceS*)&(countT&)swMemorySpace ;
-            cLeverIdMemory = ifcIDmEMORYsPACE_KERNEL ;
+            memorySpaceGlass2.sgnDone_tmEatTelemetrySysF_.waitF( tinP ) ;
+            bQuitConsole = memorySpaceGlass2.bQuitMonitor = memorySpaceGlass2.bQuitEating = 1 ;
+            memorySpaceS& memorySpaceGlass2 = *(memorySpaceS*)&(countT&)swMemorySpace ;
+            cLeverIdMemory = ifcIDmEMORYsPACE_GLASS2 ;
             thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_SUPPRESStELLS ; //RACE: A THREAD MIGHT HAVE ALREADY INSPECTED THE FLAGS BUT NOT YET WRITTEN TO THE MONITOR; THE CONSEQUENCE IS THAT SOME MESSAGES AREN'T PULLED;  THIS IS AOK AS LONG AS THE QUEUE ISN'T FILLED
-            //CONoUTrAW( "firing kernel monitor\r\n" ) ;
+            //CONoUTrAW( "firing glass2\r\n" ) ;
         {
-        etThread.traceF( tinP , T("firing kernel queue monitor") ) ;
+        etThread.traceF( tinP , T("firing my queue monitor") ) ;
 
         bChatterIf = 0 ;
 
         //Sleep( 1000 * 60 * 60 ) ;
-        //etThread.traceF( tinP , T("TO TEST:sleeping forever before firing kernel queue monitor") ) ;
+        //etThread.traceF( tinP , T("TO TEST:sleeping forever before firing my queue monitor") ) ;
     
         WAITuNTILaLMOSTaLONE( 3 )
         //20230905@1448: 3 <- 2 (NEEDED.  PROBABLY DUE TO ADDITION OF tmChatterF)
-        //CONoUTrAW( "waiting for all threads other than console and kernel monitor to go away\r\n" ) ;
-        etThread.traceF( tinP , T("waiting for all threads other than kernel queue monitor and console to finish") ) ;
+        //CONoUTrAW( "waiting for all threads other than console and glass2 to go away\r\n" ) ;
+        etThread.traceF( tinP , T("waiting for all threads other than those for the queue monitor for me and below me and console to finish") ) ;
     
         THREADmODE2rESTORE
-        YELL( "monitoring of every space other than kernel has ended" ) ;
+        YELL( "monitoring of every space above mine has ended" ) ;
         THREADmODE2oN( flTHREADmODE2_YELL )
-        etThread.traceF( tinP , T("all nonkernel queue monitors are gone") ) ;
+        etThread.traceF( tinP , T("all queue monitors above mine are gone") ) ;
     
         }
             }
@@ -87,10 +87,10 @@ REST
                 cLeverIdMemory = idMemory ;
 
                 if( idMemory >= ifcIDmEMORYsPACE_RESERVEDmIN && idMemory <= ifcIDmEMORYsPACE_RESERVEDmAX ) continue ;   //CS:CODEsYNC: 510004fb 510004fb
-                if( idMemory == ifcIDmEMORYsPACE_KERNEL                                                  ) continue ;   // DONE LATER
+                if( idMemory == ifcIDmEMORYsPACE_GLASS2                                                  ) continue ;   // DONE LATER
             {
             for( countT idMemory = idmMax ; idMemory >= idmMin ; idMemory -- )
-            etThread.traceF( tinP , T(idPass==1?"all adams have been fired and have died ; firing the nonkernel queue monitors":"waiting for all nonkernel queue monitors to die") ) ;
+            etThread.traceF( tinP , T(idPass==1?"all adams have been fired and have died ; firing the queue monitors above mine":"waiting for all queue monitors above mine to die") ) ;
         {
         for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
 
@@ -122,9 +122,9 @@ REST
         //        {
         //        if( POOP )
         //
-        //        //LOGrAW3( "home.idPortKernelMonitor: " , home.idPortKernelMonitor , "\r\n" ) ;
-        //        etRock.traceF( tinP , T("main: sListen bound to port ")+TF2(home.idPortKernelMonitor,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-        //        home.idPortKernelMonitor = sListen.bindF( tinP ) ;
+        //        //LOGrAW3( "home.idPortGlass2: " , home.idPortGlass2 , "\r\n" ) ;
+        //        etRock.traceF( tinP , T("main: sListen bound to port ")+TF2(home.idPortGlass2,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        //        home.idPortGlass2 = sListen.bindF( tinP ) ;
         //        homeS& home = homeS::homeIF() ;
         //        socketC sListen( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
         //        SCOOPSnEW
@@ -327,7 +327,7 @@ TODO
 
 //THIS MODULE IS RESERVED FOR MAIN THREAD FUNCTION DEFINITIONS
 
-/*1*/WAKEhIDE( "ifcIDaDAM_KERNEL2MONITOR" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_2GLASS2" )/*1*/
 /**/
 */
  when 0050104 is empty, the rewrite is done
@@ -345,6 +345,6 @@ obsoletes 2e40104
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 

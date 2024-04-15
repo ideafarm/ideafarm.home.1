@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -279,7 +279,7 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&tinP.pag1->idMemorySpace = ifcIDmEMORYsPACE_MEMBRANE ; //ifcIDmEMORYsPACE_MEMBRANE IS WRITTEN BY KERNEL AND READ BY ifcIDaDAM_MEMBRANEgLASS; NO OTHER PROCESS MAY ACCESS THE MEMBRANE SPACE
+                *(countT*)&tinP.pag1->idMemorySpace = ifcIDmEMORYsPACE_MEMBRANE ; //ifcIDmEMORYsPACE_MEMBRANE IS WRITTEN BY GLASS2 AND READ BY ifcIDaDAM_MEMBRANEgLASS; NO OTHER PROCESS MAY ACCESS THE MEMBRANE SPACE
             {
             case ifcIDaDAM_MEMBRANEgLASS :
             //case 0x4010fff : //REMOVE IN PRODUCTION
@@ -287,10 +287,10 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&tinP.pag1->idMemorySpace = ifcIDmEMORYsPACE_KERNEL ; //ifcIDmEMORYsPACE_KERNEL IS RESERVED FOR THE EXCLUSIVE USE OF THE DRIVER/MONITOR
+                *(countT*)&tinP.pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS2 ; //ifcIDmEMORYsPACE_GLASS2 IS RESERVED FOR THE EXCLUSIVE USE OF THE DRIVER/MONITOR
             {
-            case ifcIDaDAM_KERNEL2MONITOR :
-            case ifcIDaDAM_KERNEL1DRIVER :
+            case ifcIDaDAM_2GLASS2 :
+            case ifcIDaDAM_1DRIVER :
             }
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
@@ -310,12 +310,12 @@
         //    thirdC::osSelectProcessorsIF( tinP , idType ) ;
         //    ;
         //            : ifcIDtYPEtHREAD_SHOWpONY
-        //            ? ifcIDtYPEtHREAD_KERNEL
+        //            ? ifcIDtYPEtHREAD_GLASS2
         //        : rootAdamGlobal1I.idCell < 3
         //        ? ifcIDtYPEtHREAD_WORKhORSE
         //    countT idType = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS || etherC::ifc_idHomeIdisk_IF() < 0x100
         //{
-        //20170213@1454: COMMENTED OUT WITHOUT ANALYSIS TO PERHAPS FIX UNEXPECTED PROCESSOR AFFINITY FOR KERNEL1_MONITOR ADAM
+        //20170213@1454: COMMENTED OUT WITHOUT ANALYSIS TO PERHAPS FIX UNEXPECTED PROCESSOR AFFINITY FOR GLASS2 ADAM
 
         *(countT*)&rootAdamGlobal1I.idCell = 1 + incv02AM( ph->idCellLath ) ;
 
@@ -663,7 +663,7 @@
     //        //U::THINK ABOUT HOW BEST TO ALLOW MONITOR TO KISS GRABBERS WHO REGISTERED THEMSELVES IN OTHER SPACES
     //        idMemorySpaceP = ifcIDmEMORYsPACE_APPLICATION ;
     //    {
-    //    if( idMemorySpaceP == ifcIDmEMORYsPACE_KERNEL )
+    //    if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 )
     //{
     //if( this == &processGlobal4I._grabC_napGrabWant )
 
@@ -816,6 +816,6 @@ the calling code -must- call formattingIsDoneF after constructing me to indicate
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 

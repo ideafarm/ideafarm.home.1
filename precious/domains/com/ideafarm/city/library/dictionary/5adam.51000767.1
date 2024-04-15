@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -263,12 +263,12 @@ TODO
 DONE( tmHireF )
 }
     FIREmYSELF
-    etThread.traceF( tinP , T("KERNEL2MONITOR is gone") ) ;
-    etThread.ifcHireF( tinP , T("ifcIDaDAM_CLOAK") , ifcIDaDAM_KERNEL2MONITOR , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO | flHIRE_WAIT , nicNameC() ) ; //THIS PREVENTS ME FROM ENDING UNTIL KERNEL MONITOR ENDS, WHICH PREVENTS SERVICE FROM ENDING
-    etThread.traceF( tinP , T("hiring KERNEL2MONITOR and waiting for it to die") ) ;
+    etThread.traceF( tinP , T("GLASS2 is gone") ) ;
+    etThread.ifcHireF( tinP , T("ifcIDaDAM_CLOAK") , ifcIDaDAM_GLASS1 , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO | flHIRE_WAIT , nicNameC() ) ; //THIS PREVENTS ME FROM ENDING UNTIL GLASS2 ENDS, WHICH PREVENTS SERVICE FROM ENDING
+    etThread.traceF( tinP , T("hiring GLASS2 and waiting for it to die") ) ;
 {
 if( pTaskP )
-TASK( tmHireF )
+TASK( tmHireF )         //U:: 20240415@1439: ELIMINATE tmHireF BY MOVING ITS CODE TO WHERE tmHireF IS LAUNCHED
 
 DONE( tmServerF )
 }
@@ -297,7 +297,7 @@ DONE( tmServerF )
             {
             if( POOP )
 
-            //LOGrAW3( "home.idPortKernelMonitor: " , home.idPortKernelMonitor , "\r\n" ) ;
+            //LOGrAW3( "home.idPortGlass2: " , home.idPortGlass2 , "\r\n" ) ;
             //etRock.traceF( tinP , T("cloak: sListen bound to port ")+TF2(home.portCloak,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
             home.portCloak = sListen.bindF( tinP ) ;
             homeS& home = homeS::homeIF() ;
@@ -924,6 +924,6 @@ typedef enum _FILE_INFO_BY_HANDLE_CLASS_updated {
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ipdos for permitted uses.
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
