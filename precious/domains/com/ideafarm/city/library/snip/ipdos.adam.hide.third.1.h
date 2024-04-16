@@ -11838,6 +11838,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_UDPeCHO                                              0x510007f1
 #define ifcIDaDAM_TOOLmIGRATEaRCHIVEfORMAT9tOfORMATa                   0x5100081c
 #define ifcIDaDAM_GLASS1                                               0x5100083a
+#define ifcIDaDAM_HIREwITHOUTdEBUGGING                                 0x5100083b
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003

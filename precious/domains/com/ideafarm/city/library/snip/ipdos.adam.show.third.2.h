@@ -29834,7 +29834,7 @@ applications should avoid using thirdC objects
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600119c.thirdc.oslogwrongnodeif!||
  static voidT thirdC::osTraceWrongNodeIF( tinS& tinP , byteT* pbP , const osTextT* const postComment1P , const osTextT* const postComment2P = 0 ) ;  //WO COMMENT IS REQUIRED; IF OO THEN WILL BE CONCATENATED
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600119d.thirdc.ostracewrongnodeif!||
- static voidT osHireThenMonitorIF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP ) ;
+ static voidT osHireThenMonitorIF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP ) ;
 
 /* commands: math */
 
