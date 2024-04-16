@@ -287,10 +287,17 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&tinP.pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS2 ; //ifcIDmEMORYsPACE_GLASS2 IS RESERVED FOR THE EXCLUSIVE USE OF THE DRIVER/MONITOR
+                *(countT*)&tinP.pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS2 ; //ifcIDmEMORYsPACE_GLASS2 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS2
             {
             case ifcIDaDAM_2GLASS2 :
             case ifcIDaDAM_1DRIVER :
+            }
+                break ;
+                //conGF( "memory space changed\r\n" ) ;
+                bMemorySpaceChanged = 1 ;
+                *(countT*)&tinP.pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS1 ; //ifcIDmEMORYsPACE_GLASS1 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS1
+            {
+            case ifcIDaDAM_GLASS1 :
             }
                 break ;
                 //conGF( "memory space changed\r\n" ) ;

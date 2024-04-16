@@ -355,7 +355,7 @@ DONE( tmWatchF )
                 }
                     }
                         FIREmYSELF ;
-                        LOGrAW3( "adam " , tinP.pag1->idAdam ,  "'s tmWatchF cannot see the driver\r\n" ) ; // ifcIDaDAM_CLOAK IS EXEMPT BECAUSE CLOAK LAUNCHES WOTH AND LAUNCHES THE DRIVER/MONITOR AS OF 20200525@1817
+                        LOGrAW3( "adam " , tinP.pag1->idAdam ,  "'s tmWatchF cannot see the driver\r\n" ) ; // ifcIDaDAM_CLOAK AND ifcIDaDAM_GLASS1 ARE EXEMPT BECAUSE CLOAK LAUNCHES ifcIDaDAM_GLASS1 WHICH LAUNCHES THE ifcIDaDAM_2GLASS2
                     {
                     if( !( processGlobal2I.idHome & 0xff000000 ) && !thirdC::osTestWaterIF( tinP , ifcIDtYPEtESTwATER_LOOKfORdRIVER ) )
                     _IO_
@@ -372,7 +372,7 @@ DONE( tmWatchF )
                 )
                     && !thirdC::osTestWaterIF( tinP , ifcIDtYPEtESTwATER_LOOKfORdRIVER )
                     && !( processGlobal2I.idHome & 0xff000000 )
-                       tinP.pag1->idAdam != ifcIDaDAM_CLOAK
+                       ( tinP.pag1->idAdam != ifcIDaDAM_CLOAK && tinP.pag1->idAdam != ifcIDaDAM_GLASS1 )
                 (
                 ||
                 F(home.flags) & flHOMEs_VERSIONrEFUSED
