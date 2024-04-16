@@ -7,11 +7,11 @@
 //
 
 }
-    traceF( tinP , T("event capture ended [cEnded,cBegun,cIgnored1,cIgnored2]:    ")+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etherP.traceF( tinP , T("event capture ended [cEnded,cBegun,cIgnored1,cIgnored2]:    ")+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
         }
             }
-                traceF( tinP , T("ContinueDebugEvent failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etherP.traceF( tinP , T("ContinueDebugEvent failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 rc = GetLastError() ;
             {
             if( !bOk )
@@ -19,7 +19,7 @@
             bOk = ContinueDebugEvent( info3.dwProcessId , info3.dwThreadId , DBG_EXCEPTION_NOT_HANDLED ) ;
 
             }
-                traceF( tinP , T(bHuh?"!exception:  unexpected process exit code [exitCode]:    ":"process [exitCode]:    ")+tExitCode ) ;
+                etherP.traceF( tinP , T(bHuh?"!exception:  unexpected process exit code [exitCode]:    ":"process [exitCode]:    ")+tExitCode ) ;
 
                 }
                     default                                                    : { bHuh = 1 ; tExitCode = TF2((countT)-negExitCode,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED  ) ; break ; }
@@ -45,8 +45,8 @@
             {
             if( info3.dwDebugEventCode == EXIT_PROCESS_DEBUG_EVENT )
 
-            else traceF( tinP , T("event (debug) [cBegun,cEnded,osPid,osTid,chance,event]:    ")+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4((countT)info3.dwThreadId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(info3.u.Exception.dwFirstChance?"    WOTH        ":"        OOTH    ")+tEvent ) ;
-                 traceF( tinP , T("event         [cBegun,cEnded,osPid,osTid,chance,event]:    ")+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4((countT)info3.dwThreadId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(info3.u.Exception.dwFirstChance?"    WOTH        ":"        OOTH    ")+tEvent ) ;
+            else etherP.traceF( tinP , T("event (debug) [cBegun,cEnded,osPid,osTid,chance,event]:    ")+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4((countT)info3.dwThreadId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(info3.u.Exception.dwFirstChance?"    WOTH        ":"        OOTH    ")+tEvent ) ;
+                 etherP.traceF( tinP , T("event         [cBegun,cEnded,osPid,osTid,chance,event]:    ")+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+tb4+TF4((countT)info3.dwThreadId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(info3.u.Exception.dwFirstChance?"    WOTH        ":"        OOTH    ")+tEvent ) ;
             )
                 )
                     !info3.u.Exception.dwFirstChance                    //P:PERSONALITY: I AM SILENT FOR WOTH CHANCE EXCEPTION EVENTS BECAUSE THESE MIGHT BE WAD WAC ("WORKING AS DESIGNED WORKING AS CODED").  I AM ONLY INTERESTED IN EXCEPTIONS THAT THE MONITORED PROCESS DOES NOT HANDLE
@@ -210,8 +210,8 @@
         {
         else
         }
-            else                             { cIgnored2 ++ ; traceF( tinP , T("called WaitForDebugEvent (failed) [rc]:    "           )+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
-            if( rc == ERROR_INVALID_HANDLE ) { cIgnored1 ++ ; traceF( tinP , T("called WaitForDebugEvent (failed) ERROR_INVALID_HANDLE")                                                  ) ; }  // THESE EVENTS SEEM TO BE GENERATED WHEN THE ADAM BEING DEBUGGED IS A WINDOWED PROCESS
+            else                             { cIgnored2 ++ ; etherP.traceF( tinP , T("called WaitForDebugEvent (failed) [rc]:    "           )+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+            if( rc == ERROR_INVALID_HANDLE ) { cIgnored1 ++ ; etherP.traceF( tinP , T("called WaitForDebugEvent (failed) ERROR_INVALID_HANDLE")                                                  ) ; }  // THESE EVENTS SEEM TO BE GENERATED WHEN THE ADAM BEING DEBUGGED IS A WINDOWED PROCESS
             rc = GetLastError() ;
         {
         if( !bOk )
@@ -229,9 +229,17 @@
     ZE( countT , rc ) ;
     ZE( boolT , bOk ) ;
 
-    ifcHireF( tinP , psttCommentP , idAdamP , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO | flHIRE_MONITORtHIS , 0 , 0 , 1 , nicNameC() ) ;
+    etherP.ifcHireF( tinP , psttCommentP , idAdamP , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO | flHIRE_MONITORtHIS , 0 , 0 , 1 , nicNameC() ) ;
+
+    etherC& etherP = *tinP.pEther ;
+
+    }
+        if( POOP ) return ;
+        __Z( tinP.pEther ) ;
+        if( POOP ) return ;
+    {
 {
-/*1*/voidT etherC::ifcHireThenMonitorF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP )/*1*/
+/*1*/voidT thirdC::osHireThenMonitorIF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP )/*1*/
 
 /**/
 */
