@@ -33111,6 +33111,7 @@ examples
  voidT ifcCreateNewHomeF( tinS& tinP , countT& idgHomeP , byteT*& pbPublicKey1P , countT& cbPublicKey1P , byteT*& pbPublicKey2P , countT& cbPublicKey2P ) ;
  voidT ifcCreateNewWightF( tinS& tinP , countT& idgWightP , byteT*& pbPublicKey1P , countT& cbPublicKey1P , byteT*& pbPublicKey2P , countT& cbPublicKey2P ) ;
  voidT ifcUdpFileThrowFileF( tinS& tinP , const boolT& bQuitP , countT& idGramP , countT& secretToUseP , countT& cThrownP , count04T& cb04ThrownP , const strokeS* const psttLongP ) ;
+ voidT ifcHireThenMonitorF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP ) ;
 
 /* commands: sorting */
  voidT ifcSortaF( tinS& tinP , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP = flSORTAc_null ) ;
