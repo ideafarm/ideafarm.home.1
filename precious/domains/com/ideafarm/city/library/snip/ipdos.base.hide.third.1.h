@@ -11751,19 +11751,17 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 //CODEsYNCH: 0050014 00101a1 (ifcIDaDAM_2GLASS2)
 
 /*3*/
-#define ifcIDaDAM_GLASS1                                               0x5100083a
-
 #define ifcIDaDAMoLD_BASELINErOOT                                      0x51000000
 #define ifcIDaDAM_ROOTfTPsERVER                                        0x5100034e
 #define ifcIDaDAM_PATCHaLLmASTERS                                      0x51000359
 #define ifcIDaDAM_DEFiDiMMUTABLE                                       0x510003bd
 #define ifcIDaDAM_DEFtITLE                                             0x510003be
 #define ifcIDaDAM_DEFlINES                                             0x510003c3
-#define ifcIDaDAM_1DRIVER                                        0x5100040c
+#define ifcIDaDAM_1DRIVER                                              0x5100040c
 #define ifcIDaDAM_SYMBOLtABLE                                          0x51000412
 #define ifcIDaDAM_HEADER                                               0x51000417
 #define ifcIDaDAM_CODEmEASUREMENTS                                     0x5100048c
-#define ifcIDaDAM_2GLASS2                                       0x510004fb
+#define ifcIDaDAM_2GLASS2                                              0x510004fb
 #define ifcIDaDAM_UNINSTALLER                                          0x510004ff
 #define ifcIDaDAM_SOIXLoLDwORDdEFS                                     0x51000509
 #define ifcIDaDAM_MANGLEtABLE                                          0x5100050a
@@ -11771,8 +11769,8 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TIMEcARD                                             0x5100050c
 #define ifcIDaDAM_HOMEfLAGS                                            0x5100050e
 #define ifcIDaDAM_SPACElOAD                                            0x5100050f
-#define ifcIDaDAM_3BANG                                          0x51000511
-#define ifcIDaDAM_4IDhOME                                        0x51000515
+#define ifcIDaDAM_3BANG                                                0x51000511
+#define ifcIDaDAM_4IDhOME                                              0x51000515
 #define ifcIDaDAM_GORILLA                                              0x51000527
 #define ifcIDaDAM_SUPERrANDOMnUMBERS                                   0x51000534
 #define ifcIDaDAM_SECRETsERVICE                                        0x51000537
@@ -11781,10 +11779,10 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLnAPwORDvIEWER                                    0x51000569
 #define ifcIDaDAM_ROOTsMTPsERVER                                       0x51000575
 #define ifcIDaDAM_ROOTfORMdATAeATER                                    0x51000578
-#define ifcIDaDAM_3PANICdOOR                                     0x51000579
-#define ifcIDaDAM_4DOOR                                          0x5100057a
+#define ifcIDaDAM_3PANICdOOR                                           0x51000579
+#define ifcIDaDAM_4DOOR                                                0x5100057a
 #define ifcIDaDAM_ROOThTTPsERVER                                       0x5100057b
-#define ifcIDaDAM_WATCHdATABASE                                  0x51000592
+#define ifcIDaDAM_WATCHdATABASE                                        0x51000592
 #define ifcIDaDAM_TOOLuPLOADER                                         0x51000593
 #define ifcIDaDAM_ROOTwATCHMAN                                         0x5100059e
 #define ifcIDaDAM_ROOTgORILLA                                          0x510005a5
@@ -11839,6 +11837,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_REMOTEdESKTOPoPENhOUSE                               0x510007d2
 #define ifcIDaDAM_UDPeCHO                                              0x510007f1
 #define ifcIDaDAM_TOOLmIGRATEaRCHIVEfORMAT9tOfORMATa                   0x5100081c
+#define ifcIDaDAM_GLASS1                                               0x5100083a
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
@@ -18992,6 +18991,7 @@ after i return, that countT object will contain 1
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f2.lograw3 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f3.ifcidmemoryspace BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.

@@ -1,3 +1,3 @@
-0xdddd0695 , "KERNEL2MONITOR" ,
-0xdddd0696 , "KERNEL3BANG" ,
+0xdddd0695 , "GLASS2" ,
+0xdddd0696 , "BANG" ,
 0xdddd0697 , "APPLICATIONS"
