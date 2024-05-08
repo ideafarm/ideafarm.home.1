@@ -274,12 +274,12 @@ REST
                 #endif
                     TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
                 #else
-                      TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
+                    //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
                     //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
                     //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
-                    //TN( tYearPattern , "2008/" ) ;
+                      TN( tYearPattern , "2008/" ) ;
                     //TN( tYearPattern , "1999/" ) ;
                     //TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
@@ -4470,7 +4470,8 @@ struct paramHealFileS
 
 //B: WORSE:  CPU NOT PEGGED: #define CyEARSiNpARALLEL  0x1
 
-#define CyEARSiNpARALLEL  0x2
+#define CyEARSiNpARALLEL  0x4
+//20240508@1121: AOK:  #define CyEARSiNpARALLEL  0x2
 //20240507@1823: FAIL: #define CyEARSiNpARALLEL  0x8
 
 //B:MEMORY EXHAUSTION: #define CyEARSiNpARALLEL  0x10
