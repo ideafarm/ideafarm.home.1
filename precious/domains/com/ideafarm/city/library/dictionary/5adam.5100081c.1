@@ -718,12 +718,13 @@ voidT consumeSortedShortF( tinS& tinP , etherC& etherP , etherC& etPrimeP , bool
 
 }
     return bFail ;
+                                                 //NOW DOING HDD, SO COMMENT OUT SLEEP:             20240407@1024
                                                  //OFFLINE FAILURES OBSERVED, SO:                   20240323@1739: "<< 2"
                                                  //OFFLINE FAILURES OBSERVED, SO:                   20240304@0810: "<< 1"
                                                  //                                                 20240303@1028: "<< 0"
-    etPrimeP.osSleepF( tinP , TOCK << 1 ) ;      //GIVE THE VOLUME TIME TO COMPLETE ITS I/O FLUSH ; 20240301@0917: "<< 1"
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-    etherP.traceF( tinP , T("napping" ) ) ;
+    //etPrimeP.osSleepF( tinP , TOCK << 1 ) ;      //GIVE THE VOLUME TIME TO COMPLETE ITS I/O FLUSH ; 20240301@0917: "<< 1"
+    //sleepC s( tinP , TAG( TAGiDnULL ) ) ;        //NAPPING HERE IS NEEDED FOR SSD BUT NOT FOR HDD
+    //etherP.traceF( tinP , T("napping" ) ) ;
 
     tShortPrefixP    = tnP     ;
     //etherP.traceF( tinP , T("flushed  [tShortPrefixP]:                       ")+tShortPrefixP ) ;
@@ -915,7 +916,6 @@ boolT flushFileSetF( tinS& tinP , etherC& etherP , etherC& etPrimeP , countT& cS
 #define CBdATAbOOKsHORTfILEnAMES           ( TICK << 1 )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_TOOLmIGRATEaRCHIVEfORMAT9tOfORMATa" )/*1*/
-///*1*/WAKEdEBUGsHOWtEXT( "ifcIDaDAM_TOOLmIGRATEaRCHIVEfORMAT9tOfORMATa" )/*1*/
 /**/
 */
 /*
