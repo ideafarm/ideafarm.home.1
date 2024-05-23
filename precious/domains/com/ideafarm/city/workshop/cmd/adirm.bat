@@ -23,8 +23,8 @@ goto :FIN
 :HAVEmOUNT
 d:
 cd \ideafarm.home.101\devices\%2\ideafarm.archives\wo.ideafarm
-rem for /d %%y in (2019 2021 2022 2023 2099) do @dir /s /o:-d %%y > d:\tmp\adirm.%1\adirm.%1.%2.%%y.ttt
-    for /d %%y in (*)                        do @dir /s /o:-d %%y > d:\tmp\adirm.%1\adirm.%1.%2.%%y.ttt
+    for /d %%y in (1999) do @dir /s /o:-d %%y > d:\tmp\adirm.%1\adirm.%1.%2.%%y.ttt
+rem for /d %%y in (*)    do @dir /s /o:-d %%y > d:\tmp\adirm.%1\adirm.%1.%2.%%y.ttt
 exit
 
 
