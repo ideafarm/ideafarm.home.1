@@ -1177,7 +1177,7 @@ DONE( tmExecutiveHealYearF )
                             //*******************************************************************************************************************************************************************************************************************************************************************************
                             //*******************************************************************************************************************************************************************************************************************************************************************************
 
-                            /*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("---- [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            ///*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("---- [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             etThread.delF( tinP , psttShort ) ;
                             }
                                 // #endif
@@ -1186,9 +1186,9 @@ DONE( tmExecutiveHealYearF )
                                 // #if defined( IFC tESTING )
 
                                 }
-                                    etThread.traceF( tinP , T("wrote   to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //etThread.traceF( tinP , T("wrote   to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     funJobHealFileP.writeF( tinP , pbz ) ;
-                                    etThread.traceF( tinP , T("writing to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //etThread.traceF( tinP , T("writing to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     new( 0 , tinP , pbz , sizeof pbz ) jobHealFileS( tinP , etThread , cJobsPendingHeal , infoYear , psttShort , idName , cShortNames ) ;
                                     byteT pbz[ sizeof( jobHealFileS ) ] ;
                                 {
@@ -1246,7 +1246,7 @@ DONE( tmExecutiveHealYearF )
                             count04T c4CbUsed = *(count04T*)( pcElt + 1 ) ;
                             countT   idJot    =              *pcElt       ;
 
-                            /*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("++++ [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            ///*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("++++ [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             if( ++ idName <= idNameSkipBeyond ) continue ;
 
                             //*******************************************************************************************************************************************************************************************************************************************************************************
