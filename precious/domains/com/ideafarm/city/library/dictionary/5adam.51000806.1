@@ -279,7 +279,7 @@ REST
                     //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
-                      TN( tYearPattern , "2009/" ) ;
+                      TN( tYearPattern , "2012/" ) ;
                     //TN( tYearPattern , "1999/" ) ;
                     //TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
@@ -770,10 +770,8 @@ TODO
 DONE( tmReportF )
 }
     }
-        ++ s ; ether.osSleepF( tinP , /*TICK >> 4*/ TOCK << 2 ) ;     //20231017@1315: 2 -> 4 TO PREVENT OVERFLOW IN COUNTER FOR BYTES COMPARED
-//20240527@0909: SHORT TIME TO FACILITATE OPTIMIZATION
+        ++ s ; ether.osSleepF( tinP , TICK >> 6 ) ;     //MUST BE SHORT ENOUGH TO AVOID OVERFLOW IN COUNTER
 
-#endif
         }
             etThread.boxPutF( tinP , tFileReport , tReport , tReport.csF( tinP ) ) ;
 
@@ -917,8 +915,6 @@ DONE( tmReportF )
             TN( tReport , "" ) ; tReport = T("IdeaFarm (tm) Archive Healer - Minute Report #")+TF2(++idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n\r\n\r\nyear    lathIdNameHealed\r\n\r\n" ) ;
         {
         if( !( ++ idCycle % 4 ) )
-#if defined( NEVERdEFINED )
-//20240527@0909: COMMENTED OUT TO FACILITATE OPTIMIZATION
 
         }
             }
@@ -3697,6 +3693,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                         // //pP.ether.traceF( tinP , pP.tIndent3+T("        set other and myself to BITSrESULT_NOTeQUAL because cbUsed differs") ) ;
                                                     {
                                                     if( pfmOuter->cbUsed != pfmInner->cbUsed )
+
+                                                    //U:: SET TO NOTeQUAL HERE IF DATETIME DIFFERS ; THIS WOULD BE AN OPTIMIZATION TO AVOID DOING IMAGE COMPARISON FOR COPIES THAT HAVE DIFFERENT TIMESTAMPS ; IN PRACTICE, THIS OPTIMIZATION WOULD NOT MAKE MUCH DIFFERENCE BECAUSE INTENTIONAL UPDATES TO A FILE ALMOST ALWAYS CHANGE ITS SIZE
                                                 {
                                                 else if( ( bitsResultHeInMine & maskHeInMine ) == BITSrESULT_UNKNOWN << cBitsShiftLeftHeInMine )
                                                 }
@@ -3821,7 +3819,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                         countT   cWindowsMax = (countT)( 1 + cbUsedMax04 / cbFileWindow ) ;
                         count04T cbUsedMax04 = ( (count04T)cbUsedHighMax << 0x20 ) | (count04T)cbUsedMax ;      //A:ASSUME: sizeof( countT) IS 0x20
 
-                        if( cbUsedHighMax || cbUsedMax > TOCK ) bLargeFile = 1 ;    //20230918@1130: TOCK <-- TUCK
+//                        if( cbUsedHighMax || cbUsedMax > TOCK ) bLargeFile = 1 ;    //20230918@1130: TOCK <-- TUCK
                         ZE( boolT  , bLargeFile ) ;
 
                         pP.ether.traceF( tinP , T("[cCopies,cbFileWindow]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+TF3(cbFileWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
@@ -3829,8 +3827,11 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                    cbFileWindow         =   cbFileWindowsPerCopy                                                    ;
 
                                    cbFileWindowsPerCopy = ( cbFileWindowsPerCopy / cbGrain ) * cbGrain                              ;        //ENFORCES GRAINSIZE
-                            //countT cbFileWindowsPerCopy =   cbAllFileWindows     / cCopies   /* / ( cToHireHealP + cToHireCompareP ) */ ;        // INTENTION IS TO PEG CPU WHEN FEW WINDOWS WHILE PREVENTING ADDRESS SPACE EXHAUSTION WHEN MANY WINDOWS ; COMPARES ARE DONE ON tmWorkerCompareF FOR LARGE FILES AND ON tmWorkerHealF FOR SMALL FILES
-                              countT cbFileWindowsPerCopy =   cbAllFileWindows     / cCopies      / pP.cPathsToYear                 ;        // 20240527@1554: THE DIVISOR IS A GUESS (W/O ANALYSIS)
+                            //countT cbFileWindowsPerCopy =   cbAllFileWindows     / cCopies   /* / ( cToHireHealP + cToHireCompareP ) */ ;  // INTENTION IS TO PEG CPU WHEN FEW WINDOWS WHILE PREVENTING ADDRESS SPACE EXHAUSTION WHEN MANY WINDOWS ; COMPARES ARE DONE ON tmWorkerCompareF FOR LARGE FILES AND ON tmWorkerHealF FOR SMALL FILES
+
+                              //countT cbFileWindowsPerCopy =   cbAllFileWindows     / cCopies   /* / pP.cPathsToYear            */ ;
+                                countT cbFileWindowsPerCopy =   cbAllFileWindows     / cCopies      / CtOhIREhEAL                   ;  //U:: THIS LINE IS FOR EXPERIMENT: ALL COMPARE IN LINE
+
                             countT cbAllFileWindows     = ( CBaLLfILEwINDOWS     / cbGrain ) * cbGrain                              ;        //ENFORCES GRAINSIZE
                             countT cbGrain              = thirdC::os_cbAllocationGrain_IF( tinP )                                   ;
                         {
@@ -4545,7 +4546,7 @@ struct paramHealFileS
 #endif
 
     #define CtOhIREhEAL    0x10
-    #define CtOhIREcOMPARE 0x10
+    #define CtOhIREcOMPARE 0x1
 
     //#define CtOhIREhEAL    0x1
     //#define CtOhIREcOMPARE 0x20
@@ -4565,7 +4566,7 @@ struct paramHealFileS
 #else
 
     #define CtOhIREhEAL    0x10
-    #define CtOhIREcOMPARE 0x10
+    #define CtOhIREcOMPARE 0x1
 
 #if defined( IFCtESTING )
 
