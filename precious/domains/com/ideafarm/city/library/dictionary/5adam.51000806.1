@@ -279,7 +279,7 @@ REST
                     //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
-                      TN( tYearPattern , "2008/" ) ;
+                      TN( tYearPattern , "2009/" ) ;
                     //TN( tYearPattern , "1999/" ) ;
                     //TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
@@ -725,12 +725,12 @@ REST
     {
 
     }
-        if( bFireOs ) flagsMode |= flHEALmODE_FIREoS ;
+        if( !bNoFireOs ) flagsMode |= flHEALmODE_FIREoS ;
         #endif
-            bFireOs = 0 ;
+            bNoFireOs = 1 ;
         #if defined( OVERRIDEnOfIREoS )
         etThread.delF( tinP , psttHealFireOs ) ;
-        boolT bFireOs = psttHealFireOs && etThread.strCompareF( tinP , psttHealFireOs , T("yes") ) ;
+        boolT bNoFireOs = psttHealFireOs && etThread.strCompareF( tinP , psttHealFireOs , T("no") ) ;
         ZE( strokeS* , psttHealFireOs ) ; etThread.querySettingF( tinP , psttHealFireOs , T("!ipdos.healfireos")  ) ; ___( psttHealFireOs ) ;
     {
 
