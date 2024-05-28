@@ -770,8 +770,10 @@ TODO
 DONE( tmReportF )
 }
     }
-        ++ s ; ether.osSleepF( tinP , TICK >> 4 ) ;     //20231017@1315: 2 -> 4 TO PREVENT OVERFLOW IN COUNTER FOR BYTES COMPARED
+        ++ s ; ether.osSleepF( tinP , /*TICK >> 4*/ TOCK << 2 ) ;     //20231017@1315: 2 -> 4 TO PREVENT OVERFLOW IN COUNTER FOR BYTES COMPARED
+//20240527@0909: SHORT TIME TO FACILITATE OPTIMIZATION
 
+#endif
         }
             etThread.boxPutF( tinP , tFileReport , tReport , tReport.csF( tinP ) ) ;
 
@@ -915,19 +917,28 @@ DONE( tmReportF )
             TN( tReport , "" ) ; tReport = T("IdeaFarm (tm) Archive Healer - Minute Report #")+TF2(++idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n\r\n\r\nyear    lathIdNameHealed\r\n\r\n" ) ;
         {
         if( !( ++ idCycle % 4 ) )
+#if defined( NEVERdEFINED )
+//20240527@0909: COMMENTED OUT TO FACILITATE OPTIMIZATION
 
         }
-            etThread.traceF( tinP , T("compare bytes speed [cbRecent,cbPerTock]:    ")+TF3(cbWas,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+TF3(cbPerTock,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+            }
+                etThread.traceF( tinP , T("compare bytes speed [elapsedTime,cbRecent,cTickPerTock]:    ")+TT(timeE1,timeE2)+tb4+TF3(cbWas,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+TF3(cTickPerTock,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tBar , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
 
-            countT cbPerTock = cbWas / cTocks ;
-            countT cTocks = timeE1 >> 0x10 ;
+                TN( tBar , "" ) ; if( cTickPerTock ) tBar = TPS( "" , cTickPerTock , strokeS( '*' ) ) ;
 
-            etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeA1, timeA2 ) ;
-            etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
-            ZE( sCountT , timeE2 ) ;
-            ZE( countT  , timeE1 ) ;
+                countT     cTickPerTock = !mTock ? - 1 : ( cbWas / mTock ) / TICK ;
+                measure04T mTock        = mTime / TOCK                            ;
+                measure04T mTime        = timeE1                                  ;
+
+                etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeA1, timeA2 ) ;
+                etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+                ZE( sCountT , timeE2 ) ;
+                ZE( countT  , timeE1 ) ;
+            {
+            if( cbWas )
 
             etThread.osTimeNowF( tinP , timeLathReset1 , timeLathReset2 ) ;
+
             }
                 if( cbWas == setIfEqualsAM( cbNewlyCompared , 0 , cbWas ) ) break ;
                 cbWas = cbNewlyCompared ;
@@ -2138,7 +2149,7 @@ DONE( tmWorkerMemCompareF )
         }
             stJobCompareP.grabF( tinP , TAG( TAGiDnULL ) ) ;
             ++ s ; thirdC::dosSleepWinkIF( tinP , 0 ) ;
-            if( cYearsHealingP && !( ++ cIdle % TOCK ) ) etThread.traceF( tinP , T("years are healing but i have nothing to do (no memory compare jobs) [cIdle]:    ")+TF2(cIdle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            if( cYearsHealingP && !( ++ cIdle % TOCK ) ) etThread.traceF( tinP , T("years are healing but i have nothing to do (no memory compare jobs) [cIdle]:    ")+TF2(++cIdle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             stJobCompareP.ungrabF( tinP ) ;
             _IO_
         {
@@ -3310,7 +3321,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                         {
                                                         else
                                                         }
-                                                            compareOoImagesF( tinP , etPrimeP , pP.ether , pP.bAbort , pP.cPause , pEqual[ offi ] , flagsModeP , pbwOuter , ppbwInner[ offi ] , cbwOuter /*U::, tLongOuter , T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) , pP.tIndent3*/ ) ;
+                                                            compareOoImagesF( tinP , etPrimeP , pP.ether , pP.bAbort , pP.cPause , pEqual[ offi ] , flagsModeP , pbwOuter , ppbwInner[ offi ] , cbwOuter /*, tLongOuter , T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) , pP.tIndent3*/ ) ;
                                                             if( !pEqual[ offi ] ) { BLAMMO ; } //SHOULD BE IMPOSSIBLE BECAUSE THIS FILE IS BEING COMPARED SYNCHRONOUSLY
                                                         {
                                                         if( !bLargeFile )
@@ -3806,19 +3817,20 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                         ZE( sCountT , timeA2 ) ;
                         ZE( countT  , timeA1 ) ;
 
-                        // //pP.ether.traceF( tinP , T("[cbUsedMax04,cWindowsMax]:    ")+TF2((countT)cbUsedMax04,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cWindowsMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        countT cWindowsMax = (countT)( 1 + cbUsedMax04 / cbFileWindow ) ;
+                        pP.ether.traceF( tinP , T("[cbUsedMax04,cWindowsMax]:    ")+TF2((countT)cbUsedMax04,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cWindowsMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        countT   cWindowsMax = (countT)( 1 + cbUsedMax04 / cbFileWindow ) ;
                         count04T cbUsedMax04 = ( (count04T)cbUsedHighMax << 0x20 ) | (count04T)cbUsedMax ;      //A:ASSUME: sizeof( countT) IS 0x20
 
                         if( cbUsedHighMax || cbUsedMax > TOCK ) bLargeFile = 1 ;    //20230918@1130: TOCK <-- TUCK
                         ZE( boolT  , bLargeFile ) ;
 
-                        // //pP.ether.traceF( tinP , T("[cCopies,cbFileWindow]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+TF3(cbFileWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                        pP.ether.traceF( tinP , T("[cCopies,cbFileWindow]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+TF3(cbFileWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
                         }
                                    cbFileWindow         =   cbFileWindowsPerCopy                                                    ;
 
                                    cbFileWindowsPerCopy = ( cbFileWindowsPerCopy / cbGrain ) * cbGrain                              ;        //ENFORCES GRAINSIZE
-                            countT cbFileWindowsPerCopy =   cbAllFileWindows     / cCopies   / ( cToHireHealP + cToHireCompareP ) ;        // INTENTION IS TO PEG CPU WHEN FEW WINDOWS WHILE PREVENTING ADDRESS SPACE EXHAUSTION WHEN MANY WINDOWS ; COMPARES ARE DONE ON tmWorkerCompareF FOR LARGE FILES AND ON tmWorkerHealF FOR SMALL FILES
+                            //countT cbFileWindowsPerCopy =   cbAllFileWindows     / cCopies   /* / ( cToHireHealP + cToHireCompareP ) */ ;        // INTENTION IS TO PEG CPU WHEN FEW WINDOWS WHILE PREVENTING ADDRESS SPACE EXHAUSTION WHEN MANY WINDOWS ; COMPARES ARE DONE ON tmWorkerCompareF FOR LARGE FILES AND ON tmWorkerHealF FOR SMALL FILES
+                              countT cbFileWindowsPerCopy =   cbAllFileWindows     / cCopies      / pP.cPathsToYear                 ;        // 20240527@1554: THE DIVISOR IS A GUESS (W/O ANALYSIS)
                             countT cbAllFileWindows     = ( CBaLLfILEwINDOWS     / cbGrain ) * cbGrain                              ;        //ENFORCES GRAINSIZE
                             countT cbGrain              = thirdC::os_cbAllocationGrain_IF( tinP )                                   ;
                         {
@@ -4011,6 +4023,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 voidT healShortNameF( tinS& tinP , etherC& etPrimeP , paramHealFileS& pP , textC& tShortP , const flagsT flagsModeP , const countT idNameP , const countT cShortNamesP , const countT cToHireHealP , const countT cToHireCompareP , boolT bChatterP )
 
 }
+    //etherP.traceF( tinP , T("compareOoImagesF / ----") ) ;
     }
         }
             //if( !( idIn % ( TUCK << 4 ) ) ) etherP.traceF( tinP , T("images match [idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -4083,10 +4096,11 @@ voidT healShortNameF( tinS& tinP , etherC& etPrimeP , paramHealFileS& pP , textC
                 switch( POOP )
                 ZE( countT , idCulprit ) ;
             {
-            if( POOP )
-            //etherP.traceF( tinP , T("called  memCompareF [cb]:    ")+TF2(cbwOuterP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            else
+            if( !POOP ) break ;
+            //etherP.traceF( tinP , tIndent3P+T("called  memCompareF [cb]:    ")+TF2(cbwOuterP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             sgn = tinP.pEtScratch->memCompareF( tinP , pbwOuterP , pbwInnerP , cbwOuterP ) ;
-            //etherP.traceF( tinP , T("calling memCompareF [cb]:    ")+TF2(cbwOuterP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etherP.traceF( tinP , tIndent3P+T("calling memCompareF [cb]:    ")+TF2(cbwOuterP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         while( bEqualP && !etPrimeP && !bAbortP && cTries -- )
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
@@ -4095,10 +4109,16 @@ voidT healShortNameF( tinS& tinP , etherC& etPrimeP , paramHealFileS& pP , textC
         SCOOPS
     {
     IFsCRATCH
-    //TN( tb4 , "    " ) ;
     ZE( sCountT , sgn ) ;
+    //etherP.traceF( tinP , tIndent3P+tLongInnerP ) ;
+    //etherP.traceF( tinP , tIndent3P+tLongOuterP ) ;
+    //etherP.traceF( tinP , T("compareOoImagesF / ++++" /*U::" [idIn,cbwOuterP]:"*/ "    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)/*U::+tb4+TF2(cbwOuterP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+    //TN( tb4 , "    " ) ;
+
+    countT idIn = 1 + incv02AM( idInLath ) ;
+    static countT idInLath ;
 {
-voidT compareOoImagesF( tinS& tinP , etherC& etPrimeP , etherC& etherP , boolT& bAbortP , countT& cPauseP , boolT& bEqualP , const flagsT flagsModeP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP /*U::, const textC& tLongOuterP , const textC& tLongInnerP , textC& tIndent3P*/ )
+voidT compareOoImagesF( tinS& tinP , etherC& etPrimeP , etherC& etherP , boolT& bAbortP , countT& cPauseP , boolT& bEqualP , const flagsT flagsModeP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP /*, const textC& tLongOuterP , const textC& tLongInnerP , textC& tIndent3P*/ )
 
 countT cbNewlyCompared ;
 
@@ -4524,8 +4544,11 @@ struct paramHealFileS
 
 #endif
 
-    #define CtOhIREhEAL    0x1
-    #define CtOhIREcOMPARE 0x20
+    #define CtOhIREhEAL    0x10
+    #define CtOhIREcOMPARE 0x10
+
+    //#define CtOhIREhEAL    0x1
+    //#define CtOhIREcOMPARE 0x20
 
     //#define CtOhIREhEAL    0x2
     //#define CtOhIREcOMPARE 0x10
@@ -4540,8 +4563,10 @@ struct paramHealFileS
     //#define CtOhIREcOMPARE 8
 
 #else
-    #define CtOhIREhEAL    1
-    #define CtOhIREcOMPARE 1
+
+    #define CtOhIREhEAL    0x10
+    #define CtOhIREcOMPARE 0x10
+
 #if defined( IFCtESTING )
 
 
@@ -4549,6 +4574,8 @@ struct paramHealFileS
 //U::G: BUT DOES NOT PEG CPU: #define CtOhIREhEAL    4
 
 #define CBaLLfILEwINDOWS ( TICK << 5 )
+//20240527@1601: NOPE: #define CBaLLfILEwINDOWS ( TICK << 6 )
+//20240527@1600: AOK: #define CBaLLfILEwINDOWS ( TICK << 5 )
 //20231010@1601: NOPE: TRY TICK << 6, WHICH IS 1/2 OF USER ADDRESS SPACE
 
 #define BITSrESULT_ALLbITS        3
