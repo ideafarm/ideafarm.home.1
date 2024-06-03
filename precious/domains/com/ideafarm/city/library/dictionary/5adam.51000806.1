@@ -66,7 +66,7 @@ REST
             }
                 time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
                 etThread.traceF( tinP , T("this cycle was aborted") ) ;
-                // /*if( cYearsInParallel > 1 && 1 == decv02AM( cYearsInParallel ) )*/ cYearsInParallel = 1 ;  // REDUCE cYearsInParallel BUT NOT BELOW 1
+                // /*if( cYearsInParallelHeal > 1 && 1 == decv02AM( cYearsInParallelHeal ) )*/ cYearsInParallelHeal = 1 ;  // REDUCE cYearsInParallelHeal BUT NOT BELOW 1
                 //20230106@1137: NAWWH; ABORT IS NOW DONE ROUTINELY BY PAUSE/RESUME, SO DOES NOT IMPLY FAILURE
                 //20221229@1435: IF ABORT THEN ON NEXT ITERATION PROCESS YEARS SERIALLY
             {
@@ -141,8 +141,9 @@ REST
 
                                 }
                                     THREADmODE2rESTORE
-                                    while( cYearsInParallel == cExecutiveHealYear ) thirdC::dosSleepWinkIF( tinP ) ;
+                                    while( test == cExecutiveHealYear ) thirdC::dosSleepWinkIF( tinP ) ;
                                     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                                    countT test = bGetNamesOnly ? CyEARSiNpARALLELgETnAMES : cYearsInParallelHeal ;
                                     _IO_
                                 {
                                 _IO_
@@ -1440,7 +1441,7 @@ DONE( tmExecutiveHealYearF )
                                 //if( tShortToTest.csF( tinP ) ) break ;
 
                                 }
-                                    if( !( ++ cNames % ( TUCK << 4 ) ) ) etThread.traceF( tinP , T("wrote to unsorted [archive,year,idName,idJot,tShort]:    ")+tArchive+tb4+tYear+tb4+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
+                                    if( !( ++ cNames % ( TUCK << 0 ) ) ) etThread.traceF( tinP , T("wrote to unsorted [archive,year,idName,idJot,tShort]:    ")+tArchive+tb4+tYear+tb4+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
                                     countT idJot = jotShortFileNames.writeF( tinP , (byteT*)&c4CbUsed , sizeof c4CbUsed , tShort , tShort.csF( tinP ) + 1 ) ;
                                     etThread.delF( tinP , ppsttShort[ offhMin ] ) ;
                                     //etThread.traceF( tinP , T("jotting [tShort]:    ")+tShort ) ;
@@ -4353,7 +4354,7 @@ NEWdELcLASS( 1 , jobCompareOoImagesS ) ;
 
 osTextT* postDebugLever ;
 
-countT cYearsInParallel = CyEARSiNpARALLEL ;
+countT cYearsInParallelHeal = CyEARSiNpARALLELhEAL ;
 const countT cResultsPerStruct = sizeof( countT ) * SB / 2 ;     // 2 BITS ARE USED TO STORE A RESULT, SO 4 RESULTS FIT INTO A BYTE AND 01 RESULTS FIT INTO A count02T ; MY CODE SHOULD BE WRITTEN WITHOUT ASSUMING countT IS count02T
 
 ;
@@ -4483,44 +4484,46 @@ struct paramHealFileS
 #define IDtYPEjOB_MOVEuNIQUE 0x2
 #define IDtYPEjOB_NULL       0x1
 
-//#define CyEARSiNpARALLEL  0x1
-//B:#define CyEARSiNpARALLEL  0x2
-//B:#define CyEARSiNpARALLEL  0x4
-//G:#define CyEARSiNpARALLEL  0x1
+//#define CyEARSiNpARALLELhEAL  0x1
+//B:#define CyEARSiNpARALLELhEAL  0x2
+//B:#define CyEARSiNpARALLELhEAL  0x4
+//G:#define CyEARSiNpARALLELhEAL  0x1
 //U:: TO TEST WITH 32_9 DEVICES WITH SUSPECTED INADEQUATE POWER
 
-//B: WORSE:  CPU NOT PEGGED: #define CyEARSiNpARALLEL  0x1
+//B: WORSE:  CPU NOT PEGGED: #define CyEARSiNpARALLELhEAL  0x1
 
-#define CyEARSiNpARALLEL  0x1
+#define CyEARSiNpARALLELhEAL      0x1
+#define CyEARSiNpARALLELgETnAMES  0x10
+
 //20240526@0904: CONJ: WO YEAR AT A TIME IS OPTIMAL BECAUSE DISK I/O IS THE BOTTLENECK SO IT IS OPTIMAL TO MAKE DISK I/O AS EFFICIENT AS POSSIBLE ; WO YEAR AT A TIME ELIMINATES CONTENTION ON EACH DISK, WHICH CAUSES MUCH HEAD SEEK MOVEMENT
 
-//20240526@0903: SORTA AOK BUT SOME FAILS: #define CyEARSiNpARALLEL  0x4
-//20240508@1121: AOK:  #define CyEARSiNpARALLEL  0x2
-//20240507@1823: FAIL: #define CyEARSiNpARALLEL  0x8
+//20240526@0903: SORTA AOK BUT SOME FAILS: #define CyEARSiNpARALLELhEAL  0x4
+//20240508@1121: AOK:  #define CyEARSiNpARALLELhEAL  0x2
+//20240507@1823: FAIL: #define CyEARSiNpARALLELhEAL  0x8
 
-//B:MEMORY EXHAUSTION: #define CyEARSiNpARALLEL  0x10
+//B:MEMORY EXHAUSTION: #define CyEARSiNpARALLELhEAL  0x10
 
-//B:MEMORY EXHAUSTION: #define CyEARSiNpARALLEL  0x18
+//B:MEMORY EXHAUSTION: #define CyEARSiNpARALLELhEAL  0x18
 
-//B:DOES NOT PEG CPU WITH 4 YEARS: #define CyEARSiNpARALLEL  0x18
+//B:DOES NOT PEG CPU WITH 4 YEARS: #define CyEARSiNpARALLELhEAL  0x18
 
-//#define CyEARSiNpARALLEL  8
+//#define CyEARSiNpARALLELhEAL  8
 //20231022@1244: 8 <-- 4
 //20230922@0852: STUDY DOING 1 YEAR AT A TIME WITH ALL FILES PROCESSED ASYNCHRONOUSLY (BY PUSHING TO JOB stackC's)
 
-//#define CyEARSiNpARALLEL  0x8
-//B: cpu only 1/3 used:#define CyEARSiNpARALLEL  0x8
+//#define CyEARSiNpARALLELhEAL  0x8
+//B: cpu only 1/3 used:#define CyEARSiNpARALLELhEAL  0x8
 
-//NO IMPROVEMENT IN SWAPPING AND NOT PEGGED: #define CyEARSiNpARALLEL  0x2
-//OK BUT LOTS OF SWAPPING: #define CyEARSiNpARALLEL  0x4
-//B:"!exception: napping: too many pending job bytes: #define CyEARSiNpARALLEL  0x8
+//NO IMPROVEMENT IN SWAPPING AND NOT PEGGED: #define CyEARSiNpARALLELhEAL  0x2
+//OK BUT LOTS OF SWAPPING: #define CyEARSiNpARALLELhEAL  0x4
+//B:"!exception: napping: too many pending job bytes: #define CyEARSiNpARALLELhEAL  0x8
 
-//BAD:20230709@1002: #define CyEARSiNpARALLEL  0x10
-//BAD:#define CyEARSiNpARALLEL  0x20
-//AOK:#define CyEARSiNpARALLEL  0x1
-//AOK:#define CyEARSiNpARALLEL  0x4
-//AOK:#define CyEARSiNpARALLEL  0x8
-//AOK:#define CyEARSiNpARALLEL  0x10
+//BAD:20230709@1002: #define CyEARSiNpARALLELhEAL  0x10
+//BAD:#define CyEARSiNpARALLELhEAL  0x20
+//AOK:#define CyEARSiNpARALLELhEAL  0x1
+//AOK:#define CyEARSiNpARALLELhEAL  0x4
+//AOK:#define CyEARSiNpARALLELhEAL  0x8
+//AOK:#define CyEARSiNpARALLELhEAL  0x10
 //U::TO FIND A BUG
 
 #define CeXTRAcYCLESiFpAUSE 1
