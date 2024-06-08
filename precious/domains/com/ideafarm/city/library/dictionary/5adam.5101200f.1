@@ -41,7 +41,25 @@ TODO
                                             }
                                                 }
                                                     bFound = 1 ;
-                                                    etThread.traceF( tinP , T("found: ")+tShort ) ;
+                                                    }
+                                                        etThread.boxZapF( tinP , tLong ) ;
+                                                        //etThread.traceF( tinP , T("found and archive is current, so am zapping the reject file") ) ;
+                                                    {
+                                                    else
+                                                    }
+                                                        etThread.traceF( tinP , T("found2: [timeWritten,name]:    ")+TT(timeWrittenArchive.time1,timeWrittenArchive.time2)+tb4+tShort ) ;
+                                                        etThread.traceF( tinP , T("found1: [timeWritten,name]:    ")+TT(pInfoFile->timeWritten1,pInfoFile->timeWritten2)+tb4+tShort ) ;
+                                                        etThread.traceF( tinP , T("elapse:                        ")+TT(timeE.time1,timeE.time2) ) ;
+                                                    {
+                                                    if( timeE.time2 > 0 || ( !timeE.time2 && timeE.time1 > TICK ) )
+                                                    etThread.osTimeSubtractF( tinP , timeE.time1 , timeE.time2 , timeWrittenArchive.time1 , timeWrittenArchive.time2 ) ;
+                                                    timeS timeE = timeWrittenReject ;
+
+                                                    }
+                                                        thirdC::getFileTimeIF( tinP , fir , &timeWrittenArchive , 0 , 0 ) ;
+                                                        fileC fir( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+                                                    {
+                                                    timeS timeWrittenArchive = timeS() ;
                                                 {
                                                 else
                                                 }
@@ -89,7 +107,7 @@ TODO
                                     patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                                 {
 
-                                etThread.traceF( tinP , tPath+tb4+tPattern ) ;
+                                //etThread.traceF( tinP , tPath+tb4+tPattern ) ;
                                 TN( tPattern , "" ) ; tPattern = T("*")+T(psttFind)+T("*") ;
                                 TN( tPath    , "" ) ; tPath    = T("///e/ideafarm.archives/wo.ideafarm/")+tYear+T("/") ;
 
@@ -121,7 +139,6 @@ TODO
                     if( bNope ) break ;
                 {
                 FORsTRINGSiN1( pstt1w )
-                TN( tb4    , "    " ) ;
                 TN( tYear  , ""     ) ;
                 ZE( boolT  , bNope  ) ;
                 ZE( countT , idw    ) ;
@@ -145,7 +162,15 @@ TODO
                 etThread.strConvertToLowerCaseF( tinP , psttLower , psttzLong ) ; ___( psttLower ) ;
                 ZE( strokeS* , psttLower ) ;
 
+                //etThread.traceF( tinP , T("reject: [timeWritten,name]:    ")+TT(timeWrittenReject.time1,timeWrittenReject.time2)+tb4+tLong ) ;
                 //etThread.traceF( tinP , tLong ) ;
+
+                }
+                    thirdC::getFileTimeIF( tinP , fir , &timeWrittenReject , 0 , 0 ) ;
+                    fileC fir( tinP , (strokeS*)tLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+                {
+                timeS timeWrittenReject = timeS() ;
+                TN( tb4    , "    " ) ;
             {
             if( !bDir )
             boolT bDir = psttzLong[ CSpREFIX - 1 + psttzLong->idAdam ].idAdam == '/' ;
