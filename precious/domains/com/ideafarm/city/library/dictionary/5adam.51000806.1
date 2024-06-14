@@ -44,6 +44,7 @@ REST
     FIREmYSELF              // THIS IS TO ENSURE THAT ether IS IMPOTENT
 
     }
+if( !bGetNamesOnly ) break ;
         }
             }
                 }
@@ -280,8 +281,8 @@ REST
                     //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
-                      TN( tYearPattern , "2012/" ) ;
-                    //TN( tYearPattern , "1999/" ) ;
+                    //TN( tYearPattern , "2012/" ) ;
+                      TN( tYearPattern , "1999/" ) ;
                     //TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
                 _IO_
@@ -1444,7 +1445,8 @@ DONE( tmExecutiveHealYearF )
                                     if( !( ++ cNames % ( TUCK << 0 ) ) ) etThread.traceF( tinP , T("wrote to unsorted [archive,year,idName,idJot,tShort]:    ")+tArchive+tb4+tYear+tb4+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
                                     countT idJot = jotShortFileNames.writeF( tinP , (byteT*)&c4CbUsed , sizeof c4CbUsed , tShort , tShort.csF( tinP ) + 1 ) ;
                                     etThread.delF( tinP , ppsttShort[ offhMin ] ) ;
-                                    //etThread.traceF( tinP , T("jotting [tShort]:    ")+tShort ) ;
+                                    etThread.traceF( tinP , T("jotting [c4cbUsed,tShort]:    ")+TT(pczCbUsed[0],pczCbUsed[1])+tb4+tShort ) ;
+                                    countT* pczCbUsed = (countT*)&c4CbUsed ;
 
                                     TN( tShort , ppsttShort[ offhMin ] ) ;
                                     count04T c4CbUsed = pc4CbUsed[ offhMin ] ;
@@ -4599,11 +4601,11 @@ struct paramHealFileS
 
 #define FUNNELhORNcAPACITY       ( TUCK )
 
-//#define IFCtESTING
+#define IFCtESTING
 
 //#define OVERRIDElONELYiSoK
-//#define OVERRIDEkEEPnAMES
-//#define OVERRIDEnOfIREoS
+  #define OVERRIDEkEEPnAMES
+  #define OVERRIDEnOfIREoS
 //#define OVERRIDEdOnOTmOVEoRrEPLACEfILES
 //#define OVERRIDEnOiMAGEcOMPARE
 //THESE SHOULD BE COMMENTED OUT IN PRODUCTION ; THEY ARE USED FOR EXTRA SAFETY WHEN E.G. RECOVERING DATA
