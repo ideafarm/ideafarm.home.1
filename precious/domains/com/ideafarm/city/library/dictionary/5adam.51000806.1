@@ -47,25 +47,31 @@ REST
         }
             }
                 }
-                    ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
-                    ether.osSuspendF( tinP ) ;
-                    ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
-                {
-                if( F(flagsMode) & flHEALmODE_FIREoS && !ether )
+                    }
+                        ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
+                        ether.osSuspendF( tinP ) ;
+                        ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
+                    {
+                    if( F(flagsMode) & flHEALmODE_FIREoS && !ether )
 
-                etThread.traceF( tinP , T("cycle ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
-                etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
-                time2AOK = time1AOK = 0 ;
+                    etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
+                    etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
+                    time2AOK = time1AOK = 0 ;
+                {
+                else
+                }
+                    time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
+                {
+                if( offPhase == OFFpHASE_GETnAMESoNLY )
+
+                etThread.traceF( tinP , T("incremented  [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                offPhase = ++ offPhase % 2 ;
+                etThread.traceF( tinP , T("incrementing [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             else
             }
                 time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
-                bGetNamesOnly = 0 ;
-            {
-            else if( bGetNamesOnly )
-            }
-                time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
-                etThread.traceF( tinP , T("this cycle was aborted") ) ;
+                etThread.traceF( tinP , T("this phase was aborted") ) ;
                 // /*if( cYearsInParallelHeal > 1 && 1 == decv02AM( cYearsInParallelHeal ) )*/ cYearsInParallelHeal = 1 ;  // REDUCE cYearsInParallelHeal BUT NOT BELOW 1
                 //20230106@1137: NAWWH; ABORT IS NOW DONE ROUTINELY BY PAUSE/RESUME, SO DOES NOT IMPLY FAILURE
                 //20221229@1435: IF ABORT THEN ON NEXT ITERATION PROCESS YEARS SERIALLY
@@ -123,8 +129,8 @@ REST
                                             POOPRqUIET
                                         {
                                         if( POOP )
-                                        //U::tinP.pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , bGetNamesOnly , (countT)&grabLathFileHealedFiles , (countT)&grabDisk ) ;
-                                             tinP.pEtScratch->osThreadF( TaRG1(           tmExecutiveHealYearF                                                     ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , bGetNamesOnly , (countT)&grabLathFileHealedFiles , (countT)&grabDisk ) ;
+                                        //U::tinP.pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , 1 + offPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk ) ;
+                                             tinP.pEtScratch->osThreadF( TaRG1(           tmExecutiveHealYearF                                                     ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , 1 + offPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk ) ;
                                         SCOOPS
                                         _IO_
                                     {
@@ -143,7 +149,7 @@ REST
                                     THREADmODE2rESTORE
                                     while( test == cExecutiveHealYear ) thirdC::dosSleepWinkIF( tinP ) ;
                                     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                                    countT test = bGetNamesOnly ? CyEARSiNpARALLELgETnAMES : cYearsInParallelHeal ;
+                                    countT test = offPhase == OFFpHASE_GETnAMESoNLY ? CyEARSiNpARALLELgETnAMESoNLY : cYearsInParallelHeal ;
                                     _IO_
                                 {
                                 _IO_
@@ -607,12 +613,18 @@ REST
 
             boolT bWaitWoDay = !!time2AOK ;
             _IO_
+if( !ether ) break ;
         {
         while( !ether )
         ZE( countT , cNaps ) ;
+        etThread.traceF( tinP , T("[offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         _IO_
-    {
-    while( !ether && !POOP )
+    {                                   // BUT NOT ALL ITERATIONS ARE SUCCESSFUL ; THOSE THAT FAIL ARE RETRIED, AND THE PHASE ID IS NOT ADVANCED UNTIL THE CURRENT PHASE SUCCEEDS
+    while( !ether && !POOP )            // EVERY 3 SUCCESSFUL ITERATIONS ARE [ PHASE1 , PHASE2 , PHASE3 ] ( 1: GET NAMES, 2: HEAL, 3: CHUNK FILES BY DAY ) ; THE PHASE ID DETERMINES WHAT tmExecutiveHealYearF DOES
+    countT offPhase = OFFpHASE_GETnAMESoNLY ;
+
+    ZE( boolT , bPhase3ChunkByDay ) ;
+    ZE( boolT , bPhase2Heal       ) ;
     switchC swJotSortedShortByArchiveYear( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzArchiveSlashYear ) ;
     ZE( strokeS* , psttzArchiveSlashYear ) ;
     ZE( sCountT , time2AOK ) ;
@@ -757,7 +769,6 @@ REST
     ZE( countT , cExecutiveHealYear       ) ;
     ZE( countT , cPause                   ) ;
     ZE( boolT  , bAbort                   ) ;
-    boolT bGetNamesOnly = 1 ;
 
     grabC grabDisk(                tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
     grabC grabLathFileHealedFiles( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
@@ -1124,7 +1135,7 @@ DONE( tmExecutiveHealYearF )
                     if( pJotSortedShort && !( F(flagsModeP) & flHEALmODE_KEEPnAMES ) ) pJotSortedShort->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;
                     _IO_
                 {
-                if( !bAbortP && !bGetNamesOnlyP )
+                if( !bAbortP && idPhaseP == 1 + OFFpHASE_HEAL )
 
                 }
                     }
@@ -1402,7 +1413,7 @@ DONE( tmExecutiveHealYearF )
 
                     _IO_
                 {
-                if( !bAbortP && !POOP && !bGetNamesOnlyP )
+                if( !bAbortP && !POOP && idPhaseP == 1 + OFFpHASE_HEAL )
 
                 }
                     }
@@ -1955,6 +1966,7 @@ DONE( tmExecutiveHealYearF )
         {
         else
         if( !bDoThisYear ) etThread.traceF( tinP , T("skipping this year because it was recently healed AOK [archive,year]:    ")+tArchive+tb4+tYear ) ;
+bDoThisYear = 1 ;
 
         }
             etThread.delF( tinP , posti ) ;
@@ -2032,9 +2044,11 @@ DONE( tmExecutiveHealYearF )
     __Z( psttYearP->idAdam ) ;
     _IO_
 
+    etThread.traceF( tinP , T("[idPhaseP]:    ")+TF2(idPhaseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
     grabC&        grabDiskP                       =        *(grabC*)pTaskP->c31 ;
     grabC&        grabLathFileHealedFilesP        =        *(grabC*)pTaskP->c21 ;
-    boolT         bGetNamesOnlyP                  =                 pTaskP->c11 ;
+    countT        idPhaseP                        =                 pTaskP->c11 ;
     countT&       cPathsToYearHealingP            =       *(countT*)pTaskP->c01 ;
     switchC&      swJotSortedShortByArchiveYearP  =      *(switchC*)pTaskP->cf  ;
     strokeS*&     psttzArchiveSlashYearP          =     *(strokeS**)pTaskP->ce  ;
@@ -3820,7 +3834,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                         ZE( sCountT , timeA2 ) ;
                         ZE( countT  , timeA1 ) ;
 
-                        pP.ether.traceF( tinP , T("[cbUsedMax04,cWindowsMax]:    ")+TF2((countT)cbUsedMax04,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cWindowsMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //pP.ether.traceF( tinP , T("[cbUsedMax04,cWindowsMax]:    ")+TF2((countT)cbUsedMax04,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cWindowsMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         countT   cWindowsMax = (countT)( 1 + cbUsedMax04 / cbFileWindow ) ;
                         count04T cbUsedMax04 = ( (count04T)cbUsedHighMax << 0x20 ) | (count04T)cbUsedMax ;      //A:ASSUME: sizeof( countT) IS 0x20
 
@@ -3842,7 +3856,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                         {
                         ZE( countT , cbFileWindow ) ;                                                           //A:ASSUME: THE MAX NUMBER OF FILE WINDOWS THAT WILL EXIST FOR A FILE AT ANY TIME IS pP.cPathsToYear
      
-                        // //pP.ether.traceF( tinP , T("processing [idName,tShort]:    ")+TF2(idNameP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShortP ) ;
+                        pP.ether.traceF( tinP , T("processing [idName,tShort]:    ")+TF2(idNameP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShortP ) ;
                     {
                     if( !pP.bAbort )
                     pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
@@ -4484,6 +4498,10 @@ struct jobHealFileS
 {
 struct paramHealFileS
 
+//#define OFFpHASE_CHUNKfILESbYdAY 0x2
+#define OFFpHASE_HEAL            0x1
+#define OFFpHASE_GETnAMESoNLY    0x0
+
 #define IDtYPEjOB_COPY       0x3
 #define IDtYPEjOB_MOVEuNIQUE 0x2
 #define IDtYPEjOB_NULL       0x1
@@ -4496,8 +4514,8 @@ struct paramHealFileS
 
 //B: WORSE:  CPU NOT PEGGED: #define CyEARSiNpARALLELhEAL  0x1
 
-#define CyEARSiNpARALLELhEAL      0x1
-#define CyEARSiNpARALLELgETnAMES  0x10
+#define CyEARSiNpARALLELhEAL          0x1
+#define CyEARSiNpARALLELgETnAMESoNLY  0x10
 
 //20240526@0904: CONJ: WO YEAR AT A TIME IS OPTIMAL BECAUSE DISK I/O IS THE BOTTLENECK SO IT IS OPTIMAL TO MAKE DISK I/O AS EFFICIENT AS POSSIBLE ; WO YEAR AT A TIME ELIMINATES CONTENTION ON EACH DISK, WHICH CAUSES MUCH HEAD SEEK MOVEMENT
 
@@ -4606,7 +4624,7 @@ struct paramHealFileS
 #define IFCtESTING
 
 //#define OVERRIDElONELYiSoK
-  #define OVERRIDEkEEPnAMES
+//#define OVERRIDEkEEPnAMES
   #define OVERRIDEnOfIREoS
 //#define OVERRIDEdOnOTmOVEoRrEPLACEfILES
 //#define OVERRIDEnOiMAGEcOMPARE
