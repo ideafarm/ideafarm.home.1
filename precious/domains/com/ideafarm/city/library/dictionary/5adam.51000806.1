@@ -44,7 +44,6 @@ REST
     FIREmYSELF              // THIS IS TO ENSURE THAT ether IS IMPOTENT
 
     }
-if( !bGetNamesOnly ) break ;
         }
             }
                 }
@@ -1272,8 +1271,8 @@ DONE( tmExecutiveHealYearF )
 
                             _IO_
                         {
-                          for( countT* pcElt = pce - ccElt         ; pcElt >= pcArraySortedBySize ; pcElt -= ccElt )            // LARGEST  FILES WOTH
-                        //for( countT* pcElt = pcArraySortedBySize ; pcElt < pce                  ; pcElt += ccElt )            // SMALLEST FILES WOTH
+                        //for( countT* pcElt = pce - ccElt         ; pcElt >= pcArraySortedBySize ; pcElt -= ccElt )            // LARGEST  FILES WOTH
+                          for( countT* pcElt = pcArraySortedBySize ; pcElt < pce                  ; pcElt += ccElt )            // SMALLEST FILES WOTH
                         
                         countT  cElt  = ccArraySortedBySize / ccElt ;
                         countT  ccElt = 3 ;
@@ -1314,7 +1313,10 @@ DONE( tmExecutiveHealYearF )
                         etThread.boxPutF( tinP , tLongSortedBySize , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) ) ;
                     
                         //etThread.traceF( tinP , T("called  ifcSortaF") ) ;
-                        etThread.ifcSortaF( tinP , bQuit , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) , 0 , 0 , 3 * sizeof( countT ) , /*flSORTAc_NOwORKERS*/ flSORTAc_null ) ;
+
+                        //etThread.ifcSortaF( tinP , bQuit , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) , 0 , 0 , 3 * sizeof( countT ) , /*flSORTAc_NOwORKERS*/ flSORTAc_null ) ;
+                        // ENABLING THIS LINE CAUSES NAMES TO BE PROCESSED IN ORDER OF SIZE ; DISABLING CAUSES NAMES TO BE PROCESSED IN ORDER OF NAME
+
                         //etThread.traceF( tinP , T("calling ifcSortaF") ) ;
                         ZE( boolT , bQuit ) ;
                     
@@ -4570,7 +4572,7 @@ struct paramHealFileS
 
 #else
 
-    #define CtOhIREhEAL    0xc
+    #define CtOhIREhEAL    0x1
     #define CtOhIREcOMPARE 0x1
 
 #if defined( IFCtESTING )
