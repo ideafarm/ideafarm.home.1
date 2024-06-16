@@ -48,24 +48,28 @@ REST
             }
                 }
                     }
-                        ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
-                        ether.osSuspendF( tinP ) ;
-                        ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
-                    {
-                    if( F(flagsMode) & flHEALmODE_FIREoS && !ether )
+                        break ;
 
-                    etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
-                    etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
-                    time2AOK = time1AOK = 0 ;
+                        }
+                            ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
+                            ether.osSuspendF( tinP ) ;
+                            ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
+                        {
+                        if( F(flagsMode) & flHEALmODE_FIREoS && !ether )
+
+                        etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
+                        etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
+                        time2AOK = time1AOK = 0 ;
+                    {
+                    case OFFpHASE_CHUNKfILESbYdAY :
+                    case OFFpHASE_HEAL            : { time2AOK = time1AOK = 0 ; break ; }       // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
+                    case OFFpHASE_GETnAMESoNLY    :
                 {
-                else
-                }
-                    time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
-                {
-                if( offPhase == OFFpHASE_GETnAMESoNLY )
+                switch( offPhase )
 
                 etThread.traceF( tinP , T("incremented  [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                offPhase = ++ offPhase % 2 ;
+if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
+                offPhase = ++ offPhase % CpHASES ;
                 etThread.traceF( tinP , T("incrementing [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             else
@@ -1135,285 +1139,524 @@ DONE( tmExecutiveHealYearF )
                     if( pJotSortedShort && !( F(flagsModeP) & flHEALmODE_KEEPnAMES ) ) pJotSortedShort->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;
                     _IO_
                 {
-                if( !bAbortP && idPhaseP == 1 + OFFpHASE_HEAL )
+                if( !bAbortP && idPhaseP == 1 + OFFpHASE_CHUNKfILESbYdAY )
 
                 }
                     }
-                        while( cDo -- ) dec02AM( cPathsToYearHealingP ) ;
-                        countT cDo = cPathsToYear ;
-                    {
-
-                    bFireCheckpointUpdate = 1 ;
-
-                    st_pzJobHealFileDone.ungrabF( tinP ) ;
-                    }
-                        funJobHealFileP.readDoneF( (byteT*)pzDoomed ) ;
-                        DELzOMBIE( pzJob ) ;
-                        jobHealFileS* pzDoomed = pzJob ;
-                        st_pzJobHealFileDone >> *(countT*)&pzJob ;
-                        ZE( jobHealFileS* , pzJob ) ;
-                    {
-                    while( st_pzJobHealFileDone )        //THIS MIGHT HAPPEN DUE TO RACE CONDITION, BUT IT (UPDATING THE "LATH FILE HEALED" FILE) DOESN'T MATTER 'CAUSE WE'RE DONE
-                    st_pzJobHealFileDone.grabF( tinP , TAG( TAGiDnULL ) ) ;
-
-                    if( bWorking ) dec02AM( cYearsHealingP ) ;
-
-                    }
-                        }
-                            }
-                                funJobHealFileP.readDoneF( (byteT*)pzDoomed ) ;
-                                DELzOMBIE( pzJob ) ;
-                                jobHealFileS* pzDoomed = pzJob ;
-
-                                if( !pzJob ) break ;
-                                jobHealFileS* pzJob = (jobHealFileS*)funJobHealFileP.readF( tinP , flFUNNELhORNcrEAD_NOwAIT ) ;
-                            {
-                            for(;;)
-                        {
-                        if( ether )
-
-                        ++ s ; thirdC::dosSleepWinkIF( tinP , 0 ) ;
-
-                        //etThread.traceF( tinP , T("waiting for pending heal jobs [cJobsPendingHeal,stDone]:    ")+TF2(cJobsPendingHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(st_pzJobHealFileDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
-
-                        _IO_
-                    {
-                    while( cJobsPendingHeal - st_pzJobHealFileDone )
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-
-                    etThread.delF( tinP , pcArraySortedBySize ) ;
-                    }
-                        }
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //****                                        ***********************************************************************************************************************************************************************************************************************************
-                            //****  H E A L   W O   N A M E   ( E N D )   ***********************************************************************************************************************************************************************************************************************************
-                            //****                                        ***********************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-
-                            ///*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("---- [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            etThread.delF( tinP , psttShort ) ;
-                            }
-                                // #endif
-                                //     //etThread.traceF( tinP , T("---- watch") ) ;
-                                //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
-                                // #if defined( IFC tESTING )
-
-                                }
-                                    //etThread.traceF( tinP , T("wrote   to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                    funJobHealFileP.writeF( tinP , pbz ) ;
-                                    //etThread.traceF( tinP , T("writing to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                    new( 0 , tinP , pbz , sizeof pbz ) jobHealFileS( tinP , etThread , cJobsPendingHeal , infoYear , psttShort , idName , cShortNames ) ;
-                                    byteT pbz[ sizeof( jobHealFileS ) ] ;
-                                {
-                                if( !ether && !bAbortP )
-
-                                // #endif
-                                //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
-                                //     //etThread.traceF( tinP , T("++++ watch") ) ;
-                                // #if defined( IFC tESTING )
-
-                                //}
-                                //    etThread.traceF( tinP , T("healing [archive,year,cShortNames,idName,perTuck,tShort]:    ")+tArchive+tb4+tYear+tb4+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tPerTuck+tb4+tShort ) ;
-                                //    countT perTuck = ( idName << 8 ) / cShortNames ;
-                                //{
-                                //if( !( idName % ( TUCK >> 0 ) ) )
-
-                                }
-                                    inc02AM( cYearsHealingP ) ;
-                                    bWorking = 1 ;
-                                {
-                                if( !bWorking )
-
-                                }
-                                    break ;
-                                    bAbortP = 1 ;
-                                {
-                                if( ether )
-
-                                //etThread.traceF( tinP , T("sorted [idJotIn,psttShort]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttShort) ) ;
-                                //etThread.traceF( tinP , T("healing [archive,year,short]:    ")+tArchive+tb4+tYear+tb4+T(psttShort) ) ;
-                                //countT idJotIn = pJotSortedShort->idLathReadF() ;
-                                _IO_
-                            {
-                            else
-                            if( !psttShort->idAdam ) ether.traceF( tinP , T("TODO / !exception: psttShort is null length so ignoring this page") ) ;
-
-                            //etThread.traceF( tinP , T("[pbIn,cbIn]:    ")+T(psttShort)+tb4+TF2(psttShort->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                            if( bAbortP ) break ;
-                            pauseIfF( tinP , bAbortP , cExecutiveHealYearPausedP , cPauseP ) ;
-
-                            //etThread.traceF( tinP , T("pushing [cbUsed[0],cbUsed[1],psttShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttShort) ) ;
-
-                            etThread.strMakeFromOsTextF( tinP , psttShort , pbIn + sizeof( count04T ) ) ; ___( psttShort ) ;
-                            ZE( strokeS* , psttShort ) ;
-                    
-                            c4CbUsed = *(count04T*)pbIn ;
-                    
-                            const byteT* pbIn = pageIn ;
-                            pageC pageIn = (*pJotSortedShort)[ idJot ] ;
-                    
-                            if( bAbortP ) break ;
-                            pauseIfF( tinP , bAbortP , cExecutiveHealYearPausedP , cPauseP ) ;
-
-                            count04T c4CbUsed = *(count04T*)( pcElt + 1 ) ;
-                            countT   idJot    =              *pcElt       ;
-
-                            ///*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("++++ [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            if( ++ idName <= idNameSkipBeyond ) continue ;
-
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //****                                            *******************************************************************************************************************************************************************************************************************************
-                            //****  H E A L   W O   N A M E   ( B E G I N )   *******************************************************************************************************************************************************************************************************************************
-                            //****                                            *******************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-                            //*******************************************************************************************************************************************************************************************************************************************************************************
-
-                            _IO_
-                        {
-                        //for( countT* pcElt = pce - ccElt         ; pcElt >= pcArraySortedBySize ; pcElt -= ccElt )            // LARGEST  FILES WOTH
-                          for( countT* pcElt = pcArraySortedBySize ; pcElt < pce                  ; pcElt += ccElt )            // SMALLEST FILES WOTH
-                        
-                        countT  cElt  = ccArraySortedBySize / ccElt ;
-                        countT  ccElt = 3 ;
-                        countT* pce   = pcArraySortedBySize + ccArraySortedBySize ;
-
-                        const countT cMaxBacklog = infoYear.cProcessors << 2 ;
-                        ZE( countT , idName ) ;
-                    {
-
-                    etThread.osThreadF( TaRG3fLAGScBtLS( tmUpdateYearCheckpointF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&bFireCheckpointUpdate , (countT)&st_pzJobHealFileDone , (countT)&funJobHealFileP , (countT)&idNameConsecutiveLathDone , (countT)&tArchive , (countT)&tYear ) ;
-                    ZE( boolT , bFireCheckpointUpdate ) ;
-
-                    countT idNameConsecutiveLathDone = idNameSkipBeyond ;
-                    ZE( countT , cJobsPendingHeal ) ;
-                    ZE( boolT , bWorking ) ;
-
-                    paramHealFileS infoYear( tinP , etThread , bAbortP , cPauseP , tYear , tArchive , tUniqueP , cExecutiveHealYearPausedP , stJobCompareP , funJobFileInfoP , cPathsToYear , cResultStructsNeeded , (const strokeS**)ppsttPathToYear , st_pzJobHealFileDone , funJobHealFileDone , grabDiskP ) ;
-                    funnelHornC funJobHealFileDone( tinP , etThread , countTC() , sizeof( jobHealFileS ) , FUNNELhORNcAPACITY ) ;
-                    stackC st_pzJobHealFileDone( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
-
-                    }
-                        //}
-                        //    etThread.traceF( tinP , T("out [cbUsed[0],cbUsed[1],tShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
-                        //
-                        //    TN( tShort , "" ) ; tShort = T(pbIn+sizeof(count04T)) ;
-                        //
-                        //    c4CbUsed = *(count04T*)pbIn ;
-                        //
-                        //    const byteT* pbIn = pageIn ;
-                        //    pageC pageIn = (*pJotSortedShort)[ idJot ] ;
-                        //
-                        //    countT   idJot    = *( pco ++ ) ;
-                        //    count04T c4CbUsed = *(count04T*)pco ; pco += 2 ; 
-                        //{
-                        //for( countT* pco = pcArraySortedBySize ; pco < pce ; )
-                        //countT* pce = pcArraySortedBySize + ccArraySortedBySize ;
-
-                        etThread.boxPutF( tinP , tLongSortedBySize , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) ) ;
-                    
-                        //etThread.traceF( tinP , T("called  ifcSortaF") ) ;
-
-                        //etThread.ifcSortaF( tinP , bQuit , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) , 0 , 0 , 3 * sizeof( countT ) , /*flSORTAc_NOwORKERS*/ flSORTAc_null ) ;
-                        // ENABLING THIS LINE CAUSES NAMES TO BE PROCESSED IN ORDER OF SIZE ; DISABLING CAUSES NAMES TO BE PROCESSED IN ORDER OF NAME
-
-                        //etThread.traceF( tinP , T("calling ifcSortaF") ) ;
-                        ZE( boolT , bQuit ) ;
-                    
-                        }
-                            }
-                                //etThread.traceF( tinP , T("in  [cbUsed[0],cbUsed[1],tShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
-                    
-                                }
-                                    }
-                                        *(count04T*)pcCursor = c4CbUsed ; pcCursor += 2 ;                           // BOTH OF THESE LINES SET THE SORT KEY VALUE, WHICH IS SIZE sizeof( countT ) * 3
-                                        *( pcCursor ++ ) = pJotSortedShort->idLathReadF() & ~( NM_HIGH ) ;          //A:ASSUME: TEXT SORT VALUES ARE MONOTONIC INCREASING IN idJot VALUES (BECAUSE TEXT IN THE jotC FILESET WAS WRITTEN IN SORTED ORDER)
-                    
-                                        tShort = T(pbIn+sizeof(count04T)) ;
-                                        c4CbUsed = *(count04T*)pbIn ;
-                                    {
-                                    else
-                                    if( !pbIn ) ether.traceF( tinP , T("!exception: could not obtain blob so ignoring this page") ) ;
-                                    const byteT* pbIn = pageIn ;
-                                    pageC pageIn = *pJotSortedShort ;
-                                {
-                                TN( tShort , "" ) ;
-                                ZE( count04T , c4CbUsed ) ;
-                    
-                                _IO_
-                            {
-                            while( cDo -- )
-                            countT cDo = cShortNames ;
-                            countT* pcCursor = pcArraySortedBySize ;
-                            
-                            etThread.memSetF( tinP , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) ) ;
-                            etThread.newF( tinP , LF , pcArraySortedBySize , ccArraySortedBySize ) ; ___( pcArraySortedBySize ) ;
-                            ccArraySortedBySize = cShortNames * 3 ;
-                    
-                            etThread.traceF( tinP , T("[cShortNames]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        {
-                    
-                        TN( tb4 , "    " ) ;
-                    
-                        _IO_
-                    {
-                    if( !pcArraySortedBySize )
-
-                    }
+                        break ;
+    
+#endif
                         }
                             THREADmODE2rESTORE
                             }
-                                if( POOP ) POOPRqUIET
-                                tinP.pEtScratch->boxZapF( tinP , tLongSortedBySize , 1 ) ;
-                                SCOOPS
+                                etThread.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArg , flHIRE_DISPLAYtEXT | flHIRE_WAIT , 0 , 0 , 1 , nicNameC() ) ;
+
+                                etThread.traceF( tinP , T("[arg]:    ")+tArg ) ;
+                                TN( tArg , "" ) ; tArg = T("!hireLater pkzipc.exe -max -add ")+tShortDayZip+tb+tDayPrefix+T("@*") ;
+
+                                TN( tShortDayZip , "" ) ; tShortDayZip = tDayPrefix+T(".!.chunk.day.zip") ;
+
+                                hoverC hover( tinP , etThread , tPathYear ) ;
+
+                                etThread.traceF( tinP , T("[hover]:    ")+tPathYear ) ;
+
+                                TN( tPathYear , "" ) ; tPathYear = T(ppsttPathToYear[offi]) ;
                             {
-                            IFsCRATCH
+                            for( countT offi = 0 ; offi < cPathsToYear ; offi ++ )
                             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-
-                            ccArraySortedBySize = 0 ;
-                            etThread.delF( tinP , pcArraySortedBySize ) ;
-                            etThread.traceF( tinP , T("invalid file image ; file will be deleted and regenerated [tLong]:    ")+tLongSortedBySize ) ;
+                            etThread.traceF( tinP , T("for each device, moving all to a zip file:    ")+tDayPrefix ) ;
                         {
-                        else
+                        if( tDayPrefix.csF( tinP ) )
+                        //CS:DUPLICATE: 51000806 51000806
+#if defined( NEVERdEFINED )
+
+#endif
+
+                                                        //etherP.traceF( tinP , T("file time written: ")+TT(timeDataWritten.time1,timeDataWritten.time2) ) ;
+                                                        thirdC::getFileTimeIF( tinP , fiWo , &timeDataWritten , 0 , 0 ) ;
+                                                        timeDataWritten = timeS() ;
+                                                        timeS timeDataWritten ;
+
+                                                        }
+                                                            }
+                                                                }
+                                                                    etherP.traceF( tinP , T("!exception: could not get file time [tShort]:    ")+tShort ) ;
+                                                                    bQuitP = 1 ;
+                                                                    POOPRqUIET
+                                                                {
+                                                                if( POOP )
+
+                                                                //etherP.traceF( tinP , T("      data file time written: ")+TT(timeDataWritten.time1,timeDataWritten.time2) ) ;
+                                                                thirdC::getFileTimeIF( tinP , fiWo , &timeDataWritten , 0 , 0 ) ;
+                                                                timeDataWritten = timeS() ;
+                                                            {
+                                                            else
+                                                            }
+                                                                etherP.traceF( tinP , T("!exception: could not open data file [tShort]:    ")+tShort ) ;
+                                                                bQuitP = 1 ;
+                                                                POOPRqUIET
+                                                            {
+                                                            if( POOP )
+
+                                                            fileC fiWo( tinP , (strokeS*)( tPathP+tShort ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 1 , 0 ) ;
+
+                                                            SCOOPS
+                                                            _IO_
+                                                        {
+                                                        IFsCRATCH
+U:::
+#if defined( NEVERdEFINED )
+
+
                         }
-                            ccArraySortedBySize = ccExpected ;
+                            //etThread.traceF( tinP , T("[tDayPrefixNew,tShort]:    ")+tDayPrefixNew+tb4+tShort ) ;
+
+                            }
+                                etThread.traceF( tinP , T("********************************************************************************************************************************") ) ;
+                                tDayPrefix = tDayPrefixNew ;
+
+                                }
+                                    etThread.delF( tinP , *(byteT**)&pTimeWrittenNewest ) ;
+                                    }
+                                        THREADmODE2rESTORE
+                                        }
+                                            }
+                                                ((thirdC&)etThread).setFileTimeF( tinP , fiw , &pTimeWrittenNewest[ offi ] , &pTimeWrittenNewest[ offi ] , &pTimeWrittenNewest[ offi ] ) ;
+                                                fileC fiw( tinP , (strokeS*)( tPathYear+tShortDayZip ) , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+
+                                                etThread.traceF( tinP , T("zipped") ) ;
+                                                etThread.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireLater pkzipc.exe -max -add ")+tShortDayZip+tb+tDayPrefix+T("@*") , flHIRE_DISPLAYnONE | flHIRE_WAIT , 0 , 0 , 1 , nicNameC() ) ;
+                                                etThread.traceF( tinP , T("zipping") ) ;
+
+                                                TN( tShortDayZip , "" ) ; tShortDayZip = tDayPrefix+T(".!.chunk.day.zip") ;
+
+                                                //etThread.traceF( tinP , T("[hovered]:     ")+tPathYear ) ;
+                                                hoverC hover( tinP , etThread , tPathYear ) ;
+                                                //etThread.traceF( tinP , T("[hovering]:    ")+tPathYear ) ;
+
+                                                TN( tPathYear , "" ) ; tPathYear = T(ppsttPathToYear[offi]) ;
+                                            {
+                                            for( countT offi = 0 ; offi < cPathsToYear ; offi ++ )
+                                        {
+                                        if( cFilesMax > 1 )
+
+                                        }
+                                            }
+                                                }
+                                                    if( cFilesMax < idFile ) cFilesMax = idFile ;
+                                                {
+                                                if( idPass == 1 )
+
+                                                while( ~hFindFile && !POOP ) ;
+                                                }
+                                                    DEL( pInfoFile ) ;
+                                                    }
+                                                        }
+                                                            }
+                                                                ((thirdC&)etThread).setFileTimeF( tinP , fiw , &pTimeWrittenNewest[ offi ] , &pTimeWrittenNewest[ offi ] , &pTimeWrittenNewest[ offi ] ) ;
+                                                                fileC fiw( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+                                                            {
+                                                            else if( cFilesMax > 1 )
+                                                            }
+                                                                etThread.traceF( tinP , T("[timeWritten,pTimeWrittenNewest[ offi ]]:    ")+TT(timeWritten.time1,timeWritten.time2)+tb4+TT(pTimeWrittenNewest[ offi ].time1,pTimeWrittenNewest[ offi ].time2) ) ;
+
+                                                                    pTimeWrittenNewest[ offi ] = timeWritten ;
+                                                                if( pTimeWrittenNewest[ offi ].time2 < timeWritten.time2 || ( pTimeWrittenNewest[ offi ].time2 == timeWritten.time2 && pTimeWrittenNewest[ offi ].time1 < timeWritten.time1 ) )
+
+                                                                }
+                                                                    thirdC::getFileTimeIF( tinP , fir , &timeWritten , 0 , 0 ) ;
+                                                                    fileC fir( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+                                                                {
+                                                                timeS timeWritten = timeS() ;
+                                                                idFile ++ ;
+                                                            {
+                                                            if( idPass == 1 )
+                                                        {
+                                                        if( tShort.csF( tinP ) )        // IF NOT A DIRECTORY
+
+                                                        }
+                                                            etThread.delF( tinP , psttShort ) ;
+                                                            etThread.delF( tinP , psttnu ) ;
+                                                            tShort  = T(psttShort) ;
+                                                            etThread.strBisectF( tinP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                                            ZE( strokeS* , psttShort ) ;
+                                                            ZE( strokeS* , psttnu ) ;
+                                                        {
+                                                        TN( tShort , "" ) ;
+                                                    {
+                                                    if( !ether && pInfoFile && pInfoFile->psttIfoName )
+
+                                                    }
+                                                        }
+                                                            etThread.strMakeFromOsTextF( tinP , pInfoFile->psttIfoName , iffn ) ; ___( pInfoFile->psttIfoName ) ;
+                                                            ifFileNameC iffn( tinP , etThread , pInfoFile->postOsName ) ;
+                                                        {
+                                                        if( pInfoFile && !pInfoFile->psttIfoName )
+
+                                                        ((thirdC&)etThread).dosFindFileOrDirPrivateF( tinP , pInfoFile , hFindFile , osfnLike ) ;
+
+                                                        //etThread.traceF( tinP , T("like:    ")+tLike ) ;
+                                                        osFileNameC osfnLike( tinP , etThread , tLike ) ;
+                                                        TN( tLike , "" )  ; tLike = tPathYear+tPattern ;
+                                                    {
+                                                    ZE( infoFileS* , pInfoFile ) ;
+                                                {
+                                                do
+                                                handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                                                ZE( countT , idFile ) ;
+                                            {
+                                            for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
+                                            pTimeWrittenNewest[ offi ] = timeS() ;
+                                            //PASS 1: GET THE MOST RECENT FILE TIME MODIFIED ; PASS 2: SET ALL FILE TIMES TO THE MOST RECENT TIME
+
+                                            etThread.traceF( tinP , T("[prefix,device:    ")+tDayPrefix+tb4+tPathYear ) ;
+                                            TN( tPattern  , "" ) ; tPattern  = tDayPrefix+sttAsterisk ;
+                                            TN( tPathYear , "" ) ; tPathYear = T(ppsttPathToYear[offi]) ;
+                                        {
+                                        for( countT offi = 0 ; offi < cPathsToYear ; offi ++ )
+                                        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                                    {
+                                    if( pTimeWrittenNewest )
+
+                                    etThread.newF( tinP , LF , *(byteT**)&pTimeWrittenNewest , sizeof( timeS ) * cPathsToYear ) ; ___( pTimeWrittenNewest ) ;
+                                    ZE( timeS* , pTimeWrittenNewest ) ;
+
+                                    strokeS sttAsterisk( '*' ) ;
+                                    ZE( countT , cFilesMax ) ;
+                                {
+                                if( tDayPrefix.csF( tinP ) )
+                                //CS:DUPLICATE: 51000806 51000806
+                            {
+                            if( etThread.strCompareF( tinP , tDayPrefix , tDayPrefixNew ) )
+
+                            }
+                                etThread.delF( tinP , psttDayPrefix ) ;
+                                tDayPrefixNew = T(psttDayPrefix) ;
+                                etThread.strSubstringF( tinP , psttDayPrefix , idf , sttq , sttAt , tShort , 0 ) ; ___( psttDayPrefix ) ;
+                                countT idf = 1 ;
+                                strokeS sttAt( '@' ) ;
+                                strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                ZE( strokeS* , psttDayPrefix ) ;
+                            {
+                            TN( tDayPrefixNew , "" ) ;
+                
+                            }
+                                }
+                                    tShort = T(pbIn+sizeof(count04T)) ;
+                                    c4CbUsed = *(count04T*)pbIn ;
+                                {
+                                else
+                                if( !pbIn ) ether.traceF( tinP , T("!exception: could not obtain blob so ignoring this page") ) ;
+                                const byteT* pbIn = pageIn ;
+                                pageC pageIn = *pJotSortedShort ;
+                            {
+                            TN( tShort , "" ) ;
+                            ZE( count04T , c4CbUsed ) ;
+                
+                            _IO_
                         {
-                        if( !( cbi % cbElt ) && cbi == ccExpected * sizeof( countT ) )
-                        countT cbElt      = sizeof( countT ) * 3 ;
-                        countT ccExpected = cShortNames      * 3 ;
-                        etThread.boxGetShadowF( tinP , *(byteT**)&pcArraySortedBySize , cbi , tLongSortedBySize ) ; ___( pcArraySortedBySize )
-                        ZE( countT , cbi ) ;
+                        while( !ether && cDo -- && !bAbortP )
+                        TN( tDayPrefix , "" ) ;
+                        countT cDo = cShortNames ;
+
+                        }
+                            etThread.traceF( tinP , T("[path list]:    ")+T(ppsttPathToYear[offi]) ) ;
+                        {
+                        for( countT offi = 0 ; offi < cPathsToYear ; offi ++ )
+                        
+                        etThread.traceF( tinP , T("[archive,year,cShortNames]:    ")+tArchive+tb4+tYear+tb4+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        const countT cShortNames = pJotSortedShort->cElementsF() ;
+                        pJotSortedShort->resetLathReadF() ;
+
+                        TN( tb  , " " ) ;
+                        TN( tb4 , "    " ) ;
+
+                        // IOW, ALL FILES IN EACH FILESET ARE DATED ONLY WITH THE TIME MODIFIED VALUE OF THE DATA FILE
+                        // THIS IS TO SUPPRESS DIFFERENCES IN META DATA ACROSS VOLUMES THAT ARE DUE TO ACCESSING OR DUE TO AD HOC DATA RECOVERY AND MIGRATION ACTIVITIES
+                        //PS:PERSONALITY: I CLOBBER FILE TIME METADATA SO THAT TIME WRITTEN, ACCESSED, AND CREATED FOR EVERY FILE IN THE DAY CHUNK ARE ALL SMUDGED TO THE TIME WRITTEN VALUE OF THE MOST RECENT FILE
                     {
-                    if( etThread.diskFileExistsF( tinP , tLongSortedBySize ) )
-                    ZE( countT  , ccArraySortedBySize ) ;
-                    ZE( countT* , pcArraySortedBySize ) ;
-
-                    //etThread.traceF( tinP , T("[archive,year,cShortNames]:    ")+tArchive+tb4+tYear+tb4+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    const countT cShortNames = pJotSortedShort->cElementsF() ;
-                    pJotSortedShort->resetLathReadF() ;
-
+                    case 1 + OFFpHASE_CHUNKfILESbYdAY :
                     }
-                        ++ s ; ether.osSleepF( tinP , ( TICK >> 4 ) ) ;     //GIVE OTHER NEWLY LAUNCHED YEAR THREADS SOME TIME TO ALSO ACCUMULATE INTO cPathsToYearHealingP BEFORE I PROCEED
-                        sleepC s( tinP , TAG( TAGiDnULL ) ) ;               //THE IDEA HERE IS TO PREVENT AN EARLY YEAR THREAD FROM RACING AHEAD AND CALCULATING A HUGE FILE WINDOW SIZE FOR ITSELF JUST AHEAD OF OTHER NEWLY LAUNCHED YEAR THREADS
+                        break ;
 
-                        while( cDo -- ) inc02AM( cPathsToYearHealingP ) ;
-                        countT cDo = cPathsToYear ;
+                        }
+                            while( cDo -- ) dec02AM( cPathsToYearHealingP ) ;
+                            countT cDo = cPathsToYear ;
+                        {
+
+                        bFireCheckpointUpdate = 1 ;
+
+                        st_pzJobHealFileDone.ungrabF( tinP ) ;
+                        }
+                            funJobHealFileP.readDoneF( (byteT*)pzDoomed ) ;
+                            DELzOMBIE( pzJob ) ;
+                            jobHealFileS* pzDoomed = pzJob ;
+                            st_pzJobHealFileDone >> *(countT*)&pzJob ;
+                            ZE( jobHealFileS* , pzJob ) ;
+                        {
+                        while( st_pzJobHealFileDone )        //THIS MIGHT HAPPEN DUE TO RACE CONDITION, BUT IT (UPDATING THE "LATH FILE HEALED" FILE) DOESN'T MATTER 'CAUSE WE'RE DONE
+                        st_pzJobHealFileDone.grabF( tinP , TAG( TAGiDnULL ) ) ;
+
+                        if( bWorking ) dec02AM( cYearsHealingP ) ;
+
+                        }
+                            }
+                                }
+                                    funJobHealFileP.readDoneF( (byteT*)pzDoomed ) ;
+                                    DELzOMBIE( pzJob ) ;
+                                    jobHealFileS* pzDoomed = pzJob ;
+
+                                    if( !pzJob ) break ;
+                                    jobHealFileS* pzJob = (jobHealFileS*)funJobHealFileP.readF( tinP , flFUNNELhORNcrEAD_NOwAIT ) ;
+                                {
+                                for(;;)
+                            {
+                            if( ether )
+
+                            ++ s ; thirdC::dosSleepWinkIF( tinP , 0 ) ;
+
+                            //etThread.traceF( tinP , T("waiting for pending heal jobs [cJobsPendingHeal,stDone]:    ")+TF2(cJobsPendingHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(st_pzJobHealFileDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+
+                            _IO_
+                        {
+                        while( cJobsPendingHeal - st_pzJobHealFileDone )
+                        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+                        etThread.delF( tinP , pcArraySortedBySize ) ;
+                        }
+                            }
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //****                                        ***********************************************************************************************************************************************************************************************************************************
+                                //****  H E A L   W O   N A M E   ( E N D )   ***********************************************************************************************************************************************************************************************************************************
+                                //****                                        ***********************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+
+                                ///*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("---- [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                etThread.delF( tinP , psttShort ) ;
+                                }
+                                    // #endif
+                                    //     //etThread.traceF( tinP , T("---- watch") ) ;
+                                    //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+                                    // #if defined( IFC tESTING )
+
+                                    }
+                                        //etThread.traceF( tinP , T("wrote   to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        funJobHealFileP.writeF( tinP , pbz ) ;
+                                        //etThread.traceF( tinP , T("writing to funJobHealFileP [idName]:    ")+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        new( 0 , tinP , pbz , sizeof pbz ) jobHealFileS( tinP , etThread , cJobsPendingHeal , infoYear , psttShort , idName , cShortNames ) ;
+                                        byteT pbz[ sizeof( jobHealFileS ) ] ;
+                                    {
+                                    if( !ether && !bAbortP )
+
+                                    // #endif
+                                    //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
+                                    //     //etThread.traceF( tinP , T("++++ watch") ) ;
+                                    // #if defined( IFC tESTING )
+
+                                    //}
+                                    //    etThread.traceF( tinP , T("healing [archive,year,cShortNames,idName,perTuck,tShort]:    ")+tArchive+tb4+tYear+tb4+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tPerTuck+tb4+tShort ) ;
+                                    //    countT perTuck = ( idName << 8 ) / cShortNames ;
+                                    //{
+                                    //if( !( idName % ( TUCK >> 0 ) ) )
+
+                                    }
+                                        inc02AM( cYearsHealingP ) ;
+                                        bWorking = 1 ;
+                                    {
+                                    if( !bWorking )
+
+                                    }
+                                        break ;
+                                        bAbortP = 1 ;
+                                    {
+                                    if( ether )
+
+                                    //etThread.traceF( tinP , T("sorted [idJotIn,psttShort]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttShort) ) ;
+                                    //etThread.traceF( tinP , T("healing [archive,year,short]:    ")+tArchive+tb4+tYear+tb4+T(psttShort) ) ;
+                                    //countT idJotIn = pJotSortedShort->idLathReadF() ;
+                                    _IO_
+                                {
+                                else
+                                if( !psttShort->idAdam ) ether.traceF( tinP , T("TODO / !exception: psttShort is null length so ignoring this page") ) ;
+
+                                //etThread.traceF( tinP , T("[pbIn,cbIn]:    ")+T(psttShort)+tb4+TF2(psttShort->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                if( bAbortP ) break ;
+                                pauseIfF( tinP , bAbortP , cExecutiveHealYearPausedP , cPauseP ) ;
+
+                                //etThread.traceF( tinP , T("pushing [cbUsed[0],cbUsed[1],psttShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttShort) ) ;
+
+                                etThread.strMakeFromOsTextF( tinP , psttShort , pbIn + sizeof( count04T ) ) ; ___( psttShort ) ;
+                                ZE( strokeS* , psttShort ) ;
+                        
+                                c4CbUsed = *(count04T*)pbIn ;
+                        
+                                const byteT* pbIn = pageIn ;
+                                pageC pageIn = (*pJotSortedShort)[ idJot ] ;
+                        
+                                if( bAbortP ) break ;
+                                pauseIfF( tinP , bAbortP , cExecutiveHealYearPausedP , cPauseP ) ;
+
+                                count04T c4CbUsed = *(count04T*)( pcElt + 1 ) ;
+                                countT   idJot    =              *pcElt       ;
+
+                                ///*if( !( idName % TUCK ) )*/ etThread.traceF( tinP , T("++++ [tYear,idName]:    ")+tYear+tb4+TF2(idName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                if( ++ idName <= idNameSkipBeyond ) continue ;
+
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //****                                            *******************************************************************************************************************************************************************************************************************************
+                                //****  H E A L   W O   N A M E   ( B E G I N )   *******************************************************************************************************************************************************************************************************************************
+                                //****                                            *******************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+                                //*******************************************************************************************************************************************************************************************************************************************************************************
+
+                                _IO_
+                            {
+                            //for( countT* pcElt = pce - ccElt         ; pcElt >= pcArraySortedBySize ; pcElt -= ccElt )            // LARGEST  FILES WOTH
+                              for( countT* pcElt = pcArraySortedBySize ; pcElt < pce                  ; pcElt += ccElt )            // SMALLEST FILES WOTH
+                            
+                            countT  cElt  = ccArraySortedBySize / ccElt ;
+                            countT  ccElt = 3 ;
+                            countT* pce   = pcArraySortedBySize + ccArraySortedBySize ;
+
+                            const countT cMaxBacklog = infoYear.cProcessors << 2 ;
+                            ZE( countT , idName ) ;
+                        {
+
+                        etThread.osThreadF( TaRG3fLAGScBtLS( tmUpdateYearCheckpointF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&bFireCheckpointUpdate , (countT)&st_pzJobHealFileDone , (countT)&funJobHealFileP , (countT)&idNameConsecutiveLathDone , (countT)&tArchive , (countT)&tYear ) ;
+                        ZE( boolT , bFireCheckpointUpdate ) ;
+
+                        countT idNameConsecutiveLathDone = idNameSkipBeyond ;
+                        ZE( countT , cJobsPendingHeal ) ;
+                        ZE( boolT , bWorking ) ;
+
+                        paramHealFileS infoYear( tinP , etThread , bAbortP , cPauseP , tYear , tArchive , tUniqueP , cExecutiveHealYearPausedP , stJobCompareP , funJobFileInfoP , cPathsToYear , cResultStructsNeeded , (const strokeS**)ppsttPathToYear , st_pzJobHealFileDone , funJobHealFileDone , grabDiskP ) ;
+                        funnelHornC funJobHealFileDone( tinP , etThread , countTC() , sizeof( jobHealFileS ) , FUNNELhORNcAPACITY ) ;
+                        stackC st_pzJobHealFileDone( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
+
+                        }
+                            //}
+                            //    etThread.traceF( tinP , T("out [cbUsed[0],cbUsed[1],tShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
+                            //
+                            //    TN( tShort , "" ) ; tShort = T(pbIn+sizeof(count04T)) ;
+                            //
+                            //    c4CbUsed = *(count04T*)pbIn ;
+                            //
+                            //    const byteT* pbIn = pageIn ;
+                            //    pageC pageIn = (*pJotSortedShort)[ idJot ] ;
+                            //
+                            //    countT   idJot    = *( pco ++ ) ;
+                            //    count04T c4CbUsed = *(count04T*)pco ; pco += 2 ; 
+                            //{
+                            //for( countT* pco = pcArraySortedBySize ; pco < pce ; )
+                            //countT* pce = pcArraySortedBySize + ccArraySortedBySize ;
+
+                            etThread.boxPutF( tinP , tLongSortedBySize , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) ) ;
+                        
+                            //etThread.traceF( tinP , T("called  ifcSortaF") ) ;
+
+                            //etThread.ifcSortaF( tinP , bQuit , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) , 0 , 0 , 3 * sizeof( countT ) , /*flSORTAc_NOwORKERS*/ flSORTAc_null ) ;
+                            // ENABLING THIS LINE CAUSES NAMES TO BE PROCESSED IN ORDER OF SIZE ; DISABLING CAUSES NAMES TO BE PROCESSED IN ORDER OF NAME
+
+                            //etThread.traceF( tinP , T("calling ifcSortaF") ) ;
+                            ZE( boolT , bQuit ) ;
+                        
+                            }
+                                }
+                                    //etThread.traceF( tinP , T("in  [cbUsed[0],cbUsed[1],tShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
+                        
+                                    }
+                                        }
+                                            *(count04T*)pcCursor = c4CbUsed ; pcCursor += 2 ;                           // BOTH OF THESE LINES SET THE SORT KEY VALUE, WHICH IS SIZE sizeof( countT ) * 3
+                                            *( pcCursor ++ ) = pJotSortedShort->idLathReadF() & ~( NM_HIGH ) ;          //A:ASSUME: TEXT SORT VALUES ARE MONOTONIC INCREASING IN idJot VALUES (BECAUSE TEXT IN THE jotC FILESET WAS WRITTEN IN SORTED ORDER)
+                        
+                                            tShort = T(pbIn+sizeof(count04T)) ;
+                                            c4CbUsed = *(count04T*)pbIn ;
+                                        {
+                                        else
+                                        if( !pbIn ) ether.traceF( tinP , T("!exception: could not obtain blob so ignoring this page") ) ;
+                                        const byteT* pbIn = pageIn ;
+                                        pageC pageIn = *pJotSortedShort ;
+                                    {
+                                    TN( tShort , "" ) ;
+                                    ZE( count04T , c4CbUsed ) ;
+                        
+                                    _IO_
+                                {
+                                while( cDo -- )
+                                countT cDo = cShortNames ;
+                                countT* pcCursor = pcArraySortedBySize ;
+                                
+                                etThread.memSetF( tinP , (byteT*)pcArraySortedBySize , ccArraySortedBySize * sizeof( countT ) ) ;
+                                etThread.newF( tinP , LF , pcArraySortedBySize , ccArraySortedBySize ) ; ___( pcArraySortedBySize ) ;
+                                ccArraySortedBySize = cShortNames * 3 ;
+                        
+                                etThread.traceF( tinP , T("[cShortNames]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            {
+                        
+                            TN( tb4 , "    " ) ;
+                        
+                            _IO_
+                        {
+                        if( !pcArraySortedBySize )
+
+                        }
+                            }
+                                THREADmODE2rESTORE
+                                }
+                                    if( POOP ) POOPRqUIET
+                                    tinP.pEtScratch->boxZapF( tinP , tLongSortedBySize , 1 ) ;
+                                    SCOOPS
+                                {
+                                IFsCRATCH
+                                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+
+                                ccArraySortedBySize = 0 ;
+                                etThread.delF( tinP , pcArraySortedBySize ) ;
+                                etThread.traceF( tinP , T("invalid file image ; file will be deleted and regenerated [tLong]:    ")+tLongSortedBySize ) ;
+                            {
+                            else
+                            }
+                                ccArraySortedBySize = ccExpected ;
+                            {
+                            if( !( cbi % cbElt ) && cbi == ccExpected * sizeof( countT ) )
+                            countT cbElt      = sizeof( countT ) * 3 ;
+                            countT ccExpected = cShortNames      * 3 ;
+                            etThread.boxGetShadowF( tinP , *(byteT**)&pcArraySortedBySize , cbi , tLongSortedBySize ) ; ___( pcArraySortedBySize )
+                            ZE( countT , cbi ) ;
+                        {
+                        if( etThread.diskFileExistsF( tinP , tLongSortedBySize ) )
+                        ZE( countT  , ccArraySortedBySize ) ;
+                        ZE( countT* , pcArraySortedBySize ) ;
+
+                        //etThread.traceF( tinP , T("[archive,year,cShortNames]:    ")+tArchive+tb4+tYear+tb4+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        const countT cShortNames = pJotSortedShort->cElementsF() ;
+                        pJotSortedShort->resetLathReadF() ;
+
+                        }
+                            ++ s ; ether.osSleepF( tinP , ( TICK >> 4 ) ) ;     //GIVE OTHER NEWLY LAUNCHED YEAR THREADS SOME TIME TO ALSO ACCUMULATE INTO cPathsToYearHealingP BEFORE I PROCEED
+                            sleepC s( tinP , TAG( TAGiDnULL ) ) ;               //THE IDEA HERE IS TO PREVENT AN EARLY YEAR THREAD FROM RACING AHEAD AND CALCULATING A HUGE FILE WINDOW SIZE FOR ITSELF JUST AHEAD OF OTHER NEWLY LAUNCHED YEAR THREADS
+
+                            while( cDo -- ) inc02AM( cPathsToYearHealingP ) ;
+                            countT cDo = cPathsToYear ;
+                        {
+
+                        _IO_
                     {
-
-                    _IO_
+                    case 1 + OFFpHASE_HEAL :
                 {
-                if( !bAbortP && !POOP && idPhaseP == 1 + OFFpHASE_HEAL )
+                if( !bAbortP && !POOP ) switch( idPhaseP )
 
                 }
                     }
@@ -4498,9 +4741,11 @@ struct jobHealFileS
 {
 struct paramHealFileS
 
-//#define OFFpHASE_CHUNKfILESbYdAY 0x2
+#define OFFpHASE_CHUNKfILESbYdAY 0x2
 #define OFFpHASE_HEAL            0x1
 #define OFFpHASE_GETnAMESoNLY    0x0
+
+#define CpHASES 3
 
 #define IDtYPEjOB_COPY       0x3
 #define IDtYPEjOB_MOVEuNIQUE 0x2
