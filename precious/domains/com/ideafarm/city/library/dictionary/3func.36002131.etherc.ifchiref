@@ -10,6 +10,8 @@
 }
     return idDeathType ;
 
+    count4S c4Result( osTid , osPid , value , idDeathType ) ;
+
     }
         }
             }
@@ -37,18 +39,18 @@
                 #if defined( NEVERdEFINED )
 
                 }
-                    else                                     osProcessF( tinP , countTC() , countTC() , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?T(psttArgsP):T("!quietConsole ")+T(psttArgsP)) , flProcessHire ) ;
-                    if( F(flagsP) & flHIRE_DISPLAYgRAPHICS ) osSessionF( tinP , countTC() , countTC() , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tb+T(psttArgsP) , 0 , 0 , 0 , 0 , flSESSION_MAXIMIZE/*flSESSION_MINIMIZE*/ ) ;
+                    else                                     osProcessF( tinP , osTid , osPid , idAdamP                           , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?T(psttArgsP):T("!quietConsole ")+T(psttArgsP)) , flProcessHire ) ;
+                    if( F(flagsP) & flHIRE_DISPLAYgRAPHICS ) osSessionF( tinP , osTid , osPid , idAdamP                           , T("!idHome ")+TF1(processGlobal2I.idHome)+tb+T(psttArgsP) , 0 , 0 , 0 , 0 , flSESSION_MAXIMIZE/*flSESSION_MINIMIZE*/ ) ;
                 {
                 else
                 }
-                    else                                     osProcessF( tinP , countTC() , countTC() , countTC() , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?T(psttArgsP):T("!quietConsole ")+T(psttArgsP)) , flProcessHire ) ;
-                    if( F(flagsP) & flHIRE_DISPLAYgRAPHICS ) osSessionF( tinP , countTC() , countTC() , countTC() , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tb+T(psttArgsP) , 0 , 0 , 0 , 0 , flSESSION_MAXIMIZE/*flSESSION_MINIMIZE*/ ) ;
+                    else                                     osProcessF( tinP , osTid , osPid , value , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(F(flProcessHire)&flPROCESShIRE_VISIBLE?T(psttArgsP):T("!quietConsole ")+T(psttArgsP)) , flProcessHire ) ;
+                    if( F(flagsP) & flHIRE_DISPLAYgRAPHICS ) osSessionF( tinP , osTid , osPid , value , idDeathType , idAdamP , T("!idHome ")+TF1(processGlobal2I.idHome)+tb+T(psttArgsP) , 0 , 0 , 0 , 0 , flSESSION_MAXIMIZE/*flSESSION_MINIMIZE*/ ) ;
                 {
                 else if( F(flagsP) & flHIRE_WAIT )
                 }
                     delF( tinP , psttMapped ) ;
-                    osProcessF( tinP , countTC() , countTC() , T("wdw") , T(osfn)+T(" ")+TF3(idAdamP,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(" !debug !idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(psttArgsP?T(" ")+T(psttArgsP):T("")) , flProcessHire ) ;
+                    osProcessF( tinP , osTid , osPid , T("wdw") , T(osfn)+T(" ")+TF3(idAdamP,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(" !debug !idHome ")+TF1(processGlobal2I.idHome)+tPostscript+tb+(psttArgsP?T(" ")+T(psttArgsP):T("")) , flProcessHire ) ;
                     osFileNameC osfn( tinP , *this , T(psttMapped) ) ;
                     }
                         delF( tinP , psttm ) ;
@@ -147,6 +149,9 @@
     {
     //U:: TO FIND A BUG: if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DEBUG ) )
     ZE( countT , idDeathType ) ;
+    ZE( countT , value       ) ;
+    ZE( countT , osPid       ) ;
+    ZE( countT , osTid       ) ;
 
     //flagsP |= flHIRE_DEBUG ; //TO FIND A BUG
 
