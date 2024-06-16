@@ -153,7 +153,14 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                                     THREADmODE2rESTORE
                                     while( test == cExecutiveHealYear ) thirdC::dosSleepWinkIF( tinP ) ;
                                     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                                    countT test = offPhase == OFFpHASE_GETnAMESoNLY ? CyEARSiNpARALLELgETnAMESoNLY : cYearsInParallelHeal ;
+
+                                    ;
+                                            : cYearsInParallelHeal
+                                            ? CyEARSiNpARALLELcHUNKfILESbYdAY
+                                        : offPhase == OFFpHASE_CHUNKfILESbYdAY
+                                        ? CyEARSiNpARALLELgETnAMESoNLY
+                                    countT test = offPhase == OFFpHASE_GETnAMESoNLY
+
                                     _IO_
                                 {
                                 _IO_
@@ -4829,8 +4836,9 @@ struct paramHealFileS
 
 //B: WORSE:  CPU NOT PEGGED: #define CyEARSiNpARALLELhEAL  0x1
 
-#define CyEARSiNpARALLELhEAL          0x1
-#define CyEARSiNpARALLELgETnAMESoNLY  0x10
+#define CyEARSiNpARALLELcHUNKfILESbYdAY 0x8
+#define CyEARSiNpARALLELhEAL            0x1
+#define CyEARSiNpARALLELgETnAMESoNLY    0x10
 
 //20240526@0904: CONJ: WO YEAR AT A TIME IS OPTIMAL BECAUSE DISK I/O IS THE BOTTLENECK SO IT IS OPTIMAL TO MAKE DISK I/O AS EFFICIENT AS POSSIBLE ; WO YEAR AT A TIME ELIMINATES CONTENTION ON EACH DISK, WHICH CAUSES MUCH HEAD SEEK MOVEMENT
 

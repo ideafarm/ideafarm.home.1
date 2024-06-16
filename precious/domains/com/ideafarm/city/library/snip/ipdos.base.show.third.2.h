@@ -29224,6 +29224,7 @@ applications should avoid using thirdC objects
     SPACER(j)
     SPACER(k)
 
+//U:: THIS IS PUBLIC AS A WORKAROUND TO THE SLOWNESS OF THE CLOAK-ENABLED API
 public :
     boolT                   dosFindFileOrDirPrivateF( tinS& tinP , infoFileS*& pInfoFileP , handleC& handleP , const osTextT* const postLikeP ) ;
 private :
@@ -29834,7 +29835,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600119b.thirdc.osOffNumaNodeValidChosenIF!||
  static voidT osLogWrongNodeIF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600119c.thirdc.oslogwrongnodeif!||
- static voidT thirdC::osTraceWrongNodeIF( tinS& tinP , byteT* pbP , const osTextT* const postComment1P , const osTextT* const postComment2P = 0 ) ;  //WO COMMENT IS REQUIRED; IF OO THEN WILL BE CONCATENATED
+ static voidT osTraceWrongNodeIF( tinS& tinP , byteT* pbP , const osTextT* const postComment1P , const osTextT* const postComment2P = 0 ) ;  //WO COMMENT IS REQUIRED; IF OO THEN WILL BE CONCATENATED
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600119d.thirdc.ostracewrongnodeif!||
  static voidT osHireThenMonitorIF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP ) ;
 
