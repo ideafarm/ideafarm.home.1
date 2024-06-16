@@ -1524,7 +1524,8 @@ DONE( tmCloakF )
     //U:: TEST idDeathType AND IF CLOAK WAS MURDERED THEN DON'T NAP BEFORE SHUTTING DOWN
     //U:: BUG: idDeathType IS 0 WHEN CLOAK IS KILLED WITHIN PROCESS EXPLORER
     //etThread.traceF( tinP , T("error: cloak has died [idDeathType]:    ")+TF2(idDeathType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    
-    countT idDeathType = etThread.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_CLOAK , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO | flHIRE_WAIT , nicNameC() ) ;
+    countT& idDeathType = c4Result.c4 ;
+    count4S c4Result = etThread.ifcHireF( tinP , T("ifcIDaDAM_MONITOR") , ifcIDaDAM_CLOAK , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO | flHIRE_WAIT , nicNameC() ) ;
     //etThread.traceF( tinP , T("hiring cloak") ) ;
 {
 if( pTaskP )

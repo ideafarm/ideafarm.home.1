@@ -291,8 +291,8 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
                     //TN( tYearPattern , "2012/" ) ;
-                    //TN( tYearPattern , "1999/" ) ;
-                      TN( tYearPattern , "1234/" ) ;
+                      TN( tYearPattern , "1999/" ) ;
+                    //TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
                 _IO_
             {
@@ -2725,20 +2725,22 @@ TASK( tmDayZipperF )
         etherP.traceF( tinP , T("zipped") ) ;
 
         __( idDeathType ) ;
-        __( value ) ;
+        __( value - ifcEXITcODE_EXITpROCESSaOK ) ;
         etherP.osProcessWaitF( tinP , value , idDeathType , osPid ) ;
         ZE( countT , idDeathType ) ;
         ZE( countT , value ) ;
 
+        THREADmODE2rESTORE
         __Z( osPid ) ;
-        countT osPid = etherP.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireLater pkzipc.exe -max -add -move ")+tShortDayZip+tb+tDayPrefixP+T("@*") , flHIRE_DISPLAYnONE , 0 , 0 , 1 , nicNameC() ) ;
-        etherP.traceF( tinP , T("zipping") ) ;
-
+        }
+            c4Result = etherP.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireLater pkzipc.exe -max -add -move ")+tShortDayZip+tb+tDayPrefixP+T("@*") , flHIRE_DISPLAYnONE , 0 , 0 , 1 , nicNameC() ) ;
+            etherP.traceF( tinP , T("zipping") ) ;
+            hoverC hover( tinP , etherP , tPathYear ) ;
+        {
         TN( tShortDayZip , "" ) ; tShortDayZip = tDayPrefixP+T(".!.chunk.day.zip") ;
-
-        //etherP.traceF( tinP , T("[hovered]:     ")+tPathYear ) ;
-        hoverC hover( tinP , etherP , tPathYear ) ;
-        //etherP.traceF( tinP , T("[hovering]:    ")+tPathYear ) ;
+        countT& osPid = c4Result.c2 ;
+        count4S c4Result ;
+        THREADmODE2oN( flTHREADmODE2_ALLOWmULTItHREADEDhOVER | flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
         TN( tPathYear , "" ) ; tPathYear = T(ppsttPathToYearP[offi]) ;
 
