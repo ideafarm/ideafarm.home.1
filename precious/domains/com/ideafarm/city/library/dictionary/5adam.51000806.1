@@ -298,8 +298,8 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
                     //TN( tYearPattern , "2012/" ) ;
-                      TN( tYearPattern , "1999/" ) ;
-                    //TN( tYearPattern , "1234/" ) ;
+                    //TN( tYearPattern , "1999/" ) ;
+                      TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
                 _IO_
             {
@@ -2751,16 +2751,38 @@ TASK( tmDayZipperF )
 
         etherP.traceF( tinP , T("zipped") ) ;
 
-        __( idDeathType ) ;
-        __( value - ifcEXITcODE_EXITpROCESSaOK ) ;
-        etherP.osProcessWaitF( tinP , value , idDeathType , osPid ) ;
-        ZE( countT , idDeathType ) ;
-        ZE( countT , value ) ;
+        }
+            }
+                etherP.traceF( tinP , T("!exception: kid process failed [value,rc,name]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear+tShortDayZipP ) ;
+                bAbortP = 1 ;
+                POOPRqUIET
+                countT rc = POOP ;
+            {
+            if( POOP )
+
+            }
+                __1
+                __( value ) ;
+            {
+            if( value != ifcEXITcODE_EXITpROCESSaOK )
+
+            tinP.pEtScratch->osProcessWaitF( tinP , value , countTC() , osPid ) ;
+            ZE( countT , value ) ;
+
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCH
 
         THREADmODE2rESTORE
         __Z( osPid ) ;
         }
-            c4Result = etherP.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireLater pkzipc.exe -max -add -move ")+tShortDayZipP+tb+tDayPrefixP+tAtAsterisk , flHIRE_DISPLAYnONE , 0 , 0 , 1 , nicNameC() ) ;
+            c4Result = etherP.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireLater pkzipc.exe -max -add -move ")+tShortDayZipP+tb+tDayPrefixP+tAtAsterisk , flHIRE_DISPLAYtEXT | flHIRE_DEBUG , 0 , 0 , 1 , nicNameC() ) ;
+
+if( idIn == 1 )
+countT idIn = 1 + incv02AM( idInLath ) ;
+static countT idInLath ;
+
             etherP.traceF( tinP , T("zipping") ) ;
             hoverC hover( tinP , etherP , tPathYear ) ;
         {
@@ -4967,7 +4989,7 @@ struct paramHealFileS
 
 #define FUNNELhORNcAPACITY       ( TUCK )
 
-//#define IFCtESTING
+#define IFCtESTING
 
 //#define OVERRIDElONELYiSoK
 //#define OVERRIDEkEEPnAMES

@@ -18,13 +18,25 @@ REST
     {
     else
     }
-        __( idDeathType ) ;
-        __( value ) ;
-        ((thirdC&)etThread).dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , tFile , tArgsNet ) ;
-        ZE( countT , idDeathType ) ;
-        ZE( countT , value ) ;
+        }
+            }
+*(countT*)0 = 0x1234 ;
+                thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
+                etThread.traceF( tinP , T("!exception: kid process returned nonze value [value]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                POOPRqUIET
+            {                              //HAVING MY PROCESS EXIT CODE CONTAIN DETAILED INFO WOULD COMPLICATE DEBUGGING CODE THAT INSPECTS THE PROCESS EXIT CODE AND DETECTS WHETHER THE EXIT CODE IS WO OF THE EXPECTED (LEGAL) VALUES FOR AN IPDOS (TM) PROCESS
+            if( POOP )                     //PS:PERSONALITY: MY PROCESS EXIT CODE WILL INDICATE IMPOTENCE BUT WILL NOT INDICATE THE DETAILS ; FOR THAT I TRACE OUT value
 
-        etThread.traceF( tinP , T("hiring the target file [tFile,tArgsNet]:    ")+tFile+tb+tArgsNet ) ;
+            __( value ) ;
+            etThread.traceF( tinP , T("called  dosExecPgmF [value,file,args]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet ) ;
+            tinP.pEtScratch->traceF( tinP , T("calling dosExecPgmF [value,file,args]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+            ZE( countT , value ) ;
+
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCH
     {
     if( bNow )
 {
@@ -53,6 +65,7 @@ __Z( tFile.csF( tinP ) ) ;
     TN( tn               , ""           ) ;
     TN( tArgKeyNameLater , "!hireLater" ) ;
 {
+TN( tb4              , "    "       ) ;
 TN( tb               , " "          ) ;
 TN( tArgsNet , "" ) ;
 TN( tArgKeyNameNow   , "!hireNow"   ) ;

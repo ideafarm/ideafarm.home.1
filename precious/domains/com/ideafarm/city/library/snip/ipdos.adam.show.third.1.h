@@ -16738,6 +16738,7 @@ after i return, that countT object will contain 1
 #define flMODEpROCESS2_CHECKtINuTILITYeLEMENTS         0xe0000244
 #define flMODEpROCESS2_GRABoNLYwO                      0xe0000444
 #define flMODEpROCESS2_SUPPRESSiNoUTfRAMEc             0xe0000844
+#define flMODEpROCESS2_EXITcODEiMPOTENCE               0xe0001044
 /*3*/
 #define flMODEpROCESS2_null    0xe0000044
 
