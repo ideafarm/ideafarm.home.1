@@ -7,9 +7,13 @@
 //
 
 }
+    return myValue ;
+
     etherP.traceF( tinP , T("event capture ended [cEnded,cBegun,cIgnored1,cIgnored2]:    ")+TF2(cEnded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBegun,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIgnored2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
         }
+            if( !myValue ) myValue = processExitCode ;
+
             }
                 etherP.traceF( tinP , T("ContinueDebugEvent failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 rc = GetLastError() ;
@@ -217,6 +221,7 @@
         bOk = WaitForDebugEvent( &info3 , INFINITE ) ;
     {
     while( !cBegun || cEnded < cBegun )
+    ZE( countT , myValue ) ;
     ZE( countT , cIgnored2 ) ;
     ZE( countT , cIgnored1 ) ;
     TN( tb4 , "    " ) ;
@@ -232,12 +237,12 @@
     etherC& etherP = *tinP.pEther ;
 
     }
-        if( POOP ) return ;
+        if( POOP ) return 0 ;
         __Z( tinP.pEther ) ;
-        if( POOP ) return ;
+        if( POOP ) return 0 ;
     {
 {
-/*1*/voidT thirdC::osHireThenMonitorIF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP )/*1*/
+/*1*/countT thirdC::osHireThenMonitorIF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP )/*1*/
 
 /**/
 */
