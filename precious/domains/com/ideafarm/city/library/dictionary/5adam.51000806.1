@@ -2518,186 +2518,40 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5
 TASK( tmWorkerHealFileF )
 
 }
-    etherP.delF( tinP , *(byteT**)&pTimeWrittenNewest ) ;
+    THREADmODE2rESTORE
     }
-        THREADmODE2rESTORE
-        }
-            #endif
+        #endif
 
-                if( !bAbortP && !etPrime ) zipDayF( tinP , etherP , bAbortP , cPathsToYearP , ppsttPathToYearP , pTimeWrittenNewest , tShortDayZip , tDayPrefixP , - 1 ) ;
-                // THIS IS DEBUGGING CODE (ZIPPING IS DONE SERIALLY)
+            if( !bAbortP && !etPrime ) zipDayF( tinP , etherP , bAbortP , cPathsToYearP , ppsttPathToYearP , tShortDayZip , tDayPrefixP , - 1 ) ;
+            // THIS IS DEBUGGING CODE (ZIPPING IS DONE SERIALLY)
 
-            #else
+        #else
 
-                }
-                    ++ s ; etherP.osSleepF( tinP , TOCK >> 2 ) ;
-                {
-                while( cDayZippers )
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-
-                }
-                    etherP.osThreadF( TaRG1( tmDayZipperF ) , (countT)&cDayZippers , (countT)&bAbortP , cPathsToYearP , offi , (countT)ppsttPathToYearP , (countT)pTimeWrittenNewest , (countT)&tShortDayZip , (countT)&tDayPrefixP ) ;
-                    inc02AM( cDayZippers ) ;
-                {
-                for( countT offi = 0 ; !etPrime && offi < cPathsToYearP ; offi ++ )
-                ZE( countT , cDayZippers ) ;
-                // THIS IS PRODUCTION CODE (ZIPPING IS DONE IN PARALLEL)
-
-            #if !defined( NEVERdEFINED )
-        {
-        if( !bAbortP && cAtFilesMax )
-
-        }
             }
-                }
-                    if( cAtFilesMax < idAtFile ) cAtFilesMax = idAtFile ;
-                {
-                if( idPass == 1 )
-
-                while( ~hFindFile && !POOP ) ;
-                }
-                    DEL( pInfoFile ) ;
-                    }
-                        }
-                            }
-                                }
-                                    }
-                                        }
-                                            etherP.traceF( tinP , T("!exception: could not set file time [name]:    ")+T(pInfoFile->psttIfoName) ) ;
-                                            bAbortP = 1 ;
-                                            POOPRqUIET
-                                        {
-                                        if( POOP )
-
-                                        ((thirdC&)etherP).setFileTimeF( tinP , fiw , &pTimeWrittenNewest[ offi ] , &pTimeWrittenNewest[ offi ] , &pTimeWrittenNewest[ offi ] ) ;
-                                    {
-                                    else
-                                    }
-                                        etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+T(pInfoFile->psttIfoName) ) ;
-                                        bAbortP = 1 ;
-                                        POOPRqUIET
-                                    {
-                                    if( POOP )
-
-                                    fileC fiw( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
-
-                                    SCOOPS
-                                    _IO_
-                                {
-                                IFsCRATCH
-                            {
-                            else if( cAtFilesMax )      // IF ANY DEVICE CONTAINS A CHUNK FILE THEN ALL DEVICES SHOULD BE CHUNKED ; THIS LINE FOR CODE CORRECTNESS BUT IS OF NO EFFECT SINCE pkzipc.exe WILL NOT CREATE A ZIP FILE IF THERE ARE NO FILES MATCHING ITS SEARCH CRITERIA
-                            }
-                                }
-                                    etherP.traceF( tinP , T("[timeWritten,pTimeWrittenNewest[ offi ]]:    ")+TT(timeWritten.time1,timeWritten.time2)+tb4+TT(pTimeWrittenNewest[ offi ].time1,pTimeWrittenNewest[ offi ].time2) ) ;
-
-                                    if( pTimeWrittenNewest[ offi ].time2 < timeWritten.time2 || ( pTimeWrittenNewest[ offi ].time2 == timeWritten.time2 && pTimeWrittenNewest[ offi ].time1 < timeWritten.time1 ) ) pTimeWrittenNewest[ offi ] = timeWritten ;
-
-                                    }
-                                        }
-                                            }
-                                                }
-                                                    etherP.traceF( tinP , T("!exception: could not get file time [name]:    ")+T(pInfoFile->psttIfoName) ) ;
-                                                    bAbortP = 1 ;
-                                                    POOPRqUIET
-                                                {
-                                                if( POOP )
-
-                                                thirdC::getFileTimeIF( tinP , fir , &timeWritten , 0 , 0 ) ;
-                                            {
-                                            else
-                                            }
-                                                etherP.traceF( tinP , T("!exception: could not open file R R [name]:    ")+T(pInfoFile->psttIfoName) ) ;
-                                                bAbortP = 1 ;
-                                                POOPRqUIET
-                                            {
-                                            if( POOP )
-
-                                            fileC fir( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
-
-                                            SCOOPS
-                                            _IO_
-                                        {
-                                        IFsCRATCH
-                                    {
-                                    timeS timeWritten = timeS() ;
-                                {
-                                if( !etherP.strIdF( tinP , tDotHeyDot , pInfoFile->psttIfoName , 1 ) )      // IF NOT A CONTROL FILE ; (SUCH FILES ARE USED E.G. TO CONTROL REPORTING OF THE ARCHIVE, CAN BE ADDED TO THE ARCHIVE AT ANY TIME, AND ARE UNRELATED TO THE CONTENT OF THE ARCHIVE, SO SHOULD NOT BE ALLOWED TO AFFECT THE TIMESTAMP OF A DAY CHUNK)
-
-                                idAtFile ++ ;
-                            {
-                            if( idPass == 1 )
-                        {
-                        if( tShort.csF( tinP ) )        // IF NOT A DIRECTORY
-
-                        }
-                            etherP.delF( tinP , psttShort ) ;
-                            etherP.delF( tinP , psttnu ) ;
-                            tShort  = T(psttShort) ;
-                            etherP.strBisectF( tinP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
-                            ZE( strokeS* , psttShort ) ;
-                            ZE( strokeS* , psttnu ) ;
-                        {
-                        TN( tShort , "" ) ;
-                    {
-                    if( !bAbortP && !etPrime && pInfoFile && pInfoFile->psttIfoName )
-
-                    }
-                        }
-                            etherP.strMakeFromOsTextF( tinP , pInfoFile->psttIfoName , iffn ) ; ___( pInfoFile->psttIfoName ) ;
-                            ifFileNameC iffn( tinP , etherP , pInfoFile->postOsName ) ;
-                        {
-                        if( !bAbortP && pInfoFile && !pInfoFile->psttIfoName )
-
-                        }
-                            }
-                                etherP.traceF( tinP , T("!exception: find file failed [like]:    ")+T(osfnLike) ) ;
-                                bAbortP = 1 ;
-                                POOPRqUIET
-                            {
-                            if( POOP )
-
-                            ((thirdC&)*tinP.pEtScratch).dosFindFileOrDirPrivateF( tinP , pInfoFile , hFindFile , osfnLike ) ;
-
-                            SCOOPS
-                            _IO_
-                        {
-                        IFsCRATCH
-
-                        //etherP.traceF( tinP , T("like:    ")+tLike ) ;
-                        osFileNameC osfnLike( tinP , etherP , tLike ) ;
-                        TN( tLike , "" )  ; tLike = tPathYear+tPattern ;
-                    {
-                    ZE( infoFileS* , pInfoFile ) ;
-                {
-                do
-                handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-                ZE( countT , idAtFile ) ;
-
-                if( idPass == 2 && !pTimeWrittenNewest[ offi ] ) break ;
+                ++ s ; etherP.osSleepF( tinP , TOCK >> 2 ) ;
             {
-            for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
-            pTimeWrittenNewest[ offi ] = timeS() ;
-            //PASS 1: GET THE MOST RECENT FILE TIME MODIFIED ; PASS 2: SET ALL FILE TIMES TO THE MOST RECENT TIME ; (NOTE: IF A DAY CHUNK ZIP FILE IS BEING UPDATED, EXISTING ITEMS NOT UPDATED WILL RETAIN THEIR EARLIER TIME)
+            while( cDayZippers )
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
-            etherP.traceF( tinP , T("[pattern,device:    ")+tPattern+tb4+tPathYear ) ;
-            TN( tPattern  , "" ) ; tPattern  = tDayPrefixP+tAtAsterisk ;
-            TN( tPathYear , "" ) ; tPathYear = T(ppsttPathToYearP[offi]) ;
-        {
-        for( countT offi = 0 ; offi < cPathsToYearP ; offi ++ )
-        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            }
+                etherP.osThreadF( TaRG1( tmDayZipperF ) , (countT)&cDayZippers , (countT)&bAbortP , cPathsToYearP , offi , (countT)ppsttPathToYearP , (countT)&tShortDayZip , (countT)&tDayPrefixP ) ;
+                inc02AM( cDayZippers ) ;
+            {
+            for( countT offi = 0 ; !etPrime && offi < cPathsToYearP ; offi ++ )
+            ZE( countT , cDayZippers ) ;
+            // THIS IS PRODUCTION CODE (ZIPPING IS DONE IN PARALLEL)
+
+        #if !defined( NEVERdEFINED )
     {
-    if( pTimeWrittenNewest )
+    if( !bAbortP )
 
-    etherP.newF( tinP , LF , *(byteT**)&pTimeWrittenNewest , sizeof( timeS ) * cPathsToYearP ) ; ___( pTimeWrittenNewest ) ;
-    ZE( timeS* , pTimeWrittenNewest ) ;
+    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
     TN( tDotHeyDot , ".!." ) ;
     TN( tShortDayZip , "" ) ; tShortDayZip = tDayPrefixP+T(".!.chunk.day.zip") ;
     TN( tb4  , "    " ) ;
     TN( tb   , " " ) ;
     TN( tAtAsterisk , "@*" ) ;
-    ZE( countT , cAtFilesMax ) ;                // AN "AT FILE" IS A FILE THAT CONTAINS AN '@' IMMEDIATELY AFTER THE DAY PREFIX, I.E. A FILE WITH A NAME THAT CONTAINS A FULL TIMESTAMP ; THE DAY CHUNK FILE IS NOT AN AT FILE
     etherC& etPrime = etherC::etPrimeIF() ;
 {
 voidT chunkDayIfF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT cPathsToYearP , strokeS** ppsttPathToYearP , textC& tDayPrefixP )
@@ -2705,11 +2559,10 @@ voidT chunkDayIfF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT cPathsT
 DONE( tmDayZipperF )
 }
     dec02AM( cDayZippersP ) ;
-    if( !bAbortP ) zipDayF( tinP , etThread , bAbortP , cPathsToYearP , ppsttPathToYearP , pTimeWrittenNewestP , tShortDayZipP , tDayPrefixP , offDoP ) ;
+    if( !bAbortP ) zipDayF( tinP , etThread , bAbortP , cPathsToYearP , ppsttPathToYearP , tShortDayZipP , tDayPrefixP , offDoP ) ;
 
-    textC&    tDayPrefixP         =   *(textC*)pTaskP->c8 ;
-    textC&    tShortDayZipP       =   *(textC*)pTaskP->c7 ;
-    timeS*    pTimeWrittenNewestP =    (timeS*)pTaskP->c6 ;
+    textC&    tDayPrefixP         =   *(textC*)pTaskP->c7 ;
+    textC&    tShortDayZipP       =   *(textC*)pTaskP->c6 ;
     strokeS** ppsttPathToYearP    = (strokeS**)pTaskP->c5 ;
     countT    offDoP              =            pTaskP->c4 ;
     countT    cPathsToYearP       =            pTaskP->c3 ;
@@ -2731,7 +2584,7 @@ TASK( tmDayZipperF )
                 {
                 if( POOP )
 
-                ((thirdC&)etherP).setFileTimeF( tinP , fiw , &pTimeWrittenNewestP[ offi ] , &pTimeWrittenNewestP[ offi ] , &pTimeWrittenNewestP[ offi ] ) ;
+                ((thirdC&)etherP).setFileTimeF( tinP , fiw , &timeWrittenNewest , &timeWrittenNewest , &timeWrittenNewest ) ;
             {
             else
             }
@@ -2747,9 +2600,9 @@ TASK( tmDayZipperF )
             SCOOPS
             _IO_
         {
-        IFsCRATCH
+        IFsCRATCH           // EVEN IF bAbortP, I TRY TO SET THE TIMESTAMPS OF THE DAY CHUNK ZIP FILE TO PREVENT A MISTIMED ARCHIVE FILE FROM EXISTING
 
-        etherP.traceF( tinP , T("zipped") ) ;
+        etherP.traceF( tinP , T("maybe zipped") ) ;
 
         }
             }
@@ -2785,18 +2638,150 @@ TASK( tmDayZipperF )
         count4S c4Result ;
         THREADmODE2oN( flTHREADmODE2_ALLOWmULTItHREADEDhOVER | flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-        TN( tPathYear , "" ) ; tPathYear = T(ppsttPathToYearP[offi]) ;
+        if( !timeWrittenNewest || ( offDoP != -1 && offi != offDoP ) ) continue ;     // TIME WILL BE 0 IF NO AT FILES WERE FOUND
 
-        if( !pTimeWrittenNewestP[ offi ] || ( offDoP != -1 && offi != offDoP ) ) continue ;     // TIME WILL BE 0 IF NO AT FILES WERE FOUND
+        }
+            if( idPass == 1 ) cAtFiles = idAtFile ;
+
+            while( ~hFindFile && !POOP ) ;
+            }
+                DEL( pInfoFile ) ;
+                }
+                    }
+                        }
+                            }
+                                }
+                                    }
+                                        etherP.traceF( tinP , T("!exception: could not set file time [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                        bAbortP = 1 ;
+                                        POOPRqUIET
+                                    {
+                                    if( POOP )
+
+                                    ((thirdC&)etherP).setFileTimeF( tinP , fiw , &timeWrittenNewest , &timeWrittenNewest , &timeWrittenNewest ) ;
+                                {
+                                else
+                                }
+                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                    bAbortP = 1 ;
+                                    POOPRqUIET
+                                {
+                                if( POOP )
+
+                                fileC fiw( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+
+                                SCOOPS
+                                _IO_
+                            {
+                            IFsCRATCH
+                        {
+                        else if( cAtFiles > 1 )     // NO NEED TO SET FILE TIME TO NEWEST FILE TIME IF THIS FILE IS ALONE
+                        }
+                            }
+                                etherP.traceF( tinP , T("[timeWritten,timeWrittenNewest]:    ")+TT(timeWritten.time1,timeWritten.time2)+tb4+TT(timeWrittenNewest.time1,timeWrittenNewest.time2) ) ;
+
+                                if( timeWrittenNewest.time2 < timeWritten.time2 || ( timeWrittenNewest.time2 == timeWritten.time2 && timeWrittenNewest.time1 < timeWritten.time1 ) ) timeWrittenNewest = timeWritten ;
+
+                                }
+                                    }
+                                        }
+                                            }
+                                                etherP.traceF( tinP , T("!exception: could not get file time [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                                bAbortP = 1 ;
+                                                POOPRqUIET
+                                            {
+                                            if( POOP )
+
+                                            thirdC::getFileTimeIF( tinP , fir , &timeWritten , 0 , 0 ) ;
+                                        {
+                                        else
+                                        }
+                                            etherP.traceF( tinP , T("!exception: could not open file R R [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                            bAbortP = 1 ;
+                                            POOPRqUIET
+                                        {
+                                        if( POOP )
+
+                                        fileC fir( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+
+                                        SCOOPS
+                                        _IO_
+                                    {
+                                    IFsCRATCH
+                                {
+                                timeS timeWritten = timeS() ;
+                            {
+                            if( !etherP.strIdF( tinP , tDotHeyDot , pInfoFile->psttIfoName , 1 ) )      // IF NOT A CONTROL FILE ; (SUCH FILES ARE USED E.G. TO CONTROL REPORTING OF THE ARCHIVE, CAN BE ADDED TO THE ARCHIVE AT ANY TIME, AND ARE UNRELATED TO THE CONTENT OF THE ARCHIVE, SO SHOULD NOT BE ALLOWED TO AFFECT THE TIMESTAMP OF A DAY CHUNK)
+
+                            idAtFile ++ ;
+                        {
+                        if( idPass == 1 )
+                    {
+                    if( tShort.csF( tinP ) )        // IF NOT A DIRECTORY
+
+                    }
+                        etherP.delF( tinP , psttShort ) ;
+                        etherP.delF( tinP , psttnu ) ;
+                        tShort  = T(psttShort) ;
+                        etherP.strBisectF( tinP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
+                        ZE( strokeS* , psttShort ) ;
+                        ZE( strokeS* , psttnu ) ;
+                    {
+                    TN( tShort , "" ) ;
+                {
+                if( !bAbortP && !etPrime && pInfoFile && pInfoFile->psttIfoName )
+
+                }
+                    }
+                        etherP.strMakeFromOsTextF( tinP , pInfoFile->psttIfoName , iffn ) ; ___( pInfoFile->psttIfoName ) ;
+                        ifFileNameC iffn( tinP , etherP , pInfoFile->postOsName ) ;
+                    {
+                    if( !bAbortP && pInfoFile && !pInfoFile->psttIfoName )
+
+                    }
+                        }
+                            etherP.traceF( tinP , T("!exception: find file failed [like]:    ")+T(osfnLike) ) ;
+                            bAbortP = 1 ;
+                            POOPRqUIET
+                        {
+                        if( POOP )
+
+                        ((thirdC&)*tinP.pEtScratch).dosFindFileOrDirPrivateF( tinP , pInfoFile , hFindFile , osfnLike ) ;
+
+                        SCOOPS
+                        _IO_
+                    {
+                    IFsCRATCH
+
+                    //etherP.traceF( tinP , T("like:    ")+tLike ) ;
+                    osFileNameC osfnLike( tinP , etherP , tLike ) ;
+                    TN( tLike , "" )  ; tLike = tPathYear+tPattern ;
+                {
+                ZE( infoFileS* , pInfoFile ) ;
+            {
+            do
+            handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            ZE( countT , idAtFile ) ;
+
+            if( idPass == 2 && !timeWrittenNewest ) break ;
+        {
+        for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
+        ZE( countT , cAtFiles ) ;                // AN "AT FILE" IS A FILE THAT CONTAINS AN '@' IMMEDIATELY AFTER THE DAY PREFIX, I.E. A FILE WITH A NAME THAT CONTAINS A FULL TIMESTAMP ; THE DAY CHUNK FILE IS NOT AN AT FILE
+        TN( tPattern  , "" ) ; tPattern  = tDayPrefixP+tAtAsterisk ;
+        TN( tPathYear , "" ) ; tPathYear = T(ppsttPathToYearP[offi]) ;
+        timeS timeWrittenNewest = timeS() ;
+        //PASS 1: GET THE MOST RECENT FILE TIME MODIFIED ; PASS 2: SET ALL FILE TIMES TO THE MOST RECENT TIME ; (NOTE: IF A DAY CHUNK ZIP FILE IS BEING UPDATED, EXISTING ITEMS NOT UPDATED WILL RETAIN THEIR EARLIER TIME)
+
         if( etPrime ) break ;
     {
     for( countT offi = 0 ; !bAbortP && offi < cPathsToYearP ; offi ++ )
+    TN( tDotHeyDot , ".!." ) ;
     TN( tAtAsterisk , "@*" ) ;
     TN( tb4  , "    " ) ;
     TN( tb   , " " ) ;
     etherC& etPrime = etherC::etPrimeIF() ;
 {
-voidT zipDayF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT cPathsToYearP , strokeS** ppsttPathToYearP , timeS* pTimeWrittenNewestP , textC& tShortDayZipP , textC& tDayPrefixP , countT offDoP )
+voidT zipDayF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT cPathsToYearP , strokeS** ppsttPathToYearP , textC& tShortDayZipP , textC& tDayPrefixP , countT offDoP )
 
 }
     return pJob1->idName - pJob2->idName ;
