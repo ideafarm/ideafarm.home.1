@@ -11,7 +11,7 @@ REST
 
 }
     }
-        thirdC::osHireThenMonitorIF( tinP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ;
+        if( ifcEXITcODE_EXITpROCESSaOK != thirdC::osHireThenMonitorIF( tinP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ) thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
         etThread.traceF( tinP , T("hiring self [tArgsGross]:    ")+tArgsGross ) ;
 
         TN( tArgsGross , "" ) ; tArgsGross = tArgKeyNameNow+tb+tFile+tb+tArgsNet ;
@@ -28,7 +28,7 @@ REST
 
             __( value ) ;
             etThread.traceF( tinP , T("called  dosExecPgmF [value,file,args]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
-            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet ) ;
+            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet , flPROCESShIRE_VISIBLE ) ;
             tinP.pEtScratch->traceF( tinP , T("calling dosExecPgmF [value,file,args]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
             ZE( countT , value ) ;
 
