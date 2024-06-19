@@ -2561,6 +2561,9 @@ DONE( tmDayZipperF )
     dec02AM( cDayZippersP ) ;
     if( !bAbortP ) zipDayF( tinP , etThread , bAbortP , cPathsToYearP , ppsttPathToYearP , tShortDayZipP , tDayPrefixP , offDoP ) ;
 
+    etThread.traceF( tinP , T("[tPathYear]:    ")+tPathYear ) ;
+    TN( tPathYear , "" ) ; if( offDoP < cPathsToYearP ) tPathYear = T(ppsttPathToYearP[offDoP]) ;
+
     textC&    tDayPrefixP         =   *(textC*)pTaskP->c7 ;
     textC&    tShortDayZipP       =   *(textC*)pTaskP->c6 ;
     strokeS** ppsttPathToYearP    = (strokeS**)pTaskP->c5 ;
@@ -2772,6 +2775,8 @@ TASK( tmDayZipperF )
             do
             handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             ZE( countT , idAtFile ) ;
+
+            etherP.traceF( tinP , T("zipDayF [idPass,path]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear ) ;
 
             if( idPass == 2 && !timeWrittenNewest ) break ;
         {
