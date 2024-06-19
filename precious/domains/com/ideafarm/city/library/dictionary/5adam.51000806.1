@@ -60,7 +60,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                             ether.osSuspendF( tinP ) ;
                             ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
                         {
-                        if( F(flagsMode) & flHEALmODE_FIREoS && !ether )
+                        if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE && !ether )
 
                         etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
                         etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
@@ -71,9 +71,18 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                     case OFFpHASE_GETnAMESoNLY    :
                 {
                 switch( offPhase )
+
+                cConsecutiveAborts = 0 ;
             {
             else
             }
+                }
+                    etThread.osFireF( tinP ) ;
+                    etThread.traceF( tinP , T("too many consecutive aborts, so firing (restarting) os") ) ;
+                    FIREmYSELF
+                {
+                if( ++ cConsecutiveAborts == 8 )
+
                 time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
                 etThread.traceF( tinP , T("this phase was aborted") ) ;
                 // /*if( cYearsInParallelHeal > 1 && 1 == decv02AM( cYearsInParallelHeal ) )*/ cYearsInParallelHeal = 1 ;  // REDUCE cYearsInParallelHeal BUT NOT BELOW 1
@@ -81,6 +90,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                 //20221229@1435: IF ABORT THEN ON NEXT ITERATION PROCESS YEARS SERIALLY
             {
             if( bAbort )
+            static countT cConsecutiveAborts ;
 
             }
                 }
@@ -640,9 +650,9 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
     ZE( sCountT , time2AOK ) ;
     ZE( countT  , time1AOK ) ;
 
-    //etThread.traceF( tinP , T("napped  for a half tick so you can plug in devices to heal") ) ;
-    //++ s ; ether.osSleepF( tinP , TICK >> 1 ) ;
-    //etThread.traceF( tinP , T("napping for a half tick so you can plug in devices to heal") ) ;
+    etThread.traceF( tinP , T("napped  for a half tick so you can plug in devices to heal") ) ;
+    ++ s ; ether.osSleepF( tinP , TICK >> 1 ) ;
+    etThread.traceF( tinP , T("napping for a half tick so you can plug in devices to heal") ) ;
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
     }
@@ -668,20 +678,20 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
     // #if defined( IFC tESTING )
 
     }
-        etThread.traceF( tinP , T("HEALaRCHIVES: [bKeepNames,bFireOs,bStrict,bNoImageCompare,bNoMoveOrReplace,bLonelyIsOk]:    ")+tb4+TF2(bKeepNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bFireOs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bStrict,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bNoImageCompare,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bNoMoveOrReplace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bLonelyIsOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tinP , T("HEALaRCHIVES: [bKeepNames,bHibernateOs,bStrict,bNoImageCompare,bNoMoveOrReplace,bLonelyIsOk]:    ")+tb4+TF2(bKeepNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bHibernateOs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bStrict,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bNoImageCompare,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bNoMoveOrReplace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bLonelyIsOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        boolT bLonelyIsOk       = !!( F(flagsMode) & flHEALmODE_LONELYiSoK         ) ;
-        boolT bNoMoveOrReplace  = !!( F(flagsMode) & flHEALmODE_NOmOVEoRrEPLACE    ) ;
-        boolT bNoImageCompare   = !!( F(flagsMode) & flHEALmODE_NOiMAGEcOMPARE     ) ;
-        boolT bStrict           = !!( F(flagsMode) & flHEALmODE_STRICT             ) ;
-        boolT bFireOs           = !!( F(flagsMode) & flHEALmODE_FIREoS             ) ;
-        boolT bKeepNames        = !!( F(flagsMode) & flHEALmODE_KEEPnAMES          ) ;
+        boolT bLonelyIsOk       = !!( F(flagsMode) & flHEALmODE_LONELYiSoK          ) ;
+        boolT bNoMoveOrReplace  = !!( F(flagsMode) & flHEALmODE_NOmOVEoRrEPLACE     ) ;
+        boolT bNoImageCompare   = !!( F(flagsMode) & flHEALmODE_NOiMAGEcOMPARE      ) ;
+        boolT bStrict           = !!( F(flagsMode) & flHEALmODE_STRICT              ) ;
+        boolT bHibernateOs      = !!( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE ) ;
+        boolT bKeepNames        = !!( F(flagsMode) & flHEALmODE_KEEPnAMES           ) ;
     {
 
     etThread.traceF( tinP , T("HEALaRCHIVES: [cProcessors,cToHireHeal,cToHireCompare]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cToHireHeal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cToHireCompare,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //#endif
-    //    flagsMode &= ~( F(flHEALmODE_FIREoS) ) ;
+    //    flagsMode &= ~( F(flHEALmODE_HIBERNATEoSwHENdONE) ) ;
     //    *(countT*)&cToHireHeal = 0x1 ;
     //#if defined( IFC tESTING )
 
@@ -748,13 +758,13 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
     {
 
     }
-        if( !bNoFireOs ) flagsMode |= flHEALmODE_FIREoS ;
+        if( !bNoHibernateOs ) flagsMode |= flHEALmODE_HIBERNATEoSwHENdONE ;
         #endif
-            bNoFireOs = 1 ;
+            bNoHibernateOs = 1 ;
         #if defined( OVERRIDEnOfIREoS )
-        etThread.delF( tinP , psttHealFireOs ) ;
-        boolT bNoFireOs = psttHealFireOs && etThread.strCompareF( tinP , psttHealFireOs , T("no") ) ;
-        ZE( strokeS* , psttHealFireOs ) ; etThread.querySettingF( tinP , psttHealFireOs , T("!ipdos.healfireos")  ) ; ___( psttHealFireOs ) ;
+        etThread.delF( tinP , psttHealHibernateOs ) ;
+        boolT bNoHibernateOs = psttHealHibernateOs && etThread.strCompareF( tinP , psttHealHibernateOs , T("no") ) ;
+        ZE( strokeS* , psttHealHibernateOs ) ; etThread.querySettingF( tinP , psttHealHibernateOs , T("!ipdos.healhibernateos")  ) ; ___( psttHealHibernateOs ) ;
     {
 
     }
@@ -2651,7 +2661,7 @@ TASK( tmDayZipperF )
         count4S c4Result ;
         THREADmODE2oN( flTHREADmODE2_ALLOWmULTItHREADEDhOVER | flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-        if( !timeWrittenNewest || ( offDoP != -1 && offi != offDoP ) ) continue ;     // TIME WILL BE 0 IF NO AT FILES WERE FOUND
+        if( !timeWrittenNewest ) continue ;     // TIME WILL BE 0 IF NO AT FILES WERE FOUND
 
         }
             if( idPass == 1 ) cAtFiles = idAtFile ;
@@ -2787,6 +2797,7 @@ TASK( tmDayZipperF )
         timeS timeWrittenNewest = timeS() ;
         //PASS 1: GET THE MOST RECENT FILE TIME MODIFIED ; PASS 2: SET ALL FILE TIMES TO THE MOST RECENT TIME ; (NOTE: IF A DAY CHUNK ZIP FILE IS BEING UPDATED, EXISTING ITEMS NOT UPDATED WILL RETAIN THEIR EARLIER TIME)
 
+        if( offDoP != -1 && offi != offDoP ) continue ;
         if( etPrime ) break ;
     {
     for( countT offi = 0 ; !bAbortP && offi < cPathsToYearP ; offi ++ )
@@ -4974,13 +4985,13 @@ struct paramHealFileS
 
 #define CtRIESiFnOTsTRICT   ( TUCK >> 5 )
 
-#define flHEALmODE_LONELYiSoK         0xe00020ff
-#define flHEALmODE_NOmOVEoRrEPLACE    0xe00010ff
-#define flHEALmODE_NOiMAGEcOMPARE     0xe00008ff
-#define flHEALmODE_STRICT             0xe00004ff
-#define flHEALmODE_FIREoS             0xe00002ff
-#define flHEALmODE_KEEPnAMES          0xe00001ff
-#define flHEALmODE_null               0xe00000ff
+#define flHEALmODE_LONELYiSoK          0xe00020ff
+#define flHEALmODE_NOmOVEoRrEPLACE     0xe00010ff
+#define flHEALmODE_NOiMAGEcOMPARE      0xe00008ff
+#define flHEALmODE_STRICT              0xe00004ff
+#define flHEALmODE_HIBERNATEoSwHENdONE 0xe00002ff
+#define flHEALmODE_KEEPnAMES           0xe00001ff
+#define flHEALmODE_null                0xe00000ff
 
 #define FUNNELhORNcAPACITY       ( TUCK )
 
