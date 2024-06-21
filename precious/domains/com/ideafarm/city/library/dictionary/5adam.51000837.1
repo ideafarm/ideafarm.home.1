@@ -22,6 +22,8 @@ etThread.delF( tinP , pbi1 ) ;
         }
             pbc1 += sizeof( count01T ) ;
             etThread.traceF( tinP , T("++++ [signature]:    ")+TF2(*(count02T*)pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN) ) ;
+
+            if( offWoth > offNow && offWoth - offNow < sizeof( count01T ) ) etThread.traceF( tinP , T("the woth difference is within this signature") ) ;
         {
         default :
         }
@@ -31,6 +33,8 @@ etThread.delF( tinP , pbi1 ) ;
             pEE1 = (endEntryS*)pbc1 ; pbc1 += sizeof( endEntryS ) ;
             static endEntryS* pEE2 ;
             static endEntryS* pEE1 ;
+
+            if( offWoth > offNow && offWoth - offNow < sizeof( endEntryS ) ) etThread.traceF( tinP , T("the woth difference is within this endEntryS") ) ;
         {
         case 0x06054b50 :
         }
@@ -112,6 +116,9 @@ etThread.delF( tinP , pbi1 ) ;
             pFE1 = (fileEntryS*)pbc1 ; pbc1 += sizeof( fileEntryS ) ;
             static fileEntryS* pFE2 ;
             static fileEntryS* pFE1 ;
+
+                etThread.traceF( tinP , T("the woth difference is within this fileEntryS") ) ;
+            if( offWoth > offNow && offWoth - offNow < sizeof( fileEntryS ) )
         {
         case 0x02014b50 :
         }
@@ -135,11 +142,14 @@ etThread.delF( tinP , pbi1 ) ;
             pLFH1 = (localFileHeaderS*)pbc1 ; pbc1 += sizeof( localFileHeaderS ) ;
             static localFileHeaderS* pLFH2 ;
             static localFileHeaderS* pLFH1 ;
+
+            if( offWoth > offNow && offWoth - offNow < sizeof( localFileHeaderS ) ) etThread.traceF( tinP , T("the woth difference is within this localFileHeaderS") ) ;
         {
         case 0x04034b50 :
     {
     switch( *(count02T*)pbc1 )
-    etThread.traceF( tinP , T("++++ [offWoth,off,diff,cbRemaining]:    ")+TF2(offWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbc1-pbi1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tb4+TF2(offWoth-(pbc1-pbi1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbe1-pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinP , T("++++ [offNow,offWoth,diff,cbRemaining]:    ")+TF2(offNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offWoth-(pbc1-pbi1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbe1-pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    countT offNow = pbc1-pbi1 ;
 
     const byteT* pbSave2 = pbc2 ;
     const byteT* pbSave1 = pbc1 ;
@@ -181,8 +191,8 @@ ZE( countT , cbi1 ) ;
 ZE( byteT* , pbi1 ) ;
 
 TN( tb4 , "    " ) ;
-TN( tZip2 , "///e/2.fset.zip" ) ;
-TN( tZip1 , "///e/1.fset.zip" ) ;
+TN( tZip2 , "///e/2.zip" ) ;
+TN( tZip1 , "///e/1.zip" ) ;
 
 TODO
 

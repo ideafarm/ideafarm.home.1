@@ -2942,7 +2942,7 @@
 0x00000b7e , "\0\0\0\0voidT thirdC::openSslCrypto_getPublicKeyBase64IF( tinS& tinP , osTextT* const postaP , const countT costaP , osTextT* const postaTmpP , const countT costaTmpP , handleC& handleP )" ,
 0x00000b7f , "\0\0\0\0voidT thirdC::openSslCrypto_getPrivateKeyBase64IF( tinS& tinP , osTextT* const postaP , const countT costaP , osTextT* const postaTmpP , const countT costaTmpP , handleC& handleP )" ,
 0x00000b80 , "\0\0\0\0voidT thirdC::dosCreatePathIF( tinS& tinP , osTextT* const postP )" ,
-0x00000b81 , "\0\0\0\0voidT thirdC::osHireThenMonitorIF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP )" ,
+0x00000b81 , "\0\0\0\0countT thirdC::osHireThenMonitorIF( tinS& tinP , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP )" ,
 0x00000b82 , "\0\0\0\0etherC& etherC::etThreadIF( tinS& tinP )" ,
 0x00000b83 , "\0\0\0\0countT& etherC::os_cAllKidThreadsI_IF( tinS& tinP )" ,
 0x00000b84 , "\0\0\0\0etherC& etherC::etPrimeIF( tinS& tinP )" ,

@@ -47,7 +47,57 @@ REST
         }
             }
                 etThread.traceF( tinP , T("incremented  [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
+
+//if( offPhase == OFFpHASE_CHUNKfILESbYdAY ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; CHUNKING IS SKIPPED ONLY FOR TESTING ZAPaRCHIVEbITS
+
+                }
+                    offPhase = ++ offPhase % CpHASES ;
+
+                    }
+                        }
+                            }
+                                etThread.osFireF( tinP ) ;
+                                etThread.traceF( tinP , T("too many consecutive aborts, so firing (restarting) os") ) ;
+                                FIREmYSELF
+                            {
+                            if( ++ cConsecutiveAborts == 8 )
+
+                            time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
+                            etThread.traceF( tinP , T("this phase was aborted") ) ;
+                            //CS:DUPLICATEcODE 51000806 51000806
+                        {
+                        if( bAbort )
+
+                        }
+                            ++ s ; etThread.osSleepF( tinP , TOCK >> 2 ) ;
+                        {
+                        while( cAttributeZappers )
+                        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+                        while( ~hWalk ) ;
+                        }
+                            etThread.osThreadF( TaRG1( tmAttributeZapperF ) , (countT)&cAttributeZappers , (countT)&bAbort , (countT)psttp ) ;
+                            inc02AM( cAttributeZappers ) ;
+
+                            etThread.strMakeF( tinP , LF , psttp , psttzp ) ; ___( psttp ) ;
+                            ZE( strokeS* , psttp ) ;
+
+                            etThread.traceF( tinP , T("[path to archives]:    ")+T(psttzp) ) ;
+                            strokeS* psttzp = (strokeS*)stPathToArchives.downF( tinP , hWalk ) ;
+                        {
+                        do
+                        handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        ZE( countT , cAttributeZappers ) ;
+                    {
+                    if( stPathToArchives )
+
+                    etThread.traceF( tinP , T("zapping all base os file attribute bits in every archive folder") ) ;
+                {
+
+                if( offPhase == OFFpHASE_ZAPfILEaTTRIBUTES )
+
+//if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; HEALING IS SKIPPED ONLY FOR MIGRATING ALREADY HEALED ARCHIVE TO USE CHUNKED FILES
+
                 offPhase = ++ offPhase % CpHASES ;
                 etThread.traceF( tinP , T("incrementing [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
@@ -66,9 +116,10 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                         etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
                         time2AOK = time1AOK = 0 ;
                     {
-                    case OFFpHASE_CHUNKfILESbYdAY :
-                    case OFFpHASE_HEAL            : { time2AOK = time1AOK = 0 ; break ; }       // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
-                    case OFFpHASE_GETnAMESoNLY    :
+                    case OFFpHASE_CHUNKfILESbYdAY   :
+                    case OFFpHASE_HEAL              : { time2AOK = time1AOK = 0 ; break ; }       // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
+                    case OFFpHASE_GETnAMESoNLY      :
+                    // OFFpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE THAT PHASE IS DONE WITHIN THE CURRENT LOOP
                 {
                 switch( offPhase )
 
@@ -88,6 +139,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                 // /*if( cYearsInParallelHeal > 1 && 1 == decv02AM( cYearsInParallelHeal ) )*/ cYearsInParallelHeal = 1 ;  // REDUCE cYearsInParallelHeal BUT NOT BELOW 1
                 //20230106@1137: NAWWH; ABORT IS NOW DONE ROUTINELY BY PAUSE/RESUME, SO DOES NOT IMPLY FAILURE
                 //20221229@1435: IF ABORT THEN ON NEXT ITERATION PROCESS YEARS SERIALLY
+                //CS:DUPLICATEcODE 51000806 51000806
             {
             if( bAbort )
             static countT cConsecutiveAborts ;
@@ -169,7 +221,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                                             ? CyEARSiNpARALLELcHUNKfILESbYdAY
                                         : offPhase == OFFpHASE_CHUNKfILESbYdAY
                                         ? CyEARSiNpARALLELgETnAMESoNLY
-                                    countT test = offPhase == OFFpHASE_GETnAMESoNLY
+                                    countT test = offPhase == OFFpHASE_GETnAMESoNLY                     // OFFpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE tmExecutiveHealYearF IS NOT USED DURING THAT PHASE
 
                                     _IO_
                                 {
@@ -268,7 +320,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                                 patternC pat( tinP , etThread , tYearPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                                 ZE( strokeS* , pstt1PathToYear ) ;
 
-                                etThread.traceF( tinP , T("[tPathToArchive]:    ")+tPathToArchive ) ;
+                                //etThread.traceF( tinP , T("[tPathToArchive]:    ")+tPathToArchive ) ;
                                 TN( tPathToArchive , "" ) ; tPathToArchive = T(psttzPathToArchives)+T(psttzArchive)+tSlash ;
                                 strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveName.downF( tinP , hSwsPathToArchives ) ;
                                 _IO_
@@ -302,13 +354,13 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                 #endif
                     TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
                 #else
-                      TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
+                    //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
                     //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
                     //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
                     //TN( tYearPattern , "2012/" ) ;
-                    //TN( tYearPattern , "1999/" ) ;
+                      TN( tYearPattern , "1999/" ) ;
                     //TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
                 _IO_
@@ -345,8 +397,16 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                     etThread.delF( tinP , pstt1ArchivesAll ) ;
                     }
                         swsPathToArchivesByArchiveName.sinkF( tinP , countTC() , psttPathArchives ) ;                           // EXAMPLE: "///c/ipdos.arhives/"
-
                         psttzArchive = tArchive ;
+
+                        }
+                            if( !ids ) etThread.delF( tinP , psttp ) ;
+                            stPathToArchives.sinkF( tinP , ids , psttp , flSTACKsINK_UNIQUE ) ;
+                            ZE( countT , ids ) ;
+                            etThread.strMakeF( tinP , LF , psttp , psttPathArchives ) ; ___( psttp ) ;
+                            ZE( strokeS* , psttp ) ;
+                        {
+
 
                         //etThread.traceF( tinP , T("    [tPathArchives,tArchive]:    ")+T(psttPathArchives)+tb4+tArchive ) ;
 
@@ -390,7 +450,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
                     boolT bTest1 =  cArchive < 2 ;
                     _IO_
                 {
-                if( !bAbort )
+                if( !bAbort && pstt1ArchivesAll )
 
                 }
                     while( ~hWalk ) ;
@@ -600,6 +660,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
             TN( tLikeArchives1 , "///?/ideafarm.archives/" ) ;
             ZE( strokeS* , pstt1ArchivesAllLag ) ;
 
+            stackC        stPathToArchives( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
             switchStackC swsPathToArchivesByArchiveName( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzArchive , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
             ZE( strokeS* , psttzArchive ) ;
             // LOAD swsPathToArchivesByArchiveName WITH VALUES LIKE "///c/ideafarm.arhives/" OR "///ideafarm/devices/mydevname/ideafarm.archives/" SWITCHED ON VALUES LIKE "wo.ideafarm"
@@ -610,7 +671,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
         }
             }
                 if( !bWaitWoDay ) etThread.traceF( tinP , T("napped") ) ;
-                ++ s ; ether.osSleepF( tinP , TICK >> 6 ) ;
+//                ++ s ; ether.osSleepF( tinP , TICK >> 6 ) ;
                 cNaps ++ ;
                 if( !cNaps ) etThread.traceF( tinP , T(bWaitWoDay?"napping for a day":"napping for a quarter minute") ) ;
                 _IO_
@@ -651,7 +712,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
     ZE( countT  , time1AOK ) ;
 
     etThread.traceF( tinP , T("napped  for a half tick so you can plug in devices to heal") ) ;
-    ++ s ; ether.osSleepF( tinP , TICK >> 1 ) ;
+//    ++ s ; ether.osSleepF( tinP , TICK >> 1 ) ;
     etThread.traceF( tinP , T("napping for a half tick so you can plug in devices to heal") ) ;
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
@@ -798,6 +859,54 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = OFFpHASE_CHUNKfILESbYdAY ;
     _IO_
 {
 TODO
+
+DONE( tmAttributeZapperF )
+}
+    dec02AM( cAttributeZappersP ) ;
+
+    etThread.delF( tinP , psttpP ) ;
+    }
+        }
+            etThread.traceF( tinP , T(!bFail?"zapped file attributes aok  [tCmd]:    ":"zapped file attributes FAIL [tCmd]:    ")+tCmd ) ;
+            }
+                }
+                    bAbortP = bFail = 1 ;
+                    etThread.traceF( tinP , T("!exception: could not zap all file attributes [path]:    ")+T(psttpP) ) ;
+                    POOPRqUIET
+                {
+                if( POOP )
+
+                __( thirdC::c_systemIF( tinP , tCmd ) ) ;
+
+                SCOOPS
+            {
+            IFsCRATCH
+            ZE( boolT , bFail ) ;
+
+            etThread.traceF( tinP , T("zapping file attributes      [tCmd]:    ")+tCmd ) ;
+            TN( tCmd , "attrib -r -a -s -h -o -i -x -p -u " ) ; tCmd += T(osfn)+T(" /d") ;       // RESET ALL ATTRIBUTE BITS FOR ALL FOLDERS AND FILES, INCLUDING IN ALL SUBFOLDERS
+
+            etThread.delF( tinP , psttNoSlash ) ;
+            osFileNameC osfn( tinP , etThread , T(psttNoSlash) ) ;
+
+            etThread.strSubstringF( tinP , psttNoSlash , idf , idl , psttpP , 0 ) ; ___( psttNoSlash ) ;
+            ZE( strokeS* , psttNoSlash ) ;
+            countT idl = psttpP->idAdam - 1 ;
+            countT idf = 1 ;
+        {
+        if( !POOP )
+
+        __( psttpP->idAdam < 2 ) ;
+    {
+    if( !POOP && !bAbortP )
+    __Z( psttpP ) ;
+
+    strokeS*  psttpP              =  (strokeS*)pTaskP->c3 ;
+    boolT&    bAbortP             =   *(boolT*)pTaskP->c2 ;
+    countT&   cAttributeZappersP  =  *(countT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+TASK( tmAttributeZapperF )
 
 DONE( tmReportF )
 }
@@ -1502,6 +1611,7 @@ DONE( tmExecutiveHealYearF )
                         _IO_
                     {
                     case 1 + OFFpHASE_HEAL :
+                    // OFFpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE tmExecutiveHealYearF IS NOT USED DURING THAT PHASE
                 {
                 if( !bAbortP && !POOP ) switch( idPhaseP )
 
@@ -4869,11 +4979,12 @@ struct jobHealFileS
 {
 struct paramHealFileS
 
-#define OFFpHASE_CHUNKfILESbYdAY 0x2
-#define OFFpHASE_HEAL            0x1
-#define OFFpHASE_GETnAMESoNLY    0x0
+#define OFFpHASE_CHUNKfILESbYdAY   0x3
+#define OFFpHASE_ZAPfILEaTTRIBUTES 0x2
+#define OFFpHASE_HEAL              0x1
+#define OFFpHASE_GETnAMESoNLY      0x0
 
-#define CpHASES 3
+#define CpHASES 4
 
 #define IDtYPEjOB_COPY       0x3
 #define IDtYPEjOB_MOVEuNIQUE 0x2
