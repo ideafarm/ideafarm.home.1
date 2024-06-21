@@ -48,54 +48,6 @@ REST
             }
                 etThread.traceF( tinP , T("incremented  [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-if( offPhase == OFFpHASE_CHUNKfILESbYdAY ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; CHUNKING IS SKIPPED ONLY FOR TESTING ZAPaRCHIVEbITS
-
-                }
-                    offPhase = ++ offPhase % CpHASES ;
-
-                    }
-                        }
-                            }
-                                etThread.osFireF( tinP ) ;
-                                etThread.traceF( tinP , T("too many consecutive aborts, so firing (restarting) os") ) ;
-                                FIREmYSELF
-                            {
-                            if( ++ cConsecutiveAborts == 8 )
-
-                            time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
-                            etThread.traceF( tinP , T("this phase was aborted") ) ;
-                            //CS:DUPLICATEcODE 51000806 51000806
-                        {
-                        if( bAbort )
-
-                        }
-                            ++ s ; etThread.osSleepF( tinP , TOCK >> 2 ) ;
-                        {
-                        while( cAttributeZappers )
-                        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-
-                        while( ~hWalk ) ;
-                        }
-                            etThread.osThreadF( TaRG1( tmAttributeZapperF ) , (countT)&cAttributeZappers , (countT)&bAbort , (countT)psttp ) ;
-                            inc02AM( cAttributeZappers ) ;
-
-                            etThread.strMakeF( tinP , LF , psttp , psttzp ) ; ___( psttp ) ;
-                            ZE( strokeS* , psttp ) ;
-
-                            etThread.traceF( tinP , T("[path to archives]:    ")+T(psttzp) ) ;
-                            strokeS* psttzp = (strokeS*)stPathToArchives.downF( tinP , hWalk ) ;
-                        {
-                        do
-                        handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                        ZE( countT , cAttributeZappers ) ;
-                    {
-                    if( stPathToArchives )
-
-                    etThread.traceF( tinP , T("zapping all base os file attribute bits in every archive folder") ) ;
-                {
-
-                if( offPhase == OFFpHASE_ZAPfILEaTTRIBUTES )
-
 if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; HEALING IS SKIPPED ONLY FOR MIGRATING ALREADY HEALED ARCHIVE TO USE CHUNKED FILES
 
                 offPhase = ++ offPhase % CpHASES ;
@@ -360,8 +312,8 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
                     //TN( tYearPattern , "2012/" ) ;
-                      TN( tYearPattern , "1999/" ) ;
-                    //TN( tYearPattern , "1234/" ) ;
+                    //TN( tYearPattern , "1999/" ) ;
+                      TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
                 _IO_
             {
@@ -859,55 +811,6 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE
     _IO_
 {
 TODO
-
-DONE( tmAttributeZapperF )
-}
-    dec02AM( cAttributeZappersP ) ;
-
-    etThread.delF( tinP , psttpP ) ;
-    }
-        }
-            etThread.traceF( tinP , T(!bFail?"zapped file attributes aok  [tCmd]:    ":"zapped file attributes FAIL [tCmd]:    ")+tCmd ) ;
-            }
-                }
-                    bAbortP = bFail = 1 ;
-                    etThread.traceF( tinP , T("!exception: could not zap all file attributes [path]:    ")+T(psttpP) ) ;
-                    POOPRqUIET
-                {
-                if( POOP )
-
-                __( thirdC::c_systemIF( tinP , tCmd ) ) ;
-
-                SCOOPS
-            {
-            IFsCRATCH
-            ZE( boolT , bFail ) ;
-
-            etThread.traceF( tinP , T("zapping file attributes      [tCmd]:    ")+tCmd ) ;
-            TN( tCmd , "attrib -r -a -s -h -o -i -x -p -u " ) ; tCmd += T(osfn)+T(" /d") ;       // RESET ALL ATTRIBUTE BITS FOR ALL FOLDERS AND FILES, INCLUDING IN ALL SUBFOLDERS
-
-            etThread.delF( tinP , psttNoSlash ) ;
-            osFileNameC osfn( tinP , etThread , T(psttNoSlash) ) ;
-
-            //U::PROD: etThread.strSubstringF( tinP , psttNoSlash , idf , idl , psttpP , 0 ) ; ___( psttNoSlash ) ;
-etThread.strSubstringF( tinP , psttNoSlash , idf , idl , T(psttpP)+T("wo.ideafarm/1999/") , 0 ) ; ___( psttNoSlash ) ;
-            ZE( strokeS* , psttNoSlash ) ;
-            countT idl = psttpP->idAdam - 1 ;
-            countT idf = 1 ;
-        {
-        if( !POOP )
-
-        __( psttpP->idAdam < 2 ) ;
-    {
-    if( !POOP && !bAbortP )
-    __Z( psttpP ) ;
-
-    strokeS*  psttpP              =  (strokeS*)pTaskP->c3 ;
-    boolT&    bAbortP             =   *(boolT*)pTaskP->c2 ;
-    countT&   cAttributeZappersP  =  *(countT*)pTaskP->c1 ;
-{
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
-TASK( tmAttributeZapperF )
 
 DONE( tmReportF )
 }
@@ -2785,6 +2688,47 @@ TASK( tmDayZipperF )
                         }
                             }
                                 }
+                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                    bAbortP = 1 ;
+                                    POOPRqUIET
+                                {
+                                if( POOP )
+
+                                }
+                                    }
+                                        etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                        bAbortP = 1 ;
+                                        POOPRqUIET
+                                    {
+                                    if( POOP )
+                                    tinP.pEtScratch->diskFileSetAttrF( tinP , pInfoFile->psttIfoName , flagsAttributeNow ) ;
+                                {
+                                if( flagsAttributeNow != flagsAttributeWas )
+
+                                  flagsAttributeNow &= ~( F(flFILEaTTR_ARCHIVE      ) ) ;
+                                //flagsAttributeNow &= ~( F(flFILEaTTR_COMPRESSED   ) ) ;
+                                //flagsAttributeNow &= ~( F(flFILEaTTR_DIRECTORY    ) ) ;
+                                //flagsAttributeNow &= ~( F(flFILEaTTR_DOTdIRECTORY ) ) ;
+                                  flagsAttributeNow &= ~( F(flFILEaTTR_SYSTEM       ) ) ;
+                                  flagsAttributeNow &= ~( F(flFILEaTTR_HIDDEN       ) ) ;
+                                  flagsAttributeNow &= ~( F(flFILEaTTR_READoNLY     ) ) ;
+                                //flagsAttributeNow &= ~( F(flFILEaTTR_NORMAL       ) ) ;
+
+                                //CS:CODEsYNC: 51000806 1120000b
+
+                                flagsT flagsAttributeNow  = flagsAttributeWas ;
+
+                                etherP.traceF( tinP , T("[flagsAttributeWas]:    ")+TF3(flagsAttributeWas,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                                flagsT flagsAttributeWas = tinP.pEtScratch->diskFileQueryAttrF( tinP , pInfoFile->psttIfoName ) ;
+
+                                SCOOPS
+                                _IO_
+                            {
+                            IFsCRATCH
+
+                            }
+                                }
+#endif
                                     }
                                         etherP.traceF( tinP , T("!exception: could not set file time [name]:    ")+T(pInfoFile->psttIfoName) ) ;
                                         bAbortP = 1 ;
@@ -2793,6 +2737,8 @@ TASK( tmDayZipperF )
                                     if( POOP )
 
                                     ((thirdC&)etherP).setFileTimeF( tinP , fiw , &timeWrittenNewest , &timeWrittenNewest , &timeWrittenNewest ) ;
+#if defined( NEVERdEFINED )
+//U::SUPPRESS ONLY FOR TESTING
                                 {
                                 else
                                 }
