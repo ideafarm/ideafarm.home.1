@@ -37,3 +37,4 @@ del %2
 echo deleted %2
 
 :FIN
+shutdown /h

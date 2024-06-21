@@ -48,7 +48,7 @@ REST
             }
                 etThread.traceF( tinP , T("incremented  [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-//if( offPhase == OFFpHASE_CHUNKfILESbYdAY ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; CHUNKING IS SKIPPED ONLY FOR TESTING ZAPaRCHIVEbITS
+if( offPhase == OFFpHASE_CHUNKfILESbYdAY ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; CHUNKING IS SKIPPED ONLY FOR TESTING ZAPaRCHIVEbITS
 
                 }
                     offPhase = ++ offPhase % CpHASES ;
@@ -96,7 +96,7 @@ REST
 
                 if( offPhase == OFFpHASE_ZAPfILEaTTRIBUTES )
 
-//if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; HEALING IS SKIPPED ONLY FOR MIGRATING ALREADY HEALED ARCHIVE TO USE CHUNKED FILES
+if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; HEALING IS SKIPPED ONLY FOR MIGRATING ALREADY HEALED ARCHIVE TO USE CHUNKED FILES
 
                 offPhase = ++ offPhase % CpHASES ;
                 etThread.traceF( tinP , T("incrementing [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -889,7 +889,8 @@ DONE( tmAttributeZapperF )
             etThread.delF( tinP , psttNoSlash ) ;
             osFileNameC osfn( tinP , etThread , T(psttNoSlash) ) ;
 
-            etThread.strSubstringF( tinP , psttNoSlash , idf , idl , psttpP , 0 ) ; ___( psttNoSlash ) ;
+            //U::PROD: etThread.strSubstringF( tinP , psttNoSlash , idf , idl , psttpP , 0 ) ; ___( psttNoSlash ) ;
+etThread.strSubstringF( tinP , psttNoSlash , idf , idl , T(psttpP)+T("wo.ideafarm/1999/") , 0 ) ; ___( psttNoSlash ) ;
             ZE( strokeS* , psttNoSlash ) ;
             countT idl = psttpP->idAdam - 1 ;
             countT idf = 1 ;
@@ -5106,7 +5107,7 @@ struct paramHealFileS
 
 #define FUNNELhORNcAPACITY       ( TUCK )
 
-//#define IFCtESTING
+#define IFCtESTING
 
 //#define OVERRIDElONELYiSoK
 //#define OVERRIDEkEEPnAMES
