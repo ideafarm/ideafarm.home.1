@@ -42,7 +42,7 @@
                 pInfoFileP->cbAllocated         = - 1 ;
                 pInfoFileP->cbUsedHigh          = info.nFileSizeHigh ;
                 pInfoFileP->cbUsed              = info.nFileSizeLow ;
-                pInfoFileP->flags               = fileAttrIfFromOsIF( tinP , info.dwFileAttributes ) ;
+                pInfoFileP->flags               = fileAttrIfFromOs1IF( tinP , info.dwFileAttributes ) ;
 
             #elif defined( __NT__ )
 
@@ -65,7 +65,7 @@
                 pInfoFileP->cbAllocated         = info.cbFileAlloc ;
                 pInfoFileP->cbUsedHigh          = 0 ;
                 pInfoFileP->cbUsed              = info.cbFile ;
-                pInfoFileP->flags               = fileAttrIfFromOsIF( tinP , info.attrFile ) ;
+                pInfoFileP->flags               = fileAttrIfFromOs1IF( tinP , info.attrFile ) ;
 
             #ifdef __OS2__
         {

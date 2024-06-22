@@ -20,11 +20,11 @@ etThread.diskFileOrDirDeleteF( tinP , T(FILEnAME) ) ;
 etThread.fileReadF( tinP , posti100 , sizeof posti100 , handle , 1 ) ;
 etThread.memSetF( tinP , posti100 , sizeof posti100 ) ;
 osTextT posti100[ 0x100 ] ;
-etThread.fileOpenF( tinP , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 1 ) ;
+etThread.fileOpenF( tinP , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 0 , 1 ) ;
 idResult = 0 ;
 
 etThread.fileWriteF( tinP , handle , "this text will go into the file" ) ;
-etThread.fileOpenF( tinP , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 1 ) ;
+etThread.fileOpenF( tinP , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 0 , 1 ) ;
 ZE( countT , idResult ) ;
 handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 

@@ -17,7 +17,7 @@
     ether.diskFileQueryF( tinP , pInfoFile , handle ) ; ___( pInfoFile ) ;
     }
         ether.delF( tinP , psttMapped ) ;
-        ether.fileOpenF( tinP , handle , flagsResult , psttMapped , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , 0 , 0 , cOpenTries ) ;  //20230604@1409: ifcOPENsHARE_WR <- ifcOPENsHARE_R W/O ANALYSIS SO CAN INPUT A bookC FILE ; WITH THIS CHANGE, CALLER IS REPONSIBLE FOR HANDLING A FILE WITH VOLATILE CONTENT OR LENGTH
+        ether.fileOpenF( tinP , handle , flagsResult , psttMapped , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , 0 , 0 , 0 , cOpenTries ) ;  //20230604@1409: ifcOPENsHARE_WR <- ifcOPENsHARE_R W/O ANALYSIS SO CAN INPUT A bookC FILE ; WITH THIS CHANGE, CALLER IS REPONSIBLE FOR HANDLING A FILE WITH VOLATILE CONTENT OR LENGTH
         ether.diskMakeDirIfNeededF( tinP , psttMapped ) ;
         ZE( countT , flagsResult ) ;
         ether.diskMapFileNameF( tinP , psttMapped , psttAll ) ; ___( psttMapped ) ;

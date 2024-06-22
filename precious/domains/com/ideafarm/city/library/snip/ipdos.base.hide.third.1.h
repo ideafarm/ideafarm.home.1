@@ -1,4 +1,85 @@
 
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.1100000b.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.c100104.1.1.0.html\"\>c100104:  WAKEsHOW( "example.simplest.snip.1100000b.flFILEaTTR" )\</A\>
+*/
+/**/
+
+/*1*//*FILE_ATTRIBUTE*//*1*/
+
+#ifdef __OS2__
+
+
+#elif defined( __NT__ )
+
+    // AS DEFINED, AS OF 20240621, IN ///ideafarm/precious/domains/com/ideafarm/city/workshop/watcom/h/nt/winnt.h
+    #define FILE_ATTRIBUTE_READONLY              0x00000001L
+    #define FILE_ATTRIBUTE_HIDDEN                0x00000002L
+    #define FILE_ATTRIBUTE_SYSTEM                0x00000004L
+    #define FILE_ATTRIBUTE_DIRECTORY             0x00000010L
+    #define FILE_ATTRIBUTE_ARCHIVE               0x00000020L
+    #define FILE_ATTRIBUTE_DEVICE                0x00000040L
+    #define FILE_ATTRIBUTE_NORMAL                0x00000080L
+    #define FILE_ATTRIBUTE_TEMPORARY             0x00000100L
+    #define FILE_ATTRIBUTE_SPARSE_FILE           0x00000200L
+    #define FILE_ATTRIBUTE_REPARSE_POINT         0x00000400L
+    #define FILE_ATTRIBUTE_COMPRESSED            0x00000800L
+    #define FILE_ATTRIBUTE_OFFLINE               0x00001000L
+    #define FILE_ATTRIBUTE_NOT_CONTENT_INDEXED   0x00002000L
+    #define FILE_ATTRIBUTE_ENCRYPTED             0x00004000L
+    #define FILE_ATTRIBUTE_VIRTUAL               0x00010000L
+
+    // AS DEFINED, AS OF 20240621, IN https://learn.microsoft.com/en-us/windows/win32/fileio/file-attribute-constants
+    #define FILE_ATTRIBUTE_READONLY              0x00000001L
+    #define FILE_ATTRIBUTE_HIDDEN                0x00000002L
+    #define FILE_ATTRIBUTE_SYSTEM                0x00000004L
+    #define FILE_ATTRIBUTE_DIRECTORY             0x00000010L
+    #define FILE_ATTRIBUTE_ARCHIVE               0x00000020L
+    #define FILE_ATTRIBUTE_DEVICE                0x00000040L
+    #define FILE_ATTRIBUTE_NORMAL                0x00000080L
+    #define FILE_ATTRIBUTE_TEMPORARY             0x00000100L
+    #define FILE_ATTRIBUTE_SPARSE_FILE           0x00000200L
+    #define FILE_ATTRIBUTE_REPARSE_POINT         0x00000400L
+    #define FILE_ATTRIBUTE_COMPRESSED            0x00000800L
+    #define FILE_ATTRIBUTE_OFFLINE               0x00001000L
+    #define FILE_ATTRIBUTE_NOT_CONTENT_INDEXED   0x00002000L
+    #define FILE_ATTRIBUTE_ENCRYPTED             0x00004000L
+    #define FILE_ATTRIBUTE_INTEGRITY_STREAM      0x00008000L
+    #define FILE_ATTRIBUTE_VIRTUAL               0x00010000L
+    #define FILE_ATTRIBUTE_NO_SCRUB_DATA         0x00020000L
+    #define FILE_ATTRIBUTE_EA                    0x00040000L
+    #define FILE_ATTRIBUTE_PINNED                0x00080000L
+    #define FILE_ATTRIBUTE_UNPINNED              0x00100000L
+    #define FILE_ATTRIBUTE_RECALL_ON_OPEN        0x00040000L
+    #define FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS 0x00400000L
+
+#endif
+
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+
+#define flFILEaTTR2_RECALL_ON_DATA_ACCESS        0xe00008ff
+#define flFILEaTTR2_RECALL_ON_OPEN               0xe00004ff
+#define flFILEaTTR2_UNPINNED                     0xe00002ff
+#define flFILEaTTR2_null                         0xe00000ff
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -873,16 +954,28 @@ examples
 /**/
 /*1*//*flFILEaTTR*//*1*/
 /*3*/
-#define flFILEaTTR_NORMAL                       0xe0000103
-#define flFILEaTTR_READoNLY                     0xe0000203
-#define flFILEaTTR_HIDDEN                       0xe0000403
-#define flFILEaTTR_SYSTEM                       0xe0000803
-#define flFILEaTTR_DOTdIRECTORY                 0xe0001003
-#define flFILEaTTR_DIRECTORY                    0xe0002003
-#define flFILEaTTR_ARCHIVE                      0xe0004003
-#define flFILEaTTR_COMPRESSED                   0xe0008003
+#define flFILEaTTR1_NORMAL                       0xe0000103
+#define flFILEaTTR1_READoNLY                     0xe0000203
+#define flFILEaTTR1_HIDDEN                       0xe0000403
+#define flFILEaTTR1_SYSTEM                       0xe0000803
+#define flFILEaTTR1_DOTdIRECTORY                 0xe0001003
+#define flFILEaTTR1_DIRECTORY                    0xe0002003
+#define flFILEaTTR1_ARCHIVE                      0xe0004003
+#define flFILEaTTR1_COMPRESSED                   0xe0008003
+#define flFILEaTTR1_DEVICE                       0xe0010003
+#define flFILEaTTR1_TEMPORARY                    0xe0020003
+#define flFILEaTTR1_SPARSE_FILE                  0xe0040003
+#define flFILEaTTR1_REPARSE_POINT                0xe0080003
+#define flFILEaTTR1_OFFLINE                      0xe0100003
+#define flFILEaTTR1_NOT_CONTENT_INDEXED          0xe0200003
+#define flFILEaTTR1_ENCRYPTED                    0xe0400003
+#define flFILEaTTR1_INTEGRITY_STREAM             0xe0800003
+#define flFILEaTTR1_VIRTUAL                      0xe1000003
+#define flFILEaTTR1_NO_SCRUB_DATA                0xe2000003
+#define flFILEaTTR1_EA                           0xe4000003
+#define flFILEaTTR1_PINNED                       0xe8000003
 /*3*/
-#define flFILEaTTR_null    0xe0000003
+#define flFILEaTTR1_null    0xe0000003
 
 
 //
@@ -51266,55 +51359,3 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*TaRG2cBtLS(tmFP,cbTlsP)*//*1*/
-
-#define TaRG2cBtLS(tmFP,cbTlsP) tinP , countTC() , tmFP , 0 , flTHREADlAUNCH_null , (cbTlsP)
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//**//*1*/
-
-#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP) tinP , countTC() , tmFP , 0 , (flagsP) , (cbTlsP)
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END

@@ -1,3 +1,55 @@
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TaRG2cBtLS(tmFP,cbTlsP)*//*1*/
+
+#define TaRG2cBtLS(tmFP,cbTlsP) tinP , countTC() , tmFP , 0 , flTHREADlAUNCH_null , (cbTlsP)
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//**//*1*/
+
+#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP) tinP , countTC() , tmFP , 0 , (flagsP) , (cbTlsP)
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
 
 
@@ -19199,7 +19251,8 @@ examples
  countT   idShare ;
  flagsT   flagsDetails ;
  countT   idHow ;
- flagsT   flagsAttribute ;
+ flagsT   flagsAttribute1 ;
+ flagsT   flagsAttribute2 ;
  countT   cb ;
  handleC  hTag ;
  flagsT   flagsAtClose ;
@@ -19208,7 +19261,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.fileOpenS.NEWdELcLASSb!||
  ~fileOpenS( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.fileOpenS.dt_fileOpenS!||
- fileOpenS( tinS& tinP , thirdC& thirdP , const osTextT* const postNameP , const osTextT* const postNameTagP , const countT idAccessP , const countT idShareP , const flagsT flagsDetailsP , const countT idHowP , const flagsT flagsAttributeP , const countT cbP , handleC& hTagP ) ;
+ fileOpenS( tinS& tinP , thirdC& thirdP , const osTextT* const postNameP , const osTextT* const postNameTagP , const countT idAccessP , const countT idShareP , const flagsT flagsDetailsP , const countT idHowP , const flagsT flagsAttribute1P , const flagsT flagsAttribute2P , const countT cbP , handleC& hTagP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.fileOpenS.fileOpenS!||
 }
 ;
@@ -27154,7 +27207,7 @@ it is illegal to refer to this symbol in the definition of an adam
     osTextT      postFileOrZip[ TUCK << 2 ] ; // DONE THIS WAY SO THAT I CAN BE USED EARLY AND LATE WHEN NO poolC INSTANCE EXISTS
     flagsT       flagsCt ;
 
-    voidT ctF( tinS& tinP , const osTextT* const postP , const countT idAccessP , const countT idShareP , const flagsT flagsDetailsP , const countT idHowP , const flagsT flagsAttributeP , const countT cTriesP ) ;
+    voidT ctF( tinS& tinP , const osTextT* const postP , const countT idAccessP , const countT idShareP , const flagsT flagsDetailsP , const countT idHowP , const flagsT flagsAttribute1P , const flagsT flagsAttribute2P , const countT cTriesP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.fileC.ctF!||
 
     public :
@@ -27163,9 +27216,9 @@ it is illegal to refer to this symbol in the definition of an adam
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.fileC.NEWdELcLASSb!||
     ~fileC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.fileC.dt_fileC!||
-    fileC( tinS& tinP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttributeP = flFILEaTTR_null , const flagsT flagsP = flFILEc_null , const countT cTriesP = 0 , const osTextT* const postZipP = 0 ) ;
+    fileC( tinS& tinP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null, const flagsT flagsP = flFILEc_null , const countT cTriesP = 0 , const osTextT* const postZipP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.fileC.fileC!||
-    fileC( tinS& tinP , const strokeS* const psttP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttributeP = flFILEaTTR_null , const flagsT flagsP = flFILEc_null , const countT cTriesP = 0 , const osTextT* const postZipP = 0 ) ;
+    fileC( tinS& tinP , const strokeS* const psttP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null, const flagsT flagsP = flFILEc_null , const countT cTriesP = 0 , const osTextT* const postZipP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.fileC.fileC!||
     countT idOpenResultF( tinS& tinP  ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.fileC.idOpenResultF!||
@@ -29236,10 +29289,11 @@ private :
     static voidT            diskWalkPrivateIF( tinS& tinP , countT& cDirsP , countT& cFilesP , osTextT* const postNameP , const boolT& bQuitP , const flagsT flagsP = flDISKwALK_null , diskWalkCBFT pCbfP = 0 , countT* const pcArgP = 0 , countT* pModuloDirsP = 0 , countT* pModuloFilesP = 0 ) ;
                             //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34192.thirdC.diskWalkPrivateIF!||
 
-    static flagsT           fileAttrIfFromOsIF( tinS& tinP , flagsT osfP ) ;
-                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404b.thirdC.fileAttrIfFromOsIF!||
-    static flagsT           fileAttrOsFromIfIF( tinS& tinP , flagsT iffP ) ;
-                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404a.thirdC.fileAttrOsFromIfIF!||
+    static flagsT           fileAttrIfFromOs1IF( tinS& tinP , flagsT osfP ) ;
+    static flagsT           fileAttrIfFromOs2IF( tinS& tinP , flagsT osfP ) ;
+                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404b.thirdC.fileAttrIfFromOs1IF!||
+    static flagsT           fileAttrOsFromIf1IF( tinS& tinP , flagsT iff1P , flagsT iff2P ) ;
+                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404a.thirdC.fileAttrOsFromIf1IF!||
     static countT           openAccessOsFromIfIF( tinS& tinP , countT ifcP ) ;
                             //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404e.thirdC.openAccessOsFromIfIF!||
     static countT           openDetailsOsFromIfIF( tinS& tinP , countT iffP ) ;
@@ -29519,9 +29573,9 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401e.thirdC.dosLoadModuleF!||
  voidT dosMoveF( tinS& tinP , const osTextT* const postNewP , const osTextT* const postOldP , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401f.thirdC.dosMoveF!||
- static voidT dosOpenIF( tinS& tinP , etherC* pEtherP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttributeP = flFILEaTTR_null , const countT cbP = 0 , countT cTriesP = 0 ) ;
+ static voidT dosOpenIF( tinS& tinP , etherC* pEtherP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null, const countT cbP = 0 , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34020.thirdC.dosOpenIF!||
- voidT dosOpenF( tinS& tinP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttributeP = flFILEaTTR_null , const countT cbP = 0 , countT cTriesP = 0 ) ;
+ voidT dosOpenF( tinS& tinP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null, const countT cbP = 0 , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340a2.thirdC.dosOpenF!||
  boolT dosOpenEventSemF( tinS& tinP , handleC& handleP , const osTextT* const postP = 0 , const boolT fGivenP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34021.thirdC.dosOpenEventSemF!||
@@ -29549,7 +29603,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34089.thirdC.dosPriorityProcessIF!||
  static countT dosPriorityProcessIF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340bb.thirdC.dosPriorityProcessIF!||
- flagsT dosQueryFileAttrF( tinS& tinP , const osTextT* const postP ) ;
+ count2S dosQueryFileAttrF( tinS& tinP , const osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34101.thirdC.dosQueryFileAttrF!||
  static voidT dosQueryFileInfoIF( tinS& tinP , infoFileS*& pInfoFileP , const handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34023.thirdC.dosQueryFileInfoIF!||
@@ -29613,7 +29667,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340f9.thirdC.dosSetCurrentDirIF!||
  voidT dosSetDefaultDiskF( tinS& tinP , const osTextT* const postDriveNameP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34055.thirdC.dosSetDefaultDiskF!||
- voidT dosSetFileAttrF( tinS& tinP , const osTextT* const postP , const flagsT flagsP ) ;
+ voidT dosSetFileAttrF( tinS& tinP , const osTextT* const postP , const flagsT flags1P , const flagsT flags2P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34102.thirdC.dosSetFileAttrF!||
  static voidT dosSetFilePtrIF( tinS& tinP , const handleC& handleP , const flagsT flagsP , count2S& c2P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3408e.thirdC.dosSetFilePtrIF!||
@@ -32860,11 +32914,11 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3408d.etherC.diskFilePourF!||
  voidT diskFileQueryF( tinS& tinP , infoFileS*& pInfoFileP , const handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.etherC.diskFileQueryF!||
- flagsT diskFileQueryAttrF( tinS& tinP , const strokeS* const psttP ) ;
+ count2S diskFileQueryAttrF( tinS& tinP , const strokeS* const psttP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34150.etherC.diskFileQueryAttrF!||
  voidT diskFileRefreshF( tinS& tinP , strokeS*& pstt1NotRefreshedP , const strokeS* const pstt1LocalP , const strokeS* const pstt1RemoteP , const strokeS* const pstt1RemotePrefixP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.etherC.diskFileRefreshF!||
- voidT diskFileSetAttrF( tinS& tinP , const strokeS* const psttP , const flagsT flagsP ) ;
+ voidT diskFileSetAttrF( tinS& tinP , const strokeS* const psttP , const flagsT flags1P , const flagsT flags2P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34151.etherC.diskFileSetAttrF!||
  //voidT diskFindFileOrDirOldF( tinS& tinP , infoFileS*& pInfoFileP , handleC& handleP , const strokeS* const psttLikeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34019.etherC.diskFindFileOrDirOldF!||
@@ -32982,7 +33036,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34016.etherC.paperZitsOnF!||
 
 /* commands: files */
- voidT fileOpenF( tinS& tinP , handleC& handleP , countT& idResultP , const strokeS* const psttP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttributeP = flFILEaTTR_null , const countT cbP = 0 , countT cTriesP = 0 ) ;
+ voidT fileOpenF( tinS& tinP , handleC& handleP , countT& idResultP , const strokeS* const psttP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null, const countT cbP = 0 , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.etherC.fileOpenF!||
  voidT fileHoseConnectF( tinS& tinP , const handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34074.etherC.fileHoseConnectF!||

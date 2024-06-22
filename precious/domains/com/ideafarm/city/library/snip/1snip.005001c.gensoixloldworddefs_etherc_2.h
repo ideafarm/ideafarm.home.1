@@ -13,7 +13,6 @@ voidT diskFileQueryAttrF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const
     if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
 
     ZE( flagsT , noName ) ;
-    if( !POOP ) noName = etherP.diskFileQueryAttrF( tinP , psttP ) ;
     etherP.delF( tinP , psttP ) ;
 
     slP << noName ;
@@ -72,7 +71,6 @@ voidT diskFileSetAttrF_4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const 
    SOIXLoLDtESTtYPE( 0x0 , etherC )
     ZE( flagsT , flagsP ) ;
     if( !POOP ) { slP >> flagsP ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFileSetAttrF( tinP , psttP , flagsP ) ;
     etherP.delF( tinP , psttP ) ;
 }
 
@@ -977,7 +975,7 @@ voidT fileOpenF_b34P3373733_GF( tinS& tinP , etherC& etherP , soulC& slP , const
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
-                flagsAttributeP = flFILEaTTR_null ;
+                flagsAttributeP = flFILEaTTR1_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
                 etherP.delF( tinP , psttNext ) ;

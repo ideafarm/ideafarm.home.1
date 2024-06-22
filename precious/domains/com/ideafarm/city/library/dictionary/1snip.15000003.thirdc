@@ -635,7 +635,7 @@
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3408e.thirdC.dosSetFilePtrIF!||
  static voidT dosSetFilePtrIF( tinS& tinP , const handleC& handleP , const flagsT flagsP , count2S& c2P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34102.thirdC.dosSetFileAttrF!||
- voidT dosSetFileAttrF( tinS& tinP , const osTextT* const postP , const flagsT flagsP ) ;
+ voidT dosSetFileAttrF( tinS& tinP , const osTextT* const postP , const flagsT flags1P , const flagsT flags2P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34055.thirdC.dosSetDefaultDiskF!||
  voidT dosSetDefaultDiskF( tinS& tinP , const osTextT* const postDriveNameP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340f9.thirdC.dosSetCurrentDirIF!||
@@ -699,7 +699,7 @@
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34023.thirdC.dosQueryFileInfoIF!||
  static voidT dosQueryFileInfoIF( tinS& tinP , infoFileS*& pInfoFileP , const handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34101.thirdC.dosQueryFileAttrF!||
- flagsT dosQueryFileAttrF( tinS& tinP , const osTextT* const postP ) ;
+ count2S dosQueryFileAttrF( tinS& tinP , const osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340bb.thirdC.dosPriorityProcessIF!||
  static countT dosPriorityProcessIF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34089.thirdC.dosPriorityProcessIF!||
@@ -727,9 +727,9 @@
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34021.thirdC.dosOpenEventSemF!||
  boolT dosOpenEventSemF( tinS& tinP , handleC& handleP , const osTextT* const postP = 0 , const boolT fGivenP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340a2.thirdC.dosOpenF!||
- voidT dosOpenF( tinS& tinP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttributeP = flFILEaTTR_null , const countT cbP = 0 , countT cTriesP = 0 ) ;
+ voidT dosOpenF( tinS& tinP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null, const countT cbP = 0 , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34020.thirdC.dosOpenIF!||
- static voidT dosOpenIF( tinS& tinP , etherC* pEtherP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttributeP = flFILEaTTR_null , const countT cbP = 0 , countT cTriesP = 0 ) ;
+ static voidT dosOpenIF( tinS& tinP , etherC* pEtherP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null, const countT cbP = 0 , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401f.thirdC.dosMoveF!||
  voidT dosMoveF( tinS& tinP , const osTextT* const postNewP , const osTextT* const postOldP , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401e.thirdC.dosLoadModuleF!||
@@ -1009,10 +1009,12 @@
     static countT           openDetailsOsFromIfIF( tinS& tinP , countT iffP ) ;
                             //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404e.thirdC.openAccessOsFromIfIF!||
     static countT           openAccessOsFromIfIF( tinS& tinP , countT ifcP ) ;
-                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404a.thirdC.fileAttrOsFromIfIF!||
-    static flagsT           fileAttrOsFromIfIF( tinS& tinP , flagsT iffP ) ;
-                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404b.thirdC.fileAttrIfFromOsIF!||
-    static flagsT           fileAttrIfFromOsIF( tinS& tinP , flagsT osfP ) ;
+                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404a.thirdC.fileAttrOsFromIf1IF!||
+    static flagsT           fileAttrOsFromIf1IF( tinS& tinP , flagsT iff1P , flagsT iff2P ) ;
+                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011c7.thirdc.fileattriffromos2if!||
+    static flagsT           fileAttrIfFromOs2IF( tinS& tinP , flagsT osfP ) ;
+                            //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404b.thirdC.fileAttrIfFromOs1IF!||
+    static flagsT           fileAttrIfFromOs1IF( tinS& tinP , flagsT osfP ) ;
 
                             //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34192.thirdC.diskWalkPrivateIF!||
     static voidT            diskWalkPrivateIF( tinS& tinP , countT& cDirsP , countT& cFilesP , osTextT* const postNameP , const boolT& bQuitP , const flagsT flagsP = flDISKwALK_null , diskWalkCBFT pCbfP = 0 , countT* const pcArgP = 0 , countT* pModuloDirsP = 0 , countT* pModuloFilesP = 0 ) ;

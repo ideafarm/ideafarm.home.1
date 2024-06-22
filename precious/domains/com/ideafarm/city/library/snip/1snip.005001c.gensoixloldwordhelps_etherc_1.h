@@ -2936,7 +2936,7 @@
         "\r\n"
         "    Pop  a:    countT           cTriesP                         (defaults to 0)\r\n"
         "    Pop  9:    countT           cbP                             (defaults to 0)\r\n"
-        "    Pop  8:    flagsT           flagsAttributeP                 (defaults to flFILEaTTR_null)\r\n"
+        "    Pop  8:    flagsT           flagsAttributeP                 (defaults to flFILEaTTR1_null)\r\n"
         "    Pop  7:    countT           idHowP                          (defaults to ifcOPENhOW_nFeO)\r\n"
         "    Pop  6:    flagsT           flagsDetailsP                   (defaults to flOPENdETAILS_LOCsEQ)\r\n"
         "    Pop  5:    countT           idShareP                        (defaults to ifcOPENsHARE_R)\r\n"

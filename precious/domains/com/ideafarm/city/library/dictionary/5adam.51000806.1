@@ -48,7 +48,7 @@ REST
             }
                 etThread.traceF( tinP , T("incremented  [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; HEALING IS SKIPPED ONLY FOR MIGRATING ALREADY HEALED ARCHIVE TO USE CHUNKED FILES
+if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE THIS IN PRODUCTION ; HEALING IS SKIPPED ONLY FOR MIGRATING ALREADY HEALED ARCHIVE TO USE CHUNKED FILES
 
                 offPhase = ++ offPhase % CpHASES ;
                 etThread.traceF( tinP , T("incrementing [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -312,8 +312,9 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE
                     //TN( tYearPattern , "2023/" ) ;
                     //TN( tYearPattern , "2022/" ) ;
                     //TN( tYearPattern , "2012/" ) ;
-                    //TN( tYearPattern , "1999/" ) ;
-                      TN( tYearPattern , "1234/" ) ;
+                    //TN( tYearPattern , "2008/" ) ;
+                      TN( tYearPattern , "1999/" ) ;
+                    //TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
                 _IO_
             {
@@ -623,7 +624,7 @@ if( offPhase == OFFpHASE_HEAL ) offPhase = ++ offPhase % CpHASES ;  //U:: DELETE
         }
             }
                 if( !bWaitWoDay ) etThread.traceF( tinP , T("napped") ) ;
-//                ++ s ; ether.osSleepF( tinP , TICK >> 6 ) ;
+                ++ s ; ether.osSleepF( tinP , TICK >> 6 ) ;
                 cNaps ++ ;
                 if( !cNaps ) etThread.traceF( tinP , T(bWaitWoDay?"napping for a day":"napping for a quarter minute") ) ;
                 _IO_
@@ -2404,7 +2405,7 @@ DONE( tmWorkerFileInfoF )
                 {
                 switch( POOP )
 
-                fileC fi( tinP , pzJob->psttLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 1 ) ;
+                fileC fi( tinP , pzJob->psttLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEc_null , 1 ) ;
 
                 SCOOPS
                 _IO_
@@ -2604,6 +2605,57 @@ TASK( tmDayZipperF )
         }
             }
                 }
+                    etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongChunk ) ;
+                    bAbortP = 1 ;
+                    POOPRqUIET
+                    countT rc = POOP ;
+                {
+                if( POOP )
+                tinP.pEtScratch->diskFileSetAttrF( tinP , tLongChunk , flagsAttributeNow.c1 , flagsAttributeNow.c2 ) ;
+            {
+            if( flagsAttributeNow.c1 != flagsAttributeWas.c2 )
+            //etherP.traceF( tinP , T("now [flagsAttributeNow]:    ")+TF3(flagsAttributeNow.c1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+tLongChunk ) ;
+
+            }
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_PINNED             ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_EA                 ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_NO_SCRUB_DATA      ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_VIRTUAL            ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_INTEGRITY_STREAM   ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_ENCRYPTED          ) ) ;
+                  flagsAttributeNow.c1 |=      flFILEaTTR1_NOT_CONTENT_INDEXED    ;     //PS:PERSONALITY: I ALWAYS SET THIS BECAUSE I PRESUME THAT INDEXING OF THE CONTENTS OF THE ARCHIVE IS UNDESIRABLE (DUE TO COST)
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_OFFLINE            ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_REPARSE_POINT      ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_SPARSE_FILE        ) ) ;
+                  flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_TEMPORARY          ) ) ;
+                  flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_DEVICE             ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_COMPRESSED         ) ) ;
+                  flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_ARCHIVE            ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_DIRECTORY          ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_DOTdIRECTORY       ) ) ;
+                //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_SYSTEM             ) ) ;
+                  flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_HIDDEN             ) ) ;
+                  flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_READoNLY           ) ) ;
+                  flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_NORMAL             ) ) ;
+            {
+            if( !( F(flagsAttributeWas.c1) & flFILEaTTR1_SYSTEM ) )
+
+            //CS:CODEsYNC: 51000806 1120000b 112005e2
+
+            count2S flagsAttributeNow  = flagsAttributeWas ;
+
+            //etherP.traceF( tinP , T("was [flagsAttributeWas]:    ")+TF3(flagsAttributeWas.c1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+tLongChunk ) ;
+            count2S flagsAttributeWas = tinP.pEtScratch->diskFileQueryAttrF( tinP , tLongChunk ) ;
+
+            SCOOPS
+            _IO_
+        {                   // PS:PERSONALITY: RESET ALL ATTRIBUTE FLAGS THAT THE BASE O.S. ALLOWS APPLICATION CODE TO MODIFY
+        IFsCRATCH           // RESET ALL VOLATILE FILE ATTRIBUTE FLAGS TO PREVENT DIFFERENCES IN THESE FLAGS ACROSS DEVICES FROM RESULTING IN DIFFERENCES IN THE CHUNK FILE ACROSS DEVICES
+        //CS:CODEsYNC: 51000806 51000806
+
+        }
+            }
+                }
                     etherP.traceF( tinP , T("!exception: could not set file time [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear+tShortDayZipP ) ;
                     bAbortP = 1 ;
                     POOPRqUIET
@@ -2622,14 +2674,15 @@ TASK( tmDayZipperF )
             {
             if( POOP )
 
-            fileC fiw( tinP , (strokeS*)( tPathYear+tShortDayZipP ) , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+            fileC fiw( tinP , (strokeS*)tLongChunk , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEc_null , 0 , 0 ) ;
 
             SCOOPS
             _IO_
         {
         IFsCRATCH           // EVEN IF bAbortP, I TRY TO SET THE TIMESTAMPS OF THE DAY CHUNK ZIP FILE TO PREVENT A MISTIMED ARCHIVE FILE FROM EXISTING
+        TN( tLongChunk , "" ) ; tLongChunk = tPathYear+tShortDayZipP ;
 
-        etherP.traceF( tinP , T("maybe zipped") ) ;
+        etherP.traceF( tinP , T(bZippedAok?"zipped aok":"zip failed") ) ;
 
         }
             }
@@ -2648,7 +2701,8 @@ TASK( tmDayZipperF )
                 POOPRqUIET
                 countT rc = POOP ;
             {
-            if( POOP )
+            else
+            if( !POOP ) bZippedAok = 1 ;
 
             }
                 __1
@@ -2663,6 +2717,7 @@ TASK( tmDayZipperF )
             _IO_
         {
         IFsCRATCH
+        ZE( boolT , bZippedAok ) ;
 
         THREADmODE2rESTORE
         __Z( osPid ) ;
@@ -2688,72 +2743,81 @@ TASK( tmDayZipperF )
                         }
                             }
                                 }
-                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+T(pInfoFile->psttIfoName) ) ;
-                                    bAbortP = 1 ;
-                                    POOPRqUIET
-                                {
-                                if( POOP )
-
-                                }
                                     }
-                                        etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                        etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pInfoFile->psttIfoName) ) ;
                                         bAbortP = 1 ;
                                         POOPRqUIET
+                                        countT rc = POOP ;
                                     {
                                     if( POOP )
-                                    tinP.pEtScratch->diskFileSetAttrF( tinP , pInfoFile->psttIfoName , flagsAttributeNow ) ;
+                                    tinP.pEtScratch->diskFileSetAttrF( tinP , pInfoFile->psttIfoName , flagsAttributeNow.c1 , flagsAttributeNow.c2 ) ;
                                 {
-                                if( flagsAttributeNow != flagsAttributeWas )
+                                if( flagsAttributeNow.c1 != flagsAttributeWas.c2 )
+                                //etherP.traceF( tinP , T("now [flagsAttributeNow]:    ")+TF3(flagsAttributeNow.c1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+tLongAt ) ;
 
-                                  flagsAttributeNow &= ~( F(flFILEaTTR_ARCHIVE      ) ) ;
-                                //flagsAttributeNow &= ~( F(flFILEaTTR_COMPRESSED   ) ) ;
-                                //flagsAttributeNow &= ~( F(flFILEaTTR_DIRECTORY    ) ) ;
-                                //flagsAttributeNow &= ~( F(flFILEaTTR_DOTdIRECTORY ) ) ;
-                                  flagsAttributeNow &= ~( F(flFILEaTTR_SYSTEM       ) ) ;
-                                  flagsAttributeNow &= ~( F(flFILEaTTR_HIDDEN       ) ) ;
-                                  flagsAttributeNow &= ~( F(flFILEaTTR_READoNLY     ) ) ;
-                                //flagsAttributeNow &= ~( F(flFILEaTTR_NORMAL       ) ) ;
+                                }
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_PINNED             ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_EA                 ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_NO_SCRUB_DATA      ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_VIRTUAL            ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_INTEGRITY_STREAM   ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_ENCRYPTED          ) ) ;
+                                      flagsAttributeNow.c1 |=      flFILEaTTR1_NOT_CONTENT_INDEXED    ;     //PS:PERSONALITY: I ALWAYS SET THIS BECAUSE I PRESUME THAT INDEXING OF THE CONTENTS OF THE ARCHIVE IS UNDESIRABLE (DUE TO COST)
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_OFFLINE            ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_REPARSE_POINT      ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_SPARSE_FILE        ) ) ;
+                                      flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_TEMPORARY          ) ) ;
+                                      flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_DEVICE             ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_COMPRESSED         ) ) ;
+                                      flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_ARCHIVE            ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_DIRECTORY          ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_DOTdIRECTORY       ) ) ;
+                                    //flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_SYSTEM             ) ) ;
+                                      flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_HIDDEN             ) ) ;
+                                      flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_READoNLY           ) ) ;
+                                      flagsAttributeNow.c1 &= ~( F(flFILEaTTR1_NORMAL             ) ) ;
+                                {
+                                if( !( F(flagsAttributeWas.c1) & flFILEaTTR1_SYSTEM ) )
 
-                                //CS:CODEsYNC: 51000806 1120000b
+                                //CS:CODEsYNC: 51000806 1120000b 112005e2
 
-                                flagsT flagsAttributeNow  = flagsAttributeWas ;
+                                count2S flagsAttributeNow  = flagsAttributeWas ;
 
-                                etherP.traceF( tinP , T("[flagsAttributeWas]:    ")+TF3(flagsAttributeWas,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
-                                flagsT flagsAttributeWas = tinP.pEtScratch->diskFileQueryAttrF( tinP , pInfoFile->psttIfoName ) ;
+                                //etherP.traceF( tinP , T("was [flagsAttributeWas]:    ")+TF3(flagsAttributeWas.c1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+tLongAt ) ;
+                                count2S flagsAttributeWas = tinP.pEtScratch->diskFileQueryAttrF( tinP , tLongAt ) ;
 
                                 SCOOPS
                                 _IO_
-                            {
-                            IFsCRATCH
+                            {                   // PS:PERSONALITY: RESET ALL ATTRIBUTE FLAGS THAT THE BASE O.S. ALLOWS APPLICATION CODE TO MODIFY
+                            IFsCRATCH           // RESET ALL VOLATILE FILE ATTRIBUTE FLAGS TO PREVENT DIFFERENCES IN THESE FLAGS ACROSS DEVICES FROM RESULTING IN DIFFERENCES IN THE CHUNK FILE ACROSS DEVICES
+                            //CS:CODEsYNC: 51000806 51000806
 
                             }
                                 }
-#endif
                                     }
-                                        etherP.traceF( tinP , T("!exception: could not set file time [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                        etherP.traceF( tinP , T("!exception: could not set file time [name]:    ")+tLongAt ) ;
                                         bAbortP = 1 ;
                                         POOPRqUIET
                                     {
                                     if( POOP )
 
                                     ((thirdC&)etherP).setFileTimeF( tinP , fiw , &timeWrittenNewest , &timeWrittenNewest , &timeWrittenNewest ) ;
-#if defined( NEVERdEFINED )
-//U::SUPPRESS ONLY FOR TESTING
                                 {
                                 else
                                 }
-                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+tLongAt ) ;
                                     bAbortP = 1 ;
                                     POOPRqUIET
                                 {
                                 if( POOP )
 
-                                fileC fiw( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+                                fileC fiw( tinP , (strokeS*)tLongAt , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEc_null , 0 , 0 ) ;
 
                                 SCOOPS
                                 _IO_
                             {
                             IFsCRATCH
+                            TN( tLongAt , pInfoFile->psttIfoName ) ;
                         {
                         else if( cAtFiles > 1 )     // NO NEED TO SET FILE TIME TO NEWEST FILE TIME IF THIS FILE IS ALONE
                         }
@@ -2782,7 +2846,7 @@ TASK( tmDayZipperF )
                                         {
                                         if( POOP )
 
-                                        fileC fir( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR_null , flFILEc_null , 0 , 0 ) ;
+                                        fileC fir( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEc_null , 0 , 0 ) ;
 
                                         SCOOPS
                                         _IO_
@@ -4926,12 +4990,11 @@ struct jobHealFileS
 {
 struct paramHealFileS
 
-#define OFFpHASE_CHUNKfILESbYdAY   0x3
-#define OFFpHASE_ZAPfILEaTTRIBUTES 0x2
+#define OFFpHASE_CHUNKfILESbYdAY   0x2
 #define OFFpHASE_HEAL              0x1
 #define OFFpHASE_GETnAMESoNLY      0x0
 
-#define CpHASES 4
+#define CpHASES 3
 
 #define IDtYPEjOB_COPY       0x3
 #define IDtYPEjOB_MOVEuNIQUE 0x2
@@ -5057,7 +5120,7 @@ struct paramHealFileS
 
 //#define OVERRIDElONELYiSoK
 //#define OVERRIDEkEEPnAMES
-  #define OVERRIDEnOfIREoS
+//#define OVERRIDEnOfIREoS
 //#define OVERRIDEdOnOTmOVEoRrEPLACEfILES
 //#define OVERRIDEnOiMAGEcOMPARE
 //THESE SHOULD BE COMMENTED OUT IN PRODUCTION ; THEY ARE USED FOR EXTRA SAFETY WHEN E.G. RECOVERING DATA

@@ -46,7 +46,7 @@
     
                     __( !pInfo->hTag != !ostoNameTag.costF() ) ;
 
-                    fileOpenS* pInfo = new( 0 , tinP , pbz , sizeof( fileOpenS ) ) fileOpenS( tinP , *pThird , postP , ostoNameTag.costF() ? (const osTextT*)ostoNameTag : 0 , idAccessP , idShareP , flagsDetailsP , idHowP , flagsAttributeP , cbP , hTag ) ;
+                    fileOpenS* pInfo = new( 0 , tinP , pbz , sizeof( fileOpenS ) ) fileOpenS( tinP , *pThird , postP , ostoNameTag.costF() ? (const osTextT*)ostoNameTag : 0 , idAccessP , idShareP , flagsDetailsP , idHowP , flagsAttribute1P , flagsAttribute2P , cbP , hTag ) ;
                     puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
 
                     }
@@ -168,7 +168,7 @@
         
                         handleP.osF( ifcIDtYPEhANDLE_FILE , (countT)osh ) ;
                         rc = tinP.brcRaw ;
-                        BOS( WHATsfw , BOSfAIL , DosOpen( postP , &osh , (ULONG*)&idResultP , cbP , flagsAttribute , how , flagsAccess | flagsShare | flagsDetails , 0 ) )
+                        BOS( WHATsfw , BOSfAIL , DosOpen( postP , &osh , (ULONG*)&idResultP , cbP , flagsAttribute1 , flagsAttribute2 , how , flagsAccess | flagsShare | flagsDetails , 0 ) )
                         ZE( HFILE , osh ) ;
         
                     #ifdef __OS2__
@@ -219,11 +219,11 @@
         handleC hTag( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
         OStEXT( ostoNameTag , TUCK << 1 )
 
-        const flagsT flagsAttribute = fileAttrOsFromIfIF( tinP , flagsAttributeP ) ;
-        const countT how            = openHowOsFromIfIF( tinP , idHowP ) ;
-        const flagsT flagsDetails   = openDetailsOsFromIfIF( tinP , flagsDetailsP ) ;
-        const flagsT flagsShare     = openShareOsFromIfIF( tinP , idShareP ) ;
-        const flagsT flagsAccess    = openAccessOsFromIfIF( tinP , idAccessP ) ;
+        const flagsT flagsAttribute1 = fileAttrOsFromIf1IF( tinP , flagsAttribute1P , flagsAttribute2P ) ;
+        const countT how             = openHowOsFromIfIF( tinP , idHowP ) ;
+        const flagsT flagsDetails    = openDetailsOsFromIfIF( tinP , flagsDetailsP ) ;
+        const flagsT flagsShare      = openShareOsFromIfIF( tinP , idShareP ) ;
+        const flagsT flagsAccess     = openAccessOsFromIfIF( tinP , idAccessP ) ;
 
         }
             }
@@ -284,7 +284,7 @@
     const osTextT* const postTag = ".!writing" ;
     //LOGrAW( TF2(processGlobal1I.idAdamRoot,flFORMAT_NObIGITvALUES)+T(": dosOpenIF/")+T(postP)+T("/+\r\n") ) ;
 {
-/*1*/voidT thirdC::dosOpenIF( tinS& tinP , etherC* pEtherP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP , const countT idShareP , const flagsT flagsDetailsP , const countT idHowP , const flagsT flagsAttributeP , const countT cbP , countT cTriesP )/*1*/
+/*1*/voidT thirdC::dosOpenIF( tinS& tinP , etherC* pEtherP , handleC& handleP , countT& idResultP , const osTextT* const postP , const countT idAccessP , const countT idShareP , const flagsT flagsDetailsP , const countT idHowP , const flagsT flagsAttribute1P , const flagsT flagsAttribute2P , const countT cbP , countT cTriesP )/*1*/
 
 #endif
 
@@ -303,8 +303,10 @@
   os/2: the number of bytes to allocate when creating a new file
   windows: must be 0
  cbP
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010010.flFILEaTTR!||
- flagsAttributeP
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010010.flFILEaTTR2!||
+ flagsAttribute2P
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010010.flFILEaTTR1!||
+ flagsAttribute1P
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010014.ifcOPENhOW!||
  idHowP
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010011.flOPENdETAILS!||
