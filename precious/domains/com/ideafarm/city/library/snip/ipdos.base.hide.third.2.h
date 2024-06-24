@@ -1,3 +1,28 @@
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CmAXsTEPtLS*//*1*/
+
+#define CmAXsTEPtLS ( TUCK >> 4 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls BEGIN
 
 
@@ -18691,7 +18716,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.handleC.dt_handleC!||
  handleC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP = 0 , const flagsT flagsP = flHANDLEc_null , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.handleC.handleC!||
- handleC( const handleC& oshP , const osTextT* const postNameP = 0 ) ;
+ handleC( const handleC& handleP , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.handleC.handleC!||
 
 /*soixlOld*/
@@ -18711,19 +18736,19 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.handleC.osF!||
  countT osNoTinF( const countT idTypeVerifyP ) const ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36053017.handlec.osNoTinF!||
- boolT operator ==( const handleC& oshP ) const ;
+ boolT operator ==( const handleC& handleP ) const ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.handleC.operator_equals!||
- boolT operator !=( const handleC& oshP ) const ;
+ boolT operator !=( const handleC& handleP ) const ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.handleC.operator_notEquals!||
  voidT closeIfF( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.handleC.closeIfF!||
- voidT operator =( const handleC& oshP ) ;
+ voidT operator =( const handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.handleC.operator_assign!||
  voidT operator =( const countT cP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.handleC.operator_assign!||
- voidT operator <<( handleC& oshP ) ;
+ voidT operator <<( handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.handleC.operator_shiftLeft!||
- voidT cloneF( const handleC& oshP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP ) ;
+ voidT cloneF( const handleC& handleP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.handleC.cloneF!||
  countT& cNoteF( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.handleC.cNoteF!||
@@ -28536,6 +28561,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
  countT                  cSpins2 ;
  countT                  cSpins3 ;
  countT                  cSpins4 ;
+ countT                  cOsHandles ;                          // TALLY OF BASE O.S. HANDLES OPENED AND CLOSED BY THIS THREAD, ACCORDING TO THE handleC MEMBER FUNCTIONS
  bookMarkS               pBookMark[ CbOOKmARK ] ;            // USED BY pageC TO REGISTER A PENDING SMART POINTER ; INCREASE THE NUMBER
  tlsHeaderS*             pTlsHeader ;                         //U:: REMOVE IN PRODUCTION ; THIS IS TO FIND A BUG
 
@@ -41172,6 +41198,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                      cSpins2 ;
     countT                      cSpins3 ;
     countT                      cSpins4 ;
+    countT                      cOsHandles ;
     countT                      pcIdThreadTrace[ CiDtHREADtRACE ] ;
 
     NEWdELcLASSpROTOS

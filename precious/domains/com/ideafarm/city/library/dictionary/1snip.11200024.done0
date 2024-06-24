@@ -85,6 +85,8 @@
                                                                                                                                                                     \
                             }                                                                                                                                       \
                                 etThread.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                           \
+                                OStEXTC(  ostoSay , tinP.cOsHandles , '0' ) ;                                                                                         \
+                                OStEXTAK( ostoSay , "." ) ;                                                                                                         \
                                 OStEXTC(  ostoSay , tinP.cSpins4 , '0' ) ;                                                                                          \
                                 OStEXTAK( ostoSay , "." ) ;                                                                                                         \
                                 OStEXTC(  ostoSay , tinP.cSpins3 , '0' ) ;                                                                                          \
@@ -93,13 +95,13 @@
                                 OStEXTAK( ostoSay , "." ) ;                                                                                                         \
                                 OStEXTC(  ostoSay , tinP.cSpins1 , '0' ) ;                                                                                          \
                                 OStEXTAK( ostoSay , "    " ) ;                                                                                                      \
-                                OStEXTC(  ostoSay , tinP.pag1->cYieldHighWater , 0 ) ;                                                                      \
+                                OStEXTC(  ostoSay , tinP.pag1->cYieldHighWater , 0 ) ;                                                                              \
                                 OStEXTAK( ostoSay , "    " ) ;                                                                                                      \
-                                OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;                                                                               \
-                                OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4]:    " ) ;                                   \
+                                OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;                                                                                       \
+                                OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                          \
                                 OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                   \
                             {                                                                                                                                       \
-                            if( tinP.pag1->cYieldHighWater )                                                                                                \
+                            if( tinP.pag1->cYieldHighWater )                                                                                                        \
                                                                                                                                                                     \
                             TELL( "DONE0: after returning from application code" ) ;                                                                                \
                             tinP.idPhase2 = 0 ;                                                                                                                     \

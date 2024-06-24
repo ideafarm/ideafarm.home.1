@@ -9,7 +9,7 @@
 
 }
     return bCloaked ;
-    if( tinP.pEther && tinP.pcUtility[ 0 ] ) tinP.pEther->traceF( tinP , T("dosFindFileOrDirPrivateF ----") ) ;
+    //if( tinP.pEther && tinP.pc Utility[ 0 ] ) tinP.pEther->traceF( tinP , T("dosFindFileOrDirPrivateF ----") ) ;
 
     }
         }
@@ -144,12 +144,16 @@
                                     _IO_
                                 {
                                 if( tinP.brcLath == ERROR_NOT_READY )
-                                BOS( WHATsfr , BOSoK , FindNextFile( (HANDLE)pOsh->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE ) , &info ) )
+                                BOS( WHATsfr , BOSoK , FindNextFile( (HANDLE)pFH->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE ) , &info ) )
                             {
                             else
                             }
-                                if( ~pOsh->hFind ) fFound = 1 ;
-                                pOsh->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE , (countT)tinP.brcRaw ) ;
+                                }
+                                    fFound = 1 ;
+                                    INCoShANDLES
+                                {
+                                if( ~pFH->hFind )
+                                pFH->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE , (countT)tinP.brcRaw ) ;
                                 else if( bRetry ) bRetry = 0 ;
                                 }
                                     continue ;
@@ -229,14 +233,14 @@
                     ZE( osTextT* , postEnd ) ;
 
                     posti[ costi ] = 0 ;
-                    countT rc = thirdC::s_readIF( tinP , posti , costi , pOsh->hSockCloak ) ;
+                    countT rc = thirdC::s_readIF( tinP , posti , costi , pFH->hSockCloak ) ;
                     osTextT* posti = processGlobal4I.heap.newF( tinP , LF , costi + 1 ) ;
                     _IO_
                 {
                 else
                 if( !costi || costi > TUCK << 2 ) handleP.closeIfF() ;
 
-                countT rc = thirdC::s_readIF( tinP , (byteT*)&costi , sizeof costi , pOsh->hSockCloak ) ;
+                countT rc = thirdC::s_readIF( tinP , (byteT*)&costi , sizeof costi , pFH->hSockCloak ) ;
                 ZE( countT , costi ) ;
                 _IO_
             {
@@ -252,29 +256,29 @@
 
             }
                 }
-                    thirdC::s_writeIF( tinP , pOsh->hSockCloak , postLikeP , costLike ) ;
-                    thirdC::s_writeIF( tinP , pOsh->hSockCloak , (byteT*)&costLike , sizeof costLike ) ;
+                    thirdC::s_writeIF( tinP , pFH->hSockCloak , postLikeP , costLike ) ;
+                    thirdC::s_writeIF( tinP , pFH->hSockCloak , (byteT*)&costLike , sizeof costLike ) ;
                     countT costLike = thirdC::c_strlenIF( tinP , postLikeP ) ;
 
-                    thirdC::s_writeIF( tinP , pOsh->hSockCloak , (byteT*)&idFormat , sizeof idFormat ) ;
+                    thirdC::s_writeIF( tinP , pFH->hSockCloak , (byteT*)&idFormat , sizeof idFormat ) ;
                     countT idFormat = 1 ;
 
-                    thirdC::s_writeIF( tinP , pOsh->hSockCloak , (byteT*)&finger , sizeof finger ) ;
+                    thirdC::s_writeIF( tinP , pFH->hSockCloak , (byteT*)&finger , sizeof finger ) ;
                     countT finger = FINGERnEG_CLOAKsIMPLEcONNECTION ;
 
-                    thirdC::s_writeIF( tinP , pOsh->hSockCloak , (byteT*)&idTypeConnection , sizeof idTypeConnection ) ;
+                    thirdC::s_writeIF( tinP , pFH->hSockCloak , (byteT*)&idTypeConnection , sizeof idTypeConnection ) ;
                     countT idTypeConnection = ifcIDtYPEcLOAKcONNECTION_SIMPLE ;
 
-                    thirdC::s_connectIF( tinP , countTC() , pOsh->hSockCloak , homeS::homeIF().portCloak ) ;
+                    thirdC::s_connectIF( tinP , countTC() , pFH->hSockCloak , homeS::homeIF().portCloak ) ;
 
-                    thirdC::s_socketIF( tinP , pOsh->hSockCloak , ifcSOCKETtYPE_STREAM ) ;
+                    thirdC::s_socketIF( tinP , pFH->hSockCloak , ifcSOCKETtYPE_STREAM ) ;
                     _IO_
                 {
                 if( bCloaked )
 
                 }
-                    handleP.osF( ifcIDtYPEhANDLE_FILEfIND , (countT)pOsh ) ;
-                    pOsh = new( 0 , tinP , pba , cba ) diskFindHandleS( tinP ) ;
+                    handleP.osF( ifcIDtYPEhANDLE_FILEfIND , (countT)pFH ) ;
+                    pFH = new( 0 , tinP , pba , cba ) diskFindHandleS( tinP ) ;
                     _IO_
                 {
                 if( pba )
@@ -283,9 +287,9 @@
                 _IO_
             {
             else
-            if( ~handleP ) pOsh = (diskFindHandleS*)handleP.osF( ifcIDtYPEhANDLE_FILEfIND ) ;
+            if( ~handleP ) pFH = (diskFindHandleS*)handleP.osF( ifcIDtYPEhANDLE_FILEfIND ) ;
             boolT bWoth = !handleP ;
-            ZE( diskFindHandleS* , pOsh ) ;
+            ZE( diskFindHandleS* , pFH ) ;
             //CS:CODEsYNC: DUPLICATE CODE 3600101d 35001186
             _IO_
         {
@@ -389,7 +393,7 @@
 //U:: TO FIND A BUG
 
 
-    if( tinP.pEther && tinP.pcUtility[ 0 ] ) tinP.pEther->traceF( tinP , T("dosFindFileOrDirPrivateF ++++") ) ;
+    //if( tinP.pEther && tinP.pc Utility[ 0 ] ) tinP.pEther->traceF( tinP , T("dosFindFileOrDirPrivateF ++++") ) ;
 {
 /*1*/boolT thirdC::dosFindFileOrDirPrivateF( tinS& tinP , infoFileS*& pInfoFileP , handleC& handleP , const osTextT* const postLikeP )/*1*/
 

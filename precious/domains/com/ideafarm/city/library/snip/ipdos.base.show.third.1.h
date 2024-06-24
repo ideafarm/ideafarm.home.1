@@ -7,6 +7,61 @@
 //
 
 /*
+*/
+/**/
+/*1*//*DECoShANDLES*//*1*/
+
+#define DECoShANDLES                        \
+                                            \
+    {                                       \
+        tinP.cOsHandles -- ;                \
+        dec02AM( tinP.pag1->cOsHandles ) ;  \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*INCoShANDLES*//*1*/
+
+#define INCoShANDLES                        \
+                                            \
+    {                                       \
+        tinP.cOsHandles ++ ;                \
+        inc02AM( tinP.pag1->cOsHandles ) ;  \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
 \<A HREF=\"5.1100000b.1.0.html\"\>definition\</A\>
 examples
  simplest
@@ -2137,7 +2192,7 @@ it is illegal to refer to this symbol in the definition of an adam
                             if( tinP.pag1->cYieldHighWater )                                                                                                \
                             {                                                                                                                                       \
                                 OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                   \
-                                OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4]:    " ) ;                                   \
+                                OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                          \
                                 OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;                                                                               \
                                 OStEXTAK( ostoSay , "    " ) ;                                                                                                      \
                                 OStEXTC(  ostoSay , tinP.pag1->cYieldHighWater , 0 ) ;                                                                      \
@@ -2149,6 +2204,8 @@ it is illegal to refer to this symbol in the definition of an adam
                                 OStEXTC(  ostoSay , tinP.cSpins3 , '0' ) ;                                                                                          \
                                 OStEXTAK( ostoSay , "." ) ;                                                                                                         \
                                 OStEXTC(  ostoSay , tinP.cSpins4 , '0' ) ;                                                                                          \
+                                OStEXTAK( ostoSay , "." ) ;                                                                                                         \
+                                OStEXTC(  ostoSay , tinP.cOsHandles , '0' ) ;                                                                                          \
                                 etThread.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                           \
                             }                                                                                                                                       \
                                                                                                                                                                     \
@@ -51334,28 +51391,3 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200597.CbOOKmARK END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CmAXsTEPtLS*//*1*/
-
-#define CmAXsTEPtLS ( TUCK >> 4 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS END

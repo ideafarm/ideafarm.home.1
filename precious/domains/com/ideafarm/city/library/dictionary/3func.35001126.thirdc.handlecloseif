@@ -21,6 +21,9 @@
             default :
             }
                 break ;
+
+                DECoShANDLES
+
                 handleP.osh = 0 ;
                 EVP_PKEY_free( (EVP_PKEY*)handleP.osh ) ;
                 _IO_
@@ -43,6 +46,8 @@
             }
                 break ;
                 }
+                    DECoShANDLES
+
                     //etherC::etTextIF( tinP ).traceF( tinP , T("~handleCloseIF / called  OpenSSL free context") ) ;
                     BOSnOvALUE( WHATgbo , SSL_CTX_free( (SSL_CTX*)handleP.osh ) )     //20211111@1551: OBSERVED TO NEVER RETURN AFTER EXCEPTION CAUGHT WITHIN acceptF CALL TO shakeHandsAsServerF
                     //etherC::etTextIF( tinP ).traceF( tinP , T("~handleCloseIF / calling OpenSSL free context") ) ;
@@ -64,6 +69,8 @@
                 #endif
     
                     }
+                        DECoShANDLES
+
                         PUSE( tinP , *(byteT**)&handleP.osh ) ;
                         if( !POOP ) { BOSnOvALUE( WHATgbo , DeleteCriticalSection( (CRITICAL_SECTION*)handleP.osh ) ) }
                         __( !handleP.osh ) ;
@@ -110,6 +117,8 @@
 
                 #endif
                     
+                    DECoShANDLES
+
                     }
                         BLAMMOiD( tinP.brcLath ) ;
                         //tinP.pc Utility[ 0 ] = tinP.brcLath - WSABASEERR ;
@@ -128,15 +137,21 @@
                     
                 #elif defined( __NT__ )
 
+                    DECoShANDLES
+
                     if( 0 > (sCountT)tinP.brcLath ) { BLAMMO ; }
                     BOSdOnOTtEST( WHATgbo , soclose( handleP.osh ) )
 
                 #ifdef __OS2__
 
                 #endif
+
                     BOSS( WHATgbo , BOSfAIL , shutdown( handleP.osh , 2 ) )
+
                 #elif defined( __NT__ )
+
                     BOSdOnOTtEST( WHATgbo , so_cancel( handleP.osh ) )
+
                 #ifdef __OS2__
                 
                 //}
@@ -189,6 +204,9 @@
             case ifcIDtYPEhANDLE_EXCEPTIONhANDLER :
             }
                 break ;
+
+                DECoShANDLES
+
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , DeleteObject( (HGDIOBJ)handleP.osh ) )
                 TINSL
@@ -200,6 +218,8 @@
     
                     #endif
                 
+                    DECoShANDLES
+
                     if( tinP.bosFail ) { BLAMMO ; }
                     BOS( WHATgbd , BOSoK , DeleteDC( (HDC)handleP.osh ) )
         
@@ -233,6 +253,8 @@
                 }
                     #endif
 
+                        DECoShANDLES
+
                         BOSpOOP
                         BOS( WHATgbd , BOSoK , DestroyWindow( (HWND)handleP.osh ) )
 
@@ -253,6 +275,8 @@
     
                 #endif
                     
+                    DECoShANDLES
+
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , FindCloseChangeNotification( (HANDLE)handleP.osh ) )
                     
@@ -291,6 +315,8 @@
     
                 #endif
                     
+                    DECoShANDLES
+
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , FindClose( (HANDLE)handleP.osh ) )
                     
@@ -308,10 +334,14 @@
                 }
                     #endif
 
+                        DECoShANDLES
+
                         BOSpOOP
                         BOSS( WHATgbo , BOSoK , CloseHandle( (HANDLE)handleP.osh ) )
 
                     #elif defined( __NT__ )
+                        DECoShANDLES
+
                         BOSpOOP
                         BOS( WHATgbo , BOSfAIL , DosClose( (HFILE)handleP.osh ) )
                     #ifdef __OS2__
@@ -347,6 +377,8 @@
                 #endif
 
                     }
+                        DECoShANDLES
+
                         BOSpOOP
                         BOS( WHATgbo , BOSoK , CloseHandle( (HANDLE)handleP.osh ) )
                         //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 0\r\n" ) ;
@@ -490,6 +522,8 @@
     
                 #elif defined( __NT__ )
 
+                    DECoShANDLES
+
                     BOSdOnOTtEST( WHATgbo , DosFreeMem( (voidT*)handleP.cNote ) )
 
                 #ifdef __OS2__
@@ -521,6 +555,8 @@
                     handleP.osh = handleP.oshInvalid ;
                     #endif
 
+                        DECoShANDLES
+
                         BOSpOOP
                         BOS( WHATgbo , BOSoK , CloseHandle( (HANDLE)handleP.osh ) )
 
@@ -551,9 +587,13 @@
             }
                 break ;
                 #endif
+
+                    DECoShANDLES
+
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , FreeLibrary( (HMODULE)handleP.osh ) )
                     dec02AM( processGlobal2I.cDllLoaded ) ; //COUNT WILL BE WRONG IF THE NEXT LINE FAILS
+
                 #elif defined( __NT__ )
                     //U::
                 #ifdef __OS2__

@@ -44,11 +44,14 @@
     {
     if( !POOP )
 
+    DECoShANDLES
     BOSpOOP
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsm ) )
     }
+        DECoShANDLES
         BOSpOOP
         BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
+        INCoShANDLES
         hsv = (SC_HANDLE)tinP.brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , CreateService( hsm , postNameP , postDisplayNameP , SERVICE_ALL_ACCESS , SERVICE_WIN32_OWN_PROCESS | SERVICE_INTERACTIVE_PROCESS , bManualStart ? SERVICE_DEMAND_START : SERVICE_AUTO_START , SERVICE_ERROR_NORMAL , postFileP , 0 , 0 , 0 , "LocalSystem" , 0 ) )
@@ -70,15 +73,18 @@
         ZE( boolT , bManualStart ) ;
     
         }
+            DECoShANDLES
             hsv = 0 ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
             BOSpOOP
             BOS( WHATgbo , BOSoK , DeleteService( hsv ) )
+            INCoShANDLES
         {
         if( hsv )
         SC_HANDLE hsv = (SC_HANDLE)tinP.brcRaw ;
         BOS( WHATgbo , BOSoK , OpenService( hsm , postNameP , SERVICE_ALL_ACCESS ) )
+        INCoShANDLES
     {
     if( !POOP )
     BOSpOOP

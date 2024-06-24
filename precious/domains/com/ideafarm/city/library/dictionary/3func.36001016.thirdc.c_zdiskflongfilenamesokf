@@ -10,6 +10,7 @@
 }
     return fLongOK ;
     #endif
+
         BOSpOOP
         else if( tinP.brcLath == ERROR_FILENAME_EXCED_RANGE || tinP.brcLath == ERROR_INVALID_NAME /*|| tinP.brcLath == ERROR _NOT_READY*/ || tinP.brcLath == ERROR_PATH_NOT_FOUND ) tinP.bosFail = 0 ;
         }
@@ -17,18 +18,24 @@
             tinP.bosFail = 0 ;
         {
         if( !tinP.bosFail || tinP.brcLath == ERROR_FILE_NOT_FOUND )
-        HANDLE handle = (HANDLE)tinP.brcRaw ;
 
         if( bRetry ) { __( ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY ) ; }
         while( bRetry && -- cDo ) ;
         }
+            }
+                DECoShANDLES
+                INCoShANDLES
+                BOS( WHATsfr , BOSoK , FindClose( osh ) )
+            {
+            else
             else if( bRetry ) bRetry = 0 ;
             }
                 continue ;
                 bRetry = 1 ;
                 Sleep( 2000 ) ;
             {
-            if( tinP.brcLath == ERROR_NOT_READY )
+            if( (countT)osh == ERROR_NOT_READY )
+            HANDLE osh = (HANDLE)tinP.brcLath ;
             BOS( WHATsfr , BOShANDLE , FindFirstFile( ostoTest , &info ) )
         {
         do                                                 //SILENTLY RETRY 8 TIMES IF ERROR_NOT_READY
@@ -37,12 +44,15 @@
 
         BOSnOvALUE( WHATsfr , SetLastError( 0 ) )
         WIN32_FIND_DATA info ;
+
     #elif defined( __NT__ )
+
         fLongOK = ERROR_FILENAME_EXCED_RANGE != tinP.brcRaw ;
         BOSdOnOTtEST( WHATsfr , DosFindFirst( ostoTest , &handle , 0 , &info , sizeof info , &cc, FIL_STANDARD ) )
         FILEFINDBUF3 info ;
         HDIR handle = HDIR_SYSTEM ;
         ULONG cc = 1 ;
+
     #ifdef __OS2__
     *(osTextT*)(const osTextT*)ostoTest = postDiskP[ 3 ] ;
     OStEXTV( ostoTest , "?:\\neverused.long" )

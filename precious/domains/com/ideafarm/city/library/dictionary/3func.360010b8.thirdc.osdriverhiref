@@ -10,19 +10,23 @@
 }
     delF( tinP , pc_ppostHow ) ;
 
+    DECoShANDLES
     BOSpOOP
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsm ) )
     BOSpOOP
+    DECoShANDLES
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
     BOSpOOP
 
     if( tinP.bosFail ) { LOGrAW3( "StartService returned " , tinP.brcLath , "\r\n" ) ; }
 
     BOS( WHATgbo , BOSoK , StartService( hsv , 0 , 0 ) ) //U: DEBUG: __( !StartService( hsv , 1 + cHowP , (const osTextT**)pc_ppostHow ) ) ;
+    INCoShANDLES
     __Z( hsv ) ;
     SC_HANDLE hsv = (SC_HANDLE)tinP.brcRaw ;
     BOS( WHATgbo , BOSoK , OpenService( hsm , postNameP , SERVICE_ALL_ACCESS ) )
     __Z( hsm ) ;
+    INCoShANDLES
     SC_HANDLE hsm = (SC_HANDLE)tinP.brcRaw ;
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
 

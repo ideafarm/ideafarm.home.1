@@ -40,16 +40,20 @@
     if( !POOP )
     processGlobal2I._thirdC_flagsModeProcess1 |= flMODEpROCESS1_QUITaTsHUTDOWN ; //I WANT TO SET flMODEpROCESS1_DRIVER BIT AS SOON AS I KNOW THAT I AM THE DRIVER PROCESS
 
+    DECoShANDLES
     BOSpOOP
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsm ) )
+    DECoShANDLES
     BOSpOOP
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
     BOSpOOP
     BOS( WHATgbo , BOSoK , QueryServiceStatus( hsv , (SERVICE_STATUS*)tinP.pag1->pcServiceStatus ) )
     BOSpOOP
     SC_HANDLE hsv = (SC_HANDLE)tinP.brcRaw ;
+    INCoShANDLES
     BOSpOOP
     BOS( WHATgbo , BOSoK , OpenService( hsm , tinP.pag1->postServiceName , SERVICE_ALL_ACCESS ) )
+    INCoShANDLES
     SC_HANDLE hsm = (SC_HANDLE)tinP.brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )

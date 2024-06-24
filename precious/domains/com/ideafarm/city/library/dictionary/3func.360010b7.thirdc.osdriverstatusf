@@ -11,9 +11,11 @@
     return idStatus ;
 
     }
+        DECoShANDLES
         BOSpOOP
         BOS( WHATgbo , BOSoK , CloseServiceHandle( hsm ) )
         }
+            DECoShANDLES
             BOSpOOP
             BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
 
@@ -29,13 +31,14 @@
             BOSpOOP
             BOS( WHATgbo , BOSoK , QueryServiceStatus( hsv , &info ) )
             SERVICE_STATUS info ;
+            INCoShANDLES
         {
         if( hsv )
         SC_HANDLE hsv = (SC_HANDLE)tinP.brcRaw ;
 
-
         BOS( WHATgbo , BOSoK , OpenService( hsm , postNameP , SERVICE_ALL_ACCESS ) )
         idStatus = ifcDRIVERsTATUS_UNKNOWN ;
+        INCoShANDLES
     {
     if( !POOP )
     __Z( hsm ) ;

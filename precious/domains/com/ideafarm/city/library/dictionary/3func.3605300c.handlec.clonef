@@ -9,21 +9,21 @@
 
 }
     }
-
         }
             }
                 break ;
-                osh = thirdC::osHandleCloneIF( tinP , cNote , oshP.osh , idType , ~hProcessToP ? hProcessToP.osF( ifcIDtYPEhANDLE_PROCESS ) : thirdC::osOpenProcessIF() , ~hProcessFromP ? hProcessFromP.osF( ifcIDtYPEhANDLE_PROCESS ) : thirdC::osOpenProcessIF() ) ;
-                if( idType != ifcIDtYPEhANDLE_PROCESS && osPidOwner == oshP.osPidOwner ) cNote = oshP.cNote ; //CODEsYNCH: 175000c 1020191
+
+                osh = thirdC::osHandleCloneIF( tinP , cNote , handleP.osh , idType , ~hProcessToP ? hProcessToP.osF( ifcIDtYPEhANDLE_PROCESS ) : thirdC::osOpenProcessIF() , ~hProcessFromP ? hProcessFromP.osF( ifcIDtYPEhANDLE_PROCESS ) : thirdC::osOpenProcessIF() ) ;
+                if( idType != ifcIDtYPEhANDLE_PROCESS && osPidOwner == handleP.osPidOwner ) cNote = handleP.cNote ; //CODEsYNCH: 175000c 1020191
                 //FOR PROCESS HANDLES, cNote IS A BOOLEAN THAT SAYS "DON'T CLOSE ME", WHICH IS USED WHEN osh IS THE OS PSEUDOHANDLE FOR THE CURRENT PROCESS
             {
             default :
             }
                 break ;
 
-                c2AppNote = oshP.c2AppNote ;
-                cNote = oshP.cNote ;
-                osh = oshP.osh ;
+                c2AppNote = handleP.c2AppNote ;
+                cNote = handleP.cNote ;
+                osh = handleP.osh ;
             {
             case ifcIDtYPEhANDLE_FILEfIND :
             case ifcIDtYPEhANDLE_BOOKS    :
@@ -31,17 +31,17 @@
         switch( idType )
         osPidOwner = osPidOwnerToP ;
     {
-    if( ~oshP )
+    if( ~handleP )
 
     }
         resetF() ;
-        *(countT*)&idType = oshP.idType ;
+        *(countT*)&idType = handleP.idType ;
     {
     if( !idType )
 
     closeIfF() ;
 
-    if( idType && idType != oshP.idType ) { BLAMMO ; }
+    if( idType && idType != handleP.idType ) { BLAMMO ; }
 
     if( idType == ifcIDtYPEhANDLE_LISTING         ) { BLAMMO ; } //U:LIST ALL NONCLONABLE TYPES HERE
     if( idType == ifcIDtYPEhANDLE_CRITICALsECTION ) { BLAMMO ; } //U:LIST ALL NONCLONABLE TYPES HERE
@@ -51,7 +51,7 @@
 
     TINSL
 {
-/*1*/voidT handleC::cloneF( const handleC& oshP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP )/*1*/
+/*1*/voidT handleC::cloneF( const handleC& handleP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP )/*1*/
 
 /**/
 */

@@ -313,7 +313,8 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
                     //TN( tYearPattern , "2022/" ) ;
                     //TN( tYearPattern , "2017/" ) ;
                     //TN( tYearPattern , "2012/" ) ;
-                      TN( tYearPattern , "2008/" ) ;
+                      TN( tYearPattern , "2009/" ) ;
+                    //TN( tYearPattern , "2008/" ) ;
                     //TN( tYearPattern , "1999/" ) ;
                     //TN( tYearPattern , "1234/" ) ;
                 #if defined( IFCtESTING )
@@ -2407,7 +2408,7 @@ DONE( tmWorkerFileInfoF )
                 {
                 switch( POOP )
 
-                fileC fi( tinP , pzJob->psttLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEc_null , 1 ) ;
+                fileC fi( tinP , pzJob->psttLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ;
 
                 SCOOPS
                 _IO_
@@ -2565,9 +2566,9 @@ TASK( tmWorkerHealFileF )
                 inc02AM( cDayZippers ) ;
 
                 }
-                    ++ s ; etherP.osSleepF( tinP , TOCK >> 2 ) ;
-                {
-                while( cDayZippers > 4 )                //20240622@1654: STALLS WITH 8
+                    ++ s ; etherP.osSleepF( tinP , TOCK >> 2 ) ;              //20240622@1800: STALLS WITH 01 WITHIN 2 TICKS
+                {                                                             //20240622@1743: STALLS WITH 4, SO REVERTING TO 01 FOR DEBUGGING (CONJ: LEAK)
+                while( cDayZippers > 0x20 )                                    //20240622@1654: STALLS WITH 8
                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
             {
@@ -2684,7 +2685,7 @@ TASK( tmDayZipperF )
                 {
                 if( POOP )
 
-                fileC fiw( tinP , (strokeS*)tLongChunk , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEc_null , 0 , 0 ) ;
+                fileC fiw( tinP , (strokeS*)tLongChunk , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 
                 SCOOPS
                 _IO_
@@ -2693,7 +2694,7 @@ TASK( tmDayZipperF )
             TN( tLongChunk , "" ) ; tLongChunk = tPathYear+tShortDayZipP ;
 
             }
-                etherP.traceF( tinP , T(bZippedAok?"zipped aok":"zip failed") ) ;
+                if( !bZippedAok ) etherP.traceF( tinP , T(bZippedAok?"zipped aok":"zip failed") ) ;
 
                 }
                     }
@@ -2830,7 +2831,7 @@ TASK( tmDayZipperF )
                                 {
                                 if( POOP )
 
-                                fileC fiw( tinP , (strokeS*)tLongAt , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEc_null , 0 , 0 ) ;
+                                fileC fiw( tinP , (strokeS*)tLongAt , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 
                                 SCOOPS
                                 _IO_
@@ -2842,6 +2843,7 @@ TASK( tmDayZipperF )
                         }
                             }
                                 //etherP.traceF( tinP , T("[timeWritten,timeWrittenNewest]:    ")+TT(timeWritten.time1,timeWritten.time2)+tb4+TT(timeWrittenNewest.time1,timeWrittenNewest.time2) ) ;
+                                etherP.traceF( tinP , T("zipDayF pass 1 [tShort]:    ")+tShort ) ;
 
                                 if( timeWrittenNewest.time2 < timeWritten.time2 || ( timeWrittenNewest.time2 == timeWritten.time2 && timeWrittenNewest.time1 < timeWritten.time1 ) ) timeWrittenNewest = timeWritten ;
 
@@ -2865,7 +2867,7 @@ TASK( tmDayZipperF )
                                         {
                                         if( POOP )
 
-                                        fileC fir( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEc_null , 0 , 0 ) ;
+                                        fileC fir( tinP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 
                                         SCOOPS
                                         _IO_
@@ -2926,7 +2928,7 @@ TASK( tmDayZipperF )
             handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             ZE( countT , idAtFile ) ;
 
-            //etherP.traceF( tinP , T("zipDayF [idPass,path]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear ) ;
+            etherP.traceF( tinP , T("zipDayF [idPass,path]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear ) ;
 
             if( idPass == 2 && !timeWrittenNewest ) break ;
         {
