@@ -345,7 +345,11 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
 
             etThread.delF( tinP , pstt1ArchivesAllLag ) ;
             }
-                if( bAbort ) { ++ s ; ether.osSleepF( tinP , TOCK << 2 ) ; }
+                }
+                    ++ s ; ether.osSleepF( tinP , TOCK << 2 ) ;
+                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                {
+                if( bAbort )
 
                 }
                     break ;
@@ -400,6 +404,7 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
                         if( bTest1 ) etThread.traceF( tinP , T("napping for a minute [reason]:    less than oo archives found") ) ;
                     {
                     if( bTest1 /*|| bTest2*/ || bTest3 )
+                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
                     boolT bTest3 = !pstt1ArchivesAllLag ? 0 : etThread.strCompareF( tinP , pstt1ArchivesAllLag , pstt1ArchivesAll ) ;
                     boolT bTest2 = !pstt1ArchivesAllLag ;
                     boolT bTest1 =  cArchive < 2 ;
@@ -605,7 +610,6 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
             {
             while( !ether )
             ZE( countT , cArchive ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
             #endif
                 //TN( tLikePseudoVolumes , "///ideafarm/devices/"          ) ;
                 TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
@@ -627,6 +631,7 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
             }
                 if( !bWaitWoDay ) etThread.traceF( tinP , T("napped") ) ;
                 ++ s ; ether.osSleepF( tinP , TICK >> 6 ) ;
+                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
                 cNaps ++ ;
                 if( !cNaps ) etThread.traceF( tinP , T(bWaitWoDay?"napping for a day":"napping for a quarter minute") ) ;
                 _IO_
@@ -666,10 +671,13 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
     ZE( sCountT , time2AOK ) ;
     ZE( countT  , time1AOK ) ;
 
-    etThread.traceF( tinP , T("napped  for a half tick so you can plug in devices to heal") ) ;
-//    ++ s ; ether.osSleepF( tinP , TICK >> 1 ) ;
-    etThread.traceF( tinP , T("napping for a half tick so you can plug in devices to heal") ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    }
+        etThread.traceF( tinP , T("napped  for a half tick so you can plug in devices to heal") ) ;
+        ++ s ; ether.osSleepF( tinP , TICK >> 1 ) ;
+        etThread.traceF( tinP , T("napping for a half tick so you can plug in devices to heal") ) ;
+        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    {
+    if( !bSandbox ) // NAP IF RUNNING AS SERVICE BUT NOT IF RUNNING FROM IdeaFarm (tm) Elves
 
     }
         etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerMemCompareF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cWorkersCompare , (countT)&bAbort , (countT)&cPause , (countT)&stJobCompare , flagsMode , (countT)&cYearsHealing ) ;
@@ -805,6 +813,8 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
     ZE( countT , cExecutiveHealYear       ) ;
     ZE( countT , cPause                   ) ;
     ZE( boolT  , bAbort                   ) ;
+
+    boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
     grabC grabDisk(                tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
     grabC grabLathFileHealedFiles( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
@@ -1186,10 +1196,13 @@ DONE( tmExecutiveHealYearF )
                             //etThread.traceF( tinP , T("[tDayPrefixNew,tShort]:    ")+tDayPrefixNew+tb4+tShort ) ;
 
                             }
-                                etThread.traceF( tinP , T("********************************************************************************************************************************") ) ;
                                 tDayPrefix = tDayPrefixNew ;
 
-                                if( tDayPrefix.csF( tinP ) ) chunkDayIfF( tinP , etThread , bAbortP , cPathsToYear , ppsttPathToYear , tDayPrefix ) ;
+                                }
+                                    chunkDayIfF( tinP , etThread , bAbortP , cPathsToYear , ppsttPathToYear , tDayPrefix ) ;
+                                    etThread.traceF( tinP , T("calling chunkDayIfF [prefix]:    ")+tDayPrefix ) ;
+                                {
+                                if( tDayPrefix.csF( tinP ) )
                             {
                             if( etThread.strCompareF( tinP , tDayPrefix , tDayPrefixNew ) )
 
@@ -2616,12 +2629,12 @@ TASK( tmDayZipperF )
             }
                 }
                     }
-                        etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongChunk ) ;
+                        if( bZippedAok ) etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongChunk ) ;
                         bAbortP = 1 ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
-                    if( POOP )
+                    if( POOP )                                                                                                  // EXPECTED IF !bZippedAok
                     tinP.pEtScratch->diskFileSetAttrF( tinP , tLongChunk , flagsAttributeNow.c1 , flagsAttributeNow.c2 ) ;
                 {
                 if( flagsAttributeNow.c1 != flagsAttributeWas.c2 )
@@ -2678,12 +2691,12 @@ TASK( tmDayZipperF )
                 {
                 else
                 }
-                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear+tShortDayZipP ) ;
+                    if( bZippedAok ) etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear+tShortDayZipP ) ;
                     bAbortP = 1 ;
                     POOPRqUIET
                     countT rc = POOP ;
                 {
-                if( POOP )
+                if( POOP )  // EXPECTED IF !bZippedAok
 
                 fileC fiw( tinP , (strokeS*)tLongChunk , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 
@@ -2698,13 +2711,9 @@ TASK( tmDayZipperF )
 
                 }
                     }
-                        }
-                            if( etherP.diskFileExistsF( tinP , tLong ) ) etherP.traceF( tinP , T("!exception: could not delete the chunk file, which exists but is presumably corrupt [name]:    ")+tPathYear+tLong ) ;
-                            POOPRqUIET
-                        {
-                        if( POOP )
-
-                        tinP.pEtScratch->boxZapF( tinP , tLong , 1 ) ;
+                        //    IF THE ZIP FAILED, EVEN IF THE CHUNK FILE CONTAINS CORRUPTION, THE FSET FILES WILL REMAIN SO WILL BE ZIPPED INTO THE CHUNK FILE ON THE NEXT HEAL, FIXING IT
+                        //    IF THE ERROR IS A FALSE POSITIVE AND THE ZIP REALLY SUCCEEDED, THE CHUNK FILE CONTAINS VALUABLE DATA THAT IS NO LONGER PRESENT AS FSET FILES
+                        //DO NOT DELETE THE CHUNK FILE
 
                         etherP.traceF( tinP , T("!exception: kid process failed [value,rc,name]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
                         TN( tLong , "" ) ; tLong = tPathYear+tShortDayZipP ;
@@ -2729,7 +2738,6 @@ TASK( tmDayZipperF )
                     _IO_
                 {
                 IFsCRATCH
-                ZE( boolT , bZippedAok ) ;
             {
             else
             }
@@ -2737,6 +2745,7 @@ TASK( tmDayZipperF )
                 bAbortP = 1 ;
             {
             if( !osPid )
+            ZE( boolT , bZippedAok ) ;
 
             THREADmODE2rESTORE
             }
@@ -2747,6 +2756,8 @@ TASK( tmDayZipperF )
             countT& osPid = c4Result.c2 ;
             count4S c4Result ;
             THREADmODE2oN( flTHREADmODE2_ALLOWmULTItHREADEDhOVER | flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+
+            etherP.traceF( tinP , T("zipDayF calling ifcHireF [tDayPrefix,path]:    ")+tDayPrefixP+tb4+tPathYear ) ;
         {
         if( !bAbortP )
 
@@ -2843,7 +2854,7 @@ TASK( tmDayZipperF )
                         }
                             }
                                 //etherP.traceF( tinP , T("[timeWritten,timeWrittenNewest]:    ")+TT(timeWritten.time1,timeWritten.time2)+tb4+TT(timeWrittenNewest.time1,timeWrittenNewest.time2) ) ;
-                                etherP.traceF( tinP , T("zipDayF pass 1 [tShort]:    ")+tShort ) ;
+                                //etherP.traceF( tinP , T("zipDayF pass 1 [tShort]:    ")+tShort ) ;
 
                                 if( timeWrittenNewest.time2 < timeWritten.time2 || ( timeWrittenNewest.time2 == timeWritten.time2 && timeWrittenNewest.time1 < timeWritten.time1 ) ) timeWrittenNewest = timeWritten ;
 
@@ -2861,9 +2872,10 @@ TASK( tmDayZipperF )
                                         {
                                         else
                                         }
-                                            etherP.traceF( tinP , T("!exception: could not open file R R [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                            etherP.traceF( tinP , T("!exception: could not open file R R [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pInfoFile->psttIfoName) ) ;
                                             bAbortP = 1 ;
                                             POOPRqUIET
+                                            countT rc = POOP ;
                                         {
                                         if( POOP )
 
@@ -2928,7 +2940,7 @@ TASK( tmDayZipperF )
             handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             ZE( countT , idAtFile ) ;
 
-            etherP.traceF( tinP , T("zipDayF [idPass,path]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear ) ;
+            //etherP.traceF( tinP , T("zipDayF [idPass,path,tDay]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear+tb4+tDayPrefixP ) ;
 
             if( idPass == 2 && !timeWrittenNewest ) break ;
         {
@@ -5141,7 +5153,7 @@ struct paramHealFileS
 
 //#define OVERRIDElONELYiSoK
 //#define OVERRIDEkEEPnAMES
-//#define OVERRIDEnOhIBERNATEoS
+  #define OVERRIDEnOhIBERNATEoS
 //#define OVERRIDEdOnOTmOVEoRrEPLACEfILES
 //#define OVERRIDEnOiMAGEcOMPARE
 //THESE SHOULD BE COMMENTED OUT IN PRODUCTION ; THEY ARE USED FOR EXTRA SAFETY WHEN E.G. RECOVERING DATA

@@ -20,14 +20,16 @@
             {
             if( !bOk )
 
+            etherP.traceF( tinP , T("called  ContinueDebugEvent()") ) ;
             bOk = ContinueDebugEvent( info3.dwProcessId , info3.dwThreadId , DBG_EXCEPTION_NOT_HANDLED ) ;
+            etherP.traceF( tinP , T("calling ContinueDebugEvent()") ) ;
 
             }
                 }
                     break ;
 
-                    BOSpOOP
-                    BOS( WHATgbo , BOSoK , CloseHandle( info3.u.CreateProcessInfo.hFile ) ) ; info3.u.CreateProcessInfo.hFile = 0 ;
+                    //BOSpOOP
+                    //BOS( WHATgbo , BOSoK , CloseHandle( info3.u.CreateProcessInfo.hFile ) ) ; info3.u.CreateProcessInfo.hFile = 0 ;
 
                     etherP.traceF( tinP , T(bHuh?"!exception:  unexpected process exit code [exitCode]:    ":"process [exitCode]:    ")+tExitCode ) ;
 
@@ -233,7 +235,9 @@
         {
         if( !bOk )
 
+        etherP.traceF( tinP , T("called  WaitForDebugEvent()") ) ;
         bOk = WaitForDebugEvent( &info3 , INFINITE ) ;
+        etherP.traceF( tinP , T("calling WaitForDebugEvent()") ) ;
     {
     while( !cBegun || cEnded < cBegun )
     ZE( countT , myValue ) ;

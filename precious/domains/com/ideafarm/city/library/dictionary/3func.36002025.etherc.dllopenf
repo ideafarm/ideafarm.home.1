@@ -11,6 +11,7 @@
     TELL( "dllOpenF / -------- (really)" ) ; //U:: TO FIND A BUG: 20180525@0729
     }
         TELL( "dllOpenF / --" ) ; //U:: TO FIND A BUG: 20180525@0729
+        traceF( tinP , T("dllOpenF / ----") ) ; //U::
         }
             third.delF( tinP , postAnticipatedError ) ;
             }
@@ -33,40 +34,58 @@
 
             TELL( "dllOpenF / 0" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
 
-            batUpdate.ungrabF( tinP ) ;
-
             }
-                TELL( "dllOpenF / 1" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
+                traceF( tinP , T("dllOpenF / 0") ) ; //U::
+                batUpdate.ungrabF( tinP ) ;
+                traceF( tinP , T("dllOpenF / 1") ) ; //U::
 
-                THREADmODE2rESTORE
-                TELL( "dllOpenF / 2" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
-                third.dosLoadModuleF( tinP , hDllP , postAnticipatedError , osFileNameC( tinP , third , post ) , this ) ; ___( postAnticipatedError ) ;
-                TELL( "dllOpenF / 3" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                delF( tinP , psttMapped ) ;
-                strMakeF( tinP , LF , post , psttMapped ) ; ___( post ) ;
+                }
+                    traceF( tinP , T("dllOpenF / 2") ) ; //U::
+                    TELL( "dllOpenF / 1" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
+
+                    THREADmODE2rESTORE
+                    TELL( "dllOpenF / 2" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
+                    }
+                        traceF( tinP , T("dllOpenF / 3") ) ; //U::
+                        third.dosLoadModuleF( tinP , hDllP , postAnticipatedError , osFileNameC( tinP , third , post ) , this ) ; ___( postAnticipatedError ) ;
+                        traceF( tinP , T("dllOpenF / 4") ) ; //U::
+                        _IO_
+                    {
+                    TELL( "dllOpenF / 3" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
+                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                    traceF( tinP , T("dllOpenF / 5") ) ; //U::
+                    delF( tinP , psttMapped ) ;
+                    strMakeF( tinP , LF , post , psttMapped ) ; ___( post ) ;
+                    traceF( tinP , T("dllOpenF / 6") ) ; //U::
+                {
+                if( !POOP )
+                traceF( tinP , T("dllOpenF / 7") ) ; //U::
+
+                TELL( "dllOpenF / 4" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
+                __Z( psttMapped ) ;
+                }
+                    traceF( tinP , T("dllOpenF / 8") ) ; //U::
+                    delF( tinP , psttm ) ;
+                    THREADmODE2rESTORE
+                    diskMapFileNameHoverF( tinP , psttMapped , psttm , cTriesP ) ; ___( psttMapped ) ;
+                    diskMapFileNameF( tinP , psttm , psttP ) ; ___( psttm ) ;
+                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                    ZE( strokeS* , psttm ) ;
+                    traceF( tinP , T("dllOpenF / 9") ) ; //U::
+                {
+                ZE( strokeS* , psttMapped ) ;
+
+                TELL( "dllOpenF / 5" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
+                traceF( tinP , T("dllOpenF / a") ) ; //U::
+                batUpdate.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                traceF( tinP , T("dllOpenF / b") ) ; //U::
             {
-            if( !POOP )
             ZE( osTextT* , postAnticipatedError ) ;
             ZE( osTextT* , post ) ;
-
-            TELL( "dllOpenF / 4" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
-            __Z( psttMapped ) ;
-            }
-                delF( tinP , psttm ) ;
-                THREADmODE2rESTORE
-                diskMapFileNameHoverF( tinP , psttMapped , psttm , cTriesP ) ; ___( psttMapped ) ;
-                diskMapFileNameF( tinP , psttm , psttP ) ; ___( psttm ) ;
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                ZE( strokeS* , psttm ) ;
-            {
-            ZE( strokeS* , psttMapped ) ;
-
-            TELL( "dllOpenF / 5" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
-            batUpdate.grabF( tinP , TAG( TAGiDnULL ) ) ;
             batonC batUpdate( tinP , TAG( TAGiDnULL ) , T("ifc.update") , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER ) ;
             TELL( "dllOpenF / 6" ) ; thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG: 20180525@0729
         {
+        traceF( tinP , T("dllOpenF / ++++") ) ; //U::
 
         _IO_
 
