@@ -7037,6 +7037,7 @@ a count8S object contains 8 countT values
     countT                          trueRandom ;                // IF !pSlab THEN USE THIS
     slabS*                          pSlab ;                     // ELSE           USE pSlab->trueRandom
     homeS*                          pHome ;
+    countT                          cOsHandles ;
 
     const countT                    cProcessors    ;    
     const countT                    maskProcessors ;
@@ -41198,7 +41199,6 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                      cSpins2 ;
     countT                      cSpins3 ;
     countT                      cSpins4 ;
-    countT                      cOsHandles ;
     countT                      pcIdThreadTrace[ CiDtHREADtRACE ] ;
 
     NEWdELcLASSpROTOS

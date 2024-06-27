@@ -11,11 +11,11 @@
 /**/
 /*1*//*DECoShANDLES*//*1*/
 
-#define DECoShANDLES                        \
-                                            \
-    {                                       \
-        tinP.cOsHandles -- ;                \
-        dec02AM( tinP.pag1->cOsHandles ) ;  \
+#define DECoShANDLES                                                    \
+                                                                        \
+    {                                                                   \
+        tinP.cOsHandles -- ;                                            \
+        dec02AM( processGlobal1S::_processGlobal1I_IF().cOsHandles ) ;  \
     }
 
 
@@ -38,11 +38,11 @@
 /**/
 /*1*//*INCoShANDLES*//*1*/
 
-#define INCoShANDLES                        \
-                                            \
-    {                                       \
-        tinP.cOsHandles ++ ;                \
-        inc02AM( tinP.pag1->cOsHandles ) ;  \
+#define INCoShANDLES                                                    \
+                                                                        \
+    {                                                                   \
+        tinP.cOsHandles ++ ;                                            \
+        inc02AM( processGlobal1S::_processGlobal1I_IF().cOsHandles ) ;  \
     }
 
 
@@ -52,6 +52,7 @@
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
 
 
 //
