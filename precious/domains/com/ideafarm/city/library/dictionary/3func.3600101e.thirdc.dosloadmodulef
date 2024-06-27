@@ -19,6 +19,7 @@
         }
             #endif
     
+if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosLoadModuleF / ----") ) ; //U::
                 }
                     }
                         bFail = 1 ;
@@ -48,13 +49,17 @@
                     osTextT postPad[] = " " ;
                 {
                 if( !c_strstrIF( tinP , processGlobal2I.postDllsLoaded , postP ) )  //20180117@1558: CHANGED SEMANTICS TO REGISTER ONLY UNIQUE DLL'S IN RESPONSE TO EXHAUSTING THE REGISTRY WHEN cloudC REPEATEDLY HIRES AN ADAM
+if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosLoadModuleF / 0") ) ; //U::
     
                 handleP.osF( ifcIDtYPEhANDLE_DLL , tinP.brcRaw ) ;
 
                 INCoShANDLES
+if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosLoadModuleF / 1") ) ; //U::
                 countT save = tinP.brcQuery ; //U::TO FIND A BUG
                 BOS( WHATgbo , BOSoK , LoadLibrary( postP ) )
+if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosLoadModuleF / 2 [postP]:    ")+T(postP) ) ; //U::
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
+if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosLoadModuleF / ++++") ) ; //U::
     
             #elif defined( __NT__ )
     

@@ -14,8 +14,8 @@
         handleP.osF( ifcIDtYPEhANDLE_SOCKET , oshSocket , 0 , c_pWrapper ) ;
         handleP.resetF() ;
         countT c_pWrapper = handleP.cNoteF() ;
+        INCoShANDLES
         openSslTls_getWrapperIF( tinP , handleP , *phContextP ) ;
-        countT oshSocket = tinP.brcRaw ;
     {
     else
     if( !phContextP ) handleP.osF( ifcIDtYPEhANDLE_SOCKET , tinP.brcRaw ) ;
@@ -33,11 +33,14 @@
         //ZE( int , cbMax ) ;
         //THIS WORKS BUT IS NOT USED
 
+        INCoShANDLES
+
         //LOGrAW5( "" , oshSocket , "    " , tinP.pag1->idAdam , " ++++\r\n" ) ;
-        countT oshSocket = tinP.brcRaw ;
+        oshSocket = tinP.brcRaw ;
     {
     BOSpOOP
     BOS( WHATgbo , BOSsOCKETcODE , socket( PF_INET6 , idTypeOs , 0 ) )      //20210223@1233: CHANGED FROM PF_INET TO PF_INET6
+    ZE( countT , oshSocket ) ;
 
     //#endif
     //    if( 'w' == osIdIF( tinP ) ) { int opt = SO_SYNCHRONOUS_NONALERT ; __( NO_ERROR - setsockopt( INVALID_SOCKET , SOL_SOCKET , SO_OPENTYPE , (char*)&opt , sizeof opt ) ) ; } // OPTIMIZE: THIS ONLY NEEDS TO BE DONE ONCE FOR EACH THREAD

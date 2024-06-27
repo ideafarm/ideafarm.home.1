@@ -24,6 +24,8 @@
                         bOk = 1 ;
                         if( !_brcRaw ) { BLAMMO ; }
                         BOSnOtIN( CloseHandle( (HANDLE)_brcRaw ) )
+                        DECoShANDLES
+                        INCoShANDLES
                     {
                     else
                     }
@@ -62,6 +64,7 @@
                             *pOshP = 0 ;
                             if( !_brcRaw ) { BLAMMO ; }
                             BOSnOtIN( CloseHandle( (voidT*)*pOshP ) )
+                            DECoShANDLES
                         {
                         if( !bDriver && *pOshP )
 
@@ -89,6 +92,7 @@
                         {
                         if( bLowMem )
 
+                        INCoShANDLES
                         conGF( "\r\n" ) ;
                         conGF( bDriver ) ;
                         conGF( " " ) ;
@@ -129,6 +133,7 @@
 
                 }
                     }
+                        DECoShANDLES
                         BOSnOtIN( CloseHandle( (voidT*)oshm ) )
 
                         if( _brcRaw == ERROR_ALREADY_EXISTS ) bOk = 1 ;
@@ -146,6 +151,7 @@
                             if( pEtRock )
                             etherC* pEtRock = &etherC::etRockIF( tinP ) ;
                             bOk = 1 ;       //U:: THIS ERROR IS SILENTLY IGNORED PENDING FURTHER ANALYSIS, ON THE PRESUMPTION THAT IT IS TRANSIENT ; U:: CONSIDER INFORMING CALLER (E.G. BY EITHER SETTING bOk TO 2 OR USING A NEW PARAMETER TO SAY "I COULD NOT DETERMINE bOk")
+                            INCoShANDLES
                         {
                         else
                         if( rc != ERROR_NOT_ENOUGH_MEMORY ) { BLAMMOiD( rc ) ; }

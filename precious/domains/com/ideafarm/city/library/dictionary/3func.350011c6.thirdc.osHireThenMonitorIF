@@ -28,8 +28,13 @@
                 }
                     break ;
 
+                    DECoShANDLES
+                    DECoShANDLES
+                    DECoShANDLES
+
                     //BOSpOOP
                     //BOS( WHATgbo , BOSoK , CloseHandle( info3.u.CreateProcessInfo.hFile ) ) ; info3.u.CreateProcessInfo.hFile = 0 ;
+                    //U:: MS DOC SAYS THAT THIS MUST BE DONE, BUT SEEN TO FAIL
 
                     etherP.traceF( tinP , T(bHuh?"!exception:  unexpected process exit code [exitCode]:    ":"process [exitCode]:    ")+tExitCode ) ;
 
@@ -217,7 +222,7 @@
                 case LOAD_DLL_DEBUG_EVENT        : {                                                                tEvent = T("LOAD_DLL_DEBUG_EVENT       ")                                                                                          ; break ; }
                 case EXIT_PROCESS_DEBUG_EVENT    : { cEnded ++ ; processExitCode = info3.u.ExitProcess.dwExitCode ; tEvent = T("EXIT_PROCESS_DEBUG_EVENT   [exitCode]: ")+TF2(processExitCode,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)                ; break ; }
                 case EXIT_THREAD_DEBUG_EVENT     : {             threadExitCode  = info3.u.ExitThread.dwExitCode  ; tEvent = T("EXIT_THREAD_DEBUG_EVENT    [exitCode]: ")+TF2(threadExitCode,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)                 ; break ; }
-                case CREATE_PROCESS_DEBUG_EVENT  : { cBegun ++ ;                                                    tEvent = T("CREATE_PROCESS_DEBUG_EVENT ")                                                                                          ; break ; }
+                case CREATE_PROCESS_DEBUG_EVENT  : { cBegun ++ ;                                                    tEvent = T("CREATE_PROCESS_DEBUG_EVENT ")                                                                                          ; INCoShANDLES ; INCoShANDLES ; INCoShANDLES ; break ; }
                 case CREATE_THREAD_DEBUG_EVENT   : {                                                                tEvent = T("CREATE_THREAD_DEBUG_EVENT  ")                                                                                          ; break ; }
                 case EXCEPTION_DEBUG_EVENT       : {                                                                tEvent = T("EXCEPTION_DEBUG_EVENT      ")                                                                                          ; break ; }
             {
