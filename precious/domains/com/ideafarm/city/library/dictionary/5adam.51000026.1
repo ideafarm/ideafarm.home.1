@@ -34,13 +34,14 @@ etThread.strFromF( tinP , psttValue , value ) ;
 ZE( strokeS* , psttIdDeathType ) ;
 ZE( strokeS* , psttValue ) ;
 
-etThread.osProcessWaitF( tinP , value , idDeathType , pid ) ;
+etThread.osProcessWaitF( tinP , value , idDeathType , tid , pid ) ;
 ZE( countT , idDeathType ) ;
 ZE( countT , value ) ;
 { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmKillF , 0 , flTHREADlAUNCH_null , 0 , pid ) ; }
 
-etThread.osSessionF( tinP , countTC() , pid , 0x4010024 , 0 , 100 , 100 , 400 , 200 ) ;
+etThread.osSessionF( tinP , tid , pid , 0x4010024 , 0 , 100 , 100 , 400 , 200 ) ;
 ZE( countT , pid ) ;
+ZE( countT , tid ) ;
 
 TODO
 

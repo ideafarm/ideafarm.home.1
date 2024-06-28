@@ -77,7 +77,7 @@
         else if( !ether.strCompareF( tinP , psttType , T("process.in") ) )
         }
             ether.delF( tinP , psttw ) ;
-            ether.osProcessF( tinP , countTC() , pid , ether.strDigitsToSCountF( tinP , psttw ) ) ;
+            ether.osProcessF( tinP , osTid , osPid , ether.strDigitsToSCountF( tinP , psttw ) ) ;
             handleC hProcess( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
             handleC hThread( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
             ether.strSubstringF( tinP , psttw , idf , idl , psttName ) ; ___( psttw ) ;
@@ -553,7 +553,8 @@ psttType( 0 ) ,
 idPort( 0 ) ,
 psttHost( 0 ) ,
 psttAll( 0 ) ,
-pid( 0 ) ,
+osPid( 0 ) ,
+osTid( 0 ) ,
 pHoseProcessError( 0 ) ,
 pHoseProcessOut( 0 ) ,
 pHoseProcessIn( 0 ) ,

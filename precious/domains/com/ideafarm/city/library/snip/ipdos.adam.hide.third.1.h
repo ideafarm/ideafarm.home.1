@@ -9380,9 +9380,11 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 #define ifcIDeVENTeXCEPTIONmONITORED_NOTlISTED               0xdddd047b
 #define ifcIDeVENTeXCEPTIONmONITORED_GRUNT                   0xdddd047c
 #define ifcIDeVENTeXCEPTIONmONITORED_BLAMMO                  0xdddd047d
+#define ifcIDeVENTeXCEPTIONmONITORED_INVALIDhANDLE           0xdddd047e
+#define ifcIDeVENTeXCEPTIONmONITORED_GUARDpAGE               0xdddd047f
 /*3*/
 #define ifcIDeVENTeXCEPTIONmONITORED_min     0xdddd045f
-#define ifcIDeVENTeXCEPTIONmONITORED_max     0xdddd047d
+#define ifcIDeVENTeXCEPTIONmONITORED_max     0xdddd047f
 
 
 //

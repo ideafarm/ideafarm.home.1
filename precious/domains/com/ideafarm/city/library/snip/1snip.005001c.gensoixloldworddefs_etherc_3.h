@@ -1,4 +1,5 @@
 
+
 voidT osDoNothingF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -1314,7 +1315,6 @@ voidT osProcessWaitF_333_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
    SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
     ZE( countT , pidP ) ;
     if( !POOP ) { slP >> pidP ; idArgNext ++ ; }
-    if( !POOP ) etherP.osProcessWaitF( tinP , valueP , idDeathTypeP , pidP ) ;
 }
 
 voidT osSessionF_333334P33337_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

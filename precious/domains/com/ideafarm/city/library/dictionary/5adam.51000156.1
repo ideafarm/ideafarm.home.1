@@ -17,13 +17,14 @@ etThread.strokeF( tinP , T("the adam of class eb00104 that i hired just ended\r\
 
 __( idDeathType ) ;
 __( value ) ;
-etThread.osProcessWaitF( tinP , value , idDeathType , pid ) ;
+etThread.osProcessWaitF( tinP , value , idDeathType , tid , pid ) ;
 ZE( countT , idDeathType ) ;
 ZE( countT , value ) ;
 
-else                                               etThread.osProcessF( tinP , countTC() , pid , 0x40100be ) ;
-if( F(etThread.flagsMode) & flTHIRDmODE_TESTaUTO ) etThread.osProcessF( tinP , countTC() , pid , 0x40100be , T("!testAuto") ) ;
+else                                               etThread.osProcessF( tinP , tid , pid , 0x40100be ) ;
+if( F(etThread.flagsMode) & flTHIRDmODE_TESTaUTO ) etThread.osProcessF( tinP , tid , pid , 0x40100be , T("!testAuto") ) ;
 ZE( countT , pid ) ;
+ZE( countT , tid ) ;
 
 TODO
 

@@ -2731,7 +2731,7 @@ TASK( tmDayZipperF )
                     {
                     if( value != ifcEXITcODE_EXITpROCESSaOK )
 
-                    tinP.pEtScratch->osProcessWaitF( tinP , value , countTC() , osPid ) ;
+                    tinP.pEtScratch->osProcessWaitF( tinP , value , countTC() , osTid , osPid ) ;
                     ZE( countT , value ) ;
 
                     SCOOPS
@@ -2754,6 +2754,7 @@ TASK( tmDayZipperF )
                 hoverC hover( tinP , etherP , tPathYear ) ;
             {
             countT& osPid = c4Result.c2 ;
+            countT& osTid = c4Result.c1 ; //U:: VERIFY THAT THIS GUESS IS CORRECT
             count4S c4Result ;
             THREADmODE2oN( flTHREADmODE2_ALLOWmULTItHREADEDhOVER | flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 

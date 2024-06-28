@@ -26121,7 +26121,8 @@ examples
     boxC*         pHoseProcessIn ;
     boxC*         pHoseProcessOut ;
     boxC*         pHoseProcessError ;
-    countT        pid ; // THE PID OF THIS PROCESS, IF IT IS A PROCESS BOX
+    countT        osTid ; // THE TID OF THIS PROCESS, IF IT IS A PROCESS BOX
+    countT        osPid ; // THE PID OF THIS PROCESS, IF IT IS A PROCESS BOX
     strokeS*      psttAll ;
     strokeS*      psttHost ;
     countT        idPort ;
@@ -29718,7 +29719,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34057.thirdC.dosStartSessionF!||
  voidT dosStartSessionF( tinS& tinP , countT& osTidP , countT& osPidP , countT& valueP , countT& idDeathTypeP , const osTextT* const postExeP , const osTextT* const postArgsP = 0 , const sCountT idColP = 0 , const sCountT idRowP = 0 , const countT cColP = 0 , const countT cRowP = 0 , const flagsT flagsP = flSESSION_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34080.thirdC.dosStartSessionF!||
- voidT dosWaitChildF( tinS& tinP , countT& valueP , countT& idDeathTypeP , countT& pidP ) ;
+ voidT dosWaitChildF( tinS& tinP , countT& valueP , countT& idDeathTypeP , countT& osTidP , countT& osPidP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34070.thirdC.dosWaitChildF!||
  voidT dosWaitEventSemF( tinS& tinP , const handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34031.thirdC.dosWaitEventSemF!||
@@ -33269,7 +33270,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34096.etherC.osProcessInterruptF!||
  voidT osProcessKillF( tinS& tinP , const countT pidP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34097.etherC.osProcessKillF!||
- voidT osProcessWaitF( tinS& tinP , countT& valueP , countT& idDeathTypeP , countT& pidP ) ;
+ voidT osProcessWaitF( tinS& tinP , countT& valueP , countT& idDeathTypeP , countT& osTidP , countT& osPidP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34098.etherC.osProcessWaitF!||
  voidT osSessionF( tinS& tinP , countT& osTidP , countT& osPidP , countT& valueP , countT& idDeathTypeP , const countT idAdamP , const strokeS* const psttArgsP = 0 , const countT idColP = 0 , const countT idRowP = 0 , const countT cColP = 0 , const countT cRowP = 0 , const flagsT flagsP = flSESSION_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340bf.etherC.osSessionF!||

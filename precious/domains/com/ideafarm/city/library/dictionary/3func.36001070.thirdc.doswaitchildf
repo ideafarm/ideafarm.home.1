@@ -15,7 +15,7 @@
             while( !*this && valueP == STILL_ACTIVE ) ;
             }
                 BOSpOOP
-                BOS( WHATgbo , BOSoK , GetExitCodeProcess( (HANDLE)handle.osF( ifcIDtYPEhANDLE_PROCESS ) , (DWORD*)&valueP ) )
+                BOS( WHATgbo , BOSoK , GetExitCodeProcess( (HANDLE)hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) , (DWORD*)&valueP ) )
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
                 ++ s ; dosSleepIF( tinP , 16 * 256 ) ;
             {
@@ -23,16 +23,28 @@
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
         {
 
-        tinP.pag4->_thirdC_grab_lOsPid.ungrabF( tinP ) ;
-        tinP.pag1->_thirdC_.pSwProcessHandle->freeF( tinP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
-        handle.osF( ifcIDtYPEhANDLE_PROCESS , *tinP.pag1->_thirdC_.pSwProcessHandle ) ;
-        tinP.pag1->_thirdC_.lOsPid = pidP ;
-        if( !tinP.pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinP , pidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
-        tinP.pag4->_thirdC_grab_lOsPid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        }
+            tinP.pag4->_thirdC_grab_lOsPid.ungrabF( tinP ) ;
+            tinP.pag1->_thirdC_.pSwProcessHandle->freeF( tinP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
+            hProcess.osF( ifcIDtYPEhANDLE_PROCESS , *tinP.pag1->_thirdC_.pSwProcessHandle ) ;
+            tinP.pag1->_thirdC_.lOsPid = osPidP ;
+            if( !tinP.pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinP , osPidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
+            tinP.pag4->_thirdC_grab_lOsPid.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
-        //DOES NOT WORK FOR zip.exe ON 2000: osOpenProcessIF( tinP , handle , pidP ) ;              20240623@1626: CONJ: 04 BIT PROCESS
-        handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+            tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
+            tinP.pag1->_thirdC_.pSwThreadHandle->freeF( tinP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
+            hThread.osF( ifcIDtYPEhANDLE_THREAD , *tinP.pag1->_thirdC_.pSwThreadHandle ) ;
+            tinP.pag1->_thirdC_.lOsTid = osTidP ;
+            if( !tinP.pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinP , osTidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
+            tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+
+            handleC hThread(  tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD  ) ;
+        {
+        handleC hProcess( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+
         BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
+
+        //DOES NOT WORK FOR zip.exe ON 2000: osOpenProcessIF( tinP , hProcess , osPidP ) ;              20240623@1626: CONJ: 04 BIT PROCESS
 
     #elif defined( __NT__ )
 
@@ -42,10 +54,10 @@
         else if( info.codeTerminate == TC_EXCEPTION   ) idDeathTypeP = ifcPROCESSdEATH_SOFTWAREfAILURE ;
         else if( info.codeTerminate == TC_KILLPROCESS ) idDeathTypeP = ifcPROCESSdEATH_MURDERED        ;
              if( info.codeTerminate == TC_EXIT        ) idDeathTypeP = ifcPROCESSdEATH_NORMAL          ;
-        if( !POOP ) pidP = pid ;
-        __( pidP && pid - pidP ) ;
+        if( !POOP ) osPidP = pid ;
+        __( osPidP && pid - osPidP ) ;
         BOSpOOP
-        BOS( WHATso , BOSfAIL , DosWaitChild( DCWA_PROCESS , DCWW_WAIT , &info , &pid , pidP ) )
+        BOS( WHATso , BOSfAIL , DosWaitChild( DCWA_PROCESS , DCWW_WAIT , &info , &pid , osPidP ) )
         ZE( ULONG , pid ) ;
         RESULTCODES  info ;
 
@@ -54,7 +66,8 @@
 
     }
         if( POOP ) return ;
-        __Z( tinP.pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinP , pidP ) ) ;
+        __Z( tinP.pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinP , osPidP ) ) ;
+        __Z( tinP.pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinP , osTidP ) ) ;
         __( valueP ) ;
         __( idDeathTypeP ) ;
         if( POOP ) return ;
@@ -62,7 +75,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::dosWaitChildF( tinS& tinP , countT& valueP , countT& idDeathTypeP , countT& pidP )/*1*/
+/*1*/voidT thirdC::dosWaitChildF( tinS& tinP , countT& valueP , countT& idDeathTypeP , countT& osTidP , countT& osPidP )/*1*/
 
 /**/
 */

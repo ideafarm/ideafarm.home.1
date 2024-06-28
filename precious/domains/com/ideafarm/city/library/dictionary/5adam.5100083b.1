@@ -11,10 +11,14 @@ REST
 
 }
     }
-        if( ifcEXITcODE_EXITpROCESSaOK != thirdC::osHireThenMonitorIF( tinP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ) thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
+        }
+            if( ifcEXITcODE_EXITpROCESSaOK != thirdC::osHireThenMonitorIF( tinP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ) thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
+            _IO_
+        {
         etThread.traceF( tinP , T("hiring self [tArgsGross]:    ")+tArgsGross ) ;
 
         TN( tArgsGross , "" ) ; tArgsGross = tArgKeyNameNow+tb+tFile+tb+tArgsNet ;
+        _IO_
     {
     else
     }
@@ -28,7 +32,7 @@ REST
 
             __( value ) ;
             etThread.traceF( tinP , T("called  dosExecPgmF [value,file,args]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
-            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet , flPROCESShIRE_VISIBLE ) ;
+//            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet , flPROCESShIRE_VISIBLE ) ;
             tinP.pEtScratch->traceF( tinP , T("calling dosExecPgmF [value,file,args]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
             ZE( countT , value ) ;
 
@@ -36,8 +40,10 @@ REST
             _IO_
         {
         IFsCRATCH
+        _IO_
     {
     if( bNow )
+    _IO_
 {
 if( !POOP )
 
@@ -56,6 +62,7 @@ __Z( tFile.csF( tinP ) ) ;
         else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameLater ) ) bArmedLater = 1 ;
              if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameNow   ) ) bArmedNow   = 1 ;
         etThread.traceF( tinP , T("param: ")+T(psttc1) ) ;
+        _IO_
     {
     FORsTRINGSiN1( pstt1Param )
     ZE( boolT , bArmedLater ) ;
@@ -63,6 +70,7 @@ __Z( tFile.csF( tinP ) ) ;
     strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinP ) ;
     TN( tn               , ""           ) ;
     TN( tArgKeyNameLater , "!hireLater" ) ;
+    _IO_
 {
 TN( tb4              , "    "       ) ;
 TN( tb               , " "          ) ;

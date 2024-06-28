@@ -499,9 +499,12 @@
                             if( tellInfoSys.idException != ifcIDeVENTeXCEPTIONmONITORED_GRUNT )
                             OStEXTA(  ostoRpt , tinSnap.postThreadName ) ;/*_M*/
                             OStEXTAK( ostoRpt , ") exception occured while executing thread\r\n" ) ;/*_M*/
+                            OStEXTC(  ostoRpt , osInfoP.ExceptionRecord->ExceptionCode , 0 ) ;/*_M*/
+                            OStEXTAK( ostoRpt , ")    (base os: " ) ;/*_M*/
                             OStEXTC(  ostoRpt , tellInfoSys.idException , 0 ) ;/*_M*/
-                            OStEXTAK( ostoRpt , " (" ) ;/*_M*/
-                            OStEXTA(  ostoRpt , processGlobal4I.mapExceptionType( tellInfoSys.idException ) ) ;/*_M*/
+                            OStEXTAK( ostoRpt , " (ipdos: " ) ;/*_M*/
+                            OStEXTA(  ostoRpt , postET ? postET : "unknown type" ) ;/*_M*/
+                            const osTextT* postET = processGlobal4I.mapExceptionType( tellInfoSys.idException ) ;/*_M*/
                             OStEXTAK( ostoRpt , "Subject: IPDOS (tm) Exception Event\r\n\r\nIdeaFarm " "(tm) Piggyback Distributed Operating System\r\nhttp://ideafarm.com\r\nWo'O Ideafarm\r\n \r\nAn " ) ;/*_M*/
                             OStEXTAK( ostoRpt , "\r\n//\r\n// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.\r\n//\r\n// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.\r\n// Respecting the rights of other people is an important part of empowering one another.\r\n//\r\n\r\n" ) ;/*_M*/
 
@@ -767,6 +770,8 @@
                         _IO_
                     {/*_M*/
                     case EXCEPTION_IN_PAGE_ERROR :
+                    case EXCEPTION_INVALID_HANDLE                            : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_INVALIDhANDLE           ; ADVICEdFLT ; bQuiet = bFixed = 1 ; break ; }  // bFixed AND bQuiet ARE SET, SO EXCEPTIONS THROWN BY CloseHandle() ARE IGNORED ; CODE THAT CALLS CloseHandle() SHOULD DETECT AND HANDLE FAILURE GRACEFULLY
+                    case EXCEPTION_GUARD_PAGE                                : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_GUARDpAGE               ; ADVICEdFLT ; break ; }
                     case DBG_CONTINUE                                        : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_DBGcONTINUE             ; ADVICEdFLT ; break ; }
                     case DBG_TERMINATE_THREAD                                : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_DBGtERMINATEtHREAD      ; ADVICEdFLT ; break ; }
                     case DBG_TERMINATE_PROCESS                               : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_DBGtERMINATEpROCESS     ; ADVICEdFLT ; break ; }
@@ -777,14 +782,14 @@
                     case EXCEPTION_ARRAY_BOUNDS_EXCEEDED                     : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_ARRAYbOUNDSeXCEEDED     ; ADVICEdFLT ; break ; }
                     case EXCEPTION_DATATYPE_MISALIGNMENT                     : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_DATATYPEmISALIGNMENT    ; ADVICEdFLT ; break ; }
                     case EXCEPTION_FLT_DENORMAL_OPERAND                      : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_FLOATdENORMALoPERAND    ; ADVICEdFLT ; break ; }
-                    case EXCEPTION_FLT_DIVIDE_BY_ZERO                        : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_FLOATdIVIDEbYzE       ; ADVICEdFLT ; break ; }
+                    case EXCEPTION_FLT_DIVIDE_BY_ZERO                        : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_FLOATdIVIDEbYzE         ; ADVICEdFLT ; break ; }
                     case EXCEPTION_FLT_INEXACT_RESULT                        : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_FLOATiNEXACTrESULT      ; ADVICEdFLT ; break ; }
                     case EXCEPTION_FLT_INVALID_OPERATION                     : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_FLOATiNVALIDoPERATION   ; ADVICEdFLT ; break ; }
                     case EXCEPTION_FLT_OVERFLOW                              : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_FLOAToVERFLOW           ; ADVICEdFLT ; break ; }
                     case EXCEPTION_FLT_STACK_CHECK                           : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_FLOATsTACKcHECK         ; ADVICEdFLT ; break ; }
                     case EXCEPTION_FLT_UNDERFLOW                             : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_FLOATuNDERFLOW          ; ADVICEdFLT ; break ; }
                     case EXCEPTION_ILLEGAL_INSTRUCTION                       : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_ILLEGALiNSTRUCTION      ; ADVICEdFLT ; break ; }
-                    case EXCEPTION_INT_DIVIDE_BY_ZERO                        : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_INTEGERdIVIDEbYzE     ; ADVICEdFLT ; break ; }
+                    case EXCEPTION_INT_DIVIDE_BY_ZERO                        : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_INTEGERdIVIDEbYzE       ; ADVICEdFLT ; break ; }
                     case EXCEPTION_INT_OVERFLOW                              : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_INTEGERoVERFLOW         ; ADVICEdFLT ; break ; }
                     case EXCEPTION_INVALID_DISPOSITION                       : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_INVALIDdISPOSITION      ; ADVICEdFLT ; break ; }
                     case EXCEPTION_NONCONTINUABLE_EXCEPTION                  : {/*_M*/ _IO_                  tellInfoSys.idException = ifcIDeVENTeXCEPTIONmONITORED_NONCONTINUABLEeXCEPTION ; ADVICEdFLT ; break ; }
