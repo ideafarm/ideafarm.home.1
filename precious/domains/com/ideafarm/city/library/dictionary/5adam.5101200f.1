@@ -16,11 +16,27 @@ etThread.traceF( tinP , T("ok") ) ;
     ++ s ; ether.osSleepF( tinP , TOCK << 3 ) ;
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
-    thirdC::osHireThenMonitorIF( tinP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_SCRATCH0f") , tArgsGross ) ;
+    //thirdC::osHireThenMonitorIF( tinP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_SCRATCH0f") , tArgsGross ) ;
     //THIS LEAKS 2 HANDLES PER CYCLE
 
     //etThread.ifcHireF( tinP , T("ifcIDaDAM_SCRATCH0f") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireNow null.exe") , flHIRE_WAIT ) ;
     //THIS DOES NOT LEAK
+
+    BOOL bOk = CreateProcess( 0 , "null" , 0 , 0 , 0 , 0 , 0 , 0 , &specs , &result ) ;
+    //THIS DOES NOT LEAK
+
+    specs.dwFillAttribute = BACKGROUND_BLUE | BACKGROUND_GREEN | BACKGROUND_RED ;
+    specs.dwYCountChars = 0x300 ;
+    specs.dwXCountChars = 0x400 ;
+    specs.dwY = specs.dwX = 0 ;
+    specs.wShowWindow = /*SW_SHOWMAXIMIZED*/ SW_SHOWMINNOACTIVE ;
+    specs.dwFlags = STARTF_USESHOWWINDOW | STARTF_USEPOSITION | STARTF_USECOUNTCHARS | STARTF_USEFILLATTRIBUTE ;
+    specs.cb                  = sizeof specs                        ;  
+    memset( &specs , 0 , sizeof specs ) ;
+    STARTUPINFO specs ;
+
+    memset( &result , 0 , sizeof result ) ;
+    PROCESS_INFORMATION result ;
 
     etThread.traceF( tinP , T("monitoring: [idHire,tFile,tArgsGross]:    ")+TF2(++idHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsGross ) ;
 {
