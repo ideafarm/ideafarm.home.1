@@ -69,6 +69,7 @@
                 //if( idAdamP == ifcIDaDAM_SECRETsERVICE                 && processGlobal2I.idHome != 3 ) flProcessHire &= ~( F(flPROCESShIRE_VISIBLE) ) ;
                 //if( idAdamP == ifcIDaDAM_3BANG   && processGlobal2I.idHome != 2 && processGlobal2I.idHome != 3 ) flProcessHire &= ~( F(flPROCESShIRE_VISIBLE) ) ;
 
+                else flProcessHire |= flPROCESShIRE_REGISTERpROCESShANDLE | flPROCESShIRE_REGISTERtHREADhANDLE ;        //A:ASSUME: CALLER WILL (EXPLICITLY OR IMPLICITELY) CALL dosWaitChildF (IF THIS IS NOT DONE THEN THESE 2 HANDLES WILL LEAK BY REMAINING REGISTERED)
                 }
                     if( F(flagsP) & flHIRE_MONITORkIDS ) flProcessHire |= flPROCESShIRE_MONITORkIDS ;
                     flProcessHire |= flPROCESShIRE_MONITORtHIS ;
@@ -77,10 +78,10 @@
                 if( F(flagsP) & flHIRE_MONITORtHIS )
 
                 ;
-                        : flPROCESShIRE_REGISTERpROCESShANDLE | flPROCESShIRE_REGISTERtHREADhANDLE | flPROCESShIRE_VISIBLE
-                        ? flPROCESShIRE_REGISTERpROCESShANDLE | flPROCESShIRE_REGISTERtHREADhANDLE | flPROCESShIRE_VISIBLE /*| flHIRE_DEBUG*/
+                        : flPROCESShIRE_VISIBLE
+                        ? flPROCESShIRE_VISIBLE /*| flHIRE_DEBUG*/
                     : idAdamP == ifcIDaDAM_TIME
-                    ? flPROCESShIRE_REGISTERpROCESShANDLE | flPROCESShIRE_REGISTERtHREADhANDLE
+                    ? flPROCESShIRE_null
                 flagsT flProcessHire = F(flagsP) & flHIRE_DISPLAYnONE && !bSandbox
 
                 boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;

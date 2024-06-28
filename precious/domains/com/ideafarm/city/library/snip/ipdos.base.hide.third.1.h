@@ -34731,7 +34731,7 @@ coding standard
 /**/
 /*1*//*BOSpOOP*//*1*/
 
-#define BOSpOOP { __( IDiMPOTENCE ) ; }
+#define BOSpOOP { __( IDiMPOTENCEuSE ) ; }
 
 
 //

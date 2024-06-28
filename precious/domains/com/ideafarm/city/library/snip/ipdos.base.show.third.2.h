@@ -5499,7 +5499,7 @@ these "status codes" are returned by some MS Windows api's
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005d9.IDiMPOTENCErAW END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005da.IDiMPOTENCE BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005da.IDiMPOTENCEuSE BEGIN
 
 
 //
@@ -5512,9 +5512,9 @@ these "status codes" are returned by some MS Windows api's
 /*
 */
 /**/
-/*1*//*IDiMPOTENCE*//*1*/
+/*1*//*IDiMPOTENCEuSE*//*1*/
 
-#define IDiMPOTENCE                                                         \
+#define IDiMPOTENCEuSE                                                         \
                                                                             \
     (                                                                       \
         !tinP.bosFail                                                       \
@@ -5536,7 +5536,7 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005da.IDiMPOTENCE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005da.IDiMPOTENCEuSE END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005db.flFILEoRdIRmOVE BEGIN
 
 //
