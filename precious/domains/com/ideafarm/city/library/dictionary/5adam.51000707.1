@@ -105,7 +105,10 @@ while( !ether && !POOP )
 static countT pcTallyInLath[ CCtALLYiN ] ;
 ZE( countT , minuteLath ) ;
 
-ether.ifcHireF( tinP , T("ifcIDaDAM_TIME") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING 
+if( !bSandbox ) ether.ifcHireF( tinP , T("ifcIDaDAM_TIME") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING 
+
+boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
+
 
 TODO
 
