@@ -1,0 +1,24 @@
+@echo off
+
+
+if not %1z == z goto :WOdEVICE
+
+d:
+cd \ideafarm.home.101\devices
+if not %cd% == D:\ideafarm.home.101\devices echo %cd% (error)
+if not %cd% == D:\ideafarm.home.101\devices goto :FIN
+
+rem for /d %%d in (*) do @call t.bat %%d
+    for /d %%d in (*) do @start "%%d" t.bat %%d
+
+goto :FIN
+
+
+:WOdEVICE
+d:
+cd \ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2099
+if not %cd% == D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2099 echo %cd% (error)
+if not %cd% == D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2099 goto :FIN
+
+
+:FIN
