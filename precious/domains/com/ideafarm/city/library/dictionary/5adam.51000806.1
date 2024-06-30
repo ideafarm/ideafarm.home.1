@@ -2828,9 +2828,10 @@ TASK( tmDayZipperF )
                             }
                                 }
                                     }
-                                        etherP.traceF( tinP , T("!exception: could not set file time [name]:    ")+tLongAt ) ;
+                                        etherP.traceF( tinP , T("!exception: could not set file time [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongAt ) ;
                                         bAbortP = 1 ;
                                         POOPRqUIET
+                                        countT rc = POOP ;
                                     {
                                     if( POOP )
 
@@ -2838,9 +2839,10 @@ TASK( tmDayZipperF )
                                 {
                                 else
                                 }
-                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+tLongAt ) ;
+                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongAt ) ;
                                     bAbortP = 1 ;
                                     POOPRqUIET
+                                    countT rc = POOP ;
                                 {
                                 if( POOP )
 
@@ -2865,9 +2867,10 @@ TASK( tmDayZipperF )
                                     }
                                         }
                                             }
-                                                etherP.traceF( tinP , T("!exception: could not get file time [name]:    ")+T(pInfoFile->psttIfoName) ) ;
+                                                etherP.traceF( tinP , T("!exception: could not get file time [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pInfoFile->psttIfoName) ) ;
                                                 bAbortP = 1 ;
                                                 POOPRqUIET
+                                                countT rc = POOP ;
                                             {
                                             if( POOP )
 
@@ -2920,9 +2923,10 @@ TASK( tmDayZipperF )
 
                     }
                         }
-                            etherP.traceF( tinP , T("!exception: find file failed [like]:    ")+T(osfnLike) ) ;
+                            etherP.traceF( tinP , T("!exception: find file failed [rc,like]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(osfnLike) ) ;
                             bAbortP = 1 ;
                             POOPRqUIET
+                            countT rc = POOP ;
                         {
                         if( POOP )
 
@@ -3099,14 +3103,14 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                         }
                                                                             break ;
                                                                             pP.bAbort = 1 ;
-                                                                            pP.ether.traceF( tinP , T("!exception:  unexpected impotence copy [POOP,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                            pP.ether.traceF( tinP , T("!exception:  unexpected impotence copy [rc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
                                                                             POOPRqUIET
                                                                             countT rc = POOP ;
                                                                         {
                                                                         else
                                                                         }
                                                                             thirdC::dosSleepWinkIF( tinP , 2 ) ;
-                                                                            pP.ether.traceF( tinP , T("!exception:  could not copy file ; will retry until fired [to,from]:    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                            pP.ether.traceF( tinP , T("!exception:  could not copy file (access denied)) ; will retry until fired [to,from]:    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
                                                                             POOPRqUIET
                                                                         {
                                                                         else if( POOP == ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdENIED )
@@ -3149,8 +3153,9 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                 }
                                                                     }
                                                                         pP.bAbort = 1 ;
-                                                                        pP.ether.traceF( tinP , T("!exception: diskFileExistsF failed FOR psttTol 2 [to,from]:    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                        pP.ether.traceF( tinP , T("!exception: diskFileExistsF failed FOR psttTol 2 [rc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttTo)+T("    ")+T(psttFrom) ) ;
                                                                         POOPRqUIET
+                                                                        countT rc = POOP ;
                                                                     {
                                                                     if( POOP )
                                                                     bExists = tinP.pEtScratch->diskFileExistsF( tinP , psttTo ) ;
@@ -3178,14 +3183,14 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                             }
                                                                                 break ;
                                                                                 pP.bAbort = 1 ;
-                                                                                pP.ether.traceF( tinP , T("!exception:  unexpected impotence [POOP,toInRejects,to]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttLongInRejects)+T("    ")+T(psttTo) ) ;
+                                                                                pP.ether.traceF( tinP , T("!exception:  unexpected impotence [rc,toInRejects,to]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttLongInRejects)+T("    ")+T(psttTo) ) ;
                                                                                 POOPRqUIET
                                                                                 countT rc = POOP ;
                                                                             {
                                                                             else
                                                                             }
                                                                                 thirdC::dosSleepWinkIF( tinP , 2 ) ;
-                                                                                pP.ether.traceF( tinP , T("!exception:  could not move file ; will retry until fired [toInRejects,to]:    ")+T(psttLongInRejects)+T("    ")+T(psttTo) ) ;
+                                                                                pP.ether.traceF( tinP , T("!exception:  could not move file (access denied) ; will retry until fired [toInRejects,to]:    ")+T(psttLongInRejects)+T("    ")+T(psttTo) ) ;
                                                                                 POOPRqUIET
                                                                             {
                                                                             else if( POOP == ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdENIED )
@@ -3223,8 +3228,9 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                         }
                                                             }
                                                                 pP.bAbort = 1 ;
-                                                                pP.ether.traceF( tinP , T("!exception: diskFileExistsF failed FOR psttTo [to,from]:    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                pP.ether.traceF( tinP , T("!exception: diskFileExistsF failed FOR psttTo [rc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttTo)+T("    ")+T(psttFrom) ) ;
                                                                 POOPRqUIET
+                                                                countT rc = POOP ;
                                                             {
                                                             if( POOP )
                                                             bExists = tinP.pEtScratch->diskFileExistsF( tinP , psttTo ) ;
@@ -3379,13 +3385,14 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                 }
                                                                     }
                                                                         break ;
-                                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  unexpected impotence [POOP,to,from]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttLongTo)+T("    ")+T(psttLongFrom) ) ;
+                                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  unexpected impotence [rc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttLongTo)+T("    ")+T(psttLongFrom) ) ;
                                                                         POOPRqUIET
+                                                                        countT rc = POOP ;
                                                                     {
                                                                     else
                                                                     }
                                                                         thirdC::dosSleepWinkIF( tinP , 2 ) ;
-                                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  could not move file ; will retry until fired [to,from]:    ")+T(psttLongTo)+T("    ")+T(psttLongFrom) ) ;
+                                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  could not move file (access denied) ; will retry until fired [to,from]:    ")+T(psttLongTo)+T("    ")+T(psttLongFrom) ) ;
                                                                         POOPRqUIET
                                                                     {
                                                                     else if( POOP == ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdENIED )
@@ -3756,8 +3763,9 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 break ;
                                                 deleteEqualArrayFwsInnerArrayF( tinP , pP.ether , pEqual , pfwsInner , cInnerImagesToInspect ) ;
                                                 pP.bAbort = 1 ;
-                                                pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not dt pfwsOuter [cInnerImagesToInspect,tLongOuter]:    ")+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
+                                                pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not dt pfwsOuter [rc,cInnerImagesToInspect,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
                                                 POOPRqUIET
+                                                countT rc = POOP ;
                                             {
                                             if( POOP )
                                             DEL( pfwsOuter ) ;
@@ -3943,13 +3951,13 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                             etRock.traceF( tinP , pP.tIndent3+T("!exception: could not get inner file window (not enough memory) ; tracing pool tallies and memory grain report") ) ;
                                                             etherC& etRock = etherC::etRockIF( tinP ) ;
                                                         {
-                                                        if( save == ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY )
+                                                        if( rc == ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY )
 
                                                         pP.bAbort = 1 ;
-                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  pfwsInner[ offi ].getF ; aborting [idInner,tLongInner]:    ")+TF2(offi+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) ) ;
+                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  pfwsInner[ offi ].getF ; aborting [rc,idInner,tLongInner]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) ) ;
 
                                                         POOPRqUIET
-                                                        countT save = POOP ;
+                                                        countT rc = POOP ;
                                                     {
                                                     if( POOP )
 
@@ -4009,13 +4017,13 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                         etRock.traceF( tinP , pP.tIndent2+T("!exception: could not get outer file window (not enough memory) ; tracing pool tallies and memory grain report") ) ;
                                                         etherC& etRock = etherC::etRockIF( tinP ) ;
                                                     {
-                                                    if( save == ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY )
+                                                    if( rc == ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY )
 
                                                     pP.bAbort = 1 ;
-                                                    pP.ether.traceF( tinP , pP.tIndent2+T("!exception:  pfwsOuter->getF ; aborting [tLongOuter]:    ")+T(pfwsOuter?*pfwsOuter:(const strokeS*)0) ) ;
+                                                    pP.ether.traceF( tinP , pP.tIndent2+T("!exception:  pfwsOuter->getF ; aborting [rc,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pfwsOuter?*pfwsOuter:(const strokeS*)0) ) ;
 
                                                     POOPRqUIET
-                                                    countT save = POOP ;
+                                                    countT rc = POOP ;
                                                 {
                                                 if( POOP )
                                                 pfwsOuter->getF( tinP , pbwOuter , cbwOuter , cbFileWindow ) ;
@@ -4085,8 +4093,9 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 pP.bAbort = 1 ;
                                                 deleteEqualArrayFwsInnerArrayF( tinP , pP.ether , pEqual , pfwsInner , cInnerImagesToInspect ) ;
                                                 DEL( pfwsOuter ) ;
-                                                pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not ct pfwsOuter [cInnerImagesToInspect,tLongOuter]:    ")+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
+                                                pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not ct pfwsOuter [rc,cInnerImagesToInspect,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
                                                 POOPRqUIET
+                                                countT rc = POOP ;
                                             {
                                             if( POOP )
                                             new( 0 , tinP , (byteT*)pfwsOuter , sizeof( fileWindowsC ) ) fileWindowsC( tinP , *tinP.pEtScratch , tLongOuter ) ;
@@ -4122,8 +4131,9 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     deleteEqualArrayFwsInnerArrayF( tinP , pP.ether , pEqual , pfwsInner , cInnerImagesToInspect ) ;
                                                     DELzOMBIE( pDoomed ) ;
                                                     fileWindowsC* pDoomed = &pfwsInner[ offi ] ;
-                                                    pP.ether.traceF( tinP , pP.tIndent3+T("!exception: could not ct a fileWindowsC instance ; aborting [tLongInner]:    ")+T(psttLongInner) ) ;
+                                                    pP.ether.traceF( tinP , pP.tIndent3+T("!exception: could not ct a fileWindowsC instance ; aborting [rc,tLongInner]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLongInner) ) ;
                                                     POOPRqUIET
+                                                    countT rc = POOP ;
                                                 {
                                                 if( POOP )
                                                 new( 0 , tinP , (byteT*)( pfwsInner + offi ) , sizeof( fileWindowsC ) ) fileWindowsC( tinP , *tinP.pEtScratch , psttLongInner ) ;

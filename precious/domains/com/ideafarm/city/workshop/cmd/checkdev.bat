@@ -6,7 +6,8 @@ echo I CALL chkdsk FOR EACH FOLDER IN d:\ideafarm.home.101\devices IN PARALLEL
 
 d:
 cd \ideafarm.home.101\devices
-for /d %%d in (*) do @start "%%d" checkdev.bat %%d
+rem for /d %%d in (*) do @if exist %%d\* echo %%d
+    for /d %%d in (*) do @if exist %%d\* start "%%d" checkdev.bat %%d
 goto :FIN
 
 
