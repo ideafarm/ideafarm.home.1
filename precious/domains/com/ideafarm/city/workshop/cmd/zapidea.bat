@@ -48,10 +48,10 @@ if     exist \%1\ephemeral\reports\*                                            
 if     exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%xx%\00000100\stateSpaces\9d600015\* rmdir /s /q \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%xx%\00000100\stateSpaces\9d600015
 if     exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%yy%\00000100\stateSpaces\9d600015\* rmdir /s /q \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%yy%\00000100\stateSpaces\9d600015
 
-for %%s in ( 001 002 003 004 005 100 ) do @call zapidea %1 %%s %ww%
-for %%s in ( 001 002 003 004 005 100 ) do @call zapidea %1 %%s %xx%
-for %%s in ( 001 002 003 004 005 100 ) do @call zapidea %1 %%s %yy%
-for %%s in ( 001 002 003 004 005 100 ) do @call zapidea %1 %%s %zz%
+for %%s in ( 001 002 003 004 005 006 100 ) do @call zapidea %1 %%s %ww%
+for %%s in ( 001 002 003 004 005 006 100 ) do @call zapidea %1 %%s %xx%
+for %%s in ( 001 002 003 004 005 006 100 ) do @call zapidea %1 %%s %yy%
+for %%s in ( 001 002 003 004 005 006 100 ) do @call zapidea %1 %%s %zz%
 
 goto :FIN2
 

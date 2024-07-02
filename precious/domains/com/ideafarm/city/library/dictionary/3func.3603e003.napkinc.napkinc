@@ -516,6 +516,8 @@
 
                         etherC& etRock = etherC::etRockIF( tinP ) ;
 
+                        OStEXTA(  ostoSay , postName ) ;
+                        OStEXTAK( ostoSay , "    " ) ;
                         OStEXTC(  ostoSay , cTriesP , 0 ) ;
                         OStEXTAK( ostoSay , "    " ) ;
                         OStEXTC(  ostoSay , cbData , 0 ) ;
@@ -523,6 +525,11 @@
                         OStEXT(   ostoSay , TUCK << 2 ) ;
 
                         THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
+
+                        LOGcALLnEST( "!exception: napkinC::napkinC / could not open shared memory" ) ;
+                        LOGrAW( "\r\n" ) ;
+                        LOGrAW( postName ) ;
+                        LOGrAW( "\r\nnapkinC::napkinC [postName]:    " ) ;
 
                         }
                             THREADmODE5rESTORE0( flThreadMode5Save )
