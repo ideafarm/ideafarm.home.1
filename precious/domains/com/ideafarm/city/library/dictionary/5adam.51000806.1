@@ -306,7 +306,8 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
                 #endif
                     TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
                 #else
-                      TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
+                    //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
+                      TN( tYearPattern , "2019/" ) ;
                     //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
                     //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
                     //TN( tYearPattern , "2023/" ) ;
@@ -673,9 +674,9 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
     ZE( countT  , time1AOK ) ;
 
     }
-        etThread.traceF( tinP , T("napped  for a half tick so you can plug in devices to heal") ) ;
-        ++ s ; ether.osSleepF( tinP , TICK >> 1 ) ;
-        etThread.traceF( tinP , T("napping for a half tick so you can plug in devices to heal") ) ;
+        etThread.traceF( tinP , T("napped  for a quarter tick so you can plug in devices to heal") ) ;
+        ++ s ; ether.osSleepF( tinP , TICK >> 2 ) ;
+        etThread.traceF( tinP , T("napping for a quarter tick so you can plug in devices to heal") ) ;
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     {
     if( !bSandbox ) // NAP IF RUNNING AS SERVICE BUT NOT IF RUNNING FROM IdeaFarm (tm) Elves
