@@ -674,9 +674,9 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
     ZE( countT  , time1AOK ) ;
 
     }
-        etThread.traceF( tinP , T("napped  for a quarter tick so you can plug in devices to heal") ) ;
+        etThread.traceF( tinP , T("napped  for a minute to give devices some more time to come online") ) ;
         ++ s ; ether.osSleepF( tinP , TICK >> 2 ) ;
-        etThread.traceF( tinP , T("napping for a quarter tick so you can plug in devices to heal") ) ;
+        etThread.traceF( tinP , T("napping for a minute to give devices some more time to come online") ) ;
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     {
     if( !bSandbox ) // NAP IF RUNNING AS SERVICE BUT NOT IF RUNNING FROM IdeaFarm (tm) Elves

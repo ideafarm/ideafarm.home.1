@@ -13,6 +13,7 @@
             __1
             if( pEtherP && !( F(flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ) pEtherP->etherPutLogF( tinP , textC(tinP,TAG( TAGiDnULL ),flTEXTc_null,postP) ) ;
             dec02AM( processGlobal2I.cDllLoaded ) ;
+            _IO_
         {
         if( bFail )
 
@@ -24,6 +25,7 @@
                         bFail = 1 ;
                         __Z( handleP ) ;
                         __( tinP.brcQuery ) ;
+                        _IO_
                     {
                     else
                     }
@@ -33,8 +35,10 @@
                         newF( tinP , LF , postAnticipatedErrorP , osto1.costF() + c_strlenIF( tinP , postP ) + osto2.costF() + 1 ) ; ___( postAnticipatedErrorP ) ;
                         OStEXTV( osto2 , "\")." )
                         OStEXTV( osto1 , "Anticipated failure:  LoadLibrary(\"" )
+                        _IO_
                     {
                     if( tinP.brcQuery == ERROR_IS_JOIN_TARGET )
+                    _IO_
                 {
                 if( tinP.bosFail )
     
@@ -46,12 +50,16 @@
                     {
                     if( c_strlenIF( tinP , processGlobal2I.postDllsLoaded ) + sizeof postPad + c_strlenIF( tinP , postP ) < sizeof processGlobal2I.postDllsLoaded )
                     osTextT postPad[] = " " ;
+                    _IO_
                 {
                 if( !c_strstrIF( tinP , processGlobal2I.postDllsLoaded , postP ) )  //20180117@1558: CHANGED SEMANTICS TO REGISTER ONLY UNIQUE DLL'S IN RESPONSE TO EXHAUSTING THE REGISTRY WHEN cloudC REPEATEDLY HIRES AN ADAM
     
                 INCoShANDLES
                 handleP.osF( ifcIDtYPEhANDLE_DLL , tinP.brcRaw ) ;
-                BOS( WHATgbo , BOSoK , LoadLibrary( postP ) )
+                }
+                    BOS( WHATgbo , BOSoK , LoadLibrary( postP ) )
+                    _IO_
+                {
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
     
             #elif defined( __NT__ )
@@ -69,8 +77,10 @@
             #ifdef __OS2__
 
             POOPIE
+            _IO_
         {
         ZE( boolT , bFail ) ;
+        _IO_
     {
     _IO_
 
