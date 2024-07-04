@@ -2621,6 +2621,8 @@ DONE( tmDayZipperF )
     countT    cPathsToYearP       =            pTaskP->c3 ;
     boolT&    bAbortP             =   *(boolT*)pTaskP->c2 ;
     countT&   cDayZippersP        =  *(countT*)pTaskP->c1 ;
+
+    _IO_
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 )
 TASK( tmDayZipperF )
@@ -2754,6 +2756,7 @@ TASK( tmDayZipperF )
                 c4Result = etherP.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireLater pkzipc.exe -store -add -move ")+tShortDayZipP+tb+tDayPrefixP+tAtAsterisk , flHIRE_DISPLAYaUTO , 0 , 0 , 1 , nicNameC() ) ;
                 //etherP.traceF( tinP , T("zipping") ) ;
                 hoverC hover( tinP , etherP , tPathYear ) ;
+                _IO_
             {
             countT& osPid = c4Result.c2 ;
             countT& osTid = c4Result.c1 ; //U:: VERIFY THAT THIS GUESS IS CORRECT
@@ -2943,6 +2946,7 @@ TASK( tmDayZipperF )
                     TN( tLike , "" )  ; tLike = tPathYear+tPattern ;
                 {
                 ZE( infoFileS* , pInfoFile ) ;
+                _IO_
             {
             do
             handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
@@ -2951,6 +2955,7 @@ TASK( tmDayZipperF )
             //etherP.traceF( tinP , T("zipDayF [idPass,path,tDay]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear+tb4+tDayPrefixP ) ;
 
             if( idPass == 2 && !timeWrittenNewest ) break ;
+            _IO_
         {
         for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
         ZE( countT , cAtFiles ) ;                // AN "AT FILE" IS A FILE THAT CONTAINS AN '@' IMMEDIATELY AFTER THE DAY PREFIX, I.E. A FILE WITH A NAME THAT CONTAINS A FULL TIMESTAMP ; THE DAY CHUNK FILE IS NOT AN AT FILE
@@ -2961,6 +2966,7 @@ TASK( tmDayZipperF )
 
         if( offDoP != -1 && offi != offDoP ) continue ;
         if( etPrime ) break ;
+        _IO_
     {
     for( countT offi = 0 ; !bAbortP && offi < cPathsToYearP ; offi ++ )
     TN( tDotHeyDot , ".!." ) ;
@@ -2968,6 +2974,7 @@ TASK( tmDayZipperF )
     TN( tb4  , "    " ) ;
     TN( tb   , " " ) ;
     etherC& etPrime = etherC::etPrimeIF() ;
+    _IO_
 {
 voidT zipDayF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT cPathsToYearP , strokeS** ppsttPathToYearP , textC& tShortDayZipP , textC& tDayPrefixP , countT offDoP )
 
