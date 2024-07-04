@@ -43,6 +43,7 @@
                 }
                     break ;
 
+#endif
                     }
                         if(  bWroteLath ) { CONoUTrAW( "dosTellMonitorIF aaaaaghhh! (app earlylate book bWroteLath)\r\n" ) ; BLAMMO ; }
                         if( !bWroteAll  ) { CONoUTrAW( "dosTellMonitorIF aaaaaghhh! (app earlylate book !bWroteAll)\r\n" ) ; BLAMMO ; }
@@ -60,6 +61,8 @@
                         processGlobal4I.bksTelemetryApp.writeF( tinP , tellP , tellP , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND | flBOOKScwRITE_HEADfINGER1 | flBOOKScwRITE_HEADiDfORMAT | flBOOKScwRITE_HEADcBdATA | flBOOKScwRITE_HEADfINGER2 | flBOOKScwRITE_TAILfINGER | flBOOKScwRITE_FLUSHaFTER | flBOOKScwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
                     {
                     if( F(processGlobal2I.flCt) & flCTdTg_bksTelemetryApp && !( F(processGlobal2I.flDt) & flCTdTg_bksTelemetryApp ) )
+#if defined( NEVERdEFINED )
+//U::20240703@1821: COMMENTED OUT AS WORKAROUND TO PREVENT CHUNKING OF ARCHIVE FROM FILLING DISK
                 {
                 case ifcIDbOOKStELL_APP :
                 }
