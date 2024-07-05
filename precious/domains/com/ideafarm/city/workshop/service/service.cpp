@@ -582,7 +582,6 @@ VOID WINAPI serviceMainF( DWORD cArgP , LPTSTR* ppostArgP )
 
             char _pbsd[ SECURITY_DESCRIPTOR_MIN_LENGTH + sizeof( int ) ] ;
 
-            logTimeGF( "creating slab / initializing security descriptor\r\n" ) ;
             SECURITY_ATTRIBUTES sa ;
             {
                 sa.nLength = sizeof sa ;
@@ -598,31 +597,18 @@ VOID WINAPI serviceMainF( DWORD cArgP , LPTSTR* ppostArgP )
                 //logGF( "\r\n" ) ;
             }
                         
-            logTimeGF( "creating slab / calling CreateFileMapping\r\n" ) ;
             HANDLE oshMap = CreateFileMapping( INVALID_HANDLE_VALUE , &sa , PAGE_READWRITE | SEC_COMMIT , 0 , 7 * sizeof( int ) , postNapkinName ) ;
-            int rc = GetLastError() ;
-            logTimeGF( "creating slab / called  CreateFileMapping\r\n" ) ;
-            if( !oshMap )
-            }
-                logTimeGF( "!exception: creating slab / CreateFileMapping returned a null handle\r\n" ) ;
+            if( oshMap )
             {
-            else
-            {
-                logTimeGF( "creating slab / checking return code from CreateFileMapping\r\n" ) ;
+                //logGF( "checking rc\r\n" ) ;
+                int rc = GetLastError() ;
                 if( rc ) logTimeGF( "failed\r\n" ) ; // ERROR_ALREADY_EXISTS IS PROCESSED JUST LIKE ANY OTHER ERROR SINCE NO IPDOS ADAMS SHOULD EXIST AT THIS TIME
                 else
                 {
-                    logTimeGF( "creating slab / return code from CreateFileMapping is aok ; calling MapViewOfFile\r\n" ) ;
                     //logGF( "mapping view of slab\r\n" ) ;
                     unsigned* pcNapkin = (unsigned*)MapViewOfFile( oshMap , FILE_MAP_WRITE , 0 , 0 , 0 ) ;
-                    if( !pcNapkin )
+                    if( pcNapkin )
                     {
-                        logTimeGF( "!exception: creating slab / null pointer returned by MapViewOfFile\r\n" ) ;
-                    }
-                    else
-                    {
-                        logTimeGF( "creating slab / MapViewOfFile returned pointer\r\n" ) ;
-
                         //CS:CODEsYNC: bench/2.1.ideafarm 0010163 0030149
                         pcNapkin[ 0 ] = 0x10       ; // hdr: cbData
                         pcNapkin[ 1 ] = 1          ; // hdr: cRef
@@ -636,7 +622,7 @@ VOID WINAPI serviceMainF( DWORD cArgP , LPTSTR* ppostArgP )
                         int cHired = 0 ;
                         while( !bQuit && !cHired )
                         {
-                            logGF( "serviceMainF/loop/+\r\n" ) ;
+                            //logGF( "serviceMainF/loop/+\r\n" ) ;
                     
                             for( int offo = 0 ; offo < sizeof pTblHomeDisk / sizeof pTblHomeDisk[ 0 ] ; offo ++ )
                             {
@@ -668,13 +654,13 @@ VOID WINAPI serviceMainF( DWORD cArgP , LPTSTR* ppostArgP )
                                 SetServiceStatus( oshStatus , &status ) ;
                             }
 
-                            logGF( "serviceMainF/loop/napping\r\n" ) ;
+                            //logGF( "serviceMainF/loop/napping\r\n" ) ;
                     
                             unsigned cWinks = 1 << 2 ;
                             while( !bQuit && cWinks -- ) Sleep( 1000 >> 2 ) ;
                     
                             if( !cHired ) findHomesF() ; // INTENTIONALLY DOES NOT HONOR postIdHomeSolo , WHICH IS THUS EFFECTIVE ONLY ON THE WOTH PASS
-                            logGF( "serviceMainF/loop/-\r\n" ) ;
+                            //logGF( "serviceMainF/loop/-\r\n" ) ;
                         }
                     
                         {
