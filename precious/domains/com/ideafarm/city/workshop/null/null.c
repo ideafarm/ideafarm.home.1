@@ -5,7 +5,7 @@
 int __cdecl main(int argc, char **argv)
 {
     printf( "\r\nhello, Jesus!\r\n" ) ;
-    Sleep( 1000 * 4 ) ;
+    Sleep( 1000 * 60 ) ;
     printf( "\r\nbye, Jesus!\r\n" ) ;
     return 0 ;
 }
