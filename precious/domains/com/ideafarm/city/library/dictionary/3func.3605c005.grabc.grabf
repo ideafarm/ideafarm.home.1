@@ -236,7 +236,11 @@
     /*S*/
     /*S*/       countT idGrabberMe = 1 + incv02AM( idGrabberHigh ) ;
     /*S*/
-    /*S*/       const countT idDesireSave = thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
+                }
+    /*S*/           idDesireSave = thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
+                    _IO_
+                {
+                ZE( countT , idDesireSave ) ;
                 if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / d") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
 
                 // TRYING TO KISS ME WITH THE SPIN PREVENTING ME FROM REGISTERING MYSELF 

@@ -18,20 +18,29 @@
         LOGrAW7(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [osTidIF(),tinDesire,actualDesire]:    " , osTidIF() , "    " , tinP.idDesire , "    " , idDesire , "\r\n" ) ;
         CONoUTrAW7( "\r\ndosPriorityIF: BLAMMO BECAUSE: [osTidIF(),tinDesire,actualDesire]:    " , osTidIF() , "    " , tinP.idDesire , "    " , idDesire , "\r\n" ) ;
 
-        if( &tinP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinP , (strokeS*)"dosPriorityIF USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+        if( &tinP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinP , (strokeS*)"dosPriorityIF (get) IS USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
     {
     if( tinP.idDesire && idDesire != tinP.idDesire )     //U:: TO FIND A BUG
 
     #endif
         }
-            default                            : {  __1                                 ; break ; }
-            case THREAD_PRIORITY_IDLE          : { idDesire = ifcTHREADpRIORITY_LAZIEST ; break ; }
-            case THREAD_PRIORITY_LOWEST        : { idDesire = ifcTHREADpRIORITY_LAZIER  ; break ; }
-            case THREAD_PRIORITY_BELOW_NORMAL  : { idDesire = ifcTHREADpRIORITY_LAZY    ; break ; }
-            case THREAD_PRIORITY_NORMAL        : { idDesire = ifcTHREADpRIORITY_NORMAL  ; break ; }
-            case THREAD_PRIORITY_ABOVE_NORMAL  : { idDesire = ifcTHREADpRIORITY_RUSH    ; break ; }
-            case THREAD_PRIORITY_HIGHEST       : { idDesire = ifcTHREADpRIORITY_PUSHY   ; break ; }
-            case THREAD_PRIORITY_TIME_CRITICAL : { idDesire = ifcTHREADpRIORITY_RUDE    ; break ; }
+            default                                            : { BLAMMOiD( tinP.brcRaw ) ;                 ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_TIMEcRITICAL : { idDesire = ifcTHREADpRIORITY_RUDE         ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS6        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS6   ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS5        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS5   ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS4        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS4   ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS3        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS3   ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_HIGHEST      : { idDesire = ifcTHREADpRIORITY_PUSHY        ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_ABOVEnORMAL  : { idDesire = ifcTHREADpRIORITY_RUSH         ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_NORMAL       : { idDesire = ifcTHREADpRIORITY_NORMAL       ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_BELOWnORMAL  : { idDesire = ifcTHREADpRIORITY_LAZY         ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_LOWEST       : { idDesire = ifcTHREADpRIORITY_LAZIER       ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS3       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS3 ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS4       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS4 ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS5       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS5 ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS6       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS6 ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS7       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS7 ; break ; }
+            case ifcIDtHREADpRIORITYbASEoSwINDOWS_IDLE         : { idDesire = ifcTHREADpRIORITY_LAZIEST      ; break ; }
         {
         switch( tinP.brcRaw )
         BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)tinP.brcRaw ) )

@@ -1885,31 +1885,32 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"diskFileSetAttrF_4@7\"\r\n"
+        "Author: \"diskFileSetAttrF_4@77\"\r\n"
         "\r\n"
-        "Subject: Command word \"diskFileSetAttrF_4@7\"\r\n"
+        "Subject: Command word \"diskFileSetAttrF_4@77\"\r\n"
         "\r\n"
         "\r\n"
         "Instructions:  Read this file.  It contains simple example code.  To\r\n"
         "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
         "is also an executable SOIL (tm) program.\r\n"
         "\r\n"
-        "Each manifestation of \"diskFileSetAttrF_4@7\" uses the current stack in this way:\r\n"
+        "Each manifestation of \"diskFileSetAttrF_4@77\" uses the current stack in this way:\r\n"
         "\r\n"
-        "    Pop  2:    flagsT           flagsP\r\n"
+        "    Pop  3:    flagsT           flags2P\r\n"
+        "    Pop  2:    flagsT           flags1P\r\n"
         "    Pop  1:    strokeS*         psttP\r\n"
         "\r\n"
         "To manifest the following example code, drop this document into\r\n"
         "the Depository:\r\n"
         "\r\n"
         "    . on space\r\n"
-        "    . \"Simple example code for \\\"diskFileSetAttrF_4@7\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . \"Simple example code for \\\"diskFileSetAttrF_4@77\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
         "    . off space\r\n"
 
     ;
 
     TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "diskFileSetAttrF_4@7" ) ;
+    TN( tNameSoixlOld , "diskFileSetAttrF_4@77" ) ;
    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
@@ -2923,20 +2924,20 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"fileOpenF_b34@3373733\"\r\n"
+        "Author: \"fileOpenF_b34@3373773\"\r\n"
         "\r\n"
-        "Subject: Command word \"fileOpenF_b34@3373733\"\r\n"
+        "Subject: Command word \"fileOpenF_b34@3373773\"\r\n"
         "\r\n"
         "\r\n"
         "Instructions:  Read this file.  It contains simple example code.  To\r\n"
         "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
         "is also an executable SOIL (tm) program.\r\n"
         "\r\n"
-        "Each manifestation of \"fileOpenF_b34@3373733\" uses the current stack in this way:\r\n"
+        "Each manifestation of \"fileOpenF_b34@3373773\" uses the current stack in this way:\r\n"
         "\r\n"
         "    Pop  a:    countT           cTriesP                         (defaults to 0)\r\n"
-        "    Pop  9:    countT           cbP                             (defaults to 0)\r\n"
-        "    Pop  8:    flagsT           flagsAttributeP                 (defaults to flFILEaTTR1_null)\r\n"
+        "    Pop  9:    flagsT           flagsAttribute2P                (defaults to flFILEaTTR2_null, countT cbP = 0)\r\n"
+        "    Pop  8:    flagsT           flagsAttribute1P                (defaults to flFILEaTTR1_null)\r\n"
         "    Pop  7:    countT           idHowP                          (defaults to ifcOPENhOW_nFeO)\r\n"
         "    Pop  6:    flagsT           flagsDetailsP                   (defaults to flOPENdETAILS_LOCsEQ)\r\n"
         "    Pop  5:    countT           idShareP                        (defaults to ifcOPENsHARE_R)\r\n"
@@ -2949,13 +2950,13 @@
         "the Depository:\r\n"
         "\r\n"
         "    . on space\r\n"
-        "    . \"Simple example code for \\\"fileOpenF_b34@3373733\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . \"Simple example code for \\\"fileOpenF_b34@3373773\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
         "    . off space\r\n"
 
     ;
 
     TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "fileOpenF_b34@3373733" ) ;
+    TN( tNameSoixlOld , "fileOpenF_b34@3373773" ) ;
    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
@@ -5698,18 +5699,19 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"osProcessWaitF_333\"\r\n"
+        "Author: \"osProcessWaitF_3333\"\r\n"
         "\r\n"
-        "Subject: Command word \"osProcessWaitF_333\"\r\n"
+        "Subject: Command word \"osProcessWaitF_3333\"\r\n"
         "\r\n"
         "\r\n"
         "Instructions:  Read this file.  It contains simple example code.  To\r\n"
         "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
         "is also an executable SOIL (tm) program.\r\n"
         "\r\n"
-        "Each manifestation of \"osProcessWaitF_333\" uses the current stack in this way:\r\n"
+        "Each manifestation of \"osProcessWaitF_3333\" uses the current stack in this way:\r\n"
         "\r\n"
-        "    Pop  3:    countT           pidP\r\n"
+        "    Pop  4:    countT           osPidP\r\n"
+        "    Pop  3:    countT           osTidP\r\n"
         "    Pop  2:    countT           idDeathTypeP\r\n"
         "    Pop  1:    countT           valueP\r\n"
         "\r\n"
@@ -5717,13 +5719,13 @@
         "the Depository:\r\n"
         "\r\n"
         "    . on space\r\n"
-        "    . \"Simple example code for \\\"osProcessWaitF_333\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . \"Simple example code for \\\"osProcessWaitF_3333\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
         "    . off space\r\n"
 
     ;
 
     TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "osProcessWaitF_333" ) ;
+    TN( tNameSoixlOld , "osProcessWaitF_3333" ) ;
    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }

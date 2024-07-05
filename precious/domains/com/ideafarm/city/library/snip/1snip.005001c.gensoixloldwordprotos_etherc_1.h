@@ -85,7 +85,7 @@ voidT diskFileQueryAttrF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const
 
 voidT diskFileRefreshF_4P4P4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT diskFileSetAttrF_4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT diskFileSetAttrF_4P77_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT diskChooseSiteF_4P4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
@@ -133,7 +133,7 @@ voidT strokeF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* c
 
 voidT paperTitleF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT fileOpenF_b34P3373733_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT fileOpenF_b34P3373773_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT fileHoseConnectF_b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
@@ -261,7 +261,7 @@ voidT osProcessInterruptF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const
 
 voidT osProcessKillF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT osProcessWaitF_333_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT osProcessWaitF_3333_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT osSessionF_333334P33337_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

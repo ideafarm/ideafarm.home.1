@@ -3854,6 +3854,8 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
             if( bThird )                        { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.01000002.cnotcppheader" )                                  ; system( postCmd ) ; }
 
+            if( bThird )                        { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.112005e6.ifcIDtHREADpRIORITYbASEoSwINDOWS" )               ; system( postCmd ) ; }
+
             if( !bCNotCpp )
             {
                                                 { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , bThird ? " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000003.includeGenMake.base.show.third" : " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000002.includeGenMake.base.hide.third" )                                  ; system( postCmd ) ; }

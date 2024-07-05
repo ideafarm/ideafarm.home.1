@@ -1,5 +1,4 @@
 
-
 voidT osDoNothingF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -1293,7 +1292,7 @@ voidT osProcessKillF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     if( !POOP ) etherP.osProcessKillF( tinP , pidP ) ;
 }
 
-voidT osProcessWaitF_333_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT osProcessWaitF_3333_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1313,8 +1312,14 @@ voidT osProcessWaitF_333_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
 
    SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
    SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , pidP ) ;
-    if( !POOP ) { slP >> pidP ; idArgNext ++ ; }
+    ZE( countT , osTidP ) ;
+    if( !POOP ) { slP >> osTidP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , osPidP ) ;
+    if( !POOP ) { slP >> osPidP ; idArgNext ++ ; }
+    if( !POOP ) etherP.osProcessWaitF( tinP , valueP , idDeathTypeP , osTidP , osPidP ) ;
 }
 
 voidT osSessionF_333334P33337_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

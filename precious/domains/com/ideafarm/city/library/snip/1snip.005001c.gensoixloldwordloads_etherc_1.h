@@ -343,11 +343,11 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskFileSetAttrF_4@7" ) ;
+    TN( tNameSoixlOld , "diskFileSetAttrF_4@77" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskFileSetAttrF_4P7_GF ;
+    *_pSwSoixlOldApi = (countT)diskFileSetAttrF_4P77_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
@@ -535,11 +535,11 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileOpenF_b34@3373733" ) ;
+    TN( tNameSoixlOld , "fileOpenF_b34@3373773" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileOpenF_b34P3373733_GF ;
+    *_pSwSoixlOldApi = (countT)fileOpenF_b34P3373773_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
@@ -1047,11 +1047,11 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessWaitF_333" ) ;
+    TN( tNameSoixlOld , "osProcessWaitF_3333" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessWaitF_333_GF ;
+    *_pSwSoixlOldApi = (countT)osProcessWaitF_3333_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
