@@ -9,7 +9,12 @@
 
 }
     }
-if( tinP.pcUtility[ 0 ] ) thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
+}
+    tinP.pcUtility[ 1 ] = 0x10004 ;
+    thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
+    tinP.pcUtility[ 1 ] = 0x10003 ;
+{
+if( tinP.pcUtility[ 0 ] )
         }
             say.dTimeCt      = say.cTime2      - say.cTime1      ;
             say.dCpuCyclesCt = say.cCpuCycles2 - say.cCpuCycles1 ;
@@ -278,7 +283,12 @@ if( tinP.pcUtility[ 0 ] ) thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
             const byteT* pbEbp = (const byteT*)ebpAM() ;
         {
 
-if( tinP.pcUtility[ 0 ] ) thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
+}
+    tinP.pcUtility[ 1 ] = 0x10002 ;
+    thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
+    tinP.pcUtility[ 1 ] = 0x10001 ;
+{
+if( tinP.pcUtility[ 0 ] )
         tinP.pInOutFrame = this ;
     {
     //if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ) )

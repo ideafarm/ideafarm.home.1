@@ -27,9 +27,9 @@
             }
                 }
                     }
-                        //U::A: hThread.resetF() ;
+                        //U::A: hThreadKid.resetF() ;
                         //U::A: tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
-                        //U::A: *tinP.pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ;
+                        //U::A: *tinP.pag1->_thirdC_.pSwThreadHandle = hThreadKid.osF( ifcIDtYPEhANDLE_THREAD ) ;
                         //U::A: tinP.pag1->_thirdC_.lOsTid = tidP ;
                         //U::A: tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
                     {
@@ -37,15 +37,15 @@
         
                     __( tinP.brcRaw != 1 ) ;
                     BOSpOOP
-                    BOS( WHATgbo , BOSmAXcOUNTT , ResumeThread( (HANDLE)hThread.osF( ifcIDtYPEhANDLE_THREAD ) ) )
+                    BOS( WHATgbo , BOSmAXcOUNTT , ResumeThread( (HANDLE)hThreadKid.osF( ifcIDtYPEhANDLE_THREAD ) ) )
                     BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
         
                     BOSpOOP
-                    BOS( WHATgbo , BOSoK , SetThreadPriority( (HANDLE)hThread.osF( ifcIDtYPEhANDLE_THREAD ) , idp ) )
+                    BOS( WHATgbo , BOSoK , SetThreadPriority( (HANDLE)hThreadKid.osF( ifcIDtYPEhANDLE_THREAD ) , idpDad ) )
                     BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
         
                     //}
-                    //    thirdC::osSelectProcessorsIF( tinP , idType , &hThread ) ;
+                    //    thirdC::osSelectProcessorsIF( tinP , idType , &hThreadKid ) ;
                     //
                     //    ;
                     //                : ifcIDtYPEtHREAD_WORKhORSE
@@ -58,8 +58,8 @@
                     //{
                     //20170213@1456: COMMENTED OUT WITHOUT ANALYSIS TO PERHAPS FIX UNEXPECTED PROCESSOR AFFINITY FOR GLASS2 ADAM
         
-                    __Z( hThread ) ;
-                    hThread.osF( ifcIDtYPEhANDLE_THREAD , (countT)tinP.brcRaw ) ;
+                    __Z( hThreadKid ) ;
+                    hThreadKid.osF( ifcIDtYPEhANDLE_THREAD , (countT)tinP.brcRaw ) ;
                 {
                 if( !POOP )
 
@@ -68,14 +68,14 @@
 
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
                 SECURITYaTTRIBUTE_saUNRESTRICTED( 0 ) ;
-                int idp = tinP.brcRaw ;
+                int idpDad = tinP.brcRaw ;
             {
             if( !POOP )
             BOSpOOP
             BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)tinP.brcRaw ) )
             BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
             BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
-            handleC hThread( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
+            handleC hThreadKid( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
         {
 
     #elif defined( __NT__ )

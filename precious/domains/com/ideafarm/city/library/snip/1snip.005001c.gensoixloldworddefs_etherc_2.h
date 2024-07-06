@@ -1,174 +1,4 @@
 
-voidT diskFileQueryAttrF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-
-    ZE( flagsT , noName ) ;
-    etherP.delF( tinP , psttP ) ;
-
-    slP << noName ;
-}
-
-voidT diskFileRefreshF_4P4P4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , pstt1NotRefreshedP ) ;
-    if( !POOP ) { slP >> pstt1NotRefreshedP ; ___( pstt1NotRefreshedP ) ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , pstt1LocalP ) ;
-    if( !POOP ) { slP >> pstt1LocalP ; ___( pstt1LocalP ) ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , pstt1RemoteP ) ;
-    if( !POOP ) { slP >> pstt1RemoteP ; ___( pstt1RemoteP ) ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , pstt1RemotePrefixP ) ;
-    if( !POOP ) { slP >> pstt1RemotePrefixP ; ___( pstt1RemotePrefixP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFileRefreshF( tinP , pstt1NotRefreshedP , pstt1LocalP , pstt1RemoteP , pstt1RemotePrefixP ) ;
-    etherP.delF( tinP , pstt1RemotePrefixP ) ;
-    etherP.delF( tinP , pstt1RemoteP ) ;
-    etherP.delF( tinP , pstt1LocalP ) ;
-
-    if( !POOP ) slP << pstt1NotRefreshedP ;
-    etherP.delF( tinP , pstt1NotRefreshedP ) ;
-}
-
-voidT diskFileSetAttrF_4P77_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0x0 , etherC )
-   SOIXLoLDtESTtYPE( 0x0 , etherC )
-    ZE( flagsT , flags1P ) ;
-    if( !POOP ) { slP >> flags1P ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0x0 , etherC )
-   SOIXLoLDtESTtYPE( 0x0 , etherC )
-    ZE( flagsT , flags2P ) ;
-    if( !POOP ) { slP >> flags2P ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFileSetAttrF( tinP , psttP , flags1P , flags2P ) ;
-    etherP.delF( tinP , psttP ) ;
-}
-
-voidT diskChooseSiteF_4P4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttKeyP ) ;
-    if( !POOP ) { slP >> psttKeyP ; ___( psttKeyP ) ; idArgNext ++ ; }
-
-    ZE( strokeS* , psttLikeP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                psttLikeP = 0 ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinP , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-                if( !POOP ) { slP >> psttLikeP ; idArgNext ++ ; }
-            }
-        }
-    }
-
-    ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.diskChooseSiteF( tinP , psttP , psttKeyP , psttLikeP ) ;
-    etherP.delF( tinP , psttLikeP ) ;
-    etherP.delF( tinP , psttKeyP ) ;
-
-    if( !POOP ) slP << psttP ;
-    etherP.delF( tinP , psttP ) ;
-
-    slP << noName ;
-}
-
-voidT diskFindMostFreeSpaceF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttDiskP ) ;
-    if( !POOP ) { slP >> psttDiskP ; ___( psttDiskP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFindMostFreeSpaceF( tinP , psttDiskP ) ;
-
-    if( !POOP ) slP << psttDiskP ;
-    etherP.delF( tinP , psttDiskP ) ;
-}
-
-voidT diskGetHoverF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskGetHoverF( tinP , psttP ) ;
-
-    if( !POOP ) slP << psttP ;
-    etherP.delF( tinP , psttP ) ;
-}
-
 voidT diskHoverF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2005,4 +1835,148 @@ voidT osClipboardWriteF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const 
     if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
     if( !POOP ) etherP.osClipboardWriteF( tinP , psttP ) ;
     etherP.delF( tinP , psttP ) ;
+}
+
+voidT osDoNothingF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+    if( !POOP ) etherP.osDoNothingF( tinP ) ;
+    if( tinP.fingerprint && _psttNameP && slP ) ;
+}
+
+voidT osDoNothingLoopF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    ZE( countT , cToDoP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                cToDoP = 0 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tinP , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+                if( !POOP ) { slP >> cToDoP ; idArgNext ++ ; }
+            }
+        }
+    }
+
+    ZE( countT , msSleepP ) ;
+    {
+        strokeS sttColon( ':' ) ;
+        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+        if( !POOP )
+        {
+           idTypeNext = flagsNext = cbFieldNext = 0 ;
+            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
+            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
+            {
+                msSleepP = 0 ;
+                psttNext = 0 ;
+                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
+                etherP.delF( tinP , psttNext ) ;
+            }
+            else
+            {
+                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+                if( !POOP ) { slP >> msSleepP ; idArgNext ++ ; }
+            }
+        }
+    }
+    if( !POOP ) etherP.osDoNothingLoopF( tinP , cToDoP , msSleepP ) ;
+}
+
+voidT osDriverF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , idAdamP ) ;
+    if( !POOP ) { slP >> idAdamP ; idArgNext ++ ; }
+    if( !POOP ) etherP.osDriverF( tinP , idAdamP ) ;
+}
+
+voidT osDriverNameFromMasterF_4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , idAdamP ) ;
+    if( !POOP ) { slP >> idAdamP ; idArgNext ++ ; }
+    if( !POOP ) etherP.osDriverNameFromMasterF( tinP , psttP , idAdamP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tinP , psttP ) ;
+}
+
+voidT homeOsDriverNameF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.homeOsDriverNameF( tinP , psttP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tinP , psttP ) ;
+}
+
+voidT osDriverRemoveOldF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , idAdamP ) ;
+    if( !POOP ) { slP >> idAdamP ; idArgNext ++ ; }
+
+    ZE( boolT , noName ) ;
+    if( !POOP ) noName = etherP.osDriverRemoveOldF( tinP , idAdamP ) ;
+
+    slP << noName ;
 }

@@ -15,27 +15,11 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
-    TN( tNameSoixlOld , "etherGetLogF_4@" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherGetLogF_4P_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
     TN( tNameSoixlOld , "etherParameterF_4@" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
     *_pSwSoixlOldApi = (countT)etherParameterF_4P_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
-    TN( tNameSoixlOld , "etherPutLogF_4@" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherPutLogF_4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
@@ -156,38 +140,6 @@
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
     *_pSwSoixlOldApi = (countT)batonOpenF_b64P_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
-    TN( tNameSoixlOld , "beeClickF_33" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)beeClickF_33_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
-    TN( tNameSoixlOld , "beeHonkF_33" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)beeHonkF_33_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
-    TN( tNameSoixlOld , "beeSingDigitsF_3" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)beeSingDigitsF_3_GF ;
-    _pSwSoixlOldApi->ungrabF( tinP ) ;
-}
-{
-    TN( tNameSoixlOld , "beeSong1F_" ) ;
-    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    _psttLeverSoixlOldApi = tNameSoixlOld ;
-    if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)beeSong1F__GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {

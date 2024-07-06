@@ -143,7 +143,8 @@ stackC stIdAdam( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
     #endif
 
 
-        ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
+        ifcIDaDAM_ELF , ifcIDaDAM_SYMBOLtABLE
+        //ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
         //ifcIDaDAM_ELF , ifcIDaDAM_SYMBOLtABLE
         //ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
         //ifcIDaDAM_ELF   , ifcIDaDAM_CLOAK , ifcIDaDAM_GLASS1 , ifcIDaDAM_2GLASS2 , ifcIDaDAM_HEALaRCHIVES , ifcIDaDAM_HIREwITHOUTdEBUGGING
@@ -827,7 +828,7 @@ TODO
 // *************************************************************************************************************************************************************************************************************
 // *************************************************************************************************************************************************************************************************************
 
-#define DOaLL
+//#define DOaLL
 
 // *************************************************************************************************************************************************************************************************************
 // *************************************************************************************************************************************************************************************************************
@@ -876,6 +877,7 @@ TODO
                 {
                 case ifcIDaDAM_DEFlINES :
 
+#endif
                 }
                     break ;
 
@@ -912,6 +914,7 @@ TODO
                     osTextT* ppostDef[] =    //U:: LAUNCH THESE ASYNCHRONOUSLY AND SIMULTANEOUSLY WITH SOME IPC TO WAIT UNTIL THEY ARE ALL DONE
                 {                            // 20200524@1352: THE PRECEDING COMMENT IS OBSOLETE.  MULTIPLE INSTANCES OF AN ADAM PROCESS ARE NOW USED (E.G. CLOUD)
                 case ifcIDaDAM_SYMBOLtABLE : // THIS WO MUST HIRE SYNCHRONOUSLY BECAUSE IT REPEATEDLY HIRES THE SAME ADAM (ONLY WO INSTANCE OF AN ADAM CAN RUN AT A TIME; SUCCEEDING INSTANCES ARE INTERPRETED AS REPLACEMENTS (BY THE HANDOFFoLD SUBSYSTEM) FOR THE INSTANCE THAT IS RUNNING)
+#if defined( NEVERdEFINED )
 
                 }
                     break ;
@@ -949,6 +952,8 @@ TODO
                 case 0x51000762                                      :
                 case 0x51000761                                      :
                 case 0x51000760                                      :
+
+case ifcIDaDAM_SYMBOLtABLE :
 
                 case ifcIDaDAM_TOOLmIGRATEaRCHIVEfORMAT9tOfORMATa    :
                 case ifcIDaDAM_UDPeCHO                               :

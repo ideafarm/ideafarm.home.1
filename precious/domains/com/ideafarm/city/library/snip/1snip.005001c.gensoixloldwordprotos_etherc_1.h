@@ -3,11 +3,7 @@ voidT etherBeImpotentF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
 
 voidT etherBlammoF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT etherGetLogF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
 voidT etherParameterF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
-voidT etherPutLogF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT etherScanProcessParametersF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
@@ -38,14 +34,6 @@ voidT batonGrabF_b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS*
 voidT batonLetGoF_b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT batonOpenF_b64P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
-voidT beeClickF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
-voidT beeHonkF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
-voidT beeSingDigitsF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
-
-voidT beeSong1F__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT boxGetGenerationF_1P34P4P33337_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

@@ -86,8 +86,16 @@ ZE( countT , idClass ) ;
 ZE( strokeS* , pstti ) ;
 
 }
+    //etThread.traceF( tinP , psttSnip , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    //etThread.traceF( tinP , T("snip:") ) ;
+    //etThread.boxPutF( tinP , T("///d/tmp/foo.ttt") , tSnip2 , tSnip2.csF( tinP ) ) ;
+    //TN( tSnip2 , psttSnip ) ;
     etThread.strSubstringF( tinP , psttSnip , idf , sttq , psttFileFrom , tIn ) ; ___( psttSnip ) ;
     etThread.delF( tinP , psttSnip ) ;
+    //etThread.boxPutF( tinP , T("///d/tmp/foo.ttt") , tSnip1 , tSnip1.csF( tinP ) ) ;
+    //TN( tSnip1 , psttSnip ) ;
+    //etThread.traceF( tinP , psttSnip , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    //etThread.traceF( tinP , T("snip:") ) ;
     etThread.strSubstringF( tinP , psttSnip , idf , sttq , psttFileFrom , tIn ) ; ___( psttSnip ) ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
@@ -100,7 +108,7 @@ ZE( strokeS* , pstti ) ;
 {
 ZE( strokeS* , psttSnip ) ;
 
-etThread.strokeF( tinP , T(psttFileFrom)+T("\r\n") ) ;
+etThread.traceF( tinP , T("[psttFileFrom]:    ")+T(psttFileFrom) ) ;
 
 __Z( psttFileFrom ) ;
 }
