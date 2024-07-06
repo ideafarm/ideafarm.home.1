@@ -10,50 +10,52 @@
 }
     return tinP.idDesire ;
 
-    tinP.idDesire = idDesire ;
-
     }
-        BLAMMOiD( 0x1f1f1f1f ) ;                                                                                                                                                            //20240621@1455: OBSERVED THIS WHILE HEAL WAS ZIPPING A DAY CHUNK FILE ON AN EXTERNAL SSD ; IF SAMEO THEN INSPECT THE EXCEPTION RPT OR THE TRACE PRODUCED BY GLASS1
-        LOGcALLnEST( "!exception: tinP.idDesire is inaccurate" )
-        LOGrAW7(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [osTidIF(),tinDesire,actualDesire]:    " , osTidIF() , "    " , tinP.idDesire , "    " , idDesire , "\r\n" ) ;
-        CONoUTrAW7( "\r\ndosPriorityIF: BLAMMO BECAUSE: [osTidIF(),tinDesire,actualDesire]:    " , osTidIF() , "    " , tinP.idDesire , "    " , idDesire , "\r\n" ) ;
-
-        if( &tinP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinP , (strokeS*)"dosPriorityIF (get) IS USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
-    {
-    if( tinP.idDesire && idDesire != tinP.idDesire )     //U:: TO FIND A BUG
-
-    #endif
+        tinP.idDesire = idDesire ;
 
         }
-            default                                            : { BLAMMOiD( tinP.brcRaw ) ;                 ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_TIMEcRITICAL : { idDesire = ifcTHREADpRIORITY_RUDE         ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS6        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS6   ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS5        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS5   ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS4        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS4   ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS3        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS3   ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_HIGHEST      : { idDesire = ifcTHREADpRIORITY_PUSHY        ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_ABOVEnORMAL  : { idDesire = ifcTHREADpRIORITY_RUSH         ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_NORMAL       : { idDesire = ifcTHREADpRIORITY_NORMAL       ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_BELOWnORMAL  : { idDesire = ifcTHREADpRIORITY_LAZY         ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_LOWEST       : { idDesire = ifcTHREADpRIORITY_LAZIER       ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS3       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS3 ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS4       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS4 ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS5       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS5 ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS6       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS6 ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS7       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS7 ; break ; }
-            case ifcIDtHREADpRIORITYbASEoSwINDOWS_IDLE         : { idDesire = ifcTHREADpRIORITY_LAZIEST      ; break ; }
+            BLAMMOiD( 0x1f1f1f1f ) ;                                                                                                                                                            //20240621@1455: OBSERVED THIS WHILE HEAL WAS ZIPPING A DAY CHUNK FILE ON AN EXTERNAL SSD ; IF SAMEO THEN INSPECT THE EXCEPTION RPT OR THE TRACE PRODUCED BY GLASS1
+            LOGcALLnEST( "!exception: tinP.idDesire is inaccurate" )
+            LOGrAW7(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [osTidIF(),tinDesire,actualDesire]:    " , osTidIF() , "    " , tinP.idDesire , "    " , idDesire , "\r\n" ) ;
+            CONoUTrAW7( "\r\ndosPriorityIF: BLAMMO BECAUSE: [osTidIF(),tinDesire,actualDesire]:    " , osTidIF() , "    " , tinP.idDesire , "    " , idDesire , "\r\n" ) ;
+
+            if( &tinP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinP , (strokeS*)"dosPriorityIF (get) IS USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
         {
-        switch( tinP.brcRaw )
-        BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)tinP.brcRaw ) )
-        BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
+        if( tinP.idDesire && idDesire != tinP.idDesire )     //U:: TO FIND A BUG
 
-    #elif defined( __NT__ )
-        //U:
-    #if defined( __OS2__ )
+        #endif
 
-    ZE( countT , idDesire ) ;
-    _IO_
-    //U:: ENABLE AFTER REMOVING CALLS TO MYSELF IN inOutFrameC CT/DT:    _IO_
+            }
+                default                                            : { BLAMMOiD( tinP.brcRaw ) ;                 ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_TIMEcRITICAL : { idDesire = ifcTHREADpRIORITY_RUDE         ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS6        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS6   ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS5        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS5   ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS4        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS4   ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS3        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS3   ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_HIGHEST      : { idDesire = ifcTHREADpRIORITY_PUSHY        ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_ABOVEnORMAL  : { idDesire = ifcTHREADpRIORITY_RUSH         ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_NORMAL       : { idDesire = ifcTHREADpRIORITY_NORMAL       ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_BELOWnORMAL  : { idDesire = ifcTHREADpRIORITY_LAZY         ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_LOWEST       : { idDesire = ifcTHREADpRIORITY_LAZIER       ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS3       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS3 ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS4       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS4 ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS5       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS5 ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS6       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS6 ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS7       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS7 ; break ; }
+                case ifcIDtHREADpRIORITYbASEoSwINDOWS_IDLE         : { idDesire = ifcTHREADpRIORITY_LAZIEST      ; break ; }
+            {
+            switch( tinP.brcRaw )
+            BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)tinP.brcRaw ) )
+            BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
+
+        #elif defined( __NT__ )
+            //U:
+        #if defined( __OS2__ )
+
+        ZE( countT , idDesire ) ;
+        //U:: ENABLE AFTER REMOVING CALLS TO MYSELF IN inOutFrameC CT/DT:    _IO_
+    {
+    if( &tinP != &processGlobal5I.tinHeart && &tinP != &processGlobal6I.tinBreak )  //I DO NOTHING ON THESE OO THREADS IN ORDER TO AVOID (INDIRECTLY) CALLING TINSL
 
     //}
     //    if( POOP ) return 0 ;
