@@ -2789,7 +2789,7 @@ void elf_obey_C::liveF( void )
             const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\3.ideafarm.msi" } ;
             const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\installer\\ideafarm.wxs" } ;
             const char postFrom2[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\installer\\readme.txt" } ;
-            const char postFrom3[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.service.ipdos" } ;
+            const char postFrom3[] = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.service.ipdos" } ;
     
             if
             (
