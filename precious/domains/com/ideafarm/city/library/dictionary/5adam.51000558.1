@@ -15,7 +15,6 @@ etThread.strokeF( tinP , T("\f") ) ;
     napF( tinP , ether ) ;
     bClear = !bClear ;
     etThread.strokeF( tinP , bClear ? tSayClear : tSay ) ;
-    etThread.beeClickF( tinP , TUCK ) ;
 {
 while( !ether && cTries -- )
 ZE( boolT , bClear ) ; //PERIODIC CLEARING MUST BE DONE TO AVOID UNBOUNDED MEMORY AND CPU LEAKAGE
@@ -83,7 +82,6 @@ voidT napF( tinS& tinP , etherC& etherP )
         }
             FIREmYSELF ;
             //LOGrAW( T("fired by ")+T(processGlobal4I.mapSadamCall(idTypeCallP))+T("\r\n") ) ;
-            etherP.beeClickF( tinP ) ;
         {
         case ifcIDtYPEsTROKEcALLbACK_HOTkEY :
         }

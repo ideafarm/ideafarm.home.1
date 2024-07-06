@@ -43,7 +43,6 @@ DONE( tmAnimateSadamsOnPaperF )
                             paperOldC::freshVolatileTextIF( tinP , etThread , pcNotes , idCycle ) ;
                             paperOldC::obeyAnimateCbfStrokesIF( tinP , etThread , idCycle , ether ) ;
                             paperOldC::beforeAnimatingIF( tinP , etThread , idCycle ) ;
-                            //if( !( idCycle % ( TUCK >> 4 ) ) ) Beep ( TUCK << 1 , TUCK >> 2 ) ; //U::
                         {
                         if( !( F(paperOldC::flagsModeIF( tinP )) & flPAPERmODEi_SUPPRESSaNIMATION ) && !( F(paperOldC::flagsModeIF( tinP )) & flPAPERmODEi_ANIMATIONtHREADfIRED ) )
                         paperOldC::grabIF( tinP , TAG( TAGiDnULL ) ) ;
@@ -54,7 +53,6 @@ DONE( tmAnimateSadamsOnPaperF )
             
                             }
                                 //LOGrAW5( "too slow [cyclesPerSleep,msSleep]: " , cyclesPerSleep , " " , msSleep , "\r\n" ) ; //U::
-                                //etThread.beeClickF( tinP , TUCK * 1 ) ; //U::
                                 if( bLathUp ) bLathUp = 0 ;
                                 bLathUpLag = bLathUp ;
             
@@ -83,7 +81,6 @@ DONE( tmAnimateSadamsOnPaperF )
                             else if( timeE1 > timeTarget1 )
                             }
                                 //LOGrAW5( "too fast [cyclesPerSleep,msSleep]: " , cyclesPerSleep , " " , msSleep , "\r\n" ) ; //U::
-                                //etThread.beeClickF( tinP , TUCK * 8 ) ; //U::
                                 if( !bLathUp ) bLathUp = 1 ;
                                 bLathUpLag = bLathUp ;
             

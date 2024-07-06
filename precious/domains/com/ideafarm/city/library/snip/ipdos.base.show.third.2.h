@@ -1,75 +1,3 @@
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
-
-/*3*/
-#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c2e
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c2f
-#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c30
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c31
-#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c32
-#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c33
-#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c34
-#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c35
-/*3*/
-#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c2e
-#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c35                                                               
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/*1*//*ifcIDuDPfILEmETAtYPE*//*1*/
-
-/*3*/
-#define ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME     0x1
-#define ifcIDuDPfILEmETAtYPE_CONTROLsETTINGS    0x2
-#define ifcIDuDPfILEmETAtYPE_HASHoFcONTENT      0x3
-#define ifcIDuDPfILEmETAtYPE_CONTENT            0x4
-#define ifcIDuDPfILEmETAtYPE_TIMEcREATED        0x5
-#define ifcIDuDPfILEmETAtYPE_TIMEmODIFIED       0x6
-#define ifcIDuDPfILEmETAtYPE_IDgENERATION       0x7
-#define ifcIDuDPfILEmETAtYPE_IDvERSION          0x8
-#define ifcIDuDPfILEmETAtYPE_IDoWNERlO          0x9
-#define ifcIDuDPfILEmETAtYPE_IDoWNERhI          0xa
-/*3*/                                                               
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD BEGIN
 
 
@@ -29545,12 +29473,6 @@ private :
 /* commands: operating system programming interface: layer 1 */
  static voidT dosAllocMemIF( tinS& tinP , voidT*& pvP , const countT cbP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34041.thirdC.dosAllocMemIF!||
- static voidT dosBeepIF( tinS& tinP , const countT hzP , const countT timeP = 256 * 256 ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34042.thirdC.dosBeepIF!||
- static voidT dosBeepIF( const countT hzP = 0x100 , const countT msP = 0x30 ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340b3.thirdC.dosBeepIF!||
- static voidT dosBeepSingDigitsIF( tinS& tinP , const countT cP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340ca.thirdC.dosBeepSingDigitsIF!||
  voidT dosCloseEventSemF( tinS& tinP , handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34018.thirdC.dosCloseEventSemF!||
  static voidT dosCloseEventSem2IF( tinS& tinP , handleC& handleP ) ;
@@ -32766,16 +32688,12 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34164.etherC.etherBlammoF!||
  countT etherEmployersF( tinS& tinP , countT*& pcP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340ab.etherC.etherEmployersF!||
- voidT etherGetLogF( tinS& tinP , strokeS*& psttP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34085.etherC.etherGetLogF!||
  static countT etherIdPortPaperF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34109.etherC.etherIdPortPaperF!||
  static nicNameC etherNicNamePaperF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3410a.etherC.etherNicNamePaperF!||
  boolT etherParameterF( tinS& tinP , const strokeS* const psttP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34152.etherC.etherParameterF!||
- voidT etherPutLogF( tinS& tinP , const strokeS* const psttP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34086.etherC.etherPutLogF!||
  voidT etherRptOverheadCostsF( tinS& tinP , countT*& pcP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340de.etherC.etherRptOverheadCostsF!||
  voidT etherScanProcessParametersF( tinS& tinP ) ;
@@ -32886,16 +32804,6 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.etherC.batonLetGoF!||
  voidT batonOpenF( tinS& tinP , handleC& handleP , boolT& fCreatorP , const strokeS* const psttP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.etherC.batonOpenF!||
-
-/* commands: bees */
- voidT beeClickF( tinS& tinP , const countT hzP = 1760 * 4 /*4 IS BARELY AUDIBLE AND IS GOOD FOR LIBRARY*/ , const countT timeP = 8 * TUCK ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.etherC.beeClickF!||
- voidT beeHonkF( tinS& tinP , const countT hzP = 440 , const countT timeP = TUCK * 0x40 ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.etherC.beeHonkF!||
- voidT beeSingDigitsF( tinS& tinP , const countT cP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340e9.etherC.beeSingDigitsF!||
- voidT beeSong1F( tinS& tinP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.etherC.beeSong1F!||
 
 /* commands: boxes */
  voidT boxGetF( tinS& tinP , byteT*& pbP , countT& cbP , const strokeS* const psttP , countT cOpenTriesP = 0 , const countT cZapTriesP = 0 , countT time1P = 0 , const sCountT time2P = 0 , const flagsT flagsOpenDetailsP = flOPENdETAILS_null ) ;
@@ -40990,7 +40898,6 @@ base class to make a derived class of objects easily contained by a stackC objec
     etherC*                         pEtThreadServiceEventHandler ;
     tinS*                           pTinDadService ;
     byteT                           pb_bNapkinCt[         CBzOMBIEbATONc ] ;
-    byteT                           pb_bBeep[             CBzOMBIEbATONc ] ;
     byteT                           pb_bMemorySpace[         CBzOMBIEbATONc ] ;
     byteT                           pb_bLog[              CBzOMBIEbATONc ] ;
     byteT                           pb_bOsCall[           CBzOMBIEbATONc ] ;
@@ -41633,8 +41540,6 @@ base class to make a derived class of objects easily contained by a stackC objec
     ranUniC                 /*P4*/ /*CT:42*/ _thugC_ru ;
     batonC                                   bMemorySpace ;
     napkinC                                  _marketC_napGoodRegistry ;
-    batonC                  /*P4*/ /*CT:62*/ _thirdC_bBeep ;
-    batonC                  /*P4*/ /*CT:92*/ _etherC_bLog ;
     grabC                                    _poolC_grab_pPool ;
     grabC                                    _hoverC_grabPathNow ;
     countT                                   _hoverC_idThreadNow ;

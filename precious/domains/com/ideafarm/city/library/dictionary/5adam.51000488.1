@@ -32,11 +32,9 @@ etherC::ifcSayIF( T("final aok\r\n")+tc , flSAY_APPEND | flSAY_LOG ) ;
         timeN2 = timeN1 = 0 ;
         TELL( "ending a cycle" ) ;
 
-        ether.beeClickF( tinP , 0x3800 , TUCK * 0x10 ) ;
         etherC::ifcSayIF( TF1(DDNUMB)+T(" cycle ")+tIdCycle+T(" a fresh pack file has been made")+tc , flSAY_APPEND | flSAY_LOG ) ;
         makePackF( tinP , ether , etThread , st1 , st2 , st3 , st4 , bTest , state ) ;
         etherC::ifcSayIF( TF1(DDNUMB)+T(" cycle ")+tIdCycle+T(" beginning to make a fresh pack file")+tc , flSAY_APPEND | flSAY_LOG ) ;
-        //ether.beeClickF( tinP , 0x100 , TUCK * 0x20 ) ;
         TELL( "making a pack of fish" ) ;
 
         etherC::ifcSayIF( TT(timeN1,timeN2)+T(" | ")+TF1(DDNUMB)+T(" cycle ")+tIdCycle+T(" this cycle has begun")+tc , flSAY_APPEND | flSAY_LOG ) ;
@@ -80,8 +78,6 @@ TODO
     if( bTestP ) ;
     if( !ether && !etThread ) stateP.idStep = 0 ;
     etherC::ifcSayIF( T("pass ")+TF1(stateP.idPass)+T(" done")+tc , flSAY_APPEND | flSAY_LOG ) ;
-
-    //etThread.beeSong1F( tinP ) ;
 
     etThread.delF( tinP , pstt1m ) ;
     FORsTRINGSiN1( pstt1m ) etThread.diskFileOrDirDeleteF( tinP , psttc1 ) ;

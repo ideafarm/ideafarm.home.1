@@ -193,10 +193,6 @@ voidT strFaceF( tinS& tinP , etherC& etherP , strokeS*& psttP , branchesOldS& bP
                 }
                     }
                         break ;
-                        }
-                            case ifcIDtYPEtOOL_MOUSEbUTTONlEFT : { etherP.beeClickF( tinP , 0x1000 ) ; break ; }
-                        {
-                        switch( idTool )
                     {
                     case ifcIDtYPEaCTION_DOWN :
                 {
@@ -213,7 +209,6 @@ voidT strFaceF( tinS& tinP , etherC& etherP , strokeS*& psttP , branchesOldS& bP
         }
             break ;
             }
-                //else etherP.beeClickF( tinP , 0x100 ) ;
                 }
                     }
                         etherP.delF( tinP , psttd ) ;
@@ -293,8 +288,8 @@ voidT strFaceF( tinS& tinP , etherC& etherP , strokeS*& psttP , branchesOldS& bP
                         case ifcIDtYPEtOOL_UP :
                         }
                             break ;
-                            else                                                                                    FIREmYSELF ;
-                            if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) thirdC::dosBeepIF( tinP , 0x3800 , TUCK * 0x20 ) ;
+                            else                                                                                 FIREmYSELF ;
+                            if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) etherP.traceF( tinP , T("ignored firing by operator") ) ;
                         {
                         case ifcIDtYPEtOOL_ESCAPE :
                     {

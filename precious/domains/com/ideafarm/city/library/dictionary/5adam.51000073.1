@@ -18,10 +18,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     time2last = time2 ;
     time1last = time1 ;
 
-    if( bNewTick ) etThread.beeHonkF( tinP ) ;
-
-    else                etThread.strokeF( tinP , T("\r" BLANK79 "\ra beep will sound when a new time period has arrived") ) ;
-    if( bNewTick      ) etThread.strokeF( tinP , T("\r" BLANK79 "\rnew tick: this will display 100 (256_9) times per day") ) ;
+    if( bNewTick ) etThread.strokeF( tinP , T("\r" BLANK79 "\rnew tick: this will display 100 (256_9) times per day") ) ;
 
     const boolT bNewTick = offTICK( time1 ) != offTICK( time1last ) ;
 

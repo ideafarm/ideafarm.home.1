@@ -66,7 +66,6 @@
                     else
                     }
                         thThread.winPostMessageF( tinP , hWindow , idCmdP , p1P - 1 , p2P ) ;
-                        //Beep ( 0x100 + p1P * 0x10 , 0x40 ) ;
                     {
                     if( p1P )
 
@@ -80,12 +79,10 @@
 
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , SetForegroundWindow( (HWND)oshWindowP ) )
-                    //Beep ( TUCK << 2 , TUCK ) ;
 
                     //countT rc2 = (countT)SetActiveWindow( (HWND)oshWindowP ) ; //ADDED TO DEBUG A BUG
                     //countT rc1 = (countT)SetFocus( (HWND)oshWindowP ) ;
                     //LOGrAW( "idwm_BECOMEaCTIVE: setting focus\r\n" ) ; //U::
-                    //Beep ( 0x100 , 0x40 ) ;
                 {
                 case idwm_BECOMEaCTIVE :
                 }
@@ -401,7 +398,6 @@
                             count8S c8n( 1 , 4 , idTool , idAction , xpRaw + 1 , pRootI->mRowsF() - ypRaw ) ;
     
                             //LOGrAW( T("mouse message ")+T(processGlobal4I.mapWindowMessage(idCmdP))+T(": xpRaw,ypRaw is ")+TF1(xpRaw)+T(" ")+TF1(ypRaw)+T(" ")+TF1(winIfColIF(xpRaw))+T(" ")+TF1(winIfRowIF(ypRaw,pRoot->mRowsF()))+T("\r\n") ) ;
-                            //etThread.beeClickF( tinP ) ;
                         
                             const countT ypRaw = p2P >> 0x10 ;
                             const countT xpRaw = p2P & 0xffff ;
@@ -614,7 +610,6 @@
                         windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
 
                         }
-                            //dosBeepIF( tinP , TUCK , TUCK ) ;
                             if( !bDown ) break ;
                             }
                                 if( rc & 0x8000 ) bDown |= 1 ;
@@ -625,7 +620,7 @@
                         {
                         while( cTries -- ) //BLOCK UNTIL ALL KEYS AND MOUSE BUTTONS ARE UP; THIS IS SO I CAN APPLY WINDOW MESSAGES TO A KNOWN INITIAL STATE TO MAINTAIN TOOL STATE ARRAY
                         countT cTries = 0x10 ;
-                        //SO IT HAS BEEN MODIFIED TO BEEP WHEN IT TERMINATES WITH A KEY REPORTEDLY DOWN
+                        //SO IT HAS BEEN MODIFIED TO B EEP WHEN IT TERMINATES WITH A KEY REPORTEDLY DOWN     20240706@1142: SUPPORT FOR B EEP REMOVED
                         //THIS HAS BEEN SEEN TO BLOCK FOREVER FOR A KEYBOARD THAT WAS DROPPED AND IS KNOWN TO BE PARTIALLY NONFUNCTIONAL
                     {
                     else

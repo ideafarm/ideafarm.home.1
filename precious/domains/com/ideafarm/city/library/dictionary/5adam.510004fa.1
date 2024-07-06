@@ -265,7 +265,6 @@ TELL( "cleaning up")
 
 }
     BLAMMO ;
-    etThread.beeClickF( tinP ) ;
     TELL( "blammo")
 {
 if( !ether )
@@ -302,8 +301,6 @@ TELL( "i'm outa here" )
 
         //tinP.flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWtELLmONITOR) ) ;
             
-        //Beep( 0x200 , 0x30 ) ;
-
         }
             etThread.delF( tinP , psttFileName ) ;
             etThread.delF( tinP , postBody ) ;
@@ -464,7 +461,6 @@ TELL( "i'm outa here" )
         stackC st_psttrBody ( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
         stackC st_psttrFileName( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
 
-        //Beep( 0x200 , 0x30 ) ;
         idReport ++ ;
     {
     while( !etThread && !sgnDone_tmWhereF )
@@ -1114,7 +1110,6 @@ tinP.idPhase2 = 0 ;
 #if defined( NEVERdEFINED )
 //U::
 
-        //if( !( idCycle % 0x10 ) ) Beep( 0x100 , 0x30 ) ;
         }
             ++ s ; ether.osSleepF( tinP , TOCK * 0x1/*0*/ ) ;
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
@@ -1753,7 +1748,6 @@ TELL( "i am outa here" )
                 if( !bMonitorEnded && stTin )
                 TELL( "report TS: getting copies of the tinS objects" )
             
-                //etThread.beeClickF( tinP , 0x8*thirdC::mathLog2IF( tinP , (measureT)(cNewSteps?cNewSteps:1) ) , TUCK*0x10 ) ;
                 //etThread.strokeF( tinP , T("\r\n")+TF1(cNewSteps)+T("    ")+TF1((countT)thirdC::mathLog2IF( tinP ,(measureT)(cNewSteps?cNewSteps:1)))+T("\r\n") ) ;
 
                 }

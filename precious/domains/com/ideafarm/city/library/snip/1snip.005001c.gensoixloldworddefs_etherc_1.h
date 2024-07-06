@@ -46,20 +46,6 @@ voidT etherBlammoF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS
 
 voidT etherGetLogF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.etherGetLogF( tinP , psttP ) ;
-
-    if( !POOP ) slP << psttP ;
-    etherP.delF( tinP , psttP ) ;
 }
 
 voidT etherParameterF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -84,18 +70,6 @@ voidT etherParameterF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
 
 voidT etherPutLogF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.etherPutLogF( tinP , psttP ) ;
-    etherP.delF( tinP , psttP ) ;
 }
 
 voidT etherScanProcessParametersF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -535,7 +509,6 @@ voidT beeClickF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS*
             }
         }
     }
-    if( !POOP ) etherP.beeClickF( tinP , hzP , timeP ) ;
 }
 
 voidT beeHonkF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -593,7 +566,6 @@ voidT beeHonkF_33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* 
             }
         }
     }
-    if( !POOP ) etherP.beeHonkF( tinP , hzP , timeP ) ;
 }
 
 voidT beeSingDigitsF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -608,7 +580,6 @@ voidT beeSingDigitsF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
    SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
     ZE( countT , cP ) ;
     if( !POOP ) { slP >> cP ; idArgNext ++ ; }
-    if( !POOP ) etherP.beeSingDigitsF( tinP , cP ) ;
 }
 
 voidT beeSong1F__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -618,7 +589,6 @@ voidT beeSong1F__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* c
     ZE( countT , idTypeNext ) ;
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.beeSong1F( tinP ) ;
     if( tinP.fingerprint && _psttNameP && slP ) ;
 }
 

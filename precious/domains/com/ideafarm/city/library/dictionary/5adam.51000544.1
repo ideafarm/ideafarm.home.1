@@ -1085,7 +1085,6 @@ voidT treeOldCBF( tinS& tinP , etherC& etherP , const countT idTypeP , const fla
                             (off?pTcButton_joy2:pTcButton_joy1)->setF( tinP , *pTxtNull+S2(0,scOld_FRAMEdETACH)+S2(0x0000ff,scOld_cPUSHcOLOR)+S3(1.0,scOld_mmLINEtO,0.0)+S3(1.0,scOld_mmLINEtO,1.0)+S3(0.0,scOld_mmLINEtO,1.0)+S3(0.0,scOld_mmLINEeNDtO,0.0)+S3(1.0,scOld_mmLINEtO,1.0)+S3(0.0,scOld_mmMOVEtO,1.0)+S3(1.0,scOld_mmLINEtO,0.0)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAMEdETACH)/*+S3(16.0,scOld_mmFRAMEcELLS,16.0)+S2(0,scOld_MOVEuPrIGHTfORaDAMfRAME)+TF1(pmxP[1])+T(",")+TF1(pmxP[2])+S2(0,scOld_POPfRAME)*/ ) ;
                             pbJoy[ off ] = 0 ;
                             countT off = idTool - ifcIDtYPEtOOL_JOY1pOSITION ;
-                            etherP.beeClickF( tinP ) ; //U::
                         {
                         case ifcIDtYPEtOOL_JOY2pOSITION :
                         case ifcIDtYPEtOOL_JOY1pOSITION :
@@ -1442,7 +1441,6 @@ voidT tcButton_zCBF( tinS& tinP , etherC& etherP , const countT cArgP , const co
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { etherP.beeClickF( tinP , TUCK ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("this animation indicator should move at a constant rate") ; break ; }
     {
@@ -1464,7 +1462,6 @@ voidT tcButton_wCBF( tinS& tinP , etherC& etherP , const countT cArgP , const co
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { etherP.beeClickF( tinP , TUCK ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("mouse") ; break ; }
     {
@@ -1475,7 +1472,6 @@ voidT tcButton_toolMouseCBF( tinS& tinP , etherC& etherP , const countT cArgP , 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { etherP.beeClickF( tinP , TUCK ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("joystick 2: ")+T(pbJoy[1]?"move through full range to calibrate":"not plugged in") ; break ; }
     {
@@ -1486,7 +1482,6 @@ voidT tcButton_toolJoy2CBF( tinS& tinP , etherC& etherP , const countT cArgP , c
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { etherP.beeClickF( tinP , TUCK ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("joystick 1: ")+T(pbJoy[0]?"move through full range to calibrate":"not plugged in") ; break ; }
     {
@@ -1497,7 +1492,6 @@ voidT tcButton_toolJoy1CBF( tinS& tinP , etherC& etherP , const countT cArgP , c
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { etherP.beeClickF( tinP , TUCK ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         }
             break ;
@@ -1584,7 +1578,6 @@ voidT tcButton_oCBF( tinS& tinP , etherC& etherP , const countT cArgP , const co
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { etherP.beeClickF( tinP , TUCK ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T(pbJoy[1]?"move joystick 2 through its full range to calibrate":"joystick 2 is absent") ; break ; }
     {
@@ -1595,7 +1588,6 @@ voidT tcButton_joy2CBF( tinS& tinP , etherC& etherP , const countT cArgP , const
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { etherP.beeClickF( tinP , TUCK ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T(pbJoy[0]?"move joystick 1 through its full range to calibrate":"joystick 1 is absent") ; break ; }
     {
@@ -1639,7 +1631,6 @@ voidT tcButton_iCBF( tinS& tinP , etherC& etherP , const countT cArgP , const co
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; etherP.beeClickF( tinP , TUCK * idIn , TOCK ) ; doHugeF( tinP ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("\"huge\": display wo branch") ; break ; }
     {
@@ -1657,14 +1648,12 @@ voidT tcButton_hCBF( tinS& tinP , etherC& etherP , const countT cArgP , const co
         //    etherP.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
         //
         //    //LOGrAW( "------------------------- END ------------------------\r\n" ) ;
-        //    etherP.beeClickF( tinP , TOCK * 0x20 ) ;
         //    etherP.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
         //
         //    while( cToDo -- ) writeF( tinP , etherP , T("///desk/")+tShort , *pTree ) ;
         //    countT cToDo = 0x1 ;
         //    
         //    etherP.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
-        //    etherP.beeClickF( tinP , TOCK * 0x20 ) ;
         //    //LOGrAW( "------------------------- BEGIN ------------------------\r\n" ) ;
         //    etherP.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
         //{
@@ -1992,10 +1981,8 @@ voidT doFlushStateF( tinS& tinP , etherC& etherP )
                                 if( *pStkFind )
                                 //U::ORTHOGONALIZE: PROVIDE A SEPARATE BUTTON(S) TO WALK THE STACK OF FOUND BRANCHES
     
-                                etherP.beeClickF( tinP ) ;
                                 pTree->walkF( tinP , hWalk , etherP , countTC() , treeFindCBF , countTC() , flTREEwALK_null ) ;
                                 handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_TREEwALK ) ;
-                                etherP.beeClickF( tinP ) ;
                                 pStkFind->purgeF( tinP ) ; //U::ORTHOGONALIZE THIS BY PROVIDING A SEPARATE BUTTON TO CLEAR THE FIND LIST
                             {
                             if( pTxtFind->csF( tinP ) )
@@ -2369,7 +2356,6 @@ TASK0PROTO( tmFlushStateF ) ;
                                 FIREmYSELF ;
                             {
                             if( IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 == etherP.diskIdF( tinP , T("///c") ) )
-                            etherP.beeClickF( tinP ) ; //U::
                         {
                         case ifcIDtYPEtOOL_q :
                     {
@@ -3669,7 +3655,6 @@ drawerHollywoodS::drawerHollywoodS( tinS& tinP , etherC& etherP ) :
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; etherP.beeClickF( tinP , TUCK * idIn ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("this is brother ")+TF1((sCountT)cArgP) ; break ; }
     {
@@ -3680,7 +3665,6 @@ voidT tcButton_broCBF( tinS& tinP , etherC& etherP , const countT cArgP , const 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; etherP.beeClickF( tinP , TUCK * idIn ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("this is mom ")+TF1((sCountT)cArgP) ; break ; }
     {
@@ -3691,7 +3675,6 @@ voidT tcButton_momCBF( tinS& tinP , etherC& etherP , const countT cArgP , const 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; etherP.beeClickF( tinP , TUCK * idIn ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("this is dad ")+TF1((sCountT)cArgP) ; break ; }
     {
@@ -3702,7 +3685,6 @@ voidT tcButton_dadCBF( tinS& tinP , etherC& etherP , const countT cArgP , const 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; etherP.beeClickF( tinP , TUCK * idIn ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("this is grandmom ")+TF1((sCountT)cArgP) ; break ; }
     {
@@ -3713,7 +3695,6 @@ voidT tcButton_gMomCBF( tinS& tinP , etherC& etherP , const countT cArgP , const
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; etherP.beeClickF( tinP , TUCK * idIn ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("this is granddad ")+TF1((sCountT)cArgP) ; break ; }
     {
@@ -3724,7 +3705,6 @@ voidT tcButton_gDadCBF( tinS& tinP , etherC& etherP , const countT cArgP , const
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
     }
-        case ifcIDtYPEsTROKEcALLbACK_HOTkEY  : { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; etherP.beeClickF( tinP , TUCK * idIn ) ; break ; }
         case ifcIDtYPEsTROKEcALLbACK_MOUSE   : { if( !( F(flTcStateNewP) & flTCsTATE_DOWN ) || F(flTcStateOldP) & flTCsTATE_DOWN ) break ; }
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER : { *pTxtTutor = T("this is great grandmom ")+TF1((sCountT)cArgP) ; break ; }
     {

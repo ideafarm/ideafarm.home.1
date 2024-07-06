@@ -4092,33 +4092,6 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200062.tncid END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200063.csextralog BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.001009b.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*CSeXTRAlOG*//*1*/
-#define CSeXTRAlOG 0x10000
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200063.csextralog END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200064.csextranewsbody BEGIN
 
 
@@ -6338,7 +6311,6 @@ it is illegal to refer to the symbol scOld_SYSmARKEDrEPLACE1-8 anywhere other th
 #define scOld_DRAWoNsCRATCHdEVICE                              0xdddd02bb
 #define scOld_DRAWoNnULLdEVICE                                 0xdddd02bc
 #define scOld_cSCRATCHbITMAPpOP                                0xdddd02bd
-#define scOld_cBEEP                                            0xdddd02be
 #define scOld_CALCoP1lITERAL                                   0xdddd02bf
 #define scOld_CALCoP1rAM                                       0xdddd02c0
 #define scOld_CALCoP2lITERAL                                   0xdddd02c1
@@ -6805,33 +6777,6 @@ be sure to set all tinP.pag1->_thirdC_.break_idThread and tinP.pag1->_thirdC_.br
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000a0.breakif END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000a1.singddnumb BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.00100f9.1.0.html\"\>definition\</A\>
-*/
-/**/
-
-/*1*//*SINGdDNUMB(etherP)*//*1*/
-#define SINGdDNUMB(etherP) (etherP).beeSingDigitsF( tinP , DDNUMB )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000a1.singddnumb END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000a2.flsocketcread BEGIN
 
 
@@ -6865,33 +6810,6 @@ be sure to set all tinP.pag1->_thirdC_.break_idThread and tinP.pag1->_thirdC_.br
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000a2.flsocketcread END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000a3.click BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.00100fe.1.0.html\"\>definition\</A\>
-*/
-/**/
-
-/*1*//*CLICK(idP)*//*1*/
-#define CLICK(etherP,idP) { (etherP).beeClickF( tinP , 0x80 + idP * 0x10 ) ; /* (etherP).osSleepF( tinP , TUCK * 0x10 ) ; */ }
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000a3.click END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000a4.ifcblobtype BEGIN
 
 
@@ -7307,7 +7225,6 @@ to use this, the object must be of a class that provides operator byteT* which r
 #define ifcIDtYPEdATAGRAM_PING             0xdddd02f8
 #define ifcIDtYPEdATAGRAM_PONG             0xdddd02f9
 #define ifcIDtYPEdATAGRAM_NETc_NULL        0xdddd02fa
-#define ifcIDtYPEdATAGRAM_NETc_BEEP        0xdddd02fb
 #define ifcIDtYPEdATAGRAM_NETc_SOULc       0xdddd02fc
 #define ifcIDtYPEdATAgRAM_NEWSc_HELLO      0xdddd02fd
 #define ifcIDtYPEdATAgRAM_NEWSc_HELLOrEPLY 0xdddd02fe
@@ -9647,36 +9564,6 @@ the right word is what it is replaced with
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000e3.ifcidtypestrreplace END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000e7.beep BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.001015a.1.0.html\"\>definition\</A\>
-unconditionally beeps
- is not affected by impotence
-can be used anywhere
-*/
-/**/
-/*1*//*BEEP(cP)*//*1*/
-
-#define BEEP(cP) thirdC::dosBeepIF( tinP , 0x100 * (cP) , 100 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000e7.beep END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000e8.popup BEGIN
 
 
@@ -13019,7 +12906,6 @@ saOLD_KTaTTACH*
 #define saOLD_DRAWoNsCRATCHdEVICE                              0xdddde0cd
 #define saOLD_DRAWoNnULLdEVICE                                 0xdddde0ce
 #define saOLD_SCRATCHbITMAPpOP                                 0xdddde0cf
-#define saOLD_BEEP                                             0xdddde0d0
 #define saOLD_CALCoP1lITERAL                                   0xdddde0d1
 #define saOLD_CALCoP1rAM                                       0xdddde0d2
 #define saOLD_CALCoP2lITERAL                                   0xdddde0d3
@@ -21808,39 +21694,6 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200244.maxscountt END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200245.beepstop BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-use only for debugging
-*/
-/**/
-
-/*1*//*BEEPsTOP(hzP,msP)*//*1*/
-#define BEEPsTOP(hzP,msP)                                           \
-                                                                    \
-    {                                                               \
-        thirdC::dosBeepIF( tinP , hzP , msP ) ;                     \
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;                       \
-        ++ s ; thirdC::dosSleepRawIF( tinP , 0xffffffff ) ;         \
-    }
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200245.beepstop END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200246.foot BEGIN
 
 
@@ -39441,7 +39294,6 @@ obsolete: ordering begins with "outer" (low) and ends with "inner" (high)
 #define ifcIDgRABlAYER_eGRABmEMORYsPACEc            0xdddd0b76
 #define ifcIDgRABlAYER_fLINKEDc                     0xdddd0b77
 #define ifcIDgRABlAYER_gHEAP                        0xdddd0b78
-#define ifcIDgRABlAYER_hBEEPlOG                     0xdddd0b79
 #define ifcIDgRABlAYER_iLEAF                        0xdddd0b7a
 /*3*/
 #define ifcIDgRABlAYER_min     0xdddd0b5c
@@ -43930,7 +43782,6 @@ it is illegal to refer to this symbol anywhere but in the definition of a BlATHs
 
 /*3*/
 #define flBRANCHspUTfILEf_NOzIP                     0xe00001e1
-#define flBRANCHspUTfILEf_BEEP                      0xe00002e1
 /*3*/
 #define flBRANCHspUTfILEf_null    0xe00000e1
 
@@ -51424,3 +51275,75 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
+
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c2e
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c2f
+#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c30
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c31
+#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c32
+#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c33
+#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c34
+#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c35
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c2e
+#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c35                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDuDPfILEmETAtYPE*//*1*/
+
+/*3*/
+#define ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME     0x1
+#define ifcIDuDPfILEmETAtYPE_CONTROLsETTINGS    0x2
+#define ifcIDuDPfILEmETAtYPE_HASHoFcONTENT      0x3
+#define ifcIDuDPfILEmETAtYPE_CONTENT            0x4
+#define ifcIDuDPfILEmETAtYPE_TIMEcREATED        0x5
+#define ifcIDuDPfILEmETAtYPE_TIMEmODIFIED       0x6
+#define ifcIDuDPfILEmETAtYPE_IDgENERATION       0x7
+#define ifcIDuDPfILEmETAtYPE_IDvERSION          0x8
+#define ifcIDuDPfILEmETAtYPE_IDoWNERlO          0x9
+#define ifcIDuDPfILEmETAtYPE_IDoWNERhI          0xa
+/*3*/                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END

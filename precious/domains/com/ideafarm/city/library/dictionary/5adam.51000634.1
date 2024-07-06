@@ -87,8 +87,6 @@ DONE( tmDrawF )
 
     const countT cLines = ( cSize - 1 ) * cGlyph ;
     
-    //Beep( TUCK << 2 , TUCK ) ;
-    
     tinP.pEther->osTimeSubtractF( tinP , timeE1 , timeE2 , timeS1 , timeS2 ) ;
     tinP.pEther->osTimeNowF( tinP , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
@@ -101,8 +99,6 @@ DONE( tmDrawF )
     tinP.pEther->osTimeNowF( tinP , timeS1 , timeS2 ) ;
     ZE( sCountT , timeS2 ) ;
     ZE( countT , timeS1 ) ;
-
-    //Beep( TUCK << 1 , TUCK ) ;
 
     BOSpOOP
     BOS( WHATgbo , BOSoK , SetROP2( oshdc , R2_XORPEN ) )

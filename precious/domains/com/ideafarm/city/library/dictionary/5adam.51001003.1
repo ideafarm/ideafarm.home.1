@@ -14,7 +14,6 @@ etThread.loafIF( tinP ) ;
 }
     }
         ++ s ; etThread.osSleepF( tinP , TUCK << 5 ) ;
-        //etThread.beeClickF( tinP , TUCK ) ;
         vtSpoke.setF( tinP , T(post2) ) ;
         
         osTextT post2[] = { (osTextT)( 'A' + ( ++ idCycle ) % 8 ) , 0 } ;
@@ -31,7 +30,7 @@ etThread.strokeF( tinP , tSay ) ;
 ;
 
     "  This is not the end of the story of sentient strokes!")
-    "  For a regular button, application code defines a callback function; this wo beeps:  ")+tcBeep+T("."
+    "  For a regular button, application code defines a callback function; this wo b" "eeps:  ")+T("."
     "  This is some volatile\r\ntext:  \"")+vtSpoke+T("\"."
     "  This is a quit button:  ")+tcQuit+T("."
     T("Here are some sentient strokes."
@@ -40,7 +39,6 @@ TN( tSay , "" ) ; tSay =
 
 TN( tn , "" ) ;
 vTextC        vtSpoke( tinP , "vtSpoke" , 0 , 1 ) ;
-tcButtonC     tcBeep( tinP , "tcBeep" , tcButtonCBF , 0 , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT | flTCfEATURE_DRAGGABLE , 0 , T("beep") ) ;
 tcButtonQuitC tcQuit( tinP , "tcQuit" , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT ) ;
 
 // flTCfEATURE_KEYaCTION
@@ -63,7 +61,6 @@ TODO
     }
         }
             break ;
-            etherP.beeClickF( tinP ) ;
         {
         case ifcIDtYPEsTROKEcALLbACK_HOTkEY :
         }

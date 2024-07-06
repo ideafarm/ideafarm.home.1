@@ -46,12 +46,10 @@ DONE( tmWatchF )
             ;//TELLsYSc1( ifcIDtYPEtELLsYS_WHEREaLLpURGE  ) 
             ;//TELLsYSc1( ifcIDtYPEtELLsYS_WHEREaLLrEPORT ) 
             ;//TELLsYSc1( ifcIDtYPEtELLsYS_WHEREaLLoFF    ) 
-            etThread.beeClickF( tinP , 0x3800 , TOCK ) ;
             }
                 ++ s ; etThread.osSleepF( tinP , TOCK * 4 ) ;
                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
             {
-            etThread.beeClickF( tinP , 0x3800 , TOCK ) ;
             ;//TELLsYSc1( ifcIDtYPEtELLsYS_WHEREaLLoN     ) 
             bArmed = 0 ;
         {
@@ -347,7 +345,7 @@ DONE( tmWatchF )
         windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
 
         tinP.pag5->grabGrabWatch.ungrabF( tinP ) ;
-        if( tinP.pag1->pGrabWatch ) thirdC::dosBeepIF( tinP , TUCK * ( 1 + !!tinP.pag1->pGrabWatch->cGrabbedF() ) , TUCK ) ;
+        if( tinP.pag1->pGrabWatch ) etThread.traceF( tinP , T("U:: 20240706@1136: WHY WAS I B" "EEPING HERE?") ) ;
         tinP.pag5->grabGrabWatch.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
         }
