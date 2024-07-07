@@ -4,6 +4,8 @@ setlocal
 if not %3z == z goto :DOmEMORYsPACE
 if not %1z == z goto :DOhOME
 
+if exist c:\tmp\ideafarm.service.log.txt del c:\tmp\ideafarm.service.log.txt
+
 %idrive%
 cd\
 if exist ideafarm.home.1\* goto :GOTdRIVE
