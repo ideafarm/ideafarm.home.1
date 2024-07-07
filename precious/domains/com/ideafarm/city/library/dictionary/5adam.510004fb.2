@@ -1617,7 +1617,7 @@ DONE( tmReportF )
                             //etRock.traceF( tinP , T("tmReportF 2/ ") ) ; //U:: TO FIND A BUG
                             _IO_
                         {
-                        if( ( !bQuitEatingP && !bForceNoQuit ) )
+                        if( !bQuitEatingP )
 
                         }
                             }
@@ -1639,11 +1639,11 @@ DONE( tmReportF )
                                 soulC sRpt( tinP , TAG( TAGiDnULL ) ) ;
                                 _IO_
                             {
-                            while( sReports && ( !bQuitEatingP && !bForceNoQuit ) )
+                            while( sReports && !bQuitEatingP )
                             OPENfILEwRITE1( tFile )
                             _IO_
                         {
-                        if( ( !bQuitEatingP && !bForceNoQuit ) )
+                        if( !bQuitEatingP )
 
                         }
                             //REMOVE: etThread.boxPutF( tinP , tFile , (osTextT*)sReports , sReports.csF( tinP ) ) ;
@@ -1693,16 +1693,16 @@ DONE( tmReportF )
                             //U::BUG: boxPutF OCCASIONALLY FAILS: diskMakeDirF/lath prior slash is at position less than 4: "///d/"
                             //etRock.traceF( tinP , T("tmReportF 6/ ") ) ; //U:: TO FIND A BUG
                         {
-                        if( ( !bQuitEatingP && !bForceNoQuit ) )
+                        if( !bQuitEatingP )
                         TN( tFile , "" ) ;
 
-                        if( ( !bQuitEatingP && !bForceNoQuit ) ){ _IO_ sReports << sRptTin    ; }
-                        if( ( !bQuitEatingP && !bForceNoQuit ) ){ _IO_ sReports << sRptNapkin ; }
-                        if( ( !bQuitEatingP && !bForceNoQuit ) ){ _IO_ sReports << sRptSex    ; }
-                        if( ( !bQuitEatingP && !bForceNoQuit ) ){ _IO_ sReports << sRptAdd    ; }
-                        if( ( !bQuitEatingP && !bForceNoQuit ) ){ _IO_ sReports << sRptLog    ; }
-                        if( ( !bQuitEatingP && !bForceNoQuit ) ){ _IO_ sReports << sRptEvent  ; }
-                        if( ( !bQuitEatingP && !bForceNoQuit ) ){ _IO_ sReports << sRptTitle  ; }
+                        if( !bQuitEatingP ){ _IO_ sReports << sRptTin    ; }
+                        if( !bQuitEatingP ){ _IO_ sReports << sRptNapkin ; }
+                        if( !bQuitEatingP ){ _IO_ sReports << sRptSex    ; }
+                        if( !bQuitEatingP ){ _IO_ sReports << sRptAdd    ; }
+                        if( !bQuitEatingP ){ _IO_ sReports << sRptLog    ; }
+                        if( !bQuitEatingP ){ _IO_ sReports << sRptEvent  ; }
+                        if( !bQuitEatingP ){ _IO_ sReports << sRptTitle  ; }
 
                         //if( idMemorySpaceP == 3 ) etRock.traceF( tinP , T("report Tin    [idMemorySpaceP,cFields]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)sRptTin   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         //etRock.traceF( tinP , T("report Napkin [idMemorySpaceP,cFields]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)sRptNapkin,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1722,7 +1722,7 @@ DONE( tmReportF )
 
                         _IO_
                     {
-                    if( ( !bQuitEatingP && !bForceNoQuit ) )
+                    if( !bQuitEatingP )
 
                     }
                         etThread.delF( tinP , psttRpt ) ;
@@ -1743,7 +1743,7 @@ DONE( tmReportF )
                             {
                             if( !( offg % cColsGrainCode ) )
                         {
-                        for( countT offg = 0 ; offg < cbGrainCode && ( !bQuitEatingP && !bForceNoQuit ) ; offg ++ )
+                        for( countT offg = 0 ; offg < cbGrainCode && !bQuitEatingP ; offg ++ )
                         ZE( countT , offRow ) ;
 
                         etThread.strMakeF( tinP , LF , psttRpt , (const strokeS*)T("\r\n\r\n") , cbGrainCode << 1 ) ; ___( psttRpt ) ;
@@ -1753,7 +1753,7 @@ DONE( tmReportF )
                         cLeverGrainCode = sw_pbzGrainCode.leverF( tinP , idf ) ;
                         _IO_
                     {
-                    for( countT idf = 1 ; idf <= cFlavors && ( !bQuitEatingP && !bForceNoQuit ) ; idf ++ )
+                    for( countT idf = 1 ; idf <= cFlavors && !bQuitEatingP ; idf ++ )
                     countT cFlavors = sw_pbzGrainCode.cFlavorsF( tinP ) ;
 
                     TN( tcr  , "\r\n" ) ;
@@ -1771,7 +1771,7 @@ DONE( tmReportF )
                             sRptLog << (strokeS*)( T(pd.pczLeverThread)+T(":\r\n\r\n") ) ;
                             pd.pczLeverThread = (const countT*)pd.swsLog.leverF( tinP , idf ) ;
                         {
-                        for( countT idf = 1 ; idf <= cFlavors && ( !bQuitEatingP && !bForceNoQuit ) ; idf ++ )
+                        for( countT idf = 1 ; idf <= cFlavors && !bQuitEatingP ; idf ++ )
                         cFlavors = pd.swsLog.cFlavorsF( tinP ) ;
 
                         sRptEvent << (strokeS*)( TF3(total,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T("total\r\n") ) ;
@@ -1781,14 +1781,14 @@ DONE( tmReportF )
                             countT tally = pd.swEventTally ;
                             countT idType = pd.cLeverIdType = pd.swEventTally.leverF( tinP , idf ) ;
                         {
-                        for( countT idf = 1 ; idf <= cFlavors && ( !bQuitEatingP && !bForceNoQuit ) ; idf ++ )
+                        for( countT idf = 1 ; idf <= cFlavors && !bQuitEatingP ; idf ++ )
                         ZE( countT , total ) ;
                         countT cFlavors = pd.swEventTally.cFlavorsF( tinP ) ;
 
                         periodDataS& pd = *(periodDataS*)&stPeriodDataP[ 2 ] ;
                         _IO_
                     {
-                    if( stPeriodDataP > 1 && ( !bQuitEatingP && !bForceNoQuit ) )
+                    if( stPeriodDataP > 1 && !bQuitEatingP )
 
                     //U::CONJ: THIS IS OBSOLETED BY THE PRECEDING SNIP: stPeriodDataP.purgeF( tinP , 0x10 ) ; //U::DESTROY THE periodDataS INSTANCES
 
@@ -1815,7 +1815,7 @@ DONE( tmReportF )
                     //etRock.traceF( tinP , T("tmReportF 9/ ") ) ; //U:: TO FIND A BUG
                     _IO_
                 {
-                if( ( !bQuitEatingP && !bForceNoQuit ) )
+                if( !bQuitEatingP )
 
                 swTinCopy.freeAllF( tinP ) ;
                 //etRock.traceF( tinP , T("tmReportF a/ 0") ) ; //U:: TO FIND A BUG
@@ -1923,7 +1923,7 @@ DONE( tmReportF )
                                     countT offez = idn & OFFsLOTtINnESTmAX ;
                                     _IO_
                                 {
-                                for( countT idn = tinCopy.monitor.cInNest ; idn >= idnf && ( !bQuitEatingP && !bForceNoQuit ) ; idn -- )
+                                for( countT idn = tinCopy.monitor.cInNest ; idn >= idnf && !bQuitEatingP ; idn -- )
                                 if( (sCountT)idnf < 1 ) idnf = 1 ;
                                 countT idnf = tinCopy.monitor.cInNest - OFFsLOTtINnESTmAX ;
                                 if( bDash ) sRptTin << (strokeS*)( T(DASH256 "\r\n") ) ;
@@ -2122,7 +2122,7 @@ DONE( tmReportF )
                                             switch( pbg->idTypeCt ) //CS:CODEsYNC: 00104c9 1050104.2
                                             _IO_
                                         {
-                                        if( pbg && ( !bQuitEatingP && !bForceNoQuit ) )
+                                        if( pbg && !bQuitEatingP )
                                         //etRock.traceF( tinP , T("tmReportF a/ a") ) ; //U:: TO FIND A BUG
             
                                         }
@@ -2147,7 +2147,7 @@ DONE( tmReportF )
                                         //etRock.traceF( tinP , T("tmReportF a/ b") ) ; //U:: TO FIND A BUG
                                         _IO_
                                     {
-                                    if( pbCopy && ( !bQuitEatingP && !bForceNoQuit ) )
+                                    if( pbCopy && !bQuitEatingP )
                                     PUSE.newF( tinP , LF , pbCopy , sizeof( baseGrabC ) ) ; ___( pbCopy ) ;
                                     ZE( byteT* , pbCopy ) ;
             
@@ -2157,7 +2157,7 @@ DONE( tmReportF )
                                     //etRock.traceF( tinP , T("tmReportF a/ c") ) ; //U:: TO FIND A BUG
                                     _IO_
                                 {
-                                if( tinCopy.monitor.pPanLifiGrabbing[ 0 ] && ( !bQuitEatingP && !bForceNoQuit ) )
+                                if( tinCopy.monitor.pPanLifiGrabbing[ 0 ] && !bQuitEatingP )
                                 //etRock.traceF( tinP , T("tmReportF a/ d") ) ; //U:: TO FIND A BUG
             
                                 }
@@ -2215,7 +2215,7 @@ DONE( tmReportF )
                                 //etRock.traceF( tinP , T("tmReportF a/ e") ) ; //U:: TO FIND A BUG
                                 _IO_
                             {
-                            if( /*!head.cStepsNew &&*/ !( F(tinCopy.flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) && ( !bQuitEatingP && !bForceNoQuit ) )
+                            if( /*!head.cStepsNew &&*/ !( F(tinCopy.flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP )
 
                             }
                                 CONoUTrAW( os ) ;
@@ -2237,7 +2237,7 @@ DONE( tmReportF )
                             //etRock.traceF( tinP , T("tmReportF a/ f") ) ; //U:: TO FIND A BUG
                             _IO_
                         {
-                        for( countT idf = 1 ; idf <= cFlavors && ( !bQuitEatingP && !bForceNoQuit ) ; idf ++ )
+                        for( countT idf = 1 ; idf <= cFlavors && !bQuitEatingP ; idf ++ )
                         ZE( countT , idAdamLath     ) ;
                         ZE( countT , idAdamRootLath ) ;
 
@@ -2248,7 +2248,7 @@ DONE( tmReportF )
                         //etRock.traceF( tinP , T("tmReportF a/ g") ) ; //U:: TO FIND A BUG
                         _IO_
                     {
-                    if( pbc && ( !bQuitEatingP && !bForceNoQuit ) )
+                    if( pbc && !bQuitEatingP )
                     //CONoUTrAW3( "[cbBookOut]: " , cbBookOut , "\r\n" ) ;
                     byteT* pbc = pbBookOut ;
                     PUSE.newF( tinP , LF , pbBookOut , cbBookOut ) ; ___( pbBookOut ) ;
@@ -2295,7 +2295,7 @@ DONE( tmReportF )
                         cLeverOsTid = swTinCopy.leverF( tinP , idf ) ;
                         //etThread.traceF( tinP , T("swTinCopy [idMemorySpaceP,idf]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
-                    for( countT idf = 1 ; idf <= cFlavors && ( !bQuitEatingP && !bForceNoQuit ) ; idf ++ )
+                    for( countT idf = 1 ; idf <= cFlavors && !bQuitEatingP ; idf ++ )
                     ZE( countT , cFlavorsToReport ) ;
                     //etThread.traceF( tinP , T("swTinCopy [idMemorySpaceP,cFlavors]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT cFlavors = swTinCopy.cFlavorsF( tinP ) ;
@@ -2303,7 +2303,7 @@ DONE( tmReportF )
                     //etRock.traceF( tinP , T("tmReportF a/ j") ) ; //U:: TO FIND A BUG
                     _IO_
                 {
-                if( ( !bQuitEatingP && !bForceNoQuit ) )
+                if( !bQuitEatingP )
                 ZE( countT , cbBookOut ) ;
                 ZE( byteT* , pbBookOut ) ;
                 ZE( boolT , bEvent ) ;
@@ -2316,7 +2316,7 @@ DONE( tmReportF )
                     }
                         }
                             }
-                                while( ~hWalk && ( !bQuitEatingP && !bForceNoQuit ) ) ;
+                                while( ~hWalk && !bQuitEatingP ) ;
                                 }
                                     PUSE( tinP , pbCopyMetaHead ) ;
                                     PUSE( tinP , pbCopySex ) ;
@@ -2430,12 +2430,12 @@ DONE( tmReportF )
                         sRptSex << (strokeS*)( tcr+tcr+textC( tinP , TAG( TAGiDnULL ) , flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED , memorySpaceP.pczLeverAdam , flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED , 0 , 0 , 0 )+tcr+tcr+T("cOwned   expCbSlo expSlots flagsSta cSlotsLo cSlotsHi pbData   pbDataEn postName")+tcr+tcr ) ;
                         memorySpaceP.pczLeverAdam = (countT*)memorySpaceP.swsSex.leverF( tinP , idf ) ;
                     {
-                    for( countT idf = 1 ; idf <= cFlavors && ( !bQuitEatingP && !bForceNoQuit ) ; idf ++ )
+                    for( countT idf = 1 ; idf <= cFlavors && !bQuitEatingP ; idf ++ )
                     sRptSex << (strokeS*)( T("[cFlavors]:    ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tcr+tcr ) ;
                     countT cFlavors = memorySpaceP.swsSex.cFlavorsF( tinP ) ;
                     _IO_
                 {
-                if( ( !bQuitEatingP && !bForceNoQuit ) )
+                if( !bQuitEatingP )
                 //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  6\r\n" ) ;
                 //etRock.traceF( tinP , T("tmReportF b/ ") ) ; //U:: TO FIND A BUG
 
@@ -2443,7 +2443,7 @@ DONE( tmReportF )
                     }
                         }
                             }
-                                while( ~hWalk && ( !bQuitEatingP && !bForceNoQuit ) ) ;
+                                while( ~hWalk && !bQuitEatingP ) ;
                                 }
                                     }
                                         }
@@ -2475,12 +2475,12 @@ DONE( tmReportF )
                         sRptNapkin << (strokeS*)( tcr+tcr+textC( tinP , TAG( TAGiDnULL ) , flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED , memorySpaceP.pczLeverAdam , flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED , 0 , 0 , 0 )+tcr+tcr+T("postName")+tcr+tcr ) ;
                         memorySpaceP.pczLeverAdam = (countT*)memorySpaceP.swsNapkin.leverF( tinP , idf ) ;
                     {
-                    for( countT idf = 1 ; idf <= cFlavors && ( !bQuitEatingP && !bForceNoQuit ) ; idf ++ )
+                    for( countT idf = 1 ; idf <= cFlavors && !bQuitEatingP ; idf ++ )
                     sRptNapkin << (strokeS*)( T("[cFlavors]:    ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tcr+tcr ) ;
                     countT cFlavors = memorySpaceP.swsNapkin.cFlavorsF( tinP ) ;
                     _IO_
                 {
-                if( ( !bQuitEatingP && !bForceNoQuit ) )
+                if( !bQuitEatingP )
                 //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  7\r\n" ) ;
                 //etRock.traceF( tinP , T("tmReportF c/ ") ) ; //U:: TO FIND A BUG
 
@@ -2488,7 +2488,7 @@ DONE( tmReportF )
                     }
                         }
                             }
-                                while( ~hWalk && ( !bQuitEatingP && !bForceNoQuit ) ) ;
+                                while( ~hWalk && !bQuitEatingP ) ;
                                 }
                                     PUSE( tinP , pbCopy ) ;
                                     }
@@ -2510,7 +2510,7 @@ DONE( tmReportF )
                                             cLeverOsTid = entry.osTid ;
                                             //etThread.traceF( tinP , T("copying to swTinCopy [idMemorySpaceP,idf]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         {
-                                        if( pCopy&& ( !bQuitEatingP && !bForceNoQuit ) ) // pCopy IS EITHER 0 OR A VALID IMAGE OF A tinS
+                                        if( pCopy&& !bQuitEatingP ) // pCopy IS EITHER 0 OR A VALID IMAGE OF A tinS
                                             
                                         }
                                             }
@@ -2546,7 +2546,7 @@ DONE( tmReportF )
                                             ZE( boolT , bOk ) ;
                                             //etThread.traceF( tinP , T("U:: 4 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         {
-                                        if( !entry.bIda && ( !bQuitEatingP && !bForceNoQuit ) )
+                                        if( !entry.bIda && !bQuitEatingP )
                                         tinS* pCopy = (tinS*)pbCopy ;
                                         //etThread.traceF( tinP , T("U:: 5 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     {
@@ -2592,7 +2592,7 @@ DONE( tmReportF )
                     countT cFlavors = memorySpaceP.swsTin.cFlavorsF( tinP ) ;
                     _IO_
                 {
-                if( ( !bQuitEatingP && !bForceNoQuit ) )
+                if( !bQuitEatingP )
                 //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  8\r\n" ) ;
                 //etRock.traceF( tinP , T("tmReportF d/ ") ) ; //U:: TO FIND A BUG
 
@@ -2683,15 +2683,16 @@ DONE( tmReportF )
                 //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  9\r\n" ) ;
                 _IO_
             {
-            if( ( !bQuitEatingP && !bForceNoQuit ) )
+            if( !bQuitEatingP )
 
             if( bSerialize ) bCompileReportP.grabF( tinP , TAG( TAGiDnULL ) ) ;  // AN OPTIMIZATION TO SERIALIZE USE OF CPU AND ADDRESS SPACE ; 20210707@1737: CONDITIONALLY DISABLED SERIALIZATION SO CAN GET QUICK REPORTS DURING TERMINATION
 
+            bSerialize = 0 ; //20240707@1046: SUPPRESS SERIALIZATION BECAUSE WITH CURRENT Intel i3 CHIPS THERE IS PLENTY OF CPU HORSEPOWER
             boolT bSerialize = !ether ;
 
             _IO_
         {
-        if( ( bChatterP || bSnapShot ) && ( !bQuitEatingP && !bForceNoQuit ) )
+        if( ( bChatterP || bSnapShot ) && !bQuitEatingP )
 
         }
             //) ) ;
@@ -2733,7 +2734,7 @@ DONE( tmReportF )
                 ZE( sCountT , timeN2 ) ;
                 ZE( countT  , timeN1 ) ;
             {
-            while( ( !bQuitEatingP && !bForceNoQuit ) && !etThread && !( fliPendingSnapShotRequestP & fliMyBit ) ) // SNAPsHOT REQUEST IS OBEYED IMMEDIATELY
+            while( !bQuitEatingP && !etThread && !( fliPendingSnapShotRequestP & fliMyBit ) ) // SNAPsHOT REQUEST IS OBEYED IMMEDIATELY
 
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
         {
@@ -2746,15 +2747,13 @@ DONE( tmReportF )
         //etRock.traceF( tinP , T("tmReportF e/ [idMemorySpaceP]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         _IO_
     {
-    while( ( !bQuitEatingP && !bForceNoQuit ) )
+    while( !bQuitEatingP )
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //bCompileReportP ADDED 20180108@1021
     //etRock.traceF( tinP , T("tmReportF f/ ") ) ; //U:: TO FIND A BUG
     ZE( countT , idFoTock ) ; // THIS IS USED ONLY IF flHOMEsuTILITY_SNAPsHOT
     countT idMinute = idMinuteZeP ;
     ZE( countT , idCycle ) ;
     TN( tcr , "\r\n" ) ;
-
-    const boolT bForceNoQuit = 1 ; //U:: DISABLE IN PRODUCTION EXCEPT WHEN NEED TO STUDY QUIT QUALITY (SOME PROCESSES NOT DYING WHEN FIRED)
 
     switchC swTinCopy( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverOsTid , 0 , sizeof( copyHeadS ) + sizeof( tinS ) ) ;
     ZE( countT , cLeverOsTid ) ;
