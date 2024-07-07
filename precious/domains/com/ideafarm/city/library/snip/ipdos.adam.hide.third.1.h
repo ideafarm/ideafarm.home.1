@@ -19183,6 +19183,7 @@ after i return, that countT object will contain 1
 #define flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc                0xe100004a
 #define flTHREADmODE3_TINaRGSpUSHED                             0xe200004a
 #define flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING              0xe400004a
+#define flTHREADmODE3_ALLOWvOLATILEdESIRE                       0xe800004a
 /*3*/
 #define flTHREADmODE3_null    0xe000004a
 
@@ -32147,10 +32148,10 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend class thirdC ;     /*RESETS A FLAG*/                                                                                                                                                                                                              \
  friend countT tmRptMainF_workF( countT argP ) ;                                                                                                                                                                                                          \
  friend countT workInnerF( countT argP ) ;                                                                                                                                                                                                                \
- friend class thugC ; /*idDesire*/                                                                                                                                                                                                                        \
- friend class grabMemorySpaceC ; /*idDesire*/                                                                                                                                                                                                                \
- friend class napkinC ; /*idDesire*/                                                                                                                                                                                                                      \
- friend voidT grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesire*/                                                                                \
+ friend class thugC ; /*idDesireSetBySelf*/                                                                                                                                                                                                                        \
+ friend class grabMemorySpaceC ; /*idDesireSetBySelf*/                                                                                                                                                                                                                \
+ friend class napkinC ; /*idDesireSetBySelf*/                                                                                                                                                                                                                      \
+ friend voidT grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/                                                                                \
  friend class poopC ; /*poop*/                                                                                                                                                                                                                            \
  friend voidT grabitC::grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                                                                                                  \
 

@@ -76,7 +76,7 @@
                         if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 5") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                         else                             osTid = osTidMe ;
                         if( osTid )                      { BLAMMO ; }
-                        else                             idDesireGrabber  = tinP.idDesire ;
+                        else                             idDesireGrabber  = tinP.idDesireSetBySelf ;
                         if( idDesireGrabber )            { /*tinP.pc Utility[ 0xf ] = idDesireGrabber ;*/ BLAMMO ; }
                         if( cGrabbed == - 1 )            { BLAMMO ; }
                         inc02AM( cGrabbed ) ;
@@ -134,7 +134,7 @@
         
                                 else                             osTid = osTidMe ;
                                 if( osTid )                      { BLAMMO ; }
-                                else                             idDesireGrabber  = tinP.idDesire ;
+                                else                             idDesireGrabber  = tinP.idDesireSetBySelf ;
                                 if( idDesireGrabber )            { BLAMMO ; }
                                 if( cGrabbed == - 1 )            { BLAMMO ; }
                                 inc02AM( cGrabbed ) ;
@@ -219,7 +219,7 @@
                     stat.cCollisionsNew = 0 ; //U:MIGHT OVERWRITE A FEW COLLISIONS THAT SHOULD BE COUNTED AS NEW (I.E. SINCE INCREMENTING idGrabberOk)
                     //CODE SYNCH: 17f0005 1700003
     
-                    idDesireGrabber    = tinP.idDesire ;
+                    idDesireGrabber    = tinP.idDesireSetBySelf ;
                     idiFileGrabberNote = 0/*U::*/ ;
                     idLineGrabberNote  = 0/*U::*/ ;
                     idiFileGrabber     = idiFileP ; //SINCE THESE VALUES ARE RETAINED WHEN NOT GRABBED, THE MONITOR CAN SEE WHICH GRAB LINES ARE CURRENTLY ACTIVE

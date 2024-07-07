@@ -168,7 +168,7 @@
 
     //20140101@1107: DISABLE THIS TIME BOMB FOR SERVER RELIABILITY: if( - 1 == incv02AM( tinP.pag1->cYieldHighWater ) ) { BLAMMO ; }
 
-    if( !( F(flagsP) & flYIELD_ANYtHREADdESIRE ) && tinP.idDesire != ifcTHREADpRIORITY_SPINLOCK ) { BLAMMO ; }
+    if( !( F(flagsP) & flYIELD_ANYtHREADdESIRE ) && tinP.idDesireSetBySelf != ifcTHREADpRIORITY_SPINLOCK ) { BLAMMO ; }
 
     _IO_
 {

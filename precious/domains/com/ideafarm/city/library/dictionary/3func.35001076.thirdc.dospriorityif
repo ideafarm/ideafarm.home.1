@@ -10,8 +10,6 @@
 }
     return idDesireOld ;
 
-    tinP.idDesire = idP ;
-
     #endif
 
         }
@@ -31,6 +29,7 @@
             BOSpOOP
             BOS( WHATgbo , BOSoK , SetThreadPriority( (HANDLE)tinP.brcRaw , osDesire ) )
             BOSdOnOTtEST( WHATgbo ,  GetCurrentThread() )
+            tinP.idDesireSetBySelf = idP ;   // DONE IMMEDIATELY B4 CALLING SetThreadPriority() TO ENSURE THAT ANY RECURSIVE CALLS TO MY QUERY OVERLOAD WILL NOT SEE A FALSE VALUE
 
             SCOOP
             poopC poop ;
@@ -98,6 +97,7 @@
             case ifcTHREADpRIORITY_LAZIEST :
         {
         switch( idP )
+        tinP.idDesireSetBySelf = idP ;   // DONE IMMEDIATELY B4 CALLING DosSetPriority() TO ENSURE THAT ANY RECURSIVE CALLS TO MY QUERY OVERLOAD WILL NOT SEE A FALSE VALUE
 
     #if defined( __OS2__ )
 

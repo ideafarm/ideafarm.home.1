@@ -28434,8 +28434,8 @@ it is illegal to modify any member other than pc Utility in the definition of an
  countT                  cTls ;
  byteT* const            pbTls ; //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS; THIS STORAGE IS NOT INITIALIZED
  const countT            cbTls ; //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS
- countT                  idDesire ;              //MUST BE EARLY BECAUSE dosPriorityIF CAN BE (WHEN DEBUGGING) CALLED IN inOutFrameC CT/DT, AND BEFORE ANY SUCH CALLS idDesire MUST BE INITIALIZED
- countT                  idDesireProcess ;
+ countT                  idDesireSetBySelf ;              //MUST BE EARLY BECAUSE dosPriorityIF CAN BE (WHEN DEBUGGING) CALLED IN inOutFrameC CT/DT, AND BEFORE ANY SUCH CALLS idDesireSetBySelf MUST BE INITIALIZED
+ countT                  idDesireSetBySelfProcess ;
 
  public :
 
@@ -28572,7 +28572,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS* const             pTinOld ;                           /*B*/
  grabC                   grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
  // countT               cGrab_pTinKid ;                     /*C*/
- // countT               idDesire_cGrab_pTinKid ;            /*C*/
+ // countT               idDesireSetBySelf_cGrab_pTinKid ;            /*C*/
  // tinS* const          pTinDad ;                           /*B*/
  // tinS*                pTinBro ;                           /*B*/
  // tinS*                pTinKid ;                           /*B*/

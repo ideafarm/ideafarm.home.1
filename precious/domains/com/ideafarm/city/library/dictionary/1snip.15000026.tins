@@ -85,7 +85,7 @@
  // tinS*                pTinKid ;                           /*B*/
  // tinS*                pTinBro ;                           /*B*/
  // tinS* const          pTinDad ;                           /*B*/
- // countT               idDesire_cGrab_pTinKid ;            /*C*/
+ // countT               idDesireSetBySelf_cGrab_pTinKid ;            /*C*/
  // countT               cGrab_pTinKid ;                     /*C*/
  grabC                   grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
  tinS* const             pTinOld ;                           /*B*/
@@ -222,8 +222,8 @@
 
  public :
 
- countT                  idDesireProcess ;
- countT                  idDesire ;              //MUST BE EARLY BECAUSE dosPriorityIF CAN BE (WHEN DEBUGGING) CALLED IN inOutFrameC CT/DT, AND BEFORE ANY SUCH CALLS idDesire MUST BE INITIALIZED
+ countT                  idDesireSetBySelfProcess ;
+ countT                  idDesireSetBySelf ;              //MUST BE EARLY BECAUSE dosPriorityIF CAN BE (WHEN DEBUGGING) CALLED IN inOutFrameC CT/DT, AND BEFORE ANY SUCH CALLS idDesireSetBySelf MUST BE INITIALIZED
  const countT            cbTls ; //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS
  byteT* const            pbTls ; //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS; THIS STORAGE IS NOT INITIALIZED
  countT                  cTls ;
