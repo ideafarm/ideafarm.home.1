@@ -149,10 +149,12 @@
                             else
                             }
                                 }
+                                    handleP.osF( ifcIDtYPEhANDLE_FILEfIND , (countT)pFH ) ;
                                     fFound = 1 ;
                                     INCoShANDLES
                                 {
-                                if( ~pFH->hFind )
+                                else
+                                if( !pFH->hFind ) { DEL( pFH ) ; }
                                 pFH->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE , (countT)tinP.brcRaw ) ;
                                 else if( bRetry ) bRetry = 0 ;
                                 }
@@ -191,7 +193,7 @@
                             tinP.brcLath != ERROR_NOT_DOS_DISK            && /*DON''T KNOW IF THIS OCCURS*/
                             tinP.brcLath != ERROR_FILENAME_E~CED_RANGE    && /*LONG NAME THAT IS NOT SUPPORTED ON THIS DISK*/
                             tinP.brcLath != ERROR_NO_MORE_FILES           && /*NO MORE MATCHES*/
-                            tinP.bosFail                                 && /*CAUSE:*/
+                            tinP.bosFail                                  && /*CAUSE:*/
                         if( 
 
                         }
@@ -203,7 +205,7 @@
                             BOSI( WHATsfr , BOSfAIL , DosFindFirst( postLike , &osh , FILE_ARCHIVED | FILE_DIRECTORY | FILE_SYSTEM | FILE_HIDDEN | FILE_READONLY , &info , sizeof info , &cc, FIL_STANDARD ) )
                             ZE( HDIR , osh ) ;
 
-                            else                                                                               handleP.osF( ifcIDtYPEhANDLE_fileFind , (countT)HDIR_CREATE ;
+                            else                                                                                                 handleP.osF( ifcIDtYPEhANDLE_fileFind , (countT)HDIR_CREATE ;
                             if( !c_sttinP.brcRawhrIF( tinP , postLike , '?' ) && !c_sttinP.brcRawhrIF( tinP , postLike , '*' ) ) handleP.osF( ifcIDtYPEhANDLE_FILEfIND , (countT)HDIR_SYSTEM ) ;
                         {
                         if( bWoth )
@@ -277,7 +279,6 @@
                 if( bCloaked )
 
                 }
-                    handleP.osF( ifcIDtYPEhANDLE_FILEfIND , (countT)pFH ) ;
                     pFH = new( 0 , tinP , pba , cba ) diskFindHandleS( tinP ) ;
                     _IO_
                 {
