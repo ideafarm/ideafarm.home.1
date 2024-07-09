@@ -17,7 +17,10 @@ REST
         {
         etThread.traceF( tinP , T("hiring self [tArgsGross]:    ")+tArgsGross ) ;
 
-        TN( tArgsGross , "" ) ; tArgsGross = tArgKeyNameNow+tb+tFile+tb+tArgsNet ;
+                                      tArgsGross += tb+tArgKeyNameNow+tb+tFile+tb+tArgsNet ;
+        if( maxValue                ) tArgsGross += tb+tArgKeyMaxValue+tb+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+        if( tArgsIgnore.csF( tinP ) ) tArgsGross  = tArgKeyIgnore+tb+tArgsIgnore ;
+        TN( tArgsGross , "" ) ;
         _IO_
     {
     else
@@ -31,11 +34,14 @@ REST
             {                              //HAVING MY PROCESS EXIT CODE CONTAIN DETAILED INFO WOULD COMPLICATE DEBUGGING CODE THAT INSPECTS THE PROCESS EXIT CODE AND DETECTS WHETHER THE EXIT CODE IS WO OF THE EXPECTED (LEGAL) VALUES FOR AN IPDOS (TM) PROCESS
             if( POOP )                     //PS:PERSONALITY: MY PROCESS EXIT CODE WILL INDICATE IMPOTENCE BUT WILL NOT INDICATE THE DETAILS ; FOR THAT I TRACE OUT value
 
-            __( value ) ;
-            etThread.traceF( tinP , T("called  dosExecPgmF [value,file,args]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+            }
+                __( value ) ;
+            {
+            if( value > maxValue )
+            etThread.traceF( tinP , T("called  dosExecPgmF [maxValue,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
             ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet , flPROCESShIRE_null ) ;
             etThread.strokeF( tinP , T("\r\n") ) ;
-            etThread.traceF( tinP , T("calling dosExecPgmF [value,file,args]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+            etThread.traceF( tinP , T("calling dosExecPgmF [maxValue,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
             ZE( countT , value ) ;
 
             SCOOPS
@@ -62,25 +68,35 @@ __Z( tFile.csF( tinP ) ) ;
             bNow = bArmedNow ;
         {
         else if( bArmedNow || bArmedLater )
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameLater ) ) bArmedLater = 1 ;
-             if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameNow   ) ) bArmedNow   = 1 ;
+        else if( bArmedMaxValue                                            ) { bArmedMaxValue = 0 ; maxValue = etThread.strDigitsToSCountF( tinP , psttc1 ) ; }
+        else if( bArmedIgnore                                              )   tArgsIgnore  += ( tArgsIgnore.csF( tinP ) ? tb : tn ) + T(psttc1) ;
+        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameLater ) ) { bArmedIgnore = 0 ; bArmedLater    = 1 ;                                        }
+        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameNow   ) ) { bArmedIgnore = 0 ; bArmedNow      = 1 ;                                        }
+        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyMaxValue  ) ) { bArmedIgnore = 0 ; bArmedMaxValue = 1 ;                                        }
+             if( !etThread.strCompareF( tinP , psttc1 , tArgKeyIgnore    ) )   bArmedIgnore  = 1 ;
         etThread.traceF( tinP , T("param: ")+T(psttc1) ) ;
         _IO_
     {
     FORsTRINGSiN1( pstt1Param )
-    ZE( boolT , bArmedLater ) ;
-    ZE( boolT , bArmedNow   ) ;
+    ZE( boolT , bArmedLater    ) ;
+    ZE( boolT , bArmedNow      ) ;
+    ZE( boolT , bArmedMaxValue ) ;
+    ZE( boolT , bArmedIgnore   ) ;
     strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinP ) ;
-    TN( tn               , ""           ) ;
     TN( tArgKeyNameLater , "!hireLater" ) ;
     _IO_
 {
 TN( tb4              , "    "       ) ;
 TN( tb               , " "          ) ;
-TN( tArgsNet , "" ) ;
+TN( tn               , ""           ) ;
+TN( tArgsNet         , ""           ) ;
+TN( tArgsIgnore      , ""           ) ;
 TN( tArgKeyNameNow   , "!hireNow"   ) ;
+TN( tArgKeyMaxValue  , "!maxValue"  ) ;
+TN( tArgKeyIgnore    , "!ignore"    ) ;
 TN( tFile , "" ) ;
 ZE( boolT , bNow ) ;
+ZE( countT , maxValue ) ;
 
 TODO
 

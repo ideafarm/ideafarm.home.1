@@ -784,7 +784,7 @@ if( offPhase == OFFpHASE_HEAL            ) offPhase = ++ offPhase % CpHASES ;  /
     {
 
     }
-        if( !bNoHibernateOs ) flagsMode |= flHEALmODE_HIBERNATEoSwHENdONE ;
+        if( !bNoHibernateOs && !bSandbox ) flagsMode |= flHEALmODE_HIBERNATEoSwHENdONE ;
         #endif
             bNoHibernateOs = 1 ;
         #if defined( OVERRIDEnOhIBERNATEoS )
@@ -1204,7 +1204,7 @@ DONE( tmExecutiveHealYearF )
                                     chunkDayIfF( tinP , etThread , bAbortP , cPathsToYear , ppsttPathToYear , tDayPrefix ) ;
                                     etThread.traceF( tinP , T("calling chunkDayIfF [prefix]:    ")+tDayPrefix ) ;
                                 {
-                                if( tDayPrefix.csF( tinP ) )
+                                if( tDayPrefix.csF( tinP ) && !etThread.strIdF( tinP , tIgnore , tDayPrefix ) )
                             {
                             if( etThread.strCompareF( tinP , tDayPrefix , tDayPrefixNew ) )
 
@@ -1235,6 +1235,7 @@ DONE( tmExecutiveHealYearF )
                             _IO_
                         {
                         while( !ether && cDo -- && !bAbortP )
+                        TN( tIgnore , ".!.chunk." ) ;
                         TN( tDayPrefix , "" ) ;
                         countT cDo = cShortNames ;
 
@@ -2755,9 +2756,10 @@ TASK( tmDayZipperF )
 
             THREADmODE2rESTORE
             }
-                c4Result = etherP.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!alwaysIgnore ")+tPathYear+T(" !hireLater pkzipc.exe -store -add -move ")+tShortDayZipP+tb+tDayPrefixP+tAtAsterisk , flHIRE_DISPLAYaUTO , 0 , 0 , 1 , nicNameC() ) ; // tPathYear IS PASSED AS ARGUMENT SO THAT IT IS VISIBLE IN TRACE FOR THE KID PROCESS
-                //etherP.traceF( tinP , T("zipping") ) ;
+                c4Result = etherP.ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgs , flHIRE_DISPLAYaUTO , 0 , 0 , 1 , nicNameC() ) ; // tPathYear IS PASSED AS ARGUMENT SO THAT IT IS VISIBLE IN TRACE FOR THE KID PROCESS
                 hoverC hover( tinP , etherP , tPathYear ) ;
+                //etherP.traceF( tinP , T("zipping [tArgs]:    ")+tArgs ) ;
+                TN( tArgs , "" ) ; tArgs = T("!ignore ")+tPathYear+T(" !maxValue 0 !hireLater pkzipc.exe -store -add -move ")+tShortDayZipP+tb+tDayPrefixP+tAtAsterisk ; // MAXvALUE 0 BECAUSE pkzipc.exe WILL NOT DELETE THE SOURCE FILES IF EVEN A MINOR WARNING OCCURS ; IF ZIP FAILS THEN DELETE THE CHUNK FILE AFTER VERIFYING THAT EVERY FILE WITHIN IT IS ALSO PRESENT IN THE ARCHIVE
                 _IO_
             {
             countT& osPid = c4Result.c2 ;

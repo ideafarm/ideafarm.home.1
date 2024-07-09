@@ -208,8 +208,10 @@
             InitializeProcThreadAttributeList( 0 , 1 , 0 , &cba ) ;
             SIZE_T cba = 0 ;
 
-            else                                                      flags1 |= DETACHED_PROCESS   ;
+            else if( !bSandbox                                      ) flags1 |= DETACHED_PROCESS   ;
                  if( F(flagsP) & flPROCESShIRE_VISIBLE              ) flags1 |= CREATE_NEW_CONSOLE ;
+
+            boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
             ;
                 : DEBUG_PROCESS | DEBUG_ONLY_THIS_PROCESS /*U: | CREATE_SUSPENDED */
