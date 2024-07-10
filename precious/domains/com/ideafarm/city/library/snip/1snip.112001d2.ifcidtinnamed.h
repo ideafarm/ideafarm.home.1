@@ -1,8 +1,8 @@
-0xdddd0687 , "tinVeryVeryEarlyLateMainI" ,
-0xdddd0688 , "tinHeartI" ,
-0xdddd0689 , "tinVeryEarlyLateMainI" ,
-0xdddd068a , "tinBreakI" ,
-0xdddd068b , "tinEarlyLateMain" ,
-0xdddd068c , "tinInPoolMain" ,
-0xdddd068d , "tinEarlyLate" ,
-0xdddd068e , "tinInPool"
+0xdddd0690 , "tinVeryVeryEarlyLateMainI" ,
+0xdddd0691 , "tinHeartI" ,
+0xdddd0692 , "tinVeryEarlyLateMainI" ,
+0xdddd0693 , "tinBreakI" ,
+0xdddd0694 , "tinEarlyLateMain" ,
+0xdddd0695 , "tinInPoolMain" ,
+0xdddd0696 , "tinEarlyLate" ,
+0xdddd0697 , "tinInPool"
