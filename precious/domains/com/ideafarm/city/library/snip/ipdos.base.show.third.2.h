@@ -40928,6 +40928,9 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                          pcDebug[ TUCK << 1 ] ; //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
     osTextT                         postDllsLoaded[ TOCK ] ;
     osTextT                         postPathHomeTmp[ TUCK ] ;
+    countT                          osTidReportingException ;
+    osTextT                         postRptExceptionRoot[ COSTArPTeXCEPTION ] ;
+    osTextT                         postRptExceptionNest[ COSTArPTeXCEPTION ] ;
     byteT                           pbBkTelemetryScratchRoot[ SIZEOF_bookC ] ;
     fireGroupS                      pFireGroup[ CfIREgROUPS ] ;
     const flagsT                    flagsCpuFeatures ;

@@ -130,6 +130,12 @@
         //TINSL
     {
 
+    putNegAM( *(countT*)( postRptExceptionNest + sizeof postRptExceptionNest - sizeof( countT ) ) , FINGERnEG_FOOTc2 ) ;
+    putNegAM( *(countT*)  postRptExceptionNest                                                    , FINGERnEG_FOOTc1 ) ;
+
+    putNegAM( *(countT*)( postRptExceptionRoot + sizeof postRptExceptionRoot - sizeof( countT ) ) , FINGERnEG_FOOTc2 ) ;
+    putNegAM( *(countT*)  postRptExceptionRoot                                                    , FINGERnEG_FOOTc1 ) ;
+
     if( this != &processGlobal2I ) { BLAMMO ; }
 {
 zlib_pInflateEndF( 0 )

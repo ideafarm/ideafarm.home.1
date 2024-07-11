@@ -8,17 +8,23 @@
 
 
 }
-    if( FINGERnEG_FOOTc2 != getNegAM( *(countT*)( pbFoot + cbFoot           ) ) ) { BLAMMO ; }
-    }
-        countT foo = 2 ;
-    {
-    if( FINGERnEG_FOOTc1 != getNegAM( *(countT*)( pbFoot - sizeof( countT ) ) ) )
-    //U::if( FINGERnEG_FOOTc1 != getNegAM( *(countT*)( pbFoot - sizeof( countT ) ) ) ) { BLAMMO ; }
-    if( !pbaFootP && (byteT*)this != (byteT*)&fingerFoot3             ) { BLAMMO ; }
-    if( cbaFootP && cbaFootP != cbFootP + 2 * sizeof( countT )        ) { BLAMMO ; }
+      if( FINGERnEG_FOOTc2 != getNegAM( *(countT*)( pbFoot + cbFoot           ) ) ) { BLAMMO ; }      // FOOT MUST BE FOLLOWED  BY FINGER2
+      if( FINGERnEG_FOOTc1 != getNegAM( *(countT*)( pbFoot - sizeof( countT ) ) ) ) { BLAMMO ; }      // FOOT MUST BE PRECEEDED BY FINGER1
+    //if( !pbaFootP && (byteT*)this != (byteT*)&fingerFoot3                       ) { BLAMMO ; }      // U::20240711@1529: THIS CHECK IS NOT NEEDED AS IT CANNOT FAIL
+      if( cbaFootP && cbaFootP != cbFootP + 2 * sizeof( countT )                  ) { BLAMMO ; }      // ALLOCATION MUST BE SIZED EXACTLY TO [finger1,foot,finger2]
 {
 cbFoot( cbFootP )
-pbFoot( ( putNegAM( fingerFoot3 , FINGERnEG_FOOTc3 ) , pbaFootP ? pbaFootP + sizeof( countT ) : (byteT*)this - sizeof( countT ) - cbFootP ) ) ,
+,
+)
+    ) 
+            : (byteT*)this - sizeof( countT ) - cbFootP     // pbFoot POINTS INTO THE (STACK) MEMORY IMMEDIATELY BELOW ME, WHICH WILL BE FORMATTED AS [finger1,foot,finger2]
+            ? pbaFootP + sizeof( countT )                   // pbFoot POINTS INTO THE ALLOCATION                         , WHICH WILL BE FORMATTED AS [finger1,foot,finger2]
+        pbaFootP
+        ,
+        putNegAM( fingerFoot3 , FINGERnEG_FOOTc3 )
+    (
+(
+pbFoot
 fingerFoot3( 0 ) ,
 /*1*/footC::footC( const countT cbFootP , byteT* const pbaFootP , const countT cbaFootP ) :/*1*/
 

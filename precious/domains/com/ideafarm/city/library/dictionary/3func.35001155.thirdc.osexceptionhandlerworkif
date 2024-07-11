@@ -508,7 +508,10 @@
                             OStEXTAK( ostoRpt , "Subject: IPDOS (tm) Exception Event\r\n\r\nIdeaFarm " "(tm) Piggyback Distributed Operating System\r\nhttp://ideafarm.com\r\nWo'O Ideafarm\r\n \r\nAn " ) ;/*_M*/
                             OStEXTAK( ostoRpt , "\r\n//\r\n// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.\r\n//\r\n// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.\r\n// Respecting the rights of other people is an important part of empowering one another.\r\n//\r\n\r\n" ) ;/*_M*/
 
-                            osTextC   ostoRpt( COSTArPTeXCEPTION - 2 * sizeof( countT ) , 0 , tinP.postzRptExceptionLath - sizeof( countT ) , COSTArPTeXCEPTION ) ;/*_M*/
+                              osTextC   ostoRpt( COSTArPTeXCEPTION - 2 * sizeof( countT ) , 0 , processGlobal2I.postRptExceptionRoot                    , COSTArPTeXCEPTION ) ;/*_M*/
+
+                            //osTextC   ostoRpt( COSTArPTeXCEPTION - 2 * sizeof( countT ) , 0 , tinP.postzRptExceptionLath           - sizeof( countT ) , COSTArPTeXCEPTION ) ;/*_M*/
+
                         {/*_M*/
                         if( bReport )
 
@@ -517,6 +520,16 @@
                             LOGrAW( "\r\nosExceptionHandlerWorkIF / tinP.postzRptExceptionLath is null so not writing report" ) ;
                         {
                         if( !tinP.postzRptExceptionLath )
+
+                        processGlobal2I.osTidReportingException = 0 ;
+
+                        }
+                            }
+                                Sleep( TUCK ) ; //SIMPLE, TO AVOID A NESTED EXCEPTION
+                            {
+                            while( setIfZeAM( processGlobal2I.osTidReportingException , tinP.osTid ) )
+                            //TO AVOID NESTED EXCEPTION, DON'T DO THIS: _IO_
+                        {
 
                         }
                             bReport = 0 ;
