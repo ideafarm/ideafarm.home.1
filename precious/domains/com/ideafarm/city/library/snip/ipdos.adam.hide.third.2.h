@@ -28491,8 +28491,8 @@ it is illegal to modify any member other than pc Utility in the definition of an
  countT                  idiFileMile ;
  countT                  idLineMileDad ;
  countT                  idiFileMileDad ;
- osTextT*                postRptExceptionLath ;
- tellInfoSysExceptionS*  pTieLath ;
+ osTextT*                postzRptExceptionLath ;
+ tellInfoSysExceptionS*  pzTieLath ;
  const countT*           pczl_pSwsRecycle ;
  switchStackC*           pSwsRecycle ;
  countT                  odoSockCbRead  ;
@@ -28758,9 +28758,9 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS*        pTin ;
  tinS         tinEarlyLate ;
  countT       rc ;
- tlsBlobC      postRptExceptionLath ;
- tlsBlobC      tellInfoSysExceptionLath ;
- tlsBlobC      stackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+ tlsBlobC     tlsBlobPostRptExceptionLath ;
+ tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
+ tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
 
  ~tlsStackFrameS( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameS.dt_tlsStackFrameS!||
@@ -28812,9 +28812,9 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS*        pTin ;
  tinS         tinEarlyLate ;
  countT       rc ;
- tlsBlobC      postRptExceptionLath ;
- tlsBlobC      tellInfoSysExceptionLath ;
- tlsBlobC      stackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+ tlsBlobC     tlsBlobPostRptExceptionLath ;
+ tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
+ tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
 
  ~tlsStackFrameNoTlsS( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTlsS.dt_tlsStackFrameNoTlsS!||

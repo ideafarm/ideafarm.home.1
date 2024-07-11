@@ -534,8 +534,8 @@ it is illegal to refer to this symbol in the definition of an adam
             /*U:REPLACE THESE HARDCODED idAdam VALUES WITH ifcIDaDAM SYMBOLS*/                                                                                      \
             /*U:{ countT idio = DDNUMB ; if( idio != 0x 4010354 && idio != 0x 4010405 && idio != 0x 40103c1 && idio != 0x 40103d1 ) etThread.ifcPortNewProcessF( tinP ) ; }*/ \
             TELL( "MAINF: entering application code" ) ;                                                                                                            \
-            tlsBlobC _stackTop( tinP , "appStackTop" , "tin" ) ;                                                                                                     \
-            (countT&)_stackTop = espAM() ;                                                                                                                          \
+            tlsBlobC _tlsBlobStackTop( tinP , "appStackTop" , "tin" ) ;                                                                                                     \
+            (countT&)_tlsBlobStackTop = espAM() ;                                                                                                                          \
             if( !( F(tinP.flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                                                          \
             {                                                                                                                                                       \
                 if( thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_DLLwORKING1 )                                                                                 \
@@ -2007,8 +2007,8 @@ it is illegal to refer to this symbol in the definition of an adam
                     }                                                                                                       \
                     if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ; \
                     TELL( "TASK0: entering application code" )                                                              \
-                    tlsBlobC _stackTop( tinP , "appStackTop" , "tin" ) ;                                                     \
-                    (countT&)_stackTop = espAM() ;                                                                          \
+                    tlsBlobC _tlsBlobStackTop( tinP , "appStackTop" , "tin" ) ;                                             \
+                    (countT&)_tlsBlobStackTop = espAM() ;                                                                   \
                     if( tinP.idPhase1 < ifcIDpHASEtHREAD_WORKING ) tinP.idPhase1 = ifcIDpHASEtHREAD_WORKING ;               \
                     _IO_                                                                                                    \
                     if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }

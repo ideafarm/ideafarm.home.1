@@ -508,15 +508,15 @@
                             OStEXTAK( ostoRpt , "Subject: IPDOS (tm) Exception Event\r\n\r\nIdeaFarm " "(tm) Piggyback Distributed Operating System\r\nhttp://ideafarm.com\r\nWo'O Ideafarm\r\n \r\nAn " ) ;/*_M*/
                             OStEXTAK( ostoRpt , "\r\n//\r\n// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.\r\n//\r\n// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.\r\n// Respecting the rights of other people is an important part of empowering one another.\r\n//\r\n\r\n" ) ;/*_M*/
 
-                            osTextC   ostoRpt( COSTArPTeXCEPTION - 2 * sizeof( countT ) , 0 , tinP.postRptExceptionLath - sizeof( countT ) , COSTArPTeXCEPTION ) ;/*_M*/
+                            osTextC   ostoRpt( COSTArPTeXCEPTION - 2 * sizeof( countT ) , 0 , tinP.postzRptExceptionLath - sizeof( countT ) , COSTArPTeXCEPTION ) ;/*_M*/
                         {/*_M*/
                         if( bReport )
 
                         }
                             bReport = 0 ;
-                            LOGrAW( "\r\nosExceptionHandlerWorkIF / tinP.postRptExceptionLath is null so not writing report" ) ;
+                            LOGrAW( "\r\nosExceptionHandlerWorkIF / tinP.postzRptExceptionLath is null so not writing report" ) ;
                         {
-                        if( !tinP.postRptExceptionLath )
+                        if( !tinP.postzRptExceptionLath )
 
                         }
                             bReport = 0 ;
@@ -831,12 +831,12 @@
         static countT cCodeReadRetries ;
 
         const tinS&            tinSnap     = *(tinS*)tellInfoSys.pbTin ;
-        tellInfoSysExceptionS& tellInfoSys = *tinP.pTieLath ;/*_M*/
+        tellInfoSysExceptionS& tellInfoSys = *tinP.pzTieLath ;/*_M*/
 
         //TELL( "osExceptionHandlerWorkIF/+" )
-        //A: ASSUME: tinP.pTieLath POINTS TO A STRUCTURE THAT CONTAINS AN IMAGE OF tinP AT EXCEPTION EVENT TIME
+        //A: ASSUME: tinP.pzTieLath POINTS TO A STRUCTURE THAT CONTAINS AN IMAGE OF tinP AT EXCEPTION EVENT TIME
     {
-    if( tinP.pTieLath )
+    if( tinP.pzTieLath )
     ZE( boolT , bFixed ) ;
     _IO_
 
