@@ -82,34 +82,34 @@
 
                             THREADmODE2rESTORE
                             }
-                                ++ s ; dosSleepIF( tinP , TOCK ) ;
-                                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-                            {
+                                ++ s ; dosSleepIF( tinP , TOCK ) ;_M
+                                sleepC s( tinP , TAG( TAGiDnULL ) ) ;_M
+                            {_M
                             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                             //U:: JUST TO MAKE SURE THAT IT HAS TIME TO CLOSE AND FLUSH (SHOULD NOT BE NECESSARY)
 
                             }
                                 }
-                                    //CONoUTrAW( "appending memory readability bit dump to exception report: done\r\n" ) ;
-                                    fileWriteGF( ostoFileName , postr , sizeof postr - 1 , 1 ) ;
-                                    etherC::ifcBitDumpIF( tinP , postr , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
+                                    //CONoUTrAW( "appending memory readability bit dump to exception report: done\r\n" ) ;_M
+                                    fileWriteGF( ostoFileName , postr , sizeof postr - 1 , 1 ) ;_M
+                                    etherC::ifcBitDumpIF( tinP , postr , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;_M
     
-                                    static byteT postr[ CBrEADABILITYmAPdUMP ] ;
-                                    //CONoUTrAW( "appending memory readability bit dump to exception report\r\n" ) ;
-                                {
+                                    static byteT postr[ CBrEADABILITYmAPdUMP ] ;_M
+                                    //CONoUTrAW( "appending memory readability bit dump to exception report\r\n" ) ;_M
+                                {_M
                                 if( cbaNeeded == CBrEADABILITYmAPdUMP )
                                 
-                                //CONoUTrAW3( "memory readability map [cbaNeeded]: " , cbaNeeded , "\r\n" ) ;
-                                LOGrAW3( "memory readability map [cbaNeeded]: " , cbaNeeded , "\r\n" ) ;
-                                countT cbaNeeded = etherC::ifcBitDumpIF( tinP , 0 , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
+                                //CONoUTrAW3( "memory readability map [cbaNeeded]: " , cbaNeeded , "\r\n" ) ;_M
+                                LOGrAW3( "memory readability map [cbaNeeded]: " , cbaNeeded , "\r\n" ) ;_M
+                                countT cbaNeeded = etherC::ifcBitDumpIF( tinP , 0 , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;_M
                                 //[cbaNeeded]: 1858
                                 //[cbaNeeded]: 10858
                                 //[cbaNeeded]: 958
-                                countT cbGrain = thirdC::osMemoryReadabilityMapIF( tinP , pbBits , sizeof pbBits ) ;
+                                countT cbGrain = thirdC::osMemoryReadabilityMapIF( tinP , pbBits , sizeof pbBits ) ;_M
                                 
-                                //static byteT pbBits[ TOCK ] ;   //THERE ARE A TUCK OF CHAR PER LINE ; EACH LINE REPRESENTS 01 TOCK ; EACH CHAR REPRESENTS 01 TUCK (1 PAGE) ;
-                                static byteT pbBits[ TUCK << 4 ] ; //EACH LINE OF REPORT WILL REPRESENT 1 TICK OF MEMORY
-                            {
+                                //static byteT pbBits[ TOCK ] ;_M   //THERE ARE A TUCK OF CHAR PER LINE ; EACH LINE REPRESENTS 01 TOCK ; EACH CHAR REPRESENTS 01 TUCK (1 PAGE) ;
+                                static byteT pbBits[ TUCK << 4 ] ;_M //EACH LINE OF REPORT WILL REPRESENT 1 TICK OF MEMORY
+                            {_M
                             #endif
                                 if( tinSnap.brcLath == ERROR_NOT_ENOUGH_MEMORY )
                             #elif defined( __NT__ )
@@ -117,14 +117,14 @@
                             #if defined( __OS2__ )
 
                             }
-                                fileWriteGF( ostoFileName , postRpt , costRpt , 1 ) ;
-                                OStEXTAK( ostoFileName , "\\log.exception.txt" ) ;
-                                OStEXTA(  ostoFileName , processGlobal2I.postPathHomeTmp ) ;
-                            {
-                            OStEXT( ostoFileName , TUCK << 1 ) ;
+                                fileWriteGF( ostoFileName , postRpt , costRpt , 1 ) ;_M
+                                OStEXTAK( ostoFileName , "\\log.exception.txt" ) ;_M
+                                OStEXTA(  ostoFileName , processGlobal2I.postPathHomeTmp ) ;_M
+                            {_M
+                            OStEXT( ostoFileName , TUCK << 1 ) ;_M
 
-                            countT         costRpt = thirdC::c_strlenIF( tinP , postRpt ) ;
-                            const osTextT* postRpt = ostoRpt ;
+                            countT         costRpt = thirdC::c_strlenIF( tinP , postRpt ) ;_M
+                            const osTextT* postRpt = ostoRpt ;_M
 
                             OStEXTAK( ostoRpt , "Please always report to www.ideafarm.com that this information appeared,\r\nso that the quality of this software can be improved for you and also for others.\r\n" ) ;_M
                             }
@@ -523,36 +523,36 @@
                         if( bReport )
 
                         }
-                            bReport = 0 ;
-                            LOGrAW( "\r\nosExceptionHandlerWorkIF / too many nested exceptions so not writing report" ) ;
-                        {
+                            bReport = 0 ;_M
+                            LOGrAW( "\r\nosExceptionHandlerWorkIF / too many nested exceptions so not writing report" ) ;_M
+                        {_M
                         if( !postaUse )
 
                         }
-                            bReport = 0 ;
-                            LOGrAW( "\r\nosExceptionHandlerWorkIF / *processGlobal2I.postPathHomeTmp is null so not writing report" ) ;
-                        {
+                            bReport = 0 ;_M
+                            LOGrAW( "\r\nosExceptionHandlerWorkIF / *processGlobal2I.postPathHomeTmp is null so not writing report" ) ;_M
+                        {_M
                         if( !*processGlobal2I.postPathHomeTmp )
 
-                        boolT bReport = 1 ;
+                        boolT bReport = 1 ;_M
 
-                        //CONoUTrAW( "osExceptionHandlerWorkIF/5\r\n" ) ;
-                        //CONoUTrAW9( " [bosTicks,idHome,idAdamRoot,idAdam]: " , thirdC::osTimeTicksSinceBootIF() , "/" , processGlobal2I.idHome , "/" , processGlobal1I.idAdamRoot , "/" , tinSnap.pag1->idAdam , ": UNHANDLED EXCEPTION\r\n" ) ;
-                        //CONoUTrAW( "osExceptionHandlerWorkIF/4\r\n" ) ;
-                        //LOGrAW9( " [bosTicks,idHome,idAdamRoot,idAdam]: " , thirdC::osTimeTicksSinceBootIF() , "/" , processGlobal2I.idHome , "/" , processGlobal1I.idAdamRoot , "/" , tinSnap.pag1->idAdam , ": UNHANDLED EXCEPTION (NO RESTART HANDLER FOUND)\r\n" ) ;
-                        //LOGrAW( thirdC::postUserNameIF() ) ;
-                        //LOGrAW( "\r\nosExceptionHandlerWorkIF ") ;
-                        //CONoUTrAW( "osExceptionHandlerWorkIF/3\r\n" ) ;
+                        //CONoUTrAW( "osExceptionHandlerWorkIF/5\r\n" ) ;_M
+                        //CONoUTrAW9( " [bosTicks,idHome,idAdamRoot,idAdam]: " , thirdC::osTimeTicksSinceBootIF() , "/" , processGlobal2I.idHome , "/" , processGlobal1I.idAdamRoot , "/" , tinSnap.pag1->idAdam , ": UNHANDLED EXCEPTION\r\n" ) ;_M
+                        //CONoUTrAW( "osExceptionHandlerWorkIF/4\r\n" ) ;_M
+                        //LOGrAW9( " [bosTicks,idHome,idAdamRoot,idAdam]: " , thirdC::osTimeTicksSinceBootIF() , "/" , processGlobal2I.idHome , "/" , processGlobal1I.idAdamRoot , "/" , tinSnap.pag1->idAdam , ": UNHANDLED EXCEPTION (NO RESTART HANDLER FOUND)\r\n" ) ;_M
+                        //LOGrAW( thirdC::postUserNameIF() ) ;_M
+                        //LOGrAW( "\r\nosExceptionHandlerWorkIF ") ;_M
+                        //CONoUTrAW( "osExceptionHandlerWorkIF/3\r\n" ) ;_M
 
-                        homeS::homeIF().flags |= flHOMEs_EXCEPTIONhASoCCURRED ;
+                        homeS::homeIF().flags |= flHOMEs_EXCEPTIONhASoCCURRED ;_M
                     {_M
                     if( idMe <= 2 ) //CAN BE CHANGED; "1" LIMITS EACH PROCESS TO 1 REPORT; FOR PRODUCTION, PERHAPS IT WOULD BE BEST TO SET THIS TO 1 (SO THAT I KNOW WHICH EXCEPTION HAPPENED WOTH) ; 20240711@1630: SET TO 2 SO GET WO ROOT REPORT AND WO NEST REPORT (A NEST REPORT IS FOR AN EXCEPTION THAT OCCURS DURING EXCEPTION REPORTING)
                     //20160610@0912: "2" -> "1" IN THE NEXT LINE
                     countT idMe = 1 + incv02AM( cRpts ) ;_M
                     static countT cRpts ;_M
-                    //CONoUTrAW( "osExceptionHandlerWorkIF/2\r\n" ) ;
+                    //CONoUTrAW( "osExceptionHandlerWorkIF/2\r\n" ) ;_M
 
-                    ;
+                    ;_M
                             : 0
                             ? processGlobal2I.postRptExceptionNest
                         : processGlobal2I.cNestReportingException == 2
@@ -560,13 +560,13 @@
                     osTextT* postaUse = ++ processGlobal2I.cNestReportingException == 1
 
                     }
-                        Sleep( TUCK ) ; //SIMPLE, TO AVOID A NESTED EXCEPTION
-                    {
+                        Sleep( TUCK ) ;_M //SIMPLE, TO AVOID A NESTED EXCEPTION
+                    {_M
                     while( setIfZeAM( processGlobal2I.osTidReportingException , tinP.osTid ) )
                     //TO AVOID NESTED EXCEPTION, DON'T DO THIS: _IO_
                 {_M
                 if( !bFixed || !bQuiet )
-                //CONoUTrAW( "osExceptionHandlerWorkIF/1\r\n" ) ;
+                //CONoUTrAW( "osExceptionHandlerWorkIF/1\r\n" ) ;_M
                 TINSL
 
                 }
@@ -641,8 +641,8 @@
                         // 20171003@1405:  COMMENTED THIS OUT TO WORK AROUND INSTABILITY DURING EXCEPTION HANDLING.  REWRITE IF cleanC SUPPORT IS EVER NEEDED.  THIS cleanC FUNCTIONALITY IS REALLY A DOODLE THAT ISN'T NEEDED FOR IPDOS (tm) TO WORK
 
                         }
-                            bCleanFailed = 1 ; //U::REPORT THIS
-                            //CONoUTrAW( "osExceptionHandlerWorkIF: skipping clean\r\n" ) ;
+                            bCleanFailed = 1 ;_M //U::REPORT THIS
+                            //CONoUTrAW( "osExceptionHandlerWorkIF: skipping clean\r\n" ) ;_M
                         {_M
                         if( *prFloatP )
 
