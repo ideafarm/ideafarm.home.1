@@ -19225,11 +19225,7 @@ after i return, that countT object will contain 1
 /**/
 /*1*//*ifcLINE*//*1*/
 
-#if defined( ClINESiNdEF )
-    #define ifcLINE ClINESaDJUST + ClINESiNdEF - __LINE__
-#else
     #define ifcLINE                              __LINE__
-#endif
 
 
 //

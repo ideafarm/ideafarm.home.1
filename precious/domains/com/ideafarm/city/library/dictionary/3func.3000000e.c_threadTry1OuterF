@@ -26,9 +26,9 @@
 }
     return rc ;
 
-    //printf( "\r\nrptExceptionF / called  rootExceptionFilterF [bMainP,pInfoP,rc]:    %d    %d    %d\r\n" , bMainP , (int)pInfoP , rc ) ;
+    printf( "\r\nrptExceptionF / called  rootExceptionFilterF [bMainP,pInfoP,rc]:    %d    %d    %d\r\n" , bMainP , (int)pInfoP , rc ) ;
     rc = (*(rootExceptionFilter_NT_FT)pExceptionHandlerFP)( (EXCEPTION_POINTERS*)pInfoP ) ;  //U:: rc MIGHT NEED TO BE OBEYED FOR E.G. restartC HANDLING
-    //printf( "\r\nrptExceptionF / calling rootExceptionFilterF [bMainP,pInfoP]:    %d    %d\r\n" , bMainP , (int)pInfoP ) ;
+    printf( "\r\nrptExceptionF / calling rootExceptionFilterF [bMainP,pInfoP]:    %d    %d\r\n" , bMainP , (int)pInfoP ) ;
 
     unsigned rc = 0 ;
 {
