@@ -28758,7 +28758,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS*        pTin ;
  tinS         tinEarlyLate ;
  countT       rc ;
- tlsBlobC     tlsBlobPostRptExceptionLath ;
  tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
  tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
 
@@ -28812,7 +28811,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS*        pTin ;
  tinS         tinEarlyLate ;
  countT       rc ;
- tlsBlobC     tlsBlobPostRptExceptionLath ;
  tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
  tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
 

@@ -514,11 +514,7 @@
                             OStEXTAK( ostoRpt , "Subject: IPDOS (tm) Exception Event\r\n\r\nIdeaFarm " "(tm) Piggyback Distributed Operating System\r\nhttp://ideafarm.com\r\nWo'O Ideafarm\r\n \r\nAn " ) ;_M
                             OStEXTAK( ostoRpt , "\r\n//\r\n// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.\r\n//\r\n// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.\r\n// Respecting the rights of other people is an important part of empowering one another.\r\n//\r\n\r\n" ) ;_M
 
-                              osTextC   ostoRpt( COSTArPTeXCEPTION - 2 * sizeof( countT ) , 0 , postaUse                                      , COSTArPTeXCEPTION ) ;_M
-
-                            //osTextC   ostoRpt( COSTArPTeXCEPTION - 2 * sizeof( countT ) , 0 , tinP.postzRptExceptionLath - sizeof( countT ) , COSTArPTeXCEPTION ) ;_M
-                            //U:: ELIMINATE THE NEST MEMBER OF processGlobal2S
-                            //U:: ELIMINATE ALLOCATIONS FOR tinS::postzRptExceptionLath, AND ALL CODE RELATED TO HAVING PER THREAD REPORT SPACE
+                            osTextC ostoRpt( COSTArPTeXCEPTION - 2 * sizeof( countT ) , 0 , postaUse , COSTArPTeXCEPTION ) ;_M
                         {_M
                         if( bReport )
 
