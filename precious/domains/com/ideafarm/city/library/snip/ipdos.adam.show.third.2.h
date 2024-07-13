@@ -40930,8 +40930,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     osTextT                         postPathHomeTmp[ TUCK ] ;
     countT                          osTidReportingException ;
     countT                          cNestReportingException ;
-    osTextT                         postRptExceptionRoot[ COSTArPTeXCEPTION ] ;
-    osTextT                         postRptExceptionNest[ COSTArPTeXCEPTION ] ;
+    osTextT                         postRptException[ COSTArPTeXCEPTION ] ;
     byteT                           pbBkTelemetryScratchRoot[ SIZEOF_bookC ] ;
     fireGroupS                      pFireGroup[ CfIREgROUPS ] ;
     const flagsT                    flagsCpuFeatures ;

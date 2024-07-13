@@ -553,11 +553,9 @@
                     //CONoUTrAW( "osExceptionHandlerWorkIF/2\r\n" ) ;_M
 
                     ;_M
-                            : 0
-                            ? processGlobal2I.postRptExceptionNest
-                        : processGlobal2I.cNestReportingException == 2
-                        ? processGlobal2I.postRptExceptionRoot
-                    osTextT* postaUse = ++ processGlobal2I.cNestReportingException == 1
+                        : 0
+                        ? processGlobal2I.postRptException
+                    osTextT* postaUse = ++ processGlobal2I.cNestReportingException == 1     // THIS IS JUST FOR SAFETY, SINCE ANY EXCEPTION IN ME SHOULD NEVER RESULT IN ME BEING CALLED NESTED ; IT SHOULD BE HANDLED BY rootExceptionFilterF
 
                     }
                         Sleep( TUCK ) ;_M //SIMPLE, TO AVOID A NESTED EXCEPTION
