@@ -215,7 +215,9 @@
             const countT ebpOffender = osInfo.ContextRecord ? osInfo.ContextRecord->Ebp : 0 ;_M
             //CONoUTrAW( "rootExceptionFilterF/2/2/0/3\r\n" ) ;
 
-            const countT idMileLag = idMile ;
+            const countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
+            const countT idMileLag          = idMile ;
+
             if( prFloat ) getRegsAM( prFloat->pcRegisters ) ; /*Z*/ //MY RESTART POINT IS HERE, IMMEDIATELY AFTER THE RETURN OF getRegsAM
             ZE( countT , idMile ) ;
             //CONoUTrAW( "rootExceptionFilterF/2/2/0/2\r\n" ) ;
@@ -320,8 +322,6 @@
     static flagsT flagsResult = flEXCEPTIONrESULT_null ;
 
     //CONoUTrAW( "rootExceptionFilterF/+\r\n" ) ;
-
-    const countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
 {
 /*1*/unsigned _export _stdcall rootExceptionFilterF( voidT* pvOsInfoP )/*1*/
 
