@@ -513,7 +513,9 @@
                             OStEXTAK( ostoRpt , "\r\nPOOP: " ) ;_M
 
                             OStEXTC(  ostoRpt ,      processGlobal2I.cNestReportingException , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\nException reporting nest level: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n\r\nException reporting nest level: " ) ;_M
+                            OStEXTC(  ostoRpt , idExceptionEventMeP , 0 ) ;_M
+                            OStEXTAK( ostoRpt , "\r\nidExceptionEvent: " ) ;_M
 
                             }
                                 }
@@ -911,10 +913,11 @@
     TINSL
     ebpTlsAM() = ebpOffenderP ; //THIS IS NEEDED BECAUSE SOMETIMES THE TLS IS NOT IN THE STACK CHAIN (E.G. WHEN TINSL WOULD FAIL AT BEGINNING OF winMessageHandlerWorkF)
 
-    restartC*&           prFloatP     =           *(restartC**)c8p.c4 ;
-    countT               ebpOffenderP =                        c8p.c3 ;
-    countT&              idMile       =              *(countT*)c8p.c2 ;
-    _EXCEPTION_POINTERS& osInfoP      = *(_EXCEPTION_POINTERS*)c8p.c1 ;
+    countT               idExceptionEventMeP =                        c8p.c5 ;
+    restartC*&           prFloatP            =           *(restartC**)c8p.c4 ;
+    countT               ebpOffenderP        =                        c8p.c3 ;
+    countT&              idMile              =              *(countT*)c8p.c2 ;
+    _EXCEPTION_POINTERS& osInfoP             = *(_EXCEPTION_POINTERS*)c8p.c1 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
 /*1*/boolT thirdC::osExceptionHandlerWorkIF( const countT cArgP )/*1*/

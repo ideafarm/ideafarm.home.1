@@ -1,3 +1,153 @@
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*CBcIRCLEdFLT*//*1*/
+
+#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*SOCKETtIMEOUTdEFAULTwANiMPATIENT*//*1*/
+
+#define SOCKETtIMEOUTdEFAULTwANiMPATIENT ( TOCK << 0 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
+
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c34
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c35
+#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c36
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c37
+#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c38
+#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c39
+#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c3a
+#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c3b
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c34
+#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c3b                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDuDPfILEmETAtYPE*//*1*/
+
+/*3*/
+#define ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME     0x1
+#define ifcIDuDPfILEmETAtYPE_CONTROLsETTINGS    0x2
+#define ifcIDuDPfILEmETAtYPE_HASHoFcONTENT      0x3
+#define ifcIDuDPfILEmETAtYPE_CONTENT            0x4
+#define ifcIDuDPfILEmETAtYPE_TIMEcREATED        0x5
+#define ifcIDuDPfILEmETAtYPE_TIMEmODIFIED       0x6
+#define ifcIDuDPfILEmETAtYPE_IDgENERATION       0x7
+#define ifcIDuDPfILEmETAtYPE_IDvERSION          0x8
+#define ifcIDuDPfILEmETAtYPE_IDoWNERlO          0x9
+#define ifcIDuDPfILEmETAtYPE_IDoWNERhI          0xa
+/*3*/                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CBuDPfILEpAYLOAD*//*1*/
+
+#define CBuDPfILEpAYLOAD ( ifcCBdATAGRAMmAX - sizeof( udpFileGramHeadFileWindowS ) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS BEGIN
 
 
@@ -6994,7 +7144,7 @@ a count8S object contains 8 countT values
 */
 /**/
 
-/*1*/struct _export processGlobal1S/*1*/        //U:: MOST MEMBERS OF processGlobal1S SHOULD BE MIGRATED TO HERE AND THEN ALL OF THE processGlobal?S NAMES SHOULD BE RENUMBERED.  processGlobal1I SHOULD BE CONSTRUCTED AS EARLY AS POSSIBLE
+/*1*/struct _export processGlobal1S/*1*/
 {
     const countT                    idAdamRoot  ;
     const byteT*                    pbHeap ;                    // THIS IS AN OPTIMIZATION BUT MAINLY HERE BECAUSE ___ INSPECTS THESE VALUES BEFORE processGlobal4S::heap IS CT
@@ -28491,7 +28641,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
  countT                  idiFileMile ;
  countT                  idLineMileDad ;
  countT                  idiFileMileDad ;
- osTextT*                postzRptExceptionLath ;
  tellInfoSysExceptionS*  pzTieLath ;
  const countT*           pczl_pSwsRecycle ;
  switchStackC*           pSwsRecycle ;
@@ -40902,6 +41051,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                          pcUtility[ 0x10 ] ; //TO FACILITATE DEBUGGING
     flagsT                          flCt        ;
     flagsT                          flDt        ;
+    countT                          idExceptionEvent ;
     const countT                    idHome      ;
     const countT                    idNumaNode  ;
     countT                          idProcessOld ;
@@ -40914,7 +41064,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     etherC*                         pEtThreadServiceEventHandler ;
     tinS*                           pTinDadService ;
     byteT                           pb_bNapkinCt[         CBzOMBIEbATONc ] ;
-    byteT                           pb_bMemorySpace[         CBzOMBIEbATONc ] ;
+    byteT                           pb_bMemorySpace[      CBzOMBIEbATONc ] ;
     byteT                           pb_bLog[              CBzOMBIEbATONc ] ;
     byteT                           pb_bOsCall[           CBzOMBIEbATONc ] ;
     byteT                           pb_bOsCallIMonitor[   CBzOMBIEbATONc ] ;

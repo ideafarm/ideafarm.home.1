@@ -16,13 +16,15 @@
             }
                 BLAMMOiD( 0x1e1e1e1e ) ;                                                                                                                                                            //20240621@1455: OBSERVED THIS WHILE HEAL WAS ZIPPING A DAY CHUNK FILE ON AN EXTERNAL SSD ; IF SAMEO THEN INSPECT THE EXCEPTION RPT OR THE TRACE PRODUCED BY GLASS1
                 LOGcALLnEST( "!exception: could not set thread priority" )
-                LOGrAW7(    "\r\ndosPriorityIF: BLAMMO BECAUSE COULD NOT SET: [osTidIF(),rc,idP]:    " , osTidIF() , "    " , rc , "    " , idP , "\r\n" ) ;
-                CONoUTrAW7( "\r\ndosPriorityIF: BLAMMO BECAUSE COULD NOT SET: [osTidIF(),rc,idP]:    " , osTidIF() , "    " , rc , "    " , idP , "\r\n" ) ;
+                LOGrAW9(    "\r\ndosPriorityIF: BLAMMO BECAUSE COULD NOT SET: [idExceptionEvent,osTidIF(),rc,idP]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , rc , "    " , idP , "\r\n" ) ;
+                CONoUTrAW9( "\r\ndosPriorityIF: BLAMMO BECAUSE COULD NOT SET: [idExceptionEvent,osTidIF(),rc,idP]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , rc , "    " , idP , "\r\n" ) ;
 
                 if( &tinP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinP , (strokeS*)"dosPriorityIF (set) IS USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
 
                 POOPRqUIET
                 countT rc = POOP ;
+
+                countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
             {
             if( POOP )
 

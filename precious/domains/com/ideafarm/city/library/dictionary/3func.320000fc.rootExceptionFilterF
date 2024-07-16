@@ -64,7 +64,7 @@
                         //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/1/+\r\n" ) ;
                     {_M
                     if( pTinOffender->pzTieLath )
-                    count8S c8p( (countT)&osInfo , (countT)&idMile , ebpOffender , (countT)&prFloat ) ;
+                    count8S c8p( (countT)&osInfo , (countT)&idMile , ebpOffender , (countT)&prFloat , idExceptionEventMe ) ;
 
                     //etherC::ifcSayIF( processGlobal6I.tinBreak , "rootExceptionFilterF: beginning to write my normal report\r\n" , flSAY_LOG | flSAY_APPEND ) ;
                     //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/+ normal\r\n" ) ;
@@ -162,8 +162,9 @@
                     OStEXTAK( ostoBuf , "idMile: " ) ;_M
                     OStEXTAK( ostoBuf , "\r\n" ) ;_M
                     OStEXTAK( ostoBuf , "routine encountered a problem.\r\n" ) ;_M
-                    OStEXTAK( ostoBuf , "This is an abridged report because the nifty swifty exception reporting\r\n" ) ;_M
-                    OStEXTAK( ostoBuf , "\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "\r\n\r\nThis is an abridged report because the nifty swifty exception reporting\r\n" ) ;_M
+                    OStEXTC(  ostoBuf , idExceptionEventMe , 0 ) ;_M
+                    OStEXTAK( ostoBuf , "\r\nidExceptionEvent: " ) ;_M
                     OStEXTAK( ostoBuf , "Wo'O Ideafarm\r\n" ) ;_M
                     OStEXTAK( ostoBuf , "http://ideafarm.com\r\n" ) ;_M
                     OStEXTAK( ostoBuf , "IdeaFarm " "(tm) Piggyback Distributed Operating System\r\n" ) ;_M
@@ -182,8 +183,9 @@
                     thirdC::c_strcatIF( postTmpFolder , "ideafarm.log.exception.rpt.tiny.txt" ) ;
 
                     OStEXTAK( ostoBuf , "routine and the simple reporting routine encountered problems.\r\n" ) ;_M
-                    OStEXTAK( ostoBuf , "This is a stub report because both the nifty swifty exception reporting\r\n" ) ;_M
-                    OStEXTAK( ostoBuf , "\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "\r\n\r\nThis is a stub report because both the nifty swifty exception reporting\r\n" ) ;_M
+                    OStEXTC(  ostoBuf , idExceptionEventMe , 0 ) ;_M
+                    OStEXTAK( ostoBuf , "\r\nidExceptionEvent: " ) ;_M
                     OStEXTAK( ostoBuf , "Wo'O Ideafarm\r\n" ) ;_M
                     OStEXTAK( ostoBuf , "http://ideafarm.com\r\n" ) ;_M
                     OStEXTAK( ostoBuf , "IdeaFarm " "(tm) Piggyback Distributed Operating System\r\n" ) ;_M
@@ -318,6 +320,8 @@
     static flagsT flagsResult = flEXCEPTIONrESULT_null ;
 
     //CONoUTrAW( "rootExceptionFilterF/+\r\n" ) ;
+
+    const countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
 {
 /*1*/unsigned _export _stdcall rootExceptionFilterF( voidT* pvOsInfoP )/*1*/
 
