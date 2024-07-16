@@ -16,10 +16,12 @@
         }
             BLAMMOiD( 0x1f1f1f1f ) ;                                                                                                                                                            //20240621@1455: OBSERVED THIS WHILE HEAL WAS ZIPPING A DAY CHUNK FILE ON AN EXTERNAL SSD ; IF SAMEO THEN INSPECT THE EXCEPTION RPT OR THE TRACE PRODUCED BY GLASS1
             LOGcALLnEST( "!exception: tinP.idDesireSetBySelf is inaccurate" )
-            LOGrAW7(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [osTidIF(),tinDesire,actualDesire]:    " , osTidIF() , "    " , tinP.idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
-            CONoUTrAW7( "\r\ndosPriorityIF: BLAMMO BECAUSE: [osTidIF(),tinDesire,actualDesire]:    " , osTidIF() , "    " , tinP.idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
+            LOGrAW9(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , tinP.idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
+            CONoUTrAW9( "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , tinP.idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
 
             if( &tinP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinP , (strokeS*)"dosPriorityIF (get) IS USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+
+            countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
         {
         if( tinP.idDesireSetBySelf && idDesire != tinP.idDesireSetBySelf && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_ALLOWvOLATILEdESIRE ) )         // I ENFORCE THE CODING CONVENTION THAT A THREAD'S PRIORITY MAY ONLY BE CHANGED BY ITSELF ; NO OTHER THREAD OR PROCESS IS ALLOWED TO CHANGE IT
 
