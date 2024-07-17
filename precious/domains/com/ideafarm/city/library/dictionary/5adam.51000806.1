@@ -839,9 +839,11 @@ DONE( tmReportF )
         ++ s ; ether.osSleepF( tinP , TICK >> 6 ) ;     //MUST BE SHORT ENOUGH TO AVOID OVERFLOW IN COUNTER
 
         }
-            etThread.boxPutF( tinP , tFileReport , tReport , tReport.csF( tinP ) ) ;
-
-            tReport += tcrlf+tcrlf+tcrlf+T("(end of report)\r\n") ;
+            }
+                etThread.boxPutF( tinP , tFileReport , tReport , tReport.csF( tinP ) ) ;
+                tReport += tcrlf+tcrlf+tcrlf+T("(end of report)\r\n") ;
+            {
+            if( !ether )
 
             }
                 while( !ether && ~hFindFile && !POOP ) ;
@@ -858,16 +860,16 @@ DONE( tmReportF )
                                             tReport += T(postHit)+tcrlf ;
                                             *postHitEnd = 0 ;
                                         {
-                                        else
+                                        else if( !ether )
                                         if( !postHitEnd ) break ;
                                         osTextT* postHitEnd = thirdC::c_strstrIF( tinP , postHit , "\r\n" ) ;
                                     {
-                                    else
+                                    else if( !ether )
                                     if( !postHit ) break ;
                                     osTextT* postHit = thirdC::c_strstrIF( tinP , postc , "!exception" ) ;
 
                                 {
-                                while( postc < poste )
+                                while( !ether && postc < poste )
 
                                 postc = posti ;
 
@@ -880,14 +882,14 @@ DONE( tmReportF )
                                 osTextT* poste = posti + costi ;
                                 osTextT* postc = posti ;
                             {
-                            else
+                            else if( !ether )
                             if( !posti ) etThread.traceF( tinP , T("null length file:    ")+tShort ) ;
 
                             etThread.boxGetShadowF( tinP , posti , costi , tFolder+tShort ) ; ___( posti ) ;
                             ZE( countT   , costi ) ;
                             ZE( osTextT* , posti ) ;
                         {
-                        if( tShort.csF( tinP ) )        // IF NOT A DIRECTORY
+                        if( !ether && tShort.csF( tinP ) )        // IF NOT A DIRECTORY
 
                         }
                             etThread.delF( tinP , psttShort ) ;
@@ -901,7 +903,7 @@ DONE( tmReportF )
                         TN( tShort , "" ) ;
                         TN( tFolder , "" ) ;
                     {
-                    else
+                    else if( !ether )
                     }
                         break ;
                         DEL( pInfoFile ) ;
@@ -913,9 +915,10 @@ DONE( tmReportF )
                 {
                 do
                 handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-            {
 
-            tReport += tcrlf+tcrlf+T("exceptions\r\n\r\n") ;
+                tReport += tcrlf+tcrlf+T("exceptions\r\n\r\n") ;
+            {
+            if( !ether )
 
             THREADmODE2rESTORE
             grabLathFileHealedFilesP.ungrabF( tinP ) ;
@@ -936,7 +939,7 @@ DONE( tmReportF )
                                 countT idf = 0x14 ;
                                 ZE( strokeS* , psttYear ) ;
                             {
-                            else
+                            else if( !ether )
                             }
                                 etThread.traceF( tinP , T("!exception: invalid file content [tShort]:    ")+tShort ) ;
                             {
@@ -948,7 +951,7 @@ DONE( tmReportF )
 
                             //etThread.traceF( tinP , tShort ) ;
                         {
-                        if( tShort.csF( tinP ) && !etThread.strIdF( tinP , tDotHeyWritingDot , tShort ) )        // IF NOT A DIRECTORY
+                        if( !ether && tShort.csF( tinP ) && !etThread.strIdF( tinP , tDotHeyWritingDot , tShort ) )        // IF NOT A DIRECTORY
 
                         }
                             etThread.delF( tinP , psttShort ) ;
@@ -962,7 +965,7 @@ DONE( tmReportF )
                         TN( tShort , "" ) ;
                         TN( tFolder , "" ) ;
                     {
-                    else
+                    else if( !ether )
                     }
                         break ;
                         DEL( pInfoFile ) ;
@@ -980,7 +983,7 @@ DONE( tmReportF )
 
             TN( tReport , "" ) ; tReport = T("IdeaFarm (tm) Archive Healer - Minute Report #")+TF2(++idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n\r\n\r\nyear    lathIdNameHealed\r\n\r\n" ) ;
         {
-        if( !( ++ idCycle % 4 ) )
+        if( !ether && !( ++ idCycle % 4 ) )
 
         }
             }
@@ -997,7 +1000,7 @@ DONE( tmReportF )
                 ZE( sCountT , timeE2 ) ;
                 ZE( countT  , timeE1 ) ;
             {
-            if( cbWas )
+            if( !ether && cbWas )
 
             etThread.osTimeNowF( tinP , timeLathReset1 , timeLathReset2 ) ;
 
@@ -1005,7 +1008,7 @@ DONE( tmReportF )
                 if( cbWas == setIfEqualsAM( cbNewlyCompared , 0 , cbWas ) ) break ;
                 cbWas = cbNewlyCompared ;
             {
-            for(;;)
+            while( !ether )
             timeLathReset2 = timeLathReset1 = 0 ;
             sCountT timeA2 = timeLathReset2 ;
             countT  timeA1 = timeLathReset1 ;
