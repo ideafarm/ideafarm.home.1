@@ -200,10 +200,10 @@
             switch( eTypeReport )
             //CONoUTrAW( "rootExceptionFilterF/2/2/1\r\n" ) ;
 
-            else                                                                                                                             eTypeReport = normalE ; // FULL INFORMATION
-            else if( idIn == 1 || ( prFloat && *prFloat == 1 ) || !pTinOffender || getNegAM( pTinOffender->fingerprint ) != FINGERnEG_TINs ) eTypeReport = shortE  ; // NO tinS INFORMATION
-            else if( idIn == 2 || ( prFloat && *prFloat == 2 )                                                                             ) eTypeReport = tinyE   ; // NO INFO ; JUST A SINGLE LINE OF TEXT TO INDICATE THAT THE SHORT REPORT COULD NOT BE WRITTEN
-                 if( idIn >  2 || ( prFloat && *prFloat >  2 )                                                                             ) eTypeReport = nullE   ; // PREVENTS SPIN 
+            else                                                                                                                                   eTypeReport = normalE        ; // FULL INFORMATION
+            else if( /*idInThread == 1 ||*/ ( prFloat && *prFloat == 1 ) || !pTinOffender || getNegAM( pTinOffender->fingerprint ) != FINGERnEG_TINs ) eTypeReport = shortE         ; // NO tinS INFORMATION
+            else if( /*idInThread == 2 ||*/ ( prFloat && *prFloat == 2 )                                                                             ) eTypeReport = tinyE          ; // NO INFO ; JUST A SINGLE LINE OF TEXT TO INDICATE THAT THE SHORT REPORT COULD NOT BE WRITTEN
+                 if( /*idInThread >= 3 ||*/ ( prFloat && *prFloat >= 3 )                                                                             ) eTypeReport = nullE          ; // PREVENTS SPIN 
 
             enum { normalE , shortE , tinyE , nullE } eTypeReport ;
             //CONoUTrAW( "rootExceptionFilterF/2/2/0/4\r\n" ) ;
@@ -222,11 +222,6 @@
             ZE( countT , idMile ) ;
             //CONoUTrAW( "rootExceptionFilterF/2/2/0/2\r\n" ) ;
 
-            }
-                if( !prFloat ) idIn = 1 + incv02AM( idInLath ) ;
-                static countT idInLath ;
-            {
-            ZE( countT , idIn ) ;
             //CONoUTrAW( "rootExceptionFilterF/2/2/0/1\r\n" ) ;
 
             // prFloat WILL NORMALLY BE NONZE BUT WILL BE ZE IF NO SLOT AVAILABLE
@@ -283,6 +278,12 @@
         //MAKE A COPY ; THE EXCEPTION HANDLING SUBYSTEM (me and thirdC::osExceptionHandlerWorkIF) DO NOT USE THE COPY ; IT IS JUST MADE FOR GLASS WALLS ; FOR EXAMPLE, AN ADAM USED TO DEBUG ME USES THE COPY TO CALL ME
 
         _EXCEPTION_POINTERS& osInfo = *(_EXCEPTION_POINTERS*)pvOsInfoP ;
+
+        }
+            if( !prFloat ) idInThread = 1 + incv02AM( idInThreadLath ) ;
+            static countT idInThreadLath ;
+        {
+        ZE( countT , idInThread ) ;     // THE SERIAL NUMBER OF EACH THREAD THAT WAS NOT IN THE LOOKUP TABLE ; WILL BE 0 IF I FOUND MYSELF IN THAT TABLE
 
         }
             }

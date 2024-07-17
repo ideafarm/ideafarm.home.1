@@ -878,20 +878,21 @@
 
                 }
                     }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!threadChatter"            ) ) { thirdC::third_flagsModeAdam2I_IF( tinP    ) |= flADAMmODE2_THREADcHATTER ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!noSystemThreads"          ) ) { thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_NOsYSTEMtHREADS ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!noInterprocessGrabs"      ) ) { thirdC::third_flagsModeAdam1I_IF( tinP    ) |= flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!threadChatter"            ) ) { thirdC::third_flagsModeProcess2I_IF(   ) |= flMODEpROCESS2_CHATTERtHREADcTdT            ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!threadChatterAdam"        ) ) { thirdC::third_flagsModeAdam2I_IF( tinP ) |= flADAMmODE2_THREADcHATTER                   ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!noSystemThreads"          ) ) { thirdC::third_flagsModeProcess1I_IF(   ) |= flMODEpROCESS1_NOsYSTEMtHREADS              ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!noInterprocessGrabs"      ) ) { thirdC::third_flagsModeAdam1I_IF( tinP ) |= flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs ; }
                         //else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!utility0"               ) ) { tinP.pc Utility[ 0 ] = 1 ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!utility"                  ) ) { thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_CHECKtINuTILITYeLEMENTS ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!debug1"                   ) ) { thirdC::third_flagsModeAdam1I_IF( tinP    ) |= flADAMmODE1_DEBUG1 ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!debug"                    ) ) { thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_DEBUG  ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!jot"                      ) ) { thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_JOT ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!ignoreFireByOperator"     ) ) { thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_IGNOREfIREbYoPERATOR ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!threadFiles"              ) ) { thirdC::third_flagsModeAdam1I_IF( tinP    ) |= flADAMmODE1_SEEtHREADSaSfILES ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!quietConsole"             ) ) { thirdC::third_flagsModeAdam1I_IF( tinP    ) |= flADAMmODE1_QUIETcONSOLE ; } // WIN32 DOES NOT PROVIDE A WAY TO QUERY WHETHER THIS PROCESS IS ATTACHED TO A CONSOLE; CALLING system( cls ) WHEN NOT ATTACHED CAUSES A CONSOLE WINDOW TO MOMENTARILY APPEAR; THE WORKAROUND IS TO USE A CMD LINE PARAMETER; DETACHED PROCESSES THAT ALLOCATE A CONSOLE MUST MAINTAIN (RESET) THIS FLAG
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!testAuto"                 ) ) { bTestAuto      = 1                        ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!idProcessOld"             ) ) { idArg          = 2                        ; }
-                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!idTrial"                  ) ) { idArg          = 5                        ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!utility"                  ) ) { thirdC::third_flagsModeProcess2I_IF(   ) |= flMODEpROCESS2_CHECKtINuTILITYeLEMENTS      ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!debug1"                   ) ) { thirdC::third_flagsModeAdam1I_IF( tinP ) |= flADAMmODE1_DEBUG1                          ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!debug"                    ) ) { thirdC::third_flagsModeProcess1I_IF(   ) |= flMODEpROCESS1_DEBUG                        ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!jot"                      ) ) { thirdC::third_flagsModeProcess1I_IF(   ) |= flMODEpROCESS1_JOT                          ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!ignoreFireByOperator"     ) ) { thirdC::third_flagsModeProcess1I_IF(   ) |= flMODEpROCESS1_IGNOREfIREbYoPERATOR         ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!threadFiles"              ) ) { thirdC::third_flagsModeAdam1I_IF( tinP ) |= flADAMmODE1_SEEtHREADSaSfILES               ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!quietConsole"             ) ) { thirdC::third_flagsModeAdam1I_IF( tinP ) |= flADAMmODE1_QUIETcONSOLE                    ; } // WIN32 DOES NOT PROVIDE A WAY TO QUERY WHETHER THIS PROCESS IS ATTACHED TO A CONSOLE; CALLING system( cls ) WHEN NOT ATTACHED CAUSES A CONSOLE WINDOW TO MOMENTARILY APPEAR; THE WORKAROUND IS TO USE A CMD LINE PARAMETER; DETACHED PROCESSES THAT ALLOCATE A CONSOLE MUST MAINTAIN (RESET) THIS FLAG
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!testAuto"                 ) ) { bTestAuto      = 1 ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!idProcessOld"             ) ) { idArg          = 2 ; }
+                        else if( !thirdC::c_strcmpIF( tinP , ppostHowP[ idp - 1 ] , "!idTrial"                  ) ) { idArg          = 5 ; }
                         //CS:CODEsYNC: 33000065 33000065
                         }
                             }
