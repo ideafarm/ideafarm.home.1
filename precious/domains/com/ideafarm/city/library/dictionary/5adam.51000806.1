@@ -4366,7 +4366,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                             // *********************************************************************************************************************************************************************************************************
 
                             //pfmOuter->traceF( tinP , pP.st O ldPathToYear , pP.tIndent2+T("outer: ") ) ;
-                            pP.ether.traceF( tinP , pP.tIndent2+T("[tLongOuter]:    ")+tLongOuter ) ;
+                            pP.ether.traceF( tinP , pP.tIndent2+T("[cCopies,idCopy,tLongOuter]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(++idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
                             TN( tLongOuter , "" ) ; tLongOuter = T(pP.pzpsttPathToYear[idSlotPathToYearOuter-1])+tShortP ;
                             countT idSlotPathToYearOuter = pfmOuter->idSlotPathToYear ;
 
@@ -4394,6 +4394,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                         {
                         do
                         handleC hStkOuter( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        ZE( countT , idCopy ) ;
                         // SET ALL COMPARE META ELEMENTS FOR EACH FILE'S IMAGE COMPARE META ARRAY
 
                         if( !pP.bAbort && ( cbUsedHighMax || cbUsedMax > TOCK ) ) pP.ether.osTimeNowF( tinP , timeA1 , timeA2 ) ;
