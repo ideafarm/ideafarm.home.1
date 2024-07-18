@@ -46,34 +46,22 @@ REST
     }
         }
             }
-                //etThread.traceF( tinP , T("incremented   (after) [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                offPhase = ++ offPhase % CpHASES ;
-                //etThread.traceF( tinP , T("incrementing (before) [offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                idPhase = 1 + ( ++ idPhase - 1 ) % CpHASES ;
 
                 }
-                    }
-                        break ;
-
-                        }
-                            ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
-                            ether.osSuspendF( tinP ) ;
-                            ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
-                        {
-                        if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE && !ether )
-
-                        etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
-                        etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
-                        time2AOK = time1AOK = 0 ;
-                    {
-                    case OFFpHASE_CHUNKfILESbYdAY   :
-                    case OFFpHASE_HEAL              : { time2AOK = time1AOK = 0 ; break ; }       // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
-                    case OFFpHASE_GETnAMESoNLY      :
-                    // OFFpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE THAT PHASE IS DONE WITHIN THE CURRENT LOOP
+                    ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
+                    ether.osSuspendF( tinP ) ;
+                    ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
                 {
-                switch( offPhase )
+                if( idPhase == IDpHASE_HEAL && F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE && !ether )
+
+                etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
+                etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
+                time2AOK = time1AOK = 0 ;
 
                 cConsecutiveAborts = 0 ;
+
+                // IDpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE THAT PHASE IS DONE WITHIN THE CURRENT LOOP ; 20240718@1228: HUH?
             {
             else
             }
@@ -145,8 +133,8 @@ REST
                                             POOPRqUIET
                                         {
                                         if( POOP )
-                                        //U::tinP.pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , 1 + offPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk ) ;
-                                             tinP.pEtScratch->osThreadF( TaRG1(           tmExecutiveHealYearF                                                     ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , 1 + offPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk ) ;
+                                        //U::tinP.pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk ) ;
+                                             tinP.pEtScratch->osThreadF( TaRG1(           tmExecutiveHealYearF                                                     ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk ) ;
                                         SCOOPS
                                         _IO_
                                     {
@@ -175,9 +163,9 @@ REST
                                     ;
                                             : cYearsInParallelHeal
                                             ? CyEARSiNpARALLELcHUNKfILESbYdAY
-                                        : offPhase == OFFpHASE_CHUNKfILESbYdAY
+                                        : idPhase == IDpHASE_CHUNKfILESbYdAY
                                         ? CyEARSiNpARALLELgETnAMESoNLY
-                                    countT test = offPhase == OFFpHASE_GETnAMESoNLY                     // OFFpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE tmExecutiveHealYearF IS NOT USED DURING THAT PHASE
+                                    countT test = idPhase == IDpHASE_GETnAMESoNLY                     // IDpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE tmExecutiveHealYearF IS NOT USED DURING THAT PHASE
 
                                     thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
 
@@ -309,23 +297,23 @@ REST
                 swsPathToArchivesByArchiveName.ungrabF( tinP ) ;
                 countT cFlavors = swsPathToArchivesByArchiveName.cFlavorsF( tinP ) ;
                 swsPathToArchivesByArchiveName.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                //#endif
+                #endif
                     TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
-                //#else
-                //    //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
-                //      TN( tYearPattern , "2019/" ) ;
-                //    //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
-                //    //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
-                //    //TN( tYearPattern , "2023/" ) ;
-                //    //TN( tYearPattern , "2022/" ) ;
-                //    //TN( tYearPattern , "2017/" ) ;
-                //    //TN( tYearPattern , "2012/" ) ;
-                //    //TN( tYearPattern , "2010/" ) ;
-                //    //TN( tYearPattern , "2009/" ) ;
-                //    //TN( tYearPattern , "2008/" ) ;
-                //    //TN( tYearPattern , "1999/" ) ;
-                //    //TN( tYearPattern , "1234/" ) ;
-                //#if defined( IFCtESTING )
+                #else
+                      TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
+                    //TN( tYearPattern , "2019/" ) ;
+                    //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
+                    //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
+                    //TN( tYearPattern , "2023/" ) ;
+                    //TN( tYearPattern , "2022/" ) ;
+                    //TN( tYearPattern , "2017/" ) ;
+                    //TN( tYearPattern , "2012/" ) ;
+                    //TN( tYearPattern , "2010/" ) ;
+                    //TN( tYearPattern , "2009/" ) ;
+                    //TN( tYearPattern , "2008/" ) ;
+                    //TN( tYearPattern , "1999/" ) ;
+                    //TN( tYearPattern , "1234/" ) ;
+                #if defined( IFCtESTING )
                 _IO_
             {
             if( !bAbort )
@@ -340,7 +328,7 @@ REST
 
             }
                 }
-                    etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerFileInfoF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&bQuitFileInfo , (countT)&cWorkersFileInfo , (countT)&bAbort , (countT)&cPause , (countT)&funJobFileInfo , flagsMode ) ;
+                    etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerFileInfoF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&bQuitFileInfo , (countT)&cWorkersFileInfo , (countT)&bAbort , (countT)&idPhase , (countT)&cPause , (countT)&funJobFileInfo , flagsMode ) ;
                     inc02AM( cWorkersFileInfo ) ;
                 {
                 while( cDo -- )
@@ -656,21 +644,24 @@ REST
             (
             if
 
-            etThread.osTimeSubtractF( tinP , time1E , time2E , time1AOK , time2AOK ) ;
-            etThread.osTimeNowF( tinP , time1E , time2E ) ;
+            }
+                etThread.osTimeSubtractF( tinP , time1E , time2E , time1AOK , time2AOK ) ;
+                etThread.osTimeNowF( tinP , time1E , time2E ) ;
+            {
+            if( bWaitWoDay )
             ZE( sCountT , time2E ) ;
             ZE( countT  , time1E ) ;
 
-            boolT bWaitWoDay = !!time2AOK ;
+            boolT bWaitWoDay = !!time2AOK ;     // THE PRECEDING PHASE DID NOT ABORT
+
             _IO_
         {
-        while( !ether )
+        while( idPhase == IDpHASE_GETnAMESoNLY && !ether )
         ZE( countT , cNaps ) ;
-        etThread.traceF( tinP , T("[offPhase]:    ")+TF2(offPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tinP , T("[idPhase]:    ")+TF2(idPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         _IO_
     {                                   // BUT NOT ALL ITERATIONS ARE SUCCESSFUL ; THOSE THAT FAIL ARE RETRIED, AND THE PHASE ID IS NOT ADVANCED UNTIL THE CURRENT PHASE SUCCEEDS
     while( !ether && !POOP )            // EVERY 3 SUCCESSFUL ITERATIONS ARE [ PHASE1 , PHASE2 , PHASE3 ] ( 1: GET NAMES, 2: HEAL, 3: CHUNK FILES BY DAY ) ; THE PHASE ID DETERMINES WHAT tmExecutiveHealYearF DOES
-    countT offPhase = OFFpHASE_GETnAMESoNLY ;
 
     ZE( boolT , bPhase3ChunkByDay ) ;
     ZE( boolT , bPhase2Heal       ) ;
@@ -688,14 +679,14 @@ REST
     if( !bSandbox ) // NAP IF RUNNING AS SERVICE BUT NOT IF RUNNING FROM IdeaFarm (tm) Elves
 
     }
-        etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerMemCompareF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cWorkersCompare , (countT)&bAbort , (countT)&cPause , (countT)&stJobCompare , flagsMode , (countT)&cYearsHealing ) ;
+        etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerMemCompareF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cWorkersCompare , (countT)&bAbort , (countT)&idPhase , (countT)&cPause , (countT)&stJobCompare , flagsMode , (countT)&cYearsHealing ) ;
         inc02AM( cWorkersCompare ) ;
     {
     while( cDo    -- )
     cDo = cToHireCompare ;
 
     }
-        etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerHealFileF   , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cWorkersHeal , (countT)&bAbort , (countT)&cPause , (countT)&funJobHealFile , flagsMode , (countT)&cYearsHealing , cToHireHeal , cToHireCompare ) ;
+        etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerHealFileF   , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cWorkersHeal    , (countT)&bAbort , (countT)&idPhase , (countT)&cPause , (countT)&funJobHealFile , flagsMode , (countT)&cYearsHealing , cToHireHeal , cToHireCompare ) ;
         inc02AM( cWorkersHeal ) ;
     {
     while( cDo    -- )
@@ -704,6 +695,8 @@ REST
     ZE( countT , cWorkersHeal    ) ;
     ZE( countT , cWorkersCompare ) ;
     ZE( countT , cYearsHealing   ) ;
+
+    countT idPhase = IDpHASE_GETnAMESoNLY ;
 
     // #endif
     //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cToHireHeal ) ;
@@ -1192,79 +1185,9 @@ DONE( tmExecutiveHealYearF )
                     if( pJotSortedShort && !( F(flagsModeP) & flHEALmODE_KEEPnAMES ) ) pJotSortedShort->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;
                     _IO_
                 {
-                if( !bAbortP && idPhaseP == 1 + OFFpHASE_CHUNKfILESbYdAY )
+                if( !bAbortP && idPhaseP == IDpHASE_HEAL )
 
                 }
-                    }
-                        break ;
-
-                             if( ether ) bAbortP = 1 ;
-                        else if( tDayPrefix.csF( tinP ) ) chunkDayIfF( tinP , etThread , bAbortP , cPathsToYear , ppsttPathToYear , tDayPrefix ) ;
-                             if( ether ) bAbortP = 1 ;
-
-                        }
-//break ; //U:: CHUNK ONLY WO DAY
-                            //etThread.traceF( tinP , T("[tDayPrefixNew,tShort]:    ")+tDayPrefixNew+tb4+tShort ) ;
-
-                            }
-                                tDayPrefix = tDayPrefixNew ;
-
-                                }
-                                    chunkDayIfF( tinP , etThread , bAbortP , cPathsToYear , ppsttPathToYear , tDayPrefix ) ;
-                                    etThread.traceF( tinP , T("calling chunkDayIfF [prefix]:    ")+tDayPrefix ) ;
-                                {
-                                if( tDayPrefix.csF( tinP ) && !etThread.strIdF( tinP , tIgnore , tDayPrefix ) )
-                            {
-                            if( etThread.strCompareF( tinP , tDayPrefix , tDayPrefixNew ) )
-
-                            }
-                                etThread.delF( tinP , psttDayPrefix ) ;
-                                tDayPrefixNew = T(psttDayPrefix) ;
-                                etThread.strSubstringF( tinP , psttDayPrefix , idf , sttq , sttAt , tShort , 0 ) ; ___( psttDayPrefix ) ;
-                                countT idf = 1 ;
-                                strokeS sttAt( '@' ) ;
-                                strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                                ZE( strokeS* , psttDayPrefix ) ;
-                            {
-                            TN( tDayPrefixNew , "" ) ;
-                
-                            }
-                                }
-                                    tShort = T(pbIn+sizeof(count04T)) ;
-                                    c4CbUsed = *(count04T*)pbIn ;
-                                {
-                                else
-                                if( !pbIn ) ether.traceF( tinP , T("!exception: could not obtain blob so ignoring this page") ) ;
-                                const byteT* pbIn = pageIn ;
-                                pageC pageIn = *pJotSortedShort ;
-                            {
-                            TN( tShort , "" ) ;
-                            ZE( count04T , c4CbUsed ) ;
-                
-                            _IO_
-                        {
-                        while( !ether && cDo -- && !bAbortP )
-                        TN( tIgnore , ".!.chunk." ) ;
-                        TN( tDayPrefix , "" ) ;
-                        countT cDo = cShortNames ;
-
-                        }
-                            etThread.traceF( tinP , T("[path list]:    ")+T(ppsttPathToYear[offi]) ) ;
-                        {
-                        for( countT offi = 0 ; offi < cPathsToYear ; offi ++ )
-                        
-                        etThread.traceF( tinP , T("[archive,year,cShortNames]:    ")+tArchive+tb4+tYear+tb4+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        const countT cShortNames = pJotSortedShort->cElementsF() ;
-                        pJotSortedShort->resetLathReadF() ;
-
-                        TN( tb  , " " ) ;
-                        TN( tb4 , "    " ) ;
-
-                        // IOW, ALL FILES IN EACH FILESET ARE DATED ONLY WITH THE TIME MODIFIED VALUE OF THE DATA FILE
-                        // THIS IS TO SUPPRESS DIFFERENCES IN META DATA ACROSS VOLUMES THAT ARE DUE TO ACCESSING OR DUE TO AD HOC DATA RECOVERY AND MIGRATION ACTIVITIES
-                        //PS:PERSONALITY: I CLOBBER FILE TIME METADATA SO THAT TIME WRITTEN, ACCESSED, AND CREATED FOR EVERY FILE IN THE DAY CHUNK ARE ALL SMUDGED TO THE TIME WRITTEN VALUE OF THE MOST RECENT FILE
-                    {
-                    case 1 + OFFpHASE_CHUNKfILESbYdAY :
                     }
                         break ;
 
@@ -1380,6 +1303,14 @@ DONE( tmExecutiveHealYearF )
                                 pauseIfF( tinP , bAbortP , cExecutiveHealYearPausedP , cPauseP ) ;
 
                                 //etThread.traceF( tinP , T("pushing [cbUsed[0],cbUsed[1],psttShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttShort) ) ;
+
+                                //}
+                                //    continue ;
+                                //    etThread.delF( tinP , psttShort ) ;
+                                //{
+                                //if( etThread.strCompareF( tinP , psttShort , T("!ideafarm.a.2.00000000.00000001.20990004.!.chunk.day.zip") ) )
+
+                                //etThread.traceF( tinP , T("U:: [tShort]:    ")+T(psttShort) ) ;
 
                                 etThread.strMakeFromOsTextF( tinP , psttShort , pbIn + sizeof( count04T ) ) ; ___( psttShort ) ;
                                 ZE( strokeS* , psttShort ) ;
@@ -1543,8 +1474,79 @@ DONE( tmExecutiveHealYearF )
 
                         _IO_
                     {
-                    case 1 + OFFpHASE_HEAL :
-                    // OFFpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE tmExecutiveHealYearF IS NOT USED DURING THAT PHASE
+                    case IDpHASE_HEAL :
+                    }
+                        break ;
+
+                             if( ether ) bAbortP = 1 ;
+                        else if( tDayPrefix.csF( tinP ) ) chunkDayIfF( tinP , etThread , bAbortP , cPathsToYear , ppsttPathToYear , tDayPrefix ) ;
+                             if( ether ) bAbortP = 1 ;
+
+                        }
+                            //break ; //U:: CHUNK ONLY WO DAY
+                            //etThread.traceF( tinP , T("[tDayPrefixNew,tShort]:    ")+tDayPrefixNew+tb4+tShort ) ;
+
+                            }
+                                tDayPrefix = tDayPrefixNew ;
+
+                                }
+                                    chunkDayIfF( tinP , etThread , bAbortP , cPathsToYear , ppsttPathToYear , tDayPrefix ) ;
+                                    etThread.traceF( tinP , T("calling chunkDayIfF [prefix]:    ")+tDayPrefix ) ;
+                                {
+                                if( tDayPrefix.csF( tinP ) && !etThread.strIdF( tinP , tIgnore , tDayPrefix ) )
+                            {
+                            if( etThread.strCompareF( tinP , tDayPrefix , tDayPrefixNew ) )
+
+                            }
+                                etThread.delF( tinP , psttDayPrefix ) ;
+                                tDayPrefixNew = T(psttDayPrefix) ;
+                                etThread.strSubstringF( tinP , psttDayPrefix , idf , sttq , sttAt , tShort , 0 ) ; ___( psttDayPrefix ) ;
+                                countT idf = 1 ;
+                                strokeS sttAt( '@' ) ;
+                                strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                ZE( strokeS* , psttDayPrefix ) ;
+                            {
+                            TN( tDayPrefixNew , "" ) ;
+                
+                            }
+                                }
+                                    tShort = T(pbIn+sizeof(count04T)) ;
+                                    c4CbUsed = *(count04T*)pbIn ;
+                                {
+                                else
+                                if( !pbIn ) ether.traceF( tinP , T("!exception: could not obtain blob so ignoring this page") ) ;
+                                const byteT* pbIn = pageIn ;
+                                pageC pageIn = *pJotSortedShort ;
+                            {
+                            TN( tShort , "" ) ;
+                            ZE( count04T , c4CbUsed ) ;
+                
+                            _IO_
+                        {
+                        while( !ether && cDo -- && !bAbortP )
+                        TN( tIgnore , ".!.chunk." ) ;
+                        TN( tDayPrefix , "" ) ;
+                        countT cDo = cShortNames ;
+
+                        }
+                            etThread.traceF( tinP , T("[path list]:    ")+T(ppsttPathToYear[offi]) ) ;
+                        {
+                        for( countT offi = 0 ; offi < cPathsToYear ; offi ++ )
+                        
+                        etThread.traceF( tinP , T("[archive,year,cShortNames]:    ")+tArchive+tb4+tYear+tb4+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        const countT cShortNames = pJotSortedShort->cElementsF() ;
+                        pJotSortedShort->resetLathReadF() ;
+
+                        TN( tb  , " " ) ;
+                        TN( tb4 , "    " ) ;
+
+                        // IOW, ALL FILES IN EACH FILESET ARE DATED ONLY WITH THE TIME MODIFIED VALUE OF THE DATA FILE
+                        // THIS IS TO SUPPRESS DIFFERENCES IN META DATA ACROSS VOLUMES THAT ARE DUE TO ACCESSING OR DUE TO AD HOC DATA RECOVERY AND MIGRATION ACTIVITIES
+                        //PS:PERSONALITY: I CLOBBER FILE TIME METADATA SO THAT TIME WRITTEN, ACCESSED, AND CREATED FOR EVERY FILE IN THE DAY CHUNK ARE ALL SMUDGED TO THE TIME WRITTEN VALUE OF THE MOST RECENT FILE
+                    {
+                    case IDpHASE_CHUNKfILESbYdAY :
+
+                    // IDpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE tmExecutiveHealYearF IS NOT USED DURING THAT PHASE ; 20240718@1252: CONJ: THIS IS OBSOLETE BECAUSE THERE IS NO LONGER SUCH A PHASE
                 {
                 if( !bAbortP && !POOP ) switch( idPhaseP )
 
@@ -2296,7 +2298,7 @@ DONE( tmWorkerMemCompareF )
         }
             stJobCompareP.grabF( tinP , TAG( TAGiDnULL ) ) ;
             ++ s ; thirdC::dosSleepWinkIF( tinP , 0 ) ;
-            if( cYearsHealingP && !( ++ cIdle % TOCK ) ) etThread.traceF( tinP , T("years are healing but i have nothing to do (no memory compare jobs) [cIdle]:    ")+TF2(++cIdle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //if( cYearsHealingP && idPhaseP == IDpHASE_HEAL ) etThread.traceF( tinP , T("years are healing but i have nothing to do (no memory compare jobs) [cIdle]:    ")+TF2(++cIdle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             stJobCompareP.ungrabF( tinP ) ;
             _IO_
         {
@@ -2354,14 +2356,15 @@ DONE( tmWorkerMemCompareF )
 
     _IO_
 
-    countT&       cYearsHealingP                  = *(countT*)pTaskP->c6 ;
-    flagsT        flagsModeP                      =   (flagsT)pTaskP->c5 ;
-    stackC&       stJobCompareP                   = *(stackC*)pTaskP->c4 ;
-    countT&       cPauseP                         = *(countT*)pTaskP->c3 ;
+    countT&       cYearsHealingP                  = *(countT*)pTaskP->c7 ;
+    flagsT        flagsModeP                      =   (flagsT)pTaskP->c6 ;
+    stackC&       stJobCompareP                   = *(stackC*)pTaskP->c5 ;
+    countT&       cPauseP                         = *(countT*)pTaskP->c4 ;
+    countT&       idPhaseP                        = *(countT*)pTaskP->c3 ;
     boolT&        bAbortP                         =  *(boolT*)pTaskP->c2 ;
     countT&       cWorkersCompareP                = *(countT*)pTaskP->c1 ;  //U:: cWorkersCompareP IS ALSO NEEDED TO WORKAROUND A DESIGN DEFECT OF etherWhereF (20231126@1005 I NO LONGER REMEMBER WHAT DEFECT THAT WAS)
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 )
 TASK( tmWorkerMemCompareF )
 
 DONE( tmWorkerFileInfoF )
@@ -2467,14 +2470,15 @@ DONE( tmWorkerFileInfoF )
 
     _IO_
 
-    flagsT        flagsModeP                      =         (flagsT)pTaskP->c6 ;
-    funnelHornC&  funJobFileInfoP                 =  *(funnelHornC*)pTaskP->c5 ;
-    countT&       cPauseP                         =       *(countT*)pTaskP->c4 ;
+    flagsT        flagsModeP                      =         (flagsT)pTaskP->c7 ;
+    funnelHornC&  funJobFileInfoP                 =  *(funnelHornC*)pTaskP->c6 ;
+    countT&       cPauseP                         =       *(countT*)pTaskP->c5 ;
+    countT&       idPhaseP                        =       *(countT*)pTaskP->c4 ;
     boolT&        bAbortP                         =        *(boolT*)pTaskP->c3 ;
     countT&       cWorkersFileInfoP               =       *(countT*)pTaskP->c2 ;
     boolT&        bQuitP                          =        *(boolT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 )
 TASK( tmWorkerFileInfoF )
 
 DONE( tmWorkerHealFileF )
@@ -2558,16 +2562,17 @@ DONE( tmWorkerHealFileF )
 
     _IO_
 
-    countT        cToHireCompareP                 =                 pTaskP->c8 ;
-    countT        cToHireHealP                    =                 pTaskP->c7 ;
-    countT&       cYearsHealingP                  =       *(countT*)pTaskP->c6 ;
-    flagsT        flagsModeP                      =         (flagsT)pTaskP->c5 ;
-    funnelHornC&  funJobHealFileP                 =  *(funnelHornC*)pTaskP->c4 ;
-    countT&       cPauseP                         =       *(countT*)pTaskP->c3 ;
+    countT        cToHireCompareP                 =                 pTaskP->c9 ;
+    countT        cToHireHealP                    =                 pTaskP->c8 ;
+    countT&       cYearsHealingP                  =       *(countT*)pTaskP->c7 ;
+    flagsT        flagsModeP                      =         (flagsT)pTaskP->c6 ;
+    funnelHornC&  funJobHealFileP                 =  *(funnelHornC*)pTaskP->c5 ;
+    countT&       cPauseP                         =       *(countT*)pTaskP->c4 ;
+    countT&       idPhaseP                        =       *(countT*)pTaskP->c3 ;
     boolT&        bAbortP                         =        *(boolT*)pTaskP->c2 ;
     countT&       cWorkersHealP                   =       *(countT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 )
 TASK( tmWorkerHealFileF )
 
 }
@@ -4075,7 +4080,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         {
                                         if( !( F(flagsModeP) & flHEALmODE_NOiMAGEcOMPARE ) )
 
-                                        //if( cWindowsMax > 1/*( TUCK >> 4 )*/ ) pP.ether.traceF( tinP , T("processing window of large file [cWindowsMax,idWindow,tShortP]:  ")+TF2(cWindowsMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShortP ) ;
+                                        pP.ether.traceF( tinP , T("processing window [cWindowsMax,idWindow,tShortP]:  ")+TF2(cWindowsMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShortP ) ;
 
                                         //}
                                         //    pP.ether.traceF( tinP , T("processing window [idName,cInnerImagesToInspect,cImagesInspected,cWindowsMax,idWindow,%,tShort]:  ")+TF2(idNameP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF3(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2)+tb4+TF3(cImagesInspected,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2)+tb4+TF3(cWindowsMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tb4+TF3((countT)idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tb4+TF3(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,3)+tPerTuck+tb4+tShortP ) ;
@@ -4361,7 +4366,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                             // *********************************************************************************************************************************************************************************************************
 
                             //pfmOuter->traceF( tinP , pP.st O ldPathToYear , pP.tIndent2+T("outer: ") ) ;
-                            // //pP.ether.traceF( tinP , pP.tIndent2+T("[tLongOuter]:    ")+tLongOuter ) ;
+                            pP.ether.traceF( tinP , pP.tIndent2+T("[tLongOuter]:    ")+tLongOuter ) ;
                             TN( tLongOuter , "" ) ; tLongOuter = T(pP.pzpsttPathToYear[idSlotPathToYearOuter-1])+tShortP ;
                             countT idSlotPathToYearOuter = pfmOuter->idSlotPathToYear ;
 
@@ -4399,7 +4404,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                         countT   cWindowsMax = (countT)( 1 + cbUsedMax04 / cbFileWindow ) ;
                         count04T cbUsedMax04 = ( (count04T)cbUsedHighMax << 0x20 ) | (count04T)cbUsedMax ;      //A:ASSUME: sizeof( countT) IS 0x20
 
-                        //OPTIMIZATION: FASTER IF DO NOT DO THIS: if( cbUsedHighMax || cbUsedMax > TOCK ) bLargeFile = 1 ;    //20230918@1130: TOCK <-- TUCK
+                        if( cbUsedHighMax || cbUsedMax > TOCK ) bLargeFile = 1 ;    //20230918@1130: TOCK <-- TUCK
                         ZE( boolT  , bLargeFile ) ;
 
                         //pP.ether.traceF( tinP , T("[cCopies,cbFileWindow]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+TF3(cbFileWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
@@ -5059,10 +5064,9 @@ struct jobHealFileS
 {
 struct paramHealFileS
 
-#define OFFpHASE_CHUNKfILESbYdAY   0x2
-#define OFFpHASE_HEAL              0x1
-#define OFFpHASE_GETnAMESoNLY      0x0
-
+#define IDpHASE_HEAL              0x3
+#define IDpHASE_CHUNKfILESbYdAY   0x2
+#define IDpHASE_GETnAMESoNLY      0x1
 #define CpHASES 3
 
 #define IDtYPEjOB_COPY       0x3
@@ -5077,7 +5081,7 @@ struct paramHealFileS
 
 //B: WORSE:  CPU NOT PEGGED: #define CyEARSiNpARALLELhEAL  0x1
 
-#define CyEARSiNpARALLELcHUNKfILESbYdAY 0x1
+#define CyEARSiNpARALLELcHUNKfILESbYdAY 0x4
 #define CyEARSiNpARALLELhEAL            0x1
 #define CyEARSiNpARALLELgETnAMESoNLY    0x10
 
@@ -5137,8 +5141,8 @@ struct paramHealFileS
 
 #endif
 
-    #define CtOhIREhEAL    0xc
-    #define CtOhIREcOMPARE 0x1
+    #define CtOhIREhEAL    1
+    #define CtOhIREcOMPARE 8
 
     //#define CtOhIREhEAL    0x1
     //#define CtOhIREcOMPARE 0x20
@@ -5157,8 +5161,8 @@ struct paramHealFileS
 
 #else
 
-    #define CtOhIREhEAL    0xc
-    #define CtOhIREcOMPARE 0x1
+    #define CtOhIREhEAL    1
+    #define CtOhIREcOMPARE 8
 
 #if defined( IFCtESTING )
 
