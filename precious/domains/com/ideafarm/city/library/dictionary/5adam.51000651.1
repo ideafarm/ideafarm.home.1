@@ -650,6 +650,7 @@ TASK( tmCleanF )
 
 DONE( tmRenameF )
 }
+    THREADmODE2rESTORE
     etThread.delF( tinP , psttmDropIn ) ;
     }
         }
@@ -662,12 +663,15 @@ DONE( tmRenameF )
             TN( tTo , "///ideafarm/IdeaFarm " "(tm)/" ) ; tTo += tUser+T("/Pick Up Files Ready for Processing Here/") ;
 
             if( bWoth ) bWoth = 0 ;
+            _IO_
         {
         if( etThread.etherC::diskWaitDirF( tinP , hWait , ether , psttmDropIn , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) || bWoth )
+        _IO_
     {
     while( !ether && !POOP )
     handleC hWait( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
     boolT bWoth = 1 ;
+    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
     
     etThread.delF( tinP , psttDropInP ) ;
     etThread.diskMapFileNameF( tinP , psttmDropIn , psttDropInP ) ; ___( psttmDropIn ) ;
@@ -681,6 +685,8 @@ DONE( tmRenameF )
 
     strokeS* psttNeverDropHereP = (strokeS*)pTaskP->c2 ;
     strokeS* psttDropInP        = (strokeS*)pTaskP->c1 ;
+
+    _IO_
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmRenameF )
