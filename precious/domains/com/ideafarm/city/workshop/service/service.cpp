@@ -915,7 +915,7 @@ int main( int cArgP , char* ppostArgP[] , char* ppostEnvP[] )
             {
                 logTimeGF( "IPDOS (tm) Service / changing preshutdown timeout value\r\n" ) ;
                 static SERVICE_PRESHUTDOWN_INFO info ;
-                info.dwPreshutdownTimeout = 1800000 ; // 30 MINUTES
+                info.dwPreshutdownTimeout = 1800000 ; // 30 FOREIGN MINUTES
                 BOOL bOk = ChangeServiceConfig2A( oshService , SERVICE_CONFIG_PRESHUTDOWN_INFO , &info ) ;
                 if( !bOk )
                 {
