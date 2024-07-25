@@ -2636,7 +2636,7 @@ TASK( tmWorkerHealFileF )
                 }
                     ++ s ; etherP.osSleepF( tinP , TOCK >> 2 ) ;              //20240622@1800: STALLS WITH 01 WITHIN 2 TICKS
                 {                                                             //20240622@1743: STALLS WITH 4, SO REVERTING TO 01 FOR DEBUGGING (CONJ: LEAK)
-                while( cDayZippers > 0x20 )                                    //20240622@1654: STALLS WITH 8
+                while( cDayZippers > 0x20 )                                   //20240622@1654: STALLS WITH 8
                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
             {
@@ -2644,7 +2644,7 @@ TASK( tmWorkerHealFileF )
             ZE( countT , cDayZippers ) ;
             // THIS IS PRODUCTION CODE (ZIPPING IS DONE IN PARALLEL)
 
-#if !!defined( NEVERdEFINED )
+        #if !defined( NEVERdEFINED )
     {
     if( !bAbortP )
 
@@ -2680,17 +2680,19 @@ DONE( tmDayZipperF )
 
     _IO_
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 )
 TASK( tmDayZipperF )
 
 }
+    etherP.traceF( tinP , T("zipDayF / ----") ) ;
     }
         }
             }
                 }
                     }
-                        if( bZippedAok ) etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongChunk ) ;
+                        if( bZippedAok ) etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+tLongChunk ) ;
                         bAbortP = 1 ;
+                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
@@ -2740,8 +2742,9 @@ TASK( tmDayZipperF )
             }
                 }
                     }
-                        etherP.traceF( tinP , T("!exception: could not set file time [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear+tShortDayZipP ) ;
+                        etherP.traceF( tinP , T("!exception: could not set file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+tPathYear+tShortDayZipP ) ;
                         bAbortP = 1 ;
+                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
@@ -2751,8 +2754,9 @@ TASK( tmDayZipperF )
                 {
                 else
                 }
-                    if( bZippedAok ) etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathYear+tShortDayZipP ) ;
+                    if( bZippedAok ) etherP.traceF( tinP , T("!exception: could not open file WR 0 [name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+tPathYear+tShortDayZipP ) ;
                     bAbortP = 1 ;
+                    const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                     POOPRqUIET
                     countT rc = POOP ;
                 {
@@ -2775,10 +2779,11 @@ TASK( tmDayZipperF )
                         //    IF THE ERROR IS A FALSE POSITIVE AND THE ZIP REALLY SUCCEEDED, THE CHUNK FILE CONTAINS VALUABLE DATA THAT IS NO LONGER PRESENT AS FSET FILES
                         //DO NOT DELETE THE CHUNK FILE
 
-                        etherP.traceF( tinP , T("!exception: kid process failed [value,rc,name]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLong ) ;
+                        etherP.traceF( tinP , T("!exception: kid process failed [value,rc,name]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+tLong ) ;
                         TN( tLong , "" ) ; tLong = tPathYear+tShortDayZipP ;
 
                         bAbortP = 1 ;
+                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
@@ -2839,8 +2844,9 @@ TASK( tmDayZipperF )
                             }
                                 }
                                     }
-                                        etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pInfoFile->psttIfoName) ) ;
+                                        etherP.traceF( tinP , T("!exception: could not reset some file attribute flags [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+T(pInfoFile->psttIfoName) ) ;
                                         bAbortP = 1 ;
+                                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                         POOPRqUIET
                                         countT rc = POOP ;
                                     {
@@ -2890,8 +2896,9 @@ TASK( tmDayZipperF )
                             }
                                 }
                                     }
-                                        etherP.traceF( tinP , T("!exception: could not set file time [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongAt ) ;
+                                        etherP.traceF( tinP , T("!exception: could not set file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+tLongAt ) ;
                                         bAbortP = 1 ;
+                                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                         POOPRqUIET
                                         countT rc = POOP ;
                                     {
@@ -2901,8 +2908,9 @@ TASK( tmDayZipperF )
                                 {
                                 else
                                 }
-                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongAt ) ;
+                                    etherP.traceF( tinP , T("!exception: could not open file WR 0 [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+tLongAt ) ;
                                     bAbortP = 1 ;
+                                    const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                     POOPRqUIET
                                     countT rc = POOP ;
                                 {
@@ -2929,8 +2937,9 @@ TASK( tmDayZipperF )
                                     }
                                         }
                                             }
-                                                etherP.traceF( tinP , T("!exception: could not get file time [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pInfoFile->psttIfoName) ) ;
+                                                etherP.traceF( tinP , T("!exception: could not get file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+T(pInfoFile->psttIfoName) ) ;
                                                 bAbortP = 1 ;
+                                                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                 POOPRqUIET
                                                 countT rc = POOP ;
                                             {
@@ -2940,8 +2949,9 @@ TASK( tmDayZipperF )
                                         {
                                         else
                                         }
-                                            etherP.traceF( tinP , T("!exception: could not open file R R [rc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pInfoFile->psttIfoName) ) ;
+                                            etherP.traceF( tinP , T("!exception: could not open file R R [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+T(pInfoFile->psttIfoName) ) ;
                                             bAbortP = 1 ;
+                                            const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                             POOPRqUIET
                                             countT rc = POOP ;
                                         {
@@ -2985,8 +2995,9 @@ TASK( tmDayZipperF )
 
                     }
                         }
-                            etherP.traceF( tinP , T("!exception: find file failed [rc,like]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(osfnLike) ) ;
+                            etherP.traceF( tinP , T("!exception: find file failed [rc,postRc,like]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+T(osfnLike) ) ;
                             bAbortP = 1 ;
+                            const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
@@ -3032,6 +3043,7 @@ TASK( tmDayZipperF )
     TN( tb4  , "    " ) ;
     TN( tb   , " " ) ;
     etherC& etPrime = etherC::etPrimeIF() ;
+    etherP.traceF( tinP , T("zipDayF / ++++") ) ;
     _IO_
 {
 voidT zipDayF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewChunksP , countT cPathsToYearP , strokeS** ppsttPathToYearP , textC& tShortDayZipP , textC& tDayPrefixP , countT offDoP )
@@ -3171,7 +3183,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                         }
                                                                             break ;
                                                                             pP.bAbort = 1 ;
-                                                                            pP.ether.traceF( tinP , T("!exception:  unexpected impotence copy [rc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                            pP.ether.traceF( tinP , T("!exception:  unexpected impotence copy [rc,postRc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                            const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                                             POOPRqUIET
                                                                             countT rc = POOP ;
                                                                         {
@@ -3221,7 +3234,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                 }
                                                                     }
                                                                         pP.bAbort = 1 ;
-                                                                        pP.ether.traceF( tinP , T("!exception: diskFileExistsF failed FOR psttTol 2 [rc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                        pP.ether.traceF( tinP , T("!exception: diskFileExistsF failed FOR psttTol 2 [rc,postRc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                                         POOPRqUIET
                                                                         countT rc = POOP ;
                                                                     {
@@ -3251,7 +3265,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                             }
                                                                                 break ;
                                                                                 pP.bAbort = 1 ;
-                                                                                pP.ether.traceF( tinP , T("!exception:  unexpected impotence [rc,toInRejects,to]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttLongInRejects)+T("    ")+T(psttTo) ) ;
+                                                                                pP.ether.traceF( tinP , T("!exception:  unexpected impotence [rc,postRc,toInRejects,to]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+T(psttLongInRejects)+T("    ")+T(psttTo) ) ;
+                                                                                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                                                 POOPRqUIET
                                                                                 countT rc = POOP ;
                                                                             {
@@ -3296,7 +3311,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                         }
                                                             }
                                                                 pP.bAbort = 1 ;
-                                                                pP.ether.traceF( tinP , T("!exception: diskFileExistsF failed FOR psttTo [rc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                pP.ether.traceF( tinP , T("!exception: diskFileExistsF failed FOR psttTo [rc,postRc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                                 POOPRqUIET
                                                                 countT rc = POOP ;
                                                             {
@@ -3453,7 +3469,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                 }
                                                                     }
                                                                         break ;
-                                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  unexpected impotence [rc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttLongTo)+T("    ")+T(psttLongFrom) ) ;
+                                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  unexpected impotence [rc,postRc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+T(psttLongTo)+T("    ")+T(psttLongFrom) ) ;
+                                                                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                                         POOPRqUIET
                                                                         countT rc = POOP ;
                                                                     {
@@ -3831,7 +3848,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 break ;
                                                 deleteEqualArrayFwsInnerArrayF( tinP , pP.ether , pEqual , pfwsInner , cInnerImagesToInspect ) ;
                                                 pP.bAbort = 1 ;
-                                                pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not dt pfwsOuter [rc,cInnerImagesToInspect,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
+                                                pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not dt pfwsOuter [rc,postRc,cInnerImagesToInspect,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
+                                                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                 POOPRqUIET
                                                 countT rc = POOP ;
                                             {
@@ -4022,8 +4040,9 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                         if( rc == ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY )
 
                                                         pP.bAbort = 1 ;
-                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  pfwsInner[ offi ].getF ; aborting [rc,idInner,tLongInner]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) ) ;
+                                                        pP.ether.traceF( tinP , pP.tIndent3+T("!exception:  pfwsInner[ offi ].getF ; aborting [rc,postRc,idInner,tLongInner]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+TF2(offi+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) ) ;
 
+                                                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                         POOPRqUIET
                                                         countT rc = POOP ;
                                                     {
@@ -4088,8 +4107,9 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     if( rc == ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY )
 
                                                     pP.bAbort = 1 ;
-                                                    pP.ether.traceF( tinP , pP.tIndent2+T("!exception:  pfwsOuter->getF ; aborting [rc,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pfwsOuter?*pfwsOuter:(const strokeS*)0) ) ;
+                                                    pP.ether.traceF( tinP , pP.tIndent2+T("!exception:  pfwsOuter->getF ; aborting [rc,postRc,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+T(pfwsOuter?*pfwsOuter:(const strokeS*)0) ) ;
 
+                                                    const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                     POOPRqUIET
                                                     countT rc = POOP ;
                                                 {
@@ -4161,7 +4181,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 pP.bAbort = 1 ;
                                                 deleteEqualArrayFwsInnerArrayF( tinP , pP.ether , pEqual , pfwsInner , cInnerImagesToInspect ) ;
                                                 DEL( pfwsOuter ) ;
-                                                pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not ct pfwsOuter [rc,cInnerImagesToInspect,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
+                                                pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not ct pfwsOuter [rc,postRc,cInnerImagesToInspect,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
+                                                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                 POOPRqUIET
                                                 countT rc = POOP ;
                                             {
@@ -4199,7 +4220,8 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     deleteEqualArrayFwsInnerArrayF( tinP , pP.ether , pEqual , pfwsInner , cInnerImagesToInspect ) ;
                                                     DELzOMBIE( pDoomed ) ;
                                                     fileWindowsC* pDoomed = &pfwsInner[ offi ] ;
-                                                    pP.ether.traceF( tinP , pP.tIndent3+T("!exception: could not ct a fileWindowsC instance ; aborting [rc,tLongInner]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLongInner) ) ;
+                                                    pP.ether.traceF( tinP , pP.tIndent3+T("!exception: could not ct a fileWindowsC instance ; aborting [rc,postRc,tLongInner]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+T(psttLongInner) ) ;
+                                                    const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                     POOPRqUIET
                                                     countT rc = POOP ;
                                                 {
