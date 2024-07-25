@@ -835,6 +835,7 @@ voidT fileOpenF_b34P3373773_GF( tinS& tinP , etherC& etherP , soulC& slP , const
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
+                flagsAttribute2P = flFILEaTTR2_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
                 etherP.delF( tinP , psttNext ) ;

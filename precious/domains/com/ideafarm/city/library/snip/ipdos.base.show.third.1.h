@@ -18433,20 +18433,20 @@ if cBitsP is f then 01 bits is indicated
 /**/
 /*1*//*SET_bStopOk*//*1*/
 
-#define SET_bStopOk                                                                                 \
-                                                                                                    \
-    boolT _bStopOk = 1 ;                                                                            \
+#define SET_bStopOk                                                                                     \
+                                                                                                        \
+    boolT _bStopOk = 1 ;                                                                                \
     if( tinP.monitor.cGrabbed && !( F(tinP.flagsThreadMode2) & flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ) \
-    {                                                                                               \
-        const countT offEnd = OFFgRABBEDmAX * 5 ;                                                   \
-        for( countT off = 0 ; off < offEnd ; off += 5 )                                             \
-        {                                                                                           \
-            if( tinP.pPanLifiRecurseGrabbedLevel[ off ] )                                                \
-            {                                                                                       \
-                _bStopOk = 0 ;                                                                      \
-                break ;                                                                             \
-            }                                                                                       \
-        }                                                                                           \
+    {                                                                                                   \
+        const countT offEnd = OFFgRABBEDmAX * 5 ;                                                       \
+        for( countT off = 0 ; off < offEnd ; off += 5 )                                                 \
+        {                                                                                               \
+            if( tinP.pPanLifiRecurseGrabbedLevel[ off ] )                                               \
+            {                                                                                           \
+                _bStopOk = 0 ;                                                                          \
+                break ;                                                                                 \
+            }                                                                                           \
+        }                                                                                               \
     }
 
 

@@ -33158,7 +33158,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34016.etherC.paperZitsOnF!||
 
 /* commands: files */
- voidT fileOpenF( tinS& tinP , handleC& handleP , countT& idResultP , const strokeS* const psttP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null, const countT cbP = 0 , countT cTriesP = 0 ) ;
+ voidT fileOpenF( tinS& tinP , handleC& handleP , countT& idResultP , const strokeS* const psttP , const countT idAccessP = ifcOPENaCCESS_R , const countT idShareP = ifcOPENsHARE_R , const flagsT flagsDetailsP = flOPENdETAILS_LOCsEQ , const countT idHowP = ifcOPENhOW_nFeO , const flagsT flagsAttribute1P = flFILEaTTR1_null , const flagsT flagsAttribute2P = flFILEaTTR2_null , const countT cbP = 0 , countT cTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.etherC.fileOpenF!||
  voidT fileHoseConnectF( tinS& tinP , const handleC& handleP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34074.etherC.fileHoseConnectF!||
@@ -41515,6 +41515,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     static const mapCTS pMap61[] ;
     static const mapCTS pMap71[] ;
     static const mapCTS pMap81[] ;
+    static const mapCTS pMap91[] ;
 
     private :
 
@@ -41667,6 +41668,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     mapCTC                                   mapIdPhaseProcess  ;
     mapCTC                                   mapIdGrabLayer     ;
     mapCTC                                   mapBosCodeWindows  ;
+    mapCTC                                   mapIfcCode         ;
     cryC                                     cry325 ;
 
     ~processGlobal4S( voidT ) ;
