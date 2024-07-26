@@ -37,11 +37,14 @@ etThread.traceF( tinP , T("ok") ) ;
         ZE( countT , cFiles ) ;
         ZE( countT , cDirs  ) ;
 
-        countT  pcArg[] = { (countT)&etThread , (countT)(strokeS*)tDelim , (countT)&tb4 , (countT)&tIdeaFarmArchivesRejects , (countT)&stYearShort } ;
+        countT  pcArg[] = { (countT)&etThread , (countT)(strokeS*)tDelim , (countT)&tb4 , (countT)&tIdeaFarmArchivesRejects , (countT)&tDotHeyDotChunkDot , (countT)&tDotHeyDotChunkDotDayDotZip , (countT)&stYearShort } ;
 
-        TN( tIdeaFarmArchivesRejects , "ideafarm.archives.rejects" ) ;
-        TN( tb4                      , "    "                      ) ;
-        TN( tDelim                   , "/"                         ) ;
+        TN( tDotHeyDotChunkDotDayDotZip , ".!.chunk.day.zip"           ) ;
+        TN( tDotHeyDotChunkDot          , ".!.chunk."                  ) ;
+        //TN( tIdeaFarmArchivesRejects    , "ideafarm.archives.lonely" ) ;
+        TN( tIdeaFarmArchivesRejects    , "ideafarm.archives.rejects"  ) ;
+        TN( tb4                         , "    "                       ) ;
+        TN( tDelim                      , "/"                          ) ;
         _IO_
     {
     stackC stYearShort( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
@@ -61,35 +64,75 @@ TODO
                 stYearShortP.sinkF( tinP , ids , psttYearShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 ZE( countT , ids ) ;
 
-                //etherP.traceF( tinP , psttYearShort ) ;
-                etherP.delF( tinP , psttnu ) ;
-                etherP.strBisectF( tinP , psttnu , psttYearShort , tLong , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttYearShort ) ;
-                ZE( strokeS* , psttYearShort ) ;
-                ZE( strokeS* , psttnu ) ;
+                }
+                    etherP.delF( tinP , psttnu ) ;
+                    etherP.strBisectF( tinP , psttnu , psttYearShort , tLongChunk , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttYearShort ) ;
+                    ZE( strokeS* , psttnu ) ;
 
-                bDo = 1 ;
+                    }
+                        etherP.delF( tinP , psttPath ) ;
+                        tLongChunk = T(psttPath)+tShortChunk ;
+                        etherP.delF( tinP , psttnu ) ;
+                        etherP.strBisectF( tinP , psttPath , psttnu , tLong , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttnu ) ;
+                        ZE( strokeS* , psttnu ) ;
+                        ZE( strokeS* , psttPath  ) ;
+                    {
+                    TN( tLongChunk , "" ) ;
+
+                    }
+                        etherP.delF( tinP , psttPrefix ) ;
+                        tShortChunk = T(psttPrefix)+tDotHeyDotChunkDotDayDotZipP ;
+                        etherP.delF( tinP , psttShort ) ;
+                        etherP.strSubstringF( tinP , psttPrefix , idf , idl , psttShort ) ; ___( psttPrefix ) ;
+                        countT idl = 0x28 ;
+                        countT idf = 1 ;
+                        ZE( strokeS* , psttPrefix ) ;
+
+                        // !ideafarm.a.2.00000000.00000001.20080707@1909.20180302@0742.3e37dc8ab5d6b8901c3c9efea2e61b66.001.fset.zip
+                        // 123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0
+                        // 0              1               2               3               4               5               6               7               8
+
+                        etherP.delF( tinP , psttnu ) ;
+                        etherP.strBisectF( tinP , psttnu , psttShort , tLong , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                        ZE( strokeS* , psttShort ) ;
+                        ZE( strokeS* , psttnu  ) ;
+                    {
+                    TN( tShortChunk , "" ) ;
+                {
+                else
+                }
+                    //etherP.traceF( tinP , psttYearShort ) ;
+                    etherP.delF( tinP , psttnu ) ;
+                    etherP.strBisectF( tinP , psttnu , psttYearShort , tLong , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttYearShort ) ;
+                    ZE( strokeS* , psttnu ) ;
+                {
+                if( etherP.strIdF( tinP , tDotHeyDotChunkDotP , tLong ) )
+                ZE( strokeS* , psttYearShort ) ;
             {
             else
             }
-                BLAMMOiD( 0x77774444 ) ;
+                }
+                    BLAMMOiD( 0x77774444 ) ;
+                    _IO_
+                {
+                if( cWords > 5 )
             {
-            if( cOk != 1 )
+            if( !bDo )
 
             etherP.delF( tinP , pstt1w ) ;
             }
                 }
-                    case 5 : { if( !etherP.strCompareF( tinP , psttc1 , tIdeaFarmArchivesRejectsP ) ) ++ cOk ; break ; }
+                    case 5 : { if( etherP.strCompareF( tinP , psttc1 , tIdeaFarmArchivesRejectsP ) ) bDo = 0 ; break ; }
                 {
                 switch( ++ idw )
 
                 // etherP.traceF( tinP , TF2(++idw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4P+T(psttc1) ) ;
             {
             FORsTRINGSiN1( pstt1w )
-            ZE( countT , cOk ) ;
-            //THIS TESTING IS REDUNDANT SINCE I SHOULD NEVER BE CALLED FOR A FILE EXCEPT WHEN WALKING A FOLDER THAT HAS PASSED THE SAME TEST ; IT IS DONE REDUNDANTLY FOR CONFIDENCE
+            //THIS TESTING IS NOT REDUNDANT ; IT IS NEEDED FOR FILES THAT ARE IN devices/ OR IN THE ROOT FOLDER OF A DEVICE
 
             ZE( countT , idw ) ;
-            etherP.strWordsF( tinP , pstt1w , tLong , sttq , psttzDelimP , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
+            countT cWords = etherP.strWordsF( tinP , pstt1w , tLong , sttq , psttzDelimP , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , pstt1w ) ;
 
@@ -106,23 +149,18 @@ TODO
         {
         else
         }
-            }
-                bDo = 1 ;
-                etherP.traceF( tinP , T("walking folder:    ")+tLong ) ;
-            {
-            if( cOk == 1 )
+            if( bDo ) etherP.traceF( tinP , T("walking folder:    ")+tLong ) ;
 
             etherP.delF( tinP , pstt1w ) ;
             }
                 }
-                    case 5 : { if( !etherP.strCompareF( tinP , psttc1 , tIdeaFarmArchivesRejectsP ) ) ++ cOk ; break ; }
+                    case 5 : { if( etherP.strCompareF( tinP , psttc1 , tIdeaFarmArchivesRejectsP ) ) bDo = 0 ; break ; }
                 {
                 switch( ++ idw )
 
                 // etherP.traceF( tinP , TF2(++idw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4P+T(psttc1) ) ;
             {
             FORsTRINGSiN1( pstt1w )
-            ZE( countT , cOk ) ;
             ZE( countT , idw ) ;
             etherP.strWordsF( tinP , pstt1w , tLong , sttq , psttzDelimP , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
@@ -151,22 +189,24 @@ TODO
     {
     else if( !bQuitP )
     }
-        etherP.traceF( tinP , T("a folder has been walked") ) ;
+        //etherP.traceF( tinP , T("a folder has been walked") ) ;
     {
     if( !postNameP || !*postNameP )
-    ZE( boolT , bDo ) ;
+    boolT bDo = 1 ;
 
-    stackC&  stYearShortP              = *(stackC*)pcArgP[ 4 ] ;
-    textC&   tIdeaFarmArchivesRejectsP =  *(textC*)pcArgP[ 3 ] ;
-    textC&   tb4P                      =  *(textC*)pcArgP[ 2 ] ;
-    strokeS* psttzDelimP               = (strokeS*)pcArgP[ 1 ] ;
-    etherC&  etherP                    = *(etherC*)pcArgP[ 0 ] ;
+    stackC&  stYearShortP                 = *(stackC*)pcArgP[ 6 ] ;
+    textC&   tDotHeyDotChunkDotDayDotZipP =  *(textC*)pcArgP[ 5 ] ;
+    textC&   tDotHeyDotChunkDotP          =  *(textC*)pcArgP[ 4 ] ;
+    textC&   tIdeaFarmArchivesRejectsP    =  *(textC*)pcArgP[ 3 ] ;
+    textC&   tb4P                         =  *(textC*)pcArgP[ 2 ] ;
+    strokeS* psttzDelimP                  = (strokeS*)pcArgP[ 1 ] ;
+    etherC&  etherP                       = *(etherC*)pcArgP[ 0 ] ;
 
     _IO_
 {
 boolT walkCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
-/*1*/WAKEsHOWtEXT( "tool.report.archive.file.sizes.to.readable.files.by.file.or.by.day" )/*1*/
+/*1*/WAKEsHOWtEXT( "tool.verify.archive.rejected.files" )/*1*/
 /**/
 */
 /*
