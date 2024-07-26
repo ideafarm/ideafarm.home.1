@@ -55,10 +55,16 @@ REST
                     }
                         break ;
                         }
-                            ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
-                            ether.osSuspendF( tinP ) ;
-                            ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
-                        {
+                            }
+                                ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
+                                ether.osSuspendF( tinP ) ;
+                                ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
+                            {
+                            else if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE )
+                                 if( !bDo                                          ) etThread.traceF( tinP , T("i will not hibernate because the heal phase took less than 2 ticks") ) ;
+
+                            boolT bDo = timeE2 || timeE1 >> 0x19 ;                          // HIBERNATE ONLY IF THIS PHASE HAS TAKEN MORE THAN 2 TICKS
+                        {                                                                   // A:ASSUME: I WILL COMPLETE WITHIN 2 TICKS IF THERE IS NO HEALING TO BE DONE ; (REQUIREMENT: DO NOT HIBERNATE IF THE ARCHIVE HAS BEEN RECENTLY HEALED)
                         if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE && !ether )
                     {
                     case IDpHASE_HEAL :
@@ -76,8 +82,8 @@ REST
                 ZE( boolT , bNamesAreStale ) ;
 
                 etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
-                etThread.osTimeNowF( tinP , time1AOK , time2AOK ) ;
-                time2AOK = time1AOK = 0 ;
+                time2AOK = timeN2 ;
+                time1AOK = timeN1 ;
 
                 cConsecutiveAborts = 0 ;
 
@@ -120,11 +126,16 @@ REST
                 bQuitFileInfo = 1 ;
             {
 
+            etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+
+            sCountT timeN2 = timeE2 ;
+            countT  timeN1 = timeE1 ;
+            etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+            ZE( sCountT , timeE2 ) ;
+            ZE( countT  , timeE1 ) ;
+
             }
                 }
-                    //etThread.osSuspendF( tinP ) ;
-                    //etThread.traceF( tinP , T("ok.  hibernating") ) ;
-
                     }
                         }
                             if( cExecutiveHealYearPaused ) { BLAMMO ; }
@@ -638,6 +649,11 @@ REST
             switchStackC swsPathToArchivesByArchiveName( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzArchive , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
             ZE( strokeS* , psttzArchive ) ;
             // LOAD swsPathToArchivesByArchiveName WITH VALUES LIKE "///c/ideafarm.arhives/" OR "///ideafarm/devices/mydevname/ideafarm.archives/" SWITCHED ON VALUES LIKE "wo.ideafarm"
+
+            etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+            ZE( sCountT , timeA2 ) ;
+            ZE( countT  , timeA1 ) ;
+
             _IO_
         {
         if( !ether )
