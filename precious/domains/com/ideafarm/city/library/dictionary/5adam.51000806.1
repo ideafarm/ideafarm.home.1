@@ -3114,6 +3114,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                             pP.ether.osTimeNowF( tinP , timeE1 , timeE2 ) ;
                             ZE( sCountT , timeE2 ) ;
                             ZE( countT  , timeE1 ) ;
+                            _IO_
                         {
                         //)
                         //    )
@@ -3139,14 +3140,17 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         }
                                             DELzOMBIE( pd ) ;
                                             imageCompareS* pd = picOuter + offd ;
+                                            _IO_
                                         {
                                         for( countT offd = 0 ; offd < pP.cResultStructsNeeded ; offd ++ )
 
                                         fileMetaS*     pfmOuter = (fileMetaS*)( picOuter + pP.cResultStructsNeeded ) ;
                                         imageCompareS* picOuter  = (imageCompareS*)&stMeta.upF( tinP , hStkMeta ) ;
+                                        _IO_
                                     {
                                     do
                                     handleC hStkMeta( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                    _IO_
                                 {
                                 if( stMeta )
                                 //if( bChatterP ) pP.ether.traceF( tinP , T("healing / 60") ) ;
@@ -3165,6 +3169,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                 // *********************************************************************************************************************************************************************************************************
                                 // *********************************************************************************************************************************************************************************************************
                                 // *********************************************************************************************************************************************************************************************************
+                                _IO_
                             {
                             if( !pP.bAbort )
 
@@ -3201,6 +3206,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                             pP.bAbort = 1 ;
                                                                             pP.ether.traceF( tinP , T("!exception:  unexpected impotence copy [rc,postRc,to,from]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
                                                                             const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                                                                            _IO_
                                                                             POOPRqUIET
                                                                             countT rc = POOP ;
                                                                         {
@@ -3208,24 +3214,29 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                         }
                                                                             thirdC::dosSleepWinkIF( tinP , 2 ) ;
                                                                             pP.ether.traceF( tinP , T("!exception:  could not copy file (access denied)) ; will retry until fired [to,from]:    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                            _IO_
                                                                             POOPRqUIET
                                                                         {
                                                                         else if( POOP == ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdENIED )
                                                                         }
                                                                             break ;
                                                                             pP.ether.traceF( tinP , T("!exception: could not copy file because destination device is write protected [to,from]:    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                            _IO_
                                                                             POOPRqUIET
                                                                         {
                                                                         else if( POOP == ifcIDiMPOTENCEbASEeRRORcODE_WRITEpROTECT )
                                                                         if( !POOP ) break ;
                                                                         tinP.pEtScratch->diskCopyFileF( tinP , psttTo , psttFrom , 1 ) ;
                                                                         SCOOPS
+                                                                        _IO_
                                                                     {
                                                                     IFsCRATCH
+                                                                    _IO_
                                                                 {
                                                                 while( !etPrime )
 
                                                                 pP.ether.traceF( tinP , T("copying [to,from]:    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
+                                                                _IO_
                                                             {
                                                             else
                                                             }
@@ -3236,6 +3247,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                 {
                                                                 else if( !( F(flagsModeP) & flHEALmODE_NOmOVEoRrEPLACE ) )
                                                                 if( bReadOnly ) ;
+                                                                _IO_
                                                             {
                                                             else if( bExists )
                                                             }
@@ -3243,6 +3255,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                     pP.ether.traceF( tinP , T("!exception: after rejecting a file out of the way, not copying because could not obtain bExists (probable drive failure) [to,from]:    ")+T(psttTo)+T("    ")+T(psttFrom) ) ;
                                                                 {
                                                                 if( !( F(flagsModeP) & flHEALmODE_NOmOVEoRrEPLACE ) )
+                                                                _IO_
                                                             {
                                                             if( pP.bAbort )
 
@@ -3258,9 +3271,11 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                     if( POOP )
                                                                     bExists = tinP.pEtScratch->diskFileExistsF( tinP , psttTo ) ;
 
+                                                                    _IO_
                                                                     SCOOPS
                                                                 {
                                                                 IFsCRATCH
+                                                                _IO_
                                                             {
                                                             if( !( F(flagsModeP) & flHEALmODE_NOmOVEoRrEPLACE ) )
 
@@ -3309,18 +3324,22 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                             SCOOPS
                                                                         {
                                                                         IFsCRATCH
+                                                                        _IO_
                                                                     {
                                                                     while( !etPrime )
                                                                     ZE( boolT , bDone ) ;
+                                                                    _IO_
                                                                 {
                                                                 else
                                                                 if( F(flagsModeP) & flHEALmODE_NOmOVEoRrEPLACE ) pP.ether.traceF( tinP , T("flHEALmODE_NOmOVEoRrEPLACE is set and the target file exists so i will not move file [toInRejects,to]:    ")+T(psttLongInRejects)+T("    ")+T(psttTo) ) ;
 
                                                                 pP.ether.strReplaceF( tinP , psttLongInRejects , psttTo , pP.tPathArchives , pP.tPathRejects ) ; ___( psttLongInRejects ) ;
                                                                 ZE( strokeS* , psttLongInRejects ) ;
+                                                                _IO_
                                                             {
                                                             if( bExists )
                                                             ZE( boolT , bReadOnly ) ;
+                                                            _IO_
                                                         {
                                                         if( !pP.bAbort )
 
@@ -3331,10 +3350,12 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                                 POOPRqUIET
                                                                 countT rc = POOP ;
+                                                                _IO_
                                                             {
                                                             if( POOP )
                                                             bExists = tinP.pEtScratch->diskFileExistsF( tinP , psttTo ) ;
 
+                                                            _IO_
                                                             SCOOPS
                                                         {
                                                         IFsCRATCH
@@ -3357,6 +3378,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 
                                                         stTo >> psttTo ;
                                                         ZE( strokeS* , psttTo ) ;
+                                                        _IO_
                                                     {
                                                     while( !pP.bAbort && stTo )
                                                     ZE( countT , cDone ) ;
@@ -3367,6 +3389,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     // ****  COPY AUTHORITATIVE FILES TO TARGET VOLUMES  *******************************************************************************************************************************************************
                                                     // ****                                              *******************************************************************************************************************************************************
                                                     // *********************************************************************************************************************************************************************************************************
+                                                    _IO_
                                                 {
                                                 if( !pP.bAbort )
                                                 pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
@@ -3386,6 +3409,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     ZE( strokeS* , psttLong ) ;
 
                                                     const strokeS* psttPathToYear = pP.pzpsttPathToYear[ offi ] ;
+                                                    _IO_
                                                 {
                                                 for( countT offi = 0 ; !pP.bAbort && offi < pP.cPathsToYear ; offi ++ )
 
@@ -3407,17 +3431,20 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                 }
                                                                     stTo.sinkF( tinP , idSlot , psttLong , flSTACKsINK_UNIQUE ) ; psttLong = 0 ;
                                                                     // //pP.ether.traceF( tinP , pP.tIndent3+T("sunk into stTo [cPlatesBefore,long]:    ")+TF2(stTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLong) ) ;
+                                                                    _IO_
                                                                 {
                                                                 else
                                                                 }
                                                                     stFrom.sinkF( tinP , idSlot , psttLong , flSTACKsINK_UNIQUE ) ; psttLong = 0 ;
                                                                     // //pP.ether.traceF( tinP , pP.tIndent3+T("sunk into stFrom [cPlatesBefore,long]:    ")+TF2(stFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLong) ) ;
+                                                                    _IO_
                                                                 {
                                                                 if( bYoungestUse && bWinner )
                                                                 ZE( countT , idSlot ) ;
 
                                                                 pP.ether.strMakeF( tinP , LF , psttLong , T(pP.pzpsttPathToYear[pfmInner->idSlotPathToYear-1])+tShortP ) ; ___( psttLong ) ;
                                                                 ZE( strokeS* , psttLong ) ;
+                                                                _IO_
                                                             {
                                                             if( bMatchImage && !( *pfmUnique - *(fileMetaS*)pfmInner ) )
 
@@ -3434,9 +3461,11 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                             //picInner->traceF( tinP , pP.tIndent3+T("inner :    ") ) ;
                                                             fileMetaS*     pfmInner = (fileMetaS*)( picInner + pP.cResultStructsNeeded ) ;
                                                             imageCompareS* picInner  = (imageCompareS*)&stMeta.upF( tinP , hStkInner ) ;
+                                                            _IO_
                                                         {
                                                         do
                                                         handleC hStkInner( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                                        _IO_
                                                     {
 
                                                     //pfmUnique->traceF( tinP , pP.st O ldPathToYear , T(bYoungestUse?"reporting tallies (youngestNotAlone):    ":"reporting tallies            (other):    ") ) ;
@@ -3450,6 +3479,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     //picUnique->traceF( tinP , pP.tIndent2+T("unique:    ") ) ;
                                                     fileMetaS*     pfmUnique = (fileMetaS*)( picUnique + pP.cResultStructsNeeded ) ;
                                                     imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tinP , hStUnique ) ;
+                                                    _IO_
                                                 {
                                                 do
                                                 handleC hStUnique( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
@@ -3462,6 +3492,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 // ****                                               ******************************************************************************************************************************************************
                                                 // *********************************************************************************************************************************************************************************************************
                                                 //if( bChatterP ) pP.ether.traceF( tinP , T("healing / f0") ) ;
+                                                _IO_
                                             {
                                             else
                                             }
@@ -3504,11 +3535,14 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                     if( !POOP )
                                                                     tinP.pEtScratch->diskMoveFileOrDirF( tinP , psttLongTo , psttLongFrom , 1 ) ;
                                                                     SCOOPS
+                                                                    _IO_
                                                                 {
                                                                 IFsCRATCH
+                                                                _IO_
                                                             {
                                                             while( !etPrime )
                                                             ZE( boolT , bDone ) ;
+                                                            _IO_
                                                         {
 
                                                         pP.ether.strReplaceF( tinP , psttLongTo , psttLongFrom , pP.tPathArchives , !bLonely ? pP.tPathRejects : pP.tPathLonely ) ; ___( psttLongTo ) ;
@@ -3520,6 +3554,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 
                                                         fileMetaS*     pfmInner = (fileMetaS*)( picInner + pP.cResultStructsNeeded ) ;
                                                         imageCompareS* picInner  = (imageCompareS*)&stMeta.upF( tinP , hStkInner ) ;
+                                                        _IO_
                                                     {
                                                     do
                                                     handleC hStkInner( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
@@ -3532,13 +3567,16 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     // ****  NO UNIQUE WINNER SO REJECT ALL COPIES  ************************************************************************************************************************************************************
                                                     // ****                                         ************************************************************************************************************************************************************
                                                     // *********************************************************************************************************************************************************************************************************
+                                                    _IO_
                                                 {
                                                 else
                                                 if( F(flagsModeP) & flHEALmODE_NOmOVEoRrEPLACE ) pP.ether.traceF( tinP , pP.tIndent1+T("no, or too many (more than 1), winners (authoritative copies), but because flHEALmODE_NOmOVEoRrEPLACE is set i will NOT move all copies [bLonely,file]:    ")+TF2(bLonely,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShortP ) ;
 
                                                 boolT bLonely = cCopies <= 1 ;
+                                                _IO_
                                             {
                                             if( !cWinners || cWinners > 1 )
+                                            _IO_
                                         {
                                         if( !pP.bAbort )
                                         pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
@@ -3561,6 +3599,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                             {
                                             do
                                             handleC hSt( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            _IO_
                                         {
                                         if( !pP.bAbort && cVotesMaxUse )
 
@@ -3605,6 +3644,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                             {
                                             do
                                             handleC hSt( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            _IO_
                                         {
                                         if( !pP.bAbort && ( timeModRoundedYoungestNotAlone || F(flagsModeP) & flHEALmODE_LONELYiSoK ) )        // IF ALL ARE ALONE THEN THERE WILL BE NO WINNER (UNLESS flHEALmODE_LONELYiSoK)
                                         ZE( countT , cVotesMaxYoungestNotAlone ) ;
@@ -3627,6 +3667,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                             {
                                             do
                                             handleC hSt( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            _IO_
                                         {
                                         if( !pP.bAbort )
                                         ZE( countT , timeModRoundedYoungestNotAlone ) ;
@@ -3671,6 +3712,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     //if( bChatter )
                                                     fileMetaS*     pfmInner = (fileMetaS*)( picInner + pP.cResultStructsNeeded ) ;
                                                     imageCompareS* picInner  = (imageCompareS*)&stMeta.upF( tinP , hStkInner ) ;
+                                                    _IO_
                                                 {
                                                 do
                                                 handleC hStkInner( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
@@ -3685,9 +3727,11 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 fileMetaS*     pfmUnique = (fileMetaS*)( picUnique + pP.cResultStructsNeeded ) ;
                                                 imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tinP , hSt ) ;
                                                 // //pP.ether.traceF( tinP , pP.tIndent2+T("tallying votes for a particular image") ) ;
+                                                _IO_
                                             {
                                             do
                                             handleC hSt( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            _IO_
                                         {
                                         ZE( countT , timeModRoundedYoungest ) ;
                                         // TALLY cVotes AND SET timeModRoundedYoungest
@@ -3705,6 +3749,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         {
                                         if( stRecUnique > 1 )
                                         ZE( boolT , bChatter ) ;
+                                        _IO_
                                     {
                                     else                            // EVEN IF THERE IS ONLY WO PLATE, THERE IS STILL WORK TO DO BECAUSE THE FILE MIGHT NEED TO BE COPIED TO DESTINATIONS THAT DON'T HAVE IT
                                     }
@@ -3724,10 +3769,12 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                     // ****                *************************************************************************************************************************************************************************************
                                     // *********************************************************************************************************************************************************************************************************
                                     //if( bChatterP ) pP.ether.traceF( tinP , T("healing / 71") ) ;
+                                    _IO_
                                 {
                                 if( !pP.bAbort )
                                 pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
                                 //if( bChatterP ) pP.ether.traceF( tinP , T("healing / 81") ) ;
+                                _IO_
                             {
                             if( !etPrime && cCopies )
                             // //pP.ether.traceF( tinP , pP.tIndent1+T("[cFound,file]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShortP ) ;
@@ -3739,6 +3786,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                             // HEALING ACTION HAS PHASES
                             // COMPARE AND FILE META FOR THIS FILE ARE SET AND READY FOR ANALYSIS AND HEALING ACTION
                             // THESE COMMENTS ARE OBSOLETED BY ACTUAL CODE WHICH CONTRADICTS THEM
+                            _IO_
                         {
                         if( !pP.bAbort )
 
@@ -3776,9 +3824,11 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 
                                                 // //pP.ether.traceF( tinP , pP.tIndent3+T("[heIsEqual]:    ")+TF2(idHeIsEqual,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 countT idHeIsEqual = stHeIsEqual.downF( tinP , hStkEqual ) ;
+                                                _IO_
                                             {
                                             do
                                             handleC hStkEqual( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            _IO_
                                         {
                                         if( !pP.bAbort )
 
@@ -3808,6 +3858,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                             countT  maskHeInMine           = BITSrESULT_ALLbITS << cBitsShiftLeftHeInMine ;
                                             countT  cBitsShiftLeftHeInMine =         ( offi % cResultsPerStruct ) << 1 ;
                                             countT& bitsResultHeInMine     = picOuter[ offi / cResultsPerStruct ].bitsResult ;
+                                            _IO_
                                         {
                                         for( countT offi = 0 ; !pP.bAbort && offi < cMeta ; offi ++ )
                                         countT cMeta = stMeta ;
@@ -3816,6 +3867,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         //picOuter->traceF( tinP , pP.tIndent2+T("outer (mine):") ) ;
 
                                         // //pP.ether.traceF( tinP , pP.tIndent2+T("transitivity: copying my results to other rows [idSlotPathToYearOuter]:    ")+TF2(idSlotPathToYearOuter,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        _IO_
                                     {
                                     if( !pP.bAbort )
                                     //SET OTHER RESULTS TO EXPLOIT TRANSITIVITY (A COPY THAT IS EQUAL TO ME RECEIVES ALL OF MY RESULTS)
@@ -3844,9 +3896,11 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                             *ppIdResultHeInMine[ offo ] |= BITSrESULT_EQUAL    << pcBitsShiftLeftHeInMine[ offo ] ;
                                         {
                                         if( pEqual[ offo ] )
+                                        _IO_
                                     {
                                     for( countT offo = 0 ; offo < cInnerImagesToInspect ; offo ++ )
                                     //if( bChatterP ) pP.ether.traceF( tinP , T("healing / e1") ) ;
+                                    _IO_
                                 {
                                 if( !pP.bAbort )
 
@@ -3867,10 +3921,12 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 pP.ether.traceF( tinP , pP.tIndent2+T("!exception: could not dt pfwsOuter [rc,postRc,cInnerImagesToInspect,tLongOuter]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc)+tb4+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
                                                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                 POOPRqUIET
+                                                _IO_
                                                 countT rc = POOP ;
                                             {
                                             if( POOP )
                                             DEL( pfwsOuter ) ;
+                                            _IO_
                                             SCOOPS
                                         {
 
@@ -3881,8 +3937,10 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                             pP.ether.traceF( tinP , pP.tIndent2+T("!exception [cbUsed,cbDone]:    ")+TT(pcbUsed[0],pcbUsed[1])+tb4+TT(pcbDone[0],pcbDone[1])+tb4+tLongOuter ) ;
                                             countT* pcbDone = (countT*)&cbDone ;
                                             countT* pcbUsed = (countT*)&pfmOuter->cbUsed ;
+                                            _IO_
                                         {
                                         if( cbDone != pfmOuter->cbUsed ) //SHOULD BE IMPOSSIBLE
+                                        _IO_
                                     {
                                     if( !( F(flagsModeP) & flHEALmODE_NOiMAGEcOMPARE ) )
 
@@ -3935,6 +3993,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 }
                                                     break ;
                                                     deleteEqualArrayFwsInnerArrayF( tinP , pP.ether , pEqual , pfwsInner , cInnerImagesToInspect ) ;
+                                                    _IO_
                                                 {
                                                 if( pP.bAbort )
 
@@ -3966,16 +4025,20 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                                     if( pP.stJobCompare )
                                                                     pP.stJobCompare.grabF( tinP , TAG( TAGiDnULL ) ) ;
                                                                     ZE( count04T , cbPendingMax04 ) ;
+                                                                    _IO_
                                                                 {
                                                                 while( pP.stJobCompare )
                                                                 ZE( boolT , bNapped ) ;
+                                                                _IO_
                                                             {
                                                             // IF A VERY LARGE FILE IS BEING PROCESSED AND I AM EVEN LARGER, WAIT BEFORE PUSHING
+                                                            _IO_
                                                         {
                                                         else
                                                         }
                                                             compareOoImagesF( tinP , etPrimeP , pP.ether , pP.bAbort , pP.cPause , pEqual[ offi ] , flagsModeP , pbwOuter , ppbwInner[ offi ] , cbwOuter /*, tLongOuter , T(pfwsInner?pfwsInner[offi]:(const strokeS*)0) , pP.tIndent3*/ ) ;
                                                             if( !pEqual[ offi ] ) { BLAMMO ; } //SHOULD BE IMPOSSIBLE BECAUSE THIS FILE IS BEING COMPARED SYNCHRONOUSLY
+                                                            _IO_
                                                         {
                                                         if( !bLargeFile )
 
@@ -3984,8 +4047,10 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                             countT perTuck = (countT)( ( idWindow << 8 ) / cWindows ) ;
                                                         {
                                                         if( bChatter )
+                                                        _IO_
                                                     {
                                                     if( pEqual[ offi ] )    // DON'T COMPARE BYTES IF ALREADY KNOW THAT A PREVIOUS WINDOW DIDN'T MATCH
+                                                    _IO_
                                                 {
                                                 if( !( F(flagsModeP) & flHEALmODE_NOiMAGEcOMPARE ) )
 
@@ -4002,6 +4067,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 // ****                                                      ***********************************************************************************************************************************************
                                                 // *********************************************************************************************************************************************************************************************************
                                                 //if( bChatterP ) pP.ether.traceF( tinP , T("healing / 52") ) ;
+                                                _IO_
                                             {
                                             else
                                             }
@@ -4010,6 +4076,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     // //pP.ether.traceF( tinP , pP.tIndent3+T("done inspecting images [cInnerImagesToInspect,cImagesInspected,cWindows,idWindow]:    ")+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cImagesInspected,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)cWindows,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 if( ++ cImagesInspected == cInnerImagesToInspect )
+                                                _IO_
                                             {
                                             if( !pbwOuter || !cbwOuter )
 
@@ -4028,6 +4095,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     !!pbwOuter != !!ppbwInner[ offi ]
                                                 (
                                                 if
+                                                _IO_
                                             {
                                             if( !( F(flagsModeP) & flHEALmODE_NOiMAGEcOMPARE ) )
 
@@ -4060,6 +4128,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 
                                                         const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                         POOPRqUIET
+                                                        _IO_
                                                         countT rc = POOP ;
                                                     {
                                                     if( POOP )
@@ -4068,6 +4137,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     pcbwInner[ offi ] = 0 ;
                                                     ppbwInner[ offi ] = 0 ;
 
+                                                    _IO_
                                                     SCOOPS
                                                 {
                                                 IFsCRATCH
@@ -4083,6 +4153,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                             // ****  GET AN INNER WINDOW  ******************************************************************************************************************************************************************************
                                             // ****                       ******************************************************************************************************************************************************************************
                                             // *********************************************************************************************************************************************************************************************************
+                                            _IO_
                                         {
                                         for( countT offi = 0 ; !pP.bAbort && offi < cInnerImagesToInspect ; offi ++ )
                                         ZE( countT , cJobsPendingCompare ) ;
@@ -4128,9 +4199,11 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                     POOPRqUIET
                                                     countT rc = POOP ;
+                                                    _IO_
                                                 {
                                                 if( POOP )
                                                 pfwsOuter->getF( tinP , pbwOuter , cbwOuter , cbFileWindow ) ;
+                                                _IO_
                                                 SCOOPS
                                             {
                                             IFsCRATCH
@@ -4179,6 +4252,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         {
                                         if( pP.bAbort )
                                         pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
+                                        _IO_
                                     {
                                     while( !etPrime && cImagesInspected < cInnerImagesToInspect )
                                     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
@@ -4201,14 +4275,17 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                 POOPRqUIET
                                                 countT rc = POOP ;
+                                                _IO_
                                             {
                                             if( POOP )
                                             new( 0 , tinP , (byteT*)pfwsOuter , sizeof( fileWindowsC ) ) fileWindowsC( tinP , *tinP.pEtScratch , tLongOuter ) ;
+                                            _IO_
                                             SCOOPS
                                         {
 
                                         // //pP.ether.traceF( tinP , pP.tIndent2+T("new [pfwsOuter]:    ")+TF3((countT)pfwsOuter,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
                                         pP.ether.newF( tinP , LF , *(byteT**)&pfwsOuter , sizeof( fileWindowsC ) ) ; ___( pfwsOuter ) ;
+                                        _IO_
                                     {
                                     if( !( F(flagsModeP) & flHEALmODE_NOiMAGEcOMPARE ) )
                                     ZE( fileWindowsC* , pfwsOuter ) ;
@@ -4218,6 +4295,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                     // ****  CT OUTER fileWindowsC INSTANCE  *******************************************************************************************************************************************************************
                                     // ****                                  *******************************************************************************************************************************************************************
                                     // *********************************************************************************************************************************************************************************************************
+                                    _IO_
                                 {
                                 IFsCRATCH
                                 //if( bChatterP ) pP.ether.traceF( tinP , T("healing / a2") ) ;
@@ -4240,9 +4318,11 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                     POOPRqUIET
                                                     countT rc = POOP ;
+                                                    _IO_
                                                 {
                                                 if( POOP )
                                                 new( 0 , tinP , (byteT*)( pfwsInner + offi ) , sizeof( fileWindowsC ) ) fileWindowsC( tinP , *tinP.pEtScratch , psttLongInner ) ;
+                                                _IO_
                                                 SCOOPS
                                             {
                                             IFsCRATCH
@@ -4254,6 +4334,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         for( countT offi = 0 ; offi < cInnerImagesToInspect ; offi ++ )
                                     {
                                     if( pfwsInner )
+                                    _IO_
                                 {
                                 if( !( F(flagsModeP) & flHEALmODE_NOiMAGEcOMPARE ) )
                                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
@@ -4294,6 +4375,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                 //20230807@1408: pcz_bUseWorkers IS NOT USED ; CONJ: THIS CODE IS LEFT OVER FROM A CRAFTWORK IDEA THAT I BEGAN TO CODE BUT THEN DID NOT COMPLETE
 
                                 //if( bChatterP ) pP.ether.traceF( tinP , T("healing / b2") ) ;
+                                _IO_
                             {
                             if( !etPrime && !pP.bAbort && cInnerImagesToInspect )
 
@@ -4332,6 +4414,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     ppIdResultMeInHis[       offResult ] = &bitsResultMeInHis     ;
                                                 {
                                                 if( ( bitsResultHeInMine & maskHeInMine ) == BITSrESULT_UNKNOWN << cBitsShiftLeftHeInMine )
+                                                _IO_
                                             {
                                             case 3 :
                                             }
@@ -4344,6 +4427,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                 if( ( bitsResultHeInMine & maskHeInMine ) == BITSrESULT_UNKNOWN << cBitsShiftLeftHeInMine )
 
                                                 // //pP.ether.traceF( tinP , pP.tIndent3+T("        maybe incrementing cInnerImagesToInspect [bitsResultHeInMine,maskHeInMine,masked,cBitsShiftLeftHeInMine,inner]:    ")+TF2(bitsResultHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(maskHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((bitsResultHeInMine&maskHeInMine),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBitsShiftLeftHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongInner ) ;
+                                                _IO_
                                             {
                                             case 2 :    // COUNT THE NUMBER OF INNER FILES FOR WHICH I MUST INSPECT THE IMAGE (I SET cInnerImagesToInspect HERE)
                                             }
@@ -4366,6 +4450,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                                     // //pP.ether.traceF( tinP , pP.tIndent3+T("        setting myself to BITSrESULT_EQUAL [&bitsResultMeInHis,bitsResultMeInHis,&cBitsShiftLeftMeInHis,cBitsShiftLeftMeInHis]:    ")+TF2(&bitsResultMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bitsResultMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(&cBitsShiftLeftMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBitsShiftLeftMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 if( pfmInner == pfmOuter )
+                                                _IO_
                                             {
                                             case 1 :    // SET bitsResult WITHOUT COMPARING FILE IMAGES
                                         {
@@ -4401,11 +4486,13 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                         if( pP.bAbort ) break ;
                                         pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
                                         // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / d2") ) ;
+                                        _IO_
                                     {
                                     do
                                     // /**/if( bChatterP ) pP.ether.traceF( tinP , T("healing / e2 /                 CCCCCCCC         [idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     handleC hStkInner( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                     ZE( countT , idInner ) ;
+                                    _IO_
                                 {
                                 if( idPass != 3 || cInnerImagesToInspect )
 
@@ -4425,6 +4512,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                                     pP.ether.newF( tinP , LF , *(countT**)&ppbwInner               , cInnerImagesToInspect ) ; ___( ppbwInner               ) ;
                                 {
                                 if( idPass == 3 && cInnerImagesToInspect )
+                                _IO_
                             {
                             for( countT idPass = 1 ; !etPrime && !pP.bAbort && idPass <= 3 ; idPass ++ )
                             ZE( countT   , offResult               ) ;
@@ -4469,6 +4557,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                             // ****                                      ***************************************************************************************************************************************************************
                             // *********************************************************************************************************************************************************************************************************
                             //if( bChatterP ) pP.ether.traceF( tinP , T("healing / e2") ) ;
+                            _IO_
                         {
                         do
                         handleC hStkOuter( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
@@ -4502,6 +4591,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                         ZE( countT , cbFileWindow ) ;                                                           //A:ASSUME: THE MAX NUMBER OF FILE WINDOWS THAT WILL EXIST FOR A FILE AT ANY TIME IS pP.cPathsToYear
      
                         pP.ether.traceF( tinP , T("processing [idName,tShort]:    ")+TF2(idNameP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShortP ) ;
+                        _IO_
                     {
                     if( !pP.bAbort )
                     pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
@@ -4515,6 +4605,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                     // *********************************************************************************************************************************************************************************************************
                     // *********************************************************************************************************************************************************************************************************
                     // *********************************************************************************************************************************************************************************************************
+                    _IO_
                 {
                 else
                 else if( !cCopies ) pP.ether.traceF( tinP , T("!exception: i found 0 copies of this listed file [tShort]:    ")+tShortP ) ;
@@ -4524,6 +4615,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                 // //pP.ether.traceF( tinP , T("[cCopies,tShort]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShortP ) ;
 
                 countT cCopies = stMeta ;
+                _IO_
             {
             if( !pP.bAbort )
             //if( bChatterP ) pP.ether.traceF( tinP , T("healing / 03") ) ;
@@ -4531,6 +4623,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
             pP.ether.delF( tinP , *(countT**)&ppInfoFile ) ;
             }
                 DEL( ppInfoFile[ offh ] ) ;
+                _IO_
             {
             for( countT offh = 0 ; offh < pP.cPathsToYear ; offh ++ )
 
@@ -4568,6 +4661,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                     {
                     if( cbUsedHighMax < ppInfoFile[ offh ]->cbUsedHigh || ( cbUsedHighMax == ppInfoFile[ offh ]->cbUsedHigh && cbUsedMax < ppInfoFile[ offh ]->cbUsed ) )
                     //if( bChatterP ) pP.ether.traceF( tinP , T("healing / 13 / 4") ) ;
+                    _IO_
                 {
                 if( ppInfoFile[ offh ] )
 
@@ -4575,6 +4669,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
 
                 TN( tLong , "" ) ; tLong = T(pP.pzpsttPathToYear[offh])+tShortP ;
                 //if( bChatterP ) pP.ether.traceF( tinP , T("healing / 13 / a") ) ;
+                _IO_
             {
             for( countT offh = 0 ; !pP.bAbort && !etPrime && offh < pP.cPathsToYear ; offh ++ )
             ZE( countT , cbUsedHighMax ) ;
@@ -4616,6 +4711,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                 {
                 for( ; offh < pP.cPathsToYear ; offh ++ )
                 ZE( countT , offh ) ;
+                _IO_
             {
             for(;;)                                                                         // NAP UNTIL ALL ELEMENTS ARE SET ; THEN SMUDGE THE "INFOfILEnOTaVAILABLE" VALUES TO 0
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
@@ -4627,6 +4723,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
                 byteT pbz[ sizeof( jobFileInfoS ) ] ;
 
                 TN( tLong , "" ) ; tLong = T(pP.pzpsttPathToYear[offh])+tShortP ;
+                _IO_
             {
             for( countT offh = 0 ; offh < pP.cPathsToYear ; offh ++ )
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
@@ -4646,6 +4743,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
             pP.ether.newF( tinP , LF , *(countT**)&ppInfoFile , pP.cPathsToYear ) ; ___( ppInfoFile ) ;
             ZE( infoFileS** , ppInfoFile ) ;
             //if( bChatterP ) pP.ether.traceF( tinP , T("healing / 43") ) ;
+            _IO_
         {
         if( !pP.bAbort )
         pauseIfF( tinP , pP.bAbort , pP.cExecutiveHealYearPaused , pP.cPause ) ;
@@ -4671,6 +4769,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
             //pP.ether.traceF( tinP , T("++++     watch") ) ;
         {
         if( bChatterP )
+        _IO_
     {
 
     //)
@@ -4684,6 +4783,7 @@ countT _export subtractHealFileJobF( tinS& tinP , countT& pEther , countT& c1P ,
     // /* if( bChatterP )*/ pP.ether.traceF( tinP , T("healing ++++ [idName]:    ")+TF2(idNameP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //bChatterP = 1 ; //U:: TO FIND A BUG
+    _IO_
 {
 voidT healShortNameF( tinS& tinP , etherC& etPrimeP , paramHealFileS& pP , textC& tShortP , const flagsT flagsModeP , const countT idNameP , const countT cShortNamesP , const countT cToHireHealP , const countT cToHireCompareP , boolT bChatterP )
 
