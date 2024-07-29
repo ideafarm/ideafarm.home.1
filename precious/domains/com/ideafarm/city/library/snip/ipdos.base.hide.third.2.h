@@ -46045,6 +46045,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     etherC&  ether ;
     strokeS* psttFolderWas ;
+    const flagsT   _flagsThreadMode2Save ;
 
     public :
 

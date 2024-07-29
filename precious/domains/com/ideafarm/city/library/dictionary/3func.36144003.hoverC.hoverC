@@ -12,6 +12,8 @@
     ether.diskMakeDirIfNeededF( tinP , psttFolderP   ) ;
     ether.diskGetHoverF(        tinP , psttFolderWas ) ; ___( psttFolderWas ) ;
 
+    THREADmODE2oN0( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+
     processGlobal5I._hoverC_idThreadNow = tinP.monitor.idThread ;
 
     processGlobal5I._hoverC_grabPathNow.grabF( tinP , TAG( TAGiDnULL ) ) ;
@@ -21,7 +23,8 @@
     {
     if( processGlobal5I._hoverC_grabPathNow.cGrabbedF() && processGlobal5I._hoverC_idThreadNow != tinP.monitor.idThread && !( F(tinP.flagsThreadMode2) & flTHREADmODE2_ALLOWmULTItHREADEDhOVER ) )
 {
-psttFolderWas( 0 )
+_flagsThreadMode2Save( tinP.flagsThreadMode2 )
+psttFolderWas( 0 ) ,
 ether( etherP ) ,
 /*1*/hoverC::hoverC( tinS& tinP , etherC& etherP , const strokeS* const psttFolderP ) :/*1*/
 
