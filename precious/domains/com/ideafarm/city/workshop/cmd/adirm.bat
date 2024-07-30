@@ -17,6 +17,13 @@ if not %cd% == D:\ideafarm.home.101\devices goto :FIN
 
 for /d %%d in (*) do @if exist %%d\* start "%%d" adirm.bat %1 %%d
 
+d:
+cd \tmp\adirm.%1
+if not %cd% == D:\tmp\adirm.%1 !exception: could not set dirctory to D:\tmp\adirm.%1
+if not %cd% == D:\tmp\adirm.%1 goto :FIN
+
+call adirm2.bat %1
+
 goto :FIN
 
 
