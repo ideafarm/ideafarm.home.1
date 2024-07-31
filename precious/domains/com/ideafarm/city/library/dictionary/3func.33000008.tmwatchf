@@ -429,7 +429,43 @@ DONE( tmWatchF )
 #if defined( NEVERdEFINED )
 //U::TO FIND A BUG (COMMENTED OUT TO STFU
 
-        if( tinP.pag1->idAdam == ifcIDaDAM_2GLASS2 && ( idCycle == 1 || !( idCycle % ( TUCK >> 4 ) ) ) ) home.idIdeaFarmKeys = etThread.idIdeaFarmKeysF( tinP ) ;
+        }
+            FIREmYSELF ;
+            etThread.traceF( tinP , T("firing myself since keys not found") ) ;
+        {
+        if( bFireSelf )
+
+        }
+            }
+                }
+                    }
+                        bFireSelf = 1 ;
+                        etThread.traceF( tinP , T("!exception: IdeaFarm (tm) keys not found") ) ;
+                    {
+                    else if( !idKeys )
+                    }
+                        etThread.traceF( tinP , T("!exception: could not obtain idIdeaFarmKeys [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
+                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    if( POOP )
+
+                    count04T idKeys = tinP.pEtScratch->idIdeaFarmKeysF( tinP ) ;
+                {
+                if( !ether && !home.idIdeaFarmKeys )
+
+                if( tinP.pag1->idAdam == ifcIDaDAM_2GLASS2 ) home.idIdeaFarmKeys = etThread.idIdeaFarmKeysF( tinP ) ;   //O: THIS OPTIMIZATION REDUCES CALLS TO WO PER TOCK WHEN GLASS2 IS RUNNING IN THE CURRENT HOME
+
+                homeS& home = homeS::homeIF() ;
+                _IO_
+            {
+
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCH
+        ZE( boolT , bFireSelf ) ;
 
         if( ++ idCycle > TUCK >> 4 && !( idCycle % 0x10 ) ) poolC::deleteEmptiesIfIF( tinP ) ; // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
 
@@ -497,7 +533,8 @@ DONE( tmWatchF )
     stackC& stIdleTimeouters = *tinP.pag1->_etherC_.pStkIdleTimeouters ;
     ZE( countT , idCycle ) ;
     //countT cSkip = 0x20 ;
-    TN( tb , " " ) ;
+    TN( tb4 , "    " ) ;
+    TN( tb  , " "    ) ;
 
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     ZE( countT , idLook ) ;
