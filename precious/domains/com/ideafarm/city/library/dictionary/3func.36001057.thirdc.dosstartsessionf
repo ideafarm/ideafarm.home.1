@@ -72,7 +72,9 @@
 
                     }
                         delF( tinP , postAll ) ;
-                        BOS( WHATsfr , BOSoK , CreateProcess( 0 , postAll , &sa , &sa , 0 , flags1 , 0 , 0 , (STARTUPINFO*)&sinfo , &pinfo ) )
+                        BOS( WHATsfr , BOSoK , CreateProcess( 0 , postAll , &sa , &sa , bInherit , flags1 , 0 , 0 , (STARTUPINFO*)&sinfo , &pinfo ) )
+
+                        boolT bInherit = processGlobal1I.idAdamRoot != ifcIDaDAM_CLOAK ;   //20240731@1430: INHERIT UNLESS I AM CLOAK (W/O ANALYSIS)
 
                         //LOGrAW( "\"\r\n" ) ;
                         //LOGrAW( postAll ) ;
