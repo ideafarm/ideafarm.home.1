@@ -32299,7 +32299,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 
 /*1*//*flHANDLEc*//*1*/
 /*3*/
-#define flHANDLEc_NOTuSED                   0xe0000195
+#define flHANDLEc_NOoWNER                   0xe0000195
 /*3*/
 #define flHANDLEc_null    0xe0000095
 
@@ -44495,7 +44495,7 @@ arguments
 /**/
 /*1*//*CCuTILITYhOMEs*//*1*/
 
-#define CCuTILITYhOMEs 0x10
+#define CCuTILITYhOMEs 0x40
 
 
 //

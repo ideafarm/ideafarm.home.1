@@ -28005,6 +28005,14 @@ code may use setIfZeAM on *(countT*)this
     osTextT             postHome[ 0x1a ] ;              // "d:\ideafarm.home.12345678"
     count04T            idIdeaFarmKeys ;
     handleC             hStash ;
+    handleC             hUtility1 ;
+    handleC             hUtility2 ;
+    handleC             hUtility3 ;
+    handleC             hUtility4 ;
+    handleC             hUtility5 ;
+    handleC             hUtility6 ;
+    handleC             hUtility7 ;
+    handleC             hUtility8 ;
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.homeS.NEWdELcLASSb!||
