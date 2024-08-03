@@ -22,7 +22,7 @@ etThread.traceF( tinP , T("ok") ) ;
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
     }
-        etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)&cWorkers , ++ idWorker , (countT)postiShortAll , costiShortAll ) ;
+        etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)&cWorkers , ++ idWorker , (countT)postiShortAll , (countT)ppostEnd ) ;
         inc02AM( cWorkers ) ;
     {
     while( cDo -- )
@@ -30,8 +30,31 @@ etThread.traceF( tinP , T("ok") ) ;
     ZE( countT , idWorker ) ;
     countT cDo = CwORKERS ;
 
-    //etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/lost.after.saved.ttt") ) ; ___( postiShortAll ) ;
-      etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/lost.before.saved.ttt") ) ; ___( postiShortAll ) ;
+    if( ppostEnd[ CwORKERS - 1 ] != postiShortAll + costiShortAll ) { BLAMMOiD( 0x98761234 ) ; }                            // ALL PARTITIONS ARE NOW VERIFIED TO BEGIN WITH '!' AND NOT BE NULL LENGTH
+    }
+        if( ppostEnd[ offe ] <= ppostEnd[ offe - 1 ] ) { BLAMMOiD( 0x72737372 ) ; }
+    {
+    for( countT offe = 1 ; offe < CwORKERS ; offe ++ )
+ 
+    }
+        if(    *ppostEnd[ offe ] != '!' ) { BLAMMOiD( 0x44448888 ) ; }
+        while( *ppostEnd[ offe ] != '!' ) ppostEnd[ offe ] ++ ;                                                              // ADJUST END FOR EACH WORKER EXCEPT LATH SO THAT END POINTS TO A '!'
+    {
+    for( countT offe = 0 ; offe < CwORKERS - 1 ; offe ++ )
+ 
+    ppostEnd[ CwORKERS - 1 ] = postiShortAll + costiShortAll ;                                                              // ppostEnd[] NOW PARTITIONS postiShortAll, BUT PARTITIONS DO NOT BEGIN WITH '!' (THE WOTH CHAR OF A SHORT NAME)
+    for( countT offe = 1 ; offe < CwORKERS - 1 ; offe ++ ) ppostEnd[ offe ] = ppostEnd[ offe - 1 ] + cEltPerWorkerRaw ;
+
+    ppostEnd[ 0 ] = postiShortAll + cEltPerWorkerRaw ;
+    osTextT* ppostEnd[ CwORKERS ] ;
+
+    const countT cEltPerWorkerRaw = costiShortAll / CwORKERS ;
+
+    if( costiShortAll < CwORKERS ) { BLAMMOiD( 0x55556666 ) ; } //ENSURES THAT cEltPerWorkerRaw IS NOT 0
+
+    //etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/lost.after.ttt") ) ; ___( postiShortAll ) ;
+      etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/lost.before.uscore.to.dot.reformat.uniquifier.seq.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/lost.dut2.ttt") ) ; ___( postiShortAll ) ;
     ZE( countT   , costiShortAll ) ;
     ZE( osTextT* , postiShortAll ) ;
 {
@@ -43,13 +66,14 @@ DONE( tmWorkerF )
     dec02AM( cWorkersP ) ;
 
     etThread.delF( tinP , posto ) ;
-    //etThread.boxPutF( tinP , T("///d/tmp/lost4.after." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
-      etThread.boxPutF( tinP , T("///d/tmp/lost4.before.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+    //etThread.boxPutF( tinP , T("///d/tmp/lost6.after." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+      etThread.boxPutF( tinP , T("///d/tmp/lost6.before.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+    //etThread.boxPutF( tinP , T("///d/tmp/lost6.dut2.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
 
     memcpy( postoc , postSeparator , costSeparator ) ; postoc += costSeparator ;
 
     }
-        if( postic > postieMe ) break ;
+        if( postic >= postieMe ) break ;
         postic = postieWo + 2 ;
 
         }
@@ -81,24 +105,18 @@ DONE( tmWorkerF )
 
     osTextT* postic = postiMe ;
 
-    costiMe = postieMe - postiMe ;
+    countT   costiMe  = postieMe - postiMe ;
+    osTextT* postieMe = ppostEndP[ idWorkerP - 1 ] ;
 
-        ++ postieMe ;
-    while( postieMe < postieShortAll && *postieMe != '!' )
+    ;
+        : ppostEndP[ idWorkerP - 2 ]
+        ? postiShortAllP
+    osTextT* postiMe = idWorkerP == 1
 
-        ++ postiMe  ;
-    while( postiMe  < postieShortAll && *postiMe  != '!' )
-
-    osTextT* postieMe = postiMe + costiMe ;
-    osTextT* postiMe  = postiShortAllP + ( idWorkerP - 1 ) * costiMe ;
-    countT   costiMe  = costiShortAllP / CwORKERS ;
-
-    osTextT* const postieShortAll = postiShortAllP + costiShortAllP ;
-
-    const countT   costiShortAllP =           pTaskP->c4 ;
-    osTextT* const postiShortAllP = (osTextT*)pTaskP->c3 ;
-    const countT   idWorkerP      =           pTaskP->c2 ;
-    countT&        cWorkersP      = *(countT*)pTaskP->c1 ;
+    osTextT** const ppostEndP      = (osTextT**)pTaskP->c4 ;
+    osTextT* const  postiShortAllP =  (osTextT*)pTaskP->c3 ;
+    const countT    idWorkerP      =            pTaskP->c2 ;
+    countT&         cWorkersP      =  *(countT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 TASK( tmWorkerF )
@@ -106,7 +124,8 @@ TASK( tmWorkerF )
 const countT  costSeparator   = sizeof postSeparator - 1 ;
 const osTextT postSeparator[] = "--------------------------\r\n" ;
 
-#define CwORKERS 8
+#define CwORKERS 0x10
+//A:ASSUME: NOT 1 OR 0
 
 //P:PERSONALITY: EACH THREAD ADJUSTS ITS WINDOW UPWARD TO BEGIN AND END AT AN '!'
 
