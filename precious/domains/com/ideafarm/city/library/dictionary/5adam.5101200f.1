@@ -14,8 +14,8 @@ etThread.traceF( tinP , T("ok") ) ;
 
 }
     etThread.delF( tinP , posto ) ;
-      etThread.boxPutF( tinP , T("///d/tmp/lost2.after.ttt") , posto , postoc - posto ) ;
-    //etThread.boxPutF( tinP , T("///d/tmp/lost2.before.ttt") , posto , postoc - posto ) ;
+    //etThread.boxPutF( tinP , T("///d/tmp/lost3.after.ttt")  , posto , postoc - posto ) ;
+      etThread.boxPutF( tinP , T("///d/tmp/lost3.before.ttt") , posto , postoc - posto ) ;
 
     etThread.delF( tinP , postiShortAll ) ;
 
@@ -36,6 +36,17 @@ etThread.traceF( tinP , T("ok") ) ;
         //boolT bSkip = postiLathWritten && !thirdC::c_strcmpIF( tinP , postic , postiLathWritten , 0 ) ;
           boolT bSkip = postiLathWritten && !memcmp( postic , postiLathWritten , costic ) ;
 
+        }
+            etThread.traceF( tinP , T("neither dot nor underscore: ")+T(postic) ) ;
+        {
+        else if( postic[ 0x2d ] != '.' )
+        }
+            etThread.traceF( tinP , T("smudged:  ")+T(postic) ) ;
+            postic[ 0x2d ] =  '.' ;
+            etThread.traceF( tinP , T("smudging: ")+T(postic) ) ;
+        {
+        if( postic[ 0x2d ] == '_' )
+
         countT costic = postieWo - postic ;
         *postieWo = 0 ;
 
@@ -52,15 +63,17 @@ etThread.traceF( tinP , T("ok") ) ;
 
     osTextT* postie = postiShortAll + costiShortAll ;
     osTextT* postic = postiShortAll ;
-      etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/from.u.all.sorted.ttt") ) ; ___( postiShortAll ) ;
-    //etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/0.all.data.meta.filenames.from.lapblack.has.duplicates.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/from.u.all.sorted.ttt") ) ; ___( postiShortAll ) ;
+      etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/0.all.data.meta.filenames.from.lapblack.has.duplicates.ttt") ) ; ___( postiShortAll ) ;
     ZE( countT   , costiShortAll ) ;
     ZE( osTextT* , postiShortAll ) ;
 {
 
 TODO
 
-/*1*/WAKEsHOWtEXT( "doodle.uniquify.even.more.intelligently" )/*1*/
+//A:ASSUME: BOTH INPUT FILES ARE SORTED ; BOTH MAY CONTAIN DUPLICATE LINES
+
+/*1*/WAKEsHOWtEXT( "doodle.remove.duplicate.lines.and.smudge.away.underscore.at.e2" )/*1*/
 /**/
 */
 /*
