@@ -1,29 +1,21 @@
 @echo off
 
-U:
-cd \ideafarm.archives.unzipped\wo.ideafarm
-if not %cd% == U:\ideafarm.archives.unzipped\wo.ideafarm echo %cd% (!exception: could not set U: current directory to wo.ideafarm)
-if not %cd% == U:\ideafarm.archives.unzipped\wo.ideafarm goto :FIN
+e:
+cd E:\recovered.from.bad
 
-if not %1z == z goto :WOyEAR
-
-for /d %%y in (*) do @call t.bat %%y
-
-goto :FIN
+rem malware:
 
 
-:WOyEAR
+if exist 2012\*.20121122@0803.20121122@0803.1321f728daeaff939719ff5e7a0e6673.*    echo WARNING: VIRUS!:    2012\*.20121122@0803.20121122@0803.1321f728daeaff939719ff5e7a0e6673.*
+if exist 2012\*.20121122@0803.20170131@0908.1321f728daeaff939719ff5e7a0e6673.*    echo WARNING: VIRUS!:    2012\*.20121122@0803.20170131@0908.1321f728daeaff939719ff5e7a0e6673.*
+if exist 2012\*.20121210@1419.20121210@1419.0a74553a0c5632d54d609aea2aeba6a4.*    echo WARNING: VIRUS!:    2012\*.20121210@1419.20121210@1419.0a74553a0c5632d54d609aea2aeba6a4.*
+if exist 2012\*.20121210@1419.20170131@0908.0a74553a0c5632d54d609aea2aeba6a4.*    echo WARNING: VIRUS!:    2012\*.20121210@1419.20170131@0908.0a74553a0c5632d54d609aea2aeba6a4.*
+if exist 2012\*.20121210@1448.20121210@1448.4b19aa6c36f388f91a9bb23ef27e07ba.*    echo WARNING: VIRUS!:    2012\*.20121210@1448.20121210@1448.4b19aa6c36f388f91a9bb23ef27e07ba.*
+if exist 2012\*.20121210@1448.20170131@0908.4b19aa6c36f388f91a9bb23ef27e07ba.*    echo WARNING: VIRUS!:    2012\*.20121210@1448.20170131@0908.4b19aa6c36f388f91a9bb23ef27e07ba.*
+if exist 2014\*.20140125@1426.20140125@1426.a33a15cf5af4f1d91d517a6940da8334.*    echo WARNING: VIRUS!:    2014\*.20140125@1426.20140125@1426.a33a15cf5af4f1d91d517a6940da8334.*
+if exist 2014\*.20140125@1426.20170306@1904.a33a15cf5af4f1d91d517a6940da8334.*    echo WARNING: VIRUS!:    2014\*.20140125@1426.20170306@1904.a33a15cf5af4f1d91d517a6940da8334.*
+if exist 2014\*.20140226@1828.20140226@1828.cdfdb423d448f823205003334fc5c3ef.*    echo WARNING: VIRUS!:    2014\*.20140226@1828.20140226@1828.cdfdb423d448f823205003334fc5c3ef.*
+if exist 2014\*.20140226@1828.20170306@1906.cdfdb423d448f823205003334fc5c3ef.*    echo WARNING: VIRUS!:    2014\*.20140226@1828.20170306@1906.cdfdb423d448f823205003334fc5c3ef.*
+if exist 2014\*.20140702@0817.20140702@0817.ad08d028c61cf7f5a0bc5bc60a77ee3c.*    echo WARNING: VIRUS!:    2014\*.20140702@0817.20140702@0817.ad08d028c61cf7f5a0bc5bc60a77ee3c.*
+if exist 2014\*.20140702@0817.20170306@2005.ad08d028c61cf7f5a0bc5bc60a77ee3c.*    echo WARNING: VIRUS!:    2014\*.20140702@0817.20170306@2005.ad08d028c61cf7f5a0bc5bc60a77ee3c.*
 
-echo woyear: %1
-
-U:
-cd %1
-if not %cd% == U:\ideafarm.archives.unzipped\wo.ideafarm\%1 echo %cd% (!exception: could not set U: current directory to year)
-if not %cd% == U:\ideafarm.archives.unzipped\wo.ideafarm\%1 goto :FIN
-
-for %%f in (*.fset.zip) do @pkzipc %%f >> d:\tmp\datameta.list.ttt
-
-cd..
-
-
-:FIN

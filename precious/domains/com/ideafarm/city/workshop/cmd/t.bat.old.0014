@@ -1,0 +1,29 @@
+@echo off
+
+U:
+cd \ideafarm.archives.unzipped\wo.ideafarm
+if not %cd% == U:\ideafarm.archives.unzipped\wo.ideafarm echo %cd% (!exception: could not set U: current directory to wo.ideafarm)
+if not %cd% == U:\ideafarm.archives.unzipped\wo.ideafarm goto :FIN
+
+if not %1z == z goto :WOyEAR
+
+for /d %%y in (*) do @call t.bat %%y
+
+goto :FIN
+
+
+:WOyEAR
+
+echo woyear: %1
+
+U:
+cd %1
+if not %cd% == U:\ideafarm.archives.unzipped\wo.ideafarm\%1 echo %cd% (!exception: could not set U: current directory to year)
+if not %cd% == U:\ideafarm.archives.unzipped\wo.ideafarm\%1 goto :FIN
+
+for %%f in (*.fset.zip) do @pkzipc %%f >> d:\tmp\datameta.list.ttt
+
+cd..
+
+
+:FIN

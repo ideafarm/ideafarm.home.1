@@ -397,7 +397,9 @@
 
         diskWalkCopyInfoS& infoP = *(diskWalkCopyInfoS*)pcArgP ;
     {
-    if( postNameP && postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] != '\\' && tinP.pEther ) // IF NOT A DIRECTORY
+    else if( tinP.pEther )
+    else if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] == '\\' ) bDoIt = 1 ; // IF A DIRECTORY
+    if( !postNameP ) ;
     ZE( boolT , bDoIt ) ;
     _IO_
 {
