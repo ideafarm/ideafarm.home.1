@@ -143,7 +143,9 @@ stackC stIdAdam( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
     #endif
 
 
-        ifcIDaDAM_ELF , ifcIDaDAM_PISS
+        ifcIDaDAM_ELF , ifcIDaDAM_PREPARElISTS , 0x5100060c , 0x5100060f
+        //ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
+        //ifcIDaDAM_ELF , ifcIDaDAM_PISS
         //ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
         //ifcIDaDAM_ELF   , ifcIDaDAM_HEALaRCHIVES , ifcIDaDAM_HIREwITHOUTdEBUGGING
         //ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
@@ -952,6 +954,8 @@ TODO
                 case ifcIDaDAM_TOOLrPTeMAIL1                         :
                 case ifcIDaDAM_TOOLrPTeMAIL0                         : // COMMENT THIS LINE OUT TO CAUSE ME TO LAUNCH EMAIL PARSER
 
+                case 0x5100060f                                      :
+                case 0x5100060c                                      :
                 case 0x51000837                                      :
                 case 0x51000833                                      :
                 case 0x510007db                                      :
@@ -1052,7 +1056,7 @@ TODO
 // THE ADDITION IN osMakeF OF SERIALIZED ACCESS TO THE idCopyLath FILE WAS TO SUPPORT ASYNCHRONOUS (PARALLEL) MAKES AND MIGHT BE THE SOURCE OF NONMONOTONIC GRABBING)
 //U:: 20221022@1516: THE NEW ASYNCHRONOUS CODE IS COMMENTED OUT BECAUSE IT DOES NOT WORK (NONMONOTONIC GRAB AND OTHER BUGS)
 
-#define PRODUCTION
+//#define PRODUCTION
 
 /*1*/WAKEsHOWtEXT( "build.eve.refresh.generated.snips" )/*1*/
 /**/

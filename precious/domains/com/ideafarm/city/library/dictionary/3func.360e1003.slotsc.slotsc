@@ -133,10 +133,10 @@
                     OStEXTAK( ostoLike , "\\" ) ;
     
                     POOPR
-                    OStEXTC(  ostoLike , idStateSpaceP , 0 ) ;                                                                thirdC::dosCreateDirIF( tinP , ostoLike ) ;
+                    OStEXTCF( ostoLike , idStateSpaceP , '0' ) ;                                                              thirdC::dosCreateDirIF( tinP , ostoLike ) ;
                     OStEXTAK( ostoLike , "\\" ) ;
                     OStEXTAK( ostoLike , "\\stateSpaces" ) ;                                                                  thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                    OStEXTCF( ostoLike , tinP.pag1->idMemorySpace , '0' ) ;                                           thirdC::dosCreateDirIF( tinP , ostoLike ) ;
+                    OStEXTCF( ostoLike , tinP.pag1->idMemorySpace , '0' ) ;                                                   thirdC::dosCreateDirIF( tinP , ostoLike ) ;
                     OStEXTAK( ostoLike , "\\" ) ;
                     OStEXTA(  ostoLike , thirdC::postUserNameIF() ) ;                                                         thirdC::dosCreateDirIF( tinP , ostoLike ) ;
                     OStEXTAK( ostoLike , "\\" ) ;
@@ -148,6 +148,8 @@
                     OStEXTAK( ostoLike , "\\backed.up.daily" ) ;                                                              thirdC::dosCreateDirIF( tinP , ostoLike ) ;
                     OStEXTAK( ostoLike , "\\ephemeral" ) ;                                                                    thirdC::dosCreateDirIF( tinP , ostoLike ) ;
                     OStEXTA(  ostoLike , postHome ) ;                                                                         thirdC::dosCreateDirIF( tinP , ostoLike ) ;
+
+                    puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
 
                     if( POOP ) { BLAMMO ; }
                     thirdC::diskFindHomeIF( tinP , postHome , sizeof postHome , "ideafarm" ) ;

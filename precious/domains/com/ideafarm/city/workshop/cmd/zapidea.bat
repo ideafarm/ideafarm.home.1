@@ -47,8 +47,8 @@ rem THE NEXT LINE PRESERVES SUBDIRECTORIES IN tmp FOR THE BENEFIT OF HOME 101 ON
 if     exist \%1\tmp\*                                                                                           del      /q \%1\tmp
 if     exist \%1\ephemeral\reports\*                                                                             rmdir /s /q \%1\ephemeral\reports
 
-if     exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%xx%\00000100\stateSpaces\9d600015\* rmdir /s /q \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%xx%\00000100\stateSpaces\9d600015
-if     exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%yy%\00000100\stateSpaces\9d600015\* rmdir /s /q \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%yy%\00000100\stateSpaces\9d600015
+if     exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%xx%\00000100\stateSpaces\510006d9\* rmdir /s /q \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%xx%\00000100\stateSpaces\510006d9
+if     exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%yy%\00000100\stateSpaces\510006d9\* rmdir /s /q \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%yy%\00000100\stateSpaces\510006d9
 
 for %%s in ( 001 002 003 004 005 006 100 ) do @call zapidea %1 %%s %ww%
 for %%s in ( 001 002 003 004 005 006 100 ) do @call zapidea %1 %%s %xx%
@@ -61,11 +61,11 @@ goto :FIN2
 
 echo zapping for memory space %2 user %3
 
-if     exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%3\00000%2\stateSpaces\0000ffff\* rmdir /s /q \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%3\00000%2\stateSpaces\0000ffff
+if     exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%3\00000%2\stateSpaces\ffff0000\* rmdir /s /q \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%3\00000%2\stateSpaces\ffff0000
 
-if not exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%3\00000%2\stateSpaces\ffffefff\* goto :FIN2
+if not exist \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%3\00000%2\stateSpaces\fffeffff\* goto :FIN2
 
-cd           \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%3\00000%2\stateSpaces\ffffefff
+cd           \%1\ephemeral\backed.up.daily\domains\com\ideafarm\ipdos\memorySpaces\%3\00000%2\stateSpaces\fffeffff
 
 if exist bkstelemetrysys.*               del bkstelemetrysys.*
 if exist bkstelemetryapp.*               del bkstelemetryapp.*

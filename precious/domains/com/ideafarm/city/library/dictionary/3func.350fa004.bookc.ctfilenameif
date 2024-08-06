@@ -16,9 +16,9 @@
             )
                     )
                         +T(".")
-                        +TF3(idStateSpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
+                        +TF3(idStateSpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                         +T(".")
-                        +TF3(idMemorySpaceP?idMemorySpaceP:tinP.pag1->idMemorySpace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
+                        +TF3(idMemorySpaceP?idMemorySpaceP:tinP.pag1->idMemorySpace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                         +T(".")
                          T(thirdC::postUserNameIF())
                     (
@@ -30,9 +30,9 @@
              tPath
         :
             +T("/")+T(postShortP)+T(".bookC")
-            +TF2(idStateSpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)
+            +TfORsTRING(idStateSpaceP)
             +T("/stateSpaces/" )
-            +T("/")+TF3(idMemorySpaceP?idMemorySpaceP:tinP.pag1->idMemorySpace,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
+            +T("/")+TfORsTRING(idMemorySpaceP?idMemorySpaceP:tinP.pag1->idMemorySpace)
             +T(thirdC::postUserNameIF())
              T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")
         ?
