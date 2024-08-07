@@ -19,7 +19,11 @@ listC::deleteIF( tinP , count2S( LISTnAME_ROOTaPPLICATION , 0 ) ) ;
     SAYfIELDoUT( "field1" ) ;
     listC::fieldIF( tinP , pOut , hRec , pczField1 , _1_queryC() + _1_modeAllC() , LF ) ;
 
-    DELlIST( fieldEditParamOutC , pOut ) ;
+    }
+        DELlIST( fieldEditParamOutC , pOut ) ;
+        puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+    {
+    //DELlIST( fieldEditParamOutC , pOut ) ;
     listC::fieldIF( tinP , pOut , hRec , pczField1 , _1_purgeC( 6 ) + _1_ok_notEqual_C( "ooooooooooooooo" ) , LF ) ;
 
     SAYfIELDoUT( "field1" ) ;
@@ -30,6 +34,7 @@ listC::deleteIF( tinP , count2S( LISTnAME_ROOTaPPLICATION , 0 ) ) ;
     }
         }
             DELlIST( fieldEditParamOutC , pOut ) ;
+            puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
             listC::fieldIF( tinP , pOut , hRec , pczField1 , _1_pushC( postv[ offv ] ) + _1_modePushSinkC() , LF ) ;
         {
         for( countT offv = 0 ; offv < sizeof postv / sizeof postv[ 0 ] ; offv ++ )

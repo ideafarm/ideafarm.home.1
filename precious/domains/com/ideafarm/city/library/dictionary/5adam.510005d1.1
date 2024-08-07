@@ -487,6 +487,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                     break ;
 
                     DELlIST( fieldEditParamOutC , pOutMaster ) ;
+                    puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                     if( !POOP ) sOut << ( postzEmail ? (strokeS*)T(postzEmail) : (strokeS*)0 ) ;
 
                     if( !POOP && pOutMaster && pOutMaster->spBlob ) postzEmail = pOutMaster->spBlob ;
@@ -538,7 +539,11 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                         }
                             THREADmODE3rESTORE
                             }
-                                DELlIST( fieldEditParamOutC , pOutMaster ) ;
+                                }
+                                    DELlIST( fieldEditParamOutC , pOutMaster ) ;
+                                    puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                                {
+                                //DELlIST( fieldEditParamOutC , pOutMaster ) ;
 
                                 }
                                     }
@@ -585,7 +590,11 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                             if( bNew ) // IF WASN'T ON THE HELPER LIST THEN ADD THIS ACCOUNT TO THE MASTER LIST
 
                             }
-                                DELlIST( fieldEditParamOutC , pOutHelper ) ;
+                                }
+                                    DELlIST( fieldEditParamOutC , pOutHelper ) ;
+                                    puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                                {
+                                //DELlIST( fieldEditParamOutC , pOutHelper ) ;
                                 }
                                     }
                                         if( !POOP ) idAccount = *pczIdAccount ;
