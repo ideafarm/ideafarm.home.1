@@ -46,9 +46,9 @@
 
     }
         if( third ) return ;
-            etherC::etRockIF( tinP ).traceF( tinP , T("ifFileNameC bad parameter [postP]: ")+T(postP) ) ;                                                      //20240807@1007: osFileNameC AND ifFileNameC CAN BE ENHANCED IF SUCH SUPPORT BECOMES NECESSARY
-        if( bFail && tinP.pEther )                                                                                                                             //20240807@1007: IT IS HENCEFORTH EXPLICITLY ILLEGAL FOR IPDOS FORMAT FILE NAMES TO CONTAIN BLANKS OR DOUBLE QUOTES
-        boolT bFail = thirdC::c_strstrIF( tinP , postP , "/" ) || thirdC::c_strstrIF( tinP , postP , " " ) || thirdC::c_strstrIF( tinP , postP , "\"" ) ;      //20240807@1007: ENFORCE PROHIBITION ON FILE NAMES CONTAINING BLANKS OR DOUBLE QUOTES
+            etherC::etRockIF( tinP ).traceF( tinP , T("ifFileNameC bad parameter [postP]: ")+T(postP) ) ;
+        if( bFail && tinP.pEther )
+        boolT bFail = !!thirdC::c_strstrIF( tinP , postP , "/" ) ;
         if( third ) return ;
         __Z( postP ) ;
         if( third ) return ;
