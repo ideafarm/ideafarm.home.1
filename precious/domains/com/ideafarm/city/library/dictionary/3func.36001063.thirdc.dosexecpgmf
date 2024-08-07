@@ -54,9 +54,8 @@
 
             delF( tinP , postAll ) ;
             }
-                BOSpOOP
-
-                tinP.pEther->traceF( tinP , T("could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                tinP.pEther->traceF( tinP , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
+                //tinP.pEther->traceF( tinP , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                 //LOGrAW( "\"\r\n" ) ;
                 //LOGrAW( postAll ) ;
@@ -74,11 +73,11 @@
                 ZE( osTextT* , postp ) ;
                 //THIS CODE IS DUPLICATED IN 102006a AND 102005d
 
-                tinP.pEther->traceF( tinP , T("dosExecPgmF/CreateProcess/failed and GetLastError returned [brcRaw]:    ")+TF2(tinP.brcRaw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                //LOGrAW3( "dosExecPgmF/CreateProcess/failed and GetLastError returned [brcRaw]:    " , tinP.brcRaw , "\r\n" ) ;
-                BOSdOnOTtEST( WHATgbo , GetLastError() )
+                tinP.pEther->traceF( tinP , T("dosExecPgmF / CreateProcess / failed [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
+                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                countT rc = POOP ;
             {
-            if( tinP.bosFail )
+            if( POOP )
 
             }
                 }
@@ -86,6 +85,7 @@
 
                     }
                         }
+                            BOSpOOP
                             BOS( WHATsfr , BOSoK , CreateProcess( 0 , postAll , &sa , &sa , bInherit , flags1 , 0 , 0 , (STARTUPINFO*)&sinfo , &pinfo ) )
 
                             boolT bInherit = processGlobal1I.idAdamRoot != ifcIDaDAM_CLOAK ;   //20240731@1430: INHERIT UNLESS I AM CLOAK (W/O ANALYSIS)
