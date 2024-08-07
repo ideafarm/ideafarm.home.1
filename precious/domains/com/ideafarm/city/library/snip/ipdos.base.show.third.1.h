@@ -1,4 +1,7 @@
 
+#define ifcIDzIPPER_INFOZIP         2
+#define ifcIDzIPPER_PKZIPC          1
+
 #define TfORsTRING(idP) ( TF3(idP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) )
 
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System

@@ -258,89 +258,10 @@ voidT diskWaitDirF_b64P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
 
 voidT diskZipF_4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttToP ) ;
-    if( !POOP ) { slP >> psttToP ; ___( psttToP ) ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttFromP ) ;
-    if( !POOP ) { slP >> psttFromP ; ___( psttFromP ) ; idArgNext ++ ; }
-
-    ZE( flagsT , flagsP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0x0 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                flagsP = flZIP_null ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinP , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0x0 , etherC )
-                if( !POOP ) { slP >> flagsP ; idArgNext ++ ; }
-            }
-        }
-    }
-    if( !POOP ) etherP.diskZipF( tinP , psttToP , psttFromP , flagsP ) ;
-    etherP.delF( tinP , psttFromP ) ;
-    etherP.delF( tinP , psttToP ) ;
 }
 
 voidT diskZipF_4Po4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttArgsInfoZipP ) ;
-    if( !POOP ) { slP >> psttArgsInfoZipP ; ___( psttArgsInfoZipP ) ; idArgNext ++ ; }
-
-    ZE( strokeS* , psttArgsPkZipP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                psttArgsPkZipP = 0 ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinP , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-                if( !POOP ) { slP >> psttArgsPkZipP ; idArgNext ++ ; }
-            }
-        }
-    }
-    if( !POOP ) etherP.diskZipF( psttArgsInfoZipP , tinP , psttArgsPkZipP ) ;
-    etherP.delF( tinP , psttArgsPkZipP ) ;
-    etherP.delF( tinP , psttArgsInfoZipP ) ;
 }
 
 voidT diskUnzipF_4P4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
