@@ -10,10 +10,9 @@
 REST
 
 etherC::loafIF( tinP ) ;
-CONoUTrAW( "loafing\r\n" ) ;
-LOGrAW( "ok\r\n" ) ;
-CONoUTrAW( "ok\r\n" ) ;
+etThread.traceF( tinP , T("ok") ) ;
 
+THREADmODE2rESTORE
 THREADmODE3rESTORE
 
 CONoUTrAW( "after destroying master pool/-:\r\n" ) ;
@@ -29,17 +28,21 @@ listC::chatterIF( tinP , pczRoot ) ;
 CONoUTrAW( "after destroying master pool/+:\r\n" ) ;
 
 }
-    CONoUTrAW( "after creating record \"app\"/-:\r\n" ) ;
+    etThread.traceF( tinP , T("after creating record/ ----") ) ;
     }
-        CONoUTrAW( "index/-:\r\n" ) ;
+        etThread.traceF( tinP , T("after creating record / puseIndex (HOMEtEMP) / ----") ) ;
         listC::chatterIF( tinP , pczRoot ) ;
-        CONoUTrAW( "index/+:\r\n" ) ;
+        etThread.traceF( tinP , T("after creating record / puseIndex (HOMEtEMP) / ++++") ) ;
     
         puseC puseIndex( tinP , ifcIDpOOL_HOMEtEMP ) ;
+        _IO_
     {
     
+    etThread.traceF( tinP , T("after creating record / puseMaster / ----") ) ;
     listC::chatterIF( tinP , pczRoot ) ;
-    CONoUTrAW( "after creating record \"app\"/+:\r\n" ) ;
+    etThread.traceF( tinP , T("after creating record / puseMaster / ++++") ) ;
+    etThread.traceF( tinP , T("after creating record/ ++++") ) ;
+    
 
     }
 //        if( idTrial % 2 ) { BLAMMO ; }
@@ -54,12 +57,17 @@ CONoUTrAW( "after destroying master pool/+:\r\n" ) ;
         entry << *pczfTime ;
     
         recordC entry( tinP , count5S( LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , PUSE.dispenseUniqueListNameF() ) ) ;
+        _IO_
     {
 
     CONoUTrAW3( "[idTrial]: " , idTrial , idTrial % 2 ? " (i will blammo)\r\n" : "\r\n" ) ;
     }
-        while( !idTrial ) ;
-        do idTrial = 1 + incv02AM( *pcIdTrial ) ;
+        //while( !idTrial ) ;
+        //do idTrial = 1 + incv02AM( *pcIdTrial ) ;
+
+        etThread.traceF( tinP , T("********        ********        ********        ********[*pcIdTrial]:    ")+TF2(*pcIdTrial,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+        *pcIdTrial += 0x11111111 ; //20240806@2227: DOODLE TO MAKE LOCATION OF DATA MORE OBVIOUS IN CHATTER TRACE
     
         THREADmODE4rESTORE
         countT*  pcIdTrial = vspIdTrialLath ;
@@ -67,12 +75,24 @@ CONoUTrAW( "after destroying master pool/+:\r\n" ) ;
         countVSP vspIdTrialLath = listC::countIF( tinP , globals , count2S( *pczfIdTrial ) ) ;
     
         recordC globals( tinP , count4S( LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD ) ) ;
+        _IO_
     {
     ZE( countT , idTrial ) ;
 
-    //CONoUTrAW( "after creating 3 word definitions/-:\r\n" ) ;
-    //listC::chatterIF( tinP , pczRoot ) ;
-    //CONoUTrAW( "after creating 3 word definitions/+:\r\n" ) ;
+    etThread.traceF( tinP , T("after creating 2 definitions/ ----") ) ;
+    }
+        etThread.traceF( tinP , T("after creating 2 definitions / puseIndex (HOMEtEMP) / ----") ) ;
+        listC::chatterIF( tinP , pczRoot ) ;
+        etThread.traceF( tinP , T("after creating 2 definitions / puseIndex (HOMEtEMP) / ++++") ) ;
+    
+        puseC puseIndex( tinP , ifcIDpOOL_HOMEtEMP ) ;
+        _IO_
+    {
+    
+    etThread.traceF( tinP , T("after creating 2 definitions / puseMaster / ----") ) ;
+    listC::chatterIF( tinP , pczRoot ) ;
+    etThread.traceF( tinP , T("after creating 2 definitions / puseMaster / ++++") ) ;
+    etThread.traceF( tinP , T("after creating 2 definitions/ ++++") ) ;
     
     //listC::dictionaryReplaceOsTextIF( tinP , pczfNickName ) ;
     //listC::dictionaryReplaceOsTextIF( tinP , pczfDate ) ;
@@ -83,22 +103,27 @@ CONoUTrAW( "after destroying master pool/+:\r\n" ) ;
     countT pczfTime[] = { (countT)"time" , 0 } ;
     countT pczfIdTrial[] = { (countT)"idTrial" , 0 } ;
 
-    CONoUTrAW( "before anything/-:\r\n" ) ;
+    etThread.traceF( tinP , T("before anything/ ----") ) ;
     }
-        CONoUTrAW( "index/-:\r\n" ) ;
+        etThread.traceF( tinP , T("before anything / puseIndex (HOMEtEMP) / ----") ) ;
         listC::chatterIF( tinP , pczRoot ) ;
-        CONoUTrAW( "index/+:\r\n" ) ;
+        etThread.traceF( tinP , T("before anything / puseIndex (HOMEtEMP) / ++++") ) ;
     
         puseC puseIndex( tinP , ifcIDpOOL_HOMEtEMP ) ;
+        _IO_
     {
     
+    etThread.traceF( tinP , T("before anything / puseMaster / ----") ) ;
     listC::chatterIF( tinP , pczRoot ) ;
-    CONoUTrAW( "before anything/+:\r\n" ) ;
+    etThread.traceF( tinP , T("before anything / puseMaster / ++++") ) ;
+    etThread.traceF( tinP , T("before anything/ ++++") ) ;
     
     puseC puseMaster( tinP , "master" , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
+    _IO_
 {
 countT pczRoot[] = { LISTnAME_ROOT , 0 } ;
 THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
+THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )   //20240806@2205: ADDED W/O ANALYSIS
 
 //CONoUTrAW( "\"\r\n" ) ;
 //CONoUTrAW( postMyNickName ) ;
@@ -128,6 +153,7 @@ ZE( countT  , timeN1 ) ;
     sgnDone.waitF( tinP ) ;
     ether.osThreadAdamF( tinP , ifcIDaDAM_PREPARElISTS , 0 , flOStHREADaDAMf_null , &sgnDone ) ;
     signC sgnDone( tinP , TAG( TAGiDnULL ) ) ;
+    _IO_
 {
 
 TODO
