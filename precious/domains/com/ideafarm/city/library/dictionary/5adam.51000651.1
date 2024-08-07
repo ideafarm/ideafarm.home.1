@@ -120,11 +120,11 @@ etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)tBounce , (countT)(str
 //20161112@1559: DISABLED AS PART OF ENHANCING 6d9 TO OPTIONALLY RENAME ALL LOCAL MASTER FILES TO NUMERIC NAMES, PRESERVING THE ORIGINAL NAME IN A HASH LOOKUP FILE
 
 }
-    etThread.osThreadF( TaRG1( tmRenameF ) , (countT)psttDropIn , (countT)psttNeverDropHere ) ;
+    etThread.osThreadF( TaRG1( tmRenameF ) , (countT)psttDropIn /*, (countT)psttNeverDropHere*/ ) ;
 
-    etThread.strMakeF( tinP , LF , psttNeverDropHere , tNeverDropHere ) ; ___( psttNeverDropHere ) ;
+    //etThread.strMakeF( tinP , LF , psttNeverDropHere , tNeverDropHere ) ; ___( psttNeverDropHere ) ;
     etThread.strMakeF( tinP , LF , psttDropIn , tDropIn ) ; ___( psttDropIn ) ;
-    ZE( strokeS* , psttNeverDropHere ) ;
+    //ZE( strokeS* , psttNeverDropHere ) ;
     ZE( strokeS* , psttDropIn ) ;
 {
 
@@ -177,7 +177,7 @@ etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)tBounce , (countT)(str
         &tDropIn2       , // 7
         &tDropIn1       , // 6 OPTIONAL: NOT CREATED UNLESS NONE EXIST
         &tDropIn        , // 5 OPTIONAL: NOT CREATED UNLESS NONE EXIST
-        &tNeverDropHere , // 4
+        //&tNeverDropHere , // 4
         &tDropArchive   , // 3
         &tBounce        , // 2
         &tDeskUser      , // 1
@@ -185,16 +185,17 @@ etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)tBounce , (countT)(str
     {
     textC* pptDir[] =
 {
-TN( tPickSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickSoil      += tUser+T("/Pick Up SOIL (tm) Reply Text Here/"             ) ;
-TN( tPickToProcess , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickToProcess += tUser+T("/filesets.awaiting.copying.into.an.archive/"     ) ;
-TN( tEatingSoil    , "///ideafarm/IdeaFarm " "(tm)/" ) ; tEatingSoil    += tUser+T("/SOIL (tm) Text Being Eaten/"                    ) ;
-TN( tDropSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropSoil      += tUser+T("/Drop a Copy of SOIL (tm) Text Here/"            ) ;
-TN( tDropIn2       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn2       += tUser+T("/Drop Files Here To Archive Them/voice.recorder/") ;
-TN( tDropIn1       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn1       += tUser+T("/Drop Files Here To Archive Them/camera/"        ) ;
-TN( tDropIn        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn        += tUser+T("/Drop Files Here To Archive Them/"               ) ;
-TN( tNeverDropHere , "///ideafarm/IdeaFarm " "(tm)/" ) ; tNeverDropHere += tUser+T("/never.drop.here/"                               ) ;
-TN( tDropArchive   , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropArchive   += tUser+T("/Drop Files Here To Archive/"                    ) ;
-TN( tBounce        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tBounce        += tUser+T("/Pick Up Rejected Files Here/"                   ) ;
+TN( tPickToProcess , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickToProcess += tUser+T("/2.2. Filesets Awaiting Flushing To An Archive/"      ) ;
+TN( tDropIn2       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn2       += tUser+T("/2.1. Drop Files Here To Archive Them/voice.recorder/") ;
+TN( tDropIn1       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn1       += tUser+T("/2.1. Drop Files Here To Archive Them/camera/"        ) ;
+TN( tDropArchive   , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropArchive   += tUser+T("/2.1. Drop Files Here To Archive Them/"               ) ;
+TN( tDropIn        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn        += tUser+T("/2.1. Drop Files Here To Archive Them/"               ) ;
+TN( tPickSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickSoil      += tUser+T("/1.4. Pick Up Completed SOIL (tm) Text Files Here/"   ) ;
+TN( tBounce        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tBounce        += tUser+T("/1.3. Pick Up Rejected SOIL (tm) Text Files Here/"    ) ;
+TN( tEatingSoil    , "///ideafarm/IdeaFarm " "(tm)/" ) ; tEatingSoil    += tUser+T("/1.2. SOIL (tm) Text Files Being Eaten/"              ) ;
+TN( tDropSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropSoil      += tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/"      ) ;
+
+//TN( tNeverDropHere , "///ideafarm/IdeaFarm " "(tm)/" ) ; tNeverDropHere += tUser+T("/never.drop.here/"                                   ) ;
 
 TN( tDeskUser     , "///ideafarm/IdeaFarm " "(tm)/"  ) ; tDeskUser += tUser+T("/") ;
 TN( tDesk         , "///ideafarm/IdeaFarm " "(tm)/"  ) ;
@@ -215,7 +216,7 @@ TODO
 
 //DONE( tmFixArcNamesF )
 //etThread.traceF( tinP , T("archive: fixed  bad file names, if any") ) ;
-//etThread.disk FixBadFileNamesF( tinP , T("///ideafarm/IdeaFarm " "(tm)/")+T(thirdC::postUserNameIF())+T("/Drop Files Here To Archive/") ) ;
+//etThread.disk FixBadFileNamesF( tinP , T("///ideafarm/IdeaFarm " "(tm)/")+T(thirdC::postUserNameIF())+T("/2.1. Drop Files Here To Archive Them/") ) ;
 //etThread.traceF( tinP , T("archive: fixing bad file names, if any") ) ;
 //TASK( tmFixArcNamesF )
 
@@ -660,7 +661,7 @@ DONE( tmRenameF )
             ZE( countT , cDirs ) ;
     
             strokeS* psttzTo = tTo ;
-            TN( tTo , "///ideafarm/IdeaFarm " "(tm)/" ) ; tTo += tUser+T("/filesets.awaiting.copying.into.an.archive/") ;
+            TN( tTo , "///ideafarm/IdeaFarm " "(tm)/" ) ; tTo += tUser+T("/2.2. Filesets Awaiting Flushing To An Archive/") ;
 
             if( bWoth ) bWoth = 0 ;
             _IO_
@@ -679,16 +680,16 @@ DONE( tmRenameF )
 
     TN( tUser , thirdC::postUserNameIF() ) ;
 
-    etThread.delF( tinP , psttNeverDropHereP ) ;
-    TN( tNeverDropHere , psttNeverDropHereP ) ;
+    //etThread.delF( tinP , psttNeverDropHereP ) ;
+    //TN( tNeverDropHere , psttNeverDropHereP ) ;
     TN( tDropIn        , psttDropInP        ) ;
 
-    strokeS* psttNeverDropHereP = (strokeS*)pTaskP->c2 ;
+    //strokeS* psttNeverDropHereP = (strokeS*)pTaskP->c2 ;
     strokeS* psttDropInP        = (strokeS*)pTaskP->c1 ;
 
     _IO_
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+if( pTaskP && pTaskP->c1 /*&& pTaskP->c2*/ )
 TASK( tmRenameF )
 
 }

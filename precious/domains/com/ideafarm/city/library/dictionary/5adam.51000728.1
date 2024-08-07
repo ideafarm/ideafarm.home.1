@@ -158,16 +158,16 @@ etThread.osThreadF( TaRG1( tmFixArcNamesF ) ) ; // REDUNDANT, JUST IN CASE A FIL
     {
     textC* pptDir[] =
 {
-TN( tPickSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickSoil      += tUser+T("/Pick Up SOIL (tm) Reply Text Here/"             ) ;
-TN( tPickToProcess , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickToProcess += tUser+T("/filesets.awaiting.copying.into.an.archive/"     ) ;
-TN( tEatingSoil    , "///ideafarm/IdeaFarm " "(tm)/" ) ; tEatingSoil    += tUser+T("/SOIL (tm) Text Being Eaten/"                    ) ;
-TN( tDropSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropSoil      += tUser+T("/Drop a Copy of SOIL (tm) Text Here/"            ) ;
-TN( tDropIn2       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn2       += tUser+T("/Drop Files Here To Archive Them/voice.recorder/") ;
-TN( tDropIn1       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn1       += tUser+T("/Drop Files Here To Archive Them/camera/"        ) ;
-TN( tDropIn        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn        += tUser+T("/Drop Files Here To Archive Them/"               ) ;
+TN( tPickSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickSoil      += tUser+T("/1.4. Pick Up Completed SOIL (tm) Text Files Here/"             ) ;
+TN( tPickToProcess , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickToProcess += tUser+T("/2.2. Filesets Awaiting Flushing To An Archive/"     ) ;
+TN( tEatingSoil    , "///ideafarm/IdeaFarm " "(tm)/" ) ; tEatingSoil    += tUser+T("/1.2. SOIL (tm) Text Files Being Eaten/"                    ) ;
+TN( tDropSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropSoil      += tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/"            ) ;
+TN( tDropIn2       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn2       += tUser+T("/2.1. Drop Files Here To Archive Them/voice.recorder/") ;
+TN( tDropIn1       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn1       += tUser+T("/2.1. Drop Files Here To Archive Them/camera/"        ) ;
+TN( tDropIn        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn        += tUser+T("/2.1. Drop Files Here To Archive Them/"               ) ;
 TN( tNeverDropHere , "///ideafarm/IdeaFarm " "(tm)/" ) ; tNeverDropHere += tUser+T("/never.drop.here/"                               ) ;
-TN( tDropArchive   , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropArchive   += tUser+T("/Drop Files Here To Archive/"                    ) ;
-TN( tBounce        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tBounce        += tUser+T("/Pick Up Rejected Files Here/"                   ) ;
+TN( tDropArchive   , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropArchive   += tUser+T("/2.1. Drop Files Here To Archive Them/"                    ) ;
+TN( tBounce        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tBounce        += tUser+T("/1.3. Pick Up Rejected SOIL (tm) Text Files Here/"                   ) ;
 
 TN( tDesk         , "///ideafarm/IdeaFarm " "(tm)/"  ) ;
 TN( tUser         , thirdC::postUserNameIF() ) ;
@@ -187,7 +187,7 @@ TODO
 
 DONE( tmFixArcNamesF )
 etThread.traceF( tinP , T("archive: fixed  bad file names, if any") ) ;
-etThread.disk FixBadFileNamesF( tinP , T("///ideafarm/IdeaFarm " "(tm)/")+T(thirdC::postUserNameIF())+T("/Drop Files Here To Archive/") ) ;
+etThread.disk FixBadFileNamesF( tinP , T("///ideafarm/IdeaFarm " "(tm)/")+T(thirdC::postUserNameIF())+T("/2.1. Drop Files Here To Archive Them/") ) ;
 etThread.traceF( tinP , T("archive: fixing bad file names, if any") ) ;
 TASK( tmFixArcNamesF )
 
@@ -555,7 +555,7 @@ DONE( tmRenameF )
             ZE( countT , cDirs ) ;
     
             strokeS* psttzTo = tTo ;
-            TN( tTo , "///ideafarm/IdeaFarm " "(tm)/" ) ; tTo += tUser+T("/filesets.awaiting.copying.into.an.archive/") ;
+            TN( tTo , "///ideafarm/IdeaFarm " "(tm)/" ) ; tTo += tUser+T("/2.2. Filesets Awaiting Flushing To An Archive/") ;
 
             if( bWoth ) bWoth = 0 ;
         {
