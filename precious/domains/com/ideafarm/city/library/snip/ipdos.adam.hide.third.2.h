@@ -29891,7 +29891,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34196.thirdC.diskWalkGatherF!||
  voidT diskWalkTimePrefixF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34197.thirdC.diskWalkTimePrefixF!||
- voidT diskWalkRenameForArchivalF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postToP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP = 0 ) ;
+ voidT diskWalkRenameForArchivalF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postToP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34198.thirdC.diskWalkRenameForArchivalF!||
  voidT setFileTimeF( tinS& tinP , const handleC& hFileP , timeS* pTimeWrittenP , timeS* pTimeCreatedP = 0 , timeS* pTimeAccessedP = 0 ) ;
  static voidT getFileTimeIF( tinS& tinP , const handleC& hFileP , timeS* pTimeWrittenP , timeS* pTimeCreatedP = 0 , timeS* pTimeAccessedP = 0 ) ;
@@ -33109,7 +33109,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341be.etherC.diskWalkGatherF!||
  voidT diskWalkTimePrefixF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const strokeS* const psttFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341bf.etherC.diskWalkTimePrefixF!||
- voidT diskWalkRenameForArchivalF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const strokeS* const psttToP , const strokeS* const psttFromP , diskWalkCopyCBFT pCbfP = 0 ) ;
+ voidT diskWalkRenameForArchivalF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const strokeS* const psttToP , const strokeS* const psttFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341c0.etherC.diskWalkRenameForArchivalF!||
 // countT disk FixBadFileNamesF( tinS& tinP , const strokeS* const psttFolderP , const flagsT flagsP = flETHERfIXnAMES_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021d9.etherC.diskFixBadFileNamesF!||

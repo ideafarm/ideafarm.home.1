@@ -655,8 +655,10 @@ DONE( tmRenameF )
     etThread.delF( tinP , psttmDropIn ) ;
     }
         }
-            CONoUTrAW5( "" , cDirs , " " , cFiles , "\r\n" ) ;
-            etThread.diskWalkRenameForArchivalF( tinP , cDirs , cFiles , ether , psttzTo , psttmDropIn , myCBF ) ;
+            etThread.traceF( tinP , T("tmRenameF / [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.diskWalkRenameForArchivalF( tinP , cDirs , cFiles , ether , psttzTo , psttmDropIn , myCBF , pcArg ) ;
+            etThread.traceF( tinP , T("tmRenameF / [&etThread]:    ")+TF3((countT)&etThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+            countT pcArg[] = { (countT)&etThread } ;
             ZE( countT , cFiles ) ;
             ZE( countT , cDirs ) ;
     
@@ -683,6 +685,7 @@ DONE( tmRenameF )
     //etThread.delF( tinP , psttNeverDropHereP ) ;
     //TN( tNeverDropHere , psttNeverDropHereP ) ;
     TN( tDropIn        , psttDropInP        ) ;
+    TN( tb4 , "    " ) ;
 
     //strokeS* psttNeverDropHereP = (strokeS*)pTaskP->c2 ;
     strokeS* psttDropInP        = (strokeS*)pTaskP->c1 ;
@@ -694,7 +697,27 @@ TASK( tmRenameF )
 
 }
     return bDoIt ;
-    boolT bDoIt = 1 ;
+    if( !bDoIt ) etherP.traceF( tinP , T("myCBF / rejected [cWords,psttName]:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tIffn ) ;
+    boolT bDoIt = cWords == 7 ; // ACCEPT IFF THERE IS EXACTLY WO SUBFOLDER
+
+    etherP.delF( tinP , pstt1w ) ;
+    }
+        etherP.traceF( tinP , T("myCBF / [word]:    ")+T(psttc1) ) ;
+    {
+    FORsTRINGSiN1( pstt1w )
+    countT cWords = etherP.strWordsF( tinP , pstt1w , tIffn , sttq , T("/") ) ; ___( pstt1w ) ;
+    strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+    ZE( strokeS* , pstt1w ) ;
+
+    etherP.traceF( tinP , T("myCBF / [iffn]:    ")+tIffn ) ;
+
+    TN( tIffn , iffn ) ;
+    ifFileNameC iffn( tinP , etherP , postNameP ) ;
+
+    etherP.traceF( tinP , T("myCBF / [&etherP]:    ")+TF3((countT)&etherP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+    etherC& etherP = *(etherC*)( (countT*)infoP.pcArgApp[ 5 ] )[ 0 ] ;
+
+    diskWalkCopyInfoS& infoP = *(diskWalkCopyInfoS*)pcArgP ;
 {
 boolT myCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP )
 
