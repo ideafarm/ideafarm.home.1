@@ -23,7 +23,7 @@ etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
                 }
                     }
                         }
-                            etThread.osThreadF( TaRG1( tmObeySoilF ) , (countT)&cFail , (countT)&grabObey , (countT)(strokeS*)tPickSoil , (countT)(strokeS*)tBounce , (countT)psttFileName , (countT)psttTmpKtCodeSoii , (countT)posti , costi ) ; psttFileName = 0 ; posti = 0 ;
+                            etThread.osThreadF( TaRG1( tmObeySoilF ) , (countT)&cFail , (countT)&grabObey , (countT)(strokeS*)t14PickSoil , (countT)(strokeS*)t13Bounce , (countT)psttFileName , (countT)psttTmpKtCodeSoii , (countT)posti , costi ) ; psttFileName = 0 ; posti = 0 ;
                             etThread.strMakeF( tinP , LF , psttFileName , tFileBeingEaten ) ; ___( psttFileName ) ;
                             ZE( strokeS* , psttFileName ) ;
 
@@ -68,7 +68,7 @@ etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
 
                             etThread.delF( tinP , psttShort ) ;
                             etThread.delF( tinP , psttPath ) ;
-                            tFileBeingEaten = tEatingSoil+T(psttShort) ;
+                            tFileBeingEaten = t12EatingSoil+T(psttShort) ;
                             ___( psttShort ) ;
                             ___( psttPath ) ;
                             countT ids = etThread.etherC::strBisectF( tinP , psttPath , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
@@ -82,7 +82,7 @@ etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
                     //CONoUTrAW( T("inspecting: ")+T(psttc1)+T("\r\n") ) ;
                 {
                 FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-                etThread.boxMenuF( tinP , soul1m , tDropSoil+T("*.soil") , 0 , TUCK ) ; // FOR ALL FILES OR DIRS "*.soil"
+                etThread.boxMenuF( tinP , soul1m , t11DropSoil+T("*.soil") , 0 , TUCK ) ; // FOR ALL FILES OR DIRS "*.soil"
                 soulC soul1m( tinP , TAG( TAGiDnULL ) , flSOUL_null , "soul.eat.menu" ) ;
 
                 cFail = 0 ;
@@ -93,7 +93,7 @@ etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
 
             if( bWoth ) bWoth = 0 ;
         {
-        if( etThread.etherC::diskWaitDirF( tinP , hWait , ether , tDropSoil , flWAITdIR_FILEnAME ) || bWoth )
+        if( etThread.etherC::diskWaitDirF( tinP , hWait , ether , t11DropSoil , flWAITdIR_FILEnAME ) || bWoth )
     {
     while( !ether && !POOP )
     handleC hWait( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
@@ -113,19 +113,19 @@ const countT idDesireSave = etThread.osThreadSwitchingDesireF( tinP , ifcTHREADp
 
 ether.osThreadF( TaRG1( tmHireF ) ) ;
 
-etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)tBounce , (countT)(strokeS*)tDropSoil ) ;
+etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)t13Bounce , (countT)(strokeS*)t11DropSoil ) ;
 //etThread.osThreadF( TaRG1( tmPingF ) ) ; //U::COMMENTED OUT BECAUSE SAW A FAILURE IN s_writeF 20121219@2102
 
 //etThread.osThreadF( TaRG1( tmFixArcNamesF ) ) ; // REDUNDANT, JUST IN CASE A FILE WITH A BAD NAME HAS GOTTEN INTO THE ARCHIVE ; U::ADD bQuitP PARAMETER
 //20161112@1559: DISABLED AS PART OF ENHANCING 6d9 TO OPTIONALLY RENAME ALL LOCAL MASTER FILES TO NUMERIC NAMES, PRESERVING THE ORIGINAL NAME IN A HASH LOOKUP FILE
 
 }
-    etThread.osThreadF( TaRG1( tmRenameF ) , (countT)psttDropIn /*, (countT)psttNeverDropHere*/ ) ;
+    etThread.osThreadF( TaRG1( tmRenameF ) , (countT)pstt21DropArchive ) ;
 
     //etThread.strMakeF( tinP , LF , psttNeverDropHere , tNeverDropHere ) ; ___( psttNeverDropHere ) ;
-    etThread.strMakeF( tinP , LF , psttDropIn , tDropIn ) ; ___( psttDropIn ) ;
+    etThread.strMakeF( tinP , LF , pstt21DropArchive , t21DropArchive ) ; ___( pstt21DropArchive ) ;
     //ZE( strokeS* , psttNeverDropHere ) ;
-    ZE( strokeS* , psttDropIn ) ;
+    ZE( strokeS* , pstt21DropArchive ) ;
 {
 
 //) ;
@@ -142,6 +142,53 @@ etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)tBounce , (countT)(str
 //
 //TN( tErrorFileTooBig , "" ) ; tErrorFileTooBig = T(
 //const countT costiMax = CSTTmAXsOIL ;
+
+;
+)
+
+    "\r\n"
+    "\r\n"
+    "    20140131@1600.20240415@1200.any.name\r\n"
+    "\r\n"
+    "by including an explicit double timestamp in the file name, as in this example:\r\n"
+    "is generated for the fset file will be the last modified time of the file.  This can be overridden\r\n"
+    "Once archived, files with arbitrary names cannot be revised, because the double timestamp that\r\n"
+    "\r\n"
+    "A file whose image does not match any other copy will always be rejected.\r\n"
+    "Healing is intended to minimize the probability of data loss including \"data rot\" corruption.\r\n"
+    "\r\n"
+    "copy and then all copies that differ from it are moved to a \"reject folder\" on the same device.\r\n"
+    "each file is exactly the same.  When file images differ, voting is used to select an authoritative\r\n"
+    "is done to ensure that every file name is present in every folder for the year, and every copy of\r\n"
+    "Healing means that a list of short file names for the year is accumulated, and then an inspection\r\n"
+    "for each year folder of each archive, but only if at least oo folders for a given year are visible."
+    "Periodically, IdeaFarm (tm) Bundle will \"heal\" all archives that it can see.  Healing is done\r\n"
+    "\r\n"
+    "them and then deleted.\r\n"
+    "file.  When at least re such year folders are visible, the fset file will be copied to each of\r\n"
+    "the folder that you created.  The year is taken from the wo'th timestamp in the name of the fset\r\n"
+    "re volumes that contain a matching \"year folder\" for an archive whose name matches the name of\r\n"
+    "These fset files will remain in a queue folder until IdeaFarm (tm) Bundle sees at least\r\n"
+    "\r\n"
+    "of these files will contain the original name of your file.\r\n"
+    "standardized names.  Wo of these files will be a copy of the file that you dropped.  Another\r\n"
+    "This \"fset file\" will have a standardized name and will contain files that also have similar\r\n"
+    "IdeaFarm (tm) Bundle, which includes archival features, will create a \"fileset zip\" file.\r\n"
+    "\r\n"
+    "3. Copy and drop any file into the folder that you created.\r\n"
+    "\r\n"
+    "2. Create a folder with that name in the same folder that contains this file.\r\n"
+    "\r\n"
+    "1. Decide on a short archive name, such as \"joe.smith.personal\".\r\n"
+    "\r\n"
+    "Quick Start Instructions:\r\n"
+    "\r\n"
+    "https://ideafarm.github.io/\r\n"
+    "http://ideafarm.com\r\n"
+    "IdeaFarm (tm) Archive Healer\r\n"
+    "IdeaFarm (tm) Archive\r\n"
+
+TN( tReadMe ,
 
 }
     }
@@ -167,38 +214,29 @@ etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)tBounce , (countT)(str
     for( countT offi = 0 ; offi < sizeof pptDir / sizeof pptDir[ 0 ] ; offi ++ )
     ZE( countT , cMade ) ;
 
-    //20140415@1204: DISABLED THIS SO WILL CREATE ANY MISSING FOLDERS: if( !etThread.diskFileExistsF( tinP , tBounce ) )
+    //20140415@1204: DISABLED THIS SO WILL CREATE ANY MISSING FOLDERS: if( !etThread.diskFileExistsF( tinP , t13Bounce ) )
 
     } ;
-        &tPickSoil        // b
-        &tPickToProcess , // a
-        &tEatingSoil    , // 9
-        &tDropSoil      , // 8
-        &tDropIn2       , // 7
-        &tDropIn1       , // 6 OPTIONAL: NOT CREATED UNLESS NONE EXIST
-        &tDropIn        , // 5 OPTIONAL: NOT CREATED UNLESS NONE EXIST
-        //&tNeverDropHere , // 4
-        &tDropArchive   , // 3
-        &tBounce        , // 2
-        &tDeskUser      , // 1
-        &tDesk          , // 0
+        &t22FlushToArchive
+        &t21DropArchive    ,
+        &t14PickSoil       ,
+        &t13Bounce         ,
+        &t12EatingSoil     ,
+        &t11DropSoil       ,
+        &tDeskUser         ,
+        &tDesk             ,
     {
     textC* pptDir[] =
 {
-TN( tPickToProcess , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickToProcess += tUser+T("/2.2. Filesets Awaiting Flushing To An Archive/"      ) ;
-TN( tDropIn2       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn2       += tUser+T("/2.1. Drop Files Here To Archive Them/voice.recorder/") ;
-TN( tDropIn1       , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn1       += tUser+T("/2.1. Drop Files Here To Archive Them/camera/"        ) ;
-TN( tDropArchive   , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropArchive   += tUser+T("/2.1. Drop Files Here To Archive Them/"               ) ;
-TN( tDropIn        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropIn        += tUser+T("/2.1. Drop Files Here To Archive Them/"               ) ;
-TN( tPickSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tPickSoil      += tUser+T("/1.4. Pick Up Completed SOIL (tm) Text Files Here/"   ) ;
-TN( tBounce        , "///ideafarm/IdeaFarm " "(tm)/" ) ; tBounce        += tUser+T("/1.3. Pick Up Rejected SOIL (tm) Text Files Here/"    ) ;
-TN( tEatingSoil    , "///ideafarm/IdeaFarm " "(tm)/" ) ; tEatingSoil    += tUser+T("/1.2. SOIL (tm) Text Files Being Eaten/"              ) ;
-TN( tDropSoil      , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDropSoil      += tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/"      ) ;
+TN( t22FlushToArchive , "///ideafarm/IdeaFarm " "(tm)/" ) ; t22FlushToArchive += tUser+T("/2.2. Filesets Awaiting Flushing To An Archive/"      ) ;
+TN( t21DropArchive    , "///ideafarm/IdeaFarm " "(tm)/" ) ; t21DropArchive    += tUser+T("/2.1. Drop Files Here To Archive Them/"               ) ;
+TN( t14PickSoil       , "///ideafarm/IdeaFarm " "(tm)/" ) ; t14PickSoil       += tUser+T("/1.4. Pick Up Completed SOIL (tm) Text Files Here/"   ) ;
+TN( t13Bounce         , "///ideafarm/IdeaFarm " "(tm)/" ) ; t13Bounce         += tUser+T("/1.3. Pick Up Rejected SOIL (tm) Text Files Here/"    ) ;
+TN( t12EatingSoil     , "///ideafarm/IdeaFarm " "(tm)/" ) ; t12EatingSoil     += tUser+T("/1.2. SOIL (tm) Text Files Being Eaten/"              ) ;
+TN( t11DropSoil       , "///ideafarm/IdeaFarm " "(tm)/" ) ; t11DropSoil       += tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/"      ) ;
+TN( tDeskUser         , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDeskUser += tUser+T("/") ;
+TN( tDesk             , "///ideafarm/IdeaFarm " "(tm)/" ) ;
 
-//TN( tNeverDropHere , "///ideafarm/IdeaFarm " "(tm)/" ) ; tNeverDropHere += tUser+T("/never.drop.here/"                                   ) ;
-
-TN( tDeskUser     , "///ideafarm/IdeaFarm " "(tm)/"  ) ; tDeskUser += tUser+T("/") ;
-TN( tDesk         , "///ideafarm/IdeaFarm " "(tm)/"  ) ;
 TN( tUser         , thirdC::postUserNameIF() ) ;
 
 }
@@ -652,11 +690,11 @@ TASK( tmCleanF )
 DONE( tmRenameF )
 }
     THREADmODE2rESTORE
-    etThread.delF( tinP , psttmDropIn ) ;
+    etThread.delF( tinP , psttmDropArchive ) ;
     }
         }
             etThread.traceF( tinP , T("tmRenameF / [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            etThread.diskWalkRenameForArchivalF( tinP , cDirs , cFiles , ether , psttzTo , psttmDropIn , myCBF , pcArg ) ;
+            etThread.diskWalkRenameForArchivalF( tinP , cDirs , cFiles , ether , psttzTo , psttmDropArchive , myCBF , pcArg ) ;
             etThread.traceF( tinP , T("tmRenameF / [&etThread]:    ")+TF3((countT)&etThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
             countT pcArg[] = { (countT)&etThread } ;
             ZE( countT , cFiles ) ;
@@ -668,7 +706,7 @@ DONE( tmRenameF )
             if( bWoth ) bWoth = 0 ;
             _IO_
         {
-        if( etThread.etherC::diskWaitDirF( tinP , hWait , ether , psttmDropIn , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) || bWoth )
+        if( etThread.etherC::diskWaitDirF( tinP , hWait , ether , psttmDropArchive , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) || bWoth )
         _IO_
     {
     while( !ether && !POOP )
@@ -676,23 +714,20 @@ DONE( tmRenameF )
     boolT bWoth = 1 ;
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
     
-    etThread.delF( tinP , psttDropInP ) ;
-    etThread.diskMapFileNameF( tinP , psttmDropIn , psttDropInP ) ; ___( psttmDropIn ) ;
-    ZE( strokeS* , psttmDropIn ) ;
+    etThread.delF( tinP , psttDropArchiveP ) ;
+    etThread.diskMapFileNameF( tinP , psttmDropArchive , psttDropArchiveP ) ; ___( psttmDropArchive ) ;
+    ZE( strokeS* , psttmDropArchive ) ;
 
     TN( tUser , thirdC::postUserNameIF() ) ;
 
-    //etThread.delF( tinP , psttNeverDropHereP ) ;
-    //TN( tNeverDropHere , psttNeverDropHereP ) ;
-    TN( tDropIn        , psttDropInP        ) ;
-    TN( tb4 , "    " ) ;
+    TN( tDropArchive , psttDropArchiveP ) ;
+    TN( tb4          , "    " ) ;
 
-    //strokeS* psttNeverDropHereP = (strokeS*)pTaskP->c2 ;
-    strokeS* psttDropInP        = (strokeS*)pTaskP->c1 ;
+    strokeS* psttDropArchiveP = (strokeS*)pTaskP->c1 ;
 
     _IO_
 {
-if( pTaskP && pTaskP->c1 /*&& pTaskP->c2*/ )
+if( pTaskP && pTaskP->c1 )
 TASK( tmRenameF )
 
 }
