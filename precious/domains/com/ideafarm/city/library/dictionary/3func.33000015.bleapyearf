@@ -8,11 +8,20 @@
 
 
 }
-    return    !(yc%4)    &&    (    !!(yc%100)    ||    ( yc && !(yc%400) )    ) ;
+    return z4 && !bNope ;
+
+    boolT bNope = z100 && !z400 && yc ;
+
+    boolT z400 = !( yc % 400 ) ;
+    boolT z100 = !( yc % 100 ) ;
+    boolT z4   = !( yc %   4 ) ;
+
     //OUT
     const sCountT yc = yP + 1 ;
     //IN
     //CANNOT USE SINCE I AM CALLED BY thirdC::ct: TINSL //U: THIS IS ILLEGAL. PASS tinP AS A PARAM
+
+    // "[In t]he Gregorian calendar,... [the] extra leap day occurs in each year that is a multiple of 4, except for years evenly divisible by 100 but not by 400."
 {
 /*1*/boolT bLeapYearF( const sCountT yP )/*1*/
 */

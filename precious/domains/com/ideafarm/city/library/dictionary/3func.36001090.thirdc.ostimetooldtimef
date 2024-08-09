@@ -86,9 +86,9 @@
         countT time1 = time1P ;
 
         const measureT mTimePerMs   = (measureT)0x80000000 / (measureT)( 12 * 60 * 60 * 100 ) ;
-        const measureT mTimePerSec  = (measureT)0x80000000 / (measureT)( 12 * 60 * 60 ) ;
-        const measureT mTimePerMin  = (measureT)0x80000000 / (measureT)( 12 * 60 ) ;
-        const measureT mTimePerHour = (measureT)0x80000000 / (measureT)( 12 ) ;
+        const measureT mTimePerSec  = (measureT)0x80000000 / (measureT)( 12 * 60 * 60       ) ;
+        const measureT mTimePerMin  = (measureT)0x80000000 / (measureT)( 12 * 60            ) ;
+        const measureT mTimePerHour = (measureT)0x80000000 / (measureT)( 12                 ) ;
     {
 
     _IO_
@@ -102,8 +102,8 @@
         // yP: [-inf,inf] (yP=0 INDICATES A TIME IN THE FIRST YEAR OF OUR LORD
         // NOTE THAT mP, dP, ETC ARE UNSIGNED; THEY ARE OFFSETS FROM THE BEGINNING OF THE YEAR, EVEN IF THE YEAR IS NEGATIVE
         // ALL PARAMETERS ARE ASSUMED TO BE OFFSETS (E.G. TIMES WITHIN YEAR OF OUR LORD 1997 WOULD HAVE yP=1996)
-        // THE OFF OF "Dec 31,  -1" IS -1
-        // THE OFF OF "Jan 1, 0000" IS 0
+        // THE YEAR OFF OF "Dec 31, 0000" IS -1
+        // THE YEAR OFF OF "Jan  1, 0000" IS  0
 
     }
         if( POOP ) return ;
