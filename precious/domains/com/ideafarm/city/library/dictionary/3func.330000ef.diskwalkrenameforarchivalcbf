@@ -44,7 +44,8 @@
                                 {
                                 if( timeWritten )            
 
-                                third.diskZipF( tinP , tToShort , tFrom , 0 , 0 , "-max -move" , "-9m" , 0 ) ;
+                                //third.diskZipF( tinP , tToShort , tFrom , 0 , 0 , "-max -move" , "-9m" , 0 ) ;
+third.diskZipF( tinP , tToShort , tFrom , 0 , 0 , "-max" , "-9" , 0 ) ;
 
                                 //third.diskZipOldF( tinP , tq + tToShort + tq , tFrom , flZIP_DELETE ) ;
 
@@ -73,25 +74,54 @@
 
                                 }
                                     }
+                                        etThread.traceF( tinP , T("             [timeAccessedLook]:    ")+TT(timeAccessedLook.time1,timeAccessedLook.time2) ) ;
+                                        etThread.traceF( tinP , T("              [timeCreatedLook]:    ")+TT(timeCreatedLook.time1,timeCreatedLook.time2) ) ;
+                                        etThread.traceF( tinP , T("              [timeWrittenLook]:    ")+TT(timeWrittenLook.time1,timeWrittenLook.time2) ) ;
+                                        etThread.traceF( tinP , T("original file     [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
                                         }
-                                            etThread.traceF( tinP , T("!exception: could not set file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+*pptLong[ offt ] ) ;
-                                            const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
-                                            POOPRqUIET
-                                            countT rc = POOP ;
-                                        {
-                                        if( POOP )
+                                            }
+                                                }
+                                                    etThread.traceF( tinP , T("!exception: could not get file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tOld ) ;
+                                                    const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                                                    POOPRqUIET
+                                                    countT rc = POOP ;
+                                                {
+                                                if( POOP )
 
-                                        ((thirdC&)etThread).setFileTimeF( tinP , fiw , &timeWritten , &timeWritten , &timeWritten ) ;
+                                                thirdC::getFileTimeIF( tinP , fir , &timeWrittenLook , &timeCreatedLook , &timeAccessedLook ) ;
+
+                                                SCOOPS
+                                                _IO_
+                                            {
+                                            IFsCRATCH
+
+                                            fileC fir( tinP , (strokeS*)*pptLong[ offt ] , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+                                        {
+                                        timeS timeAccessedLook = timeS() ;
+                                        timeS timeCreatedLook  = timeS() ;
+                                        timeS timeWrittenLook  = timeS() ;
 
                                         }
-                                            etThread.traceF( tinP , T("!exception: could not open file to set its file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+*pptLong[ offt ] ) ;
-                                            const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
-                                            POOPRqUIET
-                                            countT rc = POOP ;
-                                        {
-                                        if( POOP )
+                                            }
+                                                etThread.traceF( tinP , T("!exception: could not set file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+*pptLong[ offt ] ) ;
+                                                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                                                POOPRqUIET
+                                                countT rc = POOP ;
+                                            {
+                                            if( POOP )
 
-                                        fileC fiw( tinP , (strokeS*)*pptLong[ offt ] , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+                                            ((thirdC&)etThread).setFileTimeF( tinP , fiw , &timeWritten , &timeWritten , &timeWritten ) ;
+
+                                            }
+                                                etThread.traceF( tinP , T("!exception: could not open file to set its file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+*pptLong[ offt ] ) ;
+                                                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                                                POOPRqUIET
+                                                countT rc = POOP ;
+                                            {
+                                            if( POOP )
+
+                                            fileC fiw( tinP , (strokeS*)*pptLong[ offt ] , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+                                        {
                                     {
                                     for( countT offt = 0 ; offt < sizeof pptLong / sizeof pptLong[ 0 ] ; offt ++ )
 
@@ -402,6 +432,7 @@
                         TN( tPath , "" ) ;
                     {
 
+                    etThread.traceF( tinP , T("original file     [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
                     }
                         }
                             }
