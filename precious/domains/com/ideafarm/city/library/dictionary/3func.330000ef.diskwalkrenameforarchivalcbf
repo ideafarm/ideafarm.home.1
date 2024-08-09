@@ -44,10 +44,7 @@
                                 {
                                 if( timeWritten )            
 
-                                //third.diskZipF( tinP , tToShort , tFrom , 0 , 0 , "-max -move" , "-9m" , 0 ) ;
-third.diskZipF( tinP , tToShort , tFrom , 0 , 0 , "-max" , "-9" , 0 ) ;
-
-                                //third.diskZipOldF( tinP , tq + tToShort + tq , tFrom , flZIP_DELETE ) ;
+                                third.diskZipF( tinP , tToShort , tFrom , 0 , 0 , "-max -move" , "-9m" , 0 ) ;
 
                                   etThread.traceF( tinP , tFrom    ) ;
                                 //etThread.traceF( tinP , tFrom5   ) ;
@@ -125,11 +122,12 @@ third.diskZipF( tinP , tToShort , tFrom , 0 , 0 , "-max" , "-9" , 0 ) ;
                                     {
                                     for( countT offt = 0 ; offt < sizeof pptLong / sizeof pptLong[ 0 ] ; offt ++ )
 
-                                    textC* pptLong[] = { &tLong1 , &tLong2 , &tLong3 , &tLong4 } ;
+                                    textC* pptLong[] = { &tLong0 , &tLong1 , &tLong2 , &tLong3 , &tLong4 } ;
                                     TN( tLong4 , "" ) ; tLong4 = tToPath+tNewFileMetaPathLeaf    ;
                                     TN( tLong3 , "" ) ; tLong3 = tToPath+tNewFileMetaPathRoot    ;
                                     TN( tLong2 , "" ) ; tLong2 = tToPath+tNewFileMetaCurrentName ;
                                     TN( tLong1 , "" ) ; tLong1 = tToPath+tNewFileMetaHashedName  ;
+                                    TN( tLong0 , "" ) ; tLong0 = tToPath+tNewFileData            ;
                                 {
                                 if( timeWritten )            
 
