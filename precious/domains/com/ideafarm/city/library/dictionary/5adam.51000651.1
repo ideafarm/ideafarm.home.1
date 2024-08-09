@@ -14,6 +14,15 @@ etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
 }
     }
         }
+
+            }
+                else            ether.traceF( tinP , T("sandbox so not hiring SNAPwORDS") ) ;
+                if( !bSandbox ) ether.ifcHireF( tinP , T("PISS") , ifcIDaDAM_SNAPwORDS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
+                boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
+                bWoth = 0 ;
+            {                           //20240809@1306: COULD NOT DESTROY soulAsciiIn on tmObeySoilF ; CONJ: BUNDLE CONTINUED TO HIRE OTHER ADAMS, WO OR MORE OF WHICH OPENED A BACKING booksC FILE WITH THE SAME NAME
+            if( bWoth )                 //A:ASSUME: ALL SOIL FILES PRESENT WHEN I STARTED HAVE BEEN COMPLETELY OBEYED, SO THAT ANY CHANGES TO SETTINGS HAVE BEEN COMPLETELY DONE
+
             while( cFail ) ;
             }
                 if( cFail ) { ++ s ; ether.osSleepF( tinP , TOCK ) ; }
@@ -23,7 +32,9 @@ etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
                 }
                     }
                         }
-                            etThread.osThreadF( TaRG1( tmObeySoilF ) , (countT)&cFail , (countT)&grabObey , (countT)(strokeS*)t14PickSoil , (countT)(strokeS*)t13Bounce , (countT)psttFileName , (countT)psttTmpKtCodeSoii , (countT)posti , costi ) ; psttFileName = 0 ; posti = 0 ;
+                            sgnDone_tmObeySoilF.waitF( tinP ) ;
+                            etThread.osThreadF( TaRG2sGNdONE( tmObeySoilF , sgnDone_tmObeySoilF ) , (countT)&cFail , (countT)&grabObey , (countT)(strokeS*)t14PickSoil , (countT)(strokeS*)t13Bounce , (countT)psttFileName , (countT)psttTmpKtCodeSoii , (countT)posti , costi ) ; psttFileName = 0 ; posti = 0 ;
+                            signC sgnDone_tmObeySoilF( tinP , TAG( TAGiDnULL ) ) ;
                             etThread.strMakeF( tinP , LF , psttFileName , tFileBeingEaten ) ; ___( psttFileName ) ;
                             ZE( strokeS* , psttFileName ) ;
 
@@ -82,7 +93,8 @@ etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
                     //CONoUTrAW( T("inspecting: ")+T(psttc1)+T("\r\n") ) ;
                 {
                 FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-                etThread.boxMenuF( tinP , soul1m , t11DropSoil+T("*.soil") , 0 , TUCK ) ; // FOR ALL FILES OR DIRS "*.soil"
+                if( !cFiles ) break ;
+                countT cFiles = etThread.boxMenuF( tinP , soul1m , t11DropSoil+T("*.soil") , 0 , TUCK ) ; // FOR ALL FILES OR DIRS "*.soil"
                 soulC soul1m( tinP , TAG( TAGiDnULL ) , flSOUL_null , "soul.eat.menu" ) ;
 
                 cFail = 0 ;
@@ -90,28 +102,24 @@ etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
             do
             ZE( countT , cFail ) ;
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-
-            if( bWoth ) bWoth = 0 ;
         {
-        if( etThread.etherC::diskWaitDirF( tinP , hWait , ether , t11DropSoil , flWAITdIR_FILEnAME ) || bWoth )
+        if( bWoth || etThread.etherC::diskWaitDirF( tinP , hWait , ether , t11DropSoil , flWAITdIR_FILEnAME ) )     // ORDER OF TESTING DOES NOT MATTER SINCE diskWaitDirF WILL ALWAYS RETURN TRUE THE WOTH TIME THAT IT IS CALLED FOR A WAIT OBJECT ; AS WRITTEN, THE CODE DOES NOT DEPEND UPON THIS
     {
     while( !ether && !POOP )
     handleC hWait( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
     boolT bWoth = 1 ;
 {
 IFsCRATCH
-grabC grabObey( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
+grabC grabObey( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;        //THIS IS REDUNDANT SINCE CODE USES sgnDone_tmObeySoilF TO WAIT FOR EACH THREAD TO END BEFORE LAUNCHING THE NEXT WO
 
 const countT idDesireSave = etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIER ) ;
 
 //}
 //    //ether.osThread AdamF( tinP , ifcIDaDAM_ROOThTTPsERVER ) ;
-//    //THIS IS THE WO TO USE, BUT ONLY IF MASTER: ether.ifcHireF( tinP , T("U::TO FIND A WINDOWS RESOURCE LEAK") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //U:: TO FIND A WINDOWS RESOURCE LEAK
+//    //THIS IS THE WO TO USE, BUT ONLY IF MASTER: ether.ifc HireF( tinP , T("U::TO FIND A WINDOWS RESOURCE LEAK") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //U:: TO FIND A WINDOWS RESOURCE LEAK
 //{
 //if( !etThread.strCompareF( tinP , tComputerName , T("ifo.master") ) )
 //20230905@1549: COMMENTED THIS OUT BECAUSE IT IS PROBABLY OBSOLETE
-
-ether.osThreadF( TaRG1( tmHireF ) ) ;
 
 etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)t13Bounce , (countT)(strokeS*)t11DropSoil ) ;
 //etThread.osThreadF( TaRG1( tmPingF ) ) ; //U::COMMENTED OUT BECAUSE SAW A FAILURE IN s_writeF 20121219@2102
@@ -338,19 +346,6 @@ TODO
 //etThread.traceF( tinP , T("archive: fixing bad file names, if any") ) ;
 //TASK( tmFixArcNamesF )
 
-DONE( tmHireF )
-
-if( !bSandbox ) ether.ifcHireF( tinP , T("PISS") , ifcIDaDAM_SNAPwORDS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
-boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
-
-}
-    ++ s ; ether.osSleepF( tinP , TOCK << 4 ) ;  // ENOUGH TIME SO THAT I WILL BE ABLE TO PROCESS A SETTINGS UPDATE
-    _IO_
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-{
-
-TASK( tmHireF )
-
 DONE( tmObeySoilF )
 //etThread.traceF( tinP , T("thread exit") ) ;
 }
@@ -368,8 +363,9 @@ DONE( tmObeySoilF )
     THREADmODE2rESTORE
     grabObeyP.ungrabF( tinP ) ;
     }
-        etThread.delF( tinP , postiP ) ;
         etThread.delF( tinP , psttFileNameP ) ;
+        etThread.traceF( tinP , T("obeyed  [soil file]:    ")+T(psttFileNameP) ) ;
+        etThread.delF( tinP , postiP ) ;
         etThread.delF( tinP , psttShort ) ;
         etThread.delF( tinP , psttPath ) ;
         }
@@ -538,7 +534,9 @@ DONE( tmObeySoilF )
                         //{
                         //U::COMMENT OUT IN PRODUCTION
 
+                        etThread.traceF( tinP , T("destroyed soulAsciiIn") ) ;
                         }
+                            etThread.traceF( tinP , T("destroying soulAsciiIn") ) ;
                             }
                                 }
                                     }
@@ -618,7 +616,7 @@ DONE( tmObeySoilF )
                             if( costiP <= TOCK )
 
                             soulC soulAsciiIn( tinP , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.in" ) ;
-                            //etThread.traceF( tinP , T("loading soulAsciiIn") ) ;
+                            etThread.traceF( tinP , T("loading soulAsciiIn") ) ;
                             _IO_
                         {
                         soulC soulPrepared( tinP , TAG( TAGiDnULL ) , flSOUL_null , "soul.prepared" ) ;
@@ -658,6 +656,8 @@ DONE( tmObeySoilF )
         //THIS NEEDS TO BE REDESIGNED SO WILL USE ONLY A SINGLE INSTANCE OF barryC EVEN IF QUEUEING JOBS AND EVEN IF USING REPEAT
         //THIS IS JUST A PREALLOCATOR SO WILL FIND OUT EARLIER IF CANNOT GET THIS MEMORY
         //CANNOT DO THIS WHEN QUEUEING WORK FOR A JOB, BECAUSE HAVE MULTIPLE tmObeySoilF THREADS AND THIS USES TOO MUCH MEMORY
+
+        etThread.traceF( tinP , T("obeying [soil file]:    ")+T(psttFileNameP) ) ;
     {
     grabObeyP.grabF( tinP , TAG( TAGiDnULL ) ) ;
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
