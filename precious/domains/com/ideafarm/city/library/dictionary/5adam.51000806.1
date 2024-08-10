@@ -50,626 +50,351 @@ REST
                     : 1 + ( ++ idPhase - 1 ) % CpHASES
                     ? IDpHASE_GETnAMESoNLY
                 idPhase = bNamesAreStale
-
-                }
-                    }
-                        break ;
-                        }
-                            }
-                                ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
-                                ether.osSuspendF( tinP ) ;
-                                ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
-                            {
-                            else if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE )
-                                 if( !bDo                                          ) etThread.traceF( tinP , T("i will not hibernate because the heal phase took less than 2 ticks") ) ;
-
-                            boolT bDo = timeE2 || timeE1 >> 0x19 ;                          // HIBERNATE ONLY IF THIS PHASE HAS TAKEN MORE THAN 2 TICKS
-                        {                                                                   // A:ASSUME: I WILL COMPLETE WITHIN 2 TICKS IF THERE IS NO HEALING TO BE DONE ; (REQUIREMENT: DO NOT HIBERNATE IF THE ARCHIVE HAS BEEN RECENTLY HEALED)
-                        if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE && !ether )
-                        time2lATHhEALINGaOK = timeN2 ;
-                        time1lATHhEALINGaOK = timeN1 ;
-                    {
-                    case IDpHASE_HEAL :
-                    }
-                        break ;
-                        }
-                            time2AOK = time1AOK = 0 ; //THIS IS TO PREVENT NAPPING FOR A DAY BEFORE REDOING IDpHASE_GETnAMESoNLY
-                            bNamesAreStale = 1 ;
-                        {
-                        if( cNewChunks )
-                    {
-                    case IDpHASE_CHUNKfILESbYdAY :
-                {
-                switch( idPhase )
-                ZE( boolT , bNamesAreStale ) ;
-
-                etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
-                time2AOK = timeN2 ;
-                time1AOK = timeN1 ;
-
-                cConsecutiveAborts = 0 ;
-
-                // IDpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE THAT PHASE IS DONE WITHIN THE CURRENT LOOP ; 20240718@1228: HUH?
             {
             else
-            }
-                }
-                    etThread.osFireF( tinP ) ;
-                    etThread.traceF( tinP , T("too many consecutive aborts, so firing (restarting) os") ) ;
-                    FIREmYSELF
-                {
-                if( ++ cConsecutiveAborts == 8 )
-
-                time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
-                etThread.traceF( tinP , T("this phase was aborted") ) ;
-                // /*if( cYearsInParallelHeal > 1 && 1 == decv02AM( cYearsInParallelHeal ) )*/ cYearsInParallelHeal = 1 ;  // REDUCE cYearsInParallelHeal BUT NOT BELOW 1
-                //20230106@1137: NAWWH; ABORT IS NOW DONE ROUTINELY BY PAUSE/RESUME, SO DOES NOT IMPLY FAILURE
-                //20221229@1435: IF ABORT THEN ON NEXT ITERATION PROCESS YEARS SERIALLY
-                //CS:DUPLICATEcODE 51000806 51000806
-            {
-            if( bAbort )
-
-            }
-                }
-                    ++ s ; thirdC::dosSleepWinkIF( tinP , 0 ) ;
-
-                    }
-                        funJobFileInfo.writeF( tinP , pbz ) ;
-                        new( 0 , tinP , pbz , sizeof pbz ) jobFileInfoS( tinP , etThread , T("") , pnu ) ;
-                        byteT pbz[ sizeof( jobFileInfoS ) ] ;
-                        ZE( infoFileS* , pnu ) ;
-                    {
-                    while( cDo -- )
-                    countT cDo = cWorkersFileInfo ;
-                {
-                while( cWorkersFileInfo )
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-
-                bQuitFileInfo = 1 ;
-            {
-
-            etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
-
-            sCountT timeN2 = timeE2 ;
-            countT  timeN1 = timeE1 ;
-            etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
-            ZE( sCountT , timeE2 ) ;
-            ZE( countT  , timeE1 ) ;
+            if( ether ) break ;
 
             }
                 }
                     }
                         }
-                            if( cExecutiveHealYearPaused ) { BLAMMO ; }
-
-                            THREADmODE2rESTORE
+                            break ;
                             }
-                                thirdC::dosSleepWinkIF( tinP ) ;
-                                //etThread.traceF( tinP , T("waiting for all exec to die [cExecutiveHealYear]:    ")+TF2(cExecutiveHealYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            {
-                            while( cExecutiveHealYear )
-                            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                            _IO_
-                        {
+                                }
+                                    ether.traceF( tinP , T("fired  base operating system (hibernate)") ) ;
+                                    ether.osSuspendF( tinP ) ;
+                                    ether.traceF( tinP , T("firing base operating system (hibernate)") ) ;
+                                {
+                                else if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE )
+                                     if( !bDo                                          ) etThread.traceF( tinP , T("i will not hibernate because the heal phase took less than 2 ticks") ) ;
 
+                                boolT bDo = timeE2 || timeE1 >> 0x19 ;                          // HIBERNATE ONLY IF THIS PHASE HAS TAKEN MORE THAN 2 TICKS
+                            {                                                                   // A:ASSUME: I WILL COMPLETE WITHIN 2 TICKS IF THERE IS NO HEALING TO BE DONE ; (REQUIREMENT: DO NOT HIBERNATE IF THE ARCHIVE HAS BEEN RECENTLY HEALED)
+                            if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE && !ether )
+                            time2lATHhEALINGaOK = timeN2 ;
+                            time1lATHhEALINGaOK = timeN1 ;
+                        {
+                        case IDpHASE_HEAL :
                         }
-                            while( !bAbort && ~hStYearToHeal ) ;
+                            break ;
                             }
-                                }
-                                    }
-                                        }
-                                            break ;
-                                            bAbort = 1 ;
-                                            etThread.traceF( tinP , T("!exception: could not launch thread tmExecutiveHealYearF") ) ;
-                                            dec02AM( cExecutiveHealYear ) ;
-                                            POOPRqUIET
-                                        {
-                                        if( POOP )
-                                        //U::tinP.pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk , (countT)&cNewChunks ) ;
-                                             tinP.pEtScratch->osThreadF( TaRG1(           tmExecutiveHealYearF                                                     ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk , (countT)&cNewChunks ) ;
-                                        SCOOPS
-                                        _IO_
-                                    {
-                                    IFsCRATCH
-                                    inc02AM( cExecutiveHealYear ) ;
-
-                                    etThread.strMakeF( tinP , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
-                                    ZE( strokeS* , psttYear ) ;
-
-                                    //etThread.traceF( tinP , T("year to heal:    ")+T(psttzYear) ) ;
-                                    strokeS* psttzYear = (strokeS*)stYearToHeal.upF( tinP , hStYearToHeal ) ;       //PROCESSES YEARS BEGINNING WITH MOST RECENT  (A:ASSUME: CURRENT YEARS ARE IN MOST NEED OF HEALING SINCE FILES ARE ADDED AND MODIFIED)
-                                {
-                                if( !bAbort )
-
-                                }
-                                    THREADmODE2rESTORE
-                                    }
-                                        thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
-                                        thirdC::dosSleepWinkIF( tinP ) ;
-                                        thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
-                                        _IO_
-                                    {
-                                    while( test == cExecutiveHealYear )
-                                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-
-                                    ;
-                                            : cYearsInParallelHeal
-                                            ? CyEARSiNpARALLELcHUNKfILESbYdAY
-                                        : idPhase == IDpHASE_CHUNKfILESbYdAY
-                                        ? CyEARSiNpARALLELgETnAMESoNLY
-                                    countT test = idPhase == IDpHASE_GETnAMESoNLY                     // IDpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE tmExecutiveHealYearF IS NOT USED DURING THAT PHASE
-
-                                    thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
-
-                                    _IO_
-                                {
-                                _IO_
+                                bNamesAreStale = 1 ;
                             {
-                            do
-                            handleC hStYearToHeal( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                            _IO_
+                            if( cNewChunks )
                         {
-                        if( !bAbort && stYearToHeal )
-
-                        }
-                            }
-                                }
-                                    }
-                                        }
-                                            break ;
-                                            bAbort = 1 ;
-                                            etThread.delF( tinP , psttYear ) ;
-                                            etThread.traceF( tinP , T("!exception: duplicate year [psttYear]:    ")+T(psttYear) ) ;                        
-                                        {
-                                        if( !idSlot ) //SHOULD BE IMPOSSIBLE
-                                        stYearToHeal.sinkF( tinP , idSlot , psttYear , flSTACKsINK_UNIQUE ) ;
-                                        ZE( countT , idSlot ) ;
-                                        etThread.strMakeF( tinP , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
-                                        ZE( strokeS* , psttYear ) ;
-                                        _IO_
-                                    {
-                                    if( !bIgnore && tally > 1 )
-                                    countT tally = swTallyByYear ;
-
-                                    //#endif
-                                        ZE( boolT , bIgnore ) ;
-                                    //#else
-                                    //    ;
-                                    //
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2099") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2023") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2022") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2021") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2020") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2019") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2018") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2017") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2016") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2015") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2014") )
-                                    //          || !etThread.strCompareF( tinP , psttzYear , T("2013") )
-                                    //             !etThread.strCompareF( tinP , psttzYear , T("2012") )
-                                    //
-                                    //    boolT bIgnore = 
-                                    //#if defined( IFC tESTING )
-
-                                    psttzYear = (strokeS*)swTallyByYear.leverF( tinP , idf ) ;
-                                    _IO_
-                                {
-                                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                countT cFlavors = swTallyByYear.cFlavorsF( tinP ) ;
-                                _IO_
-                            {
-                            if( !bAbort )
-
-                            while( ~hSwsPathToArchives ) ;
-                            }
-                                etThread.delF( tinP , pstt1PathToYear ) ;
-                                }
-                                    //etThread.traceF( tinP , T("[tYear,tally]:    ")+tYear+tb4+TF2((countT)swTallyByYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                    swTallyByYear ++ ;
-                                    psttzYear = tYear ;
-
-                                    }
-                                        etThread.delF( tinP , psttYear ) ;
-                                        tYear = T(psttYear) ;
-                                        etThread.strWordF( tinP , psttYear , psttc1 , sttq , sttSlash , - 2 ) ; ___( psttYear ) ;
-                                        ZE( strokeS* , psttYear ) ;
-                                    {
-                                    TN( tYear , "" ) ;
-                                    _IO_
-                                {
-                                FORsTRINGSiN1( pstt1PathToYear )
-                                etThread.strConvertToLowerCaseF( tinP , pstt1PathToYear ) ;
-                                }
-                                    }
-                                        break ;
-                                        bAbort = 1 ;
-                                        etThread.delF( tinP , pstt1PathToYear ) ;
-                                        etThread.traceF( tinP , T("!exception: diskFindFileOrDirF failed [tPathToArchive]:    ")+tPathToArchive ) ;
-                                        POOPRqUIET
-                                    {
-                                    if( POOP )
-                                    tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
-                                    SCOOPS
-                                    _IO_
-                                {
-                                IFsCRATCH
-                                patternC pat( tinP , etThread , tYearPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-                                ZE( strokeS* , pstt1PathToYear ) ;
-
-                                //etThread.traceF( tinP , T("[tPathToArchive]:    ")+tPathToArchive ) ;
-                                TN( tPathToArchive , "" ) ; tPathToArchive = T(psttzPathToArchives)+T(psttzArchive)+tSlash ;
-                                strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveName.downF( tinP , hSwsPathToArchives ) ;
-                                _IO_
-                            {
-                            do
-                            handleC hSwsPathToArchives( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                            strokeS sttSlash( '/' ) ;
-                            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-
-                            switchC swTallyByYear( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzYear ) ;
-                            ZE( strokeS* , psttzYear ) ;
-                            _IO_
-                        {
-                        stackC stYearToHeal( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
-
-                        // FOR EACH YEAR FOLDER (ALL YEARS FOR THIS ARCHIVE NAME (EXAMPLE: ALL YEAR PATHS FOR EVERY YEAR FOR "wo.ideafarm"), LAUNCH A FILE RECORD COLLECTION THREAD
-                        _IO_
+                        case IDpHASE_CHUNKfILESbYdAY :
                     {
-                    if( cArchivesWithThisName > 1 )
-                    //etThread.traceF( tinP , T("[cArchivesWithThisName,archive]:    ")+TF2(cArchivesWithThisName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzArchive) ) ;
-                    swsPathToArchivesByArchiveName.ungrabF( tinP ) ;
-                    countT cArchivesWithThisName = swsPathToArchivesByArchiveName ;
-                    psttzArchive = (strokeS*)swsPathToArchivesByArchiveName.leverF( tinP , idf ) ;
-                    swsPathToArchivesByArchiveName.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                    _IO_
+                    switch( idPhase )
+
+                    etThread.traceF( tinP , T("phase ended aok [time]:    ")+TT(time1AOK,time2AOK) ) ;
+                    time2AOK = timeN2 ;
+                    time1AOK = timeN1 ;
+                    idPhaseLathAOK = idPhase ;
+
+                    cConsecutiveAborts = 0 ;
+
+                    // IDpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE THAT PHASE IS DONE WITHIN THE CURRENT LOOP ; 20240718@1228: HUH?
                 {
-                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )    // FOR EACH ARCHIVE NAME (EXAMPLE: "wo.ideafarm")
-                swsPathToArchivesByArchiveName.ungrabF( tinP ) ;
-                countT cFlavors = swsPathToArchivesByArchiveName.cFlavorsF( tinP ) ;
-                swsPathToArchivesByArchiveName.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                #endif
-                    TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
-                #else
-                    //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
-                    //TN( tYearPattern , "2019/" ) ;
-                    //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
-                    //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
-                    //TN( tYearPattern , "2023/" ) ;
-                    //TN( tYearPattern , "2022/" ) ;
-                    //TN( tYearPattern , "2017/" ) ;
-                    //TN( tYearPattern , "2012/" ) ;
-                    //TN( tYearPattern , "2010/" ) ;
-                    //TN( tYearPattern , "2009/" ) ;
-                    //TN( tYearPattern , "2008/" ) ;
-                    //TN( tYearPattern , "1999/" ) ;
-                      TN( tYearPattern , "1234/" ) ;
-                #if defined( IFCtESTING )
-                _IO_
-            {
-            if( !bAbort )
-
-            }
-                etThread.delF( tinP , psttu ) ;
-                tUnique = T(psttu) ;
-                etThread.strUniqueF( tinP , psttu ) ; ___( psttu ) ;
-                ZE( strokeS* , psttu ) ;
-            {
-            TN( tUnique , "" ) ;
-
-            }
+                else
                 }
-                    etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerFileInfoF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&bQuitFileInfo , (countT)&cWorkersFileInfo , (countT)&bAbort , (countT)&idPhase , (countT)&cPause , (countT)&funJobFileInfo , flagsMode ) ;
-                    inc02AM( cWorkersFileInfo ) ;
-                {
-                while( cDo -- )
-                countT cDo = cArchive >> 1 ;
-            {
-            ZE( countT , cWorkersFileInfo ) ;
-            ZE( boolT , bQuitFileInfo ) ;
+                    }
+                        etThread.osFireF( tinP ) ;
+                        etThread.traceF( tinP , T("too many consecutive aborts, so firing (restarting) os") ) ;
+                        FIREmYSELF
+                    {
+                    if( ++ cConsecutiveAborts == 8 )
 
-            swsPathToArchivesByArchiveName.lockIfF( tinP ) ;
-
-            etThread.delF( tinP , pstt1ArchivesAllLag ) ;
-            }
-                }
-                    ++ s ; ether.osSleepF( tinP , TOCK << 2 ) ;
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                    time2AOK = time1AOK = 0 ;      // THIS WILL CAUSE THE NEXT ITERATION TO PROCEED AFTER ONLY NAPPING WO TICK
+                    etThread.traceF( tinP , T("this phase was aborted") ) ;
+                    // /*if( cYearsInParallelHeal > 1 && 1 == decv02AM( cYearsInParallelHeal ) )*/ cYearsInParallelHeal = 1 ;  // REDUCE cYearsInParallelHeal BUT NOT BELOW 1
+                    //20230106@1137: NAWWH; ABORT IS NOW DONE ROUTINELY BY PAUSE/RESUME, SO DOES NOT IMPLY FAILURE
+                    //20221229@1435: IF ABORT THEN ON NEXT ITERATION PROCESS YEARS SERIALLY
+                    //CS:DUPLICATEcODE 51000806 51000806
                 {
                 if( bAbort )
 
                 }
-                    break ;
-                    etThread.delF( tinP , pstt1ArchivesAll ) ;
                     }
-                        swsPathToArchivesByArchiveName.sinkF( tinP , countTC() , psttPathArchives ) ;                           // EXAMPLE: "///c/ipdos.arhives/"
-                        psttzArchive = tArchive ;
+                        ++ s ; thirdC::dosSleepWinkIF( tinP , 0 ) ;
 
                         }
-                            if( !ids ) etThread.delF( tinP , psttp ) ;
-                            stPathToArchives.sinkF( tinP , ids , psttp , flSTACKsINK_UNIQUE ) ;
-                            ZE( countT , ids ) ;
-                            etThread.strMakeF( tinP , LF , psttp , psttPathArchives ) ; ___( psttp ) ;
-                            ZE( strokeS* , psttp ) ;
+                            funJobFileInfo.writeF( tinP , pbz ) ;
+                            new( 0 , tinP , pbz , sizeof pbz ) jobFileInfoS( tinP , etThread , T("") , pnu ) ;
+                            byteT pbz[ sizeof( jobFileInfoS ) ] ;
+                            ZE( infoFileS* , pnu ) ;
                         {
-
-
-                        //etThread.traceF( tinP , T("    [tPathArchives,tArchive]:    ")+T(psttPathArchives)+tb4+tArchive ) ;
-
-                        }
-                            etThread.delF( tinP , psttShorter ) ;
-                            tArchive = T(psttShorter) ;
-                            etThread.strSubstringF( tinP , psttShorter , idf , idl , tArchiveSlash ) ; ___( psttShorter ) ;
-                            ZE( strokeS* , psttShorter ) ;
-                        {
-                        if( idl )
-                        countT idl = tArchiveSlash.csF( tinP ) ? tArchiveSlash.csF( tinP ) - 1 : 0 ;
-                        countT idf = 1 ;
-                        TN( tArchive , "" ) ;                                                                                   // EXAMPLE: "wo.ideafarm"
-
-                        }
-                            etThread.delF( tinP , psttArchiveSlash ) ;
-                            tArchiveSlash = T(psttArchiveSlash) ;
-                            etThread.strBisectF( tinP , psttPathArchives , psttArchiveSlash , psttc3 , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathArchives ) ; ___( psttArchiveSlash ) ;
-                            ZE( strokeS* , psttArchiveSlash ) ;
-                        {
-                        TN( tArchiveSlash , "" ) ;                                                                              // EXAMPLE: "wo.ideafarm/"
-                        ZE( strokeS* , psttPathArchives ) ;                                                                     // EXAMPLE: "///c/ipdos.arhives/"
-
-                        //etThread.traceF( tinP , T("processing archive ")+T(psttc3) ) ;                                          // EXAMPLE: "///c/ipdos.arhives/wo.ideafarm/"
-                        _IO_
+                        while( cDo -- )
+                        countT cDo = cWorkersFileInfo ;
                     {
-                    FORsTRINGSiN3( pstt1ArchivesAll )
-
-                    }
-                        continue ;
-                        pstt1ArchivesAllLag = pstt1ArchivesAll ; pstt1ArchivesAll = 0 ;
-                        etThread.delF( tinP , pstt1ArchivesAllLag ) ;
-                        ++ s ; ether.osSleepF( tinP , TICK >> 4 ) ;
-                        if( bTest3 ) etThread.traceF( tinP , T("napping for a minute [reason]:    my list of visible archives changed") ) ;
-                        if( bTest2 ) etThread.traceF( tinP , T("napping for a minute [reason]:    waiting to give time for all archives to become visible") ) ;
-                        if( bTest1 ) etThread.traceF( tinP , T("napping for a minute [reason]:    less than oo archives found") ) ;
-                    {
-                    if( bTest1 /*|| bTest2*/ || bTest3 )
+                    while( cWorkersFileInfo )
                     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-                    boolT bTest3 = !pstt1ArchivesAllLag ? 0 : etThread.strCompareF( tinP , pstt1ArchivesAllLag , pstt1ArchivesAll ) ;
-                    boolT bTest2 = !pstt1ArchivesAllLag ;
-                    boolT bTest1 =  cArchive < 2 ;
-                    _IO_
+
+                    bQuitFileInfo = 1 ;
                 {
-                if( !bAbort && pstt1ArchivesAll )
+
+                etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+
+                sCountT timeN2 = timeE2 ;
+                countT  timeN1 = timeE1 ;
+                etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+                ZE( sCountT , timeE2 ) ;
+                ZE( countT  , timeE1 ) ;
 
                 }
-                    while( ~hWalk ) ;
-                    }
-                        etThread.strFuseSeparateF( tinP , pstt1ArchivesAll , psttzArchive ) ;
-                        strokeS* psttzArchive = (strokeS*)stArchive.downF( tinP , hWalk ) ;
-                    {
-                    do
-
-                    etThread.strMakeF( tinP , LF , pstt1ArchivesAll , 0 , cArchive * CSpREFIX + csttArchive ) ; ___( pstt1ArchivesAll ) ;
-
-                    while( ~hWalk ) ;
-                    }
-                        csttArchive += psttzArchive->idAdam ;
-                        cArchive ++ ;
-                        strokeS* psttzArchive = (strokeS*)stArchive.downF( tinP , hWalk ) ;
-                    {
-                    do
-                    ZE( countT , csttArchive ) ;
-
-                    handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                    _IO_
-                {
-                if( !bAbort && stArchive )
-                ZE( strokeS* , pstt1ArchivesAll ) ;
-
-                }
-                    etThread.delF( tinP , pstt1Archives1 ) ;
                     }
                         }
                             }
-                                bAbort = 1 ;                                                    
-                                etThread.traceF( tinP , T("!exception: duplicate archive long name") ) ;
-                                etThread.delF( tinP , psttArchive ) ;
+                                if( cExecutiveHealYearPaused ) { BLAMMO ; }
+
+                                THREADmODE2rESTORE
+                                }
+                                    thirdC::dosSleepWinkIF( tinP ) ;
+                                    //etThread.traceF( tinP , T("waiting for all exec to die [cExecutiveHealYear]:    ")+TF2(cExecutiveHealYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                {
+                                while( cExecutiveHealYear )
+                                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                                _IO_
                             {
-                            if( !ids ) //SHOULD BE IMPOSSIBLE
-                            stArchive.sinkF( tinP , ids , psttArchive , flSTACKsINK_UNIQUE ) ;
-                            ZE( countT , ids ) ;
-                            //etThread.traceF( tinP , T("sinking archive ")+T(psttArchive) ) ;
-
-                            etThread.strMakeF( tinP , LF , psttArchive , psttc1 ) ; ___( psttArchive ) ;
-                            ZE( strokeS* , psttArchive ) ;
-
-                            //etThread.traceF( tinP , T("on lettered device [idArchive1,archive]:    ")+TF2(++cArchives,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttc1) ) ;
-                        {
-                        FORsTRINGSiN1( pstt1Archives1 )
-                        ZE( countT , cArchives ) ;
-                    {
-                    if( !bAbort )
-
-                    }
-                        }
-                            bAbort = 1 ;
-                            etThread.traceF( tinP , T("!exception:  diskFindFileOrDirF [tLikeArchives1,tDiskCulprit]:    ")+tLikeArchives1+tb4+tDiskCulprit ) ;
-                            POOPRqUIET
 
                             }
-                                tDiskCulprit = T(postCulprit) ;
-                                postCulprit[ 3 ] = ostCulprit ;
-                                osTextT postCulprit[] = "///?/" ;
-                            {
-                            if( ostCulprit >= 'a' && ostCulprit <= 'z' ) 
-                            osTextT ostCulprit = (osTextT)( POOP >> 0x18 ) ;
-                            TN( tDiskCulprit , "" ) ;
-                        {
-                        if( POOP )
-                        tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1Archives1 , tLikeArchives1 ) ; ___( pstt1Archives1 ) ;
-                        SCOOPS
-                        _IO_
-                    {
-                    IFsCRATCH
-                    ZE( strokeS* , pstt1Archives1 ) ;
-                    _IO_
-                {
-                if( !cPseudoVolumes ) //P:PERSONALITY:  IF PSEUDOVOLUMES EXIST THEN I DO NOT SCAN FOR DEVICES WITH DRIVE LETTERS ; THIS IS FOR USER CONVENIENCE. FOR EXAMPLE, BACKUP CAN BE RUN TO A LETTERED DEVICE WHILE HEAL IS RUNNING USING PSEUDODEVICES IN ///ideafarm/devices/, EVEN THOUGH THE BACKUP DEVICE IS ALSO A PSEUDODEVICE SO IS BEING USED BOTH FOR BACKUP AND FOR HEALING
-                //etThread.traceF( tinP , T("accumulating archives on lettered devices") ) ;
+                                while( !bAbort && ~hStYearToHeal ) ;
+                                }
+                                    }
+                                        }
+                                            }
+                                                break ;
+                                                bAbort = 1 ;
+                                                etThread.traceF( tinP , T("!exception: could not launch thread tmExecutiveHealYearF") ) ;
+                                                dec02AM( cExecutiveHealYear ) ;
+                                                POOPRqUIET
+                                            {
+                                            if( POOP )
+                                            //U::tinP.pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk , (countT)&cNewChunks ) ;
+                                                 tinP.pEtScratch->osThreadF( TaRG1(           tmExecutiveHealYearF                                                     ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk , (countT)&cNewChunks ) ;
+                                            SCOOPS
+                                            _IO_
+                                        {
+                                        IFsCRATCH
+                                        inc02AM( cExecutiveHealYear ) ;
 
-                }
-                    etThread.delF( tinP , pstt1PseudoVolumes ) ;
-                    }
-                        }
-                            if( bAbort ) break ;
-                            etThread.delF( tinP , pstt1Archives ) ;
+                                        etThread.strMakeF( tinP , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
+                                        ZE( strokeS* , psttYear ) ;
+
+                                        //etThread.traceF( tinP , T("year to heal:    ")+T(psttzYear) ) ;
+                                        strokeS* psttzYear = (strokeS*)stYearToHeal.upF( tinP , hStYearToHeal ) ;       //PROCESSES YEARS BEGINNING WITH MOST RECENT  (A:ASSUME: CURRENT YEARS ARE IN MOST NEED OF HEALING SINCE FILES ARE ADDED AND MODIFIED)
+                                    {
+                                    if( !bAbort )
+
+                                    }
+                                        THREADmODE2rESTORE
+                                        }
+                                            thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
+                                            thirdC::dosSleepWinkIF( tinP ) ;
+                                            thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
+                                            _IO_
+                                        {
+                                        while( test == cExecutiveHealYear )
+                                        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+
+                                        ;
+                                                : cYearsInParallelHeal
+                                                ? CyEARSiNpARALLELcHUNKfILESbYdAY
+                                            : idPhase == IDpHASE_CHUNKfILESbYdAY
+                                            ? CyEARSiNpARALLELgETnAMESoNLY
+                                        countT test = idPhase == IDpHASE_GETnAMESoNLY                     // IDpHASE_ZAPfILEaTTRIBUTES IS OMITTED BECAUSE tmExecutiveHealYearF IS NOT USED DURING THAT PHASE
+
+                                        thirdC::dosPriorityIF( tinP ) ; //U:: TO FIND A BUG
+
+                                        _IO_
+                                    {
+                                    _IO_
+                                {
+                                do
+                                handleC hStYearToHeal( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                _IO_
+                            {
+                            if( !bAbort && stYearToHeal )
+
                             }
                                 }
-                                    etThread.delF( tinP , pstt1Archives2 ) ;
                                     }
                                         }
                                             }
-                                                bAbort = 1 ;                                                    
-                                                etThread.traceF( tinP , T("!exception: duplicate archive long name") ) ;
-                                                etThread.delF( tinP , psttArchive ) ;
+                                                break ;
+                                                bAbort = 1 ;
+                                                etThread.delF( tinP , psttYear ) ;
+                                                etThread.traceF( tinP , T("!exception: duplicate year [psttYear]:    ")+T(psttYear) ) ;                        
                                             {
-                                            if( !ids ) //SHOULD BE IMPOSSIBLE
-                                            stArchive.sinkF( tinP , ids , psttArchive , flSTACKsINK_UNIQUE ) ;
-                                            ZE( countT , ids ) ;
-                                            //etThread.traceF( tinP , T("sinking archive ")+T(psttArchive) ) ;
-            
-                                            etThread.strMakeF( tinP , LF , psttArchive , psttc1 ) ; ___( psttArchive ) ;
-                                            ZE( strokeS* , psttArchive ) ;
-
-                                            cPseudoVolumes ++ ;
-            
-                                            //etThread.traceF( tinP , T("on mounted device [idArchive1,archive]:    ")+TF2(++cArchives,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttc1) ) ;
+                                            if( !idSlot ) //SHOULD BE IMPOSSIBLE
+                                            stYearToHeal.sinkF( tinP , idSlot , psttYear , flSTACKsINK_UNIQUE ) ;
+                                            ZE( countT , idSlot ) ;
+                                            etThread.strMakeF( tinP , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
+                                            ZE( strokeS* , psttYear ) ;
+                                            _IO_
                                         {
-                                        FORsTRINGSiN1( pstt1Archives2 )
-                                        ZE( countT , cArchives ) ;
-                                    {
-                                    else
-                                    if( bAbort ) break ;
+                                        if( !bIgnore && tally > 1 )
+                                        countT tally = swTallyByYear ;
 
+                                        //#endif
+                                            ZE( boolT , bIgnore ) ;
+                                        //#else
+                                        //    ;
+                                        //
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2099") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2023") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2022") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2021") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2020") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2019") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2018") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2017") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2016") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2015") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2014") )
+                                        //          || !etThread.strCompareF( tinP , psttzYear , T("2013") )
+                                        //             !etThread.strCompareF( tinP , psttzYear , T("2012") )
+                                        //
+                                        //    boolT bIgnore = 
+                                        //#if defined( IFC tESTING )
+
+                                        psttzYear = (strokeS*)swTallyByYear.leverF( tinP , idf ) ;
+                                        _IO_
+                                    {
+                                    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                    countT cFlavors = swTallyByYear.cFlavorsF( tinP ) ;
+                                    _IO_
+                                {
+                                if( !bAbort )
+
+                                while( ~hSwsPathToArchives ) ;
+                                }
+                                    etThread.delF( tinP , pstt1PathToYear ) ;
+                                    }
+                                        //etThread.traceF( tinP , T("[tYear,tally]:    ")+tYear+tb4+TF2((countT)swTallyByYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        swTallyByYear ++ ;
+                                        psttzYear = tYear ;
+
+                                        }
+                                            etThread.delF( tinP , psttYear ) ;
+                                            tYear = T(psttYear) ;
+                                            etThread.strWordF( tinP , psttYear , psttc1 , sttq , sttSlash , - 2 ) ; ___( psttYear ) ;
+                                            ZE( strokeS* , psttYear ) ;
+                                        {
+                                        TN( tYear , "" ) ;
+                                        _IO_
+                                    {
+                                    FORsTRINGSiN1( pstt1PathToYear )
+                                    etThread.strConvertToLowerCaseF( tinP , pstt1PathToYear ) ;
                                     }
                                         }
+                                            break ;
                                             bAbort = 1 ;
-                                            etThread.traceF( tinP , T("!exception:  diskFindFileOrDirF [psttc1,tDiskCulprit]:    ")+T(psttc1)+tb4+tDiskCulprit ) ;
+                                            etThread.delF( tinP , pstt1PathToYear ) ;
+                                            etThread.traceF( tinP , T("!exception: diskFindFileOrDirF failed [tPathToArchive]:    ")+tPathToArchive ) ;
                                             POOPRqUIET
-
-                                            }
-                                                tDiskCulprit = T(postCulprit) ;
-                                                postCulprit[ 3 ] = ostCulprit ;
-                                                osTextT postCulprit[] = "///?/" ;
-                                            {
-                                            if( ostCulprit >= 'a' && ostCulprit <= 'z' ) 
-                                            osTextT ostCulprit = (osTextT)( POOP >> 0x18 ) ;
-                                            TN( tDiskCulprit , "" ) ;
                                         {
                                         if( POOP )
-                                        tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1Archives2 , psttc1 ) ; ___( pstt1Archives2 ) ;
+                                        tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
                                         SCOOPS
                                         _IO_
                                     {
                                     IFsCRATCH
-                                    ZE( strokeS* , pstt1Archives2 ) ;
+                                    patternC pat( tinP , etThread , tYearPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                                    ZE( strokeS* , pstt1PathToYear ) ;
 
-                                    //etThread.traceF( tinP , T("[archives found on pseudoVolume]:    ")+T(psttc1) ) ;
-
-                                    if( idLoop ++ ) { BLAMMO ; }
+                                    //etThread.traceF( tinP , T("[tPathToArchive]:    ")+tPathToArchive ) ;
+                                    TN( tPathToArchive , "" ) ; tPathToArchive = T(psttzPathToArchives)+T(psttzArchive)+tSlash ;
+                                    strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveName.downF( tinP , hSwsPathToArchives ) ;
+                                    _IO_
                                 {
-                                FORsTRINGSiN1( pstt1Archives )
-                                ZE( countT , idLoop ) ;
-                            {
-                            else
-                            if( bAbort ) break ;
+                                do
+                                handleC hSwsPathToArchives( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                strokeS sttSlash( '/' ) ;
+                                strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 
-                            }
-                                }
-                                    break ;
-                                    bAbort = 1 ;
-                                    etThread.traceF( tinP , T("!exception:  diskFindFileOrDirF ; aborting [pseudoVolume]:    ")+T(psttc1) ) ;
-                                    POOPRqUIET
-                                {
-                                if( POOP )
-                                tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1Archives , psttc1 , &pat ) ; ___( pstt1Archives ) ;
-                                SCOOPS
+                                switchC swTallyByYear( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzYear ) ;
+                                ZE( strokeS* , psttzYear ) ;
+                                _IO_
                             {
-                            IFsCRATCH
-                            patternC pat( tinP , etThread , T("ideafarm.archives/") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-                            ZE( strokeS* , pstt1Archives ) ;
+                            stackC stYearToHeal( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 
-                            //etThread.traceF( tinP , T("[pseudoVolume]:    ")+T(psttc1) ) ;
+                            // FOR EACH YEAR FOLDER (ALL YEARS FOR THIS ARCHIVE NAME (EXAMPLE: ALL YEAR PATHS FOR EVERY YEAR FOR "wo.ideafarm"), LAUNCH A FILE RECORD COLLECTION THREAD
+                            _IO_
                         {
-                        FORsTRINGSiN1( pstt1PseudoVolumes )
-                    {
-                    if( !bAbort )
-
-                    }
-                        }
-                            bAbort = 1 ;
-                            etThread.traceF( tinP , T("!exception:  diskFindFileOrDirF [tLikePseudoVolumes,tDiskCulprit]:    ")+tLikePseudoVolumes+tb4+tDiskCulprit ) ;
-                            POOPRqUIET
-
-                            }
-                                tDiskCulprit = T(postCulprit) ;
-                                postCulprit[ 3 ] = ostCulprit ;
-                                osTextT postCulprit[] = "///?/" ;
-                            {
-                            if( ostCulprit >= 'a' && ostCulprit <= 'z' ) 
-                            osTextT ostCulprit = (osTextT)( POOP >> 0x18 ) ;
-                            TN( tDiskCulprit , "" ) ;
-                        {
-                        if( POOP )
-                        tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1PseudoVolumes , tLikePseudoVolumes ) ; ___( pstt1PseudoVolumes ) ;
-                        SCOOPS
+                        if( cArchivesWithThisName > 1 )
+                        //etThread.traceF( tinP , T("[cArchivesWithThisName,archive]:    ")+TF2(cArchivesWithThisName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzArchive) ) ;
+                        swsPathToArchivesByArchiveName.ungrabF( tinP ) ;
+                        countT cArchivesWithThisName = swsPathToArchivesByArchiveName ;
+                        psttzArchive = (strokeS*)swsPathToArchivesByArchiveName.leverF( tinP , idf ) ;
+                        swsPathToArchivesByArchiveName.grabF( tinP , TAG( TAGiDnULL ) ) ;
                         _IO_
                     {
-                    IFsCRATCH
-                    ZE( strokeS* , pstt1PseudoVolumes ) ;
+                    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )    // FOR EACH ARCHIVE NAME (EXAMPLE: "wo.ideafarm")
+                    swsPathToArchivesByArchiveName.ungrabF( tinP ) ;
+                    countT cFlavors = swsPathToArchivesByArchiveName.cFlavorsF( tinP ) ;
+                    swsPathToArchivesByArchiveName.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    #endif
+                        TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
+                    #else
+                        //TN( tYearPattern , "2099/" ) ;          // THE YEAR WITH THE LARGEST FILE, ALSO WITH THE FILE OF SIZE 1,004,306,432
+                        //TN( tYearPattern , "2019/" ) ;
+                        //TN( tYearPattern , "2013/" ) ;          // 10,000,635 BYTE FILE
+                        //TN( tYearPattern , "2014/" ) ;          // THE YEAR WITH THE MOST SHORT NAME VALUES
+                        //TN( tYearPattern , "2023/" ) ;
+                        //TN( tYearPattern , "2022/" ) ;
+                        //TN( tYearPattern , "2017/" ) ;
+                        //TN( tYearPattern , "2012/" ) ;
+                        //TN( tYearPattern , "2010/" ) ;
+                        //TN( tYearPattern , "2009/" ) ;
+                        //TN( tYearPattern , "2008/" ) ;
+                        //TN( tYearPattern , "1999/" ) ;
+                          TN( tYearPattern , "1234/" ) ;
+                    #if defined( IFCtESTING )
                     _IO_
                 {
                 if( !bAbort )
-                ZE( countT , cPseudoVolumes ) ;
-                //etThread.traceF( tinP , T("accumulating archives mounted in ")+tLikePseudoVolumes ) ;
 
-                stackC stArchive( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
-                cArchive = bAbort = 0 ;
+                }
+                    etThread.delF( tinP , psttu ) ;
+                    tUnique = T(psttu) ;
+                    etThread.strUniqueF( tinP , psttu ) ; ___( psttu ) ;
+                    ZE( strokeS* , psttu ) ;
+                {
+                TN( tUnique , "" ) ;
+
+                }
+                    }
+                        etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerFileInfoF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&bQuitFileInfo , (countT)&cWorkersFileInfo , (countT)&bAbort , (countT)&idPhase , (countT)&cPause , (countT)&funJobFileInfo , flagsMode ) ;
+                        inc02AM( cWorkersFileInfo ) ;
+                    {
+                    while( cDo -- )
+                    countT cDo = cArchive >> 1 ;
+                {
+                ZE( countT , cWorkersFileInfo ) ;
+                ZE( boolT , bQuitFileInfo ) ;
+
+                etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+                ZE( sCountT , timeA2 ) ;
+                ZE( countT  , timeA1 ) ;
+
                 _IO_
             {
-            while( !ether )
-            ZE( countT , cArchive ) ;
-            #endif
-                //TN( tLikePseudoVolumes , "///ideafarm/devices/"          ) ;
-                TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
-            #else
-                TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
-            #if defined( IFCtESTING )
-            TN( tLikeArchives1 , "///?/ideafarm.archives/" ) ;
-            ZE( strokeS* , pstt1ArchivesAllLag ) ;
-
-            stackC        stPathToArchives( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
-            switchStackC swsPathToArchivesByArchiveName( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzArchive , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
-            ZE( strokeS* , psttzArchive ) ;
-            // LOAD swsPathToArchivesByArchiveName WITH VALUES LIKE "///c/ideafarm.arhives/" OR "///ideafarm/devices/mydevname/ideafarm.archives/" SWITCHED ON VALUES LIKE "wo.ideafarm"
-
-            etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
-            ZE( sCountT , timeA2 ) ;
-            ZE( countT  , timeA1 ) ;
-
-            _IO_
+            else
+            }
+                idPhaseLathAOK = idPhase ;
+                etThread.traceF( tinP , T("IDpHASE_ARCHIVEnEWfSETS") ) ;
+                etThread.traceF( tinP , T("[idPhase]:     ")+TF2(idPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            {
+            if( idPhase == IDpHASE_ARCHIVEnEWfSETS )
         {
-        if( !ether && !bHealingIsFresh )
+        if( !ether )
+        ZE( boolT , bNamesAreStale ) ;
 
-        }
-            bHealingIsFresh = !timeE2 ;
-
-            etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , time1lATHhEALINGaOK , time2lATHhEALINGaOK ) ;
-            etThread.osTimeNowF(      tinP , timeE1 , timeE2 ) ;
-            ZE( sCountT , timeE2 ) ;
-            ZE( countT  , timeE1 ) ;
-        {
-        if( time1lATHhEALINGaOK || time2lATHhEALINGaOK )
-        ZE( boolT , bHealingIsFresh ) ;
+        countT cArchive = loadArchivePathsF( tinP , etThread , bAbort , swsPathToArchivesByArchiveName , psttzArchive , stPathToArchives ) ;
+        stackC         stPathToArchives( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+        switchStackC   swsPathToArchivesByArchiveName( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzArchive , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+        ZE( strokeS* , psttzArchive ) ;
+        // LOAD swsPathToArchivesByArchiveName WITH VALUES LIKE "///c/ideafarm.arhives/" OR "///ideafarm/devices/mydevname/ideafarm.archives/" SWITCHED ON VALUES LIKE "wo.ideafarm"
 
         if( idPhase == IDpHASE_CHUNKfILESbYdAY ) cNewChunks = 0 ;
 
@@ -701,6 +426,7 @@ REST
     ZE( boolT , bPhase2Heal       ) ;
     switchC swJotSortedShortByArchiveYear( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzArchiveSlashYear ) ;
     ZE( strokeS* , psttzArchiveSlashYear ) ;
+    ZE( countT  , idPhaseLathAOK ) ;
     ZE( sCountT , time2AOK ) ;
     ZE( countT  , time1AOK ) ;
 
@@ -730,7 +456,7 @@ REST
     ZE( countT , cWorkersCompare ) ;
     ZE( countT , cYearsHealing   ) ;
 
-    countT idPhase = IDpHASE_GETnAMESoNLY ;
+    countT idPhase = IDpHASE_ARCHIVEnEWfSETS ;
 
     // #endif
     //     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cToHireHeal ) ;
@@ -2697,6 +2423,293 @@ DONE( tmDayZipperF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 )
 TASK( tmDayZipperF )
+
+}
+    return cArchive ;
+
+    swsPathToArchivesByArchiveNameP.lockIfF( tinP ) ;
+
+    etherP.delF( tinP , pstt1ArchivesAllLag ) ;
+    }
+        }
+            ++ s ; etPrime.osSleepF( tinP , TOCK << 2 ) ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        {
+        if( bAbortP )
+
+        }
+            break ;
+            etherP.delF( tinP , pstt1ArchivesAll ) ;
+            }
+                swsPathToArchivesByArchiveNameP.sinkF( tinP , countTC() , psttPathArchives ) ;                           // EXAMPLE: "///c/ipdos.arhives/"
+                psttzArchiveP = tArchive ;
+
+                }
+                    if( !ids ) etherP.delF( tinP , psttp ) ;
+                    stPathToArchivesP.sinkF( tinP , ids , psttp , flSTACKsINK_UNIQUE ) ;
+                    ZE( countT , ids ) ;
+                    etherP.strMakeF( tinP , LF , psttp , psttPathArchives ) ; ___( psttp ) ;
+                    ZE( strokeS* , psttp ) ;
+                {
+
+
+                //etherP.traceF( tinP , T("    [tPathArchives,tArchive]:    ")+T(psttPathArchives)+tb4+tArchive ) ;
+
+                }
+                    etherP.delF( tinP , psttShorter ) ;
+                    tArchive = T(psttShorter) ;
+                    etherP.strSubstringF( tinP , psttShorter , idf , idl , tArchiveSlash ) ; ___( psttShorter ) ;
+                    ZE( strokeS* , psttShorter ) ;
+                {
+                if( idl )
+                countT idl = tArchiveSlash.csF( tinP ) ? tArchiveSlash.csF( tinP ) - 1 : 0 ;
+                countT idf = 1 ;
+                TN( tArchive , "" ) ;                                                                                   // EXAMPLE: "wo.ideafarm"
+
+                }
+                    etherP.delF( tinP , psttArchiveSlash ) ;
+                    tArchiveSlash = T(psttArchiveSlash) ;
+                    etherP.strBisectF( tinP , psttPathArchives , psttArchiveSlash , psttc3 , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathArchives ) ; ___( psttArchiveSlash ) ;
+                    ZE( strokeS* , psttArchiveSlash ) ;
+                {
+                TN( tArchiveSlash , "" ) ;                                                                              // EXAMPLE: "wo.ideafarm/"
+                ZE( strokeS* , psttPathArchives ) ;                                                                     // EXAMPLE: "///c/ipdos.arhives/"
+
+                //etherP.traceF( tinP , T("processing archive ")+T(psttc3) ) ;                                          // EXAMPLE: "///c/ipdos.arhives/wo.ideafarm/"
+                _IO_
+            {
+            FORsTRINGSiN3( pstt1ArchivesAll )
+
+            }
+                continue ;
+                pstt1ArchivesAllLag = pstt1ArchivesAll ; pstt1ArchivesAll = 0 ;
+                etherP.delF( tinP , pstt1ArchivesAllLag ) ;
+                ++ s ; etPrime.osSleepF( tinP , TICK >> 4 ) ;
+                if( bTest3 ) etherP.traceF( tinP , T("napping for a minute [reason]:    my list of visible archives changed") ) ;
+                if( bTest2 ) etherP.traceF( tinP , T("napping for a minute [reason]:    waiting to give time for all archives to become visible") ) ;
+                if( bTest1 ) etherP.traceF( tinP , T("napping for a minute [reason]:    less than oo archives found") ) ;
+            {
+            if( bTest1 /*|| bTest2*/ || bTest3 )
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            boolT bTest3 = !pstt1ArchivesAllLag ? 0 : etherP.strCompareF( tinP , pstt1ArchivesAllLag , pstt1ArchivesAll ) ;
+            boolT bTest2 = !pstt1ArchivesAllLag ;
+            boolT bTest1 =  cArchive < 2 ;
+            _IO_
+        {
+        if( !bAbortP && pstt1ArchivesAll )
+
+        }
+            while( ~hWalk ) ;
+            }
+                etherP.strFuseSeparateF( tinP , pstt1ArchivesAll , psttzArchive ) ;
+                strokeS* psttzArchive = (strokeS*)stArchive.downF( tinP , hWalk ) ;
+            {
+            do
+
+            etherP.strMakeF( tinP , LF , pstt1ArchivesAll , 0 , cArchive * CSpREFIX + csttArchive ) ; ___( pstt1ArchivesAll ) ;
+
+            while( ~hWalk ) ;
+            }
+                csttArchive += psttzArchive->idAdam ;
+                cArchive ++ ;
+                strokeS* psttzArchive = (strokeS*)stArchive.downF( tinP , hWalk ) ;
+            {
+            do
+            ZE( countT , csttArchive ) ;
+
+            handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            _IO_
+        {
+        if( !bAbortP && stArchive )
+        ZE( strokeS* , pstt1ArchivesAll ) ;
+
+        }
+            etherP.delF( tinP , pstt1Archives1 ) ;
+            }
+                }
+                    }
+                        bAbortP = 1 ;                                                    
+                        etherP.traceF( tinP , T("!exception: duplicate archive long name") ) ;
+                        etherP.delF( tinP , psttArchive ) ;
+                    {
+                    if( !ids ) //SHOULD BE IMPOSSIBLE
+                    stArchive.sinkF( tinP , ids , psttArchive , flSTACKsINK_UNIQUE ) ;
+                    ZE( countT , ids ) ;
+                    //etherP.traceF( tinP , T("sinking archive ")+T(psttArchive) ) ;
+
+                    etherP.strMakeF( tinP , LF , psttArchive , psttc1 ) ; ___( psttArchive ) ;
+                    ZE( strokeS* , psttArchive ) ;
+
+                    //etherP.traceF( tinP , T("on lettered device [idArchive1,archive]:    ")+TF2(++cArchives,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttc1) ) ;
+                {
+                FORsTRINGSiN1( pstt1Archives1 )
+                ZE( countT , cArchives ) ;
+            {
+            if( !bAbortP )
+
+            }
+                }
+                    bAbortP = 1 ;
+                    etherP.traceF( tinP , T("!exception:  diskFindFileOrDirF [tLikeArchives1,tDiskCulprit]:    ")+tLikeArchives1+tb4+tDiskCulprit ) ;
+                    POOPRqUIET
+
+                    }
+                        tDiskCulprit = T(postCulprit) ;
+                        postCulprit[ 3 ] = ostCulprit ;
+                        osTextT postCulprit[] = "///?/" ;
+                    {
+                    if( ostCulprit >= 'a' && ostCulprit <= 'z' ) 
+                    osTextT ostCulprit = (osTextT)( POOP >> 0x18 ) ;
+                    TN( tDiskCulprit , "" ) ;
+                {
+                if( POOP )
+                tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1Archives1 , tLikeArchives1 ) ; ___( pstt1Archives1 ) ;
+                SCOOPS
+                _IO_
+            {
+            IFsCRATCH
+            ZE( strokeS* , pstt1Archives1 ) ;
+            _IO_
+        {
+        if( !cPseudoVolumes ) //P:PERSONALITY:  IF PSEUDOVOLUMES EXIST THEN I DO NOT SCAN FOR DEVICES WITH DRIVE LETTERS ; THIS IS FOR USER CONVENIENCE. FOR EXAMPLE, BACKUP CAN BE RUN TO A LETTERED DEVICE WHILE HEAL IS RUNNING USING PSEUDODEVICES IN ///ideafarm/devices/, EVEN THOUGH THE BACKUP DEVICE IS ALSO A PSEUDODEVICE SO IS BEING USED BOTH FOR BACKUP AND FOR HEALING
+        //etherP.traceF( tinP , T("accumulating archives on lettered devices") ) ;
+
+        }
+            etherP.delF( tinP , pstt1PseudoVolumes ) ;
+            }
+                }
+                    if( bAbortP ) break ;
+                    etherP.delF( tinP , pstt1Archives ) ;
+                    }
+                        }
+                            etherP.delF( tinP , pstt1Archives2 ) ;
+                            }
+                                }
+                                    }
+                                        bAbortP = 1 ;                                                    
+                                        etherP.traceF( tinP , T("!exception: duplicate archive long name") ) ;
+                                        etherP.delF( tinP , psttArchive ) ;
+                                    {
+                                    if( !ids ) //SHOULD BE IMPOSSIBLE
+                                    stArchive.sinkF( tinP , ids , psttArchive , flSTACKsINK_UNIQUE ) ;
+                                    ZE( countT , ids ) ;
+                                    //etherP.traceF( tinP , T("sinking archive ")+T(psttArchive) ) ;
+    
+                                    etherP.strMakeF( tinP , LF , psttArchive , psttc1 ) ; ___( psttArchive ) ;
+                                    ZE( strokeS* , psttArchive ) ;
+
+                                    cPseudoVolumes ++ ;
+    
+                                    //etherP.traceF( tinP , T("on mounted device [idArchive1,archive]:    ")+TF2(++cArchives,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttc1) ) ;
+                                {
+                                FORsTRINGSiN1( pstt1Archives2 )
+                                ZE( countT , cArchives ) ;
+                            {
+                            else
+                            if( bAbortP ) break ;
+
+                            }
+                                }
+                                    bAbortP = 1 ;
+                                    etherP.traceF( tinP , T("!exception:  diskFindFileOrDirF [psttc1,tDiskCulprit]:    ")+T(psttc1)+tb4+tDiskCulprit ) ;
+                                    POOPRqUIET
+
+                                    }
+                                        tDiskCulprit = T(postCulprit) ;
+                                        postCulprit[ 3 ] = ostCulprit ;
+                                        osTextT postCulprit[] = "///?/" ;
+                                    {
+                                    if( ostCulprit >= 'a' && ostCulprit <= 'z' ) 
+                                    osTextT ostCulprit = (osTextT)( POOP >> 0x18 ) ;
+                                    TN( tDiskCulprit , "" ) ;
+                                {
+                                if( POOP )
+                                tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1Archives2 , psttc1 ) ; ___( pstt1Archives2 ) ;
+                                SCOOPS
+                                _IO_
+                            {
+                            IFsCRATCH
+                            ZE( strokeS* , pstt1Archives2 ) ;
+
+                            //etherP.traceF( tinP , T("[archives found on pseudoVolume]:    ")+T(psttc1) ) ;
+
+                            if( idLoop ++ ) { BLAMMO ; }
+                        {
+                        FORsTRINGSiN1( pstt1Archives )
+                        ZE( countT , idLoop ) ;
+                    {
+                    else
+                    if( bAbortP ) break ;
+
+                    }
+                        }
+                            break ;
+                            bAbortP = 1 ;
+                            etherP.traceF( tinP , T("!exception:  diskFindFileOrDirF ; aborting [pseudoVolume]:    ")+T(psttc1) ) ;
+                            POOPRqUIET
+                        {
+                        if( POOP )
+                        tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1Archives , psttc1 , &pat ) ; ___( pstt1Archives ) ;
+                        SCOOPS
+                    {
+                    IFsCRATCH
+                    patternC pat( tinP , etherP , T("ideafarm.archives/") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                    ZE( strokeS* , pstt1Archives ) ;
+
+                    //etherP.traceF( tinP , T("[pseudoVolume]:    ")+T(psttc1) ) ;
+                {
+                FORsTRINGSiN1( pstt1PseudoVolumes )
+            {
+            if( !bAbortP )
+
+            }
+                }
+                    bAbortP = 1 ;
+                    etherP.traceF( tinP , T("!exception:  diskFindFileOrDirF [tLikePseudoVolumes,tDiskCulprit]:    ")+tLikePseudoVolumes+tb4+tDiskCulprit ) ;
+                    POOPRqUIET
+
+                    }
+                        tDiskCulprit = T(postCulprit) ;
+                        postCulprit[ 3 ] = ostCulprit ;
+                        osTextT postCulprit[] = "///?/" ;
+                    {
+                    if( ostCulprit >= 'a' && ostCulprit <= 'z' ) 
+                    osTextT ostCulprit = (osTextT)( POOP >> 0x18 ) ;
+                    TN( tDiskCulprit , "" ) ;
+                {
+                if( POOP )
+                tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1PseudoVolumes , tLikePseudoVolumes ) ; ___( pstt1PseudoVolumes ) ;
+                SCOOPS
+                _IO_
+            {
+            IFsCRATCH
+            ZE( strokeS* , pstt1PseudoVolumes ) ;
+            _IO_
+        {
+        if( !bAbortP )
+        ZE( countT , cPseudoVolumes ) ;
+        //etherP.traceF( tinP , T("accumulating archives mounted in ")+tLikePseudoVolumes ) ;
+
+        stackC stArchive( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+        cArchive = bAbortP = 0 ;
+        _IO_
+    {
+    while( !etPrime )
+    #endif
+        //TN( tLikePseudoVolumes , "///ideafarm/devices/"          ) ;
+        TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
+    #else
+        TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
+    #if defined( IFCtESTING )
+    TN( tLikeArchives1 , "///?/ideafarm.archives/" ) ;
+    ZE( strokeS* , pstt1ArchivesAllLag ) ;
+
+    ZE( countT , cArchive ) ;
+    TN( tb4 , "    " ) ;
+
+    etherC& etPrime = etherC::etPrimeIF() ;
+{
+countT loadArchivePathsF( tinS& tinP , etherC& etherP , boolT& bAbortP , switchStackC& swsPathToArchivesByArchiveNameP , strokeS*& psttzArchiveP , stackC& stPathToArchivesP )
 
 }
     etherP.traceF( tinP , T("zipDayF / ----") ) ;
@@ -5242,10 +5255,11 @@ struct jobHealFileS
 {
 struct paramHealFileS
 
-#define IDpHASE_HEAL              0x3
-#define IDpHASE_CHUNKfILESbYdAY   0x2
-#define IDpHASE_GETnAMESoNLY      0x1
-#define CpHASES 3
+#define IDpHASE_HEAL                    0x4
+#define IDpHASE_CHUNKfILESbYdAY         0x3
+#define IDpHASE_GETnAMESoNLY            0x2
+#define IDpHASE_ARCHIVEnEWfSETS         0x1
+#define CpHASES 4
 
 #define IDtYPEjOB_COPY       0x3
 #define IDtYPEjOB_MOVEuNIQUE 0x2
