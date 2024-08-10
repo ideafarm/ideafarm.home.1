@@ -66,6 +66,8 @@ REST
                             boolT bDo = timeE2 || timeE1 >> 0x19 ;                          // HIBERNATE ONLY IF THIS PHASE HAS TAKEN MORE THAN 2 TICKS
                         {                                                                   // A:ASSUME: I WILL COMPLETE WITHIN 2 TICKS IF THERE IS NO HEALING TO BE DONE ; (REQUIREMENT: DO NOT HIBERNATE IF THE ARCHIVE HAS BEEN RECENTLY HEALED)
                         if( F(flagsMode) & flHEALmODE_HIBERNATEoSwHENdONE && !ether )
+                        time2lATHhEALINGaOK = timeN2 ;
+                        time1lATHhEALINGaOK = timeN1 ;
                     {
                     case IDpHASE_HEAL :
                     }
@@ -656,50 +658,42 @@ REST
 
             _IO_
         {
-        if( !ether )
+        if( !ether && !bHealingIsFresh )
 
         }
-            }
-                if( !bWaitWoDay ) etThread.traceF( tinP , T("napped") ) ;
-                ++ s ; ether.osSleepF( tinP , TICK >> 6 ) ;
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-                cNaps ++ ;
-                if( !cNaps ) etThread.traceF( tinP , T(bWaitWoDay?"napping for a day":"napping for a quarter minute") ) ;
-                _IO_
-            {
-            else
-            }
-                break ;
-                if( bWaitWoDay ) etThread.traceF( tinP , T("napped  for a day") ) ;
-            {
-            )
-                (  bWaitWoDay && time2E )            // A DAY'S NAP IS     REQUIRED AND I'VE NAPPED FOR A DAY
-                ||
-                ( !bWaitWoDay && cNaps  )            // A DAY'S NAP IS NOT REQUIRED AND I'VE NAPPED WO TIME
-            (
-            if
+            bHealingIsFresh = !timeE2 ;
 
-            }
-                etThread.osTimeSubtractF( tinP , time1E , time2E , time1AOK , time2AOK ) ;
-                etThread.osTimeNowF( tinP , time1E , time2E ) ;
-            {
-            if( bWaitWoDay )
-            ZE( sCountT , time2E ) ;
-            ZE( countT  , time1E ) ;
-
-            boolT bWaitWoDay = !!time2AOK ;     // THE PRECEDING PHASE DID NOT ABORT
-
-            _IO_
+            etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , time1lATHhEALINGaOK , time2lATHhEALINGaOK ) ;
+            etThread.osTimeNowF(      tinP , timeE1 , timeE2 ) ;
+            ZE( sCountT , timeE2 ) ;
+            ZE( countT  , timeE1 ) ;
         {
-        while( idPhase == IDpHASE_GETnAMESoNLY && !ether )
-        ZE( countT , cNaps ) ;
+        if( time1lATHhEALINGaOK || time2lATHhEALINGaOK )
+        ZE( boolT , bHealingIsFresh ) ;
 
         if( idPhase == IDpHASE_CHUNKfILESbYdAY ) cNewChunks = 0 ;
+
+        }
+            etThread.traceF( tinP , T("napped") ) ;
+            ++ s ; ether.osSleepF( tinP , TICK >> 4 ) ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            etThread.traceF( tinP , T("napping for a minute") ) ;
+        {
+        else
+        }
+            etThread.traceF( tinP , T("napped") ) ;
+            ++ s ; ether.osSleepF( tinP , TOCK ) ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            etThread.traceF( tinP , T("napping for a tock") ) ;
+        {
+        if( bSandbox )
 
         //etThread.traceF( tinP , T("[idPhase]:    ")+TF2(idPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         _IO_
     {                                   // BUT NOT ALL ITERATIONS ARE SUCCESSFUL ; THOSE THAT FAIL ARE RETRIED, AND THE PHASE ID IS NOT ADVANCED UNTIL THE CURRENT PHASE SUCCEEDS
     while( !ether && !POOP )            // EVERY 3 SUCCESSFUL ITERATIONS ARE [ PHASE1 , PHASE2 , PHASE3 ] ( 1: GET NAMES, 2: HEAL, 3: CHUNK FILES BY DAY ) ; THE PHASE ID DETERMINES WHAT tmExecutiveHealYearF DOES
+    ZE( sCountT , time2lATHhEALINGaOK ) ;
+    ZE( countT  , time1lATHhEALINGaOK ) ;
 
     ZE( countT , cNewChunks ) ;
     ZE( countT , cConsecutiveAborts ) ;
@@ -5376,7 +5370,7 @@ struct paramHealFileS
 
 #define FUNNELhORNcAPACITY       ( TUCK )
 
-//#define IFCtESTING
+#define IFCtESTING
 
 //#define OVERRIDElONELYiSoK
 //#define OVERRIDEkEEPnAMES
