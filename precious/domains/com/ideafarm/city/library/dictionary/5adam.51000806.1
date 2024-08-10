@@ -414,6 +414,27 @@ REST
         if( bSandbox )
 
         //etThread.traceF( tinP , T("[idPhase]:    ")+TF2(idPhase,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+        //    }
+        //        }
+        //            idPhase ++ ;
+        //        {
+        //        if( idIn == 1 )
+        //        countT idIn = 1 + incv02AM( idInLath ) ;
+        //        static countT idInLath ;
+        //    {
+        //    //if( idPhase == IDpHASE_CHUNKfILESbYdAY )
+        //      if( idPhase == IDpHASE_GETnAMESoNLY    )
+        //REMOVE IN PRODUCTION ; THESE ARE FOR TESTING ONLY TO TEST THE SCENARIO IN WHICH A REQUIRED PHASE IS NOT DONE DUE TO RACE SCENARIO WHEN FRESH BECOMES STALE
+        //20240810@1455: PASSES THESE 2 TESTS
+
+        // IDpHASE_HEAL
+        // IDpHASE_CHUNKfILESbYdAY
+        // IDpHASE_GETnAMESoNLY
+        // IDpHASE_ARCHIVEnEWfSETS
+
+        if( idPhase == IDpHASE_ARCHIVEnEWfSETS ) swIdPhaseDoneAOKLath.freeAllF( tinP ) ;
+
         _IO_
     {                                   // BUT NOT ALL ITERATIONS ARE SUCCESSFUL ; THOSE THAT FAIL ARE RETRIED, AND THE PHASE ID IS NOT ADVANCED UNTIL THE CURRENT PHASE SUCCEEDS
     while( !ether && !POOP )            // EVERY 3 SUCCESSFUL ITERATIONS ARE [ PHASE1 , PHASE2 , PHASE3 ] ( 1: GET NAMES, 2: HEAL, 3: CHUNK FILES BY DAY ) ; THE PHASE ID DETERMINES WHAT tmExecutiveHealYearF DOES
