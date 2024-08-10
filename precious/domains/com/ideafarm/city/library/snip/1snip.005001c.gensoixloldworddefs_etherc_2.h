@@ -310,7 +310,6 @@ voidT diskUnzipF_4P4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
             }
         }
     }
-    if( !POOP ) etherP.diskUnzipF( tinP , psttToP , psttFromFileP , psttFromZipP , flagsP ) ;
     etherP.delF( tinP , psttFromZipP ) ;
     etherP.delF( tinP , psttFromFileP ) ;
     etherP.delF( tinP , psttToP ) ;

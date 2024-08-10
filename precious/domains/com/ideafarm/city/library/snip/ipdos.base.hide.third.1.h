@@ -44438,7 +44438,7 @@ arguments
 /*1*//*flUNZIP*//*1*/
 
 /*3*/
-#define flUNZIP_NOTuSED                    0xe00001e9
+#define flUNZIP_QUERY                    0xe00001e9
 /*3*/
 #define flUNZIP_null    0xe00000e9
 

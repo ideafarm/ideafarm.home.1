@@ -29885,8 +29885,9 @@ private :
  voidT diskZipOldF( const osTextT* const postArgsInfoZipP , tinS& tinP , const osTextT* const postArgsPkZipP = 0 ) ;
  voidT diskZipF( tinS& tinP , const osTextT* const postToP , const osTextT* const postWildListP , const osTextT* const postWildListIncludeP , const osTextT* const postWildListExcludeP , const osTextT* const postSpecsPKZipP , const osTextT* const postSpecsInfoZipP , const countT idZipperP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011b6.thirdc.diskzipf!||
- voidT diskUnzipF( tinS& tinP , const osTextT* const postFileP , const osTextT* const postZipFileP , const flagsT flagsP = flUNZIP_null ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36199.thirdC.diskUnzipF!||
+ voidT diskUnzipOldF( tinS& tinP , const osTextT* const postFileP , const osTextT* const postZipFileP , const flagsT flagsP = flUNZIP_null ) ;
+ voidT diskUnzipF( tinS& tinP , const osTextT* const postFromP , const flagsT flagsP , const osTextT* const postWildListP , const osTextT* const postWildListIncludeP , const osTextT* const postWildListExcludeP , const osTextT* const postSpecsPKZipP , const osTextT* const postSpecsInfoZipP , const countT idZipperP = 0 ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36199.thirdC.diskUnzipOldF!||
  voidT diskWalkGatherF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postToP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34196.thirdC.diskWalkGatherF!||
  voidT diskWalkTimePrefixF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
@@ -33103,8 +33104,9 @@ examples
  voidT diskZipOldF( const strokeS* const psttArgsInfoZipP , tinS& tinP , const strokeS* const psttArgsPkZipP = 0 ) ;
  voidT diskZipF( tinS& tinP , const strokeS* const psttToP , const strokeS* const pstt01WildListP , const strokeS* const pstt01WildListIncludeP , const strokeS* const pstt01WildListExcludeP , const strokeS* const psttSpecsPKZipP , const strokeS* const psttSpecsInfoZipP , const countT idZipperP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600220f.etherc.diskzipf!||
- voidT diskUnzipF( tinS& tinP , const strokeS* const psttToP , const strokeS* const psttFromFileP , const strokeS* const psttFromZipP , const flagsT flagsP = flUNZIP_null ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.361ca.etherC.diskUnzipF!||
+ voidT diskUnzipOldF( tinS& tinP , const strokeS* const psttToP , const strokeS* const psttFromFileP , const strokeS* const psttFromZipP , const flagsT flagsP = flUNZIP_null ) ;
+ voidT diskUnzipF( tinS& tinP , const strokeS* const psttFromP , const flagsT flagsP , const strokeS* const pstt01WildListP , const strokeS* const pstt01WildListIncludeP , const strokeS* const pstt01WildListExcludeP , const strokeS* const psttSpecsPKZipP , const strokeS* const psttSpecsInfoZipP , const countT idZipperP = 0 ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.361ca.etherC.diskUnzipOldF!||
  voidT diskWalkGatherF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const strokeS* const psttToP , const strokeS* const psttFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341be.etherC.diskWalkGatherF!||
  voidT diskWalkTimePrefixF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const strokeS* const psttFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
