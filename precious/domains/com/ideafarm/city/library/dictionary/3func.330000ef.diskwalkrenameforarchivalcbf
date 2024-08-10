@@ -158,7 +158,7 @@
                                         tNewFileMetaCurrentName = tPart1+tDotTypeMetaDotCurrentName ;
                                         tNewFileMetaHashedName  = tPart1+tDotTypeMetaDotHashedName  ;
                                         tNewFileData            = tPart1+tDotTypeData+tDotExt       ;
-                                        tNewFileZip             = tPart1+tDotZip                    ;
+                                        tNewFileZip             = tPart1+tDotFsetDotZip                    ;
 
                                         TN( tPart1 , "" ) ; tPart1 = tNewPrefix+tTimePair+tDot+tHash+tDot+TF3(++idSeq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,3) ;
 
@@ -188,7 +188,7 @@
                                 TN( tNewFileMetaHashedName , "" ) ;
                                 TN( tNewFileData , "" ) ;
                                 TN( tNewFileZip  , "" ) ;
-                                TN( tDotZip , ".zip" ) ;                                                                                                        // 20240807@1800: NOW THE LEAF VALUE WILL SPECIFY THE NAME OF THE ARCHIVE TO PLACE THE FILESET INTO
+                                TN( tDotFsetDotZip , ".fset.zip" ) ;                                                                                            // 20240807@1800: NOW THE LEAF VALUE WILL SPECIFY THE NAME OF THE ARCHIVE TO PLACE THE FILESET INTO
                                                                                                                                                                 // ORIGINALLY, THE LEAF VALUE DESCRIBED THE SOURCE OF THE FILE
                                 TN( tToPath , ifFileNameC( tinP , etThread , postzToP ) ) ; tToPath += tPathLeaf+T("/") ;                                       // DESTINATION FOLDER
 
