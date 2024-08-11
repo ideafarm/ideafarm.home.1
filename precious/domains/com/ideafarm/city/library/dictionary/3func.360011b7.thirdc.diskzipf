@@ -15,10 +15,10 @@
     }
         }
             }
-                tinP.pEtScratch->traceF( tinP , T("could not zip using bundled infozip zip.exe ; i give up" ) ) ;
+                tinP.pEtScratch->traceF( tinP , T("could not   zip using bundled infozip   zip.exe ; i give up" ) ) ;
 
                 delF( tinP , postDir ) ;
-                tinP.pEtScratch->traceF( tinP , T("called pkzipc.exe [postArgs]:    ")+T(postArgs1) ) ;
+                tinP.pEtScratch->traceF( tinP , T("called infozip   zip.exe [postArgs]:    ")+T(postArgs1) ) ;
                 tinP.pEtScratch->traceF( tinP , T("[postDir]:    ")+T(postDir) ) ;
                 dosGetCurrentDirF( tinP , postDir ) ; ___( postDir ) ;
                 ZE( osTextT* , postDir ) ;
@@ -27,24 +27,27 @@
 
             else bDone = 1 ;
             }
-                __( idDeathType ) ;
-                __( value ) ;
-                tinP.pEtScratch->traceF( tinP , T("bundled infozip zipc.exe failed [value,idDeathType]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idDeathType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                tinP.pEtScratch->traceF( tinP , T("bundled infozip   zip.exe failed [value,idDeathType]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idDeathType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             else if( value || idDeathType )
             }
-                tinP.pEtScratch->traceF( tinP , T("could not hire bundled infozip zip.exe [POOP]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                tinP.pEtScratch->traceF( tinP , T("could not hire bundled infozip   zip.exe [POOP]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 POOPRqUIET
                 countT idPoop = POOP ;
             {
             if( POOP )
 
             pEtherContainsMe->strokeF( tinP , T("\r\n") ) ;
-            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip\\zip.exe\\zip.exe"  , postArgs2 ) ;
+            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , postLongExe , postArgs2 ) ;
             pEtherContainsMe->strokeF( tinP , T("\r\n") ) ;
             SCOOPS
         {
         IFsCRATCH
+
+        c_strcatIF( tinP , postLongExe , "\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip\\zip.exe\\zip.exe"     ) ;
+        c_strcpyIF( tinP , postLongExe , home.postHome ) ;
+        osTextT postLongExe[ TUCK ] ;
+        homeS& home = homeS::homeIF() ;
 
         idDeathType = value = 0 ;
     {
@@ -54,6 +57,14 @@
         }
             }
                 }
+                    tinP.pEtScratch->traceF( tinP , T("could not   zip using pkzipc.exe" ) ) ;
+
+                    delF( tinP , postDir ) ;
+                    tinP.pEtScratch->traceF( tinP , T("called pkzipc.exe [postArgs]:    ")+T(postArgs1) ) ;
+                    tinP.pEtScratch->traceF( tinP , T("[postDir]:    ")+T(postDir) ) ;
+                    dosGetCurrentDirF( tinP , postDir ) ; ___( postDir ) ;
+                    ZE( osTextT* , postDir ) ;
+
                     pEtherContainsMe->traceF( tinP , T("!exception: kid process failed [value,rc,name]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
                     TN( tb4 , "    " ) ;
                     const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
@@ -61,7 +72,7 @@
                     countT rc = POOP ;
                 {
                 else
-                if( !POOP ) bDone = 1 ;
+                if( !POOP ) bPKZipHired = bDone = 1 ;
 
                 }
                     __1
@@ -93,26 +104,15 @@
 
     }
         }
+            else bPKZipHired = bDone = 1 ;
             }
-                tinP.pEtScratch->traceF( tinP , T(bHireNoMonitor?"could not hire pkzipc.exe directly ; will try hiring pkzipc.exe indirectly":"could not zip using pkzipc.exe ; will try the bundled infozip zip.exe" ) ) ;
-
-                delF( tinP , postDir ) ;
-                tinP.pEtScratch->traceF( tinP , T("called pkzipc.exe [postArgs]:    ")+T(postArgs1) ) ;
-                tinP.pEtScratch->traceF( tinP , T("[postDir]:    ")+T(postDir) ) ;
-                dosGetCurrentDirF( tinP , postDir ) ; ___( postDir ) ;
-                ZE( osTextT* , postDir ) ;
-            {
-            if( !bDone )
-
-            else bDone = 1 ;
-            }
-                __( idDeathType ) ;
-                __( value ) ;
                 tinP.pEtScratch->traceF( tinP , T("pczipc.exe failed [value,idDeathType]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idDeathType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                bPKZipHired = 1 ;
             {
             else if( value || idDeathType )
             }
-                tinP.pEtScratch->traceF( tinP , T("could not hire pczipc.exe [POOP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
+                if( bHireNoMonitor ) tinP.pEtScratch->traceF( tinP , T("i will try hiring pkzipc.exe indirectly") ) ;
+                tinP.pEtScratch->traceF( tinP , T("could not hire pczipc.exe directly [POOP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
                 POOPRqUIET
                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                 bHireNoMonitor = rc == ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTED ;
@@ -128,10 +128,11 @@
         IFsCRATCH
     {
     if( !idZipperP || idZipperP == ifcIDzIPPER_PKZIPC )
-    ZE( boolT , bHireNoMonitor ) ;
-    ZE( countT , idDeathType ) ;
-    ZE( countT , value ) ;
-    ZE( boolT , bDone ) ;
+    ZE( boolT  , bHireNoMonitor ) ;
+    ZE( boolT  , bPKZipHired    ) ;
+    ZE( countT , idDeathType    ) ;
+    ZE( countT , value          ) ;
+    ZE( boolT  , bDone          ) ;
 
     pEtherContainsMe->traceF( tinP , T("[postArgs2]:    ")+T(postArgs2) ) ;
     pEtherContainsMe->traceF( tinP , T("[postArgs1]:    ")+T(postArgs1) ) ;
@@ -140,8 +141,8 @@
         pEtherContainsMe->strMakeF( tinP , LF , postArgs2 , tArgs2 ) ; ___( postArgs2 ) ;
         pEtherContainsMe->strMakeF( tinP , LF , postArgs1 , tArgs1 ) ; ___( postArgs1 ) ;
 
-        tArgs2 += T(postSpecsInfoZipP)+tb+T(postToP)+tb+T(postWildListP) ;
-        tArgs1 += T(postSpecsPKZipP  )+tb+T(postToP)+tb+T(postWildListP) ;
+        tArgs2 += T(postSpecsInfoZipP)+tb+T(postToP  )+tb+T(postWildListP) ;
+        tArgs1 += T(postSpecsPKZipP  )+tb+T(postToP  )+tb+T(postWildListP) ;
         if( tArgs2.csF( tinP ) ) tArgs2 += tb ;
         if( tArgs1.csF( tinP ) ) tArgs1 += tb ;
 
@@ -157,8 +158,8 @@
         {
         if( postWildListIncludeP )
 
-        TN( tArgs2 , "" ) ;
-        TN( tArgs1 , "-add" ) ;
+        TN( tArgs2 , ""                                            ) ;
+        TN( tArgs1 , "-add"                                        ) ;
         TN( tq , "\""  ) ;
         TN( tb , " "   ) ;
         TN( tba , " @" ) ;
@@ -170,7 +171,7 @@
     if( postSpecsPKZipP      ) costAll += thirdC::c_strlenIF( tinP , postSpecsPKZipP      ) ;   // REALLY ONLY NEED THE MAXIMUM LENGTH SINCE ONLY WO SPEC IS USED AT A TIME; DONE THIS WAY FOR SIMPLICITY (SPECS ARE SHORT)
     if( postWildListExcludeP ) costAll += thirdC::c_strlenIF( tinP , postWildListExcludeP ) ;
     if( postWildListIncludeP ) costAll += thirdC::c_strlenIF( tinP , postWildListIncludeP ) ;
-    countT                     costAll  = thirdC::c_strlenIF( tinP , postToP ) + thirdC::c_strlenIF( tinP , postWildListP ) + TUCK ;
+    countT                     costAll  = thirdC::c_strlenIF( tinP , postToP   ) + thirdC::c_strlenIF( tinP , postWildListP ) + TUCK ;
 
     pEtherContainsMe->traceF( tinP , T("[postSpecsInfoZipP   ]:    ")+T(postSpecsInfoZipP)    ) ;
     pEtherContainsMe->traceF( tinP , T("[postSpecsPKZipP     ]:    ")+T(postSpecsPKZipP)      ) ;
@@ -183,14 +184,15 @@
 
     }
         if( POOP ) return ;
-        __Z( pEtherContainsMe )
-        __Z( postWildListP ) ;
-        __Z( postToP       ) ;
+
+        __Z( pEtherContainsMe  ) ;
+        __Z( postWildListP     ) ;
+        __Z( postToP           ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::diskZipF( tinS& tinP , const osTextT* const postToP , const osTextT* const postWildListP , const osTextT* const postWildListIncludeP , const osTextT* const postWildListExcludeP , const osTextT* const postSpecsPKZipP , const osTextT* const postSpecsInfoZipP , const countT idZipperP )/*1*/
+/*1*/voidT thirdC::diskZipF(   tinS& tinP , const osTextT* const postToP                         , const osTextT* const postWildListP , const osTextT* const postWildListIncludeP , const osTextT* const postWildListExcludeP , const osTextT* const postSpecsPKZipP , const osTextT* const postSpecsInfoZipP , const countT idZipperP )/*1*/
 
 /**/
 

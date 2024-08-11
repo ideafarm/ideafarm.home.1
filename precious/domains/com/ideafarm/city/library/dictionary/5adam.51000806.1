@@ -2410,10 +2410,31 @@ voidT chunkDayIfF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewCh
         }
             etherP.delF( tinP , ppsttPathToYear[ offi ] ) ;
 
+            }
+                }
+                    }
+                        etherP.traceF( tinP , T("could not extract fset from chunk [rc,postRc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
+                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    if( POOP )
 
-//U:: DO THE DEED HERE (UPDATE THIS PATH IN THE ARCHIVE WITH THE NEW FILE)
+                    tinP.pEtScratch->diskUnzipF( tinP , tShortDayChunk , flUNZIP_null , tShortFset+T(".fooey") , 0 , 0 , T("-embedded=no") , 0 , 0 ) ;
+                    SCOOPS
+                {
+                IFsCRATCH
+                // TRY TO EXTRACT A CHUNKED VERSION OF THIS FILE
 
-            etherP.traceF( tinP , T("walkNewFsetCBF [path]:    ")+T(ppsttPathToYear[offi]) ) ;
+                hoverC hover( tinP , etherP , tPathYear ) ;
+
+                etherP.traceF( tinP , T("walkNewFsetCBF / chunk file found [tLongDayChunk]:    ")+tLongDayChunk ) ;
+            {
+            if( etherP.diskFileExistsF( tinP , tLongDayChunk ) )
+
+            TN( tLongDayChunk , "" ) ; tLongDayChunk = tPathYear+tShortDayChunk ;
+            etherP.traceF( tinP , T("walkNewFsetCBF [path]:    ")+tPathYear ) ;
+            TN( tPathYear , ppsttPathToYear[ offi ] ) ;
         {
         for( countT offi = 0 ; offi < cPathsToYear ; offi ++ )
 
@@ -2422,20 +2443,19 @@ voidT chunkDayIfF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewCh
         psttzlArchiveP = tArchive ;
         ZE( strokeS** , ppsttPathToYear ) ;
 
-        etherP.traceF( tinP , T("walkNewFsetCBF file to archive [postNameP]:    ")+T(postNameP) ) ;
+        etherP.traceF( tinP , T("                      [tShortDayChunk]:    ")+tShortDayChunk ) ;
+        etherP.traceF( tinP , T("walkNewFsetCBF file to archive [tLongFset]:    ")+tLongFset ) ;
     {
     if( bDoIt )
 
     }
         }
-            bDoIt = 1 ;
+            if( idHit && idHit == tShortFset.csF( tinP ) + 1 - tTest.csF( tinP ) ) bDoIt = 1 ;
 
-            if( idHit && idHit == tName.csF( tinP ) + 1 - tTest.csF( tinP ) ) bDoIt = 1 ;
-
-            countT idHit = etherP.strIdF( tinP , tTest , tName ) ;
+            countT idHit = etherP.strIdF( tinP , tTest , tShortFset ) ;
             TN( tTest , ".fset.zip" ) ;
 
-            etherP.traceF( tinP , T("[tArchive,tYear]:    ")+tArchive+T("    ")+tYear ) ;
+            //etherP.traceF( tinP , T("[tArchive,tYear]:    ")+tArchive+T("    ")+tYear ) ;
         {
         if( !bDir && cWords == 7 )
 
@@ -2445,17 +2465,25 @@ voidT chunkDayIfF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewCh
                 }
                     break ;
 
-                    etherP.delF( tinP , psttYear ) ;
-                    tYear = T(psttYear) ;
-                    etherP.strSubstringF( tinP , psttYear , idf , idl , psttc1 ) ; ___( psttYear ) ;
+                    etherP.delF( tinP , psttSnip ) ;
+                    tShortDayChunk = T(psttSnip)+T(".!.chunk.day.zip") ;
+                    etherP.strSubstringF( tinP , psttSnip , idf , idl , psttc1 ) ; ___( psttSnip ) ;
+                    idl = 0x28 ;
+                    idf = 0x01 ;
+
+                    etherP.delF( tinP , psttSnip ) ;
+                    tYear = T(psttSnip) ;
+                    etherP.strSubstringF( tinP , psttSnip , idf , idl , psttc1 ) ; ___( psttSnip ) ;
                     countT idl = 0x24 ;
                     countT idf = 0x21 ;
-                    ZE( strokeS* , psttYear ) ;
+                    ZE( strokeS* , psttSnip ) ;
 
                     // !ideafarm.a.2.00000000.00000001.12340101@1111.12340101@1111.47b026940e01c589dcbe1258d7ed69ce.001.fset.zip
                     //                                 |--|
                     // 123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0
                     // 0              1               2               3               4               5               6               7
+
+                    tShortFset = T(psttc1) ;
                 {
                 case 7 :
                 }
@@ -2466,24 +2494,29 @@ voidT chunkDayIfF( tinS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewCh
             {
             switch( idw )
 
-            etherP.traceF( tinP , T("    [idWord,word]:    ")+TF2(++idw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttc1) ) ;
+            //etherP.traceF( tinP , T("    [idWord,word]:    ")+TF2(idw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttc1) ) ;
+            ++ idw ;
         {
         FORsTRINGSiN1( pstt1w )
         ZE( countT , idw ) ;
-        etherP.traceF( tinP , T("[bDir,cWords,tName]:    ")+TF2(bDir,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tName ) ;
-        countT cWords = etherP.strWordsF( tinP , pstt1w , tName , sttq , T("/") ) ; ___( pstt1w ) ;
+        etherP.traceF( tinP , T("[bDir,cWords,tLongFset]:    ")+TF2(bDir,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tLongFset ) ;
+        countT cWords = etherP.strWordsF( tinP , pstt1w , tLongFset , sttq , T("/") ) ; ___( pstt1w ) ;
         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , pstt1w ) ;
 
         boolT bDir = psttzName[ CSpREFIX + psttzName->idAdam - 1 ].idAdam == '/' ;
-        strokeS* psttzName = tName ;
-        TN( tName , iffn ) ;
+        strokeS* psttzName = tLongFset ;
 
+        tLongFset = T(iffn) ;
         ifFileNameC iffn( tinP , etherP , postNameP ) ;
     {
     if( postNameP )
+    TN( tShortDayChunk , "" ) ;
+    TN( tShortFset , "" ) ;
+    TN( tLongFset , "" ) ;
     TN( tYear    , "" ) ;
     TN( tArchive , "" ) ;
+    TN( tb4 , "    " ) ;
     ZE( boolT , bDoIt ) ;
 
     strokeS*&     psttzlArchiveP                  =     *(strokeS**)pcArgP[ 3 ] ;
@@ -2994,7 +3027,7 @@ countT loadArchivePathsF( tinS& tinP , etherC& etherP , boolT& bAbortP , switchS
             TN( tLongChunk , "" ) ; tLongChunk = tPathYear+tShortDayZipP ;
 
             }
-/*if( !bZippedAok )*/ etherP.traceF( tinP , T(bZippedAok?"zipped aok":"zip failed") ) ;
+                if( !bZippedAok ) etherP.traceF( tinP , T(bZippedAok?"zipped aok":"zip failed") ) ;
 
                 }
                     }
@@ -3044,7 +3077,7 @@ countT loadArchivePathsF( tinS& tinP , etherC& etherP , boolT& bAbortP , switchS
                 _IO_
             {
             countT& osPid = c4Result.c2 ;
-            countT& osTid = c4Result.c1 ; //U:: VERIFY THAT THIS GUESS IS CORRECT
+            countT& osTid = c4Result.c1 ;
             count4S c4Result ;
             THREADmODE2oN( flTHREADmODE2_ALLOWmULTItHREADEDhOVER | flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
