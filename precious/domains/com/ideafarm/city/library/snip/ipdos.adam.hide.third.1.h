@@ -9904,9 +9904,10 @@ flHIRE_SHOW
 #define FINGERnEG_jotFileNameC                              ((countT)-(sCountT)0xcccc006f)
 #define FINGERnEG_jotFileBranchC                            ((countT)-(sCountT)0xcccc0070)
 #define FINGERnEG_fileWindowsC                              ((countT)-(sCountT)0xcccc0071)
+#define FINGERnEG_listingC                                  ((countT)-(sCountT)0xcccc0072)
 /*3*/
 #define FINGERnEG_min     0xcccc0001
-#define FINGERnEG_max     0xcccc0071
+#define FINGERnEG_max     0xcccc0072
 
 //CS:CODEsYNC: 510004FB 112000EF
 

@@ -30925,6 +30925,7 @@ it is illegal for any application code to construct or reference listingC (or de
 /*1*/class _export listingC/*1*/
 {
     protected :                     // cRef IS HERE SO THAT IT IS ALIGNED TO countT SO THAT IT CAN BE MANIPULATED WITH A NORMAL SMART POINTER (WHICH WILL TRASH MY OTHER MEMBERS ON OVERFLOW)
+    //countT          finger ;        //U:: REMOVE IN PRODUCTION (TO OPTIMIZE OBJECT SIZE TO FIT EFFICIENTLY WITHIN A poolC DROP) 20240811@1545: ADDED W/O ANALYSIS TO FIND A BUG
     count01T        cRef ;       /*old ordering: 1*/   //U::POSSIBLY OBSOLETE COMMENT NOW THAT cRef IS A BYTE:  CS:CODEsYNC: 003018e 003015e ; A:ASSUME: sizeof( countT ) == 4 ; IF THIS IS NOT TRUE THEN SMART POINTER WILL NOT REFERENCE cRef AND WILL TRASH ME
     byteT           flagsi ;     /*old ordering: 3*/   // cRef OVERFLOW CAN BE DETECTED BY INSPECTING BOTH bFinger AND flagsi SINCE OVERFLOW WILL CHANGE bFinger AND WILL THEN EVENTUALLY SET AN ILLEGAL FLAG IN flagsi
     byteT           idTypeDatum ;/*old ordering: 2*/   // IF NOT NULL THEN AN INSTANCE DERIVED FROM datumC RESIDES IMMEDIATELY AFTER THE "ME" THAT IS DERIVED FROM listingC, WHERE "ME" IS EITHER A listingC OR A listC

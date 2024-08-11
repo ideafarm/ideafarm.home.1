@@ -191,7 +191,7 @@
                     tinP.pEtScratch->strFuseF( tinP , pstto , T(" | ") ) ;
                     tinP.pEtScratch->strFuseF( tinP , pstto , TF2(aptListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     tinP.pEtScratch->strFuseF( tinP , pstto , T(" | a: ") ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , TF2((countT)pListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    tinP.pEtScratch->strFuseF( tinP , pstto , T("0x")+TfORsTRING((countT)pListing) ) ;
                     tinP.pEtScratch->strFuseF( tinP , pstto , T(" | p: ") ) ;
                     tinP.pEtScratch->strFuseF( tinP , pstto , TF2(tinP.ta.pushed.u.listWalk.walk.cRecurseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     tinP.pEtScratch->strFuseF( tinP , pstto , T(" | ") ) ;
@@ -273,6 +273,27 @@
         if( !listingC::bIsListingIF( tinP , aptListing ) )
 
         aptC aptListing( tinP , pListing ) ;
+
+        }
+            CONoUTrAW( ostoSay ) ;
+
+            OStEXTAK( ostoSay , "\r\n" ) ;
+            OStEXTC(  ostoSay , finger , 0 ) ;
+            OStEXTAK( ostoSay , "    " ) ;
+            OStEXTC(  ostoSay , dropHeader , 0 ) ;
+            OStEXTAK( ostoSay , "    " ) ;
+            OStEXTC(  ostoSay , separator , 0 ) ;
+            OStEXTAK( ostoSay , "    " ) ;
+            OStEXTCF( ostoSay , pListing , '0' ) ;
+            OStEXTAK( ostoSay , "\r\n[pListing,separator,dropHeader]:    0x" ) ;
+            OStEXT(  ostoSay , TUCK ) ;
+
+            countT  finger     = pcl[   0 ] ;
+            countT  dropHeader = pcl[ - 1 ] ;
+            countT  separator  = pcl[ - 2 ] ;
+            countT* pcl = (countT*)pListing ;
+        {
+        //U:: TO FIND A BUG
     {
     if( pListing )
     flagsT flrc = flLISTwALKcALLbACKrETURNcODE_null ;

@@ -145,7 +145,7 @@
             // DEBUGGING CHATTER
             //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-            formatDataBlobF( tinP ) ; //NO ACTION IS NEEDED HERE TO PRESERVE STATE WHEN STATE FILE IS USED, SINCE THE FORMATTING INFORMATION IS ONLY USED TO DETECT MEMORY CORRUPTION SO NEED NOT BE SAVED AS STATE
+            if( bNeedsFormatting ) formatDataBlobF( tinP ) ; //NO ACTION IS NEEDED HERE TO PRESERVE STATE WHEN STATE FILE IS USED, SINCE THE FORMATTING INFORMATION IS ONLY USED TO DETECT MEMORY CORRUPTION SO NEED NOT BE SAVED AS STATE
 
             //------------------------------------------------------------------------------------------------------------------------------------------------------------
             // FORMAT pbData: ORIGINALLY, pbData WAS NOT FORMATTED.  FORMATTING WAS ADDED (20210128@1831) ONLY SO THAT MEMORY CORRUPTION CAN BE DETECTED.  THE FORMATTING INFORMATION IS NOT NEEDED FOR ANY OTHER PURPOSE.
@@ -447,7 +447,11 @@
 
         }
             }
-                if( pbData && !( F(((napkinC*)pb_napData)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
+                }
+                    bNeedsFormatting = 1 ;
+                    ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
+                {
+                if( pbData && !( F(((napkinC*)pb_napData)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
             {
 
             if( pbData && bSmallSlots ) pbData -= sizeof( napkinHeaderS ) ;
@@ -536,6 +540,7 @@
         //U::DELETE THE BLOB THAT I JUST ALLOCATED
     {
     if( POOP )
+    ZE( boolT , bNeedsFormatting ) ;
 
     //SUPPRESSED WITHOUT ANALYSIS TO GET CORRECT FUNCTION FOR OO PROCESSES ACCESSING THE SAME PERSISTENT POOL: if( pPoolContainsMe ) { __NZ( pReg->pbSexBitFormatted[ offSexByte ] & maskSexByte ) ; } // BECOME IMPOTENT IF I JUST RECURSIVELY CALLED MYSELF FOR THE SAME SPECIFICATIONS
 
