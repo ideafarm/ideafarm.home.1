@@ -1780,107 +1780,9 @@ DONE( tmExecutiveHealYearF )
             {
             if( cPathsToYear > 1 )
 
-            }
-                }
-                    }
-                        }
-                            while( ~hStk ) ;
-                            }
-                                etThread.traceF( tinP , T("ppsttPathToYear loaded [idPath,ppsttPath]:    ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(ppsttPathToYear[offo-1]) ) ;
-
-                                etThread.strMakeF( tinP , LF , ppsttPathToYear[ offo ++ ] , psttPath ) ; ___( ppsttPathToYear[ offo ] ) ;
-
-                                strokeS* psttPath = (strokeS*)stPathToYear.downF( tinP , hStk ) ;
-
-                                if( offo == cca ) { BLAMMO ; }
-                            {
-                            do
-                            ZE( countT , offo ) ;
-                            handleC hStk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-
-                            }
-                                for( countT offo = 0 ; offo < cca ; offo ++ ) pca[ offo ] = 0 ;
-                                etThread.newF( tinP , LF , pca , cca ) ; ___( pca ) ;
-
-                                         cca = stPathToYear ;
-                                countT*& pca = *(countT**)&ppsttPathToYear ;
-                            {
-                            ZE( countT , cca ) ;
-                        {
-                        if( stPathToYear )
-
-                        stPathToYear.lockIfF( tinP ) ;
-                    {
-                    if( idPass == 1 )
-
-                    if( bAbortP ) break ;
-
-                    while( !bAbortP && ~hSwsPathToArchives ) ;
-                    }
-                        etThread.delF( tinP , pstt1PathToYear ) ;
-                        }
-                            }
-                                //etThread.traceF( tinP , T("stPathToYear [cPlates,ids,psttc1]:    ")+TF2(stPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttc1) ) ;
-                                countT idSlotPathToYear = stPathToYear( psttc1 ) ;
-                            {
-                            else
-                            }
-                                }
-                                    break ;
-                                    bAbortP = 1 ;
-                                    etThread.traceF( tinP , T("!exception: idSlotPathToYear is null") ) ;
-                                    etThread.delF( tinP , psttPathToYear ) ;
-                                {
-                                if( !idSlotPathToYear ) //SHOULD BE IMPOSSIBLE
-                                //etThread.traceF( tinP , T("maybe sunk into stPathToYear [now,psttPathToYear]:    ")+TF2(st OldPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttPathToYear) ) ;
-                                stPathToYear.sinkF( tinP , idSlotPathToYear , psttPathToYear , flSTACKsINK_UNIQUE ) ;
-                                ZE( countT , idSlotPathToYear ) ;
-
-                                etThread.strMakeF( tinP , LF , psttPathToYear , psttc1 ) ; ___( psttPathToYear ) ;
-                                ZE( strokeS* , psttPathToYear ) ;
-                            {
-                            if( idPass == 1 )
-                        {
-                        FORsTRINGSiN1( pstt1PathToYear )
-
-                        //etThread.traceF( tinP , T("[pstt1PathToYear]:    ")+T(pstt1PathToYear) ) ;
-                        etThread.strConvertToLowerCaseF( tinP , pstt1PathToYear ) ;
-
-                        }
-                            }
-                                break ;
-                                bAbortP = 1 ;
-                                etThread.traceF( tinP , T("!exception:  diskFindFileOrDirF ; aborting [tPathToArchive]:    ")+tPathToArchive ) ;
-                                POOPRqUIET
-                            {
-                            if( POOP )
-                            tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
-                            SCOOPS
-                        {
-                        IFsCRATCH
-                        patternC pat( tinP , etThread , tYearSlash , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-                        ZE( strokeS* , pstt1PathToYear ) ;
-
-                        //if( idPass == 1 ) etThread.traceF( tinP , T("flavor [tPathToArchive]:    ")+tPathToArchive ) ;
-                        TN( tPathToArchive , "" ) ; tPathToArchive = T(psttzPathToArchives)+T(psttzArchiveP)+tSlash ;
-                        strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveNameP.downF( tinP , hSwsPathToArchives ) ;
-                    {
-                    do
-                    handleC hSwsPathToArchives( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-
-                    }
-                        cResultStructsNeeded = 1 + cPathsToYear / cResultsPerStruct ;
-                        cPathsToYear = stPathToYear ;
-                    {
-                    if( idPass == 2 )
-                    _IO_
-                {
-                for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
-                stackC stPathToYear( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
-            {
-            ZE( strokeS** , ppsttPathToYear      ) ;
-            ZE( countT    , cResultStructsNeeded ) ;
-            ZE( countT    , cPathsToYear         ) ;
+            countT cResultStructsNeeded = 1 + cPathsToYear / cResultsPerStruct ;
+            countT cPathsToYear         = listPathsToYearF( tinP , etThread , bAbortP , ppsttPathToYear , swsPathToArchivesByArchiveNameP , tArchive , tYear ) ; ___( ppsttPathToYear ) ;
+            ZE( strokeS** , ppsttPathToYear ) ;
 
             //idNameSkipBeyond = 0xb0 ; //U:: TO FIND A BUG
 
@@ -2564,6 +2466,108 @@ DONE( tmDayZipperF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 )
 TASK( tmDayZipperF )
+
+}
+    return cPathsToYear ;
+
+    }
+        }
+            }
+                while( ~hStk ) ;
+                }
+                    etherP.traceF( tinP , T("ppsttPathToYearP loaded [idPath,ppsttPath]:    ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(ppsttPathToYearP[offo-1]) ) ;
+
+                    etherP.strMakeF( tinP , LF , ppsttPathToYearP[ offo ++ ] , psttPath ) ; ___( ppsttPathToYearP[ offo ] ) ;
+
+                    strokeS* psttPath = (strokeS*)stPathToYear.downF( tinP , hStk ) ;
+
+                    if( offo == cca ) { BLAMMO ; }
+                {
+                do
+                ZE( countT , offo ) ;
+                handleC hStk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+
+                }
+                    for( countT offo = 0 ; offo < cca ; offo ++ ) pca[ offo ] = 0 ;
+                    etherP.newF( tinP , LF , pca , cca ) ; ___( pca ) ;
+
+                             cca = stPathToYear ;
+                    countT*& pca = *(countT**)&ppsttPathToYearP ;
+                {
+                ZE( countT , cca ) ;
+            {
+            if( stPathToYear )
+
+            stPathToYear.lockIfF( tinP ) ;
+        {
+        if( idPass == 1 )
+
+        if( bAbortP ) break ;
+
+        while( !bAbortP && ~hSwsPathToArchives ) ;
+        }
+            etherP.delF( tinP , pstt1PathToYear ) ;
+            }
+                }
+                    //etherP.traceF( tinP , T("stPathToYear [cPlates,ids,psttc1]:    ")+TF2(stPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttc1) ) ;
+                    countT idSlotPathToYear = stPathToYear( psttc1 ) ;
+                {
+                else
+                }
+                    }
+                        break ;
+                        bAbortP = 1 ;
+                        etherP.traceF( tinP , T("!exception: idSlotPathToYear is null") ) ;
+                        etherP.delF( tinP , psttPathToYear ) ;
+                    {
+                    if( !idSlotPathToYear ) //SHOULD BE IMPOSSIBLE
+                    //etherP.traceF( tinP , T("maybe sunk into stPathToYear [now,psttPathToYear]:    ")+TF2(st OldPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttPathToYear) ) ;
+                    stPathToYear.sinkF( tinP , idSlotPathToYear , psttPathToYear , flSTACKsINK_UNIQUE ) ;
+                    ZE( countT , idSlotPathToYear ) ;
+
+                    etherP.strMakeF( tinP , LF , psttPathToYear , psttc1 ) ; ___( psttPathToYear ) ;
+                    ZE( strokeS* , psttPathToYear ) ;
+                {
+                if( idPass == 1 )
+            {
+            FORsTRINGSiN1( pstt1PathToYear )
+
+            //etherP.traceF( tinP , T("[pstt1PathToYear]:    ")+T(pstt1PathToYear) ) ;
+            etherP.strConvertToLowerCaseF( tinP , pstt1PathToYear ) ;
+
+            }
+                }
+                    break ;
+                    bAbortP = 1 ;
+                    etherP.traceF( tinP , T("!exception:  diskFindFileOrDirF ; aborting [tPathToArchive]:    ")+tPathToArchive ) ;
+                    POOPRqUIET
+                {
+                if( POOP )
+                tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
+                SCOOPS
+            {
+            IFsCRATCH
+            patternC pat( tinP , etherP , T(psttYearP)+T("/") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+            ZE( strokeS* , pstt1PathToYear ) ;
+
+            //if( idPass == 1 ) etherP.traceF( tinP , T("flavor [tPathToArchive]:    ")+tPathToArchive ) ;
+            TN( tPathToArchive , "" ) ; tPathToArchive = T(psttzPathToArchives)+T(psttArchiveP)+tSlash ;
+            strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveNameP.downF( tinP , hSwsPathToArchives ) ;
+        {
+        do
+        handleC hSwsPathToArchives( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+
+        if( idPass == 2 ) cPathsToYear = stPathToYear ;
+
+        _IO_
+    {
+    for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
+    TN( tb4    , "    " ) ;
+    TN( tSlash , "/" ) ;
+    stackC stPathToYear( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+    ZE( countT , cPathsToYear ) ;
+{
+countT listPathsToYearF( tinS& tinP , etherC& etherP , boolT& bAbortP , strokeS**& ppsttPathToYearP , switchStackC& swsPathToArchivesByArchiveNameP , const strokeS* psttArchiveP , const strokeS* psttYearP )
 
 }
     return cArchive ;
