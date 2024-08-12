@@ -399,8 +399,6 @@
                                                     tinP.tlsDelF( LF , countTC() ) ; //TLS:3
     flagsT saveThreadMode2 = *(flagsT*)tinP.pbF() ; tinP.tlsDelF( LF , countTC() ) ; //TLS:4
                                                     tinP.tlsDelF( LF , countTC() ) ; //TLS:5
-                                                    tinP.tlsDelF( LF , countTC() ) ; //TLS:6
-                                                    tinP.tlsDelF( LF , countTC() ) ; //TLS:7
     _IO_
 {
 pSexLifoConstructed( 0 )
@@ -409,25 +407,15 @@ guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
     0 , sizeof( guts_poolC_S ) , ifcOPENsHAREDmEMORYhOW_nCeF //ALWAYS USES MEMORY SPACE OF THE CONSTRUCTING PROCESS
     ) ,
         )
-            tinP.pbF( 3 )                                                                                        /*TLS:5*/
+            idStateSpaceP ? tinP.pbF( 4 ) : ""                                                                   /*TLS:2*/
             ) ,
-                "."
+                idStateSpaceP ? "." : ""
                 ) ,
-                    tinP.pbF( 2 )                                                                                /*TLS:6*/
+                    postNameP
                     ) ,
-                        "."
-                        ) ,
-                            postNameP
-                            ) ,
-                                tinP , tinP.pbF() , "poolC/guts/"                                                /*TLS:7*/
-                            (
-                            thirdC::c_strcpyIF
-                            tinP ,
-                        (
-                        thirdC::c_strcatIF
-                        tinP ,
+                        tinP , tinP.pbF() , "poolC/guts/"                                                        /*TLS:3*/
                     (
-                    thirdC::c_strcatIF
+                    thirdC::c_strcpyIF
                     tinP ,
                 (
                 thirdC::c_strcatIF
@@ -437,11 +425,7 @@ guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
             tinP ,
         (
         thirdC::c_strcatIF
-        tinP.tlsNewF( LF , TUCK ) ,                                                                              //TLS:7     "poolC/guts/[postNameP].[this].[osTid]
-        thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , (countT)this ) ,                                            /*TLS:6*/
-        tinP.tlsNewF( LF , 0x10 ) ,                                                                              //TLS:6     [this]
-        thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , tinP.osTid ) ,                                              /*TLS:5*/
-        tinP.tlsNewF( LF , 0x10 ) ,                                                                              //TLS:5     "[osTid]"
+        tinP.tlsNewF( LF , TUCK ) ,                                                                              //TLS:5     "poolC/guts/[postNameP].[idStateSpaceP]"
     (
     tinP , idLineCtP , idiFileCtP , pbBitsCtP ,
 (
@@ -470,9 +454,9 @@ pNext
     (
     ) ,
         )
-            tinP.pbF( 2 )                                                                                        /*TLS:2*/
+            idStateSpaceP ? tinP.pbF( 2 ) : ""                                                                   /*TLS:2*/
             ) ,
-                "."
+                idStateSpaceP ? "." : ""
                 ) ,
                     postNameP
                     ) ,
