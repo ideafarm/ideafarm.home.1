@@ -54,52 +54,97 @@
     if( !bDone && ( !idZipperP || idZipperP == ifcIDzIPPER_INFOZIP ) )
 
     }
+        THREADmODE2rESTORE
+        THREADmODE3rESTORE
+        THREADmODE4rESTORE
         }
             }
                 }
-                    tinP.pEtScratch->traceF( tinP , T("could not   zip using pkzipc.exe" ) ) ;
+                    }
+                        }
+                            tinP.pEtScratch->traceF( tinP , T("[value]:    ")+TF2(*pc_value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                    delF( tinP , postDir ) ;
-                    tinP.pEtScratch->traceF( tinP , T("called pkzipc.exe [postArgs]:    ")+T(postArgs1) ) ;
-                    tinP.pEtScratch->traceF( tinP , T("[postDir]:    ")+T(postDir) ) ;
-                    dosGetCurrentDirF( tinP , postDir ) ; ___( postDir ) ;
-                    ZE( osTextT* , postDir ) ;
+                            countT*   pc_value     = vsp_value ;
+                            countVSP vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO3 ) ) ;
+                        {
+                    
+                        }
+                            tinP.pEtScratch->traceF( tinP , T("[idPoop]:    ")+TF2(*pc_idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                    pEtherContainsMe->traceF( tinP , T("!exception: kid process failed [value,rc,name]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
-                    TN( tb4 , "    " ) ;
-                    const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
-                    POOPRqUIET
-                    countT rc = POOP ;
+                            countT*   pc_idPoop    = vsp_idPoop ;
+                            countVSP vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO2 ) ) ;
+                        {
+                    
+                        }
+                            tinP.pEtScratch->traceF( tinP , T("[bHiredAOK]:    ")+TF2(*pc_bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                            countT*   pc_bHiredAOK = vsp_bHiredAOK ;
+                            countVSP vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO1 ) ) ;
+                        {
+                    
+                        recordC myRecord( tinP , pcNameRecord ) ;
+                        countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSoUTCOME , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , tinP.pag1->idCell | BM_HIGH , 0 } ;
+
+                        listC::chatterIF( tinP , pcRoot ) ;
+                        countT pcRoot[] = { LISTnAME_ROOT , 0 } ;
+                    
+                        puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+                        _IO_
+                    {
                 {
-                else
-                if( !POOP ) bPKZipHired = bDone = 1 ;
 
                 }
-                    __1
-                    __( value ) ;
+                    }
+                        tinP.pEtScratch->traceF( tinP , T("could not   zip using pkzipc.exe" ) ) ;
+
+                        delF( tinP , postDir ) ;
+                        tinP.pEtScratch->traceF( tinP , T("called pkzipc.exe [postArgs]:    ")+T(postArgs1) ) ;
+                        tinP.pEtScratch->traceF( tinP , T("[postDir]:    ")+T(postDir) ) ;
+                        dosGetCurrentDirF( tinP , postDir ) ; ___( postDir ) ;
+                        ZE( osTextT* , postDir ) ;
+
+                        pEtherContainsMe->traceF( tinP , T("!exception: kid process failed [value,rc,name]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
+                        TN( tb4 , "    " ) ;
+                        const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                        POOPRqUIET
+                        countT rc = POOP ;
+                    {
+                    else
+                    if( !POOP ) bPKZipHired = bDone = 1 ;
+
+                    }
+                        __1
+                        __( value ) ;
+                    {
+                    if( value != ifcEXITcODE_EXITpROCESSaOK )
+
+                    tinP.pEtScratch->osProcessWaitF( tinP , value , countTC() , osTid , osPid ) ;
+                    ZE( countT , value ) ;
+
+                    SCOOPS
+                    _IO_
                 {
-                if( value != ifcEXITcODE_EXITpROCESSaOK )
+                IFsCRATCH
+            {
+            else
+            if( !osPid ) pEtherContainsMe->traceF( tinP , T("!exception: could not launch ifcIDaDAM_HIREwITHOUTdEBUGGING") ) ;
 
-                tinP.pEtScratch->osProcessWaitF( tinP , value , countTC() , osTid , osPid ) ;
-                ZE( countT , value ) ;
-
-                SCOOPS
+            }
+                c4Result = pEtherContainsMe->ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgs , flHIRE_DISPLAYaUTO , 0 , 0 , 1 , nicNameC() ) ;
+                TN( tArgs , "" ) ; tArgs = T("!ignore [comment can go here] !outcome ")+TF2(tinP.pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" !maxValue 0 !hireLater pkzipc.exe ")+T(postArgs1) ;
                 _IO_
             {
-            IFsCRATCH
-        {
-        else
-        if( !osPid ) pEtherContainsMe->traceF( tinP , T("!exception: could not launch ifcIDaDAM_HIREwITHOUTdEBUGGING") ) ;
+            countT& osPid = c4Result.c2 ;
+            countT& osTid = c4Result.c1 ;
+            count4S c4Result ;
 
-        }
-            c4Result = pEtherContainsMe->ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgs , flHIRE_DISPLAYaUTO , 0 , 0 , 1 , nicNameC() ) ;
-            TN( tArgs , "" ) ; tArgs = T("!ignore [comment can go here] !maxValue 0 !hireLater pkzipc.exe ")+T(postArgs1) ;
-            _IO_
+            puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP , flPUSEcmODE_HIDDEN ) ;    //THIS CAUSES HOMEtEMP TO BE CT'D SO THAT MY INSTANCE EXISTS BEFORE THE KID'S INSTANCE IS DESTROYED
         {
-        countT& osPid = c4Result.c2 ;
-        countT& osTid = c4Result.c1 ;
-        count4S c4Result ;
+        THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
+        THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY       )
+        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING   )
     {
+#endif
     if( bHireNoMonitor )
 
     }
@@ -128,6 +173,7 @@
         IFsCRATCH
     {
     if( !idZipperP || idZipperP == ifcIDzIPPER_PKZIPC )
+#if defined( NEVERdEFINED )
     ZE( boolT  , bHireNoMonitor ) ;
     ZE( boolT  , bPKZipHired    ) ;
     ZE( countT , idDeathType    ) ;

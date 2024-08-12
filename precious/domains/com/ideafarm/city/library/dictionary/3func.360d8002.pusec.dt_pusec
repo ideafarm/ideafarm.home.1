@@ -14,9 +14,9 @@
         DEL( pPoolUse ) ;
         puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
     {
-    if( bDeleteUse )
+    if( F(flagsMode) & flPUSEcmODE_DELETE )
 
-    if( !( F(flagsMode) & flPUSEcmODE_DOnOTHINGwHENdIE ) ) tinP.pPoolUse = pPoolUseLag ;
+    if( !( F(flagsMode) & ( flPUSEcmODE_DOnOTrESTOREtINwHENdIE | flPUSEcmODE_HIDDEN ) ) ) tinP.pPoolUse = pPoolUseLag ;
 
     if( tinP.pPoolUse && tinP.pPoolUse != tinP.pag1->pPoolAdamTemp && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
     TINSL

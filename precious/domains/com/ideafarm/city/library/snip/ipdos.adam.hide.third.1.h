@@ -38255,7 +38255,7 @@ args
                 }                                                                                                                                                   \
                                                                                                                                                                     \
                 puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                         \
-                puseat.doNothingWhenDieF() ;                                                                                                                        \
+                puseat.doNotRestoreTinWhenDieF() ;                                                                                                                        \
                 pPuseIndex = ~hIndexP                                                                                                                               \
                     ? new( 0 , tinP , LF ) puseC( puseIndexP )                                                                                                      \
                     : new( 0 , tinP , LF ) puseC( tinP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) \
@@ -38417,7 +38417,7 @@ args
                 }                                                                                                                                                   \
                                                                                                                                                                     \
                 puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                         \
-                puseat.doNothingWhenDieF() ;                                                                                                                        \
+                puseat.doNotRestoreTinWhenDieF() ;                                                                                                                        \
                 pPuseIndex = !bOpenIK                                                                                                                               \
                     ? new( 0 , tinP , LF ) puseC( puseIndexP )                                                                                                      \
                     : new( 0 , tinP , LF ) puseC( tinP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) \
@@ -43963,7 +43963,9 @@ it is illegal to refer to this symbol anywhere but in the definition of a BlATHs
 /*1*//*flPUSEcmODE*//*1*/
 
 /*3*/
-#define flPUSEcmODE_DOnOTHINGwHENdIE                     0xe00001e4
+#define flPUSEcmODE_DOnOTrESTOREtINwHENdIE                     0xe00001e4
+#define flPUSEcmODE_DELETE                               0xe00002e4
+#define flPUSEcmODE_HIDDEN                               0xe00004e4
 /*3*/
 #define flPUSEcmODE_null    0xe00000e4
 

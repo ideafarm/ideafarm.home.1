@@ -31650,7 +31650,6 @@ listC must be the wo'th base class of any class derived from it
 {
     poolC* pPoolUseLag ;
     poolC* pPoolUse ;
-    boolT  bDeleteUse ;
     flagsT flagsMode ;
 
     public :
@@ -31661,7 +31660,7 @@ listC must be the wo'th base class of any class derived from it
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.puseC.dt_puseC!||
     puseC( tinS& tinP , const osTextT* const postNameP , const flagsT flagsP = flPOOLc_null , const countT idStateSpaceP = 0 , const countT expCbDropMinP = - 1 , const countT expCbDropMaxP = - 1 , const countT* const pczHintPreallocationP = 0 , const countT idMemorySpaceP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.puseC.puseC!||
-    puseC( tinS& tinP , const countT idPoolP ) ;
+    puseC( tinS& tinP , const countT idPoolP , const flagsT flagsModeP = flPUSEcmODE_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.puseC.puseC!||
     puseC( tinS& tinP , poolC& poolP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.puseC.puseC!||
@@ -31672,7 +31671,7 @@ listC must be the wo'th base class of any class derived from it
     operator poolC&( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.puseC.operator_poolC_ref!||
 
-    inline flagsT doNothingWhenDieF( voidT ) { flagsT flagsOld = flagsMode ; flagsMode |= flPUSEcmODE_DOnOTHINGwHENdIE ; return flagsOld ; }
+    inline flagsT doNotRestoreTinWhenDieF( voidT ) { flagsT flagsOld = flagsMode ; flagsMode |= flPUSEcmODE_DOnOTrESTOREtINwHENdIE ; return flagsOld ; }
 }
 ;
 

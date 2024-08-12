@@ -10,28 +10,30 @@
 }
     //if( tinP.pPoolUse != tinP.pag1->pPoolAdamTemp ) tinP.pc Utility[ 0 ] = (countT)tinP.pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
 
+    else                                         flagsMode |= flPUSEcmODE_DOnOTrESTOREtINwHENdIE ; //O: OPTIMIZATION: THIS LINE HAS NO EFFECT SINCE RESTORING tinP.pPoolUse FROM pPoolUseLag WILL NOT CHANGE ITS VALUE
+    if( !( F(flagsMode) & flPUSEcmODE_HIDDEN ) ) tinP.pPoolUse = pPoolUse ;
+
     }
         }
             __1 ;
             __( idPoolP ) ;
         {
         default :
-        case ifcIDpOOL_HOMEpERM     : { if( !tinP.pag1->pPoolHomePerm )                                                                                                                                              tinP.pag1->pPoolHomePerm = new( 0 , tinP , tinP.pag1->pbzphp , sizeof tinP.pag1->pbzphp ) poolC( tinP , TAG( TAGiDnULL ) , "home.perm"      , flPOOLc_null  , ifcIDsTATEsPACE_MULTIPLEaDAMS      ) ;   tinP.pPoolUse = pPoolUse = tinP.pag1->pPoolHomePerm ; break ; }
-        case ifcIDpOOL_ADAMpERM     : { if( !tinP.pag1->pPoolAdamPerm ) { OStEXT(   ostoPoolAdamPerm , 0x20 ) ; OStEXTAK( ostoPoolAdamPerm , "adam.perm." ) ; OStEXTC(  ostoPoolAdamPerm , tinP.pag1->idAdam , 0 ) ; tinP.pag1->pPoolAdamPerm = new( 0 , tinP , tinP.pag1->pbzpap , sizeof tinP.pag1->pbzpap ) poolC( tinP , TAG( TAGiDnULL ) , ostoPoolAdamPerm , flPOOLc_null  , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) ) ; } tinP.pPoolUse = pPoolUse = tinP.pag1->pPoolAdamPerm ; break ; }
-        case ifcIDpOOL_SCRATCH      : { if( !tinP.pag1->pPoolScratch  )                                                                                                                                              tinP.pag1->pPoolScratch  = new( 0 , tinP , tinP.pag1->pbzpsc , sizeof tinP.pag1->pbzpsc ) poolC( tinP , TAG( TAGiDnULL ) , "scratch"        , flPOOLc_null  , ifcIDsTATEsPACE_SCRATCH            ) ;   tinP.pPoolUse = pPoolUse = tinP.pag1->pPoolScratch  ; break ; }
-        case ifcIDpOOL_HOMEtEMP     : { if( !tinP.pag1->pPoolHomeTemp )                                                                                                                                              tinP.pag1->pPoolHomeTemp = new( 0 , tinP , tinP.pag1->pbzpht , sizeof tinP.pag1->pbzpht ) poolC( tinP , TAG( TAGiDnULL ) , "home.temp"      , flPOOLc_NOTES                                      ) ;   tinP.pPoolUse = pPoolUse = tinP.pag1->pPoolHomeTemp ; break ; }
-        case ifcIDpOOL_ADAMtEMP     : {                                                                                                                                                                                                                                                                                                                                                                                     tinP.pPoolUse = pPoolUse = tinP.pag1->pPoolAdamTemp ; break ; }
-        case ifcIDpOOL_NONE         : {                                                                                                                                                                                                                                                                                                                                                                                     tinP.pPoolUse = pPoolUse = 0                        ; break ; }
+        case ifcIDpOOL_HOMEpERM     : { if( !tinP.pag1->pPoolHomePerm )                                                                                                                                              tinP.pag1->pPoolHomePerm = new( 0 , tinP , tinP.pag1->pbzphp , sizeof tinP.pag1->pbzphp ) poolC( tinP , TAG( TAGiDnULL ) , "home.perm"      , flPOOLc_null  , ifcIDsTATEsPACE_MULTIPLEaDAMS      ) ;   pPoolUse = tinP.pag1->pPoolHomePerm ; break ; }
+        case ifcIDpOOL_ADAMpERM     : { if( !tinP.pag1->pPoolAdamPerm ) { OStEXT(   ostoPoolAdamPerm , 0x20 ) ; OStEXTAK( ostoPoolAdamPerm , "adam.perm." ) ; OStEXTC(  ostoPoolAdamPerm , tinP.pag1->idAdam , 0 ) ; tinP.pag1->pPoolAdamPerm = new( 0 , tinP , tinP.pag1->pbzpap , sizeof tinP.pag1->pbzpap ) poolC( tinP , TAG( TAGiDnULL ) , ostoPoolAdamPerm , flPOOLc_null  , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) ) ; } pPoolUse = tinP.pag1->pPoolAdamPerm ; break ; }
+        case ifcIDpOOL_SCRATCH      : { if( !tinP.pag1->pPoolScratch  )                                                                                                                                              tinP.pag1->pPoolScratch  = new( 0 , tinP , tinP.pag1->pbzpsc , sizeof tinP.pag1->pbzpsc ) poolC( tinP , TAG( TAGiDnULL ) , "scratch"        , flPOOLc_null  , ifcIDsTATEsPACE_SCRATCH            ) ;   pPoolUse = tinP.pag1->pPoolScratch  ; break ; }
+        case ifcIDpOOL_HOMEtEMP     : { if( !tinP.pag1->pPoolHomeTemp )                                                                                                                                              tinP.pag1->pPoolHomeTemp = new( 0 , tinP , tinP.pag1->pbzpht , sizeof tinP.pag1->pbzpht ) poolC( tinP , TAG( TAGiDnULL ) , "home.temp"      , flPOOLc_NOTES                                      ) ;   pPoolUse = tinP.pag1->pPoolHomeTemp ; break ; }
+        case ifcIDpOOL_ADAMtEMP     : {                                                                                                                                                                                                                                                                                                                                                                                     pPoolUse = tinP.pag1->pPoolAdamTemp ; break ; }
+        case ifcIDpOOL_NONE         : {                                                                                                                                                                                                                                                                                                                                                                                     pPoolUse = 0                        ; break ; }
     {
     switch( idPoolP )
 
     if( idPoolP != ifcIDpOOL_NONE && idPoolP != ifcIDpOOL_ADAMtEMP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
 {
-flagsMode( flPUSEcmODE_null )
-bDeleteUse( 0 ) ,
+flagsMode( flagsModeP )
 pPoolUse( 0 ) ,
 pPoolUseLag( tinP.pPoolUse ) ,
-/*1*/puseC::puseC( tinS& tinP , const countT idPoolP ) :/*1*/
+/*1*/puseC::puseC( tinS& tinP , const countT idPoolP , const flagsT flagsModeP ) :/*1*/
 
 /**/
 

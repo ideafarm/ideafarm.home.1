@@ -19,6 +19,7 @@ REST
 
                                       tArgsGross += tb+tArgKeyNameNow+tb+tFile+tb+tArgsNet ;
         if( maxValue                ) tArgsGross += tb+tArgKeyMaxValue+tb+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+        if( outcome                 ) tArgsGross += tb+tArgKeyOutcome+tb+TF2(outcome,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
         if( tArgsIgnore.csF( tinP ) ) tArgsGross  = tArgKeyIgnore+tb+tArgsIgnore ;
         TN( tArgsGross , "" ) ;
         _IO_
@@ -27,29 +28,82 @@ REST
     }
         }
             }
-                //if( bSandbox ) etherC::loafIF( tinP ) ;
-                thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
-                etThread.traceF( tinP , T("!exception: kid process returned nonze value [value]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                POOPRqUIET
-            {                              //HAVING MY PROCESS EXIT CODE CONTAIN DETAILED INFO WOULD COMPLICATE DEBUGGING CODE THAT INSPECTS THE PROCESS EXIT CODE AND DETECTS WHETHER THE EXIT CODE IS WO OF THE EXPECTED (LEGAL) VALUES FOR AN IPDOS (TM) PROCESS
-            if( POOP )                     //PS:PERSONALITY: MY PROCESS EXIT CODE WILL INDICATE IMPOTENCE BUT WILL NOT INDICATE THE DETAILS ; FOR THAT I TRACE OUT value
+                }
+                    THREADmODE2rESTORE
+                    THREADmODE3rESTORE
+                    THREADmODE4rESTORE
+                    
+                    }
+                        listC::chatterIF( tinP , pcRoot ) ;
+                        countT pcRoot[] = { LISTnAME_ROOT , 0 } ;
 
-            }
-                __( value ) ;
+                        }
+                            }
+                                         *pc_value     = 0x33333333 ;
+                                         *pc_value     = value ;
+                                countT*   pc_value     = vsp_value ;
+                                countVSP vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO3 ) ) ;
+                            {
+                        
+                            }
+                                         *pc_idPoop    = 0x22222222 ;
+                                         *pc_idPoop    = idPoop ;
+                                countT*   pc_idPoop    = vsp_idPoop ;
+                                countVSP vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO2 ) ) ;
+                            {
+                        
+                            }
+                                         *pc_bHiredAOK = 0x11111111 ;
+                                         *pc_bHiredAOK = bHiredAOK ;
+                                countT*   pc_bHiredAOK = vsp_bHiredAOK ;
+                                countVSP vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO1 ) ) ;
+                            {
+                        
+                            recordC myRecord( tinP , pcNameRecord ) ;
+                            countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSoUTCOME , tinP.pag1->idAdam | BM_HIGH , outcome | BM_HIGH , 0 } ;
+                        {
+                    
+                        puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+                        _IO_
+                    {
+                    
+                    THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
+                    THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY       )
+                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING   )
+                {
+                if( outcome )
+
+                }
+                    //if( bSandbox ) etherC::loafIF( tinP ) ;
+                    thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
+                    etThread.traceF( tinP , T("!exception: kid process returned nonze value [value]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    POOPRqUIET
+                {                              //HAVING MY PROCESS EXIT CODE CONTAIN DETAILED INFO WOULD COMPLICATE DEBUGGING CODE THAT INSPECTS THE PROCESS EXIT CODE AND DETECTS WHETHER THE EXIT CODE IS WO OF THE EXPECTED (LEGAL) VALUES FOR AN IPDOS (TM) PROCESS
+                if( POOP )                     //PS:PERSONALITY: MY PROCESS EXIT CODE WILL INDICATE IMPOTENCE BUT WILL NOT INDICATE THE DETAILS ; FOR THAT I TRACE OUT value
+
+                }
+                    __( value ) ;
+                {
+                if( value > maxValue )
+
+                etThread.traceF( tinP , T("setting [bHiredAOK]:    ")+TF2(bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                bHiredAOK = !idPoop ;
+                etThread.traceF( tinP , T("called  dosExecPgmF [maxValue,idPoop,outcome,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(outcome,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+                idPoop = POOP ;
+                ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet , flPROCESShIRE_null ) ;
+                etThread.strokeF( tinP , T("\r\n") ) ;
+                etThread.traceF( tinP , T("calling dosExecPgmF [maxValue,idPoop,outcome,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(outcome,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+                ZE( countT , value ) ;
+                ZE( countT , idPoop ) ;
+
+                SCOOPS
+                _IO_
             {
-            if( value > maxValue )
-            etThread.traceF( tinP , T("called  dosExecPgmF [maxValue,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
-            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet , flPROCESShIRE_null ) ;
-            etThread.strokeF( tinP , T("\r\n") ) ;
-            etThread.traceF( tinP , T("calling dosExecPgmF [maxValue,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
-            ZE( countT , value ) ;
-
-            SCOOPS
+            IFsCRATCH
+            boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
             _IO_
         {
-        IFsCRATCH
-        boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
-        _IO_
+        ZE( boolT , bHiredAOK ) ;
     {
     if( bNow )
     _IO_
@@ -68,12 +122,16 @@ __Z( tFile.csF( tinP ) ) ;
             bNow = bArmedNow ;
         {
         else if( bArmedNow || bArmedLater )
+
         else if( bArmedMaxValue                                            ) { bArmedMaxValue = 0 ; maxValue = etThread.strDigitsToSCountF( tinP , psttc1 ) ; }
-        else if( bArmedIgnore                                              )   tArgsIgnore  += ( tArgsIgnore.csF( tinP ) ? tb : tn ) + T(psttc1) ;
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameLater ) ) { bArmedIgnore = 0 ; bArmedLater    = 1 ;                                        }
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameNow   ) ) { bArmedIgnore = 0 ; bArmedNow      = 1 ;                                        }
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyMaxValue  ) ) { bArmedIgnore = 0 ; bArmedMaxValue = 1 ;                                        }
-             if( !etThread.strCompareF( tinP , psttc1 , tArgKeyIgnore    ) )   bArmedIgnore  = 1 ;
+        else if( bArmedOutcome                                             ) { bArmedOutcome  = 0 ; outcome  = etThread.strDigitsToSCountF( tinP , psttc1 ) ; }
+        else if( bArmedIgnore                                              )   tArgsIgnore   += ( tArgsIgnore.csF(  tinP ) ? tb : tn ) + T(psttc1) ;
+
+        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameLater ) ) { bArmedIgnore   = 0 ; bArmedOutcome  = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 1 ; }
+        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameNow   ) ) { bArmedIgnore   = 0 ; bArmedOutcome  = 0 ; bArmedMaxValue = 0 ; bArmedNow = 1 ; bArmedLater = 0 ; }
+        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyMaxValue  ) ) { bArmedIgnore   = 0 ; bArmedOutcome  = 0 ; bArmedMaxValue = 1 ; bArmedNow = 0 ; bArmedLater = 0 ; }
+        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyOutcome   ) ) { bArmedIgnore   = 0 ; bArmedOutcome  = 1 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
+             if( !etThread.strCompareF( tinP , psttc1 , tArgKeyIgnore    ) ) { bArmedIgnore   = 1 ; bArmedOutcome  = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
         etThread.traceF( tinP , T("param: ")+T(psttc1) ) ;
         _IO_
     {
@@ -81,6 +139,7 @@ __Z( tFile.csF( tinP ) ) ;
     ZE( boolT , bArmedLater    ) ;
     ZE( boolT , bArmedNow      ) ;
     ZE( boolT , bArmedMaxValue ) ;
+    ZE( boolT , bArmedOutcome  ) ;
     ZE( boolT , bArmedIgnore   ) ;
     strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinP ) ;
     TN( tArgKeyNameLater , "!hireLater" ) ;
@@ -93,9 +152,11 @@ TN( tArgsNet         , ""           ) ;
 TN( tArgsIgnore      , ""           ) ;
 TN( tArgKeyNameNow   , "!hireNow"   ) ;
 TN( tArgKeyMaxValue  , "!maxValue"  ) ;
+TN( tArgKeyOutcome   , "!outcome"   ) ;
 TN( tArgKeyIgnore    , "!ignore"    ) ;
 TN( tFile , "" ) ;
 ZE( boolT , bNow ) ;
+ZE( countT , outcome  ) ;
 ZE( countT , maxValue ) ;
 
 TODO
