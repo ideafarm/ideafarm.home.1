@@ -61,33 +61,34 @@
             }
                 }
                     }
-                        }
-                            tinP.pEtScratch->traceF( tinP , T("[value]:    ")+TF2(*pc_value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                            countT*   pc_value     = vsp_value ;
-                            countVSP vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO3 ) ) ;
-                        {
+                        listC::chatterIF( tinP ) ;
                     
                         }
-                            tinP.pEtScratch->traceF( tinP , T("[idPoop]:    ")+TF2(*pc_idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            }
+                                tinP.pEtScratch->traceF( tinP , T("[value]:    ")+TF2(*pc_value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                            countT*   pc_idPoop    = vsp_idPoop ;
-                            countVSP vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO2 ) ) ;
-                        {
-                    
-                        }
-                            tinP.pEtScratch->traceF( tinP , T("[bHiredAOK]:    ")+TF2(*pc_bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                countT*   pc_value     = vsp_value ;
+                                countVSP vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO3 ) ) ;
+                            {
+                        
+                            }
+                                tinP.pEtScratch->traceF( tinP , T("[idPoop]:    ")+TF2(*pc_idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                            countT*   pc_bHiredAOK = vsp_bHiredAOK ;
-                            countVSP vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO1 ) ) ;
+                                countT*   pc_idPoop    = vsp_idPoop ;
+                                countVSP vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO2 ) ) ;
+                            {
+                        
+                            }
+                                tinP.pEtScratch->traceF( tinP , T("[bHiredAOK]:    ")+TF2(*pc_bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                countT*   pc_bHiredAOK = vsp_bHiredAOK ;
+                                countVSP vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO1 ) ) ;
+                            {
+                        
+                            recordC myRecord( tinP , pcNameRecord ) ;
                         {
-                    
-                        recordC myRecord( tinP , pcNameRecord ) ;
                         countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSoUTCOME , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , tinP.pag1->idCell | BM_HIGH , 0 } ;
 
-                        listC::chatterIF( tinP , pcRoot ) ;
-                        countT pcRoot[] = { LISTnAME_ROOT , 0 } ;
-                    
                         puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
                         _IO_
                     {
@@ -138,7 +139,9 @@
             countT& osTid = c4Result.c1 ;
             count4S c4Result ;
 
-            puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP , flPUSEcmODE_HIDDEN ) ;    //THIS CAUSES HOMEtEMP TO BE CT'D SO THAT MY INSTANCE EXISTS BEFORE THE KID'S INSTANCE IS DESTROYED
+           // }
+           //     puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;    //THIS CAUSES HOMEtEMP TO BE CT'D SO THAT MY INSTANCE EXISTS BEFORE MY KID'S INSTANCE IS DESTROYED
+           // {
         {
         THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
         THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY       )
