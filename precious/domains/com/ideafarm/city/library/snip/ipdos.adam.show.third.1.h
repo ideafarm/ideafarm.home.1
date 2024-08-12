@@ -34546,9 +34546,18 @@ coding standard
 #define LISTnAME_IDuPDATEcOMPLETED                                    0xdddd7025
 #define LISTnAME_GLOBALrECORD                                         0xdddd7026
 #define LISTnAME_SEXc                                                 0xdddd7027
+#define LISTnAME_PROCESSoUTCOME                                       0xdddd7028
+#define LISTnAME_RETURNiNFO1                                          0xdddd7029
+#define LISTnAME_RETURNiNFO2                                          0xdddd702a
+#define LISTnAME_RETURNiNFO3                                          0xdddd702b
+#define LISTnAME_RETURNiNFO4                                          0xdddd702c
+#define LISTnAME_RETURNiNFO5                                          0xdddd702d
+#define LISTnAME_RETURNiNFO6                                          0xdddd702e
+#define LISTnAME_RETURNiNFO7                                          0xdddd702f
+#define LISTnAME_RETURNiNFO8                                          0xdddd7030
 /*3*/
 #define LISTnAME_min     0xdddd7001
-#define LISTnAME_max     0xdddd7027
+#define LISTnAME_max     0xdddd7030
 
 
 //
