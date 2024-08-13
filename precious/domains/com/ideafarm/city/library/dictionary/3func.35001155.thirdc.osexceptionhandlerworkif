@@ -466,9 +466,9 @@
                             OStEXTAK( ostoRpt , "\r\ntinP.pag1->flagsAdamState: " ) ;_M
                             OStEXTC(  ostoRpt , bCleanFailed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nbCleanFailed: " ) ;_M
-                            OStEXTC(  ostoRpt ,      (const countT)*tinSnap.pPoop , 0 ) ;_M
+                            else                 { OStEXTC(  ostoRpt ,      (const countT)*tinSnap.pPoop , 0 ) ;_M }
+                            if( !tinSnap.pPoop ) { OStEXTAK( ostoRpt , "tinSnap.pPoop is null"               ) ;_M } 
                             OStEXTAK( ostoRpt , "\r\nPOOP: " ) ;_M
-
                             OStEXTC(  ostoRpt ,      processGlobal2I.cNestReportingException , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\n\r\nException reporting nest level: " ) ;_M
                             OStEXTC(  ostoRpt , idExceptionEventMeP , 0 ) ;_M
