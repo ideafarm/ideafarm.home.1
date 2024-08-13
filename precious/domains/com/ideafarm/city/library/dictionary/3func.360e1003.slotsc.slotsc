@@ -52,9 +52,9 @@
                         {
                         IFsCRATCH
     
-                        if( F(flagsCt) & flSLOTSc_NOTES    ) flagsc |= fliSEXc_NOTES    ;
-                        if( F(flagsCt) & flSLOTSc_READoNLY ) flagsc |= fliSEXc_READoNLY ;
-                        flagsT flagsc = bBrowse ? fliSEXc_BROWSE : fliSEXc_null ;
+                        if( F(flagsCt) & flSLOTSc_NOTES    ) flagsc |=           fliSEXc_NOTES                   ;
+                        if( F(flagsCt) & flSLOTSc_READoNLY ) flagsc |=           fliSEXc_READoNLY                ;
+                        flagsT                               flagsc  = bBrowse ? fliSEXc_nFeO     : fliSEXc_null ;
                     {
                     else
                     if( ppSex[ offs ] ) { BLAMMO ; }
@@ -164,7 +164,7 @@
         if( idStateSpaceP )
         ZE( countT , bitsStateExists ) ;
     
-        boolT bBrowse =  F(flagsCt) & flSLOTSc_BROWSE ;
+        boolT bBrowse =  F(flagsCt) & flSLOTSc_nFeO ;
                 
         OStEXTAK( ostoNameGroup , ".slotsC.sex" ) ;
         OStEXTA(  ostoNameGroup , postName ) ;

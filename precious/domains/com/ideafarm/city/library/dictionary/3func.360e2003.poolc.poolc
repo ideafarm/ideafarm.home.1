@@ -143,9 +143,9 @@
         
                         guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , expCbDrop , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
         
-                        if( F(guts.flagsCt) & flPOOLc_NOTES    ) flagsc |= flSLOTSc_NOTES    ;
-                        if( F(guts.flagsCt) & flPOOLc_READoNLY ) flagsc |= flSLOTSc_READoNLY ;
-                        flagsT flagsc = bBrowse ? flSLOTSc_BROWSE : flSLOTSc_null ;
+                        if( F(guts.flagsCt) & flPOOLc_NOTES    ) flagsc |=           flSLOTSc_NOTES                    ;
+                        if( F(guts.flagsCt) & flPOOLc_READoNLY ) flagsc |=           flSLOTSc_READoNLY                 ;
+                        flagsT                                   flagsc  = bBrowse ? flSLOTSc_nFeO     : flSLOTSc_null ;
                     {
                     else
                     if( guts.ppSlots[ offs ] ) { BLAMMO ; }
@@ -272,7 +272,7 @@
         // FOR PERSISTENT INSTANCES, FOR EACH expCbDrop, SET A BIT IF A BACKING FILE EXISTS
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        boolT bBrowse =  F(guts.flagsCt) & flPOOLc_BROWSE ;
+        boolT bBrowse = F(guts.flagsCt) & flPOOLc_nFeO ;
                 
         OStEXTAK( ostoNameGroup , ".poolC" ) ;
         OStEXTA(  ostoNameGroup , guts.postName ) ;
