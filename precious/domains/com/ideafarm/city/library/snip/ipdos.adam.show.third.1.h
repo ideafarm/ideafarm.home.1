@@ -23486,7 +23486,6 @@ examples
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120027f.scoops END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200280.ifscratch BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -23509,6 +23508,8 @@ examples
             SCOOPS                                                                                      \
             if( POOP )                                                                                  \
             {                                                                                           \
+                CONoUT5( "IFsCRATCH: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
+                CONoUTcALLnEST( "IFsCRATCH: scratch impotence on entry" ) ;                                \
                 LOGrAW5( "IFsCRATCH: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
                 LOGcALLnEST( "IFsCRATCH: scratch impotence on entry" ) ;                                \
                 BLAMMOiD( POOP.idiFileGruntF() ) ;                                                      \
@@ -33809,7 +33810,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*3*/
 #define fliSEXc_null                          0xe00000ff
-#define fliSEXc_BROWSE                        0xe00001ff
+#define fliSEXc_nFeO                          0xe00001ff
 #define fliSEXc_READoNLY                      0xe00002ff
 #define fliSEXc_NOTES                         0xe00004ff
 #define fliSEXc_MAPPEDtOdISK                  0xe00008ff
@@ -33840,7 +33841,6 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /*3*/
-#define flSLOTSc_BROWSE                        0xe00001a0
 #define flSLOTSc_READoNLY                      0xe00002a0
 #define flSLOTSc_NOTES                         0xe00004a0
 /*3*/
@@ -33871,7 +33871,6 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /*3*/
-#define flPOOLc_BROWSE                        0xe00001a1
 #define flPOOLc_READoNLY                      0xe00002a1
 #define flPOOLc_NOTES                         0xe00004a1
 #define flPOOLc_MAKEaLL                       0xe00008a1

@@ -9,15 +9,22 @@
 
 }
     }
+        THREADmODE5rESTORE0( flThreadMode5Save )
+        pzbMemorySpaceUse->ungrabF( tinP ) ;
+    {
+    if( !pbNapkin && !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )         // IF pbNapkin THEN CALLER MUST CALL formattingIsDoneF, WHICH WILL UNGRAB, UNLESS I HAVE ALREADY MADE THAT CALL
+    //20240813@1644: UNGRAB MOVED TO HERE
+
+    }
         //20221228@1019: DISABLED THIS SO CALLER CAN HANDLE GRACEFULLY: BLAMMO ;
 
         THREADmODE4rESTORE
     
-        etRock.traceF( tinP , T("napkinC::napkinC: traced  pool tallies and memory grain report") ) ;
-        etRock.traceMemoryGrainRptF( tinP ) ;
-        etRock.tracePoolTalliesF( tinP ) ;
-        etRock.traceF( tinP , T("napkinC::napkinC: tracing pool tallies and memory grain report") ) ;
-        etRock.traceF( tinP , T("napkinC::napkinC: could not allocate pbNapkin [idLineCtP,idiFileCtP,cbP,postP]: ")+TF2(idLineCtP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(idiFileCtP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(postP) ) ;
+//        etRock.traceF( tinP , T("napkinC::napkinC: traced  pool tallies and memory grain report") ) ;
+//        etRock.traceMemoryGrainRptF( tinP ) ;
+//        etRock.tracePoolTalliesF( tinP ) ;
+//        etRock.traceF( tinP , T("napkinC::napkinC: tracing pool tallies and memory grain report") ) ;
+//        etRock.traceF( tinP , T("napkinC::napkinC: could not allocate pbNapkin [idLineCtP,idiFileCtP,cbP,postP]: ")+TF2(idLineCtP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(idiFileCtP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(postP) ) ;
 
         THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
 
@@ -340,7 +347,9 @@
         if( !ph ) { CONoUTrAW( "napkinC::napkinC/napHome/ph is null\r\n" ) ; BLAMMO ; }
         homeS* ph = (homeS*)(byteT*)*this ;
     {
-    if( this == &processGlobal4I.napHome )
+    else if( this == &processGlobal4I.napHome )
+    if( POOP ) ;
+    // FORMAT THE INSTANCES CONSTRUCTED DURING CT OF PROCESS GLOBALS
 
     }
         }
@@ -358,8 +367,7 @@
             {
             else
             }
-                THREADmODE5rESTORE0( flThreadMode5Save )
-                pzbMemorySpaceUse->ungrabF( tinP ) ;
+                //20240813@1644: UNGRAB MOVED TO HERE
             {
             if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
 
@@ -418,8 +426,7 @@
                 THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
 
                 }
-                    THREADmODE5rESTORE0( flThreadMode5Save )
-                    pzbMemorySpaceUse->ungrabF( tinP ) ;           //U::BUG: napGuts IS FULLY CT WITHOUT EVER UNGRABBING THIS
+                    //20240813@1644: UNGRAB MOVED TO HERE
                 {
                 if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )          //20201030@1142: BUG?: CONJ: SHOULD NOT BE UNGRABBING HERE (MUST REMAIN GRABBED UNTIL formattingIsDoneF IS CALLED)
             {
@@ -452,8 +459,6 @@
         {
         if( !( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )           // I CREATED THE SHARED MEMORY
         //CS:CODEsYNC: 3603e003 3603e007
-
-        bDataAreaFormatted = 0 ;
     {
     else
     }
@@ -462,17 +467,16 @@
 
         THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
         }
-            THREADmODE5rESTORE0( flThreadMode5Save )
-            pzbMemorySpaceUse->ungrabF( tinP ) ;
+            //20240813@1644: UNGRAB MOVED TO HERE
         {
         if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
-
-        bDataAreaFormatted = 0 ;
     {
     else if( !pbNapkin )
-    if( POOP ) BLAMMO
+    if( POOP ) ;
     
     }
+        __( bFail ) ;
+
         if( bNoQuit ) { __Z( pbNapkin ) ; }
     
         }
@@ -490,7 +494,7 @@
             }
                 THREADmODE4rESTORE
 
-                etRock.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+//                etRock.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
 
                 etherC& etRock = etherC::etRockIF( tinP ) ;
 
@@ -524,7 +528,7 @@
                         etRock.traceMemoryGrainRptF( tinP ) ;
                         etRock.tracePoolTalliesF( tinP ) ;
 
-                        etRock.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+//                        etRock.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
 
                         etherC& etRock = etherC::etRockIF( tinP ) ;
 
@@ -545,11 +549,7 @@
 
                         TRACEcALLnEST( "!exception: napkinC::napkinC / could not open shared memory" ) ;
 
-                        }
-                            THREADmODE5rESTORE0( flThreadMode5Save )
-                            pzbMemorySpaceUse->ungrabF( tinP ) ;
-                        {
-                        if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
+                        //20240813@1644: UNGRAB MOVED FROM HERE
 
                         POOPR
                         ++ s ;
@@ -590,14 +590,7 @@
 
                     thirdC::dosOpenSharedMemIF( tinP , hNapkin , (flagsT&)flagsSharedMemory , postName , phFileP , cbP ? cbaHeader + cbP : 0 , idHowP , idMemorySpaceP , flagsOpen | flOPENsHAREDmEMORY_DOnOTsERIALIZE ) ;
 
-                    }
-                        pzbMemorySpaceUse->grabF( tinP , TAG( TAGiDnULL ) ) ;
-                        THREADmODE5oN0( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY )
-                        THREADmODE5sAVE0( flThreadMode5Save )
-                        tinP.flushPendingInOutFrameTelemetryIfF() ;
-                    {
-                    if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
-                    THREADmODE4oN( flTHREADmODE4_SUPPRESStRACING )
+                    //20240813@1644: GRAB MOVED FROM HERE
 
                     //CONoUTrAW( ostoSay ) ;
                     ////processGlobal4S::_processGlobal4I_IF().bksTrace.writeF( tinP , ostoSay , thirdC::c_strlenIF( tinP , ostoSay ) , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ALLOWoDDlENGTH ) ;
@@ -619,6 +612,15 @@
         boolT bNoQuitEarly = !cTriesP ;
         boolT bNoQuit = cTriesP == - 1 ;
     {
+
+    }
+        pzbMemorySpaceUse->grabF( tinP , TAG( TAGiDnULL ) ) ;
+        THREADmODE5oN0( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY )
+        THREADmODE5sAVE0( flThreadMode5Save )
+        tinP.flushPendingInOutFrameTelemetryIfF() ;
+    {
+    if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
+    //20240813@1644: GRAB MOVED TO HERE
 
     thirdC::c_strncpyIF( tinP , postName , ostoNapkinName , sizeof postName ) ;
 
@@ -804,7 +806,7 @@ idDesireCtSave( thirdC::dosPriorityIF( tinP ) ) ,
 osTidCt( tinP.osTid ) ,
 pzbMemorySpaceUse( &processGlobal5I.bMemorySpace ) ,
 pbMemorySpaceOverride( 0 ) ,
-bDataAreaFormatted( 1 ) , // SO IMPOTENCE TEST IN DESTRUCTOR WILL NOT TRIGGER IMPOTENCE
+bDataAreaFormatted( 0 ) ,
 flagsSharedMemory( 0 ) ,
 cbData( cbP ) ,
 pbNapkin( 0 ) ,

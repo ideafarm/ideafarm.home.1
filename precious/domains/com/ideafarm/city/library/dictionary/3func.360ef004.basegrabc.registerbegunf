@@ -16,7 +16,13 @@
 
                     TRACEcALLnEST( "nonmonotonic grab" ) ;
 
-                    etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                    if( idIn == 1 ) etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ; //20240813@1819: OBSERVED TO BLOW THE STACK
+
+                    countT idIn = 1 + incv02AM( idInLath ) ;
+                    static countT idInLath ;
+
+                    LOGrAW( ostoSay ) ;
+                    CONoUTrAW( ostoSay ) ;
                 
                                               OStEXTAK( ostoSay , "\r\n" ) ;
                     else                    { OStEXTC(  ostoSay , idGrabLayerHe , 0 ) ; }

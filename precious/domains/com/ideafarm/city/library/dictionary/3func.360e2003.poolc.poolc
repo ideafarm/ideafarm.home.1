@@ -136,144 +136,37 @@
 
         }
             }
+                guts.pGrabNewElt[ offs ].ungrabF( tinP ) ;
                 }
-                    guts.pGrabNewElt[ offs ].ungrabF( tinP ) ;
-                    }
-                        if( !( F(guts.flagsCt) & ( flPOOLc_MAKEaLL | flPOOLc_KEEPeMPTIES ) ) && !*guts.ppSlots[ offs ] ) { DELzOMBIE( guts.ppSlots[ offs ] ) ; }
-        
-                        guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , expCbDrop , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
-        
-                        if( F(guts.flagsCt) & flPOOLc_NOTES    ) flagsc |=           flSLOTSc_NOTES                    ;
-                        if( F(guts.flagsCt) & flPOOLc_READoNLY ) flagsc |=           flSLOTSc_READoNLY                 ;
-                        flagsT                                   flagsc  = bBrowse ? flSLOTSc_nFeO     : flSLOTSc_null ;
-                    {
-                    else
-                    if( guts.ppSlots[ offs ] ) { BLAMMO ; }
-                    guts.pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    if( !( F(guts.flagsCt) & ( flPOOLc_MAKEaLL | flPOOLc_KEEPeMPTIES ) ) && !*guts.ppSlots[ offs ] ) { DELzOMBIE( guts.ppSlots[ offs ] ) ; }
     
-                    const countT expCbDrop   = offs ;
+                    guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , expCbDrop , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
     
-                    //CONoUTrAW( "\r\n" ) ;
-                    //CONoUTrAW( ostoName ) ;
-    
-                    OStEXTCF( ostoName , offs , '0' ) ;
-                    OStEXTAK( ostoName , ".slots." ) ;
-                    OStEXTA(  ostoName , ostoNameGroup ) ;
-                    OStEXT(   ostoName , TUCK << 2 )
+                    if( F(guts.flagsCt) & flPOOLc_NOTES    ) flagsc |= flSLOTSc_NOTES    ;
+                    if( F(guts.flagsCt) & flPOOLc_READoNLY ) flagsc |= flSLOTSc_READoNLY ;
+                    flagsT                                   flagsc  = flSLOTSc_null     ;
                 {
-                if( bBrowse || bitsStateExists >> offs & 1 )
+                else
+                if( guts.ppSlots[ offs ] ) { BLAMMO ; }
+                guts.pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ;
+
+                const countT expCbDrop   = offs ;
+
+                //CONoUTrAW( "\r\n" ) ;
+                //CONoUTrAW( ostoName ) ;
+
+                OStEXTCF( ostoName , offs , '0' ) ;
+                OStEXTAK( ostoName , ".slots." ) ;
+                OStEXTA(  ostoName , ostoNameGroup ) ;
+                OStEXT(   ostoName , TUCK << 2 )
             {
             for( countT offs = guts.expCbDropMin ; offs <= guts.expCbDropMax ; offs ++ )
         {
-        if( bBrowse || bitsStateExists )
     
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-        // EARLY CONSTRUCT THE slotsC INSTANCE FOR EACH expCbDrop THAT I WANT
+        // EARLY CONSTRUCT THE slotsC INSTANCE FOR EACH expCbDrop FOR WHICH SOME BACKING MEMORY (FOR A sexC INSTANCE) EXISTS
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        }
-            }
-                while( ~hFind ) ;
-                }
-                    }
-                        }
-                            bitsStateExists |= 1 << offNeed ;
-                            countT offNeed = thirdC::c_atoiIF( postAt ) ; ;
-                            *postEnd = 0 ;
-                        {
-                        if( postEnd )
-                        osTextT* postEnd = thirdC::c_strstrIF( tinP , postAt , "." ) ;
-                        postAt += sizeof postBefore - 1 ;
-                    {
-                    if( postAt )
-                    osTextT* postAt = thirdC::c_strstrIF( tinP , postName , postBefore ) ;
-                    osTextT postBefore[] = ".poolC.slots." ;
-
-                    }
-                        continue ;
-                        thirdC::dosDeleteIF( tinP , postName , 1 ) ;
-                        POOPIE ;
-                    {
-                    if( !bOk )
-
-                    }
-                        }
-                            else { CONoUTrAW3( "thread " , tinP.monitor.idThread , " uh ohh!\r\n" ) ; } //U::
-
-                            if( info.cbUsed || info.cbUsedHigh ) bOk = 1 ;
-
-                            if( POOP ) break ;
-                            thirdC::dosQueryFileInfoIF( tinP , pInfo , hFile ) ;
-                            infoFileS* pInfo = &info ;
-                            infoFileS info( tinP ) ;
-
-                            if( !hFile ) { BLAMMO ; } //SHOULD BE IMPOSSIBLE
-
-                            if( POOP ) break ;
-                            thirdC::dosOpenIF( tinP , tinP.pEther , hFile , countTC() , postName , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , 0 , 1 ) ;
-                            handleC hFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
-                        {
-                        while( !bOk )
-
-                        POOPIE ;
-                    {
-                    ZE( boolT , bOk ) ;
-
-                    }
-                        break ;
-                        __( ~hFind ) ;
-                    {
-                    if( !postName[ 0 ] )
-                    thirdC::dosFindFileOrDirSimpleIF( tinP , postName , sizeof postName , hFind , ostoLike ) ;
-                    postName[ 0 ] = 0 ;
-                    osTextT postName[ TUCK << 1 ] ;
-                {
-                do
-                handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-            {
-
-            }
-                OStEXTAK( ostoLike , ".poolC.slots.*.data.*" ) ;
-                OStEXTA(  ostoLike , postNameP ) ;
-                OStEXTAK( ostoLike , "\\" ) ;
-
-                POOPR
-                OStEXTCF( ostoLike , idStateSpaceP , '0' ) ;                                                              thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\" ) ;
-                OStEXTAK( ostoLike , "\\stateSpaces" ) ;                                                                  thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTCF( ostoLike , tinP.pag1->idMemorySpace , '0' ) ;                                                   thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\" ) ;
-                OStEXTA(  ostoLike , thirdC::postUserNameIF() ) ;                                                         thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\" ) ;
-                OStEXTAK( ostoLike , "\\memorySpaces" ) ;                                                                 thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\ipdos" ) ;                                                                        thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\ideafarm" ) ;                                                                     thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\com" ) ;                                                                          thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\domains" ) ;                                                                      thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\backed.up.daily" ) ;                                                              thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTAK( ostoLike , "\\ephemeral" ) ;                                                                    thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-                OStEXTA(  ostoLike , postHome ) ;                                                                         thirdC::dosCreateDirIF( tinP , ostoLike ) ;
-    
-                puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
-
-                if( POOP ) { BLAMMO ; }
-                thirdC::diskFindHomeIF( tinP , postHome , sizeof postHome , "ideafarm" ) ;
-                osTextT postHome[ TUCK << 1 ] ;
-
-                SCOOP
-                poopC poop ;
-            {
-            OStEXT( ostoLike , TUCK * 2 ) ;
-        {
-        if( idStateSpaceP )
-        ZE( countT , bitsStateExists ) ;
-    
-        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-        // FOR PERSISTENT INSTANCES, FOR EACH expCbDrop, SET A BIT IF A BACKING FILE EXISTS
-        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        boolT bBrowse = F(guts.flagsCt) & flPOOLc_nFeO ;
-                
         OStEXTAK( ostoNameGroup , ".poolC" ) ;
         OStEXTA(  ostoNameGroup , guts.postName ) ;
         OStEXT(   ostoNameGroup , TUCK << 2 )
