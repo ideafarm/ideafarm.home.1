@@ -9,16 +9,9 @@
 
 }
     }
-        THREADmODE5rESTORE0( flThreadMode5Save )
-        pzbMemorySpaceUse->ungrabF( tinP ) ;
-    {
-    if( !pbNapkin && !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )         // IF pbNapkin THEN CALLER MUST CALL formattingIsDoneF, WHICH WILL UNGRAB, UNLESS I HAVE ALREADY MADE THAT CALL
-    //20240813@1644: UNGRAB MOVED TO HERE
-
-    }
         //20221228@1019: DISABLED THIS SO CALLER CAN HANDLE GRACEFULLY: BLAMMO ;
 
-        THREADmODE4rESTORE
+        //THREADmODE4rESTORE
     
 //        etRock.traceF( tinP , T("napkinC::napkinC: traced  pool tallies and memory grain report") ) ;
 //        etRock.traceMemoryGrainRptF( tinP ) ;
@@ -26,7 +19,7 @@
 //        etRock.traceF( tinP , T("napkinC::napkinC: tracing pool tallies and memory grain report") ) ;
 //        etRock.traceF( tinP , T("napkinC::napkinC: could not allocate pbNapkin [idLineCtP,idiFileCtP,cbP,postP]: ")+TF2(idLineCtP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(idiFileCtP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(postP) ) ;
 
-        THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
+        //THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
 
         etherC& etRock = etherC::etRockIF( tinP ) ;
     {
@@ -356,7 +349,7 @@
             thirdC::dosPriorityIF( tinP , idDesireCtSave ) ;
             tinP.cYield = 0 ;
     
-            THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
+            //THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
 
             }
                 }
@@ -367,7 +360,11 @@
             {
             else
             }
-                //20240813@1644: UNGRAB MOVED TO HERE
+                //CONoUTrAW( "\r\n" ) ;
+                //CONoUTrAW( postP ) ;
+                //CONoUTrAW( "memory space ungrabbed:  " ) ;
+                THREADmODE5rESTORE0( flThreadMode5Save )
+                pzbMemorySpaceUse->ungrabF( tinP ) ;
             {
             if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
 
@@ -413,6 +410,7 @@
                 //CANNOT TEST FOR THIS BECAUSE RACE; ANOTHER THREAD MIGHT HAVE JUST DEC BUT NOT YET CLOSED HANDLE: 
             {
             if( !( F(flagsCt) & flNAPKINc_DOnOTcOMMIT ) )
+
             }
                 CONoUTrAW( "\r\n" ) ;
                 CONoUTrAW(  postP ) ;
@@ -423,7 +421,7 @@
         else                                                                                // THE SHARED MEMORY ALREADY EXISTED
         }
             }
-                THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
+                //THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
 
                 }
                     //20240813@1644: UNGRAB MOVED TO HERE
@@ -465,14 +463,17 @@
         thirdC::dosPriorityIF( tinP , idDesireCtSave ) ;
         tinP.cYield = 0 ;
 
-        THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
+        //THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
         }
-            //20240813@1644: UNGRAB MOVED TO HERE
+            //CONoUTrAW( "\r\n" ) ;
+            //CONoUTrAW( postP ) ;
+            //CONoUTrAW( "memory space ungrabbed:  " ) ;
+            THREADmODE5rESTORE0( flThreadMode5Save )
+            pzbMemorySpaceUse->ungrabF( tinP ) ;
         {
-        if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
+        if( !pbNapkin && !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )         // IF pbNapkin THEN CALLER MUST CALL formattingIsDoneF, WHICH WILL UNGRAB, UNLESS I HAVE ALREADY MADE THAT CALL
     {
-    else if( !pbNapkin )
-    if( POOP ) ;
+    if( POOP || !pbNapkin )
     
     }
         __( bFail ) ;
@@ -492,7 +493,7 @@
     
         }
             }
-                THREADmODE4rESTORE
+                //THREADmODE4rESTORE
 
 //                etRock.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
 
@@ -506,9 +507,9 @@
                 OStEXTAK( ostoSay , "napkinC::napkinC / could not allocate [cbData,cTries,POOP]:    " ) ;
                 OStEXT(   ostoSay , TUCK << 0 ) ;
 
-                THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
+                //THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
 
-                POOPR
+                POOPRqUIET
                 countT save = POOP ;
             {
             if( POOP )
@@ -523,7 +524,7 @@
 
                         thirdC::dosSleepRWinkIF( tinP ) ;
 
-                        THREADmODE4rESTORE
+                        //THREADmODE4rESTORE
 
                         etRock.traceMemoryGrainRptF( tinP ) ;
                         etRock.tracePoolTalliesF( tinP ) ;
@@ -540,7 +541,7 @@
                         OStEXTAK( ostoSay , "napkinC::napkinC / tracing pool tallies and memory grain report then napping for a wink [cbData,cTries]:    " ) ;
                         OStEXT(   ostoSay , TUCK << 2 ) ;
 
-                        THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
+                        //THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
 
                         LOGcALLnEST( "!exception: napkinC::napkinC / could not open shared memory" ) ;
                         LOGrAW( "\r\n" ) ;
@@ -551,7 +552,7 @@
 
                         //20240813@1644: UNGRAB MOVED FROM HERE
 
-                        POOPR
+                        POOPRqUIET
                         ++ s ;
                     {
                     )
@@ -614,6 +615,9 @@
     {
 
     }
+        //CONoUTrAW( "\r\n" ) ;
+        //CONoUTrAW( postP ) ;
+        //CONoUTrAW( "memory space GRABBED:  " ) ;
         pzbMemorySpaceUse->grabF( tinP , TAG( TAGiDnULL ) ) ;
         THREADmODE5oN0( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY )
         THREADmODE5sAVE0( flThreadMode5Save )
@@ -768,7 +772,7 @@
         if( POOP ) BLAMMO ;
         __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         if( POOP ) BLAMMO ; //U:: TO FIND A BUG
-        __( F(tinP.flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING ) ;  // I USE THIS FLAG IN A WAY THAT DOES NOT SUPPORT RECURSION (I AND formattingIsDoneF RESET THE FLAG RATHER THAN USE RESTORE)
+        //__( F(tinP.flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING ) ;  // I USE THIS FLAG IN A WAY THAT DOES NOT SUPPORT RECURSION (I AND formattingIsDoneF RESET THE FLAG RATHER THAN USE RESTORE)
         if( POOP ) BLAMMO ; //U:: TO FIND A BUG
         FV(flNAPKINc,flagsCt)
         if( POOP ) BLAMMO ; //U:: TO FIND A BUG
