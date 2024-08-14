@@ -18,6 +18,19 @@
         //CS:CODEsYNC: 360e0003 360e0003
 
         }
+                                             pSexLifoConstructing = 0 ;
+                tinP.pSexLifoConstructing  = pSexLifoConstructing     ;
+            if( tinP.pSexLifoConstructing != this                     ) { BLAMMO ; }
+
+            if( bSetResetFormattingBit     && !btrAM( pReg->pbSexBitFormatting , offSexBit ) ) { BLAMMO ; }
+            if( !POOP && !bObeyReg && pReg &&  btsAM( pReg->pbSexBitFormatted  , offSexBit ) ) { BLAMMO ; }
+
+            if( !bNest2 ) tinP.fliSexCtPendingExpSlots  &= ~maskExpSlots  ;
+            if( !bNest1 ) tinP.fliSexCtPendingExpCbDrop &= ~maskExpCbDrop ;
+        {
+        if( pPoolContainsMe )
+
+        }
             }
                 //}
                 //    OStEXTAK( ostoSay , "\"" ) ;
@@ -42,25 +55,6 @@
                 if( !POOP )
 
                 }
-                                                pSexLifoConstructing = 0 ;
-                    tinP.pSexLifoConstructing = pSexLifoConstructing ;
-                    if( tinP.pSexLifoConstructing != this ) { BLAMMO ; }
-                {
-                if( pPoolContainsMe )
-
-                }
-                    if( bSetResetFormatting        && !btrAM( pReg->pbSexBitFormatting , offSexBit ) ) { BLAMMO ; }
-                    if( !POOP && !bObeyReg && pReg &&  btsAM( pReg->pbSexBitFormatted  , offSexBit ) ) { BLAMMO ; }
-                {
-                if( pPoolContainsMe )
-
-                }
-                    }
-                        if( !bNest2 ) tinP.fliSexCtPendingExpCbDrop &= ~maskExpSlots  ;
-                        if( !bNest1 ) tinP.fliSexCtPendingExpCbDrop &= ~maskExpCbDrop ;
-                    {
-                    if( pPoolContainsMe )
-
                     //CONoUTrAW( "\r\n-------------------------------------------------------------------------------------------------------------------\r\n" ) ;
 
                     //------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -727,8 +721,8 @@
         // ALLOCATE THREAD LOCAL STORAGE
         //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        if( bSetResetFormatting && btsAM( pReg->pbSexBitFormatting , offSexBit ) ) { BLAMMO ; }
-        const boolT bSetResetFormatting = !bObeyReg && !bNested && pReg ;
+        if( bSetResetFormattingBit && btsAM( pReg->pbSexBitFormatting , offSexBit ) ) { BLAMMO ; }
+        const boolT bSetResetFormattingBit = !bObeyReg && !bNested && pReg ;
         //U:: D NOW HERE
 
         }
@@ -789,6 +783,7 @@
             homeS& home = homeS::homeIF() ;
         {
         if( pPoolContainsMe )
+        ZE( boolT , bSexBitFormattedWasSet ) ;
 
         //U::A WAS HERE
 
@@ -928,8 +923,8 @@
     {
     boolT bFail = 1 ;
 
-    boolT bNest2 = !pPoolContainsMe ? 0 : !!( tinP.fliSexCtPendingExpSlots  & maskExpSlots  ) ;
-    boolT bNest1 = !pPoolContainsMe ? 0 : !!( tinP.fliSexCtPendingExpCbDrop & maskExpCbDrop ) ;
+    const boolT bNest2 = !pPoolContainsMe ? 0 : !!( tinP.fliSexCtPendingExpSlots  & maskExpSlots  ) ;
+    const boolT bNest1 = !pPoolContainsMe ? 0 : !!( tinP.fliSexCtPendingExpCbDrop & maskExpCbDrop ) ;
     const flagsT maskExpSlots  = 1 << expSlotsP  ;
     const flagsT maskExpCbDrop = 1 << expCbDropP ;                              //U::REMOVE UNNECESSARY AND/OR UNUSED SERIALIZATION SUPPORT sexC poolC FOR poolRegistrationS
 {
