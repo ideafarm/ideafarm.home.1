@@ -233,10 +233,10 @@
                                                                                                                                                         \
 #define BOS0(whatP,typeP,expP,expGetErrorP,expResetErrorP)                                                                                              \
 
-#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , tinP.brcRaw = 0 /*INEFFECTIVE PLACEHOLDER*/ )
-#define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 )       )
-#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) , tinP.brcRaw = 0                             )
-#define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) , BOSnOvALUEnOtIN( SetLastError( 0 )          )
+#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , tinP.brcRaw = 0                         )
+#define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 ) ) )
+#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) , tinP.brcRaw = 0                         )
+#define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) , BOSnOvALUEnOtIN( SetLastError( 0    ) ) )
 
 #define BOSlASTeRROR GetLastError()
 

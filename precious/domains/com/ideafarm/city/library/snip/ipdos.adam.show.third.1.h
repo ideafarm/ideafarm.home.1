@@ -8358,33 +8358,33 @@ it is illegal to refer to this symbol in the definition of an adam
 //EVERY GROUP IN THIS FILE IS ALPHABETICAL
 
 /*3*/
-#define ifcIDwHAT_GOaDAM             /*id*/
-#define ifcIDwHAT_GOiNoUTcT          /*id*/
-#define ifcIDwHAT_GOiNoUTfRAMED      /*id*/
-#define ifcIDwHAT_GOiNoUTdT          /*id*/
-#define ifcIDwHAT_GObOSclIB          /*id*/
-#define ifcIDwHAT_GObOSmONITOR       /*id*/
-#define ifcIDwHAT_GObOSdRAW          /*id*/
-#define ifcIDwHAT_GObOSoTHER         /*id*/
-#define ifcIDwHAT_GObOStHIRD         /*id*/
-#define ifcIDwHAT_mark               /*id*/
-#define ifcIDwHAT_STOPbATON          /*id*/
-#define ifcIDwHAT_STOPfILErEAD       /*id*/
-#define ifcIDwHAT_STOPfILEwRITE      /*id*/
-#define ifcIDwHAT_STOPgRAB           /*id*/
-#define ifcIDwHAT_STOPiNTaCCEPT      /*id*/
-#define ifcIDwHAT_STOPiNTrEAD        /*id*/
-#define ifcIDwHAT_STOPiNTwRITE       /*id*/
-#define ifcIDwHAT_STOPmONITORING     /*id*/
-#define ifcIDwHAT_STOPyIELD          /*id*/
-#define ifcIDwHAT_STOPnAP            /*id*/
-#define ifcIDwHAT_STOPoTHER          /*id*/
-#define ifcIDwHAT_STOPsIGN           /*id*/
-#define ifcIDwHAT_STOPsUSPENDED      /*id*/
-#define ifcIDwHAT_STOPwIN            /*id*/
-#define ifcIDwHAT_STOPwINrEAD        /*id*/
-#define ifcIDwHAT_STOPwINwRITE       /*id*/
-#define ifcIDwHAT_STOPbOStHIRD       /*id*/
+#define ifcIDwHAT_GOaDAM             0x01
+#define ifcIDwHAT_GOiNoUTcT          0x02
+#define ifcIDwHAT_GOiNoUTfRAMED      0x03
+#define ifcIDwHAT_GOiNoUTdT          0x04
+#define ifcIDwHAT_GObOSclIB          0x05
+#define ifcIDwHAT_GObOSmONITOR       0x06
+#define ifcIDwHAT_GObOSdRAW          0x07
+#define ifcIDwHAT_GObOSoTHER         0x08
+#define ifcIDwHAT_GObOStHIRD         0x09
+#define ifcIDwHAT_mark               0x0a
+#define ifcIDwHAT_STOPbATON          0x0b
+#define ifcIDwHAT_STOPfILErEAD       0x0c
+#define ifcIDwHAT_STOPfILEwRITE      0x0d
+#define ifcIDwHAT_STOPgRAB           0x0e
+#define ifcIDwHAT_STOPiNTaCCEPT      0x0f
+#define ifcIDwHAT_STOPiNTrEAD        0x10
+#define ifcIDwHAT_STOPiNTwRITE       0x11
+#define ifcIDwHAT_STOPmONITORING     0x12
+#define ifcIDwHAT_STOPyIELD          0x13
+#define ifcIDwHAT_STOPnAP            0x14
+#define ifcIDwHAT_STOPoTHER          0x15
+#define ifcIDwHAT_STOPsIGN           0x16
+#define ifcIDwHAT_STOPsUSPENDED      0x17
+#define ifcIDwHAT_STOPwIN            0x18
+#define ifcIDwHAT_STOPwINrEAD        0x19
+#define ifcIDwHAT_STOPwINwRITE       0x1a
+#define ifcIDwHAT_STOPbOStHIRD       0x1b
 /*3*/
 
 // whatP VALUES
@@ -8430,10 +8430,10 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define BOSlASTeRROR GetLastError()
 
-#define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) , BOSnOvALUEnOtIN( SetLastError( 0 )          )
-#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) , tinP.brcRaw = 0                             )
-#define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 )       )
-#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , tinP.brcRaw = 0 /*INEFFECTIVE PLACEHOLDER*/ )
+#define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) , BOSnOvALUEnOtIN( SetLastError( 0    ) ) )
+#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) , tinP.brcRaw = 0                         )
+#define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 ) ) )
+#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , tinP.brcRaw = 0                         )
 
 #define BOS0(whatP,typeP,expP,expGetErrorP,expResetErrorP)                                                                                              \
                                                                                                                                                         \
