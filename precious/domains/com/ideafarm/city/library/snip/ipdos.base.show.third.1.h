@@ -8335,7 +8335,6 @@ it is illegal to refer to this symbol in the definition of an adam
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000cb.costmaxfilename END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000cc.bos BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -8359,36 +8358,34 @@ it is illegal to refer to this symbol in the definition of an adam
 //EVERY GROUP IN THIS FILE IS ALPHABETICAL
 
 /*3*/
-#define ifcIDwHAT_GOaDAM             0xdddd0441
-#define ifcIDwHAT_GOiNoUTcT          0xdddd0442
-#define ifcIDwHAT_GOiNoUTfRAMED      0xdddd0443
-#define ifcIDwHAT_GOiNoUTdT          0xdddd0444
-#define ifcIDwHAT_GObOSclIB          0xdddd0445
-#define ifcIDwHAT_GObOSmONITOR       0xdddd0446
-#define ifcIDwHAT_GObOSdRAW          0xdddd0447
-#define ifcIDwHAT_GObOSoTHER         0xdddd0448
-#define ifcIDwHAT_GObOStHIRD         0xdddd0449
-#define ifcIDwHAT_mark               0xdddd044a
-#define ifcIDwHAT_STOPbATON          0xdddd044b
-#define ifcIDwHAT_STOPfILErEAD       0xdddd044c
-#define ifcIDwHAT_STOPfILEwRITE      0xdddd044d
-#define ifcIDwHAT_STOPgRAB           0xdddd044e
-#define ifcIDwHAT_STOPiNTaCCEPT      0xdddd044f
-#define ifcIDwHAT_STOPiNTrEAD        0xdddd0450
-#define ifcIDwHAT_STOPiNTwRITE       0xdddd0451
-#define ifcIDwHAT_STOPmONITORING     0xdddd0452
-#define ifcIDwHAT_STOPyIELD          0xdddd0453
-#define ifcIDwHAT_STOPnAP            0xdddd0454
-#define ifcIDwHAT_STOPoTHER          0xdddd0455
-#define ifcIDwHAT_STOPsIGN           0xdddd0456
-#define ifcIDwHAT_STOPsUSPENDED      0xdddd0457
-#define ifcIDwHAT_STOPwIN            0xdddd0458
-#define ifcIDwHAT_STOPwINrEAD        0xdddd0459
-#define ifcIDwHAT_STOPwINwRITE       0xdddd045a
-#define ifcIDwHAT_STOPbOStHIRD       0xdddd045b
+#define ifcIDwHAT_GOaDAM             /*id*/
+#define ifcIDwHAT_GOiNoUTcT          /*id*/
+#define ifcIDwHAT_GOiNoUTfRAMED      /*id*/
+#define ifcIDwHAT_GOiNoUTdT          /*id*/
+#define ifcIDwHAT_GObOSclIB          /*id*/
+#define ifcIDwHAT_GObOSmONITOR       /*id*/
+#define ifcIDwHAT_GObOSdRAW          /*id*/
+#define ifcIDwHAT_GObOSoTHER         /*id*/
+#define ifcIDwHAT_GObOStHIRD         /*id*/
+#define ifcIDwHAT_mark               /*id*/
+#define ifcIDwHAT_STOPbATON          /*id*/
+#define ifcIDwHAT_STOPfILErEAD       /*id*/
+#define ifcIDwHAT_STOPfILEwRITE      /*id*/
+#define ifcIDwHAT_STOPgRAB           /*id*/
+#define ifcIDwHAT_STOPiNTaCCEPT      /*id*/
+#define ifcIDwHAT_STOPiNTrEAD        /*id*/
+#define ifcIDwHAT_STOPiNTwRITE       /*id*/
+#define ifcIDwHAT_STOPmONITORING     /*id*/
+#define ifcIDwHAT_STOPyIELD          /*id*/
+#define ifcIDwHAT_STOPnAP            /*id*/
+#define ifcIDwHAT_STOPoTHER          /*id*/
+#define ifcIDwHAT_STOPsIGN           /*id*/
+#define ifcIDwHAT_STOPsUSPENDED      /*id*/
+#define ifcIDwHAT_STOPwIN            /*id*/
+#define ifcIDwHAT_STOPwINrEAD        /*id*/
+#define ifcIDwHAT_STOPwINwRITE       /*id*/
+#define ifcIDwHAT_STOPbOStHIRD       /*id*/
 /*3*/
-#define ifcIDwHAT_min     0xdddd0441
-#define ifcIDwHAT_max     0xdddd045b
 
 // whatP VALUES
 #define WHATga   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
@@ -8433,19 +8430,23 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define BOSlASTeRROR GetLastError()
 
-#define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) )
-#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) )
-#define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR )
-#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR )
+#define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) , BOSnOvALUEnOtIN( SetLastError( 0 )          )
+#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) , tinP.brcRaw = 0                             )
+#define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 )       )
+#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , tinP.brcRaw = 0 /*INEFFECTIVE PLACEHOLDER*/ )
 
-#define BOS0(whatP,typeP,expP,expGetErrorP)                                                                                                             \
+#define BOS0(whatP,typeP,expP,expGetErrorP,expResetErrorP)                                                                                              \
                                                                                                                                                         \
     {                                                                                                                                                   \
         tinP.brcLath = tinP.brcQuery = 0 ;                                                                                                              \
         countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
+        expResetErrorP ;                                                                                                                                \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         typeP ;                                                                                                                                         \
+        ZE( countT , _brcRaw ) ;                                                                                                                        \
+        expGetErrorP ;                                                                                                                                  \
+        tinP.brcQuery = _brcRaw ;                                                                                                                       \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
         if( pg1.pHome )                                                                                                                                 \
         {                                                                                                                                               \
@@ -8456,9 +8457,6 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                               \
         if( tinP.bosFail )                                                                                                                              \
         {                                                                                                                                               \
-            ZE( countT , _brcRaw ) ;                                                                                                                    \
-            expGetErrorP ;                                                                                                                              \
-            tinP.brcQuery = _brcRaw ;                                                                                                                   \
             if( tinP.brcQuery )                                                                                                                         \
             {                                                                                                                                           \
                 tinP.brcLath = tinP.brcQuery ;                                                                                                          \

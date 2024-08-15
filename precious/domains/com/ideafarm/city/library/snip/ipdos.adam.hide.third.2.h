@@ -28677,8 +28677,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
  timeS                   timeTraceLath ;
  countT                  cPoolDropCt ;
  countT                  cPoolDropDt ;
- flagsT                  fliSexCtPendingExpCbDrop ;
- flagsT                  fliSexCtPendingExpSlots ;
  barryC*                 pBarryUtility ;                     // NOT REFERENCED BY tinS OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
  sexC*                   pSexLifoConstructing ;              // USED BY sexC TO DETECT RECURSIVE CYCLING DURING CT
  byteT*                  pbRecursiveParameters ;             // PROTOCOL: (1) CODE MUST VERIFY THAT THIS IS NULL BEFORE SETTING IT.  (2) THE CODE THAT SETS THIS MUST ALSO RESET IT SO THAT OTHER CODE CAN USE IT.  USE THIS TO PASS PARAMETERS RECURSIVELY TO AVOID USING THE THREAD STACK

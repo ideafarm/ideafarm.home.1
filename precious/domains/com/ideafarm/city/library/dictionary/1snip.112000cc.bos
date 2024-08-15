@@ -210,9 +210,6 @@
                 tinP.brcLath = tinP.brcQuery ;                                                                                                          \
             {                                                                                                                                           \
             if( tinP.brcQuery )                                                                                                                         \
-            tinP.brcQuery = _brcRaw ;                                                                                                                   \
-            expGetErrorP ;                                                                                                                              \
-            ZE( countT , _brcRaw ) ;                                                                                                                    \
         {                                                                                                                                               \
         if( tinP.bosFail )                                                                                                                              \
         }                                                                                                                                               \
@@ -223,19 +220,23 @@
         {                                                                                                                                               \
         if( pg1.pHome )                                                                                                                                 \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
+        tinP.brcQuery = _brcRaw ;                                                                                                                       \
+        expGetErrorP ;                                                                                                                                  \
+        ZE( countT , _brcRaw ) ;                                                                                                                        \
         typeP ;                                                                                                                                         \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
+        expResetErrorP ;                                                                                                                                \
         whatP                                                                                                                                           \
         countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
         tinP.brcLath = tinP.brcQuery = 0 ;                                                                                                              \
     {                                                                                                                                                   \
                                                                                                                                                         \
-#define BOS0(whatP,typeP,expP,expGetErrorP)                                                                                                             \
+#define BOS0(whatP,typeP,expP,expGetErrorP,expResetErrorP)                                                                                              \
 
-#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR )
-#define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR )
-#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) )
-#define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) )
+#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , tinP.brcRaw = 0 /*INEFFECTIVE PLACEHOLDER*/ )
+#define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 )       )
+#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) , tinP.brcRaw = 0                             )
+#define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) , BOSnOvALUEnOtIN( SetLastError( 0 )          )
 
 #define BOSlASTeRROR GetLastError()
 
