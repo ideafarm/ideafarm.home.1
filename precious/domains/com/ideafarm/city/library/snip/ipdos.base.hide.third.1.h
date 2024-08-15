@@ -45841,6 +45841,8 @@ a jPointer is also considered null if it contains one of the special values [JrE
 /*3*/
 #define flSEXcsTATE_USINGnAPfORmETA                   0xe00001f6
 #define flSEXcsTATE_USINGnAPfORdATA                   0xe00002f6
+#define flSEXcsTATE_REGISTEREDwITHlEAKlOGGERaOK       0xe00004f6
+#define flSEXcsTATE_CONSTRUCTEDaOK                    0xe00008f6
 /*3*/
 #define flSEXcsTATE_null    0xe00000f6
 

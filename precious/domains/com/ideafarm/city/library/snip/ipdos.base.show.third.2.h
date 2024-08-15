@@ -27909,8 +27909,8 @@ code may use setIfZeAM on *(countT*)this
 
     byteT           pbSexBitDataIsInPool[ 1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; // DATA FOR EACH sexC SPECIFICATION
     byteT           pbSexBitMetaIsInPool[ 1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
-    byteT           pbSexBitFormatting[   1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
-    byteT           pbSexBitFormatted[    1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
+    byteT           pbSexBitConstructing[ 1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
+    byteT           pbSexBitConstructed[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
 
     public :
 

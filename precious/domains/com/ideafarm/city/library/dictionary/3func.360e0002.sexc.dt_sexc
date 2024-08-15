@@ -9,35 +9,35 @@
 
 }
     }
-        }
-            DELzOMBIE( pDoomed ) ;
-            pDoomed = (fileC*)pbFileData ;
-            DELzOMBIE( pDoomed ) ;
-            fileC* pDoomed = (fileC*)pbFileMeta ;
-            puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
-        {
-        if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) //CLOSING THE BACKING FILES BEFORE DELETING THE SHARED MEMORY THAT IS MAPPED TO THEM IS OK ACCORDING TO WIN32 DOC
+        DELzOMBIE( pDoomed ) ;
+        pDoomed = (fileC*)pbFileData ;
+        DELzOMBIE( pDoomed ) ;
+        fileC* pDoomed = (fileC*)pbFileMeta ;
+        puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
+    {
+    if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) //CLOSING THE BACKING FILES BEFORE DELETING THE SHARED MEMORY THAT IS MAPPED TO THEM IS OK ACCORDING TO WIN32 DOC
 
-        }
-            //U:: pbMeta IS BACKED BY A DATABASE LISTING THAT SHOULD BE DELETED IF I AM THE ONLY REFERENCE TO IT
-        {
-        else
-        }
-            DELzOMBIE( pnDoomed ) ;
-            napkinC* pnDoomed = (napkinC*)pb_napMeta ;
-        {
-        if( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA )
+    }
+        //U:: pbMeta IS BACKED BY A DATABASE LISTING THAT SHOULD BE DELETED IF I AM THE ONLY REFERENCE TO IT
+    {
+    else
+    }
+        DELzOMBIE( pnDoomed ) ;
+        napkinC* pnDoomed = (napkinC*)pb_napMeta ;
+    {
+    if( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA )
 
-        }
-            DELzOMBIE( pnDoomed ) ;
-            napkinC* pnDoomed = (napkinC*)pb_napData ;
-        {
-        if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA )
+    }
+        DELzOMBIE( pnDoomed ) ;
+        napkinC* pnDoomed = (napkinC*)pb_napData ;
+    {
+    if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA )
 
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------
-        // 
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // 
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    }
         }
             DELzOMBIE( pzMetaHead ) ;
 
@@ -165,9 +165,9 @@
     
                 decv8AM( pReg->pbSex_cQueue[ offSexBit ] ) ;
 
-                if( !offRef ) { BLAMMO ; } // UNDERFLOW (SHOULD BE IMPOSSIBLE )
-                if( offRef == 1 ) btrAM( pReg->pbSexBitFormatted  , offSexBit ) ;
+                if( offRef == 1 ) btrAM( pReg->pbSexBitConstructed  , offSexBit ) ;
     
+                if( !offRef ) { BLAMMO ; }                                              // UNDERFLOW (SHOULD BE IMPOSSIBLE )
                 countT offRef = decv8AM( pReg->pbSex_cRef[ offSexBit ] ) ;              // THE VALUES IN MY ELEMENTS REMAIN AND MUST BE CLEARED  BEFORE REUSE
 
                 }
@@ -202,14 +202,13 @@
         if( pPoolContainsMe )
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------
-        // 
+        // IN THE HOME REGISTRATION RECORD FOR THE poolC THAT CONTAINS ME, CLEAR MY "FORMATTED" BIT
         //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
             }
                 }
-                    BLAMMO ;
-                    LOGrAW( "sexC::~sexC/i could not find myself in the registry\r\n" ) ;
+                    LOGrAW( "sexC::~sexC/!exception: i could not find myself in the registry\r\n" ) ;
                 {
                 if( offe == CsEXeNTRIES )
 
@@ -233,10 +232,10 @@
             if( pbNapkin )
             byteT* pbNapkin = processGlobal8I._sexC_napGlobalRegistry ;
         {
-        if( !thirdC::c_strstrIF( tinP , pzMetaHead->postName , postPOOLlEAKlOGGER ) )
+        if( F(flagsState) & flSEXcsTATE_REGISTEREDwITHlEAKlOGGERaOK )
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------
-        // 
+        // IF I AM NOT PART OF THE poolC USED BY THE LEAKlOGGER ADAM THEN DEREGISTER MYSELF WITH LEAK LOGGER
         //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         //}
@@ -259,17 +258,9 @@
         //    OStEXT(   ostoSay , TUCK << 2 ) ;
         //{
 
-        }
-            TELLsYSc3( idTypeSay , (byteT*)&info , sizeof info )
-            info.pSex       = this ;
-            thirdC::c_strcpyIF( tinP , info.postName , pzMetaHead->postName ) ;
-            info.expSlots   = pzMetaHead->expSlots  ;
-            info.expCbDrop  = pzMetaHead->expCbDrop ;
-            info.osPid      = tinP.osPid ;
-            tellInfoSysSexS info ;
-            countT idTypeSay = ifcIDtYPEtELLsYS_SEXdT ;
-        {
-        if( pzMetaHead )    // WILL BE NULL IF CT'OR DID NOT SUCCEED
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // DEBUGGING CHATTER
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------
     {
     if( pzMetaHead )
 
@@ -281,12 +272,21 @@
     // 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    }
+        TELLsYSc3( idTypeSay , (byteT*)&info , sizeof info )
+        info.pSex       = this ;
+        thirdC::c_strcpyIF( tinP , info.postName , pzMetaHead->postName ) ;
+        info.expSlots   = pzMetaHead->expSlots  ;
+        info.expCbDrop  = pzMetaHead->expCbDrop ;
+        info.osPid      = tinP.osPid ;
+        tellInfoSysSexS info ;
+        countT idTypeSay = ifcIDtYPEtELLsYS_SEXdT ;
+    {
+    if( F(flagsState) & flSEXcsTATE_CONSTRUCTEDaOK )
+
     _IO_
 
-    }
-        if( POOP ) return ; // IF CT'OR FAILED, IT IS RESPONSIBLE FOR CLEANING UP 
-    {
-    IFbEcAREFUL
+    if( POOP ) POOPRqUIET ;
     SCOOP
 
     TINSL

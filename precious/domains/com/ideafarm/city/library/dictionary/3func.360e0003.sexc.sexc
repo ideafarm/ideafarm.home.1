@@ -22,6 +22,8 @@
     //{
     //if( tinP.pc Utility[ 0 ] )
 
+    if( !POOP ) flagsState |= flSEXcsTATE_CONSTRUCTEDaOK ;
+
     }
         TELLsYSc3LIFI( idTypeSay , (byteT*)&info , sizeof info , idLineCtP , idiFileCtP )
         info.idiFileCt  = idiFileCtP ;
@@ -41,11 +43,8 @@
             tinP.pSexLifoConstructing  = pSexLifoConstructing     ;
         if( tinP.pSexLifoConstructing != this                     ) { BLAMMO ; }
 
-        if( bSetResetFormattingBit     && !btrAM( pReg->pbSexBitFormatting , offSexBit ) ) { BLAMMO ; }
-        if( !POOP && !bObeyReg && pReg &&  btsAM( pReg->pbSexBitFormatted  , offSexBit ) ) { BLAMMO ; }
-
-        if( !bNest2 ) tinP.fliSexCtPendingExpSlots  &= ~maskExpSlots  ;
-        if( !bNest1 ) tinP.fliSexCtPendingExpCbDrop &= ~maskExpCbDrop ;
+        if( bSetResetFormattingBit     && !btrAM( pReg->pbSexBitConstructing , offSexBit ) ) { BLAMMO ; }
+        if( !POOP && !bObeyReg && pReg &&  btsAM( pReg->pbSexBitConstructed  , offSexBit ) ) { BLAMMO ; }
     {
     if( pPoolContainsMe )
 
@@ -60,7 +59,9 @@
                     }
                         }
                             }
-                                if( offe == CsEXeNTRIES ) { LOGrAW( "sexC::sexC/registry is full\r\n" ) ; } //U: 20140605@1631: CONJ: THIS CAN HAPPEN IF EXIST MULTIPLE poolC INSTANCES OR IF EXIST MULTIPLE ADAMS (SEE osThreadAdamF)
+                                else                      { LOGrAW( "!exception: sexC::sexC/i could not register myself with the leak logger for some reason other than the registry being full\r\n" ) ; }
+                                else if( !POOP )          flagsState |= flSEXcsTATE_REGISTEREDwITHlEAKlOGGERaOK ;
+                                if( offe == CsEXeNTRIES ) { LOGrAW( "!exception: sexC::sexC/the leak logger registry is full\r\n" ) ; } //U: 20140605@1631: CONJ: THIS CAN HAPPEN IF EXIST MULTIPLE poolC INSTANCES OR IF EXIST MULTIPLE ADAMS (SEE osThreadAdamF)
 
                                 }
                                     grabot.ungrabF( tinP ) ;
@@ -92,25 +93,18 @@
                                 {
                                 ZE( countT , offe ) ;
                         
-                                sexGlobalEntryS* pe = (sexGlobalEntryS*)( pbNapkin + sizeof( grabotC ) ) ;
-                                grabotC& grabot = *(grabotC*)pbNapkin ;
+                                sexGlobalEntryS* pe = (sexGlobalEntryS*)( pbnRegistry + sizeof( grabotC ) ) ;
+                                grabotC& grabot = *(grabotC*)pbnRegistry ;
                             {
-                            if( pbNapkin )
-                            byteT* pbNapkin = processGlobal8I._sexC_napGlobalRegistry ;
-
-                            }
-                                countT foo = 2 ;
-                            {
-                            if( idIn == 23 )
-                            countT idIn = 1 + incv02AM( idInLath ) ;
-                            static countT idInLath ;
+                            if( pbnRegistry )
+                            byteT* pbnRegistry = processGlobal8I._sexC_napGlobalRegistry ;
                         {
                         if( !thirdC::c_strstrIF( tinP , pzMetaHead->postName , postPOOLlEAKlOGGER ) )
                         POOPIE
                     {
 
                     //------------------------------------------------------------------------------------------------------------------------------------------------------------
-                    // SPECIAL PROCESSING IF I AM PART OF THE poolC USED BY THE LEAKlOGGER ADAM
+                    // IF I AM NOT PART OF THE poolC USED BY THE LEAKlOGGER ADAM THEN REGISTER MYSELF WITH LEAK LOGGER
                     //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                     //}
@@ -316,12 +310,12 @@
             {
             if( POOP )
 
-            //SUPPRESSED WITHOUT ANALYSIS TO GET CORRECT FUNCTION FOR OO PROCESSES ACCESSING THE SAME PERSISTENT POOL: if( pPoolContainsMe ) { __NZ( pReg->pbSexBitFormatted[ offSexByte ] & maskSexByte ) ; } // BECOME IMPOTENT IF I JUST RECURSIVELY CALLED MYSELF FOR THE SAME SPECIFICATIONS: 20171012@1227
+            //SUPPRESSED WITHOUT ANALYSIS TO GET CORRECT FUNCTION FOR OO PROCESSES ACCESSING THE SAME PERSISTENT POOL: if( pPoolContainsMe ) { __NZ( pReg->pbSexBitConstructed[ offSexByte ] & maskSexByte ) ; } // BECOME IMPOTENT IF I JUST RECURSIVELY CALLED MYSELF FOR THE SAME SPECIFICATIONS: 20171012@1227
 
             }
                 THREADmODE3rESTORE
                 }
-                    if( !bObeyReg && pReg && !( pReg->pbSexBitFormatted[ offSexByte ] & maskSexByte ) && btsAM( pReg->pbSexBitMetaIsInPool , offSexBit ) ) { BLAMMO ; }
+                    if( !bObeyReg && pReg && !( pReg->pbSexBitConstructed[ offSexByte ] & maskSexByte ) && btsAM( pReg->pbSexBitMetaIsInPool , offSexBit ) ) { BLAMMO ; }
 
                     }
                         }
@@ -499,12 +493,12 @@
     {
     if( POOP )
 
-    //SUPPRESSED WITHOUT ANALYSIS TO GET CORRECT FUNCTION FOR OO PROCESSES ACCESSING THE SAME PERSISTENT POOL: if( pPoolContainsMe ) { __NZ( pReg->pbSexBitFormatted[ offSexByte ] & maskSexByte ) ; } // BECOME IMPOTENT IF I JUST RECURSIVELY CALLED MYSELF FOR THE SAME SPECIFICATIONS
+    //SUPPRESSED WITHOUT ANALYSIS TO GET CORRECT FUNCTION FOR OO PROCESSES ACCESSING THE SAME PERSISTENT POOL: if( pPoolContainsMe ) { __NZ( pReg->pbSexBitConstructed[ offSexByte ] & maskSexByte ) ; } // BECOME IMPOTENT IF I JUST RECURSIVELY CALLED MYSELF FOR THE SAME SPECIFICATIONS
 
     }
         THREADmODE3rESTORE
         }
-            if( !bObeyReg && pReg && !( pReg->pbSexBitFormatted[ offSexByte ] & maskSexByte ) && btsAM( pReg->pbSexBitDataIsInPool , offSexBit ) ) { BLAMMO ; }
+            if( !bObeyReg && pReg && !( pReg->pbSexBitConstructed[ offSexByte ] & maskSexByte ) && btsAM( pReg->pbSexBitDataIsInPool , offSexBit ) ) { BLAMMO ; }
 
             }
                 //DO THIS IN MY DESTRUCTOR BUT ONLY IF I AM THE ONLY CLIENT: listC::deleteIF( tinP, pczListSex ) ;
@@ -606,7 +600,7 @@
     // ALLOCATE THREAD LOCAL STORAGE
     //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    if(         bSetResetFormattingBit && btsAM( pReg->pbSexBitFormatting , offSexBit ) ) { BLAMMO ; }
+    if(         bSetResetFormattingBit && btsAM( pReg->pbSexBitConstructing , offSexBit ) ) { BLAMMO ; }
     const boolT bSetResetFormattingBit                                                    = !bObeyReg && !bNested && pReg ;
 
     }
@@ -618,7 +612,7 @@
                     bMetaIsToBeInPool = !!( pReg->pbSexBitMetaIsInPool[ offSexByte ] & maskSexByte ) ;
                     bDataIsToBeInPool = !!( pReg->pbSexBitDataIsInPool[ offSexByte ] & maskSexByte ) ;
 
-                    while( !( pReg->pbSexBitFormatted[ offSexByte ] & maskSexByte ) ) thirdC::dosSleepWinkIF( tinP ) ;
+                    while( !( pReg->pbSexBitConstructed[ offSexByte ] & maskSexByte ) ) thirdC::dosSleepWinkIF( tinP ) ;
                 {
                 if( bObeyReg )
 
@@ -630,16 +624,16 @@
                 {
                 if( !bObeyReg )
 
-                //CONoUTrAWf( "after  [offSexBit,pReg->pbSex_cRef[],offRef,maskSexByte,pReg->pbSexBitFormatting[],bNested,bObeyReg]:    " , offSexBit , "    " , pReg->pbSex_cRef[ offSexBit ] , "    " , offRef , "    " , maskSexByte , "    " , pReg->pbSexBitFormatting[ offSexByte ] , "    " ,  bNested , "    " ,  bObeyReg , "\r\n" ) ;
+                //CONoUTrAWf( "after  [offSexBit,pReg->pbSex_cRef[],offRef,maskSexByte,pReg->pbSexBitConstructing[],bNested,bObeyReg]:    " , offSexBit , "    " , pReg->pbSex_cRef[ offSexBit ] , "    " , offRef , "    " , maskSexByte , "    " , pReg->pbSexBitConstructing[ offSexByte ] , "    " ,  bNested , "    " ,  bObeyReg , "\r\n" ) ;
 
                 if( offRef && !bNested ) bObeyReg = 1 ;                                     // OBEY THE REG IF I HAVE A DAD BUT NOT A GRANDDAD
 
-                bNested = !!( pReg->pbSexBitFormatting[ offSexByte ] & maskSexByte ) ;      // CT OF sexC FOR A GIVEN SPEC IS SERIALIZED WITHIN slotsC::newF, SO IF THE FORMATTING BIT IS SET I MUST HAVE CALLED MYSELF
+                bNested = !!( pReg->pbSexBitConstructing[ offSexByte ] & maskSexByte ) ;      // CT OF sexC FOR A GIVEN SPEC IS SERIALIZED WITHIN slotsC::newF, SO IF THE FORMATTING BIT IS SET I MUST HAVE CALLED MYSELF
 
                 if( offRef == 0xff ) { BLAMMO ; } // OVERFLOW
                 offRef = incv8AM( pReg->pbSex_cRef[ offSexBit ] ) ;
 
-                //CONoUTrAWf( "before [offSexBit,pReg->pbSex_cRef[],offRef,maskSexByte,pReg->pbSexBitFormatting[],bNested,bObeyReg]:    " , offSexBit , "    " , pReg->pbSex_cRef[ offSexBit ] , "    " , offRef , "    " , maskSexByte , "    " , pReg->pbSexBitFormatting[ offSexByte ] , "    " ,  bNested , "    " ,  bObeyReg , "\r\n" ) ;
+                //CONoUTrAWf( "before [offSexBit,pReg->pbSex_cRef[],offRef,maskSexByte,pReg->pbSexBitConstructing[],bNested,bObeyReg]:    " , offSexBit , "    " , pReg->pbSex_cRef[ offSexBit ] , "    " , offRef , "    " , maskSexByte , "    " , pReg->pbSexBitConstructing[ offSexByte ] , "    " ,  bNested , "    " ,  bObeyReg , "\r\n" ) ;
                 countT offRef = - 1 ;
 
                 THREADmODE2rESTORE
@@ -658,7 +652,7 @@
         {
         if( !POOP )
 
-        //SUPPRESSED WITHOUT ANALYSIS TO GET CORRECT FUNCTION FOR OO PROCESSES ACCESSING THE SAME PERSISTENT POOL: __NZ( pReg->pbSexBitFormatted[ offSexByte ] & maskSexByte ) ;
+        //SUPPRESSED WITHOUT ANALYSIS TO GET CORRECT FUNCTION FOR OO PROCESSES ACCESSING THE SAME PERSISTENT POOL: __NZ( pReg->pbSexBitConstructed[ offSexByte ] & maskSexByte ) ;
 
         }
             }
@@ -679,9 +673,76 @@
     // SET bObeyReg IFF I AM NOT THE WOTH REFERENCE TO THE BIT FOR THIS sexC SPECIFICATION
     //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //CONoUTrAW7( "sexC [bSmallSlots,expCbDropP,expSlotsP]: " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
+
+    //CONoUTrAW3( "[expGrain]: " , thirdC::os_expCbAllocationGrain_IF( tinP ) , "\r\n" ) ;
+
+    countT pczListSex[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM1 , LISTnAME_HANDhOLD , LISTnAME_SEXc , BM_HIGH | expCbDropP , BM_HIGH | expSlotsP , 0 } ;
+
+    const byteT  maskSexByte = (byteT)( 1 << ( offSexBit % SB ) ) ;
+    const countT offSexByte  =                 offSexBit / SB ;
+    const countT offSexBit   = expCbDropP * CsLOTeXTENTS + expSlotsP ;
+    ZE( poolRegistrationS* , pReg ) ;
+    ZE( boolT , bMetaIsToBeInPool ) ;
+    ZE( boolT , bDataIsToBeInPool ) ;
+    ZE( boolT , bObeyReg          ) ;
+    ZE( boolT , bNested           ) ;
+
     //------------------------------------------------------------------------------------------------------------------------------------------------------------
     // SET UP FOR WORK
     //------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    }
+                               tinP.pSexLifoConstructing = this ;
+        pSexLifoConstructing = tinP.pSexLifoConstructing ;
+
+        }
+            pSexc = pSexc->pSexLifoConstructing ;
+            }
+                break ;
+                bIAmCtMyselfSoNoPool = 1 ;
+            {
+            if( pSexc == this )
+        {
+        while( pSexc )
+        sexC* pSexc = tinP.pSexLifoConstructing ;
+    {
+    if( pPoolContainsMe )                                                   // I AM MAINLY FOR USE WITHIN poolC ; BUT AN APPLICATION CAN CT ME (pPoolContainsMe MUST BE 0)
+    ZE( boolT , bIAmCtMyselfSoNoPool ) ;
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // SET UP FOR WORK: SET bIAmCtMyselfSoNoPool
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    }
+        if( F(flagsCt) & fliSEXc_NOTES ) cbaMeta += sizeof( dropNoteS ) << expSlotsP ;
+                                         cbaMeta  = sizeof( sexHeadS  ) + cbNeededForBits + CBtOaLIGN02( cbNeededForBits ) ;
+        countT                                                            cbNeededForBits                                  = 1 + ( 1 << expSlotsP ) / SB ;
+    {
+    ZE( countT , cbaMeta ) ;
+
+    }
+        ;
+                        )
+                                :            sizeof( countT        ) - 1     // ADD HEADROOM SO THAT THE LATH BYTE CAN BE READ USING A DWORD (countT) INSTRUCTION ; SINCE THE DATA WILL BE AN INTEGRAL MULTIPLE OF THE ALLOCATION UNIT, THIS HEADROOM WILL CAUSE AN ENTIRE ALLOCATION UNIT (1 TOCK) (64K) TO BE OBTAINED JUST TO GET THESE 3 BYTES
+                                ? - (sCountT)sizeof( napkinHeaderS )         // SUBTRACT FOR napHeaderS SO THAT THE BYTES ALLOCATED BY napkinC WILL BE AN INTEGRAL MULTIPLE OF THE ALLOCATION UNIT ; THIS RESULTS IN THE napHeaderS OVERLAYING SOME LOW DATA SLOTS, WHICH IS WHY THE FORMATTING CODE MUST MARK THOSE SLOTS AS UNAVAILABLE ; THE FORMATTING CODE WILL ALSO MARK SOME HIGH SLOTS AS UNAVAILABLE, IN ORDER TO GUARANTEE HEADROOM FOR ACCESSING THE HIGHEST BYTE
+                            bSmallSlots
+                        (
+                        +
+        cbaDataNapkin = cbaDataNeeded
+        cbaDataPool   = cbaDataNeeded ;
+        countT          cbaDataNeeded = ( 1 << expSlotsP ) * ( ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << expCbDropP ) ) ;                           // FOR SMALL expCbDropP, SLOTS AT BOTTOM ARE UNUSEABLE; SEE sexHeadS::cSlotsAvoidLo
+    {
+    ZE( countT , cbaDataNapkin ) ;
+    ZE( countT , cbaDataPool   ) ;
+
+    const boolT bSmallSlots = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << expCbDropP ) < ( 1 << thirdC::os_expCbAllocationGrain_IF( tinP ) ) ;        // FOR SMALL SLOT SIZES, pbData WILL POINT TO THE napkinHeaderS CONTROL STRUCTURE, WHICH IS WHY THE LOW SLOTS MUST BE MARKED AS UNAVAILABLE
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // SET UP FOR WORK: CALCULATE BLOB SIZES NEEDED
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //U::REMOVE UNNECESSARY AND/OR UNUSED SERIALIZATION SUPPORT sexC poolC FOR poolRegistrationS
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------
     // 
@@ -733,63 +794,6 @@
     // 
     // META LAYOUT
 
-    ;
-
-        )
-                :            sizeof( countT        ) - 1     // ADD HEADROOM SO THAT THE LATH BYTE CAN BE READ USING A DWORD (countT) INSTRUCTION ; SINCE THE DATA WILL BE AN INTEGRAL MULTIPLE OF THE ALLOCATION UNIT, THIS HEADROOM WILL CAUSE AN ENTIRE ALLOCATION UNIT (1 TOCK) (64K) TO BE OBTAINED JUST TO GET THESE 3 BYTES
-                ? - (sCountT)sizeof( napkinHeaderS )         // SUBTRACT FOR napHeaderS SO THAT THE BYTES ALLOCATED BY napkinC WILL BE AN INTEGRAL MULTIPLE OF THE ALLOCATION UNIT ; THIS RESULTS IN THE napHeaderS OVERLAYING SOME LOW DATA SLOTS, WHICH IS WHY THE FORMATTING CODE MUST MARK THOSE SLOTS AS UNAVAILABLE ; THE FORMATTING CODE WILL ALSO MARK SOME HIGH SLOTS AS UNAVAILABLE, IN ORDER TO GUARANTEE HEADROOM FOR ACCESSING THE HIGHEST BYTE
-            bSmallSlots
-        (
-        +
-        cbaDataNeeded
-        
-    countT cbaDataNapkin =
-    countT cbaDataPool   = cbaDataNeeded ;
-    countT cbaDataNeeded = ( 1 << expSlotsP ) * ( ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << expCbDropP ) ) ;
-    /*FOR SMALL expCbDropP, SLOTS AT BOTTOM ARE UNUSEABLE; SEE sexHeadS::cSlotsAvoidLo*/
-
-    if( F(flagsCt) & fliSEXc_NOTES ) cbaMeta += sizeof( dropNoteS ) << expSlotsP ;
-    countT cbaMeta = sizeof( sexHeadS ) + cbNeededForBits + CBtOaLIGN02( cbNeededForBits ) ;
-    countT cbNeededForBits = 1 + ( 1 << expSlotsP ) / SB ;
-
-    //CONoUTrAW7( "sexC [bSmallSlots,expCbDropP,expSlotsP]: " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
-
-    boolT bSmallSlots = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << expCbDropP ) < ( 1 << thirdC::os_expCbAllocationGrain_IF( tinP ) ) ; // FOR SMALL SLOT SIZES, pbData WILL POINT TO THE napkinHeaderS CONTROL STRUCTURE, WHICH IS WHY THE LOW SLOTS MUST BE MARKED AS UNAVAILABLE
-
-    //CONoUTrAW3( "[expGrain]: " , thirdC::os_expCbAllocationGrain_IF( tinP ) , "\r\n" ) ;
-
-    countT pczListSex[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM1 , LISTnAME_HANDhOLD , LISTnAME_SEXc , BM_HIGH | expCbDropP , BM_HIGH | expSlotsP , 0 } ;
-
-    const byteT  maskSexByte = (byteT)( 1 << ( offSexBit % SB ) ) ;
-    const countT offSexByte  =                 offSexBit / SB ;
-    const countT offSexBit   = expCbDropP * CsLOTeXTENTS + expSlotsP ;
-    ZE( poolRegistrationS* , pReg ) ;
-    ZE( boolT , bMetaIsToBeInPool ) ;
-    ZE( boolT , bDataIsToBeInPool ) ;
-    ZE( boolT , bObeyReg  ) ;
-    ZE( boolT , bNested   ) ;
-
-    }
-                               tinP.pSexLifoConstructing = this ;
-        pSexLifoConstructing = tinP.pSexLifoConstructing ;
-
-        }
-            pSexc = pSexc->pSexLifoConstructing ;
-            }
-                break ;
-                bIAmCtMyselfSoNoPool = 1 ;
-            {
-            if( pSexc == this )
-        {
-        while( pSexc )
-        sexC* pSexc = tinP.pSexLifoConstructing ;
-
-        if( !bNest2 ) tinP.fliSexCtPendingExpSlots  |= maskExpSlots  ;
-        if( !bNest1 ) tinP.fliSexCtPendingExpCbDrop |= maskExpCbDrop ;
-    {
-    if( pPoolContainsMe )               // I AM MAINLY FOR USE WITHIN poolC ; BUT AN APPLICATION CAN CT ME (pPoolContainsMe MUST BE 0)
-    ZE( boolT , bIAmCtMyselfSoNoPool ) ;
-
     _IO_
 
     }
@@ -797,22 +801,6 @@
     {
     IFbEcAREFUL
     SCOOP
-
-    const boolT bNest2 = !pPoolContainsMe ? 0 : !!( tinP.fliSexCtPendingExpSlots  & maskExpSlots  ) ;
-    const boolT bNest1 = !pPoolContainsMe ? 0 : !!( tinP.fliSexCtPendingExpCbDrop & maskExpCbDrop ) ;
-    const flagsT maskExpSlots  = 1 << expSlotsP  ;
-    const flagsT maskExpCbDrop = 1 << expCbDropP ;                              //U::REMOVE UNNECESSARY AND/OR UNUSED SERIALIZATION SUPPORT sexC poolC FOR poolRegistrationS
-
-    }
-        }
-            countT foo = 2 ;
-        {
-        if( idIn == 0x374 )
-        CONoUTrAW3( "\r\nsexC::sexC [idIn]:    " , idIn , "\r\n" ) ;
-        countT idIn = 1 + incv02AM( idInLath ) ;
-        static countT idInLath ;
-    {
-    //if( tinP.pcUtility[ 0 ] )
 {
 pSexLifoConstructed( 0 )
 offFoundLath( - 1 ) ,
