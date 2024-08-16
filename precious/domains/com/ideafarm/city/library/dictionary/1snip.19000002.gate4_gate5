@@ -6,6 +6,9 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
+#endif
+    #undef   DEBUGeXCEPTIONhANDLER 
+#if defined( DEBUGeXCEPTIONhANDLER )
 
 }
     #endif
@@ -20,19 +23,24 @@
 
         #endif
 
-            }
-                processGlobal1S::_processGlobal1I_IF().phExceptionHandler = 0 ;
+                }
+                    processGlobal1S::_processGlobal1I_IF().phExceptionHandler = 0 ;
 
-                rc = c_threadTry1OuterF( 1 , processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) , cHowP , (countT)ppostHowP , 0 ) ;
+                    rc = c_threadTry1OuterF( 1 , processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) , cHowP , (countT)ppostHowP , 0 ) ;
 
-                processGlobal1S::_processGlobal1I_IF().phExceptionHandler = &hExceptionHandler ;
-                handleC hExceptionHandler( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ; //WOULD LIKE THIS TO BE THE WOTH STATIC, BUT IT DOESN'T WORK THAT EARLY ; 20210715@1125: MOVED TO HERE FROM mainThreadWorkF
-            {
-            else
-            }
-                rc = c_threadTry1OuterF( 1 , 0 , cHowP , (countT)ppostHowP , 0 ) ;
-            {
-            if( bDebug )
+                    processGlobal1S::_processGlobal1I_IF().phExceptionHandler = &hExceptionHandler ;
+                    handleC hExceptionHandler( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ; //WOULD LIKE THIS TO BE THE WOTH STATIC, BUT IT DOESN'T WORK THAT EARLY ; 20210715@1125: MOVED TO HERE FROM mainThreadWorkF
+                {
+
+            #endif
+
+                else
+                }
+                    rc = c_threadTry1OuterF( 1 , 0 , cHowP , (countT)ppostHowP , 0 ) ;
+                {
+                if( bDebug )
+
+            #if !defined( DEBUGeXCEPTIONhANDLER )
 
             }
                 }
@@ -104,6 +112,9 @@
     return c_openSslAppLinkInnerIF() ;
 {
 extern "C" void** _export __syscall OPENSSL_Applink( void )
+
+#define DEBUGeXCEPTIONhANDLER
+// FOR PRODUCTION AND FOR NORMAL DEBUGGING, COMMENT OUT THE NEXT LINE ; TO USE WDW TO DEBUG THE EXCEPTION HANDLER, ENABLE THE NEXT LINE
 
 //OPENSSL REQUIRES THIS FUNCTION TO BE IN THE EXE MODULE OF ANY PROCESS THAT DOES I/O FOR PEM FILES
 

@@ -33814,7 +33814,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define fliSEXc_READoNLY                      0xe00002ff
 #define fliSEXc_NOTES                         0xe00004ff
 #define fliSEXc_MAPPEDtOdISK                  0xe00008ff
-#define fliSEXc_ALLOWsEXiNpOOL                0xe00010ff
+#define fliSEXc_NOsEXiNpOOL                   0xe00010ff
 /*3*/
 
 
@@ -33844,7 +33844,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /*3*/
 #define flSLOTSc_READoNLY                      0xe00002a0
 #define flSLOTSc_NOTES                         0xe00004a0
-#define flSLOTSc_ALLOWsEXiNpOOL                0xe00008a0
+#define flSLOTSc_NOsEXiNpOOL                   0xe00008a0
 /*3*/
 #define flSLOTSc_null    0xe00000a0
 
@@ -33881,7 +33881,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define flPOOLc_RESETiNDEXbITS                0xe00040a1
 #define flPOOLc_KEEPeMPTIES                   0xe00080a1
 #define flPOOLc_DOnOTbLOCK                    0xe00100a1
-#define flPOOLc_ALLOWsEXiNpOOL                0xe00200a1
+#define flPOOLc_NOsEXiNpOOL                   0xe00200a1
 /*3*/
 #define flPOOLc_null    0xe00000a1
 
@@ -39039,7 +39039,7 @@ args
 #define flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS              0xe00008c8
 #define flTHREADmODE4_ALLOWwRITEABLEpOINTERgET                  0xe00010c8
 #define flTHREADmODE4_INoUTfRAMErEGISTERcALLnEST                0xe00020c8
-#define flTHREADmODE4_DOnOTmAKEsEXiNpOOL                        0xe00040c8
+#define flTHREADmODE4_NOsEXiNpOOL                               0xe00040c8
 #define flTHREADmODE4_DOnOTrEGISTERpAGEc                        0xe00080c8
 #define flTHREADmODE4_DEBUG1                                    0xe00100c8
 #define flTHREADmODE4_DEBUG2                                    0xe00200c8
