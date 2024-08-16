@@ -15843,16 +15843,17 @@ these flag values are used by oo flagsT objects
 #define flCTdTg_bksTelemetryApp                 0xe0002041
 #define flCTdTg_bksWord                         0xe0004041
 #define flCTdTg_bksWords                        0xe0008041
-#define flCTdTg_exceptionHandlerRegistered      0xe0010041
-#define flCTdTg_processGlobalEnd                0xe0020041
-#define flCTdTg_DEBUG1                          0xe0040041
-#define flCTdTg_DEBUG2                          0xe0080041
-#define flCTdTg_DEBUG3                          0xe0100041
-#define flCTdTg_DEBUG4                          0xe0200041
-#define flCTdTg_DEBUG5                          0xe0400041
-#define flCTdTg_DEBUG6                          0xe0800041
-#define flCTdTg_DEBUG7                          0xe1000041
-#define flCTdTg_DEBUG8                          0xe2000041
+#define flCTdTg_WITHINlIFETIMEoFmAIN            0xe0010041
+#define flCTdTg_EXCEPTIONhANDLERrEGISTERED      0xe0020041
+#define flCTdTg_processGlobalEnd                0xe0040041
+#define flCTdTg_DEBUG1                          0xe0080041
+#define flCTdTg_DEBUG2                          0xe0100041
+#define flCTdTg_DEBUG3                          0xe0200041
+#define flCTdTg_DEBUG4                          0xe0400041
+#define flCTdTg_DEBUG5                          0xe0800041
+#define flCTdTg_DEBUG6                          0xe1000041
+#define flCTdTg_DEBUG7                          0xe2000041
+#define flCTdTg_DEBUG8                          0xe4000041
 /*3*/
 #define flCTdTg_null    0xe0000041
 

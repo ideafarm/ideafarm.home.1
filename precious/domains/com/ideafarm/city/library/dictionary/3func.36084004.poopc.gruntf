@@ -18,7 +18,7 @@
                 etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)"gruntF: raising exception"                                      , flTRACE_PARAMETERiSoStEXT | flTRACE_NOcONSOLE | flTRACE_NOtELL ) ;
             else
                 etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)"gruntF: raising exception with no exception handler registered" , flTRACE_PARAMETERiSoStEXT | flTRACE_NOcONSOLE | flTRACE_NOtELL ) ;
-            if( !( F(processGlobal2I.flCt) & flCTdTg_exceptionHandlerRegistered ) || F(processGlobal2I.flDt) & flCTdTg_exceptionHandlerRegistered )
+            if( !( F(processGlobal2I.flCt) & flCTdTg_EXCEPTIONhANDLERrEGISTERED ) || F(processGlobal2I.flDt) & flCTdTg_EXCEPTIONhANDLERrEGISTERED )
         {
         if( bRaiseException )
 
@@ -74,7 +74,7 @@
         const boolT bRaiseException =
         //ZE( countT , ze ) ;
 
-        const boolT bTrace = F(flags) & flPOOP_SMELLY && !( F(tinP.flagsThreadMode2) & flTHREADmODE2_QUIETiMPOTENCE ) && F(processGlobal2I.flCt) & flCTdTg_exceptionHandlerRegistered && !( F(processGlobal2I.flDt) & flCTdTg_exceptionHandlerRegistered ) ; //SILENCES EARLY/LATE TRACING
+        const boolT bTrace = F(flags) & flPOOP_SMELLY && !( F(tinP.flagsThreadMode2) & flTHREADmODE2_QUIETiMPOTENCE ) && F(processGlobal2I.flCt) & flCTdTg_WITHINlIFETIMEoFmAIN && !( F(processGlobal2I.flDt) & flCTdTg_WITHINlIFETIMEoFmAIN ) ; //SILENCES EARLY/LATE TRACING
 
         idiFileGrunt = idiFileP ;
         idLineGrunt = idLineP ;
