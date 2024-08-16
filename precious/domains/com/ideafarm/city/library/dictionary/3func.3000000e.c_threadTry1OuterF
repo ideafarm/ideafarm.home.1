@@ -11,13 +11,17 @@
     return rc ;
 
     }
-        puts( "\r\nc_threadTry1OuterF / this should never display\r\n" ) ;
+        }
+            puts( "\r\nc_threadTry1OuterF / this should never display\r\n" ) ;
+        {
+        _except( rptExceptionF( GetExceptionInformation() , pExceptionHandlerFP , bMainP ) )
+        }
+            rc = threadTry2InnerF( bMainP , c1P , c2P , c3P ) ;
+        {
+        _try
     {
-    _except( rptExceptionF( GetExceptionInformation() , pExceptionHandlerFP , bMainP ) )
-    }
-        rc = threadTry2InnerF( bMainP , c1P , c2P , c3P ) ;
-    {
-    _try
+    else
+    if( !pExceptionHandlerFP ) rc = threadTry2InnerF( bMainP , c1P , c2P , c3P ) ;
 
     int rc = 0 ;
 {

@@ -1,3 +1,30 @@
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+normally this should be commented out because it slows execution
+enable it to set bits in processGlobal2S::pbMemoryBits*
+*/
+/**/
+/*1*//*SHOWmEMgRAINS*//*1*/
+#define SHOWmEMgRAINS
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
 
 //
@@ -27899,18 +27926,8 @@ code may use setIfZeAM on *(countT*)this
 {
     flagsT          flagsi ;
     countT          cRefPool ;
+    byteT           pbSexGrabbedBits[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
     osTextT         postPoolName[ COSTpOOLnAMEmAX ] ;
-
-    byteT           pbSexBitGrab[         1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; // RECURSIVE GRABBING OF A PARTICULAR BIT OFFSET ASSOCIATED WITH A sexC SPECIFICATION
-    countT          pcSexGrabberOsTid[    1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
-    countT          pcSexGrabberRecurse[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ;
-    byteT           pbSex_cRef[                 CsLOTeXTENTS * CsLOTsIZESmAX        ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
-    byteT           pbSex_cQueue[               CsLOTeXTENTS * CsLOTsIZESmAX        ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
-
-    byteT           pbSexBitDataIsInPool[ 1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; // DATA FOR EACH sexC SPECIFICATION
-    byteT           pbSexBitMetaIsInPool[ 1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
-    byteT           pbSexBitConstructing[ 1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
-    byteT           pbSexBitConstructed[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
 
     public :
 

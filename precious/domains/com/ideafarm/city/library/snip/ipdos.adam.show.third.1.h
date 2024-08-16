@@ -2199,7 +2199,6 @@ examples
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200025.task END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200026.done BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -2244,7 +2243,9 @@ examples
             /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                                     \
             /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                                     \
                                                                                                                                                                                                                     \
-            return c_threadTry1OuterF( 0 , processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;    \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;               \
+                                                                                                                                                                                                                    \
+            return c_threadTry1OuterF( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
         }
 
 #endif
@@ -33812,6 +33813,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define fliSEXc_READoNLY                      0xe00002ff
 #define fliSEXc_NOTES                         0xe00004ff
 #define fliSEXc_MAPPEDtOdISK                  0xe00008ff
+#define fliSEXc_ALLOWsEXiNpOOL                0xe00010ff
 /*3*/
 
 
@@ -33841,6 +33843,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /*3*/
 #define flSLOTSc_READoNLY                      0xe00002a0
 #define flSLOTSc_NOTES                         0xe00004a0
+#define flSLOTSc_ALLOWsEXiNpOOL                0xe00008a0
 /*3*/
 #define flSLOTSc_null    0xe00000a0
 
@@ -33877,6 +33880,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define flPOOLc_RESETiNDEXbITS                0xe00040a1
 #define flPOOLc_KEEPeMPTIES                   0xe00080a1
 #define flPOOLc_DOnOTbLOCK                    0xe00100a1
+#define flPOOLc_ALLOWsEXiNpOOL                0xe00200a1
 /*3*/
 #define flPOOLc_null    0xe00000a1
 
@@ -51217,30 +51221,3 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-normally this should be commented out because it slows execution
-enable it to set bits in processGlobal2S::pbMemoryBits*
-*/
-/**/
-/*1*//*SHOWmEMgRAINS*//*1*/
-#define SHOWmEMgRAINS
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
