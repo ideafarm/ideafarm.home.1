@@ -81,23 +81,25 @@ etThread.loafIF( tinP ) ; //TO FIND A BUG
 
 }
     etThread.traceF( tinP , T("hired  WATCHiDLEcPU") ) ;
-    ether.ifcHireF( tinP , T("ifcIDaDAM_WATCH") , bSandbox ? ifcIDaDAM_ROOThTTPsERVER : ifcIDaDAM_WATCHiDLEcPU , T("!ignoreFireByOperator") , bSandbox ? flHIRE_DISPLAYtEXT : flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                              ether.ifcHireF( tinP , T("ifcIDaDAM_WATCH") ,                                       ifcIDaDAM_WATCHiDLEcPU , T("!ignoreFireByOperator") ,                                 flHIRE_DISPLAYaUTO , nicNameC() ) ;
+    //20240816@1328: RETIRED: ether.ifcHireF( tinP , T("ifcIDaDAM_WATCH") , bSandbox ? ifcIDaDAM_ROOThTTPsERVER : ifcIDaDAM_WATCHiDLEcPU , T("!ignoreFireByOperator") , bSandbox ? flHIRE_DISPLAYtEXT : flHIRE_DISPLAYaUTO , nicNameC() ) ;
     etThread.traceF( tinP , T("hiring WATCHiDLEcPU") ) ;
 {
-/*PROD*/ if( !bSandbox )
+// /*PROD*/ if( !bSandbox )
 
 //TEST PASSED 4 DAYS 20130915: ether.ifcHireF( tinP , T("ifcIDaDAM_WATCH") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
 
 //OLD PRODUCTION RETIRED 2011.01.09: /*PROD*/ ether.ifcHireF( tinP , T("ifcIDaDAM_WATCH") , ifcIDaDAM_WATCHdATABASE , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
 
-etThread.traceF( tinP , T("maybe hired  PREPARElISTS") ) ;
+etThread.traceF( tinP , T("debug / ") ) ;
 }
+    etThread.traceF( tinP , T("hired  PREPARElISTS") ) ;
     sgnDone.waitF( tinP ) ;
     ether.osThreadAdamF( tinP , ifcIDaDAM_PREPARElISTS , 0 , flOStHREADaDAMf_null , &sgnDone ) ;
     signC sgnDone( tinP , TAG( TAGiDnULL ) ) ;
+    etThread.traceF( tinP , T("hiring PREPARElISTS") ) ;
 {
-if( !bSandbox )
-etThread.traceF( tinP , T("maybe hiring PREPARElISTS") ) ;
+//if( !bSandbox )
 
 boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
