@@ -27926,7 +27926,7 @@ code may use setIfZeAM on *(countT*)this
 /*1*/struct _export poolRegistrationS/*1*/
 {
     flagsT          flagsi ;
-    countT          cRefPool ;
+    countT          cRefPoolReg ;
     byteT           pbSexGrabbedBits[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
     osTextT         postPoolName[ COSTpOOLnAMEmAX ] ;
 
