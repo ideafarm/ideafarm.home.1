@@ -27497,7 +27497,8 @@ it is illegal to refer to this symbol in the definition of an adam
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.napkinC.dt_napkinC!||
  napkinC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const handleC* const phFileP = 0 , countT cbP = 0 , const countT idHowP = ifcOPENsHAREDmEMORYhOW_nCeO , const flagsT flagsP = flNAPKINc_null , countT cTriesP = - 1 , countT idMemorySpaceP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.napkinC.napkinC!||
- voidT formattingIsDoneF( tinS& tinP ) ;
+ voidT formattingIsDoneF( tinS& tinP , const boolT bNoTellP = 0 ) ;
+ voidT tellAboutFormattingBeingDoneF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.napkinC.formattingIsDoneF!||
  boolT dieF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.napkinC.dieF!||

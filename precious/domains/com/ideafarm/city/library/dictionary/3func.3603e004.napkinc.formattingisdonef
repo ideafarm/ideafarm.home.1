@@ -21,7 +21,7 @@
         ti.osPid     = tinP.osPid ;
         tellInfoSysNapkinS ti ;
     {
-    if( pbNapkin && this != &processGlobal4I.napHome ) //ASSUME: napHome IS CT WOTH
+    if( !bNoTellP && pbNapkin && this != &processGlobal4I.napHome ) //ASSUME: napHome IS CT WOTH
 
     tinP.cYield = 0 ;
     thirdC::dosPriorityIF( tinP , idDesireCtSave ) ;
@@ -55,7 +55,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT napkinC::formattingIsDoneF( tinS& tinP )/*1*/
+/*1*/voidT napkinC::formattingIsDoneF( tinS& tinP , const boolT bNoTellP )/*1*/
 
 /**/
 */

@@ -153,8 +153,9 @@
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
-            ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
+            if( bNewMetaNapkinWasJustFormatted ) ((napkinC*)pb_napMeta)->tellAboutFormattingBeingDoneF( tinP ) ;
 
+            ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
             formatDataBlobF( tinP ) ; //NO ACTION IS NEEDED HERE TO PRESERVE STATE WHEN STATE FILE IS USED, SINCE THE FORMATTING INFORMATION IS ONLY USED TO DETECT MEMORY CORRUPTION SO NEED NOT BE SAVED AS STATE     U::20240815@1555: HUH?
 
             //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -173,10 +174,12 @@
                     }
                         }
                             }
-                                ((napkinC*)pb_napMeta)->formattingIsDoneF( tinP ) ;
-
                                 }
-                                    if( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA && !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) ((napkinC*)pb_napMeta)->formattingIsDoneF( tinP ) ;
+                                    }
+                                        bNewMetaNapkinWasJustFormatted = 1 ;
+                                        ((napkinC*)pb_napMeta)->formattingIsDoneF( tinP , 1 ) ;
+                                    {
+                                    if( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA && !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
 
                                     }
                                         }
@@ -497,6 +500,7 @@
         //U::DELETE THE BLOB THAT I JUST ALLOCATED
     {
     if( POOP )
+    ZE( boolT , bNewMetaNapkinWasJustFormatted ) ;
     ZE( boolT , bFormatDataBlob ) ;
 
     }
