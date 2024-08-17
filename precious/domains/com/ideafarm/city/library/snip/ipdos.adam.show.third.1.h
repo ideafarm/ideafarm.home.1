@@ -5431,7 +5431,9 @@ it is illegal to refer to this symbol in the definition of an adam
 // THIS MUST BE A POWER OF 2 MINUS 1 (0xf IS A VALID VALUE), SO WE CAN USE E.G. "aa & OFFsLOTtINsTEPmAX" RATHER THAN "aa % (1+OFFsLOTtINsTEPmAX)"
 //#define OFFsLOTtINnESTmAX (0xf)
 
-#define OFFsLOTtINnESTmAX (0x1f)
+           #define OFFsLOTtINnESTmAX (0x3f)
+
+//#define OFFsLOTtINnESTmAX (0x1f)
 
 
 //
