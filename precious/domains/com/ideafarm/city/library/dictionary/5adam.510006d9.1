@@ -222,7 +222,9 @@ else
         while( !ether && napSpec.cRefF() == 1 ) { ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ; }
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
+        etThread.traceF( tinP , T("hired  myself 3") ) ;
         etThread.ifcHireF( tinP , T("ifcIDaDAM_CLOUD") , 0 , tArgKeyName+T(" \"")+T(pSpec->postName)+T("\" ")+tArgKeyCloudSpec+tb+tNapSpecName , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+        etThread.traceF( tinP , T("hiring myself 3") ) ;
         cClouds ++ ;
 
         pSpec->sayF( tinP , etThread ) ;
@@ -265,7 +267,9 @@ else
         while( !ether && napSpec.cRefF() == 1 ) { ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ; }
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
+        etThread.traceF( tinP , T("hired  myself 2") ) ;
         etThread.ifcHireF( tinP , T("ifcIDaDAM_CLOUD") , 0 , tArgKeyName+T(" \"")+T(pSpec->postName)+T("\" ")+tArgKeyCloudSpec+tb+tNapSpecName , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+        etThread.traceF( tinP , T("hiring myself 2") ) ;
         cClouds ++ ;
 
         pSpec->sayF( tinP , etThread ) ;
@@ -345,7 +349,9 @@ bSuppressPrecious = 1 ;
         while( !ether && napSpec.cRefF() == 1 ) { ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ; }
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
+        etThread.traceF( tinP , T("hired  myself 1") ) ;
         etThread.ifcHireF( tinP , T("ifcIDaDAM_CLOUD") , 0 , tArgKeyName+T(" \"")+T(pSpec->postName)+T("\" ")+tArgKeyCloudSpec+tb+tNapSpecName , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+        etThread.traceF( tinP , T("hiring myself 1") ) ;
         cClouds ++ ;
 
         pSpec->sayF( tinP , etThread ) ;
@@ -804,7 +810,7 @@ NEWdELcLASS( 1 , cloudSpecsS ) ;
 {
 struct cloudSpecsS
 
-/*1*/WAKEdEBUGsHOWtEXT( "ifcIDaDAM_CLOUD" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_CLOUD" )/*1*/
 
 /**/
 */
