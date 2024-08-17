@@ -17910,6 +17910,7 @@ instructions for editing a class aC to use upDnC
 
     boolT isRegisteredF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.baseGrabC.isRegisteredF!||
+    static countT idGrabLayerMaxIF( tinS& tinP ) ;
     inline countT idLineCtF(    voidT ) const { return idLineCt    ; }
     inline countT idiFileCtF(   voidT ) const { return idiFileCt   ; }
     inline countT idThreadCtF(  voidT ) const { return idThreadCt  ; }

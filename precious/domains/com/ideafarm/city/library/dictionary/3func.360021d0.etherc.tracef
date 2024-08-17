@@ -110,7 +110,12 @@
                         RESTART
                         _IO_
                     {
-                    if( F(processGlobal2I.flCt) & flCTdTg_EXCEPTIONhANDLERrEGISTERED && !( F(processGlobal2I.flDt) & flCTdTg_EXCEPTIONhANDLERrEGISTERED ) )
+                    else if( F(processGlobal2I.flCt) & flCTdTg_EXCEPTIONhANDLERrEGISTERED && !( F(processGlobal2I.flDt) & flCTdTg_EXCEPTIONhANDLERrEGISTERED ) )
+                    }
+                        //U:: DO THIS, AND WHEN I SEE !bDelayPushToFifoInHeap, FLUSH THE FIFO TO booksC
+                    {
+                    if( bDelayPushToFifoInHeap )
+
                     _IO_
                 {
                 if( !( F(flagsP) & flTRACE_NObOOK ) )
@@ -329,6 +334,17 @@
     {
     if( !bTrace )
     boolT bTrace = !!( F(flagsP) & flTRACE_FORCEnOsILENCE ) ;
+
+    }
+        }
+            bDelayPushToFifoInHeap = 1 ;
+            CONoUTrAW3( "\r\ntraceF [idGrabLayerMax]:    " , idGrabLayerMax , "\r\n" ) ;
+        {
+        if( ifcIDgRABlAYER_bBOOKSc < idGrabLayerMax )
+
+        countT idGrabLayerMax = baseGrabC::idGrabLayerMaxIF( tinP ) ;
+    {
+    ZE( boolT , bDelayPushToFifoInHeap ) ;
 
     _IO_
 {
