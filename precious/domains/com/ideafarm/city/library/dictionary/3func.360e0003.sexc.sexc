@@ -159,109 +159,97 @@
     }
         }
             }
+                }
+                    }
+                        bNewMetaNapkinWasJustFormatted = 1 ;
+                        ((napkinC*)pb_napMeta)->formattingIsDoneF( tinP , 1 ) ;
+                    {
+                    if( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA && !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
+
+                    }
+                        __( expSlotsP  - pzMetaHead->expSlots  ) ;
+                        __( expCbDropP - pzMetaHead->expCbDrop ) ;
+                    {
+                    else
+                    }
+                        if( pzMetaNote ) thirdC::c_memsetIF( tinP , (byteT*)pzMetaNote , sizeof( dropNoteS ) << pzMetaHead->expSlots ) ;
+            
+                        }
+                            for( countT offo = 0 ; offo < cSlots ; offo ++ ) pzMetaNote[ offo ].idDelLath = pzMetaNote[ offo ].idNewLath = 0 ;
+                            countT cSlots = 1 << pzMetaHead->expSlots ;
+                        {
+                        if( pzMetaNote )
+            
+                        }
+                            while( cToDo -- ) btsLathAM( pbzMetaBitsOwned , 1 << pzMetaHead->expSlots ) ;
+                            cToDo = pzMetaHead->cSlotsAvoidHi ;                                                             // THE HIGH SLOTS ARE UNUSEABLE TO ENSURE HEADROOM OF sizeof( countT ) - 1 SO THAT HIGHEST BYTE CAN BE REFERENCED BY DWORD INSTRUCTION (E.G. movsd)
+            
+                            while( cToDo -- ) btsWothAM( pbzMetaBitsOwned , 1 << pzMetaHead->expSlots ) ;
+                            countT cToDo = pzMetaHead->cSlotsAvoidLo ;                                                      // THE LOW SLOTS ARE UNUSEABLE BECAUSE THEY OVERLAY napkinHeaderS FOR (*(napkinC*)pb_napData)
+                                                                                                                            // FOR SMALL SLOT SIZES (LESS THAN ALLOCATION GRAIN SIZE):
+                        {
+                        if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA )
+
+                        // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE HEADROOM WAS CREATED WHEN THAT sexC WAS CONSTRUCTED
+                        // IF DATA IS IN NAPKIN THEN MARK THE HIGH SLOTS AS UNUSEABLE SO THAT THERE IS ENOUGH HEADROOM FOR THE HIGHEST BYTE TO BE ACCESSED USING A DWORD INSTRUCTION
+                        // 
+                        // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE THERE IS NO OVERLAYED napkinC HEADER TO PROTECT
+                        // IF DATA IS IN NAPKIN THEN MARK THE LOW SLOTS AS UNUSEABLE SO THAT THE DATA NAPKIN HEADER, WHICH THEY OVERLAY FOR SMALL SLOT SIZES, WON'T BE TRASHED
+
+                        thirdC::c_memsetIF( tinP , pbzMetaBitsOwned , cbaBitsOwned ) ;
+                    {
+                    if( bFormatMetaBlob )
+            
+                    if( F(flagsCt) & fliSEXc_NOTES ) pzMetaNote = (dropNoteS*)( pbzMetaBitsOwned + cbaBitsOwned ) ;
+            
+                    cbaBitsOwned += CBtOaLIGN02( pbzMetaBitsOwned + cbaBitsOwned ) ;
+                    countT cbaBitsOwned = 1 + ( 1 << expSlotsP ) / SB ;
+            
+                    pbzMetaBitsOwned = (byteT*)( pzMetaHead + 1 ) ;
+            
+                    __( flagsCt - pzMetaHead->flagsCtCopy ) ;
+
+                    inc02AM( pzMetaHead->cRef ) ;
+                    }
+                        //CONoUTrAWd( "[expCbDrop,expSlots,bSmallSlots,USINGnAPfORdATA,cSlotsAvoidLo,cSlotsAvoidHi]: " , expCbDropP , " " , expSlotsP , " " , bSmallSlots , " " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , pzMetaHead->cSlotsAvoidLo , " " , pzMetaHead->cSlotsAvoidHi , "\r\n" ) ; //U:: TO FIND A BUG
+
+                        }
+                            *(countT*)&pzMetaHead->cSlotsAvoidHi = 1 + ( sizeof( countT        ) - 2 ) / cbSlot ; // HEADROOM: sizeof( countT ) - 1 (ALWAYS 1 NOW THAT DROPhEADER IS USED; THIS LINE IS CODED GENERALLY TO WORK EVEN IF !( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ))
+                            *(countT*)&pzMetaHead->cSlotsAvoidLo = 1 + ( sizeof( napkinHeaderS ) - 1 ) / cbSlot ; // SOME PART OF NAPKIN HEADER IS UNDER THIS MANY SLOTS
+                            countT cbSlot = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << expCbDropP ) ;
+                        {
+                        if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA && bSmallSlots )
+
+                        //CONoUTrAW9( "sexC formatting meta [USINGnAPfORdATA,bSmallSlots,expCbDropP,expSlotsP,]: " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
+
+                        pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , expSlotsP , postNameP , flagsCt ) ;
+                    {
+                    else
+                    if( !bFormatMetaBlob ) pzMetaHead = (sexHeadS*)pbMeta ;
+                
+#endif
+                    ;
+                                    : 1                                                                                 // ELSE FORMAT
+                                    ? 0                                                                                 // THEN DO NOT FORMAT
+                                : ((fileC*)pbFileMeta)->idOpenResultF( tinP  ) == ifcOPENrESULT_EXISTED                 // ELSE DID MY BACKING FILE ALREADY EXIST?
+                                ? 1                                                                                     // THEN FORMAT
+                            : !( F(flagsCt) & fliSEXc_MAPPEDtOdISK )                                                    // ELSE AM I STATELESS (NOT BACKED BY A DISK FILE)?
+                            ? 0                                                                                         // THEN DO NOT FORMAT
+                        : F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED        // ELSE DID NAPKIN ALREADY EXIST?
+                        ? 1                                                                                             // THEN FORMAT
+                    const boolT bFormat = !( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA )                              // WAS LIST ALLOCATED FROM POOL?
+#if defined( NEVERdEFINED )
+
+                    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    // FORMAT pbMeta
+                    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                {
+                if( !POOP )
+
                 __Z( pbMeta ) ;
                 }
                     }
-                        }
-                            }
-                                }
-                                    }
-                                        bNewMetaNapkinWasJustFormatted = 1 ;
-                                        ((napkinC*)pb_napMeta)->formattingIsDoneF( tinP , 1 ) ;
-                                    {
-                                    if( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA && !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
-
-                                    }
-                                        }
-                                            countT foo = 2 ;
-                                        {
-                                        if( idIn == 2 )
-                                        countT idIn = 1 + incv02AM( idInLath ) ;
-                                        static countT idInLath ;
-                                    {
-                                    if( expCbDropP == 0x9 && expSlotsP == 8 )
-                            
-                                    }
-                                        __( expSlotsP  - pzMetaHead->expSlots  ) ;
-                                        __( expCbDropP - pzMetaHead->expCbDrop ) ;
-                                    {
-                                    else
-                                    }
-                                        if( pzMetaNote ) thirdC::c_memsetIF( tinP , (byteT*)pzMetaNote , sizeof( dropNoteS ) << pzMetaHead->expSlots ) ;
-                            
-                                        }
-                                            for( countT offo = 0 ; offo < cSlots ; offo ++ ) pzMetaNote[ offo ].idDelLath = pzMetaNote[ offo ].idNewLath = 0 ;
-                                            countT cSlots = 1 << pzMetaHead->expSlots ;
-                                        {
-                                        if( pzMetaNote )
-                            
-                                        }
-                                            while( cToDo -- ) btsLathAM( pbzMetaBitsOwned , 1 << pzMetaHead->expSlots ) ;
-                                            cToDo = pzMetaHead->cSlotsAvoidHi ;                                         // THE HIGH SLOTS ARE UNUSEABLE TO ENSURE HEADROOM OF sizeof( countT ) - 1 SO THAT HIGHEST BYTE CAN BE REFERENCED BY DWORD INSTRUCTION (E.G. movsd)
-                            
-                                            while( cToDo -- ) btsWothAM( pbzMetaBitsOwned , 1 << pzMetaHead->expSlots ) ;
-                                            countT cToDo = pzMetaHead->cSlotsAvoidLo ;                                  // THE LOW SLOTS ARE UNUSEABLE BECAUSE THEY OVERLAY napkinHeaderS FOR (*(napkinC*)pb_napData)
-                                                                                                                    // FOR SMALL SLOT SIZES (LESS THAN ALLOCATION GRAIN SIZE):
-                                        {
-                                        if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA )
-
-                                        // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE HEADROOM WAS CREATED WHEN THAT sexC WAS CONSTRUCTED
-                                        // IF DATA IS IN NAPKIN THEN MARK THE HIGH SLOTS AS UNUSEABLE SO THAT THERE IS ENOUGH HEADROOM FOR THE HIGHEST BYTE TO BE ACCESSED USING A DWORD INSTRUCTION
-                                        // 
-                                        // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE THERE IS NO OVERLAYED napkinC HEADER TO PROTECT
-                                        // IF DATA IS IN NAPKIN THEN MARK THE LOW SLOTS AS UNUSEABLE SO THAT THE DATA NAPKIN HEADER, WHICH THEY OVERLAY FOR SMALL SLOT SIZES, WON'T BE TRASHED
-
-                                        thirdC::c_memsetIF( tinP , pbzMetaBitsOwned , cbaBitsOwned ) ;
-                                    {
-                                    if( bFormat )
-                            
-                                    if( F(flagsCt) & fliSEXc_NOTES ) pzMetaNote = (dropNoteS*)( pbzMetaBitsOwned + cbaBitsOwned ) ;
-                            
-                                    cbaBitsOwned += CBtOaLIGN02( pbzMetaBitsOwned + cbaBitsOwned ) ;
-                                    countT cbaBitsOwned = 1 + ( 1 << expSlotsP ) / SB ;
-                            
-                                    pbzMetaBitsOwned = (byteT*)( pzMetaHead + 1 ) ;
-                            
-                                    __( flagsCt - pzMetaHead->flagsCtCopy ) ;
-
-                                    inc02AM( pzMetaHead->cRef ) ;
-                                    }
-                                        //CONoUTrAWd( "[expCbDrop,expSlots,bSmallSlots,USINGnAPfORdATA,cSlotsAvoidLo,cSlotsAvoidHi]: " , expCbDropP , " " , expSlotsP , " " , bSmallSlots , " " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , pzMetaHead->cSlotsAvoidLo , " " , pzMetaHead->cSlotsAvoidHi , "\r\n" ) ; //U:: TO FIND A BUG
-
-                                        }
-                                            *(countT*)&pzMetaHead->cSlotsAvoidHi = 1 + ( sizeof( countT        ) - 2 ) / cbSlot ; // HEADROOM: sizeof( countT ) - 1 (ALWAYS 1 NOW THAT DROPhEADER IS USED; THIS LINE IS CODED GENERALLY TO WORK EVEN IF !( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ))
-                                            *(countT*)&pzMetaHead->cSlotsAvoidLo = 1 + ( sizeof( napkinHeaderS ) - 1 ) / cbSlot ; // SOME PART OF NAPKIN HEADER IS UNDER THIS MANY SLOTS
-                                            countT cbSlot = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << expCbDropP ) ;
-                                        {
-                                        if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA && bSmallSlots )
-
-                                        //CONoUTrAW9( "sexC formatting meta [USINGnAPfORdATA,bSmallSlots,expCbDropP,expSlotsP,]: " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
-
-                                        pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , expSlotsP , postNameP , flagsCt ) ;
-                                    {
-                                    else
-                                    if( !bFormat ) pzMetaHead = (sexHeadS*)pbMeta ;
-                                
-                                    ;
-                                                    : 1                                                                                 // ELSE FORMAT
-                                                    ? 0                                                                                 // THEN DO NOT FORMAT
-                                                : ((fileC*)pbFileMeta)->idOpenResultF( tinP  ) == ifcOPENrESULT_EXISTED                 // ELSE DID MY BACKING FILE ALREADY EXIST?
-                                                ? 1                                                                                     // THEN FORMAT
-                                            : !( F(flagsCt) & fliSEXc_MAPPEDtOdISK )                                                    // ELSE AM I STATELESS (NOT BACKED BY A DISK FILE)?
-                                            ? 0                                                                                         // THEN DO NOT FORMAT
-                                        : F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED        // ELSE DID NAPKIN ALREADY EXIST?
-                                        ? 1                                                                                             // THEN FORMAT
-                                    const boolT bFormat = !( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA )                              // WAS LIST ALLOCATED FROM POOL?
-                                {
-                                if( !POOP )
-
-                                //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                // FORMAT pbMeta
-                                //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                            {
-                            if( !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
-                        {
-                        if( !POOP )
+                        if( !POOP ) bFormatMetaBlob = !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ;
 
                         __Z( pbMeta ) ;
                         pbMeta  = *(napkinC*)pb_napMeta ;
@@ -355,6 +343,8 @@
                             {
                             if( !POOP )
                             __Z( pOut ) ;
+
+                            bFormatMetaBlob = !!( F(flagsRC) & flLISTwALKrETURNcODE_NEWlISTING ) ;
                 
                             THREADmODE4rESTORE
                             flagsT flagsRC = listC::fieldIF( tinP , pOut , hListSex , pczField , _1_modePushIfNotExistC() + _1_pushC( 0 , cbaMeta ) + _1_modeQueryNewC() + _1_queryC() , idLineNewP , idiFileNewP , flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW) ;
@@ -399,6 +389,7 @@
                 !POOP
             (
             if
+            ZE( boolT , bFormatMetaBlob ) ;
 
             //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             // TRY TO ALLOCATE pbMeta FROM A SIBLING sexC (ANOTHER sexC, EXISTING OR NEWLY CREATED, OF *pPoolContainsMe

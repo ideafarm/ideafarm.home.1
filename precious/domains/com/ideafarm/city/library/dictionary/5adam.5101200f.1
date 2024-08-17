@@ -18,20 +18,25 @@ THREADmODE4rESTORE
 
 }
     }
-        etThread.traceF( tinP , T("[*pc1,*pc2]:    ")+TF2(*pc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*pc2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tinP , T("[idPass,*pc1,*pc2,flagsRC1,flagsRC2]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*pc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*pc2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(flagsRC1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(flagsRC2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         *pc1 += 0x11110000 ;
         countT*  pc2 = vsp2Lath ;
+        flagsT flagsRC2 = tinP.brcRaw ;
         countVSP vsp2Lath = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO2 ) ) ;
 
         *pc1 += 0x00001111 ;
         countT*  pc1 = vsp1Lath ;
+        flagsT flagsRC1 = tinP.brcRaw ;
         countVSP vsp1Lath = listC::countIF( tinP , myRecord , count2S( LISTnAME_RETURNiNFO1 ) ) ;
     {
 
     recordC myRecord( tinP , pcNameRecord ) ;
     countT  pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSoUTCOME , 0 } ;
-    //puseC   puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+
+    tinP.pcUtility[ 0 ] -- ;
+    puseC   puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+    tinP.pcUtility[ 0 ] ++ ;
 
     _IO_
 {
