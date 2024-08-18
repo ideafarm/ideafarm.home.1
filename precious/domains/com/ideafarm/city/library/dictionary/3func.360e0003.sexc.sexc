@@ -147,7 +147,7 @@
             }
                 if( bNewMetaNapkinWasJustFormatted ) ((napkinC*)pb_napMeta)->tellAboutFormattingBeingDoneF( tinP ) ;
 
-                ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
+                if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
                 formatDataBlobF( tinP ) ; //NO ACTION IS NEEDED HERE TO PRESERVE STATE WHEN STATE FILE IS USED, SINCE THE FORMATTING INFORMATION IS ONLY USED TO DETECT MEMORY CORRUPTION SO NEED NOT BE SAVED AS STATE     U::20240815@1555: HUH?
 
                 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -241,6 +241,7 @@
                             ? 1                                                                                             // THEN FORMAT
                         const boolT bFormat = !( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA )                              // WAS LIST ALLOCATED FROM POOL?
 #if defined( NEVERdEFINED )
+//U:: DELETE THIS OLD CODE AFTER TESTING
 
                         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                         // FORMAT pbMeta
@@ -330,7 +331,23 @@
                             THREADmODE4rESTORE
                             }
                                 }
-                                    if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbMeta from list [cbaMeta,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pczListSex) ) ;
+                                    }
+                                        CONoUTrAW( ostoSay ) ;
+                                        OStEXTAK(  ostoSay , "\r\n" ) ;
+                                        }
+                                            if( *pcc ) OStEXTAK( ostoSay , "/" ) ;
+                                                       OStEXTC(  ostoSay , *( pcc ++ ) , 0 ) ;
+                                        {
+                                        while( *pcc )
+                                        const countT* pcc = pczListSex ;
+
+                                        OStEXTAK(  ostoSay , "    " ) ;
+                                        OStEXTC(  ostoSay , cbaMeta , '0' ) ;
+                                        OStEXTAK( ostoSay , "\r\nsexC / obtained pbMeta from list [cbaMeta    ,pcRecord]:    " ) ;
+                                        OStEXT(   ostoSay , TUCK << 2 ) ;
+                                    {
+                                    else
+                                    if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbMeta from list [cbaMeta    ,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pczListSex) ) ;
                                     DELlIST( fieldEditParamOutC , pOut ) ;
                                     puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
 
@@ -388,6 +405,8 @@
                     // ALLOCATE pbMeta FROM *pPoolContainsMe TO AVOID THE OVERHEAD OF USING A napkinC AND ESCAPE THE BASE O.S. ALLOCATION GRAIN MINIMUM AND MINIMIZE ADDRESS SPACE FRAGMENTATION
                 {
                 )
+                    1 << expCbDropP != sizeof( listC )
+                    &&
                     tinP.pag1->pPoolAdamTemp
                     &&
                     !bNested
@@ -495,7 +514,6 @@
         {
         if( POOP )
         ZE( boolT , bNewMetaNapkinWasJustFormatted ) ;
-        ZE( boolT , bFormatDataBlob ) ;
 
         }
             }
@@ -504,8 +522,25 @@
             
                     THREADmODE4rESTORE
                     }
-
                         }
+                            if( pbData && F(flagsRC) & flLISTwALKrETURNcODE_NEWlISTING ) bFormatDataBlob = 1 ;
+
+                            }
+                                CONoUTrAW( ostoSay ) ;
+                                OStEXTAK(  ostoSay , "\r\n" ) ;
+                                }
+                                    if( *pcc ) OStEXTAK( ostoSay , "/" ) ;
+                                               OStEXTC(  ostoSay , *( pcc ++ ) , 0 ) ;
+                                {
+                                while( *pcc )
+                                const countT* pcc = pczListSex ;
+
+                                OStEXTAK(  ostoSay , "    " ) ;
+                                OStEXTC(  ostoSay , cbaDataPool , '0' ) ;
+                                OStEXTAK( ostoSay , "\r\nsexC / obtained pbData from list [cbaDataPool,pcRecord]:    " ) ;
+                                OStEXT(   ostoSay , TUCK << 2 ) ;
+                            {
+                            else
                             if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbData from list [cbaDataPool,pcRecord]:    ")+TF2(cbaDataPool,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pczListSex) ) ;
                             DELlIST( fieldEditParamOutC , pOut ) ;
                             puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
@@ -525,9 +560,10 @@
                                 ,
                                 tinP , pOut , hListSex2 , pczField
                             (
-                            flagsT flagsRC = listC::fieldIF
+                            flagsRC = listC::fieldIF
                         {
                         if( ~hListSex2 )
+                        ZE( flagsT , flagsRC ) ;
                         ZE( fieldEditParamOutC* , pOut ) ;
             
                         listC::openIF( tinP , hListSex2 , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ; //U::BUG: THE grabitC::ungrabF BLAMMO OCCURS WITHIN THIS CALL
@@ -559,6 +595,8 @@
             // ALLOCATE pbData FROM *pPoolContainsMe TO AVOID THE OVERHEAD OF USING A napkinC AND ESCAPE THE BASE O.S. ALLOCATION GRAIN MINIMUM AND MINIMIZE ADDRESS SPACE FRAGMENTATION
         {
         )
+            1 << expCbDropP != sizeof( listC )
+            &&
             tinP.pag1->pPoolAdamTemp
             &&
             !bNested
@@ -572,10 +610,16 @@
             !POOP
         (
         if
+        ZE( boolT , bFormatDataBlob ) ;
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // TRY TO ALLOCATE pbData FROM A SIBLING sexC (ANOTHER sexC, EXISTING OR THAT I CAUSE TO BE CREATED, OF *pPoolContainsMe
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        }
+            countT foo = 2 ;
+        {
+        if( !bReadOnly )
 
         const boolT bReadOnly = !!( F(flagsCt) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ) ;
 
