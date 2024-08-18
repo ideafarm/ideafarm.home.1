@@ -32184,7 +32184,6 @@ deletion is recursive, so can exhaust the thread stack if a large number of list
 /*1*/struct _export fieldEditParamOutC/*1*/
 {
     fieldEditParamOutC* pNext ;
-    countT              flagsRC ;
     countT              idPlate ;
     countVSP            vspCount ;
     blobVSP             vspBlob ;
