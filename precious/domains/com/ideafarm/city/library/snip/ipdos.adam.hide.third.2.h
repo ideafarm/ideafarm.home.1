@@ -30835,7 +30835,6 @@ private :
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.sexC : 1snip.150000f4.sexc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.slotsC : 1snip.150000f5.slotsc BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -30858,12 +30857,11 @@ private :
     const countT        expCbDrop ;
     const countT        expSlotsMin ;
     const countT        cBitsExpSlots ;
-    byteT               pbza1[  CsLOTeXTENTS * SIZEOF_sexC ] ; // USED IF NOT NESTED
-    byteT               pbza2[  CsLOTeXTENTS * SIZEOF_sexC ] ; // USED IF     NESTED
-    sexC*               ppSex[ CsLOTeXTENTS ] ;
-    byteT               pbzaGrab[ CsLOTeXTENTS * sizeof( grabC ) ] ;
-    countT              pcTallyIn[ CsLOTeXTENTS ] ;
-    countT              pcTallyOut[ CsLOTeXTENTS ] ;
+    byteT               pbza[       CsLOTeXTENTS * SIZEOF_sexC     ] ;
+    sexC*               ppSex[      CsLOTeXTENTS                   ] ;
+    byteT               pbzaGrab[   CsLOTeXTENTS * sizeof( grabC ) ] ;
+    countT              pcTallyIn[  CsLOTeXTENTS                   ] ;
+    countT              pcTallyOut[ CsLOTeXTENTS                   ] ;
     grabC* const        pGrabNewElt ;
     poolC* const        pPoolContainsMe ;
 

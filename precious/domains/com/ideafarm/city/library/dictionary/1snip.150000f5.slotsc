@@ -52,12 +52,11 @@
 
     poolC* const        pPoolContainsMe ;
     grabC* const        pGrabNewElt ;
-    countT              pcTallyOut[ CsLOTeXTENTS ] ;
-    countT              pcTallyIn[ CsLOTeXTENTS ] ;
-    byteT               pbzaGrab[ CsLOTeXTENTS * sizeof( grabC ) ] ;
-    sexC*               ppSex[ CsLOTeXTENTS ] ;
-    byteT               pbza2[  CsLOTeXTENTS * SIZEOF_sexC ] ; // USED IF     NESTED
-    byteT               pbza1[  CsLOTeXTENTS * SIZEOF_sexC ] ; // USED IF NOT NESTED
+    countT              pcTallyOut[ CsLOTeXTENTS                   ] ;
+    countT              pcTallyIn[  CsLOTeXTENTS                   ] ;
+    byteT               pbzaGrab[   CsLOTeXTENTS * sizeof( grabC ) ] ;
+    sexC*               ppSex[      CsLOTeXTENTS                   ] ;
+    byteT               pbza[       CsLOTeXTENTS * SIZEOF_sexC     ] ;
     const countT        cBitsExpSlots ;
     const countT        expSlotsMin ;
     const countT        expCbDrop ;

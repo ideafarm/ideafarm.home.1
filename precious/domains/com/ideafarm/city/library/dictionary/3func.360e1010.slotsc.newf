@@ -53,7 +53,7 @@
                 sexC* pSexNew = new( 0 , tinP , pbzaUse , sizeof( sexC ) ) sexC( tinP , TAG( TAGiDnULL ) , idLineP , idiFileP , ostoName , expCbDrop , offs , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
 
                 if( pbzaUse == (byteT*)ppSex[ offs ] ) { BLAMMO ; }
-                byteT* pbzaUse = ( !bNested ? pbza1 : pbza2 ) + offs * sizeof( sexC ) ;
+                byteT* pbzaUse = pbza + offs * sizeof( sexC ) ;
 
                 OStEXTCF( ostoName , offs , '0' ) ;
                 OStEXTAK( ostoName , ".slotsC.sex." ) ;
@@ -62,10 +62,6 @@
 
                 const flagsT maskExpSlots  = 1 << offs      ;
                 const flagsT maskExpCbDrop = 1 << expCbDrop ;
-
-                //if( bNested > 1 ) { BLAMMO ; }
-                //countT bNested = pGrabNewElt[ offs ].cGrabbedF() - 1 ;
-                //20170928@1030: DISABLED WITHOUT ANALYIS TO WORKAROUND: SEE PRECEDING CODE THAT NOW MERELY CONTNINUES THE LOOP
 
                 }
                     continue ;
@@ -77,17 +73,18 @@
                 if( ppSex[ offs ] )
 
                 }
-                    continue ;
-                    offPass = - 1 ;
-                    inc02AM( pcTallyOut[ offs ] ) ;
-                    pGrabNewElt[ offs ].ungrabF( tinP ) ; // --------------------------------------------------------------------------------------------
-                    _IO_
-                {
-                if( bNested > 1 )
-                countT bNested = pGrabNewElt[ offs ].cGrabbedF() - 1 ;              //20170928@1030: ADDED WITHOUT ANALYIS TO WORKAROUND: SEE THE COMMENTED OUT BLAMMO CODE THAT FOLLOWS
+                    }
+                        inc02AM( pcTallyOut[ offs ] ) ;
+                        pGrabNewElt[ offs ].ungrabF( tinP ) ; // --------------------------------------------------------------------------------------------
+                        _IO_
+                    {
+                    else
+                    if( pGrabNewElt[ offs ].cGrabbedF() == 1 ) break ;
 
-                inc02AM( pcTallyIn[ offs ] ) ;
-                pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ; // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    inc02AM( pcTallyIn[ offs ] ) ;
+                    pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ; // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                {
+                for( ; offs < sizeof ppSex / sizeof ppSex[ 0 ] ; offs ++ )                              // INCREMENT offs UNTIL IT DOES NOT POINT TO A sexC THAT THIS THREAD HAS ALREADY GRABBED
 
                 }
                     break ;
@@ -180,6 +177,19 @@
         _IO_
     {
     ZE( byteT* , pbo ) ;
+
+    //}
+    //    }
+    //        countT foo = 2 ;
+    //    {
+    //    if( idIn == 0x39 || idIn == 0xac )
+    //    //if( idIn == 0xac )
+    //
+    //    CONoUTrAW3( "\r\nslotsC::newF [idIn]:    " , idIn , "\r\n" ) ;
+    //    countT idIn = 1 + incv02AM( idInLath ) ;
+    //    static countT idInLath ;
+    //{
+    //if( tinP.pc Utility[ 0 ] )
 
     }
         if( POOP ) return 0 ;

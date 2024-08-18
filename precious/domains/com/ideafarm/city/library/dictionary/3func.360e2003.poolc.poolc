@@ -148,8 +148,7 @@
                     if( F(guts.flagsCt) & flPOOLc_READoNLY    ) flagsc |= flSLOTSc_READoNLY    ;
                     flagsT                                      flagsc  = flSLOTSc_null        ;
                 {
-                else
-                if( guts.ppSlots[ offs ] ) { BLAMMO ; }
+                if( !guts.ppSlots[ offs ] )
                 guts.pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ;
 
                 const countT expCbDrop   = offs ;
@@ -441,8 +440,7 @@ expCbDropMin( expCbDropMinP != - 1 ? expCbDropMinP : 0                          
 pGrabNewElt( (grabC*)pbzaGrab ) ,
 idMemorySpace( idMemorySpaceP ) ,
 idStateSpace( idStateSpaceP ) ,
-//flagsCt( flagsP ) ,
-flagsCt( flagsP | flPOOLc_NOsEXiNpOOL ) , //U::REMOVE AFTER TESTING OF SEX IN POOL
+flagsCt( flagsP ) ,
 poolC::guts_poolC_S::guts_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , countT idMemorySpaceP ) :
 
 //     | 
