@@ -259,7 +259,7 @@
                         if( !POOP )
 
                         ) ;
-                            F(flagsCt) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*tinP.pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
+                            bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*tinP.pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
                             cbaMeta ,
                             ) ,
                                     : (const handleC*)*(fileC*)pbFileMeta
@@ -327,14 +327,13 @@
                 }
                     }
                         }
+                            THREADmODE4rESTORE
                             }
                                 }
                                     if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbMeta from list [cbaMeta,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pczListSex) ) ;
                                     DELlIST( fieldEditParamOutC , pOut ) ;
                                     puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
-                                {
 
-                                }
                                     }
                                         pbMetaEnd = pbMeta + cbaMeta ;
                                         pbMeta    = (byteT*)(const osTextT*)pOut->vspBlob ;
@@ -342,20 +341,31 @@
                                     if( !POOP )
                                     __NZ( pOut->pNext ) ;
                                 {
-                                if( !POOP )
-                                __Z( pOut ) ;
+                                if( pOut )
 
                                 bFormatMetaBlob = !!( F(flagsRC) & flLISTwALKrETURNcODE_NEWlISTING ) ;
                     
-                                THREADmODE4rESTORE
-                                flagsT flagsRC = listC::fieldIF( tinP , pOut , hListSex , pczField , _1_modePushIfNotExistC() + _1_pushC( 0 , cbaMeta ) + _1_modeQueryNewC() + _1_queryC() , idLineNewP , idiFileNewP , flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW) ;
-                                THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
-                                ZE( fieldEditParamOutC* , pOut ) ;
+                                }
+                                    ) ;
+                                        idLineNewP , idiFileNewP , flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW
+                                        ,
+                                            : _1_queryC() + _1_modeQueryNewC() + _1_pushC( 0 , cbaMeta ) + _1_modePushIfNotExistC()
+                                            ? _1_queryC() 
+                                        bReadOnly
+                                        ,
+                                        tinP , pOut , hListSex , pczField
+                                    (
+                                    flagsRC = listC::fieldIF
+                                {
+                                if( ~hListSex )
+                                ZE( flagsT              , flagsRC ) ;
+                                ZE( fieldEditParamOutC* , pOut    ) ;
                     
-                                listC::openIF( tinP , hListSex , pczListSex , flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW) ;
+                                listC::openIF( tinP , hListSex , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ;
                                 handleC hListSex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                             {
-                            if( ( 1 << expCbDropP != sizeof( listC ) || bListsExist ) ) // CREATION OF THE RECORD AND THE FIELD listC WOULD REQUIRE ME
+                            if( bListsExist || !bReadOnly )
+                            THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
                     
                             }
                                 if( ~hListField ) bListsExist = 1 ;
@@ -416,7 +426,7 @@
                 if( !POOP )
 
                 ) ;
-                    F(flagsCt) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*tinP.pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION && expCbDropP + expSlotsP <= 0x14 ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
+                    bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*tinP.pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION && expCbDropP + expSlotsP <= 0x14 ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
                     cbaDataNapkin ,
                     ) ,
                             : (const handleC*)*(fileC*)pbFileData
@@ -492,34 +502,39 @@
                 }
                     //DO THIS IN MY DESTRUCTOR BUT ONLY IF I AM THE ONLY CLIENT: listC::deleteIF( tinP, pczListSex ) ;
             
+                    THREADmODE4rESTORE
                     }
+
                         }
                             if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbData from list [cbaDataPool,pcRecord]:    ")+TF2(cbaDataPool,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pczListSex) ) ;
                             DELlIST( fieldEditParamOutC , pOut ) ;
                             puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
-                        {
 
-                        }
                             if( !POOP ) pbData = (byteT*)(const osTextT*)pOut->vspBlob ;
                             __NZ( pOut->pNext ) ;
                         {
-                        if( !POOP )
-                        __Z( pOut ) ;
+                        if( pOut )
             
-                        THREADmODE4rESTORE
-                        flagsT flagsRC = listC::fieldIF( tinP , pOut , hListSex2 , pczField , _1_modePushIfNotExistC() + _1_pushC( 0 , cbaDataPool ) + _1_modeQueryNewC() + _1_queryC() , idLineNewP , idiFileNewP , flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ;
-                        THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
+                        }
+                            ) ;
+                                idLineNewP , idiFileNewP , flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW
+                                ,
+                                    : _1_queryC() + _1_modeQueryNewC() + _1_pushC( 0 , cbaDataPool ) + _1_modePushIfNotExistC()
+                                    ? _1_queryC() 
+                                bReadOnly
+                                ,
+                                tinP , pOut , hListSex2 , pczField
+                            (
+                            flagsT flagsRC = listC::fieldIF
+                        {
+                        if( ~hListSex2 )
                         ZE( fieldEditParamOutC* , pOut ) ;
             
-                        listC::openIF( tinP , hListSex2 , pczListSex , flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ; //U::BUG: THE grabitC::ungrabF BLAMMO OCCURS WITHIN THIS CALL
+                        listC::openIF( tinP , hListSex2 , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ; //U::BUG: THE grabitC::ungrabF BLAMMO OCCURS WITHIN THIS CALL
                         handleC hListSex2( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     {
-                    )
-                        1 << expCbDropP != sizeof( listC )           // CREATION OF THE RECORD AND THE FIELD listC WOULD NOT REQUIRE ME
-                        ||
-                        bListsExist
-                    (
-                    if
+                    if( bListsExist || !bReadOnly )
+                    THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
 
                     }
                         }
@@ -561,6 +576,8 @@
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // TRY TO ALLOCATE pbData FROM A SIBLING sexC (ANOTHER sexC, EXISTING OR THAT I CAUSE TO BE CREATED, OF *pPoolContainsMe
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        const boolT bReadOnly = !!( F(flagsCt) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ) ;
 
         tinP.tlsNewF( LF , TUCK ) ;
         tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , idStateSpaceP ) ;
@@ -770,6 +787,8 @@
         static countT idInLath ;
     {
     if( tinP.pcUtility[ 0 ] )
+
+    //CONoUTrAW5( "\r\nsexC::sexC [exbCbDropP,expSlotsP]:    " , expCbDropP , "    " , expSlotsP , "\r\n" ) ;
 
     _IO_
 
