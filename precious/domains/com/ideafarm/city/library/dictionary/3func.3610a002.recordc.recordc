@@ -41,9 +41,11 @@
         THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
         countVSP vspIdUpdateLath = listC::countIF( tinP , globals , count2S( LISTnAME_IDuPDATElATH ) ) ;
     
-        recordC globals( tinP , count4S( LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD ) ) ;
+        recordC globals( tinP , count4S( LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD ) , flagsP , idGrabLayerP ) ;             //20240818@1807: flagsP W/O ANALYSIS
     {
     if( pczNameP[ 0 ] != LISTnAME_ROOT || pczNameP[ 1 ] != LISTnAME_ROOTaPPLICATION || pczNameP[ 2 ] != LISTnAME_GLOBALrECORD || pczNameP[ 3 ] )
+
+    grabitx.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     }
         if( POOP ) return ;
@@ -59,8 +61,8 @@ flagsFieldOpen( flLISToPEN_null ) ,
 cFieldName( 0 ) ,
 hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ,
 pczName( 0 ) ,
-grabitx( tinP , TAG( TAGiDnULL ) ) ,
-/*1*/recordC::recordC( tinS& tinP , const countT* const pczNameP , const flagsT flagsP ) :/*1*/
+grabitx( tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_SHARElAYER | flGRABITc_NOTjEALOUS , 0 , idGrabLayerP ) ,
+/*1*/recordC::recordC( tinS& tinP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP ) :/*1*/
 
 /**/
 */

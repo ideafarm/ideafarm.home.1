@@ -43927,7 +43927,7 @@ application code that uses an instance of me must ensure that the pool that cont
 
     ~recordC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.recordC.dt_recordC!||
-    recordC( tinS& tinP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null ) ;
+    recordC( tinS& tinP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.recordC.recordC!||
     flagsT fieldOpenFlagsF( tinS& tinP , const flagsT flagsP = flLISToPEN_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.recordC.fieldOpenFlagsF!||
