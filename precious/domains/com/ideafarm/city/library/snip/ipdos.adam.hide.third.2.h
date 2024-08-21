@@ -30782,6 +30782,7 @@ private :
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.sexC.ctFilesF!||
     voidT formatDataBlobF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0013.sexc.formatDataBlobF!||
+    countT* inspectAndSetSlotFingersF( tinS& tinP , byteT* pbSlotP , countT offSlotP , countT cbGrossP , boolT bNewP ) ;
 
     public :
 
