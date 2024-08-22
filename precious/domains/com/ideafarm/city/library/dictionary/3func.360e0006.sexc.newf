@@ -43,59 +43,47 @@
 
                 putNegAM( pMyNote->finger , FINGERnEG_dropNoteSsexC1 ) ;
 
-                dropNoteS* pMyNote = pzMetaNote + offFound ;
+                dropNoteS* pMyNote = pzMetaNote + offSlot ;
             {
             if( pzMetaNote )
 
-            if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbDrop , cbSlot - ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED     20180611@1452: EDITED TO AVOID WIPING THE DROP HEADER (WITHOUT ANALYSIS)
+            if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbDrop , cbGross - ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED     20180611@1452: EDITED TO AVOID WIPING THE DROP HEADER (WITHOUT ANALYSIS)
 
             tinP.cPoolDropCt ++ ;
 
-            }
-                }
-                    BLAMMO ;
-                    //tinP.pc Utility[ 0 ] = was ;
-                {
-                if( getNegAM( was ) != FINGERnEG_dropHeaderInitialize )
-                countT was = setIfEqualsAM( ((countT*)pbDrop)[ - 1 ] , offFound , getNegAM( FINGERnEG_dropHeaderInitialize ) ) ;
-                // IOW, THE NEXT LINE CAN SET dropHeader TO ANY SUFFICIENTLY SMALL VALUE.  (A VALUE THAT IS TOO LARGE WILL CAUSE SHIFT LEFT TO FAIL IN slotsC::newF poolC:newF)
-                // 20210130@1202: offFound IS NOT USED TO DELETE THE DROP OR FOR ANY OTHER PURPOSE.  IT CAN BE ELIMINATED FROM dropHeader IN ORDER TO SIMPLIFY LAYOUT, ADD A CHECKSUM, OR ADD OTHER INFORMATION
-                // DROP HEADER VALUE.  IF I AM CALLED BY poolC THEN VALUE WILL CONTAIN idApt, WHICH WILL BE USED TO IDENTIFY *this SO THAT THE DROP CAN BE DELETED WITHOUT SEARCHING FOR THE CORRECT sexC INSTANCE
-            {
-            //U:: MOVE THIS FUNCTIONALITY INTO inspectAndSetSlotFingersF
-
-            pbDrop = pbData + cbSlot * offFound + ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) ;
-            const countT cbSlot = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << pzMetaHead->expCbDrop ) ;
+            pbDrop = inspectAndSetSlotFingersF( tinP , pbSlot , offSlot , cbGross , 1 ) ;
+            byteT* pbSlot = pbData + cbGross * offSlot ;
+            countT cbGross = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << pzMetaHead->expCbDrop ) ;
     
-            if( offFound < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; } //U:: IN ALL 3*.sexC.*, REMOVE ALL OF THESE TESTS ONCE HAVE CONFIDENCE THAT CODE IS CORRECT
+            if( offSlot < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; } //U:: IN ALL 3*.sexC.*, REMOVE ALL OF THESE TESTS ONCE HAVE CONFIDENCE THAT CODE IS CORRECT
 
-            //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "\r\n[offFound]: " , offFound , "" ) ;
+            //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "\r\n[offSlot]: " , offSlot , "" ) ;
 
-            offFoundLath = offFound ;
+            offSlotLath = offSlot ;
         {
-        if( offFound != -1 )
+        if( offSlot != -1 )
 
         }
             }
-                if( offFound != - 1 ) offFound += cBitsIgnore ;
+                if( offSlot != - 1 ) offSlot += cBitsIgnore ;
 
-                offFound = btsWothAM( pbzMetaBitsOwned + cbIgnore , cBitsAll - cBitsIgnore ) ;  // THIS IS SLIGHTLY SLOWER THAN btsLathAM BUT IS USED BECAUSE IT REWARDS "BETTER" BEHAVIOR AND PENALIZES "WORSE" BEHAVIOR
+                offSlot = btsWothAM( pbzMetaBitsOwned + cbIgnore , cBitsAll - cBitsIgnore ) ;  // THIS IS SLIGHTLY SLOWER THAN btsLathAM BUT IS USED BECAUSE IT REWARDS "BETTER" BEHAVIOR AND PENALIZES "WORSE" BEHAVIOR
 
                 countT cBitsIgnore = cbIgnore     * SB ;
                 countT cbIgnore    = cBitsSearch1 / SB ;
             {
-            if( offFound == - 1 )
+            if( offSlot == - 1 )
 
-            offFound = btsLathAM( pbzMetaBitsOwned , cBitsSearch1 ) ;
+            offSlot = btsLathAM( pbzMetaBitsOwned , cBitsSearch1 ) ;
 
             ;
-                : offFoundLath + 1
+                : offSlotLath + 1
                 ? cBitsAll
-            const countT cBitsSearch1 = offFoundLath == - 1
+            const countT cBitsSearch1 = offSlotLath == - 1
             const countT cBitsAll     = 1 << pzMetaHead->expSlots ;
         {
 
-        countT offFound = - 1 ;
+        countT offSlot = - 1 ;
 
         // BAD BEHAVIOR:  PERMANENT NEW'S ARE INTERMIXED WITH FIFO NEW/DEL:  THIS WILL SLOW ME THE FUCK DOWN
         //
@@ -112,7 +100,7 @@
         //                                                           |
         //                                                >>>>>>>>>>>>>>>>>>>>>>>       SEARCH OVERLAPS SLIGHTLY BECAUSE IT BEGINS ON A BYTE BOUNDARY
         // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        //                                                +-- offFoundLath
+        //                                                +-- offSlotLath
         //                                                |
         // 1111111111111111111111111111111111111111111111111111111111011111111111       SCENARIO: sexC IS FILLED EXCEPT FOR A DELETED EARLY ALLOCATION
         //
@@ -122,7 +110,7 @@
         //                                                +-- found
         //                                                |
         // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        //                                                +-- offFoundLath
+        //                                                +-- offSlotLath
         //                                                |
         // 0000000000000000000000000000000000000000000000001111111111111111111111       SCENARIO: LATH NEW HAS BEEN DELETED
         //
@@ -132,7 +120,7 @@
         //                                               +-- found
         //                                               |
         // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        //                                                +-- offFoundLath
+        //                                                +-- offSlotLath
         //                                                |
         // 0000000000000000000000000000000000000000000000011111111111111111111111       SCENARIO: NOTHING DELETED
         // |                                                                    |

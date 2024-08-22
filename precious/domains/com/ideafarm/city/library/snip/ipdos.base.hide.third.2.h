@@ -30745,7 +30745,6 @@ private :
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.sexHeadS : 1snip.150000f3.sexheads END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.sexC : 1snip.150000f4.sexc BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -30777,7 +30776,7 @@ private :
     byteT*              pbData ;
     byteT*              pbDataEnd ;
     sexC*               pSexLifoConstructing ;                                  // USED BY sexC TO DETECT RECURSIVE CYCLING DURING CT
-    countT              offFoundLath ;                                          // USED BY newF TO EXPLOIT HEURISTICS TO SPEED UP SEARCH FOR AN AVAILABLE DROP
+    countT              offSlotLath ;                                           // USED BY newF TO EXPLOIT HEURISTICS TO SPEED UP SEARCH FOR AN AVAILABLE DROP
 
     public :
 
@@ -30791,7 +30790,7 @@ private :
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.sexC.ctFilesF!||
     voidT formatDataBlobF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0013.sexc.formatDataBlobF!||
-    countT* inspectAndSetSlotFingersF( tinS& tinP , byteT* pbSlotP , countT offSlotP , countT cbGrossP , boolT bNewP ) ;
+    byteT* inspectAndSetSlotFingersF( tinS& tinP , byteT* pbSlotP , countT offSlotP , countT cbGrossP , boolT bNewP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0014.sexC.inspectAndSetSlotFingersF!||
 
     public :
