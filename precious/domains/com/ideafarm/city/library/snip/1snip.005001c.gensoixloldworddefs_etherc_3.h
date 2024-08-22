@@ -1,4 +1,41 @@
 
+voidT homeOsDriverNameF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.homeOsDriverNameF( tinP , psttP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tinP , psttP ) ;
+}
+
+voidT osDriverRemoveOldF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , idAdamP ) ;
+    if( !POOP ) { slP >> idAdamP ; idArgNext ++ ; }
+
+    ZE( boolT , noName ) ;
+    if( !POOP ) noName = etherP.osDriverRemoveOldF( tinP , idAdamP ) ;
+
+    slP << noName ;
+}
+
 voidT osDriverParseNameF_3334P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2594,40 +2631,4 @@ voidT sockOptionSendNowF_b6_GF( tinS& tinP , etherC& etherP , soulC& slP , const
         }
     }
     if( !POOP ) etherP.sockOptionSendNowF( tinP , handleP , bEnableP ) ;
-}
-
-voidT sockOptionDualStackF_b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
-    if( !POOP ) { handleP << slP ; idArgNext ++ ; }
-    if( !POOP ) etherP.sockOptionDualStackF( tinP , handleP ) ;
-}
-
-voidT sockOptionMulticastF_b4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
-    if( !POOP ) { handleP << slP ; idArgNext ++ ; }
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttAddrP ) ;
-    if( !POOP ) { slP >> psttAddrP ; ___( psttAddrP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.sockOptionMulticastF( tinP , handleP , psttAddrP ) ;
-    etherP.delF( tinP , psttAddrP ) ;
 }

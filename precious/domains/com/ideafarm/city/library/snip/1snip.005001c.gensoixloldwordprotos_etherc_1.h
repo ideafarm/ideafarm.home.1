@@ -99,11 +99,15 @@ voidT diskSelectF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const stroke
 
 voidT diskWaitDirF_b64P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT diskZipF_4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT diskZipOldF_4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT diskZipF_4Po4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT diskZipOldF_4Po4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT diskUnzipF_4P4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT diskZipF_4P4P4P4P4P4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT diskUnzipF_4P74P4P4P4P4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
+voidT diskUnzipOldF_4P4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT diskRenameToHashF_4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
@@ -121,7 +125,7 @@ voidT strokeF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* c
 
 voidT paperTitleF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT fileOpenF_b34P3373773_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT fileOpenF_b34P33737733_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT fileHoseConnectF_b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

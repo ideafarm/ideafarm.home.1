@@ -1,9 +1,4 @@
 
-#define ifcIDzIPPER_INFOZIP         2
-#define ifcIDzIPPER_PKZIPC          1
-
-#define TfORsTRING(idP) ( TF3(idP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) )
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -2198,6 +2193,7 @@ examples
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200025.task END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200026.done BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -5432,8 +5428,7 @@ it is illegal to refer to this symbol in the definition of an adam
 //#define OFFsLOTtINnESTmAX (0xf)
 
            #define OFFsLOTtINnESTmAX (0x3f)
-
-//#define OFFsLOTtINnESTmAX (0x1f)
+//U::PROD: #define OFFsLOTtINnESTmAX (0x1f)
 
 
 //
@@ -8338,6 +8333,7 @@ it is illegal to refer to this symbol in the definition of an adam
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000cb.costmaxfilename END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000cc.bos BEGIN
 
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -8361,34 +8357,36 @@ it is illegal to refer to this symbol in the definition of an adam
 //EVERY GROUP IN THIS FILE IS ALPHABETICAL
 
 /*3*/
-#define ifcIDwHAT_GOaDAM             0x01
-#define ifcIDwHAT_GOiNoUTcT          0x02
-#define ifcIDwHAT_GOiNoUTfRAMED      0x03
-#define ifcIDwHAT_GOiNoUTdT          0x04
-#define ifcIDwHAT_GObOSclIB          0x05
-#define ifcIDwHAT_GObOSmONITOR       0x06
-#define ifcIDwHAT_GObOSdRAW          0x07
-#define ifcIDwHAT_GObOSoTHER         0x08
-#define ifcIDwHAT_GObOStHIRD         0x09
-#define ifcIDwHAT_mark               0x0a
-#define ifcIDwHAT_STOPbATON          0x0b
-#define ifcIDwHAT_STOPfILErEAD       0x0c
-#define ifcIDwHAT_STOPfILEwRITE      0x0d
-#define ifcIDwHAT_STOPgRAB           0x0e
-#define ifcIDwHAT_STOPiNTaCCEPT      0x0f
-#define ifcIDwHAT_STOPiNTrEAD        0x10
-#define ifcIDwHAT_STOPiNTwRITE       0x11
-#define ifcIDwHAT_STOPmONITORING     0x12
-#define ifcIDwHAT_STOPyIELD          0x13
-#define ifcIDwHAT_STOPnAP            0x14
-#define ifcIDwHAT_STOPoTHER          0x15
-#define ifcIDwHAT_STOPsIGN           0x16
-#define ifcIDwHAT_STOPsUSPENDED      0x17
-#define ifcIDwHAT_STOPwIN            0x18
-#define ifcIDwHAT_STOPwINrEAD        0x19
-#define ifcIDwHAT_STOPwINwRITE       0x1a
-#define ifcIDwHAT_STOPbOStHIRD       0x1b
+#define ifcIDwHAT_GOaDAM             0xdddd0441
+#define ifcIDwHAT_GOiNoUTcT          0xdddd0442
+#define ifcIDwHAT_GOiNoUTfRAMED      0xdddd0443
+#define ifcIDwHAT_GOiNoUTdT          0xdddd0444
+#define ifcIDwHAT_GObOSclIB          0xdddd0445
+#define ifcIDwHAT_GObOSmONITOR       0xdddd0446
+#define ifcIDwHAT_GObOSdRAW          0xdddd0447
+#define ifcIDwHAT_GObOSoTHER         0xdddd0448
+#define ifcIDwHAT_GObOStHIRD         0xdddd0449
+#define ifcIDwHAT_mark               0xdddd044a
+#define ifcIDwHAT_STOPbATON          0xdddd044b
+#define ifcIDwHAT_STOPfILErEAD       0xdddd044c
+#define ifcIDwHAT_STOPfILEwRITE      0xdddd044d
+#define ifcIDwHAT_STOPgRAB           0xdddd044e
+#define ifcIDwHAT_STOPiNTaCCEPT      0xdddd044f
+#define ifcIDwHAT_STOPiNTrEAD        0xdddd0450
+#define ifcIDwHAT_STOPiNTwRITE       0xdddd0451
+#define ifcIDwHAT_STOPmONITORING     0xdddd0452
+#define ifcIDwHAT_STOPyIELD          0xdddd0453
+#define ifcIDwHAT_STOPnAP            0xdddd0454
+#define ifcIDwHAT_STOPoTHER          0xdddd0455
+#define ifcIDwHAT_STOPsIGN           0xdddd0456
+#define ifcIDwHAT_STOPsUSPENDED      0xdddd0457
+#define ifcIDwHAT_STOPwIN            0xdddd0458
+#define ifcIDwHAT_STOPwINrEAD        0xdddd0459
+#define ifcIDwHAT_STOPwINwRITE       0xdddd045a
+#define ifcIDwHAT_STOPbOStHIRD       0xdddd045b
 /*3*/
+#define ifcIDwHAT_min     0xdddd0441
+#define ifcIDwHAT_max     0xdddd045b
 
 // whatP VALUES
 #define WHATga   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
@@ -15835,6 +15833,8 @@ these flag values are used by oo flagsT objects
 */
 /*1*//*flCTdTg*//*1*/
 /**/
+
+// CODING CONVENTION: SYMBOLIC CONSTANTS ARE CAPITALIZED, EXCEPT PORTIONS THAT ARE IDENTIFIERS (THIS IS SO THAT ANY GLOBAL REPLACEMENT TO RENAME AN IDENTIFIER ALSO RENAMES THAT PORTION OF ANY SYMBOLIC CONSTANT THAT CONTAINS ITS NAME)
 
 /*3*/
 #define flCTdTg_tinVeryVeryEarlyLateMainI       0xe0000141
@@ -23487,6 +23487,7 @@ examples
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120027f.scoops END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200280.ifscratch BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -33557,7 +33558,7 @@ it is illegal to refer to this symbol in the definition of an adam
         voidT classP::subclassP::operator delete( voidT* pvP )                                                                                  \
         {                                                                                                                                       \
             TINSL                                                                                                                               \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             countT idType = ifciDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifciDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
             if( pvP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
@@ -33570,13 +33571,13 @@ it is illegal to refer to this symbol in the definition of an adam
         voidT classP::subclassP::operator delete[]( voidT* pvP )                                                                                \
         {                                                                                                                                       \
             TINSL                                                                                                                               \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
         voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP ) \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             ZE( voidT* , pvn ) ;                                                                                                                \
             if( !tinP.pPoolUse ) { BLAMMO ; }                                                                                                   \
@@ -33603,7 +33604,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                 \
         voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )    \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             if( cbZombieP - ( cbaFoot + cbP ) ) BLAMMO ;                                                                                        \
             if( cbaFoot )                                                                                                                       \
@@ -33618,7 +33619,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                 \
         voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP )                      \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
                                                                                                                                                 \
             ZE( voidT* , pvn ) ;                                                                                                                \
@@ -33638,14 +33639,14 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                 \
         voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , const countT idLineP , const countT idiFileP )                      \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
         voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )                         \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             if( cbZombieP - cbP ) BLAMMO ;                                                                                                      \
             voidT* pvr = (voidT*)pbZombieP ;                                                                                                    \
             return pvr ;                                                                                                                        \
@@ -33653,7 +33654,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                 \
         voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , napkinC* const pNapkinP )                                           \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , pNapkinP ) ;                                                                            \
             return pvr ;                                                                                                                        \
         }
@@ -33665,7 +33666,7 @@ it is illegal to refer to this symbol in the definition of an adam
         voidT classP::subclassP::operator delete( voidT* pvP )                                                                                  \
         {                                                                                                                                       \
             TINSL                                                                                                                               \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             countT idType = ifciDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifciDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
             if( pvP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
@@ -33678,13 +33679,13 @@ it is illegal to refer to this symbol in the definition of an adam
         voidT classP::subclassP::operator delete[]( voidT* pvP )                                                                                \
         {                                                                                                                                       \
             TINSL                                                                                                                               \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
         voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP ) \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             ZE( voidT* , pvn ) ;                                                                                                                \
             if( !tinP.pPoolUse ) { BLAMMO ; }                                                                                                   \
@@ -33702,7 +33703,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                 \
         voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )    \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             if( cbZombieP - ( cbaFoot + cbP ) ) BLAMMO ;                                                                                        \
             if( cbaFoot )                                                                                                                       \
@@ -33717,7 +33718,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                 \
         voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP )                      \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
                                                                                                                                                 \
             ZE( voidT* , pvn ) ;                                                                                                                \
@@ -33737,14 +33738,14 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                 \
         voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , const countT idLineP , const countT idiFileP )                      \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
         voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )                         \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             if( cbZombieP - cbP ) BLAMMO ;                                                                                                      \
             voidT* pvr = (voidT*)pbZombieP ;                                                                                                    \
             return pvr ;                                                                                                                        \
@@ -33752,7 +33753,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                 \
         voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , napkinC* const pNapkinP )                                           \
         {                                                                                                                                       \
-            _IO_                                                                                                                             \
+            _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , pNapkinP ) ;                                                                            \
             return pvr ;                                                                                                                        \
         }
@@ -33844,9 +33845,9 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /*3*/
-#define flSLOTSc_READoNLY                      0xe00002a0
-#define flSLOTSc_NOTES                         0xe00004a0
-#define flSLOTSc_NOsEXiNpOOL                   0xe00008a0
+#define flSLOTSc_READoNLY                      0xe00001a0
+#define flSLOTSc_NOTES                         0xe00002a0
+#define flSLOTSc_NOsEXiNpOOL                   0xe00004a0
 /*3*/
 #define flSLOTSc_null    0xe00000a0
 
@@ -33875,15 +33876,15 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /*3*/
-#define flPOOLc_READoNLY                      0xe00002a1
-#define flPOOLc_NOTES                         0xe00004a1
-#define flPOOLc_MAKEaLL                       0xe00008a1
-#define flPOOLc_DOnOTiNDEXdURINGcT            0xe00010a1
-#define flPOOLc_RESETcrEF                     0xe00020a1
-#define flPOOLc_RESETiNDEXbITS                0xe00040a1
-#define flPOOLc_KEEPeMPTIES                   0xe00080a1
-#define flPOOLc_DOnOTbLOCK                    0xe00100a1
-#define flPOOLc_NOsEXiNpOOL                   0xe00200a1
+#define flPOOLc_READoNLY                      0xe00001a1
+#define flPOOLc_NOTES                         0xe00002a1
+#define flPOOLc_MAKEaLL                       0xe00004a1
+#define flPOOLc_DOnOTiNDEXdURINGcT            0xe00008a1
+#define flPOOLc_RESETcrEF                     0xe00010a1
+#define flPOOLc_RESETiNDEXbITS                0xe00020a1
+#define flPOOLc_KEEPeMPTIES                   0xe00040a1
+#define flPOOLc_DOnOTbLOCK                    0xe00080a1
+#define flPOOLc_NOsEXiNpOOL                   0xe00100a1
 /*3*/
 #define flPOOLc_null    0xe00000a1
 
@@ -34728,14 +34729,14 @@ coding standard
 
 //CS:CODEsYNC: 00104b0 21e0006 21e0002 21e0008 21e0009
 
-#define ifcIDtYPEmIXINdATUM_min        ((byteT)0x01)
-#define ifcIDtYPEmIXINdATUM_max        ((byteT)0x04)
+#define ifcIDtYPEmIXINdATUM_min           ((byteT)0x01)
+#define ifcIDtYPEmIXINdATUM_max           ((byteT)0x04)
 
 /*3*/
 #define ifcIDtYPEmIXINdATUM_countT        ((byteT)0x01)
 #define ifcIDtYPEmIXINdATUM_blob          ((byteT)0x02)
 #define ifcIDtYPEmIXINdATUM_countTstrz    ((byteT)0x03)
-#define ifcIDtYPEmIXINdATUM_listingVSP     ((byteT)0x04)
+#define ifcIDtYPEmIXINdATUM_listingVSP    ((byteT)0x04)
 /*3*/
 
 
@@ -43967,7 +43968,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BlATHs
 /*1*//*flPUSEcmODE*//*1*/
 
 /*3*/
-#define flPUSEcmODE_DOnOTrESTOREtINwHENdIE                     0xe00001e4
+#define flPUSEcmODE_DOnOTrESTOREtINwHENdIE               0xe00001e4
 #define flPUSEcmODE_DELETE                               0xe00002e4
 #define flPUSEcmODE_HIDDEN                               0xe00004e4
 /*3*/
@@ -51224,3 +51225,57 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+normally this should be commented out because it slows execution
+enable it to set bits in processGlobal2S::pbMemoryBits*
+*/
+/**/
+/*1*//*SHOWmEMgRAINS*//*1*/
+#define SHOWmEMgRAINS
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*CBcIRCLEdFLT*//*1*/
+
+#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END

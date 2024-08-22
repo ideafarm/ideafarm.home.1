@@ -1,57 +1,3 @@
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-normally this should be commented out because it slows execution
-enable it to set bits in processGlobal2S::pbMemoryBits*
-*/
-/**/
-/*1*//*SHOWmEMgRAINS*//*1*/
-#define SHOWmEMgRAINS
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
-values at and above 00ff are used by spouseC to encode literal byte values
-*/
-/**/
-/*1*//*CBcIRCLEdFLT*//*1*/
-
-#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
 
 //
@@ -5888,6 +5834,64 @@ all values that can be returned by GetThreadPriority() (Win32)
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e6.ifcIDtHREADpRIORITYbASEoSwINDOWS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e7.TfORsTRING BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+// THIS IS USED TO ENSURE THAT countT VALUES WITHIN FILE NAMES AND OTHER STRINGS ARE FORMATTED CONVENIENTLY IN A STANDARD WAY
+
+/*1*//*TfORsTRING(idP)*//*1*/
+
+#define TfORsTRING(idP) ( TF3(idP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e7.TfORsTRING END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e8.ifcIDzIPPER BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDzIPPER*//*1*/
+
+/*3*/
+#define ifcIDzIPPER_PKZIPC          0xdddd121b
+#define ifcIDzIPPER_INFOZIP         0xdddd121c
+/*3*/
+#define ifcIDzIPPER_min     0xdddd121b
+#define ifcIDzIPPER_max     0xdddd121c                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e8.ifcIDzIPPER END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -17911,6 +17915,8 @@ instructions for editing a class aC to use upDnC
     boolT isRegisteredF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.baseGrabC.isRegisteredF!||
     static countT idGrabLayerMaxIF( tinS& tinP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350ef004.basegrabc.idGrabLayerMaxIF!||
+
     inline countT idLineCtF(    voidT ) const { return idLineCt    ; }
     inline countT idiFileCtF(   voidT ) const { return idiFileCt   ; }
     inline countT idThreadCtF(  voidT ) const { return idThreadCt  ; }
@@ -18842,14 +18848,14 @@ examples
 
 /*1*/class _export handleC : public baseSoilXxxxC/*1*/
 {
- byteT pbzLinked[ sizeof( linkedC ) ] ;
- const osTextT* const postName ;
- const countT idType ; 
- countT oshInvalid ;
- countT osh ;
- countT osPidOwner ;
- countT cNote ;
- HANDLEaPPnOTEScOUNTcLASS c2AppNote ; //NOT USED BY ANY FUNCTIONALITY RELATED TO OPENING OR CLOSING THE HANDLE; USED TO STORE INFORMATION ABOUT THE BACKING OBJECT THAT IS NEEDED TO USE THAT OBJECT; EXAMPLE: NUMBER OF ROWS IN A BITMAP OBJECT
+ byteT                    pbzLinked[ sizeof( linkedC ) ] ;
+ const osTextT*           const postName                 ;
+ const countT             idType                         ;                                   
+ countT                   oshInvalid                     ;
+ countT                   osh                            ;
+ countT                   osPidOwner                     ;
+ countT                   cNote                          ;
+ HANDLEaPPnOTEScOUNTcLASS c2AppNote                      ; //NOT USED BY ANY FUNCTIONALITY RELATED TO OPENING OR CLOSING THE HANDLE; USED TO STORE INFORMATION ABOUT THE BACKING OBJECT THAT IS NEEDED TO USE THAT OBJECT; EXAMPLE: NUMBER OF ROWS IN A BITMAP OBJECT
 
  public :
 
@@ -27499,8 +27505,9 @@ it is illegal to refer to this symbol in the definition of an adam
  napkinC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const handleC* const phFileP = 0 , countT cbP = 0 , const countT idHowP = ifcOPENsHAREDmEMORYhOW_nCeO , const flagsT flagsP = flNAPKINc_null , countT cTriesP = - 1 , countT idMemorySpaceP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.napkinC.napkinC!||
  voidT formattingIsDoneF( tinS& tinP , const boolT bNoTellP = 0 ) ;
- voidT tellAboutFormattingBeingDoneF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.napkinC.formattingIsDoneF!||
+ voidT tellAboutFormattingBeingDoneF( tinS& tinP ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3603e008.napkinc.tellAboutFormattingBeingDoneF!||
  boolT dieF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.napkinC.dieF!||
  voidT flushF( tinS& tinP ) ;
@@ -28629,11 +28636,11 @@ it is illegal to modify any member other than pc Utility in the definition of an
  monitorS                monitor ;          // flagsThreadMode1 IS IN HERE
 
                          //CS:CODEsYNC: 003004f 003002a
- flagsT                  pFlagsThreadLevelMode[ 1 + OFFsLOTtINnESTmAX ] ;
- countT                  pLFstep[ ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
- countT                  pIdInNest[     1 + OFFsLOTtINnESTmAX ] ;
- countT                  pEIPInNest[     1 + OFFsLOTtINnESTmAX ] ;
- countT                  pIdProgressNest[ 1 + OFFsLOTtINnESTmAX ] ;
+ flagsT                  pFlagsThreadLevelMode[ 1 + OFFsLOTtINnESTmAX        ] ;
+ countT                  pLFstep[             ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
+ countT                  pIdInNest[             1 + OFFsLOTtINnESTmAX        ] ;
+ countT                  pEIPInNest[            1 + OFFsLOTtINnESTmAX        ] ;
+ countT                  pIdProgressNest[       1 + OFFsLOTtINnESTmAX        ] ;
 
                          //CODEsYNC: 2e40104 003002a
  countT                  cRain ;
@@ -29356,11 +29363,11 @@ features
 
 /*1*/struct diskWalkCopyInfoS/*1*/
 {
-    osTextT      postTo[ TUCK << 1 ] ;
-    countT       costToRoot ;
-    countT       costFromRoot ;
+    osTextT          postTo[ TUCK << 1 ] ;
+    countT           costToRoot ;
+    countT           costFromRoot ;
     diskWalkCopyCBFT pCbf ;
-    countT*      pcArgApp ;
+    countT*          pcArgApp ;
 }
 ;
 
@@ -29900,10 +29907,12 @@ private :
  voidT diskZipOldF( tinS& tinP , const osTextT* const postToP , const osTextT* const postFromP , const flagsT flagsP = flZIP_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34195.thirdC.diskZipOldF!||
  voidT diskZipOldF( const osTextT* const postArgsInfoZipP , tinS& tinP , const osTextT* const postArgsPkZipP = 0 ) ;
- voidT diskZipF( tinS& tinP , const osTextT* const postToP , const osTextT* const postWildListP , const osTextT* const postWildListIncludeP , const osTextT* const postWildListExcludeP , const osTextT* const postSpecsPKZipP , const osTextT* const postSpecsInfoZipP , const countT idZipperP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011b6.thirdc.diskzipf!||
- voidT diskUnzipOldF( tinS& tinP , const osTextT* const postFileP , const osTextT* const postZipFileP , const flagsT flagsP = flUNZIP_null ) ;
+ voidT diskZipF( tinS& tinP , const osTextT* const postToP , const osTextT* const postWildListP , const osTextT* const postWildListIncludeP , const osTextT* const postWildListExcludeP , const osTextT* const postSpecsPKZipP , const osTextT* const postSpecsInfoZipP , const countT idZipperP = 0 ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011b7.thirdc.diskzipf!||
  voidT diskUnzipF( tinS& tinP , const osTextT* const postFromP , const flagsT flagsP , const osTextT* const postWildListP , const osTextT* const postWildListIncludeP , const osTextT* const postWildListExcludeP , const osTextT* const postSpecsPKZipP , const osTextT* const postSpecsInfoZipP , const countT idZipperP = 0 ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011b8.thirdc.diskunzipf!||
+ voidT diskUnzipOldF( tinS& tinP , const osTextT* const postFileP , const osTextT* const postZipFileP , const flagsT flagsP = flUNZIP_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36199.thirdC.diskUnzipOldF!||
  voidT diskWalkGatherF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postToP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34196.thirdC.diskWalkGatherF!||
@@ -30783,6 +30792,7 @@ private :
     voidT formatDataBlobF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0013.sexc.formatDataBlobF!||
     countT* inspectAndSetSlotFingersF( tinS& tinP , byteT* pbSlotP , countT offSlotP , countT cbGrossP , boolT bNewP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0014.sexC.inspectAndSetSlotFingersF!||
 
     public :
 
@@ -30835,6 +30845,7 @@ private :
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.sexC : 1snip.150000f4.sexc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.slotsC : 1snip.150000f5.slotsc BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -30941,7 +30952,7 @@ it is illegal for any application code to construct or reference listingC (or de
 /*1*/class _export listingC/*1*/
 {
     protected :                     // cRef IS HERE SO THAT IT IS ALIGNED TO countT SO THAT IT CAN BE MANIPULATED WITH A NORMAL SMART POINTER (WHICH WILL TRASH MY OTHER MEMBERS ON OVERFLOW)
-    //countT          finger ;        //U:: REMOVE IN PRODUCTION (TO OPTIMIZE OBJECT SIZE TO FIT EFFICIENTLY WITHIN A poolC DROP) 20240811@1545: ADDED W/O ANALYSIS TO FIND A BUG
+    //countT          finger ;        //REMOVE IN PRODUCTION (TO OPTIMIZE OBJECT SIZE TO FIT EFFICIENTLY WITHIN A poolC DROP) 20240811@1545: ADDED W/O ANALYSIS TO FIND A BUG
     count01T        cRef ;       /*old ordering: 1*/   //U::POSSIBLY OBSOLETE COMMENT NOW THAT cRef IS A BYTE:  CS:CODEsYNC: 003018e 003015e ; A:ASSUME: sizeof( countT ) == 4 ; IF THIS IS NOT TRUE THEN SMART POINTER WILL NOT REFERENCE cRef AND WILL TRASH ME
     byteT           flagsi ;     /*old ordering: 3*/   // cRef OVERFLOW CAN BE DETECTED BY INSPECTING BOTH bFinger AND flagsi SINCE OVERFLOW WILL CHANGE bFinger AND WILL THEN EVENTUALLY SET AN ILLEGAL FLAG IN flagsi
     byteT           idTypeDatum ;/*old ordering: 2*/   // IF NOT NULL THEN AN INSTANCE DERIVED FROM datumC RESIDES IMMEDIATELY AFTER THE "ME" THAT IS DERIVED FROM listingC, WHERE "ME" IS EITHER A listingC OR A listC
@@ -31713,6 +31724,7 @@ listC must be the wo'th base class of any class derived from it
 /*
 i provide free form argument specification for functions that take a fieldEditParamInC& argument
  application code specifies the argument with an expression such as the following examples
+  20240817@2127: this documentation specifies '|', but the code appears to require '+' since only that operator is defined for the class
   listC::fieldIF( tinP , pOut , hRec , pczField1 , _1_pushC( vv ) | _1_modePushSinkC() , LF ) ;
   listC::fieldIF( tinP , pOut , hRec , pczField1 , _1_queryC() | _1_modeAllC() | _1_ok_in_C( "d" , "g" ) | _1_ok_in_C( 4 , 8 ) , LF ) ;
 */
@@ -33118,10 +33130,12 @@ examples
  voidT diskZipOldF( tinS& tinP , const strokeS* const psttToP , const strokeS* const psttFromP , const flagsT flagsP = flZIP_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341bc.etherC.diskZipOldF!||
  voidT diskZipOldF( const strokeS* const psttArgsInfoZipP , tinS& tinP , const strokeS* const psttArgsPkZipP = 0 ) ;
- voidT diskZipF( tinS& tinP , const strokeS* const psttToP , const strokeS* const pstt01WildListP , const strokeS* const pstt01WildListIncludeP , const strokeS* const pstt01WildListExcludeP , const strokeS* const psttSpecsPKZipP , const strokeS* const psttSpecsInfoZipP , const countT idZipperP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600220f.etherc.diskzipf!||
- voidT diskUnzipOldF( tinS& tinP , const strokeS* const psttToP , const strokeS* const psttFromFileP , const strokeS* const psttFromZipP , const flagsT flagsP = flUNZIP_null ) ;
+ voidT diskZipF( tinS& tinP , const strokeS* const psttToP , const strokeS* const pstt01WildListP , const strokeS* const pstt01WildListIncludeP , const strokeS* const pstt01WildListExcludeP , const strokeS* const psttSpecsPKZipP , const strokeS* const psttSpecsInfoZipP , const countT idZipperP = 0 ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600221a.etherC.diskZipF!||
  voidT diskUnzipF( tinS& tinP , const strokeS* const psttFromP , const flagsT flagsP , const strokeS* const pstt01WildListP , const strokeS* const pstt01WildListIncludeP , const strokeS* const pstt01WildListExcludeP , const strokeS* const psttSpecsPKZipP , const strokeS* const psttSpecsInfoZipP , const countT idZipperP = 0 ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600221b.etherC.diskUnzipF!||
+ voidT diskUnzipOldF( tinS& tinP , const strokeS* const psttToP , const strokeS* const psttFromFileP , const strokeS* const psttFromZipP , const flagsT flagsP = flUNZIP_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.361ca.etherC.diskUnzipOldF!||
  voidT diskWalkGatherF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const strokeS* const psttToP , const strokeS* const psttFromP , diskWalkCopyCBFT pCbfP = 0 , countT* pcArgP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341be.etherC.diskWalkGatherF!||
@@ -46072,9 +46086,9 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /*1*/class _export hoverC/*1*/
 {
-    etherC&  ether ;
-    strokeS* psttFolderWas ;
-    const flagsT   _flagsThreadMode2Save ;
+    etherC&      ether ;
+    strokeS*     psttFolderWas ;
+    const flagsT _flagsThreadMode2Save ;
 
     public :
 

@@ -2200,16 +2200,16 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"diskZipF_4@4@7\"\r\n"
+        "Author: \"diskZipOldF_4@4@7\"\r\n"
         "\r\n"
-        "Subject: Command word \"diskZipF_4@4@7\"\r\n"
+        "Subject: Command word \"diskZipOldF_4@4@7\"\r\n"
         "\r\n"
         "\r\n"
         "Instructions:  Read this file.  It contains simple example code.  To\r\n"
         "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
         "is also an executable SOIL (tm) program.\r\n"
         "\r\n"
-        "Each manifestation of \"diskZipF_4@4@7\" uses the current stack in this way:\r\n"
+        "Each manifestation of \"diskZipOldF_4@4@7\" uses the current stack in this way:\r\n"
         "\r\n"
         "    Pop  3:    flagsT           flagsP                          (defaults to flZIP_null)\r\n"
         "    Pop  2:    strokeS*         psttFromP\r\n"
@@ -2219,13 +2219,13 @@
         "the Depository:\r\n"
         "\r\n"
         "    . on space\r\n"
-        "    . \"Simple example code for \\\"diskZipF_4@4@7\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . \"Simple example code for \\\"diskZipOldF_4@4@7\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
         "    . off space\r\n"
 
     ;
 
     TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "diskZipF_4@4@7" ) ;
+    TN( tNameSoixlOld , "diskZipOldF_4@4@7" ) ;
    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
@@ -2243,16 +2243,16 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"diskZipF_4@o4@\"\r\n"
+        "Author: \"diskZipOldF_4@o4@\"\r\n"
         "\r\n"
-        "Subject: Command word \"diskZipF_4@o4@\"\r\n"
+        "Subject: Command word \"diskZipOldF_4@o4@\"\r\n"
         "\r\n"
         "\r\n"
         "Instructions:  Read this file.  It contains simple example code.  To\r\n"
         "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
         "is also an executable SOIL (tm) program.\r\n"
         "\r\n"
-        "Each manifestation of \"diskZipF_4@o4@\" uses the current stack in this way:\r\n"
+        "Each manifestation of \"diskZipOldF_4@o4@\" uses the current stack in this way:\r\n"
         "\r\n"
         "    Pop  2:    strokeS*         psttArgsPkZipP                  (defaults to 0)\r\n"
         "    Pop  1:    strokeS*         psttArgsInfoZipP\r\n"
@@ -2261,13 +2261,13 @@
         "the Depository:\r\n"
         "\r\n"
         "    . on space\r\n"
-        "    . \"Simple example code for \\\"diskZipF_4@o4@\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . \"Simple example code for \\\"diskZipOldF_4@o4@\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
         "    . off space\r\n"
 
     ;
 
     TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "diskZipF_4@o4@" ) ;
+    TN( tNameSoixlOld , "diskZipOldF_4@o4@" ) ;
    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
@@ -2285,16 +2285,111 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"diskUnzipF_4@4@4@7\"\r\n"
+        "Author: \"diskZipF_4@4@4@4@4@4@3\"\r\n"
         "\r\n"
-        "Subject: Command word \"diskUnzipF_4@4@4@7\"\r\n"
+        "Subject: Command word \"diskZipF_4@4@4@4@4@4@3\"\r\n"
         "\r\n"
         "\r\n"
         "Instructions:  Read this file.  It contains simple example code.  To\r\n"
         "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
         "is also an executable SOIL (tm) program.\r\n"
         "\r\n"
-        "Each manifestation of \"diskUnzipF_4@4@4@7\" uses the current stack in this way:\r\n"
+        "Each manifestation of \"diskZipF_4@4@4@4@4@4@3\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  7:    countT           idZipperP                       (defaults to 0)\r\n"
+        "    Pop  6:    strokeS*         psttSpecsInfoZipP\r\n"
+        "    Pop  5:    strokeS*         psttSpecsPKZipP\r\n"
+        "    Pop  4:    strokeS*         pstt01WildListExcludeP\r\n"
+        "    Pop  3:    strokeS*         pstt01WildListIncludeP\r\n"
+        "    Pop  2:    strokeS*         pstt01WildListP\r\n"
+        "    Pop  1:    strokeS*         psttToP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"diskZipF_4@4@4@4@4@4@3\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "diskZipF_4@4@4@4@4@4@3" ) ;
+   _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinP , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"diskUnzipF_4@74@4@4@4@4@3\"\r\n"
+        "\r\n"
+        "Subject: Command word \"diskUnzipF_4@74@4@4@4@4@3\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"diskUnzipF_4@74@4@4@4@4@3\" uses the current stack in this way:\r\n"
+        "\r\n"
+        "    Pop  8:    countT           idZipperP                       (defaults to 0)\r\n"
+        "    Pop  7:    strokeS*         psttSpecsInfoZipP\r\n"
+        "    Pop  6:    strokeS*         psttSpecsPKZipP\r\n"
+        "    Pop  5:    strokeS*         pstt01WildListExcludeP\r\n"
+        "    Pop  4:    strokeS*         pstt01WildListIncludeP\r\n"
+        "    Pop  3:    strokeS*         pstt01WildListP\r\n"
+        "    Pop  2:    flagsT           flagsP\r\n"
+        "    Pop  1:    strokeS*         psttFromP\r\n"
+        "\r\n"
+        "To manifest the following example code, drop this document into\r\n"
+        "the Depository:\r\n"
+        "\r\n"
+        "    . on space\r\n"
+        "    . \"Simple example code for \\\"diskUnzipF_4@74@4@4@4@4@3\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . off space\r\n"
+
+    ;
+
+    TN( tDoc , postDoc ) ;
+    TN( tNameSoixlOld , "diskUnzipF_4@74@4@4@4@4@3" ) ;
+   _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+   _psttLeverSoixlOldApi = tNameSoixlOld ;
+   if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinP , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+
+{
+    osTextT* postDoc =
+
+        ". soixlOld space . IdeaFarm . tm space . c space 1 . version space\r\n"
+        ". off space\r\n"
+        "\r\n"
+        "_______________________________________________________________________________\r\n"
+        "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
+        "\r\n"
+        "Class: etherC\r\n"
+        "Author: \"diskUnzipOldF_4@4@4@7\"\r\n"
+        "\r\n"
+        "Subject: Command word \"diskUnzipOldF_4@4@4@7\"\r\n"
+        "\r\n"
+        "\r\n"
+        "Instructions:  Read this file.  It contains simple example code.  To\r\n"
+        "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
+        "is also an executable SOIL (tm) program.\r\n"
+        "\r\n"
+        "Each manifestation of \"diskUnzipOldF_4@4@4@7\" uses the current stack in this way:\r\n"
         "\r\n"
         "    Pop  4:    flagsT           flagsP                          (defaults to flUNZIP_null)\r\n"
         "    Pop  3:    strokeS*         psttFromZipP\r\n"
@@ -2305,13 +2400,13 @@
         "the Depository:\r\n"
         "\r\n"
         "    . on space\r\n"
-        "    . \"Simple example code for \\\"diskUnzipF_4@4@4@7\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . \"Simple example code for \\\"diskUnzipOldF_4@4@4@7\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
         "    . off space\r\n"
 
     ;
 
     TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "diskUnzipF_4@4@4@7" ) ;
+    TN( tNameSoixlOld , "diskUnzipOldF_4@4@4@7" ) ;
    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
@@ -2675,19 +2770,20 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"fileOpenF_b34@3373773\"\r\n"
+        "Author: \"fileOpenF_b34@33737733\"\r\n"
         "\r\n"
-        "Subject: Command word \"fileOpenF_b34@3373773\"\r\n"
+        "Subject: Command word \"fileOpenF_b34@33737733\"\r\n"
         "\r\n"
         "\r\n"
         "Instructions:  Read this file.  It contains simple example code.  To\r\n"
         "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
         "is also an executable SOIL (tm) program.\r\n"
         "\r\n"
-        "Each manifestation of \"fileOpenF_b34@3373773\" uses the current stack in this way:\r\n"
+        "Each manifestation of \"fileOpenF_b34@33737733\" uses the current stack in this way:\r\n"
         "\r\n"
-        "    Pop  a:    countT           cTriesP                         (defaults to 0)\r\n"
-        "    Pop  9:    flagsT           flagsAttribute2P                (defaults to flFILEaTTR2_null, countT cbP = 0)\r\n"
+        "    Pop  b:    countT           cTriesP                         (defaults to 0)\r\n"
+        "    Pop  a:    countT           cbP                             (defaults to 0)\r\n"
+        "    Pop  9:    flagsT           flagsAttribute2P                (defaults to flFILEaTTR2_null)\r\n"
         "    Pop  8:    flagsT           flagsAttribute1P                (defaults to flFILEaTTR1_null)\r\n"
         "    Pop  7:    countT           idHowP                          (defaults to ifcOPENhOW_nFeO)\r\n"
         "    Pop  6:    flagsT           flagsDetailsP                   (defaults to flOPENdETAILS_LOCsEQ)\r\n"
@@ -2701,13 +2797,13 @@
         "the Depository:\r\n"
         "\r\n"
         "    . on space\r\n"
-        "    . \"Simple example code for \\\"fileOpenF_b34@3373773\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . \"Simple example code for \\\"fileOpenF_b34@33737733\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
         "    . off space\r\n"
 
     ;
 
     TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "fileOpenF_b34@3373773" ) ;
+    TN( tNameSoixlOld , "fileOpenF_b34@33737733" ) ;
    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }

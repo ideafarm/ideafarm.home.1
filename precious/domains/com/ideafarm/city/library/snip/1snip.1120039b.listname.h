@@ -36,4 +36,13 @@
 0xdddd7024 , "IDuPDATEbEGUN" ,
 0xdddd7025 , "IDuPDATEcOMPLETED" ,
 0xdddd7026 , "GLOBALrECORD" ,
-0xdddd7027 , "SEXc"
+0xdddd7027 , "SEXc" ,
+0xdddd7028 , "PROCESSoUTCOME" ,
+0xdddd7029 , "RETURNiNFO1" ,
+0xdddd702a , "RETURNiNFO2" ,
+0xdddd702b , "RETURNiNFO3" ,
+0xdddd702c , "RETURNiNFO4" ,
+0xdddd702d , "RETURNiNFO5" ,
+0xdddd702e , "RETURNiNFO6" ,
+0xdddd702f , "RETURNiNFO7" ,
+0xdddd7030 , "RETURNiNFO8"

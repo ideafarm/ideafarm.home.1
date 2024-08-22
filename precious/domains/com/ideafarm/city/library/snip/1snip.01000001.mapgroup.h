@@ -57,6 +57,7 @@
     ((countT)0x350e4) , "grabitc" ,
     ((countT)0x350e5) , "listingc" ,
     ((countT)0x350e6) , "listc" ,
+    ((countT)0x350ef) , "basegrabc" ,
     ((countT)0x350fa) , "bookc" ,
     ((countT)0x3510b) , "selectc" ,
     ((countT)0x3510d) , "linkedc" ,

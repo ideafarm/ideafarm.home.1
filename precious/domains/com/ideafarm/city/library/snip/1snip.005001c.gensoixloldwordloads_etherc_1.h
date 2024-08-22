@@ -399,27 +399,43 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskZipF_4@4@7" ) ;
+    TN( tNameSoixlOld , "diskZipOldF_4@4@7" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskZipF_4P4P7_GF ;
+    *_pSwSoixlOldApi = (countT)diskZipOldF_4P4P7_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskZipF_4@o4@" ) ;
+    TN( tNameSoixlOld , "diskZipOldF_4@o4@" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskZipF_4Po4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskZipOldF_4Po4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskUnzipF_4@4@4@7" ) ;
+    TN( tNameSoixlOld , "diskZipF_4@4@4@4@4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskUnzipF_4P4P4P7_GF ;
+    *_pSwSoixlOldApi = (countT)diskZipF_4P4P4P4P4P4P3_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
+    TN( tNameSoixlOld , "diskUnzipF_4@74@4@4@4@4@3" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)diskUnzipF_4P74P4P4P4P4P3_GF ;
+    _pSwSoixlOldApi->ungrabF( tinP ) ;
+}
+{
+    TN( tNameSoixlOld , "diskUnzipOldF_4@4@4@7" ) ;
+    _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)diskUnzipOldF_4P4P4P7_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
@@ -487,11 +503,11 @@
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileOpenF_b34@3373773" ) ;
+    TN( tNameSoixlOld , "fileOpenF_b34@33737733" ) ;
     _pSwSoixlOldApi->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileOpenF_b34P3373773_GF ;
+    *_pSwSoixlOldApi = (countT)fileOpenF_b34P33737733_GF ;
     _pSwSoixlOldApi->ungrabF( tinP ) ;
 }
 {
