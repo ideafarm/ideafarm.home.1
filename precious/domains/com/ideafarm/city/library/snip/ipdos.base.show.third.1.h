@@ -41303,6 +41303,7 @@ parameters
         classSPP##VSP( const classSPP##VSP& vspP , vspCBFT pCBFP = 0 , countT cArgP = 0 , flagsT flagsP = flVSP_null ) ;                            \
         classSPP##VSP( const classSPP##SP&  spP  , vspCBFT pCBFP = 0 , countT cArgP = 0 , flagsT flagsP = flVSP_null ) ;                            \
         voidT gaspDispensedF( voidT ) ;                                                                                                             \
+        operator const classP*( voidT ) const ;                                                                                                                 \
         operator classP*( voidT ) ;                                                                                                                 \
         classSPP##VSP& operator =( classP* pvP               ) ;                                                                                    \
         classSPP##VSP& operator =( const classSPP##VSP& vspP ) ;                                                                                    \
@@ -41562,7 +41563,6 @@ code that uses me is probably using the high bit for some application purpose
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200476.smartpointerfunctiondefs END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200477.verysmartpointerfunctiondefs BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -41576,71 +41576,81 @@ code that uses me is probably using the high bit for some application purpose
 
 /*1*//*VERYsMARTpOINTERfUNCTIONdEFS(classSPP,classP,offCRefP,bitsCRefP,cbTestP,offCRefWriteP,bitsCRefWriteP)*//*1*/
 
-#define VERYsMARTpOINTERfUNCTIONdEFS(classSPP,classP,offCRefP,bitsCRefP,cbTestP,offCRefWriteP,bitsCRefWriteP)                                       \
-                                                                                                                                                    \
-    SMARTpOINTERfUNCTIONdEFS( classSPP , classP , offCRefP , bitsCRefP , cbTestP )                                                                  \
-                                                                                                                                                    \
-    classSPP##VSP::~classSPP##VSP( voidT ) { gaspDispensedF() ; gaspF() ; }                                                                         \
-                                                                                                                                                    \
-    classSPP##VSP::classSPP##VSP( const classSPP##SP& spP , vspCBFT pCBFP , countT cArgP , flagsT flagsP ) :                                        \
-    classSPP##SP( (classP*)PyES( spP.pv  ) ) ,                                                                                                      \
-    pCBF( pCBFP ) ,                                                                                                                                 \
-    cArg( cArgP ) ,                                                                                                                                 \
-    flags( flagsP )                                                                                                                                 \
-    { cryF() ; }                                                                                                                                    \
-                                                                                                                                                    \
-    classSPP##VSP::classSPP##VSP( const classSPP##VSP& vspP , vspCBFT pCBFP , countT cArgP , flagsT flagsP ) :                                      \
-    classSPP##SP( (classP*)PyES( vspP.pv ) ) ,                                                                                                      \
-    pCBF( pCBFP ? pCBFP : vspP.pCBF ) ,                                                                                                             \
-    cArg(  pCBFP || cArgP ? cArgP : vspP.cArg ) ,                                                                                                   \
-    flags( F(flagsP) ? flagsP : vspP.flags & ~( F(flVSP_NONCONSTANTrEFdISPENSED) ) )                                                                \
-    { cryF() ; }                                                                                                                                    \
-                                                                                                                                                    \
-    classSPP##VSP::classSPP##VSP( classP* pvP , vspCBFT pCBFP , countT cArgP , flagsT flagsP ) :                                                    \
-    classSPP##SP( (classP*)PyES( pvP ) ) ,                                                                                                          \
-    pCBF( pCBFP ) ,                                                                                                                                 \
-    cArg( cArgP ) ,                                                                                                                                 \
-    flags( flagsP )                                                                                                                                 \
-    { cryF() ; }                                                                                                                                    \
-                                                                                                                                                    \
+#define VERYsMARTpOINTERfUNCTIONdEFS(classSPP,classP,offCRefP,bitsCRefP,cbTestP,offCRefWriteP,bitsCRefWriteP)                                                       \
+                                                                                                                                                                    \
+    SMARTpOINTERfUNCTIONdEFS( classSPP , classP , offCRefP , bitsCRefP , cbTestP )                                                                                  \
+                                                                                                                                                                    \
+    classSPP##VSP::~classSPP##VSP( voidT ) { gaspDispensedF() ; gaspF() ; }                                                                                         \
+                                                                                                                                                                    \
+    classSPP##VSP::classSPP##VSP( const classSPP##SP& spP , vspCBFT pCBFP , countT cArgP , flagsT flagsP ) :                                                        \
+    classSPP##SP( (classP*)PyES( spP.pv  ) ) ,                                                                                                                      \
+    pCBF( pCBFP ) ,                                                                                                                                                 \
+    cArg( cArgP ) ,                                                                                                                                                 \
+    flags( flagsP )                                                                                                                                                 \
+    { cryF() ; }                                                                                                                                                    \
+                                                                                                                                                                    \
+    classSPP##VSP::classSPP##VSP( const classSPP##VSP& vspP , vspCBFT pCBFP , countT cArgP , flagsT flagsP ) :                                                      \
+    classSPP##SP( (classP*)PyES( vspP.pv ) ) ,                                                                                                                      \
+    pCBF( pCBFP ? pCBFP : vspP.pCBF ) ,                                                                                                                             \
+    cArg(  pCBFP || cArgP ? cArgP : vspP.cArg ) ,                                                                                                                   \
+    flags( F(flagsP) ? flagsP : vspP.flags & ~( F(flVSP_NONCONSTANTrEFdISPENSED) ) )                                                                                \
+    { cryF() ; }                                                                                                                                                    \
+                                                                                                                                                                    \
+    classSPP##VSP::classSPP##VSP( classP* pvP , vspCBFT pCBFP , countT cArgP , flagsT flagsP ) :                                                                    \
+    classSPP##SP( (classP*)PyES( pvP ) ) ,                                                                                                                          \
+    pCBF( pCBFP ) ,                                                                                                                                                 \
+    cArg( cArgP ) ,                                                                                                                                                 \
+    flags( flagsP )                                                                                                                                                 \
+    { cryF() ; }                                                                                                                                                    \
+                                                                                                                                                                    \
     classSPP##VSP& classSPP##VSP::operator =( classP* pvP               ) { if( F(flags) & flVSP_LOCKED && pvP                 ) { BLAMMO ; } gaspDispensedF() ; gaspF() ; pv = (classP*)PyES( pvP     ) ;                                       cryF() ; return *this ; } \
     classSPP##VSP& classSPP##VSP::operator =( const classSPP##VSP& vspP ) { if( F(flags) & flVSP_LOCKED && (const classP*)vspP ) { BLAMMO ; } gaspDispensedF() ; gaspF() ; pv = (classP*)PyES( vspP.pv ) ; pCBF = vspP.pCBF ; cArg = vspP.cArg ; cryF() ; return *this ; } \
     classSPP##VSP& classSPP##VSP::operator =( const classSPP##SP&   spP ) { if( F(flags) & flVSP_LOCKED && (const classP*)spP  ) { BLAMMO ; } gaspDispensedF() ; gaspF() ; pv = (classP*)PyES( spP.pv  ) ;                                       cryF() ; return *this ; } \
-                                                                                                                                                    \
-    NEWdELcLASSb( classSPP##VSP )                                                                                                                   \
-                                                                                                                                                    \
-    voidT classSPP##VSP::gaspDispensedF( voidT )                                                                                                    \
-    {                                                                                                                                               \
-        if( P(pv) )                                                                                                                                 \
-        {                                                                                                                                           \
-            /*if( !thirdC::bCanAccessMemoryIF( (byteT*)P(pv) , cbTestP ) ) { BLAMMO ; }*/                                                           \
-            if( F(flags) & flVSP_NONCONSTANTrEFdISPENSED )                                                                                          \
-            {                                                                                                                                       \
-                flags &= ~F(flVSP_NONCONSTANTrEFdISPENSED) ;                                                                                        \
-                count##bitsCRefWriteP##T& cRefWrite = *(count##bitsCRefWriteP##T*)&( (byteT*)&((count##bitsCRefP##T*)P(pv))[ offCRefP ] )[ offCRefWriteP ] ; \
-                count##bitsCRefWriteP##T  cRefWriteOld = decv##bitsCRefWriteP##AM( cRefWrite ) ;                                                    \
-                if( pCBF ) (*pCBF)( thirdC::third_tinS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_WrEFdT , cRefWriteOld , cRefF() , cArg ) ;           \
-            }                                                                                                                                       \
-        }                                                                                                                                           \
-    }                                                                                                                                               \
-                                                                                                                                                    \
-    classSPP##VSP::operator classP*( voidT )                                                                                                        \
-    {                                                                                                                                               \
-        if( P(pv) )                                                                                                                                 \
-        {                                                                                                                                           \
-            TINSL                                                                                                                                   \
-            if( !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWwRITEABLEpOINTERgET ) ) { BLAMMO ; }                                               \
-            /*if( !thirdC::bCanAccessMemoryIF( (byteT*)P(pv) , cbTestP ) ) { BLAMMO ; }*/                                                           \
-            if( !( F(flags) & flVSP_NONCONSTANTrEFdISPENSED ) )                                                                                     \
-            {                                                                                                                                       \
-                flags |= flVSP_NONCONSTANTrEFdISPENSED ;                                                                                            \
-                count##bitsCRefWriteP##T& cRefWrite = *(count##bitsCRefWriteP##T*)&( (byteT*)&((count##bitsCRefP##T*)P(pv))[ offCRefP ] )[ offCRefWriteP ] ; \
-                count##bitsCRefWriteP##T cRefWriteOld = incv##bitsCRefWriteP##AM( cRefWrite ) ;                                                     \
-                if( pCBF ) (*pCBF)( tinP , (byteT*)this , ifcIDeVENTvsp_WrEFcT , cRefWriteOld , cRefF() , cArg ) ;                                  \
-            }                                                                                                                                       \
-        }                                                                                                                                           \
-        return (classP*)P(pv) ;                                                                                                                     \
-    }                                                                                                                                               \
+                                                                                                                                                                    \
+    NEWdELcLASSb( classSPP##VSP )                                                                                                                                   \
+                                                                                                                                                                    \
+    voidT classSPP##VSP::gaspDispensedF( voidT )                                                                                                                    \
+    {                                                                                                                                                               \
+        if( P(pv) )                                                                                                                                                 \
+        {                                                                                                                                                           \
+            /*if( !thirdC::bCanAccessMemoryIF( (byteT*)P(pv) , cbTestP ) ) { BLAMMO ; }*/                                                                           \
+            if( F(flags) & flVSP_NONCONSTANTrEFdISPENSED )                                                                                                          \
+            {                                                                                                                                                       \
+                flags &= ~F(flVSP_NONCONSTANTrEFdISPENSED) ;                                                                                                        \
+                count##bitsCRefWriteP##T& cRefWrite = *(count##bitsCRefWriteP##T*)&( (byteT*)&((count##bitsCRefP##T*)P(pv))[ offCRefP ] )[ offCRefWriteP ] ;        \
+                count##bitsCRefWriteP##T  cRefWriteOld = decv##bitsCRefWriteP##AM( cRefWrite ) ;                                                                    \
+                if( pCBF ) (*pCBF)( thirdC::third_tinS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_WrEFdT , cRefWriteOld , cRefF() , cArg ) ;                           \
+            }                                                                                                                                                       \
+        }                                                                                                                                                           \
+    }                                                                                                                                                               \
+                                                                                                                                                                    \
+    classSPP##VSP::operator const classP*( voidT ) const    /*20240822@1620: ADDED THIS OPERATOR W/O ANALYSIS*/                                                     \
+    {                                                                                                                                                               \
+        /*if( P(pv) )*/                                                                                                                                             \
+        {                                                                                                                                                           \
+            /*TINSL*/                                                                                                                                               \
+            /*if( !thirdC::bCanAccessMemoryIF( (byteT*)P(pv) , cbTestP ) ) { BLAMMO ; }*/                                                                           \
+        }                                                                                                                                                           \
+        return (const classP*)P(pv) ;                                                                                                                               \
+    }                                                                                                                                                               \
+                                                                                                                                                                    \
+    classSPP##VSP::operator classP*( voidT )                                                                                                                        \
+    {                                                                                                                                                               \
+        if( P(pv) )                                                                                                                                                 \
+        {                                                                                                                                                           \
+            TINSL                                                                                                                                                   \
+            if( !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWwRITEABLEpOINTERgET ) ) { BLAMMO ; }                                                               \
+            /*if( !thirdC::bCanAccessMemoryIF( (byteT*)P(pv) , cbTestP ) ) { BLAMMO ; }*/                                                                           \
+            if( !( F(flags) & flVSP_NONCONSTANTrEFdISPENSED ) )                                                                                                     \
+            {                                                                                                                                                       \
+                flags |= flVSP_NONCONSTANTrEFdISPENSED ;                                                                                                            \
+                count##bitsCRefWriteP##T& cRefWrite = *(count##bitsCRefWriteP##T*)&( (byteT*)&((count##bitsCRefP##T*)P(pv))[ offCRefP ] )[ offCRefWriteP ] ;        \
+                count##bitsCRefWriteP##T cRefWriteOld = incv##bitsCRefWriteP##AM( cRefWrite ) ;                                                                     \
+                if( pCBF ) (*pCBF)( tinP , (byteT*)this , ifcIDeVENTvsp_WrEFcT , cRefWriteOld , cRefF() , cArg ) ;                                                  \
+            }                                                                                                                                                       \
+        }                                                                                                                                                           \
+        return (classP*)P(pv) ;                                                                                                                                     \
+    }
 
 
 //
@@ -51252,30 +51262,3 @@ enable it to set bits in processGlobal2S::pbMemoryBits*
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
-values at and above 00ff are used by spouseC to encode literal byte values
-*/
-/**/
-/*1*//*CBcIRCLEdFLT*//*1*/
-
-#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END

@@ -1,3 +1,30 @@
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*CBcIRCLEdFLT*//*1*/
+
+#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
 
 //
