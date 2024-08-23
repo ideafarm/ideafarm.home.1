@@ -34551,18 +34551,26 @@ coding standard
 #define LISTnAME_IDuPDATEcOMPLETED                                    0xdddd7025
 #define LISTnAME_GLOBALrECORD                                         0xdddd7026
 #define LISTnAME_SEXc                                                 0xdddd7027
-#define LISTnAME_PROCESSoUTCOME                                       0xdddd7028
-#define LISTnAME_RETURNiNFO1                                          0xdddd7029
-#define LISTnAME_RETURNiNFO2                                          0xdddd702a
-#define LISTnAME_RETURNiNFO3                                          0xdddd702b
-#define LISTnAME_RETURNiNFO4                                          0xdddd702c
-#define LISTnAME_RETURNiNFO5                                          0xdddd702d
-#define LISTnAME_RETURNiNFO6                                          0xdddd702e
-#define LISTnAME_RETURNiNFO7                                          0xdddd702f
-#define LISTnAME_RETURNiNFO8                                          0xdddd7030
+#define LISTnAME_PROCESSrEPORT                                        0xdddd7028
+#define LISTnAME_PROCESSrEPORTfIELD10                                 0xdddd7029
+#define LISTnAME_PROCESSrEPORTfIELD20                                 0xdddd702a
+#define LISTnAME_PROCESSrEPORTfIELD30                                 0xdddd702b
+#define LISTnAME_PROCESSrEPORTfIELD40                                 0xdddd702c
+#define LISTnAME_PROCESSrEPORTfIELD50                                 0xdddd702d
+#define LISTnAME_PROCESSrEPORTfIELD60                                 0xdddd702e
+#define LISTnAME_PROCESSrEPORTfIELD70                                 0xdddd702f
+#define LISTnAME_PROCESSrEPORTfIELD80                                 0xdddd7030
+#define LISTnAME_PROCESSrEPORTfIELD90                                 0xdddd7031
+#define LISTnAME_PROCESSrEPORTfIELDa0                                 0xdddd7032
+#define LISTnAME_PROCESSrEPORTfIELDb0                                 0xdddd7033
+#define LISTnAME_PROCESSrEPORTfIELDc0                                 0xdddd7034
+#define LISTnAME_PROCESSrEPORTfIELDd0                                 0xdddd7035
+#define LISTnAME_PROCESSrEPORTfIELDe0                                 0xdddd7036
+#define LISTnAME_PROCESSrEPORTfIELDf0                                 0xdddd7037
+#define LISTnAME_PROCESSrEPORTfIELD01                                 0xdddd7038
 /*3*/
 #define LISTnAME_min     0xdddd7001
-#define LISTnAME_max     0xdddd7030
+#define LISTnAME_max     0xdddd7038
 
 
 //
@@ -51235,30 +51243,3 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-normally this should be commented out because it slows execution
-enable it to set bits in processGlobal2S::pbMemoryBits*
-*/
-/**/
-/*1*//*SHOWmEMgRAINS*//*1*/
-#define SHOWmEMgRAINS
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
