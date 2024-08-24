@@ -10,97 +10,115 @@
 }
     return flagsRC ;
 
-    UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
-    }
-        DELzOMBIE( ppHand[  !offWoth ] ) ;
-        _IO_
-    {
-    }
-        ppHand[ offWoth ]->resetF() ;
-        _IO_
-    {
-
-    }
-        //CONoUTrAW( "\r\n" ) ;
-        //CONoUTrAW( tinP.pPoolUse->postNameF( tinP ) ) ;
-        //CONoUTrAW5( "opened list [pPoolUse,pList]: " , tinP.pPoolUse , " " , pList , " " ) ; //U::
-
-        hListP.osF( ifcIDtYPEhANDLE_LISTING , (countT)pList ) ;
-        if( !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
-    {
-    if( pList )
-
-    // pList NOW POINTS TO THE SPECIFIED listC OBJECT; offWoth POINTS TO THIS FINAL *pList, WHICH IS OPEN (GRABBED)
+    THREADmODE2rESTORE
     }
         }
-            break ;
-            if( !( F(flagsP) & flLISToPEN_IFnOTeXISTS ) ) flagsRC &= ~( F(flLISToPENrETURNcODE_LISTeXISTED) ) ;
+            }
+                ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
+                if( tinP.pEther ) tinP.pEther->traceF( tinP , T("listC::openIF / napping before retrying") ) ;
+            {
+            else if( !hListP )
+                 if( !bRetry ) break ;
+
+            UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
+            }
+                DELzOMBIE( ppHand[  !offWoth ] ) ;
+                _IO_
+            {
+            }
+                ppHand[ offWoth ]->resetF() ;
+                _IO_
+            {
+
+            }
+                //CONoUTrAW( "\r\n" ) ;
+                //CONoUTrAW( tinP.pPoolUse->postNameF( tinP ) ) ;
+                //CONoUTrAW5( "opened list [pPoolUse,pList]: " , tinP.pPoolUse , " " , pList , " " ) ; //U::
+
+                hListP.osF( ifcIDtYPEhANDLE_LISTING , (countT)pList ) ;
+                if( !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+            {
+            if( pList )
+
+            // pList NOW POINTS TO THE SPECIFIED listC OBJECT; offWoth POINTS TO THIS FINAL *pList, WHICH IS OPEN (GRABBED)
+            }
+                }
+                    break ;
+                    if( !( F(flagsP) & flLISToPEN_IFnOTeXISTS ) ) flagsRC &= ~( F(flLISToPENrETURNcODE_LISTeXISTED) ) ;
+                {
+                if( !pList )
+
+                offWoth = !offWoth ;
+                offn ++ ;
+
+                __( !pList && !( F(flagsP) & ( flLISToPEN_IFeXISTS | flLISToPEN_IFnOTeXISTS ) ) ) ;
+                if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+
+                POPtINaRGS
+                pList = (listC*)tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
+                if( F(flagsWalk) & flLISTwALKrETURNcODE_NEWlISTING ) flagsRC &= ~( F(flLISToPENrETURNcODE_LISTeXISTED) ) ;
+                flagsT flagsWalk = pList->walkF( tinP , idGrabLayerP ) ;
+                tinP.ta.pushed.u.listWalk.util.pcP[ 2 ]               = 0 ;
+                tinP.ta.pushed.u.listWalk.util.pcP[ 1 ]               = flagsP & flagsMask ;
+                tinP.ta.pushed.u.listWalk.util.pcP[ 0 ]               = pczKidP[ offn ] ;
+                tinP.ta.pushed.u.listWalk.cbf.ppPreallocatedListsP    = ppPreallocatedListsP ;
+                tinP.ta.pushed.u.listWalk.walk.pHandleHiP             = ppHand[ 1 ] ;
+                tinP.ta.pushed.u.listWalk.walk.pHandleLoP             = ppHand[ 0 ] ;
+                tinP.ta.pushed.u.listWalk.walk.pOffWothP              = &offWoth ;
+                tinP.ta.pushed.u.listWalk.walk.pHandleRootP           = &hListDadP ;
+
+                ;
+                    : flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK
+                    ? flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK | flLISTwALK_RETAINrOOT
+                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = !offn && F(flagsP) & flLISToPEN_RETAINrOOT
+
+                tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkAttachListIfCBF ;
+                PUSHtINaRGS
+
+                if( !pczKidP[ offn + 1 ] ) flagsMask = - 1 ;
+            {
+            while( pczKidP[ offn ] )
+            flagsT flagsMask = ~( F(flLISToPEN_IFnOTeXISTS) ) ;
+            ZE( countT , offn ) ;
+            flagsRC |= flLISToPENrETURNcODE_LISTeXISTED ;
+
+            ZE( countT , offWoth ) ;
+            ppHand[ 1 ] = new( 0 , tinP , pbHi , SIZEOF_handleC ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            ppHand[ 0 ] = new( 0 , tinP , pbLo , SIZEOF_handleC ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            handleC* ppHand[ 2 ] ;
+
+            byteT* const pbHi = pbBoth + SIZEOF_handleC ;
+            byteT* const pbLo = pbBoth ;
+            byteT pbBoth[ 2 * SIZEOF_handleC ] ;
+
+            if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+            __Z( pList ) ;
+            listC* pList = (listC*)hListDadP.osF( ifcIDtYPEhANDLE_LISTING ) ;
+
+            listC* pListRoot = (listC*)(byteT*)aptRoot ;
+            aptC& aptRoot = PUSE.aptListRootF() ;
+
+            //}
+            //    }
+            //        off ++ ;
+            //
+            //        }
+            //            BLAMMO ;
+            //        {
+            //        if( pczKidP[ off ] == LISTnAME_STRETCHbEGINcOUNT && ( !off || pczKidP[ off - 1 ] == LISTnAME_ROOTaPPLICATION ) )
+            //    {
+            //    while( pczKidP[ off ] )
+            //    ZE( countT , off ) ;
+            //{
+            //U::TO FIND A BUG
+
+            if( bRetry ) PUSE.refresh_ppSlots_F( tinP ) ;
         {
-        if( !pList )
-
-        offWoth = !offWoth ;
-        offn ++ ;
-
-        __( !pList && !( F(flagsP) & ( flLISToPEN_IFeXISTS | flLISToPEN_IFnOTeXISTS ) ) ) ;
-        if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
-
-        POPtINaRGS
-        pList = (listC*)tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
-        if( F(flagsWalk) & flLISTwALKrETURNcODE_NEWlISTING ) flagsRC &= ~( F(flLISToPENrETURNcODE_LISTeXISTED) ) ;
-        flagsT flagsWalk = pList->walkF( tinP , idGrabLayerP ) ;
-        tinP.ta.pushed.u.listWalk.util.pcP[ 2 ]               = 0 ;
-        tinP.ta.pushed.u.listWalk.util.pcP[ 1 ]               = flagsP & flagsMask ;
-        tinP.ta.pushed.u.listWalk.util.pcP[ 0 ]               = pczKidP[ offn ] ;
-        tinP.ta.pushed.u.listWalk.cbf.ppPreallocatedListsP    = ppPreallocatedListsP ;
-        tinP.ta.pushed.u.listWalk.walk.pHandleHiP             = ppHand[ 1 ] ;
-        tinP.ta.pushed.u.listWalk.walk.pHandleLoP             = ppHand[ 0 ] ;
-        tinP.ta.pushed.u.listWalk.walk.pOffWothP              = &offWoth ;
-        tinP.ta.pushed.u.listWalk.walk.pHandleRootP           = &hListDadP ;
-
-        ;
-            : flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK
-            ? flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK | flLISTwALK_RETAINrOOT
-        tinP.ta.pushed.u.listWalk.walk.flagsWalkP = !offn && F(flagsP) & flLISToPEN_RETAINrOOT
-
-        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkAttachListIfCBF ;
-        PUSHtINaRGS
-
-        if( !pczKidP[ offn + 1 ] ) flagsMask = - 1 ;
+        while( !hListP )
+        boolT bRetry = F(flagsP) & flLISToPEN_REFRESHaNDrETRYfOREVER ;
+        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     {
-    while( pczKidP[ offn ] )
-    flagsT flagsMask = ~( F(flLISToPEN_IFnOTeXISTS) ) ;
-    ZE( countT , offn ) ;
-    flagsRC |= flLISToPENrETURNcODE_LISTeXISTED ;
-
-    ZE( countT , offWoth ) ;
-    ppHand[ 1 ] = new( 0 , tinP , pbHi , SIZEOF_handleC ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-    ppHand[ 0 ] = new( 0 , tinP , pbLo , SIZEOF_handleC ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-    handleC* ppHand[ 2 ] ;
-
-    byteT* const pbHi = pbBoth + SIZEOF_handleC ;
-    byteT* const pbLo = pbBoth ;
-    byteT pbBoth[ 2 * SIZEOF_handleC ] ;
-
-    if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
-    __Z( pList ) ;
-    listC* pList = (listC*)hListDadP.osF( ifcIDtYPEhANDLE_LISTING ) ;
-
-    listC* pListRoot = (listC*)(byteT*)aptRoot ;
-    aptC& aptRoot = PUSE.aptListRootF() ;
-
-    //}
-    //    }
-    //        off ++ ;
-    //
-    //        }
-    //            BLAMMO ;
-    //        {
-    //        if( pczKidP[ off ] == LISTnAME_STRETCHbEGINcOUNT && ( !off || pczKidP[ off - 1 ] == LISTnAME_ROOTaPPLICATION ) )
-    //    {
-    //    while( pczKidP[ off ] )
-    //    ZE( countT , off ) ;
-    //{
-    //U::TO FIND A BUG
+    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
     LNV( pczKidP )
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )

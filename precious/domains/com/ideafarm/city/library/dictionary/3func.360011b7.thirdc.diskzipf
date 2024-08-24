@@ -116,34 +116,35 @@
                         }
                             }
                                 }
-                                    tinP.pEtScratch->traceF( tinP , T("[idDeathTypePKZip]:    ")+TF2(*pc_idDeathTypePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    tinP.pEtScratch->traceF( tinP , T("[idDeathTypePKZip]:    ")+TF2(idDeathTypePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                    idDeathTypePKZip = *pc_idDeathTypePKZip ;
-                                    const countT*       pc_idDeathTypePKZip = vsp_idDeathTypePKZip ;
-                                    countVSP           vsp_idDeathTypePKZip = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD40 ) ) ;
+                                    if( pc_idDeathTypePKZip )            idDeathTypePKZip = *pc_idDeathTypePKZip ;
+                                    const countT*                     pc_idDeathTypePKZip = vsp_idDeathTypePKZip ;
+                                    countVSP                         vsp_idDeathTypePKZip = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD40 ) , flagsUse ) ;
                                 {
                             
                                 }
-                                    tinP.pEtScratch->traceF( tinP , T("[valuePKZip]:    ")+TF2(*pc_valuePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    tinP.pEtScratch->traceF( tinP , T("[valuePKZip]:    ")+TF2(valuePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                    valuePKZip =             *pc_valuePKZip ;
-                                    const countT*             pc_valuePKZip = vsp_valuePKZip ;
-                                    countVSP                 vsp_valuePKZip = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) ) ;
+                                    if( pc_valuePKZip )                  valuePKZip       = *pc_valuePKZip ;
+                                    const countT*                     pc_valuePKZip       = vsp_valuePKZip ;
+                                    countVSP                         vsp_valuePKZip       = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) , flagsUse ) ;
                                 {
                             
                                 }
-                                    tinP.pEtScratch->traceF( tinP , T("[idPoop]:    ")+TF2(*pc_idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    tinP.pEtScratch->traceF( tinP , T("[idPoop]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                    const countT*                 pc_idPoop = vsp_idPoop ;
-                                    countVSP                     vsp_idPoop = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;
+                                    countT idPoop = !pc_idPoop ? 0 : *pc_idPoop ;
+                                    const countT*                     pc_idPoop           = vsp_idPoop ;
+                                    countVSP                         vsp_idPoop           = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) , flagsUse ) ;
                                 {
                             
                                 }
-                                    tinP.pEtScratch->traceF( tinP , T("[bHiredAOK]:    ")+TF2(*pc_bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    tinP.pEtScratch->traceF( tinP , T("[bPKZipHiredAOK]:    ")+TF2(bPKZipHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                    bPKZipHiredAOK =       !!*pc_bHiredAOK ;
-                                    const countT*             pc_bHiredAOK = vsp_bHiredAOK ;
-                                    countVSP                 vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
+                                    if( pc_bHiredAOK )               bPKZipHiredAOK       = !!*pc_bHiredAOK ;
+                                    const countT*                      pc_bHiredAOK       =   vsp_bHiredAOK ;
+                                    countVSP                          vsp_bHiredAOK       = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) , flagsUse ) ;
                                 {
 
                                 tinP.pEtScratch->traceF( tinP , T("record exists") ) ;
@@ -151,11 +152,11 @@
                             else
                             if( (const poopC&)myRecord ) tinP.pEtScratch->traceF( tinP , T("!exception / record does not exist [pcName]:    ")+T(pcNameRecord) ) ;
                         
-                            recordC myRecord( tinP , pcNameRecord , flLISToPEN_IFeXISTS ) ;
-                        {
-                        countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
+                            recordC myRecord( tinP , pcNameRecord , flagsUse ) ;
 
-                        PUSE.refresh_ppSlots_F( tinP ) ;
+                        {
+                        const flagsT flagsUse = flLISToPEN_IFeXISTS | flLISToPEN_REFRESHaNDrETRYfOREVER ;
+                        countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
                         puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
                         _IO_
                     {
@@ -248,7 +249,7 @@
         else
         if( !bSandbox ) bHireNoMonitor = 1 ;                                        // DON'T BOTHER TRYING THIS IF NOT SANDBOX SINCE DIRECT HIRING OF pkzipc.exe WILL FAIL AS "NOT SUPPORTED" BECAUSE pkzipc.exe IS 04 BIT AND I AM BEING MONITORED (BY GLASS2) ; AN 04 BIT PROCESS CANNOT BE LAUNCHED BY AN 02 BIT PROCESS WHEN THE LATTER AND ITS KIDS ARE BEING MONITORED (USING THE MS WINDOWS DEBUGGING SUBSYSTEM)
 
-        //bSandbox = 0 ;                                                              // COMMENT OUT THIS LINE IN PRODUCTION OR IF DO NOT WANT TO TEST INDIRECT HIRING OF pkzipc.exe
+        bSandbox = 0 ;                                                              // COMMENT OUT THIS LINE IN PRODUCTION OR IF DO NOT WANT TO TEST INDIRECT HIRING OF pkzipc.exe
         boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;            // bSandbox IS USED IN PRODUCTION TO SKIP A FUTILE ATTEMPT TO HIRE pkzipc.exe DIRECTLY (WHICH WILL FAIL)
     {
     if( !idZipperP || idZipperP == ifcIDzIPPER_PKZIPC )

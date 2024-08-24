@@ -38075,6 +38075,7 @@ i avoid recursion by zeing out the pNextP member before deleting each instance i
 #define flLISToPEN_IFeXISTS                                     0xe00001c0
 #define flLISToPEN_IFnOTeXISTS                                  0xe00002c0
 #define flLISToPEN_RETAINrOOT                                   0xe00004c0
+#define flLISToPEN_REFRESHaNDrETRYfOREVER                       0xe00008c0
 /*3*/
 #define flLISToPEN_null    0xe00000c0
 
