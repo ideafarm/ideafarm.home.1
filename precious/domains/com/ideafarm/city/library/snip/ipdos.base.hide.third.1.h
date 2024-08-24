@@ -1,4 +1,5 @@
 
+#define flSIGNc_GRAB                        0xe00002ff
 #define flSIGNc_FAILiFnAPKINnOTeXIST        0xe00001ff
 #define flSIGNc_null                        0xe00000ff
 
@@ -14223,6 +14224,7 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 #define flGRABnOTES_GRABBEDaSsIGNc                  0xe002003c
 #define flGRABnOTES_UNGRABBEDaSbaTONc               0xe004003c
 #define flGRABnOTES_UNGRABBEDaSsIGNc                0xe008003c
+#define flGRABnOTES_FORMATTINGiSrEALLYsTILLpENDING  0xe010003c
 /*3*/
 #define flGRABnOTES_null    0xe000003c
 

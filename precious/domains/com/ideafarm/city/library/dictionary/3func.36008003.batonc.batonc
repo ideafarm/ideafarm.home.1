@@ -58,29 +58,35 @@
         {
         else
         }
-            if( F(flagsGrab) & flGRABc_GRABBED && !bIsSign ) pGrabA->grabF( tinP , idLineCtP , idiFileCtP , pbBitsCtP ) ; // ASSUME: THE CALLING CODE WILL UNGRAB ME
+            if( bResetPendingFlag ) pGrabA->grabNotes.flags &= ~( F(flGRABnOTES_FORMATTINGiSrEALLYsTILLpENDING) ) ;
+
+            if( F(flagsGrab) & flGRABc_GRABBED /*&& !bIsSign*/ ) pGrabA->grabF( tinP , idLineCtP , idiFileCtP , pbBitsCtP ) ; // ASSUME: THE CALLING CODE WILL UNGRAB ME ; 20240823@2100: DO IT WITHOUT REGARD TO bIsSign
 
             }
-                pGrabA->grabNotes.flags   |= bIsSign ? flGRABnOTES_ATTACHEDaSsIGNc : flGRABnOTES_ATTACHEDaSbATONc ;
+                }
+                    ++ s ; thirdC::dosSleepRawIF( tinP , TOCK >> 3 ) ;
+                {
+                while( F(pGrabA->grabNotes.flags) & flGRABnOTES_FORMATTINGiSrEALLYsTILLpENDING )    //DON'T CONTINUE UNTIL THE CREATOR HAS REALLY FINISHED FORMATTING, MEANING THAT IT HAS CALLED grabF ; CALLING grabF CANNNOT BE DONE WHILE THE MEMORY SPACE IS GRABBED BECAUSE THAT WOULD BE A NONMONOTONIC GRAB
+                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+                if( !( F(pNapkin->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYoPEN ) ) pGrabA->grabNotes.cAttach ++ ;
+                                                                                                pGrabA->grabNotes.flags   |= bIsSign ? flGRABnOTES_ATTACHEDaSsIGNc : flGRABnOTES_ATTACHEDaSbATONc ;
             {
             else
             }
-                pGrabA->grabNotes.flags   |= bIsSign ? flGRABnOTES_ATTACHEDaSsIGNc : flGRABnOTES_ATTACHEDaSbATONc ;
-                pGrabA->grabNotes.cAttach ++ ;
-            {
-            else if( !( F(pNapkin->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYoPEN ) )
-            }
                 pNapkin->formattingIsDoneF( tinP ) ;
-                pGrabA->grabNotes.cDetach = 0 ;
-                pGrabA->grabNotes.cAttach = 0 ;
-                pGrabA->grabNotes.flags   = bIsSign ? flGRABnOTES_CTaSsIGNc : flGRABnOTES_CTaSbATONc ;
-                pGrabA->grabNotes.idCt    = grabNotesS::idNextF( tinP ) ;
-                pGrabA->grabNotes.osPidCt = osPidIF( tinP ) ;
-                pGrabA->grabNotes.osTidCt = osTidIF() ;
+                                                                                                pGrabA->grabNotes.cDetach  = 0                                                         ;
+                                                                                                pGrabA->grabNotes.cAttach  = 0                                                         ;
+                if( F(flagsGrab) & flGRABc_GRABBED )                                          { pGrabA->grabNotes.flags   |= flGRABnOTES_FORMATTINGiSrEALLYsTILLpENDING                ; bResetPendingFlag = 1 ; }
+                                                                                                pGrabA->grabNotes.flags    = bIsSign ? flGRABnOTES_CTaSsIGNc : flGRABnOTES_CTaSbATONc  ;
+                                                                                                pGrabA->grabNotes.idCt     = grabNotesS::idNextF( tinP )                               ;
+                                                                                                pGrabA->grabNotes.osPidCt  = osPidIF( tinP )                                           ;
+                                                                                                pGrabA->grabNotes.osTidCt  = osTidIF()                                                 ;
     
                 pGrabA->formatF( tinP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , flagsGrab & ~( F(flGRABc_GRABBED) ) , idGrabLayerP ) ;
             {
             if( !( F(pNapkin->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
+            ZE( boolT , bResetPendingFlag ) ;
             pGrabA = pGrabInNapkin ;
 
             if( POOP ) BLAMMO
