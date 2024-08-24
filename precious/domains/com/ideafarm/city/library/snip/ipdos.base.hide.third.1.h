@@ -1,4 +1,7 @@
 
+#define flSIGNc_FAILiFnAPKINnOTeXIST        0xe00001ff
+#define flSIGNc_null                        0xe00000ff
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -14178,6 +14181,7 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 #define flBATONc_NOTjEALOUS                  0xe020003b
 #define flBATONc_SNEAKYlOVER                 0xe040003b
 #define flBATONc_DOnOTsERIALIZEnAPKIN        0xe080003b
+#define flBATONc_FAILiFnAPKINnOTeXIST        0xe100003b
 /*3*/
 #define flBATONc_null    0xe000003b
 
@@ -34546,9 +34550,8 @@ coding standard
 #define LISTnAME_OFFSET                                               0xdddd7020
 #define LISTnAME_IDwORD                                               0xdddd7021
 #define LISTnAME_WORDiNDEX                                            0xdddd7022
-#define LISTnAME_IDuPDATElATH                                         0xdddd7023
-#define LISTnAME_IDuPDATEbEGUN                                        0xdddd7024
-#define LISTnAME_IDuPDATEcOMPLETED                                    0xdddd7025
+#define LISTnAME_IDGaCCESSbEGUN                                        0xdddd7024
+#define LISTnAME_IDGaCCESScOMPLETED                                    0xdddd7025
 #define LISTnAME_GLOBALrECORD                                         0xdddd7026
 #define LISTnAME_SEXc                                                 0xdddd7027
 #define LISTnAME_PROCESSrEPORT                                        0xdddd7028

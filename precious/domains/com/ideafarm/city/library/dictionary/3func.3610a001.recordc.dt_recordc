@@ -10,19 +10,22 @@
 }
     grabitx.ungrabF( tinP ) ;
 
-    PUSE( tinP , *(byteT**)&pczName       ) ;
-
-    if( pEditOut ) DELlIST( fieldEditParamOutC , pEditOut ) ;
-
-    puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+    }
+        PUSE( tinP , *(byteT**)&pczName ) ;
+        if( pEditOut ) DELlIST( fieldEditParamOutC , pEditOut ) ;
+        puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+    {
 
     }
         THREADmODE4rESTORE
-        *(countT*)vspIdUpdateCompleted = idUpdate ;
+        *(countT*)vspIdgAccessDone = idgAccess ;                                                                                                      // ... STORE MY idgAccess IN FIELD IDGaCCESScOMPLETED OF RECORD pczNameP
         THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
-    
-        countVSP vspIdUpdateCompleted = listC::countIF( tinP , hList , count2S( LISTnAME_IDuPDATEcOMPLETED ) ) ;
+        
+        countVSP vspIdgAccessDone = listC::countIF( tinP , hList , count2S( LISTnAME_IDGaCCESScOMPLETED ) ) ;
+    {
+    if( !POOP && idgAccess )                                                                                                                          // IF !POOP AND pczNameP IS NOT THE globals RECORD ...
 
+    }
         THREADmODE2rESTORE
         while( processGlobal2S::_processGlobal2I_IF()._poolC_idFlushLath < idFlushMin ) { ++ s ; thirdC::dosSleepIF( tinP , TOCK >> 3 ) ; }
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;

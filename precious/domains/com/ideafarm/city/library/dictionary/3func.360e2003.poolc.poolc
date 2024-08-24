@@ -135,34 +135,7 @@
         // EARLY CONSTRUCT THE slotsC INSTANCE FOR EACH HINT expCbDrop
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        }
-            }
-                guts.pGrabNewElt[ offs ].ungrabF( tinP ) ;
-                }
-                    if( !( F(guts.flagsCt) & ( flPOOLc_MAKEaLL | flPOOLc_KEEPeMPTIES ) ) && !*guts.ppSlots[ offs ] ) { DELzOMBIE( guts.ppSlots[ offs ] ) ; }
-    
-                    guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , expCbDrop , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
-    
-                    if( F(guts.flagsCt) & flPOOLc_NOsEXiNpOOL ) flagsc |= flSLOTSc_NOsEXiNpOOL ;
-                    if( F(guts.flagsCt) & flPOOLc_NOTES       ) flagsc |= flSLOTSc_NOTES       ;
-                    if( F(guts.flagsCt) & flPOOLc_READoNLY    ) flagsc |= flSLOTSc_READoNLY    ;
-                    flagsT                                      flagsc  = flSLOTSc_null        ;
-                {
-                if( !guts.ppSlots[ offs ] )
-                guts.pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ;
-
-                const countT expCbDrop   = offs ;
-
-                //CONoUTrAW( "\r\n" ) ;
-                //CONoUTrAW( ostoName ) ;
-
-                OStEXTCF( ostoName , offs , '0' ) ;
-                OStEXTAK( ostoName , ".slots." ) ;
-                OStEXTA(  ostoName , ostoNameGroup ) ;
-                OStEXT(   ostoName , TUCK << 2 )
-            {
-            for( countT offs = guts.expCbDropMin ; offs <= guts.expCbDropMax ; offs ++ )
-        {
+        refresh_ppSlots_F( tinP ) ;
     
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // EARLY CONSTRUCT THE slotsC INSTANCE FOR EACH expCbDrop FOR WHICH SOME BACKING MEMORY (FOR A sexC INSTANCE) EXISTS
@@ -171,6 +144,7 @@
         OStEXTAK( ostoNameGroup , ".poolC" ) ;
         OStEXTA(  ostoNameGroup , guts.postName ) ;
         OStEXT(   ostoNameGroup , TUCK << 2 )
+        //CS:CODEsYNC: 360e2003 360e201c
     
         //CONoUTrAW( " *********************************************************************************************************\r\n" ) ;
         //CONoUTrAW( guts.postName ) ;

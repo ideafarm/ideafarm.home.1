@@ -54,46 +54,11 @@
     if( !bDone && ( !idZipperP || idZipperP == ifcIDzIPPER_INFOZIP ) )
 
     }
-        THREADmODE2rESTORE
+        //THREADmODE2rESTORE
         THREADmODE3rESTORE
-        THREADmODE4rESTORE
+        //THREADmODE4rESTORE
         }
             }
-                }
-                    }
-                        //listC::chatterIF( tinP ) ;
-                    
-                        }
-                            }
-                                tinP.pEtScratch->traceF( tinP , T("[value]:    ")+TF2(*pc_value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                                countT*   pc_value     = vsp_value ;
-                                countVSP vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) ) ;
-                            {
-                        
-                            }
-                                tinP.pEtScratch->traceF( tinP , T("[idPoop]:    ")+TF2(*pc_idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                                countT*   pc_idPoop    = vsp_idPoop ;
-                                countVSP vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;
-                            {
-                        
-                            }
-                                tinP.pEtScratch->traceF( tinP , T("[bHiredAOK]:    ")+TF2(*pc_bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-                                countT*   pc_bHiredAOK = vsp_bHiredAOK ;
-                                countVSP vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
-                            {
-                        
-                            recordC myRecord( tinP , pcNameRecord ) ;
-                        {
-                        countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
-
-                        puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
-                        _IO_
-                    {
-                {
-
                 }
                     }
                         tinP.pEtScratch->traceF( tinP , T("could not   zip using pkzipc.exe" ) ) ;
@@ -126,6 +91,82 @@
                     _IO_
                 {
                 IFsCRATCH
+
+//                sgnReceived.giveF( tinP ) ;
+                pEtherContainsMe->traceF( tinP , T("giving the \"received\" sign and waiting for kid process to end") ) ;
+
+                }
+                    }
+                        //pEtherContainsMe->traceF( tinP , T("after querying report record (end)") ) ;
+                        //listC::chatterIF( tinP ) ;
+                        //pEtherContainsMe->traceF( tinP , T("after querying report record:") ) ;
+
+                        }
+                            }
+                                }
+                                    tinP.pEtScratch->traceF( tinP , T("[value]:    ")+TF2(*pc_value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                    const countT*  pc_value     = vsp_value ;
+                                    countVSP      vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) ) ;
+                                {
+                            
+                                }
+                                    tinP.pEtScratch->traceF( tinP , T("[idPoop]:    ")+TF2(*pc_idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                    const countT*  pc_idPoop    = vsp_idPoop ;
+                                    countVSP      vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;
+                                {
+                            
+                                }
+                                    tinP.pEtScratch->traceF( tinP , T("[bHiredAOK]:    ")+TF2(*pc_bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                    const countT*  pc_bHiredAOK = vsp_bHiredAOK ;
+                                    countVSP      vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
+                                {
+
+                                tinP.pEtScratch->traceF( tinP , T("record exists") ) ;
+                            {
+                            else
+                            if( (const poopC&)myRecord ) tinP.pEtScratch->traceF( tinP , T("!exception / record does not exist [pcName]:    ")+T(pcNameRecord) ) ;
+                        
+                            recordC myRecord( tinP , pcNameRecord , flLISToPEN_IFeXISTS ) ;
+                        {
+                        countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
+
+                        PUSE.refresh_ppSlots_F( tinP ) ;
+                        puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+                        _IO_
+                    {
+                {
+
+                pEtherContainsMe->traceF( tinP , T("waited for the \"ready\" sign and am receiving the report") ) ;
+                DELzOMBIE( pzSgnReady ) ;
+
+pEtherContainsMe->osSleepF( tinP , TICK >> 4 ) ; //U::DEBUGGING (waitF RETURNS UNEXPECTEDLY IMMEDIATELY)
+
+//                pzSgnReady->waitF( tinP ) ;
+
+                pEtherContainsMe->traceF( tinP , T("waiting for the kid process to give the \"ready\" sign") ) ;
+
+                }
+                    }
+                        ++ s ; tinP.pEtScratch->osSleepF( tinP , TOCK >> 4 ) ;
+                        DELzOMBIE( pzSgnReady ) ;
+                        POOPRqUIET
+
+                        if( !POOP ) break ;
+                        pzSgnReady = new( 0 , tinP , pbz_sgnReady , sizeof pbz_sgnReady ) signC( tinP , TAG( TAGiDnULL ) , tReady , flSIGNc_FAILiFnAPKINnOTeXIST ) ;
+                    {
+                    for(;;)
+
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCH
+                pEtherContainsMe->traceF( tinP , T("napping until the \"ready\" sign object has been ct by the kid process") ) ;
+                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                ZE( signC* , pzSgnReady ) ;
+                byteT  pbz_sgnReady[ sizeof( signC ) ] ;
             {
             else
             if( !osPid ) pEtherContainsMe->traceF( tinP , T("!exception: could not launch ifcIDaDAM_HIREwITHOUTdEBUGGING") ) ;
@@ -143,14 +184,16 @@
             countT& osTid = c4Result.c1 ;
             count4S c4Result ;
             ZE( countT , idReport ) ;
-
-           }
-               puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;    //THIS CAUSES HOMEtEMP TO BE CT'D (IF NOT ALREADY CT'D) SO THAT MY INSTANCE EXISTS BEFORE MY KID'S INSTANCE IS DESTROYED
-           {
         {
-        THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
+        //THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
         THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY       )
-        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING   )
+        //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING   )
+
+        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tReceived ) ;          //THIS IS CT BEFORE HIRING KID TO ENSURE THAT KID CANNOT GIVE IT B4 I AM WAITING FOR IT
+
+        TN( tReady    , "report.is.ready"    ) ;                            //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
+        TN( tReceived , "report.is.received" ) ;                            //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
+        TN( tDot      , "."                  ) ;
     {
 #endif
     if( bHireNoMonitor )

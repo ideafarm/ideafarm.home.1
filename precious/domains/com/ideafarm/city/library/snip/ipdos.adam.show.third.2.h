@@ -29220,6 +29220,8 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.batonC.ungrabF!||
  inline operator const grabC&( voidT ) { return *(const grabC*)pGrabA ; } //CODEsYNC: 003006b 0030001
 
+ inline operator const poopC&( voidT ) const { return poop ; }
+
  friend class cryC ; //U:: TO FIND A BUG
 
 /**/
@@ -29269,7 +29271,7 @@ features
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.signC.NEWdELcLASSuSEpRIMARYpOOLoLDiF!||
  ~signC( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.signC.dt_signC!||
- signC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP = 0 , const countT idGroupP = ifcIDgRABlAYER_7BASEmISC1 , byteT* const pbForNapkinP = 0 ) ;
+ signC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP = 0 , const flagsT flagsP = flSIGNc_null , const countT idGroupP = ifcIDgRABlAYER_7BASEmISC1 , byteT* const pbForNapkinP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.signC.signC!||
 
 /* commands */
@@ -31694,6 +31696,7 @@ listC must be the wo'th base class of any class derived from it
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350e201b.poolC.deleteEmptiesIfIF!||
     voidT testDropHeadersF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e201b.poolc.testDropHeadersF!||
+    voidT refresh_ppSlots_F( tinS& tinP ) ;
 
     friend class datum_countT_C ;
     friend class listing_listingVSP_C ;
@@ -43966,7 +43969,6 @@ application code that uses an instance of me must ensure that the pool that cont
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_listingVSP_C : 1snip.1500012b.list_listingvsp_c END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.recordC : 1snip.1500012d.recordc BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -43980,13 +43982,14 @@ application code that uses an instance of me must ensure that the pool that cont
 
 /*1*/class _export recordC/*1*/
 {
-    grabitC             grabitx ;
-    countT*             pczName ;
-    handleC             hList ;
-    countT              cFieldName ;
+    poopC               poop           ;
+    grabitC             grabitx        ;
+    countT*             pczName        ;
+    handleC             hList          ;
+    countT              cFieldName     ;
     flagsT              flagsFieldOpen ;
-    fieldEditParamOutC* pEditOut ;
-    const countT        idUpdate ;
+    fieldEditParamOutC* pEditOut       ;
+    const countT        idgAccess      ;
 
     flagsT walkF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.recordC.walkF!||
@@ -44008,6 +44011,7 @@ application code that uses an instance of me must ensure that the pool that cont
     flagsT chatterF( tinS& tinP , flagsT flagsP = flLISTwALKcHATTER_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.recordC.chatterF!||
 
+    inline operator const poopC&( voidT ) const { return poop ; }
     inline operator handleC&( voidT ) { return hList ; }
 }
 ;
