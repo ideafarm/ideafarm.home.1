@@ -42,21 +42,27 @@ REST
                     }
                         }
                             }
-                                         *pc_value     = value ;
-                                countT*   pc_value     = vsp_value ;
-                                countVSP vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) ) ;
+                                         *pc_idDeathType = idDeathType ;
+                                countT*   pc_idDeathType = vsp_idDeathType ;
+                                countVSP vsp_idDeathType = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD40 ) ) ;
                             {
                         
                             }
-                                         *pc_idPoop    = idPoop ;
-                                countT*   pc_idPoop    = vsp_idPoop ;
-                                countVSP vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;
+                                               *pc_value = value ;
+                                countT*         pc_value = vsp_value ;
+                                countVSP       vsp_value = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) ) ;
                             {
                         
                             }
-                                         *pc_bHiredAOK = bHiredAOK ;
-                                countT*   pc_bHiredAOK = vsp_bHiredAOK ;
-                                countVSP vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
+                                              *pc_idPoop = idPoop ;                                                                         //idPoop WILL EITHER INDICATE THE REASON THAT pkzipc.exe COULD NOT BE HIRED OR WILL CONTAIN THE VALUE RETURNED BY pkzipc.exe
+                                countT*        pc_idPoop = vsp_idPoop ;
+                                countVSP      vsp_idPoop = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;
+                            {
+                        
+                            }
+                                           *pc_bHiredAOK = bHiredAOK ;
+                                countT*     pc_bHiredAOK = vsp_bHiredAOK ;
+                                countVSP   vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
                             {
                         
                             recordC myRecord( tinP , pcNameRecord ) ;
@@ -76,25 +82,24 @@ REST
                 }
                     //if( bSandbox ) etherC::loafIF( tinP ) ;
                     thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
-                    etThread.traceF( tinP , T("!exception: kid process returned nonze value [value]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tinP , T("!exception: kid process either could not be hired or returned an impermissibly high value [idPoop,value,maxValue]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    TN( tb4 , "    " ) ;
                     POOPRqUIET
                 {                              //HAVING MY PROCESS EXIT CODE CONTAIN DETAILED INFO WOULD COMPLICATE DEBUGGING CODE THAT INSPECTS THE PROCESS EXIT CODE AND DETECTS WHETHER THE EXIT CODE IS WO OF THE EXPECTED (LEGAL) VALUES FOR AN IPDOS (TM) PROCESS
                 if( POOP )                     //PS:PERSONALITY: MY PROCESS EXIT CODE WILL INDICATE IMPOTENCE BUT WILL NOT INDICATE THE DETAILS ; FOR THAT I TRACE OUT value
 
-                }
-                    __( value ) ;
-                {
-                if( value > maxValue )
+                if( value > maxValue ) { __( value ) ; }
 
                 etThread.traceF( tinP , T("setting [bHiredAOK]:    ")+TF2(bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 bHiredAOK = !idPoop ;
                 etThread.traceF( tinP , T("called  dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
                 idPoop = POOP ;
-                ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , countTC() , tFile , tArgsNet , flPROCESShIRE_null ) ;
+                ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , tFile , tArgsNet , flPROCESShIRE_null ) ;
                 etThread.strokeF( tinP , T("\r\n") ) ;
                 etThread.traceF( tinP , T("calling dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
-                ZE( countT , value ) ;
-                ZE( countT , idPoop ) ;
+                ZE( countT , idDeathType ) ;        // FOR MS WINDOWS, THIS WILL ALWAYS BE 0
+                ZE( countT , value       ) ;
+                ZE( countT , idPoop      ) ;
 
                 SCOOPS
                 _IO_
@@ -105,12 +110,13 @@ REST
         {
         ZE( boolT , bHiredAOK ) ;
 
-        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tReceived                 ) ;
-        signC sgnReady(    tinP , TAG( TAGiDnULL ) , tReady    , flSIGNc_GIVER ) ;          //CT THIS AS EARLY AS POSSIBLE SO RECIPIENT, WHO IS NAPPING UNTIL IT EXISTS, KNOWS THAT I AM ALIVE
+        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tSgnReceived                 ) ;
+        signC sgnReady(    tinP , TAG( TAGiDnULL ) , tSgnReady    , flSIGNc_GIVER ) ;          // CT THIS AS EARLY AS POSSIBLE SO RECIPIENT, WHO IS NAPPING UNTIL IT EXISTS, KNOWS THAT I AM ALIVE
 
-        TN( tReceived , "report.is.received" ) ;      //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
-        TN( tReady    , "report.is.ready"    ) ;      //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
-        TN( tDot      , "."                  ) ;
+        TN( tSgnReady    , "report.is.ready."    ) ; tSgnReady    += tUniquify ;
+        TN( tSgnReceived , "report.is.received." ) ; tSgnReceived += tUniquify ;
+        TN( tUniquify , ""                       ) ; tUniquify     = TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+        TN( tDot      , "."                      ) ;
     {
     if( bNow )
     _IO_

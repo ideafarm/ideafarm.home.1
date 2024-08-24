@@ -27,9 +27,9 @@
 
             else bDone = 1 ;
             }
-                tinP.pEtScratch->traceF( tinP , T("bundled infozip   zip.exe failed [value,idDeathType]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idDeathType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                tinP.pEtScratch->traceF( tinP , T("bundled infozip   zip.exe failed [valueInfoZip,idDeathTypeInfoZip]:    ")+TF2(valueInfoZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idDeathTypeInfoZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
-            else if( value || idDeathType )
+            else if( valueInfoZip || idDeathTypeInfoZip )
             }
                 tinP.pEtScratch->traceF( tinP , T("could not hire bundled infozip   zip.exe [POOP]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 POOPRqUIET
@@ -38,7 +38,7 @@
             if( POOP )
 
             pEtherContainsMe->strokeF( tinP , T("\r\n") ) ;
-            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , postLongExe , postArgs2 ) ;
+            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , valueInfoZip , idDeathTypeInfoZip , postLongExe , postArgs2 ) ;
             pEtherContainsMe->strokeF( tinP , T("\r\n") ) ;
             SCOOPS
         {
@@ -48,10 +48,23 @@
         c_strcpyIF( tinP , postLongExe , home.postHome ) ;
         osTextT postLongExe[ TUCK ] ;
         homeS& home = homeS::homeIF() ;
-
-        idDeathType = value = 0 ;
     {
-    if( !bDone && ( !idZipperP || idZipperP == ifcIDzIPPER_INFOZIP ) )
+    )
+        )
+            )
+                !bPKZipHiredAOK                     // IF PKZIP WAS HIRED AOK BUT IT DIDN'T GET THE JOB DONE THEN DON'T BOTHER TRYING INFOZIP
+                &&
+                !idZipperP
+            (
+            ||
+            idZipperP == ifcIDzIPPER_INFOZIP
+        (
+        &&
+        !bDone
+    (
+    if
+    ZE( countT , idDeathTypeInfoZip ) ;
+    ZE( countT , valueInfoZip       ) ;
 
     }
         //THREADmODE2rESTORE
@@ -69,23 +82,22 @@
                         dosGetCurrentDirF( tinP , postDir ) ; ___( postDir ) ;
                         ZE( osTextT* , postDir ) ;
 
-                        pEtherContainsMe->traceF( tinP , T("!exception: kid process failed [value,rc,name]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
+                        pEtherContainsMe->traceF( tinP , T("!exception: kid process failed [valueWrapper,rc,name]:    ")+TF2(valueWrapper,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postRc) ) ;
                         TN( tb4 , "    " ) ;
                         const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
                     else
-                    if( !POOP ) bPKZipHired = bDone = 1 ;
+                    if( !POOP ) bPKZipHiredAOK = bDone = 1 ;
 
                     }
                         __1
-                        __( value ) ;
+                        __( valueWrapper ) ;
                     {
-                    if( value != ifcEXITcODE_EXITpROCESSaOK )
+                    if( valueWrapper != ifcEXITcODE_EXITpROCESSaOK )
 
-                    tinP.pEtScratch->osProcessWaitF( tinP , value , countTC() , osTid , osPid ) ;
-                    ZE( countT , value ) ;
+                    tinP.pEtScratch->osProcessWaitF( tinP , valueWrapper , idDeathTypeWrapper , osTid , osPid ) ;
 
                     SCOOPS
                     _IO_
@@ -104,24 +116,34 @@
                         }
                             }
                                 }
-                                    tinP.pEtScratch->traceF( tinP , T("[value]:    ")+TF2(*pc_value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    tinP.pEtScratch->traceF( tinP , T("[idDeathTypePKZip]:    ")+TF2(*pc_idDeathTypePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                    const countT*  pc_value     = vsp_value ;
-                                    countVSP      vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) ) ;
+                                    idDeathTypePKZip = *pc_idDeathTypePKZip ;
+                                    const countT*       pc_idDeathTypePKZip = vsp_idDeathTypePKZip ;
+                                    countVSP           vsp_idDeathTypePKZip = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD40 ) ) ;
+                                {
+                            
+                                }
+                                    tinP.pEtScratch->traceF( tinP , T("[valuePKZip]:    ")+TF2(*pc_valuePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                    valuePKZip =             *pc_valuePKZip ;
+                                    const countT*             pc_valuePKZip = vsp_valuePKZip ;
+                                    countVSP                 vsp_valuePKZip = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) ) ;
                                 {
                             
                                 }
                                     tinP.pEtScratch->traceF( tinP , T("[idPoop]:    ")+TF2(*pc_idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                    const countT*  pc_idPoop    = vsp_idPoop ;
-                                    countVSP      vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;
+                                    const countT*                 pc_idPoop = vsp_idPoop ;
+                                    countVSP                     vsp_idPoop = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;
                                 {
                             
                                 }
                                     tinP.pEtScratch->traceF( tinP , T("[bHiredAOK]:    ")+TF2(*pc_bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                    const countT*  pc_bHiredAOK = vsp_bHiredAOK ;
-                                    countVSP      vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
+                                    bPKZipHiredAOK =       !!*pc_bHiredAOK ;
+                                    const countT*             pc_bHiredAOK = vsp_bHiredAOK ;
+                                    countVSP                 vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
                                 {
 
                                 tinP.pEtScratch->traceF( tinP , T("record exists") ) ;
@@ -151,7 +173,7 @@
                         POOPRqUIET
 
                         if( !POOP ) break ;
-                        pzSgnReady = new( 0 , tinP , pbz_sgnReady , sizeof pbz_sgnReady ) signC( tinP , TAG( TAGiDnULL ) , tReady , flSIGNc_FAILiFnAPKINnOTeXIST ) ;
+                        pzSgnReady = new( 0 , tinP , pbz_sgnReady , sizeof pbz_sgnReady ) signC( tinP , TAG( TAGiDnULL ) , tSgnReady , flSIGNc_FAILiFnAPKINnOTeXIST ) ;
                     {
                     for(;;)
 
@@ -170,62 +192,71 @@
             }
                 c4Result = pEtherContainsMe->ifcHireF( tinP , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgs , flHIRE_DISPLAYaUTO , 0 , 0 , 1 , nicNameC() ) ;
                 TN( tArgs , "" ) ; tArgs = T("!ignore [comment can go here] !maxValue 0 !reportToCell ")+TF2(tinP.pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" !idReport ")+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" !hireLater pkzipc.exe ")+T(postArgs1) ;
-
-                idReport = 1 + incv02AM( idReportLath ) ;
-                static countT idReportLath ;
-
                 _IO_
             {
             countT& osPid = c4Result.c2 ;
             countT& osTid = c4Result.c1 ;
             count4S c4Result ;
-            ZE( countT , idReport ) ;
         {
         //THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
         THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY       )
         //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING   )
 
-        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tReceived , flSIGNc_GIVER ) ;              //THIS IS CT BEFORE HIRING KID TO ENSURE THAT KID CANNOT GIVE IT B4 I AM WAITING FOR IT
+        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tSgnReceived , flSIGNc_GIVER ) ;              //THIS IS CT BEFORE HIRING KID TO ENSURE THAT KID CANNOT GIVE IT B4 I AM WAITING FOR IT
 
-        TN( tReady    , "report.is.ready"    ) ;                                                //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
-        TN( tReceived , "report.is.received" ) ;                                                //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
-        TN( tDot      , "."                  ) ;
+        TN( tSgnReady    , "report.is.ready."    ) ; tSgnReady    += tUniquify ;
+        TN( tSgnReceived , "report.is.received." ) ; tSgnReceived += tUniquify ;
+        TN( tUniquify , ""                       ) ; tUniquify     = TF2(tinP.pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+        TN( tDot      , "."                      ) ;
+
+        }
+                idReport = 1 + incv02AM( idReportLath ) ;
+                static countT idReportLath ;
+        {
+        ZE( countT , idReport ) ;
     {
-#endif
     if( bHireNoMonitor )
+    ZE( countT , idDeathTypeWrapper ) ;
+    ZE( countT , valueWrapper       ) ;
 
     }
         }
-            else bPKZipHired = bDone = 1 ;
             }
-                tinP.pEtScratch->traceF( tinP , T("pczipc.exe failed [value,idDeathType]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idDeathType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                bPKZipHired = 1 ;
-            {
-            else if( value || idDeathType )
-            }
-                if( bHireNoMonitor ) tinP.pEtScratch->traceF( tinP , T("i will try hiring pkzipc.exe indirectly") ) ;
-                tinP.pEtScratch->traceF( tinP , T("could not hire pczipc.exe directly [POOP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
-                POOPRqUIET
-                const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
-                bHireNoMonitor = rc == ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTED ;
-                countT rc = POOP ;
-            {
-            if( POOP )
+                else bPKZipHiredAOK = bDone = 1 ;
+                }
+                    tinP.pEtScratch->traceF( tinP , T("pczipc.exe failed [valuePKZip,idDeathTypePKZip]:    ")+TF2(valuePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idDeathTypePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    bPKZipHiredAOK = 1 ;
+                {
+                else if( valuePKZip || idDeathTypePKZip )
+                }
+                    if( bHireNoMonitor ) tinP.pEtScratch->traceF( tinP , T("i will try hiring pkzipc.exe indirectly") ) ;
+                    tinP.pEtScratch->traceF( tinP , T("could not hire pczipc.exe directly [POOP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
+                    POOPRqUIET
+                    const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
+                    bHireNoMonitor = rc == ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTED ;
+                    countT rc = POOP ;
+                {
+                if( POOP )
 
-            pEtherContainsMe->strokeF( tinP , T("\r\n") ) ;
-            ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , "pkzipc.exe" , postArgs1 ) ;
-            pEtherContainsMe->strokeF( tinP , T("\r\n") ) ;
-            SCOOPS
+                pEtherContainsMe->strokeF( tinP , T("\r\n") ) ;
+                ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , valuePKZip , idDeathTypePKZip , "pkzipc.exe" , postArgs1 ) ;
+                pEtherContainsMe->strokeF( tinP , T("\r\n") ) ;
+                SCOOPS
+            {
+            IFsCRATCH
         {
-        IFsCRATCH
+        else
+        if( !bSandbox ) bHireNoMonitor = 1 ;                                        // DON'T BOTHER TRYING THIS IF NOT SANDBOX SINCE DIRECT HIRING OF pkzipc.exe WILL FAIL AS "NOT SUPPORTED" BECAUSE pkzipc.exe IS 04 BIT AND I AM BEING MONITORED (BY GLASS2) ; AN 04 BIT PROCESS CANNOT BE LAUNCHED BY AN 02 BIT PROCESS WHEN THE LATTER AND ITS KIDS ARE BEING MONITORED (USING THE MS WINDOWS DEBUGGING SUBSYSTEM)
+
+        //bSandbox = 0 ;                                                              // COMMENT OUT THIS LINE IN PRODUCTION OR IF DO NOT WANT TO TEST INDIRECT HIRING OF pkzipc.exe
+        boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;            // bSandbox IS USED IN PRODUCTION TO SKIP A FUTILE ATTEMPT TO HIRE pkzipc.exe DIRECTLY (WHICH WILL FAIL)
     {
     if( !idZipperP || idZipperP == ifcIDzIPPER_PKZIPC )
-#if defined( NEVERdEFINED )
-    ZE( boolT  , bHireNoMonitor ) ;
-    ZE( boolT  , bPKZipHired    ) ;
-    ZE( countT , idDeathType    ) ;
-    ZE( countT , value          ) ;
-    ZE( boolT  , bDone          ) ;
+    ZE( boolT  , bHireNoMonitor   ) ;
+    ZE( boolT  , bPKZipHiredAOK   ) ;
+    ZE( countT , idDeathTypePKZip ) ;
+    ZE( countT , valuePKZip       ) ;
+    ZE( boolT  , bDone            ) ;
 
     pEtherContainsMe->traceF( tinP , T("[postArgs2]:    ")+T(postArgs2) ) ;
     pEtherContainsMe->traceF( tinP , T("[postArgs1]:    ")+T(postArgs1) ) ;
