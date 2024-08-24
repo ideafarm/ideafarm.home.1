@@ -58,17 +58,17 @@
         {
         else
         }
-            //20240823@1817: COMMENTED THIS OUT TO CHANGE GRAB LOGIC TO MAKE IT WORK CORRECTLY INTERPROCESS: if( F(flagsGrab) & flGRABc_GRABBED && !bIsSign ) pGrabA->grabF( tinP , idLineCtP , idiFileCtP , pbBitsCtP ) ; // ASSUME: THE CALLING CODE WILL UNGRAB ME
-
-            pGrabA->grabNotes.flags |= bIsSign ? flGRABnOTES_ATTACHEDaSsIGNc : flGRABnOTES_ATTACHEDaSbATONc ;
-
-            if( !( F(pNapkin->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYoPEN ) ) pGrabA->grabNotes.cAttach ++ ;
+            if( F(flagsGrab) & flGRABc_GRABBED && !bIsSign ) pGrabA->grabF( tinP , idLineCtP , idiFileCtP , pbBitsCtP ) ; // ASSUME: THE CALLING CODE WILL UNGRAB ME
 
             }
-                //20240823@1817: IF ALREADY EXISTED AND IS A signC THEN I ASSUME THAT THE CREATOR HAS GRABBED IT AND WILL BE THE PROCESS THAT GIVES THE SIGN, SO I IGNORE flGRABc_GRABBED
+                pGrabA->grabNotes.flags   |= bIsSign ? flGRABnOTES_ATTACHEDaSsIGNc : flGRABnOTES_ATTACHEDaSbATONc ;
             {
             else
-            else if( F(flagsGrab) & flGRABc_GRABBED && !bIsSign ) pGrabA->grabF( tinP , idLineCtP , idiFileCtP , pbBitsCtP ) ; // ASSUME: THE CALLING CODE WILL UNGRAB ME
+            }
+                pGrabA->grabNotes.flags   |= bIsSign ? flGRABnOTES_ATTACHEDaSsIGNc : flGRABnOTES_ATTACHEDaSbATONc ;
+                pGrabA->grabNotes.cAttach ++ ;
+            {
+            else if( !( F(pNapkin->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYoPEN ) )
             }
                 pNapkin->formattingIsDoneF( tinP ) ;
                 pGrabA->grabNotes.cDetach = 0 ;
@@ -78,7 +78,7 @@
                 pGrabA->grabNotes.osPidCt = osPidIF( tinP ) ;
                 pGrabA->grabNotes.osTidCt = osTidIF() ;
     
-                pGrabA->formatF( tinP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , flagsGrab /*& ~( F(flGRABc_GRABBED) )*/ , idGrabLayerP ) ;            //20240823@1817: FORMAT AS GRABBED IF flGRABc_GRABBED ; THIS MUST BE GRABBED BEFORE RELEASING MEMORY SPACE TO PREVENT RACE WITH ANOTHER PROCESS
+                pGrabA->formatF( tinP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , flagsGrab & ~( F(flGRABc_GRABBED) ) , idGrabLayerP ) ;
             {
             if( !( F(pNapkin->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
             pGrabA = pGrabInNapkin ;
