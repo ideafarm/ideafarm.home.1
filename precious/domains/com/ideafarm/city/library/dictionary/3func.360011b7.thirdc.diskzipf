@@ -92,7 +92,7 @@
                 {
                 IFsCRATCH
 
-//                sgnReceived.giveF( tinP ) ;
+                sgnReceived.giveF( tinP ) ;
                 pEtherContainsMe->traceF( tinP , T("giving the \"received\" sign and waiting for kid process to end") ) ;
 
                 }
@@ -141,11 +141,7 @@
 
                 pEtherContainsMe->traceF( tinP , T("waited for the \"ready\" sign and am receiving the report") ) ;
                 DELzOMBIE( pzSgnReady ) ;
-
-pEtherContainsMe->osSleepF( tinP , TICK >> 4 ) ; //U::DEBUGGING (waitF RETURNS UNEXPECTEDLY IMMEDIATELY)
-
-//                pzSgnReady->waitF( tinP ) ;
-
+                pzSgnReady->waitF( tinP ) ;
                 pEtherContainsMe->traceF( tinP , T("waiting for the kid process to give the \"ready\" sign") ) ;
 
                 }
@@ -189,10 +185,10 @@ pEtherContainsMe->osSleepF( tinP , TICK >> 4 ) ; //U::DEBUGGING (waitF RETURNS U
         THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY       )
         //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING   )
 
-        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tReceived ) ;          //THIS IS CT BEFORE HIRING KID TO ENSURE THAT KID CANNOT GIVE IT B4 I AM WAITING FOR IT
+        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tReceived , flSIGNc_GIVER ) ;              //THIS IS CT BEFORE HIRING KID TO ENSURE THAT KID CANNOT GIVE IT B4 I AM WAITING FOR IT
 
-        TN( tReady    , "report.is.ready"    ) ;                            //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
-        TN( tReceived , "report.is.received" ) ;                            //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
+        TN( tReady    , "report.is.ready"    ) ;                                                //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
+        TN( tReceived , "report.is.received" ) ;                                                //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
         TN( tDot      , "."                  ) ;
     {
 #endif

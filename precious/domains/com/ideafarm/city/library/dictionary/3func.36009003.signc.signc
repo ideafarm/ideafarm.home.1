@@ -21,7 +21,23 @@
 )
     pbForNapkinP
     ,
-    flBATONc_GRABBED | flBATONc_GRABBEDnEVERtID | flBATONc_ISsIGN | flBATONc_SHARElAYER | ( F(flagsP) & flSIGNc_FAILiFnAPKINnOTeXIST ? flBATONc_FAILiFnAPKINnOTeXIST : flBATONc_null )
+    )
+        )
+                : flBATONc_null
+                ? flBATONc_GRABBED
+            F(flagsP) & flSIGNc_GIVER || !postP
+        (
+        |
+        )
+                : flBATONc_null
+                ? flBATONc_FAILiFnAPKINnOTeXIST
+            F(flagsP) & flSIGNc_FAILiFnAPKINnOTeXIST
+        (
+        |
+        | flBATONc_SHARElAYER
+        | flBATONc_ISsIGN
+          flBATONc_GRABBEDnEVERtID
+    (
     idGroupP ,
     postP ,
     TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) ,

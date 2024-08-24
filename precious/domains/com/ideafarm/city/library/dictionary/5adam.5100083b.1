@@ -31,11 +31,8 @@ REST
             }
                 }
                     etThread.traceF( tinP , T("waited for the \"received\" sign and am now quitting") ) ;
-//                    sgnReceived.waitF( tinP ) ;
-
-etThread.osSleepF( tinP , TICK >> 1 ) ;
-
-//U::                    sgnReady.giveF(    tinP ) ;
+                    sgnReceived.waitF( tinP ) ;
+                    sgnReady.giveF(    tinP ) ;
                     etThread.traceF( tinP , T("giving the \"ready\" sign and waiting for the \"received\" sign") ) ;
 
                     THREADmODE2rESTORE
@@ -43,27 +40,20 @@ etThread.osSleepF( tinP , TICK >> 1 ) ;
                     THREADmODE4rESTORE
                     
                     }
-                        //etThread.traceF( tinP , T("after writing report record (end)") ) ;
-                        //listC::chatterIF( tinP ) ;
-                        //etThread.traceF( tinP , T("after writing report record:") ) ;
-                    
                         }
                             }
-                                         *pc_value     = 0x33333333 ;
                                          *pc_value     = value ;
                                 countT*   pc_value     = vsp_value ;
                                 countVSP vsp_value     = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) ) ;
                             {
                         
                             }
-                                         *pc_idPoop    = 0x22222222 ;
                                          *pc_idPoop    = idPoop ;
                                 countT*   pc_idPoop    = vsp_idPoop ;
                                 countVSP vsp_idPoop    = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;
                             {
                         
                             }
-                                         *pc_bHiredAOK = 0x11111111 ;
                                          *pc_bHiredAOK = bHiredAOK ;
                                 countT*   pc_bHiredAOK = vsp_bHiredAOK ;
                                 countVSP vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
@@ -73,10 +63,6 @@ etThread.osSleepF( tinP , TICK >> 1 ) ;
                             countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , reportToCell | BM_HIGH , idReport | BM_HIGH , tinP.pag1->idAdam | BM_HIGH , 0 } ;
                         {
 
-                        //etThread.traceF( tinP , T("before writing report record (end)") ) ;
-                        //listC::chatterIF( tinP ) ;
-                        //etThread.traceF( tinP , T("before writing report record:") ) ;
-                    
                         puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
                         _IO_
                     {
@@ -119,8 +105,8 @@ etThread.osSleepF( tinP , TICK >> 1 ) ;
         {
         ZE( boolT , bHiredAOK ) ;
 
-        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tReceived ) ;
-        signC sgnReady(    tinP , TAG( TAGiDnULL ) , tReady    ) ;      //CT THIS AS EARLY AS POSSIBLE SO RECIPIENT, WHO IS NAPPING UNTIL IT EXISTS, KNOWS THAT I AM ALIVE
+        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tReceived                 ) ;
+        signC sgnReady(    tinP , TAG( TAGiDnULL ) , tReady    , flSIGNc_GIVER ) ;          //CT THIS AS EARLY AS POSSIBLE SO RECIPIENT, WHO IS NAPPING UNTIL IT EXISTS, KNOWS THAT I AM ALIVE
 
         TN( tReceived , "report.is.received" ) ;      //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport
         TN( tReady    , "report.is.ready"    ) ;      //U:: UNIQUIFY USING MY idCell AND REQUESTOR'S idCell AND idReport

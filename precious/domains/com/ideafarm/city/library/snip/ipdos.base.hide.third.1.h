@@ -1,5 +1,5 @@
 
-#define flSIGNc_GRAB                        0xe00002ff
+#define flSIGNc_GIVER                        0xe00002ff
 #define flSIGNc_FAILiFnAPKINnOTeXIST        0xe00001ff
 #define flSIGNc_null                        0xe00000ff
 
