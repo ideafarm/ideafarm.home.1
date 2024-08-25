@@ -113,7 +113,7 @@
                         listC::chatterIF( tinP ) ;
                         pEtherContainsMe->traceF( tinP , T("after deleting report record:") ) ;
 
-                        listC::deleteIF( tinP , pcNameRecord ) ;
+                        listC::deleteIF( tinP , mn ) ;
 
                         pEtherContainsMe->traceF( tinP , T("after querying report record (end)") ) ;
                         listC::chatterIF( tinP ) ;
@@ -126,7 +126,7 @@
 
                                     if( pc_idDeathTypePKZip )            idDeathTypePKZip = *pc_idDeathTypePKZip ;
                                     const countT*                     pc_idDeathTypePKZip = vsp_idDeathTypePKZip ;
-                                    countVSP                         vsp_idDeathTypePKZip = listC::countIF( tinP , myRecord , count2S( 4 | BM_HIGH ) , flagsUse ) ;
+                                    countVSP                         vsp_idDeathTypePKZip = listC::countIF( tinP , memoResults , count2S( 4 | BM_HIGH ) , flagsUse ) ;
                                 {
                             
                                 }
@@ -134,7 +134,7 @@
 
                                     if( pc_valuePKZip )                  valuePKZip       = *pc_valuePKZip ;
                                     const countT*                     pc_valuePKZip       = vsp_valuePKZip ;
-                                    countVSP                         vsp_valuePKZip       = listC::countIF( tinP , myRecord , count2S( 3 | BM_HIGH ) , flagsUse ) ;
+                                    countVSP                         vsp_valuePKZip       = listC::countIF( tinP , memoResults , count2S( 3 | BM_HIGH ) , flagsUse ) ;
                                 {
                             
                                 }
@@ -142,7 +142,7 @@
 
                                     countT idPoop = !pc_idPoop ? 0 : *pc_idPoop ;
                                     const countT*                     pc_idPoop           = vsp_idPoop ;
-                                    countVSP                         vsp_idPoop           = listC::countIF( tinP , myRecord , count2S( 2 | BM_HIGH ) , flagsUse ) ;
+                                    countVSP                         vsp_idPoop           = listC::countIF( tinP , memoResults , count2S( 2 | BM_HIGH ) , flagsUse ) ;
                                 {
                             
                                 }
@@ -150,18 +150,19 @@
 
                                     if( pc_bHiredAOK )               bPKZipHiredAOK       = !!*pc_bHiredAOK ;
                                     const countT*                      pc_bHiredAOK       =   vsp_bHiredAOK ;
-                                    countVSP                          vsp_bHiredAOK       = listC::countIF( tinP , myRecord , count2S( 1 | BM_HIGH ) , flagsUse ) ;
+                                    countVSP                          vsp_bHiredAOK       = listC::countIF( tinP , memoResults , count2S( 1 | BM_HIGH ) , flagsUse ) ;
                                 {
 
                                 tinP.pEtScratch->traceF( tinP , T("record exists") ) ;
                             {
                             else
-                            if( (const poopC&)myRecord ) tinP.pEtScratch->traceF( tinP , T("!exception / record does not exist [pcName]:    ")+T(pcNameRecord) ) ;
+                            if( (const poopC&)memoResults ) tinP.pEtScratch->traceF( tinP , T("!exception / record does not exist [memoName]:    ")+T((countT*)mn) ) ;
                         
-                            recordC myRecord( tinP , pcNameRecord , flagsUse ) ;
+                            recordC memoResults( tinP , mn , flagsUse ) ;
 
                         {
                         const flagsT flagsUse = flLISToPEN_IFeXISTS | flLISToPEN_REFRESHaNDrETRYfOREVER ;
+                        memoNameC mn( tinP , 0 , - 1 , - 1 , - 1 , - 1 ) ;
                         countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_APPLICATION , LISTnAME_MEMO , tinP.pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
                         puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
                         _IO_

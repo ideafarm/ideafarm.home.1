@@ -51263,3 +51263,28 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*SOCKETtIMEOUTdEFAULTwANiMPATIENT*//*1*/
+
+#define SOCKETtIMEOUTdEFAULTwANiMPATIENT ( TOCK << 0 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END

@@ -1,4 +1,4 @@
-//#define DEBUG
+#define DEBUG
 
 //U::ENABLE THESE PREPROCESSOR IF/ENDIF IN PRODUCTION
 #if not defined( DEBUG )
@@ -3062,6 +3062,7 @@ void elf_obey_C::liveF( void )
                 //THIS LIST IS IN REVERSE ORDER OF WHAT WILL APPEAR IN ipdos.h
                 char* ppostFrom[] =
                 {
+                    "1snip.15*.memoNameC"                       ,
                     "1snip.15*.wightIdgC"                       ,
                     "1snip.15*.homeIdgC"                        ,
                     "1snip.15*.funnelHornC"                     ,
