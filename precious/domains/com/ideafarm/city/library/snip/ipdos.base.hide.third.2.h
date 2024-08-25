@@ -1,30 +1,3 @@
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-normally this should be commented out because it slows execution
-enable it to set bits in processGlobal2S::pbMemoryBits*
-*/
-/**/
-/*1*//*SHOWmEMgRAINS*//*1*/
-#define SHOWmEMgRAINS
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
 
 //
@@ -5946,6 +5919,36 @@ all values that can be returned by GetThreadPriority() (Win32)
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e8.ifcIDzIPPER END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e9.flSIGNc BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*flSIGNc*//*1*/
+
+/*3*/
+#define flSIGNc_FAILiFnAPKINnOTeXIST        0xe0000124
+#define flSIGNc_GIVER                       0xe0000224
+/*3*/
+#define flSIGNc_null    0xe0000024
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005e9.flSIGNc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -27843,10 +27846,10 @@ cache, wo per windowOldC object
 /*
 code may use setIfZeAM on *(countT*)this
  this is done to avoid the overhead of serialization on face_poolC_S::aptListRoot, which is never modified once it is set
-2 bits are available for application use
- it is illegal for code to reference these bits directly
- these bits must be referenced only by using getBitsF and setBitsF
- these bits are not referenced or modified by any of my member functions
+ 2 bits are available for application use
+  it is illegal for code to reference these bits directly
+  these bits must be referenced only by using getBitsF and setBitsF
+  these bits are not referenced or modified by any of my member functions
 */
 
 /**/
@@ -30801,6 +30804,7 @@ private :
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.sexHeadS : 1snip.150000f3.sexheads END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.sexC : 1snip.150000f4.sexc BEGIN
 
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -31697,6 +31701,7 @@ listC must be the wo'th base class of any class derived from it
     voidT testDropHeadersF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e201b.poolc.testDropHeadersF!||
     voidT refresh_ppSlots_F( tinS& tinP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e201c.poolC.refresh_ppSlots_F!||
 
     friend class datum_countT_C ;
     friend class listing_listingVSP_C ;
@@ -43968,6 +43973,7 @@ application code that uses an instance of me must ensure that the pool that cont
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_listingVSP_C : 1snip.1500012b.list_listingvsp_c END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.recordC : 1snip.1500012d.recordc BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.

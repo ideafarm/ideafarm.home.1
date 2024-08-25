@@ -1,8 +1,4 @@
 
-#define flSIGNc_GIVER                        0xe00002ff
-#define flSIGNc_FAILiFnAPKINnOTeXIST        0xe00001ff
-#define flSIGNc_null                        0xe00000ff
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -34552,30 +34548,30 @@ coding standard
 #define LISTnAME_OFFSET                                               0xdddd7020
 #define LISTnAME_IDwORD                                               0xdddd7021
 #define LISTnAME_WORDiNDEX                                            0xdddd7022
-#define LISTnAME_IDGaCCESSbEGUN                                        0xdddd7024
-#define LISTnAME_IDGaCCESScOMPLETED                                    0xdddd7025
-#define LISTnAME_GLOBALrECORD                                         0xdddd7026
-#define LISTnAME_SEXc                                                 0xdddd7027
-#define LISTnAME_PROCESSrEPORT                                        0xdddd7028
-#define LISTnAME_PROCESSrEPORTfIELD10                                 0xdddd7029
-#define LISTnAME_PROCESSrEPORTfIELD20                                 0xdddd702a
-#define LISTnAME_PROCESSrEPORTfIELD30                                 0xdddd702b
-#define LISTnAME_PROCESSrEPORTfIELD40                                 0xdddd702c
-#define LISTnAME_PROCESSrEPORTfIELD50                                 0xdddd702d
-#define LISTnAME_PROCESSrEPORTfIELD60                                 0xdddd702e
-#define LISTnAME_PROCESSrEPORTfIELD70                                 0xdddd702f
-#define LISTnAME_PROCESSrEPORTfIELD80                                 0xdddd7030
-#define LISTnAME_PROCESSrEPORTfIELD90                                 0xdddd7031
-#define LISTnAME_PROCESSrEPORTfIELDa0                                 0xdddd7032
-#define LISTnAME_PROCESSrEPORTfIELDb0                                 0xdddd7033
-#define LISTnAME_PROCESSrEPORTfIELDc0                                 0xdddd7034
-#define LISTnAME_PROCESSrEPORTfIELDd0                                 0xdddd7035
-#define LISTnAME_PROCESSrEPORTfIELDe0                                 0xdddd7036
-#define LISTnAME_PROCESSrEPORTfIELDf0                                 0xdddd7037
-#define LISTnAME_PROCESSrEPORTfIELD01                                 0xdddd7038
+#define LISTnAME_IDGaCCESSbEGUN                                       0xdddd7023
+#define LISTnAME_IDGaCCESScOMPLETED                                   0xdddd7024
+#define LISTnAME_GLOBALrECORD                                         0xdddd7025
+#define LISTnAME_SEXc                                                 0xdddd7026
+#define LISTnAME_PROCESSrEPORT                                        0xdddd7027
+#define LISTnAME_PROCESSrEPORTfIELD10                                 0xdddd7028
+#define LISTnAME_PROCESSrEPORTfIELD20                                 0xdddd7029
+#define LISTnAME_PROCESSrEPORTfIELD30                                 0xdddd702a
+#define LISTnAME_PROCESSrEPORTfIELD40                                 0xdddd702b
+#define LISTnAME_PROCESSrEPORTfIELD50                                 0xdddd702c
+#define LISTnAME_PROCESSrEPORTfIELD60                                 0xdddd702d
+#define LISTnAME_PROCESSrEPORTfIELD70                                 0xdddd702e
+#define LISTnAME_PROCESSrEPORTfIELD80                                 0xdddd702f
+#define LISTnAME_PROCESSrEPORTfIELD90                                 0xdddd7030
+#define LISTnAME_PROCESSrEPORTfIELDa0                                 0xdddd7031
+#define LISTnAME_PROCESSrEPORTfIELDb0                                 0xdddd7032
+#define LISTnAME_PROCESSrEPORTfIELDc0                                 0xdddd7033
+#define LISTnAME_PROCESSrEPORTfIELDd0                                 0xdddd7034
+#define LISTnAME_PROCESSrEPORTfIELDe0                                 0xdddd7035
+#define LISTnAME_PROCESSrEPORTfIELDf0                                 0xdddd7036
+#define LISTnAME_PROCESSrEPORTfIELD01                                 0xdddd7037
 /*3*/
 #define LISTnAME_min     0xdddd7001
-#define LISTnAME_max     0xdddd7038
+#define LISTnAME_max     0xdddd7037
 
 
 //
@@ -41317,8 +41313,8 @@ parameters
         classSPP##VSP( const classSPP##VSP& vspP , vspCBFT pCBFP = 0 , countT cArgP = 0 , flagsT flagsP = flVSP_null ) ;                            \
         classSPP##VSP( const classSPP##SP&  spP  , vspCBFT pCBFP = 0 , countT cArgP = 0 , flagsT flagsP = flVSP_null ) ;                            \
         voidT gaspDispensedF( voidT ) ;                                                                                                             \
-        operator const classP*( voidT ) const ;                                                                                                                 \
-        operator classP*( voidT ) ;                                                                                                                 \
+        operator const classP*( voidT ) const ;                                                                                                     \
+        operator       classP*( voidT )       ;                                                                                                     \
         classSPP##VSP& operator =( classP* pvP               ) ;                                                                                    \
         classSPP##VSP& operator =( const classSPP##VSP& vspP ) ;                                                                                    \
         classSPP##VSP& operator =( const classSPP##SP&   spP ) ;                                                                                    \
@@ -41576,6 +41572,7 @@ code that uses me is probably using the high bit for some application purpose
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200476.smartpointerfunctiondefs END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200477.verysmartpointerfunctiondefs BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -51249,3 +51246,30 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+normally this should be commented out because it slows execution
+enable it to set bits in processGlobal2S::pbMemoryBits*
+*/
+/**/
+/*1*//*SHOWmEMgRAINS*//*1*/
+#define SHOWmEMgRAINS
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
