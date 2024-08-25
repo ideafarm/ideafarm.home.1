@@ -18,7 +18,7 @@
             else if( !bBegun                 ) { bBegun = 1 ; pczP[ offo ] = LISTnAME_STRETCHbEGINcOUNT                         ;         }
                  if( ccPrefix && ccPrefix -- )                pczP[ offo ] = *( pczPrefixP ++ )                                 ;
 
-            if( pczP[ offo ] != LISTnAME_ILLEGALnAME ) continue ;                                                                           // SKIP IF NOT PLACEhOLDER
+            if( pczP[ offo ] != LISTnAME_PLACEhOLDER ) continue ;                                                                           // SKIP IF NOT PLACEhOLDER
         {
         for( countT offo = 0 ; pczP[ offo ] ; offo ++ )                                                                                     // FOR EACH NONzE OUTPUT countT
         const byteT* pbi = (byteT*)&valueP + cbi - 1 ;
@@ -30,7 +30,7 @@
     }
         }
             pczP[ offo ] = 0 ;
-            for( ; offo < cco ; offo ++ ) pczP[ offo ] = LISTnAME_ILLEGALnAME ;
+            for( ; offo < cco ; offo ++ ) pczP[ offo ] = LISTnAME_PLACEhOLDER ;
             ZE( countT , offo ) ;
         {
         if( pczP )
@@ -61,7 +61,7 @@
 */
   stretching is sourced from highest to lowest order byte
  valueP
-  else must point to a sufficiently long string of the value LISTnAME_ILLEGALnAME
+  else must point to a sufficiently long string of the value LISTnAME_PLACEhOLDER
   if 0 then i will allocate it from PUSE
  pczP
  tinP

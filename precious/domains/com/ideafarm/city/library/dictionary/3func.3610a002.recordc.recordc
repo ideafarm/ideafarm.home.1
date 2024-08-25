@@ -14,7 +14,7 @@
             *(countT*)vspIdgAccessBegun = idgAccess ;                                                                                                       // ... STORE MY idgAccess IN FIELD IDGaCCESSbEGUN OF RECORD pczNameP
             THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
             
-            countVSP vspIdgAccessBegun = listC::countIF( tinP , hList , count2S( LISTnAME_IDGrECORDaCCESSbEGUN ) ) ;
+            countVSP vspIdgAccessBegun = listC::countIF( tinP , hList , count2S( LISTnAME_IDGaCCESSbEGUN ) ) ;
         {
         if( !POOP && idgAccess )                                                                                                                            // IF !POOP AND pczNameP IS NOT THE globals RECORD ...
 
@@ -26,14 +26,14 @@
                 THREADmODE4rESTORE
                 countT*  pcIdgAccessBegun = vspIdgAccessBegun ;
                 THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
-                countVSP vspIdgAccessBegun = listC::countIF( tinP , globals , count2S( LISTnAME_IDGrECORDaCCESSbEGUN ) ) ;
+                countVSP vspIdgAccessBegun = listC::countIF( tinP , globals , count2S( LISTnAME_IDGaCCESSbEGUN ) ) ;
             {
             if( !POOP )
 
             __( (const countT&)(const poopC&)globals ) ;
-            recordC globals( tinP , count4S( LISTnAME_ROOT , LISTnAME_APPLICATION , LISTnAME_HOME ) , flLISToPEN_null , idGrabLayerP ) ;
+            recordC globals( tinP , count4S( LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD ) , flLISToPEN_null , idGrabLayerP ) ;
         {
-        if( !POOP && ( pczNameP[ 0 ] != LISTnAME_ROOT || pczNameP[ 1 ] != LISTnAME_APPLICATION || pczNameP[ 2 ] != LISTnAME_HOME || pczNameP[ 3 ] ) )        // IF pczNameP DOES NOT NAME THE GLOBALS RECORD (TO AVOID INFINITE RECURSION) ...
+        if( !POOP && ( pczNameP[ 0 ] != LISTnAME_ROOT || pczNameP[ 1 ] != LISTnAME_ROOTaPPLICATION || pczNameP[ 2 ] != LISTnAME_GLOBALrECORD || pczNameP[ 3 ] ) )        // IF pczNameP DOES NOT NAME THE GLOBALS RECORD (TO AVOID INFINITE RECURSION) ...
 
         }
             __( !hList ) ;
