@@ -52,12 +52,12 @@ THREADmODE4rESTORE
             countT*  pc2 = vsp2Lath ;
             countT*  pc1 = vsp1Lath ;
 
-            countVSP vsp2Lath = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) ) ;                                               // THIS OBTAINS SHARED READ/WRITE ACCESS TO ANOTHER FIELD (A LISTING) THAT CAN BE USED UNTIL THE countVSP INSTANCE IS DESTROYED
-            countVSP vsp1Lath = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;                                               // THIS OBTAINS SHARED READ/WRITE ACCESS TO A       FIELD (A LISTING) THAT CAN BE USED UNTIL THE countVSP INSTANCE IS DESTROYED
+            countVSP vsp2Lath = listC::countIF( tinP , myRecord , count2S( 2 | BM_HIGH ) ) ;                                               // THIS OBTAINS SHARED READ/WRITE ACCESS TO ANOTHER FIELD (A LISTING) THAT CAN BE USED UNTIL THE countVSP INSTANCE IS DESTROYED
+            countVSP vsp1Lath = listC::countIF( tinP , myRecord , count2S( 1 | BM_HIGH ) ) ;                                               // THIS OBTAINS SHARED READ/WRITE ACCESS TO A       FIELD (A LISTING) THAT CAN BE USED UNTIL THE countVSP INSTANCE IS DESTROYED
         {
 
         recordC myRecord( tinP , pcNameRecord , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC1 ) ;                                                                                                   // THIS OPENS THE SPECIFIED RECORD, WHICH IS JUST A LIST
-        countT  pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , 0 } ;               // THIS CAN BE ANY VALID LIST NAME
+        countT  pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_APPLICATION , LISTnAME_MEMO , 0 } ;               // THIS CAN BE ANY VALID LIST NAME
 
         //tinP.pc Utility[ 0 ] -- ;
         puseC   puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;                                                                                               // THIS poolC INSTANCE USES BACKING MEMORY THAT IS SHARED BY ALL PROCESSES IN THIS IPDOS (TM) HOME

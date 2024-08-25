@@ -19,7 +19,7 @@
             else if( !bBegun                 ) { bBegun = 1 ; pczP[ offo ] = LISTnAME_STRETCHbEGINoStEXTsTRZ                    ;         }
                  if( ccPrefix && ccPrefix -- )                pczP[ offo ] = *( pczPrefixP ++ )                                 ;
 
-            if( pczP[ offo ] != LISTnAME_PLACEhOLDER ) continue ;                                                                           // SKIP IF NOT PLACEhOLDER
+            if( pczP[ offo ] != LISTnAME_ILLEGALnAME ) continue ;                                                                           // SKIP IF NOT PLACEhOLDER
         {
         for( countT offo = 0 ; pczP[ offo ] ; offo ++ )                                                                                     // FOR EACH NONzE OUTPUT countT
         const byteT* pbi = pbP                       ;
@@ -31,7 +31,7 @@
     }
         }
             pczP[ offo ] = 0 ;
-            for( ; offo < cco ; offo ++ ) pczP[ offo ] = LISTnAME_PLACEhOLDER ;
+            for( ; offo < cco ; offo ++ ) pczP[ offo ] = LISTnAME_ILLEGALnAME ;
             ZE( countT , offo ) ;
         {
         if( pczP )
@@ -67,7 +67,7 @@
   must be terminated by 0
   must not be 0
  postP
-  else must point to a sufficiently long string of the value LISTnAME_PLACEhOLDER
+  else must point to a sufficiently long string of the value LISTnAME_ILLEGALnAME
   if 0 then i will allocate it from PUSE
  pczP
  tinP
