@@ -1,4 +1,6 @@
 
+#define LNA(idP) ( 0x90000000 + idP )
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -34488,7 +34490,6 @@ coding standard
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039a.bospoop END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039b.listname BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -34513,65 +34514,68 @@ coding standard
 
 //CS:CODEsYNC: 330e5007 33001126 3300039b (LISTnAME_ROOTsYSTEM*)
 
+//20240826@1409: ELIMINATED USE OF "/*id9*/" SO VALUES ARE NOW HARDCODED
+//IT IS ILLEGAL TO CHANGE THESE VALUES BECAUSE THEY ARE USED IN PERSISTENT poolC INSTANCES (listC DATABASES)
+
 /*3*/
-#define LISTnAME_ROOT                                                 0xdddd7001
-#define LISTnAME_ROOTsYSTEM1                                          0xdddd7002
-#define LISTnAME_ROOTsYSTEM2                                          0xdddd7003
-#define LISTnAME_ROOTsYSTEM3                                          0xdddd7004
-#define LISTnAME_ROOTsYSTEM4                                          0xdddd7005
-#define LISTnAME_ROOTsYSTEM5                                          0xdddd7006
-#define LISTnAME_ROOTsYSTEM6                                          0xdddd7007
-#define LISTnAME_ROOTsYSTEM7                                          0xdddd7008
-#define LISTnAME_ROOTsYSTEM8                                          0xdddd7009
-#define LISTnAME_ROOTaPPLICATION                                      0xdddd700a
-#define LISTnAME_HANDhOLD                                             0xdddd700b
-#define LISTnAME_INDEXsYSTEM                                          0xdddd700c
-#define LISTnAME_INDEXaPPLICATION                                     0xdddd700d
-#define LISTnAME_PREALLOCATED                                         0xdddd700e
-#define LISTnAME_TEMPORARY                                            0xdddd700f
-#define LISTnAME_SELECTED                                             0xdddd7010
-#define LISTnAME_UNKNOWN                                              0xdddd7011
-#define LISTnAME_PLACEhOLDER                                          0xdddd7012
-#define LISTnAME_DICTIONARY                                           0xdddd7013
-#define LISTnAME_FIELDvALUEiNDEX                                      0xdddd7014
-#define LISTnAME_OLDtYPEcOUNT                                         0xdddd7015
-#define LISTnAME_OLDtYPEoStEXTsTRZ                                    0xdddd7016
-#define LISTnAME_OLDtYPEcOUNTsTRZ                                     0xdddd7017
-#define LISTnAME_STRETCHeND                                           0xdddd7018
-#define LISTnAME_STRETCHbEGINcOUNT                                    0xdddd7019
-#define LISTnAME_STRETCHbEGINoStEXTsTRZ                               0xdddd701a
-#define LISTnAME_STRETCHbEGINcOUNTsTRZ                                0xdddd701b
-#define LISTnAME_STRETCHbEGINbITS                                     0xdddd701c
-#define LISTnAME_RECORD                                               0xdddd701d
-#define LISTnAME_FIELD                                                0xdddd701e
-#define LISTnAME_DATUM                                                0xdddd701f
-#define LISTnAME_OFFSET                                               0xdddd7020
-#define LISTnAME_IDwORD                                               0xdddd7021
-#define LISTnAME_WORDiNDEX                                            0xdddd7022
-#define LISTnAME_IDGaCCESSbEGUN                                       0xdddd7023
-#define LISTnAME_IDGaCCESScOMPLETED                                   0xdddd7024
-#define LISTnAME_GLOBALrECORD                                         0xdddd7025
-#define LISTnAME_SEXc                                                 0xdddd7026
-#define LISTnAME_PROCESSrEPORT                                        0xdddd7027
-#define LISTnAME_PROCESSrEPORTfIELD10                                 0xdddd7028
-#define LISTnAME_PROCESSrEPORTfIELD20                                 0xdddd7029
-#define LISTnAME_PROCESSrEPORTfIELD30                                 0xdddd702a
-#define LISTnAME_PROCESSrEPORTfIELD40                                 0xdddd702b
-#define LISTnAME_PROCESSrEPORTfIELD50                                 0xdddd702c
-#define LISTnAME_PROCESSrEPORTfIELD60                                 0xdddd702d
-#define LISTnAME_PROCESSrEPORTfIELD70                                 0xdddd702e
-#define LISTnAME_PROCESSrEPORTfIELD80                                 0xdddd702f
-#define LISTnAME_PROCESSrEPORTfIELD90                                 0xdddd7030
-#define LISTnAME_PROCESSrEPORTfIELDa0                                 0xdddd7031
-#define LISTnAME_PROCESSrEPORTfIELDb0                                 0xdddd7032
-#define LISTnAME_PROCESSrEPORTfIELDc0                                 0xdddd7033
-#define LISTnAME_PROCESSrEPORTfIELDd0                                 0xdddd7034
-#define LISTnAME_PROCESSrEPORTfIELDe0                                 0xdddd7035
-#define LISTnAME_PROCESSrEPORTfIELDf0                                 0xdddd7036
-#define LISTnAME_PROCESSrEPORTfIELD01                                 0xdddd7037
+#define LISTnAME_min                                                  0x80000001
+#define LISTnAME_ROOT                                                 0x80000001
+#define LISTnAME_ROOTsYSTEM1                                          0x80000002
+#define LISTnAME_ROOTsYSTEM2                                          0x80000003
+#define LISTnAME_ROOTsYSTEM3                                          0x80000004
+#define LISTnAME_ROOTsYSTEM4                                          0x80000005
+#define LISTnAME_ROOTsYSTEM5                                          0x80000006
+#define LISTnAME_ROOTsYSTEM6                                          0x80000007
+#define LISTnAME_ROOTsYSTEM7                                          0x80000008
+#define LISTnAME_ROOTsYSTEM8                                          0x80000009
+#define LISTnAME_ROOTaPPLICATION                                      0x8000000a
+#define LISTnAME_HANDhOLD                                             0x8000000b
+#define LISTnAME_INDEXsYSTEM                                          0x8000000c
+#define LISTnAME_INDEXaPPLICATION                                     0x8000000d
+#define LISTnAME_PREALLOCATED                                         0x8000000e
+#define LISTnAME_TEMPORARY                                            0x8000000f
+#define LISTnAME_SELECTED                                             0x80000010
+#define LISTnAME_UNKNOWN                                              0x80000011
+#define LISTnAME_PLACEhOLDER                                          0x80000012
+#define LISTnAME_DICTIONARY                                           0x80000013
+#define LISTnAME_FIELDvALUEiNDEX                                      0x80000014
+#define LISTnAME_OLDtYPEcOUNT                                         0x80000015
+#define LISTnAME_OLDtYPEoStEXTsTRZ                                    0x80000016
+#define LISTnAME_OLDtYPEcOUNTsTRZ                                     0x80000017
+#define LISTnAME_STRETCHeND                                           0x80000018
+#define LISTnAME_STRETCHbEGINcOUNT                                    0x80000019
+#define LISTnAME_STRETCHbEGINoStEXTsTRZ                               0x8000001a
+#define LISTnAME_STRETCHbEGINcOUNTsTRZ                                0x8000001b
+#define LISTnAME_STRETCHbEGINbITS                                     0x8000001c
+#define LISTnAME_RECORD                                               0x8000001d
+#define LISTnAME_FIELD                                                0x8000001e
+#define LISTnAME_DATUM                                                0x8000001f
+#define LISTnAME_OFFSET                                               0x80000020
+#define LISTnAME_IDwORD                                               0x80000021
+#define LISTnAME_WORDiNDEX                                            0x80000022
+#define LISTnAME_IDGaCCESSbEGUN                                       0x80000023
+#define LISTnAME_IDGaCCESScOMPLETED                                   0x80000024
+#define LISTnAME_GLOBALrECORD                                         0x80000025
+#define LISTnAME_SEXc                                                 0x80000026
+#define LISTnAME_PROCESSrEPORT                                        0x80000027
+#define LISTnAME_PROCESSrEPORTfIELD10                                 0x80000028
+#define LISTnAME_PROCESSrEPORTfIELD20                                 0x80000029
+#define LISTnAME_PROCESSrEPORTfIELD30                                 0x8000002a
+#define LISTnAME_PROCESSrEPORTfIELD40                                 0x8000002b
+#define LISTnAME_PROCESSrEPORTfIELD50                                 0x8000002c
+#define LISTnAME_PROCESSrEPORTfIELD60                                 0x8000002d
+#define LISTnAME_PROCESSrEPORTfIELD70                                 0x8000002e
+#define LISTnAME_PROCESSrEPORTfIELD80                                 0x8000002f
+#define LISTnAME_PROCESSrEPORTfIELD90                                 0x80000030
+#define LISTnAME_PROCESSrEPORTfIELDa0                                 0x80000031
+#define LISTnAME_PROCESSrEPORTfIELDb0                                 0x80000032
+#define LISTnAME_PROCESSrEPORTfIELDc0                                 0x80000033
+#define LISTnAME_PROCESSrEPORTfIELDd0                                 0x80000034
+#define LISTnAME_PROCESSrEPORTfIELDe0                                 0x80000035
+#define LISTnAME_PROCESSrEPORTfIELDf0                                 0x80000036
+#define LISTnAME_PROCESSrEPORTfIELD01                                 0x80000037
+#define LISTnAME_max                                                  0x80000037
 /*3*/
-#define LISTnAME_min     0xdddd7001
-#define LISTnAME_max     0xdddd7037
 
 
 //
