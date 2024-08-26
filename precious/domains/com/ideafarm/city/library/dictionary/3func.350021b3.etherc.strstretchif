@@ -18,7 +18,7 @@
             else if( !bBegun                 ) { bBegun = 1 ; pczP[ offo ] = LISTnAME_STRETCHbEGINcOUNTsTRZ                     ;         }
                  if( ccPrefix && ccPrefix -- )                pczP[ offo ] = *( pczPrefixP ++ )                                 ;
 
-            if( pczP[ offo ] != LISTnAME_ILLEGALnAME ) continue ;                                                                           // SKIP IF NOT ILLEGALnAME
+            if( pczP[ offo ] != LISTnAME_PLACEhOLDER ) continue ;                                                                           // SKIP IF NOT PLACEhOLDER
         {
         for( countT offo = 0 ; pczP[ offo ] ; offo ++ )                                                                                     // FOR EACH NONzE OUTPUT countT
         const byteT* pbi = (byteT*)pczInP  + cbi - 1 ;
@@ -30,14 +30,14 @@
     }
         }
             pczP[ offo ] = 0 ;
-            for( ; offo < cco ; offo ++ ) pczP[ offo ] = LISTnAME_ILLEGALnAME ;
+            for( ; offo < cco ; offo ++ ) pczP[ offo ] = LISTnAME_PLACEhOLDER ;
             ZE( countT , offo ) ;
         {
         if( pczP )
         PUSE.newF( tinP , LF , *(byteT**)&pczP , ( cco + 1 ) * sizeof( countT ) ) ; ___( pczP ) ;
         const countT cco = ccPrefix + cbi + 2 + ccSuffix ; // PREFIX BEGINmARK VALUE ENDmARK SUFFIX
     {
-    if( !pczP )                                                                                                                             // IFF (IF AND ONLY IF) ALLOCATED NOW, OUTPUT IS ENTIRELY INITIALIZED TO ILLEGALnAME
+    if( !pczP )                                                                                                                             // IFF (IF AND ONLY IF) ALLOCATED NOW, OUTPUT IS ENTIRELY INITIALIZED TO PLACEhOLDER
 
     countT cbi      = sizeof( countT ) * ( cNetP ? cNetP : thirdC::c_strlenIF( tinP , pczInP ) ) ;                                          // INPUT: CCiN IS EITHER EXPLICIT OR IMPLIED BY NULL TERMINATOR
     countT ccSuffix = !pczSuffixP ? 0 : thirdC::c_strlenIF( tinP , pczSuffixP ) ;
@@ -65,8 +65,8 @@
   must be terminated by 0
   must not be 0
  pczInP
-  if longer than needed, i will truncate by replacing a LISTnAME_ILLEGALnAME with 0
-  else must point to a sufficiently long string of the value LISTnAME_ILLEGALnAME
+  if longer than needed, i will truncate by replacing a LISTnAME_PLACEhOLDER with 0
+  else must point to a sufficiently long string of the value LISTnAME_PLACEhOLDER
   if 0 then i will allocate it from PUSE
  pczP
  tinP
