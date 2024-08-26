@@ -23,7 +23,7 @@ THREADmODE4rESTORE
         *pcReturnCode += 0x11111111 ;
     
         countT*  pcReturnCode = vspReturnCodeLath ;
-        countVSP vspReturnCodeLath = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) ) ;
+        countVSP vspReturnCodeLath = listC::countIF( tinP , myRecord , count2S( 1 | BM_HIGH ) ) ;
     {
 
     recordC myRecord( tinP , pcNameRecord ) ;
@@ -31,10 +31,10 @@ THREADmODE4rESTORE
 
 
 
-    //countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idAdam | BM_HIGH , [random secret lo] | BM_HIGH , [random secret middle] | BM_HIGH , [random secret hi] | BM_HIGH , 0 } ; // THIS RECORD IS VISIBLE TO ANY ADAM THAT CAN SPECIFY THE 3 SECRET VALUES
-    //countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idAdam | BM_HIGH ,                                     tinP.pag1->idCell | BM_HIGH                                , 0 } ; // THIS RECORD IS VISIBLE TO ANY ADAM THAT CAN SPECIFY THE idAdam AND idCell VALUES
-      countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idAdam | BM_HIGH                                                                                                  , 0 } ; // THIS RECORD IS VISIBLE TO ALL CELLS OF THIS ADAM AND TO ANY OTHER ADAM THAT CAN SPECIFY THE idAdam VALUE
-    //countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT                                                                                                                                , 0 } ; // THIS RECORD IS VISIBLE TO ALL ADAMS IN THE HOME
+    //countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_APPLICATION , LISTnAME_HOMErECORD , LISTnAME_MEMO , tinP.pag1->idAdam | BM_HIGH , [random secret lo] | BM_HIGH , [random secret middle] | BM_HIGH , [random secret hi] | BM_HIGH , 0 } ; // THIS RECORD IS VISIBLE TO ANY ADAM THAT CAN SPECIFY THE 3 SECRET VALUES
+    //countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_APPLICATION , LISTnAME_HOMErECORD , LISTnAME_MEMO , tinP.pag1->idAdam | BM_HIGH ,                                     tinP.pag1->idCell | BM_HIGH                                , 0 } ; // THIS RECORD IS VISIBLE TO ANY ADAM THAT CAN SPECIFY THE idAdam AND idCell VALUES
+      countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_APPLICATION , LISTnAME_HOMErECORD , LISTnAME_MEMO , tinP.pag1->idAdam | BM_HIGH                                                                                                  , 0 } ; // THIS RECORD IS VISIBLE TO ALL CELLS OF THIS ADAM AND TO ANY OTHER ADAM THAT CAN SPECIFY THE idAdam VALUE
+    //countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_APPLICATION , LISTnAME_HOMErECORD , LISTnAME_MEMO                                                                                                                                , 0 } ; // THIS RECORD IS VISIBLE TO ALL ADAMS IN THE HOME
                                                                                                                                                                                                                                                                   // "VISIBILITY" HERE MEANS ONLY THAT THE RECORD CAN BE INSPECTED WITHOUT WALKING THE LISTS
                                                                                                                                                                                                                                                                   // IN ALL OF THESE EXAMPLES, THE RECORD IS VISIBLE TO ALL ADAMS IN THE HOME, BECAUSE IT RESIDES IN THE HOMEtEMP poolC INSTANCE
 

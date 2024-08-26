@@ -126,7 +126,7 @@
 
                                     if( pc_idDeathTypePKZip )            idDeathTypePKZip = *pc_idDeathTypePKZip ;
                                     const countT*                     pc_idDeathTypePKZip = vsp_idDeathTypePKZip ;
-                                    countVSP                         vsp_idDeathTypePKZip = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD40 ) , flagsUse ) ;
+                                    countVSP                         vsp_idDeathTypePKZip = listC::countIF( tinP , myRecord , count2S( 4 | BM_HIGH ) , flagsUse ) ;
                                 {
                             
                                 }
@@ -134,7 +134,7 @@
 
                                     if( pc_valuePKZip )                  valuePKZip       = *pc_valuePKZip ;
                                     const countT*                     pc_valuePKZip       = vsp_valuePKZip ;
-                                    countVSP                         vsp_valuePKZip       = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD30 ) , flagsUse ) ;
+                                    countVSP                         vsp_valuePKZip       = listC::countIF( tinP , myRecord , count2S( 3 | BM_HIGH ) , flagsUse ) ;
                                 {
                             
                                 }
@@ -142,7 +142,7 @@
 
                                     countT idPoop = !pc_idPoop ? 0 : *pc_idPoop ;
                                     const countT*                     pc_idPoop           = vsp_idPoop ;
-                                    countVSP                         vsp_idPoop           = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD20 ) , flagsUse ) ;
+                                    countVSP                         vsp_idPoop           = listC::countIF( tinP , myRecord , count2S( 2 | BM_HIGH ) , flagsUse ) ;
                                 {
                             
                                 }
@@ -150,7 +150,7 @@
 
                                     if( pc_bHiredAOK )               bPKZipHiredAOK       = !!*pc_bHiredAOK ;
                                     const countT*                      pc_bHiredAOK       =   vsp_bHiredAOK ;
-                                    countVSP                          vsp_bHiredAOK       = listC::countIF( tinP , myRecord , count2S( LISTnAME_PROCESSrEPORTfIELD10 ) , flagsUse ) ;
+                                    countVSP                          vsp_bHiredAOK       = listC::countIF( tinP , myRecord , count2S( 1 | BM_HIGH ) , flagsUse ) ;
                                 {
 
                                 tinP.pEtScratch->traceF( tinP , T("record exists") ) ;
@@ -162,7 +162,7 @@
 
                         {
                         const flagsT flagsUse = flLISToPEN_IFeXISTS | flLISToPEN_REFRESHaNDrETRYfOREVER ;
-                        countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
+                        countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_APPLICATION , LISTnAME_HOMErECORD , LISTnAME_MEMO , tinP.pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
                         puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
                         _IO_
                     {

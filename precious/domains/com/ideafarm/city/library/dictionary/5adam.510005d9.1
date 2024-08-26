@@ -821,10 +821,10 @@ DONE( tmListServeF )
                             //handleC hListSubs( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LIST oLD ) ; //U::WHY IS THIS HERE? IT IS NOT REFERENCED
                             grabitC grabit( tinP , TAG( TAGiDnULL ) ) ;
 
-                            etherC::strStretchIF( tinP , pczListSubaccounts , count2S( LISTnAME_ROOTaPPLICATION ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczListSubaccounts , count2S( LISTnAME_APPLICATION ) , idAccount ) ;
                             pczListSubaccounts[ offo     ] = 0                      ;
                             pczListSubaccounts[ offo - 1 ] = GfIELD_listSubaccounts ;
-                            for( countT offo = 0 ; offo < ccListSubaccounts ; offo ++ ) pczListSubaccounts[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccListSubaccounts ; offo ++ ) pczListSubaccounts[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( pczListSubaccounts )
                         countT* pczListSubaccounts = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccListSubaccounts + 1 ) ) ; ___( pczListSubaccounts ) ;
@@ -892,7 +892,7 @@ DONE( tmListServeF )
         
                                         etherC::strStretchIF( tinP , pczSub , count2S( GfIELD_listSubaccounts ) , idSub ) ;
                                         pczSub[ offo ] = 0 ;
-                                        for( countT offo = 0 ; offo < ccSub ; offo ++ ) pczSub[ offo ] = LISTnAME_PLACEhOLDER ;
+                                        for( countT offo = 0 ; offo < ccSub ; offo ++ ) pczSub[ offo ] = LISTnAME_ILLEGALnAME ;
                                     {
                                     if( pczSub )
                                     countT* pczSub = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccSub + 1 ) ) ; ___( pczSub ) ;
@@ -919,9 +919,9 @@ DONE( tmListServeF )
                             handleC hListAcc( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LIST oLD ) ;
                             grabitC grabit( tinP , TAG( TAGiDnULL ) ) ;
 
-                            etherC::strStretchIF( tinP , pczAccount , count2S( LISTnAME_ROOTaPPLICATION ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczAccount , count2S( LISTnAME_APPLICATION ) , idAccount ) ;
                             pczAccount[ offo ] = 0 ;
-                            for( countT offo = 0 ; offo < ccAccount ; offo ++ ) pczAccount[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccAccount ; offo ++ ) pczAccount[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( pczAccount )
                         countT* pczAccount = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccAccount + 1 ) ) ; ___( pczAccount ) ;
@@ -933,7 +933,7 @@ DONE( tmListServeF )
                     //}
                     //    THREADmODE3rESTORE
                     //    }
-                    //        PUSE.listOld2012F( tinP , count2S( LISTnAME_ROOTaPPLICATION ) , ifcIDhOWlIST_FIFO , arg ) ;
+                    //        PUSE.listOld2012F( tinP , count2S( LISTnAME_APPLICATION ) , ifcIDhOWlIST_FIFO , arg ) ;
                     //        _IO_
                     //        arg.flagsInspect = flAPTiNSPECT_CHATTERtOcONSOLE | flAPTiNSPECT_RECURSE ; 
                     //        listWalkArgOldS arg( tinP ) ;
@@ -1089,10 +1089,10 @@ DONE( tmListServeF )
                             handleC hListSubs( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LIST oLD ) ;
                             grabitC grabit( tinP , TAG( TAGiDnULL ) ) ;
 
-                            etherC::strStretchIF( tinP , pczListSubaccounts , count2S( LISTnAME_ROOTaPPLICATION ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczListSubaccounts , count2S( LISTnAME_APPLICATION ) , idAccount ) ;
                             pczListSubaccounts[ offo     ] = 0                      ;
                             pczListSubaccounts[ offo - 1 ] = GfIELD_listSubaccounts ;
-                            for( countT offo = 0 ; offo < ccListSubaccounts ; offo ++ ) pczListSubaccounts[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccListSubaccounts ; offo ++ ) pczListSubaccounts[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( pczListSubaccounts )
                         countT* pczListSubaccounts = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccListSubaccounts + 1 ) ) ; ___( pczListSubaccounts ) ;
@@ -1135,9 +1135,9 @@ DONE( tmListServeF )
                             countT* pcSuffix2 = pcSuffix1 + 1 + sizeof idSub ;
                             etherC::strStretchIF( tinP , pcSuffix1 , count2S( GfIELD_listSubaccounts ) , idSub     ) ;
                             countT* pcSuffix1 = pczField + 1 + sizeof idAccount ;
-                            etherC::strStretchIF( tinP , pczField   , count2S( LISTnAME_ROOTaPPLICATION   ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczField   , count2S( LISTnAME_APPLICATION   ) , idAccount ) ;
                             pczField[ offo ] = 0 ;
-                            for( countT offo = 0 ; offo < ccField ; offo ++ ) pczField[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccField ; offo ++ ) pczField[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( !POOP )
 
@@ -1210,10 +1210,10 @@ DONE( tmListServeF )
                             grabitC grabit( tinP , TAG( TAGiDnULL ) ) ;
 
                             etherC::strStretchIF( tinP , pcSuffix , count2S( GfIELD_listSubaccounts ) , idSub     ) ;
-                            etherC::strStretchIF( tinP , pczSub   , count2S( LISTnAME_ROOTaPPLICATION   ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczSub   , count2S( LISTnAME_APPLICATION   ) , idAccount ) ;
                             countT* pcSuffix = pczSub + 1 + sizeof idAccount ;
                             pczSub[ offo ] = 0 ;
-                            for( countT offo = 0 ; offo < ccSub ; offo ++ ) pczSub[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccSub ; offo ++ ) pczSub[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( !POOP )
 
@@ -1423,7 +1423,7 @@ DONE( tmListServeF )
         
                                                 etherC::strStretchIF( tinP , pczSub , count2S( GfIELD_listSubaccounts ) , idSub ) ;
                                                 pczSub[ offo ] = 0 ;
-                                                for( countT offo = 0 ; offo < ccSub ; offo ++ ) pczSub[ offo ] = LISTnAME_PLACEhOLDER ;
+                                                for( countT offo = 0 ; offo < ccSub ; offo ++ ) pczSub[ offo ] = LISTnAME_ILLEGALnAME ;
             
                                                 }
                                                     __( idSub == - 1 ) ;
@@ -1462,9 +1462,9 @@ DONE( tmListServeF )
                                 grabitC grabit( tinP , TAG( TAGiDnULL ) ) ;
                             {
 
-                            etherC::strStretchIF( tinP , pczAccount , count2S( LISTnAME_ROOTaPPLICATION ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczAccount , count2S( LISTnAME_APPLICATION ) , idAccount ) ;
                             pczAccount[ offo ] = 0 ;
-                            for( countT offo = 0 ; offo < ccAccount ; offo ++ ) pczAccount[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccAccount ; offo ++ ) pczAccount[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( pczAccount )
                         countT* pczAccount = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccAccount + 1 ) ) ; ___( pczAccount ) ;
@@ -1624,7 +1624,7 @@ DONE( tmListServeF )
                         CONoUTrAW3( "ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDaCCOUNT/d [poop]: " , POOP , "\r\n" ) ; //U::TO FIND A BUG
                         THREADmODE3rESTORE
                         }
-                            PUSE.openListOld2012F( tinP , hListAccs , count2S( LISTnAME_ROOTaPPLICATION ) ) ;
+                            PUSE.openListOld2012F( tinP , hListAccs , count2S( LISTnAME_APPLICATION ) ) ;
                             puseC puseAccount( puseMasterP ) ; //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                         {
                         THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
@@ -1654,9 +1654,9 @@ DONE( tmListServeF )
                             handleC hListAcc( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LIST oLD ) ;
                             grabitC grabit( tinP , TAG( TAGiDnULL ) ) ;
 
-                            etherC::strStretchIF( tinP , pczAccount   , count2S( LISTnAME_ROOTaPPLICATION   ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczAccount   , count2S( LISTnAME_APPLICATION   ) , idAccount ) ;
                             pczAccount[ offo ] = 0 ;
-                            for( countT offo = 0 ; offo < ccAccount ; offo ++ ) pczAccount[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccAccount ; offo ++ ) pczAccount[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( !POOP )
 
@@ -1689,9 +1689,9 @@ DONE( tmListServeF )
                             {
                             THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
 
-                            etherC::strStretchIF( tinP , pczAccount   , count2S( LISTnAME_ROOTaPPLICATION   ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczAccount   , count2S( LISTnAME_APPLICATION   ) , idAccount ) ;
                             pczAccount[ offo ] = 0 ;
-                            for( countT offo = 0 ; offo < ccAccount ; offo ++ ) pczAccount[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccAccount ; offo ++ ) pczAccount[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( !POOP )
                         ZE( boolT , bExisted ) ;
@@ -1764,9 +1764,9 @@ DONE( tmListServeF )
                             {
 
                             *( pczDesc + 1 + sizeof idAccount ) = GfIELD_listDescription ;
-                            etherC::strStretchIF( tinP , pczDesc , count2S( LISTnAME_ROOTaPPLICATION ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczDesc , count2S( LISTnAME_APPLICATION ) , idAccount ) ;
                             pczDesc[ offo ] = 0 ;
-                            for( countT offo = 0 ; offo < ccDesc ; offo ++ ) pczDesc[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccDesc ; offo ++ ) pczDesc[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( pczDesc )
                         countT* pczDesc = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccDesc + 1 ) ) ; ___( pczDesc ) ;
@@ -1855,9 +1855,9 @@ DONE( tmListServeF )
                             {
 
                             *( pczDesc + 1 + sizeof idAccount ) = GfIELD_listDescription ;
-                            etherC::strStretchIF( tinP , pczDesc , count2S( LISTnAME_ROOTaPPLICATION ) , idAccount ) ;
+                            etherC::strStretchIF( tinP , pczDesc , count2S( LISTnAME_APPLICATION ) , idAccount ) ;
                             pczDesc[ offo ] = 0 ;
-                            for( countT offo = 0 ; offo < ccDesc ; offo ++ ) pczDesc[ offo ] = LISTnAME_PLACEhOLDER ;
+                            for( countT offo = 0 ; offo < ccDesc ; offo ++ ) pczDesc[ offo ] = LISTnAME_ILLEGALnAME ;
                         {
                         if( pczDesc )
                         countT* pczDesc = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccDesc + 1 ) ) ; ___( pczDesc ) ;

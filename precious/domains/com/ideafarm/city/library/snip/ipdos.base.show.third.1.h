@@ -34506,7 +34506,7 @@ coding standard
 //THESE VALUES ARE USED IN THE BACKING FILES FOR PERSISTENT poolC INSTANCES
 
 //2010.11.12@1529: REORDERED THESE TO ENSURE THAT SYSTEM1-8 VALUES ARE BELOW APPLICATION SO THAT CAN WALK THROUGH SYSTEM LISTS WHILE HAVING APPLICATION LIST GRABBED; INDEXING CAN NEED TO DO THIS
-//2010.11.18@0932: INSERTED LISTnAME_UNKNOWN AND LISTnAME_TEMPORARY FOR AESTHETIC REASONS, SINCE HAVE ALREADY BROKEN EXTANT FILES 
+//2010.11.18@0932: INSERTED L ISTnAME_U NKNOWN AND LISTnAME_TEMPORARY FOR AESTHETIC REASONS, SINCE HAVE ALREADY BROKEN EXTANT FILES 
 
 // RECURSIVE GRABBING USING grabitC IS USED FOR listC INSTANCES NAMED LISTnAME_ROOT*
 // IF MORE SUCH NAMES ARE DEFINED, THE ARRAY IN tinS THAT IS USED TO PROVIDE RECURSIVE GRABBING FOR grabitC OBJECTS MIGHT NEED TO BE MADE LARGER
@@ -34523,52 +34523,26 @@ coding standard
 #define LISTnAME_ROOTsYSTEM6                                          0xdddd7007
 #define LISTnAME_ROOTsYSTEM7                                          0xdddd7008
 #define LISTnAME_ROOTsYSTEM8                                          0xdddd7009
-#define LISTnAME_ROOTaPPLICATION                                      0xdddd700a
+#define LISTnAME_APPLICATION                                      0xdddd700a
 #define LISTnAME_HANDhOLD                                             0xdddd700b
-#define LISTnAME_INDEXsYSTEM                                          0xdddd700c
 #define LISTnAME_INDEXaPPLICATION                                     0xdddd700d
 #define LISTnAME_PREALLOCATED                                         0xdddd700e
 #define LISTnAME_TEMPORARY                                            0xdddd700f
-#define LISTnAME_SELECTED                                             0xdddd7010
-#define LISTnAME_UNKNOWN                                              0xdddd7011
-#define LISTnAME_PLACEhOLDER                                          0xdddd7012
+#define LISTnAME_SELECTc                                              0xdddd7010
+#define LISTnAME_ILLEGALnAME                                          0xdddd7012
 #define LISTnAME_DICTIONARY                                           0xdddd7013
 #define LISTnAME_FIELDvALUEiNDEX                                      0xdddd7014
-#define LISTnAME_OLDtYPEcOUNT                                         0xdddd7015
-#define LISTnAME_OLDtYPEoStEXTsTRZ                                    0xdddd7016
-#define LISTnAME_OLDtYPEcOUNTsTRZ                                     0xdddd7017
 #define LISTnAME_STRETCHeND                                           0xdddd7018
 #define LISTnAME_STRETCHbEGINcOUNT                                    0xdddd7019
 #define LISTnAME_STRETCHbEGINoStEXTsTRZ                               0xdddd701a
 #define LISTnAME_STRETCHbEGINcOUNTsTRZ                                0xdddd701b
 #define LISTnAME_STRETCHbEGINbITS                                     0xdddd701c
 #define LISTnAME_RECORD                                               0xdddd701d
-#define LISTnAME_FIELD                                                0xdddd701e
-#define LISTnAME_DATUM                                                0xdddd701f
-#define LISTnAME_OFFSET                                               0xdddd7020
-#define LISTnAME_IDwORD                                               0xdddd7021
-#define LISTnAME_WORDiNDEX                                            0xdddd7022
-#define LISTnAME_IDGaCCESSbEGUN                                       0xdddd7023
-#define LISTnAME_IDGaCCESScOMPLETED                                   0xdddd7024
-#define LISTnAME_GLOBALrECORD                                         0xdddd7025
+#define LISTnAME_IDGrECORDaCCESSbEGUN                                       0xdddd7023
+#define LISTnAME_IDGrECORDaCCESScOMPLETED                                   0xdddd7024
+#define LISTnAME_HOMErECORD                                         0xdddd7025
 #define LISTnAME_SEXc                                                 0xdddd7026
-#define LISTnAME_PROCESSrEPORT                                        0xdddd7027
-#define LISTnAME_PROCESSrEPORTfIELD10                                 0xdddd7028
-#define LISTnAME_PROCESSrEPORTfIELD20                                 0xdddd7029
-#define LISTnAME_PROCESSrEPORTfIELD30                                 0xdddd702a
-#define LISTnAME_PROCESSrEPORTfIELD40                                 0xdddd702b
-#define LISTnAME_PROCESSrEPORTfIELD50                                 0xdddd702c
-#define LISTnAME_PROCESSrEPORTfIELD60                                 0xdddd702d
-#define LISTnAME_PROCESSrEPORTfIELD70                                 0xdddd702e
-#define LISTnAME_PROCESSrEPORTfIELD80                                 0xdddd702f
-#define LISTnAME_PROCESSrEPORTfIELD90                                 0xdddd7030
-#define LISTnAME_PROCESSrEPORTfIELDa0                                 0xdddd7031
-#define LISTnAME_PROCESSrEPORTfIELDb0                                 0xdddd7032
-#define LISTnAME_PROCESSrEPORTfIELDc0                                 0xdddd7033
-#define LISTnAME_PROCESSrEPORTfIELDd0                                 0xdddd7034
-#define LISTnAME_PROCESSrEPORTfIELDe0                                 0xdddd7035
-#define LISTnAME_PROCESSrEPORTfIELDf0                                 0xdddd7036
-#define LISTnAME_PROCESSrEPORTfIELD01                                 0xdddd7037
+#define LISTnAME_MEMO                                                 0xdddd7027
 /*3*/
 #define LISTnAME_min     0xdddd7001
 #define LISTnAME_max     0xdddd7037
@@ -51273,3 +51247,30 @@ enable it to set bits in processGlobal2S::pbMemoryBits*
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*CBcIRCLEdFLT*//*1*/
+
+#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
