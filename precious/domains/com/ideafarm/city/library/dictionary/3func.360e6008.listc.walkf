@@ -66,7 +66,7 @@
             //    boolT  bOk     = listingC::bIsListingIF( tinP , pNew ) ;
             //    poolC* pPoolIn = poolC::pPoolIF( tinP , (byteT*)pNew ) ;
             //{
-            //if( tinP.pc Utility[ 0 ] && idName == LISTnAME_RECORD )
+            //if( tinP.pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD )
 
                                           *pApt = pNew ;
                 ((listC*)pNew)->aptBro = *pApt ;
@@ -187,8 +187,8 @@
                 PUSHtINaRGS
             {
             )
-                && pczName[ 1 ] == LISTnAME_ROOTaPPLICATION
-                && pczName[ 0 ] == LISTnAME_ROOT
+                && pczName[ 1 ] == LISTnAMEsYS_ROOTaPPLICATION
+                && pczName[ 0 ] == LISTnAMEsYS_ROOT
                 && pczName
                 && ( listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST ) || listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
                 pk->flagsF() & fliLISTINGc_DELETErEQUESTED
@@ -286,11 +286,11 @@
                 }
                     }
                         default                              : { if( tinP.ta.pushed.u.listWalk.walk.offStretchEnd ) tinP.ta.pushed.u.listWalk.walk.offStretchEnd = tinP.ta.pushed.u.listWalk.walk.offStretchBegin = 0 ; break ; }
-                        case LISTnAME_STRETCHbEGINbITS       : { tinP.ta.pushed.u.listWalk.walk.offStretchBegin = off ; break ; }
-                        case LISTnAME_STRETCHbEGINcOUNTsTRZ  :
-                        case LISTnAME_STRETCHbEGINcOUNT      :
-                        case LISTnAME_STRETCHbEGINoStEXTsTRZ :
-                        case LISTnAME_STRETCHeND             : { tinP.ta.pushed.u.listWalk.walk.offStretchEnd   = off ; break ; }
+                        case LISTnAMEsYS_STRETCHbEGINbITS       : { tinP.ta.pushed.u.listWalk.walk.offStretchBegin = off ; break ; }
+                        case LISTnAMEsYS_STRETCHbEGINcOUNTsTRZ  :
+                        case LISTnAMEsYS_STRETCHbEGINcOUNT      :
+                        case LISTnAMEsYS_STRETCHbEGINoStEXTsTRZ :
+                        case LISTnAMEsYS_STRETCHeND             : { tinP.ta.pushed.u.listWalk.walk.offStretchEnd   = off ; break ; }
                     {
                     switch( pczName[ off ] )
                 {
@@ -372,7 +372,7 @@
     //    boolT  bOk     = listingC::bIsListingIF( tinP , pk ) ;
     //    poolC* pPoolIn = poolC::pPoolIF( tinP , (byteT*)pk ) ;
     //{
-    //if( tinP.pc Utility[ 0 ] && idName == LISTnAME_RECORD && pk )
+    //if( tinP.pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD && pk )
 
     listC* pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
     listingC* pk = &APT( listingC , *pApt ) ;
@@ -412,7 +412,7 @@
 
         bClearPoolRecord = 1 ;
     {
-    if( pczName[ 0 ] == LISTnAME_ROOT && pczName[ 1 ] == LISTnAME_ROOTsYSTEM3 && pczName[ 2 ] == LISTnAME_FIELDvALUEiNDEX && pczName[ 3 ] && !pczName[ 4 ] && !tinP.ta.retained.u.listWalk.walk.pPoolRecord )
+    if( pczName[ 0 ] == LISTnAMEsYS_ROOT && pczName[ 1 ] == LISTnAMEsYS_ROOTsYSTEM3 && pczName[ 2 ] == LISTnAMEsYS_FIELDvALUEiNDEX && pczName[ 3 ] && !pczName[ 4 ] && !tinP.ta.retained.u.listWalk.walk.pPoolRecord )
     ZE( boolT , bClearPoolRecord ) ;
 
     nameF( tinP , pczName ) ; //20140111@1810: NOW ALLOCATED IN TLS: { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; ___( pczName ) ; }

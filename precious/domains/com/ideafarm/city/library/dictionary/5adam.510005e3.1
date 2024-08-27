@@ -237,7 +237,7 @@ TASK( tmTestF )
                             sOut << *( pcc ++ ) ; // idProduct
                             sOut << *( pcc ++ ) ; // idAccDepositor
 
-                            __( *( pcc ++ ) - LISTnAMEnOTEbEGIN ) ;
+                            __( *( pcc ++ ) - LISTnAMEsYSnOTEbEGIN ) ;
                             }
                                 pcc += ccNote ;
                                 PUSE( tinP , *(byteT**)&pczNote ) ;
@@ -252,12 +252,12 @@ TASK( tmTestF )
                                 countT cban = sizeof( countT ) * ( ccNote + 1 ) ;
 
                                 }
-                                    while( *( pcc2 ++ ) != LISTnAMEnOTEbEGIN ) ccNote ++ ;
+                                    while( *( pcc2 ++ ) != LISTnAMEsYSnOTEbEGIN ) ccNote ++ ;
                                     countT* pcc2 = pcc ;
                                 {
                                 ZE( countT , ccNote ) ;
                             {
-                            __( *( pcc ++ ) - LISTnAMEnOTEeND ) ;
+                            __( *( pcc ++ ) - LISTnAMEsYSnOTEeND ) ;
 
                             sOut << *(countT*)&timeT2 ;
                             sOut << timeT1 ;
@@ -390,14 +390,14 @@ TASK( tmTestF )
                     THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
                     pGrabit = new( 0 , tinP , LF ) grabitC( tinP , TAG( TAGiDnULL ) ) ; ___( pGrabit ) ;
     
-                    etherC::strStretchIF( tinP , pczListMain , count8S( LISTnAME_ROOTaPPLICATION , LISTnAMEiDfORMAT ) , pczSquished ) ; ___( pczListMain ) ;
+                    etherC::strStretchIF( tinP , pczListMain , count8S( LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYSiDfORMAT ) , pczSquished ) ; ___( pczListMain ) ;
                     ZE( countT* , pczListMain ) ;
                 {
                 if( pczSquished )
                 //CONoUTrAW( T(DASH127 "\r\n")+TF2(idCmd,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" {")+T(pczSquished)+T("}\r\n") ) ;
 
                 //
-                // [LISTnAME_ROOTaPPLICATION][LISTnAMEiDfORMAT]<idAccBucketOwner><idBucket><idProduct><idAccDepositor><pczNote><-timeN2><-timeN1><idDeposit><idAccCommission>
+                // [LISTnAMEsYS_ROOTaPPLICATION][LISTnAMEsYSiDfORMAT]<idAccBucketOwner><idBucket><idProduct><idAccDepositor><pczNote><-timeN2><-timeN1><idDeposit><idAccCommission>
                 //
                 // APPLICATION           IDfORMAT        IDaCCbUCKEToWNER  IDbUCKET  IDpRODUCT  IDaCCdEPOSITOR  NOTE     TIME              IDdEPOSIT  IDaCCcOMMISION
                 //
@@ -447,13 +447,13 @@ TASK( tmTestF )
                         if( bAll || idProduct           ) pczSquished[ offs ++ ] = idProduct ;                            //CS:A  8
                         if( bAll || idAccDepositor      ) pczSquished[ offs ++ ] = idAccDepositor ;                       //CS:A  7
                         }
-                                                          pczSquished[ offs ++ ] = LISTnAMEnOTEbEGIN ; /*DELIMITER*/         //CS:A  6
+                                                          pczSquished[ offs ++ ] = LISTnAMEsYSnOTEbEGIN ; /*DELIMITER*/         //CS:A  6
                                                           }
                                                               while( cToDo -- ) pczSquished[ offs ++ ] = pczNote[ offn ++ ] ;
                                                               countT cToDo = cczNote ;
                                                               ZE( countT , offn ) ;
                                                           {
-                            if( bAll || timeT2          ) pczSquished[ offs ++ ] = LISTnAMEnOTEeND ; /*DELIMITER*/         //CS:A  5
+                            if( bAll || timeT2          ) pczSquished[ offs ++ ] = LISTnAMEsYSnOTEeND ; /*DELIMITER*/         //CS:A  5
                             // IF !timeT2 THEN DON'T NEED DELIMITER SO OMIT IT; THIS WILL ALLOW CLIENT TO SPECIFY PARTIAL NOTES TO GET AGGREGATED TOTALS
                         {
                         if( bAll || pczNote             )
@@ -1105,9 +1105,9 @@ TASK( tmListServeF )
                                                                                                                                                             \
 #define TpUSHfIFOcOUNT(cNameP,cValueP)                                                                                                                      \
 
-#define LISTnAMEnOTEeND                  LISTnAMEaDAMoLD_3
-#define LISTnAMEnOTEbEGIN                LISTnAMEaDAMoLD_2
-#define LISTnAMEiDfORMAT                 LISTnAMEaDAMoLD_1
+#define LISTnAMEsYSnOTEeND                  LISTnAMEaDAMoLD_3
+#define LISTnAMEsYSnOTEbEGIN                LISTnAMEaDAMoLD_2
+#define LISTnAMEsYSiDfORMAT                 LISTnAMEaDAMoLD_1
 
 #define TfIELD_MONEYhIGH                 LISTnAMEaDAMoLD_2
 #define TfIELD_MONEYlOW                  LISTnAMEaDAMoLD_1

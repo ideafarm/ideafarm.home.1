@@ -1,4 +1,7 @@
 
+#define LISTnAMEaPPmIN          0x90000000
+#define LISTnAMEaPPmAX          0x9fffffff
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -34488,7 +34491,6 @@ coding standard
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039a.bospoop END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039b.listname BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -34499,80 +34501,79 @@ coding standard
 /*
 */
 /**/
-/*1*//*LISTnAME*//*1*/
+/*1*//*LISTnAMEsYS*//*1*/
 
 //IT IS ILLEGAL TO INSERT NEW CONSTANTS ANYWHERE BUT AT THE TOP OF THIS FILE (TO AVOID CHANGING THE VALUE OF EXISTING CONSTANTS)
 //NEW SYMBOLS -MUST- BE ADDED TO THE TOP OF THIS LIST TO AVOID CHANGING THE VALUE OF THE EXISTING SYMBOLS IN THE LIST
 //THESE VALUES ARE USED IN THE BACKING FILES FOR PERSISTENT poolC INSTANCES
 
 //2010.11.12@1529: REORDERED THESE TO ENSURE THAT SYSTEM1-8 VALUES ARE BELOW APPLICATION SO THAT CAN WALK THROUGH SYSTEM LISTS WHILE HAVING APPLICATION LIST GRABBED; INDEXING CAN NEED TO DO THIS
-//2010.11.18@0932: INSERTED LISTnAME_UNKNOWN AND LISTnAME_TEMPORARY FOR AESTHETIC REASONS, SINCE HAVE ALREADY BROKEN EXTANT FILES 
+//2010.11.18@0932: INSERTED LISTnAMEsYS_UNKNOWN AND LISTnAMEsYS_TEMPORARY FOR AESTHETIC REASONS, SINCE HAVE ALREADY BROKEN EXTANT FILES 
 
-// RECURSIVE GRABBING USING grabitC IS USED FOR listC INSTANCES NAMED LISTnAME_ROOT*
+// RECURSIVE GRABBING USING grabitC IS USED FOR listC INSTANCES NAMED LISTnAMEsYS_ROOT*
 // IF MORE SUCH NAMES ARE DEFINED, THE ARRAY IN tinS THAT IS USED TO PROVIDE RECURSIVE GRABBING FOR grabitC OBJECTS MIGHT NEED TO BE MADE LARGER
 
-//CS:CODEsYNC: 330e5007 33001126 3300039b (LISTnAME_ROOTsYSTEM*)
+//CS:CODEsYNC: 330e5007 33001126 3300039b (LISTnAMEsYS_ROOTsYSTEM*)
 
-/*3*/
-#define LISTnAME_ROOT                                                 0xdddd7001
-#define LISTnAME_ROOTsYSTEM1                                          0xdddd7002
-#define LISTnAME_ROOTsYSTEM2                                          0xdddd7003
-#define LISTnAME_ROOTsYSTEM3                                          0xdddd7004
-#define LISTnAME_ROOTsYSTEM4                                          0xdddd7005
-#define LISTnAME_ROOTsYSTEM5                                          0xdddd7006
-#define LISTnAME_ROOTsYSTEM6                                          0xdddd7007
-#define LISTnAME_ROOTsYSTEM7                                          0xdddd7008
-#define LISTnAME_ROOTsYSTEM8                                          0xdddd7009
-#define LISTnAME_ROOTaPPLICATION                                      0xdddd700a
-#define LISTnAME_HANDhOLD                                             0xdddd700b
-#define LISTnAME_INDEXsYSTEM                                          0xdddd700c
-#define LISTnAME_INDEXaPPLICATION                                     0xdddd700d
-#define LISTnAME_PREALLOCATED                                         0xdddd700e
-#define LISTnAME_TEMPORARY                                            0xdddd700f
-#define LISTnAME_SELECTED                                             0xdddd7010
-#define LISTnAME_UNKNOWN                                              0xdddd7011
-#define LISTnAME_PLACEhOLDER                                          0xdddd7012
-#define LISTnAME_DICTIONARY                                           0xdddd7013
-#define LISTnAME_FIELDvALUEiNDEX                                      0xdddd7014
-#define LISTnAME_OLDtYPEcOUNT                                         0xdddd7015
-#define LISTnAME_OLDtYPEoStEXTsTRZ                                    0xdddd7016
-#define LISTnAME_OLDtYPEcOUNTsTRZ                                     0xdddd7017
-#define LISTnAME_STRETCHeND                                           0xdddd7018
-#define LISTnAME_STRETCHbEGINcOUNT                                    0xdddd7019
-#define LISTnAME_STRETCHbEGINoStEXTsTRZ                               0xdddd701a
-#define LISTnAME_STRETCHbEGINcOUNTsTRZ                                0xdddd701b
-#define LISTnAME_STRETCHbEGINbITS                                     0xdddd701c
-#define LISTnAME_RECORD                                               0xdddd701d
-#define LISTnAME_FIELD                                                0xdddd701e
-#define LISTnAME_DATUM                                                0xdddd701f
-#define LISTnAME_OFFSET                                               0xdddd7020
-#define LISTnAME_IDwORD                                               0xdddd7021
-#define LISTnAME_WORDiNDEX                                            0xdddd7022
-#define LISTnAME_IDGaCCESSbEGUN                                       0xdddd7023
-#define LISTnAME_IDGaCCESScOMPLETED                                   0xdddd7024
-#define LISTnAME_GLOBALrECORD                                         0xdddd7025
-#define LISTnAME_SEXc                                                 0xdddd7026
-#define LISTnAME_PROCESSrEPORT                                        0xdddd7027
-#define LISTnAME_PROCESSrEPORTfIELD10                                 0xdddd7028
-#define LISTnAME_PROCESSrEPORTfIELD20                                 0xdddd7029
-#define LISTnAME_PROCESSrEPORTfIELD30                                 0xdddd702a
-#define LISTnAME_PROCESSrEPORTfIELD40                                 0xdddd702b
-#define LISTnAME_PROCESSrEPORTfIELD50                                 0xdddd702c
-#define LISTnAME_PROCESSrEPORTfIELD60                                 0xdddd702d
-#define LISTnAME_PROCESSrEPORTfIELD70                                 0xdddd702e
-#define LISTnAME_PROCESSrEPORTfIELD80                                 0xdddd702f
-#define LISTnAME_PROCESSrEPORTfIELD90                                 0xdddd7030
-#define LISTnAME_PROCESSrEPORTfIELDa0                                 0xdddd7031
-#define LISTnAME_PROCESSrEPORTfIELDb0                                 0xdddd7032
-#define LISTnAME_PROCESSrEPORTfIELDc0                                 0xdddd7033
-#define LISTnAME_PROCESSrEPORTfIELDd0                                 0xdddd7034
-#define LISTnAME_PROCESSrEPORTfIELDe0                                 0xdddd7035
-#define LISTnAME_PROCESSrEPORTfIELDf0                                 0xdddd7036
-#define LISTnAME_PROCESSrEPORTfIELD01                                 0xdddd7037
-/*3*/
-#define LISTnAME_min     0xdddd7001
-#define LISTnAME_max     0xdddd7037
+// 20240827@1422: ELIMINATED USE OF "/*id9*/" IN FAVOR OF HARDCODED VALUES STARTING WITH 0x80000001
 
+#define LISTnAMEsYS_min                                                  0x80000001
+#define LISTnAMEsYS_ROOT                                                 0x80000001
+#define LISTnAMEsYS_ROOTsYSTEM1                                          0x80000002
+#define LISTnAMEsYS_ROOTsYSTEM2                                          0x80000003
+#define LISTnAMEsYS_ROOTsYSTEM3                                          0x80000004
+#define LISTnAMEsYS_ROOTsYSTEM4                                          0x80000005
+#define LISTnAMEsYS_ROOTsYSTEM5                                          0x80000006
+#define LISTnAMEsYS_ROOTsYSTEM6                                          0x80000007
+#define LISTnAMEsYS_ROOTsYSTEM7                                          0x80000008
+#define LISTnAMEsYS_ROOTsYSTEM8                                          0x80000009
+#define LISTnAMEsYS_ROOTaPPLICATION                                      0x8000000a
+#define LISTnAMEsYS_HANDhOLD                                             0x8000000b
+#define LISTnAMEsYS_INDEXsYSTEM                                          0x8000000c
+#define LISTnAMEsYS_INDEXaPPLICATION                                     0x8000000d
+#define LISTnAMEsYS_PREALLOCATED                                         0x8000000e
+#define LISTnAMEsYS_TEMPORARY                                            0x8000000f
+#define LISTnAMEsYS_SELECTED                                             0x80000010
+#define LISTnAMEsYS_UNKNOWN                                              0x80000011
+#define LISTnAMEsYS_PLACEhOLDER                                          0x80000012
+#define LISTnAMEsYS_DICTIONARY                                           0x80000013
+#define LISTnAMEsYS_FIELDvALUEiNDEX                                      0x80000014
+#define LISTnAMEsYS_OLDtYPEcOUNT                                         0x80000015
+#define LISTnAMEsYS_OLDtYPEoStEXTsTRZ                                    0x80000016
+#define LISTnAMEsYS_OLDtYPEcOUNTsTRZ                                     0x80000017
+#define LISTnAMEsYS_STRETCHeND                                           0x80000018
+#define LISTnAMEsYS_STRETCHbEGINcOUNT                                    0x80000019
+#define LISTnAMEsYS_STRETCHbEGINoStEXTsTRZ                               0x8000001a
+#define LISTnAMEsYS_STRETCHbEGINcOUNTsTRZ                                0x8000001b
+#define LISTnAMEsYS_STRETCHbEGINbITS                                     0x8000001c
+#define LISTnAMEsYS_RECORD                                               0x8000001d
+#define LISTnAMEsYS_FIELD                                                0x8000001e
+#define LISTnAMEsYS_DATUM                                                0x8000001f
+#define LISTnAMEsYS_OFFSET                                               0x80000020
+#define LISTnAMEsYS_IDwORD                                               0x80000021
+#define LISTnAMEsYS_WORDiNDEX                                            0x80000022
+#define LISTnAMEsYS_IDGaCCESSbEGUN                                       0x80000023
+#define LISTnAMEsYS_IDGaCCESScOMPLETED                                   0x80000024
+#define LISTnAMEsYS_GLOBALrECORD                                         0x80000025
+#define LISTnAMEsYS_SEXc                                                 0x80000026
+#define LISTnAMEsYS_PROCESSrEPORT                                        0x80000027
+#define LISTnAMEsYS_PROCESSrEPORTfIELD10                                 0x80000028
+#define LISTnAMEsYS_PROCESSrEPORTfIELD20                                 0x80000029
+#define LISTnAMEsYS_PROCESSrEPORTfIELD30                                 0x8000002a
+#define LISTnAMEsYS_PROCESSrEPORTfIELD40                                 0x8000002b
+#define LISTnAMEsYS_PROCESSrEPORTfIELD50                                 0x8000002c
+#define LISTnAMEsYS_PROCESSrEPORTfIELD60                                 0x8000002d
+#define LISTnAMEsYS_PROCESSrEPORTfIELD70                                 0x8000002e
+#define LISTnAMEsYS_PROCESSrEPORTfIELD80                                 0x8000002f
+#define LISTnAMEsYS_PROCESSrEPORTfIELD90                                 0x80000030
+#define LISTnAMEsYS_PROCESSrEPORTfIELDa0                                 0x80000031
+#define LISTnAMEsYS_PROCESSrEPORTfIELDb0                                 0x80000032
+#define LISTnAMEsYS_PROCESSrEPORTfIELDc0                                 0x80000033
+#define LISTnAMEsYS_PROCESSrEPORTfIELDd0                                 0x80000034
+#define LISTnAMEsYS_PROCESSrEPORTfIELDe0                                 0x80000035
+#define LISTnAMEsYS_PROCESSrEPORTfIELDf0                                 0x80000036
+#define LISTnAMEsYS_PROCESSrEPORTfIELD01                                 0x80000037
+#define LISTnAMEsYS_max                                                  0x80000037
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -35321,97 +35322,97 @@ bit masks
 obsoleted by coding style standard: use osTextT strings for name elements so that the meaning of the name is documented internally by the database
 */
 /**/
-/*1*//*LISTnAME*//*1*/
+/*1*//*LISTnAMEsYS*//*1*/
 
 //IT IS ILLEGAL TO INSERT NEW CONSTANTS ANYWHERE BUT AT THE TOP OF THIS FILE (TO AVOID CHANGING THE VALUE OF EXISTING CONSTANTS)
 //NEW SYMBOLS -MUST- BE ADDED TO THE TOP OF THIS LIST TO AVOID CHANGING THE VALUE OF THE EXISTING SYMBOLS IN THE LIST
 //THESE VALUES ARE USED IN THE BACKING FILES FOR PERSISTENT poolC INSTANCES
 
-//LISTnAMEaDAMoLD_0-LISTnAMEaDAMoLD_ff: APPLICATION CODE SHOULD DEFINE SYMBOLIC CONSTANTS WITH MEANINGFUL FIELD NAMES TO WRAP EACH OF THESE THAT IS USED
+//LISTnAMEsYSaDAMoLD_0-LISTnAMEsYSaDAMoLD_ff: APPLICATION CODE SHOULD DEFINE SYMBOLIC CONSTANTS WITH MEANINGFUL FIELD NAMES TO WRAP EACH OF THESE THAT IS USED
 
 /*3*/
-#define LISTnAMEaDAMoLD_1                                                0xdddd5001
-#define LISTnAMEaDAMoLD_2                                                0xdddd5002
-#define LISTnAMEaDAMoLD_3                                                0xdddd5003
-#define LISTnAMEaDAMoLD_4                                                0xdddd5004
-#define LISTnAMEaDAMoLD_5                                                0xdddd5005
-#define LISTnAMEaDAMoLD_6                                                0xdddd5006
-#define LISTnAMEaDAMoLD_7                                                0xdddd5007
-#define LISTnAMEaDAMoLD_8                                                0xdddd5008
-#define LISTnAMEaDAMoLD_9                                                0xdddd5009
-#define LISTnAMEaDAMoLD_a                                                0xdddd500a
-#define LISTnAMEaDAMoLD_b                                                0xdddd500b
-#define LISTnAMEaDAMoLD_c                                                0xdddd500c
-#define LISTnAMEaDAMoLD_d                                                0xdddd500d
-#define LISTnAMEaDAMoLD_e                                                0xdddd500e
-#define LISTnAMEaDAMoLD_f                                                0xdddd500f
-#define LISTnAMEaDAMoLD_01                                               0xdddd5010
-#define LISTnAMEaDAMoLD_11                                               0xdddd5011
-#define LISTnAMEaDAMoLD_21                                               0xdddd5012
-#define LISTnAMEaDAMoLD_31                                               0xdddd5013
-#define LISTnAMEaDAMoLD_41                                               0xdddd5014
-#define LISTnAMEaDAMoLD_51                                               0xdddd5015
-#define LISTnAMEaDAMoLD_61                                               0xdddd5016
-#define LISTnAMEaDAMoLD_71                                               0xdddd5017
-#define LISTnAMEaDAMoLD_81                                               0xdddd5018
-#define LISTnAMEaDAMoLD_91                                               0xdddd5019
-#define LISTnAMEaDAMoLD_a1                                               0xdddd501a
-#define LISTnAMEaDAMoLD_b1                                               0xdddd501b
-#define LISTnAMEaDAMoLD_c1                                               0xdddd501c
-#define LISTnAMEaDAMoLD_d1                                               0xdddd501d
-#define LISTnAMEaDAMoLD_e1                                               0xdddd501e
-#define LISTnAMEaDAMoLD_f1                                               0xdddd501f
-#define LISTnAMEaDAMoLD_02                                               0xdddd5020
-#define LISTnAMEaDAMoLD_12                                               0xdddd5021
-#define LISTnAMEaDAMoLD_22                                               0xdddd5022
-#define LISTnAMEaDAMoLD_32                                               0xdddd5023
-#define LISTnAMEaDAMoLD_42                                               0xdddd5024
-#define LISTnAMEaDAMoLD_52                                               0xdddd5025
-#define LISTnAMEaDAMoLD_62                                               0xdddd5026
-#define LISTnAMEaDAMoLD_72                                               0xdddd5027
-#define LISTnAMEaDAMoLD_82                                               0xdddd5028
-#define LISTnAMEaDAMoLD_92                                               0xdddd5029
-#define LISTnAMEaDAMoLD_a2                                               0xdddd502a
-#define LISTnAMEaDAMoLD_b2                                               0xdddd502b
-#define LISTnAMEaDAMoLD_c2                                               0xdddd502c
-#define LISTnAMEaDAMoLD_d2                                               0xdddd502d
-#define LISTnAMEaDAMoLD_e2                                               0xdddd502e
-#define LISTnAMEaDAMoLD_f2                                               0xdddd502f
-#define LISTnAMEaDAMoLD_03                                               0xdddd5030
-#define LISTnAMEaDAMoLD_13                                               0xdddd5031
-#define LISTnAMEaDAMoLD_23                                               0xdddd5032
-#define LISTnAMEaDAMoLD_33                                               0xdddd5033
-#define LISTnAMEaDAMoLD_43                                               0xdddd5034
-#define LISTnAMEaDAMoLD_53                                               0xdddd5035
-#define LISTnAMEaDAMoLD_63                                               0xdddd5036
-#define LISTnAMEaDAMoLD_73                                               0xdddd5037
-#define LISTnAMEaDAMoLD_83                                               0xdddd5038
-#define LISTnAMEaDAMoLD_93                                               0xdddd5039
-#define LISTnAMEaDAMoLD_a3                                               0xdddd503a
-#define LISTnAMEaDAMoLD_b3                                               0xdddd503b
-#define LISTnAMEaDAMoLD_c3                                               0xdddd503c
-#define LISTnAMEaDAMoLD_d3                                               0xdddd503d
-#define LISTnAMEaDAMoLD_e3                                               0xdddd503e
-#define LISTnAMEaDAMoLD_f3                                               0xdddd503f
-#define LISTnAMEaDAMoLD_04                                               0xdddd5040
-#define LISTnAMEaDAMoLD_14                                               0xdddd5041
-#define LISTnAMEaDAMoLD_24                                               0xdddd5042
-#define LISTnAMEaDAMoLD_34                                               0xdddd5043
-#define LISTnAMEaDAMoLD_44                                               0xdddd5044
-#define LISTnAMEaDAMoLD_54                                               0xdddd5045
-#define LISTnAMEaDAMoLD_64                                               0xdddd5046
-#define LISTnAMEaDAMoLD_74                                               0xdddd5047
-#define LISTnAMEaDAMoLD_84                                               0xdddd5048
-#define LISTnAMEaDAMoLD_94                                               0xdddd5049
-#define LISTnAMEaDAMoLD_a4                                               0xdddd504a
-#define LISTnAMEaDAMoLD_b4                                               0xdddd504b
-#define LISTnAMEaDAMoLD_c4                                               0xdddd504c
-#define LISTnAMEaDAMoLD_d4                                               0xdddd504d
-#define LISTnAMEaDAMoLD_e4                                               0xdddd504e
-#define LISTnAMEaDAMoLD_f4                                               0xdddd504f
+#define LISTnAMEsYSaDAMoLD_1                                                0xdddd5001
+#define LISTnAMEsYSaDAMoLD_2                                                0xdddd5002
+#define LISTnAMEsYSaDAMoLD_3                                                0xdddd5003
+#define LISTnAMEsYSaDAMoLD_4                                                0xdddd5004
+#define LISTnAMEsYSaDAMoLD_5                                                0xdddd5005
+#define LISTnAMEsYSaDAMoLD_6                                                0xdddd5006
+#define LISTnAMEsYSaDAMoLD_7                                                0xdddd5007
+#define LISTnAMEsYSaDAMoLD_8                                                0xdddd5008
+#define LISTnAMEsYSaDAMoLD_9                                                0xdddd5009
+#define LISTnAMEsYSaDAMoLD_a                                                0xdddd500a
+#define LISTnAMEsYSaDAMoLD_b                                                0xdddd500b
+#define LISTnAMEsYSaDAMoLD_c                                                0xdddd500c
+#define LISTnAMEsYSaDAMoLD_d                                                0xdddd500d
+#define LISTnAMEsYSaDAMoLD_e                                                0xdddd500e
+#define LISTnAMEsYSaDAMoLD_f                                                0xdddd500f
+#define LISTnAMEsYSaDAMoLD_01                                               0xdddd5010
+#define LISTnAMEsYSaDAMoLD_11                                               0xdddd5011
+#define LISTnAMEsYSaDAMoLD_21                                               0xdddd5012
+#define LISTnAMEsYSaDAMoLD_31                                               0xdddd5013
+#define LISTnAMEsYSaDAMoLD_41                                               0xdddd5014
+#define LISTnAMEsYSaDAMoLD_51                                               0xdddd5015
+#define LISTnAMEsYSaDAMoLD_61                                               0xdddd5016
+#define LISTnAMEsYSaDAMoLD_71                                               0xdddd5017
+#define LISTnAMEsYSaDAMoLD_81                                               0xdddd5018
+#define LISTnAMEsYSaDAMoLD_91                                               0xdddd5019
+#define LISTnAMEsYSaDAMoLD_a1                                               0xdddd501a
+#define LISTnAMEsYSaDAMoLD_b1                                               0xdddd501b
+#define LISTnAMEsYSaDAMoLD_c1                                               0xdddd501c
+#define LISTnAMEsYSaDAMoLD_d1                                               0xdddd501d
+#define LISTnAMEsYSaDAMoLD_e1                                               0xdddd501e
+#define LISTnAMEsYSaDAMoLD_f1                                               0xdddd501f
+#define LISTnAMEsYSaDAMoLD_02                                               0xdddd5020
+#define LISTnAMEsYSaDAMoLD_12                                               0xdddd5021
+#define LISTnAMEsYSaDAMoLD_22                                               0xdddd5022
+#define LISTnAMEsYSaDAMoLD_32                                               0xdddd5023
+#define LISTnAMEsYSaDAMoLD_42                                               0xdddd5024
+#define LISTnAMEsYSaDAMoLD_52                                               0xdddd5025
+#define LISTnAMEsYSaDAMoLD_62                                               0xdddd5026
+#define LISTnAMEsYSaDAMoLD_72                                               0xdddd5027
+#define LISTnAMEsYSaDAMoLD_82                                               0xdddd5028
+#define LISTnAMEsYSaDAMoLD_92                                               0xdddd5029
+#define LISTnAMEsYSaDAMoLD_a2                                               0xdddd502a
+#define LISTnAMEsYSaDAMoLD_b2                                               0xdddd502b
+#define LISTnAMEsYSaDAMoLD_c2                                               0xdddd502c
+#define LISTnAMEsYSaDAMoLD_d2                                               0xdddd502d
+#define LISTnAMEsYSaDAMoLD_e2                                               0xdddd502e
+#define LISTnAMEsYSaDAMoLD_f2                                               0xdddd502f
+#define LISTnAMEsYSaDAMoLD_03                                               0xdddd5030
+#define LISTnAMEsYSaDAMoLD_13                                               0xdddd5031
+#define LISTnAMEsYSaDAMoLD_23                                               0xdddd5032
+#define LISTnAMEsYSaDAMoLD_33                                               0xdddd5033
+#define LISTnAMEsYSaDAMoLD_43                                               0xdddd5034
+#define LISTnAMEsYSaDAMoLD_53                                               0xdddd5035
+#define LISTnAMEsYSaDAMoLD_63                                               0xdddd5036
+#define LISTnAMEsYSaDAMoLD_73                                               0xdddd5037
+#define LISTnAMEsYSaDAMoLD_83                                               0xdddd5038
+#define LISTnAMEsYSaDAMoLD_93                                               0xdddd5039
+#define LISTnAMEsYSaDAMoLD_a3                                               0xdddd503a
+#define LISTnAMEsYSaDAMoLD_b3                                               0xdddd503b
+#define LISTnAMEsYSaDAMoLD_c3                                               0xdddd503c
+#define LISTnAMEsYSaDAMoLD_d3                                               0xdddd503d
+#define LISTnAMEsYSaDAMoLD_e3                                               0xdddd503e
+#define LISTnAMEsYSaDAMoLD_f3                                               0xdddd503f
+#define LISTnAMEsYSaDAMoLD_04                                               0xdddd5040
+#define LISTnAMEsYSaDAMoLD_14                                               0xdddd5041
+#define LISTnAMEsYSaDAMoLD_24                                               0xdddd5042
+#define LISTnAMEsYSaDAMoLD_34                                               0xdddd5043
+#define LISTnAMEsYSaDAMoLD_44                                               0xdddd5044
+#define LISTnAMEsYSaDAMoLD_54                                               0xdddd5045
+#define LISTnAMEsYSaDAMoLD_64                                               0xdddd5046
+#define LISTnAMEsYSaDAMoLD_74                                               0xdddd5047
+#define LISTnAMEsYSaDAMoLD_84                                               0xdddd5048
+#define LISTnAMEsYSaDAMoLD_94                                               0xdddd5049
+#define LISTnAMEsYSaDAMoLD_a4                                               0xdddd504a
+#define LISTnAMEsYSaDAMoLD_b4                                               0xdddd504b
+#define LISTnAMEsYSaDAMoLD_c4                                               0xdddd504c
+#define LISTnAMEsYSaDAMoLD_d4                                               0xdddd504d
+#define LISTnAMEsYSaDAMoLD_e4                                               0xdddd504e
+#define LISTnAMEsYSaDAMoLD_f4                                               0xdddd504f
 /*3*/
-#define LISTnAMEaDAMoLD_min     0xdddd5001
-#define LISTnAMEaDAMoLD_max     0xdddd504f
+#define LISTnAMEsYSaDAMoLD_min     0xdddd5001
+#define LISTnAMEsYSaDAMoLD_max     0xdddd504f
 
 
 //
@@ -38220,7 +38221,7 @@ args
 
 // COMPONENTS OF THE FULLY QUALIFIED PATH IN THE INDEX
 //
-// EXAMPLE:           SYSTEM2/INDEX/"poolname"/APPLICATION/"favoritenumbers"/STRETCHbEGINcOUNT/ff00000c/ee00000c/dd00000c/cc00000c/STRETCHeND/LISTnAME_RECORD
+// EXAMPLE:           SYSTEM2/INDEX/"poolname"/APPLICATION/"favoritenumbers"/STRETCHbEGINcOUNT/ff00000c/ee00000c/dd00000c/cc00000c/STRETCHeND/LISTnAMEsYS_RECORD
 //                   |----INDEX---------------------------|----KEY----------|----VALUE-------------------------------------------------------|----REFERENCES----
 //                        I                                    K                 V                                                                R
 
@@ -38260,7 +38261,7 @@ args
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             {                                                                                                                                                       \
-                boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP <= LISTnAME_max ;                                                                              \
+                boolT bLiteralKey = LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max ;                                                                              \
                 byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
                 if( !bLiteralKey )                                                                                                                                  \
@@ -38298,7 +38299,7 @@ args
         }                                                                                                                                                           \
         else                                                                                                                                                        \
         {                                                                                                                                                           \
-            countT pczIK[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM3 , LISTnAME_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAME_INDEXaPPLICATION , idKeyInIndex , 0 } ; \
+            countT pczIK[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , LISTnAMEsYS_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAMEsYS_INDEXaPPLICATION , idKeyInIndex , 0 } ; \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             listC::dictionaryReplaceOsTextIF( tinP , pczIK ) ;                                                                                                      \
             THREADmODE3rESTORE                                                                                                                                      \
@@ -38310,7 +38311,7 @@ args
             handleC hIKV( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                     \
             listC::openIF( tinP , hIKV , hIK , pczV ) ;                                                                                                             \
                                                                                                                                                                     \
-            countT pczField[] = { LISTnAME_RECORD , 0 } ;                                                                                                           \
+            countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                           \
             listC::fieldIF( tinP , pOut , hIKV , pczField , _1_pushC( recordP ) + _1_modePushSinkC() , LF ) ; ___( pOut ) ;                                         \
         }                                                                                                                                                           \
                                                                                                                                                                     \
@@ -38422,7 +38423,7 @@ args
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             {                                                                                                                                                       \
-                boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP <= LISTnAME_max ;                                                                              \
+                boolT bLiteralKey = LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max ;                                                                              \
                 byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
                 if( !bLiteralKey )                                                                                                                                  \
@@ -38453,7 +38454,7 @@ args
         }                                                                                                                                                           \
                                                                                                                                                                     \
         ZE( boolT , bFail ) ;                                                                                                                                       \
-        countT pczIK[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM3 , LISTnAME_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAME_INDEXaPPLICATION , idKeyInIndex , 0 } ; \
+        countT pczIK[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , LISTnAMEsYS_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAMEsYS_INDEXaPPLICATION , idKeyInIndex , 0 } ; \
         if( bOpenIK )                                                                                                                                               \
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
@@ -38475,7 +38476,7 @@ args
                                                                                                                                                                     \
             if( !bFail )                                                                                                                                            \
             {                                                                                                                                                       \
-                countT pczField[] = { LISTnAME_RECORD , 0 } ;                                                                                                       \
+                countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                       \
                 listC::fieldIF( tinP , pOut , hIKV , pczField , _1_deleteC() + _1_ok_equal_C( recordP ) , LF ) ;                                                    \
             }                                                                                                                                                       \
         }                                                                                                                                                           \
@@ -38612,7 +38613,7 @@ args
         const osTextT* postMasterPool = PUSE.postNameF( tinP ) ;                                                                                                                \
         const countT idStateSpace = PUSE.idStateSpaceF() ;                                                                                                                      \
                                                                                                                                                                                 \
-        boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP <= LISTnAME_max ;                                                                                                  \
+        boolT bLiteralKey = LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max ;                                                                                                  \
         byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                                      \
         ZE( blobVSP* , pvspPostKey ) ;                                                                                                                                          \
         countT idKeyInIndex = idKeyP ;                                                                                                                                          \
@@ -38637,7 +38638,7 @@ args
                                                                                                                                                                                 \
             ZE( countT* , pczIKV ) ;                                                                                                                                            \
             {                                                                                                                                                                   \
-                countT pczIK[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM3 , LISTnAME_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAME_INDEXaPPLICATION , idKeyInIndex , 0 } ;  \
+                countT pczIK[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , LISTnAMEsYS_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAMEsYS_INDEXaPPLICATION , idKeyInIndex , 0 } ;  \
                 etherC::strStretchIF( tinP , pczIKV , pczIK , valueP , cNetP ) ; ___( pczIKV ) ;                                                                                \
             }                                                                                                                                                                   \
                                                                                                                                                                                 \
@@ -38647,7 +38648,7 @@ args
             if( !POOP )                                                                                                                                                         \
             {                                                                                                                                                                   \
                 thirdC::c_memcpyIF( tinP , (byteT*)pczIKVR , (byteT*)pczIKV , sizeof( countT ) * ccIKV ) ;                                                                      \
-                pczIKVR[ ccIKV     ] = LISTnAME_RECORD ;                                                                                                                        \
+                pczIKVR[ ccIKV     ] = LISTnAMEsYS_RECORD ;                                                                                                                        \
                 pczIKVR[ ccIKV + 1 ] = 0 ;                                                                                                                                      \
             }                                                                                                                                                                   \
             PUSE( tinP , *(byteT**)&pczIKV ) ;                                                                                                                                  \

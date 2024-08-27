@@ -60,33 +60,33 @@
         deleteIF( tinP , pcz7 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
         deleteIF( tinP , pcz8 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
         deleteIF( tinP , pcza , flLISTdELETE_null , idGrabLayerP ) ;
-        countT pcz1[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM1     , 0 } ;
-        countT pcz2[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM2     , 0 } ;
-        countT pcz3[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM3     , 0 } ;
-        countT pcz4[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM4     , 0 } ;
-        countT pcz5[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM5     , 0 } ;
-        countT pcz6[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM6     , 0 } ;
-        countT pcz7[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM7     , 0 } ;
-        countT pcz8[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM8     , 0 } ;
-        countT pcza[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , 0 } ; //EXPLICIT BECAUSE MUST BE DELETED IN THIS ORDER
+        countT pcz1[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM1     , 0 } ;
+        countT pcz2[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM2     , 0 } ;
+        countT pcz3[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3     , 0 } ;
+        countT pcz4[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4     , 0 } ;
+        countT pcz5[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM5     , 0 } ;
+        countT pcz6[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM6     , 0 } ;
+        countT pcz7[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM7     , 0 } ;
+        countT pcz8[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM8     , 0 } ;
+        countT pcza[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , 0 } ; //EXPLICIT BECAUSE MUST BE DELETED IN THIS ORDER
     {
     if( !pczNameP[ 1 ] )
 
     }
         deleteIF( tinP , pcza , flLISTdELETE_null , idGrabLayerP ) ;       // THIS IS BECAUSE DELETING AN APPLICATION DATUM WILL UNINDEX IT, AND THE DICTIONARY MUST EXIST DURING UNINDEXING
-        countT pcza[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , 0 } ; // THE APPLICATION LIST MUST BE DELETED BEFORE EITHER THE DICTIONARY OR THE INDEX IS DELETED
+        countT pcza[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , 0 } ; // THE APPLICATION LIST MUST BE DELETED BEFORE EITHER THE DICTIONARY OR THE INDEX IS DELETED
     {
     )
         flagsP == flLISTdELETE_null
         &&
         )
-            || pczNameP[ 1 ] == LISTnAME_ROOTsYSTEM8         //20180507@1727: ADDED WITHOUT ANALYSIS
-            || pczNameP[ 1 ] == LISTnAME_ROOTsYSTEM7         //20180507@1727: ADDED WITHOUT ANALYSIS
-            || pczNameP[ 1 ] == LISTnAME_ROOTsYSTEM6         //20180507@1727: ADDED WITHOUT ANALYSIS
-            || pczNameP[ 1 ] == LISTnAME_ROOTsYSTEM5         //20180507@1727: ADDED WITHOUT ANALYSIS
-            || pczNameP[ 1 ] == LISTnAME_ROOTsYSTEM4
-            || pczNameP[ 1 ] == LISTnAME_ROOTsYSTEM3
-               pczNameP[ 1 ] == LISTnAME_ROOTsYSTEM2
+            || pczNameP[ 1 ] == LISTnAMEsYS_ROOTsYSTEM8         //20180507@1727: ADDED WITHOUT ANALYSIS
+            || pczNameP[ 1 ] == LISTnAMEsYS_ROOTsYSTEM7         //20180507@1727: ADDED WITHOUT ANALYSIS
+            || pczNameP[ 1 ] == LISTnAMEsYS_ROOTsYSTEM6         //20180507@1727: ADDED WITHOUT ANALYSIS
+            || pczNameP[ 1 ] == LISTnAMEsYS_ROOTsYSTEM5         //20180507@1727: ADDED WITHOUT ANALYSIS
+            || pczNameP[ 1 ] == LISTnAMEsYS_ROOTsYSTEM4
+            || pczNameP[ 1 ] == LISTnAMEsYS_ROOTsYSTEM3
+               pczNameP[ 1 ] == LISTnAMEsYS_ROOTsYSTEM2
         (
     (
     if
@@ -99,7 +99,7 @@
     }
         if( POOP ) return flagsRC ;
         FV( flLISTdELETE , flagsP ) ;
-        __( *pczNameP - LISTnAME_ROOT ) ;
+        __( *pczNameP - LISTnAMEsYS_ROOT ) ;
         if( POOP ) return flagsRC ;
         __Z( pczNameP ) ;
         if( POOP ) return flagsRC ;

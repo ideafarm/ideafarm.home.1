@@ -39,7 +39,7 @@
             PUSE( tinP , *(byteT**)&pczIKV ) ;                                                                                                                                  \
             }                                                                                                                                                                   \
                 pczIKVR[ ccIKV + 1 ] = 0 ;                                                                                                                                      \
-                pczIKVR[ ccIKV     ] = LISTnAME_RECORD ;                                                                                                                        \
+                pczIKVR[ ccIKV     ] = LISTnAMEsYS_RECORD ;                                                                                                                        \
                 thirdC::c_memcpyIF( tinP , (byteT*)pczIKVR , (byteT*)pczIKV , sizeof( countT ) * ccIKV ) ;                                                                      \
             {                                                                                                                                                                   \
             if( !POOP )                                                                                                                                                         \
@@ -49,7 +49,7 @@
                                                                                                                                                                                 \
             }                                                                                                                                                                   \
                 etherC::strStretchIF( tinP , pczIKV , pczIK , valueP , cNetP ) ; ___( pczIKV ) ;                                                                                \
-                countT pczIK[] = { LISTnAME_ROOT , LISTnAME_ROOTsYSTEM3 , LISTnAME_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAME_INDEXaPPLICATION , idKeyInIndex , 0 } ;  \
+                countT pczIK[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , LISTnAMEsYS_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAMEsYS_INDEXaPPLICATION , idKeyInIndex , 0 } ;  \
             {                                                                                                                                                                   \
             ZE( countT* , pczIKV ) ;                                                                                                                                            \
                                                                                                                                                                                 \
@@ -74,7 +74,7 @@
         countT idKeyInIndex = idKeyP ;                                                                                                                                          \
         ZE( blobVSP* , pvspPostKey ) ;                                                                                                                                          \
         byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                                      \
-        boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP <= LISTnAME_max ;                                                                                                  \
+        boolT bLiteralKey = LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max ;                                                                                                  \
                                                                                                                                                                                 \
         const countT idStateSpace = PUSE.idStateSpaceF() ;                                                                                                                      \
         const osTextT* postMasterPool = PUSE.postNameF( tinP ) ;                                                                                                                \

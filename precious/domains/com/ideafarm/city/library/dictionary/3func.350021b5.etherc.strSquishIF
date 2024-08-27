@@ -14,11 +14,11 @@
             if( bCopy ) *( pco ++ ) = *( pci ++ ) ;
 
             }
-                case LISTnAME_STRETCHbEGINbITS       : { mode = 4 ; bBits = 1 ; bCopy = 0 ; *( pco ++ ) = *pci ; pc_cbString = pco ++                                                                                          ; break ; }
-                case LISTnAME_STRETCHbEGINcOUNTsTRZ  : { mode = 3                                                                                                                                                              ; break ; }
-                case LISTnAME_STRETCHbEGINoStEXTsTRZ : { mode = 2             ; bCopy = 0 ; *( pco ++ ) = *pci ; pc_cbString = pco ++                                                                                          ; break ; }
-                case LISTnAME_STRETCHbEGINcOUNT      : { mode = 1                                                                                                                                                              ; break ; }
-                case LISTnAME_STRETCHeND             : { mode = 0 ; if( cbGot || ( bBits && *pc_cbString % SB ) ) { *( pco ++ ) = got || bBits ? got : BM_HIGH ; bBits = got = cbGot = 0 ; } if( pc_cbString ) pc_cbString = 0 ; break ; }     // cbGot SHOULD ALWAYS BE 0 EXCEPT FOR ODD LENGTH LISTnAME_STRETCHbEGINoStEXTsTRZ
+                case LISTnAMEsYS_STRETCHbEGINbITS       : { mode = 4 ; bBits = 1 ; bCopy = 0 ; *( pco ++ ) = *pci ; pc_cbString = pco ++                                                                                          ; break ; }
+                case LISTnAMEsYS_STRETCHbEGINcOUNTsTRZ  : { mode = 3                                                                                                                                                              ; break ; }
+                case LISTnAMEsYS_STRETCHbEGINoStEXTsTRZ : { mode = 2             ; bCopy = 0 ; *( pco ++ ) = *pci ; pc_cbString = pco ++                                                                                          ; break ; }
+                case LISTnAMEsYS_STRETCHbEGINcOUNT      : { mode = 1                                                                                                                                                              ; break ; }
+                case LISTnAMEsYS_STRETCHeND             : { mode = 0 ; if( cbGot || ( bBits && *pc_cbString % SB ) ) { *( pco ++ ) = got || bBits ? got : BM_HIGH ; bBits = got = cbGot = 0 ; } if( pc_cbString ) pc_cbString = 0 ; break ; }     // cbGot SHOULD ALWAYS BE 0 EXCEPT FOR ODD LENGTH LISTnAMEsYS_STRETCHbEGINoStEXTsTRZ
             {
             switch( *pci )
 
@@ -39,7 +39,7 @@
                 mode = 0 ;
                 __Z( mode ) ;
             {
-            if( *pci == LISTnAME_STRETCHeND )
+            if( *pci == LISTnAMEsYS_STRETCHeND )
         {
         while( *pci )
         ZE( boolT   , bBits ) ;
@@ -73,7 +73,7 @@
 /**/
 */
  pczInP
-  if the input string contains stretches of type LISTnAME_STRETCHbEGINbITS, the resulting output string cannot always be processed by searching for a null terminator because the shrunk bit string can contain runs of 0's
+  if the input string contains stretches of type LISTnAMEsYS_STRETCHbEGINbITS, the resulting output string cannot always be processed by searching for a null terminator because the shrunk bit string can contain runs of 0's
   if preallocated, must be sufficiently large (overrun will not be detected)
   may be preallocated
  pczP

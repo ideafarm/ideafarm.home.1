@@ -14,12 +14,12 @@
         }
             else                               {              pczP[ offo ] = 0                                                  ; break ; }
             else if( ccSuffix && ccSuffix -- )                pczP[ offo ] = *( pczSuffixP ++ )                                 ;
-            else if( !bEnded                 ) { bEnded = 1 ; pczP[ offo ] = LISTnAME_STRETCHeND                                ;         }
+            else if( !bEnded                 ) { bEnded = 1 ; pczP[ offo ] = LISTnAMEsYS_STRETCHeND                                ;         }
             else if( cbi      && cbi      -- )                pczP[ offo ] = *( pbi        ++ ) | BM_HIGH3 | BM_HIGH2 | BM_HIGH ;
-            else if( !bBegun                 ) { bBegun = 1 ; pczP[ offo ] = LISTnAME_STRETCHbEGINoStEXTsTRZ                    ;         }
+            else if( !bBegun                 ) { bBegun = 1 ; pczP[ offo ] = LISTnAMEsYS_STRETCHbEGINoStEXTsTRZ                    ;         }
                  if( ccPrefix && ccPrefix -- )                pczP[ offo ] = *( pczPrefixP ++ )                                 ;
 
-            if( pczP[ offo ] != LISTnAME_PLACEhOLDER ) continue ;                                                                           // SKIP IF NOT PLACEhOLDER
+            if( pczP[ offo ] != LISTnAMEsYS_PLACEhOLDER ) continue ;                                                                           // SKIP IF NOT PLACEhOLDER
         {
         for( countT offo = 0 ; pczP[ offo ] ; offo ++ )                                                                                     // FOR EACH NONzE OUTPUT countT
         const byteT* pbi = pbP                       ;
@@ -31,7 +31,7 @@
     }
         }
             pczP[ offo ] = 0 ;
-            for( ; offo < cco ; offo ++ ) pczP[ offo ] = LISTnAME_PLACEhOLDER ;
+            for( ; offo < cco ; offo ++ ) pczP[ offo ] = LISTnAMEsYS_PLACEhOLDER ;
             ZE( countT , offo ) ;
         {
         if( pczP )
@@ -67,7 +67,7 @@
   must be terminated by 0
   must not be 0
  postP
-  else must point to a sufficiently long string of the value LISTnAME_PLACEhOLDER
+  else must point to a sufficiently long string of the value LISTnAMEsYS_PLACEhOLDER
   if 0 then i will allocate it from PUSE
  pczP
  tinP
