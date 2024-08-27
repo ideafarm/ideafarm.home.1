@@ -38260,7 +38260,7 @@ args
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             {                                                                                                                                                       \
-                boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP << LISTnAME_max ;                                                                              \
+                boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP <= LISTnAME_max ;                                                                              \
                 byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
                 if( !bLiteralKey )                                                                                                                                  \
@@ -38422,7 +38422,7 @@ args
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             {                                                                                                                                                       \
-                boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP << LISTnAME_max ;                                                                              \
+                boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP <= LISTnAME_max ;                                                                              \
                 byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
                 if( !bLiteralKey )                                                                                                                                  \
@@ -38612,7 +38612,7 @@ args
         const osTextT* postMasterPool = PUSE.postNameF( tinP ) ;                                                                                                                \
         const countT idStateSpace = PUSE.idStateSpaceF() ;                                                                                                                      \
                                                                                                                                                                                 \
-        boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP << LISTnAME_max ;                                                                                                  \
+        boolT bLiteralKey = LISTnAME_min <= idKeyP && idKeyP <= LISTnAME_max ;                                                                                                  \
         byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                                      \
         ZE( blobVSP* , pvspPostKey ) ;                                                                                                                                          \
         countT idKeyInIndex = idKeyP ;                                                                                                                                          \

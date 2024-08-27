@@ -122,6 +122,13 @@
                         }
                             }
                                 }
+                                    if( pc_foo ) tinP.pEtScratch->traceF( tinP , T("[foo]:    ")+TF2(*pc_foo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                                    const countT*   pc_foo = vsp_foo ;
+                                    countVSP       vsp_foo = listC::countIF( tinP , myRecord , c2Text ) ;
+                                {
+                            
+                                }
                                     tinP.pEtScratch->traceF( tinP , T("[idDeathTypePKZip]:    ")+TF2(idDeathTypePKZip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                     if( pc_idDeathTypePKZip )            idDeathTypePKZip = *pc_idDeathTypePKZip ;
@@ -163,6 +170,10 @@
                         {
                         const flagsT flagsUse = flLISToPEN_IFeXISTS | flLISToPEN_REFRESHaNDrETRYfOREVER ;
                         countT pcNameRecord[] = { LISTnAME_ROOT , LISTnAME_ROOTaPPLICATION , LISTnAME_GLOBALrECORD , LISTnAME_PROCESSrEPORT , tinP.pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
+
+                        listC::dictionaryReplaceOsTextIF( tinP , c2Text ) ;
+                        count2S c2Text( (countT)"myFieldName" ) ;
+
                         puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
                         _IO_
                     {
