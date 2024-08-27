@@ -38,8 +38,8 @@ display thread /open 4855,1125,1745,4689
 display locals /open 4960,2385,4505,6489
 display calls /open 900,5535,9100,4464
 display modules /open 8365,0,1630,9972
-display source /open 5,0,6905,9999
 display watch /open 6940,9,3020,9990
+display source /open 5,0,6905,9999
 font all {-13 0 0 0 400 0 0 0 0 1 2 1 49 "Courier"}
 font assembly {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
 font calls {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
@@ -579,7 +579,7 @@ set supportroutine {__U4FD}{__U4FS}{__U4M}{__U8DQE}{__U8DQ}{__U8DRE}{__U8DR}
 set supportroutine {__U8D}{__U8FD}{__U8FS}{__U8M}
 set breakonwrite off
 set dontexpandhex off
-flip on
+flip off
 hook progstart {
     if _dbg@dbg$loaded && !?_dbg@nogo {
         if ?@@fmain {
