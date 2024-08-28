@@ -28046,6 +28046,7 @@ code may use setIfZeAM on *(countT*)this
     flagsT          flagsi ;
     countT          cRefPoolReg ;
     byteT           pbSexGrabbedBits[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
+    byteT           pbSexDeletedBits[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
     osTextT         postPoolName[ COSTpOOLnAMEmAX ] ;
 
     public :
@@ -33965,7 +33966,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341b2.etherC.strSquishIF!||
  static voidT strSquishOldIF( tinS& tinP , countT*& pczOutP , const countT* pcP , const countT ccMaxP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341b4.etherC.strSquishIF!||
- static voidT strSquishIF( tinS& tinP , countT*& pczP , const countT* pczInP ) ;
+ static countT strSquishIF( tinS& tinP , countT*& pczP , const countT* pczInP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350021b5.etherc.strSquishIF!||
  voidT strPatternFromWildcardsMicrosoftF( tinS& tinP , strokeS*& psttRegExpP , flagsT& flagsOptimizeP , flagsT*& pFlagsOverrideP , countT*& pcMinOverrideP , countT*& pcMaxOverrideP , const strokeS* const psttWildP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021eb.etherc.strPatternFromWildcardsMicrosoftF!||

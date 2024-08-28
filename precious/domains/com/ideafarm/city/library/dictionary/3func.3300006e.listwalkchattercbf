@@ -315,12 +315,10 @@
                 {
                 if( !POOP )
 
-                { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczSquished ) ; }
+                { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pcSquished ) ; }
                 tinP.tlsDelF( LF , *(byteT**)&pczName ) ;
                 //{ puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczName ) ; }
                 }
-                    if( pczSquished[ ++ offi ] ) { tinP.pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
-
                     else tinP.pEtScratch->strFuseF( tinP , pstto , T(bSquishedValue?"VALUE(":"ILLEGALnAME(")+TF2(idName,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(")") ) ;
                     }
                         }
@@ -355,16 +353,26 @@
                     {
                     switch( idName )
 
-                    const countT idName = pczSquished[ offi ] ;
+                    const countT idName = pcSquished[ offi ] ;
+
+                    if( offi ) { tinP.pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
                 {
-                while( pczSquished[ offi ] )
+                for( countT offi = 0 ; offi < ccSquished ; offi ++ )
                 ZE( boolT  , bSquishedValue ) ;
-                ZE( countT , offi ) ;
 
-                tinP.pEtScratch->traceF( tinP , T("[pczSquished]:    ")+T(pczSquished) ) ;
+                }
+                    }
+                                   tSay += TF2(pcSquished[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+                        if( offi ) tSay += tSlash ;
+                    {
+                    for( countT offi = 0 ; offi < ccSquished ; offi ++ )
+                    TN( tSay , "[pcSquished]:    " ) ;
+                {
+                TN( tSlash , "/" ) ;
 
-                { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; etherC::strSquishIF( tinP , pczSquished , pczName ) ; ___( pczSquished ) ; }
-                ZE( countT* , pczSquished ) ;
+                { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; ccSquished = etherC::strSquishIF( tinP , pcSquished , pczName ) ; ___( pcSquished ) ; }
+                ZE( countT  , ccSquished ) ;
+                ZE( countT* , pcSquished ) ;
 
                 tinP.pEtScratch->traceF( tinP , T("[pczName]    :    ")+T(pczName) ) ;
 
