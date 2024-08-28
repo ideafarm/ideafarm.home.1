@@ -1,6 +1,10 @@
 
-#define LISTnAMEaPPmIN          0x90000000
-#define LISTnAMEaPPmAX          0x9fffffff
+#define LISTnAMEaPPmAX          0xafffffff
+#define LISTnAMEaPPmIN          0xa0000000
+#define LISTnAMEdICTIONARYmAX          0x9fffffff
+#define LISTnAMEdICTIONARYmIN          0x90000000
+
+#define LNA(idP) ( LISTnAMEaPPmIN + (idP) )
 
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
@@ -38261,7 +38265,14 @@ args
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             {                                                                                                                                                       \
-                boolT bLiteralKey = LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max ;                                                                              \
+                                                                                                                                                                                \
+        boolT bLiteralKey =                                                                                                                                                     \
+        (                                                                                                                                                                       \
+            LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max                                                                                                              \
+            ||                                                                                                                                                                  \
+            LISTnAMEaPPmIN  <= idKeyP && idKeyP <= LISTnAMEaPPmAX                                                                                                               \
+        )                                                                                                                                                                       \
+        ;                                                                                                                                                                       \
                 byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
                 if( !bLiteralKey )                                                                                                                                  \
@@ -38423,7 +38434,14 @@ args
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             {                                                                                                                                                       \
-                boolT bLiteralKey = LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max ;                                                                              \
+                                                                                                                                                                                \
+        boolT bLiteralKey =                                                                                                                                                     \
+        (                                                                                                                                                                       \
+            LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max                                                                                                              \
+            ||                                                                                                                                                                  \
+            LISTnAMEaPPmIN  <= idKeyP && idKeyP <= LISTnAMEaPPmAX                                                                                                               \
+        )                                                                                                                                                                       \
+        ;                                                                                                                                                                       \
                 byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
                 if( !bLiteralKey )                                                                                                                                  \
@@ -38613,7 +38631,14 @@ args
         const osTextT* postMasterPool = PUSE.postNameF( tinP ) ;                                                                                                                \
         const countT idStateSpace = PUSE.idStateSpaceF() ;                                                                                                                      \
                                                                                                                                                                                 \
-        boolT bLiteralKey = LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max ;                                                                                                  \
+        boolT bLiteralKey =                                                                                                                                                     \
+        (                                                                                                                                                                       \
+            LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max                                                                                                              \
+            ||                                                                                                                                                                  \
+            LISTnAMEaPPmIN  <= idKeyP && idKeyP <= LISTnAMEaPPmAX                                                                                                               \
+        )                                                                                                                                                                       \
+        ;                                                                                                                                                                       \
+                                                                                                                                                                                \
         byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                                      \
         ZE( blobVSP* , pvspPostKey ) ;                                                                                                                                          \
         countT idKeyInIndex = idKeyP ;                                                                                                                                          \
@@ -51221,56 +51246,3 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//**//*1*/
-
-#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP) tinP , countTC() , tmFP , 0 , (flagsP) , (cbTlsP)
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-normally this should be commented out because it slows execution
-enable it to set bits in processGlobal2S::pbMemoryBits*
-*/
-/**/
-/*1*//*SHOWmEMgRAINS*//*1*/
-#define SHOWmEMgRAINS
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END

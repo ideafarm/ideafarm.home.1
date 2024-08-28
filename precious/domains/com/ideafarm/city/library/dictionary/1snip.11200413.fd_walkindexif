@@ -39,7 +39,7 @@
             PUSE( tinP , *(byteT**)&pczIKV ) ;                                                                                                                                  \
             }                                                                                                                                                                   \
                 pczIKVR[ ccIKV + 1 ] = 0 ;                                                                                                                                      \
-                pczIKVR[ ccIKV     ] = LISTnAMEsYS_RECORD ;                                                                                                                        \
+                pczIKVR[ ccIKV     ] = LISTnAMEsYS_RECORD ;                                                                                                                     \
                 thirdC::c_memcpyIF( tinP , (byteT*)pczIKVR , (byteT*)pczIKV , sizeof( countT ) * ccIKV ) ;                                                                      \
             {                                                                                                                                                                   \
             if( !POOP )                                                                                                                                                         \
@@ -74,7 +74,14 @@
         countT idKeyInIndex = idKeyP ;                                                                                                                                          \
         ZE( blobVSP* , pvspPostKey ) ;                                                                                                                                          \
         byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                                      \
-        boolT bLiteralKey = LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max ;                                                                                                  \
+                                                                                                                                                                                \
+        ;                                                                                                                                                                       \
+        )                                                                                                                                                                       \
+            LISTnAMEaPPmIN  <= idKeyP && idKeyP <= LISTnAMEaPPmAX                                                                                                               \
+            ||                                                                                                                                                                  \
+            LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max                                                                                                              \
+        (                                                                                                                                                                       \
+        boolT bLiteralKey =                                                                                                                                                     \
                                                                                                                                                                                 \
         const countT idStateSpace = PUSE.idStateSpaceF() ;                                                                                                                      \
         const osTextT* postMasterPool = PUSE.postNameF( tinP ) ;                                                                                                                \

@@ -10,7 +10,7 @@
 }
     }
         }
-            else        pci ++ ;
+            else                         pci ++   ;
             if( bCopy ) *( pco ++ ) = *( pci ++ ) ;
 
             }
@@ -23,14 +23,11 @@
             switch( *pci )
 
             }
-                }
-                    break ;                    
-                {
-                default :
-                case 4 : { bCopy = 0 ; ++ *pc_cbString ; got = got << 1 | ( *pci & 3    ) - 1 ; if( !( *pc_cbString % SB ) ) ++ cbGot ; if(    cbGot == sizeof( countT ) ) { *( pco ++ ) = got                 ; got = cbGot = 0 ; } break ; } //U:: CONJ: BUG: DOES THIS HANDLE ALL ENDING BITS 0?
-                case 3 : { bCopy = 0                   ; got = got << 8 |   *pci & 0xff                                               ; if( ++ cbGot == sizeof( countT ) ) { *( pco ++ ) = got ? got : BM_HIGH ; got = cbGot = 0 ; } break ; }
-                case 1 :
-                case 2 : {             ++ *pc_cbString ; }      // INTENTIONAL FALLTHROUGH
+                default : {                                                                                                                                                                                                           break ; }
+                case 4  : { bCopy = 0 ; ++ *pc_cbString ; got = got << 1 | ( *pci & 3    ) - 1 ; if( !( *pc_cbString % SB ) ) ++ cbGot ; if(    cbGot == sizeof( countT ) ) { *( pco ++ ) = got                 ; got = cbGot = 0 ; } break ; } //U:: CONJ: BUG: DOES THIS HANDLE ALL ENDING BITS 0?
+                case 3  : { bCopy = 0                   ; got = got << 8 |   *pci & 0xff                                               ; if( ++ cbGot == sizeof( countT ) ) { *( pco ++ ) = got ? got : BM_HIGH ; got = cbGot = 0 ; } break ; }
+                case 1  :
+                case 2  : {             ++ *pc_cbString ; }      // INTENTIONAL FALLTHROUGH
             {
             switch( mode )
             boolT bCopy = 1 ;

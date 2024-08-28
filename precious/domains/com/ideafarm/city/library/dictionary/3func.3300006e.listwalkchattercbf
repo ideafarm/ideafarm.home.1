@@ -321,6 +321,7 @@
                 }
                     if( pczSquished[ ++ offi ] ) { tinP.pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
 
+                    else tinP.pEtScratch->strFuseF( tinP , pstto , T(bSquishedValue?"VALUE(":"ILLEGALnAME(")+TF2(idName,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(")") ) ;
                     }
                         }
                             tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
@@ -328,17 +329,36 @@
                             tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
                         {
                         else            
-                        if( !(const byteT*)vspo ) { tinP.pEtScratch->strFuseF( tinP , pstto , TF2(pczSquished[offi],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; }
+                        if( !(const byteT*)vspo ) { tinP.pEtScratch->strFuseF( tinP , pstto , T("NOTiNdICTIONARY(")+TF2(idName,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(")") ) ; }
             
-                        if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tinP , pczSquished[ offi ] ) ;
+                        if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tinP , idName ) ;
                         blobVSP vspo ;
                     {
-                    else
-                    if( postzMap ) { tinP.pEtScratch->strFuseF( tinP , pstto , T(postzMap) ) ; }
+                    else if( LISTnAMEdICTIONARYmIN <= idName && idName <= LISTnAMEdICTIONARYmAX )
+                    }
+                        tinP.pEtScratch->strFuseF( tinP , pstto , T("LISTnAMEaPP(")+TF2(idName-LISTnAMEaPPmIN,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(")") ) ;
+                    {
+                    else if( LISTnAMEaPPmIN <= idName && idName <= LISTnAMEaPPmAX )
+                    }
+                        tinP.pEtScratch->strFuseF( tinP , pstto , T(postzMap) ) ;
+                        const osTextT* postzMap = postzMap = processGlobal4I.mapListName( idName ) ;
+                    {
+                    if( LISTnAMEsYS_min <= idName && idName <= LISTnAMEsYS_max )
 
-                    const osTextT* postzMap = processGlobal4I.mapListName( pczSquished[ offi ] ) ;
+                    }
+                        case LISTnAMEsYS_STRETCHbEGINoStEXTsTRZ : { bSquishedValue = 1 ; break ; }
+                        case LISTnAMEsYS_STRETCHbEGINcOUNTsTRZ  :
+                        case LISTnAMEsYS_STRETCHbEGINbITS       :
+                        case LISTnAMEsYS_STRETCHbEGINcOUNT      :
+
+                        case LISTnAMEsYS_STRETCHeND             : { bSquishedValue = 0 ; break ; }
+                    {
+                    switch( idName )
+
+                    const countT idName = pczSquished[ offi ] ;
                 {
                 while( pczSquished[ offi ] )
+                ZE( boolT  , bSquishedValue ) ;
                 ZE( countT , offi ) ;
 
                 { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; etherC::strSquishIF( tinP , pczSquished , pczName ) ; ___( pczSquished ) ; }
