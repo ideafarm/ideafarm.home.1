@@ -28047,6 +28047,8 @@ code may use setIfZeAM on *(countT*)this
     countT          cRefPoolReg ;
     byteT           pbSexGrabbedBits[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
     byteT           pbSexDeletedBits[  1 + ( CsLOTeXTENTS * CsLOTsIZESmAX ) / SB ] ; //A:ASSUME: ALIGNED ON countT BOUNDARY
+    countT          timeDeletedBitsClearedC1 ;
+    sCountT         timeDeletedBitsClearedC2 ;
     osTextT         postPoolName[ COSTpOOLnAMEmAX ] ;
 
     public :
@@ -32806,6 +32808,7 @@ examples
     stackC*                     pStkCatchers ;
     stackC*                     pStkIdleTimeouters ;
     stackC*                     pStkQuitters ;
+    stackC*                     pStkPoolNames ;
     switchC*                    pSwDllReferences ;
     switchC*                    pSwEtThread ;
     switchStackC*               pSwsRecycle ;
@@ -33449,6 +33452,7 @@ examples
  voidT ifcCreateNewHomeF( tinS& tinP , countT& idgHomeP , byteT*& pbPublicKey1P , countT& cbPublicKey1P , byteT*& pbPublicKey2P , countT& cbPublicKey2P ) ;
  voidT ifcCreateNewWightF( tinS& tinP , countT& idgWightP , byteT*& pbPublicKey1P , countT& cbPublicKey1P , byteT*& pbPublicKey2P , countT& cbPublicKey2P ) ;
  voidT ifcUdpFileThrowFileF( tinS& tinP , const boolT& bQuitP , countT& idGramP , countT& secretToUseP , countT& cThrownP , count04T& cb04ThrownP , const strokeS* const psttLongP ) ;
+ stackC& ifcStkPoolNamesF( tinS& tinP ) ;
 
 /* commands: sorting */
  voidT ifcSortaF( tinS& tinP , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP = flSORTAc_null ) ;

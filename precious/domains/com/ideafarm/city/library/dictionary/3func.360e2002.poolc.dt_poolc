@@ -132,11 +132,25 @@
                 {
             {
             if( !guts.idStateSpace )
-            THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )                                                                                            \
+            THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
         {
         if( 1 == decv02AM( pFace->cRef ) )
         face_poolC_S* pFace = (face_poolC_S*)(byteT*)napFace ;
     {
+
+    }
+        stPoolNames.ungrabF( tinP ) ;
+        if( ids ) stPoolNames.extractF( 0 , tinP ) ;
+        stPoolNames.sinkF( tinP , ids , (countT)guts.postName , flSTACKsINK_QUERY ) ;
+        stPoolNames.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ZE( countT , ids ) ;
+        stackC& stPoolNames = tinP.pEther->ifcStkPoolNamesF( tinP ) ;
+    {
+    if( tinP.pEther )               // IF !tinP.pEther THEN I WILL NOT BE DEREGISTERED, BUT THAT DOES NOT MATTER BECAUSE tmWatchF IS GONE
+
+    // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // UNREGISTER MY NAME SO THAT tmWatchF CAN SEE WHICH poolC NAMES THIS PROCESSES IS USING
+    // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     //CONoUTrAW( " *********************************************************************************************************\r\n" ) ;
     //CONoUTrAW( guts.postName ) ;

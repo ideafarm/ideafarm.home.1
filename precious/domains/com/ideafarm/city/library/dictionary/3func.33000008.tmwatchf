@@ -467,7 +467,52 @@ DONE( tmWatchF )
         IFsCRATCH
         ZE( boolT , bFireSelf ) ;
 
-        if( ++ idCycle > TUCK >> 4 && !( idCycle % 0x10 ) ) poolC::deleteEmptiesIfIF( tinP ) ; // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
+        }
+            }
+                stPoolNames.ungrabF( tinP ) ;
+                }
+                    while( ~hWalk ) ;
+                    }
+                        }
+                            }
+                                }
+                                    reg.timeDeletedBitsClearedC2 = timeN2 ;
+                                    reg.timeDeletedBitsClearedC1 = timeN1 ;
+
+                                    thirdC::c_memsetIF( tinP , reg.pbSexDeletedBits , sizeof reg.pbSexDeletedBits ) ;                               //ALL OF THIS RACES WITH OTHER PROCESSES BUT THAT DOES NOT MATTER
+                                {
+                                if( timeE2 || timeE1 > TICK )
+
+                                etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , reg.timeDeletedBitsClearedC1 , reg.timeDeletedBitsClearedC2 ) ;
+                                sCountT timeE2 = timeN2 ;
+                                countT  timeE1 = timeN1 ;
+                            {
+                            if( !thirdC::c_strcmpIF( tinP , postName , reg.postPoolName ) )
+                            
+                            poolRegistrationS& reg = pRegs[ offr ] ;
+                        {
+                        for( countT offr = 0 ; offr < CpOOLrEGISTRATIONSmAX ; offr ++ )
+                        poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
+                        homeS& home = homeS::homeIF() ;
+
+                        etThread.traceF( tinP , T(postName) ) ;
+                        const osTextT* postName = (osTextT*)stPoolNames.downF( tinP , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                {
+                if( stPoolNames )
+                stPoolNames.grabF( tinP , TAG( TAGiDnULL ) ) ;
+
+                etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                ZE( sCountT , timeN2 ) ;
+                ZE( countT  , timeN1 ) ;
+            {
+            if( !( idCycle % TICK >> 0 ) )
+
+            poolC::deleteEmptiesIfIF( tinP ) ;                                                              // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
+        {
+        if( ++ idCycle > TUCK >> 4 && !( idCycle % TUCK >> 4 ) )
 
         }
             BLAMMO ;
@@ -527,6 +572,7 @@ DONE( tmWatchF )
     //if( stQuitters.third          ) stQuitters.third          = 0 ;
     //if( stCatchers.third          ) stCatchers.third          = 0 ;
     //if( stAcceptors.third         ) stAcceptors.third         = 0 ;
+    stackC& stPoolNames              = *tinP.pag1->_etherC_.pStkPoolNames ;
     stackC& stQuitters               = *tinP.pag1->_etherC_.pStkQuitters ;
     stackC& stCatchers               = *tinP.pag1->_etherC_.pStkCatchers ;
     stackC& stAcceptors              = *tinP.pag1->_etherC_.pStkAcceptors ;

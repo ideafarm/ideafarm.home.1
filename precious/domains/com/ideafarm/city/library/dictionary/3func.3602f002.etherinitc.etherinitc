@@ -12,7 +12,16 @@
     }
 
         }                                                      
-                                                              
+            }
+                if( tinP.pag1->pPoolHomePerm ) stPoolNames.sinkF( tinP , countTC() , (countT)tinP.pag1->pPoolHomePerm->postNameF( tinP ) ) ;
+                if( tinP.pag1->pPoolAdamPerm ) stPoolNames.sinkF( tinP , countTC() , (countT)tinP.pag1->pPoolAdamPerm->postNameF( tinP ) ) ;
+                if( tinP.pag1->pPoolScratch  ) stPoolNames.sinkF( tinP , countTC() , (countT)tinP.pag1->pPoolScratch->postNameF(  tinP ) ) ;
+                if( tinP.pag1->pPoolHomeTemp ) stPoolNames.sinkF( tinP , countTC() , (countT)tinP.pag1->pPoolHomeTemp->postNameF( tinP ) ) ;
+                if( tinP.pag1->pPoolAdamTemp ) stPoolNames.sinkF( tinP , countTC() , (countT)tinP.pag1->pPoolAdamTemp->postNameF( tinP ) ) ;
+
+                stackC& stPoolNames = *tinP.pag1->_etherC_.pStkPoolNames ;
+            {
+
               *tinP.pag1->_etherC_.pTxtDllEntry2 = T("$n(rn$tinS$$rn$etherC$$uiuipnxuirn$sadamC$$)ui") ;                                   //2011.06.27
             //*tinP.pag1->_etherC_.pTxtDllEntry2 = T("$n(rn$tinS$$rn$etherC$$uiuipnxuirn$sadamStateOldS$$)ui") ;
             //*tinP.pag1->_etherC_.pTxtDllEntry2 = T("$n(rn$tinS$$rn$etherC$$xuixuixpnxuirn$s adamStateOldS$$)ui") ;
@@ -37,18 +46,19 @@
 
             *tinP.pag1->_etherC_.pTxtDllEntry1 = T("W?") ; ;
 
-            tinP.pag1->_etherC_.pTxtDllEntry2         = new( 0 , tinP , LF ) textC(   tinP , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                     ) ; ___( tinP.pag1->_etherC_.pTxtDllEntry2         ) ;
-            tinP.pag1->_etherC_.pTxtDllEntry1         = new( 0 , tinP , LF ) textC(   tinP , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                     ) ; ___( tinP.pag1->_etherC_.pTxtDllEntry1         ) ;
-            tinP.pag1->_etherC_.pBatFiringKids        = new( 0 , tinP , LF ) batonC(  tinP , TAG( TAGiDnULL )                                                                                                         ) ; ___( tinP.pag1->_etherC_.pBatFiringKids        ) ;
-            tinP.pag1->_etherC_.pSwEtThread           = new( 0 , tinP , LF ) switchC( *tinP.pag1->_etherC_.pEtLongLasting , tinP , TAG( TAGiDnULL )                                                           ) ; ___( tinP.pag1->_etherC_.pSwEtThread           ) ;
-            tinP.pag1->_etherC_.pTxtWinTitle          = new( 0 , tinP , LF ) textC(   tinP , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                                     ) ; ___( tinP.pag1->_etherC_.pTxtWinTitle          ) ;
-            tinP.pag1->_etherC_.pBatWinTitle          = new( 0 , tinP , LF ) batonC(  tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER                                                        ) ; ___( tinP.pag1->_etherC_.pBatWinTitle          ) ;
-            tinP.pag1->_etherC_.pStkQuitters          = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                           ) ; ___( tinP.pag1->_etherC_.pStkQuitters          ) ;
-            tinP.pag1->_etherC_.pStkCatchers          = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                           ) ; ___( tinP.pag1->_etherC_.pStkCatchers          ) ;
-            tinP.pag1->_etherC_.pStkAcceptors         = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                           ) ; ___( tinP.pag1->_etherC_.pStkAcceptors         ) ;
-            tinP.pag1->_etherC_.pStkIdleTimeouters    = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                           ) ; ___( tinP.pag1->_etherC_.pStkIdleTimeouters    ) ;
-            tinP.pag1->_etherC_.pSwDllReferences      = new( 0 , tinP , LF ) switchC( tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , tinP.pag1->_etherC_.oshDllLever ) ; ___( tinP.pag1->_etherC_.pSwDllReferences      ) ;
-            tinP.pag1->_etherC_.pBatWindowDeletion    = new( 0 , tinP , LF ) batonC(  tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER                             ) ; ___( tinP.pag1->_etherC_.pBatWindowDeletion    ) ;
+            tinP.pag1->_etherC_.pTxtDllEntry2         = new( 0 , tinP , LF ) textC(   tinP , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                     ) ; ___( tinP.pag1->_etherC_.pTxtDllEntry2      ) ;
+            tinP.pag1->_etherC_.pTxtDllEntry1         = new( 0 , tinP , LF ) textC(   tinP , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                     ) ; ___( tinP.pag1->_etherC_.pTxtDllEntry1      ) ;
+            tinP.pag1->_etherC_.pBatFiringKids        = new( 0 , tinP , LF ) batonC(  tinP , TAG( TAGiDnULL )                                                                                         ) ; ___( tinP.pag1->_etherC_.pBatFiringKids     ) ;
+            tinP.pag1->_etherC_.pSwEtThread           = new( 0 , tinP , LF ) switchC( *tinP.pag1->_etherC_.pEtLongLasting , tinP , TAG( TAGiDnULL )                                                   ) ; ___( tinP.pag1->_etherC_.pSwEtThread        ) ;
+            tinP.pag1->_etherC_.pTxtWinTitle          = new( 0 , tinP , LF ) textC(   tinP , TAG( TAGiDnULL ) , flTEXTc_null , ""                                                                     ) ; ___( tinP.pag1->_etherC_.pTxtWinTitle       ) ;
+            tinP.pag1->_etherC_.pBatWinTitle          = new( 0 , tinP , LF ) batonC(  tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER             ) ; ___( tinP.pag1->_etherC_.pBatWinTitle       ) ;
+            tinP.pag1->_etherC_.pStkPoolNames         = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                   ) ; ___( tinP.pag1->_etherC_.pStkPoolNames      ) ;
+            tinP.pag1->_etherC_.pStkQuitters          = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                   ) ; ___( tinP.pag1->_etherC_.pStkQuitters       ) ;
+            tinP.pag1->_etherC_.pStkCatchers          = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                   ) ; ___( tinP.pag1->_etherC_.pStkCatchers       ) ;
+            tinP.pag1->_etherC_.pStkAcceptors         = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                   ) ; ___( tinP.pag1->_etherC_.pStkAcceptors      ) ;
+            tinP.pag1->_etherC_.pStkIdleTimeouters    = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL )                                                   ) ; ___( tinP.pag1->_etherC_.pStkIdleTimeouters ) ;
+            tinP.pag1->_etherC_.pSwDllReferences      = new( 0 , tinP , LF ) switchC( tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , tinP.pag1->_etherC_.oshDllLever ) ; ___( tinP.pag1->_etherC_.pSwDllReferences   ) ;
+            tinP.pag1->_etherC_.pBatWindowDeletion    = new( 0 , tinP , LF ) batonC(  tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER             ) ; ___( tinP.pag1->_etherC_.pBatWindowDeletion ) ;
         {
         if( tinP.pag1->_etherC_.pEtLongLasting )
 
