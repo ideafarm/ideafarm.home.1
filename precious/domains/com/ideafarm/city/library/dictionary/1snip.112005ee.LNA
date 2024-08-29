@@ -6,7 +6,9 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-#define LNA(idP) ( LISTnAMEaPPmIN + (idP) )
+#define LNA(idP) ( LISTnAMEaPPmIN | ( (idP) & 0x0fffffff ) )
+
+//A:ASSUME: countT IS 02 BITS
 
 /*1*//*LNA(idP)*//*1*/
 /**/

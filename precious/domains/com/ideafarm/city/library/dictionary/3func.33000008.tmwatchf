@@ -481,7 +481,7 @@ DONE( tmWatchF )
 
                                     thirdC::c_memsetIF( tinP , reg.pbSexDeletedBits , sizeof reg.pbSexDeletedBits ) ;                               //ALL OF THIS RACES WITH OTHER PROCESSES BUT THAT DOES NOT MATTER
                                 {
-                                if( timeE2 || timeE1 > TICK )
+                                if( timeE2 || ( timeE1 > TICK ) )
 
                                 etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , reg.timeDeletedBitsClearedC1 , reg.timeDeletedBitsClearedC2 ) ;
                                 sCountT timeE2 = timeN2 ;
@@ -508,11 +508,11 @@ DONE( tmWatchF )
                 ZE( sCountT , timeN2 ) ;
                 ZE( countT  , timeN1 ) ;
             {
-            if( !( idCycle % ( TICK >> 0 ) ) )
+            if( !( idCycle % TUCK ) )
 
-            poolC::deleteEmptiesIfIF( tinP ) ;                                                              // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
+            poolC::deleteEmptiesIfIF( tinP ) ;
         {
-        if( ++ idCycle > TUCK >> 4 && !( idCycle % TUCK >> 4 ) )
+        if( ++ idCycle && !( idCycle % ( TUCK >> 4 ) ) )                                                              // SUPPRESSED FOR WOTH 01 TOCK TO ALLOW adamMainF TO CALL pMainF AND pMainF TO DO ITS INITIALIZATION ; THIS IS AN OPTIMIZATION TO AVOID UNNECESSARY DT/CT OF sexC INSTANCES WITH SAME SPECIFICATIONS
 
         }
             BLAMMO ;

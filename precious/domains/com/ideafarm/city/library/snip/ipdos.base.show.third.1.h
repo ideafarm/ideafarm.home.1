@@ -4,7 +4,7 @@
 #define LISTnAMEdICTIONARYmAX          0x9fffffff
 #define LISTnAMEdICTIONARYmIN          0x90000000
 
-#define LNA(idP) ( LISTnAMEaPPmIN + (idP) )
+#define LNA(idP) ( LISTnAMEaPPmIN | ( (idP) & 0x0fffffff ) )
 
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
