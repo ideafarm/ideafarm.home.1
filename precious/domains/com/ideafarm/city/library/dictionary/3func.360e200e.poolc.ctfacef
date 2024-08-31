@@ -11,12 +11,26 @@
     }
         if( !( F(napFace.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napFace.formattingIsDoneF( tinP ) ;
 
-        else inc02AM( ((face_poolC_S*)(byteT*)napFace)->cRef ) ;
+        }
+            inc02AM( face.cRef ) ;
+
+            if( bMeTransacted != bHeTransacted ) { BLAMMOiD( 0x33334444 ) ; }
+            if( bMeNotes      != bHeNotes      ) { BLAMMOiD( 0x11112222 ) ; }
+
+            boolT bHeTransacted = !!( F(face.flagsPoolFormat  ) & flPOOLfORMAT_TRANSACTED ) ;
+            boolT bMeTransacted = !!(      F(flagsPoolFormatP ) & flPOOLfORMAT_TRANSACTED ) ;
+
+            boolT bHeNotes      = !!( F(face.flagsPoolFormat  ) & flPOOLfORMAT_NOTES      ) ;
+            boolT bMeNotes      = !!(      F(flagsPoolFormatP ) & flPOOLfORMAT_NOTES      ) ;
+
+            face_poolC_S& face = *(face_poolC_S*)(byteT*)napFace ;
+        {
+        else
         }
             THREADmODE3rESTORE
             }
                 POPtINaRGS
-                new( 0 , tinP , &napFace ) face_poolC_S( tinP , idLineCtP , idiFileCtP , pbBitsCtP ) ;
+                new( 0 , tinP , &napFace ) face_poolC_S( tinP , idLineCtP , idiFileCtP , pbBitsCtP , flagsPoolFormatP ) ;
                 PUSHtINaRGS
             {
             THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc ) ;
@@ -42,7 +56,7 @@
     ZE( boolT , bFormattedByMe ) ;
     _IO_
 {
-/*1*/voidT poolC::ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idStateSpaceP )/*1*/
+/*1*/voidT poolC::ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT idStateSpaceP )/*1*/
 
 /**/
 */

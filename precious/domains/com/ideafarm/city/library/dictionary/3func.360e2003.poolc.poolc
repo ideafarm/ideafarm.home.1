@@ -282,6 +282,7 @@
     _IO_
 {
 pSexLifoConstructed( 0 )
+face( *(face_poolC_S*)(byteT*)napFace ) ,
 guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
 ) ,
     0 , sizeof( guts_poolC_S ) , ifcOPENsHAREDmEMORYhOW_nCeF //ALWAYS USES MEMORY SPACE DEDICATED TO EXCLUSIVE USE BY THE CONSTRUCTING PROCESS (tinP.osPid IS USED TO UNIQUIFY THE NAME)
@@ -329,7 +330,17 @@ flagsInstance( flPOOLiNSTANCE_null ) ,
         tinP.flagsThreadMode2 |= flTHREADmODE2_ALLOWsTOPwHILEgRABBING ,
         *(flagsT*)tinP.pbF() = tinP.flagsThreadMode2 ,                                                           //TLS:4
         tinP.tlsNewF( LF , sizeof( flagsT ) ) ,                                                                  //TLS:4  ======== NEW ==========================================================    [flagsThreadMode2]
-        ctFaceF( tinP , idLineCtP , idiFileCtP , pbBitsCtP , idStateSpaceP ) ,
+        ) ,
+            idStateSpaceP
+            ,
+            )
+                ( F(flagsP) & flPOOLc_TRANSACTED ? flPOOLfORMAT_TRANSACTED : flPOOLfORMAT_null )
+                |
+                ( F(flagsP) & flPOOLc_NOTES      ? flPOOLfORMAT_NOTES      : flPOOLfORMAT_null )
+            (
+            tinP , idLineCtP , idiFileCtP , pbBitsCtP ,
+        (
+        ctFaceF
     (
 (
 pNext
@@ -396,10 +407,10 @@ batPoolCt
 {
 idListNameLath( 0 )
 cRef( 1 ) ,
-flFormat( flPOOLfORMAT_NOTES ) ,
+flagsPoolFormat( flagsPoolFormatP ) ,
 idFormat( 1 ) ,
 finger( 0 ) ,
-poolC::face_poolC_S::face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP ) :
+poolC::face_poolC_S::face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP ) :
 
 }
     for( countT offg = 0 ; offg < CsLOTsIZESmAX ; offg ++ ) new( 0 , tinP , pbzaGrab + offg * sizeof( grabC ) , sizeof( grabC ) ) grabC( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS | flGRABc_SHARElAYER , ifcIDgRABlAYER_8POOL5nEW ) ;

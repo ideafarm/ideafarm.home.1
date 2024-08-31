@@ -1,4 +1,9 @@
 
+
+
+
+typedef unsigned short /*ff*/flags01T/*ff*/ ;   /*ff*//**//*ff*/
+
 #define LISTnAMEaPPmAX          0xafffffff
 #define LISTnAMEaPPmIN          0xa0000000
 #define LISTnAMEdICTIONARYmAX          0x9fffffff
@@ -33894,6 +33899,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define flPOOLc_KEEPeMPTIES                   0xe00040a1
 #define flPOOLc_DOnOTbLOCK                    0xe00080a1
 #define flPOOLc_NOsEXiNpOOL                   0xe00100a1
+#define flPOOLc_TRANSACTED                    0xe00200a1
 /*3*/
 #define flPOOLc_null    0xe00000a1
 
@@ -34272,6 +34278,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*3*/
 #define flPOOLfORMAT_NOTES                        0xe00001a4
+#define flPOOLfORMAT_TRANSACTED                   0xe00002a4
 /*3*/
 #define flPOOLfORMAT_null    0xe00000a4
 
@@ -34577,7 +34584,9 @@ coding standard
 #define LISTnAMEsYS_PROCESSrEPORTfIELDe0                                 0x80000035
 #define LISTnAMEsYS_PROCESSrEPORTfIELDf0                                 0x80000036
 #define LISTnAMEsYS_PROCESSrEPORTfIELD01                                 0x80000037
-#define LISTnAMEsYS_max                                                  0x80000037
+#define LISTnAMEsYS_TRANSACTIONS                                         0x80000038
+#define LISTnAMEsYS_TRANSACTIONsTATE                                     0x80000039
+#define LISTnAMEsYS_max                                                  0x80000039
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -34666,7 +34675,6 @@ coding standard
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039d.flaptinspect END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039e.flilistingc BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -34682,32 +34690,34 @@ coding standard
 //CS: CODEsYNC: 21e0008 00104af
 
 #define fliLISTINGc_null          0x00
-#define fliLISTINGc_maskTypeBits ( fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM )
+#define fliLISTINGc_maskMIXINbITS ( fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM )
 
-#define fliLISTINGc_maskBitsUsed                                                                    \
+#define fliLISTINGc_maskBITSuSED                                                                    \
                                                                                                     \
     (                                                                                               \
+        fliLISTINGc_TRANSACTION         |                                                           \
         fliLISTINGc_RECORD              |                                                           \
         fliLISTINGc_FIELD               |                                                           \
         fliLISTINGc_DESTRUCTING         |                                                           \
         fliLISTINGc_DELETErEQUESTED     |                                                           \
         fliLISTINGc_GRABBED             |                                                           \
-        fliLISTINGc_maskTypeBits                                                                    \
+        fliLISTINGc_maskMIXINbITS                                                                   \
     )
 
-// CS:CODEsYNC 1100039e 1100039e: ALL OF THE ABOVE CONSTANTS MUST BE OR'D TOGETHER IN fliLISTINGc_maskBitsUsed
+// CS:CODEsYNC 1100039e 1100039e: ALL OF THE ABOVE CONSTANTS MUST BE OR'D TOGETHER IN fliLISTINGc_maskBITSuSED
 
-// THERE IS ONLY WO UNUSED BIT
-// WHEN ADDING FLAGS, IF NO BITS ARE AVAILABLE, THEN DO THIS
+// THERE ARE NO UNUSED BITS, AS OF 20240831@1257, WHEN fliLISTINGc_TRANSACTION WAS ADDED
+// IF A NEW FLAG IS NEEDED, THEN DO THIS
 // 1. COMBINE listingC::flagsi AND listingC::idTypeDatum INTO A SINGLE count01T FIELD
 // 2. REDEFINE THE ABOVE CONSTANTS TO BE 0x8000, 0x4000, ETC.
-// 3. IN THIS FIELD, USE THE HIGH BITS FOR FLAGS, THE LOW BITS FOR idTypeDatum, AND USE fliLISTINGc_maskBitsUsed TO MASK AWAY THE PORTION NOT WANTED
+// 3. IN THIS FIELD, USE THE HIGH BITS FOR FLAGS, THE LOW BITS FOR idTypeDatum, AND USE fliLISTINGc_maskBITSuSED TO MASK AWAY THE PORTION NOT WANTED
 // PERSISTENT STORE NEED NOT BE MIGRATED BECAUSE THESE CHANGES WILL NOT AFFECT THE POSITION OF THE BITS OR OF THE idTypeDatum VALUES
 
 // THIS IS THE BIT OFFSET OF fliLISTINGc_GRABBED
 #define offLISTINGgRABBEDbIT 7
 
 /*3*/
+#define fliLISTINGc_TRANSACTION         0x01
 #define fliLISTINGc_RECORD              0x02
 #define fliLISTINGc_FIELD               0x04
 #define fliLISTINGc_DESTRUCTING         0x08
@@ -51246,3 +51256,180 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//**//*1*/
+
+#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP) tinP , countTC() , tmFP , 0 , (flagsP) , (cbTlsP)
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+normally this should be commented out because it slows execution
+enable it to set bits in processGlobal2S::pbMemoryBits*
+*/
+/**/
+/*1*//*SHOWmEMgRAINS*//*1*/
+#define SHOWmEMgRAINS
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*CBcIRCLEdFLT*//*1*/
+
+#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*SOCKETtIMEOUTdEFAULTwANiMPATIENT*//*1*/
+
+#define SOCKETtIMEOUTdEFAULTwANiMPATIENT ( TOCK << 0 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
+
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c34
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c35
+#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c36
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c37
+#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c38
+#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c39
+#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c3a
+#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c3b
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c34
+#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c3b                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDuDPfILEmETAtYPE*//*1*/
+
+/*3*/
+#define ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME     0x1
+#define ifcIDuDPfILEmETAtYPE_CONTROLsETTINGS    0x2
+#define ifcIDuDPfILEmETAtYPE_HASHoFcONTENT      0x3
+#define ifcIDuDPfILEmETAtYPE_CONTENT            0x4
+#define ifcIDuDPfILEmETAtYPE_TIMEcREATED        0x5
+#define ifcIDuDPfILEmETAtYPE_TIMEmODIFIED       0x6
+#define ifcIDuDPfILEmETAtYPE_IDgENERATION       0x7
+#define ifcIDuDPfILEmETAtYPE_IDvERSION          0x8
+#define ifcIDuDPfILEmETAtYPE_IDoWNERlO          0x9
+#define ifcIDuDPfILEmETAtYPE_IDoWNERhI          0xa
+/*3*/                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END

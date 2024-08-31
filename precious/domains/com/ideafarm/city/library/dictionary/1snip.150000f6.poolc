@@ -67,8 +67,9 @@
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.poolC.NEWdELcLASSb!||
     NEWdELcLASSpROTOS
 
-    inline countT idMemorySpaceF( voidT ) const { return guts.idMemorySpace ; }
-    inline countT idStateSpaceF( voidT ) const { return guts.idStateSpace ; }
+    inline flagsT flagsPoolFormatF( voidT ) const { return face.flagsPoolFormat ; }
+    inline countT idMemorySpaceF(   voidT ) const { return guts.idMemorySpace   ; }
+    inline countT idStateSpaceF(    voidT ) const { return guts.idStateSpace    ; }
 
     }
         return cba ;
@@ -87,7 +88,7 @@
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.poolC.ctFilesF!||
     voidT ctFilesF( tinS& tinP , const osTextT* const postNameP , const countT idStateSpaceP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.poolC.ctFaceF!||
-    voidT ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idStateSpaceP ) ;
+    voidT ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT idStateSpaceP ) ;
 
     private :
 
@@ -95,6 +96,7 @@
 
     public :
 
+    face_poolC_S&   face ;
     guts_poolC_S&   guts ;
     napkinC         napGuts ;
     flagsT          flagsInstance ;
@@ -106,16 +108,16 @@
 
     ;
     }
-        face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP ) ;
+        face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP ) ;
         ~face_poolC_S( voidT ) ;
         NEWdELcLASSpROTOS
 
-        countT          idListNameLath ;
-        aptC            aptListRoot    ;
-        countT          cRef           ;
-        const flagsT    flFormat       ;
-        const countT    idFormat       ;
-        const countT    finger         ;
+        countT          idListNameLath  ;
+        aptC            aptListRoot     ;
+        countT          cRef            ;
+        const flagsT    flagsPoolFormat ;
+        const countT    idFormat        ;
+        const countT    finger          ;
     {
     struct _export face_poolC_S
 

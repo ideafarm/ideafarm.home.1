@@ -20222,9 +20222,9 @@ coding standard
 #define offGRABBEDbIT 7
 
 #define fliLISTINGc_null          0x00
-#define fliLISTINGc_maskTypeBits ( fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM )
+#define fliLISTINGc_maskMIXINbITS ( fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM )
 
-#define fliLISTINGc_maskBitsUsed                                                                    \
+#define fliLISTINGc_maskBITSuSED                                                                    \
                                                                                                     \
     (                                                                                               \
         fliLISTINGc_RECORD              |                                                           \
@@ -20232,16 +20232,16 @@ coding standard
         fliLISTINGc_DESTRUCTING         |                                                           \
         fliLISTINGc_DELETErEQUESTED     |                                                           \
         fliLISTINGc_GRABBED             |                                                           \
-        fliLISTINGc_maskTypeBits                                                                    \
+        fliLISTINGc_maskMIXINbITS                                                                    \
     )
 
-// CS:CODEsYNC 1100039e 1100039e: ALL OF THE ABOVE CONSTANTS MUST BE OR'D TOGETHER IN fliLISTINGc_maskBitsUsed
+// CS:CODEsYNC 1100039e 1100039e: ALL OF THE ABOVE CONSTANTS MUST BE OR'D TOGETHER IN fliLISTINGc_maskBITSuSED
 
 // THERE IS ONLY WO UNUSED BIT
 // WHEN ADDING FLAGS, IF NO BITS ARE AVAILABLE, THEN DO THIS
 // 1. COMBINE listingC::flagsi AND listingC::idTypeDatum INTO A SINGLE count01T FIELD
 // 2. REDEFINE THE ABOVE CONSTANTS TO BE 0x8000, 0x4000, ETC.
-// 3. IN THIS FIELD, USE THE HIGH BITS FOR FLAGS, THE LOW BITS FOR idTypeDatum, AND USE fliLISTINGc_maskBitsUsed TO MASK AWAY THE PORTION NOT WANTED
+// 3. IN THIS FIELD, USE THE HIGH BITS FOR FLAGS, THE LOW BITS FOR idTypeDatum, AND USE fliLISTINGc_maskBITSuSED TO MASK AWAY THE PORTION NOT WANTED
 // PERSISTENT STORE NEED NOT BE MIGRATED BECAUSE THESE CHANGES WILL NOT AFFECT THE POSITION OF THE BITS OR OF THE idTypeDatum VALUES
 
 // THIS IS THE BIT OFFSET OF fliLISTINGc_GRABBED

@@ -1,180 +1,3 @@
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//**//*1*/
-
-#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP) tinP , countTC() , tmFP , 0 , (flagsP) , (cbTlsP)
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-normally this should be commented out because it slows execution
-enable it to set bits in processGlobal2S::pbMemoryBits*
-*/
-/**/
-/*1*//*SHOWmEMgRAINS*//*1*/
-#define SHOWmEMgRAINS
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
-values at and above 00ff are used by spouseC to encode literal byte values
-*/
-/**/
-/*1*//*CBcIRCLEdFLT*//*1*/
-
-#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*SOCKETtIMEOUTdEFAULTwANiMPATIENT*//*1*/
-
-#define SOCKETtIMEOUTdEFAULTwANiMPATIENT ( TOCK << 0 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
-
-/*3*/
-#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c34
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c35
-#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c36
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c37
-#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c38
-#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c39
-#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c3a
-#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c3b
-/*3*/
-#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c34
-#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c3b                                                               
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/*1*//*ifcIDuDPfILEmETAtYPE*//*1*/
-
-/*3*/
-#define ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME     0x1
-#define ifcIDuDPfILEmETAtYPE_CONTROLsETTINGS    0x2
-#define ifcIDuDPfILEmETAtYPE_HASHoFcONTENT      0x3
-#define ifcIDuDPfILEmETAtYPE_CONTENT            0x4
-#define ifcIDuDPfILEmETAtYPE_TIMEcREATED        0x5
-#define ifcIDuDPfILEmETAtYPE_TIMEmODIFIED       0x6
-#define ifcIDuDPfILEmETAtYPE_IDgENERATION       0x7
-#define ifcIDuDPfILEmETAtYPE_IDvERSION          0x8
-#define ifcIDuDPfILEmETAtYPE_IDoWNERlO          0x9
-#define ifcIDuDPfILEmETAtYPE_IDoWNERhI          0xa
-/*3*/                                                               
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD BEGIN
 
 
@@ -31618,7 +31441,6 @@ listC must be the wo'th base class of any class derived from it
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listC : 1snip.150000fa.listc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.poolC : 1snip.150000f6.poolc BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -31656,16 +31478,16 @@ listC must be the wo'th base class of any class derived from it
 
     struct _export face_poolC_S
     {
-        const countT    finger         ;
-        const countT    idFormat       ;
-        const flagsT    flFormat       ;
-        countT          cRef           ;
-        aptC            aptListRoot    ;
-        countT          idListNameLath ;
+        const countT    finger          ;
+        const countT    idFormat        ;
+        const flagsT    flagsPoolFormat ;
+        countT          cRef            ;
+        aptC            aptListRoot     ;
+        countT          idListNameLath  ;
 
         NEWdELcLASSpROTOS
         ~face_poolC_S( voidT ) ;
-        face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP ) ;
+        face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP ) ;
     }
     ;
 
@@ -31677,6 +31499,7 @@ listC must be the wo'th base class of any class derived from it
     flagsT          flagsInstance ;
     napkinC         napGuts ;
     guts_poolC_S&   guts ;
+    face_poolC_S&   face ;
 
     public :
 
@@ -31684,7 +31507,7 @@ listC must be the wo'th base class of any class derived from it
 
     private :
 
-    voidT ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idStateSpaceP ) ;
+    voidT ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT idStateSpaceP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.poolC.ctFaceF!||
     voidT ctFilesF( tinS& tinP , const osTextT* const postNameP , const countT idStateSpaceP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.poolC.ctFilesF!||
@@ -31703,8 +31526,9 @@ listC must be the wo'th base class of any class derived from it
         return cba ;
     }
 
-    inline countT idStateSpaceF( voidT ) const { return guts.idStateSpace ; }
-    inline countT idMemorySpaceF( voidT ) const { return guts.idMemorySpace ; }
+    inline countT idStateSpaceF(    voidT ) const { return guts.idStateSpace    ; }
+    inline countT idMemorySpaceF(   voidT ) const { return guts.idMemorySpace   ; }
+    inline flagsT flagsPoolFormatF( voidT ) const { return face.flagsPoolFormat ; }
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.poolC.NEWdELcLASSb!||
@@ -47607,3 +47431,327 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.wightIdgC : 1snip.150001a8.wightIdgC END
+
+
+/*1*/class _export transactionStateS/*1*/
+{
+    count01T idType ;
+    flags01T flagsi ;
+}
+;
+
+/*1*/class _export aptTransactionStateC/*1*/
+{
+    protected :
+
+    aptC aptTransactionState ;
+}
+;
+
+/*1*/class _export transactedListingC : public aptTransactionStateC , public listingC/*1*/
+{
+}
+;
+
+
+/*1*/class _export transactedListC : public aptTransactionStateC , public listC/*1*/
+{
+}
+;
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export transactedListing_countTstrz_C : public transactedListingC , public datum_countTstrz_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_countTstrz_C.NEWdELcLASSb!||
+    ~transactedListing_countTstrz_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_countTstrz_C.dt_listing_countTstrz_C!||
+    transactedListing_countTstrz_C( tinS& tinP , const transactedListC& transactedListDadP , const countT* const pczP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_countTstrz_C.listing_countTstrz_C!||
+    voidT operator =( const countT* const postP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listing_countTstrz_C.operator_assign!||
+
+    //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
+    inline sCountT operator -( const transactedListing_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export transactedListing_blob_C : public transactedListingC , public datum_blob_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_blob_C.NEWdELcLASSb!||
+    ~transactedListing_blob_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_blob_C.dt_listing_blob_C!||
+    transactedListing_blob_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_blob_C.listing_blob_C!||
+    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listing_blob_C.operator_assign!||
+
+    //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
+    inline sCountT operator -( const transactedListing_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export transactedListing_countT_C : public transactedListingC , public datum_countT_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_countT_C.NEWdELcLASSb!||
+    ~transactedListing_countT_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_countT_C.dt_listing_countT_C!||
+    transactedListing_countT_C( tinS& tinP , const transactedListC& transactedListDadP , const countT valueP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_countT_C.listing_countT_C!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export transactedList_listingVSP_C : public transactedListC , public datum_listingVSP_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_listingVSP_C.NEWdELcLASSb!||
+    ~transactedList_listingVSP_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_listingVSP_C.dt_list_listingVSP_C!||
+    transactedList_listingVSP_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idNameP , const transactedListingC& transactedListingP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_listingVSP_C.list_listingVSP_C!||
+
+    inline sCountT operator -( const transactedList_listingVSP_C& lP ) const { return this - &lP ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export transactedList_countTstrz_C : public transactedListC , public datum_countTstrz_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countTstrz_C.NEWdELcLASSb!||
+    ~transactedList_countTstrz_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countTstrz_C.dt_list_countTstrz_C!||
+    transactedList_countTstrz_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idNameP , const countT* const pczP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countTstrz_C.list_countTstrz_C!||
+    voidT operator =( const countT* const pcP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_countTstrz_C.operator_assign!||
+
+    //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
+    inline sCountT operator -( const transactedList_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export transactedList_blob_C : public transactedListC , public datum_blob_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_blob_C.NEWdELcLASSb!||
+    ~transactedList_blob_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_blob_C.dt_list_blob_C!||
+    transactedList_blob_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idNameP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_blob_C.list_blob_C!||
+    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_blob_C.operator_assign!||
+
+    //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
+    inline sCountT operator -( const transactedList_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export transactedList_countT_C : public transactedListC , public datum_countT_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countT_C.NEWdELcLASSb!||
+    ~transactedList_countT_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countT_C.dt_list_countT_C!||
+    transactedList_countT_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idNameP , const countT valueP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countT_C.list_countT_C!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export transactedListing_listingVSP_C : public transactedListingC , public datum_listingVSP_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_listingVSP_C.NEWdELcLASSb!||
+    ~transactedListing_listingVSP_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_listingVSP_C.dt_listing_listingVSP_C!||
+    transactedListing_listingVSP_C( tinS& tinP , const transactedListC& transactedListDadP , const transactedListingC& transactedListingP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_listingVSP_C.listing_listingVSP_C!||
+
+    inline sCountT operator -( const transactedListing_listingVSP_C& lP ) const { return this - &lP ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
