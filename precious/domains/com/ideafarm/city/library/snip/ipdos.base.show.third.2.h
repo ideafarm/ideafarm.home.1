@@ -47155,11 +47155,6 @@ i am nonconformant in that all of my member function definitions are in a single
     aptSetStateC() ,
     listC( tinP , *(listC*)&listDadP , idNameP , flagsP )
     {}
-
-    static flagsT openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listC.openIF!||
-    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , listOfSetC** const ppPreallocatedListsP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.listC.openIF!||
 }
 ;
 
