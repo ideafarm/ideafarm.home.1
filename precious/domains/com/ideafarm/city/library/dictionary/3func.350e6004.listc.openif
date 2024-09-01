@@ -15,70 +15,140 @@
         }
             }
                 ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
-                if( tinP.pEther ) tinP.pEther->traceF( tinP , T("listC::openIF / napping before retrying") ) ;
+                if( tinP.pEther ) tinP.pEther->traceF( tinP , T("transactedListC::openIF / napping before retrying") ) ;
             {
             else if( !hListP )
                  if( !bRetry ) break ;
 
             }
-                tinP.tlsDelF( LF , *(byteT**)&ppPreallocatedLists ) ;
+                }
+                    tinP.tlsDelF( LF , *(byteT**)&ppPreallocatedLists ) ;
 
-                THREADmODE3rESTORE
-                while( *ppc ) { DEL( *( ppc ++ ) ) ; }
-                THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
-                listC** ppc = ppPreallocatedLists ;
+                    THREADmODE3rESTORE
+                    while( *ppc ) { DEL( *( ppc ++ ) ) ; }
+                    THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
+                    listC** ppc = ppPreallocatedLists ;
+                {
+                if( ppPreallocatedLists )
             {
-            if( ppPreallocatedLists )
+            else
+            }
+                }
+                    tinP.tlsDelF( LF , *(byteT**)&ppPreallocatedTransactedLists ) ;
+
+                    THREADmODE3rESTORE
+                    while( *ppc ) { DEL( *( ppc ++ ) ) ; }
+                    THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
+                    transactedListC** ppc = ppPreallocatedTransactedLists ;
+                {
+                if( ppPreallocatedTransactedLists )
+            {
+            if( bTransacted )
 
             }
                 }
                     }
                         }
                             }
-                                flagsRC |= openIF( tinP , hListP , hListRoot , pczNameP + 1 , flagsP , idGrabLayerP , ppPreallocatedLists ) ; //U::REMOVE THE countTC() PARAMETER
-                                { grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ; pList->openF( tinP , hListRoot , 0 , idGrabLayerP ) ; }
+                                }
+                                    flagsRC |= openIF( tinP , hListP , hListRoot , pczNameP + 1 , flagsP , idGrabLayerP , ppPreallocatedLists ) ; //U::REMOVE THE countTC() PARAMETER
+                                    { grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ; pList->openF( tinP , hListRoot , 0 , idGrabLayerP ) ; }
+                                    _IO_
+                                {
+                                handleC hListRoot( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                                 _IO_
                             {
-                            handleC hListRoot( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                            _IO_
+                            else
+                            if( !pczNameP[ 1 ] ) pList->openF( tinP , hListP , 0 , idGrabLayerP ) ;
                         {
                         else
-                        if( !pczNameP[ 1 ] ) pList->openF( tinP , hListP , 0 , idGrabLayerP ) ;
-                    {
-                    else
-                    }
-                        if( !( F(flagsP) & flLISToPEN_IFeXISTS ) ) { BLAMMO ; }
-                    {
-                    if( !bList )
+                        }
+                            if( !( F(flagsP) & flLISToPEN_IFeXISTS ) ) { BLAMMO ; }
+                        {
+                        if( !bList )
 
-                    boolT bList = pList && pList->flagsi & fliLISTINGc_MIXINlIST ;
+                        boolT bList = pList && pList->flagsi & fliLISTINGc_MIXINlIST ;
+                    {
+                    if( !POOP )
+
+                    __Z( pList ) ;
+                    listC* pList = &APT( listC , aptRoot ) ;
                 {
-                if( !POOP )
+                else
+                }
+                    }
+                        }
+                            }
+                                }
+                                    flagsRC |= openIF( tinP , hListP , hListRoot , pczNameP + 1 , flagsP , idGrabLayerP , ppPreallocatedLists ) ; //U::REMOVE THE countTC() PARAMETER
+                                    { grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ; pList->openF( tinP , hListRoot , 0 , idGrabLayerP ) ; }
+                                    _IO_
+                                {
+                                handleC hListRoot( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                _IO_
+                            {
+                            else
+                            if( !pczNameP[ 1 ] ) pList->openF( tinP , hListP , 0 , idGrabLayerP ) ;
+                        {
+                        else
+                        }
+                            if( !( F(flagsP) & flLISToPEN_IFeXISTS ) ) { BLAMMO ; }
+                        {
+                        if( !bList )
 
-                __Z( pList ) ;
-                listC* pList = &APT( listC , aptRoot ) ;
+                        boolT bList = pList && pList->flagsi & fliLISTINGc_MIXINlIST ;
+                    {
+                    if( !POOP )
+
+                    __Z( pList ) ;
+                    transactedListC* pList = &APT( transactedListC , aptRoot ) ;
+                {
+                if( bTransacted )
             {
             if( aptRoot )
 
             }
                 }
                     __Z( aptRoot ) ;
+
                     }
+                        }
+                            THREADmODE3rESTORE
+                            DEL( pNew ) ;
+                            THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
+                        {
+                        if( aptRoot.setIfZeF( aptNew ) )
+                        aptC aptNew( tinP , pNew ) ;
                         THREADmODE3rESTORE
-                        DEL( pNew ) ;
-                        THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
+                        }
+                            POPtINaRGS
+                            if( pNew && !( pNew->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+                            pNew = new( 0 , tinP , LF ) listC( tinP , LISTnAMEsYS_ROOT , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pNew ) ;
+                            PUSHtINaRGS
+                        {
+                        THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc | flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ;
+                        ZE( listC* , pNew ) ;
                     {
-                    if( aptRoot.setIfZeF( aptNew ) )
-                    aptC aptNew( tinP , pNew ) ;
-                    THREADmODE3rESTORE
+                    else
                     }
-                        POPtINaRGS
-                        if( pNew && !( pNew->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
-                        pNew = new( 0 , tinP , LF ) listC( tinP , LISTnAMEsYS_ROOT , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pNew ) ;
-                        PUSHtINaRGS
+                        }
+                            THREADmODE3rESTORE
+                            DEL( pNew ) ;
+                            THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
+                        {
+                        if( aptRoot.setIfZeF( aptNew ) )
+                        aptC aptNew( tinP , pNew ) ;
+                        THREADmODE3rESTORE
+                        }
+                            POPtINaRGS
+                            if( pNew && !( pNew->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+                            pNew = new( 0 , tinP , LF ) transactedListC( tinP , LISTnAMEsYS_ROOT , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pNew ) ;
+                            PUSHtINaRGS
+                        {
+                        THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc | flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ;
+                        ZE( transactedListC* , pNew ) ;
                     {
-                    THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc | flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ;
-                    ZE( listC* , pNew ) ;
+                    if( bTransacted )
 
                     }
                         *( ppc ++ ) = 0 ;
@@ -96,18 +166,41 @@
                         while( !POOP && ccName -- )
                         listC** ppc = ppPreallocatedLists ;
                     {
+                    if( ppPreallocatedLists )
+
+                    }
+                        *( ppc ++ ) = 0 ;
+                        }
+                            if( !POOP ) *( ppc ++ ) = pPre ;
+                            __Z( pPre ) ;
+                            THREADmODE3rESTORE
+                            //THREADmODE4rESTORE
+                            pPre = new( 0 , tinP , LF ) transactedListC( tinP , LISTnAMEsYS_PREALLOCATED , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pPre ) ;
+                            //THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
+                            THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc | flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ;
+
+                            ZE( transactedListC* , pPre ) ;
+                        {
+                        while( !POOP && ccName -- )
+                        transactedListC** ppc = ppPreallocatedTransactedLists ;
+                    {
+                    if( ppPreallocatedTransactedLists )
                 {
                 if( !POOP )
 
-                __Z( ppPreallocatedLists ) ;
+                else              { __Z( ppPreallocatedLists           ) ; }
+                if( bTransacted ) { __Z( ppPreallocatedTransactedLists ) ; }
 
-                ppPreallocatedLists = (listC**)tinP.tlsNewF( LF , ( ccName + 1 ) * sizeof( listC* ) ) ;
+                else              ppPreallocatedLists           = (          listC**)tinP.tlsNewF( LF , ( ccName + 1 ) * sizeof(           listC* ) ) ;
+                if( bTransacted ) ppPreallocatedTransactedLists = (transactedListC**)tinP.tlsNewF( LF , ( ccName + 1 ) * sizeof( transactedListC* ) ) ;
+
                 countT ccName = thirdC::c_strlenIF( tinP , pczNameP ) ;
             {
             else if( !( F(flagsP) & flLISToPEN_IFeXISTS ) )
             if( aptRoot ) flagsRC |= flLISToPENrETURNcODE_ROOTlISTeXISTED ;
 
-            ZE( listC** , ppPreallocatedLists ) ; // NULL TERMINATED LIST OF PREALLOCATED listC ; CBF DISPENSES BY CLAIMING THE LEAF AND SETTING IT TO ZE
+            ZE( transactedListC** , ppPreallocatedTransactedLists ) ; // NULL TERMINATED LIST OF PREALLOCATED listC ; CBF DISPENSES BY CLAIMING THE LEAF AND SETTING IT TO ZE
+            ZE(           listC** , ppPreallocatedLists           ) ; // NULL TERMINATED LIST OF PREALLOCATED listC ; CBF DISPENSES BY CLAIMING THE LEAF AND SETTING IT TO ZE
 
             //if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[&aptRoot]:  (foreign ordering)    ")+TF2((countT)&aptRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN) ) ;
 
@@ -121,6 +214,10 @@
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     {
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+
+    const boolT  bTransacted = F(flagsPoolFormat) & flPOOLfORMAT_TRANSACTED ;
+    const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
+
 
     LNV( pczNameP )
 
@@ -139,7 +236,7 @@
 
     flagsT flagsRC = flLISToPENrETURNcODE_null ;
 {
-/*1*/flagsT listC::openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT transactedListC::openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
 
 /**/
 */

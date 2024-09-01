@@ -30936,6 +30936,8 @@ it is illegal for any application code to construct or reference listingC (or de
     inline countT       idTypeDatumF( voidT ) const { return idTypeDatum ; }
     inline byteT        cRefF( voidT ) const { return (byteT)cRef ; }
     inline count01T&    cRefPrivate2F( voidT ) { return cRef ; } //IT IS ILLEGAL TO REFER TO THIS SYMBOL ANYWHERE OTHER THAN WITHIN datum_listingVSP_C CT/DT
+
+    friend class transactedListingC ;
 }
 ;
 
@@ -31347,10 +31349,6 @@ listC must be the wo'th base class of any class derived from it
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34023.listC.listC!||
     listC( tinS& tinP , const listC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listC.listC!||
-    static flagsT openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listC.openIF!||
-    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , listC** const ppPreallocatedListsP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.listC.openIF!||
     static flagsT walkIF( tinS& tinP , countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.listC.walkIF!||
     static flagsT walkIF( tinS& tinP , handleC& hListFromP , countT* const pczNameP = 0 , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
@@ -31427,6 +31425,7 @@ listC must be the wo'th base class of any class derived from it
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.listC.countIF!||
 
     friend class recordC ;
+    friend class transactedListingC ;
 }
 ;
 
@@ -47433,10 +47432,11 @@ i am nonconformant in that all of my member function definitions are in a single
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.wightIdgC : 1snip.150001a8.wightIdgC END
 
 
-/*1*/class _export transactionStateS/*1*/
+/*1*/struct _export transactionStateS/*1*/
 {
     count01T idType ;
     flags01T flagsi ;
+    inline transactionStateS( countT idTypeP = 0 , flagsT flagsP = 0 ) : idType( (count01T)idTypeP ) , flagsi( (flags01T)flagsP ) {}
 }
 ;
 
@@ -47445,17 +47445,52 @@ i am nonconformant in that all of my member function definitions are in a single
     protected :
 
     aptC aptTransactionState ;
+
+    public :
+
+    inline aptTransactionStateC( voidT ) : aptTransactionState( 0 ) {}
 }
 ;
 
 /*1*/class _export transactedListingC : public aptTransactionStateC , public listingC/*1*/
 {
+    protected :
+
+    inline transactedListingC( tinS& tinP , const flagsT flagsP = flLISTINGc_null ) :
+    aptTransactionStateC() ,
+    listingC( tinP , flagsP )
+    {}
+
+    public :
+
+    inline transactedListingC( tinS& tinP , const transactedListC& listDadP , const flagsT flagsP = flLISTINGc_null ) :
+    aptTransactionStateC() ,
+    listingC( tinP , *(listC*)&listDadP , flagsP )
+    {}
 }
 ;
 
 
 /*1*/class _export transactedListC : public aptTransactionStateC , public listC/*1*/
 {
+    protected :
+
+    inline transactedListC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
+    aptTransactionStateC() ,
+    listC( tinP , idNameP , flagsP )
+    {}
+
+    public :
+
+    inline transactedListC( tinS& tinP , const transactedListC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
+    aptTransactionStateC() ,
+    listC( tinP , *(listC*)&listDadP , idNameP , flagsP )
+    {}
+
+    static flagsT openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listC.openIF!||
+    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , listC** const ppPreallocatedListsP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.listC.openIF!||
 }
 ;
 

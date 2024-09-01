@@ -413,6 +413,19 @@ class   /*ff*/jotFilesC/*ff*/                   ; /*ff*//**//*ff*/
 class   /*ff*/nicNamesAllowedStripeWebHookNotificationsC/*ff*/ ; /*ff*//**//*ff*/
 class   /*ff*/homeIdgC/*ff*/                    ; /*ff*//**//*ff*/
 
+class   /*ff*/transactedListing_countTstrz_C/*ff*/                      ; /*ff*//**//*ff*/
+class   /*ff*/transactedListing_blob_C/*ff*/                            ; /*ff*//**//*ff*/
+class   /*ff*/transactedListing_countT_C/*ff*/                          ; /*ff*//**//*ff*/
+class   /*ff*/transactedList_listingVSP_C/*ff*/                         ; /*ff*//**//*ff*/
+class   /*ff*/transactedList_countTstrz_C/*ff*/                         ; /*ff*//**//*ff*/
+class   /*ff*/transactedList_blob_C/*ff*/                               ; /*ff*//**//*ff*/
+class   /*ff*/transactedList_countT_C/*ff*/                             ; /*ff*//**//*ff*/
+class   /*ff*/transactedListing_listingVSP_C/*ff*/                      ; /*ff*//**//*ff*/
+class   /*ff*/transactedListC/*ff*/                                     ; /*ff*//**//*ff*/
+class   /*ff*/transactedListingC/*ff*/                                  ; /*ff*//**//*ff*/
+class   /*ff*/aptTransactionStateC/*ff*/                                ; /*ff*//**//*ff*/
+class   /*ff*/transactionStateS/*ff*/                                   ; /*ff*//**//*ff*/
+
 
 //INCLUDE GENERATED SNIPPETS HERE
 
@@ -38316,7 +38329,7 @@ args
         if( ~hIndexP )                                                                                                                                              \
         {                                                                                                                                                           \
             countT pczK[] = { idKeyInIndex , 0 } ;                                                                                                                  \
-            listC::openIF( tinP , hIK , hIndexP , pczK ) ;                                                                                                          \
+            transactedListC::openIF( tinP , hIK , hIndexP , pczK ) ;                                                                                                          \
         }                                                                                                                                                           \
         else                                                                                                                                                        \
         {                                                                                                                                                           \
@@ -38324,13 +38337,13 @@ args
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             listC::dictionaryReplaceOsTextIF( tinP , pczIK ) ;                                                                                                      \
             THREADmODE3rESTORE                                                                                                                                      \
-            listC::openIF( tinP , hIK , pczIK ) ;                                                                                                                   \
+            transactedListC::openIF( tinP , hIK , pczIK ) ;                                                                                                                   \
         }                                                                                                                                                           \
                                                                                                                                                                     \
         ZE( fieldEditParamOutC* , pOut ) ;                                                                                                                          \
         {                                                                                                                                                           \
             handleC hIKV( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                     \
-            listC::openIF( tinP , hIKV , hIK , pczV ) ;                                                                                                             \
+            transactedListC::openIF( tinP , hIKV , hIK , pczV ) ;                                                                                                             \
                                                                                                                                                                     \
             countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                           \
             listC::fieldIF( tinP , pOut , hIKV , pczField , _1_pushC( recordP ) + _1_modePushSinkC() , LF ) ; ___( pOut ) ;                                         \
@@ -38488,7 +38501,7 @@ args
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             listC::dictionaryReplaceOsTextIF( tinP , pczIK ) ;                                                                                                      \
             THREADmODE3rESTORE                                                                                                                                      \
-            listC::openIF( tinP , hIKP , pczIK , flLISToPEN_IFeXISTS ) ;                                                                                            \
+            transactedListC::openIF( tinP , hIKP , pczIK , flLISToPEN_IFeXISTS ) ;                                                                                            \
             if( !hIKP ) bFail = 1 ;                                                                                                                                 \
             if( bFail && bSmelly ) { __1 }                                                                                                                          \
         }                                                                                                                                                           \
@@ -38497,7 +38510,7 @@ args
         if( !bFail )                                                                                                                                                \
         {                                                                                                                                                           \
             handleC hIKV( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                     \
-            listC::openIF( tinP , hIKV , hIKP , pczV , flLISToPEN_IFeXISTS ) ;                                                                                      \
+            transactedListC::openIF( tinP , hIKV , hIKP , pczV , flLISToPEN_IFeXISTS ) ;                                                                                      \
             if( !hIKV ) bFail = 1 ;                                                                                                                                 \
             if( bFail && bSmelly ) { __1 }                                                                                                                          \
             if( bOpenIK ) hIKP.closeIfF() ;                                                                                                                         \
@@ -38695,7 +38708,7 @@ args
         LNV( pczIKVR )                                                                                                                                                          \
                                                                                                                                                                                 \
         handleC hIKVR( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                                    \
-        listC::openIF( tinP , hIKVR , pczIKVR , flLISToPEN_IFeXISTS ) ;                                                                                                         \
+        transactedListC::openIF( tinP , hIKVR , pczIKVR , flLISToPEN_IFeXISTS ) ;                                                                                                         \
                                                                                                                                                                                 \
         if( ~hIKVR )                                                                                                                                                            \
         {                                                                                                                                                                       \
