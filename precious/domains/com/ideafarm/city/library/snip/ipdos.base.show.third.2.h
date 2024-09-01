@@ -30867,89 +30867,6 @@ private :
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.slotsC : 1snip.150000f5.slotsc END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listingC : 1snip.150000f9.listingc BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-it is illegal for any application code to construct or reference listingC (or derived class) instances anywhere other than within the definition of a listWalkCBFT function
-*/
-/**/
-
-//WARNING: ALL MEMBERS, INCLUDING THOSE IN DERIVED CLASSES, WILL BE DESTRUCTED OO TIMES (SEE MY DESTRUCTOR) WHEN A DERIVED CLASS IS DESTROYED BY CALLING ~listingC DIRECTLY
-//IT IS POOR CODING STYLE TO USE MEMBERS WITH EXPLICIT DESTRUCTORS IN ME AND IN CLASSES DERIVED FROM ME
-
-// FOR EFFICIENT USE OF POOL, listingC SHOULD BE SIZED A POWER OF 2 MINUS sizeof( countT ) (SO THAT LISTINGS CONTAINING DATA WILL BE SIZED A POWER OF 2)
-
-/*1*/class _export listingC/*1*/
-{
-    protected :                     // cRef IS HERE SO THAT IT IS ALIGNED TO countT SO THAT IT CAN BE MANIPULATED WITH A NORMAL SMART POINTER (WHICH WILL TRASH MY OTHER MEMBERS ON OVERFLOW)
-    //countT          finger ;        //REMOVE IN PRODUCTION (TO OPTIMIZE OBJECT SIZE TO FIT EFFICIENTLY WITHIN A poolC DROP) 20240811@1545: ADDED W/O ANALYSIS TO FIND A BUG
-    count01T        cRef ;       /*old ordering: 1*/   //U::POSSIBLY OBSOLETE COMMENT NOW THAT cRef IS A BYTE:  CS:CODEsYNC: 003018e 003015e ; A:ASSUME: sizeof( countT ) == 4 ; IF THIS IS NOT TRUE THEN SMART POINTER WILL NOT REFERENCE cRef AND WILL TRASH ME
-    byteT           flagsi ;     /*old ordering: 3*/   // cRef OVERFLOW CAN BE DETECTED BY INSPECTING BOTH bFinger AND flagsi SINCE OVERFLOW WILL CHANGE bFinger AND WILL THEN EVENTUALLY SET AN ILLEGAL FLAG IN flagsi
-    byteT           idTypeDatum ;/*old ordering: 2*/   // IF NOT NULL THEN AN INSTANCE DERIVED FROM datumC RESIDES IMMEDIATELY AFTER THE "ME" THAT IS DERIVED FROM listingC, WHERE "ME" IS EITHER A listingC OR A listC
-                                    // THE ORDERING OF idTypeDatum AND flagsi IS INTENTIONAL ; IF ADDITIONAL FLAG BITS ARE NEEDED, COMBINE THESE OO FIELDS INTO A SINGLE count01T FIELD ; SEE INSTRUCTIONS IN 1*.fliLISTINGc
-
-    aptC            aptDad ;        // THE listC INSTANCE, IF ANY, THAT CONTAINS ME (WILL BE NULL ONLY FOR THE ROOT LIST)
-    aptC            aptBro ;       // THE NEXT listingC (MY YOUNGER BROTHER) IN THE LIST ANCHORED IN aptDad
-
-    listingC( tinS& tinP , const flagsT flagsP = flLISTINGc_null ) ;        // ILLEGAL FOR ANY CODE TO CALL THIS EXCEPT FOR THE PRIVATE listC CONSTRUCTOR THAT IS CALLED BY poolC::face_poolC_S::face_poolC_S TO CONSTRUCT THE ROOT listC FOR THE POOL
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listingC.listingC!||
-
-    public :
-
-    static boolT bIsListingIF( tinS& tinP , const aptC& aptP , const byteT bitsP = 0 , const byteT idTypeDatumP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.listingC.bIsListingIF!||
-    static boolT bIsListingIF( tinS& tinP , const listingC* pdListingP , const byteT bitsP = 0 , const byteT idTypeDatumP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.listingC.bIsListingIF!||
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listingC.NEWdELcLASSb!||
-    ~listingC( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listingC.dt_listingC!||
-    listingC( tinS& tinP , const listC& listDadP , const flagsT flagsP = flLISTINGc_null ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listingC.listingC!||
-    voidT openF( tinS& tinP , handleC& hListP , const countT* const pczNameDadP = 0 , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.listingC.openF!||
-    sCountT operator -( const listingC& lP ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.listingC.operator_subtract!||
-    countT cRefDatumF( voidT ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.listingC.cRefDatumF!||
-    countT nameF( sCountT idP = 0 ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listingC.nameF!||
-    countT nameF( tinS& tinP , countT*& pczNameP ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.listingC.nameF!||
-
-    inline const listC* pDadF( voidT )       const { return (const listC*)(byteT*)aptDad ; }
-    inline listC*       pDadModifyF( voidT ) const { return (      listC*)(byteT*)aptDad ; }
-
-    inline listingC&    operator =( listC& listDadP ) { aptDad = (byteT*)&listDadP ; return *this ; }
-
-    inline byteT        flagsF( voidT ) const { return flagsi ; }
-    inline byteT&       flagsRefF( voidT ) { return flagsi ; }
-    inline countT       idTypeDatumF( voidT ) const { return idTypeDatum ; }
-    inline byteT        cRefF( voidT ) const { return (byteT)cRef ; }
-    inline count01T&    cRefPrivate2F( voidT ) { return cRef ; } //IT IS ILLEGAL TO REFER TO THIS SYMBOL ANYWHERE OTHER THAN WITHIN datum_listingVSP_C CT/DT
-
-    friend class transactedListingC ;
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listingC : 1snip.150000f9.listingc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.boolC : 1snip.15000121.boolc BEGIN
 
 
@@ -31306,138 +31223,6 @@ VERYsMARTpOINTERcLASSdEF(     listing   , listingC ,       01 )
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datumS : 1snip.1500012c.datums END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listC : 1snip.150000fa.listc BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-listC must be the wo'th base class of any class derived from it
- code assumes this by casting pointers to classes derived from list to listC pointers
- the dictionary is only for application use
- to avoid deadlocks, listC definitions do not use the dictionary to map readable list names into true (nuneric) list names
- all list names passed into member functions must be valid numeric names
- application code is only allowed to access the dictionary on threads that are not currently grabbing any listingC instance
-  in particular, callback definitions are not allowed to access the dictionary
-*/
-/**/
-
-// FOR EFFICIENT USE OF POOL, listC SHOULD BE SIZED A POWER OF 2
-
-/*1*/class _export listC : public listingC/*1*/
-{
-    countT idName ;
-    timeS  timeLathModified ; //MUST BE IMMEDIATELY ABOVE idName TO PERMIT EFFICIENT SORTING (CURRENT CODE DOES NOT RELY UPON THIS BUT FUTURE CODE MIGHT)
-    aptC   aptKid ;
-    countT idNameKidDefaultLath ;
-
-    flagsT walkF( tinS& tinP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.listC.walkF!||
-
-    public :
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listC.NEWdELcLASSb!||
-    ~listC( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listC.dt_listC!||
-    listC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) ; // ILLEGAL TO CALL THIS EXCEPT BY poolC::face_poolC_S::face_poolC_S TO CONSTRUCT A SINGLE ROOT listC FOR EACH POOL
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34023.listC.listC!||
-    listC( tinS& tinP , const listC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listC.listC!||
-    static flagsT walkIF( tinS& tinP , countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.listC.walkIF!||
-    static flagsT walkIF( tinS& tinP , handleC& hListFromP , countT* const pczNameP = 0 , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.listC.walkIF!||
-    static flagsT deleteIF( tinS& tinP , const countT* const pczNameP , const flagsT flagsP = flLISTdELETE_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.listC.deleteIF!||
-    static flagsT deleteIF( tinS& tinP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISTdELETE_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401f.listC.deleteIF!||
-    static voidT lintIF( tinS& tinP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.listC.lintIF!||
-    static flagsT pourIF( tinS& tinP , countT* const pczNameToP , countT* const pczNameFromP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.listC.pourIF!||
-    static flagsT chatterIF( tinS& tinP , countT* const pczNameP = 0 , flagsT flagsP = flLISTwALKcHATTER_null , countT cArgP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.listC.chatterIF!||
-    static boolT isIndexedIF( tinS& tinP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34020.listC.isIndexedIF!||
-    static flagsT indexIF( tinS& tinP , handleC& hListP , const flagsT flagsP = flLISTwALK_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34021.listC.indexIF!||
-    static flagsT unIndexIF( tinS& tinP , handleC& hListP , const flagsT flagsP = flLISTwALK_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34022.listC.unIndexIF!||
-    static voidT indexIF( tinS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const countT valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34015.listC.indexIF!||
-    static voidT indexIF( tinS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const osTextT* const valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34016.listC.indexIF!||
-    static voidT indexIF( tinS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const countT* const valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34017.listC.indexIF!||
-    static voidT unIndexIF( tinS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const countT valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP = flUNiNDEXf_null ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34018.listC.unIndexIF!||
-    static voidT unIndexIF( tinS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const osTextT* const valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP = flUNiNDEXf_null ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34019.listC.unIndexIF!||
-    static voidT unIndexIF( tinS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const countT* const valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP = flUNiNDEXf_null ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401a.listC.unIndexIF!||
-    static flagsT walkIndexIF( tinS& tinP , const countT cNameP , const countT valueP , const countT cNetP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401b.listC.walkIndexIF!||
-    static flagsT walkIndexIF( tinS& tinP , const countT cNameP , const osTextT* const valueP , const countT cNetP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401c.listC.walkIndexIF!||
-    static flagsT walkIndexIF( tinS& tinP , const countT cNameP , const countT* const valueP , const countT cNetP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401d.listC.walkIndexIF!||
-    static flagsT walkEnumerateIF( tinS& tinP , datumS*& pDatumP , const countT cNameP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401e.listC.walkEnumerateIF!||
-    countT nameF( sCountT idP = 0 ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34024.listC.nameF!||
-    countT nameF( tinS& tinP , countT*& pczNameP ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34025.listC.nameF!||
-    static flagsT resetIndexBitsIF( tinS& tinP , handleC& hListP , const flagsT flagsP = flLISTwALK_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e6026.listc.resetIndexBitsIF!||
-
-    inline boolT  isEmptyF( voidT ) const { return !aptKid ; }
-    inline countT dispenseNameF( voidT )  { return - 1 + decv02AM( idNameKidDefaultLath ) ; } // DISPENSES DOWNWARD SO THAT MOST RECENT WILL BE ENCOUNTERED WOTH WHEN WALKING
-    inline        operator countT(  voidT ) const { return idName ; }
-    inline        operator countT&( voidT )       { return idName ; }
-    inline listC& operator =( listC& listDadP ) { aptDad = (byteT*)&listDadP ; return *this ; }
-
-    /* DICTIONARY */
-
-    static countT dictionaryQueryFromTextIF( tinS& tinP , const osTextT* const postP , const flagsT flagsP = flDICTIONARYqUERYfROMtEXT_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.listC.dictionaryQueryFromTextIF!||
-    static blobVSP dictionaryQueryFromIdIF( tinS& tinP , const countT idP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.listC.dictionaryQueryFromIdIF!||
-    static voidT dictionaryForgetTextIF( tinS& tinP , const osTextT* const postP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listC.dictionaryForgetTextIF!||
-    static voidT dictionaryForgetIdIF( tinS& tinP , const countT idP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.listC.dictionaryForgetIdIF!||
-    static voidT dictionaryReplaceOsTextIF( tinS& tinP , countT* const pczNameP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.listC.dictionaryReplaceOsTextIF!||
-    static voidT dictionaryRestoreOsTextIF( tinS& tinP , countT* const pczNameP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34026.listC.dictionaryRestoreOsTextIF!||
-
-    /* FIELD MANIPULATION */
-
-    static flagsT fieldIF( tinS& tinP , fieldEditParamOutC*& pOutP , handleC& hRecordP , const countT* pczFieldP , const fieldEditParamInC& inP , const countT idLineNewP , const countT idiFileNewP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.listC.fieldIF!||
-    static countVSP countIF( tinS& tinP , handleC& hRecordP , const countT* pczFieldP , const flagsT flagsP = flLISToPEN_null ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.listC.countIF!||
-
-    friend class recordC ;
-    friend class transactedListingC ;
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listC : 1snip.150000fa.listc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.poolC : 1snip.150000f6.poolc BEGIN
 
 //
@@ -42706,409 +42491,6 @@ it is illegal to refer to marketC class or extances except within the definition
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ipMapHomeS : 1snip.150000f2.ipmaphomes END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datumC : 1snip.150000fb.datumc BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export datumC/*1*/
-{
-    protected :
-
-    aptC aptData ;
-
-    public :
-
-    datumC( byteT& flagsiP , byteT& idTypeP , const byteT idTypeDerivedP , const listingC& listingP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.datumC.datumC!||
-    voidT indexF( tinS& tinP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.datumC.indexF!||
-    voidT unIndexF( tinS& tinP , const flagsT flagsP = flUNiNDEXf_null ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.datumC.unIndexF!||
-
-    inline countT getBitsF( voidT ) { return aptData.getBitsF() ; }
-    inline voidT resetIndexBitF( voidT ) { aptData.setBitsF( aptData.getBitsF() & ~fliDATUMc_INDEXED ) ; }
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datumC : 1snip.150000fb.datumc END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_countT_C : 1snip.150000fc.datum_countt_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export datum_countT_C : public datumC/*1*/
-{
-    public :
-
-    inline countT cRefPrivateF( voidT ) const { return !aptData ? 0 : *(countT*)(byteT*)aptData ; } // ONLY FOR listingC::cRefDatumF ; IT IS ILLEGAL FOR OTHER CODE TO REFERENCE
-
-    ~datum_countT_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.datum_countT_C.dt_datum_countT_C!||
-    datum_countT_C( tinS& tinP , byteT& flagsiP , byteT& idTypeP , const countT valueP , const listingC& listingP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.datum_countT_C.datum_countT_C!||
-    operator countT*( voidT ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.datum_countT_C.operator_countT_ptr!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_countT_C : 1snip.150000fc.datum_countt_c END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_blob_C : 1snip.150000fe.datum_blob_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export datum_blob_C : public datumC/*1*/
-{
-    public :
-
-    inline countT cRefPrivateF( voidT ) const { return !aptData ? 0 : *(countT*)(byteT*)aptData ; } // ONLY FOR listingC::cRefDatumF ; IT IS ILLEGAL FOR OTHER CODE TO REFERENCE
-
-    ~datum_blob_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.datum_blob_C.dt_datum_blob_C!||
-    datum_blob_C( tinS& tinP , byteT& flagsiP , byteT& idTypeP , const byteT* const pbP , const countT cbP , const listingC& listingP , const countT idLineNewP , const countT idiFileNewP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.datum_blob_C.datum_blob_C!||
-    operator byteT*( voidT ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.datum_blob_C.operator_byteT_ptr!||
-    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.datum_blob_C.assignF!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_blob_C : 1snip.150000fe.datum_blob_c END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_countTstrz_C : 1snip.15000124.datum_counttstrz_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export datum_countTstrz_C : public datumC/*1*/
-{
-    public :
-
-    inline countT cRefPrivateF( voidT ) const { return !aptData ? 0 : *(countT*)(byteT*)aptData ; } // ONLY FOR listingC::cRefDatumF ; IT IS ILLEGAL FOR OTHER CODE TO REFERENCE
-
-    ~datum_countTstrz_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.datum_countTstrz_C.dt_datum_countTstrz_C!||
-    datum_countTstrz_C( tinS& tinP , byteT& flagsiP , byteT& idTypeP , const countT* const pcP , const listingC& listingP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.datum_countTstrz_C.datum_countTstrz_C!||
-    operator countT*( voidT ) const ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.datum_countTstrz_C.operator_countT_ptr!||
-    voidT operator =( const countT* const pcP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.datum_countTstrz_C.operator_assign!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_countTstrz_C : 1snip.15000124.datum_counttstrz_c END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_countT_C : 1snip.150000fd.listing_countt_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export listing_countT_C : public listingC , public datum_countT_C/*1*/
-{
-
-    public :
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_countT_C.NEWdELcLASSb!||
-    ~listing_countT_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_countT_C.dt_listing_countT_C!||
-    listing_countT_C( tinS& tinP , const listC& listDadP , const countT valueP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_countT_C.listing_countT_C!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_countT_C : 1snip.150000fd.listing_countt_c END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_blob_C : 1snip.150000ff.listing_blob_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export listing_blob_C : public listingC , public datum_blob_C/*1*/
-{
-
-    public :
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_blob_C.NEWdELcLASSb!||
-    ~listing_blob_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_blob_C.dt_listing_blob_C!||
-    listing_blob_C( tinS& tinP , const listC& listDadP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_blob_C.listing_blob_C!||
-    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listing_blob_C.operator_assign!||
-
-    //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
-    inline sCountT operator -( const listing_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_blob_C : 1snip.150000ff.listing_blob_c END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_countTstrz_C : 1snip.15000126.listing_counttstrz_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export listing_countTstrz_C : public listingC , public datum_countTstrz_C/*1*/
-{
-
-    public :
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_countTstrz_C.NEWdELcLASSb!||
-    ~listing_countTstrz_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_countTstrz_C.dt_listing_countTstrz_C!||
-    listing_countTstrz_C( tinS& tinP , const listC& listDadP , const countT* const pczP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_countTstrz_C.listing_countTstrz_C!||
-    voidT operator =( const countT* const postP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listing_countTstrz_C.operator_assign!||
-
-    //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
-    inline sCountT operator -( const listing_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_countTstrz_C : 1snip.15000126.listing_counttstrz_c END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_countT_C : 1snip.15000100.list_countt_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export list_countT_C : public listC , public datum_countT_C/*1*/
-{
-
-    public :
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countT_C.NEWdELcLASSb!||
-    ~list_countT_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countT_C.dt_list_countT_C!||
-    list_countT_C( tinS& tinP , const listC& listDadP , const countT idNameP , const countT valueP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countT_C.list_countT_C!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_countT_C : 1snip.15000100.list_countt_c END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_blob_C : 1snip.15000101.list_blob_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export list_blob_C : public listC , public datum_blob_C/*1*/
-{
-
-    public :
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_blob_C.NEWdELcLASSb!||
-    ~list_blob_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_blob_C.dt_list_blob_C!||
-    list_blob_C( tinS& tinP , const listC& listDadP , const countT idNameP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_blob_C.list_blob_C!||
-    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_blob_C.operator_assign!||
-
-    //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
-    inline sCountT operator -( const list_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_blob_C : 1snip.15000101.list_blob_c END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_countTstrz_C : 1snip.15000125.list_counttstrz_c BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export list_countTstrz_C : public listC , public datum_countTstrz_C/*1*/
-{
-
-    public :
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countTstrz_C.NEWdELcLASSb!||
-    ~list_countTstrz_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countTstrz_C.dt_list_countTstrz_C!||
-    list_countTstrz_C( tinS& tinP , const listC& listDadP , const countT idNameP , const countT* const pczP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countTstrz_C.list_countTstrz_C!||
-    voidT operator =( const countT* const pcP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_countTstrz_C.operator_assign!||
-
-    //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
-    inline sCountT operator -( const list_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_countTstrz_C : 1snip.15000125.list_counttstrz_c END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listWalkArgS : 1snip.15000102.listwalkargs BEGIN
 
 
@@ -43735,6 +43117,246 @@ parameters
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.storeReplyPrivateF_argS : 1snip.1500011b.storereplyprivatef_args END
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+it is illegal for any application code to construct or reference listingC (or derived class) instances anywhere other than within the definition of a listWalkCBFT function
+*/
+/**/
+
+//WARNING: ALL MEMBERS, INCLUDING THOSE IN DERIVED CLASSES, WILL BE DESTRUCTED OO TIMES (SEE MY DESTRUCTOR) WHEN A DERIVED CLASS IS DESTROYED BY CALLING ~listingC DIRECTLY
+//IT IS POOR CODING STYLE TO USE MEMBERS WITH EXPLICIT DESTRUCTORS IN ME AND IN CLASSES DERIVED FROM ME
+
+// FOR EFFICIENT USE OF POOL, listingC SHOULD BE SIZED A POWER OF 2 MINUS sizeof( countT ) (SO THAT LISTINGS CONTAINING DATA WILL BE SIZED A POWER OF 2)
+
+/*1*/class _export listingC/*1*/
+{
+    protected :                     // cRef IS HERE SO THAT IT IS ALIGNED TO countT SO THAT IT CAN BE MANIPULATED WITH A NORMAL SMART POINTER (WHICH WILL TRASH MY OTHER MEMBERS ON OVERFLOW)
+
+    //countT          finger ;        //REMOVE IN PRODUCTION (TO OPTIMIZE OBJECT SIZE TO FIT EFFICIENTLY WITHIN A poolC DROP) 20240811@1545: ADDED W/O ANALYSIS TO FIND A BUG
+    count01T        cRef ;       /*old ordering: 1*/   //U::POSSIBLY OBSOLETE COMMENT NOW THAT cRef IS A BYTE:  CS:CODEsYNC: 003018e 003015e ; A:ASSUME: sizeof( countT ) == 4 ; IF THIS IS NOT TRUE THEN SMART POINTER WILL NOT REFERENCE cRef AND WILL TRASH ME
+    byteT           flagsi ;     /*old ordering: 3*/   // cRef OVERFLOW CAN BE DETECTED BY INSPECTING BOTH bFinger AND flagsi SINCE OVERFLOW WILL CHANGE bFinger AND WILL THEN EVENTUALLY SET AN ILLEGAL FLAG IN flagsi
+    byteT           idTypeDatum ;/*old ordering: 2*/   // IF NOT NULL THEN AN INSTANCE DERIVED FROM datumC RESIDES IMMEDIATELY AFTER THE "ME" THAT IS DERIVED FROM listingC, WHERE "ME" IS EITHER A listingC OR A listC
+                                    // THE ORDERING OF idTypeDatum AND flagsi IS INTENTIONAL ; IF ADDITIONAL FLAG BITS ARE NEEDED, COMBINE THESE OO FIELDS INTO A SINGLE count01T FIELD ; SEE INSTRUCTIONS IN 1*.fliLISTINGc
+
+    aptC            aptDad ;        // THE listC INSTANCE, IF ANY, THAT CONTAINS ME (WILL BE NULL ONLY FOR THE ROOT LIST)
+    aptC            aptBro ;       // THE NEXT listingC (MY YOUNGER BROTHER) IN THE LIST ANCHORED IN aptDad
+
+    listingC( tinS& tinP , const flagsT flagsP = flLISTINGc_null ) ;        // ILLEGAL FOR ANY CODE TO CALL THIS EXCEPT FOR THE PRIVATE listC CONSTRUCTOR THAT IS CALLED BY poolC::face_poolC_S::face_poolC_S TO CONSTRUCT THE ROOT listC FOR THE POOL
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listingC.listingC!||
+
+    public :
+
+    static boolT bIsListingIF( tinS& tinP , const aptC& aptP , const byteT bitsP = 0 , const byteT idTypeDatumP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.listingC.bIsListingIF!||
+    static boolT bIsListingIF( tinS& tinP , const listingC* pdListingP , const byteT bitsP = 0 , const byteT idTypeDatumP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.listingC.bIsListingIF!||
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listingC.NEWdELcLASSb!||
+    ~listingC( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listingC.dt_listingC!||
+    listingC( tinS& tinP , const listC& listDadP , const flagsT flagsP = flLISTINGc_null ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listingC.listingC!||
+    voidT openF( tinS& tinP , handleC& hListP , const countT* const pczNameDadP = 0 , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.listingC.openF!||
+    sCountT operator -( const listingC& lP ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.listingC.operator_subtract!||
+    countT cRefDatumF( voidT ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.listingC.cRefDatumF!||
+    countT nameF( sCountT idP = 0 ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listingC.nameF!||
+    countT nameF( tinS& tinP , countT*& pczNameP ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.listingC.nameF!||
+
+    inline const listC* pDadF( voidT )       const { return (const listC*)(byteT*)aptDad ; }
+    inline listC*       pDadModifyF( voidT ) const { return (      listC*)(byteT*)aptDad ; }
+
+    inline listingC&    operator =( listC& listDadP ) { aptDad = (byteT*)&listDadP ; return *this ; }
+
+    inline byteT        flagsF( voidT ) const { return flagsi ; }
+    inline byteT&       flagsRefF( voidT ) { return flagsi ; }
+    inline countT       idTypeDatumF( voidT ) const { return idTypeDatum ; }
+    inline byteT        cRefF( voidT ) const { return (byteT)cRef ; }
+    inline count01T&    cRefPrivate2F( voidT ) { return cRef ; } //IT IS ILLEGAL TO REFER TO THIS SYMBOL ANYWHERE OTHER THAN WITHIN datum_listingVSP_C CT/DT
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+/*
+listC must be the wo'th base class of any class derived from it
+ code assumes this by casting pointers to classes derived from list to listC pointers
+ the dictionary is only for application use
+ to avoid deadlocks, listC definitions do not use the dictionary to map readable list names into true (nuneric) list names
+ all list names passed into member functions must be valid numeric names
+ application code is only allowed to access the dictionary on threads that are not currently grabbing any listingC instance
+  in particular, callback definitions are not allowed to access the dictionary
+*/
+/**/
+
+// FOR EFFICIENT USE OF POOL, listC SHOULD BE SIZED A POWER OF 2
+
+/*1*/class _export listC : public listingC/*1*/
+{
+    protected :
+
+    countT idName ;
+    timeS  timeLathModified ; //MUST BE IMMEDIATELY ABOVE idName TO PERMIT EFFICIENT SORTING (CURRENT CODE DOES NOT RELY UPON THIS BUT FUTURE CODE MIGHT)
+    aptC   aptKid ;
+    countT idNameKidDefaultLath ;
+
+    flagsT walkF( tinS& tinP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.listC.walkF!||
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listC.NEWdELcLASSb!||
+    ~listC( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listC.dt_listC!||
+    listC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) ; // ILLEGAL TO CALL THIS EXCEPT BY poolC::face_poolC_S::face_poolC_S TO CONSTRUCT A SINGLE ROOT listC FOR EACH POOL
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34023.listC.listC!||
+    listC( tinS& tinP , const listC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listC.listC!||
+
+    static flagsT openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listC.openIF!||
+    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , listC** const ppPreallocatedListsP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.listC.openIF!||
+
+    static flagsT walkIF( tinS& tinP , countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.listC.walkIF!||
+    static flagsT walkIF( tinS& tinP , handleC& hListFromP , countT* const pczNameP = 0 , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.listC.walkIF!||
+    static flagsT deleteIF( tinS& tinP , const countT* const pczNameP , const flagsT flagsP = flLISTdELETE_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.listC.deleteIF!||
+    static flagsT deleteIF( tinS& tinP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISTdELETE_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401f.listC.deleteIF!||
+    static voidT lintIF( tinS& tinP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.listC.lintIF!||
+    static flagsT pourIF( tinS& tinP , countT* const pczNameToP , countT* const pczNameFromP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.listC.pourIF!||
+    static flagsT chatterIF( tinS& tinP , countT* const pczNameP = 0 , flagsT flagsP = flLISTwALKcHATTER_null , countT cArgP = 0 , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.listC.chatterIF!||
+    static boolT isIndexedIF( tinS& tinP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34020.listC.isIndexedIF!||
+    static flagsT indexIF( tinS& tinP , handleC& hListP , const flagsT flagsP = flLISTwALK_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34021.listC.indexIF!||
+    static flagsT unIndexIF( tinS& tinP , handleC& hListP , const flagsT flagsP = flLISTwALK_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34022.listC.unIndexIF!||
+    static voidT indexIF( tinS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const countT valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34015.listC.indexIF!||
+    static voidT indexIF( tinS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const osTextT* const valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34016.listC.indexIF!||
+    static voidT indexIF( tinS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const countT* const valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34017.listC.indexIF!||
+    static voidT unIndexIF( tinS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const countT valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP = flUNiNDEXf_null ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34018.listC.unIndexIF!||
+    static voidT unIndexIF( tinS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const osTextT* const valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP = flUNiNDEXf_null ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34019.listC.unIndexIF!||
+    static voidT unIndexIF( tinS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const countT* const valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP = flUNiNDEXf_null ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401a.listC.unIndexIF!||
+    static flagsT walkIndexIF( tinS& tinP , const countT cNameP , const countT valueP , const countT cNetP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401b.listC.walkIndexIF!||
+    static flagsT walkIndexIF( tinS& tinP , const countT cNameP , const osTextT* const valueP , const countT cNetP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401c.listC.walkIndexIF!||
+    static flagsT walkIndexIF( tinS& tinP , const countT cNameP , const countT* const valueP , const countT cNetP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401d.listC.walkIndexIF!||
+    static flagsT walkEnumerateIF( tinS& tinP , datumS*& pDatumP , const countT cNameP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401e.listC.walkEnumerateIF!||
+    countT nameF( sCountT idP = 0 ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34024.listC.nameF!||
+    countT nameF( tinS& tinP , countT*& pczNameP ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34025.listC.nameF!||
+    static flagsT resetIndexBitsIF( tinS& tinP , handleC& hListP , const flagsT flagsP = flLISTwALK_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e6026.listc.resetIndexBitsIF!||
+
+    inline boolT  isEmptyF( voidT ) const { return !aptKid ; }
+    inline countT dispenseNameF( voidT )  { return - 1 + decv02AM( idNameKidDefaultLath ) ; } // DISPENSES DOWNWARD SO THAT MOST RECENT WILL BE ENCOUNTERED WOTH WHEN WALKING
+    inline        operator countT(  voidT ) const { return idName ; }
+    inline        operator countT&( voidT )       { return idName ; }
+    inline listC& operator =( listC& listDadP ) { aptDad = (byteT*)&listDadP ; return *this ; }
+
+    /* DICTIONARY */
+
+    static countT dictionaryQueryFromTextIF( tinS& tinP , const osTextT* const postP , const flagsT flagsP = flDICTIONARYqUERYfROMtEXT_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.listC.dictionaryQueryFromTextIF!||
+    static blobVSP dictionaryQueryFromIdIF( tinS& tinP , const countT idP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.listC.dictionaryQueryFromIdIF!||
+    static voidT dictionaryForgetTextIF( tinS& tinP , const osTextT* const postP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listC.dictionaryForgetTextIF!||
+    static voidT dictionaryForgetIdIF( tinS& tinP , const countT idP , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.listC.dictionaryForgetIdIF!||
+    static voidT dictionaryReplaceOsTextIF( tinS& tinP , countT* const pczNameP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.listC.dictionaryReplaceOsTextIF!||
+    static voidT dictionaryRestoreOsTextIF( tinS& tinP , countT* const pczNameP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34026.listC.dictionaryRestoreOsTextIF!||
+
+    /* FIELD MANIPULATION */
+
+    static flagsT fieldIF( tinS& tinP , fieldEditParamOutC*& pOutP , handleC& hRecordP , const countT* pczFieldP , const fieldEditParamInC& inP , const countT idLineNewP , const countT idiFileNewP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.listC.fieldIF!||
+    static countVSP countIF( tinS& tinP , handleC& hRecordP , const countT* pczFieldP , const flagsT flagsP = flLISToPEN_null ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.listC.countIF!||
+
+    friend class recordC ;
+}
+;
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datumC : 1snip.150000fb.datumc BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export datumC/*1*/
+{
+    protected :
+
+    aptC aptData ;
+
+    public :
+
+    datumC( byteT& flagsiP , byteT& idTypeP , const byteT idTypeDerivedP , const listingC& listingP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.datumC.datumC!||
+    voidT indexF( tinS& tinP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.datumC.indexF!||
+    voidT unIndexF( tinS& tinP , const flagsT flagsP = flUNiNDEXf_null ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.datumC.unIndexF!||
+
+    inline countT getBitsF( voidT ) { return aptData.getBitsF() ; }
+    inline voidT resetIndexBitF( voidT ) { aptData.setBitsF( aptData.getBitsF() & ~fliDATUMc_INDEXED ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datumC : 1snip.150000fb.datumc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_listingVSP_C : 1snip.15000129.datum_listingvsp_c BEGIN
 
 
@@ -43775,6 +43397,15 @@ application code that uses an instance of me must ensure that the pool that cont
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_listingVSP_C : 1snip.15000129.datum_listingvsp_c END
+
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_listingVSP_C : 1snip.1500012a.listing_listingvsp_c BEGIN
 
 
@@ -47452,7 +47083,36 @@ i am nonconformant in that all of my member function definitions are in a single
 }
 ;
 
-/*1*/class _export transactedListingC : public aptTransactionStateC , public listingC/*1*/
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+/*1*/class _export transactedListingC : public listingC , public aptTransactionStateC/*1*/
 {
     protected :
 
@@ -47470,15 +47130,24 @@ i am nonconformant in that all of my member function definitions are in a single
 }
 ;
 
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
 
-/*1*/class _export transactedListC : public aptTransactionStateC , public listC/*1*/
+/*
+*/
+/**/
+
+/*1*/class _export transactedListC : public listC , public aptTransactionStateC/*1*/
 {
-    protected :
-
     inline transactedListC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
     aptTransactionStateC() ,
     listC( tinP , idNameP , flagsP )
     {}
+
 
     public :
 
@@ -47489,10 +47158,379 @@ i am nonconformant in that all of my member function definitions are in a single
 
     static flagsT openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listC.openIF!||
-    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , listC** const ppPreallocatedListsP = 0 ) ;
+    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , transactedListC** const ppPreallocatedListsP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.listC.openIF!||
 }
 ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_countT_C : 1snip.150000fc.datum_countt_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export datum_countT_C : public datumC/*1*/
+{
+    public :
+
+    inline countT cRefPrivateF( voidT ) const { return !aptData ? 0 : *(countT*)(byteT*)aptData ; } // ONLY FOR listingC::cRefDatumF ; IT IS ILLEGAL FOR OTHER CODE TO REFERENCE
+
+    ~datum_countT_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.datum_countT_C.dt_datum_countT_C!||
+    datum_countT_C( tinS& tinP , byteT& flagsiP , byteT& idTypeP , const countT valueP , const listingC& listingP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.datum_countT_C.datum_countT_C!||
+    operator countT*( voidT ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.datum_countT_C.operator_countT_ptr!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_countT_C : 1snip.150000fc.datum_countt_c END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_blob_C : 1snip.150000fe.datum_blob_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export datum_blob_C : public datumC/*1*/
+{
+    public :
+
+    inline countT cRefPrivateF( voidT ) const { return !aptData ? 0 : *(countT*)(byteT*)aptData ; } // ONLY FOR listingC::cRefDatumF ; IT IS ILLEGAL FOR OTHER CODE TO REFERENCE
+
+    ~datum_blob_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.datum_blob_C.dt_datum_blob_C!||
+    datum_blob_C( tinS& tinP , byteT& flagsiP , byteT& idTypeP , const byteT* const pbP , const countT cbP , const listingC& listingP , const countT idLineNewP , const countT idiFileNewP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.datum_blob_C.datum_blob_C!||
+    operator byteT*( voidT ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.datum_blob_C.operator_byteT_ptr!||
+    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.datum_blob_C.assignF!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_blob_C : 1snip.150000fe.datum_blob_c END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_countTstrz_C : 1snip.15000124.datum_counttstrz_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export datum_countTstrz_C : public datumC/*1*/
+{
+    public :
+
+    inline countT cRefPrivateF( voidT ) const { return !aptData ? 0 : *(countT*)(byteT*)aptData ; } // ONLY FOR listingC::cRefDatumF ; IT IS ILLEGAL FOR OTHER CODE TO REFERENCE
+
+    ~datum_countTstrz_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.datum_countTstrz_C.dt_datum_countTstrz_C!||
+    datum_countTstrz_C( tinS& tinP , byteT& flagsiP , byteT& idTypeP , const countT* const pcP , const listingC& listingP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.datum_countTstrz_C.datum_countTstrz_C!||
+    operator countT*( voidT ) const ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.datum_countTstrz_C.operator_countT_ptr!||
+    voidT operator =( const countT* const pcP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.datum_countTstrz_C.operator_assign!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.datum_countTstrz_C : 1snip.15000124.datum_counttstrz_c END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_countT_C : 1snip.150000fd.listing_countt_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listing_countT_C : public listingC , public datum_countT_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_countT_C.NEWdELcLASSb!||
+    ~listing_countT_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_countT_C.dt_listing_countT_C!||
+    listing_countT_C( tinS& tinP , const listC& listDadP , const countT valueP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_countT_C.listing_countT_C!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_countT_C : 1snip.150000fd.listing_countt_c END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_blob_C : 1snip.150000ff.listing_blob_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listing_blob_C : public listingC , public datum_blob_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_blob_C.NEWdELcLASSb!||
+    ~listing_blob_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_blob_C.dt_listing_blob_C!||
+    listing_blob_C( tinS& tinP , const listC& listDadP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_blob_C.listing_blob_C!||
+    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listing_blob_C.operator_assign!||
+
+    //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
+    inline sCountT operator -( const listing_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_blob_C : 1snip.150000ff.listing_blob_c END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_countTstrz_C : 1snip.15000126.listing_counttstrz_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listing_countTstrz_C : public listingC , public datum_countTstrz_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_countTstrz_C.NEWdELcLASSb!||
+    ~listing_countTstrz_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_countTstrz_C.dt_listing_countTstrz_C!||
+    listing_countTstrz_C( tinS& tinP , const listC& listDadP , const countT* const pczP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_countTstrz_C.listing_countTstrz_C!||
+    voidT operator =( const countT* const postP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listing_countTstrz_C.operator_assign!||
+
+    //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
+    inline sCountT operator -( const listing_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listing_countTstrz_C : 1snip.15000126.listing_counttstrz_c END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_countT_C : 1snip.15000100.list_countt_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export list_countT_C : public listC , public datum_countT_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countT_C.NEWdELcLASSb!||
+    ~list_countT_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countT_C.dt_list_countT_C!||
+    list_countT_C( tinS& tinP , const listC& listDadP , const countT idNameP , const countT valueP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countT_C.list_countT_C!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_countT_C : 1snip.15000100.list_countt_c END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_blob_C : 1snip.15000101.list_blob_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export list_blob_C : public listC , public datum_blob_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_blob_C.NEWdELcLASSb!||
+    ~list_blob_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_blob_C.dt_list_blob_C!||
+    list_blob_C( tinS& tinP , const listC& listDadP , const countT idNameP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_blob_C.list_blob_C!||
+    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_blob_C.operator_assign!||
+
+    //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
+    inline sCountT operator -( const list_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_blob_C : 1snip.15000101.list_blob_c END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_countTstrz_C : 1snip.15000125.list_counttstrz_c BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export list_countTstrz_C : public listC , public datum_countTstrz_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countTstrz_C.NEWdELcLASSb!||
+    ~list_countTstrz_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countTstrz_C.dt_list_countTstrz_C!||
+    list_countTstrz_C( tinS& tinP , const listC& listDadP , const countT idNameP , const countT* const pczP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countTstrz_C.list_countTstrz_C!||
+    voidT operator =( const countT* const pcP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_countTstrz_C.operator_assign!||
+
+    //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
+    inline sCountT operator -( const list_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.list_countTstrz_C : 1snip.15000125.list_counttstrz_c END
 
 
 //

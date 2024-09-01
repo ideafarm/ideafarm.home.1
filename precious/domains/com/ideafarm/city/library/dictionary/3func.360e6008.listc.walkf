@@ -50,7 +50,7 @@
             //    CONoUTrAW( ostoSay ) ;
             //
             //    OStEXTAK( ostoSay , "\r\n" ) ;
-            //    OStEXTA(  ostoSay , bOk ? " (is a listingC)" : " (is NOT a listingC)" ) ;
+            //    OStEXTA(  ostoSay , bOk ? " (is a           listingC)" : " (is NOT a           listingC)" ) ;
             //    OStEXTA(  ostoSay , pPoolIn ? pPoolIn->postNameF( tinP ) : "unknown" ) ;
             //    OStEXTAK( ostoSay , " " ) ;
             //    OStEXTA(  ostoSay , tinP.pPoolUse->postNameF( tinP ) ) ;
@@ -60,18 +60,18 @@
             //    OStEXTC(  ostoSay , *pApt , 0 ) ;
             //    OStEXTAK( ostoSay , " " ) ;
             //    OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;
-            //    OStEXTAK( ostoSay , "listC::walkF new [idAdam,apt,ptr,puse,inpool]: " ) ;
+            //    OStEXTAK( ostoSay , "          listC::walkF new [idAdam,apt,ptr,puse,inpool]: " ) ;
             //    OStEXT(   ostoSay , TUCK << 2 ) ;
             //
-            //    boolT  bOk     = listingC::bIsListingIF( tinP , pNew ) ;
+            //    boolT  bOk     =           listingC::bIsListingIF( tinP , pNew ) ;
             //    poolC* pPoolIn = poolC::pPoolIF( tinP , (byteT*)pNew ) ;
             //{
             //if( tinP.pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD )
 
                                          *pApt = pNew ;
-                ((listC*)pNew)->aptBro = *pApt ;
-            __( ((listC*)pNew)->aptBro ) ;
-            listingC*& pNew = tinP.ta.pushed.u.listWalk.cbf.pNewP ;
+                ((          listC*)pNew)->aptBro = *pApt ;
+            __( ((          listC*)pNew)->aptBro ) ;
+                      listingC*& pNew = tinP.ta.pushed.u.listWalk.cbf.pNewP ;
 
             cKidNew ++ ;
             flagsRC |= flLISTwALKrETURNcODE_NEWlISTING ;
@@ -104,9 +104,9 @@
             offWoth = !offWoth ;
         {
         if( !bKidDeleted )
-        pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
-        pk = &APT( listingC , *pApt ) ;
-        if( pk ) pApt = &((listC*)pk)->aptBro ; // IF !pk THEN *pApt NOW POINTS TO THE listingC THAT FOLLOWED THE DELETED listingC
+        pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (          listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
+        pk = &APT(           listingC , *pApt ) ;
+        if( pk ) pApt = &((          listC*)pk)->aptBro ; // IF !pk THEN *pApt NOW POINTS TO THE           listingC THAT FOLLOWED THE DELETED           listingC
 
         }
             break ;
@@ -145,8 +145,8 @@
             ppHand[ !offWoth ] = new( 0 , tinP , !offWoth ? pbHi : pbLo , SIZEOF_handleC ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
             DELzOMBIE( ppHand[ !offWoth ] ) ;
         
-                    ((listC*)pk)->aptBro.resetF() ;
-            *pApt = ((listC*)pk)->aptBro ;  //CAST IS DONE TO AVOID NEEDING TO MAKE ME A FRIEND OF listingC; IN GENERAL, *pk WILL NOT BE A listC INSTANCE; THIS IS OK BECAUSE aptBro IS A MEMBER OF listingC SO WILL ALWAYS BE AT THE EXPECTED LOCATION
+                    ((          listC*)pk)->aptBro.resetF() ;
+            *pApt = ((          listC*)pk)->aptBro ;  //CAST IS DONE TO AVOID NEEDING TO MAKE ME A FRIEND OF           listingC; IN GENERAL, *pk WILL NOT BE A           listC INSTANCE; THIS IS OK BECAUSE aptBro IS A MEMBER OF           listingC SO WILL ALWAYS BE AT THE EXPECTED LOCATION
         {
         if( bKidDeleted )
 
@@ -176,7 +176,7 @@
                 tinP.ta.retained.u.listWalk.walk.idGrabLayer = save ;
 
                 // ********************************************************
-                ((listC*)pk)->walkF( tinP , idGrabLayerP ) ;
+                ((          listC*)pk)->walkF( tinP , idGrabLayerP ) ;
                 // ********************************************************
 
                               tinP.ta.retained.u.listWalk.walk.idGrabLayer = idGrabLayerP ;
@@ -190,7 +190,7 @@
                 && pczName[ 1 ] == LISTnAMEsYS_ROOTaPPLICATION
                 && pczName[ 0 ] == LISTnAMEsYS_ROOT
                 && pczName
-                && ( listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST ) || listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
+                && (           listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST ) ||           listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
                 pk->flagsF() & fliLISTINGc_DELETErEQUESTED
             (
             if
@@ -203,7 +203,7 @@
                 tinP.ta.retained.u.listWalk.walk.idGrabLayer = save ;
 
                 // ********************************************************
-                flagsT flagsRC = ((listC*)pk)->walkF( tinP , idGrabLayerP ) ;
+                flagsT flagsRC = ((          listC*)pk)->walkF( tinP , idGrabLayerP ) ;
                 // ********************************************************
 
                               tinP.ta.retained.u.listWalk.walk.idGrabLayer = idGrabLayerP ;
@@ -214,7 +214,7 @@
                 tinP.ta.pushed.u.listWalk.walk.cRecurseP ++ ;
             {
             )
-                && ( listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST ) || listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
+                && (           listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST ) ||           listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
                 && !( F(flRetCode) & flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE )
                    !( F(tinP.ta.pushed.u.listWalk.walk.flagsWalkP) & flLISTwALK_DOnOTwALKkIDaFTERcALLINGkID )
             (
@@ -249,9 +249,9 @@
                                             __( !*pApt ) ;
                                                          pNew = 0 ;
                                                  *pApt = pNew ;
-                        ((listC*)pNew)->aptBro = *pApt ;
-                    __( ((listC*)pNew)->aptBro ) ;
-                    listingC*& pNew = tinP.ta.pushed.u.listWalk.cbf.pNewP ;
+                        ((          listC*)pNew)->aptBro = *pApt ;
+                    __( ((          listC*)pNew)->aptBro ) ;
+                              listingC*& pNew = tinP.ta.pushed.u.listWalk.cbf.pNewP ;
 
                     cKidNew ++ ;
                     flagsRC |= flLISTwALKrETURNcODE_NEWlISTING ;
@@ -275,7 +275,7 @@
                 countT save = tinP.ta.retained.u.listWalk.walk.idGrabLayer ;
 
                 tinP.ta.pushed.u.listWalk.cbf.pDadP = this ;
-                __( !listingC::bIsListingIF( tinP , tinP.ta.pushed.u.listWalk.cbf.pListingP ) ) ; //U::TO FIND A BUG
+                __( !          listingC::bIsListingIF( tinP , tinP.ta.pushed.u.listWalk.cbf.pListingP ) ) ; //U::TO FIND A BUG
                 tinP.ta.pushed.u.listWalk.cbf.pListingP = pk ;
             {
             if( bCall )
@@ -307,7 +307,7 @@
                 tinP.ta.retained.u.listWalk.walk.idGrabLayer = save ;
 
                 // ********************************************************
-                flagsT flagsRC = ((listC*)pk)->walkF( tinP , idGrabLayerP ) ;
+                flagsT flagsRC = ((          listC*)pk)->walkF( tinP , idGrabLayerP ) ;
                 // ********************************************************
 
                               tinP.ta.retained.u.listWalk.walk.idGrabLayer = idGrabLayerP ;
@@ -318,7 +318,7 @@
                 tinP.ta.pushed.u.listWalk.walk.cRecurseP ++ ;
             {
             )
-                && ( listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST ) || listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
+                && (           listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST ) ||           listingC::bIsListingIF( tinP , *pApt , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
                 F(tinP.ta.pushed.u.listWalk.walk.flagsWalkP) & flLISTwALK_WALKkIDbEFOREcALLINGkID
             (
             if // THIS EARLY WALK CODE DOES NOT EXECUTE UNLESS EXPLICITLY REQUESTED BY APPLICATION CODE
@@ -331,8 +331,8 @@
 
         }
             pk->flagsRefF() &= (byteT)~fliLISTINGc_GRABBED ;
-            else        { CONoUTrAW(  " resetting the GRABBED bit for a listingC\r\n" ) ; }
-            if( pklNU ) { CONoUTrAW3( " resetting the GRABBED bit for listC [idName]: " , pklNU->idName , "\r\n" ) ; }
+            else        { CONoUTrAW(  " resetting the GRABBED bit for a           listingC\r\n" ) ; }
+            if( pklNU ) { CONoUTrAW3( " resetting the GRABBED bit for           listC [idName]: " , pklNU->idName , "\r\n" ) ; }
         {
         if( F(tinP.ta.pushed.u.listWalk.walk.flagsWalkP) & flLISTwALK_RESETgRABITbIT && pk->flagsF() & fliLISTINGc_GRABBED )
         //CONoUTrAW3( "[pk->flagsi]: " , pk->flagsF() , "\r\n" ) ;
@@ -342,7 +342,7 @@
             __1
             __( *pApt ) ;
         {
-        if( !listingC::bIsListingIF( tinP , *pApt ) )
+        if( !          listingC::bIsListingIF( tinP , *pApt ) )
 
         //if( !( idPass % TUCK ) ) { CONoUTrAW( "~" ) ; } //U::WHY IS CPU NOT PEGGED?
         //countT idPass = 1 + incv02AM( idPassLath ) ;
@@ -356,7 +356,7 @@
     //    CONoUTrAW( ostoSay ) ;
     //
     //    OStEXTAK( ostoSay , "\r\n" ) ;
-    //    OStEXTA(  ostoSay , bOk  ? " (is a listingC)" : " (is NOT a listingC)" ) ;
+    //    OStEXTA(  ostoSay , bOk  ? " (is a           listingC)" : " (is NOT a           listingC)" ) ;
     //    OStEXTA(  ostoSay , pPoolIn ? pPoolIn->postNameF( tinP ) : "unknown" ) ;
     //    OStEXTAK( ostoSay , " " ) ;
     //    OStEXTA(  ostoSay , tinP.pPoolUse->postNameF( tinP ) ) ;
@@ -366,16 +366,16 @@
     //    OStEXTC(  ostoSay , aptKid , 0 ) ;
     //    OStEXTAK( ostoSay , " " ) ;
     //    OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;
-    //    OStEXTAK( ostoSay , "listC::walkF old [idAdam,apt,ptr,puse,inpool]: " ) ;
+    //    OStEXTAK( ostoSay , "          listC::walkF old [idAdam,apt,ptr,puse,inpool]: " ) ;
     //    OStEXT(   ostoSay , TUCK << 2 ) ;
     //
-    //    boolT  bOk     = listingC::bIsListingIF( tinP , pk ) ;
+    //    boolT  bOk     =           listingC::bIsListingIF( tinP , pk ) ;
     //    poolC* pPoolIn = poolC::pPoolIF( tinP , (byteT*)pk ) ;
     //{
     //if( tinP.pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD && pk )
 
-    listC* pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
-    listingC* pk = &APT( listingC , *pApt ) ;
+              listC* pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (          listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
+              listingC* pk = &APT(           listingC , *pApt ) ;
     aptC* pApt = &aptKid ;
     tinP.ta.pushed.u.listWalk.cbf.idCallP = 0 ;
     ZE( countT , cKidNew ) ;
@@ -386,7 +386,7 @@
 
     }
         flagsi &= (byteT)~fliLISTINGc_GRABBED ;
-        CONoUTrAW3( " resetting the GRABBED bit for listC [idName]: " , idName , "\r\n" ) ;
+        CONoUTrAW3( " resetting the GRABBED bit for           listC [idName]: " , idName , "\r\n" ) ;
     {
     if( F(tinP.ta.pushed.u.listWalk.walk.flagsWalkP) & flLISTwALK_RESETgRABITbIT && flagsi & fliLISTINGc_GRABBED )
     //CONoUTrAW3( "[    flagsi]: " , flagsi , "\r\n" ) ;
@@ -407,7 +407,7 @@
         tinP.ta.retained.u.listWalk.walk.pPoolRecord = poolC::pPoolFromNameIF( tinP , vspo ) ;
         __( !(const byteT*)vspo ) ;
         THREADmODE3rESTORE
-        blobVSP vspo = listC::dictionaryQueryFromIdIF( tinP , pczName[ 3 ] ) ;
+        blobVSP vspo =           listC::dictionaryQueryFromIdIF( tinP , pczName[ 3 ] ) ;
         THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )
 
         bClearPoolRecord = 1 ;
@@ -432,7 +432,7 @@
 
     flagsT flagsRC = flLISTwALKrETURNcODE_null ;
 {
-/*1*/flagsT listC::walkF( tinS& tinP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT           listC::walkF( tinS& tinP , const countT idGrabLayerP )/*1*/
 
 /**/
 */
@@ -443,8 +443,8 @@
   see tinArgS, which is used both to call me and for me to pass info into a callback function provided by the caller
  tinP
 arguments for the outermost call to walkF
-it is illegal for any application code to reference listingC instances anywhere other than within the definition of a listWalkCBFT function
-it is illegal for listWalkCBFT to store a pointer or reference to any listingC object for use outside of the callback function
+it is illegal for any application code to reference           listingC instances anywhere other than within the definition of a listWalkCBFT function
+it is illegal for listWalkCBFT to store a pointer or reference to any           listingC object for use outside of the callback function
  the outermost caller of me must clear the entire tinP. ta.a.pc1 and tinP. ta.a.pc2 AND tinP. ta.a.pc3 arrays and then set them as specified in the following
  for efficiency and to avoid exhausting the thread stack, i use tinP. ta.a.pc for my arguments
 i call myself recursively, perhaps deeply

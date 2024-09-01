@@ -9,7 +9,6 @@
 
 ;
 }
-    friend class transactedListingC ;
     friend class recordC ;
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.listC.countIF!||
@@ -86,6 +85,12 @@
     static flagsT walkIF( tinS& tinP , handleC& hListFromP , countT* const pczNameP = 0 , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.listC.walkIF!||
     static flagsT walkIF( tinS& tinP , countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.listC.openIF!||
+    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , listC** const ppPreallocatedListsP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listC.openIF!||
+    static flagsT openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listC.listC!||
     listC( tinS& tinP , const listC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34023.listC.listC!||
@@ -104,6 +109,8 @@
     aptC   aptKid ;
     timeS  timeLathModified ; //MUST BE IMMEDIATELY ABOVE idName TO PERMIT EFFICIENT SORTING (CURRENT CODE DOES NOT RELY UPON THIS BUT FUTURE CODE MIGHT)
     countT idName ;
+
+    protected :
 {
 /*1*/class _export listC : public listingC/*1*/
 

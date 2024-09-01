@@ -38,7 +38,7 @@ THREADmODE3rESTORE
         listC::fieldIF( tinP , pOut , hRecord , pczField1 , _1_deleteC() , LF ) ;
         etThread.traceF( tinP , T("deleting wo value in field1") ) ;
 
-        transactedListC::openIF( tinP , hRecord , pczRecord ) ;
+        listC::openIF( tinP , hRecord , pczRecord ) ;
         handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     {
     etThread.traceF( tinP , T("reopening record to delete a field value") ) ;
@@ -95,7 +95,7 @@ THREADmODE3rESTORE
             etThread.traceF( tinP , T("pushing count values to field1") ) ;
         {
 
-        transactedListC::openIF( tinP , hRecord , pczRecord ) ;
+        listC::openIF( tinP , hRecord , pczRecord ) ;
         handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     {
     ZE( fieldEditParamOutC* , pOut ) ;

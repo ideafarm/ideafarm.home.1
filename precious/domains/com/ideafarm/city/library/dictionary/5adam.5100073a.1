@@ -187,11 +187,11 @@ DONE( tmWorkerF )
                                     listC::fieldIF( tinP , pOut , hRecordEvent , pczfLogBucket , _1_pushC( pidj[ 1 ] ) + _1_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
                                     listC::fieldIF( tinP , pOut , hRecordEvent , pczfMethod    , _1_pushC( pidj[ 0 ] ) + _1_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
 
-                                    transactedListC::openIF( tinP , hRecordEvent    , hIdJotUri       , pczRecordEvent    , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                    transactedListC::openIF( tinP , hIdJotUri       , hHashUri        , pczIdJotUri       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                    transactedListC::openIF( tinP , hHashUri        , hIdJotContainer , pczHashUri        , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                    transactedListC::openIF( tinP , hIdJotContainer , hContainers     , pczIdJotContainer , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                    transactedListC::openIF( tinP , hContainers     , pczContainers                       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tinP , hRecordEvent    , hIdJotUri       , pczRecordEvent    , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tinP , hIdJotUri       , hHashUri        , pczIdJotUri       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tinP , hHashUri        , hIdJotContainer , pczHashUri        , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tinP , hIdJotContainer , hContainers     , pczIdJotContainer , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tinP , hContainers     , pczContainers                       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
 
                                     puseC pu3( wsP.puseEvents ) ;
                                 {
@@ -257,9 +257,9 @@ DONE( tmWorkerF )
                                     }
                                         listC::fieldIF( tinP , pOut , hHashUri  , pczfIdJotUri , _1_pushC( pidj[ offi ] ) + _1_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
 
-                                        transactedListC::openIF( tinP , hHashUri        , hIdJotContainer , pczHashUri        , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                        transactedListC::openIF( tinP , hIdJotContainer , hContainers     , pczIdJotContainer , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                        transactedListC::openIF( tinP , hContainers     , pczContainers                       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                        listC::openIF( tinP , hHashUri        , hIdJotContainer , pczHashUri        , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                        listC::openIF( tinP , hIdJotContainer , hContainers     , pczIdJotContainer , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                        listC::openIF( tinP , hContainers     , pczContainers                       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
 
                                         puseC pu1( wsP.puseEvents ) ;
 
@@ -280,7 +280,7 @@ DONE( tmWorkerF )
                                         puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                                         }
                                             listC::fieldIF( tinP , pOut , hContainers  , pczfIdJotContainer , _1_pushC( pidj[ offi ] ) + _1_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
-                                            transactedListC::openIF( tinP , hContainers , pczContainers , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                            listC::openIF( tinP , hContainers , pczContainers , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
                                             puseC pu1( wsP.puseEvents ) ;
                                         {
 
@@ -408,14 +408,14 @@ DONE( tmWorkerF )
                                                             //bSay ++ ;
                                                         {
                                                         if( ~hHashUri )
-                                                        transactedListC::openIF( tinP , hHashUri , hIdJotContainer , pczHashUri , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                                        listC::openIF( tinP , hHashUri , hIdJotContainer , pczHashUri , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
                                                     {
                                                     if( ~hIdJotContainer )
-                                                    transactedListC::openIF( tinP , hIdJotContainer , hContainers , pczIdJotContainer , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                                    listC::openIF( tinP , hIdJotContainer , hContainers , pczIdJotContainer , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
                                                 {
                                                 if( ~hContainers )
 
-                                                transactedListC::openIF( tinP , hContainers , pczContainers , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                                listC::openIF( tinP , hContainers , pczContainers , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
 
                                                 puseC pu2( wsP.puseEvents ) ;
                                                 grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
@@ -507,7 +507,7 @@ DONE( tmWorkerF )
                                                 {
                                                 if( ~hContainers )
 
-                                                transactedListC::openIF( tinP , hContainers , pczContainers , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                                listC::openIF( tinP , hContainers , pczContainers , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
                                                 puseC pu1( wsP.puseEvents ) ;
                                                 grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
                                                 handleC hContainers( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;

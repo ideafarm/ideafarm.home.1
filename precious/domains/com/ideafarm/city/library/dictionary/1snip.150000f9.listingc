@@ -9,8 +9,6 @@
 
 ;
 }
-    friend class transactedListingC ;
-
     inline count01T&    cRefPrivate2F( voidT ) { return cRef ; } //IT IS ILLEGAL TO REFER TO THIS SYMBOL ANYWHERE OTHER THAN WITHIN datum_listingVSP_C CT/DT
     inline byteT        cRefF( voidT ) const { return (byteT)cRef ; }
     inline countT       idTypeDatumF( voidT ) const { return idTypeDatum ; }
@@ -57,6 +55,7 @@
     byteT           flagsi ;     /*old ordering: 3*/   // cRef OVERFLOW CAN BE DETECTED BY INSPECTING BOTH bFinger AND flagsi SINCE OVERFLOW WILL CHANGE bFinger AND WILL THEN EVENTUALLY SET AN ILLEGAL FLAG IN flagsi
     count01T        cRef ;       /*old ordering: 1*/   //U::POSSIBLY OBSOLETE COMMENT NOW THAT cRef IS A BYTE:  CS:CODEsYNC: 003018e 003015e ; A:ASSUME: sizeof( countT ) == 4 ; IF THIS IS NOT TRUE THEN SMART POINTER WILL NOT REFERENCE cRef AND WILL TRASH ME
     //countT          finger ;        //REMOVE IN PRODUCTION (TO OPTIMIZE OBJECT SIZE TO FIT EFFICIENTLY WITHIN A poolC DROP) 20240811@1545: ADDED W/O ANALYSIS TO FIND A BUG
+
     protected :                     // cRef IS HERE SO THAT IT IS ALIGNED TO countT SO THAT IT CAN BE MANIPULATED WITH A NORMAL SMART POINTER (WHICH WILL TRASH MY OTHER MEMBERS ON OVERFLOW)
 {
 /*1*/class _export listingC/*1*/

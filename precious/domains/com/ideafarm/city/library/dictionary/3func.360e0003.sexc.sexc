@@ -389,7 +389,7 @@
                                 ZE( flagsT              , flagsRC ) ;
                                 ZE( fieldEditParamOutC* , pOut    ) ;
                     
-                                transactedListC::openIF( tinP , hListSex , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ;
+                                listC::openIF( tinP , hListSex , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ;
                                 handleC hListSex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                             {
                             if( bListsExist || !bReadOnly )
@@ -397,11 +397,11 @@
                     
                             }
                                 if( ~hListField ) bListsExist = 1 ;
-                                transactedListC::openIF( tinP , hListField , hListSex , pczField , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
+                                listC::openIF( tinP , hListField , hListSex , pczField , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
                                 handleC hListField( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                             {
                             if( ~hListSex )
-                            transactedListC::openIF( tinP , hListSex , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
+                            listC::openIF( tinP , hListSex , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
                             handleC hListSex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                         {
                         ZE( boolT , bListsExist ) ;
@@ -577,7 +577,7 @@
                         ZE( flagsT , flagsRC ) ;
                         ZE( fieldEditParamOutC* , pOut ) ;
             
-                        transactedListC::openIF( tinP , hListSex2 , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ; //U::BUG: THE grabitC::ungrabF BLAMMO OCCURS WITHIN THIS CALL
+                        listC::openIF( tinP , hListSex2 , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ; //U::BUG: THE grabitC::ungrabF BLAMMO OCCURS WITHIN THIS CALL
                         handleC hListSex2( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     {
                     if( bListsExist || !bReadOnly )
@@ -586,11 +586,11 @@
                     }
                         }
                             if( ~hListField ) bListsExist = 1 ;
-                            transactedListC::openIF( tinP , hListField , hListSex1 , pczField , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
+                            listC::openIF( tinP , hListField , hListSex1 , pczField , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
                             handleC hListField( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                         {
                         if( ~hListSex1 )
-                        transactedListC::openIF( tinP , hListSex1 , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
+                        listC::openIF( tinP , hListSex1 , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
                         handleC hListSex1( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     {
                 {

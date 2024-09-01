@@ -502,7 +502,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                                     listC::fieldIF( tinP , pOutMaster , hList , pczField , _1_queryC() , LF ) ; ___( pOutMaster ) ;
                                     countT pczField[] = { /*postEmail*/0x87654321 , 0 } ;
                                             
-                                    transactedListC::openIF( tinP , hList , pczIdAccount ) ;
+                                    listC::openIF( tinP , hList , pczIdAccount ) ;
                                     handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                         
                                     grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
@@ -568,7 +568,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                                         flagsT flagsRC = listC::fieldIF( tinP , pOutMaster , hList , pczField , _1_modePushIfNotExistC() | _1_pushC( (osTextT*)tEmail ) | _1_modeQueryNewC() | _1_queryC() , LF ) ; ___( pOutMaster ) ;
                                         countT pczField[] = { /*postEmail*/0x87654321 , 0 } ;
                                             
-                                        transactedListC::openIF( tinP , hList , pczIdAccount ) ;
+                                        listC::openIF( tinP , hList , pczIdAccount ) ;
                                         handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                         
                                         grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
@@ -611,7 +611,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                                     bNew = !!( F(flLISTwALKrETURNcODE_NEWlISTING) & listC::fieldIF( tinP , pOutHelper , hList , pczField , _1_modePushIfNotExistC() | _1_pushIdSerialC( "idAccount" ) | _1_modeQueryNewC() | _1_queryC() ) , LF ) ; ___( pOutHelper ) ;
                                     countT pczField[] = { /*U::idAccount*/0x87654321 , 0 } ;
                         
-                                    transactedListC::openIF( tinP , hList , pczEmail ) ;
+                                    listC::openIF( tinP , hList , pczEmail ) ;
                                     handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     
                                     grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
