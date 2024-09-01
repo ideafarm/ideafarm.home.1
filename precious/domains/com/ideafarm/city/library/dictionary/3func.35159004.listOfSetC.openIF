@@ -26,7 +26,7 @@
                 THREADmODE3rESTORE
                 while( *ppc ) { DEL( *( ppc ++ ) ) ; }
                 THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
-                transactedListC** ppc = ppPreallocatedLists ;
+                listOfSetC** ppc = ppPreallocatedLists ;
             {
             if( ppPreallocatedLists )
 
@@ -56,7 +56,7 @@
                 if( !POOP )
 
                 __Z( pList ) ;
-                transactedListC* pList = &APT( transactedListC , aptRoot ) ;
+                listOfSetC* pList = &APT( listOfSetC , aptRoot ) ;
             {
             if( aptRoot )
 
@@ -76,11 +76,11 @@
                         }
                             POPtINaRGS
                             if( pNew && !( pNew->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
-                            pNew = new( 0 , tinP , LF ) transactedListC( tinP , LISTnAMEsYS_ROOT , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pNew ) ;
+                            pNew = new( 0 , tinP , LF ) listOfSetC( tinP , LISTnAMEsYS_ROOT , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pNew ) ;
                             PUSHtINaRGS
                         {
                         THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc | flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ;
-                        ZE( transactedListC* , pNew ) ;
+                        ZE( listOfSetC* , pNew ) ;
                     {
 
                     }
@@ -90,28 +90,28 @@
                             __Z( pPre ) ;
                             THREADmODE3rESTORE
                             //THREADmODE4rESTORE
-                            pPre = new( 0 , tinP , LF ) transactedListC( tinP , LISTnAMEsYS_PREALLOCATED , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pPre ) ;
+                            pPre = new( 0 , tinP , LF ) listOfSetC( tinP , LISTnAMEsYS_PREALLOCATED , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pPre ) ;
                             //THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
                             THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc | flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ;
 
-                            ZE( transactedListC* , pPre ) ;
+                            ZE( listOfSetC* , pPre ) ;
                         {
                         while( !POOP && ccName -- )
-                        transactedListC** ppc = ppPreallocatedLists ;
+                        listOfSetC** ppc = ppPreallocatedLists ;
                     {
                 {
                 if( !POOP )
 
                 __Z( ppPreallocatedLists           ) ;
 
-                ppPreallocatedLists           = (transactedListC**)tinP.tlsNewF( LF , ( ccName + 1 ) * sizeof( transactedListC* ) ) ;
+                ppPreallocatedLists           = (listOfSetC**)tinP.tlsNewF( LF , ( ccName + 1 ) * sizeof( listOfSetC* ) ) ;
 
                 countT ccName = thirdC::c_strlenIF( tinP , pczNameP ) ;
             {
             else if( !( F(flagsP) & flLISToPEN_IFeXISTS ) )
             if( aptRoot ) flagsRC |= flLISToPENrETURNcODE_ROOTlISTeXISTED ;
 
-            ZE( transactedListC** , ppPreallocatedLists           ) ; // NULL TERMINATED LIST OF PREALLOCATED transactedListC ; CBF DISPENSES BY CLAIMING THE LEAF AND SETTING IT TO ZE
+            ZE( listOfSetC** , ppPreallocatedLists           ) ; // NULL TERMINATED LIST OF PREALLOCATED listOfSetC ; CBF DISPENSES BY CLAIMING THE LEAF AND SETTING IT TO ZE
 
             //if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[&aptRoot]:  (foreign ordering)    ")+TF2((countT)&aptRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN) ) ;
 
@@ -142,29 +142,29 @@
     {
     IFbEcAREFUL
 
-    const boolT  bTransacted = F(flagsPoolFormat) & flPOOLfORMAT_TRANSACTED ;
+    const boolT  bTransacted = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
     const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
 
     flagsT flagsRC = flLISToPENrETURNcODE_null ;
 {
-/*1*/flagsT transactedListC::openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT listOfSetC::openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
 
 //CS:CODEsYNCH: PSEUDODUPLICATE: 350e6004 35159004
 
 /**/
 */
-  for each offset, a transactedListC object will be constructed in the current pool if one is not already registered in the transactedListC object specified by the prior offset
-   the 0'th offset specifies the name of a transactedListC object that is registered in the root transactedListC object
-  specifies the fully qualified name of a transactedListC object relative to the root transactedListC object
+  for each offset, a listOfSetC object will be constructed in the current pool if one is not already registered in the listOfSetC object specified by the prior offset
+   the 0'th offset specifies the name of a listOfSetC object that is registered in the root listOfSetC object
+  specifies the fully qualified name of a listOfSetC object relative to the root listOfSetC object
   i will modify elements in this string, replacing osTextT* values with numeric values obtained by looking the osTextT up in the dictionary of the current pool
-  a countT value is a valid transactedListC name iff BM_HIGH is set
+  a countT value is a valid listOfSetC name iff BM_HIGH is set
   the ze'th element must be either LISTnAMEsYS_ROOTaPPLICATION or LISTnAMEsYS_ROOTsYSTEM2
   each element of this null terminated string must either be a valid list name or the address of a null terminated string of osTextT
   must not be 0 or null length
  pczNameP
  tinP
 arguments
-i open the specified transactedListC object, creating all specified dad lists in the current pool that do not exist
+i open the specified listOfSetC object, creating all specified dad lists in the current pool that do not exist
 /*
 
 //

@@ -10,23 +10,23 @@
 ;
 }
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.listC.openIF!||
-    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , transactedListC** const ppPreallocatedListsP = 0 ) ;
+    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , listOfSetC** const ppPreallocatedListsP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listC.openIF!||
     static flagsT openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
 
     {}
     listC( tinP , *(listC*)&listDadP , idNameP , flagsP )
-    aptTransactionStateC() ,
-    inline transactedListC( tinS& tinP , const transactedListC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
+    aptSetStateC() ,
+    inline listOfSetC( tinS& tinP , const listOfSetC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
 
     public :
 
     {}
     listC( tinP , idNameP , flagsP )
-    aptTransactionStateC() ,
-    inline transactedListC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
+    aptSetStateC() ,
+    inline listOfSetC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
 {
-/*1*/class _export transactedListC : public listC , public aptTransactionStateC/*1*/
+/*1*/class _export listOfSetC : public listC , public aptSetStateC/*1*/
 
 /**/
 */

@@ -47063,23 +47063,23 @@ i am nonconformant in that all of my member function definitions are in a single
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.wightIdgC : 1snip.150001a8.wightIdgC END
 
 
-/*1*/struct _export transactionStateS/*1*/
+/*1*/struct _export setStateS/*1*/
 {
     count01T idType ;
     flags01T flagsi ;
-    inline transactionStateS( countT idTypeP = 0 , flagsT flagsP = 0 ) : idType( (count01T)idTypeP ) , flagsi( (flags01T)flagsP ) {}
+    inline setStateS( countT idTypeP = 0 , flagsT flagsP = 0 ) : idType( (count01T)idTypeP ) , flagsi( (flags01T)flagsP ) {}
 }
 ;
 
-/*1*/class _export aptTransactionStateC/*1*/
+/*1*/class _export aptSetStateC/*1*/
 {
     protected :
 
-    aptC aptTransactionState ;
+    aptC aptSetState ;
 
     public :
 
-    inline aptTransactionStateC( voidT ) : aptTransactionState( 0 ) {}
+    inline aptSetStateC( voidT ) : aptSetState( 0 ) {}
 }
 ;
 
@@ -47112,19 +47112,19 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 
-/*1*/class _export transactedListingC : public listingC , public aptTransactionStateC/*1*/
+/*1*/class _export listingOfSetC : public listingC , public aptSetStateC/*1*/
 {
     protected :
 
-    inline transactedListingC( tinS& tinP , const flagsT flagsP = flLISTINGc_null ) :
-    aptTransactionStateC() ,
+    inline listingOfSetC( tinS& tinP , const flagsT flagsP = flLISTINGc_null ) :
+    aptSetStateC() ,
     listingC( tinP , flagsP )
     {}
 
     public :
 
-    inline transactedListingC( tinS& tinP , const transactedListC& listDadP , const flagsT flagsP = flLISTINGc_null ) :
-    aptTransactionStateC() ,
+    inline listingOfSetC( tinS& tinP , const listOfSetC& listDadP , const flagsT flagsP = flLISTINGc_null ) :
+    aptSetStateC() ,
     listingC( tinP , *(listC*)&listDadP , flagsP )
     {}
 }
@@ -47141,24 +47141,24 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedListC : public listC , public aptTransactionStateC/*1*/
+/*1*/class _export listOfSetC : public listC , public aptSetStateC/*1*/
 {
-    inline transactedListC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
-    aptTransactionStateC() ,
+    inline listOfSetC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
+    aptSetStateC() ,
     listC( tinP , idNameP , flagsP )
     {}
 
 
     public :
 
-    inline transactedListC( tinS& tinP , const transactedListC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
-    aptTransactionStateC() ,
+    inline listOfSetC( tinS& tinP , const listOfSetC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
+    aptSetStateC() ,
     listC( tinP , *(listC*)&listDadP , idNameP , flagsP )
     {}
 
     static flagsT openIF( tinS& tinP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listC.openIF!||
-    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , transactedListC** const ppPreallocatedListsP = 0 ) ;
+    static flagsT openIF( tinS& tinP , handleC& hListP , handleC& hListFromP , const countT* const pczNameP , const flagsT flagsP = flLISToPEN_null , const countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , listOfSetC** const ppPreallocatedListsP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.listC.openIF!||
 }
 ;
@@ -47544,22 +47544,22 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedListing_countTstrz_C : public transactedListingC , public datum_countTstrz_C/*1*/
+/*1*/class _export listingOfSet_countTstrz_C : public listingOfSetC , public datum_countTstrz_C/*1*/
 {
 
     public :
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_countTstrz_C.NEWdELcLASSb!||
-    ~transactedListing_countTstrz_C( voidT ) ;
+    ~listingOfSet_countTstrz_C( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_countTstrz_C.dt_listing_countTstrz_C!||
-    transactedListing_countTstrz_C( tinS& tinP , const transactedListC& transactedListDadP , const countT* const pczP ) ;
+    listingOfSet_countTstrz_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT* const pczP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_countTstrz_C.listing_countTstrz_C!||
     voidT operator =( const countT* const postP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listing_countTstrz_C.operator_assign!||
 
     //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
-    inline sCountT operator -( const transactedListing_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
+    inline sCountT operator -( const listingOfSet_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
 }
 ;
 
@@ -47583,22 +47583,22 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedListing_blob_C : public transactedListingC , public datum_blob_C/*1*/
+/*1*/class _export listingOfSet_blob_C : public listingOfSetC , public datum_blob_C/*1*/
 {
 
     public :
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_blob_C.NEWdELcLASSb!||
-    ~transactedListing_blob_C( voidT ) ;
+    ~listingOfSet_blob_C( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_blob_C.dt_listing_blob_C!||
-    transactedListing_blob_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
+    listingOfSet_blob_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_blob_C.listing_blob_C!||
     voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.listing_blob_C.operator_assign!||
 
     //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
-    inline sCountT operator -( const transactedListing_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
+    inline sCountT operator -( const listingOfSet_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
 }
 ;
 
@@ -47622,16 +47622,16 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedListing_countT_C : public transactedListingC , public datum_countT_C/*1*/
+/*1*/class _export listingOfSet_countT_C : public listingOfSetC , public datum_countT_C/*1*/
 {
 
     public :
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_countT_C.NEWdELcLASSb!||
-    ~transactedListing_countT_C( voidT ) ;
+    ~listingOfSet_countT_C( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_countT_C.dt_listing_countT_C!||
-    transactedListing_countT_C( tinS& tinP , const transactedListC& transactedListDadP , const countT valueP ) ;
+    listingOfSet_countT_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT valueP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_countT_C.listing_countT_C!||
 }
 ;
@@ -47656,19 +47656,19 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedList_listingVSP_C : public transactedListC , public datum_listingVSP_C/*1*/
+/*1*/class _export listOfSet_listingVSP_C : public listOfSetC , public datum_listingVSP_C/*1*/
 {
 
     public :
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_listingVSP_C.NEWdELcLASSb!||
-    ~transactedList_listingVSP_C( voidT ) ;
+    ~listOfSet_listingVSP_C( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_listingVSP_C.dt_list_listingVSP_C!||
-    transactedList_listingVSP_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idNameP , const transactedListingC& transactedListingP ) ;
+    listOfSet_listingVSP_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const listingOfSetC& listingOfSetP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_listingVSP_C.list_listingVSP_C!||
 
-    inline sCountT operator -( const transactedList_listingVSP_C& lP ) const { return this - &lP ; }
+    inline sCountT operator -( const listOfSet_listingVSP_C& lP ) const { return this - &lP ; }
 }
 ;
 
@@ -47692,22 +47692,22 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedList_countTstrz_C : public transactedListC , public datum_countTstrz_C/*1*/
+/*1*/class _export listOfSet_countTstrz_C : public listOfSetC , public datum_countTstrz_C/*1*/
 {
 
     public :
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countTstrz_C.NEWdELcLASSb!||
-    ~transactedList_countTstrz_C( voidT ) ;
+    ~listOfSet_countTstrz_C( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countTstrz_C.dt_list_countTstrz_C!||
-    transactedList_countTstrz_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idNameP , const countT* const pczP ) ;
+    listOfSet_countTstrz_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const countT* const pczP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countTstrz_C.list_countTstrz_C!||
     voidT operator =( const countT* const pcP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_countTstrz_C.operator_assign!||
 
     //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
-    inline sCountT operator -( const transactedList_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
+    inline sCountT operator -( const listOfSet_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
 }
 ;
 
@@ -47731,22 +47731,22 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedList_blob_C : public transactedListC , public datum_blob_C/*1*/
+/*1*/class _export listOfSet_blob_C : public listOfSetC , public datum_blob_C/*1*/
 {
 
     public :
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_blob_C.NEWdELcLASSb!||
-    ~transactedList_blob_C( voidT ) ;
+    ~listOfSet_blob_C( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_blob_C.dt_list_blob_C!||
-    transactedList_blob_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idNameP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
+    listOfSet_blob_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_blob_C.list_blob_C!||
     voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_blob_C.operator_assign!||
 
     //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
-    inline sCountT operator -( const transactedList_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
+    inline sCountT operator -( const listOfSet_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
 }
 ;
 
@@ -47770,16 +47770,16 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedList_countT_C : public transactedListC , public datum_countT_C/*1*/
+/*1*/class _export listOfSet_countT_C : public listOfSetC , public datum_countT_C/*1*/
 {
 
     public :
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countT_C.NEWdELcLASSb!||
-    ~transactedList_countT_C( voidT ) ;
+    ~listOfSet_countT_C( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countT_C.dt_list_countT_C!||
-    transactedList_countT_C( tinS& tinP , const transactedListC& transactedListDadP , const countT idNameP , const countT valueP ) ;
+    listOfSet_countT_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const countT valueP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countT_C.list_countT_C!||
 }
 ;
@@ -47804,19 +47804,19 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export transactedListing_listingVSP_C : public transactedListingC , public datum_listingVSP_C/*1*/
+/*1*/class _export listingOfSet_listingVSP_C : public listingOfSetC , public datum_listingVSP_C/*1*/
 {
 
     public :
 
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_listingVSP_C.NEWdELcLASSb!||
-    ~transactedListing_listingVSP_C( voidT ) ;
+    ~listingOfSet_listingVSP_C( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_listingVSP_C.dt_listing_listingVSP_C!||
-    transactedListing_listingVSP_C( tinS& tinP , const transactedListC& transactedListDadP , const transactedListingC& transactedListingP ) ;
+    listingOfSet_listingVSP_C( tinS& tinP , const listOfSetC& listOfSetDadP , const listingOfSetC& listingOfSetP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_listingVSP_C.listing_listingVSP_C!||
 
-    inline sCountT operator -( const transactedListing_listingVSP_C& lP ) const { return this - &lP ; }
+    inline sCountT operator -( const listingOfSet_listingVSP_C& lP ) const { return this - &lP ; }
 }
 ;
 

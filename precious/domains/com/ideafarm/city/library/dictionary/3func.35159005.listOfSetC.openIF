@@ -40,7 +40,7 @@
             {
             if( pList )
 
-            // pList NOW POINTS TO THE SPECIFIED transactedListC OBJECT; offWoth POINTS TO THIS FINAL *pList, WHICH IS OPEN (GRABBED)
+            // pList NOW POINTS TO THE SPECIFIED listOfSetC OBJECT; offWoth POINTS TO THIS FINAL *pList, WHICH IS OPEN (GRABBED)
             }
                 }
                     break ;
@@ -55,7 +55,7 @@
                 if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
 
                 POPtINaRGS
-                pList = (transactedListC*)tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
+                pList = (listOfSetC*)tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
                 if( F(flagsWalk) & flLISTwALKrETURNcODE_NEWlISTING ) flagsRC &= ~( F(flLISToPENrETURNcODE_LISTeXISTED) ) ;
                 flagsT flagsWalk = pList->walkF( tinP , idGrabLayerP ) ;
                 tinP.ta.pushed.u.listWalk.util.pcP[ 2 ]               = 0 ;
@@ -93,9 +93,9 @@
 
             if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
             __Z( pList ) ;
-            transactedListC* pList = (transactedListC*)hListDadP.osF( ifcIDtYPEhANDLE_LISTING ) ;
+            listOfSetC* pList = (listOfSetC*)hListDadP.osF( ifcIDtYPEhANDLE_LISTING ) ;
 
-            transactedListC* pListRoot = (transactedListC*)(byteT*)aptRoot ;
+            listOfSetC* pListRoot = (listOfSetC*)(byteT*)aptRoot ;
             aptC& aptRoot = PUSE.aptListRootF() ;
 
             //}
@@ -140,12 +140,12 @@
     {
     IFbEcAREFUL
 
-    const boolT  bTransacted = F(flagsPoolFormat) & flPOOLfORMAT_TRANSACTED ;
+    const boolT  bTransacted = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
     const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
 
     flagsT flagsRC = flLISToPENrETURNcODE_null ;
 {
-/*1*/flagsT transactedListC::openIF( tinS& tinP , handleC& hListP , handleC& hListDadP , const countT* const pczKidP , const flagsT flagsP , const countT idGrabLayerP , transactedListC** const ppPreallocatedListsP )/*1*/
+/*1*/flagsT listOfSetC::openIF( tinS& tinP , handleC& hListP , handleC& hListDadP , const countT* const pczKidP , const flagsT flagsP , const countT idGrabLayerP , listOfSetC** const ppPreallocatedListsP )/*1*/
 
 //CS:CODEsYNCH: PSEUDODUPLICATE: 350e6005 35159005
 
@@ -153,20 +153,20 @@
 */
  ppPreallocatedListsP
  flagsP
-  for each offset, a transactedListC object will be constructed in the current pool if one is not already registered in the transactedListC object specified by the prior offset
-   the 0'th offset specifies the name of a transactedListC object that is registered in the root transactedListC object
-  specifies the fully qualified name of a transactedListC object relative to the root transactedListC object
+  for each offset, a listOfSetC object will be constructed in the current pool if one is not already registered in the listOfSetC object specified by the prior offset
+   the 0'th offset specifies the name of a listOfSetC object that is registered in the root listOfSetC object
+  specifies the fully qualified name of a listOfSetC object relative to the root listOfSetC object
   i will modify elements in this string, replacing osTextT* values with numeric values obtained by looking the osTextT up in the dictionary of the current pool
-  a countT value is a valid transactedListC name iff BM_HIGH is set
+  a countT value is a valid listOfSetC name iff BM_HIGH is set
   each element of this null terminated string must either be a valid list name or the address of a null terminated string of osTextT
   must not be 0 or null length
  pczNameP
   this handle will remain open until after i return
-  open handle to a transactedListC in the current pool
+  open handle to a listOfSetC in the current pool
  hListFromP
  tinP
 arguments
-i open the specified transactedListC object, creating all specified dad lists in the current pool that do not exist
+i open the specified listOfSetC object, creating all specified dad lists in the current pool that do not exist
 /*
 
 //

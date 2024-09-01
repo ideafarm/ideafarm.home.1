@@ -15,7 +15,7 @@
 #define fliLISTINGc_DESTRUCTING         0x08
 #define fliLISTINGc_FIELD               0x04
 #define fliLISTINGc_RECORD              0x02
-#define fliLISTINGc_TRANSACTION         0x01
+#define fliLISTINGc_SET         0x01
 /*3*/
 
 #define offLISTINGgRABBEDbIT 7
@@ -26,7 +26,7 @@
 // 2. REDEFINE THE ABOVE CONSTANTS TO BE 0x8000, 0x4000, ETC.
 // 1. COMBINE listingC::flagsi AND listingC::idTypeDatum INTO A SINGLE count01T FIELD
 // IF A NEW FLAG IS NEEDED, THEN DO THIS
-// THERE ARE NO UNUSED BITS, AS OF 20240831@1257, WHEN fliLISTINGc_TRANSACTION WAS ADDED
+// THERE ARE NO UNUSED BITS, AS OF 20240831@1257, WHEN fliLISTINGc_SET WAS ADDED
 
 // CS:CODEsYNC 1100039e 1100039e: ALL OF THE ABOVE CONSTANTS MUST BE OR'D TOGETHER IN fliLISTINGc_maskBITSuSED
 
@@ -37,7 +37,7 @@
         fliLISTINGc_DESTRUCTING         |                                                           \
         fliLISTINGc_FIELD               |                                                           \
         fliLISTINGc_RECORD              |                                                           \
-        fliLISTINGc_TRANSACTION         |                                                           \
+        fliLISTINGc_SET         |                                                           \
     (                                                                                               \
                                                                                                     \
 #define fliLISTINGc_maskBITSuSED                                                                    \

@@ -3062,9 +3062,9 @@ void elf_obey_C::liveF( void )
                 //THIS LIST IS IN REVERSE ORDER OF WHAT WILL APPEAR IN ipdos.h
                 char* ppostFrom[] =
                 {
-                    "1snip.15*.transactedListing_countTstrz_C"              ,
-                    "1snip.15*.transactedListing_blob_C"                    ,
-                    "1snip.15*.transactedListing_countT_C"                  ,
+                    "1snip.15*.listingOfSet_countTstrz_C"                   ,
+                    "1snip.15*.listingOfSet_blob_C"                         ,
+                    "1snip.15*.listingOfSet_countT_C"                       ,
 
                     "1snip.15*.list_listingVSP_C"                           ,
                     "1snip.15*.list_countT_C"                               ,
@@ -3074,10 +3074,10 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.listing_countT_C"                            ,
                     "1snip.15*.listing_blob_C"                              ,
                     "1snip.15*.listing_countTstrz_C"                        ,
-                    "1snip.15*.transactedListC"                             ,
-                    "1snip.15*.transactedListingC"                          ,
-                    "1snip.15*.aptTransactionStateC"                        ,
-                    "1snip.15*.transactionStateS"                           ,
+                    "1snip.15*.listOfSetC"                                  ,
+                    "1snip.15*.listingOfSetC"                               ,
+                    "1snip.15*.aptSetStateC"                                ,
+                    "1snip.15*.setStateS"                                   ,
 
 
                     "1snip.15*.wightIdgC"                                   ,

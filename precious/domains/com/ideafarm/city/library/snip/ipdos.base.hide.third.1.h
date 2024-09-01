@@ -413,18 +413,18 @@ class   /*ff*/jotFilesC/*ff*/                   ; /*ff*//**//*ff*/
 class   /*ff*/nicNamesAllowedStripeWebHookNotificationsC/*ff*/ ; /*ff*//**//*ff*/
 class   /*ff*/homeIdgC/*ff*/                    ; /*ff*//**//*ff*/
 
-class   /*ff*/transactedListing_countTstrz_C/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/transactedListing_blob_C/*ff*/                            ; /*ff*//**//*ff*/
-class   /*ff*/transactedListing_countT_C/*ff*/                          ; /*ff*//**//*ff*/
-class   /*ff*/transactedList_listingVSP_C/*ff*/                         ; /*ff*//**//*ff*/
-class   /*ff*/transactedList_countTstrz_C/*ff*/                         ; /*ff*//**//*ff*/
-class   /*ff*/transactedList_blob_C/*ff*/                               ; /*ff*//**//*ff*/
-class   /*ff*/transactedList_countT_C/*ff*/                             ; /*ff*//**//*ff*/
-class   /*ff*/transactedListing_listingVSP_C/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/transactedListC/*ff*/                                     ; /*ff*//**//*ff*/
-class   /*ff*/transactedListingC/*ff*/                                  ; /*ff*//**//*ff*/
-class   /*ff*/aptTransactionStateC/*ff*/                                ; /*ff*//**//*ff*/
-class   /*ff*/transactionStateS/*ff*/                                   ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_countTstrz_C/*ff*/                      ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_blob_C/*ff*/                            ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_countT_C/*ff*/                          ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_listingVSP_C/*ff*/                         ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_countTstrz_C/*ff*/                         ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_blob_C/*ff*/                               ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_countT_C/*ff*/                             ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_listingVSP_C/*ff*/                      ; /*ff*//**//*ff*/
+class   /*ff*/listOfSetC/*ff*/                                     ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSetC/*ff*/                                  ; /*ff*//**//*ff*/
+class   /*ff*/aptSetStateC/*ff*/                                ; /*ff*//**//*ff*/
+class   /*ff*/setStateS/*ff*/                                   ; /*ff*//**//*ff*/
 
 
 //INCLUDE GENERATED SNIPPETS HERE
@@ -33912,7 +33912,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define flPOOLc_KEEPeMPTIES                   0xe00040a1
 #define flPOOLc_DOnOTbLOCK                    0xe00080a1
 #define flPOOLc_NOsEXiNpOOL                   0xe00100a1
-#define flPOOLc_TRANSACTED                    0xe00200a1
+#define flPOOLc_SETS                    0xe00200a1
 /*3*/
 #define flPOOLc_null    0xe00000a1
 
@@ -34291,7 +34291,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*3*/
 #define flPOOLfORMAT_NOTES                        0xe00001a4
-#define flPOOLfORMAT_TRANSACTED                   0xe00002a4
+#define flPOOLfORMAT_SETS                   0xe00002a4
 /*3*/
 #define flPOOLfORMAT_null    0xe00000a4
 
@@ -34597,8 +34597,8 @@ coding standard
 #define LISTnAMEsYS_PROCESSrEPORTfIELDe0                                 0x80000035
 #define LISTnAMEsYS_PROCESSrEPORTfIELDf0                                 0x80000036
 #define LISTnAMEsYS_PROCESSrEPORTfIELD01                                 0x80000037
-#define LISTnAMEsYS_TRANSACTIONS                                         0x80000038
-#define LISTnAMEsYS_TRANSACTIONsTATE                                     0x80000039
+#define LISTnAMEsYS_SETS                                         0x80000038
+#define LISTnAMEsYS_SETsTATE                                     0x80000039
 #define LISTnAMEsYS_max                                                  0x80000039
 
 //
@@ -34708,7 +34708,7 @@ coding standard
 #define fliLISTINGc_maskBITSuSED                                                                    \
                                                                                                     \
     (                                                                                               \
-        fliLISTINGc_TRANSACTION         |                                                           \
+        fliLISTINGc_SET         |                                                           \
         fliLISTINGc_RECORD              |                                                           \
         fliLISTINGc_FIELD               |                                                           \
         fliLISTINGc_DESTRUCTING         |                                                           \
@@ -34719,7 +34719,7 @@ coding standard
 
 // CS:CODEsYNC 1100039e 1100039e: ALL OF THE ABOVE CONSTANTS MUST BE OR'D TOGETHER IN fliLISTINGc_maskBITSuSED
 
-// THERE ARE NO UNUSED BITS, AS OF 20240831@1257, WHEN fliLISTINGc_TRANSACTION WAS ADDED
+// THERE ARE NO UNUSED BITS, AS OF 20240831@1257, WHEN fliLISTINGc_SET WAS ADDED
 // IF A NEW FLAG IS NEEDED, THEN DO THIS
 // 1. COMBINE listingC::flagsi AND listingC::idTypeDatum INTO A SINGLE count01T FIELD
 // 2. REDEFINE THE ABOVE CONSTANTS TO BE 0x8000, 0x4000, ETC.
@@ -34730,7 +34730,7 @@ coding standard
 #define offLISTINGgRABBEDbIT 7
 
 /*3*/
-#define fliLISTINGc_TRANSACTION         0x01
+#define fliLISTINGc_SET         0x01
 #define fliLISTINGc_RECORD              0x02
 #define fliLISTINGc_FIELD               0x04
 #define fliLISTINGc_DESTRUCTING         0x08
