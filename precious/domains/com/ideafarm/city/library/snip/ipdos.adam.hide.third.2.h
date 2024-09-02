@@ -47143,13 +47143,16 @@ i am nonconformant in that all of my member function definitions are in a single
 
 /*1*/class _export listOfSetC : public listC , public aptSetStateC/*1*/
 {
+
+
+    public :
+
+    NEWdELcLASSpROTOS
+
     inline listOfSetC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
     aptSetStateC() ,
     listC( tinP , idNameP , flagsP )
     {}
-
-
-    public :
 
     inline listOfSetC( tinS& tinP , const listOfSetC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
     aptSetStateC() ,

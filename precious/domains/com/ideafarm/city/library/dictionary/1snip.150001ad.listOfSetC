@@ -14,12 +14,14 @@
     aptSetStateC() ,
     inline listOfSetC( tinS& tinP , const listOfSetC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
 
-    public :
-
     {}
     listC( tinP , idNameP , flagsP )
     aptSetStateC() ,
-    inline listOfSetC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
+    inline listOfSetC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :        // ILLEGAL TO CALL THIS EXCEPT BY poolC::face_poolC_S::face_poolC_S TO CONSTRUCT A SINGLE ROOT listC FOR EACH POOL
+
+    NEWdELcLASSpROTOS
+
+    public :
 {
 /*1*/class _export listOfSetC : public listC , public aptSetStateC/*1*/
 

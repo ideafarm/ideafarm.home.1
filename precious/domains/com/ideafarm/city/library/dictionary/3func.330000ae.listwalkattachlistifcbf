@@ -28,7 +28,7 @@
                         _IO_
                     {
                     byteT* pbh = (byteT*)ppHand[ !offWoth ] ;
-                    listC* pNew = pNewF( tinP , ppPreP , idNameWantP ) ;
+                    listC* pNew = pNewF( tinP , ppPreP , idNameWantP , bOfSetP ) ;
                     _IO_
                 {
                 else
@@ -58,7 +58,7 @@
         }
             pListFoundP = pNew ;
             pNew->openF( tinP , *ppHand[ !offWoth ] , 0 , tinP.ta.retained.u.listWalk.walk.idGrabLayer ) ;
-            listC* pNew = pNewF( tinP , ppPreP , idNameWantP ) ;
+            listC* pNew = pNewF( tinP , ppPreP , idNameWantP , bOfSetP ) ;
             _IO_
         {
         if( !( F(flagsP) & flLISToPEN_IFeXISTS ) )
@@ -69,6 +69,8 @@
     listC*&   pListFoundP       = *(listC**)&tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
     flagsT    flagsP            =            tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
     countT    idNameWantP       =            tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+
+    boolT     bOfSetP           =            tinP.ta.retained.u.listWalk.util.pcP[ 4 ] ;
 
     listC**   ppPreP            = tinP.ta.pushed.u.listWalk.cbf.ppPreallocatedListsP ;
 
@@ -105,10 +107,17 @@
         for( countT offi = 0 ; ppPreP[ offi ] ; offi ++ )
     {
     else
-    if( !ppPreP ) { pNew = new( 0 , tinP , LF ) listC( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idNameWantP ) ; ___( pNew ) ; }
+    }
+        ___( pNew ) ;
+        ;
+            : new( 0 , tinP , LF ) listC(      tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
+            ? new( 0 , tinP , LF ) listOfSetC( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
+        pNew = bOfSetP
+    {
+    if( !ppPreP )
     ZE( listC* , pNew ) ;
 {
-listC* pNewF( tinS& tinP , listC** ppPreP , const countT idNameWantP )
+listC* pNewF( tinS& tinP , listC** ppPreP , const countT idNameWantP , const boolT bOfSetP )
 
 /**/
 */

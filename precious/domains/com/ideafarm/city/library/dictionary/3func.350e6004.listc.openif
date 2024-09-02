@@ -15,7 +15,7 @@
         }
             }
                 ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
-                if( tinP.pEther ) tinP.pEther->traceF( tinP , T(          "listC::openIF / napping before retrying") ) ;
+                if( tinP.pEther ) tinP.pEther->traceF( tinP , T("listC::openIF / napping before retrying") ) ;
             {
             else if( !hListP )
                  if( !bRetry ) break ;
@@ -26,7 +26,7 @@
                 THREADmODE3rESTORE
                 while( *ppc ) { DEL( *( ppc ++ ) ) ; }
                 THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
- listC** ppc = ppPreallocatedLists ;
+                listC** ppc = ppPreallocatedLists ;
             {
             if( ppPreallocatedLists )
 
@@ -56,7 +56,7 @@
                 if( !POOP )
 
                 __Z( pList ) ;
- listC* pList = &APT( listC , aptRoot ) ;
+                listC* pList = &APT( listC , aptRoot ) ;
             {
             if( aptRoot )
 
@@ -67,7 +67,15 @@
                     }
                         }
                             THREADmODE3rESTORE
-                            DEL( pNew ) ;
+
+                            }
+                                DEL( pd ) ;
+                                                              pNew = 0 ;
+                                listOfSetC* pd = (listOfSetC*)pNew ;
+                            {
+                            else
+                            if( !bOfSet ) { DEL( pNew ) ; }
+
                             THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
                         {
                         if( aptRoot.setIfZeF( aptNew ) )
@@ -76,7 +84,11 @@
                         }
                             POPtINaRGS
                             if( pNew && !( pNew->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
-                            pNew = new( 0 , tinP , LF ) listC( tinP , LISTnAMEsYS_ROOT , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pNew ) ;
+                            ;
+                                : new( 0 , tinP , LF ) listC(      tinP , LISTnAMEsYS_ROOT , flLISTINGc_DOnOTrEGISTERiNtIN )
+                                ? new( 0 , tinP , LF ) listOfSetC( tinP , LISTnAMEsYS_ROOT , flLISTINGc_DOnOTrEGISTERiNtIN )
+                            pNew = bOfSet
+
                             PUSHtINaRGS
                         {
                         THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc | flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ;
@@ -90,28 +102,33 @@
                             __Z( pPre ) ;
                             THREADmODE3rESTORE
                             //THREADmODE4rESTORE
-                            pPre = new( 0 , tinP , LF ) listC( tinP , LISTnAMEsYS_PREALLOCATED , flLISTINGc_DOnOTrEGISTERiNtIN ) ; ___( pPre ) ;
+
+                            ___( pPre ) ;
+                            ;
+                                : new( 0 , tinP , LF ) listC(      tinP , LISTnAMEsYS_PREALLOCATED , flLISTINGc_DOnOTrEGISTERiNtIN )
+                                ? new( 0 , tinP , LF ) listOfSetC( tinP , LISTnAMEsYS_PREALLOCATED , flLISTINGc_DOnOTrEGISTERiNtIN )
+                            pPre = bOfSet
                             //THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
                             THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc | flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ;
 
                             ZE( listC* , pPre ) ;
                         {
                         while( !POOP && ccName -- )
-    listC** ppc = ppPreallocatedLists ;
+                        listC** ppc = ppPreallocatedLists ;
                     {
                 {
                 if( !POOP )
 
-                __Z( ppPreallocatedLists           ) ;
+                __Z( ppPreallocatedLists ) ;
 
-                ppPreallocatedLists           = (listC**)tinP.tlsNewF( LF , ( ccName + 1 ) * sizeof( listC* ) ) ;
+                ppPreallocatedLists = (listC**)tinP.tlsNewF( LF , ( ccName + 1 ) * sizeof( listC* ) ) ;
 
                 countT ccName = thirdC::c_strlenIF( tinP , pczNameP ) ;
             {
             else if( !( F(flagsP) & flLISToPEN_IFeXISTS ) )
             if( aptRoot ) flagsRC |= flLISToPENrETURNcODE_ROOTlISTeXISTED ;
 
-            ZE( listC** , ppPreallocatedLists           ) ; // NULL TERMINATED LIST OF PREALLOCATED listC ; CBF DISPENSES BY CLAIMING THE LEAF AND SETTING IT TO ZE
+            ZE( listC** , ppPreallocatedLists ) ; // NULL TERMINATED LIST OF PREALLOCATED listC ; CBF DISPENSES BY CLAIMING THE LEAF AND SETTING IT TO ZE
 
             //if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[&aptRoot]:  (foreign ordering)    ")+TF2((countT)&aptRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN) ) ;
 
@@ -137,12 +154,12 @@
         if( POOP ) return flagsRC ;
         __Z( pczNameP ) ;
         __( ~hListP ) ;
-        __(  bTransacted ) ;
+        //U::__(  bOfSet ) ;
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL
 
-    const boolT  bTransacted = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
+    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
     const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
 
     flagsT flagsRC = flLISToPENrETURNcODE_null ;

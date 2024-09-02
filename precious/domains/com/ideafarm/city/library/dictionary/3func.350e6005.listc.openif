@@ -67,6 +67,8 @@
                 tinP.ta.pushed.u.listWalk.walk.pOffWothP              = &offWoth ;
                 tinP.ta.pushed.u.listWalk.walk.pHandleRootP           = &hListDadP ;
 
+                tinP.ta.retained.u.listWalk.util.pcP[ 4 ]             = bOfSet ;
+
                 ;
                     : flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK
                     ? flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK | flLISTwALK_RETAINrOOT
@@ -93,9 +95,9 @@
 
             if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
             __Z( pList ) ;
-  listC* pList = (listC*)hListDadP.osF( ifcIDtYPEhANDLE_LISTING ) ;
+            listC* pList = (listC*)hListDadP.osF( ifcIDtYPEhANDLE_LISTING ) ;
 
-  listC* pListRoot = (listC*)(byteT*)aptRoot ;
+            listC* pListRoot = (listC*)(byteT*)aptRoot ;
             aptC& aptRoot = PUSE.aptListRootF() ;
 
             //}
@@ -134,13 +136,13 @@
         __Z( pczKidP ) ;
         __Z( hListDadP ) ;
         __( ~hListP ) ;
-        __(  bTransacted ) ;
+        //U::__(  bOfSet ) ;
 
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL
 
-    const boolT  bTransacted = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
+    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
     const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
 
     flagsT flagsRC = flLISToPENrETURNcODE_null ;

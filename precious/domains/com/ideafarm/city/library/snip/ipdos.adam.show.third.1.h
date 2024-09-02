@@ -8115,10 +8115,11 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifciDtYPEdROPnOTE_hoverC                                        0xdddd043b
 #define ifciDtYPEdROPnOTE_funnelHornC                                   0xdddd043c
 #define ifciDtYPEdROPnOTE_nicNamesAllowedStripeWebHookNotificationsC    0xdddd043d
+#define ifciDtYPEdROPnOTE_listOfSetC                                    0xdddd043e
 
 /*3*/
 #define ifciDtYPEdROPnOTE_min     0xdddd033e
-#define ifciDtYPEdROPnOTE_max     0xdddd043d
+#define ifciDtYPEdROPnOTE_max     0xdddd043e
 
 
 //
