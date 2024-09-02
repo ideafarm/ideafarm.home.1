@@ -31366,6 +31366,7 @@ VERYsMARTpOINTERcLASSdEF(     listing   , listingC ,       01 )
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e201b.poolc.testDropHeadersF!||
     voidT refresh_ppSlots_F( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e201c.poolC.refresh_ppSlots_F!||
+    countT expCbDropBigEnoughF( countT cbP ) ;
 
     friend class datum_countT_C ;
     friend class listing_listingVSP_C ;

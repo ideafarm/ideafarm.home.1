@@ -8,12 +8,12 @@
 
 
 }
-    }
-        CONoUTrAW( "\"\r\n" ) ;
-        CONoUTrAW( pzMetaHead->postName ) ;
-        CONoUTrAW( " sexC ++++++++ [postName]: \"" ) ;
-    {
-    if( !POOP )
+    //}
+    //    CONoUTrAW( "\"\r\n" ) ;
+    //    CONoUTrAW( pzMetaHead->postName ) ;
+    //    CONoUTrAW( " sexC ++++++++ [postName]: \"" ) ;
+    //{
+    //if( !POOP )
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------
     // 
@@ -23,9 +23,11 @@
     }
         }
             dec02AM( pReg->cRefPoolReg ) ;
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " ungrabbed  " , offSexBit , "\r\n" ) ; }
             if( !btrAM( pReg->pbSexGrabbedBits , offSexBit ) ) { BLAMMO ; }
             if(  !bGrabBitSet ) { BLAMMO ; }
             boolT bGrabBitSet = !! ( pReg->pbSexGrabbedBits[ offSexByte ] & maskSexByte ) ;
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " ungrabbing " , offSexBit , "\r\n" ) ; }
 
             POOPIE
         {
@@ -416,7 +418,7 @@
                     // ALLOCATE pbMeta FROM *pPoolContainsMe TO AVOID THE OVERHEAD OF USING A napkinC AND ESCAPE THE BASE O.S. ALLOCATION GRAIN MINIMUM AND MINIMIZE ADDRESS SPACE FRAGMENTATION
                 {
                 )
-                    1 << expCbDropP != sizeof( listC )
+                    expCbDropP != expCbDropAvoid
                     &&
                     tinP.pag1->pPoolAdamTemp
                     &&
@@ -606,7 +608,7 @@
             // ALLOCATE pbData FROM *pPoolContainsMe TO AVOID THE OVERHEAD OF USING A napkinC AND ESCAPE THE BASE O.S. ALLOCATION GRAIN MINIMUM AND MINIMIZE ADDRESS SPACE FRAGMENTATION
         {
         )
-            1 << expCbDropP != sizeof( listC )
+            expCbDropP != expCbDropAvoid
             &&
             tinP.pag1->pPoolAdamTemp
             &&
@@ -622,6 +624,11 @@
         (
         if
         ZE( boolT , bFormatDataBlob ) ;
+
+        ;
+            : pPoolContainsMe->expCbDropBigEnoughF( sizeof( listC      ) )
+            ? pPoolContainsMe->expCbDropBigEnoughF( sizeof( listOfSetC ) )
+        const countT expCbDropAvoid = F(pPoolContainsMe->flagsPoolFormatF()) & flPOOLfORMAT_SETS
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // TRY TO ALLOCATE pbData FROM A SIBLING sexC (ANOTHER sexC, EXISTING OR THAT I CAUSE TO BE CREATED, OF *pPoolContainsMe
@@ -669,6 +676,7 @@
 
         }
             THREADmODE2rESTORE
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " grabbed  " , offSexBit , "\r\n" ) ; }
             }
                 }
                     ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
@@ -677,6 +685,7 @@
                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
             {
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " grabbing " , offSexBit , "\r\n" ) ; }
             POOPIE
         {
         if( pReg )

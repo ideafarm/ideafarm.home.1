@@ -113,15 +113,9 @@
                 {
                 if( !guts.ppSlots[ offs ] )
             {
-            if( cbuMax && offs <= guts.expCbDropMax )
+            if( offs != - 1 && offs <= guts.expCbDropMax )
 
-            }
-                cbuMax <<= 1 ;
-                offs ++ ;
-            {
-            while( cbuMax && cbP > cbuMax )
-            countT cbuMax = 1 << offs ;
-            countT offs = guts.expCbDropMin ;
+            countT offs = expCbDropBigEnoughF( cbP ) ;
 
             //}
             //    }
