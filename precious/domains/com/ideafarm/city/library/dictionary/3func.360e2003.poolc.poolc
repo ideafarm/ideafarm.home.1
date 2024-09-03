@@ -111,7 +111,7 @@
                     guts.ppSlots[ offs ]->makeSexF( tinP , expSlotsWanted ) ;
 
                     }
-                        guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , offs , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
+                        guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , offs , face.pcCbDropAdjust[ offs ] , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
         
                         if( F(guts.flagsCt) & flPOOLc_NOsEXiNpOOL ) flagsc |= flSLOTSc_NOsEXiNpOOL ;
                         if( F(guts.flagsCt) & flPOOLc_NOTES       ) flagsc |= flSLOTSc_NOTES       ;
@@ -402,6 +402,7 @@ batPoolCt
 /*1*/poolC::poolC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , const countT* pczHintPreallocationP , countT idMemorySpaceP ) :/*1*/
 
 }
+    thirdC::c_memsetIF( tinP , (byteT*)pcCbDropAdjust , sizeof pcCbDropAdjust ) ;
     putNegAM( *(countT*)&finger , FINGERnEG_POOLcfACE ) ;
     _IO_
 {
