@@ -28,29 +28,29 @@
         if( pbP ) { BLAMMO ; }
 
         }
-            if( !pbP && offs - offsTry ) { BLAMMOiD( offs - offsTry ) ; }
+            //if( !pbP && offs - offsTry ) { BLAMMOiD( offs - offsTry ) ; }
 
-            }
-                pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
-
-                }
-                    OStEXTC(  ostoSay , offsTry , 0 ) ;
-                    OStEXTAK( ostoSay , "    " ) ;
-                {
-                if( !pbP )
-                OStEXTC(  ostoSay , offs , 0 ) ;
-                OStEXTAK( ostoSay , "    " ) ;
-                OStEXTC(  ostoSay , mask , 0 ) ;
-                OStEXTAK( ostoSay , "    " ) ;
-                OStEXTC(  ostoSay , dropHeader , '0' ) ;
-                OStEXTAK( ostoSay , "    " ) ;
-                OStEXTC(  ostoSay , guts.expCbDropMin , 0 ) ;
-                OStEXTAK( ostoSay , "    " ) ;
-                OStEXTC(  ostoSay , guts.cBitsExpCbDrop , 0 ) ;
-                OStEXTA( ostoSay , !pbP ? "poolC::operator (): trying harder succeeded [cBitsExpCbDrop,expCbDropMin,dropHeader,mask,offs,offsTry]:    " : "poolC::operator (): trying harder failed [cBitsExpCbDrop,expCbDropMin,dropHeader,mask,offs]:    " ) ;
-                OStEXT( ostoSay , TUCK << 1 ) ;
-            {
-            if( pEtRock )
+            //}
+            //    pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+            //
+            //    }
+            //        OStEXTC(  ostoSay , offsTry , 0 ) ;
+            //        OStEXTAK( ostoSay , "    " ) ;
+            //    {
+            //    if( !pbP )
+            //    OStEXTC(  ostoSay , offs , 0 ) ;
+            //    OStEXTAK( ostoSay , "    " ) ;
+            //    OStEXTC(  ostoSay , mask , 0 ) ;
+            //    OStEXTAK( ostoSay , "    " ) ;
+            //    OStEXTC(  ostoSay , dropHeader , '0' ) ;
+            //    OStEXTAK( ostoSay , "    " ) ;
+            //    OStEXTC(  ostoSay , guts.expCbDropMin , 0 ) ;
+            //    OStEXTAK( ostoSay , "    " ) ;
+            //    OStEXTC(  ostoSay , guts.cBitsExpCbDrop , 0 ) ;
+            //    OStEXTA( ostoSay , !pbP ? "poolC::operator (): trying harder succeeded [cBitsExpCbDrop,expCbDropMin,dropHeader,mask,offs,offsTry]:    " : "poolC::operator (): trying harder failed [cBitsExpCbDrop,expCbDropMin,dropHeader,mask,offs]:    " ) ;
+            //    OStEXT( ostoSay , TUCK << 1 ) ;
+            //{
+            //if( pEtRock )
 
             }
                 }
@@ -62,15 +62,16 @@
             for( offsTry = 0 ; offsTry < CsLOTsIZESmAX ; offsTry ++ )
             ZE( countT , offsTry ) ;
 
-            }
-                pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
-
-                OStEXTA( ostoSay , "poolC::operator (): trying harder" ) ;
-                OStEXT( ostoSay , TUCK << 0 ) ;
-            {
-            if( pEtRock )
-            etherC* pEtRock = &etherC::etRockIF( tinP ) ;
+            //}
+            //    pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+            //
+            //    OStEXTA( ostoSay , "poolC::operator (): trying harder" ) ;
+            //    OStEXT( ostoSay , TUCK << 0 ) ;
+            //{
+            //if( pEtRock )
+            //etherC* pEtRock = &etherC::etRockIF( tinP ) ;
         {
+#endif
         else
         }
             (*guts.ppSlots[ offs ])( tinP , pbP ) ;
@@ -80,30 +81,37 @@
             if( c_this && F(guts.flagsCt) & flPOOLc_READoNLY ) { BLAMMO ; }
             countT c_this = (countT)this ;
         {
-        if( !( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
+        if( bDropHeader && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
+#if defined( NEVERdEFINED )
 
         //}
         //    CONoUTrAW7( "[dropHeader,mask,offs]:    " , dropHeader , "    " , mask , "    " , offs , "\r\n" ) ;
         //{
         //if( bChatter )
 
-        countT offs = guts.expCbDropMin + ( dropHeader & mask ) ;
+        countT offs = bDropHeader ? guts.expCbDropMin + ( dropHeader & mask ) : 0 ;
         countT mask = ( 1 << guts.cBitsExpCbDrop ) - 1 ;
 
-        if( dropHeader == getNegAM( FINGERnEG_dropHeaderInitialize ) ) { BLAMMOiD( pbP ) ; }
-        countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
+        if( bDropHeader && dropHeader == getNegAM( FINGERnEG_dropHeaderInitialize ) ) { BLAMMOiD( pbP ) ; }
+        countT dropHeader = bDropHeader ? ((countT*)pbP)[ - 1 ] : 0 ;
 
         }
             if( dropSeparator != getNegAM( FINGERnEG_dropSeparator ) ) { BLAMMOiD( dropSeparator ) ; }
-            countT& dropSeparator = ((countT*)pbP)[ - 2 ] ;
+            countT& dropSeparator = ((countT*)pbP)[ - 1 - bDropHeader ] ;
         {
         if( face.cbDropSeparator == sizeof( countT ) )
 
         if( pbP < processGlobal1I.pbAddressMin || pbP > processGlobal1I.pbAddressMax ) { BLAMMOiD( pbP ) ; }
-    {
-    if( pbP )
 
-    if( processGlobal1I.pbHeap <= pbP && pbP < processGlobal1I.pbHeapEnd ) processGlobal4I.heap.delF( tinP , pbP ) ;
+*(countT*)&bDropHeader = 1 ;
+        const boolT bDropHeader = !( F(face.flagsPoolFormat ) & flPOOLfORMAT_NOdROPhEADERS ) ;
+    {
+    else if( pbP )
+    }
+        if( pbP ) { BLAMMO ; }
+        processGlobal4I.heap.delF( tinP , pbP ) ;
+    {
+    if( processGlobal1I.pbHeap <= pbP && pbP < processGlobal1I.pbHeapEnd )
     //20201106@1436: WITHOUT ANALYSIS, CHANGED "< pbP" to "<= pbP"
 
     //I CAN BE CALLED WHEN this IS NULL, AND I MUST BEHAVE OK

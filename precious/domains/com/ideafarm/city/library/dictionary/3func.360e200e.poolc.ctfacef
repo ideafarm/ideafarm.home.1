@@ -14,14 +14,18 @@
         }
             inc02AM( face.cRef ) ;
 
-            if( bMeTransacted != bHeTransacted ) { BLAMMOiD( 0x33334444 ) ; }
-            if( bMeNotes      != bHeNotes      ) { BLAMMOiD( 0x11112222 ) ; }
+            if( bMeNoDropHeaders != bHeNoDropHeaders ) { BLAMMOiD( 0x55556666 ) ; }
+            if( bMeSets          != bHeSets          ) { BLAMMOiD( 0x33334444 ) ; }
+            if( bMeNotes         != bHeNotes         ) { BLAMMOiD( 0x11112222 ) ; }
 
-            boolT bHeTransacted = !!( F(face.flagsPoolFormat  ) & flPOOLfORMAT_SETS ) ;
-            boolT bMeTransacted = !!(      F(flagsPoolFormatP ) & flPOOLfORMAT_SETS ) ;
+            boolT bHeNoDropHeaders = !!( F(face.flagsPoolFormat  ) & flPOOLfORMAT_NOdROPhEADERS ) ;
+            boolT bMeNoDropHeaders = !!(      F(flagsPoolFormatP ) & flPOOLfORMAT_NOdROPhEADERS ) ;
 
-            boolT bHeNotes      = !!( F(face.flagsPoolFormat  ) & flPOOLfORMAT_NOTES      ) ;
-            boolT bMeNotes      = !!(      F(flagsPoolFormatP ) & flPOOLfORMAT_NOTES      ) ;
+            boolT bHeSets          = !!( F(face.flagsPoolFormat  ) & flPOOLfORMAT_SETS          ) ;
+            boolT bMeSets          = !!(      F(flagsPoolFormatP ) & flPOOLfORMAT_SETS          ) ;
+
+            boolT bHeNotes         = !!( F(face.flagsPoolFormat  ) & flPOOLfORMAT_NOTES         ) ;
+            boolT bMeNotes         = !!(      F(flagsPoolFormatP ) & flPOOLfORMAT_NOTES         ) ;
 
             face_poolC_S& face = *(face_poolC_S*)(byteT*)napFace ;
         {

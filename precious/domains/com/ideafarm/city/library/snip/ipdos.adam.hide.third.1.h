@@ -33846,6 +33846,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define fliSEXc_NOTES                         0xe00004ff
 #define fliSEXc_MAPPEDtOdISK                  0xe00008ff
 #define fliSEXc_NOsEXiNpOOL                   0xe00010ff
+#define fliSEXc_NOdROPhEADERS                 0xe00020ff
 /*3*/
 
 
@@ -33876,6 +33877,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define flSLOTSc_READoNLY                      0xe00001a0
 #define flSLOTSc_NOTES                         0xe00002a0
 #define flSLOTSc_NOsEXiNpOOL                   0xe00004a0
+#define flSLOTSc_NOdROPhEADERS                 0xe00008a0
 /*3*/
 #define flSLOTSc_null    0xe00000a0
 
@@ -33913,7 +33915,8 @@ it is illegal to refer to this symbol in the definition of an adam
 #define flPOOLc_KEEPeMPTIES                   0xe00040a1
 #define flPOOLc_DOnOTbLOCK                    0xe00080a1
 #define flPOOLc_NOsEXiNpOOL                   0xe00100a1
-#define flPOOLc_SETS                    0xe00200a1
+#define flPOOLc_SETS                          0xe00200a1
+#define flPOOLc_NOdROPhEADERS                 0xe00400a1
 /*3*/
 #define flPOOLc_null    0xe00000a1
 
@@ -34291,8 +34294,9 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /*3*/
-#define flPOOLfORMAT_NOTES                        0xe00001a4
-#define flPOOLfORMAT_SETS                   0xe00002a4
+#define flPOOLfORMAT_NOTES                          0xe00001a4
+#define flPOOLfORMAT_SETS                           0xe00002a4
+#define flPOOLfORMAT_NOdROPhEADERS                  0xe00004a4
 /*3*/
 #define flPOOLfORMAT_null    0xe00000a4
 

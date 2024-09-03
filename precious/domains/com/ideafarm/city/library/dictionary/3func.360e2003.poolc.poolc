@@ -113,10 +113,11 @@
                     }
                         guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , offs , face.pcCbDropAdjust[ offs ] , face.cbDropSeparator , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
         
-                        if( F(guts.flagsCt) & flPOOLc_NOsEXiNpOOL ) flagsc |= flSLOTSc_NOsEXiNpOOL ;
-                        if( F(guts.flagsCt) & flPOOLc_NOTES       ) flagsc |= flSLOTSc_NOTES       ;
-                        if( F(guts.flagsCt) & flPOOLc_READoNLY    ) flagsc |= flSLOTSc_READoNLY    ;
-                        flagsT                                      flagsc  = flSLOTSc_null        ;
+                        if( F(guts.flagsCt) & flPOOLc_NOdROPhEADERS ) flagsc |= flSLOTSc_NOdROPhEADERS ;
+                        if( F(guts.flagsCt) & flPOOLc_NOsEXiNpOOL   ) flagsc |= flSLOTSc_NOsEXiNpOOL   ;
+                        if( F(guts.flagsCt) & flPOOLc_NOTES         ) flagsc |= flSLOTSc_NOTES         ;
+                        if( F(guts.flagsCt) & flPOOLc_READoNLY      ) flagsc |= flSLOTSc_READoNLY      ;
+                        flagsT                                        flagsc  = flSLOTSc_null          ;
                     {
                     if( !guts.ppSlots[ offs ] )
 
@@ -335,9 +336,11 @@ flagsInstance( flPOOLiNSTANCE_null ) ,
             cbDropSeparatorP , idStateSpaceP
             ,
             )
-                ( F(flagsP) & flPOOLc_SETS ? flPOOLfORMAT_SETS : flPOOLfORMAT_null )
+                ( F(flagsP) & flPOOLc_NOdROPhEADERS ? flPOOLfORMAT_NOdROPhEADERS : flPOOLfORMAT_null )
                 |
-                ( F(flagsP) & flPOOLc_NOTES      ? flPOOLfORMAT_NOTES      : flPOOLfORMAT_null )
+                ( F(flagsP) & flPOOLc_SETS          ? flPOOLfORMAT_SETS          : flPOOLfORMAT_null )
+                |
+                ( F(flagsP) & flPOOLc_NOTES         ? flPOOLfORMAT_NOTES         : flPOOLfORMAT_null )
             (
             tinP , idLineCtP , idiFileCtP , pbBitsCtP ,
         (
