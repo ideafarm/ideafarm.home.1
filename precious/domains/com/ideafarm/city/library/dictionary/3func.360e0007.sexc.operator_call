@@ -153,14 +153,14 @@
             byteT* pbv = pbData + offSlot * cbGross ;
         {
         countT offSlot = ( pbSlot - pbData ) / cbGross ;
-        countT cbGross = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
+        countT cbGross = ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
 
         _IO_
     {
     if( pbData <= pbSlot && pbSlot < pbDataEnd )
     if( F(flagsCt) & fliSEXc_READoNLY ) { BLAMMO ; }
 
-    byteT* pbSlot = !pbDropP ? 0 : pbDropP - ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) ;
+    byteT* pbSlot = !pbDropP ? 0 : pbDropP - ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER ) ;
 
     }
         if( POOP ) return ;

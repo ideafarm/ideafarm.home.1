@@ -11,10 +11,10 @@
     return pbo ;
     ;
         : 0
-        ? pbData + cbGross * offP + ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER )
+        ? pbData + cbGross * offP + ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER )
     byteT* pbo = offP < 1 << pzMetaHead->expSlots
 
-    /*const*/countT cbGross = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
+    /*const*/countT cbGross = ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
 
     _IO_
 

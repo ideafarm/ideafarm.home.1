@@ -47,13 +47,13 @@
             {
             if( pzMetaNote )
 
-            if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbDrop , cbGross - ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED     20180611@1452: EDITED TO AVOID WIPING THE DROP HEADER (WITHOUT ANALYSIS)
+            if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbDrop , cbGross - ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER ) , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED     20180611@1452: EDITED TO AVOID WIPING THE DROP HEADER (WITHOUT ANALYSIS)
 
             tinP.cPoolDropCt ++ ;
 
             pbDrop = inspectAndSetSlotFingersF( tinP , pbSlot , offSlot , cbGross , 1 ) ;
             byteT* pbSlot = pbData + cbGross * offSlot ;
-            countT cbGross = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
+            countT cbGross = ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
     
             if( offSlot < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; } //U:: IN ALL 3*.sexC.*, REMOVE ALL OF THESE TESTS ONCE HAVE CONFIDENCE THAT CODE IS CORRECT
 

@@ -93,8 +93,11 @@
         if( dropHeader == getNegAM( FINGERnEG_dropHeaderInitialize ) ) { BLAMMOiD( pbP ) ; }
         countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
 
-        if( dropSeparator != getNegAM( FINGERnEG_dropSeparator ) ) { BLAMMOiD( dropSeparator ) ; }
-        countT& dropSeparator = ((countT*)pbP)[ - 2 ] ;
+        }
+            if( dropSeparator != getNegAM( FINGERnEG_dropSeparator ) ) { BLAMMOiD( dropSeparator ) ; }
+            countT& dropSeparator = ((countT*)pbP)[ - 2 ] ;
+        {
+        if( face.cbDropSeparator == sizeof( countT ) )
 
         if( pbP < processGlobal1I.pbAddressMin || pbP > processGlobal1I.pbAddressMax ) { BLAMMOiD( pbP ) ; }
     {

@@ -34,7 +34,7 @@
             //tinP.pc Utility[ 1 ] = pcSlotEnd[ 1 ] ;
             //tinP.pc Utility[ 0 ] = pcSlotEnd[ 0 ] ;
         {
-        if( offSlotP < offSlotPsUseableEnd - 1 && getNegAM( pcSlotEnd[ 0 ] ) != FINGERnEG_dropSeparator )       // NOT CHECKED IF I USE LATH SLOT
+        if( pzMetaHead->cbDropSeparator == sizeof( countT ) && offSlotP < offSlotPsUseableEnd - 1 && getNegAM( pcSlotEnd[ 0 ] ) != FINGERnEG_dropSeparator )       // NOT CHECKED IF I USE LATH SLOT
 
         const countT offSlotPsUseableEnd   = cSlots - pzMetaHead->cSlotsAvoidHi ;
         const countT offSlotPsUseableBegin =          pzMetaHead->cSlotsAvoidLo ;
@@ -54,7 +54,7 @@
         // 20210130@1202: offSlot IS NOT USED TO DELETE THE DROP OR FOR ANY OTHER PURPOSE.  IT CAN BE ELIMINATED FROM dropHeader IN ORDER TO SIMPLIFY LAYOUT, ADD A CHECKSUM, OR ADD OTHER INFORMATION
         // DROP HEADER VALUE.  IF I AM CALLED BY poolC THEN VALUE WILL CONTAIN idApt, WHICH WILL BE USED TO IDENTIFY *this SO THAT THE DROP CAN BE DELETED WITHOUT SEARCHING FOR THE CORRECT sexC INSTANCE
 
-        pbDropNew = pbData + cbGrossP * offSlotP + ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) ;
+        pbDropNew = pbData + cbGrossP * offSlotP + ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER ) ;
     {
     if( bNewP )
     ZE( byteT* , pbDropNew ) ;
@@ -64,7 +64,7 @@
         //tinP.pc Utility[ 1 ] = pcSlot[ 1 ] ;
         //tinP.pc Utility[ 0 ] = pcSlot[ 0 ] ;
     {
-    if( getNegAM( pcSlot[ 0 ] ) != FINGERnEG_dropSeparator )
+    if( pzMetaHead->cbDropSeparator == sizeof( countT ) && getNegAM( pcSlot[ 0 ] ) != FINGERnEG_dropSeparator )
 
     countT* pcSlotEnd = (countT*)( pbData + ( offSlotP + 1 ) * cbGrossP ) ;
     countT* pcSlot    = (countT*)pbSlotP ;

@@ -34,7 +34,7 @@
                         DELzOMBIE( pPuseWrap ) ;
 
                         THREADmODE2rESTORE
-                        pSexNew = new( 0 , tinP , pbza + offs * sizeof( sexC ) , sizeof( sexC ) ) sexC( tinP , TAG( TAGiDnULL ) , idLineNewP , idiFileNewP , ostoName , expCbDrop , cbDropAdjust , offs , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
+                        pSexNew = new( 0 , tinP , pbza + offs * sizeof( sexC ) , sizeof( sexC ) ) sexC( tinP , TAG( TAGiDnULL ) , idLineNewP , idiFileNewP , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
                         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
                         if( pPoolContainsMe ) pPuseWrap = new( 0 , tinP , pbzPuse , sizeof pbzPuse ) puseC( tinP , *pPoolContainsMe ) ;
@@ -92,11 +92,14 @@
         puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;
     {
     THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
-    if( F(tinP.flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+
+    if( cbDropSeparatorP && cbDropSeparatorP - sizeof( countT ) ) { BLAMMOiD( 0x33334444 ) ; }
+    if( F(tinP.flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE   ) { BLAMMOiD( 0x11112222 ) ; }
     _IO_
 {
 pPoolContainsMe( pPoolContainsMeP )
 pGrabNewElt( (grabC*)pbzaGrab ) ,
+cbDropSeparator( cbDropSeparatorP ) ,
 ) ,
     4           //U:: TRIGRAPH AFTER VERIFY THE TABLE BELOW IS CORRECT
 (
@@ -117,7 +120,7 @@ poolC_cBitsExpCbDrop( poolC_cBitsExpCbDropP ) ,
 idMemorySpace( idMemorySpaceP ) ,
 idStateSpace( idStateSpaceP ) ,
 flagsCt( flagsP ) ,
-/*1*/slotsC::slotsC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT poolC_cBitsExpCbDropP , const countT expCbDropP , const countT cbDropAdjustP , const flagsT flagsP , const countT idStateSpaceP , countT idMemorySpaceP , poolC* const pPoolContainsMeP ) :/*1*/
+/*1*/slotsC::slotsC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT poolC_cBitsExpCbDropP , const countT expCbDropP , const countT cbDropAdjustP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , countT idMemorySpaceP , poolC* const pPoolContainsMeP ) :/*1*/
 
 //     | 
 //     | f1             0                       0               0               0 --------------------------------- 0

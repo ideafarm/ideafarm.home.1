@@ -30657,6 +30657,7 @@ private :
     const flagsT        flagsCtCopy ;
     const countT        cSlotsAvoidLo ;
     const countT        cSlotsAvoidHi ;
+    const countT        cbDropSeparator             ;
 
     public :
 
@@ -30739,7 +30740,7 @@ private :
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.sexC.NEWdELcLASSb!||
     ~sexC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.sexC.dt_sexC!||
-    sexC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP = 0 , const flagsT flagsP = fliSEXc_null , const countT idStateSpaceP = 0 , countT idMemorySpaceP = 0 , poolC* const pPoolContainsMeP = 0 ) ;
+    sexC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP = 0 , const countT expSlotsP = 0 , const countT cbDropSeparatorP = sizeof( countT ) , const flagsT flagsP = fliSEXc_null , const countT idStateSpaceP = 0 , countT idMemorySpaceP = 0 , poolC* const pPoolContainsMeP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.sexC.sexC!||
     static boolT bStateExistsIF( tinS& tinP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const countT idStateSpaceP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.sexC.bStateExistsIF!||
@@ -30809,6 +30810,7 @@ private :
     const countT        cbDropAdjust ;
     const countT        expSlotsMin ;
     const countT        cBitsExpSlots ;
+    const countT        cbDropSeparator                              ;
     byteT               pbza[       CsLOTeXTENTS * SIZEOF_sexC     ] ;
     sexC*               ppSex[      CsLOTeXTENTS                   ] ;
     byteT               pbzaGrab[   CsLOTeXTENTS * sizeof( grabC ) ] ;
@@ -30823,7 +30825,7 @@ private :
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.slotsC.NEWdELcLASSb!||
     ~slotsC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.slotsC.dt_slotsC!||
-    slotsC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT poolC_cBitsExpCbDropP , const countT expCbDropP , const countT cbDropAdjustP , const flagsT flagsP = flSLOTSc_null , const countT idStateSpaceP = 0 , countT idMemorySpaceP = 0 , poolC* const pPoolContainsMeP = 0 ) ;
+    slotsC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT poolC_cBitsExpCbDropP , const countT expCbDropP , const countT cbDropAdjustP , const countT cbDropSeparatorP = sizeof( countT ) , const flagsT flagsP = flSLOTSc_null , const countT idStateSpaceP = 0 , countT idMemorySpaceP = 0 , poolC* const pPoolContainsMeP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.slotsC.slotsC!||
     operator byteT*( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.slotsC.operator_byteT_ptr!||
@@ -31271,10 +31273,11 @@ VERYsMARTpOINTERcLASSdEF(     listing   , listingC ,       01 )
         aptC            aptListRoot     ;
         countT          idListNameLath  ;
         countT          pcCbDropAdjust[ CsLOTsIZESmAX ]  ;
+        const countT    cbDropSeparator ;
 
         NEWdELcLASSpROTOS
         ~face_poolC_S( voidT ) ;
-        face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP ) ;
+        face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT cbDropSeparatorP ) ;
     }
     ;
 
@@ -31294,7 +31297,7 @@ VERYsMARTpOINTERcLASSdEF(     listing   , listingC ,       01 )
 
     private :
 
-    voidT ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT idStateSpaceP ) ;
+    voidT ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT cbDropSeparatorP , const countT idStateSpaceP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.poolC.ctFaceF!||
     voidT ctFilesF( tinS& tinP , const osTextT* const postNameP , const countT idStateSpaceP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.poolC.ctFilesF!||
@@ -31321,7 +31324,7 @@ VERYsMARTpOINTERcLASSdEF(     listing   , listingC ,       01 )
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.poolC.NEWdELcLASSb!||
     ~poolC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.poolC.dt_poolC!||
-    poolC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const flagsT flagsP = flPOOLc_null , const countT idStateSpaceP = 0 , const countT expCbDropMinP = - 1 , const countT expCbDropMaxP = - 1 , const countT* pczHintPreallocationP = 0 , countT idMemorySpaceP = 0 ) ;
+    poolC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const countT cbDropSeparatorP = sizeof( countT ) , const flagsT flagsP = flPOOLc_null , const countT idStateSpaceP = 0 , const countT expCbDropMinP = - 1 , const countT expCbDropMaxP = - 1 , const countT* pczHintPreallocationP = 0 , countT idMemorySpaceP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.poolC.poolC!||
     voidT newF( tinS& tinP , const countT idLineP , const countT idiFileP , byteT*& pbP , const countT cbP , const flagsT flagsP = flPOOLcnEW_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.poolC.newF!||

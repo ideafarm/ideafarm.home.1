@@ -8,17 +8,17 @@
 
 }
     }
-        putNegAM( pcSlot[ 1 ] , FINGERnEG_dropHeaderInitialize ) ;
-        putNegAM( pcSlot[ 0 ] , FINGERnEG_dropSeparator ) ;
+                                                              putNegAM( *( pcc ++ ) , FINGERnEG_dropHeaderInitialize ) ;
+        if( pzMetaHead->cbDropSeparator == sizeof( countT ) ) putNegAM( *( pcc ++ ) , FINGERnEG_dropSeparator        ) ;
 
-        countT* pcSlot = (countT*)( pbData + offs * cbGross ) ;
+        countT* pcc = (countT*)( pbData + offs * cbGross ) ;
     {
     for( countT offs = offSlotsUseableBegin ; offs < offSlotsUseableEnd ; offs ++ )
 
-    const countT offSlotsUseableEnd   =                                                                     cSlots - pzMetaHead->cSlotsAvoidHi ;
-    const countT offSlotsUseableBegin =                                                                              pzMetaHead->cSlotsAvoidLo ;
-    const countT cSlots               =                                                                         1 << pzMetaHead->expSlots      ;
-    const countT cbGross              = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop )   ;
+    const countT offSlotsUseableEnd   =                                                                              cSlots - pzMetaHead->cSlotsAvoidHi ;
+    const countT offSlotsUseableBegin =                                                                                       pzMetaHead->cSlotsAvoidLo ;
+    const countT cSlots               =                                                                                  1 << pzMetaHead->expSlots      ;
+    const countT cbGross              = ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop )   ;
 
     _IO_
 
