@@ -36,18 +36,25 @@ ZE( strokeS* , pstt01WildList ) ;
 
 #else
 
+etThread.traceF( tinP , T("[cbNeeded,expCbDropUsed]:    ")+TF2(cbNeeded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(expCbDropUsed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
 THREADmODE2rESTORE
 THREADmODE3rESTORE
 THREADmODE4rESTORE
 }
-    listC::dictionaryReplaceOsTextIF( tinP , c2Text ) ;
-    count2S c2Text( (countT)"aaaa" ) ;
+    //listC::dictionaryReplaceOsTextIF( tinP , c2Text ) ;
+    //count2S c2Text( (countT)"aaaa" ) ;
+
+    expCbDropUsed = PUSE.expCbDropBigEnoughF( cbNeeded ) ;
+    cbNeeded = sizeof( listOfSetC ) ;
 
     puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
 {
 THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
 THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY       )
 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING   )
+static ZE( countT , expCbDropUsed ) ;
+static ZE( countT , cbNeeded      ) ;
 
 #if defined( NEVERdEFINED )
 

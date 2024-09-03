@@ -42,10 +42,10 @@
 
             byteT mask = 1 ;
             byteT* pbo = pbzMetaBitsOwned ;
-            const countT offSlotsUseableEnd   = cSlots - pzMetaHead->cSlotsAvoidHi ;
-            const countT offSlotsUseableBegin =          pzMetaHead->cSlotsAvoidLo ;
-            const countT cSlots               = 1 << pzMetaHead->expSlots ;
-            const countT cbGross              = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << pzMetaHead->expCbDrop ) ;
+            const countT offSlotsUseableEnd   =                                                                     cSlots - pzMetaHead->cSlotsAvoidHi ;
+            const countT offSlotsUseableBegin =                                                                              pzMetaHead->cSlotsAvoidLo ;
+            const countT cSlots               =                                                                         1 << pzMetaHead->expSlots      ;
+            const countT cbGross              = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop )   ;
         {
         if( pzMetaNote )
 

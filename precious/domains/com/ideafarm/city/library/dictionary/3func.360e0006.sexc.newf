@@ -53,7 +53,7 @@
 
             pbDrop = inspectAndSetSlotFingersF( tinP , pbSlot , offSlot , cbGross , 1 ) ;
             byteT* pbSlot = pbData + cbGross * offSlot ;
-            countT cbGross = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER ) + ( 1 << pzMetaHead->expCbDrop ) ;
+            countT cbGross = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
     
             if( offSlot < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; } //U:: IN ALL 3*.sexC.*, REMOVE ALL OF THESE TESTS ONCE HAVE CONFIDENCE THAT CODE IS CORRECT
 

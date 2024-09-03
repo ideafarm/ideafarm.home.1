@@ -402,6 +402,7 @@ batPoolCt
 /*1*/poolC::poolC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , const countT* pczHintPreallocationP , countT idMemorySpaceP ) :/*1*/
 
 }
+    if( F(flagsPoolFormat) & flPOOLfORMAT_SETS ) pcCbDropAdjust[ 5 ] = 4 ;          //THIS WILL PROVIDE A SLOT SIZE THAT IS EXACTLY THE SIZE OF listOfSetC
     thirdC::c_memsetIF( tinP , (byteT*)pcCbDropAdjust , sizeof pcCbDropAdjust ) ;
     putNegAM( *(countT*)&finger , FINGERnEG_POOLcfACE ) ;
     _IO_
