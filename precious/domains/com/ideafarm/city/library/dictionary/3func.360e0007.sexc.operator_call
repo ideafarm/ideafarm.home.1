@@ -67,7 +67,7 @@
         if( offSlot < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; }
 
         }
-            putNegAM( pDoomed->finger , FINGERnEG_dropNoteSdeleted ) ;
+            putNegAM( pDoomed->finger , FINGERnEG_dropNoteDeleted ) ;
 
             //thirdC::c_memsetIF( (byteT*)pDoomed , sizeof( dropNoteS ) , 0xdd ) ; //U:: TO FIND A BUG
 
@@ -89,7 +89,7 @@
         ZE( countT , idLineTaggedCopy ) ;
 
         pbDropP = 0 ;
-        inspectAndSetSlotFingersF( tinP , pbSlot , offSlot , cbGross , 0 ) ;
+        setSlotFingersAndDropHeaderF( tinP , pbSlot , offSlot , cbGross , 0 ) ;
 
         }
             }

@@ -17,7 +17,7 @@
             idLathNewDel = ifcIDsEXclATHnEWdEL_NEW ; // INTENTIONAL RACE
 
             }
-                putNegAM( pMyNote->finger , FINGERnEG_dropNoteSsexC2 ) ;
+                putNegAM( pMyNote->finger , FINGERnEG_dropNoteSexHasFormatted ) ;
 
                 pMyNote->flagsMonitor = flOLDlEAKmONITOR_null ;
                 pMyNote->idThreadDel = 0 ;
@@ -41,7 +41,7 @@
                 pMyNote->dropHeaderCopy = ((countT*)pbDrop)[ - 1 ] ;
                 thirdC::c_memsetIF( tinP , (byteT*)pMyNote + 4 * sizeof( countT ) , sizeof( dropNoteS ) - 4 * sizeof( countT ) , 0 ) ; //CS:CODEsYNC: 1500003c 360e0006: MEMBERS BELOW ME ARE NOT INITIALIZED BY sexC::newF
 
-                putNegAM( pMyNote->finger , FINGERnEG_dropNoteSsexC1 ) ;
+                putNegAM( pMyNote->finger , FINGERnEG_dropNoteSexIsFormatting ) ;
 
                 dropNoteS* pMyNote = pzMetaNote + offSlot ;
             {
@@ -51,7 +51,7 @@
 
             tinP.cPoolDropCt ++ ;
 
-            pbDrop = inspectAndSetSlotFingersF( tinP , pbSlot , offSlot , cbGross , 1 ) ;
+            pbDrop = setSlotFingersAndDropHeaderF( tinP , pbSlot , offSlot , cbGross , 1 ) ;
             byteT* pbSlot = pbData + cbGross * offSlot ;
             countT cbGross = ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
     

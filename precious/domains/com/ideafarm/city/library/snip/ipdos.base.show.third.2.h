@@ -30731,8 +30731,8 @@ private :
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.sexC.ctFilesF!||
     voidT formatDataBlobF( tinS& tinP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0013.sexc.formatDataBlobF!||
-    byteT* inspectAndSetSlotFingersF( tinS& tinP , byteT* pbSlotP , countT offSlotP , countT cbGrossP , boolT bNewP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0014.sexC.inspectAndSetSlotFingersF!||
+    byteT* setSlotFingersAndDropHeaderF( tinS& tinP , byteT* pbSlotP , countT offSlotP , countT cbGrossP , boolT bNewP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0014.sexC.setSlotFingersAndDropHeaderF!||
 
     public :
 
