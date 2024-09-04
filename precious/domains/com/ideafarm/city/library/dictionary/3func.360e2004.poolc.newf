@@ -57,16 +57,19 @@
 
                 }
                     }
-                        putNegAM( pDropNote->finger , FINGERnEG_dropNotePoolHasAdjustedDropHeader ) ;
-                        pDropNote->dropHeaderCopy = dropHeader ;
+                        }
+                            putNegAM( pDropNote->finger , FINGERnEG_dropNotePoolHasAdjustedDropHeader ) ;
+                            pDropNote->dropHeaderCopy = dropHeader ;
+                        {
+                        if( pDropNote )
+
+                        dropHeader = dropHeader << guts.cBitsExpCbDrop | offs - guts.expCbDropMin ;
+
+                        BLAMMOiFsHIFTlEFTwOULDlOSEbITS( dropHeader , guts.cBitsExpCbDrop ) ;
+
+                        countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
                     {
-                    if( pDropNote )
-
-                    dropHeader = dropHeader << guts.cBitsExpCbDrop | offs - guts.expCbDropMin ;
-
-                    BLAMMOiFsHIFTlEFTwOULDlOSEbITS( dropHeader , guts.cBitsExpCbDrop ) ;
-
-                    countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
+                    if( face.cbDropHeader == CBsEXdROPhEADER )
 
                     if( pDropNote ) putNegAM( pDropNote->finger , FINGERnEG_dropNotePoolIsAdjustingDropHeader ) ;
 

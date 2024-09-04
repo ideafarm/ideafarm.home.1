@@ -14,9 +14,9 @@
         ? ( pbSlot - pbData ) / cbGross
     countT offApt = pbData <= pbSlot && pbSlot < pbDataEnd
 
-    const byteT* pbSlot = pbP - ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER ) ;
+    const byteT* pbSlot = pbP - ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader ) ;
 
-    /*const*/countT cbGross = ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
+    /*const*/countT cbGross = ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
 
     _IO_
 

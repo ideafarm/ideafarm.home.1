@@ -122,12 +122,12 @@
             if( ppSex[ offs ] ) (*ppSex[ offs ])( tinP , pbP ) ;                    // I TRY TO DELETE pbP HERE
 
             inc02AM( pcTallyIn[ offs ] ) ;
-        {
-        if( !( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
 
-        countT offs = expSlotsMin + ( ( dropHeader >> poolC_cBitsExpCbDrop ) & mask ) ;
-        countT mask = ( 1 << CbITSeXPsLOTS ) - 1 ;
-        countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
+            countT offs = expSlotsMin + ( ( dropHeader >> poolC_cBitsExpCbDrop ) & mask ) ;
+            countT mask = ( 1 << CbITSeXPsLOTS ) - 1 ;
+            countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
+        {
+        if( cbDropHeader && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
     {
     if( pbP )
 

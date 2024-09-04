@@ -34,10 +34,12 @@
             THREADmODE3rESTORE
             }
                 POPtINaRGS
-                new( 0 , tinP , &napFace ) face_poolC_S( tinP , idLineCtP , idiFileCtP , pbBitsCtP , flagsPoolFormatP , cbDropSeparatorP ) ;
+                new( 0 , tinP , &napFace ) face_poolC_S( tinP , idLineCtP , idiFileCtP , pbBitsCtP , flagsPoolFormatP , cbDropSeparatorP , cbDropHeader ) ;
                 PUSHtINaRGS
             {
             THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc ) ;
+
+            countT cbDropHeader = F(flagsPoolFormatP) & flPOOLfORMAT_NOdROPhEADERS ? 0 : CBsEXdROPhEADER ;
 
             flagsInstance |= flPOOLiNSTANCE_NAPfACEfORMATTEDbYmE ;
         {

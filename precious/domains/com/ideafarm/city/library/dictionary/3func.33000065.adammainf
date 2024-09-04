@@ -865,9 +865,9 @@
                             cryC cry03( TOCK + 0x03 ) ;
                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN7 ) ;
                             #endif
-                                poolC poolAdamTemp( tinP , TAG( TAGiDnULL ) , ostoPoolAdamTemp , sizeof( countT ) , /*flPOOLc_DOnOTbLOCK |*/ /*flPOOLc_NOsEXiNpOOL |*/ flPOOLc_null  ) ; //MUST BE WOTH       20221228@1430: ADDED flPOOLc_DOnOTbLOCK (CHANGE OF PERSONALITY) SO THAT CODE CAN FAIL GRACEFULLY IF A DROP CANNOT BE ALLOCATED
+                                poolC poolAdamTemp( tinP , TAG( TAGiDnULL ) , ostoPoolAdamTemp , sizeof( countT ) , flPOOLc_null  ) ; //MUST BE WOTH       20221228@1430: ADDED flPOOLc_DOnOTbLOCK (CHANGE OF PERSONALITY) SO THAT CODE CAN FAIL GRACEFULLY IF A DROP CANNOT BE ALLOCATED
                             #else
-                                poolC poolAdamTemp( tinP , TAG( TAGiDnULL ) , ostoPoolAdamTemp , sizeof( countT ) , /*flPOOLc_DOnOTbLOCK |*/ /*flPOOLc_NOsEXiNpOOL |*/ flPOOLc_NOTES ) ; //MUST BE WOTH       20221228@1430: ADDED flPOOLc_DOnOTbLOCK (CHANGE OF PERSONALITY) SO THAT CODE CAN FAIL GRACEFULLY IF A DROP CANNOT BE ALLOCATED
+                                poolC poolAdamTemp( tinP , TAG( TAGiDnULL ) , ostoPoolAdamTemp , sizeof( countT ) , flPOOLc_NOTES ) ; //MUST BE WOTH       20221228@1430: ADDED flPOOLc_DOnOTbLOCK (CHANGE OF PERSONALITY) SO THAT CODE CAN FAIL GRACEFULLY IF A DROP CANNOT BE ALLOCATED
                             #if defined( ENABLEdROPnOTES )
 
                             //20221228@1601: flPOOLc_DOnOTbLOCK DEFINED BUT CANNOT BE USED BECAUSE CODE ASSUMES THAT ALLOCATION WILL SUCCEED, AND USING THIS NEW FLAG BREAKS THAT CODE (FOR EXAMPLE, ADAM FAILS SO CANNOT EVEN BUILD EVE TO FINISH BUILDING)

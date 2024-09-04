@@ -229,15 +229,15 @@
                             //CONoUTrAWd( "[expCbDrop,expSlots,bSmallSlots,USINGnAPfORdATA,cSlotsAvoidLo,cSlotsAvoidHi]: " , expCbDropP , " " , expSlotsP , " " , bSmallSlots , " " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , pzMetaHead->cSlotsAvoidLo , " " , pzMetaHead->cSlotsAvoidHi , "\r\n" ) ; //U:: TO FIND A BUG
 
                             }
-                                *(countT*)&pzMetaHead->cSlotsAvoidHi = 1 + ( sizeof( countT        ) - 2 ) / cbSlot ; // HEADROOM: sizeof( countT ) - 1 (ALWAYS 1 NOW THAT DROPhEADER IS USED; THIS LINE IS CODED GENERALLY TO WORK EVEN IF !( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + cbDropAdjustP ))
+                                *(countT*)&pzMetaHead->cSlotsAvoidHi = 1 + ( sizeof( countT        ) - 2 ) / cbSlot ; // HEADROOM: sizeof( countT ) - 1 (ALWAYS 1 NOW THAT DROPhEADER IS USED; THIS LINE IS CODED GENERALLY TO WORK EVEN IF !( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ))
                                 *(countT*)&pzMetaHead->cSlotsAvoidLo = 1 + ( sizeof( napkinHeaderS ) - 1 ) / cbSlot ; // SOME PART OF NAPKIN HEADER IS UNDER THIS MANY SLOTS
-                                countT cbSlot = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + cbDropAdjustP ) + ( 1 << expCbDropP ) ;
+                                countT cbSlot = ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) ;
                             {
                             if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA && bSmallSlots )
 
                             //CONoUTrAW9( "sexC formatting meta [USINGnAPfORdATA,bSmallSlots,expCbDropP,expSlotsP,]: " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
 
-                            pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , cbDropAdjustP , expSlotsP , postNameP , flagsCt ) ;
+                            pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , cbDropAdjustP , expSlotsP , postNameP , flagsCt , cbDropSeparatorP , cbDropHeader ) ;
                         {
                         else
                         if( !bFormatMetaBlob ) pzMetaHead = (sexHeadS*)pbMeta ;
@@ -439,7 +439,7 @@
                 // TRY TO ALLOCATE pbMeta FROM A SIBLING sexC (ANOTHER sexC, EXISTING OR NEWLY CREATED, OF *pPoolContainsMe
                 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                pbDataEnd = !pbData ? 0 : pbData + ( ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + cbDropAdjustP ) + ( 1 << expCbDropP ) ) * ( 1 << expSlotsP ) ;
+                pbDataEnd = !pbData ? 0 : pbData + ( ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) ) * ( 1 << expSlotsP ) ;
             {
             if( !POOP )
 
@@ -764,12 +764,14 @@
                             +
             cbaDataNapkin = cbaDataNeeded
             cbaDataPool   = cbaDataNeeded ;
-            countT          cbaDataNeeded = ( 1 << expSlotsP ) * ( ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + cbDropAdjustP ) + ( 1 << expCbDropP ) ) ;                           // FOR SMALL expCbDropP, SLOTS AT BOTTOM ARE UNUSEABLE; SEE sexHeadS::cSlotsAvoidLo
+            countT          cbaDataNeeded = ( 1 << expSlotsP ) * ( ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) ) ;                           // FOR SMALL expCbDropP, SLOTS AT BOTTOM ARE UNUSEABLE; SEE sexHeadS::cSlotsAvoidLo
         {
         ZE( countT , cbaDataNapkin ) ;
         ZE( countT , cbaDataPool   ) ;
 
-        const boolT bSmallSlots = ( CBsEXdROPsEPARATOR + CBsEXdROPhEADER + cbDropAdjustP ) + ( 1 << expCbDropP ) < ( 1 << thirdC::os_expCbAllocationGrain_IF( tinP ) ) ;        // FOR SMALL SLOT SIZES, pbData WILL POINT TO THE napkinHeaderS CONTROL STRUCTURE, WHICH IS WHY THE LOW SLOTS MUST BE MARKED AS UNAVAILABLE
+        const boolT bSmallSlots = ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) < ( 1 << thirdC::os_expCbAllocationGrain_IF( tinP ) ) ;        // FOR SMALL SLOT SIZES, pbData WILL POINT TO THE napkinHeaderS CONTROL STRUCTURE, WHICH IS WHY THE LOW SLOTS MUST BE MARKED AS UNAVAILABLE
+
+        const countT cbDropHeader    = F(flagsCt) & fliSEXc_NOdROPhEADERS ? 0 : CBsEXdROPhEADER ;
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // CALCULATE BLOB SIZES NEEDED

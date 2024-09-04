@@ -21,9 +21,9 @@
             {
             if( pbData <= pbSlot && pbSlot < pbDataEnd )
 
-            /*const*/ countT cbGross = ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
+            /*const*/ countT cbGross = ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader + pzMetaHead->cbDropAdjust ) + ( 1 << pzMetaHead->expCbDrop ) ;
 
-            const byteT* pbSlot = pbP - ( pzMetaHead->cbDropSeparator + CBsEXdROPhEADER ) ;
+            const byteT* pbSlot = pbP - ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader ) ;
             _IO_
         {
         if( pzMetaNote )
