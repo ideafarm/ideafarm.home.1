@@ -34585,26 +34585,28 @@ coding standard
 #define LISTnAMEsYS_IDGaCCESScOMPLETED                                   0x80000024
 #define LISTnAMEsYS_GLOBALrECORD                                         0x80000025
 #define LISTnAMEsYS_SEXc                                                 0x80000026
-#define LISTnAMEsYS_PROCESSrEPORT                                        0x80000027
-#define LISTnAMEsYS_PROCESSrEPORTfIELD10                                 0x80000028
-#define LISTnAMEsYS_PROCESSrEPORTfIELD20                                 0x80000029
-#define LISTnAMEsYS_PROCESSrEPORTfIELD30                                 0x8000002a
-#define LISTnAMEsYS_PROCESSrEPORTfIELD40                                 0x8000002b
-#define LISTnAMEsYS_PROCESSrEPORTfIELD50                                 0x8000002c
-#define LISTnAMEsYS_PROCESSrEPORTfIELD60                                 0x8000002d
-#define LISTnAMEsYS_PROCESSrEPORTfIELD70                                 0x8000002e
-#define LISTnAMEsYS_PROCESSrEPORTfIELD80                                 0x8000002f
-#define LISTnAMEsYS_PROCESSrEPORTfIELD90                                 0x80000030
-#define LISTnAMEsYS_PROCESSrEPORTfIELDa0                                 0x80000031
-#define LISTnAMEsYS_PROCESSrEPORTfIELDb0                                 0x80000032
-#define LISTnAMEsYS_PROCESSrEPORTfIELDc0                                 0x80000033
-#define LISTnAMEsYS_PROCESSrEPORTfIELDd0                                 0x80000034
-#define LISTnAMEsYS_PROCESSrEPORTfIELDe0                                 0x80000035
-#define LISTnAMEsYS_PROCESSrEPORTfIELDf0                                 0x80000036
-#define LISTnAMEsYS_PROCESSrEPORTfIELD01                                 0x80000037
-#define LISTnAMEsYS_SETS                                         0x80000038
-#define LISTnAMEsYS_SETsTATE                                     0x80000039
-#define LISTnAMEsYS_max                                                  0x80000039
+#define LISTnAMEsYS_SEXdATA                                              0x80000027
+#define LISTnAMEsYS_SEXmETA                                              0x80000028
+#define LISTnAMEsYS_PROCESSrEPORT                                        0x80000029
+#define LISTnAMEsYS_PROCESSrEPORTfIELD10                                 0x8000002a
+#define LISTnAMEsYS_PROCESSrEPORTfIELD20                                 0x8000002b
+#define LISTnAMEsYS_PROCESSrEPORTfIELD30                                 0x8000002c
+#define LISTnAMEsYS_PROCESSrEPORTfIELD40                                 0x8000002d
+#define LISTnAMEsYS_PROCESSrEPORTfIELD50                                 0x8000002e
+#define LISTnAMEsYS_PROCESSrEPORTfIELD60                                 0x8000002f
+#define LISTnAMEsYS_PROCESSrEPORTfIELD70                                 0x80000030
+#define LISTnAMEsYS_PROCESSrEPORTfIELD80                                 0x80000031
+#define LISTnAMEsYS_PROCESSrEPORTfIELD90                                 0x80000032
+#define LISTnAMEsYS_PROCESSrEPORTfIELDa0                                 0x80000033
+#define LISTnAMEsYS_PROCESSrEPORTfIELDb0                                 0x80000034
+#define LISTnAMEsYS_PROCESSrEPORTfIELDc0                                 0x80000035
+#define LISTnAMEsYS_PROCESSrEPORTfIELDd0                                 0x80000036
+#define LISTnAMEsYS_PROCESSrEPORTfIELDe0                                 0x80000037
+#define LISTnAMEsYS_PROCESSrEPORTfIELDf0                                 0x80000038
+#define LISTnAMEsYS_PROCESSrEPORTfIELD01                                 0x80000039
+#define LISTnAMEsYS_SETS                                                 0x8000003a
+#define LISTnAMEsYS_SETsTATE                                             0x8000003b
+#define LISTnAMEsYS_max                                                  0x8000003b
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -45920,12 +45922,16 @@ a jPointer is also considered null if it contains one of the special values [JrE
 
 /*1*//*flSEXcsTATE*//*1*/
 /*3*/
-#define flSEXcsTATE_USINGnAPfORmETA                   0xe00001f6
-#define flSEXcsTATE_USINGnAPfORdATA                   0xe00002f6
-#define flSEXcsTATE_REGISTEREDwITHlEAKlOGGERaOK       0xe00004f6
-#define flSEXcsTATE_CONSTRUCTEDaOK                    0xe00008f6
+#define flSEXcsTATEpRIVATE_USINGnAPfORmETA                   0xe00001f6
+#define flSEXcsTATEpRIVATE_USINGnAPfORdATA                   0xe00002f6
+#define flSEXcsTATEpRIVATE_REGISTEREDwITHlEAKlOGGERaOK       0xe00004f6
+#define flSEXcsTATEpRIVATE_CONSTRUCTEDaOK                    0xe00008f6
 /*3*/
-#define flSEXcsTATE_null    0xe00000f6
+#define flSEXcsTATEpRIVATE_null    0xe00000f6
+#define flSEXcsTATEsHARED_null    0xe00000f6
+
+#define flSEXcsTATEsHARED_USINGnAPfORmETA                   0xe00001f6
+#define flSEXcsTATEsHARED_USINGnAPfORdATA                   0xe00002f6
 
 
 //
@@ -45936,35 +45942,6 @@ a jPointer is also considered null if it contains one of the special values [JrE
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f5.flsexcstate END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f6.ifcidrecordfield BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*ifcIDrECORDfIELD*//*1*/
-
-/*3*/
-#define ifcIDrECORDfIELD_SEXcbACKINGbLOBlIST           ( BM_HIGH | 0x1 )
-#define ifcIDrECORDfIELD_SEXcbACKINGbLOBdATA           ( BM_HIGH | 0x2 )
-/*3*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f6.ifcidrecordfield END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f7.ifcidsexarray BEGIN
 
 

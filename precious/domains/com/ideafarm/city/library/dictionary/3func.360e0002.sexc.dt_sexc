@@ -16,13 +16,13 @@
         DELzOMBIE( pnDoomed ) ;
         napkinC* pnDoomed = (napkinC*)pb_napMeta ;
     {
-    if( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA )
+    if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORmETA )
 
     }
         DELzOMBIE( pnDoomed ) ;
         napkinC* pnDoomed = (napkinC*)pb_napData ;
     {
-    if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA )
+    if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA )
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------
     // 
@@ -133,7 +133,7 @@
                 ;
                     : 0
                     ? (dropNoteS*)( pbzMetaBitsOwned + cbaBitsOwned )
-                dropNoteS* pzMetaNote = F(pzMetaHead->flagsCtCopy) & fliSEXc_NOTES
+                dropNoteS* pzMetaNote = F(pzMetaHead->flagsCt) & fliSEXc_NOTES
 
                 cbaBitsOwned += CBtOaLIGN02( pbzMetaBitsOwned + cbaBitsOwned ) ;
                 countT cbaBitsOwned = 1 + ( 1 << pzMetaHead->expSlots ) / SB ;
@@ -153,7 +153,7 @@
             fileC* pDoomed = (fileC*)pbFileMeta ;
             puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
         {
-        if( pzMetaHead && F(pzMetaHead->flagsCtCopy) & fliSEXc_MAPPEDtOdISK ) //CLOSING THE BACKING FILES BEFORE DELETING THE SHARED MEMORY THAT IS MAPPED TO THEM IS OK ACCORDING TO WIN32 DOC
+        if( pzMetaHead && F(pzMetaHead->flagsCt) & fliSEXc_MAPPEDtOdISK ) //CLOSING THE BACKING FILES BEFORE DELETING THE SHARED MEMORY THAT IS MAPPED TO THEM IS OK ACCORDING TO WIN32 DOC
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------
         // 
@@ -186,7 +186,7 @@
             if( pbNapkin )
             byteT* pbNapkin = processGlobal8I._sexC_napGlobalRegistry ;
         {
-        if( F(flagsState) & flSEXcsTATE_REGISTEREDwITHlEAKlOGGERaOK )
+        if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_REGISTEREDwITHlEAKlOGGERaOK )
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------
         // IF I AM NOT PART OF THE poolC USED BY THE LEAKlOGGER ADAM THEN DEREGISTER MYSELF WITH LEAK LOGGER
@@ -201,8 +201,8 @@
         //    OStEXTCF( ostoSay , pbDataEnd , ' ' ) ;
         //    OStEXTAK( ostoSay , " " ) ;
         //    OStEXTCF( ostoSay , pbData , ' ' ) ;
-        //    OStEXTA(  ostoSay , F(flagsState) & flSEXcsTATE_USINGnAPfORmETA ? " NAPKIN " : " pool   " ) ;
-        //    OStEXTA(  ostoSay , F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ? " NAPKIN " : " pool   " ) ;
+        //    OStEXTA(  ostoSay , F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORmETA ? " NAPKIN " : " pool   " ) ;
+        //    OStEXTA(  ostoSay , F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ? " NAPKIN " : " pool   " ) ;
         //    OStEXTC(  ostoSay , pzMetaHead->expSlots , ' ' ) ;
         //    OStEXTAK( ostoSay , " " ) ;
         //    OStEXTC(  ostoSay , pzMetaHead->expCbDrop , ' ' ) ;
@@ -279,7 +279,7 @@
         tellInfoSysSexS info ;
         countT idTypeSay = ifcIDtYPEtELLsYS_SEXdT ;
     {
-    if( F(flagsState) & flSEXcsTATE_CONSTRUCTEDaOK )
+    if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_CONSTRUCTEDaOK )
 
     _IO_
 

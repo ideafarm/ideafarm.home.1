@@ -45,7 +45,7 @@
         //{
         //if( tinP.pc Utility[ 0 ] )
 
-        if( !POOP ) flagsState |= flSEXcsTATE_CONSTRUCTEDaOK ;
+        if( !POOP ) flagsStatePrivate |= flSEXcsTATEpRIVATE_CONSTRUCTEDaOK ;
 
         }
             TELLsYSc3LIFI( idTypeSay , (byteT*)&info , sizeof info , idLineCtP , idiFileCtP )
@@ -84,7 +84,7 @@
                 }
                     }
                         else                      { LOGrAW( "!exception: sexC::sexC/i could not register myself with the leak logger for some reason other than the registry being full\r\n" ) ; }
-                        else if( !POOP )          flagsState |= flSEXcsTATE_REGISTEREDwITHlEAKlOGGERaOK ;
+                        else if( !POOP )          flagsStatePrivate |= flSEXcsTATEpRIVATE_REGISTEREDwITHlEAKlOGGERaOK ;
                         if( offe == CsEXeNTRIES ) { LOGrAW( "!exception: sexC::sexC/the leak logger registry is full\r\n" ) ; } //U: 20140605@1631: CONJ: THIS CAN HAPPEN IF EXIST MULTIPLE poolC INSTANCES OR IF EXIST MULTIPLE ADAMS (SEE osThreadAdamF)
 
                         }
@@ -140,8 +140,8 @@
             //    OStEXTCF( ostoSay , pbDataEnd , ' ' ) ;
             //    OStEXTAK( ostoSay , " " ) ;
             //    OStEXTCF( ostoSay , pbData , ' ' ) ;
-            //    OStEXTA(  ostoSay , F(flagsState) & flSEXcsTATE_USINGnAPfORmETA ? " NAPKIN " : " pool   " ) ;
-            //    OStEXTA(  ostoSay , F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ? " NAPKIN " : " pool   " ) ;
+            //    OStEXTA(  ostoSay , F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORmETA ? " NAPKIN " : " pool   " ) ;
+            //    OStEXTA(  ostoSay , F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ? " NAPKIN " : " pool   " ) ;
             //    OStEXTC(  ostoSay , expSlotsP , ' ' ) ;
             //    OStEXTAK( ostoSay , " " ) ;
             //    OStEXTC(  ostoSay , expCbDropP , ' ' ) ;
@@ -160,7 +160,7 @@
             }
                 if( bNewMetaNapkinWasJustFormatted ) ((napkinC*)pb_napMeta)->tellAboutFormattingBeingDoneF( tinP ) ;
 
-                if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
+                if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ) ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
                 formatDataBlobF( tinP ) ; //NO ACTION IS NEEDED HERE TO PRESERVE STATE WHEN STATE FILE IS USED, SINCE THE FORMATTING INFORMATION IS ONLY USED TO DETECT MEMORY CORRUPTION SO NEED NOT BE SAVED AS STATE     U::20240815@1555: HUH?
 
                 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -176,71 +176,81 @@
                 }
                     }
                         }
-                            bNewMetaNapkinWasJustFormatted = 1 ;
-                            ((napkinC*)pb_napMeta)->formattingIsDoneF( tinP , 1 ) ;
-                        {
-                        if( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA && !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
-
-                        }
-                            __( expSlotsP  - pzMetaHead->expSlots  ) ;
-                            __( expCbDropP - pzMetaHead->expCbDrop ) ;
-                        {
-                        else
-                        }
-                            if( pzMetaNote ) thirdC::c_memsetIF( tinP , (byteT*)pzMetaNote , sizeof( dropNoteS ) << pzMetaHead->expSlots ) ;
-                
                             }
-                                for( countT offo = 0 ; offo < cSlots ; offo ++ ) pzMetaNote[ offo ].idDelLath = pzMetaNote[ offo ].idNewLath = 0 ;
-                                countT cSlots = 1 << pzMetaHead->expSlots ;
+                                bNewMetaNapkinWasJustFormatted = 1 ;
+                                ((napkinC*)pb_napMeta)->formattingIsDoneF( tinP , 1 ) ;
                             {
-                            if( pzMetaNote )
-                
+                            if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORmETA && !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
+
                             }
-                                while( cToDo -- ) btsLathAM( pbzMetaBitsOwned , 1 << pzMetaHead->expSlots ) ;
-                                cToDo = pzMetaHead->cSlotsAvoidHi ;                                                             // THE HIGH SLOTS ARE UNUSEABLE TO ENSURE HEADROOM OF sizeof( countT ) - 1 SO THAT HIGHEST BYTE CAN BE REFERENCED BY DWORD INSTRUCTION (E.G. movsd)
-                
-                                while( cToDo -- ) btsWothAM( pbzMetaBitsOwned , 1 << pzMetaHead->expSlots ) ;
-                                countT cToDo = pzMetaHead->cSlotsAvoidLo ;                                                      // THE LOW SLOTS ARE UNUSEABLE BECAUSE THEY OVERLAY napkinHeaderS FOR (*(napkinC*)pb_napData)
-                                                                                                                                // FOR SMALL SLOT SIZES (LESS THAN ALLOCATION GRAIN SIZE):
+                                __( expSlotsP  - pzMetaHead->expSlots  ) ;
+                                __( expCbDropP - pzMetaHead->expCbDrop ) ;
                             {
-                            if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA )
+                            else
+                            }
+                                if( pzMetaNote ) thirdC::c_memsetIF( tinP , (byteT*)pzMetaNote , sizeof( dropNoteS ) << pzMetaHead->expSlots ) ;
+                    
+                                }
+                                    for( countT offo = 0 ; offo < cSlots ; offo ++ ) pzMetaNote[ offo ].idDelLath = pzMetaNote[ offo ].idNewLath = 0 ;
+                                    countT cSlots = 1 << pzMetaHead->expSlots ;
+                                {
+                                if( pzMetaNote )
+                    
+                                }
+                                    while( cToDo -- ) btsLathAM( pbzMetaBitsOwned , 1 << pzMetaHead->expSlots ) ;
+                                    cToDo = pzMetaHead->cSlotsAvoidHi ;                                                             // THE HIGH SLOTS ARE UNUSEABLE TO ENSURE HEADROOM OF sizeof( countT ) - 1 SO THAT HIGHEST BYTE CAN BE REFERENCED BY DWORD INSTRUCTION (E.G. movsd)
+                    
+                                    while( cToDo -- ) btsWothAM( pbzMetaBitsOwned , 1 << pzMetaHead->expSlots ) ;
+                                    countT cToDo = pzMetaHead->cSlotsAvoidLo ;                                                      // THE LOW SLOTS ARE UNUSEABLE BECAUSE THEY OVERLAY napkinHeaderS FOR (*(napkinC*)pb_napData)
+                                                                                                                                    // FOR SMALL SLOT SIZES (LESS THAN ALLOCATION GRAIN SIZE):
+                                {
+                                if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA )
 
-                            // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE HEADROOM WAS CREATED WHEN THAT sexC WAS CONSTRUCTED
-                            // IF DATA IS IN NAPKIN THEN MARK THE HIGH SLOTS AS UNUSEABLE SO THAT THERE IS ENOUGH HEADROOM FOR THE HIGHEST BYTE TO BE ACCESSED USING A DWORD INSTRUCTION
-                            // 
-                            // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE THERE IS NO OVERLAYED napkinC HEADER TO PROTECT
-                            // IF DATA IS IN NAPKIN THEN MARK THE LOW SLOTS AS UNUSEABLE SO THAT THE DATA NAPKIN HEADER, WHICH THEY OVERLAY FOR SMALL SLOT SIZES, WON'T BE TRASHED
+                                // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE HEADROOM WAS CREATED WHEN THAT sexC WAS CONSTRUCTED
+                                // IF DATA IS IN NAPKIN THEN MARK THE HIGH SLOTS AS UNUSEABLE SO THAT THERE IS ENOUGH HEADROOM FOR THE HIGHEST BYTE TO BE ACCESSED USING A DWORD INSTRUCTION
+                                // 
+                                // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE THERE IS NO OVERLAYED napkinC HEADER TO PROTECT
+                                // IF DATA IS IN NAPKIN THEN MARK THE LOW SLOTS AS UNUSEABLE SO THAT THE DATA NAPKIN HEADER, WHICH THEY OVERLAY FOR SMALL SLOT SIZES, WON'T BE TRASHED
 
-                            thirdC::c_memsetIF( tinP , pbzMetaBitsOwned , cbaBitsOwned ) ;
+                                thirdC::c_memsetIF( tinP , pbzMetaBitsOwned , cbaBitsOwned ) ;
+                            {
+                            if( bFormatMetaBlob )
+                    
+                            if( F(flagsCt) & fliSEXc_NOTES ) pzMetaNote = (dropNoteS*)( pbzMetaBitsOwned + cbaBitsOwned ) ;
+                    
+                            cbaBitsOwned += CBtOaLIGN02( pbzMetaBitsOwned + cbaBitsOwned ) ;
+                            countT cbaBitsOwned = 1 + ( 1 << expSlotsP ) / SB ;
+                    
+                            pbzMetaBitsOwned = (byteT*)( pzMetaHead + 1 ) ;
                         {
-                        if( bFormatMetaBlob )
+                        if( !POOP )
                 
-                        if( F(flagsCtNew) & fliSEXc_NOTES ) pzMetaNote = (dropNoteS*)( pbzMetaBitsOwned + cbaBitsOwned ) ;
-                
-                        cbaBitsOwned += CBtOaLIGN02( pbzMetaBitsOwned + cbaBitsOwned ) ;
-                        countT cbaBitsOwned = 1 + ( 1 << expSlotsP ) / SB ;
-                
-                        pbzMetaBitsOwned = (byteT*)( pzMetaHead + 1 ) ;
-                
-                        __( flagsCtNew - pzMetaHead->flagsCtCopy ) ;
+                        __( flagsCt - pzMetaHead->flagsCt ) ;
 
                         inc02AM( pzMetaHead->cRef ) ;
                         }
-                            //CONoUTrAWd( "[expCbDrop,expSlots,bSmallSlots,USINGnAPfORdATA,cSlotsAvoidLo,cSlotsAvoidHi]: " , expCbDropP , " " , expSlotsP , " " , bSmallSlots , " " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , pzMetaHead->cSlotsAvoidLo , " " , pzMetaHead->cSlotsAvoidHi , "\r\n" ) ; //U:: TO FIND A BUG
+                            //CONoUTrAWd( "[expCbDrop,expSlots,bSmallSlots,USINGnAPfORdATA,cSlotsAvoidLo,cSlotsAvoidHi]: " , expCbDropP , " " , expSlotsP , " " , bSmallSlots , " " , !!( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ) , " " , pzMetaHead->cSlotsAvoidLo , " " , pzMetaHead->cSlotsAvoidHi , "\r\n" ) ; //U:: TO FIND A BUG
 
                             }
                                 *(countT*)&pzMetaHead->cSlotsAvoidHi = 1 + ( sizeof( countT        ) - 2 ) / cbSlot ; // HEADROOM: sizeof( countT ) - 1 (ALWAYS 1 NOW THAT DROPhEADER IS USED; THIS LINE IS CODED GENERALLY TO WORK EVEN IF !( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ))
                                 *(countT*)&pzMetaHead->cSlotsAvoidLo = 1 + ( sizeof( napkinHeaderS ) - 1 ) / cbSlot ; // SOME PART OF NAPKIN HEADER IS UNDER THIS MANY SLOTS
                                 countT cbSlot = ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) ;
                             {
-                            if( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA && bSmallSlots )
+                            if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA && bSmallSlots )
 
-                            //CONoUTrAW9( "sexC formatting meta [USINGnAPfORdATA,bSmallSlots,expCbDropP,expSlotsP,]: " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
+                            //CONoUTrAW9( "sexC formatting meta [USINGnAPfORdATA,bSmallSlots,expCbDropP,expSlotsP,]: " , !!( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ) , " " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
 
-                            pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , cbDropAdjustP , expSlotsP , postNameP , flagsCtNew , cbDropSeparatorP , cbDropHeader ) ;
+                            pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , cbDropAdjustP , expSlotsP , postNameP , flagsCt , flagsStatePrivate , cbDropSeparatorP , cbDropHeader ) ;
                         {
                         else
-                        if( !bFormatMetaBlob ) pzMetaHead = (sexHeadS*)pbMeta ;
+                        }
+                            __( bFail2 ) ;
+                            __( bFail1 ) ;
+                            boolT bFail2 = !( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORmETA ) != !( F(pzMetaHead->flagsStateShared) & flSEXcsTATEsHARED_USINGnAPfORmETA ) ;
+                            boolT bFail1 = !( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ) != !( F(pzMetaHead->flagsStateShared) & flSEXcsTATEsHARED_USINGnAPfORdATA ) ;
+                            pzMetaHead = (sexHeadS*)pbMeta ;
+                        {
+                        if( !bFormatMetaBlob )
                     
 #endif
                         ;
@@ -248,11 +258,11 @@
                                         ? 0                                                                                 // THEN DO NOT FORMAT
                                     : ((fileC*)pbFileMeta)->idOpenResultF( tinP  ) == ifcOPENrESULT_EXISTED                 // ELSE DID MY BACKING FILE ALREADY EXIST?
                                     ? 1                                                                                     // THEN FORMAT
-                                : !( F(flagsCtNew) & fliSEXc_MAPPEDtOdISK )                                                    // ELSE AM I STATELESS (NOT BACKED BY A DISK FILE)?
+                                : !( F(flagsCt) & fliSEXc_MAPPEDtOdISK )                                                    // ELSE AM I STATELESS (NOT BACKED BY A DISK FILE)?
                                 ? 0                                                                                         // THEN DO NOT FORMAT
                             : F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED        // ELSE DID NAPKIN ALREADY EXIST?
                             ? 1                                                                                             // THEN FORMAT
-                        const boolT bFormat = !( F(flagsState) & flSEXcsTATE_USINGnAPfORmETA )                              // WAS LIST ALLOCATED FROM POOL?
+                        const boolT bFormat = !( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORmETA )                  // WAS LIST ALLOCATED FROM POOL?
 #if defined( NEVERdEFINED )
 //U:: DELETE THIS OLD CODE AFTER TESTING
 
@@ -324,7 +334,7 @@
                             tinP , idLineNewP , idiFileNewP , pbBitsCtP ,
                         (
                         new( 0 , tinP , pb_napMeta , sizeof pb_napMeta ) napkinC
-                        flagsState |= flSEXcsTATE_USINGnAPfORmETA ;
+                        flagsStatePrivate |= flSEXcsTATEpRIVATE_USINGnAPfORmETA ;
                     {
                     if( !pbMeta )
 
@@ -352,7 +362,7 @@
                                     //                   OStEXTC(  ostoSay , *( pcc ++ ) , 0 ) ;
                                     //    {
                                     //    while( *pcc )
-                                    //    const countT* pcc = pczListSex ;
+                                    //    const countT* pcc = pcz ListSex ;
                                     //
                                     //    OStEXTAK(  ostoSay , "    " ) ;
                                     //    OStEXTC(  ostoSay , cbaMeta , '0' ) ;
@@ -360,7 +370,7 @@
                                     //    OStEXT(   ostoSay , TUCK << 2 ) ;
                                     //{
                                     //else
-                                    //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbMeta from list [cbaMeta    ,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pczListSex) ) ;
+                                    //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbMeta from list [cbaMeta    ,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
                                     DELlIST( fieldEditParamOutC , pOut ) ;
                                     puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
 
@@ -405,12 +415,12 @@
                             if( ~hListSex )
                             listC::openIF( tinP , hListSex , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
                             handleC hListSex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                            ZE( boolT , bListsExist ) ;
                         {
-                        ZE( boolT , bListsExist ) ;
                     
                         grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
                     
-                        countT pczField[]   = { ifcIDrECORDfIELD_SEXcbACKINGbLOBlIST , 0 } ;
+                        countT pczField[]   = { LISTnAMEsYS_SEXmETA , 0 } ;
                     
                         puseC puseUse( tinP , *pPoolContainsMe ) ;
                     {
@@ -428,7 +438,7 @@
                     &&
                     !( F(tinP.flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
                     &&
-                    !( F(flagsCtNew              ) &       fliSEXc_NOsEXiNpOOL )
+                    !( F(flagsCt              ) &       fliSEXc_NOsEXiNpOOL )
                     &&
                     !POOP
                 (
@@ -511,7 +521,7 @@
                 (
                 new( 0 , tinP , pb_napData , sizeof pb_napData ) napkinC
 
-                flagsState |= flSEXcsTATE_USINGnAPfORdATA ;
+                flagsStatePrivate |= flSEXcsTATEpRIVATE_USINGnAPfORdATA ;
                 // WHEN SLOT SIZE IS LARGE, DATA BEGINS IN THE NORMAL PLACE (AT THE END OF THE NAPKIN HEADER) AND ADDITIONAL BYTES ARE ALLOCATED FOR HEADROOM (SO THAT THE HIGHEST VALID BYTE CAN BE READ USING A DWORD OPERATION SUCH AS movsd)
                 // WHEN SLOT SIZE IS SMALL, DATA OVERLAYS THE NAPKIN HEADER AND NO ADDITIONAL BYTES ARE ALLOCATED.  INSTEAD, THE LOWEST AND HIGHEST SLOTS ARE MARKED AS UNAVAILABLE; THIS IS DONE TO AVOID THE EXTRA ALLOCATION UNIT REQUIRED FOR THE NAPKIN HEADER AND THE HEADROOM BYTES.  THE SLOTS SACRIFICED OCCUPY LESS MEMORY THAN THE ALLOCATION UNIT WOULD
             {
@@ -531,7 +541,7 @@
         }
             }
                 }
-                    //DO THIS IN MY DESTRUCTOR BUT ONLY IF I AM THE ONLY CLIENT: listC::deleteIF( tinP, pczListSex ) ;
+                    //DO THIS IN MY DESTRUCTOR BUT ONLY IF I AM THE ONLY CLIENT: listC::deleteIF( tinP, pcz ListSex ) ;
             
                     THREADmODE4rESTORE
                     }
@@ -546,7 +556,7 @@
                             //                   OStEXTC(  ostoSay , *( pcc ++ ) , 0 ) ;
                             //    {
                             //    while( *pcc )
-                            //    const countT* pcc = pczListSex ;
+                            //    const countT* pcc = pcz ListSex ;
                             //
                             //    OStEXTAK(  ostoSay , "    " ) ;
                             //    OStEXTC(  ostoSay , cbaDataPool , '0' ) ;
@@ -554,7 +564,7 @@
                             //    OStEXT(   ostoSay , TUCK << 2 ) ;
                             //{
                             //else
-                            //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbData from list [cbaDataPool,pcRecord]:    ")+TF2(cbaDataPool,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pczListSex) ) ;
+                            //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbData from list [cbaDataPool,pcRecord]:    ")+TF2(cbaDataPool,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
                             DELlIST( fieldEditParamOutC , pOut ) ;
                             puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
 
@@ -595,12 +605,12 @@
                         listC::openIF( tinP , hListSex1 , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
                         handleC hListSex1( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     {
+                    ZE( boolT , bListsExist ) ;
                 {
-                ZE( boolT , bListsExist ) ;
 
                 grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
             
-                countT pczField[]   = { ifcIDrECORDfIELD_SEXcbACKINGbLOBdATA , 0 } ;
+                countT pczField[]   = { LISTnAMEsYS_SEXdATA , 0 } ;
             
                 puseC puseUse( tinP , *pPoolContainsMe ) ;
             {
@@ -618,7 +628,7 @@
             &&
             !( F(tinP.flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
             &&
-            !( F(flagsCtNew              ) &       fliSEXc_NOsEXiNpOOL )
+            !( F(flagsCt              ) &       fliSEXc_NOsEXiNpOOL )
             &&
             !POOP
         (
@@ -639,7 +649,7 @@
         //{
         //if( !bReadOnly )
 
-        const boolT bReadOnly = !!( F(flagsCtNew) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ) ;
+        const boolT bReadOnly = !!( F(flagsCt) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ) ;
 
         tinP.tlsNewF( LF , TUCK ) ;
         tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , idStateSpaceP ) ;
@@ -748,7 +758,7 @@
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
-            if( F(flagsCtNew) & fliSEXc_NOTES ) cbaMeta += sizeof( dropNoteS ) << expSlotsP ;
+            if( F(flagsCt) & fliSEXc_NOTES ) cbaMeta += sizeof( dropNoteS ) << expSlotsP ;
                                              cbaMeta  = sizeof( sexHeadS  ) + cbNeededForBits + CBtOaLIGN02( cbNeededForBits ) ;
             countT                                                            cbNeededForBits                                  = 1 + ( 1 << expSlotsP ) / SB ;
         {
@@ -771,7 +781,7 @@
 
         const boolT bSmallSlots = ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) < ( 1 << thirdC::os_expCbAllocationGrain_IF( tinP ) ) ;        // FOR SMALL SLOT SIZES, pbData WILL POINT TO THE napkinHeaderS CONTROL STRUCTURE, WHICH IS WHY THE LOW SLOTS MUST BE MARKED AS UNAVAILABLE
 
-        const countT cbDropHeader    = F(flagsCtNew) & fliSEXc_NOdROPhEADERS ? 0 : CBsEXdROPhEADER ;
+        const countT cbDropHeader    = F(flagsCt) & fliSEXc_NOdROPhEADERS ? 0 : CBsEXdROPhEADER ;
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // CALCULATE BLOB SIZES NEEDED
@@ -863,7 +873,7 @@
     ;
         : flagsP | fliSEXc_MAPPEDtOdISK
         ? flagsP
-    const flagsT flagsCtNew = !idStateSpaceP
+    const flagsT flagsCt = !idStateSpaceP
 
     _IO_
 
@@ -884,7 +894,7 @@ pzMetaHead( 0 ) ,
 pbMeta( 0 ) ,
 idLathNewDel( 0 ) ,
 idStateSpace( idStateSpaceP ) ,
-flagsState( flSEXcsTATE_null ) ,
+flagsStatePrivate( flSEXcsTATEpRIVATE_null ) ,
 pPoolContainsMe( pPoolContainsMeP ) ,
 /*1*/sexC::sexC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , countT idMemorySpaceP , poolC* const pPoolContainsMeP ) :/*1*/
 

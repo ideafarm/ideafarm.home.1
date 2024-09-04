@@ -30654,7 +30654,8 @@ private :
     const countT        cbDropAdjust                ;
     const countT        expSlots ;
     osTextT             postName[ COSTpOOLnAMEmAX ] ;
-    const flagsT        flagsCtCopy ;
+    const flagsT        flagsCt ;
+    const flagsT        flagsStateShared            ;
     const countT        cSlotsAvoidLo ;
     const countT        cSlotsAvoidHi ;
     const countT        cbDropSeparator             ;
@@ -30666,7 +30667,7 @@ private :
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.sexHeadS.NEWdELcLASSb!||
     ~sexHeadS( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.sexHeadS.dt_sexHeadS!||
-    sexHeadS( tinS& tinP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const osTextT* const postP , const flagsT flagsCtP , const countT cbDropSeparatorP , const countT cbDropHeaderP ) ;
+    sexHeadS( tinS& tinP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const osTextT* const postP , const flagsT flagsCtP , const flagsT flagsStatePrivateP , const countT cbDropSeparatorP , const countT cbDropHeaderP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.sexHeadS.sexHeadS!||
     voidT glassF( tinS& tinP , strokeS*& psttP ) const ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360df004.sexHeadS.glassF!||
@@ -30706,7 +30707,7 @@ private :
     byteT               pb_napData[ sizeof( napkinC ) ] ;
     poopC               poop ;
     poolC* const        pPoolContainsMe ;
-    flagsT              flagsState ;
+    flagsT              flagsStatePrivate ;
     const countT        idStateSpace ;
     countT              idLathNewDel ;
     byteT*              pbMeta ;
@@ -30768,7 +30769,7 @@ private :
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360e0012.sexc.testDropHeadersF!||
 
     inline countT idLathNewDelF(  voidT ) const { return idLathNewDel ; }
-    inline flagsT flagsStateF(    voidT ) const { return flagsState   ; }
+    inline flagsT flagsStatePrivateF(    voidT ) const { return flagsStatePrivate   ; }
     inline operator const poopC&( voidT ) const { return poop         ; }
 
     friend TASKpROTO( tmReportF ) ;                                                                                                                                                                                                                             \
