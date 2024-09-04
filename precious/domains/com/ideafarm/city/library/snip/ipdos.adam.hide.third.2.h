@@ -30706,7 +30706,6 @@ private :
     byteT               pb_napData[ sizeof( napkinC ) ] ;
     poopC               poop ;
     poolC* const        pPoolContainsMe ;
-    const flagsT        flagsCt ;
     flagsT              flagsState ;
     const countT        idStateSpace ;
     countT              idLathNewDel ;

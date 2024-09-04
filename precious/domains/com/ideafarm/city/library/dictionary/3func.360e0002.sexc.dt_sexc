@@ -9,15 +9,6 @@
 
 }
     }
-        DELzOMBIE( pDoomed ) ;
-        pDoomed = (fileC*)pbFileData ;
-        DELzOMBIE( pDoomed ) ;
-        fileC* pDoomed = (fileC*)pbFileMeta ;
-        puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
-    {
-    if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) //CLOSING THE BACKING FILES BEFORE DELETING THE SHARED MEMORY THAT IS MAPPED TO THEM IS OK ACCORDING TO WIN32 DOC
-
-    }
         //U:: pbMeta IS BACKED BY A DATABASE LISTING THAT SHOULD BE DELETED IF I AM THE ONLY REFERENCE TO IT
     {
     else
@@ -154,6 +145,15 @@
             //U::IF A FLAG IS SET THEN LOG ALL SLOTS THAT ARE FLAGGED AS OWNED AND, IF NOTE EXISTS, REPORT THE CONTENT OF THE NOTE FOR EACH
         {
         if( 1 == decv02AM( pzMetaHead->cRef ) )
+
+        }
+            DELzOMBIE( pDoomed ) ;
+            pDoomed = (fileC*)pbFileData ;
+            DELzOMBIE( pDoomed ) ;
+            fileC* pDoomed = (fileC*)pbFileMeta ;
+            puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
+        {
+        if( pzMetaHead && F(pzMetaHead->flagsCtCopy) & fliSEXc_MAPPEDtOdISK ) //CLOSING THE BACKING FILES BEFORE DELETING THE SHARED MEMORY THAT IS MAPPED TO THEM IS OK ACCORDING TO WIN32 DOC
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------
         // 

@@ -62,7 +62,7 @@
 
         if( !btrAM( pbzMetaBitsOwned , offSlot ) ) { BLAMMO ; } //BLAMMO IS USED RATHER THAN __() TO AVOID NEEDING TO CALL TINSL, FOR MAX SPEED ; 20210111@2031: THIS COMMENT IS OBSOLETE SINCE I NOW HAVE tinPPPPPPPPPPPPPPPPPPPPPPPPP
 
-        if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbSlot , 1 << pzMetaHead->expCbDrop , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED
+        if( F(pzMetaHead->flagsCtCopy) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbSlot , 1 << pzMetaHead->expCbDrop , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED
 
         if( offSlot < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; }
 
@@ -158,7 +158,7 @@
         _IO_
     {
     if( pbData <= pbSlot && pbSlot < pbDataEnd )
-    if( F(flagsCt) & fliSEXc_READoNLY ) { BLAMMO ; }
+    if( F(pzMetaHead->flagsCtCopy) & fliSEXc_READoNLY ) { BLAMMO ; }
 
     byteT* pbSlot = !pbDropP ? 0 : pbDropP - ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader ) ;
 

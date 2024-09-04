@@ -215,14 +215,14 @@
                         {
                         if( bFormatMetaBlob )
                 
-                        if( F(flagsCt) & fliSEXc_NOTES ) pzMetaNote = (dropNoteS*)( pbzMetaBitsOwned + cbaBitsOwned ) ;
+                        if( F(flagsCtNew) & fliSEXc_NOTES ) pzMetaNote = (dropNoteS*)( pbzMetaBitsOwned + cbaBitsOwned ) ;
                 
                         cbaBitsOwned += CBtOaLIGN02( pbzMetaBitsOwned + cbaBitsOwned ) ;
                         countT cbaBitsOwned = 1 + ( 1 << expSlotsP ) / SB ;
                 
                         pbzMetaBitsOwned = (byteT*)( pzMetaHead + 1 ) ;
                 
-                        __( flagsCt - pzMetaHead->flagsCtCopy ) ;
+                        __( flagsCtNew - pzMetaHead->flagsCtCopy ) ;
 
                         inc02AM( pzMetaHead->cRef ) ;
                         }
@@ -237,7 +237,7 @@
 
                             //CONoUTrAW9( "sexC formatting meta [USINGnAPfORdATA,bSmallSlots,expCbDropP,expSlotsP,]: " , !!( F(flagsState) & flSEXcsTATE_USINGnAPfORdATA ) , " " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
 
-                            pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , cbDropAdjustP , expSlotsP , postNameP , flagsCt , cbDropSeparatorP , cbDropHeader ) ;
+                            pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , cbDropAdjustP , expSlotsP , postNameP , flagsCtNew , cbDropSeparatorP , cbDropHeader ) ;
                         {
                         else
                         if( !bFormatMetaBlob ) pzMetaHead = (sexHeadS*)pbMeta ;
@@ -248,7 +248,7 @@
                                         ? 0                                                                                 // THEN DO NOT FORMAT
                                     : ((fileC*)pbFileMeta)->idOpenResultF( tinP  ) == ifcOPENrESULT_EXISTED                 // ELSE DID MY BACKING FILE ALREADY EXIST?
                                     ? 1                                                                                     // THEN FORMAT
-                                : !( F(flagsCt) & fliSEXc_MAPPEDtOdISK )                                                    // ELSE AM I STATELESS (NOT BACKED BY A DISK FILE)?
+                                : !( F(flagsCtNew) & fliSEXc_MAPPEDtOdISK )                                                    // ELSE AM I STATELESS (NOT BACKED BY A DISK FILE)?
                                 ? 0                                                                                         // THEN DO NOT FORMAT
                             : F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED        // ELSE DID NAPKIN ALREADY EXIST?
                             ? 1                                                                                             // THEN FORMAT
@@ -428,7 +428,7 @@
                     &&
                     !( F(tinP.flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
                     &&
-                    !( F(flagsCt              ) &       fliSEXc_NOsEXiNpOOL )
+                    !( F(flagsCtNew              ) &       fliSEXc_NOsEXiNpOOL )
                     &&
                     !POOP
                 (
@@ -618,7 +618,7 @@
             &&
             !( F(tinP.flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
             &&
-            !( F(flagsCt              ) &       fliSEXc_NOsEXiNpOOL )
+            !( F(flagsCtNew              ) &       fliSEXc_NOsEXiNpOOL )
             &&
             !POOP
         (
@@ -639,7 +639,7 @@
         //{
         //if( !bReadOnly )
 
-        const boolT bReadOnly = !!( F(flagsCt) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ) ;
+        const boolT bReadOnly = !!( F(flagsCtNew) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ) ;
 
         tinP.tlsNewF( LF , TUCK ) ;
         tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , idStateSpaceP ) ;
@@ -748,7 +748,7 @@
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
-            if( F(flagsCt) & fliSEXc_NOTES ) cbaMeta += sizeof( dropNoteS ) << expSlotsP ;
+            if( F(flagsCtNew) & fliSEXc_NOTES ) cbaMeta += sizeof( dropNoteS ) << expSlotsP ;
                                              cbaMeta  = sizeof( sexHeadS  ) + cbNeededForBits + CBtOaLIGN02( cbNeededForBits ) ;
             countT                                                            cbNeededForBits                                  = 1 + ( 1 << expSlotsP ) / SB ;
         {
@@ -771,7 +771,7 @@
 
         const boolT bSmallSlots = ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) < ( 1 << thirdC::os_expCbAllocationGrain_IF( tinP ) ) ;        // FOR SMALL SLOT SIZES, pbData WILL POINT TO THE napkinHeaderS CONTROL STRUCTURE, WHICH IS WHY THE LOW SLOTS MUST BE MARKED AS UNAVAILABLE
 
-        const countT cbDropHeader    = F(flagsCt) & fliSEXc_NOdROPhEADERS ? 0 : CBsEXdROPhEADER ;
+        const countT cbDropHeader    = F(flagsCtNew) & fliSEXc_NOdROPhEADERS ? 0 : CBsEXdROPhEADER ;
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // CALCULATE BLOB SIZES NEEDED
@@ -858,6 +858,13 @@
 
     if( cbDropSeparatorP && cbDropSeparatorP - sizeof( countT ) ) { BLAMMOiD( 0x33334444 ) ; }
 
+    if( idStateSpaceP ) ctFilesF( tinP , postNameP , expCbDropP , cbDropAdjustP , expSlotsP , idStateSpaceP ) ;
+
+    ;
+        : flagsP | fliSEXc_MAPPEDtOdISK
+        ? flagsP
+    const flagsT flagsCtNew = !idStateSpaceP
+
     _IO_
 
     }
@@ -878,17 +885,6 @@ pbMeta( 0 ) ,
 idLathNewDel( 0 ) ,
 idStateSpace( idStateSpaceP ) ,
 flagsState( flSEXcsTATE_null ) ,
-) ,
-            )
-                flagsP | fliSEXc_MAPPEDtOdISK
-                ,
-                ctFilesF( tinP , postNameP , expCbDropP , cbDropAdjustP , expSlotsP , idStateSpaceP )
-            (
-        :
-        ? flagsP
-    !idStateSpaceP
-(
-flagsCt
 pPoolContainsMe( pPoolContainsMeP ) ,
 /*1*/sexC::sexC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , countT idMemorySpaceP , poolC* const pPoolContainsMeP ) :/*1*/
 

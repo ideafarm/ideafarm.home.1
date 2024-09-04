@@ -47,7 +47,7 @@
             {
             if( pzMetaNote )
 
-            if( F(flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbDrop , cbGross - ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader ) , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED     20180611@1452: EDITED TO AVOID WIPING THE DROP HEADER (WITHOUT ANALYSIS)
+            if( F(pzMetaHead->flagsCtCopy) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbDrop , cbGross - ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader ) , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED     20180611@1452: EDITED TO AVOID WIPING THE DROP HEADER (WITHOUT ANALYSIS)
 
             tinP.cPoolDropCt ++ ;
 
@@ -131,7 +131,7 @@
         //
         // ILLUSTRATED SEARCH STRATEGY ASSUMING THERE HAVE BEEN MANY PRIOR NEWS AND ONLY WO PRIOR DELETE
 
-        if( F(flagsCt) & fliSEXc_READoNLY ) { BLAMMO ; }
+        if( F(pzMetaHead->flagsCtCopy) & fliSEXc_READoNLY ) { BLAMMO ; }
     {
     ZE( byteT* , pbDrop ) ;
 
