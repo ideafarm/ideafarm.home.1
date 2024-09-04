@@ -47073,23 +47073,23 @@ i am nonconformant in that all of my member function definitions are in a single
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.wightIdgC : 1snip.150001a8.wightIdgC END
 
 
-/*1*/struct _export setStateS/*1*/
+/*1*/struct _export stateListingSetS/*1*/
 {
     count01T idType ;
     flags01T flagsi ;
-    inline setStateS( countT idTypeP = 0 , flagsT flagsP = 0 ) : idType( (count01T)idTypeP ) , flagsi( (flags01T)flagsP ) {}
+    inline stateListingSetS( countT idTypeP = 0 , flagsT flagsP = 0 ) : idType( (count01T)idTypeP ) , flagsi( (flags01T)flagsP ) {}
 }
 ;
 
-/*1*/class _export aptSetStateC/*1*/
+/*1*/class _export offStateListingSetC/*1*/
 {
     protected :
 
-    aptC aptSetState ;
+    aptC offState ;
 
     public :
 
-    inline aptSetStateC( voidT ) : aptSetState( 0 ) {}
+    inline offStateListingSetC( voidT ) : offState( - 1 ) {}
 }
 ;
 
@@ -47122,19 +47122,19 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 
-/*1*/class _export listingOfSetC : public listingC , public aptSetStateC/*1*/
+/*1*/class _export listingOfSetC : public listingC , public offStateListingSetC/*1*/
 {
     protected :
 
     inline listingOfSetC( tinS& tinP , const flagsT flagsP = flLISTINGc_null ) :
-    aptSetStateC() ,
+    offStateListingSetC() ,
     listingC( tinP , flagsP )
     {}
 
     public :
 
     inline listingOfSetC( tinS& tinP , const listOfSetC& listDadP , const flagsT flagsP = flLISTINGc_null ) :
-    aptSetStateC() ,
+    offStateListingSetC() ,
     listingC( tinP , *(listC*)&listDadP , flagsP )
     {}
 }
@@ -47151,7 +47151,7 @@ i am nonconformant in that all of my member function definitions are in a single
 */
 /**/
 
-/*1*/class _export listOfSetC : public listC , public aptSetStateC/*1*/
+/*1*/class _export listOfSetC : public listC , public offStateListingSetC/*1*/
 {
 
 
@@ -47160,12 +47160,12 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
 
     inline listOfSetC( tinS& tinP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
-    aptSetStateC() ,
+    offStateListingSetC() ,
     listC( tinP , idNameP , flagsP )
     {}
 
     inline listOfSetC( tinS& tinP , const listOfSetC& listDadP , const countT idNameP , const flagsT flagsP = flLISTINGc_null ) :
-    aptSetStateC() ,
+    offStateListingSetC() ,
     listC( tinP , *(listC*)&listDadP , idNameP , flagsP )
     {}
 }

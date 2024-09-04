@@ -423,8 +423,8 @@ class   /*ff*/listOfSet_countT_C/*ff*/                             ; /*ff*//**//
 class   /*ff*/listingOfSet_listingVSP_C/*ff*/                      ; /*ff*//**//*ff*/
 class   /*ff*/listOfSetC/*ff*/                                     ; /*ff*//**//*ff*/
 class   /*ff*/listingOfSetC/*ff*/                                  ; /*ff*//**//*ff*/
-class   /*ff*/aptSetStateC/*ff*/                                ; /*ff*//**//*ff*/
-class   /*ff*/setStateS/*ff*/                                   ; /*ff*//**//*ff*/
+class   /*ff*/offStateListingSetC/*ff*/                                ; /*ff*//**//*ff*/
+class   /*ff*/stateListingSetS/*ff*/                                   ; /*ff*//**//*ff*/
 
 
 //INCLUDE GENERATED SNIPPETS HERE

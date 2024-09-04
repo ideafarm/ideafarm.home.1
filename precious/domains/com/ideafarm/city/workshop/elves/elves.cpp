@@ -3076,8 +3076,8 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.listing_countTstrz_C"                        ,
                     "1snip.15*.listOfSetC"                                  ,
                     "1snip.15*.listingOfSetC"                               ,
-                    "1snip.15*.aptSetStateC"                                ,
-                    "1snip.15*.setStateS"                                   ,
+                    "1snip.15*.offStateListingSetC"                         ,
+                    "1snip.15*.stateListingSetS"                            ,
 
 
                     "1snip.15*.wightIdgC"                                   ,
