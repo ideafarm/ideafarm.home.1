@@ -17,13 +17,13 @@ listC::chatterIF( tinP , count2S( LISTnAMEsYS_ROOTsYSTEM2 , 0 ) ) ;
 
 }
     SAYfIELDoUT( "field1" ) ;
-    listC::fieldIF( tinP , pOut , hRec , "field1" , _1_modeAllC() | _1_queryC() /*| _1_ok_above_C( 8 ) | _1_ok_above_C( "i" ) | _1_ok_above_C( (countT*)count2S( 0xc ) )*/ , LF ) ;
+    listC::fieldIF( tinP , pOut , hRec , "field1" , _fe_modeAllC() |  _fe_queryC() /*|  _fe_ok_above_C( 8 ) |  _fe_ok_above_C( "i" ) |  _fe_ok_above_C( (countT*)count2S( 0xc ) )*/ , LF ) ;
 
     }
         }
             PUSE( tinP , *(byteT**)&pczv ) ;
             DELlIST( fieldEditParamOutC , pOut ) ;
-            listC::fieldIF( tinP , pOut , hRec , "field1" , _1_pushC( pczv ) | _1_modePushSinkC() , LF ) ;
+            listC::fieldIF( tinP , pOut , hRec , "field1" , _fe_pushC( pczv ) | _fe_modePushSinkC() , LF ) ;
 
             pczv[ offo ] = 0 ;
             for( countT offo = 0 ; offo < vv ; offo ++ ) pczv[ offo ] = vv ;
@@ -33,7 +33,7 @@ listC::chatterIF( tinP , count2S( LISTnAMEsYS_ROOTsYSTEM2 , 0 ) ) ;
 
         }
             DELlIST( fieldEditParamOutC , pOut ) ;
-            listC::fieldIF( tinP , pOut , hRec , "field1" , _1_pushC( postv[ offv ] ) | _1_modePushSinkC() , LF ) ;
+            listC::fieldIF( tinP , pOut , hRec , "field1" , _fe_pushC( postv[ offv ] ) | _fe_modePushSinkC() , LF ) ;
         {
         for( countT offv = 0 ; offv < sizeof postv / sizeof postv[ 0 ] ; offv ++ )
         
@@ -59,7 +59,7 @@ listC::chatterIF( tinP , count2S( LISTnAMEsYS_ROOTsYSTEM2 , 0 ) ) ;
         
         }
             DELlIST( fieldEditParamOutC , pOut ) ;
-            listC::fieldIF( tinP , pOut , hRec , "field1" , _1_pushC( vv ) | _1_modePushSinkC() , LF ) ;
+            listC::fieldIF( tinP , pOut , hRec , "field1" , _fe_pushC( vv ) | _fe_modePushSinkC() , LF ) ;
         {
         for( countT vv = 1 ; vv <= 0xf ; vv ++ )
     {

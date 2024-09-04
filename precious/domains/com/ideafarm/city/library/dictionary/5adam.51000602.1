@@ -27,7 +27,7 @@ THREADmODE3rESTORE
 
     }
         TRACEfIELDoUT( etThread , "field1" , TUCK << 2 ) ;
-        listC::fieldIF( tinP , pOut , hRecord , pczField1 , _1_queryC() + _1_modeAllC() , LF ) ;
+        listC::fieldIF( tinP , pOut , hRecord , pczField1 ,  _fe_queryC() + _fe_modeAllC() , LF ) ;
         etThread.traceF( tinP , T("querying field1 all") ) ;
 
         }
@@ -35,7 +35,7 @@ THREADmODE3rESTORE
             puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
         {
         //DELlIST( fieldEditParamOutC , pOut ) ;
-        listC::fieldIF( tinP , pOut , hRecord , pczField1 , _1_deleteC() , LF ) ;
+        listC::fieldIF( tinP , pOut , hRecord , pczField1 , _fe_deleteC() , LF ) ;
         etThread.traceF( tinP , T("deleting wo value in field1") ) ;
 
         listC::openIF( tinP , hRecord , pczRecord ) ;
@@ -54,12 +54,12 @@ THREADmODE3rESTORE
         TRACEfIELDoUT( etThread , "field1" , TUCK << 2 ) ;
         , LF ) ;
 
-            + _1_no_above_C( "eeeee" )
-            + _1_no_below_C( "ccc" )
-            + _1_no_above_C( 0x66666666 )
-            + _1_no_below_C( 0x44444444 )
-            + _1_modeAllC()
-            _1_queryC()
+            +  _fe_no_above_C( "eeeee" )
+            +  _fe_no_below_C( "ccc" )
+            +  _fe_no_above_C( 0x66666666 )
+            +  _fe_no_below_C( 0x44444444 )
+            + _fe_modeAllC()
+             _fe_queryC()
 
         listC::fieldIF( tinP , pOut , hRecord , pczField1 ,
         etThread.traceF( tinP , T("querying field1 specifying ranges") ) ;
@@ -68,7 +68,7 @@ THREADmODE3rESTORE
             }
                 DELlIST( fieldEditParamOutC , pOut ) ;
                 puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
-                listC::fieldIF( tinP , pOut , hRecord , pczField1 , _1_pushC( postv[ offv ] ) , LF ) ;
+                listC::fieldIF( tinP , pOut , hRecord , pczField1 , _fe_pushC( postv[ offv ] ) , LF ) ;
             {
             for( countT offv = 0 ; offv < sizeof postv / sizeof postv[ 0 ] ; offv ++ )
             etThread.traceF( tinP , T("pushing psText string values to field1") ) ;
@@ -89,7 +89,7 @@ THREADmODE3rESTORE
                 //if( vv == 0x22222222 ) break ;
                 DELlIST( fieldEditParamOutC , pOut ) ;
                 puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
-                listC::fieldIF( tinP , pOut , hRecord , pczField1 , _1_pushC( vv ) , LF ) ;
+                listC::fieldIF( tinP , pOut , hRecord , pczField1 , _fe_pushC( vv ) , LF ) ;
             {
             for( countT vv = 0x11111111 ; vv <= 0x88888888 ; vv += 0x11111111 )
             etThread.traceF( tinP , T("pushing count values to field1") ) ;

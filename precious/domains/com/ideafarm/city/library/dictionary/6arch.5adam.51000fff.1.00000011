@@ -52,13 +52,13 @@ THREADmODE3rESTORE
     }
         }
             //SAYfIELDoUT( "favoriteseries" ) ;
-            //listC::fieldIF( tinP , pOut , hRec , "favoriteseries" , _1_modeAllC() | _1_queryC() , LF ) ;
+            //listC::fieldIF( tinP , pOut , hRec , "favoriteseries" , _fe_modeAllC() |  _fe_queryC() , LF ) ;
             //
             //SAYfIELDoUT( "favoritewords" ) ;
-            //listC::fieldIF( tinP , pOut , hRec , "favoritewords" , _1_modeAllC() | _1_queryC() , LF ) ;
+            //listC::fieldIF( tinP , pOut , hRec , "favoritewords" , _fe_modeAllC() |  _fe_queryC() , LF ) ;
             
             SAYfIELDoUT( "favoritenumbers" ) ;
-            listC::fieldIF( tinP , pOut , hRec , "favoritenumbers" , _1_modeAllC() | _1_queryC() , LF ) ;
+            listC::fieldIF( tinP , pOut , hRec , "favoritenumbers" , _fe_modeAllC() |  _fe_queryC() , LF ) ;
         
             }
                 // }
@@ -67,7 +67,7 @@ THREADmODE3rESTORE
                 //         DELlIST( fieldEditParamOutC , pOut ) ;
                 //         puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
                 //     {
-                //     listC::fieldIF( tinP , pOut , hRec , "favoriteseries" , _1_pushC( pczv ) | _1_modePushSinkC() , LF ) ;
+                //     listC::fieldIF( tinP , pOut , hRec , "favoriteseries" , _fe_pushC( pczv ) | _fe_modePushSinkC() , LF ) ;
                 // 
                 //     pczv[ offo ] = 0 ;
                 //     for( countT offo = 0 ; offo < vv ; offo ++ ) pczv[ offo ] = vv ;
@@ -82,7 +82,7 @@ THREADmODE3rESTORE
                 // 
                 // }
                 //     DELlIST( fieldEditParamOutC , pOut ) ;
-                //     listC::fieldIF( tinP , pOut , hRec , "favoritewords" , _1_pushC( postv[ offv ] ) | _1_modePushSinkC() , LF ) ;
+                //     listC::fieldIF( tinP , pOut , hRec , "favoritewords" , _fe_pushC( postv[ offv ] ) | _fe_modePushSinkC() , LF ) ;
                 // {
                 // for( countT offv = 0 ; offv < sizeof postv / sizeof postv[ 0 ] ; offv ++ )
                 // 
@@ -96,12 +96,12 @@ THREADmODE3rESTORE
 
                 //}
                 //    DELlIST( fieldEditParamOutC , pOut ) ;
-                //    listC::fieldIF( tinP , pOut , hRec , "favoritenumbers" , _1_pushC( vv ) | _1_modePushSinkC() , LF ) ;
+                //    listC::fieldIF( tinP , pOut , hRec , "favoritenumbers" , _fe_pushC( vv ) | _fe_modePushSinkC() , LF ) ;
                 //{
                 //for( countT vv = 3 - cToDo ; vv <= 3 - cToDo ; vv ++ )
 
                 DELlIST( fieldEditParamOutC , pOut ) ;
-                listC::fieldIF( tinP , pOut , hRec , "favoritenumbers" , _1_pushC( MAXcOUNTT ) | _1_modePushSinkC() , LF ) ;
+                listC::fieldIF( tinP , pOut , hRec , "favoritenumbers" , _fe_pushC( MAXcOUNTT ) | _fe_modePushSinkC() , LF ) ;
             {
             
             listC::openIF( tinP , hRec , pczList ) ;

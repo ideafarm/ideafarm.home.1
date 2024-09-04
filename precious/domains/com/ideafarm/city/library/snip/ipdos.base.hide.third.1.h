@@ -38353,7 +38353,7 @@ args
             listC::openIF( tinP , hIKV , hIK , pczV ) ;                                                                                                             \
                                                                                                                                                                     \
             countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                           \
-            listC::fieldIF( tinP , pOut , hIKV , pczField , _1_pushC( recordP ) + _1_modePushSinkC() , LF ) ; ___( pOut ) ;                                         \
+            listC::fieldIF( tinP , pOut , hIKV , pczField , _fe_pushC( recordP ) + _fe_modePushSinkC() , LF ) ; ___( pOut ) ;                                         \
         }                                                                                                                                                           \
                                                                                                                                                                     \
         {                                                                                                                                                           \
@@ -38525,7 +38525,7 @@ args
             if( !bFail )                                                                                                                                            \
             {                                                                                                                                                       \
                 countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                       \
-                listC::fieldIF( tinP , pOut , hIKV , pczField , _1_deleteC() + _1_ok_equal_C( recordP ) , LF ) ;                                                    \
+                listC::fieldIF( tinP , pOut , hIKV , pczField , _fe_deleteC() +  _fe_ok_equal_C( recordP ) , LF ) ;                                                    \
             }                                                                                                                                                       \
         }                                                                                                                                                           \
                                                                                                                                                                     \
