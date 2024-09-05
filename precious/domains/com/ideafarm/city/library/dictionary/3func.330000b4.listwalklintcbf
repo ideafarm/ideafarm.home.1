@@ -94,7 +94,11 @@
                             {
                             switch( idName )
                             countT idName = pListingP->nameF() ;
-                            pcValue = (countT*)*(listing_countT_C*)pListingP ;
+
+                            ;
+                                : (countT*)*(     listing_countT_C*)pListingP
+                                ? (countT*)*(listingOfSet_countT_C*)pListingP
+                            pcValue = bOfSet
                         {
                         case ifcIDtYPEmIXINdATUM_countT     :
                     {
@@ -117,9 +121,13 @@
                 if( pDatum->getBitsF() & fliDATUMc_INDEXED ) { CONoUTrAW( " unindexing a datumC\r\n" ) ; }
 
                 ;
-                    : (datumC*)(         pListingP + 1 )
-                    ? (datumC*)( (listC*)pListingP + 1 )
-                datumC* pDatum = pListingP->flagsF() & fliLISTINGc_MIXINlIST
+                        : (datumC*)(                 pListingP + 1 )
+                        ? (datumC*)(         (listC*)pListingP + 1 )
+                    : pListingP->flagsF() & fliLISTINGc_MIXINlIST
+                        : (datumC*)( (listingOfSetC*)pListingP + 1 )
+                        ? (datumC*)(    (listOfSetC*)pListingP + 1 )
+                    ? pListingP->flagsF() & fliLISTINGc_MIXINlIST
+                datumC* pDatum = bOfSet
             {
             if( pListingP->idTypeDatumF() )
 
@@ -144,6 +152,9 @@
 
     listingC* pListingP = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
+
+    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
+    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT listWalkLintCBF( tinS& tinP )/*1*/
 

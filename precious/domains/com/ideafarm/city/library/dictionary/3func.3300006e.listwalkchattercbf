@@ -236,34 +236,62 @@
             }
                 }
                     }
-                        default                             : { BLAMMO                                                ; break ; }
-                        case ifcIDtYPEmIXINdATUM_listingVSP : { vspValue  =             *(list_listingVSP_C*)pListing ; break ; }
-                        case ifcIDtYPEmIXINdATUM_countTstrz : { pczValue  =    (countT*)*(list_countTstrz_C*)pListing ; break ; }
-                        case ifcIDtYPEmIXINdATUM_blob       : { postValue =         (osTextT*)*(list_blob_C*)pListing ; break ; }
-                        case ifcIDtYPEmIXINdATUM_countT     : { pcValue   =        (countT*)*(list_countT_C*)pListing ; break ; }
+                        }
+                            default                             : { BLAMMO                                                     ; break ; }
+                            case ifcIDtYPEmIXINdATUM_listingVSP : { vspValue  =                  *(list_listingVSP_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_countTstrz : { pczValue  =         (countT*)*(list_countTstrz_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_blob       : { postValue =              (osTextT*)*(list_blob_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_countT     : { pcValue   =             (countT*)*(list_countT_C*)pListing ; break ; }
+                        {
+                        switch( pListing->idTypeDatumF() ) //CS:CODEsYNC: 00104b0 21e0006 21e0002 21e0008 21e0009 220000e
                     {
-                    switch( pListing->idTypeDatumF() ) //CS:CODEsYNC: 00104b0 21e0006 21e0002 21e0008 21e0009 220000e
+                    else
+                    }
+                        }
+                            default                             : { BLAMMO                                                     ; break ; }
+                            case ifcIDtYPEmIXINdATUM_listingVSP : { vspValue  =               *(listing_listingVSP_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_countTstrz : { pczValue  =      (countT*)*(listing_countTstrz_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_blob       : { postValue =           (osTextT*)*(listing_blob_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_countT     : { pcValue   =          (countT*)*(listing_countT_C*)pListing ; break ; }
+                        {
+                        switch( pListing->idTypeDatumF() ) //CS:CODEsYNC: 00104b0 21e0006 21e0002 21e0008 21e0009 220000e
+                    {
+                    if( !( flagsi & fliLISTINGc_MIXINlIST ) )
                 {
                 else
                 }
                     }
-                        default                             : { BLAMMO                                                ; break ; }
-                        case ifcIDtYPEmIXINdATUM_listingVSP : { vspValue  =          *(listing_listingVSP_C*)pListing ; break ; }
-                        case ifcIDtYPEmIXINdATUM_countTstrz : { pczValue  = (countT*)*(listing_countTstrz_C*)pListing ; break ; }
-                        case ifcIDtYPEmIXINdATUM_blob       : { postValue =      (osTextT*)*(listing_blob_C*)pListing ; break ; }
-                        case ifcIDtYPEmIXINdATUM_countT     : { pcValue   =     (countT*)*(listing_countT_C*)pListing ; break ; }
+                        }
+                            default                             : { BLAMMO                                                ; break ; }
+                            case ifcIDtYPEmIXINdATUM_listingVSP : { vspValue  =             *(listOfSet_listingVSP_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_countTstrz : { pczValue  =    (countT*)*(listOfSet_countTstrz_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_blob       : { postValue =         (osTextT*)*(listOfSet_blob_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_countT     : { pcValue   =        (countT*)*(listOfSet_countT_C*)pListing ; break ; }
+                        {
+                        switch( pListing->idTypeDatumF() ) //CS:CODEsYNC: 00104b0 21e0006 21e0002 21e0008 21e0009 220000e
                     {
-                    switch( pListing->idTypeDatumF() ) //CS:CODEsYNC: 00104b0 21e0006 21e0002 21e0008 21e0009 220000e
+                    else
+                    }
+                        }
+                            default                             : { BLAMMO                                                ; break ; }
+                            case ifcIDtYPEmIXINdATUM_listingVSP : { vspValue  =          *(listingOfSet_listingVSP_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_countTstrz : { pczValue  = (countT*)*(listingOfSet_countTstrz_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_blob       : { postValue =      (osTextT*)*(listingOfSet_blob_C*)pListing ; break ; }
+                            case ifcIDtYPEmIXINdATUM_countT     : { pcValue   =     (countT*)*(listingOfSet_countT_C*)pListing ; break ; }
+                        {
+                        switch( pListing->idTypeDatumF() ) //CS:CODEsYNC: 00104b0 21e0006 21e0002 21e0008 21e0009 220000e
+                    {
+                    if( !( flagsi & fliLISTINGc_MIXINlIST ) )
                 {
-                if( !( flagsi & fliLISTINGc_MIXINlIST ) )
+                if( bOfSet )
             {
             if( flagsi & fliLISTINGc_MIXINdATUM )
             flagsT flagsi = pListing->flagsF() ;
     
-            listingVSP       vspValue ;
-            ZE( countT*  , pczValue ) ;
+            listingVSP     vspValue    ;
+            ZE( countT*  , pczValue  ) ;
             ZE( osTextT* , postValue ) ;
-            ZE( countT*  , pcValue ) ;
+            ZE( countT*  , pcValue   ) ;
         {
         else
         }
@@ -274,25 +302,25 @@
 
         aptC aptListing( tinP , pListing ) ;
 
-        }
-            CONoUTrAW( ostoSay ) ;
-
-            OStEXTAK( ostoSay , "\r\n" ) ;
-            OStEXTC(  ostoSay , finger , 0 ) ;
-            OStEXTAK( ostoSay , "    " ) ;
-            OStEXTC(  ostoSay , dropHeader , 0 ) ;
-            OStEXTAK( ostoSay , "    " ) ;
-            OStEXTC(  ostoSay , separator , 0 ) ;
-            OStEXTAK( ostoSay , "    " ) ;
-            OStEXTCF( ostoSay , pListing , '0' ) ;
-            OStEXTAK( ostoSay , "\r\n[pListing,separator,dropHeader]:    0x" ) ;
-            OStEXT(  ostoSay , TUCK ) ;
-
-            countT  finger     = pcl[   0 ] ;
-            countT  dropHeader = pcl[ - 1 ] ;
-            countT  separator  = pcl[ - 2 ] ;
-            countT* pcl = (countT*)pListing ;
-        {
+        //}
+        //    CONoUTrAW( ostoSay ) ;
+        //
+        //    OStEXTAK( ostoSay , "\r\n" ) ;
+        //    OStEXTC(  ostoSay , finger , 0 ) ;
+        //    OStEXTAK( ostoSay , "    " ) ;
+        //    OStEXTC(  ostoSay , dropHeader , 0 ) ;
+        //    OStEXTAK( ostoSay , "    " ) ;
+        //    OStEXTC(  ostoSay , separator , 0 ) ;
+        //    OStEXTAK( ostoSay , "    " ) ;
+        //    OStEXTCF( ostoSay , pListing , '0' ) ;
+        //    OStEXTAK( ostoSay , "\r\n[pListing,separator,dropHeader]:    0x" ) ;
+        //    OStEXT(  ostoSay , TUCK ) ;
+        //
+        //    countT  finger     = pcl[   0 ] ;
+        //    countT  dropHeader = pcl[ - 1 ] ;
+        //    countT  separator  = pcl[ - 2 ] ;
+        //    countT* pcl = (countT*)pListing ;
+        //{
         //U:: TO FIND A BUG
     {
     if( pListing )
@@ -404,16 +432,19 @@
     const countT levelOoNameUse = levelOoNameMe ? levelOoNameMe : levelOoNameDad ;
 
     const countT levelReNameDad = !tinP.ta.pushed.u.listWalk.cbf.pDadP ? 0 : tinP.ta.pushed.u.listWalk.cbf.pDadP->nameF( 3 ) ;
-    const countT levelReNameMe  = !pListing                          ? 0 : pListing->nameF( 3 )                          ;
+    const countT levelReNameMe  = !pListing                            ? 0 :                            pListing->nameF( 3 ) ;
 
     const countT levelOoNameDad = !tinP.ta.pushed.u.listWalk.cbf.pDadP ? 0 : tinP.ta.pushed.u.listWalk.cbf.pDadP->nameF( 2 ) ;
-    const countT levelOoNameMe  = !pListing                          ? 0 : pListing->nameF( 2 )                          ;
+    const countT levelOoNameMe  = !pListing                            ? 0 :                            pListing->nameF( 2 ) ;
 
     FV( flLISTwALKcHATTER , flagsP ) ;
     countT    cbJotStringDecodePrefixP = tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
     flagsT    flagsP                   = tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
     listingC* pListing                 = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
+
+    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
+    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 
     }
         countT foo = 2 ;

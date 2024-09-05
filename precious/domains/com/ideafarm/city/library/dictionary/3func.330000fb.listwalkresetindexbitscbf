@@ -14,15 +14,21 @@
     }
         pDatum->resetIndexBitF() ;
 
-        ;
-            : (datumC*)(         pListing + 1 )
-            ? (datumC*)( (listC*)pListing + 1 )
-        datumC* pDatum = pListing->flagsF() & fliLISTINGc_MIXINlIST
+                : (datumC*)(                 pListing + 1 )
+                ? (datumC*)(         (listC*)pListing + 1 )
+            : pListing->flagsF() & fliLISTINGc_MIXINlIST
+                : (datumC*)( (listingOfSetC*)pListing + 1 )
+                ? (datumC*)(    (listOfSetC*)pListing + 1 )
+            ? pListing->flagsF() & fliLISTINGc_MIXINlIST
+        datumC* pDatum = bOfSet
     {
     if( pListing && pListing->idTypeDatumF() )
 
     listingC* pListing = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
+
+    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
+    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT listWalkResetIndexBitsCBF( tinS& tinP )/*1*/
 

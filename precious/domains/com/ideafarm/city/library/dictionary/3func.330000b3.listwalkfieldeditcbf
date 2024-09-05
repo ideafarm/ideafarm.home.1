@@ -159,7 +159,7 @@
                     }
                         }
                             vspbzNew = vsp ;
-                            blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+                            blobVSP vsp(   postv , vspDatumBlobCBF , (countT)pNew ) ;
 
                             else           postv =      *(listing_blob_C*)pNew ;
                             if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
@@ -230,7 +230,7 @@
                 }
                     }
                         vspbzNew = vsp ;
-                        blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+                        blobVSP vsp(   postv , vspDatumBlobCBF , (countT)pNew ) ;
 
                         else           postv =      *(listing_blob_C*)pNew ;
                         if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
@@ -364,7 +364,7 @@
                 }
                     }
                         vspbzNew = vsp ;
-                        blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+                        blobVSP vsp(   postv , vspDatumBlobCBF , (countT)pNew ) ;
 
                         else           postv =      *(listing_blob_C*)pNew ;
                         if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
@@ -452,7 +452,7 @@
             }
                 }
                     vspbzNew = vsp ;
-                    blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+                    blobVSP vsp(   postv , vspDatumBlobCBF , (countT)pNew ) ;
 
                     else           postv =      *(listing_blob_C*)pNew ;
                     if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
@@ -553,7 +553,7 @@
             }
                 }
                     vspbzNew = vsp ;
-                    blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+                    blobVSP vsp(   postv , vspDatumBlobCBF , (countT)pNew ) ;
 
                     else           postv =      *(listing_blob_C*)pNew ;
                     if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
@@ -642,7 +642,7 @@
         }
             }
                 vspbzNew = vsp ;
-                blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+                blobVSP vsp(   postv , vspDatumBlobCBF , (countT)pNew ) ;
 
                 else           postv =      *(listing_blob_C*)pNew ;
                 if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
@@ -700,9 +700,6 @@
     //if( F(inP.flags) & flFIELDeDIT_PUSH )
     //FOR DEBUGGING
 
-    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
-
     ;
         : flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE | flLISTwALKcALLbACKrETURNcODE_QUIT
         ? flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE
@@ -734,6 +731,9 @@
     listingC* pListingP = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     countT    idCallP  = tinP.ta.pushed.u.listWalk.cbf.idCallP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
+
+    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
+    const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT listWalkFieldEditCBF( tinS& tinP )/*1*/
 
