@@ -43178,7 +43178,7 @@ it is illegal for any application code to construct or reference listingC (or de
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.listingC.openF!||
     sCountT operator -( const listingC& lP ) const ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.listingC.operator_subtract!||
-    countT cRefDatumF( voidT ) const ;
+    countT cRefDatumF( tinS& tinP ) const ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.listingC.cRefDatumF!||
     countT nameF( sCountT idP = 0 ) const ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listingC.nameF!||

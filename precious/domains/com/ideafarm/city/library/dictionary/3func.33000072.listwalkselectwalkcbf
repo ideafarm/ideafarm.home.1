@@ -13,31 +13,63 @@
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
         }
-            CONoUTrAW( "================== CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
-            POPtINaRGS
-            flagsT flagsRC = listC::walkIF( tinP , hRecord ) ; //U::BUG: NEED pcP[ 0 ] AND pcP[ 1 ]
-            tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-            tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
-            tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-            tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
-            PUSHtINaRGS
-            CONoUTrAW( "================== CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
+            }
+                CONoUTrAW( "================== CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
+                POPtINaRGS
+                flagsT flagsRC = listC::walkIF( tinP , hRecord ) ; //U::BUG: NEED pcP[ 0 ] AND pcP[ 1 ]
+                tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+                tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
+                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+                tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+                PUSHtINaRGS
+                CONoUTrAW( "================== CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
+            {
+            else
+            if( pSelectWalkCBFP ) (*pSelectWalkCBFP)( tinP , *tinP.pEther , hRecord ) ;
+
+            puseC puseRecord( tinP , *tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+            
+            record.openF( tinP , hRecord , 0 , tinP.ta.retained.u.listWalk.walk.idGrabLayer ) ;
+            handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            
+            grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+
+            __( !listingC::bIsListingIF( tinP , &record ) ) ;
+            listC& record = *(listC*)(const listingC*)spRecord ;
+
+            listingVSP spRecord = entry ;
+            listing_listingVSP_C& entry = *(listing_listingVSP_C*)pListing ;
         {
         else
-        if( pSelectWalkCBFP ) (*pSelectWalkCBFP)( tinP , *tinP.pEther , hRecord ) ;
+        }
+            }
+                CONoUTrAW( "================== CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
+                POPtINaRGS
+                flagsT flagsRC = listC::walkIF( tinP , hRecord ) ; //U::BUG: NEED pcP[ 0 ] AND pcP[ 1 ]
+                tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+                tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
+                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+                tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+                PUSHtINaRGS
+                CONoUTrAW( "================== CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
+            {
+            else
+            if( pSelectWalkCBFP ) (*pSelectWalkCBFP)( tinP , *tinP.pEther , hRecord ) ;
 
-        puseC puseRecord( tinP , *tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
-        
-        record.openF( tinP , hRecord , 0 , tinP.ta.retained.u.listWalk.walk.idGrabLayer ) ;
-        handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-        
-        grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+            puseC puseRecord( tinP , *tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+            
+            record.openF( tinP , hRecord , 0 , tinP.ta.retained.u.listWalk.walk.idGrabLayer ) ;
+            handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            
+            grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
 
-        __( !listingC::bIsListingIF( tinP , &record ) ) ;
-        listC& record = *(listC*)(const listingC*)spRecord ;
+            __( !listingOfSetC::bIsListingIF( tinP , &record ) ) ;
+            listOfSetC& record = *(listOfSetC*)(const listingC*)spRecord ;
 
-        listingVSP spRecord = entry ;
-        listing_listingVSP_C& entry = *(listing_listingVSP_C*)pListing ;
+            listingVSP spRecord = entry ;
+            listingOfSet_listingVSP_C& entry = *(listingOfSet_listingVSP_C*)pListing ;
+        {
+        if( bOfSet )
     {
     if( pListing && !( pListing->flagsF() & fliLISTINGc_MIXINlIST ) && pListing->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
 

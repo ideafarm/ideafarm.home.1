@@ -104,9 +104,18 @@
             offWoth = !offWoth ;
         {
         if( !bKidDeleted )
-        pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (          listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
-        pk = &APT(           listingC , *pApt ) ;
-        if( pk ) pApt = &((          listC*)pk)->aptBro ; // IF !pk THEN *pApt NOW POINTS TO THE           listingC THAT FOLLOWED THE DELETED           listingC
+        //pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (          listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
+
+        }
+            pk = &APT(      listingC , *pApt ) ;
+            if( pk ) pApt = &(     (listC*)pk)->aptBro ; // IF !pk THEN *pApt NOW POINTS TO THE           listingC THAT FOLLOWED THE DELETED           listingC
+        {
+        else
+        }
+            pk = &APT( listingOfSetC , *pApt ) ;
+            if( pk ) pApt = &((listOfSetC*)pk)->aptBro ; // IF !pk THEN *pApt NOW POINTS TO THE           listingC THAT FOLLOWED THE DELETED           listingC
+        {
+        if( bOfSet )
 
         }
             break ;
@@ -165,7 +174,7 @@
 
         ;
             && ( F(tinP.ta.pushed.u.listWalk.walk.flagsWalkP) & flLISTwALK_IGNOREcREF                                                              || !pk->cRefF()      )
-            && ( F(tinP.ta.pushed.u.listWalk.walk.flagsWalkP) & flLISTwALK_IGNOREcREFdATUM || pk->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP || !pk->cRefDatumF() )
+            && ( F(tinP.ta.pushed.u.listWalk.walk.flagsWalkP) & flLISTwALK_IGNOREcREFdATUM || pk->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP || !pk->cRefDatumF( tinP ) )
             pk->flagsF() & fliLISTINGc_DELETErEQUESTED
         boolT bKidDeleted =
 
@@ -246,12 +255,23 @@
     
                 }
                     if( POOP ) break ;
-                                            __( !*pApt ) ;
-                                                         pNew = 0 ;
-                                                 *pApt = pNew ;
-                        ((          listC*)pNew)->aptBro = *pApt ;
-                    __( ((          listC*)pNew)->aptBro ) ;
-                              listingC*& pNew = tinP.ta.pushed.u.listWalk.cbf.pNewP ;
+                    }
+                                                     __( !*pApt ) ;
+                                                                  pNew = 0 ;
+                                                          *pApt = pNew ;
+                            (     (listC*)pNew)->aptBro = *pApt ;
+                        __( (     (listC*)pNew)->aptBro ) ;
+                    {
+                    else
+                    }
+                                                     __( !*pApt ) ;
+                                                                  pNew = 0 ;
+                                                          *pApt = pNew ;
+                            ((listOfSetC*)pNew)->aptBro = *pApt ;
+                        __( ((listOfSetC*)pNew)->aptBro ) ;
+                    {
+                    if( bOfSet )
+                    listingC*& pNew = tinP.ta.pushed.u.listWalk.cbf.pNewP ;
 
                     cKidNew ++ ;
                     flagsRC |= flLISTwALKrETURNcODE_NEWlISTING ;
@@ -331,8 +351,8 @@
 
         }
             pk->flagsRefF() &= (byteT)~fliLISTINGc_GRABBED ;
-            else        { CONoUTrAW(  " resetting the GRABBED bit for a           listingC\r\n" ) ; }
-            if( pklNU ) { CONoUTrAW3( " resetting the GRABBED bit for           listC [idName]: " , pklNU->idName , "\r\n" ) ; }
+            //else        { CONoUTrAW(  " resetting the GRABBED bit for a           listingC\r\n" ) ; }
+            //if( pklNU ) { CONoUTrAW3( " resetting the GRABBED bit for           listC [idName]: " , pklNU->idName , "\r\n" ) ; }
         {
         if( F(tinP.ta.pushed.u.listWalk.walk.flagsWalkP) & flLISTwALK_RESETgRABITbIT && pk->flagsF() & fliLISTINGc_GRABBED )
         //CONoUTrAW3( "[pk->flagsi]: " , pk->flagsF() , "\r\n" ) ;
@@ -342,7 +362,7 @@
             __1
             __( *pApt ) ;
         {
-        if( !          listingC::bIsListingIF( tinP , *pApt ) )
+        if( !listingC::bIsListingIF( tinP , *pApt ) )
 
         //if( !( idPass % TUCK ) ) { CONoUTrAW( "~" ) ; } //U::WHY IS CPU NOT PEGGED?
         //countT idPass = 1 + incv02AM( idPassLath ) ;
@@ -374,8 +394,13 @@
     //{
     //if( tinP.pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD && pk )
 
-              listC* pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (          listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
-              listingC* pk = &APT(           listingC , *pApt ) ;
+    //listC* pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (          listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
+
+    ;
+        :  &APT(      listingC , *pApt )
+        ?  &APT( listingOfSetC , *pApt )
+    listingC* pk = bOfSet
+
     aptC* pApt = &aptKid ;
     tinP.ta.pushed.u.listWalk.cbf.idCallP = 0 ;
     ZE( countT , cKidNew ) ;
@@ -420,6 +445,9 @@
 
     tinP.ta.pushed.u.listWalk.cbf.idNestP ++ ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
+
+    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
+    const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
 
     _IO_
 

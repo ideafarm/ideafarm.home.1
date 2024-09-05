@@ -12,39 +12,78 @@
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
-        // POPtINaRGS
-        // flagsT flagsRC = listC::walkIF( tinP , hRecord ) ;
-        // tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-        // tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
-        // tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-        // tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
-        // PUSHtINaRGS
-        // CONoUTrAW( "================== CHATTERING RECORD ==============================\r\n" ) ;
-        // 
-        // record.openF( tinP , hRecord ) ;
-        // handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-        // 
-        // grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
-    
         }
-            DELlIST( fieldEditParamOutC , pOut ) ;
-            listC::fieldIF( tinP , pOut , hTo , pczField , _fe_pushC( record ) + _fe_modePushSinkC() + _fe_modeUniqueC() , LF ) ;
-            countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                                                                 \
-            ZE( fieldEditParamOutC* , pOut ) ;
+            // POPtINaRGS
+            // flagsT flagsRC = listC::walkIF( tinP , hRecord ) ;
+            // tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+            // tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
+            // tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+            // tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+            // PUSHtINaRGS
+            // CONoUTrAW( "================== CHATTERING RECORD ==============================\r\n" ) ;
+            // 
+            // record.openF( tinP , hRecord ) ;
+            // handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            // 
+            // grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
         
-            listC::openIF( tinP , hTo , pczTo ) ;
-            handleC hTo( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-            countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] , 0 } ;
+            }
+                DELlIST( fieldEditParamOutC , pOut ) ;
+                listC::fieldIF( tinP , pOut , hTo , pczField , _fe_pushC( record ) + _fe_modePushSinkC() + _fe_modeUniqueC() , LF ) ;
+                countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                                                                 \
+                ZE( fieldEditParamOutC* , pOut ) ;
+            
+                listC::openIF( tinP , hTo , pczTo ) ;
+                handleC hTo( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] , 0 } ;
+            
+                puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+            {
+            //SINK UNIQUE A listingVSP for record INTO A TEMPORARY LIST
         
-            puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+            __( !listingC::bIsListingIF( tinP , &record ) ) ;
+            listC& record = *(listC*)(const listingC*)spRecord ;
+        
+            listingVSP spRecord = entry ;
+            listing_listingVSP_C& entry = *(listing_listingVSP_C*)pListing ;
         {
-        //SINK UNIQUE A listingVSP for record INTO A TEMPORARY LIST
-    
-        __( !listingC::bIsListingIF( tinP , &record ) ) ;
-        listC& record = *(listC*)(const listingC*)spRecord ;
-    
-        listingVSP spRecord = entry ;
-        listing_listingVSP_C& entry = *(listing_listingVSP_C*)pListing ;
+        else
+        }
+            // POPtINaRGS
+            // flagsT flagsRC = listOfSetC::walkIF( tinP , hRecord ) ;
+            // tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+            // tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
+            // tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+            // tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+            // PUSHtINaRGS
+            // CONoUTrAW( "================== CHATTERING RECORD ==============================\r\n" ) ;
+            // 
+            // record.openF( tinP , hRecord ) ;
+            // handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            // 
+            // grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+        
+            }
+                DELlIST( fieldEditParamOutC , pOut ) ;
+                listOfSetC::fieldIF( tinP , pOut , hTo , pczField , _fe_pushC( record ) + _fe_modePushSinkC() + _fe_modeUniqueC() , LF ) ;
+                countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                                                                 \
+                ZE( fieldEditParamOutC* , pOut ) ;
+            
+                listOfSetC::openIF( tinP , hTo , pczTo ) ;
+                handleC hTo( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] , 0 } ;
+            
+                puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+            {
+            //SINK UNIQUE A listingVSP for record INTO A TEMPORARY LIST
+        
+            __( !listingOfSetC::bIsListingIF( tinP , &record ) ) ;
+            listOfSetC& record = *(listOfSetC*)(const listingC*)spRecord ;
+        
+            listingVSP spRecord = entry ;
+            listingOfSet_listingVSP_C& entry = *(listingOfSet_listingVSP_C*)pListing ;
+        {
+        if( bOfSet )
     {
     if( pListing && !( pListing->flagsF() & fliLISTINGc_MIXINlIST ) && pListing->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
 

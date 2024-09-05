@@ -1,7 +1,4 @@
 
-
-
-
 typedef unsigned short /*ff*/flags01T/*ff*/ ;   /*ff*//**//*ff*/
 
 #define LISTnAMEaPPmAX          0xafffffff
@@ -8036,10 +8033,16 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifciDtYPEdROPnOTE_listingOfSet_countTstrz_C                          0xdddd03e6
 #define ifciDtYPEdROPnOTE_listingOfSet_listingVSP_C                          0xdddd03e7
 
-#define ifciDtYPEdROPnOTE_list_countT_C                                 0xdddd03e8
-#define ifciDtYPEdROPnOTE_list_blob_C                                   0xdddd03e9
-#define ifciDtYPEdROPnOTE_list_countTstrz_C                             0xdddd03ea
-#define ifciDtYPEdROPnOTE_list_listingVSP_C                             0xdddd03eb
+#define ifciDtYPEdROPnOTE_list_countT_C                              0xdddd03e4
+#define ifciDtYPEdROPnOTE_list_blob_C                                0xdddd03e5
+#define ifciDtYPEdROPnOTE_list_countTstrz_C                          0xdddd03e6
+#define ifciDtYPEdROPnOTE_list_listingVSP_C                          0xdddd03e7
+
+#define ifciDtYPEdROPnOTE_listOfSet_countT_C                              0xdddd03e4
+#define ifciDtYPEdROPnOTE_listOfSet_blob_C                                0xdddd03e5
+#define ifciDtYPEdROPnOTE_listOfSet_countTstrz_C                          0xdddd03e6
+#define ifciDtYPEdROPnOTE_listOfSet_listingVSP_C                          0xdddd03e7
+
 #define ifciDtYPEdROPnOTE_depositDetailS                                0xdddd03ec
 #define ifciDtYPEdROPnOTE_bookHeadS                                     0xdddd03ed
 #define ifciDtYPEdROPnOTE_book0C                                        0xdddd03ee

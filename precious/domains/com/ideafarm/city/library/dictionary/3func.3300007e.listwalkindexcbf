@@ -15,9 +15,13 @@
         pDatum->indexF( tinP ) ;
 
         ;
-            : (datumC*)(         pListing + 1 )
-            ? (datumC*)( (listC*)pListing + 1 )
-        datumC* pDatum = pListing->flagsF() & fliLISTINGc_MIXINlIST
+                : (datumC*)(                 pListing + 1 )
+                ? (datumC*)(         (listC*)pListing + 1 )
+            : pListing->flagsF() & fliLISTINGc_MIXINlIST
+                : (datumC*)( (listingOfSetC*)pListing + 1 )
+                ? (datumC*)(    (listOfSetC*)pListing + 1 )
+            ? pListing->flagsF() & fliLISTINGc_MIXINlIST
+        datumC* pDatum = bOfSet
     {
     if( pListing && pListing->idTypeDatumF() )
 
