@@ -123,40 +123,76 @@
                     }
                         }
                             vspListingNew = vsp ;
-                            listingVSP vsp( pNew , vspDatumListingCBF , (countT)pNew ) ;
+                            listingVSP vsp( (listingC*)pNew , vspDatumListingCBF , (countT)pNew ) ;
                         {
                         if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_LISTINGsp ) )
-                        listing_listingVSP_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_listingVSP_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , *inP.pListingValue ) ; ___( pNew ) ;
+
+                        ___( pNew ) ;
+                        ;
+                            : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_listingVSP_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP ,                 *inP.pListingValue )
+                            ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_listingVSP_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , *(listingOfSetC*)inP.pListingValue )
+                        voidT* pNew = bOfSet
+
                         flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
                     {
                     else if( inP.pListingValue && ( ifcIDtYPEmIXINdATUM_listingVSP   < pListingP->idTypeDatumF() || ( (const listingC*)vspListingValue && 0 > *(const listing_listingVSP_C*)inP.pListingValue - *(const listing_listingVSP_C*)(const listingC*)vspListingValue ) ) )
                     }
                         }
                             vspczNew = vsp ;
-                            countStrzVSP vsp( (countT*)*pNew , vspDatumCountStrzCBF , (countT)pNew ) ;
+                            countStrzVSP vsp( pcv , vspDatumCountStrzCBF , (countT)pNew ) ;
+
+                            else              pcv =      *(listing_countTstrz_C*)pNew ;
+                            if( bOfSet )      pcv = *(listingOfSet_countTstrz_C*)pNew ;
+                            ZE( countT* ,     pcv ) ;
                         {
                         if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNTsTRZ ) )
-                        listing_countTstrz_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countTstrz_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue ) ; ___( pNew ) ;
+
+                        ___( pNew ) ;
+                        ;
+                            : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countTstrz_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue )
+                            ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countTstrz_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue )
+                        voidT* pNew = bOfSet
+
                         flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
                     {
                     else if( inP.pczValue      && ( ifcIDtYPEmIXINdATUM_countTstrz  < pListingP->idTypeDatumF() || ( pczValue       && 0 > thirdC::c_strcmpIF( tinP , inP.pczValue , pczValue )                                                          ) ) )
                     }
                         }
                             vspbzNew = vsp ;
-                            blobVSP vsp( (osTextT*)*pNew , vspDatumBlobCBF , (countT)pNew ) ;
+                            blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+
+                            else           postv =      *(listing_blob_C*)pNew ;
+                            if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
+                            ZE( osTextT* , postv ) ;
                         {
                         if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_BLOB ) )
-                        listing_blob_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_blob_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue ) ; ___( pNew ) ;
+
+                        ___( pNew ) ;
+                        ;
+                            : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_blob_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue )
+                            ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_blob_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue )
+                        voidT* pNew = bOfSet
+
                         flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
                     {
                     else if( inP.pbzValue    && ( ifcIDtYPEmIXINdATUM_blob < pListingP->idTypeDatumF() || ( pbzValue     && 0 > thirdC::c_strcmpIF( tinP , inP.pbzValue , pbzValue )                                                      ) ) )
                     }
                         }
                             vspcNew = vsp ;
-                            countVSP vsp( (countT*)*pNew , vspDatumCountCBF , (countT)pNew ) ;
+                            countVSP vsp( pcv , vspDatumCountCBF , (countT)pNew ) ;
+
+                            else          pcv =      *(listing_countT_C*)pNew ;
+                            if( bOfSet )  pcv = *(listingOfSet_countT_C*)pNew ;
+                            ZE( countT* , pcv ) ;
                         {
                         if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNT ) )
-                        listing_countT_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countT_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue ) ; ___( pNew ) ;
+
+                        ___( pNew ) ;
+                        ;
+                            : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countT_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue )
+                            ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countT_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue )
+                        voidT* pNew = bOfSet
+
                         flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
                     {
                     if(      inP.cValue        && ( ifcIDtYPEmIXINdATUM_countT      < pListingP->idTypeDatumF() || ( pcValue        && inP.cValue < *pcValue                                                                                             ) ) )
@@ -174,30 +210,60 @@
                 }
                     }
                         vspczNew = vsp ;
-                        countStrzVSP vsp( (countT*)*pNew , vspDatumCountStrzCBF , (countT)pNew ) ;
+                        countStrzVSP vsp( pcv , vspDatumCountStrzCBF , (countT)pNew ) ;
+
+                        else              pcv =      *(listing_countTstrz_C*)pNew ;
+                        if( bOfSet )      pcv = *(listingOfSet_countTstrz_C*)pNew ;
+                        ZE( countT* ,     pcv ) ;
                     {
                     if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNTsTRZ ) )
-                    listing_countTstrz_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countTstrz_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 ) ; ___( pNew ) ;
+
+                    ___( pNew ) ;
+                    ;
+                        : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countTstrz_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                        ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countTstrz_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                    voidT* pNew = bOfSet
+
                     flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
                 {
                 else if( F(inP.flags) & flFIELDeDIT_PUSHnULLcOUNTsTRZ )
                 }
                     }
                         vspbzNew = vsp ;
-                        blobVSP vsp( (osTextT*)*pNew , vspDatumBlobCBF , (countT)pNew ) ;
+                        blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+
+                        else           postv =      *(listing_blob_C*)pNew ;
+                        if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
+                        ZE( osTextT* , postv ) ;
                     {
                     if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_BLOB ) )
-                    listing_blob_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_blob_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 ) ; ___( pNew ) ;
+
+                    ___( pNew ) ;
+                    ;
+                        : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_blob_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 )
+                        ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_blob_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 )
+                    voidT* pNew = bOfSet
+
                     flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
                 {
                 else if( F(inP.flags) & flFIELDeDIT_PUSHnULLbLOB )
                 }
                     }
                         vspcNew = vsp ;
-                        countVSP vsp( (countT*)*pNew , vspDatumCountCBF , (countT)pNew ) ;
+                        countVSP vsp( pcv , vspDatumCountCBF , (countT)pNew ) ;
+
+                        else          pcv =      *(listing_countT_C*)pNew ;
+                        if( bOfSet )  pcv = *(listingOfSet_countT_C*)pNew ;
+                        ZE( countT* , pcv ) ;
                     {
                     if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNT ) )
-                    listing_countT_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countT_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 ) ; ___( pNew ) ;
+
+                    ___( pNew ) ;
+                    ;
+                        : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countT_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                        ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countT_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                    voidT* pNew = bOfSet
+
                     flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
                 {
                 if( F(inP.flags) & flFIELDeDIT_PUSHnULLcOUNT )
@@ -240,7 +306,7 @@
                     switch( pListingP->idTypeDatumF() ) //CS:CODEsYNC: 00104b0 21e0006 21e0002 21e0008 21e0009 220000e
                 {
                 if( !( flagsi & fliLISTINGc_MIXINlIST ) )
-                listingVSP         vspListingValue ;
+                listingVSP       vspListingValue ;
                 ZE( countT*    , pczValue ) ;
                 ZE( osTextT*   , pbzValue ) ;
                 ZE( countT*    , pcValue ) ;
@@ -266,47 +332,88 @@
                 }
                     }
                         vspListingNew = vsp ;
-                        listingVSP vsp( pNew , vspDatumListingCBF , (countT)pNew ) ;
+                        listingVSP vsp( (listingC*)pNew , vspDatumListingCBF , (countT)pNew ) ;
                     {
                     if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_LISTINGsp ) )
-                    listing_listingVSP_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_listingVSP_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , *inP.pListingValue ) ; ___( pNew ) ;
+                    
+                    ___( pNew ) ;
+                    ;
+                        : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_listingVSP_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP ,                 *inP.pListingValue )
+                        ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_listingVSP_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , *(listingOfSetC*)inP.pListingValue )
+                    voidT* pNew = bOfSet
                 {
                 else if( inP.pListingValue )
                 }
                     }
                         vspczNew = vsp ;
-                        countStrzVSP vsp( (countT*)*pNew , vspDatumCountStrzCBF , (countT)pNew ) ;
+                        countStrzVSP vsp( pcv , vspDatumCountStrzCBF , (countT)pNew ) ;
+
+                        else              pcv =      *(listing_countTstrz_C*)pNew ;
+                        if( bOfSet )      pcv = *(listingOfSet_countTstrz_C*)pNew ;
+                        ZE( countT* ,     pcv ) ;
                     {
                     if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNTsTRZ ) )
-                    listing_countTstrz_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countTstrz_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue ) ; ___( pNew ) ;
+                    
+                    ___( pNew ) ;
+                    ;
+                        : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countTstrz_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue )
+                        ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countTstrz_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue )
+                    voidT* pNew = bOfSet
                 {
                 else if( inP.pczValue )
                 }
                     }
                         vspbzNew = vsp ;
-                        blobVSP vsp( (osTextT*)*pNew , vspDatumBlobCBF , (countT)pNew ) ;
+                        blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+
+                        else           postv =      *(listing_blob_C*)pNew ;
+                        if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
+                        ZE( osTextT* , postv ) ;
                     {
                     if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_BLOB ) )
-                    listing_blob_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_blob_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue , inP.cbzValue ) ; ___( pNew ) ;
+                    
+                    ___( pNew ) ;
+                    ;
+                        : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_blob_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue , inP.cbzValue )
+                        ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_blob_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue , inP.cbzValue )
+                    voidT* pNew = bOfSet
                 {
                 else if( inP.pbzValue || inP.cbzValue )
                 }
                     }
                         vspcNew = vsp ;
-                        countVSP vsp( (countT*)*pNew , vspDatumCountCBF , (countT)pNew ) ;
+                        countVSP vsp( pcv , vspDatumCountCBF , (countT)pNew ) ;
+
+                        else          pcv =      *(listing_countT_C*)pNew ;
+                        if( bOfSet )  pcv = *(listingOfSet_countT_C*)pNew ;
+                        ZE( countT* , pcv ) ;
                     {
                     if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNT ) )
-                    listing_countT_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countT_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue ) ; ___( pNew ) ;
+                    
+                    ___( pNew ) ;
+                    ;
+                        : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countT_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue )
+                        ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countT_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue )
+                    voidT* pNew = bOfSet
                 {
                 else if( inP.cValue )
                 }
                     }
                         }
                             vspcNew = vsp ;
-                            countVSP vsp( (countT*)*pNew , vspDatumCountCBF , (countT)pNew ) ;
+                            countVSP vsp( pcv , vspDatumCountCBF , (countT)pNew ) ;
+
+                            else          pcv =      *(listing_countT_C*)pNew ;
+                            if( bOfSet )  pcv = *(listingOfSet_countT_C*)pNew ;
+                            ZE( countT* , pcv ) ;
                         {
                         if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNT ) )
-                        listing_countT_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countT_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idSerialNew ) ; ___( pNew ) ;
+
+                        ___( pNew ) ;
+                        ;
+                            : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countT_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idSerialNew )
+                            ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countT_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idSerialNew )
+                        voidT* pNew = bOfSet
                     {
                     if( !POOP )
     
@@ -325,30 +432,60 @@
             }
                 }
                     vspczNew = vsp ;
-                    countStrzVSP vsp( (countT*)*pNew , vspDatumCountStrzCBF , (countT)pNew ) ;
+                    countStrzVSP vsp( pcv , vspDatumCountStrzCBF , (countT)pNew ) ;
+
+                    else              pcv =      *(listing_countTstrz_C*)pNew ;
+                    if( bOfSet )      pcv = *(listingOfSet_countTstrz_C*)pNew ;
+                    ZE( countT* ,     pcv ) ;
                 {
                 if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNTsTRZ ) )
-                listing_countTstrz_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countTstrz_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 ) ; ___( pNew ) ;
+                
+                ___( pNew ) ;
+                ;
+                    : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countTstrz_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                    ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countTstrz_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                voidT* pNew = bOfSet
+
                 flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
             {
             else if( F(inP.flags) & flFIELDeDIT_PUSHnULLcOUNTsTRZ )
             }
                 }
                     vspbzNew = vsp ;
-                    blobVSP vsp( (osTextT*)*pNew , vspDatumBlobCBF , (countT)pNew ) ;
+                    blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+
+                    else           postv =      *(listing_blob_C*)pNew ;
+                    if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
+                    ZE( osTextT* , postv ) ;
                 {
                 if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_BLOB ) )
-                listing_blob_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_blob_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 ) ; ___( pNew ) ;
+                
+                ___( pNew ) ;
+                ;
+                    : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_blob_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 )
+                    ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_blob_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 )
+                voidT* pNew = bOfSet
+
                 flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
             {
             else if( F(inP.flags) & flFIELDeDIT_PUSHnULLbLOB )
             }
                 }
                     vspcNew = vsp ;
-                    countVSP vsp( (countT*)*pNew , vspDatumCountCBF , (countT)pNew ) ;
+                    countVSP vsp( pcv , vspDatumCountCBF , (countT)pNew ) ;
+
+                    else          pcv =      *(listing_countT_C*)pNew ;
+                    if( bOfSet )  pcv = *(listingOfSet_countT_C*)pNew ;
+                    ZE( countT* , pcv ) ;
                 {
                 if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNT ) )
-                listing_countT_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countT_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 ) ; ___( pNew ) ;
+                
+                ___( pNew ) ;
+                ;
+                    : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countT_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                    ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countT_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                voidT* pNew = bOfSet
+
                 flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
             {
             if( F(inP.flags) & flFIELDeDIT_PUSHnULLcOUNT )
@@ -384,50 +521,90 @@
             }
                 }
                     vspListingNew = vsp ;
-                    listingVSP vsp( pNew , vspDatumListingCBF , (countT)pNew ) ;
+                    listingVSP vsp( (listingC*)pNew , vspDatumListingCBF , (countT)pNew ) ;
                 {
                 if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_LISTINGsp ) )
-                listing_listingVSP_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_listingVSP_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , *inP.pListingValue ) ; ___( pNew ) ;
+                
+                ___( pNew ) ;
+                ;
+                    : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_listingVSP_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP ,                 *inP.pListingValue )
+                    ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_listingVSP_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , *(listingOfSetC*)inP.pListingValue )
+                voidT* pNew = bOfSet
             {
             else if( inP.pListingValue )
             }
                 }
                     vspczNew = vsp ;
-                    countStrzVSP vsp( (countT*)*pNew , vspDatumCountStrzCBF , (countT)pNew ) ;
+                    countStrzVSP vsp( pcv , vspDatumCountStrzCBF , (countT)pNew ) ;
+
+                    else              pcv =      *(listing_countTstrz_C*)pNew ;
+                    if( bOfSet )      pcv = *(listingOfSet_countTstrz_C*)pNew ;
+                    ZE( countT* ,     pcv ) ;
                 {
                 if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNTsTRZ ) )
-                listing_countTstrz_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countTstrz_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue ) ; ___( pNew ) ;
+                
+                ___( pNew ) ;
+                ;
+                    : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countTstrz_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue )
+                    ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countTstrz_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.pczValue )
+                voidT* pNew = bOfSet
             {
             else if( inP.pczValue )
             }
                 }
                     vspbzNew = vsp ;
-                    blobVSP vsp( (osTextT*)*pNew , vspDatumBlobCBF , (countT)pNew ) ;
+                    blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+
+                    else           postv =      *(listing_blob_C*)pNew ;
+                    if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
+                    ZE( osTextT* , postv ) ;
                 {
                 if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_BLOB ) )
-                listing_blob_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_blob_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue , inP.cbzValue ) ; ___( pNew ) ;
+                
+                ___( pNew ) ;
+                ;
+                    : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_blob_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue , inP.cbzValue )
+                    ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_blob_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , inP.pbzValue , inP.cbzValue )
+                voidT* pNew = bOfSet
             {
             else if( inP.pbzValue || inP.cbzValue )
             }
                 }
                     vspcNew = vsp ;
-                    countVSP vsp( (countT*)*pNew , vspDatumCountCBF , (countT)pNew ) ;
+                    countVSP vsp( pcv , vspDatumCountCBF , (countT)pNew ) ;
+
+                    else          pcv =      *(listing_countT_C*)pNew ;
+                    if( bOfSet )  pcv = *(listingOfSet_countT_C*)pNew ;
+                    ZE( countT* , pcv ) ;
                 {
                 if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNT ) )
 
                 //if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("listWalkFieldEditCBF pushing countT [listing_countT_C*,countT*,countT]:   ")+TF2((countT)pNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)(countT*)*pNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)*(countT*)*pNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                listing_countT_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countT_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue ) ; ___( pNew ) ;
+                ___( pNew ) ;
+                ;
+                    : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countT_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue )
+                    ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countT_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , inP.cValue )
+                voidT* pNew = bOfSet
             {
             else if( inP.cValue )
             }
                 }
                     }
                         vspcNew = vsp ;
-                        countVSP vsp( (countT*)*pNew , vspDatumCountCBF , (countT)pNew ) ;
+                        countVSP vsp( pcv , vspDatumCountCBF , (countT)pNew ) ;
+
+                        else          pcv =      *(listing_countT_C*)pNew ;
+                        if( bOfSet )  pcv = *(listingOfSet_countT_C*)pNew ;
+                        ZE( countT* , pcv ) ;
                     {
                     if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNT ) )
-                    listing_countT_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countT_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idSerialNew ) ; ___( pNew ) ;
+
+                    ___( pNew ) ;
+                    ;
+                        : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countT_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idSerialNew )
+                        ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countT_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idSerialNew )
+                    voidT* pNew = bOfSet
                 {
                 if( !POOP )
 
@@ -445,30 +622,60 @@
         }
             }
                 vspczNew = vsp ;
-                countStrzVSP vsp( (countT*)*pNew , vspDatumCountStrzCBF , (countT)pNew ) ;
+                countStrzVSP vsp( pcv , vspDatumCountStrzCBF , (countT)pNew ) ;
+
+                else              pcv =      *(listing_countTstrz_C*)pNew ;
+                if( bOfSet )      pcv = *(listingOfSet_countTstrz_C*)pNew ;
+                ZE( countT* ,     pcv ) ;
             {
             if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNTsTRZ ) )
-            listing_countTstrz_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countTstrz_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 ) ; ___( pNew ) ;
+
+            ___( pNew ) ;
+            ;
+                : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countTstrz_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countTstrz_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+            voidT* pNew = bOfSet
+            
             flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
         {
         else if( F(inP.flags) & flFIELDeDIT_PUSHnULLcOUNTsTRZ )
         }
             }
                 vspbzNew = vsp ;
-                blobVSP vsp( (osTextT*)*pNew , vspDatumBlobCBF , (countT)pNew ) ;
+                blobVSP vsp(   postv , vspDatumCountCBF , (countT)pNew ) ;
+
+                else           postv =      *(listing_blob_C*)pNew ;
+                if( bOfSet )   postv = *(listingOfSet_blob_C*)pNew ;
+                ZE( osTextT* , postv ) ;
             {
             if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_BLOB ) )
-            listing_blob_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_blob_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 ) ; ___( pNew ) ;
+            
+            ___( pNew ) ;
+            ;
+                : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_blob_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 )
+                ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_blob_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idLineNewP , idiFileNewP , 0 )
+            voidT* pNew = bOfSet
+
             flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
         {
         else if( F(inP.flags) & flFIELDeDIT_PUSHnULLbLOB )
         }
             }
                 vspcNew = vsp ;
-                countVSP vsp( (countT*)*pNew , vspDatumCountCBF , (countT)pNew ) ;
+                countVSP vsp( pcv , vspDatumCountCBF , (countT)pNew ) ;
+
+                else          pcv =      *(listing_countT_C*)pNew ;
+                if( bOfSet )  pcv = *(listingOfSet_countT_C*)pNew ;
+                ZE( countT* , pcv ) ;
             {
             if( F(inP.flags) & flFIELDeDIT_MODEqUERYnEW && ( !F(inP.flagsTypeMask) || F(inP.flagsTypeMask) & flFIELDeDITtYPEmASK_COUNT ) )
-            listing_countT_C* pNew = new( 0 , tinP , idLineNewP , idiFileNewP ) listing_countT_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 ) ; ___( pNew ) ;
+
+            ___( pNew ) ;
+            ;
+                : (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP )      listing_countT_C( tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+                ? (voidT*)new( 0 , tinP , idLineNewP , idiFileNewP ) listingOfSet_countT_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , 0 )
+            voidT* pNew = bOfSet
+
             flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
         {
         if( F(inP.flags) & flFIELDeDIT_PUSHnULLcOUNT )
@@ -493,12 +700,8 @@
     //if( F(inP.flags) & flFIELDeDIT_PUSH )
     //FOR DEBUGGING
 
-    }
-        countT foo = 2 ;
-    {
-    if( idIn == 0xe )
-    countT idIn = 1 + incv02AM( idInLath ) ;
-    static countT idInLath ;
+    const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
+    const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
 
     ;
         : flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE | flLISTwALKcALLbACKrETURNcODE_QUIT

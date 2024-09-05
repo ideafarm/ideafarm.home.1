@@ -8025,10 +8025,17 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifciDtYPEdROPnOTE_linkedC                                       0xdddd03e1
 #define ifciDtYPEdROPnOTE_listingC                                      0xdddd03e2
 #define ifciDtYPEdROPnOTE_listC                                         0xdddd03e3
+
 #define ifciDtYPEdROPnOTE_listing_countT_C                              0xdddd03e4
 #define ifciDtYPEdROPnOTE_listing_blob_C                                0xdddd03e5
 #define ifciDtYPEdROPnOTE_listing_countTstrz_C                          0xdddd03e6
 #define ifciDtYPEdROPnOTE_listing_listingVSP_C                          0xdddd03e7
+
+#define ifciDtYPEdROPnOTE_listingOfSet_countT_C                              0xdddd03e4
+#define ifciDtYPEdROPnOTE_listingOfSet_blob_C                                0xdddd03e5
+#define ifciDtYPEdROPnOTE_listingOfSet_countTstrz_C                          0xdddd03e6
+#define ifciDtYPEdROPnOTE_listingOfSet_listingVSP_C                          0xdddd03e7
+
 #define ifciDtYPEdROPnOTE_list_countT_C                                 0xdddd03e8
 #define ifciDtYPEdROPnOTE_list_blob_C                                   0xdddd03e9
 #define ifciDtYPEdROPnOTE_list_countTstrz_C                             0xdddd03ea
@@ -8116,10 +8123,11 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifciDtYPEdROPnOTE_funnelHornC                                   0xdddd043c
 #define ifciDtYPEdROPnOTE_nicNamesAllowedStripeWebHookNotificationsC    0xdddd043d
 #define ifciDtYPEdROPnOTE_listOfSetC                                    0xdddd043e
+#define ifciDtYPEdROPnOTE_stateListingSetS                              0xdddd043f
 
 /*3*/
 #define ifciDtYPEdROPnOTE_min     0xdddd033e
-#define ifciDtYPEdROPnOTE_max     0xdddd043e
+#define ifciDtYPEdROPnOTE_max     0xdddd043f
 
 
 //

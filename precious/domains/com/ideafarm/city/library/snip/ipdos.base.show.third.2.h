@@ -47077,15 +47077,18 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     count01T idType ;
     flags01T flagsi ;
+
+    NEWdELcLASSpROTOS ;
     inline stateListingSetS( countT idTypeP = 0 , flagsT flagsP = 0 ) : idType( (count01T)idTypeP ) , flagsi( (flags01T)flagsP ) {}
 }
 ;
+
 
 /*1*/class _export offStateListingSetC/*1*/
 {
     protected :
 
-    aptC offState ;
+    countT offState ;
 
     public :
 
