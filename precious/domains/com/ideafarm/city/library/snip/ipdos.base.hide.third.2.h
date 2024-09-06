@@ -47079,7 +47079,7 @@ i am nonconformant in that all of my member function definitions are in a single
     flags01T flagsi ;
 
     NEWdELcLASSpROTOS ;
-    inline stateListingSetS( countT idTypeP = 0 , flagsT flagsP = 0 ) : idType( (count01T)idTypeP ) , flagsi( (flags01T)flagsP ) {}
+    inline stateListingSetS( countT idTypeP = ifcIDtYPEsTATElISTING_DEFAULT , flagsT flagsP = fliSTATElISTING_ENABLED ) : idType( (count01T)idTypeP ) , flagsi( (flags01T)flagsP ) {}
 }
 ;
 
@@ -47092,7 +47092,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
-    inline offStateListingSetC( voidT ) : offState( - 1 ) {}
+    inline offStateListingSetC( voidT ) : offState( 0 ) {}
 }
 ;
 

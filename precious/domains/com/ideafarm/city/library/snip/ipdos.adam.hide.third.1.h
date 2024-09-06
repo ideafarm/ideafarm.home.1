@@ -1,3 +1,9 @@
+5
+#define fliSTATElISTING_ENABLED                    1
+#define fliSTATElISTING_null                       0
+
+#define ifcIDtYPEsTATElISTING_DEFAULT                    1
+#define ifcIDtYPEsTATElISTING_null                       0
 
 typedef unsigned short /*ff*/flags01T/*ff*/ ;   /*ff*//**//*ff*/
 
