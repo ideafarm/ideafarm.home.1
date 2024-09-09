@@ -12,7 +12,9 @@ REST
 etherC::loafIF( tinP ) ;
 etThread.traceF( tinP , T("ok") ) ;
 
-etThread.osThreadF( TaRG1( tmHostLeafF        ) ) ;
+while( cDo -- ) etThread.osThreadF( TaRG1( tmHostLeafF ) ) ;
+countT cDo = ClEAVES ;
+
 etThread.osThreadF( TaRG1( tmHostListedInDnsF ) ) ;
 
 TODO
@@ -23,15 +25,18 @@ DONE( tmHostLeafF )
         ++ s ; ether.osSleepF( tinP , TOCK ) ;
 
         }
-            sLeaf.writeF( tinP , idPortHostListedInDns , nicNameC( 1 ) , postSay , sizeof postSay - 1 ) ;
-            osTextT postSay[] = "hello!" ;
+            sLeaf.writeF( tinP , idPortHostListedInDns , nicNameC( 1 ) , ifcIDtYPEdATAGRAM_IaMaLIVE ) ;
+            //etThread.traceF( tinP , T("cry         [idpi]:    ")+TF4(idpMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
         {
-        if( idPortHostListedInDns )
+        if( idPortHostListedInDns /*&& !bSilent*/ )
+
+        boolT bSilent = idCry % ( TUCK >> 4 ) < 8 ;
     {
     while( !ether )
+    ZE( countT , idCry ) ;
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
-    sLeaf.bindF( tinP ) ;
+    countT idpMe = sLeaf.bindF( tinP ) ;
     socketC sLeaf( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_DOnOTrEGISTERaCCEPTOR | flSOCKETc_NOsECRECY | flSOCKETc_NOdUALsTACK , 0 , 0 , 0 , 0 , 0 , 0 ) ;
 {
 if( pTaskP )
@@ -41,16 +46,48 @@ DONE( tmHostListedInDnsF )
 }
     }
         etThread.delF( tinP , pbi ) ;
-        etThread.traceF( tinP , T(nicNameHe)+tb4+TF2(idPortHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pbi) ) ;
-        sDns.readF( tinP , pbi , cbi , idPortHe , nicNameHe ) ; ___( pbi ) ;
-        nicNameC nicNameHe ;
-        ZE( countT , idPortHe ) ;
+
+        }
+            }
+                }
+                    break ;
+                    sDns.writeF( tinP , idpi , idhi , ifcIDtYPEdATAGRAM_IaMaLIVE ) ;
+                {
+                case ifcIDtYPEdATAGRAM_AREyOUaLIVE :
+                }
+                    break ;
+                    stActiveUse.ungrabF( tinP ) ;
+                    //etThread.traceF( tinP , T("registered [offUpdate,cPlatesAfter]:    ")+TF2(offUpdate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stActiveUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    stActiveUse.sinkF( tinP , countTC() , idpi , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                    stActiveUse.grabF( tinP , TAG( TAGiDnULL ) ) ;
+
+                    stackC& stActiveUse = *ppStActive[ offUpdate ] ;
+                    countT offUpdate = ( idEpoch + 1 ) % CePOCHsTACKS ;
+                {
+                case ifcIDtYPEdATAGRAM_IaMaLIVE :
+            {
+            switch( idType )
+
+            countT& idType = *(countT*)pbi ;
+        {
+        if( !ether && !POOP && cbi >= sizeof( countT ) )
+
+        sDns.readF( tinP , pbi , cbi , idpi , idhi ) ;
+        nicNameC idhi ;
+        ZE( countT , idpi ) ;
         ZE( countT , cbi ) ;
         ZE( byteT* , pbi ) ;
     {
     while( !ether && !POOP )
 
-    etThread.traceF( tinP , T("[idPortHostListedInDns,&sDns]:    ")+TfORsTRING((countT)&sDns)+tb4+TF4(idPortHostListedInDns,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    etThread.osThreadF( TaRG1( tmListActiveP ) , (countT)ppStActive , (countT)&idEpoch ) ;
+
+    ZE( countT , idEpoch ) ;
+    stackC* const ppStActive[] = { &stActive1 , &stActive2 } ;                                                                                              //CS:CODEsYNC: 5101200f 5101200f
+    stackC  stActive2( tinP , etThread , TAG( TAGiDnULL ), flSTACKc_null , ifcSTACKtYPE_countT , ifcIDgRABlAYER_7BASEmISC1 , 0 , 0 , 0 , 0 , 0 ) ;
+    stackC  stActive1( tinP , etThread , TAG( TAGiDnULL ), flSTACKc_null , ifcSTACKtYPE_countT , ifcIDgRABlAYER_7BASEmISC1 , 0 , 0 , 0 , 0 , 0 ) ;
+
+    //etThread.traceF( tinP , T("[idPortHostListedInDns,&sDns]:    ")+TfORsTRING((countT)&sDns)+tb4+TF4(idPortHostListedInDns,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
     idPortHostListedInDns = sDns.bindF( tinP ) ;
     socketC sDns( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_NOsECRECY | flSOCKETc_NOdUALsTACK , 0 , 0 , 0 , 0 , 0 , 0 ) ;
     TN( tb4 , "    " ) ;
@@ -58,8 +95,54 @@ DONE( tmHostListedInDnsF )
 if( pTaskP )
 TASK( tmHostListedInDnsF )
 
+DONE( tmListActiveP )
+}
+    }
+        ++ s ; ether.osSleepF( tinP , TOCK << EXPtOCKSpERePOCH ) ;
+
+        stActiveUse.ungrabF( tinP ) ;
+        }
+            while( ~hWalk ) ;
+            }
+                etThread.traceF( tinP , T("    listed [idpHe]:    ")+TF4(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+                countT idpHe = stActiveUse.downF( tinP , hWalk ) ;
+            {
+            do
+            handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        {
+        if( stActiveUse )
+        etThread.traceF( tinP , T("active ports [offReport]:    ")+TF2(offReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        stActiveUse.grabF( tinP , TAG( TAGiDnULL ) ) ;
+
+        stackC& stActiveUse = *ppStActiveP[ offReport ] ;
+        countT offReport = idEpochP % CePOCHsTACKS ;
+
+        stActivePurge.ungrabF( tinP ) ;
+        stActivePurge.purgeF( tinP , 0 ) ;
+        //etThread.traceF( tinP , T("purging [offPurge,cPlates]:    ")+TF2(offPurge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stActivePurge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        stActivePurge.grabF( tinP , TAG( TAGiDnULL ) ) ;
+
+        idEpochP ++ ;
+
+        stackC& stActivePurge = *ppStActiveP[ offPurge ] ;
+        countT offPurge = idEpochP % CePOCHsTACKS ;
+    {
+    while( !ether && !POOP )
+    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    TN( tb4 , "    " ) ;
+
+    countT&        idEpochP    = *(countT*)pTaskP->c2 ;
+    stackC** const ppStActiveP = (stackC**)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmListActiveP )
+
 countT idPortHostListedInDns ;
 
+#define ClEAVES     ( TUCK >> 4 )
+#define EXPtOCKSpERePOCH 3
+#define CePOCHsTACKS 2
+                                                                                                                                                           //CS:CODEsYNC: 5101200f 5101200f
 /*1*/WAKEsHOWtEXT( "doodle.udp.bang.relay" )/*1*/
 /**/
 */
