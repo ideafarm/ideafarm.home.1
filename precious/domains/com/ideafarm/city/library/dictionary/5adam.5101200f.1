@@ -12,8 +12,7 @@ REST
 etherC::loafIF( tinP ) ;
 etThread.traceF( tinP , T("ok") ) ;
 
-etThread.osThreadF( TaRG1( tmHostLeafF      ) ) ;
-etThread.osSleepF( tinP , TOCK ) ;
+etThread.osThreadF( TaRG1( tmHostLeafF        ) ) ;
 etThread.osThreadF( TaRG1( tmHostListedInDnsF ) ) ;
 
 TODO
@@ -24,7 +23,7 @@ DONE( tmHostLeafF )
         ++ s ; ether.osSleepF( tinP , TOCK ) ;
 
         }
-            sLeaf.writeF( tinP , idPortHostListedInDns , socketC::nicNameIF( tinP , etThread , T("fe80::f181:1ac0:e15:c521%20") ) , postSay , sizeof postSay - 1 ) ;
+            sLeaf.writeF( tinP , idPortHostListedInDns , nicNameC( 1 ) , postSay , sizeof postSay - 1 ) ;
             osTextT postSay[] = "hello!" ;
         {
         if( idPortHostListedInDns )
@@ -50,11 +49,11 @@ DONE( tmHostListedInDnsF )
         ZE( byteT* , pbi ) ;
     {
     while( !ether && !POOP )
-    TN( tb4 , "    " ) ;
 
-    etThread.traceF( tinP , T("[idPortHostListedInDns]:    ")+TF4(idPortHostListedInDns,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    etThread.traceF( tinP , T("[idPortHostListedInDns,&sDns]:    ")+TfORsTRING((countT)&sDns)+tb4+TF4(idPortHostListedInDns,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
     idPortHostListedInDns = sDns.bindF( tinP ) ;
     socketC sDns( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_NOsECRECY | flSOCKETc_NOdUALsTACK , 0 , 0 , 0 , 0 , 0 , 0 ) ;
+    TN( tb4 , "    " ) ;
 {
 if( pTaskP )
 TASK( tmHostListedInDnsF )

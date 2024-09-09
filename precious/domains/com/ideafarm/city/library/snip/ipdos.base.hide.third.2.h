@@ -19595,7 +19595,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 
 /* birth , death */
  NEWdELcLASSpROTOS
- nicNameC( const count02T c1P = 0 , const count02T c2P = 0 , const count02T c3P = 0 , const count02T c4P = 0 ) ;
+ nicNameC( const count02T c1P = 0 , const count02T c2P = 0 , const count02T c3P = 0 , const count02T c4P = 0 ) ;            // DEFAULT PARAMETERS RESULT IN IPv6 LOOPBACK
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.nicNameC.nicNameC!||
 
  voidT operator <<( soulC& slP ) ;
