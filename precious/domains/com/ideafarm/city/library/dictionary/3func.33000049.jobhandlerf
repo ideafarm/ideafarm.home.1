@@ -28,7 +28,7 @@
                             {
                             while( !POOP && !etThread )
     
-                            etThread.osThreadF( tinP , countTC() , tmMakeTraysF , &sgnDone_tmMakeTrays , flTHREADlAUNCH_null , 0 , (countT)pso , (countT)&sOrder , idAdam , (countT)&cAppArg , (countT)&c8arg , (countT)jobFillCourseF , idChatSessionP ) ;
+                            etThread.osThreadF( tinP , countTC() , tmMakeTraysF , &sgnDone_tmMakeTrays , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&sOrder , idAdam , (countT)&cAppArg , (countT)&c8arg , (countT)jobFillCourseF , idChatSessionP ) ;
                             signC sgnDone_tmMakeTrays( tinP , TAG( TAGiDnULL ) ) ;
                             count8S c8arg ;
                         {
@@ -68,7 +68,7 @@
                             while( !POOP && !etThread )
     
                             if( !etThread ) sgnReadTested.waitF( tinP ) ;
-                            etThread.osThreadF( tinP , countTC() , tmRelayOldChatRepliesF , &sgnDone_tmRelayOldChatReplies , flTHREADlAUNCH_null , 0 , (countT)pso , (countT)&soUp , (countT)&sgnReadTested , 0 ) ;
+                            etThread.osThreadF( tinP , countTC() , tmRelayOldChatRepliesF , &sgnDone_tmRelayOldChatReplies , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&soUp , (countT)&sgnReadTested , 0 ) ;
                             signC sgnDone_tmRelayOldChatReplies( tinP , TAG( TAGiDnULL ) ) ;
                             signC sgnReadTested( tinP , TAG( TAGiDnULL ) ) ;
     

@@ -71,7 +71,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     while( etThread.os_cAllKidThreadsI_IF( tinP ) > cctAtStart ) etThread.osSleepF( tinP , TUCK * 0x40 ) ;
 
     }
-        else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmServeF , 0 , flTHREADlAUNCH_null , 0 , (countT)pso , (countT)&lever , (countT)&bLever , (countT)&swKey , (countT)&swState , (countT)&swsHistory , (countT)&decoder ) ; }
+        else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmServeF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&lever , (countT)&bLever , (countT)&swKey , (countT)&swState , (countT)&swsHistory , (countT)&decoder ) ; }
         if( ether || etThread ) { DEL( pso ) ; }
         socket.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
         ZE( countT , idPortPeer ) ;
@@ -103,7 +103,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
     }
         }
-            etThread.osThreadF( tinP , tnu , tmSnapshotF , 0 , flTHREADlAUNCH_null , 0 , (countT)pstp , (countT)&lever , (countT)&bLever , (countT)&swState , (countT)&swKey , (countT)&swsHistory ) ;
+            etThread.osThreadF( tinP , tnu , tmSnapshotF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)pstp , (countT)&lever , (countT)&bLever , (countT)&swState , (countT)&swKey , (countT)&swsHistory ) ;
             ZE( countT , tnu ) ;
 
             *pstp << (countT)&tHistory ;

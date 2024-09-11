@@ -33,7 +33,7 @@ ZE( countT , lever ) ;
 
 while( etThread.os_cAllKidThreadsI_IF( tinP ) > cKidsBefore ) etThread.osSleepF( tinP , TUCK * 32 ) ;
 
-while( cTries -- ) { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , flTHREADlAUNCH_null , 0 , (countT)&sws ) ; }
+while( cTries -- ) { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sws ) ; }
 countT cTries = 0x4 ;
 const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinP ) ;
 

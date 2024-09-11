@@ -14,7 +14,7 @@ REST
 etThread.strokeF( tinP , T("ok\r\n") ) ;
 etThread.ifcJobF( tinP , stCourses , 0x4010474 , sOrderPrimary , stOrders , tComm , 0 ) ;
 TN( tComm , "" ) ; tComm = /*U:T("count for me at ")+TT(timeN1,timeN2)*/T("foobar") ;
-etThread.osThreadF( tinP , countTC() , tmTalkF , 0 , flTHREADlAUNCH_null , 0 , (countT)&stOrders , (countT)&stCourses ) ;
+etThread.osThreadF( tinP , countTC() , tmTalkF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stOrders , (countT)&stCourses ) ;
 
 etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
 ZE( sCountT , timeN2 ) ;

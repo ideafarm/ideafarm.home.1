@@ -41,7 +41,7 @@ etherC::ifcSayIF( T("GOD: waiting for all nodes to die") , flSAY_APPEND | flSAY_
                 //break ; //ENABLE FOR SINGLE SHOT; DISABLE FOR BURST
                 TELL( "launching tmNodeF-" )
                 if( !etThread ) cNodes ++ , cLaunches ++ ;
-                etThread.osThreadF( tinP , countTC() , tmNodeF , 0 , flTHREADlAUNCH_null , 0 , (countT)&cNodes ) ;
+                etThread.osThreadF( tinP , countTC() , tmNodeF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&cNodes ) ;
                 TELL( "launching tmNodeF+" )
             {
             while( cToDo -- )

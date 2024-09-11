@@ -51,9 +51,9 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     while( !ether )
     etThread.etherCryF( tinP ) ;
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmRaceReportsF , 0 , flTHREADlAUNCH_null , 0 , (countT)&b_pcRaceId , (countT)&pcRaceId , (countT)&sw_pcRace ) ; }
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmArchiveF     , 0 , flTHREADlAUNCH_null , 0 , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
-    //{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmObeyF        , 0 , flTHREADlAUNCH_null , 0 , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmRaceReportsF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_pcRaceId , (countT)&pcRaceId , (countT)&sw_pcRace ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmArchiveF     , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
+    //{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmObeyF        , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
 
     switchC sw_pcRace( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pcRaceId ) ;
     ZE( countT* , pcRaceId ) ;
@@ -63,7 +63,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     ZE( countT , idcHirer ) ;
     batonC b_idcHirer( tinP , TAG( TAGiDnULL ) ) ;
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmAcceptF , 0 , flTHREADlAUNCH_null , 0 , (countT)&stDatum ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmAcceptF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stDatum ) ; }
     stackC stDatum( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
 
     etThread.strokeF( tinP , T("IdeaFarm " "(tm) City Data Eater\r\ni eat incoming data\r\n")+S2(0,scOld_SYSmARK) ) ;
@@ -85,7 +85,7 @@ DONE( tmAcceptF )
 }
     }
         }
-            else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmPeerF , 0 , flTHREADlAUNCH_null , 0 , (countT)&stDatum , (countT)pso ) ; }
+            else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmPeerF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stDatum , (countT)pso ) ; }
             if( ether || etThread ) { DEL( pso ) ; }
             sIn.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ;
             ZE( countT , idPortPeer ) ;
@@ -331,7 +331,7 @@ DONE( tmObeyF )
         etThread = 0 ;
 
         }
-            else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmShitF , 0 , flTHREADlAUNCH_null , 0 , (countT)pso , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
+            else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmShitF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
             if( ether || etThread ) { DEL( pso ) ; }
 
             socket.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;

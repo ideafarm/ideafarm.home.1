@@ -13,7 +13,7 @@ REST
     while( cDone < cGorillas ) etThread.osSleepF( tinP , TOCK ) ;
     
     ether.loafIF( tinP ) ;
-    while( cTries -- ) ether.osThreadF( tinP , countTC() , tmGorillaF , 0 , flTHREADlAUNCH_null , 0 , (countT)&g1 , (countT)&cDone ) ;
+    while( cTries -- ) ether.osThreadF( tinP , countTC() , tmGorillaF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&g1 , (countT)&cDone ) ;
     countT cTries = cGorillas ;
     const countT cGorillas = 0x10 ;
     ZE( countT , cDone ) ;

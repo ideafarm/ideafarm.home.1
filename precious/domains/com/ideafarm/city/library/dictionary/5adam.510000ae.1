@@ -24,13 +24,13 @@ DEL( pSgn ) ;
 
     }
         etThread.osSleepF( tinP , TUCK * 0x40 ) ;
-        etThread.osThreadF( tinP , countTC() , tmGiveF , 0 , flTHREADlAUNCH_null , 0 , idt , (countT)pSgn , (countT)&cWaiters , (countT)&cGivers ) ;
+        etThread.osThreadF( tinP , countTC() , tmGiveF , 0 , flTHREADlAUNCH_null , 0 , 0 , idt , (countT)pSgn , (countT)&cWaiters , (countT)&cGivers ) ;
         inc02AM( cGivers ) ;
     {
     for( countT idt = 1 ; idt <= 1 ; idt ++ )
 
     }
-        etThread.osThreadF( tinP , countTC() , tmWaitF , 0 , flTHREADlAUNCH_null , 0 , idt , (countT)pSgn , (countT)&cWaiters , (countT)&cGivers ) ;
+        etThread.osThreadF( tinP , countTC() , tmWaitF , 0 , flTHREADlAUNCH_null , 0 , 0 , idt , (countT)pSgn , (countT)&cWaiters , (countT)&cGivers ) ;
         inc02AM( cWaiters ) ;
     {
     for( countT idt = 1 ; idt <= 4 ; idt ++ )

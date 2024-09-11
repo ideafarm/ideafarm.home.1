@@ -27,8 +27,8 @@
         while( !POOP && !bGoItIt && !etPrime && !bTimeout )
         etherC& etPrime = etPrimeIF( tinP ) ;
 
-        if( time1P || time2P ) osThreadF( tinP , countTC() , tmTimeoutF , &sgnDone_tmTimeout , flTHREADlAUNCH_null , 0 , (countT)&sockd , (countT)&bGoItIt , (countT)&bTimeout , time1P , time2P , idPortMe ) ;
-        osThreadF( tinP , countTC() , tmAskDnsF , &sgnDone_tmAsk , flTHREADlAUNCH_null , 0 , (countT)&sockd , (countT)&bGoItIt , (countT)&bTimeout , (countT)pbQuery , cbQuery ) ;
+        if( time1P || time2P ) osThreadF( tinP , countTC() , tmTimeoutF , &sgnDone_tmTimeout , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd , (countT)&bGoItIt , (countT)&bTimeout , time1P , time2P , idPortMe ) ;
+        osThreadF( tinP , countTC() , tmAskDnsF , &sgnDone_tmAsk , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd , (countT)&bGoItIt , (countT)&bTimeout , (countT)pbQuery , cbQuery ) ;
         signC sgnDone_tmTimeout( tinP , TAG( TAGiDnULL ) ) ;
         signC sgnDone_tmAsk( tinP , TAG( TAGiDnULL ) ) ;
         ZE( boolT , bTimeout ) ;

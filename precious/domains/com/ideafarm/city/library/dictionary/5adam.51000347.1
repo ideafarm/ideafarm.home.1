@@ -30,7 +30,7 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
     socketC sTalk( tinP , ether , TAG( TAGiDnULL ) ) ;
 
     sgnReadyR.waitF( tinP ) ;
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmRelayOldF , &sgnDoneR , flTHREADlAUNCH_null , 0 , (countT)&sRelayOut , (countT)&idPortR , (countT)&sgnReadyR ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmRelayOldF , &sgnDoneR , flTHREADlAUNCH_null , 0 , 0 , (countT)&sRelayOut , (countT)&idPortR , (countT)&sgnReadyR ) ; }
     signC sgnDoneR( tinP , TAG( TAGiDnULL ) ) ;
     signC sgnReadyR( tinP , TAG( TAGiDnULL ) ) ;
     ZE( countT , idPortR ) ;
@@ -38,7 +38,7 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
     socketC sRelayOut( tinP , ether , TAG( TAGiDnULL ) ) ;
 
     sgnReadyL.waitF( tinP ) ;
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmListenF , &sgnDoneL , flTHREADlAUNCH_null , 0 , (countT)&idPortL , (countT)&sgnReadyL ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmListenF , &sgnDoneL , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPortL , (countT)&sgnReadyL ) ; }
     signC sgnDoneL( tinP , TAG( TAGiDnULL ) ) ;
     signC sgnReadyL( tinP , TAG( TAGiDnULL ) ) ;
     ZE( countT , idPortL ) ;

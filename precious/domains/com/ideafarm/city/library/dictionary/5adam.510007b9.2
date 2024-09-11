@@ -1455,7 +1455,7 @@ DONE( tmNodeTeatServerF )
         while( !ether && !bQuitP && !bQuit && !etThread )
         etThread.traceF( tinP , T("tmNodeTeatServerF: client is ")+TF2(idAdamClient,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        etThread.osThreadF( tinP , countTC() , tmNodeServerWrapToAppF , &sgnDone_tmNodeServerWrapToAppF , flTHREADlAUNCH_null , 0 , (countT)&bQuit , (countT)&psoP , (countT)&stWrapRef , (countT)&stChannelInclude , (countT)&stChannelExclude , idAdamClient ) ;
+        etThread.osThreadF( tinP , countTC() , tmNodeServerWrapToAppF , &sgnDone_tmNodeServerWrapToAppF , flTHREADlAUNCH_null , 0 , 0 , (countT)&bQuit , (countT)&psoP , (countT)&stWrapRef , (countT)&stChannelInclude , (countT)&stChannelExclude , idAdamClient ) ;
         signC sgnDone_tmNodeServerWrapToAppF( tinP , TAG( TAGiDnULL ) ) ;
 
         }
@@ -1654,7 +1654,7 @@ DONE( tmNodeTeatAcceptorF )
 
         }
             else                 { DEL( pso ) ; }
-            if( !bQuitP && pso ) etThread.osThreadF( tinP , countTC() , tmNodeTeatServerF , 0 , flTHREADlAUNCH_null , 0 , RELAYiNFOaRGcOUNTS , (countT)pso ) ;
+            if( !bQuitP && pso ) etThread.osThreadF( tinP , countTC() , tmNodeTeatServerF , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso ) ;
             TELL( "launching tmNodeTeatServerF" )
     
             __( bRefuse ) ;

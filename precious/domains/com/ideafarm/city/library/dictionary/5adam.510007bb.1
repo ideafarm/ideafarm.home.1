@@ -33,7 +33,7 @@ ZE( countT , cValue ) ;
 byteT bCmd = 'n' ;
 
 sReady.waitF( tinP ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmPushNumbersF , &sDone , flTHREADlAUNCH_null , 0 , (countT)&idPort , (countT)&sReady ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmPushNumbersF , &sDone , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sReady ) ; }
 ZE( countT , idPort ) ;
 signC sDone(  tinP , TAG( TAGiDnULL ) ) ;
 signC sReady(  tinP , TAG( TAGiDnULL ) ) ;

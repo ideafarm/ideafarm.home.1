@@ -20,8 +20,8 @@ sDoneR.waitF( tinP ) ;
 bFire = 1 ;
 etThread.osSleepF( tinP , TOCK * 16 ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmSayF     , &sDoneS , flTHREADlAUNCH_null , 0 , (countT)&bFire , (countT)&sTick , (countT)&time1 , (countT)&time2 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmRefreshF , &sDoneR , flTHREADlAUNCH_null , 0 , (countT)&bFire , (countT)&sTick , (countT)&time1 , (countT)&time2 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmSayF     , &sDoneS , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFire , (countT)&sTick , (countT)&time1 , (countT)&time2 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmRefreshF , &sDoneR , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFire , (countT)&sTick , (countT)&time1 , (countT)&time2 ) ; }
 signC sDoneS(  tinP , TAG( TAGiDnULL ) ) ;
 signC sDoneR(  tinP , TAG( TAGiDnULL ) ) ;
 signC sTick(  tinP , TAG( TAGiDnULL ) ) ;

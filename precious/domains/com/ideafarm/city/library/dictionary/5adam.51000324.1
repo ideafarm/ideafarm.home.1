@@ -24,7 +24,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     -- sgn_pbv ;
     etThread.strokeF( tinP , T((byteT*)bus)+T("\r\n" USCORE79 "\r\n\r\n") ) ;
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmHearEnterF , 0 , flTHREADlAUNCH_null , 0 , (countT)&sgn_cSubscribers , (countT)&sgn_pbv , (countT)&bus ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmHearEnterF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgn_cSubscribers , (countT)&sgn_pbv , (countT)&bus ) ; }
 
     etThread.strokeF( tinP , T("\r\n\r\nthere are ")+TF1(bus.cSubscribersF(tinP))+T(" subscribers, including me, and also including disconnects\r\nthat the server at city center has not yet detected\r\n\r\n") ) ;
 

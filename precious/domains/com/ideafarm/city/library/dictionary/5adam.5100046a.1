@@ -59,7 +59,7 @@ TODO
     nicNameC nnOther = ether.sockNicNameF( tinP , T("209.128.78.19") ) ;
     nicNameC nnDns   = ether.sockNicNameF( tinP , T("209.128.78.20") ) ;
 
-    ether.osThreadF( tinP , countTC() , tm_NewsC_chatF  , &sgnDone_tm_NewsC_chatF  , flTHREADlAUNCH_null , 0 , (countT)&bFired , (countT)&bChatEnding  , (countT)this , (countT)&psoss ) ;
+    ether.osThreadF( tinP , countTC() , tm_NewsC_chatF  , &sgnDone_tm_NewsC_chatF  , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFired , (countT)&bChatEnding  , (countT)this , (countT)&psoss ) ;
 
     }
         if( ether ) return ;
@@ -112,7 +112,7 @@ DONE( tm_NewsC_chatF )
         }
             }
                 }
-                    etThread.osThreadF( tinP , countTC() , tm_newsC_sessionF , 0 , flTHREADlAUNCH_null , 0 , (countT)&psoss , (countT)&cSessions , (countT)&news , (countT)&bFired ) ;
+                    etThread.osThreadF( tinP , countTC() , tm_newsC_sessionF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&psoss , (countT)&cSessions , (countT)&news , (countT)&bFired ) ;
                     psoss = pso ; pso = 0 ;
                     cSessions ++ ;
                 {

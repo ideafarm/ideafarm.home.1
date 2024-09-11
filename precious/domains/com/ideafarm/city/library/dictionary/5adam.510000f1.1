@@ -33,13 +33,13 @@ thThread.s_readF( tinP , (byteT*)&value , sizeof value , handleJob ) ;
 etThread.strokeF( tinP , T("primary thread is attempting to read a value on port ")+TF1(idPort)+T("\r\n") ) ;
 ZE( countT , value ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmCancelF , &sDone_tmCancel , flTHREADlAUNCH_null , 0 , (countT)&handleJob ) ; } ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmCancelF , &sDone_tmCancel , flTHREADlAUNCH_null , 0 , 0 , (countT)&handleJob ) ; } ;
 signC sDone_tmCancel( tinP , TAG( TAGiDnULL ) ) ;
 thThread.s_acceptF( tinP , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
 ZE( countT , idPortPeer ) ;
 nicNameC nnPeer ;
 handleC handleJob( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmClientF , &sDone_tmClient , flTHREADlAUNCH_null , 0 , idPort ) ; } ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmClientF , &sDone_tmClient , flTHREADlAUNCH_null , 0 , 0 , idPort ) ; } ;
 signC sDone_tmClient( tinP , TAG( TAGiDnULL ) ) ;
 thThread.s_listenF( tinP , handleServer ) ;
 countT idPort = thThread.s_bindF( tinP , handleServer ) ;

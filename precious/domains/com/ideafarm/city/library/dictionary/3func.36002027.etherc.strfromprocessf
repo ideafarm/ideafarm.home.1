@@ -49,8 +49,8 @@
             ++ s ; osSleepF( tinP , TOCK ) ; //U: IF THIS ISN''T LONG ENOUGH, THE PROCESS BOX WON''T CONSTRUCT AND WE''LL HAVE A LEAK
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
         {
-        { ZE( countT , tnu ) ; osThreadF( tinP , tnu , tmErrorF , &sgnDone_tmError , flTHREADlAUNCH_null , 0 , (countT)&argError ) ; }
-        { ZE( countT , tnu ) ; osThreadF( tinP , tnu , tmOutF   , &sgnDone_tmOut , flTHREADlAUNCH_null , 0 , (countT)&argOut   ) ; }
+        { ZE( countT , tnu ) ; osThreadF( tinP , tnu , tmErrorF , &sgnDone_tmError , flTHREADlAUNCH_null , 0 , 0 , (countT)&argError ) ; }
+        { ZE( countT , tnu ) ; osThreadF( tinP , tnu , tmOutF   , &sgnDone_tmOut , flTHREADlAUNCH_null , 0 , 0 , (countT)&argOut   ) ; }
     {
     signC sgnDone_tmError( tinP , TAG( TAGiDnULL ) ) ;
     signC sgnDone_tmOut( tinP , TAG( TAGiDnULL ) ) ;

@@ -1,4 +1,6 @@
 
+#define CBsTACKdEFAULT ( TOCK )
+
 #define CBtLSmINIMUM ( TUCK << 2 )
 
 #define fliSTATElISTING_ENABLED                    1
@@ -5042,7 +5044,7 @@ examples
 /*1*//*LAUNCHhEAReNTER(tmFP,idPortP)*//*1*/
 /**/
 
-#define LAUNCHhEAReNTER(tmFP,idPortP) { ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmFP , 0 , flTHREADlAUNCH_null , 0 , idPortP ) ; }
+#define LAUNCHhEAReNTER(tmFP,idPortP) { ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmFP , 0 , flTHREADlAUNCH_null , 0 , 0 , idPortP ) ; }
 
 
 //
@@ -15205,7 +15207,7 @@ see QUITO
                                                                                                                 \
     {                                                                                                           \
         etherC etLaunch( tinP , TAG( TAGiDnULL ) ) ;                         \
-        etLaunch.osThreadF( tinP , countTC() , tm_##classP##_F , 0 , flTHREADlAUNCH_null , 0 , (countT)this ) ; \
+        etLaunch.osThreadF( tinP , countTC() , tm_##classP##_F , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)this ) ; \
         if( etLaunch ) _deleteMyselfF( tinP ) ;                                                                 \
     }
 
@@ -22907,7 +22909,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BlATHs
 /**/
 /*1*//*TaRG1(tmFP)*//*1*/
 
-#define TaRG1(tmFP) tinP , countTC() , tmFP , 0 , flTHREADlAUNCH_null , 0
+#define TaRG1(tmFP) tinP , countTC() , tmFP , 0 , flTHREADlAUNCH_null , 0 , 0
 
 
 //
@@ -40213,7 +40215,7 @@ optimized for speed
 /**/
 /*1*//*TaRG2sGNdONE(tmFP,sgnDoneP)*//*1*/
 
-#define TaRG2sGNdONE(tmFP,sgnDoneP) tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , 0
+#define TaRG2sGNdONE(tmFP,sgnDoneP) tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , 0 , 0
 
 
 //

@@ -38,7 +38,7 @@ socketC scd( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
     etThread.strokeF( tinP , T("main: saw sReadyS\r\n") ) ;
     sReadyS.waitF( tinP ) ;
     etThread.strokeF( tinP , T("main: waiting for sReadyS\r\n") ) ;
-    etThread.osThreadF( tinP , countTC() , tmServeStreamF , 0 , flTHREADlAUNCH_null , 0 , (countT)&sReadyS ) ;
+    etThread.osThreadF( tinP , countTC() , tmServeStreamF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReadyS ) ;
     signC sReadyS( tinP , TAG( TAGiDnULL ) ) ;
 {
 
@@ -46,7 +46,7 @@ socketC scd( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
     etThread.strokeF( tinP , T("main: saw sReadyD; idPortMe: ")+TF1(idPortMe)+T("\r\n") ) ;
     sReadyD.waitF( tinP ) ;
     etThread.strokeF( tinP , T("main: waiting for sReadyD\r\n") ) ;
-    etThread.osThreadF( tinP , countTC() , tmServeDatagramF , 0 , flTHREADlAUNCH_null , 0 , (countT)&sReadyD ) ;
+    etThread.osThreadF( tinP , countTC() , tmServeDatagramF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReadyD ) ;
     signC sReadyD( tinP , TAG( TAGiDnULL ) ) ;
 {
 

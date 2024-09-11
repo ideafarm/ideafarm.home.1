@@ -43,7 +43,7 @@ ZE( strokeS* , psttDots ) ;
 
 etThread.osSleepF( tinP , TUCK * 64 ) ;
 sReady.waitF( tinP ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmBoxServerF , &sDone , flTHREADlAUNCH_null , 0 , (countT)&sReady ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmBoxServerF , &sDone , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReady ) ; }
 signC sDone(  tinP , TAG( TAGiDnULL ) ) ;
 signC sReady(  tinP , TAG( TAGiDnULL ) ) ;
 

@@ -23,7 +23,7 @@ etThread.strokeF( tinP , T("just returned from destructor\r\n") ) ;
 TODO
 
 }
-    ether.osThreadF( tinP , countTC() , tmVolunteerAsSingularityF  , &sgnDone_tmVolunteerAsSingularityF  , flTHREADlAUNCH_null , 0 , (countT)&bFired ) ;
+    ether.osThreadF( tinP , countTC() , tmVolunteerAsSingularityF  , &sgnDone_tmVolunteerAsSingularityF  , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFired ) ;
 
     }
         if( ether ) return ;
@@ -51,7 +51,7 @@ ether( etherP ) ,
 DONE( tmVolunteerAsSingularityF )
 }
     etThread.ifcJobF( tinP , stCourses , 0x4010452 , sOrderPrimary , stOrders , T("newsC: volunteer to be the singularity at ")+TT(timeN1,timeN2) ) ;
-    etThread.osThreadF( tinP , countTC() , tmChatAsVolunteerF , 0 , flTHREADlAUNCH_null , 0 , (countT)&bFired , (countT)&stOrders , (countT)&stCourses ) ;
+    etThread.osThreadF( tinP , countTC() , tmChatAsVolunteerF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFired , (countT)&stOrders , (countT)&stCourses ) ;
     
     etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;

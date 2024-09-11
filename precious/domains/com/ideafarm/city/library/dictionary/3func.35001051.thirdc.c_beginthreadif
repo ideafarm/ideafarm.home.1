@@ -64,7 +64,7 @@
                 if( !POOP )
 
                 BOSpOOP
-                BOS( WHATgbo , BOSoK , CreateThread( &sa , 0 , (tmfosFT)tmFP , pvP , CREATE_SUSPENDED , (ULONG*)&tidP ) )
+                BOS( WHATgbo , BOSoK , CreateThread( &sa , cbStackP , (tmfosFT)tmFP , pvP , CREATE_SUSPENDED | STACK_SIZE_PARAM_IS_A_RESERVATION , (ULONG*)&tidP ) )
 
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
                 SECURITYaTTRIBUTE_saUNRESTRICTED( 0 ) ;
@@ -128,7 +128,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT thirdC::c_beginthreadIF( tinS& tinP , countT& tidP , voidT* const tmFP , voidT* pvP , const flagsT flagsP )/*1*/
+/*1*/voidT thirdC::c_beginthreadIF( tinS& tinP , countT& tidP , voidT* const tmFP , voidT* pvP , const flagsT flagsP , const countT cbStackP )/*1*/
 
 #endif
     typedef ULONG (OSF *tmfosFT)( voidT* argP ) ;

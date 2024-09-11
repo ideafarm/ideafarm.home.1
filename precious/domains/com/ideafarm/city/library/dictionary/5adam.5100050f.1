@@ -10,8 +10,8 @@
 REST
 
 etThread.loafIF( tinP ) ;
-etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , flTHREADlAUNCH_null , 0 , 1/*U::OBSOLETE*/ ) ;
-etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , flTHREADlAUNCH_null , 0 , 1 ) ;
+etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , flTHREADlAUNCH_null , 0 , 0 , 1/*U::OBSOLETE*/ ) ;
+etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , flTHREADlAUNCH_null , 0 , 0 , 1 ) ;
 
 TODO
 
@@ -71,7 +71,7 @@ DONE( tmWorkF )
                 {
                 while( !ether && !etThread && !POOP )
     
-                etThread.osThreadF( tinP , countTC() , tmPutPayloadsF , &sgnDone_tmPutPayloadsF , flTHREADlAUNCH_null , 0 , (countT)&sock , (countT)&bQuit ) ;
+                etThread.osThreadF( tinP , countTC() , tmPutPayloadsF , &sgnDone_tmPutPayloadsF , flTHREADlAUNCH_null , 0 , 0 , (countT)&sock , (countT)&bQuit ) ;
                 signC sgnDone_tmPutPayloadsF( tinP , TAG( TAGiDnULL ) ) ;
                 ZE( boolT , bQuit ) ;
             

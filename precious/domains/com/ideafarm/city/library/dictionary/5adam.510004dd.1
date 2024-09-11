@@ -110,20 +110,20 @@ U::NEED TO PASS IN A bitsC REFERENCE
         //THIS PARAGRAPH IS OBSOLETE AND RETAINED FOR REFERENCE ONLY (DURING CODE TRANSITION)
     
         //etThread.osThreadF( tinP , countTC() , tmBlammoF ) ;
-        //etThread.osThreadF( tinP , countTC() , tmLockupF   , 0                  , flTHREADlAUNCH_null , 0 , (countT)&g1 , (countT)&g2 , 2 ) ;
-        //etThread.osThreadF( tinP , countTC() , tmLockupF   , 0                  , flTHREADlAUNCH_null , 0 , (countT)&g1 , (countT)&g2 , 1 ) ;
+        //etThread.osThreadF( tinP , countTC() , tmLockupF   , 0                  , flTHREADlAUNCH_null , 0 , 0 , (countT)&g1 , (countT)&g2 , 2 ) ;
+        //etThread.osThreadF( tinP , countTC() , tmLockupF   , 0                  , flTHREADlAUNCH_null , 0 , 0 , (countT)&g1 , (countT)&g2 , 1 ) ;
         etThread.osThreadF( tinP , countTC() , tmFireMyselfF ) ;
         etThread.osThreadF( tinP , countTC() , tmFireAllF  , &sgnDone_tmFireAllF  ) ;
-        etThread.osThreadF( tinP , countTC() , tmRptPoolF  , &sgnDone_tmRptPoolF  , flTHREADlAUNCH_null , 0 , (countT)&sgnDone_tmFireAllF , (countT)postPoolNames , (countT)pcRefPoolNames ) ;
-        etThread.osThreadF( tinP , countTC() , tmWhereRptF , &sgnDone_tmWhereRptF , flTHREADlAUNCH_null , 0 , (countT)&c3wp ) ;
-        etThread.osThreadF( tinP , countTC() , tmWhereF    , &sgnDone_tmWhereF    , flTHREADlAUNCH_null , 0 , (countT)&c3wp ) ;
-        etThread.osThreadF( tinP , countTC() , tmRptMainF  , &sgnDone_tmRptMainF  , flTHREADlAUNCH_null , 0 , (countT)&c8rp1 , (countT)&c8rp2 , (countT)&c8rp3 , (countT)&c8rp4 , (countT)&c8rp5 ) ;
-        etThread.osThreadF( tinP , countTC() , tmLogSnapF  , &sgnDone_tmLogSnapF  , flTHREADlAUNCH_null , 0 , (countT)&sgnDone_tmRptMainF , (countT)&pNapLog , (countT)&bDestroyCircleLog ) ;
+        etThread.osThreadF( tinP , countTC() , tmRptPoolF  , &sgnDone_tmRptPoolF  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnDone_tmFireAllF , (countT)postPoolNames , (countT)pcRefPoolNames ) ;
+        etThread.osThreadF( tinP , countTC() , tmWhereRptF , &sgnDone_tmWhereRptF , flTHREADlAUNCH_null , 0 , 0 , (countT)&c3wp ) ;
+        etThread.osThreadF( tinP , countTC() , tmWhereF    , &sgnDone_tmWhereF    , flTHREADlAUNCH_null , 0 , 0 , (countT)&c3wp ) ;
+        etThread.osThreadF( tinP , countTC() , tmRptMainF  , &sgnDone_tmRptMainF  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c8rp1 , (countT)&c8rp2 , (countT)&c8rp3 , (countT)&c8rp4 , (countT)&c8rp5 ) ;
+        etThread.osThreadF( tinP , countTC() , tmLogSnapF  , &sgnDone_tmLogSnapF  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnDone_tmRptMainF , (countT)&pNapLog , (countT)&bDestroyCircleLog ) ;
         }
             while( !pNapLog && !etThread ) { ++ s ; etThread.osSleepF( tinP ) ; }
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
         {
-        etThread.osThreadF( tinP , countTC() , tmCircleLogF      , &sgnDone_tmCircleLogF      , flTHREADlAUNCH_null , 0 , (countT)&pNapLog , (countT)&bDestroyCircleLog ) ;
+        etThread.osThreadF( tinP , countTC() , tmCircleLogF      , &sgnDone_tmCircleLogF      , flTHREADlAUNCH_null , 0 , 0 , (countT)&pNapLog , (countT)&bDestroyCircleLog ) ;
     
         count3S c3wp( (countT)&c8w1 , (countT)&c8w2 , (countT)&c8w3 ) ;
         count8S c8w3( (countT)&stLifi , (countT)&stWhere , (countT)&wtGrossHost , (countT)&stRecycle_pwtGross , (countT)&stRecycle_pwtFine ) ;

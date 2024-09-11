@@ -30,14 +30,14 @@ etThread.sockReadF( tinP , handleJob , (byteT*)&value , sizeof value ) ;
 etThread.strokeF( tinP , T("primary thread is attempting to read a value on port ")+TF1(idPort)+T("\r\n") ) ;
 ZE( countT , value ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmCancelF , &sCancel , flTHREADlAUNCH_null , 0 , handleJob ) ; } ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmCancelF , &sCancel , flTHREADlAUNCH_null , 0 , 0 , handleJob ) ; } ;
 signC sCancel(  tinP , TAG( TAGiDnULL ) ) ;
 etThread.sockAcceptF( tinP , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
 ZE( countT , idPortPeer ) ;
 nicNameC nnPeer ;
 handleC handleJob( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 etThread.sockListenF( tinP , handleServer ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , flTHREADlAUNCH_null , 0 , idPort ) ; } ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , flTHREADlAUNCH_null , 0 , 0 , idPort ) ; } ;
 countT idPort = etThread.sockBindF( tinP , handleServer ) ;
 etThread.sockF( tinP , handleServer ) ;
 handleC handleServer( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;

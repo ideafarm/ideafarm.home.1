@@ -35,16 +35,16 @@ etThread.osSleepF( tinP , TOCK ) ;
 
 bFace.ungrabF( tinP ) ;
 
-{ ZE( countT , tidnu ) ; etThread.osThreadF( tinP , tidnu , tmF   , &sDoneRude   , flTHREADlAUNCH_null , 0 , 'R' , (countT)&sGo , (countT)&bFace ) ; }
+{ ZE( countT , tidnu ) ; etThread.osThreadF( tinP , tidnu , tmF   , &sDoneRude   , flTHREADlAUNCH_null , 0 , 0 , 'R' , (countT)&sGo , (countT)&bFace ) ; }
 //etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
 
-{ ZE( countT , tidnu ) ; etThread.osThreadF( tinP , tidnu , tmF   , &sDoneRush   , flTHREADlAUNCH_null , 0 , 'r' , (countT)&sGo , (countT)&bFace ) ; }
+{ ZE( countT , tidnu ) ; etThread.osThreadF( tinP , tidnu , tmF   , &sDoneRush   , flTHREADlAUNCH_null , 0 , 0 , 'r' , (countT)&sGo , (countT)&bFace ) ; }
 //etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_RUSH ) ;
 
-{ ZE( countT , tidnu ) ; etThread.osThreadF( tinP , tidnu , tmF   , &sDoneNormal , flTHREADlAUNCH_null , 0 , 'n' , (countT)&sGo , (countT)&bFace ) ; }
+{ ZE( countT , tidnu ) ; etThread.osThreadF( tinP , tidnu , tmF   , &sDoneNormal , flTHREADlAUNCH_null , 0 , 0 , 'n' , (countT)&sGo , (countT)&bFace ) ; }
 //etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_NORMAL ) ;
 
-{ ZE( countT , tidnu ) ; etThread.osThreadF( tinP , tidnu , tmF   , &sDoneIdle   , flTHREADlAUNCH_null , 0 , 'i' , (countT)&sGo , (countT)&bFace ) ; }
+{ ZE( countT , tidnu ) ; etThread.osThreadF( tinP , tidnu , tmF   , &sDoneIdle   , flTHREADlAUNCH_null , 0 , 0 , 'i' , (countT)&sGo , (countT)&bFace ) ; }
 //etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
 
 bFace.grabF( tinP , TAG( TAGiDnULL ) ) ;

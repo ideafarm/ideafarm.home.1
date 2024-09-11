@@ -2416,21 +2416,21 @@ void elf_obey_C::liveF( void )
             if( bNumaIsAvailableF() )
             {
                 #if defined( TELL )
-                    system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
-                    //  system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
+                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
+                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
                 #else
-                    system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
-                    //  system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
+                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
+                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
                 #endif
             }
             else
             {
                 #if defined( TELL )
-                    system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ) ;
-                    //  system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ) ;
+                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ) ;
+                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ) ;
                 #else
-                    system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells !debug" ) ;
-                    //  system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells" ) ;
+                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells !debug" ) ;
+                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells" ) ;
                 #endif
             }
         }

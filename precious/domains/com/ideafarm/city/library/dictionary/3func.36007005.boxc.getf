@@ -209,7 +209,7 @@
             verifyReplyF( tinP , 215 ) ;
             pSControl->writeF( tinP , (osTextT*)T("list newsgroups\r\n") ) ;
 
-            //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , (countT)&info ) ; }
+            //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
             infoBoxGetPutS info( tinP , ether , *pSControl ) ;
 
             __( cbP ) ;
@@ -236,7 +236,7 @@
             {
             { textC txt = T("article ")+T(psttIdWanted)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
 
-            //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , (countT)&info ) ; }
+            //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
             infoBoxGetPutS info( tinP , ether , *pSControl ) ;
 
             }
@@ -282,7 +282,7 @@
             _IO_
         {
         if( psttTop )
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , (countT)&info ) ; }
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
         infoBoxGetPutS info( tinP , ether , *pSControl ) ;
 
         }
@@ -768,7 +768,7 @@
         { textC txt = T("stat ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
         __NZ( cbP ) ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , (countT)&info ) ; }
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
         infoBoxGetPutS info( tinP , ether , *pSControl ) ;
         _IO_
     {
@@ -785,7 +785,7 @@
         ether.newF( tinP , LF , pbP , cbP ) ; ___( pbP ) ;
         cbP = 2 * sizeof( countT ) ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , (countT)&info ) ; }
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
         infoBoxGetPutS info( tinP , ether , *pSControl ) ;
         _IO_
     {
@@ -802,7 +802,7 @@
         ether.newF( tinP , LF , pbP , cbP ) ; ___( pbP ) ;
         cbP = sizeof( sCountT ) + sizeof( countT ) ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , (countT)&info ) ; }
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
         infoBoxGetPutS info( tinP , ether , *pSControl ) ;
         _IO_
     {
@@ -844,7 +844,7 @@
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , (countT)&info ) ; }
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
         infoBoxGetPutS info( tinP , ether , *pSControl ) ;
         _IO_
     {

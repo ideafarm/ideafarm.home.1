@@ -38,10 +38,10 @@ REST
     
     etThread.osThreadF( tinP , countTC() , tmHireConsoleF ) ;
     
-    etThread.osThreadF( tinP , countTC() , tmTickRegisterIdComputerNicNameF , &sgnDone_tmTickRegisterIdComputerNicName , flTHREADlAUNCH_null , 0 , (countT)&c9p ) ;
+    etThread.osThreadF( tinP , countTC() , tmTickRegisterIdComputerNicNameF , &sgnDone_tmTickRegisterIdComputerNicName , flTHREADlAUNCH_null , 0 , 0 , (countT)&c9p ) ;
     signC sgnDone_tmTickRegisterIdComputerNicName( tinP , TAG( TAGiDnULL ) ) ;
     
-    etThread.osThreadF( tinP , countTC() , tmTickRegisterAdamsF , &sgnDone_tmTickRegisterAdams , flTHREADlAUNCH_null , 0 , (countT)&c9p ) ;
+    etThread.osThreadF( tinP , countTC() , tmTickRegisterAdamsF , &sgnDone_tmTickRegisterAdams , flTHREADlAUNCH_null , 0 , 0 , (countT)&c9p ) ;
     //U::ENABLE REGISTRATION AFTER ELIMINATE THE USE OF gethostbyname SO HAVE RESPONSIVE QUIT QUALITY WHILE A DNS NAME IS BEING RESOLVED AND THE ideafarm.com DNS SERVER IS DOWN; CURRENT CODE TAKES 04 TOCK TO TIME OUT AND DOES NOT RESPOND TO REPEATED ATTEMPTS TO CANCLEL THE SOCKET
     signC sgnDone_tmTickRegisterAdams( tinP , TAG( TAGiDnULL ) ) ;
     
@@ -648,7 +648,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                             //etThread.ifcSayF( tinP , TF3(idClient,flFORMAT_UNSIGNED,9)+tComment+tBar+T(tinP.postTell) , flSAY_APPEND | flSAY_LOG ) ; //U::
                             TELL( "ifcIDcMDsESSION_RELAYcHAT/waiting for tmRelayOldChatRepliesF to give sgnUpTested" ) ;
                             //etThread.ifcSayF( tinP , TF3(idClient,flFORMAT_UNSIGNED,9)+tComment+tBar+T("waiting for sgnUpTested to be given ")+(bDirect?TF1(idAdam):TF1(DDNUMB)+T("(")+TF1(idAdam)+T(")"))+tBar/*+tComment*/+tCRLF , flSAY_APPEND | flSAY_LOG ) ;
-                            etThread.osThreadF( tinP , countTC() , tmRelayOldChatRepliesF , &sgnDone_tmRelayOldChatReplies , flTHREADlAUNCH_null , 0 , (countT)&etScratch , (countT)pso , (countT)&soUp , (countT)&sgnUpTested , idRelay ) ;
+                            etThread.osThreadF( tinP , countTC() , tmRelayOldChatRepliesF , &sgnDone_tmRelayOldChatReplies , flTHREADlAUNCH_null , 0 , 0 , (countT)&etScratch , (countT)pso , (countT)&soUp , (countT)&sgnUpTested , idRelay ) ;
                             signC sgnDone_tmRelayOldChatReplies( tinP , TAG( TAGiDnULL ) ) ;
                             signC sgnUpTested( tinP , TAG( TAGiDnULL ) ) ;
                             //etThread.ifcSayF( tinP , TF3(idClient,flFORMAT_UNSIGNED,9)+tComment+tBar+T(tinP.postTell) , flSAY_APPEND | flSAY_LOG ) ; //U::

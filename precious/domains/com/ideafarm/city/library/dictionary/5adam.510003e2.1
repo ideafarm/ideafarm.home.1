@@ -61,8 +61,8 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     ZE( countT , idJobLast ) ;
     etThread.etherCryF( tinP ) ;
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmJobDoerF , &sDone_tmJobDoerQuick , flTHREADlAUNCH_null , 0 , (countT)&sJobsQuick ) ; }
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmJobDoerF , &sDone_tmJobDoerMake  , flTHREADlAUNCH_null , 0 , (countT)&sJobsMake  ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmJobDoerF , &sDone_tmJobDoerQuick , flTHREADlAUNCH_null , 0 , 0 , (countT)&sJobsQuick ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmJobDoerF , &sDone_tmJobDoerMake  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sJobsMake  ) ; }
     signC  sDone_tmJobDoerQuick( tinP , TAG( TAGiDnULL ) ) ;
     signC  sDone_tmJobDoerMake( tinP , TAG( TAGiDnULL ) ) ;
     stackC sJobsQuick( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count8S ) ;
