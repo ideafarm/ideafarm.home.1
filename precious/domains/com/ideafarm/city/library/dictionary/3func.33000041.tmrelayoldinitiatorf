@@ -62,7 +62,7 @@ tinP.idPhase2 = 0 ;
                     while( !stIdptOpenP.third && ~hDown ) ;
                     }
                         swsIdptMediatorP.extractF( 0 , tinP ) ;
-                        swsIdptMediatorAltP.sinkF( tinP , countTC() , (byteT*)&idptm , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                        swsIdptMediatorAltP.sinkF( tinP , countTC() , (byteT*)&idptm , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                         portTimeC& idptm = *(portTimeC*)&swsIdptMediatorP.downF( tinP , hDown ) ;
                     {
                     do
@@ -127,7 +127,7 @@ tinP.idPhase2 = 0 ;
                         }
                             relayOldC::sortOpenIF( tinP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
                             if( stIdptGossipP( (byteT*)&idptTest , subtractIdPortsF  , - 1                    ) ) stIdptGossipP.extractF( 0 , tinP ) ;
-                            if( stIdptOpenP(   (byteT*)&idptTest , subtractIdPortTimesF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinP ) ;
+                            if( stIdptOpenP(   (byteT*)&idptTest , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinP ) ;
                         {
                         if( !relayOldC::testIF( tinP , idptP , idSerialLathHeaderP , idptTest ) )
                         portTimeC& idptTest = *(portTimeC*)&stIdptGossipP.downF( tinP , hDown ) ;
@@ -143,7 +143,7 @@ tinP.idPhase2 = 0 ;
                 }
                     relayOldC::sortOpenIF( tinP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
                     if( stIdptGossipP( (byteT*)&idptAbsent5 , subtractIdPortsF  , - 1                    ) ) stIdptGossipP.extractF( 0 , tinP ) ;
-                    if( stIdptOpenP(   (byteT*)&idptAbsent5 , subtractIdPortTimesF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinP ) ;
+                    if( stIdptOpenP(   (byteT*)&idptAbsent5 , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinP ) ;
                     //P: A RELAY THAT THINKS IT IS ROOT WILL DELIST AN ABSENT RELAY THAT IT EXPECTS TO BE AT ITS LEFT
                 {
                 if( idptAbsent5 )
@@ -153,7 +153,7 @@ tinP.idPhase2 = 0 ;
                 //U: I DO NOT KNOW WHY THIS CAUSES CYCLING IF DONE EVERY CYCLE
 
                 }
-                    if( idpth && !relayOldC::bListedIF( tinP , stIdptOpenP , stIdptGossipP , idpth ) ) stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idpth , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ; //P: A ROOT RELAY ALWAYS KNOWS ABOUT A HANDLE RELAY
+                    if( idpth && !relayOldC::bListedIF( tinP , stIdptOpenP , stIdptGossipP , idpth ) ) stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idpth , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ; //P: A ROOT RELAY ALWAYS KNOWS ABOUT A HANDLE RELAY
                     portTimeC idpth = relayOldC::handleQueryIF( tinP ) ;
                 {
             {

@@ -341,7 +341,7 @@ DONE( tmNodeServerCatchBagF )
 
     }
         stIdptPopClientP.ungrabF( tinP ) ;
-        if( stIdptPopClientP( (byteT*)&idptPopClient , subtractIdPortTimesF , - 1 ) ) stIdptPopClientP.extractF( 0 , tinP ) ;
+        if( stIdptPopClientP( (byteT*)&idptPopClient , subtractIdPortTimesOldF , - 1 ) ) stIdptPopClientP.extractF( 0 , tinP ) ;
         stIdptPopClientP.grabF( tinP , TAG( TAGiDnULL ) ) ;
     {
     if( bPopClient )
@@ -491,7 +491,7 @@ DONE( tmNodeServerCatchBagF )
                                         inc02AM( cGossipInP ) ;
                                         nodeOldC::sortOpenIF( tinP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
                                         }
-                                            if( !nodeOldC::bListedIF( tinP , stIdptOpenP , stIdptGossipP , idptGossipNew ) ) stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idptGossipNew , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                                            if( !nodeOldC::bListedIF( tinP , stIdptOpenP , stIdptGossipP , idptGossipNew ) ) stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idptGossipNew , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
             
                                             }
                                                 stIdptGossipP.extractF( 0 , tinP ) ;
@@ -509,7 +509,7 @@ DONE( tmNodeServerCatchBagF )
                                             }
                                                 stIdptOpenP.extractF( 0 , tinP ) ;
                                             {
-                                            if( stIdptOpenP( (byteT*)&idptGossip , subtractIdPortTimesF , (countT)&stIdptGossipP ) )
+                                            if( stIdptOpenP( (byteT*)&idptGossip , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) )
                                             portTimeC idptGossipNew = portTimeC::fieldF( tinP , sBag , ifcIDfIELDbAG_IDtYPE + 1 + portTimeC::cFieldsF( tinP ) ) ;
                                         {
                                         else
@@ -547,7 +547,7 @@ DONE( tmNodeServerCatchBagF )
                                     //CONoUTrAW5( "tmNodeServerCatchBagF (idThread,idWork): " , tinP.monitor.idThread , processGlobal4I.mapPopClientWork(idWork) , 0 , "\r\n" ) ;
         
                                     idWork = sBag.cFieldF( tinP , ifcIDfIELDbAG_IDwORK ) ;
-                                    stIdptPopClientP.sinkF( tinP , countTC() , (byteT*)&idptPopClient , flSTACKsINK_null , subtractIdPortTimesF , - 1 ) ;
+                                    stIdptPopClientP.sinkF( tinP , countTC() , (byteT*)&idptPopClient , flSTACKsINK_null , subtractIdPortTimesOldF , - 1 ) ;
                                     bPopClient = 1 ;
                                     idptPopClient = idptOrigin ;
                                     TELL( "ifcOLDiDtYPEbAG_CLIENTpOPhELLO+" )
@@ -567,10 +567,10 @@ DONE( tmNodeServerCatchBagF )
                                 }
                                     etThread.traceF( tinP , T("registered origin [cNodes,idptOrigin]:    ")+TF2(stIdptOpenP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(nn4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     countT nn4 = *(const countT*)(nicNameC&)idptOrigin ;
-                                    stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idptOrigin , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                                    stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idptOrigin , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                                 {
                                 if( ideMe == 1 && idptOrigin && !nodeOldC::bListedIF( tinP , stIdptOpenP , stIdptGossipP , idptOrigin ) )
-                                countT ideMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                                countT ideMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                                 //CONoUTrAW3( "tmCatchBagF " , idCatch , ": 8 after grabbing lists\r\n" ) ; //U::
                                 GRABrELAYlISTS
                                 //CONoUTrAW3( "tmCatchBagF " , idCatch , ": 9 grabbing lists\r\n" ) ; //U::
@@ -620,7 +620,7 @@ DONE( tmNodeServerCatchBagF )
                             if
                             //P: A SERVER THAT THINKS THAT IT IS ROOT WILL BANG MOST ITEMS IMPLODED DOWN INTO IT
                             //etThread.traceF( tinP , T("[bRoot]:    ")+TF2(bRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            const boolT bRoot = 1 == stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                            const boolT bRoot = 1 == stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                             //CONoUTrAW3( "tmCatchBagF " , idCatch , ": b inspecting whether i am root\r\n" ) ; //U::
                             GRABrELAYlISTS
                             //CONoUTrAW3( "tmCatchBagF " , idCatch , ": c.2 grabbing lists before inspecting for being root\r\n" ) ; //U::
@@ -907,7 +907,7 @@ tinP.idPhase2 = 0 ;
                     while( !stIdptOpenP.third && ~hDown ) ;
                     }
                         swsIdptMediatorP.extractF( 0 , tinP ) ;
-                        swsIdptMediatorAltP.sinkF( tinP , countTC() , (byteT*)&idptm , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                        swsIdptMediatorAltP.sinkF( tinP , countTC() , (byteT*)&idptm , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                         portTimeC& idptm = *(portTimeC*)&swsIdptMediatorP.downF( tinP , hDown ) ;
                     {
                     do
@@ -972,7 +972,7 @@ tinP.idPhase2 = 0 ;
                         }
                             nodeOldC::sortOpenIF( tinP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
                             if( stIdptGossipP( (byteT*)&idptTest , subtractIdPortsF  , - 1                    ) ) stIdptGossipP.extractF( 0 , tinP ) ;
-                            if( stIdptOpenP(   (byteT*)&idptTest , subtractIdPortTimesF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinP ) ;
+                            if( stIdptOpenP(   (byteT*)&idptTest , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinP ) ;
                         {
                         if( !nodeOldC::testIF( tinP , idptP , idSerialLathHeaderP , idptTest ) )
                         portTimeC& idptTest = *(portTimeC*)&stIdptGossipP.downF( tinP , hDown ) ;
@@ -988,7 +988,7 @@ tinP.idPhase2 = 0 ;
                 }
                     nodeOldC::sortOpenIF( tinP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
                     if( stIdptGossipP( (byteT*)&idptAbsent5 , subtractIdPortsF  , - 1                    ) ) stIdptGossipP.extractF( 0 , tinP ) ;
-                    if( stIdptOpenP(   (byteT*)&idptAbsent5 , subtractIdPortTimesF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinP ) ;
+                    if( stIdptOpenP(   (byteT*)&idptAbsent5 , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinP ) ;
                     //P: A RELAY THAT THINKS IT IS ROOT WILL DELIST AN ABSENT RELAY THAT IT EXPECTS TO BE AT ITS LEFT
                 {
                 if( idptAbsent5 )
@@ -998,7 +998,7 @@ tinP.idPhase2 = 0 ;
                 //U: I DO NOT KNOW WHY THIS CAUSES CYCLING IF DONE EVERY CYCLE
 
                 }
-                    if( idpth && !nodeOldC::bListedIF( tinP , stIdptOpenP , stIdptGossipP , idpth ) ) stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idpth , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ; //P: A ROOT RELAY ALWAYS KNOWS ABOUT A HANDLE RELAY
+                    if( idpth && !nodeOldC::bListedIF( tinP , stIdptOpenP , stIdptGossipP , idpth ) ) stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idpth , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ; //P: A ROOT RELAY ALWAYS KNOWS ABOUT A HANDLE RELAY
                     portTimeC idpth = nodeOldC::handleQueryIF( tinP ) ;
                 {
             {
@@ -1304,7 +1304,7 @@ DONE( tmNodeTeatServerF )
                                 {
                                 if( stIdptOpenP )
                                 //CONoUTrAW( T("the requested idRank is ")+TF1(idRank)+T("\r\n") ) ;
-                                countT idRank = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                                countT idRank = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                                 GRABrELAYlISTS
                             {
                             if( psGift && psWrapo )
@@ -1424,7 +1424,7 @@ DONE( tmNodeTeatServerF )
                         //OStEXT( ostoSay , TUCK << 2 ) ;
 
                         etThread.strReplaceF( tinP , psttTM , 0 , ifcIDtYPEsTRrEPLACE_MAKEiMPORT , psttTM[ 2 ].idAdam ) ; ___( psttTM ) ;
-                        etThread.strDecodeOldF( tinP , psttTM , pbfTM ) ; ___( psttTM ) ;
+                        etThread.strDecodeF( tinP , psttTM , pbfTM ) ; ___( psttTM ) ;
                     {
                     if( pbfTM && cbfTM )
                     ZE( strokeS* , psttTM ) ;

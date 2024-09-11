@@ -1,4 +1,6 @@
 
+#define CBtLSmINIMUM ( TUCK << 2 )
+
 #define fliSTATElISTING_ENABLED                    1
 #define fliSTATElISTING_null                       0
 

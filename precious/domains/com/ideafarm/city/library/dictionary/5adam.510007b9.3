@@ -224,7 +224,7 @@
     }
         while( !stIdptOpenP.third && ~hDown ) ;
         }
-            stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+            stIdptOpenP.sinkF( tinP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
             portTimeC& idpt = *(portTimeC*)&stIdptTempP.downF( tinP , hDown ) ;
         {
         do
@@ -235,7 +235,7 @@
     }
         while( !stIdptOpenP.third && ~hDown ) ;
         }
-            stIdptTempP.sinkF( tinP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+            stIdptTempP.sinkF( tinP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
             portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tinP , hDown ) ;
         {
         do
@@ -301,7 +301,7 @@
 }
     return cRelays ;
     }
-        if( idpt ) stP.sinkF( tinP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesF , &stP == &stIdptGossipP ? - 1 : (countT)&stIdptGossipP ) ;
+        if( idpt ) stP.sinkF( tinP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , &stP == &stIdptGossipP ? - 1 : (countT)&stIdptGossipP ) ;
         portTimeC idpt = portTimeC::fieldF( tinP , soulP , idFieldP ) ; idFieldP += portTimeC::cFieldsF( tinP ) ;
     {
     while( cToDo -- )
@@ -441,7 +441,7 @@
                                 //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
     
                                 }
-                                    if( idptTo ) idRankTo = stIdptOpenP( (byteT*)&idptTo , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                                    if( idptTo ) idRankTo = stIdptOpenP( (byteT*)&idptTo , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                                     idptTo << *psTo ;
                                     portTimeC idptTo ;
                                 {
@@ -451,7 +451,7 @@
                             //tinP.pEther->traceF( tinP , T("[idRankMax,idRankMe]:    ")+TF2(idRankMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idRankMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             const countT idRankMax = stIdptOpenP ;
                             //CONoUTrAW3( "popIF: idRankMe: " , idRankMe , "\r\n" ) ;
-                            countT idRankMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                            countT idRankMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                             GRABrELAYlISTS
     
                             psTo->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
@@ -775,7 +775,7 @@
     {
     if( F(flagsP) & flSELECTpEER_TRACE )
 
-    countT ideMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+    countT ideMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
     countT cRelays = stIdptOpenP ;
 
     GRABrELAYlISTS
@@ -826,7 +826,7 @@
         portTimeC idptNull ;
     {
     if( ideMe )
-    countT ideMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+    countT ideMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
     countT cRelays = stIdptOpenP ;
 
     GRABrELAYlISTS
@@ -859,24 +859,24 @@
 
 }
     }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
     {
     else
     }
         }
             }
-                stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ;
+                stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ;
             {
             if( n1 )
             portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , idWorkP  ) ;
             portTimeC n2 ;
             portTimeC n1 ;
         {
-        // { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , idWorkP  ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesF , - 1 ) ; }
+        // { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , idWorkP  ) ; if( n1 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
     {
     if( idWorkP )
 {
@@ -1309,7 +1309,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                                 break ;
                                 }
                                     if( ids ) ppSws[ off ]->extractF( 0 , tinP ) ;
-                                    ppSws[ off ]->sinkF( tinP , ids , (byteT*)&idptOriginP , flSTACKsINK_QUERY , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                                    ppSws[ off ]->sinkF( tinP , ids , (byteT*)&idptOriginP , flSTACKsINK_QUERY , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                                     ZE( countT , ids ) ;
                                 {
                                 for( countT off = 0 ; off < 2 ; off ++ )
@@ -1323,7 +1323,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                             case ifcOLDiDcMDrEGISTERmEDIATOR_AMdEAD  :
                             }
                                 break ;
-                                swsIdptMediatorP.sinkF( tinP , countTC() , (byteT*)&idptOriginP , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossipP ) ;
+                                swsIdptMediatorP.sinkF( tinP , countTC() , (byteT*)&idptOriginP , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
 
                                 //THREADmODE2rESTORE
                                 //etThread.strokeF( tinP , T("m+: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
@@ -1610,10 +1610,10 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         TELL( "setting up 2.4" )
                     
                         }
-                            if( idpthc && NICnAMElOCAL != ((nicNameC&)(portC&)idpthc).pcId[ 0 ] ) stIdptOpen.sinkF( tinP , countTC() , (byteT*)&idpthc , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossip ) ;
+                            if( idpthc && NICnAMElOCAL != ((nicNameC&)(portC&)idpthc).pcId[ 0 ] ) stIdptOpen.sinkF( tinP , countTC() , (byteT*)&idpthc , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossip ) ;
                             portTimeC idpthc = handleQueryIF( tinP ) ;
                         {
-                        stIdptOpen.sinkF( tinP , countTC() , (byteT*)&idpt   , flSTACKsINK_UNIQUE , subtractIdPortTimesF , (countT)&stIdptGossip ) ;
+                        stIdptOpen.sinkF( tinP , countTC() , (byteT*)&idpt   , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossip ) ;
                         //P: A NEWBIE CLIENT KNOWS ABOUT ITSELF AND THE HANDLE
             
                         DEL( pso ) ;

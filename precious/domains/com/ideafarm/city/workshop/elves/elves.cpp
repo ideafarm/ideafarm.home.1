@@ -1,4 +1,4 @@
-//#define DEBUG
+#define DEBUG
 
 //U::ENABLE THESE PREPROCESSOR IF/ENDIF IN PRODUCTION
 #if not defined( DEBUG )
@@ -2416,21 +2416,21 @@ void elf_obey_C::liveF( void )
             if( bNumaIsAvailableF() )
             {
                 #if defined( TELL )
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
-                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
+                    system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
+                    //  system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
                 #else
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
-                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
+                    system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
+                    //  system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
                 #endif
             }
             else
             {
                 #if defined( TELL )
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ) ;
-                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ) ;
+                    system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ) ;
+                    //  system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ) ;
                 #else
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells !debug" ) ;
-                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells" ) ;
+                    system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells !debug" ) ;
+                    //  system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells" ) ;
                 #endif
             }
         }
@@ -2694,7 +2694,8 @@ void elf_obey_C::liveF( void )
                 //B:" op st=0x00010000"     TOO SMALL FOR BUNDLE
                 //B:TOO SMALL FOR CLOUD IN BUNDLE ON FACTORY6    " op st=0x00080000"     // WORKS FOR nodeC SIMULATOR 8 PROCESSES x 04 nodeC INSTANCES EACH
              /*PROD:" op st=0x00100000"*/""
-                    " op st=0x01000000"
+//20240910@1832: RETIRED: " op st=0x01000000"
+                    " op st=0x00010000"
                     " segment type code shared"
                     " segment class 'CODE' shared"
                     " segment 'BEGTEXT' shared"
@@ -4117,7 +4118,8 @@ void elf_obey_C::linkF( char* postIdiForeignP )
             //B:" op st=0x00010000"    TOO SMALL FOR BUNDLE
             //B:TOO SMALL FOR CLOUD IN BUNDLE ON FACTORY6    " op st=0x00080000"     // WORKS FOR nodeC SIMULATOR 8 PROCESSES x 04 nodeC INSTANCES EACH
          /*PROD:" op st=0x00100000"*/""
-                " op st=0x01000000"
+//20240910@1832: RETIRED: " op st=0x01000000"
+                " op st=0x00010000"
                 " segment type code shared"
                 " segment class 'CODE' shared"
                 " segment 'BEGTEXT' shared"

@@ -455,34 +455,6 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ae.flCELLsCANcALENDARf END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005af.CBtLSmINIMUM BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CBtLSmINIMUM*//*1*/
-
-//20221122@1104: THIS VALUE WAS DETERMINED BY TRYING << 0, << 1, << 2, << 3
-
-#define CBtLSmINIMUM ( TOCK << 3 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005af.CBtLSmINIMUM END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b0.RETRY BEGIN
 
 //
@@ -11118,7 +11090,7 @@ TASK0PROTO( tmRelayOldPopClientF ) ;
 */
 /**/
 
-/*1*/countT _export subtractIdPortTimesF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
+/*1*/countT _export subtractIdPortTimesOldF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;/*1*/
 
 
 //
