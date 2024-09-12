@@ -1,4 +1,8 @@
 
+#define TaRG3sGNdONEcBsTACK(tmFP,sgnDoneP,cbStackP) tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , (cbStackP) , 0
+#define TaRG3sGNdONEcBtLS(tmFP,sgnDoneP,cbTlsP)     tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , 0          , (cbTlsP)
+#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP)         tinP , countTC() , tmFP , 0           , (flagsP)            , 0          , (cbTlsP)
+
 #define CBsTACKdEFAULT ( TOCK )
 
 #define CBtLSmINIMUM ( TUCK << 2 )
@@ -32171,7 +32175,6 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200351.friends_thugc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200352.friends_tins BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -32194,12 +32197,15 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend class thirdC ;     /*RESETS A FLAG*/                                                                                                                                                                                                              \
  friend countT tmRptMainF_workF( countT argP ) ;                                                                                                                                                                                                          \
  friend countT workInnerF( countT argP ) ;                                                                                                                                                                                                                \
- friend class thugC ; /*idDesireSetBySelf*/                                                                                                                                                                                                                        \
- friend class grabMemorySpaceC ; /*idDesireSetBySelf*/                                                                                                                                                                                                                \
- friend class napkinC ; /*idDesireSetBySelf*/                                                                                                                                                                                                                      \
- friend voidT grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/                                                                                \
+ friend class thugC ; /*idDesireSetBySelf*/                                                                                                                                                                                                               \
+ friend class grabMemorySpaceC ; /*idDesireSetBySelf*/                                                                                                                                                                                                    \
+ friend class napkinC ; /*idDesireSetBySelf*/                                                                                                                                                                                                             \
+ friend voidT grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/                                                                       \
  friend class poopC ; /*poop*/                                                                                                                                                                                                                            \
  friend voidT grabitC::grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                                                                                                  \
+ friend class tlsAllocPoolC ;                                                                                                                                                                                                                             \
+ friend countT ctTellCopyDoneF( countT c_thisP ) ;                                                                                                                                                                                                        \
+ friend countT dtTellCopyDoneF( countT c_thisP ) ;
 
 
 //
@@ -51287,7 +51293,6 @@ examples
 /**/
 /*1*//**//*1*/
 
-#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP) tinP , countTC() , tmFP , 0 , (flagsP) , (cbTlsP)
 
 
 //

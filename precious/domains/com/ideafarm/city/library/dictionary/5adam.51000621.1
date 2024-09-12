@@ -9,8 +9,9 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , flTHREADlAUNCH_null , TICK , 0 ) ;
+sgnDone_tmWorkF.waitF( tinP ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -1104,7 +1105,7 @@ TASK( tmWorkF )
 // THE ADDITION IN osMakeF OF SERIALIZED ACCESS TO THE idCopyLath FILE WAS TO SUPPORT ASYNCHRONOUS (PARALLEL) MAKES AND MIGHT BE THE SOURCE OF NONMONOTONIC GRABBING)
 //U:: 20221022@1516: THE NEW ASYNCHRONOUS CODE IS COMMENTED OUT BECAUSE IT DOES NOT WORK (NONMONOTONIC GRAB AND OTHER BUGS)
 
-//#define PRODUCTION
+#define PRODUCTION
 
 /*1*/WAKEsHOWtEXT( "build.eve.refresh.generated.snips" )/*1*/
 /**/

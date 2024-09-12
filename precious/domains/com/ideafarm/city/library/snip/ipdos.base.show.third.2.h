@@ -28710,9 +28710,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
 /**/
  FRIENDS_tinS
-
- friend countT ctTellCopyDoneF( countT c_thisP ) ;
- friend countT dtTellCopyDoneF( countT c_thisP ) ;
 }
 ;
 
@@ -47804,6 +47801,40 @@ i am nonconformant in that all of my member function definitions are in a single
 ;
 
 
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocPoolC/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    public :
+
+    ~tlsAllocPoolC( voidT ) ;
+    tlsAllocPoolC( tinS& tinP , const countT cbTlsP ) ;
+}
+;
+                            
 //
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.

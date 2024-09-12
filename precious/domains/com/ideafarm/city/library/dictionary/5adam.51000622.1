@@ -9,126 +9,135 @@
 
 REST
 
-}
-    etherC::loafIF( tinP ) ;
-    ether.strokeF( tinP , T("Errors occured, so I am loafing.") ) ;
-{
-if( cErrors )
-
-}
-    }
-        }
-            }
-                etThread.diskZipOldF( tinP , tZip , tTo , flZIP_DELETE ) ;
-
-                if( POOP ) POOPR ;
-                tinP.pEtScratch->diskFileOrDirDeleteF( tinP , tZip , flFILEoRdIRdELETE_null , 1 ) ;
-
-                TN( tZip , "" ) ; tZip = T("20990009@0001.")+tTime+T(".ideafarm.!confidential.")+T(bPrecious?"precious":"elves")+T(".zip") ;
-
-                textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
-
-                hoverC hoverRelease( tinP , etThread , tRelease ) ;
-            {
-
-            }
-                etThread.diskWalkCopyF( tinP , cDirs , cFiles , ether , tBigTo , tFrom , bPrecious ? preciousCBF : toolCBF ) ;
-                ZE( countT , cFiles ) ;
-                ZE( countT , cDirs ) ;
-
-                TN( tElves , "" ) ; tElves = tPrefix+T("ideafarm.home.1/precious/domains/com/ideafarm/city/workshop/elves/" ) ;
-            {
-
-            if( POOP ) POOPR ;
-            tinP.pEtScratch->traceF( tinP , T("zapped  ")+tBigTo ) ;
-            tinP.pEtScratch->diskFileOrDirDeleteF( tinP , tBigTo  , flFILEoRdIRdELETE_RECURSE , 1 ) ;
-            tinP.pEtScratch->traceF( tinP , T("zapping ")+tBigTo ) ;
-            SCOOPS
-        {
-        IFbEcAREFUL
-
-        TN( tBigTo , "" ) ; tBigTo = tRelease+tTo+sSlash ;
-        strokeS sSlash( '/' ) ;
-        TN( tTo      , "ideafarm.home.1" ) ;
-
-        TN( tFrom    , "" ) ; tFrom    = tPrefix+T("ideafarm.home.1/" ) ;
-        TN( tRelease , "" ) ; tRelease = tPrefix+T("tmp/ps/") ; // SHORT AS POSSIBLE.  THIS INCREMENT TO THE LENGTH OF THE FILE NAME CAN CAUSE A FILE COPY TO SILENTLY FAIL
-
-        }
-            etThread.delF( tinP , psttHover ) ;
-            etThread.delF( tinP , psttPrefix ) ;
-            tPrefix = T(psttPrefix) ;
-            etThread.strSubstringF( tinP , psttPrefix , countTC( 1 ) , countTC( 5 ) , psttHover ) ; ___( psttPrefix ) ;
-            ZE( strokeS* , psttPrefix ) ;
-
-            etThread.diskGetHoverF( tinP , psttHover ) ; ___( psttHover ) ;
-            ZE( strokeS* , psttHover ) ;
-        {
-        TN( tPrefix , "" ) ;
-
-        const boolT bPrecious = !etThread.strCompareF( tinP , psttc1 , tCmdPrecious ) ;
-    {
-    )
-        !etThread.strCompareF( tinP , psttc1 , tCmdTool )
-        ||
-        !etThread.strCompareF( tinP , psttc1 , tCmdPrecious )
-    (
-    else if
-    else if( !etThread.strCompareF( tinP , psttc1 , tCmdMake ) ) bArmMake = 1 ;
-    }
-        }
-            DEL( ps ) ;
-        
-            etThread.delF( tinP , psttNote ) ;
-            etThread.delF( tinP , psttLine ) ;
-        
-            etThread.strokeF( tinP , TF2(idLine,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("(")+TF2(idCol,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("): ")+T(psttLine)+tcri2+T(psttNote)+tcr ) ;
-            *ps >> psttNote ; ___( psttNote ) ;
-            ZE( strokeS* , psttNote ) ;
-        
-            *ps >> psttLine ; ___( psttLine ) ;
-            ZE( strokeS* , psttLine ) ;
-        
-            *ps >> idCol ;
-            ZE( countT , idCol ) ;    
-        
-            *ps >> idLine ;
-            ZE( countT , idLine ) ;    
-        
-            stErrors >> ps ; ___( ps ) ;
-            ZE( soulC* , ps ) ;
-
-            cErrors ++ ;
-        {
-        while( stErrors )
-
-        etThread.osMakeF( tinP , stErrors , idAdam , flMAKE_DEBUG | flMAKE_ENABLEtHIRDpARTIES ) ; //U::ELIMINATE flMAKE_ENABLEtHIRDpARTIES
-        stackC stErrors( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
-
-        CONoUTrAW3( "[idAdam]: " , idAdam , "\r\n" ) ;
-
-        countT idAdam = etThread.strDigitsToSCountF( tinP , psttc1 ) | 0x51000000 ;
-        bArmMake = 0 ;
-    {
-    if( bArmMake )
-                
-    if( !psttc1->idAdam ) break ;
-    if( cSkip && cSkip -- ) continue ;
-
-    //CONoUTrAW( T("parameter: \"")+T(psttc1)+T("\"\r\n") ) ;
-{
-FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinP ) )
-strokeS sttExclaim('!') ;
-countT cSkip = 1 ;
-ZE( boolT , bArmMake ) ;
-TN( tCmdTool     , "!tool" ) ;
-TN( tCmdPrecious , "!precious" ) ;
-TN( tCmdMake , "!make" ) ;
-TN( tcri2 , "\r\n  " ) ;
-TN( tcr , "\r\n" ) ;
-ZE( countT , cErrors ) ;
+sgnDone_tmWorkF.waitF( tinP ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
 
 TODO
+
+DONE( tmWorkF )
+}
+    }
+        etherC::loafIF( tinP ) ;
+        ether.strokeF( tinP , T("Errors occured, so I am loafing.") ) ;
+    {
+    if( cErrors )
+
+    }
+        }
+            }
+                }
+                    etThread.diskZipOldF( tinP , tZip , tTo , flZIP_DELETE ) ;
+
+                    if( POOP ) POOPR ;
+                    tinP.pEtScratch->diskFileOrDirDeleteF( tinP , tZip , flFILEoRdIRdELETE_null , 1 ) ;
+
+                    TN( tZip , "" ) ; tZip = T("20990009@0001.")+tTime+T(".ideafarm.!confidential.")+T(bPrecious?"precious":"elves")+T(".zip") ;
+
+                    textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
+
+                    hoverC hoverRelease( tinP , etThread , tRelease ) ;
+                {
+
+                }
+                    etThread.diskWalkCopyF( tinP , cDirs , cFiles , ether , tBigTo , tFrom , bPrecious ? preciousCBF : toolCBF ) ;
+                    ZE( countT , cFiles ) ;
+                    ZE( countT , cDirs ) ;
+
+                    TN( tElves , "" ) ; tElves = tPrefix+T("ideafarm.home.1/precious/domains/com/ideafarm/city/workshop/elves/" ) ;
+                {
+
+                if( POOP ) POOPR ;
+                tinP.pEtScratch->traceF( tinP , T("zapped  ")+tBigTo ) ;
+                tinP.pEtScratch->diskFileOrDirDeleteF( tinP , tBigTo  , flFILEoRdIRdELETE_RECURSE , 1 ) ;
+                tinP.pEtScratch->traceF( tinP , T("zapping ")+tBigTo ) ;
+                SCOOPS
+            {
+            IFbEcAREFUL
+
+            TN( tBigTo , "" ) ; tBigTo = tRelease+tTo+sSlash ;
+            strokeS sSlash( '/' ) ;
+            TN( tTo      , "ideafarm.home.1" ) ;
+
+            TN( tFrom    , "" ) ; tFrom    = tPrefix+T("ideafarm.home.1/" ) ;
+            TN( tRelease , "" ) ; tRelease = tPrefix+T("tmp/ps/") ; // SHORT AS POSSIBLE.  THIS INCREMENT TO THE LENGTH OF THE FILE NAME CAN CAUSE A FILE COPY TO SILENTLY FAIL
+
+            }
+                etThread.delF( tinP , psttHover ) ;
+                etThread.delF( tinP , psttPrefix ) ;
+                tPrefix = T(psttPrefix) ;
+                etThread.strSubstringF( tinP , psttPrefix , countTC( 1 ) , countTC( 5 ) , psttHover ) ; ___( psttPrefix ) ;
+                ZE( strokeS* , psttPrefix ) ;
+
+                etThread.diskGetHoverF( tinP , psttHover ) ; ___( psttHover ) ;
+                ZE( strokeS* , psttHover ) ;
+            {
+            TN( tPrefix , "" ) ;
+
+            const boolT bPrecious = !etThread.strCompareF( tinP , psttc1 , tCmdPrecious ) ;
+        {
+        )
+            !etThread.strCompareF( tinP , psttc1 , tCmdTool )
+            ||
+            !etThread.strCompareF( tinP , psttc1 , tCmdPrecious )
+        (
+        else if
+        else if( !etThread.strCompareF( tinP , psttc1 , tCmdMake ) ) bArmMake = 1 ;
+        }
+            }
+                DEL( ps ) ;
+
+                etThread.delF( tinP , psttNote ) ;
+                etThread.delF( tinP , psttLine ) ;
+
+                etThread.strokeF( tinP , TF2(idLine,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("(")+TF2(idCol,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("): ")+T(psttLine)+tcri2+T(psttNote)+tcr ) ;
+                *ps >> psttNote ; ___( psttNote ) ;
+                ZE( strokeS* , psttNote ) ;
+
+                *ps >> psttLine ; ___( psttLine ) ;
+                ZE( strokeS* , psttLine ) ;
+
+                *ps >> idCol ;
+                ZE( countT , idCol ) ;    
+
+                *ps >> idLine ;
+                ZE( countT , idLine ) ;    
+
+                stErrors >> ps ; ___( ps ) ;
+                ZE( soulC* , ps ) ;
+
+                cErrors ++ ;
+            {
+            while( stErrors )
+
+            etThread.osMakeF( tinP , stErrors , idAdam , flMAKE_DEBUG | flMAKE_ENABLEtHIRDpARTIES ) ; //U::ELIMINATE flMAKE_ENABLEtHIRDpARTIES
+            stackC stErrors( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
+
+            CONoUTrAW3( "[idAdam]: " , idAdam , "\r\n" ) ;
+
+            countT idAdam = etThread.strDigitsToSCountF( tinP , psttc1 ) | 0x51000000 ;
+            bArmMake = 0 ;
+        {
+        if( bArmMake )
+
+        if( !psttc1->idAdam ) break ;
+        if( cSkip && cSkip -- ) continue ;
+
+        //CONoUTrAW( T("parameter: \"")+T(psttc1)+T("\"\r\n") ) ;
+    {
+    FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinP ) )
+    strokeS sttExclaim('!') ;
+    countT cSkip = 1 ;
+    ZE( boolT , bArmMake ) ;
+    TN( tCmdTool     , "!tool" ) ;
+    TN( tCmdPrecious , "!precious" ) ;
+    TN( tCmdMake , "!make" ) ;
+    TN( tcri2 , "\r\n  " ) ;
+    TN( tcr , "\r\n" ) ;
+    ZE( countT , cErrors ) ;
+{
+if( pTaskP )
+TASK( tmWorkF )
 
 }
     return bDoIt ;

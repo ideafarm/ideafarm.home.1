@@ -6,71 +6,79 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-                            
 REST
 
-etThread.traceF( tinP , T("bye") ) ;
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
-
-}
-    etThread.traceF( tinP , T("flashed sign") ) ;
-    sgnGo.giveF( tinP , ifcIDmODEsIGNgIVE_FLASH ) ;
-    etThread.traceF( tinP , T("flashing sign") ) ;
-
-    }
-        grabAccumulators.ungrabF( tinP ) ;
-        mMax = 0 ;
-        mSum = 0 ;
-        mMin = MAXcOUNTT ;
-        cGorillasWaiting = 0 ;
-        etThread.traceF( tinP , T("----------------------------------------------------------------------- [idCycle,mMin,mMean,mMax]:   ")+TF2(++idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mMin,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mSum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
-        mSum /= cProcessors ;
-        grabAccumulators.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        etThread.traceF( tinP , T("grabbing accumulators") ) ;
-    {
-    if( !ether )
-
-    }
-        ether.osSleepF( tinP , TOCK >> 6 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-
-        if( cWaiting == cProcessors ) break ;
-        ether.traceF( tinP , T("[cProcessors,cWaiting]:   ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cWaiting,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        countT cWaiting = grabb.idGrabberHighF() - grabb.idGrabberOkF() ;
-        const grabC& grabb = sgnGo ;
-    {
-    while( !ether )     // THIS LOOP PREVENTS RACE IN WHICH I GIVE SIGN BEFORE ALL GORILLA THREADS ARE ACTUALLY REGISTERED AS WAITING WITHIN THE grabC OBJECT WITHIN THE SIGN
-    etThread.traceF( tinP , T("looping until gorillas are really ready") ) ;
-
-    }
-        ether.osSleepF( tinP , TICK >> 4 , TOCK , flSLEEP_null ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-    {
-    while( !ether && cGorillasWaiting < cProcessors )  // NORMALLY WILL EXECUTE ONLY WO ITERATION ; CODED THIS WAY TO HANDLE HEAVILY LOADED COMPUTER ON WHICH exerciseF DOES NOT COMPLETE WITHIN THE INTENDED PERIOD
-    etThread.traceF( tinP , T("waiting for gorillas to get ready") ) ;
-{
-while( !ether || cExtra -- )
-countT cExtra = 0 ;
-ZE( countT , idCycle ) ;
-
-ether.ifcHireF( tinP , T("ifcIDaDAM_WATCHiDLEcPU") , ifcIDaDAM_HOMEfLAGS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-
-while( cDo -- ) etThread.osThreadF( TaRG1( tmGorillaF ) , (countT)&sgnGo , (countT)&cGorillasWaiting , (countT)&grabAccumulators , (countT)&mMin , (countT)&mSum , (countT)&mMax ) ;
-countT cDo = cProcessors ;
-TN( tb4 , "    " ) ;
-grabC grabAccumulators( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS , ifcIDgRABlAYER_7BASEmISC1 ) ;    //20200610@2039: flGRABc_NOTjEALOUS ADDED WITHOUT ANALYSIS WITHOUT IDENTIFYING THIS AS THE CULPRIT IN A JEALOUSY
-ZE( measure04T , mMax  ) ;
-ZE( measure04T , mSum  ) ;
-ZE( measure04T , mMin  ) ;
-signC sgnGo( tinP , TAG( TAGiDnULL ) ) ;
-ZE( countT , cGorillasWaiting ) ;
-
-etThread.traceF( tinP , T("[cProcessors]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-const countT cProcessors = thirdC::osProcessorsIF( tinP ) ;
+sgnDone_tmWorkF.waitF( tinP ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
+DONE( tmWorkF )
+}
+    etThread.traceF( tinP , T("bye") ) ;
+    etherC::loafIF( tinP ) ;
+    etThread.traceF( tinP , T("ok") ) ;
+
+    }
+        etThread.traceF( tinP , T("flashed sign") ) ;
+        sgnGo.giveF( tinP , ifcIDmODEsIGNgIVE_FLASH ) ;
+        etThread.traceF( tinP , T("flashing sign") ) ;
+
+        }
+            grabAccumulators.ungrabF( tinP ) ;
+            mMax = 0 ;
+            mSum = 0 ;
+            mMin = MAXcOUNTT ;
+            cGorillasWaiting = 0 ;
+            etThread.traceF( tinP , T("----------------------------------------------------------------------- [idCycle,mMin,mMean,mMax]:   ")+TF2(++idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mMin,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mSum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+            mSum /= cProcessors ;
+            grabAccumulators.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            etThread.traceF( tinP , T("grabbing accumulators") ) ;
+        {
+        if( !ether )
+
+        }
+            ether.osSleepF( tinP , TOCK >> 6 ) ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+            if( cWaiting == cProcessors ) break ;
+            ether.traceF( tinP , T("[cProcessors,cWaiting]:   ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cWaiting,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            countT cWaiting = grabb.idGrabberHighF() - grabb.idGrabberOkF() ;
+            const grabC& grabb = sgnGo ;
+        {
+        while( !ether )     // THIS LOOP PREVENTS RACE IN WHICH I GIVE SIGN BEFORE ALL GORILLA THREADS ARE ACTUALLY REGISTERED AS WAITING WITHIN THE grabC OBJECT WITHIN THE SIGN
+        etThread.traceF( tinP , T("looping until gorillas are really ready") ) ;
+
+        }
+            ether.osSleepF( tinP , TICK >> 4 , TOCK , flSLEEP_null ) ;
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        {
+        while( !ether && cGorillasWaiting < cProcessors )  // NORMALLY WILL EXECUTE ONLY WO ITERATION ; CODED THIS WAY TO HANDLE HEAVILY LOADED COMPUTER ON WHICH exerciseF DOES NOT COMPLETE WITHIN THE INTENDED PERIOD
+        etThread.traceF( tinP , T("waiting for gorillas to get ready") ) ;
+    {
+    while( !ether || cExtra -- )
+    countT cExtra = 0 ;
+    ZE( countT , idCycle ) ;
+
+    ether.ifcHireF( tinP , T("ifcIDaDAM_WATCHiDLEcPU") , ifcIDaDAM_HOMEfLAGS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+
+    while( cDo -- ) etThread.osThreadF( TaRG1( tmGorillaF ) , (countT)&sgnGo , (countT)&cGorillasWaiting , (countT)&grabAccumulators , (countT)&mMin , (countT)&mSum , (countT)&mMax ) ;
+    countT cDo = cProcessors ;
+    TN( tb4 , "    " ) ;
+    grabC grabAccumulators( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS , ifcIDgRABlAYER_7BASEmISC1 ) ;    //20200610@2039: flGRABc_NOTjEALOUS ADDED WITHOUT ANALYSIS WITHOUT IDENTIFYING THIS AS THE CULPRIT IN A JEALOUSY
+    ZE( measure04T , mMax  ) ;
+    ZE( measure04T , mSum  ) ;
+    ZE( measure04T , mMin  ) ;
+    signC sgnGo( tinP , TAG( TAGiDnULL ) ) ;
+    ZE( countT , cGorillasWaiting ) ;
+
+    etThread.traceF( tinP , T("[cProcessors]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    const countT cProcessors = thirdC::osProcessorsIF( tinP ) ;
+{
+if( pTaskP )
+TASK( tmWorkF )
+                            
 DONE( tmGorillaF )
 }
     etThread.osThreadSwitchingDesireF( tinP , idPriorityDefault ) ;

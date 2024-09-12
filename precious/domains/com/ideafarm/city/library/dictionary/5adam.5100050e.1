@@ -6,97 +6,105 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-
 REST
 
-#endif
-
-    }
-        }
-            ++ s ; ether.osSleepF( tinP , TOCK * 0x10 ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-        {
-
-        //LOGrAW3( "ifcIDaDAM_HOMEfLAGS [home.flags]: " , home.flags , "\r\n" ) ;
-
-        //tinP.zEtScratch->delF( tinP , psttRoster ) ;
-        //rosterF( tinP , *tinP.zEtScratch , psttRoster ) ; ___( psttRoster ) ;
-        //ZE( strokeS* , psttRoster ) ;
-
-        }
-            while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
-            }
-                flagsNew = flagsOld | flHOMEs_VERSIONrEFUSED ;
-                flagsOld = home.flags ;
-            {
-            do
-            ZE( flagsT , flagsNew ) ;
-            ZE( flagsT , flagsOld ) ;
-
-            etThread.traceF( tinP , T("error:  IPDOS (tm) on this computer is stale.  please obtain a fresh (current) copy") ) ;
-        {
-        if( bDnsRefusedVersionF( tinP , tVersionMe ) )
-
-        //OLD PRODUCTION: if( bOkDnsValueF( tinP , tTime ) || bOkDnsValueF( tinP , tGoogle ) ) flagsNew |= flHOMEs_ONLINE ;
-
-        }
-            while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
-            }
-                flagsNew = flagsOld | flHOMEs_ONLINE ;
-                flagsOld = home.flags ;
-            {
-            do
-            ZE( flagsT , flagsNew ) ;
-            ZE( flagsT , flagsOld ) ;
-        {
-        if( bOkDnsValueF( tinP , tIdeafarm ) )
-
-        //tmWatchF WILL QUIT IF IT EVER SEES THE flHOMEs_VERSIONrEFUSED FLAG
-    {
-    while( !etThread && !ether )
-    etherC& etRock = etherC::etRockIF( tinP ) ;
-    TN( tTimeHttp , "www.time.gov//http//" ) ;
-    TN( tGoogleHttp , "www.google.com//http//" ) ;
-    TN( tRosterHttp  , "www.ideafarm.com//http//" ) ;
-    TN( tTime , "www.time.gov" ) ;
-    TN( tGoogle , "www.google.com" ) ;
-    TN( tRoster  , "www.ideafarm.com" ) ;
-    TN( tIdeafarm  , "ideafarm.com" ) ;
-
-      TN( tVersionMe , "20141209.1044.version.ipdos.ideafarm.com" ) ; //PRODUCTION
-    //TN( tVersionMe , "20141115.1852.version.ipdos.ideafarm.com" ) ;
-    //TN( tVersionMe , "1.version.ipdos.ideafarm.com" ) ;
-    //TN( tVersionMe , "2.version.ipdos.ideafarm.com" ) ;
-    //ENABLE WO OF THESE LINES TO VERIFY THAT THE IPDOS SYSTEM SHUTS DOWN AS SOON AS THE COMPUTER IS ONLINE
-
-    THREADmODE2oN( flTHREADmODE2_QUIETiMPOTENCE )
-    etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
-
-    if( etThread.diskIdF( tinP , T("///c") ) == IDcOMPUTER_IPDOSmASTERcRAFTWORK ) etThread.osThreadF( TaRG1( tmUpd8PaidHListF ) ) ; //U:: USE A SETTINGS FILE
-    //U:: 20200920@1855: THIS SHOULD BE DONE BY factory3-5, AND IT SHOULD BE DONE IN A WAY THAT AVOIDS SPF (SINGLE POINT OF FAILURE) SO THAT IT WORKS EVEN IF ALL BUT WO FACTORY IS DOWN
-
-    etThread.osThreadF( TaRG1( tmGetIdHomeF ) ) ;
-
-#if defined( NEVERdEFINED )
-
-}
-    etherC::loafIF( tinP ) ;
-    ether.ifcHireF( tinP , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
-
-    while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
-    }
-        flagsNew = flagsOld | flHOMEs_ONLINE | flHOMEs_PAIDpRIVILEGES ;
-        flagsOld = home.flags ;
-    {
-    do
-    ZE( flagsT , flagsNew ) ;
-    ZE( flagsT , flagsOld ) ;
-
-    homeS& home = homeS::homeIF() ;
-{
-//20211023@1116: COMPLETELY DISABLE THIS ADAM PENDING REWRITE (PLAN IS TO MIGRATE ALL FUNCTIONALITY TO IPDOS UDP FILES) (THE REGISTRY HAS A SECURITY VULNERABILITY SO CANNOT BE USED)
+sgnDone_tmWorkF.waitF( tinP ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
 
 TODO
+
+DONE( tmWorkF )
+}
+    #endif
+
+        }
+            }
+                ++ s ; ether.osSleepF( tinP , TOCK * 0x10 ) ;
+                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            {
+
+            //LOGrAW3( "ifcIDaDAM_HOMEfLAGS [home.flags]: " , home.flags , "\r\n" ) ;
+
+            //tinP.zEtScratch->delF( tinP , psttRoster ) ;
+            //rosterF( tinP , *tinP.zEtScratch , psttRoster ) ; ___( psttRoster ) ;
+            //ZE( strokeS* , psttRoster ) ;
+
+            }
+                while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
+                }
+                    flagsNew = flagsOld | flHOMEs_VERSIONrEFUSED ;
+                    flagsOld = home.flags ;
+                {
+                do
+                ZE( flagsT , flagsNew ) ;
+                ZE( flagsT , flagsOld ) ;
+
+                etThread.traceF( tinP , T("error:  IPDOS (tm) on this computer is stale.  please obtain a fresh (current) copy") ) ;
+            {
+            if( bDnsRefusedVersionF( tinP , tVersionMe ) )
+
+            //OLD PRODUCTION: if( bOkDnsValueF( tinP , tTime ) || bOkDnsValueF( tinP , tGoogle ) ) flagsNew |= flHOMEs_ONLINE ;
+
+            }
+                while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
+                }
+                    flagsNew = flagsOld | flHOMEs_ONLINE ;
+                    flagsOld = home.flags ;
+                {
+                do
+                ZE( flagsT , flagsNew ) ;
+                ZE( flagsT , flagsOld ) ;
+            {
+            if( bOkDnsValueF( tinP , tIdeafarm ) )
+
+            //tmWatchF WILL QUIT IF IT EVER SEES THE flHOMEs_VERSIONrEFUSED FLAG
+        {
+        while( !etThread && !ether )
+        etherC& etRock = etherC::etRockIF( tinP ) ;
+        TN( tTimeHttp , "www.time.gov//http//" ) ;
+        TN( tGoogleHttp , "www.google.com//http//" ) ;
+        TN( tRosterHttp  , "www.ideafarm.com//http//" ) ;
+        TN( tTime , "www.time.gov" ) ;
+        TN( tGoogle , "www.google.com" ) ;
+        TN( tRoster  , "www.ideafarm.com" ) ;
+        TN( tIdeafarm  , "ideafarm.com" ) ;
+
+          TN( tVersionMe , "20141209.1044.version.ipdos.ideafarm.com" ) ; //PRODUCTION
+        //TN( tVersionMe , "20141115.1852.version.ipdos.ideafarm.com" ) ;
+        //TN( tVersionMe , "1.version.ipdos.ideafarm.com" ) ;
+        //TN( tVersionMe , "2.version.ipdos.ideafarm.com" ) ;
+        //ENABLE WO OF THESE LINES TO VERIFY THAT THE IPDOS SYSTEM SHUTS DOWN AS SOON AS THE COMPUTER IS ONLINE
+
+        THREADmODE2oN( flTHREADmODE2_QUIETiMPOTENCE )
+        etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
+
+        if( etThread.diskIdF( tinP , T("///c") ) == IDcOMPUTER_IPDOSmASTERcRAFTWORK ) etThread.osThreadF( TaRG1( tmUpd8PaidHListF ) ) ; //U:: USE A SETTINGS FILE
+        //U:: 20200920@1855: THIS SHOULD BE DONE BY factory3-5, AND IT SHOULD BE DONE IN A WAY THAT AVOIDS SPF (SINGLE POINT OF FAILURE) SO THAT IT WORKS EVEN IF ALL BUT WO FACTORY IS DOWN
+
+        etThread.osThreadF( TaRG1( tmGetIdHomeF ) ) ;
+
+    #if defined( NEVERdEFINED )
+
+    }
+        etherC::loafIF( tinP ) ;
+        ether.ifcHireF( tinP , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
+
+        while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
+        }
+            flagsNew = flagsOld | flHOMEs_ONLINE | flHOMEs_PAIDpRIVILEGES ;
+            flagsOld = home.flags ;
+        {
+        do
+        ZE( flagsT , flagsNew ) ;
+        ZE( flagsT , flagsOld ) ;
+
+        homeS& home = homeS::homeIF() ;
+    {
+    //20211023@1116: COMPLETELY DISABLE THIS ADAM PENDING REWRITE (PLAN IS TO MIGRATE ALL FUNCTIONALITY TO IPDOS UDP FILES) (THE REGISTRY HAS A SECURITY VULNERABILITY SO CANNOT BE USED)
+{
+if( pTaskP )
+TASK( tmWorkF )
 
 DONE( tmUpd8PaidHListF )
 
