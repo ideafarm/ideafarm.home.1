@@ -1,80 +1,3 @@
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CBuDPfILEpAYLOAD*//*1*/
-
-#define CBuDPfILEpAYLOAD ( ifcCBdATAGRAMmAX - sizeof( udpFileGramHeadFileWindowS ) )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CuDPfILEePOCHsLOTS*//*1*/
-
-#define CuDPfILEePOCHsLOTS 5
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CuDPfILEePOCHhONORED*//*1*/
-
-#define CuDPfILEePOCHhONORED ( CuDPfILEePOCHsLOTS - 1 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a3.OFFuDPfILEePOCHhONOR BEGIN
 
 
@@ -47832,6 +47755,303 @@ i am nonconformant in that all of my member function definitions are in a single
 
     ~tlsAllocPoolC( voidT ) ;
     tlsAllocPoolC( tinS& tinP , const countT cbTlsP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_01_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x08 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_01_C( voidT ) ;
+    tlsAllocStackExp_01_C( tinS& tinP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_f_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x07 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_f_C( voidT ) ;
+    tlsAllocStackExp_f_C( tinS& tinP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_e_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x06 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_e_C( voidT ) ;
+    tlsAllocStackExp_e_C( tinS& tinP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_d_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x05 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_d_C( voidT ) ;
+    tlsAllocStackExp_d_C( tinS& tinP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_c_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x04 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_c_C( voidT ) ;
+    tlsAllocStackExp_c_C( tinS& tinP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_b_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x03 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_b_C( voidT ) ;
+    tlsAllocStackExp_b_C( tinS& tinP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_a_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x02 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_a_C( voidT ) ;
+    tlsAllocStackExp_a_C( tinS& tinP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_9_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x01 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_9_C( voidT ) ;
+    tlsAllocStackExp_9_C( tinS& tinP ) ;
+}
+;
+                            
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+
+/**/
+
+/*1*/class _export tlsAllocStackExp_8_C/*1*/
+{
+    byteT* const pbTlsSave ;
+    const countT cbTlsSave ;
+
+    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x00 ) ] ;
+
+    public :
+
+    ~tlsAllocStackExp_8_C( voidT ) ;
+    tlsAllocStackExp_8_C( tinS& tinP ) ;
 }
 ;
                             

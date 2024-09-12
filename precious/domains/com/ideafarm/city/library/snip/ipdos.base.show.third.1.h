@@ -32187,25 +32187,34 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /**/
 /*1*//*FRIENDS_tinS*//*1*/
 
-#define FRIENDS_tinS                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                          \
- friend voidT pTinCopyF( tinS& tinP , etherC& etThreadP , tinS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP ) ;                                                                                           \
- friend class cC ;                                                                                                                                                                                                                                        \
- friend class grabC ;                                                                                                                                                                                                                                     \
- friend class sleepC ;     /*EDITS grabPseudo*/                                                                                                                                                                                                           \
- friend class thirdInitC ; /*SETS A FLAG*/                                                                                                                                                                                                                \
- friend class thirdC ;     /*RESETS A FLAG*/                                                                                                                                                                                                              \
- friend countT tmRptMainF_workF( countT argP ) ;                                                                                                                                                                                                          \
- friend countT workInnerF( countT argP ) ;                                                                                                                                                                                                                \
- friend class thugC ; /*idDesireSetBySelf*/                                                                                                                                                                                                               \
- friend class grabMemorySpaceC ; /*idDesireSetBySelf*/                                                                                                                                                                                                    \
- friend class napkinC ; /*idDesireSetBySelf*/                                                                                                                                                                                                             \
- friend voidT grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/                                                                       \
- friend class poopC ; /*poop*/                                                                                                                                                                                                                            \
- friend voidT grabitC::grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                                                                                                  \
- friend class tlsAllocPoolC ;                                                                                                                                                                                                                             \
- friend countT ctTellCopyDoneF( countT c_thisP ) ;                                                                                                                                                                                                        \
- friend countT dtTellCopyDoneF( countT c_thisP ) ;
+#define FRIENDS_tinS                                                                                                                                                                    \
+                                                                                                                                                                                        \
+ friend class  cC ;                                                                                                                                                                     \
+ friend class  grabC ;                                                                                                                                                                  \
+ friend class  grabMemorySpaceC ; /*idDesireSetBySelf*/                                                                                                                                 \
+ friend class  napkinC ; /*idDesireSetBySelf*/                                                                                                                                          \
+ friend class  poopC ; /*poop*/                                                                                                                                                         \
+ friend class  sleepC ;     /*EDITS grabPseudo*/                                                                                                                                        \
+ friend class  thirdC ;     /*RESETS A FLAG*/                                                                                                                                           \
+ friend class  thirdInitC ; /*SETS A FLAG*/                                                                                                                                             \
+ friend class  thugC ; /*idDesireSetBySelf*/                                                                                                                                            \
+ friend class  tlsAllocPoolC ;                                                                                                                                                          \
+ friend class  tlsAllocStackExp_8_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_9_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_a_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_b_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_c_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_d_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_e_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_f_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_01_C ;                                                                                                                                                  \
+ friend countT ctTellCopyDoneF( countT c_thisP ) ;                                                                                                                                      \
+ friend countT dtTellCopyDoneF( countT c_thisP ) ;                                                                                                                                      \
+ friend countT tmRptMainF_workF( countT argP ) ;                                                                                                                                        \
+ friend countT workInnerF( countT argP ) ;                                                                                                                                              \
+ friend voidT  grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/    \
+ friend voidT  grabitC::grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                               \
+ friend voidT  pTinCopyF( tinS& tinP , etherC& etThreadP , tinS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP ) ;
 
 
 //
@@ -51454,3 +51463,80 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CBuDPfILEpAYLOAD*//*1*/
+
+#define CBuDPfILEpAYLOAD ( ifcCBdATAGRAMmAX - sizeof( udpFileGramHeadFileWindowS ) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEePOCHsLOTS*//*1*/
+
+#define CuDPfILEePOCHsLOTS 5
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEePOCHhONORED*//*1*/
+
+#define CuDPfILEePOCHhONORED ( CuDPfILEePOCHsLOTS - 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED END

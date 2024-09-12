@@ -3063,6 +3063,7 @@ void elf_obey_C::liveF( void )
                 //THIS LIST IS IN REVERSE ORDER OF WHAT WILL APPEAR IN ipdos.h
                 char* ppostFrom[] =
                 {
+                    "1snip.15*.tlsAllocStackExp8C"                          ,
                     "1snip.15*.tlsAllocPoolC"                               ,
                     "1snip.15*.listingOfSet_countTstrz_C"                   ,
                     "1snip.15*.listingOfSet_blob_C"                         ,
