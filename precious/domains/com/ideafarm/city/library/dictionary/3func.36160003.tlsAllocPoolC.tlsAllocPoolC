@@ -7,12 +7,15 @@
 //
 
 }
+    thirdC::c_memsetIF( tinP.pbTls , tinP.cbTls ) ;
     if( !tinP.pbTls ) { BLAMMOiD( 0x88448844 ) ; }
     PUSE.newF( tinP , LF , *(byteT**)&tinP.pbTls , tinP.cbTls , flPOOLcnEW_null ) ; ___( tinP.pbTls ) ;
+    *(countT*)&tinP.cTls  = 0      ;
     *(countT*)&tinP.cbTls = cbTlsP ;
     *(byteT**)&tinP.pbTls = 0      ;
 {
-cbTlsSave( tinP.cbTls )
+cTlsSave(   tinP.cTls )
+cbTlsSave( tinP.cbTls ) ,
 pbTlsSave( tinP.pbTls ) ,
 /*1*/tlsAllocPoolC::tlsAllocPoolC( tinS& tinP , const countT cbTlsP ) :/*1*/
 

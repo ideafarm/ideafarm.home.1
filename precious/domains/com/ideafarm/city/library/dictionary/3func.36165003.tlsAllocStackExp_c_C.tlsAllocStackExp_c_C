@@ -5,24 +5,19 @@
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
 //
-                            
-;
+
 }
-    tlsAllocStackExp_d_C( tinS& tinP ) ;
-    ~tlsAllocStackExp_d_C( voidT ) ;
-
-    public :
-
-    byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x05 ) ] ;
-
-    const countT  cTlsSave ;
-    const countT cbTlsSave ;
-    byteT* const pbTlsSave ;
+    *(countT*)&tinP.cTls  = 0            ;
+    *(countT*)&tinP.cbTls = sizeof pbTls ;
+    *(byteT**)&tinP.pbTls =        pbTls ;
+    thirdC::c_memsetIF( pbTls , sizeof pbTls ) ;
 {
-/*1*/class _export tlsAllocStackExp_d_C/*1*/
+cTlsSave(   tinP.cTls )
+cbTlsSave( tinP.cbTls ) ,
+pbTlsSave( tinP.pbTls ) ,
+/*1*/tlsAllocStackExp_c_C::tlsAllocStackExp_c_C( tinS& tinP ) :/*1*/
 
 /**/
-
 */
 /*
 

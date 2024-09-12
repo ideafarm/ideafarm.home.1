@@ -7,12 +7,15 @@
 //
 
 }
-    *(countT*)&tinP.cbTls = cbTlsSave ;
-    *(byteT**)&tinP.pbTls = pbTlsSave ;
-
-    TINSL
+    *(countT*)&tinP.cTls  = 0            ;
+    *(countT*)&tinP.cbTls = sizeof pbTls ;
+    *(byteT**)&tinP.pbTls =        pbTls ;
+    thirdC::c_memsetIF( pbTls , sizeof pbTls ) ;
 {
-/*1*/tlsAllocStackExp_8_C::~tlsAllocStackExp_8_C( voidT )/*1*/
+cTlsSave(   tinP.cTls )
+cbTlsSave( tinP.cbTls ) ,
+pbTlsSave( tinP.pbTls ) ,
+/*1*/tlsAllocStackExp_d_C::tlsAllocStackExp_d_C( tinS& tinP ) :/*1*/
 
 /**/
 */

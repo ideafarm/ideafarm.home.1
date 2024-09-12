@@ -47750,6 +47750,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     public :
 
@@ -47781,6 +47782,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x08 ) ] ;
 
@@ -47814,6 +47816,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x07 ) ] ;
 
@@ -47847,6 +47850,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x06 ) ] ;
 
@@ -47880,6 +47884,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x05 ) ] ;
 
@@ -47913,6 +47918,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x04 ) ] ;
 
@@ -47946,6 +47952,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x03 ) ] ;
 
@@ -47979,6 +47986,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x02 ) ] ;
 
@@ -48012,6 +48020,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x01 ) ] ;
 
@@ -48045,6 +48054,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     byteT* const pbTlsSave ;
     const countT cbTlsSave ;
+    const countT  cTlsSave ;
 
     byteT pbTls[ sizeof( tlsHeaderS ) + ( TUCK << 0x00 ) ] ;
 
