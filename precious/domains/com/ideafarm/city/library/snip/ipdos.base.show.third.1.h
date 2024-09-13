@@ -1,4 +1,9 @@
 
+  #define TAG(offP) LF , 0
+  #define TAGoRnOtIN(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
+  #define TAGnOtIN(offP) LF , 0
+  #define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
+
 #define TaRG3sGNdONEcBsTACK(tmFP,sgnDoneP,cbStackP) tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , (cbStackP) , 0
 #define TaRG3sGNdONEcBtLS(tmFP,sgnDoneP,cbTlsP)     tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , 0          , (cbTlsP)
 #define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP)         tinP , countTC() , tmFP , 0           , (flagsP)            , 0          , (cbTlsP)
@@ -20876,8 +20881,6 @@ for each previous absentee
 /**/
 /*1*//*TAG*//*1*/
 
-//#define TAG(offP) LF , 0
-#define TAG(offP) LF , (byteT*)bitsC( tinP , CbITSlIFI , 0 , (countT)(offP+1) )
 
 
 //
@@ -20903,8 +20906,6 @@ for each previous absentee
 /**/
 /*1*//*TAGoR*//*1*/
 
-//#define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
-#define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)bitsC( tinP , CbITSlIFI , (pbBitsP) , (countT)(offP+1) )
 
 
 //
@@ -20959,8 +20960,6 @@ for each previous absentee
 /**/
 /*1*//*TAGnOtIN*//*1*/
 
-//#define TAGnOtIN(offP) LF , 0
-#define TAGnOtIN(offP) LF , (byteT*)bitsC( CbITSlIFI , 0 , (countT)(offP+1) )
 
 
 //
@@ -20986,8 +20985,6 @@ for each previous absentee
 /**/
 /*1*//*TAGoRnOtIN*//*1*/
 
-//#define TAGoRnOtIN(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
-#define TAGoRnOtIN(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)bitsC( CbITSlIFI , (pbBitsP) , (countT)(offP+1) )
 
 
 //
@@ -32215,6 +32212,14 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend class  thirdInitC ; /*SETS A FLAG*/                                                                                                                                             \
  friend class  thugC ; /*idDesireSetBySelf*/                                                                                                                                            \
  friend class  tlsAllocPoolC ;                                                                                                                                                          \
+ friend class  tlsAllocStackExp_7_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_6_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_5_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_4_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_3_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_2_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_1_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_0_C  ;                                                                                                                                                  \
  friend class  tlsAllocStackExp_8_C  ;                                                                                                                                                  \
  friend class  tlsAllocStackExp_9_C  ;                                                                                                                                                  \
  friend class  tlsAllocStackExp_a_C  ;                                                                                                                                                  \
@@ -51556,3 +51561,108 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a3.OFFuDPfILEePOCHhONOR BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*OFFuDPfILEePOCHhONOR*//*1*/
+
+#define OFFuDPfILEePOCHhONOR_MIN ( offEpochFresheningP - CuDPfILEePOCHhONORED )
+#define OFFuDPfILEePOCHhONOR_MAX ( offEpochFresheningP - 1             )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a3.OFFuDPfILEePOCHhONOR END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a4.TIMEuDPfILEePOCH BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TIMEuDPfILEePOCH*//*1*/
+
+#define TIMEuDPfILEePOCH ( TOCK << 4 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a4.TIMEuDPfILEePOCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a5.CuDPfILEsECRETS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEsECRETS*//*1*/
+
+#define CuDPfILEsECRETS    TOCK
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a5.CuDPfILEsECRETS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a6.CuDPfILEhASHsECRETS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEhASHsECRETS*//*1*/
+
+#define CuDPfILEhASHsECRETS ( sizeof( nicNameC ) / sizeof( countT ) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a6.CuDPfILEhASHsECRETS END

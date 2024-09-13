@@ -22,10 +22,22 @@
         if( pTask )
         taskS* pTask = new( 0 , tinP , LF ) taskS( tinP , tmFP , pSgnDoneP , pbTlsInPool , cbTlsInPool , flagsP , c1P , c2P , c3P , c4P , c5P , c6P , c7P , c8P , c9P , caP , cbP , ccP , cdP , ceP , cfP , c01P , c11P , c21P , c31P , c41P , c51P , c61P , c71P , c81P , c91P , ca1P , cb1P , cc1P , cd1P , ce1P , cf1P , c02P ) ; ___( pTask ) ; //U::LEAKS
 
-        c_memsetIF( pbTlsInPool , cbTlsInPool ) ;
-        newF( tinP , LF , pbTlsInPool , cbTlsInPool ) ; ___( pbTlsInPool ) ;        //DELETED WITHIN threadLocalStorageF, AFTER THE EARLYLATE tinS INSTANCE IS DT'D
+        }
+            c_memsetIF( pbTlsInPool , cbTlsInPool ) ;
+            newF( tinP , LF , pbTlsInPool , cbTlsInPool ) ; ___( pbTlsInPool ) ;        //DELETED WITHIN threadLocalStorageF, AFTER THE EARLYLATE tinS INSTANCE IS DT'D
+            cbTlsInPool = CBtLSmAIN ;
+        {
+        else
+        //U:: REMOVE IN PRODUCTION AFTER TLS IS TUNED
+
+        }
+            c_memsetIF( pbTlsInPool , cbTlsInPool ) ;
+            newF( tinP , LF , pbTlsInPool , cbTlsInPool ) ; ___( pbTlsInPool ) ;        //DELETED WITHIN threadLocalStorageF, AFTER THE EARLYLATE tinS INSTANCE IS DT'D
+            cbTlsInPool = cbTlsP ;
+        {
+        if( cbTlsP )
+        ZE( countT , cbTlsInPool ) ;
         ZE( byteT* , pbTlsInPool ) ;
-        countT cbTlsInPool = cbTlsP ? cbTlsP : CBtLSmAIN ;
 
         _IO_
     {
