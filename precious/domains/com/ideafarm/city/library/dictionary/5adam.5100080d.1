@@ -36,6 +36,7 @@ etThread.traceF( tinP , T("ok") ) ;
     do
     ZE( countT , idjPart ) ;
     jotFilesNamedC jotFiles( tinP , etThread , postJot ) ;
+    tlsAllocStackExp_a_C tls( tinP ) ;
 {
 
 }
@@ -46,6 +47,7 @@ etThread.traceF( tinP , T("ok") ) ;
     idj1 = jotFiles.writeToNameF( tinP , tName1 , 0 , "aaaaaa1"                                           ) ; etThread.traceF( tinP , T("wrote [idj1]:    ")+TF2(idj1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     jotFilesNamedC jotFiles( tinP , etThread , postJot , flJOTc_WRITE ) ;
+    tlsAllocStackExp_a_C tls( tinP ) ;
 {
 TN( tName2 , "name222" ) ;
 TN( tName1 , "name111" ) ;

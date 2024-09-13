@@ -28758,7 +28758,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
 /*1*/struct _export tlsStackFrameS/*1*/
 {
- //byteT        pbTls[ CBtLSdEFAULT ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+ //byteT        pbTls[ CBtLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
  //const countT fingerTlsEnd ;
  tallyC       tallyKid ;
  //zapC         zap_pbTls ;
@@ -40670,6 +40670,41 @@ base class to make a derived class of objects easily contained by a stackC objec
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.fireGroupS : 1snip.15000114.firegroups END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsHeaderS : 1snip.15000190.tlsHeaderS BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+
+/*1*/struct _export tlsHeaderS/*1*/
+{
+    countT  offTopEntry                   ;
+    countT  cNew                          ;
+    countT  cDel                          ;
+    countT  cSteps                        ;
+    countT  pcStepLFAt[ CmAXsTEPtLS * 3 ] ;
+
+    voidT traceF( tinS& tinP ) ;
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsHeaderS : 1snip.15000190.tlsHeaderS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal2S : 1snip.150000c2.processglobal2s BEGIN
 
 
@@ -40742,9 +40777,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     byteT                           pb_bOsCallIMonitor[   CBzOMBIEbATONc ] ;
     byteT                           pb_bOsCallISharedMem[ CBzOMBIEbATONc ] ;
     byteT                           pb_bPoolRpt[          CBzOMBIEbATONc ] ;
-    byteT                           pbTlsMain[ CBtLSdEFAULT ] ;
-    byteT                           pbTlsHeart[ CBtLSdEFAULT ] ;
-    byteT                           pbTlsBreak[ CBtLSdEFAULT ] ;
+    byteT                           pbTlsMain[  sizeof( tlsHeaderS ) + CBtLSmAIN ] ;
     countT                          pcDebug[ TUCK << 1 ] ; //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
     osTextT                         postDllsLoaded[ TOCK ] ;
     osTextT                         postPathHomeTmp[ TUCK ] ;
@@ -40779,6 +40812,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     byteT                           pbMemoryBitsStack[   ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsShared[  ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsPrivate[ ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
 
     //PUT PLATFORM DEPENDENT MEMBERS HERE SO THAT OFFSETS TO THE OTHER MEMBERS ARE INVARIANT
     #if defined( ifcENABLEtHIRDpARTIES )
@@ -41559,9 +41593,9 @@ base class to make a derived class of objects easily contained by a stackC objec
     NEWdELcLASSpROTOS
     adamGlobal3S( tinS& tinP ) ;
 
+    ag3_socketC_C                            _socketC_ ;
     grabotC                                  got_aptLinked ;
     aptC                                     aptLinked ;
-    ag3_socketC_C                            _socketC_ ;
 }
 ;
 
@@ -45957,41 +45991,6 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.nodeListS : 1snip.1500018f.nodeListS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsHeaderS : 1snip.15000190.tlsHeaderS BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-
-/*1*/struct _export tlsHeaderS/*1*/
-{
-    countT  offTopEntry                   ;
-    countT  cNew                          ;
-    countT  cDel                          ;
-    countT  cSteps                        ;
-    countT  pcStepLFAt[ CmAXsTEPtLS * 3 ] ;
-
-    voidT traceF( tinS& tinP ) ;
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsHeaderS : 1snip.15000190.tlsHeaderS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.udpFileNameS : 1snip.15000192.udpFileNameS BEGIN
 
 
@@ -47754,6 +47753,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocPoolC( voidT ) ;
     tlsAllocPoolC( tinS& tinP , const countT cbTlsP ) ;
 }
@@ -47788,6 +47788,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_01_C( voidT ) ;
     tlsAllocStackExp_01_C( tinS& tinP ) ;
 }
@@ -47822,6 +47823,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_f_C( voidT ) ;
     tlsAllocStackExp_f_C( tinS& tinP ) ;
 }
@@ -47856,6 +47858,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_e_C( voidT ) ;
     tlsAllocStackExp_e_C( tinS& tinP ) ;
 }
@@ -47890,6 +47893,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_d_C( voidT ) ;
     tlsAllocStackExp_d_C( tinS& tinP ) ;
 }
@@ -47924,6 +47928,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_c_C( voidT ) ;
     tlsAllocStackExp_c_C( tinS& tinP ) ;
 }
@@ -47958,6 +47963,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_b_C( voidT ) ;
     tlsAllocStackExp_b_C( tinS& tinP ) ;
 }
@@ -47992,6 +47998,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_a_C( voidT ) ;
     tlsAllocStackExp_a_C( tinS& tinP ) ;
 }
@@ -48026,6 +48033,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_9_C( voidT ) ;
     tlsAllocStackExp_9_C( tinS& tinP ) ;
 }
@@ -48060,6 +48068,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     public :
 
+    NEWdELcLASSpROTOS
     ~tlsAllocStackExp_8_C( voidT ) ;
     tlsAllocStackExp_8_C( tinS& tinP ) ;
 }

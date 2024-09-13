@@ -28,7 +28,11 @@
         {
         if( pSexNew && (const poopC&)*pSexNew ) // *pSexNew CT FAILED, EITHER BECAUSE IT DETECTED THAT IT CT'D ITSELF RECURSIVELY OR BECAUSE INSUFFICIENT CONTIGUOUS MEMORY IS AVAILABLE
 
-        sexC* pSexNew = new( 0 , tinP , pbzaUse , sizeof( sexC ) ) sexC( tinP , TAG( TAGiDnULL ) , LF , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
+        }
+            pSexNew = new( 0 , tinP , pbzaUse , sizeof( sexC ) ) sexC( tinP , TAG( TAGiDnULL ) , LF , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
+            tlsAllocStackExp_a_C tls( tinP ) ;
+        {
+        ZE( sexC* , pSexNew ) ;
 
         if( pbzaUse == (byteT*)ppSex[ offs ] ) { BLAMMO ; }
         byteT* pbzaUse = pbza + offs * sizeof( sexC ) ;

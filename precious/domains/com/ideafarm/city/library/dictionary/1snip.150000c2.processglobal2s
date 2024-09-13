@@ -44,6 +44,7 @@
     #if defined( ifcENABLEtHIRDpARTIES )
     //PUT PLATFORM DEPENDENT MEMBERS HERE SO THAT OFFSETS TO THE OTHER MEMBERS ARE INVARIANT
 
+    byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
     byteT                           pbMemoryBitsPrivate[ ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsShared[  ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsStack[   ( TOCK >> 1 ) / SB ] ;
@@ -78,9 +79,7 @@
     osTextT                         postPathHomeTmp[ TUCK ] ;
     osTextT                         postDllsLoaded[ TOCK ] ;
     countT                          pcDebug[ TUCK << 1 ] ; //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
-    byteT                           pbTlsBreak[ CBtLSdEFAULT ] ;
-    byteT                           pbTlsHeart[ CBtLSdEFAULT ] ;
-    byteT                           pbTlsMain[ CBtLSdEFAULT ] ;
+    byteT                           pbTlsMain[  sizeof( tlsHeaderS ) + CBtLSmAIN ] ;
     byteT                           pb_bPoolRpt[          CBzOMBIEbATONc ] ;
     byteT                           pb_bOsCallISharedMem[ CBzOMBIEbATONc ] ;
     byteT                           pb_bOsCallIMonitor[   CBzOMBIEbATONc ] ;

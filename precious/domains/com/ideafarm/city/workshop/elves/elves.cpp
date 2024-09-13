@@ -3063,7 +3063,15 @@ void elf_obey_C::liveF( void )
                 //THIS LIST IS IN REVERSE ORDER OF WHAT WILL APPEAR IN ipdos.h
                 char* ppostFrom[] =
                 {
-                    "1snip.15*.tlsAllocStackExp8C"                          ,
+                    "1snip.15*.tlsAllocStackExp_01_C"                       ,
+                    "1snip.15*.tlsAllocStackExp_f_C"                        ,
+                    "1snip.15*.tlsAllocStackExp_e_C"                        ,
+                    "1snip.15*.tlsAllocStackExp_d_C"                        ,
+                    "1snip.15*.tlsAllocStackExp_c_C"                        ,
+                    "1snip.15*.tlsAllocStackExp_b_C"                        ,
+                    "1snip.15*.tlsAllocStackExp_a_C"                        ,
+                    "1snip.15*.tlsAllocStackExp_9_C"                        ,
+                    "1snip.15*.tlsAllocStackExp_8_C"                        ,
                     "1snip.15*.tlsAllocPoolC"                               ,
                     "1snip.15*.listingOfSet_countTstrz_C"                   ,
                     "1snip.15*.listingOfSet_blob_C"                         ,
@@ -3103,7 +3111,6 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.udpFileGramHeadSecretS"                      ,
                     "1snip.15*.udpFileGramHeadS"                            ,
                     "1snip.15*.udpFileNameS"                                ,
-                    "1snip.15*.tlsHeaderS"                                  ,
                     "1snip.15*.nodeListS"                                   ,
                     "1snip.15*.nodeEntryS"                                  ,
                     "1snip.15*.taskDrivenServerJobS"                        ,
@@ -3211,6 +3218,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.adamGlobal1S"                                ,
                     "1snip.15*.processGlobal3S"                             ,
                     "1snip.15*.processGlobal2S"                             ,
+                    "1snip.15*.tlsHeaderS"                                  ,
                     "1snip.15*.fireGroupS"                                  ,
                     "1snip.15*.bookC"                                       ,
                     "1snip.15*.book0C"                                      ,

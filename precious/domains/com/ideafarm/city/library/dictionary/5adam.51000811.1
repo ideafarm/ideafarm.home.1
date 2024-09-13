@@ -38,6 +38,7 @@ etThread.traceF( tinP , T("ok") ) ;
     ZE( countT , idjPart ) ;
 
     jotFilesC jotFiles( tinP , postjf , flJOTc_null ) ;
+    tlsAllocStackExp_a_C tls( tinP ) ;
 {
 
 }
@@ -46,6 +47,7 @@ etThread.traceF( tinP , T("ok") ) ;
     idjSoil = jotFiles.writeF( tinP , "data1p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART                           ) ; etThread.traceF( tinP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     idjSoil = jotFiles.writeF( tinP , "data1p1" , 0 , 0 , 0 , 0                                                               ) ; etThread.traceF( tinP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     jotFilesC jotFiles( tinP , postjf , flJOTc_WRITE ) ;
+    tlsAllocStackExp_a_C tls( tinP ) ;
 {
 ZE( countT , idjSoil ) ;
 

@@ -24,6 +24,7 @@ etThread.traceF( tinP , T("ok") ) ;
 
     pageC pagei = jotFiles.readF( tinP , idJot ) ;
     jotFilesC jotFiles( tinP , "myJotFiles" , flJOTc_null ) ;
+    tlsAllocStackExp_a_C tls( tinP ) ;
 {
 
 }
@@ -36,6 +37,7 @@ etThread.traceF( tinP , T("ok") ) ;
     idJot = jotFiles.writeF( tinP , "bbbbbbbb" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     idJot = jotFiles.writeF( tinP , "aaaaaaaa" , 8 , 0 , 0 , 0     ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     jotFilesC jotFiles( tinP , "myJotFiles" , flJOTc_WRITE ) ;
+    tlsAllocStackExp_a_C tls( tinP ) ;
 {
 ZE( countT , idJot ) ;
 

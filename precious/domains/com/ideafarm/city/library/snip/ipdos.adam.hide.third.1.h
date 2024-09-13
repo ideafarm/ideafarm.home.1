@@ -1333,7 +1333,7 @@ see the documentation for NEWdELtYPEeTHER
         {                                                                               \
             _IO_                                                                        \
             countT idType = idTypeP ;                                                   \
-            if( idType == ifciDtYPEdROPnOTE_strokeS && pP )                             \
+            if( idType == ifcIDtYPEdROPnOTE_strokeS && pP )                             \
             {                                                                           \
                 _IO_                                                                    \
                 const countT csttw = ((strokeS*)pP)->idAdam ;                           \
@@ -1376,12 +1376,12 @@ see the documentation for NEWdELtYPEeTHER
                     dropNoteS* pNote = PUSE.pDropNoteF( tinP , (byteT*)pP ) ;           \
                     if( pNote )                                                         \
                     {                                                                   \
-                        pNote->idType       = ifciDtYPEdROPnOTE_##typeP ;               \
+                        pNote->idType       = ifcIDtYPEdROPnOTE_##typeP ;               \
                         pNote->cbRequested  = pNote->cbUsedReally = cba ;               \
                     }                                                                   \
                                                                                         \
                     countT idType = idTypeP ;                                           \
-                    if( idType == ifciDtYPEdROPnOTE_strokeS )                           \
+                    if( idType == ifcIDtYPEdROPnOTE_strokeS )                           \
                     {                                                                   \
                         /*ENSURES NO sc_cADAM CASTE VALUES*/                            \
                         thirdC::c_memsetIF( tinP , (byteT*)pP , cba ) ;                 \
@@ -1398,7 +1398,7 @@ see the documentation for NEWdELtYPEeTHER
         {                                                                               \
             _IO_                                                                        \
             countT idType = idTypeP ;                                                   \
-            if( idType == ifciDtYPEdROPnOTE_strokeS && pP )                             \
+            if( idType == ifcIDtYPEdROPnOTE_strokeS && pP )                             \
             {                                                                           \
                 const countT csttw = ((strokeS*)pP)->idAdam ;                           \
                 const countT offe = CSpREFIX + csttw ;                                  \
@@ -1434,7 +1434,7 @@ see the documentation for NEWdELtYPEeTHER
                 if( pP )                                                                \
                 {                                                                       \
                     countT idType = idTypeP ;                                           \
-                    if( idType == ifciDtYPEdROPnOTE_strokeS )                           \
+                    if( idType == ifcIDtYPEdROPnOTE_strokeS )                           \
                     {                                                                   \
                         /*ENSURES NO sc_cADAM CASTE VALUES*/                            \
                         thirdC::c_memsetIF( tinP , (byteT*)pP , cba ) ;                 \
@@ -7868,283 +7868,294 @@ it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.0010126.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*ifciDtYPEdROPnOTE*//*1*/
+/*1*//*ifcIDtYPEdROPnOTE*//*1*/
 /*3*/
-#define ifciDtYPEdROPnOTE_voidT                                         0xdddd033e
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition1                 0xdddd033f
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition2                 0xdddd0340
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition3                 0xdddd0341
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition4                 0xdddd0342
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition5                 0xdddd0343
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition6                 0xdddd0344
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition7                 0xdddd0345
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition8                 0xdddd0346
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitiona                 0xdddd0347
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitionb                 0xdddd0348
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitionc                 0xdddd0349
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitiond                 0xdddd034a
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitione                 0xdddd034b
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitionf                 0xdddd034c
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition01                0xdddd034d
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition11                0xdddd034e
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition21                0xdddd034f
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition31                0xdddd0350
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition41                0xdddd0351
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition51                0xdddd0352
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition61                0xdddd0353
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition71                0xdddd0354
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition81                0xdddd0355
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition91                0xdddd0356
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitiona1                0xdddd0357
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitionb1                0xdddd0358
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitionc1                0xdddd0359
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitiond1                0xdddd035a
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitione1                0xdddd035b
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinitionf1                0xdddd035c
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition02                0xdddd035d
-#define ifciDtYPEdROPnOTE_classDefinedInAdamDefinition12                0xdddd035e
-#define ifciDtYPEdROPnOTE_napkinC                                       0xdddd035f
-#define ifciDtYPEdROPnOTE_MONITOReVENT                                  0xdddd0360
-#define ifciDtYPEdROPnOTE_arrayC                                        0xdddd0361
-#define ifciDtYPEdROPnOTE_thirdCdosScanEnvFpostv                        0xdddd0362
-#define ifciDtYPEdROPnOTE_thirdCpoolNewF                                0xdddd0363
-#define ifciDtYPEdROPnOTE_etherCpoolNewF                                0xdddd0364
-#define ifciDtYPEdROPnOTE_lakeCwriteFcopy                               0xdddd0365
-#define ifciDtYPEdROPnOTE_pczCpcz                                       0xdddd0366
-#define ifciDtYPEdROPnOTE_CRITICAL_SECTION                              0xdddd0367
-#define ifciDtYPEdROPnOTE_thirdC                                        0xdddd0368
-#define ifciDtYPEdROPnOTE__1S                                           0xdddd0369
-#define ifciDtYPEdROPnOTE_htmlS                                         0xdddd036a
-#define ifciDtYPEdROPnOTE_link189S                                      0xdddd036b
-#define ifciDtYPEdROPnOTE_etherC                                        0xdddd036c
-#define ifciDtYPEdROPnOTE_infoDiskS                                     0xdddd036d
-#define ifciDtYPEdROPnOTE_textC                                         0xdddd036e
-#define ifciDtYPEdROPnOTE_socketC                                       0xdddd036f
-#define ifciDtYPEdROPnOTE_boxC                                          0xdddd0370
-#define ifciDtYPEdROPnOTE_batonC                                        0xdddd0371
-#define ifciDtYPEdROPnOTE_signC                                         0xdddd0372
-#define ifciDtYPEdROPnOTE_taskS                                         0xdddd0373
-#define ifciDtYPEdROPnOTE_batonBoxC                                     0xdddd0374
-#define ifciDtYPEdROPnOTE_plateS                                        0xdddd0375
-#define ifciDtYPEdROPnOTE_stackC                                        0xdddd0376
-#define ifciDtYPEdROPnOTE_switchC                                       0xdddd0377
-#define ifciDtYPEdROPnOTE_switchStackC                                  0xdddd0378
-#define ifciDtYPEdROPnOTE_mapC                                          0xdddd0379
-#define ifciDtYPEdROPnOTE_infoFileS                                     0xdddd037a
-#define ifciDtYPEdROPnOTE_infoDisk1S                                    0xdddd037b
-#define ifciDtYPEdROPnOTE_tinS                                          0xdddd037c
-#define ifciDtYPEdROPnOTE_tableC                                        0xdddd037d
-#define ifciDtYPEdROPnOTE_busC                                          0xdddd037e
-#define ifciDtYPEdROPnOTE_carC                                          0xdddd037f
-#define ifciDtYPEdROPnOTE_pricerC                                       0xdddd0380
-#define ifciDtYPEdROPnOTE_riverC                                        0xdddd0381
-#define ifciDtYPEdROPnOTE_mainRefsS                                     0xdddd0382
-#define ifciDtYPEdROPnOTE_windowOldC                                    0xdddd0383
-#define ifciDtYPEdROPnOTE_recDirC                                       0xdddd0384
-#define ifciDtYPEdROPnOTE_imageExeDllC                                  0xdddd0385
-#define ifciDtYPEdROPnOTE_masterOldC                                    0xdddd0386
-#define ifciDtYPEdROPnOTE_ranUniC                                       0xdddd0387
-#define ifciDtYPEdROPnOTE_nicNamesNearbyOldC                            0xdddd0388
-#define ifciDtYPEdROPnOTE_soulC                                         0xdddd0389
-#define ifciDtYPEdROPnOTE_netC                                          0xdddd038a
-#define ifciDtYPEdROPnOTE_fylesC                                        0xdddd038b
-#define ifciDtYPEdROPnOTE_byteT                                         0xdddd038c
-#define ifciDtYPEdROPnOTE_countT                                        0xdddd038d
-#define ifciDtYPEdROPnOTE_strokeS                                       0xdddd038e
-#define ifciDtYPEdROPnOTE_count9S                                       0xdddd038f
-#define ifciDtYPEdROPnOTE_count8S                                       0xdddd0390
-#define ifciDtYPEdROPnOTE_count7S                                       0xdddd0391
-#define ifciDtYPEdROPnOTE_count6S                                       0xdddd0392
-#define ifciDtYPEdROPnOTE_count5S                                       0xdddd0393
-#define ifciDtYPEdROPnOTE_count4S                                       0xdddd0394
-#define ifciDtYPEdROPnOTE_count3S                                       0xdddd0395
-#define ifciDtYPEdROPnOTE_count2S                                       0xdddd0396
-#define ifciDtYPEdROPnOTE_sCountT                                       0xdddd0397
-#define ifciDtYPEdROPnOTE_measureT                                      0xdddd0398
-#define ifciDtYPEdROPnOTE_count01T                                      0xdddd0399
-#define ifciDtYPEdROPnOTE_nicNameC                                      0xdddd039a
-#define ifciDtYPEdROPnOTE_vmAllocS                                      0xdddd039b
-#define ifciDtYPEdROPnOTE_cookieC                                       0xdddd039c
-#define ifciDtYPEdROPnOTE_stateC                                        0xdddd039d
-#define ifciDtYPEdROPnOTE_grabC                                         0xdddd039e
-#define ifciDtYPEdROPnOTE_grabAnnotatedS                                0xdddd039f
-#define ifciDtYPEdROPnOTE_sleepC                                        0xdddd03a0
-#define ifciDtYPEdROPnOTE_handleC                                       0xdddd03a1
-#define ifciDtYPEdROPnOTE_fileOpenS                                     0xdddd03a2
-#define ifciDtYPEdROPnOTE_thugC                                         0xdddd03a3
-#define ifciDtYPEdROPnOTE_restartC                                      0xdddd03a4
-#define ifciDtYPEdROPnOTE_branchesOldS                                  0xdddd03a5
-#define ifciDtYPEdROPnOTE_baseSoilXxxxC                                 0xdddd03a6
-#define ifciDtYPEdROPnOTE_lexC                                          0xdddd03a7
-#define ifciDtYPEdROPnOTE_rootWordC                                     0xdddd03a8
-#define ifciDtYPEdROPnOTE_portC                                         0xdddd03a9
-#define ifciDtYPEdROPnOTE_osTextC                                       0xdddd03aa
-#define ifciDtYPEdROPnOTE_scoopC                                        0xdddd03ab
-#define ifciDtYPEdROPnOTE_strokingFrameS                                0xdddd03ac
-#define ifciDtYPEdROPnOTE_branchDataOldS                                0xdddd03ad
-#define ifciDtYPEdROPnOTE_VARIABLE                                      0xdddd03ae
-#define ifciDtYPEdROPnOTE_xrayC                                         0xdddd03af
-#define ifciDtYPEdROPnOTE_earDropImage                                  0xdddd03b0
-#define ifciDtYPEdROPnOTE_subpoolOld                                    0xdddd03b1
-#define ifciDtYPEdROPnOTE_vTextC                                        0xdddd03b2
-#define ifciDtYPEdROPnOTE_tcButtonC                                     0xdddd03b3
-#define ifciDtYPEdROPnOTE_branchHeaderOldS                              0xdddd03b4
-#define ifciDtYPEdROPnOTE_grabWantS                                     0xdddd03b5
-#define ifciDtYPEdROPnOTE_paperOldC                                     0xdddd03b6
-#define ifciDtYPEdROPnOTE_tcPromptC                                     0xdddd03b7
-#define ifciDtYPEdROPnOTE_tcSliderC                                     0xdddd03b8
-#define ifciDtYPEdROPnOTE_tcButtonQuitC                                 0xdddd03b9
-#define ifciDtYPEdROPnOTE_pulpOldC                                      0xdddd03ba
-#define ifciDtYPEdROPnOTE_staqC                                         0xdddd03bb
-#define ifciDtYPEdROPnOTE_bitmapOldC                                    0xdddd03bc
-#define ifciDtYPEdROPnOTE_countC                                        0xdddd03bd
-#define ifciDtYPEdROPnOTE_vBodyS                                        0xdddd03be
-#define ifciDtYPEdROPnOTE_threadC                                       0xdddd03bf
-#define ifciDtYPEdROPnOTE_httpStaticReplyS                              0xdddd03c0
-#define ifciDtYPEdROPnOTE_sessionC                                      0xdddd03c1
-#define ifciDtYPEdROPnOTE_sessionsC                                     0xdddd03c2
-#define ifciDtYPEdROPnOTE_httpReplyS                                    0xdddd03c3
-#define ifciDtYPEdROPnOTE_adamGlobal1S                                  0xdddd03c4
-#define ifciDtYPEdROPnOTE_adamGlobal2S                                  0xdddd03c5
-#define ifciDtYPEdROPnOTE_adamGlobal3S                                  0xdddd03c6
-#define ifciDtYPEdROPnOTE_adamGlobal4S                                  0xdddd03c7
-#define ifciDtYPEdROPnOTE_adamGlobal5S                                  0xdddd03c8
-#define ifciDtYPEdROPnOTE_adamGlobal6S                                  0xdddd03c9
-#define ifciDtYPEdROPnOTE_grabMemorySpaceC                              0xdddd03ca
-#define ifciDtYPEdROPnOTE_backGrabMemorySpaceC                          0xdddd03cb
-#define ifciDtYPEdROPnOTE_homeS                                         0xdddd03cc
-#define ifciDtYPEdROPnOTE_marketC                                       0xdddd03cd
-#define ifciDtYPEdROPnOTE_adamC                                         0xdddd03ce
-#define ifciDtYPEdROPnOTE_sCountC                                       0xdddd03cf
-#define ifciDtYPEdROPnOTE_x0SwitchStackC                                0xdddd03d0
-#define ifciDtYPEdROPnOTE_xSwitchStackC                                 0xdddd03d1
-#define ifciDtYPEdROPnOTE_rangeC                                        0xdddd03d2
-#define ifciDtYPEdROPnOTE_aptNameOldS                                   0xdddd03d3
-#define ifciDtYPEdROPnOTE_tellS                                         0xdddd03d4
-#define ifciDtYPEdROPnOTE_ipMapHomeS                                    0xdddd03d5
-#define ifciDtYPEdROPnOTE_ipMapPortS                                    0xdddd03d6
-#define ifciDtYPEdROPnOTE_sexHeadS                                      0xdddd03d7
-#define ifciDtYPEdROPnOTE_sexC                                          0xdddd03d8
-#define ifciDtYPEdROPnOTE_slotsC                                        0xdddd03d9
-#define ifciDtYPEdROPnOTE_poolC                                         0xdddd03da
-#define ifciDtYPEdROPnOTE_puseC                                         0xdddd03db
-#define ifciDtYPEdROPnOTE_guts_poolC_S                                  0xdddd03dc
-#define ifciDtYPEdROPnOTE_face_poolC_S                                  0xdddd03dd
-#define ifciDtYPEdROPnOTE_fileC                                         0xdddd03de
-#define ifciDtYPEdROPnOTE_grabitC                                       0xdddd03df
-#define ifciDtYPEdROPnOTE_grabotC                                       0xdddd03e0
-#define ifciDtYPEdROPnOTE_linkedC                                       0xdddd03e1
-#define ifciDtYPEdROPnOTE_listingC                                      0xdddd03e2
-#define ifciDtYPEdROPnOTE_listC                                         0xdddd03e3
+#define ifcIDtYPEdROPnOTE_voidT                                         0xdddd033e
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition1                 0xdddd033f
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition2                 0xdddd0340
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition3                 0xdddd0341
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition4                 0xdddd0342
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition5                 0xdddd0343
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition6                 0xdddd0344
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition7                 0xdddd0345
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition8                 0xdddd0346
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiona                 0xdddd0347
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionb                 0xdddd0348
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionc                 0xdddd0349
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiond                 0xdddd034a
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitione                 0xdddd034b
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionf                 0xdddd034c
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition01                0xdddd034d
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition11                0xdddd034e
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition21                0xdddd034f
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition31                0xdddd0350
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition41                0xdddd0351
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition51                0xdddd0352
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition61                0xdddd0353
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition71                0xdddd0354
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition81                0xdddd0355
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition91                0xdddd0356
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiona1                0xdddd0357
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionb1                0xdddd0358
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionc1                0xdddd0359
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiond1                0xdddd035a
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitione1                0xdddd035b
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionf1                0xdddd035c
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition02                0xdddd035d
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition12                0xdddd035e
+#define ifcIDtYPEdROPnOTE_napkinC                                       0xdddd035f
+#define ifcIDtYPEdROPnOTE_MONITOReVENT                                  0xdddd0360
+#define ifcIDtYPEdROPnOTE_arrayC                                        0xdddd0361
+#define ifcIDtYPEdROPnOTE_thirdCdosScanEnvFpostv                        0xdddd0362
+#define ifcIDtYPEdROPnOTE_thirdCpoolNewF                                0xdddd0363
+#define ifcIDtYPEdROPnOTE_etherCpoolNewF                                0xdddd0364
+#define ifcIDtYPEdROPnOTE_lakeCwriteFcopy                               0xdddd0365
+#define ifcIDtYPEdROPnOTE_pczCpcz                                       0xdddd0366
+#define ifcIDtYPEdROPnOTE_CRITICAL_SECTION                              0xdddd0367
+#define ifcIDtYPEdROPnOTE_thirdC                                        0xdddd0368
+#define ifcIDtYPEdROPnOTE__1S                                           0xdddd0369
+#define ifcIDtYPEdROPnOTE_htmlS                                         0xdddd036a
+#define ifcIDtYPEdROPnOTE_link189S                                      0xdddd036b
+#define ifcIDtYPEdROPnOTE_etherC                                        0xdddd036c
+#define ifcIDtYPEdROPnOTE_infoDiskS                                     0xdddd036d
+#define ifcIDtYPEdROPnOTE_textC                                         0xdddd036e
+#define ifcIDtYPEdROPnOTE_socketC                                       0xdddd036f
+#define ifcIDtYPEdROPnOTE_boxC                                          0xdddd0370
+#define ifcIDtYPEdROPnOTE_batonC                                        0xdddd0371
+#define ifcIDtYPEdROPnOTE_signC                                         0xdddd0372
+#define ifcIDtYPEdROPnOTE_taskS                                         0xdddd0373
+#define ifcIDtYPEdROPnOTE_batonBoxC                                     0xdddd0374
+#define ifcIDtYPEdROPnOTE_plateS                                        0xdddd0375
+#define ifcIDtYPEdROPnOTE_stackC                                        0xdddd0376
+#define ifcIDtYPEdROPnOTE_switchC                                       0xdddd0377
+#define ifcIDtYPEdROPnOTE_switchStackC                                  0xdddd0378
+#define ifcIDtYPEdROPnOTE_mapC                                          0xdddd0379
+#define ifcIDtYPEdROPnOTE_infoFileS                                     0xdddd037a
+#define ifcIDtYPEdROPnOTE_infoDisk1S                                    0xdddd037b
+#define ifcIDtYPEdROPnOTE_tinS                                          0xdddd037c
+#define ifcIDtYPEdROPnOTE_tableC                                        0xdddd037d
+#define ifcIDtYPEdROPnOTE_busC                                          0xdddd037e
+#define ifcIDtYPEdROPnOTE_carC                                          0xdddd037f
+#define ifcIDtYPEdROPnOTE_pricerC                                       0xdddd0380
+#define ifcIDtYPEdROPnOTE_riverC                                        0xdddd0381
+#define ifcIDtYPEdROPnOTE_mainRefsS                                     0xdddd0382
+#define ifcIDtYPEdROPnOTE_windowOldC                                    0xdddd0383
+#define ifcIDtYPEdROPnOTE_recDirC                                       0xdddd0384
+#define ifcIDtYPEdROPnOTE_imageExeDllC                                  0xdddd0385
+#define ifcIDtYPEdROPnOTE_masterOldC                                    0xdddd0386
+#define ifcIDtYPEdROPnOTE_ranUniC                                       0xdddd0387
+#define ifcIDtYPEdROPnOTE_nicNamesNearbyOldC                            0xdddd0388
+#define ifcIDtYPEdROPnOTE_soulC                                         0xdddd0389
+#define ifcIDtYPEdROPnOTE_netC                                          0xdddd038a
+#define ifcIDtYPEdROPnOTE_fylesC                                        0xdddd038b
+#define ifcIDtYPEdROPnOTE_byteT                                         0xdddd038c
+#define ifcIDtYPEdROPnOTE_countT                                        0xdddd038d
+#define ifcIDtYPEdROPnOTE_strokeS                                       0xdddd038e
+#define ifcIDtYPEdROPnOTE_count9S                                       0xdddd038f
+#define ifcIDtYPEdROPnOTE_count8S                                       0xdddd0390
+#define ifcIDtYPEdROPnOTE_count7S                                       0xdddd0391
+#define ifcIDtYPEdROPnOTE_count6S                                       0xdddd0392
+#define ifcIDtYPEdROPnOTE_count5S                                       0xdddd0393
+#define ifcIDtYPEdROPnOTE_count4S                                       0xdddd0394
+#define ifcIDtYPEdROPnOTE_count3S                                       0xdddd0395
+#define ifcIDtYPEdROPnOTE_count2S                                       0xdddd0396
+#define ifcIDtYPEdROPnOTE_sCountT                                       0xdddd0397
+#define ifcIDtYPEdROPnOTE_measureT                                      0xdddd0398
+#define ifcIDtYPEdROPnOTE_count01T                                      0xdddd0399
+#define ifcIDtYPEdROPnOTE_nicNameC                                      0xdddd039a
+#define ifcIDtYPEdROPnOTE_vmAllocS                                      0xdddd039b
+#define ifcIDtYPEdROPnOTE_cookieC                                       0xdddd039c
+#define ifcIDtYPEdROPnOTE_stateC                                        0xdddd039d
+#define ifcIDtYPEdROPnOTE_grabC                                         0xdddd039e
+#define ifcIDtYPEdROPnOTE_grabAnnotatedS                                0xdddd039f
+#define ifcIDtYPEdROPnOTE_sleepC                                        0xdddd03a0
+#define ifcIDtYPEdROPnOTE_handleC                                       0xdddd03a1
+#define ifcIDtYPEdROPnOTE_fileOpenS                                     0xdddd03a2
+#define ifcIDtYPEdROPnOTE_thugC                                         0xdddd03a3
+#define ifcIDtYPEdROPnOTE_restartC                                      0xdddd03a4
+#define ifcIDtYPEdROPnOTE_branchesOldS                                  0xdddd03a5
+#define ifcIDtYPEdROPnOTE_baseSoilXxxxC                                 0xdddd03a6
+#define ifcIDtYPEdROPnOTE_lexC                                          0xdddd03a7
+#define ifcIDtYPEdROPnOTE_rootWordC                                     0xdddd03a8
+#define ifcIDtYPEdROPnOTE_portC                                         0xdddd03a9
+#define ifcIDtYPEdROPnOTE_osTextC                                       0xdddd03aa
+#define ifcIDtYPEdROPnOTE_scoopC                                        0xdddd03ab
+#define ifcIDtYPEdROPnOTE_strokingFrameS                                0xdddd03ac
+#define ifcIDtYPEdROPnOTE_branchDataOldS                                0xdddd03ad
+#define ifcIDtYPEdROPnOTE_VARIABLE                                      0xdddd03ae
+#define ifcIDtYPEdROPnOTE_xrayC                                         0xdddd03af
+#define ifcIDtYPEdROPnOTE_earDropImage                                  0xdddd03b0
+#define ifcIDtYPEdROPnOTE_subpoolOld                                    0xdddd03b1
+#define ifcIDtYPEdROPnOTE_vTextC                                        0xdddd03b2
+#define ifcIDtYPEdROPnOTE_tcButtonC                                     0xdddd03b3
+#define ifcIDtYPEdROPnOTE_branchHeaderOldS                              0xdddd03b4
+#define ifcIDtYPEdROPnOTE_grabWantS                                     0xdddd03b5
+#define ifcIDtYPEdROPnOTE_paperOldC                                     0xdddd03b6
+#define ifcIDtYPEdROPnOTE_tcPromptC                                     0xdddd03b7
+#define ifcIDtYPEdROPnOTE_tcSliderC                                     0xdddd03b8
+#define ifcIDtYPEdROPnOTE_tcButtonQuitC                                 0xdddd03b9
+#define ifcIDtYPEdROPnOTE_pulpOldC                                      0xdddd03ba
+#define ifcIDtYPEdROPnOTE_staqC                                         0xdddd03bb
+#define ifcIDtYPEdROPnOTE_bitmapOldC                                    0xdddd03bc
+#define ifcIDtYPEdROPnOTE_countC                                        0xdddd03bd
+#define ifcIDtYPEdROPnOTE_vBodyS                                        0xdddd03be
+#define ifcIDtYPEdROPnOTE_threadC                                       0xdddd03bf
+#define ifcIDtYPEdROPnOTE_httpStaticReplyS                              0xdddd03c0
+#define ifcIDtYPEdROPnOTE_sessionC                                      0xdddd03c1
+#define ifcIDtYPEdROPnOTE_sessionsC                                     0xdddd03c2
+#define ifcIDtYPEdROPnOTE_httpReplyS                                    0xdddd03c3
+#define ifcIDtYPEdROPnOTE_adamGlobal1S                                  0xdddd03c4
+#define ifcIDtYPEdROPnOTE_adamGlobal2S                                  0xdddd03c5
+#define ifcIDtYPEdROPnOTE_adamGlobal3S                                  0xdddd03c6
+#define ifcIDtYPEdROPnOTE_adamGlobal4S                                  0xdddd03c7
+#define ifcIDtYPEdROPnOTE_adamGlobal5S                                  0xdddd03c8
+#define ifcIDtYPEdROPnOTE_adamGlobal6S                                  0xdddd03c9
+#define ifcIDtYPEdROPnOTE_grabMemorySpaceC                              0xdddd03ca
+#define ifcIDtYPEdROPnOTE_backGrabMemorySpaceC                          0xdddd03cb
+#define ifcIDtYPEdROPnOTE_homeS                                         0xdddd03cc
+#define ifcIDtYPEdROPnOTE_marketC                                       0xdddd03cd
+#define ifcIDtYPEdROPnOTE_adamC                                         0xdddd03ce
+#define ifcIDtYPEdROPnOTE_sCountC                                       0xdddd03cf
+#define ifcIDtYPEdROPnOTE_x0SwitchStackC                                0xdddd03d0
+#define ifcIDtYPEdROPnOTE_xSwitchStackC                                 0xdddd03d1
+#define ifcIDtYPEdROPnOTE_rangeC                                        0xdddd03d2
+#define ifcIDtYPEdROPnOTE_aptNameOldS                                   0xdddd03d3
+#define ifcIDtYPEdROPnOTE_tellS                                         0xdddd03d4
+#define ifcIDtYPEdROPnOTE_ipMapHomeS                                    0xdddd03d5
+#define ifcIDtYPEdROPnOTE_ipMapPortS                                    0xdddd03d6
+#define ifcIDtYPEdROPnOTE_sexHeadS                                      0xdddd03d7
+#define ifcIDtYPEdROPnOTE_sexC                                          0xdddd03d8
+#define ifcIDtYPEdROPnOTE_slotsC                                        0xdddd03d9
+#define ifcIDtYPEdROPnOTE_poolC                                         0xdddd03da
+#define ifcIDtYPEdROPnOTE_puseC                                         0xdddd03db
+#define ifcIDtYPEdROPnOTE_guts_poolC_S                                  0xdddd03dc
+#define ifcIDtYPEdROPnOTE_face_poolC_S                                  0xdddd03dd
+#define ifcIDtYPEdROPnOTE_fileC                                         0xdddd03de
+#define ifcIDtYPEdROPnOTE_grabitC                                       0xdddd03df
+#define ifcIDtYPEdROPnOTE_grabotC                                       0xdddd03e0
+#define ifcIDtYPEdROPnOTE_linkedC                                       0xdddd03e1
+#define ifcIDtYPEdROPnOTE_listingC                                      0xdddd03e2
+#define ifcIDtYPEdROPnOTE_listC                                         0xdddd03e3
 
-#define ifciDtYPEdROPnOTE_listing_countT_C                              0xdddd03e4
-#define ifciDtYPEdROPnOTE_listing_blob_C                                0xdddd03e5
-#define ifciDtYPEdROPnOTE_listing_countTstrz_C                          0xdddd03e6
-#define ifciDtYPEdROPnOTE_listing_listingVSP_C                          0xdddd03e7
+#define ifcIDtYPEdROPnOTE_listing_countT_C                              0xdddd03e4
+#define ifcIDtYPEdROPnOTE_listing_blob_C                                0xdddd03e5
+#define ifcIDtYPEdROPnOTE_listing_countTstrz_C                          0xdddd03e6
+#define ifcIDtYPEdROPnOTE_listing_listingVSP_C                          0xdddd03e7
 
-#define ifciDtYPEdROPnOTE_listingOfSet_countT_C                              0xdddd03e4
-#define ifciDtYPEdROPnOTE_listingOfSet_blob_C                                0xdddd03e5
-#define ifciDtYPEdROPnOTE_listingOfSet_countTstrz_C                          0xdddd03e6
-#define ifciDtYPEdROPnOTE_listingOfSet_listingVSP_C                          0xdddd03e7
+#define ifcIDtYPEdROPnOTE_listingOfSet_countT_C                              0xdddd03e4
+#define ifcIDtYPEdROPnOTE_listingOfSet_blob_C                                0xdddd03e5
+#define ifcIDtYPEdROPnOTE_listingOfSet_countTstrz_C                          0xdddd03e6
+#define ifcIDtYPEdROPnOTE_listingOfSet_listingVSP_C                          0xdddd03e7
 
-#define ifciDtYPEdROPnOTE_list_countT_C                              0xdddd03e4
-#define ifciDtYPEdROPnOTE_list_blob_C                                0xdddd03e5
-#define ifciDtYPEdROPnOTE_list_countTstrz_C                          0xdddd03e6
-#define ifciDtYPEdROPnOTE_list_listingVSP_C                          0xdddd03e7
+#define ifcIDtYPEdROPnOTE_list_countT_C                              0xdddd03e4
+#define ifcIDtYPEdROPnOTE_list_blob_C                                0xdddd03e5
+#define ifcIDtYPEdROPnOTE_list_countTstrz_C                          0xdddd03e6
+#define ifcIDtYPEdROPnOTE_list_listingVSP_C                          0xdddd03e7
 
-#define ifciDtYPEdROPnOTE_listOfSet_countT_C                              0xdddd03e4
-#define ifciDtYPEdROPnOTE_listOfSet_blob_C                                0xdddd03e5
-#define ifciDtYPEdROPnOTE_listOfSet_countTstrz_C                          0xdddd03e6
-#define ifciDtYPEdROPnOTE_listOfSet_listingVSP_C                          0xdddd03e7
+#define ifcIDtYPEdROPnOTE_listOfSet_countT_C                              0xdddd03e4
+#define ifcIDtYPEdROPnOTE_listOfSet_blob_C                                0xdddd03e5
+#define ifcIDtYPEdROPnOTE_listOfSet_countTstrz_C                          0xdddd03e6
+#define ifcIDtYPEdROPnOTE_listOfSet_listingVSP_C                          0xdddd03e7
 
-#define ifciDtYPEdROPnOTE_depositDetailS                                0xdddd03ec
-#define ifciDtYPEdROPnOTE_bookHeadS                                     0xdddd03ed
-#define ifciDtYPEdROPnOTE_book0C                                        0xdddd03ee
-#define ifciDtYPEdROPnOTE_bookC                                         0xdddd03ef
-#define ifciDtYPEdROPnOTE_booksC                                        0xdddd03f0
-#define ifciDtYPEdROPnOTE_accountS                                      0xdddd03f1
-#define ifciDtYPEdROPnOTE_refC                                          0xdddd03f2
-#define ifciDtYPEdROPnOTE_httpReplyRefC                                 0xdddd03f3
-#define ifciDtYPEdROPnOTE_pbRefC                                        0xdddd03f4
-#define ifciDtYPEdROPnOTE_fieldEditParamOutC                            0xdddd03f5
-#define ifciDtYPEdROPnOTE_boolC                                         0xdddd03f6
-#define ifciDtYPEdROPnOTE_equal_countT_C                                0xdddd03f7
-#define ifciDtYPEdROPnOTE_notEqual_countT_C                             0xdddd03f8
-#define ifciDtYPEdROPnOTE_below_countT_C                                0xdddd03f9
-#define ifciDtYPEdROPnOTE_above_countT_C                                0xdddd03fa
-#define ifciDtYPEdROPnOTE_in_countT_C                                   0xdddd03fb
-#define ifciDtYPEdROPnOTE_out_countT_C                                  0xdddd03fc
-#define ifciDtYPEdROPnOTE_equal_byteTstrz_C                             0xdddd03fd
-#define ifciDtYPEdROPnOTE_notEqual_byteTstrz_C                          0xdddd03fe
-#define ifciDtYPEdROPnOTE_below_byteTstrz_C                             0xdddd03ff
-#define ifciDtYPEdROPnOTE_above_byteTstrz_C                             0xdddd0400
-#define ifciDtYPEdROPnOTE_in_byteTstrz_C                                0xdddd0401
-#define ifciDtYPEdROPnOTE_out_byteTstrz_C                               0xdddd0402
-#define ifciDtYPEdROPnOTE_equal_countTstrz_C                            0xdddd0403
-#define ifciDtYPEdROPnOTE_notEqual_countTstrz_C                         0xdddd0404
-#define ifciDtYPEdROPnOTE_below_countTstrz_C                            0xdddd0405
-#define ifciDtYPEdROPnOTE_above_countTstrz_C                            0xdddd0406
-#define ifciDtYPEdROPnOTE_in_countTstrz_C                               0xdddd0407
-#define ifciDtYPEdROPnOTE_out_countTstrz_C                              0xdddd0408
-#define ifciDtYPEdROPnOTE_link_listC_C                                  0xdddd0409
-#define ifciDtYPEdROPnOTE_blobSP                                        0xdddd040a
-#define ifciDtYPEdROPnOTE_listingSP                                     0xdddd040b
-#define ifciDtYPEdROPnOTE_countStrzSP                                   0xdddd040c
-#define ifciDtYPEdROPnOTE_countSP                                       0xdddd040d
-#define ifciDtYPEdROPnOTE_blobVSP                                       0xdddd040e
-#define ifciDtYPEdROPnOTE_listingVSP                                    0xdddd040f
-#define ifciDtYPEdROPnOTE_countStrzVSP                                  0xdddd0410
-#define ifciDtYPEdROPnOTE_countVSP                                      0xdddd0411
-#define ifciDtYPEdROPnOTE_datumS                                        0xdddd0412
-#define ifciDtYPEdROPnOTE_aptC                                          0xdddd0413
-#define ifciDtYPEdROPnOTE_parm_tmAdamMainF_S                            0xdddd0414
-#define ifciDtYPEdROPnOTE_slabS                                         0xdddd0415
-#define ifciDtYPEdROPnOTE_strikeS                                       0xdddd0416
-#define ifciDtYPEdROPnOTE_sadamC                                        0xdddd0417
-#define ifciDtYPEdROPnOTE_gridS                                         0xdddd0418
-#define ifciDtYPEdROPnOTE_paperS                                        0xdddd0419
-#define ifciDtYPEdROPnOTE_pelC                                          0xdddd041a
-#define ifciDtYPEdROPnOTE_pelS                                          0xdddd041b
-#define ifciDtYPEdROPnOTE_spaceC                                        0xdddd041c
-#define ifciDtYPEdROPnOTE_spaceS                                        0xdddd041d
-#define ifciDtYPEdROPnOTE_displayC                                      0xdddd041e
-#define ifciDtYPEdROPnOTE_deviceC                                       0xdddd041f
-#define ifciDtYPEdROPnOTE_associateC                                    0xdddd0420
-#define ifciDtYPEdROPnOTE_assViewStqS                                   0xdddd0421
-#define ifciDtYPEdROPnOTE_assViewC                                      0xdddd0422
-#define ifciDtYPEdROPnOTE_assViewEyeS                                   0xdddd0423
-#define ifciDtYPEdROPnOTE_branchS                                       0xdddd0424
-#define ifciDtYPEdROPnOTE_jotC                                          0xdddd0425
-#define ifciDtYPEdROPnOTE_barryC                                        0xdddd0426
-#define ifciDtYPEdROPnOTE_poolRegistrationS                             0xdddd0427
-#define ifciDtYPEdROPnOTE_poopC                                         0xdddd0428
-#define ifciDtYPEdROPnOTE_pageC                                         0xdddd0429
-#define ifciDtYPEdROPnOTE_pageReleaseC                                  0xdddd042a
-#define ifciDtYPEdROPnOTE_cloudInfoS                                    0xdddd042b
-#define ifciDtYPEdROPnOTE_napkinsC                                      0xdddd042c
-#define ifciDtYPEdROPnOTE_keyValuePairsC                                0xdddd042d
-#define ifciDtYPEdROPnOTE_inOutFrameC                                   0xdddd042e
-#define ifciDtYPEdROPnOTE_fileWindowC                                   0xdddd042f
-#define ifciDtYPEdROPnOTE_fileWindowsC                                  0xdddd0430
-#define ifciDtYPEdROPnOTE_patternC                                      0xdddd0431
-#define ifciDtYPEdROPnOTE_fileNameC                                     0xdddd0432
-#define ifciDtYPEdROPnOTE_diskFindHandleS                               0xdddd0433
-#define ifciDtYPEdROPnOTE_cachedS                                       0xdddd0434
-#define ifciDtYPEdROPnOTE_cacheC                                        0xdddd0435
-#define ifciDtYPEdROPnOTE_taskDrivenServerJobS                          0xdddd0436
-#define ifciDtYPEdROPnOTE_bytesC                                        0xdddd0437
-#define ifciDtYPEdROPnOTE_jotFilePartC                                  0xdddd0438
-#define ifciDtYPEdROPnOTE_jotFileSoilC                                  0xdddd0439
-#define ifciDtYPEdROPnOTE_jotFilesC                                     0xdddd043a
-#define ifciDtYPEdROPnOTE_hoverC                                        0xdddd043b
-#define ifciDtYPEdROPnOTE_funnelHornC                                   0xdddd043c
-#define ifciDtYPEdROPnOTE_nicNamesAllowedStripeWebHookNotificationsC    0xdddd043d
-#define ifciDtYPEdROPnOTE_listOfSetC                                    0xdddd043e
-#define ifciDtYPEdROPnOTE_stateListingSetS                              0xdddd043f
+#define ifcIDtYPEdROPnOTE_depositDetailS                                0xdddd03ec
+#define ifcIDtYPEdROPnOTE_bookHeadS                                     0xdddd03ed
+#define ifcIDtYPEdROPnOTE_book0C                                        0xdddd03ee
+#define ifcIDtYPEdROPnOTE_bookC                                         0xdddd03ef
+#define ifcIDtYPEdROPnOTE_booksC                                        0xdddd03f0
+#define ifcIDtYPEdROPnOTE_accountS                                      0xdddd03f1
+#define ifcIDtYPEdROPnOTE_refC                                          0xdddd03f2
+#define ifcIDtYPEdROPnOTE_httpReplyRefC                                 0xdddd03f3
+#define ifcIDtYPEdROPnOTE_pbRefC                                        0xdddd03f4
+#define ifcIDtYPEdROPnOTE_fieldEditParamOutC                            0xdddd03f5
+#define ifcIDtYPEdROPnOTE_boolC                                         0xdddd03f6
+#define ifcIDtYPEdROPnOTE_equal_countT_C                                0xdddd03f7
+#define ifcIDtYPEdROPnOTE_notEqual_countT_C                             0xdddd03f8
+#define ifcIDtYPEdROPnOTE_below_countT_C                                0xdddd03f9
+#define ifcIDtYPEdROPnOTE_above_countT_C                                0xdddd03fa
+#define ifcIDtYPEdROPnOTE_in_countT_C                                   0xdddd03fb
+#define ifcIDtYPEdROPnOTE_out_countT_C                                  0xdddd03fc
+#define ifcIDtYPEdROPnOTE_equal_byteTstrz_C                             0xdddd03fd
+#define ifcIDtYPEdROPnOTE_notEqual_byteTstrz_C                          0xdddd03fe
+#define ifcIDtYPEdROPnOTE_below_byteTstrz_C                             0xdddd03ff
+#define ifcIDtYPEdROPnOTE_above_byteTstrz_C                             0xdddd0400
+#define ifcIDtYPEdROPnOTE_in_byteTstrz_C                                0xdddd0401
+#define ifcIDtYPEdROPnOTE_out_byteTstrz_C                               0xdddd0402
+#define ifcIDtYPEdROPnOTE_equal_countTstrz_C                            0xdddd0403
+#define ifcIDtYPEdROPnOTE_notEqual_countTstrz_C                         0xdddd0404
+#define ifcIDtYPEdROPnOTE_below_countTstrz_C                            0xdddd0405
+#define ifcIDtYPEdROPnOTE_above_countTstrz_C                            0xdddd0406
+#define ifcIDtYPEdROPnOTE_in_countTstrz_C                               0xdddd0407
+#define ifcIDtYPEdROPnOTE_out_countTstrz_C                              0xdddd0408
+#define ifcIDtYPEdROPnOTE_link_listC_C                                  0xdddd0409
+#define ifcIDtYPEdROPnOTE_blobSP                                        0xdddd040a
+#define ifcIDtYPEdROPnOTE_listingSP                                     0xdddd040b
+#define ifcIDtYPEdROPnOTE_countStrzSP                                   0xdddd040c
+#define ifcIDtYPEdROPnOTE_countSP                                       0xdddd040d
+#define ifcIDtYPEdROPnOTE_blobVSP                                       0xdddd040e
+#define ifcIDtYPEdROPnOTE_listingVSP                                    0xdddd040f
+#define ifcIDtYPEdROPnOTE_countStrzVSP                                  0xdddd0410
+#define ifcIDtYPEdROPnOTE_countVSP                                      0xdddd0411
+#define ifcIDtYPEdROPnOTE_datumS                                        0xdddd0412
+#define ifcIDtYPEdROPnOTE_aptC                                          0xdddd0413
+#define ifcIDtYPEdROPnOTE_parm_tmAdamMainF_S                            0xdddd0414
+#define ifcIDtYPEdROPnOTE_slabS                                         0xdddd0415
+#define ifcIDtYPEdROPnOTE_strikeS                                       0xdddd0416
+#define ifcIDtYPEdROPnOTE_sadamC                                        0xdddd0417
+#define ifcIDtYPEdROPnOTE_gridS                                         0xdddd0418
+#define ifcIDtYPEdROPnOTE_paperS                                        0xdddd0419
+#define ifcIDtYPEdROPnOTE_pelC                                          0xdddd041a
+#define ifcIDtYPEdROPnOTE_pelS                                          0xdddd041b
+#define ifcIDtYPEdROPnOTE_spaceC                                        0xdddd041c
+#define ifcIDtYPEdROPnOTE_spaceS                                        0xdddd041d
+#define ifcIDtYPEdROPnOTE_displayC                                      0xdddd041e
+#define ifcIDtYPEdROPnOTE_deviceC                                       0xdddd041f
+#define ifcIDtYPEdROPnOTE_associateC                                    0xdddd0420
+#define ifcIDtYPEdROPnOTE_assViewStqS                                   0xdddd0421
+#define ifcIDtYPEdROPnOTE_assViewC                                      0xdddd0422
+#define ifcIDtYPEdROPnOTE_assViewEyeS                                   0xdddd0423
+#define ifcIDtYPEdROPnOTE_branchS                                       0xdddd0424
+#define ifcIDtYPEdROPnOTE_jotC                                          0xdddd0425
+#define ifcIDtYPEdROPnOTE_barryC                                        0xdddd0426
+#define ifcIDtYPEdROPnOTE_poolRegistrationS                             0xdddd0427
+#define ifcIDtYPEdROPnOTE_poopC                                         0xdddd0428
+#define ifcIDtYPEdROPnOTE_pageC                                         0xdddd0429
+#define ifcIDtYPEdROPnOTE_pageReleaseC                                  0xdddd042a
+#define ifcIDtYPEdROPnOTE_cloudInfoS                                    0xdddd042b
+#define ifcIDtYPEdROPnOTE_napkinsC                                      0xdddd042c
+#define ifcIDtYPEdROPnOTE_keyValuePairsC                                0xdddd042d
+#define ifcIDtYPEdROPnOTE_inOutFrameC                                   0xdddd042e
+#define ifcIDtYPEdROPnOTE_fileWindowC                                   0xdddd042f
+#define ifcIDtYPEdROPnOTE_fileWindowsC                                  0xdddd0430
+#define ifcIDtYPEdROPnOTE_patternC                                      0xdddd0431
+#define ifcIDtYPEdROPnOTE_fileNameC                                     0xdddd0432
+#define ifcIDtYPEdROPnOTE_diskFindHandleS                               0xdddd0433
+#define ifcIDtYPEdROPnOTE_cachedS                                       0xdddd0434
+#define ifcIDtYPEdROPnOTE_cacheC                                        0xdddd0435
+#define ifcIDtYPEdROPnOTE_taskDrivenServerJobS                          0xdddd0436
+#define ifcIDtYPEdROPnOTE_bytesC                                        0xdddd0437
+#define ifcIDtYPEdROPnOTE_jotFilePartC                                  0xdddd0438
+#define ifcIDtYPEdROPnOTE_jotFileSoilC                                  0xdddd0439
+#define ifcIDtYPEdROPnOTE_jotFilesC                                     0xdddd043a
+#define ifcIDtYPEdROPnOTE_hoverC                                        0xdddd043b
+#define ifcIDtYPEdROPnOTE_funnelHornC                                   0xdddd043c
+#define ifcIDtYPEdROPnOTE_nicNamesAllowedStripeWebHookNotificationsC    0xdddd043d
+#define ifcIDtYPEdROPnOTE_listOfSetC                                    0xdddd043e
+#define ifcIDtYPEdROPnOTE_stateListingSetS                              0xdddd043f
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_01_C                         0xdddd0440
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_f_C                          0xdddd0441
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_e_C                          0xdddd0442
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_d_C                          0xdddd0443
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_c_C                          0xdddd0444
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_b_C                          0xdddd0445
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_a_C                          0xdddd0446
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_9_C                          0xdddd0447
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_8_C                          0xdddd0448
+#define ifcIDtYPEdROPnOTE_tlsAllocPoolC                                 0xdddd0449
+
 
 /*3*/
-#define ifciDtYPEdROPnOTE_min     0xdddd033e
-#define ifciDtYPEdROPnOTE_max     0xdddd043f
+#define ifcIDtYPEdROPnOTE_min     0xdddd033e
+#define ifcIDtYPEdROPnOTE_max     0xdddd0449
 
 
 //
@@ -21000,14 +21011,19 @@ for each previous absentee
 /*
 */
 /**/
-/*1*//*CBtLSdEFAULT*//*1*/
+/*1*//*CBtLSmAIN*//*1*/
 
 //20120404: DOUBLED TO ( TOCK << 3 ) FROM ( TOCK << 2 )
 //20160526@2157: DOUBLED TO ( TOCK << 4 ) FROM ( TOCK << 3 ) BECAUSE ADDED GRAB LIST TO EXCEPTION REPORT
 //20191010@0755: DOUBLED TO ( TOCK << 5 ) BECAUSE booksC::writeF EXHAUSTED TLS WHILE DELETING bookC INSTANCE
 
-#define CBtLSdEFAULT ( TOCK << 5 )
-
+//#define CBtLSmAIN ( TOCK << 5 )
+//#define CBtLSmAIN ( TUCK << 1 )
+//    #define CBtLSmAIN ( TUCK << 4 )
+//#define CBtLSmAIN ( TOCK << 0 )
+//#define CBtLSmAIN ( TOCK >> 2 )
+//#define CBtLSmAIN ( TOCK >> 1 )
+#define CBtLSmAIN ( TOCK >> 0 )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -29603,8 +29619,8 @@ can be used for sCountC as well as measureT and sCountT and countT
         {                                                                                                                                       \
             TINSL                                                                                                                               \
             _IO_                                                                                                                                \
-            countT idType = ifciDtYPEdROPnOTE_##typeP ;                                                                                         \
-            if( idType == ifciDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMOiD( 0x1 ) ; }                             \
+            countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
+            if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMOiD( 0x1 ) ; }                             \
                                                                                                                                                 \
             if( pvP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
@@ -29634,7 +29650,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             dropNoteS* pNote = !tinP.pPoolUse ? 0 : PUSE.pDropNoteF( tinP , (byteT*)pvn ) ;                                                     \
             if( pNote )                                                                                                                         \
             {                                                                                                                                   \
-                pNote->idType       = ifciDtYPEdROPnOTE_##typeP ;                                                                               \
+                pNote->idType       = ifcIDtYPEdROPnOTE_##typeP ;                                                                               \
                 pNote->cbRequested  = pNote->cbUsedReally = cbaFoot + cbP ;                                                                     \
             }                                                                                                                                   \
             __Z( pvn ) ;                                                                                                                        \
@@ -29717,8 +29733,8 @@ can be used for sCountC as well as measureT and sCountT and countT
         {                                                                                                                                       \
             TINSL                                                                                                                               \
             _IO_                                                                                                                                \
-            countT idType = ifciDtYPEdROPnOTE_##typeP ;                                                                                         \
-            if( idType == ifciDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMOiD( 0xc ) ; }                             \
+            countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
+            if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMOiD( 0xc ) ; }                             \
                                                                                                                                                 \
             if( pvP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
@@ -33623,8 +33639,8 @@ it is illegal to refer to this symbol in the definition of an adam
         {                                                                                                                                       \
             TINSL                                                                                                                               \
             _IO_                                                                                                                                \
-            countT idType = ifciDtYPEdROPnOTE_##typeP ;                                                                                         \
-            if( idType == ifciDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
+            countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
+            if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
             if( pvP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
                 if( !tinP.pPoolUse ) { BLAMMO ; }                                                                                               \
@@ -33651,7 +33667,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 dropNoteS* pNote = PUSE.pDropNoteF( tinP , (byteT*)pvn ) ;                                                                      \
                 if( pNote )                                                                                                                     \
                 {                                                                                                                               \
-                    pNote->idType       = ifciDtYPEdROPnOTE_##typeP ;                                                                           \
+                    pNote->idType       = ifcIDtYPEdROPnOTE_##typeP ;                                                                           \
                     pNote->cbRequested  = pNote->cbUsedReally = cbaFoot + cbP ;                                                                 \
                 }                                                                                                                               \
             }                                                                                                                                   \
@@ -33731,8 +33747,8 @@ it is illegal to refer to this symbol in the definition of an adam
         {                                                                                                                                       \
             TINSL                                                                                                                               \
             _IO_                                                                                                                                \
-            countT idType = ifciDtYPEdROPnOTE_##typeP ;                                                                                         \
-            if( idType == ifciDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
+            countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
+            if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
             if( pvP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
                 if( !tinP.pPoolUse ) { BLAMMO ; }                                                                                               \
