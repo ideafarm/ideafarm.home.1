@@ -13,8 +13,8 @@
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     tinP.ta.pushed.u.listWalk.cbf.idNestP -- ;
 
-    tinP.tlsDelF( LF , *(byteT**)&pczName ) ;
-    //{ puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczName ) ; }
+    //tinP.tlsDelF( LF , *(byteT**)&pczName ) ;
+    { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczName ) ; }
 
     if( bClearPoolRecord ) tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
 
@@ -440,7 +440,7 @@
     if( pczName[ 0 ] == LISTnAMEsYS_ROOT && pczName[ 1 ] == LISTnAMEsYS_ROOTsYSTEM3 && pczName[ 2 ] == LISTnAMEsYS_FIELDvALUEiNDEX && pczName[ 3 ] && !pczName[ 4 ] && !tinP.ta.retained.u.listWalk.walk.pPoolRecord )
     ZE( boolT , bClearPoolRecord ) ;
 
-    nameF( tinP , pczName ) ; //20140111@1810: NOW ALLOCATED IN TLS: { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; ___( pczName ) ; }
+    nameF( tinP , pczName ) ; //20240913@2129: BACK TO ALLOC IN poolC IN ORDER TO MINIMIZE USE OF TLS ; 20140111@1810: NOW ALLOCATED IN TLS: { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; ___( pczName ) ; }
     ZE( countT* , pczName ) ;
 
     tinP.ta.pushed.u.listWalk.cbf.idNestP ++ ;

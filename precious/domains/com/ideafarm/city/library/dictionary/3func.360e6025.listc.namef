@@ -27,8 +27,9 @@
     {
     if( pczNameP )
 
-    pczNameP = (countT*)tinP.tlsNewF( LF , sizeof( countT ) * ( ccName + 1 ) ) ;
-    //{ puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE.newF( tinP , LF , *(byteT**)&pczNameP , sizeof( countT ) * ( ccName + 1 ) ) ; ___( pczNameP ) ; } // CALLER SHOULD TAG AND MUST ENSURE THAT ADAMtEMP POOL IS USED WHEN TAGGING
+    //pczNameP = (countT*)tinP.tlsNewF( LF , sizeof( countT ) * ( ccName + 1 ) ) ;
+    { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE.newF( tinP , LF , *(byteT**)&pczNameP , sizeof( countT ) * ( ccName + 1 ) ) ; ___( pczNameP ) ; } // CALLER SHOULD TAG AND MUST ENSURE THAT ADAMtEMP POOL IS USED WHEN TAGGING
+    //20240913@2129: NOW BACK TO ALLOC IN poolC IN ORDER TO MINIMIZE USE OF TLS
 
     }
         }
