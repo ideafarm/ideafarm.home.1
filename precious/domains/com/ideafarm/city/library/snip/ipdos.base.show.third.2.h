@@ -29331,7 +29331,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS         tinEarlyLate ;
  countT       rc ;
  tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
-// tlsAllocStackExp_2_C tlsForMe ;
+ tlsAllocStackExp_6_C tlsForMe ;
  tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
 
  ~tlsStackFrameS( voidT ) ;
@@ -29385,7 +29385,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS         tinEarlyLate ;
  countT       rc ;
  tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
-// tlsAllocStackExp_2_C tlsForMe ;
+ tlsAllocStackExp_6_C tlsForMe ;
  tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
 
  ~tlsStackFrameNoTlsS( voidT ) ;

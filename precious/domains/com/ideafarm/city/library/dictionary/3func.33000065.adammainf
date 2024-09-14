@@ -98,6 +98,7 @@
                     }
                         ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN11 ) ;
                         }
+                            DELzOMBIE( pzPoolAdamTemp ) ;
                             // ALL poolC INSTANCES REGISTERED IN tinP ARE DESTROYED HERE (IN DT'OR FOR poolC ADAM TEMP) IF NOT ALREADY DESTROYED
                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN01 ) ;
 
@@ -864,11 +865,17 @@
 
                             cryC cry03( TOCK + 0x03 ) ;
                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN7 ) ;
-                            #endif
-                                poolC poolAdamTemp( tinP , TAG( TAGiDnULL ) , ostoPoolAdamTemp , sizeof( countT ) , flPOOLc_null  ) ; //MUST BE WOTH       20221228@1430: ADDED flPOOLc_DOnOTbLOCK (CHANGE OF PERSONALITY) SO THAT CODE CAN FAIL GRACEFULLY IF A DROP CANNOT BE ALLOCATED
-                            #else
-                                poolC poolAdamTemp( tinP , TAG( TAGiDnULL ) , ostoPoolAdamTemp , sizeof( countT ) , flPOOLc_NOTES ) ; //MUST BE WOTH       20221228@1430: ADDED flPOOLc_DOnOTbLOCK (CHANGE OF PERSONALITY) SO THAT CODE CAN FAIL GRACEFULLY IF A DROP CANNOT BE ALLOCATED
-                            #if defined( ENABLEdROPnOTES )
+                            }
+                                #endif
+                                    new( 0 , tinP , pbPoolAdamTemp , sizeof pbPoolAdamTemp ) poolC( tinP , TAG( TAGiDnULL ) , ostoPoolAdamTemp , sizeof( countT ) , flPOOLc_null  ) ; //MUST BE WOTH       20221228@1430: ADDED flPOOLc_DOnOTbLOCK (CHANGE OF PERSONALITY) SO THAT CODE CAN FAIL GRACEFULLY IF A DROP CANNOT BE ALLOCATED
+                                #else
+                                    new( 0 , tinP , pbPoolAdamTemp , sizeof pbPoolAdamTemp ) poolC( tinP , TAG( TAGiDnULL ) , ostoPoolAdamTemp , sizeof( countT ) , flPOOLc_NOTES ) ; //MUST BE WOTH       20221228@1430: ADDED flPOOLc_DOnOTbLOCK (CHANGE OF PERSONALITY) SO THAT CODE CAN FAIL GRACEFULLY IF A DROP CANNOT BE ALLOCATED
+                                #if defined( ENABLEdROPnOTES )
+
+                                tlsAllocStackExp_b_C tlsForMe( tinP ) ;
+                            {
+                            poolC* pzPoolAdamTemp = (poolC*)pbPoolAdamTemp ;
+                            byteT  pbPoolAdamTemp[ sizeof( poolC ) ] ;
 
                             //20221228@1601: flPOOLc_DOnOTbLOCK DEFINED BUT CANNOT BE USED BECAUSE CODE ASSUMES THAT ALLOCATION WILL SUCCEED, AND USING THIS NEW FLAG BREAKS THAT CODE (FOR EXAMPLE, ADAM FAILS SO CANNOT EVEN BUILD EVE TO FINISH BUILDING)
 
@@ -1005,6 +1012,7 @@
             OStEXTcLEAR( _ostoTmp )
             osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;
             tlsBlobC _tlsBlobStatRangerTag( tinP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;
+            tlsAllocStackExp_7_C tlsForMe( tinP ) ;
             OStEXTAK( _ostoTmp , "RangerTag:threadStack.tm1F.1" )
             OStEXTAK( _ostoTmp , "!ifc" )
             OStEXT(   _ostoTmp , 0x80 )
