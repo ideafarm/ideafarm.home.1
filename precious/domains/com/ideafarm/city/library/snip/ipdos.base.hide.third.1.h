@@ -21010,19 +21010,20 @@ for each previous absentee
 /*
 */
 /**/
-/*1*//*CBtLSmAIN*//*1*/
+/*1*//*CB tLSmAIN*//*1*/
 
 //20120404: DOUBLED TO ( TOCK << 3 ) FROM ( TOCK << 2 )
 //20160526@2157: DOUBLED TO ( TOCK << 4 ) FROM ( TOCK << 3 ) BECAUSE ADDED GRAB LIST TO EXCEPTION REPORT
 //20191010@0755: DOUBLED TO ( TOCK << 5 ) BECAUSE booksC::writeF EXHAUSTED TLS WHILE DELETING bookC INSTANCE
 
-//#define CBtLSmAIN ( TOCK << 5 )
-//#define CBtLSmAIN ( TUCK << 1 )
-//    #define CBtLSmAIN ( TUCK << 4 )
-//#define CBtLSmAIN ( TOCK << 0 )
-//#define CBtLSmAIN ( TOCK >> 2 )
-//#define CBtLSmAIN ( TOCK >> 1 )
-#define CBtLSmAIN ( TOCK >> 0 )
+//#define CB tLSmAIN ( TOCK << 5 )
+//#define CB tLSmAIN ( TUCK << 1 )
+//    #define CB tLSmAIN ( TUCK << 4 )
+//#define CB tLSmAIN ( TOCK << 0 )
+//#define CB tLSmAIN ( TOCK >> 2 )
+//#define CB tLSmAIN ( TOCK >> 1 )
+//G:#define CB tLSmAIN ( TOCK >> 0 )
+//#define CB tLSmAIN ( TOCK >> 8 )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.

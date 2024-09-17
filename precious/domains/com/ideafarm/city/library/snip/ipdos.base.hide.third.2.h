@@ -29320,7 +29320,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
 /*1*/struct _export tlsStackFrameS/*1*/
 {
- //byteT        pbTls[ CBtLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+ //byteT        pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
  //const countT fingerTlsEnd ;
  tallyC       tallyKid ;
  //zapC         zap_pbTls ;
@@ -29330,9 +29330,9 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS*        pTin ;
  tinS         tinEarlyLate ;
  countT       rc ;
- tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
- tlsAllocStackExp_6_C tlsForMe ;
- tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+// tlsAllocStackExp_01_C tlsForMe ;
+// tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
+// tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
 
  ~tlsStackFrameS( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameS.dt_tlsStackFrameS!||
@@ -29368,7 +29368,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
 
 //I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
-//U::RENAME ME TO tlsStackFrameMainS
+//U::RENAME ME TO tlsStackFrameS
 
 //CODEsYNCH: 00300a7 003007f
 
@@ -29384,9 +29384,9 @@ it is illegal to modify any member other than pc Utility in the definition of an
  tinS*        pTin ;
  tinS         tinEarlyLate ;
  countT       rc ;
- tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
- tlsAllocStackExp_6_C tlsForMe ;
- tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+// tlsAllocStackExp_01_C tlsForMe ;
+// tlsBlobC     tlsBlobTellInfoSysExceptionLath ;
+// tlsBlobC     tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
 
  ~tlsStackFrameNoTlsS( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTlsS.dt_tlsStackFrameNoTlsS!||
@@ -41306,7 +41306,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     byteT                           pb_bOsCallIMonitor[   CBzOMBIEbATONc ] ;
     byteT                           pb_bOsCallISharedMem[ CBzOMBIEbATONc ] ;
     byteT                           pb_bPoolRpt[          CBzOMBIEbATONc ] ;
-    byteT                           pbTlsMain[  sizeof( tlsHeaderS ) + CBtLSmAIN ] ;
+//    byteT                           pbTlsMain[  sizeof( tlsHeaderS ) + CB tLSmAIN ] ;
     countT                          pcDebug[ TUCK << 1 ] ; //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
     osTextT                         postDllsLoaded[ TOCK ] ;
     osTextT                         postPathHomeTmp[ TUCK ] ;
