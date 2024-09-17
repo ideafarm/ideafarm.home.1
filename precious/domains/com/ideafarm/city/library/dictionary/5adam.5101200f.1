@@ -33,13 +33,19 @@ etThread.traceF( tinP , T("ok") ) ;
         cDone += cDo ;
 
         ;
-                : 1
-                ? TUCK >> 4
-            : cAlive < 900
-            ? TUCK
-        countT cDo = cAlive < TUCK << 1
+            : 1
+            ? 0x3f0
+        countT cDo = cAlive < 0x3f0
+
+        //;
+        //        : 1
+        //        ? TUCK >> 4
+        //    : cAlive < 900
+        //    ? TUCK
+        //countT cDo = cAlive < TUCK << 1
+        //G:
     {
-    while( !ether )
+    while( !ether && cAlive < CwORKERS )
     ZE( countT , cDone ) ;
 
 #else
@@ -57,7 +63,7 @@ etThread.traceF( tinP , T("ok") ) ;
     while( cDo -- )
     countT cDo = CwORKERS ;
 
-#if !defined( NEVERdEFINED )
+#if defined( NEVERdEFINED )
 
 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 ZE( countT , cAlive ) ;
@@ -74,7 +80,7 @@ DONE( tmWorkF )
 if( pTaskP && pTaskP->c1 )
 TASK( tmWorkF )
 
-#define CwORKERS 1010
+#define CwORKERS 0x3f2
 //B:#define CwORKERS 1050
 //B:#define CwORKERS 1100
 //G:#define CwORKERS 1010
