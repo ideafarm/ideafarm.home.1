@@ -111,10 +111,10 @@ TELL( "preparing to accept chat clients" ) ;
 eventS::pBatClass = new( 0 , tinP , LF ) batonC( tinP , TAG( TAGiDnULL ) ) ;
 TELL( "preloading events" ) ;
 
-etThread.osThreadF( tinP , countTC() , tmPourF  , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stNnPrivate2A , (countT)&stNnPrivate2B ) ;
-etThread.osThreadF( tinP , countTC() , tmPourF  , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stNnPrivate1A , (countT)&stNnPrivate1B ) ;
-etThread.osThreadF( tinP , countTC() , tmCatchF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stNnPrivate2A , ifcPORToLD2_ENABLEpRIVATEhTTP2 ) ;
-etThread.osThreadF( tinP , countTC() , tmCatchF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stNnPrivate1A , ifcPORToLD2_ENABLEpRIVATEhTTP1 ) ;
+etThread.osThreadF( tinP , countTC() , tmPourF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stNnPrivate2A , (countT)&stNnPrivate2B ) ;
+etThread.osThreadF( tinP , countTC() , tmPourF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stNnPrivate1A , (countT)&stNnPrivate1B ) ;
+etThread.osThreadF( tinP , countTC() , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stNnPrivate2A , ifcPORToLD2_ENABLEpRIVATEhTTP2 ) ;
+etThread.osThreadF( tinP , countTC() , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stNnPrivate1A , ifcPORToLD2_ENABLEpRIVATEhTTP1 ) ;
 
 etThread.ifcCallWhenFiredF( tinP , callWhenFiredF , &cArgWhenFired ) ;
 countT cArgWhenFired = (countT)&c8p ;
@@ -1685,7 +1685,7 @@ DEL( pso ) ; //U::
                                     etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
                                     timeE2 = timeE1 = 0 ;
 
-                                    etThread.osThreadF( tinP , countTC() , tmPayBirdDogsF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)(strokeS*)psttOldC( tinP , etThread , tPrepaycodeValue ) ) ;
+                                    etThread.osThreadF( tinP , countTC() , tmPayBirdDogsF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)(strokeS*)psttOldC( tinP , etThread , tPrepaycodeValue ) ) ;
                                     flagsAlert |= flALERT_BIRDdOGSpAID ;
                                     flagsAlert |=  flALERT_PREPAYCODEaCCEPTED1 ;
                                     flagsAlert &= ~flALERT_PREPAYCODErEJECTED ;
@@ -2253,7 +2253,7 @@ voidT blabF( tinS& tinP , etherC& etThread , strokeS*& psttP , const byteT* cons
         ZE( strokeS* , pstt1e ) ;
         //tinP.zEtScratch->strokeF( tinP , T("psttKVdecoded: \"")+T(psttKVdecoded)+T("\"\r\n") ) ;
 
-        //U: COMMENTED OUT CAUSE HACKERS CAN OVERLOAD: tinP.zEtScratch->osThreadF( tinP , countTC() , tmEmailDataF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)(strokeS*)psttOldC( tinP , *tinP.zEtScratch , psttName ) , (countT)psttKVdecoded , (countT)(strokeS*)psttOldC( tinP , *tinP.zEtScratch , T(nicNamePeerP) ) ) ;
+        //U: COMMENTED OUT CAUSE HACKERS CAN OVERLOAD: tinP.zEtScratch->osThreadF( tinP , countTC() , tmEmailDataF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)(strokeS*)psttOldC( tinP , *tinP.zEtScratch , psttName ) , (countT)psttKVdecoded , (countT)(strokeS*)psttOldC( tinP , *tinP.zEtScratch , T(nicNamePeerP) ) ) ;
         tinP.zEtScratch->strUrlDecodeF( tinP , psttKVdecoded , psttKV ) ; ___( psttKVdecoded ) ;
         ZE( strokeS* , psttKVdecoded ) ;
     {
@@ -2457,7 +2457,7 @@ voidT blabF( tinS& tinP , etherC& etThread , strokeS*& psttP , const byteT* cons
     TN( tColonWhite , ": " ) ;
     //etText.ifcSayF( tinP , T("readRequestF/etThread:")+TF1(etThread)+T("/etScratch:")+TF1(etScratch)+T("/999") , flSAY_APPEND | flSAY_LOG ) ;
 
-    etThread.osThreadF( tinP , countTC() , tmPeerNameF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)pnnPeer , (countT)&bnnPeerP ) ;
+    etThread.osThreadF( tinP , countTC() , tmPeerNameF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pnnPeer , (countT)&bnnPeerP ) ;
     if( pnnPeer ) *pnnPeer = nicNamePeerP ;
     etThread.newF( tinP , LF , pnnPeer ) ; ___( pnnPeer ) ;
     ZE( nicNameC* , pnnPeer ) ;
@@ -2538,7 +2538,7 @@ i evaluate to idRequestType
         while( !pNapBlab ) { ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ; }
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     {
-    etThread.osThreadF( tinP , countTC() , tmBlabF , 0 , flTHREADlAUNCH_null , 0 , 0 , cParmP , idRoomBlabP , (countT)p_bArchive ) ;
+    etThread.osThreadF( tinP , countTC() , tmBlabF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cParmP , idRoomBlabP , (countT)p_bArchive ) ;
     }
         inc02AM( cBlabThreads ) ;
         *p_bArchive = 0 ;
@@ -3317,7 +3317,7 @@ each object caches information implied by the backing disk file
 #define TIMEtIMEOUT ( TICK * 0x10 )
 
     }
-        etThread.osThreadF( tinP , countTC() , tmSendEmailF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)psttFile , (countT)psttBody ) ; \
+        etThread.osThreadF( tinP , countTC() , tmSendEmailF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)psttFile , (countT)psttBody ) ; \
                                                                                                                                     \
         strokeS* psttBody  = psttOldC( tinP , etThread , psttBodyP ) ;                                                                 \
         strokeS* psttFile  = psttOldC( tinP , etThread , psttFileP ) ;                                                                 \

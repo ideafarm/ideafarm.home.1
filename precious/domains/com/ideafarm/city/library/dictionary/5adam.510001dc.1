@@ -25,7 +25,7 @@ while( stack )
 
 while( cDone < cThreads ) etThread.osSleepF( tinP , TUCK * 32 ) ;
 }
-    etThread.osThreadF( tinP , tnu , tmF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stack , idt , (countT)&cDone ) ;
+    etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stack , idt , (countT)&cDone ) ;
     ZE( countT , tnu ) ;
 {
 for( countT idt = 1 ; idt <= cThreads ; idt ++ )

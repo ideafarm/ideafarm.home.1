@@ -4,9 +4,11 @@
   #define TAGnOtIN(offP) LF , 0
   #define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
 
-#define TaRG3sGNdONEcBsTACK(tmFP,sgnDoneP,cbStackP) tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , (cbStackP) , 0
-#define TaRG3sGNdONEcBtLS(tmFP,sgnDoneP,cbTlsP)     tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , 0          , (cbTlsP)
+#define TaRG3sGNdONEcBsTACK(tmFP,sgnDoneP,cbStackP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
+#define TaRG3sGNdONEcBtLS(tmFP,sgnDoneP,cbTlsP)     tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
 #define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP)         tinP , countTC() , tmFP , 0           , (flagsP)            , 0          , (cbTlsP)
+
+#define TaRG2sGNdONE(tmFP,sgnDoneP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0 , 0
 
 #define CBsTACKdEFAULT ( TOCK )
 
@@ -1943,7 +1945,6 @@ use me iff pvP was obtained from operator new
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200022.newdelclassprotos END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200023.task0 BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -1983,6 +1984,17 @@ it is illegal to refer to this symbol in the definition of an adam
         taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                      \
         thirdC::osTraceWrongNodeIF( tinP , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                 \
         thirdC::osTraceWrongNodeIF( tinP , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                 \
+                                                                                                                                                                                                                                                                            \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                         \
+        {                                                                                                                                                                                                                                                                   \
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                           \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                   \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                       \
+            {                                                                                                                                                                                                                                                               \
+                ++ s ; thirdC::dosSleepIF( tinP , TOCK >> 3 ) ;                                                                                                                                                                                                             \
+            }                                                                                                                                                                                                                                                               \
+        }                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                            \
         ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                              \
         {                                                                                                                                                                                                                                                                   \
             tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;                                                                                                                                                                          \
@@ -5055,7 +5067,7 @@ examples
 /*1*//*LAUNCHhEAReNTER(tmFP,idPortP)*//*1*/
 /**/
 
-#define LAUNCHhEAReNTER(tmFP,idPortP) { ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmFP , 0 , flTHREADlAUNCH_null , 0 , 0 , idPortP ) ; }
+#define LAUNCHhEAReNTER(tmFP,idPortP) { ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmFP , 0 , 0 , flTHREADlAUNCH_null , 0 , 0 , idPortP ) ; }
 
 
 //
@@ -15229,7 +15241,7 @@ see QUITO
                                                                                                                 \
     {                                                                                                           \
         etherC etLaunch( tinP , TAG( TAGiDnULL ) ) ;                         \
-        etLaunch.osThreadF( tinP , countTC() , tm_##classP##_F , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)this ) ; \
+        etLaunch.osThreadF( tinP , countTC() , tm_##classP##_F , 0 , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)this ) ; \
         if( etLaunch ) _deleteMyselfF( tinP ) ;                                                                 \
     }
 
@@ -22929,7 +22941,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BlATHs
 /**/
 /*1*//*TaRG1(tmFP)*//*1*/
 
-#define TaRG1(tmFP) tinP , countTC() , tmFP , 0 , flTHREADlAUNCH_null , 0 , 0
+#define TaRG1(tmFP) tinP , countTC() , tmFP , 0 , 0  , flTHREADlAUNCH_null , 0 , 0
 
 
 //
@@ -40254,8 +40266,6 @@ optimized for speed
 /**/
 /*1*//*TaRG2sGNdONE(tmFP,sgnDoneP)*//*1*/
 
-#define TaRG2sGNdONE(tmFP,sgnDoneP) tinP , countTC() , tmFP , &(sgnDoneP) , flTHREADlAUNCH_null , 0 , 0
-
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -51300,7 +51310,7 @@ examples
 /**/
 /*1*//*TaRG2cBtLS(tmFP,cbTlsP)*//*1*/
 
-#define TaRG2cBtLS(tmFP,cbTlsP) tinP , countTC() , tmFP , 0 , flTHREADlAUNCH_null , (cbTlsP)
+#define TaRG2cBtLS(tmFP,cbTlsP) tinP , countTC() , tmFP , 0 , 0  , flTHREADlAUNCH_null , (cbTlsP)
 
 
 //
@@ -51617,55 +51627,3 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a4.TIMEuDPfILEePOCH END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a5.CuDPfILEsECRETS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CuDPfILEsECRETS*//*1*/
-
-#define CuDPfILEsECRETS    TOCK
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a5.CuDPfILEsECRETS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a6.CuDPfILEhASHsECRETS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CuDPfILEhASHsECRETS*//*1*/
-
-#define CuDPfILEhASHsECRETS ( sizeof( nicNameC ) / sizeof( countT ) )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a6.CuDPfILEhASHsECRETS END

@@ -12,60 +12,28 @@ REST
 etherC::loafIF( tinP ) ;
 etThread.traceF( tinP , T("ok") ) ;
 
-#endif
+etThread.traceMemoryGrainRptF( tinP ) ;
 
-    }
-        ++ s ; ether.osSleepF( tinP , TOCK << 0 ) ;
+etThread.traceF( tinP , T("all are ready now") ) ;
+}
+    ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
+    etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cReady,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+{
+while( cReady < CwORKERS )
 
-        etThread.traceMemoryGrainRptF( tinP ) ;
-
-        etThread.traceF( tinP , T("all are alive now") ) ;
-        }
-            ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
-        {
-        while( cAlive < cDone )
-
-            etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , 0 ) , (countT)&cAlive ) ;
-        while( cDo -- )
-
-        etThread.traceF( tinP , T("[cDone(after i launch them)]:    ")+TF2(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-
-        cDone += cDo ;
-
-        ;
-            : 1
-            ? 0x3f0
-        countT cDo = cAlive < 0x3f0
-
-        //;
-        //        : 1
-        //        ? TUCK >> 4
-        //    : cAlive < 900
-        //    ? TUCK
-        //countT cDo = cAlive < TUCK << 1
-        //G:
-    {
-    while( !ether && cAlive < CwORKERS )
-    ZE( countT , cDone ) ;
-
-#else
-
-    etThread.traceMemoryGrainRptF( tinP ) ;
-
-    etThread.traceF( tinP , T("all are alive now") ) ;
-    }
-        ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
-        etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cAlive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    {
-    while( cAlive < CwORKERS )
-
-        etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , 0 ) , (countT)&cAlive ) ;
-    while( cDo -- )
-    countT cDo = CwORKERS ;
-
-#if defined( NEVERdEFINED )
-
+//cAlive = 0 ;
+//etThread.traceF( tinP , T("all are alive now") ) ;
+//}
+//    ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
+//    etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cAlive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//{
+//while( cAlive < CwORKERS )
 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+    etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , 0/*&cAlive*/ , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , 0 , 0 , (countT)&cReady ) ;
+while( cDo -- )
+countT cDo = CwORKERS ;
+ZE( countT , cReady ) ;
 ZE( countT , cAlive ) ;
 
 TODO
@@ -73,9 +41,9 @@ TODO
 DONE( tmWorkF )
 }
     etherC::loafIF( tinP ) ;
-    inc02AM( cAliveP ) ;
+    inc02AM( cReadyP ) ;
 
-    countT& cAliveP = *(countT*)pTaskP->c1 ;
+    countT& cReadyP = *(countT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
 TASK( tmWorkF )

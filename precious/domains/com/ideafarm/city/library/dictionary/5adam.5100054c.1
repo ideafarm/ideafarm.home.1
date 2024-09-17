@@ -18,8 +18,8 @@ REST
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     sgnDone_tmGiverF.waitF( tinP ) ;
 
-    etThread.osThreadF( tinP , countTC() , tmGiverF  , &sgnDone_tmGiverF  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
-    etThread.osThreadF( tinP , countTC() , tmWaiterF , &sgnDone_tmWaiterF , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
+    etThread.osThreadF( tinP , countTC() , tmGiverF  , &sgnDone_tmGiverF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
+    etThread.osThreadF( tinP , countTC() , tmWaiterF , &sgnDone_tmWaiterF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
     signC sgnDone_tmGiverF( tinP , TAG( TAGiDnULL ) ) ;
     signC sgnDone_tmWaiterF( tinP , TAG( TAGiDnULL ) ) ;
 

@@ -25,7 +25,7 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
     socketC sIn( tinP , ether , TAG( TAGiDnULL ) ) ;
 
     sgnReady.waitF( tinP ) ;
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmWriteF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sgnReady ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmWriteF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sgnReady ) ; }
     signC sgnReady( tinP , TAG( TAGiDnULL ) ) ;
     ZE( countT , idPort ) ;
 {

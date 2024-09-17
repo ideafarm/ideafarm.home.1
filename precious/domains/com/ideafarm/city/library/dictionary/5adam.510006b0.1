@@ -15,7 +15,7 @@ bQuit = 1 ;
 #endif
 
     etThread.loafIF( tinP ) ;
-    etThread.osThreadF( tinP , countTC() , tmGorillaF , 0 , flTHREADlAUNCH_ORPHAN ) ;
+    etThread.osThreadF( tinP , countTC() , tmGorillaF , 0 , 0 , 0  , flTHREADlAUNCH_ORPHAN ) ;
 
 #else
 
@@ -191,7 +191,7 @@ DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
             {
             if( !POOP )
 
-            tinP.pEtScratch->osThreadF( tinP , countTC() , tmGorillaF , 0 , flTHREADlAUNCH_ORPHAN ) ;_
+            tinP.pEtScratch->osThreadF( tinP , countTC() , tmGorillaF , 0 , 0 , 0  , flTHREADlAUNCH_ORPHAN ) ;_
 
             inc02AM( cThreads ) ;_
             idTry ++ ;_

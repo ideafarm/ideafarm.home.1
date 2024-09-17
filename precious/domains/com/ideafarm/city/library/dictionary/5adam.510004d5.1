@@ -18,8 +18,8 @@ countT cParm = (countT)&c8p ;
 count8S c8p( (countT)&stGrab , (countT)&stTin , (countT)&stTinWhere , (countT)&pNapLog , (countT)&cFreeze , (countT)&bFrozen ) ;
 
 //etThread.osThreadF( tinP , countTC() , tmFireMyselfF ) ; //U::
-etThread.osThreadF( tinP , countTC() , tmWhereRptF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&c2p ) ;
-etThread.osThreadF( tinP , countTC() , tmWhereF    , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&c2p ) ;
+etThread.osThreadF( tinP , countTC() , tmWhereRptF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c2p ) ;
+etThread.osThreadF( tinP , countTC() , tmWhereF    , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c2p ) ;
 count2S c2p( (countT)&c8t1 , (countT)&c8t2 ) ;
 count8S c8t2 ; // ADDITIONAL PARAMS CAN BE PASSED HERE
 count8S c8t1( (countT)&bNewWhereRpt , (countT)&pczLever , (countT)&lifiLever , (countT)&swTally1 , (countT)&swTally2 , (countT)&swTally3 , (countT)&swTally4 , (countT)&stTinWhere ) ;
@@ -31,7 +31,7 @@ count2S lifiLever ;
 ZE( countT* , pczLever ) ;
 ZE( boolT , bNewWhereRpt ) ;
 
-etThread.osThreadF( tinP , countTC() , tmRptF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&c8p1 , (countT)&c8p2 ) ;
+etThread.osThreadF( tinP , countTC() , tmRptF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c8p1 , (countT)&c8p2 ) ;
 count8S c8p2( (countT)&stTin , (countT)&pNapLog , (countT)&bQuitLogging , (countT)&bQuitMonitoring , (countT)&bDone_tmLogF , (countT)&cFreeze , (countT)&bFrozen ) ;
 count8S c8p1( (countT)&stGrab , (countT)&stGrabbed , (countT)&stWanters , (countT)&stChecked , (countT)&stLoopedTmp , (countT)&stLooped , (countT)&stOsTidLoopedTmp , (countT)&stOsTidLooped ) ;
 
@@ -39,7 +39,7 @@ count8S c8p1( (countT)&stGrab , (countT)&stGrabbed , (countT)&stWanters , (count
     while( !pNapLog && !etThread ) { ++ s ; etThread.osSleepF( tinP ) ; }
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 {
-etThread.osThreadF( tinP , countTC() , tmLogF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&bDone_tmLogF , (countT)&pNapLog , (countT)&bQuitLogging ) ;
+etThread.osThreadF( tinP , countTC() , tmLogF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&bDone_tmLogF , (countT)&pNapLog , (countT)&bQuitLogging ) ;
 ZE( boolT , bDone_tmLogF ) ;
 
 ZE( boolT , bFrozen ) ;
@@ -64,15 +64,15 @@ p oolC poolOldSetOldUnserialized( tinP , T("monitor.unserialized.main.")+TF1(tin
 //U::{ countT idAdam = ifcIDaDAMoLD_CHATsERVER ; ether.ifcHireF( tinP , T("city.monitor") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
 //{ countT idAdam = 0x40104de ; ether.ifcHireF( tinP , T("city.monitor") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
     
-//etThread.osThreadF( tinP , countTC() , tmWantF , 0 , flTHREADlAUNCH_null , 0 , 0 , 3 , (countT)&grabA , (countT)&grabB , (countT)&grabC ) ;
-//etThread.osThreadF( tinP , countTC() , tmWantF , 0 , flTHREADlAUNCH_null , 0 , 0 , 2 , (countT)&grabA , (countT)&grabB , (countT)&grabC ) ;
-//etThread.osThreadF( tinP , countTC() , tmWantF , 0 , flTHREADlAUNCH_null , 0 , 0 , 1 , (countT)&grabA , (countT)&grabB , (countT)&grabC ) ;
+//etThread.osThreadF( tinP , countTC() , tmWantF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , 3 , (countT)&grabA , (countT)&grabB , (countT)&grabC ) ;
+//etThread.osThreadF( tinP , countTC() , tmWantF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , 2 , (countT)&grabA , (countT)&grabB , (countT)&grabC ) ;
+//etThread.osThreadF( tinP , countTC() , tmWantF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , 1 , (countT)&grabA , (countT)&grabB , (countT)&grabC ) ;
 //grabOldS grabC( tinP , TAG( TAGiDnULL ) ) ;
 //grabOldS grabB( tinP , TAG( TAGiDnULL ) ) ;
 //grabOldS grabA( tinP , TAG( TAGiDnULL ) ) ;
 //etThread.osThreadF( tinP , countTC() , tmRawSleepF ) ;
 
-etThread.osThreadF( tinP , countTC() , tmTellF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&bQuitMonitoring ) ;
+etThread.osThreadF( tinP , countTC() , tmTellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&bQuitMonitoring ) ;
 ZE( boolT , bQuitMonitoring ) ;
 
 OStEXTAK( napHomeJot  , "monitor: getting ready" ) ;

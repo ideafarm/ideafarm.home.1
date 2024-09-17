@@ -66,7 +66,7 @@ else
     {
     if( !etThread )
 
-    etThread.osThreadF( tinP , countTC() , tmMonitorF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&ba , (countT)&ptm2 ) ;
+    etThread.osThreadF( tinP , countTC() , tmMonitorF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&ba , (countT)&ptm2 ) ;
     if( !etThread ) ba.cMonitors ++ ;
     params_tmMonitorF_2S ptm2( sgnHired , 1 , tArgs , flHIRE_DISPLAYaUTO ) ;
     TN( tArgs , "" ) ; tArgs = TF3(DDNUMB,flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T(" !postHandoffOld monitored !minimized !poolOldRootNoClientRights !ignoreFireByOperator") ;
@@ -1158,7 +1158,7 @@ DONE( tmDisplayF )
     ZE( boolT , bKidsFired ) ;
     ZE( countT , idPass ) ;
 
-    //U::etThread.osThreadF( tinP , countTC() , tmObservePoolsF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&baP ) ;
+    //U::etThread.osThreadF( tinP , countTC() , tmObservePoolsF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&baP ) ;
 
     countT&     off_aIdaTin = baP.bMonitored ?      poolOld Side.off_aIdaTin_314m :      poolOld Side.off_aIdaTin_314 ;
     grabOldS& grab_off_aIdaTin = baP.bMonitored ? poolOld Side.grab_off_aIdaTin_314m : poolOld Side.grab_off_aIdaTin_314 ;
@@ -1166,7 +1166,7 @@ DONE( tmDisplayF )
     const countT* const pcPool = (countT*)(byteT*)poolOldDflt ; //THIS IS USED TO ACCESS PRIVATE VALUES IN THE POOLoLD HEADER
     p oolC& poolOldDflt = poolC::poolOldRootIF( tinP ) ;
 
-    //U::if( !baP.bMonitored ) etThread.osThreadF( tinP , countTC() , tmDeadman_tmDisplay_F , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&tinP ) ;
+    //U::if( !baP.bMonitored ) etThread.osThreadF( tinP , countTC() , tmDeadman_tmDisplay_F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&tinP ) ;
     bookAllS& baP = *(bookAllS*)pTaskP->c1 ;
     TELL( "setting up" )
 {
@@ -1502,7 +1502,7 @@ DONE( tmRegisterPortF )
                             ether.osSleepF( tinP , TOCK * 0x4 ) ; // TIME FOR 1140104 TO START LISTENING
                             TELL( "registering my idPort with the local chat server: sleeping so the newly hired chat server can wake up" )
                             sgnHired.waitF( tinP ) ;
-                            etThread.osThreadF( tinP , countTC() , tmMonitorF , 0 , flTHREADlAUNCH_ORPHAN , 0 , (countT)&baP , (countT)&ptm2 ) ;
+                            etThread.osThreadF( tinP , countTC() , tmMonitorF , 0 , 0  , flTHREADlAUNCH_ORPHAN , 0 , (countT)&baP , (countT)&ptm2 ) ;
                             baP.cMonitors ++ ;
                             params_tmMonitorF_2S ptm2( sgnHired , 1 , tArgs , flHIRE_DISPLAYaUTO ) ;
                             TN( tArgs , "1140104 !minimized" ) ; //USES NONDEFAULT POOLoLD TO AVOID USING DEFAULT POOLoLD BEFORE APPS HAVE A CHANCE TO LOAD DICTIONARIES LAKE FISH ETC INTO LOW POOLoLD

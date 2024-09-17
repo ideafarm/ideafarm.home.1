@@ -14,7 +14,7 @@ ether.osSleepF( tinP , TOCK * 4 ) ;
 while( cTries -- ) sockd.writeF( tinP , ifcPORToLD2_TIMErEMAINING , nicNameC() , pbo , sizeof pbo ) ;
 countT cTries = 8 ;
 
-etThread.osThreadF( tinP , countTC() , tmCatchF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd ) ;
+etThread.osThreadF( tinP , countTC() , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd ) ;
 
 sockd.bindF( tinP ) ;
 socketC sockd( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;

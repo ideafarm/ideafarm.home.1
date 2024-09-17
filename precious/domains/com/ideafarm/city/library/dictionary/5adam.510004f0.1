@@ -11,7 +11,7 @@ REST
 
 etThread.loafIF( tinP ) ;
 
-while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmClientF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
+while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmClientF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
 cTries = CcLIENTS ;
 
 }
@@ -22,7 +22,7 @@ cTries = CcLIENTS ;
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 {
 
-while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmServerF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort , (countT)(const osTextT*)ostoSpoke , (countT)(const osTextT*)ostoWheel ) ;
+while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmServerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort , (countT)(const osTextT*)ostoSpoke , (countT)(const osTextT*)ostoWheel ) ;
 countT cTries = CsERVERS ;
 
 OStEXTV( ostoWheel , "\r.a" )

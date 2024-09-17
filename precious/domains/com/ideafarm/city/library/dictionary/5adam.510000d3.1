@@ -18,13 +18,13 @@ etThread.strokeF( tinP , T("my wait is over; the other thread posted the event s
 third.dosCloseEventSemF( tinP , handle ) ;
 third.dosWaitEventSemF( tinP , handle ) ;
 etThread.strokeF( tinP , T("i am about to wait on the event semaphore\r\n") ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , flTHREADlAUNCH_null , 0 , 0 , handle ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , handle ) ; }
 
 third.dosResetEventSemF( tinP , handle ) ;
 etThread.strokeF( tinP , T("my wait is over; the other thread posted the event semaphore\r\n") ) ;
 third.dosWaitEventSemF( tinP , handle ) ;
 etThread.strokeF( tinP , T("i am about to wait on the event semaphore\r\n") ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , flTHREADlAUNCH_null , 0 , 0 , handle ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , handle ) ; }
 
 third.dosOpenEventSemF( tinP , handle ) ;
 handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ;

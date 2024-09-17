@@ -84,7 +84,7 @@
                         pso->etherF( tinP , *tinP.pEtScratch ) ;
                     {
                     else 
-                    if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmRelayOldServerCatchBagF , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso , (countT)&sListen , (countT)&stIdptPopClient , (countT)&cLooksForNewPing ) ;
+                    if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmRelayOldServerCatchBagF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso , (countT)&sListen , (countT)&stIdptPopClient , (countT)&cLooksForNewPing ) ;
                     TELL( "launching tmRelayOldServerCatchBagF" )
     
                     //else { CONoUTrAW( "z" ) ; } //U::
@@ -103,16 +103,16 @@
                         continue ;
     
                         if( !etThread ) bLaunchedAcceptor = 1 ;
-                        etThread.osThreadF( tinP , countTC() , tmRelayOldTeatAcceptorF , &sgnDone_tmRelayOldTeatAcceptorF , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
-                        etThread.osThreadF( tinP , countTC() , tmRelayOldInitiatorF    , &sgnDone_tmRelayOldInitiatorF    , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)&stIdptPopClient , (countT)&cLooksForNewPing , (countT)&bReadyP ) ;
-                        etThread.osThreadF( tinP , countTC() , tmRelayOldKillF         , &sgnDone_tmRelayOldKillF         , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
+                        etThread.osThreadF( tinP , countTC() , tmRelayOldTeatAcceptorF , &sgnDone_tmRelayOldTeatAcceptorF , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
+                        etThread.osThreadF( tinP , countTC() , tmRelayOldInitiatorF    , &sgnDone_tmRelayOldInitiatorF    , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)&stIdptPopClient , (countT)&cLooksForNewPing , (countT)&bReadyP ) ;
+                        etThread.osThreadF( tinP , countTC() , tmRelayOldKillF         , &sgnDone_tmRelayOldKillF         , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
     
                         }
-                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF4 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ;
-                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF3 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ;
-                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF2 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ;
-                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF1 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ;
-                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ;
+                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF4 , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ;
+                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF3 , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ;
+                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF2 , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ;
+                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF1 , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ;
+                            etThread.osThreadF( tinP , countTC() , tmRelayOldPopClientF , &sgnDone_tmRelayOldPopClientF0 , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ;
     
                         {
                         if( pStPop0 && pStPop1 && pStPop2 && pStPop3 && pStPop4 )
@@ -163,7 +163,7 @@
                     TELL( "waiting for a client to connect" )
                     ZE( socketC* , pso ) ;
         
-                    if( bWoth ) etThread.osThreadF( tinP , countTC() , tmRelayOldTickleF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)(portC*)&idpt , (countT)&bWoth ) ;
+                    if( bWoth ) etThread.osThreadF( tinP , countTC() , tmRelayOldTickleF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)(portC*)&idpt , (countT)&bWoth ) ;
                 {
                 while( !POOP && !ether && !bQuit )
                 ZE( countT , idClient ) ;

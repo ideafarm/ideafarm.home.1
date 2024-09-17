@@ -11,7 +11,7 @@ REST
 
 etThread.loafIF( tinP ) ;
 
-while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmClientF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
+while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
 cTries = CcLIENTS ;
 
 }
@@ -22,7 +22,7 @@ cTries = CcLIENTS ;
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 {
 
-while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmAcceptorF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
+while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmAcceptorF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
 countT cTries = CsERVERS ;
 
 stackC stIdPort( tinP , etThread , TAG( TAGiDnULL ) ) ;
@@ -48,7 +48,7 @@ DONE( tmAcceptorF )
 
     }
         else                { DEL( pso ) ; }
-        if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmServerF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort , (countT)pso , idPort , ideMe , (countT)pStBang0 , (countT)pStBang1 , (countT)pStBang2 ) ;
+        if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmServerF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort , (countT)pso , idPort , ideMe , (countT)pStBang0 , (countT)pStBang1 , (countT)pStBang2 ) ;
         sListen.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
@@ -56,9 +56,9 @@ DONE( tmAcceptorF )
     {
     while( !etThread && !ether )
 
-    if( idPortExplode2 && pStBang2 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , flTHREADlAUNCH_null , 0 , 0 , idPortExplode2 , (countT)pStBang2 ) ;
-    if( idPortExplode1 && pStBang1 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , flTHREADlAUNCH_null , 0 , 0 , idPortExplode1 , (countT)pStBang1 ) ;
-    if( idPortImplode  && pStBang0 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , flTHREADlAUNCH_null , 0 , 0 , idPortImplode  , (countT)pStBang0 ) ;
+    if( idPortExplode2 && pStBang2 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortExplode2 , (countT)pStBang2 ) ;
+    if( idPortExplode1 && pStBang1 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortExplode1 , (countT)pStBang1 ) ;
+    if( idPortImplode  && pStBang0 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortImplode  , (countT)pStBang0 ) ;
     stackC* pStBang2 = idPortExplode2 ? new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;
     stackC* pStBang1 = idPortExplode1 ? new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;
     stackC* pStBang0 = idPortImplode  ? new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;

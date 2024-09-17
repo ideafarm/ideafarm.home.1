@@ -1,3 +1,55 @@
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a5.CuDPfILEsECRETS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEsECRETS*//*1*/
+
+#define CuDPfILEsECRETS    TOCK
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a5.CuDPfILEsECRETS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a6.CuDPfILEhASHsECRETS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEhASHsECRETS*//*1*/
+
+#define CuDPfILEhASHsECRETS ( sizeof( nicNameC ) / sizeof( countT ) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a6.CuDPfILEhASHsECRETS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a7.CBuDPfILEnAMEpAYLOAD BEGIN
 
 
@@ -26951,7 +27003,6 @@ it is illegal to refer to this symbol in the definition of an adam
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.peekS : 1snip.15000015.peeks END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.taskS : 1snip.15000016.tasks BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -26971,52 +27022,53 @@ it is illegal to refer to this symbol in the definition of an adam
 
  //CODEsYNC: 0030019 10200da
 /* face */
- const countT idThread ;
- signC*  pSgnDone ;
- voidT*  tmF ;     // USED WHEN THIS OBJECT IS STACKED FOR DEFERRED LAUNCH OF THE THREAD
- byteT*  pbTlsInPool ;
- countT  cbTlsInPool ;
- flagsT  flags ;
- tinS*   pTinDad ;
- flagsT  flagsThreadMode1Dad ;
- flagsT  flagsThreadMode2Dad ;
- countT  c1  ;
- countT  c2  ;
- countT  c3  ;
- countT  c4  ;
- countT  c5  ;
- countT  c6  ;
- countT  c7  ;
- countT  c8  ;
- countT  c9  ;
- countT  ca  ;
- countT  cb  ;
- countT  cc  ;
- countT  cd  ;
- countT  ce  ;
- countT  cf  ;
- countT  c01 ;
- countT  c11 ;
- countT  c21 ;
- countT  c31 ;
- countT  c41 ;
- countT  c51 ;
- countT  c61 ;
- countT  c71 ;
- countT  c81 ;
- countT  c91 ;
- countT  ca1 ;
- countT  cb1 ;
- countT  cc1 ;
- countT  cd1 ;
- countT  ce1 ;
- countT  cf1 ;
- countT  c02 ;
+ const countT  idThread ;
+ voidT*        tmF ;     // USED WHEN THIS OBJECT IS STACKED FOR DEFERRED LAUNCH OF THE THREAD
+ signC*        pSgnDone ;
+ countT* const pcAlive ;
+ flagsT        flags ;
+ flagsT        flagsThreadMode1Dad ;
+ flagsT        flagsThreadMode2Dad ;
+ tinS*         pTinDad ;
+ byteT*        pbTlsInPool ;
+ countT        cbTlsInPool ;
+ countT        c1  ;
+ countT        c2  ;
+ countT        c3  ;
+ countT        c4  ;
+ countT        c5  ;
+ countT        c6  ;
+ countT        c7  ;
+ countT        c8  ;
+ countT        c9  ;
+ countT        ca  ;
+ countT        cb  ;
+ countT        cc  ;
+ countT        cd  ;
+ countT        ce  ;
+ countT        cf  ;
+ countT        c01 ;
+ countT        c11 ;
+ countT        c21 ;
+ countT        c31 ;
+ countT        c41 ;
+ countT        c51 ;
+ countT        c61 ;
+ countT        c71 ;
+ countT        c81 ;
+ countT        c91 ;
+ countT        ca1 ;
+ countT        cb1 ;
+ countT        cc1 ;
+ countT        cd1 ;
+ countT        ce1 ;
+ countT        cf1 ;
+ countT        c02 ;
 
 /* birth , death */
  NEWdELcLASSpROTOS
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.taskS.NEWdELcLASStHIRD!||
- taskS( tinS& tinP , voidT* const tmFP = 0 , signC* pSgnDoneP = 0 , byteT* const pbTlsInPoolP = 0 , const countT cbTlsInPoolP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , countT c1P = 0 , countT c2P = 0 , countT c3P = 0 , countT c4P = 0 , countT c5P = 0 , countT c6P = 0 , countT c7P = 0 , countT c8P = 0 , countT c9P = 0 , countT caP = 0 , countT cbP = 0 , countT ccP = 0 , countT cdP = 0 , countT ceP = 0 , countT cfP = 0 , countT c01P = 0 , countT c11P = 0 , countT c21P = 0 , countT c31P = 0 , countT c41P = 0 , countT c51P = 0 , countT c61P = 0 , countT c71P = 0 , countT c81P = 0 , countT c91P = 0 , countT ca1P = 0 , countT cb1P = 0 , countT cc1P = 0 , countT cd1P = 0 , countT ce1P = 0 , countT cf1P = 0 , countT c02P = 0 ) ;
+ taskS( tinS& tinP , voidT* const tmFP = 0 , signC* pSgnDoneP = 0 , countT* pcAliveP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , byteT* const pbTlsInPoolP = 0 , const countT cbTlsInPoolP = 0 , countT c1P = 0 , countT c2P = 0 , countT c3P = 0 , countT c4P = 0 , countT c5P = 0 , countT c6P = 0 , countT c7P = 0 , countT c8P = 0 , countT c9P = 0 , countT caP = 0 , countT cbP = 0 , countT ccP = 0 , countT cdP = 0 , countT ceP = 0 , countT cfP = 0 , countT c01P = 0 , countT c11P = 0 , countT c21P = 0 , countT c31P = 0 , countT c41P = 0 , countT c51P = 0 , countT c61P = 0 , countT c71P = 0 , countT c81P = 0 , countT c91P = 0 , countT ca1P = 0 , countT cb1P = 0 , countT cc1P = 0 , countT cd1P = 0 , countT ce1P = 0 , countT cf1P = 0 , countT c02P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.taskS.taskS!||
  ~taskS( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.taskS.dt_taskS!||
@@ -30380,7 +30432,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34111.thirdC.osProcessIdPhaseAdamIF!||
  voidT osRegionInfoF( tinS& tinP , countT& cBitsGrainP , byteT*& pbIdRegionP , byteT*& pbIdAllocP , vmRegionS*& pVmRegionP , vmRegionS*& pVmRegionAllocP , countT hProcessP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340fe.thirdC.osRegionInfoF!||
- voidT osThreadF( tinS& tinP , countT& tidP , voidT* const tmFP , signC* const pSgnDoneP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , const countT cbStackP = 0 , const countT cbTlsP = 0 , const countT c1P = 0 , const countT c2P = 0 , const countT c3P = 0 , const countT c4P = 0 , const countT c5P = 0 , const countT c6P = 0 , const countT c7P = 0 , const countT c8P = 0 , const countT c9P = 0 , const countT caP = 0 , const countT cbP = 0 , const countT ccP = 0 , const countT cdP = 0 , const countT ceP = 0 , const countT cfP = 0 , const countT c01P = 0 , const countT c11P = 0 , const countT c21P = 0 , const countT c31P = 0 , const countT c41P = 0 , const countT c51P = 0 , const countT c61P = 0 , const countT c71P = 0 , const countT c81P = 0 , const countT c91P = 0 , const countT ca1P = 0 , const countT cb1P = 0 , const countT cc1P = 0 , const countT cd1P = 0 , const countT ce1P = 0 , const countT cf1P = 0 , const countT c02P = 0 ) ;
+ voidT osThreadF( tinS& tinP , countT& tidP , voidT* const tmFP , signC* const pSgnDoneP = 0 , countT* pcAliveP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , const countT cbStackP = 0 , const countT cbTlsP = 0 , const countT c1P = 0 , const countT c2P = 0 , const countT c3P = 0 , const countT c4P = 0 , const countT c5P = 0 , const countT c6P = 0 , const countT c7P = 0 , const countT c8P = 0 , const countT c9P = 0 , const countT caP = 0 , const countT cbP = 0 , const countT ccP = 0 , const countT cdP = 0 , const countT ceP = 0 , const countT cfP = 0 , const countT c01P = 0 , const countT c11P = 0 , const countT c21P = 0 , const countT c31P = 0 , const countT c41P = 0 , const countT c51P = 0 , const countT c61P = 0 , const countT c71P = 0 , const countT c81P = 0 , const countT c91P = 0 , const countT ca1P = 0 , const countT cb1P = 0 , const countT cc1P = 0 , const countT cd1P = 0 , const countT ce1P = 0 , const countT cf1P = 0 , const countT c02P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340dc.thirdC.osThreadF!||
  static voidT osThreadLaunchHeartbeatIF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3414c.thirdC.osThreadLaunchHeartbeatIF!||
@@ -33614,7 +33666,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34064.etherC.osSleepF!||
  voidT osSleepF( tinS& tinP , const countT time1P , const sCountT time2P , const countT timeGrain1P , const sCountT timeGrain2P , const flagsT flagsP = flSLEEP_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340b6.etherC.osSleepF!||
- voidT osThreadF( tinS& tinP , countT& tidP , voidT* const tmFP , signC* const pSgnDoneP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , const countT cbStackP = 0 , const countT cbTlsP = 0 , const countT c1P = 0 , const countT c2P = 0 , const countT c3P = 0 , const countT c4P = 0 , const countT c5P = 0 , const countT c6P = 0 , const countT c7P = 0 , const countT c8P = 0 , const countT c9P = 0 , const countT caP = 0 , const countT cbP = 0 , const countT ccP = 0 , const countT cdP = 0 , const countT ceP = 0 , const countT cfP = 0 , const countT c01P = 0 , const countT c11P = 0 , const countT c21P = 0 , const countT c31P = 0 , const countT c41P = 0 , const countT c51P = 0 , const countT c61P = 0 , const countT c71P = 0 , const countT c81P = 0 , const countT c91P = 0 , const countT ca1P = 0 , const countT cb1P = 0 , const countT cc1P = 0 , const countT cd1P = 0 , const countT ce1P = 0 , const countT cf1P = 0 , const countT c02P = 0 ) ;
+ voidT osThreadF( tinS& tinP , countT& tidP , voidT* const tmFP , signC* const pSgnDoneP = 0 , countT* pcAliveP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , const countT cbStackP = 0 , const countT cbTlsP = 0 , const countT c1P = 0 , const countT c2P = 0 , const countT c3P = 0 , const countT c4P = 0 , const countT c5P = 0 , const countT c6P = 0 , const countT c7P = 0 , const countT c8P = 0 , const countT c9P = 0 , const countT caP = 0 , const countT cbP = 0 , const countT ccP = 0 , const countT cdP = 0 , const countT ceP = 0 , const countT cfP = 0 , const countT c01P = 0 , const countT c11P = 0 , const countT c21P = 0 , const countT c31P = 0 , const countT c41P = 0 , const countT c51P = 0 , const countT c61P = 0 , const countT c71P = 0 , const countT c81P = 0 , const countT c91P = 0 , const countT ca1P = 0 , const countT cb1P = 0 , const countT cc1P = 0 , const countT cd1P = 0 , const countT ce1P = 0 , const countT cf1P = 0 , const countT c02P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34065.etherC.osThreadF!||
  voidT osThreadAdamF( tinS& tinP , countT idAdamP , const strokeS* const psttArgsP = 0 , const flagsT flagsP = flOStHREADaDAMf_null , signC* const pSgnDoneP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341aa.etherC.osThreadAdamF!||

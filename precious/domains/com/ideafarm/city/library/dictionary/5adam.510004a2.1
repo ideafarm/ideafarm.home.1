@@ -64,8 +64,8 @@ REST
     else if( thirdC::ifcCellIsWorkingIF( tinP , DDNUMB ) )
     if( etThread ) ;
 
-    //ether.osThreadF( tinP , countTC() , tmDeadLockF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&grab1 , (countT)&grab2 , 2 ) ;
-    //ether.osThreadF( tinP , countTC() , tmDeadLockF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&grab1 , (countT)&grab2 , 1 ) ;
+    //ether.osThreadF( tinP , countTC() , tmDeadLockF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grab1 , (countT)&grab2 , 2 ) ;
+    //ether.osThreadF( tinP , countTC() , tmDeadLockF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grab1 , (countT)&grab2 , 1 ) ;
     //grabOldS grab2( tinP , TAG( TAGiDnULL ) ) ;
     //grabOldS grab1( tinP , TAG( TAGiDnULL ) ) ;
 
@@ -252,7 +252,7 @@ voidT jobHearOrderF( tinS& tinP , etherC& ether , etherC& etThread , const count
                     break ;
 
                     tinP.zEtScratch->delF( tinP , psttArgs ) ;
-                    tinP.zEtScratch->osThreadF( tinP , countTC() , tmNewCellF , 0 , flTHREADlAUNCH_null , 0 , 0 , idAdam , (countT)pstta ) ;
+                    tinP.zEtScratch->osThreadF( tinP , countTC() , tmNewCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idAdam , (countT)pstta ) ;
                     strokeS* pstta = (strokeS*)psttOldC( tinP , *tinP.zEtScratch , (psttArgs?T(psttArgs):T("")) ) ; ___( pstta ) ;
         
                     sOrderP >> (countT&)time2Limit ;
@@ -2001,7 +2001,7 @@ countT cellC::classIdPhaseF( tinS& tinP )
     SLEEPwHILE( cFirePending ) ;
     }
         }
-            ether.osThreadF( tinP , countTC() , tmFireCellF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&cFirePending , (countT)pc ) ;
+            ether.osThreadF( tinP , countTC() , tmFireCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cFirePending , (countT)pc ) ;
             cFirePending ++ ;
         {
         if( pc )

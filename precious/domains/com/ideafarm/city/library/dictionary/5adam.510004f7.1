@@ -45,7 +45,7 @@
         }
             }
                 else                { DEL( pso ) ; }
-                if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmServerF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , (countT)pso , (countT)&sListen , (countT)&cBangClients ) ;
+                if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmServerF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , (countT)pso , (countT)&sListen , (countT)&cBangClients ) ;
                 TELL( "launching tmServerF" )
     
                 }
@@ -58,9 +58,9 @@
                 }
                     continue ;
     
-                    etThread.osThreadF( tinP , countTC() , tmPingF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , (countT)&cBangClients ) ;
-                    etThread.osThreadF( tinP , countTC() , tmKillF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P ) ;
-                    etThread.osThreadF( tinP , countTC() , tmPrayF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P ) ;
+                    etThread.osThreadF( tinP , countTC() , tmPingF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , (countT)&cBangClients ) ;
+                    etThread.osThreadF( tinP , countTC() , tmKillF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P ) ;
+                    etThread.osThreadF( tinP , countTC() , tmPrayF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P ) ;
                     }
                         bombF( tinP , etThread , NODEiNFOaRGS , sCry ) ;
                         hdrF( tinP , sCry , node , flPOP_BOMB , IDcMD2PE_CRY ) ;
@@ -107,7 +107,7 @@
                 TELL( "waiting for a client to connect" )
                 ZE( socketC* , pso ) ;
     
-                if( bWoth ) etThread.osThreadF( tinP , countTC() , tmTickleF , 0 , flTHREADlAUNCH_null , 0 , 0 , node.idp , (countT)&bWoth ) ;
+                if( bWoth ) etThread.osThreadF( tinP , countTC() , tmTickleF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , node.idp , (countT)&bWoth ) ;
             {
             while( !etThread && !ether && !bQuit )
             ZE( countT , cBangClients ) ;
@@ -1512,7 +1512,7 @@ osTextT* ppostWork[] =
                                                                  \
 #define NODEiNFOf                                                \
 
-    etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , idWorkP ) ;
+    etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , idWorkP ) ;
     godHelloF( tinP , *pStBang##postDigitP ) ;                                              \
                                                                                             \
 #define LAUNCHbANGcLIENT(postDigitP,idWorkP)                                                \

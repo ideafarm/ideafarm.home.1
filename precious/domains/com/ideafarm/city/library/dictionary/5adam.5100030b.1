@@ -27,7 +27,7 @@ etThread.strokeF( tinP , T(USCORE79 "\r\n\r\n") ) ;
 
 while( etThread.os_cAllKidThreadsI_IF( tinP ) > cKidsBefore ) etThread.osSleepF( tinP , TUCK * 32 ) ;
 
-while( cTries -- ) { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sw ) ; }
+while( cTries -- ) { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sw ) ; }
 countT cTries = 0x4 ;
 const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinP ) ;
 

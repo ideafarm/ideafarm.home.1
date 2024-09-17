@@ -1569,7 +1569,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         pso->etherF( tinP , *tinP.pEtScratch ) ;
                     {
                     else 
-                    if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmNodeServerCatchBagF , 0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso , (countT)&sListen , (countT)&stIdptPopClient , (countT)&cLooksForNewPing ) ;
+                    if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmNodeServerCatchBagF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso , (countT)&sListen , (countT)&stIdptPopClient , (countT)&cLooksForNewPing ) ;
                     TELL( "launching tmNodeServerCatchBagF" )
     
                     //else { CONoUTrAW( "z" ) ; } //U::
@@ -1586,16 +1586,16 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         continue ;
     
                         if( !etThread ) bLaunchedAcceptor = 1 ;
-                        etThread.osThreadF( tinP , countTC() , tmNodeTeatAcceptorF , &sgnDone_tmNodeTeatAcceptorF , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
-                        etThread.osThreadF( tinP , countTC() , tmNodeInitiatorF    , &sgnDone_tmNodeInitiatorF    , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)&stIdptPopClient , (countT)&cLooksForNewPing , (countT)&bReadyP ) ;
-                        etThread.osThreadF( tinP , countTC() , tmNodeKillF         , &sgnDone_tmNodeKillF         , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
+                        etThread.osThreadF( tinP , countTC() , tmNodeTeatAcceptorF , &sgnDone_tmNodeTeatAcceptorF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
+                        etThread.osThreadF( tinP , countTC() , tmNodeInitiatorF    , &sgnDone_tmNodeInitiatorF    , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)&stIdptPopClient , (countT)&cLooksForNewPing , (countT)&bReadyP ) ;
+                        etThread.osThreadF( tinP , countTC() , tmNodeKillF         , &sgnDone_tmNodeKillF         , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
     
                         }
-                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF4 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ;
-                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF3 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ;
-                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF2 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ;
-                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF1 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ;
-                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF0 , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ;
+                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF4 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ;
+                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF3 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ;
+                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF2 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ;
+                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF1 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ;
+                            etThread.osThreadF( tinP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ;
     
                         {
                         if( pStPop0 && pStPop1 && pStPop2 && pStPop3 && pStPop4 )
@@ -1646,7 +1646,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                     TELL( "waiting for a client to connect" )
                     ZE( socketC* , pso ) ;
         
-                    if( bWoth ) etThread.osThreadF( tinP , countTC() , tmNodeTickleF , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)(portC*)&idpt , (countT)&bWoth ) ;
+                    if( bWoth ) etThread.osThreadF( tinP , countTC() , tmNodeTickleF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)(portC*)&idpt , (countT)&bWoth ) ;
                 {
                 while( !POOP && !ether && !bQuit )
                 ZE( countT , idClient ) ;
