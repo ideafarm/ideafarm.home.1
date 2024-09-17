@@ -4,9 +4,10 @@
   #define TAGnOtIN(offP) LF , 0
   #define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
 
+#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP)         tinP , countTC() , tmFP , 0           , 0 , (flagsP)            , 0          , (cbTlsP)
+
 #define TaRG3sGNdONEcBsTACK(tmFP,sgnDoneP,cbStackP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
 #define TaRG3sGNdONEcBtLS(tmFP,sgnDoneP,cbTlsP)     tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
-#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP)         tinP , countTC() , tmFP , 0           , (flagsP)            , 0          , (cbTlsP)
 
 #define TaRG2sGNdONE(tmFP,sgnDoneP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0 , 0
 
