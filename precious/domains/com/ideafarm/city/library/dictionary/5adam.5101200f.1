@@ -12,29 +12,34 @@ REST
 etherC::loafIF( tinP ) ;
 etThread.traceF( tinP , T("ok") ) ;
 
-etThread.traceMemoryGrainRptF( tinP ) ;
-
-etThread.traceF( tinP , T("all are ready now") ) ;
 }
-    ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
-    etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cReady,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceMemoryGrainRptF( tinP ) ;
+
+    etThread.traceF( tinP , T("all are ready now") ) ;
+    }
+        ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
+        etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cReady,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    {
+    while( cReady < CwORKERS )
+
+    //cAlive = 0 ;
+    //etThread.traceF( tinP , T("all are alive now") ) ;
+    //}
+    //    ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
+    //    etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cAlive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //{
+    //while( cAlive < CwORKERS )
+    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+
+        etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , 0/*&cAlive*/ , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , 0 , 0 , (countT)&cReady ) ;
+    while( cDo -- )
+    countT cDo = CwORKERS ;
+    ZE( countT , cReady ) ;
+    ZE( countT , cAlive ) ;
 {
-while( cReady < CwORKERS )
+if( !ether )
 
-//cAlive = 0 ;
-//etThread.traceF( tinP , T("all are alive now") ) ;
-//}
-//    ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
-//    etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cAlive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-//{
-//while( cAlive < CwORKERS )
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-
-    etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , 0/*&cAlive*/ , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , 0 , 0 , (countT)&cReady ) ;
-while( cDo -- )
-countT cDo = CwORKERS ;
-ZE( countT , cReady ) ;
-ZE( countT , cAlive ) ;
+etherC::loafIF( tinP ) ;
 
 TODO
 

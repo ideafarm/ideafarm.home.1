@@ -86,6 +86,31 @@
     //    OStEXT(   ostoSay , TUCK << 1 ) ;
     //{
 
+    //}
+    //    byteT foo = *( pbc -- ) ;             FAILS (STACK OVERFLOW) WHEN pbc = 0xa2ffe
+    //{                                                            pbStackStart = 0xa0000
+    //while( pbc )                                                 pbStackEnd   = 0xe0000
+    //byteT* pbc = pbStackEnd - 1 ;
+    //
+    // NOTE: THE WATCOM LINKER REPORTS THAT THE EXECUTABLE GETS A 1 GRAIN STACK THAT IS FULLY COMMITTED (NO ADDITIONAL RESERVE), WHICH IS WHAT IS REQUESTED IN THE wlink INVOCATION
+    //
+    //    4. MS WINDOWS IS A STEAMING PILE OF SHIT
+    //    3. THE HIGHEST BYTE OF THE HIGHEST GUARD PAGE IS ACCESSIBLE, BUT THE BYTE BELOW IT IS NOT
+    //    2. 3 PAGES ARE BEING USED AS GUARD PAGES
+    //    1. AN EXECUTABLE THAT SPECIFIES A 1 GRAIN (64K) STACK SIZE IS BEING GIVEN A 4 GRAIN STACK
+    //
+    //20240917@1749: U:: THIS TEST CODE INDICATES THE FOLLOWING:
+
+    CONoUTrAW( ostoSay ) ;
+    OStEXTAK(  ostoSay , "\r\n\r\n" ) ;
+    OStEXTCF(  ostoSay , pbStackEnd , '0' ) ;
+    OStEXTAK(  ostoSay , "    " ) ;
+    OStEXTCF(  ostoSay , pbStackStart , '0' ) ;
+    OStEXTAK(  ostoSay , "    " ) ;
+    OStEXTCF(  ostoSay , cbStack , '0' ) ;
+    OStEXTAK(  ostoSay , "\r\nmain [cbStack,pbStack,pbStackEnd]:    " ) ;
+    OStEXT(    ostoSay , TUCK << 1 ) ;
+
     countT cbStack      = pbStackEnd - pbStackStart ;
     byteT* pbStackEnd   = (byteT*)info.BaseAddress + info.RegionSize ;
     byteT* pbStackStart = (byteT*)info.AllocationBase ;
