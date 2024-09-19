@@ -2685,17 +2685,7 @@ void elf_obey_C::liveF( void )
                     " op map=\\tmp\\base.map"
                     " op mangle"
                     " op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd'"
-                  //" op st=0x00400000"
-                //B:" op st=0x00001000"
-                //B:" op st=0x00201000"
-                //G:" op st=0x00280000"
-                //B:" op st=0x00210000"
-                //G:" op st=0x00280000"
-                //B:" op st=0x00010000"     TOO SMALL FOR BUNDLE
-                //B:TOO SMALL FOR CLOUD IN BUNDLE ON FACTORY6    " op st=0x00080000"     // WORKS FOR nodeC SIMULATOR 8 PROCESSES x 04 nodeC INSTANCES EACH
-             /*PROD:" op st=0x00100000"*/""
-//20240910@1832: RETIRED: " op st=0x01000000"
-                    " op st=0x00010000"
+                    " op st=0x00020000"                     //THIS IS THE MIN SIZE THAT BASE OS WILL HONOR (NOT SILENTLY IGNORE)
                     " segment type code shared"
                     " segment class 'CODE' shared"
                     " segment 'BEGTEXT' shared"
@@ -4123,18 +4113,7 @@ void elf_obey_C::linkF( char* postIdiForeignP )
                 " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\microsoft\\msi.lib"
                 " library \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wl"
                 " op heapsize=0x70000"
-              //" op st=0x00510000"
-            //B:" op st=0x00001000"
-            //B:" op st=0x00010000"
-            //B:" op st=0x00201000"
-            //G:" op st=0x00280000"
-            //B:" op st=0x00210000"
-             //:" op st=0x00280000"
-            //B:" op st=0x00010000"    TOO SMALL FOR BUNDLE
-            //B:TOO SMALL FOR CLOUD IN BUNDLE ON FACTORY6    " op st=0x00080000"     // WORKS FOR nodeC SIMULATOR 8 PROCESSES x 04 nodeC INSTANCES EACH
-         /*PROD:" op st=0x00100000"*/""
-//20240910@1832: RETIRED: " op st=0x01000000"
-                " op st=0x00010000"
+                " op st=0x00020000"                     //THIS IS THE MIN SIZE THAT BASE OS WILL HONOR (NOT SILENTLY IGNORE)
                 " segment type code shared"
                 " segment class 'CODE' shared"
                 " segment 'BEGTEXT' shared"

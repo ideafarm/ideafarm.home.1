@@ -11,7 +11,7 @@
 
 #define TaRG2sGNdONE(tmFP,sgnDoneP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0 , 0
 
-#define CBsTACKdEFAULT ( TOCK )
+#define CBsTACKmIN ( TOCK << 1 )
 
 #define CBtLSmINIMUM ( TUCK << 2 )
 
@@ -2028,10 +2028,11 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                             \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                   \
             TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                       \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            ) tinP.flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                       \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          ) tinP.flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                       \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ) tinP.flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                       \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    ) tinP.flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                       \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         tinP.flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         tinP.flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         tinP.flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         tinP.flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         tinP.flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                               \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) tinP.monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                               \
                                                                                                                                                                                                                                                                             \
             TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                \

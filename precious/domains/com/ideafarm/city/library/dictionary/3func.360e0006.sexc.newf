@@ -33,7 +33,13 @@
                 if( pMyNote->idDelLath != idNewLathWas )
                 countT idNewLathWas = incv02AM( pMyNote->idNewLath ) ;
 
-                if( !pMyNote->idLineTagged || !pMyNote->idiFileTagged ) { BLAMMO ; }
+                //U::if( !pMyNote->idLineTagged || !pMyNote->idiFileTagged && !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ) ) { BLAMMO ; }
+                }
+                    if(  !bSuppress ) { BLAMMO ; }
+                    boolT bSuppress = F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ;
+                {
+                if( !pMyNote->idLineTagged || !pMyNote->idiFileTagged )
+
                 pMyNote->idiFileTagged = tinP.monitor.pLFnest[ ( ( tinP.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
                 pMyNote->idLineTagged  = tinP.monitor.pLFnest[ ( ( tinP.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 )     ] ;
                 //USE THIS TO INVESTIGATE LEAKS THAT REPORT AS aaaaaaaa(aaaaaaaa) I.E. WERE NEVER TAGGED
