@@ -83,11 +83,11 @@ TN( tb4    , "    " ) ;
 //etThread.traceF( tinP , T("unlocking") ) ;
 ether.loafIF( tinP ) ;
 
-etThread.osThreadF( TaRG1( tmHireF ) ) ;
+etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 1 ) ) ;
 
 //U::etThread.osThreadF( TaRG1( tmWatchHandlesF ) ) ;
 
-etThread.osThreadF( TaRG1( tmServerF ) , (countT)&psttzLeverFolder , (countT)&swFlock ) ;
+etThread.osThreadF( TaRG2cBsTACK( tmServerF , CBsTACKmIN << 1 ) , (countT)&psttzLeverFolder , (countT)&swFlock ) ;
 
 //etThread.traceF( tinP , T("folder:    ")+tFolder ) ;
 //}

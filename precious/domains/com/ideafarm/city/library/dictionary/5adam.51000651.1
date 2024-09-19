@@ -129,14 +129,14 @@ bSandbox = 0 ;
     //if( !etThread.strCompareF( tinP , tComputerName , T("ifo.master") ) )
     //20230905@1549: COMMENTED THIS OUT BECAUSE IT IS PROBABLY OBSOLETE
 
-    etThread.osThreadF( TaRG1( tmCleanF ) , (countT)(strokeS*)t13Bounce , (countT)(strokeS*)t11DropSoil ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmCleanF , CBsTACKmIN << 1 ) , (countT)(strokeS*)t13Bounce , (countT)(strokeS*)t11DropSoil ) ;
     //etThread.osThreadF( TaRG1( tmPingF ) ) ; //U::COMMENTED OUT BECAUSE SAW A FAILURE IN s_writeF 20121219@2102
 
     //etThread.osThreadF( TaRG1( tmFixArcNamesF ) ) ; // REDUNDANT, JUST IN CASE A FILE WITH A BAD NAME HAS GOTTEN INTO THE ARCHIVE ; U::ADD bQuitP PARAMETER
     //20161112@1559: DISABLED AS PART OF ENHANCING 6d9 TO OPTIONALLY RENAME ALL LOCAL MASTER FILES TO NUMERIC NAMES, PRESERVING THE ORIGINAL NAME IN A HASH LOOKUP FILE
 
     }
-        etThread.osThreadF( TaRG1( tmRenameF ) , (countT)pstt21DropArchive ) ;
+        etThread.osThreadF( TaRG2cBsTACK( tmRenameF , CBsTACKmIN << 1 ) , (countT)pstt21DropArchive ) ;
 
         //etThread.strMakeF( tinP , LF , psttNeverDropHere , tNeverDropHere ) ; ___( psttNeverDropHere ) ;
         etThread.strMakeF( tinP , LF , pstt21DropArchive , t21DropArchive ) ; ___( pstt21DropArchive ) ;

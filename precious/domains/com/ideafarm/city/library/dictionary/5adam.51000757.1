@@ -63,7 +63,7 @@ DONE( tmWorkF )
 
     ether.ifcHireF( tinP , T("ifcIDaDAM_WATCHiDLEcPU") , ifcIDaDAM_HOMEfLAGS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
 
-    while( cDo -- ) etThread.osThreadF( TaRG1( tmGorillaF ) , (countT)&sgnGo , (countT)&cGorillasWaiting , (countT)&grabAccumulators , (countT)&mMin , (countT)&mSum , (countT)&mMax ) ;
+    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&sgnGo , (countT)&cGorillasWaiting , (countT)&grabAccumulators , (countT)&mMin , (countT)&mSum , (countT)&mMax ) ;
     countT cDo = cProcessors ;
     TN( tb4 , "    " ) ;
     grabC grabAccumulators( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS , ifcIDgRABlAYER_7BASEmISC1 ) ;    //20200610@2039: flGRABc_NOTjEALOUS ADDED WITHOUT ANALYSIS WITHOUT IDENTIFYING THIS AS THE CULPRIT IN A JEALOUSY

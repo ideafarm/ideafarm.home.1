@@ -1,15 +1,20 @@
 
+#define TaRG1(tmFP)                                                         tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , 0          , 0
+#define TaRG2cBsTACK(tmFP,cbStackP)                                         tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
+#define TaRG2cBtLS(tmFP,cbTlsP)                                             tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
+#define TaRG2sGNdONE(tmFP,sgnDoneP)                                         tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0          , 0
+#define TaRG3cBsTACKcBtLS(tmFP,cbStackP,cbTlsP)                             tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , (cbStackP) , (cbTlsP)
+#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP)                                 tinP , countTC() , tmFP , 0           , 0 , (flagsP)            , 0          , (cbTlsP)
+#define TaRG3sGNdONEcBsTACK(tmFP,sgnDoneP,cbStackP)                         tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
+#define TaRG3sGNdONEcBtLS(tmFP,sgnDoneP,cbTlsP)                             tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
+#define TaRG4fLAGScBsTACKcBtLS(tmFP,flagsP,cbStackP,cbTlsP)                 tinP , countTC() , tmFP , 0           , 0 , (flagsP)            , (cbStackP) , (cbTlsP)
+#define TaRG4sGNdONEcBsTACKcBtLS(tmFP,sgnDoneP,cbStackP,cbTlsP)             tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , (cbStackP) , (cbTlsP)
+#define TaRG5sGNdONEfLAGScBsTACKcBtLS(tmFP,sgnDoneP,flagsP,cbStackP,cbTlsP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , (flagsP)            , (cbStackP) , (cbTlsP)
+
   #define TAG(offP) LF , 0
   #define TAGoRnOtIN(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
   #define TAGnOtIN(offP) LF , 0
   #define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
-
-#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP)         tinP , countTC() , tmFP , 0           , 0 , (flagsP)            , 0          , (cbTlsP)
-
-#define TaRG3sGNdONEcBsTACK(tmFP,sgnDoneP,cbStackP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
-#define TaRG3sGNdONEcBtLS(tmFP,sgnDoneP,cbTlsP)     tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
-
-#define TaRG2sGNdONE(tmFP,sgnDoneP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0 , 0
 
 #define CBsTACKmIN ( TOCK << 1 )
 
@@ -22943,7 +22948,6 @@ it is illegal to refer to this symbol anywhere but in the definition of a BlATHs
 /**/
 /*1*//*TaRG1(tmFP)*//*1*/
 
-#define TaRG1(tmFP) tinP , countTC() , tmFP , 0 , 0  , flTHREADlAUNCH_null , 0 , 0
 
 
 //
@@ -51312,7 +51316,6 @@ examples
 /**/
 /*1*//*TaRG2cBtLS(tmFP,cbTlsP)*//*1*/
 
-#define TaRG2cBtLS(tmFP,cbTlsP) tinP , countTC() , tmFP , 0 , 0  , flTHREADlAUNCH_null , (cbTlsP)
 
 
 //
