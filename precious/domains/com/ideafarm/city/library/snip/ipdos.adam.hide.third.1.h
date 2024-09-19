@@ -2002,6 +2002,12 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                             \
         ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                              \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinS IN POOL*/                                                                                                              \
+        {                                                                                                                                                                                                                                                                   \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                    \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                 \
+        }                                                                                                                                                                                                                                                                   \
+        else                                                                                                                                                                                                                                                                \
         {                                                                                                                                                                                                                                                                   \
             tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;                                                                                                                                                                          \
             TELL( "TASK0: newing a tinS in the working poolOld" )                                                                                                                                                                                                           \
@@ -2041,15 +2047,18 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) tinP.monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                               \
                                                                                                                                                                                                                                                                             \
             TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                \
-            etherC* pEtThread  = new( 0 , tinP , LF ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ; ___( pEtThread ) ;                                                                                                                       \
-            tinP.pEtScratch = new( 0 , tinP , LF ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ; ___( tinP.pEtScratch ) ;                                                                                                                             \
+            byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                            \
+            byteT pbEther2[ sizeof( etherC ) ] ;                                                                                                                                                                                                                            \
+            etherC* pEtThread = new( 0 , tinP , pbEther1 , sizeof pbEther1 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                   \
+            tinP.pEtScratch   = new( 0 , tinP , pbEther2 , sizeof pbEther2 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;                                                                                                                            \
             TESTsCRATCH ;                                                                                                                                                                                                                                                   \
             TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                          \
             ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                               \
             if( pEtThread && tinP.pEtScratch )                                                                                                                                                                                                                              \
             {                                                                                                                                                                                                                                                               \
                 etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                            \
-                tinP.pScoopEtThread = new( 0 , tinP , LF ) scoopC( tinP , LF , etThread ) ; ___( tinP.pScoopEtThread  ) ;                                                                                                                                                   \
+                byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                         \
+                tinP.pScoopEtThread = new( 0 , tinP , pbScoop , sizeof pbScoop ) scoopC( tinP , LF , etThread ) ; ___( tinP.pScoopEtThread  ) ;                                                                                                                             \
                                                                                                                                                                                                                                                                             \
                 /*POPUP( TF1(tinP.monitor.idThread)+T(" ")+T(tinP.postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
                                                                                                                                                                                                                                                                             \
@@ -2087,7 +2096,6 @@ it is illegal to refer to this symbol in the definition of an adam
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200023.task0 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200024.done0 BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -2106,113 +2114,112 @@ it is illegal to refer to this symbol in the definition of an adam
 
 //INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK0
 
-#define DONE0                                                                                                                                                       \
-                                                                                                                                                                    \
-                        /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                          \
-                                                                                                                                                                    \
-                        etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/   \
-                                                                                                                                                                    \
-                        {                                                                                                                                           \
-                            TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                   \
-                            if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; } \
-                            if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                         \
-                            tinP.idPhase2 = 0 ;                                                                                                                     \
-                            TELL( "DONE0: after returning from application code" ) ;                                                                                \
-                                                                                                                                                                    \
-                            if( tinP.pag1->cYieldHighWater )                                                                                                        \
-                            {                                                                                                                                       \
-                                OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                   \
-                                OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                          \
-                                OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;                                                                                       \
-                                OStEXTAK( ostoSay , "    " ) ;                                                                                                      \
-                                OStEXTC(  ostoSay , tinP.pag1->cYieldHighWater , 0 ) ;                                                                              \
-                                OStEXTAK( ostoSay , "    " ) ;                                                                                                      \
-                                OStEXTC(  ostoSay , tinP.cSpins1 , '0' ) ;                                                                                          \
-                                OStEXTAK( ostoSay , "." ) ;                                                                                                         \
-                                OStEXTC(  ostoSay , tinP.cSpins2 , '0' ) ;                                                                                          \
-                                OStEXTAK( ostoSay , "." ) ;                                                                                                         \
-                                OStEXTC(  ostoSay , tinP.cSpins3 , '0' ) ;                                                                                          \
-                                OStEXTAK( ostoSay , "." ) ;                                                                                                         \
-                                OStEXTC(  ostoSay , tinP.cSpins4 , '0' ) ;                                                                                          \
-                                OStEXTAK( ostoSay , "." ) ;                                                                                                         \
-                                OStEXTC(  ostoSay , tinP.cOsHandles , '0' ) ;                                                                                         \
-                                etThread.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                           \
-                            }                                                                                                                                       \
-                                                                                                                                                                    \
-                            if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                      \
-                            else                                                                                                                                    \
-                            {                                                                                                                                       \
-                                TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                \
-                                if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ; \
-                                                                                                                                                                    \
-                                TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                \
-                                {                                                                                                                                   \
-                                    sleepC s( tinP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                     \
-                                    while( tinP.cKidThreads )                                                                                                       \
-                                    {                                                                                                                               \
-                                        etherC::etRockIF( tinP ).traceF( tinP , T("DONE0 / napping a wink for my kids to end [tinP.cKidThreads]:    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; \
-                                        ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ;                                                                                \
-                                    }                                                                                                                               \
-                                }                                                                                                                                   \
-                                TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                      \
-                            }                                                                                                                                       \
-                            if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                     \
-                            if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; } \
-                        }                                                                                                                                           \
-                    }                                                                                                                                               \
-                                                                                                                                                                    \
-                    tinP.pSgnUtility = 0 ;                                                                                                                          \
-                                                                                                                                                                    \
-                    {                                                                                                                                               \
-                        TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                       \
-                        if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                          \
-                        {                                                                                                                                           \
-                            if( psttThreadFile )                                                                                                                    \
-                            {                                                                                                                                       \
-                                TELL( "DONE0: deleting thread file" ) ;                                                                                             \
-                                tinP.pEtScratch->boxZapF( tinP , psttThreadFile ) ;                                                                                 \
-                                tinP.pEtScratch->delF( tinP , psttThreadFile ) ;                                                                                    \
-                            }                                                                                                                                       \
-                                                                                                                                                                    \
-                            TELL( "DONE0: testing poolOld" ) ;                                                                                                      \
-                            tinP.pEther = 0 ;                                                                                                                       \
-                            TELL( "DONE0: deleting etThread (and tinP)" ) ;                                                                                         \
-                            DEL( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                             \
-                            DEL( tinP.pEtScratch ) ;                                                                                                                \
-                            if( *(countT*)&pEtThread )                                                                                                              \
-                            {                                                                                                                                       \
-                                THREADmODE3oFF( flTHREADmODE3_DOnOTcaLLdELif )                                                                                      \
-                                delete pEtThread ; /* tinP IS DESTROYED HERE */                                                                                     \
-                                TINSL                                                                                                                               \
-                                THREADmODE3rESTORE                                                                                                                  \
-                                pEtThread = 0 ;                                                                                                                     \
-                            }                                                                                                                                       \
-                        }                                                                                                                                           \
-                    }                                                                                                                                               \
-                }                                                                                                                                                   \
-                                                                                                                                                                    \
-                {                                                                                                                                                   \
-                    TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                           \
-                    TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                          \
-                    boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                   \
-                    countT& cAllThreads = bOrphan                                                                                                                   \
-                        ? thirdC::os_cAllOrphanThreadsI_IF( tinP )                                                                                                  \
-                        : thirdC::os_cAllKidThreadsI_IF( tinP )                                                                                                     \
-                    ;                                                                                                                                               \
-                                                                                                                                                                    \
-                    boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                       \
-                    if( !bFake )                                                                                                                                    \
-                    {                                                                                                                                               \
-                        /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                      \
-                        /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                      \
-                        DEL( pTaskP ) ;                                                                                                                             \
-                    }                                                                                                                                               \
-                                                                                                                                                                    \
-                    TELL( "DONE0: i am outa here" )                                                                                                                 \
-                    if( tinP.monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] = - 1 ;                   \
-                    dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                \
-                }                                                                                                                                                   \
-            }                                                                                                                                                       \
+#define DONE0                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                \
+                        /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                      \
+                                                                                                                                                                                                                                                \
+                        etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/                                                                               \
+                                                                                                                                                                                                                                                \
+                        {                                                                                                                                                                                                                       \
+                            TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                               \
+                            if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                       \
+                            if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                                     \
+                            tinP.idPhase2 = 0 ;                                                                                                                                                                                                 \
+                            TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                            \
+                                                                                                                                                                                                                                                \
+                            if( tinP.pag1->cYieldHighWater )                                                                                                                                                                                    \
+                            {                                                                                                                                                                                                                   \
+                                OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                               \
+                                OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                    \
+                                OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;                                                                                                                                                                   \
+                                OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                  \
+                                OStEXTC(  ostoSay , tinP.pag1->cYieldHighWater , 0 ) ;                                                                                                                                                          \
+                                OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                  \
+                                OStEXTC(  ostoSay , tinP.cSpins1 , '0' ) ;                                                                                                                                                                      \
+                                OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
+                                OStEXTC(  ostoSay , tinP.cSpins2 , '0' ) ;                                                                                                                                                                      \
+                                OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
+                                OStEXTC(  ostoSay , tinP.cSpins3 , '0' ) ;                                                                                                                                                                      \
+                                OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
+                                OStEXTC(  ostoSay , tinP.cSpins4 , '0' ) ;                                                                                                                                                                      \
+                                OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
+                                OStEXTC(  ostoSay , tinP.cOsHandles , '0' ) ;                                                                                                                                                                   \
+                                etThread.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                       \
+                            }                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                \
+                            if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                  \
+                            else                                                                                                                                                                                                                \
+                            {                                                                                                                                                                                                                   \
+                                TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                            \
+                                if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;               \
+                                                                                                                                                                                                                                                \
+                                TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                            \
+                                {                                                                                                                                                                                                               \
+                                    sleepC s( tinP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                 \
+                                    while( tinP.cKidThreads )                                                                                                                                                                                   \
+                                    {                                                                                                                                                                                                           \
+                                        etherC::etRockIF( tinP ).traceF( tinP , T("DONE0 / napping a wink for my kids to end [tinP.cKidThreads]:    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                       \
+                                        ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ;                                                                                                                                                            \
+                                    }                                                                                                                                                                                                           \
+                                }                                                                                                                                                                                                               \
+                                TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                  \
+                            }                                                                                                                                                                                                                   \
+                            if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                                 \
+                            if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                       \
+                        }                                                                                                                                                                                                                       \
+                    }                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                \
+                    tinP.pSgnUtility = 0 ;                                                                                                                                                                                                      \
+                                                                                                                                                                                                                                                \
+                    {                                                                                                                                                                                                                           \
+                        TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                   \
+                        if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                                                                                                      \
+                        {                                                                                                                                                                                                                       \
+                            if( psttThreadFile )                                                                                                                                                                                                \
+                            {                                                                                                                                                                                                                   \
+                                TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                         \
+                                tinP.pEtScratch->boxZapF( tinP , psttThreadFile ) ;                                                                                                                                                             \
+                                tinP.pEtScratch->delF( tinP , psttThreadFile ) ;                                                                                                                                                                \
+                            }                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                \
+                            TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                  \
+                            tinP.pEther = 0 ;                                                                                                                                                                                                   \
+                            TELL( "DONE0: deleting etThread (and tinP)" ) ;                                                                                                                                                                     \
+                            DELzOMBIE( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                   \
+                            DELzOMBIE( tinP.pEtScratch ) ;                                                                                                                                                                                      \
+                            if( *(countT*)&pEtThread )                                                                                                                                                                                          \
+                            {                                                                                                                                                                                                                   \
+                                THREADmODE3oFF( flTHREADmODE3_DOnOTcaLLdELif )                                                                                                                                                                  \
+                                DELzOMBIE( pEtThread ) ; /* tinP IS DESTROYED HERE */                                                                                                                                                           \
+                                TINSL                                                                                                                                                                                                           \
+                                THREADmODE3rESTORE                                                                                                                                                                                              \
+                            }                                                                                                                                                                                                                   \
+                        }                                                                                                                                                                                                                       \
+                    }                                                                                                                                                                                                                           \
+                }                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                               \
+                    TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                       \
+                    TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                      \
+                    boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                               \
+                    countT& cAllThreads = bOrphan                                                                                                                                                                                               \
+                        ? thirdC::os_cAllOrphanThreadsI_IF( tinP )                                                                                                                                                                              \
+                        : thirdC::os_cAllKidThreadsI_IF( tinP )                                                                                                                                                                                 \
+                    ;                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                \
+                    boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                   \
+                    if( !bFake )                                                                                                                                                                                                                \
+                    {                                                                                                                                                                                                                           \
+                        /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                                                                                                  \
+                        /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                                                                                                  \
+                        DEL( pTaskP ) ;                                                                                                                                                                                                         \
+                    }                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                \
+                    TELL( "DONE0: i am outa here" )                                                                                                                                                                                             \
+                    if( tinP.monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] = - 1 ;                                                                                               \
+                    dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                            \
+                }                                                                                                                                                                                                                               \
+            }                                                                                                                                                                                                                                   \
             DONE1
 
 
@@ -6802,6 +6809,7 @@ flTHREADlAUNCH_ORPHAN
 #define flTHREADlAUNCH_INHERITjOTrEGISTRATIONS 0xe0001010
 #define flTHREADlAUNCH_EPHEMERAL               0xe0002010
 #define flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT     0xe0004010
+#define flTHREADlAUNCH_NOtINiNpOOL             0xe0008010
 /*3*/
 #define flTHREADlAUNCH_null    0xe0000010
 
@@ -16753,6 +16761,7 @@ after i return, that countT object will contain 1
 #define flMODEpROCESS2_SUPPRESSiNoUTfRAMEc             0xe0000844
 #define flMODEpROCESS2_EXITcODEiMPOTENCE               0xe0001044
 #define flMODEpROCESS2_CHATTERtHREADcTdT               0xe0002044
+#define flMODEpROCESS2_FANCY                           0xe0004044
 /*3*/
 #define flMODEpROCESS2_null    0xe0000044
 
@@ -50588,6 +50597,7 @@ after i return, that countT object will contain 1
 #define flTHREADmODE5_STFU1iOmACRO                                                      0xe0002010
 #define flTHREADmODE5_ARMoPENsSL                                                        0xe0004010
 #define flTHREADmODE5_DOnOTfREEsSLcONTEXT                                               0xe0008010
+#define flTHREADmODE5_TINiSnOTiNpOOL                                                    0xe0010010
 /*3*/
 #define flTHREADmODE5_null    0xe0000010
 
@@ -51502,133 +51512,3 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CBuDPfILEpAYLOAD*//*1*/
-
-#define CBuDPfILEpAYLOAD ( ifcCBdATAGRAMmAX - sizeof( udpFileGramHeadFileWindowS ) )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CuDPfILEePOCHsLOTS*//*1*/
-
-#define CuDPfILEePOCHsLOTS 5
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CuDPfILEePOCHhONORED*//*1*/
-
-#define CuDPfILEePOCHhONORED ( CuDPfILEePOCHsLOTS - 1 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a3.OFFuDPfILEePOCHhONOR BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*OFFuDPfILEePOCHhONOR*//*1*/
-
-#define OFFuDPfILEePOCHhONOR_MIN ( offEpochFresheningP - CuDPfILEePOCHhONORED )
-#define OFFuDPfILEePOCHhONOR_MAX ( offEpochFresheningP - 1             )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a3.OFFuDPfILEePOCHhONOR END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a4.TIMEuDPfILEePOCH BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*TIMEuDPfILEePOCH*//*1*/
-
-#define TIMEuDPfILEePOCH ( TOCK << 4 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a4.TIMEuDPfILEePOCH END
