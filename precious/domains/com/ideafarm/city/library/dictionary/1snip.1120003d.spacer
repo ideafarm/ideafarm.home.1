@@ -6,8 +6,16 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
+#endif
 
-#define SPACER(suffixP) countT pcSpacer##suffixP[ SPACERsIZE ] ;
+    #define SPACER(suffixP) countT pcSpacer##suffixP[ SPACERsIZE ] ;
+
+#else
+
+    #define SPACER(suffixP)
+
+#if !defined( SPACERsIZE )
+
 /*1*//*SPACER(suffixP)*//*1*/
 /**/
 */

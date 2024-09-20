@@ -1,3 +1,39 @@
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDuDPfILEmETAtYPE*//*1*/
+
+/*3*/
+#define ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME     0x1
+#define ifcIDuDPfILEmETAtYPE_CONTROLsETTINGS    0x2
+#define ifcIDuDPfILEmETAtYPE_HASHoFcONTENT      0x3
+#define ifcIDuDPfILEmETAtYPE_CONTENT            0x4
+#define ifcIDuDPfILEmETAtYPE_TIMEcREATED        0x5
+#define ifcIDuDPfILEmETAtYPE_TIMEmODIFIED       0x6
+#define ifcIDuDPfILEmETAtYPE_IDgENERATION       0x7
+#define ifcIDuDPfILEmETAtYPE_IDvERSION          0x8
+#define ifcIDuDPfILEmETAtYPE_IDoWNERlO          0x9
+#define ifcIDuDPfILEmETAtYPE_IDoWNERhI          0xa
+/*3*/                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD BEGIN
 
 

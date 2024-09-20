@@ -1,4 +1,159 @@
 
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010071.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*SPACERsIZE*//*1*/
+
+//TO SUPPRESS SPACERS, COMMENT OUT THIS DEFINITION
+
+//#define SPACERsIZE 1
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010070.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*SPACER(suffixP)*//*1*/
+
+#if !defined( SPACERsIZE )
+
+    #define SPACER(suffixP)
+
+#else
+
+    #define SPACER(suffixP) countT pcSpacer##suffixP[ SPACERsIZE ] ;
+
+#endif
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000019.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*SPACERvALUE*//*1*/
+
+#if !defined( SPACERsIZE )
+
+    #define SPACERvALUE
+
+#else
+
+    #define SPACERvALUE (0xbbeebbee)
+
+#endif
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000018.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*SPACERtEST(suffixP)*//*1*/
+
+#if !defined( SPACERsIZE )
+
+    #define SPACERtEST(suffixP)
+
+#else
+
+    #define SPACERtEST(suffixP) { for( countT off = 0 ; off < SPACERsIZE ; off ++ ){ __( pcSpacer##suffixP[ off ] != SPACERvALUE ) ; } }
+
+#endif
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000017.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*SPACERsET(suffixP)*//*1*/
+
+#if !defined( SPACERsIZE )
+
+    #define SPACERsET(suffixP)
+
+#else
+
+    #define SPACERsET(suffixP) { for( countT off = 0 ; off < SPACERsIZE ; off ++ ){ pcSpacer##suffixP[ off ] = SPACERvALUE ; } }
+
+#endif
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
 #define TaRG1(tmFP)                                                         tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , 0          , 0
 #define TaRG2cBsTACK(tmFP,cbStackP)                                         tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
 #define TaRG2cBtLS(tmFP,cbTlsP)                                             tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
@@ -1543,7 +1698,6 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
 /*1*//*SPACERsET(suffixP)*//*1*/
-#define SPACERsET(suffixP) { for( countT off = 0 ; off < SPACERsIZE ; off ++ ){ pcSpacer##suffixP[ off ] = SPACERvALUE ; } }
 
 
 //
@@ -1570,7 +1724,6 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
 /*1*//*SPACERtEST(suffixP)*//*1*/
-#define SPACERtEST(suffixP) { for( countT off = 0 ; off < SPACERsIZE ; off ++ ){ __( pcSpacer##suffixP[ off ] != SPACERvALUE ) ; } }
 
 
 //
@@ -1597,7 +1750,6 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
 /*1*//*SPACERvALUE*//*1*/
-#define SPACERvALUE (0xbbeebbee)
 
 
 //
@@ -3058,7 +3210,6 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
 /*1*//*SPACER(suffixP)*//*1*/
-#define SPACER(suffixP) countT pcSpacer##suffixP[ SPACERsIZE ] ;
 
 
 //
@@ -3085,7 +3236,6 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
 /*1*//*SPACERsIZE*//*1*/
-#define SPACERsIZE 1
 
 
 //
@@ -51480,39 +51630,3 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/*1*//*ifcIDuDPfILEmETAtYPE*//*1*/
-
-/*3*/
-#define ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME     0x1
-#define ifcIDuDPfILEmETAtYPE_CONTROLsETTINGS    0x2
-#define ifcIDuDPfILEmETAtYPE_HASHoFcONTENT      0x3
-#define ifcIDuDPfILEmETAtYPE_CONTENT            0x4
-#define ifcIDuDPfILEmETAtYPE_TIMEcREATED        0x5
-#define ifcIDuDPfILEmETAtYPE_TIMEmODIFIED       0x6
-#define ifcIDuDPfILEmETAtYPE_IDgENERATION       0x7
-#define ifcIDuDPfILEmETAtYPE_IDvERSION          0x8
-#define ifcIDuDPfILEmETAtYPE_IDoWNERlO          0x9
-#define ifcIDuDPfILEmETAtYPE_IDoWNERhI          0xa
-/*3*/                                                               
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END
