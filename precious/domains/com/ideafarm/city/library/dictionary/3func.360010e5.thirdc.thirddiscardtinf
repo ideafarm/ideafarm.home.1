@@ -12,11 +12,17 @@
         //OUT
 
         }
+            if( bZombieDel ) { THREADmODE3oN( flTHREADmODE3_DOnOTcaLLdELif ) ; }
             TINSL
-            else                                                          { DEL(       pDoomed ) ; }
-            if( F(tinP.flagsThreadMode5) & flTHREADmODE5_TINiSnOTiNpOOL ) { DELzOMBIE( pDoomed ) ; }
+
+            }
+                DEL( pDoomed ) ;
+                if( bZombieDel ) { THREADmODE3oFF( flTHREADmODE3_DOnOTcaLLdELif ) ; }
+            {
+            if( !( F(tinP.flagsThreadMode5) & flTHREADmODE5_TINiSnOTiNpOOL ) )          //20240919@2048: COMPILER ERROR IF PUT THIS TEST WITHIN THE PRECEDING IF STATEMENT
+            boolT bZombieDel = F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ;
         {
-        if( *(countT*)&pDoomed )
+        if( *(countT*)&pDoomed )                                                        //20240919@2048: CONJ: THIS APPEARS TO BE A CHECK FOR A NONZE FINGERPRINT
         tinS* pDoomed = &tinP ;
 
         tinP.flags &= ~( F(flTINs_REGISTERED) ) ;
