@@ -2102,12 +2102,145 @@ use me iff pvP was obtained from operator new
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200022.newdelclassprotos END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200023.task0 BEGIN
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*TASK0nOeTsCRATCH(taskFP,flagsThirdModeP)*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+#define TASK0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                            \
+                                                                                                                                                                                                                                                                            \
+    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                    \
+    {                                                                                                                                                                                                                                                                       \
+        TINSL                                                                                                                                                                                                                                                               \
+        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
+        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                     \
+                                                                                                                                                                                                                                                                            \
+        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */                                                                                                                           \
+        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                        */                                                                                                                           \
+        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */                                                                                                                           \
+        /*OStEXTA(  _ostoTmp , tinP.postThreadName )                                                                                           */                                                                                                                           \
+        /*OStEXTAK( _ostoTmp , "." )                                                                                                           */                                                                                                                           \
+        /*OStEXTC(  _ostoTmp , tinP.monitor.idThread , 0 )                                                                                     */                                                                                                                           \
+        /*tlsAllocStackExp_8_C tlsForMe( tinP ) ;                                                                                              */                                                                                                                           \
+        /*tlsBlobC _tlsBlobStatRangerTag( tinP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                           \
+        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                           \
+        /*OStEXTcLEAR( _ostoTmp )                                                                                                              */                                                                                                                           \
+                                                                                                                                                                                                                                                                            \
+        TELL( "TASK0: workF+" )                                                                                                                                                                                                                                             \
+        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                      \
+        thirdC::osTraceWrongNodeIF( tinP , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                 \
+        thirdC::osTraceWrongNodeIF( tinP , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                 \
+                                                                                                                                                                                                                                                                            \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                         \
+        {                                                                                                                                                                                                                                                                   \
+            sleepC s( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                           \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                   \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                       \
+            {                                                                                                                                                                                                                                                               \
+                ++ s ; thirdC::dosSleepIF( tinP , TOCK >> 3 ) ;                                                                                                                                                                                                             \
+            }                                                                                                                                                                                                                                                               \
+        }                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                            \
+        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                              \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinS IN POOL*/                                                                                                              \
+        {                                                                                                                                                                                                                                                                   \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                    \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                 \
+        }                                                                                                                                                                                                                                                                   \
+        else                                                                                                                                                                                                                                                                \
+        {                                                                                                                                                                                                                                                                   \
+            tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;                                                                                                                                                                          \
+            TELL( "TASK0: newing a tinS in the working poolOld" )                                                                                                                                                                                                           \
+            tinS* pTin = new( 0 , tinP , LF ) tinS( tinP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;       \
+            if( pTin )                                                                                                                                                                                                                                                      \
+            {                                                                                                                                                                                                                                                               \
+                bTinOk = 1 ;                                                                                                                                                                                                                                                \
+                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                        \
+                TINSL                                                                                                                                                                                                                                                       \
+                ___( pTin ) ;                                                                                                                                                                                                                                               \
+            }                                                                                                                                                                                                                                                               \
+        }                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                            \
+        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                               \
+        TELL( "TASK0: after newing either a tinS in the working poolOld" )                                                                                                                                                                                                  \
+        if( bTinOk )                                                                                                                                                                                                                                                        \
+        {                                                                                                                                                                                                                                                                   \
+            TINSL                                                                                                                                                                                                                                                           \
+            thirdC::osTraceWrongNodeIF( tinP , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                              \
+            etherC& ether = etherC::etPrimeIF( tinP ) ;                                                                                                                                                                                                                     \
+            etherC& etRock = etherC::etRockIF( tinP ) ;                                                                                                                                                                                                                     \
+            TELL( "TASK0: setting miscellaneous fields in tinP" )                                                                                                                                                                                                           \
+            tinP.idiTask  = DDNUMB ;                                                                                                                                                                                                                                        \
+            tinP.idlTask  = ifcLINE ;                                                                                                                                                                                                                                       \
+            tinP.monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinP ) ;                                                                                                                                                                                            \
+            tinP.pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                            \
+            /*etRock.traceF( tinP , T("TASK0 [osTid]: ")+TF4(tinP.osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
+                                                                                                                                                                                                                                                                            \
+            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                   \
+            TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                       \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         tinP.flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         tinP.flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         tinP.flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         tinP.flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         tinP.flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                               \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) tinP.monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                               \
+                                                                                                                                                                                                                                                                            \
+            TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                \
+            byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                            \
+            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                        \
+            etherC* pEtThread = new( 0 , tinP , pbEther1 , sizeof pbEther1 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                   \
+            /*tinP.pEtScratch   = new( 0 , tinP , pbEther2 , sizeof pbEther2 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                        \
+            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                               \
+            TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                          \
+            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                               \
+            if( pEtThread /*&& tinP.pEtScratch*/ )                                                                                                                                                                                                                          \
+            {                                                                                                                                                                                                                                                               \
+                etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                            \
+                byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                         \
+                tinP.pScoopEtThread = new( 0 , tinP , pbScoop , sizeof pbScoop ) scoopC( tinP , LF , etThread ) ; ___( tinP.pScoopEtThread  ) ;                                                                                                                             \
+                                                                                                                                                                                                                                                                            \
+                /*POPUP( TF1(tinP.monitor.idThread)+T(" ")+T(tinP.postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                            \
+                TELL( "TASK0: final setup" )                                                                                                                                                                                                                                \
+                tinP.pEther = &etThread ;                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                            \
+                signC _sgnUtility( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                              \
+                tinP.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                            \
+                {                                                                                                                                                                                                                                                           \
+                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(tinP.osPid)+T(" ")+TF1(tinP.osTid)+T(" \"")+T(tinP.postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/                       \
+                    etThread.osTimeNowF( tinP , tinP.time1 , tinP.time2 ) ;                                                                                                                                                                                                 \
+                    if( F( ((thirdC&)etThread).third_flagsModeAdam1I_IF( tinP ) ) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                         \
+                    {                                                                                                                                                                                                                                                       \
+                        TN( tDot , "." ) ;                                                                                                                                                                                                                                  \
+                        etThread.strMakeF( tinP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(tinP.osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(tinP.monitor.idThread) ) ; ___( psttThreadFile ) ;                                                \
+                        etThread.boxPutF( tinP , psttThreadFile , "T" ) ;                                                                                                                                                                                                   \
+                    }                                                                                                                                                                                                                                                       \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;                                                         \
+                    TELL( "TASK0: entering application code" )                                                                                                                                                                                                              \
+                    /*tlsBlobC _tlsBlobStackTop( tinP , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                         \
+                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                         \
+                    if( tinP.idPhase1 < ifcIDpHASEtHREAD_WORKING ) tinP.idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
+                    _IO_                                                                                                                                                                                                                                                    \
+                    if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 /*
@@ -2202,11 +2335,11 @@ it is illegal to refer to this symbol in the definition of an adam
             byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                            \
             byteT pbEther2[ sizeof( etherC ) ] ;                                                                                                                                                                                                                            \
             etherC* pEtThread = new( 0 , tinP , pbEther1 , sizeof pbEther1 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                   \
-            tinP.pEtScratch   = new( 0 , tinP , pbEther2 , sizeof pbEther2 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;                                                                                                                            \
-            TESTsCRATCH ;                                                                                                                                                                                                                                                   \
+              tinP.pEtScratch   = new( 0 , tinP , pbEther2 , sizeof pbEther2 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;                                                                                                                          \
+              TESTsCRATCH ;                                                                                                                                                                                                                                                 \
             TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                          \
             ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                               \
-            if( pEtThread && tinP.pEtScratch )                                                                                                                                                                                                                              \
+            if( pEtThread   && tinP.pEtScratch   )                                                                                                                                                                                                                          \
             {                                                                                                                                                                                                                                                               \
                 etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                            \
                 byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                         \
@@ -2237,14 +2370,6 @@ it is illegal to refer to this symbol in the definition of an adam
                     _IO_                                                                                                                                                                                                                                                    \
                     if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
 
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200023.task0 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200024.done0 BEGIN
 
@@ -2265,7 +2390,145 @@ it is illegal to refer to this symbol in the definition of an adam
 //CODEsYNC: 0010055 0010056
 
 //INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK0
+    
+#define DONE0nOeTsCRATCH                                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                            \
+                    /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                      \
+                                                                                                                                                                                                                                            \
+                    etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/                                                                               \
+                                                                                                                                                                                                                                            \
+                    {                                                                                                                                                                                                                       \
+                        TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                               \
+                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                       \
+                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                                     \
+                        tinP.idPhase2 = 0 ;                                                                                                                                                                                                 \
+                        TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                            \
+                                                                                                                                                                                                                                            \
+                        if( tinP.pag1->cYieldHighWater )                                                                                                                                                                                    \
+                        {                                                                                                                                                                                                                   \
+                            OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                               \
+                            OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                    \
+                            OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;                                                                                                                                                                   \
+                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                  \
+                            OStEXTC(  ostoSay , tinP.pag1->cYieldHighWater , 0 ) ;                                                                                                                                                          \
+                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                  \
+                            OStEXTC(  ostoSay , tinP.cSpins1 , '0' ) ;                                                                                                                                                                      \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
+                            OStEXTC(  ostoSay , tinP.cSpins2 , '0' ) ;                                                                                                                                                                      \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
+                            OStEXTC(  ostoSay , tinP.cSpins3 , '0' ) ;                                                                                                                                                                      \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
+                            OStEXTC(  ostoSay , tinP.cSpins4 , '0' ) ;                                                                                                                                                                      \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
+                            OStEXTC(  ostoSay , tinP.cOsHandles , '0' ) ;                                                                                                                                                                   \
+                            etThread.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                       \
+                        }                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                            \
+                        if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                  \
+                        else                                                                                                                                                                                                                \
+                        {                                                                                                                                                                                                                   \
+                            TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                            \
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;               \
+                                                                                                                                                                                                                                            \
+                            TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                            \
+                            {                                                                                                                                                                                                               \
+                                sleepC s( tinP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                 \
+                                while( tinP.cKidThreads )                                                                                                                                                                                   \
+                                {                                                                                                                                                                                                           \
+                                    etherC::etRockIF( tinP ).traceF( tinP , T("DONE0 / napping a wink for my kids to end [tinP.cKidThreads]:    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                       \
+                                    ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ;                                                                                                                                                            \
+                                }                                                                                                                                                                                                           \
+                            }                                                                                                                                                                                                               \
+                            TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                  \
+                        }                                                                                                                                                                                                                   \
+                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                                 \
+                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                       \
+                    }                                                                                                                                                                                                                       \
+                }                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                            \
+                tinP.pSgnUtility = 0 ;                                                                                                                                                                                                      \
+                                                                                                                                                                                                                                            \
+                {                                                                                                                                                                                                                           \
+                    TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                   \
+                    if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                                                                                                      \
+                    {                                                                                                                                                                                                                       \
+                        if( psttThreadFile )                                                                                                                                                                                                \
+                        {                                                                                                                                                                                                                   \
+                            TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                         \
+                            tinP.pEtScratch->boxZapF( tinP , psttThreadFile ) ;                                                                                                                                                             \
+                            tinP.pEtScratch->delF( tinP , psttThreadFile ) ;                                                                                                                                                                \
+                        }                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                            \
+                        TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                  \
+                        tinP.pEther = 0 ;                                                                                                                                                                                                   \
+                        TELL( "DONE0: deleting etThread (and tinP)" ) ;                                                                                                                                                                     \
+                        DELzOMBIE( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                   \
+                        /*DELzOMBIE( tinP.pEtScratch ) ;*/                                                                                                                                                                                  \
+                        if( *(countT*)&pEtThread )                                                                                                                                                                                          \
+                        {                                                                                                                                                                                                                   \
+                            DELzOMBIE( pEtThread ) ; /* tinP IS DESTROYED HERE */                                                                                                                                                           \
+                            TINSL                                                                                                                                                                                                           \
+                        }                                                                                                                                                                                                                   \
+                    }                                                                                                                                                                                                                       \
+                }                                                                                                                                                                                                                           \
+            }                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                            \
+            {                                                                                                                                                                                                                               \
+                TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                       \
+                TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                      \
+                boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                               \
+                countT& cAllThreads = bOrphan                                                                                                                                                                                               \
+                    ? thirdC::os_cAllOrphanThreadsI_IF( tinP )                                                                                                                                                                              \
+                    : thirdC::os_cAllKidThreadsI_IF( tinP )                                                                                                                                                                                 \
+                ;                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                            \
+                if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                               \
+                {                                                                                                                                                                                                                           \
+                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                        \
+                }                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                            \
+                boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                   \
+                if( !bFake )                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                           \
+                    /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                                                                                                  \
+                    /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                                                                                                  \
+                    DEL( pTaskP ) ;                                                                                                                                                                                                         \
+                }                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                            \
+                TELL( "DONE0: i am outa here" )                                                                                                                                                                                             \
+                if( tinP.monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] = - 1 ;                                                                                               \
+                dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                            \
+            }                                                                                                                                                                                                                               \
+        }                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                            \
+        DONE1
 
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000024.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*DONE0*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK0
+    
 #define DONE0                                                                                                                                                                                                                               \
                                                                                                                                                                                                                                             \
                     /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                      \
@@ -2338,7 +2601,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         tinP.pEther = 0 ;                                                                                                                                                                                                   \
                         TELL( "DONE0: deleting etThread (and tinP)" ) ;                                                                                                                                                                     \
                         DELzOMBIE( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                   \
-                        DELzOMBIE( tinP.pEtScratch ) ;                                                                                                                                                                                      \
+                          DELzOMBIE( tinP.pEtScratch ) ;                                                                                                                                                                                    \
                         if( *(countT*)&pEtThread )                                                                                                                                                                                          \
                         {                                                                                                                                                                                                                   \
                             DELzOMBIE( pEtThread ) ; /* tinP IS DESTROYED HERE */                                                                                                                                                           \
@@ -2378,7 +2641,6 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                             \
         DONE1
 
-
 //
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
@@ -2407,6 +2669,7 @@ examples
 /*1*//*TASK(taskFP)*//*1*/
 
 #define TASK(taskFP) TASK0( taskFP , flTHIRDmODE_null )
+#define TASKnOeTsCRATCH(taskFP) TASK0nOeTsCRATCH( taskFP , flTHIRDmODE_null )
 
 
 //
@@ -2478,6 +2741,66 @@ examples
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
+*/
+/**/
+/*1*//**//*1*/
+
+#ifdef __OS2__
+
+    #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                                 \
+                                                                                                                                                                                                                    \
+                        DONE0nOeTsCRATCH                                                                                                                                                                            \
+                                                                                                                                                                                                                    \
+        TASK0PROTO( taskFP )                                                                                                                                                                                        \
+        {                                                                                                                                                                                                           \
+            threadLocalStorageF( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                                     \
+        }
+
+#elif defined( __NT__ )
+
+    #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                                 \
+                                                                                                                                                                                                                    \
+                        DONE0nOeTsCRATCH                                                                                                                                                                            \
+                                                                                                                                                                                                                    \
+        TASK0PROTO( taskFP )                                                                                                                                                                                        \
+        {                                                                                                                                                                                                           \
+            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                                      \
+            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                                     \
+            /* ZE( countT , foo ) ;                          */                                                                                                                                                     \
+            /* ZE( countT , goo ) ;                          */                                                                                                                                                     \
+            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                                     \
+            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                                     \
+            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                                     \
+            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                                     \
+                                                                                                                                                                                                                    \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;               \
+                                                                                                                                                                                                                    \
+            return c_threadTry1OuterF( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
+        }
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200026.done END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200027.osf BEGIN
@@ -5332,7 +5655,6 @@ in the "IN_NORMAL" macros, it is redefined so that the _ macro sets the high ord
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200082.ifcflagin END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._io_ BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -5356,48 +5678,55 @@ it is illegal to refer to this symbol in the definition of an adam
 //20201008@1520: DISABLED TO INVESTIGATE SLOOOOW EXECUTION
 //20210709@1526: NEVERdEFINED3: DISABLE THIS CHATTER SINCE I WANT TO USE SCRATCH0d
 
-#if defined( NEVERdEFINED )
+#if defined( NOiNoUTfRAME )
 
     #define _IO_
 
-#elif defined( NEVERdEFINED2 )
-
-    #define _IO_ inOutFrameC _inOutFrame( tinP , LF , IDFILE , BiFCcLASS ) ;
-
-    #define _IO_ if( ebpAM() - espAM() > ( TICK << 0 ) ) { *(countT*)-1 = 0 ; } inOutFrameC _inOutFrame( tinP , LF , IDFILE , BiFCcLASS ) ;
-
-        if( ebpAM() - espAM() - sizeof( inOutFrameC ) > ( TICK << 0 ) ) { *(countT*)-1 = 0 ; }
-
-#elif defined( NEVERdEFINED3 )
-
-    #define _IO_                                                                                                                                        \
-                                                                                                                                                        \
-        inOutFrameC _inOutFrame( tinP , LF , IDFILE , BiFCcLASS ) ;                                                                                     \
-                                                                                                                                                        \
-        if( processGlobal1S::_processGlobal1I_IF().idAdamRoot == ifcIDaDAM_SCRATCH0d && !( F(tinP.flagsThreadMode5) & flTHREADmODE5_STFU1iOmACRO ) )    \
-        {                                                                                                                                               \
-            THREADmODE5oN( flTHREADmODE5_STFU1iOmACRO )                                                                                                 \
-            {                                                                                                                                           \
-                OStEXT(    ostoSay , TUCK << 0 ) ;                                                                                                      \
-                OStEXTAK(  ostoSay , "[ebp-esp]: " ) ;                                                                                                  \
-                OStEXTCF(  ostoSay , ebpAM() - espAM() - sizeof( inOutFrameC ) , '0' ) ;                                                                \
-                OStEXTAK(  ostoSay , "    " ) ;                                                                                                         \
-                OStEXTCF(  ostoSay , IDFILE , 0 ) ;                                                                                                     \
-                OStEXTAK(  ostoSay , "\r\n" ) ;                                                                                                         \
-                CONoUTrAW( ostoSay ) ;                                                                                                                  \
-            }                                                                                                                                           \
-            THREADmODE5rESTORE                                                                                                                          \
-        }                                                                                                                                               \
-
-
 #else
 
-    #define _IO_                                                                                                                                        \
-                                                                                                                                                        \
-        inOutFrameC _inOutFrame( tinP , LF , IDFILE , BiFCcLASS ) ;                                                                                     \
+    #if defined( NEVERdEFINED )
+    
+        #define _IO_
+    
+    #elif defined( NEVERdEFINED2 )
+    
+        #define _IO_ inOutFrameC _inOutFrame( tinP , LF , IDFILE , BiFCcLASS ) ;
+    
+        #define _IO_ if( ebpAM() - espAM() > ( TICK << 0 ) ) { *(countT*)-1 = 0 ; } inOutFrameC _inOutFrame( tinP , LF , IDFILE , BiFCcLASS ) ;
+    
+            if( ebpAM() - espAM() - sizeof( inOutFrameC ) > ( TICK << 0 ) ) { *(countT*)-1 = 0 ; }
+    
+    #elif defined( NEVERdEFINED3 )
+    
+        #define _IO_                                                                                                                                        \
+                                                                                                                                                            \
+            inOutFrameC _inOutFrame( tinP , LF , IDFILE , BiFCcLASS ) ;                                                                                     \
+                                                                                                                                                            \
+            if( processGlobal1S::_processGlobal1I_IF().idAdamRoot == ifcIDaDAM_SCRATCH0d && !( F(tinP.flagsThreadMode5) & flTHREADmODE5_STFU1iOmACRO ) )    \
+            {                                                                                                                                               \
+                THREADmODE5oN( flTHREADmODE5_STFU1iOmACRO )                                                                                                 \
+                {                                                                                                                                           \
+                    OStEXT(    ostoSay , TUCK << 0 ) ;                                                                                                      \
+                    OStEXTAK(  ostoSay , "[ebp-esp]: " ) ;                                                                                                  \
+                    OStEXTCF(  ostoSay , ebpAM() - espAM() - sizeof( inOutFrameC ) , '0' ) ;                                                                \
+                    OStEXTAK(  ostoSay , "    " ) ;                                                                                                         \
+                    OStEXTCF(  ostoSay , IDFILE , 0 ) ;                                                                                                     \
+                    OStEXTAK(  ostoSay , "\r\n" ) ;                                                                                                         \
+                    CONoUTrAW( ostoSay ) ;                                                                                                                  \
+                }                                                                                                                                           \
+                THREADmODE5rESTORE                                                                                                                          \
+            }                                                                                                                                               \
+    
+    
+    #else
+    
+        #define _IO_                                                                                                                                        \
+                                                                                                                                                            \
+            inOutFrameC _inOutFrame( tinP , LF , IDFILE , BiFCcLASS ) ;                                                                                     \
+    
+    #endif
 
 #endif
-
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -50955,678 +51284,3 @@ after i return, that countT object will contain 1
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200586.threadmode5restore0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200588.conoutcallnestsafe BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CONoUTcALLnESTsAFE(postP)*//*1*/
-
-#define CONoUTcALLnESTsAFE(postP)                                                                               \
-                                                                                                                \
-    {                                                                                                           \
-        CONoUTrAW( postP ": call nest:" ) ;                                                                     \
-        const countT ccNest = sizeof tinP.monitor.pLFnest / sizeof tinP.monitor.pLFnest[ 0 ] ;                  \
-        countT pcNest[ ccNest + 1 ] ;                                                                           \
-        tinP.get_pLFnest_F( tinP , pcNest , ccNest + 1 ) ;                                                      \
-                                                                                                                \
-        countT* pcc = pcNest ;                                                                                  \
-        countT* pce = pcNest + ccNest ;                                                                         \
-        ZE( boolT , bFile ) ;                                                                                   \
-                                                                                                                \
-        while( pcc < pce && *pcc )                                                                              \
-        {                                                                                                       \
-            OStEXT(   ostoLine , TUCK << 1 ) ;                                                                  \
-            OStEXTA(  ostoLine , bFile ? "  " : "\r\n  " ) ;                                                    \
-            OStEXTC(  ostoLine , *pcc , 0 ) ;                                                                   \
-            CONoUTrAW( ostoLine ) ;                                                                             \
-            pcc ++ ;                                                                                            \
-            bFile = !bFile ;                                                                                    \
-        }                                                                                                       \
-        CONoUTrAW( "\r\n" ) ;                                                                                   \
-    }
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200588.conoutcallnestsafe END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200589._io1_ BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.00100c7.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*_IO1_(idP)*//*1*/
-
-//FOR PRODUCTION, USE "!defined" IN THE NEXT LINE, TO AVOID OVERHEAD OF CT/DT inOutFrameC
-
-//20141212@0943: ENABLED FULL INOUT TRACING FOR INITIAL RELEASE OF IPDOS BUNDLE AS CLOUDFILE ADMINISTRATION TOOL
-
-//20160523@2009: DISABLED TO GET MOST RAPID EXECUTION TO COLLECT FAILURE HISTORY FOR SERVER
-//20160525@0921: ENABLED TO MAXIMIZE GLASS WALLS
-//20201008@1520: DISABLED TO INVESTIGATE SLOOOOW EXECUTION
-
-#if defined( NEVERdEFINED )
-
-    #define _IO1_(idP)
-
-#else
-
-    #define _IO1_(idP) inOutFrameC _inOutFrame##idP( tinP , LF , IDFILE , BiFCcLASS ) ;
-
-#endif
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200589._io1_ END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058a.CmAXpENDINGiNoUTfRAMEpACKETS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CmAXpENDINGiNoUTfRAMEpACKETS*//*1*/
-
-//20201120@1558: TUCK << 2 IS TOO SMALL -> TUCK << 3
-//20201124@1951: TUCK << 3 -> TUCK << 5 (AFTER MODIFYING CODE TO EMIT APP TELEMETRY EARLIER)
-
-#define CmAXpENDINGiNoUTfRAMEpACKETS ( TUCK << 5 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058a.CmAXpENDINGiNoUTfRAMEpACKETS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058b.CBhEAP BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CBhEAP*//*1*/
-
-
-//20200525@1250: HALVED TO "TICK >> 1" WITHOUT ANALYSIS (OCCASIONALLY HALVE THIS UNTIL SEE A FAILURE)
-//20201120@1507: DOUBLED TO "TICK >> 0" BECAUSE AM NOW ALLOCATING A LARGE BUFFER FOR EACH THREAD
-//20201125@1310: DOUBLED TO "TICK << 1" IN RESPONSE TO HEAP ALLOCATION FAILURE FOR GLASS2 tmReportF
-
-#define CBhEAP ( TICK << 1 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058b.CBhEAP END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058c.ttf BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010096.1.0.html\"\>definition\</A\>
-examples
- simplest
-  \<A HREF=\"5.2f10104.1.1.0.html\"\>2f10104:  WAKEsHOW( "example.simplest.snip.0010096.TT" )\</A\>
-*/
-/**/
-/*1*//*TTF(time1P,time2P)*//*1*/
-
-#define TTF(time1P,time2P) textC( time1P , time2P , tinP , TAG( TAGiDnULL ) , flTEXTc_null , 0 , 0 , S1C('.') , 0 , ifcIDfORMATtIME_NUMERIC , flFORMAT_FOREIGN )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058c.ttf END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058d.TlISTlOAD BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*TlISTlOAD(tListToP,tListPrefixP,tSuffixP)*//*1*/
-
-#define TlISTlOAD(tListToP,tListPrefixP,tSuffixP)           \
-                                                            \
-    {                                                       \
-        FORsTRINGSiN1( (strokeS*)(tListPrefixP) )           \
-        {                                                   \
-            (tListToP) += T(psttc1)+(tSuffixP) ;            \
-        }                                                   \
-    }
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058d.TlISTlOAD END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058e.___LF BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*___LF(pbP,idLineP,idiFileP)*//*1*/
-
-#if defined( ENABLEdROPnOTES )
-
-    #define ___LF(pbP,idLineP,idiFileP)                                                                                                                             \
-                                                                                                                                                                    \
-        {                                                                                                                                                           \
-            /*countT cDebug1 = idLineP ;                                  */                                                                                        \
-            /*countT cDebug2 = idiFileP ;                                 */                                                                                        \
-            /*if( cDebug1 == 0x120 && cDebug2 == 0x36008003 ) { BLAMMO ; }*/                                                                                        \
-            byteT* _pbx = (byteT*)(pbP) ;                                                                                                                           \
-            if( _pbx && ( (byteT*)_pbx < processGlobal1S::_processGlobal1I_IF().pbHeap || (byteT*)_pbx >= processGlobal1S::_processGlobal1I_IF().pbHeapEnd ) )      \
-            {                                                                                                                                                       \
-                dropNoteS* pNote = PUSE.pDropNoteF( tinP , _pbx ) ;                                                                                                 \
-                if( pNote )                                                                                                                                         \
-                {                                                                                                                                                   \
-                    static countT _idNewForTagLine ;                                                                                                                \
-                    pNote->idNewForTagLine = 1 + incv02AM( _idNewForTagLine ) ;    /*U::O: incv02AM CAN BE REPLACED WITH ++ FOR SPEED*/                             \
-                    pNote->idLineTagged    = idLineP ;                                                                                                              \
-                    pNote->idiFileTagged   = idiFileP ;                                                                                                             \
-                                                                                                                                                                    \
-                                                                                                                                                                    \
-                }                                                                                                                                                   \
-            }                                                                                                                                                       \
-        }
-
-#else
-
-    #define ___LF(pbP,idLineP,idiFileP)
-
-#endif
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058e.___LF END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058f.postCRAFTWORKfACTORY BEGIN
-
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*//*postCRAFTWORKfACTORY*//*1*/
-
-#define postCRAFTWORKfACTORY "factory1"
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058f.postCRAFTWORKfACTORY END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200590.___CHK BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*___CHK(pbP)*//*1*/
-
-#if defined( ENABLEdROPnOTES )
-
-    #define ___CHK(pbP)                                                                                                                                             \
-                                                                                                                                                                    \
-        {                                                                                                                                                           \
-            byteT* _pbx = (byteT*)(pbP) ;                                                                                                                           \
-            if( _pbx && ( (byteT*)_pbx < processGlobal1S::_processGlobal1I_IF().pbHeap || (byteT*)_pbx >= processGlobal1S::_processGlobal1I_IF().pbHeapEnd ) )      \
-            {                                                                                                                                                       \
-                dropNoteS* pNote = PUSE.pDropNoteF( tinP , _pbx ) ;                                                                                                 \
-                if( pNote )                                                                                                                                         \
-                {                                                                                                                                                   \
-                    countT& dropHeader = ((countT*)_pbx)[ - 1 ] ;                                                                                                   \
-                    if( dropHeader - pNote->dropHeaderCopy ) { BLAMMOiD( dropHeader - pNote->dropHeaderCopy ) ; }                                                   \
-                }                                                                                                                                                   \
-            }                                                                                                                                                       \
-        }
-
-#else
-
-    #define ___CHK(pbP)
-
-#endif
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200590.___CHK END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200591.CBsEXdROPsEPARATOR BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CBsEXdROPsEPARATOR*//*1*/
-
-//SHOULD BE AN INTEGRAL MULTIPLE OF sizeof( countT ) SO THAT THE DATA PORTION OF EACH DROP IS countT ALIGNED
-
-#define CBsEXdROPsEPARATOR ( sizeof( countT ) )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200591.CBsEXdROPsEPARATOR END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200592.flSearch BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*flSEARCH*//*1*/
-
-/*3*/
-#define flSEARCH_IGNOREcASE                                0xe0000111
-/*3*/
-#define flSEARCH_null    0xe0000011
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200592.flSearch END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200593.flSELECTpEER BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//**//*1*/
-
-/*3*/
-#define flSELECTpEER_DUPLICATEiSoK                                0xe0000112
-#define flSELECTpEER_TRACE                                        0xe0000212
-/*3*/
-#define flSELECTpEER_null    0xe0000012
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200593.flSELECTpEER END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200594.postIPaDDRgROUP BEGIN
-
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*//*postIPaDDRgROUP*//*1*/
-
-/*3*/
-#define postIPaDDRgROUP_ADVERTISElANnODE "ff02::bb:aa"
-/*3*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200594.postIPaDDRgROUP END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200597.CbOOKmARK BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CbOOKmARK*//*1*/
-
-#define CbOOKmARK ( TUCK << 0 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200597.CbOOKmARK END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*CmAXsTEPtLS*//*1*/
-
-#define CmAXsTEPtLS ( TUCK >> 4 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*TaRG2cBtLS(tmFP,cbTlsP)*//*1*/
-
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//**//*1*/
-
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.targ3flagscbtls END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-normally this should be commented out because it slows execution
-enable it to set bits in processGlobal2S::pbMemoryBits*
-*/
-/**/
-/*1*//*SHOWmEMgRAINS*//*1*/
-#define SHOWmEMgRAINS
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
-values at and above 00ff are used by spouseC to encode literal byte values
-*/
-/**/
-/*1*//*CBcIRCLEdFLT*//*1*/
-
-#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*SOCKETtIMEOUTdEFAULTwANiMPATIENT*//*1*/
-
-#define SOCKETtIMEOUTdEFAULTwANiMPATIENT ( TOCK << 0 )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
-
-/*3*/
-#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c34
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c35
-#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c36
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c37
-#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c38
-#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c39
-#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c3a
-#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c3b
-/*3*/
-#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c34
-#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c3b                                                               
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
