@@ -3085,7 +3085,7 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
 /*1*//*SPACERsIZE*//*1*/
-#define SPACERsIZE 4
+#define SPACERsIZE 1
 
 
 //
