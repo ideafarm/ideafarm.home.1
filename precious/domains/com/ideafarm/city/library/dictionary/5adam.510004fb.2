@@ -1280,7 +1280,10 @@ TELL( "cleaning up 0" )
                                     case ifcIDtYPEtELLsYS_GLObEGINdT :
                                     }
                                         break ;
-                                        if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG1( tmVultureF ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                          if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 3 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 2 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 1 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG1( tmVultureF ) , (countT)&bQuitEatingP , told.osPid ) ;
                                         //etRock.traceF( tinP , T("ifcIDtYPEtELLsYS_GLObEGINcT [osPid]: ")+TF4(told.osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
                                         _IO_
                                     {
@@ -1438,7 +1441,11 @@ TELL( "cleaning up 0" )
 
     }
         //etRock.traceF( tinP , T("tmEatTelemetrySysF / launched  tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        etThread.osThreadF( tinP , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 1 , 0 , (countT)pcArg ) ;
+
+          etThread.osThreadF( tinP , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 3 , 0 , (countT)pcArg ) ;
+        //etThread.osThreadF( tinP , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 2 , 0 , (countT)pcArg ) ;
+        //etThread.osThreadF( tinP , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 1 , 0 , (countT)pcArg ) ;
+
         //etRock.traceF( tinP , T("tmEatTelemetrySysF / launching tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         pcArg[ 0xb ] = (countT)&bChatterP ;

@@ -152,10 +152,14 @@ REST
         //grabC grabFoo1( tinP , TAG( TAGiDnULL ) ) ;
         //etThread.traceF( tinP , T("launching grabC deadlocker threads") ) ;
 
-        etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 1 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidZombie , bConsoleP , (countT)&bKidsSuspended ) ;
+          etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 3 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidZombie , bConsoleP , (countT)&bKidsSuspended ) ;
+        //etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 2 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidZombie , bConsoleP , (countT)&bKidsSuspended ) ;
+        //etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 1 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidZombie , bConsoleP , (countT)&bKidsSuspended ) ;
 
         //U::TO QUIET THE CONSOLE FOR CRAFTWORK: etThread.osThreadF( TaRG1( tmConsoleF ) , (countT)&bQuitConsole , (countT)&cLeverIdMemory , (countT)&swMemorySpace ) ;
-        etThread.osThreadF( TaRG2sGNdONE( tmFireAllF , sgnDone_tmFireAllF_ ) , (countT)&bKidsSuspended ) ;
+          etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 2 ) , (countT)&bKidsSuspended ) ;
+        //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 1 ) , (countT)&bKidsSuspended ) ;
+        //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 0 ) , (countT)&bKidsSuspended ) ;
         ZE( boolT , bKidsSuspended ) ;
         signC sgnDone_tmFireAllF_( tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC2 ) ;
         //etThread.osThreadF( tinP , countTC() , tmKillYourselfImmediatelyF ) ;
@@ -164,7 +168,9 @@ REST
 
         }
             }
-                etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmEatTelemetrySysF , memorySpace.sgnDone_tmEatTelemetrySysF_ , CBsTACKmIN << 1 ) , (countT)pcArg ) ;
+                  etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmEatTelemetrySysF , memorySpace.sgnDone_tmEatTelemetrySysF_ , CBsTACKmIN << 3 ) , (countT)pcArg ) ;
+                //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmEatTelemetrySysF , memorySpace.sgnDone_tmEatTelemetrySysF_ , CBsTACKmIN << 2 ) , (countT)pcArg ) ;
+                //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmEatTelemetrySysF , memorySpace.sgnDone_tmEatTelemetrySysF_ , CBsTACKmIN << 1 ) , (countT)pcArg ) ;
 
                 //CS:CODEsYNC: 510004fb.1 510004fb.1
                 pcArg[ 0xe ] = (countT)&stOsPidZombie ;
@@ -213,7 +219,9 @@ REST
         ZE( boolT , bQuitConsole ) ;
         //etThread.traceF( tinP , T("launching telemetry eater threads") ) ;
 
-        etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 1 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
+          etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
+        //etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 2 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
+        //etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 1 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
         ZE( boolT , bChatter ) ;
         boolT bChatterIf = 1 ;
         //etThread.traceF( tinP , T("launching chatter thread") ) ;
