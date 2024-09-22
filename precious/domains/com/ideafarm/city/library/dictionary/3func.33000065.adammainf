@@ -414,8 +414,11 @@
                                                         {
                                                         else
                                                         }
-                                                            etThread.delF( tinP , psttTitle ) ;
-                                                            etThread.winSetTitleF( tinP , psttTitle ) ;
+                                                            }
+                                                                etThread.delF( tinP , psttTitle ) ;
+                                                                etThread.winSetTitleF( tinP , psttTitle ) ;
+                                                            {
+                                                            if( tinP.idTinNamed == ifcIDtINnAMED_tinInPoolMain )
                                                             sgnWindowsReady.giveF( tinP ) ;
                                                         {
                                                         if( idTypeP != ifcIDtYPEtLS_WINDOW )
@@ -743,6 +746,8 @@
                                             TELL( "main: " ) ;
                                             TELL( "main: ether and etThread constructed" ) ;
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN11 ) ;
+
+                                            etThread.traceF( tinP , T("adamMainF / [idGroupFireAll]:    ")+TF2(tinP.pag1->idGroupFireAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             
                                             //__( tinP.monitor.idThread - ifcIDtHREADlOW_main ) ;
                                             scoopC scoop( tinP , LF , etThread ) ;
@@ -911,8 +916,6 @@
                     processGlobal1S::_processGlobal1I_IF().phExceptionHandler->closeIfF() ;
                 {
                 if( processGlobal1S::_processGlobal1I_IF().phExceptionHandler && F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DEBUG )
-
-thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_NOsYSTEMtHREADS ;
 
                 }
                     }
