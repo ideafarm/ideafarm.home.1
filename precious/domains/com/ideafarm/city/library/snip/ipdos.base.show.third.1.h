@@ -1,195 +1,4 @@
 
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010071.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*SPACERsIZE*//*1*/
-
-//TO SUPPRESS SPACERS, COMMENT OUT THIS DEFINITION
-
-//#define SPACERsIZE 1
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010070.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*SPACER(suffixP)*//*1*/
-
-#if !defined( SPACERsIZE )
-
-    #define SPACER(suffixP)
-
-#else
-
-    #define SPACER(suffixP) countT pcSpacer##suffixP[ SPACERsIZE ] ;
-
-#endif
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000019.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*SPACERvALUE*//*1*/
-
-#if !defined( SPACERsIZE )
-
-    #define SPACERvALUE
-
-#else
-
-    #define SPACERvALUE (0xbbeebbee)
-
-#endif
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000018.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*SPACERtEST(suffixP)*//*1*/
-
-#if !defined( SPACERsIZE )
-
-    #define SPACERtEST(suffixP)
-
-#else
-
-    #define SPACERtEST(suffixP) { for( countT off = 0 ; off < SPACERsIZE ; off ++ ){ __( pcSpacer##suffixP[ off ] != SPACERvALUE ) ; } }
-
-#endif
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000017.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*SPACERsET(suffixP)*//*1*/
-
-#if !defined( SPACERsIZE )
-
-    #define SPACERsET(suffixP)
-
-#else
-
-    #define SPACERsET(suffixP) { for( countT off = 0 ; off < SPACERsIZE ; off ++ ){ pcSpacer##suffixP[ off ] = SPACERvALUE ; } }
-
-#endif
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-#define TaRG1(tmFP)                                                         tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , 0          , 0
-#define TaRG2cBsTACK(tmFP,cbStackP)                                         tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
-#define TaRG2cBtLS(tmFP,cbTlsP)                                             tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
-#define TaRG2sGNdONE(tmFP,sgnDoneP)                                         tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0          , 0
-#define TaRG3cBsTACKcBtLS(tmFP,cbStackP,cbTlsP)                             tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , (cbStackP) , (cbTlsP)
-#define TaRG3fLAGScBtLS(tmFP,flagsP,cbTlsP)                                 tinP , countTC() , tmFP , 0           , 0 , (flagsP)            , 0          , (cbTlsP)
-#define TaRG3sGNdONEcBsTACK(tmFP,sgnDoneP,cbStackP)                         tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
-#define TaRG3sGNdONEcBtLS(tmFP,sgnDoneP,cbTlsP)                             tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
-#define TaRG4fLAGScBsTACKcBtLS(tmFP,flagsP,cbStackP,cbTlsP)                 tinP , countTC() , tmFP , 0           , 0 , (flagsP)            , (cbStackP) , (cbTlsP)
-#define TaRG4sGNdONEcBsTACKcBtLS(tmFP,sgnDoneP,cbStackP,cbTlsP)             tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , (cbStackP) , (cbTlsP)
-#define TaRG5sGNdONEfLAGScBsTACKcBtLS(tmFP,sgnDoneP,flagsP,cbStackP,cbTlsP) tinP , countTC() , tmFP , &(sgnDoneP) , 0 , (flagsP)            , (cbStackP) , (cbTlsP)
-
-  #define TAG(offP) LF , 0
-  #define TAGoRnOtIN(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
-  #define TAGnOtIN(offP) LF , 0
-  #define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
-
-#define CBsTACKmIN ( TOCK << 1 )
-
-#define CBtLSmINIMUM ( TUCK << 2 )
-
-#define fliSTATElISTING_ENABLED                    1
-#define fliSTATElISTING_null                       0
-
-#define ifcIDtYPEsTATElISTING_DEFAULT                    1
-#define ifcIDtYPEsTATElISTING_null                       0
-
-typedef unsigned short /*ff*/flags01T/*ff*/ ;   /*ff*//**//*ff*/
-
-#define LISTnAMEaPPmAX          0xafffffff
-#define LISTnAMEaPPmIN          0xa0000000
-#define LISTnAMEdICTIONARYmAX          0x9fffffff
-#define LISTnAMEdICTIONARYmIN          0x90000000
-
-#define LNA(idP) ( LISTnAMEaPPmIN | ( (idP) & 0x0fffffff ) )
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -239,372 +48,370 @@ it is illegal to refer to this symbol in the definition of an adam
 //THE SHORT CODES AT THE END OF EACH LINE ARE USED TO CREATE MANGLED WORDS FOR SOIL (tm)
 //DO NOT CHANGE THE MANGLE CODES (E.G. "A1").  CHANGING THESE CODES WILL BREAK ALL SOIL (tm) CODE THAT USES THEM
 
-struct /*ff*/argS/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/arrayC/*ff*/                       ; /*ff*//**//*ff*/
-class  /*ff*/batonBoxC/*ff*/                    ; /*ff*//**//*ff*/
-class  /*ff*/batonC/*ff*/                       ; /*ff*//**//*ff*/
-class  /*ff*/boxC/*ff*/                         ; /*ff*//**//*ff*/
-struct /*ff*/branchDataOldS/*ff*/               ; /*ff*//**//*ff*/
-struct /*ff*/branchesOldS/*ff*/                 ; /*ff*//**//*ff*/
-struct /*ff*/branchHeaderOldS/*ff*/             ; /*ff*//**//*ff*/
-class  /*ff*/bufferC/*ff*/                      ; /*ff*//**//*ff*/
-class  /*ff*/busC/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/carC/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/cC/*ff*/                           ; /*ff*//**//*ff*/
-struct /*ff*/cyrcleOldHeaderS/*ff*/             ; /*ff*//**//*ff*/
-struct /*ff*/count2S/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/count3S/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/count4S/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/count5S/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/count6S/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/count7S/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/count8S/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/count9S/*ff*/                      ; /*ff*//**//*ff*/
-class  /*ff*/countTC/*ff*/                      ; /*ff*//**//*ff*/
-class  /*ff*/cryC/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/dictionary1C/*ff*/                 ; /*ff*//**//*ff*/
-struct /*ff*/dnsMsgHeaderS/*ff*/                ; /*ff*//**//*ff*/
-struct /*ff*/dnsResourceMiddleS/*ff*/           ; /*ff*//**//*ff*/
-struct /*ff*/dropNoteS/*ff*/                    ; /*ff*//**//*ff*/
-class  /*ff*/etherC/*ff*/                       ; /*ff*//*a*//*ff*/
-struct /*ff*/fileOpenS/*ff*/                    ; /*ff*//**//*ff*/
-struct /*ff*/fireAllS/*ff*/                     ; /*ff*//**//*ff*/
-class  /*ff*/fylesC/*ff*/                       ; /*ff*//**//*ff*/
-class  /*ff*/processGlobalBeginC/*ff*/          ; /*ff*//**//*ff*/
-class  /*ff*/processGlobalEndC/*ff*/            ; /*ff*//**//*ff*/
-class  /*ff*/gloSecurityGC/*ff*/                ; /*ff*//**//*ff*/
-struct /*ff*/grabAnnotatedS/*ff*/               ; /*ff*//**//*ff*/
-struct /*ff*/grabNotesS/*ff*/                   ; /*ff*//**//*ff*/
-class  /*ff*/grabC/*ff*/                        ; /*ff*//**//*ff*/
-struct /*ff*/grabStatS/*ff*/                    ; /*ff*//**//*ff*/
-struct /*ff*/grabWantOldS/*ff*/                 ; /*ff*//**//*ff*/
-struct /*ff*/grabWantS/*ff*/                    ; /*ff*//**//*ff*/
-class  /*ff*/handleC/*ff*/                      ; /*ff*//*b*//*ff*/
-class  /*ff*/handle1000C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle0100C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle1100C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle0010C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle1010C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle0110C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle1110C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle0011C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle1011C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle0111C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle1111C/*ff*/                  ; /*ff*//*b*//*ff*/
-class  /*ff*/handle2C/*ff*/                     ; /*ff*//*b*//*ff*/
-class  /*ff*/handle1C/*ff*/                     ; /*ff*//*b*//*ff*/
-class  /*ff*/neverUsedC/*ff*/                   ; /*ff*//**//*ff*/
-class  /*ff*/hoodC/*ff*/                        ; /*ff*//**//*ff*/
-struct /*ff*/homeS/*ff*/                        ; /*ff*//**//*ff*/
-class  /*ff*/ap_artmentOldC/*ff*/               ; /*ff*//**//*ff*/
-class  /*ff*/ifFileNameC/*ff*/                  ; /*ff*//**//*ff*/
-class  /*ff*/imageExeDllC/*ff*/                 ; /*ff*//**//*ff*/
-struct /*ff*/infoBoxGetPutS/*ff*/               ; /*ff*//**//*ff*/
-struct /*ff*/infoDisk1aS/*ff*/                  ; /*ff*//**//*ff*/
-struct /*ff*/infoDisk1bS/*ff*/                  ; /*ff*//**//*ff*/
-struct /*ff*/infoDisk1S/*ff*/                   ; /*ff*//**//*ff*/
-struct /*ff*/infoDiskS/*ff*/                    ; /*ff*//**//*ff*/
-struct /*ff*/infoFileS/*ff*/                    ; /*ff*//**//*ff*/
-struct /*ff*/killSocketS/*ff*/                  ; /*ff*//**//*ff*/
-struct /*ff*/mainRefsS/*ff*/                    ; /*ff*//**//*ff*/
-struct /*ff*/mainS/*ff*/                        ; /*ff*//**//*ff*/
-class  /*ff*/mapC/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/maxC/*ff*/                         ; /*ff*//**//*ff*/
-struct /*ff*/monitorReplyOldS/*ff*/             ; /*ff*//**//*ff*/
-struct /*ff*/monQueryReplyS/*ff*/               ; /*ff*//**//*ff*/
-class  /*ff*/napkinHeaderS/*ff*/                ; /*ff*//*c*//*ff*/
-class  /*ff*/napkinC/*ff*/                      ; /*ff*//*c*//*ff*/
-class  /*ff*/netC/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/newsC/*ff*/                        ; /*ff*//**//*ff*/
-struct /*ff*/newsKnowS/*ff*/                    ; /*ff*//**//*ff*/
-class  /*ff*/nicNameC/*ff*/                     ; /*ff*//*d*//*ff*/
-class  /*ff*/portC/*ff*/                        ; /*ff*//*r*//*ff*/
-class  /*ff*/nicNamesC/*ff*/                    ; /*ff*//**//*ff*/
-class  /*ff*/nicNamesNearbyOldC/*ff*/           ; /*ff*//**//*ff*/
-class  /*ff*/osFileNameC/*ff*/                  ; /*ff*//**//*ff*/
-class  /*ff*/pczC/*ff*/                         ; /*ff*//**//*ff*/
-struct /*ff*/peekS/*ff*/                        ; /*ff*//**//*ff*/
-struct /*ff*/plateS/*ff*/                       ; /*ff*//**//*ff*/
-class  /*ff*/postOldC/*ff*/                     ; /*ff*//**//*ff*/
-class  /*ff*/pricerC/*ff*/                      ; /*ff*//**//*ff*/
-class  /*ff*/psttOldC/*ff*/                     ; /*ff*//**//*ff*/
-struct /*ff*/queryTimeRemainingS/*ff*/          ; /*ff*//**//*ff*/
-class  /*ff*/ranUniC/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/rCacheS/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/restartC/*ff*/                     ; /*ff*//**//*ff*/
-class  /*ff*/sCountC/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/serverInfo1S/*ff*/                 ; /*ff*//**//*ff*/
-struct /*ff*/serverInfo2S/*ff*/                 ; /*ff*//**//*ff*/
-class  /*ff*/setThirdC/*ff*/                    ; /*ff*//**//*ff*/
-struct /*ff*/sharedMemInfoS/*ff*/               ; /*ff*//**//*ff*/
-class  /*ff*/signC/*ff*/                        ; /*ff*//*f*//*ff*/
-class  /*ff*/grabMemorySpaceC/*ff*/             ; /*ff*//**//*ff*/
-class  /*ff*/backGrabMemorySpaceC/*ff*/         ; /*ff*//**//*ff*/
-class  /*ff*/sleepC/*ff*/                       ; /*ff*//**//*ff*/
-class  /*ff*/socketC/*ff*/                      ; /*ff*//*g*//*ff*/
-class  /*ff*/soulC/*ff*/                        ; /*ff*//*h*//*ff*/
-class  /*ff*/sqMatrixOldC/*ff*/                 ; /*ff*//**//*ff*/
-class  /*ff*/stackC/*ff*/                       ; /*ff*//*i*//*ff*/
-struct /*ff*/strokeModeS/*ff*/                  ; /*ff*//**//*ff*/
-struct /*ff*/strokeS/*ff*/                      ; /*ff*//*4*//*ff*/
-class  /*ff*/switchC/*ff*/                      ; /*ff*//*k*//*ff*/
-class  /*ff*/switchStackC/*ff*/                 ; /*ff*//*l*//*ff*/
-class  /*ff*/tableC/*ff*/                       ; /*ff*//*m*//*ff*/
-struct /*ff*/taskS/*ff*/                        ; /*ff*//**//*ff*/
-class  /*ff*/tellC/*ff*/                        ; /*ff*//**//*ff*/
-struct /*ff*/tellInfoSysExceptionS/*ff*/        ; /*ff*//**//*ff*/
-struct /*ff*/tellInfoSys_grabC_S/*ff*/          ; /*ff*//**//*ff*/
-struct /*ff*/tellInfoSysLifiS/*ff*/             ; /*ff*//**//*ff*/
-struct /*ff*/tellInfoSysNapkinS/*ff*/           ; /*ff*//**//*ff*/
-class  /*ff*/testWaterC/*ff*/                   ; /*ff*//**//*ff*/
-class  /*ff*/textC/*ff*/                        ; /*ff*//**//*ff*/
-class  /*ff*/textIdFileC/*ff*/                  ; /*ff*//**//*ff*/
-class  /*ff*/thirdC/*ff*/                       ; /*ff*//*n*//*ff*/
-class  /*ff*/threadCheckC/*ff*/                 ; /*ff*//**//*ff*/
-class  /*ff*/thugC/*ff*/                        ; /*ff*//**//*ff*/
-struct /*ff*/timeS/*ff*/                        ; /*ff*//**//*ff*/
-struct /*ff*/timeZoneSpecS/*ff*/                ; /*ff*//**//*ff*/
-struct /*ff*/tinS/*ff*/                         ; /*ff*//*o*//*ff*/
-struct /*ff*/tinTallyS/*ff*/                    ; /*ff*//**//*ff*/
-struct /*ff*/tlsStackFrameLocationS/*ff*/       ; /*ff*//**//*ff*/
-struct /*ff*/tlsStackFrameS/*ff*/               ; /*ff*//**//*ff*/
-struct /*ff*/tlsStackFrameNoTlsS/*ff*/          ; /*ff*//**//*ff*/
-class  /*ff*/treeOldC/*ff*/                     ; /*ff*//*p*//*ff*/
-class  /*ff*/upDnC/*ff*/                        ; /*ff*//**//*ff*/
-class  /*ff*/vectorOldC/*ff*/                   ; /*ff*//**//*ff*/
-struct /*ff*/vmRegionS/*ff*/                    ; /*ff*//**//*ff*/
-class  /*ff*/windowOldC/*ff*/                   ; /*ff*//*q*//*ff*/
-class  /*ff*/zapC/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/soixlOldSpaceC/*ff*/               ; /*ff*//**//*ff*/
-class  /*ff*/portTimeC/*ff*/                    ; /*ff*//**//*ff*/
-class  /*ff*/relayOldC/*ff*/                    ; /*ff*//**//*ff*/
-class  /*ff*/spouseC/*ff*/                      ; /*ff*//**//*ff*/
-class  /*ff*/momC/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/dadC/*ff*/                         ; /*ff*//**//*ff*/
-class  /*ff*/bitsC/*ff*/                        ; /*ff*//**//*ff*/
-class  /*ff*/tlsBlobC/*ff*/                     ; /*ff*//**//*ff*/
-class  /*ff*/parameterC/*ff*/                   ; /*ff*//**//*ff*/
-class  /*ff*/sCountFromPostC/*ff*/              ; /*ff*//**//*ff*/
-struct  /*ff*/osTextBaseS/*ff*/                 ; /*ff*//**//*ff*/
-class  /*ff*/osTextC/*ff*/                      ; /*ff*//**//*ff*/
-class  /*ff*/footC/*ff*/                        ; /*ff*//**//*ff*/
-struct /*ff*/lowThreadS/*ff*/                   ; /*ff*//**//*ff*/
-class  /*ff*/tallyC/*ff*/                       ; /*ff*//**//*ff*/
-class  /*ff*/poopC/*ff*/                        ; /*ff*//**//*ff*/
-class  /*ff*/scoopC/*ff*/                       ; /*ff*//**//*ff*/
-struct  /*ff*/mapCTS/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/mapCTC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/pauseC/*ff*/                      ; /*ff*//**//*ff*/
-struct /*ff*/strokingFrameS/*ff*/               ; /*ff*//**//*ff*/
-class   /*ff*/xrayC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/arrayOldC/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/vTextC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/staqC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/tcButtonC/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/paperOldC/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/tcPromptC/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/tcSliderC/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/tcButtonQuitC/*ff*/               ; /*ff*//**//*ff*/
-class   /*ff*/blobC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/treeC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/eyeOldC/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/pulpOldC/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/eyePulpOldC/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/winPulpOldC/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/backOldC/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/sadamC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/frPaperC/*ff*/                    ; /*ff*//**//*ff*/
-struct  /*ff*/cmdFlashS/*ff*/                   ; /*ff*//**//*ff*/
-struct  /*ff*/mapPaperToBackS/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/mapPaperToEyeOldS/*ff*/           ; /*ff*//**//*ff*/
-class   /*ff*/bitmapOldC/*ff*/                  ; /*ff*//**//*ff*/
-class   /*ff*/papersOldC/*ff*/                  ; /*ff*//**//*ff*/
-struct  /*ff*/mColRowMinMaxS/*ff*/              ; /*ff*//**//*ff*/
-class   /*ff*/threadC/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/httpServerC/*ff*/                 ; /*ff*//**//*ff*/
-struct  /*ff*/httpServerC_arg1S/*ff*/           ; /*ff*//**//*ff*/
-struct  /*ff*/httpServerC_arg2S/*ff*/           ; /*ff*//**//*ff*/
-class   /*ff*/sessionsC/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/sessionC/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/plateC/*ff*/                      ; /*ff*//**//*ff*/
-struct  /*ff*/httpReplyS/*ff*/                  ; /*ff*//**//*ff*/
-struct  /*ff*/sockOdometerS/*ff*/               ; /*ff*//**//*ff*/
-struct  /*ff*/processGlobal2S/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/processGlobal3S/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/processGlobal4S/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/processGlobal5S/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/processGlobal6S/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/processGlobal7S/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/processGlobal8S/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/adamGlobal1S/*ff*/                ; /*ff*//**//*ff*/
-struct  /*ff*/adamGlobal2S/*ff*/                ; /*ff*//**//*ff*/
-struct  /*ff*/adamGlobal3S/*ff*/                ; /*ff*//**//*ff*/
-struct  /*ff*/adamGlobal4S/*ff*/                ; /*ff*//**//*ff*/
-struct  /*ff*/adamGlobal5S/*ff*/                ; /*ff*//**//*ff*/
-struct  /*ff*/adamGlobal6S/*ff*/                ; /*ff*//**//*ff*/
-struct  /*ff*/dictionaryFileTitleS/*ff*/        ; /*ff*//**//*ff*/
-class   /*ff*/sourceC/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/ag1_backOldC_C/*ff*/              ; /*ff*//**//*ff*/
-class   /*ff*/ag1_bitsC_C/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/ag1_etherC_C/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/ag1_grabNotesS_C/*ff*/            ; /*ff*//**//*ff*/
-class   /*ff*/ag1_grabC_C/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/ag1_lexC_C/*ff*/                  ; /*ff*//**//*ff*/
-class   /*ff*/ag1_masterOldC_C/*ff*/            ; /*ff*//**//*ff*/
-class   /*ff*/ag1_neverUsedC_C/*ff*/            ; /*ff*//**//*ff*/
-class   /*ff*/ag1_paperOldC_C/*ff*/             ; /*ff*//**//*ff*/
-class   /*ff*/ag1_pulpOldC_C/*ff*/              ; /*ff*//**//*ff*/
-class   /*ff*/ag1_relayOldC_C/*ff*/             ; /*ff*//**//*ff*/
-class   /*ff*/ag1_rootWordC_C/*ff*/             ; /*ff*//**//*ff*/
-class   /*ff*/ag3_socketC_C/*ff*/               ; /*ff*//**//*ff*/
-class   /*ff*/ag1_soulC_C/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/ag1_soixlOldSpaceC_C/*ff*/        ; /*ff*//**//*ff*/
-class   /*ff*/ag1_stackC_C/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/ag1_strokeS_C/*ff*/               ; /*ff*//**//*ff*/
-class   /*ff*/ag1_switchC_C/*ff*/               ; /*ff*//**//*ff*/
-class   /*ff*/ag1_tableC_C/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/ag1_thirdC_C/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/ag1_thugC_C/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/ag1_windowOldC_C/*ff*/            ; /*ff*//**//*ff*/
-class   /*ff*/masterOldC/*ff*/                  ; /*ff*//**//*ff*/
-class   /*ff*/marketC/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/adamC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/x0SwitchStackC/*ff*/              ; /*ff*//**//*ff*/
-class   /*ff*/xSwitchStackC/*ff*/               ; /*ff*//**//*ff*/
-class   /*ff*/rangeC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/aptC/*ff*/                        ; /*ff*//**//*ff*/
-struct  /*ff*/aptNameOldS/*ff*/                 ; /*ff*//**//*ff*/
-struct  /*ff*/ipMapPortS/*ff*/                  ; /*ff*//**//*ff*/
-struct  /*ff*/ipMapHomeS/*ff*/                  ; /*ff*//**//*ff*/
-struct  /*ff*/sexHeadS/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/sexC/*ff*/                        ; /*ff*//**//*ff*/
-class   /*ff*/slotsC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/poolC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/puseC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/fileC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/grabitC/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/grabotC/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/linkedC/*ff*/                     ; /*ff*//**//*ff*/
-struct  /*ff*/listingC/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/listC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/datumC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/datum_countT_C/*ff*/              ; /*ff*//**//*ff*/
-class   /*ff*/listing_countT_C/*ff*/            ; /*ff*//**//*ff*/
-class   /*ff*/datum_blob_C/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/datum_countTstrz_C/*ff*/          ; /*ff*//**//*ff*/
-class   /*ff*/listing_blob_C/*ff*/              ; /*ff*//**//*ff*/
-class   /*ff*/list_countT_C/*ff*/               ; /*ff*//**//*ff*/
-class   /*ff*/list_blob_C/*ff*/                 ; /*ff*//**//*ff*/
-struct  /*ff*/listWalkArgOldS/*ff*/             ; /*ff*//**//*ff*/
-class   /*ff*/baseGrabC/*ff*/                   ; /*ff*//**//*ff*/
-struct  /*ff*/tellInfoSysAdamFiredS/*ff*/       ; /*ff*//**//*ff*/
-struct  /*ff*/sexGlobalEntryS/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/subaccountS/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/pbC/*ff*/                         ; /*ff*//**//*ff*/
-class   /*ff*/psttC/*ff*/                       ; /*ff*//**//*ff*/
-struct  /*ff*/accountS/*ff*/                    ; /*ff*//**//*ff*/
-struct  /*ff*/depositS/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/stkIdSubC/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/bucketTotalC/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/bucketDetailC/*ff*/               ; /*ff*//**//*ff*/
-struct  /*ff*/depositDetailS/*ff*/              ; /*ff*//**//*ff*/
-struct  /*ff*/bookHeadS/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/book0C/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/bookC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/booksC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/pageC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/branchPageC/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/jotC/*ff*/                        ; /*ff*//**//*ff*/
-struct  /*ff*/monitorS/*ff*/                    ; /*ff*//**//*ff*/
-struct  /*ff*/fireGroupS/*ff*/                  ; /*ff*//**//*ff*/
-struct  /*ff*/doC/*ff*/                         ; /*ff*//**//*ff*/
-class   /*ff*/refCounterC/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/refC/*ff*/                        ; /*ff*//**//*ff*/
-class   /*ff*/httpReplyRefC/*ff*/               ; /*ff*//**//*ff*/
-class   /*ff*/pbRefC/*ff*/                      ; /*ff*//**//*ff*/
-struct  /*ff*/storeReplyPrivateF_argS/*ff*/     ; /*ff*//**//*ff*/
-class   /*ff*/blobVSP/*ff*/                     ; /*ff*//**//*ff*/
-struct  /*ff*/fieldEditParamInC/*ff*/           ; /*ff*//**//*ff*/
-struct  /*ff*/fieldEditParamOutC/*ff*/          ; /*ff*//**//*ff*/
-class   /*ff*/listing_countTstrz_C/*ff*/        ; /*ff*//**//*ff*/
-class   /*ff*/list_countTstrz_C/*ff*/           ; /*ff*//**//*ff*/
-class   /*ff*/listingVSP/*ff*/                  ; /*ff*//**//*ff*/
-class   /*ff*/datum_listingVSP_C/*ff*/          ; /*ff*//**//*ff*/
-class   /*ff*/listing_listingVSP_C/*ff*/        ; /*ff*//**//*ff*/
-class   /*ff*/list_listingVSP_C/*ff*/           ; /*ff*//**//*ff*/
-struct  /*ff*/parm_tmAdamMainF_S/*ff*/          ; /*ff*//**//*ff*/
-struct  /*ff*/slabS/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/cleanC/*ff*/                      ; /*ff*//**//*ff*/
-struct  /*ff*/whereS/*ff*/                      ; /*ff*//**//*ff*/
-struct  /*ff*/featuresS/*ff*/                   ; /*ff*//**//*ff*/
-struct  /*ff*/strikeS/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/sadamC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/sadamsC/*ff*/                     ; /*ff*//**//*ff*/
-struct  /*ff*/cPoint2S/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/deviceC/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/displayC/*ff*/                    ; /*ff*//**//*ff*/
-struct  /*ff*/displayArgS/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/eyeC/*ff*/                        ; /*ff*//**//*ff*/
-struct  /*ff*/glyphTallyS/*ff*/                 ; /*ff*//**//*ff*/
-struct  /*ff*/mPoint3S/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/paperC/*ff*/                      ; /*ff*//**//*ff*/
-struct  /*ff*/paperS/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/pelC/*ff*/                        ; /*ff*//**//*ff*/
-struct  /*ff*/pelS/*ff*/                        ; /*ff*//**//*ff*/
-class   /*ff*/spaceC/*ff*/                      ; /*ff*//**//*ff*/
-struct  /*ff*/surfC/*ff*/                       ; /*ff*//**//*ff*/
-struct  /*ff*/spaceS/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/associateC/*ff*/                  ; /*ff*//**//*ff*/
-class   /*ff*/assViewC/*ff*/                    ; /*ff*//**//*ff*/
-struct  /*ff*/assViewStqS/*ff*/                 ; /*ff*//**//*ff*/
-struct  /*ff*/assViewEyeS/*ff*/                 ; /*ff*//**//*ff*/
-struct  /*ff*/drawJobS/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/vector3C/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/matrix3C/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/barryC/*ff*/                      ; /*ff*//**//*ff*/
-struct  /*ff*/htmlS/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/hasherC/*ff*/                     ; /*ff*//**//*ff*/
-struct  /*ff*/cloudInfoS/*ff*/                  ; /*ff*//**//*ff*/
-struct  /*ff*/rParam_new_S/*ff*/                ; /*ff*//**//*ff*/
-struct  /*ff*/bitNodeS/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/bitTreeC/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/cloudC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/napkinsC/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/heapC/*ff*/                       ; /*ff*//**//*ff*/
-class   /*ff*/fileWindowC/*ff*/                 ; /*ff*//**//*ff*/
-class   /*ff*/fileWindowsC/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/hoverC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/patternC/*ff*/                    ; /*ff*//**//*ff*/
-class   /*ff*/fileNameC/*ff*/                   ; /*ff*//**//*ff*/
-struct  /*ff*/diskFindHandleS/*ff*/             ; /*ff*//**//*ff*/
-struct  /*ff*/cachedS/*ff*/                     ; /*ff*//**//*ff*/
-class   /*ff*/cacheC/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/inOutFrameC/*ff*/                 ; /*ff*//**//*ff*/
-struct  /*ff*/taskDrivenServerJobS/*ff*/        ; /*ff*//**//*ff*/
-struct  /*ff*/nodeEntryS/*ff*/                  ; /*ff*//**//*ff*/
-struct  /*ff*/nodeListS/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/sorterC/*ff*/                     ; /*ff*//**//*ff*/
-struct  /*ff*/tlsHeaderS/*ff*/                  ; /*ff*//**//*ff*/
-class   /*ff*/recursionSimulatorC/*ff*/         ; /*ff*//**//*ff*/
-class   /*ff*/jotFilePartC/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/jotFileSoilC/*ff*/                ; /*ff*//**//*ff*/
-class   /*ff*/jotFilesC/*ff*/                   ; /*ff*//**//*ff*/
-class   /*ff*/nicNamesAllowedStripeWebHookNotificationsC/*ff*/ ; /*ff*//**//*ff*/
-class   /*ff*/homeIdgC/*ff*/                    ; /*ff*//**//*ff*/
-
-class   /*ff*/listingOfSet_countTstrz_C/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSet_blob_C/*ff*/                            ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSet_countT_C/*ff*/                          ; /*ff*//**//*ff*/
-class   /*ff*/listOfSet_listingVSP_C/*ff*/                         ; /*ff*//**//*ff*/
-class   /*ff*/listOfSet_countTstrz_C/*ff*/                         ; /*ff*//**//*ff*/
-class   /*ff*/listOfSet_blob_C/*ff*/                               ; /*ff*//**//*ff*/
-class   /*ff*/listOfSet_countT_C/*ff*/                             ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSet_listingVSP_C/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/listOfSetC/*ff*/                                     ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSetC/*ff*/                                  ; /*ff*//**//*ff*/
-class   /*ff*/offStateListingSetC/*ff*/                                ; /*ff*//**//*ff*/
+struct /*ff*/argS/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/arrayC/*ff*/                                               ; /*ff*//**//*ff*/
+class  /*ff*/batonBoxC/*ff*/                                            ; /*ff*//**//*ff*/
+class  /*ff*/batonC/*ff*/                                               ; /*ff*//**//*ff*/
+class  /*ff*/boxC/*ff*/                                                 ; /*ff*//**//*ff*/
+struct /*ff*/branchDataOldS/*ff*/                                       ; /*ff*//**//*ff*/
+struct /*ff*/branchesOldS/*ff*/                                         ; /*ff*//**//*ff*/
+struct /*ff*/branchHeaderOldS/*ff*/                                     ; /*ff*//**//*ff*/
+class  /*ff*/bufferC/*ff*/                                              ; /*ff*//**//*ff*/
+class  /*ff*/busC/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/carC/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/cC/*ff*/                                                   ; /*ff*//**//*ff*/
+struct /*ff*/cyrcleOldHeaderS/*ff*/                                     ; /*ff*//**//*ff*/
+struct /*ff*/count2S/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/count3S/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/count4S/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/count5S/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/count6S/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/count7S/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/count8S/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/count9S/*ff*/                                              ; /*ff*//**//*ff*/
+class  /*ff*/countTC/*ff*/                                              ; /*ff*//**//*ff*/
+class  /*ff*/cryC/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/dictionary1C/*ff*/                                         ; /*ff*//**//*ff*/
+struct /*ff*/dnsMsgHeaderS/*ff*/                                        ; /*ff*//**//*ff*/
+struct /*ff*/dnsResourceMiddleS/*ff*/                                   ; /*ff*//**//*ff*/
+struct /*ff*/dropNoteS/*ff*/                                            ; /*ff*//**//*ff*/
+class  /*ff*/etherC/*ff*/                                               ; /*ff*//*a*//*ff*/
+struct /*ff*/fileOpenS/*ff*/                                            ; /*ff*//**//*ff*/
+struct /*ff*/fireAllS/*ff*/                                             ; /*ff*//**//*ff*/
+class  /*ff*/fylesC/*ff*/                                               ; /*ff*//**//*ff*/
+class  /*ff*/processGlobalBeginC/*ff*/                                  ; /*ff*//**//*ff*/
+class  /*ff*/processGlobalEndC/*ff*/                                    ; /*ff*//**//*ff*/
+class  /*ff*/gloSecurityGC/*ff*/                                        ; /*ff*//**//*ff*/
+struct /*ff*/grabAnnotatedS/*ff*/                                       ; /*ff*//**//*ff*/
+struct /*ff*/grabNotesS/*ff*/                                           ; /*ff*//**//*ff*/
+class  /*ff*/grabC/*ff*/                                                ; /*ff*//**//*ff*/
+struct /*ff*/grabStatS/*ff*/                                            ; /*ff*//**//*ff*/
+struct /*ff*/grabWantOldS/*ff*/                                         ; /*ff*//**//*ff*/
+struct /*ff*/grabWantS/*ff*/                                            ; /*ff*//**//*ff*/
+class  /*ff*/handleC/*ff*/                                              ; /*ff*//*b*//*ff*/
+class  /*ff*/handle1000C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle0100C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle1100C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle0010C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle1010C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle0110C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle1110C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle0011C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle1011C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle0111C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle1111C/*ff*/                                          ; /*ff*//*b*//*ff*/
+class  /*ff*/handle2C/*ff*/                                             ; /*ff*//*b*//*ff*/
+class  /*ff*/handle1C/*ff*/                                             ; /*ff*//*b*//*ff*/
+class  /*ff*/neverUsedC/*ff*/                                           ; /*ff*//**//*ff*/
+class  /*ff*/hoodC/*ff*/                                                ; /*ff*//**//*ff*/
+struct /*ff*/homeS/*ff*/                                                ; /*ff*//**//*ff*/
+class  /*ff*/ap_artmentOldC/*ff*/                                       ; /*ff*//**//*ff*/
+class  /*ff*/ifFileNameC/*ff*/                                          ; /*ff*//**//*ff*/
+class  /*ff*/imageExeDllC/*ff*/                                         ; /*ff*//**//*ff*/
+struct /*ff*/infoBoxGetPutS/*ff*/                                       ; /*ff*//**//*ff*/
+struct /*ff*/infoDisk1aS/*ff*/                                          ; /*ff*//**//*ff*/
+struct /*ff*/infoDisk1bS/*ff*/                                          ; /*ff*//**//*ff*/
+struct /*ff*/infoDisk1S/*ff*/                                           ; /*ff*//**//*ff*/
+struct /*ff*/infoDiskS/*ff*/                                            ; /*ff*//**//*ff*/
+struct /*ff*/infoFileS/*ff*/                                            ; /*ff*//**//*ff*/
+struct /*ff*/killSocketS/*ff*/                                          ; /*ff*//**//*ff*/
+struct /*ff*/mainRefsS/*ff*/                                            ; /*ff*//**//*ff*/
+struct /*ff*/mainS/*ff*/                                                ; /*ff*//**//*ff*/
+class  /*ff*/mapC/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/maxC/*ff*/                                                 ; /*ff*//**//*ff*/
+struct /*ff*/monitorReplyOldS/*ff*/                                     ; /*ff*//**//*ff*/
+struct /*ff*/monQueryReplyS/*ff*/                                       ; /*ff*//**//*ff*/
+class  /*ff*/napkinHeaderS/*ff*/                                        ; /*ff*//*c*//*ff*/
+class  /*ff*/napkinC/*ff*/                                              ; /*ff*//*c*//*ff*/
+class  /*ff*/netC/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/newsC/*ff*/                                                ; /*ff*//**//*ff*/
+struct /*ff*/newsKnowS/*ff*/                                            ; /*ff*//**//*ff*/
+class  /*ff*/nicNameC/*ff*/                                             ; /*ff*//*d*//*ff*/
+class  /*ff*/portC/*ff*/                                                ; /*ff*//*r*//*ff*/
+class  /*ff*/nicNamesC/*ff*/                                            ; /*ff*//**//*ff*/
+class  /*ff*/nicNamesNearbyOldC/*ff*/                                   ; /*ff*//**//*ff*/
+class  /*ff*/osFileNameC/*ff*/                                          ; /*ff*//**//*ff*/
+class  /*ff*/pczC/*ff*/                                                 ; /*ff*//**//*ff*/
+struct /*ff*/peekS/*ff*/                                                ; /*ff*//**//*ff*/
+struct /*ff*/plateS/*ff*/                                               ; /*ff*//**//*ff*/
+class  /*ff*/postOldC/*ff*/                                             ; /*ff*//**//*ff*/
+class  /*ff*/pricerC/*ff*/                                              ; /*ff*//**//*ff*/
+class  /*ff*/psttOldC/*ff*/                                             ; /*ff*//**//*ff*/
+struct /*ff*/queryTimeRemainingS/*ff*/                                  ; /*ff*//**//*ff*/
+class  /*ff*/ranUniC/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/rCacheS/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/restartC/*ff*/                                             ; /*ff*//**//*ff*/
+class  /*ff*/sCountC/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/serverInfo1S/*ff*/                                         ; /*ff*//**//*ff*/
+struct /*ff*/serverInfo2S/*ff*/                                         ; /*ff*//**//*ff*/
+class  /*ff*/setThirdC/*ff*/                                            ; /*ff*//**//*ff*/
+struct /*ff*/sharedMemInfoS/*ff*/                                       ; /*ff*//**//*ff*/
+class  /*ff*/signC/*ff*/                                                ; /*ff*//*f*//*ff*/
+class  /*ff*/grabMemorySpaceC/*ff*/                                     ; /*ff*//**//*ff*/
+class  /*ff*/backGrabMemorySpaceC/*ff*/                                 ; /*ff*//**//*ff*/
+class  /*ff*/sleepC/*ff*/                                               ; /*ff*//**//*ff*/
+class  /*ff*/socketC/*ff*/                                              ; /*ff*//*g*//*ff*/
+class  /*ff*/soulC/*ff*/                                                ; /*ff*//*h*//*ff*/
+class  /*ff*/sqMatrixOldC/*ff*/                                         ; /*ff*//**//*ff*/
+class  /*ff*/stackC/*ff*/                                               ; /*ff*//*i*//*ff*/
+struct /*ff*/strokeModeS/*ff*/                                          ; /*ff*//**//*ff*/
+struct /*ff*/strokeS/*ff*/                                              ; /*ff*//*4*//*ff*/
+class  /*ff*/switchC/*ff*/                                              ; /*ff*//*k*//*ff*/
+class  /*ff*/switchStackC/*ff*/                                         ; /*ff*//*l*//*ff*/
+class  /*ff*/tableC/*ff*/                                               ; /*ff*//*m*//*ff*/
+struct /*ff*/taskS/*ff*/                                                ; /*ff*//**//*ff*/
+class  /*ff*/tellC/*ff*/                                                ; /*ff*//**//*ff*/
+struct /*ff*/tellInfoSysExceptionS/*ff*/                                ; /*ff*//**//*ff*/
+struct /*ff*/tellInfoSys_grabC_S/*ff*/                                  ; /*ff*//**//*ff*/
+struct /*ff*/tellInfoSysLifiS/*ff*/                                     ; /*ff*//**//*ff*/
+struct /*ff*/tellInfoSysNapkinS/*ff*/                                   ; /*ff*//**//*ff*/
+class  /*ff*/testWaterC/*ff*/                                           ; /*ff*//**//*ff*/
+class  /*ff*/textC/*ff*/                                                ; /*ff*//**//*ff*/
+class  /*ff*/textIdFileC/*ff*/                                          ; /*ff*//**//*ff*/
+class  /*ff*/thirdC/*ff*/                                               ; /*ff*//*n*//*ff*/
+class  /*ff*/threadCheckC/*ff*/                                         ; /*ff*//**//*ff*/
+class  /*ff*/thugC/*ff*/                                                ; /*ff*//**//*ff*/
+struct /*ff*/timeS/*ff*/                                                ; /*ff*//**//*ff*/
+struct /*ff*/timeZoneSpecS/*ff*/                                        ; /*ff*//**//*ff*/
+struct /*ff*/tinS/*ff*/                                                 ; /*ff*//*o*//*ff*/
+struct /*ff*/tinTallyS/*ff*/                                            ; /*ff*//**//*ff*/
+struct /*ff*/tlsStackFrameLocationS/*ff*/                               ; /*ff*//**//*ff*/
+struct /*ff*/tlsStackFrameS/*ff*/                                       ; /*ff*//**//*ff*/
+struct /*ff*/tlsStackFrameNoTlsS/*ff*/                                  ; /*ff*//**//*ff*/
+class  /*ff*/treeOldC/*ff*/                                             ; /*ff*//*p*//*ff*/
+class  /*ff*/upDnC/*ff*/                                                ; /*ff*//**//*ff*/
+class  /*ff*/vectorOldC/*ff*/                                           ; /*ff*//**//*ff*/
+struct /*ff*/vmRegionS/*ff*/                                            ; /*ff*//**//*ff*/
+class  /*ff*/windowOldC/*ff*/                                           ; /*ff*//*q*//*ff*/
+class  /*ff*/zapC/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/soixlOldSpaceC/*ff*/                                       ; /*ff*//**//*ff*/
+class  /*ff*/portTimeC/*ff*/                                            ; /*ff*//**//*ff*/
+class  /*ff*/relayOldC/*ff*/                                            ; /*ff*//**//*ff*/
+class  /*ff*/spouseC/*ff*/                                              ; /*ff*//**//*ff*/
+class  /*ff*/momC/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/dadC/*ff*/                                                 ; /*ff*//**//*ff*/
+class  /*ff*/bitsC/*ff*/                                                ; /*ff*//**//*ff*/
+class  /*ff*/tlsBlobC/*ff*/                                             ; /*ff*//**//*ff*/
+class  /*ff*/parameterC/*ff*/                                           ; /*ff*//**//*ff*/
+class  /*ff*/sCountFromPostC/*ff*/                                      ; /*ff*//**//*ff*/
+struct  /*ff*/osTextBaseS/*ff*/                                         ; /*ff*//**//*ff*/
+class  /*ff*/osTextC/*ff*/                                              ; /*ff*//**//*ff*/
+class  /*ff*/footC/*ff*/                                                ; /*ff*//**//*ff*/
+struct /*ff*/lowThreadS/*ff*/                                           ; /*ff*//**//*ff*/
+class  /*ff*/tallyC/*ff*/                                               ; /*ff*//**//*ff*/
+class  /*ff*/poopC/*ff*/                                                ; /*ff*//**//*ff*/
+class  /*ff*/scoopC/*ff*/                                               ; /*ff*//**//*ff*/
+struct  /*ff*/mapCTS/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/mapCTC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/pauseC/*ff*/                                              ; /*ff*//**//*ff*/
+struct /*ff*/strokingFrameS/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/xrayC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/arrayOldC/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/vTextC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/staqC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/tcButtonC/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/paperOldC/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/tcPromptC/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/tcSliderC/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/tcButtonQuitC/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/blobC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/treeC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/eyeOldC/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/pulpOldC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/eyePulpOldC/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/winPulpOldC/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/backOldC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/sadamC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/frPaperC/*ff*/                                            ; /*ff*//**//*ff*/
+struct  /*ff*/cmdFlashS/*ff*/                                           ; /*ff*//**//*ff*/
+struct  /*ff*/mapPaperToBackS/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/mapPaperToEyeOldS/*ff*/                                   ; /*ff*//**//*ff*/
+class   /*ff*/bitmapOldC/*ff*/                                          ; /*ff*//**//*ff*/
+class   /*ff*/papersOldC/*ff*/                                          ; /*ff*//**//*ff*/
+struct  /*ff*/mColRowMinMaxS/*ff*/                                      ; /*ff*//**//*ff*/
+class   /*ff*/threadC/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/httpServerC/*ff*/                                         ; /*ff*//**//*ff*/
+struct  /*ff*/httpServerC_arg1S/*ff*/                                   ; /*ff*//**//*ff*/
+struct  /*ff*/httpServerC_arg2S/*ff*/                                   ; /*ff*//**//*ff*/
+class   /*ff*/sessionsC/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/sessionC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/plateC/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/httpReplyS/*ff*/                                          ; /*ff*//**//*ff*/
+struct  /*ff*/sockOdometerS/*ff*/                                       ; /*ff*//**//*ff*/
+struct  /*ff*/processGlobal2S/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/processGlobal3S/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/processGlobal4S/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/processGlobal5S/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/processGlobal6S/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/processGlobal7S/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/processGlobal8S/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/adamGlobal1S/*ff*/                                        ; /*ff*//**//*ff*/
+struct  /*ff*/adamGlobal2S/*ff*/                                        ; /*ff*//**//*ff*/
+struct  /*ff*/adamGlobal3S/*ff*/                                        ; /*ff*//**//*ff*/
+struct  /*ff*/adamGlobal4S/*ff*/                                        ; /*ff*//**//*ff*/
+struct  /*ff*/adamGlobal5S/*ff*/                                        ; /*ff*//**//*ff*/
+struct  /*ff*/adamGlobal6S/*ff*/                                        ; /*ff*//**//*ff*/
+struct  /*ff*/dictionaryFileTitleS/*ff*/                                ; /*ff*//**//*ff*/
+class   /*ff*/sourceC/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/ag1_backOldC_C/*ff*/                                      ; /*ff*//**//*ff*/
+class   /*ff*/ag1_bitsC_C/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/ag1_etherC_C/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/ag1_grabNotesS_C/*ff*/                                    ; /*ff*//**//*ff*/
+class   /*ff*/ag1_grabC_C/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/ag1_lexC_C/*ff*/                                          ; /*ff*//**//*ff*/
+class   /*ff*/ag1_masterOldC_C/*ff*/                                    ; /*ff*//**//*ff*/
+class   /*ff*/ag1_neverUsedC_C/*ff*/                                    ; /*ff*//**//*ff*/
+class   /*ff*/ag1_paperOldC_C/*ff*/                                     ; /*ff*//**//*ff*/
+class   /*ff*/ag1_pulpOldC_C/*ff*/                                      ; /*ff*//**//*ff*/
+class   /*ff*/ag1_relayOldC_C/*ff*/                                     ; /*ff*//**//*ff*/
+class   /*ff*/ag1_rootWordC_C/*ff*/                                     ; /*ff*//**//*ff*/
+class   /*ff*/ag3_socketC_C/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/ag1_soulC_C/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/ag1_soixlOldSpaceC_C/*ff*/                                ; /*ff*//**//*ff*/
+class   /*ff*/ag1_stackC_C/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/ag1_strokeS_C/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/ag1_switchC_C/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/ag1_tableC_C/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/ag1_thirdC_C/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/ag1_thugC_C/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/ag1_windowOldC_C/*ff*/                                    ; /*ff*//**//*ff*/
+class   /*ff*/masterOldC/*ff*/                                          ; /*ff*//**//*ff*/
+class   /*ff*/marketC/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/adamC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/x0SwitchStackC/*ff*/                                      ; /*ff*//**//*ff*/
+class   /*ff*/xSwitchStackC/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/rangeC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/aptC/*ff*/                                                ; /*ff*//**//*ff*/
+struct  /*ff*/aptNameOldS/*ff*/                                         ; /*ff*//**//*ff*/
+struct  /*ff*/ipMapPortS/*ff*/                                          ; /*ff*//**//*ff*/
+struct  /*ff*/ipMapHomeS/*ff*/                                          ; /*ff*//**//*ff*/
+struct  /*ff*/sexHeadS/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/sexC/*ff*/                                                ; /*ff*//**//*ff*/
+class   /*ff*/slotsC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/poolC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/puseC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/fileC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/grabitC/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/grabotC/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/linkedC/*ff*/                                             ; /*ff*//**//*ff*/
+struct  /*ff*/listingC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/listC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/datumC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/datum_countT_C/*ff*/                                      ; /*ff*//**//*ff*/
+class   /*ff*/listing_countT_C/*ff*/                                    ; /*ff*//**//*ff*/
+class   /*ff*/datum_blob_C/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/datum_countTstrz_C/*ff*/                                  ; /*ff*//**//*ff*/
+class   /*ff*/listing_blob_C/*ff*/                                      ; /*ff*//**//*ff*/
+class   /*ff*/list_countT_C/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/list_blob_C/*ff*/                                         ; /*ff*//**//*ff*/
+struct  /*ff*/listWalkArgOldS/*ff*/                                     ; /*ff*//**//*ff*/
+class   /*ff*/baseGrabC/*ff*/                                           ; /*ff*//**//*ff*/
+struct  /*ff*/tellInfoSysAdamFiredS/*ff*/                               ; /*ff*//**//*ff*/
+struct  /*ff*/sexGlobalEntryS/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/subaccountS/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/pbC/*ff*/                                                 ; /*ff*//**//*ff*/
+class   /*ff*/psttC/*ff*/                                               ; /*ff*//**//*ff*/
+struct  /*ff*/accountS/*ff*/                                            ; /*ff*//**//*ff*/
+struct  /*ff*/depositS/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/stkIdSubC/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/bucketTotalC/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/bucketDetailC/*ff*/                                       ; /*ff*//**//*ff*/
+struct  /*ff*/depositDetailS/*ff*/                                      ; /*ff*//**//*ff*/
+struct  /*ff*/bookHeadS/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/book0C/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/bookC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/booksC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/pageC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/branchPageC/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/jotC/*ff*/                                                ; /*ff*//**//*ff*/
+struct  /*ff*/monitorS/*ff*/                                            ; /*ff*//**//*ff*/
+struct  /*ff*/fireGroupS/*ff*/                                          ; /*ff*//**//*ff*/
+struct  /*ff*/doC/*ff*/                                                 ; /*ff*//**//*ff*/
+class   /*ff*/refCounterC/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/refC/*ff*/                                                ; /*ff*//**//*ff*/
+class   /*ff*/httpReplyRefC/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/pbRefC/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/storeReplyPrivateF_argS/*ff*/                             ; /*ff*//**//*ff*/
+class   /*ff*/blobVSP/*ff*/                                             ; /*ff*//**//*ff*/
+struct  /*ff*/fieldEditParamInC/*ff*/                                   ; /*ff*//**//*ff*/
+struct  /*ff*/fieldEditParamOutC/*ff*/                                  ; /*ff*//**//*ff*/
+class   /*ff*/listing_countTstrz_C/*ff*/                                ; /*ff*//**//*ff*/
+class   /*ff*/list_countTstrz_C/*ff*/                                   ; /*ff*//**//*ff*/
+class   /*ff*/listingVSP/*ff*/                                          ; /*ff*//**//*ff*/
+class   /*ff*/datum_listingVSP_C/*ff*/                                  ; /*ff*//**//*ff*/
+class   /*ff*/listing_listingVSP_C/*ff*/                                ; /*ff*//**//*ff*/
+class   /*ff*/list_listingVSP_C/*ff*/                                   ; /*ff*//**//*ff*/
+struct  /*ff*/parm_tmAdamMainF_S/*ff*/                                  ; /*ff*//**//*ff*/
+struct  /*ff*/slabS/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/cleanC/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/whereS/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/featuresS/*ff*/                                           ; /*ff*//**//*ff*/
+struct  /*ff*/strikeS/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/sadamC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/sadamsC/*ff*/                                             ; /*ff*//**//*ff*/
+struct  /*ff*/cPoint2S/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/deviceC/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/displayC/*ff*/                                            ; /*ff*//**//*ff*/
+struct  /*ff*/displayArgS/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/eyeC/*ff*/                                                ; /*ff*//**//*ff*/
+struct  /*ff*/glyphTallyS/*ff*/                                         ; /*ff*//**//*ff*/
+struct  /*ff*/mPoint3S/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/paperC/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/paperS/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/pelC/*ff*/                                                ; /*ff*//**//*ff*/
+struct  /*ff*/pelS/*ff*/                                                ; /*ff*//**//*ff*/
+class   /*ff*/spaceC/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/surfC/*ff*/                                               ; /*ff*//**//*ff*/
+struct  /*ff*/spaceS/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/associateC/*ff*/                                          ; /*ff*//**//*ff*/
+class   /*ff*/assViewC/*ff*/                                            ; /*ff*//**//*ff*/
+struct  /*ff*/assViewStqS/*ff*/                                         ; /*ff*//**//*ff*/
+struct  /*ff*/assViewEyeS/*ff*/                                         ; /*ff*//**//*ff*/
+struct  /*ff*/drawJobS/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/vector3C/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/matrix3C/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/barryC/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/htmlS/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/hasherC/*ff*/                                             ; /*ff*//**//*ff*/
+struct  /*ff*/cloudInfoS/*ff*/                                          ; /*ff*//**//*ff*/
+struct  /*ff*/rParam_new_S/*ff*/                                        ; /*ff*//**//*ff*/
+struct  /*ff*/bitNodeS/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/bitTreeC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/cloudC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/napkinsC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/heapC/*ff*/                                               ; /*ff*//**//*ff*/
+class   /*ff*/fileWindowC/*ff*/                                         ; /*ff*//**//*ff*/
+class   /*ff*/fileWindowsC/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/hoverC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/patternC/*ff*/                                            ; /*ff*//**//*ff*/
+class   /*ff*/fileNameC/*ff*/                                           ; /*ff*//**//*ff*/
+struct  /*ff*/diskFindHandleS/*ff*/                                     ; /*ff*//**//*ff*/
+struct  /*ff*/cachedS/*ff*/                                             ; /*ff*//**//*ff*/
+class   /*ff*/cacheC/*ff*/                                              ; /*ff*//**//*ff*/
+class   /*ff*/inOutFrameC/*ff*/                                         ; /*ff*//**//*ff*/
+struct  /*ff*/taskDrivenServerJobS/*ff*/                                ; /*ff*//**//*ff*/
+struct  /*ff*/nodeEntryS/*ff*/                                          ; /*ff*//**//*ff*/
+struct  /*ff*/nodeListS/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/sorterC/*ff*/                                             ; /*ff*//**//*ff*/
+struct  /*ff*/tlsHeaderS/*ff*/                                          ; /*ff*//**//*ff*/
+class   /*ff*/recursionSimulatorC/*ff*/                                 ; /*ff*//**//*ff*/
+class   /*ff*/jotFilePartC/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/jotFileSoilC/*ff*/                                        ; /*ff*//**//*ff*/
+class   /*ff*/jotFilesC/*ff*/                                           ; /*ff*//**//*ff*/
+class   /*ff*/nicNamesAllowedStripeWebHookNotificationsC/*ff*/          ; /*ff*//**//*ff*/
+class   /*ff*/homeIdgC/*ff*/                                            ; /*ff*//**//*ff*/
 class   /*ff*/stateListingSetS/*ff*/                                   ; /*ff*//**//*ff*/
-
+class   /*ff*/offStateListingSetC/*ff*/                                ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSetC/*ff*/                                  ; /*ff*//**//*ff*/
+class   /*ff*/listOfSetC/*ff*/                                     ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_listingVSP_C/*ff*/                      ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_countT_C/*ff*/                             ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_blob_C/*ff*/                               ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_countTstrz_C/*ff*/                         ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_listingVSP_C/*ff*/                         ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_countT_C/*ff*/                          ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_blob_C/*ff*/                            ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_countTstrz_C/*ff*/                      ; /*ff*//**//*ff*/
 
 //INCLUDE GENERATED SNIPPETS HERE
 
@@ -1699,6 +1506,15 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*SPACERsET(suffixP)*//*1*/
 
+#if !defined( SPACERsIZE )
+
+    #define SPACERsET(suffixP)
+
+#else
+
+    #define SPACERsET(suffixP) { for( countT off = 0 ; off < SPACERsIZE ; off ++ ){ pcSpacer##suffixP[ off ] = SPACERvALUE ; } }
+
+#endif
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -1725,6 +1541,15 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*SPACERtEST(suffixP)*//*1*/
 
+#if !defined( SPACERsIZE )
+
+    #define SPACERtEST(suffixP)
+
+#else
+
+    #define SPACERtEST(suffixP) { for( countT off = 0 ; off < SPACERsIZE ; off ++ ){ __( pcSpacer##suffixP[ off ] != SPACERvALUE ) ; } }
+
+#endif
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -1751,6 +1576,15 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*SPACERvALUE*//*1*/
 
+#if !defined( SPACERsIZE )
+
+    #define SPACERvALUE
+
+#else
+
+    #define SPACERvALUE (0xbbeebbee)
+
+#endif
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -2102,145 +1936,12 @@ use me iff pvP was obtained from operator new
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200022.newdelclassprotos END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200023.task0 BEGIN
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK0nOeTsCRATCH(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-#define TASK0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                            \
-                                                                                                                                                                                                                                                                            \
-    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                    \
-    {                                                                                                                                                                                                                                                                       \
-        TINSL                                                                                                                                                                                                                                                               \
-        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
-        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                     \
-                                                                                                                                                                                                                                                                            \
-        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */                                                                                                                           \
-        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                        */                                                                                                                           \
-        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */                                                                                                                           \
-        /*OStEXTA(  _ostoTmp , tinP.postThreadName )                                                                                           */                                                                                                                           \
-        /*OStEXTAK( _ostoTmp , "." )                                                                                                           */                                                                                                                           \
-        /*OStEXTC(  _ostoTmp , tinP.monitor.idThread , 0 )                                                                                     */                                                                                                                           \
-        /*tlsAllocStackExp_8_C tlsForMe( tinP ) ;                                                                                              */                                                                                                                           \
-        /*tlsBlobC _tlsBlobStatRangerTag( tinP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                           \
-        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                           \
-        /*OStEXTcLEAR( _ostoTmp )                                                                                                              */                                                                                                                           \
-                                                                                                                                                                                                                                                                            \
-        TELL( "TASK0: workF+" )                                                                                                                                                                                                                                             \
-        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                      \
-        thirdC::osTraceWrongNodeIF( tinP , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                 \
-        thirdC::osTraceWrongNodeIF( tinP , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                 \
-                                                                                                                                                                                                                                                                            \
-        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                         \
-        {                                                                                                                                                                                                                                                                   \
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                           \
-            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                   \
-            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                       \
-            {                                                                                                                                                                                                                                                               \
-                ++ s ; thirdC::dosSleepIF( tinP , TOCK >> 3 ) ;                                                                                                                                                                                                             \
-            }                                                                                                                                                                                                                                                               \
-        }                                                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                            \
-        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                              \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinS IN POOL*/                                                                                                              \
-        {                                                                                                                                                                                                                                                                   \
-            bTinOk = 1 ;                                                                                                                                                                                                                                                    \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                 \
-        }                                                                                                                                                                                                                                                                   \
-        else                                                                                                                                                                                                                                                                \
-        {                                                                                                                                                                                                                                                                   \
-            tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;                                                                                                                                                                          \
-            TELL( "TASK0: newing a tinS in the working poolOld" )                                                                                                                                                                                                           \
-            tinS* pTin = new( 0 , tinP , LF ) tinS( tinP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;       \
-            if( pTin )                                                                                                                                                                                                                                                      \
-            {                                                                                                                                                                                                                                                               \
-                bTinOk = 1 ;                                                                                                                                                                                                                                                \
-                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                        \
-                TINSL                                                                                                                                                                                                                                                       \
-                ___( pTin ) ;                                                                                                                                                                                                                                               \
-            }                                                                                                                                                                                                                                                               \
-        }                                                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                            \
-        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                               \
-        TELL( "TASK0: after newing either a tinS in the working poolOld" )                                                                                                                                                                                                  \
-        if( bTinOk )                                                                                                                                                                                                                                                        \
-        {                                                                                                                                                                                                                                                                   \
-            TINSL                                                                                                                                                                                                                                                           \
-            thirdC::osTraceWrongNodeIF( tinP , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                              \
-            etherC& ether = etherC::etPrimeIF( tinP ) ;                                                                                                                                                                                                                     \
-            etherC& etRock = etherC::etRockIF( tinP ) ;                                                                                                                                                                                                                     \
-            TELL( "TASK0: setting miscellaneous fields in tinP" )                                                                                                                                                                                                           \
-            tinP.idiTask  = DDNUMB ;                                                                                                                                                                                                                                        \
-            tinP.idlTask  = ifcLINE ;                                                                                                                                                                                                                                       \
-            tinP.monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinP ) ;                                                                                                                                                                                            \
-            tinP.pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                            \
-            /*etRock.traceF( tinP , T("TASK0 [osTid]: ")+TF4(tinP.osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
-                                                                                                                                                                                                                                                                            \
-            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                   \
-            TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                       \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         tinP.flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         tinP.flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         tinP.flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         tinP.flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         tinP.flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) tinP.monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                               \
-                                                                                                                                                                                                                                                                            \
-            TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                \
-            byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                            \
-            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                        \
-            etherC* pEtThread = new( 0 , tinP , pbEther1 , sizeof pbEther1 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                   \
-            /*tinP.pEtScratch   = new( 0 , tinP , pbEther2 , sizeof pbEther2 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                        \
-            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                               \
-            TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                          \
-            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                               \
-            if( pEtThread /*&& tinP.pEtScratch*/ )                                                                                                                                                                                                                          \
-            {                                                                                                                                                                                                                                                               \
-                etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                            \
-                byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                         \
-                tinP.pScoopEtThread = new( 0 , tinP , pbScoop , sizeof pbScoop ) scoopC( tinP , LF , etThread ) ; ___( tinP.pScoopEtThread  ) ;                                                                                                                             \
-                                                                                                                                                                                                                                                                            \
-                /*POPUP( TF1(tinP.monitor.idThread)+T(" ")+T(tinP.postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                            \
-                TELL( "TASK0: final setup" )                                                                                                                                                                                                                                \
-                tinP.pEther = &etThread ;                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                            \
-                signC _sgnUtility( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                              \
-                tinP.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                            \
-                {                                                                                                                                                                                                                                                           \
-                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(tinP.osPid)+T(" ")+TF1(tinP.osTid)+T(" \"")+T(tinP.postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/                       \
-                    etThread.osTimeNowF( tinP , tinP.time1 , tinP.time2 ) ;                                                                                                                                                                                                 \
-                    if( F( ((thirdC&)etThread).third_flagsModeAdam1I_IF( tinP ) ) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                         \
-                    {                                                                                                                                                                                                                                                       \
-                        TN( tDot , "." ) ;                                                                                                                                                                                                                                  \
-                        etThread.strMakeF( tinP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(tinP.osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(tinP.monitor.idThread) ) ; ___( psttThreadFile ) ;                                                \
-                        etThread.boxPutF( tinP , psttThreadFile , "T" ) ;                                                                                                                                                                                                   \
-                    }                                                                                                                                                                                                                                                       \
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;                                                         \
-                    TELL( "TASK0: entering application code" )                                                                                                                                                                                                              \
-                    /*tlsBlobC _tlsBlobStackTop( tinP , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                         \
-                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                         \
-                    if( tinP.idPhase1 < ifcIDpHASEtHREAD_WORKING ) tinP.idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
-                    _IO_                                                                                                                                                                                                                                                    \
-                    if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 /*
@@ -2332,576 +2033,53 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) tinP.monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                               \
                                                                                                                                                                                                                                                                             \
             TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                \
-            byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                            \
-            byteT pbEther2[ sizeof( etherC ) ] ;                                                                                                                                                                                                                            \
-            etherC* pEtThread = new( 0 , tinP , pbEther1 , sizeof pbEther1 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                   \
+              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                          \
+              byteT pbEther2[ sizeof( etherC ) ] ;                                                                                                                                                                                                                          \
+              etherC* pEtThread = new( 0 , tinP , pbEther1 , sizeof pbEther1 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                 \
               tinP.pEtScratch   = new( 0 , tinP , pbEther2 , sizeof pbEther2 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;                                                                                                                          \
               TESTsCRATCH ;                                                                                                                                                                                                                                                 \
             TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                          \
             ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                               \
-            if( pEtThread   && tinP.pEtScratch   )                                                                                                                                                                                                                          \
+              if( pEtThread   && tinP.pEtScratch   )                                                                                                                                                                                                                        \
             {                                                                                                                                                                                                                                                               \
-                etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                            \
-                byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                         \
-                tinP.pScoopEtThread = new( 0 , tinP , pbScoop , sizeof pbScoop ) scoopC( tinP , LF , etThread ) ; ___( tinP.pScoopEtThread  ) ;                                                                                                                             \
+                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                          \
+                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                       \
+                  tinP.pScoopEtThread = new( 0 , tinP , pbScoop , sizeof pbScoop ) scoopC( tinP , LF , etThread ) ; ___( tinP.pScoopEtThread  ) ;                                                                                                                           \
                                                                                                                                                                                                                                                                             \
                 /*POPUP( TF1(tinP.monitor.idThread)+T(" ")+T(tinP.postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
                                                                                                                                                                                                                                                                             \
                 TELL( "TASK0: final setup" )                                                                                                                                                                                                                                \
-                tinP.pEther = &etThread ;                                                                                                                                                                                                                                   \
+                  tinP.pEther = &etThread ;                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                             \
-                signC _sgnUtility( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                              \
-                tinP.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                           \
+                  signC _sgnUtility( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                            \
+                  tinP.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                             \
                 {                                                                                                                                                                                                                                                           \
                     /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(tinP.osPid)+T(" ")+TF1(tinP.osTid)+T(" \"")+T(tinP.postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/                       \
                     etThread.osTimeNowF( tinP , tinP.time1 , tinP.time2 ) ;                                                                                                                                                                                                 \
-                    if( F( ((thirdC&)etThread).third_flagsModeAdam1I_IF( tinP ) ) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                         \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                         \
                     {                                                                                                                                                                                                                                                       \
                         TN( tDot , "." ) ;                                                                                                                                                                                                                                  \
                         etThread.strMakeF( tinP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(tinP.osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(tinP.monitor.idThread) ) ; ___( psttThreadFile ) ;                                                \
                         etThread.boxPutF( tinP , psttThreadFile , "T" ) ;                                                                                                                                                                                                   \
                     }                                                                                                                                                                                                                                                       \
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;                                                         \
+                      if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;                                                       \
                     TELL( "TASK0: entering application code" )                                                                                                                                                                                                              \
                     /*tlsBlobC _tlsBlobStackTop( tinP , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                         \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                         \
                     if( tinP.idPhase1 < ifcIDpHASEtHREAD_WORKING ) tinP.idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
                     _IO_                                                                                                                                                                                                                                                    \
                     if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200023.task0 END
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
-examples
- simplest
-  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
-*/
-/**/
-/*1*//*DONEnOeTHERS(taskFP)*//*1*/
-
-#ifdef __OS2__
-
-    #define DONEnOeTHERS(taskFP)                                                                                                                                                                                 \
-                                                                                                                                                                                                                    \
-                        DONE0nOeTHERS                                                                                                                                                                            \
-                                                                                                                                                                                                                    \
-        TASK0PROTO( taskFP )                                                                                                                                                                                        \
-        {                                                                                                                                                                                                           \
-            threadLocalStorageF( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                                     \
-        }
-
-#elif defined( __NT__ )
-
-    #define DONEnOeTHERS(taskFP)                                                                                                                                                                                 \
-                                                                                                                                                                                                                    \
-                        DONE0nOeTHERS                                                                                                                                                                            \
-                                                                                                                                                                                                                    \
-        TASK0PROTO( taskFP )                                                                                                                                                                                        \
-        {                                                                                                                                                                                                           \
-            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                                      \
-            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                                     \
-            /* ZE( countT , foo ) ;                          */                                                                                                                                                     \
-            /* ZE( countT , goo ) ;                          */                                                                                                                                                     \
-            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                                     \
-            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                                     \
-            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                                     \
-            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                                     \
-                                                                                                                                                                                                                    \
-            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;               \
-                                                                                                                                                                                                                    \
-            return c_threadTry1OuterF( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
-        }
-
-#endif
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000024.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*DONE0nOeTHERS*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK0
-    
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000024.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*DONE0nOeTHERS*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK0
-    
-#define DONE0nOeTHERS                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                            \
-                    /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                      \
-                                                                                                                                                                                                                                            \
-                    ether.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/                                                                                  \
-                                                                                                                                                                                                                                            \
-                    {                                                                                                                                                                                                                       \
-                        TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                               \
-                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                       \
-                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                                     \
-                        tinP.idPhase2 = 0 ;                                                                                                                                                                                                 \
-                        TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                            \
-                                                                                                                                                                                                                                            \
-                        if( tinP.pag1->cYieldHighWater )                                                                                                                                                                                    \
-                        {                                                                                                                                                                                                                   \
-                            OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                               \
-                            OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                    \
-                            OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;                                                                                                                                                                   \
-                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                  \
-                            OStEXTC(  ostoSay , tinP.pag1->cYieldHighWater , 0 ) ;                                                                                                                                                          \
-                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                  \
-                            OStEXTC(  ostoSay , tinP.cSpins1 , '0' ) ;                                                                                                                                                                      \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
-                            OStEXTC(  ostoSay , tinP.cSpins2 , '0' ) ;                                                                                                                                                                      \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
-                            OStEXTC(  ostoSay , tinP.cSpins3 , '0' ) ;                                                                                                                                                                      \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
-                            OStEXTC(  ostoSay , tinP.cSpins4 , '0' ) ;                                                                                                                                                                      \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
-                            OStEXTC(  ostoSay , tinP.cOsHandles , '0' ) ;                                                                                                                                                                   \
-                            /*etThread.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;*/                                                                                                                   \
-                        }                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                            \
-                        /*if( !pEtThread ) ;*/ /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                              \
-                        /*else*/                                                                                                                                                                                                            \
-                        {                                                                                                                                                                                                                   \
-                            TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                            \
-                            /*if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;*/           \
-                                                                                                                                                                                                                                            \
-                            TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                            \
-                            {                                                                                                                                                                                                               \
-                                sleepC s( tinP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                 \
-                                while( tinP.cKidThreads )                                                                                                                                                                                   \
-                                {                                                                                                                                                                                                           \
-                                    etherC::etRockIF( tinP ).traceF( tinP , T("DONE0 / napping a wink for my kids to end [tinP.cKidThreads]:    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                       \
-                                    ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ;                                                                                                                                                            \
-                                }                                                                                                                                                                                                           \
-                            }                                                                                                                                                                                                               \
-                            TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                  \
-                        }                                                                                                                                                                                                                   \
-                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                                 \
-                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                       \
-                    }                                                                                                                                                                                                                       \
-                }                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                            \
-                tinP.pSgnUtility = 0 ;                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                            \
-                {                                                                                                                                                                                                                           \
-                    TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                   \
-                    /*if( pEtThread )*/ /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                                                                                                  \
-                    {                                                                                                                                                                                                                       \
-                        if( psttThreadFile )                                                                                                                                                                                                \
-                        {                                                                                                                                                                                                                   \
-                            TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                         \
-                            tinP.pEtScratch->boxZapF( tinP , psttThreadFile ) ;                                                                                                                                                             \
-                            tinP.pEtScratch->delF( tinP , psttThreadFile ) ;                                                                                                                                                                \
-                        }                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                            \
-                        TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                  \
-                        tinP.pEther = 0 ;                                                                                                                                                                                                   \
-                        TELL( "DONE0: deleting etThread (and tinP)" ) ;                                                                                                                                                                     \
-                        /*DELzOMBIE( tinP.pScoopEtThread ) ;*/ /*CODEsYNC: 0010056 1020171 */                                                                                                                                               \
-                        /*DELzOMBIE( tinP.pEtScratch ) ;*/                                                                                                                                                                                  \
-                        /*if( *(countT*)&pEtThread )*/                                                                                                                                                                                      \
-                        {                                                                                                                                                                                                                   \
-                            /*DELzOMBIE( pEtThread ) ;*/ /* tinP IS DESTROYED HERE */                                                                                                                                                       \
-                            /*TINSL*/                                                                                                                                                                                                       \
-                        }                                                                                                                                                                                                                   \
-                    }                                                                                                                                                                                                                       \
-                }                                                                                                                                                                                                                           \
-            }                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                            \
-            {                                                                                                                                                                                                                               \
-                TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                       \
-                TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                      \
-                boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                               \
-                countT& cAllThreads = bOrphan                                                                                                                                                                                               \
-                    ? thirdC::os_cAllOrphanThreadsI_IF( tinP )                                                                                                                                                                              \
-                    : thirdC::os_cAllKidThreadsI_IF( tinP )                                                                                                                                                                                 \
-                ;                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                            \
-                if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                               \
-                {                                                                                                                                                                                                                           \
-                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                        \
-                }                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                            \
-                boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                   \
-                if( !bFake )                                                                                                                                                                                                                \
-                {                                                                                                                                                                                                                           \
-                    /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                                                                                                  \
-                    /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                                                                                                  \
-                    DEL( pTaskP ) ;                                                                                                                                                                                                         \
-                }                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                            \
-                TELL( "DONE0: i am outa here" )                                                                                                                                                                                             \
-                if( tinP.monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] = - 1 ;                                                                                               \
-                dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                            \
-            }                                                                                                                                                                                                                               \
-        }                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                            \
-        DONE1
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000025.1.0.html\"\>definition\</A\>
-examples
- simplest
-  \<A HREF=\"5.a500104.1.1.0.html\"\>a500104:  WAKEsHOW( "example.simplest.snip.11000025.TASK" )\</A\>
-*/
-/**/
-/*1*//*TASKnOeTHERS(taskFP)*//*1*/
-
-#define TASKnOeTHERS(taskFP) TASK0nOeTHERS( taskFP , flTHIRDmODE_null )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK0nOeTHERS(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-#define TASK0nOeTHERS(taskFP,flagsThirdModeP)                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                                                            \
-    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                    \
-    {                                                                                                                                                                                                                                                                       \
-        TINSL                                                                                                                                                                                                                                                               \
-        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
-        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                     \
-                                                                                                                                                                                                                                                                            \
-        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */                                                                                                                           \
-        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                        */                                                                                                                           \
-        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */                                                                                                                           \
-        /*OStEXTA(  _ostoTmp , tinP.postThreadName )                                                                                           */                                                                                                                           \
-        /*OStEXTAK( _ostoTmp , "." )                                                                                                           */                                                                                                                           \
-        /*OStEXTC(  _ostoTmp , tinP.monitor.idThread , 0 )                                                                                     */                                                                                                                           \
-        /*tlsAllocStackExp_8_C tlsForMe( tinP ) ;                                                                                              */                                                                                                                           \
-        /*tlsBlobC _tlsBlobStatRangerTag( tinP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                           \
-        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                           \
-        /*OStEXTcLEAR( _ostoTmp )                                                                                                              */                                                                                                                           \
-                                                                                                                                                                                                                                                                            \
-        TELL( "TASK0: workF+" )                                                                                                                                                                                                                                             \
-        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                      \
-        thirdC::osTraceWrongNodeIF( tinP , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                 \
-        thirdC::osTraceWrongNodeIF( tinP , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                 \
-                                                                                                                                                                                                                                                                            \
-        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                         \
-        {                                                                                                                                                                                                                                                                   \
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                           \
-            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                   \
-            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                       \
-            {                                                                                                                                                                                                                                                               \
-                ++ s ; thirdC::dosSleepIF( tinP , TOCK >> 3 ) ;                                                                                                                                                                                                             \
-            }                                                                                                                                                                                                                                                               \
-        }                                                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                            \
-        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                              \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinS IN POOL*/                                                                                                              \
-        {                                                                                                                                                                                                                                                                   \
-            bTinOk = 1 ;                                                                                                                                                                                                                                                    \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                 \
-        }                                                                                                                                                                                                                                                                   \
-        else                                                                                                                                                                                                                                                                \
-        {                                                                                                                                                                                                                                                                   \
-            tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;                                                                                                                                                                          \
-            TELL( "TASK0: newing a tinS in the working poolOld" )                                                                                                                                                                                                           \
-            tinS* pTin = new( 0 , tinP , LF ) tinS( tinP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;       \
-            if( pTin )                                                                                                                                                                                                                                                      \
-            {                                                                                                                                                                                                                                                               \
-                bTinOk = 1 ;                                                                                                                                                                                                                                                \
-                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                        \
-                TINSL                                                                                                                                                                                                                                                       \
-                ___( pTin ) ;                                                                                                                                                                                                                                               \
-            }                                                                                                                                                                                                                                                               \
-        }                                                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                            \
-        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                               \
-        TELL( "TASK0: after newing either a tinS in the working poolOld" )                                                                                                                                                                                                  \
-        if( bTinOk )                                                                                                                                                                                                                                                        \
-        {                                                                                                                                                                                                                                                                   \
-            TINSL                                                                                                                                                                                                                                                           \
-            thirdC::osTraceWrongNodeIF( tinP , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                              \
-            etherC& ether = etherC::etPrimeIF( tinP ) ;                                                                                                                                                                                                                     \
-            etherC& etRock = etherC::etRockIF( tinP ) ;                                                                                                                                                                                                                     \
-            TELL( "TASK0: setting miscellaneous fields in tinP" )                                                                                                                                                                                                           \
-            tinP.idiTask  = DDNUMB ;                                                                                                                                                                                                                                        \
-            tinP.idlTask  = ifcLINE ;                                                                                                                                                                                                                                       \
-            tinP.monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinP ) ;                                                                                                                                                                                            \
-            tinP.pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                            \
-            /*etRock.traceF( tinP , T("TASK0 [osTid]: ")+TF4(tinP.osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
-                                                                                                                                                                                                                                                                            \
-            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                   \
-            TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                       \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         tinP.flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         tinP.flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         tinP.flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         tinP.flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         tinP.flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                               \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) tinP.monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                               \
-                                                                                                                                                                                                                                                                            \
-            TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                \
-            /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                        \
-            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                        \
-            /*etherC* pEtThread = new( 0 , tinP , pbEther1 , sizeof pbEther1 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;*/                                                                                                               \
-            /*tinP.pEtScratch   = new( 0 , tinP , pbEther2 , sizeof pbEther2 ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                        \
-            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                               \
-            TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                          \
-            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                               \
-            /*if( pEtThread && tinP.pEtScratch )*/                                                                                                                                                                                                                          \
-            {                                                                                                                                                                                                                                                               \
-                /*etherC& etThread  = *pEtThread ;*/                                                                                                                                                                                                                        \
-                /*byteT pbScoop[ sizeof( scoopC ) ] ;*/                                                                                                                                                                                                                     \
-                /*tinP.pScoopEtThread = new( 0 , tinP , pbScoop , sizeof pbScoop ) scoopC( tinP , LF , etThread ) ; ___( tinP.pScoopEtThread  ) ;*/                                                                                                                         \
-                                                                                                                                                                                                                                                                            \
-                /*POPUP( TF1(tinP.monitor.idThread)+T(" ")+T(tinP.postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                            \
-                TELL( "TASK0: final setup" )                                                                                                                                                                                                                                \
-                /*tinP.pEther = &etThread ;*/                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                                                            \
-                /*signC _sgnUtility( tinP , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                          \
-                /*tinP.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                            \
-                {                                                                                                                                                                                                                                                           \
-                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(tinP.osPid)+T(" ")+TF1(tinP.osTid)+T(" \"")+T(tinP.postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/                       \
-                    ether.osTimeNowF( tinP , tinP.time1 , tinP.time2 ) ;                                                                                                                                                                                                    \
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                         \
-                    {                                                                                                                                                                                                                                                       \
-                        TN( tDot , "." ) ;                                                                                                                                                                                                                                  \
-                        ether.strMakeF( tinP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(tinP.osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(tinP.monitor.idThread) ) ; ___( psttThreadFile ) ;                                                   \
-                        ether.boxPutF( tinP , psttThreadFile , "T" ) ;                                                                                                                                                                                                      \
-                    }                                                                                                                                                                                                                                                       \
-                    /*if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;*/                                                     \
-                    TELL( "TASK0: entering application code" )                                                                                                                                                                                                              \
-                    /*tlsBlobC _tlsBlobStackTop( tinP , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                         \
-                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                         \
-                    if( tinP.idPhase1 < ifcIDpHASEtHREAD_WORKING ) tinP.idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
-                    _IO_                                                                                                                                                                                                                                                    \
-                    if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200024.done0 BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000024.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*DONE0*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK0
-    
-#define DONE0nOeTsCRATCH                                                                                                                                                                                                                    \
-                                                                                                                                                                                                                                            \
-                    /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                      \
-                                                                                                                                                                                                                                            \
-                    etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/                                                                               \
-                                                                                                                                                                                                                                            \
-                    {                                                                                                                                                                                                                       \
-                        TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                               \
-                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                       \
-                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                                     \
-                        tinP.idPhase2 = 0 ;                                                                                                                                                                                                 \
-                        TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                            \
-                                                                                                                                                                                                                                            \
-                        if( tinP.pag1->cYieldHighWater )                                                                                                                                                                                    \
-                        {                                                                                                                                                                                                                   \
-                            OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                               \
-                            OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                    \
-                            OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;                                                                                                                                                                   \
-                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                  \
-                            OStEXTC(  ostoSay , tinP.pag1->cYieldHighWater , 0 ) ;                                                                                                                                                          \
-                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                  \
-                            OStEXTC(  ostoSay , tinP.cSpins1 , '0' ) ;                                                                                                                                                                      \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
-                            OStEXTC(  ostoSay , tinP.cSpins2 , '0' ) ;                                                                                                                                                                      \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
-                            OStEXTC(  ostoSay , tinP.cSpins3 , '0' ) ;                                                                                                                                                                      \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
-                            OStEXTC(  ostoSay , tinP.cSpins4 , '0' ) ;                                                                                                                                                                      \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                     \
-                            OStEXTC(  ostoSay , tinP.cOsHandles , '0' ) ;                                                                                                                                                                   \
-                            etThread.traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                       \
-                        }                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                            \
-                        if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                  \
-                        else                                                                                                                                                                                                                \
-                        {                                                                                                                                                                                                                   \
-                            TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                            \
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;               \
-                                                                                                                                                                                                                                            \
-                            TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                            \
-                            {                                                                                                                                                                                                               \
-                                sleepC s( tinP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                 \
-                                while( tinP.cKidThreads )                                                                                                                                                                                   \
-                                {                                                                                                                                                                                                           \
-                                    etherC::etRockIF( tinP ).traceF( tinP , T("DONE0 / napping a wink for my kids to end [tinP.cKidThreads]:    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                       \
-                                    ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ;                                                                                                                                                            \
-                                }                                                                                                                                                                                                           \
-                            }                                                                                                                                                                                                               \
-                            TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                  \
-                        }                                                                                                                                                                                                                   \
-                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                                 \
-                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }                                                                       \
-                    }                                                                                                                                                                                                                       \
-                }                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                            \
-                tinP.pSgnUtility = 0 ;                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                            \
-                {                                                                                                                                                                                                                           \
-                    TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                   \
-                    if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                                                                                                      \
-                    {                                                                                                                                                                                                                       \
-                        if( psttThreadFile )                                                                                                                                                                                                \
-                        {                                                                                                                                                                                                                   \
-                            TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                         \
-                            tinP.pEtScratch->boxZapF( tinP , psttThreadFile ) ;                                                                                                                                                             \
-                            tinP.pEtScratch->delF( tinP , psttThreadFile ) ;                                                                                                                                                                \
-                        }                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                            \
-                        TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                  \
-                        tinP.pEther = 0 ;                                                                                                                                                                                                   \
-                        TELL( "DONE0: deleting etThread (and tinP)" ) ;                                                                                                                                                                     \
-                        DELzOMBIE( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                   \
-                        /*DELzOMBIE( tinP.pEtScratch ) ;*/                                                                                                                                                                                  \
-                        if( *(countT*)&pEtThread )                                                                                                                                                                                          \
-                        {                                                                                                                                                                                                                   \
-                            DELzOMBIE( pEtThread ) ; /* tinP IS DESTROYED HERE */                                                                                                                                                           \
-                            TINSL                                                                                                                                                                                                           \
-                        }                                                                                                                                                                                                                   \
-                    }                                                                                                                                                                                                                       \
-                }                                                                                                                                                                                                                           \
-            }                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                            \
-            {                                                                                                                                                                                                                               \
-                TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                       \
-                TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                      \
-                boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                               \
-                countT& cAllThreads = bOrphan                                                                                                                                                                                               \
-                    ? thirdC::os_cAllOrphanThreadsI_IF( tinP )                                                                                                                                                                              \
-                    : thirdC::os_cAllKidThreadsI_IF( tinP )                                                                                                                                                                                 \
-                ;                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                            \
-                if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                               \
-                {                                                                                                                                                                                                                           \
-                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                        \
-                }                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                            \
-                boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                   \
-                if( !bFake )                                                                                                                                                                                                                \
-                {                                                                                                                                                                                                                           \
-                    /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                                                                                                  \
-                    /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                                                                                                  \
-                    DEL( pTaskP ) ;                                                                                                                                                                                                         \
-                }                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                            \
-                TELL( "DONE0: i am outa here" )                                                                                                                                                                                             \
-                if( tinP.monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] = - 1 ;                                                                                               \
-                dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                            \
-            }                                                                                                                                                                                                                               \
-        }                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                            \
-        DONE1
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
 
 
 //
@@ -3062,7 +2240,6 @@ examples
 /*1*//*TASK(taskFP)*//*1*/
 
 #define TASK(taskFP) TASK0( taskFP , flTHIRDmODE_null )
-#define TASKnOeTsCRATCH(taskFP) TASK0nOeTsCRATCH( taskFP , flTHIRDmODE_null )
 
 
 //
@@ -3134,66 +2311,6 @@ examples
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
-examples
- simplest
-  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
-*/
-/**/
-/*1*//**//*1*/
-
-#ifdef __OS2__
-
-    #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                                 \
-                                                                                                                                                                                                                    \
-                        DONE0nOeTsCRATCH                                                                                                                                                                            \
-                                                                                                                                                                                                                    \
-        TASK0PROTO( taskFP )                                                                                                                                                                                        \
-        {                                                                                                                                                                                                           \
-            threadLocalStorageF( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                                     \
-        }
-
-#elif defined( __NT__ )
-
-    #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                                 \
-                                                                                                                                                                                                                    \
-                        DONE0nOeTsCRATCH                                                                                                                                                                            \
-                                                                                                                                                                                                                    \
-        TASK0PROTO( taskFP )                                                                                                                                                                                        \
-        {                                                                                                                                                                                                           \
-            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                                      \
-            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                                     \
-            /* ZE( countT , foo ) ;                          */                                                                                                                                                     \
-            /* ZE( countT , goo ) ;                          */                                                                                                                                                     \
-            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                                     \
-            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                                     \
-            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                                     \
-            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                                     \
-                                                                                                                                                                                                                    \
-            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;               \
-                                                                                                                                                                                                                    \
-            return c_threadTry1OuterF( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
-        }
-
-#endif
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200026.done END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200027.osf BEGIN
@@ -3927,6 +3044,15 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*SPACER(suffixP)*//*1*/
 
+#if !defined( SPACERsIZE )
+
+    #define SPACER(suffixP)
+
+#else
+
+    #define SPACER(suffixP) countT pcSpacer##suffixP[ SPACERsIZE ] ;
+
+#endif
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -3953,6 +3079,9 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*SPACERsIZE*//*1*/
 
+//TO SUPPRESS SPACERS, COMMENT OUT THIS DEFINITION
+
+//#define SPACERsIZE 1
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -5951,7 +5080,7 @@ examples
 /*1*//*LAUNCHhEAReNTER(tmFP,idPortP)*//*1*/
 /**/
 
-#define LAUNCHhEAReNTER(tmFP,idPortP) { ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmFP , 0 , 0 , flTHREADlAUNCH_null , 0 , 0 , idPortP ) ; }
+#define LAUNCHhEAReNTER(tmFP,idPortP) { ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmFP , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortP ) ; }
 
 
 //
@@ -6048,6 +5177,7 @@ in the "IN_NORMAL" macros, it is redefined so that the _ macro sets the high ord
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200082.ifcflagin END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._io_ BEGIN
 
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -6070,6 +5200,8 @@ it is illegal to refer to this symbol in the definition of an adam
 //20160525@0921: ENABLED TO MAXIMIZE GLASS WALLS
 //20201008@1520: DISABLED TO INVESTIGATE SLOOOOW EXECUTION
 //20210709@1526: NEVERdEFINED3: DISABLE THIS CHATTER SINCE I WANT TO USE SCRATCH0d
+
+// flM0DEpR0CESS2_SUPPRESSiNoUTfRAMEc MUST BE SET IF NOiNoUTfRAME IS DEFINED
 
 #if defined( NOiNoUTfRAME )
 
@@ -8780,292 +7912,285 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*ifcIDtYPEdROPnOTE*//*1*/
 /*3*/
-#define ifcIDtYPEdROPnOTE_voidT                                         0xdddd033e
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition1                 0xdddd033f
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition2                 0xdddd0340
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition3                 0xdddd0341
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition4                 0xdddd0342
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition5                 0xdddd0343
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition6                 0xdddd0344
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition7                 0xdddd0345
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition8                 0xdddd0346
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiona                 0xdddd0347
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionb                 0xdddd0348
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionc                 0xdddd0349
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiond                 0xdddd034a
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitione                 0xdddd034b
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionf                 0xdddd034c
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition01                0xdddd034d
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition11                0xdddd034e
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition21                0xdddd034f
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition31                0xdddd0350
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition41                0xdddd0351
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition51                0xdddd0352
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition61                0xdddd0353
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition71                0xdddd0354
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition81                0xdddd0355
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition91                0xdddd0356
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiona1                0xdddd0357
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionb1                0xdddd0358
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionc1                0xdddd0359
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiond1                0xdddd035a
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitione1                0xdddd035b
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionf1                0xdddd035c
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition02                0xdddd035d
-#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition12                0xdddd035e
-#define ifcIDtYPEdROPnOTE_napkinC                                       0xdddd035f
-#define ifcIDtYPEdROPnOTE_MONITOReVENT                                  0xdddd0360
-#define ifcIDtYPEdROPnOTE_arrayC                                        0xdddd0361
-#define ifcIDtYPEdROPnOTE_thirdCdosScanEnvFpostv                        0xdddd0362
-#define ifcIDtYPEdROPnOTE_thirdCpoolNewF                                0xdddd0363
-#define ifcIDtYPEdROPnOTE_etherCpoolNewF                                0xdddd0364
-#define ifcIDtYPEdROPnOTE_lakeCwriteFcopy                               0xdddd0365
-#define ifcIDtYPEdROPnOTE_pczCpcz                                       0xdddd0366
-#define ifcIDtYPEdROPnOTE_CRITICAL_SECTION                              0xdddd0367
-#define ifcIDtYPEdROPnOTE_thirdC                                        0xdddd0368
-#define ifcIDtYPEdROPnOTE__1S                                           0xdddd0369
-#define ifcIDtYPEdROPnOTE_htmlS                                         0xdddd036a
-#define ifcIDtYPEdROPnOTE_link189S                                      0xdddd036b
-#define ifcIDtYPEdROPnOTE_etherC                                        0xdddd036c
-#define ifcIDtYPEdROPnOTE_infoDiskS                                     0xdddd036d
-#define ifcIDtYPEdROPnOTE_textC                                         0xdddd036e
-#define ifcIDtYPEdROPnOTE_socketC                                       0xdddd036f
-#define ifcIDtYPEdROPnOTE_boxC                                          0xdddd0370
-#define ifcIDtYPEdROPnOTE_batonC                                        0xdddd0371
-#define ifcIDtYPEdROPnOTE_signC                                         0xdddd0372
-#define ifcIDtYPEdROPnOTE_taskS                                         0xdddd0373
-#define ifcIDtYPEdROPnOTE_batonBoxC                                     0xdddd0374
-#define ifcIDtYPEdROPnOTE_plateS                                        0xdddd0375
-#define ifcIDtYPEdROPnOTE_stackC                                        0xdddd0376
-#define ifcIDtYPEdROPnOTE_switchC                                       0xdddd0377
-#define ifcIDtYPEdROPnOTE_switchStackC                                  0xdddd0378
-#define ifcIDtYPEdROPnOTE_mapC                                          0xdddd0379
-#define ifcIDtYPEdROPnOTE_infoFileS                                     0xdddd037a
-#define ifcIDtYPEdROPnOTE_infoDisk1S                                    0xdddd037b
-#define ifcIDtYPEdROPnOTE_tinS                                          0xdddd037c
-#define ifcIDtYPEdROPnOTE_tableC                                        0xdddd037d
-#define ifcIDtYPEdROPnOTE_busC                                          0xdddd037e
-#define ifcIDtYPEdROPnOTE_carC                                          0xdddd037f
-#define ifcIDtYPEdROPnOTE_pricerC                                       0xdddd0380
-#define ifcIDtYPEdROPnOTE_riverC                                        0xdddd0381
-#define ifcIDtYPEdROPnOTE_mainRefsS                                     0xdddd0382
-#define ifcIDtYPEdROPnOTE_windowOldC                                    0xdddd0383
-#define ifcIDtYPEdROPnOTE_recDirC                                       0xdddd0384
-#define ifcIDtYPEdROPnOTE_imageExeDllC                                  0xdddd0385
-#define ifcIDtYPEdROPnOTE_masterOldC                                    0xdddd0386
-#define ifcIDtYPEdROPnOTE_ranUniC                                       0xdddd0387
-#define ifcIDtYPEdROPnOTE_nicNamesNearbyOldC                            0xdddd0388
-#define ifcIDtYPEdROPnOTE_soulC                                         0xdddd0389
-#define ifcIDtYPEdROPnOTE_netC                                          0xdddd038a
-#define ifcIDtYPEdROPnOTE_fylesC                                        0xdddd038b
-#define ifcIDtYPEdROPnOTE_byteT                                         0xdddd038c
-#define ifcIDtYPEdROPnOTE_countT                                        0xdddd038d
-#define ifcIDtYPEdROPnOTE_strokeS                                       0xdddd038e
-#define ifcIDtYPEdROPnOTE_count9S                                       0xdddd038f
-#define ifcIDtYPEdROPnOTE_count8S                                       0xdddd0390
-#define ifcIDtYPEdROPnOTE_count7S                                       0xdddd0391
-#define ifcIDtYPEdROPnOTE_count6S                                       0xdddd0392
-#define ifcIDtYPEdROPnOTE_count5S                                       0xdddd0393
-#define ifcIDtYPEdROPnOTE_count4S                                       0xdddd0394
-#define ifcIDtYPEdROPnOTE_count3S                                       0xdddd0395
-#define ifcIDtYPEdROPnOTE_count2S                                       0xdddd0396
-#define ifcIDtYPEdROPnOTE_sCountT                                       0xdddd0397
-#define ifcIDtYPEdROPnOTE_measureT                                      0xdddd0398
-#define ifcIDtYPEdROPnOTE_count01T                                      0xdddd0399
-#define ifcIDtYPEdROPnOTE_nicNameC                                      0xdddd039a
-#define ifcIDtYPEdROPnOTE_vmAllocS                                      0xdddd039b
-#define ifcIDtYPEdROPnOTE_cookieC                                       0xdddd039c
-#define ifcIDtYPEdROPnOTE_stateC                                        0xdddd039d
-#define ifcIDtYPEdROPnOTE_grabC                                         0xdddd039e
-#define ifcIDtYPEdROPnOTE_grabAnnotatedS                                0xdddd039f
-#define ifcIDtYPEdROPnOTE_sleepC                                        0xdddd03a0
-#define ifcIDtYPEdROPnOTE_handleC                                       0xdddd03a1
-#define ifcIDtYPEdROPnOTE_fileOpenS                                     0xdddd03a2
-#define ifcIDtYPEdROPnOTE_thugC                                         0xdddd03a3
-#define ifcIDtYPEdROPnOTE_restartC                                      0xdddd03a4
-#define ifcIDtYPEdROPnOTE_branchesOldS                                  0xdddd03a5
-#define ifcIDtYPEdROPnOTE_baseSoilXxxxC                                 0xdddd03a6
-#define ifcIDtYPEdROPnOTE_lexC                                          0xdddd03a7
-#define ifcIDtYPEdROPnOTE_rootWordC                                     0xdddd03a8
-#define ifcIDtYPEdROPnOTE_portC                                         0xdddd03a9
-#define ifcIDtYPEdROPnOTE_osTextC                                       0xdddd03aa
-#define ifcIDtYPEdROPnOTE_scoopC                                        0xdddd03ab
-#define ifcIDtYPEdROPnOTE_strokingFrameS                                0xdddd03ac
-#define ifcIDtYPEdROPnOTE_branchDataOldS                                0xdddd03ad
-#define ifcIDtYPEdROPnOTE_VARIABLE                                      0xdddd03ae
-#define ifcIDtYPEdROPnOTE_xrayC                                         0xdddd03af
-#define ifcIDtYPEdROPnOTE_earDropImage                                  0xdddd03b0
-#define ifcIDtYPEdROPnOTE_subpoolOld                                    0xdddd03b1
-#define ifcIDtYPEdROPnOTE_vTextC                                        0xdddd03b2
-#define ifcIDtYPEdROPnOTE_tcButtonC                                     0xdddd03b3
-#define ifcIDtYPEdROPnOTE_branchHeaderOldS                              0xdddd03b4
-#define ifcIDtYPEdROPnOTE_grabWantS                                     0xdddd03b5
-#define ifcIDtYPEdROPnOTE_paperOldC                                     0xdddd03b6
-#define ifcIDtYPEdROPnOTE_tcPromptC                                     0xdddd03b7
-#define ifcIDtYPEdROPnOTE_tcSliderC                                     0xdddd03b8
-#define ifcIDtYPEdROPnOTE_tcButtonQuitC                                 0xdddd03b9
-#define ifcIDtYPEdROPnOTE_pulpOldC                                      0xdddd03ba
-#define ifcIDtYPEdROPnOTE_staqC                                         0xdddd03bb
-#define ifcIDtYPEdROPnOTE_bitmapOldC                                    0xdddd03bc
-#define ifcIDtYPEdROPnOTE_countC                                        0xdddd03bd
-#define ifcIDtYPEdROPnOTE_vBodyS                                        0xdddd03be
-#define ifcIDtYPEdROPnOTE_threadC                                       0xdddd03bf
+#define ifcIDtYPEdROPnOTE__1S                                           0xdddd033e
+#define ifcIDtYPEdROPnOTE_above_byteTstrz_C                             0xdddd033f
+#define ifcIDtYPEdROPnOTE_above_countT_C                                0xdddd0340
+#define ifcIDtYPEdROPnOTE_above_countTstrz_C                            0xdddd0341
+#define ifcIDtYPEdROPnOTE_accountS                                      0xdddd0342
+#define ifcIDtYPEdROPnOTE_adamC                                         0xdddd0343
+#define ifcIDtYPEdROPnOTE_adamGlobal1S                                  0xdddd0344
+#define ifcIDtYPEdROPnOTE_adamGlobal2S                                  0xdddd0345
+#define ifcIDtYPEdROPnOTE_adamGlobal3S                                  0xdddd0346
+#define ifcIDtYPEdROPnOTE_adamGlobal4S                                  0xdddd0347
+#define ifcIDtYPEdROPnOTE_adamGlobal5S                                  0xdddd0348
+#define ifcIDtYPEdROPnOTE_adamGlobal6S                                  0xdddd0349
+#define ifcIDtYPEdROPnOTE_aptC                                          0xdddd034a
+#define ifcIDtYPEdROPnOTE_aptNameOldS                                   0xdddd034b
+#define ifcIDtYPEdROPnOTE_arrayC                                        0xdddd034c
+#define ifcIDtYPEdROPnOTE_associateC                                    0xdddd034d
+#define ifcIDtYPEdROPnOTE_assViewC                                      0xdddd034e
+#define ifcIDtYPEdROPnOTE_assViewEyeS                                   0xdddd034f
+#define ifcIDtYPEdROPnOTE_assViewStqS                                   0xdddd0350
+#define ifcIDtYPEdROPnOTE_backGrabMemorySpaceC                          0xdddd0351
+#define ifcIDtYPEdROPnOTE_barryC                                        0xdddd0352
+#define ifcIDtYPEdROPnOTE_baseSoilXxxxC                                 0xdddd0353
+#define ifcIDtYPEdROPnOTE_batonBoxC                                     0xdddd0354
+#define ifcIDtYPEdROPnOTE_batonC                                        0xdddd0355
+#define ifcIDtYPEdROPnOTE_below_byteTstrz_C                             0xdddd0356
+#define ifcIDtYPEdROPnOTE_below_countT_C                                0xdddd0357
+#define ifcIDtYPEdROPnOTE_below_countTstrz_C                            0xdddd0358
+#define ifcIDtYPEdROPnOTE_bitmapOldC                                    0xdddd0359
+#define ifcIDtYPEdROPnOTE_blobSP                                        0xdddd035a
+#define ifcIDtYPEdROPnOTE_blobVSP                                       0xdddd035b
+#define ifcIDtYPEdROPnOTE_book0C                                        0xdddd035c
+#define ifcIDtYPEdROPnOTE_bookC                                         0xdddd035d
+#define ifcIDtYPEdROPnOTE_bookHeadS                                     0xdddd035e
+#define ifcIDtYPEdROPnOTE_booksC                                        0xdddd035f
+#define ifcIDtYPEdROPnOTE_boolC                                         0xdddd0360
+#define ifcIDtYPEdROPnOTE_boxC                                          0xdddd0361
+#define ifcIDtYPEdROPnOTE_branchDataOldS                                0xdddd0362
+#define ifcIDtYPEdROPnOTE_branchesOldS                                  0xdddd0363
+#define ifcIDtYPEdROPnOTE_branchHeaderOldS                              0xdddd0364
+#define ifcIDtYPEdROPnOTE_branchS                                       0xdddd0365
+#define ifcIDtYPEdROPnOTE_busC                                          0xdddd0366
+#define ifcIDtYPEdROPnOTE_bytesC                                        0xdddd0367
+#define ifcIDtYPEdROPnOTE_byteT                                         0xdddd0368
+#define ifcIDtYPEdROPnOTE_cacheC                                        0xdddd0369
+#define ifcIDtYPEdROPnOTE_cachedS                                       0xdddd036a
+#define ifcIDtYPEdROPnOTE_carC                                          0xdddd036b
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition01                0xdddd036c
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition02                0xdddd036d
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition1                 0xdddd036e
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition11                0xdddd036f
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition12                0xdddd0370
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition2                 0xdddd0371
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition21                0xdddd0372
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition3                 0xdddd0373
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition31                0xdddd0374
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition4                 0xdddd0375
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition41                0xdddd0376
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition5                 0xdddd0377
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition51                0xdddd0378
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition6                 0xdddd0379
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition61                0xdddd037a
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition7                 0xdddd037b
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition71                0xdddd037c
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition8                 0xdddd037d
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition81                0xdddd037e
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition91                0xdddd037f
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiona                 0xdddd0380
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiona1                0xdddd0381
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionb                 0xdddd0382
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionb1                0xdddd0383
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionc                 0xdddd0384
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionc1                0xdddd0385
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiond                 0xdddd0386
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitiond1                0xdddd0387
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitione                 0xdddd0388
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitione1                0xdddd0389
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionf                 0xdddd038a
+#define ifcIDtYPEdROPnOTE_classDefinedInAdamDefinitionf1                0xdddd038b
+#define ifcIDtYPEdROPnOTE_cloudInfoS                                    0xdddd038c
+#define ifcIDtYPEdROPnOTE_cookieC                                       0xdddd038d
+#define ifcIDtYPEdROPnOTE_count01T                                      0xdddd038e
+#define ifcIDtYPEdROPnOTE_count2S                                       0xdddd038f
+#define ifcIDtYPEdROPnOTE_count3S                                       0xdddd0390
+#define ifcIDtYPEdROPnOTE_count4S                                       0xdddd0391
+#define ifcIDtYPEdROPnOTE_count5S                                       0xdddd0392
+#define ifcIDtYPEdROPnOTE_count6S                                       0xdddd0393
+#define ifcIDtYPEdROPnOTE_count7S                                       0xdddd0394
+#define ifcIDtYPEdROPnOTE_count8S                                       0xdddd0395
+#define ifcIDtYPEdROPnOTE_count9S                                       0xdddd0396
+#define ifcIDtYPEdROPnOTE_countC                                        0xdddd0397
+#define ifcIDtYPEdROPnOTE_countSP                                       0xdddd0398
+#define ifcIDtYPEdROPnOTE_countStrzSP                                   0xdddd0399
+#define ifcIDtYPEdROPnOTE_countStrzVSP                                  0xdddd039a
+#define ifcIDtYPEdROPnOTE_countT                                        0xdddd039b
+#define ifcIDtYPEdROPnOTE_countVSP                                      0xdddd039c
+#define ifcIDtYPEdROPnOTE_CRITICAL_SECTION                              0xdddd039d
+#define ifcIDtYPEdROPnOTE_datumS                                        0xdddd039e
+#define ifcIDtYPEdROPnOTE_depositDetailS                                0xdddd039f
+#define ifcIDtYPEdROPnOTE_deviceC                                       0xdddd03a0
+#define ifcIDtYPEdROPnOTE_diskFindHandleS                               0xdddd03a1
+#define ifcIDtYPEdROPnOTE_displayC                                      0xdddd03a2
+#define ifcIDtYPEdROPnOTE_earDropImage                                  0xdddd03a3
+#define ifcIDtYPEdROPnOTE_equal_byteTstrz_C                             0xdddd03a4
+#define ifcIDtYPEdROPnOTE_equal_countT_C                                0xdddd03a5
+#define ifcIDtYPEdROPnOTE_equal_countTstrz_C                            0xdddd03a6
+#define ifcIDtYPEdROPnOTE_etherC                                        0xdddd03a7
+#define ifcIDtYPEdROPnOTE_etherCpoolNewF                                0xdddd03a8
+#define ifcIDtYPEdROPnOTE_face_poolC_S                                  0xdddd03a9
+#define ifcIDtYPEdROPnOTE_fieldEditParamOutC                            0xdddd03aa
+#define ifcIDtYPEdROPnOTE_fileC                                         0xdddd03ab
+#define ifcIDtYPEdROPnOTE_fileNameC                                     0xdddd03ac
+#define ifcIDtYPEdROPnOTE_fileOpenS                                     0xdddd03ad
+#define ifcIDtYPEdROPnOTE_fileWindowC                                   0xdddd03ae
+#define ifcIDtYPEdROPnOTE_fileWindowsC                                  0xdddd03af
+#define ifcIDtYPEdROPnOTE_funnelHornC                                   0xdddd03b0
+#define ifcIDtYPEdROPnOTE_fylesC                                        0xdddd03b1
+#define ifcIDtYPEdROPnOTE_grabAnnotatedS                                0xdddd03b2
+#define ifcIDtYPEdROPnOTE_grabC                                         0xdddd03b3
+#define ifcIDtYPEdROPnOTE_grabitC                                       0xdddd03b4
+#define ifcIDtYPEdROPnOTE_grabMemorySpaceC                              0xdddd03b5
+#define ifcIDtYPEdROPnOTE_grabotC                                       0xdddd03b6
+#define ifcIDtYPEdROPnOTE_grabWantS                                     0xdddd03b7
+#define ifcIDtYPEdROPnOTE_gridS                                         0xdddd03b8
+#define ifcIDtYPEdROPnOTE_guts_poolC_S                                  0xdddd03b9
+#define ifcIDtYPEdROPnOTE_handleC                                       0xdddd03ba
+#define ifcIDtYPEdROPnOTE_homeS                                         0xdddd03bb
+#define ifcIDtYPEdROPnOTE_hoverC                                        0xdddd03bc
+#define ifcIDtYPEdROPnOTE_htmlS                                         0xdddd03bd
+#define ifcIDtYPEdROPnOTE_httpReplyRefC                                 0xdddd03be
+#define ifcIDtYPEdROPnOTE_httpReplyS                                    0xdddd03bf
 #define ifcIDtYPEdROPnOTE_httpStaticReplyS                              0xdddd03c0
-#define ifcIDtYPEdROPnOTE_sessionC                                      0xdddd03c1
-#define ifcIDtYPEdROPnOTE_sessionsC                                     0xdddd03c2
-#define ifcIDtYPEdROPnOTE_httpReplyS                                    0xdddd03c3
-#define ifcIDtYPEdROPnOTE_adamGlobal1S                                  0xdddd03c4
-#define ifcIDtYPEdROPnOTE_adamGlobal2S                                  0xdddd03c5
-#define ifcIDtYPEdROPnOTE_adamGlobal3S                                  0xdddd03c6
-#define ifcIDtYPEdROPnOTE_adamGlobal4S                                  0xdddd03c7
-#define ifcIDtYPEdROPnOTE_adamGlobal5S                                  0xdddd03c8
-#define ifcIDtYPEdROPnOTE_adamGlobal6S                                  0xdddd03c9
-#define ifcIDtYPEdROPnOTE_grabMemorySpaceC                              0xdddd03ca
-#define ifcIDtYPEdROPnOTE_backGrabMemorySpaceC                          0xdddd03cb
-#define ifcIDtYPEdROPnOTE_homeS                                         0xdddd03cc
-#define ifcIDtYPEdROPnOTE_marketC                                       0xdddd03cd
-#define ifcIDtYPEdROPnOTE_adamC                                         0xdddd03ce
-#define ifcIDtYPEdROPnOTE_sCountC                                       0xdddd03cf
-#define ifcIDtYPEdROPnOTE_x0SwitchStackC                                0xdddd03d0
-#define ifcIDtYPEdROPnOTE_xSwitchStackC                                 0xdddd03d1
-#define ifcIDtYPEdROPnOTE_rangeC                                        0xdddd03d2
-#define ifcIDtYPEdROPnOTE_aptNameOldS                                   0xdddd03d3
-#define ifcIDtYPEdROPnOTE_tellS                                         0xdddd03d4
-#define ifcIDtYPEdROPnOTE_ipMapHomeS                                    0xdddd03d5
-#define ifcIDtYPEdROPnOTE_ipMapPortS                                    0xdddd03d6
-#define ifcIDtYPEdROPnOTE_sexHeadS                                      0xdddd03d7
-#define ifcIDtYPEdROPnOTE_sexC                                          0xdddd03d8
-#define ifcIDtYPEdROPnOTE_slotsC                                        0xdddd03d9
-#define ifcIDtYPEdROPnOTE_poolC                                         0xdddd03da
-#define ifcIDtYPEdROPnOTE_puseC                                         0xdddd03db
-#define ifcIDtYPEdROPnOTE_guts_poolC_S                                  0xdddd03dc
-#define ifcIDtYPEdROPnOTE_face_poolC_S                                  0xdddd03dd
-#define ifcIDtYPEdROPnOTE_fileC                                         0xdddd03de
-#define ifcIDtYPEdROPnOTE_grabitC                                       0xdddd03df
-#define ifcIDtYPEdROPnOTE_grabotC                                       0xdddd03e0
-#define ifcIDtYPEdROPnOTE_linkedC                                       0xdddd03e1
-#define ifcIDtYPEdROPnOTE_listingC                                      0xdddd03e2
-#define ifcIDtYPEdROPnOTE_listC                                         0xdddd03e3
-
-#define ifcIDtYPEdROPnOTE_listing_countT_C                              0xdddd03e4
-#define ifcIDtYPEdROPnOTE_listing_blob_C                                0xdddd03e5
-#define ifcIDtYPEdROPnOTE_listing_countTstrz_C                          0xdddd03e6
-#define ifcIDtYPEdROPnOTE_listing_listingVSP_C                          0xdddd03e7
-
-#define ifcIDtYPEdROPnOTE_listingOfSet_countT_C                              0xdddd03e4
-#define ifcIDtYPEdROPnOTE_listingOfSet_blob_C                                0xdddd03e5
-#define ifcIDtYPEdROPnOTE_listingOfSet_countTstrz_C                          0xdddd03e6
-#define ifcIDtYPEdROPnOTE_listingOfSet_listingVSP_C                          0xdddd03e7
-
-#define ifcIDtYPEdROPnOTE_list_countT_C                              0xdddd03e4
-#define ifcIDtYPEdROPnOTE_list_blob_C                                0xdddd03e5
-#define ifcIDtYPEdROPnOTE_list_countTstrz_C                          0xdddd03e6
-#define ifcIDtYPEdROPnOTE_list_listingVSP_C                          0xdddd03e7
-
-#define ifcIDtYPEdROPnOTE_listOfSet_countT_C                              0xdddd03e4
-#define ifcIDtYPEdROPnOTE_listOfSet_blob_C                                0xdddd03e5
-#define ifcIDtYPEdROPnOTE_listOfSet_countTstrz_C                          0xdddd03e6
-#define ifcIDtYPEdROPnOTE_listOfSet_listingVSP_C                          0xdddd03e7
-
-#define ifcIDtYPEdROPnOTE_depositDetailS                                0xdddd03ec
-#define ifcIDtYPEdROPnOTE_bookHeadS                                     0xdddd03ed
-#define ifcIDtYPEdROPnOTE_book0C                                        0xdddd03ee
-#define ifcIDtYPEdROPnOTE_bookC                                         0xdddd03ef
-#define ifcIDtYPEdROPnOTE_booksC                                        0xdddd03f0
-#define ifcIDtYPEdROPnOTE_accountS                                      0xdddd03f1
-#define ifcIDtYPEdROPnOTE_refC                                          0xdddd03f2
-#define ifcIDtYPEdROPnOTE_httpReplyRefC                                 0xdddd03f3
-#define ifcIDtYPEdROPnOTE_pbRefC                                        0xdddd03f4
-#define ifcIDtYPEdROPnOTE_fieldEditParamOutC                            0xdddd03f5
-#define ifcIDtYPEdROPnOTE_boolC                                         0xdddd03f6
-#define ifcIDtYPEdROPnOTE_equal_countT_C                                0xdddd03f7
-#define ifcIDtYPEdROPnOTE_notEqual_countT_C                             0xdddd03f8
-#define ifcIDtYPEdROPnOTE_below_countT_C                                0xdddd03f9
-#define ifcIDtYPEdROPnOTE_above_countT_C                                0xdddd03fa
-#define ifcIDtYPEdROPnOTE_in_countT_C                                   0xdddd03fb
-#define ifcIDtYPEdROPnOTE_out_countT_C                                  0xdddd03fc
-#define ifcIDtYPEdROPnOTE_equal_byteTstrz_C                             0xdddd03fd
-#define ifcIDtYPEdROPnOTE_notEqual_byteTstrz_C                          0xdddd03fe
-#define ifcIDtYPEdROPnOTE_below_byteTstrz_C                             0xdddd03ff
-#define ifcIDtYPEdROPnOTE_above_byteTstrz_C                             0xdddd0400
-#define ifcIDtYPEdROPnOTE_in_byteTstrz_C                                0xdddd0401
-#define ifcIDtYPEdROPnOTE_out_byteTstrz_C                               0xdddd0402
-#define ifcIDtYPEdROPnOTE_equal_countTstrz_C                            0xdddd0403
-#define ifcIDtYPEdROPnOTE_notEqual_countTstrz_C                         0xdddd0404
-#define ifcIDtYPEdROPnOTE_below_countTstrz_C                            0xdddd0405
-#define ifcIDtYPEdROPnOTE_above_countTstrz_C                            0xdddd0406
-#define ifcIDtYPEdROPnOTE_in_countTstrz_C                               0xdddd0407
-#define ifcIDtYPEdROPnOTE_out_countTstrz_C                              0xdddd0408
-#define ifcIDtYPEdROPnOTE_link_listC_C                                  0xdddd0409
-#define ifcIDtYPEdROPnOTE_blobSP                                        0xdddd040a
-#define ifcIDtYPEdROPnOTE_listingSP                                     0xdddd040b
-#define ifcIDtYPEdROPnOTE_countStrzSP                                   0xdddd040c
-#define ifcIDtYPEdROPnOTE_countSP                                       0xdddd040d
-#define ifcIDtYPEdROPnOTE_blobVSP                                       0xdddd040e
-#define ifcIDtYPEdROPnOTE_listingVSP                                    0xdddd040f
-#define ifcIDtYPEdROPnOTE_countStrzVSP                                  0xdddd0410
-#define ifcIDtYPEdROPnOTE_countVSP                                      0xdddd0411
-#define ifcIDtYPEdROPnOTE_datumS                                        0xdddd0412
-#define ifcIDtYPEdROPnOTE_aptC                                          0xdddd0413
-#define ifcIDtYPEdROPnOTE_parm_tmAdamMainF_S                            0xdddd0414
-#define ifcIDtYPEdROPnOTE_slabS                                         0xdddd0415
-#define ifcIDtYPEdROPnOTE_strikeS                                       0xdddd0416
-#define ifcIDtYPEdROPnOTE_sadamC                                        0xdddd0417
-#define ifcIDtYPEdROPnOTE_gridS                                         0xdddd0418
-#define ifcIDtYPEdROPnOTE_paperS                                        0xdddd0419
-#define ifcIDtYPEdROPnOTE_pelC                                          0xdddd041a
-#define ifcIDtYPEdROPnOTE_pelS                                          0xdddd041b
-#define ifcIDtYPEdROPnOTE_spaceC                                        0xdddd041c
-#define ifcIDtYPEdROPnOTE_spaceS                                        0xdddd041d
-#define ifcIDtYPEdROPnOTE_displayC                                      0xdddd041e
-#define ifcIDtYPEdROPnOTE_deviceC                                       0xdddd041f
-#define ifcIDtYPEdROPnOTE_associateC                                    0xdddd0420
-#define ifcIDtYPEdROPnOTE_assViewStqS                                   0xdddd0421
-#define ifcIDtYPEdROPnOTE_assViewC                                      0xdddd0422
-#define ifcIDtYPEdROPnOTE_assViewEyeS                                   0xdddd0423
-#define ifcIDtYPEdROPnOTE_branchS                                       0xdddd0424
-#define ifcIDtYPEdROPnOTE_jotC                                          0xdddd0425
-#define ifcIDtYPEdROPnOTE_barryC                                        0xdddd0426
-#define ifcIDtYPEdROPnOTE_poolRegistrationS                             0xdddd0427
-#define ifcIDtYPEdROPnOTE_poopC                                         0xdddd0428
-#define ifcIDtYPEdROPnOTE_pageC                                         0xdddd0429
-#define ifcIDtYPEdROPnOTE_pageReleaseC                                  0xdddd042a
-#define ifcIDtYPEdROPnOTE_cloudInfoS                                    0xdddd042b
-#define ifcIDtYPEdROPnOTE_napkinsC                                      0xdddd042c
-#define ifcIDtYPEdROPnOTE_keyValuePairsC                                0xdddd042d
-#define ifcIDtYPEdROPnOTE_inOutFrameC                                   0xdddd042e
-#define ifcIDtYPEdROPnOTE_fileWindowC                                   0xdddd042f
-#define ifcIDtYPEdROPnOTE_fileWindowsC                                  0xdddd0430
-#define ifcIDtYPEdROPnOTE_patternC                                      0xdddd0431
-#define ifcIDtYPEdROPnOTE_fileNameC                                     0xdddd0432
-#define ifcIDtYPEdROPnOTE_diskFindHandleS                               0xdddd0433
-#define ifcIDtYPEdROPnOTE_cachedS                                       0xdddd0434
-#define ifcIDtYPEdROPnOTE_cacheC                                        0xdddd0435
-#define ifcIDtYPEdROPnOTE_taskDrivenServerJobS                          0xdddd0436
-#define ifcIDtYPEdROPnOTE_bytesC                                        0xdddd0437
-#define ifcIDtYPEdROPnOTE_jotFilePartC                                  0xdddd0438
-#define ifcIDtYPEdROPnOTE_jotFileSoilC                                  0xdddd0439
-#define ifcIDtYPEdROPnOTE_jotFilesC                                     0xdddd043a
-#define ifcIDtYPEdROPnOTE_hoverC                                        0xdddd043b
-#define ifcIDtYPEdROPnOTE_funnelHornC                                   0xdddd043c
-#define ifcIDtYPEdROPnOTE_nicNamesAllowedStripeWebHookNotificationsC    0xdddd043d
-#define ifcIDtYPEdROPnOTE_listOfSetC                                    0xdddd043e
-#define ifcIDtYPEdROPnOTE_stateListingSetS                              0xdddd043f
+#define ifcIDtYPEdROPnOTE_imageExeDllC                                  0xdddd03c1
+#define ifcIDtYPEdROPnOTE_in_byteTstrz_C                                0xdddd03c2
+#define ifcIDtYPEdROPnOTE_in_countT_C                                   0xdddd03c3
+#define ifcIDtYPEdROPnOTE_in_countTstrz_C                               0xdddd03c4
+#define ifcIDtYPEdROPnOTE_infoDisk1S                                    0xdddd03c5
+#define ifcIDtYPEdROPnOTE_infoDiskS                                     0xdddd03c6
+#define ifcIDtYPEdROPnOTE_infoFileS                                     0xdddd03c7
+#define ifcIDtYPEdROPnOTE_inOutFrameC                                   0xdddd03c8
+#define ifcIDtYPEdROPnOTE_ipMapHomeS                                    0xdddd03c9
+#define ifcIDtYPEdROPnOTE_ipMapPortS                                    0xdddd03ca
+#define ifcIDtYPEdROPnOTE_jotC                                          0xdddd03cb
+#define ifcIDtYPEdROPnOTE_jotFilePartC                                  0xdddd03cc
+#define ifcIDtYPEdROPnOTE_jotFilesC                                     0xdddd03cd
+#define ifcIDtYPEdROPnOTE_jotFileSoilC                                  0xdddd03ce
+#define ifcIDtYPEdROPnOTE_keyValuePairsC                                0xdddd03cf
+#define ifcIDtYPEdROPnOTE_lakeCwriteFcopy                               0xdddd03d0
+#define ifcIDtYPEdROPnOTE_lexC                                          0xdddd03d1
+#define ifcIDtYPEdROPnOTE_link_listC_C                                  0xdddd03d2
+#define ifcIDtYPEdROPnOTE_link189S                                      0xdddd03d3
+#define ifcIDtYPEdROPnOTE_linkedC                                       0xdddd03d4
+#define ifcIDtYPEdROPnOTE_list_blob_C                                   0xdddd03d5
+#define ifcIDtYPEdROPnOTE_list_countT_C                                 0xdddd03d6
+#define ifcIDtYPEdROPnOTE_list_countTstrz_C                             0xdddd03d7
+#define ifcIDtYPEdROPnOTE_list_listingVSP_C                             0xdddd03d8
+#define ifcIDtYPEdROPnOTE_listC                                         0xdddd03d9
+#define ifcIDtYPEdROPnOTE_listing_blob_C                                0xdddd03da
+#define ifcIDtYPEdROPnOTE_listing_countT_C                              0xdddd03db
+#define ifcIDtYPEdROPnOTE_listing_countTstrz_C                          0xdddd03dc
+#define ifcIDtYPEdROPnOTE_listing_listingVSP_C                          0xdddd03dd
+#define ifcIDtYPEdROPnOTE_listingC                                      0xdddd03de
+#define ifcIDtYPEdROPnOTE_listingOfSet_blob_C                           0xdddd03df
+#define ifcIDtYPEdROPnOTE_listingOfSet_countT_C                         0xdddd03e0
+#define ifcIDtYPEdROPnOTE_listingOfSet_countTstrz_C                     0xdddd03e1
+#define ifcIDtYPEdROPnOTE_listingOfSet_listingVSP_C                     0xdddd03e2
+#define ifcIDtYPEdROPnOTE_listingSP                                     0xdddd03e3
+#define ifcIDtYPEdROPnOTE_listingVSP                                    0xdddd03e4
+#define ifcIDtYPEdROPnOTE_listOfSet_blob_C                              0xdddd03e5
+#define ifcIDtYPEdROPnOTE_listOfSet_countT_C                            0xdddd03e6
+#define ifcIDtYPEdROPnOTE_listOfSet_countTstrz_C                        0xdddd03e7
+#define ifcIDtYPEdROPnOTE_listOfSet_listingVSP_C                        0xdddd03e8
+#define ifcIDtYPEdROPnOTE_listOfSetC                                    0xdddd03e9
+#define ifcIDtYPEdROPnOTE_mainRefsS                                     0xdddd03ea
+#define ifcIDtYPEdROPnOTE_mapC                                          0xdddd03eb
+#define ifcIDtYPEdROPnOTE_marketC                                       0xdddd03ec
+#define ifcIDtYPEdROPnOTE_masterOldC                                    0xdddd03ed
+#define ifcIDtYPEdROPnOTE_measureT                                      0xdddd03ee
+#define ifcIDtYPEdROPnOTE_MONITOReVENT                                  0xdddd03ef
+#define ifcIDtYPEdROPnOTE_napkinC                                       0xdddd03f0
+#define ifcIDtYPEdROPnOTE_napkinsC                                      0xdddd03f1
+#define ifcIDtYPEdROPnOTE_netC                                          0xdddd03f2
+#define ifcIDtYPEdROPnOTE_nicNameC                                      0xdddd03f3
+#define ifcIDtYPEdROPnOTE_nicNamesAllowedStripeWebHookNotificationsC    0xdddd03f4
+#define ifcIDtYPEdROPnOTE_nicNamesNearbyOldC                            0xdddd03f5
+#define ifcIDtYPEdROPnOTE_notEqual_byteTstrz_C                          0xdddd03f6
+#define ifcIDtYPEdROPnOTE_notEqual_countT_C                             0xdddd03f7
+#define ifcIDtYPEdROPnOTE_notEqual_countTstrz_C                         0xdddd03f8
+#define ifcIDtYPEdROPnOTE_osTextC                                       0xdddd03f9
+#define ifcIDtYPEdROPnOTE_out_byteTstrz_C                               0xdddd03fa
+#define ifcIDtYPEdROPnOTE_out_countT_C                                  0xdddd03fb
+#define ifcIDtYPEdROPnOTE_out_countTstrz_C                              0xdddd03fc
+#define ifcIDtYPEdROPnOTE_pageC                                         0xdddd03fd
+#define ifcIDtYPEdROPnOTE_pageReleaseC                                  0xdddd03fe
+#define ifcIDtYPEdROPnOTE_paperOldC                                     0xdddd03ff
+#define ifcIDtYPEdROPnOTE_paperS                                        0xdddd0400
+#define ifcIDtYPEdROPnOTE_parm_tmAdamMainF_S                            0xdddd0401
+#define ifcIDtYPEdROPnOTE_patternC                                      0xdddd0402
+#define ifcIDtYPEdROPnOTE_pbRefC                                        0xdddd0403
+#define ifcIDtYPEdROPnOTE_pczCpcz                                       0xdddd0404
+#define ifcIDtYPEdROPnOTE_pelC                                          0xdddd0405
+#define ifcIDtYPEdROPnOTE_pelS                                          0xdddd0406
+#define ifcIDtYPEdROPnOTE_plateS                                        0xdddd0407
+#define ifcIDtYPEdROPnOTE_poolC                                         0xdddd0408
+#define ifcIDtYPEdROPnOTE_poolRegistrationS                             0xdddd0409
+#define ifcIDtYPEdROPnOTE_poopC                                         0xdddd040a
+#define ifcIDtYPEdROPnOTE_portC                                         0xdddd040b
+#define ifcIDtYPEdROPnOTE_pricerC                                       0xdddd040c
+#define ifcIDtYPEdROPnOTE_pulpOldC                                      0xdddd040d
+#define ifcIDtYPEdROPnOTE_puseC                                         0xdddd040e
+#define ifcIDtYPEdROPnOTE_rangeC                                        0xdddd040f
+#define ifcIDtYPEdROPnOTE_ranUniC                                       0xdddd0410
+#define ifcIDtYPEdROPnOTE_recDirC                                       0xdddd0411
+#define ifcIDtYPEdROPnOTE_refC                                          0xdddd0412
+#define ifcIDtYPEdROPnOTE_restartC                                      0xdddd0413
+#define ifcIDtYPEdROPnOTE_riverC                                        0xdddd0414
+#define ifcIDtYPEdROPnOTE_rootWordC                                     0xdddd0415
+#define ifcIDtYPEdROPnOTE_sadamC                                        0xdddd0416
+#define ifcIDtYPEdROPnOTE_scoopC                                        0xdddd0417
+#define ifcIDtYPEdROPnOTE_sCountC                                       0xdddd0418
+#define ifcIDtYPEdROPnOTE_sCountT                                       0xdddd0419
+#define ifcIDtYPEdROPnOTE_sessionC                                      0xdddd041a
+#define ifcIDtYPEdROPnOTE_sessionsC                                     0xdddd041b
+#define ifcIDtYPEdROPnOTE_sexC                                          0xdddd041c
+#define ifcIDtYPEdROPnOTE_sexHeadS                                      0xdddd041d
+#define ifcIDtYPEdROPnOTE_signC                                         0xdddd041e
+#define ifcIDtYPEdROPnOTE_slabS                                         0xdddd041f
+#define ifcIDtYPEdROPnOTE_sleepC                                        0xdddd0420
+#define ifcIDtYPEdROPnOTE_slotsC                                        0xdddd0421
+#define ifcIDtYPEdROPnOTE_socketC                                       0xdddd0422
+#define ifcIDtYPEdROPnOTE_soulC                                         0xdddd0423
+#define ifcIDtYPEdROPnOTE_spaceC                                        0xdddd0424
+#define ifcIDtYPEdROPnOTE_spaceS                                        0xdddd0425
+#define ifcIDtYPEdROPnOTE_stackC                                        0xdddd0426
+#define ifcIDtYPEdROPnOTE_staqC                                         0xdddd0427
+#define ifcIDtYPEdROPnOTE_stateC                                        0xdddd0428
+#define ifcIDtYPEdROPnOTE_stateListingSetS                              0xdddd0429
+#define ifcIDtYPEdROPnOTE_strikeS                                       0xdddd042a
+#define ifcIDtYPEdROPnOTE_strokeS                                       0xdddd042b
+#define ifcIDtYPEdROPnOTE_strokingFrameS                                0xdddd042c
+#define ifcIDtYPEdROPnOTE_subpoolOld                                    0xdddd042d
+#define ifcIDtYPEdROPnOTE_switchC                                       0xdddd042e
+#define ifcIDtYPEdROPnOTE_switchStackC                                  0xdddd042f
+#define ifcIDtYPEdROPnOTE_tableC                                        0xdddd0430
+#define ifcIDtYPEdROPnOTE_taskDrivenServerJobS                          0xdddd0431
+#define ifcIDtYPEdROPnOTE_taskS                                         0xdddd0432
+#define ifcIDtYPEdROPnOTE_tcButtonC                                     0xdddd0433
+#define ifcIDtYPEdROPnOTE_tcButtonQuitC                                 0xdddd0434
+#define ifcIDtYPEdROPnOTE_tcPromptC                                     0xdddd0435
+#define ifcIDtYPEdROPnOTE_tcSliderC                                     0xdddd0436
+#define ifcIDtYPEdROPnOTE_tellS                                         0xdddd0437
+#define ifcIDtYPEdROPnOTE_textC                                         0xdddd0438
+#define ifcIDtYPEdROPnOTE_thirdC                                        0xdddd0439
+#define ifcIDtYPEdROPnOTE_thirdCdosScanEnvFpostv                        0xdddd043a
+#define ifcIDtYPEdROPnOTE_thirdCpoolNewF                                0xdddd043b
+#define ifcIDtYPEdROPnOTE_threadC                                       0xdddd043c
+#define ifcIDtYPEdROPnOTE_thugC                                         0xdddd043d
+#define ifcIDtYPEdROPnOTE_tinS                                          0xdddd043e
+#define ifcIDtYPEdROPnOTE_tlsAllocPoolC                                 0xdddd043f
 #define ifcIDtYPEdROPnOTE_tlsAllocStackExp_01_C                         0xdddd0440
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_f_C                          0xdddd0441
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_e_C                          0xdddd0442
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_d_C                          0xdddd0443
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_c_C                          0xdddd0444
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_b_C                          0xdddd0445
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_a_C                          0xdddd0446
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_9_C                          0xdddd0447
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_8_C                          0xdddd0448
-#define ifcIDtYPEdROPnOTE_tlsAllocPoolC                                 0xdddd0449
-
-
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_8_C                          0xdddd0441
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_9_C                          0xdddd0442
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_a_C                          0xdddd0443
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_b_C                          0xdddd0444
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_c_C                          0xdddd0445
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_d_C                          0xdddd0446
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_e_C                          0xdddd0447
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_f_C                          0xdddd0448
+#define ifcIDtYPEdROPnOTE_VARIABLE                                      0xdddd0449
+#define ifcIDtYPEdROPnOTE_vBodyS                                        0xdddd044a
+#define ifcIDtYPEdROPnOTE_vmAllocS                                      0xdddd044b
+#define ifcIDtYPEdROPnOTE_voidT                                         0xdddd044c
+#define ifcIDtYPEdROPnOTE_vTextC                                        0xdddd044d
+#define ifcIDtYPEdROPnOTE_windowOldC                                    0xdddd044e
+#define ifcIDtYPEdROPnOTE_x0SwitchStackC                                0xdddd044f
+#define ifcIDtYPEdROPnOTE_xrayC                                         0xdddd0450
+#define ifcIDtYPEdROPnOTE_xSwitchStackC                                 0xdddd0451
 /*3*/
-#define ifcIDtYPEdROPnOTE_min     0xdddd033e
-#define ifcIDtYPEdROPnOTE_max     0xdddd0449
+#define ifcIDtYPEdROPnOTE__1S_min     0xdddd033e
+#define ifcIDtYPEdROPnOTE__1S_max     0xdddd0451
 
 
 //
@@ -9144,11 +8269,11 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*ifcIDsIN*//*1*/
 /*3*/
-#define ifcIDsIN_DEFAULThEAPnEW     0xdddd043e
-#define ifcIDsIN_DEFAULThEAPdEL     0xdddd043f
+#define ifcIDsIN_DEFAULThEAPnEW     0xdddd0452
+#define ifcIDsIN_DEFAULThEAPdEL     0xdddd0453
 /*3*/
-#define ifcIDsIN_min     0xdddd043e
-#define ifcIDsIN_max     0xdddd043f
+#define ifcIDsIN_min     0xdddd0452
+#define ifcIDsIN_max     0xdddd0453
 
 
 //
@@ -9263,10 +8388,10 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*ifcIDfILEtYPE*//*1*/
 
 /*3*/
-#define ifcIDfILEtYPE_PACKED 0xdddd0440
+#define ifcIDfILEtYPE_PACKED 0xdddd0454
 /*3*/
-#define ifcIDfILEtYPE_min     0xdddd0440
-#define ifcIDfILEtYPE_max     0xdddd0440
+#define ifcIDfILEtYPE_min     0xdddd0454
+#define ifcIDfILEtYPE_max     0xdddd0454
 
 
 //
@@ -9329,36 +8454,36 @@ it is illegal to refer to this symbol in the definition of an adam
 //EVERY GROUP IN THIS FILE IS ALPHABETICAL
 
 /*3*/
-#define ifcIDwHAT_GOaDAM             0xdddd0441
-#define ifcIDwHAT_GOiNoUTcT          0xdddd0442
-#define ifcIDwHAT_GOiNoUTfRAMED      0xdddd0443
-#define ifcIDwHAT_GOiNoUTdT          0xdddd0444
-#define ifcIDwHAT_GObOSclIB          0xdddd0445
-#define ifcIDwHAT_GObOSmONITOR       0xdddd0446
-#define ifcIDwHAT_GObOSdRAW          0xdddd0447
-#define ifcIDwHAT_GObOSoTHER         0xdddd0448
-#define ifcIDwHAT_GObOStHIRD         0xdddd0449
-#define ifcIDwHAT_mark               0xdddd044a
-#define ifcIDwHAT_STOPbATON          0xdddd044b
-#define ifcIDwHAT_STOPfILErEAD       0xdddd044c
-#define ifcIDwHAT_STOPfILEwRITE      0xdddd044d
-#define ifcIDwHAT_STOPgRAB           0xdddd044e
-#define ifcIDwHAT_STOPiNTaCCEPT      0xdddd044f
-#define ifcIDwHAT_STOPiNTrEAD        0xdddd0450
-#define ifcIDwHAT_STOPiNTwRITE       0xdddd0451
-#define ifcIDwHAT_STOPmONITORING     0xdddd0452
-#define ifcIDwHAT_STOPyIELD          0xdddd0453
-#define ifcIDwHAT_STOPnAP            0xdddd0454
-#define ifcIDwHAT_STOPoTHER          0xdddd0455
-#define ifcIDwHAT_STOPsIGN           0xdddd0456
-#define ifcIDwHAT_STOPsUSPENDED      0xdddd0457
-#define ifcIDwHAT_STOPwIN            0xdddd0458
-#define ifcIDwHAT_STOPwINrEAD        0xdddd0459
-#define ifcIDwHAT_STOPwINwRITE       0xdddd045a
-#define ifcIDwHAT_STOPbOStHIRD       0xdddd045b
+#define ifcIDwHAT_GOaDAM             0xdddd0455
+#define ifcIDwHAT_GOiNoUTcT          0xdddd0456
+#define ifcIDwHAT_GOiNoUTfRAMED      0xdddd0457
+#define ifcIDwHAT_GOiNoUTdT          0xdddd0458
+#define ifcIDwHAT_GObOSclIB          0xdddd0459
+#define ifcIDwHAT_GObOSmONITOR       0xdddd045a
+#define ifcIDwHAT_GObOSdRAW          0xdddd045b
+#define ifcIDwHAT_GObOSoTHER         0xdddd045c
+#define ifcIDwHAT_GObOStHIRD         0xdddd045d
+#define ifcIDwHAT_mark               0xdddd045e
+#define ifcIDwHAT_STOPbATON          0xdddd045f
+#define ifcIDwHAT_STOPfILErEAD       0xdddd0460
+#define ifcIDwHAT_STOPfILEwRITE      0xdddd0461
+#define ifcIDwHAT_STOPgRAB           0xdddd0462
+#define ifcIDwHAT_STOPiNTaCCEPT      0xdddd0463
+#define ifcIDwHAT_STOPiNTrEAD        0xdddd0464
+#define ifcIDwHAT_STOPiNTwRITE       0xdddd0465
+#define ifcIDwHAT_STOPmONITORING     0xdddd0466
+#define ifcIDwHAT_STOPyIELD          0xdddd0467
+#define ifcIDwHAT_STOPnAP            0xdddd0468
+#define ifcIDwHAT_STOPoTHER          0xdddd0469
+#define ifcIDwHAT_STOPsIGN           0xdddd046a
+#define ifcIDwHAT_STOPsUSPENDED      0xdddd046b
+#define ifcIDwHAT_STOPwIN            0xdddd046c
+#define ifcIDwHAT_STOPwINrEAD        0xdddd046d
+#define ifcIDwHAT_STOPwINwRITE       0xdddd046e
+#define ifcIDwHAT_STOPbOStHIRD       0xdddd046f
 /*3*/
-#define ifcIDwHAT_min     0xdddd0441
-#define ifcIDwHAT_max     0xdddd045b
+#define ifcIDwHAT_min     0xdddd0455
+#define ifcIDwHAT_max     0xdddd046f
 
 // whatP VALUES
 #define WHATga   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
@@ -9790,10 +8915,10 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*ifcIDfYLEnAME1mASTEReXEdLL*//*1*/
 
 /*3*/
-#define ifcIDfYLEnAME1mASTEReXEdLL_WINDOWS 0xdddd045c
+#define ifcIDfYLEnAME1mASTEReXEdLL_WINDOWS 0xdddd0470
 /*3*/
-#define ifcIDfYLEnAME1mASTEReXEdLL_min     0xdddd045c
-#define ifcIDfYLEnAME1mASTEReXEdLL_max     0xdddd045c
+#define ifcIDfYLEnAME1mASTEReXEdLL_min     0xdddd0470
+#define ifcIDfYLEnAME1mASTEReXEdLL_max     0xdddd0470
 
 
 //
@@ -10078,18 +9203,18 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 
 /*1*//*ifcIDeVENTmONITORED*//*1*/
 /*3*/
-#define ifcIDeVENTmONITORED_EXCEPTION             0xdddd045d
-#define ifcIDeVENTmONITORED_CREATEtHREAD          0xdddd045e
-#define ifcIDeVENTmONITORED_CREATEpROCESS         0xdddd045f
-#define ifcIDeVENTmONITORED_EXITtHREAD            0xdddd0460
-#define ifcIDeVENTmONITORED_EXITpROCESS           0xdddd0461
-#define ifcIDeVENTmONITORED_LOADdLL               0xdddd0462
-#define ifcIDeVENTmONITORED_UNLOADdLL             0xdddd0463
-#define ifcIDeVENTmONITORED_SAY                   0xdddd0464
-#define ifcIDeVENTmONITORED_RIP                   0xdddd0465
+#define ifcIDeVENTmONITORED_EXCEPTION             0xdddd0471
+#define ifcIDeVENTmONITORED_CREATEtHREAD          0xdddd0472
+#define ifcIDeVENTmONITORED_CREATEpROCESS         0xdddd0473
+#define ifcIDeVENTmONITORED_EXITtHREAD            0xdddd0474
+#define ifcIDeVENTmONITORED_EXITpROCESS           0xdddd0475
+#define ifcIDeVENTmONITORED_LOADdLL               0xdddd0476
+#define ifcIDeVENTmONITORED_UNLOADdLL             0xdddd0477
+#define ifcIDeVENTmONITORED_SAY                   0xdddd0478
+#define ifcIDeVENTmONITORED_RIP                   0xdddd0479
 /*3*/
-#define ifcIDeVENTmONITORED_min     0xdddd045d
-#define ifcIDeVENTmONITORED_max     0xdddd0465
+#define ifcIDeVENTmONITORED_min     0xdddd0471
+#define ifcIDeVENTmONITORED_max     0xdddd0479
 
 
 //
@@ -10118,42 +9243,42 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 /*1*//*ifcIDeVENTeXCEPTIONmONITORED*//*1*/
 
 /*3*/
-#define ifcIDeVENTeXCEPTIONmONITORED_BREAKPOINT              0xdddd0466
-#define ifcIDeVENTeXCEPTIONmONITORED_SINGLEsTEP              0xdddd0467
-#define ifcIDeVENTeXCEPTIONmONITORED_ACCESSvIOLATION         0xdddd0468
-#define ifcIDeVENTeXCEPTIONmONITORED_STACKoVERFLOW           0xdddd0469
-#define ifcIDeVENTeXCEPTIONmONITORED_PRIVILEGEDiNSTRUCTION   0xdddd046a
-#define ifcIDeVENTeXCEPTIONmONITORED_NONCONTINUABLEeXCEPTION 0xdddd046b
-#define ifcIDeVENTeXCEPTIONmONITORED_INVALIDdISPOSITION      0xdddd046c
-#define ifcIDeVENTeXCEPTIONmONITORED_INTEGERoVERFLOW         0xdddd046d
-#define ifcIDeVENTeXCEPTIONmONITORED_INTEGERdIVIDEbYzE       0xdddd046e
-#define ifcIDeVENTeXCEPTIONmONITORED_INpAGEeRROR             0xdddd046f
-#define ifcIDeVENTeXCEPTIONmONITORED_ILLEGALiNSTRUCTION      0xdddd0470
-#define ifcIDeVENTeXCEPTIONmONITORED_FLOATuNDERFLOW          0xdddd0471
-#define ifcIDeVENTeXCEPTIONmONITORED_FLOATsTACKcHECK         0xdddd0472
-#define ifcIDeVENTeXCEPTIONmONITORED_FLOAToVERFLOW           0xdddd0473
-#define ifcIDeVENTeXCEPTIONmONITORED_FLOATiNVALIDoPERATION   0xdddd0474
-#define ifcIDeVENTeXCEPTIONmONITORED_FLOATiNEXACTrESULT      0xdddd0475
-#define ifcIDeVENTeXCEPTIONmONITORED_FLOATdIVIDEbYzE         0xdddd0476
-#define ifcIDeVENTeXCEPTIONmONITORED_FLOATdENORMALoPERAND    0xdddd0477
-#define ifcIDeVENTeXCEPTIONmONITORED_DATATYPEmISALIGNMENT    0xdddd0478
-#define ifcIDeVENTeXCEPTIONmONITORED_ARRAYbOUNDSeXCEEDED     0xdddd0479
-#define ifcIDeVENTeXCEPTIONmONITORED_CONTROLcnOTIFICATION    0xdddd047a
-#define ifcIDeVENTeXCEPTIONmONITORED_DBGnOThANDLED           0xdddd047b
-#define ifcIDeVENTeXCEPTIONmONITORED_DBGcONTROLbREAK         0xdddd047c
-#define ifcIDeVENTeXCEPTIONmONITORED_DBGcONTROLc             0xdddd047d
-#define ifcIDeVENTeXCEPTIONmONITORED_DBGtERMINATEpROCESS     0xdddd047e
-#define ifcIDeVENTeXCEPTIONmONITORED_DBGtERMINATEtHREAD      0xdddd047f
-#define ifcIDeVENTeXCEPTIONmONITORED_DBGcONTINUE             0xdddd0480
-#define ifcIDeVENTeXCEPTIONmONITORED_CODEnOTaVAILABLE        0xdddd0481
-#define ifcIDeVENTeXCEPTIONmONITORED_NOTlISTED               0xdddd0482
-#define ifcIDeVENTeXCEPTIONmONITORED_GRUNT                   0xdddd0483
-#define ifcIDeVENTeXCEPTIONmONITORED_BLAMMO                  0xdddd0484
-#define ifcIDeVENTeXCEPTIONmONITORED_GUARDpAGE               0xdddd0485
-#define ifcIDeVENTeXCEPTIONmONITORED_INVALIDhANDLE           0xdddd0486
+#define ifcIDeVENTeXCEPTIONmONITORED_BREAKPOINT              0xdddd047a
+#define ifcIDeVENTeXCEPTIONmONITORED_SINGLEsTEP              0xdddd047b
+#define ifcIDeVENTeXCEPTIONmONITORED_ACCESSvIOLATION         0xdddd047c
+#define ifcIDeVENTeXCEPTIONmONITORED_STACKoVERFLOW           0xdddd047d
+#define ifcIDeVENTeXCEPTIONmONITORED_PRIVILEGEDiNSTRUCTION   0xdddd047e
+#define ifcIDeVENTeXCEPTIONmONITORED_NONCONTINUABLEeXCEPTION 0xdddd047f
+#define ifcIDeVENTeXCEPTIONmONITORED_INVALIDdISPOSITION      0xdddd0480
+#define ifcIDeVENTeXCEPTIONmONITORED_INTEGERoVERFLOW         0xdddd0481
+#define ifcIDeVENTeXCEPTIONmONITORED_INTEGERdIVIDEbYzE       0xdddd0482
+#define ifcIDeVENTeXCEPTIONmONITORED_INpAGEeRROR             0xdddd0483
+#define ifcIDeVENTeXCEPTIONmONITORED_ILLEGALiNSTRUCTION      0xdddd0484
+#define ifcIDeVENTeXCEPTIONmONITORED_FLOATuNDERFLOW          0xdddd0485
+#define ifcIDeVENTeXCEPTIONmONITORED_FLOATsTACKcHECK         0xdddd0486
+#define ifcIDeVENTeXCEPTIONmONITORED_FLOAToVERFLOW           0xdddd0487
+#define ifcIDeVENTeXCEPTIONmONITORED_FLOATiNVALIDoPERATION   0xdddd0488
+#define ifcIDeVENTeXCEPTIONmONITORED_FLOATiNEXACTrESULT      0xdddd0489
+#define ifcIDeVENTeXCEPTIONmONITORED_FLOATdIVIDEbYzE         0xdddd048a
+#define ifcIDeVENTeXCEPTIONmONITORED_FLOATdENORMALoPERAND    0xdddd048b
+#define ifcIDeVENTeXCEPTIONmONITORED_DATATYPEmISALIGNMENT    0xdddd048c
+#define ifcIDeVENTeXCEPTIONmONITORED_ARRAYbOUNDSeXCEEDED     0xdddd048d
+#define ifcIDeVENTeXCEPTIONmONITORED_CONTROLcnOTIFICATION    0xdddd048e
+#define ifcIDeVENTeXCEPTIONmONITORED_DBGnOThANDLED           0xdddd048f
+#define ifcIDeVENTeXCEPTIONmONITORED_DBGcONTROLbREAK         0xdddd0490
+#define ifcIDeVENTeXCEPTIONmONITORED_DBGcONTROLc             0xdddd0491
+#define ifcIDeVENTeXCEPTIONmONITORED_DBGtERMINATEpROCESS     0xdddd0492
+#define ifcIDeVENTeXCEPTIONmONITORED_DBGtERMINATEtHREAD      0xdddd0493
+#define ifcIDeVENTeXCEPTIONmONITORED_DBGcONTINUE             0xdddd0494
+#define ifcIDeVENTeXCEPTIONmONITORED_CODEnOTaVAILABLE        0xdddd0495
+#define ifcIDeVENTeXCEPTIONmONITORED_NOTlISTED               0xdddd0496
+#define ifcIDeVENTeXCEPTIONmONITORED_GRUNT                   0xdddd0497
+#define ifcIDeVENTeXCEPTIONmONITORED_BLAMMO                  0xdddd0498
+#define ifcIDeVENTeXCEPTIONmONITORED_GUARDpAGE               0xdddd0499
+#define ifcIDeVENTeXCEPTIONmONITORED_INVALIDhANDLE           0xdddd049a
 /*3*/
-#define ifcIDeVENTeXCEPTIONmONITORED_min     0xdddd0466
-#define ifcIDeVENTeXCEPTIONmONITORED_max     0xdddd0486
+#define ifcIDeVENTeXCEPTIONmONITORED_min     0xdddd047a
+#define ifcIDeVENTeXCEPTIONmONITORED_max     0xdddd049a
 
 
 //
@@ -10182,11 +9307,11 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 /*1*//*ifcIDcMDmoNITOR*//*1*/
 
 /*3*/
-#define ifcIDcMDmoNITOR_SKIPhANDLERS              0xdddd0487
-#define ifcIDcMDmoNITOR_DOhANDLERS                0xdddd0488
+#define ifcIDcMDmoNITOR_SKIPhANDLERS              0xdddd049b
+#define ifcIDcMDmoNITOR_DOhANDLERS                0xdddd049c
 /*3*/
-#define ifcIDcMDmoNITOR_min     0xdddd0487
-#define ifcIDcMDmoNITOR_max     0xdddd0488
+#define ifcIDcMDmoNITOR_min     0xdddd049b
+#define ifcIDcMDmoNITOR_max     0xdddd049c
 
 
 //
@@ -10275,12 +9400,12 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 /**/
 /*1*//*ifcOPENsHAREDmEMORYhOW*//*1*/
 /*3*/
-#define ifcOPENsHAREDmEMORYhOW_nFeO                         0xdddd0489
-#define ifcOPENsHAREDmEMORYhOW_nCeF                         0xdddd048a
-#define ifcOPENsHAREDmEMORYhOW_nCeO                         0xdddd048b
+#define ifcOPENsHAREDmEMORYhOW_nFeO                         0xdddd049d
+#define ifcOPENsHAREDmEMORYhOW_nCeF                         0xdddd049e
+#define ifcOPENsHAREDmEMORYhOW_nCeO                         0xdddd049f
 /*3*/
-#define ifcOPENsHAREDmEMORYhOW_min     0xdddd0489
-#define ifcOPENsHAREDmEMORYhOW_max     0xdddd048b
+#define ifcOPENsHAREDmEMORYhOW_min     0xdddd049d
+#define ifcOPENsHAREDmEMORYhOW_max     0xdddd049f
 
 
 //
@@ -10454,16 +9579,16 @@ ifcIDpHASEhANDOFFoLD_ATTACHEDtOsTATE and ifcIDpHASEhANDOFFoLD_STATEiSfROZEN are 
 //THE VALUES MATTER BECAUSE INEQUALITY TESTS ARE MADE (ADDED LATER: ORDINAL MATTERS; CARDINAL DOES NOT)
 
 /*3*/
-#define ifcIDpHASEhANDOFFoLD_SETTINGuP         0xdddd048c
-#define ifcIDpHASEhANDOFFoLD_ATTACHEDtOsTATE   0xdddd048d
-#define ifcIDpHASEhANDOFFoLD_DETACHEDfROMsTATE 0xdddd048e
-#define ifcIDpHASEhANDOFFoLD_WORKING           0xdddd048f
-#define ifcIDpHASEhANDOFFoLD_STATEiSfROZEN     0xdddd0490
-#define ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN      0xdddd0491
-#define ifcIDpHASEhANDOFFoLD_GONE              0xdddd0492
+#define ifcIDpHASEhANDOFFoLD_SETTINGuP         0xdddd04a0
+#define ifcIDpHASEhANDOFFoLD_ATTACHEDtOsTATE   0xdddd04a1
+#define ifcIDpHASEhANDOFFoLD_DETACHEDfROMsTATE 0xdddd04a2
+#define ifcIDpHASEhANDOFFoLD_WORKING           0xdddd04a3
+#define ifcIDpHASEhANDOFFoLD_STATEiSfROZEN     0xdddd04a4
+#define ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN      0xdddd04a5
+#define ifcIDpHASEhANDOFFoLD_GONE              0xdddd04a6
 /*3*/
-#define ifcIDpHASEhANDOFFoLD_min     0xdddd048c
-#define ifcIDpHASEhANDOFFoLD_max     0xdddd0492
+#define ifcIDpHASEhANDOFFoLD_min     0xdddd04a0
+#define ifcIDpHASEhANDOFFoLD_max     0xdddd04a6
 
 
 //
@@ -10524,15 +9649,15 @@ the right word is what it is replaced with
 /**/
 /*1*//*ifcIDtYPEsTRrEPLACE*//*1*/
 /*3*/
-#define ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES          0xdddd0493
-#define ifcIDtYPEsTRrEPLACE_DIGITnAMEStOdIGITS          0xdddd0494
-#define ifcIDtYPEsTRrEPLACE_MAKEeXPORT                  0xdddd0495
-#define ifcIDtYPEsTRrEPLACE_MAKEiMPORT                  0xdddd0496
-#define ifcIDtYPEsTRrEPLACE_REMOVEaSCIIlOWhIGH          0xdddd0497
-#define ifcIDtYPEsTRrEPLACE_KTsOIIdISPLAYfROMsOURCEsOIL 0xdddd0498
+#define ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES          0xdddd04a7
+#define ifcIDtYPEsTRrEPLACE_DIGITnAMEStOdIGITS          0xdddd04a8
+#define ifcIDtYPEsTRrEPLACE_MAKEeXPORT                  0xdddd04a9
+#define ifcIDtYPEsTRrEPLACE_MAKEiMPORT                  0xdddd04aa
+#define ifcIDtYPEsTRrEPLACE_REMOVEaSCIIlOWhIGH          0xdddd04ab
+#define ifcIDtYPEsTRrEPLACE_KTsOIIdISPLAYfROMsOURCEsOIL 0xdddd04ac
 /*3*/
-#define ifcIDtYPEsTRrEPLACE_min     0xdddd0493
-#define ifcIDtYPEsTRrEPLACE_max     0xdddd0498
+#define ifcIDtYPEsTRrEPLACE_min     0xdddd04a7
+#define ifcIDtYPEsTRrEPLACE_max     0xdddd04ac
 
 
 //
@@ -10861,10 +9986,10 @@ flHIRE_SHOW
 #define FINGERnEG_WOtABLEnEWtOPICcERTIFIED                  ((countT)-(sCountT)0xcccc0061)
 #define FINGERnEG_dropNoteSexIsFormatting                   ((countT)-(sCountT)0xcccc0062)
 #define FINGERnEG_dropNoteSexHasFormatted                   ((countT)-(sCountT)0xcccc0063)
-#define FINGERnEG_dropNoteSlotsIsAdjustingDropHeader                 ((countT)-(sCountT)0xcccc0064)
-#define FINGERnEG_dropNoteSlotsHasAdjustedDropHeader                 ((countT)-(sCountT)0xcccc0065)
-#define FINGERnEG_dropNotePoolIsAdjustingDropHeader                  ((countT)-(sCountT)0xcccc0066)
-#define FINGERnEG_dropNotePoolHasAdjustedDropHeader                  ((countT)-(sCountT)0xcccc0067)
+#define FINGERnEG_dropNoteSlotsIsAdjustingDropHeader        ((countT)-(sCountT)0xcccc0064)
+#define FINGERnEG_dropNoteSlotsHasAdjustedDropHeader        ((countT)-(sCountT)0xcccc0065)
+#define FINGERnEG_dropNotePoolIsAdjustingDropHeader         ((countT)-(sCountT)0xcccc0066)
+#define FINGERnEG_dropNotePoolHasAdjustedDropHeader         ((countT)-(sCountT)0xcccc0067)
 #define FINGERnEG_dropNoteDeleted                          ((countT)-(sCountT)0xcccc0068)
 #define FINGERnEG_dropSeparator                             ((countT)-(sCountT)0xcccc0069)
 #define FINGERnEG_dropHeaderInitialize                      ((countT)-(sCountT)0xcccc006a)
@@ -11627,19 +10752,19 @@ this limit can easily be increased to accomodate application requirements
 /**/
 
 /*3*/
-#define ifcIDmETRIC_HOSTsTART          0xdddd0499
-#define ifcIDmETRIC_HOSTsTOP           0xdddd049a
-#define ifcIDmETRIC_ADAMhIRE           0xdddd049b
-#define ifcIDmETRIC_ADAMfIRE           0xdddd049c
-#define ifcIDmETRIC_HOSTlEAK           0xdddd049d
-#define ifcIDmETRIC_HOSTiMPOTENCE      0xdddd049e
-#define ifcIDmETRIC_HOSTaBORT          0xdddd049f
-#define ifcIDmETRIC_ADAMlEAK           0xdddd04a0
-#define ifcIDmETRIC_ADAMiMPOTENCE      0xdddd04a1
-#define ifcIDmETRIC_ADAMaBORT          0xdddd04a2
+#define ifcIDmETRIC_HOSTsTART          0xdddd04ad
+#define ifcIDmETRIC_HOSTsTOP           0xdddd04ae
+#define ifcIDmETRIC_ADAMhIRE           0xdddd04af
+#define ifcIDmETRIC_ADAMfIRE           0xdddd04b0
+#define ifcIDmETRIC_HOSTlEAK           0xdddd04b1
+#define ifcIDmETRIC_HOSTiMPOTENCE      0xdddd04b2
+#define ifcIDmETRIC_HOSTaBORT          0xdddd04b3
+#define ifcIDmETRIC_ADAMlEAK           0xdddd04b4
+#define ifcIDmETRIC_ADAMiMPOTENCE      0xdddd04b5
+#define ifcIDmETRIC_ADAMaBORT          0xdddd04b6
 /*3*/
-#define ifcIDmETRIC_min     0xdddd0499
-#define ifcIDmETRIC_max     0xdddd04a2
+#define ifcIDmETRIC_min     0xdddd04ad
+#define ifcIDmETRIC_max     0xdddd04b6
 
 
 //
@@ -12168,16 +11293,16 @@ this limit can easily be increased to accomodate application requirements
 /*1*//*ifcIDcMDjOBoRDER*//*1*/
 
 /*3*/
-#define ifcIDcMDjOBoRDER_HELP                               0xdddd04a3
-#define ifcIDcMDjOBoRDER_ECHO                               0xdddd04a4
-#define ifcIDcMDjOBoRDER_MAIL                               0xdddd04a5
-#define ifcIDcMDjOBoRDER_NAMED                              0xdddd04a6
-#define ifcIDcMDjOBoRDER_IDaDAMiDoUT                        0xdddd04a7
-#define ifcIDcMDjOBoRDER_CONSTRUCTlOCALcELL                 0xdddd04a8
-#define ifcIDcMDjOBoRDER_QUERYchANDLES                      0xdddd04a9
+#define ifcIDcMDjOBoRDER_HELP                               0xdddd04b7
+#define ifcIDcMDjOBoRDER_ECHO                               0xdddd04b8
+#define ifcIDcMDjOBoRDER_MAIL                               0xdddd04b9
+#define ifcIDcMDjOBoRDER_NAMED                              0xdddd04ba
+#define ifcIDcMDjOBoRDER_IDaDAMiDoUT                        0xdddd04bb
+#define ifcIDcMDjOBoRDER_CONSTRUCTlOCALcELL                 0xdddd04bc
+#define ifcIDcMDjOBoRDER_QUERYchANDLES                      0xdddd04bd
 /*3*/
-#define ifcIDcMDjOBoRDER_min     0xdddd04a3
-#define ifcIDcMDjOBoRDER_max     0xdddd04a9
+#define ifcIDcMDjOBoRDER_min     0xdddd04b7
+#define ifcIDcMDjOBoRDER_max     0xdddd04bd
 
 
 //
@@ -12406,14 +11531,14 @@ this is the name of the host that the ifc system uses to map names to nicNameC v
 /*1*//*ifcIDtEXTgEN*//*1*/
 
 /*3*/
-#define ifcIDtEXTgEN_TIMEnOW                              0xdddd04aa
-#define ifcIDtEXTgEN_TIMEnOWdELTA                         0xdddd04ab
-#define ifcIDtEXTgEN_TIMEnOWdELTArESET                    0xdddd04ac
-#define ifcIDtEXTgEN_TIMEnOWfOREIGN                       0xdddd04ad
-#define ifcIDtEXTgEN_UNIQUE                               0xdddd04ae
+#define ifcIDtEXTgEN_TIMEnOW                              0xdddd04be
+#define ifcIDtEXTgEN_TIMEnOWdELTA                         0xdddd04bf
+#define ifcIDtEXTgEN_TIMEnOWdELTArESET                    0xdddd04c0
+#define ifcIDtEXTgEN_TIMEnOWfOREIGN                       0xdddd04c1
+#define ifcIDtEXTgEN_UNIQUE                               0xdddd04c2
 /*3*/
-#define ifcIDtEXTgEN_min     0xdddd04aa
-#define ifcIDtEXTgEN_max     0xdddd04ae
+#define ifcIDtEXTgEN_min     0xdddd04be
+#define ifcIDtEXTgEN_max     0xdddd04c2
 
 
 //
@@ -12510,11 +11635,11 @@ every course begins with a soulC object that begins with wo of these values
 /*1*//*ifcIDrEPLYjOBcOURSE*//*1*/
 
 /*3*/
-#define ifcIDrEPLYjOBcOURSE_NONfINALcOURSE                      0xdddd04af
-#define ifcIDrEPLYjOBcOURSE_FINALcOURSE                         0xdddd04b0
+#define ifcIDrEPLYjOBcOURSE_NONfINALcOURSE                      0xdddd04c3
+#define ifcIDrEPLYjOBcOURSE_FINALcOURSE                         0xdddd04c4
 /*3*/
-#define ifcIDrEPLYjOBcOURSE_min     0xdddd04af
-#define ifcIDrEPLYjOBcOURSE_max     0xdddd04b0
+#define ifcIDrEPLYjOBcOURSE_min     0xdddd04c3
+#define ifcIDrEPLYjOBcOURSE_max     0xdddd04c4
 
 
 //
@@ -12544,12 +11669,12 @@ every course begins with a soulC object that contains wo of these values in posi
 /*1*//*ifcIDeRRORjOBcOURSE*//*1*/
 
 /*3*/
-#define ifcIDeRRORjOBcOURSE_JOBdONEaOK                          0xdddd04b1
-#define ifcIDeRRORjOBcOURSE_JOBdONEwITHeRRORSsTATEaOK           0xdddd04b2
-#define ifcIDeRRORjOBcOURSE_JOBdONEwITHeRRORSsTATEcORRUPTED     0xdddd04b3
+#define ifcIDeRRORjOBcOURSE_JOBdONEaOK                          0xdddd04c5
+#define ifcIDeRRORjOBcOURSE_JOBdONEwITHeRRORSsTATEaOK           0xdddd04c6
+#define ifcIDeRRORjOBcOURSE_JOBdONEwITHeRRORSsTATEcORRUPTED     0xdddd04c7
 /*3*/
-#define ifcIDeRRORjOBcOURSE_min     0xdddd04b1
-#define ifcIDeRRORjOBcOURSE_max     0xdddd04b3
+#define ifcIDeRRORjOBcOURSE_min     0xdddd04c5
+#define ifcIDeRRORjOBcOURSE_max     0xdddd04c7
 
 
 //
@@ -12580,16 +11705,16 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 /*1*//*ifcIDtYPEjOBcOURSE*//*1*/
 
 /*3*/
-#define ifcIDtYPEjOBcOURSE_NULL                                0xdddd04b4
-#define ifcIDtYPEjOBcOURSE_YES                                 0xdddd04b5
-#define ifcIDtYPEjOBcOURSE_NO                                  0xdddd04b6
-#define ifcIDtYPEjOBcOURSE_AOK                                 0xdddd04b7
-#define ifcIDtYPEjOBcOURSE_ERRORsTATEaOK                       0xdddd04b8
-#define ifcIDtYPEjOBcOURSE_ERRORsTATEcORRUPTED                 0xdddd04b9
-#define ifcIDtYPEjOBcOURSE_NAMED                               0xdddd04ba
+#define ifcIDtYPEjOBcOURSE_NULL                                0xdddd04c8
+#define ifcIDtYPEjOBcOURSE_YES                                 0xdddd04c9
+#define ifcIDtYPEjOBcOURSE_NO                                  0xdddd04ca
+#define ifcIDtYPEjOBcOURSE_AOK                                 0xdddd04cb
+#define ifcIDtYPEjOBcOURSE_ERRORsTATEaOK                       0xdddd04cc
+#define ifcIDtYPEjOBcOURSE_ERRORsTATEcORRUPTED                 0xdddd04cd
+#define ifcIDtYPEjOBcOURSE_NAMED                               0xdddd04ce
 /*3*/
-#define ifcIDtYPEjOBcOURSE_min     0xdddd04b4
-#define ifcIDtYPEjOBcOURSE_max     0xdddd04ba
+#define ifcIDtYPEjOBcOURSE_min     0xdddd04c8
+#define ifcIDtYPEjOBcOURSE_max     0xdddd04ce
 
 
 //
@@ -13028,12 +12153,12 @@ these values are used in the foreign domain name system
 /*1*//*ifcIDtYPEdNSrEPLY*//*1*/
 
 /*3*/
-#define ifcIDtYPEdNSrEPLY_ANSWER                                   0xdddd04bb
-#define ifcIDtYPEdNSrEPLY_AUTHORITY                                0xdddd04bc
-#define ifcIDtYPEdNSrEPLY_NOTE                                     0xdddd04bd
+#define ifcIDtYPEdNSrEPLY_ANSWER                                   0xdddd04cf
+#define ifcIDtYPEdNSrEPLY_AUTHORITY                                0xdddd04d0
+#define ifcIDtYPEdNSrEPLY_NOTE                                     0xdddd04d1
 /*3*/
-#define ifcIDtYPEdNSrEPLY_min     0xdddd04bb
-#define ifcIDtYPEdNSrEPLY_max     0xdddd04bd
+#define ifcIDtYPEdNSrEPLY_min     0xdddd04cf
+#define ifcIDtYPEdNSrEPLY_max     0xdddd04d1
 
 
 //
@@ -13248,17 +12373,17 @@ these values are used in the foreign domain name system
 /*1*//*ifcIDcMDnEWS*//*1*/
 
 /*3*/
-#define ifcIDcMDnEWS_BYE                        0xdddd04be
-#define ifcIDcMDnEWS_BYErEPLY                   0xdddd04bf
-#define ifcIDcMDnEWS_PING                       0xdddd04c0
-#define ifcIDcMDnEWS_PINGrEPLY                  0xdddd04c1
-#define ifcIDcMDnEWS_QUERYnICnAMES              0xdddd04c2
-#define ifcIDcMDnEWS_QUERYnICnAMESrEPLY         0xdddd04c3
-#define ifcIDcMDnEWS_SHOCK                      0xdddd04c4
-#define ifcIDcMDnEWS_SHOCKrEPLY                 0xdddd04c5
+#define ifcIDcMDnEWS_BYE                        0xdddd04d2
+#define ifcIDcMDnEWS_BYErEPLY                   0xdddd04d3
+#define ifcIDcMDnEWS_PING                       0xdddd04d4
+#define ifcIDcMDnEWS_PINGrEPLY                  0xdddd04d5
+#define ifcIDcMDnEWS_QUERYnICnAMES              0xdddd04d6
+#define ifcIDcMDnEWS_QUERYnICnAMESrEPLY         0xdddd04d7
+#define ifcIDcMDnEWS_SHOCK                      0xdddd04d8
+#define ifcIDcMDnEWS_SHOCKrEPLY                 0xdddd04d9
 /*3*/
-#define ifcIDcMDnEWS_min     0xdddd04be
-#define ifcIDcMDnEWS_max     0xdddd04c5
+#define ifcIDcMDnEWS_min     0xdddd04d2
+#define ifcIDcMDnEWS_max     0xdddd04d9
 
 
 //
@@ -13287,14 +12412,14 @@ these values are used in the foreign domain name system
 /*1*//*ifcIDtYPEnEWS*//*1*/
 
 /*3*/
-#define ifcIDtYPEnEWS_ACK                        0xdddd04c6
-#define ifcIDtYPEnEWS_TIMEOUT                    0xdddd04c7
-#define ifcIDtYPEnEWS_NEWnICnAMES                0xdddd04c8
-#define ifcIDtYPEnEWS_DELnICnAMES                0xdddd04c9
-#define ifcIDtYPEnEWS_NAMED                      0xdddd04ca
+#define ifcIDtYPEnEWS_ACK                        0xdddd04da
+#define ifcIDtYPEnEWS_TIMEOUT                    0xdddd04db
+#define ifcIDtYPEnEWS_NEWnICnAMES                0xdddd04dc
+#define ifcIDtYPEnEWS_DELnICnAMES                0xdddd04dd
+#define ifcIDtYPEnEWS_NAMED                      0xdddd04de
 /*3*/
-#define ifcIDtYPEnEWS_min     0xdddd04c6
-#define ifcIDtYPEnEWS_max     0xdddd04ca
+#define ifcIDtYPEnEWS_min     0xdddd04da
+#define ifcIDtYPEnEWS_max     0xdddd04de
 
 
 //
@@ -13325,15 +12450,15 @@ these values are used in the foreign domain name system
 /*1*//*ifcIDeRRORdNS*//*1*/
 
 /*3*/
-#define ifcIDeRRORdNS_AOK                           0xdddd04cb
-#define ifcIDeRRORdNS_CANNOTpARSEqUERY              0xdddd04cc
-#define ifcIDeRRORdNS_TRYaGAINlATER                 0xdddd04cd
-#define ifcIDeRRORdNS_NAMEnOTdEFINED                0xdddd04ce
-#define ifcIDeRRORdNS_QUERYnOTsUPPORTED             0xdddd04cf
-#define ifcIDeRRORdNS_QUERYrEFUSED                  0xdddd04d0
+#define ifcIDeRRORdNS_AOK                           0xdddd04df
+#define ifcIDeRRORdNS_CANNOTpARSEqUERY              0xdddd04e0
+#define ifcIDeRRORdNS_TRYaGAINlATER                 0xdddd04e1
+#define ifcIDeRRORdNS_NAMEnOTdEFINED                0xdddd04e2
+#define ifcIDeRRORdNS_QUERYnOTsUPPORTED             0xdddd04e3
+#define ifcIDeRRORdNS_QUERYrEFUSED                  0xdddd04e4
 /*3*/
-#define ifcIDeRRORdNS_min     0xdddd04cb
-#define ifcIDeRRORdNS_max     0xdddd04d0
+#define ifcIDeRRORdNS_min     0xdddd04df
+#define ifcIDeRRORdNS_max     0xdddd04e4
 
 
 //
@@ -13597,11 +12722,11 @@ these values are used in the foreign domain name system
 /*1*//*ifcIDfACE*//*1*/
 
 /*3*/
-#define ifcIDfACE_ROOT                  0xdddd04d1
-#define ifcIDfACE_INPUT                 0xdddd04d2
+#define ifcIDfACE_ROOT                  0xdddd04e5
+#define ifcIDfACE_INPUT                 0xdddd04e6
 /*3*/
-#define ifcIDfACE_min     0xdddd04d1
-#define ifcIDfACE_max     0xdddd04d2
+#define ifcIDfACE_min     0xdddd04e5
+#define ifcIDfACE_max     0xdddd04e6
 
 
 //
@@ -13630,13 +12755,13 @@ these values are used in the foreign domain name system
 /*1*//*ifcIDrEASONeVALUATINGfACEvARS*//*1*/
 
 /*3*/
-#define ifcIDrEASONeVALUATINGfACEvARS_RENDER          0xdddd04d3
-#define ifcIDrEASONeVALUATINGfACEvARS_COUNThEARfLAGS  0xdddd04d4
-#define ifcIDrEASONeVALUATINGfACEvARS_CLEARhEARfLAGS  0xdddd04d5
-#define ifcIDrEASONeVALUATINGfACEvARS_FLAGbROTHERSdAD 0xdddd04d6
+#define ifcIDrEASONeVALUATINGfACEvARS_RENDER          0xdddd04e7
+#define ifcIDrEASONeVALUATINGfACEvARS_COUNThEARfLAGS  0xdddd04e8
+#define ifcIDrEASONeVALUATINGfACEvARS_CLEARhEARfLAGS  0xdddd04e9
+#define ifcIDrEASONeVALUATINGfACEvARS_FLAGbROTHERSdAD 0xdddd04ea
 /*3*/
-#define ifcIDrEASONeVALUATINGfACEvARS_min     0xdddd04d3
-#define ifcIDrEASONeVALUATINGfACEvARS_max     0xdddd04d6
+#define ifcIDrEASONeVALUATINGfACEvARS_min     0xdddd04e7
+#define ifcIDrEASONeVALUATINGfACEvARS_max     0xdddd04ea
 
 
 //
@@ -14479,10 +13604,10 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 /*1*//*ifcIDsTYLEsTRgRAPH*//*1*/
 
 /*3*/
-#define ifcIDsTYLEsTRgRAPH_STYLE1                 0xdddd04d7
+#define ifcIDsTYLEsTRgRAPH_STYLE1                 0xdddd04eb
 /*3*/
-#define ifcIDsTYLEsTRgRAPH_min     0xdddd04d7
-#define ifcIDsTYLEsTRgRAPH_max     0xdddd04d7
+#define ifcIDsTYLEsTRgRAPH_min     0xdddd04eb
+#define ifcIDsTYLEsTRgRAPH_max     0xdddd04eb
 
 
 //
@@ -15222,10 +14347,10 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 /*1*//*ifcIDtELLmONITORwHAT*//*1*/
 
 /*3*/
-#define ifcIDtELLmONITORwHAT_nu           0xdddd04d8
+#define ifcIDtELLmONITORwHAT_nu           0xdddd04ec
 /*3*/
-#define ifcIDtELLmONITORwHAT_min     0xdddd04d8
-#define ifcIDtELLmONITORwHAT_max     0xdddd04d8
+#define ifcIDtELLmONITORwHAT_min     0xdddd04ec
+#define ifcIDtELLmONITORwHAT_max     0xdddd04ec
 
 
 //
@@ -15618,107 +14743,107 @@ arguments
 //CODEsYNC: 001020f 6a40104
 
 /*3*/
-#define ifcIDtYPEtELLsYS_NOOP                                           0xdddd04d9
-#define ifcIDtYPEtELLsYS_ERROReXCEPTION                                 0xdddd04da
-#define ifcIDtYPEtELLsYS_GRABcTI                                        0xdddd04db
-#define ifcIDtYPEtELLsYS_GRABdTI                                        0xdddd04dc
-#define ifcIDtYPEtELLsYS_GRABcTP                                        0xdddd04dd
-#define ifcIDtYPEtELLsYS_GRABdTP                                        0xdddd04de
-#define ifcIDtYPEtELLsYS_GRABaTI                                        0xdddd04df
-#define ifcIDtYPEtELLsYS_GRABdEI                                        0xdddd04e0
-#define ifcIDtYPEtELLsYS_GRABaTP                                        0xdddd04e1
-#define ifcIDtYPEtELLsYS_GRABdEP                                        0xdddd04e2
-#define ifcIDtYPEtELLsYS_TINcTI                                         0xdddd04e3
-#define ifcIDtYPEtELLsYS_TINdTI                                         0xdddd04e4
-#define ifcIDtYPEtELLsYS_TINcTP                                         0xdddd04e5
-#define ifcIDtYPEtELLsYS_TINdTP                                         0xdddd04e6
-#define ifcIDtYPEtELLsYS_FIREDcTP                                       0xdddd04e7
-#define ifcIDtYPEtELLsYS_FIREDdTP                                       0xdddd04e8
-#define ifcIDtYPEtELLsYS_VM                                             0xdddd04e9
-#define ifcIDtYPEtELLsYS_QUERYI                                         0xdddd04ea
-#define ifcIDtYPEtELLsYS_QUERYP                                         0xdddd04eb
-#define ifcIDtYPEtELLsYS_WATCH                                          0xdddd04ec
-#define ifcIDtYPEtELLsYS_YELL                                           0xdddd04ed
-#define ifcIDtYPEtELLsYS_LOG                                            0xdddd04ee
-#define ifcIDtYPEtELLsYS_COCKED                                         0xdddd04ef
-#define ifcIDtYPEtELLsYS_UNCOCKED                                       0xdddd04f0
-#define ifcIDtYPEtELLsYS_WHEREoN                                        0xdddd04f1
-#define ifcIDtYPEtELLsYS_WHEREoFF                                       0xdddd04f2
-#define ifcIDtYPEtELLsYS_WHERErEPORT                                    0xdddd04f3
-#define ifcIDtYPEtELLsYS_WHEREpURGE                                     0xdddd04f4
-#define ifcIDtYPEtELLsYS_WHEREaLLoN                                     0xdddd04f5
-#define ifcIDtYPEtELLsYS_WHEREaLLoFF                                    0xdddd04f6
-#define ifcIDtYPEtELLsYS_WHEREaLLrEPORT                                 0xdddd04f7
-#define ifcIDtYPEtELLsYS_WHEREpROCESSrEPORT                             0xdddd04f8
-#define ifcIDtYPEtELLsYS_WHEREaLLpURGE                                  0xdddd04f9
-#define ifcIDtYPEtELLsYS_WHEREaLLnOW                                    0xdddd04fa
-#define ifcIDtYPEtELLsYS_WHEREmOVEt2p                                   0xdddd04fb
-#define ifcIDtYPEtELLsYS_WHEREmOVEt2pwdoN                               0xdddd04fc
-#define ifcIDtYPEtELLsYS_WHEREmOVEt2pwdoFF                              0xdddd04fd
-#define ifcIDtYPEtELLsYS_WHERErwpdoN                                    0xdddd04fe
-#define ifcIDtYPEtELLsYS_WHERErwpdoFF                                   0xdddd04ff
-#define ifcIDtYPEtELLsYS_AOKfYIiMPOTENCE2bsEEN                          0xdddd0500
-#define ifcIDtYPEtELLsYS_AOKfYIaBOUTtOcALLaDAMmAIN                      0xdddd0501
-#define ifcIDtYPEtELLsYS_AOKfYIjUSTcALLEDaDAMmAIN                       0xdddd0502
-#define ifcIDtYPEtELLsYS_ERRORsOMEtHIRDoBJECTSeXIST                     0xdddd0503
-#define ifcIDtYPEtELLsYS_ERRORlABELiStOOlONG                            0xdddd0504
-#define ifcIDtYPEtELLsYS_dnsMsgHeaderS                                  0xdddd0505
-#define ifcIDtYPEtELLsYS_dnsResourceMiddleS                             0xdddd0506
-#define ifcIDtYPEtELLsYS_LOUDtIN                                        0xdddd0507
-#define ifcIDtYPEtELLsYS_QUIETtIN                                       0xdddd0508
-#define ifcIDtYPEtELLsYS_POOLoLDcORRUPToFFtOP                           0xdddd0509
-#define ifcIDtYPEtELLsYS_POOLoLDcORRUPT                                 0xdddd050a
-#define ifcIDtYPEtELLsYS_POOLoLDfORMAT                                  0xdddd050b
-#define ifcIDtYPEtELLsYS_POOLoLDaTTACH                                  0xdddd050c
-#define ifcIDtYPEtELLsYS_POOLoLDdETACH                                  0xdddd050d
-#define ifcIDtYPEtELLsYS_ERRORpeTpAINTiS0                               0xdddd050e
-#define ifcIDtYPEtELLsYS_ERRORpeTtEXTiS0                                0xdddd050f
-#define ifcIDtYPEtELLsYS_ERRORpsTfACEtALKiS0                            0xdddd0510
-#define ifcIDtYPEtELLsYS_ERRORpsTfACEhEARiS0                            0xdddd0511
-#define ifcIDtYPEtELLsYS_ERRORpsTaCCEPTORSiS0                           0xdddd0512
-#define ifcIDtYPEtELLsYS_ERRORpsTfACEhEARcOLORiS0                       0xdddd0513
-#define ifcIDtYPEtELLsYS_ERRORpsTfACEtALKcOLORiS0                       0xdddd0514
-#define ifcIDtYPEtELLsYS_ERRORpsTfACEhEARvARSiS0                        0xdddd0515
-#define ifcIDtYPEtELLsYS_ERRORpsTfACEtALKvARSiS0                        0xdddd0516
-#define ifcIDtYPEtELLsYS_ERRORpsTqUITTERSiS0                            0xdddd0517
-#define ifcIDtYPEtELLsYS_ERRORpsTcATCHERSiS0                            0xdddd0518
-#define ifcIDtYPEtELLsYS_ERRORpsTkIDfACESiS0                            0xdddd0519
-#define ifcIDtYPEtELLsYS_ERRORpsTsOCKfACEtALKiS0                        0xdddd051a
-#define ifcIDtYPEtELLsYS_ERRORpsWeTtHREADiS0                            0xdddd051b
-#define ifcIDtYPEtELLsYS_ERRORlABELtOOlONG                              0xdddd051c
-#define ifcIDtYPEtELLsYS_AOKfYIeXCEPTIONhANDLERpUSH                     0xdddd051d
-#define ifcIDtYPEtELLsYS_AOKfYIcANNOTcREATEwINDOWnOW                    0xdddd051e
-#define ifcIDtYPEtELLsYS_AOKfYIcANcREATEwINDOWnOW                       0xdddd051f
-#define ifcIDtYPEtELLsYS_ERRORbADcODEsTYLEsTROKEfUSEbUFFEReXHAUSTED     0xdddd0520
-#define ifcIDtYPEtELLsYS_ERRORiMPOTENCE                                 0xdddd0521
-#define ifcIDtYPEtELLsYS_ERRORgLOBALnEWoPERATORuSED                     0xdddd0522
-#define ifcIDtYPEtELLsYS_READYtOdIEnu                                   0xdddd0523
-#define ifcIDtYPEtELLsYS_OShANDLEcT                                     0xdddd0524
-#define ifcIDtYPEtELLsYS_OShANDLEdT                                     0xdddd0525
-#define ifcIDtYPEtELLsYS_HANDOFFoLDaTTACH                               0xdddd0526
-#define ifcIDtYPEtELLsYS_HANDOFFoLDdETACH                               0xdddd0527
-#define ifcIDtYPEtELLsYS_OSpIDeVENTbEGUN                                0xdddd0528
-#define ifcIDtYPEtELLsYS_OSpIDeVENTeNDED                                0xdddd0529
-#define ifcIDtYPEtELLsYS_HEARTbEATcTP                                   0xdddd052a
-#define ifcIDtYPEtELLsYS_HEARTbEATdTP                                   0xdddd052b
-#define ifcIDtYPEtELLsYS_HEARTbEATcTPoSpID                              0xdddd052c
-#define ifcIDtYPEtELLsYS_HEARTbEATdTPoSpID                              0xdddd052d
-#define ifcIDtYPEtELLsYS_GLObEGINcT                                     0xdddd052e
-#define ifcIDtYPEtELLsYS_GLObEGINdT                                     0xdddd052f
-#define ifcIDtYPEtELLsYS_FIREbASEmONITOR                                0xdddd0530
-#define ifcIDtYPEtELLsYS_NAPKINfORMAT                                   0xdddd0531
-#define ifcIDtYPEtELLsYS_NAPKINaTTACH                                   0xdddd0532
-#define ifcIDtYPEtELLsYS_NAPKINdETACH                                   0xdddd0533
-#define ifcIDtYPEtELLsYS_LIFInAME                                       0xdddd0534
-#define ifcIDtYPEtELLsYS_ADAMfIRED                                      0xdddd0535
-#define ifcIDtYPEtELLsYS_SNAPsHOT                                       0xdddd0536
-#define ifcIDtYPEtELLsYS_SEXcT                                          0xdddd0537
-#define ifcIDtYPEtELLsYS_SEXdT                                          0xdddd0538
-#define ifcIDtYPEtELLsYS_PROCESSgLOBAL1scT                              0xdddd0539
-#define ifcIDtYPEtELLsYS_PROCESSgLOBAL1sdT                              0xdddd053a
+#define ifcIDtYPEtELLsYS_NOOP                                           0xdddd04ed
+#define ifcIDtYPEtELLsYS_ERROReXCEPTION                                 0xdddd04ee
+#define ifcIDtYPEtELLsYS_GRABcTI                                        0xdddd04ef
+#define ifcIDtYPEtELLsYS_GRABdTI                                        0xdddd04f0
+#define ifcIDtYPEtELLsYS_GRABcTP                                        0xdddd04f1
+#define ifcIDtYPEtELLsYS_GRABdTP                                        0xdddd04f2
+#define ifcIDtYPEtELLsYS_GRABaTI                                        0xdddd04f3
+#define ifcIDtYPEtELLsYS_GRABdEI                                        0xdddd04f4
+#define ifcIDtYPEtELLsYS_GRABaTP                                        0xdddd04f5
+#define ifcIDtYPEtELLsYS_GRABdEP                                        0xdddd04f6
+#define ifcIDtYPEtELLsYS_TINcTI                                         0xdddd04f7
+#define ifcIDtYPEtELLsYS_TINdTI                                         0xdddd04f8
+#define ifcIDtYPEtELLsYS_TINcTP                                         0xdddd04f9
+#define ifcIDtYPEtELLsYS_TINdTP                                         0xdddd04fa
+#define ifcIDtYPEtELLsYS_FIREDcTP                                       0xdddd04fb
+#define ifcIDtYPEtELLsYS_FIREDdTP                                       0xdddd04fc
+#define ifcIDtYPEtELLsYS_VM                                             0xdddd04fd
+#define ifcIDtYPEtELLsYS_QUERYI                                         0xdddd04fe
+#define ifcIDtYPEtELLsYS_QUERYP                                         0xdddd04ff
+#define ifcIDtYPEtELLsYS_WATCH                                          0xdddd0500
+#define ifcIDtYPEtELLsYS_YELL                                           0xdddd0501
+#define ifcIDtYPEtELLsYS_LOG                                            0xdddd0502
+#define ifcIDtYPEtELLsYS_COCKED                                         0xdddd0503
+#define ifcIDtYPEtELLsYS_UNCOCKED                                       0xdddd0504
+#define ifcIDtYPEtELLsYS_WHEREoN                                        0xdddd0505
+#define ifcIDtYPEtELLsYS_WHEREoFF                                       0xdddd0506
+#define ifcIDtYPEtELLsYS_WHERErEPORT                                    0xdddd0507
+#define ifcIDtYPEtELLsYS_WHEREpURGE                                     0xdddd0508
+#define ifcIDtYPEtELLsYS_WHEREaLLoN                                     0xdddd0509
+#define ifcIDtYPEtELLsYS_WHEREaLLoFF                                    0xdddd050a
+#define ifcIDtYPEtELLsYS_WHEREaLLrEPORT                                 0xdddd050b
+#define ifcIDtYPEtELLsYS_WHEREpROCESSrEPORT                             0xdddd050c
+#define ifcIDtYPEtELLsYS_WHEREaLLpURGE                                  0xdddd050d
+#define ifcIDtYPEtELLsYS_WHEREaLLnOW                                    0xdddd050e
+#define ifcIDtYPEtELLsYS_WHEREmOVEt2p                                   0xdddd050f
+#define ifcIDtYPEtELLsYS_WHEREmOVEt2pwdoN                               0xdddd0510
+#define ifcIDtYPEtELLsYS_WHEREmOVEt2pwdoFF                              0xdddd0511
+#define ifcIDtYPEtELLsYS_WHERErwpdoN                                    0xdddd0512
+#define ifcIDtYPEtELLsYS_WHERErwpdoFF                                   0xdddd0513
+#define ifcIDtYPEtELLsYS_AOKfYIiMPOTENCE2bsEEN                          0xdddd0514
+#define ifcIDtYPEtELLsYS_AOKfYIaBOUTtOcALLaDAMmAIN                      0xdddd0515
+#define ifcIDtYPEtELLsYS_AOKfYIjUSTcALLEDaDAMmAIN                       0xdddd0516
+#define ifcIDtYPEtELLsYS_ERRORsOMEtHIRDoBJECTSeXIST                     0xdddd0517
+#define ifcIDtYPEtELLsYS_ERRORlABELiStOOlONG                            0xdddd0518
+#define ifcIDtYPEtELLsYS_dnsMsgHeaderS                                  0xdddd0519
+#define ifcIDtYPEtELLsYS_dnsResourceMiddleS                             0xdddd051a
+#define ifcIDtYPEtELLsYS_LOUDtIN                                        0xdddd051b
+#define ifcIDtYPEtELLsYS_QUIETtIN                                       0xdddd051c
+#define ifcIDtYPEtELLsYS_POOLoLDcORRUPToFFtOP                           0xdddd051d
+#define ifcIDtYPEtELLsYS_POOLoLDcORRUPT                                 0xdddd051e
+#define ifcIDtYPEtELLsYS_POOLoLDfORMAT                                  0xdddd051f
+#define ifcIDtYPEtELLsYS_POOLoLDaTTACH                                  0xdddd0520
+#define ifcIDtYPEtELLsYS_POOLoLDdETACH                                  0xdddd0521
+#define ifcIDtYPEtELLsYS_ERRORpeTpAINTiS0                               0xdddd0522
+#define ifcIDtYPEtELLsYS_ERRORpeTtEXTiS0                                0xdddd0523
+#define ifcIDtYPEtELLsYS_ERRORpsTfACEtALKiS0                            0xdddd0524
+#define ifcIDtYPEtELLsYS_ERRORpsTfACEhEARiS0                            0xdddd0525
+#define ifcIDtYPEtELLsYS_ERRORpsTaCCEPTORSiS0                           0xdddd0526
+#define ifcIDtYPEtELLsYS_ERRORpsTfACEhEARcOLORiS0                       0xdddd0527
+#define ifcIDtYPEtELLsYS_ERRORpsTfACEtALKcOLORiS0                       0xdddd0528
+#define ifcIDtYPEtELLsYS_ERRORpsTfACEhEARvARSiS0                        0xdddd0529
+#define ifcIDtYPEtELLsYS_ERRORpsTfACEtALKvARSiS0                        0xdddd052a
+#define ifcIDtYPEtELLsYS_ERRORpsTqUITTERSiS0                            0xdddd052b
+#define ifcIDtYPEtELLsYS_ERRORpsTcATCHERSiS0                            0xdddd052c
+#define ifcIDtYPEtELLsYS_ERRORpsTkIDfACESiS0                            0xdddd052d
+#define ifcIDtYPEtELLsYS_ERRORpsTsOCKfACEtALKiS0                        0xdddd052e
+#define ifcIDtYPEtELLsYS_ERRORpsWeTtHREADiS0                            0xdddd052f
+#define ifcIDtYPEtELLsYS_ERRORlABELtOOlONG                              0xdddd0530
+#define ifcIDtYPEtELLsYS_AOKfYIeXCEPTIONhANDLERpUSH                     0xdddd0531
+#define ifcIDtYPEtELLsYS_AOKfYIcANNOTcREATEwINDOWnOW                    0xdddd0532
+#define ifcIDtYPEtELLsYS_AOKfYIcANcREATEwINDOWnOW                       0xdddd0533
+#define ifcIDtYPEtELLsYS_ERRORbADcODEsTYLEsTROKEfUSEbUFFEReXHAUSTED     0xdddd0534
+#define ifcIDtYPEtELLsYS_ERRORiMPOTENCE                                 0xdddd0535
+#define ifcIDtYPEtELLsYS_ERRORgLOBALnEWoPERATORuSED                     0xdddd0536
+#define ifcIDtYPEtELLsYS_READYtOdIEnu                                   0xdddd0537
+#define ifcIDtYPEtELLsYS_OShANDLEcT                                     0xdddd0538
+#define ifcIDtYPEtELLsYS_OShANDLEdT                                     0xdddd0539
+#define ifcIDtYPEtELLsYS_HANDOFFoLDaTTACH                               0xdddd053a
+#define ifcIDtYPEtELLsYS_HANDOFFoLDdETACH                               0xdddd053b
+#define ifcIDtYPEtELLsYS_OSpIDeVENTbEGUN                                0xdddd053c
+#define ifcIDtYPEtELLsYS_OSpIDeVENTeNDED                                0xdddd053d
+#define ifcIDtYPEtELLsYS_HEARTbEATcTP                                   0xdddd053e
+#define ifcIDtYPEtELLsYS_HEARTbEATdTP                                   0xdddd053f
+#define ifcIDtYPEtELLsYS_HEARTbEATcTPoSpID                              0xdddd0540
+#define ifcIDtYPEtELLsYS_HEARTbEATdTPoSpID                              0xdddd0541
+#define ifcIDtYPEtELLsYS_GLObEGINcT                                     0xdddd0542
+#define ifcIDtYPEtELLsYS_GLObEGINdT                                     0xdddd0543
+#define ifcIDtYPEtELLsYS_FIREbASEmONITOR                                0xdddd0544
+#define ifcIDtYPEtELLsYS_NAPKINfORMAT                                   0xdddd0545
+#define ifcIDtYPEtELLsYS_NAPKINaTTACH                                   0xdddd0546
+#define ifcIDtYPEtELLsYS_NAPKINdETACH                                   0xdddd0547
+#define ifcIDtYPEtELLsYS_LIFInAME                                       0xdddd0548
+#define ifcIDtYPEtELLsYS_ADAMfIRED                                      0xdddd0549
+#define ifcIDtYPEtELLsYS_SNAPsHOT                                       0xdddd054a
+#define ifcIDtYPEtELLsYS_SEXcT                                          0xdddd054b
+#define ifcIDtYPEtELLsYS_SEXdT                                          0xdddd054c
+#define ifcIDtYPEtELLsYS_PROCESSgLOBAL1scT                              0xdddd054d
+#define ifcIDtYPEtELLsYS_PROCESSgLOBAL1sdT                              0xdddd054e
 /*3*/
-#define ifcIDtYPEtELLsYS_min     0xdddd04d9
-#define ifcIDtYPEtELLsYS_max     0xdddd053a                                                               
+#define ifcIDtYPEtELLsYS_min     0xdddd04ed
+#define ifcIDtYPEtELLsYS_max     0xdddd054e                                                               
 
 
 //
@@ -16018,13 +15143,13 @@ see QUITO
 /*1*//*ifcIDrESULThIRE*//*1*/
 
 /*3*/
-#define ifcIDrESULThIRE_AOK                                        0xdddd053b
-#define ifcIDrESULThIRE_COULDnOTlOADaDAM                           0xdddd053c
-#define ifcIDrESULThIRE_COULDnOTfINDpEEK                           0xdddd053d
-#define ifcIDrESULThIRE_OTHERfAILURE                               0xdddd053e
+#define ifcIDrESULThIRE_AOK                                        0xdddd054f
+#define ifcIDrESULThIRE_COULDnOTlOADaDAM                           0xdddd0550
+#define ifcIDrESULThIRE_COULDnOTfINDpEEK                           0xdddd0551
+#define ifcIDrESULThIRE_OTHERfAILURE                               0xdddd0552
 /*3*/
-#define ifcIDrESULThIRE_min     0xdddd053b
-#define ifcIDrESULThIRE_max     0xdddd053e                                                               
+#define ifcIDrESULThIRE_min     0xdddd054f
+#define ifcIDrESULThIRE_max     0xdddd0552                                                               
 
 
 //
@@ -16128,12 +15253,12 @@ see QUITO
 //etLaunch IS USED, RATHER THAN THE this->ether, BECAUSE osThreadF ALLOCATES pTaskP, WHICH MUST EXIST AFTER this->poolOld IS DT
 //(THE DESTRUCTION OF *this OCCURS ON tm_##classP##_F)
 
-#define LIFEdEFcT(classP)                                                                                       \
-                                                                                                                \
-    {                                                                                                           \
-        etherC etLaunch( tinP , TAG( TAGiDnULL ) ) ;                         \
-        etLaunch.osThreadF( tinP , countTC() , tm_##classP##_F , 0 , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)this ) ; \
-        if( etLaunch ) _deleteMyselfF( tinP ) ;                                                                 \
+#define LIFEdEFcT(classP)                                                                                                   \
+                                                                                                                            \
+    {                                                                                                                       \
+        etherC etLaunch( tinP , TAG( TAGiDnULL ) ) ;                                                                        \
+        etLaunch.osThreadF( tinP , countTC() , tm_##classP##_F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)this ) ;    \
+        if( etLaunch ) _deleteMyselfF( tinP ) ;                                                                             \
     }
 
 
@@ -16774,11 +15899,11 @@ see QUITO
 /*1*//*ifcIDtYPEqUERY*//*1*/
 
 /*3*/
-#define ifcIDtYPEqUERY_SNuNIQUEaLLcELLStHISmONITOR               0xdddd053f
-#define ifcIDtYPEqUERY_SNuNIQUEaLLcELLStHISmONITORmULTIPLE       0xdddd0540
+#define ifcIDtYPEqUERY_SNuNIQUEaLLcELLStHISmONITOR               0xdddd0553
+#define ifcIDtYPEqUERY_SNuNIQUEaLLcELLStHISmONITORmULTIPLE       0xdddd0554
 /*3*/
-#define ifcIDtYPEqUERY_min     0xdddd053f
-#define ifcIDtYPEqUERY_max     0xdddd0540                                                               
+#define ifcIDtYPEqUERY_min     0xdddd0553
+#define ifcIDtYPEqUERY_max     0xdddd0554                                                               
 
 
 //
@@ -17068,15 +16193,15 @@ these flag values are used by oo flagsT objects
 /*1*//*ifcIDaCTIONwHERE*//*1*/
 
 /*3*/
-#define ifcIDaCTIONwHERE_SETUP                     0xdddd0541
-#define ifcIDaCTIONwHERE_SHUTDOWN                  0xdddd0542
-#define ifcIDaCTIONwHERE_REGISTERtHREAD            0xdddd0543
-#define ifcIDaCTIONwHERE_UNREGISTERtHREAD          0xdddd0544
-#define ifcIDaCTIONwHERE_WATCH                    0xdddd0545
-#define ifcIDaCTIONwHERE_UNWATCH                   0xdddd0546
+#define ifcIDaCTIONwHERE_SETUP                     0xdddd0555
+#define ifcIDaCTIONwHERE_SHUTDOWN                  0xdddd0556
+#define ifcIDaCTIONwHERE_REGISTERtHREAD            0xdddd0557
+#define ifcIDaCTIONwHERE_UNREGISTERtHREAD          0xdddd0558
+#define ifcIDaCTIONwHERE_WATCH                    0xdddd0559
+#define ifcIDaCTIONwHERE_UNWATCH                   0xdddd055a
 /*3*/
-#define ifcIDaCTIONwHERE_min     0xdddd0541
-#define ifcIDaCTIONwHERE_max     0xdddd0546
+#define ifcIDaCTIONwHERE_min     0xdddd0555
+#define ifcIDaCTIONwHERE_max     0xdddd055a
 
 
 //
@@ -17106,15 +16231,15 @@ these flag values are used by oo flagsT objects
 /*1*//*ifcIDtYPEtLS*//*1*/
 
 /*3*/
-#define ifcIDtYPEtLS_WITHINpROCESS 0xdddd0547
-#define ifcIDtYPEtLS_CONSOLE       0xdddd0548
-#define ifcIDtYPEtLS_WINDOW        0xdddd0549
-#define ifcIDtYPEtLS_KID           0xdddd054a
-#define ifcIDtYPEtLS_EXCEPTION     0xdddd054b
-#define ifcIDtYPEtLS_BENCH         0xdddd054c
+#define ifcIDtYPEtLS_WITHINpROCESS 0xdddd055b
+#define ifcIDtYPEtLS_CONSOLE       0xdddd055c
+#define ifcIDtYPEtLS_WINDOW        0xdddd055d
+#define ifcIDtYPEtLS_KID           0xdddd055e
+#define ifcIDtYPEtLS_EXCEPTION     0xdddd055f
+#define ifcIDtYPEtLS_BENCH         0xdddd0560
 /*3*/
-#define ifcIDtYPEtLS_min     0xdddd0547
-#define ifcIDtYPEtLS_max     0xdddd054c
+#define ifcIDtYPEtLS_min     0xdddd055b
+#define ifcIDtYPEtLS_max     0xdddd0560
 
 
 //
@@ -17241,60 +16366,60 @@ these flag values are used by oo flagsT objects
 /*1*//*ifcIDtYPEhANDLE*//*1*/
 
 /*3*/
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE0       0xdddd054d
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE1       0xdddd054e
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE2       0xdddd054f
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE3       0xdddd0550
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE4       0xdddd0551
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE5       0xdddd0552
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE6       0xdddd0553
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE7       0xdddd0554
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE8       0xdddd0555
-#define ifcIDtYPEhANDLE_FORaDAMtOuSE9       0xdddd0556
-#define ifcIDtYPEhANDLE_FORaDAMtOuSEa       0xdddd0557
-#define ifcIDtYPEhANDLE_FORaDAMtOuSEb       0xdddd0558
-#define ifcIDtYPEhANDLE_FORaDAMtOuSEc       0xdddd0559
-#define ifcIDtYPEhANDLE_FORaDAMtOuSEd       0xdddd055a
-#define ifcIDtYPEhANDLE_FORaDAMtOuSEe       0xdddd055b
-#define ifcIDtYPEhANDLE_FORaDAMtOuSEf       0xdddd055c
-#define ifcIDtYPEhANDLE_DLL                 0xdddd055d
-#define ifcIDtYPEhANDLE_EVENTsEMAPHORE      0xdddd055e
-#define ifcIDtYPEhANDLE_FILE                0xdddd055f
-#define ifcIDtYPEhANDLE_FILEfIND            0xdddd0560
-#define ifcIDtYPEhANDLE_FILEfINDbASE        0xdddd0561
-#define ifcIDtYPEhANDLE_FILEwAIT            0xdddd0562
-#define ifcIDtYPEhANDLE_FISH                0xdddd0563
-#define ifcIDtYPEhANDLE_MUTEXsEMAPHORE      0xdddd0564
-#define ifcIDtYPEhANDLE_PROCESS             0xdddd0565
-#define ifcIDtYPEhANDLE_SHAREDmEMORY        0xdddd0566
-#define ifcIDtYPEhANDLE_SOCKET              0xdddd0567
-#define ifcIDtYPEhANDLE_STACKwALK           0xdddd0568
-#define ifcIDtYPEhANDLE_TREEwALK            0xdddd0569
-#define ifcIDtYPEhANDLE_THREAD              0xdddd056a
-#define ifcIDtYPEhANDLE_WINDOWINGcLIENT     0xdddd056b
-#define ifcIDtYPEhANDLE_WINDOW              0xdddd056c
-#define ifcIDtYPEhANDLE_DRAWsHARED          0xdddd056d
-#define ifcIDtYPEhANDLE_DRAWpRIVATE         0xdddd056e
-#define ifcIDtYPEhANDLE_DRAWINGtOOL         0xdddd056f
-#define ifcIDtYPEhANDLE_EXCEPTIONhANDLER    0xdddd0570
-#define ifcIDtYPEhANDLE_CONSOLEhANDLER      0xdddd0571
-#define ifcIDtYPEhANDLE_PIPE                0xdddd0572
-#define ifcIDtYPEhANDLE_PROCESStOKEN        0xdddd0573
-#define ifcIDtYPEhANDLE_CRITICALsECTION     0xdddd0574
-#define ifcIDtYPEhANDLE_BOOKS               0xdddd0575
-#define ifcIDtYPEhANDLE_LISTING             0xdddd0576
-#define ifcIDtYPEhANDLE_LINKED              0xdddd0577
-#define ifcIDtYPEhANDLE_sadamsC             0xdddd0578
-#define ifcIDtYPEhANDLE_openSslContext      0xdddd0579
-#define ifcIDtYPEhANDLE_CLOUD               0xdddd057a
-#define ifcIDtYPEhANDLE_FILEmAPPING         0xdddd057b
-#define ifcIDtYPEhANDLE_BOOKSrEADcURSOR     0xdddd057c
-#define ifcIDtYPEhANDLE_OPENSSLkEYpAIR      0xdddd057d
-#define ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE   0xdddd057e
-#define ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC    0xdddd057f
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE0       0xdddd0561
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE1       0xdddd0562
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE2       0xdddd0563
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE3       0xdddd0564
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE4       0xdddd0565
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE5       0xdddd0566
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE6       0xdddd0567
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE7       0xdddd0568
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE8       0xdddd0569
+#define ifcIDtYPEhANDLE_FORaDAMtOuSE9       0xdddd056a
+#define ifcIDtYPEhANDLE_FORaDAMtOuSEa       0xdddd056b
+#define ifcIDtYPEhANDLE_FORaDAMtOuSEb       0xdddd056c
+#define ifcIDtYPEhANDLE_FORaDAMtOuSEc       0xdddd056d
+#define ifcIDtYPEhANDLE_FORaDAMtOuSEd       0xdddd056e
+#define ifcIDtYPEhANDLE_FORaDAMtOuSEe       0xdddd056f
+#define ifcIDtYPEhANDLE_FORaDAMtOuSEf       0xdddd0570
+#define ifcIDtYPEhANDLE_DLL                 0xdddd0571
+#define ifcIDtYPEhANDLE_EVENTsEMAPHORE      0xdddd0572
+#define ifcIDtYPEhANDLE_FILE                0xdddd0573
+#define ifcIDtYPEhANDLE_FILEfIND            0xdddd0574
+#define ifcIDtYPEhANDLE_FILEfINDbASE        0xdddd0575
+#define ifcIDtYPEhANDLE_FILEwAIT            0xdddd0576
+#define ifcIDtYPEhANDLE_FISH                0xdddd0577
+#define ifcIDtYPEhANDLE_MUTEXsEMAPHORE      0xdddd0578
+#define ifcIDtYPEhANDLE_PROCESS             0xdddd0579
+#define ifcIDtYPEhANDLE_SHAREDmEMORY        0xdddd057a
+#define ifcIDtYPEhANDLE_SOCKET              0xdddd057b
+#define ifcIDtYPEhANDLE_STACKwALK           0xdddd057c
+#define ifcIDtYPEhANDLE_TREEwALK            0xdddd057d
+#define ifcIDtYPEhANDLE_THREAD              0xdddd057e
+#define ifcIDtYPEhANDLE_WINDOWINGcLIENT     0xdddd057f
+#define ifcIDtYPEhANDLE_WINDOW              0xdddd0580
+#define ifcIDtYPEhANDLE_DRAWsHARED          0xdddd0581
+#define ifcIDtYPEhANDLE_DRAWpRIVATE         0xdddd0582
+#define ifcIDtYPEhANDLE_DRAWINGtOOL         0xdddd0583
+#define ifcIDtYPEhANDLE_EXCEPTIONhANDLER    0xdddd0584
+#define ifcIDtYPEhANDLE_CONSOLEhANDLER      0xdddd0585
+#define ifcIDtYPEhANDLE_PIPE                0xdddd0586
+#define ifcIDtYPEhANDLE_PROCESStOKEN        0xdddd0587
+#define ifcIDtYPEhANDLE_CRITICALsECTION     0xdddd0588
+#define ifcIDtYPEhANDLE_BOOKS               0xdddd0589
+#define ifcIDtYPEhANDLE_LISTING             0xdddd058a
+#define ifcIDtYPEhANDLE_LINKED              0xdddd058b
+#define ifcIDtYPEhANDLE_sadamsC             0xdddd058c
+#define ifcIDtYPEhANDLE_openSslContext      0xdddd058d
+#define ifcIDtYPEhANDLE_CLOUD               0xdddd058e
+#define ifcIDtYPEhANDLE_FILEmAPPING         0xdddd058f
+#define ifcIDtYPEhANDLE_BOOKSrEADcURSOR     0xdddd0590
+#define ifcIDtYPEhANDLE_OPENSSLkEYpAIR      0xdddd0591
+#define ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE   0xdddd0592
+#define ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC    0xdddd0593
 /*3*/
-#define ifcIDtYPEhANDLE_min     0xdddd054d
-#define ifcIDtYPEhANDLE_max     0xdddd057f
+#define ifcIDtYPEhANDLE_min     0xdddd0561
+#define ifcIDtYPEhANDLE_max     0xdddd0593
 
 
 //
@@ -17990,35 +17115,35 @@ this is probably obsolete
 /*1*//*ifcIDtYPEsTROKEcALLbACK*//*1*/
 
 /*3*/
-#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE1                       0xdddd0580
-#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE2                       0xdddd0581
-#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE3                       0xdddd0582
-#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE4                       0xdddd0583
-#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE5                       0xdddd0584
-#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE6                       0xdddd0585
-#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE7                       0xdddd0586
-#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE8                       0xdddd0587
-#define ifcIDtYPEsTROKEcALLbACK_STRIKE                              0xdddd0588
-#define ifcIDtYPEsTROKEcALLbACK_WAKE                                0xdddd0589
-#define ifcIDtYPEsTROKEcALLbACK_SLEEP                               0xdddd058a
-#define ifcIDtYPEsTROKEcALLbACK_DESTROY                             0xdddd058b
-#define ifcIDtYPEsTROKEcALLbACK_HOTkEY                              0xdddd058c
-#define ifcIDtYPEsTROKEcALLbACK_JOYsTICK                            0xdddd058d
-#define ifcIDtYPEsTROKEcALLbACK_KEYBOARD                            0xdddd058e
-#define ifcIDtYPEsTROKEcALLbACK_MOUSE                               0xdddd058f
-#define ifcIDtYPEsTROKEcALLbACK_TABaRRIVING                         0xdddd0590
-#define ifcIDtYPEsTROKEcALLbACK_TABlEAVING                          0xdddd0591
-#define ifcIDtYPEsTROKEcALLbACK_ANIMATE                             0xdddd0592
-#define ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING                0xdddd0593
-#define ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED                 0xdddd0594
-#define ifcIDtYPEsTROKEcALLbACK_FLYOVER                             0xdddd0595
-#define ifcIDtYPEsTROKEcALLbACK_INoUTqUERY                          0xdddd0596
-#define ifcIDtYPEsTROKEcALLbACK_DRAGbEGIN                           0xdddd0597
-#define ifcIDtYPEsTROKEcALLbACK_DRAGeND                             0xdddd0598
-#define ifcIDtYPEsTROKEcALLbACK_ERASE                               0xdddd0599
+#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE1                       0xdddd0594
+#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE2                       0xdddd0595
+#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE3                       0xdddd0596
+#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE4                       0xdddd0597
+#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE5                       0xdddd0598
+#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE6                       0xdddd0599
+#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE7                       0xdddd059a
+#define ifcIDtYPEsTROKEcALLbACK_FORaDAMtOUSE8                       0xdddd059b
+#define ifcIDtYPEsTROKEcALLbACK_STRIKE                              0xdddd059c
+#define ifcIDtYPEsTROKEcALLbACK_WAKE                                0xdddd059d
+#define ifcIDtYPEsTROKEcALLbACK_SLEEP                               0xdddd059e
+#define ifcIDtYPEsTROKEcALLbACK_DESTROY                             0xdddd059f
+#define ifcIDtYPEsTROKEcALLbACK_HOTkEY                              0xdddd05a0
+#define ifcIDtYPEsTROKEcALLbACK_JOYsTICK                            0xdddd05a1
+#define ifcIDtYPEsTROKEcALLbACK_KEYBOARD                            0xdddd05a2
+#define ifcIDtYPEsTROKEcALLbACK_MOUSE                               0xdddd05a3
+#define ifcIDtYPEsTROKEcALLbACK_TABaRRIVING                         0xdddd05a4
+#define ifcIDtYPEsTROKEcALLbACK_TABlEAVING                          0xdddd05a5
+#define ifcIDtYPEsTROKEcALLbACK_ANIMATE                             0xdddd05a6
+#define ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING                0xdddd05a7
+#define ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED                 0xdddd05a8
+#define ifcIDtYPEsTROKEcALLbACK_FLYOVER                             0xdddd05a9
+#define ifcIDtYPEsTROKEcALLbACK_INoUTqUERY                          0xdddd05aa
+#define ifcIDtYPEsTROKEcALLbACK_DRAGbEGIN                           0xdddd05ab
+#define ifcIDtYPEsTROKEcALLbACK_DRAGeND                             0xdddd05ac
+#define ifcIDtYPEsTROKEcALLbACK_ERASE                               0xdddd05ad
 /*3*/
-#define ifcIDtYPEsTROKEcALLbACK_min     0xdddd0580
-#define ifcIDtYPEsTROKEcALLbACK_max     0xdddd0599
+#define ifcIDtYPEsTROKEcALLbACK_min     0xdddd0594
+#define ifcIDtYPEsTROKEcALLbACK_max     0xdddd05ad
 
 
 //
@@ -18472,14 +17597,14 @@ if cBitsP is f then 01 bits is indicated
 /*1*//*ifcIDtYPEaCTION*//*1*/
 
 /*3*/
-#define ifcIDtYPEaCTION_ATTACH       0xdddd059a
-#define ifcIDtYPEaCTION_DETACH       0xdddd059b
-#define ifcIDtYPEaCTION_DOWN         0xdddd059c
-#define ifcIDtYPEaCTION_UP           0xdddd059d
-#define ifcIDtYPEaCTION_MOVE         0xdddd059e
+#define ifcIDtYPEaCTION_ATTACH       0xdddd05ae
+#define ifcIDtYPEaCTION_DETACH       0xdddd05af
+#define ifcIDtYPEaCTION_DOWN         0xdddd05b0
+#define ifcIDtYPEaCTION_UP           0xdddd05b1
+#define ifcIDtYPEaCTION_MOVE         0xdddd05b2
 /*3*/
-#define ifcIDtYPEaCTION_min     0xdddd059a
-#define ifcIDtYPEaCTION_max     0xdddd059e
+#define ifcIDtYPEaCTION_min     0xdddd05ae
+#define ifcIDtYPEaCTION_max     0xdddd05b2
 
 
 //
@@ -18514,250 +17639,250 @@ if cBitsP is f then 01 bits is indicated
 //CODEsYNC: 0010296 00103c6: EVERY idTool VALUE MUST HAVE AN ASSOCIATED VK VALUE, IN THE SAME ORDER (FOR SPEEDY MAPPING)
 
 /*3*/
-#define ifcIDtYPEtOOL_begin                         0xdddd059f
-#define ifcIDtYPEtOOL_a                             0xdddd05a0
-#define ifcIDtYPEtOOL_b                             0xdddd05a1
-#define ifcIDtYPEtOOL_c                             0xdddd05a2
-#define ifcIDtYPEtOOL_d                             0xdddd05a3
-#define ifcIDtYPEtOOL_e                             0xdddd05a4
-#define ifcIDtYPEtOOL_f                             0xdddd05a5
-#define ifcIDtYPEtOOL_g                             0xdddd05a6
-#define ifcIDtYPEtOOL_h                             0xdddd05a7
-#define ifcIDtYPEtOOL_i                             0xdddd05a8
-#define ifcIDtYPEtOOL_j                             0xdddd05a9
-#define ifcIDtYPEtOOL_k                             0xdddd05aa
-#define ifcIDtYPEtOOL_l                             0xdddd05ab
-#define ifcIDtYPEtOOL_m                             0xdddd05ac
-#define ifcIDtYPEtOOL_n                             0xdddd05ad
-#define ifcIDtYPEtOOL_o                             0xdddd05ae
-#define ifcIDtYPEtOOL_p                             0xdddd05af
-#define ifcIDtYPEtOOL_q                             0xdddd05b0
-#define ifcIDtYPEtOOL_r                             0xdddd05b1
-#define ifcIDtYPEtOOL_s                             0xdddd05b2
-#define ifcIDtYPEtOOL_t                             0xdddd05b3
-#define ifcIDtYPEtOOL_u                             0xdddd05b4
-#define ifcIDtYPEtOOL_v                             0xdddd05b5
-#define ifcIDtYPEtOOL_w                             0xdddd05b6
-#define ifcIDtYPEtOOL_x                             0xdddd05b7
-#define ifcIDtYPEtOOL_y                             0xdddd05b8
-#define ifcIDtYPEtOOL_z                             0xdddd05b9
-#define ifcIDtYPEtOOL_A                             0xdddd05ba
-#define ifcIDtYPEtOOL_B                             0xdddd05bb
-#define ifcIDtYPEtOOL_C                             0xdddd05bc
-#define ifcIDtYPEtOOL_D                             0xdddd05bd
-#define ifcIDtYPEtOOL_E                             0xdddd05be
-#define ifcIDtYPEtOOL_F                             0xdddd05bf
-#define ifcIDtYPEtOOL_G                             0xdddd05c0
-#define ifcIDtYPEtOOL_H                             0xdddd05c1
-#define ifcIDtYPEtOOL_I                             0xdddd05c2
-#define ifcIDtYPEtOOL_J                             0xdddd05c3
-#define ifcIDtYPEtOOL_K                             0xdddd05c4
-#define ifcIDtYPEtOOL_L                             0xdddd05c5
-#define ifcIDtYPEtOOL_M                             0xdddd05c6
-#define ifcIDtYPEtOOL_N                             0xdddd05c7
-#define ifcIDtYPEtOOL_O                             0xdddd05c8
-#define ifcIDtYPEtOOL_P                             0xdddd05c9
-#define ifcIDtYPEtOOL_Q                             0xdddd05ca
-#define ifcIDtYPEtOOL_R                             0xdddd05cb
-#define ifcIDtYPEtOOL_S                             0xdddd05cc
-#define ifcIDtYPEtOOL_T                             0xdddd05cd
-#define ifcIDtYPEtOOL_U                             0xdddd05ce
-#define ifcIDtYPEtOOL_V                             0xdddd05cf
-#define ifcIDtYPEtOOL_W                             0xdddd05d0
-#define ifcIDtYPEtOOL_X                             0xdddd05d1
-#define ifcIDtYPEtOOL_Y                             0xdddd05d2
-#define ifcIDtYPEtOOL_Z                             0xdddd05d3
-#define ifcIDtYPEtOOL_0                             0xdddd05d4
-#define ifcIDtYPEtOOL_1                             0xdddd05d5
-#define ifcIDtYPEtOOL_2                             0xdddd05d6
-#define ifcIDtYPEtOOL_3                             0xdddd05d7
-#define ifcIDtYPEtOOL_4                             0xdddd05d8
-#define ifcIDtYPEtOOL_5                             0xdddd05d9
-#define ifcIDtYPEtOOL_6                             0xdddd05da
-#define ifcIDtYPEtOOL_7                             0xdddd05db
-#define ifcIDtYPEtOOL_8                             0xdddd05dc
-#define ifcIDtYPEtOOL_9                             0xdddd05dd
-#define ifcIDtYPEtOOL_PAD0                          0xdddd05de
-#define ifcIDtYPEtOOL_PAD1                          0xdddd05df
-#define ifcIDtYPEtOOL_PAD2                          0xdddd05e0
-#define ifcIDtYPEtOOL_PAD3                          0xdddd05e1
-#define ifcIDtYPEtOOL_PAD4                          0xdddd05e2
-#define ifcIDtYPEtOOL_PAD5                          0xdddd05e3
-#define ifcIDtYPEtOOL_PAD6                          0xdddd05e4
-#define ifcIDtYPEtOOL_PAD7                          0xdddd05e5
-#define ifcIDtYPEtOOL_PAD8                          0xdddd05e6
-#define ifcIDtYPEtOOL_PAD9                          0xdddd05e7
-#define ifcIDtYPEtOOL_ACCENT                        0xdddd05e8
-#define ifcIDtYPEtOOL_AND                           0xdddd05e9
-#define ifcIDtYPEtOOL_AT                            0xdddd05ea
-#define ifcIDtYPEtOOL_BACKsLASH                     0xdddd05eb
-#define ifcIDtYPEtOOL_CARET                         0xdddd05ec
-#define ifcIDtYPEtOOL_COLON                         0xdddd05ed
-#define ifcIDtYPEtOOL_COMMA                         0xdddd05ee
-#define ifcIDtYPEtOOL_CURLEYcLOSE                   0xdddd05ef
-#define ifcIDtYPEtOOL_CURLEYoPEN                    0xdddd05f0
-#define ifcIDtYPEtOOL_DIVIDE                        0xdddd05f1
-#define ifcIDtYPEtOOL_DIVIDEnUM                     0xdddd05f2
-#define ifcIDtYPEtOOL_DOLLAR                        0xdddd05f3
-#define ifcIDtYPEtOOL_EQUALS                        0xdddd05f4
-#define ifcIDtYPEtOOL_EXCLAIM                       0xdddd05f5
-#define ifcIDtYPEtOOL_GREATERtHAN                   0xdddd05f6
-#define ifcIDtYPEtOOL_LESStHAN                      0xdddd05f7
-#define ifcIDtYPEtOOL_MINUS                         0xdddd05f8
-#define ifcIDtYPEtOOL_MINUSnUM                      0xdddd05f9
-#define ifcIDtYPEtOOL_MULTIPLY                      0xdddd05fa
-#define ifcIDtYPEtOOL_MULTIPLYnUM                   0xdddd05fb
-#define ifcIDtYPEtOOL_OR                            0xdddd05fc
-#define ifcIDtYPEtOOL_PARENcLOSE                    0xdddd05fd
-#define ifcIDtYPEtOOL_PARENoPEN                     0xdddd05fe
-#define ifcIDtYPEtOOL_PERCENT                       0xdddd05ff
-#define ifcIDtYPEtOOL_PERIOD                        0xdddd0600
-#define ifcIDtYPEtOOL_PERIODnUM                     0xdddd0601
-#define ifcIDtYPEtOOL_PLUS                          0xdddd0602
-#define ifcIDtYPEtOOL_PLUSnUM                       0xdddd0603
-#define ifcIDtYPEtOOL_POUND                         0xdddd0604
-#define ifcIDtYPEtOOL_QUESTION                      0xdddd0605
-#define ifcIDtYPEtOOL_QUOTEdOUBLE                   0xdddd0606
-#define ifcIDtYPEtOOL_QUOTEsINGLE                   0xdddd0607
-#define ifcIDtYPEtOOL_SEMICOLON                     0xdddd0608
-#define ifcIDtYPEtOOL_SPACE                         0xdddd0609
-#define ifcIDtYPEtOOL_SQUAREcLOSE                   0xdddd060a
-#define ifcIDtYPEtOOL_SQUAREoPEN                    0xdddd060b
-#define ifcIDtYPEtOOL_TILDE                         0xdddd060c
-#define ifcIDtYPEtOOL_UNDERSCORE                    0xdddd060d
-#define ifcIDtYPEtOOL_CONTROLbEGIN                  0xdddd060e
-#define ifcIDtYPEtOOL_ALT                           0xdddd060f
-#define ifcIDtYPEtOOL_ALTrIGHT                      0xdddd0610
-#define ifcIDtYPEtOOL_BACKSPACE                     0xdddd0611
-#define ifcIDtYPEtOOL_BASEoScELLlIST                0xdddd0612
-#define ifcIDtYPEtOOL_BASEoSlEFT                    0xdddd0613
-#define ifcIDtYPEtOOL_BASEoSrIGHT                   0xdddd0614
-#define ifcIDtYPEtOOL_CONTROL                       0xdddd0615
-#define ifcIDtYPEtOOL_CONTROLrIGHT                  0xdddd0616
-#define ifcIDtYPEtOOL_DELETE                        0xdddd0617
-#define ifcIDtYPEtOOL_DELETEnUM                     0xdddd0618
-#define ifcIDtYPEtOOL_DOWN                          0xdddd0619
-#define ifcIDtYPEtOOL_DOWNnUM                       0xdddd061a
-#define ifcIDtYPEtOOL_END                           0xdddd061b
-#define ifcIDtYPEtOOL_ENDnUM                        0xdddd061c
-#define ifcIDtYPEtOOL_ENTER                         0xdddd061d
-#define ifcIDtYPEtOOL_ENTERnUM                      0xdddd061e
-#define ifcIDtYPEtOOL_ESCAPE                        0xdddd061f
-#define ifcIDtYPEtOOL_F1                            0xdddd0620
-#define ifcIDtYPEtOOL_F2                            0xdddd0621
-#define ifcIDtYPEtOOL_F3                            0xdddd0622
-#define ifcIDtYPEtOOL_F4                            0xdddd0623
-#define ifcIDtYPEtOOL_F5                            0xdddd0624
-#define ifcIDtYPEtOOL_F6                            0xdddd0625
-#define ifcIDtYPEtOOL_F7                            0xdddd0626
-#define ifcIDtYPEtOOL_F8                            0xdddd0627
-#define ifcIDtYPEtOOL_F9                            0xdddd0628
-#define ifcIDtYPEtOOL_F10                           0xdddd0629
-#define ifcIDtYPEtOOL_F11                           0xdddd062a
-#define ifcIDtYPEtOOL_F12                           0xdddd062b
-#define ifcIDtYPEtOOL_HOME                          0xdddd062c
-#define ifcIDtYPEtOOL_HOMEnUM                       0xdddd062d
-#define ifcIDtYPEtOOL_INSERT                        0xdddd062e
-#define ifcIDtYPEtOOL_INSERTnUM                     0xdddd062f
-#define ifcIDtYPEtOOL_LEFT                          0xdddd0630
-#define ifcIDtYPEtOOL_LEFTnUM                       0xdddd0631
-#define ifcIDtYPEtOOL_LOCKcAPS                      0xdddd0632
-#define ifcIDtYPEtOOL_LOCKnUM                       0xdddd0633
-#define ifcIDtYPEtOOL_LOCKsCROLL                    0xdddd0634
-#define ifcIDtYPEtOOL_NULLnUM                       0xdddd0635
-#define ifcIDtYPEtOOL_PAGEdOWN                      0xdddd0636
-#define ifcIDtYPEtOOL_PAGEdOWNnUM                   0xdddd0637
-#define ifcIDtYPEtOOL_PAGEuP                        0xdddd0638
-#define ifcIDtYPEtOOL_PAGEuPnUM                     0xdddd0639
-#define ifcIDtYPEtOOL_BREAK                         0xdddd063a
-#define ifcIDtYPEtOOL_PAUSE                         0xdddd063b
-#define ifcIDtYPEtOOL_RIGHT                         0xdddd063c
-#define ifcIDtYPEtOOL_RIGHTnUM                      0xdddd063d
-#define ifcIDtYPEtOOL_SHIFT                         0xdddd063e
-#define ifcIDtYPEtOOL_SHIFTrIGHT                    0xdddd063f
-#define ifcIDtYPEtOOL_TAB                           0xdddd0640
-#define ifcIDtYPEtOOL_TABbACK                       0xdddd0641
-#define ifcIDtYPEtOOL_UP                            0xdddd0642
-#define ifcIDtYPEtOOL_UPnUM                         0xdddd0643
-#define ifcIDtYPEtOOL_CONTROLeND                    0xdddd0644
-#define ifcIDtYPEtOOL_MOUSEbUTTONlEFT               0xdddd0645
-#define ifcIDtYPEtOOL_MOUSEbUTTONcENTER             0xdddd0646
-#define ifcIDtYPEtOOL_MOUSEbUTTONrIGHT              0xdddd0647
-#define ifcIDtYPEtOOL_JOY1bUTTON1                   0xdddd0648
-#define ifcIDtYPEtOOL_JOY1bUTTON2                   0xdddd0649
-#define ifcIDtYPEtOOL_JOY1bUTTON3                   0xdddd064a
-#define ifcIDtYPEtOOL_JOY1bUTTON4                   0xdddd064b
-#define ifcIDtYPEtOOL_JOY1bUTTON5                   0xdddd064c
-#define ifcIDtYPEtOOL_JOY1bUTTON6                   0xdddd064d
-#define ifcIDtYPEtOOL_JOY1bUTTON7                   0xdddd064e
-#define ifcIDtYPEtOOL_JOY1bUTTON8                   0xdddd064f
-#define ifcIDtYPEtOOL_JOY1bUTTON9                   0xdddd0650
-#define ifcIDtYPEtOOL_JOY1bUTTONa                   0xdddd0651
-#define ifcIDtYPEtOOL_JOY1bUTTONb                   0xdddd0652
-#define ifcIDtYPEtOOL_JOY1bUTTONc                   0xdddd0653
-#define ifcIDtYPEtOOL_JOY1bUTTONd                   0xdddd0654
-#define ifcIDtYPEtOOL_JOY1bUTTONe                   0xdddd0655
-#define ifcIDtYPEtOOL_JOY1bUTTONf                   0xdddd0656
-#define ifcIDtYPEtOOL_JOY1bUTTON01                  0xdddd0657
-#define ifcIDtYPEtOOL_JOY1bUTTON11                  0xdddd0658
-#define ifcIDtYPEtOOL_JOY1bUTTON21                  0xdddd0659
-#define ifcIDtYPEtOOL_JOY1bUTTON31                  0xdddd065a
-#define ifcIDtYPEtOOL_JOY1bUTTON41                  0xdddd065b
-#define ifcIDtYPEtOOL_JOY1bUTTON51                  0xdddd065c
-#define ifcIDtYPEtOOL_JOY1bUTTON61                  0xdddd065d
-#define ifcIDtYPEtOOL_JOY1bUTTON71                  0xdddd065e
-#define ifcIDtYPEtOOL_JOY1bUTTON81                  0xdddd065f
-#define ifcIDtYPEtOOL_JOY1bUTTON91                  0xdddd0660
-#define ifcIDtYPEtOOL_JOY1bUTTONa1                  0xdddd0661
-#define ifcIDtYPEtOOL_JOY1bUTTONb1                  0xdddd0662
-#define ifcIDtYPEtOOL_JOY1bUTTONc1                  0xdddd0663
-#define ifcIDtYPEtOOL_JOY1bUTTONd1                  0xdddd0664
-#define ifcIDtYPEtOOL_JOY1bUTTONe1                  0xdddd0665
-#define ifcIDtYPEtOOL_JOY1bUTTONf1                  0xdddd0666
-#define ifcIDtYPEtOOL_JOY1bUTTON02                  0xdddd0667
-#define ifcIDtYPEtOOL_JOY2bUTTON1                   0xdddd0668
-#define ifcIDtYPEtOOL_JOY2bUTTON2                   0xdddd0669
-#define ifcIDtYPEtOOL_JOY2bUTTON3                   0xdddd066a
-#define ifcIDtYPEtOOL_JOY2bUTTON4                   0xdddd066b
-#define ifcIDtYPEtOOL_JOY2bUTTON5                   0xdddd066c
-#define ifcIDtYPEtOOL_JOY2bUTTON6                   0xdddd066d
-#define ifcIDtYPEtOOL_JOY2bUTTON7                   0xdddd066e
-#define ifcIDtYPEtOOL_JOY2bUTTON8                   0xdddd066f
-#define ifcIDtYPEtOOL_JOY2bUTTON9                   0xdddd0670
-#define ifcIDtYPEtOOL_JOY2bUTTONa                   0xdddd0671
-#define ifcIDtYPEtOOL_JOY2bUTTONb                   0xdddd0672
-#define ifcIDtYPEtOOL_JOY2bUTTONc                   0xdddd0673
-#define ifcIDtYPEtOOL_JOY2bUTTONd                   0xdddd0674
-#define ifcIDtYPEtOOL_JOY2bUTTONe                   0xdddd0675
-#define ifcIDtYPEtOOL_JOY2bUTTONf                   0xdddd0676
-#define ifcIDtYPEtOOL_JOY2bUTTON01                  0xdddd0677
-#define ifcIDtYPEtOOL_JOY2bUTTON11                  0xdddd0678
-#define ifcIDtYPEtOOL_JOY2bUTTON21                  0xdddd0679
-#define ifcIDtYPEtOOL_JOY2bUTTON31                  0xdddd067a
-#define ifcIDtYPEtOOL_JOY2bUTTON41                  0xdddd067b
-#define ifcIDtYPEtOOL_JOY2bUTTON51                  0xdddd067c
-#define ifcIDtYPEtOOL_JOY2bUTTON61                  0xdddd067d
-#define ifcIDtYPEtOOL_JOY2bUTTON71                  0xdddd067e
-#define ifcIDtYPEtOOL_JOY2bUTTON81                  0xdddd067f
-#define ifcIDtYPEtOOL_JOY2bUTTON91                  0xdddd0680
-#define ifcIDtYPEtOOL_JOY2bUTTONa1                  0xdddd0681
-#define ifcIDtYPEtOOL_JOY2bUTTONb1                  0xdddd0682
-#define ifcIDtYPEtOOL_JOY2bUTTONc1                  0xdddd0683
-#define ifcIDtYPEtOOL_JOY2bUTTONd1                  0xdddd0684
-#define ifcIDtYPEtOOL_JOY2bUTTONe1                  0xdddd0685
-#define ifcIDtYPEtOOL_JOY2bUTTONf1                  0xdddd0686
-#define ifcIDtYPEtOOL_JOY2bUTTON02                  0xdddd0687
-#define ifcIDtYPEtOOL_x2Begin                       0xdddd0688
-#define ifcIDtYPEtOOL_MOUSEpOSITION                 0xdddd0689
-#define ifcIDtYPEtOOL_x2End                         0xdddd068a
-#define ifcIDtYPEtOOL_x7Begin                       0xdddd068b
-#define ifcIDtYPEtOOL_JOY1pOSITION                  0xdddd068c
-#define ifcIDtYPEtOOL_JOY2pOSITION                  0xdddd068d
-#define ifcIDtYPEtOOL_x7End                         0xdddd068e
-#define ifcIDtYPEtOOL_end                           0xdddd068f
+#define ifcIDtYPEtOOL_begin                         0xdddd05b3
+#define ifcIDtYPEtOOL_a                             0xdddd05b4
+#define ifcIDtYPEtOOL_b                             0xdddd05b5
+#define ifcIDtYPEtOOL_c                             0xdddd05b6
+#define ifcIDtYPEtOOL_d                             0xdddd05b7
+#define ifcIDtYPEtOOL_e                             0xdddd05b8
+#define ifcIDtYPEtOOL_f                             0xdddd05b9
+#define ifcIDtYPEtOOL_g                             0xdddd05ba
+#define ifcIDtYPEtOOL_h                             0xdddd05bb
+#define ifcIDtYPEtOOL_i                             0xdddd05bc
+#define ifcIDtYPEtOOL_j                             0xdddd05bd
+#define ifcIDtYPEtOOL_k                             0xdddd05be
+#define ifcIDtYPEtOOL_l                             0xdddd05bf
+#define ifcIDtYPEtOOL_m                             0xdddd05c0
+#define ifcIDtYPEtOOL_n                             0xdddd05c1
+#define ifcIDtYPEtOOL_o                             0xdddd05c2
+#define ifcIDtYPEtOOL_p                             0xdddd05c3
+#define ifcIDtYPEtOOL_q                             0xdddd05c4
+#define ifcIDtYPEtOOL_r                             0xdddd05c5
+#define ifcIDtYPEtOOL_s                             0xdddd05c6
+#define ifcIDtYPEtOOL_t                             0xdddd05c7
+#define ifcIDtYPEtOOL_u                             0xdddd05c8
+#define ifcIDtYPEtOOL_v                             0xdddd05c9
+#define ifcIDtYPEtOOL_w                             0xdddd05ca
+#define ifcIDtYPEtOOL_x                             0xdddd05cb
+#define ifcIDtYPEtOOL_y                             0xdddd05cc
+#define ifcIDtYPEtOOL_z                             0xdddd05cd
+#define ifcIDtYPEtOOL_A                             0xdddd05ce
+#define ifcIDtYPEtOOL_B                             0xdddd05cf
+#define ifcIDtYPEtOOL_C                             0xdddd05d0
+#define ifcIDtYPEtOOL_D                             0xdddd05d1
+#define ifcIDtYPEtOOL_E                             0xdddd05d2
+#define ifcIDtYPEtOOL_F                             0xdddd05d3
+#define ifcIDtYPEtOOL_G                             0xdddd05d4
+#define ifcIDtYPEtOOL_H                             0xdddd05d5
+#define ifcIDtYPEtOOL_I                             0xdddd05d6
+#define ifcIDtYPEtOOL_J                             0xdddd05d7
+#define ifcIDtYPEtOOL_K                             0xdddd05d8
+#define ifcIDtYPEtOOL_L                             0xdddd05d9
+#define ifcIDtYPEtOOL_M                             0xdddd05da
+#define ifcIDtYPEtOOL_N                             0xdddd05db
+#define ifcIDtYPEtOOL_O                             0xdddd05dc
+#define ifcIDtYPEtOOL_P                             0xdddd05dd
+#define ifcIDtYPEtOOL_Q                             0xdddd05de
+#define ifcIDtYPEtOOL_R                             0xdddd05df
+#define ifcIDtYPEtOOL_S                             0xdddd05e0
+#define ifcIDtYPEtOOL_T                             0xdddd05e1
+#define ifcIDtYPEtOOL_U                             0xdddd05e2
+#define ifcIDtYPEtOOL_V                             0xdddd05e3
+#define ifcIDtYPEtOOL_W                             0xdddd05e4
+#define ifcIDtYPEtOOL_X                             0xdddd05e5
+#define ifcIDtYPEtOOL_Y                             0xdddd05e6
+#define ifcIDtYPEtOOL_Z                             0xdddd05e7
+#define ifcIDtYPEtOOL_0                             0xdddd05e8
+#define ifcIDtYPEtOOL_1                             0xdddd05e9
+#define ifcIDtYPEtOOL_2                             0xdddd05ea
+#define ifcIDtYPEtOOL_3                             0xdddd05eb
+#define ifcIDtYPEtOOL_4                             0xdddd05ec
+#define ifcIDtYPEtOOL_5                             0xdddd05ed
+#define ifcIDtYPEtOOL_6                             0xdddd05ee
+#define ifcIDtYPEtOOL_7                             0xdddd05ef
+#define ifcIDtYPEtOOL_8                             0xdddd05f0
+#define ifcIDtYPEtOOL_9                             0xdddd05f1
+#define ifcIDtYPEtOOL_PAD0                          0xdddd05f2
+#define ifcIDtYPEtOOL_PAD1                          0xdddd05f3
+#define ifcIDtYPEtOOL_PAD2                          0xdddd05f4
+#define ifcIDtYPEtOOL_PAD3                          0xdddd05f5
+#define ifcIDtYPEtOOL_PAD4                          0xdddd05f6
+#define ifcIDtYPEtOOL_PAD5                          0xdddd05f7
+#define ifcIDtYPEtOOL_PAD6                          0xdddd05f8
+#define ifcIDtYPEtOOL_PAD7                          0xdddd05f9
+#define ifcIDtYPEtOOL_PAD8                          0xdddd05fa
+#define ifcIDtYPEtOOL_PAD9                          0xdddd05fb
+#define ifcIDtYPEtOOL_ACCENT                        0xdddd05fc
+#define ifcIDtYPEtOOL_AND                           0xdddd05fd
+#define ifcIDtYPEtOOL_AT                            0xdddd05fe
+#define ifcIDtYPEtOOL_BACKsLASH                     0xdddd05ff
+#define ifcIDtYPEtOOL_CARET                         0xdddd0600
+#define ifcIDtYPEtOOL_COLON                         0xdddd0601
+#define ifcIDtYPEtOOL_COMMA                         0xdddd0602
+#define ifcIDtYPEtOOL_CURLEYcLOSE                   0xdddd0603
+#define ifcIDtYPEtOOL_CURLEYoPEN                    0xdddd0604
+#define ifcIDtYPEtOOL_DIVIDE                        0xdddd0605
+#define ifcIDtYPEtOOL_DIVIDEnUM                     0xdddd0606
+#define ifcIDtYPEtOOL_DOLLAR                        0xdddd0607
+#define ifcIDtYPEtOOL_EQUALS                        0xdddd0608
+#define ifcIDtYPEtOOL_EXCLAIM                       0xdddd0609
+#define ifcIDtYPEtOOL_GREATERtHAN                   0xdddd060a
+#define ifcIDtYPEtOOL_LESStHAN                      0xdddd060b
+#define ifcIDtYPEtOOL_MINUS                         0xdddd060c
+#define ifcIDtYPEtOOL_MINUSnUM                      0xdddd060d
+#define ifcIDtYPEtOOL_MULTIPLY                      0xdddd060e
+#define ifcIDtYPEtOOL_MULTIPLYnUM                   0xdddd060f
+#define ifcIDtYPEtOOL_OR                            0xdddd0610
+#define ifcIDtYPEtOOL_PARENcLOSE                    0xdddd0611
+#define ifcIDtYPEtOOL_PARENoPEN                     0xdddd0612
+#define ifcIDtYPEtOOL_PERCENT                       0xdddd0613
+#define ifcIDtYPEtOOL_PERIOD                        0xdddd0614
+#define ifcIDtYPEtOOL_PERIODnUM                     0xdddd0615
+#define ifcIDtYPEtOOL_PLUS                          0xdddd0616
+#define ifcIDtYPEtOOL_PLUSnUM                       0xdddd0617
+#define ifcIDtYPEtOOL_POUND                         0xdddd0618
+#define ifcIDtYPEtOOL_QUESTION                      0xdddd0619
+#define ifcIDtYPEtOOL_QUOTEdOUBLE                   0xdddd061a
+#define ifcIDtYPEtOOL_QUOTEsINGLE                   0xdddd061b
+#define ifcIDtYPEtOOL_SEMICOLON                     0xdddd061c
+#define ifcIDtYPEtOOL_SPACE                         0xdddd061d
+#define ifcIDtYPEtOOL_SQUAREcLOSE                   0xdddd061e
+#define ifcIDtYPEtOOL_SQUAREoPEN                    0xdddd061f
+#define ifcIDtYPEtOOL_TILDE                         0xdddd0620
+#define ifcIDtYPEtOOL_UNDERSCORE                    0xdddd0621
+#define ifcIDtYPEtOOL_CONTROLbEGIN                  0xdddd0622
+#define ifcIDtYPEtOOL_ALT                           0xdddd0623
+#define ifcIDtYPEtOOL_ALTrIGHT                      0xdddd0624
+#define ifcIDtYPEtOOL_BACKSPACE                     0xdddd0625
+#define ifcIDtYPEtOOL_BASEoScELLlIST                0xdddd0626
+#define ifcIDtYPEtOOL_BASEoSlEFT                    0xdddd0627
+#define ifcIDtYPEtOOL_BASEoSrIGHT                   0xdddd0628
+#define ifcIDtYPEtOOL_CONTROL                       0xdddd0629
+#define ifcIDtYPEtOOL_CONTROLrIGHT                  0xdddd062a
+#define ifcIDtYPEtOOL_DELETE                        0xdddd062b
+#define ifcIDtYPEtOOL_DELETEnUM                     0xdddd062c
+#define ifcIDtYPEtOOL_DOWN                          0xdddd062d
+#define ifcIDtYPEtOOL_DOWNnUM                       0xdddd062e
+#define ifcIDtYPEtOOL_END                           0xdddd062f
+#define ifcIDtYPEtOOL_ENDnUM                        0xdddd0630
+#define ifcIDtYPEtOOL_ENTER                         0xdddd0631
+#define ifcIDtYPEtOOL_ENTERnUM                      0xdddd0632
+#define ifcIDtYPEtOOL_ESCAPE                        0xdddd0633
+#define ifcIDtYPEtOOL_F1                            0xdddd0634
+#define ifcIDtYPEtOOL_F2                            0xdddd0635
+#define ifcIDtYPEtOOL_F3                            0xdddd0636
+#define ifcIDtYPEtOOL_F4                            0xdddd0637
+#define ifcIDtYPEtOOL_F5                            0xdddd0638
+#define ifcIDtYPEtOOL_F6                            0xdddd0639
+#define ifcIDtYPEtOOL_F7                            0xdddd063a
+#define ifcIDtYPEtOOL_F8                            0xdddd063b
+#define ifcIDtYPEtOOL_F9                            0xdddd063c
+#define ifcIDtYPEtOOL_F10                           0xdddd063d
+#define ifcIDtYPEtOOL_F11                           0xdddd063e
+#define ifcIDtYPEtOOL_F12                           0xdddd063f
+#define ifcIDtYPEtOOL_HOME                          0xdddd0640
+#define ifcIDtYPEtOOL_HOMEnUM                       0xdddd0641
+#define ifcIDtYPEtOOL_INSERT                        0xdddd0642
+#define ifcIDtYPEtOOL_INSERTnUM                     0xdddd0643
+#define ifcIDtYPEtOOL_LEFT                          0xdddd0644
+#define ifcIDtYPEtOOL_LEFTnUM                       0xdddd0645
+#define ifcIDtYPEtOOL_LOCKcAPS                      0xdddd0646
+#define ifcIDtYPEtOOL_LOCKnUM                       0xdddd0647
+#define ifcIDtYPEtOOL_LOCKsCROLL                    0xdddd0648
+#define ifcIDtYPEtOOL_NULLnUM                       0xdddd0649
+#define ifcIDtYPEtOOL_PAGEdOWN                      0xdddd064a
+#define ifcIDtYPEtOOL_PAGEdOWNnUM                   0xdddd064b
+#define ifcIDtYPEtOOL_PAGEuP                        0xdddd064c
+#define ifcIDtYPEtOOL_PAGEuPnUM                     0xdddd064d
+#define ifcIDtYPEtOOL_BREAK                         0xdddd064e
+#define ifcIDtYPEtOOL_PAUSE                         0xdddd064f
+#define ifcIDtYPEtOOL_RIGHT                         0xdddd0650
+#define ifcIDtYPEtOOL_RIGHTnUM                      0xdddd0651
+#define ifcIDtYPEtOOL_SHIFT                         0xdddd0652
+#define ifcIDtYPEtOOL_SHIFTrIGHT                    0xdddd0653
+#define ifcIDtYPEtOOL_TAB                           0xdddd0654
+#define ifcIDtYPEtOOL_TABbACK                       0xdddd0655
+#define ifcIDtYPEtOOL_UP                            0xdddd0656
+#define ifcIDtYPEtOOL_UPnUM                         0xdddd0657
+#define ifcIDtYPEtOOL_CONTROLeND                    0xdddd0658
+#define ifcIDtYPEtOOL_MOUSEbUTTONlEFT               0xdddd0659
+#define ifcIDtYPEtOOL_MOUSEbUTTONcENTER             0xdddd065a
+#define ifcIDtYPEtOOL_MOUSEbUTTONrIGHT              0xdddd065b
+#define ifcIDtYPEtOOL_JOY1bUTTON1                   0xdddd065c
+#define ifcIDtYPEtOOL_JOY1bUTTON2                   0xdddd065d
+#define ifcIDtYPEtOOL_JOY1bUTTON3                   0xdddd065e
+#define ifcIDtYPEtOOL_JOY1bUTTON4                   0xdddd065f
+#define ifcIDtYPEtOOL_JOY1bUTTON5                   0xdddd0660
+#define ifcIDtYPEtOOL_JOY1bUTTON6                   0xdddd0661
+#define ifcIDtYPEtOOL_JOY1bUTTON7                   0xdddd0662
+#define ifcIDtYPEtOOL_JOY1bUTTON8                   0xdddd0663
+#define ifcIDtYPEtOOL_JOY1bUTTON9                   0xdddd0664
+#define ifcIDtYPEtOOL_JOY1bUTTONa                   0xdddd0665
+#define ifcIDtYPEtOOL_JOY1bUTTONb                   0xdddd0666
+#define ifcIDtYPEtOOL_JOY1bUTTONc                   0xdddd0667
+#define ifcIDtYPEtOOL_JOY1bUTTONd                   0xdddd0668
+#define ifcIDtYPEtOOL_JOY1bUTTONe                   0xdddd0669
+#define ifcIDtYPEtOOL_JOY1bUTTONf                   0xdddd066a
+#define ifcIDtYPEtOOL_JOY1bUTTON01                  0xdddd066b
+#define ifcIDtYPEtOOL_JOY1bUTTON11                  0xdddd066c
+#define ifcIDtYPEtOOL_JOY1bUTTON21                  0xdddd066d
+#define ifcIDtYPEtOOL_JOY1bUTTON31                  0xdddd066e
+#define ifcIDtYPEtOOL_JOY1bUTTON41                  0xdddd066f
+#define ifcIDtYPEtOOL_JOY1bUTTON51                  0xdddd0670
+#define ifcIDtYPEtOOL_JOY1bUTTON61                  0xdddd0671
+#define ifcIDtYPEtOOL_JOY1bUTTON71                  0xdddd0672
+#define ifcIDtYPEtOOL_JOY1bUTTON81                  0xdddd0673
+#define ifcIDtYPEtOOL_JOY1bUTTON91                  0xdddd0674
+#define ifcIDtYPEtOOL_JOY1bUTTONa1                  0xdddd0675
+#define ifcIDtYPEtOOL_JOY1bUTTONb1                  0xdddd0676
+#define ifcIDtYPEtOOL_JOY1bUTTONc1                  0xdddd0677
+#define ifcIDtYPEtOOL_JOY1bUTTONd1                  0xdddd0678
+#define ifcIDtYPEtOOL_JOY1bUTTONe1                  0xdddd0679
+#define ifcIDtYPEtOOL_JOY1bUTTONf1                  0xdddd067a
+#define ifcIDtYPEtOOL_JOY1bUTTON02                  0xdddd067b
+#define ifcIDtYPEtOOL_JOY2bUTTON1                   0xdddd067c
+#define ifcIDtYPEtOOL_JOY2bUTTON2                   0xdddd067d
+#define ifcIDtYPEtOOL_JOY2bUTTON3                   0xdddd067e
+#define ifcIDtYPEtOOL_JOY2bUTTON4                   0xdddd067f
+#define ifcIDtYPEtOOL_JOY2bUTTON5                   0xdddd0680
+#define ifcIDtYPEtOOL_JOY2bUTTON6                   0xdddd0681
+#define ifcIDtYPEtOOL_JOY2bUTTON7                   0xdddd0682
+#define ifcIDtYPEtOOL_JOY2bUTTON8                   0xdddd0683
+#define ifcIDtYPEtOOL_JOY2bUTTON9                   0xdddd0684
+#define ifcIDtYPEtOOL_JOY2bUTTONa                   0xdddd0685
+#define ifcIDtYPEtOOL_JOY2bUTTONb                   0xdddd0686
+#define ifcIDtYPEtOOL_JOY2bUTTONc                   0xdddd0687
+#define ifcIDtYPEtOOL_JOY2bUTTONd                   0xdddd0688
+#define ifcIDtYPEtOOL_JOY2bUTTONe                   0xdddd0689
+#define ifcIDtYPEtOOL_JOY2bUTTONf                   0xdddd068a
+#define ifcIDtYPEtOOL_JOY2bUTTON01                  0xdddd068b
+#define ifcIDtYPEtOOL_JOY2bUTTON11                  0xdddd068c
+#define ifcIDtYPEtOOL_JOY2bUTTON21                  0xdddd068d
+#define ifcIDtYPEtOOL_JOY2bUTTON31                  0xdddd068e
+#define ifcIDtYPEtOOL_JOY2bUTTON41                  0xdddd068f
+#define ifcIDtYPEtOOL_JOY2bUTTON51                  0xdddd0690
+#define ifcIDtYPEtOOL_JOY2bUTTON61                  0xdddd0691
+#define ifcIDtYPEtOOL_JOY2bUTTON71                  0xdddd0692
+#define ifcIDtYPEtOOL_JOY2bUTTON81                  0xdddd0693
+#define ifcIDtYPEtOOL_JOY2bUTTON91                  0xdddd0694
+#define ifcIDtYPEtOOL_JOY2bUTTONa1                  0xdddd0695
+#define ifcIDtYPEtOOL_JOY2bUTTONb1                  0xdddd0696
+#define ifcIDtYPEtOOL_JOY2bUTTONc1                  0xdddd0697
+#define ifcIDtYPEtOOL_JOY2bUTTONd1                  0xdddd0698
+#define ifcIDtYPEtOOL_JOY2bUTTONe1                  0xdddd0699
+#define ifcIDtYPEtOOL_JOY2bUTTONf1                  0xdddd069a
+#define ifcIDtYPEtOOL_JOY2bUTTON02                  0xdddd069b
+#define ifcIDtYPEtOOL_x2Begin                       0xdddd069c
+#define ifcIDtYPEtOOL_MOUSEpOSITION                 0xdddd069d
+#define ifcIDtYPEtOOL_x2End                         0xdddd069e
+#define ifcIDtYPEtOOL_x7Begin                       0xdddd069f
+#define ifcIDtYPEtOOL_JOY1pOSITION                  0xdddd06a0
+#define ifcIDtYPEtOOL_JOY2pOSITION                  0xdddd06a1
+#define ifcIDtYPEtOOL_x7End                         0xdddd06a2
+#define ifcIDtYPEtOOL_end                           0xdddd06a3
 /*3*/
-#define ifcIDtYPEtOOL_min     0xdddd059f
-#define ifcIDtYPEtOOL_max     0xdddd068f
+#define ifcIDtYPEtOOL_min     0xdddd05b3
+#define ifcIDtYPEtOOL_max     0xdddd06a3
 
 
 //
@@ -18877,17 +18002,17 @@ if cBitsP is f then 01 bits is indicated
 //CODEsYNC: 00102a0 2e40104
 
 /*3*/
-#define ifcIDtINnAMED_tinVeryVeryEarlyLateMainI 0xdddd0690
-#define ifcIDtINnAMED_tinHeartI                 0xdddd0691
-#define ifcIDtINnAMED_tinVeryEarlyLateMainI     0xdddd0692
-#define ifcIDtINnAMED_tinBreakI                 0xdddd0693
-#define ifcIDtINnAMED_tinEarlyLateMain          0xdddd0694
-#define ifcIDtINnAMED_tinInPoolMain             0xdddd0695
-#define ifcIDtINnAMED_tinEarlyLate              0xdddd0696
-#define ifcIDtINnAMED_tinInPool                 0xdddd0697
+#define ifcIDtINnAMED_tinVeryVeryEarlyLateMainI 0xdddd06a4
+#define ifcIDtINnAMED_tinHeartI                 0xdddd06a5
+#define ifcIDtINnAMED_tinVeryEarlyLateMainI     0xdddd06a6
+#define ifcIDtINnAMED_tinBreakI                 0xdddd06a7
+#define ifcIDtINnAMED_tinEarlyLateMain          0xdddd06a8
+#define ifcIDtINnAMED_tinInPoolMain             0xdddd06a9
+#define ifcIDtINnAMED_tinEarlyLate              0xdddd06aa
+#define ifcIDtINnAMED_tinInPool                 0xdddd06ab
 /*3*/
-#define ifcIDtINnAMED_min     0xdddd0690
-#define ifcIDtINnAMED_max     0xdddd0697
+#define ifcIDtINnAMED_min     0xdddd06a4
+#define ifcIDtINnAMED_max     0xdddd06ab
 
 
 //
@@ -18942,15 +18067,15 @@ if cBitsP is f then 01 bits is indicated
 /*1*//*ifcIDtYPEdRAWINGtOOL*//*1*/
 
 /*3*/
-#define ifcIDtYPEdRAWINGtOOL_FONT                  0xdddd0698
-#define ifcIDtYPEdRAWINGtOOL_PEN                   0xdddd0699
-#define ifcIDtYPEdRAWINGtOOL_BRUSH                 0xdddd069a
-#define ifcIDtYPEdRAWINGtOOL_BITMAP                0xdddd069b
-#define ifcIDtYPEdRAWINGtOOL_BITMAPmONOCHROME      0xdddd069c
-#define ifcIDtYPEdRAWINGtOOL_REGIONrECTANGLE       0xdddd069d
+#define ifcIDtYPEdRAWINGtOOL_FONT                  0xdddd06ac
+#define ifcIDtYPEdRAWINGtOOL_PEN                   0xdddd06ad
+#define ifcIDtYPEdRAWINGtOOL_BRUSH                 0xdddd06ae
+#define ifcIDtYPEdRAWINGtOOL_BITMAP                0xdddd06af
+#define ifcIDtYPEdRAWINGtOOL_BITMAPmONOCHROME      0xdddd06b0
+#define ifcIDtYPEdRAWINGtOOL_REGIONrECTANGLE       0xdddd06b1
 /*3*/
-#define ifcIDtYPEdRAWINGtOOL_min     0xdddd0698
-#define ifcIDtYPEdRAWINGtOOL_max     0xdddd069d
+#define ifcIDtYPEdRAWINGtOOL_min     0xdddd06ac
+#define ifcIDtYPEdRAWINGtOOL_max     0xdddd06b1
 
 
 //
@@ -19596,12 +18721,12 @@ if cBitsP is f then 01 bits is indicated
 //ALPHABETICAL
 
 /*3*/
-#define ifcIDaDAMcLASS_GLASS2               0xdddd069e
-#define ifcIDaDAMcLASS_BANG                  0xdddd069f
-#define ifcIDaDAMcLASS_APPLICATIONS                 0xdddd06a0
+#define ifcIDaDAMcLASS_GLASS2               0xdddd06b2
+#define ifcIDaDAMcLASS_BANG                  0xdddd06b3
+#define ifcIDaDAMcLASS_APPLICATIONS                 0xdddd06b4
 /*3*/
-#define ifcIDaDAMcLASS_min     0xdddd069e
-#define ifcIDaDAMcLASS_max     0xdddd06a0
+#define ifcIDaDAMcLASS_min     0xdddd06b2
+#define ifcIDaDAMcLASS_max     0xdddd06b4
 
 
 //
@@ -20064,15 +19189,15 @@ after i return, that countT object will contain 1
 /**/
 
 /*3*/
-#define ifcIDcMDmONITOR_POOLoLDnAMES               0xdddd06a1
-#define ifcIDcMDmONITOR_POOLoLDhEADER              0xdddd06a2
-#define ifcIDcMDmONITOR_POOLoLDwALK1               0xdddd06a3
-#define ifcIDcMDmONITOR_SAYtALLIES              0xdddd06a4
-#define ifcIDcMDmONITOR_IMAGE                   0xdddd06a5
-#define ifcIDcMDmONITOR_tinS                    0xdddd06a6
+#define ifcIDcMDmONITOR_POOLoLDnAMES               0xdddd06b5
+#define ifcIDcMDmONITOR_POOLoLDhEADER              0xdddd06b6
+#define ifcIDcMDmONITOR_POOLoLDwALK1               0xdddd06b7
+#define ifcIDcMDmONITOR_SAYtALLIES              0xdddd06b8
+#define ifcIDcMDmONITOR_IMAGE                   0xdddd06b9
+#define ifcIDcMDmONITOR_tinS                    0xdddd06ba
 /*3*/
-#define ifcIDcMDmONITOR_min     0xdddd06a1
-#define ifcIDcMDmONITOR_max     0xdddd06a6
+#define ifcIDcMDmONITOR_min     0xdddd06b5
+#define ifcIDcMDmONITOR_max     0xdddd06ba
 
 
 //
@@ -20099,15 +19224,15 @@ after i return, that countT object will contain 1
 /**/
 
 /*3*/
-#define ifcIDrEPLYmONITOR_POOLoLDnAMES             0xdddd06a7
-#define ifcIDrEPLYmONITOR_POOLoLDhEADER            0xdddd06a8
-#define ifcIDrEPLYmONITOR_POOLoLDwALK1             0xdddd06a9
-#define ifcIDrEPLYmONITOR_SAYtALLIES            0xdddd06aa
-#define ifcIDrEPLYmONITOR_IMAGE                 0xdddd06ab
-#define ifcIDrEPLYmONITOR_tinS                  0xdddd06ac
+#define ifcIDrEPLYmONITOR_POOLoLDnAMES             0xdddd06bb
+#define ifcIDrEPLYmONITOR_POOLoLDhEADER            0xdddd06bc
+#define ifcIDrEPLYmONITOR_POOLoLDwALK1             0xdddd06bd
+#define ifcIDrEPLYmONITOR_SAYtALLIES            0xdddd06be
+#define ifcIDrEPLYmONITOR_IMAGE                 0xdddd06bf
+#define ifcIDrEPLYmONITOR_tinS                  0xdddd06c0
 /*3*/
-#define ifcIDrEPLYmONITOR_min     0xdddd06a7
-#define ifcIDrEPLYmONITOR_max     0xdddd06ac
+#define ifcIDrEPLYmONITOR_min     0xdddd06bb
+#define ifcIDrEPLYmONITOR_max     0xdddd06c0
 
 
 //
@@ -20244,11 +19369,11 @@ after i return, that countT object will contain 1
 //#define ifcIDtYPEpAINT_INVERT
 
 /*3*/
-#define ifcIDtYPEpAINT_OPAQUE           0xdddd06ad
-#define ifcIDtYPEpAINT_XOR              0xdddd06ae
+#define ifcIDtYPEpAINT_OPAQUE           0xdddd06c1
+#define ifcIDtYPEpAINT_XOR              0xdddd06c2
 /*3*/
-#define ifcIDtYPEpAINT_min     0xdddd06ad
-#define ifcIDtYPEpAINT_max     0xdddd06ae
+#define ifcIDtYPEpAINT_min     0xdddd06c1
+#define ifcIDtYPEpAINT_max     0xdddd06c2
 
 
 //
@@ -20437,16 +19562,16 @@ i am used with a soulC object to use that object as a forth-like program executo
 /**/
 
 /*3*/
-#define ifcIDcMDbASE_CLASSnAME          0xdddd06af
-#define ifcIDcMDbASE_INSTANCEnAME       0xdddd06b0
-#define ifcIDcMDbASE_TICK               0xdddd06b1
-#define ifcIDcMDbASE_TOCK               0xdddd06b2
-#define ifcIDcMDbASE_REFERENCE          0xdddd06b3
-#define ifcIDcMDbASE_CMDdEFAULT         0xdddd06b4
-#define ifcIDcMDbASE_CMDsPECIFIED       0xdddd06b5
+#define ifcIDcMDbASE_CLASSnAME          0xdddd06c3
+#define ifcIDcMDbASE_INSTANCEnAME       0xdddd06c4
+#define ifcIDcMDbASE_TICK               0xdddd06c5
+#define ifcIDcMDbASE_TOCK               0xdddd06c6
+#define ifcIDcMDbASE_REFERENCE          0xdddd06c7
+#define ifcIDcMDbASE_CMDdEFAULT         0xdddd06c8
+#define ifcIDcMDbASE_CMDsPECIFIED       0xdddd06c9
 /*3*/
-#define ifcIDcMDbASE_min     0xdddd06af
-#define ifcIDcMDbASE_max     0xdddd06b5
+#define ifcIDcMDbASE_min     0xdddd06c3
+#define ifcIDcMDbASE_max     0xdddd06c9
 
 
 //
@@ -20592,10 +19717,10 @@ i am used with a soulC object to use that object as a forth-like program executo
 /*1*//*IDcMDwORD*//*1*/
 
 /*3*/
-#define IDcMDwORD_DEFINE            0xdddd06b6
+#define IDcMDwORD_DEFINE            0xdddd06ca
 /*3*/
-#define IDcMDwORD_min     0xdddd06b6
-#define IDcMDwORD_max     0xdddd06b6
+#define IDcMDwORD_min     0xdddd06ca
+#define IDcMDwORD_max     0xdddd06ca
 
 
 //
@@ -21155,18 +20280,18 @@ i am used with a soulC object to use that object as a forth-like program executo
 /**/
 /*1*//*ifcOLDiDtYPEbAG*//*1*/
 /*3*/
-#define ifcOLDiDtYPEbAG_SERVERoK                    0xdddd06b7
-#define ifcOLDiDtYPEbAG_CLIENTnULL                  0xdddd06b8
-#define ifcOLDiDtYPEbAG_CLIENTpOPhELLO              0xdddd06b9
-#define ifcOLDiDtYPEbAG_CLIENTpOPbYE                0xdddd06ba
-#define ifcOLDiDtYPEbAG_CLIENTpOPpING               0xdddd06bb
-#define ifcOLDiDtYPEbAG_CLIENTpOPpONG               0xdddd06bc
-#define ifcOLDiDtYPEbAG_CLIENTpOPgOSSIP             0xdddd06bd
-#define ifcOLDiDtYPEbAG_CLIENTpOPuNgOSSIP           0xdddd06be
-#define ifcOLDiDtYPEbAG_WRAP                        0xdddd06bf
+#define ifcOLDiDtYPEbAG_SERVERoK                    0xdddd06cb
+#define ifcOLDiDtYPEbAG_CLIENTnULL                  0xdddd06cc
+#define ifcOLDiDtYPEbAG_CLIENTpOPhELLO              0xdddd06cd
+#define ifcOLDiDtYPEbAG_CLIENTpOPbYE                0xdddd06ce
+#define ifcOLDiDtYPEbAG_CLIENTpOPpING               0xdddd06cf
+#define ifcOLDiDtYPEbAG_CLIENTpOPpONG               0xdddd06d0
+#define ifcOLDiDtYPEbAG_CLIENTpOPgOSSIP             0xdddd06d1
+#define ifcOLDiDtYPEbAG_CLIENTpOPuNgOSSIP           0xdddd06d2
+#define ifcOLDiDtYPEbAG_WRAP                        0xdddd06d3
 /*3*/
-#define ifcOLDiDtYPEbAG_min     0xdddd06b7
-#define ifcOLDiDtYPEbAG_max     0xdddd06bf
+#define ifcOLDiDtYPEbAG_min     0xdddd06cb
+#define ifcOLDiDtYPEbAG_max     0xdddd06d3
 
 
 //
@@ -21192,14 +20317,14 @@ i am used with a soulC object to use that object as a forth-like program executo
 /**/
 /*1*//*OLDiDtYPErELAYpOPcLIENTwORK*//*1*/
 /*3*/
-#define OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  0xdddd06c0
-#define OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 0xdddd06c1
-#define OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 0xdddd06c2
-#define OLDiDtYPErELAYpOPcLIENTwORK_LEFT     0xdddd06c3
-#define OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    0xdddd06c4
+#define OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  0xdddd06d4
+#define OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 0xdddd06d5
+#define OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 0xdddd06d6
+#define OLDiDtYPErELAYpOPcLIENTwORK_LEFT     0xdddd06d7
+#define OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    0xdddd06d8
 /*3*/
-#define OLDiDtYPErELAYpOPcLIENTwORK_min     0xdddd06c0
-#define OLDiDtYPErELAYpOPcLIENTwORK_max     0xdddd06c4
+#define OLDiDtYPErELAYpOPcLIENTwORK_min     0xdddd06d4
+#define OLDiDtYPErELAYpOPcLIENTwORK_max     0xdddd06d8
 
 
 //
@@ -21787,7 +20912,10 @@ for each previous absentee
 /**/
 /*1*//*TAG*//*1*/
 
+//20240913@1415: bitsC IS USED HERE TO ALLOW CODE THAT TAGS A NEW poolC DROP TO USE ___BITS() TO AUGMENT THE LF INFORMATION ASSOCIATED WITH THE DROP WITH ADDITIONAL INFORMATION ABOUT WHERE IN THE CODE THE DROP WAS NEW'D ; BUT THIS CAPABILITY IS NOT USED BY CURRENT CODE AND FINDING LEAKS HAS NOT BEEN A PROBLEM SO SUCH A CAPABILITY WILL LIKELY NOT EVER BE NEEDED
 
+  #define TAG(offP) LF , 0
+//#define TAG(offP) LF , (byteT*)bitsC( tinP , CbITSlIFI , 0 , (countT)(offP+1) )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -21812,7 +20940,10 @@ for each previous absentee
 /**/
 /*1*//*TAGoR*//*1*/
 
+//20240913@1415: bitsC IS USED HERE TO ALLOW CODE THAT TAGS A NEW poolC DROP TO USE ___BITS() TO AUGMENT THE LF INFORMATION ASSOCIATED WITH THE DROP WITH ADDITIONAL INFORMATION ABOUT WHERE IN THE CODE THE DROP WAS NEW'D ; BUT THIS CAPABILITY IS NOT USED BY CURRENT CODE AND FINDING LEAKS HAS NOT BEEN A PROBLEM SO SUCH A CAPABILITY WILL LIKELY NOT EVER BE NEEDED
 
+  #define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
+//#define TAGoR(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)bitsC( tinP , CbITSlIFI , (pbBitsP) , (countT)(offP+1) )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -21837,6 +20968,7 @@ for each previous absentee
 /**/
 /*1*//*CbITSlIFI*//*1*/
 
+//20240913@1342: "0010305 0010301" NOT FOUND IN ANY OTHER FILE IN dictionary FOLDER
 //CODEsYNC: 0010305 0010301: MUST BE THE SAME SIZE
 //LATER: EDIT CODE SO THAT IT WILL WORK WHEN NOT THE SAME SIZE
 
@@ -21866,7 +20998,10 @@ for each previous absentee
 /**/
 /*1*//*TAGnOtIN*//*1*/
 
+//20240913@1415: bitsC IS USED HERE TO ALLOW CODE THAT TAGS A NEW poolC DROP TO USE ___BITS() TO AUGMENT THE LF INFORMATION ASSOCIATED WITH THE DROP WITH ADDITIONAL INFORMATION ABOUT WHERE IN THE CODE THE DROP WAS NEW'D ; BUT THIS CAPABILITY IS NOT USED BY CURRENT CODE AND FINDING LEAKS HAS NOT BEEN A PROBLEM SO SUCH A CAPABILITY WILL LIKELY NOT EVER BE NEEDED
 
+  #define TAGnOtIN(offP) LF , 0
+//#define TAGnOtIN(offP) LF , (byteT*)bitsC( CbITSlIFI , 0 , (countT)(offP+1) )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -21891,7 +21026,10 @@ for each previous absentee
 /**/
 /*1*//*TAGoRnOtIN*//*1*/
 
+//20240913@1415: bitsC IS USED HERE TO ALLOW CODE THAT TAGS A NEW poolC DROP TO USE ___BITS() TO AUGMENT THE LF INFORMATION ASSOCIATED WITH THE DROP WITH ADDITIONAL INFORMATION ABOUT WHERE IN THE CODE THE DROP WAS NEW'D ; BUT THIS CAPABILITY IS NOT USED BY CURRENT CODE AND FINDING LEAKS HAS NOT BEEN A PROBLEM SO SUCH A CAPABILITY WILL LIKELY NOT EVER BE NEEDED
 
+  #define TAGoRnOtIN(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)( pbBitsP ? 0 : 0 )
+//#define TAGoRnOtIN(offP,idLineP,idiFileP,pbBitsP) (idLineP) , (idiFileP) , (byteT*)bitsC( CbITSlIFI , (pbBitsP) , (countT)(offP+1) )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -21901,7 +21039,7 @@ for each previous absentee
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120022f.tagornotin END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200230.cbtlsdefault BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200230.CBtLSmAIN BEGIN
 
 
 //
@@ -21914,20 +21052,26 @@ for each previous absentee
 /*
 */
 /**/
-/*1*//*CB tLSmAIN*//*1*/
+/*1*//*CBtLSmAIN*//*1*/
 
 //20120404: DOUBLED TO ( TOCK << 3 ) FROM ( TOCK << 2 )
 //20160526@2157: DOUBLED TO ( TOCK << 4 ) FROM ( TOCK << 3 ) BECAUSE ADDED GRAB LIST TO EXCEPTION REPORT
 //20191010@0755: DOUBLED TO ( TOCK << 5 ) BECAUSE booksC::writeF EXHAUSTED TLS WHILE DELETING bookC INSTANCE
 
 //#define CB tLSmAIN ( TOCK << 5 )
-//#define CB tLSmAIN ( TUCK << 1 )
-//    #define CB tLSmAIN ( TUCK << 4 )
-//#define CB tLSmAIN ( TOCK << 0 )
-//#define CB tLSmAIN ( TOCK >> 2 )
-//#define CB tLSmAIN ( TOCK >> 1 )
+
+//20240912@2252: TUNING OPTIMIZATION OF TLS SIZES
+//B:#define CB tLSmAIN ( TUCK << 1 )
+//B:#define CB tLSmAIN ( TUCK << 4 )
+//G:#define CB tLSmAIN ( TOCK << 0 )
+//B:#define CB tLSmAIN ( TOCK >> 2 )
+//B:#define CB tLSmAIN ( TOCK >> 1 )
+
+//20240916@1616:
 //G:#define CB tLSmAIN ( TOCK >> 0 )
-//#define CB tLSmAIN ( TOCK >> 8 )
+//G:#define CB tLSmAIN ( TOCK >> 2 )
+//G:#define CB tLSmAIN ( TOCK >> 4 )
+//G:#define CB tLSmAIN ( TOCK >> 8 )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -21936,7 +21080,7 @@ for each previous absentee
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200230.cbtlsdefault END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200230.CBtLSmAIN END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200231.flzap BEGIN
 
 
@@ -22057,8 +21201,10 @@ U::idea: define TAGiDnADA as an empty symbol and use it to mark all tag id value
 /**/
 /*1*//*TAGiDnULL*//*1*/
 
-#define TAGiDnULL 0x0
+//20240913@1415: bitsC IS USED HERE TO ALLOW CODE THAT TAGS A NEW poolC DROP TO USE ___BITS() TO AUGMENT THE LF INFORMATION ASSOCIATED WITH THE DROP WITH ADDITIONAL INFORMATION ABOUT WHERE IN THE CODE THE DROP WAS NEW'D ; BUT THIS CAPABILITY IS NOT USED BY CURRENT CODE AND FINDING LEAKS HAS NOT BEEN A PROBLEM SO SUCH A CAPABILITY WILL LIKELY NOT EVER BE NEEDED
 
+
+#define TAGiDnULL 0x0
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -22316,13 +21462,13 @@ U::idea: define TAGiDnADA as an empty symbol and use it to mark all tag id value
 /*1*//*ifcOLDiDcHANNEL1*//*1*/
 
 /*3*/
-#define ifcOLDiDcHANNEL1_GLOBAL               0xdddd06c5
-#define ifcOLDiDcHANNEL1_BYfUNCTION           0xdddd06c6
-#define ifcOLDiDcHANNEL1_BYhOME               0xdddd06c7
-#define ifcOLDiDcHANNEL1_BYpORT               0xdddd06c8
+#define ifcOLDiDcHANNEL1_GLOBAL               0xdddd06d9
+#define ifcOLDiDcHANNEL1_BYfUNCTION           0xdddd06da
+#define ifcOLDiDcHANNEL1_BYhOME               0xdddd06db
+#define ifcOLDiDcHANNEL1_BYpORT               0xdddd06dc
 /*3*/
-#define ifcOLDiDcHANNEL1_min     0xdddd06c5
-#define ifcOLDiDcHANNEL1_max     0xdddd06c8
+#define ifcOLDiDcHANNEL1_min     0xdddd06d9
+#define ifcOLDiDcHANNEL1_max     0xdddd06dc
 
 
 //
@@ -22349,20 +21495,20 @@ U::idea: define TAGiDnADA as an empty symbol and use it to mark all tag id value
 /*1*//*ifcOLDiDcHANNELfUNCTION*//*1*/
 
 /*3*/
-#define ifcOLDiDcHANNELfUNCTION_QUERYiDhOME               0xdddd06c9
-#define ifcOLDiDcHANNELfUNCTION_REPLYiDhOME               0xdddd06ca
-#define ifcOLDiDcHANNELfUNCTION_STROKEcONSOLE             0xdddd06cb
-#define ifcOLDiDcHANNELfUNCTION_SUPERrANDOMnUMBERS        0xdddd06cc
-#define ifcOLDiDcHANNELfUNCTION_SUPERrANDOMnUMBERScTRL    0xdddd06cd
-#define ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION      0xdddd06ce
-#define ifcOLDiDcHANNELfUNCTION_MEDIATORpINmENU           0xdddd06cf
-#define ifcOLDiDcHANNELfUNCTION_MEDIATED                  0xdddd06d0
-#define ifcOLDiDcHANNELfUNCTION_SECREThANDsHAKEkEY        0xdddd06d1
-#define ifcOLDiDcHANNELfUNCTION_SADAM0                    0xdddd06d2
+#define ifcOLDiDcHANNELfUNCTION_QUERYiDhOME               0xdddd06dd
+#define ifcOLDiDcHANNELfUNCTION_REPLYiDhOME               0xdddd06de
+#define ifcOLDiDcHANNELfUNCTION_STROKEcONSOLE             0xdddd06df
+#define ifcOLDiDcHANNELfUNCTION_SUPERrANDOMnUMBERS        0xdddd06e0
+#define ifcOLDiDcHANNELfUNCTION_SUPERrANDOMnUMBERScTRL    0xdddd06e1
+#define ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION      0xdddd06e2
+#define ifcOLDiDcHANNELfUNCTION_MEDIATORpINmENU           0xdddd06e3
+#define ifcOLDiDcHANNELfUNCTION_MEDIATED                  0xdddd06e4
+#define ifcOLDiDcHANNELfUNCTION_SECREThANDsHAKEkEY        0xdddd06e5
+#define ifcOLDiDcHANNELfUNCTION_SADAM0                    0xdddd06e6
 
 /*3*/
-#define ifcOLDiDcHANNELfUNCTION_min     0xdddd06c9
-#define ifcOLDiDcHANNELfUNCTION_max     0xdddd06d2
+#define ifcOLDiDcHANNELfUNCTION_min     0xdddd06dd
+#define ifcOLDiDcHANNELfUNCTION_max     0xdddd06e6
 
 
 //
@@ -22389,14 +21535,14 @@ U::idea: define TAGiDnADA as an empty symbol and use it to mark all tag id value
 /*1*//*ifcOLDiDtYPEgIFT*//*1*/
 
 /*3*/
-#define ifcOLDiDtYPEgIFT_MEDIATE                       0xdddd06d3
-#define ifcOLDiDtYPEgIFT_APPLICATION                   0xdddd06d4
-#define ifcOLDiDtYPEgIFT_REPLYrELAYrANK                0xdddd06d5
-#define ifcOLDiDtYPEgIFT_REPLYrELAYiDpORTtIMEc         0xdddd06d6
-#define ifcOLDiDtYPEgIFT_REPLYrELAYiDpORTtIMEcaLLhOMES 0xdddd06d7
+#define ifcOLDiDtYPEgIFT_MEDIATE                       0xdddd06e7
+#define ifcOLDiDtYPEgIFT_APPLICATION                   0xdddd06e8
+#define ifcOLDiDtYPEgIFT_REPLYrELAYrANK                0xdddd06e9
+#define ifcOLDiDtYPEgIFT_REPLYrELAYiDpORTtIMEc         0xdddd06ea
+#define ifcOLDiDtYPEgIFT_REPLYrELAYiDpORTtIMEcaLLhOMES 0xdddd06eb
 /*3*/
-#define ifcOLDiDtYPEgIFT_min     0xdddd06d3
-#define ifcOLDiDtYPEgIFT_max     0xdddd06d7
+#define ifcOLDiDtYPEgIFT_min     0xdddd06e7
+#define ifcOLDiDtYPEgIFT_max     0xdddd06eb
 
 
 //
@@ -22452,14 +21598,14 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 //THESE MUST BE IN THREAD PHASE ORDER, I.E. LATER PHASES MUST HAVE HIGHER id VALUES
 
 /*3*/
-#define ifcIDpHASEtHREAD_PROLOG      0xdddd06d8
-#define ifcIDpHASEtHREAD_WORKING     0xdddd06d9
-#define ifcIDpHASEtHREAD_QUITTING    0xdddd06da
-#define ifcIDpHASEtHREAD_EPILOGkIDS  0xdddd06db
-#define ifcIDpHASEtHREAD_EPILOGnOkIDS 0xdddd06dc
+#define ifcIDpHASEtHREAD_PROLOG      0xdddd06ec
+#define ifcIDpHASEtHREAD_WORKING     0xdddd06ed
+#define ifcIDpHASEtHREAD_QUITTING    0xdddd06ee
+#define ifcIDpHASEtHREAD_EPILOGkIDS  0xdddd06ef
+#define ifcIDpHASEtHREAD_EPILOGnOkIDS 0xdddd06f0
 /*3*/
-#define ifcIDpHASEtHREAD_min     0xdddd06d8
-#define ifcIDpHASEtHREAD_max     0xdddd06dc
+#define ifcIDpHASEtHREAD_min     0xdddd06ec
+#define ifcIDpHASEtHREAD_max     0xdddd06f0
 
 
 //
@@ -22488,134 +21634,134 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 //THESE MUST BE IN THREAD PHASE ORDER, I.E. LATER PHASES MUST HAVE HIGHER id VALUES
 
 /*3*/
-#define ifcIDpHASEaDAM_EXEpROLOGcONSTRUCTINGaDAMgLOBALS            0xdddd06dd
-#define ifcIDpHASEaDAM_EXEpROLOGaLLaDAMgLOBALScONSTRUCTED          0xdddd06de
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1                          0xdddd06df
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN2                          0xdddd06e0
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN3                          0xdddd06e1
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN4                          0xdddd06e2
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN5                          0xdddd06e3
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN6                          0xdddd06e4
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN7                          0xdddd06e5
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN8                          0xdddd06e6
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN9                          0xdddd06e7
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa                          0xdddd06e8
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb                          0xdddd06e9
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINc                          0xdddd06ea
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd                          0xdddd06eb
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe                          0xdddd06ec
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf                          0xdddd06ed
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN01                         0xdddd06ee
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN11                         0xdddd06ef
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN21                         0xdddd06f0
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN31                         0xdddd06f1
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN41                         0xdddd06f2
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN51                         0xdddd06f3
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN61                         0xdddd06f4
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN71                         0xdddd06f5
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN81                         0xdddd06f6
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN91                         0xdddd06f7
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa1                         0xdddd06f8
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb1                         0xdddd06f9
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINc1                         0xdddd06fa
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd1                         0xdddd06fb
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe1                         0xdddd06fc
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf1                         0xdddd06fd
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN02                         0xdddd06fe
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN12                         0xdddd06ff
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN22                         0xdddd0700
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN32                         0xdddd0701
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN42                         0xdddd0702
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN52                         0xdddd0703
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN62                         0xdddd0704
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN72                         0xdddd0705
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN82                         0xdddd0706
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN92                         0xdddd0707
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa2                         0xdddd0708
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb2                         0xdddd0709
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINc2                         0xdddd070a
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd2                         0xdddd070b
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe2                         0xdddd070c
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf2                         0xdddd070d
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN03                         0xdddd070e
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN13                         0xdddd070f
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN23                         0xdddd0710
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN33                         0xdddd0711
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN43                         0xdddd0712
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN53                         0xdddd0713
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN63                         0xdddd0714
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN73                         0xdddd0715
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN83                         0xdddd0716
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN93                         0xdddd0717
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa3                         0xdddd0718
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb3                         0xdddd0719
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINc3                         0xdddd071a
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd3                         0xdddd071b
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe3                         0xdddd071c
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf3                         0xdddd071d
-#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN04                         0xdddd071e
-#define ifcIDpHASEaDAM_DLLpROLOG1                                  0xdddd071f
-#define ifcIDpHASEaDAM_DLLpROLOG2                                  0xdddd0720
-#define ifcIDpHASEaDAM_DLLpROLOG3                                  0xdddd0721
-#define ifcIDpHASEaDAM_DLLpROLOG4                                  0xdddd0722
-#define ifcIDpHASEaDAM_DLLpROLOG5                                  0xdddd0723
-#define ifcIDpHASEaDAM_DLLpROLOG6                                  0xdddd0724
-#define ifcIDpHASEaDAM_DLLpROLOG7                                  0xdddd0725
-#define ifcIDpHASEaDAM_DLLpROLOG8                                  0xdddd0726
-#define ifcIDpHASEaDAM_DLLwORKING1                                 0xdddd0727
-#define ifcIDpHASEaDAM_DLLwORKING2                                 0xdddd0728
-#define ifcIDpHASEaDAM_DLLwORKING3                                 0xdddd0729
-#define ifcIDpHASEaDAM_DLLwORKING4                                 0xdddd072a
-#define ifcIDpHASEaDAM_DLLwORKING5                                 0xdddd072b
-#define ifcIDpHASEaDAM_DLLwORKING6                                 0xdddd072c
-#define ifcIDpHASEaDAM_DLLwORKING7                                 0xdddd072d
-#define ifcIDpHASEaDAM_DLLwORKING8                                 0xdddd072e
-#define ifcIDpHASEaDAM_DLLePILOG1                                  0xdddd072f
-#define ifcIDpHASEaDAM_DLLePILOG2                                  0xdddd0730
-#define ifcIDpHASEaDAM_DLLePILOG3                                  0xdddd0731
-#define ifcIDpHASEaDAM_DLLePILOG4                                  0xdddd0732
-#define ifcIDpHASEaDAM_DLLePILOG5                                  0xdddd0733
-#define ifcIDpHASEaDAM_DLLePILOG6                                  0xdddd0734
-#define ifcIDpHASEaDAM_DLLePILOG7                                  0xdddd0735
-#define ifcIDpHASEaDAM_DLLePILOG8                                  0xdddd0736
-#define ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE    0xdddd0737
-#define ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE              0xdddd0738
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN1                          0xdddd0739
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN2                          0xdddd073a
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN3                          0xdddd073b
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN4                          0xdddd073c
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN5                          0xdddd073d
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN6                          0xdddd073e
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN7                          0xdddd073f
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN8                          0xdddd0740
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN9                          0xdddd0741
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINa                          0xdddd0742
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINb                          0xdddd0743
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINc                          0xdddd0744
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINd                          0xdddd0745
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINe                          0xdddd0746
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINf                          0xdddd0747
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN01                         0xdddd0748
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN11                         0xdddd0749
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN21                         0xdddd074a
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN31                         0xdddd074b
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN41                         0xdddd074c
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN51                         0xdddd074d
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN61                         0xdddd074e
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN71                         0xdddd074f
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN81                         0xdddd0750
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN91                         0xdddd0751
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1                         0xdddd0752
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINb1                         0xdddd0753
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINc1                         0xdddd0754
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINd1                         0xdddd0755
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINe1                         0xdddd0756
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINf1                         0xdddd0757
-#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN02                         0xdddd0758
-#define ifcIDpHASEaDAM_EXEePILOGdESTROYINGaDAMgLOBALS              0xdddd0759
+#define ifcIDpHASEaDAM_EXEpROLOGcONSTRUCTINGaDAMgLOBALS            0xdddd06f1
+#define ifcIDpHASEaDAM_EXEpROLOGaLLaDAMgLOBALScONSTRUCTED          0xdddd06f2
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1                          0xdddd06f3
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN2                          0xdddd06f4
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN3                          0xdddd06f5
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN4                          0xdddd06f6
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN5                          0xdddd06f7
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN6                          0xdddd06f8
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN7                          0xdddd06f9
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN8                          0xdddd06fa
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN9                          0xdddd06fb
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa                          0xdddd06fc
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb                          0xdddd06fd
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINc                          0xdddd06fe
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd                          0xdddd06ff
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe                          0xdddd0700
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf                          0xdddd0701
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN01                         0xdddd0702
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN11                         0xdddd0703
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN21                         0xdddd0704
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN31                         0xdddd0705
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN41                         0xdddd0706
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN51                         0xdddd0707
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN61                         0xdddd0708
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN71                         0xdddd0709
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN81                         0xdddd070a
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN91                         0xdddd070b
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa1                         0xdddd070c
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb1                         0xdddd070d
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINc1                         0xdddd070e
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd1                         0xdddd070f
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe1                         0xdddd0710
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf1                         0xdddd0711
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN02                         0xdddd0712
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN12                         0xdddd0713
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN22                         0xdddd0714
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN32                         0xdddd0715
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN42                         0xdddd0716
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN52                         0xdddd0717
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN62                         0xdddd0718
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN72                         0xdddd0719
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN82                         0xdddd071a
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN92                         0xdddd071b
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa2                         0xdddd071c
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb2                         0xdddd071d
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINc2                         0xdddd071e
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd2                         0xdddd071f
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe2                         0xdddd0720
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf2                         0xdddd0721
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN03                         0xdddd0722
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN13                         0xdddd0723
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN23                         0xdddd0724
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN33                         0xdddd0725
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN43                         0xdddd0726
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN53                         0xdddd0727
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN63                         0xdddd0728
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN73                         0xdddd0729
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN83                         0xdddd072a
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN93                         0xdddd072b
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa3                         0xdddd072c
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb3                         0xdddd072d
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINc3                         0xdddd072e
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd3                         0xdddd072f
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINe3                         0xdddd0730
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf3                         0xdddd0731
+#define ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN04                         0xdddd0732
+#define ifcIDpHASEaDAM_DLLpROLOG1                                  0xdddd0733
+#define ifcIDpHASEaDAM_DLLpROLOG2                                  0xdddd0734
+#define ifcIDpHASEaDAM_DLLpROLOG3                                  0xdddd0735
+#define ifcIDpHASEaDAM_DLLpROLOG4                                  0xdddd0736
+#define ifcIDpHASEaDAM_DLLpROLOG5                                  0xdddd0737
+#define ifcIDpHASEaDAM_DLLpROLOG6                                  0xdddd0738
+#define ifcIDpHASEaDAM_DLLpROLOG7                                  0xdddd0739
+#define ifcIDpHASEaDAM_DLLpROLOG8                                  0xdddd073a
+#define ifcIDpHASEaDAM_DLLwORKING1                                 0xdddd073b
+#define ifcIDpHASEaDAM_DLLwORKING2                                 0xdddd073c
+#define ifcIDpHASEaDAM_DLLwORKING3                                 0xdddd073d
+#define ifcIDpHASEaDAM_DLLwORKING4                                 0xdddd073e
+#define ifcIDpHASEaDAM_DLLwORKING5                                 0xdddd073f
+#define ifcIDpHASEaDAM_DLLwORKING6                                 0xdddd0740
+#define ifcIDpHASEaDAM_DLLwORKING7                                 0xdddd0741
+#define ifcIDpHASEaDAM_DLLwORKING8                                 0xdddd0742
+#define ifcIDpHASEaDAM_DLLePILOG1                                  0xdddd0743
+#define ifcIDpHASEaDAM_DLLePILOG2                                  0xdddd0744
+#define ifcIDpHASEaDAM_DLLePILOG3                                  0xdddd0745
+#define ifcIDpHASEaDAM_DLLePILOG4                                  0xdddd0746
+#define ifcIDpHASEaDAM_DLLePILOG5                                  0xdddd0747
+#define ifcIDpHASEaDAM_DLLePILOG6                                  0xdddd0748
+#define ifcIDpHASEaDAM_DLLePILOG7                                  0xdddd0749
+#define ifcIDpHASEaDAM_DLLePILOG8                                  0xdddd074a
+#define ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE    0xdddd074b
+#define ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE              0xdddd074c
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN1                          0xdddd074d
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN2                          0xdddd074e
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN3                          0xdddd074f
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN4                          0xdddd0750
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN5                          0xdddd0751
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN6                          0xdddd0752
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN7                          0xdddd0753
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN8                          0xdddd0754
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN9                          0xdddd0755
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINa                          0xdddd0756
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINb                          0xdddd0757
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINc                          0xdddd0758
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINd                          0xdddd0759
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINe                          0xdddd075a
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINf                          0xdddd075b
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN01                         0xdddd075c
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN11                         0xdddd075d
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN21                         0xdddd075e
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN31                         0xdddd075f
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN41                         0xdddd0760
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN51                         0xdddd0761
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN61                         0xdddd0762
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN71                         0xdddd0763
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN81                         0xdddd0764
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN91                         0xdddd0765
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1                         0xdddd0766
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINb1                         0xdddd0767
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINc1                         0xdddd0768
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINd1                         0xdddd0769
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINe1                         0xdddd076a
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAINf1                         0xdddd076b
+#define ifcIDpHASEaDAM_EXEePILOGaDAMmAIN02                         0xdddd076c
+#define ifcIDpHASEaDAM_EXEePILOGdESTROYINGaDAMgLOBALS              0xdddd076d
 /*3*/
-#define ifcIDpHASEaDAM_min     0xdddd06dd
-#define ifcIDpHASEaDAM_max     0xdddd0759
+#define ifcIDpHASEaDAM_min     0xdddd06f1
+#define ifcIDpHASEaDAM_max     0xdddd076d
 
 
 //
@@ -23058,11 +22204,11 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 /*1*//*ifcIDtYPEtLSbLOBc*//*1*/
 
 /*3*/
-#define ifcIDtYPEtLSbLOBc_UNFORMATTED  0xdddd075a
-#define ifcIDtYPEtLSbLOBc_FOOT         0xdddd075b
+#define ifcIDtYPEtLSbLOBc_UNFORMATTED  0xdddd076e
+#define ifcIDtYPEtLSbLOBc_FOOT         0xdddd076f
 /*3*/
-#define ifcIDtYPEtLSbLOBc_min     0xdddd075a
-#define ifcIDtYPEtLSbLOBc_max     0xdddd075b
+#define ifcIDtYPEtLSbLOBc_min     0xdddd076e
+#define ifcIDtYPEtLSbLOBc_max     0xdddd076f
 
 
 //
@@ -23219,12 +22365,12 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 /*1*//*ifcIDtYPEtESTwATER*//*1*/
 
 /*3*/
-#define ifcIDtYPEtESTwATER_IDhOSTaDJUST      0xdddd075c
-#define ifcIDtYPEtESTwATER_ENOUGHmEMORY      0xdddd075d
-#define ifcIDtYPEtESTwATER_LOOKfORdRIVER     0xdddd075e
+#define ifcIDtYPEtESTwATER_IDhOSTaDJUST      0xdddd0770
+#define ifcIDtYPEtESTwATER_ENOUGHmEMORY      0xdddd0771
+#define ifcIDtYPEtESTwATER_LOOKfORdRIVER     0xdddd0772
 /*3*/
-#define ifcIDtYPEtESTwATER_min     0xdddd075c
-#define ifcIDtYPEtESTwATER_max     0xdddd075e
+#define ifcIDtYPEtESTwATER_min     0xdddd0770
+#define ifcIDtYPEtESTwATER_max     0xdddd0772
 
 
 //
@@ -23542,11 +22688,11 @@ examples
 /*1*//*ifcOLDiDcMDrEGISTERmEDIATOR*//*1*/
 
 /*3*/
-#define ifcOLDiDcMDrEGISTERmEDIATOR_AMaLIVE                0xdddd075f
-#define ifcOLDiDcMDrEGISTERmEDIATOR_AMdEAD                 0xdddd0760
+#define ifcOLDiDcMDrEGISTERmEDIATOR_AMaLIVE                0xdddd0773
+#define ifcOLDiDcMDrEGISTERmEDIATOR_AMdEAD                 0xdddd0774
 /*3*/
-#define ifcOLDiDcMDrEGISTERmEDIATOR_min     0xdddd075f
-#define ifcOLDiDcMDrEGISTERmEDIATOR_max     0xdddd0760
+#define ifcOLDiDcMDrEGISTERmEDIATOR_min     0xdddd0773
+#define ifcOLDiDcMDrEGISTERmEDIATOR_max     0xdddd0774
 
 
 //
@@ -23833,7 +22979,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BlATHs
 /**/
 /*1*//*TaRG1(tmFP)*//*1*/
 
-
+#define TaRG1(tmFP)                                                         tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , 0          , 0
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -24025,12 +23171,12 @@ examples
 /*1*//*ifcIDtYPEpOOP*//*1*/
 
 /*3*/
-#define ifcIDtYPEpOOP_FIRED               0xdddd0761
-#define ifcIDtYPEpOOP_GRUNT               0xdddd0762
-#define ifcIDtYPEpOOP_JUICYlUCY           0xdddd0763
+#define ifcIDtYPEpOOP_FIRED               0xdddd0775
+#define ifcIDtYPEpOOP_GRUNT               0xdddd0776
+#define ifcIDtYPEpOOP_JUICYlUCY           0xdddd0777
 /*3*/
-#define ifcIDtYPEpOOP_min     0xdddd0761
-#define ifcIDtYPEpOOP_max     0xdddd0763
+#define ifcIDtYPEpOOP_min     0xdddd0775
+#define ifcIDtYPEpOOP_max     0xdddd0777
 
 
 //
@@ -24321,13 +23467,13 @@ examples
 /*1*//*ifcIDcMDsOCKETtOPsECRET*//*1*/
 
 /*3*/
-#define ifcIDcMDsOCKETtOPsECRET_PAYLOAD                 0xdddd0764
-#define ifcIDcMDsOCKETtOPsECRET_1MYpINnAMEiS            0xdddd0765
-#define ifcIDcMDsOCKETtOPsECRET_2SENDpINiMAGEsECRETLY   0xdddd0766
-#define ifcIDcMDsOCKETtOPsECRET_3APPLYtHISpINrEFERENCE  0xdddd0767
+#define ifcIDcMDsOCKETtOPsECRET_PAYLOAD                 0xdddd0778
+#define ifcIDcMDsOCKETtOPsECRET_1MYpINnAMEiS            0xdddd0779
+#define ifcIDcMDsOCKETtOPsECRET_2SENDpINiMAGEsECRETLY   0xdddd077a
+#define ifcIDcMDsOCKETtOPsECRET_3APPLYtHISpINrEFERENCE  0xdddd077b
 /*3*/
-#define ifcIDcMDsOCKETtOPsECRET_min     0xdddd0764
-#define ifcIDcMDsOCKETtOPsECRET_max     0xdddd0767
+#define ifcIDcMDsOCKETtOPsECRET_min     0xdddd0778
+#define ifcIDcMDsOCKETtOPsECRET_max     0xdddd077b
 
 
 //
@@ -24354,13 +23500,13 @@ examples
 /*1*//*ifcIDpHASEsOCKETtOPsECRET*//*1*/
 
 /*3*/
-#define ifcIDpHASEsOCKETtOPsECRET_1SENDpINnAME            0xdddd0768
-#define ifcIDpHASEsOCKETtOPsECRET_2REQUESTpINiMAGE        0xdddd0769
-#define ifcIDpHASEsOCKETtOPsECRET_3SENDpINrEFERENCE       0xdddd076a
-#define ifcIDpHASEsOCKETtOPsECRET_4SECURED                0xdddd076b
+#define ifcIDpHASEsOCKETtOPsECRET_1SENDpINnAME            0xdddd077c
+#define ifcIDpHASEsOCKETtOPsECRET_2REQUESTpINiMAGE        0xdddd077d
+#define ifcIDpHASEsOCKETtOPsECRET_3SENDpINrEFERENCE       0xdddd077e
+#define ifcIDpHASEsOCKETtOPsECRET_4SECURED                0xdddd077f
 /*3*/
-#define ifcIDpHASEsOCKETtOPsECRET_min     0xdddd0768
-#define ifcIDpHASEsOCKETtOPsECRET_max     0xdddd076b
+#define ifcIDpHASEsOCKETtOPsECRET_min     0xdddd077c
+#define ifcIDpHASEsOCKETtOPsECRET_max     0xdddd077f
 
 
 //
@@ -24701,28 +23847,28 @@ MOUTH : determines whether events are consumed or passed along to the next adam 
 /*1*//*ifcIDtYPEfEATUREsADAM*//*1*/
 
 /*3*/
-#define ifcIDtYPEfEATUREsADAM_OWNER                             0xdddd076c
-#define ifcIDtYPEfEATUREsADAM_ADAM                              0xdddd076d
-#define ifcIDtYPEfEATUREsADAM_TABpARTICIPANT                    0xdddd076e
-#define ifcIDtYPEfEATUREsADAM_BODY                              0xdddd076f
-#define ifcIDtYPEfEATUREsADAM_CALLbACK                          0xdddd0770
-#define ifcIDtYPEfEATUREsADAM_CIO                               0xdddd0771
-#define ifcIDtYPEfEATUREsADAM_FLYOVER                           0xdddd0772
-#define ifcIDtYPEfEATUREsADAM_FLYOVERhIGHLIGHT                  0xdddd0773
-#define ifcIDtYPEfEATUREsADAM_FRAME                             0xdddd0774
-#define ifcIDtYPEfEATUREsADAM_HOTkEY                            0xdddd0775
-#define ifcIDtYPEfEATUREsADAM_INTERCOM                          0xdddd0776
-#define ifcIDtYPEfEATUREsADAM_JOYsTICK                          0xdddd0777
-#define ifcIDtYPEfEATUREsADAM_KEYBOARD                          0xdddd0778
-#define ifcIDtYPEfEATUREsADAM_MOUSE                             0xdddd0779
-#define ifcIDtYPEfEATUREsADAM_VOLATILEbODY                      0xdddd077a
-#define ifcIDtYPEfEATUREsADAM_DRAGGABLE                         0xdddd077b
-#define ifcIDtYPEfEATUREsADAM_COMMENT                           0xdddd077c
-#define ifcIDtYPEfEATUREsADAM_TOOLfILTERlIST                    0xdddd077d
-#define ifcIDtYPEfEATUREsADAM_STATErEFERENCE                    0xdddd077e
+#define ifcIDtYPEfEATUREsADAM_OWNER                             0xdddd0780
+#define ifcIDtYPEfEATUREsADAM_ADAM                              0xdddd0781
+#define ifcIDtYPEfEATUREsADAM_TABpARTICIPANT                    0xdddd0782
+#define ifcIDtYPEfEATUREsADAM_BODY                              0xdddd0783
+#define ifcIDtYPEfEATUREsADAM_CALLbACK                          0xdddd0784
+#define ifcIDtYPEfEATUREsADAM_CIO                               0xdddd0785
+#define ifcIDtYPEfEATUREsADAM_FLYOVER                           0xdddd0786
+#define ifcIDtYPEfEATUREsADAM_FLYOVERhIGHLIGHT                  0xdddd0787
+#define ifcIDtYPEfEATUREsADAM_FRAME                             0xdddd0788
+#define ifcIDtYPEfEATUREsADAM_HOTkEY                            0xdddd0789
+#define ifcIDtYPEfEATUREsADAM_INTERCOM                          0xdddd078a
+#define ifcIDtYPEfEATUREsADAM_JOYsTICK                          0xdddd078b
+#define ifcIDtYPEfEATUREsADAM_KEYBOARD                          0xdddd078c
+#define ifcIDtYPEfEATUREsADAM_MOUSE                             0xdddd078d
+#define ifcIDtYPEfEATUREsADAM_VOLATILEbODY                      0xdddd078e
+#define ifcIDtYPEfEATUREsADAM_DRAGGABLE                         0xdddd078f
+#define ifcIDtYPEfEATUREsADAM_COMMENT                           0xdddd0790
+#define ifcIDtYPEfEATUREsADAM_TOOLfILTERlIST                    0xdddd0791
+#define ifcIDtYPEfEATUREsADAM_STATErEFERENCE                    0xdddd0792
 /*3*/
-#define ifcIDtYPEfEATUREsADAM_min     0xdddd076c
-#define ifcIDtYPEfEATUREsADAM_max     0xdddd077e
+#define ifcIDtYPEfEATUREsADAM_min     0xdddd0780
+#define ifcIDtYPEfEATUREsADAM_max     0xdddd0792
 
 
 //
@@ -24941,11 +24087,11 @@ MOUTH : determines whether events are consumed or passed along to the next adam 
 /*1*//*ifcIDtYPEsADAMcHANNEL*//*1*/
 
 /*3*/
-#define ifcIDtYPEsADAMcHANNEL_OUT        0xdddd077f
-#define ifcIDtYPEsADAMcHANNEL_IN        0xdddd0780
+#define ifcIDtYPEsADAMcHANNEL_OUT        0xdddd0793
+#define ifcIDtYPEsADAMcHANNEL_IN        0xdddd0794
 /*3*/
-#define ifcIDtYPEsADAMcHANNEL_min     0xdddd077f
-#define ifcIDtYPEsADAMcHANNEL_max     0xdddd0780
+#define ifcIDtYPEsADAMcHANNEL_min     0xdddd0793
+#define ifcIDtYPEsADAMcHANNEL_max     0xdddd0794
 
 
 //
@@ -25368,23 +24514,23 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 /*1*//*ifcIDtYPEsADAMcALLbACK*//*1*/
 
 /*3*/
-#define ifcIDtYPEsADAMcALLbACK_AFTERrENDER          0xdddd0781
-#define ifcIDtYPEsADAMcALLbACK_BEFOREdESTROY        0xdddd0782
-#define ifcIDtYPEsADAMcALLbACK_PROLOG               0xdddd0783
-#define ifcIDtYPEsADAMcALLbACK_IFhIT                0xdddd0784
-#define ifcIDtYPEsADAMcALLbACK_EPILOG               0xdddd0785
-#define ifcIDtYPEsADAMcALLbACK_INTERCOM             0xdddd0786
-#define ifcIDtYPEsADAMcALLbACK_FLYOVER              0xdddd0787
-#define ifcIDtYPEsADAMcALLbACK_FLYOVERhIGHLIGHT     0xdddd0788
-#define ifcIDtYPEsADAMcALLbACK_TAB                  0xdddd0789
-#define ifcIDtYPEsADAMcALLbACK_ANIMATE              0xdddd078a
-#define ifcIDtYPEsADAMcALLbACK_HOTkEY               0xdddd078b
-#define ifcIDtYPEsADAMcALLbACK_INoUTqUERY           0xdddd078c
-#define ifcIDtYPEsADAMcALLbACK_DRAG                 0xdddd078d
-#define ifcIDtYPEsADAMcALLbACK_ERASE                0xdddd078e
+#define ifcIDtYPEsADAMcALLbACK_AFTERrENDER          0xdddd0795
+#define ifcIDtYPEsADAMcALLbACK_BEFOREdESTROY        0xdddd0796
+#define ifcIDtYPEsADAMcALLbACK_PROLOG               0xdddd0797
+#define ifcIDtYPEsADAMcALLbACK_IFhIT                0xdddd0798
+#define ifcIDtYPEsADAMcALLbACK_EPILOG               0xdddd0799
+#define ifcIDtYPEsADAMcALLbACK_INTERCOM             0xdddd079a
+#define ifcIDtYPEsADAMcALLbACK_FLYOVER              0xdddd079b
+#define ifcIDtYPEsADAMcALLbACK_FLYOVERhIGHLIGHT     0xdddd079c
+#define ifcIDtYPEsADAMcALLbACK_TAB                  0xdddd079d
+#define ifcIDtYPEsADAMcALLbACK_ANIMATE              0xdddd079e
+#define ifcIDtYPEsADAMcALLbACK_HOTkEY               0xdddd079f
+#define ifcIDtYPEsADAMcALLbACK_INoUTqUERY           0xdddd07a0
+#define ifcIDtYPEsADAMcALLbACK_DRAG                 0xdddd07a1
+#define ifcIDtYPEsADAMcALLbACK_ERASE                0xdddd07a2
 /*3*/
-#define ifcIDtYPEsADAMcALLbACK_min     0xdddd0781
-#define ifcIDtYPEsADAMcALLbACK_max     0xdddd078e
+#define ifcIDtYPEsADAMcALLbACK_min     0xdddd0795
+#define ifcIDtYPEsADAMcALLbACK_max     0xdddd07a2
 
 
 //
@@ -26006,11 +25152,11 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 /*1*//*ifcIDtYPEtREEbRANCHdEFINITIONoLDcb*//*1*/
 
 /*3*/
-#define ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_NEW           0xdddd078f
-#define ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_DELETE        0xdddd0790
+#define ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_NEW           0xdddd07a3
+#define ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_DELETE        0xdddd07a4
 /*3*/
-#define ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_min     0xdddd078f
-#define ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_max     0xdddd0790
+#define ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_min     0xdddd07a3
+#define ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_max     0xdddd07a4
 
 
 //
@@ -26277,13 +25423,13 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 /**/
 
 /*3*/
-#define ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE        0xdddd0791
-#define ifcIDaCTIONsTACKaDJUSTrEFS_DELETED          0xdddd0792
-#define ifcIDaCTIONsTACKaDJUSTrEFS_NEWaBOVE         0xdddd0793
-#define ifcIDaCTIONsTACKaDJUSTrEFS_NEWbELOW         0xdddd0794
+#define ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE        0xdddd07a5
+#define ifcIDaCTIONsTACKaDJUSTrEFS_DELETED          0xdddd07a6
+#define ifcIDaCTIONsTACKaDJUSTrEFS_NEWaBOVE         0xdddd07a7
+#define ifcIDaCTIONsTACKaDJUSTrEFS_NEWbELOW         0xdddd07a8
 /*3*/
-#define ifcIDaCTIONsTACKaDJUSTrEFS_min     0xdddd0791
-#define ifcIDaCTIONsTACKaDJUSTrEFS_max     0xdddd0794
+#define ifcIDaCTIONsTACKaDJUSTrEFS_min     0xdddd07a5
+#define ifcIDaCTIONsTACKaDJUSTrEFS_max     0xdddd07a8
 
 
 //
@@ -26510,12 +25656,12 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 /**/
 
 /*3*/
-#define ifcIDmODEsIGNgIVE_FLASH        0xdddd0795
-#define ifcIDmODEsIGNgIVE_ON           0xdddd0796
-#define ifcIDmODEsIGNgIVE_OFF          0xdddd0797
+#define ifcIDmODEsIGNgIVE_FLASH        0xdddd07a9
+#define ifcIDmODEsIGNgIVE_ON           0xdddd07aa
+#define ifcIDmODEsIGNgIVE_OFF          0xdddd07ab
 /*3*/
-#define ifcIDmODEsIGNgIVE_min     0xdddd0795
-#define ifcIDmODEsIGNgIVE_max     0xdddd0797
+#define ifcIDmODEsIGNgIVE_min     0xdddd07a9
+#define ifcIDmODEsIGNgIVE_max     0xdddd07ab
 
 
 //
@@ -26625,13 +25771,13 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 /**/
 
 /*3*/
-#define ifcIDtYPErECYCLE_soulC                  0xdddd0798
-#define ifcIDtYPErECYCLE_stackC                 0xdddd0799
-#define ifcIDtYPErECYCLE_switchC                0xdddd079a
-#define ifcIDtYPErECYCLE_switchStackC           0xdddd079b
+#define ifcIDtYPErECYCLE_soulC                  0xdddd07ac
+#define ifcIDtYPErECYCLE_stackC                 0xdddd07ad
+#define ifcIDtYPErECYCLE_switchC                0xdddd07ae
+#define ifcIDtYPErECYCLE_switchStackC           0xdddd07af
 /*3*/
-#define ifcIDtYPErECYCLE_min     0xdddd0798
-#define ifcIDtYPErECYCLE_max     0xdddd079b
+#define ifcIDtYPErECYCLE_min     0xdddd07ac
+#define ifcIDtYPErECYCLE_max     0xdddd07af
 
 
 //
@@ -27824,13 +26970,13 @@ add constants here as needed to avoid this
 /**/
 
 /*3*/
-#define ifcIDtYPEtABfRESH_FRESH       0xdddd079c
-#define ifcIDtYPEtABfRESH_JUMP        0xdddd079d
-#define ifcIDtYPEtABfRESH_RIGHT       0xdddd079e
-#define ifcIDtYPEtABfRESH_LEFT        0xdddd079f
+#define ifcIDtYPEtABfRESH_FRESH       0xdddd07b0
+#define ifcIDtYPEtABfRESH_JUMP        0xdddd07b1
+#define ifcIDtYPEtABfRESH_RIGHT       0xdddd07b2
+#define ifcIDtYPEtABfRESH_LEFT        0xdddd07b3
 /*3*/
-#define ifcIDtYPEtABfRESH_min     0xdddd079c
-#define ifcIDtYPEtABfRESH_max     0xdddd079f
+#define ifcIDtYPEtABfRESH_min     0xdddd07b0
+#define ifcIDtYPEtABfRESH_max     0xdddd07b3
 
 
 //
@@ -28062,7 +27208,7 @@ add constants here as needed to avoid this
 //MUST NOT BE 0
 
 /*3*/
-#define SWITCHfLAVORpATCH      0xdddd07a0
+#define SWITCHfLAVORpATCH      0xdddd07b4
 /*3*/
 
 
@@ -28567,11 +27713,11 @@ flBRANCHs_SHADOW is reserved for future enhancement
 /**/
 
 /*3*/
-#define ifcIDfORMATtIME_NUMERIC                 0xdddd07a1
-#define ifcIDfORMATtIME_TEXT                    0xdddd07a2
+#define ifcIDfORMATtIME_NUMERIC                 0xdddd07b5
+#define ifcIDfORMATtIME_TEXT                    0xdddd07b6
 /*3*/
-#define ifcIDfORMATtIME_min     0xdddd07a1
-#define ifcIDfORMATtIME_max     0xdddd07a2
+#define ifcIDfORMATtIME_min     0xdddd07b5
+#define ifcIDfORMATtIME_max     0xdddd07b6
 
 
 //
@@ -29110,15 +28256,15 @@ can be used for sCountC as well as measureT and sCountT and countT
 // ARE APPLIED IN ORDER; DEFINE MOST GENERAL TYPES (APPLIED WOTH) AT THE BEGINNING OF THIS LIST; DEFINE MOST SPECIFIC TYPES (APPLIED LATH) AT THE END OF THIS LIST
 
 /*3*/
-#define ifcIDtYPEsADAMtOOLfILTER_DENYaCTION               0xdddd07a3
-#define ifcIDtYPEsADAMtOOLfILTER_ALLOWaCTION              0xdddd07a4
-#define ifcIDtYPEsADAMtOOLfILTER_DENYtOOL                 0xdddd07a5
-#define ifcIDtYPEsADAMtOOLfILTER_ALLOWtOOL                0xdddd07a6
-#define ifcIDtYPEsADAMtOOLfILTER_DENYtOOLaCTION           0xdddd07a7
-#define ifcIDtYPEsADAMtOOLfILTER_ALLOWtOOLaCTION          0xdddd07a8
+#define ifcIDtYPEsADAMtOOLfILTER_DENYaCTION               0xdddd07b7
+#define ifcIDtYPEsADAMtOOLfILTER_ALLOWaCTION              0xdddd07b8
+#define ifcIDtYPEsADAMtOOLfILTER_DENYtOOL                 0xdddd07b9
+#define ifcIDtYPEsADAMtOOLfILTER_ALLOWtOOL                0xdddd07ba
+#define ifcIDtYPEsADAMtOOLfILTER_DENYtOOLaCTION           0xdddd07bb
+#define ifcIDtYPEsADAMtOOLfILTER_ALLOWtOOLaCTION          0xdddd07bc
 /*3*/
-#define ifcIDtYPEsADAMtOOLfILTER_min     0xdddd07a3
-#define ifcIDtYPEsADAMtOOLfILTER_max     0xdddd07a8
+#define ifcIDtYPEsADAMtOOLfILTER_min     0xdddd07b7
+#define ifcIDtYPEsADAMtOOLfILTER_max     0xdddd07bc
 
 
 //
@@ -29307,11 +28453,11 @@ can be used for sCountC as well as measureT and sCountT and countT
 /*1*//*ifcIDtYPEpAPERbACK*//*1*/
 
 /*3*/
-#define ifcIDtYPEpAPERbACK_windowOldC             0xdddd07a9
-#define ifcIDtYPEpAPERbACK_eyeOldC                0xdddd07aa
+#define ifcIDtYPEpAPERbACK_windowOldC             0xdddd07bd
+#define ifcIDtYPEpAPERbACK_eyeOldC                0xdddd07be
 /*3*/
-#define ifcIDtYPEpAPERbACK_min     0xdddd07a9
-#define ifcIDtYPEpAPERbACK_max     0xdddd07aa
+#define ifcIDtYPEpAPERbACK_min     0xdddd07bd
+#define ifcIDtYPEpAPERbACK_max     0xdddd07be
 
 
 //
@@ -29712,10 +28858,10 @@ can be used for sCountC as well as measureT and sCountT and countT
 /*1*//*ifcIDwINDOW*//*1*/
 
 /*3*/
-#define ifcIDwINDOW_ROOT       0xdddd07ab
+#define ifcIDwINDOW_ROOT       0xdddd07bf
 /*3*/
-#define ifcIDwINDOW_min     0xdddd07ab
-#define ifcIDwINDOW_max     0xdddd07ab
+#define ifcIDwINDOW_min     0xdddd07bf
+#define ifcIDwINDOW_max     0xdddd07bf
 
 
 //
@@ -30046,15 +29192,15 @@ can be used for sCountC as well as measureT and sCountT and countT
 // WITH THESE CONVENTIONS, IT IS IMPOSSIBLE TO SPECIFY AN ILLEGAL VALUE
 
 /*3*/
-#define IDVB_DEFAULT                                0xdddd07ac
-#define IDVB_SYShIGHLIGHTfLYOVER                    0xdddd07ad
-#define IDVB_SYShIGHLIGHToWNtAB                     0xdddd07ae
-#define IDVB_SYShIGHLIGHTdOWN                       0xdddd07af
-#define IDVB_SYShIGHLIGHT                           0xdddd07b0
-#define IDVB_SYShOT                                 0xdddd07b1
+#define IDVB_DEFAULT                                0xdddd07c0
+#define IDVB_SYShIGHLIGHTfLYOVER                    0xdddd07c1
+#define IDVB_SYShIGHLIGHToWNtAB                     0xdddd07c2
+#define IDVB_SYShIGHLIGHTdOWN                       0xdddd07c3
+#define IDVB_SYShIGHLIGHT                           0xdddd07c4
+#define IDVB_SYShOT                                 0xdddd07c5
 /*3*/
-#define IDVB_min     0xdddd07ac
-#define IDVB_max     0xdddd07b1
+#define IDVB_min     0xdddd07c0
+#define IDVB_max     0xdddd07c5
 
 
 //
@@ -30142,13 +29288,13 @@ can be used for sCountC as well as measureT and sCountT and countT
 /*1*//*ifcIDpAPER*//*1*/
 
 /*3*/
-#define ifcIDpAPER_DEFAULT                       0xdddd07b2
-#define ifcIDpAPER_SHOW                          0xdddd07b3
-#define ifcIDpAPER_NOTsHOW                       0xdddd07b4
-#define ifcIDpAPER_SCRATCH                       0xdddd07b5
+#define ifcIDpAPER_DEFAULT                       0xdddd07c6
+#define ifcIDpAPER_SHOW                          0xdddd07c7
+#define ifcIDpAPER_NOTsHOW                       0xdddd07c8
+#define ifcIDpAPER_SCRATCH                       0xdddd07c9
 /*3*/
-#define ifcIDpAPER_min     0xdddd07b2
-#define ifcIDpAPER_max     0xdddd07b5
+#define ifcIDpAPER_min     0xdddd07c6
+#define ifcIDpAPER_max     0xdddd07c9
 
 
 //
@@ -30176,17 +29322,17 @@ can be used for sCountC as well as measureT and sCountT and countT
 /*1*//*ifcIDcMDpAPERsELECT*//*1*/
 
 /*3*/
-#define ifcIDcMDpAPERsELECT_QUERYsHOW            0xdddd07b6
-#define ifcIDcMDpAPERsELECT_QUERYrENDERdEFAULT   0xdddd07b7
-#define ifcIDcMDpAPERsELECT_QUERYrENDER          0xdddd07b8
-#define ifcIDcMDpAPERsELECT_QUERYsCRATCH         0xdddd07b9
-#define ifcIDcMDpAPERsELECT_SETsHOW              0xdddd07ba
-#define ifcIDcMDpAPERsELECT_SETrENDERdEFAULT     0xdddd07bb
-#define ifcIDcMDpAPERsELECT_SETrENDER            0xdddd07bc
-#define ifcIDcMDpAPERsELECT_SETsCRATCH           0xdddd07bd
+#define ifcIDcMDpAPERsELECT_QUERYsHOW            0xdddd07ca
+#define ifcIDcMDpAPERsELECT_QUERYrENDERdEFAULT   0xdddd07cb
+#define ifcIDcMDpAPERsELECT_QUERYrENDER          0xdddd07cc
+#define ifcIDcMDpAPERsELECT_QUERYsCRATCH         0xdddd07cd
+#define ifcIDcMDpAPERsELECT_SETsHOW              0xdddd07ce
+#define ifcIDcMDpAPERsELECT_SETrENDERdEFAULT     0xdddd07cf
+#define ifcIDcMDpAPERsELECT_SETrENDER            0xdddd07d0
+#define ifcIDcMDpAPERsELECT_SETsCRATCH           0xdddd07d1
 /*3*/
-#define ifcIDcMDpAPERsELECT_min     0xdddd07b6
-#define ifcIDcMDpAPERsELECT_max     0xdddd07bd
+#define ifcIDcMDpAPERsELECT_min     0xdddd07ca
+#define ifcIDcMDpAPERsELECT_max     0xdddd07d1
 
 
 //
@@ -31445,873 +30591,873 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /*1*//*ifcIDsNIPpREDEFINED*//*1*/
 
 /*3*/
-#define ifcIDsNIPpREDEFINED_HTTPfAILnOTfOUND            0xdddd07be
-#define ifcIDsNIPpREDEFINED_HTTPoKtEXThTML              0xdddd07bf
-#define ifcIDsNIPpREDEFINED_HTTPoKmP3                   0xdddd07c0
-#define ifcIDsNIPpREDEFINED_HTTPoKiMAGEiCON             0xdddd07c1
-#define ifcIDsNIPpREDEFINED_HTTPoKiMAGEgIF              0xdddd07c2
-#define ifcIDsNIPpREDEFINED_HTTPoKiMAGEjPEG             0xdddd07c3
-#define ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME         0xdddd07c4
-#define ifcIDsNIPpREDEFINED_HTTPfAILmOVED               0xdddd07c5
-#define ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP           0xdddd07c6
-#define ifcIDsNIPpREDEFINED_HTTPlOCATIONrOOT            0xdddd07c7
-#define ifcIDsNIPpREDEFINED_HEAD1                       0xdddd07c8
-#define ifcIDsNIPpREDEFINED_HEAD2                       0xdddd07c9
-#define ifcIDsNIPpREDEFINED_HEAD3                       0xdddd07ca
-#define ifcIDsNIPpREDEFINED_HEAD4                       0xdddd07cb
-#define ifcIDsNIPpREDEFINED_HEAD5                       0xdddd07cc
-#define ifcIDsNIPpREDEFINED_HEAD6                       0xdddd07cd
-#define ifcIDsNIPpREDEFINED_HEAD7                       0xdddd07ce
-#define ifcIDsNIPpREDEFINED_HEAD8                       0xdddd07cf
-#define ifcIDsNIPpREDEFINED_HEAD9                       0xdddd07d0
-#define ifcIDsNIPpREDEFINED_HEADa                       0xdddd07d1
-#define ifcIDsNIPpREDEFINED_HEADb                       0xdddd07d2
-#define ifcIDsNIPpREDEFINED_HEADc                       0xdddd07d3
-#define ifcIDsNIPpREDEFINED_HEADd                       0xdddd07d4
-#define ifcIDsNIPpREDEFINED_HEADe                       0xdddd07d5
-#define ifcIDsNIPpREDEFINED_HEADf                       0xdddd07d6
-#define ifcIDsNIPpREDEFINED_HEAD01                      0xdddd07d7
-#define ifcIDsNIPpREDEFINED_HEAD11                      0xdddd07d8
-#define ifcIDsNIPpREDEFINED_HEAD21                      0xdddd07d9
-#define ifcIDsNIPpREDEFINED_HEAD31                      0xdddd07da
-#define ifcIDsNIPpREDEFINED_HEAD41                      0xdddd07db
-#define ifcIDsNIPpREDEFINED_HEAD51                      0xdddd07dc
-#define ifcIDsNIPpREDEFINED_HEAD61                      0xdddd07dd
-#define ifcIDsNIPpREDEFINED_HEAD71                      0xdddd07de
-#define ifcIDsNIPpREDEFINED_HEAD81                      0xdddd07df
-#define ifcIDsNIPpREDEFINED_HEAD91                      0xdddd07e0
-#define ifcIDsNIPpREDEFINED_HEADa1                      0xdddd07e1
-#define ifcIDsNIPpREDEFINED_HEADb1                      0xdddd07e2
-#define ifcIDsNIPpREDEFINED_HEADc1                      0xdddd07e3
-#define ifcIDsNIPpREDEFINED_HEADd1                      0xdddd07e4
-#define ifcIDsNIPpREDEFINED_HEADe1                      0xdddd07e5
-#define ifcIDsNIPpREDEFINED_HEADf1                      0xdddd07e6
-#define ifcIDsNIPpREDEFINED_FOOT1                       0xdddd07e7
-#define ifcIDsNIPpREDEFINED_FOOT2                       0xdddd07e8
-#define ifcIDsNIPpREDEFINED_FOOT3                       0xdddd07e9
-#define ifcIDsNIPpREDEFINED_FOOT4                       0xdddd07ea
-#define ifcIDsNIPpREDEFINED_FOOT5                       0xdddd07eb
-#define ifcIDsNIPpREDEFINED_FOOT6                       0xdddd07ec
-#define ifcIDsNIPpREDEFINED_FOOT7                       0xdddd07ed
-#define ifcIDsNIPpREDEFINED_FOOT8                       0xdddd07ee
-#define ifcIDsNIPpREDEFINED_FOOT9                       0xdddd07ef
-#define ifcIDsNIPpREDEFINED_FOOTa                       0xdddd07f0
-#define ifcIDsNIPpREDEFINED_FOOTb                       0xdddd07f1
-#define ifcIDsNIPpREDEFINED_FOOTc                       0xdddd07f2
-#define ifcIDsNIPpREDEFINED_FOOTd                       0xdddd07f3
-#define ifcIDsNIPpREDEFINED_FOOTe                       0xdddd07f4
-#define ifcIDsNIPpREDEFINED_FOOTf                       0xdddd07f5
-#define ifcIDsNIPpREDEFINED_FOOT01                      0xdddd07f6
-#define ifcIDsNIPpREDEFINED_CALENDAR1                   0xdddd07f7
-#define ifcIDsNIPpREDEFINED_CALENDAR2                   0xdddd07f8
-#define ifcIDsNIPpREDEFINED_CALENDAR3                   0xdddd07f9
-#define ifcIDsNIPpREDEFINED_CALENDAR4                   0xdddd07fa
-#define ifcIDsNIPpREDEFINED_CALENDAR5                   0xdddd07fb
-#define ifcIDsNIPpREDEFINED_CALENDAR6                   0xdddd07fc
-#define ifcIDsNIPpREDEFINED_CALENDAR7                   0xdddd07fd
-#define ifcIDsNIPpREDEFINED_CALENDAR8                   0xdddd07fe
-#define ifcIDsNIPpREDEFINED_HEADiMAGEaDSbLANK           0xdddd07ff
-#define ifcIDsNIPpREDEFINED_HEADiMAGEaDSgOOGLE          0xdddd0800
-#define ifcIDsNIPpREDEFINED_HEADaDlINKSbLANK            0xdddd0801
-#define ifcIDsNIPpREDEFINED_HEADaDlINKSgOOGLE           0xdddd0802
-#define ifcIDsNIPpREDEFINED_FOOTiMAGEaDS                0xdddd0803
-#define ifcIDsNIPpREDEFINED_FOOTaDlINKS                 0xdddd0804
-#define ifcIDsNIPpREDEFINED_FREEBIES1                   0xdddd0805
-#define ifcIDsNIPpREDEFINED_FREEBIES2                   0xdddd0806
-#define ifcIDsNIPpREDEFINED_FREEBIES3                   0xdddd0807
-#define ifcIDsNIPpREDEFINED_FREEBIES4                   0xdddd0808
-#define ifcIDsNIPpREDEFINED_FREEBIES5                   0xdddd0809
-#define ifcIDsNIPpREDEFINED_FREEBIES6                   0xdddd080a
-#define ifcIDsNIPpREDEFINED_FREEBIES7                   0xdddd080b
-#define ifcIDsNIPpREDEFINED_FREEBIES8                   0xdddd080c
-#define ifcIDsNIPpREDEFINED_FREEBIES9                   0xdddd080d
-#define ifcIDsNIPpREDEFINED_FREEBIESa                   0xdddd080e
-#define ifcIDsNIPpREDEFINED_FREEBIESb                   0xdddd080f
-#define ifcIDsNIPpREDEFINED_FREEBIESc                   0xdddd0810
-#define ifcIDsNIPpREDEFINED_FREEBIESd                   0xdddd0811
-#define ifcIDsNIPpREDEFINED_FREEBIESe                   0xdddd0812
-#define ifcIDsNIPpREDEFINED_FREEBIESf                   0xdddd0813
-#define ifcIDsNIPpREDEFINED_FREEBIES01                  0xdddd0814
-#define ifcIDsNIPpREDEFINED_DO1                         0xdddd0815
-#define ifcIDsNIPpREDEFINED_DO2                         0xdddd0816
-#define ifcIDsNIPpREDEFINED_DO3                         0xdddd0817
-#define ifcIDsNIPpREDEFINED_DO4                         0xdddd0818
-#define ifcIDsNIPpREDEFINED_DO5                         0xdddd0819
-#define ifcIDsNIPpREDEFINED_DO6                         0xdddd081a
-#define ifcIDsNIPpREDEFINED_DO7                         0xdddd081b
-#define ifcIDsNIPpREDEFINED_DO8                         0xdddd081c
-#define ifcIDsNIPpREDEFINED_DO9                         0xdddd081d
-#define ifcIDsNIPpREDEFINED_DOa                         0xdddd081e
-#define ifcIDsNIPpREDEFINED_DOb                         0xdddd081f
-#define ifcIDsNIPpREDEFINED_DOc                         0xdddd0820
-#define ifcIDsNIPpREDEFINED_DOd                         0xdddd0821
-#define ifcIDsNIPpREDEFINED_DOe                         0xdddd0822
-#define ifcIDsNIPpREDEFINED_DOf                         0xdddd0823
-#define ifcIDsNIPpREDEFINED_DO01                        0xdddd0824
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT1                  0xdddd0825
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT2                  0xdddd0826
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT3                  0xdddd0827
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT4                  0xdddd0828
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT5                  0xdddd0829
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT6                  0xdddd082a
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT7                  0xdddd082b
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT8                  0xdddd082c
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT9                  0xdddd082d
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTa                  0xdddd082e
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTb                  0xdddd082f
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTc                  0xdddd0830
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTd                  0xdddd0831
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTe                  0xdddd0832
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTf                  0xdddd0833
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT01                 0xdddd0834
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT11                 0xdddd0835
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT21                 0xdddd0836
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT31                 0xdddd0837
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT41                 0xdddd0838
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT51                 0xdddd0839
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT61                 0xdddd083a
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT71                 0xdddd083b
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT81                 0xdddd083c
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT91                 0xdddd083d
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTa1                 0xdddd083e
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTb1                 0xdddd083f
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTc1                 0xdddd0840
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTd1                 0xdddd0841
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTe1                 0xdddd0842
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTf1                 0xdddd0843
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT02                 0xdddd0844
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT12                 0xdddd0845
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT22                 0xdddd0846
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT32                 0xdddd0847
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT42                 0xdddd0848
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT52                 0xdddd0849
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT62                 0xdddd084a
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT72                 0xdddd084b
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT82                 0xdddd084c
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT92                 0xdddd084d
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTa2                 0xdddd084e
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTb2                 0xdddd084f
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTc2                 0xdddd0850
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTd2                 0xdddd0851
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTe2                 0xdddd0852
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTf2                 0xdddd0853
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT03                 0xdddd0854
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT13                 0xdddd0855
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT23                 0xdddd0856
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT33                 0xdddd0857
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT43                 0xdddd0858
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT53                 0xdddd0859
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT63                 0xdddd085a
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT73                 0xdddd085b
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT83                 0xdddd085c
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT93                 0xdddd085d
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTa3                 0xdddd085e
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTb3                 0xdddd085f
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTc3                 0xdddd0860
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTd3                 0xdddd0861
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTe3                 0xdddd0862
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTf3                 0xdddd0863
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT04                 0xdddd0864
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT14                 0xdddd0865
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT24                 0xdddd0866
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT34                 0xdddd0867
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT44                 0xdddd0868
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT54                 0xdddd0869
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT64                 0xdddd086a
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT74                 0xdddd086b
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT84                 0xdddd086c
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT94                 0xdddd086d
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTa4                 0xdddd086e
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTb4                 0xdddd086f
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTc4                 0xdddd0870
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTd4                 0xdddd0871
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTe4                 0xdddd0872
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTf4                 0xdddd0873
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT05                 0xdddd0874
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT15                 0xdddd0875
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT25                 0xdddd0876
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT35                 0xdddd0877
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT45                 0xdddd0878
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT55                 0xdddd0879
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT65                 0xdddd087a
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT75                 0xdddd087b
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT85                 0xdddd087c
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT95                 0xdddd087d
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTa5                 0xdddd087e
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTb5                 0xdddd087f
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTc5                 0xdddd0880
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTd5                 0xdddd0881
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTe5                 0xdddd0882
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTf5                 0xdddd0883
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT06                 0xdddd0884
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT16                 0xdddd0885
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT26                 0xdddd0886
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT36                 0xdddd0887
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT46                 0xdddd0888
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT56                 0xdddd0889
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT66                 0xdddd088a
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT76                 0xdddd088b
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT86                 0xdddd088c
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT96                 0xdddd088d
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTa6                 0xdddd088e
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTb6                 0xdddd088f
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTc6                 0xdddd0890
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTd6                 0xdddd0891
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTe6                 0xdddd0892
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTf6                 0xdddd0893
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT07                 0xdddd0894
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT17                 0xdddd0895
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT27                 0xdddd0896
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT37                 0xdddd0897
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT47                 0xdddd0898
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT57                 0xdddd0899
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT67                 0xdddd089a
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT77                 0xdddd089b
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT87                 0xdddd089c
-#define ifcIDsNIPpREDEFINED_MYaCCOUNT97                 0xdddd089d
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTa7                 0xdddd089e
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTb7                 0xdddd089f
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTc7                 0xdddd08a0
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTd7                 0xdddd08a1
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTe7                 0xdddd08a2
-#define ifcIDsNIPpREDEFINED_MYaCCOUNTf7                 0xdddd08a3
-#define ifcIDsNIPpREDEFINED_HELP0                       0xdddd08a4
-#define ifcIDsNIPpREDEFINED_HELP1                       0xdddd08a5
-#define ifcIDsNIPpREDEFINED_HELP2                       0xdddd08a6
-#define ifcIDsNIPpREDEFINED_HELP3                       0xdddd08a7
-#define ifcIDsNIPpREDEFINED_HELP4                       0xdddd08a8
-#define ifcIDsNIPpREDEFINED_HELP5                       0xdddd08a9
-#define ifcIDsNIPpREDEFINED_HELP6                       0xdddd08aa
-#define ifcIDsNIPpREDEFINED_HELP7                       0xdddd08ab
-#define ifcIDsNIPpREDEFINED_HELP8                       0xdddd08ac
-#define ifcIDsNIPpREDEFINED_HELP9                       0xdddd08ad
-#define ifcIDsNIPpREDEFINED_HELPa                       0xdddd08ae
-#define ifcIDsNIPpREDEFINED_HELPb                       0xdddd08af
-#define ifcIDsNIPpREDEFINED_HELPc                       0xdddd08b0
-#define ifcIDsNIPpREDEFINED_HELPd                       0xdddd08b1
-#define ifcIDsNIPpREDEFINED_HELPe                       0xdddd08b2
-#define ifcIDsNIPpREDEFINED_HELPf                       0xdddd08b3
-#define ifcIDsNIPpREDEFINED_HELP01                      0xdddd08b4
-#define ifcIDsNIPpREDEFINED_HELP11                      0xdddd08b5
-#define ifcIDsNIPpREDEFINED_HELP21                      0xdddd08b6
-#define ifcIDsNIPpREDEFINED_HELP31                      0xdddd08b7
-#define ifcIDsNIPpREDEFINED_HELP41                      0xdddd08b8
-#define ifcIDsNIPpREDEFINED_HELP51                      0xdddd08b9
-#define ifcIDsNIPpREDEFINED_HELP61                      0xdddd08ba
-#define ifcIDsNIPpREDEFINED_HELP71                      0xdddd08bb
-#define ifcIDsNIPpREDEFINED_HELP81                      0xdddd08bc
-#define ifcIDsNIPpREDEFINED_HELP91                      0xdddd08bd
-#define ifcIDsNIPpREDEFINED_HELPa1                      0xdddd08be
-#define ifcIDsNIPpREDEFINED_HELPb1                      0xdddd08bf
-#define ifcIDsNIPpREDEFINED_HELPc1                      0xdddd08c0
-#define ifcIDsNIPpREDEFINED_HELPd1                      0xdddd08c1
-#define ifcIDsNIPpREDEFINED_HELPe1                      0xdddd08c2
-#define ifcIDsNIPpREDEFINED_HELPf1                      0xdddd08c3
-#define ifcIDsNIPpREDEFINED_HELP02                      0xdddd08c4
-#define ifcIDsNIPpREDEFINED_HELP12                      0xdddd08c5
-#define ifcIDsNIPpREDEFINED_HELP22                      0xdddd08c6
-#define ifcIDsNIPpREDEFINED_HELP32                      0xdddd08c7
-#define ifcIDsNIPpREDEFINED_HELP42                      0xdddd08c8
-#define ifcIDsNIPpREDEFINED_HELP52                      0xdddd08c9
-#define ifcIDsNIPpREDEFINED_HELP62                      0xdddd08ca
-#define ifcIDsNIPpREDEFINED_HELP72                      0xdddd08cb
-#define ifcIDsNIPpREDEFINED_HELP82                      0xdddd08cc
-#define ifcIDsNIPpREDEFINED_HELP92                      0xdddd08cd
-#define ifcIDsNIPpREDEFINED_HELPa2                      0xdddd08ce
-#define ifcIDsNIPpREDEFINED_HELPb2                      0xdddd08cf
-#define ifcIDsNIPpREDEFINED_HELPc2                      0xdddd08d0
-#define ifcIDsNIPpREDEFINED_HELPd2                      0xdddd08d1
-#define ifcIDsNIPpREDEFINED_HELPe2                      0xdddd08d2
-#define ifcIDsNIPpREDEFINED_HELPf2                      0xdddd08d3
-#define ifcIDsNIPpREDEFINED_HELP03                      0xdddd08d4
-#define ifcIDsNIPpREDEFINED_HELP13                      0xdddd08d5
-#define ifcIDsNIPpREDEFINED_HELP23                      0xdddd08d6
-#define ifcIDsNIPpREDEFINED_HELP33                      0xdddd08d7
-#define ifcIDsNIPpREDEFINED_HELP43                      0xdddd08d8
-#define ifcIDsNIPpREDEFINED_HELP53                      0xdddd08d9
-#define ifcIDsNIPpREDEFINED_HELP63                      0xdddd08da
-#define ifcIDsNIPpREDEFINED_HELP73                      0xdddd08db
-#define ifcIDsNIPpREDEFINED_HELP83                      0xdddd08dc
-#define ifcIDsNIPpREDEFINED_HELP93                      0xdddd08dd
-#define ifcIDsNIPpREDEFINED_HELPa3                      0xdddd08de
-#define ifcIDsNIPpREDEFINED_HELPb3                      0xdddd08df
-#define ifcIDsNIPpREDEFINED_HELPc3                      0xdddd08e0
-#define ifcIDsNIPpREDEFINED_HELPd3                      0xdddd08e1
-#define ifcIDsNIPpREDEFINED_HELPe3                      0xdddd08e2
-#define ifcIDsNIPpREDEFINED_HELPf3                      0xdddd08e3
-#define ifcIDsNIPpREDEFINED_HELP04                      0xdddd08e4
-#define ifcIDsNIPpREDEFINED_HELP14                      0xdddd08e5
-#define ifcIDsNIPpREDEFINED_HELP24                      0xdddd08e6
-#define ifcIDsNIPpREDEFINED_HELP34                      0xdddd08e7
-#define ifcIDsNIPpREDEFINED_HELP44                      0xdddd08e8
-#define ifcIDsNIPpREDEFINED_HELP54                      0xdddd08e9
-#define ifcIDsNIPpREDEFINED_HELP64                      0xdddd08ea
-#define ifcIDsNIPpREDEFINED_HELP74                      0xdddd08eb
-#define ifcIDsNIPpREDEFINED_HELP84                      0xdddd08ec
-#define ifcIDsNIPpREDEFINED_HELP94                      0xdddd08ed
-#define ifcIDsNIPpREDEFINED_HELPa4                      0xdddd08ee
-#define ifcIDsNIPpREDEFINED_HELPb4                      0xdddd08ef
-#define ifcIDsNIPpREDEFINED_HELPc4                      0xdddd08f0
-#define ifcIDsNIPpREDEFINED_HELPd4                      0xdddd08f1
-#define ifcIDsNIPpREDEFINED_HELPe4                      0xdddd08f2
-#define ifcIDsNIPpREDEFINED_HELPf4                      0xdddd08f3
-#define ifcIDsNIPpREDEFINED_HELP05                      0xdddd08f4
-#define ifcIDsNIPpREDEFINED_HELP15                      0xdddd08f5
-#define ifcIDsNIPpREDEFINED_HELP25                      0xdddd08f6
-#define ifcIDsNIPpREDEFINED_HELP35                      0xdddd08f7
-#define ifcIDsNIPpREDEFINED_HELP45                      0xdddd08f8
-#define ifcIDsNIPpREDEFINED_HELP55                      0xdddd08f9
-#define ifcIDsNIPpREDEFINED_HELP65                      0xdddd08fa
-#define ifcIDsNIPpREDEFINED_HELP75                      0xdddd08fb
-#define ifcIDsNIPpREDEFINED_HELP85                      0xdddd08fc
-#define ifcIDsNIPpREDEFINED_HELP95                      0xdddd08fd
-#define ifcIDsNIPpREDEFINED_HELPa5                      0xdddd08fe
-#define ifcIDsNIPpREDEFINED_HELPb5                      0xdddd08ff
-#define ifcIDsNIPpREDEFINED_HELPc5                      0xdddd0900
-#define ifcIDsNIPpREDEFINED_HELPd5                      0xdddd0901
-#define ifcIDsNIPpREDEFINED_HELPe5                      0xdddd0902
-#define ifcIDsNIPpREDEFINED_HELPf5                      0xdddd0903
-#define ifcIDsNIPpREDEFINED_HELP06                      0xdddd0904
-#define ifcIDsNIPpREDEFINED_HELP16                      0xdddd0905
-#define ifcIDsNIPpREDEFINED_HELP26                      0xdddd0906
-#define ifcIDsNIPpREDEFINED_HELP36                      0xdddd0907
-#define ifcIDsNIPpREDEFINED_HELP46                      0xdddd0908
-#define ifcIDsNIPpREDEFINED_HELP56                      0xdddd0909
-#define ifcIDsNIPpREDEFINED_HELP66                      0xdddd090a
-#define ifcIDsNIPpREDEFINED_HELP76                      0xdddd090b
-#define ifcIDsNIPpREDEFINED_HELP86                      0xdddd090c
-#define ifcIDsNIPpREDEFINED_HELP96                      0xdddd090d
-#define ifcIDsNIPpREDEFINED_HELPa6                      0xdddd090e
-#define ifcIDsNIPpREDEFINED_HELPb6                      0xdddd090f
-#define ifcIDsNIPpREDEFINED_HELPc6                      0xdddd0910
-#define ifcIDsNIPpREDEFINED_HELPd6                      0xdddd0911
-#define ifcIDsNIPpREDEFINED_HELPe6                      0xdddd0912
-#define ifcIDsNIPpREDEFINED_HELPf6                      0xdddd0913
-#define ifcIDsNIPpREDEFINED_HELP07                      0xdddd0914
-#define ifcIDsNIPpREDEFINED_HELP17                      0xdddd0915
-#define ifcIDsNIPpREDEFINED_HELP27                      0xdddd0916
-#define ifcIDsNIPpREDEFINED_HELP37                      0xdddd0917
-#define ifcIDsNIPpREDEFINED_HELP47                      0xdddd0918
-#define ifcIDsNIPpREDEFINED_HELP57                      0xdddd0919
-#define ifcIDsNIPpREDEFINED_HELP67                      0xdddd091a
-#define ifcIDsNIPpREDEFINED_HELP77                      0xdddd091b
-#define ifcIDsNIPpREDEFINED_HELP87                      0xdddd091c
-#define ifcIDsNIPpREDEFINED_HELP97                      0xdddd091d
-#define ifcIDsNIPpREDEFINED_HELPa7                      0xdddd091e
-#define ifcIDsNIPpREDEFINED_HELPb7                      0xdddd091f
-#define ifcIDsNIPpREDEFINED_HELPc7                      0xdddd0920
-#define ifcIDsNIPpREDEFINED_HELPd7                      0xdddd0921
-#define ifcIDsNIPpREDEFINED_HELPe7                      0xdddd0922
-#define ifcIDsNIPpREDEFINED_HELPf7                      0xdddd0923
-#define ifcIDsNIPpREDEFINED_HELP08                      0xdddd0924
-#define ifcIDsNIPpREDEFINED_HELP18                      0xdddd0925
-#define ifcIDsNIPpREDEFINED_HELP28                      0xdddd0926
-#define ifcIDsNIPpREDEFINED_HELP38                      0xdddd0927
-#define ifcIDsNIPpREDEFINED_HELP48                      0xdddd0928
-#define ifcIDsNIPpREDEFINED_HELP58                      0xdddd0929
-#define ifcIDsNIPpREDEFINED_HELP68                      0xdddd092a
-#define ifcIDsNIPpREDEFINED_HELP78                      0xdddd092b
-#define ifcIDsNIPpREDEFINED_HELP88                      0xdddd092c
-#define ifcIDsNIPpREDEFINED_HELP98                      0xdddd092d
-#define ifcIDsNIPpREDEFINED_HELPa8                      0xdddd092e
-#define ifcIDsNIPpREDEFINED_HELPb8                      0xdddd092f
-#define ifcIDsNIPpREDEFINED_HELPc8                      0xdddd0930
-#define ifcIDsNIPpREDEFINED_HELPd8                      0xdddd0931
-#define ifcIDsNIPpREDEFINED_HELPe8                      0xdddd0932
-#define ifcIDsNIPpREDEFINED_HELPf8                      0xdddd0933
-#define ifcIDsNIPpREDEFINED_HELP09                      0xdddd0934
-#define ifcIDsNIPpREDEFINED_HELP19                      0xdddd0935
-#define ifcIDsNIPpREDEFINED_HELP29                      0xdddd0936
-#define ifcIDsNIPpREDEFINED_HELP39                      0xdddd0937
-#define ifcIDsNIPpREDEFINED_HELP49                      0xdddd0938
-#define ifcIDsNIPpREDEFINED_HELP59                      0xdddd0939
-#define ifcIDsNIPpREDEFINED_HELP69                      0xdddd093a
-#define ifcIDsNIPpREDEFINED_HELP79                      0xdddd093b
-#define ifcIDsNIPpREDEFINED_HELP89                      0xdddd093c
-#define ifcIDsNIPpREDEFINED_HELP99                      0xdddd093d
-#define ifcIDsNIPpREDEFINED_HELPa9                      0xdddd093e
-#define ifcIDsNIPpREDEFINED_HELPb9                      0xdddd093f
-#define ifcIDsNIPpREDEFINED_HELPc9                      0xdddd0940
-#define ifcIDsNIPpREDEFINED_HELPd9                      0xdddd0941
-#define ifcIDsNIPpREDEFINED_HELPe9                      0xdddd0942
-#define ifcIDsNIPpREDEFINED_HELPf9                      0xdddd0943
-#define ifcIDsNIPpREDEFINED_HELP0a                      0xdddd0944
-#define ifcIDsNIPpREDEFINED_HELP1a                      0xdddd0945
-#define ifcIDsNIPpREDEFINED_HELP2a                      0xdddd0946
-#define ifcIDsNIPpREDEFINED_HELP3a                      0xdddd0947
-#define ifcIDsNIPpREDEFINED_HELP4a                      0xdddd0948
-#define ifcIDsNIPpREDEFINED_HELP5a                      0xdddd0949
-#define ifcIDsNIPpREDEFINED_HELP6a                      0xdddd094a
-#define ifcIDsNIPpREDEFINED_HELP7a                      0xdddd094b
-#define ifcIDsNIPpREDEFINED_HELP8a                      0xdddd094c
-#define ifcIDsNIPpREDEFINED_HELP9a                      0xdddd094d
-#define ifcIDsNIPpREDEFINED_HELPaa                      0xdddd094e
-#define ifcIDsNIPpREDEFINED_HELPba                      0xdddd094f
-#define ifcIDsNIPpREDEFINED_HELPca                      0xdddd0950
-#define ifcIDsNIPpREDEFINED_HELPda                      0xdddd0951
-#define ifcIDsNIPpREDEFINED_HELPea                      0xdddd0952
-#define ifcIDsNIPpREDEFINED_HELPfa                      0xdddd0953
-#define ifcIDsNIPpREDEFINED_HELP0b                      0xdddd0954
-#define ifcIDsNIPpREDEFINED_HELP1b                      0xdddd0955
-#define ifcIDsNIPpREDEFINED_HELP2b                      0xdddd0956
-#define ifcIDsNIPpREDEFINED_HELP3b                      0xdddd0957
-#define ifcIDsNIPpREDEFINED_HELP4b                      0xdddd0958
-#define ifcIDsNIPpREDEFINED_HELP5b                      0xdddd0959
-#define ifcIDsNIPpREDEFINED_HELP6b                      0xdddd095a
-#define ifcIDsNIPpREDEFINED_HELP7b                      0xdddd095b
-#define ifcIDsNIPpREDEFINED_HELP8b                      0xdddd095c
-#define ifcIDsNIPpREDEFINED_HELP9b                      0xdddd095d
-#define ifcIDsNIPpREDEFINED_HELPab                      0xdddd095e
-#define ifcIDsNIPpREDEFINED_HELPbb                      0xdddd095f
-#define ifcIDsNIPpREDEFINED_HELPcb                      0xdddd0960
-#define ifcIDsNIPpREDEFINED_HELPdb                      0xdddd0961
-#define ifcIDsNIPpREDEFINED_HELPeb                      0xdddd0962
-#define ifcIDsNIPpREDEFINED_HELPfb                      0xdddd0963
-#define ifcIDsNIPpREDEFINED_HELP0c                      0xdddd0964
-#define ifcIDsNIPpREDEFINED_HELP1c                      0xdddd0965
-#define ifcIDsNIPpREDEFINED_HELP2c                      0xdddd0966
-#define ifcIDsNIPpREDEFINED_HELP3c                      0xdddd0967
-#define ifcIDsNIPpREDEFINED_HELP4c                      0xdddd0968
-#define ifcIDsNIPpREDEFINED_HELP5c                      0xdddd0969
-#define ifcIDsNIPpREDEFINED_HELP6c                      0xdddd096a
-#define ifcIDsNIPpREDEFINED_HELP7c                      0xdddd096b
-#define ifcIDsNIPpREDEFINED_HELP8c                      0xdddd096c
-#define ifcIDsNIPpREDEFINED_HELP9c                      0xdddd096d
-#define ifcIDsNIPpREDEFINED_HELPac                      0xdddd096e
-#define ifcIDsNIPpREDEFINED_HELPbc                      0xdddd096f
-#define ifcIDsNIPpREDEFINED_HELPcc                      0xdddd0970
-#define ifcIDsNIPpREDEFINED_HELPdc                      0xdddd0971
-#define ifcIDsNIPpREDEFINED_HELPec                      0xdddd0972
-#define ifcIDsNIPpREDEFINED_HELPfc                      0xdddd0973
-#define ifcIDsNIPpREDEFINED_HELP0d                      0xdddd0974
-#define ifcIDsNIPpREDEFINED_HELP1d                      0xdddd0975
-#define ifcIDsNIPpREDEFINED_HELP2d                      0xdddd0976
-#define ifcIDsNIPpREDEFINED_HELP3d                      0xdddd0977
-#define ifcIDsNIPpREDEFINED_HELP4d                      0xdddd0978
-#define ifcIDsNIPpREDEFINED_HELP5d                      0xdddd0979
-#define ifcIDsNIPpREDEFINED_HELP6d                      0xdddd097a
-#define ifcIDsNIPpREDEFINED_HELP7d                      0xdddd097b
-#define ifcIDsNIPpREDEFINED_HELP8d                      0xdddd097c
-#define ifcIDsNIPpREDEFINED_HELP9d                      0xdddd097d
-#define ifcIDsNIPpREDEFINED_HELPad                      0xdddd097e
-#define ifcIDsNIPpREDEFINED_HELPbd                      0xdddd097f
-#define ifcIDsNIPpREDEFINED_HELPcd                      0xdddd0980
-#define ifcIDsNIPpREDEFINED_HELPdd                      0xdddd0981
-#define ifcIDsNIPpREDEFINED_HELPed                      0xdddd0982
-#define ifcIDsNIPpREDEFINED_HELPfd                      0xdddd0983
-#define ifcIDsNIPpREDEFINED_HELP0e                      0xdddd0984
-#define ifcIDsNIPpREDEFINED_HELP1e                      0xdddd0985
-#define ifcIDsNIPpREDEFINED_HELP2e                      0xdddd0986
-#define ifcIDsNIPpREDEFINED_HELP3e                      0xdddd0987
-#define ifcIDsNIPpREDEFINED_HELP4e                      0xdddd0988
-#define ifcIDsNIPpREDEFINED_HELP5e                      0xdddd0989
-#define ifcIDsNIPpREDEFINED_HELP6e                      0xdddd098a
-#define ifcIDsNIPpREDEFINED_HELP7e                      0xdddd098b
-#define ifcIDsNIPpREDEFINED_HELP8e                      0xdddd098c
-#define ifcIDsNIPpREDEFINED_HELP9e                      0xdddd098d
-#define ifcIDsNIPpREDEFINED_HELPae                      0xdddd098e
-#define ifcIDsNIPpREDEFINED_HELPbe                      0xdddd098f
-#define ifcIDsNIPpREDEFINED_HELPce                      0xdddd0990
-#define ifcIDsNIPpREDEFINED_HELPde                      0xdddd0991
-#define ifcIDsNIPpREDEFINED_HELPee                      0xdddd0992
-#define ifcIDsNIPpREDEFINED_HELPfe                      0xdddd0993
-#define ifcIDsNIPpREDEFINED_HELP0f                      0xdddd0994
-#define ifcIDsNIPpREDEFINED_HELP1f                      0xdddd0995
-#define ifcIDsNIPpREDEFINED_HELP2f                      0xdddd0996
-#define ifcIDsNIPpREDEFINED_HELP3f                      0xdddd0997
-#define ifcIDsNIPpREDEFINED_HELP4f                      0xdddd0998
-#define ifcIDsNIPpREDEFINED_HELP5f                      0xdddd0999
-#define ifcIDsNIPpREDEFINED_HELP6f                      0xdddd099a
-#define ifcIDsNIPpREDEFINED_HELP7f                      0xdddd099b
-#define ifcIDsNIPpREDEFINED_HELP8f                      0xdddd099c
-#define ifcIDsNIPpREDEFINED_HELP9f                      0xdddd099d
-#define ifcIDsNIPpREDEFINED_HELPaf                      0xdddd099e
-#define ifcIDsNIPpREDEFINED_HELPbf                      0xdddd099f
-#define ifcIDsNIPpREDEFINED_HELPcf                      0xdddd09a0
-#define ifcIDsNIPpREDEFINED_HELPdf                      0xdddd09a1
-#define ifcIDsNIPpREDEFINED_HELPef                      0xdddd09a2
-#define ifcIDsNIPpREDEFINED_HELPff                      0xdddd09a3
-#define ifcIDsNIPpREDEFINED_HOME1                       0xdddd09a4
-#define ifcIDsNIPpREDEFINED_HOME2                       0xdddd09a5
-#define ifcIDsNIPpREDEFINED_HOME3                       0xdddd09a6
-#define ifcIDsNIPpREDEFINED_HOME4                       0xdddd09a7
-#define ifcIDsNIPpREDEFINED_HOME5                       0xdddd09a8
-#define ifcIDsNIPpREDEFINED_HOME6                       0xdddd09a9
-#define ifcIDsNIPpREDEFINED_HOME7                       0xdddd09aa
-#define ifcIDsNIPpREDEFINED_HOME8                       0xdddd09ab
-#define ifcIDsNIPpREDEFINED_HOME9                       0xdddd09ac
-#define ifcIDsNIPpREDEFINED_HOMEa                       0xdddd09ad
-#define ifcIDsNIPpREDEFINED_HOMEb                       0xdddd09ae
-#define ifcIDsNIPpREDEFINED_HOMEc                       0xdddd09af
-#define ifcIDsNIPpREDEFINED_HOMEd                       0xdddd09b0
-#define ifcIDsNIPpREDEFINED_HOMEe                       0xdddd09b1
-#define ifcIDsNIPpREDEFINED_HOMEf                       0xdddd09b2
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART1              0xdddd09b3
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART2              0xdddd09b4
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART3              0xdddd09b5
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART4              0xdddd09b6
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART5              0xdddd09b7
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART6              0xdddd09b8
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART7              0xdddd09b9
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART8              0xdddd09ba
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pART9              0xdddd09bb
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTa              0xdddd09bc
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTb              0xdddd09bd
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTc              0xdddd09be
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTd              0xdddd09bf
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTe              0xdddd09c0
-#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTf              0xdddd09c1
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART1              0xdddd09c2
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART2              0xdddd09c3
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART3              0xdddd09c4
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART4              0xdddd09c5
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART5              0xdddd09c6
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART6              0xdddd09c7
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART7              0xdddd09c8
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART8              0xdddd09c9
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pART9              0xdddd09ca
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTa              0xdddd09cb
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTb              0xdddd09cc
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTc              0xdddd09cd
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTd              0xdddd09ce
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTe              0xdddd09cf
-#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTf              0xdddd09d0
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART1              0xdddd09d1
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART2              0xdddd09d2
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART3              0xdddd09d3
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART4              0xdddd09d4
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART5              0xdddd09d5
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART6              0xdddd09d6
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART7              0xdddd09d7
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART8              0xdddd09d8
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pART9              0xdddd09d9
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTa              0xdddd09da
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTb              0xdddd09db
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTc              0xdddd09dc
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTd              0xdddd09dd
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTe              0xdddd09de
-#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTf              0xdddd09df
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART1              0xdddd09e0
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART2              0xdddd09e1
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART3              0xdddd09e2
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART4              0xdddd09e3
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART5              0xdddd09e4
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART6              0xdddd09e5
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART7              0xdddd09e6
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART8              0xdddd09e7
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pART9              0xdddd09e8
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTa              0xdddd09e9
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTb              0xdddd09ea
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTc              0xdddd09eb
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTd              0xdddd09ec
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTe              0xdddd09ed
-#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTf              0xdddd09ee
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART1              0xdddd09ef
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART2              0xdddd09f0
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART3              0xdddd09f1
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART4              0xdddd09f2
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART5              0xdddd09f3
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART6              0xdddd09f4
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART7              0xdddd09f5
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART8              0xdddd09f6
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pART9              0xdddd09f7
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTa              0xdddd09f8
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTb              0xdddd09f9
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTc              0xdddd09fa
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTd              0xdddd09fb
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTe              0xdddd09fc
-#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTf              0xdddd09fd
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART1              0xdddd09fe
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART2              0xdddd09ff
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART3              0xdddd0a00
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART4              0xdddd0a01
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART5              0xdddd0a02
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART6              0xdddd0a03
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART7              0xdddd0a04
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART8              0xdddd0a05
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pART9              0xdddd0a06
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTa              0xdddd0a07
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTb              0xdddd0a08
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTc              0xdddd0a09
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTd              0xdddd0a0a
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTe              0xdddd0a0b
-#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTf              0xdddd0a0c
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART1              0xdddd0a0d
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART2              0xdddd0a0e
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART3              0xdddd0a0f
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART4              0xdddd0a10
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART5              0xdddd0a11
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART6              0xdddd0a12
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART7              0xdddd0a13
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART8              0xdddd0a14
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pART9              0xdddd0a15
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTa              0xdddd0a16
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTb              0xdddd0a17
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTc              0xdddd0a18
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTd              0xdddd0a19
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTe              0xdddd0a1a
-#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTf              0xdddd0a1b
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART1              0xdddd0a1c
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART2              0xdddd0a1d
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART3              0xdddd0a1e
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART4              0xdddd0a1f
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART5              0xdddd0a20
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART6              0xdddd0a21
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART7              0xdddd0a22
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART8              0xdddd0a23
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pART9              0xdddd0a24
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTa              0xdddd0a25
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTb              0xdddd0a26
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTc              0xdddd0a27
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTd              0xdddd0a28
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTe              0xdddd0a29
-#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTf              0xdddd0a2a
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART1              0xdddd0a2b
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART2              0xdddd0a2c
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART3              0xdddd0a2d
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART4              0xdddd0a2e
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART5              0xdddd0a2f
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART6              0xdddd0a30
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART7              0xdddd0a31
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART8              0xdddd0a32
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pART9              0xdddd0a33
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTa              0xdddd0a34
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTb              0xdddd0a35
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTc              0xdddd0a36
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTd              0xdddd0a37
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTe              0xdddd0a38
-#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTf              0xdddd0a39
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART1              0xdddd0a3a
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART2              0xdddd0a3b
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART3              0xdddd0a3c
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART4              0xdddd0a3d
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART5              0xdddd0a3e
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART6              0xdddd0a3f
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART7              0xdddd0a40
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART8              0xdddd0a41
-#define ifcIDsNIPpREDEFINED_HOMEfACEapART9              0xdddd0a42
-#define ifcIDsNIPpREDEFINED_HOMEfACEapARTa              0xdddd0a43
-#define ifcIDsNIPpREDEFINED_HOMEfACEapARTb              0xdddd0a44
-#define ifcIDsNIPpREDEFINED_HOMEfACEapARTc              0xdddd0a45
-#define ifcIDsNIPpREDEFINED_HOMEfACEapARTd              0xdddd0a46
-#define ifcIDsNIPpREDEFINED_HOMEfACEapARTe              0xdddd0a47
-#define ifcIDsNIPpREDEFINED_HOMEfACEapARTf              0xdddd0a48
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART1              0xdddd0a49
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART2              0xdddd0a4a
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART3              0xdddd0a4b
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART4              0xdddd0a4c
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART5              0xdddd0a4d
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART6              0xdddd0a4e
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART7              0xdddd0a4f
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART8              0xdddd0a50
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpART9              0xdddd0a51
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTa              0xdddd0a52
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTb              0xdddd0a53
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTc              0xdddd0a54
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTd              0xdddd0a55
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTe              0xdddd0a56
-#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTf              0xdddd0a57
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART1              0xdddd0a58
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART2              0xdddd0a59
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART3              0xdddd0a5a
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART4              0xdddd0a5b
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART5              0xdddd0a5c
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART6              0xdddd0a5d
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART7              0xdddd0a5e
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART8              0xdddd0a5f
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpART9              0xdddd0a60
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTa              0xdddd0a61
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTb              0xdddd0a62
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTc              0xdddd0a63
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTd              0xdddd0a64
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTe              0xdddd0a65
-#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTf              0xdddd0a66
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART1              0xdddd0a67
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART2              0xdddd0a68
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART3              0xdddd0a69
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART4              0xdddd0a6a
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART5              0xdddd0a6b
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART6              0xdddd0a6c
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART7              0xdddd0a6d
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART8              0xdddd0a6e
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpART9              0xdddd0a6f
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTa              0xdddd0a70
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTb              0xdddd0a71
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTc              0xdddd0a72
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTd              0xdddd0a73
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTe              0xdddd0a74
-#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTf              0xdddd0a75
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART1              0xdddd0a76
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART2              0xdddd0a77
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART3              0xdddd0a78
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART4              0xdddd0a79
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART5              0xdddd0a7a
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART6              0xdddd0a7b
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART7              0xdddd0a7c
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART8              0xdddd0a7d
-#define ifcIDsNIPpREDEFINED_HOMEfACEepART9              0xdddd0a7e
-#define ifcIDsNIPpREDEFINED_HOMEfACEepARTa              0xdddd0a7f
-#define ifcIDsNIPpREDEFINED_HOMEfACEepARTb              0xdddd0a80
-#define ifcIDsNIPpREDEFINED_HOMEfACEepARTc              0xdddd0a81
-#define ifcIDsNIPpREDEFINED_HOMEfACEepARTd              0xdddd0a82
-#define ifcIDsNIPpREDEFINED_HOMEfACEepARTe              0xdddd0a83
-#define ifcIDsNIPpREDEFINED_HOMEfACEepARTf              0xdddd0a84
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART1              0xdddd0a85
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART2              0xdddd0a86
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART3              0xdddd0a87
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART4              0xdddd0a88
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART5              0xdddd0a89
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART6              0xdddd0a8a
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART7              0xdddd0a8b
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART8              0xdddd0a8c
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpART9              0xdddd0a8d
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTa              0xdddd0a8e
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTb              0xdddd0a8f
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTc              0xdddd0a90
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTd              0xdddd0a91
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTe              0xdddd0a92
-#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTf              0xdddd0a93
-#define ifcIDsNIPpREDEFINED_PRODUCT1hOOK                0xdddd0a94
-#define ifcIDsNIPpREDEFINED_PRODUCT2hOOK                0xdddd0a95
-#define ifcIDsNIPpREDEFINED_PRODUCT3hOOK                0xdddd0a96
-#define ifcIDsNIPpREDEFINED_PRODUCT4hOOK                0xdddd0a97
-#define ifcIDsNIPpREDEFINED_PRODUCT5hOOK                0xdddd0a98
-#define ifcIDsNIPpREDEFINED_PRODUCT6hOOK                0xdddd0a99
-#define ifcIDsNIPpREDEFINED_PRODUCT7hOOK                0xdddd0a9a
-#define ifcIDsNIPpREDEFINED_PRODUCT8hOOK                0xdddd0a9b
-#define ifcIDsNIPpREDEFINED_PRODUCT9hOOK                0xdddd0a9c
-#define ifcIDsNIPpREDEFINED_PRODUCTahOOK                0xdddd0a9d
-#define ifcIDsNIPpREDEFINED_PRODUCTbhOOK                0xdddd0a9e
-#define ifcIDsNIPpREDEFINED_PRODUCTchOOK                0xdddd0a9f
-#define ifcIDsNIPpREDEFINED_PRODUCTdhOOK                0xdddd0aa0
-#define ifcIDsNIPpREDEFINED_PRODUCTehOOK                0xdddd0aa1
-#define ifcIDsNIPpREDEFINED_PRODUCTfhOOK                0xdddd0aa2
-#define ifcIDsNIPpREDEFINED_PRODUCT1cOST                0xdddd0aa3
-#define ifcIDsNIPpREDEFINED_PRODUCT2cOST                0xdddd0aa4
-#define ifcIDsNIPpREDEFINED_PRODUCT3cOST                0xdddd0aa5
-#define ifcIDsNIPpREDEFINED_PRODUCT4cOST                0xdddd0aa6
-#define ifcIDsNIPpREDEFINED_PRODUCT5cOST                0xdddd0aa7
-#define ifcIDsNIPpREDEFINED_PRODUCT6cOST                0xdddd0aa8
-#define ifcIDsNIPpREDEFINED_PRODUCT7cOST                0xdddd0aa9
-#define ifcIDsNIPpREDEFINED_PRODUCT8cOST                0xdddd0aaa
-#define ifcIDsNIPpREDEFINED_PRODUCT9cOST                0xdddd0aab
-#define ifcIDsNIPpREDEFINED_PRODUCTacOST                0xdddd0aac
-#define ifcIDsNIPpREDEFINED_PRODUCTbcOST                0xdddd0aad
-#define ifcIDsNIPpREDEFINED_PRODUCTccOST                0xdddd0aae
-#define ifcIDsNIPpREDEFINED_PRODUCTdcOST                0xdddd0aaf
-#define ifcIDsNIPpREDEFINED_PRODUCTecOST                0xdddd0ab0
-#define ifcIDsNIPpREDEFINED_PRODUCTfcOST                0xdddd0ab1
-#define ifcIDsNIPpREDEFINED_PRODUCT1fEATURES            0xdddd0ab2
-#define ifcIDsNIPpREDEFINED_PRODUCT2fEATURES            0xdddd0ab3
-#define ifcIDsNIPpREDEFINED_PRODUCT3fEATURES            0xdddd0ab4
-#define ifcIDsNIPpREDEFINED_PRODUCT4fEATURES            0xdddd0ab5
-#define ifcIDsNIPpREDEFINED_PRODUCT5fEATURES            0xdddd0ab6
-#define ifcIDsNIPpREDEFINED_PRODUCT6fEATURES            0xdddd0ab7
-#define ifcIDsNIPpREDEFINED_PRODUCT7fEATURES            0xdddd0ab8
-#define ifcIDsNIPpREDEFINED_PRODUCT8fEATURES            0xdddd0ab9
-#define ifcIDsNIPpREDEFINED_PRODUCT9fEATURES            0xdddd0aba
-#define ifcIDsNIPpREDEFINED_PRODUCTafEATURES            0xdddd0abb
-#define ifcIDsNIPpREDEFINED_PRODUCTbfEATURES            0xdddd0abc
-#define ifcIDsNIPpREDEFINED_PRODUCTcfEATURES            0xdddd0abd
-#define ifcIDsNIPpREDEFINED_PRODUCTdfEATURES            0xdddd0abe
-#define ifcIDsNIPpREDEFINED_PRODUCTefEATURES            0xdddd0abf
-#define ifcIDsNIPpREDEFINED_PRODUCTffEATURES            0xdddd0ac0
-#define ifcIDsNIPpREDEFINED_PRODUCT1bENEFITS            0xdddd0ac1
-#define ifcIDsNIPpREDEFINED_PRODUCT2bENEFITS            0xdddd0ac2
-#define ifcIDsNIPpREDEFINED_PRODUCT3bENEFITS            0xdddd0ac3
-#define ifcIDsNIPpREDEFINED_PRODUCT4bENEFITS            0xdddd0ac4
-#define ifcIDsNIPpREDEFINED_PRODUCT5bENEFITS            0xdddd0ac5
-#define ifcIDsNIPpREDEFINED_PRODUCT6bENEFITS            0xdddd0ac6
-#define ifcIDsNIPpREDEFINED_PRODUCT7bENEFITS            0xdddd0ac7
-#define ifcIDsNIPpREDEFINED_PRODUCT8bENEFITS            0xdddd0ac8
-#define ifcIDsNIPpREDEFINED_PRODUCT9bENEFITS            0xdddd0ac9
-#define ifcIDsNIPpREDEFINED_PRODUCTabENEFITS            0xdddd0aca
-#define ifcIDsNIPpREDEFINED_PRODUCTbbENEFITS            0xdddd0acb
-#define ifcIDsNIPpREDEFINED_PRODUCTcbENEFITS            0xdddd0acc
-#define ifcIDsNIPpREDEFINED_PRODUCTdbENEFITS            0xdddd0acd
-#define ifcIDsNIPpREDEFINED_PRODUCTebENEFITS            0xdddd0ace
-#define ifcIDsNIPpREDEFINED_PRODUCTfbENEFITS            0xdddd0acf
-#define ifcIDsNIPpREDEFINED_PRODUCT1pITCH               0xdddd0ad0
-#define ifcIDsNIPpREDEFINED_PRODUCT2pITCH               0xdddd0ad1
-#define ifcIDsNIPpREDEFINED_PRODUCT3pITCH               0xdddd0ad2
-#define ifcIDsNIPpREDEFINED_PRODUCT4pITCH               0xdddd0ad3
-#define ifcIDsNIPpREDEFINED_PRODUCT5pITCH               0xdddd0ad4
-#define ifcIDsNIPpREDEFINED_PRODUCT6pITCH               0xdddd0ad5
-#define ifcIDsNIPpREDEFINED_PRODUCT7pITCH               0xdddd0ad6
-#define ifcIDsNIPpREDEFINED_PRODUCT8pITCH               0xdddd0ad7
-#define ifcIDsNIPpREDEFINED_PRODUCT9pITCH               0xdddd0ad8
-#define ifcIDsNIPpREDEFINED_PRODUCTapITCH               0xdddd0ad9
-#define ifcIDsNIPpREDEFINED_PRODUCTbpITCH               0xdddd0ada
-#define ifcIDsNIPpREDEFINED_PRODUCTcpITCH               0xdddd0adb
-#define ifcIDsNIPpREDEFINED_PRODUCTdpITCH               0xdddd0adc
-#define ifcIDsNIPpREDEFINED_PRODUCTepITCH               0xdddd0add
-#define ifcIDsNIPpREDEFINED_PRODUCTfpITCH               0xdddd0ade
-#define ifcIDsNIPpREDEFINED_DIRECTORY1                  0xdddd0adf
-#define ifcIDsNIPpREDEFINED_DIRECTORY2                  0xdddd0ae0
-#define ifcIDsNIPpREDEFINED_DIRECTORY3                  0xdddd0ae1
-#define ifcIDsNIPpREDEFINED_DIRECTORY4                  0xdddd0ae2
-#define ifcIDsNIPpREDEFINED_DIRECTORY5                  0xdddd0ae3
-#define ifcIDsNIPpREDEFINED_DIRECTORY6                  0xdddd0ae4
-#define ifcIDsNIPpREDEFINED_DIRECTORY7                  0xdddd0ae5
-#define ifcIDsNIPpREDEFINED_DIRECTORY8                  0xdddd0ae6
-#define ifcIDsNIPpREDEFINED_DIRECTORY9                  0xdddd0ae7
-#define ifcIDsNIPpREDEFINED_DIRECTORYa                  0xdddd0ae8
-#define ifcIDsNIPpREDEFINED_DIRECTORYb                  0xdddd0ae9
-#define ifcIDsNIPpREDEFINED_DIRECTORYc                  0xdddd0aea
-#define ifcIDsNIPpREDEFINED_DIRECTORYd                  0xdddd0aeb
-#define ifcIDsNIPpREDEFINED_DIRECTORYe                  0xdddd0aec
-#define ifcIDsNIPpREDEFINED_DIRECTORYf                  0xdddd0aed
-#define ifcIDsNIPpREDEFINED_DIRECTORY01                 0xdddd0aee
-#define ifcIDsNIPpREDEFINED_DIRECTORY11                 0xdddd0aef
-#define ifcIDsNIPpREDEFINED_DIRECTORY21                 0xdddd0af0
-#define ifcIDsNIPpREDEFINED_DIRECTORY31                 0xdddd0af1
-#define ifcIDsNIPpREDEFINED_DIRECTORY41                 0xdddd0af2
-#define ifcIDsNIPpREDEFINED_DIRECTORY51                 0xdddd0af3
-#define ifcIDsNIPpREDEFINED_DIRECTORY61                 0xdddd0af4
-#define ifcIDsNIPpREDEFINED_DIRECTORY71                 0xdddd0af5
-#define ifcIDsNIPpREDEFINED_DIRECTORY81                 0xdddd0af6
-#define ifcIDsNIPpREDEFINED_DIRECTORY91                 0xdddd0af7
-#define ifcIDsNIPpREDEFINED_DIRECTORYa1                 0xdddd0af8
-#define ifcIDsNIPpREDEFINED_DIRECTORYb1                 0xdddd0af9
-#define ifcIDsNIPpREDEFINED_DIRECTORYc1                 0xdddd0afa
-#define ifcIDsNIPpREDEFINED_DIRECTORYd1                 0xdddd0afb
-#define ifcIDsNIPpREDEFINED_DIRECTORYe1                 0xdddd0afc
-#define ifcIDsNIPpREDEFINED_DIRECTORYf1                 0xdddd0afd
-#define ifcIDsNIPpREDEFINED_DIRECTORY02                 0xdddd0afe
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONtALKbODY    0xdddd0aff
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY1    0xdddd0b00
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY2    0xdddd0b01
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY3    0xdddd0b02
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY4    0xdddd0b03
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY5    0xdddd0b04
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY6    0xdddd0b05
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY7    0xdddd0b06
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY8    0xdddd0b07
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY9    0xdddd0b08
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY10   0xdddd0b09
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY11   0xdddd0b0a
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY12   0xdddd0b0b
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY13   0xdddd0b0c
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY14   0xdddd0b0d
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY15   0xdddd0b0e
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY16   0xdddd0b0f
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONrOOT        0xdddd0b10
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN2        0xdddd0b11
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN3        0xdddd0b12
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN4        0xdddd0b13
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN5        0xdddd0b14
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN6        0xdddd0b15
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN7        0xdddd0b16
-#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN8        0xdddd0b17
-#define ifcIDsNIPpREDEFINED_HEADrAW1bEFOREtITLE         0xdddd0b18
-#define ifcIDsNIPpREDEFINED_HEADrAW2aFTERtITLE          0xdddd0b19
-#define ifcIDsNIPpREDEFINED_HEADrAW3sCRIPTbEGIN         0xdddd0b1a
-#define ifcIDsNIPpREDEFINED_HEADrAW4sCRIPTeND           0xdddd0b1b
-#define ifcIDsNIPpREDEFINED_HEADrAW5hEADeND             0xdddd0b1c
-#define ifcIDsNIPpREDEFINED_BODYrAWbEGIN                0xdddd0b1d
+#define ifcIDsNIPpREDEFINED_HTTPfAILnOTfOUND            0xdddd07d2
+#define ifcIDsNIPpREDEFINED_HTTPoKtEXThTML              0xdddd07d3
+#define ifcIDsNIPpREDEFINED_HTTPoKmP3                   0xdddd07d4
+#define ifcIDsNIPpREDEFINED_HTTPoKiMAGEiCON             0xdddd07d5
+#define ifcIDsNIPpREDEFINED_HTTPoKiMAGEgIF              0xdddd07d6
+#define ifcIDsNIPpREDEFINED_HTTPoKiMAGEjPEG             0xdddd07d7
+#define ifcIDsNIPpREDEFINED_HTTPcONTINUEwELCOME         0xdddd07d8
+#define ifcIDsNIPpREDEFINED_HTTPfAILmOVED               0xdddd07d9
+#define ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP           0xdddd07da
+#define ifcIDsNIPpREDEFINED_HTTPlOCATIONrOOT            0xdddd07db
+#define ifcIDsNIPpREDEFINED_HEAD1                       0xdddd07dc
+#define ifcIDsNIPpREDEFINED_HEAD2                       0xdddd07dd
+#define ifcIDsNIPpREDEFINED_HEAD3                       0xdddd07de
+#define ifcIDsNIPpREDEFINED_HEAD4                       0xdddd07df
+#define ifcIDsNIPpREDEFINED_HEAD5                       0xdddd07e0
+#define ifcIDsNIPpREDEFINED_HEAD6                       0xdddd07e1
+#define ifcIDsNIPpREDEFINED_HEAD7                       0xdddd07e2
+#define ifcIDsNIPpREDEFINED_HEAD8                       0xdddd07e3
+#define ifcIDsNIPpREDEFINED_HEAD9                       0xdddd07e4
+#define ifcIDsNIPpREDEFINED_HEADa                       0xdddd07e5
+#define ifcIDsNIPpREDEFINED_HEADb                       0xdddd07e6
+#define ifcIDsNIPpREDEFINED_HEADc                       0xdddd07e7
+#define ifcIDsNIPpREDEFINED_HEADd                       0xdddd07e8
+#define ifcIDsNIPpREDEFINED_HEADe                       0xdddd07e9
+#define ifcIDsNIPpREDEFINED_HEADf                       0xdddd07ea
+#define ifcIDsNIPpREDEFINED_HEAD01                      0xdddd07eb
+#define ifcIDsNIPpREDEFINED_HEAD11                      0xdddd07ec
+#define ifcIDsNIPpREDEFINED_HEAD21                      0xdddd07ed
+#define ifcIDsNIPpREDEFINED_HEAD31                      0xdddd07ee
+#define ifcIDsNIPpREDEFINED_HEAD41                      0xdddd07ef
+#define ifcIDsNIPpREDEFINED_HEAD51                      0xdddd07f0
+#define ifcIDsNIPpREDEFINED_HEAD61                      0xdddd07f1
+#define ifcIDsNIPpREDEFINED_HEAD71                      0xdddd07f2
+#define ifcIDsNIPpREDEFINED_HEAD81                      0xdddd07f3
+#define ifcIDsNIPpREDEFINED_HEAD91                      0xdddd07f4
+#define ifcIDsNIPpREDEFINED_HEADa1                      0xdddd07f5
+#define ifcIDsNIPpREDEFINED_HEADb1                      0xdddd07f6
+#define ifcIDsNIPpREDEFINED_HEADc1                      0xdddd07f7
+#define ifcIDsNIPpREDEFINED_HEADd1                      0xdddd07f8
+#define ifcIDsNIPpREDEFINED_HEADe1                      0xdddd07f9
+#define ifcIDsNIPpREDEFINED_HEADf1                      0xdddd07fa
+#define ifcIDsNIPpREDEFINED_FOOT1                       0xdddd07fb
+#define ifcIDsNIPpREDEFINED_FOOT2                       0xdddd07fc
+#define ifcIDsNIPpREDEFINED_FOOT3                       0xdddd07fd
+#define ifcIDsNIPpREDEFINED_FOOT4                       0xdddd07fe
+#define ifcIDsNIPpREDEFINED_FOOT5                       0xdddd07ff
+#define ifcIDsNIPpREDEFINED_FOOT6                       0xdddd0800
+#define ifcIDsNIPpREDEFINED_FOOT7                       0xdddd0801
+#define ifcIDsNIPpREDEFINED_FOOT8                       0xdddd0802
+#define ifcIDsNIPpREDEFINED_FOOT9                       0xdddd0803
+#define ifcIDsNIPpREDEFINED_FOOTa                       0xdddd0804
+#define ifcIDsNIPpREDEFINED_FOOTb                       0xdddd0805
+#define ifcIDsNIPpREDEFINED_FOOTc                       0xdddd0806
+#define ifcIDsNIPpREDEFINED_FOOTd                       0xdddd0807
+#define ifcIDsNIPpREDEFINED_FOOTe                       0xdddd0808
+#define ifcIDsNIPpREDEFINED_FOOTf                       0xdddd0809
+#define ifcIDsNIPpREDEFINED_FOOT01                      0xdddd080a
+#define ifcIDsNIPpREDEFINED_CALENDAR1                   0xdddd080b
+#define ifcIDsNIPpREDEFINED_CALENDAR2                   0xdddd080c
+#define ifcIDsNIPpREDEFINED_CALENDAR3                   0xdddd080d
+#define ifcIDsNIPpREDEFINED_CALENDAR4                   0xdddd080e
+#define ifcIDsNIPpREDEFINED_CALENDAR5                   0xdddd080f
+#define ifcIDsNIPpREDEFINED_CALENDAR6                   0xdddd0810
+#define ifcIDsNIPpREDEFINED_CALENDAR7                   0xdddd0811
+#define ifcIDsNIPpREDEFINED_CALENDAR8                   0xdddd0812
+#define ifcIDsNIPpREDEFINED_HEADiMAGEaDSbLANK           0xdddd0813
+#define ifcIDsNIPpREDEFINED_HEADiMAGEaDSgOOGLE          0xdddd0814
+#define ifcIDsNIPpREDEFINED_HEADaDlINKSbLANK            0xdddd0815
+#define ifcIDsNIPpREDEFINED_HEADaDlINKSgOOGLE           0xdddd0816
+#define ifcIDsNIPpREDEFINED_FOOTiMAGEaDS                0xdddd0817
+#define ifcIDsNIPpREDEFINED_FOOTaDlINKS                 0xdddd0818
+#define ifcIDsNIPpREDEFINED_FREEBIES1                   0xdddd0819
+#define ifcIDsNIPpREDEFINED_FREEBIES2                   0xdddd081a
+#define ifcIDsNIPpREDEFINED_FREEBIES3                   0xdddd081b
+#define ifcIDsNIPpREDEFINED_FREEBIES4                   0xdddd081c
+#define ifcIDsNIPpREDEFINED_FREEBIES5                   0xdddd081d
+#define ifcIDsNIPpREDEFINED_FREEBIES6                   0xdddd081e
+#define ifcIDsNIPpREDEFINED_FREEBIES7                   0xdddd081f
+#define ifcIDsNIPpREDEFINED_FREEBIES8                   0xdddd0820
+#define ifcIDsNIPpREDEFINED_FREEBIES9                   0xdddd0821
+#define ifcIDsNIPpREDEFINED_FREEBIESa                   0xdddd0822
+#define ifcIDsNIPpREDEFINED_FREEBIESb                   0xdddd0823
+#define ifcIDsNIPpREDEFINED_FREEBIESc                   0xdddd0824
+#define ifcIDsNIPpREDEFINED_FREEBIESd                   0xdddd0825
+#define ifcIDsNIPpREDEFINED_FREEBIESe                   0xdddd0826
+#define ifcIDsNIPpREDEFINED_FREEBIESf                   0xdddd0827
+#define ifcIDsNIPpREDEFINED_FREEBIES01                  0xdddd0828
+#define ifcIDsNIPpREDEFINED_DO1                         0xdddd0829
+#define ifcIDsNIPpREDEFINED_DO2                         0xdddd082a
+#define ifcIDsNIPpREDEFINED_DO3                         0xdddd082b
+#define ifcIDsNIPpREDEFINED_DO4                         0xdddd082c
+#define ifcIDsNIPpREDEFINED_DO5                         0xdddd082d
+#define ifcIDsNIPpREDEFINED_DO6                         0xdddd082e
+#define ifcIDsNIPpREDEFINED_DO7                         0xdddd082f
+#define ifcIDsNIPpREDEFINED_DO8                         0xdddd0830
+#define ifcIDsNIPpREDEFINED_DO9                         0xdddd0831
+#define ifcIDsNIPpREDEFINED_DOa                         0xdddd0832
+#define ifcIDsNIPpREDEFINED_DOb                         0xdddd0833
+#define ifcIDsNIPpREDEFINED_DOc                         0xdddd0834
+#define ifcIDsNIPpREDEFINED_DOd                         0xdddd0835
+#define ifcIDsNIPpREDEFINED_DOe                         0xdddd0836
+#define ifcIDsNIPpREDEFINED_DOf                         0xdddd0837
+#define ifcIDsNIPpREDEFINED_DO01                        0xdddd0838
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT1                  0xdddd0839
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT2                  0xdddd083a
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT3                  0xdddd083b
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT4                  0xdddd083c
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT5                  0xdddd083d
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT6                  0xdddd083e
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT7                  0xdddd083f
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT8                  0xdddd0840
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT9                  0xdddd0841
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTa                  0xdddd0842
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTb                  0xdddd0843
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTc                  0xdddd0844
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTd                  0xdddd0845
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTe                  0xdddd0846
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTf                  0xdddd0847
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT01                 0xdddd0848
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT11                 0xdddd0849
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT21                 0xdddd084a
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT31                 0xdddd084b
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT41                 0xdddd084c
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT51                 0xdddd084d
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT61                 0xdddd084e
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT71                 0xdddd084f
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT81                 0xdddd0850
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT91                 0xdddd0851
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTa1                 0xdddd0852
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTb1                 0xdddd0853
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTc1                 0xdddd0854
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTd1                 0xdddd0855
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTe1                 0xdddd0856
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTf1                 0xdddd0857
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT02                 0xdddd0858
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT12                 0xdddd0859
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT22                 0xdddd085a
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT32                 0xdddd085b
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT42                 0xdddd085c
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT52                 0xdddd085d
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT62                 0xdddd085e
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT72                 0xdddd085f
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT82                 0xdddd0860
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT92                 0xdddd0861
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTa2                 0xdddd0862
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTb2                 0xdddd0863
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTc2                 0xdddd0864
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTd2                 0xdddd0865
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTe2                 0xdddd0866
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTf2                 0xdddd0867
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT03                 0xdddd0868
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT13                 0xdddd0869
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT23                 0xdddd086a
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT33                 0xdddd086b
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT43                 0xdddd086c
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT53                 0xdddd086d
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT63                 0xdddd086e
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT73                 0xdddd086f
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT83                 0xdddd0870
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT93                 0xdddd0871
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTa3                 0xdddd0872
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTb3                 0xdddd0873
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTc3                 0xdddd0874
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTd3                 0xdddd0875
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTe3                 0xdddd0876
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTf3                 0xdddd0877
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT04                 0xdddd0878
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT14                 0xdddd0879
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT24                 0xdddd087a
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT34                 0xdddd087b
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT44                 0xdddd087c
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT54                 0xdddd087d
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT64                 0xdddd087e
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT74                 0xdddd087f
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT84                 0xdddd0880
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT94                 0xdddd0881
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTa4                 0xdddd0882
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTb4                 0xdddd0883
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTc4                 0xdddd0884
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTd4                 0xdddd0885
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTe4                 0xdddd0886
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTf4                 0xdddd0887
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT05                 0xdddd0888
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT15                 0xdddd0889
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT25                 0xdddd088a
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT35                 0xdddd088b
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT45                 0xdddd088c
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT55                 0xdddd088d
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT65                 0xdddd088e
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT75                 0xdddd088f
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT85                 0xdddd0890
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT95                 0xdddd0891
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTa5                 0xdddd0892
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTb5                 0xdddd0893
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTc5                 0xdddd0894
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTd5                 0xdddd0895
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTe5                 0xdddd0896
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTf5                 0xdddd0897
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT06                 0xdddd0898
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT16                 0xdddd0899
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT26                 0xdddd089a
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT36                 0xdddd089b
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT46                 0xdddd089c
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT56                 0xdddd089d
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT66                 0xdddd089e
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT76                 0xdddd089f
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT86                 0xdddd08a0
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT96                 0xdddd08a1
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTa6                 0xdddd08a2
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTb6                 0xdddd08a3
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTc6                 0xdddd08a4
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTd6                 0xdddd08a5
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTe6                 0xdddd08a6
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTf6                 0xdddd08a7
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT07                 0xdddd08a8
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT17                 0xdddd08a9
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT27                 0xdddd08aa
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT37                 0xdddd08ab
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT47                 0xdddd08ac
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT57                 0xdddd08ad
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT67                 0xdddd08ae
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT77                 0xdddd08af
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT87                 0xdddd08b0
+#define ifcIDsNIPpREDEFINED_MYaCCOUNT97                 0xdddd08b1
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTa7                 0xdddd08b2
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTb7                 0xdddd08b3
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTc7                 0xdddd08b4
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTd7                 0xdddd08b5
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTe7                 0xdddd08b6
+#define ifcIDsNIPpREDEFINED_MYaCCOUNTf7                 0xdddd08b7
+#define ifcIDsNIPpREDEFINED_HELP0                       0xdddd08b8
+#define ifcIDsNIPpREDEFINED_HELP1                       0xdddd08b9
+#define ifcIDsNIPpREDEFINED_HELP2                       0xdddd08ba
+#define ifcIDsNIPpREDEFINED_HELP3                       0xdddd08bb
+#define ifcIDsNIPpREDEFINED_HELP4                       0xdddd08bc
+#define ifcIDsNIPpREDEFINED_HELP5                       0xdddd08bd
+#define ifcIDsNIPpREDEFINED_HELP6                       0xdddd08be
+#define ifcIDsNIPpREDEFINED_HELP7                       0xdddd08bf
+#define ifcIDsNIPpREDEFINED_HELP8                       0xdddd08c0
+#define ifcIDsNIPpREDEFINED_HELP9                       0xdddd08c1
+#define ifcIDsNIPpREDEFINED_HELPa                       0xdddd08c2
+#define ifcIDsNIPpREDEFINED_HELPb                       0xdddd08c3
+#define ifcIDsNIPpREDEFINED_HELPc                       0xdddd08c4
+#define ifcIDsNIPpREDEFINED_HELPd                       0xdddd08c5
+#define ifcIDsNIPpREDEFINED_HELPe                       0xdddd08c6
+#define ifcIDsNIPpREDEFINED_HELPf                       0xdddd08c7
+#define ifcIDsNIPpREDEFINED_HELP01                      0xdddd08c8
+#define ifcIDsNIPpREDEFINED_HELP11                      0xdddd08c9
+#define ifcIDsNIPpREDEFINED_HELP21                      0xdddd08ca
+#define ifcIDsNIPpREDEFINED_HELP31                      0xdddd08cb
+#define ifcIDsNIPpREDEFINED_HELP41                      0xdddd08cc
+#define ifcIDsNIPpREDEFINED_HELP51                      0xdddd08cd
+#define ifcIDsNIPpREDEFINED_HELP61                      0xdddd08ce
+#define ifcIDsNIPpREDEFINED_HELP71                      0xdddd08cf
+#define ifcIDsNIPpREDEFINED_HELP81                      0xdddd08d0
+#define ifcIDsNIPpREDEFINED_HELP91                      0xdddd08d1
+#define ifcIDsNIPpREDEFINED_HELPa1                      0xdddd08d2
+#define ifcIDsNIPpREDEFINED_HELPb1                      0xdddd08d3
+#define ifcIDsNIPpREDEFINED_HELPc1                      0xdddd08d4
+#define ifcIDsNIPpREDEFINED_HELPd1                      0xdddd08d5
+#define ifcIDsNIPpREDEFINED_HELPe1                      0xdddd08d6
+#define ifcIDsNIPpREDEFINED_HELPf1                      0xdddd08d7
+#define ifcIDsNIPpREDEFINED_HELP02                      0xdddd08d8
+#define ifcIDsNIPpREDEFINED_HELP12                      0xdddd08d9
+#define ifcIDsNIPpREDEFINED_HELP22                      0xdddd08da
+#define ifcIDsNIPpREDEFINED_HELP32                      0xdddd08db
+#define ifcIDsNIPpREDEFINED_HELP42                      0xdddd08dc
+#define ifcIDsNIPpREDEFINED_HELP52                      0xdddd08dd
+#define ifcIDsNIPpREDEFINED_HELP62                      0xdddd08de
+#define ifcIDsNIPpREDEFINED_HELP72                      0xdddd08df
+#define ifcIDsNIPpREDEFINED_HELP82                      0xdddd08e0
+#define ifcIDsNIPpREDEFINED_HELP92                      0xdddd08e1
+#define ifcIDsNIPpREDEFINED_HELPa2                      0xdddd08e2
+#define ifcIDsNIPpREDEFINED_HELPb2                      0xdddd08e3
+#define ifcIDsNIPpREDEFINED_HELPc2                      0xdddd08e4
+#define ifcIDsNIPpREDEFINED_HELPd2                      0xdddd08e5
+#define ifcIDsNIPpREDEFINED_HELPe2                      0xdddd08e6
+#define ifcIDsNIPpREDEFINED_HELPf2                      0xdddd08e7
+#define ifcIDsNIPpREDEFINED_HELP03                      0xdddd08e8
+#define ifcIDsNIPpREDEFINED_HELP13                      0xdddd08e9
+#define ifcIDsNIPpREDEFINED_HELP23                      0xdddd08ea
+#define ifcIDsNIPpREDEFINED_HELP33                      0xdddd08eb
+#define ifcIDsNIPpREDEFINED_HELP43                      0xdddd08ec
+#define ifcIDsNIPpREDEFINED_HELP53                      0xdddd08ed
+#define ifcIDsNIPpREDEFINED_HELP63                      0xdddd08ee
+#define ifcIDsNIPpREDEFINED_HELP73                      0xdddd08ef
+#define ifcIDsNIPpREDEFINED_HELP83                      0xdddd08f0
+#define ifcIDsNIPpREDEFINED_HELP93                      0xdddd08f1
+#define ifcIDsNIPpREDEFINED_HELPa3                      0xdddd08f2
+#define ifcIDsNIPpREDEFINED_HELPb3                      0xdddd08f3
+#define ifcIDsNIPpREDEFINED_HELPc3                      0xdddd08f4
+#define ifcIDsNIPpREDEFINED_HELPd3                      0xdddd08f5
+#define ifcIDsNIPpREDEFINED_HELPe3                      0xdddd08f6
+#define ifcIDsNIPpREDEFINED_HELPf3                      0xdddd08f7
+#define ifcIDsNIPpREDEFINED_HELP04                      0xdddd08f8
+#define ifcIDsNIPpREDEFINED_HELP14                      0xdddd08f9
+#define ifcIDsNIPpREDEFINED_HELP24                      0xdddd08fa
+#define ifcIDsNIPpREDEFINED_HELP34                      0xdddd08fb
+#define ifcIDsNIPpREDEFINED_HELP44                      0xdddd08fc
+#define ifcIDsNIPpREDEFINED_HELP54                      0xdddd08fd
+#define ifcIDsNIPpREDEFINED_HELP64                      0xdddd08fe
+#define ifcIDsNIPpREDEFINED_HELP74                      0xdddd08ff
+#define ifcIDsNIPpREDEFINED_HELP84                      0xdddd0900
+#define ifcIDsNIPpREDEFINED_HELP94                      0xdddd0901
+#define ifcIDsNIPpREDEFINED_HELPa4                      0xdddd0902
+#define ifcIDsNIPpREDEFINED_HELPb4                      0xdddd0903
+#define ifcIDsNIPpREDEFINED_HELPc4                      0xdddd0904
+#define ifcIDsNIPpREDEFINED_HELPd4                      0xdddd0905
+#define ifcIDsNIPpREDEFINED_HELPe4                      0xdddd0906
+#define ifcIDsNIPpREDEFINED_HELPf4                      0xdddd0907
+#define ifcIDsNIPpREDEFINED_HELP05                      0xdddd0908
+#define ifcIDsNIPpREDEFINED_HELP15                      0xdddd0909
+#define ifcIDsNIPpREDEFINED_HELP25                      0xdddd090a
+#define ifcIDsNIPpREDEFINED_HELP35                      0xdddd090b
+#define ifcIDsNIPpREDEFINED_HELP45                      0xdddd090c
+#define ifcIDsNIPpREDEFINED_HELP55                      0xdddd090d
+#define ifcIDsNIPpREDEFINED_HELP65                      0xdddd090e
+#define ifcIDsNIPpREDEFINED_HELP75                      0xdddd090f
+#define ifcIDsNIPpREDEFINED_HELP85                      0xdddd0910
+#define ifcIDsNIPpREDEFINED_HELP95                      0xdddd0911
+#define ifcIDsNIPpREDEFINED_HELPa5                      0xdddd0912
+#define ifcIDsNIPpREDEFINED_HELPb5                      0xdddd0913
+#define ifcIDsNIPpREDEFINED_HELPc5                      0xdddd0914
+#define ifcIDsNIPpREDEFINED_HELPd5                      0xdddd0915
+#define ifcIDsNIPpREDEFINED_HELPe5                      0xdddd0916
+#define ifcIDsNIPpREDEFINED_HELPf5                      0xdddd0917
+#define ifcIDsNIPpREDEFINED_HELP06                      0xdddd0918
+#define ifcIDsNIPpREDEFINED_HELP16                      0xdddd0919
+#define ifcIDsNIPpREDEFINED_HELP26                      0xdddd091a
+#define ifcIDsNIPpREDEFINED_HELP36                      0xdddd091b
+#define ifcIDsNIPpREDEFINED_HELP46                      0xdddd091c
+#define ifcIDsNIPpREDEFINED_HELP56                      0xdddd091d
+#define ifcIDsNIPpREDEFINED_HELP66                      0xdddd091e
+#define ifcIDsNIPpREDEFINED_HELP76                      0xdddd091f
+#define ifcIDsNIPpREDEFINED_HELP86                      0xdddd0920
+#define ifcIDsNIPpREDEFINED_HELP96                      0xdddd0921
+#define ifcIDsNIPpREDEFINED_HELPa6                      0xdddd0922
+#define ifcIDsNIPpREDEFINED_HELPb6                      0xdddd0923
+#define ifcIDsNIPpREDEFINED_HELPc6                      0xdddd0924
+#define ifcIDsNIPpREDEFINED_HELPd6                      0xdddd0925
+#define ifcIDsNIPpREDEFINED_HELPe6                      0xdddd0926
+#define ifcIDsNIPpREDEFINED_HELPf6                      0xdddd0927
+#define ifcIDsNIPpREDEFINED_HELP07                      0xdddd0928
+#define ifcIDsNIPpREDEFINED_HELP17                      0xdddd0929
+#define ifcIDsNIPpREDEFINED_HELP27                      0xdddd092a
+#define ifcIDsNIPpREDEFINED_HELP37                      0xdddd092b
+#define ifcIDsNIPpREDEFINED_HELP47                      0xdddd092c
+#define ifcIDsNIPpREDEFINED_HELP57                      0xdddd092d
+#define ifcIDsNIPpREDEFINED_HELP67                      0xdddd092e
+#define ifcIDsNIPpREDEFINED_HELP77                      0xdddd092f
+#define ifcIDsNIPpREDEFINED_HELP87                      0xdddd0930
+#define ifcIDsNIPpREDEFINED_HELP97                      0xdddd0931
+#define ifcIDsNIPpREDEFINED_HELPa7                      0xdddd0932
+#define ifcIDsNIPpREDEFINED_HELPb7                      0xdddd0933
+#define ifcIDsNIPpREDEFINED_HELPc7                      0xdddd0934
+#define ifcIDsNIPpREDEFINED_HELPd7                      0xdddd0935
+#define ifcIDsNIPpREDEFINED_HELPe7                      0xdddd0936
+#define ifcIDsNIPpREDEFINED_HELPf7                      0xdddd0937
+#define ifcIDsNIPpREDEFINED_HELP08                      0xdddd0938
+#define ifcIDsNIPpREDEFINED_HELP18                      0xdddd0939
+#define ifcIDsNIPpREDEFINED_HELP28                      0xdddd093a
+#define ifcIDsNIPpREDEFINED_HELP38                      0xdddd093b
+#define ifcIDsNIPpREDEFINED_HELP48                      0xdddd093c
+#define ifcIDsNIPpREDEFINED_HELP58                      0xdddd093d
+#define ifcIDsNIPpREDEFINED_HELP68                      0xdddd093e
+#define ifcIDsNIPpREDEFINED_HELP78                      0xdddd093f
+#define ifcIDsNIPpREDEFINED_HELP88                      0xdddd0940
+#define ifcIDsNIPpREDEFINED_HELP98                      0xdddd0941
+#define ifcIDsNIPpREDEFINED_HELPa8                      0xdddd0942
+#define ifcIDsNIPpREDEFINED_HELPb8                      0xdddd0943
+#define ifcIDsNIPpREDEFINED_HELPc8                      0xdddd0944
+#define ifcIDsNIPpREDEFINED_HELPd8                      0xdddd0945
+#define ifcIDsNIPpREDEFINED_HELPe8                      0xdddd0946
+#define ifcIDsNIPpREDEFINED_HELPf8                      0xdddd0947
+#define ifcIDsNIPpREDEFINED_HELP09                      0xdddd0948
+#define ifcIDsNIPpREDEFINED_HELP19                      0xdddd0949
+#define ifcIDsNIPpREDEFINED_HELP29                      0xdddd094a
+#define ifcIDsNIPpREDEFINED_HELP39                      0xdddd094b
+#define ifcIDsNIPpREDEFINED_HELP49                      0xdddd094c
+#define ifcIDsNIPpREDEFINED_HELP59                      0xdddd094d
+#define ifcIDsNIPpREDEFINED_HELP69                      0xdddd094e
+#define ifcIDsNIPpREDEFINED_HELP79                      0xdddd094f
+#define ifcIDsNIPpREDEFINED_HELP89                      0xdddd0950
+#define ifcIDsNIPpREDEFINED_HELP99                      0xdddd0951
+#define ifcIDsNIPpREDEFINED_HELPa9                      0xdddd0952
+#define ifcIDsNIPpREDEFINED_HELPb9                      0xdddd0953
+#define ifcIDsNIPpREDEFINED_HELPc9                      0xdddd0954
+#define ifcIDsNIPpREDEFINED_HELPd9                      0xdddd0955
+#define ifcIDsNIPpREDEFINED_HELPe9                      0xdddd0956
+#define ifcIDsNIPpREDEFINED_HELPf9                      0xdddd0957
+#define ifcIDsNIPpREDEFINED_HELP0a                      0xdddd0958
+#define ifcIDsNIPpREDEFINED_HELP1a                      0xdddd0959
+#define ifcIDsNIPpREDEFINED_HELP2a                      0xdddd095a
+#define ifcIDsNIPpREDEFINED_HELP3a                      0xdddd095b
+#define ifcIDsNIPpREDEFINED_HELP4a                      0xdddd095c
+#define ifcIDsNIPpREDEFINED_HELP5a                      0xdddd095d
+#define ifcIDsNIPpREDEFINED_HELP6a                      0xdddd095e
+#define ifcIDsNIPpREDEFINED_HELP7a                      0xdddd095f
+#define ifcIDsNIPpREDEFINED_HELP8a                      0xdddd0960
+#define ifcIDsNIPpREDEFINED_HELP9a                      0xdddd0961
+#define ifcIDsNIPpREDEFINED_HELPaa                      0xdddd0962
+#define ifcIDsNIPpREDEFINED_HELPba                      0xdddd0963
+#define ifcIDsNIPpREDEFINED_HELPca                      0xdddd0964
+#define ifcIDsNIPpREDEFINED_HELPda                      0xdddd0965
+#define ifcIDsNIPpREDEFINED_HELPea                      0xdddd0966
+#define ifcIDsNIPpREDEFINED_HELPfa                      0xdddd0967
+#define ifcIDsNIPpREDEFINED_HELP0b                      0xdddd0968
+#define ifcIDsNIPpREDEFINED_HELP1b                      0xdddd0969
+#define ifcIDsNIPpREDEFINED_HELP2b                      0xdddd096a
+#define ifcIDsNIPpREDEFINED_HELP3b                      0xdddd096b
+#define ifcIDsNIPpREDEFINED_HELP4b                      0xdddd096c
+#define ifcIDsNIPpREDEFINED_HELP5b                      0xdddd096d
+#define ifcIDsNIPpREDEFINED_HELP6b                      0xdddd096e
+#define ifcIDsNIPpREDEFINED_HELP7b                      0xdddd096f
+#define ifcIDsNIPpREDEFINED_HELP8b                      0xdddd0970
+#define ifcIDsNIPpREDEFINED_HELP9b                      0xdddd0971
+#define ifcIDsNIPpREDEFINED_HELPab                      0xdddd0972
+#define ifcIDsNIPpREDEFINED_HELPbb                      0xdddd0973
+#define ifcIDsNIPpREDEFINED_HELPcb                      0xdddd0974
+#define ifcIDsNIPpREDEFINED_HELPdb                      0xdddd0975
+#define ifcIDsNIPpREDEFINED_HELPeb                      0xdddd0976
+#define ifcIDsNIPpREDEFINED_HELPfb                      0xdddd0977
+#define ifcIDsNIPpREDEFINED_HELP0c                      0xdddd0978
+#define ifcIDsNIPpREDEFINED_HELP1c                      0xdddd0979
+#define ifcIDsNIPpREDEFINED_HELP2c                      0xdddd097a
+#define ifcIDsNIPpREDEFINED_HELP3c                      0xdddd097b
+#define ifcIDsNIPpREDEFINED_HELP4c                      0xdddd097c
+#define ifcIDsNIPpREDEFINED_HELP5c                      0xdddd097d
+#define ifcIDsNIPpREDEFINED_HELP6c                      0xdddd097e
+#define ifcIDsNIPpREDEFINED_HELP7c                      0xdddd097f
+#define ifcIDsNIPpREDEFINED_HELP8c                      0xdddd0980
+#define ifcIDsNIPpREDEFINED_HELP9c                      0xdddd0981
+#define ifcIDsNIPpREDEFINED_HELPac                      0xdddd0982
+#define ifcIDsNIPpREDEFINED_HELPbc                      0xdddd0983
+#define ifcIDsNIPpREDEFINED_HELPcc                      0xdddd0984
+#define ifcIDsNIPpREDEFINED_HELPdc                      0xdddd0985
+#define ifcIDsNIPpREDEFINED_HELPec                      0xdddd0986
+#define ifcIDsNIPpREDEFINED_HELPfc                      0xdddd0987
+#define ifcIDsNIPpREDEFINED_HELP0d                      0xdddd0988
+#define ifcIDsNIPpREDEFINED_HELP1d                      0xdddd0989
+#define ifcIDsNIPpREDEFINED_HELP2d                      0xdddd098a
+#define ifcIDsNIPpREDEFINED_HELP3d                      0xdddd098b
+#define ifcIDsNIPpREDEFINED_HELP4d                      0xdddd098c
+#define ifcIDsNIPpREDEFINED_HELP5d                      0xdddd098d
+#define ifcIDsNIPpREDEFINED_HELP6d                      0xdddd098e
+#define ifcIDsNIPpREDEFINED_HELP7d                      0xdddd098f
+#define ifcIDsNIPpREDEFINED_HELP8d                      0xdddd0990
+#define ifcIDsNIPpREDEFINED_HELP9d                      0xdddd0991
+#define ifcIDsNIPpREDEFINED_HELPad                      0xdddd0992
+#define ifcIDsNIPpREDEFINED_HELPbd                      0xdddd0993
+#define ifcIDsNIPpREDEFINED_HELPcd                      0xdddd0994
+#define ifcIDsNIPpREDEFINED_HELPdd                      0xdddd0995
+#define ifcIDsNIPpREDEFINED_HELPed                      0xdddd0996
+#define ifcIDsNIPpREDEFINED_HELPfd                      0xdddd0997
+#define ifcIDsNIPpREDEFINED_HELP0e                      0xdddd0998
+#define ifcIDsNIPpREDEFINED_HELP1e                      0xdddd0999
+#define ifcIDsNIPpREDEFINED_HELP2e                      0xdddd099a
+#define ifcIDsNIPpREDEFINED_HELP3e                      0xdddd099b
+#define ifcIDsNIPpREDEFINED_HELP4e                      0xdddd099c
+#define ifcIDsNIPpREDEFINED_HELP5e                      0xdddd099d
+#define ifcIDsNIPpREDEFINED_HELP6e                      0xdddd099e
+#define ifcIDsNIPpREDEFINED_HELP7e                      0xdddd099f
+#define ifcIDsNIPpREDEFINED_HELP8e                      0xdddd09a0
+#define ifcIDsNIPpREDEFINED_HELP9e                      0xdddd09a1
+#define ifcIDsNIPpREDEFINED_HELPae                      0xdddd09a2
+#define ifcIDsNIPpREDEFINED_HELPbe                      0xdddd09a3
+#define ifcIDsNIPpREDEFINED_HELPce                      0xdddd09a4
+#define ifcIDsNIPpREDEFINED_HELPde                      0xdddd09a5
+#define ifcIDsNIPpREDEFINED_HELPee                      0xdddd09a6
+#define ifcIDsNIPpREDEFINED_HELPfe                      0xdddd09a7
+#define ifcIDsNIPpREDEFINED_HELP0f                      0xdddd09a8
+#define ifcIDsNIPpREDEFINED_HELP1f                      0xdddd09a9
+#define ifcIDsNIPpREDEFINED_HELP2f                      0xdddd09aa
+#define ifcIDsNIPpREDEFINED_HELP3f                      0xdddd09ab
+#define ifcIDsNIPpREDEFINED_HELP4f                      0xdddd09ac
+#define ifcIDsNIPpREDEFINED_HELP5f                      0xdddd09ad
+#define ifcIDsNIPpREDEFINED_HELP6f                      0xdddd09ae
+#define ifcIDsNIPpREDEFINED_HELP7f                      0xdddd09af
+#define ifcIDsNIPpREDEFINED_HELP8f                      0xdddd09b0
+#define ifcIDsNIPpREDEFINED_HELP9f                      0xdddd09b1
+#define ifcIDsNIPpREDEFINED_HELPaf                      0xdddd09b2
+#define ifcIDsNIPpREDEFINED_HELPbf                      0xdddd09b3
+#define ifcIDsNIPpREDEFINED_HELPcf                      0xdddd09b4
+#define ifcIDsNIPpREDEFINED_HELPdf                      0xdddd09b5
+#define ifcIDsNIPpREDEFINED_HELPef                      0xdddd09b6
+#define ifcIDsNIPpREDEFINED_HELPff                      0xdddd09b7
+#define ifcIDsNIPpREDEFINED_HOME1                       0xdddd09b8
+#define ifcIDsNIPpREDEFINED_HOME2                       0xdddd09b9
+#define ifcIDsNIPpREDEFINED_HOME3                       0xdddd09ba
+#define ifcIDsNIPpREDEFINED_HOME4                       0xdddd09bb
+#define ifcIDsNIPpREDEFINED_HOME5                       0xdddd09bc
+#define ifcIDsNIPpREDEFINED_HOME6                       0xdddd09bd
+#define ifcIDsNIPpREDEFINED_HOME7                       0xdddd09be
+#define ifcIDsNIPpREDEFINED_HOME8                       0xdddd09bf
+#define ifcIDsNIPpREDEFINED_HOME9                       0xdddd09c0
+#define ifcIDsNIPpREDEFINED_HOMEa                       0xdddd09c1
+#define ifcIDsNIPpREDEFINED_HOMEb                       0xdddd09c2
+#define ifcIDsNIPpREDEFINED_HOMEc                       0xdddd09c3
+#define ifcIDsNIPpREDEFINED_HOMEd                       0xdddd09c4
+#define ifcIDsNIPpREDEFINED_HOMEe                       0xdddd09c5
+#define ifcIDsNIPpREDEFINED_HOMEf                       0xdddd09c6
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART1              0xdddd09c7
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART2              0xdddd09c8
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART3              0xdddd09c9
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART4              0xdddd09ca
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART5              0xdddd09cb
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART6              0xdddd09cc
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART7              0xdddd09cd
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART8              0xdddd09ce
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pART9              0xdddd09cf
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTa              0xdddd09d0
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTb              0xdddd09d1
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTc              0xdddd09d2
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTd              0xdddd09d3
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTe              0xdddd09d4
+#define ifcIDsNIPpREDEFINED_HOMEfACE1pARTf              0xdddd09d5
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART1              0xdddd09d6
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART2              0xdddd09d7
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART3              0xdddd09d8
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART4              0xdddd09d9
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART5              0xdddd09da
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART6              0xdddd09db
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART7              0xdddd09dc
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART8              0xdddd09dd
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pART9              0xdddd09de
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTa              0xdddd09df
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTb              0xdddd09e0
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTc              0xdddd09e1
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTd              0xdddd09e2
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTe              0xdddd09e3
+#define ifcIDsNIPpREDEFINED_HOMEfACE2pARTf              0xdddd09e4
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART1              0xdddd09e5
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART2              0xdddd09e6
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART3              0xdddd09e7
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART4              0xdddd09e8
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART5              0xdddd09e9
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART6              0xdddd09ea
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART7              0xdddd09eb
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART8              0xdddd09ec
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pART9              0xdddd09ed
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTa              0xdddd09ee
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTb              0xdddd09ef
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTc              0xdddd09f0
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTd              0xdddd09f1
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTe              0xdddd09f2
+#define ifcIDsNIPpREDEFINED_HOMEfACE3pARTf              0xdddd09f3
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART1              0xdddd09f4
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART2              0xdddd09f5
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART3              0xdddd09f6
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART4              0xdddd09f7
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART5              0xdddd09f8
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART6              0xdddd09f9
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART7              0xdddd09fa
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART8              0xdddd09fb
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pART9              0xdddd09fc
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTa              0xdddd09fd
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTb              0xdddd09fe
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTc              0xdddd09ff
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTd              0xdddd0a00
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTe              0xdddd0a01
+#define ifcIDsNIPpREDEFINED_HOMEfACE4pARTf              0xdddd0a02
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART1              0xdddd0a03
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART2              0xdddd0a04
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART3              0xdddd0a05
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART4              0xdddd0a06
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART5              0xdddd0a07
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART6              0xdddd0a08
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART7              0xdddd0a09
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART8              0xdddd0a0a
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pART9              0xdddd0a0b
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTa              0xdddd0a0c
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTb              0xdddd0a0d
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTc              0xdddd0a0e
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTd              0xdddd0a0f
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTe              0xdddd0a10
+#define ifcIDsNIPpREDEFINED_HOMEfACE5pARTf              0xdddd0a11
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART1              0xdddd0a12
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART2              0xdddd0a13
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART3              0xdddd0a14
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART4              0xdddd0a15
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART5              0xdddd0a16
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART6              0xdddd0a17
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART7              0xdddd0a18
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART8              0xdddd0a19
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pART9              0xdddd0a1a
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTa              0xdddd0a1b
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTb              0xdddd0a1c
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTc              0xdddd0a1d
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTd              0xdddd0a1e
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTe              0xdddd0a1f
+#define ifcIDsNIPpREDEFINED_HOMEfACE6pARTf              0xdddd0a20
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART1              0xdddd0a21
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART2              0xdddd0a22
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART3              0xdddd0a23
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART4              0xdddd0a24
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART5              0xdddd0a25
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART6              0xdddd0a26
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART7              0xdddd0a27
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART8              0xdddd0a28
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pART9              0xdddd0a29
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTa              0xdddd0a2a
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTb              0xdddd0a2b
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTc              0xdddd0a2c
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTd              0xdddd0a2d
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTe              0xdddd0a2e
+#define ifcIDsNIPpREDEFINED_HOMEfACE7pARTf              0xdddd0a2f
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART1              0xdddd0a30
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART2              0xdddd0a31
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART3              0xdddd0a32
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART4              0xdddd0a33
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART5              0xdddd0a34
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART6              0xdddd0a35
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART7              0xdddd0a36
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART8              0xdddd0a37
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pART9              0xdddd0a38
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTa              0xdddd0a39
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTb              0xdddd0a3a
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTc              0xdddd0a3b
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTd              0xdddd0a3c
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTe              0xdddd0a3d
+#define ifcIDsNIPpREDEFINED_HOMEfACE8pARTf              0xdddd0a3e
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART1              0xdddd0a3f
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART2              0xdddd0a40
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART3              0xdddd0a41
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART4              0xdddd0a42
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART5              0xdddd0a43
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART6              0xdddd0a44
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART7              0xdddd0a45
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART8              0xdddd0a46
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pART9              0xdddd0a47
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTa              0xdddd0a48
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTb              0xdddd0a49
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTc              0xdddd0a4a
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTd              0xdddd0a4b
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTe              0xdddd0a4c
+#define ifcIDsNIPpREDEFINED_HOMEfACE9pARTf              0xdddd0a4d
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART1              0xdddd0a4e
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART2              0xdddd0a4f
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART3              0xdddd0a50
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART4              0xdddd0a51
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART5              0xdddd0a52
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART6              0xdddd0a53
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART7              0xdddd0a54
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART8              0xdddd0a55
+#define ifcIDsNIPpREDEFINED_HOMEfACEapART9              0xdddd0a56
+#define ifcIDsNIPpREDEFINED_HOMEfACEapARTa              0xdddd0a57
+#define ifcIDsNIPpREDEFINED_HOMEfACEapARTb              0xdddd0a58
+#define ifcIDsNIPpREDEFINED_HOMEfACEapARTc              0xdddd0a59
+#define ifcIDsNIPpREDEFINED_HOMEfACEapARTd              0xdddd0a5a
+#define ifcIDsNIPpREDEFINED_HOMEfACEapARTe              0xdddd0a5b
+#define ifcIDsNIPpREDEFINED_HOMEfACEapARTf              0xdddd0a5c
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART1              0xdddd0a5d
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART2              0xdddd0a5e
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART3              0xdddd0a5f
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART4              0xdddd0a60
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART5              0xdddd0a61
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART6              0xdddd0a62
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART7              0xdddd0a63
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART8              0xdddd0a64
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpART9              0xdddd0a65
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTa              0xdddd0a66
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTb              0xdddd0a67
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTc              0xdddd0a68
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTd              0xdddd0a69
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTe              0xdddd0a6a
+#define ifcIDsNIPpREDEFINED_HOMEfACEbpARTf              0xdddd0a6b
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART1              0xdddd0a6c
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART2              0xdddd0a6d
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART3              0xdddd0a6e
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART4              0xdddd0a6f
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART5              0xdddd0a70
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART6              0xdddd0a71
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART7              0xdddd0a72
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART8              0xdddd0a73
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpART9              0xdddd0a74
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTa              0xdddd0a75
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTb              0xdddd0a76
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTc              0xdddd0a77
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTd              0xdddd0a78
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTe              0xdddd0a79
+#define ifcIDsNIPpREDEFINED_HOMEfACEcpARTf              0xdddd0a7a
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART1              0xdddd0a7b
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART2              0xdddd0a7c
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART3              0xdddd0a7d
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART4              0xdddd0a7e
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART5              0xdddd0a7f
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART6              0xdddd0a80
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART7              0xdddd0a81
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART8              0xdddd0a82
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpART9              0xdddd0a83
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTa              0xdddd0a84
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTb              0xdddd0a85
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTc              0xdddd0a86
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTd              0xdddd0a87
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTe              0xdddd0a88
+#define ifcIDsNIPpREDEFINED_HOMEfACEdpARTf              0xdddd0a89
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART1              0xdddd0a8a
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART2              0xdddd0a8b
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART3              0xdddd0a8c
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART4              0xdddd0a8d
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART5              0xdddd0a8e
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART6              0xdddd0a8f
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART7              0xdddd0a90
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART8              0xdddd0a91
+#define ifcIDsNIPpREDEFINED_HOMEfACEepART9              0xdddd0a92
+#define ifcIDsNIPpREDEFINED_HOMEfACEepARTa              0xdddd0a93
+#define ifcIDsNIPpREDEFINED_HOMEfACEepARTb              0xdddd0a94
+#define ifcIDsNIPpREDEFINED_HOMEfACEepARTc              0xdddd0a95
+#define ifcIDsNIPpREDEFINED_HOMEfACEepARTd              0xdddd0a96
+#define ifcIDsNIPpREDEFINED_HOMEfACEepARTe              0xdddd0a97
+#define ifcIDsNIPpREDEFINED_HOMEfACEepARTf              0xdddd0a98
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART1              0xdddd0a99
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART2              0xdddd0a9a
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART3              0xdddd0a9b
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART4              0xdddd0a9c
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART5              0xdddd0a9d
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART6              0xdddd0a9e
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART7              0xdddd0a9f
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART8              0xdddd0aa0
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpART9              0xdddd0aa1
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTa              0xdddd0aa2
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTb              0xdddd0aa3
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTc              0xdddd0aa4
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTd              0xdddd0aa5
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTe              0xdddd0aa6
+#define ifcIDsNIPpREDEFINED_HOMEfACEfpARTf              0xdddd0aa7
+#define ifcIDsNIPpREDEFINED_PRODUCT1hOOK                0xdddd0aa8
+#define ifcIDsNIPpREDEFINED_PRODUCT2hOOK                0xdddd0aa9
+#define ifcIDsNIPpREDEFINED_PRODUCT3hOOK                0xdddd0aaa
+#define ifcIDsNIPpREDEFINED_PRODUCT4hOOK                0xdddd0aab
+#define ifcIDsNIPpREDEFINED_PRODUCT5hOOK                0xdddd0aac
+#define ifcIDsNIPpREDEFINED_PRODUCT6hOOK                0xdddd0aad
+#define ifcIDsNIPpREDEFINED_PRODUCT7hOOK                0xdddd0aae
+#define ifcIDsNIPpREDEFINED_PRODUCT8hOOK                0xdddd0aaf
+#define ifcIDsNIPpREDEFINED_PRODUCT9hOOK                0xdddd0ab0
+#define ifcIDsNIPpREDEFINED_PRODUCTahOOK                0xdddd0ab1
+#define ifcIDsNIPpREDEFINED_PRODUCTbhOOK                0xdddd0ab2
+#define ifcIDsNIPpREDEFINED_PRODUCTchOOK                0xdddd0ab3
+#define ifcIDsNIPpREDEFINED_PRODUCTdhOOK                0xdddd0ab4
+#define ifcIDsNIPpREDEFINED_PRODUCTehOOK                0xdddd0ab5
+#define ifcIDsNIPpREDEFINED_PRODUCTfhOOK                0xdddd0ab6
+#define ifcIDsNIPpREDEFINED_PRODUCT1cOST                0xdddd0ab7
+#define ifcIDsNIPpREDEFINED_PRODUCT2cOST                0xdddd0ab8
+#define ifcIDsNIPpREDEFINED_PRODUCT3cOST                0xdddd0ab9
+#define ifcIDsNIPpREDEFINED_PRODUCT4cOST                0xdddd0aba
+#define ifcIDsNIPpREDEFINED_PRODUCT5cOST                0xdddd0abb
+#define ifcIDsNIPpREDEFINED_PRODUCT6cOST                0xdddd0abc
+#define ifcIDsNIPpREDEFINED_PRODUCT7cOST                0xdddd0abd
+#define ifcIDsNIPpREDEFINED_PRODUCT8cOST                0xdddd0abe
+#define ifcIDsNIPpREDEFINED_PRODUCT9cOST                0xdddd0abf
+#define ifcIDsNIPpREDEFINED_PRODUCTacOST                0xdddd0ac0
+#define ifcIDsNIPpREDEFINED_PRODUCTbcOST                0xdddd0ac1
+#define ifcIDsNIPpREDEFINED_PRODUCTccOST                0xdddd0ac2
+#define ifcIDsNIPpREDEFINED_PRODUCTdcOST                0xdddd0ac3
+#define ifcIDsNIPpREDEFINED_PRODUCTecOST                0xdddd0ac4
+#define ifcIDsNIPpREDEFINED_PRODUCTfcOST                0xdddd0ac5
+#define ifcIDsNIPpREDEFINED_PRODUCT1fEATURES            0xdddd0ac6
+#define ifcIDsNIPpREDEFINED_PRODUCT2fEATURES            0xdddd0ac7
+#define ifcIDsNIPpREDEFINED_PRODUCT3fEATURES            0xdddd0ac8
+#define ifcIDsNIPpREDEFINED_PRODUCT4fEATURES            0xdddd0ac9
+#define ifcIDsNIPpREDEFINED_PRODUCT5fEATURES            0xdddd0aca
+#define ifcIDsNIPpREDEFINED_PRODUCT6fEATURES            0xdddd0acb
+#define ifcIDsNIPpREDEFINED_PRODUCT7fEATURES            0xdddd0acc
+#define ifcIDsNIPpREDEFINED_PRODUCT8fEATURES            0xdddd0acd
+#define ifcIDsNIPpREDEFINED_PRODUCT9fEATURES            0xdddd0ace
+#define ifcIDsNIPpREDEFINED_PRODUCTafEATURES            0xdddd0acf
+#define ifcIDsNIPpREDEFINED_PRODUCTbfEATURES            0xdddd0ad0
+#define ifcIDsNIPpREDEFINED_PRODUCTcfEATURES            0xdddd0ad1
+#define ifcIDsNIPpREDEFINED_PRODUCTdfEATURES            0xdddd0ad2
+#define ifcIDsNIPpREDEFINED_PRODUCTefEATURES            0xdddd0ad3
+#define ifcIDsNIPpREDEFINED_PRODUCTffEATURES            0xdddd0ad4
+#define ifcIDsNIPpREDEFINED_PRODUCT1bENEFITS            0xdddd0ad5
+#define ifcIDsNIPpREDEFINED_PRODUCT2bENEFITS            0xdddd0ad6
+#define ifcIDsNIPpREDEFINED_PRODUCT3bENEFITS            0xdddd0ad7
+#define ifcIDsNIPpREDEFINED_PRODUCT4bENEFITS            0xdddd0ad8
+#define ifcIDsNIPpREDEFINED_PRODUCT5bENEFITS            0xdddd0ad9
+#define ifcIDsNIPpREDEFINED_PRODUCT6bENEFITS            0xdddd0ada
+#define ifcIDsNIPpREDEFINED_PRODUCT7bENEFITS            0xdddd0adb
+#define ifcIDsNIPpREDEFINED_PRODUCT8bENEFITS            0xdddd0adc
+#define ifcIDsNIPpREDEFINED_PRODUCT9bENEFITS            0xdddd0add
+#define ifcIDsNIPpREDEFINED_PRODUCTabENEFITS            0xdddd0ade
+#define ifcIDsNIPpREDEFINED_PRODUCTbbENEFITS            0xdddd0adf
+#define ifcIDsNIPpREDEFINED_PRODUCTcbENEFITS            0xdddd0ae0
+#define ifcIDsNIPpREDEFINED_PRODUCTdbENEFITS            0xdddd0ae1
+#define ifcIDsNIPpREDEFINED_PRODUCTebENEFITS            0xdddd0ae2
+#define ifcIDsNIPpREDEFINED_PRODUCTfbENEFITS            0xdddd0ae3
+#define ifcIDsNIPpREDEFINED_PRODUCT1pITCH               0xdddd0ae4
+#define ifcIDsNIPpREDEFINED_PRODUCT2pITCH               0xdddd0ae5
+#define ifcIDsNIPpREDEFINED_PRODUCT3pITCH               0xdddd0ae6
+#define ifcIDsNIPpREDEFINED_PRODUCT4pITCH               0xdddd0ae7
+#define ifcIDsNIPpREDEFINED_PRODUCT5pITCH               0xdddd0ae8
+#define ifcIDsNIPpREDEFINED_PRODUCT6pITCH               0xdddd0ae9
+#define ifcIDsNIPpREDEFINED_PRODUCT7pITCH               0xdddd0aea
+#define ifcIDsNIPpREDEFINED_PRODUCT8pITCH               0xdddd0aeb
+#define ifcIDsNIPpREDEFINED_PRODUCT9pITCH               0xdddd0aec
+#define ifcIDsNIPpREDEFINED_PRODUCTapITCH               0xdddd0aed
+#define ifcIDsNIPpREDEFINED_PRODUCTbpITCH               0xdddd0aee
+#define ifcIDsNIPpREDEFINED_PRODUCTcpITCH               0xdddd0aef
+#define ifcIDsNIPpREDEFINED_PRODUCTdpITCH               0xdddd0af0
+#define ifcIDsNIPpREDEFINED_PRODUCTepITCH               0xdddd0af1
+#define ifcIDsNIPpREDEFINED_PRODUCTfpITCH               0xdddd0af2
+#define ifcIDsNIPpREDEFINED_DIRECTORY1                  0xdddd0af3
+#define ifcIDsNIPpREDEFINED_DIRECTORY2                  0xdddd0af4
+#define ifcIDsNIPpREDEFINED_DIRECTORY3                  0xdddd0af5
+#define ifcIDsNIPpREDEFINED_DIRECTORY4                  0xdddd0af6
+#define ifcIDsNIPpREDEFINED_DIRECTORY5                  0xdddd0af7
+#define ifcIDsNIPpREDEFINED_DIRECTORY6                  0xdddd0af8
+#define ifcIDsNIPpREDEFINED_DIRECTORY7                  0xdddd0af9
+#define ifcIDsNIPpREDEFINED_DIRECTORY8                  0xdddd0afa
+#define ifcIDsNIPpREDEFINED_DIRECTORY9                  0xdddd0afb
+#define ifcIDsNIPpREDEFINED_DIRECTORYa                  0xdddd0afc
+#define ifcIDsNIPpREDEFINED_DIRECTORYb                  0xdddd0afd
+#define ifcIDsNIPpREDEFINED_DIRECTORYc                  0xdddd0afe
+#define ifcIDsNIPpREDEFINED_DIRECTORYd                  0xdddd0aff
+#define ifcIDsNIPpREDEFINED_DIRECTORYe                  0xdddd0b00
+#define ifcIDsNIPpREDEFINED_DIRECTORYf                  0xdddd0b01
+#define ifcIDsNIPpREDEFINED_DIRECTORY01                 0xdddd0b02
+#define ifcIDsNIPpREDEFINED_DIRECTORY11                 0xdddd0b03
+#define ifcIDsNIPpREDEFINED_DIRECTORY21                 0xdddd0b04
+#define ifcIDsNIPpREDEFINED_DIRECTORY31                 0xdddd0b05
+#define ifcIDsNIPpREDEFINED_DIRECTORY41                 0xdddd0b06
+#define ifcIDsNIPpREDEFINED_DIRECTORY51                 0xdddd0b07
+#define ifcIDsNIPpREDEFINED_DIRECTORY61                 0xdddd0b08
+#define ifcIDsNIPpREDEFINED_DIRECTORY71                 0xdddd0b09
+#define ifcIDsNIPpREDEFINED_DIRECTORY81                 0xdddd0b0a
+#define ifcIDsNIPpREDEFINED_DIRECTORY91                 0xdddd0b0b
+#define ifcIDsNIPpREDEFINED_DIRECTORYa1                 0xdddd0b0c
+#define ifcIDsNIPpREDEFINED_DIRECTORYb1                 0xdddd0b0d
+#define ifcIDsNIPpREDEFINED_DIRECTORYc1                 0xdddd0b0e
+#define ifcIDsNIPpREDEFINED_DIRECTORYd1                 0xdddd0b0f
+#define ifcIDsNIPpREDEFINED_DIRECTORYe1                 0xdddd0b10
+#define ifcIDsNIPpREDEFINED_DIRECTORYf1                 0xdddd0b11
+#define ifcIDsNIPpREDEFINED_DIRECTORY02                 0xdddd0b12
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONtALKbODY    0xdddd0b13
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY1    0xdddd0b14
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY2    0xdddd0b15
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY3    0xdddd0b16
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY4    0xdddd0b17
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY5    0xdddd0b18
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY6    0xdddd0b19
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY7    0xdddd0b1a
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY8    0xdddd0b1b
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY9    0xdddd0b1c
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY10   0xdddd0b1d
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY11   0xdddd0b1e
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY12   0xdddd0b1f
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY13   0xdddd0b20
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY14   0xdddd0b21
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY15   0xdddd0b22
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY16   0xdddd0b23
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONrOOT        0xdddd0b24
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN2        0xdddd0b25
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN3        0xdddd0b26
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN4        0xdddd0b27
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN5        0xdddd0b28
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN6        0xdddd0b29
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN7        0xdddd0b2a
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN8        0xdddd0b2b
+#define ifcIDsNIPpREDEFINED_HEADrAW1bEFOREtITLE         0xdddd0b2c
+#define ifcIDsNIPpREDEFINED_HEADrAW2aFTERtITLE          0xdddd0b2d
+#define ifcIDsNIPpREDEFINED_HEADrAW3sCRIPTbEGIN         0xdddd0b2e
+#define ifcIDsNIPpREDEFINED_HEADrAW4sCRIPTeND           0xdddd0b2f
+#define ifcIDsNIPpREDEFINED_HEADrAW5hEADeND             0xdddd0b30
+#define ifcIDsNIPpREDEFINED_BODYrAWbEGIN                0xdddd0b31
 /*3*/
-#define ifcIDsNIPpREDEFINED_min     0xdddd07be
-#define ifcIDsNIPpREDEFINED_max     0xdddd0b1d
+#define ifcIDsNIPpREDEFINED_min     0xdddd07d2
+#define ifcIDsNIPpREDEFINED_max     0xdddd0b31
 
 
 //
@@ -33094,6 +32240,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200351.friends_thugc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200352.friends_tins BEGIN
 
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -33118,14 +32265,14 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend class  thirdInitC ; /*SETS A FLAG*/                                                                                                                                             \
  friend class  thugC ; /*idDesireSetBySelf*/                                                                                                                                            \
  friend class  tlsAllocPoolC ;                                                                                                                                                          \
- friend class  tlsAllocStackExp_7_C  ;                                                                                                                                                  \
- friend class  tlsAllocStackExp_6_C  ;                                                                                                                                                  \
- friend class  tlsAllocStackExp_5_C  ;                                                                                                                                                  \
- friend class  tlsAllocStackExp_4_C  ;                                                                                                                                                  \
- friend class  tlsAllocStackExp_3_C  ;                                                                                                                                                  \
- friend class  tlsAllocStackExp_2_C  ;                                                                                                                                                  \
- friend class  tlsAllocStackExp_1_C  ;                                                                                                                                                  \
  friend class  tlsAllocStackExp_0_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_1_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_2_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_3_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_4_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_5_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_6_C  ;                                                                                                                                                  \
+ friend class  tlsAllocStackExp_7_C  ;                                                                                                                                                  \
  friend class  tlsAllocStackExp_8_C  ;                                                                                                                                                  \
  friend class  tlsAllocStackExp_9_C  ;                                                                                                                                                  \
  friend class  tlsAllocStackExp_a_C  ;                                                                                                                                                  \
@@ -33269,11 +32416,11 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /*1*//*ifcIDsUBtYPEpOOP_*//*1*/
 
 /*3*/
-#define ifcIDsUBtYPEpOOP_FIREDbYmONITOR      0xdddd0b1e
-#define ifcIDsUBtYPEpOOP_FIREDbYsELF         0xdddd0b1f
+#define ifcIDsUBtYPEpOOP_FIREDbYmONITOR      0xdddd0b32
+#define ifcIDsUBtYPEpOOP_FIREDbYsELF         0xdddd0b33
 /*3*/
-#define ifcIDsUBtYPEpOOP_min     0xdddd0b1e
-#define ifcIDsUBtYPEpOOP_max     0xdddd0b1f
+#define ifcIDsUBtYPEpOOP_min     0xdddd0b32
+#define ifcIDsUBtYPEpOOP_max     0xdddd0b33
 
 
 //
@@ -33393,14 +32540,14 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 //THESE MUST BE IN THREAD PHASE ORDER, I.E. LATER PHASES MUST HAVE HIGHER id VALUES
 
 /*3*/
-#define ifcIDpHASEpROCESS_PROLOGcONSTRUCTINGgLOBALS     0xdddd0b20
-#define ifcIDpHASEpROCESS_PROLOGaLLgLOBALScONSTRUCTED   0xdddd0b21
-#define ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE          0xdddd0b22
-#define ifcIDpHASEpROCESS_EPILOGdESTROYINGgLOBALS       0xdddd0b23
-#define ifcIDpHASEpROCESS_EPILOGaLLgLOBALSdESTROYED     0xdddd0b24
+#define ifcIDpHASEpROCESS_PROLOGcONSTRUCTINGgLOBALS     0xdddd0b34
+#define ifcIDpHASEpROCESS_PROLOGaLLgLOBALScONSTRUCTED   0xdddd0b35
+#define ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE          0xdddd0b36
+#define ifcIDpHASEpROCESS_EPILOGdESTROYINGgLOBALS       0xdddd0b37
+#define ifcIDpHASEpROCESS_EPILOGaLLgLOBALSdESTROYED     0xdddd0b38
 /*3*/
-#define ifcIDpHASEpROCESS_min     0xdddd0b20
-#define ifcIDpHASEpROCESS_max     0xdddd0b24
+#define ifcIDpHASEpROCESS_min     0xdddd0b34
+#define ifcIDpHASEpROCESS_max     0xdddd0b38
 
 
 //
@@ -33990,14 +33137,14 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
 /*1*//*ifcIDfORMhTTPrEPLY*//*1*/
 
 /*3*/
-#define ifcIDfORMhTTPrEPLY_DEBUG               0xdddd0b25
-#define ifcIDfORMhTTPrEPLY_RAW                 0xdddd0b26
-#define ifcIDfORMhTTPrEPLY_FULLcUSTOM          0xdddd0b27
-#define ifcIDfORMhTTPrEPLY_BIGhEAD             0xdddd0b28
-#define ifcIDfORMhTTPrEPLY_PINhEAD             0xdddd0b29
+#define ifcIDfORMhTTPrEPLY_DEBUG               0xdddd0b39
+#define ifcIDfORMhTTPrEPLY_RAW                 0xdddd0b3a
+#define ifcIDfORMhTTPrEPLY_FULLcUSTOM          0xdddd0b3b
+#define ifcIDfORMhTTPrEPLY_BIGhEAD             0xdddd0b3c
+#define ifcIDfORMhTTPrEPLY_PINhEAD             0xdddd0b3d
 /*3*/
-#define ifcIDfORMhTTPrEPLY_min     0xdddd0b25
-#define ifcIDfORMhTTPrEPLY_max     0xdddd0b29
+#define ifcIDfORMhTTPrEPLY_min     0xdddd0b39
+#define ifcIDfORMhTTPrEPLY_max     0xdddd0b3d
 
 
 //
@@ -34399,12 +33546,12 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*ifcIDtYPEtHREAD*//*1*/
 
 /*3*/
-#define ifcIDtYPEtHREAD_GLASS2            0xdddd0b2a
-#define ifcIDtYPEtHREAD_SHOWpONY          0xdddd0b2b
-#define ifcIDtYPEtHREAD_WORKhORSE         0xdddd0b2c
+#define ifcIDtYPEtHREAD_GLASS2            0xdddd0b3e
+#define ifcIDtYPEtHREAD_SHOWpONY          0xdddd0b3f
+#define ifcIDtYPEtHREAD_WORKhORSE         0xdddd0b40
 /*3*/
-#define ifcIDtYPEtHREAD_min     0xdddd0b2a
-#define ifcIDtYPEtHREAD_max     0xdddd0b2c
+#define ifcIDtYPEtHREAD_min     0xdddd0b3e
+#define ifcIDtYPEtHREAD_max     0xdddd0b40
 
 
 //
@@ -35100,14 +34247,14 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*ifcIDtYPEsTROKEcLEAN*//*1*/
 
 /*3*/
-#define ifcIDtYPEsTROKEcLEAN_PRINTABLES                     0xdddd0b2d
-#define ifcIDtYPEsTROKEcLEAN_CnAMES                         0xdddd0b2e
-#define ifcIDtYPEsTROKEcLEAN_CnAMESoRaT                     0xdddd0b2f
-#define ifcIDtYPEsTROKEcLEAN_CnAMESoRbLANK                  0xdddd0b30
-#define ifcIDtYPEsTROKEcLEAN_CnAMESoRbLANKoRpUNCTUATION     0xdddd0b31
+#define ifcIDtYPEsTROKEcLEAN_PRINTABLES                     0xdddd0b41
+#define ifcIDtYPEsTROKEcLEAN_CnAMES                         0xdddd0b42
+#define ifcIDtYPEsTROKEcLEAN_CnAMESoRaT                     0xdddd0b43
+#define ifcIDtYPEsTROKEcLEAN_CnAMESoRbLANK                  0xdddd0b44
+#define ifcIDtYPEsTROKEcLEAN_CnAMESoRbLANKoRpUNCTUATION     0xdddd0b45
 /*3*/
-#define ifcIDtYPEsTROKEcLEAN_min     0xdddd0b2d
-#define ifcIDtYPEsTROKEcLEAN_max     0xdddd0b31
+#define ifcIDtYPEsTROKEcLEAN_min     0xdddd0b41
+#define ifcIDtYPEsTROKEcLEAN_max     0xdddd0b45
 
 
 //
@@ -35195,15 +34342,15 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*ifcIDpOOL*//*1*/
 
 /*3*/
-#define ifcIDpOOL_NONE                 0xdddd0b32
-#define ifcIDpOOL_ADAMtEMP             0xdddd0b33
-#define ifcIDpOOL_HOMEtEMP             0xdddd0b34
-#define ifcIDpOOL_SCRATCH              0xdddd0b35
-#define ifcIDpOOL_ADAMpERM             0xdddd0b36
-#define ifcIDpOOL_HOMEpERM             0xdddd0b37
+#define ifcIDpOOL_NONE                 0xdddd0b46
+#define ifcIDpOOL_ADAMtEMP             0xdddd0b47
+#define ifcIDpOOL_HOMEtEMP             0xdddd0b48
+#define ifcIDpOOL_SCRATCH              0xdddd0b49
+#define ifcIDpOOL_ADAMpERM             0xdddd0b4a
+#define ifcIDpOOL_HOMEpERM             0xdddd0b4b
 /*3*/
-#define ifcIDpOOL_min     0xdddd0b32
-#define ifcIDpOOL_max     0xdddd0b37
+#define ifcIDpOOL_min     0xdddd0b46
+#define ifcIDpOOL_max     0xdddd0b4b
 
 
 //
@@ -35257,9 +34404,9 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /*3*/
-#define flPOOLfORMAT_NOTES                          0xe00001a4
-#define flPOOLfORMAT_SETS                           0xe00002a4
-#define flPOOLfORMAT_NOdROPhEADERS                  0xe00004a4
+#define flPOOLfORMAT_NOTES                        0xe00001a4
+#define flPOOLfORMAT_SETS                         0xe00002a4
+#define flPOOLfORMAT_NOdROPhEADERS                0xe00004a4
 /*3*/
 #define flPOOLfORMAT_null    0xe00000a4
 
@@ -35481,7 +34628,8 @@ coding standard
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039a.bospoop END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039b.listname BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039b.listnamesys BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -35507,7 +34655,11 @@ coding standard
 
 //CS:CODEsYNC: 330e5007 33001126 3300039b (LISTnAMEsYS_ROOTsYSTEM*)
 
-// 20240827@1422: ELIMINATED USE OF "/*id9*/" IN FAVOR OF HARDCODED VALUES STARTING WITH 0x80000001
+// 20240827@1422: ELIMINATED USE OF "/*i" "d9*/" IN FAVOR OF HARDCODED VALUES STARTING WITH 0x80000001
+
+// SOME CODE USES LISTnAME_min LISTnAME_max AND OTHER CODE RELIES ON processGlobal4I.mapListName, TO DECIDE WHETHER TO LOOK UP A VALUE IN THE DICTIONARY OF THE CURRENT poolC INSTANCE
+// FOR THIS REASON, WHENEVER THIS LIST CHANGES, ALWAYS DO A FULL BUILD (BY setting bAll = 1 in Eve), SO THAT BOTH METHODS RETURN THE SAME RESULT
+// (CHEAT HINT: IN THE ALTERNATIVE, 1snip.1120039b.listnamesys.h IN THE snip DIRECTORY CAN BE MANUALLY EDITED.)
 
 #define LISTnAMEsYS_min                                                  0x80000001
 #define LISTnAMEsYS_ROOT                                                 0x80000001
@@ -35578,7 +34730,7 @@ coding standard
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039b.listname END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039b.listnamesys END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039c.ifcidhowlist BEGIN
 
 
@@ -35595,12 +34747,12 @@ coding standard
 /*1*//*ifcIDhOWlIST*//*1*/
 
 /*3*/
-#define ifcIDhOWlIST_SINK             0xdddd0b38
-#define ifcIDhOWlIST_LIFO             0xdddd0b39
-#define ifcIDhOWlIST_FIFO             0xdddd0b3a
+#define ifcIDhOWlIST_SINK             0xdddd0b4c
+#define ifcIDhOWlIST_LIFO             0xdddd0b4d
+#define ifcIDhOWlIST_FIFO             0xdddd0b4e
 /*3*/
-#define ifcIDhOWlIST_min     0xdddd0b38
-#define ifcIDhOWlIST_max     0xdddd0b3a
+#define ifcIDhOWlIST_min     0xdddd0b4c
+#define ifcIDhOWlIST_max     0xdddd0b4e
 
 
 //
@@ -35657,6 +34809,7 @@ coding standard
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039d.flaptinspect END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120039e.flilistingc BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -35905,14 +35058,14 @@ bit masks
 /*1*//*ifcIDtYPEaPTaTTACH*//*1*/
 
 /*3*/
-#define ifcIDtYPElISTING_LIST                             0xdddd0b3b
-#define ifcIDtYPElISTING_COUNTt                           0xdddd0b3c
-#define ifcIDtYPElISTING_OStEXTsTRz                       0xdddd0b3d
-#define ifcIDtYPElISTING_LISTcOUNTt                       0xdddd0b3e
-#define ifcIDtYPElISTING_LISToStEXTsTRz                   0xdddd0b3f
+#define ifcIDtYPElISTING_LIST                             0xdddd0b4f
+#define ifcIDtYPElISTING_COUNTt                           0xdddd0b50
+#define ifcIDtYPElISTING_OStEXTsTRz                       0xdddd0b51
+#define ifcIDtYPElISTING_LISTcOUNTt                       0xdddd0b52
+#define ifcIDtYPElISTING_LISToStEXTsTRz                   0xdddd0b53
 /*3*/
-#define ifcIDtYPElISTING_min     0xdddd0b3b
-#define ifcIDtYPElISTING_max     0xdddd0b3f
+#define ifcIDtYPElISTING_min     0xdddd0b4f
+#define ifcIDtYPElISTING_max     0xdddd0b53
 
 
 //
@@ -35939,11 +35092,11 @@ bit masks
 /*1*//*ifcIDcMDsERIALnUMBERdISPENSER*//*1*/
 
 /*3*/
-#define ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEsTROKEsTRING   0xdddd0b40
-#define ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEcOUNTsTRING    0xdddd0b41
+#define ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEsTROKEsTRING   0xdddd0b54
+#define ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEcOUNTsTRING    0xdddd0b55
 /*3*/
-#define ifcIDcMDsERIALnUMBERdISPENSER_min     0xdddd0b40
-#define ifcIDcMDsERIALnUMBERdISPENSER_max     0xdddd0b41
+#define ifcIDcMDsERIALnUMBERdISPENSER_min     0xdddd0b54
+#define ifcIDcMDsERIALnUMBERdISPENSER_max     0xdddd0b55
 
 
 //
@@ -35970,11 +35123,11 @@ bit masks
 /*1*//*ifcIDcMDlISTsERVEReMAILiDaCCOUNT*//*1*/
 
 /*3*/
-#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL    0xdddd0b42
-#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT    0xdddd0b43
+#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL    0xdddd0b56
+#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT    0xdddd0b57
 /*3*/
-#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_min     0xdddd0b42
-#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_max     0xdddd0b43
+#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_min     0xdddd0b56
+#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_max     0xdddd0b57
 
 
 //
@@ -36099,12 +35252,12 @@ bit masks
 //CS:CODEsYNC: 00104c9 1050104.2
 
 /*3*/
-#define ifcIDtYPEdERIVEDbASEgRABc_grabC                             0xdddd0b44
-#define ifcIDtYPEdERIVEDbASEgRABc_grabitC                           0xdddd0b45
-#define ifcIDtYPEdERIVEDbASEgRABc_grabotC                           0xdddd0b46
+#define ifcIDtYPEdERIVEDbASEgRABc_grabC                             0xdddd0b58
+#define ifcIDtYPEdERIVEDbASEgRABc_grabitC                           0xdddd0b59
+#define ifcIDtYPEdERIVEDbASEgRABc_grabotC                           0xdddd0b5a
 /*3*/
-#define ifcIDtYPEdERIVEDbASEgRABc_min     0xdddd0b44
-#define ifcIDtYPEdERIVEDbASEgRABc_max     0xdddd0b46
+#define ifcIDtYPEdERIVEDbASEgRABc_min     0xdddd0b58
+#define ifcIDtYPEdERIVEDbASEgRABc_max     0xdddd0b5a
 
 
 //
@@ -36281,20 +35434,20 @@ bit masks
 /*1*//*ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION*//*1*/
 
 /*3*/
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETaCCOUNTdESCRIPTION                0xdddd0b47
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYaCCOUNTdESCRIPTION              0xdddd0b48
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEaCCOUNTdESCRIPTION             0xdddd0b49
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_TESTiDaCCOUNT                        0xdddd0b4a
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDaCCOUNT                   0xdddd0b4b
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETsUBACCOUNTdESCRIPTION             0xdddd0b4c
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYsUBACCOUNTdESCRIPTION           0xdddd0b4d
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEsUBACCOUNTdESCRIPTION          0xdddd0b4e
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_TESTiDsUB                            0xdddd0b4f
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDsUB                       0xdddd0b50
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_CONFIRMoWNERaLLsUBACCOUNTS           0xdddd0b51
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETaCCOUNTdESCRIPTION                0xdddd0b5b
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYaCCOUNTdESCRIPTION              0xdddd0b5c
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEaCCOUNTdESCRIPTION             0xdddd0b5d
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_TESTiDaCCOUNT                        0xdddd0b5e
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDaCCOUNT                   0xdddd0b5f
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETsUBACCOUNTdESCRIPTION             0xdddd0b60
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYsUBACCOUNTdESCRIPTION           0xdddd0b61
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEsUBACCOUNTdESCRIPTION          0xdddd0b62
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_TESTiDsUB                            0xdddd0b63
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDsUB                       0xdddd0b64
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_CONFIRMoWNERaLLsUBACCOUNTS           0xdddd0b65
 /*3*/
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_min     0xdddd0b47
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_max     0xdddd0b51
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_min     0xdddd0b5b
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_max     0xdddd0b65
 
 
 //
@@ -36319,7 +35472,7 @@ bit masks
 obsoleted by coding style standard: use osTextT strings for name elements so that the meaning of the name is documented internally by the database
 */
 /**/
-/*1*//*LISTnAMEsYS*//*1*/
+/*1*//*LISTnAMEaDAMoLD*//*1*/
 
 //IT IS ILLEGAL TO INSERT NEW CONSTANTS ANYWHERE BUT AT THE TOP OF THIS FILE (TO AVOID CHANGING THE VALUE OF EXISTING CONSTANTS)
 //NEW SYMBOLS -MUST- BE ADDED TO THE TOP OF THIS LIST TO AVOID CHANGING THE VALUE OF THE EXISTING SYMBOLS IN THE LIST
@@ -37031,11 +36184,11 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDhEADfLAVOR*//*1*/
 
 /*3*/
-#define ifcIDhEADfLAVOR_VERBOSE                            0xdddd0b52
-#define ifcIDhEADfLAVOR_TERSE                              0xdddd0b53
+#define ifcIDhEADfLAVOR_VERBOSE                            0xdddd0b66
+#define ifcIDhEADfLAVOR_TERSE                              0xdddd0b67
 /*3*/
-#define ifcIDhEADfLAVOR_min     0xdddd0b52
-#define ifcIDhEADfLAVOR_max     0xdddd0b53
+#define ifcIDhEADfLAVOR_min     0xdddd0b66
+#define ifcIDhEADfLAVOR_max     0xdddd0b67
 
 
 //
@@ -37142,15 +36295,15 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDmODEtEST*//*1*/
 
 /*3*/
-#define ifcIDmODEtEST_EQ                            0xdddd0b54
-#define ifcIDmODEtEST_NE                            0xdddd0b55
-#define ifcIDmODEtEST_LT                            0xdddd0b56
-#define ifcIDmODEtEST_LE                            0xdddd0b57
-#define ifcIDmODEtEST_GE                            0xdddd0b58
-#define ifcIDmODEtEST_GT                            0xdddd0b59
+#define ifcIDmODEtEST_EQ                            0xdddd0b68
+#define ifcIDmODEtEST_NE                            0xdddd0b69
+#define ifcIDmODEtEST_LT                            0xdddd0b6a
+#define ifcIDmODEtEST_LE                            0xdddd0b6b
+#define ifcIDmODEtEST_GE                            0xdddd0b6c
+#define ifcIDmODEtEST_GT                            0xdddd0b6d
 /*3*/
-#define ifcIDmODEtEST_min     0xdddd0b54
-#define ifcIDmODEtEST_max     0xdddd0b59
+#define ifcIDmODEtEST_min     0xdddd0b68
+#define ifcIDmODEtEST_max     0xdddd0b6d
 
 
 //
@@ -37423,12 +36576,12 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDcMDlISTsERVERmONEYbUCKETS*//*1*/
 
 /*3*/
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_PUT                0xdddd0b5a
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_GETtOTAL           0xdddd0b5b
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_GETdETAIL          0xdddd0b5c
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_PUT                0xdddd0b6e
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_GETtOTAL           0xdddd0b6f
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_GETdETAIL          0xdddd0b70
 /*3*/
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_min     0xdddd0b5a
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_max     0xdddd0b5c
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_min     0xdddd0b6e
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_max     0xdddd0b70
 
 
 //
@@ -37706,12 +36859,12 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDmODEaPTsINK*//*1*/
 
 /*3*/
-#define ifcIDmODEaPTsINK_NORMAL                  0xdddd0b5d
-#define ifcIDmODEaPTsINK_LEADsHOES               0xdddd0b5e
-#define ifcIDmODEaPTsINK_AIRvEST                 0xdddd0b5f
+#define ifcIDmODEaPTsINK_NORMAL                  0xdddd0b71
+#define ifcIDmODEaPTsINK_LEADsHOES               0xdddd0b72
+#define ifcIDmODEaPTsINK_AIRvEST                 0xdddd0b73
 /*3*/
-#define ifcIDmODEaPTsINK_min     0xdddd0b5d
-#define ifcIDmODEaPTsINK_max     0xdddd0b5f
+#define ifcIDmODEaPTsINK_min     0xdddd0b71
+#define ifcIDmODEaPTsINK_max     0xdddd0b73
 
 
 //
@@ -38250,12 +37403,12 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDdO*//*1*/
 
 /*3*/
-#define ifcIDdO_REGISTERrOOTaDAMhEART                  0xdddd0b60
-#define ifcIDdO_SETUPsOCKETS                           0xdddd0b61
-#define ifcIDdO_ALLOCATEaPPtELEMETRYpENDINGbUFFER      0xdddd0b62
+#define ifcIDdO_REGISTERrOOTaDAMhEART                  0xdddd0b74
+#define ifcIDdO_SETUPsOCKETS                           0xdddd0b75
+#define ifcIDdO_ALLOCATEaPPtELEMETRYpENDINGbUFFER      0xdddd0b76
 /*3*/
-#define ifcIDdO_min     0xdddd0b60
-#define ifcIDdO_max     0xdddd0b62
+#define ifcIDdO_min     0xdddd0b74
+#define ifcIDdO_max     0xdddd0b76
 
 
 //
@@ -38778,10 +37931,10 @@ it is illegal to refer to this symbol except in the definition of PUSHtINaRGS PU
 /*1*//*LNV(pczNameP)*//*1*/
 
 #define LNV(pczNameP)                                                              \
-                                                                                                \
-    {                                                                                           \
-        ZE( countT , offv ) ;                                                                 \
-        while( pczNameP[ offv ] ) { __( !( pczNameP[ offv ++ ] & BM_HIGH ) ) ; }                \
+                                                                                   \
+    {                                                                              \
+        ZE( countT , offv ) ;                                                      \
+        while( pczNameP[ offv ] ) { __( !( pczNameP[ offv ++ ] & BM_HIGH ) ) ; }   \
     }
 
 
@@ -39226,18 +38379,20 @@ args
                                                                                                                                                                     \
     voidT listC::indexIF( tinS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) \
     {                                                                                                                                                               \
+        /*CONoUTrAW7( "\r\nindexIF [idKeyP,valueP,cNetP]:    " , idKeyP , "    " , *(countT*)&valueP , "    " , cNetP , "\r\n" ) ;*/                                \
+                                                                                                                                                                    \
         IFbEcAREFUL                                                                                                                                                 \
         {                                                                                                                                                           \
             if( POOP ) return ;                                                                                                                                     \
             __Z( idKeyP ) ;                                                                                                                                         \
-            __( !!tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                    \
+            __( !!tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                  \
             if( POOP ) return ;                                                                                                                                     \
             countT bCareful = (expCarefulP) ;                                                                                                                       \
             if( bCareful != - 1 ) { __( bCareful ) ; }                                                                                                              \
             if( POOP ) return ;                                                                                                                                     \
         }                                                                                                                                                           \
                                                                                                                                                                     \
-        tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                        \
+        tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                      \
                                                                                                                                                                     \
         ZE(  countT* , pczV ) ;                                                                                                                                     \
         {                                                                                                                                                           \
@@ -39258,14 +38413,14 @@ args
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             {                                                                                                                                                       \
-                                                                                                                                                                                \
-        boolT bLiteralKey =                                                                                                                                                     \
-        (                                                                                                                                                                       \
-            LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max                                                                                                              \
-            ||                                                                                                                                                                  \
-            LISTnAMEaPPmIN  <= idKeyP && idKeyP <= LISTnAMEaPPmAX                                                                                                               \
-        )                                                                                                                                                                       \
-        ;                                                                                                                                                                       \
+                boolT bLiteralKey =                                                                                                                                 \
+                (                                                                                                                                                   \
+                    LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max                                                                                          \
+                    ||                                                                                                                                              \
+                    LISTnAMEaPPmIN  <= idKeyP && idKeyP <= LISTnAMEaPPmAX                                                                                           \
+                )                                                                                                                                                   \
+                ;                                                                                                                                                   \
+                                                                                                                                                                    \
                 byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
                 if( !bLiteralKey )                                                                                                                                  \
@@ -39275,7 +38430,7 @@ args
                 }                                                                                                                                                   \
                                                                                                                                                                     \
                 puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                         \
-                puseat.doNotRestoreTinWhenDieF() ;                                                                                                                        \
+                puseat.doNotRestoreTinWhenDieF() ;                                                                                                                  \
                 pPuseIndex = ~hIndexP                                                                                                                               \
                     ? new( 0 , tinP , LF ) puseC( puseIndexP )                                                                                                      \
                     : new( 0 , tinP , LF ) puseC( tinP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) \
@@ -39315,7 +38470,7 @@ args
             handleC hIKV( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                     \
             listC::openIF( tinP , hIKV , hIK , pczV ) ;                                                                                                             \
                                                                                                                                                                     \
-            countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                           \
+            countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                        \
             listC::fieldIF( tinP , pOut , hIKV , pczField , _fe_pushC( recordP ) + _fe_modePushSinkC() , LF ) ; ___( pOut ) ;                                         \
         }                                                                                                                                                           \
                                                                                                                                                                     \
@@ -39326,7 +38481,7 @@ args
             DEL( pPuseIndex ) ;                                                                                                                                     \
         }                                                                                                                                                           \
                                                                                                                                                                     \
-        tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                            \
+        tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                          \
     }
 
 
@@ -39395,7 +38550,7 @@ args
         {                                                                                                                                                           \
             if( POOP ) return ;                                                                                                                                     \
             __Z( idKeyP ) ;                                                                                                                                         \
-            __( !!tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                    \
+            __( !!tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                  \
             if( POOP ) return ;                                                                                                                                     \
             countT bCareful = (expCarefulP) ;                                                                                                                       \
             if( bCareful != - 1 ) { __( bCareful ) ; }                                                                                                              \
@@ -39403,7 +38558,7 @@ args
             if( POOP ) return ;                                                                                                                                     \
         }                                                                                                                                                           \
                                                                                                                                                                     \
-        tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                        \
+        tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                      \
                                                                                                                                                                     \
         ZE(  countT* , pczV ) ;                                                                                                                                     \
         {                                                                                                                                                           \
@@ -39427,14 +38582,14 @@ args
         {                                                                                                                                                           \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
             {                                                                                                                                                       \
-                                                                                                                                                                                \
-        boolT bLiteralKey =                                                                                                                                                     \
-        (                                                                                                                                                                       \
-            LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max                                                                                                              \
-            ||                                                                                                                                                                  \
-            LISTnAMEaPPmIN  <= idKeyP && idKeyP <= LISTnAMEaPPmAX                                                                                                               \
-        )                                                                                                                                                                       \
-        ;                                                                                                                                                                       \
+                boolT bLiteralKey =                                                                                                                                 \
+                (                                                                                                                                                   \
+                    LISTnAMEsYS_min <= idKeyP && idKeyP <= LISTnAMEsYS_max                                                                                          \
+                    ||                                                                                                                                              \
+                    LISTnAMEaPPmIN  <= idKeyP && idKeyP <= LISTnAMEaPPmAX                                                                                           \
+                )                                                                                                                                                   \
+                ;                                                                                                                                                   \
+                                                                                                                                                                    \
                 byteT pbvsp[ sizeof( blobVSP ) ] ;                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
                 if( !bLiteralKey )                                                                                                                                  \
@@ -39444,7 +38599,7 @@ args
                 }                                                                                                                                                   \
                                                                                                                                                                     \
                 puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                         \
-                puseat.doNotRestoreTinWhenDieF() ;                                                                                                                        \
+                puseat.doNotRestoreTinWhenDieF() ;                                                                                                                  \
                 pPuseIndex = !bOpenIK                                                                                                                               \
                     ? new( 0 , tinP , LF ) puseC( puseIndexP )                                                                                                      \
                     : new( 0 , tinP , LF ) puseC( tinP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) \
@@ -39531,7 +38686,7 @@ args
             DEL( pPuseIndex ) ;                                                                                                                                     \
         }                                                                                                                                                           \
                                                                                                                                                                     \
-        tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                            \
+        tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                          \
     }
 
 
@@ -39609,15 +38764,15 @@ args
             __Z( idKeyP ) ;                                                                                                                                                     \
             { countT pczName[] = { idKeyP , 0 } ; LNV( pczName ) ; }                                                                                                            \
             __( !( F(tinP.flagsThreadMode3) & flTHREADmODE3_TINaRGSpUSHED ) ) ; /*INTENDED TO FORCE APPLICATION CODE TO PUSH THE TIN ARGS AND SET THEM BEFORE EACH CALL TO ME*/ \
-            __( !tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP ) ;                                                                                                                 \
-            __(  tinP.ta.pushed.u.listWalk.walk.cRecurseP ) ;                                                                                                                     \
-            FV( flLISTwALK , tinP.ta.pushed.u.listWalk.walk.flagsWalkP ) ;                                                                                                        \
-            __(  tinP.ta.pushed.u.listWalk.walk.pOffWothP ) ;                                                                                                                     \
-            __(  tinP.ta.pushed.u.listWalk.walk.pHandleLoP ) ;                                                                                                                    \
-            __(  tinP.ta.pushed.u.listWalk.walk.pHandleHiP ) ;                                                                                                                    \
-            __(  tinP.ta.pushed.u.listWalk.walk.ppHandleRootP ) ;                                                                                                                 \
-            __(  tinP.ta.pushed.u.listWalk.walk.pbHandleRootP ) ;                                                                                                                 \
-            __(  tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                 \
+            __( !tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP ) ;                                                                                                               \
+            __(  tinP.ta.pushed.u.listWalk.walk.cRecurseP ) ;                                                                                                                   \
+            FV( flLISTwALK , tinP.ta.pushed.u.listWalk.walk.flagsWalkP ) ;                                                                                                      \
+            __(  tinP.ta.pushed.u.listWalk.walk.pOffWothP ) ;                                                                                                                   \
+            __(  tinP.ta.pushed.u.listWalk.walk.pHandleLoP ) ;                                                                                                                  \
+            __(  tinP.ta.pushed.u.listWalk.walk.pHandleHiP ) ;                                                                                                                  \
+            __(  tinP.ta.pushed.u.listWalk.walk.ppHandleRootP ) ;                                                                                                               \
+            __(  tinP.ta.pushed.u.listWalk.walk.pbHandleRootP ) ;                                                                                                               \
+            __(  tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                               \
             if( POOP ) return flagsRC ;                                                                                                                                         \
         }                                                                                                                                                                       \
                                                                                                                                                                                 \
@@ -39641,7 +38796,7 @@ args
             *pvspPostKey = dictionaryQueryFromIdIF( tinP , idKeyP ) ;                                                                                                           \
         }                                                                                                                                                                       \
                                                                                                                                                                                 \
-        tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                    \
+        tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                  \
         puseC puseIndex( tinP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) ;     \
                                                                                                                                                                                 \
         if( !bLiteralKey )                                                                                                                                                      \
@@ -39666,7 +38821,7 @@ args
             if( !POOP )                                                                                                                                                         \
             {                                                                                                                                                                   \
                 thirdC::c_memcpyIF( tinP , (byteT*)pczIKVR , (byteT*)pczIKV , sizeof( countT ) * ccIKV ) ;                                                                      \
-                pczIKVR[ ccIKV     ] = LISTnAMEsYS_RECORD ;                                                                                                                        \
+                pczIKVR[ ccIKV     ] = LISTnAMEsYS_RECORD ;                                                                                                                     \
                 pczIKVR[ ccIKV + 1 ] = 0 ;                                                                                                                                      \
             }                                                                                                                                                                   \
             PUSE( tinP , *(byteT**)&pczIKV ) ;                                                                                                                                  \
@@ -39683,10 +38838,10 @@ args
         if( ~hIKVR )                                                                                                                                                            \
         {                                                                                                                                                                       \
             listC& references = *(listC*)hIKVR.osF( ifcIDtYPEhANDLE_LISTING ) ;                                                                                                 \
-            flagsT flagsSave  = tinP.ta.pushed.u.listWalk.walk.flagsWalkP ;                                                                                                       \
-                                tinP.ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_CALLERgRABBEDrOOT ;                                                                       \
+            flagsT flagsSave  = tinP.ta.pushed.u.listWalk.walk.flagsWalkP ;                                                                                                     \
+                                tinP.ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_CALLERgRABBEDrOOT ;                                                                     \
             flagsRC          |= references.walkF( tinP ) ;                                                                                                                      \
-                                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flagsSave ;                                                                                           \
+                                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flagsSave ;                                                                                         \
         }                                                                                                                                                                       \
                                                                                                                                                                                 \
         {                                                                                                                                                                       \
@@ -39695,7 +38850,7 @@ args
             __NZ( pczIKVR ) ;                                                                                                                                                   \
         }                                                                                                                                                                       \
                                                                                                                                                                                 \
-        tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                                        \
+        tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                                      \
                                                                                                                                                                                 \
         return flagsRC ;                                                                                                                                                        \
     }
@@ -40319,39 +39474,39 @@ obsolete: ordering begins with "outer" (low) and ends with "inner" (high)
 /*1*//*ifcIDgRABlAYER*//*1*/
 
 /*3*/
-#define ifcIDgRABlAYER_1SKIN                        0xdddd0b63
-#define ifcIDgRABlAYER_2OUTER                       0xdddd0b64
-#define ifcIDgRABlAYER_3MIDDLE                      0xdddd0b65
-#define ifcIDgRABlAYER_4INNER                       0xdddd0b66
-#define ifcIDgRABlAYER_5BONE                        0xdddd0b67
-#define ifcIDgRABlAYER_6BONE                        0xdddd0b68
-#define ifcIDgRABlAYER_7BASEmISC1                   0xdddd0b69
-#define ifcIDgRABlAYER_7BASEmISC2                   0xdddd0b6a
-#define ifcIDgRABlAYER_7BASEmISC3                   0xdddd0b6b
-#define ifcIDgRABlAYER_7BASEmISC4                   0xdddd0b6c
-#define ifcIDgRABlAYER_8POOL1cT                     0xdddd0b6d
-#define ifcIDgRABlAYER_8POOL2cT                     0xdddd0b6e
-#define ifcIDgRABlAYER_8POOL3dT                     0xdddd0b6f
-#define ifcIDgRABlAYER_8POOL4dT                     0xdddd0b70
-#define ifcIDgRABlAYER_8POOL5nEW                    0xdddd0b71
-#define ifcIDgRABlAYER_9POOLlAYER1                  0xdddd0b72
-#define ifcIDgRABlAYER_9POOLlAYER2                  0xdddd0b73
-#define ifcIDgRABlAYER_9POOLlAYER3                  0xdddd0b74
-#define ifcIDgRABlAYER_aBASEmISC1                   0xdddd0b75
-#define ifcIDgRABlAYER_aBASEmISC2                   0xdddd0b76
-#define ifcIDgRABlAYER_aBASEmISC3                   0xdddd0b77
-#define ifcIDgRABlAYER_aBASEmISC4                   0xdddd0b78
-#define ifcIDgRABlAYER_OSmAKE                       0xdddd0b79
-#define ifcIDgRABlAYER_bBOOKSc                      0xdddd0b7a
-#define ifcIDgRABlAYER_cBcLOCKS                     0xdddd0b7b
-#define ifcIDgRABlAYER_dSWfILEoPEN                  0xdddd0b7c
-#define ifcIDgRABlAYER_eGRABmEMORYsPACEc            0xdddd0b7d
-#define ifcIDgRABlAYER_fLINKEDc                     0xdddd0b7e
-#define ifcIDgRABlAYER_gHEAP                        0xdddd0b7f
-#define ifcIDgRABlAYER_iLEAF                        0xdddd0b80
+#define ifcIDgRABlAYER_1SKIN                        0xdddd0b77
+#define ifcIDgRABlAYER_2OUTER                       0xdddd0b78
+#define ifcIDgRABlAYER_3MIDDLE                      0xdddd0b79
+#define ifcIDgRABlAYER_4INNER                       0xdddd0b7a
+#define ifcIDgRABlAYER_5BONE                        0xdddd0b7b
+#define ifcIDgRABlAYER_6BONE                        0xdddd0b7c
+#define ifcIDgRABlAYER_7BASEmISC1                   0xdddd0b7d
+#define ifcIDgRABlAYER_7BASEmISC2                   0xdddd0b7e
+#define ifcIDgRABlAYER_7BASEmISC3                   0xdddd0b7f
+#define ifcIDgRABlAYER_7BASEmISC4                   0xdddd0b80
+#define ifcIDgRABlAYER_8POOL1cT                     0xdddd0b81
+#define ifcIDgRABlAYER_8POOL2cT                     0xdddd0b82
+#define ifcIDgRABlAYER_8POOL3dT                     0xdddd0b83
+#define ifcIDgRABlAYER_8POOL4dT                     0xdddd0b84
+#define ifcIDgRABlAYER_8POOL5nEW                    0xdddd0b85
+#define ifcIDgRABlAYER_9POOLlAYER1                  0xdddd0b86
+#define ifcIDgRABlAYER_9POOLlAYER2                  0xdddd0b87
+#define ifcIDgRABlAYER_9POOLlAYER3                  0xdddd0b88
+#define ifcIDgRABlAYER_aBASEmISC1                   0xdddd0b89
+#define ifcIDgRABlAYER_aBASEmISC2                   0xdddd0b8a
+#define ifcIDgRABlAYER_aBASEmISC3                   0xdddd0b8b
+#define ifcIDgRABlAYER_aBASEmISC4                   0xdddd0b8c
+#define ifcIDgRABlAYER_OSmAKE                       0xdddd0b8d
+#define ifcIDgRABlAYER_bBOOKSc                      0xdddd0b8e
+#define ifcIDgRABlAYER_cBcLOCKS                     0xdddd0b8f
+#define ifcIDgRABlAYER_dSWfILEoPEN                  0xdddd0b90
+#define ifcIDgRABlAYER_eGRABmEMORYsPACEc            0xdddd0b91
+#define ifcIDgRABlAYER_fLINKEDc                     0xdddd0b92
+#define ifcIDgRABlAYER_gHEAP                        0xdddd0b93
+#define ifcIDgRABlAYER_iLEAF                        0xdddd0b94
 /*3*/
-#define ifcIDgRABlAYER_min     0xdddd0b63
-#define ifcIDgRABlAYER_max     0xdddd0b80
+#define ifcIDgRABlAYER_min     0xdddd0b77
+#define ifcIDgRABlAYER_max     0xdddd0b94
 
 
 //
@@ -41142,8 +40297,7 @@ optimized for speed
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120044b.assignpstt END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120044c.targ2sgndone BEGIN
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120044c.TaRG2cBsTACK BEGIN
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -41155,8 +40309,9 @@ optimized for speed
 /*
 */
 /**/
-/*1*//*TaRG2sGNdONE(tmFP,sgnDoneP)*//*1*/
+/*1*//**//*1*/
 
+#define TaRG2cBsTACK(tmFP,cbStackP)                                         tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , (cbStackP) , 0
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -41165,7 +40320,7 @@ optimized for speed
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120044c.targ2sgndone END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120044c.TaRG2cBsTACK END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120044d.appendcc BEGIN
 
 
@@ -41453,12 +40608,12 @@ optimized for speed
 //CS:CODEsYNC: 00104c9 1050104.2
 
 /*3*/
-#define ifcIDeVENTdEVICEc_TICK                              0xdddd0b81
-#define ifcIDeVENTdEVICEc_RESIZED                           0xdddd0b82
-#define ifcIDeVENTdEVICEc_RECONFIGURED                      0xdddd0b83
+#define ifcIDeVENTdEVICEc_TICK                              0xdddd0b95
+#define ifcIDeVENTdEVICEc_RESIZED                           0xdddd0b96
+#define ifcIDeVENTdEVICEc_RECONFIGURED                      0xdddd0b97
 /*3*/
-#define ifcIDeVENTdEVICEc_min     0xdddd0b81
-#define ifcIDeVENTdEVICEc_max     0xdddd0b83
+#define ifcIDeVENTdEVICEc_min     0xdddd0b95
+#define ifcIDeVENTdEVICEc_max     0xdddd0b97
 
 
 //
@@ -41756,11 +40911,11 @@ optimized for speed
 /*1*//*ifcIDtYPEgOSSIP*//*1*/
 
 /*3*/
-#define ifcIDtYPEgOSSIP_SYSTEM                      0xdddd0b84
-#define ifcIDtYPEgOSSIP_APPLICATION                 0xdddd0b85
+#define ifcIDtYPEgOSSIP_SYSTEM                      0xdddd0b98
+#define ifcIDtYPEgOSSIP_APPLICATION                 0xdddd0b99
 /*3*/
-#define ifcIDtYPEgOSSIP_min     0xdddd0b84
-#define ifcIDtYPEgOSSIP_max     0xdddd0b85
+#define ifcIDtYPEgOSSIP_min     0xdddd0b98
+#define ifcIDtYPEgOSSIP_max     0xdddd0b99
 
 
 //
@@ -41787,10 +40942,10 @@ optimized for speed
 /*1*//*ifcIDmSGgOSSIP*//*1*/
 
 /*3*/
-#define ifcIDmSGgOSSIP_BITMAPiSvIRGIN                          0xdddd0b86
+#define ifcIDmSGgOSSIP_BITMAPiSvIRGIN                          0xdddd0b9a
 /*3*/
-#define ifcIDmSGgOSSIP_min     0xdddd0b86
-#define ifcIDmSGgOSSIP_max     0xdddd0b86
+#define ifcIDmSGgOSSIP_min     0xdddd0b9a
+#define ifcIDmSGgOSSIP_max     0xdddd0b9a
 
 
 //
@@ -42142,18 +41297,18 @@ optimized for speed
 /*1*//*ifcIDmODEeTHERsOIL*//*1*/
 
 /*3*/
-#define ifcIDmODEeTHERsOIL_PREPAREsOURCE                    0xdddd0b87
-#define ifcIDmODEeTHERsOIL_NATIVEfROMaSCII                  0xdddd0b88
-#define ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE                  0xdddd0b89
-#define ifcIDmODEeTHERsOIL_LINT                             0xdddd0b8a
-#define ifcIDmODEeTHERsOIL_TRIM                             0xdddd0b8b
-#define ifcIDmODEeTHERsOIL_REPORT                           0xdddd0b8c
-#define ifcIDmODEeTHERsOIL_QUERYvALUES                      0xdddd0b8d
-#define ifcIDmODEeTHERsOIL_DO                               0xdddd0b8e
-#define ifcIDmODEeTHERsOIL_DOdEBUG                          0xdddd0b8f
+#define ifcIDmODEeTHERsOIL_PREPAREsOURCE                    0xdddd0b9b
+#define ifcIDmODEeTHERsOIL_NATIVEfROMaSCII                  0xdddd0b9c
+#define ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE                  0xdddd0b9d
+#define ifcIDmODEeTHERsOIL_LINT                             0xdddd0b9e
+#define ifcIDmODEeTHERsOIL_TRIM                             0xdddd0b9f
+#define ifcIDmODEeTHERsOIL_REPORT                           0xdddd0ba0
+#define ifcIDmODEeTHERsOIL_QUERYvALUES                      0xdddd0ba1
+#define ifcIDmODEeTHERsOIL_DO                               0xdddd0ba2
+#define ifcIDmODEeTHERsOIL_DOdEBUG                          0xdddd0ba3
 /*3*/
-#define ifcIDmODEeTHERsOIL_min     0xdddd0b87
-#define ifcIDmODEeTHERsOIL_max     0xdddd0b8f
+#define ifcIDmODEeTHERsOIL_min     0xdddd0b9b
+#define ifcIDmODEeTHERsOIL_max     0xdddd0ba3
 
 
 //
@@ -42367,13 +41522,13 @@ parameters
 /*1*//*ifcIDeVENTvsp*//*1*/
 
 /*3*/
-#define ifcIDeVENTvsp_CT                    0xdddd0b90
-#define ifcIDeVENTvsp_WrEFcT                0xdddd0b91
-#define ifcIDeVENTvsp_WrEFdT                0xdddd0b92
-#define ifcIDeVENTvsp_DT                    0xdddd0b93
+#define ifcIDeVENTvsp_CT                    0xdddd0ba4
+#define ifcIDeVENTvsp_WrEFcT                0xdddd0ba5
+#define ifcIDeVENTvsp_WrEFdT                0xdddd0ba6
+#define ifcIDeVENTvsp_DT                    0xdddd0ba7
 /*3*/
-#define ifcIDeVENTvsp_min     0xdddd0b90
-#define ifcIDeVENTvsp_max     0xdddd0b93
+#define ifcIDeVENTvsp_min     0xdddd0ba4
+#define ifcIDeVENTvsp_max     0xdddd0ba7
 
 
 //
@@ -43086,11 +42241,11 @@ use me only for pointers
 /*1*//*ifcIDtYPEbRANCHs*//*1*/
 
 /*3*/
-#define ifcIDtYPEbRANCHs_branchSptr          0xdddd0b94
-#define ifcIDtYPEbRANCHs_strokeSstr          0xdddd0b95
+#define ifcIDtYPEbRANCHs_branchSptr          0xdddd0ba8
+#define ifcIDtYPEbRANCHs_strokeSstr          0xdddd0ba9
 /*3*/
-#define ifcIDtYPEbRANCHs_min     0xdddd0b94
-#define ifcIDtYPEbRANCHs_max     0xdddd0b95
+#define ifcIDtYPEbRANCHs_min     0xdddd0ba8
+#define ifcIDtYPEbRANCHs_max     0xdddd0ba9
 
 
 //
@@ -45710,10 +44865,10 @@ arguments
 /*1*//*ifcIDfORMAT*//*1*/
 
 /*3*/
-#define ifcIDfORMAT_BOOK0hEAD           0xdddd0b96
+#define ifcIDfORMAT_BOOK0hEAD           0xdddd0baa
 /*3*/
-#define ifcIDfORMAT_min     0xdddd0b96
-#define ifcIDfORMAT_max     0xdddd0b96
+#define ifcIDfORMAT_min     0xdddd0baa
+#define ifcIDfORMAT_max     0xdddd0baa
 
 
 //
@@ -46527,73 +45682,73 @@ else the reference to it that is kept within the jotC instance will become a zom
 //SYNC ERRORS CAN CAUSE ARRAY INDEX OUT OF BOUNDS
 
 /*3*/
-#define JrEQUEST_1                           0xdddd0b97
-#define JrEQUEST_2                           0xdddd0b98
-#define JrEQUEST_3                           0xdddd0b99
-#define JrEQUEST_4                           0xdddd0b9a
-#define JrEQUEST_5                           0xdddd0b9b
-#define JrEQUEST_6                           0xdddd0b9c
-#define JrEQUEST_7                           0xdddd0b9d
-#define JrEQUEST_8                           0xdddd0b9e
-#define JrEQUEST_9                           0xdddd0b9f
-#define JrEQUEST_a                           0xdddd0ba0
-#define JrEQUEST_b                           0xdddd0ba1
-#define JrEQUEST_c                           0xdddd0ba2
-#define JrEQUEST_d                           0xdddd0ba3
-#define JrEQUEST_e                           0xdddd0ba4
-#define JrEQUEST_f                           0xdddd0ba5
-#define JrEQUEST_01                          0xdddd0ba6
-#define JrEQUEST_11                          0xdddd0ba7
-#define JrEQUEST_21                          0xdddd0ba8
-#define JrEQUEST_31                          0xdddd0ba9
-#define JrEQUEST_41                          0xdddd0baa
-#define JrEQUEST_51                          0xdddd0bab
-#define JrEQUEST_61                          0xdddd0bac
-#define JrEQUEST_71                          0xdddd0bad
-#define JrEQUEST_81                          0xdddd0bae
-#define JrEQUEST_91                          0xdddd0baf
-#define JrEQUEST_a1                          0xdddd0bb0
-#define JrEQUEST_b1                          0xdddd0bb1
-#define JrEQUEST_c1                          0xdddd0bb2
-#define JrEQUEST_d1                          0xdddd0bb3
-#define JrEQUEST_e1                          0xdddd0bb4
-#define JrEQUEST_f1                          0xdddd0bb5
-#define JrEQUEST_02                          0xdddd0bb6
-#define JrEQUEST_12                          0xdddd0bb7
-#define JrEQUEST_22                          0xdddd0bb8
-#define JrEQUEST_32                          0xdddd0bb9
-#define JrEQUEST_42                          0xdddd0bba
-#define JrEQUEST_52                          0xdddd0bbb
-#define JrEQUEST_62                          0xdddd0bbc
-#define JrEQUEST_72                          0xdddd0bbd
-#define JrEQUEST_82                          0xdddd0bbe
-#define JrEQUEST_92                          0xdddd0bbf
-#define JrEQUEST_a2                          0xdddd0bc0
-#define JrEQUEST_b2                          0xdddd0bc1
-#define JrEQUEST_c2                          0xdddd0bc2
-#define JrEQUEST_d2                          0xdddd0bc3
-#define JrEQUEST_e2                          0xdddd0bc4
-#define JrEQUEST_f2                          0xdddd0bc5
-#define JrEQUEST_03                          0xdddd0bc6
-#define JrEQUEST_13                          0xdddd0bc7
-#define JrEQUEST_23                          0xdddd0bc8
-#define JrEQUEST_33                          0xdddd0bc9
-#define JrEQUEST_43                          0xdddd0bca
-#define JrEQUEST_53                          0xdddd0bcb
-#define JrEQUEST_63                          0xdddd0bcc
-#define JrEQUEST_73                          0xdddd0bcd
-#define JrEQUEST_83                          0xdddd0bce
-#define JrEQUEST_93                          0xdddd0bcf
-#define JrEQUEST_a3                          0xdddd0bd0
-#define JrEQUEST_b3                          0xdddd0bd1
-#define JrEQUEST_c3                          0xdddd0bd2
-#define JrEQUEST_d3                          0xdddd0bd3
-#define JrEQUEST_e3                          0xdddd0bd4
-#define JrEQUEST_f3                          0xdddd0bd5
-#define JrEQUEST_04                          0xdddd0bd6
+#define JrEQUEST_1                           0xdddd0bab
+#define JrEQUEST_2                           0xdddd0bac
+#define JrEQUEST_3                           0xdddd0bad
+#define JrEQUEST_4                           0xdddd0bae
+#define JrEQUEST_5                           0xdddd0baf
+#define JrEQUEST_6                           0xdddd0bb0
+#define JrEQUEST_7                           0xdddd0bb1
+#define JrEQUEST_8                           0xdddd0bb2
+#define JrEQUEST_9                           0xdddd0bb3
+#define JrEQUEST_a                           0xdddd0bb4
+#define JrEQUEST_b                           0xdddd0bb5
+#define JrEQUEST_c                           0xdddd0bb6
+#define JrEQUEST_d                           0xdddd0bb7
+#define JrEQUEST_e                           0xdddd0bb8
+#define JrEQUEST_f                           0xdddd0bb9
+#define JrEQUEST_01                          0xdddd0bba
+#define JrEQUEST_11                          0xdddd0bbb
+#define JrEQUEST_21                          0xdddd0bbc
+#define JrEQUEST_31                          0xdddd0bbd
+#define JrEQUEST_41                          0xdddd0bbe
+#define JrEQUEST_51                          0xdddd0bbf
+#define JrEQUEST_61                          0xdddd0bc0
+#define JrEQUEST_71                          0xdddd0bc1
+#define JrEQUEST_81                          0xdddd0bc2
+#define JrEQUEST_91                          0xdddd0bc3
+#define JrEQUEST_a1                          0xdddd0bc4
+#define JrEQUEST_b1                          0xdddd0bc5
+#define JrEQUEST_c1                          0xdddd0bc6
+#define JrEQUEST_d1                          0xdddd0bc7
+#define JrEQUEST_e1                          0xdddd0bc8
+#define JrEQUEST_f1                          0xdddd0bc9
+#define JrEQUEST_02                          0xdddd0bca
+#define JrEQUEST_12                          0xdddd0bcb
+#define JrEQUEST_22                          0xdddd0bcc
+#define JrEQUEST_32                          0xdddd0bcd
+#define JrEQUEST_42                          0xdddd0bce
+#define JrEQUEST_52                          0xdddd0bcf
+#define JrEQUEST_62                          0xdddd0bd0
+#define JrEQUEST_72                          0xdddd0bd1
+#define JrEQUEST_82                          0xdddd0bd2
+#define JrEQUEST_92                          0xdddd0bd3
+#define JrEQUEST_a2                          0xdddd0bd4
+#define JrEQUEST_b2                          0xdddd0bd5
+#define JrEQUEST_c2                          0xdddd0bd6
+#define JrEQUEST_d2                          0xdddd0bd7
+#define JrEQUEST_e2                          0xdddd0bd8
+#define JrEQUEST_f2                          0xdddd0bd9
+#define JrEQUEST_03                          0xdddd0bda
+#define JrEQUEST_13                          0xdddd0bdb
+#define JrEQUEST_23                          0xdddd0bdc
+#define JrEQUEST_33                          0xdddd0bdd
+#define JrEQUEST_43                          0xdddd0bde
+#define JrEQUEST_53                          0xdddd0bdf
+#define JrEQUEST_63                          0xdddd0be0
+#define JrEQUEST_73                          0xdddd0be1
+#define JrEQUEST_83                          0xdddd0be2
+#define JrEQUEST_93                          0xdddd0be3
+#define JrEQUEST_a3                          0xdddd0be4
+#define JrEQUEST_b3                          0xdddd0be5
+#define JrEQUEST_c3                          0xdddd0be6
+#define JrEQUEST_d3                          0xdddd0be7
+#define JrEQUEST_e3                          0xdddd0be8
+#define JrEQUEST_f3                          0xdddd0be9
+#define JrEQUEST_04                          0xdddd0bea
 /*3*/
-#define JrEQUEST_min     0xdddd0b97
-#define JrEQUEST_max     0xdddd0bd6
+#define JrEQUEST_min     0xdddd0bab
+#define JrEQUEST_max     0xdddd0bea
 
 
 //
@@ -46792,11 +45947,11 @@ a jPointer is also considered null if it contains one of the special values [JrE
 /*1*//*ifcIDsEXclATHnEWdEL*//*1*/
 
 /*3*/
-#define ifcIDsEXclATHnEWdEL_NEW           0xdddd0bd7
-#define ifcIDsEXclATHnEWdEL_DEL           0xdddd0bd8
+#define ifcIDsEXclATHnEWdEL_NEW           0xdddd0beb
+#define ifcIDsEXclATHnEWdEL_DEL           0xdddd0bec
 /*3*/
-#define ifcIDsEXclATHnEWdEL_min     0xdddd0bd7
-#define ifcIDsEXclATHnEWdEL_max     0xdddd0bd8
+#define ifcIDsEXclATHnEWdEL_min     0xdddd0beb
+#define ifcIDsEXclATHnEWdEL_max     0xdddd0bec
 
 
 //
@@ -46867,7 +46022,7 @@ a jPointer is also considered null if it contains one of the special values [JrE
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f4.flpoolcnew END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f5.flsexcstate BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f5.flSEXcsTATEpRIVATE BEGIN
 
 
 //
@@ -46881,18 +46036,14 @@ a jPointer is also considered null if it contains one of the special values [JrE
 */
 /**/
 
-/*1*//*flSEXcsTATE*//*1*/
+/*1*//*flSEXcsTATEpRIVATE*//*1*/
 /*3*/
-#define flSEXcsTATEpRIVATE_USINGnAPfORmETA                   0xe00001f6
-#define flSEXcsTATEpRIVATE_USINGnAPfORdATA                   0xe00002f6
+#define flSEXcsTATEpRIVATE_USINGnAPfORdATA                   0xe00001f6
+#define flSEXcsTATEpRIVATE_USINGnAPfORmETA                   0xe00002f6
 #define flSEXcsTATEpRIVATE_REGISTEREDwITHlEAKlOGGERaOK       0xe00004f6
 #define flSEXcsTATEpRIVATE_CONSTRUCTEDaOK                    0xe00008f6
 /*3*/
 #define flSEXcsTATEpRIVATE_null    0xe00000f6
-#define flSEXcsTATEsHARED_null    0xe00000f6
-
-#define flSEXcsTATEsHARED_USINGnAPfORmETA                   0xe00001f6
-#define flSEXcsTATEsHARED_USINGnAPfORdATA                   0xe00002f6
 
 
 //
@@ -46902,7 +46053,7 @@ a jPointer is also considered null if it contains one of the special values [JrE
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f5.flsexcstate END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f5.flSEXcsTATEpRIVATE END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112004f7.ifcidsexarray BEGIN
 
 
@@ -46919,10 +46070,10 @@ a jPointer is also considered null if it contains one of the special values [JrE
 /*1*//*ifcIDsEXaRRAY*//*1*/
 
 /*3*/
-#define ifcIDsEXaRRAY_BEINGcONSTRUCTED           0xdddd0bd9
+#define ifcIDsEXaRRAY_BEINGcONSTRUCTED           0xdddd0bed
 /*3*/
-#define ifcIDsEXaRRAY_min     0xdddd0bd9
-#define ifcIDsEXaRRAY_max     0xdddd0bd9
+#define ifcIDsEXaRRAY_min     0xdddd0bed
+#define ifcIDsEXaRRAY_max     0xdddd0bed
 
 
 //
@@ -47364,22 +46515,22 @@ i do not verify that the naked idJot value is valid
 /*1*//*ifcIDmODEpUTfILE*//*1*/
 
 /*3*/
-#define ifcIDmODEpUTfILE_ROOT         0xdddd0bda
-#define ifcIDmODEpUTfILE_ABOUT        0xdddd0bdb
-#define ifcIDmODEpUTfILE_PAID         0xdddd0bdc
-#define ifcIDmODEpUTfILE_TUTORIALS    0xdddd0bdd
-#define ifcIDmODEpUTfILE_HOOKS        0xdddd0bde
-#define ifcIDmODEpUTfILE_ESSAYS       0xdddd0bdf
-#define ifcIDmODEpUTfILE_ARCHIVE      0xdddd0be0
-#define ifcIDmODEpUTfILE_WO           0xdddd0be1
-#define ifcIDmODEpUTfILE_NEWS         0xdddd0be2
-#define ifcIDmODEpUTfILE_BUNDLE       0xdddd0be3
-#define ifcIDmODEpUTfILE_PAY          0xdddd0be4
-#define ifcIDmODEpUTfILE_IPDOS        0xdddd0be5
-#define ifcIDmODEpUTfILE_OTHER        0xdddd0be6
+#define ifcIDmODEpUTfILE_ROOT         0xdddd0bee
+#define ifcIDmODEpUTfILE_ABOUT        0xdddd0bef
+#define ifcIDmODEpUTfILE_PAID         0xdddd0bf0
+#define ifcIDmODEpUTfILE_TUTORIALS    0xdddd0bf1
+#define ifcIDmODEpUTfILE_HOOKS        0xdddd0bf2
+#define ifcIDmODEpUTfILE_ESSAYS       0xdddd0bf3
+#define ifcIDmODEpUTfILE_ARCHIVE      0xdddd0bf4
+#define ifcIDmODEpUTfILE_WO           0xdddd0bf5
+#define ifcIDmODEpUTfILE_NEWS         0xdddd0bf6
+#define ifcIDmODEpUTfILE_BUNDLE       0xdddd0bf7
+#define ifcIDmODEpUTfILE_PAY          0xdddd0bf8
+#define ifcIDmODEpUTfILE_IPDOS        0xdddd0bf9
+#define ifcIDmODEpUTfILE_OTHER        0xdddd0bfa
 /*3*/
-#define ifcIDmODEpUTfILE_min     0xdddd0bda
-#define ifcIDmODEpUTfILE_max     0xdddd0be6
+#define ifcIDmODEpUTfILE_min     0xdddd0bee
+#define ifcIDmODEpUTfILE_max     0xdddd0bfa
 
 
 //
@@ -47544,11 +46695,11 @@ parameters
 /*1*//*ifcIDcLOUD*//*1*/
 
 /*3*/
-#define ifcIDcLOUD_RACKSPACE           0xdddd0be7
-#define ifcIDcLOUD_GOOGLE              0xdddd0be8
+#define ifcIDcLOUD_RACKSPACE           0xdddd0bfb
+#define ifcIDcLOUD_GOOGLE              0xdddd0bfc
 /*3*/
-#define ifcIDcLOUD_min     0xdddd0be7
-#define ifcIDcLOUD_max     0xdddd0be8
+#define ifcIDcLOUD_min     0xdddd0bfb
+#define ifcIDcLOUD_max     0xdddd0bfc
 
 
 //
@@ -47962,12 +47113,12 @@ parameters
 /*1*//*ifcIDdOcLOUDiFdIFFER*//*1*/
 
 /*3*/
-#define ifcIDdOcLOUDiFdIFFER_NOTHING    0xdddd0be9
-#define ifcIDdOcLOUDiFdIFFER_REPORT     0xdddd0bea
-#define ifcIDdOcLOUDiFdIFFER_REPLACE    0xdddd0beb
+#define ifcIDdOcLOUDiFdIFFER_NOTHING    0xdddd0bfd
+#define ifcIDdOcLOUDiFdIFFER_REPORT     0xdddd0bfe
+#define ifcIDdOcLOUDiFdIFFER_REPLACE    0xdddd0bff
 /*3*/
-#define ifcIDdOcLOUDiFdIFFER_min     0xdddd0be9
-#define ifcIDdOcLOUDiFdIFFER_max     0xdddd0beb
+#define ifcIDdOcLOUDiFdIFFER_min     0xdddd0bfd
+#define ifcIDdOcLOUDiFdIFFER_max     0xdddd0bff
 
 
 //
@@ -48076,11 +47227,11 @@ parameters
 /*1*//*ifcIDmODEsOCKETS*//*1*/
 
 /*3*/
-#define ifcIDmODEsOCKETS_NOTeNCRYPTED  0xdddd0bec
-#define ifcIDmODEsOCKETS_ENCRYPTED     0xdddd0bed
+#define ifcIDmODEsOCKETS_NOTeNCRYPTED  0xdddd0c00
+#define ifcIDmODEsOCKETS_ENCRYPTED     0xdddd0c01
 /*3*/
-#define ifcIDmODEsOCKETS_min     0xdddd0bec
-#define ifcIDmODEsOCKETS_max     0xdddd0bed
+#define ifcIDmODEsOCKETS_min     0xdddd0c00
+#define ifcIDmODEsOCKETS_max     0xdddd0c01
 
 
 //
@@ -48700,41 +47851,41 @@ use this rather than _ to avoid the overhead of _
 //CS:CODEsYNC: WO CONSTANT IS NEEDED FOR EACH BIT IN A countT OBJECT (WHICH IS CURRENTLY OF SIZE count02T)
 
 /*3*/
-#define ifcIDgRABITbIT_00     0xdddd0bee
-#define ifcIDgRABITbIT_10     0xdddd0bef
-#define ifcIDgRABITbIT_20     0xdddd0bf0
-#define ifcIDgRABITbIT_30     0xdddd0bf1
-#define ifcIDgRABITbIT_40     0xdddd0bf2
-#define ifcIDgRABITbIT_50     0xdddd0bf3
-#define ifcIDgRABITbIT_60     0xdddd0bf4
-#define ifcIDgRABITbIT_70     0xdddd0bf5
-#define ifcIDgRABITbIT_80     0xdddd0bf6
-#define ifcIDgRABITbIT_90     0xdddd0bf7
-#define ifcIDgRABITbIT_a0     0xdddd0bf8
-#define ifcIDgRABITbIT_b0     0xdddd0bf9
-#define ifcIDgRABITbIT_c0     0xdddd0bfa
-#define ifcIDgRABITbIT_d0     0xdddd0bfb
-#define ifcIDgRABITbIT_e0     0xdddd0bfc
-#define ifcIDgRABITbIT_f0     0xdddd0bfd
-#define ifcIDgRABITbIT_01     0xdddd0bfe
-#define ifcIDgRABITbIT_11     0xdddd0bff
-#define ifcIDgRABITbIT_21     0xdddd0c00
-#define ifcIDgRABITbIT_31     0xdddd0c01
-#define ifcIDgRABITbIT_41     0xdddd0c02
-#define ifcIDgRABITbIT_51     0xdddd0c03
-#define ifcIDgRABITbIT_61     0xdddd0c04
-#define ifcIDgRABITbIT_71     0xdddd0c05
-#define ifcIDgRABITbIT_81     0xdddd0c06
-#define ifcIDgRABITbIT_91     0xdddd0c07
-#define ifcIDgRABITbIT_a1     0xdddd0c08
-#define ifcIDgRABITbIT_b1     0xdddd0c09
-#define ifcIDgRABITbIT_c1     0xdddd0c0a
-#define ifcIDgRABITbIT_d1     0xdddd0c0b
-#define ifcIDgRABITbIT_e1     0xdddd0c0c
-#define ifcIDgRABITbIT_f1     0xdddd0c0d
+#define ifcIDgRABITbIT_00     0xdddd0c02
+#define ifcIDgRABITbIT_10     0xdddd0c03
+#define ifcIDgRABITbIT_20     0xdddd0c04
+#define ifcIDgRABITbIT_30     0xdddd0c05
+#define ifcIDgRABITbIT_40     0xdddd0c06
+#define ifcIDgRABITbIT_50     0xdddd0c07
+#define ifcIDgRABITbIT_60     0xdddd0c08
+#define ifcIDgRABITbIT_70     0xdddd0c09
+#define ifcIDgRABITbIT_80     0xdddd0c0a
+#define ifcIDgRABITbIT_90     0xdddd0c0b
+#define ifcIDgRABITbIT_a0     0xdddd0c0c
+#define ifcIDgRABITbIT_b0     0xdddd0c0d
+#define ifcIDgRABITbIT_c0     0xdddd0c0e
+#define ifcIDgRABITbIT_d0     0xdddd0c0f
+#define ifcIDgRABITbIT_e0     0xdddd0c10
+#define ifcIDgRABITbIT_f0     0xdddd0c11
+#define ifcIDgRABITbIT_01     0xdddd0c12
+#define ifcIDgRABITbIT_11     0xdddd0c13
+#define ifcIDgRABITbIT_21     0xdddd0c14
+#define ifcIDgRABITbIT_31     0xdddd0c15
+#define ifcIDgRABITbIT_41     0xdddd0c16
+#define ifcIDgRABITbIT_51     0xdddd0c17
+#define ifcIDgRABITbIT_61     0xdddd0c18
+#define ifcIDgRABITbIT_71     0xdddd0c19
+#define ifcIDgRABITbIT_81     0xdddd0c1a
+#define ifcIDgRABITbIT_91     0xdddd0c1b
+#define ifcIDgRABITbIT_a1     0xdddd0c1c
+#define ifcIDgRABITbIT_b1     0xdddd0c1d
+#define ifcIDgRABITbIT_c1     0xdddd0c1e
+#define ifcIDgRABITbIT_d1     0xdddd0c1f
+#define ifcIDgRABITbIT_e1     0xdddd0c20
+#define ifcIDgRABITbIT_f1     0xdddd0c21
 /*3*/
-#define ifcIDgRABITbIT_min     0xdddd0bee
-#define ifcIDgRABITbIT_max     0xdddd0c0d
+#define ifcIDgRABITbIT_min     0xdddd0c02
+#define ifcIDgRABITbIT_max     0xdddd0c21
 
 
 //
@@ -48761,12 +47912,12 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDeMAILrEGISTRATIONrEQUESTsTATUS*//*1*/
 
 /*3*/
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGsCHEME              0xdddd0c0e
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGiMAGE               0xdddd0c0f
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_HUMANnOpRIORpENDING         0xdddd0c10
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGsCHEME              0xdddd0c22
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGiMAGE               0xdddd0c23
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_HUMANnOpRIORpENDING         0xdddd0c24
 /*3*/
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_min     0xdddd0c0e
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_max     0xdddd0c10
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_min     0xdddd0c22
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_max     0xdddd0c24
 
 
 //
@@ -49224,25 +48375,25 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtRACEdIVERT*//*1*/
 
 /*3*/
-#define ifcIDtRACEdIVERT_1              0xdddd0c11
-#define ifcIDtRACEdIVERT_2              0xdddd0c12
-#define ifcIDtRACEdIVERT_3              0xdddd0c13
-#define ifcIDtRACEdIVERT_4              0xdddd0c14
-#define ifcIDtRACEdIVERT_5              0xdddd0c15
-#define ifcIDtRACEdIVERT_6              0xdddd0c16
-#define ifcIDtRACEdIVERT_7              0xdddd0c17
-#define ifcIDtRACEdIVERT_8              0xdddd0c18
-#define ifcIDtRACEdIVERT_9              0xdddd0c19
-#define ifcIDtRACEdIVERT_a              0xdddd0c1a
-#define ifcIDtRACEdIVERT_b              0xdddd0c1b
-#define ifcIDtRACEdIVERT_c              0xdddd0c1c
-#define ifcIDtRACEdIVERT_d              0xdddd0c1d
-#define ifcIDtRACEdIVERT_e              0xdddd0c1e
-#define ifcIDtRACEdIVERT_f              0xdddd0c1f
-#define ifcIDtRACEdIVERT_10             0xdddd0c20
+#define ifcIDtRACEdIVERT_1              0xdddd0c25
+#define ifcIDtRACEdIVERT_2              0xdddd0c26
+#define ifcIDtRACEdIVERT_3              0xdddd0c27
+#define ifcIDtRACEdIVERT_4              0xdddd0c28
+#define ifcIDtRACEdIVERT_5              0xdddd0c29
+#define ifcIDtRACEdIVERT_6              0xdddd0c2a
+#define ifcIDtRACEdIVERT_7              0xdddd0c2b
+#define ifcIDtRACEdIVERT_8              0xdddd0c2c
+#define ifcIDtRACEdIVERT_9              0xdddd0c2d
+#define ifcIDtRACEdIVERT_a              0xdddd0c2e
+#define ifcIDtRACEdIVERT_b              0xdddd0c2f
+#define ifcIDtRACEdIVERT_c              0xdddd0c30
+#define ifcIDtRACEdIVERT_d              0xdddd0c31
+#define ifcIDtRACEdIVERT_e              0xdddd0c32
+#define ifcIDtRACEdIVERT_f              0xdddd0c33
+#define ifcIDtRACEdIVERT_10             0xdddd0c34
 /*3*/
-#define ifcIDtRACEdIVERT_min     0xdddd0c11
-#define ifcIDtRACEdIVERT_max     0xdddd0c20
+#define ifcIDtRACEdIVERT_min     0xdddd0c25
+#define ifcIDtRACEdIVERT_max     0xdddd0c34
 
 
 //
@@ -49361,11 +48512,11 @@ use this rather than _ to avoid the overhead of _
 /**/
 
 /*3*/
-#define ifcIDcMDcLOAK_QUERYfOLDERcONTENTS               0xdddd0c21
-#define ifcIDcMDcLOAK_QUERYaLLlOCKEDfOLDERScONTENTS     0xdddd0c22
+#define ifcIDcMDcLOAK_QUERYfOLDERcONTENTS               0xdddd0c35
+#define ifcIDcMDcLOAK_QUERYaLLlOCKEDfOLDERScONTENTS     0xdddd0c36
 /*3*/
-#define ifcIDcMDcLOAK_min     0xdddd0c21
-#define ifcIDcMDcLOAK_max     0xdddd0c22
+#define ifcIDcMDcLOAK_min     0xdddd0c35
+#define ifcIDcMDcLOAK_max     0xdddd0c36
 
 
 //
@@ -49392,11 +48543,11 @@ use this rather than _ to avoid the overhead of _
 /**/
 
 /*3*/
-#define ifcIDrEPLYcLOAK_FOLDERcONTENTS            0xdddd0c23
-#define ifcIDrEPLYcLOAK_ALLlOCKEDfOLDERScONTENTS  0xdddd0c24
+#define ifcIDrEPLYcLOAK_FOLDERcONTENTS            0xdddd0c37
+#define ifcIDrEPLYcLOAK_ALLlOCKEDfOLDERScONTENTS  0xdddd0c38
 /*3*/
-#define ifcIDrEPLYcLOAK_min     0xdddd0c23
-#define ifcIDrEPLYcLOAK_max     0xdddd0c24
+#define ifcIDrEPLYcLOAK_min     0xdddd0c37
+#define ifcIDrEPLYcLOAK_max     0xdddd0c38
 
 
 //
@@ -49488,14 +48639,14 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtYPEpATTERN*//*1*/
 
 /*3*/
-#define ifcIDtYPEpATTERN_LITERAL                         0xdddd0c25
-#define ifcIDtYPEpATTERN_NATIVE                          0xdddd0c26
-#define ifcIDtYPEpATTERN_FOREIGNwILDCARDmICROSOFT        0xdddd0c27
-#define ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT           0xdddd0c28
-#define ifcIDtYPEpATTERN_FOREIGNuNIXrEGULAReXPRESSION    0xdddd0c29
+#define ifcIDtYPEpATTERN_LITERAL                         0xdddd0c39
+#define ifcIDtYPEpATTERN_NATIVE                          0xdddd0c3a
+#define ifcIDtYPEpATTERN_FOREIGNwILDCARDmICROSOFT        0xdddd0c3b
+#define ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT           0xdddd0c3c
+#define ifcIDtYPEpATTERN_FOREIGNuNIXrEGULAReXPRESSION    0xdddd0c3d
 /*3*/
-#define ifcIDtYPEpATTERN_min     0xdddd0c25
-#define ifcIDtYPEpATTERN_max     0xdddd0c29
+#define ifcIDtYPEpATTERN_min     0xdddd0c39
+#define ifcIDtYPEpATTERN_max     0xdddd0c3d
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -49641,11 +48792,11 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtYPEcLOAKcONNECTION*//*1*/
 
 /*3*/
-#define ifcIDtYPEcLOAKcONNECTION_SIMPLE                          0xdddd0c2a
-#define ifcIDtYPEcLOAKcONNECTION_SOULFUL                         0xdddd0c2b
+#define ifcIDtYPEcLOAKcONNECTION_SIMPLE                          0xdddd0c3e
+#define ifcIDtYPEcLOAKcONNECTION_SOULFUL                         0xdddd0c3f
 /*3*/
-#define ifcIDtYPEcLOAKcONNECTION_min     0xdddd0c2a
-#define ifcIDtYPEcLOAKcONNECTION_max     0xdddd0c2b
+#define ifcIDtYPEcLOAKcONNECTION_min     0xdddd0c3e
+#define ifcIDtYPEcLOAKcONNECTION_max     0xdddd0c3f
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -49672,11 +48823,11 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtYPEtINaRGiNuSE*//*1*/
 
 /*3*/
-#define ifcIDtYPEtINaRGiNuSE_LIST                          0xdddd0c2c
-#define ifcIDtYPEtINaRGiNuSE_PATTERN                       0xdddd0c2d
+#define ifcIDtYPEtINaRGiNuSE_LIST                          0xdddd0c40
+#define ifcIDtYPEtINaRGiNuSE_PATTERN                       0xdddd0c41
 /*3*/
-#define ifcIDtYPEtINaRGiNuSE_min     0xdddd0c2c
-#define ifcIDtYPEtINaRGiNuSE_max     0xdddd0c2d
+#define ifcIDtYPEtINaRGiNuSE_min     0xdddd0c40
+#define ifcIDtYPEtINaRGiNuSE_max     0xdddd0c41
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -51011,3 +50162,3568 @@ use this rather than _ to avoid the overhead of _
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200571.GARBAGEcOLLECTORdEF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200572.PrEF BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*PrEF(classP,nameP,pointerP)*//*1*/
+
+#define PrEF(classP,nameP,pointerP) classP& nameP = *(classP*)(const byteT*)(pointerP) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200572.PrEF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200573.testscratch BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TESTsCRATCH*//*1*/
+
+#define TESTsCRATCH                                                                                     \
+                                                                                                        \
+        if( tinP.pEtScratch )                                                                           \
+        {                                                                                               \
+            SCOOPS                                                                                      \
+            if( POOP )                                                                                  \
+            {                                                                                           \
+                _IO_                                                                                    \
+                ((poopC&)POOP).chatterF( tinP , LF ) ;                                                  \
+                BLAMMOiD( POOP.idiFileGruntF() ) ;                                                      \
+            }                                                                                           \
+        }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200573.testscratch END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200574.blammoid BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010211.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*//*BLAMMOiD(idP)*//*1*/
+
+#define BLAMMOiD(idP) thirdC::blammoIF( LF , 0 , 0 , (countT)(idP) ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200574.blammoid END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200575.blammoctid BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010211.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*//*BLAMMOcT*//*1*/
+
+#define BLAMMOcTiD(idP) thirdC::blammoIF( LF , idLineCt , idiFileCt , (idP) ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200575.blammoctid END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200576.ifcidtypetellapp BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.001020f.1.0.html\"\>definition\</A\>
+*/
+/*1*//*ifcIDtYPEtELLaPP*//*1*/
+
+/*3*/
+#define ifcIDtYPEtELLaPP_NOOP                                           0xdddd0c42
+#define ifcIDtYPEtELLaPP_INoUT                                          0xdddd0c43
+#define ifcIDtYPEtELLaPP_INoUTaRRAY                                     0xdddd0c44
+#define ifcIDtYPEtELLaPP_INoUTtINdT                                     0xdddd0c45
+/*3*/
+#define ifcIDtYPEtELLaPP_min     0xdddd0c42
+#define ifcIDtYPEtELLaPP_max     0xdddd0c45                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200576.ifcidtypetellapp END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200577.ifcidbookstell BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.001020f.1.0.html\"\>definition\</A\>
+*/
+/*1*//*ifcIDbOOKStELL*//*1*/
+
+/*3*/
+#define ifcIDbOOKStELL_SYS                                           0xdddd0c46
+#define ifcIDbOOKStELL_APP                                           0xdddd0c47
+/*3*/
+#define ifcIDbOOKStELL_min     0xdddd0c46
+#define ifcIDbOOKStELL_max     0xdddd0c47                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200577.ifcidbookstell END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200578.tellappc1 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010212.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*//*TELLaPPc1(idTypeP)*//*1*/
+
+#define TELLaPPc1(idTypeP)                                                                                          \
+                                                                                                                    \
+    {                                                                                                               \
+        byteT pbZombie[ sizeof( tellS ) ] ;                                                                         \
+        tellC tell( tinP , TAG( TAGiDnULL ) , idTypeP , 0 , 0 , pbZombie , sizeof pbZombie ) ;                      \
+        thirdC::dosTellMonitorIF( tinP , tell , ifcIDbOOKStELL_APP ) ;                                              \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200578.tellappc1 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200579.tellappc3 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010213.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*//*TELLaPPc3(idTypeP,pbP,cbP)*//*1*/
+
+#define TELLaPPc3(idTypeP,pbP,cbP)                                                                                      \
+                                                                                                                        \
+    {                                                                                                                   \
+        byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                       \
+        tellC tell( tinP , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie ) ;                      \
+        thirdC::dosTellMonitorIF( tinP , tell , ifcIDbOOKStELL_APP ) ;                                                  \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200579.tellappc3 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057a.tellappc3s BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010263.1.0.html\"\>definition\</A\>
+like TELLaPPc3 but synchronous
+ i do not return until the monitor has seen pbP
+pbP must point to a countT that contains 0
+after i return, that countT object will contain 1
+*/
+/**/
+
+/*1*//*TELLaPPc3S(idTypeP,pbP,cbP)*//*1*/
+
+#define TELLaPPc3S(idTypeP,pbP,cbP)                                                                                 \
+                                                                                                                    \
+    {                                                                                                               \
+        byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
+        tellC tell( tinP , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 1 ) ;              \
+        thirdC::dosTellMonitorIF( tinP , tell , ifcIDbOOKStELL_APP ) ;                                              \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057a.tellappc3s END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057b.tellappc3ebp BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010274.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*//*TELLaPPc3EBP(idTypeP,pbP,cbP,ebpP)*//*1*/
+
+#define TELLaPPc3EBP(idTypeP,pbP,cbP,ebpP)                                                                          \
+                                                                                                                    \
+    {                                                                                                               \
+        byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
+        tellC tell( tinP , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 0 , ebpP ) ;       \
+        thirdC::dosTellMonitorIF( tinP , tell , ifcIDbOOKStELL_APP ) ;                                              \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057b.tellappc3ebp END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057c.tellapplifiname BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*TELLaPPlIFInAME(postP)*//*1*/
+
+#define TELLaPPlIFInAME(postP)                                                                  \
+                                                                                                \
+    {                                                                                           \
+        static boolT bDone ;                                                                    \
+        if( !bDone )                                                                            \
+        {                                                                                       \
+            bDone = 1 ;                                                                         \
+                                                                                                \
+            tellInfoSysLifiS info ;                                                                \
+            info.idLine = ifcLINE ;                                                             \
+            info.idiFile = DDNUMB ;                                                             \
+            thirdC::c_strncpyIF( tinP , info.postName , postP , sizeof info.postName ) ;        \
+            info.costName = thirdC::c_strlenIF( tinP , info.postName ) ;                        \
+            TELLaPPc3( ifcIDtYPEtELLsYS_LIFInAME , (byteT*)&info , sizeof info ) ;              \
+        }                                                                                       \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057c.tellapplifiname END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057d.tellappc3lifi BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010213.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*//*TELLaPPc3LIFI(idTypeP,pbP,cbP,idLineP,idiFileP)*//*1*/
+
+#define TELLaPPc3LIFI(idTypeP,pbP,cbP,idLineP,idiFileP)                                                                 \
+                                                                                                                        \
+    {                                                                                                                   \
+        byteT pbZombie[ sizeof( tellS ) + (cbP) ] ;                                                                     \
+        tellC tell( tinP , (idLineP) , (idiFileP) , 0 , (idTypeP) , (pbP) , (cbP) , pbZombie , sizeof pbZombie ) ;      \
+        thirdC::dosTellMonitorIF( tinP , tell , ifcIDbOOKStELL_APP ) ;                                                  \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057d.tellappc3lifi END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057e.tellappc3slifi BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010263.1.0.html\"\>definition\</A\>
+like TELLaPPc3 but synchronous
+ i do not return until the monitor has seen pbP
+pbP must point to a countT that contains 0
+after i return, that countT object will contain 1
+*/
+/**/
+
+/*1*//*TELLaPPc3SlIFI(idTypeP,pbP,cbP,idLineP,idiFileP)*//*1*/
+
+#define TELLaPPc3SlIFI(idTypeP,pbP,cbP,idLineP,idiFileP)                                                            \
+                                                                                                                    \
+    {                                                                                                               \
+        byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
+        tellC tell( tinP , idLineP , idiFileP , 0 , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 1 ) ;        \
+        thirdC::dosTellMonitorIF( tinP , tell , ifcIDbOOKStELL_APP ) ;                                              \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057e.tellappc3slifi END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057f.flthreadmode5 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*flTHREADmODE5*//*1*/
+
+/*3*/
+#define flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY                                0xe0000110
+#define flTHREADmODE5_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY                                0xe0000210
+#define flTHREADmODE5_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY                                0xe0000410
+#define flTHREADmODE5_DOnOTfLUSHpENDINGaPPtELEMETRY                                     0xe0000810
+#define flTHREADmODE5_DOnOTtESTdROPhEADERS                                              0xe0001010
+#define flTHREADmODE5_STFU1iOmACRO                                                      0xe0002010
+#define flTHREADmODE5_ARMoPENsSL                                                        0xe0004010
+#define flTHREADmODE5_DOnOTfREEsSLcONTEXT                                               0xe0008010
+#define flTHREADmODE5_TINiSnOTiNpOOL                                                    0xe0010010
+/*3*/
+#define flTHREADmODE5_null    0xe0000010
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057f.flthreadmode5 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200580.threadmode5off BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
+*/
+/**/
+/*1*//*THREADmODE5oFF(flagsP)*//*1*/
+
+#define THREADmODE5oFF(flagsP)                                                                                            \
+                                                                                                                          \
+    flagsT _flagsThreadMode5Save = tinP.flagsThreadMode5 ;                                                                \
+    THREADmODE5oFF0( flagsP )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200580.threadmode5off END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200581.threadmode5restore BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.001016f.1.0.html\"\>definition\</A\>
+*/
+/**/
+/*1*//*THREADmODE5rESTORE*//*1*/
+
+#define THREADmODE5rESTORE THREADmODE5rESTORE0( _flagsThreadMode5Save )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200581.threadmode5restore END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200582.threadmode5on BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
+*/
+/**/
+/*1*//*THREADmODE5oN(flagsP)*//*1*/
+
+#define THREADmODE5oN(flagsP)                                                                                            \
+                                                                                                                          \
+    flagsT _flagsThreadMode5Save = tinP.flagsThreadMode5 ;                                                                \
+    THREADmODE5oN0( flagsP )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200582.threadmode5on END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200583.threadmode5save0 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*THREADmODE5sAVE0(flagsSaveP)*//*1*/
+
+#define THREADmODE5sAVE0(flagsSaveP) (flagsSaveP) = tinP.flagsThreadMode5 ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200583.threadmode5save0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200584.threadmode5off0 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*THREADmODE5oFF0(flagsP)*//*1*/
+
+#define THREADmODE5oFF0(flagsP) tinP.flagsThreadMode5 &= ~( F(flagsP) ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200584.threadmode5off0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200585.threadmode5on0 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*THREADmODE5oN0(flagsP)*//*1*/
+
+#define THREADmODE5oN0(flagsP) tinP.flagsThreadMode5 |= (flagsP) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200585.threadmode5on0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200586.threadmode5restore0 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*THREADmODE5rESTORE0*//*1*/
+
+#define THREADmODE5rESTORE0(flagsSaveP) tinP.flagsThreadMode5 = (flagsSaveP) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200586.threadmode5restore0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200588.conoutcallnestsafe BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CONoUTcALLnESTsAFE(postP)*//*1*/
+
+#define CONoUTcALLnESTsAFE(postP)                                                                               \
+                                                                                                                \
+    {                                                                                                           \
+        CONoUTrAW( postP ": call nest:" ) ;                                                                     \
+        const countT ccNest = sizeof tinP.monitor.pLFnest / sizeof tinP.monitor.pLFnest[ 0 ] ;                  \
+        countT pcNest[ ccNest + 1 ] ;                                                                           \
+        tinP.get_pLFnest_F( tinP , pcNest , ccNest + 1 ) ;                                                      \
+                                                                                                                \
+        countT* pcc = pcNest ;                                                                                  \
+        countT* pce = pcNest + ccNest ;                                                                         \
+        ZE( boolT , bFile ) ;                                                                                   \
+                                                                                                                \
+        while( pcc < pce && *pcc )                                                                              \
+        {                                                                                                       \
+            OStEXT(   ostoLine , TUCK << 1 ) ;                                                                  \
+            OStEXTA(  ostoLine , bFile ? "  " : "\r\n  " ) ;                                                    \
+            OStEXTC(  ostoLine , *pcc , 0 ) ;                                                                   \
+            CONoUTrAW( ostoLine ) ;                                                                             \
+            pcc ++ ;                                                                                            \
+            bFile = !bFile ;                                                                                    \
+        }                                                                                                       \
+        CONoUTrAW( "\r\n" ) ;                                                                                   \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200588.conoutcallnestsafe END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200589._io1_ BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.00100c7.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*_IO1_(idP)*//*1*/
+
+//FOR PRODUCTION, USE "!defined" IN THE NEXT LINE, TO AVOID OVERHEAD OF CT/DT inOutFrameC
+
+//20141212@0943: ENABLED FULL INOUT TRACING FOR INITIAL RELEASE OF IPDOS BUNDLE AS CLOUDFILE ADMINISTRATION TOOL
+
+//20160523@2009: DISABLED TO GET MOST RAPID EXECUTION TO COLLECT FAILURE HISTORY FOR SERVER
+//20160525@0921: ENABLED TO MAXIMIZE GLASS WALLS
+//20201008@1520: DISABLED TO INVESTIGATE SLOOOOW EXECUTION
+
+#if defined( NEVERdEFINED )
+
+    #define _IO1_(idP)
+
+#else
+
+    #define _IO1_(idP) inOutFrameC _inOutFrame##idP( tinP , LF , IDFILE , BiFCcLASS ) ;
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200589._io1_ END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058a.CmAXpENDINGiNoUTfRAMEpACKETS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CmAXpENDINGiNoUTfRAMEpACKETS*//*1*/
+
+//20201120@1558: TUCK << 2 IS TOO SMALL -> TUCK << 3
+//20201124@1951: TUCK << 3 -> TUCK << 5 (AFTER MODIFYING CODE TO EMIT APP TELEMETRY EARLIER)
+
+#define CmAXpENDINGiNoUTfRAMEpACKETS ( TUCK << 5 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058a.CmAXpENDINGiNoUTfRAMEpACKETS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058b.CBhEAP BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CBhEAP*//*1*/
+
+
+//20200525@1250: HALVED TO "TICK >> 1" WITHOUT ANALYSIS (OCCASIONALLY HALVE THIS UNTIL SEE A FAILURE)
+//20201120@1507: DOUBLED TO "TICK >> 0" BECAUSE AM NOW ALLOCATING A LARGE BUFFER FOR EACH THREAD
+//20201125@1310: DOUBLED TO "TICK << 1" IN RESPONSE TO HEAP ALLOCATION FAILURE FOR GLASS2 tmReportF
+
+#define CBhEAP ( TICK << 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058b.CBhEAP END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058c.ttf BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010096.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.2f10104.1.1.0.html\"\>2f10104:  WAKEsHOW( "example.simplest.snip.0010096.TT" )\</A\>
+*/
+/**/
+/*1*//*TTF(time1P,time2P)*//*1*/
+
+#define TTF(time1P,time2P) textC( time1P , time2P , tinP , TAG( TAGiDnULL ) , flTEXTc_null , 0 , 0 , S1C('.') , 0 , ifcIDfORMATtIME_NUMERIC , flFORMAT_FOREIGN )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058c.ttf END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058d.TlISTlOAD BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TlISTlOAD(tListToP,tListPrefixP,tSuffixP)*//*1*/
+
+#define TlISTlOAD(tListToP,tListPrefixP,tSuffixP)           \
+                                                            \
+    {                                                       \
+        FORsTRINGSiN1( (strokeS*)(tListPrefixP) )           \
+        {                                                   \
+            (tListToP) += T(psttc1)+(tSuffixP) ;            \
+        }                                                   \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058d.TlISTlOAD END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058e.___LF BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*___LF(pbP,idLineP,idiFileP)*//*1*/
+
+#if defined( ENABLEdROPnOTES )
+
+    #define ___LF(pbP,idLineP,idiFileP)                                                                                                                             \
+                                                                                                                                                                    \
+        {                                                                                                                                                           \
+            /*countT cDebug1 = idLineP ;                                  */                                                                                        \
+            /*countT cDebug2 = idiFileP ;                                 */                                                                                        \
+            /*if( cDebug1 == 0x120 && cDebug2 == 0x36008003 ) { BLAMMO ; }*/                                                                                        \
+            byteT* _pbx = (byteT*)(pbP) ;                                                                                                                           \
+            if( _pbx && ( (byteT*)_pbx < processGlobal1S::_processGlobal1I_IF().pbHeap || (byteT*)_pbx >= processGlobal1S::_processGlobal1I_IF().pbHeapEnd ) )      \
+            {                                                                                                                                                       \
+                dropNoteS* pNote = PUSE.pDropNoteF( tinP , _pbx ) ;                                                                                                 \
+                if( pNote )                                                                                                                                         \
+                {                                                                                                                                                   \
+                    static countT _idNewForTagLine ;                                                                                                                \
+                    pNote->idNewForTagLine = 1 + incv02AM( _idNewForTagLine ) ;    /*U::O: incv02AM CAN BE REPLACED WITH ++ FOR SPEED*/                             \
+                    pNote->idLineTagged    = idLineP ;                                                                                                              \
+                    pNote->idiFileTagged   = idiFileP ;                                                                                                             \
+                                                                                                                                                                    \
+                                                                                                                                                                    \
+                }                                                                                                                                                   \
+            }                                                                                                                                                       \
+        }
+
+#else
+
+    #define ___LF(pbP,idLineP,idiFileP)
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058e.___LF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058f.postCRAFTWORKfACTORY BEGIN
+
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*postCRAFTWORKfACTORY*//*1*/
+
+#define postCRAFTWORKfACTORY "factory1"
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120058f.postCRAFTWORKfACTORY END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200590.___CHK BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*___CHK(pbP)*//*1*/
+
+#if defined( ENABLEdROPnOTES )
+
+    #define ___CHK(pbP)                                                                                                                                             \
+                                                                                                                                                                    \
+        {                                                                                                                                                           \
+            byteT* _pbx = (byteT*)(pbP) ;                                                                                                                           \
+            if( _pbx && ( (byteT*)_pbx < processGlobal1S::_processGlobal1I_IF().pbHeap || (byteT*)_pbx >= processGlobal1S::_processGlobal1I_IF().pbHeapEnd ) )      \
+            {                                                                                                                                                       \
+                dropNoteS* pNote = PUSE.pDropNoteF( tinP , _pbx ) ;                                                                                                 \
+                if( pNote )                                                                                                                                         \
+                {                                                                                                                                                   \
+                    countT& dropHeader = ((countT*)_pbx)[ - 1 ] ;                                                                                                   \
+                    if( dropHeader - pNote->dropHeaderCopy ) { BLAMMOiD( dropHeader - pNote->dropHeaderCopy ) ; }                                                   \
+                }                                                                                                                                                   \
+            }                                                                                                                                                       \
+        }
+
+#else
+
+    #define ___CHK(pbP)
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200590.___CHK END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200591.CBsEXdROPsEPARATOR BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CBsEXdROPsEPARATOR*//*1*/
+
+//SHOULD BE AN INTEGRAL MULTIPLE OF sizeof( countT ) SO THAT THE DATA PORTION OF EACH DROP IS countT ALIGNED
+
+#define CBsEXdROPsEPARATOR ( sizeof( countT ) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200591.CBsEXdROPsEPARATOR END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200592.flSearch BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*flSEARCH*//*1*/
+
+/*3*/
+#define flSEARCH_IGNOREcASE                                0xe0000111
+/*3*/
+#define flSEARCH_null    0xe0000011
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200592.flSearch END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200593.flSELECTpEER BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//**//*1*/
+
+/*3*/
+#define flSELECTpEER_DUPLICATEiSoK                                0xe0000112
+#define flSELECTpEER_TRACE                                        0xe0000212
+/*3*/
+#define flSELECTpEER_null    0xe0000012
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200593.flSELECTpEER END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200594.postIPaDDRgROUP BEGIN
+
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*postIPaDDRgROUP*//*1*/
+
+/*3*/
+#define postIPaDDRgROUP_ADVERTISElANnODE "ff02::bb:aa"
+/*3*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200594.postIPaDDRgROUP END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200597.CbOOKmARK BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CbOOKmARK*//*1*/
+
+#define CbOOKmARK ( TUCK << 0 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200597.CbOOKmARK END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CmAXsTEPtLS*//*1*/
+
+#define CmAXsTEPtLS ( TUCK >> 4 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200598.CmAXsTEPtLS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TaRG2cBtLS(tmFP,cbTlsP)*//*1*/
+
+#define TaRG2cBtLS(tmFP,cbTlsP)                                             tinP , countTC() , tmFP , 0           , 0 , flTHREADlAUNCH_null , 0          , (cbTlsP)
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200599.targ2cbtls END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.TaRG2sGNdONE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TaRG2sGNdONE(tmFP,sgnDoneP)*//*1*/
+
+#define TaRG2sGNdONE(tmFP,sgnDoneP)                                         tinP , countTC() , tmFP , &(sgnDoneP) , 0 , flTHREADlAUNCH_null , 0          , 0
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059a.TaRG2sGNdONE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+normally this should be commented out because it slows execution
+enable it to set bits in processGlobal2S::pbMemoryBits*
+*/
+/**/
+/*1*//*SHOWmEMgRAINS*//*1*/
+#define SHOWmEMgRAINS
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059b.SHOWmEMgRAINS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*CBcIRCLEdFLT*//*1*/
+
+#define CBcIRCLEdFLT ( TUCK * ( TUCK - 1 ) - 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059c.CBcIRCLEdFLT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*SOCKETtIMEOUTdEFAULTwANiMPATIENT*//*1*/
+
+#define SOCKETtIMEOUTdEFAULTwANiMPATIENT ( TOCK << 0 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059d.SOCKETtIMEOUTdEFAULTwANiMPATIENT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
+
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c48
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c49
+#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c4a
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c4b
+#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c4c
+#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c4d
+#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c4e
+#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c4f
+/*3*/
+#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c48
+#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c4f                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059e.ifcIDcMDuDPfILEgRAM END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDuDPfILEmETAtYPE*//*1*/
+
+/*3*/
+#define ifcIDuDPfILEmETAtYPE_BASEoSfILEnAME     0x1
+#define ifcIDuDPfILEmETAtYPE_CONTROLsETTINGS    0x2
+#define ifcIDuDPfILEmETAtYPE_HASHoFcONTENT      0x3
+#define ifcIDuDPfILEmETAtYPE_CONTENT            0x4
+#define ifcIDuDPfILEmETAtYPE_TIMEcREATED        0x5
+#define ifcIDuDPfILEmETAtYPE_TIMEmODIFIED       0x6
+#define ifcIDuDPfILEmETAtYPE_IDgENERATION       0x7
+#define ifcIDuDPfILEmETAtYPE_IDvERSION          0x8
+#define ifcIDuDPfILEmETAtYPE_IDoWNERlO          0x9
+#define ifcIDuDPfILEmETAtYPE_IDoWNERhI          0xa
+/*3*/                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120059f.ifcIDuDPfILEmETAtYPE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CBuDPfILEpAYLOAD*//*1*/
+
+#define CBuDPfILEpAYLOAD ( ifcCBdATAGRAMmAX - sizeof( udpFileGramHeadFileWindowS ) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a0.CBuDPfILEpAYLOAD END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEePOCHsLOTS*//*1*/
+
+#define CuDPfILEePOCHsLOTS 5
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a1.CuDPfILEePOCHsLOTS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEePOCHhONORED*//*1*/
+
+#define CuDPfILEePOCHhONORED ( CuDPfILEePOCHsLOTS - 1 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a2.CuDPfILEePOCHhONORED END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a3.OFFuDPfILEePOCHhONOR BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*OFFuDPfILEePOCHhONOR*//*1*/
+
+#define OFFuDPfILEePOCHhONOR_MIN ( offEpochFresheningP - CuDPfILEePOCHhONORED )
+#define OFFuDPfILEePOCHhONOR_MAX ( offEpochFresheningP - 1             )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a3.OFFuDPfILEePOCHhONOR END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a4.TIMEuDPfILEePOCH BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TIMEuDPfILEePOCH*//*1*/
+
+#define TIMEuDPfILEePOCH ( TOCK << 4 )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a4.TIMEuDPfILEePOCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a5.CuDPfILEsECRETS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEsECRETS*//*1*/
+
+#define CuDPfILEsECRETS    TOCK
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a5.CuDPfILEsECRETS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a6.CuDPfILEhASHsECRETS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CuDPfILEhASHsECRETS*//*1*/
+
+#define CuDPfILEhASHsECRETS ( sizeof( nicNameC ) / sizeof( countT ) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a6.CuDPfILEhASHsECRETS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a7.CBuDPfILEnAMEpAYLOAD BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CBuDPfILEnAMEpAYLOAD*//*1*/
+
+#define CBuDPfILEnAMEpAYLOAD ( ifcCBdATAGRAMmAX - sizeof( udpFileGramHeadBaseOSFileNameS ) )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a7.CBuDPfILEnAMEpAYLOAD END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a8.ifcIDeXCEPTIONoPENsSL BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/*1*//*ifcIDeXCEPTIONoPENsSL*//*1*/
+
+//CS:CODEsYNC:PSEUDOdUPLICATE CODE: 112005a8 01000002
+
+/*3*/
+#define ifcIDeXCEPTIONoPENsSL_setupIF                       0x80000001
+#define ifcIDeXCEPTIONoPENsSL_waveByeIF                     0x80000002
+#define ifcIDeXCEPTIONoPENsSL_getContextIF                  0x80000003
+#define ifcIDeXCEPTIONoPENsSL_getWrapperIF                  0x80000004
+#define ifcIDeXCEPTIONoPENsSL_wrapSocketIF                  0x80000005
+#define ifcIDeXCEPTIONoPENsSL_shakeHandsAsClientIF          0x80000006
+#define ifcIDeXCEPTIONoPENsSL_writeIF                       0x80000007
+#define ifcIDeXCEPTIONoPENsSL_readIF                        0x80000008
+#define ifcIDeXCEPTIONoPENsSL_shakeHandsAsServerIF          0x80000009
+#define ifcIDeXCEPTIONoPENsSL_peekIF                        0x8000000a
+#define ifcIDeXCEPTIONoPENsSL_wrapperFreeIF                 0x8000000b
+#define ifcIDeXCEPTIONoPENsSL_errorCodeIF                   0x8000000c
+#define ifcIDeXCEPTIONoPENsSL_keyPairIF                     0x8000000d
+#define ifcIDeXCEPTIONoPENsSL_writePrivateKeyToFileIF       0x8000000e
+#define ifcIDeXCEPTIONoPENsSL_writePublicKeyToFileIF        0x8000000f
+#define ifcIDeXCEPTIONoPENsSL_readPrivateKeyFromFileIF      0x80000010
+#define ifcIDeXCEPTIONoPENsSL_readPublicKeyFromFileIF       0x80000011
+#define ifcIDeXCEPTIONoPENsSL_encryptIF                     0x80000012
+#define ifcIDeXCEPTIONoPENsSL_decryptIF                     0x80000013
+#define ifcIDeXCEPTIONoPENsSL_getPublicKeyBase64IF          0x80000014
+#define ifcIDeXCEPTIONoPENsSL_getPrivateKeyBase64IF         0x80000015
+/*3*/                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a8.ifcIDeXCEPTIONoPENsSL END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a9.postCERTBOTfACTORY BEGIN
+
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*postCERTBOTfACTORY*//*1*/
+
+#define postCERTBOTfACTORY "factory2"
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a9.postCERTBOTfACTORY END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005aa.flsocketcopensslfails BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*flSOCKETcoPENsSLfAILS*//*1*/
+
+/*3*/
+#define flSOCKETcoPENsSLfAILS_setupIF                      0xe0000113
+#define flSOCKETcoPENsSLfAILS_waveByeIF                    0xe0000213
+#define flSOCKETcoPENsSLfAILS_getContextIF                 0xe0000413
+#define flSOCKETcoPENsSLfAILS_getWrapperIF                 0xe0000813
+#define flSOCKETcoPENsSLfAILS_wrapSocketIF                 0xe0001013
+#define flSOCKETcoPENsSLfAILS_shakeHandsAsClientIF         0xe0002013
+#define flSOCKETcoPENsSLfAILS_writeIF                      0xe0004013
+#define flSOCKETcoPENsSLfAILS_readIF                       0xe0008013
+#define flSOCKETcoPENsSLfAILS_shakeHandsAsServerIF         0xe0010013
+#define flSOCKETcoPENsSLfAILS_peekIF                       0xe0020013
+#define flSOCKETcoPENsSLfAILS_wrapperFreeIF                0xe0040013
+#define flSOCKETcoPENsSLfAILS_errorCodeIF                  0xe0080013
+#define flSOCKETcoPENsSLfAILS_keyPairIF                    0xe0100013
+/*3*/
+#define flSOCKETcoPENsSLfAILS_null    0xe0000013
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005aa.flsocketcopensslfails END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ab.SOSfAIL BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*SOSfAIL(postFunctionP)*//*1*/
+
+
+
+//INTENDED PRECOMPILATION RESULT EXAMPLE: if( POOP == ifcIDeXCEPTIONoPENsSL_wrapSocketIF ) flagsOpenSslFails |= flSOCKETcoPENsSLfAILS_wrapSocketIF ;
+
+// "SOSfAIL" MEANS "Set OpenSsl Fail Flags"
+
+
+#define SOSfAIL(postFunctionP) if( POOP == ifcIDeXCEPTIONoPENsSL_##postFunctionP ) flagsOpenSslFails |= flSOCKETcoPENsSLfAILS_##postFunctionP
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ab.SOSfAIL END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ac.CiDtHREADtRACE BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*CiDtHREADtRACE*//*1*/
+
+#define CiDtHREADtRACE 0x40
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ac.CiDtHREADtRACE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ad.TRACEmYtHREAD BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*CiDtHREADtRACE*//*1*/
+
+#define TRACEmYtHREAD                                                                                       \
+                                                                                                            \
+    {                                                                                                       \
+        ZE( boolT , bSet ) ;                                                                                \
+        for( countT offo = 0 ; offo < CiDtHREADtRACE ; offo ++ )                                            \
+        {                                                                                                   \
+            if( !tinP.pag1->pcIdThreadTrace[ offo ] )                                               \
+            {                                                                                               \
+                tinP.pag1->pcIdThreadTrace[ offo ] = tinP.monitor.idThread ;                        \
+                bSet ++ ;                                                                                   \
+                break ;                                                                                     \
+            }                                                                                               \
+        }                                                                                                   \
+                                                                                                            \
+        if( !bSet ) { BLAMMO ; }                                                                            \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ad.TRACEmYtHREAD END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ae.flCELLsCANcALENDARf BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*flCELLsCANcALENDAR*//*1*/
+
+/*3*/
+#define flCELLsCANcALENDAR_CAVE                                0xe0000114
+/*3*/
+#define flCELLsCANcALENDAR_null    0xe0000014
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ae.flCELLsCANcALENDARf END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005af.CBtLSmINIMUM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*CBtLSmINIMUM*//*1*/
+
+//20221122@1104: THIS VALUE WAS DETERMINED BY TRYING << 0, << 1, << 2, << 3
+
+//20240910@1718: RETIRED DUE TO REDUCED NEED FOR TLS NOW THAT THERE IS NO PER THREAD STORAGE FOR EXCEPTION REPORT: #define CBtLSmINIMUM ( TOCK << 3 )
+
+#define CBtLSmINIMUM ( TUCK << 2 )
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005af.CBtLSmINIMUM END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b0.RETRY BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*RETRY(codeP)*//*1*/
+
+#define RETRY(cTimesP,codeP)                                                                                \
+                                                                                                            \
+    if( !POOP )                                                                                             \
+    {                                                                                                       \
+        boolT bFail = 1 ;                                                                                   \
+        boolT bNeverQuit = !(cTimesP) ;                                                                     \
+        countT cTimes = (cTimesP) ;                                                                         \
+        IFsCRATCH                                                                                           \
+        {                                                                                                   \
+            SCOOPS                                                                                          \
+            while( !ether && !POOP && ( bNeverQuit || cTimes -- ) )                                         \
+            {                                                                                               \
+                codeP ;                                                                                     \
+                if( POOP )                                                                                  \
+                {                                                                                           \
+                    POOPR                                                                                   \
+                    etThread.traceF( tinP , T("retrying [code]:    ")+T(#codeP) ) ;                         \
+                    thirdC::dosSleepWinkIF( tinP ) ;                                                        \
+                }                                                                                           \
+                else                                                                                        \
+                {                                                                                           \
+                    bFail = 0 ;                                                                             \
+                    break ;                                                                                 \
+                }                                                                                           \
+            }                                                                                               \
+        }                                                                                                   \
+        __( bFail ) ;                                                                                       \
+    }
+
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b0.RETRY END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b1.RETRYsCR BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this default value is ffef, chosen because spouseC::circle will thus contain at most ffef bytes, so any byte can be referenced with a value less than 00ff
+values at and above 00ff are used by spouseC to encode literal byte values
+*/
+/**/
+/*1*//*RETRYsCR(codeP)*//*1*/
+
+#define RETRYsCR(cTimesP,codeP)                                                                             \
+                                                                                                            \
+    if( !POOP )                                                                                             \
+    {                                                                                                       \
+        boolT bFail = 1 ;                                                                                   \
+        boolT bNeverQuit = !(cTimesP) ;                                                                     \
+        countT cTimes = (cTimesP) ;                                                                         \
+        IFsCRATCH                                                                                           \
+        {                                                                                                   \
+            SCOOPS                                                                                          \
+            while( !ether && !POOP && ( bNeverQuit || cTimes -- ) )                                         \
+            {                                                                                               \
+                tinP.pEtScratch->##codeP ;                                                                  \
+                if( POOP )                                                                                  \
+                {                                                                                           \
+                    POOPR                                                                                   \
+                    etThread.traceF( tinP , T("retrying [code]:    ")+T(#codeP) ) ;                         \
+                    thirdC::dosSleepWinkIF( tinP ) ;                                                        \
+                }                                                                                           \
+                else                                                                                        \
+                {                                                                                           \
+                    bFail = 0 ;                                                                             \
+                    break ;                                                                                 \
+                }                                                                                           \
+            }                                                                                               \
+        }                                                                                                   \
+        __( bFail ) ;                                                                                       \
+    }
+
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b1.RETRYsCR END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b2.___LFLF BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*___LFLF(pbP,idLine1P,idiFile1P,idLine2P,idiFile2P)*//*1*/
+
+#if defined( ENABLEdROPnOTES )
+
+    #define ___LFLF(pbP,idLine1P,idiFile1P,idLine2P,idiFile2P)                                                                                                      \
+                                                                                                                                                                    \
+        {                                                                                                                                                           \
+            /*countT cDebug1 = idLine1P ;                                  */                                                                                       \
+            /*countT cDebug2 = idiFile1P ;                                 */                                                                                       \
+            /*if( cDebug1 == 0x120 && cDebug2 == 0x36008003 ) { BLAMMO ; }*/                                                                                        \
+            byteT* _pbx = (byteT*)(pbP) ;                                                                                                                           \
+            if( _pbx && ( (byteT*)_pbx < processGlobal1S::_processGlobal1I_IF().pbHeap || (byteT*)_pbx >= processGlobal1S::_processGlobal1I_IF().pbHeapEnd ) )      \
+            {                                                                                                                                                       \
+                dropNoteS* pNote = PUSE.pDropNoteF( tinP , _pbx ) ;                                                                                                 \
+                if( pNote )                                                                                                                                         \
+                {                                                                                                                                                   \
+                    static countT _idNewForTagLine ;                                                                                                                \
+                    pNote->idNewForTagLine = 1 + incv02AM( _idNewForTagLine ) ;    /*U::O: incv02AM CAN BE REPLACED WITH ++ FOR SPEED*/                             \
+                    pNote->idLineTagged    = idLine1P ;                                                                                                             \
+                    pNote->idiFileTagged   = idiFile1P ;                                                                                                            \
+                    pNote->idLineTagged2   = idLine2P ;                                                                                                             \
+                    pNote->idiFileTagged2  = idiFile2P ;                                                                                                            \
+                                                                                                                                                                    \
+                                                                                                                                                                    \
+                }                                                                                                                                                   \
+            }                                                                                                                                                       \
+        }
+
+#else
+
+    #define ___LFLF(pbP,idLine1P,idiFile1P,idLine2P,idiFile2P)
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b2.___LFLF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b4.bospoopset BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*BOSpOOPsET(idImpotenceP)*//*1*/
+
+#define BOSpOOPsET(idImpotenceP)                                                                                                                \
+                                                                                                                                                \
+    if( tinP.bosFail )                                                                                                                          \
+    {                                                                                                                                           \
+        idImpotenceP = ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION + tinP.brcQuery - ERROR_INVALID_FUNCTION ;                                   \
+        if( idImpotenceP < ifcIDiMPOTENCEbASEeRRORcODE_min || idImpotenceP > ifcIDiMPOTENCEbASEeRRORcODE_max ) idImpotenceP = tinP.brcQuery ;   \
+        if( !idImpotenceP ) idImpotenceP = DDNUMB ;                                                                                             \
+    }
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b4.bospoopset END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b5.ifcIDiMPOTENCEbASEeRRORcODE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+this list corresponds exactly (offsets) to the error codes defined in winerr.h
+ it is a partial list in order to conserve memory
+ since it is a partial list, an error code returned by a Windows function might not correspond to wo of these values
+ the "undefined" constants are used as spacers so that the values returned by Windows api's can be efficiently mapped to these values
+ when IPDOS is ported to Linux or to another base o.s., the values returned by Linux api's should be mapped to these values
+*/
+/*1*//*ifcIDiMPOTENCEbASEeRRORcODE*//*1*/
+
+/*3*/
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION                                                         0xdddd0c50
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEnOTfOUND                                                            0xdddd0c51
+#define ifcIDiMPOTENCEbASEeRRORcODE_PATHnOTfOUND                                                            0xdddd0c52
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYoPENfILES                                                        0xdddd0c53
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdENIED                                                            0xdddd0c54
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhANDLE                                                           0xdddd0c55
+#define ifcIDiMPOTENCEbASEeRRORcODE_ARENAtRASHED                                                            0xdddd0c56
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY                                                         0xdddd0c57
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDbLOCK                                                            0xdddd0c58
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADeNVIRONMENT                                                          0xdddd0c59
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADfORMAT                                                               0xdddd0c5a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCESS                                                           0xdddd0c5b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdATA                                                             0xdddd0c5c
+#define ifcIDiMPOTENCEbASEeRRORcODE_OUTOFMEMORY                                                             0xdddd0c5d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdRIVE                                                            0xdddd0c5e
+#define ifcIDiMPOTENCEbASEeRRORcODE_CURRENTdIRECTORY                                                        0xdddd0c5f
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAMEdEVICE                                                           0xdddd0c60
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREfILES                                                             0xdddd0c61
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRITEpROTECT                                                            0xdddd0c62
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADuNIT                                                                 0xdddd0c63
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY                                                                0xdddd0c64
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADcOMMAND                                                              0xdddd0c65
+#define ifcIDiMPOTENCEbASEeRRORcODE_CRC                                                                     0xdddd0c66
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADlENGTH                                                               0xdddd0c67
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEEK                                                                    0xdddd0c68
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTdOSdISK                                                              0xdddd0c69
+#define ifcIDiMPOTENCEbASEeRRORcODE_SECTORnOTfOUND                                                          0xdddd0c6a
+#define ifcIDiMPOTENCEbASEeRRORcODE_OUToFpAPER                                                              0xdddd0c6b
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRITEfAULT                                                              0xdddd0c6c
+#define ifcIDiMPOTENCEbASEeRRORcODE_READfAULT                                                               0xdddd0c6d
+#define ifcIDiMPOTENCEbASEeRRORcODE_GENfAILURE                                                              0xdddd0c6e
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGvIOLATION                                                        0xdddd0c6f
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKvIOLATION                                                           0xdddd0c70
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGdISK                                                               0xdddd0c71
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0001                                                           0xdddd0c72
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGbUFFEReXCEEDED                                                   0xdddd0c73
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0002                                                           0xdddd0c74
+#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEeOF                                                               0xdddd0c75
+#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEdISKfULL                                                          0xdddd0c76
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0003                                                           0xdddd0c77
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0004                                                           0xdddd0c78
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0005                                                           0xdddd0c79
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0006                                                           0xdddd0c7a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0007                                                           0xdddd0c7b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0008                                                           0xdddd0c7c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0009                                                           0xdddd0c7d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0010                                                           0xdddd0c7e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0011                                                           0xdddd0c7f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0012                                                           0xdddd0c80
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTED                                                            0xdddd0c81
+#define ifcIDiMPOTENCEbASEeRRORcODE_REMnOTlIST                                                              0xdddd0c82
+#define ifcIDiMPOTENCEbASEeRRORcODE_DUPnAME                                                                 0xdddd0c83
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETPATH                                                              0xdddd0c84
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKbUSY                                                             0xdddd0c85
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVnOTeXIST                                                             0xdddd0c86
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYcMDS                                                             0xdddd0c87
+#define ifcIDiMPOTENCEbASEeRRORcODE_ADAPhDWeRR                                                              0xdddd0c88
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETrESP                                                              0xdddd0c89
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPnETeRR                                                             0xdddd0c8a
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADrEMaDAP                                                              0xdddd0c8b
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRINTQfULL                                                              0xdddd0c8c
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsPOOLsPACE                                                            0xdddd0c8d
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRINTcANCELLED                                                          0xdddd0c8e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETNAMEdELETED                                                          0xdddd0c8f
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKaCCESSdENIED                                                     0xdddd0c90
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdEVtYPE                                                              0xdddd0c91
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETnAME                                                              0xdddd0c92
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYnAMES                                                            0xdddd0c93
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsESS                                                             0xdddd0c94
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGpAUSED                                                           0xdddd0c95
+#define ifcIDiMPOTENCEbASEeRRORcODE_REQnOTaCCEP                                                             0xdddd0c96
+#define ifcIDiMPOTENCEbASEeRRORcODE_REDIRpAUSED                                                             0xdddd0c97
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0013                                                           0xdddd0c98
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0014                                                           0xdddd0c99
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0015                                                           0xdddd0c9a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0016                                                           0xdddd0c9b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0017                                                           0xdddd0c9c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0018                                                           0xdddd0c9d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0019                                                           0xdddd0c9e
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEeXISTS                                                              0xdddd0c9f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0020                                                           0xdddd0ca0
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTmAKE                                                              0xdddd0ca1
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILi24                                                                 0xdddd0ca2
+#define ifcIDiMPOTENCEbASEeRRORcODE_OUToFsTRUCTURES                                                         0xdddd0ca3
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYaSSIGNED                                                         0xdddd0ca4
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpASSWORD                                                         0xdddd0ca5
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpARAMETER                                                        0xdddd0ca6
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETwRITEfAULT                                                           0xdddd0ca7
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOpROCsLOTS                                                             0xdddd0ca8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0021                                                           0xdddd0ca9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0022                                                           0xdddd0caa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0023                                                           0xdddd0cab
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0024                                                           0xdddd0cac
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0025                                                           0xdddd0cad
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0026                                                           0xdddd0cae
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0027                                                           0xdddd0caf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0028                                                           0xdddd0cb0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0029                                                           0xdddd0cb1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0030                                                           0xdddd0cb2
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsEMAPHORES                                                       0xdddd0cb3
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXCLsEMaLREADYoWNED                                                     0xdddd0cb4
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMiSsET                                                                0xdddd0cb5
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsEMrEQUESTS                                                      0xdddd0cb6
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaTiNTERRUPTtIME                                                  0xdddd0cb7
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMoWNERdIED                                                            0xdddd0cb8
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMuSERlIMIT                                                            0xdddd0cb9
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKcHANGE                                                              0xdddd0cba
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVElOCKED                                                             0xdddd0cbb
+#define ifcIDiMPOTENCEbASEeRRORcODE_BROKENpIPE                                                              0xdddd0cbc
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPENfAILED                                                              0xdddd0cbd
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUFFERoVERFLOW                                                          0xdddd0cbe
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKfULL                                                                0xdddd0cbf
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREsEARCHhANDLES                                                     0xdddd0cc0
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDtARGEThANDLE                                                     0xdddd0cc1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0031                                                           0xdddd0cc2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0032                                                           0xdddd0cc3
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcATEGORY                                                         0xdddd0cc4
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDvERIFYsWITCH                                                     0xdddd0cc5
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdRIVERlEVEL                                                          0xdddd0cc6
+#define ifcIDiMPOTENCEbASEeRRORcODE_CALLnOTiMPLEMENTED                                                      0xdddd0cc7
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMtIMEOUT                                                              0xdddd0cc8
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTbUFFER                                                      0xdddd0cc9
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDnAME                                                             0xdddd0cca
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlEVEL                                                            0xdddd0ccb
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOvOLUMElABEL                                                           0xdddd0ccc
+#define ifcIDiMPOTENCEbASEeRRORcODE_MODnOTfOUND                                                             0xdddd0ccd
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCnOTfOUND                                                            0xdddd0cce
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAITnOcHILDREN                                                          0xdddd0ccf
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDnOTcOMPLETE                                                        0xdddd0cd0
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIRECTaCCESShANDLE                                                      0xdddd0cd1
+#define ifcIDiMPOTENCEbASEeRRORcODE_NEGATIVEsEEK                                                            0xdddd0cd2
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEEKoNdEVICE                                                            0xdddd0cd3
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINtARGET                                                            0xdddd0cd4
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINED                                                                0xdddd0cd5
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTED                                                               0xdddd0cd6
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTjOINED                                                               0xdddd0cd7
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUBSTED                                                              0xdddd0cd8
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOINtOjOIN                                                              0xdddd0cd9
+#define ifcIDiMPOTENCEbASEeRRORcODE_SUBSTtOsUBST                                                            0xdddd0cda
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOINtOsUBST                                                             0xdddd0cdb
+#define ifcIDiMPOTENCEbASEeRRORcODE_SUBSTtOjOIN                                                             0xdddd0cdc
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUSYdRIVE                                                               0xdddd0cdd
+#define ifcIDiMPOTENCEbASEeRRORcODE_SAMEdRIVE                                                               0xdddd0cde
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIRnOTrOOT                                                              0xdddd0cdf
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIRnOTeMPTY                                                             0xdddd0ce0
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTpATH                                                             0xdddd0ce1
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINpATH                                                              0xdddd0ce2
+#define ifcIDiMPOTENCEbASEeRRORcODE_PATHbUSY                                                                0xdddd0ce3
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTtARGET                                                           0xdddd0ce4
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMtRACE                                                             0xdddd0ce5
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeVENTcOUNT                                                       0xdddd0ce6
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYmUXWAITERS                                                       0xdddd0ce7
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlISTfORMAT                                                       0xdddd0ce8
+#define ifcIDiMPOTENCEbASEeRRORcODE_LABELtOOlONG                                                            0xdddd0ce9
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYtCBS                                                             0xdddd0cea
+#define ifcIDiMPOTENCEbASEeRRORcODE_SIGNALrEFUSED                                                           0xdddd0ceb
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISCARDED                                                               0xdddd0cec
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOCKED                                                               0xdddd0ced
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADtHREADIDaDDR                                                         0xdddd0cee
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADaRGUMENTS                                                            0xdddd0cef
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADpATHNAME                                                             0xdddd0cf0
+#define ifcIDiMPOTENCEbASEeRRORcODE_SIGNALpENDING                                                           0xdddd0cf1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0033                                                           0xdddd0cf2
+#define ifcIDiMPOTENCEbASEeRRORcODE_MAXtHRDSrEACHED                                                         0xdddd0cf3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0034                                                           0xdddd0cf4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0035                                                           0xdddd0cf5
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKfAILED                                                              0xdddd0cf6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0036                                                           0xdddd0cf7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0037                                                           0xdddd0cf8
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUSY                                                                    0xdddd0cf9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0038                                                           0xdddd0cfa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0039                                                           0xdddd0cfb
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANCELvIOLATION                                                         0xdddd0cfc
+#define ifcIDiMPOTENCEbASEeRRORcODE_ATOMIClOCKSnOTsUPPORTED                                                 0xdddd0cfd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0040                                                           0xdddd0cfe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0041                                                           0xdddd0cff
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0042                                                           0xdddd0d00
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0043                                                           0xdddd0d01
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0044                                                           0xdddd0d02
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsEGMENTnUMBER                                                    0xdddd0d03
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0045                                                           0xdddd0d04
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoRDINAL                                                          0xdddd0d05
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYeXISTS                                                           0xdddd0d06
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0046                                                           0xdddd0d07
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0047                                                           0xdddd0d08
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfLAGnUMBER                                                       0xdddd0d09
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMnOTfOUND                                                             0xdddd0d0a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsTARTINGcODESEG                                                  0xdddd0d0b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsTACKSEG                                                         0xdddd0d0c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmODULETYPE                                                       0xdddd0d0d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeXEsIGNATURE                                                     0xdddd0d0e
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXEmARKEDiNVALID                                                        0xdddd0d0f
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADeXEfORMAT                                                            0xdddd0d10
+#define ifcIDiMPOTENCEbASEeRRORcODE_ITERATEDdATAeXCEEDS_64k                                                 0xdddd0d11
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmINALLOCSIZE                                                     0xdddd0d12
+#define ifcIDiMPOTENCEbASEeRRORcODE_DYNLINKfROMiNVALIDrING                                                  0xdddd0d13
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOPLnOTeNABLED                                                          0xdddd0d14
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsEGDPL                                                           0xdddd0d15
+#define ifcIDiMPOTENCEbASEeRRORcODE_AUTODATASEGeXCEEDS_64k                                                  0xdddd0d16
+#define ifcIDiMPOTENCEbASEeRRORcODE_RING2SEGmUSTbEmOVABLE                                                   0xdddd0d17
+#define ifcIDiMPOTENCEbASEeRRORcODE_RELOCcHAINxEEDSsEGLIM                                                   0xdddd0d18
+#define ifcIDiMPOTENCEbASEeRRORcODE_INFLOOPiNrELOCcHAIN                                                     0xdddd0d19
+#define ifcIDiMPOTENCEbASEeRRORcODE_ENVVARnOTfOUND                                                          0xdddd0d1a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0048                                                           0xdddd0d1b
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsIGNALsENT                                                            0xdddd0d1c
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILENAMEeXCEDrANGE                                                      0xdddd0d1d
+#define ifcIDiMPOTENCEbASEeRRORcODE_RING2sTACKiNuSE                                                         0xdddd0d1e
+#define ifcIDiMPOTENCEbASEeRRORcODE_METAeXPANSIONtOOlONG                                                    0xdddd0d1f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsIGNALnUMBER                                                     0xdddd0d20
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREAD_1iNACTIVE                                                        0xdddd0d21
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0049                                                           0xdddd0d22
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKED                                                                  0xdddd0d23
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0050                                                           0xdddd0d24
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYmODULES                                                          0xdddd0d25
+#define ifcIDiMPOTENCEbASEeRRORcODE_NESTINGnOTaLLOWED                                                       0xdddd0d26
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXEmACHINEtYPEmISMATCH                                                  0xdddd0d27
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXEcANNOTmODIFYsIGNEDbINARY                                             0xdddd0d28
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXEcANNOTmODIFYsTRONGsIGNEDbINARY                                       0xdddd0d29
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0051                                                           0xdddd0d2a
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEcHECKEDoUT                                                          0xdddd0d2b
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHECKOUTrEQUIRED                                                        0xdddd0d2c
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADfILEtYPE                                                             0xdddd0d2d
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEtOOlARGE                                                            0xdddd0d2e
+#define ifcIDiMPOTENCEbASEeRRORcODE_FORMSaUTHrEQUIRED                                                       0xdddd0d2f
+#define ifcIDiMPOTENCEbASEeRRORcODE_VIRUSiNFECTED                                                           0xdddd0d30
+#define ifcIDiMPOTENCEbASEeRRORcODE_VIRUSdELETED                                                            0xdddd0d31
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0052                                                           0xdddd0d32
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0053                                                           0xdddd0d33
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPElOCAL                                                               0xdddd0d34
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADpIPE                                                                 0xdddd0d35
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEbUSY                                                                0xdddd0d36
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOdATA                                                                  0xdddd0d37
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEnOTcONNECTED                                                        0xdddd0d38
+#define ifcIDiMPOTENCEbASEeRRORcODE_MOREdATA                                                                0xdddd0d39
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0054                                                           0xdddd0d3a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0055                                                           0xdddd0d3b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0056                                                           0xdddd0d3c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0057                                                           0xdddd0d3d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0058                                                           0xdddd0d3e
+#define ifcIDiMPOTENCEbASEeRRORcODE_VCdISCONNECTED                                                          0xdddd0d3f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0059                                                           0xdddd0d40
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0060                                                           0xdddd0d41
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0061                                                           0xdddd0d42
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0062                                                           0xdddd0d43
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0063                                                           0xdddd0d44
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0064                                                           0xdddd0d45
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0065                                                           0xdddd0d46
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0066                                                           0xdddd0d47
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0067                                                           0xdddd0d48
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0068                                                           0xdddd0d49
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0069                                                           0xdddd0d4a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0070                                                           0xdddd0d4b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0071                                                           0xdddd0d4c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeAnAME                                                           0xdddd0d4d
+#define ifcIDiMPOTENCEbASEeRRORcODE_EAlISTiNCONSISTENT                                                      0xdddd0d4e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0072                                                           0xdddd0d4f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0073                                                           0xdddd0d50
+#define WAITtIMEOUT                                                                                         0xdddd0d51
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREiTEMS                                                             0xdddd0d52
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0074                                                           0xdddd0d53
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0075                                                           0xdddd0d54
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0076                                                           0xdddd0d55
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0077                                                           0xdddd0d56
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0078                                                           0xdddd0d57
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0079                                                           0xdddd0d58
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTcOPY                                                              0xdddd0d59
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIRECTORY                                                               0xdddd0d5a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0080                                                           0xdddd0d5b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0081                                                           0xdddd0d5c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0082                                                           0xdddd0d5d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0083                                                           0xdddd0d5e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0084                                                           0xdddd0d5f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0085                                                           0xdddd0d60
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0086                                                           0xdddd0d61
+#define ifcIDiMPOTENCEbASEeRRORcODE_EASdIDNTfIT                                                             0xdddd0d62
+#define ifcIDiMPOTENCEbASEeRRORcODE_EAfILEcORRUPT                                                           0xdddd0d63
+#define ifcIDiMPOTENCEbASEeRRORcODE_EAtABLEfULL                                                             0xdddd0d64
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeAhANDLE                                                         0xdddd0d65
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0087                                                           0xdddd0d66
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0088                                                           0xdddd0d67
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0089                                                           0xdddd0d68
+#define ifcIDiMPOTENCEbASEeRRORcODE_EASnOTsUPPORTED                                                         0xdddd0d69
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0090                                                           0xdddd0d6a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0091                                                           0xdddd0d6b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0092                                                           0xdddd0d6c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0093                                                           0xdddd0d6d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0094                                                           0xdddd0d6e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOToWNER                                                                0xdddd0d6f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0095                                                           0xdddd0d70
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0096                                                           0xdddd0d71
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0097                                                           0xdddd0d72
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0098                                                           0xdddd0d73
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0099                                                           0xdddd0d74
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0100                                                           0xdddd0d75
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0101                                                           0xdddd0d76
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0102                                                           0xdddd0d77
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0103                                                           0xdddd0d78
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYpOSTS                                                            0xdddd0d79
+#define ifcIDiMPOTENCEbASEeRRORcODE_PARTIALcOPY                                                             0xdddd0d7a
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKnOTgRANTED                                                        0xdddd0d7b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoPLOCKpROTOCOL                                                   0xdddd0d7c
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKtOOfRAGMENTED                                                       0xdddd0d7d
+#define ifcIDiMPOTENCEbASEeRRORcODE_DELETEpENDING                                                           0xdddd0d7e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEwITHgLOBALsHORTnAMErEGISTRYsETTING                          0xdddd0d7f
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHORTnAMESnOTeNABLEDoNvOLUME                                            0xdddd0d80
+#define ifcIDiMPOTENCEbASEeRRORcODE_SECURITYsTREAMiSiNCONSISTENT                                            0xdddd0d81
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOCKrANGE                                                        0xdddd0d82
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEsUBSYSTEMnOTpRESENT                                                0xdddd0d83
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFICATIONgUIDaLREADYdEFINED                                          0xdddd0d84
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0104                                                           0xdddd0d85
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0105                                                           0xdddd0d86
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0106                                                           0xdddd0d87
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0107                                                           0xdddd0d88
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0108                                                           0xdddd0d89
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0109                                                           0xdddd0d8a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0110                                                           0xdddd0d8b
+#define ifcIDiMPOTENCEbASEeRRORcODE_MRmIDnOTfOUND                                                           0xdddd0d8c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SCOPEnOTfOUND                                                           0xdddd0d8d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0111                                                           0xdddd0d8e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0112                                                           0xdddd0d8f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0113                                                           0xdddd0d90
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0114                                                           0xdddd0d91
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0115                                                           0xdddd0d92
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0116                                                           0xdddd0d93
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0117                                                           0xdddd0d94
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0118                                                           0xdddd0d95
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0119                                                           0xdddd0d96
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0120                                                           0xdddd0d97
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0121                                                           0xdddd0d98
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0122                                                           0xdddd0d99
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0123                                                           0xdddd0d9a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0124                                                           0xdddd0d9b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0125                                                           0xdddd0d9c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0126                                                           0xdddd0d9d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0127                                                           0xdddd0d9e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0128                                                           0xdddd0d9f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0129                                                           0xdddd0da0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0130                                                           0xdddd0da1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0131                                                           0xdddd0da2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0132                                                           0xdddd0da3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0133                                                           0xdddd0da4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0134                                                           0xdddd0da5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0135                                                           0xdddd0da6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0136                                                           0xdddd0da7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0137                                                           0xdddd0da8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0138                                                           0xdddd0da9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0139                                                           0xdddd0daa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0140                                                           0xdddd0dab
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0141                                                           0xdddd0dac
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILnOACTIONrEBOOT                                                      0xdddd0dad
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILsHUTDOWN                                                            0xdddd0dae
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILrESTART                                                             0xdddd0daf
+#define ifcIDiMPOTENCEbASEeRRORcODE_MAXsESSIONSrEACHED                                                      0xdddd0db0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0142                                                           0xdddd0db1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0143                                                           0xdddd0db2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0144                                                           0xdddd0db3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0145                                                           0xdddd0db4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0146                                                           0xdddd0db5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0147                                                           0xdddd0db6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0148                                                           0xdddd0db7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0149                                                           0xdddd0db8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0150                                                           0xdddd0db9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0151                                                           0xdddd0dba
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0152                                                           0xdddd0dbb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0153                                                           0xdddd0dbc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0154                                                           0xdddd0dbd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0155                                                           0xdddd0dbe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0156                                                           0xdddd0dbf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0157                                                           0xdddd0dc0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0158                                                           0xdddd0dc1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0159                                                           0xdddd0dc2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0160                                                           0xdddd0dc3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0161                                                           0xdddd0dc4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0162                                                           0xdddd0dc5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0163                                                           0xdddd0dc6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0164                                                           0xdddd0dc7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0165                                                           0xdddd0dc8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0166                                                           0xdddd0dc9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0167                                                           0xdddd0dca
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0168                                                           0xdddd0dcb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0169                                                           0xdddd0dcc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0170                                                           0xdddd0dcd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0171                                                           0xdddd0dce
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0172                                                           0xdddd0dcf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0173                                                           0xdddd0dd0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0174                                                           0xdddd0dd1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0175                                                           0xdddd0dd2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0176                                                           0xdddd0dd3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0177                                                           0xdddd0dd4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0178                                                           0xdddd0dd5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0179                                                           0xdddd0dd6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0180                                                           0xdddd0dd7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0181                                                           0xdddd0dd8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0182                                                           0xdddd0dd9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0183                                                           0xdddd0dda
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0184                                                           0xdddd0ddb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0185                                                           0xdddd0ddc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0186                                                           0xdddd0ddd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0187                                                           0xdddd0dde
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREADmODEaLREADYbACKGROUND                                             0xdddd0ddf
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREADmODEnOTbACKGROUND                                                 0xdddd0de0
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSmODEaLREADYbACKGROUND                                            0xdddd0de1
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSmODEnOTbACKGROUND                                                0xdddd0de2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0188                                                           0xdddd0de3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0189                                                           0xdddd0de4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0190                                                           0xdddd0de5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0191                                                           0xdddd0de6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0192                                                           0xdddd0de7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0193                                                           0xdddd0de8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0194                                                           0xdddd0de9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0195                                                           0xdddd0dea
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0196                                                           0xdddd0deb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0197                                                           0xdddd0dec
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0198                                                           0xdddd0ded
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0199                                                           0xdddd0dee
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0200                                                           0xdddd0def
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0201                                                           0xdddd0df0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0202                                                           0xdddd0df1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0203                                                           0xdddd0df2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0204                                                           0xdddd0df3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0205                                                           0xdddd0df4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0206                                                           0xdddd0df5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0207                                                           0xdddd0df6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0208                                                           0xdddd0df7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0209                                                           0xdddd0df8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0210                                                           0xdddd0df9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0211                                                           0xdddd0dfa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0212                                                           0xdddd0dfb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0213                                                           0xdddd0dfc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0214                                                           0xdddd0dfd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0215                                                           0xdddd0dfe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0216                                                           0xdddd0dff
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0217                                                           0xdddd0e00
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0218                                                           0xdddd0e01
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0219                                                           0xdddd0e02
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0220                                                           0xdddd0e03
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0221                                                           0xdddd0e04
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0222                                                           0xdddd0e05
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0223                                                           0xdddd0e06
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0224                                                           0xdddd0e07
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0225                                                           0xdddd0e08
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0226                                                           0xdddd0e09
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0227                                                           0xdddd0e0a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0228                                                           0xdddd0e0b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0229                                                           0xdddd0e0c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0230                                                           0xdddd0e0d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0231                                                           0xdddd0e0e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0232                                                           0xdddd0e0f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0233                                                           0xdddd0e10
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0234                                                           0xdddd0e11
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0235                                                           0xdddd0e12
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0236                                                           0xdddd0e13
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0237                                                           0xdddd0e14
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0238                                                           0xdddd0e15
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0239                                                           0xdddd0e16
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0240                                                           0xdddd0e17
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0241                                                           0xdddd0e18
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0242                                                           0xdddd0e19
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0243                                                           0xdddd0e1a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0244                                                           0xdddd0e1b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0245                                                           0xdddd0e1c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0246                                                           0xdddd0e1d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0247                                                           0xdddd0e1e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0248                                                           0xdddd0e1f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0249                                                           0xdddd0e20
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0250                                                           0xdddd0e21
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0251                                                           0xdddd0e22
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0252                                                           0xdddd0e23
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0253                                                           0xdddd0e24
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0254                                                           0xdddd0e25
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0255                                                           0xdddd0e26
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0256                                                           0xdddd0e27
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0257                                                           0xdddd0e28
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0258                                                           0xdddd0e29
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0259                                                           0xdddd0e2a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0260                                                           0xdddd0e2b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0261                                                           0xdddd0e2c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0262                                                           0xdddd0e2d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0263                                                           0xdddd0e2e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0264                                                           0xdddd0e2f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0265                                                           0xdddd0e30
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0266                                                           0xdddd0e31
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0267                                                           0xdddd0e32
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0268                                                           0xdddd0e33
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0269                                                           0xdddd0e34
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0270                                                           0xdddd0e35
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaDDRESS                                                          0xdddd0e36
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0271                                                           0xdddd0e37
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0272                                                           0xdddd0e38
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0273                                                           0xdddd0e39
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0274                                                           0xdddd0e3a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0275                                                           0xdddd0e3b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0276                                                           0xdddd0e3c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0277                                                           0xdddd0e3d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0278                                                           0xdddd0e3e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0279                                                           0xdddd0e3f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0280                                                           0xdddd0e40
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0281                                                           0xdddd0e41
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0282                                                           0xdddd0e42
+#define ifcIDiMPOTENCEbASEeRRORcODE_USERpROFILElOAD                                                         0xdddd0e43
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0283                                                           0xdddd0e44
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0284                                                           0xdddd0e45
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0285                                                           0xdddd0e46
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0286                                                           0xdddd0e47
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0287                                                           0xdddd0e48
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0288                                                           0xdddd0e49
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0289                                                           0xdddd0e4a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0290                                                           0xdddd0e4b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0291                                                           0xdddd0e4c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0292                                                           0xdddd0e4d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0293                                                           0xdddd0e4e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0294                                                           0xdddd0e4f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0295                                                           0xdddd0e50
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0296                                                           0xdddd0e51
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0297                                                           0xdddd0e52
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0298                                                           0xdddd0e53
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0299                                                           0xdddd0e54
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0300                                                           0xdddd0e55
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0301                                                           0xdddd0e56
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0302                                                           0xdddd0e57
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0303                                                           0xdddd0e58
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0304                                                           0xdddd0e59
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0305                                                           0xdddd0e5a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0306                                                           0xdddd0e5b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0307                                                           0xdddd0e5c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0308                                                           0xdddd0e5d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0309                                                           0xdddd0e5e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0310                                                           0xdddd0e5f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0311                                                           0xdddd0e60
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0312                                                           0xdddd0e61
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0313                                                           0xdddd0e62
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0314                                                           0xdddd0e63
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0315                                                           0xdddd0e64
+#define ifcIDiMPOTENCEbASEeRRORcODE_ARITHMETICoVERFLOW                                                      0xdddd0e65
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEcONNECTED                                                           0xdddd0e66
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPElISTENING                                                           0xdddd0e67
+#define ifcIDiMPOTENCEbASEeRRORcODE_VERIFIERsTOP                                                            0xdddd0e68
+#define ifcIDiMPOTENCEbASEeRRORcODE_ABIOSeRROR                                                              0xdddd0e69
+#define ifcIDiMPOTENCEbASEeRRORcODE_WX86wARNING                                                             0xdddd0e6a
+#define ifcIDiMPOTENCEbASEeRRORcODE_WX86eRROR                                                               0xdddd0e6b
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERnOTcREATED                                                         0xdddd0e6c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNWIND                                                                  0xdddd0e6d
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADsTACK                                                                0xdddd0e6e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDuNWINDtARGET                                                     0xdddd0e6f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpORTaTTRIBUTES                                                   0xdddd0e70
+#define ifcIDiMPOTENCEbASEeRRORcODE_PORTmESSAGEtOOlONG                                                      0xdddd0e71
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDqUOTAlOWER                                                       0xdddd0e72
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEaLREADYaTTACHED                                                   0xdddd0e73
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSTRUCTIONmISALIGNMENT                                                 0xdddd0e74
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGnOTsTARTED                                                     0xdddd0e75
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGnOTsTOPPED                                                     0xdddd0e76
+#define ifcIDiMPOTENCEbASEeRRORcODE_COULDnOTiNTERPRET                                                       0xdddd0e77
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGaTlIMIT                                                        0xdddd0e78
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTwAIT                                                                0xdddd0e79
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTtERMINATEsELF                                                       0xdddd0e7a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMcREATEeRROR                                                 0xdddd0e7b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMmAPeRROR                                                    0xdddd0e7c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMeXTENDeRROR                                                 0xdddd0e7d
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADfUNCTIONtABLE                                                        0xdddd0e7e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOgUIDtRANSLATION                                                       0xdddd0e7f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDTsIZE                                                          0xdddd0e80
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDToFFSET                                                        0xdddd0e81
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0316                                                           0xdddd0e82
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDTdESCRIPTOR                                                    0xdddd0e83
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYtHREADS                                                          0xdddd0e84
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREADnOTiNpROGRESS                                                     0xdddd0e85
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEqUOTAeXCEEDED                                                   0xdddd0e86
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsERVERcONFLICT                                                     0xdddd0e87
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYNCHRONIZATIONrEQUIRED                                                 0xdddd0e88
+#define ifcIDiMPOTENCEbASEeRRORcODE_NEToPENfAILED                                                           0xdddd0e89
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOpRIVILEGEfAILED                                                       0xdddd0e8a
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONTROLceXIT                                                            0xdddd0e8b
+#define ifcIDiMPOTENCEbASEeRRORcODE_MISSINGsYSTEMFILE                                                       0xdddd0e8c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNHANDLEDeXCEPTION                                                      0xdddd0e8d
+#define ifcIDiMPOTENCEbASEeRRORcODE_APPiNITfAILURE                                                          0xdddd0e8e
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEcREATEfAILED                                                    0xdddd0e8f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiMAGEhASH                                                        0xdddd0e90
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOpAGEFILE                                                              0xdddd0e91
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALfLOATcONTEXT                                                     0xdddd0e92
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOeVENTpAIR                                                             0xdddd0e93
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINcTRLRcONFIGeRROR                                                  0xdddd0e94
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALcHARACTER                                                        0xdddd0e95
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0317cHARACTER                                                  0xdddd0e96
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYvOLUME                                                            0xdddd0e97
+#define ifcIDiMPOTENCEbASEeRRORcODE_BIOSfAILEDtOcONNECTiNTERRUPT                                            0xdddd0e98
+#define ifcIDiMPOTENCEbASEeRRORcODE_BACKUPcONTROLLER                                                        0xdddd0e99
+#define ifcIDiMPOTENCEbASEeRRORcODE_MUTANTlIMITeXCEEDED                                                     0xdddd0e9a
+#define ifcIDiMPOTENCEbASEeRRORcODE_FSdRIVERrEQUIRED                                                        0xdddd0e9b
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTlOADrEGISTRYfILE                                                  0xdddd0e9c
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEBUGaTTACHfAILED                                                       0xdddd0e9d
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpROCESStERMINATED                                                 0xdddd0e9e
+#define ifcIDiMPOTENCEbASEeRRORcODE_DATAnOTaCCEPTED                                                         0xdddd0e9f
+#define ifcIDiMPOTENCEbASEeRRORcODE_VDMhARDeRROR                                                            0xdddd0ea0
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERcANCELtIMEOUT                                                     0xdddd0ea1
+#define ifcIDiMPOTENCEbASEeRRORcODE_REPLYmESSAGEmISMATCH                                                    0xdddd0ea2
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATA                                                     0xdddd0ea3
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLIENTsERVERpARAMETERSiNVALID                                           0xdddd0ea4
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTtINYsTREAM                                                           0xdddd0ea5
+#define ifcIDiMPOTENCEbASEeRRORcODE_STACKoVERFLOWrEAD                                                       0xdddd0ea6
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONVERTtOlARGE                                                          0xdddd0ea7
+#define ifcIDiMPOTENCEbASEeRRORcODE_FOUNDoUToFsCOPE                                                         0xdddd0ea8
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALLOCATEbUCKET                                                          0xdddd0ea9
+#define ifcIDiMPOTENCEbASEeRRORcODE_MARSHALLoVERFLOW                                                        0xdddd0eaa
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDvARIANT                                                          0xdddd0eab
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADcOMPRESSIONbUFFER                                                    0xdddd0eac
+#define ifcIDiMPOTENCEbASEeRRORcODE_AUDITfAILED                                                             0xdddd0ead
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERrESOLUTIONnOTsET                                                   0xdddd0eae
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTlOGONiNFO                                                   0xdddd0eaf
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdLLeNTRYPOINT                                                        0xdddd0eb0
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADsERVICEeNTRYPOINT                                                    0xdddd0eb1
+#define ifcIDiMPOTENCEbASEeRRORcODE_IPaDDRESScONFLICT1                                                      0xdddd0eb2
+#define ifcIDiMPOTENCEbASEeRRORcODE_IPaDDRESScONFLICT2                                                      0xdddd0eb3
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYqUOTAlIMIT                                                      0xdddd0eb4
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOcALLBACKaCTIVE                                                        0xdddd0eb5
+#define ifcIDiMPOTENCEbASEeRRORcODE_PWDtOOsHORT                                                             0xdddd0eb6
+#define ifcIDiMPOTENCEbASEeRRORcODE_PWDtOOrECENT                                                            0xdddd0eb7
+#define ifcIDiMPOTENCEbASEeRRORcODE_PWDhISTORYcONFLICT                                                      0xdddd0eb8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNSUPPORTEDcOMPRESSION                                                  0xdddd0eb9
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhWpROFILE                                                        0xdddd0eba
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpLUGPLAYdEVICEpATH                                               0xdddd0ebb
+#define ifcIDiMPOTENCEbASEeRRORcODE_QUOTAlISTiNCONSISTENT                                                   0xdddd0ebc
+#define ifcIDiMPOTENCEbASEeRRORcODE_EVALUATIONeXPIRATION                                                    0xdddd0ebd
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALdLLrELOCATION                                                    0xdddd0ebe
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLiNITfAILEDlOGOFF                                                     0xdddd0ebf
+#define ifcIDiMPOTENCEbASEeRRORcODE_VALIDATEcONTINUE                                                        0xdddd0ec0
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREmATCHES                                                           0xdddd0ec1
+#define ifcIDiMPOTENCEbASEeRRORcODE_RANGElISTcONFLICT                                                       0xdddd0ec2
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERsIDmISMATCH                                                       0xdddd0ec3
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTeNABLEdENYoNLY                                                      0xdddd0ec4
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOATmULTIPLEfAULTS                                                     0xdddd0ec5
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOATmULTIPLEtRAPS                                                      0xdddd0ec6
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOINTERFACE                                                             0xdddd0ec7
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERfAILEDsLEEP                                                       0xdddd0ec8
+#define ifcIDiMPOTENCEbASEeRRORcODE_CORRUPTsYSTEMfILE                                                       0xdddd0ec9
+#define ifcIDiMPOTENCEbASEeRRORcODE_COMMITMENTmINIMUM                                                       0xdddd0eca
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPrESTARTeNUMERATION                                                   0xdddd0ecb
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMiMAGEbADsIGNATURE                                                 0xdddd0ecc
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPrEBOOTrEQUIRED                                                       0xdddd0ecd
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTpOWER                                                       0xdddd0ece
+#define ifcIDiMPOTENCEbASEeRRORcODE_MULTIPLEfAULTvIOLATION                                                  0xdddd0ecf
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMsHUTDOWN                                                          0xdddd0ed0
+#define ifcIDiMPOTENCEbASEeRRORcODE_PORTnOTsET                                                              0xdddd0ed1
+#define ifcIDiMPOTENCEbASEeRRORcODE_DSvERSIONcHECKfAILURE                                                   0xdddd0ed2
+#define ifcIDiMPOTENCEbASEeRRORcODE_RANGEnOTfOUND                                                           0xdddd0ed3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0318                                                           0xdddd0ed4
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAFEmODEdRIVER                                                       0xdddd0ed5
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILEDdRIVEReNTRY                                                       0xdddd0ed6
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEeNUMERATIONeRROR                                                  0xdddd0ed7
+#define ifcIDiMPOTENCEbASEeRRORcODE_MOUNTpOINTnOTrESOLVED                                                   0xdddd0ed8
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdEVICEoBJECTpARAMETER                                            0xdddd0ed9
+#define ifcIDiMPOTENCEbASEeRRORcODE_MCAoCCURRED                                                             0xdddd0eda
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERdATABASEeRROR                                                     0xdddd0edb
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMhIVEtOOlARGE                                                      0xdddd0edc
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERfAILEDpRIORuNLOAD                                                 0xdddd0edd
+#define ifcIDiMPOTENCEbASEeRRORcODE_VOLSNAPpREPAREhIBERNATE                                                 0xdddd0ede
+#define ifcIDiMPOTENCEbASEeRRORcODE_HIBERNATIONfAILURE                                                      0xdddd0edf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0319                                                           0xdddd0ee0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0320                                                           0xdddd0ee1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0321                                                           0xdddd0ee2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0322                                                           0xdddd0ee3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0323                                                           0xdddd0ee4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0324                                                           0xdddd0ee5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0325                                                           0xdddd0ee6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0326                                                           0xdddd0ee7
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEsYSTEMlIMITATION                                                    0xdddd0ee8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0327                                                           0xdddd0ee9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0328                                                           0xdddd0eea
+#define ifcIDiMPOTENCEbASEeRRORcODE_ASSERTIONfAILURE                                                        0xdddd0eeb
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACPIeRROR                                                               0xdddd0eec
+#define ifcIDiMPOTENCEbASEeRRORcODE_WOWaSSERTION                                                            0xdddd0eed
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPbADmPStABLE                                                          0xdddd0eee
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPtRANSLATIONfAILED                                                    0xdddd0eef
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPiRQtRANSLATIONfAILED                                                 0xdddd0ef0
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPiNVALIDiD                                                            0xdddd0ef1
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAKEsYSTEMdEBUGGER                                                      0xdddd0ef2
+#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEScLOSED                                                           0xdddd0ef3
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXTRANEOUSiNFORMATION                                                   0xdddd0ef4
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITnECESSARY                                                    0xdddd0ef5
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEDIAcHECK                                                              0xdddd0ef6
+#define ifcIDiMPOTENCEbASEeRRORcODE_GUIDsUBSTITUTIONmADE                                                    0xdddd0ef7
+#define ifcIDiMPOTENCEbASEeRRORcODE_STOPPEDoNsYMLINK                                                        0xdddd0ef8
+#define ifcIDiMPOTENCEbASEeRRORcODE_LONGJUMP                                                                0xdddd0ef9
+#define ifcIDiMPOTENCEbASEeRRORcODE_PLUGPLAYqUERYvETOED                                                     0xdddd0efa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNWINDcONSOLIDATE                                                       0xdddd0efb
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYhIVErECOVERED                                                   0xdddd0efc
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLmIGHTbEiNSECURE                                                      0xdddd0efd
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLmIGHTbEiNCOMPATIBLE                                                  0xdddd0efe
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGeXCEPTIONnOThANDLED                                                  0xdddd0eff
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGrEPLYlATER                                                           0xdddd0f00
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGuNABLEtOpROVIDEhANDLE                                                0xdddd0f01
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGtERMINATEtHREAD                                                      0xdddd0f02
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGtERMINATEpROCESS                                                     0xdddd0f03
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTROLc                                                             0xdddd0f04
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGpRINTEXCEPTIONc                                                      0xdddd0f05
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGrIPEXCEPTION                                                         0xdddd0f06
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTROLbREAK                                                         0xdddd0f07
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcOMMANDeXCEPTION                                                     0xdddd0f08
+#define ifcIDiMPOTENCEbASEeRRORcODE_OBJECTnAMEeXISTS                                                        0xdddd0f09
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREADwASsUSPENDED                                                      0xdddd0f0a
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEnOTaTbASE                                                          0xdddd0f0b
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTsTATEcREATED                                                       0xdddd0f0c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEGMENTnOTIFICATION                                                     0xdddd0f0d
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADcURRENTdIRECTORY                                                     0xdddd0f0e
+#define ifcIDiMPOTENCEbASEeRRORcODE_FTrEADrECOVERYfROMbACKUP                                                0xdddd0f0f
+#define ifcIDiMPOTENCEbASEeRRORcODE_FTwRITErECOVERY                                                         0xdddd0f10
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEmACHINEtYPEmISMATCH                                                0xdddd0f11
+#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEpARTIAL                                                          0xdddd0f12
+#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEeXPEDITED                                                        0xdddd0f13
+#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEpARTIALeXPEDITED                                                 0xdddd0f14
+#define ifcIDiMPOTENCEbASEeRRORcODE_EVENTdONE                                                               0xdddd0f15
+#define ifcIDiMPOTENCEbASEeRRORcODE_EVENTpENDING                                                            0xdddd0f16
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHECKINGfILEsYSTEM                                                      0xdddd0f17
+#define ifcIDiMPOTENCEbASEeRRORcODE_FATALaPPeXIT                                                            0xdddd0f18
+#define ifcIDiMPOTENCEbASEeRRORcODE_PREDEFINEDhANDLE                                                        0xdddd0f19
+#define ifcIDiMPOTENCEbASEeRRORcODE_WASuNLOCKED                                                             0xdddd0f1a
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTIFICATION                                                     0xdddd0f1b
+#define ifcIDiMPOTENCEbASEeRRORcODE_WASlOCKED                                                               0xdddd0f1c
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGhARDeRROR                                                            0xdddd0f1d
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYwIN32                                                            0xdddd0f1e
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEmACHINEtYPEmISMATCHeXE                                             0xdddd0f1f
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOyIELDpERFORMED                                                        0xdddd0f20
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERrESUMEiGNORED                                                      0xdddd0f21
+#define ifcIDiMPOTENCEbASEeRRORcODE_ARBITRATIONuNHANDLED                                                    0xdddd0f22
+#define ifcIDiMPOTENCEbASEeRRORcODE_CARDBUSnOTsUPPORTED                                                     0xdddd0f23
+#define ifcIDiMPOTENCEbASEeRRORcODE_MPpROCESSORmISMATCH                                                     0xdddd0f24
+#define ifcIDiMPOTENCEbASEeRRORcODE_HIBERNATED                                                              0xdddd0f25
+#define ifcIDiMPOTENCEbASEeRRORcODE_RESUMEhIBERNATION                                                       0xdddd0f26
+#define ifcIDiMPOTENCEbASEeRRORcODE_FIRMWAREuPDATED                                                         0xdddd0f27
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERSlEAKINGlOCKEDpAGES                                               0xdddd0f28
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAKEsYSTEM                                                              0xdddd0f29
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_1                                                                  0xdddd0f2a
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_2                                                                  0xdddd0f2b
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_3                                                                  0xdddd0f2c
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_63                                                                 0xdddd0f2d
+#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONEDwAIT_0                                                         0xdddd0f2e
+#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONEDwAIT_63                                                        0xdddd0f2f
+#define ifcIDiMPOTENCEbASEeRRORcODE_USERaPC                                                                 0xdddd0f30
+#define ifcIDiMPOTENCEbASEeRRORcODE_KERNELaPC                                                               0xdddd0f31
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALERTED                                                                 0xdddd0f32
+#define ifcIDiMPOTENCEbASEeRRORcODE_ELEVATIONrEQUIRED                                                       0xdddd0f33
+#define ifcIDiMPOTENCEbASEeRRORcODE_REPARSE                                                                 0xdddd0f34
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKbREAKiNpROGRESS                                                   0xdddd0f35
+#define ifcIDiMPOTENCEbASEeRRORcODE_VOLUMEmOUNTED                                                           0xdddd0f36
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITTED                                                          0xdddd0f37
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFYcLEANUP                                                           0xdddd0f38
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRIMARYtRANSPORTcONNECTfAILED                                           0xdddd0f39
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTtRANSITION                                                     0xdddd0f3a
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTdEMANDzERO                                                     0xdddd0f3b
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTcOPYoNwRITE                                                    0xdddd0f3c
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTgUARDpAGE                                                      0xdddd0f3d
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTpAGINGfILE                                                     0xdddd0f3e
+#define ifcIDiMPOTENCEbASEeRRORcODE_CACHEpAGElOCKED                                                         0xdddd0f3f
+#define ifcIDiMPOTENCEbASEeRRORcODE_CRASHdUMP                                                               0xdddd0f40
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUFFERaLLzEROS                                                          0xdddd0f41
+#define ifcIDiMPOTENCEbASEeRRORcODE_REPARSEoBJECT                                                           0xdddd0f42
+#define ifcIDiMPOTENCEbASEeRRORcODE_RESOURCErEQUIREMENTScHANGED                                             0xdddd0f43
+#define ifcIDiMPOTENCEbASEeRRORcODE_TRANSLATIONcOMPLETE                                                     0xdddd0f44
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTHINGtOtERMIANTE                                                      0xdddd0f45
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSnOTiNjOB                                                         0xdddd0f46
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSiNjOB                                                            0xdddd0f47
+#define ifcIDiMPOTENCEbASEeRRORcODE_VOLSNAPhIBERNATErEADY                                                   0xdddd0f48
+#define ifcIDiMPOTENCEbASEeRRORcODE_FSFILTERoPcOMPLETEDsUCCESSFULLY                                         0xdddd0f49
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERRUPTvECTORaLREADYcONNECTED                                         0xdddd0f4a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERRUPTsTILLcONNECTED                                                 0xdddd0f4b
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAITfORoPLOCK                                                           0xdddd0f4c
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGeXCEPTIONhANDLED                                                     0xdddd0f4d
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTINUE                                                             0xdddd0f4e
+#define ifcIDiMPOTENCEbASEeRRORcODE_CALLBACKpOPsTACK                                                        0xdddd0f4f
+#define ifcIDiMPOTENCEbASEeRRORcODE_COMPRESSIONdISABLED                                                     0xdddd0f50
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTFETCHBACKWARDS                                                      0xdddd0f51
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTSCROLLBACKWARDS                                                     0xdddd0f52
+#define ifcIDiMPOTENCEbASEeRRORcODE_ROWSNOTRELEASED                                                         0xdddd0f53
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADaCCESSORfLAGS                                                        0xdddd0f54
+#define ifcIDiMPOTENCEbASEeRRORcODE_ERRORSeNCOUNTERED                                                       0xdddd0f55
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcAPABLE                                                              0xdddd0f56
+#define ifcIDiMPOTENCEbASEeRRORcODE_REQUESToUToFsEQUENCE                                                    0xdddd0f57
+#define ifcIDiMPOTENCEbASEeRRORcODE_VERSIONpARSEeRROR                                                       0xdddd0f58
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADSTARTPOSITION                                                        0xdddd0f59
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMORYhARDWARE                                                          0xdddd0f5a
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrEPAIRdISABLED                                                      0xdddd0f5b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTrESOURCEfORsPECIFIEDsHAREDsECTIONsIZE                       0xdddd0f5c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpOWERSTATEtRANSITION                                              0xdddd0f5d
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpOWERSTATEcOMPLEXtRANSITION                                       0xdddd0f5e
+#define ifcIDiMPOTENCEbASEeRRORcODE_MCAeXCEPTION                                                            0xdddd0f5f
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSaUDITbYpOLICY                                                     0xdddd0f60
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDnOsAFERuIbYpOLICY                                         0xdddd0f61
+#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONhIBERFILE                                                        0xdddd0f62
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAnETWORKdISCONNECTED                                  0xdddd0f63
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAnETWORKsERVEReRROR                                   0xdddd0f64
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAlOCALdISKeRROR                                       0xdddd0f65
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADmCFGtABLE                                                            0xdddd0f66
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0329                                                           0xdddd0f67
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0330                                                           0xdddd0f68
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0331                                                           0xdddd0f69
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0332                                                           0xdddd0f6a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0333                                                           0xdddd0f6b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0334                                                           0xdddd0f6c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0335                                                           0xdddd0f6d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0336                                                           0xdddd0f6e
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKsWITCHEDtOnEWhANDLE                                               0xdddd0f6f
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTgRANTrEQUESTEDoPLOCK                                              0xdddd0f70
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTbREAKoPLOCK                                                       0xdddd0f71
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKhANDLEcLOSED                                                      0xdddd0f72
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOaCEcONDITION                                                          0xdddd0f73
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCEcONDITION                                                     0xdddd0f74
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0337                                                           0xdddd0f75
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0338                                                           0xdddd0f76
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0339                                                           0xdddd0f77
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0340                                                           0xdddd0f78
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0341                                                           0xdddd0f79
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0342                                                           0xdddd0f7a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0343                                                           0xdddd0f7b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0344                                                           0xdddd0f7c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0345                                                           0xdddd0f7d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0346                                                           0xdddd0f7e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0347                                                           0xdddd0f7f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0348                                                           0xdddd0f80
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0349                                                           0xdddd0f81
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0350                                                           0xdddd0f82
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0351                                                           0xdddd0f83
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0352                                                           0xdddd0f84
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0353                                                           0xdddd0f85
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0354                                                           0xdddd0f86
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0355                                                           0xdddd0f87
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0356                                                           0xdddd0f88
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0357                                                           0xdddd0f89
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0358                                                           0xdddd0f8a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0359                                                           0xdddd0f8b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0360                                                           0xdddd0f8c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0361                                                           0xdddd0f8d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0362                                                           0xdddd0f8e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0363                                                           0xdddd0f8f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0364                                                           0xdddd0f90
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0365                                                           0xdddd0f91
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0366                                                           0xdddd0f92
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0367                                                           0xdddd0f93
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0368                                                           0xdddd0f94
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0369                                                           0xdddd0f95
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0370                                                           0xdddd0f96
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0371                                                           0xdddd0f97
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0372                                                           0xdddd0f98
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0373                                                           0xdddd0f99
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0374                                                           0xdddd0f9a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0375                                                           0xdddd0f9b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0376                                                           0xdddd0f9c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0377                                                           0xdddd0f9d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0378                                                           0xdddd0f9e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0379                                                           0xdddd0f9f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0380                                                           0xdddd0fa0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0381                                                           0xdddd0fa1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0382                                                           0xdddd0fa2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0383                                                           0xdddd0fa3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0384                                                           0xdddd0fa4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0385                                                           0xdddd0fa5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0386                                                           0xdddd0fa6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0387                                                           0xdddd0fa7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0388                                                           0xdddd0fa8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0389                                                           0xdddd0fa9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0390                                                           0xdddd0faa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0391                                                           0xdddd0fab
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0392                                                           0xdddd0fac
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0393                                                           0xdddd0fad
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0394                                                           0xdddd0fae
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0395                                                           0xdddd0faf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0396                                                           0xdddd0fb0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0397                                                           0xdddd0fb1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0398                                                           0xdddd0fb2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0399                                                           0xdddd0fb3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0400                                                           0xdddd0fb4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0401                                                           0xdddd0fb5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0402                                                           0xdddd0fb6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0403                                                           0xdddd0fb7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0404                                                           0xdddd0fb8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0405                                                           0xdddd0fb9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0406                                                           0xdddd0fba
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0407                                                           0xdddd0fbb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0408                                                           0xdddd0fbc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0409                                                           0xdddd0fbd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0410                                                           0xdddd0fbe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0411                                                           0xdddd0fbf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0412                                                           0xdddd0fc0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0413                                                           0xdddd0fc1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0414                                                           0xdddd0fc2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0415                                                           0xdddd0fc3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0416                                                           0xdddd0fc4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0417                                                           0xdddd0fc5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0418                                                           0xdddd0fc6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0419                                                           0xdddd0fc7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0420                                                           0xdddd0fc8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0421                                                           0xdddd0fc9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0422                                                           0xdddd0fca
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0423                                                           0xdddd0fcb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0424                                                           0xdddd0fcc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0425                                                           0xdddd0fcd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0426                                                           0xdddd0fce
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0427                                                           0xdddd0fcf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0428                                                           0xdddd0fd0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0429                                                           0xdddd0fd1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0430                                                           0xdddd0fd2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0431                                                           0xdddd0fd3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0432                                                           0xdddd0fd4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0433                                                           0xdddd0fd5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0434                                                           0xdddd0fd6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0435                                                           0xdddd0fd7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0436                                                           0xdddd0fd8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0437                                                           0xdddd0fd9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0438                                                           0xdddd0fda
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0439                                                           0xdddd0fdb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0440                                                           0xdddd0fdc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0441                                                           0xdddd0fdd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0442                                                           0xdddd0fde
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0443                                                           0xdddd0fdf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0444                                                           0xdddd0fe0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0445                                                           0xdddd0fe1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0446                                                           0xdddd0fe2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0447                                                           0xdddd0fe3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0448                                                           0xdddd0fe4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0449                                                           0xdddd0fe5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0450                                                           0xdddd0fe6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0451                                                           0xdddd0fe7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0452                                                           0xdddd0fe8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0453                                                           0xdddd0fe9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0454                                                           0xdddd0fea
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0455                                                           0xdddd0feb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0456                                                           0xdddd0fec
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0457                                                           0xdddd0fed
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0458                                                           0xdddd0fee
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0459                                                           0xdddd0fef
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0460                                                           0xdddd0ff0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0461                                                           0xdddd0ff1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0462                                                           0xdddd0ff2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0463                                                           0xdddd0ff3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0464                                                           0xdddd0ff4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0465                                                           0xdddd0ff5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0466                                                           0xdddd0ff6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0467                                                           0xdddd0ff7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0468                                                           0xdddd0ff8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0469                                                           0xdddd0ff9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0470                                                           0xdddd0ffa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0471                                                           0xdddd0ffb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0472                                                           0xdddd0ffc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0473                                                           0xdddd0ffd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0474                                                           0xdddd0ffe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0475                                                           0xdddd0fff
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0476                                                           0xdddd1000
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0477                                                           0xdddd1001
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0478                                                           0xdddd1002
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0479                                                           0xdddd1003
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0480                                                           0xdddd1004
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0481                                                           0xdddd1005
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0482                                                           0xdddd1006
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0483                                                           0xdddd1007
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0484                                                           0xdddd1008
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0485                                                           0xdddd1009
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0486                                                           0xdddd100a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0487                                                           0xdddd100b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0488                                                           0xdddd100c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0489                                                           0xdddd100d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0490                                                           0xdddd100e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0491                                                           0xdddd100f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0492                                                           0xdddd1010
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0493                                                           0xdddd1011
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0494                                                           0xdddd1012
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0495                                                           0xdddd1013
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0496                                                           0xdddd1014
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0497                                                           0xdddd1015
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0498                                                           0xdddd1016
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0499                                                           0xdddd1017
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0500                                                           0xdddd1018
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0501                                                           0xdddd1019
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0502                                                           0xdddd101a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0503                                                           0xdddd101b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0504                                                           0xdddd101c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0505                                                           0xdddd101d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0506                                                           0xdddd101e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0507                                                           0xdddd101f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0508                                                           0xdddd1020
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0509                                                           0xdddd1021
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0510                                                           0xdddd1022
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0511                                                           0xdddd1023
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0512                                                           0xdddd1024
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0513                                                           0xdddd1025
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0514                                                           0xdddd1026
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0515                                                           0xdddd1027
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0516                                                           0xdddd1028
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0517                                                           0xdddd1029
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0518                                                           0xdddd102a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0519                                                           0xdddd102b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0520                                                           0xdddd102c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0521                                                           0xdddd102d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0522                                                           0xdddd102e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0523                                                           0xdddd102f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0524                                                           0xdddd1030
+#define ifcIDiMPOTENCEbASEeRRORcODE_EAaCCESSdENIED                                                          0xdddd1031
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPERATIONaBORTED                                                        0xdddd1032
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOiNCOMPLETE                                                            0xdddd1033
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOpENDING                                                               0xdddd1034
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOACCESS                                                                0xdddd1035
+#define ifcIDiMPOTENCEbASEeRRORcODE_SWAPERROR                                                               0xdddd1036
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0525                                                           0xdddd1037
+#define ifcIDiMPOTENCEbASEeRRORcODE_STACKoVERFLOW                                                           0xdddd1038
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGE                                                          0xdddd1039
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANnOTcOMPLETE                                                          0xdddd103a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfLAGS                                                            0xdddd103b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNRECOGNIZEDvOLUME                                                      0xdddd103c
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEiNVALID                                                             0xdddd103d
+#define ifcIDiMPOTENCEbASEeRRORcODE_FULLSCREENmODE                                                          0xdddd103e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOtOKEN                                                                 0xdddd103f
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADDB                                                                   0xdddd1040
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADKEY                                                                  0xdddd1041
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTOPEN                                                                0xdddd1042
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTREAD                                                                0xdddd1043
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTWRITE                                                               0xdddd1044
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYrECOVERED                                                       0xdddd1045
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYcORRUPT                                                         0xdddd1046
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYiOfAILED                                                        0xdddd1047
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTrEGISTRYfILE                                                         0xdddd1048
+#define ifcIDiMPOTENCEbASEeRRORcODE_KEYdELETED                                                              0xdddd1049
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOlOGsPACE                                                              0xdddd104a
+#define ifcIDiMPOTENCEbASEeRRORcODE_KEYhAScHILDREN                                                          0xdddd104b
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDmUSTbEvOLATILE                                                     0xdddd104c
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFYeNUMdIR                                                           0xdddd104d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0526                                                           0xdddd104e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0527                                                           0xdddd104f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0528                                                           0xdddd1050
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0529                                                           0xdddd1051
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0530                                                           0xdddd1052
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0531                                                           0xdddd1053
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0532                                                           0xdddd1054
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0533                                                           0xdddd1055
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0534                                                           0xdddd1056
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0535                                                           0xdddd1057
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0536                                                           0xdddd1058
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0537                                                           0xdddd1059
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0538                                                           0xdddd105a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0539                                                           0xdddd105b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0540                                                           0xdddd105c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0541                                                           0xdddd105d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0542                                                           0xdddd105e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0543                                                           0xdddd105f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0544                                                           0xdddd1060
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0545                                                           0xdddd1061
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0546                                                           0xdddd1062
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0547                                                           0xdddd1063
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0548                                                           0xdddd1064
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0549                                                           0xdddd1065
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0550                                                           0xdddd1066
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0551                                                           0xdddd1067
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0552                                                           0xdddd1068
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0553                                                           0xdddd1069
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEPENDENTsERVICESrUNNING                                                0xdddd106a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICEcONTROL                                                   0xdddd106b
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICErEQUESTtIMEOUT                                                   0xdddd106c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOtHREAD                                                         0xdddd106d
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdATABASElOCKED                                                   0xdddd106e
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEaLREADYrUNNING                                                   0xdddd106f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICEaCCOUNT                                                   0xdddd1070
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdISABLED                                                         0xdddd1071
+#define ifcIDiMPOTENCEbASEeRRORcODE_CIRCULARdEPENDENCY                                                      0xdddd1072
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdOESnOTeXIST                                                     0xdddd1073
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEcANNOTaCCEPTcTRL                                                 0xdddd1074
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTaCTIVE                                                        0xdddd1075
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILEDsERVICEcONTROLLERcONNECT                                          0xdddd1076
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXCEPTIONiNsERVICE                                                      0xdddd1077
+#define ifcIDiMPOTENCEbASEeRRORcODE_DATABASEdOESnOTeXIST                                                    0xdddd1078
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEsPECIFICeRROR                                                    0xdddd1079
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSaBORTED                                                          0xdddd107a
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdEPENDENCYfAIL                                                   0xdddd107b
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICElOGONfAILED                                                      0xdddd107c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEsTARThANG                                                        0xdddd107d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICElOCK                                                      0xdddd107e
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEmARKEDfORdELETE                                                  0xdddd107f
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEeXISTS                                                           0xdddd1080
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYrUNNINGlKG                                                       0xdddd1081
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdEPENDENCYdELETED                                                0xdddd1082
+#define ifcIDiMPOTENCEbASEeRRORcODE_BOOTaLREADYaCCEPTED                                                     0xdddd1083
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnEVERsTARTED                                                     0xdddd1084
+#define ifcIDiMPOTENCEbASEeRRORcODE_DUPLICATEsERVICEnAME                                                    0xdddd1085
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIFFERENTsERVICEaCCOUNT                                                 0xdddd1086
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTdETECTdRIVERfAILURE                                               0xdddd1087
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTdETECTpROCESSaBORT                                                0xdddd1088
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOrECOVERYpROGRAM                                                       0xdddd1089
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTiNeXE                                                         0xdddd108a
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAFEBOOTsERVICE                                                      0xdddd108b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0554                                                           0xdddd108c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0555                                                           0xdddd108d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0556                                                           0xdddd108e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0557                                                           0xdddd108f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0558                                                           0xdddd1090
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0559                                                           0xdddd1091
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0560                                                           0xdddd1092
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0561                                                           0xdddd1093
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0562                                                           0xdddd1094
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0563                                                           0xdddd1095
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0564                                                           0xdddd1096
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0565                                                           0xdddd1097
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0566                                                           0xdddd1098
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0567                                                           0xdddd1099
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0568                                                           0xdddd109a
+#define ifcIDiMPOTENCEbASEeRRORcODE_ENDoFmEDIA                                                              0xdddd109b
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEMARKdETECTED                                                        0xdddd109c
+#define ifcIDiMPOTENCEbASEeRRORcODE_BEGINNINGoFmEDIA                                                        0xdddd109d
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETMARKdETECTED                                                         0xdddd109e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOdATAdETECTED                                                          0xdddd109f
+#define ifcIDiMPOTENCEbASEeRRORcODE_PARTITIONfAILURE                                                        0xdddd10a0
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDbLOCKlENGTH                                                      0xdddd10a1
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEnOTpARTITIONED                                                    0xdddd10a2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOlOCKmEDIA                                                       0xdddd10a3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOuNLOADmEDIA                                                     0xdddd10a4
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEDIAcHANGED                                                            0xdddd10a5
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUSrESET                                                                0xdddd10a6
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmEDIAiNdRIVE                                                          0xdddd10a7
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOuNICODEtRANSLATION                                                    0xdddd10a8
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLiNITfAILED                                                           0xdddd10a9
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNiNpROGRESS                                                      0xdddd10aa
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsHUTDOWNiNpROGRESS                                                    0xdddd10ab
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOdEVICE                                                                0xdddd10ac
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERIALnOdEVICE                                                          0xdddd10ad
+#define ifcIDiMPOTENCEbASEeRRORcODE_IRQbUSY                                                                 0xdddd10ae
+#define ifcIDiMPOTENCEbASEeRRORcODE_MOREwRITES                                                              0xdddd10af
+#define ifcIDiMPOTENCEbASEeRRORcODE_COUNTERtIMEOUT                                                          0xdddd10b0
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYiDmARKnOTfOUND                                                    0xdddd10b1
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYwRONGcYLINDER                                                     0xdddd10b2
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYuNKNOWNeRROR                                                      0xdddd10b3
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYbADrEGISTERS                                                      0xdddd10b4
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrECALIBRATEfAILED                                                   0xdddd10b5
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKoPERATIONfAILED                                                     0xdddd10b6
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrESETfAILED                                                         0xdddd10b7
+#define ifcIDiMPOTENCEbASEeRRORcODE_EOMoVERFLOW                                                             0xdddd10b8
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHsERVERmEMORY                                                   0xdddd10b9
+#define ifcIDiMPOTENCEbASEeRRORcODE_POSSIBLEdEADLOCK                                                        0xdddd10ba
+#define ifcIDiMPOTENCEbASEeRRORcODE_MAPPEDaLIGNMENT                                                         0xdddd10bb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0569                                                           0xdddd10bc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0570                                                           0xdddd10bd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0571                                                           0xdddd10be
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0572                                                           0xdddd10bf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0573                                                           0xdddd10c0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0574                                                           0xdddd10c1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0575                                                           0xdddd10c2
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETpOWERsTATEvETOED                                                     0xdddd10c3
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETpOWERsTATEfAILED                                                     0xdddd10c4
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYlINKS                                                            0xdddd10c5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0576                                                           0xdddd10c6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0577                                                           0xdddd10c7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0578                                                           0xdddd10c8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0579                                                           0xdddd10c9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0580                                                           0xdddd10ca
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0581                                                           0xdddd10cb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0582                                                           0xdddd10cc
+#define ifcIDiMPOTENCEbASEeRRORcODE_OLDwINvERSION                                                           0xdddd10cd
+#define ifcIDiMPOTENCEbASEeRRORcODE_APPwRONGoS                                                              0xdddd10ce
+#define ifcIDiMPOTENCEbASEeRRORcODE_SINGLEiNSTANCEaPP                                                       0xdddd10cf
+#define ifcIDiMPOTENCEbASEeRRORcODE_RMODEaPP                                                                0xdddd10d0
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdLL                                                              0xdddd10d1
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOaSSOCIATION                                                           0xdddd10d2
+#define ifcIDiMPOTENCEbASEeRRORcODE_DDEfAIL                                                                 0xdddd10d3
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLnOTfOUND                                                             0xdddd10d4
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREuSERhANDLES                                                       0xdddd10d5
+#define ifcIDiMPOTENCEbASEeRRORcODE_MESSAGEsYNCoNLY                                                         0xdddd10d6
+#define ifcIDiMPOTENCEbASEeRRORcODE_SOURCEeLEMENTeMPTY                                                      0xdddd10d7
+#define ifcIDiMPOTENCEbASEeRRORcODE_DESTINATIONeLEMENTfULL                                                  0xdddd10d8
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALeLEMENTaDDRESS                                                   0xdddd10d9
+#define ifcIDiMPOTENCEbASEeRRORcODE_MAGAZINEnOTpRESENT                                                      0xdddd10da
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICErEINITIALIZATIONnEEDED                                            0xdddd10db
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICErEQUIREScLEANING                                                  0xdddd10dc
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEdOORoPEN                                                          0xdddd10dd
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEnOTcONNECTED                                                      0xdddd10de
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTfOUND                                                                0xdddd10df
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmATCH                                                                 0xdddd10e0
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETnOTfOUND                                                             0xdddd10e1
+#define ifcIDiMPOTENCEbASEeRRORcODE_POINTnOTfOUND                                                           0xdddd10e2
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOtRACKINGsERVICE                                                       0xdddd10e3
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOvOLUMEiD                                                              0xdddd10e4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0583                                                           0xdddd10e5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOrEMOVErEPLACED                                                  0xdddd10e6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOmOVErEPLACEMENT                                                 0xdddd10e7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOmOVErEPLACEMENT_2                                               0xdddd10e8
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALdELETEiNpROGRESS                                                 0xdddd10e9
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALnOTaCTIVE                                                        0xdddd10ea
+#define ifcIDiMPOTENCEbASEeRRORcODE_POTENTIALfILEfOUND                                                      0xdddd10eb
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALeNTRYdELETED                                                     0xdddd10ec
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0584                                                           0xdddd10ed
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0585                                                           0xdddd10ee
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0586                                                           0xdddd10ef
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0587                                                           0xdddd10f0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0588                                                           0xdddd10f1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0589                                                           0xdddd10f2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0590                                                           0xdddd10f3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0591                                                           0xdddd10f4
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNiSsCHEDULED                                                     0xdddd10f5
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNuSERSlOGGEDoN                                                   0xdddd10f6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0592                                                           0xdddd10f7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0593                                                           0xdddd10f8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0594                                                           0xdddd10f9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0595                                                           0xdddd10fa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0596                                                           0xdddd10fb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0597                                                           0xdddd10fc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0598                                                           0xdddd10fd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0599                                                           0xdddd10fe
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdEVICE                                                               0xdddd10ff
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONuNAVAIL                                                       0xdddd1100
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEaLREADYrEMEMBERED                                                 0xdddd1101
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOnEToRbADpATH                                                          0xdddd1102
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADpROVIDER                                                             0xdddd1103
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOToPENpROFILE                                                       0xdddd1104
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADpROFILE                                                              0xdddd1105
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcONTAINER                                                            0xdddd1106
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXTENDEDeRROR                                                           0xdddd1107
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgROUPNAME                                                        0xdddd1108
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcOMPUTERNAME                                                     0xdddd1109
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeVENTNAME                                                        0xdddd110a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINNAME                                                       0xdddd110b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICENAME                                                      0xdddd110c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDnETNAME                                                          0xdddd110d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsHARENAME                                                        0xdddd110e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpASSWORDNAME                                                     0xdddd110f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGENAME                                                      0xdddd1110
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGEDEST                                                      0xdddd1111
+#define ifcIDiMPOTENCEbASEeRRORcODE_SESSIONcREDENTIALcONFLICT                                               0xdddd1112
+#define ifcIDiMPOTENCEbASEeRRORcODE_REMOTEsESSIONlIMITeXCEEDED                                              0xdddd1113
+#define ifcIDiMPOTENCEbASEeRRORcODE_DUPdOMAINNAME                                                           0xdddd1114
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOnETWORK                                                               0xdddd1115
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANCELLED                                                               0xdddd1116
+#define ifcIDiMPOTENCEbASEeRRORcODE_USERmAPPEDfILE                                                          0xdddd1117
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONrEFUSED                                                       0xdddd1118
+#define ifcIDiMPOTENCEbASEeRRORcODE_GRACEFULdISCONNECT                                                      0xdddd1119
+#define ifcIDiMPOTENCEbASEeRRORcODE_ADDRESSaLREADYaSSOCIATED                                                0xdddd111a
+#define ifcIDiMPOTENCEbASEeRRORcODE_ADDRESSnOTaSSOCIATED                                                    0xdddd111b
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONiNVALID                                                       0xdddd111c
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONaCTIVE                                                        0xdddd111d
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKuNREACHABLE                                                      0xdddd111e
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOSTuNREACHABLE                                                         0xdddd111f
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROTOCOLuNREACHABLE                                                     0xdddd1120
+#define ifcIDiMPOTENCEbASEeRRORcODE_PORTuNREACHABLE                                                         0xdddd1121
+#define ifcIDiMPOTENCEbASEeRRORcODE_REQUESTaBORTED                                                          0xdddd1122
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONaBORTED                                                       0xdddd1123
+#define ifcIDiMPOTENCEbASEeRRORcODE_RETRY                                                                   0xdddd1124
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONcOUNTlIMIT                                                    0xdddd1125
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGINtIMErESTRICTION                                                    0xdddd1126
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGINwKSTArESTRICTION                                                   0xdddd1127
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCORRECTaDDRESS                                                        0xdddd1128
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYrEGISTERED                                                       0xdddd1129
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTfOUND                                                         0xdddd112a
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTaUTHENTICATED                                                        0xdddd112b
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOGGEDoN                                                             0xdddd112c
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONTINUE                                                                0xdddd112d
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYiNITIALIZED                                                      0xdddd112e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREdEVICES                                                           0xdddd112f
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHsITE                                                              0xdddd1130
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINcONTROLLEReXISTS                                                  0xdddd1131
+#define ifcIDiMPOTENCEbASEeRRORcODE_ONLYiFcONNECTED                                                         0xdddd1132
+#define ifcIDiMPOTENCEbASEeRRORcODE_OVERRIDEnOCHANGES                                                       0xdddd1133
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADuSERpROFILE                                                          0xdddd1134
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTEDoNsBS                                                       0xdddd1135
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERsHUTDOWNiNpROGRESS                                                0xdddd1136
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOSTdOWN                                                                0xdddd1137
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONaCCOUNTsID                                                           0xdddd1138
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONdOMAINsID                                                            0xdddd1139
+#define ifcIDiMPOTENCEbASEeRRORcODE_APPHELPbLOCK                                                            0xdddd113a
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDbYpOLICY                                                  0xdddd113b
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGnATcONSUMPTION                                                       0xdddd113c
+#define ifcIDiMPOTENCEbASEeRRORcODE_CSCSHAREoFFLINE                                                         0xdddd113d
+#define ifcIDiMPOTENCEbASEeRRORcODE_PKINITfAILURE                                                           0xdddd113e
+#define ifcIDiMPOTENCEbASEeRRORcODE_SMARTCARDsUBSYSTEMfAILURE                                               0xdddd113f
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOWNGRADEdETECTED                                                       0xdddd1140
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0600                                                           0xdddd1141
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0601                                                           0xdddd1142
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0602                                                           0xdddd1143
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0603                                                           0xdddd1144
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0604                                                           0xdddd1145
+#define ifcIDiMPOTENCEbASEeRRORcODE_MACHINElOCKED                                                           0xdddd1146
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0605                                                           0xdddd1147
+#define ifcIDiMPOTENCEbASEeRRORcODE_CALLBACKsUPPLIEDiNVALIDdATA                                             0xdddd1148
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYNCfOREGROUNDrEFRESHrEQUIRED                                           0xdddd1149
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERbLOCKED                                                           0xdddd114a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiMPORToFnONdLL                                                   0xdddd114b
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDwEBBLADE                                                  0xdddd114c
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDwEBBLADEtAMPER                                            0xdddd114d
+#define ifcIDiMPOTENCEbASEeRRORcODE_RECOVERYfAILURE                                                         0xdddd114e
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYfIBER                                                            0xdddd114f
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYtHREAD                                                           0xdddd1150
+#define ifcIDiMPOTENCEbASEeRRORcODE_STACKbUFFERoVERRUN                                                      0xdddd1151
+#define ifcIDiMPOTENCEbASEeRRORcODE_PARAMETERqUOTAeXCEEDED                                                  0xdddd1152
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEBUGGERiNACTIVE                                                        0xdddd1153
+#define ifcIDiMPOTENCEbASEeRRORcODE_DELAYlOADfAILED                                                         0xdddd1154
+#define ifcIDiMPOTENCEbASEeRRORcODE_VDMdISALLOWED                                                           0xdddd1155
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNIDENTIFIEDeRROR                                                       0xdddd1156
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcRUNTIMEpARAMETER                                                0xdddd1157
+#define ifcIDiMPOTENCEbASEeRRORcODE_BEYONDvDL                                                               0xdddd1158
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEsERVICEsIDtYPE                                              0xdddd1159
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERpROCESStERMINATED                                                 0xdddd115a
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMPLEMENTATIONlIMIT                                                     0xdddd115b
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSiSpROTECTED                                                      0xdddd115c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTIFYcLIENTlAGGING                                              0xdddd115d
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKqUOTAeXCEEDED                                                       0xdddd115e
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONTENTbLOCKED                                                          0xdddd115f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEsERVICEpRIVILEGE                                            0xdddd1160
+#define ifcIDiMPOTENCEbASEeRRORcODE_APPhANG                                                                 0xdddd1161
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlABEL                                                            0xdddd1162
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTaLLaSSIGNED                                                          0xdddd1163
+#define ifcIDiMPOTENCEbASEeRRORcODE_SOMEnOTmAPPED                                                           0xdddd1164
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOqUOTASfORaCCOUNT                                                      0xdddd1165
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOCALuSERsESSIONkEY                                                     0xdddd1166
+#define ifcIDiMPOTENCEbASEeRRORcODE_NULLlMpASSWORD                                                          0xdddd1167
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNKNOWNrEVISION                                                         0xdddd1168
+#define ifcIDiMPOTENCEbASEeRRORcODE_REVISIONmISMATCH                                                        0xdddd1169
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoWNER                                                            0xdddd116a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpRIMARYgROUP                                                     0xdddd116b
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOiMPERSONATIONtOKEN                                                    0xdddd116c
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTdISABLEmANDATORY                                                    0xdddd116d
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOlOGONsERVERS                                                          0xdddd116e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHlOGONsESSION                                                      0xdddd116f
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHpRIVILEGE                                                         0xdddd1170
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRIVILEGEnOThELD                                                        0xdddd1171
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCOUNTnAME                                                      0xdddd1172
+#define ifcIDiMPOTENCEbASEeRRORcODE_USEReXISTS                                                              0xdddd1173
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHuSER                                                              0xdddd1174
+#define ifcIDiMPOTENCEbASEeRRORcODE_GROUPeXISTS                                                             0xdddd1175
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHgROUP                                                             0xdddd1176
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERiNgROUP                                                           0xdddd1177
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERnOTiNgROUP                                                        0xdddd1178
+#define ifcIDiMPOTENCEbASEeRRORcODE_LASTaDMIN                                                               0xdddd1179
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGpASSWORD                                                           0xdddd117a
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLfORMEDpASSWORD                                                       0xdddd117b
+#define ifcIDiMPOTENCEbASEeRRORcODE_PASSWORDrESTRICTION                                                     0xdddd117c
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONfAILURE                                                            0xdddd117d
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCOUNTrESTRICTION                                                      0xdddd117e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOGONhOURS                                                       0xdddd117f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDwORKSTATION                                                      0xdddd1180
+#define ifcIDiMPOTENCEbASEeRRORcODE_PASSWORDeXPIRED                                                         0xdddd1181
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCOUNTdISABLED                                                         0xdddd1182
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONEmAPPED                                                              0xdddd1183
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYlUIDSrEQUESTED                                                   0xdddd1184
+#define ifcIDiMPOTENCEbASEeRRORcODE_LUIDSeXHAUSTED                                                          0xdddd1185
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsUBaUTHORITY                                                     0xdddd1186
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCL                                                              0xdddd1187
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsID                                                              0xdddd1188
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsECURITYdESCR                                                    0xdddd1189
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0606                                                           0xdddd118a
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADiNHERITANCEaCL                                                       0xdddd118b
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERdISABLED                                                          0xdddd118c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERnOTdISABLED                                                       0xdddd118d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiDaUTHORITY                                                      0xdddd118e
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALLOTTEDsPACEeXCEEDED                                                   0xdddd118f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgROUPaTTRIBUTES                                                  0xdddd1190
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADiMPERSONATIONlEVEL                                                   0xdddd1191
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANToPENaNONYMOUS                                                       0xdddd1192
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADvALIDATIONcLASS                                                      0xdddd1193
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADtOKENtYPE                                                            0xdddd1194
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsECURITYoNoBJECT                                                      0xdddd1195
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTaCCESSdOMAINiNFO                                                    0xdddd1196
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVERsTATE                                                      0xdddd1197
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINsTATE                                                      0xdddd1198
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINrOLE                                                       0xdddd1199
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHdOMAIN                                                            0xdddd119a
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINeXISTS                                                            0xdddd119b
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINlIMITeXCEEDED                                                     0xdddd119c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALdBcORRUPTION                                                    0xdddd119d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALeRROR                                                           0xdddd119e
+#define ifcIDiMPOTENCEbASEeRRORcODE_GENERICnOTmAPPED                                                        0xdddd119f
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdESCRIPTORfORMAT                                                     0xdddd11a0
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOGONpROCESS                                                         0xdddd11a1
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsESSIONeXISTS                                                      0xdddd11a2
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHpACKAGE                                                           0xdddd11a3
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADlOGONsESSIONsTATE                                                    0xdddd11a4
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsESSIONcOLLISION                                                   0xdddd11a5
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOGONtYPE                                                        0xdddd11a6
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTiMPERSONATE                                                       0xdddd11a7
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTiNVALIDsTATE                                                       0xdddd11a8
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITfAILURE                                                      0xdddd11a9
+#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALaCCOUNT                                                          0xdddd11aa
+#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALgROUP                                                            0xdddd11ab
+#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALuSER                                                             0xdddd11ac
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERSpRIMARYgROUP                                                     0xdddd11ad
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOKENaLREADYiNuSE                                                       0xdddd11ae
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHaLIAS                                                             0xdddd11af
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERnOTiNaLIAS                                                        0xdddd11b0
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERiNaLIAS                                                           0xdddd11b1
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALIASeXISTS                                                             0xdddd11b2
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONnOTgRANTED                                                         0xdddd11b3
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsECRETS                                                          0xdddd11b4
+#define ifcIDiMPOTENCEbASEeRRORcODE_SECRETtOOlONG                                                           0xdddd11b5
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALdBeRROR                                                         0xdddd11b6
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYcONTEXTiDS                                                       0xdddd11b7
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONtYPEnOTgRANTED                                                     0xdddd11b8
+#define ifcIDiMPOTENCEbASEeRRORcODE_NTcROSSeNCRYPTIONrEQUIRED                                               0xdddd11b9
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHmEMBER                                                            0xdddd11ba
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmEMBER                                                           0xdddd11bb
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsIDS                                                             0xdddd11bc
+#define ifcIDiMPOTENCEbASEeRRORcODE_LMcROSSeNCRYPTIONrEQUIRED                                               0xdddd11bd
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOiNHERITANCE                                                           0xdddd11be
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEcORRUPT                                                             0xdddd11bf
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKcORRUPT                                                             0xdddd11c0
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOuSERsESSIONkEY                                                        0xdddd11c1
+#define ifcIDiMPOTENCEbASEeRRORcODE_LICENSEqUOTAeXCEEDED                                                    0xdddd11c2
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGtARGETnAME                                                         0xdddd11c3
+#define ifcIDiMPOTENCEbASEeRRORcODE_MUTUALaUTHfAILED                                                        0xdddd11c4
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMEsKEW                                                                0xdddd11c5
+#define ifcIDiMPOTENCEbASEeRRORcODE_CURRENTdOMAINnOTaLLOWED                                                 0xdddd11c6
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDwINDOWhANDLE                                                     0xdddd11c7
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmENUhANDLE                                                       0xdddd11c8
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcURSORhANDLE                                                     0xdddd11c9
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCELhANDLE                                                      0xdddd11ca
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhOOKhANDLE                                                       0xdddd11cb
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdWPhANDLE                                                        0xdddd11cc
+#define ifcIDiMPOTENCEbASEeRRORcODE_TLWwITHwSCHILD                                                          0xdddd11cd
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTfINDwNDcLASS                                                      0xdddd11ce
+#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWoFoTHERtHREAD                                                     0xdddd11cf
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOTKEYaLREADYrEGISTERED                                                 0xdddd11d0
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLASSaLREADYeXISTS                                                      0xdddd11d1
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLASSdOESnOTeXIST                                                       0xdddd11d2
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLASShASwINDOWS                                                         0xdddd11d3
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiNDEX                                                            0xdddd11d4
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiCONhANDLE                                                       0xdddd11d5
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRIVATEdIALOGiNDEX                                                      0xdddd11d6
+#define ifcIDiMPOTENCEbASEeRRORcODE_LISTBOXiDnOTfOUND                                                       0xdddd11d7
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOwILDCARDcHARACTERS                                                    0xdddd11d8
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLIPBOARDnOToPEN                                                        0xdddd11d9
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOTKEYnOTrEGISTERED                                                     0xdddd11da
+#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWnOTdIALOG                                                         0xdddd11db
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONTROLiDnOTfOUND                                                       0xdddd11dc
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcOMBOBOXmESSAGE                                                  0xdddd11dd
+#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWnOTcOMBOBOX                                                       0xdddd11de
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeDIThEIGHT                                                       0xdddd11df
+#define ifcIDiMPOTENCEbASEeRRORcODE_DCnOTfOUND                                                              0xdddd11e0
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhOOKfILTER                                                       0xdddd11e1
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfILTERpROC                                                       0xdddd11e2
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKnEEDShMOD                                                           0xdddd11e3
+#define ifcIDiMPOTENCEbASEeRRORcODE_GLOBALoNLYhOOK                                                          0xdddd11e4
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALhOOKsET                                                          0xdddd11e5
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKnOTiNSTALLED                                                        0xdddd11e6
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlBmESSAGE                                                        0xdddd11e7
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETCOUNToNbADlB                                                         0xdddd11e8
+#define ifcIDiMPOTENCEbASEeRRORcODE_LBwITHOUTtABSTOPS                                                       0xdddd11e9
+#define ifcIDiMPOTENCEbASEeRRORcODE_DESTROYoBJECToFoTHERtHREAD                                              0xdddd11ea
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDwINDOWmENU                                                         0xdddd11eb
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsYSTEMmENU                                                            0xdddd11ec
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmSGBOXsTYLE                                                      0xdddd11ed
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsPIvALUE                                                         0xdddd11ee
+#define ifcIDiMPOTENCEbASEeRRORcODE_SCREENaLREADYlOCKED                                                     0xdddd11ef
+#define ifcIDiMPOTENCEbASEeRRORcODE_HWNDShAVEdIFFpARENT                                                     0xdddd11f0
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcHILDwINDOW                                                          0xdddd11f1
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgWcOMMAND                                                        0xdddd11f2
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDtHREADiD                                                         0xdddd11f3
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONmDICHILDwINDOW                                                       0xdddd11f4
+#define ifcIDiMPOTENCEbASEeRRORcODE_POPUPaLREADYaCTIVE                                                      0xdddd11f5
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsCROLLBARS                                                            0xdddd11f6
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsCROLLBARrANGE                                                   0xdddd11f7
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsHOWWINcOMMAND                                                   0xdddd11f8
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsYSTEMrESOURCES                                                       0xdddd11f9
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONPAGEDsYSTEMrESOURCES                                                 0xdddd11fa
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEDsYSTEMrESOURCES                                                    0xdddd11fb
+#define ifcIDiMPOTENCEbASEeRRORcODE_WORKINGsETqUOTA                                                         0xdddd11fc
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEqUOTA                                                           0xdddd11fd
+#define ifcIDiMPOTENCEbASEeRRORcODE_COMMITMENTlIMIT                                                         0xdddd11fe
+#define ifcIDiMPOTENCEbASEeRRORcODE_MENUiTEMnOTfOUND                                                        0xdddd11ff
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDkEYBOARDhANDLE                                                   0xdddd1200
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKtYPEnOTaLLOWED                                                      0xdddd1201
+#define ifcIDiMPOTENCEbASEeRRORcODE_REQUIRESiNTERACTIVEwINDOWSTATION                                        0xdddd1202
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMEOUT                                                                 0xdddd1203
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmONITORhANDLE                                                    0xdddd1204
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCORRECTsIZE                                                           0xdddd1205
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYMLINKcLASSdISABLED                                                    0xdddd1206
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYMLINKnOTsUPPORTED                                                     0xdddd1207
+#define ifcIDiMPOTENCEbASEeRRORcODE_XMLpARSEeRROR                                                           0xdddd1208
+#define ifcIDiMPOTENCEbASEeRRORcODE_XMLdSIGeRROR                                                            0xdddd1209
+#define ifcIDiMPOTENCEbASEeRRORcODE_RESTARTaPPLICATION                                                      0xdddd120a
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGcOMPARTMENT                                                        0xdddd120b
+#define ifcIDiMPOTENCEbASEeRRORcODE_AUTHIPfAILURE                                                           0xdddd120c
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOnVRAMrESOURCES                                                        0xdddd120d
+/*3*/
+#define ifcIDiMPOTENCEbASEeRRORcODE_min     0xdddd0c50
+#define ifcIDiMPOTENCEbASEeRRORcODE_max     0xdddd120d                                                               
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b5.ifcIDiMPOTENCEbASEeRRORcODE END
