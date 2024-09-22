@@ -29660,7 +29660,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34111.thirdC.osProcessIdPhaseAdamIF!||
  voidT osRegionInfoF( tinS& tinP , countT& cBitsGrainP , byteT*& pbIdRegionP , byteT*& pbIdAllocP , vmRegionS*& pVmRegionP , vmRegionS*& pVmRegionAllocP , countT hProcessP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340fe.thirdC.osRegionInfoF!||
- voidT osThreadF( tinS& tinP , countT& tidP , voidT* const tmFP , signC* const pSgnDoneP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , const countT cbStackP = 0 , const countT cbTlsP = 0 , const countT c1P = 0 , const countT c2P = 0 , const countT c3P = 0 , const countT c4P = 0 , const countT c5P = 0 , const countT c6P = 0 , const countT c7P = 0 , const countT c8P = 0 , const countT c9P = 0 , const countT caP = 0 , const countT cbP = 0 , const countT ccP = 0 , const countT cdP = 0 , const countT ceP = 0 , const countT cfP = 0 , const countT c01P = 0 , const countT c11P = 0 , const countT c21P = 0 , const countT c31P = 0 , const countT c41P = 0 , const countT c51P = 0 , const countT c61P = 0 , const countT c71P = 0 , const countT c81P = 0 , const countT c91P = 0 , const countT ca1P = 0 , const countT cb1P = 0 , const countT cc1P = 0 , const countT cd1P = 0 , const countT ce1P = 0 , const countT cf1P = 0 , const countT c02P = 0 ) ;
+ voidT osThreadF( tinS& tinP , countT& tidP , voidT* const tmFP , signC* const pSgnDoneP = 0 , countT* pcAliveP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , const countT cbStackP = 0 , const countT cbTlsP = 0 , const countT c1P = 0 , const countT c2P = 0 , const countT c3P = 0 , const countT c4P = 0 , const countT c5P = 0 , const countT c6P = 0 , const countT c7P = 0 , const countT c8P = 0 , const countT c9P = 0 , const countT caP = 0 , const countT cbP = 0 , const countT ccP = 0 , const countT cdP = 0 , const countT ceP = 0 , const countT cfP = 0 , const countT c01P = 0 , const countT c11P = 0 , const countT c21P = 0 , const countT c31P = 0 , const countT c41P = 0 , const countT c51P = 0 , const countT c61P = 0 , const countT c71P = 0 , const countT c81P = 0 , const countT c91P = 0 , const countT ca1P = 0 , const countT cb1P = 0 , const countT cc1P = 0 , const countT cd1P = 0 , const countT ce1P = 0 , const countT cf1P = 0 , const countT c02P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340dc.thirdC.osThreadF!||
  static voidT osThreadLaunchHeartbeatIF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3414c.thirdC.osThreadLaunchHeartbeatIF!||
@@ -33117,7 +33117,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34064.etherC.osSleepF!||
  voidT osSleepF( tinS& tinP , const countT time1P , const sCountT time2P , const countT timeGrain1P , const sCountT timeGrain2P , const flagsT flagsP = flSLEEP_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340b6.etherC.osSleepF!||
- voidT osThreadF( tinS& tinP , countT& tidP , voidT* const tmFP , signC* const pSgnDoneP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , const countT cbStackP = 0 , const countT cbTlsP = 0 , const countT c1P = 0 , const countT c2P = 0 , const countT c3P = 0 , const countT c4P = 0 , const countT c5P = 0 , const countT c6P = 0 , const countT c7P = 0 , const countT c8P = 0 , const countT c9P = 0 , const countT caP = 0 , const countT cbP = 0 , const countT ccP = 0 , const countT cdP = 0 , const countT ceP = 0 , const countT cfP = 0 , const countT c01P = 0 , const countT c11P = 0 , const countT c21P = 0 , const countT c31P = 0 , const countT c41P = 0 , const countT c51P = 0 , const countT c61P = 0 , const countT c71P = 0 , const countT c81P = 0 , const countT c91P = 0 , const countT ca1P = 0 , const countT cb1P = 0 , const countT cc1P = 0 , const countT cd1P = 0 , const countT ce1P = 0 , const countT cf1P = 0 , const countT c02P = 0 ) ;
+ voidT osThreadF( tinS& tinP , countT& tidP , voidT* const tmFP , signC* const pSgnDoneP = 0 , countT* pcAliveP = 0 , const flagsT flagsP = flTHREADlAUNCH_null , const countT cbStackP = 0 , const countT cbTlsP = 0 , const countT c1P = 0 , const countT c2P = 0 , const countT c3P = 0 , const countT c4P = 0 , const countT c5P = 0 , const countT c6P = 0 , const countT c7P = 0 , const countT c8P = 0 , const countT c9P = 0 , const countT caP = 0 , const countT cbP = 0 , const countT ccP = 0 , const countT cdP = 0 , const countT ceP = 0 , const countT cfP = 0 , const countT c01P = 0 , const countT c11P = 0 , const countT c21P = 0 , const countT c31P = 0 , const countT c41P = 0 , const countT c51P = 0 , const countT c61P = 0 , const countT c71P = 0 , const countT c81P = 0 , const countT c91P = 0 , const countT ca1P = 0 , const countT cb1P = 0 , const countT cc1P = 0 , const countT cd1P = 0 , const countT ce1P = 0 , const countT cf1P = 0 , const countT c02P = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34065.etherC.osThreadF!||
  voidT osThreadAdamF( tinS& tinP , countT idAdamP , const strokeS* const psttArgsP = 0 , const flagsT flagsP = flOStHREADaDAMf_null , signC* const pSgnDoneP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341aa.etherC.osThreadAdamF!||
@@ -47419,3 +47419,187 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listingOfSet_countTstrz_C : 1snip.150001b0.listingOfSet_countTstrz_C END
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listOfSet_listingVSP_C : public listOfSetC , public datum_listingVSP_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_listingVSP_C.NEWdELcLASSb!||
+    ~listOfSet_listingVSP_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_listingVSP_C.dt_list_listingVSP_C!||
+    listOfSet_listingVSP_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const listingOfSetC& listingOfSetP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_listingVSP_C.list_listingVSP_C!||
+
+    inline sCountT operator -( const listOfSet_listingVSP_C& lP ) const { return this - &lP ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listOfSet_blob_C : public listOfSetC , public datum_blob_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_blob_C.NEWdELcLASSb!||
+    ~listOfSet_blob_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_blob_C.dt_list_blob_C!||
+    listOfSet_blob_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const countT idLineNewP , const countT idiFileNewP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_blob_C.list_blob_C!||
+    voidT assignF( tinS& tinP , const byteT* const pbP , const countT cbP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_blob_C.operator_assign!||
+
+    //inline operator byteT*( voidT ) const { return datum_blob_C::operator byteT*() ; }
+    inline sCountT operator -( const listOfSet_blob_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const byteT*)*this , (const byteT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listOfSet_countTstrz_C : public listOfSetC , public datum_countTstrz_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countTstrz_C.NEWdELcLASSb!||
+    ~listOfSet_countTstrz_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countTstrz_C.dt_list_countTstrz_C!||
+    listOfSet_countTstrz_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const countT* const pczP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countTstrz_C.list_countTstrz_C!||
+    voidT operator =( const countT* const pcP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.list_countTstrz_C.operator_assign!||
+
+    //inline operator countT*( voidT ) const { return datum_countTstrz_C::operator countT*() ; }
+    inline sCountT operator -( const listOfSet_countTstrz_C& lP ) const { TINSL return thirdC::c_strcmpIF( tinP , (const countT*)*this , (const countT*)lP ) ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listingOfSet_listingVSP_C : public listingOfSetC , public datum_listingVSP_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listing_listingVSP_C.NEWdELcLASSb!||
+    ~listingOfSet_listingVSP_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listing_listingVSP_C.dt_listing_listingVSP_C!||
+    listingOfSet_listingVSP_C( tinS& tinP , const listOfSetC& listOfSetDadP , const listingOfSetC& listingOfSetP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_listingVSP_C.listing_listingVSP_C!||
+
+    inline sCountT operator -( const listingOfSet_listingVSP_C& lP ) const { return this - &lP ; }
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listOfSet_countT_C : public listOfSetC , public datum_countT_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countT_C.NEWdELcLASSb!||
+    ~listOfSet_countT_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countT_C.dt_list_countT_C!||
+    listOfSet_countT_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const countT valueP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countT_C.list_countT_C!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
