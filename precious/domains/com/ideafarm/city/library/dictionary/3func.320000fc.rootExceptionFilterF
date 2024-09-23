@@ -10,13 +10,130 @@
 #undef CsLOTSrESTART
 
 }
-    else return rootExceptionFilterWorker1F( pvOsInfoP ) ;
+    return rc ;
+
     }
-        return - 1 ;
+        }
+            }
+                }
+                    rc = rootExceptionFilterWorker2F( pvOsInfoP ) ;
+                    CONoUTrAW( "\r\nnot enough stack space available to call rootExceptionFilterWorker1F\r\n" ) ;
+                {
+                else if( !bWorker1StackFrameAOK )
+                if( !*prFloat ) rc = rootExceptionFilterWorker1F( pvOsInfoP ) ;
+
+                // ====================================================================================================================================================================================================
+                // ========                 ===========================================================================================================================================================================
+                // ========  RESTART POINT  ===========================================================================================================================================================================
+                // ========                 ===========================================================================================================================================================================
+                // ====================================================================================================================================================================================================
+                getRegsAM( prFloat->pcRegisters ) ;
+            {
+            if( prFloat )
+
+            }
+                }
+                    break ;
+                    prFloat = new( 0 , (byteT*)( (restartC*)pbzTop + offm ) , sizeof( restartC ) ) restartC( prFloat ) ;
+                {
+                if( !setIfZeAM( ((restartC*)pbzTop)[ offm ].osTid , osTidMe ) )
+            {
+            for( countT offm = 0 ; offm < CsLOTSrESTART ; offm ++ )
+        {
+        else
+        }
+            //CONoUTrAW( "rootExceptionFilterF/2/1/-\r\n" ) ;
+            rc = EXCEPTION_CONTINUE_EXECUTION ;
+
+            #endif
+                osInfo.ContextRecord->SegCs  = prFloat->pcRegisters[ 0xf ] ;
+                osInfo.ContextRecord->SegSs  = prFloat->pcRegisters[ 0xe ] ;
+                osInfo.ContextRecord->SegGs  = prFloat->pcRegisters[ 0xd ] ;
+                osInfo.ContextRecord->SegFs  = prFloat->pcRegisters[ 0xc ] ;
+                osInfo.ContextRecord->SegEs  = prFloat->pcRegisters[ 0xb ] ;
+                osInfo.ContextRecord->SegDs  = prFloat->pcRegisters[ 0xa ] ;
+                osInfo.ContextRecord->EFlags = prFloat->pcRegisters[ 0x9 ] ;
+                osInfo.ContextRecord->Eip    = prFloat->pcRegisters[ 0x8 ] ;
+                osInfo.ContextRecord->Esp    = prFloat->pcRegisters[ 0x7 ] ;
+                osInfo.ContextRecord->Ebp    = prFloat->pcRegisters[ 0x6 ] ;
+                osInfo.ContextRecord->Edi    = prFloat->pcRegisters[ 0x5 ] ;
+                osInfo.ContextRecord->Esi    = prFloat->pcRegisters[ 0x4 ] ;
+                osInfo.ContextRecord->Edx    = prFloat->pcRegisters[ 0x3 ] ;
+                osInfo.ContextRecord->Ecx    = prFloat->pcRegisters[ 0x2 ] ;
+                osInfo.ContextRecord->Ebx    = prFloat->pcRegisters[ 0x1 ] ;
+                osInfo.ContextRecord->Eax    = prFloat->pcRegisters[ 0x0 ] ;
+            #if defined( __NT__ )
+    
+            if( !( F(prFloat->flags) & flRESTARTc_DOnOTtALLY ) ) prFloat->cRestarted ++ ;
+        {
+        if( prFloat ) //IF I HAVE ALREADY CREATED A restartC OBJECT FOR THIS THREAD THEN EXCEPTION MUST HAVE OCCURED WHILE I WAS EXECUTING
+
+        _EXCEPTION_POINTERS& osInfo = *(_EXCEPTION_POINTERS*)pvOsInfoP ;
+
+        }
+            if( !prFloat ) idInThread = 1 + incv02AM( idInThreadLath ) ;
+            static countT idInThreadLath ;
+        {
+        static ZE( countT , idInThread ) ;     // THE SERIAL NUMBER OF EACH THREAD THAT WAS NOT IN THE LOOKUP TABLE ; WILL BE 0 IF I FOUND MYSELF IN THAT TABLE
+
+        }
+            }
+                break ;
+                prFloat = (restartC*)pbzTop + offm ;
+            {
+            if( osTidMe == ((restartC*)pbzTop)[ offm ].osTid )
+        {
+        for( offm = 0 ; offm < CsLOTSrESTART ; offm ++ )
+        static countT offm ;
+        static ZE( restartC* , prFloat ) ; // "FLOAT": "THIS restartC INSTANCE FLOATS ABOVE THE TOP restartC INSTANCE IN THE RESTART STACK FOR THIS THREAD" ; IT IS USED TO DETECT AND RECOVER FROM EXCEPTIONS THAT OCCUR IN ME
+
+                      osTidMe = _brcRaw ;
+        static countT osTidMe ;
+        BOSnOtIN( GetCurrentThreadId() )
+        static ZE( countT , _brcRaw ) ;
+        static byteT pbzTop[ CsLOTSrESTART * sizeof( restartC ) ] ;
+
+#endif
+        }
+            default                                 : { CONoUTrAW( "\r\nunknown exception code\r\n"             ) ; break ; }
+            case EXCEPTION_STACK_OVERFLOW           : { CONoUTrAW( "\r\nEXCEPTION_STACK_OVERFLOW\r\n"           ) ; break ; }
+            case EXCEPTION_SINGLE_STEP              : { CONoUTrAW( "\r\nEXCEPTION_SINGLE_STEP\r\n"              ) ; break ; }
+            case EXCEPTION_PRIV_INSTRUCTION         : { CONoUTrAW( "\r\nEXCEPTION_PRIV_INSTRUCTION\r\n"         ) ; break ; }
+            case EXCEPTION_NONCONTINUABLE_EXCEPTION : { CONoUTrAW( "\r\nEXCEPTION_NONCONTINUABLE_EXCEPTION\r\n" ) ; break ; }
+            case EXCEPTION_INVALID_DISPOSITION      : { CONoUTrAW( "\r\nEXCEPTION_INVALID_DISPOSITION\r\n"      ) ; break ; }
+            case EXCEPTION_INT_OVERFLOW             : { CONoUTrAW( "\r\nEXCEPTION_INT_OVERFLOW\r\n"             ) ; break ; }
+            case EXCEPTION_INT_DIVIDE_BY_ZERO       : { CONoUTrAW( "\r\nEXCEPTION_INT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
+            case EXCEPTION_IN_PAGE_ERROR            : { CONoUTrAW( "\r\nEXCEPTION_IN_PAGE_ERROR\r\n"            ) ; break ; }
+            case EXCEPTION_ILLEGAL_INSTRUCTION      : { CONoUTrAW( "\r\nEXCEPTION_ILLEGAL_INSTRUCTION\r\n"      ) ; break ; }
+            case EXCEPTION_FLT_UNDERFLOW            : { CONoUTrAW( "\r\nEXCEPTION_FLT_UNDERFLOW\r\n"            ) ; break ; }
+            case EXCEPTION_FLT_STACK_CHECK          : { CONoUTrAW( "\r\nEXCEPTION_FLT_STACK_CHECK\r\n"          ) ; break ; }
+            case EXCEPTION_FLT_OVERFLOW             : { CONoUTrAW( "\r\nEXCEPTION_FLT_OVERFLOW\r\n"             ) ; break ; }
+            case EXCEPTION_FLT_INVALID_OPERATION    : { CONoUTrAW( "\r\nEXCEPTION_FLT_INVALID_OPERATION\r\n"    ) ; break ; }
+            case EXCEPTION_FLT_INEXACT_RESULT       : { CONoUTrAW( "\r\nEXCEPTION_FLT_INEXACT_RESULT\r\n"       ) ; break ; }
+            case EXCEPTION_FLT_DIVIDE_BY_ZERO       : { CONoUTrAW( "\r\nEXCEPTION_FLT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
+            case EXCEPTION_FLT_DENORMAL_OPERAND     : { CONoUTrAW( "\r\nEXCEPTION_FLT_DENORMAL_OPERAND\r\n"     ) ; break ; }
+            case EXCEPTION_DATATYPE_MISALIGNMENT    : { CONoUTrAW( "\r\nEXCEPTION_DATATYPE_MISALIGNMENT\r\n"    ) ; break ; }
+            case EXCEPTION_BREAKPOINT               : { CONoUTrAW( "\r\nEXCEPTION_BREAKPOINT\r\n"               ) ; break ; }
+            case EXCEPTION_ARRAY_BOUNDS_EXCEEDED    : { CONoUTrAW( "\r\nEXCEPTION_ARRAY_BOUNDS_EXCEEDED\r\n"    ) ; break ; }
+            case EXCEPTION_ACCESS_VIOLATION         : { CONoUTrAW( "\r\nEXCEPTION_ACCESS_VIOLATION\r\n"         ) ; break ; }
+        {
+        switch( ec )
+
+                      ec = pOsInfo->ExceptionRecord->ExceptionCode ;
+        static countT ec ;
+
+                                    pOsInfo = (_EXCEPTION_POINTERS*)pvOsInfoP ;
+        static _EXCEPTION_POINTERS* pOsInfo ;
+#if defined( NEVERdEFINED )
+    {
+    else
+    }
+        rc = - 1 ;
         LOGrAW(    "\r\nrootExceptionFilterF / !exception: !pvOsInfoP\r\n" ) ;
         CONoUTrAW( "\r\nrootExceptionFilterF / !exception: !pvOsInfoP\r\n" ) ;
     {
     if( !pvOsInfoP )
+    static countT rc ;                                                                        // static IS USED TO MINIMIZE / ELIMINATE THE USE OF THE THREAD STACK
 {
 /*1*/unsigned _export _stdcall rootExceptionFilterF( voidT* pvOsInfoP )/*1*/
 
@@ -211,7 +328,7 @@
             switch( eTypeReport )
             //CONoUTrAW( "rootExceptionFilterF/2/2/1\r\n" ) ;
 
-            else                                                                                                                                   eTypeReport = normalE        ; // FULL INFORMATION
+            else                                                                                                                                       eTypeReport = normalE        ; // FULL INFORMATION
             else if( /*idInThread == 1 ||*/ ( prFloat && *prFloat == 1 ) || !pTinOffender || getNegAM( pTinOffender->fingerprint ) != FINGERnEG_TINs ) eTypeReport = shortE         ; // NO tinS INFORMATION
             else if( /*idInThread == 2 ||*/ ( prFloat && *prFloat == 2 )                                                                             ) eTypeReport = tinyE          ; // NO INFO ; JUST A SINGLE LINE OF TEXT TO INDICATE THAT THE SHORT REPORT COULD NOT BE WRITTEN
                  if( /*idInThread >= 3 ||*/ ( prFloat && *prFloat >= 3 )                                                                             ) eTypeReport = nullE          ; // PREVENTS SPIN 
@@ -325,11 +442,54 @@
 
                                                 //20240327@2239:  ENABLED CALL TO dosExitProcessIF AT END OF ME SO THAT THE PRECEDING COMMENT IS NOW OBSOLETE ; THERE WILL BE NO SECOND CHANCE DEBUG EVENT
     countT rc = EXCEPTION_CONTINUE_SEARCH ;     //20210716@1607:  CHANGED "EXCEPTION_EXECUTE_HANDLER" TO "EXCEPTION_CONTINUE_SEARCH" WITHOUT ANALYSIS SO THAT GLASS2 WILL RECEIVE OOTH CHANCE DEBUG EVENT NOTICE
-    static flagsT flagsResult = flEXCEPTIONrESULT_null ;
+                  flagsResult = flEXCEPTIONrESULT_null ;
+    static flagsT flagsResult ;
 
     CONoUTrAW( "rootExceptionFilterF/+\r\n" ) ;
+    bWorker1StackFrameAOK = 1 ;
 {
 countT rootExceptionFilterWorker1F( voidT* pvOsInfoP )
+
+}
+    return EXCEPTION_CONTINUE_SEARCH ;
+    thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSiMPOTENT ) ;
+
+    }
+        default                                 : { CONoUTrAW( "\r\nunknown exception code\r\n"             ) ; break ; }
+        case EXCEPTION_STACK_OVERFLOW           : { CONoUTrAW( "\r\nEXCEPTION_STACK_OVERFLOW\r\n"           ) ; break ; }
+        case EXCEPTION_SINGLE_STEP              : { CONoUTrAW( "\r\nEXCEPTION_SINGLE_STEP\r\n"              ) ; break ; }
+        case EXCEPTION_PRIV_INSTRUCTION         : { CONoUTrAW( "\r\nEXCEPTION_PRIV_INSTRUCTION\r\n"         ) ; break ; }
+        case EXCEPTION_NONCONTINUABLE_EXCEPTION : { CONoUTrAW( "\r\nEXCEPTION_NONCONTINUABLE_EXCEPTION\r\n" ) ; break ; }
+        case EXCEPTION_INVALID_DISPOSITION      : { CONoUTrAW( "\r\nEXCEPTION_INVALID_DISPOSITION\r\n"      ) ; break ; }
+        case EXCEPTION_INT_OVERFLOW             : { CONoUTrAW( "\r\nEXCEPTION_INT_OVERFLOW\r\n"             ) ; break ; }
+        case EXCEPTION_INT_DIVIDE_BY_ZERO       : { CONoUTrAW( "\r\nEXCEPTION_INT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
+        case EXCEPTION_IN_PAGE_ERROR            : { CONoUTrAW( "\r\nEXCEPTION_IN_PAGE_ERROR\r\n"            ) ; break ; }
+        case EXCEPTION_ILLEGAL_INSTRUCTION      : { CONoUTrAW( "\r\nEXCEPTION_ILLEGAL_INSTRUCTION\r\n"      ) ; break ; }
+        case EXCEPTION_FLT_UNDERFLOW            : { CONoUTrAW( "\r\nEXCEPTION_FLT_UNDERFLOW\r\n"            ) ; break ; }
+        case EXCEPTION_FLT_STACK_CHECK          : { CONoUTrAW( "\r\nEXCEPTION_FLT_STACK_CHECK\r\n"          ) ; break ; }
+        case EXCEPTION_FLT_OVERFLOW             : { CONoUTrAW( "\r\nEXCEPTION_FLT_OVERFLOW\r\n"             ) ; break ; }
+        case EXCEPTION_FLT_INVALID_OPERATION    : { CONoUTrAW( "\r\nEXCEPTION_FLT_INVALID_OPERATION\r\n"    ) ; break ; }
+        case EXCEPTION_FLT_INEXACT_RESULT       : { CONoUTrAW( "\r\nEXCEPTION_FLT_INEXACT_RESULT\r\n"       ) ; break ; }
+        case EXCEPTION_FLT_DIVIDE_BY_ZERO       : { CONoUTrAW( "\r\nEXCEPTION_FLT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
+        case EXCEPTION_FLT_DENORMAL_OPERAND     : { CONoUTrAW( "\r\nEXCEPTION_FLT_DENORMAL_OPERAND\r\n"     ) ; break ; }
+        case EXCEPTION_DATATYPE_MISALIGNMENT    : { CONoUTrAW( "\r\nEXCEPTION_DATATYPE_MISALIGNMENT\r\n"    ) ; break ; }
+        case EXCEPTION_BREAKPOINT               : { CONoUTrAW( "\r\nEXCEPTION_BREAKPOINT\r\n"               ) ; break ; }
+        case EXCEPTION_ARRAY_BOUNDS_EXCEEDED    : { CONoUTrAW( "\r\nEXCEPTION_ARRAY_BOUNDS_EXCEEDED\r\n"    ) ; break ; }
+        case EXCEPTION_ACCESS_VIOLATION         : { CONoUTrAW( "\r\nEXCEPTION_ACCESS_VIOLATION\r\n"         ) ; break ; }
+    {
+    switch( ec2 )
+
+                  ec2 = pOsInfo2->ExceptionRecord->ExceptionCode ;
+    static countT ec2 ;
+
+                                pOsInfo2 = (_EXCEPTION_POINTERS*)pvOsInfoP ;
+    static _EXCEPTION_POINTERS* pOsInfo2 ;
+
+    CONoUTrAW( "\r\nI GIVE UP!\r\n" ) ;
+{
+countT rootExceptionFilterWorker2F( voidT* pvOsInfoP )
+
+static boolT bWorker1StackFrameAOK ;
 
 #define CsLOTSrESTART 0x10
 
