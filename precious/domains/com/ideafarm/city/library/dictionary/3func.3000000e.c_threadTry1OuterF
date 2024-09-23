@@ -30,13 +30,25 @@
 }
     return rc ;
 
-    printf( "\r\nrptExceptionF / called  rootExceptionFilterF [bMainP,pInfoP,rc]:    %d    %d    %d\r\n" , bMainP , (int)pInfoP , rc ) ;
-    rc = (*(rootExceptionFilter_NT_FT)pExceptionHandlerFP)( (EXCEPTION_POINTERS*)pInfoP ) ;  //U:: rc MIGHT NEED TO BE OBEYED FOR E.G. restartC HANDLING
-    printf( "\r\nrptExceptionF / calling rootExceptionFilterF [bMainP,pInfoP]:    %d    %d\r\n" , bMainP , (int)pInfoP ) ;
+    }
+        }
+            printf( "\r\nrootExceptionFilterF excepted [bMainP,pInfoP]:    %d    %d\r\n" , bMainP , (int)pInfoP ) ;
+        {
+        default :
+        }
+            printf( "\r\nrptExceptionF / called  rootExceptionFilterF [bMainP,pInfoP,rc]:    %d    %d    %d\r\n" , bMainP , (int)pInfoP , rc ) ;
+            rc = (*(rootExceptionFilter_NT_FT)pExceptionHandlerFP)( (EXCEPTION_POINTERS*)pInfoP ) ;  //U:: rc MIGHT NEED TO BE OBEYED FOR E.G. restartC HANDLING
+            printf( "\r\nrptExceptionF / calling rootExceptionFilterF [bMainP,pInfoP]:    %d    %d\r\n" , bMainP , (int)pInfoP ) ;
+        {
+        case 1 :
+    {
+    switch( ++ idExceptionLath )
 
     unsigned rc = 0 ;
 {
 int rptExceptionF( EXCEPTION_POINTERS* pInfoP , unsigned pExceptionHandlerFP , unsigned bMainP )
+
+unsigned idExceptionLath ;
 
 typedef long _stdcall (*rootExceptionFilter_NT_FT)( EXCEPTION_POINTERS* ) ;       //CS:DUPLICATEcODE: 3500114d 3000000e
 

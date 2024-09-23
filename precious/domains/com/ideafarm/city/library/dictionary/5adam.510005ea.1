@@ -16,13 +16,17 @@ TODO
 
 DONE( tmWorkF )
 }
+    sgnDone2.waitF(  tinP ) ;
+    sgnDone1.waitF(  tinP ) ;
     etThread.loafIF( tinP ) ;
 
     if( POOP ) { CONoUTrAW( "loafing with POOP in my pants\r\n" ) ; }
 
-    etThread.osThreadF( TaRG1( tmReportLocalNodesF      ) , (countT)&napNodeList ) ;
-    etThread.osThreadF( TaRG1( tmSayNodeAdvertisementF  )                        ) ;
-    etThread.osThreadF( TaRG1( tmHearNodeAdvertisementF ) , (countT)&napNodeList ) ;
+    etThread.osThreadF( TaRG2sGNdONE( tmReportLocalNodesF      , sgnDone2 ) , (countT)&napNodeList ) ;
+    etThread.osThreadF( TaRG1( tmSayNodeAdvertisementF                    )                        ) ;
+    etThread.osThreadF( TaRG2sGNdONE( tmHearNodeAdvertisementF , sgnDone1 ) , (countT)&napNodeList ) ;
+    signC sgnDone2( tinP , TAG( TAGiDnULL ) ) ;
+    signC sgnDone1( tinP , TAG( TAGiDnULL ) ) ;
 
     THREADmODE4rESTORE
     }
@@ -127,7 +131,6 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
-
 
 DONE( tmReportLocalNodesF )
 }

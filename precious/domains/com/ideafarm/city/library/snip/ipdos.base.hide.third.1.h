@@ -31668,7 +31668,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend class cC ;                                                                                                                                                                                                                                          \
  friend class windowOldC ; /*U::WORKAROUND SO THAT wrapRenderF CAN SEE 2 *IfcRenderingHander* MEMBERS.  THESE MEMBERS SHOULD PROBABLY BE MOVED TO thirdC */                                                                                                    \
  friend class paperOldC  ; /*U::WORKAROUND SO THAT wrapRenderF CAN SEE 2 *IfcRenderingHander* MEMBERS.  THESE MEMBERS SHOULD PROBABLY BE MOVED TO thirdC */                                                                                                    \
- friend unsigned _stdcall rootExceptionFilterF( void* pvOsInfoP ) ;                                                                                                                                                                              \
+ friend countT rootExceptionFilterWorker1F( void* pvOsInfoP ) ;                                                                                                                                                                              \
  friend boolT thirdC::osExceptionHandlerWorkIF( const countT cArgP ) ;
 
 
@@ -32196,7 +32196,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend batonC::batonC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const countT idGroupP , const flagsT flagsP , byteT* const pbZombieP , const countT cbZombieP , const countT idMemorySpaceP ) ;       \
  friend voidT handleC::closeIfF( voidT ) ;                                                                                                                                                                                                                  \
  friend voidT handleC::cloneF( const handleC& handleP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP ) ;                                                                                                          \
- friend unsigned _stdcall rootExceptionFilterF( void* pvOsInfoP ) ;                                                                                                                                                                              \
+ friend countT rootExceptionFilterWorker1F( void* pvOsInfoP ) ;                                                                                                                                                                              \
  friend class infoFileS ;                                                                                                                                                                                                                                   \
  friend class infoDisk1S ;                                                                                                                                                                                                                                  \
  friend class infoBoxGetPutS ;

@@ -16,7 +16,7 @@ etherC::loafIF( tinP ) ;
 
 //etherC::etherFireGroupIF( tinP ) ; //U:: TO FIND A BUG
 
-thirdC::ctrlCIF( tinP ) ;
+//thirdC::ctrlCIF( tinP ) ;
 
 etThread.traceF( tinP , T("ok") ) ;
 
@@ -41,7 +41,7 @@ etThread.traceF( tinP , T("ok") ) ;
 
     THREADmODE2rESTORE
     }
-        etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , &cAlive , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT | flTHREADlAUNCH_NOtINiNpOOL , CBsTACKmIN , 0 , (countT)&cReady ) ;
+        etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , &cAlive , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT | flTHREADlAUNCH_NOtINiNpOOL , CBsTACKmIN << 0 , 0 , (countT)&cReady ) ;
     {
     while( cDo -- )
     THREADmODE2oN( flTHREADmODE2_SUPPRESStELLmONITOR )
@@ -58,7 +58,7 @@ TODO
 DONEnOeTHERS( tmWorkF )
 THREADmODE4rESTORE
 }                                                           // ether AND etRock ARE AVAILABLE AS SHARED etherC INSTANCES
-    etRock.traceF( tinP , T("i've been fired") ) ;          // THIS CALL TO traceF CAUSES LOTS OF poolC DROP ALLOCATIONS, WHICH CAN FAIL DUE TO EXHAUSTION OF THE ADDRESS SPACE
+    //etRock.traceF( tinP , T("i've been fired") ) ;          // THIS CALL TO traceF CAUSES LOTS OF poolC DROP ALLOCATIONS, WHICH CAN FAIL DUE TO EXHAUSTION OF THE ADDRESS SPACE
     etherC::loafIF( tinP ) ;
     inc02AM( cReadyP ) ;
 
@@ -68,7 +68,9 @@ if( pTaskP && pTaskP->c1 )
 THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL ) ;
 TASKnOeTHERS( tmWorkF )
 
-#define CwORKERS ( 1 )
+//#define CwORKERS ( 0x1000 + 99 )
+
+#define CwORKERS ( 0x40 )
 //REDUCED TO MAKE ADDRESS SPACE AVAILABLE FOR THE traceF CALLS DURING TERMINATION
 
 //G BUT FAILS DURING QUIT: #define CwORKERS ( 0x1000 + 99 )

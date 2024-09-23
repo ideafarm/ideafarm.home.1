@@ -88,30 +88,35 @@
             TELL( "tinS: after setting processGlobal2I.flCt flag" )
             }
                 }
-                    #endif
-                        etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                    }
+                        //#endif
+                            etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
 
-                        OStEXTC(  ostoSay , pbThreadStackEnd , 0 ) ;
-                        OStEXTAK( ostoSay , "    " ) ;
-                        OStEXTC(  ostoSay , pbThreadStackStart , 0 ) ;
-                        OStEXTAK( ostoSay , "    " ) ;
-                        OStEXTC(  ostoSay , cbStack , 0 ) ;
-                        OStEXTAK( ostoSay , "    " ) ;
-                        OStEXTC(  ostoSay , idThreadP , 0 ) ;
-                        OStEXTAK( ostoSay , "tinS [idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    " ) ;
-                        OStEXT(   ostoSay , TUCK << 1 ) ;
+                            OStEXTAK( ostoSay , "_" ) ;
+                            OStEXTCF( ostoSay , pbThreadStackEnd , '0' ) ;
+                            OStEXTAK( ostoSay , "_    " ) ;
+                            OStEXTCF( ostoSay , pbThreadStackStart , '0' ) ;
+                            OStEXTAK( ostoSay , "    " ) ;
+                            OStEXTC(  ostoSay , cbStack , '0' ) ;
+                            OStEXTAK( ostoSay , "    " ) ;
+                            OStEXTC(  ostoSay , idThreadP , '0' ) ;
+                            OStEXTAK( ostoSay , "tinS [idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    " ) ;
+                            OStEXT(   ostoSay , TUCK << 1 ) ;
 
-                        countT cbStack       = pbThreadStackEnd - pbThreadStackStart ;
-                    #if defined( NEVERdEFINED )
+                            countT cbStack       = pbThreadStackEnd - pbThreadStackStart ;
+                        //#if defined( NEVERdEFINED )
 
-                    *(countT*)&pbThreadStackEnd   = (countT)info.BaseAddress + info.RegionSize ;
-                    *(countT*)&pbThreadStackStart = (countT)info.AllocationBase ;
-                    VirtualQuery( (byteT*)ebpP , &info , sizeof info ) ;
-                    MEMORY_BASIC_INFORMATION info ;
-                {
-                if( this == &tinSelfOrElderP )
+                        // EXAMPLE: tinS [idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    40000000    00002000    15b20000_    15b40000_
+                        //          123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0
+                        //          0              1               2               3               4               5               6               7
 
-                }
+                        *(countT*)&pbThreadStackEnd   = (countT)info.BaseAddress + info.RegionSize ;
+                        *(countT*)&pbThreadStackStart = (countT)info.AllocationBase ;
+                        VirtualQuery( (byteT*)ebpP , &info , sizeof info ) ;
+                        MEMORY_BASIC_INFORMATION info ;
+                    {
+                    if( idTinNamed == ifcIDtINnAMED_tinInPoolMain || this == &tinSelfOrElderP )
+
                     }
                         etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;
 
@@ -128,9 +133,9 @@
                     {
                     if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_CHATTERtHREADcTdT )
                 {
-                if( this == &tinSelfOrElderP && idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI && idTinNamed != ifcIDtINnAMED_tinVeryVeryEarlyLateMainI )
+                if( idTinNamed == ifcIDtINnAMED_tinInPoolMain || ( this == &tinSelfOrElderP && idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI && idTinNamed != ifcIDtINnAMED_tinVeryVeryEarlyLateMainI ) )
             {
-            if( F(processGlobal2I.flCt) & flCTdTg_WITHINlIFETIMEoFmAIN && !( F(processGlobal2I.flDt) & flCTdTg_WITHINlIFETIMEoFmAIN ) )                                                                       //THIS IS TO AVOID CLUTTERING THE LOG FILE
+            //if( F(processGlobal2I.flCt) & flCTdTg_WITHINlIFETIMEoFmAIN && !( F(processGlobal2I.flDt) & flCTdTg_WITHINlIFETIMEoFmAIN ) )                                                                       //THIS IS TO AVOID CLUTTERING THE LOG FILE
 
             }
                 }
