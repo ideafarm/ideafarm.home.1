@@ -6,54 +6,60 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-
-//VISIBLE
-
 REST
 
-//etThread.loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
-
-}
-    etThread.delF( tinP , psttr ) ;
-
-    //etThread.strokeF( tinP , T("\r\n\r\nthis report has been copied onto this computer's clipboard\r\n \r\n")+T(psttr) ) ;
-    //etThread.osClipboardLetGoF( tinP ) ;
-    //etThread.osClipboardWriteF( tinP , psttr ) ;
-    //etThread.osClipboardGrabF( tinP ) ;
-    //etThread.traceF( tinP , T("copying report to clipboard") ) ;
-
-    etThread.delF( tinP , postr ) ;
-    etThread.boxPutF( tinP , T("///ideafarm/upload/dictionary.measurements.txt") , postr , costr ) ;
-    countT costr = etThread.strMakeF( tinP , LF , postr , psttr ) ; ___( postr ) ;
-    ZE( osTextT* , postr ) ;
-
-    measurements.strReportF( tinP , psttr ) ; ___( psttr ) ;
-    ZE( strokeS* , psttr ) ;
-    etThread.traceF( tinP , T("writing report") ) ;
-
-    FORsTRINGSiNsPANNEDcOMBINEDtAIL1
-    }
-        etThread.winSetTitleF( tinP , TF1(cToDo) ) ;
-        etThread.strokeF( tinP , T("\f")+TF1(cToDo) ) ;
-
-        inspectF( tinP , etThread , measurements , psttc1 ) ;
-
-        if( etThread.strIdF( tinP , T(".ico") , psttc1 ) ) continue ;
-        if( ether ) break ;
-
-        etThread.traceF( tinP , T("inspecting [cRemaining]:    ")+TF2(--cToDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    {
-    FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-    etThread.traceF( tinP , T("inspecting files") ) ;
-
-    countT cToDo  = etThread.boxMenuF( tinP , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/*") ) ;
-    soulC soul1m( tinP , TAG( TAGiDnULL ) , flSOUL_null , "soul.clean.menu" , TOCK << 6 ) ;
-    etThread.traceF( tinP , T("getting the file list") ) ;
-{
-measurementsS measurements( tinP , etThread ) ;
+sgnDone_tmWorkF.waitF( tinP ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
 
 TODO
+
+DONE( tmWorkF )
+}
+    //etThread.loafIF( tinP ) ;
+    etThread.traceF( tinP , T("ok") ) ;
+
+    }
+        etThread.delF( tinP , psttr ) ;
+
+        //etThread.strokeF( tinP , T("\r\n\r\nthis report has been copied onto this computer's clipboard\r\n \r\n")+T(psttr) ) ;
+        //etThread.osClipboardLetGoF( tinP ) ;
+        //etThread.osClipboardWriteF( tinP , psttr ) ;
+        //etThread.osClipboardGrabF( tinP ) ;
+        //etThread.traceF( tinP , T("copying report to clipboard") ) ;
+
+        etThread.delF( tinP , postr ) ;
+        etThread.boxPutF( tinP , T("///ideafarm/upload/dictionary.measurements.txt") , postr , costr ) ;
+        countT costr = etThread.strMakeF( tinP , LF , postr , psttr ) ; ___( postr ) ;
+        ZE( osTextT* , postr ) ;
+
+        measurements.strReportF( tinP , psttr ) ; ___( psttr ) ;
+        ZE( strokeS* , psttr ) ;
+        etThread.traceF( tinP , T("writing report") ) ;
+
+        FORsTRINGSiNsPANNEDcOMBINEDtAIL1
+        }
+            etThread.winSetTitleF( tinP , TF1(cToDo) ) ;
+            etThread.strokeF( tinP , T("\f")+TF1(cToDo) ) ;
+
+            inspectF( tinP , etThread , measurements , psttc1 ) ;
+
+            if( etThread.strIdF( tinP , T(".ico") , psttc1 ) ) continue ;
+            if( ether ) break ;
+
+            etThread.traceF( tinP , T("inspecting [cRemaining]:    ")+TF2(--cToDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        {
+        FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
+        etThread.traceF( tinP , T("inspecting files") ) ;
+
+        countT cToDo  = etThread.boxMenuF( tinP , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/*") ) ;
+        soulC soul1m( tinP , TAG( TAGiDnULL ) , flSOUL_null , "soul.clean.menu" , TOCK << 6 ) ;
+        etThread.traceF( tinP , T("getting the file list") ) ;
+    {
+    measurementsS measurements( tinP , etThread ) ;
+{
+if( pTaskP )
+TASK( tmWorkF )
 
 }
     etThread.delF( tinP , psttNet ) ;

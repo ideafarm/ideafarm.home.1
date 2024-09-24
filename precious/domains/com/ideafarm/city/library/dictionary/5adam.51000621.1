@@ -150,7 +150,8 @@ DONE( tmWorkF )
 
         #endif
 
-            ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
+            ifcIDaDAM_ELF , ifcIDaDAM_CODEmEASUREMENTS
+            //ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
             //ifcIDaDAM_ELF , ifcIDaDAM_HEALaRCHIVES
             //ifcIDaDAM_ELF , ifcIDaDAM_SCRATCH0f
             //ifcIDaDAM_ELF , ifcIDaDAM_2GLASS2 , ifcIDaDAM_SCRATCH0f
@@ -943,7 +944,7 @@ TASK( tmWorkF )
                     if( idAdam < ifcIDaDAM_SCRATCH01 )
                 {
                 default :
-
+#endif
                 }
                     break ;
 
@@ -954,7 +955,8 @@ TASK( tmWorkF )
                     ether.ifcHireF( tinP , T("621") , idAdam , T("!faceHear \"\" !noTells") , flagsHire ) ;
                     ether.traceF( tinP , T("hiring ")+tAdam ) ;
                 {
-                case ifcIDaDAM_CODEmEASUREMENTS :
+                case ifcIDaDAM_CODEmEASUREMENTS :           //U:: ENABLE THIS CASE IN PRODUCTION
+#if defined( NEVERdEFINED )
 
                 }
                     break ;
@@ -1057,7 +1059,7 @@ TASK( tmWorkF )
                 case ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1          :
                 case ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER             :
                 case ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK             :
-              //case ifcIDaDAM_CODEmEASUREMENTS                      :
+                case ifcIDaDAM_CODEmEASUREMENTS                      : //U::COMMENT OUT THIS LINE IN PRODUCTION
                 case ifcIDaDAM_ROOTmAILoUT                           :
                 case ifcIDaDAM_TIME                                  :
                 case ifcIDaDAM_SNAPwORDS                             :
