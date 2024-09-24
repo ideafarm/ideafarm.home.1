@@ -16,11 +16,18 @@
         }
             }
                 }
-                    rc = rootExceptionFilterWorker2F( pvOsInfoP ) ;
-                    CONoUTrAW( "\r\nnot enough stack space available to call rootExceptionFilterWorker1F\r\n" ) ;
+                    }
+                        rc = rootExceptionFilterWorker2F( pvOsInfoP , ec ) ;
+                        thirdC::dosWriteStdOutAvoidStackIF( "\r\nnot enough stack space available to call rootExceptionFilterWorker1F\r\n" ) ;
+                    {
+                    else if( !bWorker1StackFrameAOK )
+                    if( !*prFloat ) rc = rootExceptionFilterWorker1F( pvOsInfoP , ec ) ;
                 {
-                else if( !bWorker1StackFrameAOK )
-                if( !*prFloat ) rc = rootExceptionFilterWorker1F( pvOsInfoP ) ;
+                else
+                }
+                    rc = rootExceptionFilterWorker2F( pvOsInfoP , ec ) ;
+                {
+                if( ec == EXCEPTION_STACK_OVERFLOW )
 
                 // ====================================================================================================================================================================================================
                 // ========                 ===========================================================================================================================================================================
@@ -42,7 +49,6 @@
         {
         else
         }
-            //CONoUTrAW( "rootExceptionFilterF/2/1/-\r\n" ) ;
             rc = EXCEPTION_CONTINUE_EXECUTION ;
 
             #endif
@@ -87,50 +93,53 @@
         static countT offm ;
         static ZE( restartC* , prFloat ) ; // "FLOAT": "THIS restartC INSTANCE FLOATS ABOVE THE TOP restartC INSTANCE IN THE RESTART STACK FOR THIS THREAD" ; IT IS USED TO DETECT AND RECOVER FROM EXCEPTIONS THAT OCCUR IN ME
 
-                      osTidMe = _brcRaw ;
-        static countT osTidMe ;
-        BOSnOtIN( GetCurrentThreadId() )
-        static ZE( countT , _brcRaw ) ;
         static byteT pbzTop[ CsLOTSrESTART * sizeof( restartC ) ] ;
 
-#endif
         }
-            default                                 : { CONoUTrAW( "\r\nunknown exception code\r\n"             ) ; break ; }
-            case EXCEPTION_STACK_OVERFLOW           : { CONoUTrAW( "\r\nEXCEPTION_STACK_OVERFLOW\r\n"           ) ; break ; }
-            case EXCEPTION_SINGLE_STEP              : { CONoUTrAW( "\r\nEXCEPTION_SINGLE_STEP\r\n"              ) ; break ; }
-            case EXCEPTION_PRIV_INSTRUCTION         : { CONoUTrAW( "\r\nEXCEPTION_PRIV_INSTRUCTION\r\n"         ) ; break ; }
-            case EXCEPTION_NONCONTINUABLE_EXCEPTION : { CONoUTrAW( "\r\nEXCEPTION_NONCONTINUABLE_EXCEPTION\r\n" ) ; break ; }
-            case EXCEPTION_INVALID_DISPOSITION      : { CONoUTrAW( "\r\nEXCEPTION_INVALID_DISPOSITION\r\n"      ) ; break ; }
-            case EXCEPTION_INT_OVERFLOW             : { CONoUTrAW( "\r\nEXCEPTION_INT_OVERFLOW\r\n"             ) ; break ; }
-            case EXCEPTION_INT_DIVIDE_BY_ZERO       : { CONoUTrAW( "\r\nEXCEPTION_INT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
-            case EXCEPTION_IN_PAGE_ERROR            : { CONoUTrAW( "\r\nEXCEPTION_IN_PAGE_ERROR\r\n"            ) ; break ; }
-            case EXCEPTION_ILLEGAL_INSTRUCTION      : { CONoUTrAW( "\r\nEXCEPTION_ILLEGAL_INSTRUCTION\r\n"      ) ; break ; }
-            case EXCEPTION_FLT_UNDERFLOW            : { CONoUTrAW( "\r\nEXCEPTION_FLT_UNDERFLOW\r\n"            ) ; break ; }
-            case EXCEPTION_FLT_STACK_CHECK          : { CONoUTrAW( "\r\nEXCEPTION_FLT_STACK_CHECK\r\n"          ) ; break ; }
-            case EXCEPTION_FLT_OVERFLOW             : { CONoUTrAW( "\r\nEXCEPTION_FLT_OVERFLOW\r\n"             ) ; break ; }
-            case EXCEPTION_FLT_INVALID_OPERATION    : { CONoUTrAW( "\r\nEXCEPTION_FLT_INVALID_OPERATION\r\n"    ) ; break ; }
-            case EXCEPTION_FLT_INEXACT_RESULT       : { CONoUTrAW( "\r\nEXCEPTION_FLT_INEXACT_RESULT\r\n"       ) ; break ; }
-            case EXCEPTION_FLT_DIVIDE_BY_ZERO       : { CONoUTrAW( "\r\nEXCEPTION_FLT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
-            case EXCEPTION_FLT_DENORMAL_OPERAND     : { CONoUTrAW( "\r\nEXCEPTION_FLT_DENORMAL_OPERAND\r\n"     ) ; break ; }
-            case EXCEPTION_DATATYPE_MISALIGNMENT    : { CONoUTrAW( "\r\nEXCEPTION_DATATYPE_MISALIGNMENT\r\n"    ) ; break ; }
-            case EXCEPTION_BREAKPOINT               : { CONoUTrAW( "\r\nEXCEPTION_BREAKPOINT\r\n"               ) ; break ; }
-            case EXCEPTION_ARRAY_BOUNDS_EXCEEDED    : { CONoUTrAW( "\r\nEXCEPTION_ARRAY_BOUNDS_EXCEEDED\r\n"    ) ; break ; }
-            case EXCEPTION_ACCESS_VIOLATION         : { CONoUTrAW( "\r\nEXCEPTION_ACCESS_VIOLATION\r\n"         ) ; break ; }
+            default                                 : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    unknown exception code\r\n"             ) ; break ; }
+            case EXCEPTION_STACK_OVERFLOW           : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_STACK_OVERFLOW\r\n"           ) ; break ; }
+            case EXCEPTION_SINGLE_STEP              : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_SINGLE_STEP\r\n"              ) ; break ; }
+            case EXCEPTION_PRIV_INSTRUCTION         : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_PRIV_INSTRUCTION\r\n"         ) ; break ; }
+            case EXCEPTION_NONCONTINUABLE_EXCEPTION : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_NONCONTINUABLE_EXCEPTION\r\n" ) ; break ; }
+            case EXCEPTION_INVALID_DISPOSITION      : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_INVALID_DISPOSITION\r\n"      ) ; break ; }
+            case EXCEPTION_INT_OVERFLOW             : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_INT_OVERFLOW\r\n"             ) ; break ; }
+            case EXCEPTION_INT_DIVIDE_BY_ZERO       : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_INT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
+            case EXCEPTION_IN_PAGE_ERROR            : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_IN_PAGE_ERROR\r\n"            ) ; break ; }
+            case EXCEPTION_ILLEGAL_INSTRUCTION      : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_ILLEGAL_INSTRUCTION\r\n"      ) ; break ; }
+            case EXCEPTION_FLT_UNDERFLOW            : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_UNDERFLOW\r\n"            ) ; break ; }
+            case EXCEPTION_FLT_STACK_CHECK          : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_STACK_CHECK\r\n"          ) ; break ; }
+            case EXCEPTION_FLT_OVERFLOW             : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_OVERFLOW\r\n"             ) ; break ; }
+            case EXCEPTION_FLT_INVALID_OPERATION    : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_INVALID_OPERATION\r\n"    ) ; break ; }
+            case EXCEPTION_FLT_INEXACT_RESULT       : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_INEXACT_RESULT\r\n"       ) ; break ; }
+            case EXCEPTION_FLT_DIVIDE_BY_ZERO       : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
+            case EXCEPTION_FLT_DENORMAL_OPERAND     : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_DENORMAL_OPERAND\r\n"     ) ; break ; }
+            case EXCEPTION_DATATYPE_MISALIGNMENT    : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_DATATYPE_MISALIGNMENT\r\n"    ) ; break ; }
+            case EXCEPTION_BREAKPOINT               : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_BREAKPOINT\r\n"               ) ; break ; }
+            case EXCEPTION_ARRAY_BOUNDS_EXCEEDED    : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_ARRAY_BOUNDS_EXCEEDED\r\n"    ) ; break ; }
+            case EXCEPTION_ACCESS_VIOLATION         : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_ACCESS_VIOLATION\r\n"         ) ; break ; }
         {
         switch( ec )
 
                       ec = pOsInfo->ExceptionRecord->ExceptionCode ;
         static countT ec ;
 
+        thirdC::dosWriteStdOutAvoidStackIF( "_9\r\n" ) ;
+        thirdC::dosWriteStdOutAvoidStackIF( postOsTid ) ;
+        thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF / offending thread [osTid]:    " ) ;
+
+        itoa( osTidMe , postOsTid , 0xa ) ;
+        static osTextT postOsTid[ SB * sizeof( sCountT ) + 1 ] ;
+
+                      osTidMe = GetCurrentThreadId() ;
+        static countT osTidMe ;
+
                                     pOsInfo = (_EXCEPTION_POINTERS*)pvOsInfoP ;
         static _EXCEPTION_POINTERS* pOsInfo ;
-#if defined( NEVERdEFINED )
     {
     else
     }
         rc = - 1 ;
-        LOGrAW(    "\r\nrootExceptionFilterF / !exception: !pvOsInfoP\r\n" ) ;
-        CONoUTrAW( "\r\nrootExceptionFilterF / !exception: !pvOsInfoP\r\n" ) ;
+        thirdC::dosWriteStdOutAvoidStackIF( "\r\nrootExceptionFilterF / !exception: !pvOsInfoP\r\n" ) ;
     {
     if( !pvOsInfoP )
     static countT rc ;                                                                        // static IS USED TO MINIMIZE / ELIMINATE THE USE OF THE THREAD STACK
@@ -448,46 +457,14 @@
     CONoUTrAW( "rootExceptionFilterF/+\r\n" ) ;
     bWorker1StackFrameAOK = 1 ;
 {
-countT rootExceptionFilterWorker1F( voidT* pvOsInfoP )
+countT rootExceptionFilterWorker1F( voidT* pvOsInfoP , countT ecP )
 
 }
     return EXCEPTION_CONTINUE_SEARCH ;
     thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSiMPOTENT ) ;
-
-    }
-        default                                 : { CONoUTrAW( "\r\nunknown exception code\r\n"             ) ; break ; }
-        case EXCEPTION_STACK_OVERFLOW           : { CONoUTrAW( "\r\nEXCEPTION_STACK_OVERFLOW\r\n"           ) ; break ; }
-        case EXCEPTION_SINGLE_STEP              : { CONoUTrAW( "\r\nEXCEPTION_SINGLE_STEP\r\n"              ) ; break ; }
-        case EXCEPTION_PRIV_INSTRUCTION         : { CONoUTrAW( "\r\nEXCEPTION_PRIV_INSTRUCTION\r\n"         ) ; break ; }
-        case EXCEPTION_NONCONTINUABLE_EXCEPTION : { CONoUTrAW( "\r\nEXCEPTION_NONCONTINUABLE_EXCEPTION\r\n" ) ; break ; }
-        case EXCEPTION_INVALID_DISPOSITION      : { CONoUTrAW( "\r\nEXCEPTION_INVALID_DISPOSITION\r\n"      ) ; break ; }
-        case EXCEPTION_INT_OVERFLOW             : { CONoUTrAW( "\r\nEXCEPTION_INT_OVERFLOW\r\n"             ) ; break ; }
-        case EXCEPTION_INT_DIVIDE_BY_ZERO       : { CONoUTrAW( "\r\nEXCEPTION_INT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
-        case EXCEPTION_IN_PAGE_ERROR            : { CONoUTrAW( "\r\nEXCEPTION_IN_PAGE_ERROR\r\n"            ) ; break ; }
-        case EXCEPTION_ILLEGAL_INSTRUCTION      : { CONoUTrAW( "\r\nEXCEPTION_ILLEGAL_INSTRUCTION\r\n"      ) ; break ; }
-        case EXCEPTION_FLT_UNDERFLOW            : { CONoUTrAW( "\r\nEXCEPTION_FLT_UNDERFLOW\r\n"            ) ; break ; }
-        case EXCEPTION_FLT_STACK_CHECK          : { CONoUTrAW( "\r\nEXCEPTION_FLT_STACK_CHECK\r\n"          ) ; break ; }
-        case EXCEPTION_FLT_OVERFLOW             : { CONoUTrAW( "\r\nEXCEPTION_FLT_OVERFLOW\r\n"             ) ; break ; }
-        case EXCEPTION_FLT_INVALID_OPERATION    : { CONoUTrAW( "\r\nEXCEPTION_FLT_INVALID_OPERATION\r\n"    ) ; break ; }
-        case EXCEPTION_FLT_INEXACT_RESULT       : { CONoUTrAW( "\r\nEXCEPTION_FLT_INEXACT_RESULT\r\n"       ) ; break ; }
-        case EXCEPTION_FLT_DIVIDE_BY_ZERO       : { CONoUTrAW( "\r\nEXCEPTION_FLT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
-        case EXCEPTION_FLT_DENORMAL_OPERAND     : { CONoUTrAW( "\r\nEXCEPTION_FLT_DENORMAL_OPERAND\r\n"     ) ; break ; }
-        case EXCEPTION_DATATYPE_MISALIGNMENT    : { CONoUTrAW( "\r\nEXCEPTION_DATATYPE_MISALIGNMENT\r\n"    ) ; break ; }
-        case EXCEPTION_BREAKPOINT               : { CONoUTrAW( "\r\nEXCEPTION_BREAKPOINT\r\n"               ) ; break ; }
-        case EXCEPTION_ARRAY_BOUNDS_EXCEEDED    : { CONoUTrAW( "\r\nEXCEPTION_ARRAY_BOUNDS_EXCEEDED\r\n"    ) ; break ; }
-        case EXCEPTION_ACCESS_VIOLATION         : { CONoUTrAW( "\r\nEXCEPTION_ACCESS_VIOLATION\r\n"         ) ; break ; }
-    {
-    switch( ec2 )
-
-                  ec2 = pOsInfo2->ExceptionRecord->ExceptionCode ;
-    static countT ec2 ;
-
-                                pOsInfo2 = (_EXCEPTION_POINTERS*)pvOsInfoP ;
-    static _EXCEPTION_POINTERS* pOsInfo2 ;
-
-    CONoUTrAW( "\r\nI GIVE UP!\r\n" ) ;
+    thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterWorker2F / calling dosExitProcessIF\r\n" ) ;
 {
-countT rootExceptionFilterWorker2F( voidT* pvOsInfoP )
+countT rootExceptionFilterWorker2F( voidT* pvOsInfoP , countT ecP )
 
 static boolT bWorker1StackFrameAOK ;
 

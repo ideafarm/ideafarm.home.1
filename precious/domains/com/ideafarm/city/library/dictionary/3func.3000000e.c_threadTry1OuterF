@@ -12,7 +12,7 @@
 
     }
         }
-            puts( "\r\nc_threadTry1OuterF / this should never display\r\n" ) ;
+            puts( "\r\nc_threadTry1OuterF / this should never display because the handler should call \"thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSiMPOTENT )\"\r\n" ) ;
         {
         _except( rptExceptionF( GetExceptionInformation() , pExceptionHandlerFP , bMainP ) )
         }
@@ -32,13 +32,13 @@
 
     }
         }
-            printf( "\r\nrootExceptionFilterF excepted [bMainP,pInfoP,idException]:    %d    %d    %d\r\n" , bMainP , (int)pInfoP , idExceptionLath ) ;
+            printf( "\r\nrootExceptionFilterF excepted"             " [bMainP,pInfoP,idException" "]:    %d    %d    %d"    "\r\n" , bMainP , (int)pInfoP , idExceptionLath      ) ;
         {
         default :
         }
-            printf( "\r\nrptExceptionF / called  rootExceptionFilterF [bMainP,pInfoP,rc]:    %d    %d    %d\r\n" , bMainP , (int)pInfoP , rc ) ;
+            printf( "\r\nrptExceptionF / called  rootExceptionFilterF [bMainP,pInfoP,idException,rc]:    %d    %d    %d    %d\r\n" , bMainP , (int)pInfoP , idExceptionLath , rc ) ;
             rc = (*(rootExceptionFilter_NT_FT)pExceptionHandlerFP)( (EXCEPTION_POINTERS*)pInfoP ) ;  //U:: rc MIGHT NEED TO BE OBEYED FOR E.G. restartC HANDLING
-            printf( "\r\nrptExceptionF / calling rootExceptionFilterF [bMainP,pInfoP]:    %d    %d\r\n" , bMainP , (int)pInfoP ) ;
+            printf( "\r\nrptExceptionF / calling rootExceptionFilterF [bMainP,pInfoP,idException" "]:    %d    %d    %d"    "\r\n" , bMainP , (int)pInfoP , idExceptionLath      ) ;
         {
         case 1 :
     {

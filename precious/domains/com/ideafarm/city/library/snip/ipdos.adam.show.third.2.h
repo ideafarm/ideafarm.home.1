@@ -29556,6 +29556,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3410c.thirdC.dosWriteStdOutIF!||
  static voidT dosWriteStdOutIF( const osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3411e.thirdC.dosWriteStdOutIF!||
+ static voidT dosWriteStdOutAvoidStackIF( const osTextT* const postP ) ;
  voidT dosWriteStdOutBadCodeStyleF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3407d.thirdC.dosWriteStdOutBadCodeStyleF!||
  voidT dosSetSystemTimeF( tinS& tinP , const sCountT yP , const countT mP = 0 , const countT dP = 0 , const countT hhP = 0 , const countT mmP = 0 , const countT ssP = 0 , const countT msP = 0 ) ;

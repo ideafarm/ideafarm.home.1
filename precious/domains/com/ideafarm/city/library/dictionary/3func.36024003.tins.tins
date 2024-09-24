@@ -89,24 +89,26 @@
             }
                 }
                     }
-                        //#endif
-                            etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                        etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
 
-                            OStEXTAK( ostoSay , "_" ) ;
-                            OStEXTCF( ostoSay , pbThreadStackEnd , '0' ) ;
-                            OStEXTAK( ostoSay , "_    " ) ;
-                            OStEXTCF( ostoSay , pbThreadStackStart , '0' ) ;
-                            OStEXTAK( ostoSay , "    " ) ;
-                            OStEXTC(  ostoSay , cbStack , '0' ) ;
-                            OStEXTAK( ostoSay , "    " ) ;
-                            OStEXTC(  ostoSay , idThreadP , '0' ) ;
-                            OStEXTAK( ostoSay , "tinS [idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    " ) ;
-                            OStEXT(   ostoSay , TUCK << 1 ) ;
+                        OStEXTAK( ostoSay , "_" ) ;
+                        OStEXTCF( ostoSay , pbThreadStackEnd , '0' ) ;
+                        OStEXTAK( ostoSay , "_    " ) ;
+                        OStEXTCF( ostoSay , pbThreadStackStart , '0' ) ;
+                        OStEXTAK( ostoSay , "    " ) ;
+                        OStEXTC(  ostoSay , cbStack , '0' ) ;
+                        OStEXTAK( ostoSay , "    " ) ;
+                        OStEXTC(  ostoSay , idThreadP , '0' ) ;
+                        OStEXTAK( ostoSay , "_9    " ) ;
+                        OStEXTC9( ostoSay , osTid ) ;
+                        OStEXTAK( ostoSay , "_9    " ) ;
+                        OStEXTC9( ostoSay , osPid ) ;
+                        OStEXTAK( ostoSay , "tinS [osPid,osTid,idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    " ) ;
+                        OStEXT(   ostoSay , TUCK << 1 ) ;
 
-                            countT cbStack       = pbThreadStackEnd - pbThreadStackStart ;
-                        //#if defined( NEVERdEFINED )
+                        countT cbStack = pbThreadStackEnd - pbThreadStackStart ;
 
-                        // EXAMPLE: tinS [idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    40000000    00002000    15b20000_    15b40000_
+                        // EXAMPLE: tinS [idThread,osTid,cbStack,pbThreadStackStart,pbThreadStackEnd]:    40000000    00002000    15b20000_    15b40000_
                         //          123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0
                         //          0              1               2               3               4               5               6               7
 
