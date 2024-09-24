@@ -3057,6 +3057,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.listOfSet_countTstrz_C"                      ,
                     "1snip.15*.listOfSet_blob_C"                            ,
                     "1snip.15*.listOfSet_listingVSP_C"                      ,
+                    "1snip.15*.listingOfSet_listingVSP_C"                   ,
                     "1snip.15*.listingOfSet_countTstrz_C"                   ,
                     "1snip.15*.listingOfSet_blob_C"                         ,
                     "1snip.15*.listingOfSet_countT_C"                       ,

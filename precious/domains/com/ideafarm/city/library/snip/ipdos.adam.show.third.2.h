@@ -29557,6 +29557,7 @@ private :
  static voidT dosWriteStdOutIF( const osTextT* const postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3411e.thirdC.dosWriteStdOutIF!||
  static voidT dosWriteStdOutAvoidStackIF( const osTextT* const postP ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011c8.thirdc.dosWriteStdOutAvoidStackif!||
  voidT dosWriteStdOutBadCodeStyleF( tinS& tinP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3407d.thirdC.dosWriteStdOutBadCodeStyleF!||
  voidT dosSetSystemTimeF( tinS& tinP , const sCountT yP , const countT mP = 0 , const countT dP = 0 , const countT hhP = 0 , const countT mmP = 0 , const countT ssP = 0 , const countT msP = 0 ) ;
@@ -47420,6 +47421,8 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listingOfSet_countTstrz_C : 1snip.150001b0.listingOfSet_countTstrz_C END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_listingVSP_C : 1snip.1500012e.listOfSet_listingvsp_C BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -47455,6 +47458,9 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_listingVSP_C : 1snip.1500012e.listOfSet_listingvsp_C END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_blob_C : 1snip.1500012c.listOfSet_blob_C BEGIN
 
 
 //
@@ -47495,6 +47501,9 @@ i am nonconformant in that all of my member function definitions are in a single
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_blob_C : 1snip.1500012c.listOfSet_blob_C END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_countTstrz_C : 1snip.1500012d.listOfSet_countTstrz_C BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -47534,6 +47543,44 @@ i am nonconformant in that all of my member function definitions are in a single
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_countTstrz_C : 1snip.1500012d.listOfSet_countTstrz_C END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_countT_C : 1snip.1500012b.listOfSet_countT_C BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/class _export listOfSet_countT_C : public listOfSetC , public datum_countT_C/*1*/
+{
+
+    public :
+
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countT_C.NEWdELcLASSb!||
+    ~listOfSet_countT_C( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countT_C.dt_list_countT_C!||
+    listOfSet_countT_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const countT valueP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countT_C.list_countT_C!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_countT_C : 1snip.1500012b.listOfSet_countT_C END
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -47559,40 +47606,6 @@ i am nonconformant in that all of my member function definitions are in a single
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listing_listingVSP_C.listing_listingVSP_C!||
 
     inline sCountT operator -( const listingOfSet_listingVSP_C& lP ) const { return this - &lP ; }
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/class _export listOfSet_countT_C : public listOfSetC , public datum_countT_C/*1*/
-{
-
-    public :
-
-    NEWdELcLASSpROTOS
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.list_countT_C.NEWdELcLASSb!||
-    ~listOfSet_countT_C( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.list_countT_C.dt_list_countT_C!||
-    listOfSet_countT_C( tinS& tinP , const listOfSetC& listOfSetDadP , const countT idNameP , const countT valueP ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.list_countT_C.list_countT_C!||
 }
 ;
 

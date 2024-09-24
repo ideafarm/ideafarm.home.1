@@ -31666,8 +31666,8 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend TASKpROTO( tmWatchF ) ;                                                                                                                                                                                                                             \
  friend class etherInitC ;                                                                                                                                                                                                                                  \
  friend class cC ;                                                                                                                                                                                                                                          \
- friend class windowOldC ; /*U::WORKAROUND SO THAT wrapRenderF CAN SEE 2 *IfcRenderingHander* MEMBERS.  THESE MEMBERS SHOULD PROBABLY BE MOVED TO thirdC */                                                                                                    \
- friend class paperOldC  ; /*U::WORKAROUND SO THAT wrapRenderF CAN SEE 2 *IfcRenderingHander* MEMBERS.  THESE MEMBERS SHOULD PROBABLY BE MOVED TO thirdC */                                                                                                    \
+ friend class windowOldC ; /*U::WORKAROUND SO THAT wrapRenderF CAN SEE 2 *IfcRenderingHander* MEMBERS.  THESE MEMBERS SHOULD PROBABLY BE MOVED TO thirdC */                                                                                                 \
+ friend class paperOldC  ; /*U::WORKAROUND SO THAT wrapRenderF CAN SEE 2 *IfcRenderingHander* MEMBERS.  THESE MEMBERS SHOULD PROBABLY BE MOVED TO thirdC */                                                                                                 \
  friend countT rootExceptionFilterWorker1F( voidT* pvOsInfoP , countT ecP ) ;                                                                                                                                                                               \
  friend boolT thirdC::osExceptionHandlerWorkIF( const countT cArgP ) ;
 
@@ -32183,22 +32183,22 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /**/
 /*1*//*FRIENDS_thirdC*//*1*/
 
-#define FRIENDS_thirdC                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                            \
- friend class etherC ;                                                                                                                                                                                                                                      \
- friend class imageExeDllC ;                                                                                                                                                                                                                                \
- friend class thirdInitC ;                                                                                                                                                                                                                                  \
- friend TASKpROTO( tmWatchF ) ;                                                                                                                                                                                                                             \
- friend class processGlobalBeginC ; /* THIS IS SO MY MEMBERS THAT DO NOT REQUIRE A tinP PARAMETER ARE NOT GENERALLY ACCESSIBLE */                                                                                                                           \
- friend TASKpROTO( tmTimeNowF ) ;                                                                                                                                                                                                                           \
- friend TASKpROTO( tmKillSocketF ) ;                                                                                                                                                                                                                        \
- friend batonC::~batonC( voidT ) ;                                                                                                                                                                                                                          \
- friend batonC::batonC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const countT idGroupP , const flagsT flagsP , byteT* const pbZombieP , const countT cbZombieP , const countT idMemorySpaceP ) ;       \
- friend voidT handleC::closeIfF( voidT ) ;                                                                                                                                                                                                                  \
- friend voidT handleC::cloneF( const handleC& handleP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP ) ;                                                                                                          \
- friend countT rootExceptionFilterWorker1F( voidT* pvOsInfoP , countT ecP ) ;                                                                                                                                                                               \
- friend class infoFileS ;                                                                                                                                                                                                                                   \
- friend class infoDisk1S ;                                                                                                                                                                                                                                  \
+#define FRIENDS_thirdC                                                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                                                     \
+ friend class etherC ;                                                                                                                                                                                                                                                               \
+ friend class imageExeDllC ;                                                                                                                                                                                                                                                         \
+ friend class thirdInitC ;                                                                                                                                                                                                                                                           \
+ friend TASKpROTO( tmWatchF ) ;                                                                                                                                                                                                                                                      \
+ friend class processGlobalBeginC ; /* THIS IS SO MY MEMBERS THAT DO NOT REQUIRE A tinP PARAMETER ARE NOT GENERALLY ACCESSIBLE */                                                                                                                                                    \
+ friend TASKpROTO( tmTimeNowF ) ;                                                                                                                                                                                                                                                    \
+ friend TASKpROTO( tmKillSocketF ) ;                                                                                                                                                                                                                                                 \
+ friend batonC::~batonC( voidT ) ;                                                                                                                                                                                                                                                   \
+ friend batonC::batonC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const countT idGroupP , const flagsT flagsP , byteT* const pbZombieP , const countT cbZombieP , const countT idMemorySpaceP ) ;  \
+ friend voidT handleC::closeIfF( voidT ) ;                                                                                                                                                                                                                                           \
+ friend voidT handleC::cloneF( const handleC& handleP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP ) ;                                                                                                                                   \
+ friend countT rootExceptionFilterWorker1F( voidT* pvOsInfoP , countT ecP ) ;                                                                                                                                                                                                        \
+ friend class infoFileS ;                                                                                                                                                                                                                                                            \
+ friend class infoDisk1S ;                                                                                                                                                                                                                                                           \
  friend class infoBoxGetPutS ;
 
 
@@ -39785,7 +39785,7 @@ obsolete: ordering begins with "outer" (low) and ends with "inner" (high)
 //
 
 /*
-this can be used to zombie new and delete when tinP is not available, e.g. in rootExceptionFilterF
+this can be used to zombie new and delete when tinP is not available, e.g. in rootExceptionFilterWorker1F
 */
 /**/
 
