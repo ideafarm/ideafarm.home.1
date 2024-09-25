@@ -22,8 +22,8 @@
             if( !( F(((tinNormalS&)tinP).flagsThreadMode5) & flTHREADmODE5_TINiSnOTiNpOOL ) )          //20240919@2048: COMPILER ERROR IF PUT THIS TEST WITHIN THE PRECEDING IF STATEMENT
             boolT bZombieDel = F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ;
         {
-        if( *(countT*)&pDoomed )                                                        //20240919@2048: CONJ: THIS APPEARS TO BE A CHECK FOR A NONZE FINGERPRINT
-        tinNormalS* pDoomed = &tinP ;
+        if( ((countT*)&pDoomed)[ 1 ] )                                                        //20240919@2048: CONJ: THIS APPEARS TO BE A CHECK FOR A NONZE FINGERPRINT
+        tinNormalS* pDoomed = (tinNormalS*)&tinP ;
 
         ((tinNormalS&)tinP).flags &= ~( F(flTINs_REGISTERED) ) ;
         //IN_T

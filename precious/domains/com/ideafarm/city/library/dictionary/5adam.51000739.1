@@ -265,7 +265,7 @@ DONE( tmWorkerF )
     workS&  wsP              =  *(workS*)pTaskP->c1 ;
     _IO_
 
-    thirdC::c_memcpyIF( tinP , (byteT*)((tinNormalS&)tinP).ppJot , (byteT*)pTaskP->pTinDad->ppJot , sizeof ((tinNormalS&)tinP).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
+    thirdC::c_memcpyIF( tinP , (byteT*)((tinNormalS&)tinP).ppJot , (byteT*)((tinNormalS*)pTaskP->pTinDad)->ppJot , sizeof ((tinNormalS&)tinP).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmWorkerF )
