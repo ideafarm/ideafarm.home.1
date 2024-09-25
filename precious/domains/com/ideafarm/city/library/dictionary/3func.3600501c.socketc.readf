@@ -11,12 +11,12 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tinNormalS&)tinP).pag3->_socketC_.grab.ungrabF( tinP ) ;
-        pOdometer->cbWrite += ((tinNormalS&)tinP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tinNormalS&)tinP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer ;
-        ((tinNormalS&)tinP).pag3->_socketC_.nnLever = nnPeer = nicNameP ;
-        ((tinNormalS&)tinP).pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
+        pOdometer->cbWrite += tinP.odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += tinP.odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
+        tinP.pag3->_socketC_.nnLever = nnPeer = nicNameP ;
+        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
     
         bRead.ungrabF( tinP ) ;
     
@@ -43,7 +43,7 @@
                 __Z( idSlot ) ;
                 etherC::sockStkCatchersF( tinP ).sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
                 ZE( countT , idSlot ) ;
-                //__( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
+                //__( F(tinP.flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
             {
             if( !( F(flags) & flSOCKETc_DOnOTrEGISTERcATCHER ) )
             bCatcher = 1 ;
@@ -51,8 +51,8 @@
         if( !bCatcher )
         bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = tinP.odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = tinP.odoSockCbRead  ;
     
         _IO_
     

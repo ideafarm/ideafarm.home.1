@@ -36,23 +36,23 @@ TODO
 }
     return 0 ;
 
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttPath ) ;
+    tinP.pEther->delF( tinP , psttShort ) ;
+    tinP.pEther->delF( tinP , psttPath ) ;
 
     }
-        ((tinNormalS&)tinP).pEther->diskMoveFileOrDirF( tinP , T(psttPath)+T(psttShort) , tNameOld , 1 ) ;
+        tinP.pEther->diskMoveFileOrDirF( tinP , T(psttPath)+T(psttShort) , tNameOld , 1 ) ;
         etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)tNameOld ) ;
     {
     if( bHit )
-    boolT bHit = ((tinNormalS&)tinP).pEther->strReplaceF( tinP , psttShort , 0 , tDotsP , tDotP ) ; ___( psttShort ) ;
+    boolT bHit = tinP.pEther->strReplaceF( tinP , psttShort , 0 , tDotsP , tDotP ) ; ___( psttShort ) ;
 
     ___( psttShort ) ;
     ___( psttPath ) ;
-    ((tinNormalS&)tinP).pEther->strBisectF( tinP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+    tinP.pEther->strBisectF( tinP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttPath ) ;
 
-    TN( tNameOld , ifFileNameC( tinP , *((tinNormalS&)tinP).pEther , postNameP ) ) ;
+    TN( tNameOld , ifFileNameC( tinP , *tinP.pEther , postNameP ) ) ;
 
     if( !( cDoneP % TUCK ) ) etherC::etRockIF( tinP ).traceF( tinP , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     cDoneP ++ ;

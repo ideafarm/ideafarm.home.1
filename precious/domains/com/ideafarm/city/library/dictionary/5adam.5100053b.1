@@ -19,7 +19,7 @@ REST
             case MMSYSERR_INVALHANDLE : { CONoUTrAW( "waveOutClose returned MMSYSERR_INVALHANDLE\r\n" ) ; break ; }
         {
         switch( rc )
-        rc = ((tinNormalS&)tinP).brcRaw ;
+        rc = tinP.brcRaw ;
         BOSdOnOTtEST( WHATgbo , waveOutClose( hwo ) )
 
         }
@@ -31,7 +31,7 @@ REST
                 case MMSYSERR_INVALHANDLE : { CONoUTrAW( "waveOutUnprepareHeader returned MMSYSERR_INVALHANDLE\r\n" ) ; break ; }
             {
             switch( rc )
-            rc = ((tinNormalS&)tinP).brcRaw ;
+            rc = tinP.brcRaw ;
             BOSdOnOTtEST( WHATgbo , waveOutUnprepareHeader( hwo , &hdr , sizeof hdr ) )
 
             }
@@ -47,7 +47,7 @@ REST
                 case MMSYSERR_INVALHANDLE : { CONoUTrAW( "waveOutWrite returned MMSYSERR_INVALHANDLE\r\n" ) ; break ; }
             {
             switch( rc )
-            rc = ((tinNormalS&)tinP).brcRaw ;
+            rc = tinP.brcRaw ;
             BOSdOnOTtEST( WHATgbo , waveOutWrite( hwo , &hdr , sizeof hdr ) )
     
             __( rc - MMSYSERR_NOERROR ) ;
@@ -57,7 +57,7 @@ REST
                 case MMSYSERR_INVALHANDLE : { CONoUTrAW( "waveOutPrepareHeader returned MMSYSERR_INVALHANDLE\r\n" ) ; break ; }
             {
             switch( rc )
-            rc = ((tinNormalS&)tinP).brcRaw ;
+            rc = tinP.brcRaw ;
             BOSdOnOTtEST( WHATgbo , waveOutPrepareHeader( hwo , &hdr , sizeof hdr ) )
 
             setWaveF( pbData , sizeof pbData , mFreq * TUCK ) ;
@@ -92,7 +92,7 @@ REST
         case MMSYSERR_ALLOCATED   : { CONoUTrAW( "waveOutOpen returned MMSYSERR_ALLOCATED  \r\n" ) ; break ; }
     {
     switch( rc )
-    MMRESULT rc = ((tinNormalS&)tinP).brcRaw ;
+    MMRESULT rc = tinP.brcRaw ;
     BOSdOnOTtEST( WHATgbo , waveOutOpen( &hwo , 0 , &format , 0 , 0 , WAVE_ALLOWSYNC ) )
 
     format.cbSize = 0 ;
@@ -107,7 +107,7 @@ REST
 {
 if( cDevices )
 CONoUTrAW3( "cDevices: " , cDevices , "\r\n" ) ;
-countT cDevices = ((tinNormalS&)tinP).brcRaw ;
+countT cDevices = tinP.brcRaw ;
 BOSdOnOTtEST( WHATgbo , waveOutGetNumDevs() )
 
 const measureT mTockPerSec = (measureT)timePS1 / (measureT)TOCK ;

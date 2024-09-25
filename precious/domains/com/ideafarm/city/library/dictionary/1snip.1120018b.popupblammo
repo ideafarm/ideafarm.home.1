@@ -24,7 +24,7 @@
         OStEXTAK( postBody , "\r\nargs:\r\n" ) ;                                                                       \
                                                                                                                         \
         }                                                                                                               \
-            OStEXTC( postBody , ((tinNormalS&)tinP).monitor.pLFnest[ ( ( cNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] , 0 ) ;                                 \
+            OStEXTC( postBody , tinP.monitor.pLFnest[ ( ( cNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] , 0 ) ;                                 \
             OStEXTAK( postBody , " " ) ;                                                                               \
             OStEXTC( postBody , cNest , 0 ) ;                                                                         \
         {                                                                                                               \
@@ -39,13 +39,13 @@
         {                                                                                                               \
         if( cNest == 1 )                                                                                                \
         const countT cNestStop = cNest > 0x10 ? cNest - 0x10 : 0 ;                                                      \
-        countT cNest = 1 + ((tinNormalS&)tinP).monitor.cInNest ;                                                                                 \
+        countT cNest = 1 + tinP.monitor.cInNest ;                                                                                 \
         OStEXT( postBody , 0x100 )                                                                                      \
                                                                                                                         \
         OStEXTAK( ostoTitle , "\"" ) ;                                                                                 \
-        OStEXTA( ostoTitle , ((tinNormalS&)tinP).postThreadName ) ;                                                                  \
+        OStEXTA( ostoTitle , tinP.postThreadName ) ;                                                                  \
         OStEXTAK( ostoTitle , " ; thread:\"" ) ;                                                                       \
-        OStEXTC( ostoTitle , ((tinNormalS&)tinP).monitor.idThread , 0 ) ;                                                                    \
+        OStEXTC( ostoTitle , tinP.monitor.idThread , 0 ) ;                                                                    \
         OStEXTAK( ostoTitle , " ; idThread:" )  ;                                                                      \
         OStEXTC( ostoTitle , processGlobal1S::_processGlobal1I_IF().idAdamRoot , 0 ) ;                                                   \
         OStEXTAK( ostoTitle , "idAdam:" ) ;                                                                              \

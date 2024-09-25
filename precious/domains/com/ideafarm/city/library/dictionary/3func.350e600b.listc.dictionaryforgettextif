@@ -12,9 +12,9 @@
     POPtINaRGS
     walkIF( tinP , pczName , flLISToPEN_null , idGrabLayerP ) ;
     countT pczName[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM2 , LISTnAMEsYS_DICTIONARY , 0 } ;
-    ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] = (countT)postP ;
-    ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-    ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkForgetTextCBF ;
+    tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = (countT)postP ;
+    tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+    tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkForgetTextCBF ;
     PUSHtINaRGS
 
     grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
@@ -24,7 +24,7 @@
 
     }
         if( POOP ) return ;
-        __( ((tinNormalS&)tinP).monitor.cGrabbed && !( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING ) ) ; // TO PREVENT DEADLOCKING, A THREAD MAY NOT BEGIN A WALK IN THE LIST TREE WHILE IT POSESSES A listingC ; THIS PROHIBITION IS MORE THAN NECESSARY BUT IS SIMPLE TO ENFORCE ; THE NECESSARY CONDITION IS TO PREVENT "BACKWARD" WALKING ; cGrabbed COUNTS ANY grabitC GRAB, NOT JUST GRABS OF listingC INSTANCES
+        __( tinP.monitor.cGrabbed && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING ) ) ; // TO PREVENT DEADLOCKING, A THREAD MAY NOT BEGIN A WALK IN THE LIST TREE WHILE IT POSESSES A listingC ; THIS PROHIBITION IS MORE THAN NECESSARY BUT IS SIMPLE TO ENFORCE ; THE NECESSARY CONDITION IS TO PREVENT "BACKWARD" WALKING ; cGrabbed COUNTS ANY grabitC GRAB, NOT JUST GRABS OF listingC INSTANCES
         __Z( postP ) ;
         if( POOP ) return ;
     {

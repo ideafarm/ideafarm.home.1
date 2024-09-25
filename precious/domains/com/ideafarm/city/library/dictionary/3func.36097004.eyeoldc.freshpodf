@@ -8,7 +8,7 @@
 
 
 }
-    ((tinNormalS&)tinP).pag5->frPaper.grab.ungrabF( tinP ) ;
+    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
     freshPodAbsF( tinP ) ;
 
     sqmPodFromHull( 3 , 3 ) = state.vhPod_z * unit_z ;
@@ -35,11 +35,11 @@
     state.vhPod_x(2) /= len_x ;
     state.vhPod_x(1) /= len_x ;
 
-    measureT len_z = ((tinNormalS&)tinP).brcm04Raw ;
+    measureT len_z = tinP.brcm04Raw ;
     BOSmEASURE04( WHATgbo , sqrt( state.vhPod_z * state.vhPod_z ) )
-    measureT len_y = ((tinNormalS&)tinP).brcm04Raw ;
+    measureT len_y = tinP.brcm04Raw ;
     BOSmEASURE04( WHATgbo , sqrt( state.vhPod_y * state.vhPod_y ) )
-    measureT len_x = ((tinNormalS&)tinP).brcm04Raw ;
+    measureT len_x = tinP.brcm04Raw ;
     BOSmEASURE04( WHATgbo , sqrt( state.vhPod_x * state.vhPod_x ) )
 
     state.vhPod_z(3) =                                   + vhprz(3) ;
@@ -66,14 +66,14 @@
         ROTATION MATRIX
     /*
 
-    const measureT cram = ((tinNormalS&)tinP).brcm04Raw ;
+    const measureT cram = tinP.brcm04Raw ;
     BOSmEASURE04( WHATgbo , cos( ( 0.5 - nangPodRotate ) * PI ) )
-    const measureT crap = ((tinNormalS&)tinP).brcm04Raw ;
+    const measureT crap = tinP.brcm04Raw ;
     BOSmEASURE04( WHATgbo , cos( ( 0.5 + nangPodRotate ) * PI ) )
-    const measureT cra  = ((tinNormalS&)tinP).brcm04Raw ;
+    const measureT cra  = tinP.brcm04Raw ;
     BOSmEASURE04( WHATgbo , cos( nangPodRotate * PI ) )
     const measureT nangPodRotate = - rowEye.ro.angPodRotate ;
-    ((tinNormalS&)tinP).pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
 {
 /*1*/voidT eyeOldC::freshPodF( tinNormalS& tinP )/*1*/
 

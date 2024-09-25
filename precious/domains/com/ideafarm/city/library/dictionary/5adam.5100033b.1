@@ -54,13 +54,13 @@ DONE( tmF )
     baton.ungrabF( tinP ) ;
 
     etThread.delF( tinP , pc5w ) ;
-    if( pc5w ) etThread.strokeF( tinP , T("thread ")+TF1(((tinNormalS&)tinP).monitor.idThread)+T("    pulled pc5w->c1= \"")+TF1(pc5w->c1)+T("\"\r\n") ) ;
+    if( pc5w ) etThread.strokeF( tinP , T("thread ")+TF1(tinP.monitor.idThread)+T("    pulled pc5w->c1= \"")+TF1(pc5w->c1)+T("\"\r\n") ) ;
     swsMe.pullF( tinP , pc5w , 1 ) ; ___( pc5w ) ;
     ZE( count5S* , pc5w ) ;
 
     }
         swsMe.pushF( tinP , pc5w , 1 ) ;
-        if( pc5w ) pc5w->c2 = pc5w->c1 = ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) ;
+        if( pc5w ) pc5w->c2 = pc5w->c1 = ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) ;
         etThread.newF( tinP , LF , pc5w ) ;
         ZE( count5S* , pc5w ) ;
     {

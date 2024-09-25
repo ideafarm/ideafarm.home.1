@@ -68,8 +68,8 @@ DONE( tmWorkF )
 
             }
                 if( POOP ) { POOPR ; } // WILL ALWAYS POOP BECAUSE SOME OF THE FILES ARE IN USE, BUT THE FILE THAT MUST BE DELETED (MY MASTER FILE) WILL BE
-                ((tinNormalS&)tinP).pEtScratch->diskFileOrDirDeleteF( tinP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/exedll/1/hover/")    , flFILEoRdIRdELETE_RECURSE , 1 ) ; //WILL NOT BE ABLE TO DELETE BASE OR ADAM
-                ((tinNormalS&)tinP).pEtScratch->diskFileOrDirDeleteF( tinP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/exedll/1/master/")   , flFILEoRdIRdELETE_RECURSE , 1 ) ; //WILL NOT BE ABLE TO DELETE BASE OR ADAM
+                tinP.pEtScratch->diskFileOrDirDeleteF( tinP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/exedll/1/hover/")    , flFILEoRdIRdELETE_RECURSE , 1 ) ; //WILL NOT BE ABLE TO DELETE BASE OR ADAM
+                tinP.pEtScratch->diskFileOrDirDeleteF( tinP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/exedll/1/master/")   , flFILEoRdIRdELETE_RECURSE , 1 ) ; //WILL NOT BE ABLE TO DELETE BASE OR ADAM
 
                 SCOOPS
             {
@@ -843,7 +843,7 @@ TASK( tmWorkF )
             if( !POOP && !stErrors ) bMade = 1 ;
 
             //etThread.traceF( tinP , T("1") ) ;
-            ((tinNormalS&)tinP).pEtScratch->osMakeF( tinP , stErrors , idAdamP , flMAKE_DEBUG | flMAKE_ENABLEtHIRDpARTIES ) ;
+            tinP.pEtScratch->osMakeF( tinP , stErrors , idAdamP , flMAKE_DEBUG | flMAKE_ENABLEtHIRDpARTIES ) ;
             //etThread.traceF( tinP , T("2") ) ;
             stackC stErrors( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
             //etThread.traceF( tinP , T("3") ) ;
@@ -853,7 +853,7 @@ TASK( tmWorkF )
 
         //else       bMade = 1 ;
         //if( POOP ) { POOPR ; }
-        //((tinNormalS&)tinP).pEtScratch->osMakeHoverFileF( tinP , pcIdAdam[ offa ] ) ;
+        //tinP.pEtScratch->osMakeHoverFileF( tinP , pcIdAdam[ offa ] ) ;
         //20200924@2052: CONJ: COMMENTING THIS OUT WILL SPEED UP BUILDS
 
         SCOOPS

@@ -185,7 +185,7 @@ DONE( tmHireF )
                                         else switch( info3.u.Exception.ExceptionRecord.ExceptionCode )
                                         }
                                             default                                  : { tEvent += T("    notes:"                                                                                                          ) ; break ; }
-                                            case ifcIDeVENTeXCEPTIONmONITORED_BLAMMO : { tEvent += T("    [idLine,idiFile,idLineCt,idiFileCt,idBlammo,((tinNormalS&)tinP).idTinNamed,tinName,((tinNormalS&)tinP).monitor.idThread,((tinNormalS&)tinP).osTid,osTidIF()]:") ; break ; }
+                                            case ifcIDeVENTeXCEPTIONmONITORED_BLAMMO : { tEvent += T("    [idLine,idiFile,idLineCt,idiFileCt,idBlammo,tinP.idTinNamed,tinName,tinP.monitor.idThread,tinP.osTid,osTidIF()]:") ; break ; }
                                             case ifcIDeVENTeXCEPTIONmONITORED_GRUNT  : { tEvent += T("    [idLine,idiFile,idSubType,idType]:"                                                                              ) ; break ; }
                                         {
                                         if( ifcUnexpectedExceptionCode ) switch( ifcUnexpectedExceptionCode )
@@ -446,7 +446,7 @@ DONE( tmHireF )
         {
         if( idAdamRequested )
 
-        etherC& etScratch = *((tinNormalS&)tinP).pEtScratch ;
+        etherC& etScratch = *tinP.pEtScratch ;
 
         SCOOPS
     {
@@ -489,7 +489,7 @@ DONE( tmHireF )
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     {
     
-    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tinNormalS&)tinP).monitor.idThread - ifcIDtHREADlOW_tmHireF ) ; }
+    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( tinP.monitor.idThread - ifcIDtHREADlOW_tmHireF ) ; }
 
     boolT&   bKidsSuspendedP            =  *(boolT*)pTaskP->ca ;
     boolT    bConsoleP                  =    (boolT)pTaskP->c9 ;
@@ -511,10 +511,10 @@ DONE( tmChatterF )
 
     }
         if( POOP ) POOPRqUIET
-        ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tFileChattering , 1 ) ;
+        tinP.pEtScratch->boxZapF( tinP , tFileChattering , 1 ) ;
 
         if( POOP ) POOPRqUIET
-        ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tFileChatterOn , 1 ) ;
+        tinP.pEtScratch->boxZapF( tinP , tFileChatterOn , 1 ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -529,7 +529,7 @@ DONE( tmChatterF )
             if( bChattering != bChatteringLag ) etThread.traceF( tinP , T("unchattering ; this will not affect chattering that is in progress") ) ;
             }
                 if( POOP ) POOPRqUIET
-                ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tFileChattering , 1 ) ;
+                tinP.pEtScratch->boxZapF( tinP , tFileChattering , 1 ) ;
                 SCOOPS
             {
             IFsCRATCH
@@ -574,10 +574,10 @@ DONE( tmChatterF )
     }
         }
             if( POOP ) POOPRqUIET
-            ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tFileChattering , 1 ) ;
+            tinP.pEtScratch->boxZapF( tinP , tFileChattering , 1 ) ;
 
             if( POOP ) POOPRqUIET
-            ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tFileChatterOn , 1 ) ;
+            tinP.pEtScratch->boxZapF( tinP , tFileChatterOn , 1 ) ;
 
             SCOOPS
         {
@@ -615,7 +615,7 @@ TASK( tmChatterF )
             }
                 }
                     LOGrAW3( "[idError]: " , idError , "\r\n" ) ;
-                    countT idError = ((tinNormalS&)tinP).brcRaw ;
+                    countT idError = tinP.brcRaw ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
                 {
                 else
@@ -624,7 +624,7 @@ TASK( tmChatterF )
                     BOS( WHATgbo , BOSoK , CloseHandle( oshThread ) )
                 {
                 if( oshThread )
-                HANDLE oshThread = (HANDLE)((tinNormalS&)tinP).brcRaw ;
+                HANDLE oshThread = (HANDLE)tinP.brcRaw ;
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , CreateThread( &sa , TOCK , tmGorillaRawF , 0 , 0 , &osTid ) )
                 ZE( DWORD , osTid ) ;
@@ -833,7 +833,7 @@ DONE( tmFireAllF )
         slabS& slab = slabS::slabIF() ;
     {
 
-    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tinNormalS&)tinP).monitor.idThread - ifcIDtHREADlOW_tmFireAllF ) ; }
+    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( tinP.monitor.idThread - ifcIDtHREADlOW_tmFireAllF ) ; }
     etherC& etRock = etherC::etRockIF( tinP ) ;
 
     boolT& bKidsSuspendedP = *(boolT*)pTaskP->c1 ;
@@ -845,7 +845,7 @@ DONE( tmEatTelemetrySysF )
 //etRock.traceF( tinP , T("tmEatTelemetrySysF / 0") ) ;
 TELL( "cleaning up 0" )
 }
-    //etRock.traceF( tinP , T("tmEatTelemetrySysF / 1 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tinP , T("tmEatTelemetrySysF / 1 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     TELL( "cleaning up 1" )
     }
         while( ~hWalk && -- cToDo ) ;
@@ -861,20 +861,20 @@ TELL( "cleaning up 0" )
     if( stPeriodData )
     TELL( "purging period data" )
 
-    //etRock.traceF( tinP , T("tmEatTelemetrySysF / 2 / sgnDone_tmReportF_ seen [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tinP , T("tmEatTelemetrySysF / 2 / sgnDone_tmReportF_ seen [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     sgnDone_tmReportF_.waitF( tinP ) ;
-    //etRock.traceF( tinP , T("tmEatTelemetrySysF / 3 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tinP , T("tmEatTelemetrySysF / 3 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     TELL( "waiting for tmReportF to end" )
 
     THREADmODE4rESTORE
-    //etRock.traceF( tinP , T("tmEatTelemetrySysF / 4 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tinP , T("tmEatTelemetrySysF / 4 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
-        //etRock.traceF( tinP , T("tmEatTelemetrySysF / 5 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tinP , T("tmEatTelemetrySysF / 5 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ) bksTelemetrySys.fileFlagsRefF() &= ~flFILEc_DELETE ; // I AM PROBABLY READING THE CURRENT bookC, WHICH IS STILL OPEN FOR WRITING SO CANNOT BE DELETED NOW
         //U::THE NEXT LINE NO LONGER WILL WORK BECAUSE THE DELETE FLAG HAS ALREADY BEEN SPECIFIED WHEN CT fileC ; IT ALSO WOULDN'T WORK BECAUSE IT DOES NOT CHANGE THE FLAGS THAT ARE USED TO CT bookC INSTANCE
 
         }
-            //etRock.traceF( tinP , T("tmEatTelemetrySysF / 6 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etRock.traceF( tinP , T("tmEatTelemetrySysF / 6 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             }
                 //CONoUTrAW( "." ) ;
                 ++ s ; etThread.osSleepF( tinP , TOCK >> 2 ) ;
@@ -1280,10 +1280,10 @@ TELL( "cleaning up 0" )
                                     case ifcIDtYPEtELLsYS_GLObEGINdT :
                                     }
                                         break ;
-                                          if( told.osPid != ((tinNormalS&)tinP).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 3 ) , (countT)&bQuitEatingP , told.osPid ) ;
-                                        //if( told.osPid != ((tinNormalS&)tinP).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 2 ) , (countT)&bQuitEatingP , told.osPid ) ;
-                                        //if( told.osPid != ((tinNormalS&)tinP).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 1 ) , (countT)&bQuitEatingP , told.osPid ) ;
-                                        //if( told.osPid != ((tinNormalS&)tinP).osPid ) etThread.osThreadF( TaRG1( tmVultureF ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                          if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 3 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 2 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 1 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != tinP.osPid ) etThread.osThreadF( TaRG1( tmVultureF ) , (countT)&bQuitEatingP , told.osPid ) ;
                                         //etRock.traceF( tinP , T("ifcIDtYPEtELLsYS_GLObEGINcT [osPid]: ")+TF4(told.osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
                                         _IO_
                                     {
@@ -1391,14 +1391,14 @@ TELL( "cleaning up 0" )
                     TELL( "waiting to read a new telemetry item / U:: 0" )
     
                     //etRock.traceF( tinP , T("tmEatTelemetrySysF / 7") ) ;
-                    //((tinNormalS&)tinP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
+                    //tinP.pc Utility[ 0 ] -- ; //U::TO FIND A BUG
                     TELL( "waiting to read a new telemetry item / U:: 1" )
                     boolT bDelete = bksTelemetrySys.readF( tinP , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
                     //etRock.traceF( tinP , T("eating telemetry at [idDebug,off,idBook]:    ")+TF2(idDebug,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(ch.c1,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(ch.c2,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                     TELL( "waiting to read a new telemetry item / U:: 2" )
                     HANDLEaPPnOTEScOUNTcLASS ch = hRead ;
                     TELL( "waiting to read a new telemetry item / U:: 3" )
-                    //((tinNormalS&)tinP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
+                    //tinP.pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
                     //etRock.traceF( tinP , T("tmEatTelemetrySysF / 8") ) ;
                     TELL( "waiting to read a new telemetry item" )
 
@@ -1414,7 +1414,7 @@ TELL( "cleaning up 0" )
                 TELL( "eating 1" )
             {
             while( !bQuitEatingP && !POOP )
-            //etRock.traceF( tinP , T("tmEatTelemetrySysF / 9 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etRock.traceF( tinP , T("tmEatTelemetrySysF / 9 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             ZE( countT , idDebug ) ;
             TELL( "eating 0" )
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
@@ -1427,11 +1427,11 @@ TELL( "cleaning up 0" )
         {
         if( !(const poopC&)bksTelemetrySys )
 
-//((tinNormalS&)tinP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
-        //etRock.traceF( tinP , T("tmEatTelemetrySysF / ct'ed bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//tinP.pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+        //etRock.traceF( tinP , T("tmEatTelemetrySysF / ct'ed bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         booksC bksTelemetrySys( tinP , TAG( TAGiDnULL ) , "bksTelemetrySys" , ifcIDsTATEsPACE_MULTIPLEaDAMS , idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ? flBOOKSc_null : flBOOKSc_USEgRABmEMORYsPACEoVERRIDE , 0 , 0 , 0 , 0 , 0 , idMemorySpaceP , &bQuitEatingP ) ;
-        //etRock.traceF( tinP , T("tmEatTelemetrySysF / ct'ing bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-//((tinNormalS&)tinP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+        //etRock.traceF( tinP , T("tmEatTelemetrySysF / ct'ing bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//tinP.pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
 
         //U:: THE NEXT LINE USED TO SPECIFY THE DELETE FLAG, BUT AS OF 20131222@1558 THIS CAUSES FAILURES ; DELETE FLAG REMOVED WITHOUT ANALYSIS
 
@@ -1440,13 +1440,13 @@ TELL( "cleaning up 0" )
     THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
 
     }
-        //etRock.traceF( tinP , T("tmEatTelemetrySysF / launched  tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tinP , T("tmEatTelemetrySysF / launched  tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
           etThread.osThreadF( tinP , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 3 , 0 , (countT)pcArg ) ;
         //etThread.osThreadF( tinP , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 2 , 0 , (countT)pcArg ) ;
         //etThread.osThreadF( tinP , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 1 , 0 , (countT)pcArg ) ;
 
-        //etRock.traceF( tinP , T("tmEatTelemetrySysF / launching tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tinP , T("tmEatTelemetrySysF / launching tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         pcArg[ 0xb ] = (countT)&bChatterP ;
         pcArg[ 0xa ] = (countT)&tEventP ;
@@ -1484,15 +1484,15 @@ TELL( "cleaning up 0" )
 
     //if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ) etThread.osThreadF( TaRG1( tmYellF ) ) ;
 
-    //etRock.traceF( tinP , T("tmEatTelemetrySysF / ++ [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tinP , T("tmEatTelemetrySysF / ++ [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //CONoUTrAW3( "tmEatTelemetrySysF [idMemorySpaceP]: " , idMemorySpaceP , "\r\n" ) ;
 
     TN( tb4 , "    " ) ;
 
-    ((tinNormalS&)tinP).c4Tell.c1 = idMemorySpaceP ;
+    tinP.c4Tell.c1 = idMemorySpaceP ;
 
-    //etRock.traceF( tinP , T("tmEatTelemetrySysF / i just called TRACEmYtHREAD [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tinP , T("tmEatTelemetrySysF / i just called TRACEmYtHREAD [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     //TRACEmYtHREAD ;
 
     etThread.delF( tinP , pcArgP ) ;
@@ -2775,7 +2775,7 @@ DONE( tmReportF )
 
     etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ; //CHANGE TO RUSH IF NEED TO ANALYZE BEHAVIOR INVOLVING CPU PEGGING
 
-    ((tinNormalS&)tinP).c4Tell.c1 = idMemorySpaceP ;
+    tinP.c4Tell.c1 = idMemorySpaceP ;
 
     const flagsT fliMyBit = 1 << idMemorySpaceP - ifcIDmEMORYsPACE_min - cSkip ;       //A:ASSUME: THE NUMBER OF NONRESERVED MEMORY SPACE VALUES IS NOT GREATER THAN THE NUMBER OF BITS IN A flagsT INSTANCE
 
@@ -2820,7 +2820,7 @@ TASK( tmReportF )
         costai = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tinP , pci ) ) ;                              \
         tinCopy.get_##arrayP##_F( tinP , pci , cci + 1 ) ;                                                  \
         countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tinNormalS&)tinP).monitor.##arrayP ;                                                   \
+        const countT cci = sizeof tinP.monitor.##arrayP ;                                                   \
     {                                                                                                       \
                                                                                                             \
 #define WRITEaRRAYmONITOR(arrayP)                                                                           \
@@ -2830,7 +2830,7 @@ TASK( tmReportF )
         costai = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tinP , pci ) ) ;                              \
         tinCopy.get_##arrayP##_F( tinP , pci , cci + 1 ) ;                                                  \
         countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tinNormalS&)tinP).##arrayP ;                                                           \
+        const countT cci = sizeof tinP.##arrayP ;                                                           \
     {                                                                                                       \
                                                                                                             \
 #define WRITEaRRAY(arrayP)                                                                                  \
@@ -2839,7 +2839,7 @@ TASK( tmReportF )
         costaVarying += sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tinP , pci ) ) ;                        \
         tinCopy.get_##arrayP##_F( tinP , pci , cci + 1 ) ;                                                   \
         countT pci[ cci + 1 ] ;                                                                              \
-        const countT cci = sizeof ((tinNormalS&)tinP).##arrayP ;                                                            \
+        const countT cci = sizeof tinP.##arrayP ;                                                            \
     {                                                                                                        \
                                                                                                              \
 #define ACCsIZE(arrayP)                                                                                      \
@@ -2848,7 +2848,7 @@ TASK( tmReportF )
         costaVarying += sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tinP , pci ) ) ;                        \
         tinCopy.get_##arrayP##_F( tinP , pci , cci + 1 ) ;                                                   \
         countT pci[ cci + 1 ] ;                                                                              \
-        const countT cci = sizeof ((tinNormalS&)tinP).monitor.##arrayP ;                                                    \
+        const countT cci = sizeof tinP.monitor.##arrayP ;                                                    \
     {                                                                                                        \
                                                                                                              \
 #define ACCsIZEmONITOR(arrayP)                                                                               \
@@ -3054,13 +3054,13 @@ DONE( tmcMonitorServerF )
                     }
                         break ;
 
-                        ((tinNormalS&)tinP).pEtScratch->delF( tinP , pbCopy ) ;
+                        tinP.pEtScratch->delF( tinP , pbCopy ) ;
                         if( bOk ) sOut.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_byteTptr , pbCopy , cbAt ) ;
                         sOut << bOk ;
                         sOut << (countT)ifcIDrEPLYmONITOR_IMAGE ;
 
                         if( pbCopy ) thirdC::dosReadProcessMemoryIF( tinP , pbCopy , cbAt , bOk , pvAt , osPid ) ;
-                        ((tinNormalS&)tinP).pEtScratch->newF( tinP , LF , pbCopy , cbAt ) ; ___( pbCopy ) ;
+                        tinP.pEtScratch->newF( tinP , LF , pbCopy , cbAt ) ; ___( pbCopy ) ;
                         ZE( boolT , bOk ) ;
                         ZE( byteT* , pbCopy ) ;
 
@@ -3086,12 +3086,12 @@ DONE( tmcMonitorServerF )
         soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
         soulC sIn(  tinP , TAG( TAGiDnULL ) ) ;
     
-        psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
+        psoP->etherF( tinP , *tinP.pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH
 
-    ((tinNormalS&)tinP).c4Tell.c1 = cLeverIdMemoryP ;
+    tinP.c4Tell.c1 = cLeverIdMemoryP ;
 
     switchC& swMemorySpaceP  = *(switchC*)pTaskP->c3 ;
     countT&  cLeverIdMemoryP =  *(countT*)pTaskP->c2 ;

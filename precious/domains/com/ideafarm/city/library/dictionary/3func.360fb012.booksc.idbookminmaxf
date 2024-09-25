@@ -31,7 +31,7 @@
             }
                 }
                     }
-                        ++ s ; ((tinNormalS&)tinP).pEther->osSleepF( tinP , TOCK ) ;
+                        ++ s ; tinP.pEther->osSleepF( tinP , TOCK ) ;
                 
                         if( pbQuitP && *pbQuitP ) break ;
                 
@@ -40,7 +40,7 @@
                         while( ~hFind ) ;
                         }
                             DEL( pInfo ) ;
-                            //if( ((tinNormalS&)tinP).pEther && pInfo ) ((tinNormalS&)tinP).pEther->trace F( tinP , T("idBookMinMaxF inspected  [psttIfoName]:    ")+T(pInfo->psttIfoName) ) ;
+                            //if( tinP.pEther && pInfo ) tinP.pEther->trace F( tinP , T("idBookMinMaxF inspected  [psttIfoName]:    ")+T(pInfo->psttIfoName) ) ;
                             }
                                 }
                                     }
@@ -77,12 +77,12 @@
                                     {
                                     if( !pcpIdBookMinP )
                     
-                                    ((tinNormalS&)tinP).pEther->delF( tinP , pstt1w ) ;
+                                    tinP.pEther->delF( tinP , pstt1w ) ;
                                     }
                                         }
                                             else                       pco -- ;
                                             if( pco == pcpIdBookThis ) pco = pcpIdBookThis + cWords - 1 ;
-                                            *pco = ((tinNormalS&)tinP).pEther->strDigitsToSCountF( tinP , psttc1 , 0 , 1 ) ;
+                                            *pco = tinP.pEther->strDigitsToSCountF( tinP , psttc1 , 0 , 1 ) ;
                                         {
                                         FORsTRINGSiN1( pstt1w )
                     
@@ -91,27 +91,27 @@
                                     if( pcpIdBookThis )
                                     PUSE.newF( tinP , LF , *(byteT**)&pcpIdBookThis , sizeof( countT ) * cWords ) ; ___( pcpIdBookThis ) ;
                                     ZE( countT* , pcpIdBookThis ) ;
-                                    ((tinNormalS&)tinP).pEther->delF( tinP , psttw ) ;
-                                    countT cWords = ((tinNormalS&)tinP).pEther->strWordsOldF( tinP , pstt1w , psttw , sttq , tDot ) ; ___( pstt1w ) ;
+                                    tinP.pEther->delF( tinP , psttw ) ;
+                                    countT cWords = tinP.pEther->strWordsOldF( tinP , pstt1w , psttw , sttq , tDot ) ; ___( pstt1w ) ;
                                     ZE( strokeS* , pstt1w ) ;
                     
-                                    ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttw , idf , sttq , tAfter , pInfo->psttIfoName ) ; ___( psttw ) ;
-                                    ((tinNormalS&)tinP).pEther->delF( tinP , psttw ) ;
-                                    ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttw , idf , sttq , tBefore , pInfo->psttIfoName ) ; ___( psttw ) ;
+                                    tinP.pEther->strSubstringF( tinP , psttw , idf , sttq , tAfter , pInfo->psttIfoName ) ; ___( psttw ) ;
+                                    tinP.pEther->delF( tinP , psttw ) ;
+                                    tinP.pEther->strSubstringF( tinP , psttw , idf , sttq , tBefore , pInfo->psttIfoName ) ; ___( psttw ) ;
                                     countT idf = 1 ;
                                     ZE( strokeS* , psttw ) ;
                                 {
                                 else
                                 }
                                     if( POOP ) { POOPR ; }
-                                    ((tinNormalS&)tinP).pEtScratch->diskFileOrDirDeleteF( tinP , pInfo->psttIfoName , flFILEoRdIRdELETE_null , 1 ) ;
+                                    tinP.pEtScratch->diskFileOrDirDeleteF( tinP , pInfo->psttIfoName , flFILEoRdIRdELETE_null , 1 ) ;
                                     SCOOPS
                                 {
                                 if( F(flagsP) & flBOOKScsELECT_PURGE )
                             {
                             if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) )
 
-                            //if( ((tinNormalS&)tinP).pEther && pInfo ) ((tinNormalS&)tinP).pEther->trace F( tinP , T("idBookMinMaxF inspecting [psttIfoName]:    ")+T(pInfo->psttIfoName) ) ;
+                            //if( tinP.pEther && pInfo ) tinP.pEther->trace F( tinP , T("idBookMinMaxF inspecting [psttIfoName]:    ")+T(pInfo->psttIfoName) ) ;
                             }
                                 }
                                     break ;
@@ -121,7 +121,7 @@
                                     countT rc = POOP ;
                                 {
                                 if( POOP )
-                                ((tinNormalS&)tinP).pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
+                                tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
                                 SCOOPS
                             {
                             ZE( infoFileS* , pInfo ) ;
@@ -129,8 +129,8 @@
                         do
                         handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
-                        patternC pat( tinP , *((tinNormalS&)tinP).pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-                        fileNameC fnLike( tinP , *((tinNormalS&)tinP).pEther , psttFindLike ) ;
+                        patternC pat( tinP , *tinP.pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                        fileNameC fnLike( tinP , *tinP.pEther , psttFindLike ) ;
                     {
                     for(;;)
                 {
@@ -145,7 +145,7 @@
             else
             }
                 }
-                    ++ s ; ((tinNormalS&)tinP).pEther->osSleepF( tinP , TOCK ) ;
+                    ++ s ; tinP.pEther->osSleepF( tinP , TOCK ) ;
 
                     if( pbQuitP && *pbQuitP ) break ;
             
@@ -153,7 +153,7 @@
             
                     while( ~hFind ) ;
                     }
-                        //if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->trace F( tinP , T("idBookMinMazF inspected  [postName]:    ")+T(postName) ) ;
+                        //if( tinP.pEther ) tinP.pEther->trace F( tinP , T("idBookMinMazF inspected  [postName]:    ")+T(postName) ) ;
                         }
                             }
                                 if( sgn < 0 ) thirdC::c_memcpyIF( tinP , (byteT*)pcpIdBookScratchMax , (byteT*)pcpIdBookScratch1 , cbToCopy ) ;
@@ -230,7 +230,7 @@
                             __( ~hFind ) ;
                         {
                         if( !postName[ 0 ] )
-                        //if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->trace F( tinP , T("idBookMinMazF inspecting [postName]:    ")+T(postName) ) ;
+                        //if( tinP.pEther ) tinP.pEther->trace F( tinP , T("idBookMinMazF inspecting [postName]:    ")+T(postName) ) ;
                         thirdC::dosFindFileOrDirSimpleIF( tinP , postName , sizeof postName , hFind , postFindLike ) ;
                         postName[ 0 ] = 0 ;
                         osTextT postName[ TUCK << 1 ] ;
@@ -242,7 +242,7 @@
                 if( cbToCopy > ccMaxIdBook * sizeof( countT ) ) *(countT*)&cbToCopy = ccMaxIdBook * sizeof( countT ) ;
                 const countT cbToCopy = ccMaxIdBook * sizeof( countT ) ;
 
-                __( !!((tinNormalS&)tinP).pPoolUse ) ; //subtractF TESTS THIS AND WILL RETURN A POINTER THAT I DO NOT EXPECT IF IT IS TRUE
+                __( !!tinP.pPoolUse ) ; //subtractF TESTS THIS AND WILL RETURN A POINTER THAT I DO NOT EXPECT IF IT IS TRUE
 
                 }
                     thirdC::c_strcpyIF( tinP , postFindLike , ostoLike ) ;
@@ -253,8 +253,8 @@
 
                     costPrefix = ostoPrefix.costF() ;
                     }
-                        ((tinNormalS&)tinP).pEther->diskMakeDirIfNeededF( tinP , T(iffn) ) ;  //DO THIS ONLY IF EXPLICIT PATH, WHICH SHOULD AVOID NONMONOTONIC GRABBING SINCE IT WILL AVOID bksTelemetry AND bksTrace* booksC FILES
-                        ifFileNameC iffn( tinP , *((tinNormalS&)tinP).pEther , ostoPrefix ) ;
+                        tinP.pEther->diskMakeDirIfNeededF( tinP , T(iffn) ) ;  //DO THIS ONLY IF EXPLICIT PATH, WHICH SHOULD AVOID NONMONOTONIC GRABBING SINCE IT WILL AVOID bksTelemetry AND bksTrace* booksC FILES
+                        ifFileNameC iffn( tinP , *tinP.pEther , ostoPrefix ) ;
 
                         OStEXTAK( ostoPrefix , ".booksC.1.book." ) ;
                         OStEXTA(  ostoPrefix , postShort ) ;
@@ -262,7 +262,7 @@
                             OStEXTAK( ostoPrefix , "." ) ;
                             OStEXTC(  ostoPrefix , idStateSpace , 0 ) ;
                             OStEXTAK( ostoPrefix , "." ) ;
-                            OStEXTCF( ostoPrefix , idMemorySpace ? idMemorySpace : ((tinNormalS&)tinP).pag1->idMemorySpace , '0' ) ;
+                            OStEXTCF( ostoPrefix , idMemorySpace ? idMemorySpace : tinP.pag1->idMemorySpace , '0' ) ;
                             OStEXTAK( ostoPrefix , "." ) ;
                             OStEXTA(  ostoPrefix , thirdC::postUserNameIF() ) ;
                         {
@@ -282,7 +282,7 @@
                         OStEXTC(  ostoPrefix , idStateSpace , 0 ) ;                                                               thirdC::dosCreateDirIF( tinP , ostoPrefix ) ;
                         OStEXTAK( ostoPrefix , "\\" ) ;
                         OStEXTAK( ostoPrefix , "\\stateSpaces" ) ;                                                                thirdC::dosCreateDirIF( tinP , ostoPrefix ) ;
-                        OStEXTCF( ostoPrefix , idMemorySpace ? idMemorySpace : ((tinNormalS&)tinP).pag1->idMemorySpace , '0' ) ;         thirdC::dosCreateDirIF( tinP , ostoPrefix ) ;
+                        OStEXTCF( ostoPrefix , idMemorySpace ? idMemorySpace : tinP.pag1->idMemorySpace , '0' ) ;         thirdC::dosCreateDirIF( tinP , ostoPrefix ) ;
                         OStEXTAK( ostoPrefix , "\\" ) ;
                         OStEXTA(  ostoPrefix , thirdC::postUserNameIF() ) ;                                                       thirdC::dosCreateDirIF( tinP , ostoPrefix ) ;
                         OStEXTAK( ostoPrefix , "\\" ) ;
@@ -323,7 +323,7 @@
         if( POOP ) return ;
         }
             FV( flBOOKScsELECT , flagsP ) ;
-            __( ((tinNormalS&)tinP).monitor.idThread != 1 ) ; //I WILL USE STATIC STORAGE SO WILL NOT BE THREAD SAFE; INTENDED ONLY FOR CT/DT OF INSTANCES IN STATIC STORAGE
+            __( tinP.monitor.idThread != 1 ) ; //I WILL USE STATIC STORAGE SO WILL NOT BE THREAD SAFE; INTENDED ONLY FOR CT/DT OF INSTANCES IN STATIC STORAGE
         {
         if( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE )
         if( POOP ) return ;

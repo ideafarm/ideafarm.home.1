@@ -41,7 +41,7 @@
     
         }
             }
-                ++ s ; ((tinNormalS&)tinP).pEtScratch->osSleepF( tinP , TUCK * 0x40 ) ;
+                ++ s ; tinP.pEtScratch->osSleepF( tinP , TUCK * 0x40 ) ;
     
                 if( sgnDone_tmRelayOldTeatAcceptorF ) break ;
 
@@ -56,7 +56,7 @@
                 {
                 if( !POOP )
                 sock.connectF( tinP , home.idpTeat , (nicNameC&)home.idpTeat , 1 ) ;
-                socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
                 SCOOPSnEW
             {
             while( !sgnDone_tmRelayOldTeatAcceptorF )
@@ -65,7 +65,7 @@
             //}
             //    if( POOP ) POOPR
             //
-            //    while( !POOP && !home.idpTeat ) { ++ s ; ((tinNormalS&)tinP).pEtScratch->osSleepF( tinP , TUCK * 0x40 ) ; }
+            //    while( !POOP && !home.idpTeat ) { ++ s ; tinP.pEtScratch->osSleepF( tinP , TUCK * 0x40 ) ; }
             //    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
             //    SCOOPS
             //{
@@ -81,7 +81,7 @@
 
                         DEL( pso ) ;
                         SCOOPS
-                        pso->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
+                        pso->etherF( tinP , *tinP.pEtScratch ) ;
                     {
                     else 
                     if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmRelayOldServerCatchBagF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso , (countT)&sListen , (countT)&stIdptPopClient , (countT)&cLooksForNewPing ) ;
@@ -94,7 +94,7 @@
 
                         DEL( pso ) ;
                         SCOOPS
-                        pso->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
+                        pso->etherF( tinP , *tinP.pEtScratch ) ;
                         //etherC::ifcSayIF( T("gasp!") , flSAY_APPEND | flSAY_LOG ) ;
                         TELL( "quitting" )
                     {
@@ -146,7 +146,7 @@
                         {
                         IFsCRATCH
                         bWoth = 0 ;
-                        pso->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
+                        pso->etherF( tinP , *tinP.pEtScratch ) ;
                         etThread.traceF( tinP , T("writing woth bag ifcOLDiDtYPEbAG_SERVERoK") ) ;
                     {
                     if( bWoth ) //WOTH CLIENT MUST NOT BE REFUSED
@@ -157,7 +157,7 @@
                         sListen.acceptF( tinP , pso , idPortPeer , nnPeer , bRefuse ) ;
                         ZE( countT , idPortPeer ) ;
                         nicNameC nnPeer ;
-                        boolT bRefuse = /*++ idClient == ((tinNormalS&)tinP).monitor.idThread && !( bRefused ++ ) ? 1 :*/ 0 ;
+                        boolT bRefuse = /*++ idClient == tinP.monitor.idThread && !( bRefused ++ ) ? 1 :*/ 0 ;
                         //static boolT bRefused ;
                     {
                     TELL( "waiting for a client to connect" )
@@ -252,7 +252,7 @@
             SCOOPS
         {
         portC idPort ;
-        socketC sListen( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
+        socketC sListen( tinP , *tinP.pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
     {
     IFsCRATCH
 
@@ -263,7 +263,7 @@
     homeS& home = homeS::homeIF() ;
     ZE( boolT , bQuit ) ;
     ranUniC ruZeWo( tinP , 1 , 1 ) ;
-    const countT cKidThreadsSave = ((tinNormalS&)tinP).cKidThreads ;
+    const countT cKidThreadsSave = tinP.cKidThreads ;
 
     switchStackC swsIdptMediatorAlt(    tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idAdamMediator , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
     switchStackC swsIdptMediator(       tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idAdamMediator , flSTACKc_BLOB , sizeof( portTimeC ) ) ;

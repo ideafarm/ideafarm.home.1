@@ -18,7 +18,7 @@
                         +T(".")
                         +TF3(idStateSpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                         +T(".")
-                        +TF3(idMemorySpaceP?idMemorySpaceP:((tinNormalS&)tinP).pag1->idMemorySpace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
+                        +TF3(idMemorySpaceP?idMemorySpaceP:tinP.pag1->idMemorySpace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)
                         +T(".")
                          T(thirdC::postUserNameIF())
                     (
@@ -32,7 +32,7 @@
             +T("/")+T(postShortP)+T(".bookC")
             +TfORsTRING(idStateSpaceP)
             +T("/stateSpaces/" )
-            +T("/")+TfORsTRING(idMemorySpaceP?idMemorySpaceP:((tinNormalS&)tinP).pag1->idMemorySpace)
+            +T("/")+TfORsTRING(idMemorySpaceP?idMemorySpaceP:tinP.pag1->idMemorySpace)
             +T(thirdC::postUserNameIF())
              T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")
         ?
@@ -40,7 +40,7 @@
 
     }
         tPath = T(ifPath) ;
-        ifFileNameC ifPath( tinP , *((tinNormalS&)tinP).pEther , postPathP ) ;
+        ifFileNameC ifPath( tinP , *tinP.pEther , postPathP ) ;
     {
     if( postPathP )
     TN( tPath , "" ) ;
@@ -48,16 +48,16 @@
     //CS:CODEsYNC: 350fa004 360fa005 360fb012
     _IO_
 
-    //if( !idMemorySpaceP ) idMemorySpaceP = ((tinNormalS&)tinP).pag1->idMemorySpace ;
+    //if( !idMemorySpaceP ) idMemorySpaceP = tinP.pag1->idMemorySpace ;
     //20200417@1911: PRESERVE NULL idMemorySpaceP TO AVOID FORCING CALLER TO SET flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         __( tP.csF( tinP ) ) ;
         __Z( idStateSpaceP ) ;
         __Z( postShortP ) ;
-        __Z( ((tinNormalS&)tinP).pEther ) ;
+        __Z( tinP.pEther ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL    

@@ -64,7 +64,7 @@
                         break ;
                         if( ~handle ) handle.closeIfF() ;
                     {
-                    if( ( ((tinNormalS&)tinP).pcQuit && *((tinNormalS&)tinP).pcQuit ) || ( cMaxP && !cRem ) )
+                    if( ( tinP.pcQuit && *tinP.pcQuit ) || ( cMaxP && !cRem ) )
 
                     else delF( tinP , psttA ) ;
                     }
@@ -99,7 +99,7 @@
             else
             }
                 }
-                    if( ( ((tinNormalS&)tinP).pcQuit && *((tinNormalS&)tinP).pcQuit ) || ( cMaxP && !cRem ) ) break ;
+                    if( ( tinP.pcQuit && *tinP.pcQuit ) || ( cMaxP && !cRem ) ) break ;
                 
                     }
                         DEL( pInfoDisk ) ;
@@ -129,7 +129,7 @@
 
                     }
                         if( POOP ) { POOPRqUIET ; }
-                        ((tinNormalS&)tinP).pEtScratch->diskInfoF( tinP , pInfoDisk , psttDisk , 1 ) ; ___( pInfoDisk ) ; //U::NOT IN HERE
+                        tinP.pEtScratch->diskInfoF( tinP , pInfoDisk , psttDisk , 1 ) ; ___( pInfoDisk ) ; //U::NOT IN HERE
                         SCOOPS
                     {
                     ZE( infoDiskS* , pInfoDisk ) ;
@@ -214,7 +214,7 @@
 arguments
 i will not 
  if i quit early for this reason, my results are useable but incomplete
-i will silently quit early if *((tinNormalS&)tinP).pcQuit
+i will silently quit early if *tinP.pcQuit
 if a wildcard ("*" or "?") is specified for the disk, remote drives are excluded from the search
 evaluates to the number of files found
   \<A HREF=\"5.b210104.1.1.0.html\"\>b210104:  WAKEsHOW( "example.simplest.func.103001c.etherC.diskFindFileOrDirOldF" )\</A\>

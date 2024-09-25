@@ -661,14 +661,14 @@ voidT lnicC::newsDelF( tinNormalS& tinP , const nicNameC& nicNameP )
     {
     if( !ether )
     __( know.exTime > 0x1e ) ;
-    know.exTime         = know.idrMe ? (countT)((tinNormalS&)tinP).brcm04Raw : 0 ;
+    know.exTime         = know.idrMe ? (countT)tinP.brcm04Raw : 0 ;
     BOSmEASURE04( WHATgbo , log2( know.idrMe ) )
     know.idrMe          = idrF( know.idaMe , know.idaSingularity , know.cKnown ) ;
     know.idaSingularity = idaSingularityP ? idaSingularityP : know.idaMe ;
 
     know.uidaMe         = uidaF( nicNameMe ) ;
     know.idaMe          = stKnow( nicNameMe ) ;
-    know.exTimeMax      = know.cKnown ? (countT)((tinNormalS&)tinP).brcm04Raw : 0 ;
+    know.exTimeMax      = know.cKnown ? (countT)tinP.brcm04Raw : 0 ;
     BOSmEASURE04( WHATgbo , log2( know.cKnown ) )
     know.cKnown         = stKnow ;
 

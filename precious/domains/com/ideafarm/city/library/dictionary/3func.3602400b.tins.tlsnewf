@@ -66,10 +66,10 @@
             *(countT*)pbc = idiFileP                                                                             ; pbc += sizeof( countT ) ; // idiFile
             *(countT*)pbc = idLineP                                                                              ; pbc += sizeof( countT ) ; // idLine
             *(countT*)pbc = ( TLSeNTRYoFF_endNotUsed - 1 ) * sizeof( countT ) + costaNameP + costaInGroupP + cbP ; pbc += sizeof( countT ) ; // cbEntry
-            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] && costaInGroupP ) { CONoUTrAW( postInGroupP ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] && costaNameP    ) { CONoUTrAW( postNameP    ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( ((tinNormalS&)tinP).pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinNormalS::newF/entry formatted at " , (countT)pbc , "\r\n" ) ; }
-            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] ) ((tinNormalS&)tinP).pc Utility[ 1 ] ++ ;
+            //if( tinP.pc Utility[ 0 ] && costaInGroupP ) { CONoUTrAW( postInGroupP ) ; CONoUTrAW( "\r\n" ) ; }
+            //if( tinP.pc Utility[ 0 ] && costaNameP    ) { CONoUTrAW( postNameP    ) ; CONoUTrAW( "\r\n" ) ; }
+            //if( tinP.pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinNormalS::newF/entry formatted at " , (countT)pbc , "\r\n" ) ; }
+            //if( tinP.pc Utility[ 0 ] ) tinP.pc Utility[ 1 ] ++ ;
             const byteT* const pbe = pbTls + cbTls ;
             byteT*             pbc = pbTls + th.offTopEntry ;
         
@@ -204,9 +204,9 @@
         ;
             : "\r\nerror:  tlsNewF called on raw thread (tmBreakF)\r\n"
             ? "\r\nerror:  tlsNewF called on raw thread (tmHeartF)\r\n"
-        osTextT* postSay = ((tinNormalS&)tinP).idTinNamed == ifcIDtINnAMED_tinHeartI
+        osTextT* postSay = tinP.idTinNamed == ifcIDtINnAMED_tinHeartI
     {
-    if( ((tinNormalS&)tinP).idTinNamed == ifcIDtINnAMED_tinHeartI || ((tinNormalS&)tinP).idTinNamed == ifcIDtINnAMED_tinBreakI  ) // RAW THREAD, SO CANNOT CALL TINSL
+    if( tinP.idTinNamed == ifcIDtINnAMED_tinHeartI || tinP.idTinNamed == ifcIDtINnAMED_tinBreakI  ) // RAW THREAD, SO CANNOT CALL TINSL
 
     //_IO_
     //SPEED OPTIMIZATION: THIS _IO_ WOULD HAVE THE #1 HIGHEST FREQUENCY OF CALLS

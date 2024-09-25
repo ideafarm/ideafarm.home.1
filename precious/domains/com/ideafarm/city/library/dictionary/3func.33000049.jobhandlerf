@@ -74,7 +74,7 @@
     
                             soUp.writeF( tinP , sRelay ) ;
                             soUp.connectF( tinP ) ;
-                            socketC soUp( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                            socketC soUp( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
     
                             etThread.ifcChatRelayPackageF( tinP , sRelay , sJob , idAdamHandlingP , TF1(idAdamHandlingP)+T("/ifcChatF/jobHandlerF/acceptor") , 1 , 0 , nicNameHint ) ;
                             soulC sRelay( tinP , TAG( TAGiDnULL ) ) ;
@@ -82,7 +82,7 @@
                         if( !POOP )
     
                         }
-                            ((tinNormalS&)tinP).pEtScratch->memCopyF( tinP , (byteT*)&nicNameHint , pbNicName + 1 , processGlobal2I.cb_nicNameC_ ) ;
+                            tinP.pEtScratch->memCopyF( tinP , (byteT*)&nicNameHint , pbNicName + 1 , processGlobal2I.cb_nicNameC_ ) ;
     
                             __Z( pbNicName ) ;
                             __( cbNicName - 1 - processGlobal2I.cb_nicNameC_ ) ; // THE "1" CORRESPONDS TO THE flags2 BYTE
@@ -106,7 +106,7 @@
                 {
                 if( !etThread && sJob.cFieldF( tinP ) == ifcIDcMDsESSION_JOB )
     
-                //etThread.strokeF( tinP , T("jobHandlerF/")+T(*((tinNormalS&)tinP).pEtScratch?"impotent":"aok")+T("/tested number of items in sJob\r\n") ) ; //U:
+                //etThread.strokeF( tinP , T("jobHandlerF/")+T(*tinP.pEtScratch?"impotent":"aok")+T("/tested number of items in sJob\r\n") ) ; //U:
                 //__( (countT)sJob - 5 ) ;
     
                 pso->readF( tinP , sJob ) ;

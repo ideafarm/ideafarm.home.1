@@ -20,12 +20,12 @@ REST
 
         }
             cBad ++ ;
-            *((tinNormalS&)tinP).zEtScratch = 0 ;
+            *tinP.zEtScratch = 0 ;
         {
-        if( *((tinNormalS&)tinP).zEtScratch )
+        if( *tinP.zEtScratch )
 
         socc.connectF( tinP , 0x1234 , nicNameC() , 0 , TOCK * 2 ) ;
-        socketC socc( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC socc( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) ) ;
     {
     while( !etThread && !ether )
     ZE( countT , cBad ) ;

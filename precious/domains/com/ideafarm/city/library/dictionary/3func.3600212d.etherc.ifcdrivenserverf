@@ -62,7 +62,7 @@
                                 }
                                     }
                                         if( POOP ) POOPR
-                                        ((tinNormalS&)tinP).pEtScratch->sockCancelF( tinP , hSoc ) ;
+                                        tinP.pEtScratch->sockCancelF( tinP , hSoc ) ;
                                         SCOOPS
                                         //}
                                         //    thirdC::dosTellMonitorIF( tinP , tellC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEtELLsYS_LOG , poste , sizeof poste ) , ifcIDbOOKStELL_SYS ) ;
@@ -190,7 +190,7 @@
                                                                 {
                                                                 if( POOP )
 
-                                                                ZE( countT , tid ) ; ((tinNormalS&)tinP).pEtScratch->osThreadF( tinP , tid , info1P.tmF , 0 , 0  , flTHREADlAUNCH_SHOWpONY , 0 , (countT)&info1P.bQuit , (countT)&stJob , (countT)pJob , (countT)&cWorker ) ;
+                                                                ZE( countT , tid ) ; tinP.pEtScratch->osThreadF( tinP , tid , info1P.tmF , 0 , 0  , flTHREADlAUNCH_SHOWpONY , 0 , (countT)&info1P.bQuit , (countT)&stJob , (countT)pJob , (countT)&cWorker ) ;
                                                                 inc02AM( cWorker ) ;
                                                                 //etRock.traceF( tinP , T(nnPeer)+T("    ifcDrivenServerF / launching server thread for this client") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                                 etRock.traceF( tinP , T(nnPeer)+T("    ifcDrivenServerF / launching server thread for this client") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
@@ -379,7 +379,7 @@
                                                         }
                                                             }
                                                                 if( POOP ) { POOPR }
-                                                                ((tinNormalS&)tinP).pEtScratch->diskMoveFileOrDirF( tinP , tListBlock , tListAllowWoMore , 1 ) ;
+                                                                tinP.pEtScratch->diskMoveFileOrDirF( tinP , tListBlock , tListAllowWoMore , 1 ) ;
                                                                 SCOOPS
                                                             {
                                                             IFsCRATCH
@@ -393,8 +393,8 @@
                                                         }
                                                             if( POOP ) POOPR
 
-                                                            ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tListBlock       , 1 ) ; if( POOP ) { POOPR }
-                                                            ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tListAllowWoMore , 1 ) ; if( POOP ) { POOPR }
+                                                            tinP.pEtScratch->boxZapF( tinP , tListBlock       , 1 ) ; if( POOP ) { POOPR }
+                                                            tinP.pEtScratch->boxZapF( tinP , tListAllowWoMore , 1 ) ; if( POOP ) { POOPR }
                                                             SCOOPS
                                                         {
                                                         IFsCRATCH
@@ -640,7 +640,7 @@
                                             {
                                         {
                                         if( POOP )
-                                        psoListen = new( 0 , tinP , LF ) socketC( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , info2P.flagsSocket , 0 , &info1P.time1idleTimeoutRead , &info1P.time1idleTimeoutWrite , 0 , psttPemCertificates , psttPemPrivateKey ) ; ___( psoListen ) ;
+                                        psoListen = new( 0 , tinP , LF ) socketC( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , info2P.flagsSocket , 0 , &info1P.time1idleTimeoutRead , &info1P.time1idleTimeoutWrite , 0 , psttPemCertificates , psttPemPrivateKey ) ; ___( psoListen ) ;
                                         SCOOPS
                                     {
                                     IFsCRATCH
@@ -688,7 +688,7 @@
                                 //A:  {
                                 //A:  if( pState )
                                 //A:  pState = new( 0 , tinP , LF ) stateC( tinP , *this , info1P.bHandedOff , 0 , info2P.cbdVarying , translateStateDrivenServerF , info2P.cArg , info2P.psttSuffix ) ; ___( pState ) ;
-                                //A:  ((tinNormalS&)tinP).pag1->pTranslateStateCallerCBF = info2P.translateStateF ;
+                                //A:  tinP.pag1->pTranslateStateCallerCBF = info2P.translateStateF ;
                                 //A:  TELL( "server: constructing state" )
                                 //A: 20141130@1135: COMMENTED OUT AS PART OF ELIMINATION OF stateC
                             {
@@ -711,7 +711,7 @@
                             if( POOP )
                             __Z( cNicNameMe ) ;
                             __Z( pNicNameMe ) ;
-                            socketC::nicNameIF( tinP , *((tinNormalS&)tinP).pEtScratch , pNicNameMe , cNicNameMe , 0/*T(postCRAFTWORKfACTORY".ideafarm.com")*/ ) ; ___( pNicNameMe ) ;
+                            socketC::nicNameIF( tinP , *tinP.pEtScratch , pNicNameMe , cNicNameMe , 0/*T(postCRAFTWORKfACTORY".ideafarm.com")*/ ) ; ___( pNicNameMe ) ;
                             SCOOPS
                         {
                         IFsCRATCH
@@ -800,15 +800,15 @@
         __( !info2P.bState && !!info2P.psttSuffix ) ;
         __( !info2P.bState && !!info2P.translateStateF ) ;
         __( !info2P.bState && info2P.cbdVarying ) ;
-        __(  info2P.bState && ((tinNormalS&)tinP).pag1->_etherC_.cInServer ++ ) ;
+        __(  info2P.bState && tinP.pag1->_etherC_.cInServer ++ ) ;
         __( info1P.idPort ) ;
         __( !info1P.tmF ) ;
         __( info1P.ppbdVarying && !!*info1P.ppbdVarying ) ;
         __( F(flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ;
         __( F(flagsMode) & flTHIRDmODE_QUITTER ) ;
 
-        __( !( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_ADAMmAINtHREAD ) && !( F(flagsMode) & flTHIRDmODE_TINoWNER ) ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED
-        __(    F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_ADAMmAINtHREAD   &&    F(flagsMode) & flTHIRDmODE_TINoWNER   ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED (THIS LINE WILL DETECT THE USE OF etPrimeF() BUT WILL FAIL TO DETECT THE USE OF AN etherC OBJECT OTHER THAN ether AND etThread ON THREAD 1)
+        __( !( F(tinP.flagsThreadMode3) & flTHREADmODE3_ADAMmAINtHREAD ) && !( F(flagsMode) & flTHIRDmODE_TINoWNER ) ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED
+        __(    F(tinP.flagsThreadMode3) & flTHREADmODE3_ADAMmAINtHREAD   &&    F(flagsMode) & flTHIRDmODE_TINoWNER   ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED (THIS LINE WILL DETECT THE USE OF etPrimeF() BUT WILL FAIL TO DETECT THE USE OF AN etherC OBJECT OTHER THAN ether AND etThread ON THREAD 1)
 
         if( POOP ) return ;
     {

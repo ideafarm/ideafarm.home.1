@@ -16,7 +16,7 @@
                 /*     if( POOP ) { POOPR }                                               */                                                                \
                 /*     }                                                                  */                                                                \
                 /*         TELL( "returned from querying dns for peer name string" ) ;    */                                                                \
-                /*         ((tinNormalS&)tinP).pEtScratch->sockPsttHostF( tinP , psttPeerP , nnPeerP ) ; */                                                                \
+                /*         tinP.pEtScratch->sockPsttHostF( tinP , psttPeerP , nnPeerP ) ; */                                                                \
                 /*         TELL( "querying dns for peer name string" ) ;                  */                                                                \
                 /*     {                                                                  */                                                                \
                 /*     if( nnPeerP.pcId[ 0 ] )                                            */                                                                \
@@ -32,7 +32,7 @@
             nicNameC nnMeP ;                                                                                                                                \
             ZE( countT , idPortMeP ) ;                                                                                                                      \
                                                                                                                                                             \
-            psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;                                                                                                       \
+            psoP->etherF( tinP , *tinP.pEtScratch ) ;                                                                                                       \
             etThread.traceF( tinP , T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                   \
         {                                                                                                                                                   \
         if( !etThread )                                                                                                                                     \
@@ -64,8 +64,8 @@
  this behavior is similar to that of TASKdRIVENsERVERnEWsOCKET
  if pso is 0 then that code will not be executed
 pso not 0 is guaranteed for code between me and DONEdRIVENsERVER
-most applications will want to check *((tinNormalS&)tinP).pEtScratch for impotence after every access to pso
-communication downward to client uses *((tinNormalS&)tinP).pEtScratch, which becomes impotent quietly
+most applications will want to check *tinP.pEtScratch for impotence after every access to pso
+communication downward to client uses *tinP.pEtScratch, which becomes impotent quietly
 see adam.0140104 for an example
 \<A HREF=\"5.0010141.1.0.html\"\>definition\</A\>
 /*

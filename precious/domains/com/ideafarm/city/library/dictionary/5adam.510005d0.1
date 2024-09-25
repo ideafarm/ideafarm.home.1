@@ -29,7 +29,7 @@ THREADmODE3rESTORE
         
             socket.listenF( tinP ) ;
             homeS::homeIF().idPortSerialNumberDispenser = socket.bindF( tinP ) ;
-            socketC socket( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
+            socketC socket( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
         {
         while( !ether )
     {
@@ -155,7 +155,7 @@ DONE( tmcSerialNumberServeF )
         {
         while( !ether && !POOP )
 
-        psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
+        psoP->etherF( tinP , *tinP.pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH

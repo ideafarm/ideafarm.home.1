@@ -37,7 +37,7 @@ ZE( osTextT* , posto ) ;
             strokeS*& psttName = *(strokeS**)&(countT&)swShortOnHey ;
             psttzHey = psttHey ;
         
-            ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttHey , idf2 , countTC() , psttp ) ; ___( psttHey ) ;
+            tinP.pEther->strSubstringF( tinP , psttHey , idf2 , countTC() , psttp ) ; ___( psttHey ) ;
             ZE( strokeS* , psttHey ) ;
         {
         else
@@ -105,28 +105,28 @@ TODO
         if( !( cFilesP % TUCK ) ) { CONoUTrAW3( "\r        \r" , cFilesP , "" ) }
 
         }
-            ((tinNormalS&)tinP).pEther->delF( tinP , psttHey ) ;
+            tinP.pEther->delF( tinP , psttHey ) ;
 
-            ((tinNormalS&)tinP).pEther->strMakeF( tinP , LF , psttShort , tShort ) ; ___( psttShort ) ;
-            if( psttShort ) ((tinNormalS&)tinP).pEther->delF( tinP , psttShort ) ;
+            tinP.pEther->strMakeF( tinP , LF , psttShort , tShort ) ; ___( psttShort ) ;
+            if( psttShort ) tinP.pEther->delF( tinP , psttShort ) ;
             strokeS*& psttShort = *(strokeS**)&(countT&)swShortOnHeyP ;
             psttzHeyP = psttHey ;
 
-            ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttHey , idf , countTC() , tShort ) ; ___( psttHey ) ;
+            tinP.pEther->strSubstringF( tinP , psttHey , idf , countTC() , tShort ) ; ___( psttHey ) ;
             ZE( strokeS* , psttHey ) ;
         {
-        if( ((tinNormalS&)tinP).pEther->strIdF( tinP , idf , sttqP , tHeyP , tShort ) )
+        if( tinP.pEther->strIdF( tinP , idf , sttqP , tHeyP , tShort ) )
         countT idf = 1 ;
 
         }
             }
-                ((tinNormalS&)tinP).pEther->delF( tinP , psttp ) ;
+                tinP.pEther->delF( tinP , psttp ) ;
                 tShort = T(psttp) ;                
-                ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttp , idf , countTC() , tName ) ; ___( psttp ) ;
+                tinP.pEther->strSubstringF( tinP , psttp , idf , countTC() , tName ) ; ___( psttp ) ;
             {
             if( idf )
-            ((tinNormalS&)tinP).pEther->delF( tinP , psttp ) ;
-            ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttp , idf , sttqP , tArcP , tName ) ; ___( psttp ) ;
+            tinP.pEther->delF( tinP , psttp ) ;
+            tinP.pEther->strSubstringF( tinP , psttp , idf , sttqP , tArcP , tName ) ; ___( psttp ) ;
             countT idf = 1 ;
             ZE( strokeS* , psttp ) ;
             TN( tName , postNameP ) ;
@@ -146,7 +146,7 @@ TODO
     if( bDir )
 
     boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-    countT costLike = ((tinNormalS&)tinP).brcRaw ;
+    countT costLike = tinP.brcRaw ;
 
     BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
 {

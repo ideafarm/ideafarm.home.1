@@ -15,11 +15,11 @@
         }
             }
                 }
-                    ((tinNormalS&)tinP).pBookMark[ offbm ].pcpIdBook[ 0 ] = 0 ;
-                    ((tinNormalS&)tinP).pBookMark[ offbm ].pbz            = 0 ;
-                    ((tinNormalS&)tinP).pBookMark[ offbm ].pBooks         = 0 ;
+                    tinP.pBookMark[ offbm ].pcpIdBook[ 0 ] = 0 ;
+                    tinP.pBookMark[ offbm ].pbz            = 0 ;
+                    tinP.pBookMark[ offbm ].pBooks         = 0 ;
                 {
-                if( !( -- ((tinNormalS&)tinP).pBookMark[ offbm ].cRef ) )
+                if( !( -- tinP.pBookMark[ offbm ].cRef ) )
             {
             else
             if( offbm == -1 ) { BLAMMO ; }
@@ -29,12 +29,12 @@
                     break ;
                     offbm = offr ;
                 {
-                if( ((tinNormalS&)tinP).pBookMark[ offr ].pBooks == &books )
+                if( tinP.pBookMark[ offr ].pBooks == &books )
             {
-            for( countT offr = 0 ; offr < sizeof ((tinNormalS&)tinP).pBookMark / sizeof ((tinNormalS&)tinP).pBookMark[ 0 ] ; offr ++ )
+            for( countT offr = 0 ; offr < sizeof tinP.pBookMark / sizeof tinP.pBookMark[ 0 ] ; offr ++ )
             countT offbm = -1 ;
         {
-        if( !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
+        if( !( F(tinP.flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
 
         flags = 0 ;
 
@@ -45,7 +45,7 @@
             //U:: BLAMMO SHOULD BE HERE, BUT WHEN IT IS HERE I GET CNR
 
             //}
-            //    ((tinNormalS&)tinP).pEther->trace F( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
+            //    tinP.pEther->trace F( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    OStEXTAK( ostoSay , " -" ) ;
             //    OStEXTC(  ostoSay , cRefWas , 0 ) ;
@@ -56,21 +56,21 @@
             //    OStEXTAK( ostoSay , "pageC  [this,pcRef,cRefWas]:    " ) ;
             //    OStEXT(   ostoSay , TUCK << 2 ) ;
             //{
-            //if( ((tinNormalS&)tinP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+            //if( tinP.pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
 
             books.unlockF( tinP ) ;
 
             }
                 BLAMMO ;
                 //}
-                //    ((tinNormalS&)tinP).pEther->trace F( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
+                //    tinP.pEther->trace F( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
                 //
                 //    OStEXTAK( ostoSay , "    BLAMMO!  (!cRefWas)" ) ;
                 //    OStEXTCmIN( ostoSay , this , 8 ) ;
                 //    OStEXTAK( ostoSay , "pageC  [this]:    " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( ((tinNormalS&)tinP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+                //if( tinP.pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
             {
             if( !cRefWas )
 

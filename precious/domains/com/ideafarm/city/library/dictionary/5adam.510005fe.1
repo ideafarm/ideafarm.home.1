@@ -15,8 +15,8 @@ etherC::loafIF( tinP ) ;
     }
         POPtINaRGS
         listC::walkIF( tinP , pczName ) ;
-        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
-        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteCBF ;
+        tinP.ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
+        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteCBF ;
         PUSHtINaRGS
     {
 
@@ -26,16 +26,16 @@ etherC::loafIF( tinP ) ;
     }
         POPtINaRGS
         listC::walkIF( tinP , pczName ) ;
-        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
-        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteCBF ;
+        tinP.ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
+        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteCBF ;
         PUSHtINaRGS
     {
 
     }
         POPtINaRGS
         listC::walkIF( tinP , pczName ) ;
-        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
-        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkReportCBF ;
+        tinP.ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
+        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkReportCBF ;
         PUSHtINaRGS
     {
 
@@ -45,8 +45,8 @@ etherC::loafIF( tinP ) ;
     }
         POPtINaRGS
         listC::walkIF( tinP , pczName ) ;
-        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
-        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkAttachCBF ;
+        tinP.ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
+        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkAttachCBF ;
         PUSHtINaRGS
     
             pczName = c8name2 ;
@@ -81,7 +81,7 @@ flagsT listWalkDeleteCBF( tinNormalS& tinP , const countT* const pczListP )
         ___( new( 0 , tinP , LF ) listing_countT_C( tinP , pczListP , 1 + incv02AM( idInLath ) ) ) ; 
         static countT idInLath ;
     {
-    if( !((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP )
+    if( !tinP.ta.pushed.u.listWalk.cbf.pListingP )
 {
 flagsT listWalkAttachCBF( tinNormalS& tinP , const countT* const pczListP )
 
@@ -99,12 +99,12 @@ flagsT listWalkAttachCBF( tinNormalS& tinP , const countT* const pczListP )
                 }
                     }
                         break ;
-                        ((tinNormalS&)tinP).pEther->strokeF( tinP , TF2(pczListP,flFORMAT_NObIGITvALUES)+T("| list:")+TF2(((list_blob_C*)pListing)->idNameF(),flFORMAT_NObIGITvALUES)+T(" with value osTextT: \"")+T((osTextT*)*(list_blob_C*)pListing)+T("\"\r\n") ) ;
+                        tinP.pEther->strokeF( tinP , TF2(pczListP,flFORMAT_NObIGITvALUES)+T("| list:")+TF2(((list_blob_C*)pListing)->idNameF(),flFORMAT_NObIGITvALUES)+T(" with value osTextT: \"")+T((osTextT*)*(list_blob_C*)pListing)+T("\"\r\n") ) ;
                     {
                     case ifcIDtYPEmIXINdATUM_blob :
                     }
                         break ;
-                        ((tinNormalS&)tinP).pEther->strokeF( tinP , TF2(pczListP,flFORMAT_NObIGITvALUES)+T("| list:")+TF2(((list_countT_C*)pListing)->idNameF(),flFORMAT_NObIGITvALUES)+T(" with value signed count: ")+TF2(*(sCountT*)(countT*)*(list_countT_C*)pListing,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+                        tinP.pEther->strokeF( tinP , TF2(pczListP,flFORMAT_NObIGITvALUES)+T("| list:")+TF2(((list_countT_C*)pListing)->idNameF(),flFORMAT_NObIGITvALUES)+T(" with value signed count: ")+TF2(*(sCountT*)(countT*)*(list_countT_C*)pListing,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
                     {
                     case ifcIDtYPEmIXINdATUM_countT :
                 {
@@ -116,12 +116,12 @@ flagsT listWalkAttachCBF( tinNormalS& tinP , const countT* const pczListP )
                 }
                     }
                         break ;
-                        ((tinNormalS&)tinP).pEther->strokeF( tinP , TF2(pczListP,flFORMAT_NObIGITvALUES)+T("| osTextT: \"")+T((osTextT*)*(list_blob_C*)pListing)+T("\"\r\n") ) ;
+                        tinP.pEther->strokeF( tinP , TF2(pczListP,flFORMAT_NObIGITvALUES)+T("| osTextT: \"")+T((osTextT*)*(list_blob_C*)pListing)+T("\"\r\n") ) ;
                     {
                     case ifcIDtYPEmIXINdATUM_blob :
                     }
                         break ;
-                        ((tinNormalS&)tinP).pEther->strokeF( tinP , TF2(pczListP,flFORMAT_NObIGITvALUES)+T("| signed count: ")+TF2(*(sCountT*)(countT*)*(listing_countT_C*)pListing,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+                        tinP.pEther->strokeF( tinP , TF2(pczListP,flFORMAT_NObIGITvALUES)+T("| signed count: ")+TF2(*(sCountT*)(countT*)*(listing_countT_C*)pListing,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
                     {
                     case ifcIDtYPEmIXINdATUM_countT :
                 {
@@ -143,7 +143,7 @@ flagsT listWalkAttachCBF( tinNormalS& tinP , const countT* const pczListP )
         switch( pListing->flagsF() & fliLISTINGc_maskMIXINbITS )
     {
     if( pListing )
-    listingC* pListing = ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
+    listingC* pListing = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
 {
 flagsT listWalkReportCBF( tinNormalS& tinP , const countT* const pczListP )
 

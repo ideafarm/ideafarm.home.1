@@ -26,13 +26,13 @@
 
     }
         }
-            poff_cGrabberRecurse          = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tinNormalS&)tinP).pcGrabitRecurse[ offr ]   - (byteT*)this ) : &((tinNormalS&)tinP).pcGrabitRecurse[ offr ] ) ;
-            poff_cGrabberOsTid            = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tinNormalS&)tinP).pcGrabitOsTid[   offr ]   - (byteT*)this ) : &((tinNormalS&)tinP).pcGrabitOsTid[   offr ] ) ;
+            poff_cGrabberRecurse          = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&tinP.pcGrabitRecurse[ offr ]   - (byteT*)this ) : &tinP.pcGrabitRecurse[ offr ] ) ;
+            poff_cGrabberOsTid            = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&tinP.pcGrabitOsTid[   offr ]   - (byteT*)this ) : &tinP.pcGrabitOsTid[   offr ] ) ;
         {
         if( offr != CmAXgRABITrECURSEiNtINs )                                                                       // IF ANOTHER INSTANCE OF ME HAS REGISTERED THE SAME GRAB BIT
 
         }
-            if( ((tinNormalS&)tinP).ppbGrabitRecurse[ offr ] == pbo ) break ;
+            if( tinP.ppbGrabitRecurse[ offr ] == pbo ) break ;
         {
         for( offr = 0 ; offr < CmAXgRABITrECURSEiNtINs ; offr ++ )
         ZE( countT , offr ) ;

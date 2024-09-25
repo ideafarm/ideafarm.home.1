@@ -45,13 +45,13 @@
                                 LOGrAW3(                                    "!exception: LoadLibrary failed [rc,postP]:    " , rc , "    " ) ;
                             {
                             else
-                            if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("!exception: LoadLibrary failed [rc,postP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postP) ) ;
+                            if( tinP.pEther ) tinP.pEther->traceF( tinP , T("!exception: LoadLibrary failed [rc,postP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postP) ) ;
                         {
                         //default :
                         //}
                         //    break ;
                         //
-                        //    if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T(postAnticipatedErrorP) ) ;
+                        //    if( tinP.pEther ) tinP.pEther->traceF( tinP , T(postAnticipatedErrorP) ) ;
                         //
                         //    thirdC::c_strcatIF( tinP , postAnticipatedErrorP  , osto2 ) ;
                         //    thirdC::c_strcatIF( tinP , postAnticipatedErrorP  , postP ) ;
@@ -72,7 +72,7 @@
                 else
                 }
                     INCoShANDLES
-                    handleP.osF( ifcIDtYPEhANDLE_DLL , ((tinNormalS&)tinP).brcRaw ) ;
+                    handleP.osF( ifcIDtYPEhANDLE_DLL , tinP.brcRaw ) ;
                 {
                 if( !POOP )
 

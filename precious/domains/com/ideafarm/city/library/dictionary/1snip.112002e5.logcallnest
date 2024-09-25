@@ -25,9 +25,9 @@
         countT* pce = pcNest + ccNest ;                                                                         \
         countT* pcc = pcNest ;                                                                                  \
                                                                                                                 \
-        ((tinNormalS&)tinP).get_pLFnest_F( tinP , pcNest , ccNest + 1 ) ;                                                      \
+        tinP.get_pLFnest_F( tinP , pcNest , ccNest + 1 ) ;                                                      \
         countT pcNest[ ccNest + 1 ] ;                                                                           \
-        const countT ccNest = sizeof ((tinNormalS&)tinP).monitor.pLFnest / sizeof ((tinNormalS&)tinP).monitor.pLFnest[ 0 ] ;                                  \
+        const countT ccNest = sizeof tinP.monitor.pLFnest / sizeof tinP.monitor.pLFnest[ 0 ] ;                                  \
         LOGrAW( postP ": call nest:" ) ;                                                                        \
     {                                                                                                           \
                                                                                                                 \

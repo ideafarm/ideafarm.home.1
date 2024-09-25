@@ -30,9 +30,9 @@
                     {
                     else
                     if( !POOP ) SCOOPSdEL
-                    ((tinNormalS&)tinP).pEtScratch->boxPutF( tinP , T(psttc1)+T(".time") , (byteT*)&pcRemoteFileTimes[ 2 * off ] , 2 * sizeof( countT ) ) ;
-                    else             ((tinNormalS&)tinP).pEtScratch->boxPutF( tinP , psttc1 , pbac                    , cba            ) ;
-                    if( fAggregate ) ((tinNormalS&)tinP).pEtScratch->boxPutF( tinP , psttc1 , pbac + sizeof( countT ) , pbac ? *(countT*)pbac : 0 ) ;
+                    tinP.pEtScratch->boxPutF( tinP , T(psttc1)+T(".time") , (byteT*)&pcRemoteFileTimes[ 2 * off ] , 2 * sizeof( countT ) ) ;
+                    else             tinP.pEtScratch->boxPutF( tinP , psttc1 , pbac                    , cba            ) ;
+                    if( fAggregate ) tinP.pEtScratch->boxPutF( tinP , psttc1 , pbac + sizeof( countT ) , pbac ? *(countT*)pbac : 0 ) ;
                     SCOOPSnEW
                 {
                 if( pfWanted[ off ] )
@@ -101,7 +101,7 @@
                 {
                 if( POOP )
                 delF( tinP , psttl ) ;
-                ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , pblt , cblt , psttl , 1 ) ; ___( pblt ) ;
+                tinP.pEtScratch->boxGetShadowF( tinP , pblt , cblt , psttl , 1 ) ; ___( pblt ) ;
                 SCOOPSnEW
                 ZE( countT , cblt ) ;
                 ZE( byteT* , pblt ) ;

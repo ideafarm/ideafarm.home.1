@@ -16,19 +16,19 @@
             }
                 }
                     hThread.resetF() ;
-                    ((tinNormalS&)tinP).pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
-                    *((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
-                    ((tinNormalS&)tinP).pag1->_thirdC_.lOsTid = tidP ;
-                    ((tinNormalS&)tinP).pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
+                    *tinP.pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
+                    tinP.pag1->_thirdC_.lOsTid = tidP ;
+                    tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
                 {
                 if( tidP && tidP != - 1 && F(flagsP) & flPROCESShIRE_REGISTERtHREADhANDLE )
     
                 }
                     hProcess.resetF() ;
-                    ((tinNormalS&)tinP).pag4->_thirdC_grab_lOsPid.ungrabF( tinP ) ;
-                    *((tinNormalS&)tinP).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
-                    ((tinNormalS&)tinP).pag1->_thirdC_.lOsPid = pidP ;
-                    ((tinNormalS&)tinP).pag4->_thirdC_grab_lOsPid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    tinP.pag4->_thirdC_grab_lOsPid.ungrabF( tinP ) ;
+                    *tinP.pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
+                    tinP.pag1->_thirdC_.lOsPid = pidP ;
+                    tinP.pag4->_thirdC_grab_lOsPid.grabF( tinP , TAG( TAGiDnULL ) ) ;
                 {
                 if( pidP && pidP != - 1 && F(flagsP) & flPROCESShIRE_REGISTERpROCESShANDLE )
 
@@ -54,8 +54,8 @@
 
             delF( tinP , postAll ) ;
             }
-                ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
-                //((tinNormalS&)tinP).pEther->traceF( tinP , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                tinP.pEther->traceF( tinP , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
+                //tinP.pEther->traceF( tinP , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                 //LOGrAW( "\"\r\n" ) ;
                 //LOGrAW( postAll ) ;
@@ -73,7 +73,7 @@
                 ZE( osTextT* , postp ) ;
                 //THIS CODE IS DUPLICATED IN 102006a AND 102005d
 
-                ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosExecPgmF / CreateProcess / failed [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
+                tinP.pEther->traceF( tinP , T("dosExecPgmF / CreateProcess / failed [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                 countT rc = POOP ;
             {
@@ -139,14 +139,14 @@
                         costae += TUCK ; // FOR !idNumaNode 12345678
 
                         }
-                            costae = ((tinNormalS&)tinP).brcRaw + 1 ;
+                            costae = tinP.brcRaw + 1 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         else
                         }
-                            costae = c1 + 1 + ((tinNormalS&)tinP).brcRaw + 1 ;
+                            costae = c1 + 1 + tinP.brcRaw + 1 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postArgsP ) )
-                            countT c1 = ((tinNormalS&)tinP).brcRaw ;
+                            countT c1 = tinP.brcRaw ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         if( postArgsP )
@@ -249,8 +249,8 @@
     }
         if( POOP ) return ;
         FV( flPROCESShIRE , flagsP )
-        __( !((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle ) ;
-        __( !((tinNormalS&)tinP).pag1->_thirdC_.pSwProcessHandle ) ;
+        __( !tinP.pag1->_thirdC_.pSwThreadHandle ) ;
+        __( !tinP.pag1->_thirdC_.pSwProcessHandle ) ;
         __Z( postExeP ) ;
         __( pidP ) ;
         if( POOP ) return ;

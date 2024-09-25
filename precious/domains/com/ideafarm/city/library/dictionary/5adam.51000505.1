@@ -29,11 +29,11 @@ REST
             }
                 }
                     idDup ++ ;
-                    *((tinNormalS&)tinP).zEtScratch = 0 ;
+                    *tinP.zEtScratch = 0 ;
                 {
                 else
-                if( !*((tinNormalS&)tinP).zEtScratch ) break ;
-                ((tinNormalS&)tinP).zEtScratch->diskMoveFileOrDirF( tinP , tDesk+T("soixlOld.reject.")+(idDup?TF1(idDup)+T("."):T(""))+T(psttNameShort) , psttc1 ) ;
+                if( !*tinP.zEtScratch ) break ;
+                tinP.zEtScratch->diskMoveFileOrDirF( tinP , tDesk+T("soixlOld.reject.")+(idDup?TF1(idDup)+T("."):T(""))+T(psttNameShort) , psttc1 ) ;
             {
             while( !ether && idDup < 0x10000 )
             ZE( countT , idDup ) ;
@@ -44,8 +44,8 @@ REST
         }
             }
                 else            break ;
-                if( *((tinNormalS&)tinP).zEtScratch ) { *((tinNormalS&)tinP).zEtScratch = 0 ; ether.osSleepF( tinP , TUCK * 0x40 ) ; }
-                ((tinNormalS&)tinP).zEtScratch->boxZapF( tinP , psttc1 ) ;
+                if( *tinP.zEtScratch ) { *tinP.zEtScratch = 0 ; ether.osSleepF( tinP , TUCK * 0x40 ) ; }
+                tinP.zEtScratch->boxZapF( tinP , psttc1 ) ;
             {
             while( !ether )
             etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)psttSoixlOld ) ;
@@ -88,10 +88,10 @@ REST
             else
             }
                 POPUPsOIXLoLD( "I was not able to read a file object that was just dropped into the depository.  I will move it to the desktop when I can." ) ;
-                *((tinNormalS&)tinP).zEtScratch = 0 ;
+                *tinP.zEtScratch = 0 ;
             {
-            if( *((tinNormalS&)tinP).zEtScratch )
-            ((tinNormalS&)tinP).zEtScratch->boxGetShadowF( tinP , postSoixlOld , costSoixlOld , psttc1 ) ; ___( postSoixlOld ) ;
+            if( *tinP.zEtScratch )
+            tinP.zEtScratch->boxGetShadowF( tinP , postSoixlOld , costSoixlOld , psttc1 ) ; ___( postSoixlOld ) ;
             ZE( countT   , costSoixlOld ) ;
             ZE( osTextT* , postSoixlOld ) ;
         {
@@ -106,7 +106,7 @@ REST
         strokeS sttq ;
         ZE( strokeS* , psttNameShort ) ;
 
-        *((tinNormalS&)tinP).zEtScratch = 0 ;
+        *tinP.zEtScratch = 0 ;
     {
     FORsTRINGSiN1( pstt1m )
     etThread.boxMenuF( tinP , soul , tInDir+T("*") ) ; ___( pstt1m ) ;

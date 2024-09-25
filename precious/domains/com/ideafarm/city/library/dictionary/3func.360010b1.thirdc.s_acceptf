@@ -20,14 +20,14 @@
             if( !nicNameP ) nicNameP = NICnAMElOCAL ;
 
             }
-                pcTo[ 3 - offi ] = ((tinNormalS&)tinP).brcRaw ;
+                pcTo[ 3 - offi ] = tinP.brcRaw ;
                 BOSdOnOTtEST( WHATgbo , ntohl( pcFrom[ offi ] ) )
             {
             for( countT offi = 0 ; offi < 4 ; offi ++ )
             countT* pcTo   = (countT*)(const countT*)nicNameP ;
             countT* pcFrom = (countT*)info.sin6_addr.u.Byte ;
 
-            idPortP = ((tinNormalS&)tinP).brcRaw ;
+            idPortP = tinP.brcRaw ;
             BOSdOnOTtEST( WHATgbo , ntohs( info.sin6_port ) )
             __( cbInfo - sizeof info ) ;
             __( info.sin6_family - AF_INET6 ) ;
@@ -60,11 +60,11 @@
     etRock.traceF( tinP , T("s_acceptF / called  accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
     INCoShANDLES
-    countT brcRawSave = ((tinNormalS&)tinP).brcRaw ;
+    countT brcRawSave = tinP.brcRaw ;
 
     }
-        //LOGrAW5( "" , oshSocket , "    " , ((tinNormalS&)tinP).pag1->idAdam , " ++++ accept\r\n" ) ;
-        countT oshSocket = ((tinNormalS&)tinP).brcRaw ;
+        //LOGrAW5( "" , oshSocket , "    " , tinP.pag1->idAdam , " ++++ accept\r\n" ) ;
+        countT oshSocket = tinP.brcRaw ;
     {
     BOSpOOP
     BOSS( WHATsia , BOSsOCKETcODE , accept( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , &cbInfo ) )
@@ -75,7 +75,7 @@
     etRock.traceF( tinP , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
     etherC& etRock = etherC::etRockIF( tinP ) ;
 
-    countT idAccept = ((tinNormalS&)tinP).monitor.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
+    countT idAccept = tinP.monitor.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
     static countT idAcceptLath ;
 
     _IO_

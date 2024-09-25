@@ -11,7 +11,7 @@
 }
     friend class jotFilesC ;
 
-    inline voidT reportF( tinNormalS& tinP ) const { if( ((tinNormalS&)tinP).pEther) ((tinNormalS&)tinP).pEther->traceF( tinP , T("branch         [this,idjUp,idjDown,idjPart,timeModified]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjUp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjDown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TT(time1Modified,time2Modified) , flTRACE_NOpREFIX ) ; }
+    inline voidT reportF( tinNormalS& tinP ) const { if( tinP.pEther) tinP.pEther->traceF( tinP , T("branch         [this,idjUp,idjDown,idjPart,timeModified]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjUp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjDown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TT(time1Modified,time2Modified) , flTRACE_NOpREFIX ) ; }
 
     jotFileBranchC( tinNormalS& tinP , countT idjPartP , countT time1P = 0 , sCountT time2P = 0 ) ;
     NEWdELcLASSpROTOS

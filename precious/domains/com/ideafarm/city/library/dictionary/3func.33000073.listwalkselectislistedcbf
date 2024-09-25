@@ -28,9 +28,9 @@
         if( pListingP && !( pListingP->flagsF() & fliLISTINGc_MIXINlIST ) && pListingP->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
         flagsT flagsRC = flLISTwALKcALLbACKrETURNcODE_null ;
 
-        listingC& listingTestP = *(listingC*)((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-        boolT&    bListedP     =    *(boolT*)((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-        listingC* pListingP    =             ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
+        listingC& listingTestP = *(listingC*)tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+        boolT&    bListedP     =    *(boolT*)tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        listingC* pListingP    =             tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     {
     else
     }
@@ -50,15 +50,15 @@
         if( pListingP && !( pListingP->flagsF() & fliLISTINGc_MIXINlIST ) && pListingP->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
         flagsT flagsRC = flLISTwALKcALLbACKrETURNcODE_null ;
 
-        listingOfSetC& listingTestP = *(listingOfSetC*)((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-        boolT&         bListedP     =         *(boolT*)((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-        listingOfSetC* pListingP    = (listingOfSetC*)((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
+        listingOfSetC& listingTestP = *(listingOfSetC*)tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+        boolT&         bListedP     =         *(boolT*)tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        listingOfSetC* pListingP    = (listingOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     {
     if( bOfSet )
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !((tinNormalS&)tinP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT _export listWalkSelectIsListedCBF( tinNormalS& tinP )/*1*/
 

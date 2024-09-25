@@ -8,10 +8,10 @@
 
 
 }
-    //if( ((tinNormalS&)tinP).pPoolUse != ((tinNormalS&)tinP).pag1->pPoolAdamTemp ) ((tinNormalS&)tinP).pc Utility[ 0 ] = (countT)((tinNormalS&)tinP).pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
+    //if( tinP.pPoolUse != tinP.pag1->pPoolAdamTemp ) tinP.pc Utility[ 0 ] = (countT)tinP.pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
 
-    else                                         flagsMode |= flPUSEcmODE_DOnOTrESTOREtINwHENdIE ; //O: OPTIMIZATION: THIS LINE HAS NO EFFECT SINCE RESTORING ((tinNormalS&)tinP).pPoolUse FROM pPoolUseLag WILL NOT CHANGE ITS VALUE
-    if( !( F(flagsMode) & flPUSEcmODE_HIDDEN ) ) ((tinNormalS&)tinP).pPoolUse = pPoolUse ;
+    else                                         flagsMode |= flPUSEcmODE_DOnOTrESTOREtINwHENdIE ; //O: OPTIMIZATION: THIS LINE HAS NO EFFECT SINCE RESTORING tinP.pPoolUse FROM pPoolUseLag WILL NOT CHANGE ITS VALUE
+    if( !( F(flagsMode) & flPUSEcmODE_HIDDEN ) ) tinP.pPoolUse = pPoolUse ;
 
     }
         }
@@ -19,22 +19,22 @@
             __( idPoolP ) ;
         {
         default :
-        case ifcIDpOOL_HOMEpERM     : { if( !((tinNormalS&)tinP).pag1->pPoolHomePerm )                                                                                                                                              ((tinNormalS&)tinP).pag1->pPoolHomePerm = new( 0 , tinP , ((tinNormalS&)tinP).pag1->pbzphp , sizeof ((tinNormalS&)tinP).pag1->pbzphp ) poolC( tinP , TAG( TAGiDnULL ) , "home.perm"      , CBsEXdROPsEPARATOR , flPOOLc_null          | flPOOLc_SETS , ifcIDsTATEsPACE_MULTIPLEaDAMS      ) ;   pPoolUse = ((tinNormalS&)tinP).pag1->pPoolHomePerm ; break ; }
-        case ifcIDpOOL_ADAMpERM     : { if( !((tinNormalS&)tinP).pag1->pPoolAdamPerm ) { OStEXT(   ostoPoolAdamPerm , 0x20 ) ; OStEXTAK( ostoPoolAdamPerm , "adam.perm." ) ; OStEXTC(  ostoPoolAdamPerm , ((tinNormalS&)tinP).pag1->idAdam , 0 ) ; ((tinNormalS&)tinP).pag1->pPoolAdamPerm = new( 0 , tinP , ((tinNormalS&)tinP).pag1->pbzpap , sizeof ((tinNormalS&)tinP).pag1->pbzpap ) poolC( tinP , TAG( TAGiDnULL ) , ostoPoolAdamPerm , CBsEXdROPsEPARATOR , flPOOLc_null          | flPOOLc_SETS , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) ) ; } pPoolUse = ((tinNormalS&)tinP).pag1->pPoolAdamPerm ; break ; }
-        case ifcIDpOOL_SCRATCH      : { if( !((tinNormalS&)tinP).pag1->pPoolScratch  )                                                                                                                                              ((tinNormalS&)tinP).pag1->pPoolScratch  = new( 0 , tinP , ((tinNormalS&)tinP).pag1->pbzpsc , sizeof ((tinNormalS&)tinP).pag1->pbzpsc ) poolC( tinP , TAG( TAGiDnULL ) , "scratch"        , CBsEXdROPsEPARATOR , flPOOLc_null                         , ifcIDsTATEsPACE_SCRATCH            ) ;   pPoolUse = ((tinNormalS&)tinP).pag1->pPoolScratch  ; break ; }
-        case ifcIDpOOL_HOMEtEMP     : { if( !((tinNormalS&)tinP).pag1->pPoolHomeTemp )                                                                                                                                              ((tinNormalS&)tinP).pag1->pPoolHomeTemp = new( 0 , tinP , ((tinNormalS&)tinP).pag1->pbzpht , sizeof ((tinNormalS&)tinP).pag1->pbzpht ) poolC( tinP , TAG( TAGiDnULL ) , "home.temp"      , 0                  , flPOOLc_NOdROPhEADERS | flPOOLc_SETS                                      ) ;   pPoolUse = ((tinNormalS&)tinP).pag1->pPoolHomeTemp ; break ; }
-        case ifcIDpOOL_ADAMtEMP     : {                                                                                                                                                                                                                                                                                                                                                                                                                                 pPoolUse = ((tinNormalS&)tinP).pag1->pPoolAdamTemp ; break ; }
+        case ifcIDpOOL_HOMEpERM     : { if( !tinP.pag1->pPoolHomePerm )                                                                                                                                              tinP.pag1->pPoolHomePerm = new( 0 , tinP , tinP.pag1->pbzphp , sizeof tinP.pag1->pbzphp ) poolC( tinP , TAG( TAGiDnULL ) , "home.perm"      , CBsEXdROPsEPARATOR , flPOOLc_null          | flPOOLc_SETS , ifcIDsTATEsPACE_MULTIPLEaDAMS      ) ;   pPoolUse = tinP.pag1->pPoolHomePerm ; break ; }
+        case ifcIDpOOL_ADAMpERM     : { if( !tinP.pag1->pPoolAdamPerm ) { OStEXT(   ostoPoolAdamPerm , 0x20 ) ; OStEXTAK( ostoPoolAdamPerm , "adam.perm." ) ; OStEXTC(  ostoPoolAdamPerm , tinP.pag1->idAdam , 0 ) ; tinP.pag1->pPoolAdamPerm = new( 0 , tinP , tinP.pag1->pbzpap , sizeof tinP.pag1->pbzpap ) poolC( tinP , TAG( TAGiDnULL ) , ostoPoolAdamPerm , CBsEXdROPsEPARATOR , flPOOLc_null          | flPOOLc_SETS , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) ) ; } pPoolUse = tinP.pag1->pPoolAdamPerm ; break ; }
+        case ifcIDpOOL_SCRATCH      : { if( !tinP.pag1->pPoolScratch  )                                                                                                                                              tinP.pag1->pPoolScratch  = new( 0 , tinP , tinP.pag1->pbzpsc , sizeof tinP.pag1->pbzpsc ) poolC( tinP , TAG( TAGiDnULL ) , "scratch"        , CBsEXdROPsEPARATOR , flPOOLc_null                         , ifcIDsTATEsPACE_SCRATCH            ) ;   pPoolUse = tinP.pag1->pPoolScratch  ; break ; }
+        case ifcIDpOOL_HOMEtEMP     : { if( !tinP.pag1->pPoolHomeTemp )                                                                                                                                              tinP.pag1->pPoolHomeTemp = new( 0 , tinP , tinP.pag1->pbzpht , sizeof tinP.pag1->pbzpht ) poolC( tinP , TAG( TAGiDnULL ) , "home.temp"      , 0                  , flPOOLc_NOdROPhEADERS | flPOOLc_SETS                                      ) ;   pPoolUse = tinP.pag1->pPoolHomeTemp ; break ; }
+        case ifcIDpOOL_ADAMtEMP     : {                                                                                                                                                                                                                                                                                                                                                                                                                                 pPoolUse = tinP.pag1->pPoolAdamTemp ; break ; }
         case ifcIDpOOL_NONE         : {                                                                                                                                                                                                                                                                                                                                                                                                                                 pPoolUse = 0                        ; break ; }
     {
     switch( idPoolP )
 
     // THE "home.temp" INSTANCE IS CONFIGURED FOR SETS AND FOR NO SEPARATORS OR DROP HEADERS OR DROP NOTES, SO IT USES THE ADDRESS SPACE EFFICIENTLY AND CAN BE USED TO TEST DATABASE APPLICATIONS ; SUCH A CONFIGURATION SHOULD NOT BE USED FOR INSTANCES THAT ARE USED AS HEAPS, SUCH AS adam.temp
 
-    if( idPoolP != ifcIDpOOL_NONE && idPoolP != ifcIDpOOL_ADAMtEMP && !( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
+    if( idPoolP != ifcIDpOOL_NONE && idPoolP != ifcIDpOOL_ADAMtEMP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
 {
 flagsMode( flagsModeP )
 pPoolUse( 0 ) ,
-pPoolUseLag( ((tinNormalS&)tinP).pPoolUse ) ,
+pPoolUseLag( tinP.pPoolUse ) ,
 /*1*/puseC::puseC( tinNormalS& tinP , const countT idPoolP , const flagsT flagsModeP ) :/*1*/
 
 /**/

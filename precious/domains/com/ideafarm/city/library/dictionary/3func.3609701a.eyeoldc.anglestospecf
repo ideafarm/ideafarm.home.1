@@ -17,29 +17,29 @@
                 else                 hAngleP = - 1.0 - hAngleP ;
                 if( hAngleP >= 0.0 ) hAngleP =   1.0 - hAngleP ;
 
-                hAngleP = ((tinNormalS&)tinP).brcm04Raw ;
+                hAngleP = tinP.brcm04Raw ;
                 BOSmEASURE04( WHATgbo , atan2( vSpecPod( 1 ) , - vSpecPod( 3 ) ) / PI )
             {
             else
             }
-                hAngleP = ((tinNormalS&)tinP).brcm04Raw ;
+                hAngleP = tinP.brcm04Raw ;
                 BOSmEASURE04( WHATgbo , atan2( vSpecPod( 1 ) , vSpecPod( 3 ) ) / PI )
             {
             if( vSpecPod( 3 ) > 0.0 )
 
-            vAngleP = ((tinNormalS&)tinP).brcm04Raw ;
+            vAngleP = tinP.brcm04Raw ;
             BOSmEASURE04( WHATgbo , atan2( vSpecPod(2) , thirdC::c_sqrtIF( vSpecPodHorProj ) ) / PI )
         {
         else
         }
             }
-                vAngleP = ((tinNormalS&)tinP).brcm04Raw ;
+                vAngleP = tinP.brcm04Raw ;
                 BOSmEASURE04( WHATgbo , atan2( vSpecPod( 2 ) , - vSpecPod( 1 ) ) / PI )
                 hAngleP = - 0.5 ;
             {
             else if( vSpecPod( 1 ) < 0.0 ) // IN FACE PLANE TO MY LEFT
             }
-                vAngleP = ((tinNormalS&)tinP).brcm04Raw ;
+                vAngleP = tinP.brcm04Raw ;
                 BOSmEASURE04( WHATgbo , atan2( vSpecPod( 2 ) , vSpecPod( 1 ) ) / PI )
                 hAngleP = 0.5 ;
             {
@@ -61,7 +61,7 @@
             }
                 else flagsP &= ~( F(flEYEoLDaNGLEStOsPEC_AFT) ) ;
                 }
-                    vAngleAftP = ((tinNormalS&)tinP).brcm04Raw ;
+                    vAngleAftP = tinP.brcm04Raw ;
                     BOSmEASURE04( WHATgbo , atan2( vSpecPodAft( 2 ) , - vSpecPodAft( 3 ) ) / PI )
                 {
                 if( vSpecPodAft( 0 ) && vSpecPodAft( 3 ) < - FUZZ2 )

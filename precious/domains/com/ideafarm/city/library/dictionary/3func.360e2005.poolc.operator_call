@@ -80,7 +80,7 @@
             if( c_this && F(guts.flagsCt) & flPOOLc_READoNLY ) { BLAMMO ; }
             countT c_this = (countT)this ;
         {
-        if( bDropHeader && !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
+        if( bDropHeader && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
 
         //}
         //    CONoUTrAW7( "[dropHeader,mask,offs]:    " , dropHeader , "    " , mask , "    " , offs , "\r\n" ) ;
@@ -127,7 +127,7 @@
     //{
     //if( bChatter )
 
-    //boolT bChatter = !!((tinNormalS&)tinP).pc Utility[ 0 ] ;
+    //boolT bChatter = !!tinP.pc Utility[ 0 ] ;
 {
 /*1*/voidT poolC::operator ()( tinNormalS& tinP , byteT*& pbP )/*1*/
 

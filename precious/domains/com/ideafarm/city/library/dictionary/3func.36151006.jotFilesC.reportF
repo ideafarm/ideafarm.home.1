@@ -252,10 +252,10 @@
                 }
                     }
                         }
-                            ((tinNormalS&)tinP).pEther->traceF( tinP , T("jotFilesC::writeF / new mod puddle [time?Modified]:    ")+TT(soilPatch.time1Modified,soilPatch.time2Modified) ) ;
-                            ((tinNormalS&)tinP).pEther->osTimeNowF( tinP , soilPatch.time1Modified , soilPatch.time2Modified ) ;
+                            tinP.pEther->traceF( tinP , T("jotFilesC::writeF / new mod puddle [time?Modified]:    ")+TT(soilPatch.time1Modified,soilPatch.time2Modified) ) ;
+                            tinP.pEther->osTimeNowF( tinP , soilPatch.time1Modified , soilPatch.time2Modified ) ;
                         {
-                        if( ((tinNormalS&)tinP).pEther )
+                        if( tinP.pEther )
                         soilPatch.time2Modified = soilPatch.time1Modified = 0 ;
                     {
                     if( getNegAM( soilPatch.finger ) == FINGERnEG_jotFileSoilC )
@@ -297,10 +297,10 @@
                     break ;
 
                     }
-                        ((tinNormalS&)tinP).pEther->traceF( tinP , T("jotFilesC::writeF / new mod [time?Modified]:    ")+TT(soilMaybe.time1Modified,soilMaybe.time2Modified) ) ;
-                        ((tinNormalS&)tinP).pEther->osTimeNowF( tinP , soilMaybe.time1Modified , soilMaybe.time2Modified ) ;
+                        tinP.pEther->traceF( tinP , T("jotFilesC::writeF / new mod [time?Modified]:    ")+TT(soilMaybe.time1Modified,soilMaybe.time2Modified) ) ;
+                        tinP.pEther->osTimeNowF( tinP , soilMaybe.time1Modified , soilMaybe.time2Modified ) ;
                     {
-                    if( ((tinNormalS&)tinP).pEther )
+                    if( tinP.pEther )
                     soilMaybe.time2Modified = soilMaybe.time1Modified = 0 ;
 
                     idjBranchCursor = soilMaybe.idjBranch ;
@@ -406,9 +406,9 @@
         countT cEltsNeverChanges = jotNeverChanges.cElementsF() ;
         countT cEltsCanChange    =    jotCanChange.cElementsF() ;
 
-        etherC& ether = *((tinNormalS&)tinP).pEther ;
+        etherC& ether = *tinP.pEther ;
     {
-    if( ((tinNormalS&)tinP).pEther )
+    if( tinP.pEther )
 
     }
         if( POOP ) return ;

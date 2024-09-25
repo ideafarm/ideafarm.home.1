@@ -53,7 +53,7 @@ THREADmODE3rESTORE
     
             socket.listenF( tinP ) ;
             homeS::homeIF().idPortListMoneyBuckets = socket.bindF( tinP ) ;
-            socketC socket( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
+            socketC socket( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
     
             ++ idCycle ;
         {
@@ -115,7 +115,7 @@ TASK( tmTestF )
             }
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */
                 if( !bFake ) { DEL( pTaskP ) ; } /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.  THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */
-                if( ((tinNormalS&)tinP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinP).monitor.idThread ] = - 1 ;
+                if( tinP.monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] = - 1 ;
                 TELL( "DONE0: i am outa here" )
                 ;
                     : thirdC::os_cAllKidThreadsI_IF( tinP )
@@ -141,15 +141,15 @@ TASK( tmTestF )
                             DELzOMBIE( pDoomed ) ; /* tinP IS DESTROYED HERE */
                             etherC* pDoomed = pEtThread ;
                         {
-                        DEL( ((tinNormalS&)tinP).pEtScratch ) ;
-                        DEL( ((tinNormalS&)tinP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
+                        DEL( tinP.pEtScratch ) ;
+                        DEL( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
                         TELL( "DONE0: deleting etThread (and tinP)" ) ;
-                        ((tinNormalS&)tinP).pEther = 0 ;
+                        tinP.pEther = 0 ;
                         TELL( "DONE0: testing poolOld" ) ;
 
                         }
-                            ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttThreadFile ) ;
-                            ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , psttThreadFile ) ;
+                            tinP.pEtScratch->delF( tinP , psttThreadFile ) ;
+                            tinP.pEtScratch->boxZapF( tinP , psttThreadFile ) ;
                             TELL( "DONE0: deleting thread file" ) ;
                         {
                         if( psttThreadFile )
@@ -160,26 +160,26 @@ TASK( tmTestF )
 
                 }
                     }
-                        if( ((tinNormalS&)tinP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinP).monitor.idThread ] ) ) { BLAMMO ; }
-                        if( ((tinNormalS&)tinP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinNormalS&)tinP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
+                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
+                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
                         }
                             TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;
                             }
-                                while( ((tinNormalS&)tinP).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ; }
+                                while( tinP.cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ; }
                                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
                             {
                             TELL( "DONE0: waiting for my kid threads to end" ) ;
 
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
                             TELL( "DONE0: conditionally calling etherWhereF" ) ;
                         {
                         else
                         if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
 
                         TELL( "DONE0: after returning from application code" ) ;
-                        ((tinNormalS&)tinP).idPhase2 = 0 ;
-                        if( ((tinNormalS&)tinP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinNormalS&)tinP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
-                        if( ((tinNormalS&)tinP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinP).monitor.idThread ] ) ) { BLAMMO ; }
+                        tinP.idPhase2 = 0 ;
+                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
+                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
                         TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
                     {
                     /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/
@@ -541,7 +541,7 @@ TASK( tmTestF )
         {
         while( !ether && !POOP )
 
-        psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
+        psoP->etherF( tinP , *tinP.pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH

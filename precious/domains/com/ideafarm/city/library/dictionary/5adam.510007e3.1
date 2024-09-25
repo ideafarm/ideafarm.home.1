@@ -896,7 +896,7 @@ DONE( tmCopyFileF )
                         bOk = 1 ;
                     {
                     if( !POOP )
-                    ((tinNormalS&)tinP).pEtScratch->diskCopyFileF( tinP , psttToP , psttFromP , 1 ) ;
+                    tinP.pEtScratch->diskCopyFileF( tinP , psttToP , psttFromP , 1 ) ;
                 {
                 while( cTries && cTries -- )
                 ZE( boolT , bOk ) ;
@@ -921,7 +921,7 @@ DONE( tmCopyFileF )
                     bOk = 1 ;
                 {
                 if( !POOP )
-                bExists = ((tinNormalS&)tinP).pEtScratch->diskFileExistsF( tinP , psttToP ) ;
+                bExists = tinP.pEtScratch->diskFileExistsF( tinP , psttToP ) ;
             {
             while( cTries && cTries -- )
             cTries = 8 ;
@@ -957,7 +957,7 @@ DONE( tmCopyFileF )
                 bOk = 1 ;
             {
             if( !POOP )
-            bExists = ((tinNormalS&)tinP).pEtScratch->diskFileExistsF( tinP , psttToP ) ;
+            bExists = tinP.pEtScratch->diskFileExistsF( tinP , psttToP ) ;
         {
         while( cTries && cTries -- )
         ZE( boolT , bOk ) ;
@@ -1396,7 +1396,7 @@ TASK( tmCollectFileMetaF )
 /*1*/countT subtractFileMetaF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
-    ((tinNormalS&)tinP).pEther->traceF( tinP , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
+    tinP.pEther->traceF( tinP , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
 {
 voidT imageCompareS::traceF( tinNormalS& tinP , const strokeS* const psttP )
 
@@ -1410,13 +1410,13 @@ imageCompareS::imageCompareS( voidT ) :
 NEWdELcLASS( 2 , imageCompareS ) ;
 
 }
-    return ((tinNormalS&)tinP).pEther->memCompareF( tinP , (byteT*)this , (byteT*)&frP , sizeof( countT ) + sizeof( count04T ) ) ;    //CS:CODEsYNC 1 1
+    return tinP.pEther->memCompareF( tinP , (byteT*)this , (byteT*)&frP , sizeof( countT ) + sizeof( count04T ) ) ;    //CS:CODEsYNC 1 1
     TINSL
 {
 sCountT fileMetaS::operator -( const fileMetaS& frP ) const
 
 }
-    ((tinNormalS&)tinP).pEther->traceF( tinP , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
+    tinP.pEther->traceF( tinP , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
 {
 voidT fileMetaS::traceF( tinNormalS& tinP , stackC& stPathToYearP , const strokeS* const psttP )
 

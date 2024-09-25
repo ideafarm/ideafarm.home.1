@@ -51,14 +51,14 @@ DONE( tmF )
 
     baton.ungrabF( tinP ) ;
 
-    etThread.strokeF( tinP , T("thread ")+TF1(((tinNormalS&)tinP).monitor.idThread)+T("    pulled vlue= ")+TF1(value)+T("\r\n") ) ;
+    etThread.strokeF( tinP , T("thread ")+TF1(tinP.monitor.idThread)+T("    pulled vlue= ")+TF1(value)+T("\r\n") ) ;
     swsMe.pullF( tinP , value , 1 ) ;
     ZE( countT , value ) ;
 
-    swsMe.pushF( tinP , ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
 
     baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
 

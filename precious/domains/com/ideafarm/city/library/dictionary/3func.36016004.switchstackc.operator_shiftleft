@@ -18,8 +18,8 @@
     {
     if( !pStack )
     stackC*& pStack = (stackC*&)(countT&)swMe ;
-    else if( osTidOwner != ((tinNormalS&)tinP).osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinP).osTid ;
+    else if( osTidOwner != tinP.osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
     if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     }

@@ -9,7 +9,7 @@
 
 }
     //}
-    //    if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the thread") ) ;
+    //    if( F(tinP.flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the thread") ) ;
     //    if( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SUPPRESStELLS           ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the process") ) ;
     //    _bWoth = 0 ;
     //{
@@ -166,13 +166,13 @@
         IFbEcAREFUL
     {
     )
-        !( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR )
+        !( F(tinP.flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR )
         &&
         !( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SUPPRESStELLS )
     (
     if
 
-    if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_DISALLOWtELLmONITOR ) { BLAMMO ; }
+    if( F(tinP.flagsThreadMode2) & flTHREADmODE2_DISALLOWtELLmONITOR ) { BLAMMO ; }
 {
 /*1*/voidT thirdC::dosTellMonitorIF( tinNormalS& tinP , const tellC& tellP , const countT idBooksP )/*1*/
 

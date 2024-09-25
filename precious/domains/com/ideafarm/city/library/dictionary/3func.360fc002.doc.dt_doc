@@ -15,15 +15,15 @@
             TELLaPPc3LIFI( ifcIDtYPEtELLaPP_INoUTtINdT , (byteT*)&info , sizeof info , ifcLINE , DDNUMB ) ;
             THREADmODE5oN0( flTHREADmODE5_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY ) ;
 
-                                                 ((tinNormalS&)tinP).cCpuCyclesWriteInOutTelemetry = 0 ;
-            info.cCpuCyclesWriteInOutTelemetry = ((tinNormalS&)tinP).cCpuCyclesWriteInOutTelemetry ;
-                          ((tinNormalS&)tinP).cTellsWriteInOutTelemetry = 0 ;
-            info.cTells = ((tinNormalS&)tinP).cTellsWriteInOutTelemetry ;
+                                                 tinP.cCpuCyclesWriteInOutTelemetry = 0 ;
+            info.cCpuCyclesWriteInOutTelemetry = tinP.cCpuCyclesWriteInOutTelemetry ;
+                          tinP.cTellsWriteInOutTelemetry = 0 ;
+            info.cTells = tinP.cTellsWriteInOutTelemetry ;
             info.idThreadReporting = 1 ;
             tellInfoAppInOutFrameTinDtS info ;
             //PS:PSEUDOdUPLICATE CODE: 36024002 360fc002
 
-            processGlobal4I.heap.delF( tinP , ((tinNormalS&)tinP).pbPendingInOutFramePackets ) ;
+            processGlobal4I.heap.delF( tinP , tinP.pbPendingInOutFramePackets ) ;
 
             }
                 THREADmODE5rESTORE
@@ -32,7 +32,7 @@
 
                     }
                         thirdC::dosTellMonitorIF( tinP , tell , ifcIDbOOKStELL_APP ) ;
-                        tellC tell( tinP , LF , 0 , ifcIDtYPEtELLaPP_INoUTaRRAY , ((tinNormalS&)tinP).pbPendingInOutFramePackets , sizeof( countT ) + cPending * sizeof( tellInfoAppInOutFrameS ) ) ;
+                        tellC tell( tinP , LF , 0 , ifcIDtYPEtELLaPP_INoUTaRRAY , tinP.pbPendingInOutFramePackets , sizeof( countT ) + cPending * sizeof( tellInfoAppInOutFrameS ) ) ;
                     {
 
                     }
@@ -42,15 +42,15 @@
                     {
                     if( cPending > CmAXpENDINGiNoUTfRAMEpACKETS )
 
-                    tellInfoAppInOutFrameS* pPending = (tellInfoAppInOutFrameS*)( ((tinNormalS&)tinP).pbPendingInOutFramePackets + sizeof( countT ) ) ;
+                    tellInfoAppInOutFrameS* pPending = (tellInfoAppInOutFrameS*)( tinP.pbPendingInOutFramePackets + sizeof( countT ) ) ;
                 {
                 if( cPending )
 
-                countT& cPending = *(countT*)((tinNormalS&)tinP).pbPendingInOutFramePackets ;
+                countT& cPending = *(countT*)tinP.pbPendingInOutFramePackets ;
 
                 THREADmODE5oN( flTHREADmODE5_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY | flTHREADmODE5_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;
             {
-            if( ((tinNormalS&)tinP).pbPendingInOutFramePackets )
+            if( tinP.pbPendingInOutFramePackets )
             //PSEUDOdUPLICATEcODE 360fc002 33000065
 
             TINSL

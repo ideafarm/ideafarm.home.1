@@ -114,17 +114,17 @@ DONE( tmGorillaF )
     }
         //U::etThread.ifcSayF( tinP , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBadMe)+T("; request for ")+tHome+T(" FAILED ********\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         countT cBadMe = 1 + incv02AM( cBad ) ;
-        *((tinNormalS&)tinP).zEtScratch = 0 ;
+        *tinP.zEtScratch = 0 ;
     {
-    if( *((tinNormalS&)tinP).zEtScratch || !cbHome /*|| cbHome != cbHomeWoth*/ )
+    if( *tinP.zEtScratch || !cbHome /*|| cbHome != cbHomeWoth*/ )
     if( !cbHomeWoth  ) cbHomeWoth  = cbHome ;   
-    { ZE( byteT* , pbHome  ) ; ((tinNormalS&)tinP).zEtScratch->boxGetShadowF( tinP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; ((tinNormalS&)tinP).zEtScratch->delF( tinP , pbHome  ) ; }
+    { ZE( byteT* , pbHome  ) ; tinP.zEtScratch->boxGetShadowF( tinP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; tinP.zEtScratch->delF( tinP , pbHome  ) ; }
     ZE( countT , cbHome ) ;
     etThread.strokeF( tinP , T("trial ")+TF1(idMe)+T("\r\n") ) ;
     countT idMe = 1 + incv02AM( idTrial ) ;
 {
 while( !etThread && !ether )
-ranUniC ru( TICK , ((tinNormalS&)tinP).monitor.idThread ) ;
+ranUniC ru( TICK , tinP.monitor.idThread ) ;
 ZE( countT , cbHomeWoth ) ;
 TN( tb , " " ) ;
 

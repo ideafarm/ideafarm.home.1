@@ -29,9 +29,9 @@
             if( POOP )
 
             BOSpOOP
-            BOS( WHATgbo , BOSoK , SetThreadPriority( (HANDLE)((tinNormalS&)tinP).brcRaw , osDesire ) )
+            BOS( WHATgbo , BOSoK , SetThreadPriority( (HANDLE)tinP.brcRaw , osDesire ) )
             BOSdOnOTtEST( WHATgbo ,  GetCurrentThread() )
-            ((tinNormalS&)tinP).idDesireSetBySelf = idP ;   // DONE IMMEDIATELY B4 CALLING SetThreadPriority() TO ENSURE THAT ANY RECURSIVE CALLS TO MY QUERY OVERLOAD WILL NOT SEE A FALSE VALUE
+            tinP.idDesireSetBySelf = idP ;   // DONE IMMEDIATELY B4 CALLING SetThreadPriority() TO ENSURE THAT ANY RECURSIVE CALLS TO MY QUERY OVERLOAD WILL NOT SEE A FALSE VALUE
 
             SCOOP
             poopC poop ;
@@ -99,13 +99,13 @@
             case ifcTHREADpRIORITY_LAZIEST :
         {
         switch( idP )
-        ((tinNormalS&)tinP).idDesireSetBySelf = idP ;   // DONE IMMEDIATELY B4 CALLING DosSetPriority() TO ENSURE THAT ANY RECURSIVE CALLS TO MY QUERY OVERLOAD WILL NOT SEE A FALSE VALUE
+        tinP.idDesireSetBySelf = idP ;   // DONE IMMEDIATELY B4 CALLING DosSetPriority() TO ENSURE THAT ANY RECURSIVE CALLS TO MY QUERY OVERLOAD WILL NOT SEE A FALSE VALUE
 
     #if defined( __OS2__ )
 
     const countT idDesireOld = dosPriorityIF( tinP ) ;
 
-    if( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_LOCKdESIRE ) { BLAMMO ; }
+    if( F(tinP.flagsThreadMode3) & flTHREADmODE3_LOCKdESIRE ) { BLAMMO ; }
 
     //O: _IO_       COMMENTED OUT BECAUSE THIS IS CALLED VERY FREQUENTLY SO IMPOSES GREAT OVERHEAD 
 

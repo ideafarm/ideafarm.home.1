@@ -92,7 +92,7 @@ TODO
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinP).fingerprint && c3P ) ;
+    if( tinP.fingerprint && c3P ) ;
 
     }
         else if( pc4v1->c1 < pc4v2->c1 ) sgn = - 1 ;
@@ -117,7 +117,7 @@ countT subtract_count4S_F( tinNormalS& tinP , countT& pEther , countT& c1P , cou
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinP).fingerprint && c3P ) ;
+    if( tinP.fingerprint && c3P ) ;
 
     }
         else if( pTinc1->osTid < pTinc2->osTid ) sgn = - 1 ;
@@ -142,7 +142,7 @@ countT subtract_tinC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinP).fingerprint && c3P ) ;
+    if( tinP.fingerprint && c3P ) ;
 
     }
         else if( pProcess1->osPid < pProcess2->osPid ) sgn = - 1 ;
@@ -167,7 +167,7 @@ countT subtract_processC_F( tinNormalS& tinP , countT& pEther , countT& c1P , co
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinP).fingerprint && c3P ) ;
+    if( tinP.fingerprint && c3P ) ;
 
     }
         else if( pCell1->idCell < pCell2->idCell ) sgn = - 1 ;
@@ -251,9 +251,9 @@ voidT jobHearOrderF( tinNormalS& tinP , etherC& ether , etherC& etThread , const
                 }
                     break ;
 
-                    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttArgs ) ;
-                    ((tinNormalS&)tinP).zEtScratch->osThreadF( tinP , countTC() , tmNewCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idAdam , (countT)pstta ) ;
-                    strokeS* pstta = (strokeS*)psttOldC( tinP , *((tinNormalS&)tinP).zEtScratch , (psttArgs?T(psttArgs):T("")) ) ; ___( pstta ) ;
+                    tinP.zEtScratch->delF( tinP , psttArgs ) ;
+                    tinP.zEtScratch->osThreadF( tinP , countTC() , tmNewCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idAdam , (countT)pstta ) ;
+                    strokeS* pstta = (strokeS*)psttOldC( tinP , *tinP.zEtScratch , (psttArgs?T(psttArgs):T("")) ) ; ___( pstta ) ;
         
                     sOrderP >> (countT&)time2Limit ;
                     ZE( sCountT , time2Limit ) ;
@@ -487,7 +487,7 @@ cRef_pbTin( 0 ) ,
 bCopy_pbTin( !pbTin ) ,
 pbTin( pvOrIda && saidP.idType == ifcIDtYPEtELLsYS_TINcTI ? (byteT*)ap_artmentOldC( tinP , (countT)pvOrIda ) : 0 ) ,
 pvOrIda( saidP.pbData && saidP.cbData == sizeof( tellInfoSysTinS ) ? ((tellInfoSysTinS*)saidP.pbData)->ip : 0 ) ,
-ether( tinP , TAG( TAGiDnULL ) , *((tinNormalS&)tinP).pag1->pPoolAdamTemp ) ,
+ether( tinP , TAG( TAGiDnULL ) , *tinP.pag1->pPoolAdamTemp ) ,
 bSelf( !pInfoP ) ,
 tinC::tinC( tinNormalS& tinP , saidS& saidP , const ifcMonitorEventS* pInfoP ) :
 
@@ -592,7 +592,7 @@ boolT processC::operator ==( const cP ) const
 {
 osPid( infoP.osPid )
 osTid( infoP.osTid ) ,
-ether( tinP , TAG( TAGiDnULL ) , *((tinNormalS&)tinP).pag1->pPoolAdamTemp ) ,
+ether( tinP , TAG( TAGiDnULL ) , *tinP.pag1->pPoolAdamTemp ) ,
 processC::processC( tinNormalS& tinP , const ifcMonitorEventS& infoP ) :
 
 NEWdELcLASSb( processC )
@@ -1401,7 +1401,7 @@ voidT cellC::classShutdown1F( tinNormalS& tinP , countT& idCellLathP , countT& s
     pBatonSerial   = new( 0 , tinP , LF ) batonC( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonSerial   ) ;
     pBatonLog      = new( 0 , tinP , LF ) batonC( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonLog      ) ;
     pBatonClass    = new( 0 , tinP , LF ) batonC( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonClass    ) ;
-    pEtClass       = new( 0 , tinP , LF ) etherC( tinP , TAG( TAGiDnULL ) , *((tinNormalS&)tinP).pag1->pPoolAdamTemp ) ;                                                                       ___( pEtClass       ) ;
+    pEtClass       = new( 0 , tinP , LF ) etherC( tinP , TAG( TAGiDnULL ) , *tinP.pag1->pPoolAdamTemp ) ;                                                                       ___( pEtClass       ) ;
     bBase = bBaseP ;
     idPhase = 1 ;
 
@@ -1891,7 +1891,7 @@ boolT lockedWantersRF( tinNormalS& tinP , etherC& etherP , boolT& bPseudoP , str
 
 }
     return bLoop ;
-    if( ((tinNormalS&)tinP).fingerprint && stOsTidWanterP && copyP.serial ) ;
+    if( tinP.fingerprint && stOsTidWanterP && copyP.serial ) ;
     }
         //U::}
         //U::    }
@@ -1911,7 +1911,7 @@ boolT wantersF( tinNormalS& tinP , stackC& stOsTidWanterP , grabAnnotatedS& copy
 
 }
     return *(countT*)c1P - *(countT*)c2P ;
-    if( pEther && ((tinNormalS&)tinP).fingerprint && c3P ) ;
+    if( pEther && tinP.fingerprint && c3P ) ;
 {
 countT subtractWantersF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
@@ -1920,7 +1920,7 @@ countT subtractWantersF( tinNormalS& tinP , countT& pEther , countT& c1P , count
 
     countT* pc2 = (countT*)c2P ;
     countT* pc1 = (countT*)c1P ;
-    if( pEther && ((tinNormalS&)tinP).fingerprint && c3P ) ;
+    if( pEther && tinP.fingerprint && c3P ) ;
 {
 countT subtract_grabInfoS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 

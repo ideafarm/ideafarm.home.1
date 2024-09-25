@@ -25,8 +25,8 @@ REST
     booksC books( tinP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flBOOKSc_USEdRIVEc ) ;
 {
 
-((tinNormalS&)tinP).pEther   = pEtherSave ;
-((tinNormalS&)tinP).pPoolUse = pPoolSave ;
+tinP.pEther   = pEtherSave ;
+tinP.pPoolUse = pPoolSave ;
 
 }
     if( pcpIdApt ) PUSE( tinP , *(byteT**)&pcpIdApt ) ;
@@ -48,11 +48,11 @@ REST
     booksC books( tinP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flagsUse | flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , 1 , PCPnOpUSE ) ;
 {
 
-etherC*      pEtherSave = ((tinNormalS&)tinP).pEther ; ((tinNormalS&)tinP).pEther = 0 ;
-poolC*       pPoolSave = ((tinNormalS&)tinP).pPoolUse ; ((tinNormalS&)tinP).pPoolUse = 0 ;
+etherC*      pEtherSave = tinP.pEther ; tinP.pEther = 0 ;
+poolC*       pPoolSave = tinP.pPoolUse ; tinP.pPoolUse = 0 ;
 const flagsT flagsUse = flBOOKSc_null | flBOOKSc_DOnOTuSEpUSE /*| flBOOKSc_NAPKINuSESsIMPLESTgRABc*/ ;
 
-//U::BLAMMO ; //**** NOTE ****:  I WILL NOT EXECUTE UNLESS THE ((tinNormalS&)tinP).monitor.idThread != 1 CHECK IS COMMENTED OUT IN func.*.booksC.booksC
+//U::BLAMMO ; //**** NOTE ****:  I WILL NOT EXECUTE UNLESS THE tinP.monitor.idThread != 1 CHECK IS COMMENTED OUT IN func.*.booksC.booksC
 
 TODO
 

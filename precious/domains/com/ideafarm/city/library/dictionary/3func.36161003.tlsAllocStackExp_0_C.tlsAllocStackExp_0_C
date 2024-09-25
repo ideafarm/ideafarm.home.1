@@ -7,16 +7,16 @@
 //
 
 }
-    thirdC::c_memsetIF( ((tinNormalS&)tinP).pbTls , ((tinNormalS&)tinP).cbTls ) ;
+    thirdC::c_memsetIF( tinP.pbTls , tinP.cbTls ) ;
 
 
-    *(countT*)&((tinNormalS&)tinP).cTls  = 0            ;
-    *(countT*)&((tinNormalS&)tinP).cbTls = sizeof pbTls ;
-    *(byteT**)&((tinNormalS&)tinP).pbTls =        pbTls ;
+    *(countT*)&tinP.cTls  = 0            ;
+    *(countT*)&tinP.cbTls = sizeof pbTls ;
+    *(byteT**)&tinP.pbTls =        pbTls ;
 {
-cTlsSave(   ((tinNormalS&)tinP).cTls )
-cbTlsSave( ((tinNormalS&)tinP).cbTls ) ,
-pbTlsSave( ((tinNormalS&)tinP).pbTls ) ,
+cTlsSave(   tinP.cTls )
+cbTlsSave( tinP.cbTls ) ,
+pbTlsSave( tinP.pbTls ) ,
 /*1*/tlsAllocStackExp_0_C::tlsAllocStackExp_0_C(   tinNormalS& tinP ) :/*1*/
 
 /**/

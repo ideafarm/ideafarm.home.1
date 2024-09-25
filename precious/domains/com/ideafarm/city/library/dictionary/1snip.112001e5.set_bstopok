@@ -13,12 +13,12 @@
                 break ;                                                                                 \
                 _bStopOk = 0 ;                                                                          \
             {                                                                                           \
-            if( ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off ] )                                               \
+            if( tinP.pPanLifiRecurseGrabbedLevel[ off ] )                                               \
         {                                                                                               \
         for( countT off = 0 ; off < offEnd ; off += 5 )                                                 \
         const countT offEnd = OFFgRABBEDmAX * 5 ;                                                       \
     {                                                                                                   \
-    if( ((tinNormalS&)tinP).monitor.cGrabbed && !( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ) \
+    if( tinP.monitor.cGrabbed && !( F(tinP.flagsThreadMode2) & flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ) \
     boolT _bStopOk = 1 ;                                                                                \
                                                                                                         \
 #define SET_bStopOk                                                                                     \

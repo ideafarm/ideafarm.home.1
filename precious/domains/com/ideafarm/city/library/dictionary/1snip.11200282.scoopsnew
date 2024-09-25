@@ -8,11 +8,11 @@
 
 
     }
-        else               { ((tinNormalS&)tinP).pScoops = new( 0 , tinP , LF ) scoopC( tinP , LF ) ; ___( ((tinNormalS&)tinP).pScoops ) ; }                                                  \
-        if( ((tinNormalS&)tinP).pScoops ) { BLAMMO ; }                                                                                                                         \
+        else               { tinP.pScoops = new( 0 , tinP , LF ) scoopC( tinP , LF ) ; ___( tinP.pScoops ) ; }                                                  \
+        if( tinP.pScoops ) { BLAMMO ; }                                                                                                                         \
     {                                                                                                                                                           \
-                           ((tinNormalS&)tinP).pScoops = 0 ;                                                                                                                   \
-    scoopC* _pScoopsSave = ((tinNormalS&)tinP).pScoops ;                                                                                                                       \
+                           tinP.pScoops = 0 ;                                                                                                                   \
+    scoopC* _pScoopsSave = tinP.pScoops ;                                                                                                                       \
                                                                                                                                                                 \
 #define SCOOPSnEW                                                                                                                                               \
 /*1*//*SCOOPSnEW*//*1*/

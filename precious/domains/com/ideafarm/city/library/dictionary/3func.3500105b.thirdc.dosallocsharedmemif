@@ -68,7 +68,7 @@
                         //if( thirdC::c_strstrIF( tinP , ostoOsName , "napSlab" ) )
                         //CAN WRITE TO LOG SINCE NO EXCEPTION HANDLER WILL BE REGISTERED
 
-                        //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
+                        //if( tinP.pc Utility[ 0 ] )
                     {
                     else
                     }
@@ -88,15 +88,15 @@
                     //    OStEXTC(  ostoSay , save , '0' ) ;
                     //    OStEXT(   ostoSay , TUCK >> 2 ) ;
                     //{
-                    //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
+                    //if( tinP.pc Utility[ 0 ] )
 
-                    voidT* pv = (voidT*)((tinNormalS&)tinP).brcRaw ;
-                    countT save = ((tinNormalS&)tinP).brcRaw ;
+                    voidT* pv = (voidT*)tinP.brcRaw ;
+                    countT save = tinP.brcRaw ;
                 {
                 else
                 }
-                    //LOGrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tinNormalS&)tinP).brcRaw , "\r\n" ) ;
-                    //CONoUTrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tinNormalS&)tinP).brcRaw , "\r\n" ) ;
+                    //LOGrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , tinP.brcRaw , "\r\n" ) ;
+                    //CONoUTrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , tinP.brcRaw , "\r\n" ) ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
 
                     osh = 0 ;
@@ -114,17 +114,17 @@
                 //    OStEXTAK( ostoSay , "\"\r\n" ) ;
                 //    OStEXTA(  ostoSay , postP ) ;
                 //    OStEXTAK( ostoSay , " \"" ) ;
-                //    OStEXTC(  ostoSay , ((tinNormalS&)tinP).brcRaw , 0 ) ;
+                //    OStEXTC(  ostoSay , tinP.brcRaw , 0 ) ;
                 //    OStEXTAK( ostoSay , " " ) ;
                 //    OStEXTC(  ostoSay , cbw , 0 ) ;
                 //    OStEXTAK( ostoSay , " " ) ;
                 //    OStEXTC(  ostoSay , cbP , 0 ) ;
                 //    OStEXTAK( ostoSay , " " ) ;
-                //    OStEXTC(  ostoSay , ((tinNormalS&)tinP).pag1->idAdam , 0 ) ;
+                //    OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;
                 //    OStEXTAK( ostoSay , "dosAllocSharedMemIF [idAdam,cbP,cbw,osh,postP]: " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
+                //if( tinP.pc Utility[ 0 ] )
 
                 ;
                     : FILE_MAP_ALL_ACCESS
@@ -151,10 +151,10 @@
             {
             if( bExisted )
 
-            HANDLE osh = (HANDLE)((tinNormalS&)tinP).brcRaw ;
+            HANDLE osh = (HANDLE)tinP.brcRaw ;
 
             BOSpOOP
-            boolT bExisted = ((tinNormalS&)tinP).brcQuery == ERROR_ALREADY_EXISTS ;
+            boolT bExisted = tinP.brcQuery == ERROR_ALREADY_EXISTS ;
             BOS( WHATgbo , BOSoK , CreateFileMappingNuma( (voidT*)( phFileP ? phFileP->osF( ifcIDtYPEhANDLE_FILE ) : -1 ) , &sa , osFlagsOpen , 0 , cbw , ostoOsName , thirdC::osOffNumaNodeValidChosenIF( processGlobal2I.idNumaNode ) ) )
 
             if( F(flagsP) & flOPENsHAREDmEMORY_DOnOTcOMMIT ) osFlagsOpen |= SEC_RESERVE ;
@@ -197,10 +197,10 @@
         c_zReplaceIF( tinP , (osTextT*)(const osTextT*)ostoOsName , '/' , '.' ) ;
         OStEXTA(  ostoOsName  , postP ) ;
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tinNormalS&)tinP).pag1->idMemorySpace , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : tinP.pag1->idMemorySpace , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLmEMORYsPACES )  { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tinNormalS&)tinP).pag1->_thirdC_.idHomeOverride ? ((tinNormalS&)tinP).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && tinP.pag1->_thirdC_.idHomeOverride ? tinP.pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLhOMES         ) { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
         else                                                  { OStEXTA(  ostoOsName , thirdC::postUserNameIF() ) ; }
@@ -235,7 +235,7 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         FV(flOPENsHAREDmEMORY,flagsP) ;
         __( phFileP && F(flagsP) & flOPENsHAREDmEMORY_DOnOTcOMMIT ) ;
         __( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_2GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_1DRIVER ) ;

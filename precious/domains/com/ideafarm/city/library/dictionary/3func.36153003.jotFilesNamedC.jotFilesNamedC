@@ -16,8 +16,8 @@
         ZE( byteT* , pbw ) ;
     {
 
-    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:1
-    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:2
+    tinP.tlsDelF( LF , countTC() ) ; //TLS:1
+    tinP.tlsDelF( LF , countTC() ) ; //TLS:2
 {
 ccHashArray( 0 )
 pcHashArray( 0 ) ,
@@ -27,13 +27,13 @@ fwsHashArray( tinP , etherP , T(iffnHashArray) , flFILEwINDOW_WRITE ) ,
         )
             ".hashArray"
             ) ,
-                tinP , ((tinNormalS&)tinP).pbF() , postP
+                tinP , tinP.pbF() , postP
             (
             thirdC::c_strcpyIF
             tinP ,
         (
         thirdC::c_strcatIF
-        ((tinNormalS&)tinP).tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:2:     "[postP].hashArray"
+        tinP.tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:2:     "[postP].hashArray"
     (
     tinP , etherP ,
 (
@@ -44,13 +44,13 @@ iffnHashArray
         )
             ".jotFilesNamedC"
             ) ,
-                tinP , ((tinNormalS&)tinP).pbF() , postP
+                tinP , tinP.pbF() , postP
             (
             thirdC::c_strcpyIF
             tinP ,
         (
         thirdC::c_strcatIF
-        ((tinNormalS&)tinP).tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:1:     "[postP].jotFilesNamedC"
+        tinP.tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:1:     "[postP].jotFilesNamedC"
     (
     tinP ,
 (

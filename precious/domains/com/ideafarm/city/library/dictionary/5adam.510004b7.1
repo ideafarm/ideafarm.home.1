@@ -69,9 +69,9 @@ DONE( tmGorillaF )
         //U::WITHOUT THIS SLEEP, ONLY WO GORILLA EVER TRACES TO CONSOLE
     {
     while( !etThread && !ether && !swsg.third )
-    const osTextT postPull[] = { 'a' + ((tinNormalS&)tinP).monitor.idThread % 26 , 0 } ;
-    const osTextT postPush[] = { 'A' + ((tinNormalS&)tinP).monitor.idThread % 26 , 0 } ;
-    countT serial = ((tinNormalS&)tinP).monitor.idThread * TICK ;
+    const osTextT postPull[] = { 'a' + tinP.monitor.idThread % 26 , 0 } ;
+    const osTextT postPush[] = { 'A' + tinP.monitor.idThread % 26 , 0 } ;
+    countT serial = tinP.monitor.idThread * TICK ;
 
     }
         ++ s ; ether.osSleepF( tinP , TOCK ) ;

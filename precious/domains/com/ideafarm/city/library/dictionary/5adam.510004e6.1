@@ -29,12 +29,12 @@ DONE( tmStoppedF )
     ppBaton[ off1 ]->ungrabF( tinP ) ;
     ppBaton[ off2 ]->ungrabF( tinP ) ;
 
-    etThread.strokeF( tinP , TF3(((tinNormalS&)tinP).monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbed  ")+TF1(off2)+T("\r\n") ) ;
+    etThread.strokeF( tinP , TF3(tinP.monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbed  ")+TF1(off2)+T("\r\n") ) ;
     ppBaton[ off2 ]->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    etThread.strokeF( tinP , TF3(((tinNormalS&)tinP).monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbing ")+TF1(off2)+T("\r\n") ) ;
+    etThread.strokeF( tinP , TF3(tinP.monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbing ")+TF1(off2)+T("\r\n") ) ;
     etThread.osSleepF( tinP , TOCK ) ;
     ppBaton[ off1 ]->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    etThread.strokeF( tinP , TF3(((tinNormalS&)tinP).monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbing ")+TF1(off1)+T("\r\n") ) ;
+    etThread.strokeF( tinP , TF3(tinP.monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbing ")+TF1(off1)+T("\r\n") ) ;
 
     countT   off2    =           pTaskP->c3 ;
     countT   off1    =           pTaskP->c2 ;

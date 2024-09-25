@@ -8,16 +8,16 @@
 
 
 }
-    //U: THIS CANNOT BE DONE HERE SINCE CHILD THREADS MIGHT STILL EXIST: if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->flagsMode &= ~( F(flTHIRDmODE_QUITTER) ) ;
-    //((tinNormalS&)tinP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
-    ((thirdC&)*((tinNormalS&)tinP).pag1->_etherC_.pEtPrime).thirdWaitTillQuittingF( tinP ) ;
-    //((tinNormalS&)tinP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
+    //U: THIS CANNOT BE DONE HERE SINCE CHILD THREADS MIGHT STILL EXIST: if( tinP.pEther ) tinP.pEther->flagsMode &= ~( F(flTHIRDmODE_QUITTER) ) ;
+    //tinP.pc Utility[ 0 ] -- ; //U::TO FIND A BUG
+    ((thirdC&)*tinP.pag1->_etherC_.pEtPrime).thirdWaitTillQuittingF( tinP ) ;
+    //tinP.pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
 
     _IO_
 
     }
         if( POOP ) return ;
-        __( !((tinNormalS&)tinP).pag1->_etherC_.pEtPrime ) ;
+        __( !tinP.pag1->_etherC_.pEtPrime ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL

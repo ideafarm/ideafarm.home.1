@@ -12,7 +12,7 @@
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
-        if( !thirdC::c_strcmpIF( tinP , (osTextT*)((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] , (osTextT*)*(list_blob_C*)pListing ) ) flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT | flLISTwALKcALLbACKrETURNcODE_DELETE ;
+        if( !thirdC::c_strcmpIF( tinP , (osTextT*)tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] , (osTextT*)*(list_blob_C*)pListing ) ) flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT | flLISTwALKcALLbACKrETURNcODE_DELETE ;
     {
     )
         && pListing->idTypeDatumF() == ifcIDtYPEmIXINdATUM_blob
@@ -21,12 +21,12 @@
     (
     if
 
-    listingC* pListing = ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
+    listingC* pListing = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     flagsT flagsRC = flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !((tinNormalS&)tinP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT listWalkForgetTextCBF( tinNormalS& tinP )/*1*/
 

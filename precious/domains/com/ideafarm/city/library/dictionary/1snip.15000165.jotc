@@ -11,7 +11,7 @@
 }
     }
         return jot.readF( tinP , idJotP ) ;
-        jotC& jot = *((tinNormalS&)tinP).ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
+        jotC& jot = *tinP.ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
 
         if( !ISvALIDjpOINTER( idJotP ) ) { BLAMMO ; }
     {
@@ -25,9 +25,9 @@
                 break ;
                 ids = offs + 1 ;
             {
-            if( ((tinNormalS&)tinP).ppJot[ offs ] == this )
+            if( tinP.ppJot[ offs ] == this )
         {
-        for( countT offs = 0 ; offs < sizeof ((tinNormalS&)tinP).ppJot / sizeof ((tinNormalS&)tinP).ppJot[ 0 ] ; offs ++ )
+        for( countT offs = 0 ; offs < sizeof tinP.ppJot / sizeof tinP.ppJot[ 0 ] ; offs ++ )
         ZE( countT , ids ) ;
     {
     inline countT idSlotJotF( tinNormalS& tinP ) const // IT IS ILLEGAL FOR ANY CODE OTHER THAN ZEJ() TO CALL ME

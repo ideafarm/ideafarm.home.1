@@ -29,7 +29,7 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
                     etThread.strokeF( tinP , T("writing a tray containing the number ")+TF1(idCourseP)+T("\r\n") ) ;
                     sDataP << idCourseP ;
                 {
-                if( !ether && !*((tinNormalS&)tinP).zEtScratch && !bClientQuit )
+                if( !ether && !*tinP.zEtScratch && !bClientQuit )
                 if( idCourseP > 1 ) ether.osSleepF( tinP , TOCK * 0x1 ) ;
             {
             if( !bClientQuit )
@@ -47,7 +47,7 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
 voidT jobFillCourseF( tinNormalS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if( ether && *((tinNormalS&)tinP).zEtScratch && idChatSessionP && cArgP ) ;
+    if( ether && *tinP.zEtScratch && idChatSessionP && cArgP ) ;
 
     }
         if( ++ bClientQuit == 1 ) etThread.strokeF( tinP , T("client quit\r\n") ) ;

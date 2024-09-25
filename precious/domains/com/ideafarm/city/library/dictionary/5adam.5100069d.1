@@ -33,7 +33,7 @@ etThread.traceF( tinP , T("ok") ) ;
             ZE( strokeS* , psttNew ) ;
 
             etThread.delF( tinP , psttn ) ;
-            ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttTrimmed , idf , countTC() , psttn ) ; ___( psttTrimmed ) ;
+            tinP.pEther->strSubstringF( tinP , psttTrimmed , idf , countTC() , psttn ) ; ___( psttTrimmed ) ;
             countT idf = 5 ;
             ZE( strokeS* , psttTrimmed ) ;
 
@@ -124,39 +124,39 @@ TODO
 }
     return 0 ;
 
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort3 ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort2 ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort1 ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttPath ) ;
+    tinP.pEther->delF( tinP , psttShort3 ) ;
+    tinP.pEther->delF( tinP , psttShort2 ) ;
+    tinP.pEther->delF( tinP , psttShort1 ) ;
+    tinP.pEther->delF( tinP , psttShort ) ;
+    tinP.pEther->delF( tinP , psttPath ) ;
 
     }
         }
             swsNameByTimeP << psttShort3NoExt ; psttShort3NoExt = 0 ;
             psttLeverTimeP = psttShort2 ;
 
-            ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttShort3NoExt , idf , idl , psttShort3 ) ; ___( psttShort3NoExt ) ;
+            tinP.pEther->strSubstringF( tinP , psttShort3NoExt , idf , idl , psttShort3 ) ; ___( psttShort3NoExt ) ;
             idl = psttShort3->idAdam - 4 ;
             idf = 1 ;
             ZE( strokeS* , psttShort3NoExt ) ;
         {
         )
-            psttShort3->idAdam - 3 == ((tinNormalS&)tinP).pEther->strIdF( tinP , tDotJpgP , psttShort3 , - 1 )
+            psttShort3->idAdam - 3 == tinP.pEther->strIdF( tinP , tDotJpgP , psttShort3 , - 1 )
             &&
             psttShort3[ CSpREFIX - 1 + 1 ].idAdam == '.'
             &&
             psttShort2[ CSpREFIX - 1 + 9 ].idAdam == '@'
             &&
-            !((tinNormalS&)tinP).pEther->strCompareF( tinP , tIdeafarm5DotP , psttShort1 )
+            !tinP.pEther->strCompareF( tinP , tIdeafarm5DotP , psttShort1 )
         (
         if
 
-        ((tinNormalS&)tinP).pEther->strConvertToLowerCaseF( tinP , psttShort3 ) ;
-        ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttShort3 , idf , idl , psttShort ) ; ___( psttShort3 ) ;
+        tinP.pEther->strConvertToLowerCaseF( tinP , psttShort3 ) ;
+        tinP.pEther->strSubstringF( tinP , psttShort3 , idf , idl , psttShort ) ; ___( psttShort3 ) ;
         idl = 0 ;
-        ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttShort2 , idf , idl , psttShort ) ; ___( psttShort2 ) ;
+        tinP.pEther->strSubstringF( tinP , psttShort2 , idf , idl , psttShort ) ; ___( psttShort2 ) ;
         idl = 0x19 ;
-        ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttShort1 , idf , idl , psttShort ) ; ___( psttShort1 ) ;
+        tinP.pEther->strSubstringF( tinP , psttShort1 , idf , idl , psttShort ) ; ___( psttShort1 ) ;
         countT idl = 0xc ;
         countT idf = 1 ;
     {
@@ -176,11 +176,11 @@ TODO
 
     ___( psttShort ) ;
     ___( psttPath ) ;
-    ((tinNormalS&)tinP).pEther->strBisectF( tinP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+    tinP.pEther->strBisectF( tinP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttPath ) ;
 
-    TN( tNameOld , ifFileNameC( tinP , *((tinNormalS&)tinP).pEther , postNameP ) ) ;
+    TN( tNameOld , ifFileNameC( tinP , *tinP.pEther , postNameP ) ) ;
 
     if( !( cDoneP % TUCK ) ) etherC::etRockIF( tinP ).traceF( tinP , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     cDoneP ++ ;

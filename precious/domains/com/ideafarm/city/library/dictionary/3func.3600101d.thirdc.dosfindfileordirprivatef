@@ -9,7 +9,7 @@
 
 }
     return bCloaked ;
-    //if( ((tinNormalS&)tinP).pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosFindFileOrDirPrivateF ----") ) ;
+    //if( tinP.pEther && tinP.pc Utility[ 0 ] ) tinP.pEther->traceF( tinP , T("dosFindFileOrDirPrivateF ----") ) ;
 
     }
         }
@@ -44,7 +44,7 @@
 
             }
                 delF( tinP , postLike ) ;                           //U::20210107@1055: slotsC FAILED TO DELETE THIS
-                //((tinNormalS&)tinP).pc Utility[ 1 ] = (countT)postLike ;
+                //tinP.pc Utility[ 1 ] = (countT)postLike ;
                 _IO_
             {
 
@@ -90,7 +90,7 @@
                                     break ;
                                     handleP.closeIfF() ;
                                     fFound = 0 ;
-                                    ((tinNormalS&)tinP).bosFail = 0 ;
+                                    tinP.bosFail = 0 ;
                                     BOSpOOP
                                 {
                                 default :
@@ -98,7 +98,7 @@
                                     break ;
                                     handleP.closeIfF() ;
                                     fFound = 0 ;
-                                    ((tinNormalS&)tinP).bosFail = 0 ;
+                                    tinP.bosFail = 0 ;
                                 {
                                 case ERROR_NO_MORE_FILES  :
                                 case ERROR_PATH_NOT_FOUND :
@@ -107,7 +107,7 @@
                                     break ;
                                     handleP.closeIfF() ;
                                     fFound = 0 ;
-                                    ((tinNormalS&)tinP).bosFail = 0 ;
+                                    tinP.bosFail = 0 ;
                                     etherC::etTextIF( tinP ).traceF( tinP , T("thirdC::dosFindFileOrDirPrivateF / ERROR_LOGON_FAILURE [postLike]: ")+T(postLike) ) ;
                                     BOSpOOP
                                 {
@@ -116,16 +116,16 @@
                                     break ;
                                     handleP.closeIfF() ;
                                     fFound = 0 ;
-                                    ((tinNormalS&)tinP).bosFail = 0 ;
+                                    tinP.bosFail = 0 ;
                                     etherC::etTextIF( tinP ).traceF( tinP , T("thirdC::dosFindFileOrDirPrivateF / ERROR_SHARING_VIOLATION [postLike]: ")+T(postLike) ) ;
                                     BOSpOOP
                                 {
                                 case ERROR_SHARING_VIOLATION :
                             {
-                            switch( ((tinNormalS&)tinP).brcLath )
+                            switch( tinP.brcLath )
                             _IO_
                         {
-                        if( ((tinNormalS&)tinP).bosFail )
+                        if( tinP.bosFail )
 
                         }
                             __( ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY ) ;
@@ -135,7 +135,7 @@
                         while( bRetry && -- cDo ) ;
                         }
                             }
-                                fFound = !((tinNormalS&)tinP).bosFail ;
+                                fFound = !tinP.bosFail ;
                                 else if( bRetry ) bRetry = 0 ;
                                 }
                                     continue ;
@@ -143,7 +143,7 @@
                                     //Sleep( 2000 ) ;
                                     _IO_
                                 {
-                                if( ((tinNormalS&)tinP).brcLath == ERROR_NOT_READY )
+                                if( tinP.brcLath == ERROR_NOT_READY )
                                 BOS( WHATsfr , BOSoK , FindNextFile( (HANDLE)pFH->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE ) , &info ) )
                             {
                             else
@@ -155,7 +155,7 @@
                                 {
                                 else
                                 if( !pFH->hFind ) { DEL( pFH ) ; }
-                                pFH->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE , (countT)((tinNormalS&)tinP).brcRaw ) ;
+                                pFH->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE , (countT)tinP.brcRaw ) ;
                                 else if( bRetry ) bRetry = 0 ;
                                 }
                                     continue ;
@@ -163,7 +163,7 @@
                                     //Sleep( 2000 ) ;
                                     _IO_
                                 {
-                                if( ((tinNormalS&)tinP).brcLath == ERROR_NOT_READY )
+                                if( tinP.brcLath == ERROR_NOT_READY )
                                 BOS( WHATsfr , BOShANDLE , FindFirstFile( postLikeP , &info ) )
                             {
                             if( bWoth )
@@ -182,18 +182,18 @@
 
                         //U: CONJ: NEED TO CLOSE THE HANDLE IF ANOTHER FILE WAS NOT FOUND
 
-                        fFound = cc == 1 && !((tinNormalS&)tinP).brcLath ;
+                        fFound = cc == 1 && !tinP.brcLath ;
                         }
                             BOSpOOP
                         {
                         )
-                            /*((tinNormalS&)tinP).brcLath != ERROR _NOT_READY*/
-                            ((tinNormalS&)tinP).brcLath != ERROR_PATH_NOT_FOUND          /*&&*/ /*CONJECTURE: THIS WILL NEVER OCCUR*/
-                            ((tinNormalS&)tinP).brcLath != ERROR_FILE_NOT_FOUND          && /*CONJECTURE: THIS WILL NEVER OCCUR*/
-                            ((tinNormalS&)tinP).brcLath != ERROR_NOT_DOS_DISK            && /*DON''T KNOW IF THIS OCCURS*/
-                            ((tinNormalS&)tinP).brcLath != ERROR_FILENAME_E~CED_RANGE    && /*LONG NAME THAT IS NOT SUPPORTED ON THIS DISK*/
-                            ((tinNormalS&)tinP).brcLath != ERROR_NO_MORE_FILES           && /*NO MORE MATCHES*/
-                            ((tinNormalS&)tinP).bosFail                                  && /*CAUSE:*/
+                            /*tinP.brcLath != ERROR _NOT_READY*/
+                            tinP.brcLath != ERROR_PATH_NOT_FOUND          /*&&*/ /*CONJECTURE: THIS WILL NEVER OCCUR*/
+                            tinP.brcLath != ERROR_FILE_NOT_FOUND          && /*CONJECTURE: THIS WILL NEVER OCCUR*/
+                            tinP.brcLath != ERROR_NOT_DOS_DISK            && /*DON''T KNOW IF THIS OCCURS*/
+                            tinP.brcLath != ERROR_FILENAME_E~CED_RANGE    && /*LONG NAME THAT IS NOT SUPPORTED ON THIS DISK*/
+                            tinP.brcLath != ERROR_NO_MORE_FILES           && /*NO MORE MATCHES*/
+                            tinP.bosFail                                  && /*CAUSE:*/
                         if( 
 
                         }
@@ -206,7 +206,7 @@
                             ZE( HDIR , osh ) ;
 
                             else                                                                                                 handleP.osF( ifcIDtYPEhANDLE_fileFind , (countT)HDIR_CREATE ;
-                            if( !c_st((tinNormalS&)tinP).brcRawhrIF( tinP , postLike , '?' ) && !c_st((tinNormalS&)tinP).brcRawhrIF( tinP , postLike , '*' ) ) handleP.osF( ifcIDtYPEhANDLE_FILEfIND , (countT)HDIR_SYSTEM ) ;
+                            if( !c_sttinP.brcRawhrIF( tinP , postLike , '?' ) && !c_sttinP.brcRawhrIF( tinP , postLike , '*' ) ) handleP.osF( ifcIDtYPEhANDLE_FILEfIND , (countT)HDIR_SYSTEM ) ;
                         {
                         if( bWoth )
                         ULONG cc = 1 ;
@@ -342,7 +342,7 @@
 
         if( postLike ) postLike[ costCopy ] = 0 ;
         c_memcpyIF( tinP , postLike , postLikeP , costCopy ) ;
-        //((tinNormalS&)tinP).pc Utility[ 0 ] = (countT)postLike ;                           //U::20210107@1055: slotsC FAILED TO DELETE THIS
+        //tinP.pc Utility[ 0 ] = (countT)postLike ;                           //U::20210107@1055: slotsC FAILED TO DELETE THIS
         newF( tinP , LF , postLike , costCopy + 1 ) ; ___( postLike ) ;
         countT costCopy = costLikeP - ( postLikeP[ costLikeP - 1 ] == '\\' ) ;
         const countT costLikeP = postLikeP ? c_strlenIF( tinP , postLikeP ) : 0 ;
@@ -390,11 +390,11 @@
 //}
 //    countT foo = 2 ;
 //{
-//if( ((tinNormalS&)tinP).pc Utility[ 0 ] && c_strstrIF( tinP , postLikeP , "\\exedll\\1" ) )
+//if( tinP.pc Utility[ 0 ] && c_strstrIF( tinP , postLikeP , "\\exedll\\1" ) )
 //U:: TO FIND A BUG
 
 
-    //if( ((tinNormalS&)tinP).pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosFindFileOrDirPrivateF ++++") ) ;
+    //if( tinP.pEther && tinP.pc Utility[ 0 ] ) tinP.pEther->traceF( tinP , T("dosFindFileOrDirPrivateF ++++") ) ;
 {
 /*1*/boolT thirdC::dosFindFileOrDirPrivateF( tinNormalS& tinP , infoFileS*& pInfoFileP , handleC& handleP , const osTextT* const postLikeP )/*1*/
 

@@ -16,19 +16,19 @@
             }
                 }
                     ++ s ; dosSleepIF( tinP , TOCK >> 2 ) ;
-                    //if( bSay ) { CONoUTrAW3( "dosDeleteIF [brcQuery]: " , ((tinNormalS&)tinP).brcQuery , "\r\n" ) ; }
+                    //if( bSay ) { CONoUTrAW3( "dosDeleteIF [brcQuery]: " , tinP.brcQuery , "\r\n" ) ; }
 
                     else              { CONoUTrAW( ostos ) ; }
-                    if( ((tinNormalS&)tinP).pEther ) etherC::etRockIF( tinP ).traceF( tinP , T(ostos) ) ;
+                    if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T(ostos) ) ;
                     OStEXTAK( ostos , "\"\r\n" ) ;
                     OStEXTA(  ostos , postP ) ;
                     OStEXTAK( ostos , " \"" ) ;
-                    OStEXTC(  ostos , ((tinNormalS&)tinP).brcQuery , 0 ) ;
+                    OStEXTC(  ostos , tinP.brcQuery , 0 ) ;
                     OStEXTAK( ostos , "dosDeleteIF [brcQuery,postFile]: \"" ) ;
                     OStEXT(  ostos , TUCK << 1 ) ;
                 {
                 else
-                if( !((tinNormalS&)tinP).bosFail ) break ;
+                if( !tinP.bosFail ) break ;
         
                 #endif
 
@@ -37,7 +37,7 @@
 
                 #elif defined( __linux__ )
 
-                    if( ((tinNormalS&)tinP).bosFail && ( ((tinNormalS&)tinP).brcLath == ERROR_FILE_NOT_FOUND || ((tinNormalS&)tinP).brcLath == ERROR_PATH_NOT_FOUND ) ) ((tinNormalS&)tinP).bosFail = 0 ;
+                    if( tinP.bosFail && ( tinP.brcLath == ERROR_FILE_NOT_FOUND || tinP.brcLath == ERROR_PATH_NOT_FOUND ) ) tinP.bosFail = 0 ;
                     BOS( WHATgbo , BOSoK , DeleteFile( postP ) )
                     BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
 
@@ -58,7 +58,7 @@
             //    OStEXT(  ostos , TUCK << 1 ) ;
             //{
             //if( bSay )
-            //boolT bSay = ((tinNormalS&)tinP).pc Utility[ 0 ] ;
+            //boolT bSay = tinP.pc Utility[ 0 ] ;
         {
         boolT bNoQuitEarly = !cTriesP ;
         boolT bNoQuit = cTriesP == - 1 ;

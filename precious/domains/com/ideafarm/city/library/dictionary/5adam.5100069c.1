@@ -32,15 +32,15 @@ TODO
 }
     return 0 ;
 
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort3 ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort2 ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort1 ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttShort ) ;
-    ((tinNormalS&)tinP).pEther->delF( tinP , psttPath ) ;
+    tinP.pEther->delF( tinP , psttShort3 ) ;
+    tinP.pEther->delF( tinP , psttShort2 ) ;
+    tinP.pEther->delF( tinP , psttShort1 ) ;
+    tinP.pEther->delF( tinP , psttShort ) ;
+    tinP.pEther->delF( tinP , psttPath ) ;
 
     }
         }
-            ((tinNormalS&)tinP).pEther->delF( tinP , psttNew ) ;
+            tinP.pEther->delF( tinP , psttNew ) ;
 
             //etherC::etRockIF( tinP ).traceF( tinP , psttNew ) ;
 
@@ -48,39 +48,39 @@ TODO
             //etherC::etRockIF( tinP ).traceF( tinP , psttShort2 ) ;
             //etherC::etRockIF( tinP ).traceF( tinP , psttShort1 ) ;
 
-            else                                 ((tinNormalS&)tinP).pEther->diskMoveFileOrDirF( tinP , psttNew , tNameOld) ;
+            else                                 tinP.pEther->diskMoveFileOrDirF( tinP , psttNew , tNameOld) ;
             if( psttNew->idAdam > IPDOSmAXpATH ) etherC::etRockIF( tinP ).traceF( tinP , T("remove ")+TF2(psttNew->idAdam-IPDOSmAXpATH,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" from: ")+T(psttShort) ) ;
 
             if( csttMaxNewP < psttNew->idAdam ) csttMaxNewP = psttNew->idAdam ;
 
-            ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttNew , psttShort3 ) ;
-            ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttNew , TF3(++idLathP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".") ) ;
-            ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttNew , psttShort2 ) ;
-            ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttNew , tFormatNewP ) ;
-            ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttNew , psttPath ) ;
-            ((tinNormalS&)tinP).pEther->strMakeF( tinP , LF , psttNew , 0 , TUCK << 2 ) ; ___( psttNew ) ;
+            tinP.pEther->strFuseF( tinP , psttNew , psttShort3 ) ;
+            tinP.pEther->strFuseF( tinP , psttNew , TF3(++idLathP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".") ) ;
+            tinP.pEther->strFuseF( tinP , psttNew , psttShort2 ) ;
+            tinP.pEther->strFuseF( tinP , psttNew , tFormatNewP ) ;
+            tinP.pEther->strFuseF( tinP , psttNew , psttPath ) ;
+            tinP.pEther->strMakeF( tinP , LF , psttNew , 0 , TUCK << 2 ) ; ___( psttNew ) ;
             ZE( strokeS* , psttNew ) ;
 
             }
                 idLathP    = 0 ;
                 tTimeLathP = T(psttShort2) ;
             {
-            if( ((tinNormalS&)tinP).pEther->strCompareF( tinP , tTimeLathP , psttShort2 ) )
+            if( tinP.pEther->strCompareF( tinP , tTimeLathP , psttShort2 ) )
         {
         )
             psttShort2[ CSpREFIX - 1 + 0xe ].idAdam == '.'
             &&
             psttShort2[ CSpREFIX - 1 + 9   ].idAdam == '@'
             &&
-            !((tinNormalS&)tinP).pEther->strCompareF( tinP , tFormatOldP , psttShort1 )
+            !tinP.pEther->strCompareF( tinP , tFormatOldP , psttShort1 )
         (
         if
 
-        ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttShort3 , idf , idl , psttShort ) ; ___( psttShort3 ) ;
+        tinP.pEther->strSubstringF( tinP , psttShort3 , idf , idl , psttShort ) ; ___( psttShort3 ) ;
         idl = 0 ;
-        ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttShort2 , idf , idl , psttShort ) ; ___( psttShort2 ) ;
+        tinP.pEther->strSubstringF( tinP , psttShort2 , idf , idl , psttShort ) ; ___( psttShort2 ) ;
         idl = 0x1a ;
-        ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttShort1 , idf , idl , psttShort ) ; ___( psttShort1 ) ;
+        tinP.pEther->strSubstringF( tinP , psttShort1 , idf , idl , psttShort ) ; ___( psttShort1 ) ;
         countT idl = 0xc ;
         countT idf = 1 ;
     {
@@ -102,11 +102,11 @@ TODO
 
     ___( psttShort ) ;
     ___( psttPath ) ;
-    ((tinNormalS&)tinP).pEther->strBisectF( tinP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+    tinP.pEther->strBisectF( tinP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttPath ) ;
 
-    TN( tNameOld , ifFileNameC( tinP , *((tinNormalS&)tinP).pEther , postNameP ) ) ;
+    TN( tNameOld , ifFileNameC( tinP , *tinP.pEther , postNameP ) ) ;
 
     if( !( cDoneP % TUCK ) ) etherC::etRockIF( tinP ).traceF( tinP , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     cDoneP ++ ;

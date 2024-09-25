@@ -336,7 +336,7 @@ THREADmODE3rESTORE
                     windowOldC& win = *thirdC::pWinRootIF() ;
                     incv02AM( cRequestFresh ) ;
                     ZE( countT , cDone ) ;
-                    idThreadRefresh = ((tinNormalS&)tinP).monitor.idThread ;
+                    idThreadRefresh = tinP.monitor.idThread ;
                     THREADmODE3oN( flTHREADmODE3_MYoWNrECYCLER )
                 {
                 THREADmODE3oN( flTHREADmODE3_POOLoLDtURBO )
@@ -699,7 +699,7 @@ THREADmODE3rESTORE
                         {
                         else
                         if( !POOP ) break ;
-                        ((tinNormalS&)tinP).pEtScratch->diskMoveFileOrDirF( tinP , tDesk+tReject , psttc1 ) ;
+                        tinP.pEtScratch->diskMoveFileOrDirF( tinP , tDesk+tReject , psttc1 ) ;
                         tReject = T("ideafarm.kt.reject.")+(idDup?TF1(idDup)+T("."):T(""))+T(psttNameShort) ;
                     {
                     while( !ether && idDup < 0x100 )
@@ -730,7 +730,7 @@ THREADmODE3rESTORE
     
                 }
                     cFilesIn ++ ;
-                    ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , psttc1 , 1 ) ;
+                    tinP.pEtScratch->boxZapF( tinP , psttc1 , 1 ) ;
                 {
                 if( !POOP )
                 boolT bLoaded = !POOP ;
@@ -739,7 +739,7 @@ THREADmODE3rESTORE
                     pBatonTree->ungrabF( tinP ) ;
                     pTree->ungrabF( tinP ) ;
                     THREADmODE2rESTORE
-                    readF( tinP , *((tinNormalS&)tinP).pEtScratch , *pTree , psttc1 , countTC() ) ;
+                    readF( tinP , *tinP.pEtScratch , *pTree , psttc1 , countTC() ) ;
                     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                     bWentDown = pTree->downF( tinP ) ;
                     pTree->grabF( tinP , TAG( TAGiDnULL ) ) ;
@@ -748,12 +748,12 @@ THREADmODE3rESTORE
                 if( !POOP )
                 ZE( boolT , bWentDown ) ;
     
-                __( 1 != ((tinNormalS&)tinP).pEtScratch->strIdF( tinP , T("ideafarm.kt.") , psttNameShort ) ) ;
+                __( 1 != tinP.pEtScratch->strIdF( tinP , T("ideafarm.kt.") , psttNameShort ) ) ;
                 __( psttNameShort && !psttNameShort->idAdam ) ;
                 __Z( psttNameShort ) ;
                 __( bDir ) ;
         
-                ((tinNormalS&)tinP).pEtScratch->strConvertToLowerCaseF( tinP , psttNameShort ) ;
+                tinP.pEtScratch->strConvertToLowerCaseF( tinP , psttNameShort ) ;
                 }
                     }
                         etThread.strMakeF( tinP , LF , psttNameShort , T("rejected") ) ; ___( psttNameShort ) ;
@@ -761,12 +761,12 @@ THREADmODE3rESTORE
                     {
                     if( !psttNameShort || !psttNameShort->idAdam )
     
-                    ((tinNormalS&)tinP).pEtScratch->strWordF( tinP , psttNameShort , psttc1 , sttq , S1C('/') , - 2 ) ; ___( psttNameShort ) ;
+                    tinP.pEtScratch->strWordF( tinP , psttNameShort , psttc1 , sttq , S1C('/') , - 2 ) ; ___( psttNameShort ) ;
                     etThread.delF( tinP , psttNameShort ) ;
                 {
                 if( bDir )
                 boolT bDir = psttNameShort && !psttNameShort->idAdam ;
-                ((tinNormalS&)tinP).pEtScratch->strWordF( tinP , psttNameShort , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttNameShort ) ;
+                tinP.pEtScratch->strWordF( tinP , psttNameShort , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttNameShort ) ;
                 strokeS sttq ;
                 ZE( strokeS* , psttNameShort ) ;
         
@@ -806,13 +806,13 @@ TASK( tmWatchKtDepositoryF )
             {
             if( POOP )
 
-            ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , TsTATEfILE+T(".")+TF3(idMin++,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN|flFORMAT_NObIGITvALUES,8) ) ;
+            tinP.pEtScratch->boxZapF( tinP , TsTATEfILE+T(".")+TF3(idMin++,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN|flFORMAT_NObIGITvALUES,8) ) ;
         {
         else while( idMin < idMinKeep )
         if( POOP ) POOPR
 
         countT idMinKeep = idMax > CgENSsTATE ? idMax - CgENSsTATE + 1 : 1 ;
-        ((tinNormalS&)tinP).pEtScratch->boxMenuIdRangeF( tinP , idMin , idMax , TsTATEfILE+T(".*") , TUCK * CgENSsTATE ) ;
+        tinP.pEtScratch->boxMenuIdRangeF( tinP , idMin , idMax , TsTATEfILE+T(".*") , TUCK * CgENSsTATE ) ;
         ZE( countT , idMax ) ;
         ZE( countT , idMin ) ;
         SCOOPS
@@ -838,7 +838,7 @@ voidT writeStateF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP )
         }
             etherP.delF( tinP , psttf ) ;
             if( !bWholeP ) { POPUP( T("The current branch has been written to file\r\n\r\n    ")+T(psttf)+T("\r\n\r\n(KT file names must begin with \"ideafarm.kt.\".)") ) ; }
-            ((tinNormalS&)tinP).pEtScratch->boxPutGenerationF( tinP , psttf , psttP , TUCK * 0x10 , *psFile , psFile->cbF( tinP ) ) ;
+            tinP.pEtScratch->boxPutGenerationF( tinP , psttf , psttP , TUCK * 0x10 , *psFile , psFile->cbF( tinP ) ) ;
             ZE( strokeS* , psttf ) ;
             SCOOPS
             _IO_
@@ -941,7 +941,7 @@ voidT writeF( tinNormalS& tinP , etherC& etherP , const strokeS* const psttP , t
     }
         else       bLoaded = 1 ;
         if( POOP ) POOPR
-        readF( tinP , *((tinNormalS&)tinP).pEtScratch , treeP , TsTATEfILE , idGeneration ) ; //U::EDIT TO USE PRIOR GENS UNTIL READ IS OK
+        readF( tinP , *tinP.pEtScratch , treeP , TsTATEfILE , idGeneration ) ; //U::EDIT TO USE PRIOR GENS UNTIL READ IS OK
         countT idGeneration = 1 ;
         SCOOPS
     {
@@ -1033,7 +1033,7 @@ voidT readStateF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP )
 voidT readF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP , const strokeS* const psttP , countT& idGenerationP )
 
 }
-    if( ((tinNormalS&)tinP).fingerprint && etherP && idTypeP && flagsP && pbP && cbP && cArgP && !handleP ) ;
+    if( tinP.fingerprint && etherP && idTypeP && flagsP && pbP && cbP && cArgP && !handleP ) ;
     }
         if( tCopy.csF( tinP ) && pData && pData->psttb && etherP.strIdF( tinP , tCopy , pData->psttb ) ) *pStkFind << (byteT*)&handleP ; //ASSUME: HANDLE IS CLONEABLE VIA MEMCOPY
         branchDataOldS* pData = (branchDataOldS*)pbP ;
@@ -1047,14 +1047,14 @@ voidT readF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP , const strokeS
 voidT treeFindCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP )
 
 }
-    if( ((tinNormalS&)tinP).fingerprint && etherP && idTypeP && flagsP && pbP && cbP && cArgP && !handleP ) ;
+    if( tinP.fingerprint && etherP && idTypeP && flagsP && pbP && cbP && cArgP && !handleP ) ;
     _IO_
 {
 voidT treeOldCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP )
 
 }
     return 0 ;
-    if( ((tinNormalS&)tinP).fingerprint && etherP && wP.bDoomed && flagsP && bNoDrawP && idTypeCallP && pcNotesP && scratchStrokeP.mIdColHot ) ;
+    if( tinP.fingerprint && etherP && wP.bDoomed && flagsP && bNoDrawP && idTypeCallP && pcNotesP && scratchStrokeP.mIdColHot ) ;
 
     }
         }
@@ -1147,7 +1147,7 @@ boolT _export saOLD_invisibleCBF( tinNormalS& tinP , etherC& etherP , windowOldC
 
 }
     return 0 ;
-    if( ((tinNormalS&)tinP).fingerprint && etherP && wP.bDoomed && flagsP && bNoDrawP && idTypeCallP && pcNotesP && scratchStrokeP.mIdColHot ) ;
+    if( tinP.fingerprint && etherP && wP.bDoomed && flagsP && bNoDrawP && idTypeCallP && pcNotesP && scratchStrokeP.mIdColHot ) ;
 
     }
         }
@@ -1164,7 +1164,7 @@ boolT _export saJoy2CBF( tinNormalS& tinP , etherC& etherP , windowOldC& wP , co
 
 }
     return 0 ;
-    if( ((tinNormalS&)tinP).fingerprint && etherP && wP.bDoomed && flagsP && bNoDrawP && idTypeCallP && pcNotesP && scratchStrokeP.mIdColHot ) ;
+    if( tinP.fingerprint && etherP && wP.bDoomed && flagsP && bNoDrawP && idTypeCallP && pcNotesP && scratchStrokeP.mIdColHot ) ;
 
     }
         }
@@ -2032,7 +2032,7 @@ voidT doFlushStateF( tinNormalS& tinP , etherC& etherP )
                 incv02AM( cRequestFresh ) ;
                 bFind = 1 ;
             {
-            if( ((tinNormalS&)tinP).monitor.idThread != idThreadRefresh ) //I WANT TO DO THIS ONLY IN RESPONSE TO A KEYSTROKE
+            if( tinP.monitor.idThread != idThreadRefresh ) //I WANT TO DO THIS ONLY IN RESPONSE TO A KEYSTROKE
         {
         case ifcIDtYPEsTROKEcALLbACK_TABaRRIVING :
     {
@@ -2215,7 +2215,7 @@ voidT doFindF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , co
                 incv02AM( cRequestFresh ) ;
                 bEntry = 1 ;
             {
-            if( ((tinNormalS&)tinP).monitor.idThread != idThreadRefresh ) //I WANT TO DO THIS ONLY IN RESPONSE TO A KEYSTROKE
+            if( tinP.monitor.idThread != idThreadRefresh ) //I WANT TO DO THIS ONLY IN RESPONSE TO A KEYSTROKE
         {
         case ifcIDtYPEsTROKEcALLbACK_TABaRRIVING :
     {
@@ -2269,7 +2269,7 @@ voidT doEndF( tinNormalS& tinP )
                 etherP.delF( tinP , pbTimeLath ) ;
                 else if( cbTimeLath == sizeof timeLath ) etherP.memCopyF( tinP , (byteT*)&timeLath , pbTimeLath , sizeof timeLath ) ;
                 if( POOP ) POOPR
-                ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , pbTimeLath , cbTimeLath , TmESSAGEtIMElATHfILE , 1 ) ; ___( pbTimeLath ) ; //U::A soulC SHOULD BE USED TO STORE THIS TIME ON DISK, SO WILL WORK ON EITHER ENDIAN BASE O.S.'S
+                tinP.pEtScratch->boxGetShadowF( tinP , pbTimeLath , cbTimeLath , TmESSAGEtIMElATHfILE , 1 ) ; ___( pbTimeLath ) ; //U::A soulC SHOULD BE USED TO STORE THIS TIME ON DISK, SO WILL WORK ON EITHER ENDIAN BASE O.S.'S
                 ZE( countT , cbTimeLath ) ;
                 ZE( byteT* , pbTimeLath ) ;
                     
@@ -2371,7 +2371,7 @@ TASK0PROTO( tmFlushStateF ) ;
                                 //LOGrAW( T(" (found correct state by trying vk value ")+TF1(vki)+T(")") ) ;
                             {
                             if( state & 0x80000000 )
-                            state = ((tinNormalS&)tinP).brcRaw ;
+                            state = tinP.brcRaw ;
                             BOSdOnOTtEST( WHATgbo , GetKeyState( vki ) )
         
                             if( vki == 0x10 || vki == 0xa0 ) continue ;
@@ -2383,7 +2383,7 @@ TASK0PROTO( tmFlushStateF ) ;
                                 break ;
                                 }
                                     //if( state & 0x80000000 ) { LOGrAW( T(" (found correct state using table)") ) }
-                                    state = ((tinNormalS&)tinP).brcRaw ;
+                                    state = tinP.brcRaw ;
                                     BOSdOnOTtEST( WHATgbo , GetKeyState( vk ) )
                                     //LOGrAW( T(" (in table)") )
                                 {

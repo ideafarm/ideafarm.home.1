@@ -18,21 +18,21 @@
             BOS( WHATsfr , BOSoK , CreateDirectory( postP , 0 ) ) ;
             diskMakePathIfF( tinP , postP ) ;
         {
-        if( ((tinNormalS&)tinP).bosFail && ((tinNormalS&)tinP).brcQuery != ERROR_ALREADY_EXISTS )
+        if( tinP.bosFail && tinP.brcQuery != ERROR_ALREADY_EXISTS )
         BOS( WHATsfr , BOSoK , CreateDirectory( postP , 0 ) ) ;
 
                           *postSlash = 0 ;
         osTextT ostSave = *postSlash ;
     {
     if( postSlash )
-    osTextT* postSlash = (osTextT*)((tinNormalS&)tinP).brcRaw ;
+    osTextT* postSlash = (osTextT*)tinP.brcRaw ;
     BOSdOnOTtEST( WHATgbo , strrchr( postP , '\\' ) )
 
     if( bDir ) postP[ costi - 1 ] = 0 ;
 
     boolT bDir = ostLathSave == '\\' ;
     osTextT ostLathSave = postP[ costi - 1 ] ;
-    countT costi = ((tinNormalS&)tinP).brcRaw ;
+    countT costi = tinP.brcRaw ;
     BOSdOnOTtEST( WHATgbo , strlen( postP ) )
 {
 /*1*/voidT diskMakePathIfF( tinNormalS& tinP , osTextT* const postP )/*1*/

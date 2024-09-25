@@ -9,18 +9,18 @@
 
 }
     }
-        __( ((tinNormalS&)tinP).brcRaw ) ;
+        __( tinP.brcRaw ) ;
         #endif
 
-            while( ((tinNormalS&)tinP).brcRaw == WAIT_TIMEOUT ) ;
+            while( tinP.brcRaw == WAIT_TIMEOUT ) ;
             }
                 }
                     __1 ;
                     __( rc ) ;
-                    countT rc = ((tinNormalS&)tinP).brcRaw ;
+                    countT rc = tinP.brcRaw ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
                 {
-                if( ((tinNormalS&)tinP).brcRaw == WAIT_FAILED )
+                if( tinP.brcRaw == WAIT_FAILED )
                 BOSdOnOTtEST( WHATgbo , WaitForSingleObject( (HANDLE)handleP.osF( ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) , 500 ) )
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
             {
@@ -28,13 +28,13 @@
 
         #elif defined( __NT__ )
 
-            while( /*!( POOP & ~fliEC_QUITTING ) &&*/ ((tinNormalS&)tinP).brcRaw == ERROR_TIMEOUT ) ;
+            while( /*!( POOP & ~fliEC_QUITTING ) &&*/ tinP.brcRaw == ERROR_TIMEOUT ) ;
             }
                 }
                     __1 ;
-                    __( ((tinNormalS&)tinP).brcRaw ) ;
+                    __( tinP.brcRaw ) ;
                 {
-                if( ((tinNormalS&)tinP).brcRaw != ERROR_INVALID_HANDLE ) //U:MYSTERY: 19970520.0830: APPEARS TO BE SPURIOUS
+                if( tinP.brcRaw != ERROR_INVALID_HANDLE ) //U:MYSTERY: 19970520.0830: APPEARS TO BE SPURIOUS
                 BOSdOnOTtEST( WHATgbo , DosRequestMutexSem( (HMTX)handleP.osF( ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) , 500 ) )
             {
             do

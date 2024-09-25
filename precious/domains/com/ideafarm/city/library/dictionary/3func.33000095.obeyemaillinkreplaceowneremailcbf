@@ -78,7 +78,7 @@
                                                         }
                                                             etThread.delF( tinP , posti ) ;
                                                             }
-                                                                ((tinNormalS&)tinP).pEtScratch->boxPutF( tinP , pInfo2->psttIfoName , tNew , tNew.csF( tinP ) ) ;
+                                                                tinP.pEtScratch->boxPutF( tinP , pInfo2->psttIfoName , tNew , tNew.csF( tinP ) ) ;
                                                                 etThread.delF( tinP , psttw ) ;
                                                                 TN( tNew , "" ) ; tNew = T(psttw) ;
                                                                 etThread.strReplaceF( tinP , psttw , T(posti) , tEmailLoggedIn , tEmailTicket , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttw ) ;
@@ -86,12 +86,12 @@
                                                             {
                                                             else if( posti && *posti )
                                                             if( POOP ) { POOPR ; }
-                                                            ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , posti , costi , pInfo2->psttIfoName , 1 ) ; ___( posti ) ;
+                                                            tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , pInfo2->psttIfoName , 1 ) ; ___( posti ) ;
                                                             ZE( countT , costi ) ;
                                                             ZE( osTextT* , posti ) ;
                                                         {
                                                         if( pInfo2 && !( F(pInfo2->flags) & flFILEaTTR1_DIRECTORY ) )
-                                                        ((tinNormalS&)tinP).pEtScratch->diskFindFileOrDirF( tinP , pInfo2 , hFind2 , tDirSubaccount , &pat ) ; ___( pInfo2 ) ;
+                                                        tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo2 , hFind2 , tDirSubaccount , &pat ) ; ___( pInfo2 ) ;
                                                         ZE( infoFileS* , pInfo2 ) ;
                                                     {
                                                     do
@@ -100,7 +100,7 @@
                                                     TN( tDirSubaccount , "" ) ; tDirSubaccount = T(pInfo1->psttIfoName) ;
                                                 {
                                                 if( pInfo1 && F(pInfo1->flags) & flFILEaTTR1_DIRECTORY && !( F(pInfo1->flags) & flFILEaTTR1_DOTdIRECTORY ) )
-                                                ((tinNormalS&)tinP).pEtScratch->diskFindFileOrDirF( tinP , pInfo1 , hFind1 , tDirSubaccounts ) ; ___( pInfo1 ) ;
+                                                tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo1 , hFind1 , tDirSubaccounts ) ; ___( pInfo1 ) ;
                                                 ZE( infoFileS* , pInfo1 ) ;
                                             {
                                             do
@@ -111,7 +111,7 @@
                                     {
                                     else if( posti && !etThread.strCompareF( tinP , T(posti) , tEmailLoggedIn ) )
                                     if( POOP ) { POOPR ; }
-                                    ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , posti , costi , tFile , 1 ) ; ___( posti ) ;
+                                    tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , tFile , 1 ) ; ___( posti ) ;
                                     ZE( countT , costi ) ;
                                     ZE( osTextT* , posti ) ;
                                     TN( tFile , "" ) ; tFile = tDirAccount+tShortFileOwner ;
@@ -129,7 +129,7 @@
                                             etThread.delF( tinP , posti ) ;
                                             else if( posti && costi && !etThread.strCompareF( tinP , tEmailTicket , T(posti) ) ) bAlreadyExists = 1 ;
                                             if( POOP ) { POOPR ; }
-                                            ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , posti , costi , T(psttDirAccount)+tShortFileOwner ) ; ___( posti ) ;
+                                            tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , T(psttDirAccount)+tShortFileOwner ) ; ___( posti ) ;
                                             ZE( countT , costi ) ;
                                             ZE( osTextT* , posti ) ;
                                         {
@@ -185,17 +185,17 @@
                 sIn >> finger ;
                 ZE( countT , finger ) ;
 
-                ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , sIn , tFileNew ) ;
+                tinP.pEtScratch->boxGetShadowF( tinP , sIn , tFileNew ) ;
                 soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
             {
             else
             if( POOP ) { POOPR ; }
-            ((tinNormalS&)tinP).pEtScratch->diskMoveFileOrDirF( tinP , tFileNew , tDirOld+tShort ) ;
+            tinP.pEtScratch->diskMoveFileOrDirF( tinP , tFileNew , tDirOld+tShort ) ;
             TN( tFileNew , "" ) ; tFileNew = tDirNew+tShort ;
             TN( tShort  , "soul.ticket." ) ; tShort += T(zsttIdTicket)+T(".soul") ;
 
             if( POOP ) { POOPR ; }
-            ((tinNormalS&)tinP).pEtScratch->diskMakeDirIfNeededF( tinP , tDirNew ) ;
+            tinP.pEtScratch->diskMakeDirIfNeededF( tinP , tDirNew ) ;
             TN( tDirNew , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets.used/" ) ;
             TN( tDirOld , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets/" ) ;
 

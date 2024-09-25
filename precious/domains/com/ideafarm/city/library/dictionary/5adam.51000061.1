@@ -19,8 +19,8 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
     }
         ) ;
 
-            TF4(((tinNormalS&)tinP).pIdLineStep[off],0,8,0xa)+T(")\r\n")
-            TF3(offEvent,0,4)+T("    ")+TF3(((tinNormalS&)tinP).pIdFileStep[off],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T("(")+
+            TF4(tinP.pIdLineStep[off],0,8,0xa)+T(")\r\n")
+            TF3(offEvent,0,4)+T("    ")+TF3(tinP.pIdFileStep[off],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T("(")+
 
         etThread.strokeF( tinP ,
 
@@ -28,20 +28,20 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
         sCountT off = offStart + offEvent ;
     {
     for( sCountT offEvent = 0 ; offEvent >= - OFFsLOTtINsTEPmAX ; offEvent -- )
-    const countT offStart = ((tinNormalS&)tinP).monitor.idStep & OFFsLOTtINsTEPmAX ;
+    const countT offStart = tinP.monitor.idStep & OFFsLOTtINsTEPmAX ;
 
     etThread.strokeF( tinP , T("\r\n\r\nrecent code lines executed, in inverse chronological order:\r\n\r\n") ) ;
 
     ) ) ;
 
-        "cUtility = ")+TF1(((tinNormalS&)tinP).pc Utility[ 0 ])+T("\r\n"
-        "idStep        = ")+TF1(((tinNormalS&)tinP).monitor.idStep       )+T("\r\n"
-        "idlTask       = ")+TF1(((tinNormalS&)tinP).idlTask      )+T("\r\n"
-        "idiTask       = ")+TF3(((tinNormalS&)tinP).idiTask      ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T("\r\n"
-        "idiOwner      = ")+TF3(((tinNormalS&)tinP).idiOwner     ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T("\r\n"
-        "time2         = ")+TF1(((tinNormalS&)tinP).time2        )+T("\r\n"
-        "time1         = ")+TF1(((tinNormalS&)tinP).time1        )+T("\r\n"
-        "fingerprint   = ")+TF1(((tinNormalS&)tinP).fingerprint  )+T("\r\n"
+        "cUtility = ")+TF1(tinP.pc Utility[ 0 ])+T("\r\n"
+        "idStep        = ")+TF1(tinP.monitor.idStep       )+T("\r\n"
+        "idlTask       = ")+TF1(tinP.idlTask      )+T("\r\n"
+        "idiTask       = ")+TF3(tinP.idiTask      ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T("\r\n"
+        "idiOwner      = ")+TF3(tinP.idiOwner     ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T("\r\n"
+        "time2         = ")+TF1(tinP.time2        )+T("\r\n"
+        "time1         = ")+TF1(tinP.time1        )+T("\r\n"
+        "fingerprint   = ")+TF1(tinP.fingerprint  )+T("\r\n"
 
     etThread.strokeF( tinP , T(
 {

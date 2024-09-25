@@ -94,7 +94,7 @@ DONE( tmUpdateCacheF )
                 POOPRqUIET
             {
             if( POOP )                                                                                                 //U:: boxC: SUPPORT SEPARATE TIMEOUT VALUES FOR READ/WRITE/CONNECTED, AND ONLY SUPPORT time1 NOT time2
-            ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , pbIn , cbIn , tName , 1 , SOCKETtIMEOUTdEFAULTwAN ) ; ___( pbIn ) ; // SOCKETtIMEOUTdEFAULTwAN IS USED TO GIVE TIME TO RECOMPILE AND YET AVOID TRACE COMPLAINING FOR UNUSUAL TIMEOUT VALUE
+            tinP.pEtScratch->boxGetShadowF( tinP , pbIn , cbIn , tName , 1 , SOCKETtIMEOUTdEFAULTwAN ) ; ___( pbIn ) ; // SOCKETtIMEOUTdEFAULTwAN IS USED TO GIVE TIME TO RECOMPILE AND YET AVOID TRACE COMPLAINING FOR UNUSUAL TIMEOUT VALUE
             SCOOPS
         {
         IFsCRATCH
@@ -364,7 +364,7 @@ TASK( tmUpdateCacheF )
                 
                 sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
                 TELL( "connecting" )
-                socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
                 TELL( "cting sock" )
             {
             if( pStkIdAcc && pSwsCities && pSwsAccount )

@@ -9,8 +9,8 @@
 
                             
 }
-    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:1
-    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:2
+    tinP.tlsDelF( LF , countTC() ) ; //TLS:1
+    tinP.tlsDelF( LF , countTC() ) ; //TLS:2
     // A SINGLE TLS DROP COULD BE REUSED, BUT IS DONE THIS WAY FOR SAFETY
 {
 )
@@ -19,13 +19,13 @@
         )
             ".jotFilesC.jotNeverChanges"
             ) ,
-                tinP , ((tinNormalS&)tinP).pbF() , postP
+                tinP , tinP.pbF() , postP
             (
             thirdC::c_strcpyIF
             tinP ,
         (
         thirdC::c_strcatIF
-        ((tinNormalS&)tinP).tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:2:     "[postP].jotFilesC.jotNeverChanges"
+        tinP.tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:2:     "[postP].jotFilesC.jotNeverChanges"
     (
     tinP ,
 (
@@ -36,13 +36,13 @@ jotNeverChanges
         )
             ".jotFilesC.jotCanChange"
             ) ,
-                tinP , ((tinNormalS&)tinP).pbF() , postP
+                tinP , tinP.pbF() , postP
             (
             thirdC::c_strcpyIF
             tinP ,
         (
         thirdC::c_strcatIF
-        ((tinNormalS&)tinP).tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:1:     "[postP].jotFilesC.jotCanChange"
+        tinP.tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:1:     "[postP].jotFilesC.jotCanChange"
     (
     tinP ,
 (

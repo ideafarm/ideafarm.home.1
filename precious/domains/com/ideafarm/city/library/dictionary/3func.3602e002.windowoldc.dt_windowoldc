@@ -8,7 +8,7 @@
 
 
 }
-    if( !*((tinNormalS&)tinP).pag1->_windowOldC_.pstWindow ) { DEL( ((tinNormalS&)tinP).pag1->_windowOldC_.pstWindow ) ; } //RACE CONDITION IF ANOTHER THREAD MIGHT CREATE AN INSTANCE
+    if( !*tinP.pag1->_windowOldC_.pstWindow ) { DEL( tinP.pag1->_windowOldC_.pstWindow ) ; } //RACE CONDITION IF ANOTHER THREAD MIGHT CREATE AN INSTANCE
     
     ZE( countT , ecnu ) ;
     
@@ -29,7 +29,7 @@
 
         st.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
-        stackC& st = *((tinNormalS&)tinP).pag1->_windowOldC_.pstWindow ;
+        stackC& st = *tinP.pag1->_windowOldC_.pstWindow ;
     {
     
     }
@@ -42,8 +42,8 @@
     {
 
     etherC::ether_pBatWindowDeletionI_F( tinP )->ungrabF( tinP ) ;
-    ((tinNormalS&)tinP).pag5->frPaper.grab.ungrabF( tinP ) ;
-    if( ((tinNormalS&)tinP).pag1->_windowOldC_.pRoot == this ) ((tinNormalS&)tinP).pag1->_windowOldC_.pRoot = 0 ;
+    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    if( tinP.pag1->_windowOldC_.pRoot == this ) tinP.pag1->_windowOldC_.pRoot = 0 ;
 
     }
             { ++ s ; ether.osSleepF( tinP , TUCK * 0x40 ) ; }
@@ -52,7 +52,7 @@
     {
 
     bDoomed = 1 ;
-    ((tinNormalS&)tinP).pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
     etherC::ether_pBatWindowDeletionI_F( tinP )->grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     dtPrefixF( tinP ) ;

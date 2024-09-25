@@ -15,7 +15,7 @@
         }
             }
                 ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
-                if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("listC::openIF / napping before retrying") ) ;
+                if( tinP.pEther ) tinP.pEther->traceF( tinP , T("listC::openIF / napping before retrying") ) ;
             {
             else if( !hListP )
                  if( !bRetry ) break ;
@@ -32,8 +32,8 @@
 
             }
                 //CONoUTrAW( "\r\n" ) ;
-                //CONoUTrAW( ((tinNormalS&)tinP).pPoolUse->postNameF( tinP ) ) ;
-                //CONoUTrAW5( "opened list [pPoolUse,pList]: " , ((tinNormalS&)tinP).pPoolUse , " " , pList , " " ) ; //U::
+                //CONoUTrAW( tinP.pPoolUse->postNameF( tinP ) ) ;
+                //CONoUTrAW5( "opened list [pPoolUse,pList]: " , tinP.pPoolUse , " " , pList , " " ) ; //U::
 
                 hListP.osF( ifcIDtYPEhANDLE_LISTING , (countT)pList ) ;
                 if( !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
@@ -55,26 +55,26 @@
                 if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
 
                 POPtINaRGS
-                pList = (listC*)((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 2 ] ;
+                pList = (listC*)tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
                 if( F(flagsWalk) & flLISTwALKrETURNcODE_NEWlISTING ) flagsRC &= ~( F(flLISToPENrETURNcODE_LISTeXISTED) ) ;
                 flagsT flagsWalk = pList->walkF( tinP , idGrabLayerP ) ;
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 2 ]               = 0 ;
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ]               = flagsP & flagsMask ;
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ]               = pczKidP[ offn ] ;
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.ppPreallocatedListsP    = ppPreallocatedListsP ;
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pHandleHiP             = ppHand[ 1 ] ;
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pHandleLoP             = ppHand[ 0 ] ;
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pOffWothP              = &offWoth ;
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pHandleRootP           = &hListDadP ;
+                tinP.ta.pushed.u.listWalk.util.pcP[ 2 ]               = 0 ;
+                tinP.ta.pushed.u.listWalk.util.pcP[ 1 ]               = flagsP & flagsMask ;
+                tinP.ta.pushed.u.listWalk.util.pcP[ 0 ]               = pczKidP[ offn ] ;
+                tinP.ta.pushed.u.listWalk.cbf.ppPreallocatedListsP    = ppPreallocatedListsP ;
+                tinP.ta.pushed.u.listWalk.walk.pHandleHiP             = ppHand[ 1 ] ;
+                tinP.ta.pushed.u.listWalk.walk.pHandleLoP             = ppHand[ 0 ] ;
+                tinP.ta.pushed.u.listWalk.walk.pOffWothP              = &offWoth ;
+                tinP.ta.pushed.u.listWalk.walk.pHandleRootP           = &hListDadP ;
 
-                ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 4 ]             = bOfSet ;
+                tinP.ta.retained.u.listWalk.util.pcP[ 4 ]             = bOfSet ;
 
                 ;
                     : flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK
                     ? flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK | flLISTwALK_RETAINrOOT
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP = !offn && F(flagsP) & flLISToPEN_RETAINrOOT
+                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = !offn && F(flagsP) & flLISToPEN_RETAINrOOT
 
-                ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkAttachListIfCBF ;
+                tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkAttachListIfCBF ;
                 PUSHtINaRGS
 
                 if( !pczKidP[ offn + 1 ] ) flagsMask = - 1 ;

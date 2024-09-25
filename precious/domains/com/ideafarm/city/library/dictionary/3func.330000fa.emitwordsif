@@ -14,9 +14,9 @@
 
            ;
 
-               ( ((tinNormalS&)tinP).pag1->idCell & 0x7    ) << 0x1d
+               ( tinP.pag1->idCell & 0x7    ) << 0x1d
                |
-               ( ((tinNormalS&)tinP).monitor.idThread     & 0x7    ) << 0x1a
+               ( tinP.monitor.idThread     & 0x7    ) << 0x1a
                |
                ( idFileP                   & 0x1fff ) << 0xd
                |
@@ -27,7 +27,7 @@
        if( F(processGlobal2I.flCt) & flCTdTg_bksWords && !( F(processGlobal2I.flDt) & flCTdTg_bksWords ) && ph && !( F(ph->flags) & flHOMEs_EXCEPTIONhASoCCURRED ) )
        homeS* ph = &homeS::homeIF() ;
     {
-    if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_ALLOWeMITwORD )
+    if( F(tinP.flagsThreadMode2) & flTHREADmODE2_ALLOWeMITwORD )
 
 
 {

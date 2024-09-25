@@ -12,9 +12,9 @@
         OStEXTAK( ostoBuf , "\r\n" ) ;                                                                                      \
         OStEXTA( ostoBuf , postP ) ;                                                                                        \
         OStEXTAK( ostoBuf , ": " ) ;                                                                                        \
-        OStEXTA( ostoBuf , ((tinNormalS&)tinP).postThreadName ) ;                                                                          \
+        OStEXTA( ostoBuf , tinP.postThreadName ) ;                                                                          \
         OStEXTAK( ostoBuf , "." ) ;                                                                                         \
-        OStEXTC( ostoBuf , ((tinNormalS&)tinP).monitor.idThread , ' ' ) ;                                                                          \
+        OStEXTC( ostoBuf , tinP.monitor.idThread , ' ' ) ;                                                                          \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
         TINSL                                                                                                               \
     {                                                                                                                       \
@@ -23,7 +23,7 @@
 
 
 //#define CONoUT(postP) thirdC::dosWriteStdOutIF( (postP) ) ;
-//#define CONoUT(postP) { ZE( DWORD , cba ) ; WriteFile( (HANDLE)GetStdHandle( STD_OUTPUT_HANDLE ) , postP , ((tinNormalS&)tinP).brcRaw , &cba , 0 ) ; }//INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
+//#define CONoUT(postP) { ZE( DWORD , cba ) ; WriteFile( (HANDLE)GetStdHandle( STD_OUTPUT_HANDLE ) , postP , tinP.brcRaw , &cba , 0 ) ; }//INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
 //BOSdOnOTtEST( WHATgbo , strlen( postP ) )
 
 /**/

@@ -20,12 +20,12 @@
     {
     )
         )
-            //((tinNormalS&)tinP).brcLath == ERROR_SERVICE_CANNOT_ACCEPT_CTRL //WILL SEE THIS IF STOP PENDING
-            //((tinNormalS&)tinP).brcLath == ERROR_SERVICE_NOT_ACTIVE ||
-            ((tinNormalS&)tinP).brcLath == ERROR_SERVICE_REQUEST_TIMEOUT //A: ASSUME: ALL SERVICE PROCESSES ARE NOW GONE
+            //tinP.brcLath == ERROR_SERVICE_CANNOT_ACCEPT_CTRL //WILL SEE THIS IF STOP PENDING
+            //tinP.brcLath == ERROR_SERVICE_NOT_ACTIVE ||
+            tinP.brcLath == ERROR_SERVICE_REQUEST_TIMEOUT //A: ASSUME: ALL SERVICE PROCESSES ARE NOW GONE
         !(
         &&
-        ((tinNormalS&)tinP).bosFail
+        tinP.bosFail
     (
     if
 
@@ -33,10 +33,10 @@
     SERVICE_STATUS info ;
     BOSpOOP
     INCoShANDLES
-    SC_HANDLE hsv = (SC_HANDLE)((tinNormalS&)tinP).brcRaw ;
+    SC_HANDLE hsv = (SC_HANDLE)tinP.brcRaw ;
     BOS( WHATgbo , BOSoK , OpenService( hsm , postNameP , SERVICE_ALL_ACCESS ) )
     INCoShANDLES
-    SC_HANDLE hsm = (SC_HANDLE)((tinNormalS&)tinP).brcRaw ;
+    SC_HANDLE hsm = (SC_HANDLE)tinP.brcRaw ;
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
 
     _IO_

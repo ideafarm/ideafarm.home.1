@@ -19,7 +19,7 @@
                 }
                     }
                         }
-                            ++ s ; ( bNoQuit ? (etherC&)*((tinNormalS&)tinP).pEtScratch : etPrime ).osSleepF( tinP , TOCK * 0x10 ) ;
+                            ++ s ; ( bNoQuit ? (etherC&)*tinP.pEtScratch : etPrime ).osSleepF( tinP , TOCK * 0x10 ) ;
                             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
                         {
                         POOPR
@@ -34,7 +34,7 @@
                         ranUniC ru( tinP , cNicName , ruSeed ) ;
                     {
                     if( cNicName )
-                    ((tinNormalS&)tinP).pEtScratch->ifcCellHostsF( tinP , pNicName , cNicName , idAdamP , cTriesP ) ; ___( pNicName ) ;
+                    tinP.pEtScratch->ifcCellHostsF( tinP , pNicName , cNicName , idAdamP , cTriesP ) ; ___( pNicName ) ;
                     ZE( countT   , cNicName ) ;
                     ZE( nicNameC* , pNicName ) ;
                 {

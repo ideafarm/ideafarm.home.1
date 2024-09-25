@@ -51,13 +51,13 @@ DONEdRIVENsERVER( tmcF )
 }
     TELL( "cleaning up this thread" ) ;
     }
-        //((tinNormalS&)tinP).zEtScratch->delF( tinP , psttPeer ) ;
+        //tinP.zEtScratch->delF( tinP , psttPeer ) ;
         TELL( "cleaning up this session" ) ;
         }
-            *((tinNormalS&)tinP).zEtScratch = etScratchSave ;
-            //((tinNormalS&)tinP).zEtScratch->ifcSayF( tinP , stPhrases , flSAY_APPEND | flSAY_LOG ) ;
-            *((tinNormalS&)tinP).zEtScratch = 0 ;
-            countT etScratchSave = *((tinNormalS&)tinP).zEtScratch ;
+            *tinP.zEtScratch = etScratchSave ;
+            //tinP.zEtScratch->ifcSayF( tinP , stPhrases , flSAY_APPEND | flSAY_LOG ) ;
+            *tinP.zEtScratch = 0 ;
+            countT etScratchSave = *tinP.zEtScratch ;
             etThread.delF( tinP , psttFrom ) ;
             }
                 pso->writeF( tinP , (osTextT*)tErr , tErr.csF( tinP ) ) ;
@@ -70,10 +70,10 @@ DONEdRIVENsERVER( tmcF )
                 if( fliError & fliERROR_SECRETsENDER      ) tErr += T(postERROR_SECRETsENDER     ) ;
                 TN( tErr , "554 " ) ;
     
-                *((tinNormalS&)tinP).zEtScratch = 0 ;
+                *tinP.zEtScratch = 0 ;
             {
             else
-            if( !*((tinNormalS&)tinP).zEtScratch && !etThread ) pso->writeF( tinP , "250 ok\r\n" ) ;
+            if( !*tinP.zEtScratch && !etThread ) pso->writeF( tinP , "250 ok\r\n" ) ;
             TELL( "cleaning up after handling this mail from transaction" ) ;
     
             etThread.delF( tinP , psttBody ) ;
@@ -105,8 +105,8 @@ DONEdRIVENsERVER( tmcF )
                 //U:: TEST AND DEBUG 944 AND c34
 
                 }
-                    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttFromName ) ;
-                    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttFromIn ) ;
+                    tinP.zEtScratch->delF( tinP , psttFromName ) ;
+                    tinP.zEtScratch->delF( tinP , psttFromIn ) ;
                     }
                         etThread.boxPutF( tinP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+T(psttFromIn)+T("//" ifcEMAIL_OLDfROM "") , tNote , tNote.csF( tinP ) ) ;
                         etThread.delF( tinP , psttn ) ;
@@ -148,7 +148,7 @@ DONEdRIVENsERVER( tmcF )
                                 ZE( countT , cCode ) ;
                                 countT cTries = 0x10 ;
                             {
-                            while( !etThread && !*((tinNormalS&)tinP).zEtScratch )
+                            while( !etThread && !*tinP.zEtScratch )
                             bPrepayCode.grabF( tinP , TAG( TAGiDnULL ) ) ;
                             TN( tCode , "" ) ; 
                             TN( tFile , "" ) ;
@@ -157,7 +157,7 @@ DONEdRIVENsERVER( tmcF )
                         countT cCodes = 0x200 ;
                         stackC stCodes( tinP , etThread , TAG( TAGiDnULL ) ) ;
                     {
-                    else if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("\r\nItem Number: 01.1.1\r\n") , psttBody ) )
+                    else if( tinP.zEtScratch->strIdF( tinP , T("\r\nItem Number: 01.1.1\r\n") , psttBody ) )
                     }
                         }
                             etThread.boxPutF( tinP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+T(psttFromIn)+T("//" ifcEMAIL_OLDfROM "") , tNote , tNote.csF( tinP ) ) ;
@@ -207,17 +207,17 @@ DONEdRIVENsERVER( tmcF )
                             ZE( countT , cCode ) ;
                             countT cTries = 0x10 ;
                         {
-                        while( !etThread && !*((tinNormalS&)tinP).zEtScratch )
+                        while( !etThread && !*tinP.zEtScratch )
                         bPrepayCode.grabF( tinP , TAG( TAGiDnULL ) ) ;
                         timeS timeE ;
                         TN( tCode , "" ) ; 
                         TN( tFile , "" ) ;
                     {
-                    else if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("\r\nItem Number: e.1.1\r\n") , psttBody ) )
+                    else if( tinP.zEtScratch->strIdF( tinP , T("\r\nItem Number: e.1.1\r\n") , psttBody ) )
                     }
                         }
                             etThread.boxPutF( tinP , tFile , sJournal ) ;
-                            TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/account.event/" ) ; tFile += T(psttFromIn)+T("/")+TF3(timeN2,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF3(timeN1,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF1(((tinNormalS&)tinP).osTid) ;
+                            TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/account.event/" ) ; tFile += T(psttFromIn)+T("/")+TF3(timeN2,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF3(timeN1,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF1(tinP.osTid) ;
                             TN( td , "." ) ;
                             etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
                             ZE( sCountT , timeN2 ) ;
@@ -240,13 +240,13 @@ DONEdRIVENsERVER( tmcF )
         
                             TN( tNote , "" ) ; tNote =
     
-                            ((tinNormalS&)tinP).zEtScratch->boxPutF( tinP , tFile , (byteT*)&timeN , sizeof timeN ) ;
+                            tinP.zEtScratch->boxPutF( tinP , tFile , (byteT*)&timeN , sizeof timeN ) ;
                             sJournal << (countT)timeN.time2 ; //NEW EXPIRY time2
                             sJournal << timeN.time1 ; //NEW EXPIRY time1
                             etThread.osTimeAddF( tinP , timeN.time1 , timeN.time2 , 0 , days ) ;
 
                             }
-                                ((tinNormalS&)tinP).zEtScratch->delF( tinP , pbi ) ;
+                                tinP.zEtScratch->delF( tinP , pbi ) ;
                                 else sJournal << (countT)1 ; //bExpired
                                 }
                                     sJournal << (countT)0 ; //bExpired
@@ -258,7 +258,7 @@ DONEdRIVENsERVER( tmcF )
                                 sJournal << timeE1 ; //OLD time1
                                 sCountT& timeE2 = ((sCountT*)pbi)[ 1 ] ;
                                 countT&  timeE1 =  ((countT*)pbi)[ 0 ] ;
-                                ((tinNormalS&)tinP).zEtScratch->boxGetShadowF( tinP , pbi , cbi , tFile ) ; ___( pbi ) ;
+                                tinP.zEtScratch->boxGetShadowF( tinP , pbi , cbi , tFile ) ; ___( pbi ) ;
                                 ZE( countT , cbi ) ;
                                 ZE( byteT* , pbi ) ;
                             {
@@ -267,7 +267,7 @@ DONEdRIVENsERVER( tmcF )
                                 sJournal << (countT)0 ; //OLD time2
                                 sJournal << (countT)0 ; //OLD time1
                             {
-                            if( !((tinNormalS&)tinP).zEtScratch->diskFileExistsF( tinP , tFile ) )
+                            if( !tinP.zEtScratch->diskFileExistsF( tinP , tFile ) )
                             sJournal << (countT)timeN.time2 ; //CURRENT time2
                             sJournal << timeN.time1 ; //CURRENT time1
                             etThread.osTimeNowF( tinP , timeN.time1 , timeN.time2 ) ;
@@ -281,19 +281,19 @@ DONEdRIVENsERVER( tmcF )
                                 sJournal << (countT)2 ; // idType: PURCHASE OF d.1.1
                                 days = 0x80 ;
                             {
-                            else if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
+                            else if( tinP.zEtScratch->strIdF( tinP , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
                             }
                                 sJournal << (countT)1 ; // idType: PURCHASE OF c.1.1
                                 days = 0x40 ;
                             {
-                            if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("\r\nItem Number: c.1.1\r\n") , psttBody ) )
+                            if( tinP.zEtScratch->strIdF( tinP , T("\r\nItem Number: c.1.1\r\n") , psttBody ) )
                             ZE( countT , days ) ;
                         {
                         sJournal << (countT)1 ; //idFormat
                         soulC sJournal( tinP , TAG( TAGiDnULL ) ) ;
 
                         }
-                            ((tinNormalS&)tinP).zEtScratch->boxPutF( tinP , tFile , tp , tp.csF( tinP ) ) ;
+                            tinP.zEtScratch->boxPutF( tinP , tFile , tp , tp.csF( tinP ) ) ;
                             TN( tp , "" ) ; tp = T( psttFromName ) ;
                             tFile += T(psttFromIn) ;
                             TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/humanname/" ) ;
@@ -317,78 +317,78 @@ DONEdRIVENsERVER( tmcF )
         
                                 TN( tNote , "" ) ; tNote =
     
-                                ((tinNormalS&)tinP).zEtScratch->boxPutF( tinP , tFile , tp , tp.csF( tinP ) ) ;
+                                tinP.zEtScratch->boxPutF( tinP , tFile , tp , tp.csF( tinP ) ) ;
                                 TN( tp , "" ) ; tp = TF1( (countT)(measureT)ru ) ;
                                 while( cTries -- ) (measureT)ru ;
                                 countT cTries = 0x10 ;
                             {
-                            if( !((tinNormalS&)tinP).zEtScratch->diskFileExistsF( tinP , tFile ) )
+                            if( !tinP.zEtScratch->diskFileExistsF( tinP , tFile ) )
                             tFile += T(psttFromIn) ;
                             TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/passcode/" ) ;
                         {
                     {
-                    else if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("\r\nItem Number: c.1.1\r\n") , psttBody ) || ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
+                    else if( tinP.zEtScratch->strIdF( tinP , T("\r\nItem Number: c.1.1\r\n") , psttBody ) || tinP.zEtScratch->strIdF( tinP , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
                     }
-                        ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttnu ) ;
-                        ((tinNormalS&)tinP).zEtScratch->boxPutUniqueF( tinP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttFromIn)+T(".$note.b.1.1") , oston , oston.costF() + 1 ) ;
+                        tinP.zEtScratch->delF( tinP , psttnu ) ;
+                        tinP.zEtScratch->boxPutUniqueF( tinP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttFromIn)+T(".$note.b.1.1") , oston , oston.costF() + 1 ) ;
                         ZE( strokeS* , psttnu ) ;
                         OStEXTV( oston , "b340104 detected an incoming payment notice for b.1.1" )
                     {
-                    else if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("\r\nItem Number: b.1.1\r\n") , psttBody ) )
+                    else if( tinP.zEtScratch->strIdF( tinP , T("\r\nItem Number: b.1.1\r\n") , psttBody ) )
                     }
-                        ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttnu ) ;
-                        ((tinNormalS&)tinP).zEtScratch->boxPutUniqueF( tinP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttFromIn)+T(".$note.9.1.1") , oston , oston.costF() + 1 ) ;
+                        tinP.zEtScratch->delF( tinP , psttnu ) ;
+                        tinP.zEtScratch->boxPutUniqueF( tinP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttFromIn)+T(".$note.9.1.1") , oston , oston.costF() + 1 ) ;
                         ZE( strokeS* , psttnu ) ;
                         OStEXTV( oston , "b340104 detected an incoming payment notice for 9.1.1" )
                     {
-                    if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("\r\nItem Number: 9.1.1\r\n") , psttBody ) )
+                    if( tinP.zEtScratch->strIdF( tinP , T("\r\nItem Number: 9.1.1\r\n") , psttBody ) )
 
                     }
                         etThread.delF( tinP , psttll ) ;
                         }
                             if( psttFromIn ) break ;
 
-                            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw ) ;
-                            ((tinNormalS&)tinP).zEtScratch->strMakeF( tinP , LF , psttFromName , T("\"")+T(psttw)+T("\" <")+T(psttFromIn)+T(">") ) ; ___( psttFromName ) ;
-                            ((tinNormalS&)tinP).zEtScratch->strTrimF( tinP , psttw , 0 , T(TbLACKnEWlINE) ) ; ___( psttw ) ;
+                            tinP.zEtScratch->delF( tinP , psttw ) ;
+                            tinP.zEtScratch->strMakeF( tinP , LF , psttFromName , T("\"")+T(psttw)+T("\" <")+T(psttFromIn)+T(">") ) ; ___( psttFromName ) ;
+                            tinP.zEtScratch->strTrimF( tinP , psttw , 0 , T(TbLACKnEWlINE) ) ; ___( psttw ) ;
 
-                            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw , idf , idl , psttc1 ) ; ___( psttw ) ;
+                            tinP.zEtScratch->strSubstringF( tinP , psttw , idf , idl , psttc1 ) ; ___( psttw ) ;
                             ZE( strokeS* , psttw ) ;
                             ZE( countT , idl ) ;
                             countT idf = tBuyerColon.csF( tinP ) + 1 ;
                         {
-                        else if( 1 == ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , tBuyerColon , psttll ) )
+                        else if( 1 == tinP.zEtScratch->strIdF( tinP , tBuyerColon , psttll ) )
                         }
                             }
-                                ((tinNormalS&)tinP).zEtScratch->delF( tinP , pstt1w ) ;
+                                tinP.zEtScratch->delF( tinP , pstt1w ) ;
                                 }
                                     }
                                         }
                                             break ;
-                                            ((tinNormalS&)tinP).zEtScratch->strMakeF( tinP , LF , psttFromIn , psttc2 ) ; ___( psttFromIn ) ;
+                                            tinP.zEtScratch->strMakeF( tinP , LF , psttFromIn , psttc2 ) ; ___( psttFromIn ) ;
                                         {
                                         if( ++ idw == 2 )
                                     {
                                     FORsTRINGSiN2( pstt1w )
                                     ZE( countT , idw ) ;
                                 {
-                                if( 2 <= ((tinNormalS&)tinP).zEtScratch->strWordsOldF( tinP , pstt1w , psttw , sttq , T("<>") ) )
+                                if( 2 <= tinP.zEtScratch->strWordsOldF( tinP , pstt1w , psttw , sttq , T("<>") ) )
                                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                 ZE( strokeS* , pstt1w ) ;
                             {
                             else
                             }
                                 psttFromIn = psttw ; psttw = 0 ;
-                                ((tinNormalS&)tinP).zEtScratch->strTrimF( tinP , psttw , 0 , T(TbLACKnEWlINE) ) ; ___( psttw ) ;
+                                tinP.zEtScratch->strTrimF( tinP , psttw , 0 , T(TbLACKnEWlINE) ) ; ___( psttw ) ;
                             {
-                            if( !((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("<") , psttw ) )
+                            if( !tinP.zEtScratch->strIdF( tinP , T("<") , psttw ) )
 
-                            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw , idf , idl , psttc1 ) ; ___( psttw ) ;
+                            tinP.zEtScratch->strSubstringF( tinP , psttw , idf , idl , psttc1 ) ; ___( psttw ) ;
                             ZE( strokeS* , psttw ) ;
                             ZE( countT , idl ) ;
                             countT idf = tFromColon.csF( tinP ) + 1 ;
                         {
-                        if( 1 == ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , tFromColon , psttll ) )
+                        if( 1 == tinP.zEtScratch->strIdF( tinP , tFromColon , psttll ) )
                         etThread.strokeF( tinP , T("| ")+T(psttll)+T("\r\n") ) ; //U::
                         etThread.strConvertToLowerCaseF( tinP , psttll ) ;
                         strokeS* psttll = psttOldC( tinP , etThread , psttc1 ) ; ___( psttll ) ;
@@ -398,12 +398,12 @@ DONEdRIVENsERVER( tmcF )
                     ZE( strokeS* , psttFromIn ) ;
                     TN( tBuyerColon , "buyer:" ) ;
                     TN( tFromColon , "from:" ) ;
-                    ((tinNormalS&)tinP).zEtScratch->strWordsOldF( tinP , pstt1lines , psttBody , sttq , T("\r\n") ) ; ___( pstt1lines ) ;
+                    tinP.zEtScratch->strWordsOldF( tinP , pstt1lines , psttBody , sttq , T("\r\n") ) ; ___( pstt1lines ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     ZE( strokeS* , pstt1lines ) ;
                     //EXTRACT psttFrom2 from psttBody
                 {
-                //U::if( !((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttFrom , tPaypal ) )
+                //U::if( !tinP.zEtScratch->strCompareF( tinP , psttFrom , tPaypal ) )
                 //U:: MOVE THIS BLOCK TO c34
                 //DETECTS INCOMING PAYMENT NOTIFICATION FROM PAYPAL
     
@@ -418,7 +418,7 @@ DONEdRIVENsERVER( tmcF )
                 {
                 TELL( "writing the received item to an archive file" ) ;
             {
-            if( !*((tinNormalS&)tinP).zEtScratch )
+            if( !*tinP.zEtScratch )
 
             }
                 etThread.strMakeF( tinP , LF , psttFrom , T("[anonymous]") ) ; ___( psttFrom ) ;
@@ -434,7 +434,7 @@ DONEdRIVENsERVER( tmcF )
             __Z( stTo ) ;
             __Z( psttFrom ) ;
             }
-                if( !*((tinNormalS&)tinP).zEtScratch ) { etThread.strConcatenateF( tinP , psttBody , st_psttBody ) ; ___( psttBody ) ; }
+                if( !*tinP.zEtScratch ) { etThread.strConcatenateF( tinP , psttBody , st_psttBody ) ; ___( psttBody ) ; }
     
                 }
                     fliError |= fliERROR_SECRETsENDER ;
@@ -474,99 +474,99 @@ DONEdRIVENsERVER( tmcF )
                     if( psttl && psttl[ CSpREFIX ] == sttDot )
                     TELL( "parsing a data line" ) ;
     
-                    if( *((tinNormalS&)tinP).zEtScratch ) break ;
+                    if( *tinP.zEtScratch ) break ;
                     pso->readWoLineF( tinP , psttl , 0x400 ) ; ___( psttl ) ;                                    // MESSAGE HEADER OR BODY LINE
                     TELL( "reading a data line" ) ;
                     ZE( strokeS* , psttl ) ;
                 {
-                while( !*((tinNormalS&)tinP).zEtScratch && !etThread )
+                while( !*tinP.zEtScratch && !etThread )
                 stackC st_psttBody( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
                 ZE( boolT , bFromFound ) ;
             {
-            if( !*((tinNormalS&)tinP).zEtScratch )
+            if( !*tinP.zEtScratch )
             ZE( strokeS* , psttBody ) ;
             pso->writeF( tinP , "354 Start mail input; end with <CRLF>.<CRLF>\r\n" ) ;
     
             }
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttTo ) ;
+                tinP.zEtScratch->delF( tinP , psttTo ) ;
                 }
                     pso->writeF( tinP , (osTextT*)tErr , tErr.csF( tinP ) ) ;
                     TN( tErr , "553 [bad format: \"" ) ; tErr += T(psttTo)+T("\"]\r\n") ;
-                    *((tinNormalS&)tinP).zEtScratch = 0 ;
+                    *tinP.zEtScratch = 0 ;
                 {
                 else
                 }
                     pso->writeF( tinP , "250 ok\r\n" ) ;
                     stTo.sinkF( tinP , countTC() , idAdamTo ) ;
-                    stPhrases << psttOldC( tinP , *((tinNormalS&)tinP).zEtScratch , T("to ")+TF1(idAdamTo) ) ;
+                    stPhrases << psttOldC( tinP , *tinP.zEtScratch , T("to ")+TF1(idAdamTo) ) ;
                 {
-                if( !*((tinNormalS&)tinP).zEtScratch )
+                if( !*tinP.zEtScratch )
     
                 __Z( idAdamTo ) ;                                                                         // REJECT 0
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw1 ) ;
-                countT idAdamTo = ((tinNormalS&)tinP).zEtScratch->strDigitsToSCountF( tinP , psttw1 ) ;
+                tinP.zEtScratch->delF( tinP , psttw1 ) ;
+                countT idAdamTo = tinP.zEtScratch->strDigitsToSCountF( tinP , psttw1 ) ;
                 __( psttw1 && psttw1->idAdam > 8 ) ;                                                      // REJECT IF TOO MANY DIGITS
-                __( !((tinNormalS&)tinP).zEtScratch->strIsDigitsF( tinP , psttw1 ) ) ;                                                // REJECT IF NOT ALL DIGITS
+                __( !tinP.zEtScratch->strIsDigitsF( tinP , psttw1 ) ) ;                                                // REJECT IF NOT ALL DIGITS
                 __( psttw1 && !psttw1->idAdam ) ;                                                         // REJECT ""
     
                 //}
-                //    ((tinNormalS&)tinP).zEtScratch->strMakeF( tinP , LF , psttw1 , T("1") ) ; ___( psttw1 ) ;
-                //    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw1 ) ;
+                //    tinP.zEtScratch->strMakeF( tinP , LF , psttw1 , T("1") ) ; ___( psttw1 ) ;
+                //    tinP.zEtScratch->delF( tinP , psttw1 ) ;
                 //{
-                //if( !((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw1 , T("wo") ) )
-                //((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttw1 ) ; ___( psttw1 ) ;                                     // "wo"
+                //if( !tinP.zEtScratch->strCompareF( tinP , psttw1 , T("wo") ) )
+                //tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttw1 ) ; ___( psttw1 ) ;                                     // "wo"
                 //U: DELETE THIS CODE WHEN SURE WILL NOT NEED IT
     
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw1 , psttTo , sttq , sttAt , 1 ) ; ___( psttw1 ) ;                       // "123"
+                tinP.zEtScratch->strWordF( tinP , psttw1 , psttTo , sttq , sttAt , 1 ) ; ___( psttw1 ) ;                       // "123"
                 //sttq = ze ;
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw1 ) ;
-                __( ((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw1 , tIfc ) ) ;                                           // "ideafarm.com" == ?
-                ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttw1 ) ; ___( psttw1 ) ;                                     // "ideafarm.com"
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw1 , psttTo , sttq , sttAt , 2 ) ; ___( psttw1 ) ;                       // "IDEAFARM.COM"
+                tinP.zEtScratch->delF( tinP , psttw1 ) ;
+                __( tinP.zEtScratch->strCompareF( tinP , psttw1 , tIfc ) ) ;                                           // "ideafarm.com" == ?
+                tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttw1 ) ; ___( psttw1 ) ;                                     // "ideafarm.com"
+                tinP.zEtScratch->strWordF( tinP , psttw1 , psttTo , sttq , sttAt , 2 ) ; ___( psttw1 ) ;                       // "IDEAFARM.COM"
                 //sttq = ze ;
     
-                ((tinNormalS&)tinP).zEtScratch->strTrimF( tinP , psttTo , 0 , T(TbLACKnEWlINE) , T("<>") ) ; ___( psttTo ) ;                                 // "123@IDEAFARM.COM"
+                tinP.zEtScratch->strTrimF( tinP , psttTo , 0 , T(TbLACKnEWlINE) , T("<>") ) ; ___( psttTo ) ;                                 // "123@IDEAFARM.COM"
                 }
                     __( psttTo[ CSpREFIX - 1 + psttTo->idAdam ].idAdam - '>' ) ;                          // REJECT <@WINNIE:123@IDEAFARM.COM>
                     __( psttTo[ CSpREFIX                        ].idAdam - '<' ) ;
                 {
-                if( !*((tinNormalS&)tinP).zEtScratch )
+                if( !*tinP.zEtScratch )
                 __( psttTo && psttTo->idAdam < 2 ) ;
                 __Z( psttTo ) ;
-                ((tinNormalS&)tinP).zEtScratch->strTrimF( tinP , psttTo , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttTo ) ;                                  // "<123@IDEAFARM.COM>"
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttl ) ;
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttTo , psttl , sttq , sttColon , 2 ) ; ___( psttTo ) ;                     // " <123@IDEAFARM.COM> "
+                tinP.zEtScratch->strTrimF( tinP , psttTo , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttTo ) ;                                  // "<123@IDEAFARM.COM>"
+                tinP.zEtScratch->delF( tinP , psttl ) ;
+                tinP.zEtScratch->strWordF( tinP , psttTo , psttl , sttq , sttColon , 2 ) ; ___( psttTo ) ;                     // " <123@IDEAFARM.COM> "
                 //sttq = ze ;
                 ZE( strokeS* , psttTo ) ;
     
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw1 ) ;
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
-                __( ((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw2 , tTo ) ) ;                                            // "to" == ?
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw2 , psttw1 , sttq , sttSpace , 2 ) ; ___( psttw2 ) ;                    // "to"
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
-                __( ((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw2 , tRcpt ) ) ;                                          // "rcpt" == ?
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw2 , psttw1 , sttq , sttSpace , 1 ) ; ___( psttw2 ) ;                    // "rcpt"
+                tinP.zEtScratch->delF( tinP , psttw1 ) ;
+                tinP.zEtScratch->delF( tinP , psttw2 ) ;
+                __( tinP.zEtScratch->strCompareF( tinP , psttw2 , tTo ) ) ;                                            // "to" == ?
+                tinP.zEtScratch->strWordF( tinP , psttw2 , psttw1 , sttq , sttSpace , 2 ) ; ___( psttw2 ) ;                    // "to"
+                tinP.zEtScratch->delF( tinP , psttw2 ) ;
+                __( tinP.zEtScratch->strCompareF( tinP , psttw2 , tRcpt ) ) ;                                          // "rcpt" == ?
+                tinP.zEtScratch->strWordF( tinP , psttw2 , psttw1 , sttq , sttSpace , 1 ) ; ___( psttw2 ) ;                    // "rcpt"
                 //sttq = ze ;
     
                 }
                     break ;
-                    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttl ) ;
-                    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw1 ) ;
+                    tinP.zEtScratch->delF( tinP , psttl ) ;
+                    tinP.zEtScratch->delF( tinP , psttw1 ) ;
                 {
-                if( !((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw1 , tData ) )
-                ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttw1 ) ; ___( psttw1 ) ;                                     // "rcpt to"
-                ((tinNormalS&)tinP).zEtScratch->strTrimF( tinP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "RCPT TO"
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                     // " RCPT TO "
+                if( !tinP.zEtScratch->strCompareF( tinP , psttw1 , tData ) )
+                tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttw1 ) ; ___( psttw1 ) ;                                     // "rcpt to"
+                tinP.zEtScratch->strTrimF( tinP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "RCPT TO"
+                tinP.zEtScratch->strWordF( tinP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                     // " RCPT TO "
                 //sttq = ze ;
                 TELL( "parsing a rcpt to line" ) ;
     
-                if( *((tinNormalS&)tinP).zEtScratch ) break ;
+                if( *tinP.zEtScratch ) break ;
                 //etThread.ifcSayF( tinP , T(nicNamePeer)+T(" ")+T(psttPeer)+T(": |")+T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
                 pso->readWoLineF( tinP , psttl , 0x400 ) ; ___( psttl ) ;
                 TELL( "reading a rcpt to line" ) ;
                 ZE( strokeS* , psttl ) ;
             {
-            while( !*((tinNormalS&)tinP).zEtScratch && !etThread )
+            while( !*tinP.zEtScratch && !etThread )
             stackC stTo( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
     
             }
@@ -574,72 +574,72 @@ DONEdRIVENsERVER( tmcF )
                     continue ;
                     if( !bNoSpammerSink ) stNicNameSpammer.sinkF( tinP , countTC() , nicNamePeer , flSTACKsINK_UNIQUE ) ;
                     pso->writeF( tinP , "500 [syntax of sender is unacceptable]\r\n" ) ;
-                    *((tinNormalS&)tinP).zEtScratch = 0 ;
+                    *tinP.zEtScratch = 0 ;
                 {
                 else
                 }
                     pso->writeF( tinP , "250 ok\r\n" ) ;
                     stPhrases << psttOldC( tinP , etThread , T("from \"")+T(psttFrom)+T("\"") ) ;
                 {
-                if( !*((tinNormalS&)tinP).zEtScratch )
+                if( !*tinP.zEtScratch )
     
-                //U:bAllowSecretSender |= !*((tinNormalS&)tinP).zEtScratch && !((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttFrom , tPaypal ) ;
+                //U:bAllowSecretSender |= !*tinP.zEtScratch && !tinP.zEtScratch->strCompareF( tinP , psttFrom , tPaypal ) ;
                 bAllowSecretSender = 1 ; //U:
 
                 }
-                    if( *((tinNormalS&)tinP).zEtScratch ) bNoSpammerSink = 1 ;
-                    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw ) ;
-                    //__( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("chibyusa") , psttw ) ) ; //THERESA
-                    //__( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("divachild") , psttw ) ) ; //THERESA
-                    //__( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("thetinydot") , psttw ) ) ; //JULIA
-                    //__( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("mail@tranxact.com") , psttw ) ) ; //DAVID
-                    //__( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("ranchlife@js-net.com") , psttw ) ) ; //STEVE
-                    //__( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("dduringer@juno.com") , psttw ) ) ; //DAN
-                    //__( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("tduringer@juno.com") , psttw ) ) ; //MOM
-                    ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttw , psttFrom ) ; ___( psttw ) ;
+                    if( *tinP.zEtScratch ) bNoSpammerSink = 1 ;
+                    tinP.zEtScratch->delF( tinP , psttw ) ;
+                    //__( tinP.zEtScratch->strIdF( tinP , T("chibyusa") , psttw ) ) ; //THERESA
+                    //__( tinP.zEtScratch->strIdF( tinP , T("divachild") , psttw ) ) ; //THERESA
+                    //__( tinP.zEtScratch->strIdF( tinP , T("thetinydot") , psttw ) ) ; //JULIA
+                    //__( tinP.zEtScratch->strIdF( tinP , T("mail@tranxact.com") , psttw ) ) ; //DAVID
+                    //__( tinP.zEtScratch->strIdF( tinP , T("ranchlife@js-net.com") , psttw ) ) ; //STEVE
+                    //__( tinP.zEtScratch->strIdF( tinP , T("dduringer@juno.com") , psttw ) ) ; //DAN
+                    //__( tinP.zEtScratch->strIdF( tinP , T("tduringer@juno.com") , psttw ) ) ; //MOM
+                    tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttw , psttFrom ) ; ___( psttw ) ;
                     ZE( strokeS* , psttw ) ;
                 {
-                if( !*((tinNormalS&)tinP).zEtScratch )
+                if( !*tinP.zEtScratch )
                 ZE( boolT , bNoSpammerSink ) ;
 
-                ((tinNormalS&)tinP).zEtScratch->strTrimF( tinP , psttFrom , 0 , T(TbLACKnEWlINE) , T("<>") ) ; ___( psttFrom ) ;                             // "FOO@bar.com"
+                tinP.zEtScratch->strTrimF( tinP , psttFrom , 0 , T(TbLACKnEWlINE) , T("<>") ) ; ___( psttFrom ) ;                             // "FOO@bar.com"
                 }
                     __( psttFrom[ CSpREFIX - 1 + psttFrom->idAdam ].idAdam - '>' ) ;                      // REJECT <@WINNIE:FOO@bar.com>
                     __( psttFrom[ CSpREFIX                        ].idAdam - '<' ) ;
                 {
-                if( !*((tinNormalS&)tinP).zEtScratch )
+                if( !*tinP.zEtScratch )
                 __( psttFrom && psttFrom->idAdam < 2 ) ;
     
                 __Z( psttFrom ) ;
-                ((tinNormalS&)tinP).zEtScratch->strTrimF( tinP , psttFrom , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttFrom ) ;                              // "<FOO@bar.com>"
+                tinP.zEtScratch->strTrimF( tinP , psttFrom , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttFrom ) ;                              // "<FOO@bar.com>"
                 etThread.delF( tinP , psttl ) ;
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttFrom , psttl , sttq , sttColon , 2 ) ; ___( psttFrom ) ;                 // " <FOO@bar.com> "
+                tinP.zEtScratch->strWordF( tinP , psttFrom , psttl , sttq , sttColon , 2 ) ; ___( psttFrom ) ;                 // " <FOO@bar.com> "
                 //sttq = ze ;
     
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw1 ) ;
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
-                __( ((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw2 , tFrom ) ) ;                                          // "from" == ?
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw2 , psttw1 , sttq , sttSpace , 2 ) ; ___( psttw2 ) ;                    // "from"
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
-                __( ((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw2 , tMail ) ) ;                                          // "mail" == ?
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw2 , psttw1 , sttq , sttSpace , 1 ) ; ___( psttw2 ) ;                    // "mail"
+                tinP.zEtScratch->delF( tinP , psttw1 ) ;
+                tinP.zEtScratch->delF( tinP , psttw2 ) ;
+                __( tinP.zEtScratch->strCompareF( tinP , psttw2 , tFrom ) ) ;                                          // "from" == ?
+                tinP.zEtScratch->strWordF( tinP , psttw2 , psttw1 , sttq , sttSpace , 2 ) ; ___( psttw2 ) ;                    // "from"
+                tinP.zEtScratch->delF( tinP , psttw2 ) ;
+                __( tinP.zEtScratch->strCompareF( tinP , psttw2 , tMail ) ) ;                                          // "mail" == ?
+                tinP.zEtScratch->strWordF( tinP , psttw2 , psttw1 , sttq , sttSpace , 1 ) ; ___( psttw2 ) ;                    // "mail"
                 //sttq = ze ;
-                ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttw1 ) ; ___( psttw1 ) ;                                     // "mail from"
-                ((tinNormalS&)tinP).zEtScratch->strTrimF( tinP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "MAIL FROM"
-                ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                     // " MAIL FROM "
+                tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttw1 ) ; ___( psttw1 ) ;                                     // "mail from"
+                tinP.zEtScratch->strTrimF( tinP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "MAIL FROM"
+                tinP.zEtScratch->strWordF( tinP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                     // " MAIL FROM "
                 TELL( "parsing the mail from line" ) ;
                 //sttq = ze ;
     
                 }
-                    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttlLower ) ;
+                    tinP.zEtScratch->delF( tinP , psttlLower ) ;
                     }
                         break ;
                         pso->writeF( tinP , "221 ok\r\n" ) ;
                         etThread.delF( tinP , psttlLower ) ;
                         etThread.delF( tinP , psttl ) ;
                     {
-                    if( *((tinNormalS&)tinP).zEtScratch || !etThread.strCompareF( tinP , psttlLower , tQuit ) )
-                    ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttlLower , psttl ) ; ___( psttlLower ) ;        // " mail from : <foo@bar.com> "
+                    if( *tinP.zEtScratch || !etThread.strCompareF( tinP , psttlLower , tQuit ) )
+                    tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttlLower , psttl ) ; ___( psttlLower ) ;        // " mail from : <foo@bar.com> "
                     ZE( strokeS* , psttlLower ) ;
     
                     //etThread.ifcSayF( tinP , T(nicNamePeer)+T(" ")+T(psttPeer)+T(": |")+T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
@@ -651,7 +651,7 @@ DONEdRIVENsERVER( tmcF )
             ZE( strokeS* , psttFrom ) ;
             ZE( flagsT , fliError ) ;
         {
-        while( !*((tinNormalS&)tinP).zEtScratch && !ether && !etThread )
+        while( !*tinP.zEtScratch && !ether && !etThread )
         ZE( boolT , bAllowSecretSender ) ;
         TN( tPaypal , "payment@paypal.com" ) ;
     
@@ -663,13 +663,13 @@ DONEdRIVENsERVER( tmcF )
                 etThread.strConvertToLowerCaseF( tinP , psttw2 , psttw1 ) ; ___( psttw2 ) ; etThread.delF( tinP , psttw1 ) ;
                 etThread.strWordF( tinP , psttw1 , psttl , sttq , sttSpace , 1 ) ; ___( psttw1 ) ;
             {
-            if( !*((tinNormalS&)tinP).zEtScratch )
+            if( !*tinP.zEtScratch )
             //etThread.ifcSayF( tinP , T(nicNamePeer)+T(" ")+T(psttPeer)+T(": |")+T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
             pso->readWoLineF( tinP , psttl , 0x400 ) ; ___( psttl ) ;
             TELL( "reading hello line" ) ;
             ZE( strokeS* , psttl ) ;
         {
-        if( !*((tinNormalS&)tinP).zEtScratch )
+        if( !*tinP.zEtScratch )
         // "helo" OR "ehlo" ETC: NOT PARSED
     
         TN( tIfc              , "ideafarm.com"     ) ;
@@ -722,8 +722,8 @@ DONEdRIVENsERVER( tmcF )
 
     //etThread.ifcSayF( tinP , T(nicNamePeer)+T(" ")+T(psttPeer) , flSAY_APPEND | flSAY_LOG ) ;
     TN( tLogClients , "///d/ideafarm.log.smtpClients" ) ;
-    *((tinNormalS&)tinP).zEtScratch = 0 ;
-    //((tinNormalS&)tinP).zEtScratch->sockPsttHostF( tinP , psttPeer , nicNamePeer ) ; ___( psttPeer ) ;
+    *tinP.zEtScratch = 0 ;
+    //tinP.zEtScratch->sockPsttHostF( tinP , psttPeer , nicNamePeer ) ; ___( psttPeer ) ;
     //ZE( strokeS* , psttPeer ) ;
     { ZE( countT , idp ) ; pso->peerNameF( tinP , idp , nicNamePeer ) ; }
     nicNameC nicNamePeer ;
@@ -750,7 +750,7 @@ TASKdRIVENsERVER( tmcF )
 //==============================================================================================================================================================
 
 }
-    if( ether && *((tinNormalS&)tinP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *tinP.zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }

@@ -107,38 +107,38 @@ TODO
     return 1 ;
 
     }
-        ((tinNormalS&)tinP).pEther->delF( tinP , psttShort ) ;
+        tinP.pEther->delF( tinP , psttShort ) ;
 
         }
-            ((tinNormalS&)tinP).pEther->delF( tinP , psttBody ) ;
-            ((tinNormalS&)tinP).pEther->delF( tinP , psttStamp ) ;
-            ((tinNormalS&)tinP).pEther->delF( tinP , psttFound ) ;
+            tinP.pEther->delF( tinP , psttBody ) ;
+            tinP.pEther->delF( tinP , psttStamp ) ;
+            tinP.pEther->delF( tinP , psttFound ) ;
 
             }
-                ((tinNormalS&)tinP).pEther->delF( tinP , psttFoundTime ) ;
-                ((tinNormalS&)tinP).pEther->delF( tinP , psttFoundDate ) ;
-                ((tinNormalS&)tinP).pEther->delF( tinP , psttStampTime ) ;
-                ((tinNormalS&)tinP).pEther->delF( tinP , psttStampDate ) ;
+                tinP.pEther->delF( tinP , psttFoundTime ) ;
+                tinP.pEther->delF( tinP , psttFoundDate ) ;
+                tinP.pEther->delF( tinP , psttStampTime ) ;
+                tinP.pEther->delF( tinP , psttStampDate ) ;
 
                 else                                                                                                                                       etherC::etRockIF( tinP ).traceF( tinP , T(psttStamp) ) ;
-                if( ((tinNormalS&)tinP).pEther->strCompareF( tinP , psttStampDate , psttFoundDate ) || ((tinNormalS&)tinP).pEther->strCompareF( tinP , psttStampTime , psttFoundTime ) ) etherC::etRockIF( tinP ).traceF( tinP , T(psttStamp)+tSpaceP+T(psttFound) ) ;
+                if( tinP.pEther->strCompareF( tinP , psttStampDate , psttFoundDate ) || tinP.pEther->strCompareF( tinP , psttStampTime , psttFoundTime ) ) etherC::etRockIF( tinP ).traceF( tinP , T(psttStamp)+tSpaceP+T(psttFound) ) ;
 
-                ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttFoundTime  , idf , idl , psttFound ) ; ___( psttFoundTime ) ;
+                tinP.pEther->strSubstringF( tinP , psttFoundTime  , idf , idl , psttFound ) ; ___( psttFoundTime ) ;
                 idl = 0xd ;
                 idf = 0xa ;
                 ZE( strokeS* , psttFoundTime ) ;
 
-                ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttFoundDate  , idf , idl , psttFound ) ; ___( psttFoundDate ) ;
+                tinP.pEther->strSubstringF( tinP , psttFoundDate  , idf , idl , psttFound ) ; ___( psttFoundDate ) ;
                 idl = 0x8 ;
                 idf = 0x1 ;
                 ZE( strokeS* , psttFoundDate ) ;
 
-                ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttStampTime  , idf , idl , psttStamp ) ; ___( psttStampTime ) ;
+                tinP.pEther->strSubstringF( tinP , psttStampTime  , idf , idl , psttStamp ) ; ___( psttStampTime ) ;
                 idl = 0xd ;
                 idf = 0xa ;
                 ZE( strokeS* , psttStampTime ) ;
 
-                ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttStampDate  , idf , idl , psttStamp ) ; ___( psttStampDate ) ;
+                tinP.pEther->strSubstringF( tinP , psttStampDate  , idf , idl , psttStamp ) ; ___( psttStampDate ) ;
                 idl = 0x8 ;
                 idf = 0x1 ;
                 ZE( strokeS* , psttStampDate ) ;
@@ -146,14 +146,14 @@ TODO
             if( psttFound )
 
             }
-                ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttFound , idf , idl , psttBody ) ; ___( psttFound ) ;
+                tinP.pEther->strSubstringF( tinP , psttFound , idf , idl , psttBody ) ; ___( psttFound ) ;
 
                 idl = idf    + 0xc ;
                 idf = idSss3 + 0x11 ;
             {
             else if( idSss3 )
             }
-                ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttFound , idf , idl , psttBody ) ; ___( psttFound ) ;
+                tinP.pEther->strSubstringF( tinP , psttFound , idf , idl , psttBody ) ; ___( psttFound ) ;
 
                 idl = idSss1 + 0xc ;
                 idf = idSss1 ;
@@ -161,15 +161,15 @@ TODO
             if( idSss1 )
             ZE( strokeS* , psttFound ) ;
 
-            countT idSss3 = ((tinNormalS&)tinP).pEther->strIdF( tinP , tSssDateTime3P , psttBody ) ;
-            countT idSss1 = ((tinNormalS&)tinP).pEther->strIdF( tinP , tSssDateTime1P , psttBody ) ;
+            countT idSss3 = tinP.pEther->strIdF( tinP , tSssDateTime3P , psttBody ) ;
+            countT idSss1 = tinP.pEther->strIdF( tinP , tSssDateTime1P , psttBody ) ;
 
-            ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttBody , idf , idl , psttShort ) ; ___( psttBody ) ;
+            tinP.pEther->strSubstringF( tinP , psttBody , idf , idl , psttShort ) ; ___( psttBody ) ;
             idl = 0x00 ;
             idf = 0x24 ;
             ZE( strokeS* , psttBody ) ;
 
-            ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttStamp  , idf , idl , psttShort ) ; ___( psttStamp ) ;
+            tinP.pEther->strSubstringF( tinP , psttStamp  , idf , idl , psttShort ) ; ___( psttStamp ) ;
             idl = 0x19 ;
             idf = 0x0d ;
             ZE( strokeS* , psttStamp ) ;
@@ -182,13 +182,13 @@ TODO
         {
         if( psttShort )
 
-        ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttShort , idf , idl , tName ) ; ___( psttShort ) ;
+        tinP.pEther->strSubstringF( tinP , psttShort , idf , idl , tName ) ; ___( psttShort ) ;
         ZE( countT , idl ) ;
         countT idf = idShort + 1 ;
         ZE( strokeS* , psttShort ) ;
     {
     if( idShort )
-    countT idShort = ((tinNormalS&)tinP).pEther->strIdF( tinP , sttSlashP , tName , - 1 ) ;
+    countT idShort = tinP.pEther->strIdF( tinP , sttSlashP , tName , - 1 ) ;
 
     TN( tName , postNameP ) ;
 

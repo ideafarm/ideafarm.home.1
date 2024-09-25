@@ -21,13 +21,13 @@
             BLAMMO ;
             //}
             //    etherC::etRockIF( tinP ).traceF( tinP , T("btrAM failed / cRef: ")+TF2(cRef,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ; flagsi" ": ")+TF2(flagsi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ; idTypeDatum: ")+TF2(idTypeDatum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            //    etherC::etRockIF( tinP ).traceF( tinP , T("[cGrabitC_set,cGrabitC_reset]: ")+TF2(((tinNormalS&)tinP).cGrabitC_set,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(((tinNormalS&)tinP).cGrabitC_reset,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //    etherC::etRockIF( tinP ).traceF( tinP , T("[cGrabitC_set,cGrabitC_reset]: ")+TF2(tinP.cGrabitC_set,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(tinP.cGrabitC_reset,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             //    byteT    idTypeDatum = (byteT)listing.idTypeDatumF() ;
             //    byteT    flagsi      =        listing.flagsF() ;
             //    count01T cRef        =        listing.cRefPrivate2F() ;
             //    listingC& listing = *(listingC*)( pbo - sizeof( count01T ) ) ;
             //{
-            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
+            //if( tinP.pc Utility[ 0 ] )
 
             // }
             //     etherC::etRockIF( tinP ).traceF( tinP , T("    should match [correct,pbPad[offp]]: ")+TF2(GRABITbYTEiNITIALvALUE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(pbPad[offp],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -38,8 +38,8 @@
             // etherC::etRockIF( tinP ).traceF( tinP , T("grabitC::ungrabF error: already ungrabbed; memory has been trashed if these numbers don't match [correct,*pbo,bitsDefault]: ")+TF2(GRABITbYTEiNITIALvALUE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(*pbo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(bitsDefault,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             // LOGrAW7(                  "\r\ngrabitC::ungrabF error: already ungrabbed; memory has been trashed if these numbers don't match [correct,*pbo,bitsDefault]: " ,    GRABITbYTEiNITIALvALUE                                           , " " ,    *pbo                                           , " " ,    bitsDefault                                           , "\r\n" ) ;
             // 
-            // etherC::etRockIF( tinP ).traceF( tinP , T("grabitC::ungrabF error: already ungrabbed [((tinNormalS&)tinP).cGrabitC_set,((tinNormalS&)tinP).cGrabitC_reset]: ")+TF2(((tinNormalS&)tinP).cGrabitC_set,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(((tinNormalS&)tinP).cGrabitC_reset,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            // LOGrAW5(                  "\r\ngrabitC::ungrabF error: already ungrabbed [((tinNormalS&)tinP).cGrabitC_set,((tinNormalS&)tinP).cGrabitC_reset]: " ,    ((tinNormalS&)tinP).cGrabitC_set                                           , " " ,    ((tinNormalS&)tinP).cGrabitC_reset , "\r\n" ) ;
+            // etherC::etRockIF( tinP ).traceF( tinP , T("grabitC::ungrabF error: already ungrabbed [tinP.cGrabitC_set,tinP.cGrabitC_reset]: ")+TF2(tinP.cGrabitC_set,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(tinP.cGrabitC_reset,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            // LOGrAW5(                  "\r\ngrabitC::ungrabF error: already ungrabbed [tinP.cGrabitC_set,tinP.cGrabitC_reset]: " ,    tinP.cGrabitC_set                                           , " " ,    tinP.cGrabitC_reset , "\r\n" ) ;
             // 
             // etherC::etRockIF( tinP ).traceF( tinP , T("grabitC::ungrabF error: [offo,savebyte1,savebyte2]: ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(savebyte1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(savebyte2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             // LOGrAW7(                  "\r\ngrabitC::ungrabF error: [offo,savebyte1,savebyte2]: " , offo , " " , savebyte1 , " " , savebyte2 , "\r\n" ) ;
@@ -66,7 +66,7 @@
 
             *(countT*)0 = 1 ; //INTENTIONAL BLAMMO
         {
-        //if( !( pcKey ? btrKeyedAM( pbo , *pcKey , offo , ((tinNormalS&)tinP).monitor.idThread ) : btrAM( pbo , offo ) ) )
+        //if( !( pcKey ? btrKeyedAM( pbo , *pcKey , offo , tinP.monitor.idThread ) : btrAM( pbo , offo ) ) )
         if( !bOk )
 
         }
@@ -75,9 +75,9 @@
             }
                 }
                     break ;
-                    ((tinNormalS&)tinP).ppbGrabitRecurse[ offr ] = 0 ;
+                    tinP.ppbGrabitRecurse[ offr ] = 0 ;
                 {
-                if( ((tinNormalS&)tinP).ppbGrabitRecurse[ offr ] == pbo )
+                if( tinP.ppbGrabitRecurse[ offr ] == pbo )
             {
             for( offr = 0 ; offr < CmAXgRABITrECURSEiNtINs ; offr ++ )
             ZE( countT , offr ) ;
@@ -96,7 +96,7 @@
         }
                 *(countT*)0 = 1 ; //INTENTIONAL BLAMMO
             if( !bOk )
-            bOk = btrKeyedAM( pbo , *pcKey , offo , ((tinNormalS&)tinP).monitor.idThread ) ;
+            bOk = btrKeyedAM( pbo , *pcKey , offo , tinP.monitor.idThread ) ;
         {
         if( pcKey )
         ZE( boolT , bOk ) ;
@@ -111,7 +111,7 @@
         //}
         //    //processGlobal2I.pcTrace7[ offTraceMe ] = idiFileP ;
         //    //processGlobal2I.pcTrace6[ offTraceMe ] = idLineP ;
-        //    processGlobal2I.pcTrace5[ offTraceMe ] = ((tinNormalS&)tinP).monitor.idThread ;
+        //    processGlobal2I.pcTrace5[ offTraceMe ] = tinP.monitor.idThread ;
         //    processGlobal2I.pcTrace4[ offTraceMe ] = offo ;
         //    processGlobal2I.pcTrace3[ offTraceMe ] = (countT)pbo ;
         //    processGlobal2I.pcTrace2[ offTraceMe ] = *pbo ;
@@ -124,20 +124,20 @@
         //byteT mask = (byteT)( 1 << offo ) ;
         //TO FIND A BUG
 
-        //((tinNormalS&)tinP).cGrabitC_reset ++ ; //TO FIND A BUG
+        //tinP.cGrabitC_reset ++ ; //TO FIND A BUG
 
         //}
         //    emitWordsIF( tinP , ifcLINE , IDFILE , pcSuffix , 4 ) ;
         //    countT pcSuffix[] = { 3 , (countT)pbo , offo , 0x1110 } ; //0x1110: "resetting bit to 0"
         //{                                                                                           //U::TO FIND A BUG
-        //if( ((tinNormalS&)tinP).pag1->idAdam == ifcIDaDAM_PISS )
+        //if( tinP.pag1->idAdam == ifcIDaDAM_PISS )
 
-        if( pcGOT && *pcGOT == ((tinNormalS&)tinP).osTid ) *pcGOT = 0 ;
+        if( pcGOT && *pcGOT == tinP.osTid ) *pcGOT = 0 ;
     {
     else
-    if( pcGOT && *pcGOT == ((tinNormalS&)tinP).osTid && pcGR && *pcGR ) -- *pcGR ;
+    if( pcGOT && *pcGOT == tinP.osTid && pcGR && *pcGR ) -- *pcGR ;
  
-    countT gotMe = ((tinNormalS&)tinP).osTid ; // DONE THIS WAY SO THAT GRAB LOGIC IS THE SAME FOR (1) NO RECURSION (2) RECURSION USING grabotC (3) RECURSION USING tinP
+    countT gotMe = tinP.osTid ; // DONE THIS WAY SO THAT GRAB LOGIC IS THE SAME FOR (1) NO RECURSION (2) RECURSION USING grabotC (3) RECURSION USING tinP
 
     ;
         : poff_cGrabberRecurse                                    
@@ -159,7 +159,7 @@
         ? (byteT*)this + (countT)poff_bo
     byteT* pbo = F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES
 
-    ((tinNormalS&)tinP).cGrabitC_unregistered ++ ; //U:: TO FIND A BUG
+    tinP.cGrabitC_unregistered ++ ; //U:: TO FIND A BUG
     unregisterF( tinP ) ;
 
     _IO_

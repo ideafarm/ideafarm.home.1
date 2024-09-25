@@ -14,11 +14,11 @@ THREADmODE4rESTORE
 //etherC::loafIF( tinP ) ;
 etThread.traceF( tinP , T("ok") ) ;
 
-if( F(((tinNormalS&)tinP).pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP ) ((tinNormalS&)tinP).pag1->_thirdC_.flagsModeAdam2 &= ~( F(flADAMmODE2_STOP) ) ;
+if( F(tinP.pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP ) tinP.pag1->_thirdC_.flagsModeAdam2 &= ~( F(flADAMmODE2_STOP) ) ;
 
 }
-    CONoUTrAW( F(((tinNormalS&)tinP).pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP ? "\r\nstopped\r\n" : "\r\nstarted\r\n" ) ;
-    ((tinNormalS&)tinP).pag1->_thirdC_.flagsModeAdam2 ^= F(flADAMmODE2_STOP) ;
+    CONoUTrAW( F(tinP.pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP ? "\r\nstopped\r\n" : "\r\nstarted\r\n" ) ;
+    tinP.pag1->_thirdC_.flagsModeAdam2 ^= F(flADAMmODE2_STOP) ;
 
     ++ s ; ether.osSleepF( tinP , TOCK ) ;
 {

@@ -8,16 +8,16 @@
 
 
 }
-    if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("s_cancelF / cancelled  a socket") ) ;
+    if( tinP.pEther ) tinP.pEther->traceF( tinP , T("s_cancelF / cancelled  a socket") ) ;
 
     #endif
 
             }
-                if( ((tinNormalS&)tinP).brcRaw != WSAENOTSOCK ) { __( ((tinNormalS&)tinP).brcRaw - WSAENOTCONN ) ; }
+                if( tinP.brcRaw != WSAENOTSOCK ) { __( tinP.brcRaw - WSAENOTCONN ) ; }
                 BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
             {
-            if( ((tinNormalS&)tinP).brcRaw == SOCKET_ERROR )
-            __( ((tinNormalS&)tinP).brcRaw && ((tinNormalS&)tinP).brcRaw != SOCKET_ERROR ) ;
+            if( tinP.brcRaw == SOCKET_ERROR )
+            __( tinP.brcRaw && tinP.brcRaw != SOCKET_ERROR ) ;
             BOSdOnOTtEST( WHATgbo , shutdown( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , 2 ) )
  
     #elif defined( __NT__ )
@@ -29,7 +29,7 @@
     #ifdef __OS2__
 
     else              { BLAMMO ; }
-    if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("s_cancelF / cancelling a socket") ) ;
+    if( tinP.pEther ) tinP.pEther->traceF( tinP , T("s_cancelF / cancelling a socket") ) ;
     //U:: TO FIND A BUG
 
     //}

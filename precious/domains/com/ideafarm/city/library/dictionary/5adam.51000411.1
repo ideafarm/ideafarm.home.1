@@ -114,8 +114,8 @@ TODO
         //U::j:hanSayF( tinP , bw , info ) ;
         info.osSay_cost = (count01T)thirdC::c_strlenIF( tinP , postP ) ;
         info.osSay_post = (osTextT*)postP ;
-        info.osPid = ((tinNormalS&)tinP).osPid ;
-        info.osTid = ((tinNormalS&)tinP).osTid ;
+        info.osPid = tinP.osPid ;
+        info.osTid = tinP.osTid ;
         ifcMonitorEventS info( tinP , bw.ether ) ;
     {
  
@@ -181,22 +181,22 @@ DONE( tmCatchCommandF )
     }
         }
             }
-                ((tinNormalS&)tinP).zEtScratch->osSleepF( tinP , TUCK * 0x40 ) ;
+                tinP.zEtScratch->osSleepF( tinP , TUCK * 0x40 ) ;
                 sockc.writeF( tinP , idPort , nicName , "ifcraok" , 8 ) ;
             {
             while( cTries -- )
             cTries = 8 ;
 
-            ((tinNormalS&)tinP).zEtScratch->osFireF( tinP ) ;
+            tinP.zEtScratch->osFireF( tinP ) ;
 
             }
-                ((tinNormalS&)tinP).zEtScratch->osSleepF( tinP , TUCK * 0x40 ) ;
+                tinP.zEtScratch->osSleepF( tinP , TUCK * 0x40 ) ;
                 sockc.writeF( tinP , idPort , nicName , "ifcr" , 5 ) ;
             {
             while( cTries -- )
             countT cTries = 8 ;
         {
-        if( !*((tinNormalS&)tinP).zEtScratch && pbIn && cbIn >= 2 * sizeof( countT ) && ((countT*)pbIn)[ 0 ] == 1 && ((countT*)pbIn)[ 1 ] == ifcPASSCODE_OSfIRE ) //U: HARDCODED IDcMD AND PASSCODE.  SUPPORT CONFIGURATION FILE TO OVERRIDE THIS PASSCODE VALUE
+        if( !*tinP.zEtScratch && pbIn && cbIn >= 2 * sizeof( countT ) && ((countT*)pbIn)[ 0 ] == 1 && ((countT*)pbIn)[ 1 ] == ifcPASSCODE_OSfIRE ) //U: HARDCODED IDcMD AND PASSCODE.  SUPPORT CONFIGURATION FILE TO OVERRIDE THIS PASSCODE VALUE
 
         sockc.readF( tinP , pbIn , cbIn , idPort , nicName ) ;
         nicNameC nicName ;
@@ -204,10 +204,10 @@ DONE( tmCatchCommandF )
         ZE( countT , cbIn ) ;
         ZE( byteT* , pbIn ) ;
     {
-    while( !ether && !etThread && !*((tinNormalS&)tinP).zEtScratch )
+    while( !ether && !etThread && !*tinP.zEtScratch )
 
     sockc.bindF( tinP , ifcPORToLD2_CONTROL ) ;
-    socketC sockc( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    socketC sockc( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 {
 while( !ether )
 TASK( tmCatchCommandF )
@@ -219,13 +219,13 @@ DONE( tmDisplayF )
         TELL( "at the end of my loop" )
         }
             idDisplayLast = baP.idDisplay ;
-            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttr ) ;
-            ((tinNormalS&)tinP).zEtScratch->strokeF( tinP , T(psttr) , bKt ? flPAPERtALK_MOVEhERE : 0/*ifcIDtYPE wUP_NORMAL*/ ) ;
+            tinP.zEtScratch->delF( tinP , psttr ) ;
+            tinP.zEtScratch->strokeF( tinP , T(psttr) , bKt ? flPAPERtALK_MOVEhERE : 0/*ifcIDtYPE wUP_NORMAL*/ ) ;
             }
                 WINDOWrEFERENCEeND( thirdC::pWinRootIF() ) ;
                 }
                     ungrabF( tinP , pw->grab_pczKtHere ) ;
-                    ((tinNormalS&)tinP).zEtScratch->strKtHereAddressF( tinP , psttr , pw->pczKtHere ? pw->pczKtHere : (const countT* const)count3S( 0 , 1 ) ) ; //U: MAKE A COPY OF pcz SO CAN UNGRAB EARLIER
+                    tinP.zEtScratch->strKtHereAddressF( tinP , psttr , pw->pczKtHere ? pw->pczKtHere : (const countT* const)count3S( 0 , 1 ) ) ; //U: MAKE A COPY OF pcz SO CAN UNGRAB EARLIER
                     grabF( tinP , pw->grab_pczKtHere ) ;
                 {
                 if( pw && idDisplayLast == baP.idDisplay )
@@ -241,21 +241,21 @@ DONE( tmDisplayF )
                     break ;
 
                     #endif
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\fU:this display is under construction (conj: it causes deadlock)") ) ; ___( psttr ) ;
+                    tinP.zEtScratch->strFuseF( tinP , psttr , T("\fU:this display is under construction (conj: it causes deadlock)") ) ; ___( psttr ) ;
                     #else
 
                     baP.swWatch.ungrabF( tinP ) ;
                     }
-                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , tc ) ; ___( psttr ) ;
-                        ((tinNormalS&)tinP).zEtScratch->delF( tinP , pbCopy ) ;
+                        tinP.zEtScratch->strFuseF( tinP , psttr , tc ) ; ___( psttr ) ;
+                        tinP.zEtScratch->delF( tinP , pbCopy ) ;
 
-                        else ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("(could not read)") ) ;
+                        else tinP.zEtScratch->strFuseF( tinP , psttr , T("(could not read)") ) ;
                         }
                             }
                                 }
                                     break ;
                                     }
-                                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TF1(*(pcc++))+(cElt?T("/"):T("")) ) ;
+                                        tinP.zEtScratch->strFuseF( tinP , psttr , TF1(*(pcc++))+(cElt?T("/"):T("")) ) ;
                                     {
                                     while( cElt -- )
                                     countT* pcc = (countT*)pbCopy ;
@@ -269,14 +269,14 @@ DONE( tmDisplayF )
                         ((thirdC&)etScratch).dosReadProcessMemoryIF( tinP , pbCopy , watch.cbAll , bOk , (byteT*)watch.idaOrRawAddr , watch.osPid ) ;
                         ZE( boolT , bOk ) ;
 
-                        ((tinNormalS&)tinP).zEtScratch->newF( tinP , LF , pbCopy , watch.cbAll ) ; ___( pbCopy ) ;
+                        tinP.zEtScratch->newF( tinP , LF , pbCopy , watch.cbAll ) ; ___( pbCopy ) ;
                         ZE( byteT* , pbCopy ) ;
-                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TF3(watch.idaOrRawAddr,flFORMAT_UNSIGNED,9)+TF3(watch.cbAll,flFORMAT_UNSIGNED,3)+TF3(watch.cbElt,flFORMAT_UNSIGNED,3)+TPS(baP.psttWatch,0x20,sDot)+T(" ") ) ; ___( psttr ) ;
+                        tinP.zEtScratch->strFuseF( tinP , psttr , TF3(watch.idaOrRawAddr,flFORMAT_UNSIGNED,9)+TF3(watch.cbAll,flFORMAT_UNSIGNED,3)+TF3(watch.cbElt,flFORMAT_UNSIGNED,3)+TPS(baP.psttWatch,0x20,sDot)+T(" ") ) ; ___( psttr ) ;
                         watchS& watch = *(watchS*)&(countT&)baP.swWatch ;
                         baP.psttWatch = (strokeS*)baP.swWatch.leverF( tinP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors && !baP.idDisplayRequest ; idf ++ )
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    these memory locations are registered for watching\r\n \r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ cFlavors * 0x100 ) ; ___( psttr ) ;
+                    tinP.zEtScratch->strFuseF( tinP , psttr , T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    these memory locations are registered for watching\r\n \r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ cFlavors * 0x100 ) ; ___( psttr ) ;
                     countT cFlavors = baP.swWatch.cFlavorsF( tinP ) ;
                     baP.swWatch.grabF( tinP , TAG( TAGiDnULL ) ) ;
                     strokeS sDot('.') ;
@@ -289,9 +289,9 @@ DONE( tmDisplayF )
                     break ;
 
                     }
-                        ((tinNormalS&)tinP).monitor.idStep ++ ;
+                        tinP.monitor.idStep ++ ;
                         grabOldS grab( tinP , TAG( TAGiDnULL ) , flGRABs_DISABLED ) ;
-                        ((tinNormalS&)tinP).monitor.idStep ++ ;
+                        tinP.monitor.idStep ++ ;
                     {
                     while( !baP.idDisplayRequest )
                 {
@@ -300,7 +300,7 @@ DONE( tmDisplayF )
                     break ;
                     baP.stThread.ungrabF( tinP ) ;
                     }
-                        while( !ether && !*((tinNormalS&)tinP).zEtScratch && !baP.stThread.third && ~hDown && !baP.idDisplayRequest ) ;
+                        while( !ether && !*tinP.zEtScratch && !baP.stThread.third && ~hDown && !baP.idDisplayRequest ) ;
                         }
                             ) ;
     
@@ -315,7 +315,7 @@ DONE( tmDisplayF )
                                 TT(thread.timeReg.time1,thread.timeReg.time2)+tb+
                                 TT(thread.timeNew.time1,thread.timeNew.time2)+tb+
     
-                            ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , 
+                            tinP.zEtScratch->strFuseF( tinP , psttr , 
                             threadS& thread = (threadS&)(countT&)baP.stThread.downF( tinP , hDown ) ;
                         {
                         do
@@ -337,7 +337,7 @@ DONE( tmDisplayF )
                         TPS("timeNew",0x11,sttd)+tb+
                         T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    these ")+TF1(baP.stThread)+T(" threads formerly existed in ifc processes but have ended\r\n \r\n")+
 
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , 
+                    tinP.zEtScratch->strFuseF( tinP , psttr , 
                     baP.stThread.grabF( tinP , TAG( TAGiDnULL ) ) ;
                     strokeS sttd( '-' ) ;
                     TN( tc , "\r\n" ) ;
@@ -361,7 +361,7 @@ DONE( tmDisplayF )
                             TT(thread.timeReg.time1,thread.timeReg.time2)+tb+
                             TT(thread.timeNew.time1,thread.timeNew.time2)+tb+
 
-                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , 
+                        tinP.zEtScratch->strFuseF( tinP , psttr , 
 
                         threadS& thread = (threadS&)(countT&)baP.swThread ;
                         baP.leverOsTid = baP.swThread.leverF( tinP , idf ) ;
@@ -382,7 +382,7 @@ DONE( tmDisplayF )
                         TPS("timeNew",0x11,sttd)+tb+
                         T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    these ")+TF1(cFlavors)+T(" threads currently exist in ifc processes\r\n \r\n")+
 
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , 
+                    tinP.zEtScratch->strFuseF( tinP , psttr , 
                     countT cFlavors = baP.swThread.cFlavorsF( tinP ) ;
                     baP.swThread.grabF( tinP , TAG( TAGiDnULL ) ) ;
                     strokeS sttd( '-' ) ;
@@ -405,7 +405,7 @@ DONE( tmDisplayF )
                         TPS("in primary poolOld",0x40,sttd)+tb+TF1(cIda)+tc+
                         T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    ")+TF1(cAll)+T(" grabOldS objects have been constructed\r\n \r\n")+
 
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , 
+                    tinP.zEtScratch->strFuseF( tinP , psttr , 
                     strokeS sttd( '.' ) ;
                     countT cAll = cIda + cRaw ;
 
@@ -437,11 +437,11 @@ DONE( tmDisplayF )
 
                     baP.swTallySay.ungrabF( tinP ) ;
                     }
-                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TF3(baP.swTallySay,flFORMAT_UNSIGNED,9)+TF3(baP.idTypeSay,flFORMAT_UNSIGNED,9)+tc ) ; ___( psttr ) ;
+                        tinP.zEtScratch->strFuseF( tinP , psttr , TF3(baP.swTallySay,flFORMAT_UNSIGNED,9)+TF3(baP.idTypeSay,flFORMAT_UNSIGNED,9)+tc ) ; ___( psttr ) ;
                         baP.idTypeSay = baP.swTallySay.leverF( tinP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors && !baP.idDisplayRequest ; idf ++ )
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    i have heard these ")+TF1(tallyAll)+T(" sayings\r\n \r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ cFlavors * 0x100 ) ; ___( psttr ) ;
+                    tinP.zEtScratch->strFuseF( tinP , psttr , T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    i have heard these ")+TF1(tallyAll)+T(" sayings\r\n \r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ cFlavors * 0x100 ) ; ___( psttr ) ;
 
                     }
                         tallyAll +=  baP.swTallySay ;
@@ -462,7 +462,7 @@ DONE( tmDisplayF )
                     baP.swTallyEvent.ungrabF( tinP ) ;
 
                     }
-                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TF3(baP.swTallyEvent,flFORMAT_UNSIGNED,9)+TF3(baP.idEvent,flFORMAT_UNSIGNED,9)+T(postTitle)+tc ) ; ___( psttr ) ;
+                        tinP.zEtScratch->strFuseF( tinP , psttr , TF3(baP.swTallyEvent,flFORMAT_UNSIGNED,9)+TF3(baP.idEvent,flFORMAT_UNSIGNED,9)+T(postTitle)+tc ) ; ___( psttr ) ;
 
                         }
                             break ;
@@ -476,7 +476,7 @@ DONE( tmDisplayF )
                     {
                     for( countT idf = 1 ; idf <= cFlavors && !baP.idDisplayRequest ; idf ++ )
 
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    i have been notified of these ")+TF1(tallyAll)+T(" events\r\n \r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ cFlavors * 0x100 ) ; ___( psttr ) ;
+                    tinP.zEtScratch->strFuseF( tinP , psttr , T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    i have been notified of these ")+TF1(tallyAll)+T(" events\r\n \r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ cFlavors * 0x100 ) ; ___( psttr ) ;
 
                     }
                         tallyAll += baP.swTallyEvent ;
@@ -517,7 +517,7 @@ DONE( tmDisplayF )
                         ) ;
                             T("no entries yet")
                             S2(saOLD_KTaTTACHuP,scOld_KTaTTACH)+S2(1,scOld_KTfORMAT)+S2(flKTsCRATCH_WMHhERE,scOld_KTfLAGSsCRATCH)+
-                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+
+                        tinP.zEtScratch->strFuseF( tinP , psttr , T("")+
                     {
                     if( !cEntries )
 
@@ -526,12 +526,12 @@ DONE( tmDisplayF )
                         }
                             stSnap.ungrabF( tinP ) ;
                             }
-                                if( idf < cFlavors ) ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+S2(saOLD_KTaTTACHdOWN,scOld_KTaTTACH) ) ;
+                                if( idf < cFlavors ) tinP.zEtScratch->strFuseF( tinP , psttr , T("")+S2(saOLD_KTaTTACHdOWN,scOld_KTaTTACH) ) ;
 
-                                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttGraph4 ) ;
-                                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttGraph3 ) ;
-                                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttGraph2 ) ;
-                                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttGraph1 ) ;
+                                tinP.zEtScratch->delF( tinP , psttGraph4 ) ;
+                                tinP.zEtScratch->delF( tinP , psttGraph3 ) ;
+                                tinP.zEtScratch->delF( tinP , psttGraph2 ) ;
+                                tinP.zEtScratch->delF( tinP , psttGraph1 ) ;
                                 }
                                     ) ;
 
@@ -555,15 +555,15 @@ DONE( tmDisplayF )
                                         T("cdUsed")+
                                         S2(saOLD_KTaTTACHuP,scOld_KTaTTACH)+S2(1,scOld_KTfORMAT)+S2(flKTsCRATCH_null,scOld_KTfLAGSsCRATCH)+
 
-                                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+
+                                    tinP.zEtScratch->strFuseF( tinP , psttr , T("")+
                                 {
                                 if( !baP.idDisplayRequest )
 
                                 }
-                                    if( !baP.idDisplayRequest )((tinNormalS&)tinP).zEtScratch->strGraphF( tinP , psttGraph4 , lever , bLever , swsX , swsY , swColor , swMarker , 0x100 , 0x100 , ifcIDsTYLEsTRgRAPH_STYLE1 , flSTRgRAPH_ORIGINyiSzE , T("cAccesses cCollisions") , count3S( 6 , 7 ) ) ;
-                                    if( !baP.idDisplayRequest )((tinNormalS&)tinP).zEtScratch->strGraphF( tinP , psttGraph3 , lever , bLever , swsX , swsY , swColor , swMarker , 0x100 , 0x100 , ifcIDsTYLEsTRgRAPH_STYLE1 , flSTRgRAPH_ORIGINyiSzE , T("cbPool cdUsed") , count3S( 4 , 5 ) ) ;
-                                    if( !baP.idDisplayRequest )((tinNormalS&)tinP).zEtScratch->strGraphF( tinP , psttGraph2 , lever , bLever , swsX , swsY , swColor , swMarker , 0x100 , 0x100 , ifcIDsTYLEsTRgRAPH_STYLE1 , flSTRgRAPH_ORIGINyiSzE , T("cDropNewed cDropDeleted") , count3S( 2 , 3 ) ) ;
-                                    if( !baP.idDisplayRequest )((tinNormalS&)tinP).zEtScratch->strGraphF( tinP , psttGraph1 , lever , bLever , swsX , swsY , swColor , swMarker , 0x100 , 0x100 , ifcIDsTYLEsTRgRAPH_STYLE1 , flSTRgRAPH_ORIGINyiSzE , T("cdUsed") , count2S( 1 ) ) ;
+                                    if( !baP.idDisplayRequest )tinP.zEtScratch->strGraphF( tinP , psttGraph4 , lever , bLever , swsX , swsY , swColor , swMarker , 0x100 , 0x100 , ifcIDsTYLEsTRgRAPH_STYLE1 , flSTRgRAPH_ORIGINyiSzE , T("cAccesses cCollisions") , count3S( 6 , 7 ) ) ;
+                                    if( !baP.idDisplayRequest )tinP.zEtScratch->strGraphF( tinP , psttGraph3 , lever , bLever , swsX , swsY , swColor , swMarker , 0x100 , 0x100 , ifcIDsTYLEsTRgRAPH_STYLE1 , flSTRgRAPH_ORIGINyiSzE , T("cbPool cdUsed") , count3S( 4 , 5 ) ) ;
+                                    if( !baP.idDisplayRequest )tinP.zEtScratch->strGraphF( tinP , psttGraph2 , lever , bLever , swsX , swsY , swColor , swMarker , 0x100 , 0x100 , ifcIDsTYLEsTRgRAPH_STYLE1 , flSTRgRAPH_ORIGINyiSzE , T("cDropNewed cDropDeleted") , count3S( 2 , 3 ) ) ;
+                                    if( !baP.idDisplayRequest )tinP.zEtScratch->strGraphF( tinP , psttGraph1 , lever , bLever , swsX , swsY , swColor , swMarker , 0x100 , 0x100 , ifcIDsTYLEsTRgRAPH_STYLE1 , flSTRgRAPH_ORIGINyiSzE , T("cdUsed") , count2S( 1 ) ) ;
     
                                     while( !stSnap.third && ~hDown && !baP.idDisplayRequest ) ;
                                     }
@@ -612,8 +612,8 @@ DONE( tmDisplayF )
                                 ZE( strokeS* , psttGraph3 ) ;
                                 ZE( strokeS* , psttGraph2 ) ;
                                 ZE( strokeS* , psttGraph1 ) ;
-                                poolOldSnapS snapLath( tinP , *((tinNormalS&)tinP).zEtScratch ) ;
-                                poolOldSnapS snapWoth( tinP , *((tinNormalS&)tinP).zEtScratch ) ;
+                                poolOldSnapS snapLath( tinP , *tinP.zEtScratch ) ;
+                                poolOldSnapS snapWoth( tinP , *tinP.zEtScratch ) ;
                                 lever = 7 ; swColor = 0x0000ff ;
                                 lever = 6 ; swColor = 0x00ff00 ;
                                 lever = 5 ; swColor = 0x00ff00 ;
@@ -621,10 +621,10 @@ DONE( tmDisplayF )
                                 lever = 3 ; swColor = 0x0000ff ;
                                 lever = 2 ; swColor = 0x00ff00 ;
                                 lever = 1 ; swColor = 0xff0000 ;
-                                switchC swMarker( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , lever ) ;
-                                switchC swColor( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , lever ) ;
-                                switchStackC swsY( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , lever , flSTACKc_FIFO , ifcSTACKtYPE_measureT ) ;
-                                switchStackC swsX( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , lever , flSTACKc_FIFO , ifcSTACKtYPE_measureT ) ;
+                                switchC swMarker( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , lever ) ;
+                                switchC swColor( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , lever ) ;
+                                switchStackC swsY( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , lever , flSTACKc_FIFO , ifcSTACKtYPE_measureT ) ;
+                                switchStackC swsX( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , lever , flSTACKc_FIFO , ifcSTACKtYPE_measureT ) ;
                                 batonC bLever( tinP , TAG( TAGiDnULL ) ) ;
                                 ZE( countT , lever ) ;
                             {
@@ -633,7 +633,7 @@ DONE( tmDisplayF )
                                 ) ;
                                     T("please wait while i make my woth oo observations of this poolOld")
                                     S2(saOLD_KTaTTACHuP,scOld_KTaTTACH)+S2(1,scOld_KTfORMAT)+S2(flKTsCRATCH_null,scOld_KTfLAGSsCRATCH)+
-                                ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+
+                                tinP.zEtScratch->strFuseF( tinP , psttr , T("")+
                             {
                             if( !stSnap )
                             stSnap.grabF( tinP , TAG( TAGiDnULL ) ) ;
@@ -644,7 +644,7 @@ DONE( tmDisplayF )
                             ) ;
                                 T("please wait while i set up")
                                 S2(saOLD_KTaTTACHuP,scOld_KTaTTACH)+S2(1,scOld_KTfORMAT)+S2(flKTsCRATCH_null,scOld_KTfLAGSsCRATCH)+
-                            ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+
+                            tinP.zEtScratch->strFuseF( tinP , psttr , T("")+
                         {
                         if( !history.pStkSnap )
 
@@ -652,7 +652,7 @@ DONE( tmDisplayF )
                         ) ;
                             TF3(history.cRef,flFORMAT_UNSIGNED,3)+T(baP.psttPoolName)
                             S2(bWoth?saOLD_KTaTTACHuP:saOLD_KTaTTACHdOWN,scOld_KTaTTACH)+S2(1,scOld_KTfORMAT)+S2(bWoth?flKTsCRATCH_WMHhERE:flKTsCRATCH_null,scOld_KTfLAGSsCRATCH)+
-                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+
+                        tinP.zEtScratch->strFuseF( tinP , psttr , T("")+
                         cEntries ++ ;
 
                         __( !history.cRef ) ;
@@ -667,7 +667,7 @@ DONE( tmDisplayF )
                     , 0x100 + cFlavors * 0x100000 ) ; ___( psttr ) ; //WHAT IS A REASONABLE ALOCATION FOR THE REPORT ON A SINGLE POOLoLD?
                         T("idDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    ")+TF1(cFlavors)+T(" shared memory poolOlds are attached")
                         S2(1,scOld_KTfORMAT)+S2(flKTsCRATCH_null,scOld_KTfLAGSsCRATCH)+
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\f")+
+                    tinP.zEtScratch->strFuseF( tinP , psttr , T("\f")+
 
                     countT cFlavors = baP.swPoolHistory.cFlavorsF( tinP ) ;
                     baP.swPoolHistory.grabF( tinP , TAG( TAGiDnULL ) ) ;
@@ -685,29 +685,29 @@ DONE( tmDisplayF )
                                 if( bTinWantCopied ) { DEL( pTinWant ) ; }
                                 if( bTinHaveCopied ) { DEL( pTinHave ) ; }
             
-                                ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\r\n") ) ;
+                                tinP.zEtScratch->strFuseF( tinP , psttr , T("\r\n") ) ;
     
                                 }
                                     ) ;
                                         sb+sttStar+TF1(pTinWant->idAdamRoot)+sb+T(pTinWant->postThreadName)
-                                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+
+                                    tinP.zEtScratch->strFuseF( tinP , psttr , T("")+
                                     strokeS sttStar( baP.osPid == pTinWant->osPid ? '*' : ' ' ) ;
                                 {
                                 if( pTinWant )
     
-                                else if( pTinWant ) ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("  ")+TPS("",0x18,sDot) ) ;
+                                else if( pTinWant ) tinP.zEtScratch->strFuseF( tinP , psttr , T("  ")+TPS("",0x18,sDot) ) ;
                                 }
                                     ) ;
                                         sb+sttStar+TF3(pTinHave->idAdamRoot,flFORMAT_UNSIGNED,8)+TP(pTinHave->postThreadName,0x10)
-                                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+
+                                    tinP.zEtScratch->strFuseF( tinP , psttr , T("")+
                                     strokeS sttStar( baP.osPid == pTinHave->osPid ? '*' : ' ' ) ;
                                 {
                                 if( pTinHave )
     
                                 ) ;
                                     TF3(grab.idLineCt,flFORMAT_UNSIGNED,9)+TF3(grab.idiFileCt,flFORMAT_UNSIGNED,9)+TF3(grab.osTidHave,flFORMAT_UNSIGNED,9)+TF3(grab.osPidHave,flFORMAT_UNSIGNED,9)+TF3(grab.osTidWant,flFORMAT_UNSIGNED,9)+TF3(grab.osPidWant,flFORMAT_UNSIGNED,9)+TF3(grab.cAccesses,flFORMAT_UNSIGNED,9)+TF3(grab.cCollisions,flFORMAT_UNSIGNED,9)+sttBS
-                                ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("")+
-                                *((tinNormalS&)tinP).zEtScratch = 0 ;
+                                tinP.zEtScratch->strFuseF( tinP , psttr , T("")+
+                                *tinP.zEtScratch = 0 ;
 
                                 ;
                                         : S1C( 'g' )
@@ -719,15 +719,15 @@ DONE( tmDisplayF )
                                 sttBS = F(grab.flags) & flGRABs_ANNOTATED
                                 strokeS sttBS( ' ' ) ;
     
-                                if( grab.osTidWant && grab.osPidWant ) pTinF( tinP , *((tinNormalS&)tinP).zEtScratch , pTinWant , bTinWantCopied , grab.osTidWant , grab.osPidWant , baP , 1 ) ;
+                                if( grab.osTidWant && grab.osPidWant ) pTinF( tinP , *tinP.zEtScratch , pTinWant , bTinWantCopied , grab.osTidWant , grab.osPidWant , baP , 1 ) ;
                                 ZE( boolT , bTinWantCopied ) ;
                                 ZE( tinNormalS* , pTinWant ) ;
-                                *((tinNormalS&)tinP).zEtScratch = 0 ;
+                                *tinP.zEtScratch = 0 ;
     
-                                if( grab.osTidHave && grab.osPidHave ) pTinF( tinP , *((tinNormalS&)tinP).zEtScratch , pTinHave , bTinHaveCopied , grab.osTidHave , grab.osPidHave , baP , 1 ) ;
+                                if( grab.osTidHave && grab.osPidHave ) pTinF( tinP , *tinP.zEtScratch , pTinHave , bTinHaveCopied , grab.osTidHave , grab.osPidHave , baP , 1 ) ;
                                 ZE( boolT , bTinHaveCopied ) ;
                                 ZE( tinNormalS* , pTinHave ) ;
-                                *((tinNormalS&)tinP).zEtScratch = 0 ;
+                                *tinP.zEtScratch = 0 ;
     
                                 grabOldS& grab = *(grabOldS*)&stGrabImage.downF( tinP , hDown ) ;
                             {
@@ -753,7 +753,7 @@ DONE( tmDisplayF )
                             , 0x100 + stGrabImage * 0x100 ) ; ___( psttr ) ;
                                 TPS("idLineCt",8,sd)+sb+TPS("idiFileC",8,sd)+sb+TPS("osTidHav",8,sd)+sb+TPS("osPidHav",8,sd)+sb+TPS("osTidWan",8,sd)+sb+TPS("osPidWan",8,sd)+sb+TPS("cAccesse",8,sd)+sb+TPS("cCollisi",8,sd)+sb+sBST+sb+sStarT+TPS("idAdamH",7,sd)+sb+TPS("threadHave",0x10,sd)+sb+sStarT+TPS("idAdamW",7,sd)+sb+TPS("threadWant",0x10,sd)+tc2
                                 T("idDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    i am monitoring ")+TF1(cInspected)+T(" grabOldS object images constructed by ")+TF1(swIdProcess.cFlavorsF(tinP))+T(" processes, watching for deadlocks\r\n \r\nnote on shared memory: if a grabOldS object is visible to 3 processes, each \"view\" is an \"image\".  i monitor images\r\neach such image is counted separately in all of my displays\r\nthis display reports all items that are grabbed\r\nit is sorted by cCollisions\r\n \r\n")+
-                            ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\f")+
+                            tinP.zEtScratch->strFuseF( tinP , psttr , T("\f")+
                         {
                         if( !baP.idDisplayRequest )
                     {
@@ -761,18 +761,18 @@ DONE( tmDisplayF )
                     }
                         }
                             }
-                                ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , tc ) ;
-                                if( bRing ) ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T(" RING ") ) ;
+                                tinP.zEtScratch->strFuseF( tinP , psttr , tc ) ;
+                                if( bRing ) tinP.zEtScratch->strFuseF( tinP , psttr , T(" RING ") ) ;
                                 }
-                                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , tb+TF1(idWant) ) ;
+                                    tinP.zEtScratch->strFuseF( tinP , psttr , tb+TF1(idWant) ) ;
                                     st_idWant >> idWant ;
                                     ZE( countT , idWant ) ;
                                 {
                                 while( st_idWant )
-                                ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TF1(idHave)+T(":") ) ;
+                                tinP.zEtScratch->strFuseF( tinP , psttr , TF1(idHave)+T(":") ) ;
 
                                 boolT bRing = idWantF( tinP , st_idWant , stGrabImage , idHave , baP ) ;
-                                stackC st_idWant( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+                                stackC st_idWant( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
                             {
                             for( countT idHave = 1 ; idHave <= stGrabImage ; idHave ++ )
                         {
@@ -782,7 +782,7 @@ DONE( tmDisplayF )
                             , 0x100 + stGrabImage * 0x100 ) ; ___( psttr ) ;
                                 TPS("idLineCt",8,sd)+sb+TPS("idiFileC",8,sd)+sb+TPS("osTidHav",8,sd)+sb+TPS("osPidHav",8,sd)+sb+TPS("osTidWan",8,sd)+sb+TPS("osPidWan",8,sd)+sb+TPS("cAccesse",8,sd)+sb+TPS("cCollisi",8,sd)+sb+sBST+sb+sStarT+TPS("idAdamH",7,sd)+sb+TPS("threadHave",0x10,sd)+sb+sStarT+TPS("idAdamW",7,sd)+sb+TPS("threadWant",0x10,sd)+tc2
                                 T("idDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    i am monitoring ")+TF1(cInspected)+T(" grabOldS object images constructed by ")+TF1(swIdProcess.cFlavorsF(tinP))+T(" processes, displaying deadlock rings\r\n \r\nnote on shared memory: if a grabOldS object is visible to 3 processes, each \"view\" is an \"image\".  i monitor images\r\neach such image is counted separately in all of my displays\r\nthis display reports all items that are grabbed\r\nit is sorted by cCollisions\r\n \r\n")+
-                            ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\f")+
+                            tinP.zEtScratch->strFuseF( tinP , psttr , T("\f")+
                         {
                         if( !baP.idDisplayRequest )
                     {
@@ -871,8 +871,8 @@ DONE( tmDisplayF )
                         baP.bLeverOsPid.grabF( tinP , TAG( TAGiDnULL ) ) ;
                     {
                     ZE( countT , cInspected ) ;
-                    switchC swIdProcess( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_null , baP.leverOsPid ) ;
-                    stackC stGrabImage( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( grabAnnotatedS ) , 0 , cbGrabImageF ) ;
+                    switchC swIdProcess( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_null , baP.leverOsPid ) ;
+                    stackC stGrabImage( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( grabAnnotatedS ) , 0 , cbGrabImageF ) ;
                 {
                 case 4 :
                 case 3 :
@@ -886,7 +886,7 @@ DONE( tmDisplayF )
                             TP(thread.postThreadName,0x10)+tb+
                             TF3(thread.osTid,flFORMAT_UNSIGNED,9)+
 
-                        ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , 
+                        tinP.zEtScratch->strFuseF( tinP , psttr , 
 
                         threadS& thread = (threadS&)(countT&)baP.swThread ;
                         baP.leverOsTid = baP.swThread.leverF( tinP , idf ) ;
@@ -900,7 +900,7 @@ DONE( tmDisplayF )
                         TPS("osTid",8,sttd)+tb+
                         T("\fidDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    these ")+TF1(cFlavors)+T(" threads currently exist in ifc processes\r\n \r\n")+
 
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , 
+                    tinP.zEtScratch->strFuseF( tinP , psttr , 
                     countT cFlavors = baP.swThread.cFlavorsF( tinP ) ;
                     baP.swThread.grabF( tinP , TAG( TAGiDnULL ) ) ;
                     strokeS sttd( '-' ) ;
@@ -914,7 +914,7 @@ DONE( tmDisplayF )
                         }
                             DEL( pTinCopy ) ;
                             }
-                                ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , tc ) ; ___( psttr ) ;
+                                tinP.zEtScratch->strFuseF( tinP , psttr , tc ) ; ___( psttr ) ;
                                 }
                                     }
                                         break ;
@@ -924,14 +924,14 @@ DONE( tmDisplayF )
                                     default :
                                     }
                                         break ;
-                                        else                     { ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TP(ppostWhere[idWhere2],0x18)+T(" ")+T(pTinCopy->postTellWait) ) ; ___( psttr ) ; }
+                                        else                     { tinP.zEtScratch->strFuseF( tinP , psttr , TP(ppostWhere[idWhere2],0x18)+T(" ")+T(pTinCopy->postTellWait) ) ; ___( psttr ) ; }
 
 
 
 
-                                        //U::if( baP.idDisplay == 1 ) { ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TP(ppostWhere[idWhere2],0x18)+T(" ")+T(pTinCopy->postTell    ) ) ; ___( psttr ) ; }
+                                        //U::if( baP.idDisplay == 1 ) { tinP.zEtScratch->strFuseF( tinP , psttr , TP(ppostWhere[idWhere2],0x18)+T(" ")+T(pTinCopy->postTell    ) ) ; ___( psttr ) ; }
 
-                                        if( baP.idDisplay == 1 ) { ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TP(ppostWhere[idWhere2],0x18)+T(" ")+TF1(pTinCopy->pcReserved[0xf])+T(" ")+TF1(pTinCopy->pcReserved[0xc])+T(" ")+TF1(pTinCopy->pcReserved[0xd])+T(" ")+TF1(pTinCopy->pcReserved[0xe])+T(" ")+T(pTinCopy->postTell) ) ; ___( psttr ) ; } //U::
+                                        if( baP.idDisplay == 1 ) { tinP.zEtScratch->strFuseF( tinP , psttr , TP(ppostWhere[idWhere2],0x18)+T(" ")+TF1(pTinCopy->pcReserved[0xf])+T(" ")+TF1(pTinCopy->pcReserved[0xc])+T(" ")+TF1(pTinCopy->pcReserved[0xd])+T(" ")+TF1(pTinCopy->pcReserved[0xe])+T(" ")+T(pTinCopy->postTell) ) ; ___( psttr ) ; } //U::
 
 
 
@@ -946,10 +946,10 @@ DONE( tmDisplayF )
 
 
 
-                                //U::((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TF3(pTinCopy->monitor.mStepsPerTuck,flFORMAT_EXPONENT,0xd)+sttStar+TF3(pTinCopy->idAdamRoot,flFORMAT_UNSIGNED,8)+TF3(pTinCopy->osTid,flFORMAT_UNSIGNED,9)+TF3(pTinCopy->osPid,flFORMAT_UNSIGNED,9)+TP(pTinCopy->postThreadName,0x20)+T(" ") ) ; ___( psttr ) ;
+                                //U::tinP.zEtScratch->strFuseF( tinP , psttr , TF3(pTinCopy->monitor.mStepsPerTuck,flFORMAT_EXPONENT,0xd)+sttStar+TF3(pTinCopy->idAdamRoot,flFORMAT_UNSIGNED,8)+TF3(pTinCopy->osTid,flFORMAT_UNSIGNED,9)+TF3(pTinCopy->osPid,flFORMAT_UNSIGNED,9)+TP(pTinCopy->postThreadName,0x20)+T(" ") ) ; ___( psttr ) ;
 
-                                //((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TF3(pTinCopy->idAdam,flFORMAT_UNSIGNED,8)+TF3(pTinCopy->osTid,flFORMAT_UNSIGNED,9)+TF3(pTinCopy->osPid,flFORMAT_UNSIGNED,9)+TP(pTinCopy->postThreadName,0x10)+T(" ") ) ; ___( psttr ) ; //U::
-                                ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TF3(pTinCopy->idAdamRoot,flFORMAT_UNSIGNED,8)+TF3(pTinCopy->osTid,flFORMAT_UNSIGNED,9)+TF3(pTinCopy->osPid,flFORMAT_UNSIGNED,9)+TP(pTinCopy->postThreadName,0x10)+T(" ") ) ; ___( psttr ) ; //U::
+                                //tinP.zEtScratch->strFuseF( tinP , psttr , TF3(pTinCopy->idAdam,flFORMAT_UNSIGNED,8)+TF3(pTinCopy->osTid,flFORMAT_UNSIGNED,9)+TF3(pTinCopy->osPid,flFORMAT_UNSIGNED,9)+TP(pTinCopy->postThreadName,0x10)+T(" ") ) ; ___( psttr ) ; //U::
+                                tinP.zEtScratch->strFuseF( tinP , psttr , TF3(pTinCopy->idAdamRoot,flFORMAT_UNSIGNED,8)+TF3(pTinCopy->osTid,flFORMAT_UNSIGNED,9)+TF3(pTinCopy->osPid,flFORMAT_UNSIGNED,9)+TP(pTinCopy->postThreadName,0x10)+T(" ") ) ; ___( psttr ) ; //U::
 
 
 
@@ -960,7 +960,7 @@ DONE( tmDisplayF )
                             st_pTinCopy >> (countT&)pTinCopy ;
                             ZE( tinNormalS* , pTinCopy ) ;
                         {
-                        while( !*((tinNormalS&)tinP).zEtScratch && st_pTinCopy )
+                        while( !*tinP.zEtScratch && st_pTinCopy )
                     {
                     if( st_pTinCopy )
         
@@ -984,8 +984,8 @@ DONE( tmDisplayF )
                     static osTextT* ppostWhere[] = // 0010*.ifcIDwHERE AND func.12f0007.tinNormalS.strFuseF AND adam.c740104 MUST BE KEPT IN SYNC
                     //U: THIS REALLY MUST GO INTO A SNIPPET FILE
 
-                    else                     { ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TPS("where",0x18,sttd)+sttb+TPS("tellWait",COSTmAXtELL,sttd)+tc+sttb+tc ) ; ___( psttr ) ; }
-                    if( baP.idDisplay == 1 ) { ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , TPS("where",0x18,sttd)+sttb+TPS("tell"    ,COSTmAXtELL,sttd)+tc+sttb+tc ) ; ___( psttr ) ; }
+                    else                     { tinP.zEtScratch->strFuseF( tinP , psttr , TPS("where",0x18,sttd)+sttb+TPS("tellWait",COSTmAXtELL,sttd)+tc+sttb+tc ) ; ___( psttr ) ; }
+                    if( baP.idDisplay == 1 ) { tinP.zEtScratch->strFuseF( tinP , psttr , TPS("where",0x18,sttd)+sttb+TPS("tell"    ,COSTmAXtELL,sttd)+tc+sttb+tc ) ; ___( psttr ) ; }
 
                     }
                         case '*' : { sStarT.idAdam = '-' ; break ; }
@@ -997,7 +997,7 @@ DONE( tmDisplayF )
                         TPS("speed",0xc,sttd)+sttb+sStarT+TPS("idAdamPO",7,sttd)+sttb+TPS("osTid",8,sttd)+sttb+TPS("osPid",8,sttd)+sttb+TPS("thread",0x20,sttd)+sttb
                         T("idDisplay:")+TF1(baP.idDisplay)+T(" [1,")+TF1(IDdISPLAYmAX)+T("]")+T("    ")+TT(timeN1,timeN2)+T("    cThreads: ")+TF1(st_pTinCopy)+T("    ")+(baP.idDisplay==1?T("what each thread is doing"):T("what each thread is waiting for"))+tc+sttb+tc+
 
-                    ((tinNormalS&)tinP).zEtScratch->strFuseF( tinP , psttr , T("\f")+
+                    tinP.zEtScratch->strFuseF( tinP , psttr , T("\f")+
                     static strokeS sStarT( '-' ) ;
     
                     }
@@ -1006,18 +1006,18 @@ DONE( tmDisplayF )
                             sws_pTinCopy >> c_pTinCopy ;
                             ZE( countT , c_pTinCopy ) ;
                         {
-                        while( !*((tinNormalS&)tinP).zEtScratch && sws_pTinCopy )
+                        while( !*tinP.zEtScratch && sws_pTinCopy )
                         leverOsPidCopy = sws_pTinCopy.leverF( tinP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors && !baP.idDisplayRequest ; idf ++ )
                     cFlavors = sws_pTinCopy.cFlavorsF( tinP ) ;
-                    stackC st_pTinCopy( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+                    stackC st_pTinCopy( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
     
                     baP.bLeverOsPid.ungrabF( tinP ) ;
             
                     }
                         }
-                            while( !*((tinNormalS&)tinP).zEtScratch && !baP.sws_pTin.third && ~hDown && !baP.idDisplayRequest ) ;
+                            while( !*tinP.zEtScratch && !baP.sws_pTin.third && ~hDown && !baP.idDisplayRequest ) ;
                             }
                                 }
                                     }
@@ -1027,9 +1027,9 @@ DONE( tmDisplayF )
                                                 if( pTinCopy && pTinCopy->idThread ) sws_pTinCopy << (countT)pTinCopy ;
                                             {
                                             else
-                                            if( *((tinNormalS&)tinP).zEtScratch ) *((tinNormalS&)tinP).zEtScratch = 0 ;
+                                            if( *tinP.zEtScratch ) *tinP.zEtScratch = 0 ;
                                             __Z( pTinCopy ) ;
-                                            pTinCopyF( tinP , *((tinNormalS&)tinP).zEtScratch , pTinCopy , pvTin , baP.leverOsPid , 1 ) ; ___( pTinCopy ) ;
+                                            pTinCopyF( tinP , *tinP.zEtScratch , pTinCopy , pvTin , baP.leverOsPid , 1 ) ; ___( pTinCopy ) ;
                                             ZE( tinNormalS* , pTinCopy ) ;
                                             bOk = 0 ;
                                         {
@@ -1037,8 +1037,8 @@ DONE( tmDisplayF )
                                         ((thirdC&)etScratch).dosWriteProcessMemoryIF( tinP , bOk , pvMon , baP.leverOsPid , (byteT*)&ms.monitor , sizeof ms.monitor ) ;
                                     {
                                     else
-                                    if( *((tinNormalS&)tinP).zEtScratch ) *((tinNormalS&)tinP).zEtScratch = 0 ;
-                                    stampF( tinP , *((tinNormalS&)tinP).zEtScratch , ms.monitor , ms.idStep , baP ) ;
+                                    if( *tinP.zEtScratch ) *tinP.zEtScratch = 0 ;
+                                    stampF( tinP , *tinP.zEtScratch , ms.monitor , ms.idStep , baP ) ;
                                     bOk = 0 ;
                                 {
                                 if( bOk )
@@ -1053,10 +1053,10 @@ DONE( tmDisplayF )
                         if( baP.sws_pTin )
                         leverOsPidCopy = baP.leverOsPid = baP.sws_pTin.leverF( tinP , idf ) ;
                     {
-                    for( countT idf = 1 ; !*((tinNormalS&)tinP).zEtScratch && idf <= cFlavors && !baP.idDisplayRequest ; idf ++ )
+                    for( countT idf = 1 ; !*tinP.zEtScratch && idf <= cFlavors && !baP.idDisplayRequest ; idf ++ )
                     countT cFlavors = baP.sws_pTin.cFlavorsF( tinP ) ;
                     ZE( boolT , bOk ) ;
-                    const countT offm = (byteT*)&((tinNormalS&)tinP).monitor - (byteT*)&tinP ;
+                    const countT offm = (byteT*)&tinP.monitor - (byteT*)&tinP ;
             
                     }
                         ungrabF( tinP , grab_off_aIdaTin ) ;
@@ -1073,8 +1073,8 @@ DONE( tmDisplayF )
                                     p oolC& poolOld = >>>>(p oolC&)et<<>>OBSOLETEDcODE:INTENTIONALcOMPILEeRROR<<<<Scratch ;
                                 {
                                 else
-                                if( *((tinNormalS&)tinP).zEtScratch ) *((tinNormalS&)tinP).zEtScratch = 0 ;
-                                stampF( tinP , *((tinNormalS&)tinP).zEtScratch , pTin->monitor , pTin->idStep , baP ) ;
+                                if( *tinP.zEtScratch ) *tinP.zEtScratch = 0 ;
+                                stampF( tinP , *tinP.zEtScratch , pTin->monitor , pTin->idStep , baP ) ;
                             {
                             if( pTin && pTin->idThread )
                             tinNormalS* pTin = (tinNormalS*)(byteT*)ap_artmentOldC( tinP , baP.aIdaTin[ idt ] ) ;
@@ -1084,7 +1084,7 @@ DONE( tmDisplayF )
                     {
                     if( baP.bMonitored )
             
-                    switchStackC sws_pTinCopy( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , leverOsPidCopy , flSTACKc_FIFO ) ;
+                    switchStackC sws_pTinCopy( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , leverOsPidCopy , flSTACKc_FIFO ) ;
                     ZE( countT , leverOsPidCopy ) ;
             
                     baP.bLeverOsPid.grabF( tinP , TAG( TAGiDnULL ) ) ; //ASSUME: WHILE GRABBED, tinNormalS OBJECTS IN THE MONITORED PROCESS WILL NOT BE DELETED (THIS WILL BE TRUE IF THE hanSayF HANDLER FOR tinNormalS DESTRUCTION GRABS TOO)
@@ -1105,7 +1105,7 @@ DONE( tmDisplayF )
             {
             if( baP.idDisplayRequest )
             
-            ((tinNormalS&)tinP).zEtScratch->osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            tinP.zEtScratch->osTimeNowF( tinP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
             ZE( boolT , bKt ) ;
@@ -1115,7 +1115,7 @@ DONE( tmDisplayF )
 
         TELL( "waking" )
         }
-            while( cNaps -- && !*((tinNormalS&)tinP).zEtScratch && !baP.idDisplayRequest ) ((tinNormalS&)tinP).zEtScratch->osSleepF( tinP , TUCK * 0x10 ) ;
+            while( cNaps -- && !*tinP.zEtScratch && !baP.idDisplayRequest ) tinP.zEtScratch->osSleepF( tinP , TUCK * 0x10 ) ;
             countT cNaps = 0x10 ;
             TELL( "sleeping for 1 tock before the next cycle" )
 
@@ -1124,7 +1124,7 @@ DONE( tmDisplayF )
         else
         }
             }
-                //U:SEEMS TO BLOCK THE LAUNCH OF 254 DEADMAN ET AL: ((tinNormalS&)tinP).zEtScratch->osMessageBoxF( tinP , tHello , tTitle ) ;
+                //U:SEEMS TO BLOCK THE LAUNCH OF 254 DEADMAN ET AL: tinP.zEtScratch->osMessageBoxF( tinP , tHello , tTitle ) ;
             
                 ) ;
             
@@ -1141,7 +1141,7 @@ DONE( tmDisplayF )
             TELL( "sleeping for 8 tocks while logo displays and child processes start" )
         {
         if( ++ idPass == 1 )
-        *((tinNormalS&)tinP).zEtScratch = 0 ;
+        *tinP.zEtScratch = 0 ;
     {
     while( !etThread && ( !ether || baP.cMonitors || cAllKidThreads > /*U::3*/2 + bGraphicDisplay ) ) // ME tmWatchF tmObservePoolsF tmWindowsF
     //U::I MUST BE ABLE TO HANDLE FAILURES IN READING OR WRITING PROCESS MEMORY
@@ -1224,7 +1224,7 @@ arguments
 
 }
     return F(grab.flags) & flGRABs_ANNOTATED ? sizeof( grabAnnotatedS ) : sizeof( grabOldS ) ;
-    if( ((tinNormalS&)tinP).fingerprint && etherP ) ; //U: DO SOMETHING LESS EXPENSIVE TO AVOID THE COMPILER WARNING
+    if( tinP.fingerprint && etherP ) ; //U: DO SOMETHING LESS EXPENSIVE TO AVOID THE COMPILER WARNING
     grabOldS& grab = *(grabOldS*)pbP ;
 {
 countT cbGrabImageF( tinNormalS& tinP , etherC& etherP , const byteT* const pbP )
@@ -1236,7 +1236,7 @@ countT cbGrabImageF( tinNormalS& tinP , etherC& etherP , const byteT* const pbP 
 //U:         idStepLast = tinDead.idStep ;
 //U:         }
 //U:             thirdC::dosWriteStdOutIF( tinP , tNote ) ;
-//U:             tNote = T("\f")+TF1(((tinNormalS&)tinP).monitor.idStep)+T(" thread \"")+T(tinDead.postThreadName)+T("\" deadlocked while \"")+T(tinDead.postTell)+T("\"\r\n") ;
+//U:             tNote = T("\f")+TF1(tinP.monitor.idStep)+T(" thread \"")+T(tinDead.postThreadName)+T("\" deadlocked while \"")+T(tinDead.postTell)+T("\"\r\n") ;
 //U:             TELL( "reporting a locked up thread" )
 //U:         {
 //U:         if( idStepLast == tinDead.idStep )
@@ -1394,7 +1394,7 @@ TELL( "cleaning up" )
                     sgnHired.waitF( tinP ) ;
                     TELL( "ifcIDcMDsESSION_HIRE2: waiting for sgnHired" )
 
-                    ((tinNormalS&)tinP).zEtScratch->osThreadF( tinP , countTC() , tmMonitorF , bWait ? &sgnDone_tmMonitor : 0 , flTHREADlAUNCH_ORPHAN , 0 , (countT)&baP , (countT)&ptm2 ) ;
+                    tinP.zEtScratch->osThreadF( tinP , countTC() , tmMonitorF , bWait ? &sgnDone_tmMonitor : 0 , flTHREADlAUNCH_ORPHAN , 0 , (countT)&baP , (countT)&ptm2 ) ;
                     boolT bWait = F(flags) & flHIRE_WAIT ;
                     baP.cMonitors ++ ;
                     params_tmMonitorF_2S ptm2( sgnHired , 0 , psttArgs , flags , time1limit , time2limit ) ;
@@ -1416,7 +1416,7 @@ TELL( "cleaning up" )
                     TELL( "ifcIDcMDsESSION_HIRE2: setting up" )
 
                     }
-                        ((tinNormalS&)tinP).zEtScratch->osSleepF( tinP , TOCK * 4 ) ; // THERE IS A SMALL CHANCE THAT MULTIPLE THREADS WILL SNEAK BY; THIS COULD BE FIXED BY SERIALIZING ACCESS TO baP.cMonitors
+                        tinP.zEtScratch->osSleepF( tinP , TOCK * 4 ) ; // THERE IS A SMALL CHANCE THAT MULTIPLE THREADS WILL SNEAK BY; THIS COULD BE FIXED BY SERIALIZING ACCESS TO baP.cMonitors
                         etherC::etTextIF( tinP ).ifcSayF( tinP , T("ifcIDcMDsESSION_HIRE2: sleeping until cMonitors is low enough") , flSAY_APPEND | flSAY_LOG ) ; //U::
                     {
                     while( baP.cMonitors >= CmONITORmAX )
@@ -1429,12 +1429,12 @@ TELL( "cleaning up" )
             {
             switch( sIn.cFieldF( tinP ) )
         {
-        if( !*((tinNormalS&)tinP).zEtScratch )
+        if( !*tinP.zEtScratch )
         pso->readF( tinP , sIn ) ;
         TELL( "waiting for peer to write a soulC containing a command" )
         soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
     {
-    while( !ether && !etThread && !*((tinNormalS&)tinP).zEtScratch && !bBye )
+    while( !ether && !etThread && !*tinP.zEtScratch && !bBye )
     ZE( boolT , bBye ) ;
 
     bookAllS& baP = *(bookAllS*)cArg ;
@@ -1452,10 +1452,10 @@ DONE( tmRegisterPortF )
         }
             }
                 ether.osSleepF( tinP , ru ) ;
-                *((tinNormalS&)tinP).zEtScratch = 0 ;
+                *tinP.zEtScratch = 0 ;
             {
             else
-            if( !*((tinNormalS&)tinP).zEtScratch && !etThread ) bFail = 0 ;
+            if( !*tinP.zEtScratch && !etThread ) bFail = 0 ;
 
             }
                 TELL( "registering my idPort with the local chat server: closing connection" )
@@ -1477,7 +1477,7 @@ DONE( tmRegisterPortF )
                 TELL( "registering my idPort with the local chat server: writing my idPort to register it" )
 
                 sChat2.connectF( tinP , portChat2 ) ;
-                socketC sChat2( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sChat2( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) ) ;
                 TELL( "registering my idPort with the local chat server: connecting to the specified idPort" )
 
                 }
@@ -1494,7 +1494,7 @@ DONE( tmRegisterPortF )
                     TELL( "registering my idPort with the local chat server: writing to request a socket" )
 
                     sChat.connectF( tinP , ifcPORToLD2_CHAT ) ;
-                    socketC sChat( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) ) ;
+                    socketC sChat( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) ) ;
                     TELL( "registering my idPort with the local chat server: connecting" )
 
                     }
@@ -2061,7 +2061,7 @@ voidT pTinEventF( tinNormalS& tinP , etherC& etThread , stackC& st_pTinEventOrig
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinP).fingerprint && c3P ) ;
+    if( tinP.fingerprint && c3P ) ;
 
     }
         sgn = tin1.idThread - tin2.idThread ;
@@ -2080,7 +2080,7 @@ countT subtract_pTin_F( tinNormalS& tinP , countT& pEtherP , countT& c1P , count
 
 }
     return ifcIDcMDmoNITOR_CONTINUE ;
-    if( ((tinNormalS&)tinP).fingerprint && bwP.ether && infoP.osPid ) ;
+    if( tinP.fingerprint && bwP.ether && infoP.osPid ) ;
     //logExeDllImageF( tinP , etThread , bwP.stPhrases , infoP ) ;
     //etherC& etThread = bwP.ether ;
 {
@@ -3151,7 +3151,7 @@ countT hanNewThreadF( tinNormalS& tinP , bookWoS& bwP , ifcMonitorEventS& infoP 
 }
     return ifcIDcMDmoNITOR_CONTINUE ;
 
-    if( ((tinNormalS&)tinP).fingerprint && etThread && bwP.stPhrases && infoP.osPid ) ;
+    if( tinP.fingerprint && etThread && bwP.stPhrases && infoP.osPid ) ;
     //logExeDllImageF( tinP , etThread , bwP.stPhrases , infoP ) ;
 
     //bwP.stPhrases << psttOldC( tinP , etThread , T(bwP.bAdoptedKid?"++adopted kid process++\r\n":"++process++\r\n") ) ;
@@ -3533,7 +3533,7 @@ voidT pTinF( tinNormalS& tinP , etherC& etThread , tinNormalS*& pTinP , boolT& b
 
     //O:AM USING dosReadProcessMemoryIF TO READ MYSELF: OPTIMIZE BY AVOIDING THIS) (baP.osPid == osPidP)
 
-    const voidT* const pvFromIdDirty = (const voidT*)( (byteT*)pvFromP + ( (byteT*)&((tinNormalS&)tinP).monitor.idDirty - (byteT*)&tinP ) ) ;
+    const voidT* const pvFromIdDirty = (const voidT*)( (byteT*)pvFromP + ( (byteT*)&tinP.monitor.idDirty - (byteT*)&tinP ) ) ;
     byteT pbScratch[ sizeof( tinNormalS ) ] ;
 
     }
@@ -4466,7 +4466,7 @@ poolOldHistoryS::poolOldHistoryS( tinNormalS& tinP , etherC& etherP ) :
 
 }
     return *this ;
-    thirdC::c_memcpyIF( *((tinNormalS&)tinP).pPoop , (byteT*)this + sizeof grab , (byteT*)&psP + sizeof grab , sizeof( poolOldSnapS ) - sizeof grab ) ;
+    thirdC::c_memcpyIF( *tinP.pPoop , (byteT*)this + sizeof grab , (byteT*)&psP + sizeof grab , sizeof( poolOldSnapS ) - sizeof grab ) ;
 {
 poolOldSnapS& poolOldSnapS::operator =( poolOldSnapS& psP )
 
@@ -4480,7 +4480,7 @@ poolOldSnapS::poolOldSnapS( tinNormalS& tinP , etherC& etherP ) :
 }
 
     ((thirdC&)ether).osOpenProcessF( tinP , hProcess ) ;
-    __( ((tinNormalS&)tinP).monitor.idThread - 1 ) ;
+    __( tinP.monitor.idThread - 1 ) ;
     logF( tinP , T("log file opened") , 0 , 0 ) ;
 {
 bLog(                tinP , TAG( TAGiDnULL ) )
@@ -4514,8 +4514,8 @@ idDisplay( 1 ) ,
 cMonitors( 0 ) ,
 bMonitored( 1 ) ,
 hProcess( 0 ) ,
-osPid( ((tinNormalS&)tinP).osPid ) ,
-osTidMain( ((tinNormalS&)tinP).osTid ) ,
+osPid( tinP.osPid ) ,
+osTidMain( tinP.osTid ) ,
 bHandedOff( 0 ) ,
 etPrime( etherC::etPrimeIF( tinP ) ) ,
 ether( etherP ) ,

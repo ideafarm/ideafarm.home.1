@@ -16,9 +16,9 @@
  /*.*/        else                                      idCaste = sc_cFROMuNICODE  ;
  /*.*/        else if( idAdam < 0x100                 ) idCaste = sc_cFROMgRAPHICS ;
  /*.*/        else if( idAdam < 0x80                  ) idCaste = sc_cFROMaSCII    ;
- /*.*/        else if( ((tinNormalS&)tinP).strokeMode.idCasteDefault ) idCaste = ((tinNormalS&)tinP).strokeMode.idCasteDefault ;
+ /*.*/        else if( tinP.strokeMode.idCasteDefault ) idCaste = tinP.strokeMode.idCasteDefault ;
  /*.*/             if( idAdam < 0x20                  ) idCaste = sc_cFROMcONTROL  ;
- /*.*/        idAdam = ((tinNormalS&)tinP).strokeMode.highForIncomingUnText ? cP | ((tinNormalS&)tinP).strokeMode.highForIncomingUnText << 0x10 : cP ;
+ /*.*/        idAdam = tinP.strokeMode.highForIncomingUnText ? cP | tinP.strokeMode.highForIncomingUnText << 0x10 : cP ;
  /*.*/        cNote   = 0 ;
  /*.*/        TINSL
  /*.*/    {

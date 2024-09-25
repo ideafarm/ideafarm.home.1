@@ -56,7 +56,7 @@
             //U: NOTE: GENERATED DATA SUGGESTS THAT idiFileCt IS ALWAYS 0
             //U: ENABLE THIS AFTER FIND THE CULPRIT GENERATING CORRUPT DATUM ITEMS
     
-            if( ((tinNormalS&)tinP).pag1->_etherC_.pEtPrime == this ) delF( tinP , ((tinNormalS&)tinP).pag1->_etherC_.pstt1_processParameters ) ;
+            if( tinP.pag1->_etherC_.pEtPrime == this ) delF( tinP , tinP.pag1->_etherC_.pstt1_processParameters ) ;
     
             //U: REPORT TIME AWAKE, TIME SLEPT FOR PERFORMANCE MONITORING AT OPERATIONS
             third.osTimeSubtractF( tinP , timeAge1 , timeAge2 , timeBorn1 , timeBorn2 ) ;
@@ -75,11 +75,11 @@
         DEL( third.pswPaintInfoFromDrawingHandle ) ;
     
         }
-            DEL( ((tinNormalS&)tinP).pag1->_etherC_.cio_pStkOut ) ;
-            DEL( ((tinNormalS&)tinP).pag1->_etherC_.cio_pBaton ) ; //A: ASSUME: CHANNEL IO THREAD HAS ENDED
+            DEL( tinP.pag1->_etherC_.cio_pStkOut ) ;
+            DEL( tinP.pag1->_etherC_.cio_pBaton ) ; //A: ASSUME: CHANNEL IO THREAD HAS ENDED
     
             }
-                ((tinNormalS&)tinP).pag1->_etherC_.pSwDllReferences->ungrabF( tinP ) ;
+                tinP.pag1->_etherC_.pSwDllReferences->ungrabF( tinP ) ;
                 }
                     }
                         handle.osF( ifcIDtYPEhANDLE_DLL , osh ) ;
@@ -89,15 +89,15 @@
                     {
                     else while( stHandle )
                     if( !stHandle ) break ;
-                    for( countT idf = 1 ;idf <= cFlavors ; idf ++ ) stHandle << ((tinNormalS&)tinP).pag1->_etherC_.pSwDllReferences->leverF( tinP , idf ) ;
-                    countT cFlavors = ((tinNormalS&)tinP).pag1->_etherC_.pSwDllReferences->cFlavorsF( tinP ) ;
+                    for( countT idf = 1 ;idf <= cFlavors ; idf ++ ) stHandle << tinP.pag1->_etherC_.pSwDllReferences->leverF( tinP , idf ) ;
+                    countT cFlavors = tinP.pag1->_etherC_.pSwDllReferences->cFlavorsF( tinP ) ;
                 {
                 while( !POOP )
-                ((tinNormalS&)tinP).pag1->_etherC_.pSwDllReferences->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                tinP.pag1->_etherC_.pSwDllReferences->grabF( tinP , TAG( TAGiDnULL ) ) ;
 
                 stackC stHandle( tinP , third , TAG( TAGiDnULL ) ) ;
             {
-            if( ((tinNormalS&)tinP).pag1->_etherC_.pSwDllReferences )
+            if( tinP.pag1->_etherC_.pSwDllReferences )
     
             //U:__( ifcHandoffOldF( tinP ).idPhaseF( tinP ) - ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     
@@ -123,13 +123,13 @@
                 countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tinP ) ;
                 countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tinP ) ;
                 const boolT b_tmWindows = !!( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_tmWindows ) ;
-                if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) { BLAMMO ; }
+                if( F(tinP.flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) { BLAMMO ; }
                 FIREmYSELF ;
             {
     
-            if( ((tinNormalS&)tinP).pcQuit == &(const countT&)POOP ) ((tinNormalS&)tinP).pcQuit = 0 ;
+            if( tinP.pcQuit == &(const countT&)POOP ) tinP.pcQuit = 0 ;
     
-            DEL( ((tinNormalS&)tinP).pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
+            DEL( tinP.pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
             }
                 THREADmODE2rESTORE
                 }
@@ -142,36 +142,36 @@
                                 case ifcIDtYPErECYCLE_stackC       : { DEL(       *(stackC**)&pObject ) ; break ; }
                                 case ifcIDtYPErECYCLE_soulC        : { DEL(        *(soulC**)&pObject ) ; break ; }
                             {
-                            switch( *((tinNormalS&)tinP).pczl_pSwsRecycle )
+                            switch( *tinP.pczl_pSwsRecycle )
                         {
-                        if( ((tinNormalS&)tinP).pczl_pSwsRecycle && pObject )
+                        if( tinP.pczl_pSwsRecycle && pObject )
     
-                        //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , ((tinNormalS&)tinP).pczl_pSwsRecycle ) ; //U::
+                        //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , tinP.pczl_pSwsRecycle ) ; //U::
     
-                        *((tinNormalS&)tinP).pSwsRecycle >> *(countT*)&pObject ;
+                        *tinP.pSwsRecycle >> *(countT*)&pObject ;
                         ZE( voidT* , pObject ) ;
                     {
-                    while( *((tinNormalS&)tinP).pSwsRecycle )
+                    while( *tinP.pSwsRecycle )
     
-                    ((tinNormalS&)tinP).pczl_pSwsRecycle = (countT*)((tinNormalS&)tinP).pSwsRecycle->leverF( tinP , idf ) ;
+                    tinP.pczl_pSwsRecycle = (countT*)tinP.pSwsRecycle->leverF( tinP , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                countT cFlavors = ((tinNormalS&)tinP).pSwsRecycle->cFlavorsF( tinP ) ;
+                countT cFlavors = tinP.pSwsRecycle->cFlavorsF( tinP ) ;
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             {
-            if( ((tinNormalS&)tinP).pSwsRecycle )
+            if( tinP.pSwsRecycle )
             //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
 
-            delF( tinP , ((tinNormalS&)tinP).pag1->_etherC_.psttEarlyFolder ) ;
+            delF( tinP , tinP.pag1->_etherC_.psttEarlyFolder ) ;
         {
-        if( ((tinNormalS&)tinP).pag1->_etherC_.pEtPrime == this )
+        if( tinP.pag1->_etherC_.pEtPrime == this )
     
         third.pEtherContainsMe = 0 ;
     
-        if( processGlobal4I.tinVeryVeryEarlyLateMain.pEther == this ) processGlobal4I.tinVeryVeryEarlyLateMain.pEther = 0 ; //U:: THIS SHOULD NOT BE NEEDED.  IT WAS NOT EFFECTIVE ANYWAY TO PAPER OVER THE BUG FOUND REGARDING ((tinNormalS&)tinP).pEther
+        if( processGlobal4I.tinVeryVeryEarlyLateMain.pEther == this ) processGlobal4I.tinVeryVeryEarlyLateMain.pEther = 0 ; //U:: THIS SHOULD NOT BE NEEDED.  IT WAS NOT EFFECTIVE ANYWAY TO PAPER OVER THE BUG FOUND REGARDING tinP.pEther
 
-        if( ((tinNormalS&)tinP).pag1->pEtThreadMain == this ) ((tinNormalS&)tinP).pag1->pEtThreadMain = 0 ;
-        if( ((tinNormalS&)tinP).pEther              == this ) ((tinNormalS&)tinP).pEther              = 0 ;
+        if( tinP.pag1->pEtThreadMain == this ) tinP.pag1->pEtThreadMain = 0 ;
+        if( tinP.pEther              == this ) tinP.pEther              = 0 ;
     
         }
             }
@@ -182,21 +182,21 @@
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
             countT cFlavors = _pSwSoixlOldApiDoc->cFlavorsF( tinP ) ;
         {
-        if( _pSwSoixlOldApiDoc ) // THIS LOOP USES ((tinNormalS&)tinP).pEther (subractor callback uses it)
+        if( _pSwSoixlOldApiDoc ) // THIS LOOP USES tinP.pEther (subractor callback uses it)
     
         }
             bSniffingTinNotMe = 1 ;
             pScoopsSave = _pScoopsSave ;
             SCOOPSnEWsPECIFIED( poopBefore )
         {
-        if( ((tinNormalS&)tinP).pag1->_etherC_.pEtPrime == this && POOP == ifcIDsUBtYPEpOOP_FIREDbYmONITOR )
+        if( tinP.pag1->_etherC_.pEtPrime == this && POOP == ifcIDsUBtYPEpOOP_FIREDbYmONITOR )
         ZE( scoopC* , pScoopsSave ) ;                                                                                                                 \
         ZE( boolT , bSniffingTinNotMe ) ;
     {
     _IO_
 
     SCOOP
-    const poopC& poopBefore = *((tinNormalS&)tinP).pPoop ;
+    const poopC& poopBefore = *tinP.pPoop ;
     TINSL
 {
 /*1*/etherC::~etherC( voidT )/*1*/

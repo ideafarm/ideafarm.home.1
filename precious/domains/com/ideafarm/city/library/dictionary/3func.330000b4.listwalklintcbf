@@ -14,7 +14,7 @@
     //CONoUTrAW9( "listWalkLintCBF/- [pListingP,flrc,idUpdateBegunP,idUpdateCompletedP]: " , pListingP , " " , flrc , " " , idUpdateBegunP , " " , idUpdateCompletedP , "\r\n" ) ;
     }
         }
-            ((tinNormalS&)tinP).tlsDelF( LF , *(byteT**)&pczName ) ;
+            tinP.tlsDelF( LF , *(byteT**)&pczName ) ;
             //{ puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczName ) ; }
             }
                 pczValue[ - 2 ] = 0 ; //CS:CODEsYNC: 2200010 2240003
@@ -193,15 +193,15 @@
     //CONoUTrAW9( "listWalkLintCBF/+ [pListingP,flrc,idUpdateBegunP,idUpdateCompletedP]: " , pListingP , " " , flrc , " " , idUpdateBegunP , " " , idUpdateCompletedP , "\r\n" ) ;
     flagsT flrc = flLISTwALKcALLbACKrETURNcODE_null ;
 
-    countT& idUpdateCompletedP = ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 1 ] ; // LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESScOMPLETED
-    countT& idUpdateBegunP     = ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 0 ] ; // LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESSbEGUN
+    countT& idUpdateCompletedP = tinP.ta.retained.u.listWalk.util.pcP[ 1 ] ; // LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESScOMPLETED
+    countT& idUpdateBegunP     = tinP.ta.retained.u.listWalk.util.pcP[ 0 ] ; // LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESSbEGUN
     //CS:CODEsYNC: 330e6010 320000b4
 
-    listingC* pListingP = ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
+    listingC* pListingP = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !((tinNormalS&)tinP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT listWalkLintCBF( tinNormalS& tinP )/*1*/
 

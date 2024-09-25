@@ -156,7 +156,7 @@ ZE( strokeS* , psttzLeverFolder ) ;
                 {
                 if( POOP )
 
-                ((tinNormalS&)tinP).pEtScratch->diskWalkF( tinP , cDirs , cFiles , psttf , ether , flDISKwALK_DIRECTORIESoNLY , sinkFolderToCloakCBF , pcArg , 0 , 0 ) ;
+                tinP.pEtScratch->diskWalkF( tinP , cDirs , cFiles , psttf , ether , flDISKwALK_DIRECTORIESoNLY , sinkFolderToCloakCBF , pcArg , 0 , 0 ) ;
                 ZE( countT , cFiles ) ;
                 ZE( countT , cDirs ) ;
 
@@ -175,7 +175,7 @@ ZE( strokeS* , psttzLeverFolder ) ;
     {
     while( stFoldersToWalk )
 
-    countT pcArg[] = { (countT)((tinNormalS&)tinP).pEtScratch , (countT)&stFolderToCloak , (countT)&stFolderExclude , (countT)&stFoldersExclude } ;
+    countT pcArg[] = { (countT)tinP.pEtScratch , (countT)&stFolderToCloak , (countT)&stFolderExclude , (countT)&stFoldersExclude } ;
 
     }
         //else       psttf = 0 ;
@@ -301,7 +301,7 @@ DONE( tmServerF )
             //etRock.traceF( tinP , T("cloak: sListen bound to port ")+TF2(home.portCloak,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
             home.portCloak = sListen.bindF( tinP ) ;
             homeS& home = homeS::homeIF() ;
-            socketC sListen( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
+            socketC sListen( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
             SCOOPSnEW
         {
         IFsCRATCH
@@ -500,7 +500,7 @@ DONE( tmcCloakServerF )
         psoP->readF( tinP , (byteT*)&idTypeConnection , sizeof idTypeConnection ) ;
         ZE( countT , idTypeConnection ) ;
     
-        psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
+        psoP->etherF( tinP , *tinP.pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH

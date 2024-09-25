@@ -33,14 +33,14 @@ vtLogo.setF( tinP , T("IdeaFarm " "(tm) Audio File Categorizer and Flagger") , f
 
 //etThread.osThreadF( TaRG1( tmWalkF ) , (countT)&osPid , (countT)postCat , (countT)&flags ) ;
 //
-//boolT bOk = ((tinNormalS&)tinP).brcRaw ;
+//boolT bOk = tinP.brcRaw ;
 //BOSpOOP
 //BOS( WHATgbo , BOSoK , LockSetForegroundWindow( LSFW_LOCK ) ) //THIS IS DONE BECAUSE OTHERWISE SONY PROGRAM TAKES FOREGROUND
 
 etThread.delF( tinP , psttSay ) ;
-((tinNormalS&)tinP).pc Utility[ 0 ] -- ;
+tinP.pc Utility[ 0 ] -- ;
 etThread.strokeF( tinP , psttSay ) ;
-((tinNormalS&)tinP).pc Utility[ 0 ] ++ ;
+tinP.pc Utility[ 0 ] ++ ;
 
 }
     etThread.strFuseF( tinP , psttSay ,                 tcr ) ;
@@ -356,7 +356,7 @@ TASK( tmWalkF )
                 strcpy( posto , posti ) ;
                 strcpy( posto ++ , "." ) ;
                 strcpy( posto , postCatP ) ;     posto += saveRaw ;
-                countT saveRaw = ((tinNormalS&)tinP).brcRaw ;
+                countT saveRaw = tinP.brcRaw ;
                 BOSdOnOTtEST( WHATgbo , strlen( postCatP ) )
                 strcpy( posto , postTag2 ) ;     posto += sizeof postTag2 - 1 ;
                 strcpy( posto ++ , "." ) ;
@@ -376,13 +376,13 @@ TASK( tmWalkF )
 
             BOSdOnOTtEST( WHATgbo , strcat( postLongNew , "\\categorized\\" ) )
             *postc = 0 ;
-            postc = (osTextT*)((tinNormalS&)tinP).brcRaw ;
+            postc = (osTextT*)tinP.brcRaw ;
             BOSdOnOTtEST( WHATgbo , strrchr( postLongNew , '\\' ) )
 
             strcpy( postShortOld , postc + 1 ) ;
 
             *postc = 0 ;
-            osTextT* postc = (osTextT*)((tinNormalS&)tinP).brcRaw ;
+            osTextT* postc = (osTextT*)tinP.brcRaw ;
             BOSdOnOTtEST( WHATgbo , strrchr( postLongNew , '\\' ) )
             strcpy( postLongNew , postNameP ) ;
 
@@ -391,7 +391,7 @@ TASK( tmWalkF )
             osTextT postLongNew[ TUCK ] ;
 
             osPidP = 0 ;
-            ((tinNormalS&)tinP).pEther->osSessionF( tinP , countTC() , osPidP , value , idTypeDeath , T(ifFileNameC(tinP,*((tinNormalS&)tinP).pEther,postExeP)) , T(postShort) ) ;
+            tinP.pEther->osSessionF( tinP , countTC() , osPidP , value , idTypeDeath , T(ifFileNameC(tinP,*tinP.pEther,postExeP)) , T(postShort) ) ;
             ZE( countT , idTypeDeath ) ;
             ZE( countT , value ) ;
 
@@ -402,7 +402,7 @@ TASK( tmWalkF )
             //U::SET TAB HERE IF !c. IS PRESENT IN postShort
 
             }
-                HINSTANCE oshInstance = (HINSTANCE)((tinNormalS&)tinP).brcRaw ;
+                HINSTANCE oshInstance = (HINSTANCE)tinP.brcRaw ;
                 BOSdOnOTtEST( WHATgbo , FindExecutable( postShort , "d:\\tmp\\uncategorized" , postExeP ) )
             {
             if( !*postExeP )
@@ -410,7 +410,7 @@ TASK( tmWalkF )
             postShort ++ ;
         {
         if( postShort )
-        osTextT* postShort = (osTextT*)((tinNormalS&)tinP).brcRaw ;
+        osTextT* postShort = (osTextT*)tinP.brcRaw ;
         BOSdOnOTtEST( WHATgbo , strrchr( postNameP , '\\' ) )
     {
     if( postExeP )
@@ -477,10 +477,10 @@ CATcBFdEF( 1_audience )
             BOS( WHATgbo , BOSoK , PostMessage( hwndP , WM_CLOSE , 0 , 0 ) )
             bContinue = 0 ;
         {
-        if( !((tinNormalS&)tinP).brcRaw )
+        if( !tinP.brcRaw )
         BOSdOnOTtEST( WHATgbo , strcmp( postTitle , "Digital Voice Editor" ) )
 
-        int rc = ((tinNormalS&)tinP).brcRaw ;
+        int rc = tinP.brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , GetWindowText( hwndP , postTitle , sizeof postTitle - 1 ) )
         osTextT postTitle[ TUCK ] ;

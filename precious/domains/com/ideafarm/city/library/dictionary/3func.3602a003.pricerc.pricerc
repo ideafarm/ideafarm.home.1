@@ -28,7 +28,7 @@
     
                 }
                     if( POOP ) POOPR
-                    (*pPartsF)( tinP , *((tinNormalS&)tinP).pEtScratch , stPart ) ;
+                    (*pPartsF)( tinP , *tinP.pEtScratch , stPart ) ;
                 {
                 if( pPartsF )
                 stackC stPart( tinP , ether , TAG( TAGiDnULL ) ) ;
@@ -36,11 +36,11 @@
             else
             if( POOP ) POOPR
     
-            { ZE( shareFT , pShareF ) ; ((tinNormalS&)tinP).pEtScratch->dllEntryF( tinP , (voidT*&)pShareF , hDll , T("_shareF@16") ) ; }
-            { ZE( priceFT , pPriceF ) ; ((tinNormalS&)tinP).pEtScratch->dllEntryF( tinP , (voidT*&)pPriceF , hDll , T("_priceF@16") ) ; }
-              ZE( partsFT , pPartsF ) ; ((tinNormalS&)tinP).pEtScratch->dllEntryF( tinP , (voidT*&)pPartsF , hDll , T("_partsF@12") ) ;
+            { ZE( shareFT , pShareF ) ; tinP.pEtScratch->dllEntryF( tinP , (voidT*&)pShareF , hDll , T("_shareF@16") ) ; }
+            { ZE( priceFT , pPriceF ) ; tinP.pEtScratch->dllEntryF( tinP , (voidT*&)pPriceF , hDll , T("_priceF@16") ) ; }
+              ZE( partsFT , pPartsF ) ; tinP.pEtScratch->dllEntryF( tinP , (voidT*&)pPartsF , hDll , T("_partsF@12") ) ;
     
-            ((tinNormalS&)tinP).pEtScratch->dllOpenF( tinP , hDll , psttc1 ) ;
+            tinP.pEtScratch->dllOpenF( tinP , hDll , psttc1 ) ;
             SCOOPS
             handleC hDll( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ;
         {

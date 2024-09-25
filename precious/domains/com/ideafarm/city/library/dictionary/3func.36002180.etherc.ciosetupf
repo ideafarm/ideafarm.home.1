@@ -9,11 +9,11 @@
 
 }
     }
-        osThreadF( tinP , countTC() , tmCioF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)((tinNormalS&)tinP).pag1->_etherC_.cio_pcQuit , (countT)((tinNormalS&)tinP).pag1->_etherC_.cio_pStkOut , (countT)&((tinNormalS&)tinP).pag1->_etherC_.cio_pcArg , (countT)&((tinNormalS&)tinP).pag1->_etherC_.cio_pGetF , (countT)((tinNormalS&)tinP).pag1->_etherC_.cio_pBaton ) ;
+        osThreadF( tinP , countTC() , tmCioF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)tinP.pag1->_etherC_.cio_pcQuit , (countT)tinP.pag1->_etherC_.cio_pStkOut , (countT)&tinP.pag1->_etherC_.cio_pcArg , (countT)&tinP.pag1->_etherC_.cio_pGetF , (countT)tinP.pag1->_etherC_.cio_pBaton ) ;
 
-        if( !((tinNormalS&)tinP).pag1->_etherC_.cio_pBaton || !((tinNormalS&)tinP).pag1->_etherC_.cio_pStkOut ) { BLAMMO ; }
-        ((tinNormalS&)tinP).pag1->_etherC_.cio_pStkOut = new( 0 , tinP , LF ) stackC(  tinP , *((tinNormalS&)tinP).pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL ) , flSTACKc_GIVEsIGNnEWpLATE|flSTACKc_GIVEsIGNdELpLATE )  ; ___( ((tinNormalS&)tinP).pag1->_etherC_.cio_pStkOut ) ;
-        ((tinNormalS&)tinP).pag1->_etherC_.cio_pBaton  = new( 0 , tinP , LF ) batonC( tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER ) ; ___( ((tinNormalS&)tinP).pag1->_etherC_.cio_pBaton  ) ;
+        if( !tinP.pag1->_etherC_.cio_pBaton || !tinP.pag1->_etherC_.cio_pStkOut ) { BLAMMO ; }
+        tinP.pag1->_etherC_.cio_pStkOut = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_etherC_.pEtLongLasting , TAG( TAGiDnULL ) , flSTACKc_GIVEsIGNnEWpLATE|flSTACKc_GIVEsIGNdELpLATE )  ; ___( tinP.pag1->_etherC_.cio_pStkOut ) ;
+        tinP.pag1->_etherC_.cio_pBaton  = new( 0 , tinP , LF ) batonC( tinP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER ) ; ___( tinP.pag1->_etherC_.cio_pBaton  ) ;
     {
     if( idIn == 1 )
     countT idIn = 1 + incv02AM( idInLath ) ;

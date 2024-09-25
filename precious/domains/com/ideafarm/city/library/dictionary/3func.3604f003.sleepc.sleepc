@@ -16,7 +16,7 @@
     }
         pTin->grabPseudo.cGrabbed ++ ;
         if( pTin->grabPseudo.stat.cAcquisitions != - 1 ) inc02AM( pTin->grabPseudo.stat.cAcquisitions ) ;
-        else                         pTin->grabPseudo.osTid = ((tinNormalS&)tinP).osTid ;
+        else                         pTin->grabPseudo.osTid = tinP.osTid ;
         }
             { BLAMMO ; }
         {
@@ -46,9 +46,9 @@
             //OStEXTC( ostoBuf , bTlsEarlyLateI , 0 ) ;
             OStEXTC( ostoBuf , bTlsEarlyLateIF() , 0 ) ;
             OStEXTAK( ostoBuf , " bTlsEarlyLateI: " ) ;
-            OStEXTC( ostoBuf , ((tinNormalS&)tinP).idTin , 0 ) ;
+            OStEXTC( ostoBuf , tinP.idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            OStEXTA( ostoBuf , ((tinNormalS&)tinP).postThreadName ) ;
+            OStEXTA( ostoBuf , tinP.postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\nTINSL: \"" ) ;
             OStEXTC( ostoBuf , pTin->idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
@@ -68,11 +68,11 @@
             etherC::ifcSayIF( ostor , flSAY_LOG | flSAY_APPEND ) ;
 
             OStEXTAK( ostor , "\r\n" ) ;
-            OStEXTC( ostor , ((tinNormalS&)tinP).idLineMile , 0 ) ;
+            OStEXTC( ostor , tinP.idLineMile , 0 ) ;
             OStEXTAK( ostor , "; idLineMile is " ) ;
-            //OStEXTC( ostor , ((tinNormalS&)tinP).pc Utility[ 1 ] , 0 ) ;
+            //OStEXTC( ostor , tinP.pc Utility[ 1 ] , 0 ) ;
             OStEXTAK( ostor , "\"; pcUtilityI[1] is " ) ;
-            OStEXTA( ostor , ((tinNormalS&)tinP).postThreadName )
+            OStEXTA( ostor , tinP.postThreadName )
             OStEXTAK( ostor , "sleep blammo 1 (sleepC constructor) on thread \"" )
             OStEXT( ostor , 0x100 ) ;
             LOGcALLnEST( "sleep blammo 1" )
@@ -82,7 +82,7 @@
 
         SET_bStopOk
     {
-    if( !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS ) )
+    if( !( F(tinP.flagsThreadMode4) & flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS ) )
     //CODEsYNC DUPLICATE CODE: 1700005 1700003
 
     blammoIfIF( tinP ) ;
@@ -94,11 +94,11 @@
 
     _IO_
 {
-bOuter( !((tinNormalS&)tinP).grabPseudo.cGrabbed )
+bOuter( !tinP.grabPseudo.cGrabbed )
 bOsCall( bOsCallP ) ,
 pTin( &tinP ) ,
-idiFileCtSave( ((tinNormalS&)tinP).grabPseudo.idiFileCt ) ,
-idLineCtSave( ((tinNormalS&)tinP).grabPseudo.idLineCt ) ,
+idiFileCtSave( tinP.grabPseudo.idiFileCt ) ,
+idLineCtSave( tinP.grabPseudo.idLineCt ) ,
 /*1*/sleepC::sleepC( tinNormalS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const boolT bOsCallP ) :/*1*/
 
 /**/

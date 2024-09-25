@@ -8,30 +8,30 @@
 
 
 }
-    return ((tinNormalS&)tinP).idDesireSetBySelf ;
+    return tinP.idDesireSetBySelf ;
 
     }
-        ((tinNormalS&)tinP).idDesireSetBySelf = idDesire ;
+        tinP.idDesireSetBySelf = idDesire ;
 
         }
             }
                 BLAMMOiD( 0x1f1f1f1f ) ;                                                                                                                                                            //20240621@1455: OBSERVED THIS WHILE HEAL WAS ZIPPING A DAY CHUNK FILE ON AN EXTERNAL SSD ; IF SAMEO THEN INSPECT THE EXCEPTION RPT OR THE TRACE PRODUCED BY GLASS1
-                LOGcALLnEST( "!exception: ((tinNormalS&)tinP).idDesireSetBySelf is inaccurate" )
-                LOGrAWb(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),((tinNormalS&)tinP).osTid,tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , ((tinNormalS&)tinP).osTid , "    " , ((tinNormalS&)tinP).idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
-                CONoUTrAWb( "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),((tinNormalS&)tinP).osTid,tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , ((tinNormalS&)tinP).osTid , "    " , ((tinNormalS&)tinP).idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
+                LOGcALLnEST( "!exception: tinP.idDesireSetBySelf is inaccurate" )
+                LOGrAWb(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),tinP.osTid,tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , tinP.osTid , "    " , tinP.idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
+                CONoUTrAWb( "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),tinP.osTid,tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , tinP.osTid , "    " , tinP.idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
 
                 if( &tinP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinP , (strokeS*)"dosPriorityIF (get) IS USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
 
                 countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
             {
-            if( ((tinNormalS&)tinP).idDesireSetBySelf && idDesire != ((tinNormalS&)tinP).idDesireSetBySelf && !( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_ALLOWvOLATILEdESIRE ) )         // I ENFORCE THE CODING CONVENTION THAT A THREAD'S PRIORITY MAY ONLY BE CHANGED BY ITSELF ; NO OTHER THREAD OR PROCESS IS ALLOWED TO CHANGE IT
+            if( tinP.idDesireSetBySelf && idDesire != tinP.idDesireSetBySelf && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_ALLOWvOLATILEdESIRE ) )         // I ENFORCE THE CODING CONVENTION THAT A THREAD'S PRIORITY MAY ONLY BE CHANGED BY ITSELF ; NO OTHER THREAD OR PROCESS IS ALLOWED TO CHANGE IT
         {
-        if( osTidIF() == ((tinNormalS&)tinP).osTid )   // tinP WILL BE A tinNormalS INSTANCE FOR THREAM tm1F IF ANOTHER THREAD CALLS ExitProcess() ; SEE E.G. rootExceptionFilterF() ; CALLING ExitProcess() WILL CAUSE THE EXCEPTING THREAD TO EXECUTE THE DESTRUCTORS FOR THE GLOBAL OBJECTS, WHICH ALL USE WO OF THE GLOBAL tinNormalS INSTANCES INTENDED FOR THE MAIN THREAD
+        if( osTidIF() == tinP.osTid )   // tinP WILL BE A tinNormalS INSTANCE FOR THREAM tm1F IF ANOTHER THREAD CALLS ExitProcess() ; SEE E.G. rootExceptionFilterF() ; CALLING ExitProcess() WILL CAUSE THE EXCEPTING THREAD TO EXECUTE THE DESTRUCTORS FOR THE GLOBAL OBJECTS, WHICH ALL USE WO OF THE GLOBAL tinNormalS INSTANCES INTENDED FOR THE MAIN THREAD
 
         #endif
 
             }
-                default                                            : { BLAMMOiD( ((tinNormalS&)tinP).brcRaw ) ;                 ; break ; }
+                default                                            : { BLAMMOiD( tinP.brcRaw ) ;                 ; break ; }
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_TIMEcRITICAL : { idDesire = ifcTHREADpRIORITY_RUDE         ; break ; }
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS6        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS6   ; break ; }
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS5        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS5   ; break ; }
@@ -49,8 +49,8 @@
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS7       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS7 ; break ; }
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_IDLE         : { idDesire = ifcTHREADpRIORITY_LAZIEST      ; break ; }
             {
-            switch( ((tinNormalS&)tinP).brcRaw )
-            BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)((tinNormalS&)tinP).brcRaw ) )
+            switch( tinP.brcRaw )
+            BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)tinP.brcRaw ) )
             BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
 
         #elif defined( __NT__ )

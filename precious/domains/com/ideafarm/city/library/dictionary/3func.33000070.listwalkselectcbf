@@ -15,10 +15,10 @@
         }
             // POPtINaRGS
             // flagsT flagsRC = listC::walkIF( tinP , hRecord ) ;
-            // ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-            // ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
-            // ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-            // ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+            // tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+            // tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
+            // tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+            // tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
             // PUSHtINaRGS
             // CONoUTrAW( "================== CHATTERING RECORD ==============================\r\n" ) ;
             // 
@@ -35,7 +35,7 @@
             
                 listC::openIF( tinP , hTo , pczTo ) ;
                 handleC hTo( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] , 0 } ;
+                countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] , 0 } ;
             
                 puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
             {
@@ -51,10 +51,10 @@
         }
             // POPtINaRGS
             // flagsT flagsRC = listOfSetC::walkIF( tinP , hRecord ) ;
-            // ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-            // ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
-            // ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-            // ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+            // tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+            // tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
+            // tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+            // tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
             // PUSHtINaRGS
             // CONoUTrAW( "================== CHATTERING RECORD ==============================\r\n" ) ;
             // 
@@ -71,7 +71,7 @@
             
                 listOfSetC::openIF( tinP , hTo , pczTo ) ;
                 handleC hTo( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] , 0 } ;
+                countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] , 0 } ;
             
                 puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
             {
@@ -87,11 +87,11 @@
     {
     if( pListing && !( pListing->flagsF() & fliLISTINGc_MIXINlIST ) && pListing->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
 
-    listingC* pListing = ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
+    listingC* pListing = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !((tinNormalS&)tinP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT _export listWalkSelectCBF( tinNormalS& tinP )/*1*/
 

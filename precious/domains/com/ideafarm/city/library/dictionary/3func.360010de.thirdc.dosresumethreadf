@@ -10,10 +10,10 @@
 }
     handle.resetF() ;
     }
-        //DISABLED SO UTILITY APIS CAN SUSPEND/RESUME ARBITRARY THREADS IN THE PROCESS: __( ((tinNormalS&)tinP).brcLath > 1 ) ;
-        __( !((tinNormalS&)tinP).brcQuery ) ;
+        //DISABLED SO UTILITY APIS CAN SUSPEND/RESUME ARBITRARY THREADS IN THE PROCESS: __( tinP.brcLath > 1 ) ;
+        __( !tinP.brcQuery ) ;
 
-        //if( !((tinNormalS&)tinP).brcQuery ) { CONoUTrAW( "NOT FROZEN\r\n" ) ; }
+        //if( !tinP.brcQuery ) { CONoUTrAW( "NOT FROZEN\r\n" ) ; }
 
         #endif
             BOS( WHATgbo , BOSmAXcOUNTT , ResumeThread( (HANDLE)osh ) )
@@ -23,18 +23,18 @@
     {
     if( ~handle )
     __Z( handle ) ;
-    ((tinNormalS&)tinP).pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
-    handle.osF( ifcIDtYPEhANDLE_THREAD , *((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle ) ;
+    tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
+    handle.osF( ifcIDtYPEhANDLE_THREAD , *tinP.pag1->_thirdC_.pSwThreadHandle ) ;
     handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
-    ((tinNormalS&)tinP).pag1->_thirdC_.lOsTid = tidP ;
-    ((tinNormalS&)tinP).pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    tinP.pag1->_thirdC_.lOsTid = tidP ;
+    tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     _IO_
 
     //}
     //    if( POOP ) return ;
     //    __Z( tidP ) ;
-    //    __( !((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle ) ;
+    //    __( !tinP.pag1->_thirdC_.pSwThreadHandle ) ;
     //    if( POOP ) return ;
     //{
     //IFbEcAREFUL

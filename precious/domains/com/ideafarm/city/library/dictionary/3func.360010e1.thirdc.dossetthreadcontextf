@@ -10,7 +10,7 @@
 #endif
 
 }
-    ((tinNormalS&)tinP).pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
+    tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
     }
         #endif
 
@@ -21,9 +21,9 @@
     {
     if( !POOP )
     __Z( osh ) ;
-    HANDLE osh = (HANDLE)(countT)*((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle ;
-    ((tinNormalS&)tinP).pag1->_thirdC_.lOsTid = tidP ;
-    ((tinNormalS&)tinP).pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    HANDLE osh = (HANDLE)(countT)*tinP.pag1->_thirdC_.pSwThreadHandle ;
+    tinP.pag1->_thirdC_.lOsTid = tidP ;
+    tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     _IO_
 
@@ -34,8 +34,8 @@
             __( cbP - sizeof( CONTEXT ) ) ;
         #if defined( __NT__ )
         __Z( pbP ) ;
-        __( !((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle ) ;
-        __1 //U: THIS CANNOT BE SUPPORTED UNTIL FIGURE OUT WHY STUFFING *((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle IN thirdC::ct CAUSES WO DRIVER TO FAIL TO INSTALL
+        __( !tinP.pag1->_thirdC_.pSwThreadHandle ) ;
+        __1 //U: THIS CANNOT BE SUPPORTED UNTIL FIGURE OUT WHY STUFFING *tinP.pag1->_thirdC_.pSwThreadHandle IN thirdC::ct CAUSES WO DRIVER TO FAIL TO INSTALL
         if( POOP ) return ;
     {
     IFbEcAREFUL

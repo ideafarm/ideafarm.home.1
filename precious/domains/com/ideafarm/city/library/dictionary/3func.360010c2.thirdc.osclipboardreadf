@@ -21,17 +21,17 @@
                         thirdC::c_strncpyIF( tinP , postP , posti , costx + 1 ) ;
                         newF( tinP , LF , postP , costx + 1 ) ; ___( postP ) ;
                         costx = c_strlenIF( tinP , posti ) ;    
-                        char* posti = (char*)((tinNormalS&)tinP).brcRaw ;
+                        char* posti = (char*)tinP.brcRaw ;
                     {
-                    if( !((tinNormalS&)tinP).bosFail )
+                    if( !tinP.bosFail )
                     BOS( WHATgbo , BOSoK , GlobalLock( handle ) )
                 {
-                HANDLE handle = (HANDLE)((tinNormalS&)tinP).brcRaw ;
+                HANDLE handle = (HANDLE)tinP.brcRaw ;
             {
-            if( !((tinNormalS&)tinP).bosFail )
+            if( !tinP.bosFail )
             BOS( WHATgbo , BOSoK , GetClipboardData( CF_TEXT ) )
         {
-        if( !((tinNormalS&)tinP).bosFail )
+        if( !tinP.bosFail )
         BOS( WHATgbo , BOSoK , IsClipboardFormatAvailable( CF_TEXT ) )
 
     #elif defined( __NT__ )

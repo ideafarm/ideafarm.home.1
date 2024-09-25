@@ -433,7 +433,7 @@ THREADmODE4rESTORE
 }
     dec02AM( cWorkersP ) ;
 
-    ((tinNormalS&)tinP).monitor.idWhat2 = 0 ;
+    tinP.monitor.idWhat2 = 0 ;
     if( bWhereP ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
 
     }
@@ -465,7 +465,7 @@ THREADmODE4rESTORE
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 
     if( bWhereP ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
-    ((tinNormalS&)tinP).monitor.idWhat2 = - 1 ;
+    tinP.monitor.idWhat2 = - 1 ;
 
     etThread.delF( tinP , pcArgP ) ;
 
@@ -488,7 +488,7 @@ THREADmODE4rESTORE
 
     countT*        pcArgP = (countT*)pTaskP->c1 ;
 
-    thirdC::c_memcpyIF( tinP , (byteT*)((tinNormalS&)tinP).ppJot , (byteT*)pTaskP->pTinDad->ppJot , sizeof ((tinNormalS&)tinP).ppJot ) ; //U::DEFINE A MACRO "INHERITjOTrEGISTRY"
+    thirdC::c_memcpyIF( tinP , (byteT*)tinP.ppJot , (byteT*)pTaskP->pTinDad->ppJot , sizeof tinP.ppJot ) ; //U::DEFINE A MACRO "INHERITjOTrEGISTRY"
 {
 if( pTaskP && pTaskP->c1 )
 
@@ -535,7 +535,7 @@ postOsName( 0 ) ,
 fileSizeNameS::fileSizeNameS( tinNormalS& tinP , etherC& etherP , const infoFileS& infoP , const strokeS* const psttShortP ) :
 
 }
-    ((tinNormalS&)tinP).pEther->delF( tinP , postOsName ) ;
+    tinP.pEther->delF( tinP , postOsName ) ;
     TINSL
 {
 fileSizeNameS::~fileSizeNameS( voidT )

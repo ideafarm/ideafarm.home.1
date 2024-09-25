@@ -37,7 +37,7 @@
                         //            homeS::homeIF().flags |= flHOMEs_KILLsELFiMMEDIATELY ; //20191014@1759: ADDED WITHOUT ANALYSIS TO MAKE REBOOT MORE RELIABLE AND QUICKER
                         //
                         //            thirdC::osFireIF( tinP ) ;
-                        //            if( ((tinNormalS&)tinP).pEtText ) ((tinNormalS&)tinP).pEtText->emailFactoryReportF( tinP , T("an exception occured.  rebooting") ) ;
+                        //            if( tinP.pEtText ) tinP.pEtText->emailFactoryReportF( tinP , T("an exception occured.  rebooting") ) ;
                         //            LOGrAW3( "on unhandled exception, firing the os at age (ms) since boot: " , msSinceBoot , "\r\n" ) ;
                         //        {
                         //        else
@@ -331,14 +331,14 @@
                             const osTextT* postIdPhase1 = processGlobal4I.mapThreadPhase( tinNormalSnap.idPhase1 ) ;
                             OStEXTAK( ostoRpt , "\r\nidPhase1: " ) ;_M
                             }
-                                OStEXTC( ostoRpt , ((tinNormalS&)tinP).pag1->idPhaseAdam , 0 ) ;_M
+                                OStEXTC( ostoRpt , tinP.pag1->idPhaseAdam , 0 ) ;_M
                             {_M
                             else
                             }
                                 OStEXTA( ostoRpt , postIdPhaseAdam ) ;_M
                             {_M
                             if( postIdPhaseAdam )
-                            const osTextT* postIdPhaseAdam = processGlobal4I.mapProcessPhase( ((tinNormalS&)tinP).pag1->idPhaseAdam ) ;
+                            const osTextT* postIdPhaseAdam = processGlobal4I.mapProcessPhase( tinP.pag1->idPhaseAdam ) ;
                             OStEXTAK( ostoRpt , "\r\nidPhaseAdamI: " ) ;_M
                             }
                                 OStEXTC( ostoRpt , processGlobal2I.idPhaseProcess , 0 ) ;_M
@@ -367,9 +367,9 @@
                             OStEXTC(  ostoRpt ,      thirdC::os_cAllOrphanThreadsI_IF( tinP ) , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncAllOrphanThreadsI: " ) ;_M
                             OStEXTC(  ostoRpt ,      tinNormalSnap.cKidThreads , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).cKidThreads: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.cKidThreads: " ) ;_M
                             OStEXTC(  ostoRpt ,      thirdC::os_cAllKidThreadsI_IF( tinP ) , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pag1->_thirdC_.cAllKidThreads: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.pag1->_thirdC_.cAllKidThreads: " ) ;_M
                             }}
                                 OStEXTC( ostoRpt , tinNormalSnap.pPanLifiRecurseGrabbedLevel[ off + 3 ] , 0 ) ;_M
                                 OStEXTAK( ostoRpt , " " ) ;_M
@@ -380,14 +380,14 @@
                                 OStEXTC( ostoRpt , tinNormalSnap.pPanLifiRecurseGrabbedLevel[ off + 0 ] , 0 ) ;_M
                                 OStEXTAK( ostoRpt , "](pandle,idLineGrab,idiFileGrab,cRecurse): " ) ;_M
                                 OStEXTC( ostoRpt , off , 0 ) ;_M
-                                OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[" ) ;_M
+                                OStEXTAK( ostoRpt , "\r\ntinP.pPanLifiRecurseGrabbedLevel[" ) ;_M
                             {
                             {for( countT off = 0 ; off < sizeof tinNormalSnap.pPanLifiRecurseGrabbedLevel / sizeof tinNormalSnap.pPanLifiRecurseGrabbedLevel[ 0 ] ; off += 5 )
                             }}
                                 OStEXTC( ostoRpt , tinNormalSnap.pcUtility[ off ] , 0 ) ;_M
                                 OStEXTAK( ostoRpt , "]: " ) ;_M
                                 OStEXTC( ostoRpt , off , 0 ) ;_M
-                                OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pc" "Utility[" ) ;_M
+                                OStEXTAK( ostoRpt , "\r\ntinP.pc" "Utility[" ) ;_M
                             {
                             {for( countT off = 0 ; off < sizeof tinNormalSnap.pcUtility / sizeof tinNormalSnap.pcUtility[ 0 ] ; off ++ )
                             }}
@@ -438,13 +438,13 @@
                             OStEXTC(  ostoRpt ,     tinNormalSnap.brcLath , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nbrcLath: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.cGrabitC_unregistered , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).cGrabitC_unregistered: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.cGrabitC_unregistered: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.cGrabitC_registered , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).cGrabitC_registered: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.cGrabitC_registered: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.cGrabitC_reset , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).cGrabitC_reset: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.cGrabitC_reset: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.cGrabitC_set , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).cGrabitC_set: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.cGrabitC_set: " ) ;_M
                             OStEXTC(  ostoRpt ,      tinNormalSnap.monitor.cGrabbed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncGrabbed: " ) ;_M
 
@@ -460,17 +460,17 @@
                             OStEXTAK( ostoRpt , "\r\nprocessGlobal2I.idLineBlammo: " ) ;_M
 
                             OStEXTC(  ostoRpt ,   tinNormalSnap.pag1->idBlammo , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pag1->idBlammo: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.pag1->idBlammo: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.pag1->idiFileBlammoCt , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pag1->idiFileBlammoCt: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.pag1->idiFileBlammoCt: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.pag1->idLineBlammoCt , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pag1->idLineBlammoCt: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.pag1->idLineBlammoCt: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.pag1->idiFileBlammo , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pag1->idiFileBlammo: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.pag1->idiFileBlammo: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.pag1->idLineBlammo , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pag1->idLineBlammo: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.pag1->idLineBlammo: " ) ;_M
                             OStEXTC(  ostoRpt ,   tinNormalSnap.pag1->flagsAdamState , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tinNormalS&)tinP).pag1->flagsAdamState: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\ntinP.pag1->flagsAdamState: " ) ;_M
                             OStEXTC(  ostoRpt , bCleanFailed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nbCleanFailed: " ) ;_M
                             else                 { OStEXTC(  ostoRpt ,      (const countT)*tinNormalSnap.pPoop , 0 ) ;_M }
@@ -571,7 +571,7 @@
                     }
                         Sleep( TUCK ) ;_M //SIMPLE, TO AVOID A NESTED EXCEPTION
                     {_M
-                    while( setIfZeAM( processGlobal2I.osTidReportingException , ((tinNormalS&)tinP).osTid ) )
+                    while( setIfZeAM( processGlobal2I.osTidReportingException , tinP.osTid ) )
                     //TO AVOID NESTED EXCEPTION, DON'T DO THIS: _IO_
                 {_M
                 if( !bFixed || !bQuiet )
@@ -635,7 +635,7 @@
                         //         tinNormalS* pTin = &tinP ;
                         //         //CONoUTrAW( "osExceptionHandlerWorkIF: clean +\r\n" ) ;
                         // 
-                        //         if( !bFixed ) ((tinNormalS&)tinP).cKidThreads = 0 ;
+                        //         if( !bFixed ) tinP.cKidThreads = 0 ;
                         //         if( &tinP != pTinMainI ) { BLAMMO ; }
                         //         TINSL
                         //     {
@@ -665,7 +665,7 @@
                 //U::ISSUE: IF THE EXCEPTION IS NOT ON MAIN THREAD THEN THIS WILL NOT CLEAN UP THE INTENDED ITEMS FOR DLL TERMINATION
 
                 }
-                    processGlobal2I.osTidTerminator = ((tinNormalS&)tinP).brcRaw ;
+                    processGlobal2I.osTidTerminator = tinP.brcRaw ;
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
                     processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_EXCEPTIONnOThANDLED ;
@@ -714,7 +714,7 @@
                              if( F(pr->flags) & flRESTARTc_SKIP    ) ;
                     {_M
                     while( pr )
-                    pr = ((tinNormalS&)tinP).pRestart ;_M
+                    pr = tinP.pRestart ;_M
                     restartC* pr ;_M
                     //TELL( "osExceptionHandlerWorkIF/looking for a restartC" )
                     _IO_
@@ -863,12 +863,12 @@
         static countT cCodeReadRetries ;
 
         const tinNormalS&            tinNormalSnap     = *(tinNormalS*)tellInfoSys.pbTin ;
-        tellInfoSysExceptionS& tellInfoSys = *((tinNormalS&)tinP).pzTieLath ;_M
+        tellInfoSysExceptionS& tellInfoSys = *tinP.pzTieLath ;_M
 
         //TELL( "osExceptionHandlerWorkIF/+" )
-        //A: ASSUME: ((tinNormalS&)tinP).pzTieLath POINTS TO A STRUCTURE THAT CONTAINS AN IMAGE OF tinP AT EXCEPTION EVENT TIME
+        //A: ASSUME: tinP.pzTieLath POINTS TO A STRUCTURE THAT CONTAINS AN IMAGE OF tinP AT EXCEPTION EVENT TIME
     {
-    if( ((tinNormalS&)tinP).pzTieLath )
+    if( tinP.pzTieLath )
     ZE( boolT , bFixed ) ;
     _IO_
 

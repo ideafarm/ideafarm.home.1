@@ -66,13 +66,13 @@
                 THREADmODE4rESTORE
 
                 }
-                    //((tinNormalS&)tinP).pc Utility[ 7 ] = bDeleted ? BM_HIGH | offsTry              : 0 ;
-                    //((tinNormalS&)tinP).pc Utility[ 6 ] =            BM_HIGH | bDeleted                 ;
-                    //((tinNormalS&)tinP).pc Utility[ 5 ] =            BM_HIGH | offs                     ;
-                    //((tinNormalS&)tinP).pc Utility[ 4 ] =            BM_HIGH | poolC_cBitsExpCbDrop     ;
-                    //((tinNormalS&)tinP).pc Utility[ 3 ] =            BM_HIGH | expSlotsMin              ;
-                    //((tinNormalS&)tinP).pc Utility[ 2 ] = mask ;
-                    //((tinNormalS&)tinP).pc Utility[ 1 ] = dropHeader ;
+                    //tinP.pc Utility[ 7 ] = bDeleted ? BM_HIGH | offsTry              : 0 ;
+                    //tinP.pc Utility[ 6 ] =            BM_HIGH | bDeleted                 ;
+                    //tinP.pc Utility[ 5 ] =            BM_HIGH | offs                     ;
+                    //tinP.pc Utility[ 4 ] =            BM_HIGH | poolC_cBitsExpCbDrop     ;
+                    //tinP.pc Utility[ 3 ] =            BM_HIGH | expSlotsMin              ;
+                    //tinP.pc Utility[ 2 ] = mask ;
+                    //tinP.pc Utility[ 1 ] = dropHeader ;
 
                     }
                         }
@@ -93,7 +93,7 @@
                 else
                 if( pPoolContainsMe ) (*pPoolContainsMe)( tinP , pbP ) ;
 
-                //((tinNormalS&)tinP).pc Utility[ 0 ] = (countT)pbP ;
+                //tinP.pc Utility[ 0 ] = (countT)pbP ;
 
                 THREADmODE4oN( flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
             {
@@ -127,7 +127,7 @@
             countT mask = ( 1 << CbITSeXPsLOTS ) - 1 ;
             countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
         {
-        if( cbDropHeader && !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
+        if( cbDropHeader && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
     {
     if( pbP )
 

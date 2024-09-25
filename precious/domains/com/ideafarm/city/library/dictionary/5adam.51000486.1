@@ -129,7 +129,7 @@ DONEdRIVENsERVER( tmcF )
             if( bHttpWoZe ) postxNotFound[ 7 ] = '1' ;
             pso->writeF( tinP , postxNotFound , costxNotFound ) ;
             if( bHttpWoZe ) postxNotFound[ 7 ] = '0' ;
-            *((tinNormalS&)tinP).zEtScratch = 0 ;
+            *tinP.zEtScratch = 0 ;
         {
         else
         }
@@ -262,16 +262,16 @@ DONEdRIVENsERVER( tmcF )
         
                 !tblKeyValue ;
             {
-            if( !*((tinNormalS&)tinP).zEtScratch && tblKeyValue.cRowsF( tinP ) )
+            if( !*tinP.zEtScratch && tblKeyValue.cRowsF( tinP ) )
             ZE( boolT , bLogin ) ;
             stPhrases << postOldC( tinP , etThread , T("name: ")+T(pcIdName)+T("\r\n") ) ;
             stPhrases << postOldC( tinP , etThread , T("peer: ")+T(nicNamePeer)+T("\r\n") ) ;
             stPhrases << postOldC( tinP , etThread , T("peer: \"")+T(psttPeer)+T("\"\r\n") ) ;
         {
-        else if( !*((tinNormalS&)tinP).zEtScratch )
+        else if( !*tinP.zEtScratch )
         if( etThread ) ;
         TELL( "preparing to compose a reply" ) ;
-        countT idRequestType = readRequestF( tinP , etThread , *((tinNormalS&)tinP).zEtScratch , *pso , bMore , bHttpWoZe , pcIdName , tblKeyValue , std_pstt , psttPeer , nicNamePeer , dict ) ;
+        countT idRequestType = readRequestF( tinP , etThread , *tinP.zEtScratch , *pso , bMore , bHttpWoZe , pcIdName , tblKeyValue , std_pstt , psttPeer , nicNamePeer , dict ) ;
         TELL( "reading a request" ) ;
         ZE( boolT , bHttpWoZe ) ;
         stackC std_pstt( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
@@ -297,7 +297,7 @@ DONEdRIVENsERVER( tmcF )
         stackC stPhrases( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
         TELL( "preparing to read a request" ) ;
     {
-    while( !etThread && !*((tinNormalS&)tinP).zEtScratch && bMore )
+    while( !etThread && !*tinP.zEtScratch && bMore )
     boolT bMore = 1 ;
 
     PARAMS( cArg )
@@ -313,42 +313,42 @@ TASKdRIVENsERVER( tmcF )
     etThread.delF( tinP , psttAction ) ;
     }
         }
-            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttNameTrimmed ) ;
+            tinP.zEtScratch->delF( tinP , psttNameTrimmed ) ;
 
             if( offi < CCiDnAMEmAX ) pcIdNameP[ offi ++ ] = 0 ;
             }
-                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw ) ;
+                tinP.zEtScratch->delF( tinP , psttw ) ;
                 else __1
                 }
                     }
                         __( !pcIdNameP[ offi ++ ] ) ;
-                        ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
+                        tinP.zEtScratch->delF( tinP , psttw2 ) ;
                         pcIdNameP[ offi ] = dictP( psttw2 ) ;
-                        ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw2 , idf2 , idl2 , psttw ) ; ___( psttw2 ) ;
+                        tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf2 , idl2 , psttw ) ; ___( psttw2 ) ;
                         ZE( strokeS* , psttw2 ) ;
                         ZE( countT , idl2 ) ;
                         countT idf2 = 2 ;
                     {
                     else
-                    if( 1 != ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , sttDollar , psttw ) ) pcIdNameP[ offi ++ ] = ((tinNormalS&)tinP).zEtScratch->strDigitsToSCountF( tinP , psttw ) ;
+                    if( 1 != tinP.zEtScratch->strIdF( tinP , sttDollar , psttw ) ) pcIdNameP[ offi ++ ] = tinP.zEtScratch->strDigitsToSCountF( tinP , psttw ) ;
                 {
                 if( offi < CCiDnAMEmAX - 1 )
-                ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw , idf , sttq , sttDot , psttNameTrimmed ) ; ___( psttw ) ;            // "$foo"
+                tinP.zEtScratch->strSubstringF( tinP , psttw , idf , sttq , sttDot , psttNameTrimmed ) ; ___( psttw ) ;            // "$foo"
                 ZE( strokeS* , psttw ) ;
             {
-            while( !*((tinNormalS&)tinP).zEtScratch && idf )
+            while( !*tinP.zEtScratch && idf )
             strokeS sttDollar( '$' ) ;
             strokeS sttDot( '.' ) ;
             idf = 1 ;
             ZE( countT , offi ) ;
 
-            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttNameTrimmed , idf , idl , psttName ) ; ___( psttNameTrimmed ) ;      // "1.2.$foo.4"
+            tinP.zEtScratch->strSubstringF( tinP , psttNameTrimmed , idf , idl , psttName ) ; ___( psttNameTrimmed ) ;      // "1.2.$foo.4"
             ZE( strokeS* , psttNameTrimmed ) ;
             countT idl = idDot0 ? idDot0 - 1 : 0 ;
             idf = 2 ;
 
             __( psttName->idAdam - 1 - idDot0 ) ;
-            countT idDot0 = ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
+            countT idDot0 = tinP.zEtScratch->strIdF( tinP , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
             TN( tDot0 , ".0" ) ;
             idf = 1 ;
         {
@@ -362,15 +362,15 @@ TASKdRIVENsERVER( tmcF )
         if( idRequestType != ifcIDrEQtYPE_FISH ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
-        __( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , sttSlash , psttName ) - 1 ) ;                                                  // "/1.2.$foo.4.0"
+        __( tinP.zEtScratch->strIdF( tinP , sttSlash , psttName ) - 1 ) ;                                                  // "/1.2.$foo.4.0"
         __( !psttName->idAdam ) ;
     {
-    if( !*((tinNormalS&)tinP).zEtScratch && !etThread )
+    if( !*tinP.zEtScratch && !etThread )
     __Z( psttName ) ; // WILL BE NULL IF CLIENT CLOSES WITHOUT TELLING ME TO CLOSE
 
     etThread.delF( tinP , psttKV ) ;
     }
-        ((tinNormalS&)tinP).zEtScratch->delF( tinP , pstt1e ) ;
+        tinP.zEtScratch->delF( tinP , pstt1e ) ;
         }
             }
                 tblKeyValueP.newObjectF( tinP , psttv ) ;
@@ -381,13 +381,13 @@ TASKdRIVENsERVER( tmcF )
                 std_psttP << psttk ;
             {
             else
-            if( *((tinNormalS&)tinP).zEtScratch ) *((tinNormalS&)tinP).zEtScratch = 0 ;
+            if( *tinP.zEtScratch ) *tinP.zEtScratch = 0 ;
 
-            ((tinNormalS&)tinP).zEtScratch->strFromUrlF( tinP , psttv ) ; ___( psttv ) ;
-            ((tinNormalS&)tinP).zEtScratch->strFromUrlF( tinP , psttk ) ; ___( psttk ) ;
+            tinP.zEtScratch->strFromUrlF( tinP , psttv ) ; ___( psttv ) ;
+            tinP.zEtScratch->strFromUrlF( tinP , psttk ) ; ___( psttk ) ;
 
-            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttv , idf , sttq , sttEq , psttc1 ) ; ___( psttv ) ;
-            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttk , idf , sttq , sttEq , psttc1 ) ; ___( psttk ) ;
+            tinP.zEtScratch->strSubstringF( tinP , psttv , idf , sttq , sttEq , psttc1 ) ; ___( psttv ) ;
+            tinP.zEtScratch->strSubstringF( tinP , psttk , idf , sttq , sttEq , psttc1 ) ; ___( psttk ) ;
             ZE( strokeS* , psttv ) ;
             ZE( strokeS* , psttk ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
@@ -395,11 +395,11 @@ TASKdRIVENsERVER( tmcF )
         {
         FORsTRINGSiN1( pstt1e )
         strokeS sttEq( '=' ) ;
-        ((tinNormalS&)tinP).zEtScratch->strWordsOldF( tinP , pstt1e , psttKV , sttq , T("&") ) ; ___( pstt1e ) ;
+        tinP.zEtScratch->strWordsOldF( tinP , pstt1e , psttKV , sttq , T("&") ) ; ___( pstt1e ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , pstt1e ) ;
     {
-    if( !*((tinNormalS&)tinP).zEtScratch && psttKV ) // STORE THE KEY/VALUE PAIRS
+    if( !*tinP.zEtScratch && psttKV ) // STORE THE KEY/VALUE PAIRS
 
     }
         etThread.strMakeF( tinP , LF , psttKV , ( psttw ? T(psttw)+T("&") : T("") )+tBody ) ; ___( psttKV ) ; //ASSUME: psttKV IS OF FORM T("aaaa=1111&bbbb=2222&cccc=3333&dddd=4444")
@@ -412,62 +412,62 @@ TASKdRIVENsERVER( tmcF )
         etThread.newF( tinP , LF , postBody , costBody + 1 ) ;
         ZE( osTextT* , postBody ) ;
     {
-    if( !*((tinNormalS&)tinP).zEtScratch && costBody ) // HTTP/1.1 KEYvALUE PAIRS
+    if( !*tinP.zEtScratch && costBody ) // HTTP/1.1 KEYvALUE PAIRS
 
     }
-        ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw ) ;
-        ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttKV   , psttw , sttq , sttQuest , 2 ) ; ___( psttKV   ) ;
-        ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttName , psttw , sttq , sttQuest , 1 ) ; ___( psttName ) ;
+        tinP.zEtScratch->delF( tinP , psttw ) ;
+        tinP.zEtScratch->strWordF( tinP , psttKV   , psttw , sttq , sttQuest , 2 ) ; ___( psttKV   ) ;
+        tinP.zEtScratch->strWordF( tinP , psttName , psttw , sttq , sttQuest , 1 ) ; ___( psttName ) ;
         psttName = 0 ;
         strokeS* psttw = psttName ;
     {
-    if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , T("?") , psttName ) ) // HTTP/1.0 KEYvALUE PAIRS
+    if( tinP.zEtScratch->strIdF( tinP , T("?") , psttName ) ) // HTTP/1.0 KEYvALUE PAIRS
     ZE( strokeS* , psttKV ) ;
 
     }
-        ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttl ) ;
+        tinP.zEtScratch->delF( tinP , psttl ) ;
         }
             break ;
-            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttl ) ;
+            tinP.zEtScratch->delF( tinP , psttl ) ;
         {
         else
         }
-            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttValue ) ;
-            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttKey ) ;
+            tinP.zEtScratch->delF( tinP , psttValue ) ;
+            tinP.zEtScratch->delF( tinP , psttKey ) ;
             }
-                if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , tClose , psttValue ) ) bMoreP = 0 ;
+                if( tinP.zEtScratch->strIdF( tinP , tClose , psttValue ) ) bMoreP = 0 ;
             {
-            else if( !((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , tConnection    , psttKey ) )
-                 if( !((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , tContentLength , psttKey ) ) costBody = ((tinNormalS&)tinP).zEtScratch->strDigitsToSCountF( tinP , psttValue , 0xa , 1 ) ;
-            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
+            else if( !tinP.zEtScratch->strCompareF( tinP , tConnection    , psttKey ) )
+                 if( !tinP.zEtScratch->strCompareF( tinP , tContentLength , psttKey ) ) costBody = tinP.zEtScratch->strDigitsToSCountF( tinP , psttValue , 0xa , 1 ) ;
+            tinP.zEtScratch->strSubstringF( tinP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
             ZE( countT , idl ) ;
-            ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttKey ) ; ___( psttKey ) ;
-            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
+            tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttKey ) ; ___( psttKey ) ;
+            tinP.zEtScratch->strSubstringF( tinP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
             countT idf = 1 ;
             ZE( strokeS* , psttValue ) ;
             ZE( strokeS* , psttKey ) ;
         {
         else if( psttl && psttl->idAdam ) // HEADER LINE ASSUMED TO BE OF THE FORM, FOR EXAMPLE,  "Content-Length:1234"
         }
-            if( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , idf , sttq , T("logout") , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGOUT ;
+            if( tinP.zEtScratch->strIdF( tinP , idf , sttq , T("logout") , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGOUT ;
             countT idf = 1 ;
-            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw ) ;
-            bHttpWoZeP = !((tinNormalS&)tinP).zEtScratch->strIdF( tinP , tHttp11 , psttw ) ;
-            bMoreP = !!((tinNormalS&)tinP).zEtScratch->strIdF( tinP , tHttp11 , psttw ) ;
-            ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttw ) ; ___( psttw ) ;
-            ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttw , psttl , sttq , sttb , 3 ) ; ___( psttw ) ;
+            tinP.zEtScratch->delF( tinP , psttw ) ;
+            bHttpWoZeP = !tinP.zEtScratch->strIdF( tinP , tHttp11 , psttw ) ;
+            bMoreP = !!tinP.zEtScratch->strIdF( tinP , tHttp11 , psttw ) ;
+            tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttw ) ; ___( psttw ) ;
+            tinP.zEtScratch->strWordF( tinP , psttw , psttl , sttq , sttb , 3 ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
-            ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttName , psttl , sttq , sttb , 2 ) ; ___( psttName ) ;
-            ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttAction ) ; ___( psttAction ) ;
-            ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttAction , psttl , sttq , sttb , 1 ) ; ___( psttAction ) ;
+            tinP.zEtScratch->strWordF( tinP , psttName , psttl , sttq , sttb , 2 ) ; ___( psttName ) ;
+            tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttAction ) ; ___( psttAction ) ;
+            tinP.zEtScratch->strWordF( tinP , psttAction , psttl , sttq , sttb , 1 ) ; ___( psttAction ) ;
         {
         if( !psttAction ) // IF WO'TH LINE
 
-        if( *((tinNormalS&)tinP).zEtScratch ) break ;
+        if( *tinP.zEtScratch ) break ;
         sInP.readWoLineF( tinP , psttl , 0x200 ) ; ___( psttl ) ;
         ZE( strokeS* , psttl ) ;
     {
-    while( !*((tinNormalS&)tinP).zEtScratch && !etThread )
+    while( !*tinP.zEtScratch && !etThread )
     ZE( countT , costBody ) ;
     ZE( strokeS* , psttName ) ;
     ZE( strokeS* , psttAction ) ;
@@ -516,7 +516,7 @@ i evaluate to idRequestType
 //==============================================================================================================================================================
 
 }
-    if( ether && *((tinNormalS&)tinP).zEtScratch && cArgP && c8argP.c1 && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *tinP.zEtScratch && cArgP && c8argP.c1 && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
@@ -585,7 +585,7 @@ struct stateS
 }
     }
         if( POOP ) POOPR
-        if( psP ) ((tinNormalS&)tinP).pEtScratch->delF( tinP , psP->psttEmail ) ;
+        if( psP ) tinP.pEtScratch->delF( tinP , psP->psttEmail ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -596,8 +596,8 @@ voidT del_sessionS_ptrs_F( tinNormalS& tinP , sessionS* psP )
     return (sessionS*)pbs ;
     }
         if( POOP ) POOPR
-        ((tinNormalS&)tinP).pEtScratch->memSetF( tinP , pbs , sizeof( sessionS ) ) ;
-        ((tinNormalS&)tinP).pEtScratch->newF(    tinP , pbs , sizeof( sessionS ) ) ; ___( pbs ) ;
+        tinP.pEtScratch->memSetF( tinP , pbs , sizeof( sessionS ) ) ;
+        tinP.pEtScratch->newF(    tinP , pbs , sizeof( sessionS ) ) ; ___( pbs ) ;
         SCOOPS
     {
     IFsCRATCH

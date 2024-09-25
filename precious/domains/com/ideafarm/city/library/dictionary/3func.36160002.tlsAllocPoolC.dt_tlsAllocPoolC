@@ -7,12 +7,12 @@
 //
 
 }
-    *(countT*)&((tinNormalS&)tinP).cTls  =  cTlsSave ;
-    *(countT*)&((tinNormalS&)tinP).cbTls = cbTlsSave ;
-    *(byteT**)&((tinNormalS&)tinP).pbTls = pbTlsSave ;
+    *(countT*)&tinP.cTls  =  cTlsSave ;
+    *(countT*)&tinP.cbTls = cbTlsSave ;
+    *(byteT**)&tinP.pbTls = pbTlsSave ;
 
-    if( ((tinNormalS&)tinP).pbTls ) { BLAMMOiD( 0x74747474 ) ; }
-    PUSE( tinP , *(byteT**)&((tinNormalS&)tinP).pbTls ) ;
+    if( tinP.pbTls ) { BLAMMOiD( 0x74747474 ) ; }
+    PUSE( tinP , *(byteT**)&tinP.pbTls ) ;
 
     TINSL
 {

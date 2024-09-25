@@ -85,21 +85,21 @@
     {
     if( F(flagsInstance) & flPOOLiNSTANCE_FACEcONSTRUCTED )
 
-    if( ((tinNormalS&)tinP).pPoolUse == this ) ((tinNormalS&)tinP).pPoolUse = 0 ;
+    if( tinP.pPoolUse == this ) tinP.pPoolUse = 0 ;
 
-    else if( ((tinNormalS&)tinP).pag1->pPoolAdamTemp == this ) ((tinNormalS&)tinP).pag1->pPoolAdamTemp = 0 ;
-    else if( ((tinNormalS&)tinP).pag1->pPoolHomeTemp == this ) ((tinNormalS&)tinP).pag1->pPoolHomeTemp = 0 ;
-    else if( ((tinNormalS&)tinP).pag1->pPoolScratch  == this ) ((tinNormalS&)tinP).pag1->pPoolScratch  = 0 ;
-    else if( ((tinNormalS&)tinP).pag1->pPoolAdamPerm == this ) ((tinNormalS&)tinP).pag1->pPoolAdamPerm = 0 ;
-         if( ((tinNormalS&)tinP).pag1->pPoolHomePerm == this ) ((tinNormalS&)tinP).pag1->pPoolHomePerm = 0 ;
+    else if( tinP.pag1->pPoolAdamTemp == this ) tinP.pag1->pPoolAdamTemp = 0 ;
+    else if( tinP.pag1->pPoolHomeTemp == this ) tinP.pag1->pPoolHomeTemp = 0 ;
+    else if( tinP.pag1->pPoolScratch  == this ) tinP.pag1->pPoolScratch  = 0 ;
+    else if( tinP.pag1->pPoolAdamPerm == this ) tinP.pag1->pPoolAdamPerm = 0 ;
+         if( tinP.pag1->pPoolHomePerm == this ) tinP.pag1->pPoolHomePerm = 0 ;
 
     }
-        DELzOMBIE( ((tinNormalS&)tinP).pag1->pPoolHomePerm ) ;
-        DELzOMBIE( ((tinNormalS&)tinP).pag1->pPoolAdamPerm ) ;
-        DELzOMBIE( ((tinNormalS&)tinP).pag1->pPoolScratch  ) ;
-        DELzOMBIE( ((tinNormalS&)tinP).pag1->pPoolHomeTemp ) ;
+        DELzOMBIE( tinP.pag1->pPoolHomePerm ) ;
+        DELzOMBIE( tinP.pag1->pPoolAdamPerm ) ;
+        DELzOMBIE( tinP.pag1->pPoolScratch  ) ;
+        DELzOMBIE( tinP.pag1->pPoolHomeTemp ) ;
     {
-    if( ((tinNormalS&)tinP).pag1->pPoolAdamTemp == this ) // THIS IS OK BECAUSE ADAMteMP CONTAINS ITS OWN INDEX
+    if( tinP.pag1->pPoolAdamTemp == this ) // THIS IS OK BECAUSE ADAMteMP CONTAINS ITS OWN INDEX
 
     }
         }
@@ -144,9 +144,9 @@
         stPoolNames.sinkF( tinP , ids , (countT)guts.postName , flSTACKsINK_QUERY ) ;
         stPoolNames.grabF( tinP , TAG( TAGiDnULL ) ) ;
         ZE( countT , ids ) ;
-        stackC& stPoolNames = ((tinNormalS&)tinP).pEther->ifcStkPoolNamesF( tinP ) ;
+        stackC& stPoolNames = tinP.pEther->ifcStkPoolNamesF( tinP ) ;
     {
-    if( ((tinNormalS&)tinP).pEther )               // IF !((tinNormalS&)tinP).pEther THEN I WILL NOT BE DEREGISTERED, BUT THAT DOES NOT MATTER BECAUSE tmWatchF IS GONE
+    if( tinP.pEther )               // IF !tinP.pEther THEN I WILL NOT BE DEREGISTERED, BUT THAT DOES NOT MATTER BECAUSE tmWatchF IS GONE
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // UNREGISTER MY NAME SO THAT tmWatchF CAN SEE WHICH poolC NAMES THIS PROCESSES IS USING

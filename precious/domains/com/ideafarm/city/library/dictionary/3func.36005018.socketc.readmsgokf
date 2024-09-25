@@ -11,12 +11,12 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tinNormalS&)tinP).pag3->_socketC_.grab.ungrabF( tinP ) ;
-        pOdometer->cbWrite += ((tinNormalS&)tinP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tinNormalS&)tinP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer ;
-        ((tinNormalS&)tinP).pag3->_socketC_.nnLever = nnPeer ;
-        ((tinNormalS&)tinP).pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
+        pOdometer->cbWrite += tinP.odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += tinP.odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
+        tinP.pag3->_socketC_.nnLever = nnPeer ;
+        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
     
         bRead.ungrabF( tinP ) ; //THIS IS BALANCED BY THE BATON GRAB IN readMsgF
     
@@ -63,8 +63,8 @@
 
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
     
-        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = tinP.odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = tinP.odoSockCbRead  ;
     
         _IO_
     

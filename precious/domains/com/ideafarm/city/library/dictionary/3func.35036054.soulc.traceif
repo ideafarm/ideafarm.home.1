@@ -8,14 +8,14 @@
 
 
 }
-    ((tinNormalS&)tinP).pag5->_soulC_grabTrace.ungrabF( tinP ) ;
+    tinP.pag5->_soulC_grabTrace.ungrabF( tinP ) ;
 
-    else       { etherC::etRockIF( tinP )( tinP , ((tinNormalS&)tinP).pag1->_soulC_.pStkTrace ) ; LOGrAW( "soulC: just turned trace OFF\r\n" ) ; }
-    if( bOnP ) { LOGrAW( "soulC: about to turn trace ON\r\n"  ) ; etherC::etRockIF( tinP )( tinP , ((tinNormalS&)tinP).pag1->_soulC_.pStkTrace , TAG( TAGiDnULL ) ) ; }
+    else       { etherC::etRockIF( tinP )( tinP , tinP.pag1->_soulC_.pStkTrace ) ; LOGrAW( "soulC: just turned trace OFF\r\n" ) ; }
+    if( bOnP ) { LOGrAW( "soulC: about to turn trace ON\r\n"  ) ; etherC::etRockIF( tinP )( tinP , tinP.pag1->_soulC_.pStkTrace , TAG( TAGiDnULL ) ) ; }
 
-    if( !((tinNormalS&)tinP).pag1->_soulC_.pStkTrace == !bOnP ) { BLAMMO ; }
+    if( !tinP.pag1->_soulC_.pStkTrace == !bOnP ) { BLAMMO ; }
 
-    ((tinNormalS&)tinP).pag5->_soulC_grabTrace.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    tinP.pag5->_soulC_grabTrace.grabF( tinP , TAG( TAGiDnULL ) ) ;
     _IO_
 {
 /*1*/voidT soulC::traceIF( tinNormalS& tinP , boolT bOnP )/*1*/

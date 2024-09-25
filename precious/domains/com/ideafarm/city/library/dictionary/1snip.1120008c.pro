@@ -13,7 +13,7 @@
 
 #else
 
-#define PRO ((tinNormalS&)tinP).pIdProgressNest[ ((tinNormalS&)tinP).monitor.cInNest & OFFsLOTtINnESTmAX ]
+#define PRO tinP.pIdProgressNest[ tinP.monitor.cInNest & OFFsLOTtINnESTmAX ]
 
 #if defined( NEVERdEFINED )
 //U:

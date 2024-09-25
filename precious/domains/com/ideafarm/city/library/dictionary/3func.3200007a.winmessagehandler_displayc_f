@@ -20,7 +20,7 @@
         }
             break ;
             if( bLog ) { LOGrAW( "winmess/default -\r\n" ) ; }
-            rc = ((tinNormalS&)tinP).brcRaw ;
+            rc = tinP.brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( (HWND)oshWindowP , idCmdP , p1P , p2P ) )
             if( bLog ) { LOGrAW( "winmess/default +\r\n" ) ; }
         {
@@ -39,10 +39,10 @@
             
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , AdjustWindowRect( &info , WS_OVERLAPPEDWINDOW , 0 ) )
-                info.bottom = ( ((tinNormalS&)tinP).brcRaw - 1 ) >> DISPLAYsHRINK ; // ">> 4" FOR DEBUGGING TINY; ">> 0" FOR PROD
+                info.bottom = ( tinP.brcRaw - 1 ) >> DISPLAYsHRINK ; // ">> 4" FOR DEBUGGING TINY; ">> 0" FOR PROD
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CYSCREEN ) )
-                info.right  = ( ((tinNormalS&)tinP).brcRaw - 1 ) >> DISPLAYsHRINK ; // ">> 4" FOR DEBUGGING TINY; ">> 0" FOR PROD
+                info.right  = ( tinP.brcRaw - 1 ) >> DISPLAYsHRINK ; // ">> 4" FOR DEBUGGING TINY; ">> 0" FOR PROD
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CXSCREEN ) )
                 info.top    = /*0x8*/0 ;
@@ -103,7 +103,7 @@
                 bNeedRepaint = 0 ;
 
                 }
-                    if( bLog ) { LOGrAW7( "winmess/WM_PAINT BitBlt [bOk,oshDevice,oshDeviceMemory]:    " , ((tinNormalS&)tinP).brcRaw , "    " , oshDevice , "    " , oshDeviceMemory , "\r\n" ) ; }
+                    if( bLog ) { LOGrAW7( "winmess/WM_PAINT BitBlt [bOk,oshDevice,oshDeviceMemory]:    " , tinP.brcRaw , "    " , oshDevice , "    " , oshDeviceMemory , "\r\n" ) ; }
 
                     //U::BOSpOOP
                     //20230327@1519: BitBlt OCCASIONALLY FAILS AND GetLastError() RETURNS 0, USING DUT ADAM b (COPY OF 72b_)
@@ -121,7 +121,7 @@
             {
             if( pStuff )
 
-            HDC oshDevice = (HDC)((tinNormalS&)tinP).brcRaw ;
+            HDC oshDevice = (HDC)tinP.brcRaw ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , BeginPaint( (HWND)oshWindowP , &info ) )
             PAINTSTRUCT info ;

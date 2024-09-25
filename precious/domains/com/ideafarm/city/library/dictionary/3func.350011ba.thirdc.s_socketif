@@ -15,10 +15,10 @@
         handleP.resetF() ;
         countT c_pWrapper = handleP.cNoteF() ;
         openSslTls_getWrapperIF( tinP , handleP , *phContextP ) ;
-        countT oshSocket = ((tinNormalS&)tinP).brcRaw ;
+        countT oshSocket = tinP.brcRaw ;
     {
     else
-    if( !phContextP ) handleP.osF( ifcIDtYPEhANDLE_SOCKET , ((tinNormalS&)tinP).brcRaw ) ;
+    if( !phContextP ) handleP.osF( ifcIDtYPEhANDLE_SOCKET , tinP.brcRaw ) ;
     //CS:CODEsYNC: PSEUDODUPLICATE 3600103f 360010b1
 
     }
@@ -33,8 +33,8 @@
         //ZE( int , cbMax ) ;
         //THIS WORKS BUT IS NOT USED
 
-        //LOGrAW5( "" , oshSocket , "    " , ((tinNormalS&)tinP).pag1->idAdam , " ++++\r\n" ) ;
-        countT oshSocket = ((tinNormalS&)tinP).brcRaw ;
+        //LOGrAW5( "" , oshSocket , "    " , tinP.pag1->idAdam , " ++++\r\n" ) ;
+        countT oshSocket = tinP.brcRaw ;
     {
     BOSpOOP
     BOS( WHATgbo , BOSsOCKETcODE , socket( PF_INET6 , idTypeOs , 0 ) )      //20210223@1233: CHANGED FROM PF_INET TO PF_INET6
