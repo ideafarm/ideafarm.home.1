@@ -257,11 +257,11 @@ TASK( tmDoorF )
     boolT bPanicP = c8p.c2 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-voidT httpRawCommandServerCBF( tinNormalS& tinP , etherC& etThread , const boolT& bQuitP , countT& cArgP , socketC& sockP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP , sessionsC& sessionsP , nicNameC& nnPeerP , const countT idEscapedP )
+voidT httpRawCommandServerCBF( tinBaseS& tinP , etherC& etThread , const boolT& bQuitP , countT& cArgP , socketC& sockP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP , sessionsC& sessionsP , nicNameC& nnPeerP , const countT idEscapedP )
 
 }
 {
-voidT httpLoadContentStaticCBF( tinNormalS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
+voidT httpLoadContentStaticCBF( tinBaseS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
 
 }
     meP.storeReplyF( tinP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(bPanicP?"Panic Door to IdeaFarm " "(tm) Space":"Door to IdeaFarm " "(tm) Space") , T("SOIL (tm) <> Sentient Object Interface Language") , T("SOIL (tm) <> Sentient Object Interface Language") , T("Where humans and robots converse...") , T("") , T("") , homeOld20190809CBF ) ;
@@ -269,11 +269,11 @@ voidT httpLoadContentStaticCBF( tinNormalS& tinP , etherC& etThread , const bool
     boolT bPanicP = c8p.c2 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-voidT httpLoadContentDynamicCBF( tinNormalS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
+voidT httpLoadContentDynamicCBF( tinBaseS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
 
 }
 {
-voidT httpFreshenCacheCBF( tinNormalS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , sessionsC& sessionsP , countT& cArgP , const boolT bCleanupP )
+voidT httpFreshenCacheCBF( tinBaseS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , sessionsC& sessionsP , countT& cArgP , const boolT bCleanupP )
 
 }
     meP.pushSnipF( tinP , stBodyP , ( session.psttKeyDefPending ? tFormDefine : tForm ) + tContent ) ;
@@ -448,7 +448,7 @@ voidT httpFreshenCacheCBF( tinNormalS& tinP , etherC& etThread , const boolT& bQ
     countT idShow = session.dispenseIdF( tinP , ClEVERdISPENSEiD_SHOW ) ;
     sessionC& session = sessionsP( tinP , nnPeerP , psttPeerAgentP ) ;
 {
-voidT homeOld20190809CBF( tinNormalS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT homeOld20190809CBF( tinBaseS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 }
     return bQuit ;
@@ -680,7 +680,7 @@ voidT homeOld20190809CBF( tinNormalS& tinP , etherC& etThread , const boolT& bQu
     boolT bPanicP = c8p.c2 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-boolT obeyF( tinNormalS& tinP , countT& cArgP , strokeS*& psttReplyP , const strokeS* const psttOldCmdP , const flagsT flagsP = flDOORoBEY_null , sessionC* pSessionP = 0 )
+boolT obeyF( tinBaseS& tinP , countT& cArgP , strokeS*& psttReplyP , const strokeS* const psttOldCmdP , const flagsT flagsP = flDOORoBEY_null , sessionC* pSessionP = 0 )
 
 }
     return psttzw ;
@@ -695,7 +695,7 @@ boolT obeyF( tinNormalS& tinP , countT& cArgP , strokeS*& psttReplyP , const str
     if( pSessionP )
     strokeS* psttzw = psttP ;
 {
-strokeS* psttWordF( tinNormalS& tinP , strokeS* const psttP , sessionC* pSessionP = 0 )
+strokeS* psttWordF( tinBaseS& tinP , strokeS* const psttP , sessionC* pSessionP = 0 )
 
 }
     etherP.strFuseF( tinP , psttP , tEnd ) ;
@@ -813,7 +813,7 @@ strokeS* psttWordF( tinNormalS& tinP , strokeS* const psttP , sessionC* pSession
     
     homeS& home = homeS::homeIF() ;
 {
-voidT reportF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , const flagsT flagsP = flDOORoBEY_null )
+voidT reportF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP , const flagsT flagsP = flDOORoBEY_null )
 
 }
     etherP.delF( tinP , psttw ) ;
@@ -824,7 +824,7 @@ voidT reportF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , const flags
     etherP.osTimeNowF( tinP , time1 , *(sCountT*)&countTC() ) ;
     ZE( countT , time1 ) ;
 {
-voidT clockF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP )
+voidT clockF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP )
 
 }
     etherP.delF( tinP , psttw ) ;
@@ -835,7 +835,7 @@ voidT clockF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP )
     etherP.osTimeNowF( tinP , countTC() , time2 ) ;
     ZE( sCountT , time2 ) ;
 {
-voidT calendarF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , const sCountT scDaysOffP = 0 )
+voidT calendarF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP , const sCountT scDaysOffP = 0 )
 
 }
     }
@@ -912,7 +912,7 @@ voidT calendarF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , const sCo
     {
     IFsCRATCH
 {
-voidT peanutsF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP )
+voidT peanutsF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP )
 
 }
     }
@@ -939,7 +939,7 @@ voidT peanutsF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP )
     sOut3 << (countT)ifcIDcMDmONITOR_IMAGE ;
     soulC sOut3( tinP , TAG( TAGiDnULL ) ) ;
 {
-voidT image_grabC_F( tinNormalS& tinP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , baseGrabC* pForeignGrabP , countT osPidP )
+voidT image_grabC_F( tinBaseS& tinP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , baseGrabC* pForeignGrabP , countT osPidP )
 
 }
 
@@ -1013,7 +1013,7 @@ voidT image_grabC_F( tinNormalS& tinP , etherC& etherP , byteT*& pbGrabP , socke
     boolT bPanicP = c8p.c2 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-voidT helpF( tinNormalS& tinP , etherC& etherP , countT& cArgP , strokeS*& psttP , const flagsT flagsP = flDOORoBEY_null )
+voidT helpF( tinBaseS& tinP , etherC& etherP , countT& cArgP , strokeS*& psttP , const flagsT flagsP = flDOORoBEY_null )
 
 countT idPortHome ;
 nicNameC nnHome ;

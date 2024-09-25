@@ -12,12 +12,12 @@
 
     }
         //conGF( "\r\n" ) ;
-        //conGF( NAME( pTinF()->idTinNamed ) ) ;
+        //conGF( NAME( ((tinNormalS*)pTinF())->idTinNamed ) ) ;
         //conGF( " " ) ;
     
         pTinF() = &tinP ;                                                                   // I BECOME ACTIVE HERE
     
-        //conGF( NAME( pTinF()->idTinNamed ) ) ;
+        //conGF( NAME( ((tinNormalS*)pTinF())->idTinNamed ) ) ;
         //conGF( "ctCopy pTinF() [before,after]: " ) ;
     {
     if( ((tinNormalS&)tinP).pTinOld )
@@ -34,7 +34,7 @@
     //{
     //if( ((tinNormalS&)tinP).pTinOld )
 
-    tinNormalS& tinP = *(tinNormalS*)c_thisP ;
+    tinBaseS& tinP = *(tinNormalS*)c_thisP ;
 {
 /*1*/countT ctTellCopyDoneF( countT c_thisP )/*1*/
 

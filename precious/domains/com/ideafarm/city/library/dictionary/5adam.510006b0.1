@@ -72,7 +72,7 @@ TODO
     if( !( idt % TUCK ) )
     OSsLEEPf( 0 ) ;
 
-    tinNormalS&   tinP     = *pTinMain ;
+    tinBaseS&   tinP     = *pTinMain ;
     countT  idt      = 1 + incv02AM( idtLath ) ;
 {
 DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
@@ -279,9 +279,9 @@ if( pTaskP )
                 bTinOk = 1 ;_
             {
             if( pTin )
-            tinNormalS* pTin = new( 0 , tinP , LF ) tinNormalS( tinP , TAG( TAGiDnULL ) , pTaskP->idThread , pTinDad , "tmGorillaF" , flTINs_null , ifcIDtINnAMED_tinInPool ) ;_
+            tinBaseS* pTin = new( 0 , tinP , LF ) tinNormalS( tinP , TAG( TAGiDnULL ) , pTaskP->idThread , pTinDad , "tmGorillaF" , flTINs_null , ifcIDtINnAMED_tinInPool ) ;_
             TELL( "TASK0: newing a tinNormalS in the working poolOld" )
-            tinNormalS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : &pTaskP->tinDad ;_
+            tinBaseS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : &pTaskP->tinDad ;_
         {
         ZE( boolT , bTinOk ) ;_
         taskS* pTaskP = (taskS*)argP ;_
@@ -313,7 +313,7 @@ TASK0PROTO( tmGorillaF ) ;
 
 countT cThreads ;
 boolT  bQuit ;
-tinNormalS*  pTinMain ;
+tinBaseS*  pTinMain ;
 countT msAtBoot = ((tinNormalS&)tinP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , GetTickCount() )
 countT idtLath ;

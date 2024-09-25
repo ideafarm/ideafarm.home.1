@@ -257,7 +257,7 @@ TODO
 
     etherP.traceF( tinP , T( bMimeP ? "the body will be parsed as a MIME body" : "the body will NOT be parsed as a MIME body" ) ) ;
 {
-voidT emitAbridgementF( tinNormalS& tinP , etherC& etherP , fileC& foP , osTextT* postBufferInP , const boolT bMimeP , const osTextT* const postOuterBoundaryP )
+voidT emitAbridgementF( tinBaseS& tinP , etherC& etherP , fileC& foP , osTextT* postBufferInP , const boolT bMimeP , const osTextT* const postOuterBoundaryP )
 
 }
     //U::    etherP.fileWriteF( tinP , foP , postBufferInP , strlen( postBufferInP ) ) ; //U::FOR TESTING ONLY: THIS SHOULD RESULT IN AN OUTPUT FILE THAT IS IDENTICAL TO PASS 2 INPUT FILE
@@ -291,7 +291,7 @@ voidT emitAbridgementF( tinNormalS& tinP , etherC& etherP , fileC& foP , osTextT
     thirdC::c_strcpyIF( tinP , postLookMarker , T("--")+T(postbP) ) ;
     osTextT postLookMarker[ TUCK ] ;
 {
-voidT eatPartsF( tinNormalS& tinP , etherC& etherP , fileC& foP , osTextT* postP , const osTextT* const postbP )
+voidT eatPartsF( tinBaseS& tinP , etherC& etherP , fileC& foP , osTextT* postP , const osTextT* const postbP )
 
 }
     }
@@ -315,7 +315,7 @@ voidT eatPartsF( tinNormalS& tinP , etherC& etherP , fileC& foP , osTextT* postP
     if( postHdrEnd )
     osTextT* postHdrEnd = thirdC::c_strstrIF( tinP , postP , "\r\n\r\n" ) ;
 {
-voidT eatHeaderBodyF( tinNormalS& tinP , etherC& etherP , fileC& foP , osTextT* postP , const countT costP )
+voidT eatHeaderBodyF( tinBaseS& tinP , etherC& etherP , fileC& foP , osTextT* postP , const countT costP )
 
 }
     return bWant ;
@@ -328,7 +328,7 @@ voidT eatHeaderBodyF( tinNormalS& tinP , etherC& etherP , fileC& foP , osTextT* 
     postP[ costP ] = 0 ;
     osTextT save = postP[ costP ] ;
 {
-boolT bWantHeadF( tinNormalS& tinP , etherC& etherP , osTextT* postP , const countT costP )
+boolT bWantHeadF( tinBaseS& tinP , etherC& etherP , osTextT* postP , const countT costP )
 
 /*1*/WAKEsHOWtEXT( "doodle tool abridge mbox file" )/*1*/
 /**/

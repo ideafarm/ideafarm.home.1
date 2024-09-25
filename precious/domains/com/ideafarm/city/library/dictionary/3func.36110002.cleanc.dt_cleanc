@@ -24,7 +24,7 @@
         ;
             : 0        // 20171003@1214: UNTIL NOW, CODE BLAMMO'D HERE, FOR REASONS NOT CLEAR.  TO WORK AROUND THIS, I NOW JUST SILENTLY SET TO 0 AND LET THE RESTART HANDLER WORRY ABOUT THIS MYSTERY
             ? pD
-        pTin->pClean = pTin->pClean == this
+        ((tinNormalS*)pTin)->pClean = ((tinNormalS*)pTin)->pClean == this
 
         //20160515@0857: WITHIN PISS tmObeySoilF (NOT VERIFIED NOT ANALYZED)
         //20141210@0645: THIS BLAMMO OCCURRED WITHIN PISS (ADAM 651_) DURING EXCEPTION PROCESSING OF A READ ACCESS VIOLATION
@@ -40,10 +40,10 @@
         //CONoUTrAW7( "~cleanC / validating chain [idThread,this,pc]: " , ((tinNormalS&)tinP).monitor.idThread , " " , this , " " , pc , "\r\n" ) ;
         cleanC* pc = this ;
 
-        tinNormalS& tinP = *pTin ;
+        tinBaseS& tinP = *pTin ;
     {
     if( pTin )
-    tinNormalS* pTin = pTinF() ; //WILL BE 0 FOR ~tinNormalS FOR tinVeryVeryEarlyLateMainI
+    tinBaseS* pTin = pTinF() ; //WILL BE 0 FOR ~tinNormalS FOR tinVeryVeryEarlyLateMainI
 
     if( getNegAM( finger ) != FINGERnEG_CLEANc ) { BLAMMO ; }
 {

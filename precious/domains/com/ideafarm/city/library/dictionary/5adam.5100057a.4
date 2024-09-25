@@ -109,7 +109,7 @@ timeCt1( 0 ) ,
 idSession( 0 ) ,
 idAdam( 0 ) ,
 ether( etherP ) ,
-datumSessionC::datumSessionC( tinNormalS& tinP , etherC& etherP , soulC& soulP ) :
+datumSessionC::datumSessionC( tinBaseS& tinP , etherC& etherP , soulC& soulP ) :
 
 }
 {
@@ -128,7 +128,7 @@ timeCt2( 0 ) ,
 timeCt1( 0 ) ,
 idSession( 0 ) ,
 ether( *((tinNormalS&)tinP).pEther ) ,
-datumSessionC::datumSessionC( tinNormalS& tinP ) :
+datumSessionC::datumSessionC( tinBaseS& tinP ) :
 
 }
     return scSgn ;
@@ -180,7 +180,7 @@ plateC& datumSessionC::operator >>( soulC& sP )
 }
     return new( 0 , tinP , idLineP , idiFileP ) datumSessionC( tinP ) ;
 {
-datumSessionC* datumSessionC::newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , po olC& poolOldSetOldP )
+datumSessionC* datumSessionC::newF( tinBaseS& tinP , const countT idLineP , const countT idiFileP , po olC& poolOldSetOldP )
 
 NEWdELcLASS( 1 , datumSessionC )
 

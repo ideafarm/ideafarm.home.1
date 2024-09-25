@@ -113,7 +113,7 @@ TODO
     {
     IFbEcAREFUL
 {
-countT subtract_count4S_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_count4S_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
@@ -138,7 +138,7 @@ countT subtract_count4S_F( tinNormalS& tinP , countT& pEther , countT& c1P , cou
     {
     IFbEcAREFUL
 {
-countT subtract_tinC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_tinC_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
@@ -163,7 +163,7 @@ countT subtract_tinC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT
     {
     IFbEcAREFUL
 {
-countT subtract_processC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_processC_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
@@ -188,7 +188,7 @@ countT subtract_processC_F( tinNormalS& tinP , countT& pEther , countT& c1P , co
     {
     IFbEcAREFUL
 {
-countT subtract_cellC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_cellC_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return 0 ;
@@ -210,7 +210,7 @@ countT subtract_cellC_F( tinNormalS& tinP , countT& pEther , countT& c1P , count
     {
     THREADmODE2oN( flTHREADmODE2_DISALLOWtELLmONITOR )
 {
-boolT monitoredEventHandlerF( tinNormalS& tinP , const byteT* const pbP , const countT cbP , countT cP )
+boolT monitoredEventHandlerF( tinBaseS& tinP , const byteT* const pbP , const countT cbP , countT cP )
 
 //---- 9: GLOBAL FUNCTION DEFINITIONS : OTHER --------------------------------------------------------------------------------------------------
 
@@ -220,7 +220,7 @@ boolT monitoredEventHandlerF( tinNormalS& tinP , const byteT* const pbP , const 
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tinNormalS& tinP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tinBaseS& tinP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
     if( ether && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
@@ -287,7 +287,7 @@ voidT jobHearOrderF( tinNormalS& tinP , etherC& ether , etherC& etThread , const
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tinNormalS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tinBaseS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 //---- 8: GLOBAL FUNCTION DEFINITIONS : CHAT --------------------------------------------------------------------------------------------------
 
@@ -424,14 +424,14 @@ TASK( tmDeadLockF )
 }
     ether.winSetTitleF( tinP , TF1(cEvents)+T(" ")+TF1(cEventsPending) ) ;
 {
-voidT windowTitleS::writeF( tinNormalS& tinP )
+voidT windowTitleS::writeF( tinBaseS& tinP )
 
 }
 {
 cEvents( 0 )
 cEventsPending( 0 ) ,
 ether( etherP ) ,
-windowTitleS::windowTitleS( tinNormalS& tinP , etherC& etherP ) :
+windowTitleS::windowTitleS( tinBaseS& tinP , etherC& etherP ) :
 
 }
     }
@@ -450,14 +450,14 @@ windowTitleS::windowTitleS( tinNormalS& tinP , etherC& etherP ) :
     if( bCopy_pbTin )
     _IO_
 {
-voidT tinC::freshIfF( tinNormalS& tinP )
+voidT tinC::freshIfF( tinBaseS& tinP )
 
 }
     return bIs ;
     boolT bIs = !thirdC::c_strcmpIF( tinP , postThreadNameP , postThreadName ) ;
     _IO_
 {
-boolT tinC::bIsF( tinNormalS& tinP , const osTextT* const postThreadNameP )
+boolT tinC::bIsF( tinBaseS& tinP , const osTextT* const postThreadNameP )
 
 }
     }
@@ -489,7 +489,7 @@ pbTin( pvOrIda && saidP.idType == ifcIDtYPEtELLsYS_TINcTI ? (byteT*)ap_artmentOl
 pvOrIda( saidP.pbData && saidP.cbData == sizeof( tellInfoSysTinS ) ? ((tellInfoSysTinS*)saidP.pbData)->ip : 0 ) ,
 ether( tinP , TAG( TAGiDnULL ) , *((tinNormalS&)tinP).pag1->pPoolAdamTemp ) ,
 bSelf( !pInfoP ) ,
-tinC::tinC( tinNormalS& tinP , saidS& saidP , const ifcMonitorEventS* pInfoP ) :
+tinC::tinC( tinBaseS& tinP , saidS& saidP , const ifcMonitorEventS* pInfoP ) :
 
 }
     if( bCopy_pbTin ) ether.delF( tinP , pbTin ) ;
@@ -548,7 +548,7 @@ idType( 0 ) ,
 flags( 0 ) ,
 osPid( 0 ) ,
 osTid( 0 ) ,
-saidS::saidS( tinNormalS& tinP , etherC& etherP , const ifcMonitorEventS& infoP ) :
+saidS::saidS( tinBaseS& tinP , etherC& etherP , const ifcMonitorEventS& infoP ) :
 
 }
     }
@@ -575,7 +575,7 @@ idType( 0 ) ,
 flags( 0 ) ,
 osPid( 0 ) ,
 osTid( 0 ) ,
-saidS::saidS( tinNormalS& tinP , etherC& etherP , const byteT* const pbP , const countT cbP ) :
+saidS::saidS( tinBaseS& tinP , etherC& etherP , const byteT* const pbP , const countT cbP ) :
 
 }
     PUSE( tinP , pbData ) ;
@@ -593,7 +593,7 @@ boolT processC::operator ==( const cP ) const
 osPid( infoP.osPid )
 osTid( infoP.osTid ) ,
 ether( tinP , TAG( TAGiDnULL ) , *((tinNormalS&)tinP).pag1->pPoolAdamTemp ) ,
-processC::processC( tinNormalS& tinP , const ifcMonitorEventS& infoP ) :
+processC::processC( tinBaseS& tinP , const ifcMonitorEventS& infoP ) :
 
 NEWdELcLASSb( processC )
 
@@ -631,7 +631,7 @@ fifoC& fifoC::operator <<( countT cP )
 }
     return bLocked ;
 {
-boolT fifoC::bLockedF( tinNormalS& tinP ) const
+boolT fifoC::bLockedF( tinBaseS& tinP ) const
 
 }
     return cHave ;
@@ -644,7 +644,7 @@ bLocked( 0 )
 cHave( 0 ) ,
 offGetNext( 0 ) ,
 offPutNext( 0 ) ,
-fifoC::fifoC( tinNormalS& tinP ) :
+fifoC::fifoC( tinBaseS& tinP ) :
 
 }
     }
@@ -1077,7 +1077,7 @@ fifoC::fifoC( tinNormalS& tinP ) :
     _IO_
     TELL( "hearF: setting up" )
 {
-voidT eventC::hearF( tinNormalS& tinP , boolT& bLogTinEventP )
+voidT eventC::hearF( tinBaseS& tinP , boolT& bLogTinEventP )
 
 }
     }
@@ -1236,7 +1236,7 @@ voidT eventC::hearF( tinNormalS& tinP , boolT& bLogTinEventP )
 
     if( ether ) return ;
 {
-voidT eventC::handleF( tinNormalS& tinP )
+voidT eventC::handleF( tinBaseS& tinP )
 
 }
 {
@@ -1246,7 +1246,7 @@ cell( cellP ) ,
 ether( cellP.ether ) ,
 idEvent( ++ cellP.idEventLast ) ,
 osIdEvent( ifcIDeVENTmONITORED_SAY ) ,
-eventC::eventC( tinNormalS& tinP , cellC& cellP , const byteT* const pbP , const countT cbP ) :
+eventC::eventC( tinBaseS& tinP , cellC& cellP , const byteT* const pbP , const countT cbP ) :
 
 }
     pInfoP = 0 ;
@@ -1258,7 +1258,7 @@ cell( cellP ) ,
 ether( cellP.ether ) ,
 idEvent( ++ cellP.idEventLast ) ,
 osIdEvent( pInfoP->idEvent ) ,
-eventC::eventC( tinNormalS& tinP , cellC& cellP , const ifcMonitorEventS*& pInfoP ) :
+eventC::eventC( tinBaseS& tinP , cellC& cellP , const ifcMonitorEventS*& pInfoP ) :
 
 }
     DEL( (ifcMonitorEventS*&)pInfo ) ;
@@ -1294,11 +1294,11 @@ NEWdELcLASSb( eventC )
     {
     if( stTinc )
     stTinc.grabF( tinP , TAG( TAGiDnULL ) ) ;
-    ZE( tinNormalS* , pTinRaw ) ;
+    ZE( tinBaseS* , pTinRaw ) ;
     __NZ( pcRefP ) ;
     _IO_
 {
-tinNormalS* const cellC::pTinRawF( tinNormalS& tinP , countT*& pcRefP , const ifcMonitorEventS& infoP ) //RETURNS PTR TO A RAW COPY; DO NOT USE POINTER FIELDS
+tinNormalS* const cellC::pTinRawF( tinBaseS& tinP , countT*& pcRefP , const ifcMonitorEventS& infoP ) //RETURNS PTR TO A RAW COPY; DO NOT USE POINTER FIELDS
 //U::CURRENTLY NOT USED.  MIGHT NEED TO BE REWRITTEN
 
 #if defined( NEVERdEFINED )
@@ -1326,7 +1326,7 @@ tinNormalS* const cellC::pTinRawF( tinNormalS& tinP , countT*& pcRefP , const if
 
     _IO_
 {
-voidT cellC::fireF( tinNormalS& tinP )
+voidT cellC::fireF( tinBaseS& tinP )
 
 }
 
@@ -1343,7 +1343,7 @@ voidT cellC::fireF( tinNormalS& tinP )
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classShutdown2F( tinNormalS& tinP )
+voidT cellC::classShutdown2F( tinBaseS& tinP )
 
 }
     idPhase = 3 ;
@@ -1368,7 +1368,7 @@ voidT cellC::classShutdown2F( tinNormalS& tinP )
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classShutdown1F( tinNormalS& tinP , countT& idCellLathP , countT& serialLathP )
+voidT cellC::classShutdown1F( tinBaseS& tinP , countT& idCellLathP , countT& serialLathP )
 
 }
 
@@ -1407,7 +1407,7 @@ voidT cellC::classShutdown1F( tinNormalS& tinP , countT& idCellLathP , countT& s
 
     if( pEtClass || idPhase ) BLAMMO ;
 {
-voidT cellC::classSetupF( tinNormalS& tinP , const countT idCellLathP , const countT serialLathP , const boolT bBaseP , windowTitleS& windowTitleP )
+voidT cellC::classSetupF( tinBaseS& tinP , const countT idCellLathP , const countT serialLathP , const boolT bBaseP , windowTitleS& windowTitleP )
 
 }
     pEtClass->strokeF( tinP , T("classSerialNumberF2: assigning range [")+TF1(wothP)+T(",")+TF1(lathP)+T("] (")+TF1(cWantP)+T(")\r\n") ) ;
@@ -1426,7 +1426,7 @@ voidT cellC::classSetupF( tinNormalS& tinP , const countT idCellLathP , const co
     if( !pEtClass ) BLAMMO ;
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classSerialNumberF( tinNormalS& tinP , countT& wothP , countT& lathP , const countT cWantP )
+voidT cellC::classSerialNumberF( tinBaseS& tinP , countT& wothP , countT& lathP , const countT cWantP )
 */
  cWantP
  lathP
@@ -1450,7 +1450,7 @@ i allocate a range of nonze serial numbers
     if( !pEtClass ) BLAMMO ;
     if( !bEnabled ) BLAMMO ;
 {
-countT cellC::classSerialNumberF( tinNormalS& tinP )
+countT cellC::classSerialNumberF( tinBaseS& tinP )
 
 static osTextT pb2U[] = "E" ;
 
@@ -1479,7 +1479,7 @@ static osTextT pb2U[] = "E" ;
     if( !pEtClass ) BLAMMO ;
     if( !bEnabled ) BLAMMO ;
 {
-countT cellC::classQuery_cHandle_F( tinNormalS& tinP )
+countT cellC::classQuery_cHandle_F( tinBaseS& tinP )
 
 }
     THREADmODE2rESTORE
@@ -1516,7 +1516,7 @@ countT cellC::classQuery_cHandle_F( tinNormalS& tinP )
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classLogF( tinNormalS& tinP , const strokeS* const psttP , const tinNormalS* const pTinEventRawP , const ifcMonitorEventS* const pInfoP )
+voidT cellC::classLogF( tinBaseS& tinP , const strokeS* const psttP , const tinBaseS* const pTinEventRawP , const ifcMonitorEventS* const pInfoP )
 
 }
     ether.fileWriteF( tinP , handle , tr , tr.csF( tinP ) ) ;
@@ -1803,7 +1803,7 @@ voidT cellC::classLogF( tinNormalS& tinP , const strokeS* const psttP , const ti
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classInspectF( tinNormalS& tinP , stackC& stCellCopyP , etherC& etPrimeP , stackC& st_pGrabP , stackC& stOsTidAllWanterP , stackC& stOsTidWanterP , stackC& stOsTidWanterInLoopP , stackC& stOsTidWanterInLoopUniqueP , stackC& stThreadsP , count3S& c3lifiP , switchC& swGrabTallyP )
+voidT cellC::classInspectF( tinBaseS& tinP , stackC& stCellCopyP , etherC& etPrimeP , stackC& st_pGrabP , stackC& stOsTidAllWanterP , stackC& stOsTidWanterP , stackC& stOsTidWanterInLoopP , stackC& stOsTidWanterInLoopUniqueP , stackC& stThreadsP , count3S& c3lifiP , switchC& swGrabTallyP )
 
 }
     return bLoop ;
@@ -1887,7 +1887,7 @@ voidT cellC::classInspectF( tinNormalS& tinP , stackC& stCellCopyP , etherC& etP
     {
     ZE( stackC* , pnu ) ;
 {
-boolT lockedWantersRF( tinNormalS& tinP , etherC& etherP , boolT& bPseudoP , strokeS*& psttP , stackC& stOsTidWanterP , count5S& osTidWanterP , stackC& st_pGrabP , stackC& stOsTidWanterInLoopP )
+boolT lockedWantersRF( tinBaseS& tinP , etherC& etherP , boolT& bPseudoP , strokeS*& psttP , stackC& stOsTidWanterP , count5S& osTidWanterP , stackC& st_pGrabP , stackC& stOsTidWanterInLoopP )
 
 }
     return bLoop ;
@@ -1907,13 +1907,13 @@ boolT lockedWantersRF( tinNormalS& tinP , etherC& etherP , boolT& bPseudoP , str
     for( countT off = 0 ; off < CgRABwANTmAX ; off ++ )
     ZE( boolT , bLoop ) ;
 {
-boolT wantersF( tinNormalS& tinP , stackC& stOsTidWanterP , grabAnnotatedS& copyP )
+boolT wantersF( tinBaseS& tinP , stackC& stOsTidWanterP , grabAnnotatedS& copyP )
 
 }
     return *(countT*)c1P - *(countT*)c2P ;
     if( pEther && ((tinNormalS&)tinP).fingerprint && c3P ) ;
 {
-countT subtractWantersF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractWantersF( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return pc1[ 0 ] - pc2[ 0 ] ? pc1[ 0 ] - pc2[ 0 ] : pc1[ 1 ] - pc2[ 1 ] ;
@@ -1922,7 +1922,7 @@ countT subtractWantersF( tinNormalS& tinP , countT& pEther , countT& c1P , count
     countT* pc1 = (countT*)c1P ;
     if( pEther && ((tinNormalS&)tinP).fingerprint && c3P ) ;
 {
-countT subtract_grabInfoS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_grabInfoS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     }
@@ -1936,7 +1936,7 @@ countT subtract_grabInfoS_F( tinNormalS& tinP , countT& pEther , countT& c1P , c
     {
     if( st_pGrabP )
 {
-voidT haveF( tinNormalS& tinP , stackC& stSerialHaveP , const countT osTidP , stackC& st_pGrabP )
+voidT haveF( tinBaseS& tinP , stackC& stSerialHaveP , const countT osTidP , stackC& st_pGrabP )
 
 }
     return pFound ;
@@ -1953,7 +1953,7 @@ voidT haveF( tinNormalS& tinP , stackC& stSerialHaveP , const countT osTidP , st
     if( st_pGrabP )
     ZE( grabAnnotatedS* , pFound ) ;
 {
-grabAnnotatedS* pCopyF( tinNormalS& tinP , const countT serialP , stackC& st_pGrabP )
+grabAnnotatedS* pCopyF( tinBaseS& tinP , const countT serialP , stackC& st_pGrabP )
 
 }
     return bOk ;
@@ -1980,7 +1980,7 @@ grabAnnotatedS* pCopyF( tinNormalS& tinP , const countT serialP , stackC& st_pGr
     grabOldS* const pTo = (grabOldS*)pbToP ;
     ZE( boolT , bOk ) ;
 {
-boolT readProcessMemoryF( tinNormalS& tinP , etherC& etherP , byteT* const pbToP , grabInfoS& infoP , const countT cbP )
+boolT readProcessMemoryF( tinBaseS& tinP , etherC& etherP , byteT* const pbToP , grabInfoS& infoP , const countT cbP )
 
 }
     return 0 ;
@@ -1995,7 +1995,7 @@ inline boolT bWantedF( grabOldS& grabP , count3S& c3lifiP , switchC& swGrabTally
 }
     return idPhase ;
 {
-countT cellC::classIdPhaseF( tinNormalS& tinP )
+countT cellC::classIdPhaseF( tinBaseS& tinP )
 
 }
     SLEEPwHILE( cFirePending ) ;
@@ -2033,7 +2033,7 @@ countT cellC::classIdPhaseF( tinNormalS& tinP )
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classFireAllF( tinNormalS& tinP )
+voidT cellC::classFireAllF( tinBaseS& tinP )
 
 }
     _deleteMyselfF( tinP ) ;
@@ -2200,7 +2200,7 @@ CONoUTrAW( "2" ) ; //U::
     //ether.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_RUSH ) ;
     etherC& ether = etThreadP ; //THIS HIDES this->ether SO THAT I USE THE THREAD'S UNSERIALIZED POOLoLD
 {
-cellC::_liveF( tinNormalS& tinP , etherC& etThreadP )
+cellC::_liveF( tinBaseS& tinP , etherC& etThreadP )
 
 */
   base monitor wants to grab X in order to handle event M
@@ -2274,7 +2274,7 @@ i capture event info and place it onto a stack
 
     _IO_
 {
-voidT cellC::ctF( tinNormalS& tinP , const strokeS* const psttArgsP )
+voidT cellC::ctF( tinBaseS& tinP , const strokeS* const psttArgsP )
 
 DONE( tmHandleEventsF )
 //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ; //U::
@@ -2343,7 +2343,7 @@ idAdam( idAdamP ? idAdamP : DDNUMB ) ,
 idCell( 0 ) ,
 ether( tinP , TAG( TAGiDnULL ) , poolOld ) ,
 poolOld( tinP , TAG( TAGiDnULL ) , TF1(DDNUMB)+T(".cellC.")+TF1(idAdamP)+T(".")+TF1((countT)this) , CBpOOLoLDcELL ) ,
-cellC::cellC( tinNormalS& tinP , const countT idAdamP , const strokeS* const psttArgsP ) :
+cellC::cellC( tinBaseS& tinP , const countT idAdamP , const strokeS* const psttArgsP ) :
 //IF !idAdamP THEN THE OBJECT WILL MONITOR THE PROCESS THAT CONTAINS IT
 
 }
@@ -2384,7 +2384,7 @@ idAdam( 0 ) ,
 idCell( 0 ) ,
 ether( tinP , TAG( TAGiDnULL ) ) ,
 poolOld( tinP , TAG( TAGiDnULL ) , TF1(DDNUMB)+T(".cellC.")+T(psttExeP)+T(".")+TF1((countT)this) , CBpOOLoLDcELL ) ,
-cellC::cellC( tinNormalS& tinP , const strokeS* const psttExeP , const strokeS* const psttArgsP ) :
+cellC::cellC( tinBaseS& tinP , const strokeS* const psttExeP , const strokeS* const psttArgsP ) :
 
 }
 if( idAdam == 0x401044d ) dec02AM( bInspector ) ; //U::
@@ -2469,8 +2469,8 @@ boolT bInspector ; //U::
 
 ;
 }
-    voidT writeF( tinNormalS& tinP ) ;
-    windowTitleS( tinNormalS& tinP , etherC& etherP ) ;
+    voidT writeF( tinBaseS& tinP ) ;
+    windowTitleS( tinBaseS& tinP , etherC& etherP ) ;
 
     countT          cEvents ;
     countT          cEventsPending ;
@@ -2480,12 +2480,12 @@ struct windowTitleS
 
 ;
 }
-    friend tinNormalS* const cellC::pTinRawF( tinNormalS& tinP , countT*& pcRefP , const ifcMonitorEventS& infoP ) ;
-    friend countT  subtract_tinC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+    friend tinNormalS* const cellC::pTinRawF( tinBaseS& tinP , countT*& pcRefP , const ifcMonitorEventS& infoP ) ;
+    friend countT  subtract_tinC_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
 
-    boolT           bIsF( tinNormalS& tinP , const osTextT* const postThreadNameP ) ;
-    voidT           freshIfF( tinNormalS& tinP ) ;
-                    tinC( tinNormalS& tinP , saidS& saidP , const ifcMonitorEventS* pInfoP = 0 ) ;
+    boolT           bIsF( tinBaseS& tinP , const osTextT* const postThreadNameP ) ;
+    voidT           freshIfF( tinBaseS& tinP ) ;
+                    tinC( tinBaseS& tinP , saidS& saidP , const ifcMonitorEventS* pInfoP = 0 ) ;
                     ~tinC( voidT ) ;
                     NEWdELcLASSpROTOS( tinC , etherC , thirdC )
 
@@ -2508,10 +2508,10 @@ class tinC
 
 ;
 }
-    friend countT   subtract_processC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+    friend countT   subtract_processC_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
 
     boolT           operator ==( const cP ) const ;
-                    processC( tinNormalS& tinP , const ifcMonitorEventS& infoP ) ;
+                    processC( tinBaseS& tinP , const ifcMonitorEventS& infoP ) ;
                     NEWdELcLASSpROTOS( processC , etherC , thirdC )
 
     public :
@@ -2535,15 +2535,15 @@ struct grabInfoS
 
 ;
 }
-    voidT                   handleF( tinNormalS& tinP ) ;
-                            eventC( tinNormalS& tinP , cellC& cellP , const byteT* const pbP , const countT cbP ) ;
-                            eventC( tinNormalS& tinP , cellC& cellP , const ifcMonitorEventS*& pInfoP ) ;
+    voidT                   handleF( tinBaseS& tinP ) ;
+                            eventC( tinBaseS& tinP , cellC& cellP , const byteT* const pbP , const countT cbP ) ;
+                            eventC( tinBaseS& tinP , cellC& cellP , const ifcMonitorEventS*& pInfoP ) ;
                             ~eventC( voidT ) ;
                             NEWdELcLASSpROTOS( eventC , etherC , thirdC )
 
                             public :
 
-    voidT                   hearF( tinNormalS& tinP , boolT& bLogTinEventP ) ;
+    voidT                   hearF( tinBaseS& tinP , boolT& bLogTinEventP ) ;
 
     saidS                   said ;
     const ifcMonitorEventS* pInfo ;
@@ -2556,8 +2556,8 @@ class eventC
 
 ;
 }
-            saidS( tinNormalS& tinP , etherC& etherP , const byteT* const pbP , const countT cbP ) ;
-            saidS( tinNormalS& tinP , etherC& etherP , const ifcMonitorEventS& infoP ) ;
+            saidS( tinBaseS& tinP , etherC& etherP , const byteT* const pbP , const countT cbP ) ;
+            saidS( tinBaseS& tinP , etherC& etherP , const ifcMonitorEventS& infoP ) ;
             ~saidS( voidT ) ;
 
             const byteT* const  pbData ;
@@ -2571,24 +2571,24 @@ struct saidS
 
 ;
 }
-    friend boolT    monitoredEventHandlerF( tinNormalS& tinP , const byteT* const pbP , const countT cbP , countT cP ) ;
+    friend boolT    monitoredEventHandlerF( tinBaseS& tinP , const byteT* const pbP , const countT cbP , countT cP ) ;
     friend class    eventC ;
     friend TASKpROTO( tmHandleEventsF ) ;
     friend TASKpROTO( tmFireCellF ) ;
-    friend countT   subtract_cellC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+    friend countT   subtract_cellC_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
 
-    static voidT    classSerialNumberF( tinNormalS& tinP , countT& wothP , countT& lathP , const countT cWantP ) ;
-    static countT   classSerialNumberF( tinNormalS& tinP ) ;
-    static voidT    classLogF( tinNormalS& tinP , const strokeS* const psttP , const tinNormalS* const pTinEventRawP = 0 , const ifcMonitorEventS* const pInfoP = 0 ) ;
-    static countT   classIdPhaseF( tinNormalS& tinP ) ;
-    static voidT    classInspectF( tinNormalS& tinP , stackC& stCellCopyP , etherC& etPrimeP , stackC& st_pGrabP , stackC& stOsTidAllWanterP , stackC& stOsTidWanterP , stackC& stOsTidWanterInLoopP , stackC& stOsTidWanterInLoopUniqueP , stackC& stThreadsP , count3S& c3lifiP , switchC& swGrabTallyP ) ;
-    static countT   classQuery_cHandle_F( tinNormalS& tinP ) ;
-    static voidT    classFireAllF( tinNormalS& tinP ) ;
-    static voidT    classShutdown2F( tinNormalS& tinP ) ;
-    static voidT    classShutdown1F( tinNormalS& tinP , countT& idCellLathP , countT& serialLathP ) ;
-    static voidT    classSetupF( tinNormalS& tinP , const countT idCellLathP , const countT serialLathP , const boolT bBaseP , windowTitleS& windowTitleP ) ;
-                    cellC( tinNormalS& tinP , const strokeS* const psttExeP , const strokeS* const psttArgsP = 0 ) ;
-                    cellC( tinNormalS& tinP , const countT idAdamP = 0 , const strokeS* const psttArgsP = 0 ) ;
+    static voidT    classSerialNumberF( tinBaseS& tinP , countT& wothP , countT& lathP , const countT cWantP ) ;
+    static countT   classSerialNumberF( tinBaseS& tinP ) ;
+    static voidT    classLogF( tinBaseS& tinP , const strokeS* const psttP , const tinBaseS* const pTinEventRawP = 0 , const ifcMonitorEventS* const pInfoP = 0 ) ;
+    static countT   classIdPhaseF( tinBaseS& tinP ) ;
+    static voidT    classInspectF( tinBaseS& tinP , stackC& stCellCopyP , etherC& etPrimeP , stackC& st_pGrabP , stackC& stOsTidAllWanterP , stackC& stOsTidWanterP , stackC& stOsTidWanterInLoopP , stackC& stOsTidWanterInLoopUniqueP , stackC& stThreadsP , count3S& c3lifiP , switchC& swGrabTallyP ) ;
+    static countT   classQuery_cHandle_F( tinBaseS& tinP ) ;
+    static voidT    classFireAllF( tinBaseS& tinP ) ;
+    static voidT    classShutdown2F( tinBaseS& tinP ) ;
+    static voidT    classShutdown1F( tinBaseS& tinP , countT& idCellLathP , countT& serialLathP ) ;
+    static voidT    classSetupF( tinBaseS& tinP , const countT idCellLathP , const countT serialLathP , const boolT bBaseP , windowTitleS& windowTitleP ) ;
+                    cellC( tinBaseS& tinP , const strokeS* const psttExeP , const strokeS* const psttArgsP = 0 ) ;
+                    cellC( tinBaseS& tinP , const countT idAdamP = 0 , const strokeS* const psttArgsP = 0 ) ;
                     NEWdELcLASSpROTOS( cellC , etherC , thirdC ) //NEVER STORE A POINTER TO A cellC OBJECT; THE cellC OBJECT DESTROYS ITSELF VOLATILELY
                     LIFEpROTO
                     //WHEN INSERTING FUNCTION PROTOTYPES, PUT THEM BELOW, IN THE PRIVATE SECTION
@@ -2600,9 +2600,9 @@ struct saidS
 
     inline voidT    unrefF( voidT ) { dec02AM( cRef ) ; }
     inline voidT    refF(   voidT ) { inc02AM( cRef ) ; }
-    tinNormalS* const     pTinRawF( tinNormalS& tinP , countT*& pcRefP , const ifcMonitorEventS& infoP ) ; //RETURNS PTR TO RAW COPY; DO NOT USE PTR FIELDS
-    voidT           fireF( tinNormalS& tinP ) ;
-    voidT           ctF( tinNormalS& tinP , const strokeS* const psttArgsP ) ;
+    tinBaseS* const     pTinRawF( tinBaseS& tinP , countT*& pcRefP , const ifcMonitorEventS& infoP ) ; //RETURNS PTR TO RAW COPY; DO NOT USE PTR FIELDS
+    voidT           fireF( tinBaseS& tinP ) ;
+    voidT           ctF( tinBaseS& tinP , const strokeS* const psttArgsP ) ;
                     ~cellC( voidT ) ;
 
     countT          cDebug2 ;
@@ -2664,11 +2664,11 @@ class cellC
 
 ;
 }
-    boolT bLockedF( tinNormalS& tinP ) const ;
+    boolT bLockedF( tinBaseS& tinP ) const ;
     operator countT( voidT ) ;
     fifoC& operator >>( countT& cP ) ;//ASSUME: CALLED ONLY BY A SINGLE THREAD B (B AND A CAN BE THE SAME THREAD)
     fifoC& operator <<( countT cP ) ; //ASSUME: CALLED ONLY BY A SINGLE THREAD A
-    fifoC( tinNormalS& tinP ) ;
+    fifoC( tinBaseS& tinP ) ;
 
     public :
 
@@ -2691,11 +2691,11 @@ struct saidS ;
 TASKpROTO( tmFireCellF ) ;
 TASK0PROTO( tmFireCellF ) ;
 TASK0PROTO( tmFireMyselfF ) ;
-countT subtract_tinC_F(     tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_processC_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_count4S_F(  tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_cellC_F(    tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-boolT monitoredEventHandlerF( tinNormalS& tinP , const byteT* const pbP , const countT cbP , countT cP ) ;
+countT subtract_tinC_F(     tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_processC_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_count4S_F(  tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_cellC_F(    tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+boolT monitoredEventHandlerF( tinBaseS& tinP , const byteT* const pbP , const countT cbP , countT cP ) ;
 
 //---- 3: PROTOTYPES ------------------------------------------------------------------------------------------------------------------
 
@@ -2739,7 +2739,7 @@ if( idAdam == 0x4010418 )                                                       
 }
 {
 stateC( tinP , etherP , sizeof *this , 0 , translateStateF , 0 , psttSuffixP )
-stateS::stateS( tinNormalS& tinP , etherC& etherP , const strokeS* const psttSuffixP ) :
+stateS::stateS( tinBaseS& tinP , etherC& etherP , const strokeS* const psttSuffixP ) :
 TRANSLATEsTATE_END
 ( state.idChatLath = state.idChatLath ) ;
 ( state.serialLath   = state.serialLath   ) ;
@@ -2754,7 +2754,7 @@ case 1 :
 TRANSLATEsTATE_BEGIN( stateS , 1 )
 ;
 }
-stateS( tinNormalS& tinP , etherC& etherP , const strokeS* const psttSuffixP = 0 ) ;
+stateS( tinBaseS& tinP , etherC& etherP , const strokeS* const psttSuffixP = 0 ) ;
 countT idChatLath ;
 countT serialLath ;
 countT idCellLath ;

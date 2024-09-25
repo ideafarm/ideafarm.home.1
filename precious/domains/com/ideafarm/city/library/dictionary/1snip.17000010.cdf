@@ -7,7 +7,7 @@
 //
 
 
-/*1*/voidT cdF( tinNormalS& tinP , thirdC& third , const osTextT* const postP ) ;/*1*/
+/*1*/voidT cdF( tinBaseS& tinP , thirdC& third , const osTextT* const postP ) ;/*1*/
 /**/
 */
 \<A HREF=\"5.0040024.1.0.html\"\>definition\</A\>

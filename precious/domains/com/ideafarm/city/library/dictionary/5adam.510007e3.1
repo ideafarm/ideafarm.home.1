@@ -1385,7 +1385,7 @@ TASK( tmCollectFileMetaF )
     {
     IFbEcAREFUL
 {
-/*1*/countT subtractJottedOsTextF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractJottedOsTextF( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
     return *pfr1 - *pfr2 ;
@@ -1393,12 +1393,12 @@ TASK( tmCollectFileMetaF )
     fileMetaS* pfr2 = (fileMetaS*)c2P ;
     fileMetaS* pfr1 = (fileMetaS*)c1P ;
 {
-/*1*/countT subtractFileMetaF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractFileMetaF( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
     ((tinNormalS&)tinP).pEther->traceF( tinP , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
 {
-voidT imageCompareS::traceF( tinNormalS& tinP , const strokeS* const psttP )
+voidT imageCompareS::traceF( tinBaseS& tinP , const strokeS* const psttP )
 
 }
     //traceF( tinP , T("ct      :    ") ) ;
@@ -1418,7 +1418,7 @@ sCountT fileMetaS::operator -( const fileMetaS& frP ) const
 }
     ((tinNormalS&)tinP).pEther->traceF( tinP , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
 {
-voidT fileMetaS::traceF( tinNormalS& tinP , stackC& stPathToYearP , const strokeS* const psttP )
+voidT fileMetaS::traceF( tinBaseS& tinP , stackC& stPathToYearP , const strokeS* const psttP )
 
 }
     timeModRounded = *(countT*)( (byteT*)pc2 + 3 ) + bRoundUp ;
@@ -1435,7 +1435,7 @@ time2Mod( time2ModP ) ,
 time1Mod( time1ModP ) ,
 cbUsed( cbUsedP ) ,
 timeModRounded( 0 ) ,
-fileMetaS::fileMetaS( tinNormalS& tinP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) :
+fileMetaS::fileMetaS( tinBaseS& tinP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) :
 
 NEWdELcLASS( 1 , fileMetaS ) ;
 
@@ -1445,7 +1445,7 @@ const countT cResultsPerStruct = sizeof( countT ) * SB / 2 ;     // 2 BITS ARE U
 
 ;
 }
-    voidT traceF( tinNormalS& tinP , const strokeS* const psttP = 0 ) ;
+    voidT traceF( tinBaseS& tinP , const strokeS* const psttP = 0 ) ;
     inline sCountT operator -( imageCompareS& picP ) { return bitsResult - picP.bitsResult ; }
     imageCompareS( voidT ) ;
     NEWdELcLASSpROTOS
@@ -1457,8 +1457,8 @@ struct imageCompareS
 ;
 }
     sCountT operator -( const fileMetaS& frP ) const ;
-    voidT traceF( tinNormalS& tinP , stackC& stPathToYearP , const strokeS* const psttP = 0 ) ;
-    fileMetaS( tinNormalS& tinP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) ;
+    voidT traceF( tinBaseS& tinP , stackC& stPathToYearP , const strokeS* const psttP = 0 ) ;
+    fileMetaS( tinBaseS& tinP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) ;
     NEWdELcLASSpROTOS
 
     countT   idSlotPathToYear ;

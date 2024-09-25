@@ -265,7 +265,7 @@ TODO
     ZE(  countT , timeN1 ) ;
     _IO_    TLNA( "renameOldReportFilesF" )
 {
-voidT renameOldReportFilesF( tinNormalS& tinP , etherC& etThread )
+voidT renameOldReportFilesF( tinBaseS& tinP , etherC& etThread )
 
 #endif
 DONE( tmLockupF )
@@ -1049,7 +1049,7 @@ TASK( tmWhereRptF )
     boolT    bAdam  = idTypeP == IDtYPErPT_ADAM ;
     count5S& c5l    = *(count5S*)pbLeverP ;
 {
-voidT writeFineReportF( tinNormalS& tinP , etherC& etThread , stackC& st_psttrBodyP , stackC& st_psttrFileNameP , switchC& swP , byteT* const pbLeverP , const countT cbLeverP , stackC& stLifiP , const countT idReportP , stackC& stFlavorP , stackC& stRecycle_pwtFineP , const countT idTypeP )
+voidT writeFineReportF( tinBaseS& tinP , etherC& etThread , stackC& st_psttrBodyP , stackC& st_psttrFileNameP , switchC& swP , byteT* const pbLeverP , const countT cbLeverP , stackC& stLifiP , const countT idReportP , stackC& stFlavorP , stackC& stRecycle_pwtFineP , const countT idTypeP )
 #define IDtYPErPT_HOST           0x4
 #define IDtYPErPT_CLASS          0x3
 #define IDtYPErPT_ADAM           0x2
@@ -1260,7 +1260,7 @@ TASK( tmWhereF )
     //stRecycle_pwtFineP.grabF( tinP , TAG( TAGiDnULL ) ) ;
     ZE( whereTalliesFineS* , pwtf ) ;
 {
-whereTalliesFineS* pwtFineF( tinNormalS& tinP , thirdC& thirdP , stackC& stRecycle_pwtFineP )
+whereTalliesFineS* pwtFineF( tinBaseS& tinP , thirdC& thirdP , stackC& stRecycle_pwtFineP )
 
 }
     return pwtg ;
@@ -1271,7 +1271,7 @@ whereTalliesFineS* pwtFineF( tinNormalS& tinP , thirdC& thirdP , stackC& stRecyc
     //stRecycle_pwtGrossP.grabF( tinP , TAG( TAGiDnULL ) ) ;
     ZE( whereTalliesGrossS* , pwtg ) ;
 {
-whereTalliesGrossS* pwtGrossF( tinNormalS& tinP , thirdC& thirdP , stackC& stRecycle_pwtGrossP )
+whereTalliesGrossS* pwtGrossF( tinBaseS& tinP , thirdC& thirdP , stackC& stRecycle_pwtGrossP )
 
 }
     TELL( "cleaning up after handling an entry in stTinWhere" )
@@ -1368,7 +1368,7 @@ whereTalliesGrossS* pwtGrossF( tinNormalS& tinP , thirdC& thirdP , stackC& stRec
     {
     const countT idnf = copy1P.monitor.cInNest < 1 + OFFsLOTtINnESTmAX ? 1 : ( copy1P.monitor.cInNest - OFFsLOTtINnESTmAX ) & OFFsLOTtINnESTmAX ;
 {
-voidT tallyF( tinNormalS& tinP , etherC& etThread , whereTalliesFineS& wtfP , whereOldS& copy1P , stackC& stLifiP )
+voidT tallyF( tinBaseS& tinP , etherC& etThread , whereTalliesFineS& wtfP , whereOldS& copy1P , stackC& stLifiP )
 
 }
     if( ((tinNormalS&)tinP).fingerprint && etThread && stLifiP ) ; //SO MACRO CAN BE USED
@@ -1380,7 +1380,7 @@ voidT tallyF( tinNormalS& tinP , etherC& etThread , whereTalliesFineS& wtfP , wh
     wtgP.swTally.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
 {
-voidT tallyF( tinNormalS& tinP , etherC& etThread , whereTalliesGrossS& wtgP , whereOldS& copy1P , stackC& stLifiP )
+voidT tallyF( tinBaseS& tinP , etherC& etThread , whereTalliesGrossS& wtgP , whereOldS& copy1P , stackC& stLifiP )
 
 //}
 //    etThread.delF( tinP , psttl ) ;                                                         \
@@ -2508,7 +2508,7 @@ TASK( tmRptMainF )
     wtgP.swTally.grabF( tinP , TAG( TAGiDnULL ) ) ;
     TN( tc , "\r\n" ) ;
 {
-voidT writeGrossReportF( tinNormalS& tinP , etherC& etThread , stackC& stRptP , whereTalliesGrossS& wtgP , stackC& stFlavorP )
+voidT writeGrossReportF( tinBaseS& tinP , etherC& etThread , stackC& stRptP , whereTalliesGrossS& wtgP , stackC& stFlavorP )
 
 }
     swWhereTallyActiveThreadP.ungrabF( tinP ) ;
@@ -2556,7 +2556,7 @@ voidT writeGrossReportF( tinNormalS& tinP , etherC& etThread , stackC& stRptP , 
     TN( tc , "\r\n" ) ;
     TN( tb , " " ) ;
 {
-voidT writeActiveReportF( tinNormalS& tinP , etherC& etThread , stackC& stRptP , switchC& swWhereTallyActiveThreadP , count5S& c5leverTallyActiveThreadP , stackC& stFlavorP , stackC& stLifiP )
+voidT writeActiveReportF( tinBaseS& tinP , etherC& etThread , stackC& stRptP , switchC& swWhereTallyActiveThreadP , count5S& c5leverTallyActiveThreadP , stackC& stFlavorP , stackC& stLifiP )
 
 }
     swWhereTallyTalkingP.ungrabF( tinP ) ;
@@ -2604,7 +2604,7 @@ voidT writeActiveReportF( tinNormalS& tinP , etherC& etThread , stackC& stRptP ,
     TN( tc , "\r\n" ) ;
     TN( tb , " " ) ;
 {
-voidT writeTalkingReportF( tinNormalS& tinP , etherC& etThread , stackC& stRptP , switchC& swWhereTallyTalkingP , count5S& c5leverTallyTalkingP , stackC& stFlavorP , stackC& stLifiP )
+voidT writeTalkingReportF( tinBaseS& tinP , etherC& etThread , stackC& stRptP , switchC& swWhereTallyTalkingP , count5S& c5leverTallyTalkingP , stackC& stFlavorP , stackC& stLifiP )
 
 }
 //CONoUTrAW( "-" ) ; //U::
@@ -2672,12 +2672,12 @@ voidT writeTalkingReportF( tinNormalS& tinP , etherC& etThread , stackC& stRptP 
     countT cLifiLimit = cLifiLimitP ;
 //CONoUTrAW( "+" ) ; //U::
 {
-voidT psttOldCallNestF( tinNormalS& tinP , etherC& etThread , strokeS*& psttP , stackC& stLifiP , const countT cIndentP , const countT* const pczLifiP , const boolT bTerseP , const countT cLifiLimitP = 0 )
+voidT psttOldCallNestF( tinBaseS& tinP , etherC& etThread , strokeS*& psttP , stackC& stLifiP , const countT cIndentP , const countT* const pczLifiP , const boolT bTerseP , const countT cLifiLimitP = 0 )
 
 }
     grabS::_lookIF( tinP , pGrabWantP , cGrabWantP , pGrabHaveP , cGrabHaveP ) ;
 {
-voidT monitorLookF( tinNormalS& tinP , grabWantS*& pGrabWantP , countT& cGrabWantP , grabHaveS*& pGrabHaveP , countT& cGrabHaveP )
+voidT monitorLookF( tinBaseS& tinP , grabWantS*& pGrabWantP , countT& cGrabWantP , grabHaveS*& pGrabHaveP , countT& cGrabHaveP )
 
 DONE( tmLogSnapF )
 ((tinNormalS&)tinP).idPhase2 = 0 ;
@@ -2751,7 +2751,7 @@ TASK( tmCircleLogF )
     stackC stDriver( tinP , thThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
     thirdC& thThread = etThread ;
 {
-voidT unregisterInactiveDriversF( tinNormalS& tinP , etherC& etThread )
+voidT unregisterInactiveDriversF( tinBaseS& tinP , etherC& etThread )
 
 }
     return - sgn ; // HIGHEST TALLY IS "LIGHTEST"
@@ -2781,7 +2781,7 @@ voidT unregisterInactiveDriversF( tinNormalS& tinP , etherC& etThread )
     {
     IFbEcAREFUL
 {
-countT subtractTallyF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractTallyF( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return 0 ;
@@ -2792,7 +2792,7 @@ countT subtractTallyF( tinNormalS& tinP , countT& pEther , countT& c1P , countT&
     {
     _IO_    TLNA( "cirLogF" )
 {
-countT cirLogF( tinNormalS& tinP , etherC& etherP , countT& cParmP , const byteT* const pbP , const countT cbP )
+countT cirLogF( tinBaseS& tinP , etherC& etherP , countT& cParmP , const byteT* const pbP , const countT cbP )
 
 }
     return bLoop ;
@@ -2849,7 +2849,7 @@ countT cirLogF( tinNormalS& tinP , etherC& etherP , countT& cParmP , const byteT
     ZE( boolT , bLoop ) ;
     TELL( "wantersF: ++++" )
 {
-boolT wantersF( tinNormalS& tinP , etherC& etThread , stackC& stWantersP , stackC* pSt_psttrP , grabEntryS& entryP , const grabWantS* const pGrabWantP , const countT& cGrabWantP , stackC& stGrabbedP , stackC& stIdSerialGrabExcludeP , stackC& stCheckedP , stackC& stBadGrabsTmpP , stackC& stOsTidLoopedTmpP , countT& cIndentP )
+boolT wantersF( tinBaseS& tinP , etherC& etThread , stackC& stWantersP , stackC* pSt_psttrP , grabEntryS& entryP , const grabWantS* const pGrabWantP , const countT& cGrabWantP , stackC& stGrabbedP , stackC& stIdSerialGrabExcludeP , stackC& stCheckedP , stackC& stBadGrabsTmpP , stackC& stOsTidLoopedTmpP , countT& cIndentP )
 
 }
     }
@@ -2912,9 +2912,9 @@ boolT wantersF( tinNormalS& tinP , etherC& etThread , stackC& stWantersP , stack
     {
     _IO_    //TLNA( "wanters0F" )
 {
-voidT wanters0F( tinNormalS& tinP , etherC& etThread , boolT& bLoopP , stackC& stWantersP , stackC* pSt_psttrP , const grabWantS* const pGrabWantP , const countT& cGrabWantP , stackC& stGrabbedP , stackC& stIdSerialGrabExcludeP , stackC& stCheckedP , stackC& stBadGrabsTmpP , stackC& stOsTidLoopedTmpP , countT& cIndentP , const countT osTidWantP )
+voidT wanters0F( tinBaseS& tinP , etherC& etThread , boolT& bLoopP , stackC& stWantersP , stackC* pSt_psttrP , const grabWantS* const pGrabWantP , const countT& cGrabWantP , stackC& stGrabbedP , stackC& stIdSerialGrabExcludeP , stackC& stCheckedP , stackC& stBadGrabsTmpP , stackC& stOsTidLoopedTmpP , countT& cIndentP , const countT osTidWantP )
 
-boolT wantersF( tinNormalS& tinP , etherC& etThread , stackC& stWantersP , stackC* pSt_psttrP , grabEntryS& entryP , const grabWantS* const pGrabWantP , const countT& cGrabWantP , stackC& stGrabbedP , stackC& stIdSerialGrabExcludeP , stackC& stCheckedP , stackC& stBadGrabsTmpP , stackC& stOsTidLoopedTmpP , countT& cIndentP ) ;
+boolT wantersF( tinBaseS& tinP , etherC& etThread , stackC& stWantersP , stackC* pSt_psttrP , grabEntryS& entryP , const grabWantS* const pGrabWantP , const countT& cGrabWantP , stackC& stGrabbedP , stackC& stIdSerialGrabExcludeP , stackC& stCheckedP , stackC& stBadGrabsTmpP , stackC& stOsTidLoopedTmpP , countT& cIndentP ) ;
 
 }
     TELL( "stampF: ----" )
@@ -2939,7 +2939,7 @@ boolT wantersF( tinNormalS& tinP , etherC& etThread , stackC& stWantersP , stack
     _IO_    //TLNA( "stampF" )
     TELL( "stampF: ++++" )
 {
-voidT stampF( tinNormalS& tinP , etherC& etThread , monitorOldS& mP , countT idStepP )
+voidT stampF( tinBaseS& tinP , etherC& etThread , monitorOldS& mP , countT idStepP )
 
 }
     TELL( "writeLog: ----" )
@@ -3012,7 +3012,7 @@ voidT stampF( tinNormalS& tinP , etherC& etThread , monitorOldS& mP , countT idS
     _IO_    TLNA( "writeLogF" )
     TELL( "writeLog: ++++" )
 {
-voidT writeLogF( tinNormalS& tinP , etherC& etThread , const byteT* const pbCircleP , const countT cbCyrcleOldP , const countT idReportP , const countT timeN1P , const sCountT timeN2P )
+voidT writeLogF( tinBaseS& tinP , etherC& etThread , const byteT* const pbCircleP , const countT cbCyrcleOldP , const countT idReportP , const countT timeN1P , const sCountT timeN2P )
 
 }
     return 0 ;
@@ -3547,14 +3547,14 @@ voidT writeLogF( tinNormalS& tinP , etherC& etThread , const byteT* const pbCirc
     _IO_    TLNA( "cirMonitorF" )
     IDpHASE( 2 )
 {
-countT cirMonitorF( tinNormalS& tinP , etherC& etherP , countT& cParmP , const byteT* const pbP , const countT cbP )
+countT cirMonitorF( tinBaseS& tinP , etherC& etherP , countT& cParmP , const byteT* const pbP , const countT cbP )
 
 }
     return 1 ;
     CONoUTrAW( "\r\n**** bAcceptEventF entered; returning 1\r\n" ) ; //U::
     if( pTinP && infoP.idException && pcArgP ) ;
 {
-boolT bAcceptEventF( tinNormalS* pTinP , tellInfoSysExceptionS& infoP , countT* pcArgP )
+boolT bAcceptEventF( tinBaseS* pTinP , tellInfoSysExceptionS& infoP , countT* pcArgP )
 
 }
     return sgn ;
@@ -3589,7 +3589,7 @@ boolT bAcceptEventF( tinNormalS* pTinP , tellInfoSysExceptionS& infoP , countT* 
     {
     IFbEcAREFUL
 {
-countT subtract_tinEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_tinEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
@@ -3624,7 +3624,7 @@ countT subtract_tinEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , c
     {
     IFbEcAREFUL
 {
-countT subtract_napkinEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_napkinEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
@@ -3657,7 +3657,7 @@ countT subtract_napkinEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P 
     {
     IFbEcAREFUL
 {
-countT subtract_poolOldEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_poolOldEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
@@ -3685,7 +3685,7 @@ countT subtract_poolOldEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P
     {
     IFbEcAREFUL
 {
-countT subtract_lifiEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_lifiEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
@@ -3717,13 +3717,13 @@ countT subtract_lifiEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , 
     {
     IFbEcAREFUL
 {
-countT subtract_grabEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_grabEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     swTally.freeAllF( tinP ) ;
     idWhatLever = bNewWhereRpt = 0 ;
 {
-voidT whereTalliesGrossS::purgeF( tinNormalS& tinP )
+voidT whereTalliesGrossS::purgeF( tinBaseS& tinP )
 
 }
 {
@@ -3733,7 +3733,7 @@ bNewWhereRpt( 0 ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
 third( thirdP ) ,
-whereTalliesGrossS::whereTalliesGrossS( tinNormalS& tinP , thirdC& thirdP , const countT idLineCtP , const countT idiFileCtP ) :
+whereTalliesGrossS::whereTalliesGrossS( tinBaseS& tinP , thirdC& thirdP , const countT idLineCtP , const countT idiFileCtP ) :
 
 }
     swTally3.freeAllF( tinP ) ;
@@ -3743,7 +3743,7 @@ whereTalliesGrossS::whereTalliesGrossS( tinNormalS& tinP , thirdC& thirdP , cons
     pczLever3 = 0 ;
     bNewWhereRpt = 0 ;
 {
-voidT whereTalliesFineS::purgeF( tinNormalS& tinP )
+voidT whereTalliesFineS::purgeF( tinBaseS& tinP )
 
 }
 {
@@ -3755,15 +3755,15 @@ bNewWhereRpt( 0 ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
 third( thirdP ) ,
-whereTalliesFineS::whereTalliesFineS( tinNormalS& tinP , thirdC& thirdP , const countT idLineCtP , const countT idiFileCtP ) :
+whereTalliesFineS::whereTalliesFineS( tinBaseS& tinP , thirdC& thirdP , const countT idLineCtP , const countT idiFileCtP ) :
 
 NEWdELcLASStHIRD( whereTalliesGrossS , ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition2 )
 NEWdELcLASStHIRD( whereTalliesFineS  , ifcIDtYPEdROPnOTE_classDefinedInAdamDefinition1 )
 
 ;
 }
-    voidT purgeF( tinNormalS& tinP ) ;
-    whereTalliesFineS( tinNormalS& tinP , thirdC& thirdP , const countT idLineCtP , const countT idiFileCtP ) ;
+    voidT purgeF( tinBaseS& tinP ) ;
+    whereTalliesFineS( tinBaseS& tinP , thirdC& thirdP , const countT idLineCtP , const countT idiFileCtP ) ;
     NEWdELcLASSpROTOS( whereTalliesFineS , etherC , thirdC ) ;
 
     switchC swTally3 ;
@@ -3781,8 +3781,8 @@ struct whereTalliesFineS
 
 ;
 }
-    voidT purgeF( tinNormalS& tinP ) ;
-    whereTalliesGrossS( tinNormalS& tinP , thirdC& thirdP , const countT idLineCtP , const countT idiFileCtP ) ;
+    voidT purgeF( tinBaseS& tinP ) ;
+    whereTalliesGrossS( tinBaseS& tinP , thirdC& thirdP , const countT idLineCtP , const countT idiFileCtP ) ;
     NEWdELcLASSpROTOS( whereTalliesGrossS , etherC , thirdC ) ;
 
     switchC swTally ;

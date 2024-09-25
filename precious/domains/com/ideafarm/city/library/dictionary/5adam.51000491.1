@@ -112,7 +112,7 @@ TODO
     //U:: TELL( "setting up/reading setting file to see who is the responsible email contact for this computer" )
     //U:: ZE( strokeS* , psttEmail ) ;
 {
-boolT bHostOkF( tinNormalS& tinP , etherC& etThread )
+boolT bHostOkF( tinBaseS& tinP , etherC& etThread )
 
 STATE0
 
@@ -187,7 +187,7 @@ TASK( tmSetNormalDesireF )
 
     //U:MAKE ME A RECURSIVE TOKEN EATER
 {
-voidT consoleStateC::doF( tinNormalS& tinP , const strokeS* const psttOldCmdP )
+voidT consoleStateC::doF( tinBaseS& tinP , const strokeS* const psttOldCmdP )
 
 }
     }
@@ -228,7 +228,7 @@ voidT consoleStateC::doF( tinNormalS& tinP , const strokeS* const psttOldCmdP )
 
     clearTokensF( tinP ) ;
 {
-voidT consoleStateC::resetTokensF( tinNormalS& tinP )
+voidT consoleStateC::resetTokensF( tinBaseS& tinP )
 
 }
     if( ether ) ;
@@ -248,7 +248,7 @@ voidT consoleStateC::resetTokensF( tinNormalS& tinP )
     countT idf = 2 ;
     ZE( strokeS* , psttIdAdam ) ;
 {
-voidT cmd_h_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
+voidT cmd_h_F( tinBaseS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
 
 }
     tAllP += T("to remove the IdeaFarm " "(tm) City driver, use the Services icon to close the IdeaFarmCity service.\r\nlocation (Windows XP): (?) Start/Settings/ControlPanel/AdministrativeTools/Services\r\nlocation (Windows 2000): Start/Settings/ControlPanel/AdministrativeTools/Services\r\nlocation (Windows NT 4.0): Start/Settings/ControlPanel/Services\r\n") ;
@@ -262,7 +262,7 @@ voidT cmd_h_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC& tAll
     //ZE( strokeS* , psttDriverName ) ;
     //tAllP += T("the IdeaFarm " "(tm) City driver is being removed\r\n") ;
 {
-voidT cmd_ifcremove_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
+voidT cmd_ifcremove_F( tinBaseS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
 
 }
     if( ether && psttOldCmdP ) ;
@@ -272,7 +272,7 @@ voidT cmd_ifcremove_F( tinNormalS& tinP , etherC& etThread , etherC& ether , tex
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 {
-voidT cmd_oshire_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
+voidT cmd_oshire_F( tinBaseS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
 
 }
     if( ether && psttOldCmdP ) ;
@@ -282,7 +282,7 @@ voidT cmd_oshire_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC&
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 {
-voidT cmd_osfire_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
+voidT cmd_osfire_F( tinBaseS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
 
 }
     BOSpOOP
@@ -292,7 +292,7 @@ voidT cmd_osfire_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC&
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 {
-voidT cmd_oslogoff_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
+voidT cmd_oslogoff_F( tinBaseS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
 
 }
     if( ether && psttOldCmdP ) ;
@@ -301,7 +301,7 @@ voidT cmd_oslogoff_F( tinNormalS& tinP , etherC& etThread , etherC& ether , text
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 {
-voidT cmd_timenow_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
+voidT cmd_timenow_F( tinBaseS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP )
 
 }
     }
@@ -322,7 +322,7 @@ voidT cmd_timenow_F( tinNormalS& tinP , etherC& etThread , etherC& ether , textC
     ether.strMakeF( tinP , LF , psttw , psttTokenP ) ;
     ZE( strokeS* , psttw ) ;
 {
-voidT consoleStateC::tokenF( tinNormalS& tinP , const strokeS* const psttTokenP , cmdFT pCmdeeFP , const strokeS* const psttHelpP )
+voidT consoleStateC::tokenF( tinBaseS& tinP , const strokeS* const psttTokenP , cmdFT pCmdeeFP , const strokeS* const psttHelpP )
 
 }
     }
@@ -339,7 +339,7 @@ voidT consoleStateC::tokenF( tinNormalS& tinP , const strokeS* const psttTokenP 
     {
     while( stLegalTokens )
 {
-voidT consoleStateC::clearTokensF( tinNormalS& tinP )
+voidT consoleStateC::clearTokensF( tinBaseS& tinP )
 
 }
     etThread.delF( tinP , psttOneP ) ;
@@ -353,7 +353,7 @@ voidT consoleStateC::clearTokensF( tinNormalS& tinP )
     boolT& bLogo = *(boolT*)infoP ;
     _IO_
 {
-voidT keyTaskNoticeHandlerF( tinNormalS& tinP , etherC& etThread , strokeS*& psttOneP , const countT infoP )
+voidT keyTaskNoticeHandlerF( tinBaseS& tinP , etherC& etThread , strokeS*& psttOneP , const countT infoP )
 
 }
     TELL( "presentF/-" ) ;
@@ -451,7 +451,7 @@ voidT keyTaskNoticeHandlerF( tinNormalS& tinP , etherC& etThread , strokeS*& pst
     TELL( "presentF/+" ) ;
     _IO_
 {
-voidT consoleStateC::presentF( tinNormalS& tinP , strokeS* const psttOneP )
+voidT consoleStateC::presentF( tinBaseS& tinP , strokeS* const psttOneP )
 
 }
     stFace.ungrabF( tinP ) ;
@@ -460,7 +460,7 @@ voidT consoleStateC::presentF( tinNormalS& tinP , strokeS* const psttOneP )
     bOutputShowing = 1 ;
     stFace.grabF( tinP , TAG( TAGiDnULL ) ) ;
 {
-voidT consoleStateC::talkOutputF( tinNormalS& tinP , const strokeS* const psttP )
+voidT consoleStateC::talkOutputF( tinBaseS& tinP , const strokeS* const psttP )
 
 }
     st FaceHear.ungrabF( tinP ) ;
@@ -468,7 +468,7 @@ voidT consoleStateC::talkOutputF( tinNormalS& tinP , const strokeS* const psttP 
     ether.strokeF( tinP , psttP , flPAPERtALK_ INPUTwINDOW ) ;
     st FaceHear.grabF( tinP , TAG( TAGiDnULL ) ) ;
 {
-voidT consoleStateC::talkInputF( tinNormalS& tinP , const strokeS* const psttP )
+voidT consoleStateC::talkInputF( tinBaseS& tinP , const strokeS* const psttP )
 
 }
     stFace.ungrabF( tinP ) ;
@@ -503,7 +503,7 @@ voidT consoleStateC::talkInputF( tinNormalS& tinP , const strokeS* const psttP )
 
     TN( tKT , "" ) ; tKT = T("\f")+S2(1,scOld_KTfORMAT)+S2(flKTsCRATCH_null,scOld_KTfLAGSsCRATCH)+T("IdeaFarm " "(tm) City Command Console   [press arrow keys to climb around this knowledge tree]") ;
 {
-voidT consoleStateC::talkHelpF( tinNormalS& tinP )
+voidT consoleStateC::talkHelpF( tinBaseS& tinP )
 
 }
     return bPotent ;
@@ -623,13 +623,13 @@ voidT consoleStateC::talkHelpF( tinNormalS& tinP )
     ZE( countT , cMatch ) ;
     _IO_
 {
-boolT consoleStateC::isPotentF( tinNormalS& tinP , const strokeS* const psttOneP , const bChangeP )
+boolT consoleStateC::isPotentF( tinBaseS& tinP , const strokeS* const psttOneP , const bChangeP )
 
 }
     ether.strokeF( tinP , tSnapInput                           , flPAPERtALK_ INPUTwINDOW ) ;
     ether.strokeF( tinP , bOutputShowing?tSnapOutput:tSnapHelp , flPAPERtALK_MOVEhERE    ) ;
 {
-voidT consoleStateC::talkSnapsF( tinNormalS& tinP )
+voidT consoleStateC::talkSnapsF( tinBaseS& tinP )
 
 }
     ether.delF( tinP , psttw ) ;
@@ -640,12 +640,12 @@ voidT consoleStateC::talkSnapsF( tinNormalS& tinP )
     textC&  tTo    = bOutputShowing ? tSnapOutput : tSnapHelp ;
     stackC& stFrom = stFace                                       ;
 {
-voidT consoleStateC::snapFaceF( tinNormalS& tinP , const boolT bInputP )
+voidT consoleStateC::snapFaceF( tinBaseS& tinP , const boolT bInputP )
 
 }
     return *(consoleStateC*)(*pstMe)[ 1 ] ;
 {
-consoleStateC& consoleStateC::currentStateF( tinNormalS& tinP )
+consoleStateC& consoleStateC::currentStateF( tinBaseS& tinP )
 
 }
     if( pstMe ) *pstMe << (countT)this ;
@@ -686,10 +686,10 @@ consoleStateC& consoleStateC::currentStateF( tinNormalS& tinP )
 stFace( cStateP.stFace )
 cmdStrokesAccepted( cStateP.cmdStrokesAccepted ) ,
 tokenStrokesAccepted( cStateP.tokenStrokesAccepted ) ,
-swCmdee( thirdC::third_tinNormalS_ref_IF() , cStateP.ether , TAG( TAGiDnULL ) , flSTACKc_null , psttOldCmd ) ,
-swHelp( thirdC::third_tinNormalS_ref_IF() , cStateP.ether , TAG( TAGiDnULL ) , flSTACKc_null , psttOldCmd ) ,
+swCmdee( thirdC::third_tinBaseS_ref_IF() , cStateP.ether , TAG( TAGiDnULL ) , flSTACKc_null , psttOldCmd ) ,
+swHelp( thirdC::third_tinBaseS_ref_IF() , cStateP.ether , TAG( TAGiDnULL ) , flSTACKc_null , psttOldCmd ) ,
 psttOldCmd( 0 ) , // THIS IS NOT COPIED BECAUSE IT IS NOT REALLY A STATE VALUE.  IT IS ONLY USED TO SELECT STATE INFO
-stLegalTokens( thirdC::third_tinNormalS_ref_IF() , cStateP.ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ,
+stLegalTokens( thirdC::third_tinBaseS_ref_IF() , cStateP.ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ,
 bAttachOutputDown( cStateP.bAttachOutputDown ) ,
 tSnapOutput( cStateP.tSnapOutput ) ,
 tSnapInput( cStateP.tSnapInput ) ,
@@ -717,7 +717,7 @@ tSnapInput( tinP , TAG( TAGiDnULL ) , "\f" ) ,
 tSnapHelp( tinP , TAG( TAGiDnULL ) , "\f" ) ,
 bOutputShowing( 0 ) ,
 ether( etherP ) ,
-consoleStateC::consoleStateC( tinNormalS& tinP , etherC& etherP ) :
+consoleStateC::consoleStateC( tinBaseS& tinP , etherC& etherP ) :
 
 }
     psttOldCmd = 0 ;
@@ -768,20 +768,20 @@ stackC* consoleStateC::pstMe ;
 
 ;
 }
-    voidT doF( tinNormalS& tinP , const strokeS* const psttOldCmdP ) ;
-    voidT resetTokensF( tinNormalS& tinP ) ;
-    voidT talkSnapsF( tinNormalS& tinP ) ;
-    static consoleStateC& currentStateF( tinNormalS& tinP ) ;
-    voidT snapFaceF( tinNormalS& tinP , const boolT bInputP = 0 ) ;
-    voidT presentF( tinNormalS& tinP , strokeS* const psttOneP ) ;
-    voidT tokenF( tinNormalS& tinP , const strokeS* const psttTokenP , cmdFT pCmdeeFP , const strokeS* const psttHelpP ) ;
-    voidT clearTokensF( tinNormalS& tinP ) ;
-    voidT talkOutputF( tinNormalS& tinP , const strokeS* const psttP ) ;
-    voidT talkInputF( tinNormalS& tinP , const strokeS* const psttP ) ;
-    voidT talkHelpF( tinNormalS& tinP ) ;
-    boolT isPotentF( tinNormalS& tinP , const strokeS* const psttOneP , const bChangeP = 0 ) ;
+    voidT doF( tinBaseS& tinP , const strokeS* const psttOldCmdP ) ;
+    voidT resetTokensF( tinBaseS& tinP ) ;
+    voidT talkSnapsF( tinBaseS& tinP ) ;
+    static consoleStateC& currentStateF( tinBaseS& tinP ) ;
+    voidT snapFaceF( tinBaseS& tinP , const boolT bInputP = 0 ) ;
+    voidT presentF( tinBaseS& tinP , strokeS* const psttOneP ) ;
+    voidT tokenF( tinBaseS& tinP , const strokeS* const psttTokenP , cmdFT pCmdeeFP , const strokeS* const psttHelpP ) ;
+    voidT clearTokensF( tinBaseS& tinP ) ;
+    voidT talkOutputF( tinBaseS& tinP , const strokeS* const psttP ) ;
+    voidT talkInputF( tinBaseS& tinP , const strokeS* const psttP ) ;
+    voidT talkHelpF( tinBaseS& tinP ) ;
+    boolT isPotentF( tinBaseS& tinP , const strokeS* const psttOneP , const bChangeP = 0 ) ;
     consoleStateC( consoleStateC& cStateP ) ;
-    consoleStateC( tinNormalS& tinP , etherC& etherP ) ;
+    consoleStateC( tinBaseS& tinP , etherC& etherP ) ;
     ~consoleStateC( voidT ) ;
     NEWdELcLASSpROTOS( consoleStateC , etherC , thirdC ) ;
 
@@ -805,7 +805,7 @@ stackC* consoleStateC::pstMe ;
 {
 class consoleStateC
 
-typedef voidT (*cmdFT)( tinNormalS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP ) ;
+typedef voidT (*cmdFT)( tinBaseS& tinP , etherC& etThread , etherC& ether , textC& tAllP , const strokeS* const psttOldCmdP ) ;
 
 /*1*/WAKEhIDE( "ifcIDaDAMoLD_COMMANDcONSOLE.ifc.driver.console" )/*1*/
 /**/

@@ -323,7 +323,7 @@ TASK( tmWorkF )
 
     stackC& stGottenP = *(stackC*)cArgP ;
 {
-voidT cioGetF( tinNormalS& tinP , etherC& etherP , const boolT& bQuitP , const countT idGiftTypeP , soulC*& psGiftP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
+voidT cioGetF( tinBaseS& tinP , etherC& etherP , const boolT& bQuitP , const countT idGiftTypeP , soulC*& psGiftP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
 
 }
     pczChannelP = 0 ;
@@ -333,17 +333,17 @@ idptOrigin( idptOriginP )
 pczChannel( pczChannelP ) ,
 psGift( psGiftP ) ,
 idGiftType( idGiftTypeP ) ,
-cioGottenS::cioGottenS( tinNormalS& tinP , const countT idGiftTypeP , soulC*& psGiftP , countT*& pczChannelP , const portTimeC& idptOriginP ) :
+cioGottenS::cioGottenS( tinBaseS& tinP , const countT idGiftTypeP , soulC*& psGiftP , countT*& pczChannelP , const portTimeC& idptOriginP ) :
 
 }
     thirdC::c_memsetIF( tinP , (byteT*)this , sizeof *this ) ;
 {
-cioGottenS::cioGottenS( tinNormalS& tinP )
+cioGottenS::cioGottenS( tinBaseS& tinP )
 
 ;
 }
-    cioGottenS( tinNormalS& tinP , const countT idGiftTypeP , soulC*& psGiftP , countT*& pczChannelP , const portTimeC& idptOriginP ) ;
-    cioGottenS( tinNormalS& tinP ) ;
+    cioGottenS( tinBaseS& tinP , const countT idGiftTypeP , soulC*& psGiftP , countT*& pczChannelP , const portTimeC& idptOriginP ) ;
+    cioGottenS( tinBaseS& tinP ) ;
 
     portTimeC idptOrigin ;
     countT*     pczChannel ;

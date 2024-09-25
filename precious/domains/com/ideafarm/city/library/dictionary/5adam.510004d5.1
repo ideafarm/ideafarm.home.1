@@ -568,14 +568,14 @@ if( entry.osPid != ((tinNormalS&)tinP).osPid ) { CONoUTrAW( TF3(entry.idSerial,f
     stackC&   stGrabP     =    *(stackC*)c8p.c1 ;
     count8S&  c8p         = *(count8S*)cParmP ;
 {
-countT cirMonitorF( tinNormalS& tinP , etherC& etherP , countT& cParmP , const byteT* const pbP , const countT cbP )
+countT cirMonitorF( tinBaseS& tinP , etherC& etherP , countT& cParmP , const byteT* const pbP , const countT cbP )
 
 }
     return 0 ;
     if( ((tinNormalS&)tinP).fingerprint && etherP && cParmP && pbP && cbP ) ;
     //CONoUTrAW( pbP ) ;
 {
-countT cirLogF( tinNormalS& tinP , etherC& etherP , countT& cParmP , const byteT* const pbP , const countT cbP )
+countT cirLogF( tinBaseS& tinP , etherC& etherP , countT& cParmP , const byteT* const pbP , const countT cbP )
 
 countT idEat ; //U::
 
@@ -1007,7 +1007,7 @@ TASK( tmRptF )
     mP.idMonitorTock ++ ;
     mP.idMonitor = 1 ;
 {
-voidT stampF( tinNormalS& tinP , etherC& etThread , monitorOldS& mP , countT idStepP )
+voidT stampF( tinBaseS& tinP , etherC& etThread , monitorOldS& mP , countT idStepP )
 
 }
     etThread.delF( tinP , postl ) ;
@@ -1075,7 +1075,7 @@ voidT stampF( tinNormalS& tinP , etherC& etThread , monitorOldS& mP , countT idS
     const byteT* const pbe = pbCircleP + cbCyrcleOldP ;
     const byteT*       pbc = pbCircleP ;
 {
-voidT writeLogF( tinNormalS& tinP , etherC& etThread , const byteT* const pbCircleP , const countT cbCyrcleOldP , const countT idReportP , const countT timeN1P , const sCountT timeN2P )
+voidT writeLogF( tinBaseS& tinP , etherC& etThread , const byteT* const pbCircleP , const countT cbCyrcleOldP , const countT idReportP , const countT timeN1P , const sCountT timeN2P )
 
 }
     return sgn ;
@@ -1106,7 +1106,7 @@ voidT writeLogF( tinNormalS& tinP , etherC& etThread , const byteT* const pbCirc
     {
     IFbEcAREFUL
 {
-countT subtract_tinEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_tinEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return - sgn ; // HIGHEST TALLY IS "LIGHTEST"
@@ -1133,7 +1133,7 @@ countT subtract_tinEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , c
     {
     IFbEcAREFUL
 {
-countT subtractTallyF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractTallyF( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
@@ -1164,7 +1164,7 @@ countT subtractTallyF( tinNormalS& tinP , countT& pEther , countT& c1P , countT&
     {
     IFbEcAREFUL
 {
-countT subtract_grabEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_grabEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return bLoop ;
@@ -1246,7 +1246,7 @@ countT subtract_grabEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , 
     if( !stCheckedP( entryP.idSerial ) )
     ZE( boolT , bLoop ) ;
 {
-boolT wantersF( tinNormalS& tinP , etherC& etThread , stackC& stWantersP , strokeS*& psttrP , grabEntryS& entryP , hoodC& hoodWantP , stackC& stGrabbedP , stackC& stCheckedP , stackC& stLoopedTmpP , stackC& stOsTidLoopedTmpP , countT& cIndentP )
+boolT wantersF( tinBaseS& tinP , etherC& etThread , stackC& stWantersP , strokeS*& psttrP , grabEntryS& entryP , hoodC& hoodWantP , stackC& stGrabbedP , stackC& stCheckedP , stackC& stLoopedTmpP , stackC& stOsTidLoopedTmpP , countT& cIndentP )
 
 DONE( tmWantF )
 }
@@ -1297,7 +1297,7 @@ ip( ipP ) ,
 bIda( bIdaP ) ,
 osPid( osPidP ) ,
 idSerial( idSerialP ) ,
-tinEntryS::tinEntryS( tinNormalS& tinP , countT idSerialP , countT osPidP , boolT bIdaP , countT ipP , countT idTinP , countT idThreadP , const osTextT* const postThreadNameP ) :
+tinEntryS::tinEntryS( tinBaseS& tinP , countT idSerialP , countT osPidP , boolT bIdaP , countT ipP , countT idTinP , countT idThreadP , const osTextT* const postThreadNameP ) :
 
 }
 {
@@ -1308,11 +1308,11 @@ ip( ipP ) ,
 bIda( bIdaP ) ,
 osPid( osPidP ) ,
 idSerial( idSerialP ) ,
-grabEntryS::grabEntryS( tinNormalS& tinP , countT idSerialP , countT osPidP , boolT bIdaP , countT ipP , countT idLineCtP , countT idiFileCtP ) :
+grabEntryS::grabEntryS( tinBaseS& tinP , countT idSerialP , countT osPidP , boolT bIdaP , countT ipP , countT idLineCtP , countT idiFileCtP ) :
 
 ;
 }
-    tinEntryS( tinNormalS& tinP , countT idSerialP , countT osPidP , boolT bIdaP , countT ipP , countT idTinP , countT idThreadP , const osTextT* const postThreadNameP ) ;
+    tinEntryS( tinBaseS& tinP , countT idSerialP , countT osPidP , boolT bIdaP , countT ipP , countT idTinP , countT idThreadP , const osTextT* const postThreadNameP ) ;
 
     osTextT postThreadName[ COSTmAXtHREADnAME + 1 ] ;
     countT idThread ;
@@ -1327,8 +1327,8 @@ struct tinEntryS
 
 ;
 }
-    voidT logF( tinNormalS& tinP , const boolT bDieP = 0 ) ;
-    grabEntryS( tinNormalS& tinP , countT idSerialP , countT osPidP , boolT bIdaP , countT ipP , countT idLineCtP , countT idiFileCtP ) ;
+    voidT logF( tinBaseS& tinP , const boolT bDieP = 0 ) ;
+    grabEntryS( tinBaseS& tinP , countT idSerialP , countT osPidP , boolT bIdaP , countT ipP , countT idLineCtP , countT idiFileCtP ) ;
 
     countT idiFileCt ;
     countT idLineCt ;

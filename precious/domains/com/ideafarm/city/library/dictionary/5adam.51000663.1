@@ -420,7 +420,7 @@ TASK( tmWalkF )
     countT&   osPidP   =   *(countT*)pcArgP[ 1 ] ;
     osTextT*  postExeP =   (osTextT*)pcArgP[ 0 ] ;
 {
-boolT myWalkCBF( tinNormalS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT myWalkCBF( tinBaseS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 FLAGcBFdEF( 1b )
 FLAGcBFdEF( 1a )
@@ -532,7 +532,7 @@ BOOL CALLBACK enumWindowsCBF( HWND hwndP , LPARAM p1P )
         switch( idTypeCallP )                                                                                                                                   \
         ZE( boolT , bHandled ) ;                                                                                                                              \
     {                                                                                                                                                           \
-    boolT _export FLAGcBF( offFlagP )( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP ) \
+    boolT _export FLAGcBF( offFlagP )( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP ) \
                                                                                                                                                                 \
 #define FLAGcBFdEF(offFlagP)                                                                                                                                    \
 
@@ -565,7 +565,7 @@ BOOL CALLBACK enumWindowsCBF( HWND hwndP , LPARAM p1P )
         switch( idTypeCallP )                                                                                                                                   \
         ZE( boolT , bHandled ) ;                                                                                                                              \
     {                                                                                                                                                           \
-    boolT _export CATcBF(catP)( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP ) \
+    boolT _export CATcBF(catP)( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP ) \
                                                                                                                                                                 \
 #define CATcBFdEF(catP)                                                                                                                                         \
 

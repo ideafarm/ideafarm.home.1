@@ -184,14 +184,14 @@
 
                 //U:: CONJ: OBSOLETE CODE LINE: *(countT*)0 = 1 ;       // CANNOT USE BLAMMO BECAUSE DON'T HAVE tinP
             {
-            if( getNegAM( pTin->fingerprint ) != FINGERnEG_TINs && getNegAM( pTin->fingerprint ) != FINGERnEG_TINszOMBIE )      //CT OF WOTH tinNormalS INSTANCE IN EACH THREAD INVOLVES CALLING INOUT BEFORE ZOMBIE FINGERPRINT IS REPLACED
+            if( getNegAM( ((tinNormalS*)pTin)->fingerprint ) != FINGERnEG_TINs && getNegAM( ((tinNormalS*)pTin)->fingerprint ) != FINGERnEG_TINszOMBIE )      //CT OF WOTH tinNormalS INSTANCE IN EACH THREAD INVOLVES CALLING INOUT BEFORE ZOMBIE FINGERPRINT IS REPLACED
             }
                 BLAMMO ;
                 LOGrAW(    "inOutFrameC: error !pTin\r\n" ) ;
                 CONoUTrAW( "inOutFrameC: error !pTin\r\n" ) ;
             {
             if( !pTin )
-            tinNormalS* pTin = &tinP ;
+            tinBaseS* pTin = &tinP ;
         {
 
         }
@@ -351,9 +351,9 @@ flagsCt
 idFileRankCt( idFileRankP ) ,
 idiFileCt( idiFileP ) ,
 idLineCt( idLineP ) ,
-tinCt( tinP ) ,
+tinBaseCt( tinP ) ,
 pDad( ((tinNormalS&)tinP).pInOutFrame ) ,
-/*1*/inOutFrameC::inOutFrameC( tinNormalS& tinP , const countT idLineP , const countT idiFileP , const countT idFileRankP , const boolT bClassP ) :/*1*/
+/*1*/inOutFrameC::inOutFrameC( tinBaseS& tinP , const countT idLineP , const countT idiFileP , const countT idFileRankP , const boolT bClassP ) :/*1*/
 
 /* ASSUME: 02 BITS PER countT */
 
