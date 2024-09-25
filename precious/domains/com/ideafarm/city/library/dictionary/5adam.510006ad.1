@@ -503,7 +503,7 @@ TASK( tmTimeF )
     
     measureT& angleP = *(measureT*)((countT*)cArgP)[ 0 ] ;
 {
-voidT spaceFromPaperPrologCBF( tinS& tinP , const countT cArgP )
+voidT spaceFromPaperPrologCBF( tinNormalS& tinP , const countT cArgP )
 
 }
     //rgbOverrideP = ( heat << shift ) | rgbP ;
@@ -527,7 +527,7 @@ voidT spaceFromPaperPrologCBF( tinS& tinP , const countT cArgP )
     static countT shift ;
     static byteT heat ;
 {
-voidT _export spaceFromPaperEpilogCBF( tinS& tinP , countT& rgbOverrideP , const countT rgbP , const countT cArgP )
+voidT _export spaceFromPaperEpilogCBF( tinNormalS& tinP , countT& rgbOverrideP , const countT rgbP , const countT cArgP )
 
 SURFACE( f )
 SURFACE( e )
@@ -704,7 +704,7 @@ voidT surface_pane_CBF( mPoint3S& toP , const cPoint2S& fromP , const countT cAr
     {
     switch( idEventP )
 {
-countT displayCBF( tinS& tinP , flagsT flagsP , deviceC& deviceP , const countT cDeviceArgP , const countT idEventP , const countT cEventArgP ) //20230327@1217: ADDED flagsP cDeviceArgP TO GET COMPILATION; RENAMED cArgP TO cEventArgP
+countT displayCBF( tinNormalS& tinP , flagsT flagsP , deviceC& deviceP , const countT cDeviceArgP , const countT idEventP , const countT cEventArgP ) //20230327@1217: ADDED flagsP cDeviceArgP TO GET COMPILATION; RENAMED cArgP TO cEventArgP
 
 
 boolT bStep = 0 ;

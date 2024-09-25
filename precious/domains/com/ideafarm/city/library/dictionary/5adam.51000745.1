@@ -390,7 +390,7 @@ jhsOther(      tinP , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE , TIC
 jhsBrowser(    tinP , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 jhsQuery(      tinP , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 jhsUri(        tinP , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-workS::workS( tinS& tinP , etherC& etherP ) :
+workS::workS( tinNormalS& tinP , etherC& etherP ) :
 
 }
     swBooksByByte.ungrabF( tinP ) ;
@@ -416,7 +416,7 @@ workS::workS( tinS& tinP , etherC& etherP ) :
 
     swBooksByByte.grabF( tinP , TAG( TAGiDnULL ) ) ;
 {
-voidT workS::destroyBooksF( tinS& tinP )
+voidT workS::destroyBooksF( tinNormalS& tinP )
 
 }
     destroyBooksF( tinP ) ;
@@ -429,8 +429,8 @@ countT cIn ;
 
 ;
 }
-    voidT destroyBooksF( tinS& tinP ) ;
-    workS( tinS& tinP , etherC& etherP ) ;
+    voidT destroyBooksF( tinNormalS& tinP ) ;
+    workS( tinNormalS& tinP , etherC& etherP ) ;
     ~workS( voidT ) ;
 
     switchC       swBooksByByte ;

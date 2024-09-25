@@ -24,8 +24,8 @@ struct whereOldS //CODEsYNC: 2e40104 003002a
 
 ;
 }
-    voidT logF( tinS& tinP , const boolT bDieP = 0 ) ;
-    napkinEntryS( tinS& tinP , countT osPidP , voidT* pvMeP , countT idLineCtP , countT idiFileCtP , voidT* pvdP , countT cbdP , osTextT* postNameP , countT costNameP ) ;
+    voidT logF( tinNormalS& tinP , const boolT bDieP = 0 ) ;
+    napkinEntryS( tinNormalS& tinP , countT osPidP , voidT* pvMeP , countT idLineCtP , countT idiFileCtP , voidT* pvdP , countT cbdP , osTextT* postNameP , countT costNameP ) ;
 
     osTextT postName[ COSTmAXnAPKINnAME + 1 ] ;
     countT  costName ;
@@ -40,7 +40,7 @@ struct napkinEntryS
 
 ;
 }
-    lifiEntryS( tinS& tinP , const countT idLineP , const countT idiFileP , const osTextT* const postNameP ) ;
+    lifiEntryS( tinNormalS& tinP , const countT idLineP , const countT idiFileP , const osTextT* const postNameP ) ;
 
     osTextT        postName[ COSTmAXtHREADnAME + 1 ] ;
     const countT   idiFile ;
@@ -50,8 +50,8 @@ struct lifiEntryS
 
 ;
 }
-    voidT logF( tinS& tinP , napkinC& napLogP ) ;
-    grabEntryS( tinS& tinP , countT idSerialP , countT osTidP , countT osPidP , boolT bIdaP , countT ipP , countT idLineCtP , countT idiFileCtP ) ;
+    voidT logF( tinNormalS& tinP , napkinC& napLogP ) ;
+    grabEntryS( tinNormalS& tinP , countT idSerialP , countT osTidP , countT osPidP , boolT bIdaP , countT ipP , countT idLineCtP , countT idiFileCtP ) ;
 
     countT idiFileCt ;
     countT idLineCt ;

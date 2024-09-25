@@ -363,7 +363,7 @@
             //CONoUTrAW( "rootExceptionFilterF/2/2/1\r\n" ) ;
 
             else                                                                                                                                       eTypeReport = normalE        ; // FULL INFORMATION
-            else if( /*idInThread == 1 ||*/ ( prFloat && *prFloat == 1 ) || !pTinOffender || getNegAM( pTinOffender->fingerprint ) != FINGERnEG_TINs ) eTypeReport = shortE         ; // NO tinS INFORMATION
+            else if( /*idInThread == 1 ||*/ ( prFloat && *prFloat == 1 ) || !pTinOffender || getNegAM( pTinOffender->fingerprint ) != FINGERnEG_TINs ) eTypeReport = shortE         ; // NO tinNormalS INFORMATION
             else if( /*idInThread == 2 ||*/ ( prFloat && *prFloat == 2 )                                                                             ) eTypeReport = tinyE          ; // NO INFO ; JUST A SINGLE LINE OF TEXT TO INDICATE THAT THE SHORT REPORT COULD NOT BE WRITTEN
                  if( /*idInThread >= 3 ||*/ ( prFloat && *prFloat >= 3 )                                                                             ) eTypeReport = nullE          ; // PREVENTS SPIN 
 
@@ -373,7 +373,7 @@
             ;
                 : pTin2AM( ebpOffender )                        //MUST NOT MODIFY *pTinOffender UNTIL IT HAS BEEN COPIED
                 ? 0
-            tinS* pTinOffender = !prFloat || *prFloat || !ebpOffender
+            tinNormalS* pTinOffender = !prFloat || *prFloat || !ebpOffender
             const countT ebpOffender = osInfo.ContextRecord ? osInfo.ContextRecord->Ebp : 0 ;_M
             //CONoUTrAW( "rootExceptionFilterF/2/2/0/3\r\n" ) ;
 

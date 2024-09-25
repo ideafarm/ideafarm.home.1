@@ -428,8 +428,8 @@
                     // ALLOCATE pbMeta FROM *pPoolContainsMe TO AVOID THE OVERHEAD OF USING A napkinC AND ESCAPE THE BASE O.S. ALLOCATION GRAIN MINIMUM AND MINIMIZE ADDRESS SPACE FRAGMENTATION
                 {
                 )
-                    expCbDropP != expCbDropAvoid
-                    &&
+                    //expCbDropP != expCbDropAvoid
+                    //&&
                     tinP.pag1->pPoolAdamTemp
                     &&
                     !bNested
@@ -630,8 +630,8 @@
 
         {
         )
-            expCbDropP != expCbDropAvoid
-            &&
+            //expCbDropP != expCbDropAvoid
+            //&&
             tinP.pag1->pPoolAdamTemp
             &&
             !bNested
@@ -647,10 +647,11 @@
         if
         ZE( boolT , bFormatDataBlob ) ;
 
-        ;
-            : pPoolContainsMe->expCbDropBigEnoughF( sizeof( listC      ) )
-            ? pPoolContainsMe->expCbDropBigEnoughF( sizeof( listOfSetC ) )
-        const countT expCbDropAvoid = F(pPoolContainsMe->flagsPoolFormatF()) & flPOOLfORMAT_SETS
+        //;
+        //    : pPoolContainsMe->expCbDropBigEnoughF( sizeof( listC      ) )
+        //    ? pPoolContainsMe->expCbDropBigEnoughF( sizeof( listOfSetC ) )
+        //const countT expCbDropAvoid = F(pPoolContainsMe->flagsPoolFormatF()) & flPOOLfORMAT_SETS
+        //20240924@1545: CONJ: THIS IS NO LONGER NECESSARY SINCE NOW SET flTHREADmODE4_NOsEXiNpOOL
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // TRY TO ALLOCATE pbData FROM A SIBLING sexC (ANOTHER sexC, EXISTING OR THAT I CAUSE TO BE CREATED, OF *pPoolContainsMe
@@ -815,7 +816,7 @@
     // BUT ITS USE IS RETAINED BECAUSE IT AVOIDS THE USE OF *pPoolContainsMe, WHICH COULD TRIGGER NESTED CONSTRUCTION OF OTHER sexC
     // NOW THAT napkinC'S ARE CONDITIONALLY CONSTRUCTED IN THE BODY OF THE sexC CONSTRUCTOR, TLS IS NOT NEEDED FOR CODING CONVENIENCE
     // TLS WAS ORIGINALLY USED FOR CODING CONVENIENCE WHEN THE OO napkinC'S WERE UNCONDITIONALLY CONSTRUCTED AS napkinC MEMBERS
-    // TLS (tinS::newF pbF delF) IS USED FOR SHORT STRINGS TO CALCULATE A napkinC PARAMETER VALUE (postNameP)
+    // TLS (tinNormalS::newF pbF delF) IS USED FOR SHORT STRINGS TO CALCULATE A napkinC PARAMETER VALUE (postNameP)
     // 
     // 3. ON FAILURE, I IMMEDIATELY DESTROY ANY napkinC AND OTHER INSTANCES THAT I HAVE CREATED ; MY DESTRUCTOR DOES NOT NEED TO DO THIS (NEW?)
     // 2. CALLER MUST DETECT MY IMPOTENCE (BY CALLING operator const poopC&) AND DESTROY ME                                              (OLD)
@@ -908,7 +909,7 @@ idLathNewDel( 0 ) ,
 idStateSpace( idStateSpaceP ) ,
 flagsStatePrivate( flSEXcsTATEpRIVATE_null ) ,
 pPoolContainsMe( pPoolContainsMeP ) ,
-/*1*/sexC::sexC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , countT idMemorySpaceP , poolC* const pPoolContainsMeP ) :/*1*/
+/*1*/sexC::sexC( tinNormalS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , countT idMemorySpaceP , poolC* const pPoolContainsMeP ) :/*1*/
 
 /**/
 */

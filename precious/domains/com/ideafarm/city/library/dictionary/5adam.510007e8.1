@@ -1675,7 +1675,7 @@ TASK( tmDoJobF )
     {
     if( stPresortP > cKeepP )
 {
-voidT jotPresortedShortsF( tinS& tinP , etherC& etherP , boolT& bAbortP , jotC& jotShortFileNamesP , stackC& stIdJotP , stackC& stPresortP , countT cKeepP )
+voidT jotPresortedShortsF( tinNormalS& tinP , etherC& etherP , boolT& bAbortP , jotC& jotShortFileNamesP , stackC& stIdJotP , stackC& stPresortP , countT cKeepP )
 
 }
     return sgn ;
@@ -1711,7 +1711,7 @@ voidT jotPresortedShortsF( tinS& tinP , etherC& etherP , boolT& bAbortP , jotC& 
     {
     IFbEcAREFUL
 {
-/*1*/countT subtractOsTextMinusJottedOsTextF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractOsTextMinusJottedOsTextF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
     return sgn ;
@@ -1756,7 +1756,7 @@ voidT jotPresortedShortsF( tinS& tinP , etherC& etherP , boolT& bAbortP , jotC& 
     {
     IFbEcAREFUL
 {
-/*1*/countT subtractJottedOsTextF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractJottedOsTextF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
     return *pfr1 - *pfr2 ;
@@ -1764,12 +1764,12 @@ voidT jotPresortedShortsF( tinS& tinP , etherC& etherP , boolT& bAbortP , jotC& 
     fileMetaS* pfr2 = (fileMetaS*)c2P ;
     fileMetaS* pfr1 = (fileMetaS*)c1P ;
 {
-/*1*/countT subtractFileMetaF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractFileMetaF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
     pEther->traceF( tinP , T("jobS [idType,psttTo,psttFrom,psttUnique]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttTo)+T("    ")+T(psttFrom)+T("    ")+T(psttUnique) ) ;
 {
-voidT jobS::traceF( tinS& tinP )
+voidT jobS::traceF( tinNormalS& tinP )
 
 }
     if( psttUniqueP ) { pEther->strMakeF( tinP , LF , psttUnique , psttUniqueP ) ; ___( psttUnique ) ; }
@@ -1781,7 +1781,7 @@ psttFrom( 0 ) ,
 psttTo( 0 ) ,
 idType( idTypeP ) ,
 pEther( &etherP ) ,
-jobS::jobS( tinS& tinP , etherC& etherP , countT idTypeP , const strokeS* const psttToP , const strokeS* const psttFromP , const strokeS* const psttUniqueP ) :
+jobS::jobS( tinNormalS& tinP , etherC& etherP , countT idTypeP , const strokeS* const psttToP , const strokeS* const psttFromP , const strokeS* const psttUniqueP ) :
 
 }
     pEther->delF( tinP , psttFrom   ) ;
@@ -1796,7 +1796,7 @@ NEWdELcLASS( 3 , jobS ) ;
 }
     tinP.pEther->traceF( tinP , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
 {
-voidT imageCompareS::traceF( tinS& tinP , const strokeS* const psttP )
+voidT imageCompareS::traceF( tinNormalS& tinP , const strokeS* const psttP )
 
 }
     //traceF( tinP , T("ct      :    ") ) ;
@@ -1816,7 +1816,7 @@ sCountT fileMetaS::operator -( const fileMetaS& frP ) const
 }
     tinP.pEther->traceF( tinP , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
 {
-voidT fileMetaS::traceF( tinS& tinP , stackC& stPathToYearP , const strokeS* const psttP )
+voidT fileMetaS::traceF( tinNormalS& tinP , stackC& stPathToYearP , const strokeS* const psttP )
 
 }
     timeModRounded = *(countT*)( (byteT*)pc2 + 3 ) + bRoundUp ;
@@ -1836,7 +1836,7 @@ time2Mod( time2ModP ) ,
 time1Mod( time1ModP ) ,
 cbUsed( cbUsedP ) ,
 timeModRounded( 0 ) ,
-fileMetaS::fileMetaS( tinS& tinP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) :
+fileMetaS::fileMetaS( tinNormalS& tinP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) :
 
 NEWdELcLASS( 1 , fileMetaS ) ;
 
@@ -1847,10 +1847,10 @@ const countT cResultsPerStruct = sizeof( countT ) * SB / 2 ;     // 2 BITS ARE U
 
 ;
 }
-    inline voidT etherF( tinS& tinP , etherC& etherP ) { pEther = &etherP ; }
+    inline voidT etherF( tinNormalS& tinP , etherC& etherP ) { pEther = &etherP ; }
 
-    voidT traceF( tinS& tinP ) ;
-    jobS( tinS& tinP , etherC& etherP , countT idTypeP = 0 , const strokeS* const psttToP = 0 , const strokeS* const psttFromP = 0 , const strokeS* const psttUniqueP = 0 ) ;
+    voidT traceF( tinNormalS& tinP ) ;
+    jobS( tinNormalS& tinP , etherC& etherP , countT idTypeP = 0 , const strokeS* const psttToP = 0 , const strokeS* const psttFromP = 0 , const strokeS* const psttUniqueP = 0 ) ;
     ~jobS( voidT ) ;
     NEWdELcLASSpROTOS
    
@@ -1865,7 +1865,7 @@ struct jobS
 
 ;
 }
-    voidT traceF( tinS& tinP , const strokeS* const psttP = 0 ) ;
+    voidT traceF( tinNormalS& tinP , const strokeS* const psttP = 0 ) ;
     inline sCountT operator -( imageCompareS& picP ) { return bitsResult - picP.bitsResult ; }
     imageCompareS( voidT ) ;
     NEWdELcLASSpROTOS
@@ -1877,8 +1877,8 @@ struct imageCompareS
 ;
 }
     sCountT operator -( const fileMetaS& frP ) const ;
-    voidT traceF( tinS& tinP , stackC& stPathToYearP , const strokeS* const psttP = 0 ) ;
-    fileMetaS( tinS& tinP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) ;
+    voidT traceF( tinNormalS& tinP , stackC& stPathToYearP , const strokeS* const psttP = 0 ) ;
+    fileMetaS( tinNormalS& tinP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) ;
     NEWdELcLASSpROTOS
 
     countT   idSlotPathToYear ;

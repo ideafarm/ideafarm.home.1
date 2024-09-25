@@ -363,7 +363,7 @@ TODO
     countT pcPassword[] = { '8' ADDfLAK , 'd' ADDfLAK , 'b' ADDfLAK , 'b' ADDfLAK , '3' ADDfLAK , '6' ADDfLAK , 'b' ADDfLAK , 'a' ADDfLAK , '0' ADDfLAK , '3' ADDfLAK , 'd' ADDfLAK , 'a' ADDfLAK , '4' ADDfLAK , '0' ADDfLAK , '0' ADDfLAK , 'c' ADDfLAK , '8' ADDfLAK , 'f' ADDfLAK , 'c' ADDfLAK , 'f' ADDfLAK , '3' ADDfLAK , '6' ADDfLAK , '4' ADDfLAK , 'a' ADDfLAK , 'b' ADDfLAK , '9' ADDfLAK , 'c' ADDfLAK , 'e' ADDfLAK , 'e' ADDfLAK , 'f' ADDfLAK , 'b' ADDfLAK , '5' ADDfLAK } ;
     countT pcUser[]     = { 'i' ADDfLAK , 'p' ADDfLAK , 'd' ADDfLAK , 'o' ADDfLAK , 's' ADDfLAK , '.' ADDfLAK , '0' ADDfLAK , '1' ADDfLAK } ;
 {
-voidT secretF( tinS& tinP , etherC& etherP , textC& tUserP , textC& tPasswordP )
+voidT secretF( tinNormalS& tinP , etherC& etherP , textC& tUserP , textC& tPasswordP )
 
 #define SUBfLAK & ~0x84c73d00
 #define ADDfLAK |  0x84c73d00
@@ -395,29 +395,29 @@ voidT secretF( tinS& tinP , etherC& etherP , textC& tUserP , textC& tPasswordP )
     switchStackC& swsSettingsP     = *(switchStackC*)(&cArg2P)[ 2 ] ;
     strokeS*&     psttzLeverCloudP =     *(strokeS**)(&cArg2P)[ 1 ] ;
 {
-countT myCBF( tinS& tinP , countT& cArg1P , countT& cArg2P )
+countT myCBF( tinNormalS& tinP , countT& cArg1P , countT& cArg2P )
 byteT pbBufferCopy[ TUCK ] ;
 byteT pbBuffer[ TUCK ] ;
 
 }
     return 1 ;
 {
-boolT cloudNixRemoteCBF( tinS& tinP , etherC& etherP , cloudC& cloudP , const strokeS* const psttShortP , countT* pcArgP )
+boolT cloudNixRemoteCBF( tinNormalS& tinP , etherC& etherP , cloudC& cloudP , const strokeS* const psttShortP , countT* pcArgP )
 
 }
     return 1 ;
 {
-boolT cloudNixLocalCBF( tinS& tinP , etherC& etherP , cloudC& cloudP , const strokeS* const psttShortP , countT* pcArgP )
+boolT cloudNixLocalCBF( tinNormalS& tinP , etherC& etherP , cloudC& cloudP , const strokeS* const psttShortP , countT* pcArgP )
 
 }
     return 1 ;
 {
-boolT cloudUpdateRemoteCBF( tinS& tinP , etherC& etherP , cloudC& cloudP , const strokeS* const psttShortP , countT* pcArgP )
+boolT cloudUpdateRemoteCBF( tinNormalS& tinP , etherC& etherP , cloudC& cloudP , const strokeS* const psttShortP , countT* pcArgP )
 
 }
     return 1 ;
 {
-boolT cloudUpdateLocalCBF( tinS& tinP , etherC& etherP , cloudC& cloudP , const strokeS* const psttShortP , countT* pcArgP )
+boolT cloudUpdateLocalCBF( tinNormalS& tinP , etherC& etherP , cloudC& cloudP , const strokeS* const psttShortP , countT* pcArgP )
 
 }
     etherP.delF( tinP , psttSay ) ;
@@ -447,7 +447,7 @@ boolT cloudUpdateLocalCBF( tinS& tinP , etherC& etherP , cloudC& cloudP , const 
     etherP.strMakeF( tinP , LF , psttSay , 0 , TUCK << 3 ) ; ___( psttSay ) ;
     ZE( strokeS* , psttSay ) ;
 {
-voidT cloudSpecsS::sayF( tinS& tinP , etherC& etherP )
+voidT cloudSpecsS::sayF( tinNormalS& tinP , etherC& etherP )
 
 }
     }
@@ -528,7 +528,7 @@ voidT cloudSpecsS::sayF( tinS& tinP , etherC& etherP )
 
     TN( tPrefix    , "" ) ; tPrefix = T("!cloud.")+T(psttCloudP)+T(".") ;
 {
-voidT cloudSpecsS::setF( tinS& tinP , etherC& etherP , const strokeS* const psttCloudP , const strokeS* const psttShortKeyP )
+voidT cloudSpecsS::setF( tinNormalS& tinP , etherC& etherP , const strokeS* const psttCloudP , const strokeS* const psttShortKeyP )
 
 }
     if( postRenameToHashP      ) thirdC::c_strcpyIF( tinP , postRenameToHash      , postRenameToHashP      ) ;
@@ -554,22 +554,22 @@ voidT cloudSpecsS::setF( tinS& tinP , etherC& etherP , const strokeS* const pstt
     TN( tName , psttNameP ) ; thirdC::c_strcpyIF( tinP , postName , tName ) ;
     thirdC::c_memsetIF( tinP , (byteT*)this , sizeof *this ) ;
 {
-cloudSpecsS::cloudSpecsS( tinS& tinP , etherC& etherP , const strokeS* const psttNameP , const osTextT* const postBuildingP , const osTextT* const postDesireP , const osTextT* const postIdP , const osTextT* const postIfDifferP , const osTextT* const postLocalP , const osTextT* const postPasswordP , const osTextT* const postRemoteP , const osTextT* const postUserP , const osTextT* const postDeleteP , const osTextT* const postDelTriesP , const osTextT* const postMasterP , const osTextT* const postNetworkP , const osTextT* const postNapTocksP , const osTextT* const postAllOrNoneP , const osTextT* const postGhostP , const osTextT* const postWaitStepModuloP , const osTextT* const postWaitStepRemainderP , const osTextT* const postLikeP , const osTextT* const postRenameToHashP )
+cloudSpecsS::cloudSpecsS( tinNormalS& tinP , etherC& etherP , const strokeS* const psttNameP , const osTextT* const postBuildingP , const osTextT* const postDesireP , const osTextT* const postIdP , const osTextT* const postIfDifferP , const osTextT* const postLocalP , const osTextT* const postPasswordP , const osTextT* const postRemoteP , const osTextT* const postUserP , const osTextT* const postDeleteP , const osTextT* const postDelTriesP , const osTextT* const postMasterP , const osTextT* const postNetworkP , const osTextT* const postNapTocksP , const osTextT* const postAllOrNoneP , const osTextT* const postGhostP , const osTextT* const postWaitStepModuloP , const osTextT* const postWaitStepRemainderP , const osTextT* const postLikeP , const osTextT* const postRenameToHashP )
 
 }
     TN( tName , psttNameP ) ; thirdC::c_strcpyIF( tinP , postName , tName ) ;
     thirdC::c_memsetIF( tinP , (byteT*)this , sizeof *this ) ;
 {
-cloudSpecsS::cloudSpecsS( tinS& tinP , etherC& etherP , const strokeS* const psttNameP )
+cloudSpecsS::cloudSpecsS( tinNormalS& tinP , etherC& etherP , const strokeS* const psttNameP )
 
 NEWdELcLASS( 1 , cloudSpecsS ) ;
 
 ;
 }
-    voidT sayF( tinS& tinP , etherC& etherP ) ;
-    voidT setF( tinS& tinP , etherC& etherP , const strokeS* const psttCloudP , const strokeS* const psttShortKeyP ) ;
-    cloudSpecsS( tinS& tinP , etherC& etherP , const strokeS* const psttNameP , const osTextT* const postBuildingP , const osTextT* const postDesireP , const osTextT* const postIdP , const osTextT* const postIfDifferP , const osTextT* const postLocalP , const osTextT* const postPasswordP , const osTextT* const postRemoteP , const osTextT* const postUserP , const osTextT* const postDeleteP , const osTextT* const postDelTriesP , const osTextT* const postMasterP , const osTextT* const postNetworkP , const osTextT* const postNapTocksP , const osTextT* const postAllOrNoneP , const osTextT* const postGhostP , const osTextT* const postWaitStepModuloP , const osTextT* const postWaitStepRemainderP , const osTextT* const postLikeP , const osTextT* const postRenameToHashP ) ;
-    cloudSpecsS( tinS& tinP , etherC& etherP , const strokeS* const psttNameP ) ;
+    voidT sayF( tinNormalS& tinP , etherC& etherP ) ;
+    voidT setF( tinNormalS& tinP , etherC& etherP , const strokeS* const psttCloudP , const strokeS* const psttShortKeyP ) ;
+    cloudSpecsS( tinNormalS& tinP , etherC& etherP , const strokeS* const psttNameP , const osTextT* const postBuildingP , const osTextT* const postDesireP , const osTextT* const postIdP , const osTextT* const postIfDifferP , const osTextT* const postLocalP , const osTextT* const postPasswordP , const osTextT* const postRemoteP , const osTextT* const postUserP , const osTextT* const postDeleteP , const osTextT* const postDelTriesP , const osTextT* const postMasterP , const osTextT* const postNetworkP , const osTextT* const postNapTocksP , const osTextT* const postAllOrNoneP , const osTextT* const postGhostP , const osTextT* const postWaitStepModuloP , const osTextT* const postWaitStepRemainderP , const osTextT* const postLikeP , const osTextT* const postRenameToHashP ) ;
+    cloudSpecsS( tinNormalS& tinP , etherC& etherP , const strokeS* const psttNameP ) ;
     NEWdELcLASSpROTOS ;
 
     osTextT  postRenameToHash     [ TUCK ] ;

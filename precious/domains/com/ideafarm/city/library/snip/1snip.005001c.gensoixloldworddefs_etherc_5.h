@@ -1,5 +1,5 @@
 
-voidT strFromIdPortNicNameF_4P3d_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strFromIdPortNicNameF_4P3d_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -66,7 +66,7 @@ voidT strFromIdPortNicNameF_4P3d_GF( tinS& tinP , etherC& etherP , soulC& slP , 
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strFromProcessF_4P4P4P4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strFromProcessF_4P4P4P4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -148,7 +148,7 @@ voidT strFromProcessF_4P4P4P4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , 
     etherP.delF( tinP , psttOutP ) ;
 }
 
-voidT strFromUrlF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strFromUrlF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -191,7 +191,7 @@ voidT strFromUrlF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strFromJsonF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strFromJsonF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -215,7 +215,7 @@ voidT strFromJsonF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const str
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strFromIdJotF_4P33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strFromIdJotF_4P33_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -243,7 +243,7 @@ voidT strFromIdJotF_4P33_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strFuseSeparateF_4P4P33hPgrabCP3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strFuseSeparateF_4P4P33hPgrabCP3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -389,7 +389,7 @@ voidT strFuseSeparateF_4P4P33hPgrabCP3_GF( tinS& tinP , etherC& etherP , soulC& 
     etherP.delF( tinP , psttOutP ) ;
 }
 
-voidT strKTTrimF_4P4P33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strKTTrimF_4P4P33_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -484,7 +484,7 @@ voidT strKTTrimF_4P4P33_GF( tinS& tinP , etherC& etherP , soulC& slP , const str
     slP << noName ;
 }
 
-voidT strIdLathExpressionF_4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strIdLathExpressionF_4P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -509,7 +509,7 @@ voidT strIdLathExpressionF_4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , co
     slP << noName ;
 }
 
-voidT strIndentF_4P4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strIndentF_4P4P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -557,7 +557,7 @@ voidT strIndentF_4P4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strInsertF_4P34P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strInsertF_4P34P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -610,7 +610,7 @@ voidT strInsertF_4P34P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const str
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strInsertF_4P4P4P73_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strInsertF_4P4P4P73_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -688,7 +688,7 @@ voidT strInsertF_4P4P4P73_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strIsDigitsF_4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strIsDigitsF_4P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -732,7 +732,7 @@ voidT strIsDigitsF_4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     slP << noName ;
 }
 
-voidT strBodyLengthF_2P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strBodyLengthF_2P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -752,7 +752,7 @@ voidT strBodyLengthF_2P_GF( tinS& tinP , etherC& etherP , soulC& slP , const str
     slP << noName ;
 }
 
-voidT strCLinesF_4P4P6_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strCLinesF_4P4P6_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -821,7 +821,7 @@ voidT strCLinesF_4P4P6_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     slP << noName ;
 }
 
-voidT strMakeFromOsTextF_4P2P33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strMakeFromOsTextF_4P2P33_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -893,7 +893,7 @@ voidT strMakeFromOsTextF_4P2P33_GF( tinS& tinP , etherC& etherP , soulC& slP , c
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strMakeF_33pbRefCP4P37_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strMakeF_33pbRefCP4P37_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -979,7 +979,7 @@ voidT strMakeF_33pbRefCP4P37_GF( tinS& tinP , etherC& etherP , soulC& slP , cons
     slP << noName ;
 }
 
-voidT strMakeF_332P4P373_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strMakeF_332P4P373_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1089,7 +1089,7 @@ voidT strMakeF_332P4P373_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
     slP << noName ;
 }
 
-voidT strMakeF_334P4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strMakeF_334P4P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1166,7 +1166,7 @@ voidT strMakeF_334P4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     etherP.delF( tinP , psttOutP ) ;
 }
 
-voidT strRemoveBlankLinesF_4P4P4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strRemoveBlankLinesF_4P4P4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1259,7 +1259,7 @@ voidT strRemoveBlankLinesF_4P4P4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strReplaceF_4P4P4P4P37_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strReplaceF_4P4P4P4P37_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1347,7 +1347,7 @@ voidT strReplaceF_4P4P4P4P37_GF( tinS& tinP , etherC& etherP , soulC& slP , cons
     slP << noName ;
 }
 
-voidT strReplaceF_4P4P337_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strReplaceF_4P4P337_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1428,7 +1428,7 @@ voidT strReplaceF_4P4P337_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
     slP << noName ;
 }
 
-voidT strReplaceAnyF_4P4P4P4P37_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strReplaceAnyF_4P4P4P4P37_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1516,7 +1516,7 @@ voidT strReplaceAnyF_4P4P4P4P37_GF( tinS& tinP , etherC& etherP , soulC& slP , c
     slP << noName ;
 }
 
-voidT strReplaceAutomaticallyF_4P4P33_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strReplaceAutomaticallyF_4P4P33_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1607,7 +1607,7 @@ voidT strReplaceAutomaticallyF_4P4P33_GF( tinS& tinP , etherC& etherP , soulC& s
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strReverseF_4P4P4PhPgrabCP3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strReverseF_4P4P4PhPgrabCP3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1749,7 +1749,7 @@ voidT strReverseF_4P4P4PhPgrabCP3_GF( tinS& tinP , etherC& etherP , soulC& slP ,
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strRulerF_4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strRulerF_4P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1772,7 +1772,7 @@ voidT strRulerF_4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strSubstringF_4P334P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strSubstringF_4P334P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1830,7 +1830,7 @@ voidT strSubstringF_4P334P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strGetMimeHeaderF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strGetMimeHeaderF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1854,7 +1854,7 @@ voidT strGetMimeHeaderF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , cons
     etherP.delF( tinP , psttToP ) ;
 }
 
-voidT strGetMimeBodyF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strGetMimeBodyF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1878,7 +1878,7 @@ voidT strGetMimeBodyF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const 
     etherP.delF( tinP , psttToP ) ;
 }
 
-voidT strSubstringMimeHeaderF_4P4P4P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strSubstringMimeHeaderF_4P4P4P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1932,7 +1932,7 @@ voidT strSubstringMimeHeaderF_4P4P4P3_GF( tinS& tinP , etherC& etherP , soulC& s
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strToHtmlF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strToHtmlF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1975,7 +1975,7 @@ voidT strToHtmlF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strok
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strToUrlF_4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strToUrlF_4P4P7_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2042,7 +2042,7 @@ voidT strToUrlF_4P4P7_GF( tinS& tinP , etherC& etherP , soulC& slP , const strok
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strToFileNameF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strToFileNameF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2085,7 +2085,7 @@ voidT strToFileNameF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strUniqueF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strUniqueF_4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2103,7 +2103,7 @@ voidT strUniqueF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strUrlDecodeF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strUrlDecodeF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2127,7 +2127,7 @@ voidT strUrlDecodeF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
     etherP.delF( tinP , psttOutP ) ;
 }
 
-voidT strUrlDecodeF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strUrlDecodeF_4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2145,7 +2145,7 @@ voidT strUrlDecodeF_4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strUrlNameF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strUrlNameF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2169,7 +2169,7 @@ voidT strUrlNameF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     etherP.delF( tinP , psttNameP ) ;
 }
 
-voidT strUrlSchemeF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strUrlSchemeF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2193,7 +2193,7 @@ voidT strUrlSchemeF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
     etherP.delF( tinP , psttSchemeP ) ;
 }
 
-voidT strEncode_01F_1P1P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strEncode_01F_1P1P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2245,7 +2245,7 @@ voidT strEncode_01F_1P1P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
     slP << noName ;
 }
 
-voidT strEncodeF_1P4P1P31P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strEncodeF_1P4P1P31P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2366,7 +2366,7 @@ voidT strEncodeF_1P4P1P31P_GF( tinS& tinP , etherC& etherP , soulC& slP , const 
     slP << noName ;
 }
 
-voidT strDecodeF_4P1P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strDecodeF_4P1P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2394,7 +2394,7 @@ voidT strDecodeF_4P1P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strok
     slP << noName ;
 }
 
-voidT strBisectF_4P4P4P4P373_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strBisectF_4P4P4P4P373_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2527,7 +2527,7 @@ voidT strBisectF_4P4P4P4P373_GF( tinS& tinP , etherC& etherP , soulC& slP , cons
     slP << noName ;
 }
 
-voidT strFileMatchF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strFileMatchF_4P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2553,7 +2553,7 @@ voidT strFileMatchF_4P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const st
     slP << noName ;
 }
 
-voidT strEncodeBlobToRFC4648F_4P1P3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strEncodeBlobToRFC4648F_4P1P3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2582,7 +2582,7 @@ voidT strEncodeBlobToRFC4648F_4P1P3_GF( tinS& tinP , etherC& etherP , soulC& slP
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT strDecodeBlobFromRFC4648F_1P34P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT strDecodeBlobFromRFC4648F_1P34P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2611,7 +2611,7 @@ voidT strDecodeBlobFromRFC4648F_1P34P_GF( tinS& tinP , etherC& etherP , soulC& s
     etherP.delF( tinP , pbP ) ;
 }
 
-voidT sssTestF_64P4P334P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT sssTestF_64P4P334P4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2664,7 +2664,7 @@ voidT sssTestF_64P4P334P4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const 
     slP << noName ;
 }
 
-voidT winAppendTitleF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT winAppendTitleF_4Pb_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2705,7 +2705,7 @@ voidT winAppendTitleF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT winPostMessageAfterNapF_3b333_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT winPostMessageAfterNapF_3b333_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2778,7 +2778,7 @@ voidT winPostMessageAfterNapF_3b333_GF( tinS& tinP , etherC& etherP , soulC& slP
     if( !POOP ) etherP.winPostMessageAfterNapF( tinP , time1P , hWindowP , idCmdP , arg1P , arg2P ) ;
 }
 
-voidT winSetTitleF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT winSetTitleF_4Pb_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2823,7 +2823,7 @@ voidT winSetTitleF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const stro
     slP << noName ;
 }
 
-voidT cioSetupF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT cioSetupF__GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2834,7 +2834,7 @@ voidT cioSetupF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* c
     if( tinP.fingerprint && _psttNameP && slP ) ;
 }
 
-voidT cioSetQuitF_6_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT cioSetQuitF_6_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2849,7 +2849,7 @@ voidT cioSetQuitF_6_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS
     if( !POOP ) etherP.cioSetQuitF( tinP , bQuitP ) ;
 }
 
-voidT cioSetArgF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT cioSetArgF_3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2864,7 +2864,7 @@ voidT cioSetArgF_3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS*
     if( !POOP ) etherP.cioSetArgF( tinP , cArgP ) ;
 }
 
-voidT traceF_4P73_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT traceF_4P73_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2947,7 +2947,7 @@ voidT traceF_4P73_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* 
     etherP.delF( tinP , psttP ) ;
 }
 
-voidT tracePoolTalliesF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT tracePoolTalliesF__GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2958,7 +2958,7 @@ voidT tracePoolTalliesF__GF( tinS& tinP , etherC& etherP , soulC& slP , const st
     if( tinP.fingerprint && _psttNameP && slP ) ;
 }
 
-voidT traceMemoryGrainRptF__GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT traceMemoryGrainRptF__GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2969,7 +2969,7 @@ voidT traceMemoryGrainRptF__GF( tinS& tinP , etherC& etherP , soulC& slP , const
     if( tinP.fingerprint && _psttNameP && slP ) ;
 }
 
-voidT hushWritePrivateKeyToFileF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushWritePrivateKeyToFileF_4Pb_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -2990,7 +2990,7 @@ voidT hushWritePrivateKeyToFileF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& sl
     etherP.delF( tinP , psttFileP ) ;
 }
 
-voidT hushWritePublicKeyToFileF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushWritePublicKeyToFileF_4Pb_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3011,7 +3011,7 @@ voidT hushWritePublicKeyToFileF_4Pb_GF( tinS& tinP , etherC& etherP , soulC& slP
     etherP.delF( tinP , psttFileP ) ;
 }
 
-voidT hushGetPublicKeyF_1P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushGetPublicKeyF_1P3b_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3039,7 +3039,7 @@ voidT hushGetPublicKeyF_1P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , cons
     etherP.delF( tinP , pbP ) ;
 }
 
-voidT hushGetPrivateKeyF_1P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushGetPrivateKeyF_1P3b_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3067,7 +3067,7 @@ voidT hushGetPrivateKeyF_1P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , con
     etherP.delF( tinP , pbP ) ;
 }
 
-voidT hushReadPrivateKeyFromFileF_b4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushReadPrivateKeyFromFileF_b4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3088,7 +3088,7 @@ voidT hushReadPrivateKeyFromFileF_b4P_GF( tinS& tinP , etherC& etherP , soulC& s
     etherP.delF( tinP , psttFileP ) ;
 }
 
-voidT hushReadPublicKeyFromFileF_b4P_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushReadPublicKeyFromFileF_b4P_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3109,7 +3109,7 @@ voidT hushReadPublicKeyFromFileF_b4P_GF( tinS& tinP , etherC& etherP , soulC& sl
     etherP.delF( tinP , psttFileP ) ;
 }
 
-voidT hushEncryptF_1P31P31P31P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushEncryptF_1P31P31P31P3b_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3170,7 +3170,7 @@ voidT hushEncryptF_1P31P31P31P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , 
     etherP.delF( tinP , pbSymCypherTextP ) ;
 }
 
-voidT hushDecryptF_1P31P31P31P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushDecryptF_1P31P31P31P3b_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3231,7 +3231,7 @@ voidT hushDecryptF_1P31P31P31P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , 
     etherP.delF( tinP , pbPlainTextP ) ;
 }
 
-voidT hushMakeKeyPairF_b3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushMakeKeyPairF_b3_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -3270,7 +3270,7 @@ voidT hushMakeKeyPairF_b3_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
     if( !POOP ) etherP.hushMakeKeyPairF( tinP , hKeyPairP , cBitsP ) ;
 }
 
-voidT hushWothNonceF_6333b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushWothNonceF_6333b_GF( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;

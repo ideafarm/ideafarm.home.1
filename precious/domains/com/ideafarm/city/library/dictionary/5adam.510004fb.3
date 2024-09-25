@@ -139,10 +139,10 @@ DONE( tmConsoleF )
                             {
                             else
                             if( !bOk || getNegAM( pCopyTin->fingerprint ) != FINGERnEG_TINs || info.idSerial != pCopyTin->idSerial ) pCopyTin = 0 ;
-                            thirdC::dosReadProcessMemoryIF( tinP , pbCopyTin , sizeof( tinS ) , bOk , (voidT*)info.ip , info.osPid ) ;
+                            thirdC::dosReadProcessMemoryIF( tinP , pbCopyTin , sizeof( tinNormalS ) , bOk , (voidT*)info.ip , info.osPid ) ;
                             ZE( boolT , bOk ) ;
-                            tinS* pCopyTin = (tinS*)pbCopyTin ;
-                            byteT pbCopyTin[ sizeof( tinS ) ] ;
+                            tinNormalS* pCopyTin = (tinNormalS*)pbCopyTin ;
+                            byteT pbCopyTin[ sizeof( tinNormalS ) ] ;
     
                             tinEntryS& info = *(tinEntryS*)&memorySpace.swsTin.downF( tinP , hWalk ) ;
                         {

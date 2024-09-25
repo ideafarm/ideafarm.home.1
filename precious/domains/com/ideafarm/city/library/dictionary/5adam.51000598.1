@@ -87,9 +87,9 @@ ether.loafIF( tinP ) ;
                             if( tinc.pGrabbing )
                             //CONoUTrAW( T("[osPid,bIda,ip]:")+tb+TF2(osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb+TF2(bIda,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb+TF2(ip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr ) ;
         
-                            tinS& tinc = *(tinS*)pbTin ;
+                            tinNormalS& tinc = *(tinNormalS*)pbTin ;
                         {
-                        if( pbTin && cbTin == sizeof( tinS ) )
+                        if( pbTin && cbTin == sizeof( tinNormalS ) )
                         sIn2.shiftRightF( tinP , pbTin , cbTin , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbTin ) ;
                         ZE( countT , cbTin ) ;
                         ZE( byteT* , pbTin ) ;
@@ -107,7 +107,7 @@ ether.loafIF( tinP ) ;
                     soulC sIn2( tinP , TAG( TAGiDnULL ) ) ;
                     
                     sockm.writeF( tinP , sOut2 ) ;
-                    sOut2 << sizeof( tinS ) ;
+                    sOut2 << sizeof( tinNormalS ) ;
                     sOut2 << ip ;
                     sOut2 << osPid ;
                     sOut2 << (countT)ifcIDcMDmONITOR_IMAGE ;
@@ -139,7 +139,7 @@ ether.loafIF( tinP ) ;
     {
     while( sIn )
     
-    __( idReply - ifcIDrEPLYmONITOR_tinS ) ;
+    __( idReply - ifcIDrEPLYmONITOR_tinNormalS ) ;
     sIn >> idReply ;
     ZE( countT , idReply ) ;
     
@@ -147,7 +147,7 @@ ether.loafIF( tinP ) ;
     soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
     
     sockm.writeF( tinP , sOut ) ;
-    sOut << (countT)ifcIDcMDmONITOR_tinS ;
+    sOut << (countT)ifcIDcMDmONITOR_tinNormalS ;
     soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
 
     etThread.strMakeF( tinP , LF , psttr , T("\fIPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System\r\nPerformance Monitor\r\ncycle: ")+TF2(++idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr , TOCK ) ; ___( psttr ) ;
@@ -193,7 +193,7 @@ TODO
     sOut3 << (countT)ifcIDcMDmONITOR_IMAGE ;
     soulC sOut3( tinP , TAG( TAGiDnULL ) ) ;
 {
-voidT image_grabS_F( tinS& tinP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , grabS* pForeignGrabP , countT osPidP )
+voidT image_grabS_F( tinNormalS& tinP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , grabS* pForeignGrabP , countT osPidP )
 
 //THIS ADAM IS OBSOLETED BY FUNCTIONALITY BUILT INTO obeyF IN 0850104
 

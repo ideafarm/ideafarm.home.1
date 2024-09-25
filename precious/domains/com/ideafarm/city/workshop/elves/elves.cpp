@@ -3366,6 +3366,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.tallyC"                                      ,
                     "1snip.15*.tlsBlobC"                                    ,
                     "1snip.15*.tinS"                                        ,
+                    "1snip.15*.tinBaseS"                                    ,
                     "1snip.15*.bookMarkS"                                   ,
                     "1snip.15*.topC"                                        ,
                     "1snip.15*.cleanC"                                      ,

@@ -12,7 +12,7 @@
     inline boolT operator !=( const metaS& metaP ) const { TINSL return !!thirdC::c_memcmpIF( tinP , (byteT*)this , (byteT*)&metaP , sizeof *this ) ; }
     inline boolT operator ==( const metaS& metaP ) const { TINSL return  !thirdC::c_memcmpIF( tinP , (byteT*)this , (byteT*)&metaP , sizeof *this ) ; }
 
-    inline metaS( tinS& tinP ) { thirdC::c_memsetIF( tinP , (byteT*)this , sizeof *this ) ; }
+    inline metaS( tinNormalS& tinP ) { thirdC::c_memsetIF( tinP , (byteT*)this , sizeof *this ) ; }
 
     countT pcHashMd5[ 4 ] ;
     countT cbUsed ;

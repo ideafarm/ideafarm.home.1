@@ -61,7 +61,7 @@
             //if( tinP.pc Utility[ 0 ] ) tinP.pc Utility[ 1 ] -- ;
             //if( tinP.pc Utility[ 0 ] && postInGroup   ) { CONoUTrAW( postInGroup ) ; CONoUTrAW( "\r\n" ) ; }
             //if( tinP.pc Utility[ 0 ] && postName      ) { CONoUTrAW( postName    ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( tinP.pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinS::newF/entry erased at    " , (countT)( pbTls + offMe ) , "\r\n" ) ; }
+            //if( tinP.pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinNormalS::newF/entry erased at    " , (countT)( pbTls + offMe ) , "\r\n" ) ; }
             const osTextT* const postInGroup  = !costaInGroup ? 0 : (byteT*)&costaInGroup + sizeof( countT ) + costaName ;
             const osTextT* const postName     = !costaName    ? 0 : (byteT*)&costaInGroup + sizeof( countT ) ;
 
@@ -166,14 +166,14 @@
     IFbEcAREFUL
     POOPIES
 
-    tinS& tinP = *this ;
+    tinNormalS& tinP = *this ;
 
     //}
-    //    LOGrAWtID2( "tinS::delF [pb]: " , pbMeP ) //U:: TO FIND A BUG: REMOVE IN PRODUCTION FOR SPEED
-    //    tinS& tinP = *this ;
+    //    LOGrAWtID2( "tinNormalS::delF [pb]: " , pbMeP ) //U:: TO FIND A BUG: REMOVE IN PRODUCTION FOR SPEED
+    //    tinNormalS& tinP = *this ;
     //{
 {
-/*1*/voidT tinS::tlsDelF( const countT idLineP , const countT idiFileP , byteT*& pbMeP )/*1*/
+/*1*/voidT tinNormalS::tlsDelF( const countT idLineP , const countT idiFileP , byteT*& pbMeP )/*1*/
 
 // THE pbMeP PARAMETER IS USED TO ENFORCE THIS
 // TLS ENTRIES MUST BE CT/DT IN LIFO ORDER

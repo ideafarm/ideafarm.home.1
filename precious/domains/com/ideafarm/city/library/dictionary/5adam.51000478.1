@@ -17,7 +17,7 @@ REST
         etThread.delF( tinP , pbts ) ;
         }
             }
-                pbc += sizeof( tinS ) ;
+                pbc += sizeof( tinNormalS ) ;
                 etThread.delF( tinP , postr ) ;
                 etThread.boxPutF( tinP , tPrefix+T(".")+TF1(pTin->idProcessOld)+T(".")+TF1(pTin->postThreadName)+T(".")+TF1(pTin->idThread) , postr , costr ) ;
                 etThread.delF( tinP , psttr ) ;
@@ -26,7 +26,7 @@ REST
                 pTin->strFuseF( tinP , etThread , psttr ) ; ___( psttr ) ;
                 ZE( strokeS* , psttr ) ;
         
-                tinS* pTin = (tinS*)pbc ;
+                tinNormalS* pTin = (tinNormalS*)pbc ;
             {
             while( pbc < pbe )
             byteT* const pbe = pbts + cbts ;
@@ -39,7 +39,7 @@ REST
         ZE( sCountT , timeN2 ) ;
         ZE( countT , timeN1 ) ;
     
-        __( cbts % sizeof( tinS ) ) ;
+        __( cbts % sizeof( tinNormalS ) ) ;
         etThread.boxGetShadowF( tinP , pbts , cbts , tFile ) ;
         ZE( countT , cbts ) ;
         ZE( byteT* , pbts ) ; // "tin set"
@@ -47,7 +47,7 @@ REST
     else                                           
     if( !etThread.diskFileExistsF( tinP , tFile ) ) etThread.osMessageBoxF( tinP , tFile+T(" does not exist") ) ;
 
-    TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinP,T("///c")))+T("/tinSet.")+TF1(idFile) ;
+    TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinP,T("///c")))+T("/tinNormalSet.")+TF1(idFile) ;
     TN( tIdFile , "" ) ; tIdFile = TF1(idFile) ;
 {
 for( countT idFile = 1 ; idFile <= 1 ; idFile ++ )

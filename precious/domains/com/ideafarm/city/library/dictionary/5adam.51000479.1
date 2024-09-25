@@ -35,14 +35,14 @@ REST
                 ZE( strokeS* , psttr ) ;
         
                 }
-                    pbc += sizeof( tinS ) ;
+                    pbc += sizeof( tinNormalS ) ;
         
                     etThread.strFuseF( tinP , psttd , TF3(etherC::ifc_idAdamG_IF(tinP),flFORMAT_null,9)+TP(pTin->postThreadName,0x10)+TP(ppostWhere[idWhere2],0x18)+T(pTin->postTell)+tc ) ;
                     cThreads ++ ;
         
                     countT idWhere2 = pTin->idWhere - ifcIDwHERE_IFC + 1 < sizeof ppostWhere / sizeof ppostWhere[ 0 ] ? pTin->idWhere - ifcIDwHERE_IFC + 1 : 0 ;
             
-                    tinS* pTin = (tinS*)pbc ;
+                    tinNormalS* pTin = (tinNormalS*)pbc ;
                 {
                 while( pbc < pbe )
                 byteT* const pbe = pbts + cbts ;
@@ -75,13 +75,13 @@ REST
                 "IFC" ,
                 "<invalid value>" ,
             {
-            static osTextT* ppostWhere[] = // 0010*.ifcIDwHERE AND func.12f0007.tinS.strFuseF AND adam.c740104 MUST BE KEPT IN SYNC
+            static osTextT* ppostWhere[] = // 0010*.ifcIDwHERE AND func.12f0007.tinNormalS.strFuseF AND adam.c740104 MUST BE KEPT IN SYNC
         
             etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
         
-            __( cbts % sizeof( tinS ) ) ;
+            __( cbts % sizeof( tinNormalS ) ) ;
     
             ether.boxGetF( tinP , pbts , cbts , tFile ) ;
             ZE( countT , cbts ) ;
@@ -90,7 +90,7 @@ REST
         //else                                           
         //if( !etThread.diskFileExistsF( tinP , tFile ) ) etThread.osMessageBoxF( tinP , tFile+T(" does not exist") ) ;
     
-        TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinP,T("///c")))+T("/tinSet.")+TF1(idFile) ;
+        TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinP,T("///c")))+T("/tinNormalSet.")+TF1(idFile) ;
         TN( tIdFile , "" ) ; tIdFile = TF1(idFile) ;
     {
     //U: for( countT idFile = 1 ; idFile <= 2 ; idFile ++ )

@@ -21,31 +21,31 @@
     inline const listC* pDadF( voidT )       const { return (const listC*)(byteT*)aptDad ; }
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.listingC.nameF!||
-    countT nameF( tinS& tinP , countT*& pczNameP ) const ;
+    countT nameF( tinNormalS& tinP , countT*& pczNameP ) const ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listingC.nameF!||
     countT nameF( sCountT idP = 0 ) const ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.listingC.cRefDatumF!||
-    countT cRefDatumF( tinS& tinP ) const ;
+    countT cRefDatumF( tinNormalS& tinP ) const ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.listingC.operator_subtract!||
     sCountT operator -( const listingC& lP ) const ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.listingC.openF!||
-    voidT openF( tinS& tinP , handleC& hListP , const countT* const pczNameDadP = 0 , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
+    voidT openF( tinNormalS& tinP , handleC& hListP , const countT* const pczNameDadP = 0 , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.listingC.listingC!||
-    listingC( tinS& tinP , const listC& listDadP , const flagsT flagsP = flLISTINGc_null ) ;
+    listingC( tinNormalS& tinP , const listC& listDadP , const flagsT flagsP = flLISTINGc_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.listingC.dt_listingC!||
     ~listingC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.listingC.NEWdELcLASSb!||
     NEWdELcLASSpROTOS
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.listingC.bIsListingIF!||
-    static boolT bIsListingIF( tinS& tinP , const listingC* pdListingP , const byteT bitsP = 0 , const byteT idTypeDatumP = 0 ) ;
+    static boolT bIsListingIF( tinNormalS& tinP , const listingC* pdListingP , const byteT bitsP = 0 , const byteT idTypeDatumP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.listingC.bIsListingIF!||
-    static boolT bIsListingIF( tinS& tinP , const aptC& aptP , const byteT bitsP = 0 , const byteT idTypeDatumP = 0 ) ;
+    static boolT bIsListingIF( tinNormalS& tinP , const aptC& aptP , const byteT bitsP = 0 , const byteT idTypeDatumP = 0 ) ;
 
     public :
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.listingC.listingC!||
-    listingC( tinS& tinP , const flagsT flagsP = flLISTINGc_null ) ;        // ILLEGAL FOR ANY CODE TO CALL THIS EXCEPT FOR THE PRIVATE listC CONSTRUCTOR THAT IS CALLED BY poolC::face_poolC_S::face_poolC_S TO CONSTRUCT THE ROOT listC FOR THE POOL
+    listingC( tinNormalS& tinP , const flagsT flagsP = flLISTINGc_null ) ;        // ILLEGAL FOR ANY CODE TO CALL THIS EXCEPT FOR THE PRIVATE listC CONSTRUCTOR THAT IS CALLED BY poolC::face_poolC_S::face_poolC_S TO CONSTRUCT THE ROOT listC FOR THE POOL
 
     aptC            aptBro ;       // THE NEXT listingC (MY YOUNGER BROTHER) IN THE LIST ANCHORED IN aptDad
     aptC            aptDad ;        // THE listC INSTANCE, IF ANY, THAT CONTAINS ME (WILL BE NULL ONLY FOR THE ROOT LIST)

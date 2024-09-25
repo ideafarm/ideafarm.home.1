@@ -479,7 +479,7 @@ TASK( tmSaveTickF )
     {
     if( psttOneP && infoP )
 {
-voidT keyTaskNoticeHandlerF( tinS& tinP , etherC& etThread , strokeS*& psttOneP , const countT infoP )
+voidT keyTaskNoticeHandlerF( tinNormalS& tinP , etherC& etThread , strokeS*& psttOneP , const countT infoP )
 
 }
     }
@@ -515,7 +515,7 @@ voidT keyTaskNoticeHandlerF( tinS& tinP , etherC& etThread , strokeS*& psttOneP 
     boolT bFirst = 1 ;
     ZE( countT , idJob ) ;
 {
-voidT newTaskF( tinS& tinP , etherC& etThread , stackC& stTaskStartP , countT& timeCurrent1P , sCountT& timeCurrent2P , countT& idTaskCurrentP , const countT idTypeP , stackC& stDigitsP )
+voidT newTaskF( tinNormalS& tinP , etherC& etThread , stackC& stTaskStartP , countT& timeCurrent1P , sCountT& timeCurrent2P , countT& idTaskCurrentP , const countT idTypeP , stackC& stDigitsP )
 
 }
     if( etThread ) ;
@@ -542,7 +542,7 @@ voidT newTaskF( tinS& tinP , etherC& etThread , stackC& stTaskStartP , countT& t
     boolT bFirst = 1 ;
     ZE( countT , idJob ) ;
 {
-voidT undoF( tinS& tinP , etherC& etThread , stackC& stTaskStartP , countT& timeCurrent1P , sCountT& timeCurrent2P , countT& idTaskCurrentP , stackC& stDigitsP )
+voidT undoF( tinNormalS& tinP , etherC& etThread , stackC& stTaskStartP , countT& timeCurrent1P , sCountT& timeCurrent2P , countT& idTaskCurrentP , stackC& stDigitsP )
 
 }
     ;
@@ -565,7 +565,7 @@ voidT undoF( tinS& tinP , etherC& etThread , stackC& stTaskStartP , countT& time
     __Z( psttP ) ;
     if( etThread ) return 0 ;
 {
-boolT bLooksLikeTimeF( tinS& tinP , etherC& etThread , const strokeS* const psttP ) //EXAMPLE: T("12.34@56.78")
+boolT bLooksLikeTimeF( tinNormalS& tinP , etherC& etThread , const strokeS* const psttP ) //EXAMPLE: T("12.34@56.78")
 
 strokeS* psttFile ;
 
@@ -577,7 +577,7 @@ strokeS* psttFile ;
 }
 {
 stateC( tinP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tinS& tinP , etherC& etherP ) :
+stateS::stateS( tinNormalS& tinP , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -588,7 +588,7 @@ TRANSLATEsTATE_BEGIN( stateS , 2 )
 
 ;
 }
-    stateS( tinS& tinP , etherC& etherP ) ;
+    stateS( tinNormalS& tinP , etherC& etherP ) ;
 
     sCountT  timeBudAdj2 ;
     countT   timeBudAdj1 ;

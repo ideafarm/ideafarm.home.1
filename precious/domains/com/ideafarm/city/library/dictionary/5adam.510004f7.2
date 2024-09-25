@@ -92,7 +92,7 @@ TODO
     pStStBang->grabF( tinP , TAG( TAGiDnULL ) ) ;
     ZE( countT , cBacklog ) ;
 {
-countT godBacklogF( tinS& tinP )
+countT godBacklogF( tinNormalS& tinP )
 
 DONE( tmNodeF )
 }
@@ -109,12 +109,12 @@ TASK( tmNodeF )
     if( (*pStStBang)( (countT)&stBangP ) ) pStStBang->extractF( tinP ) ;
     pStStBang->grabF( tinP , TAG( TAGiDnULL ) ) ;
 {
-voidT godByeF( tinS& tinP , stackC& stBangP )
+voidT godByeF( tinNormalS& tinP , stackC& stBangP )
 
 }
     pStStBang->sinkF( tinP , countTC() , (countT)&stBangP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
 {
-voidT godHelloF( tinS& tinP , stackC& stBangP )
+voidT godHelloF( tinNormalS& tinP , stackC& stBangP )
 
 }
     pStNodeGod->ungrabF( tinP ) ;
@@ -122,12 +122,12 @@ voidT godHelloF( tinS& tinP , stackC& stBangP )
     pStNodeGod->grabF( tinP , TAG( TAGiDnULL ) ) ;
     bGasp = 1 ;
 {
-voidT godByeF( tinS& tinP , const nodeC& nodeP )
+voidT godByeF( tinNormalS& tinP , const nodeC& nodeP )
 
 }
     pStNodeGod->sinkF( tinP , countTC() , (byteT*)nodeP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
 {
-voidT godHelloF( tinS& tinP , const nodeC& nodeP )
+voidT godHelloF( tinNormalS& tinP , const nodeC& nodeP )
 
 }
     //return TOCK * 0x10 + *pRuAge / ( nodeP.idMe % 2 ? 1.0 : 16.0 ) ;
@@ -146,7 +146,7 @@ voidT godHelloF( tinS& tinP , const nodeC& nodeP )
     //static countT pcAge[ 2 ] = { TICK * 0x10 , TOCK * 0x20 } ;
 
 {
-countT godMyLifespanF( tinS& tinP , nodeC& nodeP )
+countT godMyLifespanF( tinNormalS& tinP , nodeC& nodeP )
 
 }
     if( tinP.fingerprint && etThread && stNodeOpenP ) ;
@@ -193,7 +193,7 @@ countT godMyLifespanF( tinS& tinP , nodeC& nodeP )
     
     TN( tLine , "" ) ; tLine = TF1(nodeP.idMe)+T(":") ;
 {
-voidT godPrayF( tinS& tinP , etherC& etThread , stackC& stNodeOpenP , const nodeC& nodeP , boolT& bTalkP )
+voidT godPrayF( tinNormalS& tinP , etherC& etThread , stackC& stNodeOpenP , const nodeC& nodeP , boolT& bTalkP )
 
 boolT bGasp ;
 

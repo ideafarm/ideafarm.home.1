@@ -23,7 +23,7 @@
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleUnregisterIF( tinS& tinP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleUnregisterIF( tinNormalS& tinP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -60,7 +60,7 @@
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleRegisterMeIfIF( tinS& tinP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleRegisterMeIfIF( tinNormalS& tinP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -96,7 +96,7 @@
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleRefreshTimeStampIF( tinS& tinP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleRefreshTimeStampIF( tinNormalS& tinP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -170,7 +170,7 @@
     //if( !pczChannelP )
     portTimeC idpth ;
 {
-/*1*/portTimeC nodeOldC::handleQueryIF( tinS& tinP , const countT* const pczChannelP )/*1*/
+/*1*/portTimeC nodeOldC::handleQueryIF( tinNormalS& tinP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -198,7 +198,7 @@
     /* 5   */ sBagP << (countT)( 1 + incv02AM( idSerialLathHeaderP ) ) ;
     /* 1-4 */ idptP >> sBagP ;
 {
-/*1*/voidT nodeOldC::hdrBagIF( tinS& tinP , soulC& sBagP , portTimeC& idptP , countT& idSerialLathHeaderP , const flagsT flagsP , const countT idTypeP )/*1*/
+/*1*/voidT nodeOldC::hdrBagIF( tinNormalS& tinP , soulC& sBagP , portTimeC& idptP , countT& idSerialLathHeaderP , const flagsT flagsP , const countT idTypeP )/*1*/
 /**/
 */
 /*
@@ -244,7 +244,7 @@
     if( stIdptOpenP )
     stIdptTempP.purgeF( tinP ) ;
 {
-/*1*/voidT nodeOldC::sortOpenIF( tinS& tinP , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP )/*1*/
+/*1*/voidT nodeOldC::sortOpenIF( tinNormalS& tinP , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP )/*1*/
 /**/
 */
 /*
@@ -277,7 +277,7 @@
     stRelayP.grabF( tinP , TAG( TAGiDnULL ) ) ;
     _IO_
 {
-/*1*/voidT nodeOldC::myListIF( tinS& tinP , soulC& soulP , stackC& stRelayP )/*1*/
+/*1*/voidT nodeOldC::myListIF( tinNormalS& tinP , soulC& soulP , stackC& stRelayP )/*1*/
 /**/
 */
 /*
@@ -312,7 +312,7 @@
     const countT cRelays = soulP.cFieldF( tinP , idFieldP ++ ) ;
     _IO_
 {
-/*1*/countT nodeOldC::hisListIF( tinS& tinP , stackC& stP , soulC& soulP , stackC& stIdptGossipP , countT& idFieldP )/*1*/
+/*1*/countT nodeOldC::hisListIF( tinNormalS& tinP , stackC& stP , soulC& soulP , stackC& stIdptGossipP , countT& idFieldP )/*1*/
 /**/
 */
 /*
@@ -580,7 +580,7 @@
     {
     IFsCRATCH
 {
-/*1*/voidT nodeOldC::popIF( tinS& tinP , stackC* pStPop0P , stackC* pStPop1P , stackC* pStPop2P , stackC* pStPop3P , stackC* pStPop4P , soulC& sBagP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const boolT bDudP )/*1*/
+/*1*/voidT nodeOldC::popIF( tinNormalS& tinP , stackC* pStPop0P , stackC* pStPop1P , stackC* pStPop2P , stackC* pStPop3P , stackC* pStPop4P , soulC& sBagP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const boolT bDudP )/*1*/
 
 //
 //  n: (2**n)*x ................ (2**n)*x+(2**(n-1))-1 | (2**n)*x+(2**(n-1)) ............ (2**n)*(x+1)-1
@@ -629,7 +629,7 @@
     idWorkInvert1P =
     _IO_     TLNA( "idWorkInvertIF" )
 {
-/*1*/voidT nodeOldC::idWorkInvertIF( tinS& tinP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )/*1*/
+/*1*/voidT nodeOldC::idWorkInvertIF( tinNormalS& tinP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )/*1*/
 /**/
 */
 /*
@@ -670,7 +670,7 @@
     ZE( boolT , bListed ) ;
     GRABrELAYlISTS
 {
-/*1*/boolT nodeOldC::bListedIF( tinS& tinP , stackC& stIdptOpenP , stackC& stIdptGossipP , const portTimeC& idptP )/*1*/
+/*1*/boolT nodeOldC::bListedIF( tinNormalS& tinP , stackC& stIdptOpenP , stackC& stIdptGossipP , const portTimeC& idptP )/*1*/
 /**/
 */
 /*
@@ -791,7 +791,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT nodeOldC::idptSelectPeerIF( tinS& tinP , portTimeC& idptPeerP , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idMyWorkP , const flagsT flagsP )/*1*/
+/*1*/voidT nodeOldC::idptSelectPeerIF( tinNormalS& tinP , portTimeC& idptPeerP , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idMyWorkP , const flagsT flagsP )/*1*/
 /**/
 */
 /*
@@ -836,7 +836,7 @@
     if( idptPeer1P ) { BLAMMO ; }
     _IO_     TLNA( "portTimeClientIF" )
 {
-/*1*/voidT nodeOldC::portTimeClientIF( tinS& tinP , portTimeC& idptPeer1P , portTimeC& idptPeer2P , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idHisWorkP )/*1*/
+/*1*/voidT nodeOldC::portTimeClientIF( tinNormalS& tinP , portTimeC& idptPeer1P , portTimeC& idptPeer2P , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idHisWorkP )/*1*/
 /**/
 */
 /*
@@ -880,7 +880,7 @@
     {
     if( idWorkP )
 {
-/*1*/voidT nodeOldC::portTimeClientsExpectedIF( tinS& tinP , stackC& stRelayExpectedP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
+/*1*/voidT nodeOldC::portTimeClientsExpectedIF( tinNormalS& tinP , stackC& stRelayExpectedP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
 /**/
 */
 /*
@@ -939,7 +939,7 @@
     switch( idWorkP )
     portTimeC idptGossipped ;
 {
-/*1*/portTimeC nodeOldC::gossipIfIF( tinS& tinP , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
+/*1*/portTimeC nodeOldC::gossipIfIF( tinNormalS& tinP , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
 /**/
 */
 if idptGossipP is absent and is not already gossipped, then gossip about it
@@ -1001,7 +1001,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     IFsCRATCH
     boolT bOk = 1 ;
 {
-/*1*/boolT nodeOldC::testIF( tinS& tinP , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP )/*1*/
+/*1*/boolT nodeOldC::testIF( tinNormalS& tinP , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP )/*1*/
 /**/
 */
 /*
@@ -1078,7 +1078,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     {
     IFsCRATCH
 {
-/*1*/voidT nodeOldC::helloToHandleIF( tinS& tinP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
+/*1*/voidT nodeOldC::helloToHandleIF( tinNormalS& tinP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
 /**/
 */
 /*
@@ -1474,7 +1474,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
 
     RELAYiNFOf
 {
-/*1*/voidT nodeOldC::doWrapLocallyIfIF( tinS& tinP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
+/*1*/voidT nodeOldC::doWrapLocallyIfIF( tinNormalS& tinP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
 
 /**/
 */
@@ -1761,7 +1761,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     etherC& ether = etherC::etPrimeIF() ;
     _IO_
 {
-/*1*/nodeOldC::nodeOldC( tinS& tinP , etherC& etThread , boolT& bReadyP )/*1*/
+/*1*/nodeOldC::nodeOldC( tinNormalS& tinP , etherC& etThread , boolT& bReadyP )/*1*/
 
 
 
