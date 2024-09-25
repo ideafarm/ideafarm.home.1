@@ -8,7 +8,7 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    ((tinNormalS&)tinP).pag5->frPaper.grab.ungrabF( tinP ) ;
     thirdC::winBitBltIF( tinP , ifcIDtYPEpAINT_OPAQUE , hDrawWindow , *pulp.pHndDrawBitmap , mColsP ? mColsP : mCols , mRowsP ? mRowsP : mRows , mIdCol , mIdRow , mIdCol , mIdRow ) ;
 
     LOGrAW5( "backFlushF to window from bitmap [oshTo,oshFrom]: " , hDrawWindow.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , " " , pulp.pHndDrawBitmap->osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , "\r\n" ) ; //U::TO FIND A BUG
@@ -16,7 +16,7 @@
     const measureT mIdRow = mIdRowP ? mIdRowP : 1.0 ;
     const measureT mIdCol = mIdColP ? mIdColP : 1.0 ;
     winPulpOldC& pulp = *(winPulpOldC*)&pulpP ;
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinP).pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
 {
 /*1*/voidT windowOldC::backFlushF( tinNormalS& tinP , pulpOldC& pulpP , const measureT mIdColP , const measureT mIdRowP , const measureT mColsP , const measureT mRowsP )/*1*/
 

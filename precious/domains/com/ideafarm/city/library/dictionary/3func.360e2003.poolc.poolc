@@ -14,9 +14,9 @@
 
     }
         stPoolNames.sinkF( tinP , countTC() , (countT)guts.postName ) ;
-        stackC& stPoolNames = tinP.pEther->ifcStkPoolNamesF( tinP ) ;
+        stackC& stPoolNames = ((tinNormalS&)tinP).pEther->ifcStkPoolNamesF( tinP ) ;
     {
-    if( tinP.pEther )                                                                               // CS:CODEsYNC: 360e2003 360e2003
+    if( ((tinNormalS&)tinP).pEther )                                                                               // CS:CODEsYNC: 360e2003 360e2003
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // REGISTER MY NAME SO THAT tmWatchF CAN SEE WHICH poolC NAMES THIS PROCESSES IS USING
@@ -66,7 +66,7 @@
     {
     if( F(flagsP) & flPOOLc_RESETiNDEXbITS )
 
-    tinP.flagsThreadMode2 = saveThreadMode2 ;
+    ((tinNormalS&)tinP).flagsThreadMode2 = saveThreadMode2 ;
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // MAYBE RESET ALL INDEX BITS
@@ -74,12 +74,12 @@
 
     batPoolCt.ungrabF( tinP ) ;
                                                                                                         // CS:CODEsYNC: 360e2003 360e2003
-    else if( !tinP.pEther                      ) { BLAMMO ; }                                           // IT IS ILLEGAL TO CT A poolC INSTANCE OTHER THAN THOSE WHICH ARE REGISTERED IN tinP IF !tinP.pEther BECAUSE I WILL NOT BE ABLE TO REGISTER MY NAME INTO stPoolNames
-    else if( this == (poolC*)tinP.pag1->pbzphp )                 tinP.pag1->pPoolHomePerm = this ;
-    else if( this == (poolC*)tinP.pag1->pbzpap )                 tinP.pag1->pPoolAdamPerm = this ;
-    else if( this == (poolC*)tinP.pag1->pbzpsc )                 tinP.pag1->pPoolScratch  = this ;
-    else if( this == (poolC*)tinP.pag1->pbzpht )                 tinP.pag1->pPoolHomeTemp = this ;
-         if( !tinP.pag1->pPoolAdamTemp         ) tinP.pPoolUse = tinP.pag1->pPoolAdamTemp = this ; //A:ASSUME: THE ADAM TEMP POOL IS CT WOTH
+    else if( !((tinNormalS&)tinP).pEther                      ) { BLAMMO ; }                                           // IT IS ILLEGAL TO CT A poolC INSTANCE OTHER THAN THOSE WHICH ARE REGISTERED IN tinP IF !((tinNormalS&)tinP).pEther BECAUSE I WILL NOT BE ABLE TO REGISTER MY NAME INTO stPoolNames
+    else if( this == (poolC*)((tinNormalS&)tinP).pag1->pbzphp )                 ((tinNormalS&)tinP).pag1->pPoolHomePerm = this ;
+    else if( this == (poolC*)((tinNormalS&)tinP).pag1->pbzpap )                 ((tinNormalS&)tinP).pag1->pPoolAdamPerm = this ;
+    else if( this == (poolC*)((tinNormalS&)tinP).pag1->pbzpsc )                 ((tinNormalS&)tinP).pag1->pPoolScratch  = this ;
+    else if( this == (poolC*)((tinNormalS&)tinP).pag1->pbzpht )                 ((tinNormalS&)tinP).pag1->pPoolHomeTemp = this ;
+         if( !((tinNormalS&)tinP).pag1->pPoolAdamTemp         ) ((tinNormalS&)tinP).pPoolUse = ((tinNormalS&)tinP).pag1->pPoolAdamTemp = this ; //A:ASSUME: THE ADAM TEMP POOL IS CT WOTH
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // REGISTER MYSELF AS AN ADAM/HOME TEMP/PERM (OR SCRATCH) INSTANCE
@@ -88,7 +88,7 @@
     processGlobal5I._poolC_grab_pPool.ungrabF( tinP ) ;
 
     }
-        tinP.pEther->osThreadF( TaRG1( tmPoolFlushF ) ) ;
+        ((tinNormalS&)tinP).pEther->osThreadF( TaRG1( tmPoolFlushF ) ) ;
         puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
     {
     if( idStateSpaceP && ! processGlobal2I._poolC_cBacked ++ )
@@ -239,7 +239,7 @@
     // CREATE AND FORMAT REGISTRATION RECORD OR WAIT UNTIL ANOTHER poolC INSTANCE HAS DONE SO
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    napGuts.formattingIsDoneF( tinP ) ; //MUST BE DONE AFTER napFace IS FULLY CT SO THAT tinP.idDesireSetBySelf IS UNWOUND CORRECTLY
+    napGuts.formattingIsDoneF( tinP ) ; //MUST BE DONE AFTER napFace IS FULLY CT SO THAT ((tinNormalS&)tinP).idDesireSetBySelf IS UNWOUND CORRECTLY
     new( 0 , tinP , &napGuts ) guts_poolC_S( tinP , idLineCtP , idiFileCtP , pbBitsCtP , postNameP , flagsP , idStateSpaceP , expCbDropMinP , expCbDropMaxP , idMemorySpaceP ) ;
     
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -258,7 +258,7 @@
 
     //20170830@2027: ctFaceF WAS CALLED HERE.  MOVED TO EARLIER TO AVOID RECURSIVELY GRABBING GRABmEMORYsPACE
 
-    if( F(tinP.flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+    if( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
 
     }
         if( aptnu ) ;
@@ -270,37 +270,37 @@
         __( cbDropSeparatorP && cbDropSeparatorP - sizeof( countT ) ) ;
         __( idMemorySpaceP && ( idMemorySpaceP < ifcIDmEMORYsPACE_min || idMemorySpaceP > ifcIDmEMORYsPACE_max ) ) ;
         FV( flPOOLc , flagsP ) ;
-        FV( flTHREADmODE2 , tinP.flagsThreadMode2 ) ;
+        FV( flTHREADmODE2 , ((tinNormalS&)tinP).flagsThreadMode2 ) ;
         FV( flTHREADmODE2 , saveThreadMode2 ) ;
     {
     IFbEcAREFUL
 
-                                                    tinP.tlsDelF( LF , countTC() ) ; //TLS:1
-                                                    tinP.tlsDelF( LF , countTC() ) ; //TLS:2
-                                                    tinP.tlsDelF( LF , countTC() ) ; //TLS:3
-    flagsT saveThreadMode2 = *(flagsT*)tinP.pbF() ; tinP.tlsDelF( LF , countTC() ) ; //TLS:4
-                                                    tinP.tlsDelF( LF , countTC() ) ; //TLS:5
-                                                    tinP.tlsDelF( LF , countTC() ) ; //TLS:6
+                                                    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:1
+                                                    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:2
+                                                    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:3
+    flagsT saveThreadMode2 = *(flagsT*)((tinNormalS&)tinP).pbF() ; ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:4
+                                                    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:5
+                                                    ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ; //TLS:6
     _IO_
 {
 pSexLifoConstructed( 0 )
 face( *(face_poolC_S*)(byteT*)napFace ) ,
 guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
 ) ,
-    0 , sizeof( guts_poolC_S ) , ifcOPENsHAREDmEMORYhOW_nCeF //ALWAYS USES MEMORY SPACE DEDICATED TO EXCLUSIVE USE BY THE CONSTRUCTING PROCESS (tinP.osPid IS USED TO UNIQUIFY THE NAME)
+    0 , sizeof( guts_poolC_S ) , ifcOPENsHAREDmEMORYhOW_nCeF //ALWAYS USES MEMORY SPACE DEDICATED TO EXCLUSIVE USE BY THE CONSTRUCTING PROCESS (((tinNormalS&)tinP).osPid IS USED TO UNIQUIFY THE NAME)
     ) ,
         )
-            tinP.pbF( 2 )                                                                                        //TLS:5
+            ((tinNormalS&)tinP).pbF( 2 )                                                                                        //TLS:5
             ) ,
                 "."
                 ) ,
-                    idStateSpaceP ? tinP.pbF( 5 ) : ""                                                           //TLS:2
+                    idStateSpaceP ? ((tinNormalS&)tinP).pbF( 5 ) : ""                                                           //TLS:2
                     ) ,
                         idStateSpaceP ? "." : ""
                         ) ,
                             postNameP
                             ) ,
-                                tinP , tinP.pbF() , "poolC/guts/"                                                //TLS:6
+                                tinP , ((tinNormalS&)tinP).pbF() , "poolC/guts/"                                                //TLS:6
                             (
                             thirdC::c_strcpyIF
                             tinP ,
@@ -318,9 +318,9 @@ guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
             tinP ,
         (
         thirdC::c_strcatIF
-        tinP.tlsNewF( LF , TUCK ) ,                                                                              //TLS:6  ======== NEW ==========================================================    TUCK        "poolC/guts/[postNameP].[idStateSpaceP].[osPid]"
-        thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , tinP.osPid ) ,                                              //TLS:2
-        tinP.tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:5  ======== NEW ==========================================================    TUCK >> 4   [osPid]
+        ((tinNormalS&)tinP).tlsNewF( LF , TUCK ) ,                                                                              //TLS:6  ======== NEW ==========================================================    TUCK        "poolC/guts/[postNameP].[idStateSpaceP].[osPid]"
+        thirdC::c_itoaIF( tinP , ((tinNormalS&)tinP).pbF() , 0x10 , ((tinNormalS&)tinP).osPid ) ,                                              //TLS:2
+        ((tinNormalS&)tinP).tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:5  ======== NEW ==========================================================    TUCK >> 4   [osPid]
     (
     tinP , idLineCtP , idiFileCtP , pbBitsCtP ,
 (
@@ -329,9 +329,9 @@ flagsInstance( flPOOLiNSTANCE_null ) ,
 ) ,
     )
         (poolC*)0
-        tinP.flagsThreadMode2 |= flTHREADmODE2_ALLOWsTOPwHILEgRABBING ,
-        *(flagsT*)tinP.pbF() = tinP.flagsThreadMode2 ,                                                           //TLS:4
-        tinP.tlsNewF( LF , sizeof( flagsT ) ) ,                                                                  //TLS:4  ======== NEW ==========================================================    4           [flagsThreadMode2]
+        ((tinNormalS&)tinP).flagsThreadMode2 |= flTHREADmODE2_ALLOWsTOPwHILEgRABBING ,
+        *(flagsT*)((tinNormalS&)tinP).pbF() = ((tinNormalS&)tinP).flagsThreadMode2 ,                                                           //TLS:4
+        ((tinNormalS&)tinP).tlsNewF( LF , sizeof( flagsT ) ) ,                                                                  //TLS:4  ======== NEW ==========================================================    4           [flagsThreadMode2]
         ) ,
             cbDropSeparatorP , idStateSpaceP
             ,
@@ -361,13 +361,13 @@ pNext
     (
     ) ,
         )
-            idStateSpaceP ? tinP.pbF( 2 ) : ""                                                                   //TLS:2
+            idStateSpaceP ? ((tinNormalS&)tinP).pbF( 2 ) : ""                                                                   //TLS:2
             ) ,
                 idStateSpaceP ? "." : ""
                 ) ,
                     postNameP
                     ) ,
-                        tinP , tinP.pbF() , "poolC/face/"                                                        //TLS:3
+                        tinP , ((tinNormalS&)tinP).pbF() , "poolC/face/"                                                        //TLS:3
                     (
                     thirdC::c_strcpyIF
                     tinP ,
@@ -379,9 +379,9 @@ pNext
             tinP ,
         (
         thirdC::c_strcatIF
-        tinP.tlsNewF( LF , TUCK ) ,                                                                              //TLS:3  ======== NEW ==========================================================    TUCK        "poolC/face/[postNameP].[idStateSpaceP]"
-        thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , idStateSpaceP ) ,                                           //TLS:2
-        tinP.tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:2  ======== NEW ==========================================================    TUCK >> 4   [idStateSpaceP]
+        ((tinNormalS&)tinP).tlsNewF( LF , TUCK ) ,                                                                              //TLS:3  ======== NEW ==========================================================    TUCK        "poolC/face/[postNameP].[idStateSpaceP]"
+        thirdC::c_itoaIF( tinP , ((tinNormalS&)tinP).pbF() , 0x10 , idStateSpaceP ) ,                                           //TLS:2
+        ((tinNormalS&)tinP).tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:2  ======== NEW ==========================================================    TUCK >> 4   [idStateSpaceP]
     (
     tinP ,idLineCtP , idiFileCtP , pbBitsCtP ,
 (
@@ -392,13 +392,13 @@ napFace
         )
             postNameP
             ) ,
-                tinP , tinP.pbF() , "poolC/batonCt/"                                                             //TLS:1
+                tinP , ((tinNormalS&)tinP).pbF() , "poolC/batonCt/"                                                             //TLS:1
             (
             thirdC::c_strcpyIF
             tinP ,
         (
         thirdC::c_strcatIF
-        tinP.tlsNewF( LF , TUCK ) ,                                                                              //TLS:1  ======== NEW ==========================================================    TUCK        "poolC/batonCt/[postNameP]"
+        ((tinNormalS&)tinP).tlsNewF( LF , TUCK ) ,                                                                              //TLS:1  ======== NEW ==========================================================    TUCK        "poolC/batonCt/[postNameP]"
     (
     tinP , idLineCtP , idiFileCtP , pbBitsCtP ,
 (

@@ -10,14 +10,14 @@
                 _IO_
             {                                                                                                                                                                   \
                                                                                                                                                                                 \
-            tinP.pSgnUtility = &_sgnUtility ;                                                                                                                                   \
+            ((tinNormalS&)tinP).pSgnUtility = &_sgnUtility ;                                                                                                                                   \
             signC _sgnUtility( tinP , TAG( TAGiDnULL ) ) ;                                                                                                                      \
             }                                                                                                                                                                   \
-                if( tinP.idPhase1 < ifcIDpHASEtHREAD_WORKING ) tinP.idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                       \
+                if( ((tinNormalS&)tinP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tinNormalS&)tinP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                       \
                     thirdC::third_idPhaseAdam_IF( tinP ) = ifcIDpHASEaDAM_DLLwORKING1 ;                                                                                         \
                 if( thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_DLLwORKING1 )                                                                                         \
             {                                                                                                                                                                   \
-            if( !( F(tinP.flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                                                                      \
+            if( !( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                                                                      \
             /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                     \
             /*tlsBlobC _tlsBlobStackTop( tinP , "appStackTop" , "tin" ) ;*/                                                                                                     \
             /*tlsAllocStackExp_7_C tlsForMe( tinP ) ;                    */                                                                                                     \
@@ -26,7 +26,7 @@
             /*U:REPLACE THESE HARDCODED idAdam VALUES WITH ifcIDaDAM SYMBOLS*/                                                                                                  \
             etThread.ifcDatumF( tinP , flDATUM1_CLASStRACEaLWAYShIREdLL , flDATUM2_null , 0 , 0 , 0 , (voidT*)DDNAME ) ;                                                        \
             etThread.osTimeNowF( tinP , timeBorn.time1 , timeBorn.time2 ) ;                                                                                                     \
-            /*etRock.traceF( tinP , T("osTid: ")+TF4(tinP.osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;*/                                          \
+            /*etRock.traceF( tinP , T("osTid: ")+TF4(((tinNormalS&)tinP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;*/                                          \
             handleC& hDll = pmp->hDll ;                                                                                                                                         \
             etherC& etThread = pmp->etThread ;                                                                                                                                  \
             timeS timeBorn ;                                                                                                                                                    \

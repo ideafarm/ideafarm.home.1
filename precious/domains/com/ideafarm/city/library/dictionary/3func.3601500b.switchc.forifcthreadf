@@ -34,9 +34,9 @@
 
     ZE( byteT* , pbLB ) ;
     const countT cPlates = stackk ;
-    const countT query = tinP.monitor.idThread ;
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
+    const countT query = ((tinNormalS&)tinP).monitor.idThread ;
+    else if( osTidOwner != ((tinNormalS&)tinP).osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinP).osTid ;
     if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     //IN
@@ -46,7 +46,7 @@
 
     }
         if( third ) return *(countT*)pbnu ;
-        __( !tinP.monitor.idThread ) ;
+        __( !((tinNormalS&)tinP).monitor.idThread ) ;
         if( third ) return *(countT*)pbnu ;
         __( idLeverType - ifcIDtYPElEVER_countT ) ;
         if( third ) return *(countT*)pbnu ;
@@ -59,7 +59,7 @@
 /**/
 */
 the switchC object must have been constructed with a lever of type countT& specified
-like operator countT& except uses tinP.monitor.idThread as the lever value
+like operator countT& except uses ((tinNormalS&)tinP).monitor.idThread as the lever value
   \<A HREF=\"5.e230104.1.1.0.html\"\>e230104:  WAKEsHOW( "example.simplest.func.120000d.switchC.forIfcThreadF" )\</A\>
  simplest
 examples

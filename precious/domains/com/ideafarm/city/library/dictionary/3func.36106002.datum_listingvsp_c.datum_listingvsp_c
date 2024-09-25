@@ -16,12 +16,12 @@
     __Z( aptData ) ; //listingVSP MUST BE IN PUSE
 
     //CONoUTrAW( "\"\r\n" ) ;
-    //CONoUTrAW( tinP.pPoolUse->guts.postName ) ;
+    //CONoUTrAW( ((tinNormalS&)tinP).pPoolUse->guts.postName ) ;
     //CONoUTrAW5( "datum_listingVSP_C: [&listingRefP,aptData]: " , &listingRefP , " " , aptData , "     pool: \"" ) ;
 
     aptData = (byteT*)&listingRefP ;
-    puseC puseRecord( tinP , *tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
-    //ENABLING THIS WOULD PREVENT CONSTRUCTION OF DATA OTHER THAN WITH fieldIF, I.E. IT WOULD FORCE APPLICATIONS TO USE THE RECORD MODEL: __( !tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+    puseC puseRecord( tinP , *((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
+    //ENABLING THIS WOULD PREVENT CONSTRUCTION OF DATA OTHER THAN WITH fieldIF, I.E. IT WOULD FORCE APPLICATIONS TO USE THE RECORD MODEL: __( !((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 {
 datumC( flagsiP , idTypeP , ifcIDtYPEmIXINdATUM_listingVSP , listingP )

@@ -25,17 +25,17 @@
 
             cbToDo             -= cbNew ;
             offo               += cbNew ;
-            tinP.odoSockCbRead += cbNew ;
+            ((tinNormalS&)tinP).odoSockCbRead += cbNew ;
 
             //}
-            //    else                   tinP.pEther->traceF( tinP , T("s_readOrPeekPrivateF [time in recv]:    fast") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
-            //    if( timeE1 || timeE2 ) tinP.pEther->traceF( tinP , T("s_readOrPeekPrivateF [time in recv]:    slow    ")+TTF(timeE1,timeE2) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
-            //    tinP.pEther->osTimeSubtractF( tinP , timeE1 , timeE2 , timeB1 , timeB2 ) ;
-            //    tinP.pEther->osTimeNowF(      tinP , timeE1 , timeE2 ) ;
+            //    else                   ((tinNormalS&)tinP).pEther->traceF( tinP , T("s_readOrPeekPrivateF [time in recv]:    fast") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
+            //    if( timeE1 || timeE2 ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("s_readOrPeekPrivateF [time in recv]:    slow    ")+TTF(timeE1,timeE2) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
+            //    ((tinNormalS&)tinP).pEther->osTimeSubtractF( tinP , timeE1 , timeE2 , timeB1 , timeB2 ) ;
+            //    ((tinNormalS&)tinP).pEther->osTimeNowF(      tinP , timeE1 , timeE2 ) ;
             //    ZE( sCountT , timeE2 ) ;
             //    ZE( countT  , timeE1 ) ;
             //{
-            //if( tinP.pc Utility[ 1 ] && tinP.pEther )
+            //if( ((tinNormalS&)tinP).pc Utility[ 1 ] && ((tinNormalS&)tinP).pEther )
 
             }
                 }
@@ -59,7 +59,7 @@
                         cbNew = 0 ;
                     {
                     if( cbNew == SOCKET_ERROR )
-                    if( !POOP ) cbNew = tinP.brcRaw ;
+                    if( !POOP ) cbNew = ((tinNormalS&)tinP).brcRaw ;
                     BOSpOOP
                     BOSS( WHATsir , BOSsOCKETcODE2 , recv( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , pbP + offo , cbBite , flagsTcpP ) )
                     _IO_
@@ -69,7 +69,7 @@
             switch( idModeP )
             ZE( sCountT , cbNew ) ;
 
-            //if( tinP.pc Utility[ 1 ] && tinP.pEther ) tinP.pEther->osTimeNowF( tinP , timeB1 , timeB2 ) ;
+            //if( ((tinNormalS&)tinP).pc Utility[ 1 ] && ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->osTimeNowF( tinP , timeB1 , timeB2 ) ;
             //ZE( sCountT , timeB2 ) ;
             //ZE( countT  , timeB1 ) ;
 

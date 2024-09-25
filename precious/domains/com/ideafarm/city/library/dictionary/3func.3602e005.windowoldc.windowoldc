@@ -25,9 +25,9 @@ mIdRowOsOrigin( 0.0 ) ,
 mIdColOsOrigin( 0.0 ) ,
 mIdRowFrameInDad( idRowP ) ,
 mIdColFrameInDad( idColP ) ,
-mIdRowInDad( idRowP + tinP.pag1->_thirdC_.mRowsAdjForWinFrame ) ,
-mIdColInDad( idColP + tinP.pag1->_thirdC_.mColsAdjForWinFrame ) ,
-idWindow( ++ tinP.pag1->_windowOldC_.idWindowLath ) ,
+mIdRowInDad( idRowP + ((tinNormalS&)tinP).pag1->_thirdC_.mRowsAdjForWinFrame ) ,
+mIdColInDad( idColP + ((tinNormalS&)tinP).pag1->_thirdC_.mColsAdjForWinFrame ) ,
+idWindow( ++ ((tinNormalS&)tinP).pag1->_windowOldC_.idWindowLath ) ,
 hWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ,
 bDoomed( 0 ) ,
 cReferences( 0 ) ,
@@ -39,7 +39,7 @@ backOldC( tinP , etherP , cPapersP ) ,
  bNotVisibleP
  bRootP
  windowP
-  tinP.monitor.idThread must be thirdC::idThreadWindow
+  ((tinNormalS&)tinP).monitor.idThread must be thirdC::idThreadWindow
   must not be 0
  tinP
 arguments

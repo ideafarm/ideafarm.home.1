@@ -21,15 +21,15 @@
             OStEXTAK( ostoBuf , "    " ) ;                                                                                     \
             OStEXTC( ostoBuf , idiFile , 0 ) ;                                                                                \
             OStEXTAK( ostoBuf , "." ) ;                                                                                        \
-            OStEXTC( ostoBuf , tinP.monitor.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] , 0 ) ;                               \
-            countT idiFile =     tinP.monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;                                     \
+            OStEXTC( ostoBuf , ((tinNormalS&)tinP).monitor.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] , 0 ) ;                               \
+            countT idiFile =     ((tinNormalS&)tinP).monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;                                     \
         {                                                                                                                       \
-        for( countT idn = tinP.monitor.cInNest ; idn >= idnf ; idn -- )                                                                   \
+        for( countT idn = ((tinNormalS&)tinP).monitor.cInNest ; idn >= idnf ; idn -- )                                                                   \
         countT offo = 2 ;                                                                                                       \
         /*PSEUDODUPLICATE CODE: 2e40104 0010266*/                                                                               \
                                                                                                                                 \
         if( (sCountT)idnf < 1 ) idnf = 1 ;                                                                                      \
-        countT idnf = tinP.monitor.cInNest - OFFsLOTtINnESTmAX ;                                                                          \
+        countT idnf = ((tinNormalS&)tinP).monitor.cInNest - OFFsLOTtINnESTmAX ;                                                                          \
                                                                                                                                 \
         OStEXTAK( ostoBuf , "Call Nest:\r\n \r\n" ) ;                                                                          \
                                                                                                                                 \

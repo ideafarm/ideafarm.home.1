@@ -9,7 +9,7 @@
 
 }
     }
-        tinP.flagsThreadMode3 |= flTHREADmODE3_INoUTcHATTER ;
+        ((tinNormalS&)tinP).flagsThreadMode3 |= flTHREADmODE3_INoUTcHATTER ;
 
         //LOGrAW( ostor ) ;
         CONoUTrAW( ostor ) ;
@@ -37,7 +37,7 @@
         countT cToDo = cIndent ;
         OStEXT( ostor , TUCK << 2 )
 
-        countT idiFileCaller = tinP.monitor.pLFnest[ ( ( ( tinP.monitor.cInNest - bIn ) & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
+        countT idiFileCaller = ((tinNormalS&)tinP).monitor.pLFnest[ ( ( ( ((tinNormalS&)tinP).monitor.cInNest - bIn ) & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
                                 
         if( bIn && cIndent ) -- cIndent ;
                                 
@@ -51,27 +51,27 @@
         boolT bIn ;
         boolT bOut ;
 
-        countT idiFile = tinP.pLFstep[ offe + 1 ] ;
-        countT idLine  = tinP.pLFstep[ offe     ] ;
-        countT offe = ( tinP.monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ;
-        countT cIndent = tinP.monitor.cInNest ;
+        countT idiFile = ((tinNormalS&)tinP).pLFstep[ offe + 1 ] ;
+        countT idLine  = ((tinNormalS&)tinP).pLFstep[ offe     ] ;
+        countT offe = ( ((tinNormalS&)tinP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ;
+        countT cIndent = ((tinNormalS&)tinP).monitor.cInNest ;
 
-        tinP.flagsThreadMode3 &= ~( F(flTHREADmODE3_INoUTcHATTER) ) ;
+        ((tinNormalS&)tinP).flagsThreadMode3 &= ~( F(flTHREADmODE3_INoUTcHATTER) ) ;
     {
-    if( F(tinP.flagsThreadMode3) & flTHREADmODE3_INoUTcHATTER )
+    if( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_INoUTcHATTER )
 
-    //if( tinP.pc Utility[ 0 ] )
-    //if( tinP.monitor.idThread == 1 && 0x29a800 - 10000 < idIn )
-    //if( tinP.pag1->idAdam == 0x4010501 )
+    //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
+    //if( ((tinNormalS&)tinP).monitor.idThread == 1 && 0x29a800 - 10000 < idIn )
+    //if( ((tinNormalS&)tinP).pag1->idAdam == 0x4010501 )
                                                                                                                                                     \
     //}
     //    }
     //        }
     //            BLAMMO ;
     //        {
-    //        if( tinP.pc Utility[ off ] )
+    //        if( ((tinNormalS&)tinP).pc Utility[ off ] )
     //    {
-    //    for( countT off = 0 ; off < sizeof tinP.pc Utility / sizeof tinP.pc Utility[ 1 ] ; off ++ )
+    //    for( countT off = 0 ; off < sizeof ((tinNormalS&)tinP).pc Utility / sizeof ((tinNormalS&)tinP).pc Utility[ 1 ] ; off ++ )
     //{
     //if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_CHECKtINuTILITYeLEMENTS )
     //THIS IS HERE AS A EXECUTABLE SIZE OPTIMIZATION; IT NATURALLY WOULD BE A SEPARATE FUNCTION OR A MACRO CALLED WITHIN _IO_ ct and dt

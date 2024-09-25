@@ -11,8 +11,8 @@
     return bGrabbed ;
 
     }
-        //tinP.pc Utility[ 0 ] = bDebugTrace ;  //U:: TO FIND A BUG
-        tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 0") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        //((tinNormalS&)tinP).pc Utility[ 0 ] = bDebugTrace ;  //U:: TO FIND A BUG
+        ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 0") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
     {
     if( bDebugTrace )
     //U:: TO FIND A BUG
@@ -23,7 +23,7 @@
     //    OStEXTAK(  os , "\r\n" ) ;
     //    }
     //        if( offi % 5 == 3 ) { OStEXTAK(  os , "]" ) ; }
-    //        OStEXTC(   os , tinP.pPanLifiRecurseGrabbedLevel[ offi ] , 0 ) ;
+    //        OStEXTC(   os , ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ offi ] , 0 ) ;
     //        else { OStEXTAK(  os , "," ) ; }
     //        }
     //            else { OStEXTAK(  os , " [" ) ; }
@@ -31,11 +31,11 @@
     //                continue ;
     //                offi += 4 ;
     //            {
-    //            if( !tinP.pPanLifiRecurseGrabbedLevel[ offi ] )
+    //            if( !((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ offi ] )
     //        {
     //        if( !( offi % 5 ) )
     //    {
-    //    for( countT offi = 0 ; offi < sizeof tinP.pPanLifiRecurseGrabbedLevel / sizeof tinP.pPanLifiRecurseGrabbedLevel[ 0 ] ; offi ++ )
+    //    for( countT offi = 0 ; offi < sizeof ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel / sizeof ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ 0 ] ; offi ++ )
     //
     //    OStEXTAK( os , "} @@@@" ) ;
     //    OStEXTC(  os , idiFileCt , 0 ) ;
@@ -44,44 +44,44 @@
     //    OStEXTAK( os , "," ) ;
     //    OStEXTC(  os , this , 0 ) ;
     //    OStEXTAK( os , " | {" ) ;
-    //    OStEXTA(  os , tinP.postThreadName ) ;
+    //    OStEXTA(  os , ((tinNormalS&)tinP).postThreadName ) ;
     //    OStEXTAK( os , " " ) ;
-    //    OStEXTC(  os , tinP.monitor.idThread , 0 ) ;
+    //    OStEXTC(  os , ((tinNormalS&)tinP).monitor.idThread , 0 ) ;
     //    OStEXTAK( os , " | " ) ;
-    //    OStEXTC9( os , tinP.osTid ) ;
+    //    OStEXTC9( os , ((tinNormalS&)tinP).osTid ) ;
     //    OStEXTAK( os , " | " ) ;
     //    OStEXTC(  os , idInDebug , '0' ) ;
     //    OStEXT(   os , TUCK << 2 ) ;
     //{
-    //if( tinP.pag1->idAdam == 0x4010501 )
+    //if( ((tinNormalS&)tinP).pag1->idAdam == 0x4010501 )
 
-    //if( F(tinP.flagsThreadMode3) & flTHREADmODE3_ADAMmAINtHREAD ) { CONoUTrAW3( "" , tinP.pag1->idAdam , " G-\r\n" ) ; }
-    //if( tinP.monitor.idThread == 1 ) { CONoUTrAW3( "" , tinP.pag1->idAdam , " G-\r\n" ) ; }
+    //if( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_ADAMmAINtHREAD ) { CONoUTrAW3( "" , ((tinNormalS&)tinP).pag1->idAdam , " G-\r\n" ) ; }
+    //if( ((tinNormalS&)tinP).monitor.idThread == 1 ) { CONoUTrAW3( "" , ((tinNormalS&)tinP).pag1->idAdam , " G-\r\n" ) ; }
     //CONoUTrAW( "-" ) ;
     //if( (countT)this == etherC::ether_cUtility_IF( tinP , 0 ) ) { LOGrAWtID( "G-" ) ; }
     if( pbBitsP ) ; //U::
 
     }
-        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 1") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 1") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
         registerDoneF( tinP , idLineP , idiFileP ) ;
-        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 2") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 2") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
 
         }
-            if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 3") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+            if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 3") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
             }
-                if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 4") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 4") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                 }
                     inc02AM( stat.cAcquisitions ) ;
                     }
-                        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 5") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 5") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                         else                             osTid = osTidMe ;
                         if( osTid )                      { BLAMMO ; }
-                        else                             idDesireGrabber  = tinP.idDesireSetBySelf ;
-                        if( idDesireGrabber )            { /*tinP.pc Utility[ 0xf ] = idDesireGrabber ;*/ BLAMMO ; }
+                        else                             idDesireGrabber  = ((tinNormalS&)tinP).idDesireSetBySelf ;
+                        if( idDesireGrabber )            { /*((tinNormalS&)tinP).pc Utility[ 0xf ] = idDesireGrabber ;*/ BLAMMO ; }
                         if( cGrabbed == - 1 )            { BLAMMO ; }
                         inc02AM( cGrabbed ) ;
-                        if( cGrabbed )                   { /*tinP.pc Utility[ 0xf ] = cGrabbed ;*/ BLAMMO ; }
-                        if( idGrabberOk != idGrabberMe ) { /*tinP.pc Utility[ 0xf ] = idGrabberOk ; tinP.pc Utility[ 0xe ] = idGrabberMe ;*/ BLAMMO ; }
+                        if( cGrabbed )                   { /*((tinNormalS&)tinP).pc Utility[ 0xf ] = cGrabbed ;*/ BLAMMO ; }
+                        if( idGrabberOk != idGrabberMe ) { /*((tinNormalS&)tinP).pc Utility[ 0xf ] = idGrabberOk ; ((tinNormalS&)tinP).pc Utility[ 0xe ] = idGrabberMe ;*/ BLAMMO ; }
                         stat.cCollisionsNew = 0 ; //U:MIGHT OVERWRITE A FEW COLLISIONS THAT SHOULD BE COUNTED AS NEW (I.E. SINCE INCREMENTING idGrabberOk)
             
                         processGlobal2I._grabC_pgw[ ogw ].osTid = 0 ; //MUST BE ZEED LATH; NOTE THAT bDirty IS NOT RESET
@@ -99,42 +99,42 @@
                         }
                             thirdC::dosWriteStdOutIF( ostoBuf ) ;
                             OStEXTA( ostoBuf , "\r\n" ) ;
-                            OStEXTA( ostoBuf , tinP.postThreadName ) ;
+                            OStEXTA( ostoBuf , ((tinNormalS&)tinP).postThreadName ) ;
                             OStEXTA( ostoBuf , " " ) ;
-                            OStEXTC( ostoBuf , tinP.monitor.idThread , 0 ) ;
+                            OStEXTC( ostoBuf , ((tinNormalS&)tinP).monitor.idThread , 0 ) ;
                             OStEXTA( ostoBuf , "THAWED " ) ;
                             OStEXT( ostoBuf , 0x140 )
                         {
                         if( F(processGlobal2I._grabC_pgw[ogw].flags) & flGRABwANT_CHATTERrESUME )
 
-                        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 6") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 6") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                         thirdC::dosSuspendThreadIF( tinP ) ;
-                        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 7") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 7") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
 
                         }
                             thirdC::dosWriteStdOutIF( ostoBuf ) ;
                             OStEXTA( ostoBuf , "\r\n" ) ;
-                            OStEXTA( ostoBuf , tinP.postThreadName ) ;
+                            OStEXTA( ostoBuf , ((tinNormalS&)tinP).postThreadName ) ;
                             OStEXTA( ostoBuf , " " ) ;
-                            OStEXTC( ostoBuf , tinP.monitor.idThread , 0 ) ;
+                            OStEXTC( ostoBuf , ((tinNormalS&)tinP).monitor.idThread , 0 ) ;
                             OStEXTA( ostoBuf , "FROZEN " ) ;
                             OStEXT( ostoBuf , 0x140 )
                         {
                         if( F(processGlobal2I._grabC_pgw[ogw].flags) & flGRABwANT_CHATTERrESUME )
-                        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 8") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 8") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                         _IO_
                     {
                     else
                     }
                         THREADmODE2rESTORE
-                        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / 9") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / 9") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                         }
                             }
                                 break ;
         
                                 else                             osTid = osTidMe ;
                                 if( osTid )                      { BLAMMO ; }
-                                else                             idDesireGrabber  = tinP.idDesireSetBySelf ;
+                                else                             idDesireGrabber  = ((tinNormalS&)tinP).idDesireSetBySelf ;
                                 if( idDesireGrabber )            { BLAMMO ; }
                                 if( cGrabbed == - 1 )            { BLAMMO ; }
                                 inc02AM( cGrabbed ) ;
@@ -147,7 +147,7 @@
                         for(;;)
                         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
                         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-                        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / a") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / a") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                         }
     /*S*/                   thirdC::dosPriorityIF( tinP , idDesireSave ) ;
                             _IO_
@@ -164,18 +164,18 @@
                             break ;
                             }
                                 bRegistered = 1 ;
-                                if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / b") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                                if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / b") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                                 }
     /*S*/                           thirdC::dosPriorityIF( tinP , idDesireSave ) ;
                                     _IO_
                                 {
     /*S*/    
     /*S*/                       processGlobal2I._grabC_pgw[ ogw ].bDirty = 0 ;
-    /*S*/                       processGlobal2I._grabC_pgw[ ogw ].idThread = tinP.monitor.idThread ;
-    /*S*/                       processGlobal2I._grabC_pgw[ ogw ].osPid = tinP.osPid ;
+    /*S*/                       processGlobal2I._grabC_pgw[ ogw ].idThread = ((tinNormalS&)tinP).monitor.idThread ;
+    /*S*/                       processGlobal2I._grabC_pgw[ ogw ].osPid = ((tinNormalS&)tinP).osPid ;
     /*S*/                       processGlobal2I._grabC_pgw[ ogw ].idGrabber = idGrabberMe ; // SCANNER LOOKS FOR THESE OO VALUES
     /*S*/                       processGlobal2I._grabC_pgw[ ogw ].idGrab = idMe ;           // SCANNER LOOKS FOR THESE OO VALUES
-    /*S*/                       processGlobal2I._grabC_pgw[ ogw ].flags = F(tinP.flagsThreadMode3) & flTHREADmODE3_CHATTERgRABwANTfREEZES ? flGRABwANT_CHATTERrESUME : flGRABwANT_null ;
+    /*S*/                       processGlobal2I._grabC_pgw[ ogw ].flags = F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_CHATTERgRABwANTfREEZES ? flGRABwANT_CHATTERrESUME : flGRABwANT_null ;
                                 _IO_
     /*S*/                   {
     /*S*/                   else
@@ -203,7 +203,7 @@
     /*S*/               if( !setIfZeAM( processGlobal2I._grabC_pgw[ ogw ].osTid , osTidMe ) ) //ASSUME: IF !osTid THEN THE SLOT IS FREE (I.E. osTid IS THE LATH TO BE ZEED)
                         _IO_
     /*S*/           {
-    /*S*/           if( F(flags) & flGRABc_ISsIGN || !( F(tinP.pag1->_thirdC_.flagsModeAdam1) & flADAMmODE1_LOGdEADLOCKS ) ) for( ogw = 0 ; ogw < processGlobal2I._grabC_cgw ; ogw ++ )
+    /*S*/           if( F(flags) & flGRABc_ISsIGN || !( F(((tinNormalS&)tinP).pag1->_thirdC_.flagsModeAdam1) & flADAMmODE1_LOGdEADLOCKS ) ) for( ogw = 0 ; ogw < processGlobal2I._grabC_cgw ; ogw ++ )
     /*S*/           ZE( countT , ogw ) ;
     /*S*/           ZE( boolT , bRegistered ) ;
                     _IO_
@@ -219,13 +219,13 @@
                     stat.cCollisionsNew = 0 ; //U:MIGHT OVERWRITE A FEW COLLISIONS THAT SHOULD BE COUNTED AS NEW (I.E. SINCE INCREMENTING idGrabberOk)
                     //CODE SYNCH: 17f0005 1700003
     
-                    idDesireGrabber    = tinP.idDesireSetBySelf ;
+                    idDesireGrabber    = ((tinNormalS&)tinP).idDesireSetBySelf ;
                     idiFileGrabberNote = 0/*U::*/ ;
                     idLineGrabberNote  = 0/*U::*/ ;
                     idiFileGrabber     = idiFileP ; //SINCE THESE VALUES ARE RETAINED WHEN NOT GRABBED, THE MONITOR CAN SEE WHICH GRAB LINES ARE CURRENTLY ACTIVE
                     idLineGrabber      = idLineP ; //THESE ARE INFORMATORY ONLY; THEY ARE NOT RESET; THEY ARE OVERWRITTEN HERE
 
-                    if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / c") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                    if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / c") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                     }
     /*S*/               thirdC::dosPriorityIF( tinP , idDesireSave ) ;
                         _IO_
@@ -241,7 +241,7 @@
                     _IO_
                 {
                 ZE( countT , idDesireSave ) ;
-                if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / d") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / d") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
 
                 // TRYING TO KISS ME WITH THE SPIN PREVENTING ME FROM REGISTERING MYSELF 
                 // BUT IF I PUT IT THERE, THAT CREATES A RACE CONDITION: AFTER OBTAINING idGrabberMe BUT BEFORE REGISTERING MYSELF, A RUDE THREAD MIGHT YIELD SPIN
@@ -251,47 +251,47 @@
                 // THIS MIGHT BE DONE BY INSPECTING idGrabberHigh AND SETTING SPINLOCK IF IT LOOKS LIKE I WILL PROBABLY NEED IT
                 //U:: EDIT THIS CODE SO THAT THE RACE IS AVOIDED WHILE ONLY CHANGING PRIORITY WHEN I NEED TO REGISTER
 
-                if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / e") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / e") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                 registerBegunF( tinP , idLineP , idiFileP ) ;
-                if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / f") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / f") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                 _IO_
             {
             else
             }
                 if( cGrabbed == - 1 ) { BLAMMO ; }
                 inc02AM( cGrabbed ) ;
-                if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / g") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / g") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                 registerBegunF( tinP , idLineP , idiFileP , flBASEgRABcrEGISTERbEGUN_RECURSING ) ;
-                if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / h") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+                if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / h") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
                 _IO_
             {
             if( osTid == osTidMe && !( F(flags) & flGRABc_DISABLErECURSION ) )
         
             if( !osTidMe ) { BLAMMO ; }
-            const countT osTidMe = tinP.osTid ;
+            const countT osTidMe = ((tinNormalS&)tinP).osTid ;
         
-            if( F(tinP.pag1->_thirdC_.flagsModeAdam1) & flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
-            if( F(tinP.flagsThreadMode2     ) &   flTHREADmODE2_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
+            if( F(((tinNormalS&)tinP).pag1->_thirdC_.flagsModeAdam1) & flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
+            if( F(((tinNormalS&)tinP).flagsThreadMode2     ) &   flTHREADmODE2_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
             if( F(flags) & flGRABc_DISABLED ) { BLAMMO ; }
     
             _IO_
-            if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / i") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+            if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / i") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
         {
         else
         }
             cGrabbed ++ ;
 
-            if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / j") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+            if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / j") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
             registerBegunF( tinP , idLineP , idiFileP ) ;
-            if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / k") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+            if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / k") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
         {
-        if( this == &tinP.grabPseudo )
-        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / l") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        if( this == &((tinNormalS&)tinP).grabPseudo )
+        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / l") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
     {
     if( bGrabbed )
 
     }
-        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / m") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / m") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
         }
             }
                 }
@@ -318,23 +318,23 @@
             for(;;)
         {
         if( F(flagsP) & flGRABcGRABf_CLEARkISSbANK )
-        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / n") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / n") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
     {
     if( F(flagsP) & flGRABcGRABf_WITHDRAWkISSiF )
     boolT bGrabbed = 1 ;
 
     }
-        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / o") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / o") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
         thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-        tinP.cYield = 0 ;
+        ((tinNormalS&)tinP).cYield = 0 ;
         while( osTidLock ) thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
-        tinP.cYield = 0 ;
+        ((tinNormalS&)tinP).cYield = 0 ;
         ZE( countT , idCycle ) ;
 
         const countT idDesireSave = thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
-        if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / p") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / p") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
     {
-    if( osTidLock && osTidLock != tinP.osTid ) //NO OTHER THREAD GETS TO BEGIN THE GRAB RECIPE UNTIL THE LOCKER DOES HIS THANG (USUALLY GRABBING)
+    if( osTidLock && osTidLock != ((tinNormalS&)tinP).osTid ) //NO OTHER THREAD GETS TO BEGIN THE GRAB RECIPE UNTIL THE LOCKER DOES HIS THANG (USUALLY GRABBING)
 
     //}
     //    CONoUTrAW( os ) ;
@@ -342,7 +342,7 @@
     //    OStEXTAK(  os , "\r\n" ) ;
     //    }
     //        if( offi % 5 == 3 ) { OStEXTAK(  os , "]" ) ; }
-    //        OStEXTC(   os , tinP.pPanLifiRecurseGrabbedLevel[ offi ] , 0 ) ;
+    //        OStEXTC(   os , ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ offi ] , 0 ) ;
     //        else { OStEXTAK(  os , "," ) ; }
     //        }
     //            else { OStEXTAK(  os , " [" ) ; }
@@ -350,11 +350,11 @@
     //                continue ;
     //                offi += 4 ;
     //            {
-    //            if( !tinP.pPanLifiRecurseGrabbedLevel[ offi ] )
+    //            if( !((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ offi ] )
     //        {
     //        if( !( offi % 5 ) )
     //    {
-    //    for( countT offi = 0 ; offi < sizeof tinP.pPanLifiRecurseGrabbedLevel / sizeof tinP.pPanLifiRecurseGrabbedLevel[ 0 ] ; offi ++ )
+    //    for( countT offi = 0 ; offi < sizeof ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel / sizeof ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ 0 ] ; offi ++ )
     //
     //    OStEXTAK( os , "} ++++" ) ;
     //    OStEXTC(  os , idiFileCt , 0 ) ;
@@ -363,11 +363,11 @@
     //    OStEXTAK( os , "," ) ;
     //    OStEXTC(  os , this , 0 ) ;
     //    OStEXTAK( os , " | {" ) ;
-    //    OStEXTA(  os , tinP.postThreadName ) ;
+    //    OStEXTA(  os , ((tinNormalS&)tinP).postThreadName ) ;
     //    OStEXTAK( os , " " ) ;
-    //    OStEXTC(  os , tinP.monitor.idThread , 0 ) ;
+    //    OStEXTC(  os , ((tinNormalS&)tinP).monitor.idThread , 0 ) ;
     //    OStEXTAK( os , " | " ) ;
-    //    OStEXTC9( os , tinP.osTid ) ;
+    //    OStEXTC9( os , ((tinNormalS&)tinP).osTid ) ;
     //    OStEXTAK( os , " | " ) ;
     //    OStEXTC(  os , idInDebug , '0' ) ;
     //    OStEXT(   os , TUCK << 2 ) ;
@@ -375,9 +375,9 @@
     //    idInDebug = 1 + incv02AM( idInDebugLath ) ;
     //    static countT idInDebugLath ;
     //{
-    //if( tinP.pag1->idAdam == 0x4010501 )
+    //if( ((tinNormalS&)tinP).pag1->idAdam == 0x4010501 )
     //ZE( countT , idInDebug ) ;
-    if( bDebugTrace ) tinP.pEther->traceF( tinP , T("U:: grabC::grabF / q") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+    if( bDebugTrace ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / q") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
 
     }
         //}
@@ -395,17 +395,17 @@
     {
     IFwHEREiSwATCHING
     //U::
-    //if( F(tinP.flagsThreadMode3) & flTHREADmODE3_ADAMmAINtHREAD ) { CONoUTrAW3( "" , tinP.pag1->idAdam , " G+\r\n" ) ; }
-    //if( tinP.pc Utility[ 0 ] ) { CONoUTrAW3( "\r\n" , this , " ++++++++\r\n" ) ; }
+    //if( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_ADAMmAINtHREAD ) { CONoUTrAW3( "" , ((tinNormalS&)tinP).pag1->idAdam , " G+\r\n" ) ; }
+    //if( ((tinNormalS&)tinP).pc Utility[ 0 ] ) { CONoUTrAW3( "\r\n" , this , " ++++++++\r\n" ) ; }
 
     SCOOP
 
     }
-        tinP.pEther->traceF( tinP , T("U:: grabC::grabF / r") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
-        //tinP.pc Utility[ 0 ] = 0 ;  //U:: TO FIND A BUG
+        ((tinNormalS&)tinP).pEther->traceF( tinP , T("U:: grabC::grabF / r") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
+        //((tinNormalS&)tinP).pc Utility[ 0 ] = 0 ;  //U:: TO FIND A BUG
     {
     if( bDebugTrace )
-    boolT bDebugTrace = 0/*tinP.pc Utility[ 0 ]*/ ;      //U:: TO FIND A BUG
+    boolT bDebugTrace = 0/*((tinNormalS&)tinP).pc Utility[ 0 ]*/ ;      //U:: TO FIND A BUG
 {
 /*1*/boolT grabC::grabF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const flagsT flagsP )/*1*/
 /**/

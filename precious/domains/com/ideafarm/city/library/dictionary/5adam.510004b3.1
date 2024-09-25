@@ -35,11 +35,11 @@ DONE( tmGorillaF )
         etThread.ifcSayF( tinP , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBad)+T("; requst for ")+tFile+T(" FAILED ********\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         cbFileWoth = cbFile ;
         inc02AM( cBad ) ;
-        *tinP.zEtScratch = 0 ;
+        *((tinNormalS&)tinP).zEtScratch = 0 ;
     {
-    if( *tinP.zEtScratch || cbFile != cbFileWoth )
+    if( *((tinNormalS&)tinP).zEtScratch || cbFile != cbFileWoth )
     if( !cbFileWoth  ) cbFileWoth  = cbFile ;   
-    { ZE( byteT* , pbFile  ) ; tinP.zEtScratch->boxGetShadowF( tinP , pbFile  , cbFile  , tFile  ) ; ___( pbFile  ) ; tinP.zEtScratch->delF( tinP , pbFile  ) ; }
+    { ZE( byteT* , pbFile  ) ; ((tinNormalS&)tinP).zEtScratch->boxGetShadowF( tinP , pbFile  , cbFile  , tFile  ) ; ___( pbFile  ) ; ((tinNormalS&)tinP).zEtScratch->delF( tinP , pbFile  ) ; }
     ZE( countT , cbFile ) ;
     countT idMe = 1 + incv02AM( idTrial ) ;
 {

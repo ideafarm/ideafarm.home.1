@@ -9,7 +9,7 @@
 }
     return pageData ;
     pageC pageData = jotFilesC::readF( tinP , idjPartP , idjBranchP , idjPartP ? 0 : idjSoil , flagsP ) ;
-    //tinP.pEther->traceF( tinP , T("readFromNameF [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //((tinNormalS&)tinP).pEther->traceF( tinP , T("readFromNameF [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     }
         }
@@ -29,7 +29,7 @@
                     if( pagec != sizeof( jotFileNameC ) ) { BLAMMO ; }
                     const jotFileNameC& jfnr = *(jotFileNameC*)(const byteT*)pagec ;
                     pageC pagec = readF( tinP , countTC() , countTC() , idjnToWalk , flJOTfILEScrEAD_FROMcANcHANGE ) ;
-                    //tinP.pEther->traceF( tinP , T("readFromNameF [idjnToWalk]:    ")+TF2(idjnToWalk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //((tinNormalS&)tinP).pEther->traceF( tinP , T("readFromNameF [idjnToWalk]:    ")+TF2(idjnToWalk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 ZE( countT , idjNameValue ) ;
             {

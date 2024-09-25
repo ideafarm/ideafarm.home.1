@@ -18,14 +18,14 @@
         if( !nicNameP ) nicNameP = NICnAMElOCAL ;
 
         }
-            pcTo[ 3 - offi ] = tinP.brcRaw ;
+            pcTo[ 3 - offi ] = ((tinNormalS&)tinP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , ntohl( pcFrom[ offi ] ) )
         {
         for( countT offi = 0 ; offi < 4 ; offi ++ )
         countT* pcTo   = (countT*)(const countT*)nicNameP ;
         countT* pcFrom = (countT*)info.sin6_addr.u.Byte ;
 
-        idPortP = tinP.brcRaw ;
+        idPortP = ((tinNormalS&)tinP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , ntohs( info.sin6_port ) )
         __( cbInfo - sizeof info ) ;
         __( info.sin6_family - AF_INET6 ) ;
@@ -33,11 +33,11 @@
         pbP[ cbP ] = 0 ;
         cbP = cba ;
 
-        tinP.odoSockCbRead += cba ;
+        ((tinNormalS&)tinP).odoSockCbRead += cba ;
     {
     if( !POOP )
 
-    if( pbP ) { cba = tinP.brcRaw ; }
+    if( pbP ) { cba = ((tinNormalS&)tinP).brcRaw ; }
     __Z( cba ) ;
 
     BOSpOOP

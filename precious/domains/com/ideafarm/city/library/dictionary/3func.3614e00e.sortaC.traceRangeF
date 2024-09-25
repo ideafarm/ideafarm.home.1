@@ -14,11 +14,11 @@
     {
     if( myOff == 0xc && cbP == 0x24 )
 
-    tinP.pEther->delF( tinP , psttd ) ;
-    tinP.pEther->traceF( tinP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("33333333") , T("<-------") ) ;   ___( psttd ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("11111111") , T("------->") ) ;   ___( psttd ) ;
+    ((tinNormalS&)tinP).pEther->delF( tinP , psttd ) ;
+    ((tinNormalS&)tinP).pEther->traceF( tinP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
+    ((tinNormalS&)tinP).pEther->strReplaceF( tinP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    ((tinNormalS&)tinP).pEther->strReplaceF( tinP , psttd , 0 , T("33333333") , T("<-------") ) ;   ___( psttd ) ;
+    ((tinNormalS&)tinP).pEther->strReplaceF( tinP , psttd , 0 , T("11111111") , T("------->") ) ;   ___( psttd ) ;
     etherC::strDumpIF( tinP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * cEltRange , cbElt / 3 , 0 , 0 ) ;  ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
     textC tIndent( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , myOff * 2 + ( myOff / cbElt ) * 3 ) ;

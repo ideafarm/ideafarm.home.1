@@ -33,9 +33,9 @@ bGo = 1 ;
 while( cToDo -- ) etThread.osThreadF( TaRG1( tmStompF ) ) ;
 countT cToDo = CgORILLAS ;
 
-boolT bOk = tinP.brcRaw ;
+boolT bOk = ((tinNormalS&)tinP).brcRaw ;
 BOSpOOP
-BOS( WHATgbo , BOSoK , GetProcessAffinityMask( (HANDLE)tinP.brcRaw , &infoProcess , &infoSystem ) )
+BOS( WHATgbo , BOSoK , GetProcessAffinityMask( (HANDLE)((tinNormalS&)tinP).brcRaw , &infoProcess , &infoSystem ) )
 ZE( DWORD , infoSystem ) ;
 ZE( DWORD , infoProcess ) ;
 
@@ -58,9 +58,9 @@ dec02AM( cGorillas ) ;
     {
 {
 inc02AM( cGorillas ) ;
-boolT bOk = tinP.brcRaw ;
+boolT bOk = ((tinNormalS&)tinP).brcRaw ;
 BOSpOOP
-BOS( WHATgbo , BOSoK , SetThreadAffinityMask ( (HANDLE)tinP.brcRaw , 8 ) )
+BOS( WHATgbo , BOSoK , SetThreadAffinityMask ( (HANDLE)((tinNormalS&)tinP).brcRaw , 8 ) )
 
 BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
 

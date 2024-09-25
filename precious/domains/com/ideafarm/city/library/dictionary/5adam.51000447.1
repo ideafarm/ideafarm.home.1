@@ -110,7 +110,7 @@ DONEdRIVENsERVER( tmcF )
         else
         if( !psttDomain ) etThread.delF( tinP , (byteT*&)pInfo ) ;
         ZE( countT , ids ) ;
-        pcIdNameF( tinP , *tinP.zEtScratch , pcIdName , sizeof pcIdName , psttDomain , pInfo->idhPeer , *pso ) ;
+        pcIdNameF( tinP , *((tinNormalS&)tinP).zEtScratch , pcIdName , sizeof pcIdName , psttDomain , pInfo->idhPeer , *pso ) ;
         psttDomain = 0 ;
         b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
@@ -132,7 +132,7 @@ TASKdRIVENsERVER( tmcF )
 
 }
     return sgn ;
-    if( tinP.fingerprint && c3P ) ;
+    if( ((tinNormalS&)tinP).fingerprint && c3P ) ;
 
     }
 
@@ -166,51 +166,51 @@ voidT newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , et
 //U: CODE DUPLICATED IN a440104 AND b440104
 
 }
-    tinP.zEtScratch->delF( tinP , pstt1n ) ;
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , pstt1n ) ;
     }
         *( pcP ++ ) = cn ;
 
         if( ( ccP -- ) == 1 ) break ; // WON'T USE THE LAST ELT, TO ENSURE THAT A NULL TERMINATOR EXISTS
         if( !cn ) continue ;          // WON'T USE A NULL VALUE
-        countT cn = tinP.zEtScratch->strDigitsToSCountF( tinP , psttc1 ) ;
+        countT cn = ((tinNormalS&)tinP).zEtScratch->strDigitsToSCountF( tinP , psttc1 ) ;
         if( !psttc1->idAdam ) continue ;
     {
     FORsTRINGSiN1( pstt1n )
-    tinP.zEtScratch->delF( tinP , psttEventName ) ;
-    tinP.zEtScratch->strWordsOldF( tinP , pstt1n , psttEventName , sttq , tDot ) ; ___( pstt1n ) ;
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttEventName ) ;
+    ((tinNormalS&)tinP).zEtScratch->strWordsOldF( tinP , pstt1n , psttEventName , sttq , tDot ) ; ___( pstt1n ) ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     ZE( strokeS* , pstt1n ) ;
 
-    tinP.zEtScratch->delF( tinP , psttw1 ) ;
-    tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttDomainP ) ; ___( psttDomainP ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttDomainP , idf , sttq , tSlash , psttw1 ) ; ___( psttDomainP ) ; // "ideafarm.com" (domain)
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw1 ) ;
+    ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttDomainP ) ; ___( psttDomainP ) ;
+    ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttDomainP , idf , sttq , tSlash , psttw1 ) ; ___( psttDomainP ) ; // "ideafarm.com" (domain)
 
-    tinP.zEtScratch->strSubstringF( tinP , psttEventName , idf , sttq , tSlash , psttw1 ) ; ___( psttEventName ) ; // "1.2.3.4.5.6.7.8" (eventName)
+    ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttEventName , idf , sttq , tSlash , psttw1 ) ; ___( psttEventName ) ; // "1.2.3.4.5.6.7.8" (eventName)
     ZE( strokeS* , psttEventName ) ;
 
-    tinP.zEtScratch->delF( tinP , psttw2 ) ;
-    countT rn = tinP.zEtScratch->strDigitsToSCountF( tinP , psttw2 ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "9999"   (random number to defeat caching)
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
+    countT rn = ((tinNormalS&)tinP).zEtScratch->strDigitsToSCountF( tinP , psttw2 ) ;
+    ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "9999"   (random number to defeat caching)
 
-    tinP.zEtScratch->delF( tinP , psttw2 ) ;
-    __( tinP.zEtScratch->strCompareF( tinP , psttw2 , T("1") ) ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "1"    (idVersionRecord)
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
+    __( ((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw2 , T("1") ) ) ;
+    ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "1"    (idVersionRecord)
 
-    tinP.zEtScratch->delF( tinP , psttw2 ) ;
-    __( tinP.zEtScratch->strCompareF( tinP , psttw2 , T("1") ) ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "1"    (idTypeRecord)
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
+    __( ((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw2 , T("1") ) ) ;
+    ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "1"    (idTypeRecord)
 
-    tinP.zEtScratch->delF( tinP , psttw2 ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // ""
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw2 ) ;
+    ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // ""
     sttq = strokeS( (countT)0 , sc_IGNOREqUOTES ) ;
     idf = 1 ;
 
-    tinP.zEtScratch->delF( tinP , psttl ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw1 , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw1 ) ; // "/1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com"
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttl ) ;
+    ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw1 , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw1 ) ; // "/1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com"
 
-    tinP.zEtScratch->delF( tinP , psttw1 ) ;
-    __( tinP.zEtScratch->strCompareF( tinP , psttw1 , T("get") ) ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw1 , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw1 ) ; // "get"
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw1 ) ;
+    __( ((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , psttw1 , T("get") ) ) ;
+    ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw1 , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw1 ) ; // "get"
 
     ZE( strokeS* , psttw2 ) ;
     ZE( strokeS* , psttw1 ) ;
@@ -221,7 +221,7 @@ voidT newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , et
     TN( tBlank , " " ) ;
     TN( tNull , "" ) ;
 
-    tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttl ) ; ___( psttl ) ;       // "get /1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com http/1.1"
+    ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttl ) ; ___( psttl ) ;       // "get /1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com http/1.1"
     sInP.readWoLineF( tinP , psttl , 0x200 ) ; ___( psttl ) ;        // "GET /1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com HTTP/1.1"
     ZE( strokeS* , psttl ) ;
 
@@ -243,7 +243,7 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
 //==============================================================================================================================================================
 
 }
-    if( ether && *tinP.zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tinNormalS&)tinP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }

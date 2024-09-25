@@ -93,15 +93,15 @@ DONE( tmGorilla999F )
 }
     inc02AM( cDone1 ) ;
 
-    //tinP.cYield = 0 ;
+    //((tinNormalS&)tinP).cYield = 0 ;
     //thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 ) ;
-    //tinP.cYield = 0 ;
+    //((tinNormalS&)tinP).cYield = 0 ;
 
     //gg.ungrabF( tinP ) ;
 
-    //tinP.cYield = 0 ;
+    //((tinNormalS&)tinP).cYield = 0 ;
     //thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 ) ;
-    //tinP.cYield = 0 ;
+    //((tinNormalS&)tinP).cYield = 0 ;
 
     //gg.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
@@ -115,10 +115,10 @@ DONE( tmGorilla999F )
     //    {
     //    if( bDoze )
     //
-    //    etThread.traceF( tinP , TF2(tinP.monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bDoze?" uh oh: will sleep for tick":"") ) ;
+    //    etThread.traceF( tinP , TF2(((tinNormalS&)tinP).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bDoze?" uh oh: will sleep for tick":"") ) ;
     //
-    //                  idtLath =  tinP.monitor.idThread ;
-    //    boolT bDoze = idtLath == tinP.monitor.idThread ;
+    //                  idtLath =  ((tinNormalS&)tinP).monitor.idThread ;
+    //    boolT bDoze = idtLath == ((tinNormalS&)tinP).monitor.idThread ;
     //
     //    static countT idtLath ;
     //{
@@ -187,7 +187,7 @@ DONE( tmGorilla4F )
 
 }
     if( !was1 ) { BLAMMO ; }
-    countT was1 = btrKeyedAM( &bb , keyIdThread , 0 , tinP.monitor.idThread ) ;
+    countT was1 = btrKeyedAM( &bb , keyIdThread , 0 , ((tinNormalS&)tinP).monitor.idThread ) ;
 
     cDone1 ++ ;
     //inc02AM( cDone1 ) ;
@@ -195,7 +195,7 @@ DONE( tmGorilla4F )
     }
         OSsLEEPf( 0 ) ;
     {
-    while( btsKeyedAM( &bb , keyIdThread , 0 , tinP.monitor.idThread ) )
+    while( btsKeyedAM( &bb , keyIdThread , 0 , ((tinNormalS&)tinP).monitor.idThread ) )
     idCycle ++ ;
 {
 while( !ether )
@@ -237,14 +237,14 @@ DONE( tmGorilla1F )
     if( !was1 ) { BLAMMO ; }
     countT was1 = btrAM( &bb , 0 ) ;
 
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinP).cYield = 0 ;
     }
         thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 ) ;
     {
     while( btsAM( &bb , 0 ) )
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinP).cYield = 0 ;
 
-    if( !( idCycle % TICK ) ) etThread.traceF( tinP , TF2(tinP.monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    if( !( idCycle % TICK ) ) etThread.traceF( tinP , TF2(((tinNormalS&)tinP).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     idCycle ++ ;
 {
 while( !ether )
@@ -261,13 +261,13 @@ TASK( tmGorilla1F )
 voidT gNewC::ungrabF( tinNormalS& tinP )
 
 }
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinP).cYield = 0 ;
     }
         //thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 ) ;
         OSsLEEPf( 0 ) ; //U:: TO FIND A BUG
     {
     while( btsAM( &bb , 0 ) )
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinP).cYield = 0 ;
 {
 voidT gNewC::grabF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )
 

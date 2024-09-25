@@ -28,11 +28,11 @@
             #endif
 
                 }
-                    else                                       rc = tinP.brcLath ;
-                    if( tinP.brcLath == ERROR_FILE_NOT_FOUND ) bFail = 0 ;
+                    else                                       rc = ((tinNormalS&)tinP).brcLath ;
+                    if( ((tinNormalS&)tinP).brcLath == ERROR_FILE_NOT_FOUND ) bFail = 0 ;
                 {
                 if( bFail )
-                bFail = tinP.bosFail ;
+                bFail = ((tinNormalS&)tinP).bosFail ;
 
                 BOS( WHATsfw , BOSoK , RemoveDirectory( postShorter ) )
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )

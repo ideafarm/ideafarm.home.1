@@ -7,7 +7,7 @@
 //
 
 
-#define C(postP) if( *tinP.pc Utility ) { CONoUTrAW( postP ) ; }
+#define C(postP) if( *((tinNormalS&)tinP).pc Utility ) { CONoUTrAW( postP ) ; }
 
 /*1*//*C*//*1*/
 

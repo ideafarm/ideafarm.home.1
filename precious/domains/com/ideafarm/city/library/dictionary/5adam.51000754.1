@@ -120,13 +120,13 @@ etThread.traceF( tinP , T("ok") ) ;
                         DEL( pInfo ) ;
 
                         if( POOP ) { POOPR }
-                        tinP.pEtScratch->boxZapF( tinP , tIfoName , 1 ) ;
+                        ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tIfoName , 1 ) ;
 
                         POOPR
                     {
                     if( POOP )
-                    tinP.pEtScratch->boxGetF( tinP , rec , tIfoName ) ;
-                    soulC rec( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    ((tinNormalS&)tinP).pEtScratch->boxGetF( tinP , rec , tIfoName ) ;
+                    soulC rec( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 
                     SCOOPS
                 {

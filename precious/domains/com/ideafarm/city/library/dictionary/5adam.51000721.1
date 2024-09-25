@@ -24,42 +24,42 @@ TODO
     return bDoIt ;
 
     }
-        tinP.pEther->delF( tinP , psttOldLower ) ;
+        ((tinNormalS&)tinP).pEther->delF( tinP , psttOldLower ) ;
         }
-            tinP.pEther->delF( tinP , psttShortNew ) ;
-            tinP.pEther->delF( tinP , psttShortOld ) ;
-            tinP.pEther->delF( tinP , psttPath ) ;
+            ((tinNormalS&)tinP).pEther->delF( tinP , psttShortNew ) ;
+            ((tinNormalS&)tinP).pEther->delF( tinP , psttShortOld ) ;
+            ((tinNormalS&)tinP).pEther->delF( tinP , psttPath ) ;
 
             }
-                tinP.pEther->diskCopyFileF( tinP , tNew , tOld , 0 ) ;
+                ((tinNormalS&)tinP).pEther->diskCopyFileF( tinP , tNew , tOld , 0 ) ;
                 etherC::etRockIF( tinP ).traceF( tinP , T("copying to: ")+tNew ) ;
             {
-            if( !tinP.pEther->diskFileExistsF( tinP , T(psttPath)+T(psttShortNew) ) )
+            if( !((tinNormalS&)tinP).pEther->diskFileExistsF( tinP , T(psttPath)+T(psttShortNew) ) )
 
             TN( tNew , "" ) ; tNew = T("///d/tmp/archive.unshrunk/")+T(psttShortNew) ;
 
-            tinP.pEther->strReplaceF( tinP , psttShortNew , psttShortOld , T(".data.") , T(".meta.thumb.0600x.") , 0 , flSTRrEPLACE_null ) ;
+            ((tinNormalS&)tinP).pEther->strReplaceF( tinP , psttShortNew , psttShortOld , T(".data.") , T(".meta.thumb.0600x.") , 0 , flSTRrEPLACE_null ) ;
             ZE( strokeS* , psttShortNew ) ;
 
-            tinP.pEther->strBisectF( tinP , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
+            ((tinNormalS&)tinP).pEther->strBisectF( tinP , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
             ZE( strokeS* , psttShortOld ) ;
             ZE( strokeS* , psttPath ) ;
         {
         )
-            tinP.pEther->strIdF( tinP , T(".data.ico") , psttOldLower )
-            tinP.pEther->strIdF( tinP , T(".data.bmp") , psttOldLower )                     ||
-            tinP.pEther->strIdF( tinP , T(".data.png") , psttOldLower )                     ||
-            tinP.pEther->strIdF( tinP , T(".data.jpg") , psttOldLower )                     ||
+            ((tinNormalS&)tinP).pEther->strIdF( tinP , T(".data.ico") , psttOldLower )
+            ((tinNormalS&)tinP).pEther->strIdF( tinP , T(".data.bmp") , psttOldLower )                     ||
+            ((tinNormalS&)tinP).pEther->strIdF( tinP , T(".data.png") , psttOldLower )                     ||
+            ((tinNormalS&)tinP).pEther->strIdF( tinP , T(".data.jpg") , psttOldLower )                     ||
         (
         if
 
-        tinP.pEther->strConvertToLowerCaseF( tinP , psttOldLower , tOld ) ; ___( psttOldLower ) ;
+        ((tinNormalS&)tinP).pEther->strConvertToLowerCaseF( tinP , psttOldLower , tOld ) ; ___( psttOldLower ) ;
         ZE( strokeS* , psttOldLower ) ;
 
         TN( tOld , ifName ) ;
-        ifFileNameC ifName( tinP , *tinP.pEther , postNameP ) ;
+        ifFileNameC ifName( tinP , *((tinNormalS&)tinP).pEther , postNameP ) ;
     {
-    if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] != '\\' && tinP.pEther ) // IF NOT A DIRECTORY
+    if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] != '\\' && ((tinNormalS&)tinP).pEther ) // IF NOT A DIRECTORY
     ZE( boolT , bDoIt ) ;
     _IO_
 {

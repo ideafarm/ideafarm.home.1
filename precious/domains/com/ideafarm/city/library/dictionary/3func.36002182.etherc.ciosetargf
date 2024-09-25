@@ -8,10 +8,10 @@
 
 
 }
-    tinP.pag1->_etherC_.cio_pBaton->ungrabF( tinP ) ;
-    tinP.pag1->_etherC_.cio_pcArg = &cArgP ;
-    tinP.pag1->_etherC_.cio_pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    if( !tinP.pag1->_etherC_.cio_pStkOut ) cioSetupF( tinP ) ;
+    ((tinNormalS&)tinP).pag1->_etherC_.cio_pBaton->ungrabF( tinP ) ;
+    ((tinNormalS&)tinP).pag1->_etherC_.cio_pcArg = &cArgP ;
+    ((tinNormalS&)tinP).pag1->_etherC_.cio_pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    if( !((tinNormalS&)tinP).pag1->_etherC_.cio_pStkOut ) cioSetupF( tinP ) ;
     _IO_
 
     }

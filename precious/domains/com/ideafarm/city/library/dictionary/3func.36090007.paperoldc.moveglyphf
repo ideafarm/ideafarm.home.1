@@ -8,7 +8,7 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    ((tinNormalS&)tinP).pag5->frPaper.grab.ungrabF( tinP ) ;
 
     }
         }
@@ -46,7 +46,7 @@
     
             if( F(flHighSave) ) sadamHighlightF( tinP , sadamP , flHighSave ) ;
 
-            tinP.pag1->_pulpOldC_.flagsMode = _saveModeI ;
+            ((tinNormalS&)tinP).pag1->_pulpOldC_.flagsMode = _saveModeI ;
             renderVolatilesF( tinP , sadamP , phCloneP ) ;
             winPulp.x1.back.wrapRenderF( tinP , sadamP.features.psttBody , phCloneP ) ;
             //DRAW NEW
@@ -69,9 +69,9 @@
             winPulp.flagsMode = _saveMode ;
             renderVolatilesF( tinP , sadamP , phCloneP ) ;
             winPulp.x1.back.wrapRenderF( tinP , sadamP.features.psttBody , phCloneP ) ;
-            tinP.pag1->_pulpOldC_.flagsMode |= flPAPERmODEi_SUPPRESStABfRESH ;
+            ((tinNormalS&)tinP).pag1->_pulpOldC_.flagsMode |= flPAPERmODEi_SUPPRESStABfRESH ;
             const flagsT _saveMode  = winPulp.flagsMode ;
-            const flagsT _saveModeI = tinP.pag1->_pulpOldC_.flagsMode ;
+            const flagsT _saveModeI = ((tinNormalS&)tinP).pag1->_pulpOldC_.flagsMode ;
             //ERASE OLD
     
             if( F(flHighSave) ) sadamHighlightF( tinP , sadamP , flHighSave ) ;
@@ -108,7 +108,7 @@
     if( sadamP.pStrike->sc.mIdColMoveTo != MAXmEASUREt )
 
     //U::DO I NEED TO BE SERIALIZED?: NOT SERIALIZED CAUSE PRIVATE
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinP).pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
 {
 /*1*/voidT paperOldC::moveGlyphF( tinNormalS& tinP , sadamC& sadamP , const handleC* const phCloneP )/*1*/
 

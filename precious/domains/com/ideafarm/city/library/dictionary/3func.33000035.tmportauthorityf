@@ -20,7 +20,7 @@ countT cFlavors = swc2.cFlavorsF( tinP ) ;
 TELL( "cleaning up: final" )
 
 }
-    while( !etThread && tinP.cKidThreads ) { ++ s ; etThread.osSleepF( tinP , TOCK ) ; }
+    while( !etThread && ((tinNormalS&)tinP).cKidThreads ) { ++ s ; etThread.osSleepF( tinP , TOCK ) ; }
     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
 {
 TELL( "cleaning up: sleeping while i have kid threads" )

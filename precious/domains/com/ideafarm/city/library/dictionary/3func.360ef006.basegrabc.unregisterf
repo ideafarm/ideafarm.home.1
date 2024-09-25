@@ -19,18 +19,18 @@
             }
                 break ;
                 }
-                    tinP.pPanLifiRecurseGrabbedLevel[ off     ] = 0 ;
-                    tinP.pPanLifiRecurseGrabbedLevel[ off + 1 ] = 0 ;
-                    tinP.pPanLifiRecurseGrabbedLevel[ off + 2 ] = 0 ;
-                    tinP.pPanLifiRecurseGrabbedLevel[ off + 3 ] = 0 ; //20170818@1050: ADDED WITHOUT ANALYSIS
-                    tinP.pPanLifiRecurseGrabbedLevel[ off + 4 ] = 0 ;
+                    ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off     ] = 0 ;
+                    ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off + 1 ] = 0 ;
+                    ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off + 2 ] = 0 ;
+                    ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off + 3 ] = 0 ; //20170818@1050: ADDED WITHOUT ANALYSIS
+                    ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off + 4 ] = 0 ;
 
-                    tinP.monitor.cGrabbed -- ;
+                    ((tinNormalS&)tinP).monitor.cGrabbed -- ;
                 {
                 else
-                if( tinP.pPanLifiRecurseGrabbedLevel[ off + 3 ] ) tinP.pPanLifiRecurseGrabbedLevel[ off + 3 ] -- ;
+                if( ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off + 3 ] ) ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off + 3 ] -- ;
             {
-            if( tinP.pPanLifiRecurseGrabbedLevel[ off ] == pandle )
+            if( ((tinNormalS&)tinP).pPanLifiRecurseGrabbedLevel[ off ] == pandle )
         {
         for( ; off < offEnd ; off += 5 )
         ZE( countT , off ) ;

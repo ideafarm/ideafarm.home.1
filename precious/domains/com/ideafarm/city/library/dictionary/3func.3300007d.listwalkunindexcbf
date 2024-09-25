@@ -25,11 +25,11 @@
     {
     if( pListing && pListing->idTypeDatumF() )
 
-    listingC* pListing = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    listingC* pListing = ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT listWalkUnIndexCBF( tinNormalS& tinP )/*1*/
 

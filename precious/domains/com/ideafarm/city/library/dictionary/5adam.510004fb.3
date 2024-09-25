@@ -31,9 +31,9 @@ TASK( tmHooF )
 DONE( tmGooF )
 }
     THREADmODE2rESTORE ;
-    //CONoUTrAW3( "tmGooF/" , tinP.monitor.idThread , ": you'll never see this\r\n" ) ;
+    //CONoUTrAW3( "tmGooF/" , ((tinNormalS&)tinP).monitor.idThread , ": you'll never see this\r\n" ) ;
     grab2.grabF( tinP , TAG( TAGiDnULL ) ) ;
-    //CONoUTrAW3( "tmGooF/" , tinP.monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
+    //CONoUTrAW3( "tmGooF/" , ((tinNormalS&)tinP).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
     }
         ++ s ; ether.osSleepF( tinP , TOCK ) ;
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
@@ -50,9 +50,9 @@ TASK( tmGooF )
 DONE( tmFooF )
 }
     THREADmODE2rESTORE ;
-    //CONoUTrAW3( "tmFooF/" , tinP.monitor.idThread , ": you'll never see this\r\n" ) ;
+    //CONoUTrAW3( "tmFooF/" , ((tinNormalS&)tinP).monitor.idThread , ": you'll never see this\r\n" ) ;
     grab2.grabF( tinP , TAG( TAGiDnULL ) ) ;
-    //CONoUTrAW3( "tmFooF/" , tinP.monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
+    //CONoUTrAW3( "tmFooF/" , ((tinNormalS&)tinP).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
     }
         ++ s ; ether.osSleepF( tinP , TOCK ) ;
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;

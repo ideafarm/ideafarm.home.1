@@ -10,28 +10,28 @@
 }
     }
         }
-            tinP.pag1->_etherC_.pEtPrime = 0 ;
+            ((tinNormalS&)tinP).pag1->_etherC_.pEtPrime = 0 ;
     
-            DEL( tinP.pag1->_etherC_.pEtLongLasting      ) ;
-            DEL( tinP.pag1->_etherC_.pEtRock             ) ;
-            DEL( tinP.pag1->_etherC_.pEtText             ) ;
-            DEL( tinP.pag1->_etherC_.pEtPaint            ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pEtLongLasting      ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pEtRock             ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pEtText             ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pEtPaint            ) ;
     
-            DEL( tinP.pag1->_etherC_.pBatWindowDeletion  ) ;
-            DEL( tinP.pag1->_etherC_.pSwDllReferences    ) ;
-            DEL( tinP.pag1->_etherC_.pStkIdleTimeouters  ) ;
-            DEL( tinP.pag1->_etherC_.pStkAcceptors       ) ;
-            DEL( tinP.pag1->_etherC_.pStkQuitters        ) ;
-            DEL( tinP.pag1->_etherC_.pStkCatchers        ) ;
-            DEL( tinP.pag1->_etherC_.pStkPoolNames       ) ;
-            DEL( tinP.pag1->_etherC_.pBatWinTitle        ) ;
-            DEL( tinP.pag1->_etherC_.pTxtDllEntry2       ) ;
-            DEL( tinP.pag1->_etherC_.pTxtDllEntry1       ) ;
-            DEL( tinP.pag1->_etherC_.pTxtWinTitle        ) ;
-            DEL( tinP.pag1->_etherC_.pSwEtThread         ) ;
-            DEL( tinP.pag1->_etherC_.pBatFiringKids      ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pBatWindowDeletion  ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pSwDllReferences    ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pStkIdleTimeouters  ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pStkAcceptors       ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pStkQuitters        ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pStkCatchers        ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pStkPoolNames       ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pBatWinTitle        ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pTxtDllEntry2       ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pTxtDllEntry1       ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pTxtWinTitle        ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pSwEtThread         ) ;
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pBatFiringKids      ) ;
     
-            DEL( tinP.pag1->_etherC_.pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
+            DEL( ((tinNormalS&)tinP).pag1->_etherC_.pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
             }
                 THREADmODE2rESTORE
                 }
@@ -44,34 +44,34 @@
                                 case ifcIDtYPErECYCLE_stackC       : { DEL(       *(stackC**)&pObject ) ; break ; }
                                 case ifcIDtYPErECYCLE_soulC        : { DEL(        *(soulC**)&pObject ) ; break ; }
                             {
-                            //U::switch( *tinP.pag1->_etherC_.pczl_pSwsRecycle )
+                            //U::switch( *((tinNormalS&)tinP).pag1->_etherC_.pczl_pSwsRecycle )
    
                             switch( cFoo )
-                            countT cFoo = *tinP.pag1->_etherC_.pczl_pSwsRecycle ;
+                            countT cFoo = *((tinNormalS&)tinP).pag1->_etherC_.pczl_pSwsRecycle ;
                             //U::
                         {
-                        if( tinP.pag1->_etherC_.pczl_pSwsRecycle && pObject )
+                        if( ((tinNormalS&)tinP).pag1->_etherC_.pczl_pSwsRecycle && pObject )
     
-                        //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , tinP.pag1->_etherC_.pczl_pSwsRecycle ) ; //U::
+                        //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , ((tinNormalS&)tinP).pag1->_etherC_.pczl_pSwsRecycle ) ; //U::
     
-                        *tinP.pag1->_etherC_.pSwsRecycle >> *(countT*)&pObject ;
+                        *((tinNormalS&)tinP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObject ;
                         ZE( voidT* , pObject ) ;
                     {
-                    while( *tinP.pag1->_etherC_.pSwsRecycle )
+                    while( *((tinNormalS&)tinP).pag1->_etherC_.pSwsRecycle )
     
-                    tinP.pag1->_etherC_.pczl_pSwsRecycle = (countT*)tinP.pag1->_etherC_.pSwsRecycle->leverF( tinP , idf ) ;
+                    ((tinNormalS&)tinP).pag1->_etherC_.pczl_pSwsRecycle = (countT*)((tinNormalS&)tinP).pag1->_etherC_.pSwsRecycle->leverF( tinP , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                countT cFlavors = tinP.pag1->_etherC_.pSwsRecycle->cFlavorsF( tinP ) ;
+                countT cFlavors = ((tinNormalS&)tinP).pag1->_etherC_.pSwsRecycle->cFlavorsF( tinP ) ;
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             {
-            if( tinP.pag1->_etherC_.pSwsRecycle )
+            if( ((tinNormalS&)tinP).pag1->_etherC_.pSwsRecycle )
             //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
     
         {
-        if( tinP.pag1->_etherC_.pEtPrime == &ether )
+        if( ((tinNormalS&)tinP).pag1->_etherC_.pEtPrime == &ether )
     
-        if( tinP.pag1->_etherC_.pSwEtThread && (countT)&ether == *tinP.pag1->_etherC_.pSwEtThread ) tinP.pag1->_etherC_.pSwEtThread->freeF( tinP ) ;
+        if( ((tinNormalS&)tinP).pag1->_etherC_.pSwEtThread && (countT)&ether == *((tinNormalS&)tinP).pag1->_etherC_.pSwEtThread ) ((tinNormalS&)tinP).pag1->_etherC_.pSwEtThread->freeF( tinP ) ;
     {
     _IO_
     TINSL

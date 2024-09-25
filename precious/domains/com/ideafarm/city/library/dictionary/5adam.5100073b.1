@@ -17,15 +17,15 @@ THREADmODE3rESTORE
         POPtINaRGS
         listC::walkIF( tinP , pczEvents , flLISToPEN_IFeXISTS ) ;
 
-        tinP.ta.retained.u.listWalk.util.pcP[ 3 ] = (countT)&hFileReport ;
-        tinP.ta.retained.u.listWalk.util.pcP[ 2 ] = 0 ;                                         // WILL HOLD idJotUri       FOR THE URI CURRENTLY BEING PROCESSED
-        tinP.ta.retained.u.listWalk.util.pcP[ 1 ] = 0 ;                                         // WILL HOLD idJotContainer FOR THE URI CURRENTLY BEING PROCESSED
-        tinP.ta.retained.u.listWalk.util.pcP[ 0 ] = sizeof( countT ) ;
+        ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 3 ] = (countT)&hFileReport ;
+        ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 2 ] = 0 ;                                         // WILL HOLD idJotUri       FOR THE URI CURRENTLY BEING PROCESSED
+        ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 1 ] = 0 ;                                         // WILL HOLD idJotContainer FOR THE URI CURRENTLY BEING PROCESSED
+        ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 0 ] = sizeof( countT ) ;
 
-        tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_MAPiDjOTvALUES ;
-        tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = pczEvents[ 1 ] ;
-        tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREdELETErEQUESTEDbIT ;
-        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkReportAccessEventsCBF ;
+        ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_MAPiDjOTvALUES ;
+        ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] = pczEvents[ 1 ] ;
+        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREdELETErEQUESTEDbIT ;
+        ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkReportAccessEventsCBF ;
         PUSHtINaRGS
 
         grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
@@ -64,63 +64,63 @@ TODO
             }
                 }
                     }
-                        tinP.pEtScratch->delF( tinP , pstto ) ;
+                        ((tinNormalS&)tinP).pEtScratch->delF( tinP , pstto ) ;
                         POOPR
                     {
                     else
                     }
                         break ;
-                        tinP.pEtScratch->delF( tinP , pstto ) ;
-                        tinP.pEtScratch->traceF( tinP , pstto ) ;
+                        ((tinNormalS&)tinP).pEtScratch->delF( tinP , pstto ) ;
+                        ((tinNormalS&)tinP).pEtScratch->traceF( tinP , pstto ) ;
                     {
                     if( !POOP )
 
-                    if( flagsi & fliLISTINGc_DELETErEQUESTED ) tinP.pEtScratch->strFuseF( tinP , pstto , T("DELETErEQUESTED") ) ;
+                    if( flagsi & fliLISTINGc_DELETErEQUESTED ) ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("DELETErEQUESTED") ) ;
 
                     }
                         THREADmODE2rESTORE
                         }
-                            tinP.tlsDelF( *(byteT**)&pczHe ) ;
+                            ((tinNormalS&)tinP).tlsDelF( *(byteT**)&pczHe ) ;
                             //{ puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczHe ) ; }
 
                             }
-                                if( pczHe[ ++ offo ] ) { tinP.pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
+                                if( pczHe[ ++ offo ] ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
             
                                 }
                                     }
-                                        tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
-                                        tinP.pEtScratch->strFuseF( tinP , pstto , T((const byteT*)vspo) ) ;
-                                        tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
+                                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
+                                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T((const byteT*)vspo) ) ;
+                                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
                                     {
                                     else            
-                                    if( !(const byteT*)vspo ) { tinP.pEtScratch->strFuseF( tinP , pstto , TF2(pczHe[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+                                    if( !(const byteT*)vspo ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2(pczHe[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
                 
                                     if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tinP , pczHe[ offo ] ) ;
                                     blobVSP vspo ;
                                 {
                                 else
-                                if( postzMap ) { tinP.pEtScratch->strFuseF( tinP , pstto , T(postzMap) ) ; }
+                                if( postzMap ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(postzMap) ) ; }
                                 const osTextT* postzMap = pg3.mapListName( pczHe[ offo ] ) ;
                             {
                             while( pczHe[ offo ] )
                             countT offo = 0 ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T(" Refers to: ") ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" Refers to: ") ) ;
 
                             ((const listingC*)vspValue)->nameF( tinP , pczHe ) ; //___( pczHe ) ;
                             ZE( countT* , pczHe ) ;
 
-                            if( flagsi & fliLISTINGc_DELETErEQUESTED ) tinP.pEtScratch->strFuseF( tinP , pstto , T(" DELETErEQUESTED") ) ;
+                            if( flagsi & fliLISTINGc_DELETErEQUESTED ) ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" DELETErEQUESTED") ) ;
                             }
-                                tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
-                                tinP.pEtScratch->strFuseF( tinP , pstto , T(postNamePool) ) ;
-                                tinP.pEtScratch->strFuseF( tinP , pstto , T(" in pool: \"") ) ;
+                                ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
+                                ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(postNamePool) ) ;
+                                ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" in pool: \"") ) ;
                             {
                             if( postNamePool )
-                            const osTextT* postNamePool = tinP.pPoolUse ? tinP.pPoolUse->postNameF( tinP ) : 0 ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , TF2(aptRef,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T(" a: ") ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , TF2((countT)(const listingC*)vspValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T("listingVSP: p: ") ) ;
+                            const osTextT* postNamePool = ((tinNormalS&)tinP).pPoolUse ? ((tinNormalS&)tinP).pPoolUse->postNameF( tinP ) : 0 ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2(aptRef,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" a: ") ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2((countT)(const listingC*)vspValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("listingVSP: p: ") ) ;
             
                             aptC aptRef( tinP , vspValue ) ;
             
@@ -134,37 +134,37 @@ TODO
                     else if( (const listingC*)vspValue )
                     }
                         }
-                            if( pczValue[ ++ offo ] ) { tinP.pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
+                            if( pczValue[ ++ offo ] ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
 
                             }
                                 }
-                                    tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
-                                    tinP.pEtScratch->strFuseF( tinP , pstto , T((const byteT*)vspo) ) ;
-                                    tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
+                                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
+                                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T((const byteT*)vspo) ) ;
+                                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
                                 {
                                 else            
-                                if( !(const byteT*)vspo ) { tinP.pEtScratch->strFuseF( tinP , pstto , TF2(pczValue[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+                                if( !(const byteT*)vspo ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2(pczValue[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
             
                                 if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tinP , pczValue[ offo ] ) ;
                                 blobVSP vspo ;
                             {
                             else
-                            if( postzMap ) { tinP.pEtScratch->strFuseF( tinP , pstto , T(postzMap) ) ; }
+                            if( postzMap ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(postzMap) ) ; }
                             const osTextT* postzMap = pg3.mapListName( pczValue[ offo ] ) ;
                         {
                         while( pczValue[ offo ] )
                         countT offo = 0 ;
 
-                        tinP.pEtScratch->strFuseF( tinP , pstto , T("countTstrz: ") ) ;
+                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("countTstrz: ") ) ;
                     {
                     else if( pczValue )
                     }
                         }
-                            tinP.pEtScratch->delF( tinP , psttw ) ;
-                            if( bPartial ) tinP.pEtScratch->strFuseF( tinP , pstto , (strokeS*)( T(" ... (there are ")+TF2(cbv,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" total bytes)") ) ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T(psttw) ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T("blob):\r\n") ) ;
-                            tinP.pEtScratch->strDumpIF( tinP , psttw , postValue , bPartial ? TUCK : cbv , flSTRdUMP_null , 0x20 , 4 , '~' ) ; ___( psttw ) ;
+                            ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttw ) ;
+                            if( bPartial ) ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , (strokeS*)( T(" ... (there are ")+TF2(cbv,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" total bytes)") ) ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(psttw) ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("blob):\r\n") ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strDumpIF( tinP , psttw , postValue , bPartial ? TUCK : cbv , flSTRdUMP_null , 0x20 , 4 , '~' ) ; ___( psttw ) ;
                             ZE( strokeS* , psttw ) ;
 
                             }
@@ -179,9 +179,9 @@ TODO
                         {
                         else
                         }
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T(postValue) ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T("blob: \"") ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(postValue) ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("blob: \"") ) ;
                         {
                         if( bText )
 
@@ -205,48 +205,48 @@ TODO
                     }
                         }
                             }
-                                tinP.pEtScratch->delF( tinP , psttJot ) ;
-                                tinP.pEther->fileWriteF( tinP , hFileReportP , tSay , tSay.csF( tinP ) ) ;
+                                ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttJot ) ;
+                                ((tinNormalS&)tinP).pEther->fileWriteF( tinP , hFileReportP , tSay , tSay.csF( tinP ) ) ;
                                 TN( tSay , "" ) ; tSay = T("\r\n")+T(psttJot) ;
 
-                                tinP.pEtScratch->strFuseF( tinP , pstto , tb4+T(psttJot) ) ;
+                                ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , tb4+T(psttJot) ) ;
                             {
                             else
                             if( POOP ) POOPR
-                            tinP.pEtScratch->strFromIdJotF( tinP , psttJot , *pcValue , cbJotStringDecodePrefixP ) ; ___( psttJot ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFromIdJotF( tinP , psttJot , *pcValue , cbJotStringDecodePrefixP ) ; ___( psttJot ) ;
                             ZE( strokeS* , psttJot ) ;
                         {
                         if( F(flagsP) & flLISTwALKcHATTER_MAPiDjOTvALUES )
 
-                        tinP.pEther->fileWriteF( tinP , hFileReportP , tSay , tSay.csF( tinP ) ) ;
+                        ((tinNormalS&)tinP).pEther->fileWriteF( tinP , hFileReportP , tSay , tSay.csF( tinP ) ) ;
                         TN( tSay , "" ) ; tSay = T("\r\n")+T("countT: ")+TF2(*pcValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 
-                        tinP.pEtScratch->strFuseF( tinP , pstto , TF2(*pcValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        tinP.pEtScratch->strFuseF( tinP , pstto , T("countT: ") ) ;
+                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2(*pcValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("countT: ") ) ;
                     {
                     if( pcValue )
 
                     }
-                        tinP.pEtScratch->strFuseF( tinP , pstto , T(" ") ) ;
-                        tinP.pEtScratch->strFuseF( tinP , pstto , TF2(cName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" ") ) ;
+                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2(cName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     else if( cName )
                     }
-                        tinP.pEtScratch->strFuseF( tinP , pstto , T(" ") ) ;
-                        tinP.pEtScratch->strFuseF( tinP , pstto , T(postzName) ) ;
+                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" ") ) ;
+                        ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(postzName) ) ;
                     {
                     if( postzName )
-                    tinP.pEtScratch->strFuseF( tinP , pstto , T(postMark) ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , T(" | ") ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , TF2(aptListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , T(" | a: ") ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , TF2((countT)pListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , T(" | p: ") ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , TF2(tinP.ta.pushed.u.listWalk.walk.cRecurseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , T(" | ") ) ;
-                    tinP.pEtScratch->strFuseF( tinP , pstto , T(tinP.pPoolUse->postNameF(tinP)) ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(postMark) ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" | ") ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2(aptListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" | a: ") ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2((countT)pListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" | p: ") ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2(((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.cRecurseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(" | ") ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(((tinNormalS&)tinP).pPoolUse->postNameF(tinP)) ) ;
 
-                    tinP.pEtScratch->strMakeF( tinP , LF , pstto , 0 , max ) ; ___( pstto ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strMakeF( tinP , LF , pstto , 0 , max ) ; ___( pstto ) ;
                     ZE( strokeS* , pstto ) ;
                 {
                 for( countT max = TOCK ;; max <<= 1 )
@@ -330,37 +330,37 @@ TODO
         }
             }
                 }
-                    tinP.pEtScratch->delF( tinP , pstto ) ;
+                    ((tinNormalS&)tinP).pEtScratch->delF( tinP , pstto ) ;
                     POOPR
                 {
                 else
                 }
                     break ;
-                    tinP.pEtScratch->delF( tinP , pstto ) ;
-                    tinP.pEtScratch->traceF( tinP , pstto ) ;
+                    ((tinNormalS&)tinP).pEtScratch->delF( tinP , pstto ) ;
+                    ((tinNormalS&)tinP).pEtScratch->traceF( tinP , pstto ) ;
                 {
                 if( !POOP )
 
                 { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczSquished ) ; }
-                tinP.tlsDelF( *(byteT**)&pczName ) ;
+                ((tinNormalS&)tinP).tlsDelF( *(byteT**)&pczName ) ;
                 //{ puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczName ) ; }
                 }
-                    if( pczSquished[ ++ offi ] ) { tinP.pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
+                    if( pczSquished[ ++ offi ] ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("/") ) ; }
 
                     }
                         }
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T((const byteT*)vspo) ) ;
-                            tinP.pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T((const byteT*)vspo) ) ;
+                            ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T("\"") ) ;
                         {
                         else            
-                        if( !(const byteT*)vspo ) { tinP.pEtScratch->strFuseF( tinP , pstto , TF2(pczSquished[offi],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; }
+                        if( !(const byteT*)vspo ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , TF2(pczSquished[offi],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; }
             
                         if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tinP , pczSquished[ offi ] ) ;
                         blobVSP vspo ;
                     {
                     else
-                    if( postzMap ) { tinP.pEtScratch->strFuseF( tinP , pstto , T(postzMap) ) ; }
+                    if( postzMap ) { ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(postzMap) ) ; }
 
                     const osTextT* postzMap = pg3.mapListName( pczSquished[ offi ] ) ;
                 {
@@ -369,7 +369,7 @@ TODO
 
                 }
                     }
-                        tinP.pEther->fileWriteF( tinP , hFileReportP , tSay , tSay.csF( tinP ) ) ;
+                        ((tinNormalS&)tinP).pEther->fileWriteF( tinP , hFileReportP , tSay , tSay.csF( tinP ) ) ;
 
                         ) ;
 
@@ -383,36 +383,36 @@ TODO
 
                         TN( tSay , "" ) ; tSay = T(
 
-                        tinP.pEther->fileOpenF( tinP , hFileReportP , countTC() , T("///d/web.reports/access/")+tContainer+tSlash+tUri+T(".txt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , flFILEaTTR1_null , flFILEaTTR2_null , 0 , 0 ) ;                    
+                        ((tinNormalS&)tinP).pEther->fileOpenF( tinP , hFileReportP , countTC() , T("///d/web.reports/access/")+tContainer+tSlash+tUri+T(".txt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , flFILEaTTR1_null , flFILEaTTR2_null , 0 , 0 ) ;                    
 
                         etherC::etRockIF( tinP ).traceF( tinP , T("writing/replacing report file [container,uri]:    ")+tb4+tContainer+tb4+tUri ) ;
 
                         }
-                            tinP.pEtScratch->delF( tinP , psttWant ) ;
+                            ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttWant ) ;
                             tUri = T(psttWant) ;
-                            tinP.pEther->strSubstringF( tinP , psttWant , idf , idl , tUri ) ; ___( psttWant ) ;
+                            ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttWant , idf , idl , tUri ) ; ___( psttWant ) ;
                             ZE( countT , idl ) ;
                             countT idf = idHit + tLook.csF( tinP ) ;
                             ZE( strokeS* , psttWant ) ;
                         {
                         if( idHit )
-                        countT idHit = tinP.pEther->strIdF( tinP , tLook , tUri ) ;
+                        countT idHit = ((tinNormalS&)tinP).pEther->strIdF( tinP , tLook , tUri ) ;
                         TN( tLook , ".rackcdn.com/" ) ;
 
-                        tinP.pEtScratch->delF( tinP , psttJotUri       ) ;
-                        tinP.pEtScratch->delF( tinP , psttJotContainer ) ;
+                        ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttJotUri       ) ;
+                        ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttJotContainer ) ;
                         TN( tUri       , psttJotUri       ) ;
                         TN( tContainer , psttJotContainer ) ;
                     {
                     else
                     }
-                        tinP.pEtScratch->delF( tinP , psttJotUri       ) ;
-                        tinP.pEtScratch->delF( tinP , psttJotContainer ) ;
+                        ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttJotUri       ) ;
+                        ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttJotContainer ) ;
                         POOPR
                     {
                     if( POOP )
-                    tinP.pEtScratch->strFromIdJotF( tinP , psttJotUri       , idJotUriP       , cbJotStringDecodePrefixP ) ; ___( psttJotUri       ) ;
-                    tinP.pEtScratch->strFromIdJotF( tinP , psttJotContainer , idJotContainerP , cbJotStringDecodePrefixP ) ; ___( psttJotContainer ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFromIdJotF( tinP , psttJotUri       , idJotUriP       , cbJotStringDecodePrefixP ) ; ___( psttJotUri       ) ;
+                    ((tinNormalS&)tinP).pEtScratch->strFromIdJotF( tinP , psttJotContainer , idJotContainerP , cbJotStringDecodePrefixP ) ; ___( psttJotContainer ) ;
                     ZE( strokeS* , psttJotUri       ) ;
                     ZE( strokeS* , psttJotContainer ) ;
 
@@ -427,13 +427,13 @@ TODO
                 { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; etherC::strSquishIF( tinP , pczSquished , pczName ) ; ___( pczSquished ) ; }     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
                 ZE( countT* , pczSquished ) ;
 
-                tinP.ta.pushed.u.listWalk.cbf.pDadP->nameF( tinP , pczName ) ; // ___( pczName ) ;
+                ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pDadP->nameF( tinP , pczName ) ; // ___( pczName ) ;
                 ZE( countT* , pczName ) ;
 
-                tinP.pEtScratch->strFuseF( tinP , pstto , T(bUseDictionary?" | ------------------------------------------------------------------------------- ":" | ------------------------------------------------------------------------------- (NO DICTIONARY LOOKUP) ") ) ;
-                tinP.pEtScratch->strFuseF( tinP , pstto , T(tinP.pPoolUse->postNameF(tinP)) ) ;
+                ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(bUseDictionary?" | ------------------------------------------------------------------------------- ":" | ------------------------------------------------------------------------------- (NO DICTIONARY LOOKUP) ") ) ;
+                ((tinNormalS&)tinP).pEtScratch->strFuseF( tinP , pstto , T(((tinNormalS&)tinP).pPoolUse->postNameF(tinP)) ) ;
 
-                tinP.pEtScratch->strMakeF( tinP , LF , pstto , 0 , max ) ; ___( pstto ) ;
+                ((tinNormalS&)tinP).pEtScratch->strMakeF( tinP , LF , pstto , 0 , max ) ; ___( pstto ) ;
                 ZE( strokeS* , pstto ) ;
             {
             for( countT max = TOCK ;; max <<= 1 )
@@ -441,7 +441,7 @@ TODO
         {
         IFsCRATCH
     {
-    if( tinP.ta.pushed.u.listWalk.cbf.idCallP == 1 )
+    if( ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.idCallP == 1 )
     processGlobal4S& pg3 = processGlobal4S::_processGlobal4I_IF() ;
 
     TN( tSlash , "/" ) ;
@@ -458,21 +458,21 @@ TODO
     const countT levelReNameUse = levelReNameMe ? levelReNameMe : levelReNameDad ;
     const countT levelOoNameUse = levelOoNameMe ? levelOoNameMe : levelOoNameDad ;
 
-    const countT levelReNameDad = !tinP.ta.pushed.u.listWalk.cbf.pDadP ? 0 : tinP.ta.pushed.u.listWalk.cbf.pDadP->nameF( 3 ) ;
+    const countT levelReNameDad = !((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pDadP ? 0 : ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pDadP->nameF( 3 ) ;
     const countT levelReNameMe  = !pListing                          ? 0 : pListing->nameF( 3 )                          ;
 
-    const countT levelOoNameDad = !tinP.ta.pushed.u.listWalk.cbf.pDadP ? 0 : tinP.ta.pushed.u.listWalk.cbf.pDadP->nameF( 2 ) ;
+    const countT levelOoNameDad = !((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pDadP ? 0 : ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pDadP->nameF( 2 ) ;
     const countT levelOoNameMe  = !pListing                          ? 0 : pListing->nameF( 2 )                          ;
 
     //U::FV( flLISTwALKcHATTER , flagsP ) ;
 
-    handleC&  hFileReportP             = *(handleC*)tinP.ta.retained.u.listWalk.util.pcP[ 3 ] ;
-    countT&   idJotUriP                =            tinP.ta.retained.u.listWalk.util.pcP[ 2 ] ;
-    countT&   idJotContainerP          =            tinP.ta.retained.u.listWalk.util.pcP[ 1 ] ;
-    countT    cbJotStringDecodePrefixP =            tinP.ta.retained.u.listWalk.util.pcP[ 0 ] ;
+    handleC&  hFileReportP             = *(handleC*)((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 3 ] ;
+    countT&   idJotUriP                =            ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 2 ] ;
+    countT&   idJotContainerP          =            ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 1 ] ;
+    countT    cbJotStringDecodePrefixP =            ((tinNormalS&)tinP).ta.retained.u.listWalk.util.pcP[ 0 ] ;
 
-    flagsT    flagsP                   =            tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-    listingC* pListing                 =            tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    flagsT    flagsP                   =            ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+    listingC* pListing                 =            ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
 {
 flagsT listWalkReportAccessEventsCBF( tinNormalS& tinP )
 

@@ -34,7 +34,7 @@
             __Z( idSlot ) ;
             etherC::sockStkQuittersF( tinP ).sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
             ZE( countT , idSlot ) ;
-            //__( F(tinP.flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
+            //__( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
         {
         if( idType != ifcSOCKETtYPE_DATAgRAM && !( F(flags) & flSOCKETc_DOnOTrEGISTERqUITTER ) )
     
@@ -94,9 +94,9 @@
         IFbEcAREFUL
         SCOOPP
 
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
+        ((tinNormalS&)tinP).pag3->_socketC_.grab.ungrabF( tinP ) ;
         }
-            tinP.pag3->_socketC_.pSwOdometer = new( 0 , tinP , LF ) switchC( tinP , etRock , idLineCtP , idiFileCtP , pbBitsCtP , flSTACKc_null , tinP.pag3->_socketC_.nnLever , 0 , sizeof( sockOdometerS ) ) ; ___( tinP.pag3->_socketC_.pSwOdometer ) ;
+            ((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer = new( 0 , tinP , LF ) switchC( tinP , etRock , idLineCtP , idiFileCtP , pbBitsCtP , flSTACKc_null , ((tinNormalS&)tinP).pag3->_socketC_.nnLever , 0 , sizeof( sockOdometerS ) ) ; ___( ((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer ) ;
             etherC& etRock = etherC::etRockIF( tinP ) ;
 
             }
@@ -105,15 +105,15 @@
                     }
                         ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
                     {
-                    while( tinP.pag3->_socketC_.pSwOdometer )
+                    while( ((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer )
                     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
                 {
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             {
-            if( tinP.pag3->_socketC_.pSwOdometer )
+            if( ((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer )
         {
-        if( !incv02AM( tinP.pag3->_socketC_.cRef ) )
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        if( !incv02AM( ((tinNormalS&)tinP).pag3->_socketC_.cRef ) )
+        ((tinNormalS&)tinP).pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
         //20141028@0638: REGISTRATION MOVED TO HERE
     {
     inc02AM( cFunctionsPending ) ;
@@ -122,9 +122,9 @@ psttPemPrivateKey( 0 )
 psttPemCertificates( 0 ) ,
 hSslContext( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslContext ) ,
 pMapPortBind( 0 ) ,
-idleTimeAllowedWrite( pIdleTimeAllowedWriteP ? *pIdleTimeAllowedWriteP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? tinP.pag3->_socketC_.alwaysTimeoutDefaultWan : tinP.pag3->_socketC_.alwaysZe ) ,
-idleTimeAllowedRead(  pIdleTimeAllowedReadP  ? *pIdleTimeAllowedReadP  : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? tinP.pag3->_socketC_.alwaysTimeoutDefaultWan : tinP.pag3->_socketC_.alwaysZe ) ,
-timeAllowedConnected( pTimeAllowedConnectedP ? *pTimeAllowedConnectedP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? tinP.pag3->_socketC_.alwaysZe                : tinP.pag3->_socketC_.alwaysZe ) , // SSL IS A PIECE OF SHIT: IT CAN PEG CPU FOREVER IN AN INFINITE LOOP ; 20161201@1201: CHANGED FROM TICK TO ZE TO AVOID CANCELING LONG CLOUD TRANSFERS.  HOPEFULLY THE IDLE LIMITS WILL SUFFICE TO KILL SSL PEGGING CPU
+idleTimeAllowedWrite( pIdleTimeAllowedWriteP ? *pIdleTimeAllowedWriteP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tinNormalS&)tinP).pag3->_socketC_.alwaysTimeoutDefaultWan : ((tinNormalS&)tinP).pag3->_socketC_.alwaysZe ) ,
+idleTimeAllowedRead(  pIdleTimeAllowedReadP  ? *pIdleTimeAllowedReadP  : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tinNormalS&)tinP).pag3->_socketC_.alwaysTimeoutDefaultWan : ((tinNormalS&)tinP).pag3->_socketC_.alwaysZe ) ,
+timeAllowedConnected( pTimeAllowedConnectedP ? *pTimeAllowedConnectedP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tinNormalS&)tinP).pag3->_socketC_.alwaysZe                : ((tinNormalS&)tinP).pag3->_socketC_.alwaysZe ) , // SSL IS A PIECE OF SHIT: IT CAN PEG CPU FOREVER IN AN INFINITE LOOP ; 20161201@1201: CHANGED FROM TICK TO ZE TO AVOID CANCELING LONG CLOUD TRANSFERS.  HOPEFULLY THE IDLE LIMITS WILL SUFFICE TO KILL SSL PEGGING CPU
 psttName( 0 ) ,
 pczKeyTopSecretPeer( 0 ) ,
 pczKeyTopSecret( 0 ) ,

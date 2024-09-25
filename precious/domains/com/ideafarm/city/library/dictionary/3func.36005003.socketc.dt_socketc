@@ -33,7 +33,7 @@
                 }
                     }
                         if( POOP ) POOPR
-                        tinP.pEtScratch->boxZapF( tinP , tLong , 1 ) ;
+                        ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , tLong , 1 ) ;
                         SCOOPS
                     {
                     IFsCRATCH
@@ -92,22 +92,22 @@
     
         bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
+        ((tinNormalS&)tinP).pag3->_socketC_.grab.ungrabF( tinP ) ;
         }
-            DEL( tinP.pag3->_socketC_.pSwOdometer ) ;
+            DEL( ((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer ) ;
     
             }
-                //if( tinP.pc Utility[ 0 ] ) { LOGrAW( TD("socketC::~socketC/odometer/")+TF3(pOdometer->cbRead,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+T(" ")+TF3(pOdometer->cbWrite,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+T(tinP.pag3->_socketC_.nnLever)+T("\r\n") ) ; }
-                pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
-                tinP.pag3->_socketC_.nnLever = *(nicNameC*)tinP.pag3->_socketC_.pSwOdometer->leverF( tinP , idf ) ;
+                //if( ((tinNormalS&)tinP).pc Utility[ 0 ] ) { LOGrAW( TD("socketC::~socketC/odometer/")+TF3(pOdometer->cbRead,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+T(" ")+TF3(pOdometer->cbWrite,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+T(((tinNormalS&)tinP).pag3->_socketC_.nnLever)+T("\r\n") ) ; }
+                pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer ;
+                ((tinNormalS&)tinP).pag3->_socketC_.nnLever = *(nicNameC*)((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer->leverF( tinP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = tinP.pag3->_socketC_.pSwOdometer->cFlavorsF( tinP ) ;
+            countT cFlavors = ((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer->cFlavorsF( tinP ) ;
     
-            if( !tinP.pag3->_socketC_.pSwOdometer ) { BLAMMO ; }
+            if( !((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer ) { BLAMMO ; }
         {
-        if( 1 == decv02AM( tinP.pag3->_socketC_.cRef ) )
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        if( 1 == decv02AM( ((tinNormalS&)tinP).pag3->_socketC_.cRef ) )
+        ((tinNormalS&)tinP).pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
     
         }
             THREADmODE2rESTORE
@@ -121,7 +121,7 @@
     
         SCOOPP
 
-        //if( tinP.pc Utility[ 0 ] == (countT)this ) tinP.pEther->traceF( tinP , T("~socketC: it's being deleted!") ) ; //U:: TO FIND A BUG
+        //if( ((tinNormalS&)tinP).pc Utility[ 0 ] == (countT)this ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("~socketC: it's being deleted!") ) ; //U:: TO FIND A BUG
     
         _IO_
         TINSL

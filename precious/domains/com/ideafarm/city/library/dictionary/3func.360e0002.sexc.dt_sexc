@@ -207,7 +207,7 @@
         //    OStEXTAK( ostoSay , " " ) ;
         //    OStEXTC(  ostoSay , pzMetaHead->expCbDrop , ' ' ) ;
         //    OStEXTAK( ostoSay , "          " ) ;
-        //    OStEXTC(  ostoSay , tinP.pag1->idAdam , ' ' ) ;
+        //    OStEXTC(  ostoSay , ((tinNormalS&)tinP).pag1->idAdam , ' ' ) ;
         //    OStEXTAK( ostoSay , "---- ~sexC [idAdam                ,expCbDrop,expSlots,n/p,pbData,pbDataEnd,postName]: " ) ;
         //    OStEXT(   ostoSay , TUCK << 2 ) ;
         //{
@@ -275,7 +275,7 @@
         thirdC::c_strcpyIF( tinP , info.postName , pzMetaHead->postName ) ;
         info.expSlots   = pzMetaHead->expSlots  ;
         info.expCbDrop  = pzMetaHead->expCbDrop ;
-        info.osPid      = tinP.osPid ;
+        info.osPid      = ((tinNormalS&)tinP).osPid ;
         tellInfoSysSexS info ;
         countT idTypeSay = ifcIDtYPEtELLsYS_SEXdT ;
     {

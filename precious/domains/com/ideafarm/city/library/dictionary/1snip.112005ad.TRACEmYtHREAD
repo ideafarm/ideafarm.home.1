@@ -14,9 +14,9 @@
             }                                                                                               \
                 break ;                                                                                     \
                 bSet ++ ;                                                                                   \
-                tinP.pag1->pcIdThreadTrace[ offo ] = tinP.monitor.idThread ;                        \
+                ((tinNormalS&)tinP).pag1->pcIdThreadTrace[ offo ] = ((tinNormalS&)tinP).monitor.idThread ;                        \
             {                                                                                               \
-            if( !tinP.pag1->pcIdThreadTrace[ offo ] )                                               \
+            if( !((tinNormalS&)tinP).pag1->pcIdThreadTrace[ offo ] )                                               \
         {                                                                                                   \
         for( countT offo = 0 ; offo < CiDtHREADtRACE ; offo ++ )                                            \
         ZE( boolT , bSet ) ;                                                                                \

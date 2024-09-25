@@ -8,12 +8,12 @@
 
 
 }
-    tinP.pPoolUse = pPoolUse = &poolP ;
-    if( !( F(tinP.flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; } //U::20170912@1231: ADDED WITHOUT ANALYSIS
+    ((tinNormalS&)tinP).pPoolUse = pPoolUse = &poolP ;
+    if( !( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; } //U::20170912@1231: ADDED WITHOUT ANALYSIS
 {
 flagsMode( flPUSEcmODE_null )
 pPoolUse( 0 ) ,
-pPoolUseLag( tinP.pPoolUse ) ,
+pPoolUseLag( ((tinNormalS&)tinP).pPoolUse ) ,
 /*1*/puseC::puseC( tinNormalS& tinP , poolC& poolP ) :/*1*/
 
 /**/

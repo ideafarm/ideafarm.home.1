@@ -11,12 +11,12 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
-        pOdometer->cbWrite += tinP.odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += tinP.odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
-        tinP.pag3->_socketC_.nnLever = nnPeer ;
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ((tinNormalS&)tinP).pag3->_socketC_.grab.ungrabF( tinP ) ;
+        pOdometer->cbWrite += ((tinNormalS&)tinP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tinNormalS&)tinP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinP).pag3->_socketC_.pSwOdometer ;
+        ((tinNormalS&)tinP).pag3->_socketC_.nnLever = nnPeer ;
+        ((tinNormalS&)tinP).pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
     
         bWrite.ungrabF( tinP ) ;
     
@@ -181,8 +181,8 @@
     
         bWrite.grabF( tinP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = tinP.odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = tinP.odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinP).odoSockCbRead  ;
     
         _IO_
     

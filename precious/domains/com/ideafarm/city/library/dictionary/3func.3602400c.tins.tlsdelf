@@ -58,10 +58,10 @@
             {
             if( costaName )
     
-            //if( tinP.pc Utility[ 0 ] ) tinP.pc Utility[ 1 ] -- ;
-            //if( tinP.pc Utility[ 0 ] && postInGroup   ) { CONoUTrAW( postInGroup ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( tinP.pc Utility[ 0 ] && postName      ) { CONoUTrAW( postName    ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( tinP.pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinNormalS::newF/entry erased at    " , (countT)( pbTls + offMe ) , "\r\n" ) ; }
+            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] ) ((tinNormalS&)tinP).pc Utility[ 1 ] -- ;
+            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] && postInGroup   ) { CONoUTrAW( postInGroup ) ; CONoUTrAW( "\r\n" ) ; }
+            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] && postName      ) { CONoUTrAW( postName    ) ; CONoUTrAW( "\r\n" ) ; }
+            //if( ((tinNormalS&)tinP).pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinNormalS::newF/entry erased at    " , (countT)( pbTls + offMe ) , "\r\n" ) ; }
             const osTextT* const postInGroup  = !costaInGroup ? 0 : (byteT*)&costaInGroup + sizeof( countT ) + costaName ;
             const osTextT* const postName     = !costaName    ? 0 : (byteT*)&costaInGroup + sizeof( countT ) ;
 
@@ -79,7 +79,7 @@
             {
             if( offMe != th.offTopEntry )  //U:: TO FIND A BUG (HOPEFULLY WDW WILL GIVE ME CALL STACK)
 
-            //TO AVOID THIS PROBLEM, AVOID USING tlsNewF tlsDelF WITHIN CODE THAT HAS SET tinP.pRestart (E.G. BY USING THE RESTART MACRO)
+            //TO AVOID THIS PROBLEM, AVOID USING tlsNewF tlsDelF WITHIN CODE THAT HAS SET ((tinNormalS&)tinP).pRestart (E.G. BY USING THE RESTART MACRO)
             //THIS FAILURE ("not lifo") CAN BE CAUSED BY THE USE OF tlsNewF WHEN A RESTART IS TRIGGERED, WHICH CAN RESULT IN THE tlsDelF NOT BEING CALLED
 
             cTls -- ;

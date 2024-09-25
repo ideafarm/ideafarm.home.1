@@ -11,7 +11,7 @@
     }
         }
             delF( tinP , pbOut ) ;
-            if( !bSent ) boxPutF( tinP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/out/dat.")+TF3(flags1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idCitizenHirerI,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idComputer,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(tinP.monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) , pbOut , cbOut ) ;
+            if( !bSent ) boxPutF( tinP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/out/dat.")+TF3(flags1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idCitizenHirerI,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idComputer,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(((tinNormalS&)tinP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) , pbOut , cbOut ) ;
     
             }
                 }
@@ -25,7 +25,7 @@
                     sOut.writeMsgF( tinP , pbOut , cbOut ) ;
     
                     sOut.connectF( tinP , ifcPORToLD1rIVERrESERVED ) ;
-                    socketC sOut( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    socketC sOut( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 {
                 SCOOPS
             {
@@ -70,7 +70,7 @@
             ZE( countT , time1 ) ;
             }
                 if( POOP ) POOPR
-                nicName = socketC::nicNameIF( tinP , *tinP.pEtScratch ) ;
+                nicName = socketC::nicNameIF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
                 SCOOPS
             {
             IFsCRATCH
@@ -139,7 +139,7 @@
         ZE( const countT* , pcResourceId ) ;
         ZE( countT , ze ) ;
     {
-    if( tinP.pEtScratch )
+    if( ((tinNormalS&)tinP).pEtScratch )
 
     _IO_
 

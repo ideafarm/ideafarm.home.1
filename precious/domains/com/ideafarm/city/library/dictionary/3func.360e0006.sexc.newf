@@ -21,14 +21,14 @@
 
                 pMyNote->flagsMonitor = flOLDlEAKmONITOR_null ;
                 pMyNote->idThreadDel = 0 ;
-                pMyNote->idThreadNew = tinP.monitor.idThread ;
-                thirdC::c_memcpyIF( tinP , (byteT*)&pMyNote->cNest , (byteT*)&tinP.monitor.cInNest , sizeof pMyNote->cNest + sizeof pMyNote->pLFnest + sizeof pMyNote->pFlagsThreadLevelMode ) ;
-                pMyNote->idAdam    = tinP.pag1->idAdam ;
+                pMyNote->idThreadNew = ((tinNormalS&)tinP).monitor.idThread ;
+                thirdC::c_memcpyIF( tinP , (byteT*)&pMyNote->cNest , (byteT*)&((tinNormalS&)tinP).monitor.cInNest , sizeof pMyNote->cNest + sizeof pMyNote->pLFnest + sizeof pMyNote->pFlagsThreadLevelMode ) ;
+                pMyNote->idAdam    = ((tinNormalS&)tinP).pag1->idAdam ;
 
                 }
                     BLAMMO ;
-                    //tinP.pc Utility[ 1 ] = pMyNote->idDelLath ;
-                    //tinP.pc Utility[ 0 ] = idNewLathWas       ;
+                    //((tinNormalS&)tinP).pc Utility[ 1 ] = pMyNote->idDelLath ;
+                    //((tinNormalS&)tinP).pc Utility[ 0 ] = idNewLathWas       ;
                 {
                 if( pMyNote->idDelLath != idNewLathWas )
                 countT idNewLathWas = incv02AM( pMyNote->idNewLath ) ;
@@ -40,8 +40,8 @@
                 {
                 if( !pMyNote->idLineTagged || !pMyNote->idiFileTagged )
 
-                pMyNote->idiFileTagged = tinP.monitor.pLFnest[ ( ( tinP.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
-                pMyNote->idLineTagged  = tinP.monitor.pLFnest[ ( ( tinP.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 )     ] ;
+                pMyNote->idiFileTagged = ((tinNormalS&)tinP).monitor.pLFnest[ ( ( ((tinNormalS&)tinP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
+                pMyNote->idLineTagged  = ((tinNormalS&)tinP).monitor.pLFnest[ ( ( ((tinNormalS&)tinP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 )     ] ;
                 //USE THIS TO INVESTIGATE LEAKS THAT REPORT AS aaaaaaaa(aaaaaaaa) I.E. WERE NEVER TAGGED
 
                 pMyNote->dropHeaderCopy = ((countT*)pbDrop)[ - 1 ] ;
@@ -55,7 +55,7 @@
 
             if( F(pzMetaHead->flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbDrop , cbGross - ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader ) , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED     20180611@1452: EDITED TO AVOID WIPING THE DROP HEADER (WITHOUT ANALYSIS)
 
-            tinP.cPoolDropCt ++ ;
+            ((tinNormalS&)tinP).cPoolDropCt ++ ;
 
             pbDrop = setSlotFingersAndDropHeaderF( tinP , pbSlot , offSlot , cbGross , 1 ) ;
             byteT* pbSlot = pbData + cbGross * offSlot ;
@@ -63,7 +63,7 @@
     
             if( offSlot < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; } //U:: IN ALL 3*.sexC.*, REMOVE ALL OF THESE TESTS ONCE HAVE CONFIDENCE THAT CODE IS CORRECT
 
-            //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "\r\n[offSlot]: " , offSlot , "" ) ;
+            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] ) CONoUTrAW3( "\r\n[offSlot]: " , offSlot , "" ) ;
 
             offSlotLath = offSlot ;
         {
@@ -144,7 +144,7 @@
     //}
     //    BLAMMO ;
     //{
-    //if( tinP.pag1->idAdam == ifcIDaDAM_ROOTlEAKlOGGER && pPoolContainsMe == tinP.pag1->pPoolHomeTemp )
+    //if( ((tinNormalS&)tinP).pag1->idAdam == ifcIDaDAM_ROOTlEAKlOGGER && pPoolContainsMe == ((tinNormalS&)tinP).pag1->pPoolHomeTemp )
 
     //}
     //    }
@@ -155,7 +155,7 @@
     //    countT idIn = 1 + incv02AM( idInLath ) ;
     //    static countT idInLath ;
     //{
-    //if( tinP.pc Utility[ 0 ] )
+    //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
 
     DROPnOTEdOESnOTwANTmE
     _IO_

@@ -29,11 +29,11 @@ REST
             }
                 }
                     idDup ++ ;
-                    *tinP.pEtScratch = 0 ;
+                    *((tinNormalS&)tinP).pEtScratch = 0 ;
                 {
                 else
-                if( !*tinP.pEtScratch ) break ;
-                tinP.pEtScratch->diskMoveFileOrDirF( tinP , tSoixlOld+tReject , psttc1 ) ;
+                if( !*((tinNormalS&)tinP).pEtScratch ) break ;
+                ((tinNormalS&)tinP).pEtScratch->diskMoveFileOrDirF( tinP , tSoixlOld+tReject , psttc1 ) ;
                 POPUP( T("I am barfing an unsavory object named \"")+tReject+T("\".") ) ;
                 TN( tReject , "" ) ; tReject = T("soixlOld.reject.")+(idDup?TF1(idDup)+T("."):T(""))+T(psttNameShort) ;
             {
@@ -44,8 +44,8 @@ REST
         }
             }
                 else            break ;
-                if( *tinP.pEtScratch ) { *tinP.pEtScratch = 0 ; ether.osSleepF( tinP , TUCK * 0x40 ) ; }
-                tinP.pEtScratch->boxZapF( tinP , psttc1 ) ;
+                if( *((tinNormalS&)tinP).pEtScratch ) { *((tinNormalS&)tinP).pEtScratch = 0 ; ether.osSleepF( tinP , TUCK * 0x40 ) ; }
+                ((tinNormalS&)tinP).pEtScratch->boxZapF( tinP , psttc1 ) ;
             {
             while( !ether )
             etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)psttSoixlOld ) ;
@@ -99,10 +99,10 @@ REST
             else
             }
                 POPUPsOIXLoLD( "I was not able to read a file object that was just dropped into the depository.  I will move it to the desktop when I can." ) ;
-                *tinP.pEtScratch = 0 ;
+                *((tinNormalS&)tinP).pEtScratch = 0 ;
             {
-            if( *tinP.pEtScratch )
-            tinP.pEtScratch->boxGetShadowF( tinP , postSoixlOld , costSoixlOld , psttc1 ) ; ___( postSoixlOld ) ;
+            if( *((tinNormalS&)tinP).pEtScratch )
+            ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , postSoixlOld , costSoixlOld , psttc1 ) ; ___( postSoixlOld ) ;
             ZE( countT   , costSoixlOld ) ;
             ZE( osTextT* , postSoixlOld ) ;
         {
@@ -123,7 +123,7 @@ REST
         strokeS sttq ;
         ZE( strokeS* , psttNameShort ) ;
 
-        *tinP.pEtScratch = 0 ;
+        *((tinNormalS&)tinP).pEtScratch = 0 ;
     {
     FORsTRINGSiN1( pstt1m )
     etThread.boxMenuF( tinP , soul , tMouth+T("*") ) ; ___( pstt1m ) ;
@@ -166,7 +166,7 @@ DONE( tmWelcomeF )
         TN( tReadMe , POSTfILErEADmE ) ;
     {
     else
-    if( *tinP.pEtScratch ) { *tinP.pEtScratch = 0 ; POPUPsOIXLoLD( T("The tutorial cannot be displayed.") ) ; }
+    if( *((tinNormalS&)tinP).pEtScratch ) { *((tinNormalS&)tinP).pEtScratch = 0 ; POPUPsOIXLoLD( T("The tutorial cannot be displayed.") ) ; }
     
     etThread.delF( tinP , pstt1m ) ;
     }
@@ -174,18 +174,18 @@ DONE( tmWelcomeF )
         }
             }
                 etThread.delF( tinP , psttw ) ;
-                tinP.pEtScratch->diskMoveFileOrDirF( tinP , tMouth+tOutOfWay+T("/")+T(psttw) , psttc1 ) ;
+                ((tinNormalS&)tinP).pEtScratch->diskMoveFileOrDirF( tinP , tMouth+tOutOfWay+T("/")+T(psttw) , psttc1 ) ;
                 cMoved ++ ;
                 tPop += T(psttw)+tcr ;
-                tinP.pEtScratch->strWordF( tinP , psttw , psttc1 , sttq , stts , - 1 ) ; ___( psttw ) ;
+                ((tinNormalS&)tinP).pEtScratch->strWordF( tinP , psttw , psttc1 , sttq , stts , - 1 ) ; ___( psttw ) ;
                 strokeS sttq ;
                 ZE( strokeS* , psttw ) ;
             {
-            if( !tinP.pEtScratch->strIdF( tinP , tTM , tBody ) )
+            if( !((tinNormalS&)tinP).pEtScratch->strIdF( tinP , tTM , tBody ) )
             etThread.delF( tinP , pbi ) ;
             TN( tBody , "" ) ; tBody = T(pbi) ;
-            if( *tinP.pEtScratch ) break ;
-            tinP.pEtScratch->boxGetShadowF( tinP , pbi , cbi , psttc1 ) ; ___( pbi ) ;
+            if( *((tinNormalS&)tinP).pEtScratch ) break ;
+            ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , pbi , cbi , psttc1 ) ; ___( pbi ) ;
             ZE( countT , cbi ) ;
             ZE( byteT* , pbi ) ;
         {

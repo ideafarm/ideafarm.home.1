@@ -18,10 +18,10 @@ etThread.delF( tinP , pstt1m ) ;
     }
         }
             etThread.strokeF( tinP , tNew+T(" (COULD NOT RENAME)\r\n") ) ;
-            *tinP.zEtScratch = 0 ;
+            *((tinNormalS&)tinP).zEtScratch = 0 ;
         {
-        if( *tinP.zEtScratch )
-        tinP.zEtScratch->diskMoveFileOrDirF( tinP , tNew , psttc1 ) ;
+        if( *((tinNormalS&)tinP).zEtScratch )
+        ((tinNormalS&)tinP).zEtScratch->diskMoveFileOrDirF( tinP , tNew , psttc1 ) ;
 
         //etThread.strokeF( tinP , tNew+T(ids?"":" @@@@@@@@ DUPLICATE @@@@@@@@")+T("\r\n") ) ;
         TN( tNew , "" ) ; tNew = tFolder + T(psttw2a)+tDot+TF2(idAdamNew,flFORMAT_FOREIGN|flFORMAT_UNSIGNED)+tDot+T(psttw2c) ;

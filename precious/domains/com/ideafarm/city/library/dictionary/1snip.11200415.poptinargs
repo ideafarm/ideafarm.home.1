@@ -7,8 +7,8 @@
 //
 
 
-    else              tinP.flagsThreadMode3 &= ~( F(flTHREADmODE3_TINaRGSpUSHED) ) ;
-    if( _fWasPushed ) tinP.flagsThreadMode3 |=      flTHREADmODE3_TINaRGSpUSHED    ;                                                   \
+    else              ((tinNormalS&)tinP).flagsThreadMode3 &= ~( F(flTHREADmODE3_TINaRGSpUSHED) ) ;
+    if( _fWasPushed ) ((tinNormalS&)tinP).flagsThreadMode3 |=      flTHREADmODE3_TINaRGSpUSHED    ;                                                   \
     RESTOREtINaRGS                                                                                                                     \
                                                                                                                                        \
 #define POPtINaRGS                                                                                                                     \

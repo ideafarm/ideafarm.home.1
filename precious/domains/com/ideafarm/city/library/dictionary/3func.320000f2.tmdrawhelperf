@@ -8,7 +8,7 @@
 
 
 DONE( tmDrawHelperF )
-dec02AM( tinP.pag1->_deviceC_cHelper ) ;
+dec02AM( ((tinNormalS&)tinP).pag1->_deviceC_cHelper ) ;
 }
     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
 
@@ -38,9 +38,9 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                     //TO FIND A BUG
 
                     BOS( WHATgbd , BOSoK , PolyPolyline( deviceP.oshDeviceMemoryF() , pPel->pPoint , (DWORD*)pPel->pcSize , pPel->cGlyph ) )
-                    HPEN oshPenWas = (HPEN)tinP.brcRaw ;
+                    HPEN oshPenWas = (HPEN)((tinNormalS&)tinP).brcRaw ;
                     BOS( WHATgbd , BOSoK , SelectObject( deviceP.oshDeviceMemoryF() , oshPen ) )
-                    HPEN oshPen = (HPEN)tinP.brcRaw ;
+                    HPEN oshPen = (HPEN)((tinNormalS&)tinP).brcRaw ;
                     BOS( WHATgbd , BOSoK , CreatePen( PS_SOLID , 1 , pPel->rgbOverride ? pPel->rgbOverride : job.rgb ) )
                 {
                 countT idDesireSave = etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
@@ -608,7 +608,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
             stJob.grabF( tinP , TAG( TAGiDnULL ) ) ;
         {
         else
-        if( F(tinP.pag1->_deviceC_flagsHelper) & flDEVICEchELPER_QUIT ) break ;
+        if( F(((tinNormalS&)tinP).pag1->_deviceC_flagsHelper) & flDEVICEchELPER_QUIT ) break ;
 
         //etThread.traceF( tinP , T("emptying queue") ) ;
         etThread.traceF( tinP , T("waited  for a push [idjobLath]:    ")+TF2(idJobLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -620,7 +620,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
     ZE( countT , cPointMax ) ;
     boolT bFreshenMaxPoints = 1 ;
 
-    grabC& grabHelper = tinP.pag5->_deviceC_grabHelper ;
+    grabC& grabHelper = ((tinNormalS&)tinP).pag5->_deviceC_grabHelper ;
 
     // I USE grabHelper TO SERIALIZE MY PROCESSING OF JOBS AS NEEDED (E.G. WHEN ACTUALLY WRITING TO THE DEVICE)
     // I ASSUME THAT deviceP IS GRABBED BY THE THREAD THAT IS PUSHING JOBS
@@ -636,7 +636,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
     arrayC aTmp1( tinP , sizeof( mPoint3S   ) , cea ) ; //A:ASSUME: CODE ASSUMES THAT ALL OF THESE ARRAYS ARE ALWAYS KEPT AT THE SAME CAPACITY cea ; THIS IS NOT ENFORCED
     countT cea = TUCK << 4 ;
 
-    stackC& stJob = *tinP.pag1->_deviceC_pStkJob ;
+    stackC& stJob = *((tinNormalS&)tinP).pag1->_deviceC_pStkJob ;
     deviceC& deviceP = *(deviceC*)pTaskP->c1 ;
 
     //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;

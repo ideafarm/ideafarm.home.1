@@ -37,7 +37,7 @@ DONE( tmServerF )
         DEL( pso ) ;
 
         }
-            *tinP.zEtScratch = 0 ;
+            *((tinNormalS&)tinP).zEtScratch = 0 ;
             pso->readF( tinP , sIn ) ; //WILL FAIL
 
             }
@@ -103,7 +103,7 @@ DONE( tmServerF )
 
             countT idClient = 1 + incv02AM( offClientNext ) ;
 
-            pso->etherF( tinP , *tinP.zEtScratch ) ;
+            pso->etherF( tinP , *((tinNormalS&)tinP).zEtScratch ) ;
         {
         if( !ether && pso )
 

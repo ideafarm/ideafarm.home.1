@@ -31,10 +31,10 @@
             if( isListed )
 
             }
-                tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
+                ((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
                 isListed = selectHeP.isListedF( tinP , record ) ;
-                tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
-                puseC puseRecord( tinP , *tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+                ((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
+                puseC puseRecord( tinP , *((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
             {
             ZE( boolT , isListed ) ;
 
@@ -64,10 +64,10 @@
             if( isListed )
 
             }
-                tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
+                ((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
                 isListed = selectHeP.isListedF( tinP , record ) ;
-                tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
-                puseC puseRecord( tinP , *tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+                ((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
+                puseC puseRecord( tinP , *((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
             {
             ZE( boolT , isListed ) ;
 
@@ -81,13 +81,13 @@
     {
     if( pListingP && !( pListingP->flagsF() & fliLISTINGc_MIXINlIST ) && pListingP->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
 
-    selectC&  selectHeP = *(selectC*)tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-    countT    idNameToP =            tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-    listingC* pListingP =            tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    selectC&  selectHeP = *(selectC*)((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+    countT    idNameToP =            ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+    listingC* pListingP =            ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT _export listWalkSelectAndCBF( tinNormalS& tinP )/*1*/
 

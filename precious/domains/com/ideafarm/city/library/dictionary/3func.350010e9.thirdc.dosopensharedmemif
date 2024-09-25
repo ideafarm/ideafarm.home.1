@@ -17,9 +17,9 @@
             CONoUTrAW( "\r\n" ) ;
             osTextT postSay[] = "dosOpenSharedMemIF / could not lock virtual memory" ; // CANNOT USE etherC::traceF WHICH MIGHT INDIRECTLY CALL ME
 
-            tinP.bosFail = 0 ;
+            ((tinNormalS&)tinP).bosFail = 0 ;
         {
-        if( tinP.bosFail )
+        if( ((tinNormalS&)tinP).bosFail )
 
         BOS( WHATgbo , BOSoK , VirtualLock( (byteT*)handleP.cNoteF() , cbP ) )
                   
@@ -39,7 +39,7 @@
          if( POOP                                ) flagsResultP = 0 ;
 
     }
-        //__( tinP.brcRaw ) ;
+        //__( ((tinNormalS&)tinP).brcRaw ) ;
         //BOSdOnOTtEST( WHATgbo , IsBadReadPtr( (voidT*)handleP.cNoteF() , cbP ? cbP : 1 ) ) //U:: ACCORDING TO WIN32 DOC AT 20121216@0913, THIS FUNCTION DOES NOT WORK AND SHOULD NOT BE USED: http://msdn.microsoft.com/en-us/library/aa366713(VS.85).aspx
         __( !handleP.cNoteF() ) ;
         __Z( handleP ) ;
@@ -119,10 +119,10 @@
         c_zReplaceIF( tinP , (osTextT*)(const osTextT*)ostoOsName , '/' , '.' ) ;
         OStEXTA(  ostoOsName  , postP ) ;
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : tinP.pag1->idMemorySpace , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tinNormalS&)tinP).pag1->idMemorySpace , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLmEMORYsPACES )  { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && tinP.pag1->_thirdC_.idHomeOverride ? tinP.pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tinNormalS&)tinP).pag1->_thirdC_.idHomeOverride ? ((tinNormalS&)tinP).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLhOMES         ) { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
         else                                                  { OStEXTA(  ostoOsName , thirdC::postUserNameIF() ) ; }
@@ -143,7 +143,7 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         FV(flOPENsHAREDmEMORY,flagsP) ;
         __( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_2GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_1DRIVER ) ;
         __( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS1 && processGlobal1I.idAdamRoot != ifcIDaDAM_2GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_GLASS1  ) ;

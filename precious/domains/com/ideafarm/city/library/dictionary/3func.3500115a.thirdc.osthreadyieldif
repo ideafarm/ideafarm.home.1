@@ -15,27 +15,27 @@
     //etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)ostoSay2 , flTRACE_PARAMETERiSoStEXT ) ;
     //OStEXTC(  ostoSay2 , processGlobal1S::_processGlobal1I_IF().cOsHandles , '0' ) ;
     //OStEXTAK( ostoSay2 , "." ) ;
-    //OStEXTC(  ostoSay2 , tinP.pag1->cSpins4 , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).pag1->cSpins4 , '0' ) ;
     //OStEXTAK( ostoSay2 , "." ) ;
-    //OStEXTC(  ostoSay2 , tinP.pag1->cSpins3 , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).pag1->cSpins3 , '0' ) ;
     //OStEXTAK( ostoSay2 , "." ) ;
-    //OStEXTC(  ostoSay2 , tinP.pag1->cSpins2 , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).pag1->cSpins2 , '0' ) ;
     //OStEXTAK( ostoSay2 , "." ) ;
-    //OStEXTC(  ostoSay2 , tinP.pag1->cSpins1 , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).pag1->cSpins1 , '0' ) ;
     //OStEXTAK( ostoSay2 , "    " ) ;
-    //OStEXTC(  ostoSay2 , tinP.cOsHandles , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).cOsHandles , '0' ) ;
     //OStEXTAK( ostoSay2 , "." ) ;
-    //OStEXTC(  ostoSay2 , tinP.cSpins4 , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).cSpins4 , '0' ) ;
     //OStEXTAK( ostoSay2 , "." ) ;
-    //OStEXTC(  ostoSay2 , tinP.cSpins3 , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).cSpins3 , '0' ) ;
     //OStEXTAK( ostoSay2 , "." ) ;
-    //OStEXTC(  ostoSay2 , tinP.cSpins2 , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).cSpins2 , '0' ) ;
     //OStEXTAK( ostoSay2 , "." ) ;
-    //OStEXTC(  ostoSay2 , tinP.cSpins1 , '0' ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).cSpins1 , '0' ) ;
     //OStEXTAK( ostoSay2 , "    " ) ;
-    //OStEXTC(  ostoSay2 , tinP.pag1->cYieldHighWater , 0 ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).pag1->cYieldHighWater , 0 ) ;
     //OStEXTAK( ostoSay2 , "    " ) ;
-    //OStEXTC(  ostoSay2 , tinP.pag1->idAdam , 0 ) ;
+    //OStEXTC(  ostoSay2 , ((tinNormalS&)tinP).pag1->idAdam , 0 ) ;
     //OStEXTAK( ostoSay2 , "yield after  local global [idAdam,cYieldHighWater,l.cSpins1,l.cSpins2,l.cSpins3,l.cSpins4,g.cSpins1,g.cSpins2,g.cSpins3,g.cSpins4,g.cOsHandles]:    " ) ;
     //OStEXT(   ostoSay2 , TUCK ) ;
 
@@ -44,55 +44,55 @@
             }
                 }
                     else              LOGrAW( "\r\nWARNING: osThreadYieldIF: global spin overflow\r\n") ;
-                    if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("osThreadYieldIF: global spin overflow") ) ;
+                    if( ((tinNormalS&)tinP).pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("osThreadYieldIF: global spin overflow") ) ;
                 {
-                if( !( 1 + incv02AM( tinP.pag1->cSpins4 ) ) )
+                if( !( 1 + incv02AM( ((tinNormalS&)tinP).pag1->cSpins4 ) ) )
             {
-            if( !( 1 + incv02AM( tinP.pag1->cSpins3 ) ) )
+            if( !( 1 + incv02AM( ((tinNormalS&)tinP).pag1->cSpins3 ) ) )
         {
-        if( !( 1 + incv02AM( tinP.pag1->cSpins2 ) ) )
+        if( !( 1 + incv02AM( ((tinNormalS&)tinP).pag1->cSpins2 ) ) )
     {
-    if( !( 1 + incv02AM( tinP.pag1->cSpins1 ) ) )
+    if( !( 1 + incv02AM( ((tinNormalS&)tinP).pag1->cSpins1 ) ) )
 
     }
         }
             }
                 }
                     else              LOGrAW( "\r\nWARNING: osThreadYieldIF: thread spin overflow\r\n") ;
-                    if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("osThreadYieldIF: thread spin overflow") ) ;
+                    if( ((tinNormalS&)tinP).pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("osThreadYieldIF: thread spin overflow") ) ;
                 {
-                if( !( ++ tinP.cSpins4 ) )
+                if( !( ++ ((tinNormalS&)tinP).cSpins4 ) )
             {
-            if( !( ++ tinP.cSpins3 ) )
+            if( !( ++ ((tinNormalS&)tinP).cSpins3 ) )
         {
-        if( !( ++ tinP.cSpins2 ) )
+        if( !( ++ ((tinNormalS&)tinP).cSpins2 ) )
     {
-    if( !( ++ tinP.cSpins1 ) )
+    if( !( ++ ((tinNormalS&)tinP).cSpins1 ) )
 
     //etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)ostoSay1 , flTRACE_PARAMETERiSoStEXT ) ;
     //OStEXTC(  ostoSay1 , processGlobal1S::_processGlobal1I_IF().cOsHandles , '0' ) ;
     //OStEXTAK( ostoSay1 , "." ) ;
-    //OStEXTC(  ostoSay1 , tinP.pag1->cSpins4 , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).pag1->cSpins4 , '0' ) ;
     //OStEXTAK( ostoSay1 , "." ) ;
-    //OStEXTC(  ostoSay1 , tinP.pag1->cSpins3 , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).pag1->cSpins3 , '0' ) ;
     //OStEXTAK( ostoSay1 , "." ) ;
-    //OStEXTC(  ostoSay1 , tinP.pag1->cSpins2 , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).pag1->cSpins2 , '0' ) ;
     //OStEXTAK( ostoSay1 , "." ) ;
-    //OStEXTC(  ostoSay1 , tinP.pag1->cSpins1 , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).pag1->cSpins1 , '0' ) ;
     //OStEXTAK( ostoSay1 , "    " ) ;
-    //OStEXTC(  ostoSay1 , tinP.cOsHandles , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).cOsHandles , '0' ) ;
     //OStEXTAK( ostoSay1 , "." ) ;
-    //OStEXTC(  ostoSay1 , tinP.cSpins4 , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).cSpins4 , '0' ) ;
     //OStEXTAK( ostoSay1 , "." ) ;
-    //OStEXTC(  ostoSay1 , tinP.cSpins3 , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).cSpins3 , '0' ) ;
     //OStEXTAK( ostoSay1 , "." ) ;
-    //OStEXTC(  ostoSay1 , tinP.cSpins2 , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).cSpins2 , '0' ) ;
     //OStEXTAK( ostoSay1 , "." ) ;
-    //OStEXTC(  ostoSay1 , tinP.cSpins1 , '0' ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).cSpins1 , '0' ) ;
     //OStEXTAK( ostoSay1 , "    " ) ;
-    //OStEXTC(  ostoSay1 , tinP.pag1->cYieldHighWater , 0 ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).pag1->cYieldHighWater , 0 ) ;
     //OStEXTAK( ostoSay1 , "    " ) ;
-    //OStEXTC(  ostoSay1 , tinP.pag1->idAdam , 0 ) ;
+    //OStEXTC(  ostoSay1 , ((tinNormalS&)tinP).pag1->idAdam , 0 ) ;
     //OStEXTAK( ostoSay1 , "yield before local global [idAdam,cYieldHighWater,l.cSpins1,l.cSpins2,l.cSpins3,l.cSpins4,g.cSpins1,g.cSpins2,g.cSpins3,g.cSpins4,cOsHandles]:    " ) ;
     //OStEXT(   ostoSay1 , TUCK ) ;
 
@@ -114,11 +114,11 @@
     // 
     //         : 0x40 ;
     //         ? 0
-    //     : tinP.cYield % prime
+    //     : ((tinNormalS&)tinP).cYield % prime
     //     ? msP
     // countT ms = msP
     // 
-    // countT prime = processGlobal2I.pcPrime[ ( tinP.cYield + tinP.osPid ) % processGlobal2I.ccPrime ] ;
+    // countT prime = processGlobal2I.pcPrime[ ( ((tinNormalS&)tinP).cYield + ((tinNormalS&)tinP).osPid ) % processGlobal2I.ccPrime ] ;
     // 
     // //20171221@1344: ENABLED RANDOM SLEEP TO HOPEFULLY ELIMINATE BLUE TOOTH MOUSE UNRESPONSIVENESS ON LAPTOP NETBOOK
     // //IF BLAMMO IS NOT DONE AFTER TUCK YIELDS THEN THE Sleep CALL MUST OCCASIONALLY NAP ; THIS IS TO PREVENT IPDOS (tm) FROM FREEZING THE COMPUTER WITH A RUDE INFINITE YIELD LOOP
@@ -127,23 +127,23 @@
     // }
     //     //thirdC::dosWriteStdOutIF( ostoBuf ) ;
     //     //OStEXTAK( ostoBuf , ">\r\n" ) ;
-    //     //OStEXTC( ostoBuf , tinP.cYield , 0 ) ;
+    //     //OStEXTC( ostoBuf , ((tinNormalS&)tinP).cYield , 0 ) ;
     //     //OStEXTAK( ostoBuf , ":" ) ;
     //     //OStEXTC( ostoBuf , idLineNoteP , 0 ) ;
     //     //OStEXTAK( ostoBuf , "." ) ;
     //     //OStEXTC( ostoBuf , idiFileNoteP , 0 ) ;
     //     //OStEXTAK( ostoBuf , "." ) ;
-    //     //OStEXTA( ostoBuf , tinP.postThreadName ) ;
+    //     //OStEXTA( ostoBuf , ((tinNormalS&)tinP).postThreadName ) ;
     //     //OStEXTAK( ostoBuf , "|" ) ;
-    //     //OStEXTC( ostoBuf , tinP.pag1->idAdam , 0 ) ;
+    //     //OStEXTC( ostoBuf , ((tinNormalS&)tinP).pag1->idAdam , 0 ) ;
     //     //OStEXTAK( ostoBuf , "<" ) ;
     //     //OStEXT( ostoBuf , 0x140 )
     // 
     //     BLAMMO ; // IF GET HERE THEN I AM BEING CALLED IN AN INAPPROPRIATE SITUATION
     // {
-    // if( !( tinP.cYield % ( YIELDlIMIT >> 0 ) ) )
+    // if( !( ((tinNormalS&)tinP).cYield % ( YIELDlIMIT >> 0 ) ) )
 
-    if( tinP.pag1->cYieldHighWater < tinP.cYield ) tinP.pag1->cYieldHighWater = tinP.cYield ;
+    if( ((tinNormalS&)tinP).pag1->cYieldHighWater < ((tinNormalS&)tinP).cYield ) ((tinNormalS&)tinP).pag1->cYieldHighWater = ((tinNormalS&)tinP).cYield ;
 
     //U::J: }
     //U::J:     }
@@ -157,18 +157,18 @@
     //U::J:         }
     //U::J:             etherC::etRockIF( tinP ).traceF( tinP , T("osThreadYieldIF [cYield]:  ")+TF2(was,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     //U::J:         {
-    //U::J:         if( tinP.pEther )
+    //U::J:         if( ((tinNormalS&)tinP).pEther )
     //U::J:     {
-    //U::J:     else if( was && !( was % ( TUCK >> 4 ) ) && F(tinP.flagsThreadMode4) & flTHREADmODE4_LOGsPINcALLnEST )
+    //U::J:     else if( was && !( was % ( TUCK >> 4 ) ) && F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_LOGsPINcALLnEST )
     //U::J:     if( was == - 1 ) { BLAMMO ; }
-    //U::J:     countT was = tinP.cYield ++ ;
+    //U::J:     countT was = ((tinNormalS&)tinP).cYield ++ ;
     //U::J: {
 
     //U::J: ALL CALLS TO traceF ARE COMMENTED OUT TO PREVENT INFINITE RECURSION, WHICH WAS OBSERVED 20180703@2025
 
-    //20140101@1107: DISABLE THIS TIME BOMB FOR SERVER RELIABILITY: if( - 1 == incv02AM( tinP.pag1->cYieldHighWater ) ) { BLAMMO ; }
+    //20140101@1107: DISABLE THIS TIME BOMB FOR SERVER RELIABILITY: if( - 1 == incv02AM( ((tinNormalS&)tinP).pag1->cYieldHighWater ) ) { BLAMMO ; }
 
-    if( !( F(flagsP) & flYIELD_ANYtHREADdESIRE ) && tinP.idDesireSetBySelf != ifcTHREADpRIORITY_SPINLOCK ) { BLAMMO ; }
+    if( !( F(flagsP) & flYIELD_ANYtHREADdESIRE ) && ((tinNormalS&)tinP).idDesireSetBySelf != ifcTHREADpRIORITY_SPINLOCK ) { BLAMMO ; }
 
     _IO_
 {

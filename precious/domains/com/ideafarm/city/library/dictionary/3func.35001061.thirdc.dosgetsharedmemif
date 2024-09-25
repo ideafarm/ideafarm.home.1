@@ -57,7 +57,7 @@
                         //if( thirdC::c_strstrIF( tinP , ostoOsName , "napSlab" ) )
                         //CAN WRITE TO LOG SINCE NO EXCEPTION HANDLER WILL BE REGISTERED
 
-                        //if( tinP.pc Utility[ 0 ] )
+                        //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
                     {
                     else
                     }
@@ -77,15 +77,15 @@
                     //    OStEXTC(  ostoSay , save , '0' ) ;
                     //    OStEXT(   ostoSay , TUCK >> 2 ) ;
                     //{
-                    //if( tinP.pc Utility[ 0 ] )
+                    //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
 
-                    voidT* pv = (voidT*)tinP.brcRaw ;
-                    countT save = tinP.brcRaw ;
+                    voidT* pv = (voidT*)((tinNormalS&)tinP).brcRaw ;
+                    countT save = ((tinNormalS&)tinP).brcRaw ;
                 {
                 else
                 }
-                    LOGrAW3( "DosGetSharedMem: MapViewOfFileExNuma returned " , tinP.brcRaw , "\r\n" ) ;
-                    CONoUTrAW3( "DosGetSharedMem: MapViewOfFileExNuma returned " , tinP.brcRaw , "\r\n" ) ;
+                    LOGrAW3( "DosGetSharedMem: MapViewOfFileExNuma returned " , ((tinNormalS&)tinP).brcRaw , "\r\n" ) ;
+                    CONoUTrAW3( "DosGetSharedMem: MapViewOfFileExNuma returned " , ((tinNormalS&)tinP).brcRaw , "\r\n" ) ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
 
                     osh = 0 ;
@@ -101,16 +101,16 @@
                 //    CONoUTrAW( ostoSay ) ;
                 //    
                 //    OStEXTAK( ostoSay , "\r\n" ) ;
-                //    OStEXTC(  ostoSay , tinP.brcRaw , 0 ) ;
+                //    OStEXTC(  ostoSay , ((tinNormalS&)tinP).brcRaw , 0 ) ;
                 //    OStEXTAK( ostoSay , "\" dosGetSharedMemIF OpenFileMapping [osh]: " ) ;
                 //    OStEXTA(  ostoSay , postP ) ;
                 //    OStEXTAK( ostoSay , " \"" ) ;
-                //    OStEXTC(  ostoSay , tinP.pag1->idAdam , 0 ) ;
+                //    OStEXTC(  ostoSay , ((tinNormalS&)tinP).pag1->idAdam , 0 ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( tinP.pc Utility[ 0 ] )
+                //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
 
-                HANDLE osh = (HANDLE)tinP.brcRaw ;
+                HANDLE osh = (HANDLE)((tinNormalS&)tinP).brcRaw ;
 
                 //}
                 //    etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
@@ -140,7 +140,7 @@
 
                 POOPRqUIET
 
-                countT rcSave = *tinP.pPoop ;
+                countT rcSave = *((tinNormalS&)tinP).pPoop ;
             {
             if( POOP )
 
@@ -170,10 +170,10 @@
                             //    OStEXTC(  ostoSay , save , '0' ) ;
                             //    OStEXT(   ostoSay , TUCK >> 2 ) ;
                             //{
-                            //if( tinP.pc Utility[ 0 ] )
+                            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
 
-                            handleP.osF( ifcIDtYPEhANDLE_SHAREDmEMORY , (countT)osh , 0 , tinP.brcRaw ) ;
-                            countT save = tinP.brcRaw ;
+                            handleP.osF( ifcIDtYPEhANDLE_SHAREDmEMORY , (countT)osh , 0 , ((tinNormalS&)tinP).brcRaw ) ;
+                            countT save = ((tinNormalS&)tinP).brcRaw ;
                         {
                         else
                         }
@@ -194,7 +194,7 @@
                     if( POOP )
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , DuplicateHandle( oshMe , (HANDLE)processGlobal2I._thirdC_pSharedMemInfo[ offr ].osh , oshMe , &osh , 0 , 1 , DUPLICATE_SAME_ACCESS ) )
-                    HANDLE oshMe = (HANDLE)tinP.brcRaw ;
+                    HANDLE oshMe = (HANDLE)((tinNormalS&)tinP).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
                     ZE( HANDLE , osh ) ;
                     __( !processGlobal2I._thirdC_pSharedMemInfo[ offr ].pv ) ;
@@ -215,10 +215,10 @@
         c_zReplaceIF( tinP , (osTextT*)(const osTextT*)ostoOsName , '/' , '.' ) ;
         OStEXTA(  ostoOsName  , postP ) ;
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : tinP.pag1->idMemorySpace , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tinNormalS&)tinP).pag1->idMemorySpace , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLmEMORYsPACES )  { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && tinP.pag1->_thirdC_.idHomeOverride ? tinP.pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tinNormalS&)tinP).pag1->_thirdC_.idHomeOverride ? ((tinNormalS&)tinP).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLhOMES         ) { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
         else                                                  { OStEXTA(  ostoOsName , thirdC::postUserNameIF() ) ; }
@@ -249,7 +249,7 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         FV(flOPENsHAREDmEMORY,flagsP) ;
         __( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_2GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_1DRIVER ) ;
         __( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS1 && processGlobal1I.idAdamRoot != ifcIDaDAM_2GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_GLASS1  ) ;

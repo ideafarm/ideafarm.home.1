@@ -8,12 +8,12 @@
 
 
 }
-    (*tinP.pEtScratch)( tinP , pStkEmailPenpalContainsAnd , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsAnd ) ;
-    (*tinP.pEtScratch)( tinP , pStkEmailPenpalContainsOr  , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsOr  ) ;
-    (*tinP.pEtScratch)( tinP , pStkEmailPenpalExactOr     , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalExactOr     ) ;
-    (*tinP.pEtScratch)( tinP , pStkRecipe                 , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkRecipe                 ) ;
-    (*tinP.pEtScratch)( tinP , pStkAutoresponse           , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkAutoresponse           ) ;
-    (*tinP.pEtScratch)( tinP , pStkEmailRelay             , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay             ) ;
+    (*((tinNormalS&)tinP).pEtScratch)( tinP , pStkEmailPenpalContainsAnd , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsAnd ) ;
+    (*((tinNormalS&)tinP).pEtScratch)( tinP , pStkEmailPenpalContainsOr  , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsOr  ) ;
+    (*((tinNormalS&)tinP).pEtScratch)( tinP , pStkEmailPenpalExactOr     , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalExactOr     ) ;
+    (*((tinNormalS&)tinP).pEtScratch)( tinP , pStkRecipe                 , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkRecipe                 ) ;
+    (*((tinNormalS&)tinP).pEtScratch)( tinP , pStkAutoresponse           , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkAutoresponse           ) ;
+    (*((tinNormalS&)tinP).pEtScratch)( tinP , pStkEmailRelay             , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay             ) ;
 
     etherP.strMakeF( tinP , LF , psttNameOut , psttNameOutP ) ; ___( psttNameOut ) ;
     etherP.strMakeF( tinP , LF , psttNameIn  , psttNameInP  ) ; ___( psttNameIn  ) ;
@@ -31,8 +31,8 @@
     {
     IFbEcAREFUL
 
-    //CONoUTrAW7( "\r\nsubaccountS/ct [idAdam,idThread,idAcc]: " , tinP.pag1->idAdam , "(" , tinP.monitor.idThread , ") " , idAccP , "\r\n" ) ; //U::
-    //CONoUTrAW( tinP.postThreadName ) ;
+    //CONoUTrAW7( "\r\nsubaccountS/ct [idAdam,idThread,idAcc]: " , ((tinNormalS&)tinP).pag1->idAdam , "(" , ((tinNormalS&)tinP).monitor.idThread , ") " , idAccP , "\r\n" ) ; //U::
+    //CONoUTrAW( ((tinNormalS&)tinP).postThreadName ) ;
 {
 pStkEmailPenpalContainsAnd( 0 )
 pStkEmailPenpalContainsOr( 0 ) ,

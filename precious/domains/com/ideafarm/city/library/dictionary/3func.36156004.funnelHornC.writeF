@@ -12,7 +12,7 @@
     inc02AM( cWriteEnd ) ;
     }
         ++ *(countT*)pbo ;
-        //tinP.pEther->traceF( tinP , T("writeF / setting \"not yet read\" flag") ) ;
+        //((tinNormalS&)tinP).pEther->traceF( tinP , T("writeF / setting \"not yet read\" flag") ) ;
         thirdC::c_memcpyIF( pbo + sizeof( countT ) , pbP , cbItemNet ) ;
     {
     else
@@ -20,7 +20,7 @@
 
     }
         ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
-        if( !( ++ idWink % TUCK ) ) tinP.pEther->traceF( tinP , T("writeF / slot has not yet been read, so napping for a wink [idWink]:    ")+TF2(idWink,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        if( !( ++ idWink % TUCK ) ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("writeF / slot has not yet been read, so napping for a wink [idWink]:    ")+TF2(idWink,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( *(countT*)pbo && !bQuit )                                                    // NAP UNTIL THE SLOT'S "NOT YET READ" FLAG HAS BEEN RESET
     ZE( countT , idWink ) ;

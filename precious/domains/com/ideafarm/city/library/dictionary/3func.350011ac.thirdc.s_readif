@@ -10,7 +10,7 @@
 }
     return offo ;
     }
-        //if( tinP.pc Utility[ 0 ] ) { __1 ; } //U:: TO FIND A BUG
+        //if( ((tinNormalS&)tinP).pc Utility[ 0 ] ) { __1 ; } //U:: TO FIND A BUG
 
         if( !fhok && !fTinyNibbles && cbToDo ) __( cbToDo ) ;
     {
@@ -21,9 +21,9 @@
 
             cbToDo             -= cbNew ;
             offo               += cbNew ;
-            tinP.odoSockCbRead += cbNew ;
+            ((tinNormalS&)tinP).odoSockCbRead += cbNew ;
 
-            if( !POOP ) cbNew = tinP.brcRaw ;
+            if( !POOP ) cbNew = ((tinNormalS&)tinP).brcRaw ;
             BOSpOOP
             BOSS( WHATsir , BOSsOCKETcODE2 , recv( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , pbP + offo , cbBite , flagsTcpP ) )
             ZE( sCountT , cbNew ) ;

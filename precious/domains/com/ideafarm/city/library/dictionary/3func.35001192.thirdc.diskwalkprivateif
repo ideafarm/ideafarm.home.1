@@ -19,8 +19,8 @@
         BOSpOOP ;
         BOS( WHATsfr , BOSoK , FindClose( oshFind ) ) ;
         }
-            if( !tinP.brcRaw ) break ;
-            if( tinP.bosFail && tinP.brcQuery != ERROR_NO_MORE_FILES ) BOSpOOP ;
+            if( !((tinNormalS&)tinP).brcRaw ) break ;
+            if( ((tinNormalS&)tinP).bosFail && ((tinNormalS&)tinP).brcQuery != ERROR_NO_MORE_FILES ) BOSpOOP ;
 
             if( bRetry ) { __( ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY ) ; }
             while( bRetry && -- cDo ) ;
@@ -32,8 +32,8 @@
                     Sleep( 2000 ) ;
                     _IO_
                 {
-                else if( tinP.brcLath == ERROR_NOT_READY )
-                if( !tinP.bosFail ) break ;
+                else if( ((tinNormalS&)tinP).brcLath == ERROR_NOT_READY )
+                if( !((tinNormalS&)tinP).bosFail ) break ;
                 BOS( WHATsfr , BOSoK , FindNextFile( oshFind , &info ) ) ;
                 _IO_
             {
@@ -79,9 +79,9 @@
                         _IO_
                     {
                     if( b1 && b2 )
-                    boolT b2 = tinP.brcRaw ;
+                    boolT b2 = ((tinNormalS&)tinP).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , strcmp( info.cFileName , ".." ) )
-                    boolT b1 = tinP.brcRaw ;
+                    boolT b1 = ((tinNormalS&)tinP).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , strcmp( info.cFileName , "." ) )
                     _IO_
                 {
@@ -100,15 +100,15 @@
     }
         }
             default :                  { BOSpOOP          ; break ; }
-            case ERROR_ACCESS_DENIED : { tinP.bosFail = 0 ; break ; }
+            case ERROR_ACCESS_DENIED : { ((tinNormalS&)tinP).bosFail = 0 ; break ; }
             case ERROR_HOST_UNREACHABLE :                                   //20180602@1653: ADDED TO MAKE WALK OF c :\ WORK (OTHERWISE FAILS FOR postNameP == "d:\DFSRoots\Shared Folders\Company\*")
             case ERROR_PATH_NOT_FOUND :
             case ERROR_NO_MORE_FILES :
         {
-        switch( tinP.brcQuery )
+        switch( ((tinNormalS&)tinP).brcQuery )
         _IO_
     {
-    if( tinP.bosFail )
+    if( ((tinNormalS&)tinP).bosFail )
 
     if( bRetry ) { __( ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY ) ; }
     while( bRetry && -- cDo ) ;
@@ -119,8 +119,8 @@
             bRetry = 1 ;
             Sleep( 2000 ) ;
         {
-        else if( tinP.brcLath == ERROR_NOT_READY )
-        if( !tinP.bosFail ) oshFind = (HANDLE)tinP.brcRaw ;
+        else if( ((tinNormalS&)tinP).brcLath == ERROR_NOT_READY )
+        if( !((tinNormalS&)tinP).bosFail ) oshFind = (HANDLE)((tinNormalS&)tinP).brcRaw ;
         BOS( WHATsfr , BOShANDLE , FindFirstFile( postNameP , &info ) )
         _IO_
     {
@@ -132,7 +132,7 @@
 
     BOSdOnOTtEST( WHATgbo , strcpy( postNameEnd , "*" ) )
     osTextT* const postNameEnd = postNameP + costName ;
-    countT         costName    = tinP.brcRaw ;
+    countT         costName    = ((tinNormalS&)tinP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
     _IO_
 

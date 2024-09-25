@@ -247,7 +247,7 @@ DONE( tmRelayOldServerCatchBagF )
                                     //CONoUTrAW3( "tmCatchBagF " , idCatch , ": 6_CLIENTpOPhELLO\r\n" ) ; //U::
                                     TELL( "ifcOLDiDtYPEbAG_CLIENTpOPhELLO-" )
         
-                                    //CONoUTrAW5( "tmRelayOldServerCatchBagF (idThread,idWork): " , tinP.monitor.idThread , processGlobal4I.mapPopClientWork(idWork) , 0 , "\r\n" ) ;
+                                    //CONoUTrAW5( "tmRelayOldServerCatchBagF (idThread,idWork): " , ((tinNormalS&)tinP).monitor.idThread , processGlobal4I.mapPopClientWork(idWork) , 0 , "\r\n" ) ;
         
                                     idWork = sBag.cFieldF( tinP , ifcIDfIELDbAG_IDwORK ) ;
                                     stIdptPopClientP.sinkF( tinP , countTC() , (byteT*)&idptPopClient , flSTACKsINK_null , subtractIdPortTimesOldF , - 1 ) ;
@@ -427,8 +427,8 @@ DONE( tmRelayOldServerCatchBagF )
             TELL( "reading soul" )
 
             sOk << ifcOLDiDtYPEbAG_SERVERoK ;
-            soulC sOk(  tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
-            soulC sBag( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            soulC sOk(  tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
+            soulC sBag( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
             ZE( boolT , bFail ) ;
         {
         IFsCRATCH
@@ -449,7 +449,7 @@ DONE( tmRelayOldServerCatchBagF )
     stPsoServerP.sinkF( tinP , countTC() , (countT)psoP , flSTACKsINK_UNIQUE ) ;
 
     }
-        psoP->etherF( tinP , *tinP.pEtScratch ) ;
+        psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
     {
     IFsCRATCH
 

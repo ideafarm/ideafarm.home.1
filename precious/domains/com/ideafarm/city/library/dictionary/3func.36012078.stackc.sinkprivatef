@@ -117,19 +117,19 @@
                                 if( !ppc->ppD ) break ; //I AM HEAVIER THAN THE PLATE AT THE BOTTOM OF THE STACK
                             {
                             if( !bJump )
-                            //if( pEther && tinP.pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("sinks here") ) ;
+                            //if( pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("sinks here") ) ;
                         {
                         else                            // I AM DENSER THAN ppc (idSlotP) SO WILL CONTINUE TO SINK DOWN THE STACK
                         }
                             else         oTabFloor = oTab ;
                             if( !bJump ) break ;
-                            //if( pEther && tinP.pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("floats here") ) ;
+                            //if( pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("floats here") ) ;
                         {
                         else if( heavy < 0 )            // I AM LESS DENSE THAN ppc (idSlotP) SO WILL FLOAT ABOVE IT
                         }
                             else         oTabFloor = oTab ;
                             if( !bJump ) break ;
-                            //if( pEther && tinP.pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("neutral boyancy") ) ;
+                            //if( pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("neutral boyancy") ) ;
                         {
                         if( !heavy )                    // MY DENSITY EQUALS ppc (idSlotP)
     
@@ -140,7 +140,7 @@
                             countT cArg = subtractionParmP ? subtractionParmP : cbd ;
                         {
 
-                        //if( pEther && tinP.pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("calculating heavy:    ")/*+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3(valuec,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")*/+T(*(strokeS**)valuec) ) ;
+                        //if( pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("calculating heavy:    ")/*+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3(valuec,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")*/+T(*(strokeS**)valuec) ) ;
 
                         }
                             default                    : { valuen = valueP ; valuec =         PLATE_countT_REF( ppc ) ; break ; } //U: CONJ: "valuen =" WOULD NOT BE NEEDED IF WE PREVENTED pSubtractF FROM MODIFYING valuen
@@ -153,7 +153,7 @@
                         //TEST A PLATE (CALCULATE heavy)
                     {
                     while( !third )
-                    //if( pEther && tinP.pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("sink begun") ) ;
+                    //if( pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("sink begun") ) ;
     
                     countT cbd = idType == ifcSTACKtYPE_BLOB ? cbData : 0 ; //U::CONJ: BUG: EDIT THIS TO HANDLE VARIABLE LENGTH BLOBS
                     ZE( countT , valuec ) ;
@@ -202,7 +202,7 @@
                     flagsState |= flSTACKsTATE_MAINTAINtABS ;
                 {
                 if( !( F(flagsState) & flSTACKsTATE_MAINTAINtABS ) )
-                //if( pEther && tinP.pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("ppTop so sinking [cPlates]:    ")+TF2(cPlates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //if( pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("ppTop so sinking [cPlates]:    ")+TF2(cPlates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 countT pEther = (countT)third.third_pEtherContainsMe_F() ;
             {
             else
@@ -222,7 +222,7 @@
                 {
                 else
                 if( !ppValueP ) newPlateF( tinP , ppNew , valueP ) ;
-                //if( tinP.pEther && tinP.pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("!ppTop [cPlates]:    ")+TF2(cPlates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //if( ((tinNormalS&)tinP).pEther && ((tinNormalS&)tinP).pc Utility[ 0 ] ) etherC::etRockIF( tinP ).traceF( tinP , T("!ppTop [cPlates]:    ")+TF2(cPlates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             if( !ppTop )
             ZE( plateS* , ppNew ) ;

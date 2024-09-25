@@ -22,12 +22,12 @@
     }
         #endif
             }
-                bOk = !tinP.bosFail ;
+                bOk = !((tinNormalS&)tinP).bosFail ;
                 BOS( WHATgbo , BOSoK , SetConsoleTitle(           postP ) )
             {
             else
             }
-                bOk = !tinP.bosFail ;
+                bOk = !((tinNormalS&)tinP).bosFail ;
                 BOS( WHATgbo , BOSoK , SetWindowText( (HWND)osh , postP ) )
             {
             if( osh )
@@ -35,7 +35,7 @@
             //U:
         #if defined( __OS2__ )
     {
-    if( tinP.monitor.idThread == tinP.pag1->_thirdC_.idThreadWindows || !osh )
+    if( ((tinNormalS&)tinP).monitor.idThread == ((tinNormalS&)tinP).pag1->_thirdC_.idThreadWindows || !osh )
     boolT bOk = 1 ;
 
     }

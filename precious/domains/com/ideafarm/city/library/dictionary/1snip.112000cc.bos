@@ -21,7 +21,7 @@
 #define BOSnOvALUEnOtIN(expP)                                                                                                                           \
 
     }
-        tinP.monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tinNormalS&)tinP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         }                                                                                                                                               \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
@@ -31,15 +31,15 @@
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
         { expP ; }                                                                                                                                      \
         whatP                                                                                                                                           \
-        countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
-        tinP.brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tinNormalS&)tinP).monitor.idWhat1 ;                                                                                                  \
+        ((tinNormalS&)tinP).brcQuery = 0 ;                                                                                                                             \
     {                                                                                                                                                   \
                                                                                                                                                         \
 #define BOSnOvALUE(whatP,expP)                                                                                                                          \
 
     }
-        tinP.brcm04Raw = _brcm04RawExp ;                                                                                                                \
-        tinP.monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tinNormalS&)tinP).brcm04Raw = _brcm04RawExp ;                                                                                                                \
+        ((tinNormalS&)tinP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         }                                                                                                                                               \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
@@ -49,15 +49,15 @@
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
         measure04T _brcm04RawExp = (measure04T)(expP) ;                                                                                                 \
         whatP                                                                                                                                           \
-        countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
-        tinP.brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tinNormalS&)tinP).monitor.idWhat1 ;                                                                                                  \
+        ((tinNormalS&)tinP).brcQuery = 0 ;                                                                                                                             \
     {                                                                                                                                                   \
                                                                                                                                                         \
 #define BOSmEASURE04(whatP,expP)                                                                                                                        \
 
     }
-        tinP.brcRaw = _brcRawExp ;                                                                                                                      \
-        tinP.monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tinNormalS&)tinP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tinNormalS&)tinP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         }                                                                                                                                               \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
@@ -67,8 +67,8 @@
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         whatP                                                                                                                                           \
-        countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
-        tinP.brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tinNormalS&)tinP).monitor.idWhat1 ;                                                                                                  \
+        ((tinNormalS&)tinP).brcQuery = 0 ;                                                                                                                             \
     {                                                                                                                                                   \
                                                                                                                                                         \
 #define BOSdOnOTtEST(whatP,expP)                                                                                                                        \
@@ -104,22 +104,22 @@
 //A:ASSUME: THE CALLER HAS CONSTRUCTED countT _brcRaw ON THE THREAD'S STACK AS A LOCAL VARIABLE
 
     }
-        tinP.brcRaw = _brcRawExp ;                                                                                                                      \
-        tinP.monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tinNormalS&)tinP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tinNormalS&)tinP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         }                                                                                                                                               \
             }                                                                                                                                           \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSrAW [brcLath,idLine,idiFile]: " , tinP.brcLath , " " , tinP.idLine_brcLath , " " , tinP.idiFile_brcLath , "\r\n" ) ; }*/ \
-                tinP.idiFile_brcLath = DDNUMB ;                                                                                                         \
-                tinP.idLine_brcLath = ifcLINE ;                                                                                                         \
-                tinP.brcLath = tinP.brcQuery ;                                                                                                          \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSrAW [brcLath,idLine,idiFile]: " , ((tinNormalS&)tinP).brcLath , " " , ((tinNormalS&)tinP).idLine_brcLath , " " , ((tinNormalS&)tinP).idiFile_brcLath , "\r\n" ) ; }*/ \
+                ((tinNormalS&)tinP).idiFile_brcLath = DDNUMB ;                                                                                                         \
+                ((tinNormalS&)tinP).idLine_brcLath = ifcLINE ;                                                                                                         \
+                ((tinNormalS&)tinP).brcLath = ((tinNormalS&)tinP).brcQuery ;                                                                                                          \
             {                                                                                                                                           \
-            if( tinP.brcQuery )                                                                                                                         \
-            tinP.brcQuery = tinP.brcRaw ;                                                                                                               \
+            if( ((tinNormalS&)tinP).brcQuery )                                                                                                                         \
+            ((tinNormalS&)tinP).brcQuery = ((tinNormalS&)tinP).brcRaw ;                                                                                                               \
         {                                                                                                                                               \
-        if( tinP.bosFail )                                                                                                                              \
+        if( ((tinNormalS&)tinP).bosFail )                                                                                                                              \
         }                                                                                                                                               \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , tinP.bosFail , tinP.bosFail ? idMeFail : idMeOk , #expP ) ;                     \
-            countT tally = pg1.pHome->tallyHo.tallyF( tinP.bosFail ? idMeFail : idMeOk ) ;                                                              \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinNormalS&)tinP).bosFail , ((tinNormalS&)tinP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tinNormalS&)tinP).bosFail ? idMeFail : idMeOk ) ;                                                              \
             static countT idMeFail ;                                                                                                                    \
             static countT idMeOk ;                                                                                                                      \
         {                                                                                                                                               \
@@ -128,30 +128,30 @@
         typeP ;                                                                                                                                         \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         whatP                                                                                                                                           \
-        countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
-        tinP.brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tinNormalS&)tinP).monitor.idWhat1 ;                                                                                                  \
+        ((tinNormalS&)tinP).brcQuery = 0 ;                                                                                                                             \
     {                                                                                                                                                   \
                                                                                                                                                         \
 #define BOSrAW(whatP,typeP,expP)                                                                                                                        \
 
     }
-        tinP.brcRaw = _brcRawExp ;                                                                                                                      \
-        tinP.monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tinNormalS&)tinP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tinNormalS&)tinP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         }                                                                                                                                               \
             }                                                                                                                                           \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , tinP.brcLath , " " , tinP.idLine_brcLath , " " , tinP.idiFile_brcLath , "\r\n" ) ; }*/ \
-                tinP.idiFile_brcLath = DDNUMB ;                                                                                                         \
-                tinP.idLine_brcLath = ifcLINE ;                                                                                                         \
-                tinP.brcLath = tinP.brcQuery ;                                                                                                          \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tinNormalS&)tinP).brcLath , " " , ((tinNormalS&)tinP).idLine_brcLath , " " , ((tinNormalS&)tinP).idiFile_brcLath , "\r\n" ) ; }*/ \
+                ((tinNormalS&)tinP).idiFile_brcLath = DDNUMB ;                                                                                                         \
+                ((tinNormalS&)tinP).idLine_brcLath = ifcLINE ;                                                                                                         \
+                ((tinNormalS&)tinP).brcLath = ((tinNormalS&)tinP).brcQuery ;                                                                                                          \
             {                                                                                                                                           \
-            else if( tinP.brcQuery )                                                                                                                    \
-            if( tinP.brcQuery == NO_ERROR ) tinP.bosFail = tinP.brcQuery = 0 ;                                                                          \
-            tinP.brcQuery = (expGetErrorP) ;                                                                                                            \
+            else if( ((tinNormalS&)tinP).brcQuery )                                                                                                                    \
+            if( ((tinNormalS&)tinP).brcQuery == NO_ERROR ) ((tinNormalS&)tinP).bosFail = ((tinNormalS&)tinP).brcQuery = 0 ;                                                                          \
+            ((tinNormalS&)tinP).brcQuery = (expGetErrorP) ;                                                                                                            \
         {                                                                                                                                               \
-        if( tinP.bosFail )                                                                                                                              \
+        if( ((tinNormalS&)tinP).bosFail )                                                                                                                              \
         }                                                                                                                                               \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , tinP.bosFail , tinP.bosFail ? idMeFail : idMeOk , #expP ) ;                     \
-            countT tally = pg1.pHome->tallyHo.tallyF( tinP.bosFail ? idMeFail : idMeOk ) ;                                                              \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinNormalS&)tinP).bosFail , ((tinNormalS&)tinP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tinNormalS&)tinP).bosFail ? idMeFail : idMeOk ) ;                                                              \
             static countT idMeFail ;                                                                                                                    \
             static countT idMeOk ;                                                                                                                      \
         {                                                                                                                                               \
@@ -160,30 +160,30 @@
         typeP ;                                                                                                                                         \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         whatP                                                                                                                                           \
-        countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
-        tinP.brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tinNormalS&)tinP).monitor.idWhat1 ;                                                                                                  \
+        ((tinNormalS&)tinP).brcQuery = 0 ;                                                                                                                             \
     {                                                                                                                                                   \
                                                                                                                                                         \
 #define BOSfICKLE(whatP,typeP,expP,expGetErrorP)                                                                                                        \
 
     }
-        tinP.brcRaw = _brcRawExp ;                                                                                                                      \
-        tinP.monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tinNormalS&)tinP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tinNormalS&)tinP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         }                                                                                                                                               \
             }                                                                                                                                           \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSL   [brcLath,idLine,idiFile]: " , tinP.brcLath , " " , tinP.idLine_brcLath , " " , tinP.idiFile_brcLath , "\r\n" ) ; }*/ \
-                tinP.idiFile_brcLath = DDNUMB ;                                                                                                         \
-                tinP.idLine_brcLath = ifcLINE ;                                                                                                         \
-                tinP.brcLath = tinP.brcQuery ;                                                                                                          \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSL   [brcLath,idLine,idiFile]: " , ((tinNormalS&)tinP).brcLath , " " , ((tinNormalS&)tinP).idLine_brcLath , " " , ((tinNormalS&)tinP).idiFile_brcLath , "\r\n" ) ; }*/ \
+                ((tinNormalS&)tinP).idiFile_brcLath = DDNUMB ;                                                                                                         \
+                ((tinNormalS&)tinP).idLine_brcLath = ifcLINE ;                                                                                                         \
+                ((tinNormalS&)tinP).brcLath = ((tinNormalS&)tinP).brcQuery ;                                                                                                          \
             {                                                                                                                                           \
-            if( tinP.brcQuery )                                                                                                                         \
+            if( ((tinNormalS&)tinP).brcQuery )                                                                                                                         \
             errno = 0 ;                                                                                                                                 \
-            tinP.brcQuery = errno ;                                                                                                                     \
+            ((tinNormalS&)tinP).brcQuery = errno ;                                                                                                                     \
         {                                                                                                                                               \
-        if( tinP.bosFail || errno )                                                                                                                     \
+        if( ((tinNormalS&)tinP).bosFail || errno )                                                                                                                     \
         }                                                                                                                                               \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , tinP.bosFail , tinP.bosFail || errno ? idMeFail : idMeOk , #expP ) ;            \
-            countT tally = pg1.pHome->tallyHo.tallyF( tinP.bosFail || errno ? idMeFail : idMeOk ) ;                                                     \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinNormalS&)tinP).bosFail , ((tinNormalS&)tinP).bosFail || errno ? idMeFail : idMeOk , #expP ) ;            \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tinNormalS&)tinP).bosFail || errno ? idMeFail : idMeOk ) ;                                                     \
             static countT idMeFail ;                                                                                                                    \
             static countT idMeOk ;                                                                                                                      \
         {                                                                                                                                               \
@@ -193,92 +193,92 @@
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         errno = 0 ;                                                                                                                                     \
         whatP                                                                                                                                           \
-        countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
-        tinP.brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tinNormalS&)tinP).monitor.idWhat1 ;                                                                                                  \
+        ((tinNormalS&)tinP).brcQuery = 0 ;                                                                                                                             \
     {                                                                                                                                                   \
                                                                                                                                                         \
 #define BOSL(whatP,typeP,expP)                                                                                                                          \
 
     }
-        tinP.brcRaw = _brcRawExp ;                                                                                                                      \
-        tinP.monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tinNormalS&)tinP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tinNormalS&)tinP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         }                                                                                                                                               \
             }                                                                                                                                           \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , tinP.brcLath , " " , tinP.idLine_brcLath , " " , tinP.idiFile_brcLath , "\r\n" ) ; }*/ \
-                tinP.idiFile_brcLath = DDNUMB ;                                                                                                         \
-                tinP.idLine_brcLath = ifcLINE ;                                                                                                         \
-                tinP.brcLath = tinP.brcQuery ;                                                                                                          \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tinNormalS&)tinP).brcLath , " " , ((tinNormalS&)tinP).idLine_brcLath , " " , ((tinNormalS&)tinP).idiFile_brcLath , "\r\n" ) ; }*/ \
+                ((tinNormalS&)tinP).idiFile_brcLath = DDNUMB ;                                                                                                         \
+                ((tinNormalS&)tinP).idLine_brcLath = ifcLINE ;                                                                                                         \
+                ((tinNormalS&)tinP).brcLath = ((tinNormalS&)tinP).brcQuery ;                                                                                                          \
             {                                                                                                                                           \
-            if( tinP.brcQuery )                                                                                                                         \
+            if( ((tinNormalS&)tinP).brcQuery )                                                                                                                         \
         {                                                                                                                                               \
-        if( tinP.bosFail )                                                                                                                              \
+        if( ((tinNormalS&)tinP).bosFail )                                                                                                                              \
         }                                                                                                                                               \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , tinP.bosFail , tinP.bosFail ? idMeFail : idMeOk , #expP ) ;                     \
-            countT tally = pg1.pHome->tallyHo.tallyF( tinP.bosFail ? idMeFail : idMeOk ) ;                                                              \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinNormalS&)tinP).bosFail , ((tinNormalS&)tinP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tinNormalS&)tinP).bosFail ? idMeFail : idMeOk ) ;                                                              \
             static countT idMeFail ;                                                                                                                    \
             static countT idMeOk ;                                                                                                                      \
         {                                                                                                                                               \
         if( pg1.pHome )                                                                                                                                 \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        tinP.brcQuery = _brcRaw ;                                                                                                                       \
+        ((tinNormalS&)tinP).brcQuery = _brcRaw ;                                                                                                                       \
         expGetErrorP ;                                                                                                                                  \
         ZE( countT , _brcRaw ) ;                                                                                                                        \
         typeP ;                                                                                                                                         \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         expResetErrorP ;                                                                                                                                \
         whatP                                                                                                                                           \
-        countT _idWhatSaveBos = tinP.monitor.idWhat1 ;                                                                                                  \
-        tinP.brcLath = tinP.brcQuery = 0 ;                                                                                                              \
+        countT _idWhatSaveBos = ((tinNormalS&)tinP).monitor.idWhat1 ;                                                                                                  \
+        ((tinNormalS&)tinP).brcLath = ((tinNormalS&)tinP).brcQuery = 0 ;                                                                                                              \
     {                                                                                                                                                   \
                                                                                                                                                         \
 #define BOS0(whatP,typeP,expP,expGetErrorP,expResetErrorP)                                                                                              \
 
-#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , tinP.brcRaw = 0                         )
+#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , ((tinNormalS&)tinP).brcRaw = 0                         )
 #define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 ) ) )
-#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( tinP.brcRaw                             ) , tinP.brcRaw = 0                         )
+#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( ((tinNormalS&)tinP).brcRaw                             ) , ((tinNormalS&)tinP).brcRaw = 0                         )
 #define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) , BOSnOvALUEnOtIN( SetLastError( 0    ) ) )
 
 #define BOSlASTeRROR GetLastError()
 
-#define BOSfAILiFmINUS1 tinP.bosFail = _brcRawExp == - 1
-#define BOSoK           tinP.bosFail = !_brcRawExp
-#define BOSfAIL         tinP.bosFail = !!_brcRawExp
-#define BOShANDLE       tinP.bosFail = (HANDLE)_brcRawExp == INVALID_HANDLE_VALUE
-#define BOSmAXcOUNTT    tinP.bosFail = _brcRawExp == MAXcOUNTT
-#define BOSsUCCESScODE  tinP.bosFail = _brcRawExp != ERROR_SUCCESS
-#define BOScOMoK        tinP.bosFail = _brcRawExp != S_OK
-#define BOSgDIcODE      tinP.bosFail = _brcRawExp == GDI_ERROR
-#define BOStHREADERcODE tinP.bosFail = _brcRawExp == THREAD_PRIORITY_ERROR_RETURN
-#define BOSsOCKETcODE   tinP.bosFail = _brcRawExp == INVALID_SOCKET
-#define BOSsOCKETcODE2  tinP.bosFail = _brcRawExp == SOCKET_ERROR
-#define BOSwAITcODE     tinP.bosFail = _brcRawExp == WAIT_FAILED
+#define BOSfAILiFmINUS1 ((tinNormalS&)tinP).bosFail = _brcRawExp == - 1
+#define BOSoK           ((tinNormalS&)tinP).bosFail = !_brcRawExp
+#define BOSfAIL         ((tinNormalS&)tinP).bosFail = !!_brcRawExp
+#define BOShANDLE       ((tinNormalS&)tinP).bosFail = (HANDLE)_brcRawExp == INVALID_HANDLE_VALUE
+#define BOSmAXcOUNTT    ((tinNormalS&)tinP).bosFail = _brcRawExp == MAXcOUNTT
+#define BOSsUCCESScODE  ((tinNormalS&)tinP).bosFail = _brcRawExp != ERROR_SUCCESS
+#define BOScOMoK        ((tinNormalS&)tinP).bosFail = _brcRawExp != S_OK
+#define BOSgDIcODE      ((tinNormalS&)tinP).bosFail = _brcRawExp == GDI_ERROR
+#define BOStHREADERcODE ((tinNormalS&)tinP).bosFail = _brcRawExp == THREAD_PRIORITY_ERROR_RETURN
+#define BOSsOCKETcODE   ((tinNormalS&)tinP).bosFail = _brcRawExp == INVALID_SOCKET
+#define BOSsOCKETcODE2  ((tinNormalS&)tinP).bosFail = _brcRawExp == SOCKET_ERROR
+#define BOSwAITcODE     ((tinNormalS&)tinP).bosFail = _brcRawExp == WAIT_FAILED
 // typeP VALUES
 
-#define WHATsww  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPwINwRITE       ; }
-#define WHATswr  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPwINrEAD        ; }
-#define WHATsw   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPwIN            ; }
-#define WHATssu  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPsUSPENDED      ; }
-#define WHATss   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPsIGN           ; }
-#define WHATso   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPoTHER          ; }
-#define WHATsn   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPnAP            ; }
-#define WHATsy   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPyIELD          ; }
-#define WHATsm   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPmONITORING     ; }
-#define WHATsiw  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPiNTwRITE       ; }
-#define WHATsir  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPiNTrEAD        ; }
-#define WHATsia  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPiNTaCCEPT      ; }
-#define WHATsg   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPgRAB           ; }
-#define WHATsfw  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPfILEwRITE      ; }
-#define WHATsfr  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPfILErEAD       ; }
-#define WHATsbt  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPbOStHIRD       ; }
-#define WHATsbl  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPbOSclIB        ; }
-#define WHATsb   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_STOPbATON          ; }
-#define WHATgbt  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GObOStHIRD         ; }
-#define WHATgbo  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GObOSoTHER         ; }
-#define WHATgbd  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GObOSdRAW          ; }
-#define WHATgbm  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GObOSmONITOR       ; }
-#define WHATgbl  { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GObOSclIB          ; }
-#define WHATgape { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GOpROLOGePILOG     ; }
-#define WHATga   { if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) tinP.monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
+#define WHATsww  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPwINwRITE       ; }
+#define WHATswr  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPwINrEAD        ; }
+#define WHATsw   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPwIN            ; }
+#define WHATssu  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPsUSPENDED      ; }
+#define WHATss   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPsIGN           ; }
+#define WHATso   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPoTHER          ; }
+#define WHATsn   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPnAP            ; }
+#define WHATsy   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPyIELD          ; }
+#define WHATsm   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPmONITORING     ; }
+#define WHATsiw  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPiNTwRITE       ; }
+#define WHATsir  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPiNTrEAD        ; }
+#define WHATsia  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPiNTaCCEPT      ; }
+#define WHATsg   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPgRAB           ; }
+#define WHATsfw  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPfILEwRITE      ; }
+#define WHATsfr  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPfILErEAD       ; }
+#define WHATsbt  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPbOStHIRD       ; }
+#define WHATsbl  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPbOSclIB        ; }
+#define WHATsb   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_STOPbATON          ; }
+#define WHATgbt  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_GObOStHIRD         ; }
+#define WHATgbo  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_GObOSoTHER         ; }
+#define WHATgbd  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_GObOSdRAW          ; }
+#define WHATgbm  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_GObOSmONITOR       ; }
+#define WHATgbl  { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_GObOSclIB          ; }
+#define WHATgape { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_GOpROLOGePILOG     ; }
+#define WHATga   { if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinNormalS&)tinP).monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
 // whatP VALUES
 
 /*3*/

@@ -45,12 +45,12 @@ DONE( tmKillSocketF )
             ZE( countT , timeN1 ) ;
         {
         while( !etThread && !bQuitKillSocket )
-        //__( tinP.monitor.idThread - ifcIDtHREADlOW_tmKillSocketF ) ;
+        //__( ((tinNormalS&)tinP).monitor.idThread - ifcIDtHREADlOW_tmKillSocketF ) ;
     
-        switchC& swKillSocket = *tinP.pag1->_thirdC_.pSwKillSocket ;
-        countT& cLever = tinP.pag1->_thirdC_.cLever_pSwKillSocket ;
+        switchC& swKillSocket = *((tinNormalS&)tinP).pag1->_thirdC_.pSwKillSocket ;
+        countT& cLever = ((tinNormalS&)tinP).pag1->_thirdC_.cLever_pSwKillSocket ;
     {
-    boolT& bQuitKillSocket = tinP.pag1->_thirdC_.bQuitKillSocket ;
+    boolT& bQuitKillSocket = ((tinNormalS&)tinP).pag1->_thirdC_.bQuitKillSocket ;
     TELL( "working" )
 {
 if( pTaskP )

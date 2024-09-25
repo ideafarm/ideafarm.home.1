@@ -13,7 +13,7 @@
 
     }
         thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-        tinP.cYield = 0 ;
+        ((tinNormalS&)tinP).cYield = 0 ;
 
         }
             else                                                         thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
@@ -21,7 +21,7 @@
         {
         for(;;)
 
-        tinP.cYield = 0 ;
+        ((tinNormalS&)tinP).cYield = 0 ;
         ZE( countT , idCycle ) ;
 
         thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
@@ -31,7 +31,7 @@
     {
 
     //}
-    //    tinP.pEther->traceF( tinP , T("jotC::writeF [idNew]:    ")+TF2(idNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //    ((tinNormalS&)tinP).pEther->traceF( tinP , T("jotC::writeF [idNew]:    ")+TF2(idNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     //{
     //if( idNew - tagHighNibble > 0x1550 )
 
@@ -51,7 +51,7 @@
 
     // 
     // f1      1        ALWAYS SET ; INDICATES THAT THE VALUE IS AN idJot RATHER THAN A MEMORY ADDRESS
-    // c1      3        OFFsLOT OF *this IN tinP.ppJot
+    // c1      3        OFFsLOT OF *this IN ((tinNormalS&)tinP).ppJot
     // 0       c1       JOT ID, ASSIGNED SERIALLY STARTING WITH 1.  CAPACITY: [ 1 - 268,435,455 ] (DECIMAL)
     // 
     // OFFSET  LENGTH   DESCRIPTION

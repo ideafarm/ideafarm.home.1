@@ -19,14 +19,14 @@
                     stCoursesP.purgeF( tinP ) ;
     
                     //CONoUT( "etherC::ifcJobF/outer/finished logging the failure of my overload" )
-                    ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+T("adam ")+TF1(idAdamP)+T(" failed to do a job for thread \"")+T(tinP.postThreadName)+T("\" of the local cell of adam ")+TF1(processGlobal1I.idAdamRoot) , flSAY_APPEND | flSAY_LOG ) ;
+                    ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+T("adam ")+TF1(idAdamP)+T(" failed to do a job for thread \"")+T(((tinNormalS&)tinP).postThreadName)+T("\" of the local cell of adam ")+TF1(processGlobal1I.idAdamRoot) , flSAY_APPEND | flSAY_LOG ) ;
                     POOPR
                     //CONoUT( "etherC::ifcJobF/outer/logging the failure of my overload" )
                 {
                 if( POOP )
     
                 }
-                    tinP.pEtScratch->ifcJobF( stCoursesP , tinP , idAdamP , sOrderPrimaryP , stOrdersCopy , T(psttOldCommentP)+T(" (try ")+TF1(++idTry)+T(")") , nicNameP ) ;
+                    ((tinNormalS&)tinP).pEtScratch->ifcJobF( stCoursesP , tinP , idAdamP , sOrderPrimaryP , stOrdersCopy , T(psttOldCommentP)+T(" (try ")+TF1(++idTry)+T(")") , nicNameP ) ;
                     }
                         while( !POOP && ~hDown ) ;
                         }
@@ -43,7 +43,7 @@
                         handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     if( stOrdersP )
-                    stackC stOrdersCopy( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , stOrdersP.flagsF( tinP ) , stOrdersP.idTypeF( tinP ) ) ;
+                    stackC stOrdersCopy( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) , stOrdersP.flagsF( tinP ) , stOrdersP.idTypeF( tinP ) ) ;
                 {
                 SCOOPS
             {

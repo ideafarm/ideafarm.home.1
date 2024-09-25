@@ -12,44 +12,44 @@
 
         }
             __Z( idSlot ) ;
-            tinP.pag1->_thirdC_.pStk_pThird->ungrabF( tinP ) ;
-            tinP.pag1->_thirdC_.pStk_pThird->sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
-            tinP.pag1->_thirdC_.pStk_pThird->grabF( tinP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinP).pag1->_thirdC_.pStk_pThird->ungrabF( tinP ) ;
+            ((tinNormalS&)tinP).pag1->_thirdC_.pStk_pThird->sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
+            ((tinNormalS&)tinP).pag1->_thirdC_.pStk_pThird->grabF( tinP , TAG( TAGiDnULL ) ) ;
             ZE( countT , idSlot ) ;
         {
-        if( tinP.pag1->_thirdC_.pStk_pThird && !( F(flagsMode) & flTHIRDmODE_DISABLEiNSPECTION ) )
+        if( ((tinNormalS&)tinP).pag1->_thirdC_.pStk_pThird && !( F(flagsMode) & flTHIRDmODE_DISABLEiNSPECTION ) )
 
         }
             }
                 TELLsYSc3LIFI( ifcIDtYPEtELLsYS_FIREDcTP , (byteT*)&info , sizeof info , idLineCt , idiFileCt ) 
-                countT info = (countT)&tinP.pag1->_thirdC_.bFired01 ;
+                countT info = (countT)&((tinNormalS&)tinP).pag1->_thirdC_.bFired01 ;
             {
 
             #endif
                 }
                     //U: }
-                        //U: -- *tinP.pag1->_thirdC_.pSwThreadHandle ;
-                        //U: THIS CAUSES WO DRIVER TO FAIL TO INSTALL: *tinP.pag1->_thirdC_.pSwThreadHandle = (countT)realHandle ;
-                        //U: tinP.pag1->_thirdC_.lOsTid = tinP.brcRaw ;
+                        //U: -- *((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle ;
+                        //U: THIS CAUSES WO DRIVER TO FAIL TO INSTALL: *((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle = (countT)realHandle ;
+                        //U: ((tinNormalS&)tinP).pag1->_thirdC_.lOsTid = ((tinNormalS&)tinP).brcRaw ;
                         //U: BOSpOOP
                         //U: BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
-                        //U: ++ *tinP.pag1->_thirdC_.pSwThreadHandle ;
+                        //U: ++ *((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle ;
                     //U: {
                     //U: if( !POOP )
-                    //U: __( !DuplicateHandle( oshMe , tinP.brcRaw , oshMe , &realHandle , THREAD_ALL_ACCESS , 0 , 0 ) ) ;
+                    //U: __( !DuplicateHandle( oshMe , ((tinNormalS&)tinP).brcRaw , oshMe , &realHandle , THREAD_ALL_ACCESS , 0 , 0 ) ) ;
                     //U: BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
-                    //U: HANDLE oshMe = tinP.brcRaw ;
+                    //U: HANDLE oshMe = ((tinNormalS&)tinP).brcRaw ;
                     //U: BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
                     //U: ZE( HANDLE , realHandle ) ;
                 {
-                //U: if( tinP.pag1->_thirdC_.pSwThreadHandle )
+                //U: if( ((tinNormalS&)tinP).pag1->_thirdC_.pSwThreadHandle )
             #if defined( __NT__ )
             //U: MYSTERY: THIS CODE TOGETHER WITH THE PRESENCE OF THE DEFINITIONS OF 3 thirdC::Dos???ThreadContext* CAUSES WO DRIVER TO FAIL TO INSTALL EVERY TIME
 
-            tinP.pag1->_thirdC_.pStk_pThird->ungrabF( tinP ) ;
-            tinP.pag1->_thirdC_.pStk_pThird->grabF( tinP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinP).pag1->_thirdC_.pStk_pThird->ungrabF( tinP ) ;
+            ((tinNormalS&)tinP).pag1->_thirdC_.pStk_pThird->grabF( tinP , TAG( TAGiDnULL ) ) ;
         {
-        if( tinP.pag1->_thirdC_.pThPrime == this )
+        if( ((tinNormalS&)tinP).pag1->_thirdC_.pThPrime == this )
 
     #endif
         BOSdOnOTtEST( WHATgbo , SetErrorMode( SEM_FAILCRITICALERRORS | SEM_NOOPENFILEERRORBOX ) )
@@ -90,9 +90,9 @@
     else            thirdC::c_memsetIF( tinP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
     if( pbBitsCtP ) thirdC::c_memcpyIF( tinP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
     
-    idThreadMadeMe = tinP.monitor.idThread ;
-    c_strncpyIF( tinP , postThreadNameMadeMe , tinP.postThreadName , sizeof postThreadNameMadeMe ) ;
-    newF( tinP , LF , postThreadNameMadeMe , c_strlenIF( tinP , tinP.postThreadName ) + 1 ) ; ___( postThreadNameMadeMe ) ;
+    idThreadMadeMe = ((tinNormalS&)tinP).monitor.idThread ;
+    c_strncpyIF( tinP , postThreadNameMadeMe , ((tinNormalS&)tinP).postThreadName , sizeof postThreadNameMadeMe ) ;
+    newF( tinP , LF , postThreadNameMadeMe , c_strlenIF( tinP , ((tinNormalS&)tinP).postThreadName ) + 1 ) ; ___( postThreadNameMadeMe ) ;
 
     _IO_
 
@@ -104,7 +104,7 @@
     {
     IFbEcAREFUL
     SCOOP
-    tinP.pag1->_thirdC_.cThirdObjects ++ ;
+    ((tinNormalS&)tinP).pag1->_thirdC_.cThirdObjects ++ ;
 {
 postThreadNameMadeMe( 0 )
 bConstructed( 0 ) ,

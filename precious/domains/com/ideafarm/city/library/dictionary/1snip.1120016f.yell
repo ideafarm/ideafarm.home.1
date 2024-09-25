@@ -16,7 +16,7 @@
             byteT pbZombie[ sizeof( tellS ) + sizeof posta ] ;                                                            \
             osTextT posta[ sizeof postFromP + CBtOaLIGN02( sizeof postFromP ) ] = postFromP ;                                     \
         {                                                                                                                       \
-        if( F(tinP.flagsThreadMode2) & flTHREADmODE2_YELL )                                                                     \
+        if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_YELL )                                                                     \
                                                                                                                                 \
     #define YELL(postFromP)                                                                                                     \
 
@@ -29,7 +29,7 @@
             byteT pbZombie[ sizeof posty + sizeof( tellS ) ] ;                                                    \
             OStEXTV( posty , postFromP )                                                                                \
         {                                                                                                               \
-        if( F(tinP.flagsThreadMode2) & flTHREADmODE2_YELL )                                                             \
+        if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_YELL )                                                             \
                                                                                                                         \
     #define YELL(postFromP)                                                                                             \
 

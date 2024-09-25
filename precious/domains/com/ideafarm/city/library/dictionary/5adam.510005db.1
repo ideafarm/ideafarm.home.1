@@ -78,7 +78,7 @@ REST
                         {
                         else if( posti && costi )
                         if( POOP ) { POOPR ; }
-                        tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , psttc3 , 1 ) ; ___( posti ) ;
+                        ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , posti , costi , psttc3 , 1 ) ; ___( posti ) ;
                         ZE( countT   , costi ) ;
                         ZE( osTextT* , posti ) ;
 
@@ -157,7 +157,7 @@ REST
                 soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
             
                 sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
             {
             //SET ACCOUNT
 
@@ -185,7 +185,7 @@ REST
                 soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
             
                 sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
             {
             ZE( countT , idAccountVerify ) ;
         {
@@ -195,7 +195,7 @@ REST
             etThread.delF( tinP , posti ) ;
             else if( posti && costi ) tEmailOwner = T(posti) ;
             if( POOP ) { POOPR ; }
-            tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , T(psttc1)+T("txt.email.owner.txt") , 1 ) ; ___( posti ) ;
+            ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , posti , costi , T(psttc1)+T("txt.email.owner.txt") , 1 ) ; ___( posti ) ;
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
         {

@@ -16,8 +16,8 @@
     __Z( pStack ) ;
     stackC* pStack = (stackC*)( bTinHasLeverP ? swMe.forIfcThreadF( tinP ) : (countT)swMe ) ;
     _IO_
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
+    else if( osTidOwner != ((tinNormalS&)tinP).osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinP).osTid ;
     if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     }

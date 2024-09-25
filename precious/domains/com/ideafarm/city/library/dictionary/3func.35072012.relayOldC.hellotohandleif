@@ -19,7 +19,7 @@
 
             }
                 }
-                    tinP.pEther->traceF( tinP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tinNormalS&)tinP).pEther->traceF( tinP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -29,7 +29,7 @@
                     DEL( psBag ) ;
                     }
                         }
-                            tinP.pEther->traceF( tinP , T("could not verify that my hello was received") ) ;
+                            ((tinNormalS&)tinP).pEther->traceF( tinP , T("could not verify that my hello was received") ) ;
                             POOPRqUIET
                         {
                         else
@@ -37,7 +37,7 @@
                         VERIFYrELAY2( sock , *psBagOk ) ;
 
                         sock.writeF( tinP , *psBag ) ; //ASSUME: SERVER WILL, IF ROOT, ADD ME TO ITS LIST
-                        tinP.pEther->traceF( tinP , T("writing hello bag") ) ;
+                        ((tinNormalS&)tinP).pEther->traceF( tinP , T("writing hello bag") ) ;
             
                         idptP >> *psBag ;
                         idptP >> *psBag ;
@@ -50,7 +50,7 @@
                 if( !POOP )
                 sock.connectF( tinP , idpthc , (nicNameC&)idpthc ) ;
 
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
+                socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
                 SCOOPS
             {
             ZE( boolT , bOk ) ;

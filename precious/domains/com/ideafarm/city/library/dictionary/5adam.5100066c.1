@@ -106,10 +106,10 @@ voidT chatterAllF( tinNormalS& tinP , etherC& etThread , puseC& puseCustomersP /
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
     POPtINaRGS
     flagsT flagsRC = listC::walkIF( tinP , hRecordP ) ;
-    tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-    tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->nameF() ;
-    tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-    tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+    ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+    ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->nameF() ;
+    ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+    ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
     PUSHtINaRGS
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
 {

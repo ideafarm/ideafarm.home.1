@@ -53,8 +53,8 @@ DONE( tmNodeOldChatRepliesF )
         ZE( countT , idTray ) ;
         boolT bWoth = 1 ;
     
-        soUp.etherF( tinP , *tinP.pEtScratch ) ;
-        soDn.etherF( tinP , *tinP.pEtScratch ) ;
+        soUp.etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
+        soDn.etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
         etherC& etText = etherC::etTextIF( tinP ) ;
         SCOOPS
     {
@@ -198,7 +198,7 @@ DONE( tmNodePopClientF )
                 pso->connectF( tinP , idptServer , (nicNameC&)idptServer ) ;
                 TELL( "connecting" )
                 idptServer = idptServerCorrect ;
-                pso = new( 0 , tinP , LF ) socketC( tinP , *tinP.pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ; ___( pso ) ;
+                pso = new( 0 , tinP , LF ) socketC( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ; ___( pso ) ;
                 TELL( "looping to write hello" )
             {
             while( !ether && !bQuitP && !pso && idptServerCorrect )
@@ -544,7 +544,7 @@ DONE( tmNodeServerCatchBagF )
                                     //CONoUTrAW3( "tmCatchBagF " , idCatch , ": 6_CLIENTpOPhELLO\r\n" ) ; //U::
                                     TELL( "ifcOLDiDtYPEbAG_CLIENTpOPhELLO-" )
         
-                                    //CONoUTrAW5( "tmNodeServerCatchBagF (idThread,idWork): " , tinP.monitor.idThread , processGlobal4I.mapPopClientWork(idWork) , 0 , "\r\n" ) ;
+                                    //CONoUTrAW5( "tmNodeServerCatchBagF (idThread,idWork): " , ((tinNormalS&)tinP).monitor.idThread , processGlobal4I.mapPopClientWork(idWork) , 0 , "\r\n" ) ;
         
                                     idWork = sBag.cFieldF( tinP , ifcIDfIELDbAG_IDwORK ) ;
                                     stIdptPopClientP.sinkF( tinP , countTC() , (byteT*)&idptPopClient , flSTACKsINK_null , subtractIdPortTimesOldF , - 1 ) ;
@@ -724,8 +724,8 @@ DONE( tmNodeServerCatchBagF )
             TELL( "reading soul" )
 
             sOk << ifcOLDiDtYPEbAG_SERVERoK ;
-            soulC sOk(  tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
-            soulC sBag( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            soulC sOk(  tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
+            soulC sBag( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
             ZE( boolT , bFail ) ;
         {
         IFsCRATCH
@@ -746,7 +746,7 @@ DONE( tmNodeServerCatchBagF )
     stPsoServerP.sinkF( tinP , countTC() , (countT)psoP , flSTACKsINK_UNIQUE ) ;
 
     }
-        psoP->etherF( tinP , *tinP.pEtScratch ) ;
+        psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
     {
     IFsCRATCH
 
@@ -808,7 +808,7 @@ DONE( tmNodeKillF )
         }
             if( POOP ) POOPR
             sock.connectF( tinP , idptP , (nicNameC&)idptP ) ;
-            socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
             SCOOPS
         {
         IFsCRATCH
@@ -853,7 +853,7 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 
 
 DONE( tmNodeInitiatorF )
-tinP.idPhase2 = 0 ;
+((tinNormalS&)tinP).idPhase2 = 0 ;
 }
     }
         while( cTries -- && ( !bRoot || ( cGossipPopped == cGossipInP ) ) ) { ++ s ; ether.osSleepF( tinP , TUCK * 0x80 ) ; }
@@ -1110,7 +1110,7 @@ tinP.idPhase2 = 0 ;
     RELAYiNFOtm
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 )
-tinP.idPhase2 = 1 ;
+((tinNormalS&)tinP).idPhase2 = 1 ;
 /*1*/TASK( tmNodeInitiatorF )/*1*/
 /**/
 */
@@ -1160,7 +1160,7 @@ DONE( tmNodeTeatServerF )
             THREADmODE2rESTORE
             swsWrapRefP.freeF( tinP ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-            cLeverPayloadP = tinP.monitor.idThread ;
+            cLeverPayloadP = ((tinNormalS&)tinP).monitor.idThread ;
         {
     
         }
@@ -1319,7 +1319,7 @@ DONE( tmNodeTeatServerF )
                                 if( bDontHoldBreath ) nodeOldC::doWrapLocallyIfIF( tinP , etThread , RELAYiNFOaRGS , *psWrap , idptP ) ;
             
                                 nodeOldC::popIF( tinP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBag , stIdptOpenP , stIdptGossipP , idptP ) ;
-                                //tinP.pEther->traceF( tinP , T("tmNodeTeatServerF: calling popIF [bRoot,bDontHoldBreath]:    ")+TF2(bRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bDontHoldBreath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                //((tinNormalS&)tinP).pEther->traceF( tinP , T("tmNodeTeatServerF: calling popIF [bRoot,bDontHoldBreath]:    ")+TF2(bRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bDontHoldBreath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                 *psBag << *psWrap ;
                                 nodeOldC::hdrBagIF( tinP , *psBag , idptP , idSerialLathHeaderP , bRoot ? flOLDrELAYpOP_UP : flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_WRAP ) ;
@@ -1333,11 +1333,11 @@ DONE( tmNodeTeatServerF )
                             if( psBag )
                             soulC* psBag = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
         
-                            if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { static countT idIn ; tinP.pEther->traceF( tinP , TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tmNodeTeatServerF: ifcOLDiDtYPEwRAP_GIFT (mediator registration channel)") ) ; }
+                            if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { static countT idIn ; ((tinNormalS&)tinP).pEther->traceF( tinP , TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tmNodeTeatServerF: ifcOLDiDtYPEwRAP_GIFT (mediator registration channel)") ) ; }
         
                             }
                                 THREADmODE2rESTORE
-                                //tinP.pEther->traceF( tinP , T("wrap from app for channel ")+T(pczChannel) ) ;
+                                //((tinNormalS&)tinP).pEther->traceF( tinP , T("wrap from app for channel ")+T(pczChannel) ) ;
                                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                             {
                             else
@@ -1405,12 +1405,12 @@ DONE( tmNodeTeatServerF )
                         }
                             bQuit = 1 ;
                             POOPRqUIET
-                            tinP.pEther->traceF( tinP , T("tmNodeTeatServerF / wrapper contains garbage") ) ;
+                            ((tinNormalS&)tinP).pEther->traceF( tinP , T("tmNodeTeatServerF / wrapper contains garbage") ) ;
                         {
                         if( POOP )
                         __( psWrap->cFieldF( tinP , ifcOLDiDfIELDwRAP_IDvERSION ) - 1 ) ; //idVersion
                         __( psWrap->cFieldF( tinP , ifcOLDiDfIELDwRAP_IDpROTOCOL ) - ifcIDpROTOCOL_RELAYwRAP ) ;
-                        __( tinP.pEtScratch->strCompareF( tinP , psttTM , T("IdeaFarm " "(tm)") ) ) ;
+                        __( ((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , psttTM , T("IdeaFarm " "(tm)") ) ) ;
                         __( idTypeTM - ifcIDtYPEsOULiTEM_strokeSptr ) ;
                         __Z( psttTM ) ;
                         SCOOPS
@@ -1473,7 +1473,7 @@ DONE( tmNodeTeatServerF )
         ZE( countT , idAdamClient ) ;
         ZE( boolT , bQuit ) ;
     
-        psoP->etherF( tinP , *tinP.pEtScratch ) ;
+        psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
     
         stackC stChannelExclude( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;
         stackC stChannelInclude( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;
@@ -1482,7 +1482,7 @@ DONE( tmNodeTeatServerF )
         THREADmODE2rESTORE
         stackC& stWrapRef = (stackC&)swsWrapRefP ;
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-        cLeverPayloadP = tinP.monitor.idThread ;
+        cLeverPayloadP = ((tinNormalS&)tinP).monitor.idThread ;
         swsWrapRefP.grabF( tinP , TAG( TAGiDnULL ) ) ;
     {
     IFsCRATCH
@@ -1610,7 +1610,7 @@ DONE( tmNodeServerWrapToAppF )
         while( stWrapRefP )
 
         if( bQuitP ) break ;
-            { tinP.pEther->traceF( tinP , T("tmNodeServerWrapToAppF: see a push for ifcIDaDAM_CONSOLE") ) ; }
+            { ((tinNormalS&)tinP).pEther->traceF( tinP , T("tmNodeServerWrapToAppF: see a push for ifcIDaDAM_CONSOLE") ) ; }
         if( idAdamClient == ifcIDaDAM_CONSOLE )
         stWrapRefP.waitF( tinP ) ;
     {
@@ -1725,8 +1725,8 @@ DONE( tmNodeBlowTeatF )
         DEL( psWrap ) ;
         }
             sockP.writeF( tinP , *psWrap ) ;
-            *psWrap << tinP.pag1->idAdam ;
-            tinP.pEther->traceF( tinP , T("identifying myself as ")+TF2(tinP.pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to teat") ) ;
+            *psWrap << ((tinNormalS&)tinP).pag1->idAdam ;
+            ((tinNormalS&)tinP).pEther->traceF( tinP , T("identifying myself as ")+TF2(((tinNormalS&)tinP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to teat") ) ;
         {
         if( psWrap )
         soulC* psWrap = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
@@ -1765,7 +1765,7 @@ DONE( tmNodeTickleF )
     
             VERIFYrELAY( sock ) ;
             sock.connectF( tinP , idPortP , (nicNameC&)idPortP ) ;
-            socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) /*U::, 0 , flSOCKETc_TOPsECRET*/ ) ;
+            socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) /*U::, 0 , flSOCKETc_TOPsECRET*/ ) ;
         {
         while( !ether && bWothP )
         soulC sInOk( tinP , TAG( TAGiDnULL ) ) ;

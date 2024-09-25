@@ -15,7 +15,7 @@
         while( bFail && ( bNoQuit || ( !cTriesP && !etPrime ) || ( cTriesP && -- cTriesP ) ) ) ;
         }
             }
-                ++ s ; ( bNoQuit ? (etherC&)*tinP.pEtScratch : etPrime ).osSleepF( tinP , TOCK * 0x10 ) ;
+                ++ s ; ( bNoQuit ? (etherC&)*((tinNormalS&)tinP).pEtScratch : etPrime ).osSleepF( tinP , TOCK * 0x10 ) ;
                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
             {
             if( bFail )
@@ -41,8 +41,8 @@
                             *pNicName2 = *pNicName = idhLeverP ;
                         {
                         if( pNicName && pNicName2 )
-                        tinP.pEtScratch->newF( tinP , LF , pNicName2 ) ; ___( pNicName2 ) ;
-                        tinP.pEtScratch->newF( tinP , LF , pNicName  ) ; ___( pNicName  ) ;
+                        ((tinNormalS&)tinP).pEtScratch->newF( tinP , LF , pNicName2 ) ; ___( pNicName2 ) ;
+                        ((tinNormalS&)tinP).pEtScratch->newF( tinP , LF , pNicName  ) ; ___( pNicName  ) ;
                         ZE( nicNameC* , pNicName2 ) ;
                         ZE( nicNameC* , pNicName  ) ;
     
@@ -86,7 +86,7 @@
                             //(pNicName WILL BE DELETED WHEN pStk_pNicName IS DELETED) stDelete_nicNameC_ptrP << pNicName ;
                         {
                         if( pNicName )
-                        tinP.pEtScratch->newF( tinP , LF , pNicName ) ; ___( pNicName ) ;
+                        ((tinNormalS&)tinP).pEtScratch->newF( tinP , LF , pNicName ) ; ___( pNicName ) ;
                         ZE( nicNameC* , pNicName ) ;
                     {
                     while( cNicName -- )
@@ -127,7 +127,7 @@
                 if( pNicNameRegistrand && pStk_pNicName )
     
                 stackC* pStk_pNicName = new( 0 , tinP , LF ) stackC( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ; ___( pStk_pNicName ) ;
-                tinP.pEtScratch->newF( tinP , LF , pNicNameRegistrand ) ; ___( pNicNameRegistrand ) ;
+                ((tinNormalS&)tinP).pEtScratch->newF( tinP , LF , pNicNameRegistrand ) ; ___( pNicNameRegistrand ) ;
                 ZE( nicNameC* , pNicNameRegistrand ) ;
             {
             while( cHosts -- )
@@ -145,7 +145,7 @@
             soulC sIn1( tinP , TAG( TAGiDnULL ) ) ;
     
             sChat2.connectF( tinP , idPort2 , idhIfc ) ;
-            socketC sChat2( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            socketC sChat2( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
     
             }
                 souli >> idPort2 ;
@@ -159,10 +159,10 @@
                 soulC soulo( tinP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_NEWsOCKET ) ;
     
                 sChat.connectF( tinP , ifcPORToLD2_CHAT , idhIfc ) ;
-                socketC sChat( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sChat( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
             {
             ZE( countT , idPort2 ) ;
-            nicNameC idhIfc = socketC::nicNameIF( tinP , *tinP.pEtScratch , T(WWWiDEAFARMcOM) ) ;
+            nicNameC idhIfc = socketC::nicNameIF( tinP , *((tinNormalS&)tinP).pEtScratch , T(WWWiDEAFARMcOM) ) ;
     
             ZE( boolT , bOk ) ;
         {

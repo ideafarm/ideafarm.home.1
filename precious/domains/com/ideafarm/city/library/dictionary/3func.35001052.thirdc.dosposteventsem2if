@@ -15,8 +15,8 @@
 
     #elif defined( __NT__ )
 
-        __( tinP.brcRaw && tinP.brcRaw != ERROR_ALREADY_POSTED ) ;
-        //countT tinP.brcRaw = DosPostEventSem( (HEV)handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ) ;
+        __( ((tinNormalS&)tinP).brcRaw && ((tinNormalS&)tinP).brcRaw != ERROR_ALREADY_POSTED ) ;
+        //countT ((tinNormalS&)tinP).brcRaw = DosPostEventSem( (HEV)handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ) ;
         BOSdOnOTtEST( WHATgbo , DosPostEventSem( (HEV)handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ) )
 
     #ifdef __OS2__

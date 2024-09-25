@@ -64,10 +64,10 @@ DONE( tmWriteF )
     }
         ++ s ; ether.osSleepF( tinP , TUCK ) ;
 
-        tinP.pc Utility[ 0 ] -- ;
+        ((tinNormalS&)tinP).pc Utility[ 0 ] -- ;
         books.writeF( tinP , pbTuck       , cbo        , 0 , 0 , flBOOKScwRITE_ALLOWoDDlENGTH ) ;
         books.writeF( tinP , (byteT*)&cbo , sizeof cbo , 0 , 0 , flBOOKScwRITE_ALLOWoDDlENGTH ) ;
-        tinP.pc Utility[ 0 ] ++ ;
+        ((tinNormalS&)tinP).pc Utility[ 0 ] ++ ;
         countT cbo = 1 + idCycle % sizeof pbTuck ;
 
         ++ idCycle ;

@@ -9,7 +9,7 @@
 
 }
     thirdC::dosRaiseExceptionIF( tinP , ifcIDeVENTeXCEPTIONmONITORED_BLAMMO , pcArgs , sizeof pcArgs / sizeof pcArgs[ 0 ] ) ;
-    countT pcArgs[] = { idLineP , idiFileP , idLineCtP , idiFileCtP , idBlammoP , tinP.idTinNamed , tinP.monitor.idThread , tinP.osTid , osTidIF() } ;
+    countT pcArgs[] = { idLineP , idiFileP , idLineCtP , idiFileCtP , idBlammoP , ((tinNormalS&)tinP).idTinNamed , ((tinNormalS&)tinP).monitor.idThread , ((tinNormalS&)tinP).osTid , osTidIF() } ;
 
     }
         //etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)"blammoIF: raising exception" , flTRACE_PARAMETERiSoStEXT ) ;
@@ -25,11 +25,11 @@
     //LOGrAW( "**************************** BLAMMO ******************************\r\n" ) ;
 
     }
-        tinP.pag1->idBlammo        = idBlammoP  ;
-        tinP.pag1->idiFileBlammoCt = idiFileCtP ;
-        tinP.pag1->idLineBlammoCt  = idLineCtP  ;
-        tinP.pag1->idiFileBlammo   = idiFileP   ;
-        tinP.pag1->idLineBlammo    = idLineP    ;
+        ((tinNormalS&)tinP).pag1->idBlammo        = idBlammoP  ;
+        ((tinNormalS&)tinP).pag1->idiFileBlammoCt = idiFileCtP ;
+        ((tinNormalS&)tinP).pag1->idLineBlammoCt  = idLineCtP  ;
+        ((tinNormalS&)tinP).pag1->idiFileBlammo   = idiFileP   ;
+        ((tinNormalS&)tinP).pag1->idLineBlammo    = idLineP    ;
     {
     if( c_pTin )
     countT c_pTin = (countT)&tinP ;
@@ -51,7 +51,7 @@
         //LOGrAW( ostoSay ) ; //JUST IN CASE traceF FAILS
 
         OStEXTAK( ostoSay , "\r\n" ) ;
-        OStEXTA(  ostoSay , &tinP ? tinP.postThreadName : "[&tinP is 0]" ) ;
+        OStEXTA(  ostoSay , &tinP ? ((tinNormalS&)tinP).postThreadName : "[&tinP is 0]" ) ;
         OStEXTAK( ostoSay , ") on thread " ) ;
         OStEXTC( ostoSay , idiFileCtP , 0 ) ;
         OStEXTAK( ostoSay , "(" ) ;

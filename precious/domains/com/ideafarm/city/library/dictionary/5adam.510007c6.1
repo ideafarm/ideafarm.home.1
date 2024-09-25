@@ -402,14 +402,14 @@ DONE( tmObey2F )
                                 if( !nnFrom ) nnFrom = NICnAMElOCAL ;
 
                                 }
-                                    pcOut[ 3 - offi ] = tinP.brcRaw ;
+                                    pcOut[ 3 - offi ] = ((tinNormalS&)tinP).brcRaw ;
                                     BOSdOnOTtEST( WHATgbo , ntohl( pcIn[ offi ] ) )
                                 {
                                 for( countT offi = 0 ; offi < 4 ; offi ++ )
                                 countT* pcOut = (countT*)(const countT*)nnFrom ;
                                 countT* pcIn  = (countT*)from.sin6_addr.u.Byte ;
 
-                                idpFrom = tinP.brcRaw ;
+                                idpFrom = ((tinNormalS&)tinP).brcRaw ;
                                 BOSdOnOTtEST( WHATgbo , ntohs( from.sin6_port ) )
                             {
                             case AF_INET6 :

@@ -8,7 +8,7 @@
 
 
 }
-    //if( tinP.pPoolUse == tinP.pag1->pPoolAdamTemp ) tinP.pc Utility[ 0 ] = 0 ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
+    //if( ((tinNormalS&)tinP).pPoolUse == ((tinNormalS&)tinP).pag1->pPoolAdamTemp ) ((tinNormalS&)tinP).pc Utility[ 0 ] = 0 ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
 
     }
         DEL( pPoolUse ) ;
@@ -16,9 +16,9 @@
     {
     if( F(flagsMode) & flPUSEcmODE_DELETE )
 
-    if( !( F(flagsMode) & ( flPUSEcmODE_DOnOTrESTOREtINwHENdIE | flPUSEcmODE_HIDDEN ) ) ) tinP.pPoolUse = pPoolUseLag ;
+    if( !( F(flagsMode) & ( flPUSEcmODE_DOnOTrESTOREtINwHENdIE | flPUSEcmODE_HIDDEN ) ) ) ((tinNormalS&)tinP).pPoolUse = pPoolUseLag ;
 
-    if( tinP.pPoolUse && tinP.pPoolUse != tinP.pag1->pPoolAdamTemp && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
+    if( ((tinNormalS&)tinP).pPoolUse && ((tinNormalS&)tinP).pPoolUse != ((tinNormalS&)tinP).pag1->pPoolAdamTemp && !( F(((tinNormalS&)tinP).flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
     TINSL
 {
 /*1*/puseC::~puseC( voidT )/*1*/

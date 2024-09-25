@@ -62,8 +62,8 @@ DONE( tmGorillaReadF )
         }
             //CONoUTrAW5( "[idCycle,cSteps]: " , idCycle , "    " , cSteps , "1\r\n" ) ;
             countT cSteps = idStepEnd - idStepBegin ;
-            countT idStepEnd = tinP.monitor.idStep ;
-            tinP.pc Utility[ 0 ] -- ;
+            countT idStepEnd = ((tinNormalS&)tinP).monitor.idStep ;
+            ((tinNormalS&)tinP).pc Utility[ 0 ] -- ;
             // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "2\r\n" ) ; }
 
             }
@@ -84,8 +84,8 @@ DONE( tmGorillaReadF )
                 // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "9\r\n" ) ; }
             {
 
-            tinP.pc Utility[ 0 ] ++ ;
-            countT idStepBegin = tinP.monitor.idStep ;
+            ((tinNormalS&)tinP).pc Utility[ 0 ] ++ ;
+            countT idStepBegin = ((tinNormalS&)tinP).monitor.idStep ;
             // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "a\r\n" ) ; }
             
             //DELlIST( datumS , pDatum ) ;
@@ -165,10 +165,10 @@ TASK( tmGorillaReadF )
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
     POPtINaRGS
     flagsT flagsRC = listC::walkIF( tinP , hRecordP ) ;
-    tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-    tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->idNameF() ;
-    tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-    tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+    ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+    ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->idNameF() ;
+    ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+    ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
     PUSHtINaRGS
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
 {

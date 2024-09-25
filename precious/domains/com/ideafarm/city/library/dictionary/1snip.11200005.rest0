@@ -18,7 +18,7 @@
             thirdC::thirdImpotenceHandlerIF( tinP ) ;                                                                               \
             TELL( "REST: cleaning up" ) ;                                                                                           \
             etThread = 0 ;                                                                                                          \
-            tinP.pSgnUtility = 0 ;                                                                                                  \
+            ((tinNormalS&)tinP).pSgnUtility = 0 ;                                                                                                  \
             }                                                                                                                       \
                 }                                                                                                                   \
                     pRootI->letRefF() ;                                                                                             \
@@ -29,11 +29,11 @@
                                                                                                                                     \
                 TELL( "REST: destroying all adam objects that remain on the thread stack" ) ;                                       \
                 }                                                                                                                   \
-                    if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;             \
+                    if( ((tinNormalS&)tinP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinNormalS&)tinP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;             \
                         thirdC::third_idPhaseAdam_IF( tinP ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE ;                      \
                     if( thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE )                      \
                 {                                                                                                                   \
-                if( !( F(tinP.flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
+                if( !( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
                 TELL( "REST: called WAITuNTILaLMOSTaLONE" ) ;                                                                       \
                 WAITuNTILaLMOSTaLONE( 0 )                                                                                           \
                 TELL( "REST: calling WAITuNTILaLMOSTaLONE" ) ;                                                                      \
@@ -42,12 +42,12 @@
                 /*LOGrAW( "REST0: calling FIREmYSELF\r\n" ) ;*/                                                                     \
                 if( thirdC::osProcessIdPhaseAdamIF( tinP ) < ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) thirdC::osProcessIdPhaseAdamIF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ; \
                 }                                                                                                                   \
-                    tinP.idPhase2 = 0 ;                                                                                             \
-                    if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                 \
+                    ((tinNormalS&)tinP).idPhase2 = 0 ;                                                                                             \
+                    if( ((tinNormalS&)tinP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinNormalS&)tinP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                 \
                         thirdC::third_idPhaseAdam_IF( tinP ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE ;            \
                     if( thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE )            \
                 {                                                                                                                   \
-                if( !( F(tinP.flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
+                if( !( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
                 TELL( "REST: ++" ) ;                                                                                                \
                 /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                  \
                                                                                                                                     \

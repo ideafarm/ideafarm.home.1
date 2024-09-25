@@ -450,7 +450,7 @@ TASK( tmYearCollectFileRecordsF )
 /*1*/countT subtractFileRecordsF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
-    tinP.pEther->traceF( tinP , T(psttP)+T(" [idResult]:    ")+TF2(idResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    ((tinNormalS&)tinP).pEther->traceF( tinP , T(psttP)+T(" [idResult]:    ")+TF2(idResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 {
 voidT imageCompareS::traceF( tinNormalS& tinP , const strokeS* const psttP )
 
@@ -462,13 +462,13 @@ imageCompareS::imageCompareS( voidT ) :
 NEWdELcLASS( 2 , imageCompareS ) ;
 
 }
-    return tinP.pEther->memCompareF( tinP , (byteT*)this , (byteT*)&frP , sizeof( countT ) + sizeof( count04T ) ) ;    //CS:CODEsYNC 1 1
+    return ((tinNormalS&)tinP).pEther->memCompareF( tinP , (byteT*)this , (byteT*)&frP , sizeof( countT ) + sizeof( count04T ) ) ;    //CS:CODEsYNC 1 1
     TINSL
 {
 sCountT fileRecordS::operator -( const fileRecordS& frP ) const
 
 }
-    tinP.pEther->traceF( tinP , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cTally,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cTally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
+    ((tinNormalS&)tinP).pEther->traceF( tinP , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cTally,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cTally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
 {
 voidT fileRecordS::traceF( tinNormalS& tinP , stackC& stPathToYearP , const strokeS* const psttP )
 

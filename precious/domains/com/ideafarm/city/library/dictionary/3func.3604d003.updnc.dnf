@@ -8,24 +8,24 @@
 
 
 }
-    tinP.pEther = pEtherSave ; //FOR SPEED, *Save ARE NOT ZEED
+    ((tinNormalS&)tinP).pEther = pEtherSave ; //FOR SPEED, *Save ARE NOT ZEED
 
     }
-        tinP.monitor.idDirty ++ ;
-        tinP.pLFstep[ ( ( tinP.monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] = idiFileUse ;
-        tinP.pLFstep[ ( tinP.monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] = idLineUse & ~fliSTEP_FLAGmASK | fliSTEP_NESTcHANGE | fliSTEP_NESToUT ;
-        tinP.monitor.cInNest -- ;
-        tinP.monitor.idStep ++ ;
-        tinP.pIdProgressNest[ tinP.monitor.cInNest & OFFsLOTtINnESTmAX ] = _idProgressNestSave ;
-        tinP.pIdInNest[       tinP.monitor.cInNest & OFFsLOTtINnESTmAX ] = _idInNestSave ;
-        tinP.monitor.pLFnest[    ( ( tinP.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] = _idFileNestSave ;
-        tinP.monitor.pLFnest[     ( tinP.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ] = _idLineNestSave ;
+        ((tinNormalS&)tinP).monitor.idDirty ++ ;
+        ((tinNormalS&)tinP).pLFstep[ ( ( ((tinNormalS&)tinP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] = idiFileUse ;
+        ((tinNormalS&)tinP).pLFstep[ ( ((tinNormalS&)tinP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] = idLineUse & ~fliSTEP_FLAGmASK | fliSTEP_NESTcHANGE | fliSTEP_NESToUT ;
+        ((tinNormalS&)tinP).monitor.cInNest -- ;
+        ((tinNormalS&)tinP).monitor.idStep ++ ;
+        ((tinNormalS&)tinP).pIdProgressNest[ ((tinNormalS&)tinP).monitor.cInNest & OFFsLOTtINnESTmAX ] = _idProgressNestSave ;
+        ((tinNormalS&)tinP).pIdInNest[       ((tinNormalS&)tinP).monitor.cInNest & OFFsLOTtINnESTmAX ] = _idInNestSave ;
+        ((tinNormalS&)tinP).monitor.pLFnest[    ( ( ((tinNormalS&)tinP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] = _idFileNestSave ;
+        ((tinNormalS&)tinP).monitor.pLFnest[     ( ((tinNormalS&)tinP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ] = _idLineNestSave ;
 
-        if( tinP.tally.bTally ) tinP.tally.pcExits[ idFileUse ] ++ ;
+        if( ((tinNormalS&)tinP).tally.bTally ) ((tinNormalS&)tinP).tally.pcExits[ idFileUse ] ++ ;
 
-        tinP.monitor.idDirty ++ ;
+        ((tinNormalS&)tinP).monitor.idDirty ++ ;
     {
-    if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( tinP.monitor.idDirty % 2 ) )
+    if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tinNormalS&)tinP).monitor.idDirty % 2 ) )
 {
 /*1*/voidT upDnC::dnF( tinNormalS& tinP )/*1*/
 

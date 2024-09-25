@@ -57,7 +57,7 @@ TODO
 
 }
     return 1 ;
-    if( tinP.fingerprint && etThread ) ;
+    if( ((tinNormalS&)tinP).fingerprint && etThread ) ;
     //U:: return !!nn ;
     //U:: 
     //U:: etThread.delF( tinP , psttEmail ) ;
@@ -235,10 +235,10 @@ voidT consoleStateC::resetTokensF( tinNormalS& tinP )
 
     }
         tAllP += T("i could not hire the local cell of adam ")+TF1(idAdam)+T("\r\n") ;
-        *tinP.zEtScratch = 0 ;
+        *((tinNormalS&)tinP).zEtScratch = 0 ;
     {
-    if( *tinP.zEtScratch )
-    tinP.zEtScratch->ifcHireF( tinP , T("ifc.driver.console.1") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+    if( *((tinNormalS&)tinP).zEtScratch )
+    ((tinNormalS&)tinP).zEtScratch->ifcHireF( tinP , T("ifc.driver.console.1") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ;
 
     tAllP += T("the local cell of adam ")+TF1(idAdam)+T(" is being hired\r\n") ;
 

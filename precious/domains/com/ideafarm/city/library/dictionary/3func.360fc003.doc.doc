@@ -14,8 +14,8 @@
             THREADmODE5oFF0( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY )
 
             }
-                *(countT*)tinP.pbPendingInOutFramePackets = 0 ;
-                tinP.pbPendingInOutFramePackets = processGlobal4I.heap.newF( tinP , LF , cbaPending ) ;
+                *(countT*)((tinNormalS&)tinP).pbPendingInOutFramePackets = 0 ;
+                ((tinNormalS&)tinP).pbPendingInOutFramePackets = processGlobal4I.heap.newF( tinP , LF , cbaPending ) ;
 
                 //}
                 //    etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
@@ -29,7 +29,7 @@
 
                 countT cbaPending = sizeof( countT ) + CmAXpENDINGiNoUTfRAMEpACKETS * sizeof( tellInfoAppInOutFrameS ) ;
             {
-            if( !tinP.pbPendingInOutFramePackets )
+            if( !((tinNormalS&)tinP).pbPendingInOutFramePackets )
 
             TINSL
         {

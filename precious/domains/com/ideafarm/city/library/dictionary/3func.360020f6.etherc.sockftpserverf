@@ -40,15 +40,15 @@
                 nicNameC nnPeer ;
                 ZE( socketC* , pso ) ;
             {
-            while( ( !tinP.pcQuit || !*tinP.pcQuit ) && !POOP )
+            while( ( !((tinNormalS&)tinP).pcQuit || !*((tinNormalS&)tinP).pcQuit ) && !POOP )
 
             socket.listenF( tinP ) ;
             socket.bindF( tinP , ifcPORToLD1fTP ) ;
             socketC socket( tinP , *this , TAG( TAGiDnULL ) ) ;
         {
-        while( ( !tinP.pcQuit || !*tinP.pcQuit ) && !POOP )
+        while( ( !((tinNormalS&)tinP).pcQuit || !*((tinNormalS&)tinP).pcQuit ) && !POOP )
     {
-    while( !tinP.pcQuit || !*tinP.pcQuit )
+    while( !((tinNormalS&)tinP).pcQuit || !*((tinNormalS&)tinP).pcQuit )
     osTimeNowF( tinP , timeTouch.time1 , timeTouch.time2 ) ;
     timeS timeTouch ;
     batonC batQuota( tinP , TAG( TAGiDnULL ) ) ;
@@ -70,7 +70,7 @@
 
 /**/
 */
-i obey tinP.pcQuit
+i obey ((tinNormalS&)tinP).pcQuit
 \<A HREF=\"5.103011d.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$sockFtpServerF.0.html\"\>instances\</A\>
 /*

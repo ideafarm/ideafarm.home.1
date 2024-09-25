@@ -38,7 +38,7 @@ DONE( tmAcceptorF )
         }
             ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
         {
-        while( tinP.cKidThreads )
+        while( ((tinNormalS&)tinP).cKidThreads )
         sleepC s( tinP , TAG( TAGiDnULL ) ) ;
     {
 
@@ -157,15 +157,15 @@ DONE( tmServerF )
         }
             break ;
             DEL( pso ) ;
-            *tinP.zEtScratch = 0 ;
+            *((tinNormalS&)tinP).zEtScratch = 0 ;
         {
-        if( *tinP.zEtScratch )
+        if( *((tinNormalS&)tinP).zEtScratch )
         pso->readF( tinP , sIn ) ;
         soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
     {
     while( !etThread && !ether )
 
-    pso->etherF( tinP , *tinP.zEtScratch ) ;
+    pso->etherF( tinP , *((tinNormalS&)tinP).zEtScratch ) ;
 
     stackC*  pStBang2 =  (stackC*)pTaskP->c7 ;
     stackC*  pStBang1 =  (stackC*)pTaskP->c6 ;

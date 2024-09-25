@@ -11,8 +11,8 @@
     if( pBaton ) pBaton->ungrabF( tinP ) ;
     pbLever = (byteT*)&leverP ;
     _IO_
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
+    else if( osTidOwner != ((tinNormalS&)tinP).osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinP).osTid ;
     if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     }

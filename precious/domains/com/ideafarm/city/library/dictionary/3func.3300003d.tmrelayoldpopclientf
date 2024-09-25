@@ -117,7 +117,7 @@ DONE( tmRelayOldPopClientF )
                 pso->connectF( tinP , idptServer , (nicNameC&)idptServer ) ;
                 TELL( "connecting" )
                 idptServer = idptServerCorrect ;
-                pso = new( 0 , tinP , LF ) socketC( tinP , *tinP.pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ; ___( pso ) ;
+                pso = new( 0 , tinP , LF ) socketC( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ; ___( pso ) ;
                 TELL( "looping to write hello" )
             {
             while( !ether && !bQuitP && !pso && idptServerCorrect )

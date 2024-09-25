@@ -18,7 +18,7 @@
 
     }
         idSlotJot = 0 ;
-        tinP.ppJot[ idSlotJot - 1 ] = 0 ;
+        ((tinNormalS&)tinP).ppJot[ idSlotJot - 1 ] = 0 ;
     {
     if( !( F(flagsCt) & flJOTc_DOnOTrEGISTER ) )
 
@@ -32,9 +32,9 @@
         if( POOP )
 
         }
-            __NZ( tinP.ppJot[ idSlotJot - 1 ] != this ) ;
+            __NZ( ((tinNormalS&)tinP).ppJot[ idSlotJot - 1 ] != this ) ;
             if( POOP ) return ;
-            __NZ( idSlotJot > sizeof tinP.ppJot / sizeof tinP.ppJot[ 0 ] ) ;
+            __NZ( idSlotJot > sizeof ((tinNormalS&)tinP).ppJot / sizeof ((tinNormalS&)tinP).ppJot[ 0 ] ) ;
             __Z(  idSlotJot ) ;
         {
         if( !( F(flagsCt) & flJOTc_DOnOTrEGISTER ) )

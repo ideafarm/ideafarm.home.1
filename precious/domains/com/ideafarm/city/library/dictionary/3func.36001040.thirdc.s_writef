@@ -20,7 +20,7 @@
                     { __( cba ) ; }
                 {
                 else
-                else if( cba > 0 ) off += cba , tinP.odoSockCbWrite += cba ;
+                else if( cba > 0 ) off += cba , ((tinNormalS&)tinP).odoSockCbWrite += cba ;
                 if( !cba         ) dosSleepIF( tinP , 4000 ) ;
             {
             if( !POOP )
@@ -35,7 +35,7 @@
                 }
                     break ;
 
-                    if( !POOP ) cba = tinP.brcRaw ;
+                    if( !POOP ) cba = ((tinNormalS&)tinP).brcRaw ;
 
                     BOSpOOP
                     BOSS( WHATsiw , BOSsOCKETcODE2 , send( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (byteT*)( pbP + off ) , cbBite , 0 ) )
@@ -55,7 +55,7 @@
     ZE( countT , off ) ;
     _IO_
 
-    //if( tinP.pc Utility[ 0 ] ) tinP.pEther->traceF( tinP , T("s_writeF [cbw]:    ")+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+    //if( ((tinNormalS&)tinP).pc Utility[ 0 ] ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("s_writeF [cbw]:    ")+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
 
     if( pEtherContainsMe ) pEtherContainsMe->chokeAttackerF( tinP , handleP , 0 , cbw ) ;
     const countT cbw = cbP ? cbP : c_strlenIF( tinP , pbP ) ;

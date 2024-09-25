@@ -10,14 +10,14 @@
 }
     BOSpOOP
     #endif
-        while( /*!POOP &&*/ tinP.brcRaw == WAIT_TIMEOUT ) ;
+        while( /*!POOP &&*/ ((tinNormalS&)tinP).brcRaw == WAIT_TIMEOUT ) ;
         }
             BOS( WHATso , BOSwAITcODE , WaitForSingleObject( (HANDLE)handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE ) , INFINITE ) )
             BOSnOvALUE( WHATso , SetLastError( 0 ) )
         {
         do
     #elif defined( __NT__ )
-        while( /*!POOP &&*/ tinP.brcRaw == ERROR_TIMEOUT ) ;
+        while( /*!POOP &&*/ ((tinNormalS&)tinP).brcRaw == ERROR_TIMEOUT ) ;
         }
             BOSdOnOTtEST( WHATso , DosWaitEventSem( (HEV)handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE ) , 500 ) )
         {

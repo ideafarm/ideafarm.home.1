@@ -83,14 +83,14 @@ DONEdRIVENsERVER( tmcF )
         ZE( countT , costx ) ;
         ZE( osTextT* , postx ) ;
     {
-    if( !*tinP.zEtScratch )
+    if( !*((tinNormalS&)tinP).zEtScratch )
 
     !tblKeyValue ;
     etThread.delF( tinP , psttPeer ) ;
     stPhrases << postOldC( tinP , etThread , T("name: ")+T(pcIdName)+T("\r\n") ) ;
     stPhrases << postOldC( tinP , etThread , T("peer: ")+T(nicNamePeer)+T("\r\n") ) ;
     stPhrases << postOldC( tinP , etThread , T("peer: \"")+T(psttPeer)+T("\"\r\n") ) ;
-    readRequestF( tinP , etThread , *tinP.zEtScratch , *pso , pcIdName , tblKeyValue , std_pstt , psttPeer , nicNamePeer , dict ) ;
+    readRequestF( tinP , etThread , *((tinNormalS&)tinP).zEtScratch , *pso , pcIdName , tblKeyValue , std_pstt , psttPeer , nicNamePeer , dict ) ;
     stackC std_pstt( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
     ZE( strokeS* , psttPeer ) ;
 
@@ -136,30 +136,30 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
     etThread.delF( tinP , psttAction ) ;
     }
         }
-            tinP.zEtScratch->delF( tinP , psttNameTrimmed ) ;
+            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttNameTrimmed ) ;
 
             if( offi < CCiDnAMEmAX ) pcIdNameP[ offi ++ ] = 0 ;
             }
-                tinP.zEtScratch->delF( tinP , psttw ) ;
+                ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttw ) ;
                 else                         __1
-                if( offi < CCiDnAMEmAX - 1 ) pcIdNameP[ offi ++ ] = tinP.zEtScratch->strDigitsToSCountF( tinP , psttw ) ;
-                tinP.zEtScratch->strSubstringF( tinP , psttw , idf , sttq , sttDot , psttNameTrimmed ) ; ___( psttw ) ;
+                if( offi < CCiDnAMEmAX - 1 ) pcIdNameP[ offi ++ ] = ((tinNormalS&)tinP).zEtScratch->strDigitsToSCountF( tinP , psttw ) ;
+                ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttw , idf , sttq , sttDot , psttNameTrimmed ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;
             {
-            while( !*tinP.zEtScratch && idf )
+            while( !*((tinNormalS&)tinP).zEtScratch && idf )
             strokeS sttDot( '.' ) ;
             //sttq = ze ;
             idf = 1 ;
             ZE( countT , offi ) ;
 
-            tinP.zEtScratch->strSubstringF( tinP , psttNameTrimmed , idf , idl , psttName ) ; ___( psttNameTrimmed ) ;
+            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttNameTrimmed , idf , idl , psttName ) ; ___( psttNameTrimmed ) ;
             ZE( strokeS* , psttNameTrimmed ) ;
             //sttq = ze ;
             countT idl = idDot0 ? idDot0 - 1 : 0 ;
             idf = 2 ;
 
             __( psttName->idAdam - 1 - idDot0 ) ;
-            countT idDot0 = tinP.zEtScratch->strIdF( tinP , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
+            countT idDot0 = ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
             TN( tDot0 , ".0" ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
@@ -171,10 +171,10 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
             pcIdNameP[ 0 ] = 1 ;
         {
         if( psttName->idAdam == 1 )
-        __( tinP.zEtScratch->strIdF( tinP , sttSlash , psttName ) - 1 ) ;
+        __( ((tinNormalS&)tinP).zEtScratch->strIdF( tinP , sttSlash , psttName ) - 1 ) ;
         __( !psttName->idAdam ) ;
     {
-    if( !*tinP.zEtScratch && !etThread )
+    if( !*((tinNormalS&)tinP).zEtScratch && !etThread )
     __Z( psttName ) ;
 
     }
@@ -210,41 +210,41 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
         etThread.newF( tinP , LF , postBody , costBody + 1 ) ;
         ZE( osTextT* , postBody ) ;
     {
-    if( !*tinP.zEtScratch && costBody )
+    if( !*((tinNormalS&)tinP).zEtScratch && costBody )
 
     }
-        tinP.zEtScratch->delF( tinP , psttl ) ;
+        ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttl ) ;
         }
             break ;
-            tinP.zEtScratch->delF( tinP , psttl ) ;
+            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttl ) ;
         {
         else
         }
-            tinP.zEtScratch->delF( tinP , psttValue ) ;
-            tinP.zEtScratch->delF( tinP , psttKey ) ;
-            if( !tinP.zEtScratch->strCompareF( tinP , tContentLength , psttKey ) ) costBody = tinP.zEtScratch->strDigitsToSCountF( tinP , psttValue , 0xa , 1 ) ;
-            tinP.zEtScratch->strSubstringF( tinP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
+            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttValue ) ;
+            ((tinNormalS&)tinP).zEtScratch->delF( tinP , psttKey ) ;
+            if( !((tinNormalS&)tinP).zEtScratch->strCompareF( tinP , tContentLength , psttKey ) ) costBody = ((tinNormalS&)tinP).zEtScratch->strDigitsToSCountF( tinP , psttValue , 0xa , 1 ) ;
+            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
             ZE( countT , idl ) ;
-            tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttKey ) ; ___( psttKey ) ;
-            tinP.zEtScratch->strSubstringF( tinP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
+            ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttKey ) ; ___( psttKey ) ;
+            ((tinNormalS&)tinP).zEtScratch->strSubstringF( tinP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
             countT idf = 1 ;
             ZE( strokeS* , psttValue ) ;
             ZE( strokeS* , psttKey ) ;
         {
         else if( psttl && psttl->idAdam )
         }
-            tinP.zEtScratch->strWordF( tinP , psttName , psttl , sttq , sttb , 2 ) ; ___( psttName ) ;
+            ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttName , psttl , sttq , sttb , 2 ) ; ___( psttName ) ;
             //sttq = ze ;
 
-            tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttl ) ; ___( psttl ) ;
-            tinP.zEtScratch->strWordF( tinP , psttAction , psttl , sttq , sttb , 1 ) ; ___( psttAction ) ;
+            ((tinNormalS&)tinP).zEtScratch->strConvertToLowerCaseF( tinP , psttl ) ; ___( psttl ) ;
+            ((tinNormalS&)tinP).zEtScratch->strWordF( tinP , psttAction , psttl , sttq , sttb , 1 ) ; ___( psttAction ) ;
         {
         if( !psttAction )
         sInP.readWoLineF( tinP , psttl , 0x200 ) ; ___( psttl ) ;
         ZE( strokeS* , psttl ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     {
-    while( !*tinP.zEtScratch && !etThread )
+    while( !*((tinNormalS&)tinP).zEtScratch && !etThread )
     ZE( countT , costBody ) ;
     ZE( strokeS* , psttName ) ;
     ZE( strokeS* , psttAction ) ;

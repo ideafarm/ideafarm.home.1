@@ -53,11 +53,11 @@ if( bReboot ) etThread.osFireF( tinP ) ;
         else
         }
             thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-            tinP.cYield = 0 ;
+            ((tinNormalS&)tinP).cYield = 0 ;
             thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
-            tinP.cYield = 0 ;
+            ((tinNormalS&)tinP).cYield = 0 ;
             thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_RUSH ) ;
-            const countT idDesireSave = tinP.idDesireSetBySelf ;
+            const countT idDesireSave = ((tinNormalS&)tinP).idDesireSetBySelf ;
         {
         //if( cAlive > 0x10 )
         //if( cAlive > 0x40 )

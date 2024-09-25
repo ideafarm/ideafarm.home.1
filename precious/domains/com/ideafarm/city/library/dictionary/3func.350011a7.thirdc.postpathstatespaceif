@@ -15,7 +15,7 @@
     c_strcatIF( tinP , postP , "\\stateSpaces\\" ) ;
 
     c_strcatIF( tinP , postP , post9 ) ;
-    c_itoaForeignIF( post9 , idMemorySpaceP ? idMemorySpaceP : tinP.pag1->idMemorySpace , '0' ) ;
+    c_itoaForeignIF( post9 , idMemorySpaceP ? idMemorySpaceP : ((tinNormalS&)tinP).pag1->idMemorySpace , '0' ) ;
     c_strcatIF( tinP , postP , "\\" ) ;
 
     c_strcatIF( tinP , postP , thirdC::postUserNameIF() ) ;
@@ -29,7 +29,7 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         __NZ( costaP < TUCK ) ;
         __Z( costaP ) ;
         __Z( postP ) ;

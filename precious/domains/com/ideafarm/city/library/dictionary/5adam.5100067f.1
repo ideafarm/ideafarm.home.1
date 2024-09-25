@@ -215,11 +215,11 @@ TODO
         //else bQuitP |= 1 ;
         }
             }
-                tinP.pEther->delF( tinP , psttDateAtTime ) ;
+                ((tinNormalS&)tinP).pEther->delF( tinP , psttDateAtTime ) ;
 
-                else tinP.pEther->strFuseF( tinP , sourP , T("ERROR: DATEtIME NOT CALCULATED\r\n") ) ;
+                else ((tinNormalS&)tinP).pEther->strFuseF( tinP , sourP , T("ERROR: DATEtIME NOT CALCULATED\r\n") ) ;
                 }
-                    tinP.pEther->delF( tinP , psttNew ) ;
+                    ((tinNormalS&)tinP).pEther->delF( tinP , psttNew ) ;
                     }
                         }
                             }
@@ -231,19 +231,19 @@ TODO
                                 POOPR
                             {
                             if( POOP )
-                            ((thirdC&)*tinP.pEtScratch).dosMoveF( tinP , tNew , tOld , 1 ) ;
+                            ((thirdC&)*((tinNormalS&)tinP).pEtScratch).dosMoveF( tinP , tNew , tOld , 1 ) ;
                             SCOOPS
                         {
                         IFsCRATCH
 
-                        tinP.pEther->strFuseF( tinP , sourP , tcr ) ;
-                        tinP.pEther->strFuseF( tinP , sourP , T("new: ")+tNew ) ;
+                        ((tinNormalS&)tinP).pEther->strFuseF( tinP , sourP , tcr ) ;
+                        ((tinNormalS&)tinP).pEther->strFuseF( tinP , sourP , T("new: ")+tNew ) ;
 
                         TN( tNew , psttNew ) ;
                     {
                     if( cHit )
 
-                    countT cHit = tinP.pEther->strReplaceF( tinP , psttNew , tOld , tOldSmall , tNewSmall ) ; ___( psttNew ) ;
+                    countT cHit = ((tinNormalS&)tinP).pEther->strReplaceF( tinP , psttNew , tOld , tOldSmall , tNewSmall ) ; ___( psttNew ) ;
                     ZE( strokeS* , psttNew ) ;
                     TN( tNewSmall , "!ideafarm.4." ) ; tNewSmall += T(psttDateAtTime)+T(".") ;
                     TN( tOldSmall , "!ideafarm." "3." ) ;
@@ -254,13 +254,13 @@ TODO
 
                 }
                     }
-                        tinP.pEther->delF( tinP , psttSnip ) ;
+                        ((tinNormalS&)tinP).pEther->delF( tinP , psttSnip ) ;
 
                         }
                             }
                                 break ;
 
-                                tinP.pEther->strMakeF( tinP , LF , psttDateAtTime , tDateAtTime ) ; ___( psttDateAtTime ) ;
+                                ((tinNormalS&)tinP).pEther->strMakeF( tinP , LF , psttDateAtTime , tDateAtTime ) ; ___( psttDateAtTime ) ;
 
                                 ;
 
@@ -273,7 +273,7 @@ TODO
 
                                 TN( tDateAtTime , "" ) ; tDateAtTime =
 
-                                tinP.pEther->osTimeToOldTimeF( tinP , ms , ss , mm , hh , da , mo , ye , dow , timeF1 , timeF2 /*, flOStIMEtOoLDtIME_OLDtIMEiSutc*/ ) ;
+                                ((tinNormalS&)tinP).pEther->osTimeToOldTimeF( tinP , ms , ss , mm , hh , da , mo , ye , dow , timeF1 , timeF2 /*, flOStIMEtOoLDtIME_OLDtIMEiSutc*/ ) ;
                                 ZE( countT , dow ) ;
                                 ZE( sCountT , ye ) ;
                                 ZE( countT , mo ) ;
@@ -284,17 +284,17 @@ TODO
                                 ZE( countT , ms ) ;
 
                                 }
-                                    tinP.pEther->delF( tinP , psttTime1 ) ;
-                                    tinP.pEther->delF( tinP , psttTime2 ) ;
+                                    ((tinNormalS&)tinP).pEther->delF( tinP , psttTime1 ) ;
+                                    ((tinNormalS&)tinP).pEther->delF( tinP , psttTime2 ) ;
 
-                                    timeF2 = tinP.pEther->strDigitsToSCountF( tinP , psttTime2 , 0 , 1 ) ;
-                                    timeF1 = tinP.pEther->strDigitsToSCountF( tinP , psttTime1 , 0 , 1 ) ;
+                                    timeF2 = ((tinNormalS&)tinP).pEther->strDigitsToSCountF( tinP , psttTime2 , 0 , 1 ) ;
+                                    timeF1 = ((tinNormalS&)tinP).pEther->strDigitsToSCountF( tinP , psttTime1 , 0 , 1 ) ;
 
-                                    tinP.pEther->strSubstringF( tinP , psttTime2 , idf , idl , psttSnip ) ; ___( psttTime2 ) ;
+                                    ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttTime2 , idf , idl , psttSnip ) ; ___( psttTime2 ) ;
                                     idl = 0x14 ;
                                     idf = 0x0d ;
 
-                                    tinP.pEther->strSubstringF( tinP , psttTime1 , idf , idl , psttSnip ) ; ___( psttTime1 ) ;
+                                    ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttTime1 , idf , idl , psttSnip ) ; ___( psttTime1 ) ;
                                     countT idl = 0x1d ;
                                     countT idf = 0x16 ;
 
@@ -314,23 +314,23 @@ TODO
                                 break ;
 
                                 }
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x21 ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x20 ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1f ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1e ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , S1C('@')                        ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1c ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1b ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1a ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x19 ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x18 ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x17 ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x16 ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x15 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x21 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x20 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1f ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1e ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , S1C('@')                        ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1c ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1b ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x1a ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x19 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x18 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x17 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x16 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x15 ] ) ;
                                 {
                                 if( psttDateAtTime )
 
-                                tinP.pEther->strMakeF( tinP , LF , psttDateAtTime , 0 , 0xd ) ; ___( psttDateAtTime ) ;
+                                ((tinNormalS&)tinP).pEther->strMakeF( tinP , LF , psttDateAtTime , 0 , 0xd ) ; ___( psttDateAtTime ) ;
                             {
                             case 2 :
                             // ".internet.!.2013_01_20130128-174843-"
@@ -342,23 +342,23 @@ TODO
                                 break ;
 
                                 }
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x11 ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x10 ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0xe  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0xd  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , S1C('@')                        ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0xb  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0xa  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x8  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x7  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x5  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x4  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x3  ] ) ;
-                                    tinP.pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x2  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x11 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x10 ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0xe  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0xd  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , S1C('@')                        ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0xb  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0xa  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x8  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x7  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x5  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x4  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x3  ] ) ;
+                                    ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttDateAtTime , psttSnip[ CSpREFIX - 1 + 0x2  ] ) ;
                                 {
                                 if( psttDateAtTime )
 
-                                tinP.pEther->strMakeF( tinP , LF , psttDateAtTime , 0 , 0xd ) ; ___( psttDateAtTime ) ;
+                                ((tinNormalS&)tinP).pEther->strMakeF( tinP , LF , psttDateAtTime , 0 , 0xd ) ; ___( psttDateAtTime ) ;
                             {
                             case 1 :
                             // "_2009_06_06_19_51_"
@@ -369,7 +369,7 @@ TODO
 
                             }
                                 break ;
-                                tinP.pEther->strMakeF( tinP , LF , psttDateAtTime , psttSnip ) ; ___( psttDateAtTime ) ;
+                                ((tinNormalS&)tinP).pEther->strMakeF( tinP , LF , psttDateAtTime , psttSnip ) ; ___( psttDateAtTime ) ;
                             {
                             case 0 :
                             // "20130510@2359"
@@ -381,7 +381,7 @@ TODO
                         {
                         if( psttSnip && psttSnip->idAdam ) switch( offs )
     
-                        tinP.pEther->strSubstringF( tinP , psttSnip , idf , idl , tOld ) ; ___( psttSnip ) ;
+                        ((tinNormalS&)tinP).pEther->strSubstringF( tinP , psttSnip , idf , idl , tOld ) ; ___( psttSnip ) ;
                         countT idl = idHitLath ;
                         countT idf = idHitWoth ;
                         ZE( strokeS* , psttSnip ) ;
@@ -398,7 +398,7 @@ TODO
                             idHitLath = idf
                         {
                         if( idHitWoth )
-                        idHitWoth = tinP.pEther->strIdF( tinP , idf , sttq , *pptSpecP[ offs ] , tOld ) ;
+                        idHitWoth = ((tinNormalS&)tinP).pEther->strIdF( tinP , idf , sttq , *pptSpecP[ offs ] , tOld ) ;
                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                         countT idf = 1 ;
                     {
@@ -409,7 +409,7 @@ TODO
                 {
                 ZE( strokeS* , psttDateAtTime ) ;
 
-                tinP.pEther->strFuseF( tinP , sourP , tcr+T("old: ")+T(postNameP)+tcr ) ;
+                ((tinNormalS&)tinP).pEther->strFuseF( tinP , sourP , tcr+T("old: ")+T(postNameP)+tcr ) ;
 
                 TN( tcr , "\r\n" ) ;
                 TN( tOld , postShort ) ;

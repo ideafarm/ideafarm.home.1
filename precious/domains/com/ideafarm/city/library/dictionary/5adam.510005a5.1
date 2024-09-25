@@ -49,7 +49,7 @@ thirdC::third_flagsModeProcess1I_IF() &= ~( F(flMODEpROCESS1_DEBUG) ) ;
             //etherC::ether_cUtility_IF( tinP ) = 1 ; //U::TO FIND A BUG
         {
         if( cKids > 0x10 )
-        countT cKids = tinP.cKidThreads ;
+        countT cKids = ((tinNormalS&)tinP).cKidThreads ;
     
         //}
         //    }
@@ -226,7 +226,7 @@ DONE( tmStompF )
     
         sockc.writeF( tinP , "GET /deadman1 HTTP/1.0\r\n\r\n" ) ;
         sockc.connectF( tinP , 80 , socketC::nicNameIF( tinP , etThread , T("ideafarm.com") ) ) ;
-        socketC sockc( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sockc( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {

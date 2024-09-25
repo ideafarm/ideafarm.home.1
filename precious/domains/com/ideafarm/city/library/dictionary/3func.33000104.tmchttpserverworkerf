@@ -70,7 +70,7 @@ DONE( tmcHttpServerWorkerF )
                         /*     if( POOP ) { POOPR }                                               */
                         /*     }                                                                  */
                         /*         TELL( "returned from querying dns for peer name string" ) ;    */
-                        /*         tinP.pEtScratch->sockPsttHostF( tinP , psttPeerP , nnPeerP ) ; */
+                        /*         ((tinNormalS&)tinP).pEtScratch->sockPsttHostF( tinP , psttPeerP , nnPeerP ) ; */
                         /*         TELL( "querying dns for peer name string" ) ;                  */
                         /*     {                                                                  */
                         /*     if( nnPeerP.pcId[ 0 ] )                                            */
@@ -86,7 +86,7 @@ DONE( tmcHttpServerWorkerF )
                     nicNameC nnMeP ;
                     ZE( countT , idPortMeP ) ;
 
-                    psoP->etherF( tinP , *tinP.pEtScratch ) ;
+                    psoP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
                     //etThread.traceF( tinP , T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     //etThread.traceF( tinP , T("preparing to service psoP"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                 {
@@ -101,18 +101,18 @@ DONE( tmcHttpServerWorkerF )
                 socketC*& psoP = (socketC*&)(countT&)jobP.sw_pso ;
                 jobP.lever_idSession = jobP.idSession ;
 
-                //tinP.pc Utility[ 0 ] = 0 ;
-                //tinP.pc Utility[ 1 ] = 0 ;
-                //tinP.pc Utility[ 2 ] = 0 ;
-                //tinP.pc Utility[ 3 ] = 0 ;
+                //((tinNormalS&)tinP).pc Utility[ 0 ] = 0 ;
+                //((tinNormalS&)tinP).pc Utility[ 1 ] = 0 ;
+                //((tinNormalS&)tinP).pc Utility[ 2 ] = 0 ;
+                //((tinNormalS&)tinP).pc Utility[ 3 ] = 0 ;
 
                 //etThread.traceF( tinP , T("grabbed jobP.sw_pso"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                 jobP.sw_pso.grabF( tinP , TAG( TAGiDnULL ) ) ;
                 //etThread.traceF( tinP , T("grabbing jobP.sw_pso"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
-                //tinP.pc Utility[ 3 ] = ((countT*)&jobCopy)[ 2 ] ;
-                //tinP.pc Utility[ 2 ] = ((countT*)&jobP)[ 2 ] ;
-                //tinP.pc Utility[ 0 ] = 0x12345678 ;
+                //((tinNormalS&)tinP).pc Utility[ 3 ] = ((countT*)&jobCopy)[ 2 ] ;
+                //((tinNormalS&)tinP).pc Utility[ 2 ] = ((countT*)&jobP)[ 2 ] ;
+                //((tinNormalS&)tinP).pc Utility[ 0 ] = 0x12345678 ;
                 //etThread.traceF( tinP , T("U:: tmcHttpServerWorkerF / before grabbing") ) ;
 
                 TELL( "TASKdRIVENsERVER: setting up" )

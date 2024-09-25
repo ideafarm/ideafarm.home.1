@@ -50,7 +50,7 @@ etThread.traceF( tinP , T("ok") ) ;
                 {
                 if( POOP )
 
-                tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , tFolder ) ;
+                ((tinNormalS&)tinP).pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , tFolder ) ;
                 ZE( infoFileS* , pInfo ) ;
             {
             do
@@ -105,7 +105,7 @@ TODO
     }
         }
             }
-                tinP.pEther->delF( tinP , psttf ) ;
+                ((tinNormalS&)tinP).pEther->delF( tinP , psttf ) ;
                 etherC::etRockIF( tinP ).traceF( tinP , psttf ) ;
                 sIn >> psttf ; ___( psttf ) ;
                 ZE( strokeS* , psttf ) ;
@@ -154,7 +154,7 @@ TODO
         countT idType = ifcIDtYPEcLOAKcONNECTION_SOULFUL ;
     
         sock.connectF( tinP , homeS::homeIF().portCloak ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
+        socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
 
         SCOOPS
     {
@@ -168,7 +168,7 @@ voidT queryFileListF( tinNormalS& tinP , const strokeS* const psttFolderP )
     }
         }
             }
-                tinP.pEther->delF( tinP , psttf ) ;
+                ((tinNormalS&)tinP).pEther->delF( tinP , psttf ) ;
                 etherC::etRockIF( tinP ).traceF( tinP , psttf ) ;
                 sIn >> psttf ; ___( psttf ) ;
                 ZE( strokeS* , psttf ) ;
@@ -213,7 +213,7 @@ voidT queryFileListF( tinNormalS& tinP , const strokeS* const psttFolderP )
         static soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tinP , homeS::homeIF().portCloak ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
+        socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
 
         SCOOPS
     {

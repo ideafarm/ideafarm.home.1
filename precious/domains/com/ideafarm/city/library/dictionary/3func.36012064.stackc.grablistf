@@ -53,8 +53,8 @@
 
     _INsTACKc_
 
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
+    else if( osTidOwner != ((tinNormalS&)tinP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinP).osTid ;
     else if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
     if( bNoGrabP ) ;
     //CODEsYNCH: 115006a 00103a2

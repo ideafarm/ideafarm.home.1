@@ -24,13 +24,13 @@ DONE( tmGorillaF )
     }
         }
             thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-            tinP.cYield = 0 ;
+            ((tinNormalS&)tinP).cYield = 0 ;
 
             thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
 
-            tinP.cYield = 0 ;
+            ((tinNormalS&)tinP).cYield = 0 ;
             thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_RUSH ) ;
-            const countT idDesireSave = tinP.idDesireSetBySelf ;
+            const countT idDesireSave = ((tinNormalS&)tinP).idDesireSetBySelf ;
         
             }
                 stx.ungrabF( tinP ) ;
@@ -56,7 +56,7 @@ DONE( tmGorillaF )
     {
     while( !ether )
     ZE( countT , idCycle ) ;
-    ranUniC ru( 16.0 , tinP.monitor.idThread ) ;
+    ranUniC ru( 16.0 , ((tinNormalS&)tinP).monitor.idThread ) ;
 
     stackC& stx = *(stackC*)pTaskP->c1 ;
 {

@@ -256,8 +256,8 @@
                 if( !POOP )
 
                 }
-                    tinP.pEtScratch->delF( tinP , psttEmailOwner ) ;
-                    __( tinP.pEtScratch->strCompareF( tinP , psttEmail , psttEmailOwner ) ) ;
+                    ((tinNormalS&)tinP).pEtScratch->delF( tinP , psttEmailOwner ) ;
+                    __( ((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , psttEmail , psttEmailOwner ) ) ;
                     sIn >> psttEmailOwner ; ___( psttEmailOwner ) ;
                     ZE( strokeS* , psttEmailOwner ) ;
                 
@@ -280,7 +280,7 @@
                     soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
                 
                     sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-                    socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 {
             {
             if( bShowAll )
@@ -446,7 +446,7 @@
                     soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
                 
                     sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-                    socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 {
                 if( bDeleteSub )
 

@@ -126,7 +126,7 @@
         ZE( countT , cdBits ) ; //"cDigitBits": 0-BASED: 0 MEANS 1 BIT; f MEANS 01 BITS
 
         const boolT bNoBigitValues = F(flagsFormatP) & flFORMAT_NObIGITvALUES /* || !thirdC::p WinRootIF() */ ;_WQ
-        const boolT bForeign       = !tinP.strokeMode.idCasteDefault ;_WQ
+        const boolT bForeign       = !((tinNormalS&)tinP).strokeMode.idCasteDefault ;_WQ
 
         const boolT bRadixIndicator = radix != 16 && !( F(flagsFormatP) & flFORMAT_NObASE ) ;_WQ
 
@@ -194,8 +194,8 @@
     }
         if( POOP ) return ;
         { countT cb = 8 ; __( sizeof valueP - cb ) ; }
-        __(  tinP.strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
-        __( !tinP.strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
+        __(  ((tinNormalS&)tinP).strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
+        __( !((tinNormalS&)tinP).strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
         __( radixP && radixP < 2 ) ;_WQ
         __NZ( psttP ) ;_WQ
         if( POOP ) return ;

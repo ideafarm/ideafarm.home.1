@@ -544,11 +544,11 @@ count04T cCpuCyclesBookPer = !cBook ? 0 : cCpuCyclesBook / cBook ;
             if( !pbi )
     
             //etThread.traceF( tinP , T("tmEatTelemetrySysF / 7") ) ;
-            //tinP.pc Utility[ 0 ] -- ; //U::TO FIND A BUG
+            //((tinNormalS&)tinP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
             boolT bDelete = bksTelemetryApp.readF( tinP , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
             //etThread.traceF( tinP , T("eating telemetry at [idDebug,off,idBook]:    ")+TF2(idDebug,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(ch.c1,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(ch.c2,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
             HANDLEaPPnOTEScOUNTcLASS ch = hRead ;
-            //tinP.pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
+            //((tinNormalS&)tinP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
             //etThread.traceF( tinP , T("tmEatTelemetrySysF / 8") ) ;
             TELL( "waiting to read a new telemetry item" )
 

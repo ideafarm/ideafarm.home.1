@@ -13,7 +13,7 @@
     BOS( WHATgbo , BOSoK , CloseHandle( osh ) )
     BOSpOOP
     BOS( WHATgbo , BOSoK , SetThreadPriority( osh , THREAD_PRIORITY_TIME_CRITICAL ) )
-    HANDLE osh = (HANDLE)tinP.brcRaw ;
+    HANDLE osh = (HANDLE)((tinNormalS&)tinP).brcRaw ;
 
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreateThread( &sa , 1 * 1024 , (tmfosFT)tmHeartF , 0 , 0 , (ULONG*)&tidP ) )
@@ -71,15 +71,15 @@
         sleepC s( tinP , LF , (byteT*)0 ) ; //MUST NOT EVER BE DESTROYED, SINCE THAT WOULD INVOKE TINSL
 
         homeS& home = homeS::homeIF() ;
-        if( !( ++ processGlobal2I.pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
+        if( !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinP).monitor.idThread ] ) ) { BLAMMO ; }
 
         POOPIES
     {
 
     _IO_
     //TELL( "setting up" )
-    if( tinP.monitor.idThread - ifcIDtHREADlOW_tmHeartF ) { BLAMMO ; }
-    if( !( ++ processGlobal2I.pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
+    if( ((tinNormalS&)tinP).monitor.idThread - ifcIDtHREADlOW_tmHeartF ) { BLAMMO ; }
+    if( !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinP).monitor.idThread ] ) ) { BLAMMO ; }
     processGlobal5I.tinHeart.osPid = _brcRaw ;
     BOSnOtIN( GetCurrentProcessId() )
     processGlobal5I.tinHeart.osTid = _brcRaw ;

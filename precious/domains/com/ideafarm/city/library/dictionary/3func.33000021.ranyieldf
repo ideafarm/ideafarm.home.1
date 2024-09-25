@@ -10,7 +10,7 @@
 #endif
 
     }
-        tinP.cYield = 0 ;
+        ((tinNormalS&)tinP).cYield = 0 ;
         thirdC::dosPriorityIF( tinP , idDesireSave ) ;
         }
             }
@@ -20,8 +20,8 @@
             sleepC s( tinP , TAG( TAGiDnULL ) ) ;
         {
         cYield = cYield % cMaxP + 1 ;
-        countT cYield = tinP.ranUni % TUCK ;
-        tinP.cYield = 0 ;
+        countT cYield = ((tinNormalS&)tinP).ranUni % TUCK ;
+        ((tinNormalS&)tinP).cYield = 0 ;
         thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
         const countT idDesireSave = thirdC::dosPriorityIF( tinP ) ;
     {
@@ -31,7 +31,7 @@
 
 /**/
 */
-the caller must reset tinP.cYield outside of whatever loop, if any, i am called from
+the caller must reset ((tinNormalS&)tinP).cYield outside of whatever loop, if any, i am called from
 i will yield the cpu a random number [1,cMaxP] of times
 \<A HREF=\"5.0c0002a.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$ranYieldF.0.html\"\>instances\</A\>

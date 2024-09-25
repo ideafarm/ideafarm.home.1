@@ -9,7 +9,7 @@
 
 DONE( tmWatchF )
 
-//tinP.pc Utility[ 0 ] -- ; //U::TO FIND A BUG
+//((tinNormalS&)tinP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
 }
     TELL( "tmWatchF: cleaning up" ) ;
     
@@ -74,11 +74,11 @@ DONE( tmWatchF )
     {
     do
     
-    countT& cFaceClientsI            = tinP.pag1->_etherC_.cFaceClients ;
-    batonC& batFiringKids            = *tinP.pag1->_etherC_.pBatFiringKids ;
-    boolT&  bNoNewKids               = tinP.pag1->_etherC_.bNoNewKids ;
-    stackC& stTasksWhenQuitting      = *tinP.pag1->_thirdC_.pStkTasksWhenQuitting ;
-    flagsT& flQuittingI              = tinP.pag1->_thirdC_.flQuitting ;
+    countT& cFaceClientsI            = ((tinNormalS&)tinP).pag1->_etherC_.cFaceClients ;
+    batonC& batFiringKids            = *((tinNormalS&)tinP).pag1->_etherC_.pBatFiringKids ;
+    boolT&  bNoNewKids               = ((tinNormalS&)tinP).pag1->_etherC_.bNoNewKids ;
+    stackC& stTasksWhenQuitting      = *((tinNormalS&)tinP).pag1->_thirdC_.pStkTasksWhenQuitting ;
+    flagsT& flQuittingI              = ((tinNormalS&)tinP).pag1->_thirdC_.flQuitting ;
     countT& cAllOrphanThreadsI       = thirdC::os_cAllOrphanThreadsI_IF( tinP ) ;
     countT& cAllKidThreadsI          = thirdC::os_cAllKidThreadsI_IF( tinP ) ;
     TELL( "initializing references" ) ;
@@ -87,11 +87,11 @@ DONE( tmWatchF )
     TELL( "launching late threads" ) ;
 
     }
-        if( tinP.pag1->_etherC_.pCalledWhenFiredF ) (*tinP.pag1->_etherC_.pCalledWhenFiredF)( tinP , tinP.pag1->_etherC_.pCalledWhenFiredArg ? *tinP.pag1->_etherC_.pCalledWhenFiredArg : ze ) ;
+        if( ((tinNormalS&)tinP).pag1->_etherC_.pCalledWhenFiredF ) (*((tinNormalS&)tinP).pag1->_etherC_.pCalledWhenFiredF)( tinP , ((tinNormalS&)tinP).pag1->_etherC_.pCalledWhenFiredArg ? *((tinNormalS&)tinP).pag1->_etherC_.pCalledWhenFiredArg : ze ) ;
         ZE( countT , ze ) ;
     {
 
-    tinP.pag1->flagsAdam |= flADAM_FIRED ;
+    ((tinNormalS&)tinP).pag1->flagsAdam |= flADAM_FIRED ;
     etThread.osThreadSwitchingDesireF( tinP , desireSave ) ;
 
     //}
@@ -118,7 +118,7 @@ DONE( tmWatchF )
 
 #endif
         }
-            LOGrAW( T("[time,idAdam,tallyAll]: ")+TT(timeN1,timeN2)+T("    ")+TF2(tinP.pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tallyAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") ) ;
+            LOGrAW( T("[time,idAdam,tallyAll]: ")+TT(timeN1,timeN2)+T("    ")+TF2(((tinNormalS&)tinP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tallyAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n") ) ;
         
             etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
@@ -165,16 +165,16 @@ DONE( tmWatchF )
         //20130918@1315: THIS IS CPU COSTLY SO COMMENTED OUT.  AFAIK IT WORKS
 
         //}
-        //    tinP.pag4->_adamC_grab.ungrabF( tinP ) ;
+        //    ((tinNormalS&)tinP).pag4->_adamC_grab.ungrabF( tinP ) ;
         //
         //    }
         //        pac = pac->pAdam ;
         //        pac->mannaF( tinP , 1.0 ) ;
         //    {                
         //    while( pac )
-        //    adamC* pac = tinP.pag1->_adamC_pAdam ;
+        //    adamC* pac = ((tinNormalS&)tinP).pag1->_adamC_pAdam ;
         //
-        //    tinP.pag4->_adamC_grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        //    ((tinNormalS&)tinP).pag4->_adamC_grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
         //{
         //TELL( "distributing manna from heaven to adamC instances" ) ;
         //U::THIS IS DONE ACCORDING TO THE NUMBER OF SHARES THAT EACH adamC INSTANCE OWNS
@@ -194,10 +194,10 @@ DONE( tmWatchF )
                     while( !etThread && !stQuitters.third && ~handle ) ;
                     }
                         }
-                            //*tinP.pEtScratch = 0 ;
+                            //*((tinNormalS&)tinP).pEtScratch = 0 ;
                             hSoc.closeIfF() ; //U::ELIMINATING ALL USAGE OF "shutdown" WIN32 API
                             //CONoUTrAW3( "tmWatchF/closing quitter handle at " , (countT)&hSoc , "\r\n" ) ; //U::
-                            //tinP.pEtScratch->sockCancelF( tinP , hSoc ) ;
+                            //((tinNormalS&)tinP).pEtScratch->sockCancelF( tinP , hSoc ) ;
                             //CONoUTrAW3( "********************* cancelling quitter socket " , (countT)pso , "\r\n" ) ;
                             //CONoUTrAW( "tmWatchF/cancelling a quitter socket\r\n" ) ;
                             handleC& hSoc = *(handleC*)&pso->handleF( tinP ) ;
@@ -229,7 +229,7 @@ DONE( tmWatchF )
 
                                 //etThread.traceF( tinP , T("[&sCatcher,idPortHe]:    ")+TfORsTRING((countT)pso)+tb4+TF4(idPortHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
                                 countT idPortHe = (countT)*pso ;
-                                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+                                socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
                             {
                             SCOOPS
                             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //LEGACYwORKAROUND
@@ -259,7 +259,7 @@ DONE( tmWatchF )
                         }
                             if( POOP ) POOPR
                             sock.connectF( tinP , (countT)*pso ) ;
-                            socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                            socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
                             SCOOPS
                         {
                         IFsCRATCH
@@ -349,16 +349,16 @@ DONE( tmWatchF )
         if( pRootI )
         windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
 
-        tinP.pag5->grabGrabWatch.ungrabF( tinP ) ;
-        if( tinP.pag1->pGrabWatch ) etThread.traceF( tinP , T("U:: 20240706@1136: WHY WAS I B" "EEPING HERE?") ) ;
-        tinP.pag5->grabGrabWatch.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ((tinNormalS&)tinP).pag5->grabGrabWatch.ungrabF( tinP ) ;
+        if( ((tinNormalS&)tinP).pag1->pGrabWatch ) etThread.traceF( tinP , T("U:: 20240706@1136: WHY WAS I B" "EEPING HERE?") ) ;
+        ((tinNormalS&)tinP).pag5->grabGrabWatch.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
         }
             }
                 }
                     }
                         FIREmYSELF ;
-                        LOGrAW3( "adam " , tinP.pag1->idAdam ,  "'s tmWatchF cannot see the driver\r\n" ) ; // ifcIDaDAM_CLOAK AND ifcIDaDAM_GLASS1 ARE EXEMPT BECAUSE CLOAK LAUNCHES ifcIDaDAM_GLASS1 WHICH LAUNCHES THE ifcIDaDAM_2GLASS2
+                        LOGrAW3( "adam " , ((tinNormalS&)tinP).pag1->idAdam ,  "'s tmWatchF cannot see the driver\r\n" ) ; // ifcIDaDAM_CLOAK AND ifcIDaDAM_GLASS1 ARE EXEMPT BECAUSE CLOAK LAUNCHES ifcIDaDAM_GLASS1 WHICH LAUNCHES THE ifcIDaDAM_2GLASS2
                     {
                     if( !( processGlobal2I.idHome & 0xff000000 ) && !thirdC::osTestWaterIF( tinP , ifcIDtYPEtESTwATER_LOOKfORdRIVER ) )
                     _IO_
@@ -366,7 +366,7 @@ DONE( tmWatchF )
 
                 }
                     FIREmYSELF ; // 20200620@1605: ENABLED THIS WITHOUT ANALYSIS (VERSIONING ENFORCEMENT USES A DNS RECORD)
-                    LOGrAW3( "adam " , tinP.pag1->idAdam ,  "'s tmWatchF sees that this version has been refused\r\n" ) ;
+                    LOGrAW3( "adam " , ((tinNormalS&)tinP).pag1->idAdam ,  "'s tmWatchF sees that this version has been refused\r\n" ) ;
                 {
                 if( F(home.flags) & flHOMEs_VERSIONrEFUSED )
                 _IO_
@@ -375,7 +375,7 @@ DONE( tmWatchF )
                 )
                     && !thirdC::osTestWaterIF( tinP , ifcIDtYPEtESTwATER_LOOKfORdRIVER )
                     && !( processGlobal2I.idHome & 0xff000000 )
-                       ( tinP.pag1->idAdam != ifcIDaDAM_CLOAK && tinP.pag1->idAdam != ifcIDaDAM_GLASS1 )
+                       ( ((tinNormalS&)tinP).pag1->idAdam != ifcIDaDAM_CLOAK && ((tinNormalS&)tinP).pag1->idAdam != ifcIDaDAM_GLASS1 )
                 (
                 ||
                 F(home.flags) & flHOMEs_VERSIONrEFUSED
@@ -394,10 +394,10 @@ DONE( tmWatchF )
             FIREmYSELF ;
             etThread.traceF( tinP , T("my fireAll group has been fired") ) ;
         {
-        if( tinP.pag1->idGroupFireAll && tinP.pag1->idGroupFireAll <= CfIREaLLrANKS && home.pFireAll[ tinP.pag1->idGroupFireAll - 1 ].bFire )
+        if( ((tinNormalS&)tinP).pag1->idGroupFireAll && ((tinNormalS&)tinP).pag1->idGroupFireAll <= CfIREaLLrANKS && home.pFireAll[ ((tinNormalS&)tinP).pag1->idGroupFireAll - 1 ].bFire )
         thirdC::dosPriorityProcessIF( tinP ) ; //THIS ENFORCES RULE THAT USER CANNOT CHANGE THE PRIORITY CLASS OF AN IFC PROCESS; (IFC MAKES THIS ASSUMPTION SO THAT IT CAN USE YIELD WITHOUT HAVING CPU SPINS)
 
-        //CONoUTrAW5( "tmWatchF [ether,cThreadsFor _tmWatchF_toWatch]: " , ether , " " , tinP.pag1->cThreadsFor _tmWatchF_toWatch , "\r\n" ) ;
+        //CONoUTrAW5( "tmWatchF [ether,cThreadsFor _tmWatchF_toWatch]: " , ether , " " , ((tinNormalS&)tinP).pag1->cThreadsFor _tmWatchF_toWatch , "\r\n" ) ;
 
 #endif
         }
@@ -427,7 +427,7 @@ DONE( tmWatchF )
                 etherC& etRock = etherC::etRockIF( tinP ) ;
             {
             else
-            if( !bTraceMemoryReadability ) ; // etRock.traceF( tinP , T("not tracing memory usage [idAdam]:    ")+TF2(tinP.pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            if( !bTraceMemoryReadability ) ; // etRock.traceF( tinP , T("not tracing memory usage [idAdam]:    ")+TF2(((tinNormalS&)tinP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             _IO_
         {
         if( !( idCycle % ( TUCK >> 1 ) ) )
@@ -456,11 +456,11 @@ DONE( tmWatchF )
                     {
                     if( POOP )
 
-                    count04T idKeys = tinP.pEtScratch->idIdeaFarmKeysF( tinP ) ;
+                    count04T idKeys = ((tinNormalS&)tinP).pEtScratch->idIdeaFarmKeysF( tinP ) ;
                 {
                 if( !ether && !home.idIdeaFarmKeys )
 
-                if( tinP.pag1->idAdam == ifcIDaDAM_2GLASS2 ) home.idIdeaFarmKeys = etThread.idIdeaFarmKeysF( tinP ) ;   //O: THIS OPTIMIZATION REDUCES CALLS TO WO PER TOCK WHEN GLASS2 IS RUNNING IN THE CURRENT HOME
+                if( ((tinNormalS&)tinP).pag1->idAdam == ifcIDaDAM_2GLASS2 ) home.idIdeaFarmKeys = etThread.idIdeaFarmKeysF( tinP ) ;   //O: THIS OPTIMIZATION REDUCES CALLS TO WO PER TOCK WHEN GLASS2 IS RUNNING IN THE CURRENT HOME
 
                 homeS& home = homeS::homeIF() ;
                 _IO_
@@ -536,13 +536,13 @@ DONE( tmWatchF )
         {
         if( etRock )
 
-        //etThread.traceF( tinP , T("tmWatchF / loop ++ [tinP.pag1,tinP.pag1->ctWatch]:    ")+TF2((countT)tinP.pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(tinP.pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tinP , T("tmWatchF / loop ++ [((tinNormalS&)tinP).pag1,((tinNormalS&)tinP).pag1->ctWatch]:    ")+TF2((countT)((tinNormalS&)tinP).pag1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tinNormalS&)tinP).pag1->ctWatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         _IO_
     {
     )
         )
-            tinP.pag1->ctWatch
+            ((tinNormalS&)tinP).pag1->ctWatch
             ||
             !ether
         (
@@ -562,13 +562,13 @@ DONE( tmWatchF )
     //    TN( tHit , "zap..CDN_ACCESS_LOGS" ) ;
     //    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinP ) ;
     //{
-    //if( tinP.pag1->idAdam == ifcIDaDAM_CLOUD )
+    //if( ((tinNormalS&)tinP).pag1->idAdam == ifcIDaDAM_CLOUD )
 
     //ZE( boolT , bTraceMemoryReadability ) ;
 
     ;
-        tinP.pag1->idAdam == ifcIDaDAM_2GLASS2
-           //tinP.pag1->idAdam == ifcIDaDAM_ROOThTTPsERVER
+        ((tinNormalS&)tinP).pag1->idAdam == ifcIDaDAM_2GLASS2
+           //((tinNormalS&)tinP).pag1->idAdam == ifcIDaDAM_ROOThTTPsERVER
     boolT bTraceMemoryReadability =                                  //U:: TO FIND A LEAK (DISABLE THIS IN PRODUCTION)
 
     countT desireSave = etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZY ) ;
@@ -577,11 +577,11 @@ DONE( tmWatchF )
     //if( stQuitters.third          ) stQuitters.third          = 0 ;
     //if( stCatchers.third          ) stCatchers.third          = 0 ;
     //if( stAcceptors.third         ) stAcceptors.third         = 0 ;
-    stackC& stPoolNames              = *tinP.pag1->_etherC_.pStkPoolNames ;
-    stackC& stQuitters               = *tinP.pag1->_etherC_.pStkQuitters ;
-    stackC& stCatchers               = *tinP.pag1->_etherC_.pStkCatchers ;
-    stackC& stAcceptors              = *tinP.pag1->_etherC_.pStkAcceptors ;
-    stackC& stIdleTimeouters = *tinP.pag1->_etherC_.pStkIdleTimeouters ;
+    stackC& stPoolNames              = *((tinNormalS&)tinP).pag1->_etherC_.pStkPoolNames ;
+    stackC& stQuitters               = *((tinNormalS&)tinP).pag1->_etherC_.pStkQuitters ;
+    stackC& stCatchers               = *((tinNormalS&)tinP).pag1->_etherC_.pStkCatchers ;
+    stackC& stAcceptors              = *((tinNormalS&)tinP).pag1->_etherC_.pStkAcceptors ;
+    stackC& stIdleTimeouters = *((tinNormalS&)tinP).pag1->_etherC_.pStkIdleTimeouters ;
     ZE( countT , idCycle ) ;
     //countT cSkip = 0x20 ;
     TN( tb4 , "    " ) ;
@@ -591,7 +591,7 @@ DONE( tmWatchF )
     ZE( countT , idLook ) ;
     homeS& home = homeS::homeIF() ;
 
-    tinP.tell_tmWatchF_toIgnoreMeF() ;
+    ((tinNormalS&)tinP).tell_tmWatchF_toIgnoreMeF() ;
 
     //U:://--------------------------------------------------------------------------
     //U::
@@ -616,7 +616,7 @@ DONE( tmWatchF )
     //U:://--------------------------------------------------------------------------
 
     TELL( "waiting for asynch impotence" ) ;
-    //__( tinP.monitor.idThread - ifcIDtHREADlOW_tmWatchF ) ;
+    //__( ((tinNormalS&)tinP).monitor.idThread - ifcIDtHREADlOW_tmWatchF ) ;
 
     }
         sgnWatchReady.giveF( tinP ) ;
@@ -631,7 +631,7 @@ DONE( tmWatchF )
     _IO_
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
-//tinP.pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
+//((tinNormalS&)tinP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
 /*1*/TASK( tmWatchF )/*1*/
 /**/
 */

@@ -15,22 +15,22 @@ etThread.delF( tinP , psttNameTo   ) ;
 
 }
     etThread.delF( tinP , pbAll ) ;
-    tinP.zEtScratch->boxPutF( tinP , psttNameTo , pbAll , cbAll ) ;
+    ((tinNormalS&)tinP).zEtScratch->boxPutF( tinP , psttNameTo , pbAll , cbAll ) ;
     
     }
         off += cbf ;
-        tinP.zEtScratch->delF( tinP , pbf ) ;
-        tinP.zEtScratch->memCopyF( tinP , pbAll + off , pbf , cbf ) ;
-        tinP.zEtScratch->strokeF( tinP , T("got ")+TF1(cbf)+T(" bytes at offset ")+TF1(off)+T("\r\n") ) ;
+        ((tinNormalS&)tinP).zEtScratch->delF( tinP , pbf ) ;
+        ((tinNormalS&)tinP).zEtScratch->memCopyF( tinP , pbAll + off , pbf , cbf ) ;
+        ((tinNormalS&)tinP).zEtScratch->strokeF( tinP , T("got ")+TF1(cbf)+T(" bytes at offset ")+TF1(off)+T("\r\n") ) ;
         }
             }
                 etThread.strokeF( tinP , T("retrying query for bytes at offset ")+TF1(off)+T("\r\n") ) ;
-                tinP.zEtScratch->delF( tinP , pbf ) ;
-                *tinP.zEtScratch = 0 ;
+                ((tinNormalS&)tinP).zEtScratch->delF( tinP , pbf ) ;
+                *((tinNormalS&)tinP).zEtScratch = 0 ;
             {
             else
-            if( !*tinP.zEtScratch ) break ;
-            getF( tinP , *tinP.zEtScratch , pbf , cbf , cbr , psttNameFrom , nnOn , off , CBeACH ) ; ___( pbf ) ;
+            if( !*((tinNormalS&)tinP).zEtScratch ) break ;
+            getF( tinP , *((tinNormalS&)tinP).zEtScratch , pbf , cbf , cbr , psttNameFrom , nnOn , off , CBeACH ) ; ___( pbf ) ;
         {
         for(;;)
         ZE( countT , cbr ) ;
@@ -41,20 +41,20 @@ etThread.delF( tinP , psttNameTo   ) ;
     ZE( countT , off ) ;
     
     if( pbAll ) pbAll[ cbAll ] = 0 ;
-    tinP.zEtScratch->newF( tinP , LF , pbAll , cbAll + 1 ) ; ___( pbAll ) ;
+    ((tinNormalS&)tinP).zEtScratch->newF( tinP , LF , pbAll , cbAll + 1 ) ; ___( pbAll ) ;
     countT cbAll = cbr ;
     ZE( byteT* , pbAll ) ;
     
-    tinP.zEtScratch->delF( tinP , pbf ) ;
+    ((tinNormalS&)tinP).zEtScratch->delF( tinP , pbf ) ;
     }
         }
             etThread.strokeF( tinP , T("retrying (file size query)\r\n") ) ;
-            tinP.zEtScratch->delF( tinP , pbf ) ;
-            *tinP.zEtScratch = 0 ;
+            ((tinNormalS&)tinP).zEtScratch->delF( tinP , pbf ) ;
+            *((tinNormalS&)tinP).zEtScratch = 0 ;
         {
         else
-        if( !*tinP.zEtScratch ) break ;
-        getF( tinP , *tinP.zEtScratch , pbf , cbf , cbr , psttNameFrom , nnOn , 0 , 0 ) ; ___( pbf ) ;
+        if( !*((tinNormalS&)tinP).zEtScratch ) break ;
+        getF( tinP , *((tinNormalS&)tinP).zEtScratch , pbf , cbf , cbr , psttNameFrom , nnOn , 0 , 0 ) ; ___( pbf ) ;
     {
     for(;;)
     ZE( countT , cbr ) ;

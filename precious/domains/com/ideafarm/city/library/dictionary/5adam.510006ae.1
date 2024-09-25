@@ -202,7 +202,7 @@ TODO
             break ;
 
             }
-                tinP.pEther->etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+                ((tinNormalS&)tinP).pEther->etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
                 //eyeP.moveF( tinP , vDeltaAt , - PI / ( TUCK << 2 ) , - PI / ( TUCK << 2 ) , - PI / ( TUCK << 2 ) ) ;
                 //eyeP.moveF( tinP , vDeltaAt , - PI / ( TUCK >> 2 ) , - PI / ( TUCK >> 2 ) , - PI / ( TUCK >> 2 ) ) ;
 
@@ -216,8 +216,8 @@ TODO
                 //AOK: eyeP.moveF( tinP , vDeltaAt , 0 , - PI / ( TUCK >> 0 ) , 0 ) ;
                 //AOK: eyeP.moveF( tinP , vDeltaAt , - PI / ( TUCK >> 0 ) , 0 , 0 ) ;
 
-                tinP.pEther->etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
-                vectorOldC vDeltaAt( tinP , *tinP.pEther ) ;
+                ((tinNormalS&)tinP).pEther->etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
+                vectorOldC vDeltaAt( tinP , *((tinNormalS&)tinP).pEther ) ;
             {
             #endif
                 if( !( idIn % ( TUCK << 3 ) ) )
@@ -270,10 +270,10 @@ countT deviceCBF( tinNormalS& tinP , const flagsT flagsP , deviceC& deviceP , co
     // SCALING
 
     }
-        toP.z = - mx * tinP.brcm04Raw + mz * m1 ;
-        toP.x =   mx * m1 + mz * tinP.brcm04Raw ;
+        toP.z = - mx * ((tinNormalS&)tinP).brcm04Raw + mz * m1 ;
+        toP.x =   mx * m1 + mz * ((tinNormalS&)tinP).brcm04Raw ;
         BOSmEASURE04( WHATgbo , sin( sinP.ah ) )
-        measure04T m1 = tinP.brcm04Raw ;
+        measure04T m1 = ((tinNormalS&)tinP).brcm04Raw ;
         BOSmEASURE04( WHATgbo , cos( sinP.ah ) )
 
         measureT mz = toP.z ;
@@ -282,10 +282,10 @@ countT deviceCBF( tinNormalS& tinP , const flagsT flagsP , deviceC& deviceP , co
     // HEADING
 
     }
-        toP.z =   my * tinP.brcm04Raw + mz * m1 ;
-        toP.y =   my * m1 - mz * tinP.brcm04Raw ;
+        toP.z =   my * ((tinNormalS&)tinP).brcm04Raw + mz * m1 ;
+        toP.y =   my * m1 - mz * ((tinNormalS&)tinP).brcm04Raw ;
         BOSmEASURE04( WHATgbo , sin( - sinP.ae ) )
-        measure04T m1 = tinP.brcm04Raw ;
+        measure04T m1 = ((tinNormalS&)tinP).brcm04Raw ;
         BOSmEASURE04( WHATgbo , cos( - sinP.ae ) )
 
         measureT mz = toP.z ;
@@ -295,10 +295,10 @@ countT deviceCBF( tinNormalS& tinP , const flagsT flagsP , deviceC& deviceP , co
 
     }
         toP.z = 0.0 ;
-        toP.y = - rx * tinP.brcm04Raw + ry * m1 ;
-        toP.x =   rx * m1 + ry * tinP.brcm04Raw ;
+        toP.y = - rx * ((tinNormalS&)tinP).brcm04Raw + ry * m1 ;
+        toP.x =   rx * m1 + ry * ((tinNormalS&)tinP).brcm04Raw ;
         BOSmEASURE04( WHATgbo , sin( sinP.ab ) )
-        measure04T m1 = tinP.brcm04Raw ;
+        measure04T m1 = ((tinNormalS&)tinP).brcm04Raw ;
         BOSmEASURE04( WHATgbo , cos( sinP.ab ) )
     {
     // BANK

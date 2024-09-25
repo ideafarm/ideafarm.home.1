@@ -62,7 +62,7 @@ DONE( tmWorkF )
                     ZE( countT , idProtocol ) ;
             
                     etThread.delF( tinP , psttTradeMark ) ;
-                    __( tinP.pEtScratch->strCompareF( tinP , psttTradeMark , T("IdeaFarm " "(tm)") ) ) ;
+                    __( ((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , psttTradeMark , T("IdeaFarm " "(tm)") ) ) ;
                     sIn >> psttTradeMark ;
                     ZE( strokeS* , psttTradeMark ) ;
             
@@ -76,7 +76,7 @@ DONE( tmWorkF )
                 ZE( boolT , bQuit ) ;
             
                 sock.connectF( tinP , idpTeat2 , (nicNameC&)idpTeat2 ) ;
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sock( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
             {
             if( idpTeat2 )
             portC idpTeat2 = host.idpTeat ;

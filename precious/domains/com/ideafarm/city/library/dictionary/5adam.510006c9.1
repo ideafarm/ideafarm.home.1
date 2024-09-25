@@ -210,7 +210,7 @@ countT subtractByteStringsReversedF( tinNormalS& tinP , countT& pEther , countT&
         while( cTries -- && !etPrime && !POOP )
         countT cTries = TUCK >> 5 ;
         //boolT bWoth = 1 ; //U::TO FIND A BUG
-        etherC& etScratch = *tinP.pEtScratch ;
+        etherC& etScratch = *((tinNormalS&)tinP).pEtScratch ;
         etherC& etPrime   = etherC::etPrimeIF( tinP ) ;
     {
     IFsCRATCH
@@ -260,8 +260,8 @@ boolT raxUploadWoFileF( tinNormalS& tinP , etherC& etherP , const strokeS* const
 }
     }
         }
-            wordF( tinP , *tinP.pEtScratch , prP , scratchAuth , stPath , tIn ) ;
-            stackC stPath( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+            wordF( tinP , *((tinNormalS&)tinP).pEtScratch , prP , scratchAuth , stPath , tIn ) ;
+            stackC stPath( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
             scratchAuthS scratchAuth( tinP ) ;
         {
         else
@@ -308,8 +308,8 @@ boolT raxUploadWoFileF( tinNormalS& tinP , etherC& etherP , const strokeS* const
         char postHear[ TOCK ] ; 
 
         ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
-        ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , *tinP.pEtScratch , T("identity.api.rackspacecloud.com") ) ) ;
-        socketC ss( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+        ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , *((tinNormalS&)tinP).pEtScratch , T("identity.api.rackspacecloud.com") ) ) ;
+        socketC ss( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
         SCOOPS
     {

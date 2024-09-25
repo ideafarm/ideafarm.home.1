@@ -18,7 +18,7 @@
                     }
                         DEL( pInfo ) ;
                         }
-                            tinP.pEtScratch->delF( tinP , posti ) ;
+                            ((tinNormalS&)tinP).pEtScratch->delF( tinP , posti ) ;
                             }
                                 CONoUTrAW( tSay ) ;
 
@@ -105,7 +105,7 @@
                                 {
                                 if( POOP )
 
-                                tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , T(ifFileNameC(tinP,*tinP.pEtScratch,postNameP)) , 1 ) ; ___( posti ) ;
+                                ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , posti , costi , T(ifFileNameC(tinP,*((tinNormalS&)tinP).pEtScratch,postNameP)) , 1 ) ; ___( posti ) ;
                             {
                             else
                             }
@@ -129,7 +129,7 @@
                         {
                         if( POOP )
                     
-                        tinP.pEtScratch->diskFileQueryF( tinP , pInfo , fi ) ; ___( pInfo ) ;
+                        ((tinNormalS&)tinP).pEtScratch->diskFileQueryF( tinP , pInfo , fi ) ; ___( pInfo ) ;
                         ZE( infoFileS* , pInfo ) ;
                     {
                     else
@@ -161,7 +161,7 @@
             if( bDir )
 
             boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-            countT costLike = tinP.brcRaw ;
+            countT costLike = ((tinNormalS&)tinP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
         {
         if( bDoIt )

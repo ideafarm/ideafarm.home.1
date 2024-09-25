@@ -21,7 +21,7 @@
 
     osTraceWrongNodeIF( tinP , (byteT*)pvP , "dosAllocMemIF: pvP" ) ;
     #endif
-        pvP = (voidT*)tinP.brcRaw ;
+        pvP = (voidT*)((tinNormalS&)tinP).brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , GlobalAlloc( 0 , cbP ) )
     #elif defined( __NT__ )

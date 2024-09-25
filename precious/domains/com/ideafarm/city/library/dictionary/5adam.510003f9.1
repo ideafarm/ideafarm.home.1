@@ -81,7 +81,7 @@ TODO
                         poolC::poolOldRootIF( tinP ).flagsBackF( tinP ) &= ~( F(flPOOLoLDbACK_NOcURSORrESET) ) ;
                         poolC::poolOldRootIF( tinP ).setPoolNewMinF( tinP ) ;
                         }
-                            db.idiOwner     = tinP.idiOwner ;
+                            db.idiOwner     = ((tinNormalS&)tinP).idiOwner ;
                             db.cbUsedReally = cba ;
                             db.idType       = ifcIDtYPEdROPnOTE_byteT ;
                             //DROPnOTErEF( pbPad ) ;
@@ -96,7 +96,7 @@ TODO
                         poolC::poolOldRootIF( tinP ).poolOldDelIF( tinP , (voidT*)pbAt ) ; pbAt = 0 ;
                         cbSoFar = ap_artmentOldC( tinP , pbAt ) ;
                         }
-                            db.idiOwner     = tinP.idiOwner ;
+                            db.idiOwner     = ((tinNormalS&)tinP).idiOwner ;
                             db.cbUsedReally = 0 ;
                             db.idType       = ifcIDtYPEdROPnOTE_byteT ;
                             //DROPnOTErEF( pbAt ) ;
@@ -301,7 +301,7 @@ pseudocode
 
     STEP( onePackF( tinP , etThread ) ) ;
 
-    tinP.flagsThreadMode2 = flagsThreadMode2Save ;
+    ((tinNormalS&)tinP).flagsThreadMode2 = flagsThreadMode2Save ;
 
     for( countT idt = 1 ; idt <= cTrees ; idt ++ ) STEP( etThread.boxPutHtmlFromKnowledgeTreeBaseF( tinP , 1 , (strokeS*)st1P[ idt ] , (strokeS*)st2P[ idt ] , (strokeS*)st3P[ idt ] , tCopy , (strokeS*)st4P[ idt ] , 0x100000 , 1 ) ) ;
     const countT cTrees = st2P ;
@@ -318,8 +318,8 @@ pseudocode
     //U: //STEP( testAutoF(                    tinP , etThread , bTestP                          ) ) ;
     //U: STEP( etThread.ifcHireF( tinP , T("city.publisher") , ifcIDaDAMoLD_MAKEaLLaDAMS , T(bTestP?"!test":"") , flHIRE_WAIT ) ) ;
 
-    tinP.flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;
-    flagsT flagsThreadMode2Save = tinP.flagsThreadMode2 ;
+    ((tinNormalS&)tinP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;
+    flagsT flagsThreadMode2Save = ((tinNormalS&)tinP).flagsThreadMode2 ;
 
     ZE( countT , idStep ) ;
     //etherC::ifcSayIF( T("pass ")+TF1(++stateP.idPass)+T(" begun") , flSAY_APPEND | flSAY_LOG ) ;

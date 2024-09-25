@@ -21,7 +21,7 @@
                     }
                         break ;
                         TELL( postP ) ;
-                        //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosCreateDirF / UNK FAIL: [postShorter,idImpotence]:    ")+T(postShorter)+T("    ")+TF2(idImpotence,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosCreateDirF / UNK FAIL: [postShorter,idImpotence]:    ")+T(postShorter)+T("    ")+TF2(idImpotence,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     default :
                     }
@@ -35,17 +35,17 @@
                         etRock.traceF( tinP , T("dosCreateDirF: tracing pool tallies") ) ;
                         etherC& etRock = etherC::etRockIF( tinP ) ;
 
-                        if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosCreateDirF / ERROR_NOT_ENOUGH_MEMORY FAIL: [postShorter,brcQuery]:    ")+T(postShorter)+T("    ")+TF2(tinP.brcQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::
+                        if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosCreateDirF / ERROR_NOT_ENOUGH_MEMORY FAIL: [postShorter,brcQuery]:    ")+T(postShorter)+T("    ")+TF2(((tinNormalS&)tinP).brcQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::
                     {
                     case ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY :
                     }
                         break ;
-                        if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosCreateDirF / ERROR_LOGON_FAILURE: [postShorter]:    ")+T(postShorter) ) ; //U::
+                        if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosCreateDirF / ERROR_LOGON_FAILURE: [postShorter]:    ")+T(postShorter) ) ; //U::
                     {
                     case ifcIDiMPOTENCEbASEeRRORcODE_LOGONfAILURE :
                     }
                         break ;
-                        //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosCreateDirF / EXISTED: [postShorter]:    ")+T(postShorter) ) ; //U::
+                        //if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosCreateDirF / EXISTED: [postShorter]:    ")+T(postShorter) ) ; //U::
                         idImpotence = 0 ;
                         bExisted = 1 ;
                     {
@@ -62,7 +62,7 @@
                         dosFindFileOrDirF( tinP , pInfoFile , handle , postShorter ) ; ___( pInfoFile ) ;
                         handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                         ZE( infoFileS* , pInfoFile ) ;
-                        //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosCreateDirF / ACCESS DENIED: [postShorter]:    ")+T(postShorter) ) ;
+                        //if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosCreateDirF / ACCESS DENIED: [postShorter]:    ")+T(postShorter) ) ;
                     {
                     case ifcIDiMPOTENCEbASEeRRORcODE_WRITEpROTECT :
                     case ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdENIED :
@@ -80,11 +80,11 @@
                     SECURITYaTTRIBUTE_saUNRESTRICTED( 0 ) ;
                 {
             #elif defined( __NT__ )
-                rc = tinP.brcRaw ;
+                rc = ((tinNormalS&)tinP).brcRaw ;
                 BOS( WHATsfw , BOSfAIL , DosCreateDir( postShorter , 0 ) )
             #ifdef __OS2__
 
-            //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("dosCreateDirF: [postShorter]:    ")+T(postShorter) ) ; //U::
+            //if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("dosCreateDirF: [postShorter]:    ")+T(postShorter) ) ; //U::
 
             postShorter[ costP - 1 ] = 0 ;
             c_memcpyIF( tinP , postShorter , postP , costP - 1 ) ;
@@ -123,7 +123,7 @@
         {
         else if( idComputer == IDcOMPUTER_IPDOSmASTERcRAFTWORK )                    //A:ASSUME: THE CRAFTWORK COMPUTER USES DRIVE D FOR ALL HOMES
         if( POOP ) POOPRqUIET
-        countT idComputer = tinP.pEtScratch->diskIdF( tinP , T("///c") ) ;
+        countT idComputer = ((tinNormalS&)tinP).pEtScratch->diskIdF( tinP , T("///c") ) ;
         SCOOPS
     {
     IFsCRATCH

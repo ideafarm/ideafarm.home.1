@@ -130,7 +130,7 @@ DONE( tmAcceptF )
             countT idpMax = - 1             ; // IF I BIND TO A PORT VALUE THAT IS TOO HIGH THEN I WON'T BE FOUND BY A PEER'S SCAN OF MY HOST
             countT idpMin = ifcIDpORT_nodeC ;
 
-            sockListen.etherF( tinP , *tinP.pEtScratch ) ;
+            sockListen.etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
             SCOOPS
         {
         IFsCRATCH
@@ -203,7 +203,7 @@ DONE( tmWorkerF )
                             putNegAM( finger , FINGERnEG_nodeC ) ;
                             ZE( countT , finger ) ;
 
-                            soulC soulo( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                            soulC soulo( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
                         {
                         case ifcIDcMDnODE_PING :
                         }
@@ -242,9 +242,9 @@ DONE( tmWorkerF )
             if( POOP )
 
             psoaP->readF( tinP , souli ) ;
-            soulC souli( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            soulC souli( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
-            psoaP->etherF( tinP , *tinP.pEtScratch ) ;
+            psoaP->etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
 
             SCOOPS
         {
@@ -469,7 +469,7 @@ DONE( tmRefreshListF )
                                     if( POOP )
 
                                     sockScan.readF( tinP , souli ) ;
-                                    soulC souli( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                                    soulC souli( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ;
                                 {
                                 else
                                 }
@@ -506,7 +506,7 @@ DONE( tmRefreshListF )
                             if( POOP )
 
                             sockScan.connectF( tinP , idpTry , portHe , 1 , TUCK >> 4 ) ; //U:: LONGER TIMEOUT FOR GLOBAL TREE
-                            sockScan.etherF( tinP , *tinP.pEtScratch ) ;
+                            sockScan.etherF( tinP , *((tinNormalS&)tinP).pEtScratch ) ;
                             SCOOPS
                         {
                         IFsCRATCH

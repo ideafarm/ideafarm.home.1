@@ -134,11 +134,11 @@ TODO
             {
             if( POOP )
 
-            tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , T(ifFileNameC(tinP,*tinP.pEtScratch,postNameP)) , 1 ) ; ___( posti ) ;
+            ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , posti , costi , T(ifFileNameC(tinP,*((tinNormalS&)tinP).pEtScratch,postNameP)) , 1 ) ; ___( posti ) ;
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
 
-            etherC& etThread = *tinP.pEther ;
+            etherC& etThread = *((tinNormalS&)tinP).pEther ;
         {
         else if( strstr( postNameP , ".meta.currentname" ) )
         }
@@ -146,7 +146,7 @@ TODO
         if( bDir )
     
         boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-        countT costLike = tinP.brcRaw ;
+        countT costLike = ((tinNormalS&)tinP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
         CONoUTrAW( "." ) ;
     {

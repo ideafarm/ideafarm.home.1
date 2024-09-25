@@ -11,9 +11,9 @@
     ctSuffixF( tinP , (countT)&hDrawWindow , pPaperToBackCBFP , cPaperToBackArgP ) ;
 
     etherC::ether_pBatWindowDeletionI_F( tinP )->ungrabF( tinP ) ;
-    if( !tinP.pag1->_windowOldC_.pRoot ) tinP.pag1->_windowOldC_.pRoot = this ; //NEEDED BY paperOldC PENDING REDESIGN OF SERIALIZATION FOR CLASSES RELATED TO paperOldC
+    if( !((tinNormalS&)tinP).pag1->_windowOldC_.pRoot ) ((tinNormalS&)tinP).pag1->_windowOldC_.pRoot = this ; //NEEDED BY paperOldC PENDING REDESIGN OF SERIALIZATION FOR CLASSES RELATED TO paperOldC
     etherC::ether_pBatWindowDeletionI_F( tinP )->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    //U::MOVE THIS TO LATH THING DONE WHEN paperOldC NO LONGER NEEDS tinP.pag1->_windowOldC_.pRoot
+    //U::MOVE THIS TO LATH THING DONE WHEN paperOldC NO LONGER NEEDS ((tinNormalS&)tinP).pag1->_windowOldC_.pRoot
     
     ((thirdC&)ether).winOpenDrawingHandleF( tinP , hDrawWindow , hWindow ) ;
 
@@ -48,12 +48,12 @@
         ZE( count8S* , pc8a ) ;
     {
     else if( pWindowP )
-    if( tinP.monitor.idThread == thirdC::third_idThreadWindowsIF( tinP ) ) ((thirdC&)ether).winCreateWindowF( tinP , pWindowP ? *pWindowP : handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) , hWindow , MAINwINDOWcLASSnAME , MAINwINDOWcLASSnAME , pWindowP ? ( bRootP ? idtWIN_ROOT : idtWIN_KID ) : idtWIN_ROOT , idColP , idRowP , cColP , cRowP , cColClientP , cRowClientP , thirdC::third_hWindowingClientIF( tinP ) , bNotVisibleP , cTriesP ) ;
+    if( ((tinNormalS&)tinP).monitor.idThread == thirdC::third_idThreadWindowsIF( tinP ) ) ((thirdC&)ether).winCreateWindowF( tinP , pWindowP ? *pWindowP : handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) , hWindow , MAINwINDOWcLASSnAME , MAINwINDOWcLASSnAME , pWindowP ? ( bRootP ? idtWIN_ROOT : idtWIN_KID ) : idtWIN_ROOT , idColP , idRowP , cColP , cRowP , cColClientP , cRowClientP , thirdC::third_hWindowingClientIF( tinP ) , bNotVisibleP , cTriesP ) ;
     //LOGrAWtID4( "windowOldC::ctF calling winCreateWindowF (cColP,cRowP): " , cColP , " " , cRowP ) ;
     
-    if( tinP.pag1->_windowOldC_.pstWindow ) *tinP.pag1->_windowOldC_.pstWindow << (countT)this ;
+    if( ((tinNormalS&)tinP).pag1->_windowOldC_.pstWindow ) *((tinNormalS&)tinP).pag1->_windowOldC_.pstWindow << (countT)this ;
     
-    if( !tinP.pag1->_windowOldC_.pstWindow ) { tinP.pag1->_windowOldC_.pstWindow = new( 0 , tinP , LF ) stackC( tinP , ether , TAG( TAGiDnULL ) ) ; ___( tinP.pag1->_windowOldC_.pstWindow ) ; }
+    if( !((tinNormalS&)tinP).pag1->_windowOldC_.pstWindow ) { ((tinNormalS&)tinP).pag1->_windowOldC_.pstWindow = new( 0 , tinP , LF ) stackC( tinP , ether , TAG( TAGiDnULL ) ) ; ___( ((tinNormalS&)tinP).pag1->_windowOldC_.pstWindow ) ; }
     
     }
         }
@@ -258,7 +258,7 @@
 
      //NOT SERIALIZED BECAUSE CT/DT FUNCTION
 
-    tinP.pEther->traceF( tinP , T("windowOldC::ctF") ) ; //U:: TO FIND A BUG
+    ((tinNormalS&)tinP).pEther->traceF( tinP , T("windowOldC::ctF") ) ; //U:: TO FIND A BUG
 
     _IO_
 

@@ -25,9 +25,9 @@ mIdRowOsOrigin( 0.0 ) ,
 mIdColOsOrigin( 0.0 ) ,
 mIdRowFrameInDad( idRowP ) ,
 mIdColFrameInDad( idColP ) ,
-mIdRowInDad( idRowP + tinP.pag1->_thirdC_.mRowsAdjForWinFrame ) ,
-mIdColInDad( idColP + tinP.pag1->_thirdC_.mColsAdjForWinFrame ) ,
-idWindow( ++ tinP.pag1->_windowOldC_.idWindowLath ) ,
+mIdRowInDad( idRowP + ((tinNormalS&)tinP).pag1->_thirdC_.mRowsAdjForWinFrame ) ,
+mIdColInDad( idColP + ((tinNormalS&)tinP).pag1->_thirdC_.mColsAdjForWinFrame ) ,
+idWindow( ++ ((tinNormalS&)tinP).pag1->_windowOldC_.idWindowLath ) ,
 hWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ,
 bDoomed( 0 ) ,
 cReferences( 0 ) ,
@@ -36,7 +36,7 @@ backOldC( tinP , etherP , cPapersP ) ,
 
 /**/
 */
- tinP.pag1->_windowOldC_.pRoot will be set to its address
+ ((tinNormalS&)tinP).pag1->_windowOldC_.pRoot will be set to its address
 the first windowOldC object constructed must be the root output window
  it will be serviced by thread 1
 a windowOldC object can be constructed on any thread

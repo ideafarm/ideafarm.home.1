@@ -18,11 +18,11 @@
             //    OStEXTC(  ostoSay , save , '0' ) ;
             //    OStEXT(   ostoSay , TUCK >> 2 ) ;
             //{
-            //if( tinP.pc Utility[ 0 ] )
+            //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
 
-            hMap.osF( ifcIDtYPEhANDLE_FILEmAPPING , oshMap , 0 , tinP.brcRaw ) ;
+            hMap.osF( ifcIDtYPEhANDLE_FILEmAPPING , oshMap , 0 , ((tinNormalS&)tinP).brcRaw ) ;
 
-            countT save = tinP.brcRaw ;
+            countT save = ((tinNormalS&)tinP).brcRaw ;
         {
         else
         }
@@ -47,7 +47,7 @@
             ? FILE_MAP_ALL_ACCESS
         const flagsT osf2 = F(flagsCt) & flFILEwINDOW_WRITE
 
-        countT oshMap = tinP.brcRaw ;
+        countT oshMap = ((tinNormalS&)tinP).brcRaw ;
     {
     if( !POOP )
 

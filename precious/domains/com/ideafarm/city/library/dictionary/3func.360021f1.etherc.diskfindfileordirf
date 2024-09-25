@@ -62,7 +62,7 @@
                 }
                     }
                         if( POOP ) { POOPRqUIET ; }
-                        tinP.pEtScratch->diskFindFileOrDirF( tinP , psttA , handle , psttPath , pPatternP ) ; ___( psttA ) ;
+                        ((tinNormalS&)tinP).pEtScratch->diskFindFileOrDirF( tinP , psttA , handle , psttPath , pPatternP ) ; ___( psttA ) ;
                         SCOOPS
                     {
                     IFsCRATCH
@@ -71,7 +71,7 @@
                         break ;
                         if( ~handle ) handle.closeIfF() ;
                     {
-                    if( ( tinP.pcQuit && *tinP.pcQuit ) || ( cMaxP && !cRem ) )
+                    if( ( ((tinNormalS&)tinP).pcQuit && *((tinNormalS&)tinP).pcQuit ) || ( cMaxP && !cRem ) )
 
                     else delF( tinP , psttA ) ;
                     }
@@ -103,7 +103,7 @@
                 }
                     }
                         POOPRqUIET ;
-                        //if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[POOP,psttDisk]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(psttDisk) ) ;
+                        //if( ((tinNormalS&)tinP).pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[POOP,psttDisk]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(psttDisk) ) ;
 
                         }
                             }
@@ -122,7 +122,7 @@
                         switch( POOP )
                     {
                     if( POOP )
-                    tinP.pEtScratch->diskFindFileOrDirF( tinP , psttA , handle , psttPath , pPatternP ) ; ___( psttA ) ;
+                    ((tinNormalS&)tinP).pEtScratch->diskFindFileOrDirF( tinP , psttA , handle , psttPath , pPatternP ) ; ___( psttA ) ;
                     SCOOPS
                 {
                 IFsCRATCH
@@ -138,7 +138,7 @@
                 idImpotence &= 0x00ffffff ; //A:ASSUME: countT IS 02 BITS
 
                 }
-                    if( ( tinP.pcQuit && *tinP.pcQuit ) || ( cMaxP && !cRem ) ) break ;
+                    if( ( ((tinNormalS&)tinP).pcQuit && *((tinNormalS&)tinP).pcQuit ) || ( cMaxP && !cRem ) ) break ;
                 
                     }
                         DEL( pInfoDisk ) ;
@@ -155,7 +155,7 @@
                             }
                                 }
                                     POOPRqUIET ;
-                                    //if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[POOP,psttDisk]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(psttDisk) ) ;
+                                    //if( ((tinNormalS&)tinP).pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[POOP,psttDisk]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(psttDisk) ) ;
 
                                     }
                                         }
@@ -175,7 +175,7 @@
                                     switch( POOP )
                                 {
                                 if( POOP )
-                                cFoundHere = tinP.pEtScratch->diskFindFileOrDirF( tinP , pstt2Found , psttPath2 , pPatternP , flDISKfIND_null , pSoulP , pGrabP , csttExtraP , cRem ) ; ___( pstt2Found ) ;
+                                cFoundHere = ((tinNormalS&)tinP).pEtScratch->diskFindFileOrDirF( tinP , pstt2Found , psttPath2 , pPatternP , flDISKfIND_null , pSoulP , pGrabP , csttExtraP , cRem ) ; ___( pstt2Found ) ;
                                 SCOOPS
                             {
                             IFsCRATCH
@@ -199,7 +199,7 @@
                     }
                         }
                             POOPRqUIET ;
-                            //if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[POOP,psttDisk]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(psttDisk) ) ;
+                            //if( ((tinNormalS&)tinP).pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("[POOP,psttDisk]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(psttDisk) ) ;
 
                             }
                                 }
@@ -228,12 +228,12 @@
                             switch( POOP )
                         {
                         if( POOP )
-                        tinP.pEtScratch->diskInfoF( tinP , pInfoDisk , psttDisk , 1 ) ; ___( pInfoDisk ) ; //U::NOT IN HERE
+                        ((tinNormalS&)tinP).pEtScratch->diskInfoF( tinP , pInfoDisk , psttDisk , 1 ) ; ___( pInfoDisk ) ; //U::NOT IN HERE
                         SCOOPS
                     {
                     IFsCRATCH
                     ZE( infoDiskS* , pInfoDisk ) ;
-                    //if( tinP.pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("looking for [psttDisk]:    ")+T(psttDisk) ) ;
+                    //if( ((tinNormalS&)tinP).pEther ) etherC::etRockIF( tinP ).traceF( tinP , T("looking for [psttDisk]:    ")+T(psttDisk) ) ;
 
                     osTextT* postDisk = tDisk ;
                     TN( tDisk , psttDisk ) ;
@@ -322,7 +322,7 @@
 arguments
 i will not 
  if i quit early for this reason, my results are useable but incomplete
-i will silently quit early if *tinP.pcQuit
+i will silently quit early if *((tinNormalS&)tinP).pcQuit
 if a wildcard ("*" or "?") is specified for the disk, remote drives are excluded from the search
 evaluates to the number of files found
  simplest

@@ -18,10 +18,10 @@
             {
             else
             }
-                if( tinP.bosFail && tinP.brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
+                if( ((tinNormalS&)tinP).bosFail && ((tinNormalS&)tinP).brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
                 BOS( WHATsfr , BOSoK , CreateDirectory( info.postTo , 0 ) ) ;
                 info.postTo[ costTo - 1 ] = 0 ;
-                countT costTo = tinP.brcRaw ;
+                countT costTo = ((tinNormalS&)tinP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , strlen( info.postTo ) )
             {
             if( bDir )
@@ -30,7 +30,7 @@
             //CONoUTrAW( info.postTo ) ;
         
             boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-            countT costLike = tinP.brcRaw ;
+            countT costLike = ((tinNormalS&)tinP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
 
             diskMakePathIfF( tinP , info.postTo ) ;

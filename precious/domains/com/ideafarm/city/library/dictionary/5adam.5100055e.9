@@ -8,7 +8,7 @@
 
 
 }
-    if( tinP.fingerprint && etherP ) ;
+    if( ((tinNormalS&)tinP).fingerprint && etherP ) ;
 
     }
         //}
@@ -132,7 +132,7 @@ boolT vtEyeCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , c
                 }
                     paramP.pptcView[ off ] = new( 0 , tinP , pbn , sizeof( tcButtonC ) ) tcButtonC( tinP , T("pptcView.")+TF1(1+off) , buViewCBF , (countT)pcArg , flTCfEATURE_FRAME , 0 , 0 , 1 , rgbFrame ) ;
                     //flagsT flFeatureTab = !scRelCol && scRelRow == 1 ? flTCfEATURE_TABpARTICIPANT : flTCfEATURE_null ;
-                    byteT* pbn = (byteT*)tinP.pag1->pPoolAdamTemp->newF( tinP , LF , sizeof( vTextC ) ) ; ___( pbn ) ;
+                    byteT* pbn = (byteT*)((tinNormalS&)tinP).pag1->pPoolAdamTemp->newF( tinP , LF , sizeof( vTextC ) ) ; ___( pbn ) ;
                     countT rgbFrame = !scRelCol && ( !scRelRow || scRelRow == 1 ) ? ifcRGB_R4|ifcRGB_G4 : ifcRGB_BROWN ;
         
                     pcArg[ 2 ] = scRelCol ;
@@ -173,7 +173,7 @@ boolT vtEyeCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , c
 boolT vtViewCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamStateOldS& sadamStateP )
 
 }
-    if( tinP.fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP && sadamStateP.ssc.idAdam ) ;
+    if( ((tinNormalS&)tinP).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP && sadamStateP.ssc.idAdam ) ;
 
     }
         }
@@ -205,7 +205,7 @@ boolT vtViewCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , 
 voidT buViewCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP )
 
 }
-    if( tinP.fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP && sadamStateP.ssc.idAdam ) ;
+    if( ((tinNormalS&)tinP).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP && sadamStateP.ssc.idAdam ) ;
 
     }
         }

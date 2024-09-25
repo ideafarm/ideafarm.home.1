@@ -11,21 +11,21 @@
     return selRC ;
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
-    tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                            \
+    ((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                            \
     }
         }
             POPtINaRGS
             listC::walkIF( tinP , pczMe ) ;
-            tinP.ta.pushed.u.listWalk.util.pcP[ 1 ]      = (countT)&selectP ;
-            tinP.ta.pushed.u.listWalk.util.pcP[ 0 ]      = selRC.idName ;
-            tinP.ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
-            tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectAndCBF ;
+            ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ]      = (countT)&selectP ;
+            ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = selRC.idName ;
+            ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
+            ((tinNormalS&)tinP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectAndCBF ;
             PUSHtINaRGS
         {
     
         puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
     {
-    tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                    \
+    ((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                    \
 
     selectC selRC( tinP ) ;
 
@@ -34,7 +34,7 @@
 
     }
         if( POOP ) return *this ;
-        __( tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+        __( ((tinNormalS&)tinP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
         if( POOP ) return *this ;
     {
     IFbEcAREFUL

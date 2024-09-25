@@ -14,10 +14,10 @@
             break ;
             ether.strFromTimeF( tinP , psttMe , timeD1 , timeD2 ) ; ___( psttMe ) ;
 
-            tinP.timeTraceLath = now ;
-            ether.osTimeSubtractF( tinP , timeD1 , timeD2 , tinP.timeTraceLath.time1 , tinP.timeTraceLath.time2 ) ;
+            ((tinNormalS&)tinP).timeTraceLath = now ;
+            ether.osTimeSubtractF( tinP , timeD1 , timeD2 , ((tinNormalS&)tinP).timeTraceLath.time1 , ((tinNormalS&)tinP).timeTraceLath.time2 ) ;
 
-            if( idP == ifcIDtEXTgEN_TIMEnOWdELTArESET ) tinP.timeTraceWoth = tinP.timeTraceLath = now ;
+            if( idP == ifcIDtEXTgEN_TIMEnOWdELTArESET ) ((tinNormalS&)tinP).timeTraceWoth = ((tinNormalS&)tinP).timeTraceLath = now ;
 
             timeS now( timeD1 , timeD2 ) ;
             ether.osTimeNowF( tinP , timeD1 , timeD2 ) ;

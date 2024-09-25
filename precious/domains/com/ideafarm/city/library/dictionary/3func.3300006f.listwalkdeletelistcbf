@@ -30,15 +30,15 @@
     (
     if
 
-    flagsT& flagsWalkRC = *(flagsT*)tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
-    flagsT flagsP       = tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-    countT idName       = tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-    listingC* pListing  = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    flagsT& flagsWalkRC = *(flagsT*)((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 2 ] ;
+    flagsT flagsP       = ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+    countT idName       = ((tinNormalS&)tinP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+    listingC* pListing  = ((tinNormalS&)tinP).ta.pushed.u.listWalk.cbf.pListingP ;
     flagsT flagsRC      = flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
 /*1*/flagsT listWalkDeleteListCBF( tinNormalS& tinP )/*1*/
 

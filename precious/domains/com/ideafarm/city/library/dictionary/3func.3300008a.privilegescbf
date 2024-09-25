@@ -82,16 +82,16 @@
                 }
                     }
                         }
-                            if( !tinP.pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivelege_viewServerReports.psttLowerF( tinP ) ) && !tinP.pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_VIEWsERVERrEPORTS   ) ;
+                            if( !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivelege_viewServerReports.psttLowerF( tinP ) ) && !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_VIEWsERVERrEPORTS   ) ;
                         {
                         if( cPrivilegeLevel >= 2 ) //WORKAROUND TO CLOSE SECURITY HOLE NOW THAT ANYWO CAN GET A LOGIN ACCOUNT
 
-                        //else if( !tinP.pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivilege_hideAdLinks.psttLowerF( tinP )       ) && !tinP.pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_HIDEaDlINKS         ) ;
-                             if( !tinP.pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivilege_sendReceiveEmail.psttLowerF( tinP )  ) && !tinP.pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_SENDaNDrECEIVEeMAIL ) ;
+                        //else if( !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivilege_hideAdLinks.psttLowerF( tinP )       ) && !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_HIDEaDlINKS         ) ;
+                             if( !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivilege_sendReceiveEmail.psttLowerF( tinP )  ) && !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_SENDaNDrECEIVEeMAIL ) ;
                     {
                     else if( cPrivilegeLevel )
-                    //else if( !tinP.pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivilege_hideImageAds.psttLowerF( tinP )      ) && !tinP.pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_HIDEiMAGEaDS      ) ;
-                         if( !tinP.pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivilege_viewUntestedPages.psttLowerF( tinP ) ) && !tinP.pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_VIEWuNTESTEDpAGES ) ;
+                    //else if( !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivilege_hideImageAds.psttLowerF( tinP )      ) && !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_HIDEiMAGEaDS      ) ;
+                         if( !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , psttLeverKVP , tKeyPrivilege_viewUntestedPages.psttLowerF( tinP ) ) && !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , pzsttv , tValue_on ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_VIEWuNTESTEDpAGES ) ;
 
                     //LOGrAW( tSay ) ;
                     //TN( tSay , "" ) ; tSay = T("\"")+T(psttLeverKVP)+T("\":\"")+T(pzsttv)+T("\"\r\n") ;
@@ -122,7 +122,7 @@
                             {
                             else if( posti )
                             if( POOP ) { POOPR ; }
-                            tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , tDirAccount+T("privileges.txt") , 1 ) ; ___( posti ) ;
+                            ((tinNormalS&)tinP).pEtScratch->boxGetShadowF( tinP , posti , costi , tDirAccount+T("privileges.txt") , 1 ) ; ___( posti ) ;
                             ZE( countT   , costi ) ;
                             ZE( osTextT* , posti ) ;
 
@@ -130,7 +130,7 @@
                         {
                         if( cPrivilegeLevel )
 
-                        cPrivilegeLevel = tinP.pEtScratch->diskFileExistsF( tinP , tDirAccount ) && tinP.pEtScratch->diskFileExistsF( tinP , tFilePassword ) ; //!! ELIMINATED FROM WOTH TERM BECAUSE REDUNDANT (&& RETURNS 0 OR 1)
+                        cPrivilegeLevel = ((tinNormalS&)tinP).pEtScratch->diskFileExistsF( tinP , tDirAccount ) && ((tinNormalS&)tinP).pEtScratch->diskFileExistsF( tinP , tFilePassword ) ; //!! ELIMINATED FROM WOTH TERM BECAUSE REDUNDANT (&& RETURNS 0 OR 1)
 
                         TN( tFilePassword , "" ) ; tFilePassword = tDirAccount+tShortFilePassword+T(pzsttvPassword) ;
                         TN( tShortFilePassword   , "password." ) ;
@@ -148,8 +148,8 @@
                 const countT idLeverPassword = swKVP.idSlotOfLeverF( tinP , (countT)tKeyPassword.psttLowerF( tinP ) ) ;
                 const countT idLeverUser     = swKVP.idSlotOfLeverF( tinP , (countT)tKeyUser.psttLowerF( tinP )     ) ;
             {
-            else if( !tinP.pEtScratch->strCompareF( tinP , pzsttvAction , tAction_setMyPrivileges ) )
-            if( !tinP.pEtScratch->strCompareF( tinP , pzsttvAction , tAction_clearMyPrivileges ) ) sessionsP.registerConnectionF( tinP , nnPeerP , 0 , 0 , 1 ) ;
+            else if( !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , pzsttvAction , tAction_setMyPrivileges ) )
+            if( !((tinNormalS&)tinP).pEtScratch->strCompareF( tinP , pzsttvAction , tAction_clearMyPrivileges ) ) sessionsP.registerConnectionF( tinP , nnPeerP , 0 , 0 , 1 ) ;
 
             }
                 session.privilegesF( tinP , flSESSIONpRIVILEGE_null ) ;

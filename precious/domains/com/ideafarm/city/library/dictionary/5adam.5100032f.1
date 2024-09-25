@@ -50,13 +50,13 @@ DONE( tmF )
 
     baton.ungrabF( tinP ) ;
 
-    for( countT idp = 1 ; idp <= cPlates ; idp ++ ) swsMe.plateF( tinP , idp , 1 ) |= tinP.monitor.idThread << 0x10 ;
+    for( countT idp = 1 ; idp <= cPlates ; idp ++ ) swsMe.plateF( tinP , idp , 1 ) |= ((tinNormalS&)tinP).monitor.idThread << 0x10 ;
     countT cPlates = swsMe.cPlatesF( tinP , 1 ) ;
 
-    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinP , ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinP , ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinP , ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinP , ( ((tinNormalS&)tinP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
 
     baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
 

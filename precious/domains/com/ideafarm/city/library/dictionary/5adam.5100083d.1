@@ -130,9 +130,9 @@ DONE( tmZapperF )
                     if( !bDone )
 
                     //etThread.traceF( tinP , T("called  diskFindFileOrDirF") ) ;
-                    //tinP.pc Utility[ 0 ] -- ;
+                    //((tinNormalS&)tinP).pc Utility[ 0 ] -- ;
                     //etThread.diskFindFileOrDirF( tinP , pInfoFile , hFindFile , tPath , &pat ) ; ___( pInfoFile ) ;
-                    //tinP.pc Utility[ 0 ] ++ ;
+                    //((tinNormalS&)tinP).pc Utility[ 0 ] ++ ;
 
                     }
                         }
@@ -201,7 +201,7 @@ DONE( tmWalkerF )
             POOPRqUIET
         {
         if( POOP )
-        tinP.pEtScratch->diskWalkF( tinP , cDirs , cFiles , tRootFolder , ether , flDISKwALK_null , walkCBF , pcArgP , 0 , 0 ) ;
+        ((tinNormalS&)tinP).pEtScratch->diskWalkF( tinP , cDirs , cFiles , tRootFolder , ether , flDISKwALK_null , walkCBF , pcArgP , 0 , 0 ) ;
         SCOOPS
     {
     IFsCRATCH    
@@ -344,7 +344,7 @@ TASK( tmWalkerF )
 
         stackC& stJobP   = *(stackC*)pcArgP[ 0 ] ;
         etherC& ether    = etherC::etPrimeIF() ;
-        etherC& etThread = *tinP.pEther ;
+        etherC& etThread = *((tinNormalS&)tinP).pEther ;
 
         _IO_
     {

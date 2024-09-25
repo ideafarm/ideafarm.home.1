@@ -9,21 +9,21 @@
 
 }
     }
-        tinP.pEther->delF( tinP , psttr ) ;
+        ((tinNormalS&)tinP).pEther->delF( tinP , psttr ) ;
         etherC::etRockIF( tinP ).traceF( tinP , psttr ) ;
 
-        tinP.pEther->strFuseF( tinP , psttr , T("    \"")+T(postVolumeName)+T("\"") ) ;
-        tinP.pEther->strFuseF( tinP , psttr , TF3(flags                     ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
-        tinP.pEther->strFuseF( tinP , psttr , TF3(cUnusedUnits              ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
-        tinP.pEther->strFuseF( tinP , psttr , TF3(cAllocationUnits          ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
-        tinP.pEther->strFuseF( tinP , psttr , TF3(cSectorsPerAllocationUnit ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
-        tinP.pEther->strFuseF( tinP , psttr , TF3(cBytesPerSector           ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
-        tinP.pEther->strFuseF( tinP , psttr , TF3(idFileSystem              ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
-        tinP.pEther->strFuseF( tinP , psttr , TF3(idVolume                  ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
-        tinP.pEther->strMakeF( tinP , LF , psttr , T("infoDisk1S [idVolume,idFileSystem,cBytesPerSector,cSectorsPerAllocationUnit,cAllocationUnits,cUnusedUnits,flags,postVolumeName]: ") , TUCK << 2 ) ; ___( psttr ) ;
+        ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttr , T("    \"")+T(postVolumeName)+T("\"") ) ;
+        ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttr , TF3(flags                     ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+        ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttr , TF3(cUnusedUnits              ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+        ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttr , TF3(cAllocationUnits          ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+        ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttr , TF3(cSectorsPerAllocationUnit ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+        ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttr , TF3(cBytesPerSector           ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+        ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttr , TF3(idFileSystem              ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+        ((tinNormalS&)tinP).pEther->strFuseF( tinP , psttr , TF3(idVolume                  ,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+        ((tinNormalS&)tinP).pEther->strMakeF( tinP , LF , psttr , T("infoDisk1S [idVolume,idFileSystem,cBytesPerSector,cSectorsPerAllocationUnit,cAllocationUnits,cUnusedUnits,flags,postVolumeName]: ") , TUCK << 2 ) ; ___( psttr ) ;
         ZE( strokeS* , psttr ) ;
     {
-    if( tinP.pEther )
+    if( ((tinNormalS&)tinP).pEther )
 {
 /*1*/voidT infoDisk1S::traceF( tinNormalS& tinP ) const/*1*/
 

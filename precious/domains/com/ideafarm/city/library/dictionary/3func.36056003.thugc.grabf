@@ -13,7 +13,7 @@
 
     thirdC::dosPriorityIF( tinP , idDesireSave ) ;
 
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinP).cYield = 0 ;
     }
         }
             ++ s ; thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
@@ -38,7 +38,7 @@
     if( osTidMe == osTidGrabber ) BLAMMO ; //RECURSIVE GRAB
     countT osTidMe = osTidIF() ;
 
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinP).cYield = 0 ;
     thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
     const countT idDesireSave = thirdC::dosPriorityIF( tinP ) ;
 

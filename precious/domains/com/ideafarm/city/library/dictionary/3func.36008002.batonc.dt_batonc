@@ -17,7 +17,7 @@
         DEL( pGrabA ) ; //U::DEBUG: TRY THIS TO SEE IF IT IS EVER ACTIVE
         POPUP( "U:: DELETING pGrabA in root poolOld" )
     {
-    if( tinP.pag1->pPoolHomeTemp && (*tinP.pag1->pPoolHomeTemp)[ (byteT*)pGrabA ] )
+    if( ((tinNormalS&)tinP).pag1->pPoolHomeTemp && (*((tinNormalS&)tinP).pag1->pPoolHomeTemp)[ (byteT*)pGrabA ] )
     
     }
         }
@@ -52,8 +52,8 @@
 
             }
                 BLAMMOcT ; //IT IS BAD STYLE TO RELY ON THIS LOOP, WHICH CAN BE ENABLED IF NEEDED
-                //tinP.pc Utility[ 2 ] = flagsCt ;
-                //tinP.pc Utility[ 1 ] = flags ;
+                //((tinNormalS&)tinP).pc Utility[ 2 ] = flagsCt ;
+                //((tinNormalS&)tinP).pc Utility[ 1 ] = flags ;
             {
             //if( etherC::ifc_idHomeIdisk_IF() < TUCK )
 

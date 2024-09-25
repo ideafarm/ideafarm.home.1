@@ -20,19 +20,19 @@
     countT cFlavors = sw_pMarketX.cFlavorsF( tinP ) ;
     sw_pMarketX.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
-    tinP.pag4->_adamC_grab.ungrabF( tinP ) ;
+    ((tinNormalS&)tinP).pag4->_adamC_grab.ungrabF( tinP ) ;
 
     }
         pac->pAdam = pAdam ;
         while( pac->pAdam != this ) pac = pac->pAdam ; //WILL BLAMMO READING 0 (OFFSET OF pAdam IN ME) IF I AM NOT LISTED
-        adamC* pac = tinP.pag1->_adamC_pAdam ;
+        adamC* pac = ((tinNormalS&)tinP).pag1->_adamC_pAdam ;
     {
     else
-    if( tinP.pag1->_adamC_pAdam == this ) tinP.pag1->_adamC_pAdam = pAdam ;
+    if( ((tinNormalS&)tinP).pag1->_adamC_pAdam == this ) ((tinNormalS&)tinP).pag1->_adamC_pAdam = pAdam ;
 
-    if( !tinP.pag1->_adamC_pAdam ) { BLAMMO ; }
+    if( !((tinNormalS&)tinP).pag1->_adamC_pAdam ) { BLAMMO ; }
 
-    tinP.pag4->_adamC_grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinP).pag4->_adamC_grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     TINSL
 {

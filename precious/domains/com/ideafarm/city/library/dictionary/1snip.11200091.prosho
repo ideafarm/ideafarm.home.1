@@ -17,17 +17,17 @@
     }                                                                                                           \
         if( cToDo ) thirdC::dosWriteStdOutIF( tinP , '.' ) ;                                                    \
         thirdC::dosWriteStdOutIF( tinP , ostod ) ;                                                              \
-        OStEXTC( ostod , tinP.pIdProgressNest[ ( cNest -- ) & OFFsLOTtINnESTmAX ] , 0 )                         \
+        OStEXTC( ostod , ((tinNormalS&)tinP).pIdProgressNest[ ( cNest -- ) & OFFsLOTtINnESTmAX ] , 0 )                         \
         OStEXT( ostod , 0x9 )                                                                                   \
     {                                                                                                           \
     while( cToDo -- )                                                                                           \
     thirdC::dosWriteStdOutIF( tinP , "\r" BLANK79 "\r" ) ;                                                      \
                                                                                                                 \
     countT cToDo = 1 + ( cNest <= 7 ? cNest : 7 ) ;                                                             \
-    countT cNest = tinP.monitor.cInNest ;                                                                                 \
+    countT cNest = ((tinNormalS&)tinP).monitor.cInNest ;                                                                                 \
     ZE( countT , ecnu ) ;                                                                                     \
 {                                                                                                               \
-if( F(tinP.flagsThreadMode2) & flTHREADmODE2_SHOWpROGRESS )                                                     \
+if( F(((tinNormalS&)tinP).flagsThreadMode2) & flTHREADmODE2_SHOWpROGRESS )                                                     \
                                                                                                                 \
 #define PROSHO                                                                                                  \
 

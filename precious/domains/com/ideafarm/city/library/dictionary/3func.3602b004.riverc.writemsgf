@@ -16,9 +16,9 @@
                 psOut->connectF( tinP , idPort , nicName ) ;
             {
             if( psOut )
-            psOut = new( 0 , tinP , LF ) socketC( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
+            psOut = new( 0 , tinP , LF ) socketC( tinP , *((tinNormalS&)tinP).pEtScratch , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
             }
-                ++ s ; tinP.pEtScratch->osSleepF( tinP , TOCK ) ;
+                ++ s ; ((tinNormalS&)tinP).pEtScratch->osSleepF( tinP , TOCK ) ;
                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
             {
             DEL( psOut ) ;

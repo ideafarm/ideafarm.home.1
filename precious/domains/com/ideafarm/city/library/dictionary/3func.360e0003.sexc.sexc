@@ -23,11 +23,11 @@
     }
         }
             dec02AM( pReg->cRefPoolReg ) ;
-            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " ungrabbed  " , offSexBit , "\r\n" ) ; }
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , ((tinNormalS&)tinP).monitor.idThread , " ungrabbed  " , offSexBit , "\r\n" ) ; }
             if( !btrAM( pReg->pbSexGrabbedBits , offSexBit ) ) { BLAMMO ; }
             if(  !bGrabBitSet ) { BLAMMO ; }
             boolT bGrabBitSet = !! ( pReg->pbSexGrabbedBits[ offSexByte ] & maskSexByte ) ;
-            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " ungrabbing " , offSexBit , "\r\n" ) ; }
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , ((tinNormalS&)tinP).monitor.idThread , " ungrabbing " , offSexBit , "\r\n" ) ; }
 
             POOPIE
         {
@@ -43,7 +43,7 @@
         //    OStEXTAK( ostoSay , "\r\n sexC - [postName]: \"" ) ;
         //    OStEXT(   ostoSay , TUCK << 2 ) ;
         //{
-        //if( tinP.pc Utility[ 0 ] )
+        //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
 
         if( !POOP ) flagsStatePrivate |= flSEXcsTATEpRIVATE_CONSTRUCTEDaOK ;
 
@@ -55,7 +55,7 @@
             thirdC::c_strcpyIF( tinP , info.postName , pzMetaHead->postName ) ;
             info.expSlots   = pzMetaHead->expSlots  ;
             info.expCbDrop  = pzMetaHead->expCbDrop ;
-            info.osPid      = tinP.osPid ;
+            info.osPid      = ((tinNormalS&)tinP).osPid ;
             tellInfoSysSexS info ;
             countT idTypeSay = ifcIDtYPEtELLsYS_SEXcT ;
         {
@@ -63,16 +63,16 @@
 
         }
                                              pSexLifoConstructing = 0 ;
-                tinP.pSexLifoConstructing  = pSexLifoConstructing     ;
-            if( tinP.pSexLifoConstructing != this                     ) { BLAMMO ; }
+                ((tinNormalS&)tinP).pSexLifoConstructing  = pSexLifoConstructing     ;
+            if( ((tinNormalS&)tinP).pSexLifoConstructing != this                     ) { BLAMMO ; }
 
         {
         if( pPoolContainsMe )
 
-        tinP.tlsDelF( LF , countTC() ) ;
-        tinP.tlsDelF( LF , countTC() ) ;
-        tinP.tlsDelF( LF , countTC() ) ;
-        tinP.tlsDelF( LF , countTC() ) ;
+        ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ;
+        ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ;
+        ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ;
+        ((tinNormalS&)tinP).tlsDelF( LF , countTC() ) ;
         //CS:CODEsYNC: 360e0003 360e0003
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -148,7 +148,7 @@
             //    OStEXTAK( ostoSay , " " ) ;
             //    OStEXTC(  ostoSay , bNested , ' ' ) ;
             //    OStEXTAK( ostoSay , " " ) ;
-            //    OStEXTC(  ostoSay , tinP.pag1->idAdam , ' ' ) ;
+            //    OStEXTC(  ostoSay , ((tinNormalS&)tinP).pag1->idAdam , ' ' ) ;
             //    OStEXTAK( ostoSay , "      sexC [idAdam,bNested,expCbDrop,expSlots,n/p,pbData,pbDataEnd,postName]: " ) ;
             //    OStEXT(   ostoSay , TUCK << 2 ) ;
             //{
@@ -283,7 +283,7 @@
                         if( !POOP )
 
                         ) ;
-                            bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*tinP.pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
+                            bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*((tinNormalS&)tinP).pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
                             cbaMeta ,
                             ) ,
                                     : (const handleC*)*(fileC*)pbFileMeta
@@ -292,21 +292,21 @@
                             (
                             ) ,
                                 )
-                                    tinP.pbF( 4 )
+                                    ((tinNormalS&)tinP).pbF( 4 )
                                     ) ,
                                         "."
                                         ) ,
-                                            tinP.pbF( 3 )
+                                            ((tinNormalS&)tinP).pbF( 3 )
                                             ) ,
                                                 "."
                                                 ) ,
-                                                    tinP.pbF( 2 )
+                                                    ((tinNormalS&)tinP).pbF( 2 )
                                                     ) ,
                                                         "."
                                                         ) ,
                                                             postNameP
                                                             ) ,
-                                                                tinP , tinP.pbF() , "sexC/meta/"
+                                                                tinP , ((tinNormalS&)tinP).pbF() , "sexC/meta/"
                                                             (
                                                             thirdC::c_strcpyIF
                                                             tinP ,
@@ -370,7 +370,7 @@
                                     //    OStEXT(   ostoSay , TUCK << 2 ) ;
                                     //{
                                     //else
-                                    //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbMeta from list [cbaMeta    ,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
+                                    //if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("sexC / obtained pbMeta from list [cbaMeta    ,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
                                     DELlIST( fieldEditParamOutC , pOut ) ;
                                     puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
 
@@ -430,13 +430,13 @@
                 )
                     //expCbDropP != expCbDropAvoid
                     //&&
-                    tinP.pag1->pPoolAdamTemp
+                    ((tinNormalS&)tinP).pag1->pPoolAdamTemp
                     &&
                     !bNested
                     &&
                     pPoolContainsMe
                     &&
-                    !( F(tinP.flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
+                    !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
                     &&
                     !( F(flagsCt              ) &       fliSEXc_NOsEXiNpOOL )
                     &&
@@ -468,7 +468,7 @@
                 if( !POOP )
 
                 ) ;
-                    bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*tinP.pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION && expCbDropP + expSlotsP <= 0x14 ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
+                    bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*((tinNormalS&)tinP).pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION && expCbDropP + expSlotsP <= 0x14 ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
                     cbaDataNapkin ,
                     ) ,
                             : (const handleC*)*(fileC*)pbFileData
@@ -476,21 +476,21 @@
                         !idStateSpaceP
                     (
                     ) ,
-                        tinP.pbF( 4 )
+                        ((tinNormalS&)tinP).pbF( 4 )
                         ) ,
                             "."
                             ) ,
-                                tinP.pbF( 3 )
+                                ((tinNormalS&)tinP).pbF( 3 )
                                 ) ,
                                     "."
                                     ) ,
-                                        tinP.pbF( 2 )
+                                        ((tinNormalS&)tinP).pbF( 2 )
                                         ) ,
                                             "."
                                             ) ,
                                                 postNameP
                                                 ) ,
-                                                    tinP , tinP.pbF() , "sexC/data/"
+                                                    tinP , ((tinNormalS&)tinP).pbF() , "sexC/data/"
                                                 (
                                                 thirdC::c_strcpyIF
                                                 tinP ,
@@ -564,7 +564,7 @@
                             //    OStEXT(   ostoSay , TUCK << 2 ) ;
                             //{
                             //else
-                            //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbData from list [cbaDataPool,pcRecord]:    ")+TF2(cbaDataPool,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
+                            //if( ((tinNormalS&)tinP).pEther ) ((tinNormalS&)tinP).pEther->traceF( tinP , T("sexC / obtained pbData from list [cbaDataPool,pcRecord]:    ")+TF2(cbaDataPool,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
                             DELlIST( fieldEditParamOutC , pOut ) ;
                             puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
 
@@ -626,19 +626,19 @@
             //    countT idIn = 1 + incv02AM( idInLath ) ;
             //    static countT idInLath ;
             //{
-            //if( tinP.pcUtility[ 0 ] )
+            //if( ((tinNormalS&)tinP).pcUtility[ 0 ] )
 
         {
         )
             //expCbDropP != expCbDropAvoid
             //&&
-            tinP.pag1->pPoolAdamTemp
+            ((tinNormalS&)tinP).pag1->pPoolAdamTemp
             &&
             !bNested
             &&
             pPoolContainsMe
             &&
-            !( F(tinP.flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
+            !( F(((tinNormalS&)tinP).flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
             &&
             !( F(flagsCt              ) &       fliSEXc_NOsEXiNpOOL )
             &&
@@ -664,10 +664,10 @@
 
         const boolT bReadOnly = !!( F(flagsCt) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ) ;
 
-        tinP.tlsNewF( LF , TUCK >> 1 ) ;
-        tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , idStateSpaceP ) ;
-        tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , expCbDropP ) ;
-        tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , expSlotsP ) ;
+        ((tinNormalS&)tinP).tlsNewF( LF , TUCK >> 1 ) ;
+        ((tinNormalS&)tinP).tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , ((tinNormalS&)tinP).pbF() , 0x10 , idStateSpaceP ) ;
+        ((tinNormalS&)tinP).tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , ((tinNormalS&)tinP).pbF() , 0x10 , expCbDropP ) ;
+        ((tinNormalS&)tinP).tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , ((tinNormalS&)tinP).pbF() , 0x10 , expSlotsP ) ;
         //CS:CODEsYNC: 360e0003 360e0003
 
         const countT pczListSex[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM1 , LISTnAMEsYS_HANDhOLD , LISTnAMEsYS_SEXc , BM_HIGH | expCbDropP , BM_HIGH | expSlotsP , 0 } ;
@@ -699,7 +699,7 @@
 
         }
             THREADmODE2rESTORE
-            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " grabbed  " , offSexBit , "\r\n" ) ; }
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , ((tinNormalS&)tinP).monitor.idThread , " grabbed  " , offSexBit , "\r\n" ) ; }
             }
                 }
                     ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
@@ -708,7 +708,7 @@
                 sleepC s( tinP , TAG( TAGiDnULL ) ) ;
             {
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " grabbing " , offSexBit , "\r\n" ) ; }
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , ((tinNormalS&)tinP).monitor.idThread , " grabbing " , offSexBit , "\r\n" ) ; }
             POOPIE
         {
         if( pReg )
@@ -749,8 +749,8 @@
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
-                                   tinP.pSexLifoConstructing = this ;
-            pSexLifoConstructing = tinP.pSexLifoConstructing ;
+                                   ((tinNormalS&)tinP).pSexLifoConstructing = this ;
+            pSexLifoConstructing = ((tinNormalS&)tinP).pSexLifoConstructing ;
 
             }
                 pSexc = pSexc->pSexLifoConstructing ;
@@ -761,7 +761,7 @@
                 if( pSexc == this )
             {
             while( pSexc )
-            sexC* pSexc = tinP.pSexLifoConstructing ;
+            sexC* pSexc = ((tinNormalS&)tinP).pSexLifoConstructing ;
         {
         if( pPoolContainsMe )                                                       // I AM MAINLY FOR USE WITHIN poolC ; BUT AN APPLICATION CAN CT ME (pPoolContainsMe MUST BE 0)
         ZE( boolT , bNested ) ;
@@ -875,7 +875,7 @@
     //    countT idIn = 1 + incv02AM( idInLath ) ;
     //    static countT idInLath ;
     //{
-    //if( tinP.pc Utility[ 0 ] )
+    //if( ((tinNormalS&)tinP).pc Utility[ 0 ] )
 
     //CONoUTrAW5( "\r\nsexC::sexC [exbCbDropP,expSlotsP]:    " , expCbDropP , "    " , expSlotsP , "\r\n" ) ;
 

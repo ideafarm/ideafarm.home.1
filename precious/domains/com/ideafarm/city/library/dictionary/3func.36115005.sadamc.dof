@@ -10,7 +10,7 @@
 }
     return bHandled ;
     paperOldC::ungrabIF( tinP ) ; //U::TO FIND A BUG
-    //tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    //((tinNormalS&)tinP).pag5->frPaper.grab.ungrabF( tinP ) ;
     //}
     //    LOGrAW( ostoSay ) ;
     //    OStEXTAK( ostoSay , " -----------------------------------------------------------------------------------------------------------------------\r\n" ) ;
@@ -18,12 +18,12 @@
     //    OStEXTAK( ostoSay , "/- [idIn]: " ) ;
     //    OStEXTA(  ostoSay , postIdType ) ;
     //    OStEXTAK( ostoSay , " | doF/" ) ;
-    //    OStEXTA(  ostoSay , tinP.postThreadName ) ;
+    //    OStEXTA(  ostoSay , ((tinNormalS&)tinP).postThreadName ) ;
     //    OStEXT(   ostoSay , TUCK << 2 ) ;
     //{
     //if( idTypeCallP != ifcIDtYPEsTROKEcALLbACK_ANIMATE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_MOUSE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABaRRIVING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABlEAVING )
 
-    //if( bGoItRender ) tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    //if( bGoItRender ) ((tinNormalS&)tinP).pag5->frPaper.grab.ungrabF( tinP ) ;
 
     }
         DELzOMBIE( pStrike ) ;
@@ -110,7 +110,7 @@
 
             //}
             //    LOGrAW( tSay ) ;
-            //    TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(tinP.postThreadName)+T(" TABaRRIVING (already owned so doing nada/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
+            //    TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(((tinNormalS&)tinP).postThreadName)+T(" TABaRRIVING (already owned so doing nada/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
             //    etherP.osTimeNowF( tinP , timeN1 , timeN2 ) ;
             //    ZE( sCountT , timeN2 ) ;
             //    ZE( countT , timeN1 ) ;
@@ -198,7 +198,7 @@
                                     if( F(features.fc.flagsMouse) & flFEATUREsADAMmOUSE_ACTIONmOVE )
     
                                     //LOGrAW( tSay ) ;
-                                    //TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(tinP.postThreadName)+T(" MOUSEmOVE/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
+                                    //TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(((tinNormalS&)tinP).postThreadName)+T(" MOUSEmOVE/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
                                     //etherP.osTimeNowF( tinP , timeN1 , timeN2 ) ;
                                     //ZE( sCountT , timeN2 ) ;
                                     //ZE( countT , timeN1 ) ;
@@ -388,7 +388,7 @@
                         (
                         features.fc.pSadamHotKeyCBF &&
                         idAction == ifcIDtYPEaCTION_DOWN &&
-                        !( F(tinP.pag1->_backOldC_.rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_SUPPRESShOTkEYS ) &&
+                        !( F(((tinNormalS&)tinP).pag1->_backOldC_.rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_SUPPRESShOTkEYS ) &&
                     (
                     if
                     //EXAMPLE: A HOTKEY THAT JUMPS THE TAB TO A PROMPT WILL NOT ALSO BE APPENDED TO THE PROMPT'S VALUE
@@ -701,9 +701,9 @@
     //{
     //if( !thirdC::c_strcmpIF( tinP , features.fc.postOldComment , "vtTest" ) && !etherC::ether_cUtility_IF( tinP ) )
 
-    //if( bGoItStrike ) tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    //if( bGoItStrike ) ((tinNormalS&)tinP).pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
     //const boolT bGoItStrike = idTypeCallP == ifcIDtYPEsTROKEcALLbACK_STRIKE || idTypeCallP == ifcIDtYPEsTROKEcALLbACK_DESTROY ;
-    //tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    //((tinNormalS&)tinP).pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
 
     paperOldC::grabIF( tinP , TAG( TAGiDnULL ) ) ; //U::TO FIND A BUG
 
@@ -714,7 +714,7 @@
     //    OStEXTAK( ostoSay , "/+ [idIn]: " ) ;
     //    OStEXTA(  ostoSay , postIdType ) ;
     //    OStEXTAK( ostoSay , " | doF/" ) ;
-    //    OStEXTA(  ostoSay , tinP.postThreadName ) ;
+    //    OStEXTA(  ostoSay , ((tinNormalS&)tinP).postThreadName ) ;
     //    OStEXT(   ostoSay , TUCK << 2 ) ;
     //{
     //if( idTypeCallP != ifcIDtYPEsTROKEcALLbACK_ANIMATE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_MOUSE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABaRRIVING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABlEAVING )
