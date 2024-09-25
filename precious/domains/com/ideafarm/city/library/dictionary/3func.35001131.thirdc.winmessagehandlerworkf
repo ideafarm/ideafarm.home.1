@@ -764,12 +764,12 @@
                 case WM_QUERYENDSESSION :
             {
             switch( idCmdP )
-            tinNormalS* pTinDebug3 = &tinP ; //U::
+            tinS* pTinDebug3 = &tinP ; //U::
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
 
             //WWiNIT
 
-            tinNormalS* pTinDebug2 = &tinP ; //U::
+            tinS* pTinDebug2 = &tinP ; //U::
 
             //}
             //    LOGrAW( tn ) ;
@@ -866,7 +866,7 @@
             etherC&  etThread   = *pEtThread ;
             etherC*& pEtThread  = etherC::ether_pMainRefsIF( tinP )->pEtThread ;
             etherC&  ether      = etherC::ether_pMainRefsIF( tinP )->ether ;
-            //tinNormalS&    tinP      = etherC::ether_pMainRefsIF( tinP )->tin ; //THIS IS OBSOLETE; REMOVE IT
+            //tinS&    tinP      = etherC::ether_pMainRefsIF( tinP )->tin ; //THIS IS OBSOLETE; REMOVE IT
             if( &tinP != &etherC::ether_pMainRefsIF( tinP )->tin ) BLAMMO ;
             TELL( "winMessageHandlerWorkF: setting up" )
         {
@@ -930,7 +930,7 @@
     //
     //    OStEXTAK( ostoBuf , "\r\n" ) ;
     //    OStEXTC( ostoBuf , (countT)&tinP , 0 ) ;
-    //    OStEXTAK( ostoBuf , "win handler ref tinNormalS at " ) ;
+    //    OStEXTAK( ostoBuf , "win handler ref tinS at " ) ;
     //    OStEXT( ostoBuf , 0x100 )
     //{
     //U::

@@ -72,7 +72,7 @@ TODO
     if( !( idt % TUCK ) )
     OSsLEEPf( 0 ) ;
 
-    tinNormalS&   tinP     = *pTinMain ;
+    tinS&   tinP     = *pTinMain ;
     countT  idt      = 1 + incv02AM( idtLath ) ;
 {
 DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
@@ -268,7 +268,7 @@ if( pTaskP )
         {
         if( bTinOk )
         ZE( countT , idt ) ;
-        TELL( "TASK0: after newing either a tinNormalS in the working poolOld" )
+        TELL( "TASK0: after newing either a tinS in the working poolOld" )
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */
 
         }
@@ -279,9 +279,9 @@ if( pTaskP )
                 bTinOk = 1 ;_
             {
             if( pTin )
-            tinNormalS* pTin = new( 0 , tinP , LF ) tinNormalS( tinP , TAG( TAGiDnULL ) , pTaskP->idThread , pTinDad , "tmGorillaF" , flTINs_null , ifcIDtINnAMED_tinInPool ) ;_
-            TELL( "TASK0: newing a tinNormalS in the working poolOld" )
-            tinNormalS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : &pTaskP->tinDad ;_
+            tinS* pTin = new( 0 , tinP , LF ) tinS( tinP , TAG( TAGiDnULL ) , pTaskP->idThread , pTinDad , "tmGorillaF" , flTINs_null , ifcIDtINnAMED_tinInPool ) ;_
+            TELL( "TASK0: newing a tinS in the working poolOld" )
+            tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : &pTaskP->tinDad ;_
         {
         ZE( boolT , bTinOk ) ;_
         taskS* pTaskP = (taskS*)argP ;_
@@ -313,7 +313,7 @@ TASK0PROTO( tmGorillaF ) ;
 
 countT cThreads ;
 boolT  bQuit ;
-tinNormalS*  pTinMain ;
+tinS*  pTinMain ;
 countT msAtBoot = tinP.brcRaw ;
 BOSdOnOTtEST( WHATgbo , GetTickCount() )
 countT idtLath ;

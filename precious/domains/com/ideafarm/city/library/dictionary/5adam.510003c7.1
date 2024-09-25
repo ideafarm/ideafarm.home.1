@@ -110,13 +110,13 @@ TODO
                         info.pTime1    [ info.cFound ] = pTin->time1 ;
                         info.pTin      [ info.cFound ] = pTin ;
 
-                        tinNormalS* pTin = (tinNormalS*)pvP ;
+                        tinS* pTin = (tinS*)pvP ;
                     {
                     if( info.cFound <= CfOUNDmAX )
 
                     info.cFound ++ ;
                 {
-                if( !fDeleted && idc != idClientP && cbd == sizeof( countT ) + sizeof( tinNormalS ) && pvP && getNegAM( *(countT*)pvP ) == FINGERnEG_TINs )
+                if( !fDeleted && idc != idClientP && cbd == sizeof( countT ) + sizeof( tinS ) && pvP && getNegAM( *(countT*)pvP ) == FINGERnEG_TINs )
 
                 countT idFile   = db.idFile ;
                 countT idLine   = db.idLine ;
@@ -138,7 +138,7 @@ TODO
 
     ZE( boolT , bCorrupt ) ;
 {
-boolT poolOldWalkerF( tinNormalS& tinP , voidT* const pvP , countT& idClientP , countT& infoP )
+boolT poolOldWalkerF( tinS& tinP , voidT* const pvP , countT& idClientP , countT& infoP )
 
 }
     }
@@ -162,11 +162,11 @@ boolT poolOldWalkerF( tinNormalS& tinP , voidT* const pvP , countT& idClientP , 
 {
 cFound( 0 )
 ether( etherP ) ,
-infoS::infoS( tinNormalS& tinP , etherC& etherP ) :
+infoS::infoS( tinS& tinP , etherC& etherP ) :
 
 ;
 }
-    infoS( tinNormalS& tinP , etherC& etherP ) ;
+    infoS( tinS& tinP , etherC& etherP ) ;
 
     boolT   pbDead        [   1 + CfOUNDmAX                       ] ;
     countT  pCForAdamToUse[   1 + CfOUNDmAX                       ] ;
@@ -178,7 +178,7 @@ infoS::infoS( tinNormalS& tinP , etherC& etherP ) :
     countT  pIdiOwner     [   1 + CfOUNDmAX                       ] ;
     sCountT pTime2        [   1 + CfOUNDmAX                       ] ;
     countT  pTime1        [   1 + CfOUNDmAX                       ] ;
-    tinNormalS*   pTin          [   1 + CfOUNDmAX                       ] ;
+    tinS*   pTin          [   1 + CfOUNDmAX                       ] ;
 
     countT  cFound ;
     etherC& ether ;
@@ -190,9 +190,9 @@ struct infoS
 /*1*/WAKEhIDE( "scanPool" )/*1*/
 /**/
 */
-to avoid detection, a thread must update its tinNormalS object within each TICK period
+to avoid detection, a thread must update its tinS object within each TICK period
 notifies city center when a speed 0 thread is detected
-monitors the tinNormalS items in the poolOld
+monitors the tinS items in the poolOld
 /*
 
 //

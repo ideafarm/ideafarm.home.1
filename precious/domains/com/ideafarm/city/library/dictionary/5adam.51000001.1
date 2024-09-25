@@ -37,7 +37,7 @@ TODO
              if( !etThread.strCompareF( tinP , pcPartP , pcPart1 ) ) mPrice = 1e2 * qtyP ; // SPECIFY THE PRICE FORMULAS HERE
         ZE( measureT , mPrice ) ;
     {
-    extern "C" measureT _export OSF priceF( tinNormalS& tinP , etherC& etThread , const countT* const pcPartP , const countT qtyP )
+    extern "C" measureT _export OSF priceF( tinS& tinP , etherC& etThread , const countT* const pcPartP , const countT qtyP )
 
     }
         else __1
@@ -46,7 +46,7 @@ TODO
         else if( !etThread.strCompareF( tinP , pcPartP , pcPart2 ) ) stShareP << (countT)0x2 ; // IF MORE THAN ONE idCitizen IS PUSHED, EACH WILL GET AN EQUAL SPLIT
              if( !etThread.strCompareF( tinP , pcPartP , pcPart1 ) ) stShareP << (countT)0x2 ; // CHANGE 0x2 TO THE (REVERSED) idCitizen WHO IS TO RECEIVE SHARES FOR EACH PART
     {
-    extern "C" voidT _export OSF shareF( tinNormalS& tinP , etherC& etThread , stackC& stShareP , const countT* const pcPartP )
+    extern "C" voidT _export OSF shareF( tinS& tinP , etherC& etThread , stackC& stShareP , const countT* const pcPartP )
 
     }
         PART( pcPart4 )
@@ -54,7 +54,7 @@ TODO
         PART( pcPart2 )
         PART( pcPart1 )
     {
-    extern "C" voidT _export OSF partsF( tinNormalS& tinP , etherC& etThread , stackC& stPartP )
+    extern "C" voidT _export OSF partsF( tinS& tinP , etherC& etThread , stackC& stPartP )
 
     countT pcPart4[] = { DDNUMB , 0x444 , 0x444 , 0x444 , 0x444 , 0 } ;
     countT pcPart3[] = { DDNUMB , 0x333 , 0x333 , 0x333 , 0 } ;

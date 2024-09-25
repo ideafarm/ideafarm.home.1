@@ -117,7 +117,7 @@ voidT queryS::swabF( voidT )
     byteT* pbc = (byteT*)&header + sizeof( headerS ) ;
     header.logF( tinP ) ;
 {
-voidT queryS::logF( tinNormalS& tinP )
+voidT queryS::logF( tinS& tinP )
 
 }
     cbData        = SWAB2( cbData        ) ;
@@ -130,7 +130,7 @@ voidT rHeaderS::swabF( voidT )
 }
     thirdC::logIF( tinP , T("question: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass) ) ;
 {
-voidT questionS::logF( tinNormalS& tinP )
+voidT questionS::logF( tinS& tinP )
 
 }
     idClass = SWAB2( idClass ) ;
@@ -156,7 +156,7 @@ questionS::questionS( voidT ) :
 }
     thirdC::logIF( tinP , T("header: cQuestions: ")+TF1(cQuestions)+T(" cAnswers: ")+TF1(cAnswers)+T(" cAuthorities: ")+TF1(cAuthorities)+T(" cNotes: ")+TF1(cNotes) ) ;
 {
-voidT headerS::logF( tinNormalS& tinP )
+voidT headerS::logF( tinS& tinP )
 
 }
 {
@@ -180,7 +180,7 @@ count01T headerS::idQueryLast ;
 }
     thirdC::logIF( tinP , T("rHeader: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass)+T(" secondsToLive: ")+TF1(secondsToLive)+T(" cbData: ")+TF1(cbData) ) ;
 {
-voidT rHeaderS::logF( tinNormalS& tinP )
+voidT rHeaderS::logF( tinS& tinP )
 
 }
 {
@@ -221,7 +221,7 @@ rHeaderS::rHeaderS( voidT ) :
     for(;;) // ASSUME: *pbP IS INITIALLY NOT 0. CODE STRUCTURE REFLECTS NONCOMPRESSED, NULL TERMINATED FORMAT. COMPRESSION CODE ASSUMED TO ONLY OCCUR AT END (PER RFC SPEC)
     OStEXT( osto001 , 0x100 )
 {
-voidT logLabelsF( tinNormalS& tinP , byteT*& pbP , byteT* const pbOriginP )
+voidT logLabelsF( tinS& tinP , byteT*& pbP , byteT* const pbOriginP )
 */
   must point to the beginning of the header record for the message being parsed
  pbOriginP
@@ -234,7 +234,7 @@ arguments
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinNormalS& tinP ) ;
+    voidT logF( tinS& tinP ) ;
     questionS question ;
     headerS   header ;
 {
@@ -243,7 +243,7 @@ struct queryS
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinNormalS& tinP ) ;
+    voidT logF( tinS& tinP ) ;
     rHeaderS( voidT ) ;
 
     count01T cbData ;
@@ -256,7 +256,7 @@ struct rHeaderS //THIS IS THE PART OF THE "RESOURCE RECORD" THAT FOLLOWS THE LAB
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinNormalS& tinP ) ;
+    voidT logF( tinS& tinP ) ;
     questionS( voidT ) ;
 
     count01T           idClass             ;
@@ -268,7 +268,7 @@ struct questionS
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinNormalS& tinP ) ;
+    voidT logF( tinS& tinP ) ;
     headerS( voidT ) ;
 
     count01T           cNotes              ;

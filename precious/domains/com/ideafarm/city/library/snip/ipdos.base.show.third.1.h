@@ -1,12 +1,4 @@
 
-
-
-
-
-
-#define ifcIDtYPEtIN_TINY                           2
-#define ifcIDtYPEtIN_NORMAL                         1
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -181,7 +173,7 @@ class  /*ff*/threadCheckC/*ff*/                                         ; /*ff*/
 class  /*ff*/thugC/*ff*/                                                ; /*ff*//**//*ff*/
 struct /*ff*/timeS/*ff*/                                                ; /*ff*//**//*ff*/
 struct /*ff*/timeZoneSpecS/*ff*/                                        ; /*ff*//**//*ff*/
-struct /*ff*/tinNormalS/*ff*/                                                 ; /*ff*//*o*//*ff*/
+struct /*ff*/tinS/*ff*/                                                 ; /*ff*//*o*//*ff*/
 struct /*ff*/tinTallyS/*ff*/                                            ; /*ff*//**//*ff*/
 struct /*ff*/tlsStackFrameLocationS/*ff*/                               ; /*ff*//**//*ff*/
 struct /*ff*/tlsStackFrameS/*ff*/                                       ; /*ff*//**//*ff*/
@@ -538,7 +530,7 @@ it is illegal to refer to this symbol in the definition of an adam
         mainS* const& pmp = pMainParametersP ;                                                                                                                                  \
         if( pmp )                                                                                                                                                               \
         {                                                                                                                                                                       \
-            tinNormalS& tinP = pmp->tin ;                                                                                                                                             \
+            tinS& tinP = pmp->tin ;                                                                                                                                             \
             _IO_                                                                                                                                                                \
             TELL( "MAINF/+" ) ;                                                                                                                                                 \
             thirdC::osTraceWrongNodeIF( tinP , (byteT*)mainF , "mainF" ) ;                                                                                                      \
@@ -602,7 +594,7 @@ it is illegal to refer to this symbol in the definition of an adam
         ppp = pPeekParametersP ;                                                                                    \
         if( ppp )                                                                                                   \
         {                                                                                                           \
-            tinNormalS& tinP  = ppp->tin ;                                                                                \
+            tinS& tinP  = ppp->tin ;                                                                                \
             etherC& ether = ppp->ether ;                                                                            \
             boolT save = bTlsEarlyLateIF() ;                                                                        \
             bTlsEarlyLateIF() = 0 ;                                                                                 \
@@ -1263,13 +1255,13 @@ using the "new" "d elete" operators results in calling constructors and destruct
 /*1*//*NEWdELtYPEeTHER(typeP)*//*1*/
 #define NEWdELtYPEeTHER(typeP)                                          \
                                                                         \
-    voidT etherC::delF( tinNormalS& tinP , typeP*& pP )                       \
+    voidT etherC::delF( tinS& tinP , typeP*& pP )                       \
     {                                                                   \
         _IO_                                                            \
         third.delF( tinP , pP ) ;                                       \
     }                                                                   \
                                                                         \
-    voidT etherC::newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )     \
+    voidT etherC::newF( tinS& tinP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )     \
     {                                                                   \
         _IO_                                                            \
         DROPnOTEdOESnOTwANTmE                                           \
@@ -1313,7 +1305,7 @@ see the documentation for NEWdELtYPEeTHER
 
     #define NEWdELtYPEtHIRD(typeP,idTypeP)                                              \
                                                                                         \
-        voidT thirdC::delF( tinNormalS& tinP , typeP*& pP )                                   \
+        voidT thirdC::delF( tinS& tinP , typeP*& pP )                                   \
         {                                                                               \
             _IO_                                                                        \
             countT idType = idTypeP ;                                                   \
@@ -1338,7 +1330,7 @@ see the documentation for NEWdELtYPEeTHER
             if( pP ) pP = 0 ;                                                           \
         }                                                                               \
                                                                                         \
-        voidT thirdC::newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
+        voidT thirdC::newF( tinS& tinP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
         {                                                                               \
             _IO_                                                                        \
             if( !tinP.pPoolUse ) { BLAMMO ; }                                           \
@@ -1378,7 +1370,7 @@ see the documentation for NEWdELtYPEeTHER
 
     #define NEWdELtYPEtHIRD(typeP,idTypeP)                                              \
                                                                                         \
-        voidT thirdC::delF( tinNormalS& tinP , typeP*& pP )                                   \
+        voidT thirdC::delF( tinS& tinP , typeP*& pP )                                   \
         {                                                                               \
             _IO_                                                                        \
             countT idType = idTypeP ;                                                   \
@@ -1401,7 +1393,7 @@ see the documentation for NEWdELtYPEeTHER
             if( pP ) pP = 0 ;                                                           \
         }                                                                               \
                                                                                         \
-        voidT thirdC::newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
+        voidT thirdC::newF( tinS& tinP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
         {                                                                               \
             _IO_                                                                        \
             DROPnOTEdOESnOTwANTmE                                                       \
@@ -1925,14 +1917,14 @@ use me iff pvP was obtained from operator new
 #define NEWdELcLASSpROTOS                                                                                                       \
                                                                                                                                 \
     voidT  operator delete(   voidT* pvP ) ;                                                                                    \
-    voidT* operator new(      countT cbP , const countT cbFootP , tinNormalS& tinP , const countT idLineP , const countT idiFileP ) ; \
-    voidT* operator new(      countT cbP , const countT cbFootP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP ) ;    \
-    voidT* operator new(      countT cbP , const countT cbFootP , tinNormalS& tinP , napkinC* const pNapkinP             ) ;          \
+    voidT* operator new(      countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP ) ; \
+    voidT* operator new(      countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP ) ;    \
+    voidT* operator new(      countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP             ) ;          \
                                                                                                                                 \
     voidT  operator delete[]( voidT* pvP ) ;                                                                                    \
-    voidT* operator new[](    countT cbP                        , tinNormalS& tinP , const countT idLineP , const countT idiFileP ) ; \
-    voidT* operator new[](    countT cbP                        , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP ) ;    \
-    voidT* operator new[](    countT cbP                        , tinNormalS& tinP , napkinC* const pNapkinP                   ) ;
+    voidT* operator new[](    countT cbP                        , tinS& tinP , const countT idLineP , const countT idiFileP ) ; \
+    voidT* operator new[](    countT cbP                        , tinS& tinP , byteT* pbZombieP , const countT cbZombieP ) ;    \
+    voidT* operator new[](    countT cbP                        , tinS& tinP , napkinC* const pNapkinP                   ) ;
 
 
 //
@@ -1996,16 +1988,16 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                             \
         ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                              \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinNormalS IN POOL*/                                                                                                              \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinS IN POOL*/                                                                                                              \
         {                                                                                                                                                                                                                                                                   \
             bTinOk = 1 ;                                                                                                                                                                                                                                                    \
             THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                 \
         }                                                                                                                                                                                                                                                                   \
         else                                                                                                                                                                                                                                                                \
         {                                                                                                                                                                                                                                                                   \
-            tinNormalS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;                                                                                                                                                                          \
-            TELL( "TASK0: newing a tinNormalS in the working poolOld" )                                                                                                                                                                                                           \
-            tinNormalS* pTin = new( 0 , tinP , LF ) tinNormalS( tinP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;       \
+            tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;                                                                                                                                                                          \
+            TELL( "TASK0: newing a tinS in the working poolOld" )                                                                                                                                                                                                           \
+            tinS* pTin = new( 0 , tinP , LF ) tinS( tinP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;       \
             if( pTin )                                                                                                                                                                                                                                                      \
             {                                                                                                                                                                                                                                                               \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                \
@@ -2016,7 +2008,7 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                             \
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                               \
-        TELL( "TASK0: after newing either a tinNormalS in the working poolOld" )                                                                                                                                                                                                  \
+        TELL( "TASK0: after newing either a tinS in the working poolOld" )                                                                                                                                                                                                  \
         if( bTinOk )                                                                                                                                                                                                                                                        \
         {                                                                                                                                                                                                                                                                   \
             TINSL                                                                                                                                                                                                                                                           \
@@ -4244,7 +4236,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*TINSL*//*1*/
 
-#define TINSL tinNormalS& tinP = thirdC::third_tinNormalS_ref_IF() ;
+#define TINSL tinS& tinP = thirdC::third_tinS_ref_IF() ;
 
 
 //
@@ -8176,7 +8168,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifcIDtYPEdROPnOTE_thirdCpoolNewF                                0xdddd043b
 #define ifcIDtYPEdROPnOTE_threadC                                       0xdddd043c
 #define ifcIDtYPEdROPnOTE_thugC                                         0xdddd043d
-#define ifcIDtYPEdROPnOTE_tinNormalS                                          0xdddd043e
+#define ifcIDtYPEdROPnOTE_tinS                                          0xdddd043e
 #define ifcIDtYPEdROPnOTE_tlsAllocPoolC                                 0xdddd043f
 #define ifcIDtYPEdROPnOTE_tlsAllocStackExp_01_C                         0xdddd0440
 #define ifcIDtYPEdROPnOTE_tlsAllocStackExp_8_C                          0xdddd0441
@@ -8307,7 +8299,7 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /*1*//*COSTmAXtHREADnAME*//*1*/
 /**/
-// (COSTmAXtHREADnAME + 1) MUST BE A MULTIPLE OF sizeof( countT ) SO THAT tinNormalS, MEMBERS ARE ALIGNED
+// (COSTmAXtHREADnAME + 1) MUST BE A MULTIPLE OF sizeof( countT ) SO THAT tinS, MEMBERS ARE ALIGNED
 
 #define COSTmAXtHREADnAME 0xff
 
@@ -11367,7 +11359,7 @@ this limit can easily be increased to accomodate application requirements
 /**/
 
 // MUST BE MULTIPLE OF sizeof( countT ) SO THAT CAN BE EASILY INCLUDED AS PART OF A HASHED BLOB
-// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinNormalS, ARE ALIGNED
+// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinS, ARE ALIGNED
 
 #define COSTnARRATIVE_PREFIX 0x10
 
@@ -11397,7 +11389,7 @@ this limit can easily be increased to accomodate application requirements
 /**/
 
 // MUST BE MULTIPLE OF sizeof( countT ) SO THAT CAN BE EASILY INCLUDED AS PART OF A HASHED BLOB
-// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinNormalS, ARE ALIGNED
+// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinS, ARE ALIGNED
 
 #define COSTnARRATIVE_TITLE 0x10
 
@@ -11427,7 +11419,7 @@ this limit can easily be increased to accomodate application requirements
 /**/
 
 // MUST BE MULTIPLE OF sizeof( countT ) SO THAT CAN BE EASILY INCLUDED AS PART OF A HASHED BLOB
-// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinNormalS, ARE ALIGNED
+// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinS, ARE ALIGNED
 
 #define COSTnARRATIVE_NOTE 0x20
 
@@ -12608,7 +12600,7 @@ these values are used in the foreign domain name system
 */
 /*1*//*COSTmAXtELL*//*1*/
 /**/
-// ( COSTmAXtELL + 1 ) MUST BE MULTIPLE OF sizeof( countT ) SO THAT tinNormalS, MEMBERS ARE ALIGNED
+// ( COSTmAXtELL + 1 ) MUST BE MULTIPLE OF sizeof( countT ) SO THAT tinS, MEMBERS ARE ALIGNED
 
 #define COSTmAXtELL 0x7f
 
@@ -15191,8 +15183,8 @@ see QUITO
 
 #define LIFEpROTO                                       \  
                                                         \
-    _liveF( tinNormalS& tinP , etherC& etThreadP ) ;          \
-    _deleteMyselfF( tinNormalS& tinP ) ;
+    _liveF( tinS& tinP , etherC& etThreadP ) ;          \
+    _deleteMyselfF( tinS& tinP ) ;
 
 
 //
@@ -15225,7 +15217,7 @@ see QUITO
     if( pTaskP && pTaskP->c1 ) ((classP*)pTaskP->c1)->_liveF( tinP , etThread ) ;   \
     DONE( tm_##classP##_F )                                                         \
                                                                                     \
-    classP::_deleteMyselfF( tinNormalS& tinP )                                            \
+    classP::_deleteMyselfF( tinS& tinP )                                            \
     {                                                                               \
         classP* pMeI = this ;                                                       \
         DEL( pMeI ) ;                                                               \
@@ -19202,7 +19194,7 @@ after i return, that countT object will contain 1
 #define ifcIDcMDmONITOR_POOLoLDwALK1               0xdddd06b7
 #define ifcIDcMDmONITOR_SAYtALLIES              0xdddd06b8
 #define ifcIDcMDmONITOR_IMAGE                   0xdddd06b9
-#define ifcIDcMDmONITOR_tinNormalS                    0xdddd06ba
+#define ifcIDcMDmONITOR_tinS                    0xdddd06ba
 /*3*/
 #define ifcIDcMDmONITOR_min     0xdddd06b5
 #define ifcIDcMDmONITOR_max     0xdddd06ba
@@ -19237,7 +19229,7 @@ after i return, that countT object will contain 1
 #define ifcIDrEPLYmONITOR_POOLoLDwALK1             0xdddd06bd
 #define ifcIDrEPLYmONITOR_SAYtALLIES            0xdddd06be
 #define ifcIDrEPLYmONITOR_IMAGE                 0xdddd06bf
-#define ifcIDrEPLYmONITOR_tinNormalS                  0xdddd06c0
+#define ifcIDrEPLYmONITOR_tinS                  0xdddd06c0
 /*3*/
 #define ifcIDrEPLYmONITOR_min     0xdddd06bb
 #define ifcIDrEPLYmONITOR_max     0xdddd06c0
@@ -19462,7 +19454,7 @@ after i return, that countT object will contain 1
 /*1*//*CALLpROTO*//*1*/
 /**/
 
-#define CALLpROTO(classP) voidT classP::operator ()( tinNormalS& tinP , soulC& slP )
+#define CALLpROTO(classP) voidT classP::operator ()( tinS& tinP , soulC& slP )
 
 
 //
@@ -19495,11 +19487,11 @@ i am used with a soulC object to use that object as a forth-like program executo
     {                                                                                       \
         public :                                                                            \
                                                                                             \
-        voidT operator ()( tinNormalS& tinP , soulC& slP ) ;                                      \
+        voidT operator ()( tinS& tinP , soulC& slP ) ;                                      \
     }                                                                                       \
     ;                                                                                       \
                                                                                             \
-    voidT classP::operator ()( tinNormalS& tinP , soulC& slP )                                    \
+    voidT classP::operator ()( tinS& tinP , soulC& slP )                                    \
     {                                                                                       \
         {                                                                                   \
             ZE( baseSoilXxxxC* , pMeI ) ;                                                         \
@@ -19659,7 +19651,7 @@ i am used with a soulC object to use that object as a forth-like program executo
         return *this ;                                                                  \
     }                                                                                   \
                                                                                         \
-    voidT classP::operator ()( tinNormalS& tinP , soulC& slP )                                \
+    voidT classP::operator ()( tinS& tinP , soulC& slP )                                \
     {                                                                                   \
         {                                                                               \
             ZE( baseSoilXxxxC* , pMeI ) ;                                             \
@@ -22272,7 +22264,7 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 
 //20120404: DOUBLED CHARS PER LINE FROM TUCK TO ( TUCK << 1 ) BECAUSE SPACE WAS EXHAUSTED
 //20160525@1635: DOUBLED LINES ALL OTHER TO TUCK << 1 BECAUSE ADDED 4 LINES
-//20170101@1057: ADDED "1 +" AS NEEDED PER MEMBERS IN tinNormalS; REMOVED "* 4" FOR THE GRAB LIST
+//20170101@1057: ADDED "1 +" AS NEEDED PER MEMBERS IN tinS; REMOVED "* 4" FOR THE GRAB LIST
 //20170101@2015: "TUCK << 2" <- "TUCK << 1" JUST TO GET EXCEPTION REPORTING TO WORK.  SOMETHING IS WRONG WITH THIS ALLOCATION FORMULA BECAUSE THE STEP LINES ARE TUCK OR LESS IN LENGTH
 //20170831@1425: DOUBLED TO "TUCK << 2" FOR "LINES: ALL OTHER" JUST TO BE CAUTIOUS WHEN ADDING A LINE TO THE REPORT
 //20170831@1501: REVERTED TO "TUCK << 1" SINCE EXHAUSTED TLS FOR THREAD 1 (WITHOUT ANALYSIS)
@@ -25892,7 +25884,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER0(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )                                                                                                                        \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )                                                                                                                        \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -25955,7 +25947,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER2(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P )                                                            \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P )                                                            \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -26021,7 +26013,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER0(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26076,7 +26068,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER2(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26165,7 +26157,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER4(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P ) \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P ) \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -26236,7 +26228,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER4(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26292,7 +26284,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER5(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P , const countT recycleLever5P ) \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P , const countT recycleLever5P ) \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -26364,7 +26356,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER5(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26467,7 +26459,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER6(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P , const countT recycleLever5P , const countT recycleLever6P ) \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P , const countT recycleLever5P , const countT recycleLever6P ) \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -26540,7 +26532,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER6(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -27603,7 +27595,7 @@ flBRANCHs_SHADOW is reserved for future enhancement
 
 #define GETfROMrECYCLER1(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P )                                                                                          \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P )                                                                                          \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -27668,7 +27660,7 @@ flBRANCHs_SHADOW is reserved for future enhancement
 
 #define RETURNtOrECYCLER1(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinNormalS& tinP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -29692,7 +29684,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , const countT idLineP , const countT idiFileP )            \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP )            \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -29721,7 +29713,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP )               \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )               \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pbZombieP ) BLAMMOiD( 0x4 ) ;                                                                                                  \
@@ -29737,7 +29729,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , napkinC* const pNapkinP )                                 \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP )                                 \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pNapkinP ) BLAMMOiD( 0x7 ) ;                                                                                                   \
@@ -29758,14 +29750,14 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinNormalS& tinP , const countT idLineP , const countT idiFileP )                                 \
+        voidT* classP::operator new[]( countT cbP , tinS& tinP , const countT idLineP , const countT idiFileP )                                 \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP )                                    \
+        voidT* classP::operator new[]( countT cbP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )                                    \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pbZombieP ) BLAMMOiD( 0x9 ) ;                                                                                                  \
@@ -29774,7 +29766,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinNormalS& tinP , napkinC* const pNapkinP )                                                      \
+        voidT* classP::operator new[]( countT cbP , tinS& tinP , napkinC* const pNapkinP )                                                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pNapkinP ) BLAMMOiD( 0xb ) ;                                                                                                   \
@@ -29806,7 +29798,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , const countT idLineP , const countT idiFileP )            \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP )            \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -29829,7 +29821,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP )               \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )               \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pbZombieP ) BLAMMOiD( 0x10 ) ;                                                                                                 \
@@ -29853,7 +29845,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , napkinC* const pNapkinP )                                 \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP )                                 \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pNapkinP ) BLAMMOiD( 0x13 ) ;                                                                                                  \
@@ -29874,14 +29866,14 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinNormalS& tinP , const countT idLineP , const countT idiFileP )                                 \
+        voidT* classP::operator new[]( countT cbP , tinS& tinP , const countT idLineP , const countT idiFileP )                                 \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP )                                    \
+        voidT* classP::operator new[]( countT cbP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )                                    \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pbZombieP ) BLAMMOiD( 0x15 ) ;                                                                                                 \
@@ -29890,7 +29882,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinNormalS& tinP , napkinC* const pNapkinP )                                                      \
+        voidT* classP::operator new[]( countT cbP , tinS& tinP , napkinC* const pNapkinP )                                                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pNapkinP ) BLAMMOiD( 0x17 ) ;                                                                                                  \
@@ -30361,7 +30353,7 @@ can be used for sCountC as well as measureT and sCountT and countT
 #define PLATEcsTANDARDdECLARATIONS(classP)                                                                                                                      \
                                                                                                                                                                 \
     NEWdELcLASSpROTOS                                                                                                                                           \
-    virtual classP* newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP ) ;                                                                                                                        \
+    virtual classP* newF( tinS& tinP , const countT idLineP , const countT idiFileP ) ;                                                                                                                        \
     virtual ~classP( voidT ) ;                                                                                                                                  \
     virtual plateC& operator =( plateC& plateP ) ;                                                                                                              \
     inline plateC& operator +=( stackC& stP ) { return plateC::operator +=( stP ) ; } /*THE NEED FOR THIS IS A COMPILER BUG IN WATCOM*/                         \
@@ -30411,7 +30403,7 @@ class fooC : public plateC                                                      
                                                                                                                                     \
 NEWdELcLASS( 1 , fooC )                                                                                                             \
                                                                                                                                     \
-fooC* fooC::newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP )                                                                                                      \
+fooC* fooC::newF( tinS& tinP , const countT idLineP , const countT idiFileP )                                                                                                      \
 {                                                                                                                                   \
     return new( 0 , tinP , LF ) fooC ;                                                                                                   \
 }                                                                                                                                   \
@@ -30499,7 +30491,7 @@ voidT fooC::setModeF( const boolT bReverseP )                                   
                                                                                                                         \
 NEWdELcLASS( 1 , fooC )                                                                                                 \
                                                                                                                         \
-fooC* fooC::newF( tinNormalS& tinP , const countT idLineP , const countT idiFileP )                                                                                          \
+fooC* fooC::newF( tinS& tinP , const countT idLineP , const countT idiFileP )                                                                                          \
 {                                                                                                                       \
     return new( 0 , tinP , LF ) fooC ;                                                                                       \
 }                                                                                                                       \
@@ -31616,8 +31608,8 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 
 #define FRIENDS_backOldC                                                                                   \
                                                                                                         \
-    friend voidT joyPosF( tinNormalS& tinP , measureT* pmxP , const countT cmxP , const countT idJoyP ) ;     \
-    friend boolT sadamC::doF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const handleC* const phCloneP ) ;
+    friend voidT joyPosF( tinS& tinP , measureT* pmxP , const countT cmxP , const countT idJoyP ) ;     \
+    friend boolT sadamC::doF( tinS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const handleC* const phCloneP ) ;
 
 
 //
@@ -32201,7 +32193,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend TASKpROTO( tmTimeNowF ) ;                                                                                                                                                                                                                                                    \
  friend TASKpROTO( tmKillSocketF ) ;                                                                                                                                                                                                                                                 \
  friend batonC::~batonC( voidT ) ;                                                                                                                                                                                                                                                   \
- friend batonC::batonC( tinNormalS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const countT idGroupP , const flagsT flagsP , byteT* const pbZombieP , const countT cbZombieP , const countT idMemorySpaceP ) ;  \
+ friend batonC::batonC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const countT idGroupP , const flagsT flagsP , byteT* const pbZombieP , const countT cbZombieP , const countT idMemorySpaceP ) ;  \
  friend voidT handleC::closeIfF( voidT ) ;                                                                                                                                                                                                                                           \
  friend voidT handleC::cloneF( const handleC& handleP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP ) ;                                                                                                                                   \
  friend countT rootExceptionFilterWorker1F( voidT* pvOsInfoP , countT ecP ) ;                                                                                                                                                                                                        \
@@ -32259,9 +32251,9 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /*
 */
 /**/
-/*1*//*FRIENDS_tinNormalS*//*1*/
+/*1*//*FRIENDS_tinS*//*1*/
 
-#define FRIENDS_tinNormalS                                                                                                                                                                    \
+#define FRIENDS_tinS                                                                                                                                                                    \
                                                                                                                                                                                         \
  friend class  cC ;                                                                                                                                                                     \
  friend class  grabC ;                                                                                                                                                                  \
@@ -32294,9 +32286,9 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend countT dtTellCopyDoneF( countT c_thisP ) ;                                                                                                                                      \
  friend countT tmRptMainF_workF( countT argP ) ;                                                                                                                                        \
  friend countT workInnerF( countT argP ) ;                                                                                                                                              \
- friend voidT  grabF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/    \
- friend voidT  grabitC::grabF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                               \
- friend voidT  pTinCopyF( tinNormalS& tinP , etherC& etThreadP , tinNormalS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP ) ;
+ friend voidT  grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/    \
+ friend voidT  grabitC::grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                               \
+ friend voidT  pTinCopyF( tinS& tinP , etherC& etThreadP , tinS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP ) ;
 
 
 //
@@ -33721,7 +33713,7 @@ it is illegal to refer to this symbol in the definition of an adam
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , const countT idLineP , const countT idiFileP ) \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP ) \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33748,7 +33740,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP )    \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )    \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33763,7 +33755,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , napkinC* const pNapkinP )                      \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP )                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33783,14 +33775,14 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinNormalS& tinP , const countT idLineP , const countT idiFileP )                      \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , const countT idLineP , const countT idiFileP )                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP )                         \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )                         \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( cbZombieP - cbP ) BLAMMO ;                                                                                                      \
@@ -33798,7 +33790,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinNormalS& tinP , napkinC* const pNapkinP )                                           \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , napkinC* const pNapkinP )                                           \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , pNapkinP ) ;                                                                            \
@@ -33829,7 +33821,7 @@ it is illegal to refer to this symbol in the definition of an adam
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , const countT idLineP , const countT idiFileP ) \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP ) \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33847,7 +33839,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP )    \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )    \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33862,7 +33854,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinNormalS& tinP , napkinC* const pNapkinP )                      \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP )                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33882,14 +33874,14 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinNormalS& tinP , const countT idLineP , const countT idiFileP )                      \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , const countT idLineP , const countT idiFileP )                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinNormalS& tinP , byteT* pbZombieP , const countT cbZombieP )                         \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )                         \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( cbZombieP - cbP ) BLAMMO ;                                                                                                      \
@@ -33897,7 +33889,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinNormalS& tinP , napkinC* const pNapkinP )                                           \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , napkinC* const pNapkinP )                                           \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinP , pNapkinP ) ;                                                                            \
@@ -34659,7 +34651,7 @@ coding standard
 //2010.11.18@0932: INSERTED LISTnAMEsYS_UNKNOWN AND LISTnAMEsYS_TEMPORARY FOR AESTHETIC REASONS, SINCE HAVE ALREADY BROKEN EXTANT FILES 
 
 // RECURSIVE GRABBING USING grabitC IS USED FOR listC INSTANCES NAMED LISTnAMEsYS_ROOT*
-// IF MORE SUCH NAMES ARE DEFINED, THE ARRAY IN tinNormalS THAT IS USED TO PROVIDE RECURSIVE GRABBING FOR grabitC OBJECTS MIGHT NEED TO BE MADE LARGER
+// IF MORE SUCH NAMES ARE DEFINED, THE ARRAY IN tinS THAT IS USED TO PROVIDE RECURSIVE GRABBING FOR grabitC OBJECTS MIGHT NEED TO BE MADE LARGER
 
 //CS:CODEsYNC: 330e5007 33001126 3300039b (LISTnAMEsYS_ROOTsYSTEM*)
 
@@ -35227,10 +35219,10 @@ bit masks
                                                                                                                                                                                                                                                            \
     friend TASKpROTO( tmConsoleF ) ;                                                                                                                                                                                                                       \
     friend TASKpROTO( tmReportF ) ;                                                                                                                                                                                                                        \
-    friend boolT reportGrabF( tinNormalS& tinP , textC& tReportP , const strokeS* const psttPrefixP , voidT* const pvGrabP , const countT osPidP ) ;                                                                                                             \
-    friend voidT reportF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , const flagsT flagsP ) ;                                                                                                                                                          \
-    friend voidT monitorLookF( tinNormalS& tinP , grabWantS*& pgwIP , countT& cgwIP ) ;                                                                                                                                       \
-    friend voidT image_grabC_F( tinNormalS& tinP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , baseGrabC* pForeignGrabP , countT osPidP ) ;                                                                                                              \
+    friend boolT reportGrabF( tinS& tinP , textC& tReportP , const strokeS* const psttPrefixP , voidT* const pvGrabP , const countT osPidP ) ;                                                                                                             \
+    friend voidT reportF( tinS& tinP , etherC& etherP , strokeS*& psttP , const flagsT flagsP ) ;                                                                                                                                                          \
+    friend voidT monitorLookF( tinS& tinP , grabWantS*& pgwIP , countT& cgwIP ) ;                                                                                                                                       \
+    friend voidT image_grabC_F( tinS& tinP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , baseGrabC* pForeignGrabP , countT osPidP ) ;                                                                                                              \
     friend class sleepC ;
 
 
@@ -38385,7 +38377,7 @@ args
 
 #define FD_INDEXif(typeP,expCarefulP)                                                                                                                               \
                                                                                                                                                                     \
-    voidT listC::indexIF( tinNormalS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) \
+    voidT listC::indexIF( tinS& tinP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP ) \
     {                                                                                                                                                               \
         /*CONoUTrAW7( "\r\nindexIF [idKeyP,valueP,cNetP]:    " , idKeyP , "    " , *(countT*)&valueP , "    " , cNetP , "\r\n" ) ;*/                                \
                                                                                                                                                                     \
@@ -38552,7 +38544,7 @@ args
 
 #define FD_UNiNDEXif(typeP,expCarefulP)                                                                                                                             \
                                                                                                                                                                     \
-    voidT listC::unIndexIF( tinNormalS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP ) \
+    voidT listC::unIndexIF( tinS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP ) \
     {                                                                                                                                                               \
         IFbEcAREFUL                                                                                                                                                 \
         {                                                                                                                                                           \
@@ -38762,7 +38754,7 @@ args
 
 #define FD_WALKiNDEXif(typeP)                                                                                                                                                   \
                                                                                                                                                                                 \
-    flagsT listC::walkIndexIF( tinNormalS& tinP , const countT idKeyP , const typeP valueP , const countT cNetP )                                                                     \
+    flagsT listC::walkIndexIF( tinS& tinP , const countT idKeyP , const typeP valueP , const countT cNetP )                                                                     \
     {                                                                                                                                                                           \
         flagsT flagsRC = flLISTwALKrETURNcODE_null ;                                                                                                                            \
                                                                                                                                                                                 \
@@ -41699,7 +41691,7 @@ code that uses me is probably using the high bit for some application purpose
             if( H(pv) )                                                                                                                             \
             {                                                                                                                                       \
                 classSPP##VSP& vsp = *(classSPP##VSP*)this ;                                                                                        \
-                if( vsp.pCBF ) (*vsp.pCBF)( thirdC::third_tinNormalS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_CT , cRefOld , cRefF() , vsp.cArg ) ;        \
+                if( vsp.pCBF ) (*vsp.pCBF)( thirdC::third_tinS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_CT , cRefOld , cRefF() , vsp.cArg ) ;        \
             }                                                                                                                                       \
         }                                                                                                                                           \
     }                                                                                                                                               \
@@ -41714,7 +41706,7 @@ code that uses me is probably using the high bit for some application purpose
             if( H(pv) )                                                                                                                             \
             {                                                                                                                                       \
                 classSPP##VSP& vsp = *(classSPP##VSP*)this ;                                                                                        \
-                if( vsp.pCBF ) (*vsp.pCBF)( thirdC::third_tinNormalS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_DT , cRefOld , cRefF() , vsp.cArg ) ;        \
+                if( vsp.pCBF ) (*vsp.pCBF)( thirdC::third_tinS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_DT , cRefOld , cRefF() , vsp.cArg ) ;        \
             }                                                                                                                                       \
         }                                                                                                                                           \
     }                                                                                                                                               \
@@ -41810,7 +41802,7 @@ code that uses me is probably using the high bit for some application purpose
                 flags &= ~F(flVSP_NONCONSTANTrEFdISPENSED) ;                                                                                                        \
                 count##bitsCRefWriteP##T& cRefWrite = *(count##bitsCRefWriteP##T*)&( (byteT*)&((count##bitsCRefP##T*)P(pv))[ offCRefP ] )[ offCRefWriteP ] ;        \
                 count##bitsCRefWriteP##T  cRefWriteOld = decv##bitsCRefWriteP##AM( cRefWrite ) ;                                                                    \
-                if( pCBF ) (*pCBF)( thirdC::third_tinNormalS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_WrEFdT , cRefWriteOld , cRefF() , cArg ) ;                           \
+                if( pCBF ) (*pCBF)( thirdC::third_tinS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_WrEFdT , cRefWriteOld , cRefF() , cArg ) ;                           \
             }                                                                                                                                                       \
         }                                                                                                                                                           \
     }                                                                                                                                                               \
@@ -44308,7 +44300,7 @@ arguments
                                                                                         \
         NEWdELcLASSpROTOS                                                               \
         classP( const osTextT* const postNameP ) ;                                      \
-        voidT operator ()( tinNormalS& tinP , soulC& slP ) ;                                  \
+        voidT operator ()( tinS& tinP , soulC& slP ) ;                                  \
         baseSoilXxxxC& operator <<( soulC& slP ) ;                                      \
         baseSoilXxxxC& operator >>( soulC& slP ) ;                                      \
         const baseSoilXxxxC& operator >>( soulC& slP ) const ;                          \
@@ -50140,7 +50132,7 @@ use this rather than _ to avoid the overhead of _
 
 #define GARBAGEcOLLECTORdEF(idP,classP)                                                                                                                 \
                                                                                                                                                         \
-    voidT _garbageCollector##idP##CBF( tinNormalS& tinP , byteT* pbvspP , countT idEventP , countT cRefOldP , countT cRefNewLaterP , countT cArgP )           \
+    voidT _garbageCollector##idP##CBF( tinS& tinP , byteT* pbvspP , countT idEventP , countT cRefOldP , countT cRefNewLaterP , countT cArgP )           \
     {                                                                                                                                                   \
         switch( idEventP )                                                                                                                              \
         {                                                                                                                                               \

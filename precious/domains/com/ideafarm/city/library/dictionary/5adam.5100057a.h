@@ -11,8 +11,8 @@
 }
     plateC& operator +=( plateC& plateP ) ;
     operator const strokeS*( voidT ) ;
-    datumSessionC( tinNormalS& tinP , etherC& etherP , soulC& soulP ) ;
-    datumSessionC( tinNormalS& tinP ) ;
+    datumSessionC( tinS& tinP , etherC& etherP , soulC& soulP ) ;
+    datumSessionC( tinS& tinP ) ;
     PLATEcsTANDARDdECLARATIONS( datumSessionC )
     static voidT setModeF( const boolT bReverseP = 0 ) ;
 
@@ -51,8 +51,8 @@ class datumSessionC : public plateC
     inline const strokeS* psttUrlF(     voidT ) const { return psttUrl ; }
     plateC& operator +=( plateC& plateP ) ;
     operator const strokeS*( voidT ) ;
-    datumPeanutC( tinNormalS& tinP , etherC& etherP , soulC& soulP ) ;
-    datumPeanutC( tinNormalS& tinP ) ;
+    datumPeanutC( tinS& tinP , etherC& etherP , soulC& soulP ) ;
+    datumPeanutC( tinS& tinP ) ;
     PLATEcsTANDARDdECLARATIONS( datumPeanutC )
     static voidT setModeF( const boolT bUrlOnlyP = 0 ) ;
 
@@ -79,8 +79,8 @@ class datumPeanutC : public plateC
     inline const strokeS* psttOldCountryF(  voidT ) const { return psttOldCountry  ; }
     plateC& operator +=( plateC& plateP ) ;
     operator const strokeS*( voidT ) ;
-    datumEmailZipC( tinNormalS& tinP , etherC& etherP , soulC& soulP ) ;
-    datumEmailZipC( tinNormalS& tinP ) ;
+    datumEmailZipC( tinS& tinP , etherC& etherP , soulC& soulP ) ;
+    datumEmailZipC( tinS& tinP ) ;
     PLATEcsTANDARDdECLARATIONS( datumEmailZipC )
     static voidT setModeF( const countT idSortModeP = idMODEeMAILzIPsORT_eMAILzIPnOTE ) ;
 

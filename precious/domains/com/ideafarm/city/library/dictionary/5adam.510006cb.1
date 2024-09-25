@@ -98,7 +98,7 @@ TODO
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttHost  ) ;
 {
-voidT raxQueryFileMetadataF( tinNormalS& tinP , etherC& etherP /*, resultAccountDetailsS& rP*/ , resultAuthS& rAuthP )
+voidT raxQueryFileMetadataF( tinS& tinP , etherC& etherP /*, resultAccountDetailsS& rP*/ , resultAuthS& rAuthP )
 
 }
     wordF( tinP , etherP , rP , scratchAuth , stPath , tIn ) ;
@@ -192,7 +192,7 @@ voidT raxQueryFileMetadataF( tinNormalS& tinP , etherC& etherP /*, resultAccount
 
     TN( tSayBody ,
 {
-voidT raxGetAuthF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , const strokeS* const psttUserP , const strokeS* const psttKeyP )
+voidT raxGetAuthF( tinS& tinP , etherC& etherP , resultAuthS& rP , const strokeS* const psttUserP , const strokeS* const psttKeyP )
 
 }
     }
@@ -283,7 +283,7 @@ voidT raxGetAuthF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , const s
     // 
     // RECIPE
 {
-voidT wordF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT wordF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     }
@@ -361,7 +361,7 @@ voidT wordF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS&
 
     //etherP.traceF( tinP , T("[pair]: ")+T(psttP) ) ;
 {
-voidT pairF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT pairF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     }
@@ -469,7 +469,7 @@ voidT pairF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS&
     TN( tPath , "" ) ;
     handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 {
-voidT valueF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT valueF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     stPathP << psttw ;
@@ -478,7 +478,7 @@ voidT valueF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS
 
     //etherP.traceF( tinP , T("[key]: ")+T(psttP) ) ;
 {
-voidT keyF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT keyF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     }
@@ -541,7 +541,7 @@ voidT keyF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& 
 
     //etherP.traceF( tinP , T("[list]: ")+T(psttP) ) ;
 {
-voidT listF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT listF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     }
@@ -571,16 +571,16 @@ voidT listF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS&
 
     //etherP.traceF( tinP , T("[item]: ")+T(psttP) ) ;
 {
-voidT itemF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT itemF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     etherP.strReplaceF( tinP , psttP , 0 , T("\\/") , T("/") ) ; ___( psttP ) ;
     etherP.strTrimF(    tinP , psttP , psttFromP , 0 , T("\"") ) ; ___( psttP ) ;
 {
-voidT strFromJsonF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , const strokeS* const psttFromP )
+voidT strFromJsonF( tinS& tinP , etherC& etherP , strokeS*& psttP , const strokeS* const psttFromP )
 
-voidT wordF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP ) ;
-voidT listF( tinNormalS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP ) ;
+voidT wordF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP ) ;
+voidT listF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP ) ;
 
 }
 {
@@ -588,7 +588,7 @@ tTenantId( tinP , TAG( TAGiDnULL ) )
 tInternalUrl( tinP , TAG( TAGiDnULL ) ) ,
 tPublicUrl( tinP , TAG( TAGiDnULL ) ) ,
 tAccessToken( tinP , TAG( TAGiDnULL ) ) ,
-resultAuthS::resultAuthS( tinNormalS& tinP ) :
+resultAuthS::resultAuthS( tinS& tinP ) :
 
 }
 {
@@ -596,11 +596,11 @@ tMaybeTenantId( tinP , TAG( TAGiDnULL ) )
 tMaybeInternalUrl( tinP , TAG( TAGiDnULL ) ) ,
 tMaybePublicUrl( tinP , TAG( TAGiDnULL ) ) ,
 flags( flME_null ) ,
-scratchAuthS::scratchAuthS( tinNormalS& tinP ) :
+scratchAuthS::scratchAuthS( tinS& tinP ) :
 
 ;
 }
-    resultAuthS( tinNormalS& tinP ) ;
+    resultAuthS( tinS& tinP ) ;
 
     textC   tTenantId ;
     textC   tInternalUrl ;
@@ -611,7 +611,7 @@ struct resultAuthS
 
 ;
 }
-    scratchAuthS( tinNormalS& tinP ) ;
+    scratchAuthS( tinS& tinP ) ;
 
     textC   tMaybeTenantId ;
     textC   tMaybeInternalUrl ;

@@ -54,7 +54,7 @@ TODO
     cbP = ccP ;
     if( !ccP ) ccP = ether.strBodyLengthF( tinP , pcP ) ;
 {
-voidT spouseC::operator ()( tinNormalS& tinP , byteT*& pbP , countT& cbP , const countT* const pcP , countT ccP )
+voidT spouseC::operator ()( tinS& tinP , byteT*& pbP , countT& cbP , const countT* const pcP , countT ccP )
 
 }
     if( pcP ) for( countT off = 0 ; off < cbP ; off ++ ) pcP[ off ] = (*this)( tinP , pbP[ off ] ) ;
@@ -62,7 +62,7 @@ voidT spouseC::operator ()( tinNormalS& tinP , byteT*& pbP , countT& cbP , const
     ccP = cbP ;
     if( !cbP ) cbP = ether.strBodyLengthF( tinP , pbP ) ;
 {
-voidT spouseC::operator ()( tinNormalS& tinP , countT*& pcP , countT& ccP , const byteT* const pbP , countT cbP )
+voidT spouseC::operator ()( tinS& tinP , countT*& pcP , countT& ccP , const byteT* const pbP , countT cbP )
 
 }
     return bb ;
@@ -81,7 +81,7 @@ voidT spouseC::operator ()( tinNormalS& tinP , countT*& pcP , countT& ccP , cons
     {
     while( offIn < 0x100 )
 {
-byteT spouseC::operator ()( tinNormalS& tinP , const countT cP ) //"dad" LISTENER, DECODER
+byteT spouseC::operator ()( tinS& tinP , const countT cP ) //"dad" LISTENER, DECODER
 
 }
     return ( offIn ++ ) - code ; //SET code TO THE BACKWARD OFFSET OF THE OCCURANCE
@@ -96,7 +96,7 @@ byteT spouseC::operator ()( tinNormalS& tinP , const countT cP ) //"dad" LISTENE
 
     if( !offIn ) offIn = 0x100 ;
 {
-countT spouseC::operator ()( tinNormalS& tinP , const byteT bP ) //"mom" TALKER, ENCODER
+countT spouseC::operator ()( tinS& tinP , const byteT bP ) //"mom" TALKER, ENCODER
 
 }
     ether.memSetF( tinP , pbInAll , cbInAllMax + 1 ) ;
@@ -110,7 +110,7 @@ offIn( 0 ) ,
 swsOff( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , lever , flSTACKc_FIFO ) ,
 lever( 0 ) ,
 ether( etherP ) ,
-spouseC::spouseC( tinNormalS& tinP , etherC& etherP ) :
+spouseC::spouseC( tinS& tinP , etherC& etherP ) :
 
 }
     ether.delF( tinP , pbInAll ) ;
@@ -120,15 +120,15 @@ spouseC::~spouseC( voidT )
 
 ;
 }
-  voidT operator ()( tinNormalS& tinP , byteT*& pbP , countT& cbP , const countT* const pcP , countT ccP ) ;
-  voidT operator ()( tinNormalS& tinP , countT*& pcP , countT& ccP , const byteT* const pbP , countT cbP = 0 ) ;
+  voidT operator ()( tinS& tinP , byteT*& pbP , countT& cbP , const countT* const pcP , countT ccP ) ;
+  voidT operator ()( tinS& tinP , countT*& pcP , countT& ccP , const byteT* const pbP , countT cbP = 0 ) ;
  /*utilities*/
 
-  byteT operator ()( tinNormalS& tinP , const countT cP ) ; //IF THIS IS USED, CALL THE OBJECT "dad" (LISTENER)
-  countT operator ()( tinNormalS& tinP , const byteT bP ) ; //IF THIS IS USED, CALL THE OBJECT "mom" (TALKER)
+  byteT operator ()( tinS& tinP , const countT cP ) ; //IF THIS IS USED, CALL THE OBJECT "dad" (LISTENER)
+  countT operator ()( tinS& tinP , const byteT bP ) ; //IF THIS IS USED, CALL THE OBJECT "mom" (TALKER)
  /*encode,decode*/ //EACH spouseC OBJECT IS EITHER THE TALKER (ENCODER,MOM) OR THE LISTENER (DECODER,DAD)
 
-  spouseC( tinNormalS& tinP , etherC& etherP ) ;
+  spouseC( tinS& tinP , etherC& etherP ) ;
   ~spouseC( voidT ) ;
  /*birth,death*/
 

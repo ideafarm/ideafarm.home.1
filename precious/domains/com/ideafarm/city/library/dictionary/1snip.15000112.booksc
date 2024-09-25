@@ -9,14 +9,14 @@
 
 ;
 }
-    friend voidT baseGrabC::registerBegunF( tinNormalS& tinP , const countT idLineP , const countT idiFileP , const flagsT flagsP ) ;
+    friend voidT baseGrabC::registerBegunF( tinS& tinP , const countT idLineP , const countT idiFileP , const flagsT flagsP ) ;
     friend class napkinC ; //SO bksTelemetrySys.grabBookNow CAN BE FORMATTED
 
     inline flagsT&        flagsCtRefF( voidT ) { return *(flagsT*)&flagsCt ; }         //INTENDED TO ALLOW CALLER TO MODIFY MY FLAGS TO, E.G., MODIFY BEHAVIOR DURING DT
     inline flagsT         flagsCtF(    voidT ) { return            flagsCt ; }
 
-    inline voidT          unlockF( tinNormalS& tinP ) { grabBookNow.ungrabF( tinP ) ; }
-    inline voidT          lockF(   tinNormalS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) { grabBookNow.grabF( tinP , idLineP , idiFileP , pbBitsP ) ; }
+    inline voidT          unlockF( tinS& tinP ) { grabBookNow.ungrabF( tinP ) ; }
+    inline voidT          lockF(   tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) { grabBookNow.grabF( tinP , idLineP , idiFileP , pbBitsP ) ; }
 
     inline countT         cKeepInactiveF( voidT ) const { return cKeepInactive ; }
     inline const osTextT* postPathF(      voidT ) const { return postPath      ; }
@@ -34,31 +34,31 @@
     inline operator const poopC&(  voidT )       { return poop ; }
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb011.booksc.setf!||
-    voidT setF( tinNormalS& tinP , const byteT bFillP = 0 ) ;
+    voidT setF( tinS& tinP , const byteT bFillP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb00d.booksC.cbEachBookF!||
-    voidT cbEachBookF( tinNormalS& tinP , countT*& pcpIdBookSizePairsP ) ;
+    voidT cbEachBookF( tinS& tinP , countT*& pcpIdBookSizePairsP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb00c.booksC.selectBookF!||
-    voidT selectBookF( tinNormalS& tinP , const flagsT flagsP = flBOOKScsELECT_null , const countT* const pcpIdBookWantP = 0 , const boolT* pbQuitP = 0 ) ;
+    voidT selectBookF( tinS& tinP , const flagsT flagsP = flBOOKScsELECT_null , const countT* const pcpIdBookWantP = 0 , const boolT* pbQuitP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb010.booksC.readF!||
-    voidT readF( tinNormalS& tinP , pageC& pageP , handle0011C& hJotP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
+    voidT readF( tinS& tinP , pageC& pageP , handle0011C& hJotP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb00f.booksC.readF!||
-    voidT readF( tinNormalS& tinP , pageC& pageP , handle0111C& hJotP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
+    voidT readF( tinS& tinP , pageC& pageP , handle0111C& hJotP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb00e.booksC.readF!||
-    voidT readF( tinNormalS& tinP , pageC& pageP , handleC& handleP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
+    voidT readF( tinS& tinP , pageC& pageP , handleC& handleP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb00a.booksC.readF!||
-    boolT readF( tinNormalS& tinP , const byteT*& pbP , countT& cbP , handle0011C& hJotP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
+    boolT readF( tinS& tinP , const byteT*& pbP , countT& cbP , handle0011C& hJotP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb009.booksC.writeF!||
-    countT writeF( tinNormalS& tinP , handle0011C& hJotP , const byteT* const pb1P = 0 , const countT cb1P = 0 , const byteT* const pb2P = 0 , const countT cb2P = 0 , const flagsT flagsP = flBOOKScwRITE_null ) ;
+    countT writeF( tinS& tinP , handle0011C& hJotP , const byteT* const pb1P = 0 , const countT cb1P = 0 , const byteT* const pb2P = 0 , const countT cb2P = 0 , const flagsT flagsP = flBOOKScwRITE_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb008.booksC.readF!||
-    boolT readF( tinNormalS& tinP , const byteT*& pbP , countT& cbP , handle0111C& hJotP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
+    boolT readF( tinS& tinP , const byteT*& pbP , countT& cbP , handle0111C& hJotP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb007.booksC.writeF!||
-    countT writeF( tinNormalS& tinP , handle0111C& hJotP , const byteT* const pb1P = 0 , const countT cb1P = 0 , const byteT* const pb2P = 0 , const countT cb2P = 0 , const flagsT flagsP = flBOOKScwRITE_null ) ;
+    countT writeF( tinS& tinP , handle0111C& hJotP , const byteT* const pb1P = 0 , const countT cb1P = 0 , const byteT* const pb2P = 0 , const countT cb2P = 0 , const flagsT flagsP = flBOOKScwRITE_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.booksC.readF!||
-    boolT readF( tinNormalS& tinP , const byteT*& pbP , countT& cbP , handleC& handleP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
+    boolT readF( tinS& tinP , const byteT*& pbP , countT& cbP , handleC& handleP , const flagsT flagsP = flBOOKScrEAD_null , const boolT* pbQuitP = 0 , handleC* const phCursorP = 0 , const countT idCursorP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.booksC.writeF!||
-    countT writeF( tinNormalS& tinP , const byteT* pb1P = 0 , countT cb1P = 0 , const byteT* pb2P = 0 , countT cb2P = 0 , const flagsT flagsP = flBOOKScwRITE_null , handleC* const phWroteP = 0 /*, countT** ppcpIdAptP = 0*/ ) ;
+    countT writeF( tinS& tinP , const byteT* pb1P = 0 , countT cb1P = 0 , const byteT* pb2P = 0 , countT cb2P = 0 , const flagsT flagsP = flBOOKScwRITE_null , handleC* const phWroteP = 0 /*, countT** ppcpIdAptP = 0*/ ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.booksC.booksC!||
-    booksC( tinNormalS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postShortOrLongP , const countT idStateSpaceP = ifcIDsTATEsPACE_MULTIPLEaDAMS , const flagsT flagsP = flBOOKSc_null , const countT cbP = 0 , const countT cKeepInactiveP = 0 , const byteT bFillP = 0 , byteT* const pbBooksNoPuseBackP = 0 , const countT cbBooksNoPuseBackP = 0 , const countT idMemorySpaceP = 0 , const boolT* pbQuitP = 0 ) ;
+    booksC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postShortOrLongP , const countT idStateSpaceP = ifcIDsTATEsPACE_MULTIPLEaDAMS , const flagsT flagsP = flBOOKSc_null , const countT cbP = 0 , const countT cKeepInactiveP = 0 , const byteT bFillP = 0 , byteT* const pbBooksNoPuseBackP = 0 , const countT cbBooksNoPuseBackP = 0 , const countT idMemorySpaceP = 0 , const boolT* pbQuitP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.booksC.dt_booksC!||
     ~booksC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.bookHeadS.NEWdELcLASSb!||
@@ -67,13 +67,13 @@
     public :
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb014.booksc.touchAllBooksF!||
-    voidT touchAllBooksF( tinNormalS& tinP , const boolT* pbQuitP ) ;
+    voidT touchAllBooksF( tinS& tinP , const boolT* pbQuitP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb013.booksc.setpcpidbookwantf!||
-    voidT setPcpIdBookWantF( tinNormalS& tinP , const flagsT flagsP , const countT* const pcpIdBookWantP , const boolT* pbQuitP ) ;
+    voidT setPcpIdBookWantF( tinS& tinP , const flagsT flagsP , const countT* const pcpIdBookWantP , const boolT* pbQuitP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb00b.booksC.setPostBookNameF!||
-    voidT setBookNameIdF( tinNormalS& tinP , const flagsT flagsP = flBOOKScsELECT_null , const countT* const pcpIdBookWantP = 0 , const boolT* pbQuitP = 0 ) ;
+    voidT setBookNameIdF( tinS& tinP , const flagsT flagsP = flBOOKScsELECT_null , const countT* const pcpIdBookWantP = 0 , const boolT* pbQuitP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb012.booksc.idbookminmaxf!||
-    voidT idBookMinMaxF( tinNormalS& tinP , countT*& pcpIdBookMinP , countT*& pcpIdBookMaxP , const flagsT flagsP = flBOOKScsELECT_null , const boolT* pbQuitP = 0 ) ;
+    voidT idBookMinMaxF( tinS& tinP , countT*& pcpIdBookMinP , countT*& pcpIdBookMaxP , const flagsT flagsP = flBOOKScsELECT_null , const boolT* pbQuitP = 0 ) ;
 
     byteT           pbNapReadCursor[  sizeof( napkinC ) ] ;
     byteT           pbFileReadCursor[ sizeof( fileC   ) ] ;

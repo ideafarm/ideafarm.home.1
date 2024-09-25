@@ -51,8 +51,8 @@
             bTlsEarlyLateIF() = 0 ; if( &pTinF() != &sf.pTin        ) { BLAMMO ; }
                                     if( &pTinF() != &pTinMainI_IF() ) { BLAMMO ; }
 
-            // THE JOB DONE BY THE FOLLOWING LINES CANNOT EASILY BE DONE AT tinNormalS CT TIME BECAUSE offFingerVerifyI CANNOT BE SET THERE; IT MUST BE SET IN THIS STACK FRAME
-            // ALL OF THIS IS UNWOUND BY THE NORMAL UNWINDING CODE THAT IS EXECUTED DURING ~tinNormalS, AND THAT CODE ALSO SETS bTlsEarlyLateI
+            // THE JOB DONE BY THE FOLLOWING LINES CANNOT EASILY BE DONE AT tinS CT TIME BECAUSE offFingerVerifyI CANNOT BE SET THERE; IT MUST BE SET IN THIS STACK FRAME
+            // ALL OF THIS IS UNWOUND BY THE NORMAL UNWINDING CODE THAT IS EXECUTED DURING ~tinS, AND THAT CODE ALSO SETS bTlsEarlyLateI
             // WHEN sf.tinEarlyLate WAS CT, pTinMainI WAS UPDATED ; NOW THAT offFingerVerifyI IS SET, bTlsEarlyLateI CAN BE RESET, AND pTinMainI LOADED INTO sf.pTin
 
             offFingerVerifyI = ebpAM() - (countT)&sf.fingerVerify ; //MUST BE DONE BEFORE pTinAM OR pTin2AM ARE CALLED ; THIS IS THE OFFSET OF FINGERvERIFY *BELOW* EBP, CALCULATED HERE SO THAT ITS VALUE IS POSITIVE, TO MAKE DEBUGGER DISPLAYS EASIER TO READ
@@ -93,7 +93,7 @@
 
 /**/
 */
-pTin, if not ze, points to the tinNormalS, object for this thread
+pTin, if not ze, points to the tinS, object for this thread
 then the value in pTin can be obtained
 my stack frame can be found by walking the stack looking for FINGERnEG_THREADlOCALsTORAGE
 i allocate oo objects on the thread's stack so that they can be found at known offsets within the stack frame

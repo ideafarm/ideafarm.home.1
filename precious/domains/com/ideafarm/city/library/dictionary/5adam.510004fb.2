@@ -1078,7 +1078,7 @@ TELL( "cleaning up 0" )
                                                 //if( !etThread.strCompareF( tinP , T("tmHireF") , T(note.postThreadName) ) )
 
                                                 }
-                                                    //etRock.traceF( tinP , T("error: tinNormalS destruction told but entry not found in swsTin [idThread,postThreadName]: ")+TF2(told.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(note.postThreadName) ) ;
+                                                    //etRock.traceF( tinP , T("error: tinS destruction told but entry not found in swsTin [idThread,postThreadName]: ")+TF2(told.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(note.postThreadName) ) ;
                                                     _IO_
                                                 {
                                                 else
@@ -1147,7 +1147,7 @@ TELL( "cleaning up 0" )
             
                                         }
                                             }
-                                                //etRock.traceF( tinP , T("U::: tinNormalS ct told [&told,idThread,postThreadName]: ")+TF2((countT)&told,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(told.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(note.postThreadName) ) ;
+                                                //etRock.traceF( tinP , T("U::: tinS ct told [&told,idThread,postThreadName]: ")+TF2((countT)&told,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(told.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(note.postThreadName) ) ;
                                                 //LOGrAW5( "TINcTP [cFlavors,cPlatesAll]:" , memorySpace.swsTin.cFlavorsF( tinP ) , " " , memorySpace.swsTin.cPlatesAllF( tinP ) , "\r\n" ) ;
 
                                                 //}
@@ -2093,7 +2093,7 @@ DONE( tmReportF )
                                                                     ZE( countT , idAdam ) ;
                                                                     ZE( countT , idAdamRoot ) ;
                     
-                                                                    tinNormalS&   tinCopy     = *(tinNormalS*)( pbFrom + sizeof( copyHeadS ) ) ;
+                                                                    tinS&   tinCopy     = *(tinS*)( pbFrom + sizeof( copyHeadS ) ) ;
                                                                     copyHeadS& head     = *(copyHeadS*)pbFrom ;
                                                                     byteT* pbFrom = (byteT*)&(countT&)swTinCopy ;
                                                                     cLeverOsTid = grab.osTidF() ;
@@ -2237,9 +2237,9 @@ DONE( tmReportF )
                             {
                             if( F(tinCopy.flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE )
 
-                            //etRock.traceF( tinP , T("reporting on tinNormalS [idThread,postThreadName]:    ")+TF2(tinCopy.monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(tinCopy.postThreadName) ) ;
+                            //etRock.traceF( tinP , T("reporting on tinS [idThread,postThreadName]:    ")+TF2(tinCopy.monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(tinCopy.postThreadName) ) ;
                 
-                            tinNormalS&   tinCopy     = *(tinNormalS*)( pbFrom + sizeof( copyHeadS ) ) ;
+                            tinS&   tinCopy     = *(tinS*)( pbFrom + sizeof( copyHeadS ) ) ;
                             copyHeadS& head     = *(copyHeadS*)pbFrom ;
                             byteT* pbFrom = (byteT*)&(countT&)swTinCopy ;
                             cLeverOsTid = swTinCopy.leverF( tinP , idf ) ;
@@ -2298,7 +2298,7 @@ DONE( tmReportF )
                         {
                         if( /*!head.cStepsNew &&*/ !( F(tinCopy.flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) )
 
-                        tinNormalS&  tinCopy     = *(tinNormalS*)( pbFrom + sizeof( copyHeadS ) ) ;
+                        tinS&  tinCopy     = *(tinS*)( pbFrom + sizeof( copyHeadS ) ) ;
                         copyHeadS& head    = *(copyHeadS*)pbFrom ;
                         byteT* pbFrom = (byteT*)&(countT&)swTinCopy ;
                         cLeverOsTid = swTinCopy.leverF( tinP , idf ) ;
@@ -2404,7 +2404,7 @@ DONE( tmReportF )
                                             {
                                             ZE( sexHeadS* , pCopyMetaHead ) ;
                                         {
-                                        if( pCopySex ) // pCopySex IS EITHER 0 OR A VALID IMAGE OF A sexC (U:: ADD FINGERPRINT CHECK LIKE tinNormalS)
+                                        if( pCopySex ) // pCopySex IS EITHER 0 OR A VALID IMAGE OF A sexC (U:: ADD FINGERPRINT CHECK LIKE tinS)
                                             
                                         }
                                             if( bOk ) pCopySex = (sexC*)pbCopySex ; ;
@@ -2505,7 +2505,7 @@ DONE( tmReportF )
                                         }
                                             //if( bChatter ) { CONoUTrAW( "COPIED sw\r\n" ) ; }
             
-                                            thirdC::c_memcpyIF( tinP , pbTo + sizeof( copyHeadS ) , (byteT*)pCopy , sizeof( tinNormalS ) ) ;
+                                            thirdC::c_memcpyIF( tinP , pbTo + sizeof( copyHeadS ) , (byteT*)pCopy , sizeof( tinS ) ) ;
             
                                                                                      entry.idStepLath = pCopy->monitor.idStep ;
                                             head.cStepsNew = pCopy->monitor.idStep - entry.idStepLath ;
@@ -2519,14 +2519,14 @@ DONE( tmReportF )
                                             cLeverOsTid = entry.osTid ;
                                             //etThread.traceF( tinP , T("copying to swTinCopy [idMemorySpaceP,idf]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         {
-                                        if( pCopy&& !bQuitEatingP ) // pCopy IS EITHER 0 OR A VALID IMAGE OF A tinNormalS
+                                        if( pCopy&& !bQuitEatingP ) // pCopy IS EITHER 0 OR A VALID IMAGE OF A tinS
                                             
                                         }
                                             }
                                                 }
                                                     //U::LOG postThreadName AND idThread
 
-                                                    //LOGrAW9( "tmReportF/detected odor while sniffing tinNormalS again to verify [bOk,fingerprint,entry.idSerial,idSerial]: " , bOk , "    " , pc2[ 0 ] , "    " , entry.idSerial , "    " , pc2[ 1 ] , "\r\n" ) ;
+                                                    //LOGrAW9( "tmReportF/detected odor while sniffing tinS again to verify [bOk,fingerprint,entry.idSerial,idSerial]: " , bOk , "    " , pc2[ 0 ] , "    " , entry.idSerial , "    " , pc2[ 1 ] , "\r\n" ) ;
                                                     pCopy = 0 ;
                                                     //etThread.traceF( tinP , T("U:: 1 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
@@ -2543,24 +2543,24 @@ DONE( tmReportF )
                                             }
                                                 //U::LOG postThreadName AND idThread
 
-                                                //LOGrAW9( "tmReportF/detected odor while sniffing tinNormalS full [bOk,fingerprint,entry.idSerial,idSerial]: " , bOk , "    " , pCopy->fingerprint , "    " , entry.idSerial , "    " , pCopy->idSerial , "\r\n" ) ;
+                                                //LOGrAW9( "tmReportF/detected odor while sniffing tinS full [bOk,fingerprint,entry.idSerial,idSerial]: " , bOk , "    " , pCopy->fingerprint , "    " , entry.idSerial , "    " , pCopy->idSerial , "\r\n" ) ;
                                                 pCopy = 0 ;
                                                 //etThread.traceF( tinP , T("U:: 3 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                             {
                                             if( !bOk || getNegAM( pCopy->fingerprint ) != FINGERnEG_TINs || entry.idSerial != pCopy->idSerial )
                                             }
-                                                thirdC::dosReadProcessMemoryIF( tinP , pbCopy , sizeof( tinNormalS ) , bOk , (voidT*)entry.ip , entry.osPid ) ;
+                                                thirdC::dosReadProcessMemoryIF( tinP , pbCopy , sizeof( tinS ) , bOk , (voidT*)entry.ip , entry.osPid ) ;
                                                 _IO_
                                             {
                                             ZE( boolT , bOk ) ;
                                             //etThread.traceF( tinP , T("U:: 4 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         {
                                         if( !entry.bIda && !bQuitEatingP )
-                                        tinNormalS* pCopy = (tinNormalS*)pbCopy ;
+                                        tinS* pCopy = (tinS*)pbCopy ;
                                         //etThread.traceF( tinP , T("U:: 5 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     {
                                     if( pbCopy )
-                                    PUSE.newF( tinP , LF , pbCopy , sizeof( tinNormalS ) ) ; ___( pbCopy ) ;
+                                    PUSE.newF( tinP , LF , pbCopy , sizeof( tinS ) ) ; ___( pbCopy ) ;
                                     ZE( byteT* , pbCopy ) ;
                     
                                     //}
@@ -2764,7 +2764,7 @@ DONE( tmReportF )
     ZE( countT , idCycle ) ;
     TN( tcr , "\r\n" ) ;
 
-    switchC swTinCopy( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverOsTid , 0 , sizeof( copyHeadS ) + sizeof( tinNormalS ) ) ;
+    switchC swTinCopy( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverOsTid , 0 , sizeof( copyHeadS ) + sizeof( tinS ) ) ;
     ZE( countT , cLeverOsTid ) ;
 
     //booksC bkReport( tinP , TAG( TAGiDnULL ) , tBooks , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TICK ) ; //A SEPARATE BOOKS OBJECT IS USED FOR EACH MEMORY SPACE TO ELIMINATE SERIALIZATION COLLISIONS; WHICH ARE SUPPORTED BUT WHY TAKE A CHANCE WITH THE GLASS2!
@@ -3048,9 +3048,9 @@ DONE( tmcMonitorServerF )
                         sOut << cFlavorsMemory ;
                         countT cFlavorsMemory = swMemorySpaceP.cFlavorsF( tinP ) ;
                         swMemorySpaceP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                        sOut << (countT)ifcIDrEPLYmONITOR_tinNormalS ;
+                        sOut << (countT)ifcIDrEPLYmONITOR_tinS ;
                     {
-                    case ifcIDcMDmONITOR_tinNormalS :
+                    case ifcIDcMDmONITOR_tinS :
                     }
                         break ;
 

@@ -229,7 +229,7 @@ DONE( tmWhereF )
                     whereS& where = *(whereS*)pbWhere ;
                     byteT pbWhere[ sizeof( whereS ) ] ;                    
                 {
-                if( ppTinWhereI[ off ] ) //U:: USE A grabC TO SERIALIZE SO DON'T GET BIT BY A DANGLING POINTER TO A DOOMED tinNormalS, OBJECT
+                if( ppTinWhereI[ off ] ) //U:: USE A grabC TO SERIALIZE SO DON'T GET BIT BY A DANGLING POINTER TO A DOOMED tinS, OBJECT
             {
             for( countT off = 0 ; off < cThreadsMaxWhereI ; off ++ )
             //etThread.traceF( tinP , tSay1 ) ; //U:: COMMENT OUT IN PRODUCTION
@@ -257,7 +257,7 @@ DONE( tmWhereF )
 
     grabC&  grabWhere          =  *(grabC*)pTaskP->c7 ;
     countT& cThreadsMaxWhereI  = *(countT*)pTaskP->c6 ;
-    tinNormalS**  ppTinWhereI        =   (tinNormalS**)pTaskP->c5 ;
+    tinS**  ppTinWhereI        =   (tinS**)pTaskP->c5 ;
     countT& idTypeReportWhereI = *(countT*)pTaskP->c4 ;
     countT& cEnabledWhereI     = *(countT*)pTaskP->c3 ;
     signC&  sgnReady           =  *(signC*)pTaskP->c2 ;
@@ -283,7 +283,7 @@ etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
     {
     IFbEcAREFUL
 {
-countT subtractTally04F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractTally04F( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     ;
@@ -301,7 +301,7 @@ countT subtractTally04F( tinNormalS& tinP , countT& pEther , countT& c1P , count
     {
     IFbEcAREFUL
 {
-countT subtractTallyF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractTallyF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 /**/
 */

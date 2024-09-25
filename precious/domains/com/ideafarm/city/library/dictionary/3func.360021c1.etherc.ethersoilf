@@ -7382,7 +7382,7 @@
     // /**/if( bTrace ) traceF( tinP , T("etherSoilF / entering (validating each field of soulInP)") ) ;
     boolT bTrace = idModeP == ifcIDmODEeTHERsOIL_REPORT /*|| idModeP == ifcIDmODEeTHERsOIL_LINT*/ ;
 {
-/*1*/countT etherC::etherSoilF( tinNormalS& tinP , const boolT& bQuitP , soulC& soulOutP , soulC& soulInP , const countT idModeP , const strokeS* const psttKeyP , const flagsT flagsP , const strokeS* const psttTmpKtCodeSoiiP , const osTextT* const postSourceP , const countT costSourceP )/*1*/
+/*1*/countT etherC::etherSoilF( tinS& tinP , const boolT& bQuitP , soulC& soulOutP , soulC& soulInP , const countT idModeP , const strokeS* const psttKeyP , const flagsT flagsP , const strokeS* const psttTmpKtCodeSoiiP , const osTextT* const postSourceP , const countT costSourceP )/*1*/
 
 }
     return 0 ;
@@ -7411,7 +7411,7 @@
     switchStackC& swsSettingsP     = *(switchStackC*)(&cArg2P)[ 2 ] ;
     strokeS*&     psttzLeverCloudP =     *(strokeS**)(&cArg2P)[ 1 ] ;
 {
-countT walkCloudViewSettingsCBF( tinNormalS& tinP , countT& cArg1P , countT& cArg2P )
+countT walkCloudViewSettingsCBF( tinS& tinP , countT& cArg1P , countT& cArg2P )
 byteT pbBufferCopy[ TUCK ] ;
 byteT pbBuffer[ TUCK ] ;
 
@@ -7989,7 +7989,7 @@ byteT pbBuffer[ TUCK ] ;
 
     __Z( psttSetP ) ;
 {
-voidT emitSetF( tinNormalS& tinP , etherC& etherP , soulC& soulrFileSetsP , soulC& soulIdFragShortP , const strokeS* const psttSetP , stackC& stSetP , emitSetParmS& espP , const strokeS* const psttCurrentNameP )
+voidT emitSetF( tinS& tinP , etherC& etherP , soulC& soulrFileSetsP , soulC& soulIdFragShortP , const strokeS* const psttSetP , stackC& stSetP , emitSetParmS& espP , const strokeS* const psttCurrentNameP )
 
 }
     etherP.strMakeFromOsTextF( tinP , psttTestDayTitle        , ".!.control.page.title"       ) ; ___( psttTestDayTitle         ) ;
@@ -8083,7 +8083,7 @@ tcr(                   tinP , TAG( TAGiDnULL ) , flTEXTc_null , "\r\n"          
 bTrace( bTraceP ) ,
 stFileType( stFileTypeP ) ,
 ether( etherP ) ,
-emitSetParmS::emitSetParmS( tinNormalS& tinP , etherC& etherP , stackC& stFileTypeP , const boolT bTraceP , textC& tArchiveP ) :
+emitSetParmS::emitSetParmS( tinS& tinP , etherC& etherP , stackC& stFileTypeP , const boolT bTraceP , textC& tArchiveP ) :
 
 }
     ether.delF( tinP , psttTestDayTitle         ) ;
@@ -8110,7 +8110,7 @@ emitSetParmS::~emitSetParmS( voidT )
 
 ;
 }
-    emitSetParmS( tinNormalS& tinP , etherC& etherP , stackC& stFileTypeP , const boolT bTraceP , textC& tArchiveP ) ;
+    emitSetParmS( tinS& tinP , etherC& etherP , stackC& stFileTypeP , const boolT bTraceP , textC& tArchiveP ) ;
     ~emitSetParmS( voidT ) ;
 
     strokeS* psttTestDayTitle       ;
@@ -8220,7 +8220,7 @@ struct emitSetParmS
     IFbEcAREFUL
     countT csttIndent = - 1 ;
 {
-countT csttIndentF( tinNormalS& tinP , etherC& etherP , const strokeS* const psttP , strokeS* psttQuoteP = 0 )
+countT csttIndentF( tinS& tinP , etherC& etherP , const strokeS* const psttP , strokeS* psttQuoteP = 0 )
 // else i return -1, which means "eol not found"
 // if psttP contains eol then i return the number of strokes in psttP after the lath eol
 //U::MOVE THIS INTO etherC
@@ -8304,7 +8304,7 @@ countT csttIndentF( tinNormalS& tinP , etherC& etherP , const strokeS* const pst
                  idFirstP = 0 ; // I AM NOT GOING TO DO ANYTHING ELSE TO PARAMETERS UNLESS I FIND A SYNTACTICALLY VALID FULL OR PARTIAL ELEMENT
     countT idf = idFirstP ;
 {
-voidT findElementF( tinNormalS& tinP , etherC& etherP , countT& idfElementP , countT& idlElementP , const strokeS* const psttP , countT& idFirstP , textC** pptFindP , const countT cFindP )
+voidT findElementF( tinS& tinP , etherC& etherP , countT& idfElementP , countT& idlElementP , const strokeS* const psttP , countT& idFirstP , textC** pptFindP , const countT cFindP )
 
 // 
 // idf       : IF FOUND AND THERE ARE MORE STROKES THEN WILL BE THE POSITION OF THE WOTH STROKE AFTER THE ELEMENT
@@ -8341,7 +8341,7 @@ voidT findElementF( tinNormalS& tinP , etherC& etherP , countT& idfElementP , co
     {
     IFbEcAREFUL
 {
-countT subtractTimecard_330021c0_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractTimecard_330021c0_F( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return - scSgn ;
@@ -8360,7 +8360,7 @@ countT subtractTimecard_330021c0_F( tinNormalS& tinP , countT& pEther , countT& 
     {
     IFbEcAREFUL
 {
-countT subtractBuy_330021c0_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractBuy_330021c0_F( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 /**/
 */
@@ -8369,7 +8369,7 @@ countT subtractBuy_330021c0_F( tinNormalS& tinP , countT& pEther , countT& c1P ,
 }
     etherP.strFuseF( tinP , soulOutP , psttFlagP ) ;
 {
-voidT strFuseErrorFlag_330021c0_F( tinNormalS& tinP , etherC& etherP , soulC& soulOutP , const strokeS* const psttFlagP )
+voidT strFuseErrorFlag_330021c0_F( tinS& tinP , etherC& etherP , soulC& soulOutP , const strokeS* const psttFlagP )
 //THIS IS USED ONLY TO MAKE IT EASY TO PUT A BREAKPOINT IN WO PLACE TO FIND WHERE ERRONEOUS INPUT IS DETECTED
 
 }
@@ -8569,7 +8569,7 @@ voidT strFuseErrorFlag_330021c0_F( tinNormalS& tinP , etherC& etherP , soulC& so
 
     _IO_
 {
-boolT etherSoilWalkCBF( tinNormalS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT etherSoilWalkCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 #define ifcIDmODEsOILwALK_INSPECTfILEnAMES   0xdddd0004
 #define ifcIDmODEsOILwALK_ZIP                0xdddd0003
@@ -8593,7 +8593,7 @@ boolT etherSoilWalkCBF( tinNormalS& tinP , countT& cDirsP , countT& cFilesP , co
     ZE( countT , cFound ) ;
     countT cMaxCycles = TUCK ; // GRACEFULLY FAIL IF CYCLING OCCURS
 {
-voidT obeyReplacementsF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , switchC& swReplaceP , strokeS*& psttLeverReplaceP )
+voidT obeyReplacementsF( tinS& tinP , etherC& etherP , strokeS*& psttP , switchC& swReplaceP , strokeS*& psttLeverReplaceP )
 
 }
     etherP.delF( tinP , psttodt ) ;
@@ -8723,7 +8723,7 @@ voidT obeyReplacementsF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , s
 
     TN( tTranscript , psttvtP ) ;
 {
-voidT emitTranscriptIfChangedF( tinNormalS& tinP , etherC& etherP , const strokeS* psttKey , const strokeS* psttvtP , countT time1P , sCountT time2P , const countT idTranscriptP , textC& tArchiveP )
+voidT emitTranscriptIfChangedF( tinS& tinP , etherC& etherP , const strokeS* psttKey , const strokeS* psttvtP , countT time1P , sCountT time2P , const countT idTranscriptP , textC& tArchiveP )
 
 }
     while( !etherC::etPrimeIF( tinP ) && ~hFind ) ;
@@ -8756,7 +8756,7 @@ voidT emitTranscriptIfChangedF( tinNormalS& tinP , etherC& etherP , const stroke
     TN( tTo , psttToP ) ;
     strokeS sttSlash( '/' ) ;
 {
-voidT pour360021c1F( tinNormalS& tinP , etherC& etherP , const strokeS* const psttToP , const strokeS* const psttFromP )
+voidT pour360021c1F( tinS& tinP , etherC& etherP , const strokeS* const psttToP , const strokeS* const psttFromP )
 
 ;
 

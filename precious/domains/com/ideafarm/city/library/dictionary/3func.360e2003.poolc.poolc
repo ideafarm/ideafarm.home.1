@@ -403,7 +403,7 @@ napFace
     tinP , idLineCtP , idiFileCtP , pbBitsCtP ,
 (
 batPoolCt
-/*1*/poolC::poolC( tinNormalS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , const countT* pczHintPreallocationP , countT idMemorySpaceP ) :/*1*/
+/*1*/poolC::poolC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , const countT* pczHintPreallocationP , countT idMemorySpaceP ) :/*1*/
 
 }
     if( F(flagsPoolFormat) & flPOOLfORMAT_SETS ) pcCbDropAdjust[ 5 ] = sizeof( countT ) ;          //THIS WILL PROVIDE A SLOT SIZE THAT IS EXACTLY THE SIZE OF listOfSetC
@@ -418,7 +418,7 @@ cRef( 1 ) ,
 flagsPoolFormat( flagsPoolFormatP ) ,
 idFormat( 1 ) ,
 finger( 0 ) ,
-poolC::face_poolC_S::face_poolC_S( tinNormalS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT cbDropSeparatorP , const countT cbDropHeaderP ) :
+poolC::face_poolC_S::face_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT cbDropSeparatorP , const countT cbDropHeaderP ) :
 
 }
     for( countT offg = 0 ; offg < CsLOTsIZESmAX ; offg ++ ) new( 0 , tinP , pbzaGrab + offg * sizeof( grabC ) , sizeof( grabC ) ) grabC( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS | flGRABc_SHARElAYER , ifcIDgRABlAYER_8POOL5nEW ) ;
@@ -445,7 +445,7 @@ pGrabNewElt( (grabC*)pbzaGrab ) ,
 idMemorySpace( idMemorySpaceP ) ,
 idStateSpace( idStateSpaceP ) ,
 flagsCt( flagsP ) ,
-poolC::guts_poolC_S::guts_poolC_S( tinNormalS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , countT idMemorySpaceP ) :
+poolC::guts_poolC_S::guts_poolC_S( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , countT idMemorySpaceP ) :
 
 //     | 
 //     | f1 (impossible) f1                  5              (expCbDrop f1 IS IMPOSSIBLE BECAUSE THE LOWEST ALLOCATION GRAIN IS NOT AVAILABLE AND THE RUNNING PROGRAM'S FOOTPRINT OCCUPIES PART OF THE REMAINDER OF THE LOWER HALF OF THE FULL ADDRESS SPACE (THE UPPER HALF IS NOT ACCESSIBLE TO APPLICATION CODE)

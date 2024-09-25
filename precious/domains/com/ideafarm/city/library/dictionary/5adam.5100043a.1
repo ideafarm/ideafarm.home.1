@@ -109,7 +109,7 @@ TODO
     stackC st_pstt( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
 
 {
-voidT nameF( tinNormalS& tinP , etherC& etThread , strokeS*& psttP , const byteT* pbP , const byteT* const pbOriginP )
+voidT nameF( tinS& tinP , etherC& etThread , strokeS*& psttP , const byteT* pbP , const byteT* const pbOriginP )
 
 }
     }
@@ -137,7 +137,7 @@ voidT nameF( tinNormalS& tinP , etherC& etThread , strokeS*& psttP , const byteT
     {
     for(;;)
 {
-voidT nameF( tinNormalS& tinP , etherC& etThread , stackC& st_psttP , const byteT* pbP , const byteT* const pbOriginP )
+voidT nameF( tinS& tinP , etherC& etThread , stackC& st_psttP , const byteT* pbP , const byteT* const pbOriginP )
 
 }
     etThread.delF( tinP , pstt1w ) ;
@@ -194,7 +194,7 @@ voidT nameF( tinNormalS& tinP , etherC& etThread , stackC& st_psttP , const byte
 
     strokeS sttBlank(' ') ;
 {
-voidT queryF( tinNormalS& tinP , etherC& etThread , byteT*& pbP , countT& cbP , const strokeS* const psttP , const countT idTypeP )
+voidT queryF( tinS& tinP , etherC& etThread , byteT*& pbP , countT& cbP , const strokeS* const psttP , const countT idTypeP )
 
 }
     cbData        = SWAB2( cbData        ) ;
@@ -216,7 +216,7 @@ voidT headerS::swabF( voidT )
 }
     thirdC::logIF( tinP , T("header: cQuerys: ")+TF1(cQuerys)+T(" cAnswers: ")+TF1(cAnswers)+T(" cAuthorities: ")+TF1(cAuthorities)+T(" cNotes: ")+TF1(cNotes) ) ;
 {
-voidT headerS::logF( tinNormalS& tinP )
+voidT headerS::logF( tinS& tinP )
 
 }
 {
@@ -240,7 +240,7 @@ count01T headerS::idQueryLast ;
 }
     thirdC::logIF( tinP , T("rHeader: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass)+T(" secondsToLive: ")+TF1(secondsToLive)+T(" cbData: ")+TF1(cbData) ) ;
 {
-voidT rHeaderS::logF( tinNormalS& tinP )
+voidT rHeaderS::logF( tinS& tinP )
 
 }
 {
@@ -283,7 +283,7 @@ rHeaderS::rHeaderS( voidT ) :
 
     OStEXT( osto001 , 0x100 )
 {
-voidT logLabelsF( tinNormalS& tinP , byteT*& pbP , byteT* const pbOriginP )
+voidT logLabelsF( tinS& tinP , byteT*& pbP , byteT* const pbOriginP )
 */
   must point to the beginning of the header record for the message being parsed
  pbOriginP
@@ -296,7 +296,7 @@ arguments
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinNormalS& tinP ) ;
+    voidT logF( tinS& tinP ) ;
     rHeaderS( voidT ) ;
 
     count01T cbData ;
@@ -309,7 +309,7 @@ struct rHeaderS //THIS IS THE PART OF THE "RESOURCE RECORD" THAT FOLLOWS THE LAB
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinNormalS& tinP ) ;
+    voidT logF( tinS& tinP ) ;
     headerS( voidT ) ;
 
     count01T           cNotes              ;

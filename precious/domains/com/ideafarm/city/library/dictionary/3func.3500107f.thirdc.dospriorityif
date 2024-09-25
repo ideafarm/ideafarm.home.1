@@ -26,7 +26,7 @@
             {
             if( tinP.idDesireSetBySelf && idDesire != tinP.idDesireSetBySelf && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_ALLOWvOLATILEdESIRE ) )         // I ENFORCE THE CODING CONVENTION THAT A THREAD'S PRIORITY MAY ONLY BE CHANGED BY ITSELF ; NO OTHER THREAD OR PROCESS IS ALLOWED TO CHANGE IT
         {
-        if( osTidIF() == tinP.osTid )   // tinP WILL BE A tinNormalS INSTANCE FOR THREAM tm1F IF ANOTHER THREAD CALLS ExitProcess() ; SEE E.G. rootExceptionFilterF() ; CALLING ExitProcess() WILL CAUSE THE EXCEPTING THREAD TO EXECUTE THE DESTRUCTORS FOR THE GLOBAL OBJECTS, WHICH ALL USE WO OF THE GLOBAL tinNormalS INSTANCES INTENDED FOR THE MAIN THREAD
+        if( osTidIF() == tinP.osTid )   // tinP WILL BE A tinS INSTANCE FOR THREAM tm1F IF ANOTHER THREAD CALLS ExitProcess() ; SEE E.G. rootExceptionFilterF() ; CALLING ExitProcess() WILL CAUSE THE EXCEPTING THREAD TO EXECUTE THE DESTRUCTORS FOR THE GLOBAL OBJECTS, WHICH ALL USE WO OF THE GLOBAL tinS INSTANCES INTENDED FOR THE MAIN THREAD
 
         #endif
 
@@ -68,7 +68,7 @@
     //IFbEcAREFUL
     //THIS IS NEEDED FOR grabC EVEN IF THREAD IS IMPOTENT
 {
-/*1*/countT thirdC::dosPriorityIF( tinNormalS& tinP )/*1*/
+/*1*/countT thirdC::dosPriorityIF( tinS& tinP )/*1*/
 
 /**/
 */

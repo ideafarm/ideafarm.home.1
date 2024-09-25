@@ -275,7 +275,7 @@ THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL ) ;
             TINSL
         {
         if( bTinOk )
-        TELL( "TASK0: after newing either a tinNormalS in the working poolOld" )
+        TELL( "TASK0: after newing either a tinS in the working poolOld" )
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */
 
         }
@@ -286,16 +286,16 @@ THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL ) ;
                 bTinOk = 1 ;
             {
             if( pTin )
-            tinNormalS* pTin = new( 0 , tinP , LF ) tinNormalS( tinP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinDad , "tmWorkF" , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;
-            TELL( "TASK0: newing a tinNormalS in the working poolOld" )
-            tinNormalS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;
+            tinS* pTin = new( 0 , tinP , LF ) tinS( tinP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinDad , "tmWorkF" , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;
+            TELL( "TASK0: newing a tinS in the working poolOld" )
+            tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinDad ;
         {
         else
         }
             THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;
             bTinOk = 1 ;
         {
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinNormalS IN POOL*/
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinS IN POOL*/
         ZE( boolT , bTinOk ) ;
 
         }
@@ -338,7 +338,7 @@ THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL ) ;
 
 // 15b8feac                AT ENTRY POINT tmWorkF_workF ; __GRO 1044_
 // 15b8feac                AT CALL TO *pThreadWorkF
-// 15b8ff00                AT ENTRY POINT threadLocalStorage ; __GRO 9084_ ; sizeof( tlsStackFrameS ) is 8d96_ ; sizeof( tinNormalS ) is 8d76_ ; stack allocation is [15b70000_,15b90000_)
+// 15b8ff00                AT ENTRY POINT threadLocalStorage ; __GRO 9084_ ; sizeof( tlsStackFrameS ) is 8d96_ ; sizeof( tinS ) is 8d76_ ; stack allocation is [15b70000_,15b90000_)
 // 15b8ff00                AT CALL TO threadLocalStorageF
 // 15b8ff44                AT ENTRY POINT threadTry2InnerF ; __GRO 54_
 // 15b8ff44                AT CALL TO threadTry2InnerF
@@ -364,7 +364,7 @@ THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL ) ;
 //G:#define CwORKERS ( 0x1000 + 98 )
 //G:#define CwORKERS 0x1000
 //G:#define CwORKERS 0x800
-//WITHOUT RESETTING cAlive (I.E DO NOT CT tinNormalS AND etThread ON THE KID THREADS)
+//WITHOUT RESETTING cAlive (I.E DO NOT CT tinS AND etThread ON THE KID THREADS)
 
 //B:#define CwORKERS 0x600
 //B:#define CwORKERS 0x800

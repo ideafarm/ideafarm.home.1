@@ -8,8 +8,8 @@
 
 
 }
-    //SAYnAME( "~tinNormalS/-\r\n" )
-    TELL( "~tinNormalS: final tell tag in ~tinNormalS" )
+    //SAYnAME( "~tinS/-\r\n" )
+    TELL( "~tinS: final tell tag in ~tinS" )
     TINSL
 
     }
@@ -37,10 +37,10 @@
                     OStEXTC9( ostoSay , osTid ) ;
                     OStEXTAK( ostoSay , "_9    " ) ;
                     OStEXTC9( ostoSay , osPid ) ;
-                    OStEXTAK( ostoSay , "tinNormalS [osPid,osTid]:    " ) ;
+                    OStEXTAK( ostoSay , "tinS [osPid,osTid]:    " ) ;
                     OStEXT(   ostoSay , TUCK << 0 ) ;
 
-                    tinNormalS& tinP = *this ;
+                    tinS& tinP = *this ;
                 {
                 if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_CHATTERtHREADcTdT )
 
@@ -78,8 +78,8 @@
 
                     }
                         BLAMMOiD( 0x11111111 ) ;
-                        LOGrAW5(    "~tinNormalS error: [cPending,cMax]: " , cPending , " " , CmAXpENDINGiNoUTfRAMEpACKETS , "\r\n" ) ;
-                        CONoUTrAW5( "~tinNormalS error: [cPending,cMax]: " , cPending , " " , CmAXpENDINGiNoUTfRAMEpACKETS , "\r\n" ) ;
+                        LOGrAW5(    "~tinS error: [cPending,cMax]: " , cPending , " " , CmAXpENDINGiNoUTfRAMEpACKETS , "\r\n" ) ;
+                        CONoUTrAW5( "~tinS error: [cPending,cMax]: " , cPending , " " , CmAXpENDINGiNoUTfRAMEpACKETS , "\r\n" ) ;
                     {
                     if( cPending > CmAXpENDINGiNoUTfRAMEpACKETS )
 
@@ -109,10 +109,10 @@
             thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED ) ;
             CONoUTrAW( "\r\n" ) ; //CODE SYNC: 003002a 12f0002 12f0003
         {
-        if( thirdC::c_memcpyWithCallBackIF( (byteT*)pTinOld + CBtINpREFIX , (byteT*)this + CBtINpREFIX , sizeof( tinNormalS ) - CBtINpREFIX - CBtINsUFFIX , dtTellCopyDoneF , (countT)this ) )
+        if( thirdC::c_memcpyWithCallBackIF( (byteT*)pTinOld + CBtINpREFIX , (byteT*)this + CBtINpREFIX , sizeof( tinS ) - CBtINpREFIX - CBtINsUFFIX , dtTellCopyDoneF , (countT)this ) )
 
         }
-            //SAYnAME( "~tinNormalS/ " ) CONoUTrAW( "copying to " ) ; CONoUTrAW( NAME( pTinOld->idTinNamed ) ) ; ; CONoUTrAW( "\r\n" ) ;
+            //SAYnAME( "~tinS/ " ) CONoUTrAW( "copying to " ) ; CONoUTrAW( NAME( pTinOld->idTinNamed ) ) ; ; CONoUTrAW( "\r\n" ) ;
             TINSL
         {
     {
@@ -155,13 +155,13 @@
         //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
 
         deregisterIfF( tinP ) ;
-        TELL( "~tinNormalS: deregistering" )
+        TELL( "~tinS: deregistering" )
 
         }
             thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED ) ;
             }
                 }
-                    LOGrAW5( "~tinNormalS dying while this is grabbed [idLineCt,idiFileCt]: " , tinP.pPanLifiRecurseGrabbedLevel[ off + 1 ] , " " , tinP.pPanLifiRecurseGrabbedLevel[ off + 2 ] , "\r\n" ) ;
+                    LOGrAW5( "~tinS dying while this is grabbed [idLineCt,idiFileCt]: " , tinP.pPanLifiRecurseGrabbedLevel[ off + 1 ] , " " , tinP.pPanLifiRecurseGrabbedLevel[ off + 2 ] , "\r\n" ) ;
                 {
                 if( tinP.pPanLifiRecurseGrabbedLevel[ off ] )
             {
@@ -171,7 +171,7 @@
         if( tinP.monitor.cGrabbed )
         TELL( "verifying that nothing is now grabbed by this thread" )
 
-        TELL( "~tinNormalS: after setting processGlobal2I.flDt flag" )
+        TELL( "~tinS: after setting processGlobal2I.flDt flag" )
         }
             }
                 case ifcIDtINnAMED_tinInPoolMain             : { processGlobal2I.flDt |= flCTdTg_tinMainInPool             ; break ; }
@@ -186,7 +186,7 @@
             if( pTinF() != this )
         {
         if( idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI )
-        TELL( "~tinNormalS: setting processGlobal2I.flDt flag and testing pTinF()" )
+        TELL( "~tinS: setting processGlobal2I.flDt flag and testing pTinF()" )
 
         }
             }
@@ -195,7 +195,7 @@
 
                 }
                     thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP ) ;
-                    CONoUTrAW( "~tinNormalS: calling ExitProcess because i am being cleaned up and i have kid threads.\r\n" ) ;
+                    CONoUTrAW( "~tinS: calling ExitProcess because i am being cleaned up and i have kid threads.\r\n" ) ;
                 {
                 if( F(flagsThreadMode4) & flTHREADmODE4_EXCEPTIONcLEANUPdELETIONiNpROGRESS || F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXCEPTIONnOThANDLED )
             {
@@ -215,7 +215,7 @@
             //    OStEXTC(  ostoSay , usedPerTuck , 0 ) ;
             //    OStEXTAK( ostoSay , "    " ) ;
             //    OStEXTC(  ostoSay , monitor.idThread , 0 ) ;
-            //    OStEXTAK( ostoSay , "~tinNormalS thread stack max usage [idThread,usedPerTuck]:    " ) ;
+            //    OStEXTAK( ostoSay , "~tinS thread stack max usage [idThread,usedPerTuck]:    " ) ;
             //    OStEXT(   ostoSay , TUCK << 0 ) ;
             //{
             //countT usedPerTuck = !cbStackAll ? 0 : cbStackUsed * 0x100 / cbStackAll ;
@@ -224,11 +224,11 @@
         {
         if( idTinNamed != ifcIDtINnAMED_tinVeryVeryEarlyLateMainI )  //20221029@1850: IF DO THIS FOR VERYVERY, traceF CALL WILL CAUSE scoopC CT'OR TO FAIL DUE TO ZOMBIE FINGERPRINT IN my poop MEMBER (NOT ANALYZED)
 
-        //SAYnAME( "~tinNormalS/+\r\n" )
+        //SAYnAME( "~tinS/+\r\n" )
         TINSL
     {
 {
-/*1*/tinNormalS::~tinNormalS( voidT )/*1*/
+/*1*/tinS::~tinS( voidT )/*1*/
 
 //#define SAYnAME(postP) { CONoUTrAW7( "[idTin,idThread,idSerial,name]: " , idTin , " " , monitor.idThread , " " , idSerial , " " ) ; CONoUTrAW( NAME( idTinNamed ) ) ; CONoUTrAW( " " postP ) ; }
 
