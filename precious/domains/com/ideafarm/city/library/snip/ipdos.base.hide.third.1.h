@@ -32297,7 +32297,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend countT workInnerF( countT argP ) ;                                                                                                                                              \
  friend voidT  grabF( tinBaseS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/    \
  friend voidT  grabitC::grabF( tinBaseS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                               \
- friend voidT  pTinCopyF( tinBaseS& tinP , etherC& etThreadP , tinBaseS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP ) ;
+ friend voidT  pTinCopyF( tinBaseS& tinP , etherC& etThreadP , tinNormalS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP ) ;
 
 
 //

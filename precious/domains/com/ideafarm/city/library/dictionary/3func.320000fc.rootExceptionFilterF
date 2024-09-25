@@ -203,15 +203,15 @@
 
                     }
                         //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/2/-\r\n" ) ;
-                        ((tinNormalS*)pTinOffender)->pzTieLath = 0 ;
+                        pTinOffender->pzTieLath = 0 ;
                         //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/2/2\r\n" ) ;
                         //CONoUTrAW3( "rootExceptionFilterF 2 [rc]: " , rc , "\r\n" ) ;
                         rc = threadLocalStorageLocationF( 0 , 0 , 0 , (countT)&c8p ) ? EXCEPTION_CONTINUE_EXECUTION : EXCEPTION_CONTINUE_SEARCH ;_M
                         //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/2/1\r\n" ) ;
-                        thirdC::c_memcpyIF( ((tinNormalS*)pTinOffender)->pzTieLath->pbTin , (byteT*)pTinOffender , sizeof ((tinNormalS*)pTinOffender)->pzTieLath->pbTin ) ;_M
-                        thirdC::c_memsetIF( (byteT*)((tinNormalS*)pTinOffender)->pzTieLath , sizeof *((tinNormalS*)pTinOffender)->pzTieLath ) ;_M
+                        thirdC::c_memcpyIF( pTinOffender->pzTieLath->pbTin , (byteT*)pTinOffender , sizeof pTinOffender->pzTieLath->pbTin ) ;_M
+                        thirdC::c_memsetIF( (byteT*)pTinOffender->pzTieLath , sizeof *pTinOffender->pzTieLath ) ;_M
     
-                        ((tinNormalS*)pTinOffender)->pzTieLath = &tellInfoSys ;_M
+                        pTinOffender->pzTieLath = &tellInfoSys ;_M
                         tellInfoSysExceptionS tellInfoSys ;_M
                         //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/2/+\r\n" ) ;
                     {_M
@@ -221,11 +221,11 @@
                         rc = threadLocalStorageLocationF( 0 , 0 , 0 , (countT)&c8p ) ? EXCEPTION_CONTINUE_EXECUTION : EXCEPTION_CONTINUE_SEARCH ;_M
                         //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/1/1\r\n" ) ;
     
-                        thirdC::c_memcpyIF( ((tinNormalS*)pTinOffender)->pzTieLath->pbTin , (byteT*)pTinOffender , sizeof ((tinNormalS*)pTinOffender)->pzTieLath->pbTin ) ;_M
-                        thirdC::c_memsetIF( (byteT*)((tinNormalS*)pTinOffender)->pzTieLath , sizeof *((tinNormalS*)pTinOffender)->pzTieLath ) ;_M
+                        thirdC::c_memcpyIF( pTinOffender->pzTieLath->pbTin , (byteT*)pTinOffender , sizeof pTinOffender->pzTieLath->pbTin ) ;_M
+                        thirdC::c_memsetIF( (byteT*)pTinOffender->pzTieLath , sizeof *pTinOffender->pzTieLath ) ;_M
                         //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/1/+\r\n" ) ;
                     {_M
-                    if( ((tinNormalS*)pTinOffender)->pzTieLath )
+                    if( pTinOffender->pzTieLath )
                     count8S c8p( (countT)&osInfo , (countT)&idMile , ebpOffender , (countT)&prFloat , idExceptionEventMe ) ;
 
                     //etherC::ifcSayIF( processGlobal6I.tinBreak , "rootExceptionFilterF: beginning to write my normal report\r\n" , flSAY_LOG | flSAY_APPEND ) ;
@@ -363,7 +363,7 @@
             //CONoUTrAW( "rootExceptionFilterF/2/2/1\r\n" ) ;
 
             else                                                                                                                                       eTypeReport = normalE        ; // FULL INFORMATION
-            else if( /*idInThread == 1 ||*/ ( prFloat && *prFloat == 1 ) || !pTinOffender || getNegAM( ((tinNormalS*)pTinOffender)->fingerprint ) != FINGERnEG_TINs ) eTypeReport = shortE         ; // NO tinNormalS INFORMATION
+            else if( /*idInThread == 1 ||*/ ( prFloat && *prFloat == 1 ) || !pTinOffender || getNegAM( pTinOffender->fingerprint ) != FINGERnEG_TINs ) eTypeReport = shortE         ; // NO tinNormalS INFORMATION
             else if( /*idInThread == 2 ||*/ ( prFloat && *prFloat == 2 )                                                                             ) eTypeReport = tinyE          ; // NO INFO ; JUST A SINGLE LINE OF TEXT TO INDICATE THAT THE SHORT REPORT COULD NOT BE WRITTEN
                  if( /*idInThread >= 3 ||*/ ( prFloat && *prFloat >= 3 )                                                                             ) eTypeReport = nullE          ; // PREVENTS SPIN 
 

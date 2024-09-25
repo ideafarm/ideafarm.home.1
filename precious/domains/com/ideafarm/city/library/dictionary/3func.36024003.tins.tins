@@ -224,7 +224,7 @@
             {
             else
             }
-                if( ((tinNormalS*)pTinOld)->pPoop != &((tinNormalS*)pTinOld)->poop ) { BLAMMO ; }
+                if( pTinOld->pPoop != &pTinOld->poop ) { BLAMMO ; }
         
                 thirdC::c_strncpyIF( postTell , "tinNormalS::tinNormalS: my image is now valid by copying my elder" , sizeof postTell ) ;
 
@@ -262,7 +262,7 @@
         thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pBookMark                   , sizeof pBookMark                   ) ;
 
         else                                            thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppJot                           , sizeof ppJot ) ;
-        if( F(flags) & flTINs_INHERITjOTrEGISTRATIONS ) thirdC::c_memcpyIF( tinBaseSelfOrElderP , (byteT*)ppJot , (byteT*)((tinNormalS*)pTinDadP)->ppJot , sizeof ppJot ) ;
+        if( F(flags) & flTINs_INHERITjOTrEGISTRATIONS ) thirdC::c_memcpyIF( tinBaseSelfOrElderP , (byteT*)ppJot , (byteT*)pTinDadP->ppJot , sizeof ppJot ) ;
 
         thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitRecurse             , sizeof pcGrabitRecurse             ) ;
         thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitOsTid               , sizeof pcGrabitOsTid               ) ;
@@ -374,12 +374,12 @@ osTid( ( putNegAM( fingerprint , FINGERnEG_TINszOMBIE ) , ( this == &processGlob
 idDesireSetBySelfProcess( 0 ) ,
 idDesireSetBySelf( 0 ) ,
 fingerprint( 0 ) ,
-pag6( pTinDadP ? ((tinNormalS*)pTinDadP)->pag6 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag6 : &rootAdamGlobal6I ) ) ,
-pag5( pTinDadP ? ((tinNormalS*)pTinDadP)->pag5 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag5 : &rootAdamGlobal5I ) ) ,
-pag4( pTinDadP ? ((tinNormalS*)pTinDadP)->pag4 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag4 : &rootAdamGlobal4I ) ) ,
-pag3( pTinDadP ? ((tinNormalS*)pTinDadP)->pag3 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag3 : &rootAdamGlobal3I ) ) ,
-pag2( pTinDadP ? ((tinNormalS*)pTinDadP)->pag2 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag2 : &rootAdamGlobal2I ) ) ,
-pag1( pTinDadP ? ((tinNormalS*)pTinDadP)->pag1 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag1 : &rootAdamGlobal1I ) ) ,
+pag6( pTinDadP ? pTinDadP->pag6 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag6 : &rootAdamGlobal6I ) ) ,
+pag5( pTinDadP ? pTinDadP->pag5 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag5 : &rootAdamGlobal5I ) ) ,
+pag4( pTinDadP ? pTinDadP->pag4 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag4 : &rootAdamGlobal4I ) ) ,
+pag3( pTinDadP ? pTinDadP->pag3 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag3 : &rootAdamGlobal3I ) ) ,
+pag2( pTinDadP ? pTinDadP->pag2 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag2 : &rootAdamGlobal2I ) ) ,
+pag1( pTinDadP ? pTinDadP->pag1 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag1 : &rootAdamGlobal1I ) ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
 ) ,

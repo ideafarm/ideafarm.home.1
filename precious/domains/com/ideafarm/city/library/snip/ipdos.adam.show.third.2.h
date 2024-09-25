@@ -6921,7 +6921,7 @@ typedef countT (*/*ff*/kidFT/*ff*/)( countT cArgP ) ; /*ff*//**//*ff*/
 /**/
 /*1*//*cyrcleOldFT*//*1*/
 
-typedef countT (*/*ff*/cyrcleOldFT/*ff*/)( tinBaseS& , etherC& , countT& , const byteT* const , const countT ) ; /*ff*//**//*ff*/
+typedef countT (*/*ff*/cyrcleOldFT/*ff*/)( tinNormalS& , etherC& , countT& , const byteT* const , const countT ) ; /*ff*//**//*ff*/
 
 
 //
@@ -8406,7 +8406,7 @@ TASK0PROTO( tmWatchF ) ;
 */
 /**/
 
-/*1*/voidT pTinCopyF( tinBaseS& tinP , etherC& etThreadP , tinBaseS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP = 0 ) ;/*1*/
+/*1*/voidT pTinCopyF( tinBaseS& tinP , etherC& etThreadP , tinNormalS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP = 0 ) ;/*1*/
 
 
 //
@@ -19878,7 +19878,7 @@ i obtain the current thread's tinNormalS, by walking up the thread stack from a 
 
 */
 
-/*1*/tinBaseS*& __export pTin2AM( countT ebpP ) ;/*1*/
+/*1*/tinNormalS*& __export pTin2AM( countT ebpP ) ;/*1*/
 
 //PSEUDOdUPLICATEcODE THIS FILE
 #pragma aux pTin2AM =                                                                                  \
@@ -26052,12 +26052,12 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /* face */
- tinBaseS& tin ;
- etherC&   ether ;
- etherC&   etThread ;
- strokeS*  psttDirectives ;
- strokeS*  psttDirectivesReplied ;
- handleC&  hDll ;
+ tinNormalS&    tin ;
+ etherC&  ether ;
+ etherC&  etThread ;
+ strokeS* psttDirectives ;
+ strokeS* psttDirectivesReplied ;
+ handleC& hDll ;
 
 /* birth , death */
  mainS( tinBaseS& tinP , etherC& etherP , etherC& etThreadP , handleC& hDllP , strokeS* psttDirectivesP = 0 ) ;
@@ -26150,10 +26150,10 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /* face */
- tinBaseS& tin ;
- etherC&   ether ;
- strokeS*  psttDirectives ;
- strokeS*  psttDirectivesReplied ;
+ tinNormalS&    tin ;
+ etherC&  ether ;
+ strokeS* psttDirectives ;
+ strokeS* psttDirectivesReplied ;
 
 /* birth , death */
  peekS( tinBaseS& tinP , etherC& etherP , strokeS* psttDirectivesP = 0 ) ;
@@ -27545,7 +27545,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
  const byteT* const      pbThreadStackEnd    ;
  const byteT*            pbThreadStackLowest ;
 
-                         #define CBtINpREFIX ( sizeof( tinBaseS ) + 2 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + 3 * sizeof( const byteT* const ) )
+                         #define CBtINpREFIX ( 2 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + 2 * sizeof( const byteT* const ) )
                          //CODEsYNCH: 003002a 12f0002 12f0006
                          //END OF PREFIX: MEMBERS BEFORE THIS LINE ARE NOT SLOSHED (FROM/TO pTinOld)
 
@@ -27704,7 +27704,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
  signC*                  pSgnUtility ;                       /*F*/
  /* suffix end (not sloshed (copied) from tinNormalS to tinNormalS) */
 
- #define CBtINsUFFIX ( /*J*/ sizeof ppJot + /*A*/1 * sizeof( grabC ) + /*B*/( 1 /*+ 3 + ClOWtHREADS*/ ) * sizeof( tinBaseS* ) + /*C*/4 * sizeof( countT ) + /*D*/sizeof( flagsT ) + /*E*/CBbITScT + /*F*/sizeof( signC* ) )
+ #define CBtINsUFFIX ( /*J*/ sizeof ppJot + /*A*/1 * sizeof( grabC ) + /*B*/( 1 /*+ 3 + ClOWtHREADS*/ ) * sizeof( tinNormalS* ) + /*C*/4 * sizeof( countT ) + /*D*/sizeof( flagsT ) + /*E*/CBbITScT + /*F*/sizeof( signC* ) )
  //CODEsYNCHeND: DO NOT CHANGE THIS CODE WITHOUT ALSO CHANGING THE SYNC CODE
 
 /**/
@@ -32403,7 +32403,7 @@ examples
     textC*                      pTxtDllEntry1 ;
     textC*                      pTxtDllEntry2 ;
     textC*                      pTxtWinTitle ;
-    tinBaseS**                      ppTinWhere ;
+    tinNormalS**                      ppTinWhere ;
 
     public :
 
@@ -33668,7 +33668,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3418a.etherC.operator_const_poopC_ref!||
  operator poopC&( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36002202.etherc.operator_poopc_ref!||
- operator tinBaseS&( voidT ) ;
+ operator tinNormalS&( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34128.etherC.operator_tinNormalS_ref!||
  operator thirdC&( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.etherC.operator_thirdC_ref!||
@@ -35983,7 +35983,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*/struct _export mainRefsS/*1*/
 {
-    tinBaseS&         tin ;
+    tinNormalS&             tin ;
     etherC&           ether ;
     etherC*&          pEtThread ;
 
