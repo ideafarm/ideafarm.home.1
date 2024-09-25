@@ -82,7 +82,7 @@
  // tinS*                pTinKid ;                           /*B*/
  // tinS*                pTinBro ;                           /*B*/
  // tinS* const          pTinDad ;                           /*B*/
- // countT               idDesireSetBySelf_cGrab_pTinKid ;            /*C*/
+ // countT               idDesireSetBySelf_cGrab_pTinKid ;   /*C*/
  // countT               cGrab_pTinKid ;                     /*C*/
  grabC                   grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
  tinS* const             pTinOld ;                           /*B*/
@@ -226,7 +226,7 @@
 
                          //END OF PREFIX: MEMBERS BEFORE THIS LINE ARE NOT SLOSHED (FROM/TO pTinOld)
                          //CODEsYNCH: 003002a 12f0002 12f0006
-                         #define CBtINpREFIX ( 2 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + 2 * sizeof( const byteT* const ) )
+                         #define CBtINpREFIX ( 3 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + 3 * sizeof( const byteT* const ) )
 
  const byteT*            pbThreadStackLowest ;
  const byteT* const      pbThreadStackEnd    ;
@@ -245,6 +245,7 @@
  private :
 
  topC                     top_pTinMainI_ ;
+ const countT             idTypeTin ;
  countT         /*o  4*/  idSerial ;    // MUST BE CONTIGUOUS AND AT THE BEGINNING OF ME SO THAT MONITOR CAN READ THIS PAIR EFFICIENTLY
  countT         /*o  0*/  fingerprint ; // MUST BE CONTIGUOUS AND AT THE BEGINNING OF ME SO THAT MONITOR CAN READ THIS PAIR EFFICIENTLY
 /* face 1 */

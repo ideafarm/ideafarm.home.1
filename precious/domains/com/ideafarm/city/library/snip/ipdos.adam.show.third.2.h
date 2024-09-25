@@ -27518,6 +27518,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 /* face 1 */
  countT         /*o  0*/  fingerprint ; // MUST BE CONTIGUOUS AND AT THE BEGINNING OF ME SO THAT MONITOR CAN READ THIS PAIR EFFICIENTLY
  countT         /*o  4*/  idSerial ;    // MUST BE CONTIGUOUS AND AT THE BEGINNING OF ME SO THAT MONITOR CAN READ THIS PAIR EFFICIENTLY
+ const countT             idTypeTin ;
  topC                     top_pTinMainI_ ;
 
  private :
@@ -27536,7 +27537,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
  const byteT* const      pbThreadStackEnd    ;
  const byteT*            pbThreadStackLowest ;
 
-                         #define CBtINpREFIX ( 2 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + 2 * sizeof( const byteT* const ) )
+                         #define CBtINpREFIX ( 3 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + 3 * sizeof( const byteT* const ) )
                          //CODEsYNCH: 003002a 12f0002 12f0006
                          //END OF PREFIX: MEMBERS BEFORE THIS LINE ARE NOT SLOSHED (FROM/TO pTinOld)
 
