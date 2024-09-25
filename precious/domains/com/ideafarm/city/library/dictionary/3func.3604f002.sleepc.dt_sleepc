@@ -8,13 +8,13 @@
 
 
 }
-    (countT&)((tinNormalS*)pTin)->grabPseudo.idiFileCt = idiFileCtSave ;
-    (countT&)((tinNormalS*)pTin)->grabPseudo.idLineCt  = idLineCtSave  ;
-    if( bOsCall ) ((tinNormalS*)pTin)->grabPseudo.flags &= ~( F(flGRABc_PSEUDOoScALL) ) ;
+    (countT&)pTin->grabPseudo.idiFileCt = idiFileCtSave ;
+    (countT&)pTin->grabPseudo.idLineCt  = idLineCtSave  ;
+    if( bOsCall ) pTin->grabPseudo.flags &= ~( F(flGRABc_PSEUDOoScALL) ) ;
 
     }
-        ((tinNormalS*)pTin)->grabPseudo.idGrabberOk ++ ;
-        ((tinNormalS*)pTin)->grabPseudo.osTid = ((tinNormalS*)pTin)->grabPseudo.cGrabbed = 0 ;
+        pTin->grabPseudo.idGrabberOk ++ ;
+        pTin->grabPseudo.osTid = pTin->grabPseudo.cGrabbed = 0 ;
         //SIMULATE WHAT grabC::ungrabF WOULD DO TO RESET THE OBJECT
         //CODE SYNCH: 1700002 17f0006
     {
@@ -34,16 +34,16 @@
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
             OStEXTA( ostoBuf , ((tinNormalS&)tinP).postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\nTINSL: \"" ) ;
-            OStEXTC( ostoBuf , ((tinNormalS*)pTin)->idTin , 0 ) ;
+            OStEXTC( ostoBuf , pTin->idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            OStEXTA( ostoBuf , ((tinNormalS*)pTin)->postThreadName ) ;
+            OStEXTA( ostoBuf , pTin->postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\npTin : \"" ) ;
             OStEXT( ostoBuf , 0x80 )
         {
         if( pTin != &tinP )
         TINSL
     {
-    if( ((tinNormalS*)pTin)->idTinNamed != ifcIDtINnAMED_tinHeartI )
+    if( pTin->idTinNamed != ifcIDtINnAMED_tinHeartI )
 {
 /*1*/sleepC::~sleepC( voidT )/*1*/
 

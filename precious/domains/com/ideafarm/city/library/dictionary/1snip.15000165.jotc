@@ -15,7 +15,7 @@
 
         if( !ISvALIDjpOINTER( idJotP ) ) { BLAMMO ; }
     {
-    inline static pageC readIF( tinBaseS& tinP , countT idJotP )
+    inline static pageC readIF( tinNormalS& tinP , countT idJotP )
 
     }
         return ids ;
@@ -30,7 +30,7 @@
         for( countT offs = 0 ; offs < sizeof ((tinNormalS&)tinP).ppJot / sizeof ((tinNormalS&)tinP).ppJot[ 0 ] ; offs ++ )
         ZE( countT , ids ) ;
     {
-    inline countT idSlotJotF( tinBaseS& tinP ) const // IT IS ILLEGAL FOR ANY CODE OTHER THAN ZEJ() TO CALL ME
+    inline countT idSlotJotF( tinNormalS& tinP ) const // IT IS ILLEGAL FOR ANY CODE OTHER THAN ZEJ() TO CALL ME
 
     inline flagsT&        flagsCtRefF( voidT ) { return *(flagsT*)&flagsCt ; }         //INTENDED TO ALLOW CALLER TO MODIFY MY FLAGS TO, E.G., MODIFY BEHAVIOR DURING DT
     inline flagsT         flagsCtF(    voidT ) { return            flagsCt ; }
@@ -48,13 +48,13 @@
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d006.jotC.operator_element!||
     pageC operator []( countT idJotP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d005.jotC.readF!||
-    pageC readF( tinBaseS& tinP , countT idJotP ) ;
+    pageC readF( tinNormalS& tinP , countT idJotP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d004.jotC.writeF!||
-    countT writeF( tinBaseS& tinP , const byteT* const pb1P = 0 , countT cb1P = 0 , const byteT* const pb2P = 0 , countT cb2P = 0 , const flagsT flagsP = flJOTcwRITE_null , countT* pcWroteP = 0 ) ;
+    countT writeF( tinNormalS& tinP , const byteT* const pb1P = 0 , countT cb1P = 0 , const byteT* const pb2P = 0 , countT cb2P = 0 , const flagsT flagsP = flJOTcwRITE_null , countT* pcWroteP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d008.jotC.peekIdBookF!||
-    countT peekIdBookF( tinBaseS& tinP , countT idP ) ;
+    countT peekIdBookF( tinNormalS& tinP , countT idP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d003.jotC.jotC!||
-    jotC( tinBaseS& tinP , const osTextT* const postNameP , const flagsT flagsP = flJOTc_null , const countT cKeepInactiveP = 0 , const countT cbDataBookP = 0 , const countT cIndexEntriesBookP = 0 , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , flagsT flagsGrabP = flGRABc_null , countT idMemorySpaceP = 0 ) ;
+    jotC( tinNormalS& tinP , const osTextT* const postNameP , const flagsT flagsP = flJOTc_null , const countT cKeepInactiveP = 0 , const countT cbDataBookP = 0 , const countT cIndexEntriesBookP = 0 , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , flagsT flagsGrabP = flGRABc_null , countT idMemorySpaceP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d002.jotC.dt_jotC!||
     ~jotC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d001.jotC.NEWdELcLASSb!||

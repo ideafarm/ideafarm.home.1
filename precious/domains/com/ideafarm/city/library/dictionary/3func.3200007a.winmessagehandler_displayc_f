@@ -64,7 +64,7 @@
                 }
                     if( pStuff->pDisplay->pDeviceCBF ) (*pStuff->pDisplay->pDeviceCBF)( *pStuff->pTinWindow , flDEVICEcbf_null , *pStuff->pDisplay , pStuff->pDisplay->cArg , ifcIDeVENTdEVICEc_RESIZED , 0 ) ;
                     pStuff->pDisplay->positionF( tinP , flDISPLAYpOSITION_DOnOTpOSITION , info.right , info.bottom , info.left , info.top ) ;
-                    tinBaseS& tinP = *pStuff->pTinWindow ;
+                    tinNormalS& tinP = *pStuff->pTinWindow ;
                 {
                 if( info.right && info.bottom ) //CONDITIONAL BECAUSE I AM CALLED (SEND MESSAGE) DURING THE positionF CALL WITHIN WM_DISPLAYCHANGE
 
@@ -117,7 +117,7 @@
 
                 pStuff->pDisplay->grabF( tinP , TAG( TAGiDnULL ) ) ;
 
-                tinBaseS& tinP = *pStuff->pTinWindow ;
+                tinNormalS& tinP = *pStuff->pTinWindow ;
             {
             if( pStuff )
 
@@ -178,7 +178,7 @@
     {
     switch( idCmdP )
 
-    tinBaseS& tinP = *pStuff->pTinWindow ;
+    tinNormalS& tinP = *pStuff->pTinWindow ;
 
     ZE( countT , rc ) ;
     static boolT  bWothPaintDone ;

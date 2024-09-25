@@ -8,7 +8,7 @@
 
 
 }
-    if( this == (tinNormalS*)&tinBaseSelfOrElderP && monitor.idThread > 3 ) flagsThreadMode5 &= ~( F(flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) ) ;
+    if( this == &tinNormalSelfOrElderP && monitor.idThread > 3 ) flagsThreadMode5 &= ~( F(flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) ) ;
 
     }
         //SAYnAME( " tinNormalS/-\r\n" )
@@ -117,7 +117,7 @@
                         VirtualQuery( (byteT*)ebpP , &info , sizeof info ) ;
                         MEMORY_BASIC_INFORMATION info ;
                     {
-                    if( idTinNamed == ifcIDtINnAMED_tinInPoolMain || this == (tinNormalS*)&tinBaseSelfOrElderP )
+                    if( idTinNamed == ifcIDtINnAMED_tinInPoolMain || this == &tinNormalSelfOrElderP )
 
                     }
                         etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;
@@ -131,11 +131,11 @@
                         OStEXTAK( ostoSay , "tinNormalS [osPid,osTid]:    " ) ;
                         OStEXT(   ostoSay , TUCK >> 0 ) ;
 
-                        tinBaseS& tinP = *this ;
+                        tinNormalS& tinP = *this ;
                     {
                     if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_CHATTERtHREADcTdT )
                 {
-                if( idTinNamed == ifcIDtINnAMED_tinInPoolMain || ( this == (tinNormalS*)&tinBaseSelfOrElderP && idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI && idTinNamed != ifcIDtINnAMED_tinVeryVeryEarlyLateMainI ) )
+                if( idTinNamed == ifcIDtINnAMED_tinInPoolMain || ( this == &tinNormalSelfOrElderP && idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI && idTinNamed != ifcIDtINnAMED_tinVeryVeryEarlyLateMainI ) )
             {
             //if( F(processGlobal2I.flCt) & flCTdTg_WITHINlIFETIMEoFmAIN && !( F(processGlobal2I.flDt) & flCTdTg_WITHINlIFETIMEoFmAIN ) )                                                                       //THIS IS TO AVOID CLUTTERING THE LOG FILE
 
@@ -228,13 +228,13 @@
         
                 thirdC::c_strncpyIF( postTell , "tinNormalS::tinNormalS: my image is now valid by copying my elder" , sizeof postTell ) ;
 
-                if( thirdC::c_memcpyWithCallBackIF( (byteT*)this + CBtINpREFIX , (byteT*)&tinBaseSelfOrElderP + CBtINpREFIX , sizeof( tinNormalS ) - CBtINpREFIX - CBtINsUFFIX , ctTellCopyDoneF , (countT)this ) ) { BLAMMO ; } //CODE SYNC: 003002a 12f0002 12f0003
+                if( thirdC::c_memcpyWithCallBackIF( (byteT*)this + CBtINpREFIX , (byteT*)&tinNormalSelfOrElderP + CBtINpREFIX , sizeof( tinNormalS ) - CBtINpREFIX - CBtINsUFFIX , ctTellCopyDoneF , (countT)this ) ) { BLAMMO ; } //CODE SYNC: 003002a 12f0002 12f0003
 
-                putNegAM( ((tinNormalS&)tinBaseSelfOrElderP).fingerprint , FINGERnEG_TINszOMBIE ) ; //FROM NOW UNTIL I REGISTER MYSELF, MONITOR WILL NOT BE ABLE TO SEE A tinNormalS FOR THIS THREAD
-                if( getNegAM( ((tinNormalS&)tinBaseSelfOrElderP).fingerprint ) != FINGERnEG_TINs ) BLAMMO ;
+                putNegAM( tinNormalSelfOrElderP.fingerprint , FINGERnEG_TINszOMBIE ) ; //FROM NOW UNTIL I REGISTER MYSELF, MONITOR WILL NOT BE ABLE TO SEE A tinNormalS FOR THIS THREAD
+                if( getNegAM( tinNormalSelfOrElderP.fingerprint ) != FINGERnEG_TINs ) BLAMMO ;
 
-                //SAYnAME( " tinNormalS/ " ) CONoUTrAW( " copying from " ) ; CONoUTrAW( NAME( ((tinNormalS&)tinBaseSelfOrElderP).idTinNamed ) ) ; CONoUTrAW( "\r\n" ) ;
-                *(tinNormalS**)&pTinOld = (tinNormalS*)&tinBaseSelfOrElderP ;
+                //SAYnAME( " tinNormalS/ " ) CONoUTrAW( " copying from " ) ; CONoUTrAW( NAME( tinNormalSelfOrElderP.idTinNamed ) ) ; CONoUTrAW( "\r\n" ) ;
+                *(tinNormalS**)&pTinOld = &tinNormalSelfOrElderP ;
             {
             if( !( F(flags) & flTINs_NOeLDER ) )
         
@@ -244,29 +244,29 @@
             {
             //U::VALIDATE flags...NOTE THAT flags IS NOT VALIDATED. THIS IS BECAUSE I DO NOT HAVE AN POOP TO SET U::CONJ: IT COULD BE VALIDATED NOW THAT I KNOW WHETHER I CAN USE tinP AS MY ELDER)    
         
-            else            thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
-            if( pbBitsCtP ) thirdC::c_memcpyIF( tinBaseSelfOrElderP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
+            else            thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
+            if( pbBitsCtP ) thirdC::c_memcpyIF( tinNormalSelfOrElderP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
         
-            idDesireSetBySelfProcess = thirdC::dosPriorityProcessIF( tinBaseSelfOrElderP ) ;
-            idDesireSetBySelf = thirdC::dosPriorityIF( tinBaseSelfOrElderP ) ;
+            idDesireSetBySelfProcess = thirdC::dosPriorityProcessIF( tinNormalSelfOrElderP ) ;
+            idDesireSetBySelf = thirdC::dosPriorityIF( tinNormalSelfOrElderP ) ;
         {
 
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)postPad2                    , sizeof postPad2                    ) ;
+        thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)postPad2                    , sizeof postPad2                    ) ;
 
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)postThreadName              , sizeof postThreadName              ) ;
+        thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)postThreadName              , sizeof postThreadName              ) ;
 
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)postPad1                    , sizeof postPad1                    ) ;
+        thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)postPad1                    , sizeof postPad1                    ) ;
 
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pPanLifiRecurseGrabbedLevel , sizeof pPanLifiRecurseGrabbedLevel ) ;
+        thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)pPanLifiRecurseGrabbedLevel , sizeof pPanLifiRecurseGrabbedLevel ) ;
 
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pBookMark                   , sizeof pBookMark                   ) ;
+        thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)pBookMark                   , sizeof pBookMark                   ) ;
 
-        else                                            thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppJot                           , sizeof ppJot ) ;
-        if( F(flags) & flTINs_INHERITjOTrEGISTRATIONS ) thirdC::c_memcpyIF( tinBaseSelfOrElderP , (byteT*)ppJot , (byteT*)pTinDadP->ppJot , sizeof ppJot ) ;
+        else                                            thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)ppJot                           , sizeof ppJot ) ;
+        if( F(flags) & flTINs_INHERITjOTrEGISTRATIONS ) thirdC::c_memcpyIF( tinNormalSelfOrElderP , (byteT*)ppJot , (byteT*)pTinDadP->ppJot , sizeof ppJot ) ;
 
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitRecurse             , sizeof pcGrabitRecurse             ) ;
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitOsTid               , sizeof pcGrabitOsTid               ) ;
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppbGrabitRecurse            , sizeof ppbGrabitRecurse            ) ;
+        thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)pcGrabitRecurse             , sizeof pcGrabitRecurse             ) ;
+        thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)pcGrabitOsTid               , sizeof pcGrabitOsTid               ) ;
+        thirdC::c_memsetIF( tinNormalSelfOrElderP , (byteT*)ppbGrabitRecurse            , sizeof ppbGrabitRecurse            ) ;
     
         //SAYnAME( " tinNormalS/+\r\n" )
 
@@ -293,18 +293,18 @@ cTls( 0 ) ,
 flagsTrace_soulC( flTRACEsOULc_ON | flTRACEsOULc_INHERIT | flTRACEsOULc_countT | flTRACEsOULc_DUMP ) ,
 cArmTrace_soulC( 0 ) ,
 pClean( 0 ) ,
-ta( tinBaseSelfOrElderP ) ,
+ta( tinNormalSelfOrElderP ) ,
 pBk0TraceScratch( 0 ) ,
 pBk0TelemetryAppScratch( 0 ) ,
 pBk0TelemetrySysScratch( 0 ) ,
 pAdam( 0 ) ,
-pPoolUse( ((tinNormalS&)tinBaseSelfOrElderP).pag1->pPoolAdamTemp ) ,
+pPoolUse( tinNormalSelfOrElderP.pag1->pPoolAdamTemp ) ,
 odoSockCbWrite( 0 ) ,
 odoSockCbRead( 0 ) ,
 pSwsRecycle( 0 ) ,
 pczl_pSwsRecycle( 0 ) ,
-ccExitsWhere( sizeof ((tinNormalS&)tinBaseSelfOrElderP).pag1->pcExitsWhere / sizeof ((tinNormalS&)tinBaseSelfOrElderP).pag1->pcExitsWhere[ 0 ] ) ,
-pcExitsWhere( ((tinNormalS&)tinBaseSelfOrElderP).pag1->pcExitsWhere ) ,
+ccExitsWhere( sizeof tinNormalSelfOrElderP.pag1->pcExitsWhere / sizeof tinNormalSelfOrElderP.pag1->pcExitsWhere[ 0 ] ) ,
+pcExitsWhere( tinNormalSelfOrElderP.pag1->pcExitsWhere ) ,
 pPoop( &poop ) ,
 poop( flPOOP_SMELLY ) ,
 pzTieLath( 0 ) ,
@@ -325,14 +325,14 @@ pcQuit( 0 ) ,
 //pTinBro( 0 ) ,
 //pTinKid( 0 ) ,
 //pTinDad( pTinDadP ) ,                                     //U::20180630@1405: WHY ARE THESE COMMENTED OUT?  CONJ: THEY ARE SET DURING COPYING OF THE IMAGE FROM DAD TO ME
-ranUni( tinBaseSelfOrElderP , MAXcOUNTT , idThreadP ) ,
+ranUni( tinNormalSelfOrElderP , MAXcOUNTT , idThreadP ) ,
 cGrabitC_unregistered( 0 ) ,
 cGrabitC_registered( 0 ) ,
 cGrabitC_reset( 0 ) ,
 cGrabitC_set( 0 ) ,
 zap_pPanLifiRecurseGrabbedLevel_( (byteT*)pPanLifiRecurseGrabbedLevel , sizeof pPanLifiRecurseGrabbedLevel, flZAP_CT ) ,
 msSleepWhenGrabbing( 0x40 + ( osTid & 0x1f ) << 3 ) ,
-grabPseudo( tinBaseSelfOrElderP , idLineCtP , idiFileCtP , 0 , flGRABc_tINSoBJECT | flGRABc_DISABLED | flGRABc_PSEUDO ) ,
+grabPseudo( tinNormalSelfOrElderP , idLineCtP , idiFileCtP , 0 , flGRABc_tINSoBJECT | flGRABc_DISABLED | flGRABc_PSEUDO ) ,
 pEther( 0 ) ,
 pbPendingInOutFramePackets( 0 ) ,
 cTime2Or5Lath( 0 ) ,
@@ -346,7 +346,7 @@ pbThreadStackEnd( 0 ) ,
 pbThreadStackStart( 0 ) ,
 pScoops( 0 ) ,
 pScoopEtThread( 0 ) ,
-monitor( tinBaseSelfOrElderP , idThreadP ) ,
+monitor( tinNormalSelfOrElderP , idThreadP ) ,
 idBlammo( 0 ) ,
 idiFile_brcLath( 0 ) ,
 idLine_brcLath( 0 ) ,
@@ -356,7 +356,7 @@ bosFail( 0 ) ,
 brcm04Raw( 0 ) ,
 brcRaw( 0 ) ,
 cKidThreads( 0 ) ,
-flagsThreadMode5( this == (tinNormalS*)&tinBaseSelfOrElderP ? flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY : flTHREADmODE5_null ) ,
+flagsThreadMode5( this == &tinNormalSelfOrElderP ? flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY : flTHREADmODE5_null ) ,
 flagsThreadMode4( flTHREADmODE4_INoUTfRAMErEGISTERcALLnEST ) ,
 flagsThreadMode3( flTHREADmODE3_null      ) ,
 flagsThreadMode2( flTHREADmODE2_UPDATEtIN ) ,
@@ -369,30 +369,30 @@ cManna( 0 ) ,
 cRain( 0 ) ,
 time2( 0 ) ,
 time1( 0 ) ,
-osPid( osPidIF( tinBaseSelfOrElderP ) ) ,
+osPid( osPidIF( tinNormalSelfOrElderP ) ) ,
 osTid( ( putNegAM( fingerprint , FINGERnEG_TINszOMBIE ) , ( this == &processGlobal6I.tinBreak || this == &processGlobal5I.tinHeart ) ? 0 : osTidIF() ) ) ,
 idDesireSetBySelfProcess( 0 ) ,
 idDesireSetBySelf( 0 ) ,
 fingerprint( 0 ) ,
-pag6( pTinDadP ? pTinDadP->pag6 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag6 : &rootAdamGlobal6I ) ) ,
-pag5( pTinDadP ? pTinDadP->pag5 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag5 : &rootAdamGlobal5I ) ) ,
-pag4( pTinDadP ? pTinDadP->pag4 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag4 : &rootAdamGlobal4I ) ) ,
-pag3( pTinDadP ? pTinDadP->pag3 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag3 : &rootAdamGlobal3I ) ) ,
-pag2( pTinDadP ? pTinDadP->pag2 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag2 : &rootAdamGlobal2I ) ) ,
-pag1( pTinDadP ? pTinDadP->pag1 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag1 : &rootAdamGlobal1I ) ) ,
+pag6( pTinDadP ? pTinDadP->pag6 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? tinNormalSelfOrElderP.pag6 : &rootAdamGlobal6I ) ) ,
+pag5( pTinDadP ? pTinDadP->pag5 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? tinNormalSelfOrElderP.pag5 : &rootAdamGlobal5I ) ) ,
+pag4( pTinDadP ? pTinDadP->pag4 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? tinNormalSelfOrElderP.pag4 : &rootAdamGlobal4I ) ) ,
+pag3( pTinDadP ? pTinDadP->pag3 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? tinNormalSelfOrElderP.pag3 : &rootAdamGlobal3I ) ) ,
+pag2( pTinDadP ? pTinDadP->pag2 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? tinNormalSelfOrElderP.pag2 : &rootAdamGlobal2I ) ) ,
+pag1( pTinDadP ? pTinDadP->pag1 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? tinNormalSelfOrElderP.pag1 : &rootAdamGlobal1I ) ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
 ) ,
     )
             : flTINs_null
             ? flTINs_NOiNoUTfRAMEsUPPORT
-        this != (tinNormalS*)&tinBaseSelfOrElderP && F(((tinNormalS&)tinBaseSelfOrElderP).flags) & flTINs_NOiNoUTfRAMEsUPPORT
+        this != &tinNormalSelfOrElderP && F(tinNormalSelfOrElderP.flags) & flTINs_NOiNoUTfRAMEsUPPORT
     (
     |
     flagsP
 (
 flags
-tally( tinBaseSelfOrElderP ) ,
+tally( tinNormalSelfOrElderP ) ,
 ) ,
     (countT)this
     ,
@@ -406,7 +406,7 @@ top_pTinMainI_
 idTin( 1 + incv02AM( processGlobal2I._tinNormalS_idTinLath ) ) ,
 idSerial( 0 ) ,
 tinBaseS( ifcIDtYPEtIN_NORMAL ) ,
-/*1*/tinNormalS::tinNormalS( tinBaseS& tinBaseSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tinBaseS* const pTinDadP , const osTextT* const postThreadNameP , const flagsT flagsP , const countT idTinNamedP , byteT* const pbTlsP , const countT cbTlsP )/*1*/ :
+/*1*/tinNormalS::tinNormalS( tinNormalS& tinNormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tinNormalS* const pTinDadP , const osTextT* const postThreadNameP , const flagsT flagsP , const countT idTinNamedP , byteT* const pbTlsP , const countT cbTlsP )/*1*/ :
 
 // "tinNormalSelfOrElderP": USUALLY SO, BUT NOT ALWAYS (AN EXCEPTION TIN WILL BE, YOU GUESSED IT, AN EXCEPTION (S))
 

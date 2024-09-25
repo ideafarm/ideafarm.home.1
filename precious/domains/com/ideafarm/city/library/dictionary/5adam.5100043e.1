@@ -112,7 +112,7 @@ TASK( tmSuperF )
     bFaceP.grabF( tinP , TAG( TAGiDnULL ) ) ;
     TELL( "reading a new job file" ) ;
 {
-voidT doWoF( tinBaseS& tinP , etherC& etThread , strokeS* psttFileP , const countT idFileP , batonC& bFaceP )
+voidT doWoF( tinNormalS& tinP , etherC& etThread , strokeS* psttFileP , const countT idFileP , batonC& bFaceP )
 
 }
     return bFail ;
@@ -212,12 +212,12 @@ voidT doWoF( tinBaseS& tinP , etherC& etThread , strokeS* psttFileP , const coun
     stackC st_psttLines( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
     stackC st_psttTo(    tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
 {
-boolT mailItemF( tinBaseS& tinP , const strokeS* const psttP )
+boolT mailItemF( tinNormalS& tinP , const strokeS* const psttP )
 
 }
 {
 stateC( tinP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tinBaseS& tinP , etherC& etherP ) :
+stateS::stateS( tinNormalS& tinP , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -228,7 +228,7 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
 
 ;
 }
-    stateS( tinBaseS& tinP , etherC& etherP ) ;
+    stateS( tinNormalS& tinP , etherC& etherP ) ;
 
     countT idTransLast ;
     countT idMe ;

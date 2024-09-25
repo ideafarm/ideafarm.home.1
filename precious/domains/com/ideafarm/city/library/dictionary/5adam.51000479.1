@@ -37,12 +37,12 @@ REST
                 }
                     pbc += sizeof( tinNormalS ) ;
         
-                    etThread.strFuseF( tinP , psttd , TF3(etherC::ifc_idAdamG_IF(tinP),flFORMAT_null,9)+TP(((tinNormalS*)pTin)->postThreadName,0x10)+TP(ppostWhere[idWhere2],0x18)+T(((tinNormalS*)pTin)->postTell)+tc ) ;
+                    etThread.strFuseF( tinP , psttd , TF3(etherC::ifc_idAdamG_IF(tinP),flFORMAT_null,9)+TP(pTin->postThreadName,0x10)+TP(ppostWhere[idWhere2],0x18)+T(pTin->postTell)+tc ) ;
                     cThreads ++ ;
         
-                    countT idWhere2 = ((tinNormalS*)pTin)->idWhere - ifcIDwHERE_IFC + 1 < sizeof ppostWhere / sizeof ppostWhere[ 0 ] ? ((tinNormalS*)pTin)->idWhere - ifcIDwHERE_IFC + 1 : 0 ;
+                    countT idWhere2 = pTin->idWhere - ifcIDwHERE_IFC + 1 < sizeof ppostWhere / sizeof ppostWhere[ 0 ] ? pTin->idWhere - ifcIDwHERE_IFC + 1 : 0 ;
             
-                    tinBaseS* pTin = (tinNormalS*)pbc ;
+                    tinNormalS* pTin = (tinNormalS*)pbc ;
                 {
                 while( pbc < pbe )
                 byteT* const pbe = pbts + cbts ;

@@ -37,7 +37,7 @@ TODO
 }
 {
 stateC( tinP , etherP , bHandedOffP , sizeof *this , cbdVaryingP , translateStateF )
-stateS::stateS( tinBaseS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVaryingP ) :
+stateS::stateS( tinNormalS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVaryingP ) :
 //THE MEMBERS OF THE DERIVED CLASS stateS ARE NOT EXPLICITLY INITIALIZED HERE BECAUSE THE CT'OR FOR stateC INITIALIZES THEM
 
 }
@@ -91,11 +91,11 @@ stateS::stateS( tinBaseS& tinP , etherC& etherP , boolT& bHandedOffP , countT cb
 
     __( cbToVaryingP - CBDV ) ;
 {
-voidT translateStateF( tinBaseS& tinP , etherC& etherP , byteT* pbToP , countT cbToP , const byteT* pbFromP , countT cbFromP , byteT* pbToVaryingP , countT cbToVaryingP , const byteT* pbFromVaryingP , countT cbFromVaryingP , countT cArgP )
+voidT translateStateF( tinNormalS& tinP , etherC& etherP , byteT* pbToP , countT cbToP , const byteT* pbFromP , countT cbFromP , byteT* pbToVaryingP , countT cbToVaryingP , const byteT* pbFromVaryingP , countT cbFromVaryingP , countT cArgP )
 
 ;
 }
-    stateS( tinBaseS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVaryingP = 0 ) ;
+    stateS( tinNormalS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVaryingP = 0 ) ;
 
     countT idMe ;
     countT cVersion7 ;

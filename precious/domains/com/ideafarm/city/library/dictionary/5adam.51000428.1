@@ -473,7 +473,7 @@ TODO
     timeAfter2P = timeAfter1P = 0 ;
     timeBefore2P = timeBefore1P = 0 ;
 {
-voidT trialF( tinBaseS& tinP , etherC& etThread , countT& timeAfter1P , sCountT& timeAfter2P , countT& timeBefore1P , sCountT& timeBefore2P , cookiesC& cookiesP , const countT idTryP )
+voidT trialF( tinNormalS& tinP , etherC& etThread , countT& timeAfter1P , sCountT& timeAfter2P , countT& timeBefore1P , sCountT& timeBefore2P , cookiesC& cookiesP , const countT idTryP )
 
 }
     etThread.osSleepF( tinP , TOCK * 0x10 ) ;
@@ -486,7 +486,7 @@ voidT trialF( tinBaseS& tinP , etherC& etThread , countT& timeAfter1P , sCountT&
     etThread.strMakeF( tinP , LF , psttu , T("http://user.gshift.com/")+T(psttP) ) ; ___( psttu ) ;
     ZE( strokeS* , psttu ) ;
 {
-voidT urlToClipboardF( tinBaseS& tinP , etherC& etThread , const strokeS* const psttP )
+voidT urlToClipboardF( tinNormalS& tinP , etherC& etThread , const strokeS* const psttP )
 
     "\r\n"                                                                                              \
     "Content-length: 0\r\n"                                                                             \
@@ -565,7 +565,7 @@ voidT urlToClipboardF( tinBaseS& tinP , etherC& etThread , const strokeS* const 
     TN( tContentLength , "content-length" ) ;
     TN( tColonWhite    , ": "             ) ;
 {
-voidT readReplyF( tinBaseS& tinP , etherC& etThread , stackC& stPhrasesP , osTextT*& postBodyP , countT& costBodyP , cookiesC& cookiesP , strokeS*& psttRedirectP , socketC& sInP , const strokeS* const psttBoxAllP )
+voidT readReplyF( tinNormalS& tinP , etherC& etThread , stackC& stPhrasesP , osTextT*& postBodyP , countT& costBodyP , cookiesC& cookiesP , strokeS*& psttRedirectP , socketC& sInP , const strokeS* const psttBoxAllP )
 */
 /*
 
@@ -612,7 +612,7 @@ voidT readReplyF( tinBaseS& tinP , etherC& etThread , stackC& stPhrasesP , osTex
     {
     if( st_pCookie )
 {
-voidT cookiesC::soulRfcF( tinBaseS& tinP , strokeS*& psttP , const strokeS* const psttBoxAllP )
+voidT cookiesC::soulRfcF( tinNormalS& tinP , strokeS*& psttP , const strokeS* const psttBoxAllP )
 */
  i return cookies in the order that i find them
  i do not bother to sort
@@ -664,20 +664,20 @@ boolT bMine = pCookie ? pCookie->bMineF( tinP , tBoxAll ) : 0 ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     ZE( strokeS* , pstt1cookie ) ;
 {
-voidT cookiesC::updateF( tinBaseS& tinP , const strokeS* const psttP , const strokeS* const psttBoxAllP )
+voidT cookiesC::updateF( tinNormalS& tinP , const strokeS* const psttP , const strokeS* const psttBoxAllP )
 
 }
 {
 st_pCookie( tinP , ether , TAG( TAGiDnULL ) )
 ether( etherP ) ,
-cookiesC::cookiesC( tinBaseS& tinP , etherC& etherP ) :
+cookiesC::cookiesC( tinNormalS& tinP , etherC& etherP ) :
 
 ;
 }
-    voidT soulRfcF( tinBaseS& tinP , strokeS*& psttP , const strokeS* const psttBoxAllP ) ;
-    voidT updateF( tinBaseS& tinP , const strokeS* const psttP , const strokeS* const psttBoxAllP ) ;
+    voidT soulRfcF( tinNormalS& tinP , strokeS*& psttP , const strokeS* const psttBoxAllP ) ;
+    voidT updateF( tinNormalS& tinP , const strokeS* const psttP , const strokeS* const psttBoxAllP ) ;
     ~cookiesC( voidT ) ;
-    cookiesC( tinBaseS& tinP , etherC& etherP ) ;
+    cookiesC( tinNormalS& tinP , etherC& etherP ) ;
 
     public :
 
@@ -709,7 +709,7 @@ class cookiesC
     ZE( strokeS* , psttBoxName ) ;
     ZE( strokeS* , psttBoxHost ) ;
 {
-boolT cookieC::bMineF( tinBaseS& tinP , const strokeS* const psttBoxAllP )
+boolT cookieC::bMineF( tinNormalS& tinP , const strokeS* const psttBoxAllP )
 
 }
     return psttSoulRfc ;
@@ -750,7 +750,7 @@ i evaluate to 0 if i am expired
     if( psttKey              ) stPhrasesP << postOldC( tinP , ether , T(" key: \""    )+T(psttKey           )+T("\"") ) ;
     stPhrasesP << postOldC( tinP , ether , T("cookieC:") ) ;
 {
-voidT cookieC::phrasesF( tinBaseS& tinP , stackC& stPhrasesP )
+voidT cookieC::phrasesF( tinNormalS& tinP , stackC& stPhrasesP )
 
 }
     ;
@@ -768,7 +768,7 @@ voidT cookieC::phrasesF( tinBaseS& tinP , stackC& stPhrasesP )
 
     return
 {
-boolT cookieC::bReplacesF( tinBaseS& tinP , cookieC& oldCookieP )
+boolT cookieC::bReplacesF( tinNormalS& tinP , cookieC& oldCookieP )
 
 }
     ether.delF( tinP , pstt1bite ) ;
@@ -852,7 +852,7 @@ psttOldComment( 0 ) ,
 psttValue( 0 ) ,
 psttKey( 0 ) ,
 ether( etherP ) ,
-cookieC::cookieC( tinBaseS& tinP , etherC& etherP , const strokeS* const psttP , const strokeS* const psttBoxAllP ) :
+cookieC::cookieC( tinNormalS& tinP , etherC& etherP , const strokeS* const psttP , const strokeS* const psttBoxAllP ) :
 
 }
     ether.delF( tinP , psttSoulRfc ) ;
@@ -871,12 +871,12 @@ NEWdELcLASSb( cookieC )
 
 ;
 }
- boolT bReplacesF( tinBaseS& tinP , cookieC& oldCookieP ) ;
- boolT bMineF( tinBaseS& tinP , const strokeS* const psttBoxAllP ) ;
+ boolT bReplacesF( tinNormalS& tinP , cookieC& oldCookieP ) ;
+ boolT bMineF( tinNormalS& tinP , const strokeS* const psttBoxAllP ) ;
  operator strokeS*( voidT ) ;
- voidT phrasesF( tinBaseS& tinP , stackC& stPhrasesP ) ;
+ voidT phrasesF( tinNormalS& tinP , stackC& stPhrasesP ) ;
  ~cookieC( voidT ) ;
- cookieC( tinBaseS& tinP , etherC& etherP , const strokeS* const psttP , const strokeS* const psttBoxAllP ) ;
+ cookieC( tinNormalS& tinP , etherC& etherP , const strokeS* const psttP , const strokeS* const psttBoxAllP ) ;
  NEWdELcLASSpROTOS( cookieC , etherC , thirdC )
 /* birth , death */
 

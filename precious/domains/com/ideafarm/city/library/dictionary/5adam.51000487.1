@@ -181,7 +181,7 @@ TODO
 
     if( !pLakeP ) pLakeP = new( 0 , tinP , LF ) lakeC( tinP , etThread ) ;
 {
-voidT loadPackF( tinBaseS& tinP , etherC& ether , etherC& etThread , etherC& etUsesPoolPrime , lakeC*& pLakeP , byteT*& pbPackLagP )
+voidT loadPackF( tinNormalS& tinP , etherC& ether , etherC& etThread , etherC& etUsesPoolPrime , lakeC*& pLakeP , byteT*& pbPackLagP )
 */
   write the 2 image fish
     writes the blob to the lake, using name pcName
@@ -258,7 +258,7 @@ TASK( tmFreshCalendarF )
     ZE( osTextT* , pbBlob ) ;
     TN( tLog , "///d/ideafarm.log.html" ) ;
 {
-voidT stockOneImageFishF( tinBaseS& tinP , etherC& etThread , lakeC& lakeP , const countT* const pcP , const strokeS* const psttP , const strokeS* const psttTypeP , const boolT bNewMinIsSetP )
+voidT stockOneImageFishF( tinNormalS& tinP , etherC& etThread , lakeC& lakeP , const countT* const pcP , const strokeS* const psttP , const strokeS* const psttTypeP , const boolT bNewMinIsSetP )
 */
  writes reply blob to lake using name pcP
  makes reply blob by concatenating reply header with blob
@@ -285,7 +285,7 @@ pseudocode
     etThread.osTimeNowF( tinP , countTC() , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
 {
-voidT stockCalendarFishF( tinBaseS& tinP , etherC& etThread , lakeC& lakeP , const countT* const pcP , const boolT bNewMinIsSetP )
+voidT stockCalendarFishF( tinNormalS& tinP , etherC& etThread , lakeC& lakeP , const countT* const pcP , const boolT bNewMinIsSetP )
 */
  writes reply blob to lake using name pcP
  makes reply blob by concatenating reply header with blob
@@ -298,7 +298,7 @@ pseudocode
 }
 {
 stateC( tinP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tinBaseS& tinP , etherC& etherP ) :
+stateS::stateS( tinNormalS& tinP , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -308,7 +308,7 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
 
 ;
 }
-    stateS( tinBaseS& tinP , etherC& etherP ) ;
+    stateS( tinNormalS& tinP , etherC& etherP ) ;
 
     countT idStep ;
     countT idPass ;

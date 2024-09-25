@@ -775,7 +775,7 @@ TODO
         ZE( countT , idArg ) ;
         ZE( boolT , bAssign ) ;
         ZE( countT , idWord ) ;
-        etThread.strWordsOldF( tinP , pstt1w , pstt1P , sttq ) ; ___( pstt1w ) ; //E: pstt1P: " voidT delF( tinBaseS& tinP , byteT*& pP ) ;"
+        etThread.strWordsOldF( tinP , pstt1w , pstt1P , sttq ) ; ___( pstt1w ) ; //E: pstt1P: " voidT delF( tinNormalS& tinP , byteT*& pP ) ;"
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , pstt1w ) ;
         strokeS sttAssign( '=' ) ;
@@ -836,12 +836,12 @@ TODO
     stackC stPartD1( tinP, etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
     stackC stArgs( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_BLOB , sizeof( count4S ) ) ;
 
-    //E: pstt1P: " voidT delF( tinBaseS& tinP , byteT*& pP ) ;"
+    //E: pstt1P: " voidT delF( tinNormalS& tinP , byteT*& pP ) ;"
     //E: THE LINE OF INPUT IN THE COMMENT LINE IMMEDIATELY FOLLOWING ME IS ASSUMED AS AN EXAMPLE IN COMMENTS HEREIN
 
-    //20240725@1117: MY PARSING OBSERVED TO FAIL WHEN A COMMA IS NOT PRECEDED BY A SPACE (EXAMPLE: " voidT delF( tinBaseS& tinP, byteT*& pP ) ;"
+    //20240725@1117: MY PARSING OBSERVED TO FAIL WHEN A COMMA IS NOT PRECEDED BY A SPACE (EXAMPLE: " voidT delF( tinNormalS& tinP, byteT*& pP ) ;"
 {
-voidT parsePrototypeF( tinBaseS& tinP , etherC& etThread , stackC& stAllDefsP , stackC& stAllProtosP , stackC& stAllLoadsP , stackC& stAllHelpsP , stackC& stAllMenusP , const strokeS* const pstt1P )
+voidT parsePrototypeF( tinNormalS& tinP , etherC& etThread , stackC& stAllDefsP , stackC& stAllProtosP , stackC& stAllLoadsP , stackC& stAllHelpsP , stackC& stAllMenusP , const strokeS* const pstt1P )
 
 const osTextT postHelpMenu[] = "    \"    . @@w@@       . ?? \")+T(postName)+T(\"\\r\\n\"\r\n" ;
 
@@ -1007,10 +1007,10 @@ const osTextT postFooter2[] = "    if( ((tinNormalS&)tinP).fingerprint && _psttN
     "    ZE( byteT* , pbFieldNext ) ;\r\n"
     "    countT idArgNext = 1 ;\r\n"
     "{\r\n"
-    "\r\nvoidT @@f@@( tinBaseS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )\r\n"
+    "\r\nvoidT @@f@@( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )\r\n"
 const osTextT postHeader[] =
 
-const osTextT postProto[] = "\r\nvoidT @@f@@( tinBaseS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;\r\n" ;
+const osTextT postProto[] = "\r\nvoidT @@f@@( tinNormalS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;\r\n" ;
 
 /*1*/WAKEsHOWtEXT( "ifcIDaDAM_SOIXLoLDwORDdEFS.tool.genSoixlOldWordDefs" )/*1*/
 /**/

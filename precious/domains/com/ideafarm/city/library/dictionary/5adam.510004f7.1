@@ -173,7 +173,7 @@
     static countT idMeLath ;
     _IO_     TELLsYSlIFInAME( "nodeMainF" )
 {
-voidT nodeMainF( tinBaseS& tinP , etherC& etThread )
+voidT nodeMainF( tinNormalS& tinP , etherC& etThread )
 
 DONE( tmPrayF )
 }
@@ -1073,7 +1073,7 @@ TASK( tmBangClientF )
     if( nodePeer1P ) { BLAMMO ; }
     _IO_     TELLsYSlIFInAME( "nodeClientF" )
 {
-voidT nodeClientF( tinBaseS& tinP , nodeC& nodePeer1P , nodeC& nodePeer2P , stackC& stNodeOpenP , nodeC& nodeP , const countT idHisWorkP )
+voidT nodeClientF( tinNormalS& tinP , nodeC& nodePeer1P , nodeC& nodePeer2P , stackC& stNodeOpenP , nodeC& nodeP , const countT idHisWorkP )
 
 }
     stNodeOpenP.ungrabF( tinP ) ;
@@ -1097,7 +1097,7 @@ voidT nodeClientF( tinBaseS& tinP , nodeC& nodePeer1P , nodeC& nodePeer2P , stac
     if( nodePeerP ) { BLAMMO ; }
     _IO_     TELLsYSlIFInAME( "nodeServerF" )
 {
-voidT nodeServerF( tinBaseS& tinP , nodeC& nodePeerP , stackC& stNodeOpenP , nodeC& nodeP , const countT idMyWorkP )
+voidT nodeServerF( tinNormalS& tinP , nodeC& nodePeerP , stackC& stNodeOpenP , nodeC& nodeP , const countT idMyWorkP )
 
 }
     idWorkInvert2P = idWorkP == IDtYPE2PEbANGcLIENTwORK_EXPLODE1 ? IDtYPE2PEbANGcLIENTwORK_EXPLODE2 : 0 ;
@@ -1115,7 +1115,7 @@ voidT nodeServerF( tinBaseS& tinP , nodeC& nodePeerP , stackC& stNodeOpenP , nod
     idWorkInvert1P =
     _IO_     TELLsYSlIFInAME( "idWorkInvertIF" )
 {
-voidT idWorkInvertIF( tinBaseS& tinP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )
+voidT idWorkInvertIF( tinNormalS& tinP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )
 
 }
     if( idCallLineP ) ; //USED FOR DEBUGGING TO STUDY WHICH CODE LINE CALLS ME LOTS AND LOTS
@@ -1142,7 +1142,7 @@ voidT idWorkInvertIF( tinBaseS& tinP , countT& idWorkInvert1P , countT& idWorkIn
     NODEiNFOf
     _IO_     TELLsYSlIFInAME( "reportFailF" )
 {
-voidT reportFailF( tinBaseS& tinP , etherC& etThread , NODEiNFOpARMS , const boolT bConnectP , const nodeC& nodeFailP , const countT idCallLineP )
+voidT reportFailF( tinNormalS& tinP , etherC& etThread , NODEiNFOpARMS , const boolT bConnectP , const nodeC& nodeFailP , const countT idCallLineP )
 
 }
     }
@@ -1180,7 +1180,7 @@ voidT reportFailF( tinBaseS& tinP , etherC& etThread , NODEiNFOpARMS , const boo
     NODEiNFOf
     _IO_     TELLsYSlIFInAME( "bombF" )
 {
-voidT bombF( tinBaseS& tinP , etherC& etThread , NODEiNFOpARMS , soulC& soulP , const nodeC& nodeToP = nodeC() , countT cTriesP = 0 )
+voidT bombF( tinNormalS& tinP , etherC& etThread , NODEiNFOpARMS , soulC& soulP , const nodeC& nodeToP = nodeC() , countT cTriesP = 0 )
 */
   else i reset flPOP_BOMB and push copies of soulP onto my own bang stacks
   if i know a root that is not myself then i connect to it and write soulP to it 
@@ -1195,7 +1195,7 @@ i might reset this flag
 soulP must specify flPOP_BOMB
 /*
 
-voidT reportFailF( tinBaseS& tinP , etherC& etThread , NODEiNFOpARMS , const boolT bConnectP , const nodeC& nodeFailP , const countT idCallLineP ) ;
+voidT reportFailF( tinNormalS& tinP , etherC& etThread , NODEiNFOpARMS , const boolT bConnectP , const nodeC& nodeFailP , const countT idCallLineP ) ;
 
 }
     writeF( tinP , *((tinNormalS&)tinP).zEtScratch , nodeTestP , sCry ) ;
@@ -1203,7 +1203,7 @@ voidT reportFailF( tinBaseS& tinP , etherC& etThread , NODEiNFOpARMS , const boo
     soulC sCry( tinP , TAG( TAGiDnULL ) ) ;
     _IO_     TELLsYSlIFInAME( "testF" )
 {
-voidT testF( tinBaseS& tinP , nodeC& nodeTestP , nodeC& nodeP )
+voidT testF( tinNormalS& tinP , nodeC& nodeTestP , nodeC& nodeP )
 
 }
     VERIFY( sock ) ;
@@ -1212,7 +1212,7 @@ voidT testF( tinBaseS& tinP , nodeC& nodeTestP , nodeC& nodeP )
     socketC sock( tinP , *((tinNormalS&)tinP).zEtScratch , TAG( TAGiDnULL ) ) ;
     _IO_     TELLsYSlIFInAME( "writeF" )
 {
-voidT writeF( tinBaseS& tinP , const nodeC& nodeP , soulC& soulP )
+voidT writeF( tinNormalS& tinP , const nodeC& nodeP , soulC& soulP )
 
 }
     }
@@ -1300,7 +1300,7 @@ voidT writeF( tinBaseS& tinP , const nodeC& nodeP , soulC& soulP )
     flagsT& flags = soulP.cFieldF( tinP , IDfIELD_FLAGS ) ;
     _IO_     TELLsYSlIFInAME( "popF" )
 {
-voidT popF( tinBaseS& tinP , etherC& etThread , etherC& etScratchNodeP , stackC* pStBang0P , stackC* pStBang1P , stackC* pStBang2P , stackC* pStBang3P , stackC* pStBang4P , soulC& soulP , const boolT bDudP = 0 )
+voidT popF( tinNormalS& tinP , etherC& etThread , etherC& etScratchNodeP , stackC* pStBang0P , stackC* pStBang1P , stackC* pStBang2P , stackC* pStBang3P , stackC* pStBang4P , soulC& soulP , const boolT bDudP = 0 )
 
 }
     return cNodes ;
@@ -1313,7 +1313,7 @@ voidT popF( tinBaseS& tinP , etherC& etThread , etherC& etScratchNodeP , stackC*
     const countT cNodes = soulP.cFieldF( tinP , idFieldP ++ ) ;
     _IO_     TELLsYSlIFInAME( "hisListF" )
 {
-countT hisListF( tinBaseS& tinP , stackC& stP , soulC& soulP , countT idFieldP = IDfIELD_IDcMD + 1 )
+countT hisListF( tinNormalS& tinP , stackC& stP , soulC& soulP , countT idFieldP = IDfIELD_IDcMD + 1 )
 
 }
     stNodeOpenP.ungrabF( tinP ) ;
@@ -1327,7 +1327,7 @@ countT hisListF( tinBaseS& tinP , stackC& stP , soulC& soulP , countT idFieldP =
     stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
     _IO_     TELLsYSlIFInAME( "myListF" )
 {
-voidT myListF( tinBaseS& tinP , soulC& soulP , stackC& stNodeOpenP )
+voidT myListF( tinNormalS& tinP , soulC& soulP , stackC& stNodeOpenP )
 
 }
     return sgn ;
@@ -1340,13 +1340,13 @@ voidT myListF( tinBaseS& tinP , soulC& soulP , stackC& stNodeOpenP )
     {
     IFbEcAREFUL
 {
-countT subtractNodesF( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractNodesF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return *(nodeC*)&soulP.c4 FieldF( tinP , idFieldP ) ;
     // MIGRATE THE FOLLOWING LINE TO USE pbFieldF
 {
-nodeC& nodeC::fieldF( tinBaseS& tinP , soulC& soulP , const countT idFieldP )
+nodeC& nodeC::fieldF( tinNormalS& tinP , soulC& soulP , const countT idFieldP )
 
 }
     return (byteT*)this ;
@@ -1404,7 +1404,7 @@ time2( 0 )
 time1( 0 ) ,
 idp( 0 ) ,
 idMe( idMeP ) ,
-nodeC::nodeC( tinBaseS& tinP , etherC& etThread , const countT idMeP ) :
+nodeC::nodeC( tinNormalS& tinP , etherC& etThread , const countT idMeP ) :
 
 }
 {
@@ -1421,7 +1421,7 @@ nodeC::nodeC( voidT ) :
     soulP << GETiDsERIAL ;
     soulP << *(count4S*)&nodeP ;  //CODEsYNC df40104 df40104
 {
-voidT hdrF( tinBaseS& tinP , soulC& soulP , nodeC& nodeP , const flagsT flagsP , const countT idCmdP )
+voidT hdrF( tinNormalS& tinP , soulC& soulP , nodeC& nodeP , const flagsT flagsP , const countT idCmdP )
 
 #define IDfIELD_IDcMD                   4
 #define IDfIELD_FLAGS                   3

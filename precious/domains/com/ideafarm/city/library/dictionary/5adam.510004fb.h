@@ -21,17 +21,17 @@ TASK0PROTO( tmChatterF ) ;
 
 TASK0PROTO( tmcMonitorServerF ) ;
 
-boolT reportGrabF( tinBaseS& tinP , soulC& sRptP , const strokeS* const psttPrefixP , const countT* const pcPanLifiP , const countT osPidP = 0 ) ;
-countT subtract_tinEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_sexEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_processGlobal4EntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_napkinEntryS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-voidT buildRemovalUtilityF( tinBaseS& tinP , etherC& etThread ) ;
-voidT unregisterObsoleteDriversF( tinBaseS& tinP , etherC& etThread , const countT idAdamP ) ;
+boolT reportGrabF( tinNormalS& tinP , soulC& sRptP , const strokeS* const psttPrefixP , const countT* const pcPanLifiP , const countT osPidP = 0 ) ;
+countT subtract_tinEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_sexEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_processGlobal4EntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_napkinEntryS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+voidT buildRemovalUtilityF( tinNormalS& tinP , etherC& etThread ) ;
+voidT unregisterObsoleteDriversF( tinNormalS& tinP , etherC& etThread , const countT idAdamP ) ;
 
 ;
 }
-    tinEntryS( tinBaseS& tinP , countT idSerialP , countT osTidP , countT osPidP , boolT bIdaP , countT ipP , countT idTinP , countT idThreadP , const osTextT* const postThreadNameP , const countT idTinNamedP , const countT idLineCtP , const countT idiFileCtP ) ;
+    tinEntryS( tinNormalS& tinP , countT idSerialP , countT osTidP , countT osPidP , boolT bIdaP , countT ipP , countT idTinP , countT idThreadP , const osTextT* const postThreadNameP , const countT idTinNamedP , const countT idLineCtP , const countT idiFileCtP ) ;
 
     countT  idStepLath ;
     countT  idiFileCt ;
@@ -60,7 +60,7 @@ struct telemetryBookHeadS
 
 ;
 }
-    sexEntryS( tinBaseS& tinP , const countT osPidP , const osTextT* const postNameP , const countT expCbDropP , const countT expSlotsP , sexC* pSexP , const countT idLineCtP , const countT idiFileCtP ) ;
+    sexEntryS( tinNormalS& tinP , const countT osPidP , const osTextT* const postNameP , const countT expCbDropP , const countT expSlotsP , sexC* pSexP , const countT idLineCtP , const countT idiFileCtP ) ;
 
     countT  idiFileCt ;
     countT  idLineCt ;
@@ -75,7 +75,7 @@ struct sexEntryS
 
 ;
 }
-    processGlobal4EntryS( tinBaseS& tinP , const countT osPidP , const byteT* const pbEarlyGrainP , const countT cGrainsP ) ;
+    processGlobal4EntryS( tinNormalS& tinP , const countT osPidP , const byteT* const pbEarlyGrainP , const countT cGrainsP ) ;
 
     countT       cGrains ;
     const byteT* pbEarlyGrain ;
@@ -85,7 +85,7 @@ struct processGlobal4EntryS
 
 ;
 }
-    napkinEntryS( tinBaseS& tinP , const countT osPidP , const osTextT* const postNameP , const byteT* const pbDataP , const countT cbDataP , const countT idLineCtP , const countT idiFileCtP ) ;
+    napkinEntryS( tinNormalS& tinP , const countT osPidP , const osTextT* const postNameP , const byteT* const pbDataP , const countT cbDataP , const countT idLineCtP , const countT idiFileCtP ) ;
 
     countT       idiFileCt ;
     countT       idLineCt ;
@@ -98,8 +98,8 @@ struct napkinEntryS
 
 ;
 }
-    voidT logF( tinBaseS& tinP , const boolT bDieP = 0 ) ;
-    poolOldEntryS( tinBaseS& tinP , countT osPidP , voidT* pvMeP , countT cbPoolP , countT idClientP , osTextT* postNameP , countT costNameP ) ;
+    voidT logF( tinNormalS& tinP , const boolT bDieP = 0 ) ;
+    poolOldEntryS( tinNormalS& tinP , countT osPidP , voidT* pvMeP , countT cbPoolP , countT idClientP , osTextT* postNameP , countT costNameP ) ;
 
     osTextT postName[ TUCK ] ;
     countT  costName ;
@@ -113,7 +113,7 @@ struct poolOldEntryS
 
 ;
 }
-    memorySpaceS( tinBaseS& tinP , etherC& etherP ) ;
+    memorySpaceS( tinNormalS& tinP , etherC& etherP ) ;
     NEWdELcLASSpROTOS
 
     switchStackC    swsProcessGlobal3 ;
@@ -135,7 +135,7 @@ struct memorySpaceS
 
 ;
 }
-    periodDataS( tinBaseS& tinP , etherC& etherP ) ;
+    periodDataS( tinNormalS& tinP , etherC& etherP ) ;
     NEWdELcLASSpROTOS
 
     switchStackC    swsLog ;

@@ -588,25 +588,25 @@
                         //     //CONoUTrAW3( "osExceptionHandlerWorkIF: cleanup done [cDeleted]: " , cDeleted , "\r\n" ) ;
                         //     }
                         //         }
-                        //             if( ((tinNormalS*)pTin)->pClean == pTin ) pTin = pTinF() ;
+                        //             if( pTin->pClean == pTin ) pTin = pTinF() ;
                         // 
                         //             cDeleted ++ ;
                         //             { TINSL THREADmODE4rESTORE THREADmODE3rESTORE }
-                        //             delete ((tinNormalS*)pTin)->pClean ;
+                        //             delete pTin->pClean ;
                         //             THREADmODE4oN( flTHREADmODE4_EXCEPTIONcLEANUPdELETIONiNpROGRESS )
                         //             THREADmODE3oN( flTHREADmODE3_DOnOTcaLLdELif )
-                        //             //CONoUTrAW3( "osExceptionHandlerWorkIF:   deleting [pClean]: " , ((tinNormalS*)pTin)->pClean , "\r\n" ) ;
+                        //             //CONoUTrAW3( "osExceptionHandlerWorkIF:   deleting [pClean]: " , pTin->pClean , "\r\n" ) ;
                         // 
                         //             break ;
                         //             )
-                        //                 ((tinNormalS*)pTin)->pClean == (cleanC*)&processGlobal6I.tinBreak // ExitProcess WILL CALL THE DLL TERMINATION ROUTINE, WHICH WILL DELETE tinBreak ; THIS LINE MUST TEST FOR THE LATH cleanC DERIVED INSTANCE CONSTRUCTED DURING DLL INITIALIZATION
+                        //                 pTin->pClean == (cleanC*)&processGlobal6I.tinBreak // ExitProcess WILL CALL THE DLL TERMINATION ROUTINE, WHICH WILL DELETE tinBreak ; THIS LINE MUST TEST FOR THE LATH cleanC DERIVED INSTANCE CONSTRUCTED DURING DLL INITIALIZATION
                         //                 ||
-                        //                 ( bFixed && ebpAtRestart && ebpAtRestart < (countT)((tinNormalS*)pTin)->pClean )
+                        //                 ( bFixed && ebpAtRestart && ebpAtRestart < (countT)pTin->pClean )
                         //             (
                         //             if
-                        //             tinBaseS& tinP = *pTin ; //THIS IS JUST FOR THE CONoUTrAW CALLS
+                        //             tinNormalS& tinP = *pTin ; //THIS IS JUST FOR THE CONoUTrAW CALLS
                         //         {
-                        //         while( ((tinNormalS*)pTin)->pClean )
+                        //         while( pTin->pClean )
                         // 
                         //         //U:: THE FOLLOWING CODE WILL NOT DESTROY THE INTENDED INSTANCES IF THE WOTH cleanC INSTANCE IS IN poolC AND HAPPENS TO HAVE A HIGHER ADDRESS THAN THE ADDRESSES ON THE STACK FOR THE INSTANT THREAD
                         //         //U:: 20140404@2006: BUG: SOME cleanC INSTANCES ARE NOT ON A THREAD STACK.  (tinNormalS INSTANCES CAN BE IN THE poolC.)  CONJ: ORIGINALLY, cleanC WAS ENVISIONED AS ASSUMING THAT ALL INSTANCES ARE ON A THREAD STACK.  CONJ: EXCEPTION HANDLER CODE ASSUMES THIS AND WILL BREAK IF A cleanC INSTANCE IS NOT ON A THREAD STACK
@@ -632,7 +632,7 @@
                         //         //THINK: THIS CODE WAS WRITTEN MAINLY TO SERVE AS AN EXAMPLE OF HOW TO USE cleanC TO PERFORM CLEANUP DURING RESTART
                         //         //20171003@1354:  CONJECTURE: THE INTENT HERE IS TO DESTROY tinNormalS INSTANCES CONSTRUCTED ON THE STACK WITHIN THE RESTART BLOCK
                         // 
-                        //         tinBaseS* pTin = &tinP ;
+                        //         tinNormalS* pTin = &tinP ;
                         //         //CONoUTrAW( "osExceptionHandlerWorkIF: clean +\r\n" ) ;
                         // 
                         //         if( !bFixed ) ((tinNormalS&)tinP).cKidThreads = 0 ;
@@ -644,7 +644,7 @@
                         //     ;
                         //         : ( pTinF() = pTinMainI , &tinP )
                         //         ? 0
-                        //     tinBaseS* pTinSave = &tinP == pTinMainI
+                        //     tinNormalS* pTinSave = &tinP == pTinMainI
                         // {_M
                         // else
                         // 20171003@1405:  COMMENTED THIS OUT TO WORK AROUND INSTABILITY DURING EXCEPTION HANDLING.  REWRITE IF cleanC SUPPORT IS EVER NEEDED.  THIS cleanC FUNCTIONALITY IS REALLY A DOODLE THAT ISN'T NEEDED FOR IPDOS (tm) TO WORK

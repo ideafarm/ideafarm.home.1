@@ -26,13 +26,13 @@ TODO
     _restart.flags |= flRESTARTc_QUIET ;
     RESTART // IF COMMENT OUT THESE THREE RESTART LINES, THE EXCEPTION HANDLER WILL DELETE ALL INSTANCES SINCE THE EXCEPTION IS NOT FIXED SO THE PROCESS TERMINATES
 {
-voidT newFrame1F( tinBaseS& tinP )
+voidT newFrame1F( tinNormalS& tinP )
 
 }
     *pBlammo = 0xbbaaaadd ; // EXCEPTION HANDLER WILL DELETE INSTANCES 3 AND 2 BUT NOT 1
     cuFooS cuFoo( tinP , 3 ) ;
 {
-voidT newFrame2F( tinBaseS& tinP )
+voidT newFrame2F( tinNormalS& tinP )
 
 countT* pBlammo ;
 
@@ -41,7 +41,7 @@ countT* pBlammo ;
 {
 cleanC( tinP )
 id( idP ) ,
-cuFooS::cuFooS( tinBaseS& tinP , countT idP ) :
+cuFooS::cuFooS( tinNormalS& tinP , countT idP ) :
 
 }
     CONoUTrAW3( "~cuFooS [id]: " , id , "\r\n" ) ;
@@ -52,7 +52,7 @@ NEWdELcLASSzOMBIEb( cuFooS )
 
 ;
 }
-    cuFooS( tinBaseS& tinP , countT idP ) ;
+    cuFooS( tinNormalS& tinP , countT idP ) ;
     ~cuFooS( voidT ) ;
     NEWdELcLASSpROTOSzOMBIE
 

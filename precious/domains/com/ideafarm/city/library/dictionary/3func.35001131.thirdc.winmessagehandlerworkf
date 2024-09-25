@@ -764,12 +764,12 @@
                 case WM_QUERYENDSESSION :
             {
             switch( idCmdP )
-            tinBaseS* pTinDebug3 = &tinP ; //U::
+            tinNormalS* pTinDebug3 = &tinP ; //U::
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
 
             //WWiNIT
 
-            tinBaseS* pTinDebug2 = &tinP ; //U::
+            tinNormalS* pTinDebug2 = &tinP ; //U::
 
             //}
             //    LOGrAW( tn ) ;
@@ -866,7 +866,7 @@
             etherC&  etThread   = *pEtThread ;
             etherC*& pEtThread  = etherC::ether_pMainRefsIF( tinP )->pEtThread ;
             etherC&  ether      = etherC::ether_pMainRefsIF( tinP )->ether ;
-            //tinBaseS&    tinP      = etherC::ether_pMainRefsIF( tinP )->tin ; //THIS IS OBSOLETE; REMOVE IT
+            //tinNormalS&    tinP      = etherC::ether_pMainRefsIF( tinP )->tin ; //THIS IS OBSOLETE; REMOVE IT
             if( &tinP != &etherC::ether_pMainRefsIF( tinP )->tin ) BLAMMO ;
             TELL( "winMessageHandlerWorkF: setting up" )
         {

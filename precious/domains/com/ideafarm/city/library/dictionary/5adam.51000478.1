@@ -19,14 +19,14 @@ REST
             }
                 pbc += sizeof( tinNormalS ) ;
                 etThread.delF( tinP , postr ) ;
-                etThread.boxPutF( tinP , tPrefix+T(".")+TF1(((tinNormalS*)pTin)->idProcessOld)+T(".")+TF1(((tinNormalS*)pTin)->postThreadName)+T(".")+TF1(((tinNormalS*)pTin)->idThread) , postr , costr ) ;
+                etThread.boxPutF( tinP , tPrefix+T(".")+TF1(pTin->idProcessOld)+T(".")+TF1(pTin->postThreadName)+T(".")+TF1(pTin->idThread) , postr , costr ) ;
                 etThread.delF( tinP , psttr ) ;
                 countT costr = etThread.strMakeF( tinP , LF , postr , psttr ) ; ___( postr ) ;
                 ZE( osTextT* , postr ) ;
-                ((tinNormalS*)pTin)->strFuseF( tinP , etThread , psttr ) ; ___( psttr ) ;
+                pTin->strFuseF( tinP , etThread , psttr ) ; ___( psttr ) ;
                 ZE( strokeS* , psttr ) ;
         
-                tinBaseS* pTin = (tinNormalS*)pbc ;
+                tinNormalS* pTin = (tinNormalS*)pbc ;
             {
             while( pbc < pbe )
             byteT* const pbe = pbts + cbts ;

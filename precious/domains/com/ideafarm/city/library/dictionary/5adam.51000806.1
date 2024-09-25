@@ -2409,7 +2409,7 @@ TASK( tmWorkerHealFileF )
     TN( tAtAsterisk , "@*" ) ;
     etherC& etPrime = etherC::etPrimeIF() ;
 {
-voidT chunkDayIfF( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewChunksP , countT cPathsToYearP , strokeS** ppsttPathToYearP , textC& tDayPrefixP )
+voidT chunkDayIfF( tinNormalS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewChunksP , countT cPathsToYearP , strokeS** ppsttPathToYearP , textC& tDayPrefixP )
 
 }
     return 1 ;
@@ -2533,7 +2533,7 @@ voidT chunkDayIfF( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , countT& cN
     boolT&        bAbortP                         =        *(boolT*)pcArgP[ 1 ] ;
     etherC&       etherP                          =       *(etherC*)pcArgP[ 0 ] ;
 {
-boolT walkNewFsetCBF( tinBaseS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT walkNewFsetCBF( tinNormalS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 DONE( tmDayZipperF )
 }
@@ -2659,7 +2659,7 @@ TASK( tmDayZipperF )
     stackC stPathToYear( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
     ZE( countT , cPathsToYear ) ;
 {
-countT listPathsToYearF( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , strokeS**& ppsttPathToYearP , switchStackC& swsPathToArchivesByArchiveNameP , strokeS*& psttzlArchiveP , const strokeS* psttYearP )
+countT listPathsToYearF( tinNormalS& tinP , etherC& etherP , boolT& bAbortP , strokeS**& ppsttPathToYearP , switchStackC& swsPathToArchivesByArchiveNameP , strokeS*& psttzlArchiveP , const strokeS* psttYearP )
 
 }
     return cArchive ;
@@ -2946,7 +2946,7 @@ countT listPathsToYearF( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , stro
 
     etherC& etPrime = etherC::etPrimeIF() ;
 {
-countT loadArchivePathsF( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , switchStackC& swsPathToArchivesByArchiveNameP , strokeS*& psttzArchiveP , stackC& stPathToArchivesP )
+countT loadArchivePathsF( tinNormalS& tinP , etherC& etherP , boolT& bAbortP , switchStackC& swsPathToArchivesByArchiveNameP , strokeS*& psttzArchiveP , stackC& stPathToArchivesP )
 
 }
     etherP.traceF( tinP , T("zipDayF / ----") ) ;
@@ -3311,7 +3311,7 @@ countT loadArchivePathsF( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , swi
     etherP.traceF( tinP , T("zipDayF / ++++") ) ;
     _IO_
 {
-voidT zipDayF( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewChunksP , countT cPathsToYearP , strokeS** ppsttPathToYearP , textC& tShortDayZipP , textC& tDayPrefixP , countT offDoP )
+voidT zipDayF( tinNormalS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewChunksP , countT cPathsToYearP , strokeS** ppsttPathToYearP , textC& tShortDayZipP , textC& tDayPrefixP , countT offDoP )
 
 //U::O: ZIP EACH DEVICE WO DAY AT A TIME BUT NOT WAITING FOR ALL DEVICES TO BE ZIPPED FOR A DAY ; THE CURRENT CODE PROCEEDS AT THE PACE OF THE SLOWEST DEVICE, LEAVING FASTER DEVICES IDLE
 
@@ -3321,7 +3321,7 @@ voidT zipDayF( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , countT& cNewCh
     jobHealFileS* pJob2 = (jobHealFileS*)c2P ;
     jobHealFileS* pJob1 = (jobHealFileS*)c1P ;
 {
-countT _export subtractHealFileJobF( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT _export subtractHealFileJobF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     // /* if( bChatterP )*/ pP.ether.traceF( tinP , T("healed  ---- [idName]:    ")+TF2(idNameP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -5034,7 +5034,7 @@ countT _export subtractHealFileJobF( tinBaseS& tinP , countT& pEther , countT& c
     //bChatterP = 1 ; //U:: TO FIND A BUG
     _IO_
 {
-voidT healShortNameF( tinBaseS& tinP , etherC& etPrimeP , paramHealFileS& pP , textC& tShortP , const flagsT flagsModeP , const countT idNameP , const countT cShortNamesP , const countT cToHireHealP , const countT cToHireCompareP , boolT bChatterP )
+voidT healShortNameF( tinNormalS& tinP , etherC& etPrimeP , paramHealFileS& pP , textC& tShortP , const flagsT flagsModeP , const countT idNameP , const countT cShortNamesP , const countT cToHireHealP , const countT cToHireCompareP , boolT bChatterP )
 
 }
     //etherP.traceF( tinP , T("compareOoImagesF / ----") ) ;
@@ -5132,7 +5132,7 @@ voidT healShortNameF( tinBaseS& tinP , etherC& etPrimeP , paramHealFileS& pP , t
     //countT id In = 1 + incv02AM( id InLath ) ;
     //sta tic countT id InLath ;
 {
-voidT compareOoImagesF( tinBaseS& tinP , etherC& etPrimeP , etherC& etherP , boolT& bAbortP , countT& cPauseP , boolT& bEqualP , const flagsT flagsModeP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP /*, const textC& tLongOuterP , const textC& tLongInnerP , textC& tIndent3P*/ )
+voidT compareOoImagesF( tinNormalS& tinP , etherC& etPrimeP , etherC& etherP , boolT& bAbortP , countT& cPauseP , boolT& bEqualP , const flagsT flagsModeP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP /*, const textC& tLongOuterP , const textC& tLongInnerP , textC& tIndent3P*/ )
 
 countT cbNewlyCompared ;
 
@@ -5150,7 +5150,7 @@ countT cbNewlyCompared ;
     {
     if( pfwsInnerP )
 {
-voidT deleteEqualArrayFwsInnerArrayF( tinBaseS& tinP , etherC& etherP , boolT*& pEqualP , fileWindowsC*& pfwsInnerP , countT cInnerImagesToInspectP )
+voidT deleteEqualArrayFwsInnerArrayF( tinNormalS& tinP , etherC& etherP , boolT*& pEqualP , fileWindowsC*& pfwsInnerP , countT cInnerImagesToInspectP )
 
 }
     if( ether ) bAbortP = 1 ;
@@ -5167,7 +5167,7 @@ voidT deleteEqualArrayFwsInnerArrayF( tinBaseS& tinP , etherC& etherP , boolT*& 
     if( cPauseP && !ether && !bAbortP )
     etherC& ether = etherC::etPrimeIF( tinP ) ;
 {
-voidT pauseIfF( tinBaseS& tinP , boolT& bAbortP , countT& cExecutiveHealYearPausedP , countT& cPauseP )
+voidT pauseIfF( tinNormalS& tinP , boolT& bAbortP , countT& cExecutiveHealYearPausedP , countT& cPauseP )
 
 }
     return *pfr1 - *pfr2 ;
@@ -5175,7 +5175,7 @@ voidT pauseIfF( tinBaseS& tinP , boolT& bAbortP , countT& cExecutiveHealYearPaus
     fileMetaS* pfr2 = (fileMetaS*)c2P ;
     fileMetaS* pfr1 = (fileMetaS*)c1P ;
 {
-/*1*/countT subtractFileMetaF( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractFileMetaF( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
     return - sgn ;                          //SORT IN DECREASING ORDER OF SIZE SO THAT THE LARGEST FILES ARE PROCESSED WOTH
@@ -5184,7 +5184,7 @@ voidT pauseIfF( tinBaseS& tinP , boolT& bAbortP , countT& cExecutiveHealYearPaus
     jobCompareOoImagesS* pJob2 = (jobCompareOoImagesS*)c2P ;
     jobCompareOoImagesS* pJob1 = (jobCompareOoImagesS*)c1P ;
 {
-/*1*/countT subtract_jobCompareOoImagesS_F( tinBaseS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtract_jobCompareOoImagesS_F( tinNormalS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
     tPathLonely  += tUniqueP+tSlash ;
@@ -5216,12 +5216,12 @@ cPause( cPauseP ) ,
 bAbort( bAbortP ) ,
 etPrime( etherC::etPrimeIF() ) ,
 ether( etherP ) ,
-paramHealFileS::paramHealFileS( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , countT& cPauseP , textC& tYearP , textC& tArchiveP , textC& tUniqueP , countT& cExecutiveHealYearPausedP , stackC& stJobCompareP , funnelHornC& funJobFileInfoP , const countT cPathsToYearP , const countT cResultStructsNeededP , const strokeS** const ppsttPathToYearP , stackC& st_pzJobHealFileDoneP , funnelHornC& funJobHealFileDoneP , grabC& grabDiskP ) :
+paramHealFileS::paramHealFileS( tinNormalS& tinP , etherC& etherP , boolT& bAbortP , countT& cPauseP , textC& tYearP , textC& tArchiveP , textC& tUniqueP , countT& cExecutiveHealYearPausedP , stackC& stJobCompareP , funnelHornC& funJobFileInfoP , const countT cPathsToYearP , const countT cResultStructsNeededP , const strokeS** const ppsttPathToYearP , stackC& st_pzJobHealFileDoneP , funnelHornC& funJobHealFileDoneP , grabC& grabDiskP ) :
 
 }
     ((tinNormalS&)tinP).pEther->traceF( tinP , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
 {
-voidT imageCompareS::traceF( tinBaseS& tinP , const strokeS* const psttP )
+voidT imageCompareS::traceF( tinNormalS& tinP , const strokeS* const psttP )
 
 }
     //traceF( tinP , T("ct      :    ") ) ;
@@ -5241,7 +5241,7 @@ sCountT fileMetaS::operator -( const fileMetaS& frP ) const
 }
     //((tinNormalS&)tinP).pEther->traceF( tinP , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)st O ldPathToYearP[idSlotPathToYear]) ) ;
 {
-voidT fileMetaS::traceF( tinBaseS& tinP , const strokeS* const psttP )
+voidT fileMetaS::traceF( tinNormalS& tinP , const strokeS* const psttP )
 
 }
     timeModRounded = *(countT*)( (byteT*)pc2 + 3 ) + bRoundUp ;
@@ -5261,7 +5261,7 @@ time2Mod( time2ModP ) ,
 time1Mod( time1ModP ) ,
 cbUsed( cbUsedP ) ,
 timeModRounded( 0 ) ,
-fileMetaS::fileMetaS( tinBaseS& tinP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) :
+fileMetaS::fileMetaS( tinNormalS& tinP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) :
 
 NEWdELcLASS( 4 , fileMetaS ) ;
 
@@ -5278,7 +5278,7 @@ jobFileInfoS::jobFileInfoS( voidT ) :
 pInfo( pInfoP )
 psttLong( 0 ) ,
 ether( etherP ) ,
-jobFileInfoS::jobFileInfoS( tinBaseS& tinP , etherC& etherP , const strokeS* const psttLongP , infoFileS*& pInfoP ) :
+jobFileInfoS::jobFileInfoS( tinNormalS& tinP , etherC& etherP , const strokeS* const psttLongP , infoFileS*& pInfoP ) :
 
 }
     ether.delF( tinP , psttLong ) ;
@@ -5310,7 +5310,7 @@ psttShort( 0 ) ,
 info( infoP ) ,
 cJobsPendingHeal( cJobsPendingHealP ) ,
 ether( etherP ) ,
-jobHealFileS::jobHealFileS( tinBaseS& tinP , etherC& etherP , countT& cJobsPendingHealP , paramHealFileS& infoP , const strokeS* const psttShortP , const countT idNameP , const countT cShortNamesP ) :
+jobHealFileS::jobHealFileS( tinNormalS& tinP , etherC& etherP , countT& cJobsPendingHealP , paramHealFileS& infoP , const strokeS* const psttShortP , const countT idNameP , const countT cShortNamesP ) :
 
 }
     ether.delF( tinP , psttShort ) ;
@@ -5350,7 +5350,7 @@ pbwOuter( pbwOuterP ) ,
 bEqual( bEqualP ) ,
 cJobsPendingCompare( cJobsPendingCompareP ) ,
 ether( etherP ) ,
-jobCompareOoImagesS::jobCompareOoImagesS( tinBaseS& tinP , etherC& etherP , countT& cJobsPendingCompareP , boolT& bEqualP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP , const strokeS* const psttLongOuterP , const strokeS* const psttLongInnerP , count04T cbUsedMax04P ) :
+jobCompareOoImagesS::jobCompareOoImagesS( tinNormalS& tinP , etherC& etherP , countT& cJobsPendingCompareP , boolT& bEqualP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP , const strokeS* const psttLongOuterP , const strokeS* const psttLongInnerP , count04T cbUsedMax04P ) :
 
 }
     dec02AM( cJobsPendingCompare ) ;
@@ -5371,7 +5371,7 @@ const countT cResultsPerStruct = sizeof( countT ) * SB / 2 ;     // 2 BITS ARE U
 
 ;
 }
-    voidT traceF( tinBaseS& tinP , const strokeS* const psttP = 0 ) ;
+    voidT traceF( tinNormalS& tinP , const strokeS* const psttP = 0 ) ;
     inline sCountT operator -( imageCompareS& picP ) { return bitsResult - picP.bitsResult ; }
     imageCompareS( voidT ) ;
     NEWdELcLASSpROTOS
@@ -5383,8 +5383,8 @@ struct imageCompareS
 ;
 }
     sCountT operator -( const fileMetaS& frP ) const ;
-    voidT traceF( tinBaseS& tinP , const strokeS* const psttP = 0 ) ;
-    fileMetaS( tinBaseS& tinP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) ;
+    voidT traceF( tinNormalS& tinP , const strokeS* const psttP = 0 ) ;
+    fileMetaS( tinNormalS& tinP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) ;
     NEWdELcLASSpROTOS
 
     countT   idSlotPathToYear ;
@@ -5399,7 +5399,7 @@ struct fileMetaS
 ;
 }
     jobFileInfoS( voidT ) ;
-    jobFileInfoS( tinBaseS& tinP , etherC& etherP , const strokeS* const psttLongP , infoFileS*& pInfoP ) ;
+    jobFileInfoS( tinNormalS& tinP , etherC& etherP , const strokeS* const psttLongP , infoFileS*& pInfoP ) ;
     ~jobFileInfoS( voidT ) ;
     NEWdELcLASSpROTOS
 
@@ -5423,7 +5423,7 @@ struct jobFileInfoS
     inline operator countT( voidT ) const { return cbwOuter << 1 ; }
 
     jobCompareOoImagesS( voidT ) ;
-    jobCompareOoImagesS( tinBaseS& tinP , etherC& etherP , countT& cJobsPendingCompareP , boolT& bEqualP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP , const strokeS* const psttLongOuterP , const strokeS* const psttLongInnerP , count04T cbUsedMax04P ) ;
+    jobCompareOoImagesS( tinNormalS& tinP , etherC& etherP , countT& cJobsPendingCompareP , boolT& bEqualP , const byteT* pbwOuterP , const byteT* pbwInnerP , countT cbwOuterP , const strokeS* const psttLongOuterP , const strokeS* const psttLongInnerP , count04T cbUsedMax04P ) ;
     ~jobCompareOoImagesS( voidT ) ;
     NEWdELcLASSpROTOS
 
@@ -5443,7 +5443,7 @@ struct jobCompareOoImagesS
 ;
 }
     jobHealFileS( voidT ) ;
-    jobHealFileS( tinBaseS& tinP , etherC& etherP , countT& cJobsPendingHealP , paramHealFileS& infoP , const strokeS* const psttShortP , const countT idNameP , const countT cShortNamesP ) ;
+    jobHealFileS( tinNormalS& tinP , etherC& etherP , countT& cJobsPendingHealP , paramHealFileS& infoP , const strokeS* const psttShortP , const countT idNameP , const countT cShortNamesP ) ;
     ~jobHealFileS( voidT ) ;
     NEWdELcLASSpROTOS
 
@@ -5458,7 +5458,7 @@ struct jobHealFileS
 
 ;
 }
-    paramHealFileS( tinBaseS& tinP , etherC& etherP , boolT& bAbortP , countT& cPauseP , textC& tYearP , textC& tArchiveP , textC& tUniqueP , countT& cExecutiveHealYearPausedP , stackC& stJobCompareP , funnelHornC& funJobFileInfoP , const countT cPathsToYearP , const countT cResultStructsNeededP , const strokeS** const ppsttPathToYearP , stackC& st_pzJobHealFileDoneP , funnelHornC& funJobHealFileDoneP , grabC& grabDiskP ) ;
+    paramHealFileS( tinNormalS& tinP , etherC& etherP , boolT& bAbortP , countT& cPauseP , textC& tYearP , textC& tArchiveP , textC& tUniqueP , countT& cExecutiveHealYearPausedP , stackC& stJobCompareP , funnelHornC& funJobFileInfoP , const countT cPathsToYearP , const countT cResultStructsNeededP , const strokeS** const ppsttPathToYearP , stackC& st_pzJobHealFileDoneP , funnelHornC& funJobHealFileDoneP , grabC& grabDiskP ) ;
 
     grabC&                  grabDisk ;
     funnelHornC&            funJobHealFileDone ;

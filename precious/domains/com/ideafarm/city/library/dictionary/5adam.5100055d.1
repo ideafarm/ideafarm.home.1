@@ -508,7 +508,7 @@ THREADmODE3rESTORE
                 cbHandle = (byteT*)&foo.after - (byteT*)&foo.handle ;
                 foo( tinP ) ;
                 }
-                    inline fooC( tinBaseS& tinP ) : handle( TAG( TAGiDnULL ) ) {}
+                    inline fooC( tinNormalS& tinP ) : handle( TAG( TAGiDnULL ) ) {}
 
                     countT  after ;
                     handleC handle ;
@@ -829,7 +829,7 @@ TASK( tmWatchKtDepositoryF )
     pBatonTree->grabF( tinP , TAG( TAGiDnULL ) ) ;
     QUITOZ
 {
-voidT writeStateF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP )
+voidT writeStateF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP )
 
 }
     pBatonTree->ungrabF( tinP ) ;
@@ -884,7 +884,7 @@ voidT writeStateF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP )
     pBatonTree->grabF( tinP , TAG( TAGiDnULL ) ) ;
     _IO_
 {
-voidT writeF( tinBaseS& tinP , etherC& etherP , const strokeS* const psttP , treeOldC& treeP , const boolT bWholeP )
+voidT writeF( tinNormalS& tinP , etherC& etherP , const strokeS* const psttP , treeOldC& treeP , const boolT bWholeP )
 
 }
     QUITR
@@ -951,7 +951,7 @@ voidT writeF( tinBaseS& tinP , etherC& etherP , const strokeS* const psttP , tre
     pBatonTree->grabF( tinP , TAG( TAGiDnULL ) ) ;
     QUITOZ
 {
-voidT readStateF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP )
+voidT readStateF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP )
 
 }
     if( bWhole ) etherP( tinP , pStkDirections ) ;
@@ -1031,7 +1031,7 @@ voidT readStateF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP )
     boolT bWhole = !treeP.downF( tinP , 1 ) ;
     pBatonTree->grabF( tinP , TAG( TAGiDnULL ) ) ;
 {
-voidT readF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP , const strokeS* const psttP , countT& idGenerationP )
+voidT readF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP , const strokeS* const psttP , countT& idGenerationP )
 
 }
     if( ((tinNormalS&)tinP).fingerprint && etherP && idTypeP && flagsP && pbP && cbP && cArgP && !handleP ) ;
@@ -1045,13 +1045,13 @@ voidT readF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP , const strokeS* 
 
     _IO_
 {
-voidT treeFindCBF( tinBaseS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP )
+voidT treeFindCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP )
 
 }
     if( ((tinNormalS&)tinP).fingerprint && etherP && idTypeP && flagsP && pbP && cbP && cArgP && !handleP ) ;
     _IO_
 {
-voidT treeOldCBF( tinBaseS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP )
+voidT treeOldCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP )
 
 }
     return 0 ;
@@ -1144,7 +1144,7 @@ voidT treeOldCBF( tinBaseS& tinP , etherC& etherP , const countT idTypeP , const
 
     _IO_
 {
-boolT _export saOLD_invisibleCBF( tinBaseS& tinP , etherC& etherP , windowOldC& wP , const flagsT flagsP , const boolT bNoDrawP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamStateOldS& scratchStrokeP )/*1*/
+boolT _export saOLD_invisibleCBF( tinNormalS& tinP , etherC& etherP , windowOldC& wP , const flagsT flagsP , const boolT bNoDrawP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamStateOldS& scratchStrokeP )/*1*/
 
 }
     return 0 ;
@@ -1161,7 +1161,7 @@ boolT _export saOLD_invisibleCBF( tinBaseS& tinP , etherC& etherP , windowOldC& 
 
     _IO_
 {
-boolT _export saJoy2CBF( tinBaseS& tinP , etherC& etherP , windowOldC& wP , const flagsT flagsP , const boolT bNoDrawP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamStateOldS& scratchStrokeP )/*1*/
+boolT _export saJoy2CBF( tinNormalS& tinP , etherC& etherP , windowOldC& wP , const flagsT flagsP , const boolT bNoDrawP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamStateOldS& scratchStrokeP )/*1*/
 
 }
     return 0 ;
@@ -1178,7 +1178,7 @@ boolT _export saJoy2CBF( tinBaseS& tinP , etherC& etherP , windowOldC& wP , cons
 
     _IO_
 {
-boolT _export saJoy1CBF( tinBaseS& tinP , etherC& etherP , windowOldC& wP , const flagsT flagsP , const boolT bNoDrawP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamStateOldS& scratchStrokeP )/*1*/
+boolT _export saJoy1CBF( tinNormalS& tinP , etherC& etherP , windowOldC& wP , const flagsT flagsP , const boolT bNoDrawP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamStateOldS& scratchStrokeP )/*1*/
 
 }
     return cFound ;
@@ -1194,7 +1194,7 @@ boolT _export saJoy1CBF( tinBaseS& tinP , etherC& etherP , windowOldC& wP , cons
     if( stP )
     ZE( boolT , cFound ) ;
 {
-boolT cFoundF( tinBaseS& tinP , stackC& stP , const countT cP )
+boolT cFoundF( tinNormalS& tinP , stackC& stP , const countT cP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1205,7 +1205,7 @@ boolT cFoundF( tinBaseS& tinP , stackC& stP , const countT cP )
     {
     switch( idTypeCallP )
 {
-voidT tcButton_gCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_gCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1219,7 +1219,7 @@ voidT tcButton_gCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_strokeCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_strokeCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1230,7 +1230,7 @@ voidT tcButton_strokeCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP ,
     {
     switch( idTypeCallP )
 {
-voidT tcButton_plusCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_plusCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1241,7 +1241,7 @@ voidT tcButton_plusCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , c
     {
     switch( idTypeCallP )
 {
-voidT tcButton_minusCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_minusCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1252,7 +1252,7 @@ voidT tcButton_minusCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , 
     {
     switch( idTypeCallP )
 {
-voidT tcButton_mCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_mCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1263,7 +1263,7 @@ voidT tcButton_mCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_kCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_kCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1274,7 +1274,7 @@ voidT tcButton_kCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_homeOld20190809CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_homeOld20190809CBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1288,7 +1288,7 @@ voidT tcButton_homeOld20190809CBF( tinBaseS& tinP , etherC& etherP , const count
     {
     switch( idTypeCallP )
 {
-voidT tcButton_findCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_findCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1299,7 +1299,7 @@ voidT tcButton_findCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , c
     {
     switch( idTypeCallP )
 {
-voidT tcButton_endCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_endCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1313,7 +1313,7 @@ voidT tcButton_endCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , co
     {
     switch( idTypeCallP )
 {
-voidT tcButton_climbCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_climbCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1324,7 +1324,7 @@ voidT tcButton_climbCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , 
     {
     switch( idTypeCallP )
 {
-voidT tcButton_arrowOutCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_arrowOutCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1335,7 +1335,7 @@ voidT tcButton_arrowOutCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP
     {
     switch( idTypeCallP )
 {
-voidT tcButton_arrowInCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_arrowInCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1358,7 +1358,7 @@ voidT tcButton_arrowInCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP 
     {
     switch( idTypeCallP )
 {
-voidT tcButton_arrowRightCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_arrowRightCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1381,7 +1381,7 @@ voidT tcButton_arrowRightCBF( tinBaseS& tinP , etherC& etherP , const countT cAr
     {
     switch( idTypeCallP )
 {
-voidT tcButton_arrowLeftCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_arrowLeftCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1403,7 +1403,7 @@ voidT tcButton_arrowLeftCBF( tinBaseS& tinP , etherC& etherP , const countT cArg
     {
     switch( idTypeCallP )
 {
-voidT tcButton_arrowDownCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_arrowDownCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1426,7 +1426,7 @@ voidT tcButton_arrowDownCBF( tinBaseS& tinP , etherC& etherP , const countT cArg
     {
     switch( idTypeCallP )
 {
-voidT tcButton_arrowUpCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_arrowUpCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1437,7 +1437,7 @@ voidT tcButton_arrowUpCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP 
     {
     switch( idTypeCallP )
 {
-voidT tcButton_zCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_zCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1447,7 +1447,7 @@ voidT tcButton_zCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_wheelCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_wheelCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1458,7 +1458,7 @@ voidT tcButton_wheelCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , 
     {
     switch( idTypeCallP )
 {
-voidT tcButton_wCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_wCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1468,7 +1468,7 @@ voidT tcButton_wCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_toolMouseCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_toolMouseCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1478,7 +1478,7 @@ voidT tcButton_toolMouseCBF( tinBaseS& tinP , etherC& etherP , const countT cArg
     {
     switch( idTypeCallP )
 {
-voidT tcButton_toolJoy2CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_toolJoy2CBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1488,7 +1488,7 @@ voidT tcButton_toolJoy2CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP
     {
     switch( idTypeCallP )
 {
-voidT tcButton_toolJoy1CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_toolJoy1CBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1508,7 +1508,7 @@ voidT tcButton_toolJoy1CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP
     {
     switch( idTypeCallP )
 {
-voidT tcButton_toolCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_toolCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1519,7 +1519,7 @@ voidT tcButton_toolCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , c
     {
     switch( idTypeCallP )
 {
-voidT tcButton_tCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_tCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1530,7 +1530,7 @@ voidT tcButton_tCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_newSCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_newSCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1541,7 +1541,7 @@ voidT tcButton_newSCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , c
     {
     switch( idTypeCallP )
 {
-voidT tcButton_sCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_sCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP && etherP ) ;
@@ -1552,7 +1552,7 @@ voidT tcButton_sCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_pCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_pCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1574,7 +1574,7 @@ voidT tcButton_pCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_oCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_oCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1584,7 +1584,7 @@ voidT tcButton_oCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_joy2CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_joy2CBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1594,7 +1594,7 @@ voidT tcButton_joy2CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , c
     {
     switch( idTypeCallP )
 {
-voidT tcButton_joy1CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_joy1CBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -1626,7 +1626,7 @@ voidT tcButton_joy1CBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , c
     {
     switch( idTypeCallP )
 {
-voidT tcButton_iCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_iCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 
 }
@@ -1637,7 +1637,7 @@ voidT tcButton_iCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     switch( idTypeCallP )
 {
-voidT tcButton_hCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_hCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     }
@@ -1666,7 +1666,7 @@ voidT tcButton_hCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , cons
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doWriteFileF( tinBaseS& tinP , etherC& etherP , windowOldC& wP )
+voidT doWriteFileF( tinNormalS& tinP , etherC& etherP , windowOldC& wP )
 
 }
     pStkActionMemory->purgeF( tinP , CaCTIONmEMORY ) ;
@@ -1698,7 +1698,7 @@ voidT doWriteFileF( tinBaseS& tinP , etherC& etherP , windowOldC& wP )
 
     static countT idTypeDisplaySave ;
 {
-voidT doToolTestToggleF( tinBaseS& tinP , windowOldC& wP )
+voidT doToolTestToggleF( tinNormalS& tinP , windowOldC& wP )
 
 }
     pStkActionMemory->purgeF( tinP , CaCTIONmEMORY ) ;
@@ -1713,7 +1713,7 @@ voidT doToolTestToggleF( tinBaseS& tinP , windowOldC& wP )
     else if( bEntry ) *pTxtTutor = T("tab to climb, or enter text, or press arrow key to creat new branch") ;
     if( bToolTest || bToolTestHire ) *pTxtTutor = T("mouse click 'k' to return to the normal display (pressing 'k' key won't work!)") ;
 {
-voidT doSayHintF( tinBaseS& tinP )
+voidT doSayHintF( tinNormalS& tinP )
 
 }
     }
@@ -1744,7 +1744,7 @@ voidT doSayHintF( tinBaseS& tinP )
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doPruneF( tinBaseS& tinP )
+voidT doPruneF( tinNormalS& tinP )
 
 }
     }
@@ -1763,7 +1763,7 @@ voidT doPruneF( tinBaseS& tinP )
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doPlusF( tinBaseS& tinP , etherC& etherP )
+voidT doPlusF( tinNormalS& tinP , etherC& etherP )
 
 }
     }
@@ -1774,7 +1774,7 @@ voidT doPlusF( tinBaseS& tinP , etherC& etherP )
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doNumericToggleF( tinBaseS& tinP )
+voidT doNumericToggleF( tinNormalS& tinP )
 
 }
     }
@@ -1792,7 +1792,7 @@ voidT doNumericToggleF( tinBaseS& tinP )
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doMinusF( tinBaseS& tinP , etherC& etherP )
+voidT doMinusF( tinNormalS& tinP , etherC& etherP )
 
 }
     pStkActionMemory->purgeF( tinP , CaCTIONmEMORY ) ;
@@ -1801,7 +1801,7 @@ voidT doMinusF( tinBaseS& tinP , etherC& etherP )
     //DOES NOT WORK WHEN AM SERVICE: etherP.osHttpViewF( tinP , T("www.ideafarm.com//http/id15.html") , 1 ) ;
     ((thirdC&)etherP).winShowWindowF( tinP , wP , idcWINsHOW_HIDE ) ;
 {
-voidT doInviteF( tinBaseS& tinP , etherC& etherP , windowOldC& wP )
+voidT doInviteF( tinNormalS& tinP , etherC& etherP , windowOldC& wP )
 
 }
     pStkActionMemory->purgeF( tinP , CaCTIONmEMORY ) ;
@@ -1812,7 +1812,7 @@ voidT doInviteF( tinBaseS& tinP , etherC& etherP , windowOldC& wP )
     pBatonTree->grabF( tinP , TAG( TAGiDnULL ) ) ;
     idTypeDisplay = ifcIDtYPEdISPLAY_HUGE ;
 {
-voidT doHugeF( tinBaseS& tinP )
+voidT doHugeF( tinNormalS& tinP )
 
 }
     }
@@ -1827,7 +1827,7 @@ voidT doHugeF( tinBaseS& tinP )
     else if( bRightOk )
     if( bToolTest || bToolTestHire ) ;
 {
-voidT doHomeF( tinBaseS& tinP )
+voidT doHomeF( tinNormalS& tinP )
 
 }
     }
@@ -1841,7 +1841,7 @@ voidT doHomeF( tinBaseS& tinP )
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doHollywoodNewF( tinBaseS& tinP )
+voidT doHollywoodNewF( tinNormalS& tinP )
 
 }
     }
@@ -1855,7 +1855,7 @@ voidT doHollywoodNewF( tinBaseS& tinP )
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doHollywoodF( tinBaseS& tinP )
+voidT doHollywoodF( tinNormalS& tinP )
 
 }
     }
@@ -1870,7 +1870,7 @@ voidT doHollywoodF( tinBaseS& tinP )
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doGraftF( tinBaseS& tinP , etherC& etherP )
+voidT doGraftF( tinNormalS& tinP , etherC& etherP )
 
 }
     }
@@ -1897,7 +1897,7 @@ voidT doGraftF( tinBaseS& tinP , etherC& etherP )
     {
     if( !bToolTest && !bToolTestHire )
 {
-voidT doFlushStateF( tinBaseS& tinP , etherC& etherP )
+voidT doFlushStateF( tinNormalS& tinP , etherC& etherP )
 
 }
     }
@@ -2039,7 +2039,7 @@ voidT doFlushStateF( tinBaseS& tinP , etherC& etherP )
     {
     switch( idTypeCallP )
 {
-voidT doFindF( tinBaseS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP )
+voidT doFindF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP )
 
 }
     }
@@ -2222,9 +2222,9 @@ voidT doFindF( tinBaseS& tinP , etherC& etherP , const countT idTypeCallP , cons
     {
     switch( idTypeCallP )
 {
-voidT doStrokingF( tinBaseS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP )
+voidT doStrokingF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP )
 
-voidT treeFindCBF( tinBaseS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP ) ;
+voidT treeFindCBF( tinNormalS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP ) ;
 
 }
     }
@@ -2239,7 +2239,7 @@ voidT treeFindCBF( tinBaseS& tinP , etherC& etherP , const countT idTypeP , cons
     else if( bLeftOk )
     if( bToolTest || bToolTestHire ) ;
 {
-voidT doEndF( tinBaseS& tinP )
+voidT doEndF( tinNormalS& tinP )
 
 }
     etherP.osThreadF( TaRG1( tmFlushStateF ) ) ;
@@ -2292,7 +2292,7 @@ voidT doEndF( tinBaseS& tinP )
     if( bSuppressSessionEnd ) bSuppressSessionEnd = 0 ;
 
 {
-voidT doCloseSessionF( tinBaseS& tinP , etherC& etherP , windowOldC& wP , const boolT bContinueSessionP = 0 )
+voidT doCloseSessionF( tinNormalS& tinP , etherC& etherP , windowOldC& wP , const boolT bContinueSessionP = 0 )
 
 TASK0PROTO( tmFlushStateF ) ;
 
@@ -2414,7 +2414,7 @@ TASK0PROTO( tmFlushStateF ) ;
     {
     switch( idTypeCallP )
 {
-voidT doClimbF( tinBaseS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP )
+voidT doClimbF( tinNormalS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP )
 
 }
     }
@@ -2435,7 +2435,7 @@ voidT doClimbF( tinBaseS& tinP , etherC& etherP , const countT idTypeCallP , con
     else if( bOutOk )
     if( bToolTest || bToolTestHire ) ;
 {
-voidT doArrowOutF( tinBaseS& tinP )
+voidT doArrowOutF( tinNormalS& tinP )
 
 }
     }
@@ -2456,7 +2456,7 @@ voidT doArrowOutF( tinBaseS& tinP )
     else if( bInOk )
     if( bToolTest || bToolTestHire ) ;
 {
-voidT doArrowInF( tinBaseS& tinP )
+voidT doArrowInF( tinNormalS& tinP )
 
 }
     }
@@ -2525,7 +2525,7 @@ voidT doArrowInF( tinBaseS& tinP )
     else if( bGraft )
     if( bToolTest || bToolTestHire ) ;
 {
-voidT doArrowRightF( tinBaseS& tinP , etherC& etherP )
+voidT doArrowRightF( tinNormalS& tinP , etherC& etherP )
 
 }
     }
@@ -2594,7 +2594,7 @@ voidT doArrowRightF( tinBaseS& tinP , etherC& etherP )
     else if( bGraft )
     if( bToolTest || bToolTestHire ) ;
 {
-voidT doArrowLeftF( tinBaseS& tinP , etherC& etherP )
+voidT doArrowLeftF( tinNormalS& tinP , etherC& etherP )
 
 }
     }
@@ -2621,7 +2621,7 @@ voidT doArrowLeftF( tinBaseS& tinP , etherC& etherP )
     {
     if( bFind )
 {
-voidT doArrowDownF( tinBaseS& tinP )
+voidT doArrowDownF( tinNormalS& tinP )
 
 }
     }
@@ -2695,10 +2695,10 @@ voidT doArrowDownF( tinBaseS& tinP )
     {
     if( bFind )
 {
-voidT doArrowUpF( tinBaseS& tinP , etherC& etherP )
+voidT doArrowUpF( tinNormalS& tinP , etherC& etherP )
 
-voidT readStateF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP ) ;
-voidT writeStateF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP ) ;
+voidT readStateF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP ) ;
+voidT writeStateF( tinNormalS& tinP , etherC& etherP , treeOldC& treeP ) ;
 
 }
     etherP.strFuseF( tinP , psttP , drawerP.pstt3 ) ; ___( psttP ) ;
@@ -2855,7 +2855,7 @@ voidT writeStateF( tinBaseS& tinP , etherC& etherP , treeOldC& treeP ) ;
 
     etherP.strFuseF( tinP , psttP , drawerP.pstt1 ) ;
 {
-voidT tHollywoodNewF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP , drawerHollywoodS& drawerP )
+voidT tHollywoodNewF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , drawerHollywoodS& drawerP )
 
 }
     }
@@ -2959,7 +2959,7 @@ voidT tHollywoodNewF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP , drawer
     bs.cDnGGMoms =
     branchesOldS bs ;
 {
-voidT tHollywoodSetF( tinBaseS& tinP , treeOldC& treeP , drawerHollywoodS& drawerP )
+voidT tHollywoodSetF( tinNormalS& tinP , treeOldC& treeP , drawerHollywoodS& drawerP )
 
 }
     etherP.strFuseF( tinP , psttP , drawerP.pstt3 ) ; ___( psttP ) ;
@@ -3229,7 +3229,7 @@ voidT tHollywoodSetF( tinBaseS& tinP , treeOldC& treeP , drawerHollywoodS& drawe
     bs.cDnGGMoms =
     branchesOldS bs ;
 {
-voidT tHollywoodF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP , treeOldC& treeP , drawerHollywoodS& drawerP )
+voidT tHollywoodF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , treeOldC& treeP , drawerHollywoodS& drawerP )
 
 }
     if( cArgP && etherP ) ;
@@ -3451,7 +3451,7 @@ voidT tHollywoodF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP , treeOldC&
     static measureT mIdRowMinTutor ;
     static measureT mIdColMinTutor ;
 {
-voidT animateCBF( tinBaseS& tinP , etherC& etherP , paperBackC& backP , const countT idCycleP , const countT cArgP )
+voidT animateCBF( tinNormalS& tinP , etherC& etherP , paperBackC& backP , const countT idCycleP , const countT cArgP )
 
 }
     ) ; ___( pstt3 ) ;
@@ -3650,7 +3650,7 @@ psttBranchEpilog( 0 ) ,
 pstt2( 0 ) ,
 psttUpHint( 0 ) ,
 pstt1( 0 ) ,
-drawerHollywoodS::drawerHollywoodS( tinBaseS& tinP , etherC& etherP ) :
+drawerHollywoodS::drawerHollywoodS( tinNormalS& tinP , etherC& etherP ) :
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -3660,7 +3660,7 @@ drawerHollywoodS::drawerHollywoodS( tinBaseS& tinP , etherC& etherP ) :
     {
     switch( idTypeCallP )
 {
-voidT tcButton_broCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_broCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -3670,7 +3670,7 @@ voidT tcButton_broCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , co
     {
     switch( idTypeCallP )
 {
-voidT tcButton_momCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_momCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -3680,7 +3680,7 @@ voidT tcButton_momCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , co
     {
     switch( idTypeCallP )
 {
-voidT tcButton_dadCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_dadCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -3690,7 +3690,7 @@ voidT tcButton_dadCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , co
     {
     switch( idTypeCallP )
 {
-voidT tcButton_gMomCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_gMomCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -3700,7 +3700,7 @@ voidT tcButton_gMomCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , c
     {
     switch( idTypeCallP )
 {
-voidT tcButton_gDadCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_gDadCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     if( cArgP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
@@ -3710,7 +3710,7 @@ voidT tcButton_gDadCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , c
     {
     switch( idTypeCallP )
 {
-voidT tcButton_ggMomCBF( tinBaseS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcButton_ggMomCBF( tinNormalS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
     PUSE( tinP , *(voidT**)&psttSetSuffix ) ;
@@ -3785,7 +3785,7 @@ drawerHollywoodS::~drawerHollywoodS( voidT )
 
     etherP.strFuseF( tinP , psttP , drawerP.pstt1 ) ; ___( psttP ) ;
 {
-voidT tHugeF( tinBaseS& tinP , etherC& etherP , strokeS*& psttP , treeOldC& treeP , drawerHugeS& drawerP )
+voidT tHugeF( tinNormalS& tinP , etherC& etherP , strokeS*& psttP , treeOldC& treeP , drawerHugeS& drawerP )
 
 }
     //) ; ___( pstt2 ) ;
@@ -3925,9 +3925,9 @@ psttRightHint( 0 ) ,
 psttLeftHint( 0 ) ,
 psttUpHint( 0 ) ,
 psttDownHint( 0 ) ,
-drawerHugeS::drawerHugeS( tinBaseS& tinP , etherC& etherP ) :
+drawerHugeS::drawerHugeS( tinNormalS& tinP , etherC& etherP ) :
 
-voidT writeF( tinBaseS& tinP , etherC& etherP , const strokeS* const psttP , treeOldC& treeP , const boolT bWholeP = 0 ) ;
+voidT writeF( tinNormalS& tinP , etherC& etherP , const strokeS* const psttP , treeOldC& treeP , const boolT bWholeP = 0 ) ;
 
 }
     PUSE( tinP , *(voidT**)&pstt3 ) ;
@@ -3945,7 +3945,7 @@ drawerHugeS::~drawerHugeS( voidT )
 
 ;
 }
-    drawerHugeS( tinBaseS& tinP , etherC& etherP ) ;
+    drawerHugeS( tinNormalS& tinP , etherC& etherP ) ;
     ~drawerHugeS( voidT ) ;
 
     strokeS* pstt3 ;
@@ -4568,7 +4568,7 @@ vkToolS pVkTool[] =
 
 ;
 }
-    drawerHollywoodS( tinBaseS& tinP , etherC& etherP ) ;
+    drawerHollywoodS( tinNormalS& tinP , etherC& etherP ) ;
     ~drawerHollywoodS( voidT ) ;
 
     strokeS* psttSetSuffix ;
