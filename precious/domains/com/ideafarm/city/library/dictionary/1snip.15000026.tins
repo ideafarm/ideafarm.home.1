@@ -62,8 +62,38 @@
         NEWdELcLASSpROTOS
         /* birth , death */
 
+
+/*@@@*/ bookMarkS               pBookMark[ CbOOKmARK ] ;                // USED BY pageC TO REGISTER A PENDING SMART POINTER ; INCREASE THE NUMBER
+/*@@@*/ countT                  pcGrabitRecurse[  CmAXgRABITrECURSEiNtINs ] ;
+/*@@@*/ countT                  pcGrabitOsTid[    CmAXgRABITrECURSEiNtINs ] ;
+/*@@@*/ const byteT*            ppbGrabitRecurse[ CmAXgRABITrECURSEiNtINs ] ;
+/*@@@*/ tinArgS                 ta ;
+/*@@@*/ ranUniC                 ranUni ;
+/*@@@*/ osTextT                 postPad2[ sizeof( countT ) - 1 ] ;
+/*@@@*/ osTextT                 postThreadName[ COSTmAXtHREADnAME + 1 ] ;
+/*@@@*/ osTextT                 postTellIf[ COSTmAXtELL + 1 ] ;
+/*@@@*/ osTextT                 postTellWait[ COSTmAXtELL + 1 ] ;
+/*@@@*/ osTextT                 postTell[ COSTmAXtELL + 1 ] ;
+/*@@@*/ osTextT                 postPad1[ sizeof( countT ) - 1 ] ;
+
+
+/*@@ */ zapC                    zap_pPanLifiRecurseGrabbedLevel_ ;
+/*@@ */ strokeModeS             strokeMode ;
+/*@@ */ tinTallyS               tally ;
+/*@@ */ count4S                 c4Tell ;
+/*@@ */ monitorS                monitor ;          // flagsThreadMode1 IS IN HERE
+
+
+/*@  */ timeS                   timeTraceLath ;
+/*@  */ timeS                   timeTraceWoth ;
+/*@  */ count04T                pcUtility04[ 4 ] ;
+/*@  */ measure04T              brcm04Raw ;
+/*@  */ count04T                cTime2Or5Lath ;
+/*@  */ count04T                cCpuCycles2Or5Lath ;
+/*@  */ count04T                cTimeWriteInOutTelemetry ;
+/*@  */ count04T                cCpuCyclesWriteInOutTelemetry ;
+
         tlsHeaderS*             pTlsHeader ;                            //U:: REMOVE IN PRODUCTION ; THIS IS TO FIND A BUG
-        bookMarkS               pBookMark[ CbOOKmARK ] ;                // USED BY pageC TO REGISTER A PENDING SMART POINTER ; INCREASE THE NUMBER
         countT                  cOsHandles ;                            // TALLY OF BASE O.S. HANDLES OPENED AND CLOSED BY THIS THREAD, ACCORDING TO THE handleC MEMBER FUNCTIONS
         countT                  cSpins4 ;
         countT                  cSpins3 ;
@@ -75,19 +105,13 @@
         barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tinS OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
         countT                  cPoolDropDt ;
         countT                  cPoolDropCt ;
-        timeS                   timeTraceLath ;
-        timeS                   timeTraceWoth ;
         countT                  valueExpectedByInOut ;
         countT*                 pcWatchedByInOut ;
         flagsT                  flagsTrace_soulC ; //FLAGS MUST INCLUDE flTRACEsOULc_ON AND MUST NOT SPECIFY flTRACEsOULc_PURGE
         countT                  cArmTrace_soulC ; //APP CODE CAN SET THIS: 0:DISARMED; -1:traceF WILL BE CALLED FOR ALL SUBSEQUENT soulC NEW'D OR RETRIEVED FROM RECYCLING; N:COUNTDOWN TO THE NEW/RETRIEVED INSTANCE TO CALL traceF FOR
         countT                  ccExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY
         count04T*               pcExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY
-        countT                  pcGrabitRecurse[  CmAXgRABITrECURSEiNtINs ] ;
-        countT                  pcGrabitOsTid[    CmAXgRABITrECURSEiNtINs ] ;
-        const byteT*            ppbGrabitRecurse[ CmAXgRABITrECURSEiNtINs ] ;
         cleanC*                 pClean ;
-        tinArgS                 ta ;
         book0C*                 pBk0TraceScratch ;
         book0C*                 pBk0TelemetryAppScratch ;
         book0C*                 pBk0TelemetrySysScratch ;
@@ -103,7 +127,6 @@
         countT                  idiFileMile ;
         countT                  idLineMile ;
         countT                  cYield ;
-        ranUniC                 ranUni ;
         restartC*               pRestart ;
         etherC*                 pEtScratch ;
         etherC*                 pEtText ;       // USED IF !0
@@ -111,19 +134,9 @@
         countT                  cGrabitC_registered ;
         countT                  cGrabitC_reset ;
         countT                  cGrabitC_set ;
-        zapC                    zap_pPanLifiRecurseGrabbedLevel_ ;
         countT                  pPanLifiRecurseGrabbedLevel[ ( 1 + OFFgRABBEDmAX ) * 5 ] ; // [pandle,idLineGrab,idiFileGrab,cRecurse,idGrabLevel]  (A PANDLE IS A POINTER THAT IS BEING USED AS A HANDLE)
         countT                  msSleepWhenGrabbing ;
         const countT*           pcQuit ;
-        strokeModeS             strokeMode ;
-        tinTallyS               tally ;
-        count4S                 c4Tell ;
-        osTextT                 postPad2[ sizeof( countT ) - 1 ] ;
-        osTextT                 postThreadName[ COSTmAXtHREADnAME + 1 ] ;
-        osTextT                 postTellIf[ COSTmAXtELL + 1 ] ;
-        osTextT                 postTellWait[ COSTmAXtELL + 1 ] ;
-        osTextT                 postTell[ COSTmAXtELL + 1 ] ;
-        osTextT                 postPad1[ sizeof( countT ) - 1 ] ;
         countT                  idPhase3 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
         countT                  idPhase2 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
         countT                  idPhase1 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
@@ -134,13 +147,11 @@
         countT                  pIdInNest[             1 + OFFsLOTtINnESTmAX        ] ;
         countT                  pLFstep[             ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
         flagsT                  pFlagsThreadLevelMode[ 1 + OFFsLOTtINnESTmAX        ] ;                                 //CS:CODEsYNC: 003004f 003002a
-        monitorS                monitor ;          // flagsThreadMode1 IS IN HERE
         countT                  cKidThreads ;
         flagsT                  flagsThreadMode5 ;
         flagsT                  flagsThreadMode4 ;
         flagsT                  flagsThreadMode3 ;
         flagsT                  flagsThreadMode2 ;
-        count04T                pcUtility04[ 4 ] ;
         countT                  pcUtility[ CCuTILITY ] ;
         countT                  idBlammo ;
         countT                  idiFile_brcLath ;
@@ -148,7 +159,6 @@
         countT                  brcLath ;  // LATH NONZE RETURN CODE FROM A BOS (BASE OPERATING SYSTEM, E.G. WIN32) CALL ON THIS THREAD
         countT                  brcQuery ; // LATH RETURN VALUE QUERIED BECAUSE bosFail WAS SET ON THIS THREAD
         boolT                   bosFail ;  // PASS/FAIL RESULT OF LATH BOS CALL
-        measure04T              brcm04Raw ;
         countT                  brcRaw ;
         countT                  idlTask ;
         countT                  idiTask ;
@@ -164,11 +174,7 @@
         countT        /*o 01*/  osTid ;                             // MUST BE AFTER pEther.  
         etherC*       /*o  8*/  pEther ;                            // USED IF !0.              FOR USE BY STATIC thirdC FUNCTIONS, GLOBAL FUNCTIONS, AND OBJECTS SUCH AS strokeS THAT DO NOT CARRY THEIR OWN REFERENCES.  ADDED LATE.
         byteT*                  pbPendingInOutFramePackets ;
-        count04T                cTime2Or5Lath ;
-        count04T                cCpuCycles2Or5Lath ;
         inOutFrameC*            pInOutFrame ;                       //THIS AND POSSIBLY ITS ACCOMPANYING MEMBERS MUST BE EARLY SINCE _IO_ IS USED DURING CT OF tinS
-        count04T                cTimeWriteInOutTelemetry ;
-        count04T                cCpuCyclesWriteInOutTelemetry ;
         countT                  cTellsWriteInOutTelemetry ;
     public :
         countT                  idDesireSetBySelfProcess ;
@@ -190,10 +196,9 @@
     //*****************************************************************************************************************************************************************************************************************************************************
 
     #define CBtINsUFFIX ( 0 )
-    #define CBtINpREFIX ( 3 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + /*J*/ sizeof ppJot + /*A*/1 * sizeof( grabC ) + /*B*/( 1 /*+ 3 + ClOWtHREADS*/ ) * sizeof( tinS* ) + /*C*/4 * sizeof( countT ) + /*D*/sizeof( flagsT ) + /*E*/CBbITScT + /*F*/sizeof( signC* ) )
+    #define CBtINpREFIX ( 3 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + /*J*/ sizeof ppJot + /*A*/1 * sizeof( grabC ) + /*B*/( 1 /*+ 3 + ClOWtHREADS*/ ) * sizeof( tinS* ) + /*C*/4 * sizeof( countT ) + /*D*/sizeof( flagsT ) + /*F*/sizeof( signC* ) )
 
         signC*                  pSgnUtility ;                       /*F*/
-        const byteT             pbBitsCt[ CBbITScT ] ;              /*E*/
         const countT            idiFileCt ;                         /*C*/
         const countT            idLineCt ;                          /*C*/
         flagsT                  flags ;                             /*D*/
