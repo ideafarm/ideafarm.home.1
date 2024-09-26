@@ -8,10 +8,10 @@
 
 
 }
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
 
     }
-        swMe.freeF( tinP ) ;
+        swMe.freeF( tinBaseP ) ;
         _IO_
     {
     if( !bRetainFlavorP )
@@ -24,9 +24,9 @@
 
     stackC*& pStack = *(stackC**)&(countT&)swMe ;
 
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     _IO_
 
@@ -36,7 +36,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT switchStackC::freeF( tinS& tinP , const boolT bRetainFlavorP )/*1*/
+/*1*/voidT switchStackC::freeF( tinBaseS& tinBaseP , const boolT bRetainFlavorP )/*1*/
 
 /**/
 */
@@ -45,7 +45,7 @@
   will normally be 1 if called within a flavor traversal loop
   can be 0 or 1
  bRetainFlavorP
- tinP
+ tinBaseP
 arguments
 frees all resources associated with the current lever
 \<A HREF=\"5.121005c.1.0.html\"\>definition\</A\>

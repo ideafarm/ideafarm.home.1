@@ -12,7 +12,7 @@
         __( swsNicName ) ;
         pNicNameP[ off ] = 0 ;
         }
-            delF( tinP , pNicName ) ;
+            delF( tinBaseP , pNicName ) ;
             if( pNicName ) pNicNameP[ off ] = *pNicName ;
             swsNicName >> pNicName ;
             ZE( nicNameC* , pNicName ) ;
@@ -21,7 +21,7 @@
         ZE( countT , off ) ;
     {
     if( pNicNameP )
-    newF( tinP , LF , pNicNameP , cNicNameP + 1 ) ; ___( pNicNameP ) ;
+    newF( tinBaseP , LF , pNicNameP , cNicNameP + 1 ) ; ___( pNicNameP ) ;
     cNicNameP = swsNicName ;
     idaLever = idAdamP ;
 
@@ -33,22 +33,22 @@
         {
         while( stDelete_stackC_ptr )
 
-        ifcCellHostsF( tinP , swsNicName , idaLever , b_idaLever , swsIdAdam , idhLever , b_idhLever , tblCells , tblHosts , stDelete_strokeS_ptr , stDelete_nicNameC_ptr , stDelete_stackC_ptr , cTriesP ) ;
+        ifcCellHostsF( tinBaseP , swsNicName , idaLever , b_idaLever , swsIdAdam , idhLever , b_idhLever , tblCells , tblHosts , stDelete_strokeS_ptr , stDelete_nicNameC_ptr , stDelete_stackC_ptr , cTriesP ) ;
 
-        stackC stDelete_stackC_ptr(  tinP , *this , TAG( TAGiDnULL ) ) ;
-        stackC stDelete_nicNameC_ptr( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
-        stackC stDelete_strokeS_ptr( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+        stackC stDelete_stackC_ptr(  tinBaseP , *this , TAG( TAGiDnULL ) ) ;
+        stackC stDelete_nicNameC_ptr( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
+        stackC stDelete_strokeS_ptr( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
 
-        tableC tblHosts( tinP , *this , T("hosts") ) ;
-        tableC tblCells( tinP , *this , T("cells") ) ;
+        tableC tblHosts( tinBaseP , *this , T("hosts") ) ;
+        tableC tblCells( tinBaseP , *this , T("cells") ) ;
 
-        switchStackC swsIdAdam( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_null , idhLever ) ;
-        batonC b_idhLever( tinP , TAG( TAGiDnULL ) ) ;
+        switchStackC swsIdAdam( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_null , idhLever ) ;
+        batonC b_idhLever( tinBaseP , TAG( TAGiDnULL ) ) ;
         nicNameC idhLever ;
 
-        batonC b_idaLever( tinP , TAG( TAGiDnULL ) ) ;
+        batonC b_idaLever( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    switchStackC swsNicName( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_null , idaLever , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
+    switchStackC swsNicName( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_null , idaLever , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
     ZE( countT , idaLever ) ;
 
     _IO_
@@ -63,7 +63,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcCellHostsF( tinS& tinP , nicNameC*& pNicNameP , countT& cNicNameP , const countT idAdamP , countT cTriesP )/*1*/
+/*1*/voidT etherC::ifcCellHostsF( tinBaseS& tinBaseP , nicNameC*& pNicNameP , countT& cNicNameP , const countT idAdamP , countT cTriesP )/*1*/
 
 /**/
 */
@@ -73,7 +73,7 @@
   after i return, will point to a null terminated array list of each host that is registered as currently hosting a cell of idAdamP
   must be 0
  pNicNameP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.103017d.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$ifcCellHostsF.0.html\"\>instances\</A\>

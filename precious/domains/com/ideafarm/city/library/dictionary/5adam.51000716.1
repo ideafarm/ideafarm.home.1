@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 while( cDo -- ) etThread.osThreadF( TaRG1( tmGorillaF ) ) ;
 countT cDo = 0x10 ;
@@ -23,7 +23,7 @@ DONE( tmGorillaF )
         if( !after ) { BLAMMO ; }
 
         }
-            etThread.traceF( tinP , T("[cNapMax]: ")+TF2(cNapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tinBaseP , T("[cNapMax]: ")+TF2(cNapMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             cNapMax = cNap ;
         {
         if( cNapMax < cNap )
@@ -32,7 +32,7 @@ DONE( tmGorillaF )
         cIn -- ;
         byteT after = bits ;
         }
-            etThread.traceF( tinP , T("[cInMax]: ")+TF2(cInMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tinBaseP , T("[cInMax]: ")+TF2(cInMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             cInMax = cIn ;
         {
         if( cInMax < cIn )

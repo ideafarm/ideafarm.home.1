@@ -11,30 +11,30 @@
     return selRC ;
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
-    tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                            \
+    ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                            \
     }
         }
             POPtINaRGS
-            listC::walkIF( tinP , pczMe ) ;
-            tinP.ta.pushed.u.listWalk.util.pcP[ 1 ]      = (countT)&selectP ;
-            tinP.ta.pushed.u.listWalk.util.pcP[ 0 ]      = selRC.idName ;
-            tinP.ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
-            tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectAndCBF ;
+            listC::walkIF( tinBaseP , pczMe ) ;
+            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ]      = (countT)&selectP ;
+            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = selRC.idName ;
+            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
+            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectAndCBF ;
             PUSHtINaRGS
         {
     
-        puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+        puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
     {
-    tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                    \
+    ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                    \
 
-    selectC selRC( tinP ) ;
+    selectC selRC( tinBaseP ) ;
 
     countT pczMe[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , idName , LISTnAMEsYS_RECORD , 0 } ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     }
         if( POOP ) return *this ;
-        __( tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+        __( ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
         if( POOP ) return *this ;
     {
     IFbEcAREFUL

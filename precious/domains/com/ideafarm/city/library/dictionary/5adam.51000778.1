@@ -9,12 +9,12 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etRock.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etRock.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
-        etRock.traceF( tinP , T("error: could not walk [tLike]:    ")+tLike ) ;
+        etRock.traceF( tinBaseP , T("error: could not walk [tLike]:    ")+tLike ) ;
         POOPR
     {
     if( POOP )
@@ -22,17 +22,17 @@ etRock.traceF( tinP , T("ok") ) ;
     while( ~hFind && !ether && !POOP ) ;
     }
         }
-            etRock.traceF( tinP , T("3 [short]: ")+tShort ) ;
-            etRock.traceF( tinP , T("2  [path]: ")+tPath ) ;
+            etRock.traceF( tinBaseP , T("3 [short]: ")+tShort ) ;
+            etRock.traceF( tinBaseP , T("2  [path]: ")+tPath ) ;
 
             DEL( pInfo ) ;
 
             }
-                etThread.delF( tinP , psttShort ) ;
-                etThread.delF( tinP , psttPath ) ;
+                etThread.delF( tinBaseP , psttShort ) ;
+                etThread.delF( tinBaseP , psttPath ) ;
                 tShort = T(psttShort) ;
                 tPath  = T(psttPath) ;
-                etThread.strBisectF( tinP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                etThread.strBisectF( tinBaseP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttPath ) ;
             {
@@ -41,7 +41,7 @@ etRock.traceF( tinP , T("ok") ) ;
 
             const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
 
-            etRock.traceF( tinP , T("1  [long]: ")+tIfoName ) ;
+            etRock.traceF( tinBaseP , T("1  [long]: ")+tIfoName ) ;
             TN( tIfoName , pInfo->psttIfoName ) ;
         {
         else
@@ -51,11 +51,11 @@ etRock.traceF( tinP , T("ok") ) ;
         {
         if( !pInfo || !pInfo->psttIfoName )
 
-        tinP.pEtScratch->diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ; ___( pInfo ) ;
+        ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ; ___( pInfo ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
     SCOOPS
 {

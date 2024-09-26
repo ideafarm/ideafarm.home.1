@@ -9,15 +9,15 @@
 
 REST
 
-etThread.delF( tinP , *(countT**)&ppBaton ) ;
+etThread.delF( tinBaseP , *(countT**)&ppBaton ) ;
 for( off = 0 ; off < cSize ; off ++ ) { DEL( ppBaton[ off ] ) ; }
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
-for( off = 0 ; off < cSize ; off ++ ) etThread.osThreadF( tinP , countTC() , tmStoppedF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)ppBaton , off , off == cSize - 1 ? 0 : off + 1 ) ;
+for( off = 0 ; off < cSize ; off ++ ) etThread.osThreadF( tinBaseP , countTC() , tmStoppedF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)ppBaton , off , off == cSize - 1 ? 0 : off + 1 ) ;
 
-for( countT off = 0 ; off < cSize ; off ++ ) { ppBaton[ off ] = new( 0 , tinP , LF ) batonC( tinP , TAG( TAGiDnULL ) ) ; ___( ppBaton[ off ] ) ; }
+for( countT off = 0 ; off < cSize ; off ++ ) { ppBaton[ off ] = new( 0 , tinBaseP , LF ) batonC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( ppBaton[ off ] ) ; }
 
-etThread.newF( tinP , LF , *(countT**)&ppBaton , cSize ) ; ___( ppBaton ) ;
+etThread.newF( tinBaseP , LF , *(countT**)&ppBaton , cSize ) ; ___( ppBaton ) ;
 ZE( batonC** , ppBaton ) ;
 
 countT cSize = 0x10 ;
@@ -26,15 +26,15 @@ TODO
 
 DONE( tmStoppedF )
 }
-    ppBaton[ off1 ]->ungrabF( tinP ) ;
-    ppBaton[ off2 ]->ungrabF( tinP ) ;
+    ppBaton[ off1 ]->ungrabF( tinBaseP ) ;
+    ppBaton[ off2 ]->ungrabF( tinBaseP ) ;
 
-    etThread.strokeF( tinP , TF3(tinP.monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbed  ")+TF1(off2)+T("\r\n") ) ;
-    ppBaton[ off2 ]->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    etThread.strokeF( tinP , TF3(tinP.monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbing ")+TF1(off2)+T("\r\n") ) ;
-    etThread.osSleepF( tinP , TOCK ) ;
-    ppBaton[ off1 ]->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    etThread.strokeF( tinP , TF3(tinP.monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbing ")+TF1(off1)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , TF3(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbed  ")+TF1(off2)+T("\r\n") ) ;
+    ppBaton[ off2 ]->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    etThread.strokeF( tinBaseP , TF3(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbing ")+TF1(off2)+T("\r\n") ) ;
+    etThread.osSleepF( tinBaseP , TOCK ) ;
+    ppBaton[ off1 ]->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    etThread.strokeF( tinBaseP , TF3(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED,9)+T(" grabbing ")+TF1(off1)+T("\r\n") ) ;
 
     countT   off2    =           pTaskP->c3 ;
     countT   off1    =           pTaskP->c2 ;

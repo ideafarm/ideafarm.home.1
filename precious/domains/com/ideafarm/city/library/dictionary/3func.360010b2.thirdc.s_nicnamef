@@ -12,7 +12,7 @@
         }
             }
                 }
-                    delF( tinP , pYou ) ;
+                    delF( tinBaseP , pYou ) ;
                     else       pNicNameP[ off ++ ] = 0 ;
                     if( pYou ) pNicNameP[ off ++ ] = *pYou ;
                     stYou >> pYou ;
@@ -22,7 +22,7 @@
                 ZE( countT , off ) ;
             {
             if( pNicNameP )
-            newF( tinP , LF , pNicNameP , cNicNameP ) ; ___( pNicNameP ) ;
+            newF( tinBaseP , LF , pNicNameP , cNicNameP ) ; ___( pNicNameP ) ;
         {
         if( cNicNameP )
 
@@ -37,29 +37,29 @@
                 *pNicNameP = nicNameV4 ;
             {
             if( pNicNameP )
-            newF( tinP , LF , pNicNameP ) ; ___( pNicNameP ) ;
+            newF( tinBaseP , LF , pNicNameP ) ; ___( pNicNameP ) ;
         {
         else
-        if( !nicNameV4 || nicNameV4 == tinP.brcRaw ) s_getHostByNameF( tinP , stYou , (osTextT*)postP ) ;
+        if( !nicNameV4 || nicNameV4 == ((tinNormalS&)tinBaseP).brcRaw ) s_getHostByNameF( tinBaseP , stYou , (osTextT*)postP ) ;
         BOSdOnOTtEST( WHATgbo , ntohl( INADDR_NONE ) )
-        countT nicNameV4 = !postP ? 0 : tinP.brcRaw ;
-        BOSdOnOTtEST( WHATgbo , ntohl( tinP.brcRaw ) )
+        countT nicNameV4 = !postP ? 0 : ((tinNormalS&)tinBaseP).brcRaw ;
+        BOSdOnOTtEST( WHATgbo , ntohl( ((tinNormalS&)tinBaseP).brcRaw ) )
         BOSdOnOTtEST( WHATgbo , inet_addr( postP ) )
     {
     else
-    //else if( F(flagsMode) & flTHIRDmODE_WWWiDEAFARMcOM_LOCALhOST && !c_strcmpIF( tinP , postP , WWWiDEAFARMcOM ) )
+    //else if( F(flagsMode) & flTHIRDmODE_WWWiDEAFARMcOM_LOCALhOST && !c_strcmpIF( tinBaseP , postP , WWWiDEAFARMcOM ) )
     }
         }
             cNicNameP = 1 ;
-            *pNicNameP = tinP.brcRaw ;
+            *pNicNameP = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , ntohl( INADDR_BROADCAST ) )
         {
         if( pNicNameP )
-        newF( tinP , LF , pNicNameP ) ; ___( pNicNameP ) ;
+        newF( tinBaseP , LF , pNicNameP ) ; ___( pNicNameP ) ;
     {
-    if( postP && !c_strcmpIF( tinP , postP , "!broadcast" ) )
+    if( postP && !c_strcmpIF( tinBaseP , postP , "!broadcast" ) )
 
-    stackC stYou( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ;
+    stackC stYou( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ;
 
     _IO_
 
@@ -74,7 +74,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::s_nicNameF( tinS& tinP , nicNameC*& pNicNameP , countT& cNicNameP , const osTextT* const postP )/*1*/
+/*1*/voidT thirdC::s_nicNameF( tinBaseS& tinBaseP , nicNameC*& pNicNameP , countT& cNicNameP , const osTextT* const postP )/*1*/
 
 /**/
 */
@@ -83,7 +83,7 @@
  postP
  cNicNameP
  pNicNameP
- tinP
+ tinBaseP
 arguments
  only wo of these need be tested
 caller must verify that pNicNameP and cNicNameP are not ze before using pNicNameP

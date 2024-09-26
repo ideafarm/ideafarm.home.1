@@ -15,15 +15,15 @@ REST
 while( !ether )
 ZE( countT , cFoo ) ;
 
-bOk = tinP.brcRaw ;
+bOk = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSpOOP
-BOS( WHATgbo , BOSoK , SetThreadAffinityMask( (HANDLE)tinP.brcRaw , 1 ) )
+BOS( WHATgbo , BOSoK , SetThreadAffinityMask( (HANDLE)((tinNormalS&)tinBaseP).brcRaw , 1 ) )
 
 BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
 
-boolT bOk = tinP.brcRaw ;
+boolT bOk = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSpOOP
-BOS( WHATgbo , BOSoK , GetProcessAffinityMask( (HANDLE)tinP.brcRaw , &infoProcess , &infoSystem ) )
+BOS( WHATgbo , BOSoK , GetProcessAffinityMask( (HANDLE)((tinNormalS&)tinBaseP).brcRaw , &infoProcess , &infoSystem ) )
 ZE( DWORD , infoSystem ) ;
 ZE( DWORD , infoProcess ) ;
 

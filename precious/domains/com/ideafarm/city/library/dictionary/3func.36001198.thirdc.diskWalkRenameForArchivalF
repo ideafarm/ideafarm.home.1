@@ -8,11 +8,11 @@
 
 
 }
-    thirdC::diskWalkIF( tinP , cDirsP , cFilesP , postFromP , bQuitP , flDISKwALK_null , diskWalkRenameForArchivalCBF , (countT*)&info ) ;
+    thirdC::diskWalkIF( tinBaseP , cDirsP , cFilesP , postFromP , bQuitP , flDISKwALK_null , diskWalkRenameForArchivalCBF , (countT*)&info ) ;
 
     info.pcArgApp     = pcArgApp ;
     info.pCbf         = pCbfP ;
-    info.costFromRoot = tinP.brcRaw ;
+    info.costFromRoot = ((tinNormalS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , strlen( postFromP ) )
     diskWalkCopyInfoS info ;
 
@@ -350,7 +350,7 @@
 
     _IO_
 {
-/*1*/voidT thirdC::diskWalkRenameForArchivalF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postToP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP , countT* pcArgP )/*1*/
+/*1*/voidT thirdC::diskWalkRenameForArchivalF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postToP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP , countT* pcArgP )/*1*/
 
 /**/
 */

@@ -12,21 +12,21 @@
 REST
 
 }
-    etThread.loafIF( tinP ) ;
-    etThread.ifcChatF( tinP , (countT)&c2p , DDNUMB , jobFillCourseF , jobHearOrderF ) ;
+    etThread.loafIF( tinBaseP ) ;
+    etThread.ifcChatF( tinBaseP , (countT)&c2p , DDNUMB , jobFillCourseF , jobHearOrderF ) ;
 
     count2S c2p( (countT)&state , (countT)&bTrans ) ;
 
-    batonC bTrans( tinP , TAG( TAGiDnULL ) ) ; //WO TRANSACTION IS STORED AT A TIME, TO ISOLATE THE EFFECTS OF POWER FAILURE TO A SINGLE TRANSACTION
-    stateS state( tinP , etThread ) ;
+    batonC bTrans( tinBaseP , TAG( TAGiDnULL ) ) ; //WO TRANSACTION IS STORED AT A TIME, TO ISOLATE THE EFFECTS OF POWER FAILURE TO A SINGLE TRANSACTION
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO
 
 }
 {
-stateC( tinP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tinS& tinP , etherC& etherP ) :
+stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )
+stateS::stateS( tinBaseS& tinBaseP , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -36,7 +36,7 @@ TRANSLATEsTATE_MIDDLE
 TRANSLATEsTATE_BEGIN( stateS , 1 )
 
 }
-    if( ether && *tinP.zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tinNormalS&)tinBaseP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
@@ -45,14 +45,14 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
             }
                 }
                     break ;
-                    etThread.delF( tinP , psttJobType ) ;
+                    etThread.delF( tinBaseP , psttJobType ) ;
 
                     else __1
                     }
-                        bTrans.ungrabF( tinP ) ;
+                        bTrans.ungrabF( tinBaseP ) ;
                         }
-                            etThread.delF( tinP , psttu ) ;
-                            etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/1.deltaBal/deltaBal") , WS( souFile ) ) ; ___( psttu ) ;
+                            etThread.delF( tinBaseP , psttu ) ;
+                            etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/1.deltaBal/deltaBal") , WS( souFile ) ) ; ___( psttu ) ;
                             ZE( strokeS* , psttu ) ;
 
                             souFile << pstt1_accountHolderNotes ;
@@ -66,14 +66,14 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
                             souFile << (countT)1 ; // FILE VERSION
                             souFile << (countT)1 ; // FILE TYPE
 
-                            soulC souFile( tinP , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
+                            soulC souFile( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
 
                             countT idTrans = ++ state.idTransLast ;
                         {
-                        bTrans.grabF( tinP , TAG( TAGiDnULL ) ) ; // THIS IS SERIALIZED MERELY TO ISOLATE THE EFFECT OF A POWER FAILURE TO A SINGLE TRANSACTION; THIS SHOULD NOT BE NECESSARY BECAUSE FILE WRITES ARE VERIFIED
+                        bTrans.grabF( tinBaseP , TAG( TAGiDnULL ) ) ; // THIS IS SERIALIZED MERELY TO ISOLATE THE EFFECT OF A POWER FAILURE TO A SINGLE TRANSACTION; THIS SHOULD NOT BE NECESSARY BECAUSE FILE WRITES ARE VERIFIED
 
                         }
-                            etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                            etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
 
                             __( pstt1_accountHolderNotes && !pstt1_accountHolderNotes ) ;
                             __Z( pstt1_accountHolderNotes ) ;
@@ -98,7 +98,7 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
                         ZE( countT , unixDelta1 ) ;
                         ZE( strokeS* , psttEmail ) ;
                     {
-                    if( !etThread.strCompareF( tinP , psttJobType , T("!changeAccountBalance") ) )
+                    if( !etThread.strCompareF( tinBaseP , psttJobType , T("!changeAccountBalance") ) )
 
                     sOrderP >> psttJobType ; ___( psttJobType ) ;
                     ZE( strokeS* , psttJobType )
@@ -107,15 +107,15 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
                 }
                     break ;
 
-                    etThread.delF( tinP , psttBody ) ;
-                    etThread.delF( tinP , psttFrom ) ;
+                    etThread.delF( tinBaseP , psttBody ) ;
+                    etThread.delF( tinBaseP , psttFrom ) ;
                     }
-                        etThread.delF( tinP , postBody ) ;
-                        etThread.delF( tinP , psttu ) ;
-                        etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
+                        etThread.delF( tinBaseP , postBody ) ;
+                        etThread.delF( tinBaseP , psttu ) ;
+                        etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
                         ZE( strokeS* , psttu ) ;
 
-                        countT costBody = etThread.strMakeF( tinP , LF , postBody , psttBody ) ; ___( postBody ) ;
+                        countT costBody = etThread.strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
                         ZE( osTextT* , postBody ) ;
                     {
 
@@ -153,18 +153,18 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
     __Z( cArgP ) ;
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tinS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if( cArgP && c8argP.c1 && sOrderP && ether && *tinP.zEtScratch && idChatSessionP ) ;
+    if( cArgP && c8argP.c1 && sOrderP && ether && *((tinNormalS&)tinBaseP).zEtScratch && idChatSessionP ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tinS& tinP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 ;
 }
-    stateS( tinS& tinP , etherC& etherP ) ;
+    stateS( tinBaseS& tinBaseP , etherC& etherP ) ;
 
     countT idTransLast ;
     countT idMe ;

@@ -12,41 +12,41 @@
 REST
 
 }
-    else        etThread.osThreadF( tinP , countTC() , tmServeF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso ) ;
+    else        etThread.osThreadF( tinBaseP , countTC() , tmServeF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso ) ;
     if( ether ) { DEL( pso ) ; }
 
-    sock.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+    sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
     ZE( countT , idPortPeer ) ;
     nicNameC nnPeer ;
     ZE( socketC* , pso ) ;
 {
 while( !ether )
 
-sock.listenF( tinP ) ;
-etThread.strokeF( tinP , T("listening on port ")+TF1(idp)+T("\r\n") ) ;
-countT idp = sock.bindF( tinP , 0xab52/*RANDOM*/ ) ;
-socketC sock( tinP , ether , TAG( TAGiDnULL ) ) ;
+sock.listenF( tinBaseP ) ;
+etThread.strokeF( tinBaseP , T("listening on port ")+TF1(idp)+T("\r\n") ) ;
+countT idp = sock.bindF( tinBaseP , 0xab52/*RANDOM*/ ) ;
+socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmServeF )
 }
-    etThread.strokeF( tinP , T("-") ) ;
+    etThread.strokeF( tinBaseP , T("-") ) ;
     DEL( pso ) ;
     }
-        pso->writeF( tinP , soulOut ) ;
-        soulC soulOut( tinP , TAG( TAGiDnULL ) ) ;
+        pso->writeF( tinBaseP , soulOut ) ;
+        soulC soulOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        etThread.strokeF( tinP , T("value received over secure socket: ")+TF1(value)+T("\r\n") ) ;
+        etThread.strokeF( tinBaseP , T("value received over secure socket: ")+TF1(value)+T("\r\n") ) ;
         soulIn >> value ;
         ZE( countT , value ) ;
     
-        pso->readF( tinP , soulIn ) ;
-        soulC soulIn( tinP , TAG( TAGiDnULL ) ) ;
+        pso->readF( tinBaseP , soulIn ) ;
+        soulC soulIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( pso )
     
-    etThread.strokeF( tinP , T("+") ) ;
+    etThread.strokeF( tinBaseP , T("+") ) ;
     socketC* pso = (socketC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

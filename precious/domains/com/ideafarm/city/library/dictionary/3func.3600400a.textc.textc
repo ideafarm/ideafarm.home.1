@@ -8,13 +8,13 @@
 
 
 }
-    ether.strFromTimeF( tinP , psttMe , time1P , time2P , idFirstP , idLastP , sttRadixP , psttDelimiterP , idFormatP , flagsFormatP ) ; ___( psttMe ) ;
+    ether.strFromTimeF( tinBaseP , psttMe , time1P , time2P , idFirstP , idLastP , sttRadixP , psttDelimiterP , idFormatP , flagsFormatP ) ; ___( psttMe ) ;
 
-    //COMMENTED OUT 2011.09.23 BECAUSE BEHAVIOR IS UNDESIRABLE (LARGE VALUE WILL BE STORED WHENEVER 0 IS EXPECTED): if( !time1P && !time2P ) ether.osTimeNowF( tinP , time1P , time2P ) ;
+    //COMMENTED OUT 2011.09.23 BECAUSE BEHAVIOR IS UNDESIRABLE (LARGE VALUE WILL BE STORED WHENEVER 0 IS EXPECTED): if( !time1P && !time2P ) ether.osTimeNowF( tinBaseP , time1P , time2P ) ;
 
-    else            thirdC::c_memsetIF( tinP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
-    if( pbBitsCtP ) thirdC::c_memcpyIF( tinP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
-    puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
+    else            thirdC::c_memsetIF( tinBaseP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
+    if( pbBitsCtP ) thirdC::c_memcpyIF( tinBaseP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
+    puseC puse( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
     
     _IO_
 
@@ -28,11 +28,11 @@ psttLower( 0 ) ,
 puntMe( 0 ) ,
 postMe( 0 ) ,
 psttMe( 0 ) ,
-ether( etherC::etTextIF( tinP ) ) ,
+ether( etherC::etTextIF( tinBaseP ) ) ,
 flags( flagsP ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
-/*1*/textC::textC( countT time1P , sCountT time2P , tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const countT idFirstP , const countT idLastP , const strokeS sttRadixP , const strokeS* const psttDelimiterP , const countT idFormatP , const flagsT flagsFormatP )/*1*/ :
+/*1*/textC::textC( countT time1P , sCountT time2P , tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const countT idFirstP , const countT idLastP , const strokeS sttRadixP , const strokeS* const psttDelimiterP , const countT idFormatP , const flagsT flagsFormatP )/*1*/ :
 
 /**/
 */
@@ -49,7 +49,7 @@ idLineCt( idLineCtP ) ,
  idLastP
   see etherC::strFromTimeP
  idFirstP
- tinP
+ tinBaseP
  time2P
  time1P
 arguments

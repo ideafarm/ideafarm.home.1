@@ -15,8 +15,8 @@
 
     #elif defined( __NT__ )
 
-        __( tinP.brcRaw && tinP.brcRaw != ERROR_ALREADY_POSTED ) ;
-        //countT tinP.brcRaw = DosPostEventSem( (HEV)handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ) ;
+        __( ((tinNormalS&)tinBaseP).brcRaw && ((tinNormalS&)tinBaseP).brcRaw != ERROR_ALREADY_POSTED ) ;
+        //countT ((tinNormalS&)tinBaseP).brcRaw = DosPostEventSem( (HEV)handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ) ;
         BOSdOnOTtEST( WHATgbo , DosPostEventSem( (HEV)handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ) )
 
     #ifdef __OS2__
@@ -36,7 +36,7 @@
     {
     IFbEcAREFUL
 {
-/**//*1*/voidT thirdC::dosPostEventSem2IF( tinS& tinP , const handleC& handleP )/*1*/
+/**//*1*/voidT thirdC::dosPostEventSem2IF( tinBaseS& tinBaseP , const handleC& handleP )/*1*/
 */
  handleP
 arguments

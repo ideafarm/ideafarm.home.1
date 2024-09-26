@@ -9,18 +9,18 @@
 
 }
     }
-        __( tinP.brcRaw ) ;
+        __( ((tinNormalS&)tinBaseP).brcRaw ) ;
         #endif
 
-            while( tinP.brcRaw == WAIT_TIMEOUT ) ;
+            while( ((tinNormalS&)tinBaseP).brcRaw == WAIT_TIMEOUT ) ;
             }
                 }
                     __1 ;
                     __( rc ) ;
-                    countT rc = tinP.brcRaw ;
+                    countT rc = ((tinNormalS&)tinBaseP).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
                 {
-                if( tinP.brcRaw == WAIT_FAILED )
+                if( ((tinNormalS&)tinBaseP).brcRaw == WAIT_FAILED )
                 BOSdOnOTtEST( WHATgbo , WaitForSingleObject( (HANDLE)handleP.osF( ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) , 500 ) )
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
             {
@@ -28,13 +28,13 @@
 
         #elif defined( __NT__ )
 
-            while( /*!( POOP & ~fliEC_QUITTING ) &&*/ tinP.brcRaw == ERROR_TIMEOUT ) ;
+            while( /*!( POOP & ~fliEC_QUITTING ) &&*/ ((tinNormalS&)tinBaseP).brcRaw == ERROR_TIMEOUT ) ;
             }
                 }
                     __1 ;
-                    __( tinP.brcRaw ) ;
+                    __( ((tinNormalS&)tinBaseP).brcRaw ) ;
                 {
-                if( tinP.brcRaw != ERROR_INVALID_HANDLE ) //U:MYSTERY: 19970520.0830: APPEARS TO BE SPURIOUS
+                if( ((tinNormalS&)tinBaseP).brcRaw != ERROR_INVALID_HANDLE ) //U:MYSTERY: 19970520.0830: APPEARS TO BE SPURIOUS
                 BOSdOnOTtEST( WHATgbo , DosRequestMutexSem( (HMTX)handleP.osF( ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) , 500 ) )
             {
             do
@@ -57,7 +57,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT thirdC::dosRequestMutexSemIF( tinS& tinP , const handleC& handleP )/*1*/
+/*1*/voidT thirdC::dosRequestMutexSemIF( tinBaseS& tinBaseP , const handleC& handleP )/*1*/
 
 /**/
 */

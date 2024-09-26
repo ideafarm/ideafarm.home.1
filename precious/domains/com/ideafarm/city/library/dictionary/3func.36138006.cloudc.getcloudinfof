@@ -10,8 +10,8 @@
 }
     }
         //}
-        //    //ether.traceF( tinP , tIn ) ;
-        //    //ether.boxPutF( tinP , T("///d/tmp/x/goo.ttt") , tIn , tIn.csF( tinP ) ) ;
+        //    //ether.traceF( tinBaseP , tIn ) ;
+        //    //ether.boxPutF( tinBaseP , T("///d/tmp/x/goo.ttt") , tIn , tIn.csF( tinBaseP ) ) ;
         //    }
         //        }
         //            tIn = T(postJson) ;
@@ -39,36 +39,36 @@
         //        if( postJson )
         //
         //        if( postJsonSq && postJsonSq < postJson ) postJson = postJsonSq ;
-        //        osTextT* postJson   = thirdC::c_strstrIF( tinP , postBody , "{" ) ;
-        //        osTextT* postJsonSq = thirdC::c_strstrIF( tinP , postBody , "[" ) ;
+        //        osTextT* postJson   = thirdC::c_strstrIF( tinBaseP , postBody , "{" ) ;
+        //        osTextT* postJsonSq = thirdC::c_strstrIF( tinBaseP , postBody , "[" ) ;
         //    {
         //    if( postBody )
-        //    osTextT* postBody = thirdC::c_strstrIF( tinP , postHear , "\r\n\r\n" ) ;
+        //    osTextT* postBody = thirdC::c_strstrIF( tinBaseP , postHear , "\r\n\r\n" ) ;
         //    TN( tIn , "" ) ; // WILL CONTAIN A SINGLE, TRIMMED JSON WORD
         //{
 
-        if( POOP ) etherC::etRockIF( tinP ).traceF( tinP , T("authorization refused") ) ;
-        __Z( thirdC::c_memcmpIF( tinP , tReplyCode401_Unauthorized , postHear , tReplyCode401_Unauthorized.csF( tinP ) ) ) ;
+        if( POOP ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("authorization refused") ) ;
+        __Z( thirdC::c_memcmpIF( tinBaseP , tReplyCode401_Unauthorized , postHear , tReplyCode401_Unauthorized.csF( tinBaseP ) ) ) ;
     {
     if( !POOP )
 
-    //ether.boxPutF( tinP , T("///d/tmp/x/foo.ttt") , postHear , costHear ) ;
-    //ether.traceF( tinP , T(postHear) ) ;
-    countT costHear = ss.readF( tinP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
-    thirdC::c_memsetIF( tinP , postHear , sizeof postHear ) ;
+    //ether.boxPutF( tinBaseP , T("///d/tmp/x/foo.ttt") , postHear , costHear ) ;
+    //ether.traceF( tinBaseP , T(postHear) ) ;
+    countT costHear = ss.readF( tinBaseP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+    thirdC::c_memsetIF( tinBaseP , postHear , sizeof postHear ) ;
     char postHear[ TOCK ] ; 
 
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
-    ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , ether , tHost ) ) ;
-    socketC ss( tinP , ether , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+    ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , ether , tHost ) ) ;
+    socketC ss( tinBaseP , ether , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
-    //ether.traceF( tinP , tSay ) ;
+    //ether.traceF( tinBaseP , tSay ) ;
 
     }
-        bHandle.ungrabF( tinP ) ;
+        bHandle.ungrabF( tinBaseP ) ;
         tSay = T("GET ")+tUrlCloudAgent+T("?format=json HTTP/1.1\r\nHost: ")+tHost+T("\r\nX-Auth-Token: ")+rAuthP.tRackspaceAccessToken+T("\r\n\r\n") ;
         cloudInfoS& rAuthP = *(cloudInfoS*)hCloud.osF( ifcIDtYPEhANDLE_CLOUD ) ;
-        bHandle.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         // X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
         // Host: storage.clouddrive.com
@@ -86,7 +86,7 @@
 
     SCOOP
 {
-/*1*/voidT cloudC::getCloudInfoF( tinS& tinP )/*1*/
+/*1*/voidT cloudC::getCloudInfoF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

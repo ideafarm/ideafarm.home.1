@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     while( !ether && ~hFindFile && !POOP ) ;
@@ -18,24 +18,24 @@ etThread.traceF( tinP , T("ok") ) ;
         DEL( pInfoFile ) ;
         }
             }
-                etThread.traceF( tinP , tShort ) ;
+                etThread.traceF( tinBaseP , tShort ) ;
 
                 }
-                    etThread.delF( tinP , psttShort ) ;
-                    etThread.delF( tinP , psttnu ) ;
+                    etThread.delF( tinBaseP , psttShort ) ;
+                    etThread.delF( tinBaseP , psttnu ) ;
                     tShort  = T(psttShort) ;
-                    etThread.strBisectF( tinP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 2 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
+                    etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 2 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
                     ZE( strokeS* , psttShort ) ;
                     ZE( strokeS* , psttnu ) ;
                 {
             {
-            if( !tShort.csF( tinP ) )        // IF A DIRECTORY
+            if( !tShort.csF( tinBaseP ) )        // IF A DIRECTORY
                                                        
             }
-                etThread.delF( tinP , psttShort ) ;
-                etThread.delF( tinP , psttnu ) ;
+                etThread.delF( tinBaseP , psttShort ) ;
+                etThread.delF( tinBaseP , psttnu ) ;
                 tShort  = T(psttShort) ;
-                etThread.strBisectF( tinP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
+                etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttnu ) ;
             {
@@ -48,15 +48,15 @@ etThread.traceF( tinP , T("ok") ) ;
         {
         if( !pInfoFile || !pInfoFile->psttIfoName )
 
-        etThread.diskFindFileOrDirF( tinP , pInfoFile , hFindFile , tIncomingPaper , &pat ) ; ___( pInfoFile ) ;
+        etThread.diskFindFileOrDirF( tinBaseP , pInfoFile , hFindFile , tIncomingPaper , &pat ) ; ___( pInfoFile ) ;
         ZE( infoFileS* , pInfoFile ) ;
     {
     do
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-    handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 {
 
-patternC pat( tinP , etThread , tPatPrefix , ifcIDtYPEpATTERN_LITERAL /*ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT*/ ) ;
+patternC pat( tinBaseP , etThread , tPatPrefix , ifcIDtYPEpATTERN_LITERAL /*ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT*/ ) ;
 TN( tPatPrefix , "" ) ; tPatPrefix = tPatternDateAtTime +T(".*") ;
 TN( tIncomingPaper , "///d/tmp/incoming/paper/" ) ;
 

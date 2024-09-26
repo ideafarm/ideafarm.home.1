@@ -18,8 +18,8 @@
     {    
     for( countT idr = 1 ; idr <= cSize ; idr ++ )
 
-    inv = adjointF( tinP ) ;
-    sqMatrixOldC inv( tinP , ether , cSize ) ; //WORKAROUND TO COMPILER BUG THAT CANNOT HANDLE CT AND ASSIGN IN SAME STMT
+    inv = adjointF( tinBaseP ) ;
+    sqMatrixOldC inv( tinBaseP , ether , cSize ) ; //WORKAROUND TO COMPILER BUG THAT CANNOT HANDLE CT AND ASSIGN IN SAME STMT
 
     }
         if( ether ) return *(sqMatrixOldC*)this ;
@@ -29,7 +29,7 @@
     IFbEcAREFUL
     measureT  det = *this ;
 {
-/*1*/sqMatrixOldC sqMatrixOldC::inverseF( tinS& tinP )/*1*/
+/*1*/sqMatrixOldC sqMatrixOldC::inverseF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

@@ -10,7 +10,7 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
 ) ;
@@ -18,13 +18,13 @@ HEAReNTER( ether )
     T("idCityCenter is ")+TF3(idCityCenter,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("\r\n")+
     T("idWelcomeMat is ")+TF3(idWelcomeMat,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("\r\n")+
     T("idLocalHost  is ")+TF3(idLocalHost ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("\r\n")+
-    tinP ,
+    tinBaseP ,
 (
 etThread.strokeF
 
-countT idCityCenter = etThread.sockNicNameF( tinP , T("city.center.ideafarm.com") ) ;
-countT idWelcomeMat = !( F(etThread.flagsMode) & flTHIRDmODE_TESTaUTO ) ? (countT)etThread.sockNicNameF( tinP , T("www.ideafarm.com") ) : 0 ;
-countT idLocalHost  = etThread.sockNicNameF( tinP ) ;
+countT idCityCenter = etThread.sockNicNameF( tinBaseP , T("city.center.ideafarm.com") ) ;
+countT idWelcomeMat = !( F(etThread.flagsMode) & flTHIRDmODE_TESTaUTO ) ? (countT)etThread.sockNicNameF( tinBaseP , T("www.ideafarm.com") ) : 0 ;
+countT idLocalHost  = etThread.sockNicNameF( tinBaseP ) ;
 
 TODO
 

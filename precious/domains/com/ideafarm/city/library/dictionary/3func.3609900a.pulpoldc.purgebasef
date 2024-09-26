@@ -8,9 +8,9 @@
 
 
 }
-    if( !( F(flagsP) & flPAPERrESET_NOrESETbACK ) ) x1.back.backResetF( tinP , *this ) ;
+    if( !( F(flagsP) & flPAPERrESET_NOrESETbACK ) ) x1.back.backResetF( tinBaseP , *this ) ;
 
-    if( stAnimateCbfStrokes ) stAnimateCbfStrokes.purgeF( tinP ) ;
+    if( stAnimateCbfStrokes ) stAnimateCbfStrokes.purgeF( tinBaseP ) ;
 
     while( stqr_bWrapUnder             ) { ZE( countT   , cFoo ) ; stqr_bWrapUnder                   >> cFoo ; }
     while( stqr_flagsRenderUnder       ) { ZE( countT   , cFoo ) ; stqr_flagsRenderUnder             >> cFoo ; }
@@ -70,7 +70,7 @@
     while( stqr_strokingFrame ) { strokingFrameS rf ; byteT* pb_rf = (byteT*)&rf ; stqr_strokingFrame >> pb_rf  ; }
 
     }
-        x1.back.backPositionF( tinP , *this , mIdColNow , mIdRowNow ) ;
+        x1.back.backPositionF( tinBaseP , *this , mIdColNow , mIdRowNow ) ;
         mIdRowNow = 1.0 ;
         mIdColNow = 1.0 ;
     {
@@ -79,7 +79,7 @@
     }
         }
             hRgnDoomed.osF( ifcIDtYPEhANDLE_DRAWINGtOOL , c5p.c1 ) ;
-            handleC hRgnDoomed( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
+            handleC hRgnDoomed( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
         {
         if( !bNoDraw )
 
@@ -89,7 +89,7 @@
     {
     while( stqr_paperOldClip )
 
-    while( stqr_paperVars  ) { ZE( strokeS* , psttw ) ; stqr_paperVars  >> psttw ; etherP.delF( tinP , psttw ) ; }
+    while( stqr_paperVars  ) { ZE( strokeS* , psttw ) ; stqr_paperVars  >> psttw ; etherP.delF( tinBaseP , psttw ) ; }
     //U::USE purgeF FOR NEXT 2 LINES (3 IF NOT DRAWING PELS)
 
     flagsRender       = flPAPERrENDER_null ;
@@ -100,7 +100,7 @@
 
     _IO_
 {
-/*1*/voidT pulpOldC::purgeBaseF( tinS& tinP , etherC& etherP , const flagsT flagsP )/*1*/
+/*1*/voidT pulpOldC::purgeBaseF( tinBaseS& tinBaseP , etherC& etherP , const flagsT flagsP )/*1*/
 
 /**/
 */

@@ -9,8 +9,8 @@
                             
 REST
 
-ether.loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+ether.loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)ptRoot[ offt ] , (countT)pcArgInner ) ;
@@ -140,9 +140,9 @@ TODO
 
 DONE( tmWorkerF )
 }
-    etThread.traceF( tinP , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-    etThread.diskWalkF( tinP , cDirs , cFiles , *ptRootP , countTC() , cleanCBF , pcArgInnerP , 0 , 0 ) ;
-    etThread.traceF( tinP , T("root ++++               :    ")+*ptRootP ) ;
+    etThread.traceF( tinBaseP , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    etThread.diskWalkF( tinBaseP , cDirs , cFiles , *ptRootP , countTC() , cleanCBF , pcArgInnerP , 0 , 0 ) ;
+    etThread.traceF( tinBaseP , T("root ++++               :    ")+*ptRootP ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
 
@@ -167,14 +167,14 @@ TASK( tmWorkerF )
                 }
                     }
                         //}
-                        //    etherP.traceF( tinP , T("could not rename") ) ;
+                        //    etherP.traceF( tinBaseP , T("could not rename") ) ;
                         //    POOPR
                         //{
                         //else
-                        //if( !POOP ) etherP.traceF( tinP , T("renamed aok") ) ;
-                        //tinP.pEtScratch->disk Move File Or Dir F( tinP , tNameNew , tNameOld , 1 ) ;
+                        //if( !POOP ) etherP.traceF( tinBaseP , T("renamed aok") ) ;
+                        //((tinNormalS&)tinBaseP).pEtScratch->disk Move File Or Dir F( tinBaseP , tNameNew , tNameOld , 1 ) ;
 
-                        etherP.traceF( tinP , T("content is the same ; attempting to delete old (not really)") ) ;
+                        etherP.traceF( tinBaseP , T("content is the same ; attempting to delete old (not really)") ) ;
 
                         DELzOMBIE( pFwsNew ) ;
                         DELzOMBIE( pFwsOld ) ;
@@ -184,22 +184,22 @@ TASK( tmWorkerF )
                     }
                         }
                             }
-                                etherP.traceF( tinP , T("different content [idWindow]:    ")+TF2(idWindow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                etherP.traceF( tinBaseP , T("different content [idWindow]:    ")+TF2(idWindow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                 bSame = 0 ;
                             {
-                            else if( etherP.memCompareF( tinP , pbwOld , pbwNew , cbwOld ) )
+                            else if( etherP.memCompareF( tinBaseP , pbwOld , pbwNew , cbwOld ) )
                             else if( !pbwOld || !cbwOld ) break ;
                             }
-                                etherP.traceF( tinP , T("different sizes (unexpected) [idWindow]:    ")+TF2(idWindow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                etherP.traceF( tinBaseP , T("different sizes (unexpected) [idWindow]:    ")+TF2(idWindow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                 bSame = 0 ;
                             {
                             if( cbwOld != cbwNew )
 
-                            pFwsNew->getF( tinP , pbwNew , cbwNew ) ;
+                            pFwsNew->getF( tinBaseP , pbwNew , cbwNew ) ;
                             ZE( countT , cbwNew ) ;
                             ZE( byteT* , pbwNew ) ;
 
-                            pFwsOld->getF( tinP , pbwOld , cbwOld ) ;
+                            pFwsOld->getF( tinBaseP , pbwOld , cbwOld ) ;
                             ZE( countT , cbwOld ) ;
                             ZE( byteT* , pbwOld ) ;
 
@@ -211,17 +211,17 @@ TASK( tmWorkerF )
                     boolT bSame = 1 ;
                 {
                 else
-                else if( pFwsOld->cbFileLoF() != pFwsNew->cbFileLoF() || pFwsOld->cbFileHiF() != pFwsNew->cbFileHiF() ) etherP.traceF( tinP , T("different sizes") ) ;
+                else if( pFwsOld->cbFileLoF() != pFwsNew->cbFileLoF() || pFwsOld->cbFileHiF() != pFwsNew->cbFileHiF() ) etherP.traceF( tinBaseP , T("different sizes") ) ;
                 }
                     }
-                        etherP.traceF( tinP , T("could not rename") ) ;
+                        etherP.traceF( tinBaseP , T("could not rename") ) ;
                         POOPR
                     {
                     else
-                    if( !POOP ) etherP.traceF( tinP , T("renamed aok") ) ;
-                    tinP.pEtScratch->diskMoveFileOrDirF( tinP , tNameNew , tNameOld , 1 ) ;
+                    if( !POOP ) etherP.traceF( tinBaseP , T("renamed aok") ) ;
+                    ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNameNew , tNameOld , 1 ) ;
 
-                    etherP.traceF( tinP , T("could not ct both file windows ; attempting to rename") ) ;
+                    etherP.traceF( tinBaseP , T("could not ct both file windows ; attempting to rename") ) ;
 
                     DELzOMBIE( pFwsNew ) ;
                     DELzOMBIE( pFwsOld ) ;
@@ -229,8 +229,8 @@ TASK( tmWorkerF )
                 {
                 if( POOP )
 
-                fileWindowsC* pFwsNew = new( 0 , tinP , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tinP , *tinP.pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
-                fileWindowsC* pFwsOld = new( 0 , tinP , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tinP , *tinP.pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsNew = new( 0 , tinBaseP , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsOld = new( 0 , tinBaseP , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
 
                 byteT pb_fwsNew[ sizeof( fileWindowsC ) ] ;
                 byteT pb_fwsOld[ sizeof( fileWindowsC ) ] ;
@@ -239,27 +239,27 @@ TASK( tmWorkerF )
             {
             IFsCRATCH
 
-            etherP.traceF( tinP , T("new: ")+tNameNew ) ;
+            etherP.traceF( tinBaseP , T("new: ")+tNameNew ) ;
 
             }
-                etherP.delF( tinP , psttSnip2 ) ;
-                etherP.delF( tinP , psttSnip1 ) ;
+                etherP.delF( tinBaseP , psttSnip2 ) ;
+                etherP.delF( tinBaseP , psttSnip1 ) ;
                 tNameNew = T(psttSnip1) ;
-                etherP.strFuseF( tinP , psttSnip1 , psttSnip2 ) ;
-                etherP.strSubstringF( tinP , psttSnip2 , idf , idl , tNameOld ) ; ___( psttSnip2 ) ;
+                etherP.strFuseF( tinBaseP , psttSnip1 , psttSnip2 ) ;
+                etherP.strSubstringF( tinBaseP , psttSnip2 , idf , idl , tNameOld ) ; ___( psttSnip2 ) ;
                 idl = 0 ;
                 idf = 0x56 ;
                 ZE( strokeS* , psttSnip2 ) ;
 
-                etherP.strSubstringF( tinP , psttSnip1 , idf , idl , tNameOld , tNameOld.csF( tinP ) ) ; ___( psttSnip1 ) ;
+                etherP.strSubstringF( tinBaseP , psttSnip1 , idf , idl , tNameOld , tNameOld.csF( tinBaseP ) ) ; ___( psttSnip1 ) ;
                 countT idl = 0x51 ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttSnip1 ) ;
             {
             TN( tNameNew , "" ) ;
 
-            etherP.traceF( tinP , T("old: ")+tNameOld ) ;
-            etherP.traceF( tinP , T("------------------------------------------------------------------") ) ;
+            etherP.traceF( tinBaseP , T("old: ")+tNameOld ) ;
+            etherP.traceF( tinBaseP , T("------------------------------------------------------------------") ) ;
 
 
 #if defined( NEVERdEFINED )
@@ -273,106 +273,106 @@ TASK( tmWorkerF )
 
             }
                 }
-                    etherP.delF( tinP , psttGroup ) ;
-                    etherP.delF( tinP , pstt1f ) ;
+                    etherP.delF( tinBaseP , psttGroup ) ;
+                    etherP.delF( tinBaseP , pstt1f ) ;
 
                     }
                         }
                             }
-                                etherP.traceF( tinP , T("could not rename") ) ;
+                                etherP.traceF( tinBaseP , T("could not rename") ) ;
                                 POOPR
                             {
                             else
-                            if( !POOP ) etherP.traceF( tinP , T("renamed aok") ) ;
-                            tinP.pEtScratch->diskMoveFileOrDirF( tinP , tNew , psttc1 , 1 ) ;
+                            if( !POOP ) etherP.traceF( tinBaseP , T("renamed aok") ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNew , psttc1 , 1 ) ;
 
                             SCOOPS
                         {
                         IFsCRATCH
 
-                        etherP.delF( tinP , psttSnip2 ) ;
-                        etherP.delF( tinP , psttSnip1 ) ;
-                        etherP.traceF( tinP , T("  new:    ")+tNew ) ;
+                        etherP.delF( tinBaseP , psttSnip2 ) ;
+                        etherP.delF( tinBaseP , psttSnip1 ) ;
+                        etherP.traceF( tinBaseP , T("  new:    ")+tNew ) ;
 
                         TN( tNew , psttSnip1 ) ; tNew += tHash+tDot+T(psttSnip2) ;
             
-                        etherP.strSubstringF( tinP , psttSnip2 , idf , idl , psttc1 ) ; ___( psttSnip2 ) ;
+                        etherP.strSubstringF( tinBaseP , psttSnip2 , idf , idl , psttc1 ) ; ___( psttSnip2 ) ;
                         idl = 0 ;
                         ZE( strokeS* , psttSnip2 ) ;
 
-                        etherP.strIdF( tinP, idf , sttqP , tDot , psttc1 ) ;
+                        etherP.strIdF( tinBaseP, idf , sttqP , tDot , psttc1 ) ;
 
-                        etherP.strSubstringF( tinP , psttSnip1 , idf , idl , psttc1 ) ; ___( psttSnip1 ) ;
+                        etherP.strSubstringF( tinBaseP , psttSnip1 , idf , idl , psttc1 ) ; ___( psttSnip1 ) ;
                         countT idl = 0x56 ;
                         countT idf = 1 ;
                         ZE( strokeS* , psttSnip1 ) ;
 
-                        etherP.traceF( tinP , T(" file:    ")+T(psttc1) ) ;
+                        etherP.traceF( tinBaseP , T(" file:    ")+T(psttc1) ) ;
                     {
                     FORsTRINGSiN1( pstt1f )
 
-                    etherP.diskFindFileOrDirOldF( tinP , pstt1f , T(psttGroup)+tStar ) ; ___( pstt1f ) ;
+                    etherP.diskFindFileOrDirOldF( tinBaseP , pstt1f , T(psttGroup)+tStar ) ; ___( pstt1f ) ;
                     ZE( strokeS* , pstt1f ) ;
 
-                    etherP.traceF( tinP , T("group:    ")+T(psttGroup) ) ;
+                    etherP.traceF( tinBaseP , T("group:    ")+T(psttGroup) ) ;
             
-                    etherP.strSubstringF( tinP , psttGroup , idf , idl , tNameOld , tNameOld.csF( tinP ) ) ; ___( psttGroup ) ;
+                    etherP.strSubstringF( tinBaseP , psttGroup , idf , idl , tNameOld , tNameOld.csF( tinBaseP ) ) ; ___( psttGroup ) ;
                     countT idl = 0x5a ;
                     countT idf = 1 ;
                     ZE( strokeS* , psttGroup ) ;
                 {
 
-                etherP.traceF( tinP , T("hash:                                                                                                  ")+tHash ) ;
+                etherP.traceF( tinBaseP , T("hash:                                                                                                  ")+tHash ) ;
 
                 }
-                    etherP.delF( tinP , posti ) ;
+                    etherP.delF( tinBaseP , posti ) ;
                     }
-                        etherP.delF( tinP , psttHash ) ;
+                        etherP.delF( tinBaseP , psttHash ) ;
                         tHash = T(psttHash) ;
-                        hasher.queryStringF( tinP , psttHash ) ; ___( psttHash ) ;
+                        hasher.queryStringF( tinBaseP , psttHash ) ; ___( psttHash ) ;
                         ZE( strokeS* , psttHash ) ;
 
-                        hasher.eatF( tinP , posti , costi ) ;
-                        hasherC hasher( tinP , etherP ) ;
+                        hasher.eatF( tinBaseP , posti , costi ) ;
+                        hasherC hasher( tinBaseP , etherP ) ;
                     {
 
-                    etherP.boxGetShadowF( tinP , posti , costi , tNameOld ) ; ___( posti ) ;
+                    etherP.boxGetShadowF( tinBaseP , posti , costi , tNameOld ) ; ___( posti ) ;
                     ZE( countT   , costi ) ;
                     ZE( osTextT* , posti ) ;
                 {
                 TN( tHash , "" ) ;
 
-                etherP.traceF( tinP , T("not correct old: ")+tNameOld ) ;
+                etherP.traceF( tinBaseP , T("not correct old: ")+tNameOld ) ;
             {
             else
             }
-                //etherP.traceF( tinP , T("    correct old: ")+tNameOld ) ;
+                //etherP.traceF( tinBaseP , T("    correct old: ")+tNameOld ) ;
             {
             if( idHit == 0x56 )
 
-            //etherP.traceF( tinP , T("hash [idHit]:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            idHit = etherP.strIdF( tinP, idf , sttqP , tPatternHashP , tNameOld ) ;
+            //etherP.traceF( tinBaseP , T("hash [idHit]:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            idHit = etherP.strIdF( tinBaseP, idf , sttqP , tPatternHashP , tNameOld ) ;
             idf -- ;
         {
         if( idHit == 0x12 )
-        //etherP.traceF( tinP , T("[idHit,name:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tNameOld ) ;
+        //etherP.traceF( tinBaseP , T("[idHit,name:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tNameOld ) ;
 
-        countT idHit = etherP.strIdF( tinP, idf , sttqP , tPatternOldP , tNameOld ) ;
+        countT idHit = etherP.strIdF( tinBaseP, idf , sttqP , tPatternOldP , tNameOld ) ;
         countT idf = 1 ;
 
         TN( tDot , "." ) ;
         TN( tStar , "*" ) ;
         TN( tNameOld , ifName ) ;
-        ifFileNameC ifName( tinP , etherP , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
 
         strokeS sttqP         = *(strokeS*)pcArgP[ 3 ] ;
         textC&  tPatternHashP =   *(textC*)pcArgP[ 2 ] ;
         textC&  tPatternOldP  =   *(textC*)pcArgP[ 1 ] ;
         etherC& etherP        =  *(etherC*)pcArgP[ 0 ] ;
     {
-    if( postNameP && thirdC::c_strstrIF( tinP , postNameP , ".hashedname" ) )
+    if( postNameP && thirdC::c_strstrIF( tinBaseP , postNameP , ".hashedname" ) )
 {
-boolT cleanCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT cleanCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 
 

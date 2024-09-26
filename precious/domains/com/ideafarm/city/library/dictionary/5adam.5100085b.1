@@ -9,21 +9,21 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.traceF( tinP , T("[*pc1]:    ")+TF2(*pc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , T("[*pc1]:    ")+TF2(*pc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT* pc1 = vsp1Lath ;
 
-    countVSP vsp1Lath = listC::countIF( tinP , myRecord , count2S( LISTnAMEsYS_PROCESSrEPORTfIELD10 ) ) ;
+    countVSP vsp1Lath = listC::countIF( tinBaseP , myRecord , count2S( LISTnAMEsYS_PROCESSrEPORTfIELD10 ) ) ;
 
-    recordC myRecord( tinP , pcNameRecord , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC1 ) ;
+    recordC myRecord( tinBaseP , pcNameRecord , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC1 ) ;
     countT  pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , LISTnAMEsYS_PROCESSrEPORT , 0 } ;
 {
 
-etThread.traceF( tinP , T("[idCell]:  ")+TF2(idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-const countT idCell = tinP.pag1->idCell ;
+etThread.traceF( tinBaseP , T("[idCell]:  ")+TF2(idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+const countT idCell = ((tinNormalS&)tinBaseP).pag1->idCell ;
 TN( tb4 , "    " ) ;
 
 TODO

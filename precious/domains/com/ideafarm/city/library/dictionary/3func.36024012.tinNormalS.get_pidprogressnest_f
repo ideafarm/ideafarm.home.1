@@ -12,7 +12,7 @@
 
     pcP[ offo ] = 0 ;
     }
-        pcP[ offo ++ ] = pFlagsThreadLevelMode[ idn & OFFsLOTtINnESTmAX ] ;
+        pcP[ offo ++ ] = pIdProgressNest[ idn & OFFsLOTtINnESTmAX ] ;
         if( offo >= ccP - 1 ) break ;
     {
     for( countT idn = monitor.cInNest ; idn >= idnf ; idn -- )
@@ -30,10 +30,11 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT tinS::get_pFlagsThreadLevelMode_F( tinS& tinP , countT* const pcP , const countT ccP )/*1*/
+/*1*/voidT tinNormalS::get_pIdProgressNest_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP )/*1*/
+
 /**/
 */
-  set it to sizeof tinP.pFlagsThreadLevelMode + 1 unless you are only interested in looking up a few levels
+  set it to sizeof ((tinNormalS&)tinBaseP).pIdProgressNest + 1 unless you are only interested in looking up a few levels
  ccP
   i will terminate the values that i write with a ze value
   i will write the call nest TAG( TAGiDnULL ) values into pcP until at most ccP-1 values have been written
@@ -43,7 +44,7 @@
   will be set if impotence occurs
   must be 0
  ec
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.12f000b.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$get_pLFnest_F.0.html\"\>instances\</A\>

@@ -9,13 +9,13 @@
 
 REST
 
-etThread.traceF( tinP , T("file windows received:    ")+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tinBaseP , T("file windows received:    ")+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-etThread.delF( tinP , pnnWhite ) ;
+etThread.delF( tinBaseP , pnnWhite ) ;
 
-etThread.ifcUdpFilesEndpointF( tinP , ether , slabS::slabIF().idPortUdpFileCatcher , TICK >> 0 , psoe , grab_psoe , *(const nicNameC**)&pnnWhite , cnnWhite , grab_pnnWhite , 0 , 0 , &cIn ) ;
+etThread.ifcUdpFilesEndpointF( tinBaseP , ether , slabS::slabIF().idPortUdpFileCatcher , TICK >> 0 , psoe , grab_psoe , *(const nicNameC**)&pnnWhite , cnnWhite , grab_pnnWhite , 0 , 0 , &cIn ) ;
 
-grabC grab_psoe( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
+grabC grab_psoe( tinBaseP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
 ZE( socketC* , psoe ) ;
 ZE( countT , cIn ) ;
 
@@ -24,11 +24,11 @@ ZE( countT , cIn ) ;
 //    if( !pnnWhite ) { BLAMMO ; }
 //
 //    }
-//        etThread.traceF( tinP , T("white:    ")+T(pnnWhite[offa]) ) ;
+//        etThread.traceF( tinBaseP , T("white:    ")+T(pnnWhite[offa]) ) ;
 //    {
 //    for( countT offa = 0 ; offa < cnnWhite ; offa ++ )
 //
-//    socketC::nicNameIF( tinP , etThread , pnnWhite , cnnWhite , tListWhite ) ; ___( pnnWhite ) ;
+//    socketC::nicNameIF( tinBaseP , etThread , pnnWhite , cnnWhite , tListWhite ) ; ___( pnnWhite ) ;
 //
 //    tListWhite += T("factory9.ideafarm.com") ;
 //    tListWhite += T("factory8.ideafarm.com") ;
@@ -46,7 +46,7 @@ ZE( countT , cIn ) ;
 //U:: SECURE WITH CREDENTIALS
 ZE( countT    , cnnWhite ) ;
 ZE( nicNameC* , pnnWhite ) ;
-grabC grab_pnnWhite( tinP , TAG( TAGiDnULL ) ) ;
+grabC grab_pnnWhite( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 

@@ -14,13 +14,13 @@
         time1P = pInfoFile->timeWritten1 ;
     {
     if( pInfoFile )
-    ether.diskFileQueryF( tinP , pInfoFile , handle ) ; ___( pInfoFile ) ;
+    ether.diskFileQueryF( tinBaseP , pInfoFile , handle ) ; ___( pInfoFile ) ;
     }
-        ether.delF( tinP , psttMapped ) ;
-        ether.fileOpenF( tinP , handle , flagsResult , psttMapped , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , 0 , 0 , 0 , cOpenTries ) ;  //20230604@1409: ifcOPENsHARE_WR <- ifcOPENsHARE_R W/O ANALYSIS SO CAN INPUT A bookC FILE ; WITH THIS CHANGE, CALLER IS REPONSIBLE FOR HANDLING A FILE WITH VOLATILE CONTENT OR LENGTH
-        ether.diskMakeDirIfNeededF( tinP , psttMapped ) ;
+        ether.delF( tinBaseP , psttMapped ) ;
+        ether.fileOpenF( tinBaseP , handle , flagsResult , psttMapped , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , 0 , 0 , 0 , cOpenTries ) ;  //20230604@1409: ifcOPENsHARE_WR <- ifcOPENsHARE_R W/O ANALYSIS SO CAN INPUT A bookC FILE ; WITH THIS CHANGE, CALLER IS REPONSIBLE FOR HANDLING A FILE WITH VOLATILE CONTENT OR LENGTH
+        ether.diskMakeDirIfNeededF( tinBaseP , psttMapped ) ;
         ZE( countT , flagsResult ) ;
-        ether.diskMapFileNameF( tinP , psttMapped , psttAll ) ; ___( psttMapped ) ;
+        ether.diskMapFileNameF( tinBaseP , psttMapped , psttAll ) ; ___( psttMapped ) ;
         ZE( strokeS* , psttMapped ) ;
     {
     if( !handle )
@@ -36,7 +36,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT boxC::timePrivateF( tinS& tinP , countT& time1P , sCountT& time2P )/*1*/
+/*1*/voidT boxC::timePrivateF( tinBaseS& tinBaseP , countT& time1P , sCountT& time2P )/*1*/
 
 //20231123@1839: THIS IS A VERY OLD FUNCTION THAT, AS DOCUMENTED, IS ILLEGAL FOR APPLICATION USE ; SEE NEWLY ADDED FUNCTIONS thirdC::getFileTimeIF AND thirdC::setFileTimeF
 

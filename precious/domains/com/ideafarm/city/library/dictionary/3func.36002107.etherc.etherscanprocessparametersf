@@ -9,20 +9,20 @@
 
 }
     }
-        else if( !strCompareF( tinP , psttc1 , T("!idKidI"         ) ) ) { idArg = 3 ; }
-        else if( !strCompareF( tinP , psttc1 , T("!nicNamePaperDadI" ) ) ) { idArg = 2 ; }
-        else if( !strCompareF( tinP , psttc1 , T("!tinP.pag1->_etherC_.idPortFaceDad" ) ) ) { idArg = 1 ; }
+        else if( !strCompareF( tinBaseP , psttc1 , T("!idKidI"         ) ) ) { idArg = 3 ; }
+        else if( !strCompareF( tinBaseP , psttc1 , T("!nicNamePaperDadI" ) ) ) { idArg = 2 ; }
+        else if( !strCompareF( tinBaseP , psttc1 , T("!((tinNormalS&)tinBaseP).pag1->_etherC_.idPortFaceDad" ) ) ) { idArg = 1 ; }
         }
             }
-                case 3 : { idArg = 0 ; __(   tinP.pag1->_etherC_.idKid         ) ; tinP.pag1->_etherC_.idKid         = strDigitsToSCountF( tinP , psttc1 ) ; __( !tinP.pag1->_etherC_.idKid         ) ; break ; }
-                case 2 : { idArg = 0 ; __( !!tinP.pag1->_etherC_.nicNamePaperDad ) ; tinP.pag1->_etherC_.nicNamePaperDad = strDigitsToNicNameF( tinP , psttc1 ) ; __( !tinP.pag1->_etherC_.nicNamePaperDad ) ; break ; }
-                case 1 : { idArg = 0 ; __(   tinP.pag1->_etherC_.idPortFaceDad ) ; tinP.pag1->_etherC_.idPortFaceDad = strDigitsToSCountF( tinP , psttc1 ) ; __( !tinP.pag1->_etherC_.idPortFaceDad ) ; break ; }
+                case 3 : { idArg = 0 ; __(   ((tinNormalS&)tinBaseP).pag1->_etherC_.idKid         ) ; ((tinNormalS&)tinBaseP).pag1->_etherC_.idKid         = strDigitsToSCountF( tinBaseP , psttc1 ) ; __( !((tinNormalS&)tinBaseP).pag1->_etherC_.idKid         ) ; break ; }
+                case 2 : { idArg = 0 ; __( !!((tinNormalS&)tinBaseP).pag1->_etherC_.nicNamePaperDad ) ; ((tinNormalS&)tinBaseP).pag1->_etherC_.nicNamePaperDad = strDigitsToNicNameF( tinBaseP , psttc1 ) ; __( !((tinNormalS&)tinBaseP).pag1->_etherC_.nicNamePaperDad ) ; break ; }
+                case 1 : { idArg = 0 ; __(   ((tinNormalS&)tinBaseP).pag1->_etherC_.idPortFaceDad ) ; ((tinNormalS&)tinBaseP).pag1->_etherC_.idPortFaceDad = strDigitsToSCountF( tinBaseP , psttc1 ) ; __( !((tinNormalS&)tinBaseP).pag1->_etherC_.idPortFaceDad ) ; break ; }
             {
             switch( idArg )
         {
         if( idArg )
     {
-    FORsTRINGSiN1( tinP.pag1->_etherC_.pstt1_processParameters )
+    FORsTRINGSiN1( ((tinNormalS&)tinBaseP).pag1->_etherC_.pstt1_processParameters )
     ZE( countT , idArg ) ;
     _IO_
 
@@ -32,11 +32,11 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::etherScanProcessParametersF( tinS& tinP )/*1*/
+/*1*/voidT etherC::etherScanProcessParametersF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */
- tinP
+ tinBaseP
 arguments
 it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.103013c.1.0.html\"\>definition\</A\>

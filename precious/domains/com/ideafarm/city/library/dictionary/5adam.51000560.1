@@ -9,19 +9,19 @@
     
 REST
 
-etThread.delF( tinP , psttValue ) ;
+etThread.delF( tinBaseP , psttValue ) ;
 
-etThread.strokeF( tinP , T("\f") ) ;
-sDone_tmWatchPromptF.waitF( tinP ) ;
-sPrompt.giveF( tinP ) ;
+etThread.strokeF( tinBaseP , T("\f") ) ;
+sDone_tmWatchPromptF.waitF( tinBaseP ) ;
+sPrompt.giveF( tinBaseP ) ;
 
 FIREmYSELF ;
 }
-    ether.osSleepF( tinP , TOCK * 0x10 ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ether.osSleepF( tinBaseP , TOCK * 0x10 ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
-etThread.strokeF( tinP , tSay ) ;
+etThread.strokeF( tinBaseP , tSay ) ;
 
 ;
 
@@ -38,27 +38,27 @@ etThread.strokeF( tinP , tSay ) ;
 tSay =
 TN( tSay , "" ) ;
 
-etThread.osThreadF( tinP , countTC() , tmWatchPromptF , &sDone_tmWatchPromptF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&buPrompt , (countT)&buHint ) ;
-signC sDone_tmWatchPromptF( tinP , TAG( TAGiDnULL ) ) ;
+etThread.osThreadF( tinBaseP , countTC() , tmWatchPromptF , &sDone_tmWatchPromptF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&buPrompt , (countT)&buHint ) ;
+signC sDone_tmWatchPromptF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-tcPromptC buPrompt( tinP , etThread , psttValue , T(">") , &bPrompt , &sPrompt , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT | flTCfEATURE_TABhEREsUPPRESSEShOTkEYS ) ;
+tcPromptC buPrompt( tinBaseP , etThread , psttValue , T(">") , &bPrompt , &sPrompt , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT | flTCfEATURE_TABhEREsUPPRESSEShOTkEYS ) ;
 ZE( strokeS* , psttValue ) ;
-signC  sPrompt( tinP , TAG( TAGiDnULL ) ) ;
-batonC bPrompt( tinP , TAG( TAGiDnULL ) ) ;
+signC  sPrompt( tinBaseP , TAG( TAGiDnULL ) ) ;
+batonC bPrompt( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-tcButtonC buHint( tinP , 0 , 0 , flTCfEATURE_defaultButton , 0 , 0 , 1 ) ;
+tcButtonC buHint( tinBaseP , 0 , 0 , flTCfEATURE_defaultButton , 0 , 0 , 1 ) ;
 
 TODO
 
 DONE( tmWatchPromptF )
 }
     }
-        bPrompt.ungrabF( tinP ) ;
-        buHintP.setF( tinP , T("")+S3((measureT)psttValue->idAdam,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttValue)+S2(0,scOld_POPfRAME) ) ;
-        bPrompt.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bPrompt.ungrabF( tinBaseP ) ;
+        buHintP.setF( tinBaseP , T("")+S3((measureT)psttValue->idAdam,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttValue)+S2(0,scOld_POPfRAME) ) ;
+        bPrompt.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         if( ether ) break ;
-        sPrompt.waitF( tinP ) ;
+        sPrompt.waitF( tinBaseP ) ;
     {
     for(;;)
 

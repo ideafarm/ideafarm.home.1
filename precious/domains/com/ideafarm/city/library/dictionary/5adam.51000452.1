@@ -9,36 +9,36 @@
 
 REST
 
-etThread.strokeF( tinP , T("psttBody: \"")+T(psttBody)+T("\"")+te ) ;
+etThread.strokeF( tinBaseP , T("psttBody: \"")+T(psttBody)+T("\"")+te ) ;
 sOrder >> psttBody ; ___( psttBody ) ;
 ZE( strokeS* , psttBody ) ;
 
-etThread.strokeF( tinP , T("idAdamTo: ")+TF1(idAdamTo)+te ) ;
+etThread.strokeF( tinBaseP , T("idAdamTo: ")+TF1(idAdamTo)+te ) ;
 sOrder >> idAdamTo ;
 ZE( countT , idAdamTo ) ;
 
-etThread.strokeF( tinP , T("psttFrom: \"")+(psttFrom?T(psttFrom):T("[NULL]"))+T("\"")+te ) ;
+etThread.strokeF( tinBaseP , T("psttFrom: \"")+(psttFrom?T(psttFrom):T("[NULL]"))+T("\"")+te ) ;
 sOrder >> psttFrom ; ___( psttFrom ) ;
 ZE( strokeS* , psttFrom ) ;
 
-etThread.strokeF( tinP , T("idJobType: ")+TF1(idJobType)+T("expected value: ")+TF1(ifcIDcMDjOBoRDER_MAIL)+te ) ;
+etThread.strokeF( tinBaseP , T("idJobType: ")+TF1(idJobType)+T("expected value: ")+TF1(ifcIDcMDjOBoRDER_MAIL)+te ) ;
 sOrder >> idJobType ;
 ZE( countT , idJobType ) ;
 
 souIn >> sOrder ;
-soulC sOrder( tinP , TAG( TAGiDnULL ) ) ;
+soulC sOrder( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.strokeF( tinP , T("idAdam: ")+TF1(idAdam)+te ) ;
+etThread.strokeF( tinBaseP , T("idAdam: ")+TF1(idAdam)+te ) ;
 souIn >> idAdam ;
 ZE( countT , idAdam ) ;
 
 __( (countT)souIn - 2 ) ;
-etThread.delF( tinP , pbs ) ;
-souIn.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
-soulC souIn( tinP , TAG( TAGiDnULL ) ) ;
+etThread.delF( tinBaseP , pbs ) ;
+souIn.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+soulC souIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 __( cbs - sizeof( countT ) - *(countT*)pbs ) ;
-etThread.boxGetShadowF( tinP , pbs , cbs , T("///d/oldSoul") ) ; ___( pbs ) ;
+etThread.boxGetShadowF( tinBaseP , pbs , cbs , T("///d/oldSoul") ) ; ___( pbs ) ;
 ZE( countT , cbs ) ;
 ZE( byteT* , pbs ) ;
 

@@ -11,7 +11,7 @@
 
 }
     return 0 ;
-    if( tinP.fingerprint && ether && cArgP ) ;
+    if( ((tinNormalS&)tinBaseP).fingerprint && ether && cArgP ) ;
 
     }
         }
@@ -20,11 +20,11 @@
                 }
                     break ;
         
-                    paperP.mIdRow = mIdRowCenter - 200 * mScale * thirdC::mathSinIF( tinP , ptOnCircle * 2 * PI + PI / 2 ) ;
-                    paperP.mIdCol = mIdColCenter + 200 * mScale * thirdC::mathCosIF( tinP , ptOnCircle * 2 * PI + PI / 2 ) ;
+                    paperP.mIdRow = mIdRowCenter - 200 * mScale * thirdC::mathSinIF( tinBaseP , ptOnCircle * 2 * PI + PI / 2 ) ;
+                    paperP.mIdCol = mIdColCenter + 200 * mScale * thirdC::mathCosIF( tinBaseP , ptOnCircle * 2 * PI + PI / 2 ) ;
 
-                    *(measureT*)&paperP.pPulp->stqr_mSinHotAngle[ 1 ] = thirdC::mathSinIF( tinP , mOsAngle + PI / 2 ) ;
-                    *(measureT*)&paperP.pPulp->stqr_mCosHotAngle[ 1 ] = thirdC::mathCosIF( tinP , mOsAngle + PI / 2 ) ;
+                    *(measureT*)&paperP.pPulp->stqr_mSinHotAngle[ 1 ] = thirdC::mathSinIF( tinBaseP , mOsAngle + PI / 2 ) ;
+                    *(measureT*)&paperP.pPulp->stqr_mCosHotAngle[ 1 ] = thirdC::mathCosIF( tinBaseP , mOsAngle + PI / 2 ) ;
                     measureT mOsAngle = osAngleF( ptOnCircle ) ;
         
                     measureT ptOnCircle = br ? ptArcStart - ptString * ptArcLen : ptArcStart + ptString * ptArcLen ;
@@ -50,11 +50,11 @@
                 }
                     break ;
         
-                    paperP.mIdRow = mIdRowCenter - 200 * mScale * thirdC::mathSinIF( tinP , ptOnCircle * 2 * PI + PI / 2 ) ;
-                    paperP.mIdCol = mIdColCenter + 200 * mScale * thirdC::mathCosIF( tinP , ptOnCircle * 2 * PI + PI / 2 ) ;
+                    paperP.mIdRow = mIdRowCenter - 200 * mScale * thirdC::mathSinIF( tinBaseP , ptOnCircle * 2 * PI + PI / 2 ) ;
+                    paperP.mIdCol = mIdColCenter + 200 * mScale * thirdC::mathCosIF( tinBaseP , ptOnCircle * 2 * PI + PI / 2 ) ;
 
-                    *(measureT*)&paperP.pPulp->stqr_mSinHotAngle[ 1 ] = thirdC::mathSinIF( tinP , mOsAngle + PI / 2 ) ;
-                    *(measureT*)&paperP.pPulp->stqr_mCosHotAngle[ 1 ] = thirdC::mathCosIF( tinP , mOsAngle + PI / 2 ) ;
+                    *(measureT*)&paperP.pPulp->stqr_mSinHotAngle[ 1 ] = thirdC::mathSinIF( tinBaseP , mOsAngle + PI / 2 ) ;
+                    *(measureT*)&paperP.pPulp->stqr_mCosHotAngle[ 1 ] = thirdC::mathCosIF( tinBaseP , mOsAngle + PI / 2 ) ;
                     measureT mOsAngle = osAngleF( ptOnCircle + 0.5 ) ;
         
                     measureT ptOnCircle = br ? ptArcStart - ptString * ptArcLen : ptArcStart + ptString * ptArcLen ;
@@ -87,7 +87,7 @@
 
     static countT idString ;
 {
-/*1*/boolT renderHandlerIdeaFarmLogoF( tinS& tinP , etherC& ether , windowOldC& wP , const countT cArgP )/*1*/
+/*1*/boolT renderHandlerIdeaFarmLogoF( tinBaseS& tinBaseP , etherC& ether , windowOldC& wP , const countT cArgP )/*1*/
 
 measureT mScale ; //U: THIS IS OBVIOUSLY A KLUGE
 

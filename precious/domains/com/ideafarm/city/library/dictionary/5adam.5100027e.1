@@ -10,10 +10,10 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
 
 }
     DEL( pstk ) ;
@@ -24,71 +24,71 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
 while( stStacksToDelete )
 
 !pruned ;
-pruned.nameF( tinP , T("pruned") ) ;
+pruned.nameF( tinBaseP , T("pruned") ) ;
 tableC pruned = selected << colsWanted ;
 
 }
-    colsWanted.newObjectF( tinP , tClient ) ;
-    colsWanted.newEventF( tinP ) ;
+    colsWanted.newObjectF( tinBaseP , tClient ) ;
+    colsWanted.newEventF( tinBaseP ) ;
 
-    colsWanted.newObjectF( tinP , tName ) ;
-    colsWanted.newEventF( tinP ) ;
+    colsWanted.newObjectF( tinBaseP , tName ) ;
+    colsWanted.newEventF( tinBaseP ) ;
 
-    colsWanted.newColF( tinP ) ;
+    colsWanted.newColF( tinBaseP ) ;
 {
-tableC colsWanted( tinP , ether ) ;
+tableC colsWanted( tinBaseP , ether ) ;
 TN( tClient , "all.clients.client" ) ;
 TN( tName   , "all.salesReps.name" ) ;
 
 !selected ;
-selected.nameF( tinP , T("selected") ) ;
+selected.nameF( tinBaseP , T("selected") ) ;
 tableC selected = all & values ;
 
 !values ;
-values.nameF( tinP , T("values") ) ;
+values.nameF( tinBaseP , T("values") ) ;
 tableC values = okc.calcF( stStacksToDelete , all ) ;
 
 !okc ;
-okc.nameF( tinP , T("okc") ) ;
+okc.nameF( tinBaseP , T("okc") ) ;
 tableC okc = all.compileF( stStacksToDelete , ok ) ;
-stackC stStacksToDelete( tinP , ether , TAG( TAGiDnULL ) ) ;
+stackC stStacksToDelete( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 
 !ok ;
 }
-    ok.newObjectF( tinP , tOk ) ;
-    ok.newEventF( tinP ) ;
+    ok.newObjectF( tinBaseP , tOk ) ;
+    ok.newEventF( tinBaseP ) ;
 
-    ok.newColF( tinP , T("booleanExpression") ) ;
+    ok.newColF( tinBaseP , T("booleanExpression") ) ;
 {
-tableC ok( tinP , ether , T("ok") ) ;
+tableC ok( tinBaseP , ether , T("ok") ) ;
 TN( tOk , "salesReps.name == clients.repName" ) ;
 
 !all ;
-all.nameF( tinP , T("all") ) ;
+all.nameF( tinBaseP , T("all") ) ;
 tableC all = salesReps * clients ;
 
 !clients ;
 }
-    clients.newObjectF( tinP , tVarian ) ;
-    clients.newObjectF( tinP , tJoe ) ;
-    clients.newEventF( tinP ) ;
+    clients.newObjectF( tinBaseP , tVarian ) ;
+    clients.newObjectF( tinBaseP , tJoe ) ;
+    clients.newEventF( tinBaseP ) ;
 
-    clients.newObjectF( tinP , tIntel ) ;
-    clients.newObjectF( tinP , tJoe ) ;
-    clients.newEventF( tinP ) ;
+    clients.newObjectF( tinBaseP , tIntel ) ;
+    clients.newObjectF( tinBaseP , tJoe ) ;
+    clients.newEventF( tinBaseP ) ;
 
-    clients.newObjectF( tinP , tHP ) ;
-    clients.newObjectF( tinP , tBob ) ;
-    clients.newEventF( tinP ) ;
+    clients.newObjectF( tinBaseP , tHP ) ;
+    clients.newObjectF( tinBaseP , tBob ) ;
+    clients.newEventF( tinBaseP ) ;
 
-    clients.newObjectF( tinP , tAmd ) ;
-    clients.newObjectF( tinP , tBob ) ;
-    clients.newEventF( tinP ) ;
+    clients.newObjectF( tinBaseP , tAmd ) ;
+    clients.newObjectF( tinBaseP , tBob ) ;
+    clients.newEventF( tinBaseP ) ;
 
-    clients.newColF( tinP , T("client") ) ;
-    clients.newColF( tinP , T("repName") ) ;
+    clients.newColF( tinBaseP , T("client") ) ;
+    clients.newColF( tinBaseP , T("repName") ) ;
 {
-tableC clients( tinP , ether , T("clients") ) ;
+tableC clients( tinBaseP , ether , T("clients") ) ;
 TN( tHP , "hp" ) ;
 TN( tVarian , "varian" ) ;
 TN( tAmd , "amd" ) ;
@@ -96,23 +96,23 @@ TN( tIntel , "intel" ) ;
 
 !salesReps ;
 }
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tMark    ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tLarry   ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tKevin   ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tJoe     ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tIngrid  ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tHarriet ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tGeorge  ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tFrank   ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tEve     ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tDawn    ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tCharles ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tBob     ) ;
-    salesReps.newEventF( tinP ) ; salesReps.newObjectF( tinP , tAmy     ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tMark    ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tLarry   ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tKevin   ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tJoe     ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tIngrid  ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tHarriet ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tGeorge  ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tFrank   ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tEve     ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tDawn    ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tCharles ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tBob     ) ;
+    salesReps.newEventF( tinBaseP ) ; salesReps.newObjectF( tinBaseP , tAmy     ) ;
 
-    salesReps.newColF( tinP , T("name") ) ;
+    salesReps.newColF( tinBaseP , T("name") ) ;
 {
-tableC salesReps( tinP , ether , T("salesReps") ) ;
+tableC salesReps( tinBaseP , ether , T("salesReps") ) ;
 TN( tMark    , "mark" ) ;
 TN( tLarry   , "larry" ) ;
 TN( tKevin   , "kevin" ) ;

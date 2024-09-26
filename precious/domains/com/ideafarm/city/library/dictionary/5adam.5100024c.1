@@ -10,44 +10,44 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("press the enter key now\r\n") ) ;
+etThread.strokeF( tinBaseP , T("press the enter key now\r\n") ) ;
 
-sDone.waitF( tinP ) ;
+sDone.waitF( tinBaseP ) ;
 }
-    sock.writeF( tinP , &bCmd , 1 ) ;
-    sock.connectF( tinP , idPort , etThread.sockNicNameF( tinP ) ) ;
-    socketC sock( tinP , ether , TAG( TAGiDnULL ) ) ;
+    sock.writeF( tinBaseP , &bCmd , 1 ) ;
+    sock.connectF( tinBaseP , idPort , etThread.sockNicNameF( tinBaseP ) ) ;
+    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 {
 bCmd = 'q' ;
 }
-    etThread.delF( tinP , psttLine ) ;
-    etThread.strokeF( tinP , T("  \"")+T(psttLine)+T("\"\r\n") ) ;
-    sock.readWoLineF( tinP , psttLine , 0x100 ) ;
+    etThread.delF( tinBaseP , psttLine ) ;
+    etThread.strokeF( tinBaseP , T("  \"")+T(psttLine)+T("\"\r\n") ) ;
+    sock.readWoLineF( tinBaseP , psttLine , 0x100 ) ;
     ZE( strokeS* , psttLine ) ;
-    sock.writeF( tinP , &bCmd , 1 ) ;
+    sock.writeF( tinBaseP , &bCmd , 1 ) ;
 
     }
-        etThread.strokeF( tinP , T("idPortMe=")+TF2(idPortMe,flFORMAT_UNSIGNED)+T(" nicNameMe=")+TF3(nicNameMe,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
-        sock.myNameF( tinP , idPortMe , nicNameMe ) ;
+        etThread.strokeF( tinBaseP , T("idPortMe=")+TF2(idPortMe,flFORMAT_UNSIGNED)+T(" nicNameMe=")+TF3(nicNameMe,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+        sock.myNameF( tinBaseP , idPortMe , nicNameMe ) ;
         nicNameC nicNameMe ;
         ZE( countT , idPortMe ) ;
     {
 
-    sock.connectF( tinP , idPort , etThread.sockNicNameF( tinP ) ) ;
-    socketC sock( tinP , ether , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tinBaseP , idPort , etThread.sockNicNameF( tinBaseP ) ) ;
+    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 {
 while( cTries -- )
 countT cTries = 0x8 ;
 byteT bCmd = 't' ;
 
-sReady.waitF( tinP ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmPushNumbersF , &sDone , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sReady ) ; }
+sReady.waitF( tinBaseP ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmPushNumbersF , &sDone , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sReady ) ; }
 ZE( countT , idPort ) ;
-signC sDone(  tinP , TAG( TAGiDnULL ) ) ;
-signC sReady(  tinP , TAG( TAGiDnULL ) ) ;
+signC sDone(  tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sReady(  tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -58,13 +58,13 @@ DONE( tmPushNumbersF )
         }
             if( bCmd == 'q' ) break ;
             DEL( pso ) ;
-            if( bCmd == 't' ) pso->writeF( tinP , (osTextT*)T("this text will be sent through the sockets\r\n") ) ;
-            pso->readF( tinP , &bCmd , 1 ) ;
+            if( bCmd == 't' ) pso->writeF( tinBaseP , (osTextT*)T("this text will be sent through the sockets\r\n") ) ;
+            pso->readF( tinBaseP , &bCmd , 1 ) ;
             ZE( byteT , bCmd ) ;
             cPrevious ++ ;
         {
         if( pso )
-        sock.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+        sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
@@ -73,10 +73,10 @@ DONE( tmPushNumbersF )
     ZE( countT , cPrevious ) ;
 
     ++ sReady ;
-    sock.listenF( tinP ) ;
-    idPort = sock.bindF( tinP ) ;
-    sock.etherF( tinP , ether ) ;
-    socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.listenF( tinBaseP ) ;
+    idPort = sock.bindF( tinBaseP ) ;
+    sock.etherF( tinBaseP , ether ) ;
+    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
     signC&  sReady = *psReady ;
     countT& idPort = *pcIdPort ;

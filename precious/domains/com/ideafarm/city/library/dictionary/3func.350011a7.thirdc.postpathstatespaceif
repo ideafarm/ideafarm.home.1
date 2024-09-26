@@ -8,19 +8,19 @@
 
 
 }
-    c_strcatIF( tinP , postP , "\\" ) ;
+    c_strcatIF( tinBaseP , postP , "\\" ) ;
 
-    c_strcatIF( tinP , postP , post9 ) ;
+    c_strcatIF( tinBaseP , postP , post9 ) ;
     c_itoaForeignIF( post9 , idStateSpaceP , 0 ) ;
-    c_strcatIF( tinP , postP , "\\stateSpaces\\" ) ;
+    c_strcatIF( tinBaseP , postP , "\\stateSpaces\\" ) ;
 
-    c_strcatIF( tinP , postP , post9 ) ;
-    c_itoaForeignIF( post9 , idMemorySpaceP ? idMemorySpaceP : tinP.pag1->idMemorySpace , '0' ) ;
-    c_strcatIF( tinP , postP , "\\" ) ;
+    c_strcatIF( tinBaseP , postP , post9 ) ;
+    c_itoaForeignIF( post9 , idMemorySpaceP ? idMemorySpaceP : ((tinNormalS&)tinBaseP).pag1->idMemorySpace , '0' ) ;
+    c_strcatIF( tinBaseP , postP , "\\" ) ;
 
-    c_strcatIF( tinP , postP , thirdC::postUserNameIF() ) ;
-    c_strcatIF( tinP , postP , "\\ephemeral\\backed.up.daily\\domains\\com\\ideafarm\\ipdos\\memorySpaces\\" ) ;
-    diskFindHomeIF( tinP , postP , costaP , "ideafarm" ) ;
+    c_strcatIF( tinBaseP , postP , thirdC::postUserNameIF() ) ;
+    c_strcatIF( tinBaseP , postP , "\\ephemeral\\backed.up.daily\\domains\\com\\ideafarm\\ipdos\\memorySpaces\\" ) ;
+    diskFindHomeIF( tinBaseP , postP , costaP , "ideafarm" ) ;
 
     post9[ 8 ] = 0 ;
     osTextT post9[ 9 ] ;
@@ -29,7 +29,7 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinBaseP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         __NZ( costaP < TUCK ) ;
         __Z( costaP ) ;
         __Z( postP ) ;
@@ -37,7 +37,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::postPathStateSpaceIF( tinS& tinP , osTextT* postP , const countT costaP , const countT idStateSpaceP , const countT idMemorySpaceP )/*1*/
+/*1*/voidT thirdC::postPathStateSpaceIF( tinBaseS& tinBaseP , osTextT* postP , const countT costaP , const countT idStateSpaceP , const countT idMemorySpaceP )/*1*/
 
 /**/
 */

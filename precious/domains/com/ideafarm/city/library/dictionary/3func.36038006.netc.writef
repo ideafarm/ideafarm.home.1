@@ -9,12 +9,12 @@
 
 }
     return cNicName ;
-    baton.ungrabF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
 
     }
-        third.delF( tinP , pNicName ) ;
+        third.delF( tinBaseP , pNicName ) ;
         }
-            writeF( tinP , *pNicName , soulP , idPortP ) ;
+            writeF( tinBaseP , *pNicName , soulP , idPortP ) ;
             cNicName ++ ;
         {
         if( pNicName )
@@ -25,23 +25,23 @@
 
     ZE( countT , cNicName ) ;
 
-    stackC stNicName( tinP , third , TAG( TAGiDnULL ) , souli ) ;
+    stackC stNicName( tinBaseP , third , TAG( TAGiDnULL ) , souli ) ;
     }
-        //third.s_writeF( tinP , hso , soulo2 ) ;
-        //soulC soulo2( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
+        //third.s_writeF( tinBaseP , hso , soulo2 ) ;
+        //soulC soulo2( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
         //COMMENTED OUT FOR SPEED.  WILL CAUSE SERVER TO BE IMPOTENT. ASSUME: SERVER WILL RESET ITS IMPOTENCE
-        third.s_readF( tinP , souli , hso ) ;
-        third.s_writeF( tinP , hso , soulo ) ;
-        soulC soulo( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYaLLkNOWNnICnAMES ) ;
-        third.s_connectF( tinP , hso , ifcPORToLD2_CHAT ) ;
-        third.s_bindF( tinP , hso ) ;
-        third.s_socketIF( tinP , hso ) ;
-        handleC hso( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+        third.s_readF( tinBaseP , souli , hso ) ;
+        third.s_writeF( tinBaseP , hso , soulo ) ;
+        soulC soulo( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYaLLkNOWNnICnAMES ) ;
+        third.s_connectF( tinBaseP , hso , ifcPORToLD2_CHAT ) ;
+        third.s_bindF( tinBaseP , hso ) ;
+        third.s_socketIF( tinBaseP , hso ) ;
+        handleC hso( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
     {
-    soulC souli( tinP , TAG( TAGiDnULL ) ) ;
+    soulC souli( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     _IO_
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return 0 ;
@@ -50,7 +50,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT netC::writeF( tinS& tinP , soulC& soulP , const countT idPortP )/*1*/
+/*1*/countT netC::writeF( tinBaseS& tinBaseP , soulC& soulP , const countT idPortP )/*1*/
 /**/
 */
   should be 0 except for special applications
@@ -58,7 +58,7 @@
   can be 0 unless idPort was 0 for the constructor
  idPortP
  soulP
- tinP
+ tinBaseP
 arguments
 evaluates to the number of hosts written to
 broadcasts to all ifc hosts known to the local host

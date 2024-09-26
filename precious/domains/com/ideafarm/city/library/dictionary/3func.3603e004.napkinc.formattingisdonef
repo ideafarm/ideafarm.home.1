@@ -16,15 +16,15 @@
         ti.idLineCt  = idLineCt ;
         ti.cbData    = ((napkinHeaderS*)pbNapkin)->cbData ;
         ti.pbData    = pbNapkin + sizeof( napkinHeaderS ) ;
-        ti.costName  = thirdC::c_strlenIF( tinP , ti.postName ) ;
-        thirdC::c_strncpyIF( tinP , ti.postName , postName , sizeof ti.postName ) ;
-        ti.osPid     = tinP.osPid ;
+        ti.costName  = thirdC::c_strlenIF( tinBaseP , ti.postName ) ;
+        thirdC::c_strncpyIF( tinBaseP , ti.postName , postName , sizeof ti.postName ) ;
+        ti.osPid     = ((tinNormalS&)tinBaseP).osPid ;
         tellInfoSysNapkinS ti ;
     {
     if( !bNoTellP && pbNapkin && this != &processGlobal4I.napHome ) //ASSUME: napHome IS CT WOTH
 
-    tinP.cYield = 0 ;
-    thirdC::dosPriorityIF( tinP , idDesireCtSave ) ;
+    ((tinNormalS&)tinBaseP).cYield = 0 ;
+    thirdC::dosPriorityIF( tinBaseP , idDesireCtSave ) ;
 
     THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
     }
@@ -32,7 +32,7 @@
         //CONoUTrAW( postName ) ;
         //CONoUTrAW( "memory space ungrabbed:  " ) ;
         THREADmODE5rESTORE0( flThreadMode5Save )
-        pzbMemorySpaceUse->ungrabF( tinP ) ;
+        pzbMemorySpaceUse->ungrabF( tinBaseP ) ;
     {
     if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
 
@@ -40,14 +40,14 @@
 
     putNegAM( ((napkinHeaderS*)pbNapkin)->bFormatted , FINGERnEG_NAPKINiSfORMATTED ) ;
 
-    thirdC::flushViewOfFileIF( tinP , pbNapkin , sizeof( napkinHeaderS ) + ((napkinHeaderS*)pbNapkin)->cbData ) ; //THIS IS DONE TO ENSURE THAT FINGERnEG_NAPKINiSfORMATTED CANNOT BE SEEN UNLESS THE BACKING FILE IMAGE CONTAINS A COMPLETELY FORMATTED IMAGE
+    thirdC::flushViewOfFileIF( tinBaseP , pbNapkin , sizeof( napkinHeaderS ) + ((napkinHeaderS*)pbNapkin)->cbData ) ; //THIS IS DONE TO ENSURE THAT FINGERnEG_NAPKINiSfORMATTED CANNOT BE SEEN UNLESS THE BACKING FILE IMAGE CONTAINS A COMPLETELY FORMATTED IMAGE
 
     _IO_
 
     }
         if( POOP ) BLAMMO ;
         __Z( pbNapkin ) ;
-        __( osTidCt - tinP.osTid ) ;
+        __( osTidCt - ((tinNormalS&)tinBaseP).osTid ) ;
         __( bDataAreaFormatted ) ;
         __( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ;
         if( POOP ) BLAMMO ;
@@ -55,11 +55,11 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT napkinC::formattingIsDoneF( tinS& tinP , const boolT bNoTellP )/*1*/
+/*1*/voidT napkinC::formattingIsDoneF( tinBaseS& tinBaseP , const boolT bNoTellP )/*1*/
 
 /**/
 */
- tinP
+ tinBaseP
 arguments
 i must be called exactly wo'ce after constructing me to indicate that the caller has finished formatting my data area
 \<A HREF=\"5.15e0005.1.0.html\"\>definition\</A\>

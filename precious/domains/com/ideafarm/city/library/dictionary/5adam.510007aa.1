@@ -9,16 +9,16 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 #endif
 
 }
-    etThread.delF( tinP , posti ) ;
-    etThread.traceF( tinP , T("called readF [nnHe,idpHe,posti]:    ")+T(nnHe)+T("    ")+TF2(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(posti) ) ;
-    socki.readF( tinP , posti , costi , idpHe , nnHe , 0 , 0 ) ; ___( posti ) ;
-    etThread.traceF( tinP , T("calling readF") ) ;
+    etThread.delF( tinBaseP , posti ) ;
+    etThread.traceF( tinBaseP , T("called readF [nnHe,idpHe,posti]:    ")+T(nnHe)+T("    ")+TF2(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(posti) ) ;
+    socki.readF( tinBaseP , posti , costi , idpHe , nnHe , 0 , 0 ) ; ___( posti ) ;
+    etThread.traceF( tinBaseP , T("calling readF") ) ;
     ZE( countT , idpHe ) ;
     nicNameC nnHe ;
     ZE( countT   , costi ) ;
@@ -26,10 +26,10 @@ etThread.traceF( tinP , T("ok") ) ;
 {
 while( !POOP && !ether )
 
-countT idpMe = socki.bindF( tinP , 12345 , nnAny , 1 , 0 ) ;
-socketC socki( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T("ff02::5:6") , 0 , 0 , 0 , 0 , 0 ) ;
+countT idpMe = socki.bindF( tinBaseP , 12345 , nnAny , 1 , 0 ) ;
+socketC socki( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T("ff02::5:6") , 0 , 0 , 0 , 0 , 0 ) ;
 
-nicNameC nnAny = socketC::nicNameIF( tinP , etThread , T("::") ) ;
+nicNameC nnAny = socketC::nicNameIF( tinBaseP , etThread , T("::") ) ;
 
 #else
 
@@ -41,7 +41,7 @@ closesocket( sd ) ;
 //*************************************************************************************************************
 
 }
-    etThread.traceF( tinP , T("received :    \"")+T(postBuf)+T("\"") ) ;
+    etThread.traceF( tinBaseP , T("received :    \"")+T(postBuf)+T("\"") ) ;
     postBuf[ cbIn ] = 0 ;
     if( cbIn <= 0 ) { BLAMMO ; }
     int cbIn = recvfrom( sd , postBuf , sizeof postBuf , 0 , (sockaddr*)&info , &cbInfo ) ;
@@ -49,7 +49,7 @@ closesocket( sd ) ;
     memset( &info , 0 , sizeof info ) ;
     sockaddr_in6 info ;
     osTextT postBuf[ TUCK ] ;
-    etThread.traceF( tinP , T("waiting to receive") ) ;
+    etThread.traceF( tinBaseP , T("waiting to receive") ) ;
 {
 while( !ether )
 

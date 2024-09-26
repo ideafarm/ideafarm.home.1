@@ -10,12 +10,12 @@
 REST
 
 }
-    etThread.loafIF( tinP ) ;
+    etThread.loafIF( tinBaseP ) ;
 
     HIRE( T("port..expireTime") , 0x40104ce , 0x40000000 , 0x40104ce , 0x40000000 )
     //ALL OF THE idAdam CASE VALUES ARE OBSOLETED: 0xghij104 -> 0x401jihg -> 0x400jihg -> list.map -> 0x51000zzz
-    //ether.osSleepF( tinP , timeS1 ) ;
-    //etThread.ifcSayF( tinP , TF1(DDNUMB)+T(": timeS1: ")+TT(timeS1,0)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+    //ether.osSleepF( tinBaseP , timeS1 ) ;
+    //etThread.ifcSayF( tinBaseP , TF1(DDNUMB)+T(": timeS1: ")+TT(timeS1,0)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
     //timeS1 = 0x10bb8ab1 ;
     //countT timeS1 = TICK * 0x10 + ru ;
     //ranUniC ru( TICK ) ;
@@ -23,8 +23,8 @@ REST
 
     //U::HIRE( T("port..expireTime") , 0x40103fc , 0x1000000 , 0x40103fc , 0x1000000 )
 
-    etThread.ifcChatF( tinP , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;
-    stateS state( tinP , etThread ) ;
+    etThread.ifcChatF( tinBaseP , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO
@@ -36,41 +36,41 @@ STATE0
 
 
 }
-    if( ether && *tinP.zEtScratch && sNotesTextP && sNotesDataP && idChatSessionP && sDataP && cArgP && c8argP ) ;
+    if( ether && *((tinNormalS&)tinBaseP).zEtScratch && sNotesTextP && sNotesDataP && idChatSessionP && sDataP && cArgP && c8argP ) ;
 
     }
         }
             }
                 __1
-                __( sOrderP.cFieldF( tinP ) ) ;
+                __( sOrderP.cFieldF( tinBaseP ) ) ;
             {
             default :
             }
                 break ;
     
-                etThread.delF( tinP , psttJobType ) ;
+                etThread.delF( tinBaseP , psttJobType ) ;
     
                 else __1
                 }
                     sDataP << cBound ;
                     }
-                        tinP.zEtScratch->delF( tinP , pstt1f ) ;
+                        ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pstt1f ) ;
                         }
                             cBound ++ ;
-                            addTimeF( tinP , *tinP.zEtScratch , idComputer , 0 , 0x100 , 2 ) ;
-                            tinP.zEtScratch->diskFileOrDirDeleteF( tinP , psttc2 ) ;
+                            addTimeF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , idComputer , 0 , 0x100 , 2 ) ;
+                            ((tinNormalS&)tinBaseP).zEtScratch->diskFileOrDirDeleteF( tinBaseP , psttc2 ) ;
                         {
                         FORsTRINGSiN2( pstt1f )
-                        tinP.zEtScratch->diskFindFileOrDirOldF( tinP , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.b.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
+                        ((tinNormalS&)tinBaseP).zEtScratch->diskFindFileOrDirOldF( tinBaseP , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.b.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
 
-                        tinP.zEtScratch->delF( tinP , pstt1f ) ;
+                        ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pstt1f ) ;
                         }
                             cBound ++ ;
-                            addTimeF( tinP , *tinP.zEtScratch , idComputer , 0 , 0x40 , 1 ) ;
-                            tinP.zEtScratch->diskFileOrDirDeleteF( tinP , psttc1 ) ;
+                            addTimeF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , idComputer , 0 , 0x40 , 1 ) ;
+                            ((tinNormalS&)tinBaseP).zEtScratch->diskFileOrDirDeleteF( tinBaseP , psttc1 ) ;
                         {
                         FORsTRINGSiN1( pstt1f )
-                        tinP.zEtScratch->diskFindFileOrDirOldF( tinP , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.9.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
+                        ((tinNormalS&)tinBaseP).zEtScratch->diskFindFileOrDirOldF( tinBaseP , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.9.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
                         ZE( strokeS* , pstt1f ) ;
                     {
                     ZE( countT , cBound ) ;
@@ -80,12 +80,12 @@ STATE0
                     ZE( strokeS* , psttEmail ) ;
                     ZE( countT , idComputer ) ;
                 {
-                else if( !tinP.zEtScratch->strCompareF( tinP , psttJobType , T("!bindPaymentsToMe") ) )
+                else if( !((tinNormalS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttJobType , T("!bindPaymentsToMe") ) )
                 }
-                    etThread.strokeF( tinP , T("sData << ")+TT(timeR1,timeR2)+T("\r\n") ) ; //U::
+                    etThread.strokeF( tinBaseP , T("sData << ")+TT(timeR1,timeR2)+T("\r\n") ) ; //U::
                     sDataP << (countT&)timeR2 ;
                     sDataP << timeR1 ;
-                    queryTimeF( tinP , *tinP.zEtScratch , timeR1 , timeR2 , idComputer , idType ) ;
+                    queryTimeF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , timeR1 , timeR2 , idComputer , idType ) ;
                     ZE( sCountT , timeR2 ) ;
                     ZE( countT , timeR1 ) ;
 
@@ -94,9 +94,9 @@ STATE0
                     ZE( countT , idType ) ;
                     ZE( countT , idComputer ) ;
                 {
-                else if( !tinP.zEtScratch->strCompareF( tinP , psttJobType , T("!queryTimeRemaining") ) )
+                else if( !((tinNormalS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttJobType , T("!queryTimeRemaining") ) )
                 }
-                    addTimeF( tinP , *tinP.zEtScratch , idComputer , timeP1 , timeP2 , idType ) ;
+                    addTimeF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , idComputer , timeP1 , timeP2 , idType ) ;
 
                     sOrderP >> (countT&)timeP2 ;
                     sOrderP >> timeP1 ;
@@ -107,7 +107,7 @@ STATE0
                     ZE( countT , idType ) ;
                     ZE( countT , idComputer ) ;
                 {
-                if( !tinP.zEtScratch->strCompareF( tinP , psttJobType , T("!addTime") ) )
+                if( !((tinNormalS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttJobType , T("!addTime") ) )
 
                 sOrderP >> psttJobType ; ___( psttJobType ) ;
                 ZE( strokeS* , psttJobType ) ;
@@ -122,30 +122,30 @@ STATE0
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tinS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if(  ether && *tinP.zEtScratch && idChatSessionP && sOrderP && cArgP && c8argP ) ;
+    if(  ether && *((tinNormalS&)tinBaseP).zEtScratch && idChatSessionP && sOrderP && cArgP && c8argP ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tinS& tinP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
     time2P = timeRemaining.time2 ;
     time1P = timeRemaining.time1 ;
 
     }
-        ether.delF( tinP , pbe ) ;
+        ether.delF( tinBaseP , pbe ) ;
             
         }
             }
                 timeRemaining = timeExpires ;
-                ether.osTimeSubtractF( tinP , timeExpires.time1 , timeExpires.time2 , timeN1 , timeN2 ) ;
+                ether.osTimeSubtractF( tinBaseP , timeExpires.time1 , timeExpires.time2 , timeN1 , timeN2 ) ;
             {
             if( timeExpires.time2 > timeN2 || ( timeExpires.time2 == timeN2 && timeExpires.time1 > timeN1 ) )
             
-            ether.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            ether.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
             
@@ -153,41 +153,41 @@ voidT jobHearOrderF( tinS& tinP , etherC& ether , etherC& etThread , const count
         {
         if( pbe && cbe == sizeof( timeS ) )
             
-        ether.boxGetShadowF( tinP , pbe , cbe , tFile ) ; ___( pbe ) ;
+        ether.boxGetShadowF( tinBaseP , pbe , cbe , tFile ) ; ___( pbe ) ;
         ZE( countT , cbe ) ;
         ZE( byteT* , pbe ) ;
     {
-    if( ether.diskFileExistsF( tinP , tFile ) )
+    if( ether.diskFileExistsF( tinBaseP , tFile ) )
     TN( tFile , "" ) ; tFile = T("///ideafarm/ephemeral/domains/com/ideafarm/")+TF1(DDNUMB)+T("/timeExpire.")+TF1(idComputerP)+T(".")+TF1(idTypeP) ;
             
     timeS timeRemaining ;
 {
-voidT queryTimeF( tinS& tinP , etherC& ether , countT& time1P , sCountT& time2P , const countT idComputerP , const countT idTypeP )
+voidT queryTimeF( tinBaseS& tinBaseP , etherC& ether , countT& time1P , sCountT& time2P , const countT idComputerP , const countT idTypeP )
 
 }
-    ether.boxPutF( tinP , tFile , (byteT*)&timeExpires , sizeof timeExpires ) ;
-    ether.osTimeAddF( tinP , timeExpires.time1 , timeExpires.time2 , time1P , time2P ) ;
+    ether.boxPutF( tinBaseP , tFile , (byteT*)&timeExpires , sizeof timeExpires ) ;
+    ether.osTimeAddF( tinBaseP , timeExpires.time1 , timeExpires.time2 , time1P , time2P ) ;
 
     }
-        ether.delF( tinP , pbe ) ;
+        ether.delF( tinBaseP , pbe ) ;
         }
             if( tef.time2 > timeExpires.time2 || ( tef.time2 == timeExpires.time2 && tef.time1 > timeExpires.time1 ) ) timeExpires = tef ;
             timeS& tef = *(timeS*)pbe ;
         {
         if( pbe && cbe == sizeof( timeS ) )
     
-        ether.boxGetShadowF( tinP , pbe , cbe , tFile ) ; ___( pbe ) ;
+        ether.boxGetShadowF( tinBaseP , pbe , cbe , tFile ) ; ___( pbe ) ;
         ZE( countT , cbe ) ;
         ZE( byteT* , pbe ) ;
     {
-    if( ether.diskFileExistsF( tinP , tFile ) )
+    if( ether.diskFileExistsF( tinBaseP , tFile ) )
 
-    ether.osTimeNowF( tinP , timeExpires.time1 , timeExpires.time2 ) ;
+    ether.osTimeNowF( tinBaseP , timeExpires.time1 , timeExpires.time2 ) ;
     timeS timeExpires ;
     
     TN( tFile , "" ) ; tFile = T("///ideafarm/ephemeral/domains/com/ideafarm/")+TF1(DDNUMB)+T("/timeExpire.")+TF1(idComputerP)+T(".")+TF1(idTypeP) ;
 {
-voidT addTimeF( tinS& tinP , etherC& ether , const countT idComputerP , const countT time1P , const sCountT time2P , const countT idTypeP )
+voidT addTimeF( tinBaseS& tinBaseP , etherC& ether , const countT idComputerP , const countT time1P , const sCountT time2P , const countT idTypeP )
 
 /*1*/WAKEhIDE( "port..expireTime" )/*1*/
 /**/

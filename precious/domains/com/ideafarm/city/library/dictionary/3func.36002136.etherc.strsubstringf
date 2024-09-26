@@ -9,18 +9,18 @@
 
 }
     }
-        else           { strSubstringF( tinP , psttP , idfSave , ccBig  , psttBigP , csttExtraP ) ; ___( psttP ) ; }
-        else if( idd ) { strSubstringF( tinP , psttP , idfSave , idLathI , psttBigP , csttExtraP ) ; ___( psttP ) ; }
-             if( idd && idd == idfSave ) { strMakeF( tinP , LF , psttP , T("") , csttExtraP ) ; ___( psttP ) ; }
+        else           { strSubstringF( tinBaseP , psttP , idfSave , ccBig  , psttBigP , csttExtraP ) ; ___( psttP ) ; }
+        else if( idd ) { strSubstringF( tinBaseP , psttP , idfSave , idLathI , psttBigP , csttExtraP ) ; ___( psttP ) ; }
+             if( idd && idd == idfSave ) { strMakeF( tinBaseP , LF , psttP , T("") , csttExtraP ) ; ___( psttP ) ; }
 
         countT idLathI = idd - 1 ;_WQ
-        countT idd = strIdF( tinP , idFirstP , sttQuoteP , st_psttSmallP , idSlotP , psttBigP , bAnyP ? flSTRiD_ANY : flSTRiD_null ) ;_WQ
+        countT idd = strIdF( tinBaseP , idFirstP , sttQuoteP , st_psttSmallP , idSlotP , psttBigP , bAnyP ? flSTRiD_ANY : flSTRiD_null ) ;_WQ
         countT idfSave = idFirstP ;_WQ
     {
     else
     }
         idFirstP = 0 ;_WQ
-        strMakeF( tinP , LF , psttP , T("") ) ; //CALLER MUST TAG
+        strMakeF( tinBaseP , LF , psttP , T("") ) ; //CALLER MUST TAG
     {
     if( ccBig < idFirstP )
     countT ccBig = psttBigP->idAdam ;_WQ
@@ -32,7 +32,7 @@
         if( POOP ) return ;
         __Z( idFirstP ) ;_WQ
         __Z( st_psttSmallP ) ;_WQ
-        __( st_psttSmallP.idTypeF( tinP ) - ifcSTACKtYPE_PTR_strokeS ) ;_WQ
+        __( st_psttSmallP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_strokeS ) ;_WQ
         __Z( psttBigP ) ;_WQ
         __NZ( psttP ) ;_WQ
         if( POOP ) return ;
@@ -40,7 +40,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strSubstringF( tinS& tinP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , stackC& st_psttSmallP , countT& idSlotP , const strokeS* psttBigP , const boolT bAnyP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strSubstringF( tinBaseS& tinBaseP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , stackC& st_psttSmallP , countT& idSlotP , const strokeS* psttBigP , const boolT bAnyP , const countT csttExtraP )/*1*/
 /**/
 */
  csttExtraP

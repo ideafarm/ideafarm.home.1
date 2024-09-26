@@ -11,17 +11,17 @@ REST
 
 OSsLEEPf( 10000 ) ;
 
-etThread.strokeF( tinP , tn+S3(16.0,scOld_mmFRAMEcELLS,16.0)+S2(0,scOld_WRAPoN)+S2(0,scOld_MOVEuPrIGHTfORaDAMfRAME)+tb1+tb2+tb3+tb4+tb5+tb6+tb7+tb8 ) ;
+etThread.strokeF( tinBaseP , tn+S3(16.0,scOld_mmFRAMEcELLS,16.0)+S2(0,scOld_WRAPoN)+S2(0,scOld_MOVEuPrIGHTfORaDAMfRAME)+tb1+tb2+tb3+tb4+tb5+tb6+tb7+tb8 ) ;
 TN( tn , "" ) ;
 
-buttonF( tinP , tb8 , etThread , T("HH") , 0 ) ;
-buttonF( tinP , tb7 , etThread , T("GG") , 0 ) ;
-buttonF( tinP , tb6 , etThread , T("FF") , 0 ) ;
-buttonF( tinP , tb5 , etThread , T("EE") , 0 ) ;
-buttonF( tinP , tb4 , etThread , T("DD") , 0 ) ;
-buttonF( tinP , tb3 , etThread , T("CC") , 0 ) ;
-buttonF( tinP , tb2 , etThread , T("BB") , 0 ) ;
-buttonF( tinP , tb1 , etThread , T("AA") , T("") ) ;
+buttonF( tinBaseP , tb8 , etThread , T("HH") , 0 ) ;
+buttonF( tinBaseP , tb7 , etThread , T("GG") , 0 ) ;
+buttonF( tinBaseP , tb6 , etThread , T("FF") , 0 ) ;
+buttonF( tinBaseP , tb5 , etThread , T("EE") , 0 ) ;
+buttonF( tinBaseP , tb4 , etThread , T("DD") , 0 ) ;
+buttonF( tinBaseP , tb3 , etThread , T("CC") , 0 ) ;
+buttonF( tinBaseP , tb2 , etThread , T("BB") , 0 ) ;
+buttonF( tinBaseP , tb1 , etThread , T("AA") , T("") ) ;
 TN( tb8 , "" ) ;
 TN( tb7 , "" ) ;
 TN( tb6 , "" ) ;
@@ -35,15 +35,15 @@ TODO
 
 }
     tP = ( psttPrefixP?T(psttPrefixP):T(" ") )+SADAM(psfAll) ;
-    etherP( tinP , psf1 ) ;
+    etherP( tinBaseP , psf1 ) ;
 
     LOAD
-    etherP.delF( tinP , psttw ) ;
+    etherP.delF( tinBaseP , psttw ) ;
     *psf1 << psttw ;
     *psf1 << (countT)ifcIDtYPEfEATUREsADAM_BODY ;
-    etherP.strFuseF( tinP , psttw , S2(0,scOld_POPcOLOR) ) ;
-    etherP.strFuseF( tinP , psttw , psttBodyP ) ;
-    etherP.strMakeF( tinP , LF , psttw , S2(0x00ffff,scOld_cPUSHcOLOR) , 1 + psttBodyP->idAdam ) ; ___( psttw ) ;
+    etherP.strFuseF( tinBaseP , psttw , S2(0,scOld_POPcOLOR) ) ;
+    etherP.strFuseF( tinBaseP , psttw , psttBodyP ) ;
+    etherP.strMakeF( tinBaseP , LF , psttw , S2(0x00ffff,scOld_cPUSHcOLOR) , 1 + psttBodyP->idAdam ) ; ___( psttw ) ;
 
     LOAD
     *psf1 << (countT)ifcIDtYPEfEATUREsADAM_MOUSE ;
@@ -75,15 +75,15 @@ TODO
     *psfAll << (countT)0 ;
     *psfAll << (countT)sc_cADAM ;
 
-    etherP( tinP , psf1 , TAG( TAGiDnULL ) ) ;
-    etherP( tinP , psfAll , TAG( TAGiDnULL ) ) ;
+    etherP( tinBaseP , psf1 , TAG( TAGiDnULL ) ) ;
+    etherP( tinBaseP , psfAll , TAG( TAGiDnULL ) ) ;
     ZE( soulC* , psf1 ) ;
     ZE( soulC* , psfAll ) ;
     ZE( strokeS* , psttw ) ;
 {
-voidT buttonF( tinS& tinP , textC& tP , etherC& etherP , const strokeS* const psttBodyP , const strokeS* const psttPrefixP = 0 , const flagsT flTabP = flFEATUREsADAMaDAM_null )
+voidT buttonF( tinBaseS& tinBaseP , textC& tP , etherC& etherP , const strokeS* const psttBodyP , const strokeS* const psttPrefixP = 0 , const flagsT flTabP = flFEATUREsADAMaDAM_null )
 
-    psf1->removeAllF( tinP ) ;
+    psf1->removeAllF( tinBaseP ) ;
     *psfAll << *psf1 ;              \
                                     \
 #define LOAD                        \

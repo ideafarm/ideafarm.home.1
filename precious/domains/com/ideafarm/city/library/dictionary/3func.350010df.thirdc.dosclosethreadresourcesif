@@ -8,17 +8,17 @@
 
 
 }
-    tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
-    tinP.pag1->_thirdC_.pSwThreadHandle->freeF( tinP ) ;
-    handle.osF( ifcIDtYPEhANDLE_THREAD , *tinP.pag1->_thirdC_.pSwThreadHandle ) ;
-    handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
-    tinP.pag1->_thirdC_.lOsTid = osTidIF() ;
-    tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
+    ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->freeF( tinBaseP ) ;
+    handle.osF( ifcIDtYPEhANDLE_THREAD , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
+    handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
+    ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid = osTidIF() ;
+    ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     _IO_
     //I WORK UNCONDITIONALLY TO ENSURE NO LEAKAGE
 {
-/*1*/voidT thirdC::dosCloseThreadResourcesIF( tinS& tinP )/*1*/
+/*1*/voidT thirdC::dosCloseThreadResourcesIF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

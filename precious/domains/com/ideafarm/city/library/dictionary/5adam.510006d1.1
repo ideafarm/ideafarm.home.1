@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-ether.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+ether.traceF( tinBaseP , T("ok") ) ;
 
 }
     //}
     //    }
-    //        etThread.delF( tinP , psttw ) ;
-    //        etThread.traceF( tinP , psttw ) ;
-    //        etThread.strDecodeF( tinP , psttw , page ) ; ___( psttw ) ;
+    //        etThread.delF( tinBaseP , psttw ) ;
+    //        etThread.traceF( tinBaseP , psttw ) ;
+    //        etThread.strDecodeF( tinBaseP , psttw , page ) ; ___( psttw ) ;
     //        ZE( strokeS* , psttw ) ;
     //    {
     //    else
@@ -27,9 +27,9 @@ ether.traceF( tinP , T("ok") ) ;
     //for(;;)
 
     }
-        etThread.delF( tinP , psttj ) ;
-        /*if( !( cRem % TUCK ) )*/ etThread.traceF( tinP , psttj ) ;
-        if( pbEncoded ) { etThread.strDecodeF( tinP , psttj , pbEncoded ) ; ___( psttj ) ; }
+        etThread.delF( tinBaseP , psttj ) ;
+        /*if( !( cRem % TUCK ) )*/ etThread.traceF( tinBaseP , psttj ) ;
+        if( pbEncoded ) { etThread.strDecodeF( tinBaseP , psttj , pbEncoded ) ; ___( psttj ) ; }
         const byteT* pbEncoded = page ;
         pageC page = jotFoo[ idJot ] ;
         ZE( strokeS* , psttj ) ;
@@ -37,34 +37,34 @@ ether.traceF( tinP , T("ok") ) ;
         stHuge >> idJot ;
         ZE( countT , idJot ) ;
 
-        if( !( cRem % ( TUCK << 4 ) ) ) etThread.traceF( tinP , T("stHuge [cPlates]: ")+TF2(stHuge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        if( !( cRem % ( TUCK << 4 ) ) ) etThread.traceF( tinBaseP , T("stHuge [cPlates]: ")+TF2(stHuge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         countT cRem = stHuge ;
     {
     while( stHuge && !ether )
-    etThread.traceF( tinP , T("stHuge [cPlates]: ")+TF2(stHuge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , T("stHuge [cPlates]: ")+TF2(stHuge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-    jotC jotFoo( tinP , "doodle.foo" ) ;
+    jotC jotFoo( tinBaseP , "doodle.foo" ) ;
 {
 
 }
     }
         if( ii == - 1 ) break ;
 
-        stHuge.sinkF( tinP , countTC() , idJot , flSTACKsINK_UNIQUE , subtractStringsInJotF , (countT)&jotFoo ) ;
+        stHuge.sinkF( tinBaseP , countTC() , idJot , flSTACKsINK_UNIQUE , subtractStringsInJotF , (countT)&jotFoo ) ;
 
-        etThread.delF( tinP , pbEncoded ) ;
-        countT idJot = jotFoo.writeF( tinP , pbEncoded , cbEncoded ) ;
-        countT cbEncoded = etThread.strEncodeF( tinP , pbEncoded , tSay ) ; ___( pbEncoded ) ;
+        etThread.delF( tinBaseP , pbEncoded ) ;
+        countT idJot = jotFoo.writeF( tinBaseP , pbEncoded , cbEncoded ) ;
+        countT cbEncoded = etThread.strEncodeF( tinBaseP , pbEncoded , tSay ) ; ___( pbEncoded ) ;
         ZE( byteT* , pbEncoded ) ;
 
-        if( !( ii % ( TUCK << 4 ) ) ) etThread.traceF( tinP , T("loading [ii]: ")+tSay ) ;
+        if( !( ii % ( TUCK << 4 ) ) ) etThread.traceF( tinBaseP , T("loading [ii]: ")+tSay ) ;
         TN( tSay , "" ) ; tSay = TF3(ii,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     for( countT ii = 1 ; !ether ; ii ++ )
 
-    jotC jotFoo( tinP , "doodle.foo" , flJOTc_WRITE ) ;
+    jotC jotFoo( tinBaseP , "doodle.foo" , flJOTc_WRITE ) ;
 {
-stackC stHuge( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_countT ) ;
+stackC stHuge( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_countT ) ;
 
 TODO
 

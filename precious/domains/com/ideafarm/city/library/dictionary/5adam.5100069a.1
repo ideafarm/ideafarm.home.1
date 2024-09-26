@@ -10,89 +10,89 @@
 REST
 
 }
-    etThread.delF( tinP , psttSource ) ;
+    etThread.delF( tinBaseP , psttSource ) ;
     }
-        etThread.delF( tinP , psttNew ) ;
-        etThread.diskCopyFileF( tinP , psttNew , psttSource ) ;
-        etThread.traceF( tinP , T("copy this: ")+T(psttSource) ) ;
+        etThread.delF( tinBaseP , psttNew ) ;
+        etThread.diskCopyFileF( tinBaseP , psttNew , psttSource ) ;
+        etThread.traceF( tinBaseP , T("copy this: ")+T(psttSource) ) ;
 
-        etThread.strReplaceF( tinP , psttNew , psttSource , tOldExt , tNewExt ) ;
+        etThread.strReplaceF( tinBaseP , psttNew , psttSource , tOldExt , tNewExt ) ;
         ZE( strokeS* , psttNew ) ;
     {
     if( psttSource )
 
     }
-        etThread.delF( tinP , psttf ) ;
+        etThread.delF( tinBaseP , psttf ) ;
         }
             break ;
-            etThread.delF( tinP , psttf ) ;
-            etThread.delF( tinP , psttSource ) ;
+            etThread.delF( tinBaseP , psttf ) ;
+            etThread.delF( tinBaseP , psttSource ) ;
         {
-        if( etThread.strIdF( tinP , t600 , psttf , 1 ) )
+        if( etThread.strIdF( tinBaseP , t600 , psttf , 1 ) )
 
-        if( !psttSource ) { etThread.strMakeF( tinP , LF , psttSource , tPath+T(psttf) ) ; ___( psttSource ) ; }
+        if( !psttSource ) { etThread.strMakeF( tinBaseP , LF , psttSource , tPath+T(psttf) ) ; ___( psttSource ) ; }
 
-        etThread.traceF( tinP , T("[plate]: ")+T(psttf) ) ;
+        etThread.traceF( tinBaseP , T("[plate]: ")+T(psttf) ) ;
         swsFileNameSet >> psttf ;
         ZE( strokeS* , psttf ) ;
     {
     while( swsFileNameSet )
 
-    etThread.traceF( tinP , T("[cPlates]: ")+TF2(swsFileNameSet,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-    etThread.traceF( tinP , T("[lever]: ")+T(psttzLever) ) ;
+    etThread.traceF( tinBaseP , T("[cPlates]: ")+TF2(swsFileNameSet,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    etThread.traceF( tinBaseP , T("[lever]: ")+T(psttzLever) ) ;
 
-    if( etThread.diskFileExistsF( tinP , tLong ) ) { etThread.strMakeF( tinP , LF , psttSource , tPath+T(psttzLever) ) ; ___( psttSource ) ; }
+    if( etThread.diskFileExistsF( tinBaseP , tLong ) ) { etThread.strMakeF( tinBaseP , LF , psttSource , tPath+T(psttzLever) ) ; ___( psttSource ) ; }
     ZE( strokeS* , psttSource ) ;
     TN( tLong , "" ) ; tLong = tPath+T(psttzLever) ;
 
-    psttzLever = (strokeS*)swsFileNameSet.leverF( tinP , idf ) ;
+    psttzLever = (strokeS*)swsFileNameSet.leverF( tinBaseP , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
 TN( tNewExt , ".6.jpg" ) ; //MINIMUM LENGTH SO WON'T FAIL DUE TO NAME BEING TOO LONG
 TN( tOldExt , ".jpg" ) ;
 TN( t600 , ".600x" ) ;
 //TN( t600 , ".600x450." ) ;
-etThread.traceF( tinP , T("[cFlavors]: ")+TF2(cFlavors,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-countT cFlavors = swsFileNameSet.cFlavorsF( tinP ) ;
+etThread.traceF( tinBaseP , T("[cFlavors]: ")+TF2(cFlavors,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+countT cFlavors = swsFileNameSet.cFlavorsF( tinBaseP ) ;
 
 }
     }
         swsFileNameSet << psttFileName ; psttFileName = 0 ;
         psttzLever = psttFileName ;
 
-        etThread.traceF( tinP , T("pushing 2 [set     ]:    \"")+T(psttFileName)+T("\"") ) ;
+        etThread.traceF( tinBaseP , T("pushing 2 [set     ]:    \"")+T(psttFileName)+T("\"") ) ;
 
-        etThread.delF( tinP , psttp1 ) ;
+        etThread.delF( tinBaseP , psttp1 ) ;
 
-        if( !psttp1Lag ) { etThread.strMakeF( tinP , LF , psttp1Lag , psttp1 ) ; ___( psttp1 ) ; }
+        if( !psttp1Lag ) { etThread.strMakeF( tinBaseP , LF , psttp1Lag , psttp1 ) ; ___( psttp1 ) ; }
 
-        etThread.strSubstringF( tinP , psttp1 , idf , idl , psttFileName ) ; ___( psttp1 ) ;
+        etThread.strSubstringF( tinBaseP , psttp1 , idf , idl , psttFileName ) ; ___( psttp1 ) ;
         countT idl = idBeforeLathDot ;
         countT idf = 1 ;
         ZE( strokeS* , psttp1 ) ;
 
         if( idBeforeLathDot ) idBeforeLathDot -- ;
-        countT idBeforeLathDot = etThread.strIdF( tinP , sttDot , psttFileName , - 1 ) ;
+        countT idBeforeLathDot = etThread.strIdF( tinBaseP , sttDot , psttFileName , - 1 ) ;
     {
     else
     }
         swsFileNameSet << psttFileName ; psttFileName = 0 ;
         psttzLever = tSet ;
 
-        etThread.traceF( tinP , T("pushing 1 [set,file]:    \"")+tSet+T("\"    \"")+T(psttFileName)+T("\"") ) ;
+        etThread.traceF( tinBaseP , T("pushing 1 [set,file]:    \"")+tSet+T("\"    \"")+T(psttFileName)+T("\"") ) ;
 
-        etThread.delF( tinP , psttp2 ) ;
-        etThread.delF( tinP , psttp1 ) ;
+        etThread.delF( tinBaseP , psttp2 ) ;
+        etThread.delF( tinBaseP , psttp1 ) ;
         TN( tSet , "" ) ; tSet = T(psttp1)+sttDot+T(psttp2) ;
 
-        etThread.strSubstringF( tinP , psttp2 , idf , idl , psttFileName ) ; ___( psttp2 ) ;
+        etThread.strSubstringF( tinBaseP , psttp2 , idf , idl , psttFileName ) ; ___( psttp2 ) ;
         idl = 0 ;
         idf = idAfter ;
         ZE( strokeS* , psttp2 ) ;
 
-        if( !psttp1Lag ) { etThread.strMakeF( tinP , LF , psttp1Lag , psttp1 ) ; ___( psttp1 ) ; }
+        if( !psttp1Lag ) { etThread.strMakeF( tinBaseP , LF , psttp1Lag , psttp1 ) ; ___( psttp1 ) ; }
 
-        etThread.strSubstringF( tinP , psttp1 , idf , idl , psttFileName ) ; ___( psttp1 ) ;
+        etThread.strSubstringF( tinBaseP , psttp1 , idf , idl , psttFileName ) ; ___( psttp1 ) ;
         ZE( strokeS* , psttp1 ) ;
 
         countT idl = idHit - 1 ;
@@ -100,11 +100,11 @@ countT cFlavors = swsFileNameSet.cFlavorsF( tinP ) ;
         countT idAfter = idf ;
     {
     if( idHit > 1 && idf && idf == psttFileName->idAdam - 2 )
-    countT idHit = etThread.strIdF( tinP , idf , sttq , tSssDim , psttFileName , 0 , -1 ) ;
+    countT idHit = etThread.strIdF( tinBaseP , idf , sttq , tSssDim , psttFileName , 0 , -1 ) ;
     countT idf = 1 ;
 
     }
-        if( !( cRemain % ( TUCK << 0 ) ) ) etThread.traceF( tinP , T("etherSoilF / tKeyReport / loading swsFileNameSet and ")+TF2(cRemain,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" files remain") ) ;
+        if( !( cRemain % ( TUCK << 0 ) ) ) etThread.traceF( tinBaseP , T("etherSoilF / tKeyReport / loading swsFileNameSet and ")+TF2(cRemain,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" files remain") ) ;
         countT cRemain = stFileNames ;
     {
 
@@ -112,7 +112,7 @@ countT cFlavors = swsFileNameSet.cFlavorsF( tinP ) ;
     ZE( strokeS* , psttFileName ) ;                     //           |-----p1------||--sss--||2|
 {                                                       // idf:                              ^
 while( stFileNames )                                    // idHit:                   ^
-etThread.traceF( tinP , T("etherSoilF / tKeyReport / beginning to load swsFileNameSet and there are ")+TF2(stFileNames,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" files") ) ;
+etThread.traceF( tinBaseP , T("etherSoilF / tKeyReport / beginning to load swsFileNameSet and there are ")+TF2(stFileNames,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" files") ) ;
 ZE( strokeS* , psttp1Lag ) ;
 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 strokeS sttDot( '.' ) ;
@@ -132,16 +132,16 @@ strokeS sttDot( '.' ) ;
 
 TN( tSssDim , "" ) ; tSssDim =           // ".12345678x12345678."
 
-switchStackC swsFileNameSet( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLever , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+switchStackC swsFileNameSet( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLever , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 ZE( strokeS* , psttzLever ) ; // FILEsET NAME (THE FILE NAME WITH ANY DIMENSION CLAUSE REMOVED)
 
-etThread.diskWalkF( tinP , cDirs , cFiles , tPath , bQuit , reportCBF , pcArg ) ;
+etThread.diskWalkF( tinBaseP , cDirs , cFiles , tPath , bQuit , reportCBF , pcArg ) ;
 ZE( boolT , bQuit ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
 
 countT pcArg[] = { (countT)&etThread , (countT)&stFileNames , (countT)(strokeS*)tPrefix , (countT)(strokeS*)tSuffix , (countT)(strokeS*)tConfidential , (countT)(strokeS*)tPrivate , (countT)(strokeS*)tPhone , (countT)(strokeS*)tVideophone } ;
-stackC stFileNames(  tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC stFileNames(  tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ;
 
 TN( tPath , "///d/ideafarm.home.101/IdeaFarm (tm)/2.1. Drop Files Here To Archive Them/" ) ;
 TN( tVideophone   , "videophone" ) ;
@@ -157,36 +157,36 @@ TODO
     return 1 ;
 
     }
-            else      etherP.delF( tinP , psttPart2 ) ;
+            else      etherP.delF( tinBaseP , psttPart2 ) ;
             if( bOk ) { stFileNamesP << psttPart2 ; psttPart2 = 0 ; }
 
             bOk = 0 ;
             )
-                etherP.strIdF( tinP , psttNix4P , psttPart2 , 1 )
+                etherP.strIdF( tinBaseP , psttNix4P , psttPart2 , 1 )
                 ||
-                etherP.strIdF( tinP , psttNix3P , psttPart2 , 1 )
+                etherP.strIdF( tinBaseP , psttNix3P , psttPart2 , 1 )
                 ||
-                etherP.strIdF( tinP , psttNix2P , psttPart2 , 1 )
+                etherP.strIdF( tinBaseP , psttNix2P , psttPart2 , 1 )
                 ||
-                etherP.strIdF( tinP , psttNix1P , psttPart2 , 1 )
+                etherP.strIdF( tinBaseP , psttNix1P , psttPart2 , 1 )
             (
             if
             boolT bOk = 1 ;
 
-            etherP.strConvertToLowerCaseF( tinP , psttPart2 ) ;
-            etherP.delF( tinP , psttPart1 ) ;
+            etherP.strConvertToLowerCaseF( tinBaseP , psttPart2 ) ;
+            etherP.delF( tinBaseP , psttPart1 ) ;
             ___( psttPart2 ) ;
             ___( psttPart1 ) ;
             if( (countT)psttPart2 < TUCK ) { BLAMMO ; } //U::TO FIND A BUG
-            etherP.strBisectF( tinP , psttPart1 , psttPart2 , tFile , T("\\") , -1 , flSTRbISECT_APPENDdELIMITER ) ;
+            etherP.strBisectF( tinBaseP , psttPart1 , psttPart2 , tFile , T("\\") , -1 , flSTRbISECT_APPENDdELIMITER ) ;
             ZE( strokeS* , psttPart2 ) ;
             ZE( strokeS* , psttPart1 ) ;
     {
-    if( etherP.strIdF( tinP , idf , sttq , psttPrefixP , tFile ) && etherP.strIdF( tinP , idf , sttq , psttSuffixP , tFile ) && !idf )
+    if( etherP.strIdF( tinBaseP , idf , sttq , psttPrefixP , tFile ) && etherP.strIdF( tinBaseP , idf , sttq , psttSuffixP , tFile ) && !idf )
     countT idf = 1 ;
 
     }
-        if( !( idIn % ( TUCK << 4 ) ) ) etherP.traceF( tinP , T("reportCBF / inspecting ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" file \"")+T(postNameP)+T("\"") ) ;
+        if( !( idIn % ( TUCK << 4 ) ) ) etherP.traceF( tinBaseP , T("reportCBF / inspecting ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" file \"")+T(postNameP)+T("\"") ) ;
 
         idIn = 1 + incv02AM( idInLath ) ;
         static countT idInLath ;
@@ -206,7 +206,7 @@ TODO
     stackC&        stFileNamesP     = *(stackC*)pcArgP[ 1 ] ;
     etherC&        etherP           = *(etherC*)pcArgP[ 0 ] ;
 {
-boolT reportCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT reportCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.make.copy.of.each.archive.file.for.which.600x???.does.not.exist" )/*1*/
 /**/

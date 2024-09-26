@@ -8,26 +8,26 @@
 
 
 DONE( tmDrawHelperF )
-dec02AM( tinP.pag1->_deviceC_cHelper ) ;
+dec02AM( ((tinNormalS&)tinBaseP).pag1->_deviceC_cHelper ) ;
 }
-    //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
+    //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
 
     }
         }
-            stJob.ungrabF( tinP ) ;
+            stJob.ungrabF( tinBaseP ) ;
             }
-                stJob.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                stJob.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                //etThread.traceF( tinP , T("job done     [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etThread.traceF( tinBaseP , T("job done     [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                //if( cPendingWas == 1 && job.pSgnAllDone ) job.pSgnAllDone->giveF( tinP ) ;
+                //if( cPendingWas == 1 && job.pSgnAllDone ) job.pSgnAllDone->giveF( tinBaseP ) ;
                 countT cPendingWas = decv02AM( *job.pcPending ) ;
                 //20230329@2115: *drawJobS::pcPending IS NOW INCREMENTED BY CT'OR AND DECREMENTED BY DT'OR
 
-                grabHelper.ungrabF( tinP ) ;
-                etThread.traceF( tinP , T("ungrabbing grabHelper [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                //etThread.traceF( tinP , T("drawed  [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                etThread.osThreadSwitchingDesireF( tinP , idDesireSave ) ;
+                grabHelper.ungrabF( tinBaseP ) ;
+                etThread.traceF( tinBaseP , T("ungrabbing grabHelper [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etThread.traceF( tinBaseP , T("drawed  [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.osThreadSwitchingDesireF( tinBaseP , idDesireSave ) ;
                 }
                     BOS( WHATgbd , BOSoK , DeleteObject( oshPen ) )
                     BOS( WHATgbd , BOSoK , SelectObject( deviceP.oshDeviceMemoryF() , oshPenWas ) )
@@ -38,21 +38,21 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                     //TO FIND A BUG
 
                     BOS( WHATgbd , BOSoK , PolyPolyline( deviceP.oshDeviceMemoryF() , pPel->pPoint , (DWORD*)pPel->pcSize , pPel->cGlyph ) )
-                    HPEN oshPenWas = (HPEN)tinP.brcRaw ;
+                    HPEN oshPenWas = (HPEN)((tinNormalS&)tinBaseP).brcRaw ;
                     BOS( WHATgbd , BOSoK , SelectObject( deviceP.oshDeviceMemoryF() , oshPen ) )
-                    HPEN oshPen = (HPEN)tinP.brcRaw ;
+                    HPEN oshPen = (HPEN)((tinNormalS&)tinBaseP).brcRaw ;
                     BOS( WHATgbd , BOSoK , CreatePen( PS_SOLID , 1 , pPel->rgbOverride ? pPel->rgbOverride : job.rgb ) )
                 {
-                countT idDesireSave = etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
-                //etThread.traceF( tinP , T("drawing [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                countT idDesireSave = etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
+                //etThread.traceF( tinBaseP , T("drawing [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                etThread.traceF( tinP , T("  grabbed  grabHelper [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                grabHelper.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                etThread.traceF( tinP , T("  grabbing grabHelper [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.traceF( tinBaseP , T("  grabbed  grabHelper [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                grabHelper.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                etThread.traceF( tinBaseP , T("  grabbing grabHelper [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                //if( !( idJobMe % 2 ) ) etThread.traceF( tinP , T("") ) ;
-                //else                                          etThread.traceF( tinP , T("drawing line [idjob,cGlyph,cSizeWoth,xFrom,yFrom,xTo,yTo]:    unexpected values") ) ;
-                //if( pPel->cGlyph == 1 && *pPel->pcSize == 2 ) etThread.traceF( tinP , T("drawing line [idjob,cGlyph,cSizeWoth,rgbWas,xFrom,yFrom,xTo,yTo]:    ")+TF3(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tb4+TF2(pPel->cGlyph,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*pPel->pcSize,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4b4+(bOutside?T("        "):TF3(rgbWas,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8))+tb4b4+TF2((countT)pPel->pPoint[0].x,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)pPel->pPoint[0].y,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4b4+TF2((countT)pPel->pPoint[1].x,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)pPel->pPoint[1].y,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //if( !( idJobMe % 2 ) ) etThread.traceF( tinBaseP , T("") ) ;
+                //else                                          etThread.traceF( tinBaseP , T("drawing line [idjob,cGlyph,cSizeWoth,xFrom,yFrom,xTo,yTo]:    unexpected values") ) ;
+                //if( pPel->cGlyph == 1 && *pPel->pcSize == 2 ) etThread.traceF( tinBaseP , T("drawing line [idjob,cGlyph,cSizeWoth,rgbWas,xFrom,yFrom,xTo,yTo]:    ")+TF3(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tb4+TF2(pPel->cGlyph,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*pPel->pcSize,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4b4+(bOutside?T("        "):TF3(rgbWas,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8))+tb4b4+TF2((countT)pPel->pPoint[0].x,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)pPel->pPoint[0].y,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4b4+TF2((countT)pPel->pPoint[1].x,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)pPel->pPoint[1].y,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 //TN( tb4b4 , "    |    " ) ;
                 //TN( tb4 , "    " ) ;
                 //boolT bOutside = rgbWas == CLR_INVALID ;
@@ -174,7 +174,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                             }
                                 cOmittedMoves = cReflections = cBehindSnips = 0 ;
                                 pPel->rgbOverride = pSpace->rgbOverride ;
-                                new( 0 , tinP , (byteT*)pPel , sizeof( pelS ) ) pelS( tinP , cGlyph , cPointMax ) ;
+                                new( 0 , tinBaseP , (byteT*)pPel , sizeof( pelS ) ) pelS( tinBaseP , cGlyph , cPointMax ) ;
 
                                 cPointMax = cpOutLath + cReflections + cBehindSnips - cOmittedMoves ;
                                 countT cGlyph = cgin + ( cBehindSnips << 1 ) - cOmittedMoves ;
@@ -247,13 +247,13 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                                                 if( !bFail )
 
                                                 }
-                                                    bFail |= pSpacec->pEye->directionF( tinP , aHeading , aElevation , vEye ) ;
+                                                    bFail |= pSpacec->pEye->directionF( tinBaseP , aHeading , aElevation , vEye ) ;
                                                     aElevation = aHeading = 0 ;
 
                                                     vEye( 3 ) = in.z ;
                                                     vEye( 2 ) = in.y ;
                                                     vEye( 1 ) = in.x ;
-                                                    vectorOldC vEye( tinP , etThread ) ;
+                                                    vectorOldC vEye( tinBaseP , etThread ) ;
 
                                                     mPoint3S& in  = pPoint3[ poff[ o012 ] ] ;
 
@@ -324,14 +324,14 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                                         FEPfAILbREAKiF
 
                                         }
-                                            eye.directionF( tinP , pDirection[ offpo ].aHeading , pDirection[ offpo ].aElevation , vNow , flEYEdIRECTION_null ) ;
+                                            eye.directionF( tinBaseP , pDirection[ offpo ].aHeading , pDirection[ offpo ].aElevation , vNow , flEYEdIRECTION_null ) ;
                                             pDirection[ offpo ].aElevation = 0.0 ;
                                             pDirection[ offpo ].aHeading   = 0.0 ;
 
                                             vNow( 3 ) = ppin[ offpi ].z ;
                                             vNow( 2 ) = ppin[ offpi ].y ;
                                             vNow( 1 ) = ppin[ offpi ].x ;
-                                            vectorOldC vNow( tinP , etThread ) ;
+                                            vectorOldC vNow( tinBaseP , etThread ) ;
                                         {   // THE NEXT PHASE WILL EXPECT pDirection[ offpo ] TO BE SET FOR ALL POINTS INCLUDING THE ZE'TH POINT OF EACH GLYPH
                                         //DUPLICATE CODE: 320000f2 320000f2
                                     {
@@ -354,14 +354,14 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                                     FEPfAILbREAKiF
 
                                     }
-                                        eye.directionF( tinP , pDirection[ offpo ].aHeading , pDirection[ offpo ].aElevation , vNow , flEYEdIRECTION_null ) ;
+                                        eye.directionF( tinBaseP , pDirection[ offpo ].aHeading , pDirection[ offpo ].aElevation , vNow , flEYEdIRECTION_null ) ;
                                         pDirection[ offpo ].aElevation = 0.0 ;
                                         pDirection[ offpo ].aHeading   = 0.0 ;
 
                                         vNow( 3 ) = ppin[ offpi ].z ;
                                         vNow( 2 ) = ppin[ offpi ].y ;
                                         vNow( 1 ) = ppin[ offpi ].x ;
-                                        vectorOldC vNow( tinP , etThread ) ;
+                                        vectorOldC vNow( tinBaseP , etThread ) ;
                                     {   // THE NEXT PHASE WILL EXPECT pDirection[ offpo ] TO BE SET FOR ALL POINTS INCLUDING THE ZE'TH POINT OF EACH GLYPH
                                     //DUPLICATE CODE: 320000f2 320000f2
 
@@ -396,7 +396,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                                         FEPfAILbREAKiF
                                 
                                         }
-                                            eye.directionF( tinP , aHeading , aElevation , vTmp , vNext , flEYEdIRECTION_SNAPhEADINGtOpI ) ; // TWEAK TMP TOWARD NEXT
+                                            eye.directionF( tinBaseP , aHeading , aElevation , vTmp , vNext , flEYEdIRECTION_SNAPhEADINGtOpI ) ; // TWEAK TMP TOWARD NEXT
                                             aElevation = aHeading = 0.0 ;
                                         {
                                         if( ahNow != PI || vNext( 1 ) )  // IF NOW IS NOT DIRECTLY BEHIND OR LAG IS NOT DIRECTLY BEHIND
@@ -406,7 +406,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                                         vNext( 2 ) = ppin[ offpiNext ].y ;
                                         vNext( 1 ) = ppin[ offpiNext ].x ;
                                         const countT offpiNext = offpi + 1 ;
-                                        vectorOldC vNext( tinP , etThread ) ;
+                                        vectorOldC vNext( tinBaseP , etThread ) ;
                     
                                         }            
                                             }            
@@ -428,7 +428,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                                         FEPfAILbREAKiF
                             
                                         }
-                                            eye.directionF( tinP , aHeading , aElevation , vTmp , vLag , flEYEdIRECTION_SNAPhEADINGtOpI ) ; // TWEAK TMP TOWARD LAG
+                                            eye.directionF( tinBaseP , aHeading , aElevation , vTmp , vLag , flEYEdIRECTION_SNAPhEADINGtOpI ) ; // TWEAK TMP TOWARD LAG
                                             aElevation = aHeading = 0.0 ;
                                         {
                                         if( ahNow != PI || vLag( 1 ) )  // IF NOW IS NOT DIRECTLY BEHIND OR LAG IS NOT DIRECTLY BEHIND    U::BUG: THE CODE DOES NOT EXACTLY DO THIS BECAUSE IT DOES NOT TEST vLag( 3 ) < 0
@@ -449,7 +449,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                                     psout[ offgo ] ++ ;
                                     FEPfAILbREAKiF
                                 {
-                                if( !eye.directionF( tinP , aHeading , aElevation , vNow , flEYEdIRECTION_SNAPhEADINGtOpI ) )
+                                if( !eye.directionF( tinBaseP , aHeading , aElevation , vNow , flEYEdIRECTION_SNAPhEADINGtOpI ) )
                                 aElevation = aHeading = 0.0 ;
                                 measureT& aElevation = pDirection[ offpo ].aElevation ;
                                 measureT& aHeading   = pDirection[ offpo ].aHeading ;
@@ -457,7 +457,7 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                                 vNow( 3 ) = ppin[ offpi ].z ;
                                 vNow( 2 ) = ppin[ offpi ].y ;
                                 vNow( 1 ) = ppin[ offpi ].x ;
-                                vectorOldC vNow( tinP , etThread ) ; // "now":"the input point being handled" ; "lag":"the preceding input point" ; "next":"the next input point"
+                                vectorOldC vNow( tinBaseP , etThread ) ; // "now":"the input point being handled" ; "lag":"the preceding input point" ; "next":"the next input point"
 
                             FEP
 
@@ -475,8 +475,8 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
 
                         FEG
 
-                        vectorOldC vTmp( tinP , etThread ) ;
-                        vectorOldC vLag( tinP , etThread ) ;
+                        vectorOldC vTmp( tinBaseP , etThread ) ;
+                        vectorOldC vLag( tinBaseP , etThread ) ;
 
                         //LOGiN( "tweak " )
 
@@ -593,8 +593,8 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
 
                 //LOGrAW( "tmDrawHelperF / job received\r\n" ) ;
 
-                etThread.traceF( tinP , T("job received [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                stJob.ungrabF( tinP ) ;
+                etThread.traceF( tinBaseP , T("job received [idjob]:    ")+TF2(idJobMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                stJob.ungrabF( tinBaseP ) ;
                 countT idJobMe = 1 + incv02AM( idJobLath ) ;
                 }
                     dec02AM( drawJobS::cInstancesIF() ) ;
@@ -605,44 +605,44 @@ dec02AM( tinP.pag1->_deviceC_cHelper ) ;
                 _IO_
             {
             while( stJob )
-            stJob.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            stJob.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         else
-        if( F(tinP.pag1->_deviceC_flagsHelper) & flDEVICEchELPER_QUIT ) break ;
+        if( F(((tinNormalS&)tinBaseP).pag1->_deviceC_flagsHelper) & flDEVICEchELPER_QUIT ) break ;
 
-        //etThread.traceF( tinP , T("emptying queue") ) ;
-        etThread.traceF( tinP , T("waited  for a push [idjobLath]:    ")+TF2(idJobLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        stJob.waitF( tinP ) ;
-        etThread.traceF( tinP , T("waiting for a push [idjobLath]:    ")+TF2(idJobLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tinBaseP , T("emptying queue") ) ;
+        etThread.traceF( tinBaseP , T("waited  for a push [idjobLath]:    ")+TF2(idJobLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        stJob.waitF( tinBaseP ) ;
+        etThread.traceF( tinBaseP , T("waiting for a push [idjobLath]:    ")+TF2(idJobLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     for(;;)
     static countT idJobLath ; //U::TO FIND A BUG
     ZE( countT , cPointMax ) ;
     boolT bFreshenMaxPoints = 1 ;
 
-    grabC& grabHelper = tinP.pag5->_deviceC_grabHelper ;
+    grabC& grabHelper = ((tinNormalS&)tinBaseP).pag5->_deviceC_grabHelper ;
 
     // I USE grabHelper TO SERIALIZE MY PROCESSING OF JOBS AS NEEDED (E.G. WHEN ACTUALLY WRITING TO THE DEVICE)
     // I ASSUME THAT deviceP IS GRABBED BY THE THREAD THAT IS PUSHING JOBS
 
-    arrayC aTmp9( tinP , sizeof( directionS ) , cea ) ;
-    arrayC aTmp8( tinP , sizeof( mPoint3S   ) , cea ) ;
-    arrayC aTmp7( tinP , sizeof( mPoint3S   ) , cea ) ;
-    arrayC aTmp6( tinP , sizeof( mPoint3S   ) , cea ) ;
-    arrayC aTmp5( tinP , sizeof( mPoint3S   ) , cea ) ;
-    arrayC aTmp4( tinP , sizeof( mPoint3S   ) , cea ) ;
-    arrayC aTmp3( tinP , sizeof( mPoint3S   ) , cea ) ;
-    arrayC aTmp2( tinP , sizeof( mPoint3S   ) , cea ) ;
-    arrayC aTmp1( tinP , sizeof( mPoint3S   ) , cea ) ; //A:ASSUME: CODE ASSUMES THAT ALL OF THESE ARRAYS ARE ALWAYS KEPT AT THE SAME CAPACITY cea ; THIS IS NOT ENFORCED
+    arrayC aTmp9( tinBaseP , sizeof( directionS ) , cea ) ;
+    arrayC aTmp8( tinBaseP , sizeof( mPoint3S   ) , cea ) ;
+    arrayC aTmp7( tinBaseP , sizeof( mPoint3S   ) , cea ) ;
+    arrayC aTmp6( tinBaseP , sizeof( mPoint3S   ) , cea ) ;
+    arrayC aTmp5( tinBaseP , sizeof( mPoint3S   ) , cea ) ;
+    arrayC aTmp4( tinBaseP , sizeof( mPoint3S   ) , cea ) ;
+    arrayC aTmp3( tinBaseP , sizeof( mPoint3S   ) , cea ) ;
+    arrayC aTmp2( tinBaseP , sizeof( mPoint3S   ) , cea ) ;
+    arrayC aTmp1( tinBaseP , sizeof( mPoint3S   ) , cea ) ; //A:ASSUME: CODE ASSUMES THAT ALL OF THESE ARRAYS ARE ALWAYS KEPT AT THE SAME CAPACITY cea ; THIS IS NOT ENFORCED
     countT cea = TUCK << 4 ;
 
-    stackC& stJob = *tinP.pag1->_deviceC_pStkJob ;
+    stackC& stJob = *((tinNormalS&)tinBaseP).pag1->_deviceC_pStkJob ;
     deviceC& deviceP = *(deviceC*)pTaskP->c1 ;
 
-    //etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
+    //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
 {
 if( pTaskP && pTaskP->c1 )
-etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
+etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
 /*1*/TASK( tmDrawHelperF )/*1*/
 
 //#define ROUGH

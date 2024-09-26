@@ -11,26 +11,26 @@ REST
 
 }
     }
-        //++ s ; ether.osSleepF( tinP , TOCK >> 3 ) ;
+        //++ s ; ether.osSleepF( tinBaseP , TOCK >> 3 ) ;
     
-        adamBuyer.buyF( tinP , 1 , mBuy ) ;
+        adamBuyer.buyF( tinBaseP , 1 , mBuy ) ;
 
         ;
             : TUCK
             ? 1.0 / mPrice
         measure04T mBuy = mPrice
 
-        measure04T mPrice = adamBuyer.priceF( tinP , 1 ) ;
+        measure04T mPrice = adamBuyer.priceF( tinBaseP , 1 ) ;
 
-        ++ s ; ether.osSleepF( tinP , TICK * 0x10 ) ;
-        etThread.strokeF( tinP , T(post2) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TICK * 0x10 ) ;
+        etThread.strokeF( tinBaseP , T(post2) ) ;
         osTextT post2[] = { 'X' , 0 } ;
     {
     while( !ether && !etThread )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 etThread.osThreadF( TaRG1( tmSellF ) , (countT)&adamBuyer ) ;
-adamC adamBuyer( tinP , etThread ) ;
+adamC adamBuyer( tinBaseP , etThread ) ;
 
 BLAMMO
 
@@ -39,18 +39,18 @@ TODO
 DONE( tmSellF )
 }
     }
-        //++ s ; ether.osSleepF( tinP , TOCK >> 3 ) ;
+        //++ s ; ether.osSleepF( tinBaseP , TOCK >> 3 ) ;
     
-        adamSeller.sellF( tinP , 1 , mSell ) ;
+        adamSeller.sellF( tinBaseP , 1 , mSell ) ;
         measure04T mSell = 1.0 ;
 
-        adamBuyer.mannaF( tinP , 1.0 ) ;
+        adamBuyer.mannaF( tinBaseP , 1.0 ) ;
     {
     while( !ether && !etThread )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-    adamC adamSeller( tinP , etThread ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    adamC adamSeller( tinBaseP , etThread ) ;
 
-    adamBuyer.mannaF( tinP , 1.0 * TOCK ) ;
+    adamBuyer.mannaF( tinBaseP , 1.0 * TOCK ) ;
     adamC& adamBuyer = *(adamC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

@@ -1,5 +1,5 @@
 
-voidT hushDecryptF_1P31P31P31P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushDecryptF_1P31P31P31P3b_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -49,18 +49,18 @@ voidT hushDecryptF_1P31P31P31P3b_GF( tinS& tinP , etherC& etherP , soulC& slP , 
 
    SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
    SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
+    handleC handleP( /*GOOEY*/tinBaseP , TAG( TAGiDnULL ) ) ;
     if( !POOP ) { handleP << slP ; idArgNext ++ ; }
-    if( !POOP ) etherP.hushDecryptF( tinP , pbPlainTextP , cbPlainTextP , pbSymCypherTextP , cbSymCypherTextP , pbHushedSymKeyP , cbHushedSymKeyP , pbSeedP , cbSeedP , handleP ) ;
-    etherP.delF( tinP , pbSeedP ) ;
-    etherP.delF( tinP , pbHushedSymKeyP ) ;
-    etherP.delF( tinP , pbSymCypherTextP ) ;
+    if( !POOP ) etherP.hushDecryptF( tinBaseP , pbPlainTextP , cbPlainTextP , pbSymCypherTextP , cbSymCypherTextP , pbHushedSymKeyP , cbHushedSymKeyP , pbSeedP , cbSeedP , handleP ) ;
+    etherP.delF( tinBaseP , pbSeedP ) ;
+    etherP.delF( tinBaseP , pbHushedSymKeyP ) ;
+    etherP.delF( tinBaseP , pbSymCypherTextP ) ;
 
     if( !POOP ) slP << pbPlainTextP ;
-    etherP.delF( tinP , pbPlainTextP ) ;
+    etherP.delF( tinBaseP , pbPlainTextP ) ;
 }
 
-voidT hushMakeKeyPairF_b3_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushMakeKeyPairF_b3_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -70,7 +70,7 @@ voidT hushMakeKeyPairF_b3_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
 
    SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
    SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC hKeyPairP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
+    handleC hKeyPairP( /*GOOEY*/tinBaseP , TAG( TAGiDnULL ) ) ;
     if( !POOP ) { hKeyPairP << slP ; idArgNext ++ ; }
 
     ZE( countT , cBitsP ) ;
@@ -80,14 +80,14 @@ voidT hushMakeKeyPairF_b3_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cBitsP = HUSHbITSdEFAULT ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinP , psttNext ) ;
+                etherP.delF( tinBaseP , psttNext ) ;
             }
             else
             {
@@ -96,10 +96,10 @@ voidT hushMakeKeyPairF_b3_GF( tinS& tinP , etherC& etherP , soulC& slP , const s
             }
         }
     }
-    if( !POOP ) etherP.hushMakeKeyPairF( tinP , hKeyPairP , cBitsP ) ;
+    if( !POOP ) etherP.hushMakeKeyPairF( tinBaseP , hKeyPairP , cBitsP ) ;
 }
 
-voidT hushWothNonceF_6333b_GF( tinS& tinP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushWothNonceF_6333b_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -129,11 +129,11 @@ voidT hushWothNonceF_6333b_GF( tinS& tinP , etherC& etherP , soulC& slP , const 
 
    SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
    SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinP , TAG( TAGiDnULL ) ) ;
+    handleC handleP( /*GOOEY*/tinBaseP , TAG( TAGiDnULL ) ) ;
     if( !POOP ) { handleP << slP ; idArgNext ++ ; }
 
     ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.hushWothNonceF( tinP , bQuitP , moduloP , randomP , maxP , handleP ) ;
+    if( !POOP ) noName = etherP.hushWothNonceF( tinBaseP , bQuitP , moduloP , randomP , maxP , handleP ) ;
 
     slP << noName ;
 }

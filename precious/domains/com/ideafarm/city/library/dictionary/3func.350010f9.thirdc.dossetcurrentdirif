@@ -18,7 +18,7 @@
                 LOGrAW( postP ) ;
                 LOGrAW( "dosSetCurrentDirIF failed [postP]: \"" ) ;
             {
-            if( tinP.bosFail )
+            if( ((tinNormalS&)tinBaseP).bosFail )
 
             BOS( WHATsfw , BOSoK , SetCurrentDirectory( postP ) )
             BOSnOvALUE( WHATsfw , SetLastError( 0 ) )
@@ -40,9 +40,9 @@
     {
     IFbEcAREFUL
 
-    const countT costP = postP ? c_strlenIF( tinP , postP ) : 0 ;
+    const countT costP = postP ? c_strlenIF( tinBaseP , postP ) : 0 ;
 {
-/*1*/voidT thirdC::dosSetCurrentDirIF( tinS& tinP , const osTextT* const postP )/*1*/
+/*1*/voidT thirdC::dosSetCurrentDirIF( tinBaseS& tinBaseP , const osTextT* const postP )/*1*/
 
 #define CBbUF102012a 0x200
 
@@ -51,7 +51,7 @@
   must end with '\'
   length must be <= 0x200
  postP
- tinP
+ tinBaseP
 arguments
 it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.102012a.1.0.html\"\>definition\</A\>

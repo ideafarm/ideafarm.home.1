@@ -17,14 +17,14 @@
 
 
         __( ec ) ;
-        if( ec ) etherC::etTextIF( tinP ).traceF( tinP , T("openSslTls_writeIF / exception caught") ) ;
+        if( ec ) etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslTls_writeIF / exception caught") ) ;
         countT cbWritten  = c_openSslTls_writeIF( &ec , (SSL*)hWrapperP.cNoteF() , pbP , cbP ) ;
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )
     #ifdef __OS2__
 
-    if( !( F(tinP.flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL ) ) { BLAMMO ; }
+    if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL ) ) { BLAMMO ; }
 
     _IO_
 
@@ -38,7 +38,7 @@
     {
     IFbEcAREFUL
 {
-/**//*1*/countT thirdC::openSslTls_writeIF( tinS& tinP , const handleC& hWrapperP , const byteT* const pbP , const countT cbP )/*1*/
+/**//*1*/countT thirdC::openSslTls_writeIF( tinBaseS& tinBaseP , const handleC& hWrapperP , const byteT* const pbP , const countT cbP )/*1*/
 */
 /*
 

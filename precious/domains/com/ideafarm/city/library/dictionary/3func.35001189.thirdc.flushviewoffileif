@@ -22,14 +22,14 @@
 
         }
             }
-                third.setFileTimeF( tinP , *phFileP , &timeN , 0 , 0 ) ;
-                third.osTimeNowF( tinP , timeN.time1 , timeN.time2 ) ;
+                third.setFileTimeF( tinBaseP , *phFileP , &timeN , 0 , 0 ) ;
+                third.osTimeNowF( tinBaseP , timeN.time1 , timeN.time2 ) ;
                 timeS timeN ;
 
-                thirdC& third = *tinP.pEther ;
+                thirdC& third = *((tinNormalS&)tinBaseP).pEther ;
             {
             if( !POOP )
-            __Z( tinP.pEther ) ;
+            __Z( ((tinNormalS&)tinBaseP).pEther ) ;
             __Z( phFileP ) ;
         {
         if( !POOP && F(flagsP) & flFLUSHvIEWoFfILE_UPDATEtIMEmODIFIED )
@@ -48,7 +48,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::flushViewOfFileIF( tinS& tinP , const byteT* const pbP , const countT cbP , const flagsT flagsP , const handleC* const phFileP )/*1*/
+/*1*/voidT thirdC::flushViewOfFileIF( tinBaseS& tinBaseP , const byteT* const pbP , const countT cbP , const flagsT flagsP , const handleC* const phFileP )/*1*/
 
 /**/
 */
@@ -58,7 +58,7 @@
  cbP
   woth byte of the string of bytes to be flushed
  pbP
- tinP
+ tinBaseP
 arguments
 /*
 

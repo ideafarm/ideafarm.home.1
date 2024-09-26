@@ -10,7 +10,7 @@ cryC                    cry_e( 0xe ) ;
 processGlobal8S         processGlobal8I ;
 cryC                    cry_d( 0xd ) ;
 
-adamGlobal6S            rootAdamGlobal6I( processGlobal5I.tinVeryEarlyLateMain ) ;
+adamGlobal6S            rootAdamGlobal6I( processGlobal5I.tinNormalVeryEarlyLateMain ) ;
 cryC                    cry_c( 0xc ) ;
 processGlobal7S         processGlobal7I ;
 cryC                    cry_b( 0xb ) ;
@@ -22,10 +22,10 @@ cryC                    cry_9( 0x9 ) ;
 
 adamGlobal4S            rootAdamGlobal4I ;
 cryC                    cry_8( 0x8 ) ;
-processGlobal5S         processGlobal5I( processGlobal4I.tinVeryVeryEarlyLateMain ) ; //U::references
+processGlobal5S         processGlobal5I( processGlobal4I.tinNormalVeryVeryEarlyLateMain ) ; //U::references
 cryC                    cry_7( 0x7 ) ;
 
-adamGlobal3S            rootAdamGlobal3I( processGlobal4I.tinVeryVeryEarlyLateMain ) ;
+adamGlobal3S            rootAdamGlobal3I( processGlobal4I.tinNormalVeryVeryEarlyLateMain ) ;
 cryC                    cry_6( 0x6 ) ;
 processGlobal4S         processGlobal4I ;
 cryC                    cry_5( 0x5 ) ;
@@ -47,7 +47,7 @@ countT                  pcUtilityI[ 0x10 ] ;
 
 countT                  offFingerVerifyLocationI ; //WILL BE CALIBRATED EARLY AT EXECUTION TIME; USED BY 
 countT                  offFingerVerifyI         ; //WILL BE CALIBRATED EARLY AT EXECUTION TIME; USED BY pTinAM() pTin2AM()
-tinS*                   pTinMainI ;
+tinBaseS*                   pTinMainI ;
 boolT                   bTlsEarlyLateI = 1 ;
 countT                  _neverReffedI = (countT)_rangerTagI ; //TO AVOID A COMPILER COMPLAINT
 const osTextT           _rangerTagI[] = "!ifcRangerTag:globalImage.!module" ; //CONST TO CATCH CODE THAT WRITES TO HERE

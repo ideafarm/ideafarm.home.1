@@ -9,8 +9,8 @@
 
 REST
 
-etThread.delF( tinP , psttw ) ;
-etThread.strokeF( tinP , T("received: \"")+T(psttw)+T("\"\r\n") ) ;
+etThread.delF( tinBaseP , psttw ) ;
+etThread.strokeF( tinBaseP , T("received: \"")+T(psttw)+T("\"\r\n") ) ;
 sIn >> psttw ; ___( psttw ) ;
 ZE( strokeS* , psttw ) ;
 
@@ -19,29 +19,29 @@ sIn >> idCmd ;
 ZE( countT , idCmd ) ;
 
 }
-    sChat2.writeF( tinP , soulo3 ) ;
-    soulC soulo3( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
+    sChat2.writeF( tinBaseP , soulo3 ) ;
+    soulC soulo3( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
 
-    sChat2.readF( tinP , sIn ) ;
-    sChat2.writeF( tinP , sBig ) ;
+    sChat2.readF( tinBaseP , sIn ) ;
+    sChat2.writeF( tinBaseP , sBig ) ;
 
-    sChat2.connectF( tinP ) ;
-    socketC sChat2( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sChat2.connectF( tinBaseP ) ;
+    socketC sChat2( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 {
-soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 }
-    etThread.ifcChatRelayPackageF( tinP , sBig , sSmall , DDNUMB , TF1(DDNUMB)+T("/example.simplest.ifcChatF") ) ;
+    etThread.ifcChatRelayPackageF( tinBaseP , sBig , sSmall , DDNUMB , TF1(DDNUMB)+T("/example.simplest.ifcChatF") ) ;
 
-    etThread.strokeF( tinP , T("sent: \"")+tSay+T("\"\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("sent: \"")+tSay+T("\"\r\n") ) ;
     sSmall << (strokeS*)tSay ;
-    soulC sSmall( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ECHO ) ;
+    soulC sSmall( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ECHO ) ;
 
     TN( tSay , "hello from d240104!" ) ;
 {
-soulC sBig( tinP , TAG( TAGiDnULL ) ) ;
+soulC sBig( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.ifcChatF( tinP , cArg , DDNUMB , chatHandlerF ) ;
+etThread.ifcChatF( tinBaseP , cArg , DDNUMB , chatHandlerF ) ;
 ZE( countT , cArg ) ;
 
 TODO
@@ -60,20 +60,20 @@ TODO
                 case ifcIDcMDsESSION_BYE :
                 }
                     break ;
-                    psoP->writeF( tinP , sInP ) ;
+                    psoP->writeF( tinBaseP , sInP ) ;
                 {
                 case ifcIDcMDsESSION_ECHO :
             {
-            switch( sInP.cFieldF( tinP ) )
+            switch( sInP.cFieldF( tinBaseP ) )
         {
-        if( !etThread && !*tinP.zEtScratch )
-        psoP->readF( tinP , sInP ) ;
-        soulC sInP( tinP , TAG( TAGiDnULL ) ) ;
+        if( !etThread && !*((tinNormalS&)tinBaseP).zEtScratch )
+        psoP->readF( tinBaseP , sInP ) ;
+        soulC sInP( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    while( !ether && !etThread && !*tinP.zEtScratch && !bBye )
+    while( !ether && !etThread && !*((tinNormalS&)tinBaseP).zEtScratch && !bBye )
     ZE( boolT , bBye ) ;
 {
-voidT chatHandlerF( tinS& tinP , etherC& ether , etherC& etThread , socketC*& psoP , const countT idChatSessionP , countT cArgP , const countT idAdamHandlingP )
+voidT chatHandlerF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , socketC*& psoP , const countT idChatSessionP , countT cArgP , const countT idAdamHandlingP )
 
 /*1*/WAKEhIDE( "example.simplest.ifcChatF" )/*1*/
 /**/

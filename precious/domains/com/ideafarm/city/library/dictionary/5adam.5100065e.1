@@ -34,13 +34,13 @@ REST
         strcpy( postTo , "\"" ) ;
         osTextT postTo[ TUCK ] ;
 
-        osTextT post2[] = { (osTextT)tinP.brcRaw , 0 } ;
+        osTextT post2[] = { (osTextT)((tinNormalS&)tinBaseP).brcRaw , 0 } ;
         BOSdOnOTtEST( WHATgbo , getche() )
 
         BOSdOnOTtEST( WHATgbo , putch( ':' ) )
         }
             BOSdOnOTtEST( WHATgbo , getche() )
-            if( !tinP.brcRaw ) break ;
+            if( !((tinNormalS&)tinBaseP).brcRaw ) break ;
             BOSdOnOTtEST( WHATgbo , kbhit() )
         {
         for(;;)
@@ -57,7 +57,7 @@ REST
         CONoUTrAW5( "[cDone,cRemaining]: " , offi , " " , cFiles - offi , "    " ) ;
         CONoUTrAW( "\r\n" ) ;
     {
-    if( etThread.diskFileExistsF( tinP , T( ifFileNameC( tinP , etThread , postFrom ) ) ) )
+    if( etThread.diskFileExistsF( tinBaseP , T( ifFileNameC( tinBaseP , etThread , postFrom ) ) ) )
 
     BOSdOnOTtEST( WHATgbo , strcat( postFrom , ppostShort[ offi ] ) )
     strcpy( postFrom , postPath ) ;

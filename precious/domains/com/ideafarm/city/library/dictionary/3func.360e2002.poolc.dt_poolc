@@ -10,12 +10,12 @@
 }
     }
         }
-            thirdC::c_memsetIF( tinP , pReg->postPoolName , sizeof pReg->postPoolName ) ;
-            pReg->resetF( tinP ) ;
+            thirdC::c_memsetIF( tinBaseP , pReg->postPoolName , sizeof pReg->postPoolName ) ;
+            pReg->resetF( tinBaseP ) ;
             pReg->flagsi = fliPOOLrEGISTRATIONs_GRABBED ;
         {
         if( pReg && 1 == decv02AM( pReg->cRefPoolReg ) )                       // MUST BE DONE AFTER sexC ARE DT
-        grabitC grabx( tinP , TAG( TAGiDnULL ) , (byteT*)&pReg->flagsi , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_8POOL4dT ) ;
+        grabitC grabx( tinBaseP , TAG( TAGiDnULL ) , (byteT*)&pReg->flagsi , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_8POOL4dT ) ;
     {
 
     }
@@ -30,10 +30,10 @@
                 break ;
                 pReg = pRegs + offr ;
             {
-            if( pRegs[ offr ].flagsi & fliPOOLrEGISTRATIONs_FORMATTED && !thirdC::c_strcmpIF( tinP , pRegs[ offr ].postPoolName , guts.postName ) )
+            if( pRegs[ offr ].flagsi & fliPOOLrEGISTRATIONs_FORMATTED && !thirdC::c_strcmpIF( tinBaseP , pRegs[ offr ].postPoolName , guts.postName ) )
         {
         for( offr = 0 ; offr < CpOOLrEGISTRATIONSmAX ; offr ++ )
-        grabitC grabx( tinP , TAG( TAGiDnULL ) , (byteT*)&home.fliGrab , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_8POOL3dT ) ;
+        grabitC grabx( tinBaseP , TAG( TAGiDnULL ) , (byteT*)&home.fliGrab , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_8POOL3dT ) ;
         ZE( countT , offr ) ;
         poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
 
@@ -56,7 +56,7 @@
     //CONoUTrAW( guts.postName ) ;
     //CONoUTrAW( "~poolC/-:  " ) ;
 
-    processGlobal5I._poolC_grab_pPool.ungrabF( tinP ) ;
+    processGlobal5I._poolC_grab_pPool.ungrabF( tinBaseP ) ;
 
     }
         __Z( pCursor ) ;
@@ -77,7 +77,7 @@
 
     if( guts.idStateSpace && ! -- processGlobal2I._poolC_cBacked ) processGlobal2I._poolC_bQuitFlushing ++ ;
 
-    processGlobal5I._poolC_grab_pPool.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    processGlobal5I._poolC_grab_pPool.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         DELzOMBIE( pDoomed ) ;
@@ -85,50 +85,50 @@
     {
     if( F(flagsInstance) & flPOOLiNSTANCE_FACEcONSTRUCTED )
 
-    if( tinP.pPoolUse == this ) tinP.pPoolUse = 0 ;
+    if( ((tinNormalS&)tinBaseP).pPoolUse == this ) ((tinNormalS&)tinBaseP).pPoolUse = 0 ;
 
-    else if( tinP.pag1->pPoolAdamTemp == this ) tinP.pag1->pPoolAdamTemp = 0 ;
-    else if( tinP.pag1->pPoolHomeTemp == this ) tinP.pag1->pPoolHomeTemp = 0 ;
-    else if( tinP.pag1->pPoolScratch  == this ) tinP.pag1->pPoolScratch  = 0 ;
-    else if( tinP.pag1->pPoolAdamPerm == this ) tinP.pag1->pPoolAdamPerm = 0 ;
-         if( tinP.pag1->pPoolHomePerm == this ) tinP.pag1->pPoolHomePerm = 0 ;
+    else if( ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp == this ) ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp = 0 ;
+    else if( ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp == this ) ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp = 0 ;
+    else if( ((tinNormalS&)tinBaseP).pag1->pPoolScratch  == this ) ((tinNormalS&)tinBaseP).pag1->pPoolScratch  = 0 ;
+    else if( ((tinNormalS&)tinBaseP).pag1->pPoolAdamPerm == this ) ((tinNormalS&)tinBaseP).pag1->pPoolAdamPerm = 0 ;
+         if( ((tinNormalS&)tinBaseP).pag1->pPoolHomePerm == this ) ((tinNormalS&)tinBaseP).pag1->pPoolHomePerm = 0 ;
 
     }
-        DELzOMBIE( tinP.pag1->pPoolHomePerm ) ;
-        DELzOMBIE( tinP.pag1->pPoolAdamPerm ) ;
-        DELzOMBIE( tinP.pag1->pPoolScratch  ) ;
-        DELzOMBIE( tinP.pag1->pPoolHomeTemp ) ;
+        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->pPoolHomePerm ) ;
+        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->pPoolAdamPerm ) ;
+        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->pPoolScratch  ) ;
+        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp ) ;
     {
-    if( tinP.pag1->pPoolAdamTemp == this ) // THIS IS OK BECAUSE ADAMteMP CONTAINS ITS OWN INDEX
+    if( ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp == this ) // THIS IS OK BECAUSE ADAMteMP CONTAINS ITS OWN INDEX
 
     }
         }
             THREADmODE3rESTORE
             }
                 }
-                    if( ~hList ) listC::unIndexIF( tinP , hList ) ;
+                    if( ~hList ) listC::unIndexIF( tinBaseP , hList ) ;
 
-                    listC::openIF( tinP , hList , pczName , flLISToPEN_IFeXISTS ) ;
+                    listC::openIF( tinBaseP , hList , pczName , flLISToPEN_IFeXISTS ) ;
                     countT pczName[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , 0 } ;
-                    handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                    handleC hList( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
 
-                    puseC puseMe( tinP , *this ) ;
+                    puseC puseMe( tinBaseP , *this ) ;
                 {
             {
             if( bIndexed )
 
             }
-                bIndexed = listC::isIndexedIF( tinP ) ; // IF I JUST DELETED LISTnAMEsYS_ROOT, THE ASSOCIATED INDEX WILL NO LONGER EXIST
-                puseC puseMe( tinP , *this ) ;
+                bIndexed = listC::isIndexedIF( tinBaseP ) ; // IF I JUST DELETED LISTnAMEsYS_ROOT, THE ASSOCIATED INDEX WILL NO LONGER EXIST
+                puseC puseMe( tinBaseP , *this ) ;
             {
             ZE( boolT , bIndexed ) ;
 
             }
                 DELzOMBIE( pFace ) ;
                 }
-                    listC::deleteIF( tinP , pczName ) ;
+                    listC::deleteIF( tinBaseP , pczName ) ;
                     countT pczName[] = { LISTnAMEsYS_ROOT , 0 } ;
-                    puseC puseMe( tinP , *this ) ;
+                    puseC puseMe( tinBaseP , *this ) ;
                 {
             {
             if( !guts.idStateSpace )
@@ -139,14 +139,14 @@
     {
 
     }
-        stPoolNames.ungrabF( tinP ) ;
-        if( ids ) stPoolNames.extractF( 0 , tinP ) ;
-        stPoolNames.sinkF( tinP , ids , (countT)guts.postName , flSTACKsINK_QUERY ) ;
-        stPoolNames.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        stPoolNames.ungrabF( tinBaseP ) ;
+        if( ids ) stPoolNames.extractF( 0 , tinBaseP ) ;
+        stPoolNames.sinkF( tinBaseP , ids , (countT)guts.postName , flSTACKsINK_QUERY ) ;
+        stPoolNames.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         ZE( countT , ids ) ;
-        stackC& stPoolNames = tinP.pEther->ifcStkPoolNamesF( tinP ) ;
+        stackC& stPoolNames = ((tinNormalS&)tinBaseP).pEther->ifcStkPoolNamesF( tinBaseP ) ;
     {
-    if( tinP.pEther )               // IF !tinP.pEther THEN I WILL NOT BE DEREGISTERED, BUT THAT DOES NOT MATTER BECAUSE tmWatchF IS GONE
+    if( ((tinNormalS&)tinBaseP).pEther )               // IF !((tinNormalS&)tinBaseP).pEther THEN I WILL NOT BE DEREGISTERED, BUT THAT DOES NOT MATTER BECAUSE tmWatchF IS GONE
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // UNREGISTER MY NAME SO THAT tmWatchF CAN SEE WHICH poolC NAMES THIS PROCESSES IS USING
@@ -190,7 +190,7 @@ poolC::face_poolC_S::~face_poolC_S( voidT )
                 if( rc == 2 ) bDone = 1 ;
             {
             if( rc )
-            countT rc = ppSlots[ offs ]->deleteTopSexF( tinP ) ;
+            countT rc = ppSlots[ offs ]->deleteTopSexF( tinBaseP ) ;
             cTried ++ ;
 
             if( !ppSlots[ offs ] ) continue ;

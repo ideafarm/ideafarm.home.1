@@ -8,8 +8,8 @@
 
 
 }
-    strMakeF( tinP , LF , psttP , tAll ) ; // CALLER MUST TAG ___( psttP ) ;
-    delF( tinP , psttTime ) ;
+    strMakeF( tinBaseP , LF , psttP , tAll ) ; // CALLER MUST TAG ___( psttP ) ;
+    delF( tinBaseP , psttTime ) ;
     ;
 
         +tDot+TF3(tid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
@@ -20,16 +20,16 @@
     TN( tAll , "" ) ; tAll =
     TN( tDot , "." ) ;
 
-    countT tid = osThreadIdF( tinP ) ;
-    countT pid = osProcessIdF( tinP ) ;
-    countT cid = diskIdF( tinP , T("///c") ) ;
+    countT tid = osThreadIdF( tinBaseP ) ;
+    countT pid = osProcessIdF( tinBaseP ) ;
+    countT cid = diskIdF( tinBaseP , T("///c") ) ;
 
     }
-        strMakeF( tinP , LF , psttTime , TF3((countT)time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( psttTime ) ;
+        strMakeF( tinBaseP , LF , psttTime , TF3((countT)time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( psttTime ) ;
 
-        //strFromTimeF( tinP , psttTime , time1 , time2 , 1 , 8 , S1C('.') , 0 , ifcIDfORMATtIME_NUMERIC , flFORMAT_FOREIGN ) ; //U::BUG: 20150913@1627: OBSERVED TO BE NONMONOTONIC
+        //strFromTimeF( tinBaseP , psttTime , time1 , time2 , 1 , 8 , S1C('.') , 0 , ifcIDfORMATtIME_NUMERIC , flFORMAT_FOREIGN ) ; //U::BUG: 20150913@1627: OBSERVED TO BE NONMONOTONIC
 
-        osTimeNowF( tinP , time1 , time2 ) ;
+        osTimeNowF( tinBaseP , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
     {
@@ -45,7 +45,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strUniqueF( tinS& tinP , strokeS*& psttP )/*1*/
+/*1*/voidT etherC::strUniqueF( tinBaseS& tinBaseP , strokeS*& psttP )/*1*/
 
 //U: REWRITE THIS TO USE FOREIGN DIGIT ORDERING AND TO EXPLOIT ALL APPLICABLE flFORMAT FLAGS (E.G. FILLzE)
 

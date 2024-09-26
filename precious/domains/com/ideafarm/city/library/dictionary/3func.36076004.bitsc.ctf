@@ -20,21 +20,21 @@
     {
     if( pcIdSetP )
 
-    else      thirdC::c_memsetIF(        pbBits       , cbMe ) ; // tinP NOT USED TO PREVENT CALL OF _IO_ WHICH BLOWS STACK DURING INOUT TRACE
-    if( pbP ) thirdC::c_memcpyIF( tinP , pbBits , pbP , cbMe ) ;
+    else      thirdC::c_memsetIF(        pbBits       , cbMe ) ; // tinBaseP NOT USED TO PREVENT CALL OF _IO_ WHICH BLOWS STACK DURING INOUT TRACE
+    if( pbP ) thirdC::c_memcpyIF( tinBaseP , pbBits , pbP , cbMe ) ;
 
     //}
     //    LOGrAW( ostoSay ) ;
-    //    //etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+    //    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
     //    OStEXTC(  ostoSay , pbBits , 0 ) ;
     //    OStEXTAK( ostoSay , "\r\n+" ) ;
     //    OStEXT(   ostoSay , TUCK << 2 ) ;
     //{
-    //if( tinP.pc Utility[ 0 ] )
+    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 
-    //tinP.pc Utility[ 1 ] -- ;
-    pbBits = tinP.tlsNewF( LF , cbMe ) ;
-    //tinP.pc Utility[ 1 ] ++ ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 1 ] -- ;
+    pbBits = ((tinNormalS&)tinBaseP).tlsNewF( LF , cbMe ) ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 1 ] ++ ;
 
     if( !cBits || !cbMe ) { BLAMMO ; }
     //IN
@@ -44,7 +44,7 @@
     {
     if( idMe == 0xffffffff )
 {
-/*1*/voidT bitsC::ctF( tinS& tinP , const byteT* const pbP , const countT* pcIdSetP )/*1*/
+/*1*/voidT bitsC::ctF( tinBaseS& tinBaseP , const byteT* const pbP , const countT* pcIdSetP )/*1*/
 /**/
 */
 /*

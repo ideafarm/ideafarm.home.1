@@ -8,14 +8,14 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 #endif
 
 }
-    etThread.delF( tinP , pc2o ) ;
+    etThread.delF( tinBaseP , pc2o ) ;
     }
-        etThread.delF( tinP , psttEmail ) ;
+        etThread.delF( tinBaseP , psttEmail ) ;
         strokeS* psttEmail = (strokeS*)pc2o->c1 ;
     {
     if( pc2o )
@@ -24,37 +24,37 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 {
 while( stOrders )
 
-bCampaign.ungrabF( tinP ) ;
-campaignPurgeF( tinP , etThread , pbFace , cbFace , pbWindow , cbWindow , stReplyImages , h_stReplyImages ) ;
-bCampaign.grabF( tinP , TAG( TAGiDnULL ) ) ;
+bCampaign.ungrabF( tinBaseP ) ;
+campaignPurgeF( tinBaseP , etThread , pbFace , cbFace , pbWindow , cbWindow , stReplyImages , h_stReplyImages ) ;
+bCampaign.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.delF( tinP , postnu ) ;
+etThread.delF( tinBaseP , postnu ) ;
 
 }
-    etThread.osSleepF( tinP , TUCK * 0x40 ) ;
-    etThread.strokeF( tinP , T("\r" BLANK79 "\r")+TF1(etThread.os_cAllKidThreadsI_IF(tinP)-cKidsBefore)+T(" clients are currently being served") ) ;
+    etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+    etThread.strokeF( tinBaseP , T("\r" BLANK79 "\r")+TF1(etThread.os_cAllKidThreadsI_IF(tinBaseP)-cKidsBefore)+T(" clients are currently being served") ) ;
 {
-while( etThread.os_cAllKidThreadsI_IF( tinP ) > cKidsBefore )
+while( etThread.os_cAllKidThreadsI_IF( tinBaseP ) > cKidsBefore )
 
 }
     etThread = 0 ;
     }
-        else if( pso ) { ZE( countT , tid ) ; etThread.osThreadF( tinP , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pcp , (countT)pso ) ; }
+        else if( pso ) { ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pcp , (countT)pso ) ; }
         if( etThread )    { DEL( pso ) ; }
-        etThread.strokeF( tinP , T("\r")+TF1(++idClient) ) ;
-        sock.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ;
+        etThread.strokeF( tinBaseP , T("\r")+TF1(++idClient) ) ;
+        sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
     {
     while( !ether && !etThread )
     ZE( countT , idClient ) ;
-    sock.listenF( tinP ) ;
-    sock.bindF( tinP , 8006 ) ;
-    socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.listenF( tinBaseP ) ;
+    sock.bindF( tinBaseP , 8006 ) ;
+    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 {
 while( !ether && !etThread )
-const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinP ) ;
+const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinBaseP ) ;
 
 } ;
     (countT)&cUpdates 
@@ -74,34 +74,34 @@ const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinP ) ;
 {
 const countT pcp[] =
 
-stackC stOrders( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ;
+stackC stOrders( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ;
 
 ZE( countT , h_stReplyImages ) ;
 ZE( countT , cUpdates ) ;
 ZE( countT , cWindows ) ;
 ZE( countT , cImages ) ;
 
-etThread.newF( tinP , LF , postnu , COSTnu ) ;
+etThread.newF( tinBaseP , LF , postnu , COSTnu ) ;
 ZE( osTextT* , postnu ) ;
 
-bCampaign.ungrabF( tinP ) ;
-campaignLoadF( tinP , etThread , pbFace , cbFace , pbWindow , cbWindow , stReplyImages , idCampaign ) ;
-bCampaign.grabF( tinP , TAG( TAGiDnULL ) ) ;
-stackC stReplyImages( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ;
+bCampaign.ungrabF( tinBaseP ) ;
+campaignLoadF( tinBaseP , etThread , pbFace , cbFace , pbWindow , cbWindow , stReplyImages , idCampaign ) ;
+bCampaign.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+stackC stReplyImages( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ;
 ZE( countT , cbWindow ) ;
 ZE( byteT* , pbWindow ) ;
 ZE( countT , cbFace ) ;
 ZE( byteT* , pbFace ) ;
-batonC bCampaign( tinP , TAG( TAGiDnULL ) ) ;
+batonC bCampaign( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 LAUNCHhEAReNTER( tmHearEnterF , 8006 ) ;
 
 #endif
 //U:
 
-etThread.delF( tinP , pstth ) ;
-countT idCampaign = etThread.strDigitsToSCountF( tinP , pstth , 0xa , 1 ) ;
-etThread.faceHearF( tinP , pstth ) ; ___( pstth ) ;
+etThread.delF( tinBaseP , pstth ) ;
+countT idCampaign = etThread.strDigitsToSCountF( tinBaseP , pstth , 0xa , 1 ) ;
+etThread.faceHearF( tinBaseP , pstth ) ; ___( pstth ) ;
 ZE( strokeS* , pstth ) ;
 
 #if defined( NEVERdEFINED )
@@ -109,7 +109,7 @@ ZE( strokeS* , pstth ) ;
 
 countT idCampaign = 1 ; //U:
 
-etThread.strokeF( tinP , T("MediaPlex, Incorporated\r\nhttp://www.mediaplex.com\r\n\r\nAdvertising Campaign Server\r\n\r\nEach citizen of this class executes a single, specific advertising campaign.\r\n\r\n" /*U:"Please enter the id of the campaign to execute: " */) ) ;
+etThread.strokeF( tinBaseP , T("MediaPlex, Incorporated\r\nhttp://www.mediaplex.com\r\n\r\nAdvertising Campaign Server\r\n\r\nEach citizen of this class executes a single, specific advertising campaign.\r\n\r\n" /*U:"Please enter the id of the campaign to execute: " */) ) ;
 
 #if defined( NEVERdEFINED )
 
@@ -119,24 +119,24 @@ DONE( tmServeF )
 }
     DEL( pso ) ;
     etThread = 0 ;
-    if( !bAbort ) pso->readF( tinP , postnu , COSTnu ) ;
+    if( !bAbort ) pso->readF( tinBaseP , postnu , COSTnu ) ;
 
     }
         default  : { bAbort = 1 ; break ; }
         }
             break ;
             cWindows ++ ;
-            bCampaign.ungrabF( tinP ) ;
-            pso->writeF( tinP , pbWindow , cbWindow ) ;
-            bCampaign.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            bCampaign.ungrabF( tinBaseP ) ;
+            pso->writeF( tinBaseP , pbWindow , cbWindow ) ;
+            bCampaign.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         case 'w' :
         }
             break ;
             }
-                etThread.delF( tinP , postr ) ;
-                pso->writeF( tinP , postr , costr ) ;
-                countT costr = etThread.strMakeF( tinP , LF , postr , T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tinP),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
+                etThread.delF( tinBaseP , postr ) ;
+                pso->writeF( tinBaseP , postr , costr ) ;
+                countT costr = etThread.strMakeF( tinBaseP , LF , postr , T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tinBaseP),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
                 ZE( osTextT* , postr ) ;
 
                 ) ;
@@ -150,20 +150,20 @@ DONE( tmServeF )
             {
 
             cUpdates ++ ;
-            bCampaign.ungrabF( tinP ) ;
-            campaignLoadF(  tinP , etThread , pbFace , cbFace , pbWindow , cbWindow , stReplyImages , idCampaign ) ;
-            campaignPurgeF( tinP , etThread , pbFace , cbFace , pbWindow , cbWindow , stReplyImages , h_stReplyImages ) ;
-            bCampaign.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            bCampaign.ungrabF( tinBaseP ) ;
+            campaignLoadF(  tinBaseP , etThread , pbFace , cbFace , pbWindow , cbWindow , stReplyImages , idCampaign ) ;
+            campaignPurgeF( tinBaseP , etThread , pbFace , cbFace , pbWindow , cbWindow , stReplyImages , h_stReplyImages ) ;
+            bCampaign.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         case 'u' :
         }
             break ;
-            etThread.delF( tinP , postr ) ;
-            pso->writeF( tinP , postr , costr ) ;
-            countT costr = etThread.strMakeF( tinP , LF , postr , T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tinP),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
+            etThread.delF( tinBaseP , postr ) ;
+            pso->writeF( tinBaseP , postr , costr ) ;
+            countT costr = etThread.strMakeF( tinBaseP , LF , postr , T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tinBaseP),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
             ZE( osTextT* , postr ) ;
 
-            etThread.delF( tinP , psttOrderDetail ) ;
+            etThread.delF( tinBaseP , psttOrderDetail ) ;
 
             ;
 
@@ -222,27 +222,27 @@ DONE( tmServeF )
 
             TN( tTitle ,
 
-            bCampaign.ungrabF( tinP ) ;
+            bCampaign.ungrabF( tinBaseP ) ;
 
-            else { etThread.strFuseF( tinP , psttOrderDetail , T("(none)\r\n") ) ; ___( psttOrderDetail ) ; }
+            else { etThread.strFuseF( tinBaseP , psttOrderDetail , T("(none)\r\n") ) ; ___( psttOrderDetail ) ; }
             }
-                etThread.strFuseF( tinP , psttOrderDetail , T("\r\n")+TF4(cQtyTotal,flFORMAT_NObASE,0xc,0xa)+T("    total quantity ordered") ) ; ___( psttOrderDetail ) ;
+                etThread.strFuseF( tinBaseP , psttOrderDetail , T("\r\n")+TF4(cQtyTotal,flFORMAT_NObASE,0xc,0xa)+T("    total quantity ordered") ) ; ___( psttOrderDetail ) ;
 
                 while( handle ) ;
                 }
                     }
                         cQtyTotal += pc2o->c2 ;
-                        etThread.strFuseF( tinP , psttOrderDetail , TF4(pc2o->c2,flFORMAT_NObASE,12,0xa)+T("    \"")+T(psttEmail)+T("\"\r\n") ) ; ___( psttOrderDetail ) ;
+                        etThread.strFuseF( tinBaseP , psttOrderDetail , TF4(pc2o->c2,flFORMAT_NObASE,12,0xa)+T("    \"")+T(psttEmail)+T("\"\r\n") ) ; ___( psttOrderDetail ) ;
                         strokeS* psttEmail = (strokeS*)pc2o->c1 ;
                     {
                     if( pc2o )
-                    count2S* pc2o = (count2S*)stOrders.downF( tinP , handle ) ;
+                    count2S* pc2o = (count2S*)stOrders.downF( tinBaseP , handle ) ;
                 {
                 do
-                handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                 ZE( countT , cQtyTotal ) ;
-                etThread.strMakeF( tinP , LF , psttOrderDetail , T("Order detail:\r\n\r\n") , cOrders * 0x100 ) ; ___( psttOrderDetail ) ;
+                etThread.strMakeF( tinBaseP , LF , psttOrderDetail , T("Order detail:\r\n\r\n") , cOrders * 0x100 ) ; ___( psttOrderDetail ) ;
             {
             if( stOrders )
             ZE( strokeS* , psttOrderDetail ) ;
@@ -252,16 +252,16 @@ DONE( tmServeF )
             countT cWindowsCopy = cWindows ;
             countT cImagesCopy = cImages ;
 
-            bCampaign.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            bCampaign.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         case 'r' :
         }
             break ;
 
             }
-                etThread.delF( tinP , postr ) ;
-                pso->writeF( tinP , postr , costr ) ;
-                countT costr = etThread.strMakeF( tinP , LF , postr , T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tinP),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
+                etThread.delF( tinBaseP , postr ) ;
+                pso->writeF( tinBaseP , postr , costr ) ;
+                countT costr = etThread.strMakeF( tinBaseP , LF , postr , T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tinBaseP),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
                 ZE( osTextT* , postr ) ;
 
                 ;
@@ -284,32 +284,32 @@ DONE( tmServeF )
 
             }
                 }
-                    bCampaign.ungrabF( tinP ) ;
+                    bCampaign.ungrabF( tinBaseP ) ;
                     stOrders << pc2o ;
-                    bCampaign.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    bCampaign.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                     pc2o->c2 = cOrdered ;
                     pc2o->c1 = (countT)psttEmail ;
                 {
                 if( pc2o )
-                etThread.newF( tinP , LF , pc2o ) ; ___( pc2o ) ;
+                etThread.newF( tinBaseP , LF , pc2o ) ; ___( pc2o ) ;
                 ZE( count2S* , pc2o ) ;
             {
 
             }
-                etThread.delF( tinP , psttl ) ;
+                etThread.delF( tinBaseP , psttl ) ;
 
                 }
-                    etThread.delF( tinP , psttw ) ;
-                    cOrdered = etThread.strDigitsToSCountF( tinP , psttw , 0xa , 1 ) ;
-                    etThread.strSubstringF( tinP , psttw , idf , sttq , T(" HTTP/") , psttl ) ; ___( psttw ) ;
+                    etThread.delF( tinBaseP , psttw ) ;
+                    cOrdered = etThread.strDigitsToSCountF( tinBaseP , psttw , 0xa , 1 ) ;
+                    etThread.strSubstringF( tinBaseP , psttw , idf , sttq , T(" HTTP/") , psttl ) ; ___( psttw ) ;
                     ZE( strokeS* , psttw ) ;
-                    etThread.strSubstringF( tinP , psttEmail , idf , sttq , T("&qty=") , psttl ) ; ___( psttEmail ) ;
+                    etThread.strSubstringF( tinBaseP , psttEmail , idf , sttq , T("&qty=") , psttl ) ; ___( psttEmail ) ;
                 {
-                if( etThread.strIdF( tinP , idf , sttq , T("?email=") , psttl ) )
+                if( etThread.strIdF( tinBaseP , idf , sttq , T("?email=") , psttl ) )
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 countT idf = 1 ;
-                etThread.strFromUrlF( tinP , psttl ) ; ___( psttl ) ;
-                pso->readWoLineF( tinP , psttl , 0x1000 ) ;
+                etThread.strFromUrlF( tinBaseP , psttl ) ; ___( psttl ) ;
+                pso->readWoLineF( tinBaseP , psttl , 0x1000 ) ;
                 ZE( strokeS* , psttl ) ;
             {
             ZE( countT   , cOrdered ) ;            
@@ -318,32 +318,32 @@ DONE( tmServeF )
         case 'o' :
         }
             break ;
-            bCampaign.ungrabF( tinP ) ;
+            bCampaign.ungrabF( tinBaseP ) ;
             }
                 cImages ++ ;
-                pso->writeF( tinP , (byteT*)pc2i->c1 , pc2i->c2 ) ;
+                pso->writeF( tinBaseP , (byteT*)pc2i->c1 , pc2i->c2 ) ;
             {
             //if( !etThread )
             //__( !pc2i || !pc2i->c1 ) ;
-            count2S* pc2i = (count2S*)stReplyImages.downF( tinP , h_stReplyImages ) ;
-            bCampaign.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            count2S* pc2i = (count2S*)stReplyImages.downF( tinBaseP , h_stReplyImages ) ;
+            bCampaign.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         case 'i' :
         }
             break ;
-            bCampaign.ungrabF( tinP ) ;
-            pso->writeF( tinP , pbFace , cbFace ) ;
-            bCampaign.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            bCampaign.ungrabF( tinBaseP ) ;
+            pso->writeF( tinBaseP , pbFace , cbFace ) ;
+            bCampaign.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         case 'f' :
     {
     switch( postc[ 5 ] )
     ZE( boolT , bAbort ) ;
 
-    pso->readF( tinP , postc , sizeof postc ) ;
+    pso->readF( tinBaseP , postc , sizeof postc ) ;
     osTextT postc[ 0x6 ] ;
 
-    pso->etherF( tinP , etThread ) ;
+    pso->etherF( tinBaseP , etThread ) ;
     countT&  cUpdates        = *(countT*)pcp[ 0xd ] ;
     stackC&  stOrders        = *(stackC*)pcp[ 0xc ] ;
     countT&  cbWindow        = *(countT*)pcp[ 0xb ] ;
@@ -365,9 +365,9 @@ TASK( tmServeF )
 
 }
     }
-        etThread.delF( tinP , pc2i ) ;
+        etThread.delF( tinBaseP , pc2i ) ;
         }
-            etThread.delF( tinP , pbi ) ;
+            etThread.delF( tinBaseP , pbi ) ;
             byteT* pbi = (byteT*)pc2i->c1 ;
         {
         if( pc2i )
@@ -378,40 +378,40 @@ TASK( tmServeF )
     h_stReplyImagesP = 0 ;
 
     cbFaceP = cbWindowP = 0 ;
-    etThread.delF( tinP , pbWindowP ) ;
-    etThread.delF( tinP , pbFaceP ) ;
+    etThread.delF( tinBaseP , pbWindowP ) ;
+    etThread.delF( tinBaseP , pbFaceP ) ;
 {
-voidT campaignPurgeF( tinS& tinP , etherC& etThread , byteT*& pbFaceP , countT& cbFaceP , byteT*& pbWindowP , countT& cbWindowP , stackC& stReplyImagesP , countT& h_stReplyImagesP )
+voidT campaignPurgeF( tinBaseS& tinBaseP , etherC& etThread , byteT*& pbFaceP , countT& cbFaceP , byteT*& pbWindowP , countT& cbWindowP , stackC& stReplyImagesP , countT& h_stReplyImagesP )
 
 }
-    etThread.delF( tinP , pstt1mReplyImages ) ;
+    etThread.delF( tinBaseP , pstt1mReplyImages ) ;
     }
         }
             stReplyImagesP << pc2i ;
             pc2i->c1 = (countT)pbi ;
-            etThread.boxGetShadowF( tinP , pbi , pc2i->c2 , psttc1 ) ; ___( pbi ) ;
+            etThread.boxGetShadowF( tinBaseP , pbi , pc2i->c2 , psttc1 ) ; ___( pbi ) ;
             ZE( byteT* , pbi ) ;
             pc2i->c1 = pc2i->c2 = 0 ;
         {
         if( pc2i )
-        etThread.newF( tinP , LF , pc2i ) ;
+        etThread.newF( tinBaseP , LF , pc2i ) ;
         ZE( count2S* , pc2i ) ;
     {
     FORsTRINGSiN1( pstt1mReplyImages )
-    etThread.boxMenuF( tinP , soul1mReplyImages , T("///ideafarm/ephemeral/domains/com/ideafarm/c630104/campaigns/gen/")+t_idCampaign+T("/")+T("replies/images/*") ) ;
+    etThread.boxMenuF( tinBaseP , soul1mReplyImages , T("///ideafarm/ephemeral/domains/com/ideafarm/c630104/campaigns/gen/")+t_idCampaign+T("/")+T("replies/images/*") ) ;
     ZE( strokeS* , pstt1mReplyImages ) ;
 
     __Z( cbWindowP ) ;
     __Z( pbWindowP ) ;
-    etThread.boxGetShadowF( tinP , pbWindowP , cbWindowP , T("///ideafarm/ephemeral/domains/com/ideafarm/c630104/campaigns/gen/")+t_idCampaign+T("/")+T("replies/window") ) ;
+    etThread.boxGetShadowF( tinBaseP , pbWindowP , cbWindowP , T("///ideafarm/ephemeral/domains/com/ideafarm/c630104/campaigns/gen/")+t_idCampaign+T("/")+T("replies/window") ) ;
 
     __Z( cbFaceP ) ;
     __Z( pbFaceP ) ;
-    etThread.boxGetShadowF( tinP , pbFaceP , cbFaceP , T("///ideafarm/ephemeral/domains/com/ideafarm/c630104/campaigns/gen/")+t_idCampaign+T("/")+T("replies/face") ) ;
+    etThread.boxGetShadowF( tinBaseP , pbFaceP , cbFaceP , T("///ideafarm/ephemeral/domains/com/ideafarm/c630104/campaigns/gen/")+t_idCampaign+T("/")+T("replies/face") ) ;
 
     TN( t_idCampaign , (strokeS*)TF3(idCampaignP,flFORMAT_FILLzE,8) ) ;
 {
-voidT campaignLoadF( tinS& tinP , etherC& etThread , byteT*& pbFaceP , countT& cbFaceP , byteT*& pbWindowP , countT& cbWindowP , stackC& stReplyImagesP , countT idCampaignP )
+voidT campaignLoadF( tinBaseS& tinBaseP , etherC& etThread , byteT*& pbFaceP , countT& cbFaceP , byteT*& pbWindowP , countT& cbWindowP , stackC& stReplyImagesP , countT idCampaignP )
 
 #define COSTnu 0x1000
 

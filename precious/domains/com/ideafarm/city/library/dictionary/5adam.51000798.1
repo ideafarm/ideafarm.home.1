@@ -9,26 +9,26 @@
                             
 REST
 
-ether.loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+ether.loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.delF( tinP , posti ) ;
-etThread.delF( tinP , pstti ) ;
+etThread.delF( tinBaseP , posti ) ;
+etThread.delF( tinBaseP , pstti ) ;
 
-if( tLath.csF( tinP ) ) etThread.traceF( tinP , TF3(cLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+tb4+tLath ) ;
+if( tLath.csF( tinBaseP ) ) etThread.traceF( tinBaseP , TF3(cLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+tb4+tLath ) ;
 }
-    etThread.delF( tinP , psttLine ) ;
+    etThread.delF( tinBaseP , psttLine ) ;
     }
         }
             tLath = T(psttLine) ;
             cLath = 1 ;
-            if( tLath.csF( tinP ) ) etThread.traceF( tinP , TF3(cLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+tb4+tLath ) ;
+            if( tLath.csF( tinBaseP ) ) etThread.traceF( tinBaseP , TF3(cLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+tb4+tLath ) ;
         {
         else
-        if( !etThread.strCompareF( tinP , psttLine , tLath ) ) cLath ++ ;
+        if( !etThread.strCompareF( tinBaseP , psttLine , tLath ) ) cLath ++ ;
     {
     if( bFound )
-    boolT bFound = etThread.strSubstringF( tinP , psttLine , idf , sttq , tCrlf , pstti ) ; ___( psttLine ) ;
+    boolT bFound = etThread.strSubstringF( tinBaseP , psttLine , idf , sttq , tCrlf , pstti ) ; ___( psttLine ) ;
     ZE( strokeS* , psttLine ) ;
 {
 while( idf )
@@ -39,10 +39,10 @@ TN( tCrlf , "\r\n" ) ;
 TN( tb4 , "    " ) ;
 countT idf = 1 ;
 
-etThread.strMakeFromOsTextF( tinP , pstti , posti , costi ) ; ___( pstti ) ;
+etThread.strMakeFromOsTextF( tinBaseP , pstti , posti , costi ) ; ___( pstti ) ;
 ZE( strokeS* , pstti ) ;
 
-etThread.boxGetShadowF( tinP , posti , costi , T("///d/tmp/sor") ) ; ___( posti ) ;
+etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/sor") ) ; ___( posti ) ;
 ZE( countT   , costi ) ;
 ZE( osTextT* , posti ) ;
 

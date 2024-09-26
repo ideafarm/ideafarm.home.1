@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.delF( tinP , pstth ) ;
-etThread.traceF( tinP , pstth ) ;
-calc.queryStringF( tinP , etThread , pstth ) ; ___( pstth ) ;
+etThread.delF( tinBaseP , pstth ) ;
+etThread.traceF( tinBaseP , pstth ) ;
+calc.queryStringF( tinBaseP , etThread , pstth ) ; ___( pstth ) ;
 ZE( strokeS* , pstth ) ;
 
-etThread.delF( tinP , pbFoo ) ;
+etThread.delF( tinBaseP , pbFoo ) ;
 }
     cbRemaining -= cbChunk ;
     pbc         += cbChunk ;
@@ -37,11 +37,11 @@ hasherC calc ;
 
 //char postIn1[] = "The quick brown fox jumps over the lazy dog." ; // 4e9d902c090dbfc10a86ffdafd22bc0d
 
-etThread.boxGetShadowF( tinP , pbFoo , cbFoo , T("///d/tmp/x/foo") ) ; ___( pbFoo ) ;
+etThread.boxGetShadowF( tinBaseP , pbFoo , cbFoo , T("///d/tmp/x/foo") ) ; ___( pbFoo ) ;
 ZE( countT , cbFoo ) ;
 ZE( byteT* , pbFoo ) ;
 
-etThread.traceF( tinP , T("i calculate an md5 hash") ) ;
+etThread.traceF( tinBaseP , T("i calculate an md5 hash") ) ;
 
 TODO
 

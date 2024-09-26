@@ -11,21 +11,21 @@
 
 REST
 
-ungrabF( tinP , gPopular ) ;
-etThread.loafIF( tinP ) ;
+ungrabF( tinBaseP , gPopular ) ;
+etThread.loafIF( tinBaseP ) ;
 
-while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmWantF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&gPopular ) ;
+while( cTries -- ) etThread.osThreadF( tinBaseP , countTC() , tmWantF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&gPopular ) ;
 countT cTries = CgRABwANTmAX + 1 ;
 
-grabF( tinP , gPopular ) ;
-grabOldS gPopular( tinP , TAG( TAGiDnULL ) ) ;
+grabF( tinBaseP , gPopular ) ;
+grabOldS gPopular( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmWantF )
 }
-    ungrabF( tinP , gPopular ) ;
-    grabF( tinP , gPopular ) ;
+    ungrabF( tinBaseP , gPopular ) ;
+    grabF( tinBaseP , gPopular ) ;
     grabOldS& gPopular = *(grabOldS*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

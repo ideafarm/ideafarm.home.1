@@ -9,7 +9,7 @@
 
 }
     }
-        etherC::etRockIF( tinP ).traceF( tinP , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
 
         OStEXTC(  ostoSay , idSubType , ' ' ) ;
         OStEXTAK( ostoSay , "    " ) ;
@@ -23,18 +23,18 @@
         OStEXTA(  ostoSay , ( F(flags) & flPOOP_SMELLY ? "poopC sniff sniff [idLineChatter,idiFileChatter,idLineGrunt,idiFileGrunt,idSubType]:    " : "poopC [idLineChatter,idiFileChatter,idLineGrunt,idiFileGrunt,idSubType]:    " ) ) ;
         OStEXT(   ostoSay , TUCK << 2 ) ;
     {
-    if( tinP.pEther )
+    if( ((tinNormalS&)tinBaseP).pEther )
 
-    //tinP.pc Utility[ 4 ] = idSubType ;
-    //tinP.pc Utility[ 3 ] = idiFileGrunt ;
-    //tinP.pc Utility[ 2 ] = idLineGrunt ;
-    //tinP.pc Utility[ 1 ] = idiFileP ;
-    //tinP.pc Utility[ 0 ] = idLineP ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 4 ] = idSubType ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 3 ] = idiFileGrunt ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 2 ] = idLineGrunt ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 1 ] = idiFileP ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] = idLineP ;
 
     //POPUP( "chatterF: sniff sniff" ) ;
     //LOGrAW3( "sniff sniff poopC object grunt " , idSubType , "\r\n" ) ;
 {
-/*1*/voidT poopC::chatterF( tinS& tinP , const countT idLineP , const countT idiFileP ) const/*1*/
+/*1*/voidT poopC::chatterF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP ) const/*1*/
 
 /**/
 */

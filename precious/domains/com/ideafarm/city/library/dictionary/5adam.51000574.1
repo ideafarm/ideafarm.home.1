@@ -10,14 +10,14 @@
 REST
 
 }
-    etThread.delF( tinP , pbr ) ;
-    spk.shiftRightF( tinP , pbr , cbr , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbr ) ;
+    etThread.delF( tinBaseP , pbr ) ;
+    spk.shiftRightF( tinBaseP , pbr , cbr , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbr ) ;
     ZE( countT , cbr ) ;
     ZE( byteT* , pbr ) ;
 
-    etThread.delF( tinP , postFoo ) ;
-    etThread.delF( tinP , psttFoo ) ;
-    etThread.strMakeF( tinP , LF , postFoo , psttFoo ) ; ___( postFoo ) ;
+    etThread.delF( tinBaseP , postFoo ) ;
+    etThread.delF( tinBaseP , psttFoo ) ;
+    etThread.strMakeF( tinBaseP , LF , postFoo , psttFoo ) ; ___( postFoo ) ;
     ZE( osTextT* , postFoo ) ;
 
     spk >> psttFoo ;
@@ -32,17 +32,17 @@ REST
     spk >> cFoo ;
     ZE( countT , cFoo ) ;
 
-    etThread.boxGetShadowF( tinP , spkv , T("///d/ideafarm.key") ) ;
-    soulC spkv( tinP , TAG( TAGiDnULL ) ) ;
+    etThread.boxGetShadowF( tinBaseP , spkv , T("///d/ideafarm.key") ) ;
+    soulC spkv( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 //TEST THE KEY FILE
 
-etThread.boxPutF( tinP , T("///d/ideafarm.key") , spk ) ;
+etThread.boxPutF( tinBaseP , T("///d/ideafarm.key") , spk ) ;
 
 }
-    etThread.delF( tinP , pbRandom ) ;
+    etThread.delF( tinBaseP , pbRandom ) ;
 
-    spk.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_byteTptr , pbRandom , TOCK ) ;
+    spk.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbRandom , TOCK ) ;
 
     }
         }
@@ -57,23 +57,23 @@ etThread.boxPutF( tinP , T("///d/ideafarm.key") , spk ) ;
         ranUniC ru( TUCK , idDisk ) ;
     {
 
-    etThread.newF( tinP , LF , pbRandom , TOCK ) ; ___( pbRandom ) ;
+    etThread.newF( tinBaseP , LF , pbRandom , TOCK ) ; ___( pbRandom ) ;
     ZE( byteT* , pbRandom ) ;
 {
 
-etThread.delF( tinP , psttName ) ;
+etThread.delF( tinBaseP , psttName ) ;
 spk << psttName ;
-etThread.strMakeF( tinP , LF , psttName , T("Neal Basu") ) ; ___( psttName ) ;
+etThread.strMakeF( tinBaseP , LF , psttName , T("Neal Basu") ) ; ___( psttName ) ;
 ZE( strokeS* , psttName ) ;
 
 spk << idDisk ;
 spk << (countT)0x83c95e47 ; // VALIDATION VALUE CHANGE THIS QUARTERLY TO KILL OLD KEY DISKS
 spk << (countT)1 ; // idFormat
 spk << (countT)DDNUMB ;
-soulC spk( tinP , TAG( TAGiDnULL ) ) ; // "PHYSICAL KEY"
+soulC spk( tinBaseP , TAG( TAGiDnULL ) ) ; // "PHYSICAL KEY"
 
-etThread.strokeF( tinP , T("serial number: ")+TF2(idDisk,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
-countT idDisk = etThread.diskIdF( tinP , T("///d/") ) ;
+etThread.strokeF( tinBaseP , T("serial number: ")+TF2(idDisk,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+countT idDisk = etThread.diskIdF( tinBaseP , T("///d/") ) ;
 
 TODO
 

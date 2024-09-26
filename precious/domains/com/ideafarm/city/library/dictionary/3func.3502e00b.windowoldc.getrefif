@@ -11,7 +11,7 @@
     return pw ;
 
     }
-        etherC::ether_pBatWindowDeletionI_F( tinP )->ungrabF( tinP ) ;
+        etherC::ether_pBatWindowDeletionI_F( tinBaseP )->ungrabF( tinBaseP ) ;
 
         }
             else               pw = 0 ;
@@ -20,13 +20,13 @@
         if( pw )
 
         }
-            case ifcIDwINDOW_ROOT : { pw = tinP.pag1->_windowOldC_.pRoot ; break ; }
+            case ifcIDwINDOW_ROOT : { pw = ((tinNormalS&)tinBaseP).pag1->_windowOldC_.pRoot ; break ; }
         {
         switch( idWindowP )
 
-        etherC::ether_pBatWindowDeletionI_F( tinP )->grabF( tinP , TAG( TAGiDnULL ) ) ;
+        etherC::ether_pBatWindowDeletionI_F( tinBaseP )->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    if( etherC::ether_pBatWindowDeletionI_F( tinP ) )
+    if( etherC::ether_pBatWindowDeletionI_F( tinBaseP ) )
     ZE( windowOldC* , pw ) ;
     //NOT SERIALIZED BECAUSE STATIC
 
@@ -37,7 +37,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/windowOldC* windowOldC::getRefIF( tinS& tinP , const countT idWindowP )/*1*/
+/*1*/windowOldC* windowOldC::getRefIF( tinBaseS& tinBaseP , const countT idWindowP )/*1*/
 
 /**/
 */

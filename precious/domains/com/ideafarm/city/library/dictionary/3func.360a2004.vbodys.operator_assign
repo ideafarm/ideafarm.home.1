@@ -10,8 +10,8 @@
 }
     return *this ;
 
-    psttDone = psttOldC( tinP , *tinP.pEther , vbP.psttDone ) ; ___( psttDone ) ;
-    tinP.pEther->delF( tinP , psttDone ) ;
+    psttDone = psttOldC( tinBaseP , *((tinNormalS&)tinBaseP).pEther , vbP.psttDone ) ; ___( psttDone ) ;
+    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttDone ) ;
 
     idPhase          = vbP.idPhase ;
     flags            = vbP.flags ;

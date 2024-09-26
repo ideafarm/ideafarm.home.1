@@ -8,19 +8,19 @@
 
 
 }
-    ctF( tinP , osName , idAccessP , idShareP , flagsDetailsP , idHowP , flagsAttribute1P , flagsAttribute2P , cTriesP ) ;
+    ctF( tinBaseP , osName , idAccessP , idShareP , flagsDetailsP , idHowP , flagsAttribute1P , flagsAttribute2P , cTriesP ) ;
 
-    ether.delF( tinP , psttm ) ;
-    osFileNameC osName( tinP , ether , T(psttm) ) ;
-    ether.diskMapFileNameF( tinP , psttm , psttP ) ; ___( psttm ) ;
+    ether.delF( tinBaseP , psttm ) ;
+    osFileNameC osName( tinBaseP , ether , T(psttm) ) ;
+    ether.diskMapFileNameF( tinBaseP , psttm , psttP ) ; ___( psttm ) ;
     ZE( strokeS* , psttm ) ;
-    etherC& ether = *tinP.pEther ;
+    etherC& ether = *((tinNormalS&)tinBaseP).pEther ;
     _IO_
 {
 flagsCt( flagsP )
 idOpenResult( 0 ) ,
-hFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ,
-/*1*/fileC::fileC( tinS& tinP , const strokeS* const psttP , const countT idAccessP , const countT idShareP , const flagsT flagsDetailsP , const countT idHowP , const flagsT flagsAttribute1P , const flagsT flagsAttribute2P , const flagsT flagsP , const countT cTriesP , const osTextT* const postZipP ) :/*1*/
+hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ,
+/*1*/fileC::fileC( tinBaseS& tinBaseP , const strokeS* const psttP , const countT idAccessP , const countT idShareP , const flagsT flagsDetailsP , const countT idHowP , const flagsT flagsAttribute1P , const flagsT flagsAttribute2P , const flagsT flagsP , const countT cTriesP , const osTextT* const postZipP ) :/*1*/
 
 /**/
 

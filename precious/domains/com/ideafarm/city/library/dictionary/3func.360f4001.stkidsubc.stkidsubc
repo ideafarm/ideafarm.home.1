@@ -29,18 +29,18 @@
         sIn >> finger ;
         ZE( countT , finger ) ;
     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
         sOut << idAccP ;
         sOut << (countT)ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDsUB ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -54,8 +54,8 @@
     {
     IFbEcAREFUL
 {
-stackC( tinP , *tinP.pEther , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY )
-/*1*/stkIdSubC::stkIdSubC( tinS& tinP , const countT idAccP ) :/*1*/
+stackC( tinBaseP , *((tinNormalS&)tinBaseP).pEther , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY )
+/*1*/stkIdSubC::stkIdSubC( tinBaseS& tinBaseP , const countT idAccP ) :/*1*/
 
 /**/
 */

@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
@@ -21,13 +21,13 @@ etThread.traceF( tinP , T("ok") ) ;
         cbDoLo -= cbWindow ;
         if( cbDoLo < cbWindow ) cbDoHi -- ;
 
-        etThread.boxPutF( tinP , tFileIn+T(".copy.")+tIdWindow , pbWindow , cbWindow ) ;
-        etThread.traceF( tinP , T("[tIdWindow]:    ")+tIdWindow ) ;
+        etThread.boxPutF( tinBaseP , tFileIn+T(".copy.")+tIdWindow , pbWindow , cbWindow ) ;
+        etThread.traceF( tinBaseP , T("[tIdWindow]:    ")+tIdWindow ) ;
         TN( tIdWindow , "" ) ; tIdWindow = TF3(++offWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
 
         byteT* pbWindow = fw ;
 
-        fileWindowC fw( tinP , etThread , fi , offLo , offHi , cbWindow , flFILEwINDOW_null ) ;
+        fileWindowC fw( tinBaseP , etThread , fi , offLo , offHi , cbWindow , flFILEwINDOW_null ) ;
 
         ;
             : cbDoLo
@@ -46,13 +46,13 @@ etThread.traceF( tinP , T("ok") ) ;
         DEL( pInfo ) ;
         cbFileHi = pInfo->cbUsedHigh ;
         cbFileLo = pInfo->cbUsed     ;
-        etThread.diskFileQueryF( tinP , pInfo , fi ) ;
+        etThread.diskFileQueryF( tinBaseP , pInfo , fi ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     ZE( countT , cbFileHi ) ;
     ZE( countT , cbFileLo ) ;
 
-    fileC fi( tinP , (strokeS*)tFileIn , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCnONE , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ; //SOME ARBITRARY LARGE EXISTING INPUT FILE
+    fileC fi( tinBaseP , (strokeS*)tFileIn , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCnONE , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ; //SOME ARBITRARY LARGE EXISTING INPUT FILE
     TN( tFileIn , "///d/ideafarm.home.1/ephemeral/domains/com/ideafarm/city/park/exedll/1/master/ideafarm.81000001.ipdos-wm" ) ;
 {
 

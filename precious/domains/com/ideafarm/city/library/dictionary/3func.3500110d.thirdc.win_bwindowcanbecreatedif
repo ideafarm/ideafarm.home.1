@@ -13,10 +13,10 @@
     #endif
 
     handle.osF( ifcIDtYPEhANDLE_WINDOW , (countT)hWindow ) ;
-    handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
+    handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
     bOk = !!hWindow ;
 
-    HWND hWindow = (HWND)tinP.brcRaw ;
+    HWND hWindow = (HWND)((tinNormalS&)tinBaseP).brcRaw ;
     BOS( WHATgbo , BOSoK , CreateWindow( "STATIC" , "ifcTestWindow" , WS_DISABLED , 0 , 0 , 1 , 1 , 0 , 0 , (HINSTANCE)processGlobal4I._thirdC_hWindowingClient.osF( ifcIDtYPEhANDLE_WINDOWINGcLIENT ) , 0 ) )
 
     #if defined( __NT__ )
@@ -28,7 +28,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/boolT thirdC::win_bWindowCanBeCreatedIF( tinS& tinP )/*1*/
+/*1*/boolT thirdC::win_bWindowCanBeCreatedIF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

@@ -12,10 +12,10 @@ DONE( tmPutEditionF )
     dec02AM( cWorkersP ) ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
     {
     while( !bQuitP )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     countT& cWorkersP = *(boolT*)pTaskP->c2 ;
     boolT&  bQuitP    = *(boolT*)pTaskP->c1 ;

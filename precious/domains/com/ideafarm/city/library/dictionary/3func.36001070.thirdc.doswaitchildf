@@ -17,34 +17,34 @@
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , GetExitCodeProcess( (HANDLE)hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) , (DWORD*)&valueP ) )
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
-                ++ s ; dosSleepIF( tinP , 16 * 256 ) ;
+                ++ s ; dosSleepIF( tinBaseP , 16 * 256 ) ;
             {
             do
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
 
         }
-            tinP.pag4->_thirdC_grab_lOsPid.ungrabF( tinP ) ;
-            tinP.pag1->_thirdC_.pSwProcessHandle->freeF( tinP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
-            hProcess.osF( ifcIDtYPEhANDLE_PROCESS , *tinP.pag1->_thirdC_.pSwProcessHandle ) ;
-            tinP.pag1->_thirdC_.lOsPid = osPidP ;
-            if( !tinP.pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinP , osPidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
-            tinP.pag4->_thirdC_grab_lOsPid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->freeF( tinBaseP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
+            hProcess.osF( ifcIDtYPEhANDLE_PROCESS , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsPid = osPidP ;
+            if( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinBaseP , osPidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
+            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
-            tinP.pag1->_thirdC_.pSwThreadHandle->freeF( tinP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
-            hThread.osF( ifcIDtYPEhANDLE_THREAD , *tinP.pag1->_thirdC_.pSwThreadHandle ) ;
-            tinP.pag1->_thirdC_.lOsTid = osTidP ;
-            if( !tinP.pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinP , osTidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
-            tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->freeF( tinBaseP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
+            hThread.osF( ifcIDtYPEhANDLE_THREAD , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid = osTidP ;
+            if( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinBaseP , osTidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
+            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            handleC hThread(  tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD  ) ;
+            handleC hThread(  tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD  ) ;
         {
-        handleC hProcess( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+        handleC hProcess( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
 
         BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
 
-        //DOES NOT WORK FOR zip.exe ON 2000: osOpenProcessIF( tinP , hProcess , osPidP ) ;              20240623@1626: CONJ: 04 BIT PROCESS
+        //DOES NOT WORK FOR zip.exe ON 2000: osOpenProcessIF( tinBaseP , hProcess , osPidP ) ;              20240623@1626: CONJ: 04 BIT PROCESS
 
     #elif defined( __NT__ )
 
@@ -66,8 +66,8 @@
 
     }
         if( POOP ) return ;
-        __Z( tinP.pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinP , osPidP ) ) ;
-        __Z( tinP.pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinP , osTidP ) ) ;
+        __Z( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinBaseP , osPidP ) ) ;
+        __Z( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinBaseP , osTidP ) ) ;
         __( valueP ) ;
         __( idDeathTypeP ) ;
         if( POOP ) return ;
@@ -75,7 +75,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::dosWaitChildF( tinS& tinP , countT& valueP , countT& idDeathTypeP , countT& osTidP , countT& osPidP )/*1*/
+/*1*/voidT thirdC::dosWaitChildF( tinBaseS& tinBaseP , countT& valueP , countT& idDeathTypeP , countT& osTidP , countT& osPidP )/*1*/
 
 /**/
 */

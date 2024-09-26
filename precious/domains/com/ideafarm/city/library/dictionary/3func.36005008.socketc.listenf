@@ -10,19 +10,19 @@
 }
     dec02AM( cFunctionsPending ) ;
     }
-        bRead.ungrabF( tinP ) ;
+        bRead.ungrabF( tinBaseP ) ;
     
         }
             }
                 __Z( idSlot ) ;
-                etherC::sockStkAcceptorsF( tinP ).sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
+                etherC::sockStkAcceptorsF( tinBaseP ).sinkF( tinBaseP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
                 ZE( countT , idSlot ) ;
     
-                //__( F(tinP.flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
+                //__( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
     
-                etherC::sockStkQuittersF( tinP ).ungrabF( tinP ) ;
-                if( etherC::sockStkQuittersF( tinP )( (countT)this ) ) etherC::sockStkQuittersF( tinP ).extractF( tinP ) ;
-                etherC::sockStkQuittersF( tinP ).grabF( tinP , TAG( TAGiDnULL ) ) ;
+                etherC::sockStkQuittersF( tinBaseP ).ungrabF( tinBaseP ) ;
+                if( etherC::sockStkQuittersF( tinBaseP )( (countT)this ) ) etherC::sockStkQuittersF( tinBaseP ).extractF( tinBaseP ) ;
+                etherC::sockStkQuittersF( tinBaseP ).grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
              {
             if( !( F(flags) & flSOCKETc_DOnOTrEGISTERaCCEPTOR ) )
             bAcceptor = 1 ;
@@ -30,9 +30,9 @@
         if( !bAcceptor )
     
         fListening = 1 ;
-        pEther->sockListenF( tinP , handle ) ;
+        pEther->sockListenF( tinBaseP , handle ) ;
         _IO_
-        bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         }
             }
@@ -54,11 +54,11 @@
     {
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/voidT socketC::listenF( tinS& tinP )/*1*/
+/*1*/voidT socketC::listenF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */
-after calling listenF, be sure to verify !ether, to ensure that tinP.pag1->_thirdC_.flQuitting was not just set, before calling acceptF
+after calling listenF, be sure to verify !ether, to ensure that ((tinNormalS&)tinBaseP).pag1->_thirdC_.flQuitting was not just set, before calling acceptF
 if i am to accept connections, listenF must be called once before the first call to acceptF
 \<A HREF=\"5.1070009.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$listenF.0.html\"\>instances\</A\>

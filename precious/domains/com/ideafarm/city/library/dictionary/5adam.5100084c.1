@@ -9,17 +9,17 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.delF( tinP , postiShortAll ) ;
+    etThread.delF( tinBaseP , postiShortAll ) ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
     {
     while( cWorkers )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)&cWorkers , ++ idWorker , (countT)postiShortAll , (countT)ppostEnd ) ;
@@ -52,9 +52,9 @@ etThread.traceF( tinP , T("ok") ) ;
 
     if( costiShortAll < CwORKERS ) { BLAMMOiD( 0x55556666 ) ; } //ENSURES THAT cEltPerWorkerRaw IS NOT 0
 
-    //etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/lost.after.ttt") ) ; ___( postiShortAll ) ;
-      etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/lost.before.uscore.to.dot.reformat.uniquifier.seq.ttt") ) ; ___( postiShortAll ) ;
-    //etThread.boxGetShadowF( tinP , postiShortAll , costiShortAll , T("///d/tmp/lost.dut2.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/lost.after.ttt") ) ; ___( postiShortAll ) ;
+      etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/lost.before.uscore.to.dot.reformat.uniquifier.seq.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/lost.dut2.ttt") ) ; ___( postiShortAll ) ;
     ZE( countT   , costiShortAll ) ;
     ZE( osTextT* , postiShortAll ) ;
 {
@@ -65,10 +65,10 @@ DONE( tmWorkerF )
 }
     dec02AM( cWorkersP ) ;
 
-    etThread.delF( tinP , posto ) ;
-    //etThread.boxPutF( tinP , T("///d/tmp/lost6.after." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
-      etThread.boxPutF( tinP , T("///d/tmp/lost6.before.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
-    //etThread.boxPutF( tinP , T("///d/tmp/lost6.dut2.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+    etThread.delF( tinBaseP , posto ) ;
+    //etThread.boxPutF( tinBaseP , T("///d/tmp/lost6.after." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+      etThread.boxPutF( tinBaseP , T("///d/tmp/lost6.before.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+    //etThread.boxPutF( tinBaseP , T("///d/tmp/lost6.dut2.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
 
     memcpy( postoc , postSeparator , costSeparator ) ; postoc += costSeparator ;
 
@@ -77,7 +77,7 @@ DONE( tmWorkerF )
         postic = postieWo + 2 ;
 
         }
-            if( !( cWritten % TUCK ) ) etThread.traceF( tinP , TF2(cWritten,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            if( !( cWritten % TUCK ) ) etThread.traceF( tinBaseP , TF2(cWritten,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             cWritten ++ ;
             postiLathWritten = postic ;
 
@@ -86,13 +86,13 @@ DONE( tmWorkerF )
         {
         if( !bSkip )
 
-        //boolT bSkip = postiLathWritten && !thirdC::c_strcmpIF( tinP , postic , postiLathWritten , 0 ) ;
+        //boolT bSkip = postiLathWritten && !thirdC::c_strcmpIF( tinBaseP , postic , postiLathWritten , 0 ) ;
           boolT bSkip = postiLathWritten && !memcmp( postic , postiLathWritten , costic ) ;
 
         countT costic = postieWo - postic ;
         *postieWo = 0 ;
 
-        //osTextT* postieWo = thirdC::c_strstrIF( tinP , postic , "\r\n" ) ;
+        //osTextT* postieWo = thirdC::c_strstrIF( tinBaseP , postic , "\r\n" ) ;
           osTextT* postieWo = strstr( postic , "\r\n" ) ;
     {
     while( !ether )
@@ -100,7 +100,7 @@ DONE( tmWorkerF )
     ZE( osTextT* , postiLathWritten ) ;
 
     osTextT* postoc = posto ;
-    etThread.newF( tinP , LF , posto , costiMe + costSeparator ) ; ___( posto ) ;
+    etThread.newF( tinBaseP , LF , posto , costiMe + costSeparator ) ; ___( posto ) ;
     ZE( osTextT* , posto ) ;
 
     osTextT* postic = postiMe ;

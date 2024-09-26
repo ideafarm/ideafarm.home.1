@@ -9,22 +9,22 @@
 
 REST
 
-//etherC::loafIF( tinP ) ;
-//etThread.traceF( tinP , T("ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK / -") ) ;
+//etherC::loafIF( tinBaseP ) ;
+//etThread.traceF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK / -") ) ;
 
 }
-    //etThread.traceF( tinP , T("called  zlib to unpack all gz files in ")+tNew ) ;
-    etThread.delF( tinP , postBuffer ) ;
+    //etThread.traceF( tinBaseP , T("called  zlib to unpack all gz files in ")+tNew ) ;
+    etThread.delF( tinBaseP , postBuffer ) ;
     while( ~hFind && !POOP ) ;
     }
         DEL( pInfo ) ;
         }
             }
-                etThread.diskMoveFileOrDirF( tinP , tToGzDone+tShort , tIfoName , 0 ) ;
+                etThread.diskMoveFileOrDirF( tinBaseP , tToGzDone+tShort , tIfoName , 0 ) ;
 
-                etThread.boxPutF( tinP , tPath+tShorter /*+tDotLog*/ , postBuffer , info1.total_out ) ;     // RACKSPACE FILES END WITH ".log.gz" SO DON'T NEED ANOTHER ".log"; CHANGING THIS BEHAVIOR WILL BREAK CODE THAT PARSES THESE FILE NAMES TO OBTAIN BUCKET AND CONTAINER
+                etThread.boxPutF( tinBaseP , tPath+tShorter /*+tDotLog*/ , postBuffer , info1.total_out ) ;     // RACKSPACE FILES END WITH ".log.gz" SO DON'T NEED ANOTHER ".log"; CHANGING THIS BEHAVIOR WILL BREAK CODE THAT PARSES THESE FILE NAMES TO OBTAIN BUCKET AND CONTAINER
 
-                etThread.delF( tinP , posti ) ;
+                etThread.delF( tinBaseP , posti ) ;
 
                 rc = (*pg1.zlib_pInflateEndF)(   &info1 ) ;
                 rc = (*pg1.zlib_pInflateF)(      &info1 ,  Z_FINISH ) ;
@@ -41,26 +41,26 @@ REST
 
                 processGlobal2S& pg1 = processGlobal2S::_processGlobal2I_IF() ;
 
-                etThread.boxGetShadowF( tinP , posti , costi , tIfoName ) ; ___( posti ) ;
+                etThread.boxGetShadowF( tinBaseP , posti , costi , tIfoName ) ; ___( posti ) ;
                 ZE( countT   , costi ) ;
                 ZE( osTextT* , posti ) ;
 
                 }
-                    etThread.delF( tinP , psttnu ) ;
-                    etThread.delF( tinP , psttShorter ) ;
+                    etThread.delF( tinBaseP , psttnu ) ;
+                    etThread.delF( tinBaseP , psttShorter ) ;
                     tShorter  = T(psttShorter) ;
-                    etThread.strBisectF( tinP , psttShorter , psttnu , tShort , tDot , - 1 , flSTRbISECT_null ) ; ___( psttShorter ) ; ___( psttnu ) ;
+                    etThread.strBisectF( tinBaseP , psttShorter , psttnu , tShort , tDot , - 1 , flSTRbISECT_null ) ; ___( psttShorter ) ; ___( psttnu ) ;
                     ZE( strokeS* , psttnu ) ;
                     ZE( strokeS* , psttShorter ) ;
                 {
                 TN( tShorter , "" ) ;
 
                 }
-                    etThread.delF( tinP , psttShort ) ;
-                    etThread.delF( tinP , psttPath ) ;
+                    etThread.delF( tinBaseP , psttShort ) ;
+                    etThread.delF( tinBaseP , psttPath ) ;
                     tShort = T(psttShort) ;
                     tPath  = T(psttPath) ;
-                    etThread.strBisectF( tinP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                    etThread.strBisectF( tinBaseP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
                     ZE( strokeS* , psttShort ) ;
                     ZE( strokeS* , psttPath ) ;
                 {
@@ -80,30 +80,30 @@ REST
         {
         if( !pInfo || !pInfo->psttIfoName )
 
-        etThread.diskFindFileOrDirF( tinP , pInfo , hFind , fnLike.pathF() , &pat ) ;
+        etThread.diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-    //etThread.traceF( tinP , T("calling zlib to unpack all gz files in ")+tNew ) ;
+    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    //etThread.traceF( tinBaseP , T("calling zlib to unpack all gz files in ")+tNew ) ;
 
-    patternC pat( tinP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-    fileNameC fnLike( tinP , etThread , tNew+tStarDotGz ) ;
+    patternC pat( tinBaseP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+    fileNameC fnLike( tinBaseP , etThread , tNew+tStarDotGz ) ;
 
 
-    etThread.newF( tinP , LF , postBuffer , costBuffer ) ; ___( postBuffer ) ;
+    etThread.newF( tinBaseP , LF , postBuffer , costBuffer ) ; ___( postBuffer ) ;
     const countT   costBuffer = TOCK ;
     ZE( osTextT* , postBuffer ) ;
 
-    etThread.diskFileOrDirDeleteF( tinP , tIncoming , flFILEoRdIRdELETE_RECURSE ) ;
-    //etThread.traceF( tinP , T("deleting ")+tIncoming+T("; WARNING: i assume that no other process is downloading or otherwise modifying the contents of ")+tIncoming ) ;
+    etThread.diskFileOrDirDeleteF( tinBaseP , tIncoming , flFILEoRdIRdELETE_RECURSE ) ;
+    //etThread.traceF( tinBaseP , T("deleting ")+tIncoming+T("; WARNING: i assume that no other process is downloading or otherwise modifying the contents of ")+tIncoming ) ;
 
-    //etThread.traceF( tinP , T("new access logs [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.diskWalkGatherF( tinP , cDirs , cFiles , countTC() , tNew , tIncoming , 0 , pcArgs ) ;
+    //etThread.traceF( tinBaseP , T("new access logs [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.diskWalkGatherF( tinBaseP , cDirs , cFiles , countTC() , tNew , tIncoming , 0 , pcArgs ) ;
     countT pcArgs[] = { 2 } ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
-    //etThread.traceF( tinP , T("gathering the poured files into the single directory ")+tNew+T(" from ")+tIncoming ) ;
+    //etThread.traceF( tinBaseP , T("gathering the poured files into the single directory ")+tNew+T(" from ")+tIncoming ) ;
 {
 
 TN( tStarDotGz  , "*.gz" ) ;
@@ -116,7 +116,7 @@ TN( tToGzDone  , "///d/tmp/cloud.access.log.entries.all.gz/" ) ;
 TN( tNew       , "///d/tmp/cloud.access.log.entries.new/" ) ;
 TN( tIncoming  , "///d/tmp/cloud.access.log.entries.incoming/" ) ;
 
-//etThread.traceF( tinP , T("ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK / +") ) ;
+//etThread.traceF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK / +") ) ;
 
 TODO
 

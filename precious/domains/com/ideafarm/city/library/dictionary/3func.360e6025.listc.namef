@@ -27,8 +27,8 @@
     {
     if( pczNameP )
 
-    //pczNameP = (countT*)tinP.tlsNewF( LF , sizeof( countT ) * ( ccName + 1 ) ) ;
-    { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE.newF( tinP , LF , *(byteT**)&pczNameP , sizeof( countT ) * ( ccName + 1 ) ) ; ___( pczNameP ) ; } // CALLER SHOULD TAG AND MUST ENSURE THAT ADAMtEMP POOL IS USED WHEN TAGGING
+    //pczNameP = (countT*)((tinNormalS&)tinBaseP).tlsNewF( LF , sizeof( countT ) * ( ccName + 1 ) ) ;
+    { puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; PUSE.newF( tinBaseP , LF , *(byteT**)&pczNameP , sizeof( countT ) * ( ccName + 1 ) ) ; ___( pczNameP ) ; } // CALLER SHOULD TAG AND MUST ENSURE THAT ADAMtEMP POOL IS USED WHEN TAGGING
     //20240913@2129: NOW BACK TO ALLOC IN poolC IN ORDER TO MINIMIZE USE OF TLS
 
     }
@@ -47,7 +47,7 @@
 
     _IO_
 {
-/*1*/countT listC::nameF( tinS& tinP , countT*& pczNameP ) const/*1*/
+/*1*/countT listC::nameF( tinBaseS& tinBaseP , countT*& pczNameP ) const/*1*/
 
 // MINIMAL ERROR CHECKING, FOR SPEED
 
@@ -59,7 +59,7 @@
   20140111@0653: obsolete: will be allocated in ifcIDpOOL_ADAMtEMP
   must be 0
  pczNameP
- tinP
+ tinBaseP
 parameters
 /*
 

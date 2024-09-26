@@ -1,4 +1,4 @@
-//#define DEBUG
+#define DEBUG
 
 //U::ENABLE THESE PREPROCESSOR IF/ENDIF IN PRODUCTION
 #if not defined( DEBUG )
@@ -3365,7 +3365,8 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.tlsHeaderS"                                  ,
                     "1snip.15*.tallyC"                                      ,
                     "1snip.15*.tlsBlobC"                                    ,
-                    "1snip.15*.tinS"                                        ,
+                    "1snip.15*.tinNormalS"                                        ,
+                    "1snip.15*.tinBaseS"                                    ,
                     "1snip.15*.bookMarkS"                                   ,
                     "1snip.15*.topC"                                        ,
                     "1snip.15*.cleanC"                                      ,

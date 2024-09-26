@@ -12,7 +12,7 @@
 
     }
         *pstMatchP << psttm ; psttm = 0 ;
-        strSubstringF( tinP , psttm , idf , idl , psttBigP ) ; ___( psttm ) ;
+        strSubstringF( tinBaseP , psttm , idf , idl , psttBigP ) ; ___( psttm ) ;
         countT idl = idbDoP ;
         countT idf = idbDoSave ;
         ZE( strokeS* , psttm ) ;
@@ -20,7 +20,7 @@
     else if( pstMatchP && F(flagsMatchP) & flSTRmATCH_OR )
 
     }
-        if( pstMatchP ) pstMatchP->purgeF( tinP , cPlatesWas ) ;
+        if( pstMatchP ) pstMatchP->purgeF( tinBaseP , cPlatesWas ) ;
         idbDoP = idbDoSave ;
     {
     if( !bMatch )
@@ -53,7 +53,7 @@
                 else if( !bCeiling    ) bFloorPass = psttSmallP[ CSpREFIX - 1 + idsDoP ] <= psttBigP[ CSpREFIX - 1 + idbDoP ] ;
                 }
                     ;
-                        : sssTestF( tinP , bDoNotAdvanceBigNU , psttSmallP , psttBigP , idsDoP , idbDoP , tBlack , tPunctuation )
+                        : sssTestF( tinBaseP , bDoNotAdvanceBigNU , psttSmallP , psttBigP , idsDoP , idbDoP , tBlack , tPunctuation )
                         ? psttSmallP[ CSpREFIX - 1 + idsDoP ] == psttBigP[ CSpREFIX - 1 + idbDoP ]
                     bHit = cArmLiterals
                 {
@@ -68,7 +68,7 @@
                 {
                 if( bHit )
 
-                boolT bHit = sssOrF( tinP , pstMatchP , flagsMatchP , psttSmallP , psttBigP ,  idsDoP ,  idbDoP ) ;
+                boolT bHit = sssOrF( tinBaseP , pstMatchP , flagsMatchP , psttSmallP , psttBigP ,  idsDoP ,  idbDoP ) ;
             {
             else if( !cArmLiterals && psttSmallP[ CSpREFIX - 1 + idsDoP ].idCaste == sc_ccSSS && psttSmallP[ CSpREFIX - 1 + idsDoP ].idAdam  == sa_SSSoR )
             }
@@ -78,7 +78,7 @@
                 {
                 if( bHit )
 
-                boolT bHit = sssAndF( tinP , pstMatchP , flagsMatchP , psttSmallP , psttBigP ,  idsDoP ,  idbDoP ) ;
+                boolT bHit = sssAndF( tinBaseP , pstMatchP , flagsMatchP , psttSmallP , psttBigP ,  idsDoP ,  idbDoP ) ;
             {
             else if( !cArmLiterals && psttSmallP[ CSpREFIX - 1 + idsDoP ].idCaste == sc_ccSSS && psttSmallP[ CSpREFIX - 1 + idsDoP ].idAdam == sa_SSSaND )
             else if(                  psttSmallP[ CSpREFIX - 1 + idsDoP ].idCaste == sc_ccSSS && psttSmallP[ CSpREFIX - 1 + idsDoP ].idAdam == sa_SSSlITERALeND   ) cArmLiterals =   0 ;
@@ -166,7 +166,7 @@
         if( POOP ) return 0 ;
         FV(flSTRmATCH,flagsMatchP) ;
         }
-            __( F( pstMatchP->flagsF( tinP ) ) & flSTACKc_FIFO ) ; // IF FIFO THEN WILL CONTAIN INCORRECT CONTENTS
+            __( F( pstMatchP->flagsF( tinBaseP ) ) & flSTACKc_FIFO ) ; // IF FIFO THEN WILL CONTAIN INCORRECT CONTENTS
         {
         if( pstMatchP )
         __NZ( psttSmallP[ CSpREFIX - 1 + idsDoP ].idAdam  - sa_SSSoR ) ;
@@ -184,7 +184,7 @@
     IFbEcAREFUL
 
 {
-/*1*/boolT etherC::sssOrF( tinS& tinP , stackC* const pstMatchP , const flagsT flagsMatchP , const strokeS* const psttSmallP , const strokeS* const psttBigP ,  countT& idsDoP ,  countT& idbDoP )/*1*/
+/*1*/boolT etherC::sssOrF( tinBaseS& tinBaseP , stackC* const pstMatchP , const flagsT flagsMatchP , const strokeS* const psttSmallP , const strokeS* const psttBigP ,  countT& idsDoP ,  countT& idbDoP )/*1*/
 
 /**/
 
@@ -200,7 +200,7 @@
  psttBigP
   must have sc_ccSSS(sa_SSSoR) at position idsDoP
  psttSmallP
- tinP
+ tinBaseP
 parameters
 /*
 

@@ -10,69 +10,69 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("press the enter key\r\n") ) ;
+etThread.strokeF( tinBaseP , T("press the enter key\r\n") ) ;
 
-third.s_shutdown2IF( tinP ) ;
+third.s_shutdown2IF( tinBaseP ) ;
 
-third.s_writeF( tinP , handleJob , (byteT*)&value , sizeof value ) ;
+third.s_writeF( tinBaseP , handleJob , (byteT*)&value , sizeof value ) ;
 countT value = 0x78987 ;
 
 }
-    etThread.strokeF( tinP , T("i am the server, and peer name on the job is nicName = ")+TF2(nicName,flFORMAT_UNSIGNED)+T(", idPort = ")+TF2(idPort,flFORMAT_UNSIGNED)+T("\r\n") ) ;
-    third.s_peerNameF( tinP , idPort , nicName , handleJob ) ;
+    etThread.strokeF( tinBaseP , T("i am the server, and peer name on the job is nicName = ")+TF2(nicName,flFORMAT_UNSIGNED)+T(", idPort = ")+TF2(idPort,flFORMAT_UNSIGNED)+T("\r\n") ) ;
+    third.s_peerNameF( tinBaseP , idPort , nicName , handleJob ) ;
     ZE( countT , idPort ) ;
     nicNameC nicName ;
 {
 
 }
-    etThread.strokeF( tinP , T("i am the server, and my   name on the job is nicName = ")+TF2(nicName,flFORMAT_UNSIGNED)+T(", idPort = ")+TF2(idPort,flFORMAT_UNSIGNED)+T("\r\n") ) ;
-    third.s_myNameF( tinP , idPort , nicName , handleJob ) ;
+    etThread.strokeF( tinBaseP , T("i am the server, and my   name on the job is nicName = ")+TF2(nicName,flFORMAT_UNSIGNED)+T(", idPort = ")+TF2(idPort,flFORMAT_UNSIGNED)+T("\r\n") ) ;
+    third.s_myNameF( tinBaseP , idPort , nicName , handleJob ) ;
     ZE( countT , idPort ) ;
     nicNameC nicName ;
 {
 
-third.s_acceptF( tinP , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
+third.s_acceptF( tinBaseP , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
 ZE( countT , idPortPeer ) ;
 nicNameC nnPeer ;
-handleC handleJob( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+handleC handleJob( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPort ) ; } ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPort ) ; } ;
 
-third.s_listenF( tinP , handleServer ) ;
-countT idPort = third.s_bindF( tinP , handleServer ) ;
-third.s_socketIF( tinP , handleServer ) ;
-handleC handleServer( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-third.s_setupIF( tinP ) ;
+third.s_listenF( tinBaseP , handleServer ) ;
+countT idPort = third.s_bindF( tinBaseP , handleServer ) ;
+third.s_socketIF( tinBaseP , handleServer ) ;
+handleC handleServer( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+third.s_setupIF( tinBaseP ) ;
 
 thirdC& third = ether ;
 
 TODO
 
 DONE( tmF )
-etThread.strokeF( tinP , T("secondary thread received the value ")+TF1(value)+T(" by connecting to port ")+TF1(idPort)+T("\r\n") ) ;
-__( sizeof value != third.s_readF( tinP , (byteT*)&value , sizeof value , handleClient ) ) ;
+etThread.strokeF( tinBaseP , T("secondary thread received the value ")+TF1(value)+T(" by connecting to port ")+TF1(idPort)+T("\r\n") ) ;
+__( sizeof value != third.s_readF( tinBaseP , (byteT*)&value , sizeof value , handleClient ) ) ;
 ZE( countT , value ) ;
 
 }
-    etThread.strokeF( tinP , T("i am the client, and peer name on the job is nicName = ")+TF2(nicName,flFORMAT_UNSIGNED)+T(", idPort = ")+TF2(idPort,flFORMAT_UNSIGNED)+T("\r\n") ) ;
-    third.s_peerNameF( tinP , idPort , nicName , handleClient ) ;
+    etThread.strokeF( tinBaseP , T("i am the client, and peer name on the job is nicName = ")+TF2(nicName,flFORMAT_UNSIGNED)+T(", idPort = ")+TF2(idPort,flFORMAT_UNSIGNED)+T("\r\n") ) ;
+    third.s_peerNameF( tinBaseP , idPort , nicName , handleClient ) ;
     ZE( countT , idPort ) ;
     nicNameC nicName ;
 {
 
 }
-    etThread.strokeF( tinP , T("i am the client, and my   name on the job is nicName = ")+TF2(nicName,flFORMAT_UNSIGNED)+T(", idPort = ")+TF2(idPort,flFORMAT_UNSIGNED)+T("\r\n") ) ;
-    third.s_myNameF( tinP , idPort , nicName , handleClient ) ;
+    etThread.strokeF( tinBaseP , T("i am the client, and my   name on the job is nicName = ")+TF2(nicName,flFORMAT_UNSIGNED)+T(", idPort = ")+TF2(idPort,flFORMAT_UNSIGNED)+T("\r\n") ) ;
+    third.s_myNameF( tinBaseP , idPort , nicName , handleClient ) ;
     ZE( countT , idPort ) ;
     nicNameC nicName ;
 {
 
-third.s_connectF( tinP , handleClient , idPort ) ;
-third.s_socketIF( tinP , handleClient ) ;
-handleC handleClient( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+third.s_connectF( tinBaseP , handleClient , idPort ) ;
+third.s_socketIF( tinBaseP , handleClient ) ;
+handleC handleClient( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 
 thirdC& third = ether ;
 const countT idPort = pTaskP ? pTaskP->c1 : 0 ;

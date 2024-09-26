@@ -14,7 +14,7 @@
 
     }
         }
-            delF( tinP , pcTagTime ) ;
+            delF( tinBaseP , pcTagTime ) ;
 
             for( countT ids = 2 ; ids <= cSteps ; ids ++ ) pcP[ ids ] += pcTagTime[ ids ] - pcTagTime[ ids - 1 ] ;
 
@@ -24,16 +24,16 @@
                     _T 
                     }
                         _T 
-                        _T third.dosWriteStdOutIF( tinP , DDNAME ) ;
-                        _T third.dosWriteStdOutIF( tinP , "\r\n-" ) ;
+                        _T third.dosWriteStdOutIF( tinBaseP , DDNAME ) ;
+                        _T third.dosWriteStdOutIF( tinBaseP , "\r\n-" ) ;
                     {
                     _T if( F(third.flagsWatch) & flWATCH_SAY )
                     //}
                     //    _T 
                     //    _T third.pcFunctionExits[ idFile ] ++ ;
-                    //    _T ((thirdC&)third).osTimeAddF( tinP , third.pcFunctionTime1[ idFile ] , third.pcFunctionTime2[ idFile ] , time1 , time2 ) ;
-                    //    _T ((thirdC&)third).osTimeSubtractF( tinP , time1 , time2 , timeIn1 , timeIn2 ) ;
-                    //    _T ((thirdC&)third).osTimeNowF( tinP , time1 , time2 ) ;
+                    //    _T ((thirdC&)third).osTimeAddF( tinBaseP , third.pcFunctionTime1[ idFile ] , third.pcFunctionTime2[ idFile ] , time1 , time2 ) ;
+                    //    _T ((thirdC&)third).osTimeSubtractF( tinBaseP , time1 , time2 , timeIn1 , timeIn2 ) ;
+                    //    _T ((thirdC&)third).osTimeNowF( tinBaseP , time1 , time2 ) ;
                     //{
                     //_T if( F(third.flagsWatch) & flWATCH_TIME && !POOP && third.bFunctionCountersReady )
                     _T ZE( sCountT , time2 ) ;
@@ -44,25 +44,25 @@
                     _T 
                     //}
                     //    _T 
-                    //    _T third.osTimeNowF( tinP , timeIn1 , timeIn2 ) ;
+                    //    _T third.osTimeNowF( tinBaseP , timeIn1 , timeIn2 ) ;
                     //    _T third.pcFunctionEntries[ idFile ] ++ ;
                     //{
                     //_T if( F(third.flagsWatch) & flWATCH_TIME && !POOP && third.bFunctionCountersReady )
                     }
                         _T 
-                        _T third.dosWriteStdOutIF( tinP , DDNAME ) ;
-                        _T third.dosWriteStdOutIF( tinP , "\r\n+" ) ;
+                        _T third.dosWriteStdOutIF( tinBaseP , DDNAME ) ;
+                        _T third.dosWriteStdOutIF( tinBaseP , "\r\n+" ) ;
                     {
                     _T if( F(third.flagsWatch) & flWATCH_SAY )
                 {
                 _T if( third.flagsWatch )
                 _T ZE( sCountT , timeIn2 ) ;
                 _T ZE(  countT , timeIn1 ) ;
-                _T static countT idFile = processGlobal8I.source.idFileF( tinP , DDNAME ) ;
+                _T static countT idFile = processGlobal8I.source.idFileF( tinBaseP , DDNAME ) ;
             {
 
-            memSetF( tinP , (byteT*)pcTagTime , sizeof( countT ) * ( 1 + CAPACITY + 1 ) ) ;
-            newF( tinP , LF , pcTagTime , 1 + CAPACITY + 1 ) ; ___( pcTagTime ) ; // ASSUME: LESS THAN "CAPACITY" CALLS TO _T IN THIS FUNCTION DEFINITION
+            memSetF( tinBaseP , (byteT*)pcTagTime , sizeof( countT ) * ( 1 + CAPACITY + 1 ) ) ;
+            newF( tinBaseP , LF , pcTagTime , 1 + CAPACITY + 1 ) ; ___( pcTagTime ) ; // ASSUME: LESS THAN "CAPACITY" CALLS TO _T IN THIS FUNCTION DEFINITION
             ZE( countT* , pcTagTime ) ;
             cSteps = 0 ;
         {
@@ -72,8 +72,8 @@
     ZE( countT , cSteps ) ;
     // TAKE SOME SAMPLE RUNS THROUGH THE STEPS
 
-    memSetF( tinP , (byteT*)pcP , sizeof( countT ) * ( 1 + CAPACITY + 1 ) ) ;
-    newF( tinP , LF , pcP , 1 + CAPACITY + 1 ) ; ___( pcP ) ; // ASSUME: LESS THAN "CAPACITY" CALLS TO _T IN THIS FUNCTION DEFINITION
+    memSetF( tinBaseP , (byteT*)pcP , sizeof( countT ) * ( 1 + CAPACITY + 1 ) ) ;
+    newF( tinBaseP , LF , pcP , 1 + CAPACITY + 1 ) ; ___( pcP ) ; // ASSUME: LESS THAN "CAPACITY" CALLS TO _T IN THIS FUNCTION DEFINITION
     _IO_
 
     }
@@ -85,15 +85,15 @@
 
 #if defined( NEVERdEFINED )
 
-    if( tinP.fingerprint && pcP ) ;
+    if( ((tinNormalS&)tinBaseP).fingerprint && pcP ) ;
     BLAMMO ; //U::REDESIGN AND REWRITE THIS SUBSYSTEM
     SCOOP
 {
-/*1*/voidT etherC::etherRptOverheadCostsF( tinS& tinP , countT*& pcP )/*1*/
+/*1*/voidT etherC::etherRptOverheadCostsF( tinBaseS& tinBaseP , countT*& pcP )/*1*/
 
 #define CtRIES 0x10
 #define CAPACITY 0x80
-#define _T pcTagTime[ ++ cSteps ] = thirdC::osClockIF( tinP ) ;
+#define _T pcTagTime[ ++ cSteps ] = thirdC::osClockIF( tinBaseP ) ;
 //#define _T pcTagTime[ ++ cSteps ] = third.osTimeTicksSinceBootIF() ;
 // "_T" IS FOR "TAG" AS IN "TAG BASE IN A BASEBALL GAME"
 
@@ -116,7 +116,7 @@
   after evaluation, will point to a 1-indexed null terminated string of countT values
   must be 0
  pcP
- tinP
+ tinBaseP
 arguments
 it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.10300fd.1.0.html\"\>definition\</A\>

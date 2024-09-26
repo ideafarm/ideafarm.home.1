@@ -11,12 +11,12 @@ REST
 
 while( !etThread && ~hDown ) ;
 }
-    etThread.strokeF( tinP , TF1(vv)+T("\r\n") ) ;
-    countT vv = stc.downF( tinP , hDown ) ;
+    etThread.strokeF( tinBaseP , TF1(vv)+T("\r\n") ) ;
+    countT vv = stc.downF( tinBaseP , hDown ) ;
 {
 do
 hDown = 0 ;
-etThread.strokeF( tinP , T("stack contents after insertion pass:\r\n") ) ;
+etThread.strokeF( tinBaseP , T("stack contents after insertion pass:\r\n") ) ;
 
 while( !etThread && ~hDown ) ;
 }
@@ -24,38 +24,38 @@ while( !etThread && ~hDown ) ;
 
     }
         }
-            else stc.insertF( tinP , vve ++ ) ;
+            else stc.insertF( tinBaseP , vve ++ ) ;
             }
-                stc.insertF( tinP , vve ++ , ifcSTACKtYPE_countT , 1 ) ;
+                stc.insertF( tinBaseP , vve ++ , ifcSTACKtYPE_countT , 1 ) ;
                 bTop = 0 ;
             {
             if( bTop )
         {
         while( vve < vv )
-        boolT bTop = !stc.downUndoF( tinP , hDown ) ;
+        boolT bTop = !stc.downUndoF( tinBaseP , hDown ) ;
     {
     if( vve < vv )
-    vv = stc.downF( tinP , hDown ) ;
+    vv = stc.downF( tinBaseP , hDown ) ;
 {
 do
-etThread.strokeF( tinP , T("insertion pass.  i insert missing values\r\n") ) ;
+etThread.strokeF( tinBaseP , T("insertion pass.  i insert missing values\r\n") ) ;
 hDown = 0 ;
 ZE( countT , vv ) ;
 countT vve = 1 ;
 
 while( !etThread && ~hDown ) ;
 }
-    etThread.strokeF( tinP , TF1(vv)+T("\r\n") ) ;
-    countT vv = stc.downF( tinP , hDown ) ;
+    etThread.strokeF( tinBaseP , TF1(vv)+T("\r\n") ) ;
+    countT vv = stc.downF( tinBaseP , hDown ) ;
 {
 do
-handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-etThread.strokeF( tinP , T("stack contents before insertion pass:\r\n") ) ;
+handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+etThread.strokeF( tinBaseP , T("stack contents before insertion pass:\r\n") ) ;
 
 stc << 5U ;
 stc << 4U ;
 stc << 3U ;
-stackC stc( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+stackC stc( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
 
 TODO
 

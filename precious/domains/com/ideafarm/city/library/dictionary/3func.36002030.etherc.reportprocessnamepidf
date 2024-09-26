@@ -8,44 +8,44 @@
 
 
 }
-    strMakeF( tinP , LF , psttSuffixP , T("") ) ; ___( psttSuffixP ) ;
-    strMakeF( tinP , LF , psttPrefixP , T("") ) ; ___( psttPrefixP ) ;
-    strFuseF( tinP , psttUniqueP , T(".report.process.name.pid") ) ; ___( psttUniqueP ) ;
-    strUniqueF( tinP , psttUniqueP ) ; ___( psttUniqueP ) ;
+    strMakeF( tinBaseP , LF , psttSuffixP , T("") ) ; ___( psttSuffixP ) ;
+    strMakeF( tinBaseP , LF , psttPrefixP , T("") ) ; ___( psttPrefixP ) ;
+    strFuseF( tinBaseP , psttUniqueP , T(".report.process.name.pid") ) ; ___( psttUniqueP ) ;
+    strUniqueF( tinBaseP , psttUniqueP ) ; ___( psttUniqueP ) ;
 
-    strConvertToLowerCaseF( tinP , psttP ) ;
+    strConvertToLowerCaseF( tinBaseP , psttP ) ;
 
-    delF( tinP , psttRaw ) ;
+    delF( tinBaseP , psttRaw ) ;
     }
         }
-            delF( tinP , psttLine ) ;
+            delF( tinBaseP , psttLine ) ;
             }
-                delF( tinP , psttTid  ) ;
-                delF( tinP , psttName ) ;
-                delF( tinP , psttSid  ) ;
-                delF( tinP , psttPPid ) ;
-                delF( tinP , psttPid  ) ;
+                delF( tinBaseP , psttTid  ) ;
+                delF( tinBaseP , psttName ) ;
+                delF( tinBaseP , psttSid  ) ;
+                delF( tinBaseP , psttPPid ) ;
+                delF( tinBaseP , psttPid  ) ;
 
                 }
-                    delF( tinP , postName ) ;
-                    strFuseF( tinP , psttP , T(iffn)+T("\t")+T(psttPid) ) ; ___( psttP ) ;
-                    ifFileNameC iffn( tinP , third , postName ) ;
-                    delF( tinP , psttName ) ;
-                    strMakeF( tinP , LF , postName , psttName ) ; ___( postName ) ;
+                    delF( tinBaseP , postName ) ;
+                    strFuseF( tinBaseP , psttP , T(iffn)+T("\t")+T(psttPid) ) ; ___( psttP ) ;
+                    ifFileNameC iffn( tinBaseP , third , postName ) ;
+                    delF( tinBaseP , psttName ) ;
+                    strMakeF( tinBaseP , LF , postName , psttName ) ; ___( postName ) ;
                     ZE( osTextT* , postName ) ;
 
-                    else         { strFuseF( tinP , psttP , T("\r\n") ) ; ___( psttP ) ; }
+                    else         { strFuseF( tinBaseP , psttP , T("\r\n") ) ; ___( psttP ) ; }
                     if( fFirst ) fFirst = 0 ;
                 {
-                if( psttTid && !strCompareF( tinP , psttTid , T("01") ) )
+                if( psttTid && !strCompareF( tinBaseP , psttTid , T("01") ) )
 
-                if( idfl ) { strSubstringF( tinP , psttTid  , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttTid ) ; }
-                if( idfl ) { strSubstringF( tinP , psttName , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttName ) ; }
-                if( idfl ) { strSubstringF( tinP , psttSid  , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttSid ) ; }
-                if( idfl ) { strSubstringF( tinP , psttPPid , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttPPid ) ; }
-                if( idfl ) { strSubstringF( tinP , psttPid  , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttPid ) ; }
-                delF( tinP , psttPid ) ;
-                strSubstringF( tinP , psttPid  , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttPid ) ;
+                if( idfl ) { strSubstringF( tinBaseP , psttTid  , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttTid ) ; }
+                if( idfl ) { strSubstringF( tinBaseP , psttName , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttName ) ; }
+                if( idfl ) { strSubstringF( tinBaseP , psttSid  , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttSid ) ; }
+                if( idfl ) { strSubstringF( tinBaseP , psttPPid , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttPPid ) ; }
+                if( idfl ) { strSubstringF( tinBaseP , psttPid  , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttPid ) ; }
+                delF( tinBaseP , psttPid ) ;
+                strSubstringF( tinBaseP , psttPid  , idfl , sttql , T(" ") , psttLine , 1 ) ; ___( psttPid ) ;
                 strokeS sttql( (countT)0 , sc_IGNOREqUOTES ) ;
                 countT idfl = 1 ;
                 ZE( strokeS* , psttTid ) ;
@@ -56,10 +56,10 @@
                 // psttLine IS ETHER A PRIMARY THREAD LINE (PROCESS LINE) OR A SECONDARY THREAD LINE.  AT FIRST, WE''LL ASSUME THAT IT IS A PROCESS LINE.  THEN WE''LL CHECK
             {
             else if( fInSection )
-            else if( !strCompareF( tinP , psttLine , T("                    System Semaphore Information"                           ) ) ) fInSection = 0 ;
-            else if( !strCompareF( tinP , psttLine , T("  ID        ID        ID       Name       ID    Priority   Block ID   State") ) ) fInSection = 1 ;
+            else if( !strCompareF( tinBaseP , psttLine , T("                    System Semaphore Information"                           ) ) ) fInSection = 0 ;
+            else if( !strCompareF( tinBaseP , psttLine , T("  ID        ID        ID       Name       ID    Priority   Block ID   State") ) ) fInSection = 1 ;
             if( psttLine && !psttLine->idAdam ) ;
-            strSubstringF( tinP , psttLine , idfr , sttqr , T("\r\n") , psttRaw ) ; ___( psttLine ) ;
+            strSubstringF( tinBaseP , psttLine , idfr , sttqr , T("\r\n") , psttRaw ) ; ___( psttLine ) ;
             ZE( strokeS* , psttLine ) ;
         {
         while( !POOP && idfr )
@@ -70,8 +70,8 @@
     {
 
     }
-        delF( tinP , pstte ) ;
-        strFromProcessF( tinP , psttRaw , pstte , T("///d/os2/pstat.exe") ) ; ___( psttRaw ) ; //U: ASSUME: OS/2 IS INSTALLED ON DRIVE C AND DIAGNOSTIC OPTIONS HAVE BEEN INSTALLED. ALSO, ASSUMES RUNNING ON OS/2 //U:NT
+        delF( tinBaseP , pstte ) ;
+        strFromProcessF( tinBaseP , psttRaw , pstte , T("///d/os2/pstat.exe") ) ; ___( psttRaw ) ; //U: ASSUME: OS/2 IS INSTALLED ON DRIVE C AND DIAGNOSTIC OPTIONS HAVE BEEN INSTALLED. ALSO, ASSUMES RUNNING ON OS/2 //U:NT
         ZE( strokeS* , pstte ) ;
     {
     ZE( strokeS* , psttRaw ) ;
@@ -85,7 +85,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::reportProcessNamePidF( tinS& tinP , strokeS*& psttP , strokeS*& psttPrefixP , strokeS*& psttSuffixP , strokeS*& psttUniqueP )/*1*/
+/**//*1*/voidT etherC::reportProcessNamePidF( tinBaseS& tinBaseP , strokeS*& psttP , strokeS*& psttPrefixP , strokeS*& psttSuffixP , strokeS*& psttUniqueP )/*1*/
 */
  psttUniqueP
  psttSuffixP

@@ -14,31 +14,31 @@ REST
 }
     }
         }
-            ++ s ; ether.osSleepF( tinP , TOCK ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
     
         }
             }
                 if( POOP ) POOPR
-                sock.readF( tinP , soulIn ) ;
-                soulC soulIn( tinP , TAG( TAGiDnULL ) ) ;
+                sock.readF( tinBaseP , soulIn ) ;
+                soulC soulIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-                sock.writeF( tinP , soulOut , c8Name ) ;
+                sock.writeF( tinBaseP , soulOut , c8Name ) ;
                 count8S c8Name( idCycle , idCycle , idCycle , idCycle ) ;
                 
                 soulOut << ++ idCycle ;
-                soulC soulOut( tinP , TAG( TAGiDnULL ) ) ;
+                soulC soulOut( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             else
             }
-                etThread.strokeF( tinP , T("could not connect\r\n") ) ;
+                etThread.strokeF( tinBaseP , T("could not connect\r\n") ) ;
                 POOPR
             {
             if( POOP )
             
-            sock.connectF( tinP , 0xab52/*RANDOM (SEE 4350104)*/ ) ;
-            socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            sock.connectF( tinBaseP , 0xab52/*RANDOM (SEE 4350104)*/ ) ;
+            socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
             SCOOPS
         {
     {

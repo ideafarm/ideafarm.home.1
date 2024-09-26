@@ -24,18 +24,18 @@
         sIn >> finger ;
         ZE( countT , finger ) ;
     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
         sOut << psttP ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -46,7 +46,7 @@
     __Z( psttP ) ;
     if( POOP ) return 0 ;
 {
-/*1*/countT queryIdAccountFromEmailF( tinS& tinP , const strokeS* const psttP )/*1*/
+/*1*/countT queryIdAccountFromEmailF( tinBaseS& tinBaseP , const strokeS* const psttP )/*1*/
 
 //DUPLICATE CODE: b750104 e750104 1d20005
 

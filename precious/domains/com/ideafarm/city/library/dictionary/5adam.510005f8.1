@@ -11,7 +11,7 @@ REST
 
 }
     }
-        ++ s ; etThread.osSleepF( tinP , TOCK >> 3 ) ;
+        ++ s ; etThread.osSleepF( tinBaseP , TOCK >> 3 ) ;
     
         }
             }
@@ -28,20 +28,20 @@ REST
             {
             if( !pbi )
 
-            boolT bDelete = bksFooey.readF( tinP , pbi , cbi , hRead ) ;
+            boolT bDelete = bksFooey.readF( tinBaseP , pbi , cbi , hRead ) ;
 
             handleC hReadSave = hRead ;
             countT cbiSave = cbi ;
         {
         while( !ether )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !ether )
     countT cbi = sizeof( countT ) ;
     ZE( const byteT* , pbi ) ;
-    handleC hRead( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+    handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
 
-    booksC bksFooey( tinP , TAGnOtIN( TAGiDnULL ) , "bksFooey", ifcIDsTATEsPACE_SINGLEaDAM( tinP ) ) ;
+    booksC bksFooey( tinBaseP , TAGnOtIN( TAGiDnULL ) , "bksFooey", ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) ) ;
 
     etThread.osThreadF( TaRG1( tmWriteF ) ) ;
 {
@@ -50,18 +50,18 @@ TODO
 DONE( tmWriteF )
 }
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
 
-        bksFooey.writeF( tinP , (byteT*)&idCycle , sizeof idCycle , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
+        bksFooey.writeF( tinBaseP , (byteT*)&idCycle , sizeof idCycle , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND ) ;
         CONoUTrAW3( "writing [idCycle]: " , idCycle , "\r\n" ) ;
 
         idCycle ++ ;
     {
     while( !ether )
     ZE( countT , idCycle ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    booksC bksFooey( tinP , TAGnOtIN( TAGiDnULL ) , "bksFooey" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flBOOKSc_WRITER , 5 ) ;
+    booksC bksFooey( tinBaseP , TAGnOtIN( TAGiDnULL ) , "bksFooey" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKSc_WRITER , 5 ) ;
 {
 if( pTaskP )
 TASK( tmWriteF )

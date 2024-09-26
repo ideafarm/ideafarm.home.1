@@ -9,7 +9,7 @@
 
 }
     }
-        if( !( F(napFace.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napFace.formattingIsDoneF( tinP ) ;
+        if( !( F(napFace.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napFace.formattingIsDoneF( tinBaseP ) ;
 
         }
             inc02AM( face.cRef ) ;
@@ -34,7 +34,7 @@
             THREADmODE3rESTORE
             }
                 POPtINaRGS
-                new( 0 , tinP , &napFace ) face_poolC_S( tinP , idLineCtP , idiFileCtP , pbBitsCtP , flagsPoolFormatP , cbDropSeparatorP , cbDropHeader ) ;
+                new( 0 , tinBaseP , &napFace ) face_poolC_S( tinBaseP , idLineCtP , idiFileCtP , pbBitsCtP , flagsPoolFormatP , cbDropSeparatorP , cbDropHeader ) ;
                 PUSHtINaRGS
             {
             THREADmODE3oN( flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc ) ;
@@ -48,7 +48,7 @@
         ;
                     : 1                                                                                 //STATE DID NOT EXIST: YES
                     ? 0                                                                                 //STATE EXISTED: NO
-                : ((fileC*)pbFileFace)->idOpenResultF( tinP  ) == ifcOPENrESULT_EXISTED
+                : ((fileC*)pbFileFace)->idOpenResultF( tinBaseP  ) == ifcOPENrESULT_EXISTED
                 ? 1                                                                                     //STATELESS: YES
             : !idStateSpaceP
             ? 0                                                                                         //RAM EXISTED: NO
@@ -62,7 +62,7 @@
     ZE( boolT , bFormattedByMe ) ;
     _IO_
 {
-/*1*/voidT poolC::ctFaceF( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT cbDropSeparatorP , const countT idStateSpaceP )/*1*/
+/*1*/voidT poolC::ctFaceF( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsPoolFormatP , const countT cbDropSeparatorP , const countT idStateSpaceP )/*1*/
 
 /**/
 */

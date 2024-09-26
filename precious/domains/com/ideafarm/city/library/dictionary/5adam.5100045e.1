@@ -9,15 +9,15 @@
 
 REST
 
-etThread.strokeF( tinP , T("idp:")+TF1(idp)+T("    nn:")+T(nn)+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("idp:")+TF1(idp)+T("    nn:")+T(nn)+T("\r\n") ) ;
 nicNameC& nn = *(nicNameC*)&stn[ idp ] ;
 
 countT idp = stn( nicNameC( 7 , 7 , 7 , 7 ) ) ;
 
-    stn.sinkF( tinP , countTC() , nicNameC( idn , idn , idn , idn ) ) ;
+    stn.sinkF( tinBaseP , countTC() , nicNameC( idn , idn , idn , idn ) ) ;
 for( countT idn = 1 ; idn <= 8 ; idn ++ )
 
-stackC stn( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+stackC stn( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
 
 TODO
 

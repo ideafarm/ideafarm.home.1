@@ -11,7 +11,7 @@
     }
         }
             if( flags == 1 ) flags -- ;                     // RESET THE "NOT YET READ" FLAG
-            //tinP.pEther->traceF( tinP , T("readDoneF / resetting \"not yet read\" flag") ) ;
+            //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("readDoneF / resetting \"not yet read\" flag") ) ;
             countT& flags = ((countT*)pbP)[ - 1 ] ;
         {
         if( pbBuffer <= pbP + sizeof( countT ) && pbP <= pbBuffer + cbBuffer - cbItemNet )
@@ -19,10 +19,10 @@
     {
     inline voidT readDoneF( const byteT* pbP )
 
-    const byteT* readF( tinS& tinP , const flagsT flagsP = flFUNNELhORNcrEAD_null ) ;
-    countT writeF( tinS& tinP , const byteT* pbP ) ;
+    const byteT* readF( tinBaseS& tinBaseP , const flagsT flagsP = flFUNNELhORNcrEAD_null ) ;
+    countT writeF( tinBaseS& tinBaseP , const byteT* pbP ) ;
 
-    funnelHornC( tinS& tinP , etherC& etherP , const boolT& bQuitP , countT cbItemP , countT cCapacityP ) ;
+    funnelHornC( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQuitP , countT cbItemP , countT cCapacityP ) ;
     ~funnelHornC( voidT ) ;
     NEWdELcLASSpROTOS
 

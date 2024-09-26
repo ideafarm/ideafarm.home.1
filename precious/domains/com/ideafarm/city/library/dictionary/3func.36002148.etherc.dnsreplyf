@@ -13,9 +13,9 @@
         }
             __( pbc - pbe ) ;
             }
-                delF( tinP , pc2s ) ;
+                delF( tinBaseP , pc2s ) ;
                 }
-                    delF( tinP , (byteT*&)pc2s->c1 ) ;
+                    delF( tinBaseP , (byteT*&)pc2s->c1 ) ;
                     pbc += pc2s->c2 ;
 
                     }
@@ -50,7 +50,7 @@
                     {
                     if( pbc == pbP )
 
-                    memCopyF( tinP , pbc , (byteT*)pc2s->c1 , pc2s->c2 ) ;
+                    memCopyF( tinBaseP , pbc , (byteT*)pc2s->c1 , pc2s->c2 ) ;
 
                     __( pbc + pc2s->c2 >  pbe ) ;
                     __( pbc            >= pbe ) ;
@@ -66,15 +66,15 @@
             pbP[ cba ] = 0 ;
         {
         if( pbP )
-        newF( tinP , LF , pbP , cba + 1 ) ; ___( pbP ) ;
+        newF( tinBaseP , LF , pbP , cba + 1 ) ; ___( pbP ) ;
 
         while( !POOP && ~hDown ) ;
         }
             if( pc2s ) cba += pc2s->c2 ;
-            count2S* pc2s = (count2S*)stSnip.downF( tinP , hDown ) ;
+            count2S* pc2s = (count2S*)stSnip.downF( tinBaseP , hDown ) ;
         {
         do
-        handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stSnip )
     ZE( countT , cba ) ; // STEP 3: MAKE THE FINAL IMAGE BY CONCATENATING THE SNIPPETS
@@ -82,10 +82,10 @@
     //}
     //    }
     //        ifcSayIF( T("label registered at offset ")+TF1(swOff)+T(": \"")+T(psttl)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
-    //        psttl = (strokeS*)swOff.leverF( tinP , idf ) ;
+    //        psttl = (strokeS*)swOff.leverF( tinBaseP , idf ) ;
     //    {
     //    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    //    countT cFlavors = swOff.cFlavorsF( tinP ) ;
+    //    countT cFlavors = swOff.cFlavorsF( tinBaseP ) ;
     //{
     //DEBUGGING
 
@@ -110,11 +110,11 @@
                                 cbData += (count01T)pc2s->c2 ;
                                 offo += pc2s->c2 ;
                                 stSnip << pc2s ;
-                                soul.shiftRightF( tinP , (byteT*&)pc2s->c1 , pc2s->c2 , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( (byteT*&)pc2s->c1 ) ;
+                                soul.shiftRightF( tinBaseP , (byteT*&)pc2s->c1 , pc2s->c2 , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( (byteT*&)pc2s->c1 ) ;
                                 pc2s->c2 = pc2s->c1 = 0 ;
                             {
                             if( pc2s )
-                            newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+                            newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
                         {
 
                         }
@@ -124,12 +124,12 @@
                                 offo += pc2s->c2 ;
                                 stSnip << pc2s ;
                                 if( pc2s->c1 ) *(byteT*)pc2s->c1 = (byteT)cProtocol ;
-                                newF( tinP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                                newF( tinBaseP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
                                 pc2s->c2 = 1 ;
                                 pc2s->c1 = 0 ;
                             {
                             if( pc2s )
-                            newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+                            newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
 
                             soul >> cProtocol ;
                             ZE( countT , cProtocol ) ;
@@ -142,12 +142,12 @@
                                 offo += pc2s->c2 ;
                                 stSnip << pc2s ;
                                 if( pc2s->c1 ) *(count02T*)pc2s->c1 = SWABnET4( (count02T)*(const countT*)nicName ) ;
-                                newF( tinP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                                newF( tinBaseP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
                                 pc2s->c2 = sizeof( count02T ) ;
                                 pc2s->c1 = 0 ;
                             {
                             if( pc2s )
-                            newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+                            newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
                             nicName << soul ;
                             nicNameC nicName ;
                         {
@@ -163,14 +163,14 @@
                                 offo += pc2s->c2 ;
                                 stSnip << pc2s ;
                                 if( pc2s->c1 ) *(count02T*)pc2s->c1 = SWABnET4( ss ) ;
-                                newF( tinP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                                newF( tinBaseP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
                                 pc2s->c2 = sizeof( count02T ) ;
                                 pc2s->c1 = 0 ;
                             {
                             if( pc2s )
-                            newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+                            newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
 
-                            count02T ss = third.secondsFromTimeIF( tinP , time1 , time2 ) ;
+                            count02T ss = third.secondsFromTimeIF( tinBaseP , time1 , time2 ) ;
                             soul >> (countT&)time2 ;
                             soul >> time1 ;
                             ZE( sCountT , time2 ) ;
@@ -185,18 +185,18 @@
                             offo += pc2s->c2 ;
                             stSnip << pc2s ;
                             if( pc2s->c1 ) *(count02T*)pc2s->c1 = SWABnET4( (count02T)cSerial ) ;
-                            newF( tinP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                            newF( tinBaseP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
                             pc2s->c2 = sizeof( count02T ) ;
                             pc2s->c1 = 0 ;
                         {
                         if( pc2s )
-                        newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+                        newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
 
                         soul >> cSerial ;
                         ZE( countT , cSerial ) ;
 
-                        pushLabelsF( tinP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ;
-                        pushLabelsF( tinP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ;
+                        pushLabelsF( tinBaseP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ;
+                        pushLabelsF( tinBaseP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ;
                     {
                     case ifcIDtYPEdNSqUERY_SOA :
                     }
@@ -207,7 +207,7 @@
                     }
                         break ;
 
-                        pushLabelsF( tinP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ;
+                        pushLabelsF( tinBaseP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ;
 
                         }
                             pc2s = 0 ;
@@ -215,12 +215,12 @@
                             offo += pc2s->c2 ;
                             stSnip << pc2s ;
                             if( pc2s->c1 ) *(count01T*)pc2s->c1 = SWABnET2( (count01T)cRank ) ;
-                            newF( tinP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                            newF( tinBaseP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
                             pc2s->c2 = sizeof( count01T ) ;
                             pc2s->c1 = 0 ;
                         {
                         if( pc2s )
-                        newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+                        newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
 
                         soul >> cRank ;
                         ZE( countT , cRank ) ;
@@ -230,7 +230,7 @@
                         break ;
 
                         }
-                            delF( tinP , psttw ) ;
+                            delF( tinBaseP , psttw ) ;
                             }
                                 }
                                     pc2s = 0 ;
@@ -243,12 +243,12 @@
                                         byteT* pbc = (byteT*)pc2s->c1 ;
                                     {
                                     if( pc2s->c1 )
-                                    newF( tinP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                                    newF( tinBaseP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
                                     pc2s->c2 = 1 + psttw->idAdam ;
                                     pc2s->c1 = 0 ;
                                 {
                                 if( pc2s )
-                                newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+                                newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
                             {
                             if( psttw )
                             soul >> psttw ; ___( psttw ) ;
@@ -263,7 +263,7 @@
                     case ifcIDtYPEdNSqUERY_HINFO :
                     }
                         break ;
-                        pushLabelsF( tinP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ;
+                        pushLabelsF( tinBaseP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ;
                     {
                     case ifcIDtYPEdNSqUERY_PTR :
                     case ifcIDtYPEdNSqUERY_MR :
@@ -272,7 +272,7 @@
                     case ifcIDtYPEdNSqUERY_CNAME :
                     case ifcIDtYPEdNSqUERY_NS :
                     }
-                        pushLabelsF( tinP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ; // INTENTIONAL FALLTHROUGH
+                        pushLabelsF( tinBaseP , *this , stSnip , offo , cbData , soul , swOff , psttl ) ; // INTENTIONAL FALLTHROUGH
                     {
                     case ifcIDtYPEdNSqUERY_MINFO :
                     }
@@ -283,12 +283,12 @@
                             offo += pc2s->c2 ;
                             stSnip << pc2s ;
                             if( pc2s->c1 ) *(count02T*)pc2s->c1 = SWABnET4( (count02T)*(const countT*)nicName ) ;
-                            newF( tinP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                            newF( tinBaseP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
                             pc2s->c2 = sizeof( count02T ) ;
                             pc2s->c1 = 0 ;
                         {
                         if( pc2s )
-                        newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+                        newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
                         nicName << soul ;
                         nicNameC nicName ;
                     {
@@ -313,18 +313,18 @@
                     p_cbData = &rMiddle.cbData ;
                     rMiddle.swabF() ;
                     rMiddle.cbData        = 0 ; //WILL BE ACCUMULATED AND THEN SWABBED
-                    rMiddle.secondsToLive = third.secondsFromTimeIF( tinP , time1 , time2 ) ;
+                    rMiddle.secondsToLive = third.secondsFromTimeIF( tinBaseP , time1 , time2 ) ;
                     rMiddle.idClass       = (count01T)idClass ;
                     rMiddle.idType        = (count01T)idType ;
                     dnsResourceMiddleS& rMiddle = *(dnsResourceMiddleS*)pc2s->c1 ;
                 {
                 if( pc2s->c1 )
-                newF( tinP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                newF( tinBaseP , LF , (byteT*&)pc2s->c1 , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
                 pc2s->c2 = sizeof( dnsResourceMiddleS ) ;
                 pc2s->c1 = 0 ;
             {
             if( pc2s )
-            newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+            newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
             ZE( count01T* , p_cbData ) ;
 
             soul >> (countT&)time2 ;
@@ -336,7 +336,7 @@
             soul >> idType ;
             ZE( countT , idType ) ; // THE MIDDLE OF THE RR
 
-            { ZE( count01T , cnu ) ; pushLabelsF( tinP , *this , stSnip , offo , cnu , soul , swOff , psttl ) ; }
+            { ZE( count01T , cnu ) ; pushLabelsF( tinBaseP , *this , stSnip , offo , cnu , soul , swOff , psttl ) ; }
 
             ZE( count2S* , pc2s ) ;
             ZE( strokeS* , psttw1 ) ;
@@ -374,23 +374,23 @@
         }
             offo += pc2s->c2 ;
             stSnip << pc2s ;
-            memCopyF( tinP      , (byteT*&)pc2s->c1 , pbQueryP , pc2s->c2 ) ;
-            newF(     tinP , LF , (byteT*&)pc2s->c1            , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+            memCopyF( tinBaseP      , (byteT*&)pc2s->c1 , pbQueryP , pc2s->c2 ) ;
+            newF(     tinBaseP , LF , (byteT*&)pc2s->c1            , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
             pc2s->c2 = pbe - pbQueryP ;
             pc2s->c1 = 0 ;
         {
         if( pc2s )
-        newF( tinP , LF , pc2s ) ; ___( pc2s ) ;
+        newF( tinBaseP , LF , pc2s ) ; ___( pc2s ) ;
         ZE( count2S* , pc2s ) ;
 
         }
             }
                 pbe += 2 * sizeof( count01T ) ;
 
-                delF( tinP , psttl ) ;
+                delF( tinBaseP , psttl ) ;
                 swOff = offl ;
                 //ifcSayIF( T("label at offset ")+TF1(offl)+T(": \"")+T(psttl)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
-                dnsLabelsF( tinP , psttl , pbe , (dnsMsgHeaderS*)pbQueryP ) ; ___( psttl ) ;
+                dnsLabelsF( tinBaseP , psttl , pbe , (dnsMsgHeaderS*)pbQueryP ) ; ___( psttl ) ;
                 countT offl = pbe - pbQueryP ;
             {
             while( cq -- )
@@ -404,11 +404,11 @@
     {
     // STEP 1: MAKE THE UNEDITED HEADER/QUERY SNIPPET (THIS SNIPPET WILL NEED TO BE EDITED BEFORE USE)
 
-    switchC swOff( tinP , third , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttl ) ;
+    switchC swOff( tinBaseP , third , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttl ) ;
     ZE( strokeS* , psttl ) ;
     ZE( countT , offo ) ; //WHERE I AM IN THE OUTPUT IMAGE; THIS NEEDS TO BE KNOWN TO CALCULATE LABEL COMPRESSION WHILE MAKING THE SNIPPETS
 
-    stackC stSnip( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_count2S ) ; // [ pb , cb ]
+    stackC stSnip( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_count2S ) ; // [ pb , cb ]
 
     _IO_
 
@@ -421,7 +421,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::dnsReplyF( tinS& tinP , byteT*& pbP , countT& cbP , const byteT* const pbQueryP , stackC& stsRepliesP , const boolT bAuthoritativeP , const countT idErrorP )/*1*/
+/*1*/voidT etherC::dnsReplyF( tinBaseS& tinBaseP , byteT*& pbP , countT& cbP , const byteT* const pbQueryP , stackC& stsRepliesP , const boolT bAuthoritativeP , const countT idErrorP )/*1*/
 
 /**/
 */
@@ -432,7 +432,7 @@
  pbQueryP
  cbP
  pbP
- tinP
+ tinBaseP
 arguments
  if the caller is to send a truncated record via datagram, be sure to patch pbP to set the bTruncated bit in the header
 the caller must verify cbP <= 002 if pbP will be sent using a datagram

@@ -14,18 +14,18 @@
                 break ;
 
                 if( pYou ) stP << pYou ;
-                nicNameC* pYou = new( 0 , tinP , LF ) nicNameC( nn1 , nn2 , nn3 , nn4 ) ;
+                nicNameC* pYou = new( 0 , tinBaseP , LF ) nicNameC( nn1 , nn2 , nn3 , nn4 ) ;
 
-                countT nn1 = tinP.brcRaw ;
+                countT nn1 = ((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , ntohl( pca[ ++ offi ] ) )
 
-                countT nn2 = tinP.brcRaw ;
+                countT nn2 = ((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , ntohl( pca[ ++ offi ] ) )
 
-                countT nn3 = tinP.brcRaw ;
+                countT nn3 = ((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , ntohl( pca[ ++ offi ] ) )
 
-                countT nn4 = tinP.brcRaw ;
+                countT nn4 = ((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , ntohl( pca[ ++ offi ] ) )
             {
             case 0x66666666 :
@@ -34,12 +34,12 @@
 
                 }
                     stP << pYou ;
-                    //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("s_getHostByNameF [*pYou,postP]:    ")+T(*pYou)+T("    ")+T(postP) ) ;
+                    //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("s_getHostByNameF [*pYou,postP]:    ")+T(*pYou)+T("    ")+T(postP) ) ;
                 {
                 if( pYou )
-                nicNameC* pYou = new( 0 , tinP , LF ) nicNameC( nn1 , 0xffff ) ;    //0xffff IS TO MAP THIS IPv4 ADDRESS TO IPv6
+                nicNameC* pYou = new( 0 , tinBaseP , LF ) nicNameC( nn1 , 0xffff ) ;    //0xffff IS TO MAP THIS IPv4 ADDRESS TO IPv6
 
-                countT nn1 = tinP.brcRaw ;
+                countT nn1 = ((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , ntohl( pca[ ++ offi ] ) )
             {
             case 0x44444444 :
@@ -63,14 +63,14 @@
     }
         if( POOP ) return ;
         IFsIMULATEoFFLINEpOOP
-        __( stP.idTypeF( tinP ) - ifcSTACKtYPE_PTR_nicNameC ) ;
+        __( stP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_nicNameC ) ;
         __( stP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::s_getHostByNameF( tinS& tinP , stackC& stP , const osTextT* const postP )/*1*/
+/*1*/voidT thirdC::s_getHostByNameF( tinBaseS& tinBaseP , stackC& stP , const osTextT* const postP )/*1*/
 
 //CODEsYNCH: 00100de 10200f5: NICnAMElOCAL MUST BE THE VALUE THAT IS RETURNED BY gethostbyname WHEN NO ADAPTERS ARE ACTIVE
 

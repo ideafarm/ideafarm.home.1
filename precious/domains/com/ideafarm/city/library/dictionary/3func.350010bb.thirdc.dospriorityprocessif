@@ -10,7 +10,7 @@
 }
     return idDesireProcess ;
 
-    __( tinP.idDesireSetBySelfProcess && idDesireProcess - tinP.idDesireSetBySelfProcess ) ;
+    __( ((tinNormalS&)tinBaseP).idDesireSetBySelfProcess && idDesireProcess - ((tinNormalS&)tinBaseP).idDesireSetBySelfProcess ) ;
 
     #endif
     
@@ -21,10 +21,10 @@
             case NORMAL_PRIORITY_CLASS   : { idDesireProcess = ifcTHREADpRIORITY_NORMAL   ; break ; }
             case IDLE_PRIORITY_CLASS     : { idDesireProcess = ifcTHREADpRIORITY_LAZIEST  ; break ; }
         {
-        switch( tinP.brcRaw )
+        switch( ((tinNormalS&)tinBaseP).brcRaw )
         BOS( WHATgbo , BOSoK , GetPriorityClass( oshMe ) )
 
-        HANDLE oshMe = (HANDLE)tinP.brcRaw ;
+        HANDLE oshMe = (HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
     
     #elif defined( __NT__ )
@@ -41,7 +41,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/countT thirdC::dosPriorityProcessIF( tinS& tinP )/*1*/
+/*1*/countT thirdC::dosPriorityProcessIF( tinBaseS& tinBaseP )/*1*/
 /**/
 */
  on some operating systems, always evaluates to ifcTHREADpRIORITY_NORMAL

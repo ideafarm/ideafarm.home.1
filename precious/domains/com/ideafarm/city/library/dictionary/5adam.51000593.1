@@ -9,9 +9,9 @@
 
 REST
 
-etThread.delF( tinP , pbi ) ;
+etThread.delF( tinBaseP , pbi ) ;
 }
-    socko.writeF( tinP , "q" , 1 ) ;
+    socko.writeF( tinBaseP , "q" , 1 ) ;
     }
         CONoUTrAW( "upload aok\r\n" ) ;
         LOGrAW( "upload aok\r\n" ) ;
@@ -22,53 +22,53 @@ etThread.delF( tinP , pbi ) ;
         LOGrAW( "upload failed\r\n" ) ;
     {
     if( bDotOrExclaim != '.' )
-    socko.readF( tinP , &bDotOrExclaim , 1 ) ;
+    socko.readF( tinBaseP , &bDotOrExclaim , 1 ) ;
     ZE( byteT , bDotOrExclaim ) ;
 
-    socko.writeF( tinP , sOut ) ;
+    socko.writeF( tinBaseP , sOut ) ;
 
     }
         if( bBreak ) break ;
-        etThread.delF( tinP , psttl ) ;
+        etThread.delF( tinBaseP , psttl ) ;
         CONoUTrAW( T(psttl)+T("\r\n") ) ;
         boolT bBreak = psttl && !psttl->idAdam ;
-        socko.readWoLineF( tinP , psttl , TOCK ) ; ___( psttl ) ;
+        socko.readWoLineF( tinBaseP , psttl , TOCK ) ; ___( psttl ) ;
         ZE( strokeS* , psttl ) ;
     {
     for(;;)
 
-    socko.writeF( tinP , "@u" , 2 ) ;
-    socko.connectF( tinP , ifcIDpORT_PANICdOOR , socketC::nicNameIF( tinP , etThread , T("ideafarm.com") ) ) ;
-    socketC socko( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    socko.writeF( tinBaseP , "@u" , 2 ) ;
+    socko.connectF( tinBaseP , ifcIDpORT_PANICdOOR , socketC::nicNameIF( tinBaseP , etThread , T("ideafarm.com") ) ) ;
+    socketC socko( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
     }
-        sOut.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_byteTptr , pbi , cbi ) ;
+        sOut.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbi , cbi ) ;
         sOut << (strokeS*)tFilePeer ;
     {
-    soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 if( pbi )
 
-if( tFileHere.csF( tinP ) && etThread.diskFileExistsF( tinP , tFileHere ) ) { etThread.boxGetShadowF( tinP , pbi , cbi , tFileHere ) ; ___( pbi ) ; }
+if( tFileHere.csF( tinBaseP ) && etThread.diskFileExistsF( tinBaseP , tFileHere ) ) { etThread.boxGetShadowF( tinBaseP , pbi , cbi , tFileHere ) ; ___( pbi ) ; }
 ZE( countT , cbi ) ;
 ZE( byteT* , pbi ) ;
 
 CONoUTrAW( T("peer: \"")+tFilePeer+T("\"\r\n") ) ;
 CONoUTrAW( T("here: \"")+tFileHere+T("\"\r\n") ) ;
 
-if( !tFilePeer.csF( tinP ) ) tFilePeer  = tFileHere ;
+if( !tFilePeer.csF( tinBaseP ) ) tFilePeer  = tFileHere ;
 }
     }
         break ;
         tFilePeer = T(psttc1) ;
     {
     else
-    if( !tFileHere.csF( tinP ) ) tFileHere  = T(psttc1) ;
+    if( !tFileHere.csF( tinBaseP ) ) tFileHere  = T(psttc1) ;
 
     if( cSkip && cSkip -- ) continue ;
     CONoUTrAW( T("\"")+T(psttc1)+T("\"\r\n") ) ;
 {
-FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinP ) )
+FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinBaseP ) )
 countT cSkip = 2 ;
 TN( tFilePeer , "" ) ;
 TN( tFileHere , "" ) ;

@@ -10,10 +10,10 @@
 REST
 
 CONoUTrAW( "bye\r\n" ) ;
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 CONoUTrAW( "done.\r\n" ) ;
 
-thirdC::diskWalkIF( tinP , cDirsP , cFilesP , "\\ideafarm.home.101\\IdeaFarm (tm)\\2.1. Drop Files Here To Archive Them\\audio\\" , *(boolT*)&(const boolT&)ether , myWalkCBF , pcArg ) ;
+thirdC::diskWalkIF( tinBaseP , cDirsP , cFilesP , "\\ideafarm.home.101\\IdeaFarm (tm)\\2.1. Drop Files Here To Archive Them\\audio\\" , *(boolT*)&(const boolT&)ether , myWalkCBF , pcArg ) ;
 ZE( countT , cFilesP ) ;
 ZE( countT , cDirsP ) ;
 
@@ -40,7 +40,7 @@ TODO
 
                             cDoneP ++ ;
 
-                            ((thirdC&)*tinP.pEther).dosMoveF( tinP , postNew , postNameP ) ;
+                            ((thirdC&)*((tinNormalS&)tinBaseP).pEther).dosMoveF( tinBaseP , postNew , postNameP ) ;
 
                             LOGrAW( "\r\n" ) ;
                             LOGrAW( postNew ) ;
@@ -48,7 +48,7 @@ TODO
                             LOGrAW( postNameP ) ;
                             LOGrAW( "\r\n" ) ;
 
-                            thirdC::c_strcpyIF( tinP , postcTo , postName ) ;
+                            thirdC::c_strcpyIF( tinBaseP , postcTo , postName ) ;
                             // POUR NAME
 
                             while( cDo -- ) *( postcTo ++ ) = *( postcFrom ++ ) ;
@@ -108,7 +108,7 @@ TODO
                             postName += 3 ;
                         {
                         if( postName )
-                        osTextT* postName = thirdC::c_strstrIF( tinP , postLath + 0xa , "_!_" ) ;
+                        osTextT* postName = thirdC::c_strstrIF( tinBaseP , postLath + 0xa , "_!_" ) ;
                     {
                     if( postWoth <= postLath )
 
@@ -116,11 +116,11 @@ TODO
                 {
                 if( postLath )
 
-                osTextT* postLath = thirdC::c_strstrIF( tinP , postWoth , "!ideafarm." ) ;
+                osTextT* postLath = thirdC::c_strstrIF( tinBaseP , postWoth , "!ideafarm." ) ;
                 postWoth ++ ;
             {
             if( postWoth )
-            osTextT* postWoth = thirdC::c_strstrIF( tinP , postNameP , postTest1 ) ;
+            osTextT* postWoth = thirdC::c_strstrIF( tinBaseP , postNameP , postTest1 ) ;
 
             static osTextT postTest1[] = "\\audio\\" ;
         {
@@ -134,12 +134,12 @@ TODO
 
     }
         bDoIt = '\\' != postNameP[ costName - 1 ] ;
-        countT costName = thirdC::c_strlenIF( tinP , postNameP ) ;
+        countT costName = thirdC::c_strlenIF( tinBaseP , postNameP ) ;
     {
     if( postNameP )
     ZE( boolT , bDoIt ) ;
 {
-boolT myWalkCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT myWalkCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.rename.audio.recordings.for.move.into.root.of.archive" )/*1*/
 /**/

@@ -8,26 +8,26 @@
 
 
 }
-    else        { ether.strFuseF( tinP , psttName , TF1(idTable) ) ; ___( psttName ) ; }
-    if( psttP ) { ether.strFuseF( tinP , psttName , psttP              ) ; ___( psttName ) ; }
+    else        { ether.strFuseF( tinBaseP , psttName , TF1(idTable) ) ; ___( psttName ) ; }
+    if( psttP ) { ether.strFuseF( tinBaseP , psttName , psttP              ) ; ___( psttName ) ; }
     _IO_
     SCOOP
 {
 flags( 0 )
 tblnu( *this ) ,
 cnu( 0 ) ,
-stnu( tinP , etherP , TAG( TAGiDnULL ) ) ,
-idTable( ++ tinP.pag1->_tableC_.idTableLath ) ,
+stnu( tinBaseP , etherP , TAG( TAGiDnULL ) ) ,
+idTable( ++ ((tinNormalS&)tinBaseP).pag1->_tableC_.idTableLath ) ,
 psttName( 0 ) ,
 psttnu( 0 ) ,
 cObjectsDue( 0 ) ,
-stEvents( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ,
+stEvents( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ,
 idPhase( idTABLEpHASE_DEFINEcOLS ) ,
-stNames( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ,
-baton( tinP , TAG( TAGiDnULL ) ) ,
+stNames( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ,
+baton( tinBaseP , TAG( TAGiDnULL ) ) ,
 poop( etherP ) ,
 ether( etherP ) ,
-/*1*/tableC::tableC( tinS& tinP , etherC& etherP , const strokeS* const psttP )/*1*/ :
+/*1*/tableC::tableC( tinBaseS& tinBaseP , etherC& etherP , const strokeS* const psttP )/*1*/ :
 
 /**/
 */
@@ -38,7 +38,7 @@ ether( etherP ) ,
   can be 0
  psttP
  etherP
- tinP
+ tinBaseP
 arguments
   the external name is only for use by the code in the adam definition that constructs the table object
   all behavior that is affected by the identity of a table uses the internal name, not the external name

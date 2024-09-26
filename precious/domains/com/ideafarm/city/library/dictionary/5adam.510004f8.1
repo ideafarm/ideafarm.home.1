@@ -9,14 +9,14 @@
 
 REST
 
-etThread.strokeF( tinP , T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("\r\n") ) ;
 }
     plc = plc->plcU ;
-    etThread.strokeF( tinP , T(" ")+TF1(plc->value) ) ;
+    etThread.strokeF( tinBaseP , T(" ")+TF1(plc->value) ) ;
 {
 while( plc )
 linkS* plc = &l0 ;
-etThread.strokeF( tinP , T("linked values:") ) ;
+etThread.strokeF( tinBaseP , T("linked values:") ) ;
 
 linkS l3( pGrab , &l1 , 3 ) ;
 linkS l2( pGrab , &l1 , 2 ) ;
@@ -25,7 +25,7 @@ linkS l1( pGrab , &l0 , 1 ) ;
 linkS l0( pGrab ) ;
 
 grabS* pGrab = &grabl ;
-grabS grabl( tinP , TAG( TAGiDnULL ) ) ;
+grabS grabl( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 

@@ -13,7 +13,7 @@
         else __1
         }
             }
-                ether.memCopyF( tinP , pbNapkin , pbP , cbw ) ;
+                ether.memCopyF( tinBaseP , pbNapkin , pbP , cbw ) ;
                 __( cbw > cbNapkin ) ;
                 __Z( cbw ) ;
                 countT cbNapkin = *(countT*)( pbNapkin - sizeof(countT) ) ;
@@ -21,58 +21,58 @@
             if( pbNapkin )
             __Z( pbP ) ;
         {
-        else if( !ether.strCompareF( tinP , psttType , T("napkin.make") ) || !ether.strCompareF( tinP , psttType , T("napkin") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("napkin.make") ) || !ether.strCompareF( tinBaseP , psttType , T("napkin") ) )
         }
         {
-        else if( !ether.strCompareF( tinP , psttType , T("process.error") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("process.error") ) )
         }
         {
-        else if( !ether.strCompareF( tinP , psttType , T("process.out") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("process.out") ) )
         }
             //U:
         {
-        else if( !ether.strCompareF( tinP , psttType , T("process.in") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("process.in") ) )
         }
         {
-        else if( !ether.strCompareF( tinP , psttType , T("process") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("process") ) )
         }
             #endif
-                pBatHPR->ungrabF( tinP ) ;
-                ether.fileWriteF( tinP , hHoseReply , pbP , cbw ) ;
-                ether.fileWriteF( tinP , hHoseReply , (byteT*)&cbw , sizeof cbw ) ;
+                pBatHPR->ungrabF( tinBaseP ) ;
+                ether.fileWriteF( tinBaseP , hHoseReply , pbP , cbw ) ;
+                ether.fileWriteF( tinBaseP , hHoseReply , (byteT*)&cbw , sizeof cbw ) ;
                 __Z( hHoseReply ) ;
-                pBatHPR->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                pBatHPR->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
             #elif defined( __NT__ )
-                ether.fileWriteF( tinP , handle , pbP , cbw ) ;
-                ether.fileWriteF( tinP , handle , (byteT*)&cbw , sizeof cbw ) ;
+                ether.fileWriteF( tinBaseP , handle , pbP , cbw ) ;
+                ether.fileWriteF( tinBaseP , handle , (byteT*)&cbw , sizeof cbw ) ;
                 __Z( handle ) ;
             #ifdef __OS2__
             __Z( pbP ) ;
         {
-        else if( !ether.strCompareF( tinP , psttType , T("tap" ) ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("tap" ) ) )
         }
             #endif
-                pBatHPC->ungrabF( tinP ) ;
-                ether.fileWriteF( tinP , hHoseCommand , pbP , cbw ) ;
-                ether.fileWriteF( tinP , hHoseCommand , (byteT*)&cbw , sizeof cbw ) ;
+                pBatHPC->ungrabF( tinBaseP ) ;
+                ether.fileWriteF( tinBaseP , hHoseCommand , pbP , cbw ) ;
+                ether.fileWriteF( tinBaseP , hHoseCommand , (byteT*)&cbw , sizeof cbw ) ;
                 __Z( hHoseCommand ) ;
-                pBatHPC->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                pBatHPC->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
             #elif defined( __NT__ )
-                ether.fileWriteF( tinP , handle , pbP , cbw ) ;
-                ether.fileWriteF( tinP , handle , (byteT*)&cbw , sizeof cbw ) ;
+                ether.fileWriteF( tinBaseP , handle , pbP , cbw ) ;
+                ether.fileWriteF( tinBaseP , handle , (byteT*)&cbw , sizeof cbw ) ;
                 __Z( handle ) ;
             #ifdef __OS2__
             __Z( pbP ) ;
         {
-        else if( !ether.strCompareF( tinP , psttType , T("hose") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("hose") ) )
         }
-            if( pbP ) ether.fileWriteF( tinP , handle , pbP , cbw ) ;
+            if( pbP ) ether.fileWriteF( tinBaseP , handle , pbP , cbw ) ;
             }
-                ether.delF( tinP , psttMapped ) ;
-                ether.fileOpenF( tinP , handle , flagsResult , psttMapped , ifcOPENaCCESS_WR , 0 , flagsOpenDetails | flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , 0 , 0 , 0 , cOpenTries ) ;
-                ether.diskMakeDirIfNeededF( tinP , psttMapped ) ;
+                ether.delF( tinBaseP , psttMapped ) ;
+                ether.fileOpenF( tinBaseP , handle , flagsResult , psttMapped , ifcOPENaCCESS_WR , 0 , flagsOpenDetails | flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , 0 , 0 , 0 , cOpenTries ) ;
+                ether.diskMakeDirIfNeededF( tinBaseP , psttMapped ) ;
                 ZE( countT , flagsResult ) ;
-                ether.diskMapFileNameF( tinP , psttMapped , psttAll ) ; ___( psttMapped ) ;
+                ether.diskMapFileNameF( tinBaseP , psttMapped , psttAll ) ; ___( psttMapped ) ;
                 ZE( strokeS* , psttMapped ) ;
             {
             if( !handle )
@@ -81,38 +81,38 @@
     {
     else if( !psttHost->idAdam )
     }
-        ether.delF( tinP , psttBody ) ;
-        ether.delF( tinP , pstt1ToTo ) ;
-        ether.delF( tinP , psttFrom ) ;
+        ether.delF( tinBaseP , psttBody ) ;
+        ether.delF( tinBaseP , pstt1ToTo ) ;
+        ether.delF( tinBaseP , psttFrom ) ;
 
-        verifyReplyF( tinP , 240 ) ;
-        pSControl->writeF( tinP , (osTextT*)T(psttBody) ) ;
+        verifyReplyF( tinBaseP , 240 ) ;
+        pSControl->writeF( tinBaseP , (osTextT*)T(psttBody) ) ;
 
-        verifyReplyF( tinP , 340 ) ;
-        pSControl->writeF( tinP , (osTextT*)T("post\r\n") ) ;
+        verifyReplyF( tinBaseP , 340 ) ;
+        pSControl->writeF( tinBaseP , (osTextT*)T("post\r\n") ) ;
 
         }
-            ether.delF( tinP , psttBody2 ) ;
-            ether.strFuseF( tinP , psttBody , T("\r\n.\r\n") ) ; ___( psttBody ) ;
-            ether.strFuseF( tinP , psttBody , psttBody2 ) ; ___( psttBody ) ;
-            ether.delF( tinP , psttBody1 ) ;
-            ether.strReplaceF( tinP , psttBody2 , psttBody1 , T("\r\n.") , T("\r\n..") ) ; ___( psttBody2 ) ;
-            ether.strMakeF( tinP , LF , psttBody1 , T(pbP) ) ; ___( psttBody1 ) ;
+            ether.delF( tinBaseP , psttBody2 ) ;
+            ether.strFuseF( tinBaseP , psttBody , T("\r\n.\r\n") ) ; ___( psttBody ) ;
+            ether.strFuseF( tinBaseP , psttBody , psttBody2 ) ; ___( psttBody ) ;
+            ether.delF( tinBaseP , psttBody1 ) ;
+            ether.strReplaceF( tinBaseP , psttBody2 , psttBody1 , T("\r\n.") , T("\r\n..") ) ; ___( psttBody2 ) ;
+            ether.strMakeF( tinBaseP , LF , psttBody1 , T(pbP) ) ; ___( psttBody1 ) ;
             ZE( strokeS* , psttBody2 ) ;
             ZE( strokeS* , psttBody1 ) ;
 
-            ether.strFuseF( tinP , psttBody , T("\r\n") ) ; ___( psttBody ) ;
+            ether.strFuseF( tinBaseP , psttBody , T("\r\n") ) ; ___( psttBody ) ;
             }
-                if( idf ) { ether.strSubstringF( tinP , psttTo , idf , sttq , S1C('/') , psttName ) ; ___( psttTo ) ; }
-                ether.delF( tinP , psttTo ) ;
+                if( idf ) { ether.strSubstringF( tinBaseP , psttTo , idf , sttq , S1C('/') , psttName ) ; ___( psttTo ) ; }
+                ether.delF( tinBaseP , psttTo ) ;
                 else __1
                 }
-                    ether.strFuseSeparateF( tinP , pstt1ToTo , psttTo , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x100000 ) ; ___( pstt1ToTo ) ;
+                    ether.strFuseSeparateF( tinBaseP , pstt1ToTo , psttTo , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x100000 ) ; ___( pstt1ToTo ) ;
 
-                    ether.strFuseF( tinP , psttBody , psttTo ) ; ___( psttBody ) ;
-                    else ether.strFuseF( tinP , psttBody , T(",") ) ; ___( psttBody ) ;
+                    ether.strFuseF( tinBaseP , psttBody , psttTo ) ; ___( psttBody ) ;
+                    else ether.strFuseF( tinBaseP , psttBody , T(",") ) ; ___( psttBody ) ;
                     }
-                        ether.strFuseF( tinP , psttBody , T("Newsgroups"": ") ) ; ___( psttBody ) ;
+                        ether.strFuseF( tinBaseP , psttBody , T("Newsgroups"": ") ) ; ___( psttBody ) ;
                         fFirst = 0 ;
                     {
                     if( fFirst )
@@ -121,36 +121,36 @@
             {
             while( psttTo )
             boolT fFirst = 1 ;
-            ether.strSubstringF( tinP , psttTo , idf , sttq , S1C('/') , psttName ) ; ___( psttTo ) ;
+            ether.strSubstringF( tinBaseP , psttTo , idf , sttq , S1C('/') , psttName ) ; ___( psttTo ) ;
             ZE( strokeS* , psttTo ) ;
 
-            ether.strFuseF( tinP , psttBody , T("\r\n") ) ; ___( psttBody ) ;
-            ether.strFuseF( tinP , psttBody , psttFrom ) ; ___( psttBody ) ;
-            ether.strFuseF( tinP , psttBody , T("From: ") ) ; ___( psttBody ) ;
-            ether.strSubstringF( tinP , psttFrom , idf , sttq , S1C('/') , psttName ) ; ___( psttFrom ) ;
+            ether.strFuseF( tinBaseP , psttBody , T("\r\n") ) ; ___( psttBody ) ;
+            ether.strFuseF( tinBaseP , psttBody , psttFrom ) ; ___( psttBody ) ;
+            ether.strFuseF( tinBaseP , psttBody , T("From: ") ) ; ___( psttBody ) ;
+            ether.strSubstringF( tinBaseP , psttFrom , idf , sttq , S1C('/') , psttName ) ; ___( psttFrom ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
-            ether.strMakeF( tinP , LF , psttBody , T("") , CSeXTRAnEWSbODY ) ; ___( psttBody ) ;
+            ether.strMakeF( tinBaseP , LF , psttBody , T("") , CSeXTRAnEWSbODY ) ; ___( psttBody ) ;
         {
         ZE( strokeS* , psttBody ) ;
         ZE( strokeS* , pstt1ToTo ) ;
         ZE( strokeS* , psttFrom ) ;
         __Z( pbP ) ;
     {
-    else if( psttHost->idAdam && !ether.strCompareF( tinP , psttType , T("news") ) && pSControl )
+    else if( psttHost->idAdam && !ether.strCompareF( tinBaseP , psttType , T("news") ) && pSControl )
     }
-        ether.delF( tinP , psttFile ) ;
-        ether.boxPutUniqueF( tinP , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.to.send/soul.email") , WS( sOut ) ) ;
+        ether.delF( tinBaseP , psttFile ) ;
+        ether.boxPutUniqueF( tinBaseP , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.to.send/soul.email") , WS( sOut ) ) ;
         ZE( strokeS* , psttFile ) ;
 
         }
-            ether.boxPutF( tinP , tFileBody , pbP , cbP ) ;
+            ether.boxPutF( tinBaseP , tFileBody , pbP , cbP ) ;
             //LOGrAW( T("boxC::putF: writing file \"")+tFileBody+T("\"\r\n") ) ;
             sOut << (strokeS*)tFileBody ;
             }
-                ether.delF( tinP , psttu ) ;
+                ether.delF( tinBaseP , psttu ) ;
                 tFileBody = T("///ideafarm/ephemeral/domains/com/ideafarm/ipdos/tmp/")+T(psttu) ;
-                ether.strUniqueF( tinP , psttu ) ; ___( psttu ) ;
+                ether.strUniqueF( tinBaseP , psttu ) ; ___( psttu ) ;
                 ZE( strokeS* , psttu ) ;
             {
             TN( tFileBody , "" ) ;
@@ -159,14 +159,14 @@
         if( F(flagsP) & flBOXcpUTf_FILEnAME ) sOut << (strokeS*)pbP ; //CALLER MUST PASS IN A strokeS* DISGUISED AS byteT*
 
         }
-            ether( tinP , pStk_psttBc ) ;
-            ether( tinP , pStk_psttCc ) ;
-            ether( tinP , pStk_psttTo ) ;
+            ether( tinBaseP , pStk_psttBc ) ;
+            ether( tinBaseP , pStk_psttCc ) ;
+            ether( tinBaseP , pStk_psttTo ) ;
             }
                 }
                     }
                         }
-                            ether.delF( tinP , psttw ) ;
+                            ether.delF( tinBaseP , psttw ) ;
                             sOut << psttw ;
                             *ppzStk[ off ] >> psttw ;
                             ZE( strokeS* , psttw ) ;
@@ -177,30 +177,30 @@
                     for( countT off = 0 ; off < 3 ; off ++ )
                     stackC* ppzStk[] = { pStk_psttTo , pStk_psttCc , pStk_psttBc } ;
                 {
-                ether.delF( tinP , psttEmailFrom ) ;
+                ether.delF( tinBaseP , psttEmailFrom ) ;
                 sOut << psttEmailFrom ;
     
                 }
                     }
                         }
                             }
-                                if( !ids ) ether.delF( tinP , psttw ) ;
-                                pzStk->sinkF( tinP , ids , psttw , flSTACKsINK_UNIQUE ) ;
+                                if( !ids ) ether.delF( tinBaseP , psttw ) ;
+                                pzStk->sinkF( tinBaseP , ids , psttw , flSTACKsINK_UNIQUE ) ;
                                 ZE( countT , ids ) ;
                                 CONoUTrAW( T("  : \"")+T(psttw)+T("\"\r\n") ) ; //U::
                             {
                             else
                             }
-                                ether.delF( tinP , psttw ) ;
+                                ether.delF( tinBaseP , psttw ) ;
 
                                 else { BLAMMO ; }
-                                else if(  pzStk == pStk_psttBc ) { pzStk = pStk_psttTo ; ether.traceF( tinP , T("---- cycled from Bc: to To: ----") ) ; }
-                                else if(  pzStk == pStk_psttCc ) { pzStk = pStk_psttBc ; ether.traceF( tinP , T("---- cycled from Cc: to Bc: ----") ) ; }
-                                     if(  pzStk == pStk_psttTo ) { pzStk = pStk_psttCc ; ether.traceF( tinP , T("---- cycled from To: to Cc: ----") ) ; }
+                                else if(  pzStk == pStk_psttBc ) { pzStk = pStk_psttTo ; ether.traceF( tinBaseP , T("---- cycled from Bc: to To: ----") ) ; }
+                                else if(  pzStk == pStk_psttCc ) { pzStk = pStk_psttBc ; ether.traceF( tinBaseP , T("---- cycled from Cc: to Bc: ----") ) ; }
+                                     if(  pzStk == pStk_psttTo ) { pzStk = pStk_psttCc ; ether.traceF( tinBaseP , T("---- cycled from To: to Cc: ----") ) ; }
                             {
                             if( !psttw->idAdam )
 
-                            ether.strSubstringF( tinP , psttw , idf , sttq , sttSlash , psttName ) ; ___( psttw ) ;
+                            ether.strSubstringF( tinBaseP , psttw , idf , sttq , sttSlash , psttName ) ; ___( psttw ) ;
                             ZE( strokeS* , psttw ) ;
                         {
                         while( idf )
@@ -209,7 +209,7 @@
                 {
 
                 //LOGrAW( T("fr: \"")+T(psttEmailFrom)+T("\"\r\n") ) ; //U::
-                ether.strSubstringF( tinP , psttEmailFrom , idf , sttq , sttSlash , psttName ) ; ___( psttEmailFrom ) ;
+                ether.strSubstringF( tinBaseP , psttEmailFrom , idf , sttq , sttSlash , psttName ) ; ___( psttEmailFrom ) ;
                 //LOGrAW( T("boxC::putF/[psttName]: \"")+T(psttName)+T("\"\r\n") ) ; //U::
                 strokeS sttSlash( '/' ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
@@ -218,9 +218,9 @@
                 //PARSE FROM TO CC BC FROM psttName
             {
             if( pStk_psttTo && pStk_psttCc && pStk_psttBc )
-            ether( tinP , pStk_psttBc , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-            ether( tinP , pStk_psttCc , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-            ether( tinP , pStk_psttTo , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+            ether( tinBaseP , pStk_psttBc , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+            ether( tinBaseP , pStk_psttCc , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+            ether( tinBaseP , pStk_psttTo , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
             ZE( stackC* , pStk_psttBc ) ;
             ZE( stackC* , pStk_psttCc ) ;
             ZE( stackC* , pStk_psttTo ) ;
@@ -228,68 +228,68 @@
             sOut << idPort ;
             sOut << psttHost ;
         {
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
         __Z( pbP ) ;
     {
-    else if( psttHost->idAdam && !ether.strCompareF( tinP , psttType , T("smtp") ) )
+    else if( psttHost->idAdam && !ether.strCompareF( tinBaseP , psttType , T("smtp") ) )
     }
         }
             __( cbFileAfter != cbw ) ;
             __( rc != 213 ) ; //19980130.1752: CHANGED FROM 211
-            ether.delF( tinP , psttReply ) ;
-            cbFileAfter = cbFileF( tinP , psttReply ) ;
-            countT rc = pSControl->readWoReplyF( tinP , psttReply ) ; ___( psttReply ) ;
+            ether.delF( tinBaseP , psttReply ) ;
+            cbFileAfter = cbFileF( tinBaseP , psttReply ) ;
+            countT rc = pSControl->readWoReplyF( tinBaseP , psttReply ) ; ___( psttReply ) ;
             ZE( strokeS* , psttReply ) ;
         {
         if( !POOP )
         ZE( sCountT , cbFileAfter ) ;
 
-        { textC txt = T("stat ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        { textC txt = T("stat ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
 
-        verifyReplyF( tinP , 226 ) ;
+        verifyReplyF( tinBaseP , 226 ) ;
         }
-            verifyReplyF( tinP , 150 ) ;
-            sData.writeF( tinP , pbP , cbw ) ;
-            sData.connectF( tinP , idPortData , nicNameData ) ;
-            socketC sData( tinP , ether , TAG( TAGiDnULL ) ) ;
+            verifyReplyF( tinBaseP , 150 ) ;
+            sData.writeF( tinBaseP , pbP , cbw ) ;
+            sData.connectF( tinBaseP , idPortData , nicNameData ) ;
+            socketC sData( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
             __Z( pbP ) ;
         {
 
-        { textC txt = T("stor ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        { textC txt = T("stor ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
 
         }
             __Z( idPortData ) ;
             __Z( nicNameData ) ;
             __( rc != 227 ) ;
-            ether.delF( tinP , psttReply ) ;
-            readNicNameIdPortF( tinP , nicNameData , idPortData , psttReply ) ;
-            countT rc = pSControl->readWoReplyF( tinP , psttReply ) ; ___( psttReply ) ;
+            ether.delF( tinBaseP , psttReply ) ;
+            readNicNameIdPortF( tinBaseP , nicNameData , idPortData , psttReply ) ;
+            countT rc = pSControl->readWoReplyF( tinBaseP , psttReply ) ; ___( psttReply ) ;
             ZE( strokeS* , psttReply ) ;
         {
         if( !POOP )
         ZE( countT , idPortData ) ;
         nicNameC nicNameData ;
 
-        pSControl->writeF( tinP , (osTextT*)T("pasv\r\n") ) ;
+        pSControl->writeF( tinBaseP , (osTextT*)T("pasv\r\n") ) ;
 
         __Z( cbw ) ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
-        infoBoxGetPutS info( tinP , ether , *pSControl ) ;
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
+        infoBoxGetPutS info( tinBaseP , ether , *pSControl ) ;
     {
-    else if( psttHost->idAdam && !ether.strCompareF( tinP , psttType , T("ftp") ) && pSControl )
+    else if( psttHost->idAdam && !ether.strCompareF( tinBaseP , psttType , T("ftp") ) && pSControl )
     }
         __( postOk[ 0 ] != 'o' || postOk[ 1 ] != 'k' ) ;
-        __( 2 - pSControl->readF( tinP , postOk , 2 ) ) ;
+        __( 2 - pSControl->readF( tinBaseP , postOk , 2 ) ) ;
         osTextT postOk[ 3 ] = { 0 , 0 , 0 } ;
-        pSControl->writeF( tinP , pbP , cbw ) ;
-        pSControl->writeF( tinP , (byteT*)&cbw , sizeof cbw ) ;
-        { textC txt = T(psttName)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        pSControl->writeF( tinBaseP , pbP , cbw ) ;
+        pSControl->writeF( tinBaseP , (byteT*)&cbw , sizeof cbw ) ;
+        { textC txt = T(psttName)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
         __Z( pbP ) ;
     {
-    if( !ether.strCompareF( tinP , psttType , T("box.sucker") ) && pSControl )
+    if( !ether.strCompareF( tinBaseP , psttType , T("box.sucker") ) && pSControl )
     // PUT THE BACKING FILE BYTES
-    if( pbP && !cbw ) cbw = ether.strBodyLengthF( tinP , pbP ) ;
+    if( pbP && !cbw ) cbw = ether.strBodyLengthF( tinBaseP , pbP ) ;
     countT cbw = cbP ;
     _IO_
 
@@ -305,7 +305,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT boxC::putF( tinS& tinP , const byteT* const pbP , const countT cbP , const flagsT flagsP )/*1*/
+/*1*/voidT boxC::putF( tinBaseS& tinBaseP , const byteT* const pbP , const countT cbP , const flagsT flagsP )/*1*/
 
 /**/
 */

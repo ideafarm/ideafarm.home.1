@@ -34,7 +34,7 @@
             (bIdAdam?tb4+TF2(ids,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tColon+tb4:tn)+
             (ids==1?td:tn)+tcr+                                                                   //20240414@1514: ADDED tcr TO PRETTY UP THE FORMAT
 
-        ether.strFuseF( tinP , psttP , 
+        ether.strFuseF( tinBaseP , psttP , 
 
         const osTextT  post2[] = { (osTextT)sttc.idAdam , 0 } ;
         const osTextT* postIdAdam = mapAdamUse( sttc.idAdam ) ;
@@ -54,38 +54,38 @@
     TN( tcr , "\r\n" ) ;
 
     const boolT bIdAdam = 1 ;  //U:: USE A flagsP PARAMETER TO DECIDE
-    //const boolT bIdAdam = !ether.strCompareF( tinP , td , T("\r\n") ) ;
+    //const boolT bIdAdam = !ether.strCompareF( tinBaseP , td , T("\r\n") ) ;
 
     }
-        ether.strMakeF( tinP , LF , psttP , T("") , cstta ) ; //CALLER MUST TAG ___( psttP ) ;
-        const countT cstta = psttInP->idAdam * ( td.csF( tinP ) + processGlobal4I.mapCaste.costMaxF() + processGlobal4I.mapAdam.costMaxF() /*+ 3 + 0x10*/ + 0x40/*U::USE EXACT REQUIREMENT; THIS LINE WAS EDITED WHEN EDITED DEF TO DISPLAY measureT VALUES*/ ) ;
+        ether.strMakeF( tinBaseP , LF , psttP , T("") , cstta ) ; //CALLER MUST TAG ___( psttP ) ;
+        const countT cstta = psttInP->idAdam * ( td.csF( tinBaseP ) + processGlobal4I.mapCaste.costMaxF() + processGlobal4I.mapAdam.costMaxF() /*+ 3 + 0x10*/ + 0x40/*U::USE EXACT REQUIREMENT; THIS LINE WAS EDITED WHEN EDITED DEF TO DISPLAY measureT VALUES*/ ) ;
     {
 
-    //ether.traceF( tinP , T("[delimiter]:  >>>>")+td+T("<<<<") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    //ether.traceF( tinBaseP , T("[delimiter]:  >>>>")+td+T("<<<<") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
     TN( td , "    " ) ; if( psttDelimiterP ) td = T(psttDelimiterP) ;
 
     //FORMAT: "idCaste(idAdam,cNote) idCaste(idAdam,cNote) idCaste(idAdam,cNote) ..."
 
-    etherC& ether = *tinP.pEther ;
+    etherC& ether = *((tinNormalS&)tinBaseP).pEther ;
 
     _IO_
     
     }
         if( POOP ) return ;
-        __( !tinP.pEther ) ;
+        __( !((tinNormalS&)tinBaseP).pEther ) ;
         __Z( psttInP ) ;
         __NZ( psttP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT etherC::strDumpStrokesIF( tinS& tinP , strokeS*& psttP , const strokeS* const psttInP , const strokeS* const psttDelimiterP )/*1*/
+/*1*/voidT etherC::strDumpStrokesIF( tinBaseS& tinBaseP , strokeS*& psttP , const strokeS* const psttInP , const strokeS* const psttDelimiterP )/*1*/
 
 /**/
 */
  psttInP
  psttP
- tinP
+ tinBaseP
 arguments
 /*
 

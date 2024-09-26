@@ -8,8 +8,8 @@
 
 
 }
-    tinP.pag1->_thirdC_.ifcImpotenceHandlerArg = ifcImpotenceHandlerArgIP ;
-    tinP.pag1->_thirdC_.pifcImpotenceHandlerF = pifcImpotenceHandlerFIP ;
+    ((tinNormalS&)tinBaseP).pag1->_thirdC_.ifcImpotenceHandlerArg = ifcImpotenceHandlerArgIP ;
+    ((tinNormalS&)tinBaseP).pag1->_thirdC_.pifcImpotenceHandlerF = pifcImpotenceHandlerFIP ;
     _IO_
 
     }
@@ -17,13 +17,13 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::thirdImpotenceHandlerIF( tinS& tinP , const ifcImpotenceHandlerFT pifcImpotenceHandlerFIP , const countT ifcImpotenceHandlerArgIP )/*1*/
+/*1*/voidT thirdC::thirdImpotenceHandlerIF( tinBaseS& tinBaseP , const ifcImpotenceHandlerFT pifcImpotenceHandlerFIP , const countT ifcImpotenceHandlerArgIP )/*1*/
 
 /**/
 */
  pifcImpotenceHandlerFIP
  ifcImpotenceHandlerArgIP
- tinP
+ tinBaseP
 arguments
  ensure that any object pointed to by the argument will still exist when the handler is called
  you do not know which threads will call the handler, or when

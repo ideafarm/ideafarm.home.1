@@ -9,13 +9,13 @@
 
 }
     return cPlates ;
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
 
     }
         if( pStack ) cPlates = *pStack ;
         stackC* pStack = (stackC*)(countT)swMe ;
     {
-    if( swMe.idSlotOfLeverF( tinP , query ) )
+    if( swMe.idSlotOfLeverF( tinBaseP , query ) )
 
     }
         }
@@ -34,14 +34,14 @@
             case ifcIDtYPElEVER_tid                   : { query = osTidIF()                  ; break ; }
         {
         switch( idLeverType )
-        const countT idLeverType = swMe.idLeverTypeF( tinP ) ;
-        byteT* const pbLever = swMe.pbLeverF( tinP ) ;
+        const countT idLeverType = swMe.idLeverTypeF( tinBaseP ) ;
+        byteT* const pbLever = swMe.pbLeverF( tinBaseP ) ;
     {
     ZE( countT , query ) ;
 
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     ZE( countT , cPlates ) ;
 
     }

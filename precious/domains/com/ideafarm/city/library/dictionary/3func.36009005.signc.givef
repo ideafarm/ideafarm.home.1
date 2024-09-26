@@ -13,40 +13,40 @@
     }
         }
             break ;
-            grabF( tinP , TAG( TAGiDnULL ) ) ;
+            grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         case ifcIDmODEsIGNgIVE_OFF :
         }
             break ;
-            ungrabF( tinP , flGRABcUNGRABf_DEPOSITkISSiF ) ;
+            ungrabF( tinBaseP , flGRABcUNGRABf_DEPOSITkISSiF ) ;
         {
         case ifcIDmODEsIGNgIVE_ON :
         }
             break ;
 
             }
-                thirdC::dosPriorityIF( tinP , idDesireSave ) ;
+                thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
                 pGrabA->osTidLockF() = 0 ;
             {
             if( !time1P && !time2P )
 
-            grabF( tinP , TAG( TAGiDnULL ) ) ;
+            grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             }
-                tinP.pEther->osSleepF( tinP , time1P , time2P ) ;
-                sleepC s( tinP, TAG( TAGiDnULL ) ) ;
+                ((tinNormalS&)tinBaseP).pEther->osSleepF( tinBaseP , time1P , time2P ) ;
+                sleepC s( tinBaseP, TAG( TAGiDnULL ) ) ;
             {
             if( time1P || time2P )
 
-            ungrabF( tinP , flGRABcUNGRABf_DEPOSITkISSiF ) ;
+            ungrabF( tinBaseP , flGRABcUNGRABf_DEPOSITkISSiF ) ;
 
             }
                 //IF NO OTHER THREADS HAVE DONE THIS THEN I WILL NOT RELEASE ANYWO (THIS SIMPLIFIES RACE ANALYSIS)
                 //MY TIDLOCK MEANS THAT MY FLASH CAN ONLY RELEASE OTHER THREADS THAT GOT INTO THE QUEUE BEFORE I LOCKED THE TID
                 //LATER NOTE: TIDLOCK BLOCKS OTHER THREADS FROM BEGINNING THE GRAB RECIPE
-                pGrabA->osTidLockF() = tinP.osTid ; //CONJ: THIS HAS NO BEHAVIORAL EFFECT SO IS NOT NEEDED
-                thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
-                idDesireSave = thirdC::dosPriorityIF( tinP ) ;
+                pGrabA->osTidLockF() = ((tinNormalS&)tinBaseP).osTid ; //CONJ: THIS HAS NO BEHAVIORAL EFFECT SO IS NOT NEEDED
+                thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
+                idDesireSave = thirdC::dosPriorityIF( tinBaseP ) ;
             {
             if( !time1P && !time2P )
             ZE( countT , idDesireSave ) ;
@@ -59,7 +59,7 @@
                 idIn = 1 + incv02AM( idInLath ) ;
                 static countT idInLath ;
             {
-            if( tinP.monitor.idThread == 7 )
+            if( ((tinNormalS&)tinBaseP).monitor.idThread == 7 )
             ZE( countT , idIn ) ;
         {
         case ifcIDmODEsIGNgIVE_FLASH :
@@ -78,14 +78,14 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT signC::giveF( tinS& tinP , const countT idModeP , const countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT signC::giveF( tinBaseS& tinBaseP , const countT idModeP , const countT time1P , const sCountT time2P )/*1*/
 
 /**/
 */
 
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.00103a8.ifcIDmODEsIGNgIVE!||
  idModeP
- tinP
+ tinBaseP
 arguments
 any thread can call me on a signC object
  it is for that reason that such code is illegal

@@ -47,16 +47,16 @@
         if( *pcpP < *pcp2P )
 
         }
-            thirdC::c_memcpyIF( tinP , (byteT*)pcpP , (byteT*)pcp1P , sizeof( countT ) * ( 1 + *pcp1P ) ) ;
-            thirdC::c_memsetIF( tinP , (byteT*)pcpP                 , sizeof( countT ) * ( 1 + ccMax  ) ) ;                          //20190114@0826: "2 + ccMax" -> "1 + ccMax" WITHOUT ANALYSIS TO FIX OBSERVED HEAP TRASHING BY RESETTING TOO MANY BYTES AT HEAP ITEM CREATED BY PUSE.newF( tinP , LF , *(byteT**)&PCPiDbOOKnOW , sizeof( countT ) * *pcpOffIdBookWant ) ; ___( PCPiDbOOKnOW ) ; IN booksC::readF( tinS& tinP , const byteT*& pbP , countT& cbP , handleC& handleP , const flagsT flagsP , const boolT* pbQuitP , handleC* const phCursorP , const countT idCursorP )
+            thirdC::c_memcpyIF( tinBaseP , (byteT*)pcpP , (byteT*)pcp1P , sizeof( countT ) * ( 1 + *pcp1P ) ) ;
+            thirdC::c_memsetIF( tinBaseP , (byteT*)pcpP                 , sizeof( countT ) * ( 1 + ccMax  ) ) ;                          //20190114@0826: "2 + ccMax" -> "1 + ccMax" WITHOUT ANALYSIS TO FIX OBSERVED HEAP TRASHING BY RESETTING TOO MANY BYTES AT HEAP ITEM CREATED BY PUSE.newF( tinBaseP , LF , *(byteT**)&PCPiDbOOKnOW , sizeof( countT ) * *pcpOffIdBookWant ) ; ___( PCPiDbOOKnOW ) ; IN booksC::readF( tinBaseS& tinBaseP , const byteT*& pbP , countT& cbP , handleC& handleP , const flagsT flagsP , const boolT* pbQuitP , handleC* const phCursorP , const countT idCursorP )
         {
         if( pcpP != pcp1P )
     {
     if( pcpP )
 
     }
-        thirdC::c_memsetIF( tinP , (byteT*)pcpP , cba ) ;
-        PUSE.newF( tinP , LF , *(byteT**)&pcpP , cba ) ; //CALLER MUST TAG ; INCLUDES SPACE FOR OVERFLOW AS WELL AS THE PREFIX ___( pcpP ) ;
+        thirdC::c_memsetIF( tinBaseP , (byteT*)pcpP , cba ) ;
+        PUSE.newF( tinBaseP , LF , *(byteT**)&pcpP , cba ) ; //CALLER MUST TAG ; INCLUDES SPACE FOR OVERFLOW AS WELL AS THE PREFIX ___( pcpP ) ;
         countT cba = sizeof( countT ) * ( ( 1 + !bSignedP ) + ccMax ) ;
     {
     if( !pcpP )
@@ -84,7 +84,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT addF( tinS& tinP , countT*& pcpP , countT* const pcp1P , const countT* const pcp2P , const boolT bSignedP )/*1*/
+/*1*/voidT addF( tinBaseS& tinBaseP , countT*& pcpP , countT* const pcp1P , const countT* const pcp2P , const boolT bSignedP )/*1*/
 
 /**/
 */
@@ -95,7 +95,7 @@
   if not 0 then must equal pcp1P, and I will set pcp1P to the result
   if 0 then i will allocate from PUSE and set to result
  pcpP
- tinP
+ tinBaseP
 arguments
 /*
 

@@ -10,15 +10,15 @@
 }
     return bOk ;
 
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
 
-    boolT bOk = stackk.downF( tinP , bQueryP ) ;
+    boolT bOk = stackk.downF( tinBaseP , bQueryP ) ;
 
     _IO_
 
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return *(countT*)pbnu ;
@@ -26,7 +26,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT switchC::inF( tinS& tinP , const boolT bQueryP )/*1*/
+/*1*/boolT switchC::inF( tinBaseS& tinBaseP , const boolT bQueryP )/*1*/
 /**/
 */
 see the documentation for stackC::downF

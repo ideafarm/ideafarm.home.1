@@ -10,13 +10,13 @@
 }
     }
         }
-            if( tinP.pEther ) tinP.pEther->etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+            if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
             _IO_
         {
         IFwHEREkNOWStHREAD
 
         }
-            delF( tinP , psttPath ) ;
+            delF( tinBaseP , psttPath ) ;
 
             }
                 }
@@ -32,10 +32,10 @@
                                     else
                                     if( !fn ) { DEL( pInfoP ) ; }
 
-                                    fileNameC fn( tinP , *this , pInfoP->psttIfoName ) ;
+                                    fileNameC fn( tinBaseP , *this , pInfoP->psttIfoName ) ;
 
-                                    strMakeF( tinP , LF , pInfoP->psttIfoName , T(iffn) ) ; ___( pInfoP->psttIfoName ) ;
-                                    ifFileNameC iffn( tinP , third , pInfoP->postOsName ) ;
+                                    strMakeF( tinBaseP , LF , pInfoP->psttIfoName , T(iffn) ) ; ___( pInfoP->psttIfoName ) ;
+                                    ifFileNameC iffn( tinBaseP , third , pInfoP->postOsName ) ;
                                     _IO_
                                 {
                                 else
@@ -50,12 +50,12 @@
                                         {
                                         if( !postHit )
                                         }
-                                            postHit = thirdC::c_strstrIF( tinP , postc , pPatternP->ppostLiteral[ offLit ] ) ;
+                                            postHit = thirdC::c_strstrIF( tinBaseP , postc , pPatternP->ppostLiteral[ offLit ] ) ;
                                             postc += costLit ;
                                             _IO_
                                         {
                                         while( postHit && postHit + costLit < poste )
-                                        osTextT* poste = postc + thirdC::c_strlenIF( tinP , postc ) ;
+                                        osTextT* poste = postc + thirdC::c_strlenIF( tinBaseP , postc ) ;
                                         _IO_
                                     {
                                     if( !pPatternP->ppostLiteral[ offLit + 1 ] && F(pPatternP->flagsLiterals) & flPATTERNlITERALS_LITERALeNDING )
@@ -77,10 +77,10 @@
                                         !postHit
                                     (
                                     if
-                                    osTextT* postHit = thirdC::c_strstrIF( tinP , postc , pPatternP->ppostLiteral[ offLit ] ) ;
+                                    osTextT* postHit = thirdC::c_strstrIF( tinBaseP , postc , pPatternP->ppostLiteral[ offLit ] ) ;
 
                                     if( pPatternP->ppostLiteral[ offLit ][ costLit - 1 ] == '/' ) pPatternP->ppostLiteral[ offLit ][ costLit - 1 ] = '\\' ; // PATCH THE LITERAL SO THAT IT WILL MATCH ITS BASE OS MAPPING (SLASH TO BACKSLASH) ; NOTE: THIS HAS IMPLICATIONS IF THE patternC INSTANCE IS USED MULTIPLE TIMES (IT WILL BE PATCHED ONLY WO TIME) ; THIS IS DONE HERE RATHER THAN IN patternC BECAUSE patternC CAN BE USED FOR SEARCHES OTHER THAN FOR FILES SO FUTURE CODE MIGHT USE THE LITERALS IN WAYS THAT WOULD NOT WANT THE PATCH
-                                    countT costLit = thirdC::c_strlenIF( tinP , pPatternP->ppostLiteral[ offLit ] ) ;
+                                    countT costLit = thirdC::c_strlenIF( tinBaseP , pPatternP->ppostLiteral[ offLit ] ) ;
                                     _IO_
                                 {
                                 for( countT offLit = 0 ; offLit < sizeof pPatternP->ppostLiteral / sizeof pPatternP->ppostLiteral[ 0 ] && pPatternP->ppostLiteral[ offLit ] ; offLit ++ )
@@ -124,8 +124,8 @@
                         else
                         }
                             break ;
-                            strMakeF( tinP , LF , pInfoP->psttIfoName , T(iffn) ) ; ___( pInfoP->psttIfoName ) ;
-                            ifFileNameC iffn( tinP , third , pInfoP->postOsName ) ;
+                            strMakeF( tinBaseP , LF , pInfoP->psttIfoName , T(iffn) ) ; ___( pInfoP->psttIfoName ) ;
+                            ifFileNameC iffn( tinBaseP , third , pInfoP->postOsName ) ;
                             _IO_
                         {
                         if( !pPatternP )
@@ -136,7 +136,7 @@
                         {
                         if( !costOsName )
 
-                        countT costOsName = thirdC::c_strlenIF( tinP , pInfoP->postOsName ) ;
+                        countT costOsName = thirdC::c_strlenIF( tinBaseP , pInfoP->postOsName ) ;
 
                         _IO_
                     {
@@ -145,19 +145,19 @@
                          if( !pInfoP                                    ) { break ; }
 
                     }
-                        //if( tinP.pc Utility[ 0 ] && !( idIn % TUCK ) && pInfoP ) traceF( tinP , T("debug [postOsName]:    ")+T(pInfoP->postOsName) ) ;
+                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && !( idIn % TUCK ) && pInfoP ) traceF( tinBaseP , T("debug [postOsName]:    ")+T(pInfoP->postOsName) ) ;
                         countT idIn = 1 + incv02AM( idInLath ) ;
                         static countT idInLath ;
                     {   //U::TO FIND A BUG
 
-                    third.dosFindFileOrDirF( tinP , pInfoP , handleP , osfnLike ) ; ___( pInfoP ) ;
+                    third.dosFindFileOrDirF( tinBaseP , pInfoP , handleP , osfnLike ) ; ___( pInfoP ) ;
                     _IO_
                 {
                 while( !POOP )
 
-                third.delF( tinP , postLike ) ;
-                osFileNameC osfnLike( tinP , third , postLike ) ;
-                strMakeF( tinP , LF , postLike , T(psttPath)+T("*") ) ; ___( postLike ) ;
+                third.delF( tinBaseP , postLike ) ;
+                osFileNameC osfnLike( tinBaseP , third , postLike ) ;
+                strMakeF( tinBaseP , LF , postLike , T(psttPath)+T("*") ) ; ___( postLike ) ;
                 ZE( osTextT* , postLike ) ;
                 _IO_
             {
@@ -177,13 +177,13 @@
             if( !POOP )
 
             __Z( psttPath ) ;
-            diskMapFileNameF( tinP , psttPath , psttPathP ) ; ___( psttPath ) ;
+            diskMapFileNameF( tinBaseP , psttPath , psttPathP ) ; ___( psttPath ) ;
             ZE( strokeS* , psttPath ) ;
             _IO_
         {
 
         }
-            if( tinP.pEther ) tinP.pEther->etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
+            if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;
             _IO_
         {
         IFwHEREkNOWStHREAD
@@ -204,7 +204,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::diskFindFileOrDirF( tinS& tinP , infoFileS*& pInfoP , handleC& handleP , const strokeS* const psttPathP , const patternC* pPatternP , const flagsT flagsP )/*1*/
+/*1*/voidT etherC::diskFindFileOrDirF( tinBaseS& tinBaseP , infoFileS*& pInfoP , handleC& handleP , const strokeS* const psttPathP , const patternC* pPatternP , const flagsT flagsP )/*1*/
 
 /**/
 */
@@ -223,7 +223,7 @@
   if a matching file is not found, will remain 0
   must be 0
  pInfoFileP
- tinP
+ tinBaseP
 parameters
 to find a directory, specify its leaf directory as pattern, with its parent directory in psttPathP
 /*

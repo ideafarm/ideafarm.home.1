@@ -9,13 +9,13 @@
 
 REST
 
-etThread.strokeF( tinP , T("\f") ) ;
+etThread.strokeF( tinBaseP , T("\f") ) ;
 
 }
-    ++ s ; ether.osSleepF( tinP , TICK * 4 ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TICK * 4 ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    etThread.strokeF( tinP , ( ++ idCycle ) % 2 ? tSay : tSayErase ) ;
+    etThread.strokeF( tinBaseP , ( ++ idCycle ) % 2 ? tSay : tSayErase ) ;
 {
 while( !ether )
 ZE( countT , idCycle ) ;
@@ -42,8 +42,8 @@ TN( tSayErase , "" ) ; tSayErase = tSay + T("\f") ;
 tSay = 
 TN( tSay , "" ) ;
 
-tcButtonC button1(      tinP , tcStateCBF      , 0 , flFeatures      , 0 , button1Inner ) ;
-tcButtonC button1Inner( tinP , tcStateInnerCBF , 0 , flFeaturesInner , 0 , T("H") ) ;
+tcButtonC button1(      tinBaseP , tcStateCBF      , 0 , flFeatures      , 0 , button1Inner ) ;
+tcButtonC button1Inner( tinBaseP , tcStateInnerCBF , 0 , flFeaturesInner , 0 , T("H") ) ;
 flagsT flFeatures      = flFeaturesCore ;
 flagsT flFeaturesInner = flFeaturesCore ;
 flagsT flFeaturesCore  = flTCfEATURE_DRAGGABLE | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEY | flTCfEATURE_FRAME ;
@@ -52,7 +52,7 @@ TODO
 
 
 }
-    if( tinP.fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tinNormalS&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -68,10 +68,10 @@ TODO
     {
     switch( idTypeCallP )
 {
-voidT tcStateCBF( tinS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcStateCBF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
-    if( tinP.fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tinNormalS&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -89,7 +89,7 @@ voidT tcStateCBF( tinS& tinP , etherC& etherP , const countT cArgP , const count
     {
     switch( idTypeCallP )
 {
-voidT tcStateInnerCBF( tinS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcStateInnerCBF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 /*1*/WAKEsHOW( "bug.blammo.pop.color" )/*1*/
 /**/

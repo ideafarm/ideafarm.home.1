@@ -10,14 +10,14 @@
 REST
 
 
-etThread.delF( tinP , posti ) ;
-etThread.boxPutF( tinP , T("///d/tmp/sor.patched") , posti , costi ) ;
+etThread.delF( tinBaseP , posti ) ;
+etThread.boxPutF( tinBaseP , T("///d/tmp/sor.patched") , posti , costi ) ;
 
 }
     }
         postc += 4 ;
-        thirdC::c_memcpyIF( tinP , postc , tId , 4 ) ;
-        etThread.traceF( tinP , tId ) ;
+        thirdC::c_memcpyIF( tinBaseP , postc , tId , 4 ) ;
+        etThread.traceF( tinBaseP , tId ) ;
         TN( tId , "" ) ; tId = TF4(++idLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE|flFORMAT_NObASE,4,0xa) ;
     {
     if( postc )
@@ -28,7 +28,7 @@ osTextT* postc = posti ;
 ZE( countT , idLath ) ;
 
 
-etThread.boxGetShadowF( tinP , posti , costi , T("///d/tmp/sor") ) ; ___( posti ) ;
+etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/sor") ) ; ___( posti ) ;
 ZE( countT   , costi ) ;
 ZE( osTextT* , posti ) ;
 

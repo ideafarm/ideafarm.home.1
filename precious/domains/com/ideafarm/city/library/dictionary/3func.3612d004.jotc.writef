@@ -12,26 +12,26 @@
     //CONoUTrAW3( "writeF [idNew]: " , idNew , "\r\n" ) ;
 
     }
-        thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-        tinP.cYield = 0 ;
+        thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
+        ((tinNormalS&)tinBaseP).cYield = 0 ;
 
         }
-            else                                                         thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
+            else                                                         thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ;
             if( idOld == setIfEqualsAM( idMaxWritten , idNew , idOld ) ) break ;
         {
         for(;;)
 
-        tinP.cYield = 0 ;
+        ((tinNormalS&)tinBaseP).cYield = 0 ;
         ZE( countT , idCycle ) ;
 
-        thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
-        const countT idDesireSave = thirdC::dosPriorityIF( tinP ) ;
+        thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
+        const countT idDesireSave = thirdC::dosPriorityIF( tinBaseP ) ;
 
         countT idOld = idNew - 1 ;
     {
 
     //}
-    //    tinP.pEther->traceF( tinP , T("jotC::writeF [idNew]:    ")+TF2(idNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotC::writeF [idNew]:    ")+TF2(idNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     //{
     //if( idNew - tagHighNibble > 0x1550 )
 
@@ -51,19 +51,19 @@
 
     // 
     // f1      1        ALWAYS SET ; INDICATES THAT THE VALUE IS AN idJot RATHER THAN A MEMORY ADDRESS
-    // c1      3        OFFsLOT OF *this IN tinP.ppJot
+    // c1      3        OFFsLOT OF *this IN ((tinNormalS&)tinBaseP).ppJot
     // 0       c1       JOT ID, ASSIGNED SERIALLY STARTING WITH 1.  CAPACITY: [ 1 - 268,435,455 ] (DECIMAL)
     // 
     // OFFSET  LENGTH   DESCRIPTION
     // 
     // BIT LAYOUT FOR idNew (NUMBERS ASSUME sizeof( countT ) IS 02 BITS
 
-    bksIndex.writeF( tinP , hJotIndex , (byteT*)&hJotData , sizeof hJotData ) ;
+    bksIndex.writeF( tinBaseP , hJotIndex , (byteT*)&hJotData , sizeof hJotData ) ;
     handle0111C hJotIndex ;
 
     if( pcWroteP ) *pcWroteP = hJotData.cNoteF() ;
 
-    bksData.writeF( tinP , hJotData , pb1P , cb1P , pb2P , cb2P , flagsWrite ) ;
+    bksData.writeF( tinBaseP , hJotData , pb1P , cb1P , pb2P , cb2P , flagsWrite ) ;
     handle0111C hJotData ;
 
     if( F(flagsP) & flJOTcwRITE_ELSEfILLtOeND ) flagsWrite |= flBOOKScwRITE_ELSEfILLtOeND ; //20231128@1549: ADDED TO FIX soulC operator <<( soulC& ): THIS CAN BE HANDY IF bksData WILL BE READ DIRECTLY, AS HAPPENS IN soulC FUNCTIONS (SEE OPERATOR << soulP)
@@ -73,12 +73,12 @@
         ? flBOOKScwRITE_ALLoRnONE
     flagsT flagsWrite = !( F(flagsP) & flJOTcwRITE_ALLoRsOME )
 
-    if( pb2P && !cb2P ) cb2P = 1 + thirdC::c_strlenIF( tinP , pb2P ) ;
-    if( pb1P && !cb1P ) cb1P = 1 + thirdC::c_strlenIF( tinP , pb1P ) ;
+    if( pb2P && !cb2P ) cb2P = 1 + thirdC::c_strlenIF( tinBaseP , pb2P ) ;
+    if( pb1P && !cb1P ) cb1P = 1 + thirdC::c_strlenIF( tinBaseP , pb1P ) ;
 
     _IO_
 {
-/*1*/countT jotC::writeF( tinS& tinP , const byteT* const pb1P , countT cb1P , const byteT* const pb2P , countT cb2P , const flagsT flagsP , countT* pcWroteP )/*1*/
+/*1*/countT jotC::writeF( tinBaseS& tinBaseP , const byteT* const pb1P , countT cb1P , const byteT* const pb2P , countT cb2P , const flagsT flagsP , countT* pcWroteP )/*1*/
 
 /**/
 */

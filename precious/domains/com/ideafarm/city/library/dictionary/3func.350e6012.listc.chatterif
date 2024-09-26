@@ -12,20 +12,20 @@
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     POPtINaRGS
-    flagsRC |= walkIF( tinP , pczName , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
+    flagsRC |= walkIF( tinBaseP , pczName , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
 
 
     ;
         : 0
         ? cArgP
-    tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] = F(flagsP) & flLISTwALKcHATTER_MAPiDjOTvALUES
-    tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
-    tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = pczName[ 1 ] ;
-    tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREdELETErEQUESTEDbIT ;
-    tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] = F(flagsP) & flLISTwALKcHATTER_MAPiDjOTvALUES
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = pczName[ 1 ] ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREdELETErEQUESTEDbIT ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
     PUSHtINaRGS
 
-    grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+    grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     _IO_
@@ -48,7 +48,7 @@
     countT* pczName   = pczNameP ? pczNameP : pczRoot ;
     countT  pczRoot[] = { LISTnAMEsYS_ROOT , 0 } ;
 {
-/*1*/flagsT listC::chatterIF( tinS& tinP , countT* const pczNameP , flagsT flagsP , countT cArgP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT listC::chatterIF( tinBaseS& tinBaseP , countT* const pczNameP , flagsT flagsP , countT cArgP , const countT idGrabLayerP )/*1*/
 
 /**/
 */

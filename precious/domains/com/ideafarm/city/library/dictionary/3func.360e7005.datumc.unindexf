@@ -14,13 +14,13 @@
             aptData.setBitsF( aptData.getBitsF() & ~fliDATUMc_INDEXED ) ;
 
             }
-                case ifcIDtYPEmIXINdATUM_countTstrz : {                                                                                     listC::unIndexIF( tinP , puseIndex , hIndex , idKey , (countT*)pbData + 2           , 0    , *pRecord , listing , flagsP ) ; break ; }
-                case ifcIDtYPEmIXINdATUM_blob       : { countT cNet = ((countT*)pbData)[ 1 ] > CnETmAX ? CnETmAX : ((countT*)pbData)[ 1 ] ; listC::unIndexIF( tinP , puseIndex , hIndex , idKey , pbData + 2 * sizeof( countT ) , cNet , *pRecord , listing , flagsP ) ; break ; }
-                case ifcIDtYPEmIXINdATUM_countT     : {                                                                                     listC::unIndexIF( tinP , puseIndex , hIndex , idKey , ((countT*)pbData)[ 1 ]        , 0    , *pRecord , listing , flagsP ) ; break ; }
+                case ifcIDtYPEmIXINdATUM_countTstrz : {                                                                                     listC::unIndexIF( tinBaseP , puseIndex , hIndex , idKey , (countT*)pbData + 2           , 0    , *pRecord , listing , flagsP ) ; break ; }
+                case ifcIDtYPEmIXINdATUM_blob       : { countT cNet = ((countT*)pbData)[ 1 ] > CnETmAX ? CnETmAX : ((countT*)pbData)[ 1 ] ; listC::unIndexIF( tinBaseP , puseIndex , hIndex , idKey , pbData + 2 * sizeof( countT ) , cNet , *pRecord , listing , flagsP ) ; break ; }
+                case ifcIDtYPEmIXINdATUM_countT     : {                                                                                     listC::unIndexIF( tinBaseP , puseIndex , hIndex , idKey , ((countT*)pbData)[ 1 ]        , 0    , *pRecord , listing , flagsP ) ; break ; }
             {
             switch( listing.idTypeDatumF() )
 
-            handleC hIndex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            handleC hIndex( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
             puseC puseIndex ; //WON'T BE USED
         {
         if( pRecord )
@@ -48,7 +48,7 @@
     {
     if( aptData.getBitsF() & fliDATUMc_INDEXED )
 {
-/*1*/voidT datumC::unIndexF( tinS& tinP , const flagsT flagsP )/*1*/
+/*1*/voidT datumC::unIndexF( tinBaseS& tinBaseP , const flagsT flagsP )/*1*/
 
 /**/
 */

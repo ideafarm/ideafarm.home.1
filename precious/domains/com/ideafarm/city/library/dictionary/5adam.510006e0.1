@@ -9,16 +9,16 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.traceF( tinP , T("cDuplicates: ")+TF2(cDuplicates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tinBaseP , T("cDuplicates: ")+TF2(cDuplicates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
 }
     }
         }
-            etThread.delF( tinP , postf ) ;
-            etThread.traceF( tinP , T(postf) ) ;
+            etThread.delF( tinBaseP , postf ) ;
+            etThread.traceF( tinBaseP , T(postf) ) ;
             swsNameByHash >> postf ;
             ZE( osTextT* , postf ) ;
         {
@@ -26,21 +26,21 @@ etThread.traceF( tinP , T("cDuplicates: ")+TF2(cDuplicates,flFORMAT_NObIGITvALUE
 
         }
             cDuplicates += cEqual - 1 ;
-            etThread.traceF( tinP , T("cEqual: ")+TF2(cEqual,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tinBaseP , T("cEqual: ")+TF2(cEqual,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         if( cEqual > 1 )
         countT cEqual = swsNameByHash ;
 
-        etThread.delF( tinP , psttd ) ;
-        etThread.traceF( tinP , T(psttd) ) ;
-        etThread.strDumpIF( tinP , psttd , pbLever , sizeof pbHash , flSTRdUMP_FOREIGN ) ; ___( psttd ) ;
+        etThread.delF( tinBaseP , psttd ) ;
+        etThread.traceF( tinBaseP , T(psttd) ) ;
+        etThread.strDumpIF( tinBaseP , psttd , pbLever , sizeof pbHash , flSTRdUMP_FOREIGN ) ; ___( psttd ) ;
         ZE( strokeS* , psttd ) ;
 
-        pbLever = (byteT*)swsNameByHash.leverF( tinP , idf ) ;
+        pbLever = (byteT*)swsNameByHash.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    etThread.traceF( tinP , T("cFlavors: ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF4(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
-    countT cFlavors = swsNameByHash.cFlavorsF( tinP ) ;
+    etThread.traceF( tinBaseP , T("cFlavors: ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF4(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    countT cFlavors = swsNameByHash.cFlavorsF( tinBaseP ) ;
 {
 ZE( countT , cDuplicates ) ;
 
@@ -50,26 +50,26 @@ while( !ether && !POOP && ~hFind ) ;
     }
         swsNameByHash << postf ; postf = 0 ;
 
-        etThread.strMakeF( tinP , LF , postf , pInfo->psttIfoName ) ; ___( postf ) ;
+        etThread.strMakeF( tinBaseP , LF , postf , pInfo->psttIfoName ) ; ___( postf ) ;
         ZE( osTextT* , postf ) ;
 
-        hasher.queryF( tinP , pbHash , sizeof pbHash ) ;
-        hasher.eatF( tinP , pInfo->psttIfoName ) ;
-        hasherC hasher( tinP , etThread ) ;
+        hasher.queryF( tinBaseP , pbHash , sizeof pbHash ) ;
+        hasher.eatF( tinBaseP , pInfo->psttIfoName ) ;
+        hasherC hasher( tinBaseP , etThread ) ;
 
-        etThread.traceF( tinP , pInfo->psttIfoName ) ;
+        etThread.traceF( tinBaseP , pInfo->psttIfoName ) ;
     {
     if( pInfo && pInfo->psttIfoName && pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam != '/' )
-    etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ;
+    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
 TN( tLike , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/2.1. Drop Files Here To Archive Them/*" ) ;
 //TN( tLike , "///d/tmp/x/a/*" ) ;
 
-switchStackC swsNameByHash( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pbLever , sizeof pbHash , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_byteT ) ;
+switchStackC swsNameByHash( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pbLever , sizeof pbHash , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_byteT ) ;
 const byteT* pbLever = pbHash ;
 byteT pbHash[ 4 * sizeof( count02T ) ] ;
 

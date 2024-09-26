@@ -12,7 +12,7 @@
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
-        listC::indexIF( tinP , hList ) ;
+        listC::indexIF( tinBaseP , hList ) ;
 
         }
             ((listC*)pCursor)->aptBro = list.aptKid ;
@@ -24,8 +24,8 @@
             //AT THIS POINT, I RETAIN MY GRAB ON THE DESTINATION LIST AND I KNOW THAT NO OTHER THREAD POSESSES A GRAB ON ANY OF ITS listingC INCLUDING THOSE OF KID LISTS
 
             POPtINaRGS
-            list.walkF( tinP , idGrabLayerP ) ;
-            tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT ;
+            list.walkF( tinBaseP , idGrabLayerP ) ;
+            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT ;
             PUSHtINaRGS
         {
         else
@@ -33,8 +33,8 @@
 
         listC& list = *(listC*)hList.osF( ifcIDtYPEhANDLE_LISTING ) ;
 
-        openIF( tinP , hList , pczNameToP , flLISToPEN_null , idGrabLayerP ) ;
-        handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+        openIF( tinBaseP , hList , pczNameToP , flLISToPEN_null , idGrabLayerP ) ;
+        handleC hList( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
 
         flagsRC |= flLISTpOURrETURNcODE_SOURCElISTINGSeXISTED ;
     {
@@ -46,16 +46,16 @@
             aptWoth = list.aptKid ;
             listC& list = *(listC*)hList.osF( ifcIDtYPEhANDLE_LISTING ) ;
 
-            listC::unIndexIF( tinP , hList , flLISTwALK_RETAINrOOT ) ;
+            listC::unIndexIF( tinBaseP , hList , flLISTwALK_RETAINrOOT ) ;
         {
         if( ~hList )
 
-        if( F( openIF( tinP , hList , pczNameFromP , flLISToPEN_IFeXISTS , idGrabLayerP ) ) & flLISToPENrETURNcODE_LISTeXISTED ) flagsRC |= flLISTpOURrETURNcODE_SOURCElISTeXISTED ;
-        handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+        if( F( openIF( tinBaseP , hList , pczNameFromP , flLISToPEN_IFeXISTS , idGrabLayerP ) ) & flLISToPENrETURNcODE_LISTeXISTED ) flagsRC |= flLISTpOURrETURNcODE_SOURCElISTeXISTED ;
+        handleC hList( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     {
     aptC aptWoth ;
 
-    grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+    grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     _IO_
@@ -73,7 +73,7 @@
 
     flagsT flagsRC = flLISTpOURrETURNcODE_null ;
 {
-/*1*/flagsT listC::pourIF( tinS& tinP , countT* const pczNameToP , countT* const pczNameFromP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT listC::pourIF( tinBaseS& tinBaseP , countT* const pczNameToP , countT* const pczNameFromP , const countT idGrabLayerP )/*1*/
 
 /**/
 */

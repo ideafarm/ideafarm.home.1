@@ -8,28 +8,28 @@
 
 
 }
-    //tinP.pc Utility[ 0 ] = (countT)tinP.pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
+    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] = (countT)((tinNormalS&)tinBaseP).pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
 
-    tinP.pPoolUse = pPoolUse ; //MUST BE DONE AFTER THE ___() ON THE PRECEDING LINE
+    ((tinNormalS&)tinBaseP).pPoolUse = pPoolUse ; //MUST BE DONE AFTER THE ___() ON THE PRECEDING LINE
 
     }
-        pPoolUse = new( 0 , tinP , LF ) poolC( tinP , TAG( TAGiDnULL ) , postNameP ? postNameP : "apartments" , sizeof( countT ) , flagsP , idStateSpaceP , expCbDropMinP , expCbDropMaxP , pczHintPreallocationP , idMemorySpaceP ) ; ___( pPoolUse ) ;
-        puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+        pPoolUse = new( 0 , tinBaseP , LF ) poolC( tinBaseP , TAG( TAGiDnULL ) , postNameP ? postNameP : "apartments" , sizeof( countT ) , flagsP , idStateSpaceP , expCbDropMinP , expCbDropMaxP , pczHintPreallocationP , idMemorySpaceP ) ; ___( pPoolUse ) ;
+        puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
     {
 
-    if( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) ) { BLAMMO ; }
-    if( !( F(tinP.flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
+    if( idMemorySpaceP && !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) ) { BLAMMO ; }
+    if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
 {
 flagsMode( flPUSEcmODE_DELETE )
 pPoolUse( 0 ) ,
-pPoolUseLag( tinP.pPoolUse ) ,
-/*1*/puseC::puseC( tinS& tinP , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , const countT* const pczHintPreallocationP , const countT idMemorySpaceP ) :/*1*/
+pPoolUseLag( ((tinNormalS&)tinBaseP).pPoolUse ) ,
+/*1*/puseC::puseC( tinBaseS& tinBaseP , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , const countT* const pczHintPreallocationP , const countT idMemorySpaceP ) :/*1*/
 
 // I THINK THAT THIS IS THE ONLY COMPILER BUG THAT I HAVE FOUND, OTHER THAN THE DESIGN IMPERFECTION THAT I PATCH FOR DURING BUILD
 // THIS IS THE WO'TH TIME THAT I USED THIS TYPE OF CODING
 // BUT WHEN IT IS TIME TO DESTRUCT THE TEMPORARY textC OBJECT, THE GENERATED CODE CLEARS THE BIT JUST BEFORE IT TESTS IT
 // THE COMPILER USES A BIT JUST BELOW ebp TO TELL ITSELF WHICH textC OBJECT IT CONSTRUCTED
-// COMPILER GENERATES INCORRECT CODE FOR THIS LINE: poolC( tinP , ( psttNameP ? T(psttNameP) : T("apartments") ) ) ,
+// COMPILER GENERATES INCORRECT CODE FOR THIS LINE: poolC( tinBaseP , ( psttNameP ? T(psttNameP) : T("apartments") ) ) ,
 //CBUG:COMPILERbUG
 
 /**/

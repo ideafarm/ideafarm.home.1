@@ -9,13 +9,13 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok [sgn]:    ")+TF2((countT)sgn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok [sgn]:    ")+TF2((countT)sgn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-//tinP.pc Utility[ 0 ] -- ;
-sCountT sgn = thirdC::c_memcmpIF( tinP , pb1 , pb2 , 4 ) ;
+//((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
+sCountT sgn = thirdC::c_memcmpIF( tinBaseP , pb1 , pb2 , 4 ) ;
 
-//tinP.pc Utility[ 0 ] ++ ;
+//((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
 
 byteT pb2[] = "bbbb" ;
 byteT pb1[] = "aaaa" ;

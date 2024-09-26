@@ -14,19 +14,19 @@ bQuit = 1 ;
 
 #endif
 
-    etThread.loafIF( tinP ) ;
-    etThread.osThreadF( tinP , countTC() , tmGorillaF , 0 , 0 , 0  , flTHREADlAUNCH_ORPHAN ) ;
+    etThread.loafIF( tinBaseP ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF , 0 , 0 , 0  , flTHREADlAUNCH_ORPHAN ) ;
 
 #else
 
     }
-        etThread.loafIF( tinP ) ;
+        etThread.loafIF( tinBaseP ) ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , CloseHandle( osht ) )
     {
     else
     if( !osht ) dec02AM( cThreads ) ;
-    HANDLE osht = (HANDLE)tinP.brcRaw ;
+    HANDLE osht = (HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreateThread( 0 , 0 , tmGorillaRawF , 0 , 0 , 0 ) )
 
@@ -34,7 +34,7 @@ bQuit = 1 ;
 
 inc02AM( cThreads ) ;
 
-pTinMain = &tinP ;
+pTinMain = &tinBaseP ;
 
 TODO
 
@@ -55,7 +55,7 @@ TODO
         {
         else
         if( osht ) break ;
-        osht = (HANDLE)tinP.brcRaw ;
+        osht = (HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , CreateThread( 0 , 0 , tmGorillaRawF , 0 , 0 , 0 ) )
         inc02AM( cThreads ) ;
@@ -66,13 +66,13 @@ TODO
     ZE( HANDLE , osht ) ;
 
     }
-        CONoUTrAW5( "[msSinceBoot,idt]:    " , tinP.brcRaw - msAtBoot , "    " , idt , "\r\n" ) ;
+        CONoUTrAW5( "[msSinceBoot,idt]:    " , ((tinNormalS&)tinBaseP).brcRaw - msAtBoot , "    " , idt , "\r\n" ) ;
         BOSdOnOTtEST( WHATgbo , GetTickCount() )
     {
     if( !( idt % TUCK ) )
     OSsLEEPf( 0 ) ;
 
-    tinS&   tinP     = *pTinMain ;
+    tinBaseS&   tinBaseP     = *pTinMain ;
     countT  idt      = 1 + incv02AM( idtLath ) ;
 {
 DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
@@ -99,16 +99,16 @@ DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
                 }
                     dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */
                     if( !bFake ) { DEL( pTaskP ) ; } /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.  THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */
-                    if( tinP.monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] = - 1 ;_
+                    if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] = - 1 ;_
                     TELL( "DONE0: i am outa here" )
                     ;_
-                        : thirdC::os_cAllKidThreadsI_IF( tinP )
-                        ? thirdC::os_cAllOrphanThreadsI_IF( tinP )
+                        : thirdC::os_cAllKidThreadsI_IF( tinBaseP )
+                        ? thirdC::os_cAllOrphanThreadsI_IF( tinBaseP )
                     countT& cAllThreads = bOrphan
                     boolT bFake   = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE   ) : 0 ;_
                     boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;_
                     TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )
-                    TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
+                    TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
                 {
 
                 }
@@ -118,53 +118,53 @@ DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
                                 pEtThread = 0 ;_
                                 THREADmODE3rESTORE
                                 TINSL
-                                delete pEtThread ; /* tinP IS DESTROYED HERE */
+                                delete pEtThread ; /* tinBaseP IS DESTROYED HERE */
                                 THREADmODE3oFF( flTHREADmODE3_DOnOTcaLLdELif )
                             {
                             if( *(countT*)&pEtThread )
-                            DEL( tinP.pEtScratch ) ;_
-                            DEL( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
-                            TELL( "DONE0: deleting etThread (and tinP)" ) ;_
-                            tinP.pEther = 0 ;_
+                            DEL( ((tinNormalS&)tinBaseP).pEtScratch ) ;_
+                            DEL( ((tinNormalS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
+                            TELL( "DONE0: deleting etThread (and tinBaseP)" ) ;_
+                            ((tinNormalS&)tinBaseP).pEther = 0 ;_
                             TELL( "DONE0: testing poolOld" ) ;_
 
                             }
-                                tinP.pEtScratch->delF( tinP , psttThreadFile ) ;_
-                                tinP.pEtScratch->boxZapF( tinP , psttThreadFile ) ;_
+                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;_
+                                ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;_
                                 TELL( "DONE0: deleting thread file" ) ;_
                             {
                             if( psttThreadFile )
                         {
                         if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/
-                        TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
+                        TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
                     {
 
                     }
                         }
-                            if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-                            if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;_
+                            if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                            if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;_
                             }
                                 TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;_
                                 }
-                                    while( tinP.cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ; }
-                                    sleepC s( tinP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */
+                                    while( ((tinNormalS&)tinBaseP).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }
+                                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */
                                 {
                                 TELL( "DONE0: waiting for my kid threads to end" ) ;_
 
-                                if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;_
+                                if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;_
                                 TELL( "DONE0: conditionally calling etherWhereF" ) ;_
                             {
                             else
-                            if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
+                            if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
 
                             TELL( "DONE0: after returning from application code" ) ;_
-                            tinP.idPhase2 = 0 ;_
-                            if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;_
-                            if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-                            TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
+                            ((tinNormalS&)tinBaseP).idPhase2 = 0 ;_
+                            if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;_
+                            if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                            TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
                         {
 
-                        etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/
+                        etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/
 
                         /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/
 
@@ -191,7 +191,7 @@ DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
             {
             if( !POOP )
 
-            tinP.pEtScratch->osThreadF( tinP , countTC() , tmGorillaF , 0 , 0 , 0  , flTHREADlAUNCH_ORPHAN ) ;_
+            ((tinNormalS&)tinBaseP).pEtScratch->osThreadF( tinBaseP , countTC() , tmGorillaF , 0 , 0 , 0  , flTHREADlAUNCH_ORPHAN ) ;_
 
             inc02AM( cThreads ) ;_
             idTry ++ ;_
@@ -200,7 +200,7 @@ DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
         ZE( countT , idTry ) ;_
 
         }
-            CONoUTrAW5( "[msSinceBoot,idt]:    " , tinP.brcRaw - msAtBoot , "    " , idt , "\r\n" ) ;
+            CONoUTrAW5( "[msSinceBoot,idt]:    " , ((tinNormalS&)tinBaseP).brcRaw - msAtBoot , "    " , idt , "\r\n" ) ;
             BOSdOnOTtEST( WHATgbo , GetTickCount() )
         {
         if( !( idt % TOCK ) )
@@ -217,58 +217,58 @@ if( pTaskP )
 
 
 
-                    if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
+                    if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                     _IO_
-                    if( tinP.idPhase1 < ifcIDpHASEtHREAD_WORKING ) tinP.idPhase1 = ifcIDpHASEtHREAD_WORKING ;_
+                    if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;_
                     (countT&)_stackTop = espAM() ;_
-                    tlsBlobC _stackTop( tinP , "appStackTop" , "tin" ) ;_
+                    tlsBlobC _stackTop( tinBaseP , "appStackTop" , "tin" ) ;_
                     TELL( "TASK0: entering application code" )
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;_
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;_
                     }
-                        etThread.boxPutF( tinP , psttThreadFile , "T" ) ;_
-                        etThread.strMakeF( tinP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(tinP.osPid)+tDot+TF1(DDNUMB)+tDot+T("tmGorillaF")+tDot+TF1(tinP.monitor.idThread) ) ; ___( psttThreadFile ) ;_
+                        etThread.boxPutF( tinBaseP , psttThreadFile , "T" ) ;_
+                        etThread.strMakeF( tinBaseP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tinNormalS&)tinBaseP).osPid)+tDot+TF1(DDNUMB)+tDot+T("tmGorillaF")+tDot+TF1(((tinNormalS&)tinBaseP).monitor.idThread) ) ; ___( psttThreadFile ) ;_
                         TN( tDot , "." ) ;_
                     {
-                    if( F( ((thirdC&)etThread).third_flagsModeAdam1I_IF( tinP ) ) & flADAMmODE1_SEEtHREADSaSfILES )
-                    etThread.osTimeNowF( tinP , tinP.time1 , tinP.time2 ) ;_
-                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(tinP.osPid)+T(" ")+TF1(tinP.osTid)+T(" \"")+T(tinP.postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/
+                    if( F( ((thirdC&)etThread).third_flagsModeAdam1I_IF( tinBaseP ) ) & flADAMmODE1_SEEtHREADSaSfILES )
+                    etThread.osTimeNowF( tinBaseP , ((tinNormalS&)tinBaseP).time1 , ((tinNormalS&)tinBaseP).time2 ) ;_
+                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tinNormalS&)tinBaseP).osPid)+T(" ")+TF1(((tinNormalS&)tinBaseP).osTid)+T(" \"")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/
                 {
 
-                tinP.pEther = &etThread ;_
+                ((tinNormalS&)tinBaseP).pEther = &etThread ;_
                 TELL( "TASK0: final setup" )
 
-                /*POPUP( TF1(tinP.monitor.idThread)+T(" ")+T(tinP.postThreadName)+T("\r\n") ) ;*/
+                /*POPUP( TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(" ")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\r\n") ) ;*/
 
-                tinP.pScoopEtThread = new( 0 , tinP , LF ) scoopC( tinP , etThread ) ; ___( tinP.pScoopEtThread  ) ;_
+                ((tinNormalS&)tinBaseP).pScoopEtThread = new( 0 , tinBaseP , LF ) scoopC( tinBaseP , etThread ) ; ___( ((tinNormalS&)tinBaseP).pScoopEtThread  ) ;_
                 etherC& etThread  = *pEtThread ;_
             {
-            if( pEtThread && tinP.pEtScratch )
+            if( pEtThread && ((tinNormalS&)tinBaseP).pEtScratch )
             ZE( strokeS* , psttThreadFile ) ;_
             TELL( "TASK0: after newing etThread" )
-            tinP.pEtScratch = new( 0 , tinP , LF ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ; ___( tinP.pEtScratch ) ;_
-            etherC* pEtThread  = new( 0 , tinP , LF ) etherC( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flTHIRDmODE_null ) ; ___( pEtThread ) ;_
+            ((tinNormalS&)tinBaseP).pEtScratch = new( 0 , tinBaseP , LF ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ; ___( ((tinNormalS&)tinBaseP).pEtScratch ) ;_
+            etherC* pEtThread  = new( 0 , tinBaseP , LF ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flTHIRDmODE_null ) ; ___( pEtThread ) ;_
             TELL( "TASK0: newing etThread" )
 
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) tinP.monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;_
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    ) tinP.flagsThreadMode2 |= flTHREADmODE2_YELL                    ;_
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ) tinP.flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;_
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          ) tinP.flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;_
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            ) tinP.flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;_
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;_
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    ) ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;_
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ) ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;_
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          ) ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;_
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            ) ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;_
             TELL( "TASK0: setting flagsThreadMode2" )
             /*CODEsYNC: 00100df 0010055*/
 
-            tinP.pcQuit = &(const countT&)ether ;_
-            tinP.monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinP ) ;_
-            tinP.idlTask  = ifcLINE ;_
-            tinP.idiTask  = DDNUMB ;_
-            TELL( "TASK0: setting miscellaneous fields in tinP" )
-            etherC& etRock = etherC::etRockIF( tinP ) ;_
-            etherC& ether = etherC::etPrimeIF( tinP ) ;_
+            ((tinNormalS&)tinBaseP).pcQuit = &(const countT&)ether ;_
+            ((tinNormalS&)tinBaseP).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinBaseP ) ;_
+            ((tinNormalS&)tinBaseP).idlTask  = ifcLINE ;_
+            ((tinNormalS&)tinBaseP).idiTask  = DDNUMB ;_
+            TELL( "TASK0: setting miscellaneous fields in tinBaseP" )
+            etherC& etRock = etherC::etRockIF( tinBaseP ) ;_
+            etherC& ether = etherC::etPrimeIF( tinBaseP ) ;_
             TINSL
         {
         if( bTinOk )
         ZE( countT , idt ) ;
-        TELL( "TASK0: after newing either a tinS in the working poolOld" )
+        TELL( "TASK0: after newing either a tinNormalS in the working poolOld" )
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */
 
         }
@@ -279,9 +279,9 @@ if( pTaskP )
                 bTinOk = 1 ;_
             {
             if( pTin )
-            tinS* pTin = new( 0 , tinP , LF ) tinS( tinP , TAG( TAGiDnULL ) , pTaskP->idThread , pTinDad , "tmGorillaF" , flTINs_null , ifcIDtINnAMED_tinInPool ) ;_
-            TELL( "TASK0: newing a tinS in the working poolOld" )
-            tinS* const pTinDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : &pTaskP->tinDad ;_
+            tinBaseS* pTin = new( 0 , tinBaseP , LF ) tinNormalS( tinBaseP , TAG( TAGiDnULL ) , pTaskP->idThread , pTinBaseDad , "tmGorillaF" , flTINs_null , ifcIDtINnAMED_tinInPool ) ;_
+            TELL( "TASK0: newing a tinNormalS in the working poolOld" )
+            tinBaseS* const pTinBaseDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : &pTaskP->tinDad ;_
         {
         ZE( boolT , bTinOk ) ;_
         taskS* pTaskP = (taskS*)argP ;_
@@ -289,16 +289,16 @@ if( pTaskP )
 
         OStEXTcLEAR( _ostoTmp )
         osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _statRangerTag , _statRangerTag.cbF() ) ;_
-        tlsBlobC _statRangerTag( tinP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;_
-        OStEXTC(  _ostoTmp , tinP.monitor.idThread , 0 )
+        tlsBlobC _statRangerTag( tinBaseP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;_
+        OStEXTC(  _ostoTmp , ((tinNormalS&)tinBaseP).monitor.idThread , 0 )
         OStEXTAK( _ostoTmp , "." )
-        OStEXTA(  _ostoTmp , tinP.postThreadName )
+        OStEXTA(  _ostoTmp , ((tinNormalS&)tinBaseP).postThreadName )
         OStEXTAK( _ostoTmp , "RangerTag:threadStack." )
         OStEXTAK( _ostoTmp , "!ifc" )
         OStEXT(   _ostoTmp , 0x80 )
 
         _IO_ TELLsYSlIFInAME( "tmGorillaF" )
-        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
+        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
         TINSL
     {
     countT tmGorillaF_workF( countT argP )
@@ -313,8 +313,8 @@ TASK0PROTO( tmGorillaF ) ;
 
 countT cThreads ;
 boolT  bQuit ;
-tinS*  pTinMain ;
-countT msAtBoot = tinP.brcRaw ;
+tinBaseS*  pTinMain ;
+countT msAtBoot = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , GetTickCount() )
 countT idtLath ;
 

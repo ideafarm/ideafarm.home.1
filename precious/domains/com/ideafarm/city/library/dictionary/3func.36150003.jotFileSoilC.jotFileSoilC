@@ -10,17 +10,17 @@
                             
 }
     }
-        //tinP.pEther->traceF( tinP , T("jotFileSoilC / ct'or [time?Modified]:    ")+TT(time1Modified,time2Modified) ) ;
-        tinP.pEther->osTimeNowF( tinP , time1Modified , time2Modified ) ;
+        //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotFileSoilC / ct'or [time?Modified]:    ")+TT(time1Modified,time2Modified) ) ;
+        ((tinNormalS&)tinBaseP).pEther->osTimeNowF( tinBaseP , time1Modified , time2Modified ) ;
     {
-    if( tinP.pEther && !time1Modified && !time2Modified )
+    if( ((tinNormalS&)tinBaseP).pEther && !time1Modified && !time2Modified )
     putNegAM( finger , FINGERnEG_jotFileSoilC ) ;
     if( !idjBranch ) { BLAMMO ; }
 {
 time2Modified( time2P )
 time1Modified( time1P ) ,
 idjBranch( idjBranchP & ~NM_HIGH ) ,
-/*1*/jotFileSoilC::jotFileSoilC( tinS& tinP , countT idjBranchP , countT time1P , sCountT time2P ) :/*1*/
+/*1*/jotFileSoilC::jotFileSoilC( tinBaseS& tinBaseP , countT idjBranchP , countT time1P , sCountT time2P ) :/*1*/
 
 
 /**/

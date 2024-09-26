@@ -7,7 +7,7 @@
 //
 
 
-#define PART(argP) { ZE( countT* , pcPart ) ; countT ccPart = etThread.strBodyLengthF( tinP , argP ) ; etThread.newF( tinP , LF , pcPart , ccPart + 1 ) ; ___( pcPart ) ; etThread.memCopyF( tinP , (byteT*)pcPart , (byteT*)(argP) , sizeof( countT ) * ( ccPart + 1 ) ) ; stPartP << (countT)pcPart ; }
+#define PART(argP) { ZE( countT* , pcPart ) ; countT ccPart = etThread.strBodyLengthF( tinBaseP , argP ) ; etThread.newF( tinBaseP , LF , pcPart , ccPart + 1 ) ; ___( pcPart ) ; etThread.memCopyF( tinBaseP , (byteT*)pcPart , (byteT*)(argP) , sizeof( countT ) * ( ccPart + 1 ) ) ; stPartP << (countT)pcPart ; }
 /*1*//*PART(argP)*//*1*/
 */
 it is illegal to refer to this symbol in the definition of an adam except within the partsF function definition for the adam

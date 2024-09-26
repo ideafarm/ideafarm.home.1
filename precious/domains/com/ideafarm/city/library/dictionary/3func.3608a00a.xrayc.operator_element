@@ -76,7 +76,7 @@
             pcs = (countT*)( ppbx[ offx ] + offsr * cbElement ) ;
     
             }
-                PUSE.newF( tinP , LF , ppbx[ offx ] , csaxF( offx ) * cbElement ) ; ___( ppbx[ offx ] ) ;
+                PUSE.newF( tinBaseP , LF , ppbx[ offx ] , csaxF( offx ) * cbElement ) ; ___( ppbx[ offx ] ) ;
                 TINSL
             {
             if( !ppbx[ offx ] )
@@ -103,7 +103,7 @@
                     break ;
                     offsrFifoPush = 0 ;
 
-                    PUSE.newF( tinP , LF , ppbx[ offxFifoPush ] , pcsx[ offxFifoPush ] * cbElement ) ; ___( ppbx[ offxFifoPush ] ) ;
+                    PUSE.newF( tinBaseP , LF , ppbx[ offxFifoPush ] , pcsx[ offxFifoPush ] * cbElement ) ; ___( ppbx[ offxFifoPush ] ) ;
                     pcsx[ offxFifoPush ] = cElements ; //NEW HEADROOM == CURRENT TOTAL USED, SO OCCUPANCY RATE VARIES FROM 0 TO 1/2
                     //CONoUTrAW5( "allocating an extent at " , offxFifoPush , " of " , cElements , " slots\r\n" ) ;
                     TINSL

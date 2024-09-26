@@ -12,7 +12,7 @@
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
-        pDatum->unIndexF( tinP ) ;
+        pDatum->unIndexF( tinBaseP ) ;
 
         ;
                 : (datumC*)(                 pListing + 1 )
@@ -25,13 +25,13 @@
     {
     if( pListing && pListing->idTypeDatumF() )
 
-    listingC* pListing = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    listingC* pListing = ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
-/*1*/flagsT listWalkUnIndexCBF( tinS& tinP )/*1*/
+/*1*/flagsT listWalkUnIndexCBF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

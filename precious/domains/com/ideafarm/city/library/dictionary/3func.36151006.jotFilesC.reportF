@@ -15,7 +15,7 @@
     }
         if( pcbWroteP ) *pcbWroteP = cbWroteSome + cWroteMore ;
         if( idjSoilRootOrNewBranchMore - idjSoilRootOrNewBranch ) { BLAMMOiD( idjSoilRootOrNewBranchMore - idjSoilRootOrNewBranch ) ; }
-        countT idjSoilRootOrNewBranchMore = writeF( tinP , pb1P , cb1P , pb2P , cb2P , idjSoilRootOrNewBranch , flagsP | flJOTfILEScwRITE_APPENDpART , &cWroteMore ) & ~NM_HIGH ;
+        countT idjSoilRootOrNewBranchMore = writeF( tinBaseP , pb1P , cb1P , pb2P , cb2P , idjSoilRootOrNewBranch , flagsP | flJOTfILEScwRITE_APPENDpART , &cWroteMore ) & ~NM_HIGH ;
         ZE( countT , cWroteMore ) ;
 
         }
@@ -48,7 +48,7 @@
                     jotFilePartC& part = *(jotFilePartC*)(const byteT*)pagePart ;
                 {
                 if( pagePart == sizeof( jotFilePartC ) )
-                pageC pagePart = jotCanChange.readF( tinP , idjPartNew ) ;
+                pageC pagePart = jotCanChange.readF( tinBaseP , idjPartNew ) ;
             {
 
             }
@@ -67,7 +67,7 @@
                 {
                 else
                 if( pagePart != sizeof( jotFilePartC ) ) break ;
-                pageC pagePart = jotCanChange.readF( tinP , idjPartCursor ) ;
+                pageC pagePart = jotCanChange.readF( tinBaseP , idjPartCursor ) ;
             {
             for(;;)                                                                                     // INSERT idjPartNew INTO THE LEAF PART
         {
@@ -92,7 +92,7 @@
                 {
                 else
                 if( pageBranch != sizeof( jotFileBranchC ) ) break ;
-                pageC pageBranch = jotCanChange.readF( tinP , idjBranchCursor ) ;
+                pageC pageBranch = jotCanChange.readF( tinBaseP , idjBranchCursor ) ;
             {
             for(;;)                                                                                     // SET idjPartCursor TO POINT TO THE ROOT PART OF THE LEAF BRANCH
         {
@@ -103,7 +103,7 @@
                 jotFileBranchC& branchOld = *(jotFileBranchC*)(const byteT*)pageBranchOld ;
             {
             if( pageBranchOld == sizeof( jotFileBranchC ) )
-            pageC pageBranchOld = jotCanChange.readF( tinP , idjSoilOrBranchP ) ;
+            pageC pageBranchOld = jotCanChange.readF( tinBaseP , idjSoilOrBranchP ) ;
 
             __NZ( F(flagsP) & flJOTfILEScwRITE_REPLACEfILE ) ;
         {
@@ -120,7 +120,7 @@
                         jotFileBranchC& branchNew3 = *(jotFileBranchC*)(const byteT*)pageBranchNew ;
                     {
                     if( pageBranchNew == sizeof( jotFileBranchC ) )
-                    pageC pageBranchNew = jotCanChange.readF( tinP , idjBranchNew ) ;
+                    pageC pageBranchNew = jotCanChange.readF( tinBaseP , idjBranchNew ) ;
                 {
 
                 }
@@ -139,13 +139,13 @@
                     {
                     else
                     if( pageBranch != sizeof( jotFileBranchC ) ) break ;
-                    pageC pageBranch = jotCanChange.readF( tinP , idjBranchCursor ) ;
+                    pageC pageBranch = jotCanChange.readF( tinBaseP , idjBranchCursor ) ;
                 {
                 for(;;)                                                                                     // INSERT idjBranchNew INTO THE LEAF BRANCH
 
-                countT idjBranchNew = jotCanChange.writeF( tinP , (byteT*)&branchNew , sizeof branchNew , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
+                countT idjBranchNew = jotCanChange.writeF( tinBaseP , (byteT*)&branchNew , sizeof branchNew , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
                 idjPartNew = 0 ;
-                jotFileBranchC branchNew( tinP , idjPartNew ) ;
+                jotFileBranchC branchNew( tinBaseP , idjPartNew ) ;
             {
             else
             }
@@ -166,16 +166,16 @@
                     {
                     else
                     if( pageSoil != sizeof( jotFileSoilC ) ) break ;
-                    pageC pageSoil = jotCanChange.readF( tinP , idjSoilOrBranchP ) ;
+                    pageC pageSoil = jotCanChange.readF( tinBaseP , idjSoilOrBranchP ) ;
                 {
                 for(;;)                                                                                         // SET idjBranchCursor TO POINT TO THE ROOT BRANCH OF THE LEAF SOIL
 
-                countT idjSoilNew = jotCanChange.writeF( tinP , (byteT*)&soil , sizeof soil , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
-                jotFileSoilC soil( tinP , idjBranchNew ) ;
+                countT idjSoilNew = jotCanChange.writeF( tinBaseP , (byteT*)&soil , sizeof soil , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
+                jotFileSoilC soil( tinBaseP , idjBranchNew ) ;
 
-                countT idjBranchNew = jotCanChange.writeF( tinP , (byteT*)&branch , sizeof branch , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
+                countT idjBranchNew = jotCanChange.writeF( tinBaseP , (byteT*)&branch , sizeof branch , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
                 idjPartNew = 0 ;
-                jotFileBranchC branch( tinP , idjPartNew ) ;
+                jotFileBranchC branch( tinBaseP , idjPartNew ) ;
             {
             if( F(flagsP) & flJOTfILEScwRITE_REPLACEfILE )
         {
@@ -192,7 +192,7 @@
                         jotFileBranchC& branchNew3 = *(jotFileBranchC*)(const byteT*)pageBranchNew ;
                     {
                     if( pageBranchNew == sizeof( jotFileBranchC ) )
-                    pageC pageBranchNew = jotCanChange.readF( tinP , idjBranchNew ) ;
+                    pageC pageBranchNew = jotCanChange.readF( tinBaseP , idjBranchNew ) ;
                 {
                 if( idjNextOld )
 
@@ -210,14 +210,14 @@
                         jotFileBranchC& branchOld = *(jotFileBranchC*)(const byteT*)pageBranchOld ;
                     {
                     if( pageBranchOld == sizeof( jotFileBranchC ) )
-                    pageC pageBranchOld = jotCanChange.readF( tinP , idjSoilOrBranchP ) ;
+                    pageC pageBranchOld = jotCanChange.readF( tinBaseP , idjSoilOrBranchP ) ;
                 {
                 ZE( countT , idjNextOld ) ;
 
                 }
-                    idjSoilRootOrNewBranch = idjBranchNew = jotCanChange.writeF( tinP , (byteT*)&branchNew2 , sizeof branchNew2 , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
+                    idjSoilRootOrNewBranch = idjBranchNew = jotCanChange.writeF( tinBaseP , (byteT*)&branchNew2 , sizeof branchNew2 , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
                     idjPartNew = 0 ;
-                    jotFileBranchC branchNew2( tinP , idjPartNew ) ;
+                    jotFileBranchC branchNew2( tinBaseP , idjPartNew ) ;
                 {
                 ZE( countT , idjBranchNew ) ;
             {
@@ -232,15 +232,15 @@
                     jotFileBranchC& branchNew = *(jotFileBranchC*)(const byteT*)pageBranchNew ;
                 {
                 if( pageBranchNew == sizeof( jotFileBranchC ) )
-                pageC pageBranchNew = jotCanChange.readF( tinP , idjBranchNew ) ;
+                pageC pageBranchNew = jotCanChange.readF( tinBaseP , idjBranchNew ) ;
             {
 
-            idjSoilRootOrNewBranch = jotCanChange.writeF( tinP , (byteT*)&soil , sizeof soil , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
-            jotFileSoilC soil( tinP , idjBranchNew ) ;
+            idjSoilRootOrNewBranch = jotCanChange.writeF( tinBaseP , (byteT*)&soil , sizeof soil , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
+            jotFileSoilC soil( tinBaseP , idjBranchNew ) ;
 
-            countT idjBranchNew = jotCanChange.writeF( tinP , (byteT*)&branchNew1 , sizeof branchNew1 , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
+            countT idjBranchNew = jotCanChange.writeF( tinBaseP , (byteT*)&branchNew1 , sizeof branchNew1 , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
             idjPartNew = 0 ;
-            jotFileBranchC branchNew1( tinP , idjPartNew ) ;
+            jotFileBranchC branchNew1( tinBaseP , idjPartNew ) ;
         {
         if( !idjSoilOrBranchP )
     {
@@ -252,17 +252,17 @@
                 }
                     }
                         }
-                            tinP.pEther->traceF( tinP , T("jotFilesC::writeF / new mod puddle [time?Modified]:    ")+TT(soilPatch.time1Modified,soilPatch.time2Modified) ) ;
-                            tinP.pEther->osTimeNowF( tinP , soilPatch.time1Modified , soilPatch.time2Modified ) ;
+                            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotFilesC::writeF / new mod puddle [time?Modified]:    ")+TT(soilPatch.time1Modified,soilPatch.time2Modified) ) ;
+                            ((tinNormalS&)tinBaseP).pEther->osTimeNowF( tinBaseP , soilPatch.time1Modified , soilPatch.time2Modified ) ;
                         {
-                        if( tinP.pEther )
+                        if( ((tinNormalS&)tinBaseP).pEther )
                         soilPatch.time2Modified = soilPatch.time1Modified = 0 ;
                     {
                     if( getNegAM( soilPatch.finger ) == FINGERnEG_jotFileSoilC )
                     jotFileSoilC& soilPatch = *(jotFileSoilC*)(const byteT*)pageSoil ;
                 {
                 if( pageSoil == sizeof( jotFileSoilC ) )
-                pageC pageSoil = jotCanChange.readF( tinP , idjDownSoil ) ;
+                pageC pageSoil = jotCanChange.readF( tinBaseP , idjDownSoil ) ;
             {
             if( idjDownSoil )
 
@@ -281,7 +281,7 @@
                 {
                 else
                 if( pageBranch != sizeof( jotFileBranchC ) ) break ;
-                pageC pageBranch = jotCanChange.readF( tinP , idjbc ) ;
+                pageC pageBranch = jotCanChange.readF( tinBaseP , idjbc ) ;
             {
             for(;;)
             ZE( countT , idjDownSoil ) ;
@@ -297,10 +297,10 @@
                     break ;
 
                     }
-                        tinP.pEther->traceF( tinP , T("jotFilesC::writeF / new mod [time?Modified]:    ")+TT(soilMaybe.time1Modified,soilMaybe.time2Modified) ) ;
-                        tinP.pEther->osTimeNowF( tinP , soilMaybe.time1Modified , soilMaybe.time2Modified ) ;
+                        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotFilesC::writeF / new mod [time?Modified]:    ")+TT(soilMaybe.time1Modified,soilMaybe.time2Modified) ) ;
+                        ((tinNormalS&)tinBaseP).pEther->osTimeNowF( tinBaseP , soilMaybe.time1Modified , soilMaybe.time2Modified ) ;
                     {
-                    if( tinP.pEther )
+                    if( ((tinNormalS&)tinBaseP).pEther )
                     soilMaybe.time2Modified = soilMaybe.time1Modified = 0 ;
 
                     idjBranchCursor = soilMaybe.idjBranch ;
@@ -319,7 +319,7 @@
             if( pageSoilOrBranch == sizeof( jotFileBranchC ) && getNegAM( branchMaybe.finger ) == FINGERnEG_jotFileBranchC )
             jotFileBranchC& branchMaybe        = *(jotFileBranchC*)(const byteT*)pageSoilOrBranch ;
             jotFileSoilC&     soilMaybe        =   *(jotFileSoilC*)(const byteT*)pageSoilOrBranch ;
-            pageC             pageSoilOrBranch =    jotCanChange.readF( tinP , idjSoilOrBranchP ) ;
+            pageC             pageSoilOrBranch =    jotCanChange.readF( tinBaseP , idjSoilOrBranchP ) ;
         {
         for(;;)                                                                                         // SET idjBranchCursor TO POINT TO THE ROOT BRANCH OF THE LEAF SOIL
     {
@@ -329,12 +329,12 @@
     ZE( boolT  , bIsBranch              ) ;
 
     }
-        idjPartNew = jotCanChange.writeF( tinP , (byteT*)&part , sizeof part , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
+        idjPartNew = jotCanChange.writeF( tinBaseP , (byteT*)&part , sizeof part , 0 , 0 , flJOTcwRITE_null ) & ~NM_HIGH ;
         jotFilePartC part( idjDataNew ) ;
 
         }
             __Z( idjDataNew ) ;
-            idjDataNew = jotTarget.writeF( tinP , pb1P , cb1P , pb2P , cb2P , flagsWriteData , &cbWroteSome ) & ~NM_HIGH ;
+            idjDataNew = jotTarget.writeF( tinBaseP , pb1P , cb1P , pb2P , cb2P , flagsWriteData , &cbWroteSome ) & ~NM_HIGH ;
 
             ;
                 : flJOTcwRITE_null
@@ -348,8 +348,8 @@
 
     jotC& jotTarget = F(flagsP) & flJOTfILEScwRITE_TOcANcHANGE ? jotCanChange : jotNeverChanges ;
 
-    if( pb2P && !cb2P ) cb2P = 1 + thirdC::c_strlenIF( tinP , pb2P ) ;
-    if( pb1P && !cb1P ) cb1P = 1 + thirdC::c_strlenIF( tinP , pb1P ) ;
+    if( pb2P && !cb2P ) cb2P = 1 + thirdC::c_strlenIF( tinBaseP , pb2P ) ;
+    if( pb1P && !cb1P ) cb1P = 1 + thirdC::c_strlenIF( tinBaseP , pb1P ) ;
 
 #if defined( NEVERdEFINED )
 
@@ -357,34 +357,34 @@
         }
             }
                 }
-                    ether.traceF( tinP , T("\r\n\r\n") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    ether.traceF( tinBaseP , T("\r\n\r\n") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
-                    if( bOk ) base.reportF( tinP ) ;
+                    if( bOk ) base.reportF( tinBaseP ) ;
 
                     }
-                        ether.traceF( tinP , T("not                                    [cb]:    ")+TF2((countT)pagei,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
+                        ether.traceF( tinBaseP , T("not                                    [cb]:    ")+TF2((countT)pagei,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
                     {
                     else
                     }
-                        name.reportF( tinP ) ;
+                        name.reportF( tinBaseP ) ;
                         jotFileNameC& name = *(jotFileNameC*)&base ;
                         bOk = 1 ;
                     {
                     else if( getNegAM( base.finger ) == FINGERnEG_jotFileNameC )
                     }
-                        soil.reportF( tinP ) ;
+                        soil.reportF( tinBaseP ) ;
                         jotFileSoilC& soil = *(jotFileSoilC*)&base ;
                         bOk = 1 ;
                     {
                     else if( getNegAM( base.finger ) == FINGERnEG_jotFileSoilC )
                     }
-                        branch.reportF( tinP ) ;
+                        branch.reportF( tinBaseP ) ;
                         jotFileBranchC& branch = *(jotFileBranchC*)&base ;
                         bOk = 1 ;
                     {
                     else if( getNegAM( base.finger ) == FINGERnEG_jotFileBranchC )
                     }
-                        part.reportF( tinP ) ;
+                        part.reportF( tinBaseP ) ;
                         jotFilePartC& part = *(jotFilePartC*)&base ;
                         bOk = 1 ;
                     {
@@ -394,28 +394,28 @@
                     jotFileBaseC& base = *(jotFileBaseC*)(const byteT*)pagei ;
                 {
                 else
-                if( pagei < sizeof( jotFileBaseC ) ) ether.traceF( tinP , T("small                             [idjc,cb]:    ")+TF2(idjc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)pagei,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
-                pageC pagei = jotCanChange.readF( tinP , idjc ) ;
+                if( pagei < sizeof( jotFileBaseC ) ) ether.traceF( tinBaseP , T("small                             [idjc,cb]:    ")+TF2(idjc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)pagei,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
+                pageC pagei = jotCanChange.readF( tinBaseP , idjc ) ;
             {
-            ether.traceF( tinP , T("")+TF2(idjc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
+            ether.traceF( tinBaseP , T("")+TF2(idjc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
         {
         for( countT idjc = 1 ; idjc <= cEltsCanChange ; idjc ++ )
 
-        ether.traceF( tinP , T("\r\n\r\njotFilesC::reportF / cElementsF() [canChange,neverChanges]:    ")+TF2(cEltsCanChange,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cEltsNeverChanges,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n\r\n") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        ether.traceF( tinBaseP , T("\r\n\r\njotFilesC::reportF / cElementsF() [canChange,neverChanges]:    ")+TF2(cEltsCanChange,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cEltsNeverChanges,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n\r\n") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
         countT cEltsNeverChanges = jotNeverChanges.cElementsF() ;
         countT cEltsCanChange    =    jotCanChange.cElementsF() ;
 
-        etherC& ether = *tinP.pEther ;
+        etherC& ether = *((tinNormalS&)tinBaseP).pEther ;
     {
-    if( tinP.pEther )
+    if( ((tinNormalS&)tinBaseP).pEther )
 
     }
         if( POOP ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT jotFilesC::reportF( tinS& tinP , countT idjP , const flagsT flagsP )/*1*/
+/*1*/voidT jotFilesC::reportF( tinBaseS& tinBaseP , countT idjP , const flagsT flagsP )/*1*/
 
 
 /**/

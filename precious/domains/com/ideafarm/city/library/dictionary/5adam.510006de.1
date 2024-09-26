@@ -9,17 +9,17 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    bt.walkF( tinP , stThis , stKidsDone , postBufferM , sizeof postBufferM , cNest , walkLocalCBF ) ;
+    bt.walkF( tinBaseP , stThis , stKidsDone , postBufferM , sizeof postBufferM , cNest , walkLocalCBF ) ;
     ZE( countT , cNest ) ;
 
-    stackC stKidsDone( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
-    stackC stThis(     tinP , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stKidsDone( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
+    stackC stThis(     tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
-    bitTreeC bt( tinP , "bt.cloud.file.names.archive.local" , flBITtREEc_null , ifcIDaDAM_CLOUD , 0x17 ) ;
+    bitTreeC bt( tinBaseP , "bt.cloud.file.names.archive.local" , flBITtREEc_null , ifcIDaDAM_CLOUD , 0x17 ) ;
 {
 
 TODO
@@ -27,12 +27,12 @@ TODO
 }
     return 0 ;
 
-    etherC::etRockIF( tinP ).traceF( tinP , T("!local: \"")+T(postBufferC)+T("\"") /*, flTRACE_NOpREFIX*/ ) ;
+    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("!local: \"")+T(postBufferC)+T("\"") /*, flTRACE_NOpREFIX*/ ) ;
     for( countT offr = 0 ; postBufferM[ offr ] ; offr ++ ) postBufferC[ offr ] = reverseBitsF( postBufferM[ offr ] ) ;
 
-    thirdC::c_strcpyIF( tinP , postBufferC , postBufferM ) ;
+    thirdC::c_strcpyIF( tinBaseP , postBufferC , postBufferM ) ;
 {
-countT walkLocalCBF( tinS& tinP , countT& cArgP )
+countT walkLocalCBF( tinBaseS& tinBaseP , countT& cArgP )
 
 osTextT postBufferC[ TOCK ] ;
 osTextT postBufferM[ TOCK ] ;

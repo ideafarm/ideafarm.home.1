@@ -9,7 +9,7 @@
 
 }
     return rc ;
-    if( !POOP ) rc = tinP.brcRaw ;
+    if( !POOP ) rc = ((tinNormalS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , SendMessage( osh , WM_CLOSE , 0 , 0 ) )
     HWND osh = (HWND)hWindowP.osF( ifcIDtYPEhANDLE_WINDOW ) ;
     ZE( countT , rc ) ;
@@ -23,12 +23,12 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT thirdC::winSendMessageCloseF( tinS& tinP , const handleC& hWindowP )/*1*/
+/*1*/countT thirdC::winSendMessageCloseF( tinBaseS& tinBaseP , const handleC& hWindowP )/*1*/
 
 /**/
 */
 i exist because i do not refer to any ifc objects after calling SendMessage
-the WM_CLOSE handler destroys tinP
+the WM_CLOSE handler destroys tinBaseP
 it is illegal to refer to this symbol except to send WM_CLOSE (in the handler for WM_ENDSESSION)
 it is illegal to refer to this symbol in the definition of an adam
 /*

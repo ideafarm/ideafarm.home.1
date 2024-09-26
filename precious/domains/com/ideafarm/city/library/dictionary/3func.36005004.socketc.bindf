@@ -27,21 +27,21 @@
             const countT cSlots = sizeof pMap->pPort / sizeof pMap->pPort[ 0 ] ;
         {
         if( pMap )
-        bWrite.ungrabF( tinP ) ;
-        bRead.ungrabF( tinP ) ;
+        bWrite.ungrabF( tinBaseP ) ;
+        bRead.ungrabF( tinBaseP ) ;
         }
             //LOGrAW( tSay ) ;
             CONoUTrAW( tSay ) ;
-            TN( tSay , "" ) ; tSay = TF2(tinP.pag1->idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("/bindF: bound to port ")+TF4(idPortMe,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" rather than to ")+TF2(idPortP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ;
+            TN( tSay , "" ) ; tSay = TF2(((tinNormalS&)tinBaseP).pag1->idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("/bindF: bound to port ")+TF4(idPortMe,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" rather than to ")+TF2(idPortP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ;
         {
         if( pMap )
         THREADmODE2rESTORE
-        idPortMe = pEther->sockBindF( tinP , handle , idPortRequest , nicNameP , cTriesP ) ;
+        idPortMe = pEther->sockBindF( tinBaseP , handle , idPortRequest , nicNameP , cTriesP ) ;
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
         countT idPortRequest = pMap ? idPortActual : idPortP ;
-        if( bInUseOkP ) pEther->sockOptionReuseAddressF( tinP , handle ) ;
-        bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        bWrite.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        if( bInUseOkP ) pEther->sockOptionReuseAddressF( tinBaseP , handle ) ;
+        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bWrite.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         }
             }
@@ -90,7 +90,7 @@
     {
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/countT socketC::bindF( tinS& tinP , const countT idPortP , const nicNameC nicNameP , const countT cTriesP , const boolT bInUseOkP )/*1*/
+/*1*/countT socketC::bindF( tinBaseS& tinBaseP , const countT idPortP , const nicNameC nicNameP , const countT cTriesP , const boolT bInUseOkP )/*1*/
 
 /**/
 */

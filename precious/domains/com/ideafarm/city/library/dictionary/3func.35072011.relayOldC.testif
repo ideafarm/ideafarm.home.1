@@ -19,37 +19,37 @@
             {
             if( POOP )
 
-            (*tinP.pEtScratch)( tinP , psBagOk ) ;
-            (*tinP.pEtScratch)( tinP , psBag ) ;
+            (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , psBagOk ) ;
+            (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , psBag ) ;
             }
                 TELL( "reading ok-" )
                 VERIFYrELAY2( sock , *psBagOk ) ;
                 TELL( "reading ok+ 15" )
-                sock.writeF( tinP , *psBag ) ;
+                sock.writeF( tinBaseP , *psBag ) ;
     
-                hdrBagIF( tinP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
+                hdrBagIF( tinBaseP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
             {
             if( psBag && psBagOk )
-            (*tinP.pEtScratch)( tinP , psBagOk , TAG( TAGiDnULL ) ) ;
+            (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , psBagOk , TAG( TAGiDnULL ) ) ;
             ZE( soulC* , psBagOk ) ;
-            (*tinP.pEtScratch)( tinP , psBag , TAG( TAGiDnULL ) ) ;
+            (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , psBag , TAG( TAGiDnULL ) ) ;
             ZE( soulC* , psBag ) ;
         {
         else
         }
-            tinP.pEther->traceF( tinP , T("testIF: could not connect [idptTestP:nn,idPort]:    ")+T((nicNameC&)idptTestP)+T("    ")+TF2((countT&)idptTestP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("testIF: could not connect [idptTestP:nn,idPort]:    ")+T((nicNameC&)idptTestP)+T("    ")+TF2((countT&)idptTestP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             bOk = 0 ;
             POOPRqUIET
         {
         if( POOP )
-        sock.connectF( tinP , idptTestP , (nicNameC&)idptTestP ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , idptTestP , (nicNameC&)idptTestP ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
         SCOOPS
     {
     IFsCRATCH
     boolT bOk = 1 ;
 {
-/*1*/boolT relayOldC::testIF( tinS& tinP , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP )/*1*/
+/*1*/boolT relayOldC::testIF( tinBaseS& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP )/*1*/
 /**/
 */
 /*

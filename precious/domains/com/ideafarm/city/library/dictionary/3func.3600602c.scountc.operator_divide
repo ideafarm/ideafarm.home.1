@@ -9,24 +9,24 @@
 
 }
     return c1 ;
-    ether.delF( tinP , pcr ) ;
-    c1 = sCountC( tinP , ether , pcr , cbit1 ) ;
+    ether.delF( tinBaseP , pcr ) ;
+    c1 = sCountC( tinBaseP , ether , pcr , cbit1 ) ;
 
     }
-        if( c1 == sCountC( tinP , ether ) ) break ;
+        if( c1 == sCountC( tinBaseP , ether ) ) break ;
 
         }
-            setBitF( tinP , pcr , offr , 1 ) ;
+            setBitF( tinBaseP , pcr , offr , 1 ) ;
             c1 -= trial ;
         {
-        if( !diff.fNegativeF( tinP ) )
+        if( !diff.fNegativeF( tinBaseP ) )
         diff = c1 - trial ;
-        sCountC diff( tinP , ether ) ;
+        sCountC diff( tinBaseP , ether ) ;
 
         }
             trial *= factor ;
             while( -- offr2 ) factor *= 2 ;
-            sCountC factor( tinP , ether, 2 ) ;
+            sCountC factor( tinBaseP , ether, 2 ) ;
             countT offr2 = offr ;
         {
         if( offr )
@@ -34,19 +34,19 @@
     {
     for( sCountT offr = cbit1 - cbit2 ; offr >= 0 ; offr -- )
 
-    ether.memSetF( tinP , (byteT*)pcr , 1 + cbit1/SB ) ;
-    ether.newF( tinP , LF , pcr , 1 + cbit1 / SC ) ; ___( pcr ) ;
+    ether.memSetF( tinBaseP , (byteT*)pcr , 1 + cbit1/SB ) ;
+    ether.newF( tinBaseP , LF , pcr , 1 + cbit1 / SC ) ; ___( pcr ) ;
     ZE( countT* , pcr ) ;
     countT cbit2 = c2 ;
     countT cbit1 = c1 ;
-    c2.setCBitF( tinP ) ;
-    c1.setCBitF( tinP ) ;
+    c2.setCBitF( tinBaseP ) ;
+    c1.setCBitF( tinBaseP ) ;
     sCountC c2( cP ) ;
     sCountC c1( *this ) ;
     _IO_
 
     }
-        if( ether ) return sCountC( tinP , ether ) ;
+        if( ether ) return sCountC( tinBaseP , ether ) ;
     {
     IFbEcAREFUL
 

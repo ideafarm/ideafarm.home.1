@@ -10,17 +10,17 @@
 }
     }
         pSadamCBFP = (sadamCBFT)pv ;
-        delF( tinP , pstta ) ;
-        //dllEntryF( tinP , pv , handleP , TO((strokeS*)tOs2,(strokeS*)tWin,(strokeS*)tLin) ) ;
+        delF( tinBaseP , pstta ) ;
+        //dllEntryF( tinBaseP , pv , handleP , TO((strokeS*)tOs2,(strokeS*)tWin,(strokeS*)tLin) ) ;
         //LOGrAW( T(" found ")+TF1((countT)pv)+T("\r\n") ) ; //U::
-        dllEntryF( tinP , pv , handleP , pstta ) ;
+        dllEntryF( tinBaseP , pv , handleP , pstta ) ;
         ZE( voidT* , pv ) ;
 
         //LOGrAW( T("searching in ")+T((countT)handleP.osF(ifcIDtYPEhANDLE_DLL))+T(" for entry named \"")+T(pstta)+T("\"\r\n") ) ; //U::
     
-        strFuseF( tinP , pstta , *tinP.pag1->_etherC_.pTxtDllEntry2 ) ;
-        strFuseF( tinP , pstta , psttP ) ;
-        strMakeF( tinP , LF , pstta , *tinP.pag1->_etherC_.pTxtDllEntry1 , psttP->idAdam + tinP.pag1->_etherC_.pTxtDllEntry2->csF( tinP ) ) ; ___( pstta ) ;
+        strFuseF( tinBaseP , pstta , *((tinNormalS&)tinBaseP).pag1->_etherC_.pTxtDllEntry2 ) ;
+        strFuseF( tinBaseP , pstta , psttP ) ;
+        strMakeF( tinBaseP , LF , pstta , *((tinNormalS&)tinBaseP).pag1->_etherC_.pTxtDllEntry1 , psttP->idAdam + ((tinNormalS&)tinBaseP).pag1->_etherC_.pTxtDllEntry2->csF( tinBaseP ) ) ; ___( pstta ) ;
         ZE( strokeS* , pstta ) ;
         //TN( tLin , "" ) ; tLin = T("?") ;
         //TN( tOs2 , "" ) ; tOs2 = T(psttP) ;
@@ -41,7 +41,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::dllEntryF( tinS& tinP , sadamCBFT& pSadamCBFP , const handleC& handleP , const strokeS* psttP )/*1*/
+/**//*1*/voidT etherC::dllEntryF( tinBaseS& tinBaseP , sadamCBFT& pSadamCBFP , const handleC& handleP , const strokeS* psttP )/*1*/
 */
  psttP
  handleP

@@ -14,7 +14,7 @@
         THREADmODE2rESTORE
         }
             }
-                ++ s ; thirdC::dosSleepRWinkIF( tinP ) ;
+                ++ s ; thirdC::dosSleepRWinkIF( tinBaseP ) ;
                 _IO_
             {
 
@@ -23,7 +23,7 @@
             }
                 }
                     inc02AM( pcTallyOut[ offs ] ) ;
-                    pGrabNewElt[ offs ].ungrabF( tinP ) ; // -------------------------------------------------------------------------------------------------
+                    pGrabNewElt[ offs ].ungrabF( tinBaseP ) ; // -------------------------------------------------------------------------------------------------
 
                     ppSex[ offs ] = pSexNew ;
 
@@ -38,21 +38,21 @@
                     if( pbo && cbDropHeader )
 
                     //20180509@1131:  WHEN sexC NESTING IS DISABLED, sexC INSTANCES CAN BE CONSTRUCTED WITH NO SLOTS AVAILABLE, SO CANNOT DO THIS:  if( !pbo ) { BLAMMO ; } // TO MAKE SURE THAT sexC::sexC SETS IMPOTENCE IF IT FAILS FOR EITHER REASON (RECURSION OR INSUFFICIENT CONTIGUOUS MEMORY)
-                    pbo = pSexNew->newF( tinP , idLineP , idiFileP ) ;
+                    pbo = pSexNew->newF( tinBaseP , idLineP , idiFileP ) ;
                     _IO_
                 {
                 else //U::BUG: SHOULD BE "else if( pSexNew )"
                 }
                     inc02AM( pcTallyOut[ offs ] ) ;
-                    pGrabNewElt[ offs ].ungrabF( tinP ) ; // -------------------------------------------------------------------------------------------------
+                    pGrabNewElt[ offs ].ungrabF( tinBaseP ) ; // -------------------------------------------------------------------------------------------------
                     DELzOMBIE( pSexNew ) ;
                     _IO_
                 {
                 if( pSexNew && (const poopC&)*pSexNew ) // *pSexNew CT FAILED, EITHER BECAUSE IT DETECTED THAT IT CT'D ITSELF RECURSIVELY OR BECAUSE INSUFFICIENT CONTIGUOUS MEMORY IS AVAILABLE
 
                 }
-                    pSexNew = new( 0 , tinP , pbzaUse , sizeof( sexC ) ) sexC( tinP , TAG( TAGiDnULL ) , idLineP , idiFileP , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
-                    tlsAllocStackExp_a_C tls( tinP ) ;
+                    pSexNew = new( 0 , tinBaseP , pbzaUse , sizeof( sexC ) ) sexC( tinBaseP , TAG( TAGiDnULL ) , idLineP , idiFileP , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
+                    tlsAllocStackExp_a_C tls( tinBaseP ) ;
                 {
                 ZE( sexC* , pSexNew ) ;
 
@@ -71,7 +71,7 @@
                     continue ;
                     offPass = - 1 ;
                     inc02AM( pcTallyOut[ offs ] ) ;
-                    pGrabNewElt[ offs ].ungrabF( tinP ) ; // --------------------------------------------------------------------------------------------
+                    pGrabNewElt[ offs ].ungrabF( tinBaseP ) ; // --------------------------------------------------------------------------------------------
                     _IO_
                 {
                 if( ppSex[ offs ] )
@@ -79,14 +79,14 @@
                 }
                     }
                         inc02AM( pcTallyOut[ offs ] ) ;
-                        pGrabNewElt[ offs ].ungrabF( tinP ) ; // --------------------------------------------------------------------------------------------
+                        pGrabNewElt[ offs ].ungrabF( tinBaseP ) ; // --------------------------------------------------------------------------------------------
                         _IO_
                     {
                     else
                     if( pGrabNewElt[ offs ].cGrabbedF() == 1 ) break ;
 
                     inc02AM( pcTallyIn[ offs ] ) ;
-                    pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ; // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ; // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                 {
                 for( ; offs < sizeof ppSex / sizeof ppSex[ 0 ] ; offs ++ )                              // INCREMENT offs UNTIL IT DOES NOT POINT TO A sexC THAT THIS THREAD HAS ALREADY GRABBED
 
@@ -139,17 +139,17 @@
 
                         if( pDropNote ) putNegAM( pDropNote->finger , FINGERnEG_dropNoteSlotsIsAdjustingDropHeader ) ;
 
-                        dropNoteS* pDropNote = ppSex[ offs ]->pDropNoteF( tinP , pbo ) ;
+                        dropNoteS* pDropNote = ppSex[ offs ]->pDropNoteF( tinBaseP , pbo ) ;
                         _IO_
                     {
                     if( pbo )
 
-                    pbo = ppSex[ offs ]->newF( tinP , idLineP , idiFileP ) ;
+                    pbo = ppSex[ offs ]->newF( tinBaseP , idLineP , idiFileP ) ;
 
                     //}
                     //    }
-                    //        pGrabNewElt[ offs ].ungrabF( tinP ) ; // --------------------------------------------------------------------------------------------
-                    //        pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ; // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    //        pGrabNewElt[ offs ].ungrabF( tinBaseP ) ; // --------------------------------------------------------------------------------------------
+                    //        pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ; // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                     //    {
                     //    if( !( idIn % ( TUCK >> 2 ) ) )             // SO I DON'T SLOW THINGS DOWN TOO MUCH
                     //    countT idIn = 1 + incv02AM( idInLath ) ;
@@ -176,12 +176,12 @@
         {
         for( countT offPass = 0 ; ; offPass ++ ) //IF !flSLOTScnEW_DOnOTbLOCK, WILL BLOCK UNTIL SUCCEED IN GETTING A DROP ALLOCATED
 
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
         //THIS ENCOURAGES DENSITY SO REDUCES PAGING
         //USE THE LARGEST AVAILABLE SEX TO ALLOW SMALLER EXTENTS TO BECOME EMPTY AND BE DELETED
         if( F(flagsCt) & flSLOTSc_READoNLY ) { BLAMMO ; }
-        if( F(tinP.flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+        if( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
         _IO_
     {
     ZE( byteT* , pbo ) ;
@@ -197,7 +197,7 @@
     //    countT idIn = 1 + incv02AM( idInLath ) ;
     //    static countT idInLath ;
     //{
-    //if( tinP.pc Utility[ 0 ] )
+    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 
     }
         if( POOP ) return 0 ;
@@ -206,7 +206,7 @@
     {
     IFbEcAREFUL                 //20131223@1504: ADDED WITHOUT ANALYSIS; BEFORE, I WOULD DO WORK EVEN IF POOP
 {
-/*1*/byteT* slotsC::newF( tinS& tinP , const countT idLineP , const countT idiFileP , const flagsT flagsP )/*1*/
+/*1*/byteT* slotsC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , const flagsT flagsP )/*1*/
 
 /**/
 

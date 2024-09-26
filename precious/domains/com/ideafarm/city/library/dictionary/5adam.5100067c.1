@@ -10,26 +10,26 @@
 REST
 
 CONoUTrAW( "bye\r\n" ) ;
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 CONoUTrAW( "done.\r\n" ) ;
 
 }
     LOGrAW( TF4(swTally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0x10,0xa)+T("        ")+T(postLever)+tcr ) ;
 
-    postLever = (osTextT*)swTally.leverF( tinP , idf ) ;
+    postLever = (osTextT*)swTally.leverF( tinBaseP , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = swTally.cFlavorsF( tinP ) ;
+countT cFlavors = swTally.cFlavorsF( tinBaseP ) ;
 TN( tcr , "\r\n" ) ;
 CONoUTrAW( "writing the tallies\r\n" ) ;
 
-//20221127@1450: WON'T COMPILE: thirdC::diskWalkIF( tinP , cDirsP , cFilesP , "\\ideafarm.home.101\\IdeaFarm (tm)\\2.1. Drop Files Here To Archive Them\\" , *(boolT*)&(const boolT&)ether , myWalkCBF , pcArg ) ;
+//20221127@1450: WON'T COMPILE: thirdC::diskWalkIF( tinBaseP , cDirsP , cFilesP , "\\ideafarm.home.101\\IdeaFarm (tm)\\2.1. Drop Files Here To Archive Them\\" , *(boolT*)&(const boolT&)ether , myWalkCBF , pcArg ) ;
 ZE( countT , cFilesP ) ;
 ZE( countT , cDirsP ) ;
 
 countT pcArg[] = { 0 , (countT)&postLever , (countT)&swTally } ;
 
-switchC swTally( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , &postLever ) ;
+switchC swTally( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , &postLever ) ;
 ZE( osTextT* , postLever ) ;
 
 TODO
@@ -55,7 +55,7 @@ TODO
                 postExt ++ ;
             {
             if( postExt )
-            osTextT* postExt = thirdC::c_strrchrIF( tinP , postNameP , '.' ) ;
+            osTextT* postExt = thirdC::c_strrchrIF( tinBaseP , postNameP , '.' ) ;
 
             switchC&  swTallyP   =  *(switchC*)pcArgP[ 2 ] ;
             osTextT*& postLeverP = *(osTextT**)pcArgP[ 1 ] ;
@@ -69,12 +69,12 @@ TODO
 
     }
         bDoIt = '\\' != postNameP[ costName - 1 ] ;
-        countT costName = thirdC::c_strlenIF( tinP , postNameP ) ;
+        countT costName = thirdC::c_strlenIF( tinBaseP , postNameP ) ;
     {
     if( postNameP )
     ZE( boolT , bDoIt ) ;
 {
-boolT myWalkCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT myWalkCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.tally.archive.files.by.type" )/*1*/
 /**/

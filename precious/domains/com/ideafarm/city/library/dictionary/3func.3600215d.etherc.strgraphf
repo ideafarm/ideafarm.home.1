@@ -8,38 +8,38 @@
 
 
 }
-    if( swsYP.cFlavorsF( tinP ) && swMarkerP.cFlavorsF( tinP ) && idStyleP && flagsP ) ;
+    if( swsYP.cFlavorsF( tinBaseP ) && swMarkerP.cFlavorsF( tinBaseP ) && idStyleP && flagsP ) ;
 
-    strFuseF( tinP , psttP , T("")+S2(0,scOld_POPoRIGIN)+OLDmOVEtO(cColP,0)+S2(0,scOld_POPoRIGIN) ) ;
+    strFuseF( tinBaseP , psttP , T("")+S2(0,scOld_POPoRIGIN)+OLDmOVEtO(cColP,0)+S2(0,scOld_POPoRIGIN) ) ;
 
-    bLeverP.ungrabF( tinP ) ;
+    bLeverP.ungrabF( tinBaseP ) ;
 
     }
-        strFuseF( tinP , psttP , T("")+S2(0,scOld_POPcOLOR) ) ;
+        strFuseF( tinBaseP , psttP , T("")+S2(0,scOld_POPcOLOR) ) ;
 
         }
             while( !swsXP.third && !swsYP.third && ~hDownX && ~hDownY ) ;
             }
                 }
-                    if( !hDownX ) strFuseF( tinP , psttP , T("")+OLDlINEtO(xx+0.5,yy+0.5) ) ;
+                    if( !hDownX ) strFuseF( tinBaseP , psttP , T("")+OLDlINEtO(xx+0.5,yy+0.5) ) ;
                     bWoth = 0 ;
                 {
                 if( bWoth )
 
-                //strFuseF( tinP , psttP , T("")+OLDmOVE(-2,-2)+OLDlINE(4,0)+OLDlINE(0,4)+OLDlINE(-4,0)+OLDlINE(0,-4)+OLDmOVE(2,2) ) ; //U: HARDCODED MARKER
+                //strFuseF( tinBaseP , psttP , T("")+OLDmOVE(-2,-2)+OLDlINE(4,0)+OLDlINE(0,4)+OLDlINE(-4,0)+OLDlINE(0,-4)+OLDmOVE(2,2) ) ; //U: HARDCODED MARKER
 
-                strFuseF( tinP , psttP , T("")+(bWoth?OLDmOVEtO(xx+0.5,yy+0.5):OLDlINEtO(xx+0.5,yy+0.5)) ) ;
-                measureT yy = scaleY * ( *(measureT*)&swsYP.downF( tinP , hDownY ) + biasY ) ;
-                measureT xx = scaleX * ( *(measureT*)&swsXP.downF( tinP , hDownX ) + biasX ) ;
+                strFuseF( tinBaseP , psttP , T("")+(bWoth?OLDmOVEtO(xx+0.5,yy+0.5):OLDlINEtO(xx+0.5,yy+0.5)) ) ;
+                measureT yy = scaleY * ( *(measureT*)&swsYP.downF( tinBaseP , hDownY ) + biasY ) ;
+                measureT xx = scaleX * ( *(measureT*)&swsXP.downF( tinBaseP , hDownX ) + biasX ) ;
             {
             do
-            handleC hDownY( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-            handleC hDownX( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDownY( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDownX( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             boolT bWoth = 1 ;
         {
         if( swsXP )
 
-        strFuseF( tinP , psttP , T("")+S2((countT)swColorP,scOld_cPUSHcOLOR) ) ;
+        strFuseF( tinBaseP , psttP , T("")+S2((countT)swColorP,scOld_cPUSHcOLOR) ) ;
 
         continue ;
         )
@@ -47,10 +47,10 @@
             ( pczLeverIncludeP && !strIdNewF( pczLeverIncludeP , leverP ) ) ||
         (
         if
-        leverP = swsXP.leverF( tinP , idf ) ;
+        leverP = swsXP.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    cFlavors = swsXP.cFlavorsF( tinP ) ;
+    cFlavors = swsXP.cFlavorsF( tinBaseP ) ;
 
     }
         scaleY = bSingleY ? 1 : ( cRowP - 3 /* - crMarker */ ) / ( mMaxAllY - mMinAllY ) ;
@@ -67,7 +67,7 @@
                 }
                     if( mMaxAllY < mMaxY ) mMaxAllY = mMaxY ;
                     if( mMinAllY > mMinY ) mMinAllY = mMinY ;
-                    statisticsF( tinP , mMinY , mMaxY , mMeanY , mMedianY , mStdDeviationY , swsYP ) ;
+                    statisticsF( tinBaseP , mMinY , mMaxY , mMeanY , mMedianY , mStdDeviationY , swsYP ) ;
                     ZE( measureT , mStdDeviationY ) ;
                     ZE( measureT , mMedianY ) ;
                     ZE( measureT , mMeanY ) ;
@@ -76,7 +76,7 @@
         
                     if( mMaxAllX < mMaxX ) mMaxAllX = mMaxX ;
                     if( mMinAllX > mMinX ) mMinAllX = mMinX ;
-                    statisticsF( tinP , mMinX , mMaxX , mMeanX , mMedianX , mStdDeviationX , swsXP ) ;
+                    statisticsF( tinBaseP , mMinX , mMaxX , mMeanX , mMedianX , mStdDeviationX , swsXP ) ;
                     ZE( measureT , mStdDeviationX ) ;
                     ZE( measureT , mMedianX ) ;
                     ZE( measureT , mMeanX ) ;
@@ -91,7 +91,7 @@
                     ( pczLeverIncludeP && !strIdNewF( pczLeverIncludeP , leverP ) ) ||
                 (
                 if
-                leverP = swsXP.leverF( tinP , idf ) ;
+                leverP = swsXP.leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
             mMaxAllY = mMaxAllX = - MAXmEASUREt ;
@@ -107,16 +107,16 @@
     ZE( measureT , biasY ) ;
     ZE( measureT , scaleX ) ;
     ZE( measureT , biasX ) ;
-    countT cFlavors = swsXP.cFlavorsF( tinP ) ;
+    countT cFlavors = swsXP.cFlavorsF( tinBaseP ) ;
 
-    bLeverP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    bLeverP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    strFuseF( tinP , psttP , T("")+S2(0,scOld_cPUSHoRIGIN)+OLDmOVEtO(1,1)+S2(0,scOld_cPUSHoRIGIN)+OLDmOVE(1,0)+T(psttNoteP)+S2(0,scOld_POPoRIGIN)+OLDmOVEtO(0,0)+OLDlINEtO(cColP-1,0)+OLDlINEtO(cColP-1,cRowP-1)+OLDlINEtO(0,cRowP-1)+OLDlINEtO(0,0)+OLDmOVEtO(1/*+ccMarker/2*/,1/*+crMarker/2*/)+S2(0,scOld_cPUSHoRIGIN) ) ; //CALLER MUST TAG __(  )
+    strFuseF( tinBaseP , psttP , T("")+S2(0,scOld_cPUSHoRIGIN)+OLDmOVEtO(1,1)+S2(0,scOld_cPUSHoRIGIN)+OLDmOVE(1,0)+T(psttNoteP)+S2(0,scOld_POPoRIGIN)+OLDmOVEtO(0,0)+OLDlINEtO(cColP-1,0)+OLDlINEtO(cColP-1,cRowP-1)+OLDlINEtO(0,cRowP-1)+OLDlINEtO(0,0)+OLDmOVEtO(1/*+ccMarker/2*/,1/*+crMarker/2*/)+S2(0,scOld_cPUSHoRIGIN) ) ; //CALLER MUST TAG __(  )
 
     //const countT crMarker = 4 ;
     //const countT ccMarker = 4 ; //WITH CURRENT CODE, THESE MUST BE EVEN
 
-    if( !psttP ) strMakeF( tinP , LF , psttP , T("") , 0x100000 ) ; //U: SIZE ACCORDING TO AMOUNT OF DATA
+    if( !psttP ) strMakeF( tinBaseP , LF , psttP , T("") , 0x100000 ) ; //U: SIZE ACCORDING TO AMOUNT OF DATA
 
     _IO_
 
@@ -128,7 +128,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strGraphF( tinS& tinP , strokeS*& psttP , countT& leverP , batonC& bLeverP , switchStackC& swsXP , switchStackC& swsYP , switchC& swColorP , switchC& swMarkerP , const countT cColP , const countT cRowP , const countT idStyleP , const flagsT flagsP , const strokeS* const psttNoteP , const countT* pczLeverIncludeP , const countT* pczLeverExcludeP )/*1*/
+/*1*/voidT etherC::strGraphF( tinBaseS& tinBaseP , strokeS*& psttP , countT& leverP , batonC& bLeverP , switchStackC& swsXP , switchStackC& swsYP , switchC& swColorP , switchC& swMarkerP , const countT cColP , const countT cRowP , const countT idStyleP , const flagsT flagsP , const strokeS* const psttNoteP , const countT* pczLeverIncludeP , const countT* pczLeverExcludeP )/*1*/
 
 /**/
 */

@@ -12,28 +12,28 @@
 }
     return mValue ;
     }
-        if( exp ) mValue *= thirdC::mathExpIF( tinP , radix , bExpNeg ? - (sCountT)exp : (sCountT)exp ) ;
+        if( exp ) mValue *= thirdC::mathExpIF( tinBaseP , radix , bExpNeg ? - (sCountT)exp : (sCountT)exp ) ;
 
-        delF( tinP , psttd ) ;
+        delF( tinBaseP , psttd ) ;
 
         }
             }
                 }
-                    delF( tinP , psttw ) ;
+                    delF( tinBaseP , psttw ) ;
     
                     }
                         }
                             expUnit /= radix ;
                             else          exp += delta ;
                             if( bExpNeg ) exp -= delta ;
-                            countT delta = expUnit * strDigitsToSCountF( tinP , psttWo , defaultRadixP , 1 ) ;
+                            countT delta = expUnit * strDigitsToSCountF( tinBaseP , psttWo , defaultRadixP , 1 ) ;
                             psttWo[ CSpREFIX ] = psttw[ CSpREFIX - 1 + ids ] ;
                         {
                         else
                         }
                             else       mValue += delta ;
                             if( bNeg ) mValue -= delta ;
-                            measureT delta = unit * (measureT)strDigitsToSCountF( tinP , psttWo , defaultRadixP , 1 ) ;
+                            measureT delta = unit * (measureT)strDigitsToSCountF( tinBaseP , psttWo , defaultRadixP , 1 ) ;
                             psttWo[ CSpREFIX ] = psttw[ CSpREFIX - 1 + ids ] ;
                             unit *= 1.0 / (measureT)radix ;
 
@@ -59,16 +59,16 @@
                     measureT unit = 1.0 ;
                     ZE( boolT , bExp ) ;
     
-                    strSubstringF( tinP , psttw , idf , idl , psttd ) ; ___( psttw ) ;
+                    strSubstringF( tinBaseP , psttw , idf , idl , psttd ) ; ___( psttw ) ;
                     ZE( countT , idl ) ;
                     countT idf = idRadix + 1 ;
                 {
                 if( idRadix < psttP->idAdam )
     
                 }
-                    delF( tinP , psttw ) ;
-                    mValue = strDigitsToSCountF( tinP , psttw , defaultRadixP , 1 ) ;
-                    strSubstringF( tinP , psttw , idf , idl , psttd ) ; ___( psttw ) ;
+                    delF( tinBaseP , psttw ) ;
+                    mValue = strDigitsToSCountF( tinBaseP , psttw , defaultRadixP , 1 ) ;
+                    strSubstringF( tinBaseP , psttw , idf , idl , psttd ) ; ___( psttw ) ;
                     countT idl = idRadix - 1 ;
                     countT idf = 1 ;
                 {
@@ -82,9 +82,9 @@
         ZE( boolT , bExpNeg ) ;
 
         }
-            delF( tinP , psttDoomed ) ;
+            delF( tinBaseP , psttDoomed ) ;
             }
-                strSubstringF( tinP , psttd , idf , idl , psttDoomed ) ; ___( psttd ) ;
+                strSubstringF( tinBaseP , psttd , idf , idl , psttDoomed ) ; ___( psttd ) ;
                 countT idl = psttDoomed->idAdam - 2 ;
                 countT idf = 1 ;
             {
@@ -114,17 +114,17 @@
         if( psttd->idAdam >= 2 && psttd[ CSpREFIX - 2 + psttd->idAdam ].idAdam == '_' )
 
         }
-            strReverseF( tinP , psttd ) ; ___( psttd ) ;
+            strReverseF( tinBaseP , psttd ) ; ___( psttd ) ;
             idRadix = psttP->idAdam + 1 - idRadix ;
         {
         if( !bForeignP )
-        strMakeF( tinP , LF , psttd , psttP ) ; ___( psttd ) ;
+        strMakeF( tinBaseP , LF , psttd , psttP ) ; ___( psttd ) ;
         ZE( strokeS* , psttd ) ;
     {
     else
-    if( !idRadix ) mValue = strDigitsToSCountF( tinP , psttP , defaultRadixP , bForeignP ) ;
-    boolT bNeg = strIdF( tinP , T("-") , psttP ) ;
-    countT idRadix = strIdF( tinP , T(".") , psttP ) ;
+    if( !idRadix ) mValue = strDigitsToSCountF( tinBaseP , psttP , defaultRadixP , bForeignP ) ;
+    boolT bNeg = strIdF( tinBaseP , T("-") , psttP ) ;
+    countT idRadix = strIdF( tinBaseP , T(".") , psttP ) ;
     ZE( measureT , mValue ) ;
 
     _IO_
@@ -147,7 +147,7 @@
     countT radix = defaultRadixP ;
     SCOOP
 {
-/*1*/measureT etherC::strDigitsToMeasureF( tinS& tinP , const strokeS* const psttP , const countT defaultRadixP , const boolT bForeignP )/*1*/
+/*1*/measureT etherC::strDigitsToMeasureF( tinBaseS& tinBaseP , const strokeS* const psttP , const countT defaultRadixP , const boolT bForeignP )/*1*/
 
 #define BcANDYo(offP) ( psttc[ offP ].idCaste == sc_cFROMaSCII || psttc[ offP ].idCaste == sc_cALPHABET1 )
 #define BcANDY ( psttc->idCaste == sc_cFROMaSCII || psttc->idCaste == sc_cALPHABET1 )

@@ -8,14 +8,14 @@
 
 
 }
-    delF( tinP , pstta ) ;
+    delF( tinBaseP , pstta ) ;
     ifcSayIF( T(pstta) , flSAY_APPEND | flSAY_LOG ) ;
-    delF( tinP , psttf ) ;
-    strFuseF( tinP , pstta , T(psttf)+T("(")+TF4(/*U:5*/14+cLinesInDefP-idLineP,0,0,10)+T(")") ) ; ___( pstta ) ;
+    delF( tinBaseP , psttf ) ;
+    strFuseF( tinBaseP , pstta , T(psttf)+T("(")+TF4(/*U:5*/14+cLinesInDefP-idLineP,0,0,10)+T(")") ) ; ___( pstta ) ;
     ZE( strokeS* , pstta ) ;
-    delF( tinP , pstti ) ;
-    strFromF( tinP , psttf , strDigitsToSCountF( tinP , pstti ) , flFORMAT_UNSIGNED | flFORMAT_FILLzE , 7 , 16 ) ; ___( psttf ) ;
-    strWordF( tinP , pstti , T(postFileP) , sttq , S1C('.') ) ; ___( pstti ) ;
+    delF( tinBaseP , pstti ) ;
+    strFromF( tinBaseP , psttf , strDigitsToSCountF( tinBaseP , pstti ) , flFORMAT_UNSIGNED | flFORMAT_FILLzE , 7 , 16 ) ; ___( psttf ) ;
+    strWordF( tinBaseP , pstti , T(postFileP) , sttq , S1C('.') ) ; ___( pstti ) ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     ZE( strokeS* , pstti ) ;
     ZE( strokeS* , psttf ) ;
@@ -28,7 +28,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::ifcDatumF( tinS& tinP , const osTextT* const postFileP , const countT idLineP , const countT cLinesInDefP )/*1*/
+/**//*1*/voidT etherC::ifcDatumF( tinBaseS& tinBaseP , const osTextT* const postFileP , const countT idLineP , const countT cLinesInDefP )/*1*/
 */
  cLinesInDefP
  idLineP

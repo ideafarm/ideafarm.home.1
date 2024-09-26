@@ -12,12 +12,12 @@
         }
             }
                 }
-                    etThread.delF( tinP , postw ) ;
+                    etThread.delF( tinBaseP , postw ) ;
                     st_psttP << psttv ; psttv = 0 ;
-                    strokeS* psttv = psttOldC( tinP , etThread , T(postw) ) ; ___( psttv ) ;
+                    strokeS* psttv = psttOldC( tinBaseP , etThread , T(postw) ) ; ___( psttv ) ;
                     if( postw ) postw[ cbLabel ] = 0 ;
-                    etThread.memCopyF( tinP , postw , pbLabel , cbLabel ) ;
-                    etThread.newF( tinP , LF , postw , cbLabel + 1 ) ; ___( postw ) ;
+                    etThread.memCopyF( tinBaseP , postw , pbLabel , cbLabel ) ;
+                    etThread.newF( tinBaseP , LF , postw , cbLabel + 1 ) ; ___( postw ) ;
                     ZE( osTextT* , postw ) ;
                 {
                 else
@@ -38,7 +38,7 @@
         else if( *pbP & 0xc0 )
         }
             break ;
-            nameF( tinP , etThread , st_psttP , pbr , pbe - pbr ) ;
+            nameF( tinBaseP , etThread , st_psttP , pbr , pbe - pbr ) ;
 
             if( POOP ) break ;
             __( pbe <= pbr ) ;
@@ -63,12 +63,12 @@
         __Z( cbP ) ;
         __( pbP < (byteT*)this + sizeof( dnsMsgHeaderS ) ) ;
         __Z( pbP ) ;
-        __( st_psttP.idTypeF( tinP ) - ifcSTACKtYPE_PTR_strokeS ) ;
+        __( st_psttP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_strokeS ) ;
         if( etThread ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT dnsMsgHeaderS::nameF( tinS& tinP , etherC& etThread , stackC& st_psttP , const byteT*& pbP , const countT cbP )/*1*/
+/*1*/voidT dnsMsgHeaderS::nameF( tinBaseS& tinBaseP , etherC& etThread , stackC& st_psttP , const byteT*& pbP , const countT cbP )/*1*/
 
 /**/
 */
@@ -83,7 +83,7 @@
   must be empty
  st_psttP
  etThread
- tinP
+ tinBaseP
 arguments
 i also set pbP to the end of the data that i used
 i fill st_psttP with the "labels" that comprise the name at pbP

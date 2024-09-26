@@ -7,41 +7,41 @@
 //
 
 }
-    //traceF( tinP , T("ifcUdpFilesEndpointF / outahere") ) ;
+    //traceF( tinBaseP , T("ifcUdpFilesEndpointF / outahere") ) ;
 
     }
-                                                                     delF( tinP , *(countT**)&ppcHashSecrets         ) ;
-        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) delF( tinP ,             ppcHashSecrets[ offn ] ) ;
+                                                                     delF( tinBaseP , *(countT**)&ppcHashSecrets         ) ;
+        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) delF( tinBaseP ,             ppcHashSecrets[ offn ] ) ;
 
-                                                                     delF( tinP , *(countT**)&ppcSecrets             ) ;
-        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) delF( tinP ,             ppcSecrets[ offn ]     ) ;
+                                                                     delF( tinBaseP , *(countT**)&ppcSecrets             ) ;
+        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) delF( tinBaseP ,             ppcSecrets[ offn ]     ) ;
     {
     if( ppcSecrets )
 
-    delF( tinP , pbFastBuffer ) ;
+    delF( tinBaseP , pbFastBuffer ) ;
 
-    if( bLaunchedObey1 ) sgnDone_tmUdpFileObey1F.waitF( tinP ) ;
-    if( bLaunchedClock ) sgnDone_tmUdpFileEpochClockF.waitF( tinP ) ;
-                         sgnDone_tmUdpFileEndpointF.waitF( tinP ) ;
+    if( bLaunchedObey1 ) sgnDone_tmUdpFileObey1F.waitF( tinBaseP ) ;
+    if( bLaunchedClock ) sgnDone_tmUdpFileEpochClockF.waitF( tinBaseP ) ;
+                         sgnDone_tmUdpFileEndpointF.waitF( tinBaseP ) ;
 
-    //traceF( tinP , T("maybelooped  to throw burst of BYE") ) ;
+    //traceF( tinBaseP , T("maybelooped  to throw burst of BYE") ) ;
     }
-        ++ s ; osSleepF( tinP , TOCK >> 3 ) ;
+        ++ s ; osSleepF( tinBaseP , TOCK >> 3 ) ;
 
-        grab_psoEndpointP.ungrabF( tinP ) ;
+        grab_psoEndpointP.ungrabF( tinBaseP ) ;
 
         }
             break ;
-            grab_psoEndpointP.ungrabF( tinP ) ;
+            grab_psoEndpointP.ungrabF( tinBaseP ) ;
         {
         else
         }
-            psoEndpointP->writeF( tinP , idPortBoundP , nnFactory1 , (byteT*)&gram , sizeof gram ) ;
-            //traceF( tinP , T("throwing BYE [cDo]:    ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            psoEndpointP->writeF( tinBaseP , idPortBoundP , nnFactory1 , (byteT*)&gram , sizeof gram ) ;
+            //traceF( tinBaseP , T("throwing BYE [cDo]:    ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         if( psoEndpointP )
 
-        grab_psoEndpointP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        grab_psoEndpointP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         gram.idCmd = ifcIDcMDuDPfILEgRAM_BYE ;
         gram.cbThisGram = sizeof gram ;
@@ -49,13 +49,13 @@
     {
     while( cDo -- )
     countT cDo = 1 ; //U:: 8
-    nicNameC nnFactory1 = socketC::nicNameIF( tinP , *this , T("factory1.ideafarm.com") ) ;
-    //traceF( tinP , T("maybe looping to throw burst of BYE") ) ;
+    nicNameC nnFactory1 = socketC::nicNameIF( tinBaseP , *this , T("factory1.ideafarm.com") ) ;
+    //traceF( tinBaseP , T("maybe looping to throw burst of BYE") ) ;
 
     }
         }
-            ++ s ; osSleepF( tinP , TOCK >> 2 ) ;
-            //traceF( tinP , T("napping, waiting for bQuitP") ) ;
+            ++ s ; osSleepF( tinBaseP , TOCK >> 2 ) ;
+            //traceF( tinBaseP , T("napping, waiting for bQuitP") ) ;
         {
         while( !bQuitP )
 
@@ -63,12 +63,12 @@
             osThreadF( TaRG1( tmUdpFileGetSecretF ) , (countT)&bQuitP , (countT)pNicNameToUseP , (countT)pSecretToUseP , (countT)&psoEndpointP , (countT)&grab_psoEndpointP ) ;
 
             //}
-            //    ++ s ; osSleepF( tinP , TOCK >> 2 ) ;
-            //    traceF( tinP , T("waiting for catcher") ) ;
+            //    ++ s ; osSleepF( tinBaseP , TOCK >> 2 ) ;
+            //    traceF( tinBaseP , T("waiting for catcher") ) ;
             //{
             //while( !slab.id PortUdpFileCatcher && !bQuitP )
             //20240217@1632: COMMENTED OUT TO TEST THROWING TO factory1
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             slabS& slab = slabS::slabIF() ;
         {
@@ -88,31 +88,31 @@
     ZE( boolT , bLaunchedClock ) ;
 
     }
-        ++ s ; osSleepF( tinP , TOCK >> 2 ) ;
+        ++ s ; osSleepF( tinBaseP , TOCK >> 2 ) ;
     {
     while( !idPortBoundP && !bQuitP )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     osThreadF( TaRG2sGNdONE( tmUdpFileEndpointF , sgnDone_tmUdpFileEndpointF ) , (countT)&bQuitP , (countT)pbFastBuffer , cbFastBufferP , (countT)&cPoured , (countT)&idPortBoundP , (countT)&psoEndpointP , (countT)&grab_psoEndpointP ) ;
     ZE( countT , cPoured ) ;
 
-    signC sgnDone_tmUdpFileObey1F(      tinP , TAG( TAGiDnULL ) ) ;
-    signC sgnDone_tmUdpFileEpochClockF( tinP , TAG( TAGiDnULL ) ) ;
-    signC sgnDone_tmUdpFileEndpointF(   tinP , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmUdpFileObey1F(      tinBaseP , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmUdpFileEpochClockF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmUdpFileEndpointF(   tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    newF( tinP , LF , pbFastBuffer , cbFastBufferP ) ; ___( pbFastBuffer ) ;
+    newF( tinBaseP , LF , pbFastBuffer , cbFastBufferP ) ; ___( pbFastBuffer ) ;
     ZE( byteT* , pbFastBuffer ) ;
 
     }
-        newF( tinP , LF , *(countT**)&ppcHashSecrets , CuDPfILEePOCHsLOTS * CuDPfILEhASHsECRETS ) ; ___( ppcHashSecrets ) ;
-        newF( tinP , LF , *(countT**)&ppcSecrets     , CuDPfILEePOCHsLOTS * CuDPfILEsECRETS     ) ; ___( ppcSecrets     ) ;
+        newF( tinBaseP , LF , *(countT**)&ppcHashSecrets , CuDPfILEePOCHsLOTS * CuDPfILEhASHsECRETS ) ; ___( ppcHashSecrets ) ;
+        newF( tinBaseP , LF , *(countT**)&ppcSecrets     , CuDPfILEePOCHsLOTS * CuDPfILEsECRETS     ) ; ___( ppcSecrets     ) ;
 
         
-        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) { ppcHashSecrets[ offn ] = 0 ; newF( tinP , LF , ppcHashSecrets[ offn ]     , CuDPfILEsECRETS     ) ; ___( ppcHashSecrets[ offn ] ) ; }
-                                                                                                    newF( tinP , LF , *(countT**)&ppcHashSecrets , CuDPfILEePOCHsLOTS  ) ; ___( ppcHashSecrets         ) ;
+        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) { ppcHashSecrets[ offn ] = 0 ; newF( tinBaseP , LF , ppcHashSecrets[ offn ]     , CuDPfILEsECRETS     ) ; ___( ppcHashSecrets[ offn ] ) ; }
+                                                                                                    newF( tinBaseP , LF , *(countT**)&ppcHashSecrets , CuDPfILEePOCHsLOTS  ) ; ___( ppcHashSecrets         ) ;
 
-        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) {     ppcSecrets[ offn ] = 0 ; newF( tinP , LF , ppcSecrets[ offn ]         , CuDPfILEsECRETS     ) ; ___( ppcSecrets[ offn ]     ) ; }
-                                                                                                    newF( tinP , LF , *(countT**)&ppcSecrets     , CuDPfILEePOCHsLOTS  ) ; ___( ppcSecrets             ) ;
+        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) {     ppcSecrets[ offn ] = 0 ; newF( tinBaseP , LF , ppcSecrets[ offn ]         , CuDPfILEsECRETS     ) ; ___( ppcSecrets[ offn ]     ) ; }
+                                                                                                    newF( tinBaseP , LF , *(countT**)&ppcSecrets     , CuDPfILEePOCHsLOTS  ) ; ___( ppcSecrets             ) ;
     {
     if( !pSecretToUseP )                 // IF I AM CATCHER
     ZE( countT** , ppcHashSecrets ) ;
@@ -129,7 +129,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcUdpFilesEndpointF( tinS& tinP , const boolT& bQuitP , countT& idPortBoundP , const countT cbFastBufferP , socketC*& psoEndpointP , grabC& grab_psoEndpointP , const nicNameC*& pNicNameWhiteP , countT& cNicNameWhiteP , grabC& grab_pNicNameWhiteP , nicNameC* pNicNameToUseP , countT* pSecretToUseP , countT* pcReceivedFileWindowsP )/*1*/
+/*1*/voidT etherC::ifcUdpFilesEndpointF( tinBaseS& tinBaseP , const boolT& bQuitP , countT& idPortBoundP , const countT cbFastBufferP , socketC*& psoEndpointP , grabC& grab_psoEndpointP , const nicNameC*& pNicNameWhiteP , countT& cNicNameWhiteP , grabC& grab_pNicNameWhiteP , nicNameC* pNicNameToUseP , countT* pSecretToUseP , countT* pcReceivedFileWindowsP )/*1*/
 
 /**/
 

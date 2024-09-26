@@ -9,13 +9,13 @@
                             
 REST
 
-ether.loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+ether.loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.traceF( tinP , T("[tFoo]:    ")+tFoo ) ;
+etThread.traceF( tinBaseP , T("[tFoo]:    ")+tFoo ) ;
 TN( tFoo , "" ) ; tFoo = TF4(scFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ;
 
-sCountC scFoo( tinP , etThread , pc2 , 64 ) ;
+sCountC scFoo( tinBaseP , etThread , pc2 , 64 ) ;
 countT pc2[] = { 0x89abcdef , 0x01234567 } ;    // 
                                                 // 0123456789abcdef
 

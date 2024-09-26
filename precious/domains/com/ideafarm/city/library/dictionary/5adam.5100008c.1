@@ -10,24 +10,24 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 etThread.flagsWatch &= ~( F(flWATCH_EMPLOYERS) ) ;
 
-etThread.delF( tinP , psttw ) ;
-sayWithTimeF( tinP , etThread , T("end   etThread.flagsWatch=")+TF1(etThread.flagsWatch) , tCRLF , tColon ) ;
-while( cTries -- ) { etThread.strReverseF( tinP , psttw , 0 , tCRLF ) ; ___( psttw ) ; }
+etThread.delF( tinBaseP , psttw ) ;
+sayWithTimeF( tinBaseP , etThread , T("end   etThread.flagsWatch=")+TF1(etThread.flagsWatch) , tCRLF , tColon ) ;
+while( cTries -- ) { etThread.strReverseF( tinBaseP , psttw , 0 , tCRLF ) ; ___( psttw ) ; }
 cTries = 0x10 ;
-sayWithTimeF( tinP , etThread , T("begin etThread.flagsWatch=")+TF1(etThread.flagsWatch) , tCRLF , tColon ) ;
+sayWithTimeF( tinBaseP , etThread , T("begin etThread.flagsWatch=")+TF1(etThread.flagsWatch) , tCRLF , tColon ) ;
 
 etThread.flagsWatch |= flWATCH_EMPLOYERS ;
 
-sayWithTimeF( tinP , etThread , T("end   etThread.flagsWatch=")+TF1(etThread.flagsWatch) , tCRLF , tColon ) ;
-while( cTries -- ) { etThread.strReverseF( tinP , psttw , 0 , tCRLF ) ; ___( psttw ) ; }
+sayWithTimeF( tinBaseP , etThread , T("end   etThread.flagsWatch=")+TF1(etThread.flagsWatch) , tCRLF , tColon ) ;
+while( cTries -- ) { etThread.strReverseF( tinBaseP , psttw , 0 , tCRLF ) ; ___( psttw ) ; }
 countT cTries = 0x10 ;
-sayWithTimeF( tinP , etThread , T("begin etThread.flagsWatch=")+TF1(etThread.flagsWatch) , tCRLF , tColon ) ;
+sayWithTimeF( tinBaseP , etThread , T("begin etThread.flagsWatch=")+TF1(etThread.flagsWatch) , tCRLF , tColon ) ;
 
-etThread.strMakeF( tinP , LF , psttw , T("abcd\r\nefgh") ) ; ___( psttw ) ;
+etThread.strMakeF( tinBaseP , LF , psttw , T("abcd\r\nefgh") ) ; ___( psttw ) ;
 ZE( strokeS* , psttw ) ;
 
 TN( tColon , ": " ) ;
@@ -36,15 +36,15 @@ TN( tCRLF , "\r\n" ) ;
 TODO
 
 }
-    etThread.delF( tinP , psttn ) ;
-    etThread.strokeF( tinP , T(psttn)+tColonP+T(psttP)+tCRLFP ) ;
-    etThread.strFromTimeF( tinP , psttn , time1 , time2 ) ; ___( psttn ) ;
+    etThread.delF( tinBaseP , psttn ) ;
+    etThread.strokeF( tinBaseP , T(psttn)+tColonP+T(psttP)+tCRLFP ) ;
+    etThread.strFromTimeF( tinBaseP , psttn , time1 , time2 ) ; ___( psttn ) ;
     ZE( strokeS* , psttn ) ;
-    etThread.osTimeNowF( tinP , time1 , time2 ) ;
+    etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
     ZE( sCountT , time2 ) ;
     ZE( countT , time1 ) ;
 {
-voidT sayWithTimeF( tinS& tinP , etherC& etThread , const strokeS* const psttP , textC& tCRLFP , textC& tColonP )
+voidT sayWithTimeF( tinBaseS& tinBaseP , etherC& etThread , const strokeS* const psttP , textC& tCRLFP , textC& tColonP )
 
 /*1*/WAKEhIDE( "example.simplest.snip.0010091.flWATCH" )/*1*/
 /**/

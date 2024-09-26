@@ -8,9 +8,9 @@
 
 
 }
-    delF( tinP , posti ) ;
-    if( posti ) { strMakeFromOsTextF( tinP , psttP , posti ) ; ___( psttP ) ; }
-    third.osClipboardReadF( tinP , posti ) ; ___( posti ) ;
+    delF( tinBaseP , posti ) ;
+    if( posti ) { strMakeFromOsTextF( tinBaseP , psttP , posti ) ; ___( psttP ) ; }
+    third.osClipboardReadF( tinBaseP , posti ) ; ___( posti ) ;
     ZE( osTextT* , posti ) ;
     _IO_
 
@@ -22,13 +22,13 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT etherC::osClipboardReadF( tinS& tinP , strokeS*& psttP )/*1*/
+/*1*/voidT etherC::osClipboardReadF( tinBaseS& tinBaseP , strokeS*& psttP )/*1*/
 
 /**/
 */
   must be 0
  psttP
- tinP
+ tinBaseP
 arguments
 if no text is available on the clipboard, psttP remains 0, i evaluate to 0, and impotence does not occur
 evaluates to the length of the returned string, excluding the null terminator

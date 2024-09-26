@@ -10,7 +10,7 @@
 }
     //}
     //    }
-    //        pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+    //        pEtRock->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
     //        OStEXTA(  ostoSay , pzMetaHead->postName ) ;
     //        OStEXTAK( ostoSay , "    " ) ;
     //        OStEXTC(  ostoSay , pbDataEnd , '0' ) ;
@@ -26,7 +26,7 @@
     //        OStEXT(   ostoSay , TUCK << 2 ) ;
     //    {
     //    if( pEtRock && pzMetaHead )
-    //    etherC* pEtRock = &etherC::etRockIF( tinP ) ;
+    //    etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
     //
     //    _IO_
     //{
@@ -34,7 +34,7 @@
     }
         //}
         //    }
-        //        pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+        //        pEtRock->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
         //        OStEXTA(  ostoSay , pzMetaHead->postName ) ;
         //        OStEXTAK( ostoSay , "    " ) ;
         //        OStEXTC(  ostoSay , pbDataEnd , '0' ) ;
@@ -50,19 +50,19 @@
         //        OStEXT(   ostoSay , TUCK << 2 ) ;
         //    {
         //    if( pEtRock && pzMetaHead )
-        //    etherC* pEtRock = &etherC::etRockIF( tinP ) ;
+        //    etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
         //
         //    _IO_
         //{
-        //if( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
+        //if( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
 
         idLathNewDel = ifcIDsEXclATHnEWdEL_DEL ; // INTENTIONAL RACE
 
-        tinP.cPoolDropDt ++ ;
+        ((tinNormalS&)tinBaseP).cPoolDropDt ++ ;
 
-        if( !btrAM( pbzMetaBitsOwned , offSlot ) ) { BLAMMO ; } //BLAMMO IS USED RATHER THAN __() TO AVOID NEEDING TO CALL TINSL, FOR MAX SPEED ; 20210111@2031: THIS COMMENT IS OBSOLETE SINCE I NOW HAVE tinPPPPPPPPPPPPPPPPPPPPPPPPP
+        if( !btrAM( pbzMetaBitsOwned , offSlot ) ) { BLAMMO ; } //BLAMMO IS USED RATHER THAN __() TO AVOID NEEDING TO CALL TINSL, FOR MAX SPEED ; 20210111@2031: THIS COMMENT IS OBSOLETE SINCE I NOW HAVE tinBasePPPPPPPPPPPPPPPPPPPPPPPPP
 
-        if( F(pzMetaHead->flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbSlot , 1 << pzMetaHead->expCbDrop , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinP USED FOR MAX SPEED
+        if( F(pzMetaHead->flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbSlot , 1 << pzMetaHead->expCbDrop , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinBaseP USED FOR MAX SPEED
 
         if( offSlot < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; }
 
@@ -71,8 +71,8 @@
 
             //thirdC::c_memsetIF( (byteT*)pDoomed , sizeof( dropNoteS ) , 0xdd ) ; //U:: TO FIND A BUG
 
-            pDoomed->idThreadDel = tinP.monitor.idThread ;
-            //thirdC::c_memsetIF( (byteT*)pDoomed , sizeof( dropNoteS ) , 0 ) ; //SANS tinP USED FOR MAX SPEED; INTENTIONALLY COMMENTED OUT SO THAT SLOTS WHICH ARE NOT CONTINUALLY REUSED CAN BE VISIBLE (SUCH CODE IS CANDIDATE FOR MIGRATION FROM poolC TO jotC)
+            pDoomed->idThreadDel = ((tinNormalS&)tinBaseP).monitor.idThread ;
+            //thirdC::c_memsetIF( (byteT*)pDoomed , sizeof( dropNoteS ) , 0 ) ; //SANS tinBaseP USED FOR MAX SPEED; INTENTIONALLY COMMENTED OUT SO THAT SLOTS WHICH ARE NOT CONTINUALLY REUSED CAN BE VISIBLE (SUCH CODE IS CANDIDATE FOR MIGRATION FROM poolC TO jotC)
 
             inc02AM( pDoomed->idDelLath ) ;
 
@@ -89,11 +89,11 @@
         ZE( countT , idLineTaggedCopy ) ;
 
         pbDropP = 0 ;
-        setSlotFingersAndDropHeaderF( tinP , pbSlot , offSlot , cbGross , 0 ) ;
+        setSlotFingersAndDropHeaderF( tinBaseP , pbSlot , offSlot , cbGross , 0 ) ;
 
         //}
         //    }
-        //        pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+        //        pEtRock->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
         //        }
         //            OStEXTC(  ostoSay , pDropNote->idNewForTagLine , 0 ) ;
         //            OStEXTAK( ostoSay , "    " ) ;
@@ -140,14 +140,14 @@
         //        ZE( dropNoteS* , pDropNote ) ;
         //    {
         //    if( pEtRock )
-        //    etherC* pEtRock = &etherC::etRockIF( tinP ) ;
+        //    etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
         //{
-        //if( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
+        //if( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
 
         }
             }
                 BLAMMOiD( 0xaabbccdd ) ;
-                //tinP.pc Utility[ 0xf ] = pbSlot - pbv ;
+                //((tinNormalS&)tinBaseP).pc Utility[ 0xf ] = pbSlot - pbv ;
             {
             if( pbSlot != pbv )
             byteT* pbv = pbData + offSlot * cbGross ;
@@ -169,7 +169,7 @@
     _IO_
     SCOOP
 {
-/*1*/voidT sexC::operator ()( tinS& tinP , byteT*& pbDropP )/*1*/
+/*1*/voidT sexC::operator ()( tinBaseS& tinBaseP , byteT*& pbDropP )/*1*/
 
 /**/
 */

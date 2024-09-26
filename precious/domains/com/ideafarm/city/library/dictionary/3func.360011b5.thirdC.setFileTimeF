@@ -24,7 +24,7 @@
         sta.wYear         = (count01T)( y + 1 ) ;
         SYSTEMTIME sta ;
 
-        osTimeToOldTimeF( tinP , ms , ss , mm , hh , d , m , y , dow , pTimeAccessedP->time1 , pTimeAccessedP->time2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+        osTimeToOldTimeF( tinBaseP , ms , ss , mm , hh , d , m , y , dow , pTimeAccessedP->time1 , pTimeAccessedP->time2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
         ZE( countT  , dow ) ;
         ZE( sCountT , y   ) ;
         ZE( countT  , m   ) ;
@@ -50,7 +50,7 @@
         stc.wYear         = (count01T)( y + 1 ) ;
         SYSTEMTIME stc ;
 
-        osTimeToOldTimeF( tinP , ms , ss , mm , hh , d , m , y , dow , pTimeCreatedP->time1 , pTimeCreatedP->time2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+        osTimeToOldTimeF( tinBaseP , ms , ss , mm , hh , d , m , y , dow , pTimeCreatedP->time1 , pTimeCreatedP->time2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
         ZE( countT  , dow ) ;
         ZE( sCountT , y   ) ;
         ZE( countT  , m   ) ;
@@ -64,11 +64,11 @@
     FILETIME ftCreated  ;
 
     }
-        tinP.pEther->traceF( tinP , T("setFileTimeF  [hi,lo]:    0x")+TfORsTRING(pc2[1])+T(".")+TfORsTRING(pc2[0]) ) ;
+        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("setFileTimeF  [hi,lo]:    0x")+TfORsTRING(pc2[1])+T(".")+TfORsTRING(pc2[0]) ) ;
         countT* pc2 = (countT*)&ftWritten ;
         SystemTimeToFileTime( &stw , &ftWritten ) ;
 
-        tinP.pEther->traceF( tinP , T("setFileTimeF  [systemtime]:    ")+TfORsTRING(pc8[0])+T(".")+TfORsTRING(pc8[1])+T(".")+TfORsTRING(pc8[2])+T(".")+TfORsTRING(pc8[3])+T(".")+TfORsTRING(pc8[4])+T(".")+TfORsTRING(pc8[5])+T(".")+TfORsTRING(pc8[6])+T(".")+TfORsTRING(pc8[7])+T(".") ) ;
+        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("setFileTimeF  [systemtime]:    ")+TfORsTRING(pc8[0])+T(".")+TfORsTRING(pc8[1])+T(".")+TfORsTRING(pc8[2])+T(".")+TfORsTRING(pc8[3])+T(".")+TfORsTRING(pc8[4])+T(".")+TfORsTRING(pc8[5])+T(".")+TfORsTRING(pc8[6])+T(".")+TfORsTRING(pc8[7])+T(".") ) ;
         count01T* pc8 = (count01T*)&stw ;
 
         stw.wMilliseconds = (count01T)  ms      ;
@@ -81,7 +81,7 @@
         stw.wYear         = (count01T)( y + 1 ) ;
         SYSTEMTIME stw ;
 
-        osTimeToOldTimeF( tinP , ms , ss , mm , hh , d , m , y , dow , pTimeWrittenP->time1 , pTimeWrittenP->time2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+        osTimeToOldTimeF( tinBaseP , ms , ss , mm , hh , d , m , y , dow , pTimeWrittenP->time1 , pTimeWrittenP->time2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
         ZE( countT  , dow ) ;
         ZE( sCountT , y   ) ;
         ZE( countT  , m   ) ;
@@ -105,7 +105,7 @@
     {
     IFbEcAREFUL        
 {
-/*1*/voidT thirdC::setFileTimeF( tinS& tinP , const handleC& hFileP , timeS* pTimeWrittenP , timeS* pTimeCreatedP , timeS* pTimeAccessedP )/*1*/
+/*1*/voidT thirdC::setFileTimeF( tinBaseS& tinBaseP , const handleC& hFileP , timeS* pTimeWrittenP , timeS* pTimeCreatedP , timeS* pTimeAccessedP )/*1*/
 
 /**/
 

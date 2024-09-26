@@ -9,38 +9,38 @@
 
 REST
 
-etThread.delF( tinP , postm ) ;
-etThread.boxPutF( tinP , T("///d/tmp/tmp/list.map") , postm , costm ) ;
-etThread.delF( tinP , psttMap ) ;
-countT costm = etThread.strMakeF( tinP , LF , postm , psttMap ) ; ___( postm ) ;
+etThread.delF( tinBaseP , postm ) ;
+etThread.boxPutF( tinBaseP , T("///d/tmp/tmp/list.map") , postm , costm ) ;
+etThread.delF( tinBaseP , psttMap ) ;
+countT costm = etThread.strMakeF( tinBaseP , LF , postm , psttMap ) ; ___( postm ) ;
 ZE( osTextT* , postm ) ;
 
-etThread.delF( tinP , pstt1New ) ;
-etThread.delF( tinP , pstt1Old ) ;
+etThread.delF( tinBaseP , pstt1New ) ;
+etThread.delF( tinBaseP , pstt1Old ) ;
 
 }
     NEXTsTRING( psttcOld ) ;
 
-    etThread.delF( tinP , psttwNew ) ;
-    etThread.delF( tinP , psttwOld ) ;
+    etThread.delF( tinBaseP , psttwNew ) ;
+    etThread.delF( tinBaseP , psttwOld ) ;
 
-    etThread.strFuseF( tinP , psttMap , tcr ) ;
-    etThread.strFuseF( tinP , psttMap , psttwNew ) ;
-    etThread.strFuseF( tinP , psttMap , tComma ) ;
-    etThread.strFuseF( tinP , psttMap , psttwOld ) ;
+    etThread.strFuseF( tinBaseP , psttMap , tcr ) ;
+    etThread.strFuseF( tinBaseP , psttMap , psttwNew ) ;
+    etThread.strFuseF( tinBaseP , psttMap , tComma ) ;
+    etThread.strFuseF( tinBaseP , psttMap , psttwOld ) ;
 
-    etThread.strSubstringF( tinP , psttwNew , idfNew , sttq , sttDot , psttc2   ) ; ___( psttwNew ) ;
-    etThread.strSubstringF( tinP , psttwOld , idfOld , sttq , sttDot , psttcOld ) ; ___( psttwOld ) ;
+    etThread.strSubstringF( tinBaseP , psttwNew , idfNew , sttq , sttDot , psttc2   ) ; ___( psttwNew ) ;
+    etThread.strSubstringF( tinBaseP , psttwOld , idfOld , sttq , sttDot , psttcOld ) ; ___( psttwOld ) ;
     countT idfNew = 1 ;
     countT idfOld = 1 ;
     ZE( strokeS* , psttwNew ) ;
     ZE( strokeS* , psttwOld ) ;
 
-    //etThread.strokeF( tinP , T(psttcOld)+tb+T(psttc2)+tcr ) ;
+    //etThread.strokeF( tinBaseP , T(psttcOld)+tb+T(psttc2)+tcr ) ;
 {
 FORsTRINGSiN2( pstt1New )
 
-etThread.strMakeF( tinP , LF , psttMap , 0 , cLinesOld * TUCK ) ; ___( psttMap ) ;
+etThread.strMakeF( tinBaseP , LF , psttMap , 0 , cLinesOld * TUCK ) ; ___( psttMap ) ;
 ZE( strokeS* , psttMap ) ;
 
 }
@@ -50,10 +50,10 @@ ZE( strokeS* , psttMap ) ;
 FORsTRINGSiN1( pstt1Old )
 ZE( strokeS* , psttcOld ) ;
 
-etThread.delF( tinP , postNew ) ;
-etThread.delF( tinP , postOld ) ;
-countT cLinesNew = etThread.strWordsOldF( tinP , pstt1New , T(postNew) , sttq , tDelimiters ) ; ___( pstt1New ) ;
-countT cLinesOld = etThread.strWordsOldF( tinP , pstt1Old , T(postOld) , sttq , tDelimiters ) ; ___( pstt1Old ) ;
+etThread.delF( tinBaseP , postNew ) ;
+etThread.delF( tinBaseP , postOld ) ;
+countT cLinesNew = etThread.strWordsOldF( tinBaseP , pstt1New , T(postNew) , sttq , tDelimiters ) ; ___( pstt1New ) ;
+countT cLinesOld = etThread.strWordsOldF( tinBaseP , pstt1Old , T(postOld) , sttq , tDelimiters ) ; ___( pstt1Old ) ;
 ZE( strokeS* , pstt1New ) ;
 ZE( strokeS* , pstt1Old ) ;
 
@@ -64,8 +64,8 @@ TN( tcr , "\r\n" ) ;
 TN( tDelimiters , "\r\n" ) ;
 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 
-etThread.boxGetShadowF( tinP , postNew , costNew , T("///d/tmp/tmp/list.new") ) ; ___( postNew ) ;
-etThread.boxGetShadowF( tinP , postOld , costOld , T("///d/tmp/tmp/list.old") ) ; ___( postOld ) ;
+etThread.boxGetShadowF( tinBaseP , postNew , costNew , T("///d/tmp/tmp/list.new") ) ; ___( postNew ) ;
+etThread.boxGetShadowF( tinBaseP , postOld , costOld , T("///d/tmp/tmp/list.old") ) ; ___( postOld ) ;
 ZE( countT   , costNew ) ;
 ZE( countT   , costOld ) ;
 ZE( osTextT* , postNew ) ;

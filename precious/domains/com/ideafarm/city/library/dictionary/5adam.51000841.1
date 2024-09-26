@@ -9,18 +9,18 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     Sleep( 0 ) ;
-    //++ s ; ether.osSleepF( tinP , TUCK ) ;
-    //sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    //++ s ; ether.osSleepF( tinBaseP , TUCK ) ;
+    //sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    //thirdC::osHireThenMonitorIF( tinP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_SCRATCH0f") , tArgsGross ) ;
+    //thirdC::osHireThenMonitorIF( tinBaseP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_SCRATCH0f") , tArgsGross ) ;
     //THIS LEAKS 2 HANDLES PER CYCLE
 
-    //etThread.ifcHireF( tinP , T("ifcIDaDAM_SCRATCH0f") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireNow null.exe") , flHIRE_WAIT ) ;
+    //etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_SCRATCH0f") , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("!hireNow null.exe") , flHIRE_WAIT ) ;
     //THIS DOES NOT LEAK
 
 
@@ -48,15 +48,15 @@ etThread.traceF( tinP , T("ok") ) ;
 
         }
             }
-                default                          : { /*etThread.traceF( tinP , T("unknown"            ) ) ;*/             break ; }
-                case RIP_EVENT                   : { /*etThread.traceF( tinP , T("RIP"                ) ) ;*/             break ; }
-                case OUTPUT_DEBUG_STRING_EVENT   : { /*etThread.traceF( tinP , T("OUTPUT_DEBUG_STRING") ) ;*/             break ; }
-                case UNLOAD_DLL_DEBUG_EVENT      : { /*etThread.traceF( tinP , T("UNLOAD_DLL"         ) ) ;*/             break ; }
-                case EXIT_PROCESS_DEBUG_EVENT    : { /*etThread.traceF( tinP , T("EXIT_PROCESS"       ) ) ;*/ bDone = 1 ; break ; }
-                case EXIT_THREAD_DEBUG_EVENT     : { /*etThread.traceF( tinP , T("EXIT_THREAD"        ) ) ;*/             break ; }
+                default                          : { /*etThread.traceF( tinBaseP , T("unknown"            ) ) ;*/             break ; }
+                case RIP_EVENT                   : { /*etThread.traceF( tinBaseP , T("RIP"                ) ) ;*/             break ; }
+                case OUTPUT_DEBUG_STRING_EVENT   : { /*etThread.traceF( tinBaseP , T("OUTPUT_DEBUG_STRING") ) ;*/             break ; }
+                case UNLOAD_DLL_DEBUG_EVENT      : { /*etThread.traceF( tinBaseP , T("UNLOAD_DLL"         ) ) ;*/             break ; }
+                case EXIT_PROCESS_DEBUG_EVENT    : { /*etThread.traceF( tinBaseP , T("EXIT_PROCESS"       ) ) ;*/ bDone = 1 ; break ; }
+                case EXIT_THREAD_DEBUG_EVENT     : { /*etThread.traceF( tinBaseP , T("EXIT_THREAD"        ) ) ;*/             break ; }
                 }
                     break ;
-                    //etThread.traceF( tinP , T("EXCEPTION:    ")+tEvent ) ;
+                    //etThread.traceF( tinBaseP , T("EXCEPTION:    ")+tEvent ) ;
 
                     }
                         default                                                    : { tEvent += T("unexpected                          ") ; break ; }
@@ -124,14 +124,14 @@ etThread.traceF( tinP , T("ok") ) ;
                     break ;
 
                     if( event.u.LoadDll.hFile && event.u.LoadDll.hFile != INVALID_HANDLE_VALUE ) CloseHandle( event.u.LoadDll.hFile ) ; event.u.LoadDll.hFile = 0 ;
-                    //etThread.traceF( tinP , T("LOAD_DLL") ) ;
+                    //etThread.traceF( tinBaseP , T("LOAD_DLL") ) ;
                 {
                 case LOAD_DLL_DEBUG_EVENT :
                 }
                     break ;
 
                     if( event.u.CreateThread.hThread && event.u.CreateThread.hThread != INVALID_HANDLE_VALUE ) CloseHandle( event.u.CreateThread.hThread ) ; event.u.CreateThread.hThread = 0 ;
-                    //etThread.traceF( tinP , T("CREATE_THREAD") ) ;
+                    //etThread.traceF( tinBaseP , T("CREATE_THREAD") ) ;
                 {
                 case CREATE_THREAD_DEBUG_EVENT :
                 }
@@ -140,7 +140,7 @@ etThread.traceF( tinP , T("ok") ) ;
                     if( event.u.CreateProcessInfo.hThread  && event.u.CreateProcessInfo.hThread  != INVALID_HANDLE_VALUE ) CloseHandle( event.u.CreateProcessInfo.hThread  ) ; event.u.CreateProcessInfo.hThread  = 0 ;
                     if( event.u.CreateProcessInfo.hProcess && event.u.CreateProcessInfo.hProcess != INVALID_HANDLE_VALUE ) CloseHandle( event.u.CreateProcessInfo.hProcess ) ; event.u.CreateProcessInfo.hProcess = 0 ;
                     if( event.u.CreateProcessInfo.hFile    && event.u.CreateProcessInfo.hFile    != INVALID_HANDLE_VALUE ) CloseHandle( event.u.CreateProcessInfo.hFile    ) ; event.u.CreateProcessInfo.hFile    = 0 ;
-                    //etThread.traceF( tinP , T("CREATE_PROCESS") ) ;
+                    //etThread.traceF( tinBaseP , T("CREATE_PROCESS") ) ;
                 {
                 case CREATE_PROCESS_DEBUG_EVENT :
             {
@@ -148,14 +148,14 @@ etThread.traceF( tinP , T("ok") ) ;
         {
         else
         }
-            else                             { etThread.traceF( tinP , T("called WaitForDebugEvent (failed) [rc]:    "           )+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
-            if( rc == ERROR_INVALID_HANDLE ) { etThread.traceF( tinP , T("called WaitForDebugEvent (failed) ERROR_INVALID_HANDLE")                                                  ) ; }
+            else                             { etThread.traceF( tinBaseP , T("called WaitForDebugEvent (failed) [rc]:    "           )+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+            if( rc == ERROR_INVALID_HANDLE ) { etThread.traceF( tinBaseP , T("called WaitForDebugEvent (failed) ERROR_INVALID_HANDLE")                                                  ) ; }
             countT rc = GetLastError() ;
             _IO_
         {
         if( !bOk )
 
-        //etThread.traceF( tinP , T("called  WaitForDebugEvent()") ) ;
+        //etThread.traceF( tinBaseP , T("called  WaitForDebugEvent()") ) ;
         boolT bOk = WaitForDebugEvent( &event , INFINITE ) ;
     {
     while( !bDone )
@@ -166,7 +166,7 @@ etThread.traceF( tinP , T("ok") ) ;
     CloseHandle( result.hThread  ) ; result.hThread  = 0 ;
     CloseHandle( result.hProcess ) ; result.hProcess = 0 ;
 
-    if( !bOk ) etThread.traceF( tinP , T(bOk?"launched aok":"ERROR could not launch") ) ;
+    if( !bOk ) etThread.traceF( tinBaseP , T(bOk?"launched aok":"ERROR could not launch") ) ;
     bOk = CreateProcess( 0 , "null" , 0 , 0 , 0 , DEBUG_PROCESS | DEBUG_ONLY_THIS_PROCESS , 0 , 0 , &specs , &result ) ;
     //LEAKS?
 
@@ -175,7 +175,7 @@ etThread.traceF( tinP , T("ok") ) ;
     CloseHandle( result.hThread  ) ; result.hThread  = 0 ;
     CloseHandle( result.hProcess ) ; result.hProcess = 0 ;
 
-    if( !bOk ) etThread.traceF( tinP , T(bOk?"launched aok":"ERROR could not launch") ) ;
+    if( !bOk ) etThread.traceF( tinBaseP , T(bOk?"launched aok":"ERROR could not launch") ) ;
     bOk = CreateProcess( 0 , "null" , 0 , 0 , 0 , 0 , 0 , 0 , &specs , &result ) ;
     //DOES NOT LEAK
 
@@ -194,8 +194,8 @@ static    STARTUPINFO specs ;
     memset( &result , 0 , sizeof result ) ;
 static    PROCESS_INFORMATION result ;
 
-    //etThread.traceF( tinP , T("monitoring: [idHire,tFile,tArgsGross]:    ")+TF2(++idHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsGross ) ;
-    etThread.traceF( tinP , TF2(++idHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cOsHandles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etThread.traceF( tinBaseP , T("monitoring: [idHire,tFile,tArgsGross]:    ")+TF2(++idHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsGross ) ;
+    etThread.traceF( tinBaseP , TF2(++idHire,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cOsHandles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     BOOL bOk = GetProcessHandleCount( GetCurrentProcess() , (DWORD*)&cOsHandles ) ;
     ZE( countT , cOsHandles ) ;

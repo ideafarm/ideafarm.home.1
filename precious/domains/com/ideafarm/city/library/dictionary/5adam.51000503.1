@@ -17,17 +17,17 @@ slPgm W("myThen") ;
 
 slPgm DEF(slDefElse,"myElse",lex) ;
 slPgm DEF(slDefThen,"myThen",lex) ;
-soulC slPgm( tinP , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ;
+soulC slPgm( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ;
 
 slDefElse WR("for you are the source of all things!") O(sayer) ;
-soulC slDefElse( tinP , TAG( TAGiDnULL ) ) ;
+soulC slDefElse( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 slDefThen  WR("thank you, Jesus!") O(sayer) ;
-soulC slDefThen( tinP , TAG( TAGiDnULL ) ) ;
+soulC slDefThen( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 ifC myIf ;
 sayerC sayer ;
-lexC lex( tinP , etThread , TAG( TAGiDnULL ) ) ;
+lexC lex( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -36,7 +36,7 @@ OPERATORiF( ifC )
 )
     ,
 
-    PUSE( tinP , psttw ) ;
+    PUSE( tinBaseP , psttw ) ;
     POPUP( T(psttw) ) ;
     slP >> psttw ; ___( psttw ) ;
     ZE( strokeS* , psttw ) ;

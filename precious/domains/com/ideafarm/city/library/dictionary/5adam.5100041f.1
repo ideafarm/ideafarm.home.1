@@ -12,18 +12,18 @@ REST
 }
     TELL( "cleaning up" ) ;
     }
-        ether.osSleepF( tinP , TICK ) ;
+        ether.osSleepF( tinBaseP , TICK ) ;
         TELL( "taking my cycle nap" ) ;
 
-        logPoolF( tinP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.c84")  , poolOldc84   ,    idCycle ) ;
+        logPoolF( tinBaseP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.c84")  , poolOldc84   ,    idCycle ) ;
 
-        //logPoolF( tinP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.dflt") , poolOldDflt  ,    idCycle ) ;
+        //logPoolF( tinBaseP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.dflt") , poolOldDflt  ,    idCycle ) ;
         //TELL( "logging status of poolOld dflt (cycle " ) ; TELLcOUNTT( idCycle ) ; TELLcONCAT( ")" ) ;
-        //logPoolF( tinP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.114")  , poolOld114   ,    idCycle ) ;
+        //logPoolF( tinBaseP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.114")  , poolOld114   ,    idCycle ) ;
         //TELL( "logging status of poolOld 114 (cycle " ) ; TELLcOUNTT( idCycle ) ; TELLcONCAT( ")" ) ;
-        //logPoolF( tinP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.314m") , poolOld314m  ,    idCycle ) ;
+        //logPoolF( tinBaseP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.314m") , poolOld314m  ,    idCycle ) ;
         //TELL( "logging status of poolOld 314m (cycle " ) ; TELLcOUNTT( idCycle ) ; TELLcONCAT( ")" ) ;
-        //logPoolF( tinP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.314")  , poolOld314   , idCycle ) ;
+        //logPoolF( tinBaseP , etThread , T("\\ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".log.status.poolOld.314")  , poolOld314   , idCycle ) ;
         //TELL( "logging status of poolOld 314 (cycle " ) ; TELLcOUNTT( idCycle ) ; TELLcONCAT( ")" ) ;
 
         ++ idCycle ;
@@ -31,37 +31,37 @@ REST
     while( !etThread && !ether )
     ZE( countT , idCycle ) ;
 
-    //__( poolOldDflt.idClientF( tinP ) == 1 ) ;
-    //__( poolOld114.idClientF(  tinP ) == 1 ) ;
-    //__( poolOld314m.idClientF( tinP ) == 1 ) ;
-    //__( poolOld314.idClientF(  tinP ) == 1 ) ;
+    //__( poolOldDflt.idClientF( tinBaseP ) == 1 ) ;
+    //__( poolOld114.idClientF(  tinBaseP ) == 1 ) ;
+    //__( poolOld314m.idClientF( tinBaseP ) == 1 ) ;
+    //__( poolOld314.idClientF(  tinBaseP ) == 1 ) ;
 
-    p oolC poolOldc84( tinP , TAG( TAGiDnULL ) , "4speed.1.c840104" ) ;
-    //p oolC poolOld114(  tinP , TAG( TAGiDnULL ) , "1140104"        ) ;
-    //p oolC poolOld314m( tinP , TAG( TAGiDnULL ) , "6a40104.layer3" ) ;
-    //p oolC poolOld314(  tinP , TAG( TAGiDnULL ) , "6a40104.layer2" ) ;
+    p oolC poolOldc84( tinBaseP , TAG( TAGiDnULL ) , "4speed.1.c840104" ) ;
+    //p oolC poolOld114(  tinBaseP , TAG( TAGiDnULL ) , "1140104"        ) ;
+    //p oolC poolOld314m( tinBaseP , TAG( TAGiDnULL ) , "6a40104.layer3" ) ;
+    //p oolC poolOld314(  tinBaseP , TAG( TAGiDnULL ) , "6a40104.layer2" ) ;
 
-    stateS state( tinP , etThread ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TELL( "preparing for work" ) ;
 TODO
 
 }
-    //etThread.ifcSayF( tinP , tLine , flSAY_APPEND | flSAY_LOG ) ;
+    //etThread.ifcSayF( tinBaseP , tLine , flSAY_APPEND | flSAY_LOG ) ;
 
-    tLine += TF3( PUSE.ecF( tinP )               , flFORMAT_UNSIGNED , 9 ) ;
-    tLine += TF3( PUSE.idClientGrabbingF( tinP ) , flFORMAT_UNSIGNED , 9 ) ;
-    tLine += TF3( PUSE.cAccessesF( tinP )        , flFORMAT_UNSIGNED , 9 ) ;
-    tLine += TF3( PUSE.cCollisionsF( tinP )      , flFORMAT_UNSIGNED , 9 ) ;
-    tLine += TF3( PUSE.cNotUsedF( tinP )         , flFORMAT_UNSIGNED , 9 ) ;
-    tLine += TF3( PUSE.cdUsedF( tinP )           , flFORMAT_UNSIGNED , 9 ) ;
-    tLine += TF3( PUSE.cbUsedF( tinP )           , flFORMAT_UNSIGNED , 9 ) ;
+    tLine += TF3( PUSE.ecF( tinBaseP )               , flFORMAT_UNSIGNED , 9 ) ;
+    tLine += TF3( PUSE.idClientGrabbingF( tinBaseP ) , flFORMAT_UNSIGNED , 9 ) ;
+    tLine += TF3( PUSE.cAccessesF( tinBaseP )        , flFORMAT_UNSIGNED , 9 ) ;
+    tLine += TF3( PUSE.cCollisionsF( tinBaseP )      , flFORMAT_UNSIGNED , 9 ) ;
+    tLine += TF3( PUSE.cNotUsedF( tinBaseP )         , flFORMAT_UNSIGNED , 9 ) ;
+    tLine += TF3( PUSE.cdUsedF( tinBaseP )           , flFORMAT_UNSIGNED , 9 ) ;
+    tLine += TF3( PUSE.cbUsedF( tinBaseP )           , flFORMAT_UNSIGNED , 9 ) ;
     tLine += TF3( pcPool[ - 0x08 ]                , flFORMAT_UNSIGNED , 9 ) ;
     tLine += TF3( pcPool[ - 0x02 ]                , flFORMAT_UNSIGNED , 9 ) ;
     tLine += TF3( pcPool[ - 0x0c ]                , flFORMAT_UNSIGNED , 9 ) ;
     tLine += TF3( pcPool[ - 0x07 ]                , flFORMAT_UNSIGNED , 9 ) ;
-    tLine += TF3( PUSE.offTopF(tinP)             , flFORMAT_UNSIGNED , 9 ) ;
+    tLine += TF3( PUSE.offTopF(tinBaseP)             , flFORMAT_UNSIGNED , 9 ) ;
     tLine += TF3( pcPool[ - 0x0d ]                , flFORMAT_UNSIGNED , 9 ) ;
     tLine += TF3( pcPool[ - 0x01 ]                , flFORMAT_UNSIGNED , 9 ) ;
     tLine  = TF3( pcPool[ - 0x15 ]                , flFORMAT_UNSIGNED , 9 ) ;
@@ -69,9 +69,9 @@ TODO
 
     const countT* const pcPool = (countT*)(byteT*)0 ; //USED TO ACCESS PRIVATE MEMBERS OF THE POOLoLD HEADER
 
-    if( idCycleP == 1 ) etThread.ifcSayF( tinP , T(postLogP)+T("\r\nflagsBac cbPool-- offHighW offTop-- offNewLa offCurso off----- offNewMi cbUsed-- cdUsed-- cNotUsed cCollisi cAccesse idClienG ec------") , flSAY_APPEND | flSAY_LOG ) ;
+    if( idCycleP == 1 ) etThread.ifcSayF( tinBaseP , T(postLogP)+T("\r\nflagsBac cbPool-- offHighW offTop-- offNewLa offCurso off----- offNewMi cbUsed-- cdUsed-- cNotUsed cCollisi cAccesse idClienG ec------") , flSAY_APPEND | flSAY_LOG ) ;
 {
-voidT logPoolF( tinS& tinP , etherC& etThread , const osTextT* const postLogP , const countT idCycleP )
+voidT logPoolF( tinBaseS& tinBaseP , etherC& etThread , const osTextT* const postLogP , const countT idCycleP )
 
 STATE0
 /*1*/WAKEhIDE( "tool.monitor.poolOldDflt" )/*1*/

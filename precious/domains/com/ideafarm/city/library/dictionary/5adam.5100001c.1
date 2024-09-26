@@ -10,40 +10,40 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.boxZapF( tinP , tFile ) ;
+etThread.boxZapF( tinBaseP , tFile ) ;
 
-etThread.delF( tinP , psttnu ) ;
-etThread.faceHearF( tinP , psttnu ) ;
+etThread.delF( tinBaseP , psttnu ) ;
+etThread.faceHearF( tinBaseP , psttnu ) ;
 ZE( strokeS* , psttnu ) ;
-etThread.strokeF( tinP , T("close the editor and then press the enter key here") ) ;
+etThread.strokeF( tinBaseP , T("close the editor and then press the enter key here") ) ;
 
-if( !( F(etThread.flagsMode) & flTHIRDmODE_TESTaUTO ) ) etThread.osEditF( tinP , tFile ) ;
-etThread.delF( tinP , post ) ;
-etThread.boxPutF( tinP , tFile , post , cost ) ;
+if( !( F(etThread.flagsMode) & flTHIRDmODE_TESTaUTO ) ) etThread.osEditF( tinBaseP , tFile ) ;
+etThread.delF( tinBaseP , post ) ;
+etThread.boxPutF( tinBaseP , tFile , post , cost ) ;
 TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/tmp/b100104" ) ;
 
 }
     if( post ) post[ cbBody ] = 0 ;
-    cost = sock.readF( tinP , post , cbBody ) ;
-    etThread.newF( tinP , LF , post , cbBody + 1 ) ; ___( post ) ;
+    cost = sock.readF( tinBaseP , post , cbBody ) ;
+    etThread.newF( tinBaseP , LF , post , cbBody + 1 ) ; ___( post ) ;
 
     }
-        etThread.delF( tinP , psttcb ) ;
-        cbBody = etThread.strDigitsToSCountF( tinP , psttcb , 0xa , 1 ) ;
-        etThread.delF( tinP , psttr ) ;
-        etThread.strSubstringMimeHeaderF( tinP , psttcb , psttr , T("content-length") ) ;
+        etThread.delF( tinBaseP , psttcb ) ;
+        cbBody = etThread.strDigitsToSCountF( tinBaseP , psttcb , 0xa , 1 ) ;
+        etThread.delF( tinBaseP , psttr ) ;
+        etThread.strSubstringMimeHeaderF( tinBaseP , psttcb , psttr , T("content-length") ) ;
         ZE( strokeS* , psttcb ) ;
-        sock.readWoMultilineF( tinP , psttr , 0 , 0x10000 ) ;
+        sock.readWoMultilineF( tinBaseP , psttr , 0 , 0x10000 ) ;
         ZE( strokeS* , psttr ) ;
     {
     ZE( countT , cbBody ) ;
 
-    sock.writeF( tinP , (osTextT*)T("GET / HTTP/1.0\r\n\r\n") ) ;
-    else                                                    sock.connectF( tinP , ifcIDpORT_HTTP , etThread.sockNicNameF( tinP , T("1.1.1.2"                 ) ) ) ;
-    if( !( F(etThread.flagsMode) & flTHIRDmODE_TESTaUTO ) ) sock.connectF( tinP , ifcIDpORT_HTTP , etThread.sockNicNameF( tinP , T("city.center.ideafarm.com") ) ) ;
-    socketC sock( tinP , ether , TAG( TAGiDnULL ) ) ;
+    sock.writeF( tinBaseP , (osTextT*)T("GET / HTTP/1.0\r\n\r\n") ) ;
+    else                                                    sock.connectF( tinBaseP , ifcIDpORT_HTTP , etThread.sockNicNameF( tinBaseP , T("1.1.1.2"                 ) ) ) ;
+    if( !( F(etThread.flagsMode) & flTHIRDmODE_TESTaUTO ) ) sock.connectF( tinBaseP , ifcIDpORT_HTTP , etThread.sockNicNameF( tinBaseP , T("city.center.ideafarm.com") ) ) ;
+    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 {
 ZE( countT , cost ) ;
 ZE( osTextT* , post ) ;

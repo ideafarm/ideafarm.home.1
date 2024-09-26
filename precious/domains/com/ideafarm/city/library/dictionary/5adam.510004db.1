@@ -11,13 +11,13 @@
 
 REST
 
-etThread.strokeF( tinP , T("ok") ) ;
+etThread.strokeF( tinBaseP , T("ok") ) ;
 }
-    etThread.strokeF( tinP , T("[2,1] evokes the value ")+TF1((countT)swx)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("[2,1] evokes the value ")+TF1((countT)swx)+T("\r\n") ) ;
     c2l.c2 = 1 ;
     c2l.c1 = 2 ;
 
-    etThread.strokeF( tinP , T("[1,2] evokes the value ")+TF1((countT)swx)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("[1,2] evokes the value ")+TF1((countT)swx)+T("\r\n") ) ;
     c2l.c2 = 2 ;
     c2l.c1 = 1 ;
 
@@ -27,7 +27,7 @@ etThread.strokeF( tinP , T("ok") ) ;
 
     swx = 0x111 ;
 
-    switchC swx( tinP , ether , TAG( TAGiDnULL ) , flSTACKc_null , (byteT*)&c2l , sizeof c2l ) ;
+    switchC swx( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , (byteT*)&c2l , sizeof c2l ) ;
     count2S c2l( 1 , 2 ) ;
 {
 

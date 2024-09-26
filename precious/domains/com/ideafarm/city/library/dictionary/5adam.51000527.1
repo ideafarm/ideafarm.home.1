@@ -10,31 +10,31 @@
 REST
 
 }
-    stHired.purgeF( tinP ) ; //CONTAINS POINTER DUPLICATES
+    stHired.purgeF( tinBaseP ) ; //CONTAINS POINTER DUPLICATES
     }
         }
-            ++ s ; ether.osSleepF( tinP , time1s ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tinBaseP , time1s ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             countT time1s = TOCK * 0x1 ;
         {
         
         }
             }
                 }
-                    ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                    ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                     LOGrAW( T("could not fire ")+td+T("\r\n") ) ; //U::
                     POOPR
                 {
                 else
                 if( !POOP ) break ;
         
-                ((thirdC&)*tinP.pEtScratch).osDriverFireF( tinP , td ) ;
+                ((thirdC&)*((tinNormalS&)tinBaseP).pEtScratch).osDriverFireF( tinBaseP , td ) ;
                 //LOGrAW( T("firing ")+td+T("\r\n") ) ; //U::
             {
             for(;;)
             
-            etThread.osDriverParseNameF( tinP , idHome , idAdam , idVersion , td ) ;
+            etThread.osDriverParseNameF( tinBaseP , idHome , idAdam , idVersion , td ) ;
             ZE( countT , idVersion ) ;
             ZE( countT , idAdam ) ;
             ZE( countT , idHome ) ;
@@ -47,10 +47,10 @@ REST
         SCOOPS
         
         }
-            etThread.strokeF( tinP , T("\r                         \r") ) ;
-            ++ s ; ether.osSleepF( tinP , time1s , 0 , flSLEEP_TALK ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-            etThread.strokeF( tinP , TF1(++idCycle)+tb+TF1(time1s)+tcr ) ;
+            etThread.strokeF( tinBaseP , T("\r                         \r") ) ;
+            ++ s ; ether.osSleepF( tinBaseP , time1s , 0 , flSLEEP_TALK ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            etThread.strokeF( tinBaseP , TF1(++idCycle)+tb+TF1(time1s)+tcr ) ;
             countT time1s = TOCK * ( stHired == 1 ? 0x10 : 0x40 ) + ru ;
         {
         if( stHired )
@@ -61,33 +61,33 @@ REST
                 else       stHired << postd ;
                 if( POOP ) POOPR
     
-                ((thirdC&)*tinP.pEtScratch).osDriverHireF( tinP , td ) ;
+                ((thirdC&)*((tinNormalS&)tinBaseP).pEtScratch).osDriverHireF( tinBaseP , td ) ;
     
-                etThread.osDriverParseNameF( tinP , idHome , idAdam , idVersion , td ) ;
+                etThread.osDriverParseNameF( tinBaseP , idHome , idAdam , idVersion , td ) ;
                 ZE( countT , idVersion ) ;
                 ZE( countT , idAdam ) ;
                 ZE( countT , idHome ) ;
     
                 TN( td , postd ) ;
-                osTextT*& postd = *(osTextT**)&stDriver.downF( tinP , hDown ) ;
+                osTextT*& postd = *(osTextT**)&stDriver.downF( tinBaseP , hDown ) ;
             {
             do
-            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             SCOOPS
         {
         if( stDriver )
     
         //LOGrAW( T("cycle ")+T(++idCycle)+T(" ============================================================\r\n") ) ;
     
-        ((thirdC&)etThread).osDriversF( tinP , stDriver , "IdeaFarmCity." ) ;
-        stHired.purgeF( tinP ) ;
-        stDriver.purgeF( tinP ) ;
+        ((thirdC&)etThread).osDriversF( tinBaseP , stDriver , "IdeaFarmCity." ) ;
+        stHired.purgeF( tinBaseP ) ;
+        stDriver.purgeF( tinBaseP ) ;
     {
     while( !ether )
     ZE( countT , idCycle ) ;
     ranUniC ru( TOCK * 0x10 , - 1 ) ;
-    stackC stHired( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_byteT ) ;
-    stackC stDriver( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
+    stackC stHired( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_byteT ) ;
+    stackC stDriver( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
     TN( tcr , "\r\n" ) ;
     TN( tb , " " ) ;
     

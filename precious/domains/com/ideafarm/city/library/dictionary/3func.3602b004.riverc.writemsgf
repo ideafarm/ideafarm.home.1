@@ -12,20 +12,20 @@
         if( POOP ) POOPR
         }
             }
-                psOut->writeMsgF( tinP , pbP , cbP ) ;
-                psOut->connectF( tinP , idPort , nicName ) ;
+                psOut->writeMsgF( tinBaseP , pbP , cbP ) ;
+                psOut->connectF( tinBaseP , idPort , nicName ) ;
             {
             if( psOut )
-            psOut = new( 0 , tinP , LF ) socketC( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
+            psOut = new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
             }
-                ++ s ; tinP.pEtScratch->osSleepF( tinP , TOCK ) ;
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ((tinNormalS&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TOCK ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             DEL( psOut ) ;
             POOPR
         {
         while( POOP && !ether )
-        psOut->writeMsgF( tinP , pbP , cbP ) ;
+        psOut->writeMsgF( tinBaseP , pbP , cbP ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -39,7 +39,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT riverC::writeMsgF( tinS& tinP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/voidT riverC::writeMsgF( tinBaseS& tinBaseP , const byteT* const pbP , const countT cbP )/*1*/
 
 /**/
 */

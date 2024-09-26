@@ -8,11 +8,11 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
-etThread.delF( tinP , postReply ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.delF( tinBaseP , postReply ) ;
 
-etThread.ifcDrivenServerF( tinP , i1 , i2 ) ;
-serverInfo2S i2( 0x50 , flSOCKETc_null , TF2(thirdC::third_idAdamRootI_IF( tinP ),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , 0 , (countT)&c8p , 0 , - 1 , 1 , sizeof( stateS ) , translateStateF ) ;
+etThread.ifcDrivenServerF( tinBaseP , i1 , i2 ) ;
+serverInfo2S i2( 0x50 , flSOCKETc_null , TF2(thirdC::third_idAdamRootI_IF( tinBaseP ),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , 0 , (countT)&c8p , 0 , - 1 , 1 , sizeof( stateS ) , translateStateF ) ;
 serverInfo1S i1( &pbdVarying , b_pbdVarying , bHandedOff , sgnIdPortReplaced , tmcF , countTC() , ether ) ;
 
 c8p.c2 = (countT)&b_pbdVarying ;
@@ -20,38 +20,38 @@ c8p.c1 = (countT)&pbdVarying ;
 count8S c8p ;
 
 ZE( boolT , bHandedOff ) ;
-batonC b_pbdVarying( tinP , TAG( TAGiDnULL ) ) ;
+batonC b_pbdVarying( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( byteT* , pbdVarying ) ;
-signC sgnIdPortReplaced( tinP , TAG( TAGiDnULL ) ) ;
+signC sgnIdPortReplaced( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONEdRIVENsERVER( tmcF )
 }
-    pso->readF( tinP , posti , sizeof posti , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
-    pso->writeF( tinP , postReply , costReply ) ;
+    pso->readF( tinBaseP , posti , sizeof posti , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+    pso->writeF( tinBaseP , postReply , costReply ) ;
 
     }
-        b_pbdVarying.ungrabF( tinP ) ;
+        b_pbdVarying.ungrabF( tinBaseP ) ;
         }
-            etThread.memCopyF( tinP , postReply + offFieldB , ostox , ostox.costF() ) ;
-            etThread.memCopyF( tinP , postReply + offFieldA , ostox , ostox.costF() ) ;
+            etThread.memCopyF( tinBaseP , postReply + offFieldB , ostox , ostox.costF() ) ;
+            etThread.memCopyF( tinBaseP , postReply + offFieldA , ostox , ostox.costF() ) ;
             OStEXTV( ostox , "- n/a --" )
         {
         else
         }
-            etThread.memCopyF( tinP , postReply + offFieldB , t_cHamburgers , t_cHamburgers.csF( tinP ) ) ;
-            etThread.memCopyF( tinP , postReply + offFieldA , t_idMe        , t_idMe.csF( tinP ) ) ;
+            etThread.memCopyF( tinBaseP , postReply + offFieldB , t_cHamburgers , t_cHamburgers.csF( tinBaseP ) ) ;
+            etThread.memCopyF( tinBaseP , postReply + offFieldA , t_idMe        , t_idMe.csF( tinBaseP ) ) ;
             TN( t_cHamburgers , "" ) ; t_cHamburgers = TF3(++state.cHamburgers,0,8) ;
             TN( t_idMe        , "" ) ; t_idMe        = TF3(state.idMe,0,8) ;
             stateS& state = *(stateS*)pbdVarying ;
         {
         if( pbdVarying )
-        b_pbdVarying.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        b_pbdVarying.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( postReply )
 
-    if( !postReply ) setupF( tinP , etThread ) ;
+    if( !postReply ) setupF( tinBaseP , etThread ) ;
 
     batonC& b_pbdVarying = *(batonC*)c8p.c2 ;
     byteT*& pbdVarying   = *(byteT**)c8p.c1 ;
@@ -61,12 +61,12 @@ if( cArg )
 TASKdRIVENsERVER( tmcF )
 
 }
-    offFieldB = etThread.strIdF( tinP , idf , sttq , T("!b345678") , tReply ) ; if( offFieldB ) offFieldB -- ;
-    offFieldA = etThread.strIdF( tinP , idf , sttq , T("!a345678") , tReply ) ; if( offFieldA ) offFieldA -- ;
+    offFieldB = etThread.strIdF( tinBaseP , idf , sttq , T("!b345678") , tReply ) ; if( offFieldB ) offFieldB -- ;
+    offFieldA = etThread.strIdF( tinBaseP , idf , sttq , T("!a345678") , tReply ) ; if( offFieldA ) offFieldA -- ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
 
-    costReply = etThread.strMakeF( tinP , LF , postReply , tReply ) ; ___( postReply ) ;
+    costReply = etThread.strMakeF( tinBaseP , LF , postReply , tReply ) ; ___( postReply ) ;
     TN( tReply , "" ) ; tReply = tHead1+tHead2+tHead3+tBody ;
 
     ) ;
@@ -74,7 +74,7 @@ TASKdRIVENsERVER( tmcF )
         "\r\n"
     TN( tHead3 ,
 
-    TN( tHead2 , "" ) ; tHead2 = TF4(tBody.csF(tinP),flFORMAT_FOREIGN,0,0xa) ;
+    TN( tHead2 , "" ) ; tHead2 = TF4(tBody.csF(tinBaseP),flFORMAT_FOREIGN,0,0xa) ;
 
     ) ;
         "Content-Length: "
@@ -99,7 +99,7 @@ TASKdRIVENsERVER( tmcF )
         "<PRE>"
     TN( tBody ,
 {
-voidT setupF( tinS& tinP , etherC& etThread )
+voidT setupF( tinBaseS& tinBaseP , etherC& etThread )
 
 static osTextT posti[ CBpOSTI ] ;
 countT offFieldB ;

@@ -9,10 +9,10 @@
 
 }
     return offo ;
-    if( time1P || time2P ) { __( s_unregisterTimeoutF( tinP , handleP ) ) ; }
+    if( time1P || time2P ) { __( s_unregisterTimeoutF( tinBaseP , handleP ) ) ; }
 
     }
-            c_zReverseByteOrderF( tinP , pbP , offo ) ;
+            c_zReverseByteOrderF( tinBaseP , pbP , offo ) ;
         if( !POOP && offo && F(flagsP) & flSOCKETcrEAD_CONVERTbYTEoRDER )
     
         if( !fhok && !fTinyNibbles && cbToDo ) __( cbToDo ) ;
@@ -25,17 +25,17 @@
 
             cbToDo             -= cbNew ;
             offo               += cbNew ;
-            tinP.odoSockCbRead += cbNew ;
+            ((tinNormalS&)tinBaseP).odoSockCbRead += cbNew ;
 
             //}
-            //    else                   tinP.pEther->traceF( tinP , T("s_readOrPeekPrivateF [time in recv]:    fast") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
-            //    if( timeE1 || timeE2 ) tinP.pEther->traceF( tinP , T("s_readOrPeekPrivateF [time in recv]:    slow    ")+TTF(timeE1,timeE2) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
-            //    tinP.pEther->osTimeSubtractF( tinP , timeE1 , timeE2 , timeB1 , timeB2 ) ;
-            //    tinP.pEther->osTimeNowF(      tinP , timeE1 , timeE2 ) ;
+            //    else                   ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("s_readOrPeekPrivateF [time in recv]:    fast") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
+            //    if( timeE1 || timeE2 ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("s_readOrPeekPrivateF [time in recv]:    slow    ")+TTF(timeE1,timeE2) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
+            //    ((tinNormalS&)tinBaseP).pEther->osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeB1 , timeB2 ) ;
+            //    ((tinNormalS&)tinBaseP).pEther->osTimeNowF(      tinBaseP , timeE1 , timeE2 ) ;
             //    ZE( sCountT , timeE2 ) ;
             //    ZE( countT  , timeE1 ) ;
             //{
-            //if( tinP.pc Utility[ 1 ] && tinP.pEther )
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 1 ] && ((tinNormalS&)tinBaseP).pEther )
 
             }
                 }
@@ -46,8 +46,8 @@
                     {
                     if( cbNew == SOCKET_ERROR )
                     ;
-                        : thirdC::openSslTls_readIF( tinP , pbP + offo , cbBite , handleP )
-                        ? thirdC::openSslTls_peekIF( tinP , pbP + offo , cbBite , handleP )
+                        : thirdC::openSslTls_readIF( tinBaseP , pbP + offo , cbBite , handleP )
+                        ? thirdC::openSslTls_peekIF( tinBaseP , pbP + offo , cbBite , handleP )
                     cbNew = flagsTcpP & MSG_PEEK
                     _IO_
                 {
@@ -59,7 +59,7 @@
                         cbNew = 0 ;
                     {
                     if( cbNew == SOCKET_ERROR )
-                    if( !POOP ) cbNew = tinP.brcRaw ;
+                    if( !POOP ) cbNew = ((tinNormalS&)tinBaseP).brcRaw ;
                     BOSpOOP
                     BOSS( WHATsir , BOSsOCKETcODE2 , recv( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , pbP + offo , cbBite , flagsTcpP ) )
                     _IO_
@@ -69,7 +69,7 @@
             switch( idModeP )
             ZE( sCountT , cbNew ) ;
 
-            //if( tinP.pc Utility[ 1 ] && tinP.pEther ) tinP.pEther->osTimeNowF( tinP , timeB1 , timeB2 ) ;
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 1 ] && ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
             //ZE( sCountT , timeB2 ) ;
             //ZE( countT  , timeB1 ) ;
 
@@ -89,7 +89,7 @@
             ++ s ;
         {
         while( !*this && cbToDo )
-        sleepC s( tinP , TAG( TAGiDnULL ) , 1 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) , 1 ) ;
     {
     ZE( countT , offo ) ;
 
@@ -98,9 +98,9 @@
     boolT fhok         = !!( F(flagsP) & flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
     PRO = cbToDo ; PROSHO ;
     countT cbToDo = cbP ;
-    if( pEtherContainsMe ) pEtherContainsMe->chokeAttackerF( tinP , handleP , cbP ) ;
+    if( pEtherContainsMe ) pEtherContainsMe->chokeAttackerF( tinBaseP , handleP , cbP ) ;
 
-    if( time1P || time2P ) s_registerTimeoutF( tinP , handleP , time1P , time2P ) ;
+    if( time1P || time2P ) s_registerTimeoutF( tinBaseP , handleP , time1P , time2P ) ;
 
     _IO_
     
@@ -116,7 +116,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/countT thirdC::s_readOrPeekPrivateF( tinS& tinP , byteT* const pbP , const countT cbP , handleC& handleP , const flagsT flagsTcpP , const flagsT flagsP , const countT time1P , const sCountT time2P , const countT idModeP )/*1*/
+/*1*/countT thirdC::s_readOrPeekPrivateF( tinBaseS& tinBaseP , byteT* const pbP , const countT cbP , handleC& handleP , const flagsT flagsTcpP , const flagsT flagsP , const countT time1P , const sCountT time2P , const countT idModeP )/*1*/
 
 /**/
 */

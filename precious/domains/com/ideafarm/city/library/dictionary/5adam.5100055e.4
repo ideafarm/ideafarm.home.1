@@ -9,31 +9,31 @@
 
 }
     }
-        replaceButtonsF( tinP , etherP , cArgP , tButtons , CSTTmINbUTTONS , T("IPDOS (tm)  buttons") ) ;
+        replaceButtonsF( tinBaseP , etherP , cArgP , tButtons , CSTTmINbUTTONS , T("IPDOS (tm)  buttons") ) ;
         if(      paramP.treeKt.rightF( 1 , 1 ) ) tButtons += T(" ")+paramP.buClimbRight ;
         if(      paramP.treeKt.leftF(  1 , 1 ) ) tButtons += T(" ")+paramP.buClimbLeft  ;
         if( 2 == paramP.treeKt.upF(    2 , 1 ) ) tButtons += T(" ")+paramP.buClimbUp    ;
         if( 2 == paramP.treeKt.downF(  2 , 1 ) ) tButtons += T(" ")+paramP.buClimbDown  ;
         TN( tButtons , "" ) ; tButtons = paramP.buEscape+T(" ")+paramP.buF1/*+T(" ")+paramP.buF2*/+T(" ")+paramP.buSubscribe ;
 
-        resizeIfF( tinP , cArgP , etherP ) ;
+        resizeIfF( tinBaseP , cArgP , etherP ) ;
         paramP.treeKt.downF( 2 ) ;
     {
     if( 2 == paramP.treeKt.downF( 2 , 1 ) )
     ARGgET( cArgP )
 {
-voidT doDownF( tinS& tinP , etherC& etherP , const countT cArgP )
+voidT doDownF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP )
 
 }
-    treeP.newF( tinP , LF , (countT)pbMe , flagsP ) ;
-    cbContentP += etherP.strEncodeF( tinP , pbMe , psttP , pbEndP ) ;
+    treeP.newF( tinBaseP , LF , (countT)pbMe , flagsP ) ;
+    cbContentP += etherP.strEncodeF( tinBaseP , pbMe , psttP , pbEndP ) ;
     byteT* pbMe = pbContentP + cbContentP ;
 {
-voidT brF( tinS& tinP , etherC& etherP , treeC& treeP , byteT*& pbContentP , countT& cbContentP , const byteT* const pbEndP , const flagsT flagsP , const strokeS* const psttP )
+voidT brF( tinBaseS& tinBaseP , etherC& etherP , treeC& treeP , byteT*& pbContentP , countT& cbContentP , const byteT* const pbEndP , const flagsT flagsP , const strokeS* const psttP )
 
 }
-    else            paramP.vtView.setF( tinP , T("")+S2(1+incv02AM(paramP.idEventViewSelectLath),sc_NULL) ) ;
-    if( !bNewSize ) freshViewOfBranchesF( tinP , etherP , cArgP ) ;
+    else            paramP.vtView.setF( tinBaseP , T("")+S2(1+incv02AM(paramP.idEventViewSelectLath),sc_NULL) ) ;
+    if( !bNewSize ) freshViewOfBranchesF( tinBaseP , etherP , cArgP ) ;
 
     }
         }
@@ -63,12 +63,12 @@ voidT brF( tinS& tinP , etherC& etherP , treeC& treeP , byteT*& pbContentP , cou
 
     ARGgET( cArgP )
 {
-voidT resizeIfF( tinS& tinP , countT cArgP , etherC& etherP )
+voidT resizeIfF( tinBaseS& tinBaseP , countT cArgP , etherC& etherP )
 
 }
     }
-        ppvtClockP[ offo ++ ]->setF( tinP , T("")+S2(0,scOld_FRAMEaTTACH)+S3(mFrames,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttLabelP)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAMEdETACH) ) ;
-        strokeS::renderSizeIF( tinP , etherP , psttLabelP , mCols , mPads , mFrames ) ;
+        ppvtClockP[ offo ++ ]->setF( tinBaseP , T("")+S2(0,scOld_FRAMEaTTACH)+S3(mFrames,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttLabelP)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAMEdETACH) ) ;
+        strokeS::renderSizeIF( tinBaseP , etherP , psttLabelP , mCols , mPads , mFrames ) ;
         ZE( measureT , mFrames ) ;
         ZE( measureT , mPads ) ;
         ZE( measureT , mCols ) ;
@@ -108,7 +108,7 @@ voidT resizeIfF( tinS& tinP , countT cArgP , etherC& etherP )
             T("")
             //STROKE A SQUARC
 
-        ppvtClockP[ offo ++ ]->setF( tinP ,
+        ppvtClockP[ offo ++ ]->setF( tinBaseP ,
     {
     for( countT off = idWothP - 1 ; off < idLath ; off ++ )
     ZE( countT , offo ) ;
@@ -119,8 +119,8 @@ voidT resizeIfF( tinS& tinP , countT cArgP , etherC& etherP )
 
     }
         }
-            pvtHintP->setF( tinP , T("")+S3(1.0,scOld_mmFRAMEtO,1.0)/*+S3(1.0,scOld_mmPADfORsADAMfRAMES,0.0)*/+S3(mFrames,scOld_mmFRAMEcELLS,(measureT)1.0)+tHint+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
-            strokeS::renderSizeIF( tinP , etherP , tHint , mCols , mPads , mFrames ) ;
+            pvtHintP->setF( tinBaseP , T("")+S3(1.0,scOld_mmFRAMEtO,1.0)/*+S3(1.0,scOld_mmPADfORsADAMfRAMES,0.0)*/+S3(mFrames,scOld_mmFRAMEcELLS,(measureT)1.0)+tHint+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
+            strokeS::renderSizeIF( tinBaseP , etherP , tHint , mCols , mPads , mFrames ) ;
             ZE( measureT , mFrames ) ;
             ZE( measureT , mPads ) ;
             ZE( measureT , mCols ) ;
@@ -145,25 +145,25 @@ voidT resizeIfF( tinS& tinP , countT cArgP , etherC& etherP )
             strokeS* psttHint = tHint ;
         {
     
-        TN( tHint , "" ) ; tHint = T("")+S2(ifcRGB_W4,scOld_cPUSHcOLOR)+textC(time1P,time2P,tinP,TAG(TAGiDnULL),flFORMAT_null,idWothP,idLath,S1C('.'),T(" ")+S2(0,scOld_POPcOLOR)+S2(ifcRGB_W4,scOld_cPUSHcOLOR),ifcIDfORMATtIME_TEXT)+S2(0,scOld_POPcOLOR) ;
+        TN( tHint , "" ) ; tHint = T("")+S2(ifcRGB_W4,scOld_cPUSHcOLOR)+textC(time1P,time2P,tinBaseP,TAG(TAGiDnULL),flFORMAT_null,idWothP,idLath,S1C('.'),T(" ")+S2(0,scOld_POPcOLOR)+S2(ifcRGB_W4,scOld_cPUSHcOLOR),ifcIDfORMATtIME_TEXT)+S2(0,scOld_POPcOLOR) ;
     {
     if( pvtHintP )
 
     countT idLath = idWothP - 1 + cpvtClockP - !!psttLabelP ;
     if( !idWothP ) idWothP = 0x5 ;
 {
-voidT setClockHandsF( tinS& tinP , etherC& etherP , vTextC** ppvtClockP , const countT cpvtClockP , vTextC* const pvtHintP , countT time1P , sCountT time2P , const measureT rReachP , const strokeS* const psttLabelP , countT idWothP )
+voidT setClockHandsF( tinBaseS& tinBaseP , etherC& etherP , vTextC** ppvtClockP , const countT cpvtClockP , vTextC* const pvtHintP , countT time1P , sCountT time2P , const measureT rReachP , const strokeS* const psttLabelP , countT idWothP )
 
 }
     return csNeeded ;
 
     }
-        while( cToDo -- ) etherP.strFuseF( tinP , psttP , tn+S2(0,scOld_POPfRAME) ) ;
+        while( cToDo -- ) etherP.strFuseF( tinBaseP , psttP , tn+S2(0,scOld_POPfRAME) ) ;
         countT cToDo = 1 + cpvtClockP ;
 
-        for( countT off = 0 ; off < cpvtClockP ; off ++ ) etherP.strFuseF( tinP , psttP , tn+S2(0,scOld_FRAMEdETACH)+*ppvtClockP[off]+S3(rShrinkP,scOld_mmMOVEtO,rShrinkP)+S2(0,scOld_POPfRAMEdETACH)+S3(rShrinkTo,scOld_mmFRAMEtO,rShrinkTo) ) ;
+        for( countT off = 0 ; off < cpvtClockP ; off ++ ) etherP.strFuseF( tinBaseP , psttP , tn+S2(0,scOld_FRAMEdETACH)+*ppvtClockP[off]+S3(rShrinkP,scOld_mmMOVEtO,rShrinkP)+S2(0,scOld_POPfRAMEdETACH)+S3(rShrinkTo,scOld_mmFRAMEtO,rShrinkTo) ) ;
     
-        etherP.strFuseF( tinP , psttP , tn+S3(1.0,scOld_mmFRAMEtO,1.0) , csNeeded - 1 ) ;
+        etherP.strFuseF( tinBaseP , psttP , tn+S3(1.0,scOld_mmFRAMEtO,1.0) , csNeeded - 1 ) ;
         TN( tn , "" ) ;
         const measureT rShrinkTo = 1.0 - rShrinkP ;
     {
@@ -172,31 +172,31 @@ voidT setClockHandsF( tinS& tinP , etherC& etherP , vTextC** ppvtClockP , const 
 
     //LOGrAW( T("rShrinkP: ")+TF1(rShrinkP)+T("\r\n") ) ; //U::
 {
-countT clockPhraseF( tinS& tinP , etherC& etherP , strokeS*& psttP , vTextC** const ppvtClockP , const countT cpvtClockP , const measureT rShrinkP )
+countT clockPhraseF( tinBaseS& tinBaseP , etherC& etherP , strokeS*& psttP , vTextC** const ppvtClockP , const countT cpvtClockP , const measureT rShrinkP )
 
 }
-    etherP.delF( tinP , pSee ) ;
+    etherP.delF( tinBaseP , pSee ) ;
     }
-        //paramP.win.baton.ungrabF( tinP ) ;
+        //paramP.win.baton.ungrabF( tinBaseP ) ;
     
         }
-            etherP.strokeF( tinP , T("\r\n") ) ;
+            etherP.strokeF( tinBaseP , T("\r\n") ) ;
     
             }
-                etherP.delF( tinP , psttw ) ;
+                etherP.delF( tinBaseP , psttw ) ;
                 }
-                    etherP.delF( tinP , psttSay ) ;
-                    paramP.pptcView[ offb ]->setF( tinP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttSay)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
-                    measureT mCs = squeezeF( tinP , etherP , psttSay , psttw , 0x10 ) ; ___( psttSay ) ;
+                    etherP.delF( tinBaseP , psttSay ) ;
+                    paramP.pptcView[ offb ]->setF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttSay)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
+                    measureT mCs = squeezeF( tinBaseP , etherP , psttSay , psttw , 0x10 ) ; ___( psttSay ) ;
                     ZE( strokeS* , psttSay ) ;
                 {
                 else
-                if( bMale ) paramP.pptcView[ offb ]->setF( tinP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(24.0,scOld_mmFRAMEcELLS,8.0)+S2(0,scOld_WRAPoN)+T(psttw)+S2(0,scOld_WRAPoFF)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
-                etherP.strDecodeF( tinP , psttw , (byteT*)pSee[offb].c2 ) ; ___( psttw ) ;
+                if( bMale ) paramP.pptcView[ offb ]->setF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(24.0,scOld_mmFRAMEcELLS,8.0)+S2(0,scOld_WRAPoN)+T(psttw)+S2(0,scOld_WRAPoFF)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
+                etherP.strDecodeF( tinBaseP , psttw , (byteT*)pSee[offb].c2 ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;
             {
             else
-            if( F(pSee[offb].c1) & flBRANCHs_MISSING ) paramP.pptcView[ offb ]->setF( tinP , tn ) ;
+            if( F(pSee[offb].c1) & flBRANCHs_MISSING ) paramP.pptcView[ offb ]->setF( tinBaseP , tn ) ;
     
             countT cBelow = offu * cAtLevel ;
     
@@ -206,19 +206,19 @@ countT clockPhraseF( tinS& tinP , etherC& etherP , strokeS*& psttP , vTextC** co
         {
         for( countT offb = 0 ; offb < cSee ; offb ++ )
     
-        //paramP.win.baton.grabF( tinP , TAG( TAGiDnULL ) ) ; //TO PREVENT POSSIBLE RENDERING OF A VOLATILE IN A NEW BRANCH BEFORE IT IS ERASED IN THE OLD BRANCH
+        //paramP.win.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ; //TO PREVENT POSSIBLE RENDERING OF A VOLATILE IN A NEW BRANCH BEFORE IT IS ERASED IN THE OLD BRANCH
         const countT cAtLevel = 1 + paramP.cLeft + paramP.cRight ;
     {
     if( pSee ) //TEST ADDED WITHOUT ANALYSIS
 
-    paramP.treeKt.lookF( tinP , pSee , cSee , paramP.cDown , paramP.cUp , paramP.cLeft , paramP.cRight ) ; ___( pSee ) ;
+    paramP.treeKt.lookF( tinBaseP , pSee , cSee , paramP.cDown , paramP.cUp , paramP.cLeft , paramP.cRight ) ; ___( pSee ) ;
     ZE( countT , cSee ) ;
     ZE( count2S* , pSee ) ;//U::O: PREALLOCATE THIS WHEN CHANGE SIZE
     TN( tn , "" ) ;
 
     ARGgET( cArgP )
 {
-voidT freshViewOfBranchesF( tinS& tinP , etherC& etherP , countT cArgP )
+voidT freshViewOfBranchesF( tinBaseS& tinBaseP , etherC& etherP , countT cArgP )
 
 }
     ;
@@ -253,34 +253,34 @@ voidT freshViewOfBranchesF( tinS& tinP , etherC& etherP , countT cArgP )
 
     }
         csShort = mFrames ;
-        strokeS::renderSizeIF( tinP , etherP , tNameShort , mCols , mPads , mFrames ) ;
+        strokeS::renderSizeIF( tinBaseP , etherP , tNameShort , mCols , mPads , mFrames ) ;
         ZE( measureT , mFrames ) ;
         ZE( measureT , mPads ) ;
         ZE( measureT , mCols ) ;
     {
     ZE( countT , csShort ) ;
     
-    setTmShortF( tinP , tNameShort ) ;
+    setTmShortF( tinBaseP , tNameShort ) ;
     TN( tNameShort , "" ) ;
     
     }
         csLong = mFrames ;
-        strokeS::renderSizeIF( tinP , etherP , tNameLong , mCols , mPads , mFrames ) ;
+        strokeS::renderSizeIF( tinBaseP , etherP , tNameLong , mCols , mPads , mFrames ) ;
         ZE( measureT , mFrames ) ;
         ZE( measureT , mPads ) ;
         ZE( measureT , mCols ) ;
     {
     ZE( countT , csLong ) ;
 
-    hintF( tinP , etherP , cArgP , paramP.tHintDefault , 0 , flHINT_EVENiFfULLsCREEN ) ;
+    hintF( tinBaseP , etherP , cArgP , paramP.tHintDefault , 0 , flHINT_EVENiFfULLsCREEN ) ;
     paramP.tHintDefault = T("") ;
     
-    setTmLongF( tinP , tNameLong ) ;
+    setTmLongF( tinBaseP , tNameLong ) ;
     TN( tNameLong , "" ) ;
 
     ARGgET( cArgP )
 {
-voidT setFullScreenConsoleF( tinS& tinP , etherC& etherP , textC& tP , const countT cArgP )
+voidT setFullScreenConsoleF( tinBaseS& tinBaseP , etherC& etherP , textC& tP , const countT cArgP )
 
 }
     ;
@@ -304,34 +304,34 @@ voidT setFullScreenConsoleF( tinS& tinP , etherC& etherP , textC& tP , const cou
 
     }
         csShort = mFrames ;
-        strokeS::renderSizeIF( tinP , etherP , tNameShort , mCols , mPads , mFrames ) ;
+        strokeS::renderSizeIF( tinBaseP , etherP , tNameShort , mCols , mPads , mFrames ) ;
         ZE( measureT , mFrames ) ;
         ZE( measureT , mPads ) ;
         ZE( measureT , mCols ) ;
     {
     ZE( countT , csShort ) ;
     
-    setTmShortF( tinP , tNameShort ) ;
+    setTmShortF( tinBaseP , tNameShort ) ;
     TN( tNameShort , "" ) ;
     
     }
         csLong = mFrames ;
-        strokeS::renderSizeIF( tinP , etherP , tNameLong , mCols , mPads , mFrames ) ;
+        strokeS::renderSizeIF( tinBaseP , etherP , tNameLong , mCols , mPads , mFrames ) ;
         ZE( measureT , mFrames ) ;
         ZE( measureT , mPads ) ;
         ZE( measureT , mCols ) ;
     {
     ZE( countT , csLong ) ;
 
-    hintF( tinP , etherP , cArgP , paramP.tHintDefault , 0 ) ;
+    hintF( tinBaseP , etherP , cArgP , paramP.tHintDefault , 0 ) ;
     paramP.tHintDefault = tNameLong ;
     
-    setTmLongF( tinP , tNameLong ) ;
+    setTmLongF( tinBaseP , tNameLong ) ;
     TN( tNameLong , "" ) ;
 
     ARGgET( cArgP )
 {
-voidT setConsoleF( tinS& tinP , etherC& etherP , textC& tP , const countT cArgP )
+voidT setConsoleF( tinBaseS& tinBaseP , etherC& etherP , textC& tP , const countT cArgP )
 
 }
     paramP.idFloor = idFloorP ;
@@ -339,72 +339,72 @@ voidT setConsoleF( tinS& tinP , etherC& etherP , textC& tP , const countT cArgP 
     }
         }
             break ;
-            replaceButtonsF( tinP , etherP , cArgP , tButtons , CSTTmINbUTTONS ) ;
+            replaceButtonsF( tinBaseP , etherP , cArgP , tButtons , CSTTmINbUTTONS ) ;
 
-            etherP.strMakeF( tinP , LF , paramP.psttHintEscape , T("escape (to confidential disclosure)") ) ; ___( paramP.psttHintEscape ) ;
-            etherP.delF( tinP , paramP.psttHintEscape ) ;
+            etherP.strMakeF( tinBaseP , LF , paramP.psttHintEscape , T("escape (to confidential disclosure)") ) ; ___( paramP.psttHintEscape ) ;
+            etherP.delF( tinBaseP , paramP.psttHintEscape ) ;
 
             if(      paramP.treeKt.rightF( 1 , 1 ) ) tButtons += T(" ")+paramP.buClimbRight ;
             if(      paramP.treeKt.leftF(  1 , 1 ) ) tButtons += T(" ")+paramP.buClimbLeft  ;
             if( 2 == paramP.treeKt.upF(    2 , 1 ) ) tButtons += T(" ")+paramP.buClimbUp    ;
             if( 2 == paramP.treeKt.downF(  2 , 1 ) ) tButtons += T(" ")+paramP.buClimbDown  ;
             TN( tButtons , "" ) ; tButtons = paramP.buEscape+T(" ")+paramP.buF1/*+T(" ")+paramP.buF2*/+T(" ")+paramP.buSubscribe ;
-            hintF( tinP , etherP , cArgP , T("this is the IPDOS (tm) operator interface") ) ;
+            hintF( tinBaseP , etherP , cArgP , T("this is the IPDOS (tm) operator interface") ) ;
         {
         case ifcIDfLOOR_CONSOLE :
         }
             break ;
-            loadSpeechF( tinP , etherP , cArgP , ifcIDsPEECH_FLOORdISCLOSURE ) ;
-            replaceButtonsF( tinP , etherP , cArgP , paramP.buEscape+T(" ")+paramP.buSubscribe+T(" ")+paramP.buIntro+T(" ")+paramP.buCredits+T(" ")+paramP.buSermon+T(" ")+paramP.buConsole , CSTTmINbUTTONS ) ;
+            loadSpeechF( tinBaseP , etherP , cArgP , ifcIDsPEECH_FLOORdISCLOSURE ) ;
+            replaceButtonsF( tinBaseP , etherP , cArgP , paramP.buEscape+T(" ")+paramP.buSubscribe+T(" ")+paramP.buIntro+T(" ")+paramP.buCredits+T(" ")+paramP.buSermon+T(" ")+paramP.buConsole , CSTTmINbUTTONS ) ;
 
-            etherP.strMakeF( tinP , LF , paramP.psttHintEscape , T("escape (to list of authorized users)") ) ; ___( paramP.psttHintEscape ) ;
-            etherP.delF( tinP , paramP.psttHintEscape ) ;
+            etherP.strMakeF( tinBaseP , LF , paramP.psttHintEscape , T("escape (to list of authorized users)") ) ; ___( paramP.psttHintEscape ) ;
+            etherP.delF( tinBaseP , paramP.psttHintEscape ) ;
 
             }
-                etherP.strokeF( tinP , T("\f")+tBanner ) ;
-                //etherP.strokeF( tinP , T("\f")+S3(16.0,scOld_mmFRAMEcELLS,(measureT)1.0)+T("Fooey")+S2(0,scOld_POPfRAME)/*U::tBanner*/ ) ;
-                TN( tBanner , "" ) ; setBannerF( tinP , etherP , tBanner , cArgP ) ;
-                etherP.delF( tinP , paramP.psttLabelRemaining ) ;
+                etherP.strokeF( tinBaseP , T("\f")+tBanner ) ;
+                //etherP.strokeF( tinBaseP , T("\f")+S3(16.0,scOld_mmFRAMEcELLS,(measureT)1.0)+T("Fooey")+S2(0,scOld_POPfRAME)/*U::tBanner*/ ) ;
+                TN( tBanner , "" ) ; setBannerF( tinBaseP , etherP , tBanner , cArgP ) ;
+                etherP.delF( tinBaseP , paramP.psttLabelRemaining ) ;
                 paramP.rReachRemaining = 1.0 / 128.0 ;
             {
             if( F(flagsP) & flSETfLOOR_ESCAPE )
-            hintF( tinP , etherP , cArgP , T("the disclosure will begin in a moment") ) ;
+            hintF( tinBaseP , etherP , cArgP , T("the disclosure will begin in a moment") ) ;
         {
         case ifcIDfLOOR_DISCLOSURE :
         }
             break ;
-            replaceButtonsF( tinP , etherP , cArgP , paramP.buEscape+T(" ")+paramP.prPrompt , CSTTmINbUTTONS ) ;
-            loadSpeechF( tinP , etherP , cArgP , ifcIDsPEECH_FLOORsECRET ) ;
-            hintF( tinP , etherP , cArgP , T("instructions for entering the gate key will appear in a moment") ) ;
+            replaceButtonsF( tinBaseP , etherP , cArgP , paramP.buEscape+T(" ")+paramP.prPrompt , CSTTmINbUTTONS ) ;
+            loadSpeechF( tinBaseP , etherP , cArgP , ifcIDsPEECH_FLOORsECRET ) ;
+            hintF( tinBaseP , etherP , cArgP , T("instructions for entering the gate key will appear in a moment") ) ;
 
-            etherP.strMakeF( tinP , LF , paramP.psttHintEscape , T("escape (to list of authorized users)") ) ; ___( paramP.psttHintEscape ) ;
-            etherP.delF( tinP , paramP.psttHintEscape ) ;
+            etherP.strMakeF( tinBaseP , LF , paramP.psttHintEscape , T("escape (to list of authorized users)") ) ; ___( paramP.psttHintEscape ) ;
+            etherP.delF( tinBaseP , paramP.psttHintEscape ) ;
         {
         case ifcIDfLOOR_PROMPTfORsECRET :
         }
             break ;
             etherP.osThreadF( TaRG1( tmSetFloorUsersF ) , cArgP ) ;
-            loadSpeechF( tinP , etherP , cArgP , ifcIDsPEECH_FLOORuSERS ) ;
-            hintF( tinP , etherP , cArgP , T("instructions for identifying yourself will appear in a moment") ) ;
+            loadSpeechF( tinBaseP , etherP , cArgP , ifcIDsPEECH_FLOORuSERS ) ;
+            hintF( tinBaseP , etherP , cArgP , T("instructions for identifying yourself will appear in a moment") ) ;
         {
         case ifcIDfLOOR_USERS :
         }
             break ;
-            replaceButtonsF( tinP , etherP , cArgP , paramP.buEscape+T(" ")+paramP.buIntro+T(" ")+paramP.buCredits+T(" ")+paramP.buSermon+T(" ")+paramP.buGate , CSTTmINbUTTONS ) ;
-            loadSpeechF( tinP , etherP , cArgP , ifcIDsPEECH_FLOORbANNER ) ;
+            replaceButtonsF( tinBaseP , etherP , cArgP , paramP.buEscape+T(" ")+paramP.buIntro+T(" ")+paramP.buCredits+T(" ")+paramP.buSermon+T(" ")+paramP.buGate , CSTTmINbUTTONS ) ;
+            loadSpeechF( tinBaseP , etherP , cArgP , ifcIDsPEECH_FLOORbANNER ) ;
 
-            etherP.strMakeF( tinP , LF , paramP.psttHintEscape , T("escape (to base operating system operator's console)") ) ; ___( paramP.psttHintEscape ) ;
-            etherP.delF( tinP , paramP.psttHintEscape ) ;
+            etherP.strMakeF( tinBaseP , LF , paramP.psttHintEscape , T("escape (to base operating system operator's console)") ) ; ___( paramP.psttHintEscape ) ;
+            etherP.delF( tinBaseP , paramP.psttHintEscape ) ;
 
             }
-                etherP.strokeF( tinP , T("\f")+tBanner ) ;
-                TN( tBanner , "" ) ; setBannerF( tinP , etherP , tBanner , cArgP ) ; //PRODUCTION
-                //TN( tBanner , "" ) ; setConsoleF( tinP , etherP , tBanner , cArgP ) ; //TESTING
+                etherP.strokeF( tinBaseP , T("\f")+tBanner ) ;
+                TN( tBanner , "" ) ; setBannerF( tinBaseP , etherP , tBanner , cArgP ) ; //PRODUCTION
+                //TN( tBanner , "" ) ; setConsoleF( tinBaseP , etherP , tBanner , cArgP ) ; //TESTING
             {
             else
             if( F(flagsP) & flSETfLOOR_ESCAPE ) paramP.bQuitTmUsers = 1 ;
 
-            hintF( tinP , etherP , cArgP , paramP.tHintDefault ) ;
+            hintF( tinBaseP , etherP , cArgP , paramP.tHintDefault ) ;
         {
         case ifcIDfLOOR_BANNER :
     {
@@ -421,7 +421,7 @@ voidT setConsoleF( tinS& tinP , etherC& etherP , textC& tP , const countT cArgP 
 
     ARGgET( cArgP )
 {
-voidT setFloorF( tinS& tinP , etherC& etherP , const countT cArgP , countT idFloorP , const flagsT flagsP )
+voidT setFloorF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , countT idFloorP , const flagsT flagsP )
 
 }
     ;
@@ -446,7 +446,7 @@ voidT setFloorF( tinS& tinP , etherC& etherP , const countT cArgP , countT idFlo
     
     tP =
 {
-voidT setTmShortF( tinS& tinP , textC& tP )
+voidT setTmShortF( tinBaseS& tinBaseP , textC& tP )
 
 }
     ;
@@ -464,10 +464,10 @@ voidT setTmShortF( tinS& tinP , textC& tP )
     
     tP =
 {
-voidT setTmLongF( tinS& tinP , textC& tP )
+voidT setTmLongF( tinBaseS& tinBaseP , textC& tP )
 
 }
-    etherP.delF( tinP , psttOldClock ) ;
+    etherP.delF( tinBaseP , psttOldClock ) ;
     ;
     
         S2(0,scOld_POPfRAME)
@@ -534,63 +534,63 @@ voidT setTmLongF( tinS& tinP , textC& tP )
     const measureT rsbr = 1.0 - rsb ;
     const measureT rsb  = 0.10 ;
 
-    clockPhraseF( tinP , etherP , psttOldClock , paramP.ppvtClockBanner , paramP.cpvtClockBanner , 1.0 / 128.0 ) ;
+    clockPhraseF( tinBaseP , etherP , psttOldClock , paramP.ppvtClockBanner , paramP.cpvtClockBanner , 1.0 / 128.0 ) ;
     ZE( strokeS* , psttOldClock ) ;
 
     }
         csShort = mFrames ;
-        strokeS::renderSizeIF( tinP , etherP , tNameShort , mCols , mPads , mFrames ) ;
+        strokeS::renderSizeIF( tinBaseP , etherP , tNameShort , mCols , mPads , mFrames ) ;
         ZE( measureT , mFrames ) ;
         ZE( measureT , mPads ) ;
         ZE( measureT , mCols ) ;
     {
     ZE( countT , csShort ) ;
     
-    setTmShortF( tinP , tNameShort ) ;
+    setTmShortF( tinBaseP , tNameShort ) ;
     TN( tNameShort , "" ) ;
     
     }
         csLong = mFrames ;
-        strokeS::renderSizeIF( tinP , etherP , tNameLong , mCols , mPads , mFrames ) ;
+        strokeS::renderSizeIF( tinBaseP , etherP , tNameLong , mCols , mPads , mFrames ) ;
         ZE( measureT , mFrames ) ;
         ZE( measureT , mPads ) ;
         ZE( measureT , mCols ) ;
     {
     ZE( countT , csLong ) ;
     
-    setTmLongF( tinP , tNameLong ) ;
+    setTmLongF( tinBaseP , tNameLong ) ;
     TN( tNameLong , "" ) ;
 
     ARGgET( cArgP )
 {
-voidT setBannerF( tinS& tinP , etherC& etherP , textC& tP , const countT cArgP )
+voidT setBannerF( tinBaseS& tinBaseP , etherC& etherP , textC& tP , const countT cArgP )
 
 }
     stSpeechP << (byteT*)&c3p ;
     count3S c3p( (countT)psttw , (countT)pstth , timeHint1P ) ; pstth = psttw = 0 ;
 
-    if( psttHintP ) { etherP.strMakeF( tinP , LF , pstth , psttHintP ) ; ___( pstth ) ; }
+    if( psttHintP ) { etherP.strMakeF( tinBaseP , LF , pstth , psttHintP ) ; ___( pstth ) ; }
     ZE( strokeS* , pstth ) ;
-    squeezeF( tinP , etherP , psttw , psttP , CSTTmINsPEAK ) ; ___( psttw ) ;
+    squeezeF( tinBaseP , etherP , psttw , psttP , CSTTmINsPEAK ) ; ___( psttw ) ;
     ZE( strokeS* , psttw ) ;
 {
-voidT speakF( tinS& tinP , etherC& etherP , stackC& stSpeechP , const strokeS* const psttP , const strokeS* const psttHintP , const countT timeHint1P )
+voidT speakF( tinBaseS& tinBaseP , etherC& etherP , stackC& stSpeechP , const strokeS* const psttP , const strokeS* const psttHintP , const countT timeHint1P )
 
 }
     }
         }
-            etherP.delF( tinP , psttw ) ;
+            etherP.delF( tinBaseP , psttw ) ;
     
-            else                               paramP.vtHint.setF( tinP , T("")                       +S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttw)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME)                         ) ;
-            if( ( F(flagsP) & flHINT_TRACE ) ) paramP.vtHint.setF( tinP , T("")+S2(0,scOld_TRACEoN)+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttw)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME)+S2(0,scOld_TRACEoFF) ) ;
+            else                               paramP.vtHint.setF( tinBaseP , T("")                       +S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttw)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME)                         ) ;
+            if( ( F(flagsP) & flHINT_TRACE ) ) paramP.vtHint.setF( tinBaseP , T("")+S2(0,scOld_TRACEoN)+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttw)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME)+S2(0,scOld_TRACEoFF) ) ;
             //CODEsYNC: 4650104 4650104
     
-            measureT mCs = squeezeF( tinP , etherP , psttw , psttP , CSTTmINhINT ) ; ___( psttw ) ;
+            measureT mCs = squeezeF( tinBaseP , etherP , psttw , psttP , CSTTmINhINT ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
         
             }
-                etherP.osTimeAddF( tinP , paramP.timeHintExpires1 , paramP.timeHintExpires2 , time1P ) ;
-                etherP.osTimeNowF( tinP , paramP.timeHintExpires1 , paramP.timeHintExpires2 ) ; //U::SERIALIZE TO AVOID ANOTHER THREAD SETTING A VALUE AND MAKING ME FAIL
+                etherP.osTimeAddF( tinBaseP , paramP.timeHintExpires1 , paramP.timeHintExpires2 , time1P ) ;
+                etherP.osTimeNowF( tinBaseP , paramP.timeHintExpires1 , paramP.timeHintExpires2 ) ; //U::SERIALIZE TO AVOID ANOTHER THREAD SETTING A VALUE AND MAKING ME FAIL
             {
             if( time1P )
             paramP.timeHintExpires2 = paramP.timeHintExpires1 = 0 ;
@@ -598,14 +598,14 @@ voidT speakF( tinS& tinP , etherC& etherP , stackC& stSpeechP , const strokeS* c
         if( bDo )
     
         }
-            etherP.delF( tinP , psttv ) ;
+            etherP.delF( tinBaseP , psttv ) ;
     
-            bDo = 4 == etherP.strIdF( tinP , paramP.tHintDefault , psttv ) ;        //CODEsYNC: 4650104 4650104
+            bDo = 4 == etherP.strIdF( tinBaseP , paramP.tHintDefault , psttv ) ;        //CODEsYNC: 4650104 4650104
             //IT CAN BE FIXED BY USING SUBSTRING TO RETRIEVE psttw FROM psttv
             //THIS IS NOT AS OF THIS WRITING A CONCERN
             //WILL MISTAKENLY SET bDo IF NONDEFAULT HINT BEGINS WITH THE DEFAULT HINT
     
-            paramP.vtHint.getF( tinP , psttv ) ; ___( psttv ) ;
+            paramP.vtHint.getF( tinBaseP , psttv ) ; ___( psttv ) ;
             ZE( strokeS* , psttv ) ;
         {
         if( !bDo )
@@ -615,10 +615,10 @@ voidT speakF( tinS& tinP , etherC& etherP , stackC& stSpeechP , const strokeS* c
 
     ARGgET( cArgP )
 {
-voidT hintF( tinS& tinP , etherC& etherP , const countT cArgP , const strokeS* const psttP , const countT time1P , const flagsT flagsP )
+voidT hintF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , const strokeS* const psttP , const countT time1P , const flagsT flagsP )
 
 }
-    hintF( tinP , etherP , cArgP , tSay , 0 ) ;
+    hintF( tinBaseP , etherP , cArgP , tSay , 0 ) ;
 
     ;
 
@@ -658,15 +658,15 @@ voidT hintF( tinS& tinP , etherC& etherP , const countT cArgP , const strokeS* c
 
     ARGgET( cArgP )
 {
-voidT hintEyeF( tinS& tinP , etherC& etherP , const countT cArgP )
+voidT hintEyeF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP )
 
 }
-    etherP.delF( tinP , psttwp ) ;
-    etherP.delF( tinP , psttw ) ;
-    paramP.vtButtonsPad.setF( tinP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCsp,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttwp)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
-    paramP.vtButtons.setF(    tinP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttw)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
-    measureT mCsp = squeezeF( tinP , etherP , psttwp , bList.psttButtons , 0             ) ; ___( psttwp ) ;
-    measureT mCs  = squeezeF( tinP , etherP , psttw  , bList.psttButtons , bList.csttMin ) ; ___( psttw  ) ;
+    etherP.delF( tinBaseP , psttwp ) ;
+    etherP.delF( tinBaseP , psttw ) ;
+    paramP.vtButtonsPad.setF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCsp,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttwp)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
+    paramP.vtButtons.setF(    tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttw)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
+    measureT mCsp = squeezeF( tinBaseP , etherP , psttwp , bList.psttButtons , 0             ) ; ___( psttwp ) ;
+    measureT mCs  = squeezeF( tinBaseP , etherP , psttw  , bList.psttButtons , bList.csttMin ) ; ___( psttw  ) ;
     ZE( strokeS* , psttwp ) ;
     ZE( strokeS* , psttw ) ;  
 
@@ -674,51 +674,51 @@ voidT hintEyeF( tinS& tinP , etherC& etherP , const countT cArgP )
 
     ARGgET( cArgP )
 {
-voidT vtButtonsF( tinS& tinP , etherC& etherP , const countT cArgP )
+voidT vtButtonsF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP )
 
 }
-    return mFrames + 2 * tPad.csF( tinP ) ;
+    return mFrames + 2 * tPad.csF( tinBaseP ) ;
 
-    etherP.strMakeF( tinP , LF , psttOutP , tPad+T(psttInP)+tPad ) ; ___( psttOutP ) ;
-    textC tPad( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , cNeeded2 ) ;
+    etherP.strMakeF( tinBaseP , LF , psttOutP , tPad+T(psttInP)+tPad ) ; ___( psttOutP ) ;
+    textC tPad( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , cNeeded2 ) ;
     countT cNeeded2 = cNeeded - cNeeded1 ;
     countT cNeeded1 = cNeeded / 2 ;
     countT cNeeded = mFrames < csttMinP ? csttMinP - mFrames : 0 ;
-    strokeS::renderSizeIF( tinP , etherP , psttInP , mCols , mPads , mFrames ) ;
+    strokeS::renderSizeIF( tinBaseP , etherP , psttInP , mCols , mPads , mFrames ) ;
     ZE( measureT , mFrames ) ;
     ZE( measureT , mPads ) ;
     ZE( measureT , mCols ) ;
 {
-countT squeezeF( tinS& tinP , etherC& etherP , strokeS*& psttOutP , const strokeS* const psttInP , const countT csttMinP )
+countT squeezeF( tinBaseS& tinBaseP , etherC& etherP , strokeS*& psttOutP , const strokeS* const psttInP , const countT csttMinP )
 
 }
-    paramP.stSpeech.ungrabF( tinP ) ;
+    paramP.stSpeech.ungrabF( tinBaseP ) ;
     }
-        etherP.delF( tinP , *(strokeS**)&c3p.c2 ) ;
-        etherP.delF( tinP , *(strokeS**)&c3p.c1 ) ;
+        etherP.delF( tinBaseP , *(strokeS**)&c3p.c2 ) ;
+        etherP.delF( tinBaseP , *(strokeS**)&c3p.c1 ) ;
         paramP.stSpeech >> pb_c3p ;
         byteT* pb_c3p = (byteT*)&c3p ;
         count3S c3p ;
     {
     while( paramP.stSpeech )
-    paramP.stSpeech.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    paramP.stSpeech.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     ARGgET( cArgP )
 {
-voidT purgeSpeechF( tinS& tinP , etherC& etherP , const countT cArgP )
+voidT purgeSpeechF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP )
 
 }
-    ++ s ; etherP.osSleepF( tinP , time1P ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; etherP.osSleepF( tinBaseP , time1P ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-voidT napF( tinS& tinP , etherC& etherP , const countT time1P )
+voidT napF( tinBaseS& tinBaseP , etherC& etherP , const countT time1P )
 
 }
-    paramP.win.filterGrabMouseF( tinP , paramP.vtEye.idAdamF( tinP ) , F(paramP.flags) & flPARAM_EYEbUTTONSrENDERED && F(paramP.flags) & flPARAM_FULLsCREEN && paramP.idView == ifcIDvIEW_HUGE ) ;
+    paramP.win.filterGrabMouseF( tinBaseP , paramP.vtEye.idAdamF( tinBaseP ) , F(paramP.flags) & flPARAM_EYEbUTTONSrENDERED && F(paramP.flags) & flPARAM_FULLsCREEN && paramP.idView == ifcIDvIEW_HUGE ) ;
     //THE OLD SYSTEM CODE WORKED, BUT I DON'T KNOW WHY IT WORKED; c1 WAS NEVER USED
     //FILTER SYSTEM CODE WAS EDITED TO FILTER ON idAdam; THIS HAS NOT BEEN TESTED FOR THIS OR ANY OTHER APPLICATION CODE
     ARGgET( cArgP )
 {
-voidT filterGrabMouseF( tinS& tinP , const countT cArgP )
+voidT filterGrabMouseF( tinBaseS& tinBaseP , const countT cArgP )
 
 #include postADAMhEADER
 

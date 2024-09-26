@@ -9,20 +9,20 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.traceF( tinP , T("[idCopy]: ")+TF3(idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,sizeof(countT)*2) ) ;
+    etThread.traceF( tinBaseP , T("[idCopy]: ")+TF3(idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,sizeof(countT)*2) ) ;
 
-    countT idCopy = master.idCopyF( tinP , tinP.pag1->idAdam ) ;
+    countT idCopy = master.idCopyF( tinBaseP , ((tinNormalS&)tinBaseP).pag1->idAdam ) ;
 
-    masterOldC master( tinP , etThread , TAG( TAGiDnULL ) , 0 , 0 ) ;
+    masterOldC master( tinBaseP , etThread , TAG( TAGiDnULL ) , 0 , 0 ) ;
 {
 
-etThread.traceF( tinP , T("[idCopy]: ")+TF3(idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,sizeof(countT)*2) ) ;
+etThread.traceF( tinBaseP , T("[idCopy]: ")+TF3(idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,sizeof(countT)*2) ) ;
 
-countT idCopy = etThread.ifcIdCopyF( tinP ) ;
+countT idCopy = etThread.ifcIdCopyF( tinBaseP ) ;
 
 TODO
 

@@ -12,7 +12,7 @@
 
     __NZ( cbz - sizeof( countT ) ) ;            
     __Z( pbz ) ;
-    __NZ( pBksBits->readF( tinP , pbz , cbz , hBitByte ) ) ;
+    __NZ( pBksBits->readF( tinBaseP , pbz , cbz , hBitByte ) ) ;
     countT cbz = sizeof( countT ) ;
     ZE( const byteT* , pbz ) ;
             
@@ -36,7 +36,7 @@
 
     if( cBitsIndex && offP >> cBitsIndex ) { BLAMMO ; }
 {
-/*1*/countT& barryC::operator ()( tinS& tinP , const countT offP , countT& maskP , countT& offBitP )/*1*/
+/*1*/countT& barryC::operator ()( tinBaseS& tinBaseP , const countT offP , countT& maskP , countT& offBitP )/*1*/
 
 /**/
 
@@ -51,7 +51,7 @@
   must be 0
  maskP
  offP
- tinP
+ tinBaseP
 parameters
 /*
 

@@ -19,20 +19,20 @@
                 DEL( pDoomed ) ;
                 if( bZombieDel ) { THREADmODE3oFF( flTHREADmODE3_DOnOTcaLLdELif ) ; }
             {
-            if( !( F(tinP.flagsThreadMode5) & flTHREADmODE5_TINiSnOTiNpOOL ) )          //20240919@2048: COMPILER ERROR IF PUT THIS TEST WITHIN THE PRECEDING IF STATEMENT
-            boolT bZombieDel = F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ;
+            if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_TINiSnOTiNpOOL ) )          //20240919@2048: COMPILER ERROR IF PUT THIS TEST WITHIN THE PRECEDING IF STATEMENT
+            boolT bZombieDel = F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ;
         {
         if( *(countT*)&pDoomed )                                                        //20240919@2048: CONJ: THIS APPEARS TO BE A CHECK FOR A NONZE FINGERPRINT
-        tinS* pDoomed = &tinP ;
+        tinBaseS* pDoomed = &tinBaseP ;
 
-        tinP.flags &= ~( F(flTINs_REGISTERED) ) ;
+        ((tinNormalS&)tinBaseP).flags &= ~( F(flTINs_REGISTERED) ) ;
         //IN_T
     {
 
     }
         }
-            __( !( F(tinP.flags) & flTINs_REGISTERED ) ) ;
-            __( !tinP.pag1->_thirdC_.pThPrime ) ;
+            __( !( F(((tinNormalS&)tinBaseP).flags) & flTINs_REGISTERED ) ) ;
+            __( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pThPrime ) ;
         {
         IFbEcAREFUL
         SCOOP

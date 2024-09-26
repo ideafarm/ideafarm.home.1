@@ -18,10 +18,10 @@ c2 = 2 ;
 c1 = 1 ;
 
 slPgm DEF(slDef,"addEmUp",lex) ;
-soulC slPgm( tinP , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ;
+soulC slPgm( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ;
 
 slDef OR(c1) O(sayerClass) OR(c2) O(sayerClass) O(c1) O(c2) O(adder) O(sayer) ;
-soulC slDef( tinP , TAG( TAGiDnULL ) ) ;
+soulC slDef( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 countC c2 ;
 countC c1 ;
@@ -29,7 +29,7 @@ sayerClassC sayerClass ;
 sayerC sayer ;
 adderC adder ;
 
-lexC lex( tinP , etThread , TAG( TAGiDnULL ) ) ;
+lexC lex( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -38,7 +38,7 @@ VARIABLE( countC , countT )
 )
     ,
 
-    PUSE( tinP , psttOldClass ) ;
+    PUSE( tinBaseP , psttOldClass ) ;
     POPUP( T("sayerClassC: the class is ")+T(psttOldClass) ) ;
     slP >> psttOldClass ; ___( psttOldClass ) ;
     ZE( strokeS* , psttOldClass ) ;

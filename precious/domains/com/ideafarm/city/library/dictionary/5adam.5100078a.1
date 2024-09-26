@@ -9,16 +9,16 @@
 
 REST
 
-etThread.traceF( tinP , T("bye") ) ;
-etherC::loafIF( tinP ) ;                            
-etThread.traceF( tinP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("bye") ) ;
+etherC::loafIF( tinBaseP ) ;                            
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.traceF( tinP , T("elapsed time: ")+TT(timeE1,timeE2) ) ;
-etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeB1 , timeB2 ) ;
+etThread.traceF( tinBaseP , T("elapsed time: ")+TT(timeE1,timeE2) ) ;
+etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeB1 , timeB2 ) ;
 timeE2 = timeC2 ;
 timeE1 = timeC1 ;
 
-etThread.osTimeNowF( tinP , timeC1 , timeC2 ) ;
+etThread.osTimeNowF( tinBaseP , timeC1 , timeC2 ) ;
 ZE( sCountT , timeC2 ) ;
 ZE( countT  , timeC1 ) ;
 
@@ -27,8 +27,8 @@ ZE( countT  , timeC1 ) ;
     }
         DEL( pInfo ) ;
         }
-            //etThread.traceF( tinP , T("found 1:    ")+T(fn) ) ;
-            //fileNameC fn( tinP , etThread , pInfo->psttIfoName ) ;
+            //etThread.traceF( tinBaseP , T("found 1:    ")+T(fn) ) ;
+            //fileNameC fn( tinBaseP , etThread , pInfo->psttIfoName ) ;
         {
         else
         }
@@ -37,22 +37,22 @@ ZE( countT  , timeC1 ) ;
         {
         if( !pInfo || !pInfo->psttIfoName )
 
-        etThread.diskFindFileOrDirF( tinP , pInfo , hFind , tPath , &pat ) ;
+        etThread.diskFindFileOrDirF( tinBaseP , pInfo , hFind , tPath , &pat ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-    patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tPattern , "*" ) ;
     TN( tPath , "///d/ideafarm.home.1/precious/domains/com/ideafarm/city/library/dictionary/" ) ;
 {
 
-etThread.traceF( tinP , T("elapsed time: ")+TT(timeE1,timeE2) ) ;
-etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+etThread.traceF( tinBaseP , T("elapsed time: ")+TT(timeE1,timeE2) ) ;
+etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
 sCountT timeE2 = timeB2 ;
 countT  timeE1 = timeB1 ;
 
-etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
+etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
 ZE( sCountT , timeB2 ) ;
 ZE( countT  , timeB1 ) ;
 
@@ -61,8 +61,8 @@ ZE( countT  , timeB1 ) ;
     }
         DEL( pInfo ) ;
         }
-            //etThread.traceF( tinP , T("found 1:    ")+T(fn) ) ;
-            //fileNameC fn( tinP , etThread , pInfo->psttIfoName ) ;
+            //etThread.traceF( tinBaseP , T("found 1:    ")+T(fn) ) ;
+            //fileNameC fn( tinBaseP , etThread , pInfo->psttIfoName ) ;
         {
         else
         }
@@ -71,15 +71,15 @@ ZE( countT  , timeB1 ) ;
         {
         if( !pInfo || !pInfo->psttIfoName )
 
-        etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ;
+        etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     TN( tLike , "///d/ideafarm.home.1/precious/domains/com/ideafarm/city/library/dictionary/*" ) ;
 {
 
-etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
 ZE( sCountT , timeA2 ) ;
 ZE( countT  , timeA1 ) ;
 

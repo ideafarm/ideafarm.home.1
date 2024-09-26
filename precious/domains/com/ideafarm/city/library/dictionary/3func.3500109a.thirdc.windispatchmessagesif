@@ -16,10 +16,10 @@
 
         rc = info.wParam ;
         }
-            //I MUST NOT REFER TO tinP WHILE I AM WORKING, OR AS I EXIT, BECAUSE tinP WILL BE DESTROYED BY THE WM_CLOSE HANDLER
-            BOSdOnOTtEST( WHATgbo , DispatchMessage( &info ) ) //WM_CLOSE: WILL DELETE etThread AND tinP
+            //I MUST NOT REFER TO tinBaseP WHILE I AM WORKING, OR AS I EXIT, BECAUSE tinBaseP WILL BE DESTROYED BY THE WM_CLOSE HANDLER
+            BOSdOnOTtEST( WHATgbo , DispatchMessage( &info ) ) //WM_CLOSE: WILL DELETE etThread AND tinBaseP
         
-            if( POOP || !tinP.brcRaw ) break ;
+            if( POOP || !((tinNormalS&)tinBaseP).brcRaw ) break ;
             BOSpOOP
             BOS( WHATgbo , BOSfAILiFmINUS1 , GetMessage( &info , 0 , 0 , 0 ) )
         {
@@ -41,7 +41,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT thirdC::winDispatchMessagesIF( tinS& tinP )/*1*/
+/*1*/countT thirdC::winDispatchMessagesIF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

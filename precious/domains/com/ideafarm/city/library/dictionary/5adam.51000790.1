@@ -10,10 +10,10 @@
 REST
 
 }
-    etThread.traceF( tinP , T("dispensed:    ")+TF3(pc3[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,2*sizeof(countT))+TF3(pc3[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,2*sizeof(countT)) ) ;
+    etThread.traceF( tinBaseP , T("dispensed:    ")+TF3(pc3[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,2*sizeof(countT))+TF3(pc3[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,2*sizeof(countT)) ) ;
     countT pc3[] = { (countT)idLath , (countT)( idLath >> ( SB * sizeof( countT ) ) ) , 0 } ;
 
-    count04T idLath = etThread.etherDispenseSerialNumberF( tinP , tFile ) ;
+    count04T idLath = etThread.etherDispenseSerialNumberF( tinBaseP , tFile ) ;
     TN( tFile , "////factory""1/d/tmp/serial.number.lath" ) ;
 {
 while( !ether )

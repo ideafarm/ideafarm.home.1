@@ -9,12 +9,12 @@
 
 REST
 
-//etherC::loafIF( tinP ) ;
-//etThread.traceF( tinP , T("ok") ) ;
-//etThread.diskRenameToHashF( tinP , T("///d/tmp/dut/") , flETHERrENAMEtOhASH_RECURSE ) ;
-//etThread.traceF( tinP , T("renaming files in dut/") ) ;
+//etherC::loafIF( tinBaseP ) ;
+//etThread.traceF( tinBaseP , T("ok") ) ;
+//etThread.diskRenameToHashF( tinBaseP , T("///d/tmp/dut/") , flETHERrENAMEtOhASH_RECURSE ) ;
+//etThread.traceF( tinBaseP , T("renaming files in dut/") ) ;
 
-etThread.diskWalkRenameForArchivalF( tinP , cDirs , cFiles , etThread , tTo , tDrop , myCBF ) ;
+etThread.diskWalkRenameForArchivalF( tinBaseP , cDirs , cFiles , etThread , tTo , tDrop , myCBF ) ;
 TN( tTo   , "///d/tmp/test.out/" ) ;
 TN( tDrop , "///d/tmp/test.in/" ) ;
 ZE( countT , cFiles ) ;
@@ -25,7 +25,7 @@ TODO
     return bDoIt ;
     boolT bDoIt = 1 ;
 {
-boolT myCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
+boolT myCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOWtEXT( "was.scratch.b.archived.20180508@1202.scr" )/*1*/
 /**/

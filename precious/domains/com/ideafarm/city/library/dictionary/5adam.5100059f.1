@@ -11,34 +11,34 @@ REST
 
 DEL( pso ) ;
 
-ether.osSleepF( tinP , TOCK ) ;
+ether.osSleepF( tinBaseP , TOCK ) ;
 
-pso->writeF( tinP , posto , sizeof posto ) ;
+pso->writeF( tinBaseP , posto , sizeof posto ) ;
 osTextT posto[] = "line 1\r\nline 2\r\n" ;
 
 CONoUTrAW( "accepted\r\n" ) ;
-socks.acceptF( tinP , pso , countTC() , nicNameC() , countTC() ) ;
+socks.acceptF( tinBaseP , pso , countTC() , nicNameC() , countTC() ) ;
 CONoUTrAW( "accepting\r\n" ) ;
 etThread.osThreadF( TaRG1( tmClientF ) ) ;
 ZE( socketC* , pso ) ;
-socks.listenF( tinP ) ;
-idPort = socks.bindF( tinP ) ;
-socketC socks( tinP , etThread , TAG( TAGiDnULL ) ) ;
+socks.listenF( tinBaseP ) ;
+idPort = socks.bindF( tinBaseP ) ;
+socketC socks( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmClientF )
 
 CONoUTrAW( T("received: \"")+T(posti)+T("\"\r\n") ) ;
-sockc.readWoLineF( tinP , offi , posti , sizeof posti ) ;
+sockc.readWoLineF( tinBaseP , offi , posti , sizeof posti ) ;
 ZE( countT , offi ) ;
 osTextT posti[ TOCK ] ;
 
-sockc.connectF( tinP , idPort ) ;
+sockc.connectF( tinBaseP , idPort ) ;
 CONoUTrAW( "connecting\r\n" ) ;
-socketC sockc( tinP , etThread , TAG( TAGiDnULL ) ) ;
+socketC sockc( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
-ether.osSleepF( tinP , TOCK ) ;
+ether.osSleepF( tinBaseP , TOCK ) ;
 
 TASK( tmClientF )
 

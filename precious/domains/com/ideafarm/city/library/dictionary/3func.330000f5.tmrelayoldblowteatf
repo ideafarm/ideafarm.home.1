@@ -13,29 +13,29 @@ DONE( tmRelayOldBlowTeatF )
         }
             DEL( psWrap ) ;
             }
-                sockP.writeF( tinP , *psWrap ) ;
-                //etThread.traceF( tinP , T("writing wrap to teat") ) ;
+                sockP.writeF( tinBaseP , *psWrap ) ;
+                //etThread.traceF( tinBaseP , T("writing wrap to teat") ) ;
             {
             if( *psWrap )
             stRelayOutP >> *(countT*)&psWrap ;
             ZE( soulC* , psWrap ) ;
         {
         while( !bQuitWoConnectP && stRelayOutP )
-        //etThread.traceF( tinP , T("waited  for push") ) ;
-        stRelayOutP.waitF( tinP ) ;
-        //etThread.traceF( tinP , T("waiting for push") ) ;
+        //etThread.traceF( tinBaseP , T("waited  for push") ) ;
+        stRelayOutP.waitF( tinBaseP ) ;
+        //etThread.traceF( tinBaseP , T("waiting for push") ) ;
     {
     while( !bQuitWoConnectP && !etThread && !stRelayOutP.third )
 
     }
         DEL( psWrap ) ;
         }
-            sockP.writeF( tinP , *psWrap ) ;
+            sockP.writeF( tinBaseP , *psWrap ) ;
             *psWrap << processGlobal1I.idAdamRoot ;
-            tinP.pEther->traceF( tinP , T("identifying myself as ")+TF2(processGlobal1I.idAdamRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to teat") ) ;
+            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("identifying myself as ")+TF2(processGlobal1I.idAdamRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to teat") ) ;
         {
         if( psWrap )
-        soulC* psWrap = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+        soulC* psWrap = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
     {
 
     ZE( countT , idWrap ) ;

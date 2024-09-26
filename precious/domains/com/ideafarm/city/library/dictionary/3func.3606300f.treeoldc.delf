@@ -8,15 +8,15 @@
 
 
 }
-    grab.ungrabF( tinP ) ;
+    grab.ungrabF( tinBaseP ) ;
 
     }
-        if( bWentDown ) hugKidF( tinP , pCursor ) ;
+        if( bWentDown ) hugKidF( tinBaseP , pCursor ) ;
         pCursor = pCursorNew ;
         if( pRoot == pCursor ) pRoot = 0 ;
 
-        walkF( tinP , hTreeWalk , countTC() , countTC() , branchDestructionCBF , cArg , flTREEwALK_HEADERS | flTREEwALK_REVERSE ) ;
-        handleC hTreeWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_TREEwALK ) ;
+        walkF( tinBaseP , hTreeWalk , countTC() , countTC() , branchDestructionCBF , cArg , flTREEwALK_HEADERS | flTREEwALK_REVERSE ) ;
+        handleC hTreeWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_TREEwALK ) ;
         grab.flagsRefF() &= ~( F(flGRABc_DISABLErECURSION) ) ;
 
         countT cArg = (countT)&c4p ;
@@ -28,12 +28,12 @@
                 }
                     }
                         break ;
-                        pCursor->pbrDad->pSwsKids->extractF( 0 , tinP , 0 ) ;
+                        pCursor->pbrDad->pSwsKids->extractF( 0 , tinBaseP , 0 ) ;
                     {
-                    if( pCursor == (branchHeaderOldS*)&pCursor->pbrDad->pSwsKids->downF( tinP , hWalk ) )
+                    if( pCursor == (branchHeaderOldS*)&pCursor->pbrDad->pSwsKids->downF( tinBaseP , hWalk ) )
                 {
                 do
-                handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             {
             if( *pCursor->pbrDad->pSwsKids )
 
@@ -41,7 +41,7 @@
                 : (branchHeaderOldS*)&(*pCursor->pbrDad->pSwsKids)[ 0 ]
                 ? pCursor->pbrDad
             pCursorNew = bWentDown
-            bWentDown = !pCursor->pbrDad->pSwsKids->upF( tinP ) && !pCursor->pbrDad->pSwsKids->downF( tinP ) ;
+            bWentDown = !pCursor->pbrDad->pSwsKids->upF( tinBaseP ) && !pCursor->pbrDad->pSwsKids->downF( tinBaseP ) ;
             //A:ASSUME: pCursor IS ALWAYS HUGGED I.E. THE LATHREF'D OF ITS SIBLINGS
 
             SET_psttLeverKids( pCursor->pbrDad ) //ASSUME: THIS IS MY MOTHER
@@ -53,10 +53,10 @@
     if( pCursor )
     PcURSOR
 
-    *sw_pCursor.pLeverLathRefF( tinP ) = cLeverCursor ;
-    grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    *sw_pCursor.pLeverLathRefF( tinBaseP ) = cLeverCursor ;
+    grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT treeOldC::delF( tinS& tinP )/*1*/
+/*1*/voidT treeOldC::delF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

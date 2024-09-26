@@ -9,7 +9,7 @@
 
 }
     }
-        //etherP.traceF( tinP , T("put""FileIF/ - edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        //etherP.traceF( tinBaseP , T("put""FileIF/ - edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
 
         }
             }
@@ -23,19 +23,19 @@
                 {
                 if( !bLath )
 
-                etherP.delF( tinP , psttArg ) ;
+                etherP.delF( tinBaseP , psttArg ) ;
                 }
-                    etherP.osProcessF( tinP , countTC() , countTC() , value , idDeathType , tExe , psttArg ) ;
+                    etherP.osProcessF( tinBaseP , countTC() , countTC() , value , idDeathType , tExe , psttArg ) ;
                     ZE( countT , idDeathType ) ;
                     ZE( countT , value ) ;
                     }
-                        hoverC hover4( tinP , etherP , tPathArchive ) ;
-                        etherP.osProcessF( tinP , countTC() , countTC() , value , idDeathType , tExe , tArgMove+tb+tFileReadme+tb+tFileShort+T(".html")+tb+tFileShort+T(".*.html") ) ;
+                        hoverC hover4( tinBaseP , etherP , tPathArchive ) ;
+                        etherP.osProcessF( tinBaseP , countTC() , countTC() , value , idDeathType , tExe , tArgMove+tb+tFileReadme+tb+tFileShort+T(".html")+tb+tFileShort+T(".*.html") ) ;
                         ZE( countT , idDeathType ) ;
                         ZE( countT , value ) ;
                         TN( tArgMove , "-9rm " ) ; tArgMove += T(osfOut) ;
-                        osFileNameC osfOut(  tinP , etherP , pP.tDomain+tFileShort+T(".kt.")+TF3(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".")+TF3(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".zip") ) ;
-                        hoverC hover3( tinP , etherP , tFileDir ) ;
+                        osFileNameC osfOut(  tinBaseP , etherP , pP.tDomain+tFileShort+T(".kt.")+TF3(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".")+TF3(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".zip") ) ;
+                        hoverC hover3( tinBaseP , etherP , tFileDir ) ;
                     {
                     if( bLath )
                 {
@@ -45,7 +45,7 @@
                 }
                     stFile << (countT)pSizeName ;
 
-                    etherP.strokeF( tinP , TF3(pSizeName->cbUsed,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE,8)+T(",")+TF3(pSizeName->cbUsedHigh,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T("\r\n") ) ;
+                    etherP.strokeF( tinBaseP , TF3(pSizeName->cbUsed,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE,8)+T(",")+TF3(pSizeName->cbUsedHigh,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T("\r\n") ) ;
 
                     stLater >> *(countT*)&pSizeName ;
                     ZE( fileSizeNameS* , pSizeName ) ;
@@ -55,21 +55,21 @@
 
                 }
                     }
-                        etherP.strFuseF( tinP , psttArg , tWo ) ;
+                        etherP.strFuseF( tinBaseP , psttArg , tWo ) ;
 
                         DEL( pSizeName ) ;
-                        etherP.osTimeSubtractF( tinP , capRemainLo , capRemainHi , pSizeName->cbUsed , pSizeName->cbUsedHigh ) ;
-                        if( idResult != ifcOPENrESULT_EXISTED ) etherP.fileWriteF( tinP , hFile1 , tName+tcr , tName.csF( tinP ) + tcr.csF( tinP ) ) ;
+                        etherP.osTimeSubtractF( tinBaseP , capRemainLo , capRemainHi , pSizeName->cbUsed , pSizeName->cbUsedHigh ) ;
+                        if( idResult != ifcOPENrESULT_EXISTED ) etherP.fileWriteF( tinBaseP , hFile1 , tName+tcr , tName.csF( tinBaseP ) + tcr.csF( tinBaseP ) ) ;
                     {
                     else
                     if( !bOk ) stLater << (countT)pSizeName ;
 
-                    etherP.strokeF( tinP , TF3(capRemainLo,capRemainHi?flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE:flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+(capRemainHi?TF3(capRemainHi,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9):TP("",9))+TF3(pSizeName->cbUsed,pSizeName->cbUsedHigh?flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE:flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+(pSizeName->cbUsedHigh?TF3(pSizeName->cbUsedHigh,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9):TP("",9))+T(idResult==ifcOPENrESULT_EXISTED?"****PACKINGLISTED**** ":bOk?"* ":" ")+TF2(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+                    etherP.strokeF( tinBaseP , TF3(capRemainLo,capRemainHi?flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE:flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+(capRemainHi?TF3(capRemainHi,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9):TP("",9))+TF3(pSizeName->cbUsed,pSizeName->cbUsedHigh?flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE:flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+(pSizeName->cbUsedHigh?TF3(pSizeName->cbUsedHigh,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9):TP("",9))+T(idResult==ifcOPENrESULT_EXISTED?"****PACKINGLISTED**** ":bOk?"* ":" ")+TF2(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
 
                     ) ;
                         bVolumeOk
                         &&
-                        tWo.csF( tinP ) <= psttArg[ 2 ].idAdam
+                        tWo.csF( tinBaseP ) <= psttArg[ 2 ].idAdam
                     (
                     boolT bOk =
 
@@ -101,12 +101,12 @@
                         {
                         while( stHold )
 
-                        stListed_postShort.purgeF( tinP ) ;
+                        stListed_postShort.purgeF( tinBaseP ) ;
                         }
                             }
                                 stHold << (countT)pSizeName ;
-                                etherP.delF( tinP , postShort ) ;
-                                stListed_postShort.extractF( (byteT*)&postShort , tinP ) ;
+                                etherP.delF( tinBaseP , postShort ) ;
+                                stListed_postShort.extractF( (byteT*)&postShort , tinBaseP ) ;
                                 ZE( osTextT* , postShort ) ;
                             {
                             else
@@ -116,51 +116,51 @@
                             ZE( fileSizeNameS* , pSizeName ) ;
                         {
                         while( stFile )
-                        stackC stHold( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE ) ;
+                        stackC stHold( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE ) ;
 
                         }
-                            etherP.delF( tinP , pstt1Short ) ;
+                            etherP.delF( tinBaseP , pstt1Short ) ;
                             }
                                 }
                                     __1 ; //IMPOSSIBLE UNLESS A HUMAN EDITS THE PACKING LIST TO CREATE DUPLICATE LINES
-                                    etherP.delF( tinP , postShort ) ;
+                                    etherP.delF( tinBaseP , postShort ) ;
                                 {
                                 if( !ids )
-                                stListed_postShort.sinkF( tinP , ids , postShort , flSTACKsINK_UNIQUE ) ;
+                                stListed_postShort.sinkF( tinBaseP , ids , postShort , flSTACKsINK_UNIQUE ) ;
                                 ZE( countT , ids ) ;
 
-                                etherP.strMakeF( tinP , LF , postShort , psttc1 ) ; ___( postShort ) ;
+                                etherP.strMakeF( tinBaseP , LF , postShort , psttc1 ) ; ___( postShort ) ;
                                 ZE( osTextT* , postShort ) ;
                             {
                             FORsTRINGSiN1( pstt1Short )
 
                             }
-                                etherP.delF( tinP , psttPack ) ;
-                                etherP.strWordsF( tinP , pstt1Short , psttPack , sttq , tcr ) ; ___( pstt1Short ) ;
+                                etherP.delF( tinBaseP , psttPack ) ;
+                                etherP.strWordsF( tinBaseP , pstt1Short , psttPack , sttq , tcr ) ; ___( pstt1Short ) ;
                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 
                                 }
-                                    etherP.delF( tinP , postPack ) ;
+                                    etherP.delF( tinBaseP , postPack ) ;
                                     }
-                                        etherP.strMakeFromOsTextF( tinP , psttPack , postPack ) ; ___( psttPack ) ;
+                                        etherP.strMakeFromOsTextF( tinBaseP , psttPack , postPack ) ; ___( psttPack ) ;
                                         postPack[ pInfoPack->cbUsed ] = 0 ;
                                         __( cbActual - pInfoPack->cbUsed ) ;
-                                        etherP.fileReadF( tinP , postPack , cbActual , hFile1 ) ;
+                                        etherP.fileReadF( tinBaseP , postPack , cbActual , hFile1 ) ;
                                         countT cbActual = pInfoPack->cbUsed ;
                                     {
                                     if( postPack )
-                                    etherP.newF( tinP , LF , postPack , pInfoPack->cbUsed + 1 ) ; ___( postPack ) ;
+                                    etherP.newF( tinBaseP , LF , postPack , pInfoPack->cbUsed + 1 ) ; ___( postPack ) ;
                                     ZE( osTextT* , postPack ) ;
                                 {
                                 ZE( strokeS* , psttPack ) ;
                             {
                             ZE( strokeS* , pstt1Short ) ;
                         {
-                        stackC stListed_postShort( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_byteT ) ;
+                        stackC stListed_postShort( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_byteT ) ;
                     {
                     else
                     if( !pInfoPack->cbUsed ) idResult = 0 ;
-                    etherP.diskFileQueryF( tinP , pInfoPack , hFile1 ) ; ___( pInfoPack ) ;
+                    etherP.diskFileQueryF( tinBaseP , pInfoPack , hFile1 ) ; ___( pInfoPack ) ;
                     ZE( infoFileS* , pInfoPack ) ;
 
                     CONoUTrAW( "packing list found\r\n" ) ;
@@ -168,35 +168,35 @@
                 if( idResult == ifcOPENrESULT_EXISTED )
                 __NZ( stLater ) ;
 
-                etherP.fileOpenF( tinP , hFile1 , idResult , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/put""FileF/")+tFileDadShort+T("/packing.list.")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".txt") , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
+                etherP.fileOpenF( tinBaseP , hFile1 , idResult , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/put""FileF/")+tFileDadShort+T("/packing.list.")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".txt") , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
                 ZE( countT , idResult ) ;
-                handleC hFile1( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                handleC hFile1( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
                 }
-                    etherP.strMakeF( tinP , LF , psttArg , tArg , csttAllMax - 1 - tExeOs.csF( tinP ) - tArg.csF( tinP ) ) ; ___( psttArg ) ; // COMMAND LINE LIMIT FOR dosExecPgmF.  LIMIT - COSTeXE - SPACE AFTER EXE - TERMINATOR
+                    etherP.strMakeF( tinBaseP , LF , psttArg , tArg , csttAllMax - 1 - tExeOs.csF( tinBaseP ) - tArg.csF( tinBaseP ) ) ; ___( psttArg ) ; // COMMAND LINE LIMIT FOR dosExecPgmF.  LIMIT - COSTeXE - SPACE AFTER EXE - TERMINATOR
                     countT csttAllMax = ( TOCK >> 1 ) - 2 ; // WIN32 DOC CLAIMS LIMIT OF ( TOCK >> 1 ) - 1 EXCLUDING TERMINATOR, BUT THE LIMIT IS REALLY 1 LESS
                     TN( tArg , "-9r " ) ; tArg += T(osfOut2) ;
-                    osFileNameC osfOut2(  tinP , etherP , tFileDir+pP.tDomain+tFileShort+T(".kt.")+TF3(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".")+TF3(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".zip") ) ;
+                    osFileNameC osfOut2(  tinBaseP , etherP , tFileDir+pP.tDomain+tFileShort+T(".kt.")+TF3(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".")+TF3(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".zip") ) ;
                 {
                 ZE( strokeS* , psttArg ) ;
 
                 sCountT capRemainHi = 0x1 ;
                 countT  capRemainLo = 0x18244F00 ; // 4.7 GB (4700000000_9 BYTES)
                 CONoUTrAW( "------------ SORTED:\r\n" ) ;
-                //if( ( bWoth && bWoth -- ) || !( stFile % TUCK ) ) etherP.traceF( tinP , T("put""FileIF/ + edition ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": zipping [stFile,stLater]: ")+TF2(stFile,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(stLater,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                //if( ( bWoth && bWoth -- ) || !( stFile % TUCK ) ) etherP.traceF( tinBaseP , T("put""FileIF/ + edition ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": zipping [stFile,stLater]: ")+TF2(stFile,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(stLater,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
             {
             while( stFile ) // WHILE I STILL NEED TO EMIT ANOTHER VOLUME
-            stackC stLater( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE ) ; // USED TO POUR SOME BACK INTO stFile, PRESERVING THE DECREASING ORDER OF FILE SIZE
+            stackC stLater( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE ) ; // USED TO POUR SOME BACK INTO stFile, PRESERVING THE DECREASING ORDER OF FILE SIZE
             boolT bWoth = 1 ;
 
-            pP.pswUrlReferenced->ungrabF( tinP ) ;
+            pP.pswUrlReferenced->ungrabF( tinBaseP ) ;
             }
                 DEL( pInfo ) ;
 
                 }
                     }
                         __Z( ids ) ;
-                        stFile.sinkF( tinP , ids , (countT)pSizeName , flSTACKsINK_UNIQUE , subtractSizeNameF ) ; pSizeName = 0 ;
+                        stFile.sinkF( tinBaseP , ids , (countT)pSizeName , flSTACKsINK_UNIQUE , subtractSizeNameF ) ; pSizeName = 0 ;
                         ZE( countT , ids ) ;
 
                         //CONoUTrAW( T(" \"")+T(pSizeName->postOsName)+T("\"\r\n") ) ;
@@ -204,16 +204,16 @@
                     {
                     if( pSizeName )
 
-                    fileSizeNameS* pSizeName = new( 0 , tinP , LF ) fileSizeNameS( tinP , etherP , *pInfo , *pP.ppsttLever ) ; ___( pSizeName ) ;
+                    fileSizeNameS* pSizeName = new( 0 , tinBaseP , LF ) fileSizeNameS( tinBaseP , etherP , *pInfo , *pP.ppsttLever ) ; ___( pSizeName ) ;
                 {
                 if( pInfo )
 
                 THREADmODE2rESTORE
                 }
-                    if( pInfo && pInfo->psttIfoName ) etherP.delF( tinP , pInfo->psttIfoName ) ;
+                    if( pInfo && pInfo->psttIfoName ) etherP.delF( tinBaseP , pInfo->psttIfoName ) ;
 
                     //CONoUTrAW3( " queried file size name [pSizeName]: " , pSizeName , "\r\n" ) ;
-                    etherP.diskFileQueryF( tinP , pInfo , hFile1 ) ; ___( pInfo ) ;
+                    etherP.diskFileQueryF( tinBaseP , pInfo , hFile1 ) ; ___( pInfo ) ;
                     //CONoUTrAW( " querying file size name\r\n" ) ;
                     OPENfILErEAD1( tPathArchive+T(*pP.ppsttLever) )
                     etherC& etThread = etherP ;
@@ -221,34 +221,34 @@
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                 ZE( infoFileS* , pInfo ) ;
 
-                etherP.strokeF( tinP , T("[cRemaining,file]: ")+TF2(cFlavors-idf,flFORMAT_NObIGITvALUES)+T(" ")+tPathArchive+T(*pP.ppsttLever)+T("\r\n") ) ;
-                *pP.ppsttLever = (strokeS*)pP.pswUrlReferenced->leverF( tinP , idf ) ;
+                etherP.strokeF( tinBaseP , T("[cRemaining,file]: ")+TF2(cFlavors-idf,flFORMAT_NObIGITvALUES)+T(" ")+tPathArchive+T(*pP.ppsttLever)+T("\r\n") ) ;
+                *pP.ppsttLever = (strokeS*)pP.pswUrlReferenced->leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors && !bQuitP ; idf ++ )
-            countT cFlavors = pP.pswUrlReferenced->cFlavorsF( tinP ) ; 
-            pP.pswUrlReferenced->grabF( tinP , TAG( TAGiDnULL ) ) ;
+            countT cFlavors = pP.pswUrlReferenced->cFlavorsF( tinBaseP ) ; 
+            pP.pswUrlReferenced->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            stackC stFile( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE ) ; //WILL CONTAIN fileSizeNameS* POINTERS, IN DECREASING ORDER OF FILE SIZE
-            //etherP.traceF( tinP , T("put""FileIF/ + edition ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": loading stFile") ) ;
+            stackC stFile( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_DOnOTsERIALIZE ) ; //WILL CONTAIN fileSizeNameS* POINTERS, IN DECREASING ORDER OF FILE SIZE
+            //etherP.traceF( tinBaseP , T("put""FileIF/ + edition ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": loading stFile") ) ;
 
-            hoverC hover2( tinP , etherP , tPathArchive ) ;
+            hoverC hover2( tinBaseP , etherP , tPathArchive ) ;
             TN( tPathArchive , "" ) ; tPathArchive = T("///ideafarm/IdeaFarm " "(tm)/2.1. Drop Files Here To Archive Them/" ) ;
             //20130728@1422: DON'T KNOW WHY THE DRIVE LETTER IS HARDCODED: TN( tPathArchive , "" ) ; tPathArchive = T("///d/ideafarm.home.")+TF2(etherP.ifc_idHomeIdisk_IF(),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("/IdeaFarm " "(tm)/2.1. Drop Files Here To Archive Them/" ) ;
 
             TN( tcr      , "\r\n" ) ;
             TN( tb , " " ) ;
             TN( tArg     , "-9r "  ) ; tArg     += T(osfOut) ;
-            osFileNameC osfOut(  tinP , etherP , tFileDir+pP.tDomain+tFileShort+T(".kt.")+TF3(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".")+TF3(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".zip") ) ;
+            osFileNameC osfOut(  tinBaseP , etherP , tFileDir+pP.tDomain+tFileShort+T(".kt.")+TF3(idVolume,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".")+TF3(idZip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".zip") ) ;
             countT idZip    = 1 ; // MULTIPLE ZIP FILES ARE NEEDED DUE TO THE CAPACITY LIMIT (TOCK >> 1) OF THE COMMAND LINE ARGUMENT TO osProcessF
             countT idVolume = 1 ; // MULTIPLE VOLUMES ARE NEEDED DUE TO THE CAPACITY LIMIT (4.7 GB) OF A DVD DISK
 
             TN( tExeOs , osfExe ) ;
-            osFileNameC osfExe(  tinP , etherP , tExe ) ;
+            osFileNameC osfExe(  tinBaseP , etherP , tExe ) ;
 
             }
-                etherP.delF( tinP , psttm ) ;
+                etherP.delF( tinBaseP , psttm ) ;
                 tExe = T(psttm) ;
-                etherP.diskMapFileNameF( tinP , psttm , T("///ideafarm/precious/domains/com/ideafarm/city/workshop/infozip/zip.exe/zip.exe") ) ; ___( psttm ) ;
+                etherP.diskMapFileNameF( tinBaseP , psttm , T("///ideafarm/precious/domains/com/ideafarm/city/workshop/infozip/zip.exe/zip.exe") ) ; ___( psttm ) ;
                 ZE( strokeS* , psttm ) ;
             {
             TN( tExe , "" ) ;
@@ -256,7 +256,7 @@
         if( !( F(pP.flags) & flBRANCHspUTfILEf_NOzIP ) && !bQuitP )
 
         }
-            etherP.boxPutF( tinP , tFileDir+tFileReadme , tReadme , tReadme.csF( tinP ) ) ;
+            etherP.boxPutF( tinBaseP , tFileDir+tFileReadme , tReadme , tReadme.csF( tinBaseP ) ) ;
 
             ) ;
 
@@ -283,21 +283,21 @@
         {
         TN( tFileReadme , "!readme.txt" ) ;
 
-        hoverC hover1( tinP , etherP , tFileDir ) ;
+        hoverC hover1( tinBaseP , etherP , tFileDir ) ;
 
         }
-            etherP.delF( tinP , psttDadShort ) ;
+            etherP.delF( tinBaseP , psttDadShort ) ;
             tFileDadShort = T(psttDadShort) ;
-            etherP.strWordF( tinP , psttDadShort , tFileDirDad , sttq , strokeS( '/') , - 2 ) ; ___( psttDadShort ) ;
+            etherP.strWordF( tinBaseP , psttDadShort , tFileDirDad , sttq , strokeS( '/') , - 2 ) ; ___( psttDadShort ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , psttDadShort ) ;
 
-            etherP.delF( tinP , psttPart2 ) ;
-            etherP.delF( tinP , psttPart1 ) ;
+            etherP.delF( tinBaseP , psttPart2 ) ;
+            etherP.delF( tinBaseP , psttPart1 ) ;
             tFileShort  = T(psttPart2) ;
             tFileDir    = T(psttPart1)+TF2(idEdition,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN)+T("/") ; //20141005@1103: ADDED "|flFORMAT_FOREIGN" W/O ANALYSIS SO THAT DIRECTORIES WILL SORT NICER
             tFileDirDad = T(psttPart1) ;
-            etherP.strBisectF( tinP , psttPart1 , psttPart2 , pP.psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
+            etherP.strBisectF( tinBaseP , psttPart1 , psttPart2 , pP.psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
             ZE( strokeS* , psttPart2 ) ;
             ZE( strokeS* , psttPart1 ) ;
         {
@@ -308,21 +308,21 @@
         TN( tFile      , pP.psttFile ) ;
 
         }
-            etherP.etherWhereF( tinP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
+            etherP.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
 
             }
-                ++ s ; etherP.osSleepF( tinP ) ;
+                ++ s ; etherP.osSleepF( tinBaseP ) ;
             {
             while( cWorkers )
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             }
                 }
                     if( bWoth ) bWoth = 0 ;
                     etherP.osThreadF( TaRG1( tmPutFileWorkerF ) , (countT)pcArg ) ;
 
-                    etherP.memCopyF( tinP , (byteT*)pcArg , (byteT*)pcFrom , sizeof pcFrom ) ;
-                    etherP.newF( tinP , LF , *(byteT**)&pcArg , sizeof pcFrom ) ; ___( pcArg ) ;
+                    etherP.memCopyF( tinBaseP , (byteT*)pcArg , (byteT*)pcFrom , sizeof pcFrom ) ;
+                    etherP.newF( tinBaseP , LF , *(byteT**)&pcArg , sizeof pcFrom ) ; ___( pcArg ) ;
                     countT pcFrom[] = { (countT)&cWorkers , (countT)&cPending , (countT)&pP , (countT)&cLeverBranch , (countT)&swFile , (countT)&st_putFileJob , bWoth , (countT)psttTimeStampP , (countT)psttBanner1P , (countT)psttBanner2P , (countT)psttNameSpaceP } ;
                     ZE( countT* , pcArg ) ;
 
@@ -330,12 +330,12 @@
                 {
                 while( cDo -- )
                 boolT bWoth = 1 ;
-                etherP.etherWhereF( tinP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cDo ) ;
+                etherP.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cDo ) ;
 
                 //cDo = 1 ;                                          //20171218@1405: cDo = 1 TO FIND A BUG
 
                 if( cDo > 4 ) cDo = 4 ; //20230615@1350: TO AVOID MEMORY EXHAUSTION; "4" IS ARBITRARY AND NOT BASED UPON EXPERIENCE
-                countT cDo = thirdC::osProcessorsIF( tinP ) >> 1 ; //4->2 IN RESPONSE TO POOL EXHAUSTION 20170607@1650 ; 20171214@2204: << 2 -> >> 1 IN RESPONSE TO POOL EXHAUSTION; 20171229@1632: ">> 1" -> "" AFTER ELIMIMATING baryC PREALLOCATION
+                countT cDo = thirdC::osProcessorsIF( tinBaseP ) >> 1 ; //4->2 IN RESPONSE TO POOL EXHAUSTION 20170607@1650 ; 20171214@2204: << 2 -> >> 1 IN RESPONSE TO POOL EXHAUSTION; 20171229@1632: ">> 1" -> "" AFTER ELIMIMATING baryC PREALLOCATION
                 //20230611@1219: "<< 1" -> ">> 1" IN RESP TO POOL EXHAUSTION
             {
             ZE( countT , cWorkers ) ;
@@ -349,25 +349,25 @@
             countT idJot = jotP.tagHighNibbleF() | idSequenceJotP ;
         {
         ZE( countT , cPending ) ;
-        stackC st_putFileJob( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_BLOB /*| flSTACKc_FIFO*/ /*| flSTACKc_XRAY*/ , sizeof( putFileJobS ) ) ;      //20171229@0841: FIFO->LIFO TO REDUCE ADDRESS SPACE USAGE (FIFO RESULTS IN ALL LEAF JOBS BEING ACCUMATED BEFORE ANY ARE DONE)
+        stackC st_putFileJob( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_BLOB /*| flSTACKc_FIFO*/ /*| flSTACKc_XRAY*/ , sizeof( putFileJobS ) ) ;      //20171229@0841: FIFO->LIFO TO REDUCE ADDRESS SPACE USAGE (FIFO RESULTS IN ALL LEAF JOBS BEING ACCUMATED BEFORE ANY ARE DONE)
         //LOGrAW3( "calling putFileIF for edition " , idEdition , " +\r\n" ) ;
 
         }
             }
                 }
-                    etherP.diskCopyFileF( tinP , tFileLinkTo , tFileLinkFrom ) ;
+                    etherP.diskCopyFileF( tinBaseP , tFileLinkTo , tFileLinkFrom ) ;
 
                     }
-                        etherP.delF( tinP , psttPart2 ) ;
-                        etherP.delF( tinP , psttPart1 ) ;
+                        etherP.delF( tinBaseP , psttPart2 ) ;
+                        etherP.delF( tinBaseP , psttPart1 ) ;
                         tFileLinkTo = T(psttPart1)+TF2(idEdition,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("/")+T(psttPart2)+tFileSuffix ;
-                        etherP.strBisectF( tinP , psttPart1 , psttPart2 , pP.psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
+                        etherP.strBisectF( tinBaseP , psttPart1 , psttPart2 , pP.psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
                         ZE( strokeS* , psttPart2 ) ;
                         ZE( strokeS* , psttPart1 ) ;
                     {
                     TN( tFileLinkTo  , "" ) ;
                 {
-                if( etherP.diskFileExistsF( tinP , tFileLinkFrom ) )
+                if( etherP.diskFileExistsF( tinBaseP , tFileLinkFrom ) )
                 TN( tFileLinkFrom  , "" ) ; tFileLinkFrom = T(pP.psttFile)+tFileSuffix ;
                 TN( tFileSuffix    , ppSuffix[ offi ] ) ;
             {
@@ -383,26 +383,26 @@
         {
 
         }
-            etherP.fileWriteF( tinP , hFile , "\r\n<pre>\r\n" , 9 ) ;
+            etherP.fileWriteF( tinBaseP , hFile , "\r\n<pre>\r\n" , 9 ) ;
             }
                 }
-                    default  : { etherP.fileWriteF( tinP , hFile , postSourceP + offi , 1 ) ; break ; }
-                    case '>' : { etherP.fileWriteF( tinP , hFile , "&gt;"             , 4 ) ; break ; }
-                    case '<' : { etherP.fileWriteF( tinP , hFile , "&lt;"             , 4 ) ; break ; }
+                    default  : { etherP.fileWriteF( tinBaseP , hFile , postSourceP + offi , 1 ) ; break ; }
+                    case '>' : { etherP.fileWriteF( tinBaseP , hFile , "&gt;"             , 4 ) ; break ; }
+                    case '<' : { etherP.fileWriteF( tinBaseP , hFile , "&lt;"             , 4 ) ; break ; }
                 {
                 switch( postSourceP[ offi ] )
             {
             for( countT offi = 0 ; offi < costSourceP ; offi ++ )
-            etherP.fileWriteF( tinP , hFile , "<pre>\r\n" , 7 ) ;
+            etherP.fileWriteF( tinBaseP , hFile , "<pre>\r\n" , 7 ) ;
 
-            etherP.fileOpenF( tinP , hFile , countTC() , tFileSoilTo+T("1.html") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; // READABLE LIST OF LINKAGE LABELS
-            handleC hFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+            etherP.fileOpenF( tinBaseP , hFile , countTC() , tFileSoilTo+T("1.html") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; // READABLE LIST OF LINKAGE LABELS
+            handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
             }
-                etherP.delF( tinP , psttPart2 ) ;
-                etherP.delF( tinP , psttPart1 ) ;
+                etherP.delF( tinBaseP , psttPart2 ) ;
+                etherP.delF( tinBaseP , psttPart1 ) ;
                 tFileSoilTo = T(psttPart1)+TF2(idEdition,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("/soil/")+T(psttPart2)+T(".") ;
-                etherP.strBisectF( tinP , psttPart1 , psttPart2 , pP.psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
+                etherP.strBisectF( tinBaseP , psttPart1 , psttPart2 , pP.psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
                 ZE( strokeS* , psttPart2 ) ;
                 ZE( strokeS* , psttPart1 ) ;
             {
@@ -410,13 +410,13 @@
         {                                                                                   // WRITE THE INPUT FILE AS AN HTML FILE SO THAT IT CAN BE VIEWED IN A BROWSER
         if( postSourceP && costSourceP )
 
-        //etherP.traceF( tinP , T("put""FileIF/ [psttFile]:    ")+T(pP.psttFile) ) ;
-        //etherP.traceF( tinP , T("put""FileIF/ + edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        //etherP.traceF( tinBaseP , T("put""FileIF/ [psttFile]:    ")+T(pP.psttFile) ) ;
+        //etherP.traceF( tinBaseP , T("put""FileIF/ + edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     {
     //for( countT idEdition = 1 ; idEdition <= 5 && !bQuitP ; idEdition ++ )
     for( countT idEdition = 3 ; idEdition <= 3 && !bQuitP ; idEdition ++ )
 
-    switchC swFile( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , cLeverBranch ) ;
+    switchC swFile( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , cLeverBranch ) ;
     ZE( countT , cLeverBranch ) ;
 
     }
@@ -426,50 +426,50 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT branchS::putFileIF( tinS& tinP , etherC& etherP , const boolT& bQuitP , putFileS& pP , jotC& jotP , const countT idSequenceJotP , const strokeS* const psttTimeStampP , const strokeS* const psttBanner1P , const strokeS* const psttBanner2P , const strokeS* const psttNameSpaceP , const osTextT* const postSourceP , const countT costSourceP )/*1*/
+/*1*/voidT branchS::putFileIF( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQuitP , putFileS& pP , jotC& jotP , const countT idSequenceJotP , const strokeS* const psttTimeStampP , const strokeS* const psttBanner1P , const strokeS* const psttBanner2P , const strokeS* const psttNameSpaceP , const osTextT* const postSourceP , const countT costSourceP )/*1*/
 
 DONE( tmPutFileWorkerF )
 THREADmODE4rESTORE
 }
     dec02AM( cWorkersP ) ;
 
-    tinP.monitor.idWhat2 = 0 ;
-    if( bWhereP ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
+    ((tinNormalS&)tinBaseP).monitor.idWhat2 = 0 ;
+    if( bWhereP ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
 
     }
-        ++ s ; etThread.osSleepF( tinP ) ;
+        ++ s ; etThread.osSleepF( tinBaseP ) ;
 
-        st_putFileJob_P.ungrabF( tinP ) ;
+        st_putFileJob_P.ungrabF( tinBaseP ) ;
         }
-            st_putFileJob_P.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            st_putFileJob_P.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            //if( bWhereP ) etThread.traceF( tinP , T("bWhere is set / called  putFileIF") ) ;
+            //if( bWhereP ) etThread.traceF( tinBaseP , T("bWhere is set / called  putFileIF") ) ;
 
-            etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+            etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
 
             dec02AM( cPendingP ) ;
-            branchS::putFileIF( tinP , etThread , countTC() , cPendingP , st_putFileJob_P , pP , job.offLevel , job.jMe , job.jDad , job.jGrandDad , cLeverBranchP , swFileP , job.cNest , job.idEdition , psttzTimeStampP , psttzBanner1P , psttzBanner2P , psttzNameSpaceP ) ;
-            //if( bWhereP ) etThread.traceF( tinP , T("bWhere is set / calling putFileIF") ) ;
+            branchS::putFileIF( tinBaseP , etThread , countTC() , cPendingP , st_putFileJob_P , pP , job.offLevel , job.jMe , job.jDad , job.jGrandDad , cLeverBranchP , swFileP , job.cNest , job.idEdition , psttzTimeStampP , psttzBanner1P , psttzBanner2P , psttzNameSpaceP ) ;
+            //if( bWhereP ) etThread.traceF( tinBaseP , T("bWhere is set / calling putFileIF") ) ;
 
-            etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
+            etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;
 
-            st_putFileJob_P.ungrabF( tinP ) ;
+            st_putFileJob_P.ungrabF( tinBaseP ) ;
             st_putFileJob_P >> pb_job ;
             byteT* pb_job = (byteT*)&job ;
             putFileJobS job ;
         {
         while( st_putFileJob_P )
-        st_putFileJob_P.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        st_putFileJob_P.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( cPendingP )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    if( bWhereP ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
-    tinP.monitor.idWhat2 = - 1 ;
+    if( bWhereP ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
+    ((tinNormalS&)tinBaseP).monitor.idWhat2 = - 1 ;
 
-    etThread.delF( tinP , pcArgP ) ;
+    etThread.delF( tinBaseP , pcArgP ) ;
 
-    //if( bWhereP ) etThread.traceF( tinP , T("bWhere is set") ) ;
+    //if( bWhereP ) etThread.traceF( tinBaseP , T("bWhere is set") ) ;
 
     //20180119@1634: 0->1 WITHOUT ANALYSIS
     bWhereP = 1 ; //U::20140808@1625: DISABLED PENDING MIGRATION TO NEW BLOB FUNCTIONALITY FOR switchC ; ENABLE AFTER Where HAS BEEN MODIFIED TO CONFORM TO THE NEW FUNCTIONALITY (THE LEVER WILL BE A POINTER RATHER THAN A PLACE WHERE A VALUE IS WRITTEN)
@@ -488,7 +488,7 @@ THREADmODE4rESTORE
 
     countT*        pcArgP = (countT*)pTaskP->c1 ;
 
-    thirdC::c_memcpyIF( tinP , (byteT*)tinP.ppJot , (byteT*)pTaskP->pTinDad->ppJot , sizeof tinP.ppJot ) ; //U::DEFINE A MACRO "INHERITjOTrEGISTRY"
+    thirdC::c_memcpyIF( tinBaseP , (byteT*)((tinNormalS&)tinBaseP).ppJot , (byteT*)((tinNormalS*)pTaskP->pTinBaseDad)->ppJot , sizeof ((tinNormalS&)tinBaseP).ppJot ) ; //U::DEFINE A MACRO "INHERITjOTrEGISTRY"
 {
 if( pTaskP && pTaskP->c1 )
 
@@ -503,7 +503,7 @@ TASK( tmPutFileWorkerF )
 
     }
         }
-            if( !scSgn ) scSgn = thirdC::c_strcmpIF( tinP , pSizeName1P->postOsName , pSizeName2P->postOsName ) ;
+            if( !scSgn ) scSgn = thirdC::c_strcmpIF( tinBaseP , pSizeName1P->postOsName , pSizeName2P->postOsName ) ;
             if( !scSgn ) scSgn = pSizeName1P->cbUsed     - pSizeName2P->cbUsed     ;
                          scSgn = pSizeName1P->cbUsedHigh - pSizeName2P->cbUsedHigh ;
         {
@@ -524,18 +524,18 @@ TASK( tmPutFileWorkerF )
     {
     IFbEcAREFUL
 {
-countT subtractSizeNameF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractSizeNameF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
-    etherP.strMakeF( tinP , LF , postOsName , psttShortP ) ; ___( postOsName ) ;
+    etherP.strMakeF( tinBaseP , LF , postOsName , psttShortP ) ; ___( postOsName ) ;
 {
 cbUsedHigh( infoP.cbUsedHigh )
 cbUsed( infoP.cbUsed ) ,
 postOsName( 0 ) ,
-fileSizeNameS::fileSizeNameS( tinS& tinP , etherC& etherP , const infoFileS& infoP , const strokeS* const psttShortP ) :
+fileSizeNameS::fileSizeNameS( tinBaseS& tinBaseP , etherC& etherP , const infoFileS& infoP , const strokeS* const psttShortP ) :
 
 }
-    tinP.pEther->delF( tinP , postOsName ) ;
+    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , postOsName ) ;
     TINSL
 {
 fileSizeNameS::~fileSizeNameS( voidT )
@@ -544,7 +544,7 @@ NEWdELcLASS( 1 , fileSizeNameS )
 
 ;
 }
-    fileSizeNameS( tinS& tinP , etherC& etherP , const infoFileS& infoP , const strokeS* const psttShortP ) ;
+    fileSizeNameS( tinBaseS& tinBaseP , etherC& etherP , const infoFileS& infoP , const strokeS* const psttShortP ) ;
     ~fileSizeNameS( voidT ) ;
     NEWdELcLASSpROTOS ;
 

@@ -19,7 +19,7 @@
             {
             if( &record == &listingTestP )
 
-            __( !listingC::bIsListingIF( tinP , &record ) ) ;
+            __( !listingC::bIsListingIF( tinBaseP , &record ) ) ;
             const listingC& record = *(const listingC*)spRecord ;
 
             listingVSP spRecord = entry ;
@@ -28,9 +28,9 @@
         if( pListingP && !( pListingP->flagsF() & fliLISTINGc_MIXINlIST ) && pListingP->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
         flagsT flagsRC = flLISTwALKcALLbACKrETURNcODE_null ;
 
-        listingC& listingTestP = *(listingC*)tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-        boolT&    bListedP     =    *(boolT*)tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-        listingC* pListingP    =             tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+        listingC& listingTestP = *(listingC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+        boolT&    bListedP     =    *(boolT*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        listingC* pListingP    =             ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     {
     else
     }
@@ -41,7 +41,7 @@
             {
             if( &record == &listingTestP )
 
-            __( !listingOfSetC::bIsListingIF( tinP , &record ) ) ;
+            __( !listingOfSetC::bIsListingIF( tinBaseP , &record ) ) ;
             const listingOfSetC& record = *(const listingOfSetC*)(const listingC*)spRecord ;
 
             listingVSP spRecord = entry ;
@@ -50,17 +50,17 @@
         if( pListingP && !( pListingP->flagsF() & fliLISTINGc_MIXINlIST ) && pListingP->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
         flagsT flagsRC = flLISTwALKcALLbACKrETURNcODE_null ;
 
-        listingOfSetC& listingTestP = *(listingOfSetC*)tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-        boolT&         bListedP     =         *(boolT*)tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-        listingOfSetC* pListingP    = (listingOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+        listingOfSetC& listingTestP = *(listingOfSetC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+        boolT&         bListedP     =         *(boolT*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        listingOfSetC* pListingP    = (listingOfSetC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     {
     if( bOfSet )
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
-/*1*/flagsT _export listWalkSelectIsListedCBF( tinS& tinP )/*1*/
+/*1*/flagsT _export listWalkSelectIsListedCBF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

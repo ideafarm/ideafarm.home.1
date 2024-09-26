@@ -21,18 +21,18 @@
         sIn >> finger ;
         ZE( countT , finger ) ;
     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
         sOut << cPassAccountP ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -42,7 +42,7 @@
     __NZ( psttP ) ;
     if( POOP ) return ;
 {
-/*1*/voidT queryEmailFromIdAccountF( tinS& tinP , strokeS*& psttP , const countT cPassAccountP )/*1*/
+/*1*/voidT queryEmailFromIdAccountF( tinBaseS& tinBaseP , strokeS*& psttP , const countT cPassAccountP )/*1*/
 
 //DUPLICATE CODE: b750104 3a50104 1d20005
 

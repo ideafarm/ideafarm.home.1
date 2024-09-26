@@ -9,17 +9,17 @@
 
 }
     return cr ;
-    ether.delF( tinP , pcr ) ;
-    sCountC cr( tinP , ether , pcr , cbitn ) ;
+    ether.delF( tinBaseP , pcr ) ;
+    sCountC cr( tinBaseP , ether , pcr , cbitn ) ;
 
     }
         }
             carry = total >> 1 ;
             }
-                setBitF( tinP , pcr , boff , total & 1 ) ;
+                setBitF( tinBaseP , pcr , boff , total & 1 ) ;
             {
             if( total )
-            countT total = carry + bitF( tinP , pc1 , boff ) + bitF( tinP , pc2 , boff ) ;
+            countT total = carry + bitF( tinBaseP , pc1 , boff ) + bitF( tinBaseP , pc2 , boff ) ;
         {
         for( countT boff = 0 ; boff < cbitn ; boff ++ )
     {
@@ -29,13 +29,13 @@
 
     pc2 = c2 ;
     pc1 = c1 ;
-    ether.memSetF( tinP , (byteT*)pcr , 1 + cbitn/SB ) ;
-    ether.newF( tinP , LF , pcr , 1 + cbitn / SC ) ; ___( pcr ) ;
+    ether.memSetF( tinBaseP , (byteT*)pcr , 1 + cbitn/SB ) ;
+    ether.newF( tinBaseP , LF , pcr , 1 + cbitn / SC ) ; ___( pcr ) ;
     ZE( countT* , pcr ) ;
     ZE( countT* , pc2 ) ;
     ZE( countT* , pc1 ) ;
-    c2.growBitsToF( tinP , cbitn ) ;
-    c1.growBitsToF( tinP , cbitn ) ;
+    c2.growBitsToF( tinBaseP , cbitn ) ;
+    c1.growBitsToF( tinBaseP , cbitn ) ;
     if( cbit1 < cbit2 ) cbitn = cbit2 + 1 ;
     countT cbitn = cbit1 + 1 ;
     countT cbit2 = c2 ;
@@ -47,7 +47,7 @@
     // THIS FUNCTION ADDS TWO BINARY NUMBERS OF ARBITRARY LENGTH
 
     }
-        if( ether ) return sCountC( tinP , ether ) ;
+        if( ether ) return sCountC( tinBaseP , ether ) ;
     {
     IFbEcAREFUL
 

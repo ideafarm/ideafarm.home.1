@@ -11,20 +11,20 @@ REST
 
 #endif
 
-etThread.delF( tinP , pstt1copy ) ;
+etThread.delF( tinBaseP , pstt1copy ) ;
 
-etThread.delF( tinP , psttDump ) ;
+etThread.delF( tinBaseP , psttDump ) ;
 LOGrAW( T("****BDUMP:\r\n")+T(psttDump)+T("\r\n") ) ;
-etThread.strDumpIF( tinP , psttDump , (byteT*)pstt1copy , sizeof( strokeS ) * ( CSpREFIX * 2 + 1 ) , sizeof( strokeS ) , sizeof( countT ) ) ; ___( psttDump ) ;
+etThread.strDumpIF( tinBaseP , psttDump , (byteT*)pstt1copy , sizeof( strokeS ) * ( CSpREFIX * 2 + 1 ) , sizeof( strokeS ) , sizeof( countT ) ) ; ___( psttDump ) ;
 
-etThread.delF( tinP , psttDump ) ;
+etThread.delF( tinBaseP , psttDump ) ;
 LOGrAW( T("****SDUMP:\r\n")+T(psttDump)+T("\r\n") ) ;
-etThread.strDumpStrokesIF( tinP , psttDump , pstt1copy ) ; ___( psttDump ) ;
+etThread.strDumpStrokesIF( tinBaseP , psttDump , pstt1copy ) ; ___( psttDump ) ;
 ZE( strokeS* , psttDump ) ;
 
 }
     }
-        etThread.strokeF( tinP , T("copy: \"")+T(psttc1)+T("\"\r\n") ) ;
+        etThread.strokeF( tinBaseP , T("copy: \"")+T(psttc1)+T("\"\r\n") ) ;
     {
     FORsTRINGSiN1( pstt1copy )
 {
@@ -32,19 +32,19 @@ if( ISsTRINGoFsTRINGS( pstt1copy ) )
 sBag >> pstt1copy ;
 ZE( strokeS* , pstt1copy ) ;
 
-etThread.delF( tinP , pstt1s ) ;
+etThread.delF( tinBaseP , pstt1s ) ;
 sBag << pstt1s ;
-soulC sBag( tinP , TAG( TAGiDnULL ) ) ;
+soulC sBag( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 }
     }
-        etThread.strokeF( tinP , T("string: \"")+T(psttc1)+T("\"\r\n") ) ;
+        etThread.strokeF( tinBaseP , T("string: \"")+T(psttc1)+T("\"\r\n") ) ;
     {
     FORsTRINGSiN1( pstt1s )
 {
 if( ISsTRINGoFsTRINGS( pstt1s ) )
-etThread.strFuseSeparateF( tinP , pstt1s , tWord2 ) ; ___( pstt1s ) ;
-etThread.strFuseSeparateF( tinP , pstt1s , tWord1 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ CSpREFIX + tWord2.csF( tinP ) ) ; ___( pstt1s ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1s , tWord2 ) ; ___( pstt1s ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1s , tWord1 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ CSpREFIX + tWord2.csF( tinBaseP ) ) ; ___( pstt1s ) ;
 ZE( strokeS* , pstt1s ) ;
 
 TN( tWord2 , "2" ) ;
@@ -54,7 +54,7 @@ TN( tWord1 , "1" ) ;
 
 }
     }
-        etThread.strokeF( tinP , T("string: \"")+T(psttc1)+T("\"\r\n") ) ;
+        etThread.strokeF( tinBaseP , T("string: \"")+T(psttc1)+T("\"\r\n") ) ;
     {
     FORsTRINGSiN1( pzsttSpec )
 {
@@ -63,14 +63,14 @@ strokeS* pzsttSpec = tSpec ;
 
 }
     tSpec = T(pstt1f) ;
-    etThread.strFuseSeparateF( tinP , pstt1f , tFileBody ) ;
-    etThread.strFuseSeparateF( tinP , pstt1f , T("!literal:Subject: test 2400\r\n\r\n") , 0 , 0 , 0 , 0 , /*U::SOUL?*/ CSpREFIX + tFileBody.csF( tinP ) ) ; ___( pstt1f ) ;
+    etThread.strFuseSeparateF( tinBaseP , pstt1f , tFileBody ) ;
+    etThread.strFuseSeparateF( tinBaseP , pstt1f , T("!literal:Subject: test 2400\r\n\r\n") , 0 , 0 , 0 , 0 , /*U::SOUL?*/ CSpREFIX + tFileBody.csF( tinBaseP ) ) ; ___( pstt1f ) ;
     ZE( strokeS* , pstt1f ) ;
     
     }
-        etThread.delF( tinP , psttu ) ;
+        etThread.delF( tinBaseP , psttu ) ;
         tFileBody = T("///ideafarm/ephemeral/domains/com/ideafarm/ipdos/tmp/")+T(psttu) ;
-        etThread.strUniqueF( tinP , psttu ) ; ___( psttu ) ;
+        etThread.strUniqueF( tinBaseP , psttu ) ; ___( psttu ) ;
         ZE( strokeS* , psttu ) ;
     {
     TN( tFileBody , "" ) ;

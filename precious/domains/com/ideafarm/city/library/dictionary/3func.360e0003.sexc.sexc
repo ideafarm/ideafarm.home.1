@@ -23,11 +23,11 @@
     }
         }
             dec02AM( pReg->cRefPoolReg ) ;
-            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " ungrabbed  " , offSexBit , "\r\n" ) ; }
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinBaseP , pPoolContainsMe->postNameF( tinBaseP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , ((tinNormalS&)tinBaseP).monitor.idThread , " ungrabbed  " , offSexBit , "\r\n" ) ; }
             if( !btrAM( pReg->pbSexGrabbedBits , offSexBit ) ) { BLAMMO ; }
             if(  !bGrabBitSet ) { BLAMMO ; }
             boolT bGrabBitSet = !! ( pReg->pbSexGrabbedBits[ offSexByte ] & maskSexByte ) ;
-            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " ungrabbing " , offSexBit , "\r\n" ) ; }
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinBaseP , pPoolContainsMe->postNameF( tinBaseP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , ((tinNormalS&)tinBaseP).monitor.idThread , " ungrabbing " , offSexBit , "\r\n" ) ; }
 
             POOPIE
         {
@@ -43,7 +43,7 @@
         //    OStEXTAK( ostoSay , "\r\n sexC - [postName]: \"" ) ;
         //    OStEXT(   ostoSay , TUCK << 2 ) ;
         //{
-        //if( tinP.pc Utility[ 0 ] )
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 
         if( !POOP ) flagsStatePrivate |= flSEXcsTATEpRIVATE_CONSTRUCTEDaOK ;
 
@@ -52,10 +52,10 @@
             info.idiFileCt  = idiFileCtP ;
             info.idLineCt   = idLineCtP ;
             info.pSex       = this ;
-            thirdC::c_strcpyIF( tinP , info.postName , pzMetaHead->postName ) ;
+            thirdC::c_strcpyIF( tinBaseP , info.postName , pzMetaHead->postName ) ;
             info.expSlots   = pzMetaHead->expSlots  ;
             info.expCbDrop  = pzMetaHead->expCbDrop ;
-            info.osPid      = tinP.osPid ;
+            info.osPid      = ((tinNormalS&)tinBaseP).osPid ;
             tellInfoSysSexS info ;
             countT idTypeSay = ifcIDtYPEtELLsYS_SEXcT ;
         {
@@ -63,16 +63,16 @@
 
         }
                                              pSexLifoConstructing = 0 ;
-                tinP.pSexLifoConstructing  = pSexLifoConstructing     ;
-            if( tinP.pSexLifoConstructing != this                     ) { BLAMMO ; }
+                ((tinNormalS&)tinBaseP).pSexLifoConstructing  = pSexLifoConstructing     ;
+            if( ((tinNormalS&)tinBaseP).pSexLifoConstructing != this                     ) { BLAMMO ; }
 
         {
         if( pPoolContainsMe )
 
-        tinP.tlsDelF( LF , countTC() ) ;
-        tinP.tlsDelF( LF , countTC() ) ;
-        tinP.tlsDelF( LF , countTC() ) ;
-        tinP.tlsDelF( LF , countTC() ) ;
+        ((tinNormalS&)tinBaseP).tlsDelF( LF , countTC() ) ;
+        ((tinNormalS&)tinBaseP).tlsDelF( LF , countTC() ) ;
+        ((tinNormalS&)tinBaseP).tlsDelF( LF , countTC() ) ;
+        ((tinNormalS&)tinBaseP).tlsDelF( LF , countTC() ) ;
         //CS:CODEsYNC: 360e0003 360e0003
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -88,13 +88,13 @@
                         if( offe == CsEXeNTRIES ) { LOGrAW( "!exception: sexC::sexC/the leak logger registry is full\r\n" ) ; } //U: 20140605@1631: CONJ: THIS CAN HAPPEN IF EXIST MULTIPLE poolC INSTANCES OR IF EXIST MULTIPLE ADAMS (SEE osThreadAdamF)
 
                         }
-                            grabot.ungrabF( tinP ) ;
+                            grabot.ungrabF( tinBaseP ) ;
 
                             }
                                 }
                                     }
                                         break ;
-                                        thirdC::c_strcpyIF( tinP , pe[ offe ].postName , pzMetaHead->postName ) ;
+                                        thirdC::c_strcpyIF( tinBaseP , pe[ offe ].postName , pzMetaHead->postName ) ;
                                         pe[ offe ].cRef ++ ;
                                     {
                                     if( !pe[ offe ].cRef )
@@ -108,12 +108,12 @@
                                     break ;
                                     pe[ offe ].cRef ++ ;
                                 {
-                                if( !thirdC::c_strcmpIF( tinP , pe[ offe ].postName , pzMetaHead->postName ) )
+                                if( !thirdC::c_strcmpIF( tinBaseP , pe[ offe ].postName , pzMetaHead->postName ) )
                             {
                             for( offe = 0 ; offe < CsEXeNTRIES ; offe ++ )
 
-                            grabot.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                            grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+                            grabot.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         ZE( countT , offe ) ;
                 
@@ -123,7 +123,7 @@
                     if( pbnRegistry )
                     byteT* pbnRegistry = processGlobal8I._sexC_napGlobalRegistry ;
                 {
-                if( !thirdC::c_strstrIF( tinP , pzMetaHead->postName , postPOOLlEAKlOGGER ) )
+                if( !thirdC::c_strstrIF( tinBaseP , pzMetaHead->postName , postPOOLlEAKlOGGER ) )
                 POOPIE
             {
 
@@ -132,7 +132,7 @@
             //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
             //}
-            //            //    etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+            //            //    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    OStEXTAK( ostoSay , "\" " ) ;
             //    OStEXTA(  ostoSay , postNameP ) ;
@@ -148,7 +148,7 @@
             //    OStEXTAK( ostoSay , " " ) ;
             //    OStEXTC(  ostoSay , bNested , ' ' ) ;
             //    OStEXTAK( ostoSay , " " ) ;
-            //    OStEXTC(  ostoSay , tinP.pag1->idAdam , ' ' ) ;
+            //    OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->idAdam , ' ' ) ;
             //    OStEXTAK( ostoSay , "      sexC [idAdam,bNested,expCbDrop,expSlots,n/p,pbData,pbDataEnd,postName]: " ) ;
             //    OStEXT(   ostoSay , TUCK << 2 ) ;
             //{
@@ -158,10 +158,10 @@
             //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
             }
-                if( bNewMetaNapkinWasJustFormatted ) ((napkinC*)pb_napMeta)->tellAboutFormattingBeingDoneF( tinP ) ;
+                if( bNewMetaNapkinWasJustFormatted ) ((napkinC*)pb_napMeta)->tellAboutFormattingBeingDoneF( tinBaseP ) ;
 
-                if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ) ((napkinC*)pb_napData)->formattingIsDoneF( tinP ) ;
-                formatDataBlobF( tinP ) ; //NO ACTION IS NEEDED HERE TO PRESERVE STATE WHEN STATE FILE IS USED, SINCE THE FORMATTING INFORMATION IS ONLY USED TO DETECT MEMORY CORRUPTION SO NEED NOT BE SAVED AS STATE     U::20240815@1555: HUH?
+                if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ) ((napkinC*)pb_napData)->formattingIsDoneF( tinBaseP ) ;
+                formatDataBlobF( tinBaseP ) ; //NO ACTION IS NEEDED HERE TO PRESERVE STATE WHEN STATE FILE IS USED, SINCE THE FORMATTING INFORMATION IS ONLY USED TO DETECT MEMORY CORRUPTION SO NEED NOT BE SAVED AS STATE     U::20240815@1555: HUH?
 
                 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 // FORMAT pbData: ORIGINALLY, pbData WAS NOT FORMATTED.  FORMATTING WAS ADDED (20210128@1831) ONLY SO THAT MEMORY CORRUPTION CAN BE DETECTED.  THE FORMATTING INFORMATION IS NOT NEEDED FOR ANY OTHER PURPOSE.
@@ -178,7 +178,7 @@
                         }
                             }
                                 bNewMetaNapkinWasJustFormatted = 1 ;
-                                ((napkinC*)pb_napMeta)->formattingIsDoneF( tinP , 1 ) ;
+                                ((napkinC*)pb_napMeta)->formattingIsDoneF( tinBaseP , 1 ) ;
                             {
                             if( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORmETA && !( F(((napkinC*)pb_napMeta)->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
 
@@ -188,7 +188,7 @@
                             {
                             else
                             }
-                                if( pzMetaNote ) thirdC::c_memsetIF( tinP , (byteT*)pzMetaNote , sizeof( dropNoteS ) << pzMetaHead->expSlots ) ;
+                                if( pzMetaNote ) thirdC::c_memsetIF( tinBaseP , (byteT*)pzMetaNote , sizeof( dropNoteS ) << pzMetaHead->expSlots ) ;
                     
                                 }
                                     for( countT offo = 0 ; offo < cSlots ; offo ++ ) pzMetaNote[ offo ].idDelLath = pzMetaNote[ offo ].idNewLath = 0 ;
@@ -212,7 +212,7 @@
                                 // THIS DOES NOT HAVE TO BE DONE IF pbData WAS ALLOCATED USING THE POOL BECAUSE THERE IS NO OVERLAYED napkinC HEADER TO PROTECT
                                 // IF DATA IS IN NAPKIN THEN MARK THE LOW SLOTS AS UNUSEABLE SO THAT THE DATA NAPKIN HEADER, WHICH THEY OVERLAY FOR SMALL SLOT SIZES, WON'T BE TRASHED
 
-                                thirdC::c_memsetIF( tinP , pbzMetaBitsOwned , cbaBitsOwned ) ;
+                                thirdC::c_memsetIF( tinBaseP , pbzMetaBitsOwned , cbaBitsOwned ) ;
                             {
                             if( bFormatMetaBlob )
                     
@@ -240,7 +240,7 @@
 
                             //CONoUTrAW9( "sexC formatting meta [USINGnAPfORdATA,bSmallSlots,expCbDropP,expSlotsP,]: " , !!( F(flagsStatePrivate) & flSEXcsTATEpRIVATE_USINGnAPfORdATA ) , " " , bSmallSlots , " " , expCbDropP , " " , expSlotsP , "\r\n" ) ;
 
-                            pzMetaHead = new( 0 , tinP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinP , expCbDropP , cbDropAdjustP , expSlotsP , postNameP , flagsCt , flagsStatePrivate , cbDropSeparatorP , cbDropHeader ) ;
+                            pzMetaHead = new( 0 , tinBaseP , pbMeta , sizeof( sexHeadS ) ) sexHeadS( tinBaseP , expCbDropP , cbDropAdjustP , expSlotsP , postNameP , flagsCt , flagsStatePrivate , cbDropSeparatorP , cbDropHeader ) ;
                         {
                         else
                         }
@@ -256,7 +256,7 @@
                         ;
                                         : 1                                                                                 // ELSE FORMAT
                                         ? 0                                                                                 // THEN DO NOT FORMAT
-                                    : ((fileC*)pbFileMeta)->idOpenResultF( tinP  ) == ifcOPENrESULT_EXISTED                 // ELSE DID MY BACKING FILE ALREADY EXIST?
+                                    : ((fileC*)pbFileMeta)->idOpenResultF( tinBaseP  ) == ifcOPENrESULT_EXISTED                 // ELSE DID MY BACKING FILE ALREADY EXIST?
                                     ? 1                                                                                     // THEN FORMAT
                                 : !( F(flagsCt) & fliSEXc_MAPPEDtOdISK )                                                    // ELSE AM I STATELESS (NOT BACKED BY A DISK FILE)?
                                 ? 0                                                                                         // THEN DO NOT FORMAT
@@ -283,7 +283,7 @@
                         if( !POOP )
 
                         ) ;
-                            bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*tinP.pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
+                            bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*((tinNormalS&)tinBaseP).pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
                             cbaMeta ,
                             ) ,
                                     : (const handleC*)*(fileC*)pbFileMeta
@@ -292,48 +292,48 @@
                             (
                             ) ,
                                 )
-                                    tinP.pbF( 4 )
+                                    ((tinNormalS&)tinBaseP).pbF( 4 )
                                     ) ,
                                         "."
                                         ) ,
-                                            tinP.pbF( 3 )
+                                            ((tinNormalS&)tinBaseP).pbF( 3 )
                                             ) ,
                                                 "."
                                                 ) ,
-                                                    tinP.pbF( 2 )
+                                                    ((tinNormalS&)tinBaseP).pbF( 2 )
                                                     ) ,
                                                         "."
                                                         ) ,
                                                             postNameP
                                                             ) ,
-                                                                tinP , tinP.pbF() , "sexC/meta/"
+                                                                tinBaseP , ((tinNormalS&)tinBaseP).pbF() , "sexC/meta/"
                                                             (
                                                             thirdC::c_strcpyIF
-                                                            tinP ,
+                                                            tinBaseP ,
                                                         (
                                                         thirdC::c_strcatIF
-                                                        tinP ,
+                                                        tinBaseP ,
                                                     (
                                                     thirdC::c_strcatIF
-                                                    tinP ,
+                                                    tinBaseP ,
                                                 (
                                                 thirdC::c_strcatIF
-                                                tinP ,
+                                                tinBaseP ,
                                             (
                                             thirdC::c_strcatIF
-                                            tinP ,
+                                            tinBaseP ,
                                         (
                                         thirdC::c_strcatIF
-                                        tinP ,
+                                        tinBaseP ,
                                     (
                                     thirdC::c_strcatIF
-                                    tinP ,
+                                    tinBaseP ,
                                 (
                                 thirdC::c_strcatIF
                             (
-                            tinP , idLineNewP , idiFileNewP , pbBitsCtP ,
+                            tinBaseP , idLineNewP , idiFileNewP , pbBitsCtP ,
                         (
-                        new( 0 , tinP , pb_napMeta , sizeof pb_napMeta ) napkinC
+                        new( 0 , tinBaseP , pb_napMeta , sizeof pb_napMeta ) napkinC
                         flagsStatePrivate |= flSEXcsTATEpRIVATE_USINGnAPfORmETA ;
                     {
                     if( !pbMeta )
@@ -370,9 +370,9 @@
                                     //    OStEXT(   ostoSay , TUCK << 2 ) ;
                                     //{
                                     //else
-                                    //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbMeta from list [cbaMeta    ,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
+                                    //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("sexC / obtained pbMeta from list [cbaMeta    ,pcRecord]:    ")+TF2(cbaMeta,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
                                     DELlIST( fieldEditParamOutC , pOut ) ;
-                                    puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                                    puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
 
                                     }
                                         pbMetaEnd = pbMeta + cbaMeta ;
@@ -393,7 +393,7 @@
                                             ?  _fe_queryC() 
                                         bReadOnly
                                         ,
-                                        tinP , pOut , hListSex , pczField
+                                        tinBaseP , pOut , hListSex , pczField
                                     (
                                     flagsRC = listC::fieldIF
                                 {
@@ -401,28 +401,28 @@
                                 ZE( flagsT              , flagsRC ) ;
                                 ZE( fieldEditParamOutC* , pOut    ) ;
                     
-                                listC::openIF( tinP , hListSex , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ;
-                                handleC hListSex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                listC::openIF( tinBaseP , hListSex , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ;
+                                handleC hListSex( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                             {
                             if( bListsExist || !bReadOnly )
                     
                             }
                                 if( ~hListField ) bListsExist = 1 ;
-                                listC::openIF( tinP , hListField , hListSex , pczField , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
-                                handleC hListField( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                listC::openIF( tinBaseP , hListField , hListSex , pczField , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
+                                handleC hListField( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                             {
                             if( ~hListSex )
-                            listC::openIF( tinP , hListSex , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
-                            handleC hListSex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                            listC::openIF( tinBaseP , hListSex , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW) ;
+                            handleC hListSex( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                             THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
                             ZE( boolT , bListsExist ) ;
                         {
                     
-                        grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+                        grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
                         countT pczField[]   = { LISTnAMEsYS_SEXmETA , 0 } ;
                     
-                        puseC puseUse( tinP , *pPoolContainsMe ) ;
+                        puseC puseUse( tinBaseP , *pPoolContainsMe ) ;
                     {
                 
                     // ALLOCATE pbMeta FROM *pPoolContainsMe TO AVOID THE OVERHEAD OF USING A napkinC AND ESCAPE THE BASE O.S. ALLOCATION GRAIN MINIMUM AND MINIMIZE ADDRESS SPACE FRAGMENTATION
@@ -430,13 +430,13 @@
                 )
                     expCbDropP != expCbDropAvoid
                     &&
-                    tinP.pag1->pPoolAdamTemp
+                    ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp
                     &&
                     !bNested
                     &&
                     pPoolContainsMe
                     &&
-                    !( F(tinP.flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
+                    !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
                     &&
                     !( F(flagsCt              ) &       fliSEXc_NOsEXiNpOOL )
                     &&
@@ -468,7 +468,7 @@
                 if( !POOP )
 
                 ) ;
-                    bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*tinP.pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION && expCbDropP + expSlotsP <= 0x14 ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
+                    bReadOnly ? ifcOPENsHAREDmEMORYhOW_nFeO : ifcOPENsHAREDmEMORYhOW_nCeO , /*((tinNormalS&)tinBaseP).pag1->idMemorySpace == ifcIDmEMORYsPACE_APPLICATION && expCbDropP + expSlotsP <= 0x14 ? flNAPKINc_LOCK :*/ flNAPKINc_null , 1 , idMemorySpaceP
                     cbaDataNapkin ,
                     ) ,
                             : (const handleC*)*(fileC*)pbFileData
@@ -476,50 +476,50 @@
                         !idStateSpaceP
                     (
                     ) ,
-                        tinP.pbF( 4 )
+                        ((tinNormalS&)tinBaseP).pbF( 4 )
                         ) ,
                             "."
                             ) ,
-                                tinP.pbF( 3 )
+                                ((tinNormalS&)tinBaseP).pbF( 3 )
                                 ) ,
                                     "."
                                     ) ,
-                                        tinP.pbF( 2 )
+                                        ((tinNormalS&)tinBaseP).pbF( 2 )
                                         ) ,
                                             "."
                                             ) ,
                                                 postNameP
                                                 ) ,
-                                                    tinP , tinP.pbF() , "sexC/data/"
+                                                    tinBaseP , ((tinNormalS&)tinBaseP).pbF() , "sexC/data/"
                                                 (
                                                 thirdC::c_strcpyIF
-                                                tinP ,
+                                                tinBaseP ,
                                             (
                                             thirdC::c_strcatIF
-                                            tinP ,
+                                            tinBaseP ,
                                         (
                                         thirdC::c_strcatIF
-                                        tinP ,
+                                        tinBaseP ,
                                     (
                                     thirdC::c_strcatIF
-                                    tinP ,
+                                    tinBaseP ,
                                 (
                                 thirdC::c_strcatIF
-                                tinP ,
+                                tinBaseP ,
                             (
                             thirdC::c_strcatIF
-                            tinP ,
+                            tinBaseP ,
                         (
                         thirdC::c_strcatIF
-                        tinP ,
+                        tinBaseP ,
                     (
                     thirdC::c_strcatIF
                     idLineNewP , idiFileNewP , pbBitsCtP ,
                     ) ,
-                        tinP
+                        tinBaseP
                     (
                 (
-                new( 0 , tinP , pb_napData , sizeof pb_napData ) napkinC
+                new( 0 , tinBaseP , pb_napData , sizeof pb_napData ) napkinC
 
                 flagsStatePrivate |= flSEXcsTATEpRIVATE_USINGnAPfORdATA ;
                 // WHEN SLOT SIZE IS LARGE, DATA BEGINS IN THE NORMAL PLACE (AT THE END OF THE NAPKIN HEADER) AND ADDITIONAL BYTES ARE ALLOCATED FOR HEADROOM (SO THAT THE HIGHEST VALID BYTE CAN BE READ USING A DWORD OPERATION SUCH AS movsd)
@@ -541,7 +541,7 @@
         }
             }
                 }
-                    //DO THIS IN MY DESTRUCTOR BUT ONLY IF I AM THE ONLY CLIENT: listC::deleteIF( tinP, pcz ListSex ) ;
+                    //DO THIS IN MY DESTRUCTOR BUT ONLY IF I AM THE ONLY CLIENT: listC::deleteIF( tinBaseP, pcz ListSex ) ;
             
                     THREADmODE4rESTORE
                     }
@@ -564,9 +564,9 @@
                             //    OStEXT(   ostoSay , TUCK << 2 ) ;
                             //{
                             //else
-                            //if( tinP.pEther ) tinP.pEther->traceF( tinP , T("sexC / obtained pbData from list [cbaDataPool,pcRecord]:    ")+TF2(cbaDataPool,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
+                            //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("sexC / obtained pbData from list [cbaDataPool,pcRecord]:    ")+TF2(cbaDataPool,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pcz ListSex) ) ;
                             DELlIST( fieldEditParamOutC , pOut ) ;
-                            puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                            puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
 
                             if( !POOP ) pbData = (byteT*)(const osTextT*)pOut->vspBlob ;
                             __NZ( pOut->pNext ) ;
@@ -581,7 +581,7 @@
                                     ?  _fe_queryC() 
                                 bReadOnly
                                 ,
-                                tinP , pOut , hListSex2 , pczField
+                                tinBaseP , pOut , hListSex2 , pczField
                             (
                             flagsRC = listC::fieldIF
                         {
@@ -589,30 +589,30 @@
                         ZE( flagsT , flagsRC ) ;
                         ZE( fieldEditParamOutC* , pOut ) ;
             
-                        listC::openIF( tinP , hListSex2 , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ; //U::BUG: THE grabitC::ungrabF BLAMMO OCCURS WITHIN THIS CALL
-                        handleC hListSex2( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                        listC::openIF( tinBaseP , hListSex2 , pczListSex , bReadOnly ? flLISToPEN_IFeXISTS : flLISToPEN_null , ifcIDgRABlAYER_8POOL5nEW ) ; //U::BUG: THE grabitC::ungrabF BLAMMO OCCURS WITHIN THIS CALL
+                        handleC hListSex2( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     {
                     if( bListsExist || !bReadOnly )
 
                     }
                         }
                             if( ~hListField ) bListsExist = 1 ;
-                            listC::openIF( tinP , hListField , hListSex1 , pczField , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
-                            handleC hListField( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                            listC::openIF( tinBaseP , hListField , hListSex1 , pczField , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
+                            handleC hListField( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                         {
                         if( ~hListSex1 )
-                        listC::openIF( tinP , hListSex1 , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
-                        handleC hListSex1( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                        listC::openIF( tinBaseP , hListSex1 , pczListSex , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_8POOL5nEW ) ;
+                        handleC hListSex1( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     {
                     THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL )
                     ZE( boolT , bListsExist ) ;
                 {
 
-                grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+                grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
             
                 countT pczField[]   = { LISTnAMEsYS_SEXdATA , 0 } ;
             
-                puseC puseUse( tinP , *pPoolContainsMe ) ;
+                puseC puseUse( tinBaseP , *pPoolContainsMe ) ;
             {
         
             // ALLOCATE pbData FROM *pPoolContainsMe TO AVOID THE OVERHEAD OF USING A napkinC AND ESCAPE THE BASE O.S. ALLOCATION GRAIN MINIMUM AND MINIMIZE ADDRESS SPACE FRAGMENTATION
@@ -626,19 +626,19 @@
             //    countT idIn = 1 + incv02AM( idInLath ) ;
             //    static countT idInLath ;
             //{
-            //if( tinP.pcUtility[ 0 ] )
+            //if( ((tinNormalS&)tinBaseP).pcUtility[ 0 ] )
 
         {
         )
             expCbDropP != expCbDropAvoid
             &&
-            tinP.pag1->pPoolAdamTemp
+            ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp
             &&
             !bNested
             &&
             pPoolContainsMe
             &&
-            !( F(tinP.flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
+            !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_NOsEXiNpOOL )
             &&
             !( F(flagsCt              ) &       fliSEXc_NOsEXiNpOOL )
             &&
@@ -663,10 +663,10 @@
 
         const boolT bReadOnly = !!( F(flagsCt) & ( fliSEXc_nFeO | fliSEXc_READoNLY ) ) ;
 
-        tinP.tlsNewF( LF , TUCK >> 1 ) ;
-        tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , idStateSpaceP ) ;
-        tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , expCbDropP ) ;
-        tinP.tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinP , tinP.pbF() , 0x10 , expSlotsP ) ;
+        ((tinNormalS&)tinBaseP).tlsNewF( LF , TUCK >> 1 ) ;
+        ((tinNormalS&)tinBaseP).tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinBaseP , ((tinNormalS&)tinBaseP).pbF() , 0x10 , idStateSpaceP ) ;
+        ((tinNormalS&)tinBaseP).tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinBaseP , ((tinNormalS&)tinBaseP).pbF() , 0x10 , expCbDropP ) ;
+        ((tinNormalS&)tinBaseP).tlsNewF( LF , 0x10 ) ;    thirdC::c_itoaIF( tinBaseP , ((tinNormalS&)tinBaseP).pbF() , 0x10 , expSlotsP ) ;
         //CS:CODEsYNC: 360e0003 360e0003
 
         const countT pczListSex[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM1 , LISTnAMEsYS_HANDhOLD , LISTnAMEsYS_SEXc , BM_HIGH | expCbDropP , BM_HIGH | expSlotsP , 0 } ;
@@ -698,16 +698,16 @@
 
         }
             THREADmODE2rESTORE
-            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " grabbed  " , offSexBit , "\r\n" ) ; }
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinBaseP , pPoolContainsMe->postNameF( tinBaseP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , ((tinNormalS&)tinBaseP).monitor.idThread , " grabbed  " , offSexBit , "\r\n" ) ; }
             }
                 }
-                    ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
+                    ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
                 {
                 while( btsAM( pReg->pbSexGrabbedBits , offSexBit ) )
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinP , pPoolContainsMe->postNameF( tinP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , tinP.monitor.idThread , " grabbing " , offSexBit , "\r\n" ) ; }
+            //if( offSexBit == 0xca && thirdC::c_strstrIF( tinBaseP , pPoolContainsMe->postNameF( tinBaseP ) , "home." ) ) { CONoUTrAW5( "\r\nthread " , ((tinNormalS&)tinBaseP).monitor.idThread , " grabbing " , offSexBit , "\r\n" ) ; }
             POOPIE
         {
         if( pReg )
@@ -724,14 +724,14 @@
                     inc02AM( pReg->cRefPoolReg ) ;
                     pReg = pRegs + offr ;
                 {
-                if( !thirdC::c_strcmpIF( tinP , pRegs[ offr ].postPoolName , postPoolName ) && !pReg )
-                grabitC grabx( tinP , TAG( TAGiDnULL ) , (byteT*)&pRegs[ offr ].flagsi , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_9POOLlAYER2) ;
+                if( !thirdC::c_strcmpIF( tinBaseP , pRegs[ offr ].postPoolName , postPoolName ) && !pReg )
+                grabitC grabx( tinBaseP , TAG( TAGiDnULL ) , (byteT*)&pRegs[ offr ].flagsi , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_9POOLlAYER2) ;
             {
             for( countT offr = 0 ; offr < CpOOLrEGISTRATIONSmAX ; offr ++ )
 
-            grabitC grabx( tinP , TAG( TAGiDnULL ) , (byteT*)&home.fliGrab , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_9POOLlAYER1 ) ;
+            grabitC grabx( tinBaseP , TAG( TAGiDnULL ) , (byteT*)&home.fliGrab , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_9POOLlAYER1 ) ;
 
-            const osTextT* postPoolName = pPoolContainsMe->postNameF( tinP ) ;
+            const osTextT* postPoolName = pPoolContainsMe->postNameF( tinBaseP ) ;
             poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
             homeS& home = homeS::homeIF() ;
             POOPIE
@@ -748,8 +748,8 @@
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
-                                   tinP.pSexLifoConstructing = this ;
-            pSexLifoConstructing = tinP.pSexLifoConstructing ;
+                                   ((tinNormalS&)tinBaseP).pSexLifoConstructing = this ;
+            pSexLifoConstructing = ((tinNormalS&)tinBaseP).pSexLifoConstructing ;
 
             }
                 pSexc = pSexc->pSexLifoConstructing ;
@@ -760,7 +760,7 @@
                 if( pSexc == this )
             {
             while( pSexc )
-            sexC* pSexc = tinP.pSexLifoConstructing ;
+            sexC* pSexc = ((tinNormalS&)tinBaseP).pSexLifoConstructing ;
         {
         if( pPoolContainsMe )                                                       // I AM MAINLY FOR USE WITHIN poolC ; BUT AN APPLICATION CAN CT ME (pPoolContainsMe MUST BE 0)
         ZE( boolT , bNested ) ;
@@ -791,7 +791,7 @@
         ZE( countT , cbaDataNapkin ) ;
         ZE( countT , cbaDataPool   ) ;
 
-        const boolT bSmallSlots = ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) < ( 1 << thirdC::os_expCbAllocationGrain_IF( tinP ) ) ;        // FOR SMALL SLOT SIZES, pbData WILL POINT TO THE napkinHeaderS CONTROL STRUCTURE, WHICH IS WHY THE LOW SLOTS MUST BE MARKED AS UNAVAILABLE
+        const boolT bSmallSlots = ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) < ( 1 << thirdC::os_expCbAllocationGrain_IF( tinBaseP ) ) ;        // FOR SMALL SLOT SIZES, pbData WILL POINT TO THE napkinHeaderS CONTROL STRUCTURE, WHICH IS WHY THE LOW SLOTS MUST BE MARKED AS UNAVAILABLE
 
         const countT cbDropHeader    = F(flagsCt) & fliSEXc_NOdROPhEADERS ? 0 : CBsEXdROPhEADER ;
 
@@ -799,7 +799,7 @@
         // CALCULATE BLOB SIZES NEEDED
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;
+        puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // USE THE ADAM TEMP POOL EXCEPT WHEN I EXPLICITLY SWITCH TO *pPoolContainsMe ("PUSE WRAP")
@@ -815,7 +815,7 @@
     // BUT ITS USE IS RETAINED BECAUSE IT AVOIDS THE USE OF *pPoolContainsMe, WHICH COULD TRIGGER NESTED CONSTRUCTION OF OTHER sexC
     // NOW THAT napkinC'S ARE CONDITIONALLY CONSTRUCTED IN THE BODY OF THE sexC CONSTRUCTOR, TLS IS NOT NEEDED FOR CODING CONVENIENCE
     // TLS WAS ORIGINALLY USED FOR CODING CONVENIENCE WHEN THE OO napkinC'S WERE UNCONDITIONALLY CONSTRUCTED AS napkinC MEMBERS
-    // TLS (tinS::newF pbF delF) IS USED FOR SHORT STRINGS TO CALCULATE A napkinC PARAMETER VALUE (postNameP)
+    // TLS (tinNormalS::newF pbF delF) IS USED FOR SHORT STRINGS TO CALCULATE A napkinC PARAMETER VALUE (postNameP)
     // 
     // 3. ON FAILURE, I IMMEDIATELY DESTROY ANY napkinC AND OTHER INSTANCES THAT I HAVE CREATED ; MY DESTRUCTOR DOES NOT NEED TO DO THIS (NEW?)
     // 2. CALLER MUST DETECT MY IMPOTENCE (BY CALLING operator const poopC&) AND DESTROY ME                                              (OLD)
@@ -874,13 +874,13 @@
     //    countT idIn = 1 + incv02AM( idInLath ) ;
     //    static countT idInLath ;
     //{
-    //if( tinP.pc Utility[ 0 ] )
+    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 
     //CONoUTrAW5( "\r\nsexC::sexC [exbCbDropP,expSlotsP]:    " , expCbDropP , "    " , expSlotsP , "\r\n" ) ;
 
     if( cbDropSeparatorP && cbDropSeparatorP - sizeof( countT ) ) { BLAMMOiD( 0x33334444 ) ; }
 
-    if( idStateSpaceP ) ctFilesF( tinP , postNameP , expCbDropP , cbDropAdjustP , expSlotsP , idStateSpaceP ) ;
+    if( idStateSpaceP ) ctFilesF( tinBaseP , postNameP , expCbDropP , cbDropAdjustP , expSlotsP , idStateSpaceP ) ;
 
     ;
         : flagsP | fliSEXc_MAPPEDtOdISK
@@ -908,11 +908,11 @@ idLathNewDel( 0 ) ,
 idStateSpace( idStateSpaceP ) ,
 flagsStatePrivate( flSEXcsTATEpRIVATE_null ) ,
 pPoolContainsMe( pPoolContainsMeP ) ,
-/*1*/sexC::sexC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , countT idMemorySpaceP , poolC* const pPoolContainsMeP ) :/*1*/
+/*1*/sexC::sexC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idLineNewP , const countT idiFileNewP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT expSlotsP , const countT cbDropSeparatorP , const flagsT flagsP , const countT idStateSpaceP , countT idMemorySpaceP , poolC* const pPoolContainsMeP ) :/*1*/
 
 /**/
 */
-the caller must construct this: tlsAllocStackExp_a_C tls( tinP ) ;
+the caller must construct this: tlsAllocStackExp_a_C tls( tinBaseP ) ;
 /*
 
 //

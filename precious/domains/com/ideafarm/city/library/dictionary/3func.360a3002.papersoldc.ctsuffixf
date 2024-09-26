@@ -8,7 +8,7 @@
 
 
 }
-    selectF( tinP , ifcIDcMDpAPERsELECT_SETrENDERdEFAULT , idPaperRenderDefault ) ; //WILL SET ALL OF THE pPaper* CACHE MEMBERS
+    selectF( tinBaseP , ifcIDcMDpAPERsELECT_SETrENDERdEFAULT , idPaperRenderDefault ) ; //WILL SET ALL OF THE pPaper* CACHE MEMBERS
 
     }
         }
@@ -16,16 +16,16 @@
 
             if( cLeverIdPaper == idPaperShow ) pPaperShow = (paperOldC*)pbPaper ; //MUST BE DONE BEFORE selectNEWF CAN BE CALLED
 
-            new( 0 , tinP , pbPaper , sizeof( paperOldC ) ) paperOldC( tinP , etherP , cArgP , back , pPaperToBackCBFP , cPaperToBackArgP ) ;
+            new( 0 , tinBaseP , pbPaper , sizeof( paperOldC ) ) paperOldC( tinBaseP , etherP , cArgP , back , pPaperToBackCBFP , cPaperToBackArgP ) ;
             byteT* pbPaper = (byteT*)&(countT&)swPaper ;
         {
         else
-        if( swPaper.idSlotOfLeverF( tinP , cLeverIdPaper ) ) { BLAMMO ; }
+        if( swPaper.idSlotOfLeverF( tinBaseP , cLeverIdPaper ) ) { BLAMMO ; }
     {
     for( cLeverIdPaper = 1 ; cLeverIdPaper <= cPapers ; cLeverIdPaper ++ ) //4:aok 8:aok 01:nocando(bitmapct)
     //paperOldC OBJECTS CANNOT BE CT UNTIL CT OF backOldC DERIVED CLASS OBJECT IS FULLY CT, BECAUSE VIRTUAL FUNCTION TABLE IS NEEDED
 {
-/*1*/voidT papersOldC::ctSuffixF( tinS& tinP , etherC& etherP , const countT cArgP , paperToBackCBFT pPaperToBackCBFP , countT cPaperToBackArgP )/*1*/
+/*1*/voidT papersOldC::ctSuffixF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , paperToBackCBFT pPaperToBackCBFP , countT cPaperToBackArgP )/*1*/
 
 /**/
 

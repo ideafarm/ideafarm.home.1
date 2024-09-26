@@ -17,29 +17,29 @@
                 else                 hAngleP = - 1.0 - hAngleP ;
                 if( hAngleP >= 0.0 ) hAngleP =   1.0 - hAngleP ;
 
-                hAngleP = tinP.brcm04Raw ;
+                hAngleP = ((tinNormalS&)tinBaseP).brcm04Raw ;
                 BOSmEASURE04( WHATgbo , atan2( vSpecPod( 1 ) , - vSpecPod( 3 ) ) / PI )
             {
             else
             }
-                hAngleP = tinP.brcm04Raw ;
+                hAngleP = ((tinNormalS&)tinBaseP).brcm04Raw ;
                 BOSmEASURE04( WHATgbo , atan2( vSpecPod( 1 ) , vSpecPod( 3 ) ) / PI )
             {
             if( vSpecPod( 3 ) > 0.0 )
 
-            vAngleP = tinP.brcm04Raw ;
+            vAngleP = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , atan2( vSpecPod(2) , thirdC::c_sqrtIF( vSpecPodHorProj ) ) / PI )
         {
         else
         }
             }
-                vAngleP = tinP.brcm04Raw ;
+                vAngleP = ((tinNormalS&)tinBaseP).brcm04Raw ;
                 BOSmEASURE04( WHATgbo , atan2( vSpecPod( 2 ) , - vSpecPod( 1 ) ) / PI )
                 hAngleP = - 0.5 ;
             {
             else if( vSpecPod( 1 ) < 0.0 ) // IN FACE PLANE TO MY LEFT
             }
-                vAngleP = tinP.brcm04Raw ;
+                vAngleP = ((tinNormalS&)tinBaseP).brcm04Raw ;
                 BOSmEASURE04( WHATgbo , atan2( vSpecPod( 2 ) , vSpecPod( 1 ) ) / PI )
                 hAngleP = 0.5 ;
             {
@@ -61,7 +61,7 @@
             }
                 else flagsP &= ~( F(flEYEoLDaNGLEStOsPEC_AFT) ) ;
                 }
-                    vAngleAftP = tinP.brcm04Raw ;
+                    vAngleAftP = ((tinNormalS&)tinBaseP).brcm04Raw ;
                     BOSmEASURE04( WHATgbo , atan2( vSpecPodAft( 2 ) , - vSpecPodAft( 3 ) ) / PI )
                 {
                 if( vSpecPodAft( 0 ) && vSpecPodAft( 3 ) < - FUZZ2 )
@@ -115,7 +115,7 @@
                 if
             {
             if( dx < - FUZZ2 || dx > FUZZ2 ) // X RANGES
-            vectorOldC vSpecPodAft( tinP , ether ) ;
+            vectorOldC vSpecPodAft( tinBaseP , ether ) ;
 
             measureT dz = vSpecPod( 3 ) - vSpecPodLagP( 3 ) ;
             measureT dy = vSpecPod( 2 ) - vSpecPodLagP( 2 ) ;
@@ -134,17 +134,17 @@
         vSpecPodHorProj( 3 ) = vSpecPod( 3 ) ;
         vSpecPodHorProj( 1 ) = vSpecPod( 1 ) ;
 
-        podFromAbsF( tinP , vSpecPod , vSpecAbs ) ;
+        podFromAbsF( tinBaseP , vSpecPod , vSpecAbs ) ;
         vSpecAbs -= state.vao ;
         vSpecAbs(3) = zzP ;
         vSpecAbs(2) = yyP ;
         vSpecAbs(1) = xxP ;
-        vectorOldC vSpecAbs( tinP , ether ) ;
+        vectorOldC vSpecAbs( tinBaseP , ether ) ;
     {
-    vectorOldC vSpecPodHorProj( tinP , ether ) ;
-    vectorOldC vSpecPod( tinP , ether ) ;
+    vectorOldC vSpecPodHorProj( tinBaseP , ether ) ;
+    vectorOldC vSpecPod( tinBaseP , ether ) ;
 {
-/*1*/voidT eyeOldC::anglesToSpecF( tinS& tinP , flagsT& flagsP , measureT& hAngleP , measureT& vAngleP , measureT& vAngleAftP , measureT xxP , measureT yyP , measureT zzP , vectorOldC& vSpecPodLagP )/*1*/
+/*1*/voidT eyeOldC::anglesToSpecF( tinBaseS& tinBaseP , flagsT& flagsP , measureT& hAngleP , measureT& vAngleP , measureT& vAngleAftP , measureT xxP , measureT yyP , measureT zzP , vectorOldC& vSpecPodLagP )/*1*/
 
 /**/
 

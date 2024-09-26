@@ -10,9 +10,9 @@
     _IO_
                                                                                                          \
         BLAMMO ;                                                                                         \
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;                                                     \
-    if( pBaton ) pBaton->grabF( tinP , idLineP , idiFileP , pbBitsP ) ;                                  \
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;                                                     \
+    if( pBaton ) pBaton->grabF( tinBaseP , idLineP , idiFileP , pbBitsP ) ;                                  \
                                                                                                          \
 #define _INbATONnOtAG_                                                                                   \
 

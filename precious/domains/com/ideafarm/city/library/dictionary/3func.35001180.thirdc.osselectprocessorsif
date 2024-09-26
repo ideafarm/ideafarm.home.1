@@ -13,7 +13,7 @@
         BOS( WHATgbo , BOSoK , SetThreadAffinityMask( oshThread , maskWant ) )
 
         }
-            oshThread = (HANDLE)tinP.brcRaw ;
+            oshThread = (HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
         {
         else
@@ -48,12 +48,12 @@
 
     BOSpOOP
     BOS( WHATgbo , BOSoK , GetProcessAffinityMask( oshMe , (DWORD*)&maskProcess , (DWORD*)&maskSystem ) )
-    HANDLE oshMe = (HANDLE)tinP.brcRaw ;
+    HANDLE oshMe = (HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
     ZE( countT , maskSystem ) ;
     ZE( countT , maskProcess ) ;
 {
-/*1*/voidT thirdC::osSelectProcessorsIF( tinS& tinP , const countT idTypeP , const handleC* const phThreadP )/*1*/
+/*1*/voidT thirdC::osSelectProcessorsIF( tinBaseS& tinBaseP , const countT idTypeP , const handleC* const phThreadP )/*1*/
 
 /**/
 */

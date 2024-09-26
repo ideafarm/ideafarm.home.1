@@ -8,10 +8,10 @@
 
 
     }
-        thirdC::c_strncpyIF( tinP , tinP.postTell , ostot , sizeof tinP.postTell ) ;            \
+        thirdC::c_strncpyIF( tinBaseP , ((tinNormalS&)tinBaseP).postTell , ostot , sizeof ((tinNormalS&)tinBaseP).postTell ) ;            \
         OStEXTA( ostot , postFromP )                                                            \
-        OStEXTA( ostot , tinP.postTell )                                                        \
-        OStEXT( ostot , sizeof tinP.postTell )                                                  \
+        OStEXTA( ostot , ((tinNormalS&)tinBaseP).postTell )                                                        \
+        OStEXT( ostot , sizeof ((tinNormalS&)tinBaseP).postTell )                                                  \
     {                                                                                           \
                                                                                                 \
 #define TELLcONCAT(postFromP)                                                                   \

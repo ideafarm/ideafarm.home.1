@@ -10,38 +10,38 @@
 REST
 
 thirdC::third_flagsModeProcess2I_IF() &= ~( F(flMODEpROCESS2_SUPPRESSiNoUTfRAMEc) ) ;
-etThread.traceF( tinP , T("i've been fired") ) ;
+etThread.traceF( tinBaseP , T("i've been fired") ) ;
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
-//etherC::etherFireGroupIF( tinP ) ; //U:: TO FIND A BUG
+//etherC::etherFireGroupIF( tinBaseP ) ; //U:: TO FIND A BUG
 
-//thirdC::ctrlCIF( tinP ) ;
+//thirdC::ctrlCIF( tinBaseP ) ;
 
-etThread.traceF( tinP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.traceMemoryGrainRptF( tinP ) ;
+    etThread.traceMemoryGrainRptF( tinBaseP ) ;
 
-    etThread.traceF( tinP , T("all are ready now") ) ;
+    etThread.traceF( tinBaseP , T("all are ready now") ) ;
     }
-        ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
-        etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cReady,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+        etThread.traceF( tinBaseP , T("[pending]:    ")+TF2(CwORKERS-cReady,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( cReady < CwORKERS )
 
     cAlive = 0 ;
-    etThread.traceF( tinP , T("all are alive now") ) ;
+    etThread.traceF( tinBaseP , T("all are alive now") ) ;
     }
-        ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
-        etThread.traceF( tinP , T("[pending]:    ")+TF2(CwORKERS-cAlive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+        etThread.traceF( tinBaseP , T("[pending]:    ")+TF2(CwORKERS-cAlive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( cAlive < CwORKERS )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     THREADmODE2rESTORE
     }
-        etThread.osThreadF( tinP , countTC() , tmWorkF , 0 , &cAlive , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT | flTHREADlAUNCH_NOtINiNpOOL , CBsTACKmIN , 0 , (countT)&cReady ) ;
+        etThread.osThreadF( tinBaseP , countTC() , tmWorkF , 0 , &cAlive , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT | flTHREADlAUNCH_NOtINiNpOOL , CBsTACKmIN , 0 , (countT)&cReady ) ;
     {
     while( cDo -- )
     THREADmODE2oN( flTHREADmODE2_SUPPRESStELLmONITOR )
@@ -58,8 +58,8 @@ TODO
 DONEnOeTHERS( tmWorkF )
 THREADmODE4rESTORE
 }                                                           // ether AND etRock ARE AVAILABLE AS SHARED etherC INSTANCES
-    //etRock.traceF( tinP , T("i've been fired") ) ;          // THIS CALL TO traceF CAUSES LOTS OF poolC DROP ALLOCATIONS, WHICH CAN FAIL DUE TO EXHAUSTION OF THE ADDRESS SPACE
-    etherC::loafIF( tinP ) ;
+    //etRock.traceF( tinBaseP , T("i've been fired") ) ;          // THIS CALL TO traceF CAUSES LOTS OF poolC DROP ALLOCATIONS, WHICH CAN FAIL DUE TO EXHAUSTION OF THE ADDRESS SPACE
+    etherC::loafIF( tinBaseP ) ;
     inc02AM( cReadyP ) ;
 
     countT& cReadyP = *(countT*)pTaskP->c1 ;
@@ -78,7 +78,7 @@ TASKnOeTHERS( tmWorkF )
 //G:#define CwORKERS ( 0x1000 + 98 )
 //G:#define CwORKERS 0x1000
 //G:#define CwORKERS 0x800
-//WITHOUT RESETTING cAlive (I.E DO NOT CT tinS AND etThread ON THE KID THREADS)
+//WITHOUT RESETTING cAlive (I.E DO NOT CT tinNormalS AND etThread ON THE KID THREADS)
 
 //B:#define CwORKERS 0x600
 //B:#define CwORKERS 0x800

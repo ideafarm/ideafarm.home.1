@@ -9,12 +9,12 @@
 
 REST
 
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
 while( cGor -- ) etThread.osThreadF( TaRG1( tmGorillaF ) , (countT)&stx ) ;
 countT cGor = 0x100 ;
 
-stackC stx( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , 0 , &leverLathRef ) ;
+stackC stx( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , 0 , &leverLathRef ) ;
 ZE( countT , leverLathRef ) ;
 
 TODO
@@ -23,40 +23,40 @@ DONE( tmGorillaF )
 }
     }
         }
-            thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-            tinP.cYield = 0 ;
+            thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
+            ((tinNormalS&)tinBaseP).cYield = 0 ;
 
-            thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
+            thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            tinP.cYield = 0 ;
-            thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_RUSH ) ;
-            const countT idDesireSave = tinP.idDesireSetBySelf ;
+            ((tinNormalS&)tinBaseP).cYield = 0 ;
+            thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+            const countT idDesireSave = ((tinNormalS&)tinBaseP).idDesireSetBySelf ;
         
             }
-                stx.ungrabF( tinP ) ;
+                stx.ungrabF( tinBaseP ) ;
                 stx >> foo ;
                 ZE( countT , foo ) ;
             {
             else
             }
                 break ;
-                stx.ungrabF( tinP ) ;
+                stx.ungrabF( tinBaseP ) ;
             {
             if( !stx )
-            stx.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            stx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         while( !ether )
 
-        //stx.purgeF( tinP ) ;
+        //stx.purgeF( tinBaseP ) ;
 
-        //while( cToDo -- ) stx.insertF( tinP , 1 + cToDo , ifcSTACKtYPE_countT , 0 ) ;
+        //while( cToDo -- ) stx.insertF( tinBaseP , 1 + cToDo , ifcSTACKtYPE_countT , 0 ) ;
         while( cToDo -- ) stx << (countT)( 1 + cToDo ) ;
         countT cToDo = 0x1 ; //1 + ru ;
         idCycle ++ ;
     {
     while( !ether )
     ZE( countT , idCycle ) ;
-    ranUniC ru( 16.0 , tinP.monitor.idThread ) ;
+    ranUniC ru( 16.0 , ((tinNormalS&)tinBaseP).monitor.idThread ) ;
 
     stackC& stx = *(stackC*)pTaskP->c1 ;
 {

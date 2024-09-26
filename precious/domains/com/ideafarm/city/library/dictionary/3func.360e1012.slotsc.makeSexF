@@ -11,7 +11,7 @@
     THREADmODE2rESTORE
 
     inc02AM( pcTallyOut[ offs ] ) ;
-    pGrabNewElt[ offs ].ungrabF( tinP ) ; // -------------------------------------------------------------------------------------------------
+    pGrabNewElt[ offs ].ungrabF( tinBaseP ) ; // -------------------------------------------------------------------------------------------------
 
     }
         }
@@ -29,8 +29,8 @@
         if( pSexNew && (const poopC&)*pSexNew ) // *pSexNew CT FAILED, EITHER BECAUSE IT DETECTED THAT IT CT'D ITSELF RECURSIVELY OR BECAUSE INSUFFICIENT CONTIGUOUS MEMORY IS AVAILABLE
 
         }
-            pSexNew = new( 0 , tinP , pbzaUse , sizeof( sexC ) ) sexC( tinP , TAG( TAGiDnULL ) , LF , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
-            tlsAllocStackExp_a_C tls( tinP ) ;
+            pSexNew = new( 0 , tinBaseP , pbzaUse , sizeof( sexC ) ) sexC( tinBaseP , TAG( TAGiDnULL ) , LF , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
+            tlsAllocStackExp_a_C tls( tinBaseP ) ;
         {
         ZE( sexC* , pSexNew ) ;
 
@@ -48,7 +48,7 @@
     if( !ppSex[ offs ] )
 
     inc02AM( pcTallyIn[ offs ] ) ;
-    pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ; // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ; // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     countT offs = expSlotsP ;
 
@@ -60,7 +60,7 @@
 
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
     if( F(flagsCt) & flSLOTSc_READoNLY ) { BLAMMO ; }
-    if( F(tinP.flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+    if( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
     _IO_
 
     }
@@ -68,7 +68,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT slotsC::makeSexF( tinS& tinP , const countT expSlotsP )/*1*/
+/*1*/voidT slotsC::makeSexF( tinBaseS& tinBaseP , const countT expSlotsP )/*1*/
 
 /**/
 

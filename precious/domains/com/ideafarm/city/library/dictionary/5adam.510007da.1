@@ -9,16 +9,16 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.traceF( tinP , T("mp3 [cBad,cGood]:    ")+TF2(cBad,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cGood,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinP , T("walked  ")+tRoot+T(" [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.diskWalkF( tinP , cDirs , cFiles , tRoot , ether , flDISKwALK_null , workCBF , pcArgInner , 0 , 0 ) ;
+    etThread.traceF( tinBaseP , T("mp3 [cBad,cGood]:    ")+TF2(cBad,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cGood,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , T("walked  ")+tRoot+T(" [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.diskWalkF( tinBaseP , cDirs , cFiles , tRoot , ether , flDISKwALK_null , workCBF , pcArgInner , 0 , 0 ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
-    etThread.traceF( tinP , T("walking ")+tRoot ) ;
+    etThread.traceF( tinBaseP , T("walking ")+tRoot ) ;
 
     countT pcArgInner[] = { (countT)&etThread , (countT)&cBad , (countT)&cGood , (countT)&tb4 , (countT)&tMp3 , (countT)&tPdf } ;
 
@@ -29,26 +29,26 @@ etThread.traceF( tinP , T("ok") ) ;
     TN( tMp3 , "mp3" ) ;
     TN( tb4  , "    " ) ;
 
-    etThread.delF( tinP   , psttDir ) ;
+    etThread.delF( tinBaseP   , psttDir ) ;
     TN( tRoot , psttDir ) ;
 {
 else
-if( !psttDir ) etThread.traceF( tinP , T("oops!") ) ;
+if( !psttDir ) etThread.traceF( tinBaseP , T("oops!") ) ;
 
 }
     }
         }
             break ;
-            etThread.strMakeF( tinP , LF , psttDir , psttc1 ) ; ___( psttDir ) ;
+            etThread.strMakeF( tinBaseP , LF , psttDir , psttc1 ) ; ___( psttDir ) ;
             bArmed = 0 ;
         {
         else if( bArmed )
-        if( !etThread.strCompareF( tinP , psttc1 , tArgKeyName ) ) bArmed = 1 ;
-        etThread.traceF( tinP , T("param: ")+T(psttc1) ) ;
+        if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyName ) ) bArmed = 1 ;
+        etThread.traceF( tinBaseP , T("param: ")+T(psttc1) ) ;
     {
     FORsTRINGSiN1( pstt1Param )
     ZE( boolT , bArmed ) ;
-    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinP ) ;
+    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
     TN( tArgKeyName , "!dir" ) ;
 {
 ZE( strokeS* , psttDir ) ;
@@ -62,41 +62,41 @@ TODO
     }
         }
             }
-                etherP.traceF( tinP , T("test 1 corrupt:    ")+tName ) ;
+                etherP.traceF( tinBaseP , T("test 1 corrupt:    ")+tName ) ;
                 cBadP ++ ;
             {
             else
             if( bOk1 ) cGoodP ++ ;
 
             ) ;
-                    : !etherP.memCompareF( tinP , pbw , pbTag00To04 , sizeof pbTag00To04 )
-                    ? !etherP.memCompareF( tinP , pbw , pbTag00To02 , sizeof pbTag00To02 )
+                    : !etherP.memCompareF( tinBaseP , pbw , pbTag00To04 , sizeof pbTag00To04 )
+                    ? !etherP.memCompareF( tinBaseP , pbw , pbTag00To02 , sizeof pbTag00To02 )
                 bMp3
             (
             boolT bOk1 = pbw &&
 
-            fwsIn.getF( tinP , pbw , cbw , bMp3 ? 3 : 5 ) ;
+            fwsIn.getF( tinBaseP , pbw , cbw , bMp3 ? 3 : 5 ) ;
             ZE( countT , cbw ) ;
             ZE( byteT* , pbw ) ;
-            fileWindowsC fwsIn( tinP , etherP , tName ) ;
+            fileWindowsC fwsIn( tinBaseP , etherP , tName ) ;
 
-            //etherP.traceF( tinP , tShort ) ;
+            //etherP.traceF( tinBaseP , tShort ) ;
         {
         if( /*bMp3 ||*/ bPdf )
 
-        boolT bPdf = !etherP.strCompareF( tinP , tExt , tPdfP ) ;
-        boolT bMp3 = !etherP.strCompareF( tinP , tExt , tMp3P ) ;
+        boolT bPdf = !etherP.strCompareF( tinBaseP , tExt , tPdfP ) ;
+        boolT bMp3 = !etherP.strCompareF( tinBaseP , tExt , tMp3P ) ;
 
-        //etherP.traceF( tinP , T("ext  :    ")+tExt ) ;
+        //etherP.traceF( tinBaseP , T("ext  :    ")+tExt ) ;
 
         }
-            etherP.delF( tinP , psttExt ) ;
-            etherP.delF( tinP , psttShorter ) ;
+            etherP.delF( tinBaseP , psttExt ) ;
+            etherP.delF( tinBaseP , psttShorter ) ;
             tExt = T(psttExt) ;
-            etherP.strConvertToLowerCaseF( tinP , psttExt ) ;
+            etherP.strConvertToLowerCaseF( tinBaseP , psttExt ) ;
 
             tShorter  = T(psttShorter) ;
-            etherP.strBisectF( tinP , psttShorter , psttExt , tName , T(".") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShorter ) ; ___( psttExt ) ;
+            etherP.strBisectF( tinBaseP , psttShorter , psttExt , tName , T(".") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShorter ) ; ___( psttExt ) ;
             ZE( strokeS* , psttExt ) ;
             ZE( strokeS* , psttShorter ) ;
         {
@@ -104,32 +104,32 @@ TODO
         TN( tShorter  , "" ) ;
 
         }
-            etherP.delF( tinP , psttShort ) ;
-            etherP.delF( tinP , psttPath ) ;
+            etherP.delF( tinBaseP , psttShort ) ;
+            etherP.delF( tinBaseP , psttPath ) ;
             tShort = T(psttShort) ;
             tPath  = T(psttPath) ;
-            etherP.strBisectF( tinP , psttPath , psttShort , tName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+            etherP.strBisectF( tinBaseP , psttPath , psttShort , tName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
             ZE( strokeS* , psttShort ) ;
             ZE( strokeS* , psttPath ) ;
         {
         TN( tShort , "" ) ;
         TN( tPath  , "" ) ;
                                                                             
-        //etherP.traceF( tinP , T("file :    ")+tName ) ;
+        //etherP.traceF( tinBaseP , T("file :    ")+tName ) ;
 
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinP , *tinP.pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ;
     {
     else
     }
-        etherP.traceF( tinP , T("directory:    ")+tName ) ;
+        etherP.traceF( tinBaseP , T("directory:    ")+tName ) ;
 
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinP , etherP , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
     {
-    else if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] == '\\' ) // IF DIRECTORY
+    else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] == '\\' ) // IF DIRECTORY
     }
-        etherP.traceF( tinP , T("scan completed for a directory") ) ;
+        etherP.traceF( tinBaseP , T("scan completed for a directory") ) ;
     {
     if( !postNameP )
 
@@ -140,7 +140,7 @@ TODO
     countT& cBadP      = *(countT*)pcArgP[ 1 ] ;
     etherC& etherP     = *(etherC*)pcArgP[ 0 ] ;
 {
-boolT workCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT workCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 byteT pbTag00To04[] = { '%' , 'P' , 'D' , 'F' , '-' } ;
 byteT pbTag00To02[] = { 'I' , 'D' , '3' } ;

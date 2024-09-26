@@ -16,36 +16,36 @@
     DEL( pStBang0 ) ;
     TELL( "deleting bang stacks" )
 
-    if( pStBang4 ) { godByeF( tinP , *pStBang4 ) ; cPoof += *pStBang4 ; }
-    if( pStBang3 ) { godByeF( tinP , *pStBang3 ) ; cPoof += *pStBang3 ; }
-    if( pStBang2 ) { godByeF( tinP , *pStBang2 ) ; cPoof += *pStBang2 ; }
-    if( pStBang1 ) { godByeF( tinP , *pStBang1 ) ; cPoof += *pStBang1 ; }
-    if( pStBang0 ) { godByeF( tinP , *pStBang0 ) ; cPoof += *pStBang0 ; }
+    if( pStBang4 ) { godByeF( tinBaseP , *pStBang4 ) ; cPoof += *pStBang4 ; }
+    if( pStBang3 ) { godByeF( tinBaseP , *pStBang3 ) ; cPoof += *pStBang3 ; }
+    if( pStBang2 ) { godByeF( tinBaseP , *pStBang2 ) ; cPoof += *pStBang2 ; }
+    if( pStBang1 ) { godByeF( tinBaseP , *pStBang1 ) ; cPoof += *pStBang1 ; }
+    if( pStBang0 ) { godByeF( tinBaseP , *pStBang0 ) ; cPoof += *pStBang0 ; }
     TELL( "unregistering my bang stacks and calc poof" )
     ZE( countT , cPoof ) ;
 
     }
         }
-            ++ s ; tinP.zEtScratch->osSleepF( tinP , TUCK * 0x40 ) ;
+            ++ s ; ((tinNormalS&)tinBaseP).zEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ;
         {
-        while( tinP.cKidThreads )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        while( ((tinNormalS&)tinBaseP).cKidThreads )
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    *tinP.zEtScratch = 0 ;
+    *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
     TELL( "waiting for all kids to die" )
 
-    if( !ether ) reportFailF( tinP , etThread , NODEiNFOaRGS , 1 , node , 7 ) ;
+    if( !ether ) reportFailF( tinBaseP , etThread , NODEiNFOaRGS , 1 , node , 7 ) ;
     TELL( "reporting my own death" )
 
-    stNodeOpen.ungrabF( tinP ) ;
+    stNodeOpen.ungrabF( tinBaseP ) ;
     if( nodeDns == node ) nodeDns = 0 ;
-    stNodeOpen.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stNodeOpen.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         }
             }
                 else                { DEL( pso ) ; }
-                if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmServerF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , (countT)pso , (countT)&sListen , (countT)&cBangClients ) ;
+                if( !ether && pso ) etThread.osThreadF( tinBaseP , countTC() , tmServerF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , (countT)pso , (countT)&sListen , (countT)&cBangClients ) ;
                 TELL( "launching tmServerF" )
     
                 }
@@ -58,13 +58,13 @@
                 }
                     continue ;
     
-                    etThread.osThreadF( tinP , countTC() , tmPingF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , (countT)&cBangClients ) ;
-                    etThread.osThreadF( tinP , countTC() , tmKillF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P ) ;
-                    etThread.osThreadF( tinP , countTC() , tmPrayF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P ) ;
+                    etThread.osThreadF( tinBaseP , countTC() , tmPingF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , (countT)&cBangClients ) ;
+                    etThread.osThreadF( tinBaseP , countTC() , tmKillF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P ) ;
+                    etThread.osThreadF( tinBaseP , countTC() , tmPrayF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P ) ;
                     }
-                        bombF( tinP , etThread , NODEiNFOaRGS , sCry ) ;
-                        hdrF( tinP , sCry , node , flPOP_BOMB , IDcMD2PE_CRY ) ;
-                        soulC sCry( tinP , TAG( TAGiDnULL ) ) ;
+                        bombF( tinBaseP , etThread , NODEiNFOaRGS , sCry ) ;
+                        hdrF( tinBaseP , sCry , node , flPOP_BOMB , IDcMD2PE_CRY ) ;
+                        soulC sCry( tinBaseP , TAG( TAGiDnULL ) ) ;
                         TELL( "setting up 2.2" )
                     {
 
@@ -79,70 +79,70 @@
     
                     TELL( "setting up 2.3" )
                 
-                    pStBang4 = new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-                    pStBang3 = new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-                    pStBang2 = new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-                    pStBang1 = new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-                    pStBang0 = new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                    pStBang4 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                    pStBang3 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                    pStBang2 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                    pStBang1 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                    pStBang0 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
                     TELL( "setting up 2.4" )
                 
-                    if( nodeDns ) stNodeOpen.sinkF( tinP , countTC() , (byteT*)nodeDns , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                                  stNodeOpen.sinkF( tinP , countTC() , (byteT*)&node   , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                    godHelloF( tinP , node ) ;
+                    if( nodeDns ) stNodeOpen.sinkF( tinBaseP , countTC() , (byteT*)nodeDns , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                                  stNodeOpen.sinkF( tinBaseP , countTC() , (byteT*)&node   , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                    godHelloF( tinBaseP , node ) ;
                     etherC::ifcSayIF( T("cry!") , flSAY_APPEND | flSAY_LOG ) ;
         
                     DEL( pso ) ;
-                    { soulC sOk( tinP , TAG( TAGiDnULL ) , flSOUL_null , (countT)IDcMD2PE_SERVERoK ) ; pso->writeF( tinP , sOk ) ; }
+                    { soulC sOk( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , (countT)IDcMD2PE_SERVERoK ) ; pso->writeF( tinBaseP , sOk ) ; }
                     bWoth = 0 ;
                 {
                 if( bWoth ) //WOTH CLIENT MUST NOT BE REFUSED
         
                 }
-                    sListen.acceptF( tinP , pso , idPortPeer , nnPeer , bRefuse ) ;
+                    sListen.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ;
                     ZE( countT , idPortPeer ) ;
                     nicNameC nnPeer ;
-                    boolT bRefuse = /*++ idClient == tinP.monitor.idThread && !( bRefused ++ ) ? 1 :*/ 0 ;
+                    boolT bRefuse = /*++ idClient == ((tinNormalS&)tinBaseP).monitor.idThread && !( bRefused ++ ) ? 1 :*/ 0 ;
                     //static boolT bRefused ;
                 {
                 TELL( "waiting for a client to connect" )
                 ZE( socketC* , pso ) ;
     
-                if( bWoth ) etThread.osThreadF( tinP , countTC() , tmTickleF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , node.idp , (countT)&bWoth ) ;
+                if( bWoth ) etThread.osThreadF( tinBaseP , countTC() , tmTickleF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , node.idp , (countT)&bWoth ) ;
             {
             while( !etThread && !ether && !bQuit )
             ZE( countT , cBangClients ) ;
             ZE( countT , idClient ) ;
             boolT bWoth = 1 ;
         
-            etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
+            etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
             ZE( sCountT , timeB2 ) ;
             ZE( countT  , timeB1 ) ;
         
             TELL( "setting up 2.b" )
-            if( !ether ) sListen.listenF( tinP ) ;
+            if( !ether ) sListen.listenF( tinBaseP ) ;
             TELL( "setting up 2.c" )
-            stNodeOpen.ungrabF( tinP ) ;
+            stNodeOpen.ungrabF( tinBaseP ) ;
             }
                 if( !cTries && !nodeDns ) nodeDns = node ;
-                stNodeOpen.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                stNodeOpen.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                 }
                     if( nodeDns ) break ;
-                    ether.osSleepF( tinP , TOCK ) ;
+                    ether.osSleepF( tinBaseP , TOCK ) ;
                 {
                 while( !ether && cTries -- )
                 countT cTries = TUCK / /*8*/0x40 ;
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ; //GIVE EXISTING NODES TIME TO ASSUME THE DNS ROLE
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ; //GIVE EXISTING NODES TIME TO ASSUME THE DNS ROLE
 
-                stNodeOpen.ungrabF( tinP ) ;
+                stNodeOpen.ungrabF( tinBaseP ) ;
             {
             if( !nodeDns )
-            stNodeOpen.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            stNodeOpen.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( node )
-        node = sListen.bindF( tinP ) ;
+        node = sListen.bindF( tinBaseP ) ;
         TELL( "setting up 2.d" )
-        socketC sListen( tinP , etThread , TAG( TAGiDnULL ) ) ;
+        socketC sListen( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
         TELL( "setting up 2" )
     {
     stackC*& pStBang4 = *(stackC**)&_c8ni3P.c2 ;
@@ -155,40 +155,40 @@
     count8S _c8ni1P( idMe , (countT)&node , (countT)&etScratch , (countT)&bQuit , (countT)&ruZeWo , (countT)&stNodeOpen , (countT)&stNodeFailConnect , (countT)&stNodeFailConnectOld ) ;
 
     ZE( boolT , bTalk ) ;
-    nodeC node( tinP , etThread , idMe ) ;
+    nodeC node( tinBaseP , etThread , idMe ) ;
     ZE( boolT , bQuit ) ;
     ranUniC ruZeWo( 1 , 1 ) ;
-    stackC stPsoServer(             tinP , etThread , TAG( TAGiDnULL ) ) ;
-    stackC stIdSerialReceived(      tinP , etThread , TAG( TAGiDnULL ) ) ;
-    stackC stNodeCurrentBangClient( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
-    stackC stNodeTest(              tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
-    stackC stNodeZombieOld(         tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
-    stackC stNodeZombie(            tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
-    stackC stNodeFailReply(         tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
-    stackC stNodeFailConnectOld(    tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
-    stackC stNodeFailConnect(       tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
-    stackC stNodeOpen(              tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ; // { node , timeBorn1 , timeBorn2 }, SORTED BY TIME BORN
+    stackC stPsoServer(             tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stIdSerialReceived(      tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stNodeCurrentBangClient( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+    stackC stNodeTest(              tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+    stackC stNodeZombieOld(         tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+    stackC stNodeZombie(            tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+    stackC stNodeFailReply(         tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+    stackC stNodeFailConnectOld(    tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+    stackC stNodeFailConnect(       tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+    stackC stNodeOpen(              tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ; // { node , timeBorn1 , timeBorn2 }, SORTED BY TIME BORN
     etherC& ether = etherC::etPrimeIF() ;
     const countT idMe = 1 + incv02AM( idMeLath ) ;
     static countT idMeLath ;
     _IO_     TELLsYSlIFInAME( "nodeMainF" )
 {
-voidT nodeMainF( tinS& tinP , etherC& etThread )
+voidT nodeMainF( tinBaseS& tinBaseP , etherC& etThread )
 
 DONE( tmPrayF )
 }
     }
         }
             }
-                ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+                ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
             {
             while( !etThread && !ether && !bQuitP && cToDo -- )
             countT cToDo = TUCK / 0x10 ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         TELL( "sleeping for up to 4 tock" )
 
-        godPrayF( tinP , etThread , stNodeOpenP , nodeP , bTalkP ) ;
+        godPrayF( tinBaseP , etThread , stNodeOpenP , nodeP , bTalkP ) ;
         _IO_     TELLsYSlIFInAME( "tmPrayF2" )
     {
     while( !bQuitP && !etThread && !stNodeOpenP.third && !ether )
@@ -203,26 +203,26 @@ DONE( tmPingF )
 }
     }
         }
-            ++ s ; ether.osSleepF( tinP , TOCK * 0x4 ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x4 ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         TELL( "napping for 4 tocks" )
-        tinP.idPhase2 = 0 ;
+        ((tinNormalS&)tinBaseP).idPhase2 = 0 ;
         //CONoUTrAW3( "" , idMeP , "| -\r\n" ) ;
         }
             }
                 }
-                    bombF( tinP , etThread , NODEiNFOaRGS , sCry ) ;
+                    bombF( tinBaseP , etThread , NODEiNFOaRGS , sCry ) ;
                     CONoUTrAW3( "" , idMeP , "| NO BANG CLIENTS!!!!\r\n" ) ;
-                    hdrF( tinP , sCry , nodeP , flPOP_BOMB , IDcMD2PE_CRY ) ;
-                    soulC sCry( tinP , TAG( TAGiDnULL ) ) ;
+                    hdrF( tinBaseP , sCry , nodeP , flPOP_BOMB , IDcMD2PE_CRY ) ;
+                    soulC sCry( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( !cBangClientsP )
-                stNodeOpenP.ungrabF( tinP ) ;
+                stNodeOpenP.ungrabF( tinBaseP ) ;
                 _IO_
 
                 }
-                    tinP.idPhase2 = 2 ;
+                    ((tinNormalS&)tinBaseP).idPhase2 = 2 ;
                     bSawOthers = 1 ;
                 {
                 if( !bSawOthers )
@@ -230,52 +230,52 @@ DONE( tmPingF )
             else
             }
                 }
-                    bombF( tinP , etThread , NODEiNFOaRGS , sCry , nodeDnsCopy ) ;
-                    hdrF( tinP , sCry , nodeP , flPOP_BOMB , IDcMD2PE_CRY ) ;
-                    soulC sCry( tinP , TAG( TAGiDnULL ) ) ;
+                    bombF( tinBaseP , etThread , NODEiNFOaRGS , sCry , nodeDnsCopy ) ;
+                    hdrF( tinBaseP , sCry , nodeP , flPOP_BOMB , IDcMD2PE_CRY ) ;
+                    soulC sCry( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( nodeDnsCopy && nodeDnsCopy != nodeP )
-                stNodeOpenP.ungrabF( tinP ) ;
+                stNodeOpenP.ungrabF( tinBaseP ) ;
                 nodeC nodeDnsCopy = nodeDns ;
                 _IO_
             {
             if( !stNodeOpenP || ( stNodeOpenP == 1 && *(nodeC*)&stNodeOpenP[ 1 ] == nodeP ) ) //IF I THINK I'M ALONE
             TELL( "inspecting to see whether my list contains only me" )
-            stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
             _IO_     TELLsYSlIFInAME( "seeing if i am alone or have no clients" )
         {
         TELL( "grabbing open list 2" )
 
         //}
         //    }
-        //        popF( tinP , etThread , etScratchNodeP , pStBang0P , pStBang1P , pStBang2P , pStBang3P , pStBang4P , sPing , bDud ) ;
+        //        popF( tinBaseP , etThread , etScratchNodeP , pStBang0P , pStBang1P , pStBang2P , pStBang3P , pStBang4P , sPing , bDud ) ;
         //        TELL( "popping" )
         //
-        //        stNodeOpenP.ungrabF( tinP ) ;
+        //        stNodeOpenP.ungrabF( tinBaseP ) ;
         //        }
         //            while( !stNodeOpenP.third && ~hDown ) ;
-        //            do sPing << *(count4S*)&stNodeOpenP.downF( tinP , hDown ) ;
-        //            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        //            do sPing << *(count4S*)&stNodeOpenP.downF( tinBaseP , hDown ) ;
+        //            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         //        {
         //        if( stNodeOpenP )
         //        sPing << (countT)stNodeOpenP ;
         //        TELL( "pushing my open list into the ping soul" )
         //
-        //        stNodeFailConnectP.ungrabF( tinP ) ;
+        //        stNodeFailConnectP.ungrabF( tinBaseP ) ;
         //        }
         //            while( !stNodeFailConnectP.third && ~hDown ) ;
-        //            do if( stNodeOpenP( (byteT*)&stNodeFailConnectP.downF( tinP , hDown ) , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinP ) ;
-        //            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        //            do if( stNodeOpenP( (byteT*)&stNodeFailConnectP.downF( tinBaseP , hDown ) , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinBaseP ) ;
+        //            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         //        {
         //        if( stNodeFailConnectP )
         //        TELL( "removing from the open list the entries that i know have failed" )
-        //        stNodeFailConnectP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        //        stNodeFailConnectP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         //        TELL( "grabbing failConnect list" )
-        //        stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        //        stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         //        TELL( "grabbing open list" )
         //
-        //        hdrF( tinP , sPing , nodeP , flPOP_DOWN|flPOP_UP , IDcMD2PE_PING ) ;
-        //        soulC sPing( tinP , TAG( TAGiDnULL ) ) ;
+        //        hdrF( tinBaseP , sPing , nodeP , flPOP_DOWN|flPOP_UP , IDcMD2PE_PING ) ;
+        //        soulC sPing( tinBaseP , TAG( TAGiDnULL ) ) ;
         //        const boolT bDud = stNodeOpenP > 1 && stNodeOpenP( (byteT*)nodeP , subtractNodesF ) != 1 ;
         //        TELL( "preparing to ping" )
         //    {
@@ -286,81 +286,81 @@ DONE( tmPingF )
         //    if( idMeP == 1 ) CONoUTrAW3( "----" , cBack , "----\r\n" ) ;
         //{
         //if( cBack )
-        //countT cBack = godBacklogF( tinP ) ;
+        //countT cBack = godBacklogF( tinBaseP ) ;
         //TELL( "inspecting backlog" )
 
         //}
-        //    stNodeTestCopy.purgeF( tinP ) ;
+        //    stNodeTestCopy.purgeF( tinBaseP ) ;
         //    while( !bQuitP && !ether && !stNodeTestCopy.third && ~hDown ) ;
         //    }
         //        }
-        //            stNodeOpenP.ungrabF( tinP ) ;
-        //            if( stNodeOpenP( (byteT*)nodet , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinP ) ;
-        //            stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        //            *tinP.zEtScratch = 0 ;
+        //            stNodeOpenP.ungrabF( tinBaseP ) ;
+        //            if( stNodeOpenP( (byteT*)nodet , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinBaseP ) ;
+        //            stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //            *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
         //        {
         //        else
-        //        if( !*tinP.zEtScratch ) stNodeOpenP.sinkF( tinP , countTC() , (byteT*)nodet , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-        //        boolT bFail = !!*tinP.zEtScratch ;
-        //        testF( tinP , *tinP.zEtScratch , nodet , nodeP ) ;
+        //        if( !*((tinNormalS&)tinBaseP).zEtScratch ) stNodeOpenP.sinkF( tinBaseP , countTC() , (byteT*)nodet , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+        //        boolT bFail = !!*((tinNormalS&)tinBaseP).zEtScratch ;
+        //        testF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , nodet , nodeP ) ;
         //        if( bTalkP ) { CONoUTrAW5( "" , idMeP , "| testing " , *(countT*)&nodet , "\r\n" ) ; }
-        //        nodeC& nodet = *(nodeC*)&stNodeTestCopy.downF( tinP , hDown ) ;
+        //        nodeC& nodet = *(nodeC*)&stNodeTestCopy.downF( tinBaseP , hDown ) ;
         //    {
         //    do
-        //    handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        //    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         //{
         //if( stNodeTestCopy )
 
-        //stNodeTestP.ungrabF( tinP ) ;
+        //stNodeTestP.ungrabF( tinBaseP ) ;
         //}
-        //    stNodeTestP.purgeF( tinP ) ;
+        //    stNodeTestP.purgeF( tinBaseP ) ;
         //    while( !stNodeTestP.third && ~hDown ) ;
         //    }
         //        stNodeTestCopy << (byteT*)nodet ;
-        //        nodeC& nodet = *(nodeC*)&stNodeTestP.downF( tinP , hDown ) ;
+        //        nodeC& nodet = *(nodeC*)&stNodeTestP.downF( tinBaseP , hDown ) ;
         //    {
         //    do
-        //    handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        //    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         //{
         //if( stNodeTestP )
-        //stNodeTestP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        //stNodeTestP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         //}
-        //    stNodeExpected.purgeF( tinP ) ;
+        //    stNodeExpected.purgeF( tinBaseP ) ;
         //    while( !stNodeExpected.third && ~hDown ) ;
         //    }
         //        stNodeTestCopy << (byteT*)nodee ;
         //        if( bTalkP ) { CONoUTrAW5( "" , idMeP , "| absent: " , *(countT*)&nodee , "\r\n" ) ; }
-        //        nodeC& nodee = *(nodeC*)&stNodeExpected.downF( tinP , hDown ) ;
+        //        nodeC& nodee = *(nodeC*)&stNodeExpected.downF( tinBaseP , hDown ) ;
         //    {
         //    do
-        //    handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        //    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         //{
         //if( stNodeExpected )
-        //stackC stNodeTestCopy( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+        //stackC stNodeTestCopy( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
 
         //}
         //    while( !stNodeExpected.third && ~hDown ) ;
         //    }
-        //        stNodeCurrentBangClientP.ungrabF( tinP ) ;
+        //        stNodeCurrentBangClientP.ungrabF( tinBaseP ) ;
         //        }
-        //            stNodeExpected.extractF( 0 , tinP ) ;
+        //            stNodeExpected.extractF( 0 , tinBaseP ) ;
         //            if( bTalkP ) { CONoUTrAW5( "" , idMeP , " i see " , stNodeCurrentBangClientP[ 0 ] , "\r\n" ) ; }
         //        {
         //        if( stNodeCurrentBangClientP( (byteT*)nodee , subtractNodesF ) )
-        //        stNodeCurrentBangClientP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        //        nodeC& nodee = *(nodeC*)&stNodeExpected.downF( tinP , hDown ) ;
+        //        stNodeCurrentBangClientP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //        nodeC& nodee = *(nodeC*)&stNodeExpected.downF( tinBaseP , hDown ) ;
         //    {
         //    do
-        //    handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        //    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         //{
         //if( stNodeExpected )
 
         //}
         //    }
-        //        if( nodeExpected2 ) stNodeExpected.sinkF( tinP , countTC() , (byteT*)nodeExpected2 , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-        //        if( nodeExpected1 ) stNodeExpected.sinkF( tinP , countTC() , (byteT*)nodeExpected1 , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-        //        nodeClientF( tinP , nodeExpected1 , nodeExpected2 , stNodeOpenP , nodeP , pcIdWork[ off ] ) ;
+        //        if( nodeExpected2 ) stNodeExpected.sinkF( tinBaseP , countTC() , (byteT*)nodeExpected2 , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+        //        if( nodeExpected1 ) stNodeExpected.sinkF( tinBaseP , countTC() , (byteT*)nodeExpected1 , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+        //        nodeClientF( tinBaseP , nodeExpected1 , nodeExpected2 , stNodeOpenP , nodeP , pcIdWork[ off ] ) ;
         //        nodeC nodeExpected2  ;
         //        nodeC nodeExpected1  ;
         //    {
@@ -375,76 +375,76 @@ DONE( tmPingF )
         //    {
         //    countT pcIdWork[] = 
         //{
-        //stackC stNodeExpected( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+        //stackC stNodeExpected( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
 
-        stNodeOpenP.ungrabF( tinP ) ;
+        stNodeOpenP.ungrabF( tinBaseP ) ;
         if( !nodeDns ) nodeDns = nodeP ;
-        stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        stNodeZombieP.ungrabF( tinP ) ;
+        stNodeZombieP.ungrabF( tinBaseP ) ;
         }
-            stNodeZombieP.purgeF( tinP ) ;
+            stNodeZombieP.purgeF( tinBaseP ) ;
             while( !stNodeZombieP.third && ~hDown ) ;
             }
-                stNodeZombieOldP.sinkF( tinP , countTC() , (byteT*)nodez , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                nodeC& nodez = *(nodeC*)&stNodeZombieP.downF( tinP , hDown ) ;
+                stNodeZombieOldP.sinkF( tinBaseP , countTC() , (byteT*)nodez , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                nodeC& nodez = *(nodeC*)&stNodeZombieP.downF( tinBaseP , hDown ) ;
             {
             do
-            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         {
         if( stNodeZombieP )
-        stNodeZombieP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        stNodeZombieP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         }
             }
-                stTest.purgeF( tinP ) ;
+                stTest.purgeF( tinBaseP ) ;
                 while( !stTest.third && ~hDown ) ;
                 }
-                    bombF( tinP , etThread , NODEiNFOaRGS , sCry , nodeSlandered ) ; //TO TEST HIM
+                    bombF( tinBaseP , etThread , NODEiNFOaRGS , sCry , nodeSlandered ) ; //TO TEST HIM
                     if( bTalkP ) { CONoUTrAW5( "" , idMeP , "| testing slandered " , *(countT*)&nodeSlandered , "\r\n" ) ; }
-                    hdrF( tinP , sCry , nodeP , flPOP_null , IDcMD2PE_CRY ) ;
-                    soulC sCry( tinP , TAG( TAGiDnULL ) ) ;
-                    nodeC& nodeSlandered = *(nodeC*)&stTest.downF( tinP , hDown ) ;
+                    hdrF( tinBaseP , sCry , nodeP , flPOP_null , IDcMD2PE_CRY ) ;
+                    soulC sCry( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    nodeC& nodeSlandered = *(nodeC*)&stTest.downF( tinBaseP , hDown ) ;
                 {
                 do
-                handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 _IO_     TELLsYSlIFInAME( "testing slandered nodes" )
             {
             if( stTest )
 
-            stNodeZombieOldP.ungrabF( tinP ) ;
+            stNodeZombieOldP.ungrabF( tinBaseP ) ;
             }
-                stNodeZombieOldP.purgeF( tinP ) ;
+                stNodeZombieOldP.purgeF( tinBaseP ) ;
                 while( !stNodeZombieOldP.third && ~hDown ) ;
                 }
-                    stTest.sinkF( tinP , countTC() , (byteT*)nodeSlandered , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                    nodeC& nodeSlandered = *(nodeC*)&stNodeZombieOldP.downF( tinP , hDown ) ;
+                    stTest.sinkF( tinBaseP , countTC() , (byteT*)nodeSlandered , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                    nodeC& nodeSlandered = *(nodeC*)&stNodeZombieOldP.downF( tinBaseP , hDown ) ;
                 {
                 do
-                handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             {
             if( stNodeZombieOldP )
-            stNodeZombieOldP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-            stackC stTest( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+            stNodeZombieOldP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            stackC stTest( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
         {
 
-        stNodeFailConnectP.ungrabF( tinP ) ;
-        stNodeFailConnectP.purgeF( tinP ) ;
+        stNodeFailConnectP.ungrabF( tinBaseP ) ;
+        stNodeFailConnectP.purgeF( tinBaseP ) ;
         }
             while( !stNodeFailConnectP.third && ~hDown ) ;
             }
-                stNodeFailConnectOldP.sinkF( tinP , countTC() , (byteT*)nodef , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                nodeC& nodef = *(nodeC*)&stNodeFailConnectP.downF( tinP , hDown ) ;
+                stNodeFailConnectOldP.sinkF( tinBaseP , countTC() , (byteT*)nodef , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                nodeC& nodef = *(nodeC*)&stNodeFailConnectP.downF( tinBaseP , hDown ) ;
             {
             do
-            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         {
         if( stNodeFailConnectP )
-        stNodeFailConnectP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        stNodeFailConnectP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        stNodeFailConnectOldP.purgeF( tinP ) ;
+        stNodeFailConnectOldP.purgeF( tinBaseP ) ;
         //CONoUTrAW3( "" , idMeP , "| +\r\n" ) ;
-        tinP.idPhase2 = 1 + bSawOthers ;
+        ((tinNormalS&)tinBaseP).idPhase2 = 1 + bSawOthers ;
         _IO_     TELLsYSlIFInAME( "tmPingF1" )
     {
     while( !etThread && !stNodeOpenP.third && !ether && !bQuitP )
@@ -460,45 +460,45 @@ TASK( tmPingF )
 DONE( tmKillF )
 }
     }
-        stPsoServerP.ungrabF( tinP ) ;
+        stPsoServerP.ungrabF( tinBaseP ) ;
         }
             while( !etThread && !stPsoServerP.third && ~handle ) ;
             }
                 }
-                    *tinP.zEtScratch = 0 ;
+                    *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
                     hSoc.closeIfF() ;
-                    handleC& hSoc = *(handleC*)&pso->handleF( tinP ) ;
+                    handleC& hSoc = *(handleC*)&pso->handleF( tinBaseP ) ;
                 {
                 if( pso )
                 __Z( pso ) ;
-                socketC* pso = (socketC*)stPsoServerP.downF( tinP , handle ) ;
+                socketC* pso = (socketC*)stPsoServerP.downF( tinBaseP , handle ) ;
             {
             do
-            handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         {
         if( !etThread && !stPsoServerP.third && stPsoServerP )
-        stPsoServerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        stPsoServerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    *tinP.zEtScratch = 0 ;
+    *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
     }
-        sock.connectF( tinP , nodeP.idp ) ;
-        socketC sock( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , nodeP.idp ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
     {
-    if( pStBang4P ) *pStBang4P << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-    if( pStBang3P ) *pStBang3P << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-    if( pStBang2P ) *pStBang2P << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-    if( pStBang1P ) *pStBang1P << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-    if( pStBang0P ) *pStBang0P << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
+    if( pStBang4P ) *pStBang4P << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( pStBang3P ) *pStBang3P << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( pStBang2P ) *pStBang2P << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( pStBang1P ) *pStBang1P << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( pStBang0P ) *pStBang0P << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
     //U:: USE THE ___ MACRO TO TAG THESE DROPS
     bQuitP = 1 ;
     TELL( "killing" )
 
     }
         }
-            if( *tinP.zEtScratch ) *tinP.zEtScratch = 0 ;
-            writeF( tinP , *tinP.zEtScratch , nodeTo , sGasp ) ;
-            hdrF( tinP , sGasp , nodeP , flPOP_BOMB , IDcMD2PE_GASP ) ;
-            soulC sGasp( tinP , TAG( TAGiDnULL ) ) ;
+            if( *((tinNormalS&)tinBaseP).zEtScratch ) *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
+            writeF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , nodeTo , sGasp ) ;
+            hdrF( tinBaseP , sGasp , nodeP , flPOP_BOMB , IDcMD2PE_GASP ) ;
+            soulC sGasp( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( nodeTo )
 
@@ -506,14 +506,14 @@ DONE( tmKillF )
         nodeC& nodeTo = *(nodeC*)&stNodeOpenP[ 1 ] ;
         TELL( "writing sGasp" )
     {
-    godByeF( tinP , nodeP ) ;
+    godByeF( tinBaseP , nodeP ) ;
     CONoUTrAW3( "" , idMeP , "| gasp!\r\n" ) ;
     _IO_     TELLsYSlIFInAME( "tmKillF1" )
 
     }
-        ++s ; ether.osSleepF( tinP , time1l ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-        countT time1l = godMyLifespanF( tinP , nodeP ) ;
+        ++s ; ether.osSleepF( tinBaseP , time1l ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        countT time1l = godMyLifespanF( tinBaseP , nodeP ) ;
     {
     TELL( "napping for life" )
 
@@ -526,15 +526,15 @@ DONE( tmTickleF )
 }
     }
         }
-            ether.osSleepF( tinP , TUCK * 0x40 ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-            *tinP.zEtScratch = 0 ;
+            ether.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
         {
         else
-        if( !*tinP.zEtScratch ) break ;
+        if( !*((tinNormalS&)tinBaseP).zEtScratch ) break ;
         VERIFY( sock ) ;
-        sock.connectF( tinP , idpP ) ;
-        socketC sock( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , idpP ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
         _IO_     TELLsYSlIFInAME( "tmTickleF1" )
     {
     while( !ether && bWothP )
@@ -547,29 +547,29 @@ TASK( tmTickleF )
 
 DONE( tmServerF )
 }
-    if( bBangClient && !bSaidBye && !ether && !bQuitP ) reportFailF( tinP , etThread , NODEiNFOaRGS , 1 , nodeBangClient , 0x21 ) ;
+    if( bBangClient && !bSaidBye && !ether && !bQuitP ) reportFailF( tinBaseP , etThread , NODEiNFOaRGS , 1 , nodeBangClient , 0x21 ) ;
 
     }
         dec02AM( cBangClientsP ) ;
-        stNodeCurrentBangClientP.ungrabF( tinP ) ;
-        if( stNodeCurrentBangClientP( (byteT*)nodeBangClient , subtractNodesF ) ) stNodeCurrentBangClientP.extractF( 0 , tinP ) ;
-        stNodeCurrentBangClientP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        stNodeCurrentBangClientP.ungrabF( tinBaseP ) ;
+        if( stNodeCurrentBangClientP( (byteT*)nodeBangClient , subtractNodesF ) ) stNodeCurrentBangClientP.extractF( 0 , tinBaseP ) ;
+        stNodeCurrentBangClientP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( bBangClient )
     TELL( "cleaning up" )
 
     }
         DEL( psoP ) ;
-        stPsoServerP.ungrabF( tinP ) ;
-        if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinP ) ;
-        stPsoServerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        stPsoServerP.ungrabF( tinBaseP ) ;
+        if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinBaseP ) ;
+        stPsoServerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( psoP )
     TELL( "deleting socket" )
     }
         TELL( "writing ok-" )
         }
-            psoP->writeF( tinP , sOk ) ;
+            psoP->writeF( tinBaseP , sOk ) ;
         {
         if( psoP )
         TELL( "writing ok+" )
@@ -579,24 +579,24 @@ DONE( tmServerF )
                 break ;
                 }
                     DEL( psoP ) ;
-                    stPsoServerP.ungrabF( tinP ) ;
-                    if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinP ) ;
-                    stPsoServerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    stPsoServerP.ungrabF( tinBaseP ) ;
+                    if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinBaseP ) ;
+                    stPsoServerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( psoP )
             {
-            if( *tinP.zEtScratch )
-            TELL( "testing *tinP.zEtScratch 1" )
+            if( *((tinNormalS&)tinBaseP).zEtScratch )
+            TELL( "testing *((tinNormalS&)tinBaseP).zEtScratch 1" )
 
             }
-                else                        popF( tinP , etThread , etScratchNodeP , pStBang0P , pStBang1P , pStBang2P , pStBang3P , pStBang4P , sIn ) ;
-                if( F(flags) & flPOP_BOMB ) bombF( tinP , etThread , NODEiNFOaRGS , sIn ) ;
+                else                        popF( tinBaseP , etThread , etScratchNodeP , pStBang0P , pStBang1P , pStBang2P , pStBang3P , pStBang4P , sIn ) ;
+                if( F(flags) & flPOP_BOMB ) bombF( tinBaseP , etThread , NODEiNFOaRGS , sIn ) ;
 
                 }
                     }
                         break ;
                         TELL( "IDcMD2PE_USERcOMMANDS-" )
-                        osTextT* postIn = sIn.pbFieldF( tinP , countTC() , countTC() , countTC() , IDfIELD_IDcMD + 1 ) ;
+                        osTextT* postIn = sIn.pbFieldF( tinBaseP , countTC() , countTC() , countTC() , IDfIELD_IDcMD + 1 ) ;
                         TELL( "IDcMD2PE_USERcOMMANDS+" )
                     {
                     case IDcMD2PE_USERcOMMANDS :
@@ -607,39 +607,39 @@ DONE( tmServerF )
                         }
                             while( !stNodeSlander.third && ~hDown ) ;
                             }
-                                stNodeZombieP.sinkF( tinP , countTC() , (byteT*)nodeSlander , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                                nodeC& nodeSlander = *(nodeC*)&stNodeSlander.downF( tinP , hDown ) ;
+                                stNodeZombieP.sinkF( tinBaseP , countTC() , (byteT*)nodeSlander , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                                nodeC& nodeSlander = *(nodeC*)&stNodeSlander.downF( tinBaseP , hDown ) ;
                             {
                             do
-                            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         {
                         if( stNodeSlander )
 
-                        stHisList.purgeF( tinP ) ;
+                        stHisList.purgeF( tinBaseP ) ;
                         }
                             while( !stHisList.third && ~hDown ) ;
                             }
-                                if( nodeSubject && !stNodeFailConnectP( (byteT*)nodeSubject , subtractNodesF ) && !stNodeFailConnectOldP( (byteT*)nodeSubject , subtractNodesF ) ) stNodeOpenP.sinkF( tinP , countTC() , (byteT*)nodeSubject , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                                if( nodeSubject && stNodeSlander(       (byteT*)nodeSubject , subtractNodesF )                                                                   ) stNodeSlander.extractF( 0 , tinP ) ;
-                                nodeC& nodeSubject = *(nodeC*)&stHisList.downF( tinP , hDown ) ;
+                                if( nodeSubject && !stNodeFailConnectP( (byteT*)nodeSubject , subtractNodesF ) && !stNodeFailConnectOldP( (byteT*)nodeSubject , subtractNodesF ) ) stNodeOpenP.sinkF( tinBaseP , countTC() , (byteT*)nodeSubject , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                                if( nodeSubject && stNodeSlander(       (byteT*)nodeSubject , subtractNodesF )                                                                   ) stNodeSlander.extractF( 0 , tinBaseP ) ;
+                                nodeC& nodeSubject = *(nodeC*)&stHisList.downF( tinBaseP , hDown ) ;
                             {
                             do
-                            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         {
                         if( stHisList )
-                        hisListF( tinP , stHisList , sIn ) ;
-                        stackC stHisList( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+                        hisListF( tinBaseP , stHisList , sIn ) ;
+                        stackC stHisList( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
                         countT nodeHim = nodeOrigin ;
 
-                        stNodeOpenP.ungrabF( tinP ) ;
+                        stNodeOpenP.ungrabF( tinBaseP ) ;
                         }
                             while( !stNodeOpenP.third && ~hDown ) ;
-                            do stNodeSlander.sinkF( tinP , countTC() , (byteT*)&stNodeOpenP.downF( tinP , hDown ) , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                            do stNodeSlander.sinkF( tinBaseP , countTC() , (byteT*)&stNodeOpenP.downF( tinBaseP , hDown ) , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         {
                         if( stNodeOpenP )
-                        stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                        stackC stNodeSlander( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+                        stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        stackC stNodeSlander( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
 
                         TELL( "IDcMD2PE_PING+" )
                     {
@@ -648,31 +648,31 @@ DONE( tmServerF )
                         break ;
                         TELL( "IDcMD2PE_NODEfAILEDcONNECT-" )
                         }
-                            stNodeOpenP.ungrabF( tinP ) ;
-                            if( stNodeOpenP( (byteT*)nodeBad , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinP ) ;
-                            stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                            stNodeFailConnectP.sinkF( tinP , countTC() , (byteT*)nodeBad , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                            stNodeOpenP.ungrabF( tinBaseP ) ;
+                            if( stNodeOpenP( (byteT*)nodeBad , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinBaseP ) ;
+                            stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            stNodeFailConnectP.sinkF( tinBaseP , countTC() , (byteT*)nodeBad , flSTACKsINK_UNIQUE , subtractNodesF ) ;
                         {
                         if( nodeBad )
-                        countT& idSerialFailNote = sIn.cFieldF( tinP , IDfIELD_IDsERIAL ) ;
-                        nodeC& nodeBad = nodeC::fieldF( tinP , sIn , IDfIELD_IDcMD + 1 ) ;
+                        countT& idSerialFailNote = sIn.cFieldF( tinBaseP , IDfIELD_IDsERIAL ) ;
+                        nodeC& nodeBad = nodeC::fieldF( tinBaseP , sIn , IDfIELD_IDcMD + 1 ) ;
                         TELL( "IDcMD2PE_NODEfAILEDcONNECT+" )
                     {
                     case IDcMD2PE_NODEfAILEDcONNECT :
                     }
                         break ;
                         TELL( "IDcMD2PE_NODEfAILEDrEAD-" )
-                        if( nodeBad ) stNodeFailReplyP.sinkF( tinP , countTC() , (byteT*)nodeBad , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                        nodeC& nodeBad = nodeC::fieldF( tinP , sIn , IDfIELD_IDcMD + 1 ) ;
+                        if( nodeBad ) stNodeFailReplyP.sinkF( tinBaseP , countTC() , (byteT*)nodeBad , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                        nodeC& nodeBad = nodeC::fieldF( tinBaseP , sIn , IDfIELD_IDcMD + 1 ) ;
                         TELL( "IDcMD2PE_NODEfAILEDrEAD+" )
                     {
                     case IDcMD2PE_NODEfAILEDrEAD :
                     }
                         break ;
                         TELL( "IDcMD2PE_GASP-" )
-                        stNodeOpenP.ungrabF( tinP ) ;
-                        if( stNodeOpenP( (byteT*)nodeOrigin , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinP ) ;
-                        stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                        stNodeOpenP.ungrabF( tinBaseP ) ;
+                        if( stNodeOpenP( (byteT*)nodeOrigin , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinBaseP ) ;
+                        stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                         TELL( "IDcMD2PE_GASP+" )
                     {
                     case IDcMD2PE_GASP :
@@ -681,19 +681,19 @@ DONE( tmServerF )
                         TELL( "IDcMD2PE_CRY-" )
 
                         }
-                            bombF( tinP , etThread , NODEiNFOaRGS , sPing , nodeOrigin , 1 ) ;
-                            myListF( tinP , sPing , stNodeOpenP ) ;
-                            hdrF( tinP , sPing , nodeP , flPOP_null , IDcMD2PE_PING ) ;
-                            soulC sPing( tinP , TAG( TAGiDnULL ) ) ;
+                            bombF( tinBaseP , etThread , NODEiNFOaRGS , sPing , nodeOrigin , 1 ) ;
+                            myListF( tinBaseP , sPing , stNodeOpenP ) ;
+                            hdrF( tinBaseP , sPing , nodeP , flPOP_null , IDcMD2PE_PING ) ;
+                            soulC sPing( tinBaseP , TAG( TAGiDnULL ) ) ;
                             TELL( "preparing to ping" )
                         {
                         if( *(nodeC*)&stNodeOpenP[ 1 ] == nodeP ) //WELCOME THE NEWCOMER WITH A PING SO THAT IT HAS A FULL LIST
 
-                        if( nodeOrigin ) stNodeOpenP.sinkF( tinP , countTC() , (byteT*)nodeOrigin , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                        if( nodeOrigin ) stNodeOpenP.sinkF( tinBaseP , countTC() , (byteT*)nodeOrigin , flSTACKsINK_UNIQUE , subtractNodesF ) ;
 
-                        stNodeFailConnectP.ungrabF( tinP ) ;
-                        if( stNodeFailConnectP( (byteT*)nodeOrigin , subtractNodesF ) ) stNodeFailConnectP.extractF( 0 , tinP ) ;
-                        stNodeFailConnectP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                        stNodeFailConnectP.ungrabF( tinBaseP ) ;
+                        if( stNodeFailConnectP( (byteT*)nodeOrigin , subtractNodesF ) ) stNodeFailConnectP.extractF( 0 , tinBaseP ) ;
+                        stNodeFailConnectP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                         //PSEUDOdUPLICATEDcODE: fff0104 fff0104
                         TELL( "IDcMD2PE_CRY+" )
@@ -712,93 +712,93 @@ DONE( tmServerF )
                         TELL( "IDcMD2PE_CLIENTbANGhELLO-" )
 
                         }
-                            stNodeOdd.ungrabF( tinP ) ;
+                            stNodeOdd.ungrabF( tinBaseP ) ;
                             }
                                 while( !stNodeOdd.third && ~hDown ) ;
                                 }
-                                    stNodeTestP.sinkF( tinP , countTC() , (byteT*)nodeOdd , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                                    nodeC& nodeOdd = *(nodeC*)&stNodeOdd.downF( tinP , hDown ) ;
+                                    stNodeTestP.sinkF( tinBaseP , countTC() , (byteT*)nodeOdd , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                                    nodeC& nodeOdd = *(nodeC*)&stNodeOdd.downF( tinBaseP , hDown ) ;
                                 {
                                 do
-                                handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             if( stNodeOdd )
-                            stNodeOdd.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                            stNodeOdd.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         if( !bNewbie )
 
-                        myListF( tinP , sOk , stNodeOdd ) ;
+                        myListF( tinBaseP , sOk , stNodeOdd ) ;
                         }
-                            stNodeHisList.ungrabF( tinP ) ;
+                            stNodeHisList.ungrabF( tinBaseP ) ;
                             }
                                 while( !stNodeHisList.third && ~hDown ) ;
                                 }
-                                    if( !stNodeOpenP( (byteT*)nodeOdd , subtractNodesF ) ) stNodeOdd.sinkF( tinP , countTC() , (byteT*)nodeOdd , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                                    nodeC& nodeOdd = *(nodeC*)&stNodeHisList.downF( tinP , hDown ) ;
+                                    if( !stNodeOpenP( (byteT*)nodeOdd , subtractNodesF ) ) stNodeOdd.sinkF( tinBaseP , countTC() , (byteT*)nodeOdd , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                                    nodeC& nodeOdd = *(nodeC*)&stNodeHisList.downF( tinBaseP , hDown ) ;
                                 {
                                 do
-                                handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             if( stNodeHisList )
-                            stNodeHisList.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                            stNodeHisList.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                            stNodeOpenP.ungrabF( tinP ) ;
+                            stNodeOpenP.ungrabF( tinBaseP ) ;
                             }
                                 while( !stNodeOpenP.third && ~hDown ) ;
                                 }
-                                    if( !stNodeHisList( (byteT*)nodeOdd , subtractNodesF ) ) stNodeOdd.sinkF( tinP , countTC() , (byteT*)nodeOdd , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                                    nodeC& nodeOdd = *(nodeC*)&stNodeOpenP.downF( tinP , hDown ) ;
+                                    if( !stNodeHisList( (byteT*)nodeOdd , subtractNodesF ) ) stNodeOdd.sinkF( tinBaseP , countTC() , (byteT*)nodeOdd , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                                    nodeC& nodeOdd = *(nodeC*)&stNodeOpenP.downF( tinBaseP , hDown ) ;
                                 {
                                 do
-                                handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             if( stNodeOpenP )
-                            stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                            stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         if( nodeMeVerify != nodeP || ( nodeHimVerify1 != nodeOrigin && nodeHimVerify2 != nodeOrigin ) )
-                        stackC stNodeOdd( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+                        stackC stNodeOdd( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
 
                         }
-                            nodeServerF( tinP , nodeHimVerify2 , stNodeOpenP , nodeP , idWorkInvert2 ) ;
-                            nodeServerF( tinP , nodeHimVerify1 , stNodeOpenP , nodeP , idWorkInvert1 ) ;
-                            idWorkInvertIF( tinP , idWorkInvert1 , idWorkInvert2 , idWork ) ;
+                            nodeServerF( tinBaseP , nodeHimVerify2 , stNodeOpenP , nodeP , idWorkInvert2 ) ;
+                            nodeServerF( tinBaseP , nodeHimVerify1 , stNodeOpenP , nodeP , idWorkInvert1 ) ;
+                            idWorkInvertIF( tinBaseP , idWorkInvert1 , idWorkInvert2 , idWork ) ;
                             ZE( countT , idWorkInvert2 ) ;
                             ZE( countT , idWorkInvert1 ) ;
                         {
                         nodeC nodeHimVerify2  ; //CALC HIS IDENTITY USING MY LIST
                         nodeC nodeHimVerify1  ; //CALC HIS IDENTITY USING MY LIST
 
-                        nodeServerF( tinP , nodeMeVerify , stNodeOpenP , nodeBangClient , idWork ) ;
+                        nodeServerF( tinBaseP , nodeMeVerify , stNodeOpenP , nodeBangClient , idWork ) ;
                         nodeC nodeMeVerify ; //CALC MY IDENTITY USING MY LIST
 
-                        hisListF( tinP , stNodeHisList , sIn , IDfIELD_IDcMD + 3 ) ;
-                        stackC stNodeHisList( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
-                        bNewbie = sIn.cFieldF( tinP , IDfIELD_IDcMD + 2 ) ;
-                        idWork = sIn.cFieldF( tinP , IDfIELD_IDcMD + 1 ) ;
+                        hisListF( tinBaseP , stNodeHisList , sIn , IDfIELD_IDcMD + 3 ) ;
+                        stackC stNodeHisList( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+                        bNewbie = sIn.cFieldF( tinBaseP , IDfIELD_IDcMD + 2 ) ;
+                        idWork = sIn.cFieldF( tinBaseP , IDfIELD_IDcMD + 1 ) ;
 
                         inc02AM( cBangClientsP ) ;
                         bBangClient = 1 ;
-                        stNodeCurrentBangClientP.sinkF( tinP , countTC() , (byteT*)nodeBangClient , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                        stNodeCurrentBangClientP.sinkF( tinBaseP , countTC() , (byteT*)nodeBangClient , flSTACKsINK_UNIQUE , subtractNodesF ) ;
                         nodeBangClient = nodeOrigin ;
                         TELL( "IDcMD2PE_CLIENTbANGhELLO+" )
                     {
                     case IDcMD2PE_CLIENTbANGhELLO :
                 {
                 switch( idCmd ) //ALL PROCESSING HERE MUST BE FAST; LONG PROCESSING SHOULD BE DONE AFTER BANGING
-                if( *tinP.zEtScratch ) { BLAMMO ; }
+                if( *((tinNormalS&)tinBaseP).zEtScratch ) { BLAMMO ; }
                 TELL( "local processing" )
 
-                stNodeOpenP.sinkF( tinP , countTC() , (byteT*)nodeOrigin , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                stIdSerialReceivedP.sinkF( tinP , countTC() , idSerial , flSTACKsINK_UNIQUE ) ;
+                stNodeOpenP.sinkF( tinBaseP , countTC() , (byteT*)nodeOrigin , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                stIdSerialReceivedP.sinkF( tinBaseP , countTC() , idSerial , flSTACKsINK_UNIQUE ) ;
                 TELL( "registering serial" )
             {
             else if( !stIdSerialReceivedP( idSerial ) ) //U::USE OO STACKS AND DISCARD THE OLD INFO
             }
                 }
                     DEL( psoP ) ;
-                    stPsoServerP.ungrabF( tinP ) ;
-                    if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinP ) ;
-                    stPsoServerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    stPsoServerP.ungrabF( tinBaseP ) ;
+                    if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinBaseP ) ;
+                    stPsoServerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( psoP )
             {
@@ -806,9 +806,9 @@ DONE( tmServerF )
             TN( tcr , "\r\n" ) ;
             TELL( "handling soul" )
     
-            countT   idCmd      = sIn.cFieldF( tinP , IDfIELD_IDcMD ) ;
-            flagsT&  flags      = sIn.cFieldF( tinP , IDfIELD_FLAGS ) ;
-            countT   idSerial   = sIn.cFieldF( tinP , IDfIELD_IDsERIAL ) ;
+            countT   idCmd      = sIn.cFieldF( tinBaseP , IDfIELD_IDcMD ) ;
+            flagsT&  flags      = sIn.cFieldF( tinBaseP , IDfIELD_FLAGS ) ;
+            countT   idSerial   = sIn.cFieldF( tinBaseP , IDfIELD_IDsERIAL ) ;
             TELL( "inspecting received soul" )
         {
         if( psoP )
@@ -817,9 +817,9 @@ DONE( tmServerF )
             break ;
             }
                 DEL( psoP ) ;
-                stPsoServerP.ungrabF( tinP ) ;
-                if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinP ) ;
-                stPsoServerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                stPsoServerP.ungrabF( tinBaseP ) ;
+                if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinBaseP ) ;
+                stPsoServerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             if( psoP )
         {
@@ -827,36 +827,36 @@ DONE( tmServerF )
 
         }
             break ;
-            if( !ether && !bQuitP && nodeOriginLathGood ) reportFailF( tinP , etThread , NODEiNFOaRGS , 0 , nodeOriginLathGood , 6 ) ;
-            *tinP.zEtScratch = 0 ;
+            if( !ether && !bQuitP && nodeOriginLathGood ) reportFailF( tinBaseP , etThread , NODEiNFOaRGS , 0 , nodeOriginLathGood , 6 ) ;
+            *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
             }
                 DEL( psoP ) ;
-                stPsoServerP.ungrabF( tinP ) ;
-                if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinP ) ;
-                stPsoServerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                stPsoServerP.ungrabF( tinBaseP ) ;
+                if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinBaseP ) ;
+                stPsoServerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             if( psoP )
         {
         else
-        if( !*tinP.zEtScratch ) nodeOriginLathGood = nodeOrigin ;
+        if( !*((tinNormalS&)tinBaseP).zEtScratch ) nodeOriginLathGood = nodeOrigin ;
 
         //}
         //    }
         //        break ;
         //        DEL( psoP ) ;       //8: does not work
-        //        stPsoServerP.ungrabF( tinP ) ;
-        //        if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinP ) ;
-        //        stPsoServerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        //        stPsoServerP.ungrabF( tinBaseP ) ;
+        //        if( stPsoServerP( (countT)psoP ) ) stPsoServerP.extractF( tinBaseP ) ;
+        //        stPsoServerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         //    {                      //01: works
         //    if( ruZeWoP < (measureT)1/(measureT)0x10 )
         //{
 
 
-        nodeC& nodeOrigin = *tinP.zEtScratch ? nodeNull : nodeC::fieldF( tinP , sIn , IDfIELD_NODEoRIGIN ) ;
+        nodeC& nodeOrigin = *((tinNormalS&)tinBaseP).zEtScratch ? nodeNull : nodeC::fieldF( tinBaseP , sIn , IDfIELD_NODEoRIGIN ) ;
         nodeC nodeNull ;
         _IO_     TELLsYSlIFInAME( "tmServerF1" )
-        psoP->readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        psoP->readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
         TELL( "reading soul" )
     {
     while( !etThread && !ether && !bQuitP && psoP )
@@ -867,11 +867,11 @@ DONE( tmServerF )
     ZE( countT , idPingLath ) ;
     nodeC nodeOriginLathGood ;
     nodeC nodeBangClient ;
-    soulC sOk( tinP , TAG( TAGiDnULL ) , flSOUL_null , (countT)IDcMD2PE_SERVERoK ) ;
+    soulC sOk( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , (countT)IDcMD2PE_SERVERoK ) ;
 
-    psoP->etherF( tinP , *tinP.zEtScratch ) ;
+    psoP->etherF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch ) ;
 
-    stPsoServerP.sinkF( tinP , countTC() , (countT)psoP , flSTACKsINK_UNIQUE ) ;
+    stPsoServerP.sinkF( tinBaseP , countTC() , (countT)psoP , flSTACKsINK_UNIQUE ) ;
 
     countT&  cBangClientsP =  *(countT*)pTaskP->c6 ;
     socketC& sListenP      = *(socketC*)pTaskP->c5 ;
@@ -897,17 +897,17 @@ DONE( tmBangClientF )
                     nodePeer = 0 ;
                     DEL( pso ) ;
                     }
-                        if( !bQuitP ) reportFailF( tinP , etThread , NODEiNFOaRGS , 0 , nodePeer , 5 ) ;
-                        stBang.insertF( tinP , (countT)ps , ifcSTACKtYPE_PTR_soulC , 1 ) ;
+                        if( !bQuitP ) reportFailF( tinBaseP , etThread , NODEiNFOaRGS , 0 , nodePeer , 5 ) ;
+                        stBang.insertF( tinBaseP , (countT)ps , ifcSTACKtYPE_PTR_soulC , 1 ) ;
                     {
                     if( !ether && !bQuitP )
-                    *tinP.zEtScratch = 0 ;
+                    *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
                 {
-                if( *tinP.zEtScratch )
+                if( *((tinNormalS&)tinBaseP).zEtScratch )
                 TELL( "reading ok-" )
                 VERIFY( *pso ) ;
                 TELL( "reading ok+ 5" )
-                pso->writeF( tinP , *ps ) ;
+                pso->writeF( tinBaseP , *ps ) ;
                 TELL( "writing bang" )
             {
             if( pso && !ether && !bQuitP && *ps >= 4 ) //CODEsYNC df40104 df40104
@@ -918,80 +918,80 @@ DONE( tmBangClientF )
         while( stBang )
         
         }
-            if( !ether && !bQuitP ) nodeServerF( tinP , nodePeerCorrect , stNodeOpenP , nodeP , idWorkP ) ;
+            if( !ether && !bQuitP ) nodeServerF( tinBaseP , nodePeerCorrect , stNodeOpenP , nodeP , idWorkP ) ;
             nodePeerCorrect = 0 ;
             }
                 }
                     nodePeer = 0 ;
-                    if( !ether && !bQuitP ) reportFailF( tinP , etThread , NODEiNFOaRGS , 1 , nodePeer , 4 ) ; //FAILURE TO REPLY TO HELLO COUNTS AS A CONNECTION FAILURE (THIS WILL OCCUR WHEN THE SERVER REFUSES THE CONNECTION AND THUS DELETES THE SOCKET IMMEDIATELY)
+                    if( !ether && !bQuitP ) reportFailF( tinBaseP , etThread , NODEiNFOaRGS , 1 , nodePeer , 4 ) ; //FAILURE TO REPLY TO HELLO COUNTS AS A CONNECTION FAILURE (THIS WILL OCCUR WHEN THE SERVER REFUSES THE CONNECTION AND THUS DELETES THE SOCKET IMMEDIATELY)
                     DEL( pso ) ;
-                    *tinP.zEtScratch = 0 ;
+                    *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
                 {
                 else
                 }
                     break ;
                     }
-                        stOdd.ungrabF( tinP ) ;
+                        stOdd.ungrabF( tinBaseP ) ;
                         }
                             while( !stOdd.third && ~hDown ) ;
                             }
-                                stNodeOpenP.ungrabF( tinP ) ;
-                                else                                                stNodeOpenP.sinkF( tinP , countTC() , (byteT*)nodeo , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-                                if( stNodeOpenP( (byteT*)nodeo , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinP ) ;
-                                stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                                nodeC& nodeo = *(nodeC*)&stOdd.downF( tinP , hDown ) ;
+                                stNodeOpenP.ungrabF( tinBaseP ) ;
+                                else                                                stNodeOpenP.sinkF( tinBaseP , countTC() , (byteT*)nodeo , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                                if( stNodeOpenP( (byteT*)nodeo , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinBaseP ) ;
+                                stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                nodeC& nodeo = *(nodeC*)&stOdd.downF( tinBaseP , hDown ) ;
                             {
                             do
-                            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         {
                         if( stOdd )
-                        stOdd.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                        stOdd.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                        hisListF( tinP , stOdd , sOk , 2 ) ;
-                        stackC stOdd( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+                        hisListF( tinBaseP , stOdd , sOk , 2 ) ;
+                        stackC stOdd( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
                     {
                     else
-                    else if( !bNewbie ) hisListF( tinP , stNodeTestP , sOk , 2 ) ; //NEWBIES DO NO TESTING; THEY ASSUME THAT THE SERVER'S LIST IS CORRECT
-                    if( !sOk.cFieldF( tinP , 2 ) ) bNewbie = 0 ; //WHEN MY LIST AGREES WITH A SERVER THEN I AM NO LONGER A NEWBIE
+                    else if( !bNewbie ) hisListF( tinBaseP , stNodeTestP , sOk , 2 ) ; //NEWBIES DO NO TESTING; THEY ASSUME THAT THE SERVER'S LIST IS CORRECT
+                    if( !sOk.cFieldF( tinBaseP , 2 ) ) bNewbie = 0 ; //WHEN MY LIST AGREES WITH A SERVER THEN I AM NO LONGER A NEWBIE
                 {
-                if( !*tinP.zEtScratch )
+                if( !*((tinNormalS&)tinBaseP).zEtScratch )
                 TELL( "reading ok-" )
                 VERIFY2( sOk , *pso ) ;
-                soulC sOk( tinP , TAG( TAGiDnULL ) ) ;
+                soulC sOk( tinBaseP , TAG( TAGiDnULL ) ) ;
                 TELL( "reading ok+ 3" )
-                pso->writeF( tinP , sHello ) ;
+                pso->writeF( tinBaseP , sHello ) ;
 
-                myListF( tinP , sHello , stNodeOpenP ) ;
+                myListF( tinBaseP , sHello , stNodeOpenP ) ;
                 sHello << bNewbie ;
                 sHello << idWorkP ;
-                hdrF( tinP , sHello , nodeP , flPOP_null , IDcMD2PE_CLIENTbANGhELLO ) ;
-                soulC sHello( tinP , TAG( TAGiDnULL ) ) ;
+                hdrF( tinBaseP , sHello , nodeP , flPOP_null , IDcMD2PE_CLIENTbANGhELLO ) ;
+                soulC sHello( tinBaseP , TAG( TAGiDnULL ) ) ;
                 TELL( "writing hello" )
             {
             else
             }
                 nodePeer = 0 ;
                 }
-                    stNodeOpenP.ungrabF( tinP ) ;
-                    if( stNodeOpenP( (byteT*)nodePeer , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinP ) ;
-                    stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    stNodeOpenP.ungrabF( tinBaseP ) ;
+                    if( stNodeOpenP( (byteT*)nodePeer , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinBaseP ) ;
+                    stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 else if( !bQuitP )
-                if( !bQuitP ) reportFailF( tinP , etThread , NODEiNFOaRGS , 1 , nodePeer , 3 ) ;
+                if( !bQuitP ) reportFailF( tinBaseP , etThread , NODEiNFOaRGS , 1 , nodePeer , 3 ) ;
                 DEL( pso ) ;
-                *tinP.zEtScratch = 0 ;
+                *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
             {
-            else if( *tinP.zEtScratch )
+            else if( *((tinNormalS&)tinBaseP).zEtScratch )
             }
                 nodePeer = 0 ;
                 DEL( pso ) ;
-                *tinP.zEtScratch = 0 ;
+                *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
             {
             if( ether || bQuitP )
-            pso->connectF( tinP , nodePeer.idp ) ;
+            pso->connectF( tinBaseP , nodePeer.idp ) ;
             TELL( "connecting" )
             nodePeer = nodePeerCorrect ;
-            pso = new( 0 , tinP , LF ) socketC( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) ) ; ___( pso ) ;
+            pso = new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ; ___( pso ) ;
             TELL( "looping to write hello" )
         {
         while( !ether && !bQuitP && !pso && nodePeerCorrect )
@@ -1000,25 +1000,25 @@ DONE( tmBangClientF )
             nodePeer = 0 ;
             DEL( pso ) ;
             }
-                if( !ether && !bQuitP ) reportFailF( tinP , etThread , NODEiNFOaRGS , 0 , nodePeer , 2 ) ;
-                *tinP.zEtScratch = 0 ;
+                if( !ether && !bQuitP ) reportFailF( tinBaseP , etThread , NODEiNFOaRGS , 0 , nodePeer , 2 ) ;
+                *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
             {
-            if( *tinP.zEtScratch )
+            if( *((tinNormalS&)tinBaseP).zEtScratch )
             TELL( "reading ok-" )
             VERIFY( *pso ) ;
             TELL( "reading ok+ 2" )
-            pso->writeF( tinP , sBye ) ;
+            pso->writeF( tinBaseP , sBye ) ;
             TELL( "writing bye" )
             idSerialBye = GETiDsERIAL ;
         {
         if( pso && nodePeer != nodePeerCorrect && !bQuitP && !ether )
 
-        nodeServerF( tinP , nodePeerCorrect , stNodeOpenP , nodeP , idWorkP ) ;
+        nodeServerF( tinBaseP , nodePeerCorrect , stNodeOpenP , nodeP , idWorkP ) ;
         nodeC nodePeerCorrect ;
         TELL( "calculating nodeCorrect" )
         _IO_     TELLsYSlIFInAME( "tmBangClientF2" )
 
-        stBang.waitF( tinP ) ;
+        stBang.waitF( tinBaseP ) ;
         TELL( " waiting for a push onto stBang" )
     {
     while( !ether && !bQuitP )
@@ -1026,9 +1026,9 @@ DONE( tmBangClientF )
     nodeC nodePeer ;
     ZE( socketC* , pso ) ;
 
-    countT& idSerialBye = sBye.cFieldF( tinP , IDfIELD_IDsERIAL ) ;
-    hdrF( tinP , sBye , nodeP , flPOP_null , IDcMD2PE_CLIENTbANGbYE ) ;
-    soulC sBye( tinP , TAG( TAGiDnULL ) ) ;
+    countT& idSerialBye = sBye.cFieldF( tinBaseP , IDfIELD_IDsERIAL ) ;
+    hdrF( tinBaseP , sBye , nodeP , flPOP_null , IDcMD2PE_CLIENTbANGbYE ) ;
+    soulC sBye( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 
     ;
@@ -1051,7 +1051,7 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 TASK( tmBangClientF )
 
 }
-    stNodeOpenP.ungrabF( tinP ) ;
+    stNodeOpenP.ungrabF( tinBaseP ) ;
     }
         }
             case  IDtYPE2PEbANGcLIENTwORK_RIGHT    : {                                nodePeer1P = cNodes > 1 ? *(nodeC*)&stNodeOpenP[ ideMe > 1      ? ideMe - 1 : cNodes ] : nodeNull ; break ; }
@@ -1066,17 +1066,17 @@ TASK( tmBangClientF )
     if( ideMe )
     countT ideMe = stNodeOpenP( (byteT*)nodeP , subtractNodesF ) ;
     countT cNodes = stNodeOpenP ;
-    stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     if( stNodeOpenP.third ) { BLAMMO ; }
     if( nodePeer2P ) { BLAMMO ; }
     if( nodePeer1P ) { BLAMMO ; }
     _IO_     TELLsYSlIFInAME( "nodeClientF" )
 {
-voidT nodeClientF( tinS& tinP , nodeC& nodePeer1P , nodeC& nodePeer2P , stackC& stNodeOpenP , nodeC& nodeP , const countT idHisWorkP )
+voidT nodeClientF( tinBaseS& tinBaseP , nodeC& nodePeer1P , nodeC& nodePeer2P , stackC& stNodeOpenP , nodeC& nodeP , const countT idHisWorkP )
 
 }
-    stNodeOpenP.ungrabF( tinP ) ;
+    stNodeOpenP.ungrabF( tinBaseP ) ;
     }
         }
             case  IDtYPE2PEbANGcLIENTwORK_RIGHT    : {                                    nodePeerP = cNodes > 1 ? *(nodeC*)&stNodeOpenP[ ideMe < cNodes ? ideMe + 1 : 1      ] : nodeNull ; break ; }
@@ -1091,13 +1091,13 @@ voidT nodeClientF( tinS& tinP , nodeC& nodePeer1P , nodeC& nodePeer2P , stackC& 
     if( ideMe )
     countT ideMe = stNodeOpenP( (byteT*)nodeP , subtractNodesF ) ;
     countT cNodes = stNodeOpenP ;
-    stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     if( stNodeOpenP.third ) { BLAMMO ; }
     if( nodePeerP ) { BLAMMO ; }
     _IO_     TELLsYSlIFInAME( "nodeServerF" )
 {
-voidT nodeServerF( tinS& tinP , nodeC& nodePeerP , stackC& stNodeOpenP , nodeC& nodeP , const countT idMyWorkP )
+voidT nodeServerF( tinBaseS& tinBaseP , nodeC& nodePeerP , stackC& stNodeOpenP , nodeC& nodeP , const countT idMyWorkP )
 
 }
     idWorkInvert2P = idWorkP == IDtYPE2PEbANGcLIENTwORK_EXPLODE1 ? IDtYPE2PEbANGcLIENTwORK_EXPLODE2 : 0 ;
@@ -1115,26 +1115,26 @@ voidT nodeServerF( tinS& tinP , nodeC& nodePeerP , stackC& stNodeOpenP , nodeC& 
     idWorkInvert1P =
     _IO_     TELLsYSlIFInAME( "idWorkInvertIF" )
 {
-voidT idWorkInvertIF( tinS& tinP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )
+voidT idWorkInvertIF( tinBaseS& tinBaseP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )
 
 }
     if( idCallLineP ) ; //USED FOR DEBUGGING TO STUDY WHICH CODE LINE CALLS ME LOTS AND LOTS
     }
         }
-            bombF( tinP , etThread , NODEiNFOaRGS , sFail ) ;
+            bombF( tinBaseP , etThread , NODEiNFOaRGS , sFail ) ;
     
             sFail << *(count4S*)&nodeFailP ;
-            hdrF( tinP , sFail , nodeP , flPOP_BOMB , bConnectP ? IDcMD2PE_NODEfAILEDcONNECT : IDcMD2PE_NODEfAILEDrEAD ) ;
-            soulC sFail( tinP , TAG( TAGiDnULL ) ) ;
+            hdrF( tinBaseP , sFail , nodeP , flPOP_BOMB , bConnectP ? IDcMD2PE_NODEfAILEDcONNECT : IDcMD2PE_NODEfAILEDrEAD ) ;
+            soulC sFail( tinBaseP , TAG( TAGiDnULL ) ) ;
         
             }
-                stNodeOpenP.ungrabF( tinP ) ;
-                if( stNodeOpenP( (byteT*)nodeFailP , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinP ) ;
-                stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                stNodeFailConnectP.sinkF( tinP , countTC() , (byteT*)nodeP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+                stNodeOpenP.ungrabF( tinBaseP ) ;
+                if( stNodeOpenP( (byteT*)nodeFailP , subtractNodesF ) ) stNodeOpenP.extractF( 0 , tinBaseP ) ;
+                stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                stNodeFailConnectP.sinkF( tinBaseP , countTC() , (byteT*)nodeP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
             {
             else
-            if( !bConnectP ) stNodeFailReplyP.sinkF( tinP , countTC() , (byteT*)nodeFailP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+            if( !bConnectP ) stNodeFailReplyP.sinkF( tinBaseP , countTC() , (byteT*)nodeFailP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
         {
         if( nodeFailP && ( nodeFailP != nodeP || !bConnectP ) ) //I DO NOT TELL ON MYSELF FOR CONNECTION TYPE FAILURES BECAUSE THIS IS JUST MY PERSONALITY (I AM OBVIOUSLY ALIVE SO THIS AVOIDS TRANSIENT NODE DOWN NOTICES)
     {
@@ -1142,13 +1142,13 @@ voidT idWorkInvertIF( tinS& tinP , countT& idWorkInvert1P , countT& idWorkInvert
     NODEiNFOf
     _IO_     TELLsYSlIFInAME( "reportFailF" )
 {
-voidT reportFailF( tinS& tinP , etherC& etThread , NODEiNFOpARMS , const boolT bConnectP , const nodeC& nodeFailP , const countT idCallLineP )
+voidT reportFailF( tinBaseS& tinBaseP , etherC& etThread , NODEiNFOpARMS , const boolT bConnectP , const nodeC& nodeFailP , const countT idCallLineP )
 
 }
     }
         }
             break ;
-            popF( tinP , etThread , etScratchNodeP , pStBang0P , pStBang1P , pStBang2P , pStBang3P , pStBang4P , soulP ) ;
+            popF( tinBaseP , etThread , etScratchNodeP , pStBang0P , pStBang1P , pStBang2P , pStBang3P , pStBang4P , soulP ) ;
             }
                 flags |= flPOP_UP ;
                 flags &= ~( F(flPOP_BOMB) ) ;
@@ -1159,12 +1159,12 @@ voidT reportFailF( tinS& tinP , etherC& etThread , NODEiNFOpARMS , const boolT b
         }
             }
                 if( !bForever && !( cTriesP && -- cTriesP ) ) nodeTo = 0 ;
-                reportFailF( tinP , etThread , NODEiNFOaRGS , 1 , node1 , 1 ) ;
-                *tinP.zEtScratch = 0 ;
+                reportFailF( tinBaseP , etThread , NODEiNFOaRGS , 1 , node1 , 1 ) ;
+                *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
             {
             else
-            if( !*tinP.zEtScratch ) break ;
-            writeF( tinP , *tinP.zEtScratch , node1 , soulP ) ;
+            if( !*((tinNormalS&)tinBaseP).zEtScratch ) break ;
+            writeF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , node1 , soulP ) ;
         {
         if( node1 && node1 != nodeP )
 
@@ -1176,11 +1176,11 @@ voidT reportFailF( tinS& tinP , etherC& etThread , NODEiNFOpARMS , const boolT b
     nodeC nodeTo = nodeToP ;
     etherC& ether = etherC::etPrimeIF() ;
 
-    flagsT& flags = soulP.cFieldF( tinP , IDfIELD_FLAGS ) ;
+    flagsT& flags = soulP.cFieldF( tinBaseP , IDfIELD_FLAGS ) ;
     NODEiNFOf
     _IO_     TELLsYSlIFInAME( "bombF" )
 {
-voidT bombF( tinS& tinP , etherC& etThread , NODEiNFOpARMS , soulC& soulP , const nodeC& nodeToP = nodeC() , countT cTriesP = 0 )
+voidT bombF( tinBaseS& tinBaseP , etherC& etThread , NODEiNFOpARMS , soulC& soulP , const nodeC& nodeToP = nodeC() , countT cTriesP = 0 )
 */
   else i reset flPOP_BOMB and push copies of soulP onto my own bang stacks
   if i know a root that is not myself then i connect to it and write soulP to it 
@@ -1195,24 +1195,24 @@ i might reset this flag
 soulP must specify flPOP_BOMB
 /*
 
-voidT reportFailF( tinS& tinP , etherC& etThread , NODEiNFOpARMS , const boolT bConnectP , const nodeC& nodeFailP , const countT idCallLineP ) ;
+voidT reportFailF( tinBaseS& tinBaseP , etherC& etThread , NODEiNFOpARMS , const boolT bConnectP , const nodeC& nodeFailP , const countT idCallLineP ) ;
 
 }
-    writeF( tinP , *tinP.zEtScratch , nodeTestP , sCry ) ;
-    hdrF( tinP , sCry , nodeP , flPOP_null , IDcMD2PE_CRY ) ;
-    soulC sCry( tinP , TAG( TAGiDnULL ) ) ;
+    writeF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , nodeTestP , sCry ) ;
+    hdrF( tinBaseP , sCry , nodeP , flPOP_null , IDcMD2PE_CRY ) ;
+    soulC sCry( tinBaseP , TAG( TAGiDnULL ) ) ;
     _IO_     TELLsYSlIFInAME( "testF" )
 {
-voidT testF( tinS& tinP , nodeC& nodeTestP , nodeC& nodeP )
+voidT testF( tinBaseS& tinBaseP , nodeC& nodeTestP , nodeC& nodeP )
 
 }
     VERIFY( sock ) ;
-    sock.writeF( tinP , soulP ) ;
-    sock.connectF( tinP , nodeP.idp ) ;
-    socketC sock( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) ) ;
+    sock.writeF( tinBaseP , soulP ) ;
+    sock.connectF( tinBaseP , nodeP.idp ) ;
+    socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
     _IO_     TELLsYSlIFInAME( "writeF" )
 {
-voidT writeF( tinS& tinP , const nodeC& nodeP , soulC& soulP )
+voidT writeF( tinBaseS& tinBaseP , const nodeC& nodeP , soulC& soulP )
 
 }
     }
@@ -1221,13 +1221,13 @@ voidT writeF( tinS& tinP , const nodeC& nodeP , soulC& soulP )
                 *pStBang4P << pSoul ;
                 }
                     flags &= ~( F(flPOP_DOWN) | F(flPOP_UP) ) ;
-                    flagsT& flags = pSoul->cFieldF( tinP , IDfIELD_FLAGS ) ;
+                    flagsT& flags = pSoul->cFieldF( tinBaseP , IDfIELD_FLAGS ) ;
                 {
                 if( bDudP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang4P )
         
@@ -1236,13 +1236,13 @@ voidT writeF( tinS& tinP , const nodeC& nodeP , soulC& soulP )
                 *pStBang3P << pSoul ;
                 }
                     flags &= ~( F(flPOP_DOWN) | F(flPOP_UP) ) ;
-                    flagsT& flags = pSoul->cFieldF( tinP , IDfIELD_FLAGS ) ;
+                    flagsT& flags = pSoul->cFieldF( tinBaseP , IDfIELD_FLAGS ) ;
                 {
                 if( bDudP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang3P )
         
@@ -1251,13 +1251,13 @@ voidT writeF( tinS& tinP , const nodeC& nodeP , soulC& soulP )
                 *pStBang2P << pSoul ;
                 }
                     flags &= ~( F(flPOP_DOWN) | F(flPOP_UP) ) ;
-                    flagsT& flags = pSoul->cFieldF( tinP , IDfIELD_FLAGS ) ;
+                    flagsT& flags = pSoul->cFieldF( tinBaseP , IDfIELD_FLAGS ) ;
                 {
                 if( bDudP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang2P )
     
@@ -1266,13 +1266,13 @@ voidT writeF( tinS& tinP , const nodeC& nodeP , soulC& soulP )
                 *pStBang1P << pSoul ;
                 }
                     flags &= ~( F(flPOP_DOWN) | F(flPOP_UP) ) ;
-                    flagsT& flags = pSoul->cFieldF( tinP , IDfIELD_FLAGS ) ;
+                    flagsT& flags = pSoul->cFieldF( tinBaseP , IDfIELD_FLAGS ) ;
                 {
                 if( bDudP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang1P )
     {
@@ -1284,54 +1284,54 @@ voidT writeF( tinS& tinP , const nodeC& nodeP , soulC& soulP )
                 *pStBang0P << pSoul ;
                 }
                     flags &= ~( F(flPOP_DOWN) | F(flPOP_UP) ) ;
-                    flagsT& flags = pSoul->cFieldF( tinP , IDfIELD_FLAGS ) ;
+                    flagsT& flags = pSoul->cFieldF( tinBaseP , IDfIELD_FLAGS ) ;
                 {
                 if( bDudP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang0P )
     {
     if( F(flags) & flPOP_DOWN )
 
     if( F(flags) & flPOP_BOMB ) { BLAMMO ; }
-    flagsT& flags = soulP.cFieldF( tinP , IDfIELD_FLAGS ) ;
+    flagsT& flags = soulP.cFieldF( tinBaseP , IDfIELD_FLAGS ) ;
     _IO_     TELLsYSlIFInAME( "popF" )
 {
-voidT popF( tinS& tinP , etherC& etThread , etherC& etScratchNodeP , stackC* pStBang0P , stackC* pStBang1P , stackC* pStBang2P , stackC* pStBang3P , stackC* pStBang4P , soulC& soulP , const boolT bDudP = 0 )
+voidT popF( tinBaseS& tinBaseP , etherC& etThread , etherC& etScratchNodeP , stackC* pStBang0P , stackC* pStBang1P , stackC* pStBang2P , stackC* pStBang3P , stackC* pStBang4P , soulC& soulP , const boolT bDudP = 0 )
 
 }
     return cNodes ;
     }
-        if( node ) stP.sinkF( tinP , countTC() , (byteT*)&node , flSTACKsINK_UNIQUE , subtractNodesF ) ;
-        nodeC& node = nodeC::fieldF( tinP , soulP , idFieldP ++ ) ;
+        if( node ) stP.sinkF( tinBaseP , countTC() , (byteT*)&node , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+        nodeC& node = nodeC::fieldF( tinBaseP , soulP , idFieldP ++ ) ;
     {
     while( cToDo -- )
     countT cToDo = cNodes ;
-    const countT cNodes = soulP.cFieldF( tinP , idFieldP ++ ) ;
+    const countT cNodes = soulP.cFieldF( tinBaseP , idFieldP ++ ) ;
     _IO_     TELLsYSlIFInAME( "hisListF" )
 {
-countT hisListF( tinS& tinP , stackC& stP , soulC& soulP , countT idFieldP = IDfIELD_IDcMD + 1 )
+countT hisListF( tinBaseS& tinBaseP , stackC& stP , soulC& soulP , countT idFieldP = IDfIELD_IDcMD + 1 )
 
 }
-    stNodeOpenP.ungrabF( tinP ) ;
+    stNodeOpenP.ungrabF( tinBaseP ) ;
     }
         while( !stNodeOpenP.third && ~hDown ) ;
-        do soulP << *(count4S*)&stNodeOpenP.downF( tinP , hDown ) ;
-        handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        do soulP << *(count4S*)&stNodeOpenP.downF( tinBaseP , hDown ) ;
+        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stNodeOpenP )
     soulP << (countT)stNodeOpenP ;
-    stNodeOpenP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _IO_     TELLsYSlIFInAME( "myListF" )
 {
-voidT myListF( tinS& tinP , soulC& soulP , stackC& stNodeOpenP )
+voidT myListF( tinBaseS& tinBaseP , soulC& soulP , stackC& stNodeOpenP )
 
 }
     return sgn ;
-    if( tinP.fingerprint && pEther && c3P ) ;
+    if( ((tinNormalS&)tinBaseP).fingerprint && pEther && c3P ) ;
 
     sCountT sgn = (nodeC*)c1P && (nodeC*)c2P ? *(nodeC*)c1P - *(nodeC*)c2P : 0 ;
     _IO_     //TELLsYSlIFInAME( "subtractNodesF" )
@@ -1340,13 +1340,13 @@ voidT myListF( tinS& tinP , soulC& soulP , stackC& stNodeOpenP )
     {
     IFbEcAREFUL
 {
-countT subtractNodesF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractNodesF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
-    return *(nodeC*)&soulP.c4 FieldF( tinP , idFieldP ) ;
+    return *(nodeC*)&soulP.c4 FieldF( tinBaseP , idFieldP ) ;
     // MIGRATE THE FOLLOWING LINE TO USE pbFieldF
 {
-nodeC& nodeC::fieldF( tinS& tinP , soulC& soulP , const countT idFieldP )
+nodeC& nodeC::fieldF( tinBaseS& tinBaseP , soulC& soulP , const countT idFieldP )
 
 }
     return (byteT*)this ;
@@ -1398,13 +1398,13 @@ nodeC& nodeC::operator =( nodeC& nodeP )
 nodeC::operator boolT( voidT ) const
 
 }
-    etThread.osTimeNowF( tinP , time1 , time2 ) ;
+    etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
 {
 time2( 0 )
 time1( 0 ) ,
 idp( 0 ) ,
 idMe( idMeP ) ,
-nodeC::nodeC( tinS& tinP , etherC& etThread , const countT idMeP ) :
+nodeC::nodeC( tinBaseS& tinBaseP , etherC& etThread , const countT idMeP ) :
 
 }
 {
@@ -1421,7 +1421,7 @@ nodeC::nodeC( voidT ) :
     soulP << GETiDsERIAL ;
     soulP << *(count4S*)&nodeP ;  //CODEsYNC df40104 df40104
 {
-voidT hdrF( tinS& tinP , soulC& soulP , nodeC& nodeP , const flagsT flagsP , const countT idCmdP )
+voidT hdrF( tinBaseS& tinBaseP , soulC& soulP , nodeC& nodeP , const flagsT flagsP , const countT idCmdP )
 
 #define IDfIELD_IDcMD                   4
 #define IDfIELD_FLAGS                   3
@@ -1512,24 +1512,24 @@ osTextT* ppostWork[] =
                                                                  \
 #define NODEiNFOf                                                \
 
-    etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , idWorkP ) ;
-    godHelloF( tinP , *pStBang##postDigitP ) ;                                              \
+    etThread.osThreadF( tinBaseP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&_c8ni1P , (countT)&_c8ni2P , (countT)&_c8ni3P , idWorkP ) ;
+    godHelloF( tinBaseP , *pStBang##postDigitP ) ;                                              \
                                                                                             \
 #define LAUNCHbANGcLIENT(postDigitP,idWorkP)                                                \
 
 #define FINGERnEG         0x87654321
 
     }
-        __( !soulP || soulP.cFieldF( tinP , 1 ) != IDcMD2PE_SERVERoK ) ; \
-        (sockP).readF( tinP , soulP , TOCK * 0x8 ) ;                                            \
+        __( !soulP || soulP.cFieldF( tinBaseP , 1 ) != IDcMD2PE_SERVERoK ) ; \
+        (sockP).readF( tinBaseP , soulP , TOCK * 0x8 ) ;                                            \
     {                                                                                           \
                                                                                                 \
 #define VERIFY2(soulP,sockP)                                                                    \
 
     }
-        __( !_sOk || _sOk.cFieldF( tinP , 1 ) != IDcMD2PE_SERVERoK ) ; \
-        (sockP).readF( tinP , _sOk , TOCK * 0x8 ) ;                                             \
-        soulC _sOk( tinP , TAG( TAGiDnULL ) ) ;                                                 \
+        __( !_sOk || _sOk.cFieldF( tinBaseP , 1 ) != IDcMD2PE_SERVERoK ) ; \
+        (sockP).readF( tinBaseP , _sOk , TOCK * 0x8 ) ;                                             \
+        soulC _sOk( tinBaseP , TAG( TAGiDnULL ) ) ;                                                 \
     {                                                                                           \
                                                                                                 \
 #define VERIFY(sockP)                                                                           \

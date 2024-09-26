@@ -8,15 +8,15 @@
 
 
 }
-    delF( tinP , psttd ) ;
+    delF( tinBaseP , psttd ) ;
     }
         }
-            while( csPad -- ) strFuseF( tinP , psttP , sttP  , 0 , fLeadingP ) ;
-            if( psttd       ) strMakeF( tinP , LF , psttP , psttd , csPad + csttExtraP ) ;
+            while( csPad -- ) strFuseF( tinBaseP , psttP , sttP  , 0 , fLeadingP ) ;
+            if( psttd       ) strMakeF( tinBaseP , LF , psttP , psttd , csPad + csttExtraP ) ;
         {
         else
         }
-            strSubstringF( tinP , psttP , idf , idl , psttd , csttExtraP ) ;
+            strSubstringF( tinBaseP , psttP , idf , idl , psttd , csttExtraP ) ;
             countT idl = csP ;
             countT idf = 1 ;
         {
@@ -26,8 +26,8 @@
     else if( csP > 0 ) // PADS WITH sttP''S
     }
         }
-            else             strMakeF( tinP , LF , psttP , T("") , csttExtraP ) ;
-            if( idf <= idl ) strSubstringF( tinP , psttP , idf , idl , psttd , csttExtraP ) ;
+            else             strMakeF( tinBaseP , LF , psttP , T("") , csttExtraP ) ;
+            if( idf <= idl ) strSubstringF( tinBaseP , psttP , idf , idl , psttd , csttExtraP ) ;
             else            while( idl          && psttd[ CSpREFIX - 1 + idl ] == sttP ) idl -- ;
             if( fLeadingP ) while( idf <= csttd && psttd[ CSpREFIX - 1 + idf ] == sttP ) idf ++ ;
             countT idl = csttd ;
@@ -37,10 +37,10 @@
         if( csttd )
     {
     else if( csP == - 1 )
-    if( !csP ) strMakeF( tinP , LF , psttP , T("") , csttExtraP ) ;
+    if( !csP ) strMakeF( tinBaseP , LF , psttP , T("") , csttExtraP ) ;
 
     countT csttd = psttd ? psttd->idAdam : 0 ;
-    if( !psttd && csP ) { strMakeF( tinP , LF , psttP , T("") , csP + csttExtraP ) ; ___( psttP ) ; }
+    if( !psttd && csP ) { strMakeF( tinBaseP , LF , psttP , T("") , csP + csttExtraP ) ; ___( psttP ) ; }
     if( !(countT)sttP ) sttP = S1C(' ') ;
     psttP = 0 ;
     strokeS* psttd = psttP ;
@@ -54,7 +54,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strResizeF( tinS& tinP , strokeS*& psttP , const countT csP , strokeS sttP , const boolT fLeadingP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strResizeF( tinBaseS& tinBaseP , strokeS*& psttP , const countT csP , strokeS sttP , const boolT fLeadingP , const countT csttExtraP )/*1*/
 
 /**/
 */

@@ -10,24 +10,24 @@
 REST
 
 }
-    while( cGorillas ) { ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ; }
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    while( cGorillas ) { ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 }
-    etThread.osThreadF( tinP , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cGorillas , (countT)&hood , (countT)&pThugRoot ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cGorillas , (countT)&hood , (countT)&pThugRoot ) ;
     cGorillas ++ ;
 {
 while( cTries -- )
 countT cTries = 0x8 ;
 
 thugC* pThugRoot = &(thugC&)hood ;
-hoodC hood( tinP , T("hoodC.")+TF1(DDNUMB) , sizeof( countT ) , 0x10000 ) ;
+hoodC hood( tinBaseP , T("hoodC.")+TF1(DDNUMB) , sizeof( countT ) , 0x10000 ) ;
 
 
-    thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-    thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_RUSH ) ;
-    const countT idDesireSave = tinP.idDesireSetBySelf ;
+    thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
+    thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+    const countT idDesireSave = ((tinNormalS&)tinBaseP).idDesireSetBySelf ;
     U::ALL CODE THAT CALLS thugC::grabF MUST BE RUSH
 
 ZE( countT , cGorillas ) ;
@@ -48,14 +48,14 @@ DONE( tmGorillaF )
     {
     while( !etThread && !ether )
 
-    const postt[] = { 'a' + ( tinP.monitor.idThread - idThreadWoth ) % 26 , 0 } ;
-    if( tinP.monitor.idThread < idThreadWoth ) idThreadWoth = tinP.monitor.idThread ;
-    setIfZeAM( idThreadWoth , tinP.monitor.idThread ) ;
+    const postt[] = { 'a' + ( ((tinNormalS&)tinBaseP).monitor.idThread - idThreadWoth ) % 26 , 0 } ;
+    if( ((tinNormalS&)tinBaseP).monitor.idThread < idThreadWoth ) idThreadWoth = ((tinNormalS&)tinBaseP).monitor.idThread ;
+    setIfZeAM( idThreadWoth , ((tinNormalS&)tinBaseP).monitor.idThread ) ;
     static countT idThreadWoth ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 
     thugC*& pThugRoot = *(thugC**)pTaskP->c3 ;

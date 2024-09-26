@@ -9,31 +9,31 @@
 
 }
     }
-        ++ s ; osSleepF( tinP , msSleepP ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; osSleepF( tinBaseP , msSleepP ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( msSleepP )
 
-    delF( tinP , psttToDo ) ;
-    delF( tinP , psttAt ) ;
-    delF( tinP , psttGoal ) ;
-    delF( tinP , psttAll ) ;
-    bConsoleP.ungrabF( tinP ) ;
-    strokeF( tinP , psttAll ) ;
-    bConsoleP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    delF( tinBaseP , psttToDo ) ;
+    delF( tinBaseP , psttAt ) ;
+    delF( tinBaseP , psttGoal ) ;
+    delF( tinBaseP , psttAll ) ;
+    bConsoleP.ungrabF( tinBaseP ) ;
+    strokeF( tinBaseP , psttAll ) ;
+    bConsoleP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    if( psttSuffixP ) { strFuseF( tinP , psttAll , psttSuffixP ) ; ___( psttAll ) ; }
-    strFuseF( tinP , psttAll , psttToDo ) ; ___( psttAll ) ;
-    strFuseF( tinP , psttAll , T("  ToDo=") ) ; ___( psttAll ) ;
-    strFuseF( tinP , psttAll , psttAt ) ; ___( psttAll ) ;
-    strFuseF( tinP , psttAll , T("  At=") ) ; ___( psttAll ) ;
-    strFuseF( tinP , psttAll , psttGoal ) ; ___( psttAll ) ;
-    strFuseF( tinP , psttAll , T("Goal=") ) ; ___( psttAll ) ;
-    if( psttPrefixP ) { strFuseF( tinP , psttAll , psttPrefixP ) ; ___( psttAll ) ; }
+    if( psttSuffixP ) { strFuseF( tinBaseP , psttAll , psttSuffixP ) ; ___( psttAll ) ; }
+    strFuseF( tinBaseP , psttAll , psttToDo ) ; ___( psttAll ) ;
+    strFuseF( tinBaseP , psttAll , T("  ToDo=") ) ; ___( psttAll ) ;
+    strFuseF( tinBaseP , psttAll , psttAt ) ; ___( psttAll ) ;
+    strFuseF( tinBaseP , psttAll , T("  At=") ) ; ___( psttAll ) ;
+    strFuseF( tinBaseP , psttAll , psttGoal ) ; ___( psttAll ) ;
+    strFuseF( tinBaseP , psttAll , T("Goal=") ) ; ___( psttAll ) ;
+    if( psttPrefixP ) { strFuseF( tinBaseP , psttAll , psttPrefixP ) ; ___( psttAll ) ; }
 
-    strFromF( tinP , psttToDo , toDo ) ; ___( psttToDo ) ;
-    strFromF( tinP , psttAt , atP ) ; ___( psttAt ) ;
-    strFromF( tinP , psttGoal , goalP ) ; ___( psttGoal ) ;
+    strFromF( tinBaseP , psttToDo , toDo ) ; ___( psttToDo ) ;
+    strFromF( tinBaseP , psttAt , atP ) ; ___( psttAt ) ;
+    strFromF( tinBaseP , psttGoal , goalP ) ; ___( psttGoal ) ;
     ZE( strokeS* , psttToDo ) ;
     ZE( strokeS* , psttGoal ) ;
     ZE( strokeS* , psttAt ) ;
@@ -48,7 +48,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::paperTalkProgressF( tinS& tinP , batonC& bConsoleP , countT& goalP , countT& atP , countT msSleepP , strokeS* psttPrefixP , strokeS* psttSuffixP )/*1*/
+/**//*1*/voidT etherC::paperTalkProgressF( tinBaseS& tinBaseP , batonC& bConsoleP , countT& goalP , countT& atP , countT msSleepP , strokeS* psttPrefixP , strokeS* psttSuffixP )/*1*/
 */
  psttSuffixP
  psttPrefixP

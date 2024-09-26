@@ -22,16 +22,16 @@
             }
                 DEL( pInfo ) ;
                 if( pInfo ) cb04File = (count04T)pInfo->cbUsed | (count04T)pInfo->cbUsedHigh << 0x20 ; //A:ASSUME: countT IS 02 BITS
-                ether.diskFileQueryF( tinP , pInfo , fi ) ;
+                ether.diskFileQueryF( tinBaseP , pInfo , fi ) ;
                 ZE( infoFileS* , pInfo ) ;
             {
             if( !POOP )
 
             }
-                if( !POOP ) ether.fileWriteF( tinP , fi , "X" , 1 ) ;
+                if( !POOP ) ether.fileWriteF( tinBaseP , fi , "X" , 1 ) ;
                 __Z( F(flagsCt) & flFILEwINDOW_WRITE ) ;
             {
-            if( !POOP && fi.idOpenResultF( tinP ) == ifcOPENrESULT_CREATED )
+            if( !POOP && fi.idOpenResultF( tinBaseP ) == ifcOPENrESULT_CREATED )
 
             SCOOPS
         {
@@ -43,20 +43,20 @@
         }
             DEL( pInfo ) ;
             if( pInfo ) cb04File = (count04T)pInfo->cbUsed | (count04T)pInfo->cbUsedHigh << 0x20 ; //A:ASSUME: countT IS 02 BITS
-            ether.diskFileQueryF( tinP , pInfo , fi ) ;
+            ether.diskFileQueryF( tinBaseP , pInfo , fi ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         if( !POOP )
 
         }                                                                   //IF flFILEwINDOW_WRITE, WHEN getF IS CALLED THE FILE WILL BE ENLARGED TO THE REQUESTED SIZE, BUT THIS WILL FAIL IF THE FILE IS LENGTH 0, WHICH IS WHY I JUST WROTE A BYTE
-            if( !POOP ) ether.fileWriteF( tinP , fi , "\x00" , 1 ) ;        //THIS VALUE DOES NOT MATTER, BECAUSE APPLICATION CODE MUST NOT ASSUME THAT THE BYTES WILL BE INITIALIZED ; (NTFS APPEARS TO INITIALIZE TO 0)
+            if( !POOP ) ether.fileWriteF( tinBaseP , fi , "\x00" , 1 ) ;        //THIS VALUE DOES NOT MATTER, BECAUSE APPLICATION CODE MUST NOT ASSUME THAT THE BYTES WILL BE INITIALIZED ; (NTFS APPEARS TO INITIALIZE TO 0)
             __Z( F(flagsCt) & flFILEwINDOW_WRITE ) ;
         {
-        if( !POOP && fi.idOpenResultF( tinP ) == ifcOPENrESULT_CREATED )
+        if( !POOP && fi.idOpenResultF( tinBaseP ) == ifcOPENrESULT_CREATED )
     {
-    if( &ether != tinP.pEtScratch )
+    if( &ether != ((tinNormalS&)tinBaseP).pEtScratch )
 
-    ether.strMakeFromOsTextF( tinP , *(strokeS**)&psttFile , ifFileNameC( tinP , ether , fi ) ) ; ___( psttFile ) ;
+    ether.strMakeFromOsTextF( tinBaseP , *(strokeS**)&psttFile , ifFileNameC( tinBaseP , ether , fi ) ) ; ___( psttFile ) ;
 
     _IO_
 {
@@ -70,13 +70,13 @@ cb04File( 0 ) ,
     flOPENdETAILS_LOCnONE
     ifcOPENsHARE_WR ,
     F(flagsP) & flFILEwINDOW_WRITE ? ifcOPENaCCESS_WR : ifcOPENaCCESS_R ,
-    tinP , psttFileP ,
+    tinBaseP , psttFileP ,
 (
 fi
 flagsCt( flagsP ) ,
 psttFile( 0 ) ,
 ether( etherP ) ,
-/*1*/fileWindowsC::fileWindowsC( tinS& tinP , etherC& etherP , const strokeS* const psttFileP , const flagsT flagsP , const countT cTriesP ) :/*1*/
+/*1*/fileWindowsC::fileWindowsC( tinBaseS& tinBaseP , etherC& etherP , const strokeS* const psttFileP , const flagsT flagsP , const countT cTriesP ) :/*1*/
 /**/
 */
 /*

@@ -12,9 +12,9 @@
 REST
 
 }
-    etThread.loafIF( tinP ) ;
-    etThread.delF( tinP , psttw ) ;
-    etThread.strokeF( tinP , psttw ) ;
+    etThread.loafIF( tinBaseP ) ;
+    etThread.delF( tinBaseP , psttw ) ;
+    etThread.strokeF( tinBaseP , psttw ) ;
 
     ) ;
 
@@ -51,10 +51,10 @@ REST
         //S2(0x0000ff,scOld_cPUSHcOLOR)+
         T("")+
 
-    etThread.strMakeF( tinP , LF , psttw ,
-    measureT mSinHotAngle = tinP.brcm04Raw ;
+    etThread.strMakeF( tinBaseP , LF , psttw ,
+    measureT mSinHotAngle = ((tinNormalS&)tinBaseP).brcm04Raw ;
     BOSmEASURE04( WHATgbo , sin( mOsHotAngle ) )
-    measureT mCosHotAngle = tinP.brcm04Raw ;
+    measureT mCosHotAngle = ((tinNormalS&)tinBaseP).brcm04Raw ;
     BOSmEASURE04( WHATgbo , cos( mOsHotAngle ) )
     measureT mOsHotAngle = osAngleF( - 0.0 / 8.0 ) ;
     measureT mPadUp = 0.25 ;
@@ -62,8 +62,8 @@ REST
     measureT mScale = 35.0 ;
     ZE( strokeS* , psttw ) ;
 
-    etThread.osSleepF( tinP , TOCK ) ;
-    stateC state( tinP , etThread ) ;
+    etThread.osSleepF( tinBaseP , TOCK ) ;
+    stateC state( tinBaseP , etThread ) ;
 {
 
 TODO

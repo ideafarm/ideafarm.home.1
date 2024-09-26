@@ -10,49 +10,49 @@
 REST
 
 }
-    if( bDelete ) PUSE( tinP , *(byteT**)&pbi ) ;
+    if( bDelete ) PUSE( tinBaseP , *(byteT**)&pbi ) ;
     }
         CONoUTrAW( "\r\n" ) ;
         CONoUTrAW( pbi ) ;
     {
     if( pbi )
-    boolT bDelete = books.readF( tinP , pbi , cbi , hRead ) ;
+    boolT bDelete = books.readF( tinBaseP , pbi , cbi , hRead ) ;
     countT cbi = 0x10 ;
     ZE( const byteT* , pbi ) ;
 
-    handleC hRead( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+    handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
 
-    booksC books( tinP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flBOOKSc_USEdRIVEc ) ;
+    booksC books( tinBaseP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKSc_USEdRIVEc ) ;
 {
 
-tinP.pEther   = pEtherSave ;
-tinP.pPoolUse = pPoolSave ;
+((tinNormalS&)tinBaseP).pEther   = pEtherSave ;
+((tinNormalS&)tinBaseP).pPoolUse = pPoolSave ;
 
 }
-    if( pcpIdApt ) PUSE( tinP , *(byteT**)&pcpIdApt ) ;
-    books.writeF( tinP , pcpIdApt , pbo , cbo ) ; ___( pcpIdApt ) ;
+    if( pcpIdApt ) PUSE( tinBaseP , *(byteT**)&pcpIdApt ) ;
+    books.writeF( tinBaseP , pcpIdApt , pbo , cbo ) ; ___( pcpIdApt ) ;
     ZE( countT* , pcpIdApt ) ;
-    countT cbo = thirdC::c_strlenIF( tinP , pbo ) ;
+    countT cbo = thirdC::c_strlenIF( tinBaseP , pbo ) ;
     byteT* pbo = "89abcdef" ;
 
-    booksC books( tinP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flagsUse | flBOOKSc_WRITER , 8 , PCPnOpUSE ) ;
+    booksC books( tinBaseP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flagsUse | flBOOKSc_WRITER , 8 , PCPnOpUSE ) ;
 {
 
 }
-    if( pcpIdApt ) PUSE( tinP , *(byteT**)&pcpIdApt ) ;
-    books.writeF( tinP , pcpIdApt , pbo , cbo ) ; ___( pcpIdApt ) ;
+    if( pcpIdApt ) PUSE( tinBaseP , *(byteT**)&pcpIdApt ) ;
+    books.writeF( tinBaseP , pcpIdApt , pbo , cbo ) ; ___( pcpIdApt ) ;
     ZE( countT* , pcpIdApt ) ;
-    countT cbo = thirdC::c_strlenIF( tinP , pbo ) ;
+    countT cbo = thirdC::c_strlenIF( tinBaseP , pbo ) ;
     byteT* pbo = "01234567" ;
 
-    booksC books( tinP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flagsUse | flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , 1 , PCPnOpUSE ) ;
+    booksC books( tinBaseP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flagsUse | flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , 1 , PCPnOpUSE ) ;
 {
 
-etherC*      pEtherSave = tinP.pEther ; tinP.pEther = 0 ;
-poolC*       pPoolSave = tinP.pPoolUse ; tinP.pPoolUse = 0 ;
+etherC*      pEtherSave = ((tinNormalS&)tinBaseP).pEther ; ((tinNormalS&)tinBaseP).pEther = 0 ;
+poolC*       pPoolSave = ((tinNormalS&)tinBaseP).pPoolUse ; ((tinNormalS&)tinBaseP).pPoolUse = 0 ;
 const flagsT flagsUse = flBOOKSc_null | flBOOKSc_DOnOTuSEpUSE /*| flBOOKSc_NAPKINuSESsIMPLESTgRABc*/ ;
 
-//U::BLAMMO ; //**** NOTE ****:  I WILL NOT EXECUTE UNLESS THE tinP.monitor.idThread != 1 CHECK IS COMMENTED OUT IN func.*.booksC.booksC
+//U::BLAMMO ; //**** NOTE ****:  I WILL NOT EXECUTE UNLESS THE ((tinNormalS&)tinBaseP).monitor.idThread != 1 CHECK IS COMMENTED OUT IN func.*.booksC.booksC
 
 TODO
 
@@ -67,7 +67,7 @@ countT pcpIdBookNoPuse[ TUCK ] ;
 */
 construction of static globals anywhere except in the globals module is nonconformant
 i do not ct a static global because the sequence of construction of static globals in this module vs in the globals module is not defined by the language and might vary across development platforms
-my code simulates this epoch by modifying tinP
+my code simulates this epoch by modifying tinBaseP
 i demonstrate ct/dt and writing to a booksC instance early/late i.e. when PUSE does not exist
 /*
 

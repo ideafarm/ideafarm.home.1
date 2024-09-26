@@ -18,7 +18,7 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
     }
         }
             __1
-            __( sOrderP.cFieldF( tinP ) ) ;
+            __( sOrderP.cFieldF( tinBaseP ) ) ;
         {
         default :
         }
@@ -26,11 +26,11 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
     
             }
                 }
-                    etThread.strokeF( tinP , T("writing a tray containing the number ")+TF1(idCourseP)+T("\r\n") ) ;
+                    etThread.strokeF( tinBaseP , T("writing a tray containing the number ")+TF1(idCourseP)+T("\r\n") ) ;
                     sDataP << idCourseP ;
                 {
-                if( !ether && !*tinP.zEtScratch && !bClientQuit )
-                if( idCourseP > 1 ) ether.osSleepF( tinP , TOCK * 0x1 ) ;
+                if( !ether && !*((tinNormalS&)tinBaseP).zEtScratch && !bClientQuit )
+                if( idCourseP > 1 ) ether.osSleepF( tinBaseP , TOCK * 0x1 ) ;
             {
             if( !bClientQuit )
         {
@@ -42,24 +42,24 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
     PARAMS8( c8argP )
 
     __( idAdamP - DDNUMB ) ;
-    etherC& etText = etherC::etTextIF( tinP ) ;
+    etherC& etText = etherC::etTextIF( tinBaseP ) ;
 {
-voidT jobFillCourseF( tinS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if( ether && *tinP.zEtScratch && idChatSessionP && cArgP ) ;
+    if( ether && *((tinNormalS&)tinBaseP).zEtScratch && idChatSessionP && cArgP ) ;
 
     }
-        if( ++ bClientQuit == 1 ) etThread.strokeF( tinP , T("client quit\r\n") ) ;
+        if( ++ bClientQuit == 1 ) etThread.strokeF( tinBaseP , T("client quit\r\n") ) ;
     {
     if( idJobType == ifcIDcMDjOBoRDER_NAMED )
-    etThread.strokeF( tinP , T("heard an order with ")+TF1(sOrderP)+T(" elements\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("heard an order with ")+TF1(sOrderP)+T(" elements\r\n") ) ;
     PARAMS8( c8argP )
 
     __( idAdamP - DDNUMB ) ;
-    etherC& etText = etherC::etTextIF( tinP ) ;
+    etherC& etText = etherC::etTextIF( tinBaseP ) ;
 {
-voidT jobHearOrderF( tinS& tinP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
     countT& idJobType   = c8argP.c2 ;
     boolT&  bClientQuit = c8argP.c1 ;                                                                               \

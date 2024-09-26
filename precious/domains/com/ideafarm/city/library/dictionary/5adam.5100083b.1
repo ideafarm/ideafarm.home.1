@@ -12,16 +12,16 @@ REST
 }
     }
         }
-            if( ifcEXITcODE_EXITpROCESSaOK != thirdC::osHireThenMonitorIF( tinP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ) thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
+            if( ifcEXITcODE_EXITpROCESSaOK != thirdC::osHireThenMonitorIF( tinBaseP , ifcIDaDAM_HIREwITHOUTdEBUGGING , T("ifcIDaDAM_HIREwITHOUTdEBUGGING") , tArgsGross ) ) thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
             _IO_
         {
-        etThread.traceF( tinP , T("hiring self [tArgsGross]:    ")+tArgsGross ) ;
+        etThread.traceF( tinBaseP , T("hiring self [tArgsGross]:    ")+tArgsGross ) ;
 
                                       tArgsGross += tb+tArgKeyNameNow+tb+tFile+tb+tArgsNet ;
         if( maxValue                ) tArgsGross += tb+tArgKeyMaxValue+tb+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
         if( idReport                ) tArgsGross += tb+tArgKeyIdReport+tb+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
         if( reportToCell            ) tArgsGross += tb+tArgKeyReportToCell+tb+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-        if( tArgsIgnore.csF( tinP ) ) tArgsGross  = tArgKeyIgnore+tb+tArgsIgnore ;
+        if( tArgsIgnore.csF( tinBaseP ) ) tArgsGross  = tArgKeyIgnore+tb+tArgsIgnore ;
         TN( tArgsGross , "" ) ;
         _IO_
     {
@@ -30,10 +30,10 @@ REST
         }
             }
                 }
-                    etThread.traceF( tinP , T("waited for the \"received\" sign and am now quitting") ) ;
-                    sgnReceived.waitF( tinP ) ;
-                    sgnReady.giveF(    tinP ) ;
-                    etThread.traceF( tinP , T("giving the \"ready\" sign and waiting for the \"received\" sign") ) ;
+                    etThread.traceF( tinBaseP , T("waited for the \"received\" sign and am now quitting") ) ;
+                    sgnReceived.waitF( tinBaseP ) ;
+                    sgnReady.giveF(    tinBaseP ) ;
+                    etThread.traceF( tinBaseP , T("giving the \"ready\" sign and waiting for the \"received\" sign") ) ;
 
                     THREADmODE2rESTORE
                     THREADmODE3rESTORE
@@ -44,42 +44,42 @@ REST
                             }
                                          *pc_foo = 0x44332211 ;
                                 countT*   pc_foo = vsp_foo ;
-                                countVSP vsp_foo = listC::countIF( tinP , myRecord , c2Text ) ;
+                                countVSP vsp_foo = listC::countIF( tinBaseP , myRecord , c2Text ) ;
                             {
                         
                             }
                                          *pc_idDeathType = idDeathType ;
                                 countT*   pc_idDeathType = vsp_idDeathType ;
-                                countVSP vsp_idDeathType = listC::countIF( tinP , myRecord , count2S( LNA( 4 ) ) ) ;
+                                countVSP vsp_idDeathType = listC::countIF( tinBaseP , myRecord , count2S( LNA( 4 ) ) ) ;
                             {
                         
                             }
                                                *pc_value = value ;
                                 countT*         pc_value = vsp_value ;
-                                countVSP       vsp_value = listC::countIF( tinP , myRecord , count2S( LNA( 3 ) ) ) ;
+                                countVSP       vsp_value = listC::countIF( tinBaseP , myRecord , count2S( LNA( 3 ) ) ) ;
                             {
                         
                             }
                                               *pc_idPoop = idPoop ;                                                                         //idPoop WILL EITHER INDICATE THE REASON THAT pkzipc.exe COULD NOT BE HIRED OR WILL CONTAIN THE VALUE RETURNED BY pkzipc.exe
                                 countT*        pc_idPoop = vsp_idPoop ;
-                                countVSP      vsp_idPoop = listC::countIF( tinP , myRecord , count2S( LNA( 2 ) ) ) ;
+                                countVSP      vsp_idPoop = listC::countIF( tinBaseP , myRecord , count2S( LNA( 2 ) ) ) ;
                             {
                         
                             }
                                            *pc_bHiredAOK = bHiredAOK ;
                                 countT*     pc_bHiredAOK = vsp_bHiredAOK ;
-                                  countVSP   vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LNA( 1 ) ) ) ;
-                                //countVSP   vsp_bHiredAOK = listC::countIF( tinP , myRecord , count2S( LISTnAMEsYS_PROCESSrEPORTfIELD10 ) ) ;
+                                  countVSP   vsp_bHiredAOK = listC::countIF( tinBaseP , myRecord , count2S( LNA( 1 ) ) ) ;
+                                //countVSP   vsp_bHiredAOK = listC::countIF( tinBaseP , myRecord , count2S( LISTnAMEsYS_PROCESSrEPORTfIELD10 ) ) ;
                             {
                         
-                            recordC myRecord( tinP , pcNameRecord ) ;
-                            countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , LISTnAMEsYS_PROCESSrEPORT , reportToCell | BM_HIGH , idReport | BM_HIGH , tinP.pag1->idAdam | BM_HIGH , 0 } ;
+                            recordC myRecord( tinBaseP , pcNameRecord ) ;
+                            countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , LISTnAMEsYS_PROCESSrEPORT , reportToCell | BM_HIGH , idReport | BM_HIGH , ((tinNormalS&)tinBaseP).pag1->idAdam | BM_HIGH , 0 } ;
                         {
 
-                        listC::dictionaryReplaceOsTextIF( tinP , c2Text ) ;
+                        listC::dictionaryReplaceOsTextIF( tinBaseP , c2Text ) ;
                         count2S c2Text( (countT)"myFieldName" ) ;
 
-                        puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+                        puseC puseHT( tinBaseP , ifcIDpOOL_HOMEtEMP ) ;
 
                         _IO_
                     {
@@ -91,9 +91,9 @@ REST
                 if( reportToCell )
 
                 }
-                    //if( bSandbox ) etherC::loafIF( tinP ) ;
+                    //if( bSandbox ) etherC::loafIF( tinBaseP ) ;
                     thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_EXITcODEiMPOTENCE ;
-                    etThread.traceF( tinP , T("!exception: kid process either could not be hired or returned an impermissibly high value [idPoop,value,maxValue]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tinBaseP , T("!exception: kid process either could not be hired or returned an impermissibly high value [idPoop,value,maxValue]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     TN( tb4 , "    " ) ;
                     POOPRqUIET
                 {                              //HAVING MY PROCESS EXIT CODE CONTAIN DETAILED INFO WOULD COMPLICATE DEBUGGING CODE THAT INSPECTS THE PROCESS EXIT CODE AND DETECTS WHETHER THE EXIT CODE IS WO OF THE EXPECTED (LEGAL) VALUES FOR AN IPDOS (TM) PROCESS
@@ -101,13 +101,13 @@ REST
 
                 if( value > maxValue ) { __( value ) ; }
 
-                etThread.traceF( tinP , T("setting [bHiredAOK]:    ")+TF2(bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.traceF( tinBaseP , T("setting [bHiredAOK]:    ")+TF2(bHiredAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 bHiredAOK = !idPoop ;
-                etThread.traceF( tinP , T("called  dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+                etThread.traceF( tinBaseP , T("called  dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
                 idPoop = POOP ;
-                ((thirdC&)*tinP.pEtScratch).dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , tFile , tArgsNet , flPROCESShIRE_null ) ;
-                etThread.strokeF( tinP , T("\r\n") ) ;
-                etThread.traceF( tinP , T("calling dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
+                ((thirdC&)*((tinNormalS&)tinBaseP).pEtScratch).dosExecPgmF( tinBaseP , countTC() , countTC() , value , idDeathType , tFile , tArgsNet , flPROCESShIRE_null ) ;
+                etThread.strokeF( tinBaseP , T("\r\n") ) ;
+                etThread.traceF( tinBaseP , T("calling dosExecPgmF [maxValue,idPoop,reportToCell,idReport,value,file,args]:    ")+TF2(maxValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(reportToCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFile+tb4+tArgsNet ) ;
                 ZE( countT , idDeathType ) ;        // FOR MS WINDOWS, THIS WILL ALWAYS BE 0
                 ZE( countT , value       ) ;
                 ZE( countT , idPoop      ) ;
@@ -121,8 +121,8 @@ REST
         {
         ZE( boolT , bHiredAOK ) ;
 
-        signC sgnReceived( tinP , TAG( TAGiDnULL ) , tSgnReceived                 ) ;
-        signC sgnReady(    tinP , TAG( TAGiDnULL ) , tSgnReady    , flSIGNc_GIVER ) ;          // CT THIS AS EARLY AS POSSIBLE SO RECIPIENT, WHO IS NAPPING UNTIL IT EXISTS, KNOWS THAT I AM ALIVE
+        signC sgnReceived( tinBaseP , TAG( TAGiDnULL ) , tSgnReceived                 ) ;
+        signC sgnReady(    tinBaseP , TAG( TAGiDnULL ) , tSgnReady    , flSIGNc_GIVER ) ;          // CT THIS AS EARLY AS POSSIBLE SO RECIPIENT, WHO IS NAPPING UNTIL IT EXISTS, KNOWS THAT I AM ALIVE
 
         TN( tSgnReady    , "report.is.ready."    ) ; tSgnReady    += tUniquify ;
         TN( tSgnReceived , "report.is.received." ) ; tSgnReceived += tUniquify ;
@@ -134,12 +134,12 @@ REST
 {
 if( !POOP )
 
-__Z( tFile.csF( tinP ) ) ;
+__Z( tFile.csF( tinBaseP ) ) ;
 
 }
     }
-            tArgsNet += ( tArgsNet.csF( tinP ) ? tb : tn ) + T(psttc1) ;
-        else if( tFile.csF( tinP ) )
+            tArgsNet += ( tArgsNet.csF( tinBaseP ) ? tb : tn ) + T(psttc1) ;
+        else if( tFile.csF( tinBaseP ) )
         }
             tFile = T(psttc1) ;
                    bArmedNow = bArmedLater = 0 ;
@@ -147,18 +147,18 @@ __Z( tFile.csF( tinP ) ) ;
         {
         else if( bArmedNow || bArmedLater )
 
-        else if( bArmedMaxValue                                             ) { bArmedMaxValue     = 0 ; maxValue       = etThread.strDigitsToSCountF( tinP , psttc1 ) ; }
-        else if( bArmedIdReport                                             ) { bArmedIdReport     = 0 ; idReport       = etThread.strDigitsToSCountF( tinP , psttc1 ) ; }
-        else if( bArmedReportToCell                                         ) { bArmedReportToCell = 0 ; reportToCell   = etThread.strDigitsToSCountF( tinP , psttc1 ) ; }
-        else if( bArmedIgnore                                               )                            tArgsIgnore   += ( tArgsIgnore.csF(  tinP ) ? tb : tn ) + T(psttc1) ;
+        else if( bArmedMaxValue                                             ) { bArmedMaxValue     = 0 ; maxValue       = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ; }
+        else if( bArmedIdReport                                             ) { bArmedIdReport     = 0 ; idReport       = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ; }
+        else if( bArmedReportToCell                                         ) { bArmedReportToCell = 0 ; reportToCell   = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ; }
+        else if( bArmedIgnore                                               )                            tArgsIgnore   += ( tArgsIgnore.csF(  tinBaseP ) ? tb : tn ) + T(psttc1) ;
 
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameLater    ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 1 ; }
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyNameNow      ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 1 ; bArmedLater = 0 ; }
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyMaxValue     ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 1 ; bArmedNow = 0 ; bArmedLater = 0 ; }
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyIdReport     ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 1 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
-        else if( !etThread.strCompareF( tinP , psttc1 , tArgKeyReportToCell ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 1 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
-             if( !etThread.strCompareF( tinP , psttc1 , tArgKeyIgnore       ) ) { bArmedIgnore   = 1 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
-        etThread.traceF( tinP , T("param: ")+T(psttc1) ) ;
+        else if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyNameLater    ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 1 ; }
+        else if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyNameNow      ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 1 ; bArmedLater = 0 ; }
+        else if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyMaxValue     ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 1 ; bArmedNow = 0 ; bArmedLater = 0 ; }
+        else if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyIdReport     ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 0 ; bArmedIdReport = 1 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
+        else if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyReportToCell ) ) { bArmedIgnore   = 0 ; bArmedReportToCell  = 1 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
+             if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyIgnore       ) ) { bArmedIgnore   = 1 ; bArmedReportToCell  = 0 ; bArmedIdReport = 0 ; bArmedMaxValue = 0 ; bArmedNow = 0 ; bArmedLater = 0 ; }
+        etThread.traceF( tinBaseP , T("param: ")+T(psttc1) ) ;
         _IO_                                                                                        //P:PERSONALITY: A HEYkEY (E.G. "!maxValue") HAS NO EFFECT IF FOLLOWED IMMEDIATELY BY ANOTHER HEYkEY
     {
     FORsTRINGSiN1( pstt1Param )
@@ -168,7 +168,7 @@ __Z( tFile.csF( tinP ) ) ;
     ZE( boolT , bArmedIdReport     ) ;
     ZE( boolT , bArmedReportToCell ) ;
     ZE( boolT , bArmedIgnore       ) ;
-    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinP ) ;
+    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
     TN( tArgKeyNameLater , "!hireLater" ) ;
     _IO_
 {

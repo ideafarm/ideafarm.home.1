@@ -10,61 +10,61 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("press the enter key\r\n") ) ;
+etThread.strokeF( tinBaseP , T("press the enter key\r\n") ) ;
 
-sDone_tmCancel.waitF( tinP ) ;
-etThread.strokeF( tinP , T("primary thread is waiting for tmCancelF to end\r\n") ) ;
+sDone_tmCancel.waitF( tinBaseP ) ;
+etThread.strokeF( tinBaseP , T("primary thread is waiting for tmCancelF to end\r\n") ) ;
 
-sDone_tmClient.waitF( tinP ) ;
-etThread.strokeF( tinP , T("primary thread is waiting for tmClientF to end\r\n") ) ;
+sDone_tmClient.waitF( tinBaseP ) ;
+etThread.strokeF( tinBaseP , T("primary thread is waiting for tmClientF to end\r\n") ) ;
 
-etThread.socksShutdownF( tinP ) ;
-etThread.strokeF( tinP , T("primary thread is shutting down its sockets access\r\n") ) ;
-etThread.strokeF( tinP , T("primary thread is closing handleServer\r\n") ) ;
-etThread.strokeF( tinP , T("primary thread is closing handleJob\r\n") ) ;
+etThread.socksShutdownF( tinBaseP ) ;
+etThread.strokeF( tinBaseP , T("primary thread is shutting down its sockets access\r\n") ) ;
+etThread.strokeF( tinBaseP , T("primary thread is closing handleServer\r\n") ) ;
+etThread.strokeF( tinBaseP , T("primary thread is closing handleJob\r\n") ) ;
 
 etThread = 0 ;
-else          etThread.strokeF( tinP , T("primary thread could not receive a value on port ")+TF1(idPort)+T("\r\n") ) ;
-if( !etThread ) etThread.strokeF( tinP , T("primary thread received the value ")+TF1(value)+T(" on port ")+TF1(idPort)+T("\r\n") ) ;
-etThread.sockReadF( tinP , handleJob , (byteT*)&value , sizeof value ) ;
-etThread.strokeF( tinP , T("primary thread is attempting to read a value on port ")+TF1(idPort)+T("\r\n") ) ;
+else          etThread.strokeF( tinBaseP , T("primary thread could not receive a value on port ")+TF1(idPort)+T("\r\n") ) ;
+if( !etThread ) etThread.strokeF( tinBaseP , T("primary thread received the value ")+TF1(value)+T(" on port ")+TF1(idPort)+T("\r\n") ) ;
+etThread.sockReadF( tinBaseP , handleJob , (byteT*)&value , sizeof value ) ;
+etThread.strokeF( tinBaseP , T("primary thread is attempting to read a value on port ")+TF1(idPort)+T("\r\n") ) ;
 ZE( countT , value ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmCancelF , &sDone_tmCancel , flTHREADlAUNCH_null , 0 , 0 , (countT)&handleJob ) ; } ;
-signC sDone_tmCancel( tinP , TAG( TAGiDnULL ) ) ;
-etThread.sockAcceptF( tinP , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmCancelF , &sDone_tmCancel , flTHREADlAUNCH_null , 0 , 0 , (countT)&handleJob ) ; } ;
+signC sDone_tmCancel( tinBaseP , TAG( TAGiDnULL ) ) ;
+etThread.sockAcceptF( tinBaseP , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
 ZE( countT , idPortPeer ) ;
 nicNameC nnPeer ;
-handleC handleJob( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-etThread.sockListenF( tinP , handleServer ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmClientF , &sDone_tmClient , flTHREADlAUNCH_null , 0 , 0 , idPort ) ; } ;
-signC sDone_tmClient( tinP , TAG( TAGiDnULL ) ) ;
-countT idPort = etThread.sockBindF( tinP , handleServer ) ;
-etThread.sockF( tinP , handleServer ) ;
-handleC handleServer( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-etThread.socksSetupF( tinP ) ;
+handleC handleJob( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+etThread.sockListenF( tinBaseP , handleServer ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmClientF , &sDone_tmClient , flTHREADlAUNCH_null , 0 , 0 , idPort ) ; } ;
+signC sDone_tmClient( tinBaseP , TAG( TAGiDnULL ) ) ;
+countT idPort = etThread.sockBindF( tinBaseP , handleServer ) ;
+etThread.sockF( tinBaseP , handleServer ) ;
+handleC handleServer( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+etThread.socksSetupF( tinBaseP ) ;
 
 TODO
 
 DONE( tmClientF )
 }
-    etThread.strokeF( tinP , T("thread tmClientF could not write the value ")+TF1(value)+T(" to port ")+TF1(idPort)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("thread tmClientF could not write the value ")+TF1(value)+T(" to port ")+TF1(idPort)+T("\r\n") ) ;
     etThread = 0 ;
 {
 else
-if( !etThread ) etThread.strokeF( tinP , T("thread tmClientF wrote the value ")+TF1(value)+T(" to port ")+TF1(idPort)+T("\r\n") ) ;
-etThread.sockWriteF( tinP , handleClient , (byteT*)&value , sizeof value ) ;
+if( !etThread ) etThread.strokeF( tinBaseP , T("thread tmClientF wrote the value ")+TF1(value)+T(" to port ")+TF1(idPort)+T("\r\n") ) ;
+etThread.sockWriteF( tinBaseP , handleClient , (byteT*)&value , sizeof value ) ;
 countT value = 0x54321 ;
 
-etThread.osSleepF( tinP , TOCK * 0x10 ) ;
-etThread.strokeF( tinP , T("secondary thread tmClientF is connected but will sleep for 10 tocks before writing\r\n") ) ;
+etThread.osSleepF( tinBaseP , TOCK * 0x10 ) ;
+etThread.strokeF( tinBaseP , T("secondary thread tmClientF is connected but will sleep for 10 tocks before writing\r\n") ) ;
 
-etThread.sockConnectF( tinP , handleClient , idPort ) ;
-etThread.sockF( tinP , handleClient ) ;
-handleC handleClient( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+etThread.sockConnectF( tinBaseP , handleClient , idPort ) ;
+etThread.sockF( tinBaseP , handleClient ) ;
+handleC handleClient( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 
 const countT idPort = pTaskP ? pTaskP->c1 : 0 ;
 TASK( tmClientF )
@@ -73,12 +73,12 @@ DONE( tmCancelF )
 
 }
     etThread = 0 ;
-    else         etThread.strokeF( tinP , T("thread tmCancelF canceled the job socket\r\n") ) ;
-    if( etThread ) etThread.strokeF( tinP , T("thread tmCancelF could not cancel the job socket\r\n") ) ;
-    etThread.sockCancelF( tinP , handleJob ) ;
-    etThread.strokeF( tinP , T("secondary thread tmCancelF is canceling the job socket\r\n") ) ;
-    etThread.osSleepF( tinP , TOCK * 2 ) ;
-    etThread.strokeF( tinP , T("secondary thread tmCancelF is sleeping now, for two tocks\r\n") ) ;
+    else         etThread.strokeF( tinBaseP , T("thread tmCancelF canceled the job socket\r\n") ) ;
+    if( etThread ) etThread.strokeF( tinBaseP , T("thread tmCancelF could not cancel the job socket\r\n") ) ;
+    etThread.sockCancelF( tinBaseP , handleJob ) ;
+    etThread.strokeF( tinBaseP , T("secondary thread tmCancelF is canceling the job socket\r\n") ) ;
+    etThread.osSleepF( tinBaseP , TOCK * 2 ) ;
+    etThread.strokeF( tinBaseP , T("secondary thread tmCancelF is sleeping now, for two tocks\r\n") ) ;
     countT& handleJob = *(countT*)pTaskP->c1 ;
 {
 if( !ether )

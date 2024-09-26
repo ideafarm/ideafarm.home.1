@@ -15,15 +15,15 @@
                     break ;
 
                     }
-                        strSubstringF( tinP , psttP , idf , idl , psttAllP , csttExtraP ) ;
+                        strSubstringF( tinBaseP , psttP , idf , idl , psttAllP , csttExtraP ) ;
                         if( idl ) idl -- ;
                     {
                     else
-                    if( idl == idf ) strMakeF( tinP , LF , psttP , T("") , csttExtraP ) ;
+                    if( idl == idf ) strMakeF( tinBaseP , LF , psttP , T("") , csttExtraP ) ;
                 {
                 if( idLine == idLineP )
 
-                countT idl = bAnyP ? strIdAnyF( tinP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , tEnd , psttAllP ) : strIdF( tinP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , tEnd , psttAllP ) ;
+                countT idl = bAnyP ? strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , tEnd , psttAllP ) : strIdF( tinBaseP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , tEnd , psttAllP ) ;
                 countT idf = idFirstP ;
 
                 idLine ++ ;
@@ -34,10 +34,10 @@
         else
         }
             }
-                strSubstringLineF( tinP , psttP , idFirstP , sttQuoteP , psttAllP , cWords + idLineP + 1 , tEnd , bAnyP , csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;
+                strSubstringLineF( tinBaseP , psttP , idFirstP , sttQuoteP , psttAllP , cWords + idLineP + 1 , tEnd , bAnyP , csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;
             {
             if( cWords + idLineP >= 0 )
-            sCountT cWords = strCLinesF( tinP , psttAllP , tEnd , 1 ) ;
+            sCountT cWords = strCLinesF( tinBaseP , psttAllP , tEnd , 1 ) ;
         {
         if( idLineP < 0 )
 
@@ -58,7 +58,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::strSubstringLineF( tinS& tinP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* const psttAllP , const sCountT idLineP , const strokeS* const psttEndP , const boolT bAnyP , const countT csttExtraP )/*1*/
+/**//*1*/voidT etherC::strSubstringLineF( tinBaseS& tinBaseP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* const psttAllP , const sCountT idLineP , const strokeS* const psttEndP , const boolT bAnyP , const countT csttExtraP )/*1*/
 */
  csttExtraP
   if 1 then each substring that consists only of strokes in psttEndP is treated as a delimiter

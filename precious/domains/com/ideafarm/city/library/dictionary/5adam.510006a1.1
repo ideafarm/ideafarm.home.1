@@ -11,12 +11,12 @@ REST
 
 }
     }
-        ++ s ; etThread.osSleepF( tinP ) ;
+        ++ s ; etThread.osSleepF( tinBaseP ) ;
     {
     while( cReaders )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    etherC::loafIF( tinP ) ;
+    etherC::loafIF( tinBaseP ) ;
 
     }
         etThread.osThreadF( TaRG1( tmReadF ) , (countT)&bksFoo , (countT)&cReaders ) ;
@@ -26,13 +26,13 @@ REST
     countT cDo = 2 ;
     ZE( countT , cReaders ) ;
 
-    booksC bksFoo( tinP , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flBOOKSc_null , 0 , 0 , 0 , 0 , 0 , 0 ) ;
+    booksC bksFoo( tinBaseP , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKSc_null , 0 , 0 , 0 , 0 , 0 , 0 ) ;
 {
 
 }
     }
         bOut ++ ;
-        bksFoo.writeF( tinP , &bOut , 1 , 0 , 0 , flBOOKScwRITE_ALLOWoDDlENGTH , 0 , 0 ) ;
+        bksFoo.writeF( tinBaseP , &bOut , 1 , 0 , 0 , flBOOKScwRITE_ALLOWoDDlENGTH , 0 , 0 ) ;
         if( ido == cbCapacity + 1 ) bOut = 'A' ;        
     {
     for( countT ido = 1 ; ido <= cDo ; ido ++ )
@@ -40,7 +40,7 @@ REST
 
     countT cDo = cbCapacity << 1 ;
 
-    booksC bksFoo( tinP , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , cbCapacity , 0 , 0 , 0 , 0 , 0 ) ;
+    booksC bksFoo( tinBaseP , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , cbCapacity , 0 , 0 , 0 , 0 , 0 ) ;
 {
 
 countT cbCapacity = TUCK >> 4 ;
@@ -54,8 +54,8 @@ DONE( tmReadF )
     }
         }
             }
-                //++ s ; etThread.osSleepF( tinP ) ;
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                //++ s ; etThread.osSleepF( tinBaseP ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             if( !( cCyclesDone % 0x10 ) )
 
@@ -73,8 +73,8 @@ DONE( tmReadF )
 
                         byteT pb4[] = { '>' , *(const byteT*)pageFoo , '<' , 0 } ;
 
-                        //++ s ; etThread.osSleepF( tinP ) ;
-                        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                        //++ s ; etThread.osSleepF( tinBaseP ) ;
+                        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                     {
                     while( cDo -- )
                     countT cDo = 2 ;
@@ -89,16 +89,16 @@ DONE( tmReadF )
 
             pageC page2 = pageFoo ;
 
-            //pageC page( tinP , bksFooP , pbi , cbi , bDelete ? flPAGEc_DELETE : flPAGEc_null ) ;
+            //pageC page( tinBaseP , bksFooP , pbi , cbi , bDelete ? flPAGEc_DELETE : flPAGEc_null ) ;
         {
 
         if( *pbzBlammo ) ;
         const byteT* pbzBlammo = pageFoo ;
 
-        bksFooP.readF( tinP , pageFoo , hBks , flBOOKScrEAD_null ) ;
-        pageC pageFoo( tinP , bksFooP , 1 ) ;
+        bksFooP.readF( tinBaseP , pageFoo , hBks , flBOOKScrEAD_null ) ;
+        pageC pageFoo( tinBaseP , bksFooP , 1 ) ;
 
-        //boolT bDelete = bksFooP.readF( tinP , pbi , cbi , hBks , flBOOKScrEAD_INCREMENTrEFERENCEcOUNTiF ) ;
+        //boolT bDelete = bksFooP.readF( tinBaseP , pbi , cbi , hBks , flBOOKScrEAD_INCREMENTrEFERENCEcOUNTiF ) ;
         //countT cbi = 1 ;
         //ZE( const byteT* , pbi ) ;
     {
@@ -109,9 +109,9 @@ DONE( tmReadF )
     c2AppNote.c1 = 0 ;
 
     HANDLEaPPnOTEScOUNTcLASS& c2AppNote = hBks ;
-    handleC hBks( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+    handleC hBks( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
 
-    //if( idMe == 1 ) etherC::loafIF( tinP ) ;
+    //if( idMe == 1 ) etherC::loafIF( tinBaseP ) ;
 
     countT pModulo[] = { 0 , 13 , 17 } ;
 

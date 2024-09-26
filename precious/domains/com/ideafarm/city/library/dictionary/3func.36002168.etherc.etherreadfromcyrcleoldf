@@ -23,9 +23,9 @@
                 {
                 else
                 }
-                    delF( tinP , pbData ) ;
+                    delF( tinBaseP , pbData ) ;
                     else                              ++ cIgnoredP ;
-                    if( size2 == size1 && pCyrcleOldFP ) bAbort = (*pCyrcleOldFP)( tinP , *this , cParmP , pbData , size1 ) ;
+                    if( size2 == size1 && pCyrcleOldFP ) bAbort = (*pCyrcleOldFP)( tinBaseP , *this , cParmP , pbData , size1 ) ;
 
                     putNegAM( ((countT*)pbic2)[ - 1 ] , FINGERnEG_CYRCLEoLDwRITEsMUDGE ) ;
                     cbToDo = sizeof finger1 ;
@@ -59,7 +59,7 @@
                     if( size1 >= TOCK )
 
                     }
-                        newF( tinP , LF , pbData , size1 + 1 ) ; ___( pbData ) ;
+                        newF( tinBaseP , LF , pbData , size1 + 1 ) ; ___( pbData ) ;
                     {
                     _IO_
 
@@ -82,8 +82,8 @@
                         {
                         else
                         }
-                            ++ s ; osSleepF( tinP , TUCK * 0x20 ) ;
-                            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                            ++ s ; osSleepF( tinBaseP , TUCK * 0x20 ) ;
+                            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     
                             cbToDo = sizeof flags1 ;
                             pboc = (byteT*)&flags1 ;
@@ -97,7 +97,7 @@
                         if( !bOk ) tLog += T(" TRASHED") ;
                         TN( tLog , "" ) ; tLog = TT(timeN1,timeN2)+T(" | flags1:")+TF2(flags1,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" is trashed or says \"dirty\" and cRetryFlags is ")+TF2(cRetryFlags,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" within etherReadFromCyrcleOldF: ") ;
                         
-                        osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                        osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                         ZE( sCountT , timeN2 ) ;
                         ZE( countT , timeN1 ) ;
                     {
@@ -148,7 +148,7 @@
                     LOGrAW( tLog ) ;
                     TN( tLog , "" ) ; tLog = TT(timeN1,timeN2)+T(" | search ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" within etherReadFromCyrcleOldF\r\n") ;
 
-                    osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                    osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT , timeN1 ) ;
                 {
@@ -180,14 +180,14 @@
         }
             }
                 }
-                    etherSnapCyrcleOldF( tinP , pbSnapP , cbSnapP , offBeginSnapP , *pNapkinP ) ;
+                    etherSnapCyrcleOldF( tinBaseP , pbSnapP , cbSnapP , offBeginSnapP , *pNapkinP ) ;
                     bSnapP = 0 ;
                 {
                 else if( !pbSnapP && !cbSnapP && !offBeginSnapP )
-                if( !bSnapP ) { ++ s ; thirdC::dosSleepRawIF( tinP , 0x20 ) ; }
+                if( !bSnapP ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 0x20 ) ; }
             {
             while( ph->cbWritten == ph->cbRead && !POOP && !bQuitP )
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
 
         }
@@ -199,7 +199,7 @@
         if( bQuitP && !bQuitSeen )
     {
     while( !POOP && !bAbort && ( !bQuitSeen || ph->cbRead < cbReadQuit ) )
-    if( pSgnReadyP ) pSgnReadyP->giveF( tinP ) ;
+    if( pSgnReadyP ) pSgnReadyP->giveF( tinBaseP ) ;
     ZE( boolT , bQuitSeen ) ;
     ZE( countT , cbReadQuit ) ;
     ZE( boolT , bAbort ) ;
@@ -233,9 +233,9 @@
         }
             else if( *pNapkinP != sizeof( cyrcleOldHeaderS ) + cbCyrcleOldP ) { BLAMMO ; }
             }
-                pNapkinP->formattingIsDoneF( tinP ) ;
+                pNapkinP->formattingIsDoneF( tinBaseP ) ;
                 ph->flags = flCYRCLEoLD_null ;
-                memSetF( tinP , (byteT*)ph , sizeof( cyrcleOldHeaderS ) ) ;
+                memSetF( tinBaseP , (byteT*)ph , sizeof( cyrcleOldHeaderS ) ) ;
             {
             else if( !( F(pNapkinP->flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
             if( !ph ) { BLAMMO ; }
@@ -243,14 +243,14 @@
         {
         if( pNapkinP )
 
-        pNapkinP = new( 0 , tinP , LF ) napkinC( tinP , LF , (byteT*)bits_pNapkinP_P , textC( tinP , LF , (byteT*)bits_pNapkinP_P , flTEXTc_null , psttNapkinP ) , 0 , sizeof( cyrcleOldHeaderS ) + cbCyrcleOldP , ifcOPENsHAREDmEMORYhOW_nCeO , flNAPKINc_null , - 1 , idMemorySpaceP ) ; ___( pNapkinP ) ;
+        pNapkinP = new( 0 , tinBaseP , LF ) napkinC( tinBaseP , LF , (byteT*)bits_pNapkinP_P , textC( tinBaseP , LF , (byteT*)bits_pNapkinP_P , flTEXTc_null , psttNapkinP ) , 0 , sizeof( cyrcleOldHeaderS ) + cbCyrcleOldP , ifcOPENsHAREDmEMORYhOW_nCeO , flNAPKINc_null , - 1 , idMemorySpaceP ) ; ___( pNapkinP ) ;
     {
     if( !pNapkinP )
     _IO_
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinBaseP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         __Z( cbCyrcleOldP )
         __Z( psttNapkinP )
         __NZ( pNapkinP ) ;
@@ -259,7 +259,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::etherReadFromCyrcleOldF( tinS& tinP , napkinC*& pNapkinP , bitsC& bits_pNapkinP_P , cyrcleOldFT pCyrcleOldFP , countT& cParmP , boolT& bQuitP , const strokeS* const psttNapkinP , const countT cbCyrcleOldP , countT& cIgnoredP , byteT*& pbSnapP , countT& cbSnapP , countT& offBeginSnapP , boolT& bSnapP , const countT idMemorySpaceP , signC* const pSgnReadyP )/*1*/
+/*1*/voidT etherC::etherReadFromCyrcleOldF( tinBaseS& tinBaseP , napkinC*& pNapkinP , bitsC& bits_pNapkinP_P , cyrcleOldFT pCyrcleOldFP , countT& cParmP , boolT& bQuitP , const strokeS* const psttNapkinP , const countT cbCyrcleOldP , countT& cIgnoredP , byteT*& pbSnapP , countT& cbSnapP , countT& offBeginSnapP , boolT& bSnapP , const countT idMemorySpaceP , signC* const pSgnReadyP )/*1*/
 
 /**/
 */
@@ -283,7 +283,7 @@
   will be allocated on the wo'th call
   on wo'th call, must be 0
  pNapkinP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.10301b8.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$etherReadFromCyrcleOldF.0.html\"\>instances\</A\>

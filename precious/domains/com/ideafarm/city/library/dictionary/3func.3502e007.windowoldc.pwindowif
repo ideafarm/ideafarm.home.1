@@ -11,7 +11,7 @@
     return pw ;
 
     }
-        st.ungrabF( tinP ) ;
+        st.ungrabF( tinBaseP ) ;
 
         while( ~handle ) ;
         }
@@ -20,16 +20,16 @@
                 pw = pwc ;
             {
             if( pwc && hWindowP == *pwc )
-            windowOldC* pwc = (windowOldC*)st.downF( tinP , handle ) ;
+            windowOldC* pwc = (windowOldC*)st.downF( tinBaseP , handle ) ;
         {
         do
-        handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;    
+        handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;    
 
-        st.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        st.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        stackC& st = *tinP.pag1->_windowOldC_.pstWindow ;
+        stackC& st = *((tinNormalS&)tinBaseP).pag1->_windowOldC_.pstWindow ;
     {
-    if( tinP.pag1->_windowOldC_.pstWindow )
+    if( ((tinNormalS&)tinBaseP).pag1->_windowOldC_.pstWindow )
     ZE( windowOldC* , pw ) ;
 
     //NOT SERIALIZED BECAUSE STATIC FUNCTION
@@ -43,13 +43,13 @@
     {
     IFbEcAREFUL
 {
-/*1*/windowOldC* windowOldC::pWindowIF( tinS& tinP , const handleC& hWindowP )/*1*/
+/*1*/windowOldC* windowOldC::pWindowIF( tinBaseS& tinBaseP , const handleC& hWindowP )/*1*/
 
 /**/
 */
   must not be 0
  hWindowP
- tinP
+ tinBaseP
 arguments
  impotence does not occur when there is no associated windowOldC object
  will evaluate to 0 if hWindowP is not associated with any windowOldC object

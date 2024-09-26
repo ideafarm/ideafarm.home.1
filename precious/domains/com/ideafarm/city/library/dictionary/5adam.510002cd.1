@@ -10,14 +10,14 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
 
 }
     }
-        etThread.delF( tinP , pcv ) ;
+        etThread.delF( tinBaseP , pcv ) ;
         sws >> pcv ;
         ZE( count6S* , pcv ) ;
     {
@@ -26,7 +26,7 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
 for( lever = 1 ; lever <= 4 ; lever ++ )
 
 }
-    etThread.strokeF( tinP , T("for lever ")+TF1(lever)+T(", the test value was found at position ")+TF1(ids)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("for lever ")+TF1(lever)+T(", the test value was found at position ")+TF1(ids)+T("\r\n") ) ;
     ids = sws( vv ) ;
 
     vv.c6 = vv.c5 = vv.c4 = vv.c3 = vv.c2 = vv.c1 = lever * 0x11 ;
@@ -35,17 +35,17 @@ for( lever = 1 ; lever <= 4 ; lever ++ )
 for( lever = 1 ; lever <= 4 ; lever ++ )
 
 }
-    pcv = 0 ; etThread.newF( tinP , LF , pcv ) ; if( pcv ) { pcv->c6 = pcv->c5 = pcv->c4 = pcv->c3 = pcv->c2 = pcv->c1 = 0x40 + lever ; ids = 0 ; sws.sinkF( tinP , ids , pcv ) ; }
-    pcv = 0 ; etThread.newF( tinP , LF , pcv ) ; if( pcv ) { pcv->c6 = pcv->c5 = pcv->c4 = pcv->c3 = pcv->c2 = pcv->c1 = 0x30 + lever ; ids = 0 ; sws.sinkF( tinP , ids , pcv ) ; }
-    pcv = 0 ; etThread.newF( tinP , LF , pcv ) ; if( pcv ) { pcv->c6 = pcv->c5 = pcv->c4 = pcv->c3 = pcv->c2 = pcv->c1 = 0x20 + lever ; ids = 0 ; sws.sinkF( tinP , ids , pcv ) ; }
-    pcv = 0 ; etThread.newF( tinP , LF , pcv ) ; if( pcv ) { pcv->c6 = pcv->c5 = pcv->c4 = pcv->c3 = pcv->c2 = pcv->c1 = 0x10 + lever ; ids = 0 ; sws.sinkF( tinP , ids , pcv ) ; }
+    pcv = 0 ; etThread.newF( tinBaseP , LF , pcv ) ; if( pcv ) { pcv->c6 = pcv->c5 = pcv->c4 = pcv->c3 = pcv->c2 = pcv->c1 = 0x40 + lever ; ids = 0 ; sws.sinkF( tinBaseP , ids , pcv ) ; }
+    pcv = 0 ; etThread.newF( tinBaseP , LF , pcv ) ; if( pcv ) { pcv->c6 = pcv->c5 = pcv->c4 = pcv->c3 = pcv->c2 = pcv->c1 = 0x30 + lever ; ids = 0 ; sws.sinkF( tinBaseP , ids , pcv ) ; }
+    pcv = 0 ; etThread.newF( tinBaseP , LF , pcv ) ; if( pcv ) { pcv->c6 = pcv->c5 = pcv->c4 = pcv->c3 = pcv->c2 = pcv->c1 = 0x20 + lever ; ids = 0 ; sws.sinkF( tinBaseP , ids , pcv ) ; }
+    pcv = 0 ; etThread.newF( tinBaseP , LF , pcv ) ; if( pcv ) { pcv->c6 = pcv->c5 = pcv->c4 = pcv->c3 = pcv->c2 = pcv->c1 = 0x10 + lever ; ids = 0 ; sws.sinkF( tinBaseP , ids , pcv ) ; }
     ZE( count6S* , pcv ) ;
 {
 for( lever = 1 ; lever <= 4 ; lever ++ )
 
 ZE( countT , ids ) ;
 
-switchStackC sws( tinP , ether , TAG( TAGiDnULL ) , flSTACKc_null , lever , flSTACKc_null , ifcSTACKtYPE_PTR_count6S ) ;
+switchStackC sws( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , lever , flSTACKc_null , ifcSTACKtYPE_PTR_count6S ) ;
 ZE( countT , lever ) ;
 
 TODO

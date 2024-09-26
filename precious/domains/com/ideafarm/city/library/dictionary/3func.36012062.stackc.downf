@@ -27,7 +27,7 @@
     if( *p_ppLathRef && (*p_ppLathRef)->ppD )
     ZE( boolT , bOk ) ;
 
-    if( cPlates && !*p_idLathRef ) adjustRefsF( tinP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE ) ;
+    if( cPlates && !*p_idLathRef ) adjustRefsF( tinBaseP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE ) ;
 
     LATHrEF
 
@@ -39,13 +39,13 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT stackC::downF( tinS& tinP , const boolT bQueryP )/*1*/
+/*1*/boolT stackC::downF( tinBaseS& tinBaseP , const boolT bQueryP )/*1*/
 /**/
 */
   if 1 then i return true iff it would be possible to move *p_ppLathRef
   if 0 then i attempt to move *p_ppLathRef and return bOk
  bQueryP
- tinP
+ tinBaseP
 arguments
 if *p_ppLathRef is not set then i use the top plate as my "before" location
 i move *p_ppLathRef

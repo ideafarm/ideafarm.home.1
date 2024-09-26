@@ -10,7 +10,7 @@
 #undef SPEAK
 
 }
-    paramP.stSpeech.ungrabF( tinP ) ;
+    paramP.stSpeech.ungrabF( tinBaseP ) ;
     paramP.idSpeak = 0 ;
         
     SPEAK( T("The End") ) ;
@@ -715,15 +715,15 @@
         
     paramP.idSpeech = idSpeechP ;
 
-    purgeSpeechF( tinP , etherP , cArgP ) ;
-    paramP.stSpeech.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    purgeSpeechF( tinBaseP , etherP , cArgP ) ;
+    paramP.stSpeech.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     ARGgET( cArgP )
 {
-voidT loadSpeechF( tinS& tinP , etherC& etherP , const countT cArgP , const countT idSpeechP )
+voidT loadSpeechF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , const countT idSpeechP )
 
-#define SPEAK2(t1P,t2P) speakF( tinP , etherP , paramP.stSpeech , t1P , t2P )
-#define SPEAK(t1P)      speakF( tinP , etherP , paramP.stSpeech , t1P )
+#define SPEAK2(t1P,t2P) speakF( tinBaseP , etherP , paramP.stSpeech , t1P , t2P )
+#define SPEAK(t1P)      speakF( tinBaseP , etherP , paramP.stSpeech , t1P )
 
 #include postADAMhEADER
 

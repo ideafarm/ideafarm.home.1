@@ -13,19 +13,19 @@
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
         POPtINaRGS
-        pDatumP = *(datumS**)&tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-        flagsRC = listC::walkIF( tinP , pczPrefix , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
-        tinP.ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_FILTEReNDoFsTRETCHEDvALUE ;
-        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkEnumerateCBF ;
+        pDatumP = *(datumS**)&((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        flagsRC = listC::walkIF( tinBaseP , pczPrefix , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_FILTEReNDoFsTRETCHEDvALUE ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkEnumerateCBF ;
         PUSHtINaRGS
 
         LNV( pczPrefix )
-        listC::dictionaryReplaceOsTextIF( tinP , pczPrefix ) ;
+        listC::dictionaryReplaceOsTextIF( tinBaseP , pczPrefix ) ;
         countT pczPrefix[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , LISTnAMEsYS_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAMEsYS_ROOTaPPLICATION , cNameP , 0 } ;
 
-        puseC          puseIndex( tinP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) ;
+        puseC          puseIndex( tinBaseP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) ;
         const countT idStateSpace = PUSE.idStateSpaceF() ;
-        const osTextT* postMasterPool = PUSE.postNameF( tinP ) ;
+        const osTextT* postMasterPool = PUSE.postNameF( tinBaseP ) ;
     {
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
@@ -41,14 +41,14 @@
 
     flagsT flagsRC = flLISTwALKrETURNcODE_null ;
 {
-/*1*/flagsT listC::walkEnumerateIF( tinS& tinP , datumS*& pDatumP , const countT cNameP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT listC::walkEnumerateIF( tinBaseS& tinBaseP , datumS*& pDatumP , const countT cNameP , const countT idGrabLayerP )/*1*/
 
 /**/
 */
   the name of the field
   must not be 0 or null length 
  cNameP
- tinP
+ tinBaseP
 args
 /*
 

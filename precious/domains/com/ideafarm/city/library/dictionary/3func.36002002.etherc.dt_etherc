@@ -16,26 +16,26 @@
         if( bSniffingTinNotMe )
     
         }
-            delF( tinP , psttUid ) ;
+            delF( tinBaseP , psttUid ) ;
     
-            //if( pcRaceId ) ifcRaceIdF( tinP ) ;
+            //if( pcRaceId ) ifcRaceIdF( tinBaseP ) ;
     
-            etherTestF( tinP ) ;
+            etherTestF( tinBaseP ) ;
             }
-                delF( tinP , psttLog ) ;
+                delF( tinBaseP , psttLog ) ;
     
-                delF( tinP , postLog ) ;
-                { ifcDatumF( tinP , flDATUM1_CLASSeXCEPTIONjOURNAL , flDATUM2_osTextT , 0 , 0 , postLog , costLog ) ; }
-                //else           { ifcDatumF( tinP , flDATUM1_CLASSeXCEPTIONjOURNAL   , flDATUM2_osTextT , 0 , 0 , postLog , costLog ) ; }
-                //if( bImpotent ){ ifcDatumF( tinP , flDATUM1_CLASSeXCEPTIONiMPOTENCE , flDATUM2_osTextT , 0 , 0 , postLog , costLog ) ; }
-                countT costLog = strMakeF( tinP , LF , postLog , psttLog ) ; ___( postLog ) ;
+                delF( tinBaseP , postLog ) ;
+                { ifcDatumF( tinBaseP , flDATUM1_CLASSeXCEPTIONjOURNAL , flDATUM2_osTextT , 0 , 0 , postLog , costLog ) ; }
+                //else           { ifcDatumF( tinBaseP , flDATUM1_CLASSeXCEPTIONjOURNAL   , flDATUM2_osTextT , 0 , 0 , postLog , costLog ) ; }
+                //if( bImpotent ){ ifcDatumF( tinBaseP , flDATUM1_CLASSeXCEPTIONiMPOTENCE , flDATUM2_osTextT , 0 , 0 , postLog , costLog ) ; }
+                countT costLog = strMakeF( tinBaseP , LF , postLog , psttLog ) ; ___( postLog ) ;
                 ZE( osTextT* , postLog ) ;
     
                 }
-                    //delF( tinP , psttw ) ;
+                    //delF( tinBaseP , psttw ) ;
                     //third = 0 ;
-                    //ifcPutHostLogEntryF( tinP , psttw ) ; // U: CONDITIONALLY DO THIS ONLY IF CONNECTED TO THE INTERNET
-                    //strToUrlF( tinP , psttw , psttLog ) ; ___( psttw ) ;
+                    //ifcPutHostLogEntryF( tinBaseP , psttw ) ; // U: CONDITIONALLY DO THIS ONLY IF CONNECTED TO THE INTERNET
+                    //strToUrlF( tinBaseP , psttw , psttLog ) ; ___( psttw ) ;
                     //ZE( strokeS* , psttw ) ;
                 {
     
@@ -46,21 +46,21 @@
             if( psttLog )
     
             //}
-            //    { countT pcPart[] = { idr_ETHERtIMEsLEPT1 , idiFileCt , idLineCt , 0 } ; ifcDatumF( tinP , flDATUM1_CLASStACHOMETER , flDATUM2_null , timeSlept1 , pcPart ) ; }
-            //    { countT pcPart[] = { idr_ETHERtIMEsLEPT2 , idiFileCt , idLineCt , 0 } ; ifcDatumF( tinP , flDATUM1_CLASStACHOMETER , flDATUM2_null , timeSlept2 , pcPart ) ; }
-            //    { countT pcPart[] = { idr_ETHERtIMEaGE1   , idiFileCt , idLineCt , 0 } ; ifcDatumF( tinP , flDATUM1_CLASStACHOMETER , flDATUM2_null , timeAge1   , pcPart ) ; }
-            //    { countT pcPart[] = { idr_ETHERtIMEaGE2   , idiFileCt , idLineCt , 0 } ; ifcDatumF( tinP , flDATUM1_CLASStACHOMETER , flDATUM2_null , timeAge2   , pcPart ) ; }
+            //    { countT pcPart[] = { idr_ETHERtIMEsLEPT1 , idiFileCt , idLineCt , 0 } ; ifcDatumF( tinBaseP , flDATUM1_CLASStACHOMETER , flDATUM2_null , timeSlept1 , pcPart ) ; }
+            //    { countT pcPart[] = { idr_ETHERtIMEsLEPT2 , idiFileCt , idLineCt , 0 } ; ifcDatumF( tinBaseP , flDATUM1_CLASStACHOMETER , flDATUM2_null , timeSlept2 , pcPart ) ; }
+            //    { countT pcPart[] = { idr_ETHERtIMEaGE1   , idiFileCt , idLineCt , 0 } ; ifcDatumF( tinBaseP , flDATUM1_CLASStACHOMETER , flDATUM2_null , timeAge1   , pcPart ) ; }
+            //    { countT pcPart[] = { idr_ETHERtIMEaGE2   , idiFileCt , idLineCt , 0 } ; ifcDatumF( tinBaseP , flDATUM1_CLASStACHOMETER , flDATUM2_null , timeAge2   , pcPart ) ; }
             //{
     
             //#if defined( NEVERdEFINED )
             //U: NOTE: GENERATED DATA SUGGESTS THAT idiFileCt IS ALWAYS 0
             //U: ENABLE THIS AFTER FIND THE CULPRIT GENERATING CORRUPT DATUM ITEMS
     
-            if( tinP.pag1->_etherC_.pEtPrime == this ) delF( tinP , tinP.pag1->_etherC_.pstt1_processParameters ) ;
+            if( ((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime == this ) delF( tinBaseP , ((tinNormalS&)tinBaseP).pag1->_etherC_.pstt1_processParameters ) ;
     
             //U: REPORT TIME AWAKE, TIME SLEPT FOR PERFORMANCE MONITORING AT OPERATIONS
-            third.osTimeSubtractF( tinP , timeAge1 , timeAge2 , timeBorn1 , timeBorn2 ) ;
-            third.osTimeNowF( tinP , timeAge1 , timeAge2 ) ;
+            third.osTimeSubtractF( tinBaseP , timeAge1 , timeAge2 , timeBorn1 , timeBorn2 ) ;
+            third.osTimeNowF( tinBaseP , timeAge1 , timeAge2 ) ;
             ZE( sCountT , timeAge2 ) ;
             ZE( countT , timeAge1 ) ;
         {
@@ -75,61 +75,61 @@
         DEL( third.pswPaintInfoFromDrawingHandle ) ;
     
         }
-            DEL( tinP.pag1->_etherC_.cio_pStkOut ) ;
-            DEL( tinP.pag1->_etherC_.cio_pBaton ) ; //A: ASSUME: CHANNEL IO THREAD HAS ENDED
+            DEL( ((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pStkOut ) ;
+            DEL( ((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pBaton ) ; //A: ASSUME: CHANNEL IO THREAD HAS ENDED
     
             }
-                tinP.pag1->_etherC_.pSwDllReferences->ungrabF( tinP ) ;
+                ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwDllReferences->ungrabF( tinBaseP ) ;
                 }
                     }
                         handle.osF( ifcIDtYPEhANDLE_DLL , osh ) ;
-                        handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ;
+                        handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ;
                         stHandle >> osh ;
                         ZE( countT , osh ) ;
                     {
                     else while( stHandle )
                     if( !stHandle ) break ;
-                    for( countT idf = 1 ;idf <= cFlavors ; idf ++ ) stHandle << tinP.pag1->_etherC_.pSwDllReferences->leverF( tinP , idf ) ;
-                    countT cFlavors = tinP.pag1->_etherC_.pSwDllReferences->cFlavorsF( tinP ) ;
+                    for( countT idf = 1 ;idf <= cFlavors ; idf ++ ) stHandle << ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwDllReferences->leverF( tinBaseP , idf ) ;
+                    countT cFlavors = ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwDllReferences->cFlavorsF( tinBaseP ) ;
                 {
                 while( !POOP )
-                tinP.pag1->_etherC_.pSwDllReferences->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwDllReferences->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                stackC stHandle( tinP , third , TAG( TAGiDnULL ) ) ;
+                stackC stHandle( tinBaseP , third , TAG( TAGiDnULL ) ) ;
             {
-            if( tinP.pag1->_etherC_.pSwDllReferences )
+            if( ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwDllReferences )
     
-            //U:__( ifcHandoffOldF( tinP ).idPhaseF( tinP ) - ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+            //U:__( ifcHandoffOldF( tinBaseP ).idPhaseF( tinBaseP ) - ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     
             flagsMode &= ~( F(flTHIRDmODE_QUITTER) ) ;
     
             }
                 }
-                    if( !b_tmWindows ) thirdC::third_flagsProcessStateI_IF( tinP , flPROCESSsTATE_MAINtHREADiSaLONE , 1 ) ;
+                    if( !b_tmWindows ) thirdC::third_flagsProcessStateI_IF( tinBaseP , flPROCESSsTATE_MAINtHREADiSaLONE , 1 ) ;
                     //THIS CODE HAS BEEN ALTERED SO THAT I BLOCK UNTIL I AM ALONE (EXCEPT FOR tmHeartF)
                     //THAT BLOCKAGE IN WM_CLOSE IS PERMANENTLY COMMENTED OUT; WHY WAS IT NEEDED?
                     //THE PRECEEDING COMMENT IS OBSOLETE AND FALSE
                     /* ONLY main AND tmWindowsF REMAIN, AND tmWindowsF IS BLOCKED IN WM_CLOSE AND HAS ALREADY DESTROYED ITS etThread */
                     }
-                        ++ s ; thirdC::dosSleepIF( tinP , TUCK * 0x40 ) ;
-                        //etherC::etRockIF( tinP ).traceF( tinP , T("~etherC / waiting for all kids and orphans to die [cAllKidThreadsI,cAllOrphanThreadsI]:    ")+TF2(cAllKidThreadsI,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cAllOrphanThreadsI,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ") ) ;
+                        ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ;
+                        //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("~etherC / waiting for all kids and orphans to die [cAllKidThreadsI,cAllOrphanThreadsI]:    ")+TF2(cAllKidThreadsI,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cAllOrphanThreadsI,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ") ) ;
                     {
                     while( cAllKidThreadsI + cAllOrphanThreadsI ) //WANT TO WAIT TILL tmWindowsF IS GONE CAUSE windowOldC::ether MUST BE DT FOR ALL WINDOWS
                     //OLD: while( cAllKidThreadsI + cAllOrphanThreadsI > !!b_tmWindows )
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                     POOPIE
                 {
                 //if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_etThreadONmainISiMPOTENT ) )
-                countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tinP ) ;
-                countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tinP ) ;
-                const boolT b_tmWindows = !!( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_tmWindows ) ;
-                if( F(tinP.flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) { BLAMMO ; }
+                countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tinBaseP ) ;
+                countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tinBaseP ) ;
+                const boolT b_tmWindows = !!( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_tmWindows ) ;
+                if( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) { BLAMMO ; }
                 FIREmYSELF ;
             {
     
-            if( tinP.pcQuit == &(const countT&)POOP ) tinP.pcQuit = 0 ;
+            if( ((tinNormalS&)tinBaseP).pcQuit == &(const countT&)POOP ) ((tinNormalS&)tinBaseP).pcQuit = 0 ;
     
-            DEL( tinP.pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
+            DEL( ((tinNormalS&)tinBaseP).pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
             }
                 THREADmODE2rESTORE
                 }
@@ -142,61 +142,61 @@
                                 case ifcIDtYPErECYCLE_stackC       : { DEL(       *(stackC**)&pObject ) ; break ; }
                                 case ifcIDtYPErECYCLE_soulC        : { DEL(        *(soulC**)&pObject ) ; break ; }
                             {
-                            switch( *tinP.pczl_pSwsRecycle )
+                            switch( *((tinNormalS&)tinBaseP).pczl_pSwsRecycle )
                         {
-                        if( tinP.pczl_pSwsRecycle && pObject )
+                        if( ((tinNormalS&)tinBaseP).pczl_pSwsRecycle && pObject )
     
-                        //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , tinP.pczl_pSwsRecycle ) ; //U::
+                        //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , ((tinNormalS&)tinBaseP).pczl_pSwsRecycle ) ; //U::
     
-                        *tinP.pSwsRecycle >> *(countT*)&pObject ;
+                        *((tinNormalS&)tinBaseP).pSwsRecycle >> *(countT*)&pObject ;
                         ZE( voidT* , pObject ) ;
                     {
-                    while( *tinP.pSwsRecycle )
+                    while( *((tinNormalS&)tinBaseP).pSwsRecycle )
     
-                    tinP.pczl_pSwsRecycle = (countT*)tinP.pSwsRecycle->leverF( tinP , idf ) ;
+                    ((tinNormalS&)tinBaseP).pczl_pSwsRecycle = (countT*)((tinNormalS&)tinBaseP).pSwsRecycle->leverF( tinBaseP , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                countT cFlavors = tinP.pSwsRecycle->cFlavorsF( tinP ) ;
+                countT cFlavors = ((tinNormalS&)tinBaseP).pSwsRecycle->cFlavorsF( tinBaseP ) ;
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             {
-            if( tinP.pSwsRecycle )
+            if( ((tinNormalS&)tinBaseP).pSwsRecycle )
             //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
 
-            delF( tinP , tinP.pag1->_etherC_.psttEarlyFolder ) ;
+            delF( tinBaseP , ((tinNormalS&)tinBaseP).pag1->_etherC_.psttEarlyFolder ) ;
         {
-        if( tinP.pag1->_etherC_.pEtPrime == this )
+        if( ((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime == this )
     
         third.pEtherContainsMe = 0 ;
     
-        if( processGlobal4I.tinVeryVeryEarlyLateMain.pEther == this ) processGlobal4I.tinVeryVeryEarlyLateMain.pEther = 0 ; //U:: THIS SHOULD NOT BE NEEDED.  IT WAS NOT EFFECTIVE ANYWAY TO PAPER OVER THE BUG FOUND REGARDING tinP.pEther
+        if( processGlobal4I.tinNormalVeryVeryEarlyLateMain.pEther == this ) processGlobal4I.tinNormalVeryVeryEarlyLateMain.pEther = 0 ; //U:: THIS SHOULD NOT BE NEEDED.  IT WAS NOT EFFECTIVE ANYWAY TO PAPER OVER THE BUG FOUND REGARDING ((tinNormalS&)tinBaseP).pEther
 
-        if( tinP.pag1->pEtThreadMain == this ) tinP.pag1->pEtThreadMain = 0 ;
-        if( tinP.pEther              == this ) tinP.pEther              = 0 ;
+        if( ((tinNormalS&)tinBaseP).pag1->pEtThreadMain == this ) ((tinNormalS&)tinBaseP).pag1->pEtThreadMain = 0 ;
+        if( ((tinNormalS&)tinBaseP).pEther              == this ) ((tinNormalS&)tinBaseP).pEther              = 0 ;
     
         }
             }
-                delF( tinP , psttd ) ;
+                delF( tinBaseP , psttd ) ;
                 strokeS*& psttd = *(strokeS**)&(countT&)*_pSwSoixlOldApiDoc ;
-                _psttLeverSoixlOldApi = (strokeS*)_pSwSoixlOldApiDoc->leverF( tinP , idf ) ;
+                _psttLeverSoixlOldApi = (strokeS*)_pSwSoixlOldApiDoc->leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = _pSwSoixlOldApiDoc->cFlavorsF( tinP ) ;
+            countT cFlavors = _pSwSoixlOldApiDoc->cFlavorsF( tinBaseP ) ;
         {
-        if( _pSwSoixlOldApiDoc ) // THIS LOOP USES tinP.pEther (subractor callback uses it)
+        if( _pSwSoixlOldApiDoc ) // THIS LOOP USES ((tinNormalS&)tinBaseP).pEther (subractor callback uses it)
     
         }
             bSniffingTinNotMe = 1 ;
             pScoopsSave = _pScoopsSave ;
             SCOOPSnEWsPECIFIED( poopBefore )
         {
-        if( tinP.pag1->_etherC_.pEtPrime == this && POOP == ifcIDsUBtYPEpOOP_FIREDbYmONITOR )
+        if( ((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime == this && POOP == ifcIDsUBtYPEpOOP_FIREDbYmONITOR )
         ZE( scoopC* , pScoopsSave ) ;                                                                                                                 \
         ZE( boolT , bSniffingTinNotMe ) ;
     {
     _IO_
 
     SCOOP
-    const poopC& poopBefore = *tinP.pPoop ;
+    const poopC& poopBefore = *((tinNormalS&)tinBaseP).pPoop ;
     TINSL
 {
 /*1*/etherC::~etherC( voidT )/*1*/

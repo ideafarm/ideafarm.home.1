@@ -9,26 +9,26 @@
 
 REST
 
-etThread.strokeF( tinP , T("cFlavors after:  ")+TF1(swsa.cFlavorsF(tinP))+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("cFlavors after:  ")+TF1(swsa.cFlavorsF(tinBaseP))+T("\r\n") ) ;
 
-swsa.freeNullFlavorsF( tinP ) ;
+swsa.freeNullFlavorsF( tinBaseP ) ;
 
 }
-    if( !swsa ) swsa.freeF( tinP , 1 ) ;
-    cLever = swsa.leverF( tinP , idf ) ;
+    if( !swsa ) swsa.freeF( tinBaseP , 1 ) ;
+    cLever = swsa.leverF( tinBaseP , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = swsa.cFlavorsF( tinP ) ;
+countT cFlavors = swsa.cFlavorsF( tinBaseP ) ;
 
-etThread.strokeF( tinP , T("cFlavors before: ")+TF1(swsa.cFlavorsF(tinP))+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("cFlavors before: ")+TF1(swsa.cFlavorsF(tinBaseP))+T("\r\n") ) ;
 
 }
-    if( !( cLever % 2 ) ) swsa.extractF( 0 , tinP ) ;
+    if( !( cLever % 2 ) ) swsa.extractF( 0 , tinBaseP ) ;
     swsa << (countT)0 ;
 {
 for( cLever = 1 ; cLever <= 8 ; cLever ++ )
 
-switchStackC swsa( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLever , flSTACKc_ALLOWzE ) ;
+switchStackC swsa( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLever , flSTACKc_ALLOWzE ) ;
 ZE( countT , cLever ) ;
 
 TODO

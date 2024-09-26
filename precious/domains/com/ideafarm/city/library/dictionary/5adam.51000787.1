@@ -9,15 +9,15 @@
 
 REST
 
-etThread.traceF( tinP , T("bye") ) ;
+etThread.traceF( tinBaseP , T("bye") ) ;
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("press Ctl-C to quit") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("press Ctl-C to quit") ) ;
 
-etThread.traceF( tinP , T("[psttm]:    \"")+T(psttm)+T("\r\n") ) ;
-//tinP.pc Utility[ 0 ] -- ;
-etThread.diskMapFileNameF( tinP , psttm , tRaw ) ;
-//tinP.pc Utility[ 0 ] ++ ;
+etThread.traceF( tinBaseP , T("[psttm]:    \"")+T(psttm)+T("\r\n") ) ;
+//((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
+etThread.diskMapFileNameF( tinBaseP , psttm , tRaw ) ;
+//((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
 ZE( strokeS* , psttm ) ;
 
 TN( tRaw , "///ideafarm/tmp/foo.ttt" ) ;

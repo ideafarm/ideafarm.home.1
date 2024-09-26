@@ -8,15 +8,15 @@
 
 
 }
-    //NOT NEEDED: thirdC::c_memsetIF( tinP , (byteT*)pPoint , sizeof( cPoint2S  ) * cPointP ) ;
-    //NOT NEEDED: thirdC::c_memsetIF( tinP , (byteT*)pPointTail , sizeof( cPoint2S ) * cGlyphP ) ;
-    thirdC::c_memsetIF( tinP , (byteT*)pFlagsTail , sizeof( flagsT   ) * cGlyphP ) ; //INTENTIONAL ILLEGAL FLAG VALUES, FOR SPEED ; DO NOT USE FV()
-    thirdC::c_memsetIF( tinP , (byteT*)pcSize     , sizeof( countT   ) * cGlyphP ) ;
+    //NOT NEEDED: thirdC::c_memsetIF( tinBaseP , (byteT*)pPoint , sizeof( cPoint2S  ) * cPointP ) ;
+    //NOT NEEDED: thirdC::c_memsetIF( tinBaseP , (byteT*)pPointTail , sizeof( cPoint2S ) * cGlyphP ) ;
+    thirdC::c_memsetIF( tinBaseP , (byteT*)pFlagsTail , sizeof( flagsT   ) * cGlyphP ) ; //INTENTIONAL ILLEGAL FLAG VALUES, FOR SPEED ; DO NOT USE FV()
+    thirdC::c_memsetIF( tinBaseP , (byteT*)pcSize     , sizeof( countT   ) * cGlyphP ) ;
 
-    PUSE.newF( tinP , LF , *(byteT**)&pPoint , sizeof( cPoint2S ) * cPointP ) ; ___( pPoint ) ;
-    PUSE.newF( tinP , LF , *(byteT**)&pPointTail , sizeof( cPoint2S ) * cGlyphP ) ; ___( pPointTail ) ;
-    PUSE.newF( tinP , LF , *(byteT**)&pFlagsTail , sizeof( flagsT   ) * cGlyphP ) ; ___( pFlagsTail ) ;
-    PUSE.newF( tinP , LF , *(byteT**)&pcSize , sizeof( countT   ) * cGlyphP ) ; ___( pcSize ) ;
+    PUSE.newF( tinBaseP , LF , *(byteT**)&pPoint , sizeof( cPoint2S ) * cPointP ) ; ___( pPoint ) ;
+    PUSE.newF( tinBaseP , LF , *(byteT**)&pPointTail , sizeof( cPoint2S ) * cGlyphP ) ; ___( pPointTail ) ;
+    PUSE.newF( tinBaseP , LF , *(byteT**)&pFlagsTail , sizeof( flagsT   ) * cGlyphP ) ; ___( pFlagsTail ) ;
+    PUSE.newF( tinBaseP , LF , *(byteT**)&pcSize , sizeof( countT   ) * cGlyphP ) ; ___( pcSize ) ;
 {
 offop( 0 )
 offos( 0 ) ,
@@ -26,7 +26,7 @@ pPointTail( 0 ) ,
 pFlagsTail( 0 ) ,
 pcSize( 0 ) ,
 cGlyph( cGlyphP ) ,
-/*1*/paperS::paperS( tinS& tinP , const countT cGlyphP , const countT cPointP ) :/*1*/
+/*1*/paperS::paperS( tinBaseS& tinBaseP , const countT cGlyphP , const countT cPointP ) :/*1*/
 
 /**/
 */

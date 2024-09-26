@@ -9,22 +9,22 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.strokeF( tinP , T("loafing\r\n") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.strokeF( tinBaseP , T("loafing\r\n") ) ;
 THREADmODE3rESTORE
 
 }
-    //selMeAll.walkF( tinP , selectWalkCBF ) ;
+    //selMeAll.walkF( tinBaseP , selectWalkCBF ) ;
     //selectC selMeAll = selCust | selTran ;
 
-    //selectC selTran( tinP , *pczfTranEmail , postEmailMe ) ;
+    //selectC selTran( tinBaseP , *pczfTranEmail , postEmailMe ) ;
     //puseC puseTran2( puseTran ) ; //-------------------------------------------------------------------------------------------------------------------------------------
 
-    selCust.walkF( tinP , selectWalkCBF ) ;
-    selectC selCust( tinP , *pczfCustEmail , postEmailMe ) ;
+    selCust.walkF( tinBaseP , selectWalkCBF ) ;
+    selectC selCust( tinBaseP , *pczfCustEmail , postEmailMe ) ;
     //puseC puseCust2( puseCust ) ; //-------------------------------------------------------------------------------------------------------------------------------------
 
-    chatterAllF( tinP , etThread , puseCust /*, puseTran*/ , T("after creating new customer record") ) ;
+    chatterAllF( tinBaseP , etThread , puseCust /*, puseTran*/ , T("after creating new customer record") ) ;
 
     //}
     //    }
@@ -37,12 +37,12 @@ THREADmODE3rESTORE
     //        entry << _fe_pushC( postEmailMe ) ;
     //        entry << *pczfTranEmail ;
     //    
-    //        recordC entry( tinP , count5S( LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , PUSE.dispenseUniqueListNameF() ) ) ;
+    //        recordC entry( tinBaseP , count5S( LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , PUSE.dispenseUniqueListNameF() ) ) ;
     //    {
     //
-    //    listC::dictionaryReplaceOsTextIF( tinP , pczfTranQuantity ) ;
-    //    listC::dictionaryReplaceOsTextIF( tinP , pczfTranIdProduct ) ;
-    //    listC::dictionaryReplaceOsTextIF( tinP , pczfTranEmail ) ;
+    //    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfTranQuantity ) ;
+    //    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfTranIdProduct ) ;
+    //    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfTranEmail ) ;
     //
     //    puseC puseTran1( puseTran ) ;
     //{
@@ -57,21 +57,21 @@ THREADmODE3rESTORE
         entry << _fe_pushC( postEmailMe ) ;
         entry << *pczfCustEmail ;
     
-        recordC entry( tinP , count5S( LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , PUSE.dispenseUniqueListNameF() ) ) ;
+        recordC entry( tinBaseP , count5S( LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , PUSE.dispenseUniqueListNameF() ) ) ;
     {
 
-    listC::dictionaryReplaceOsTextIF( tinP , pczfCustName ) ;
-    listC::dictionaryReplaceOsTextIF( tinP , pczfCustEmail ) ;
+    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfCustName ) ;
+    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfCustEmail ) ;
 
     //puseC puseCust1( puseCust ) ; //-------------------------------------------------------------------------------------------------------------------------------------
 
     countT pczfCustName[]  = { (countT)"name" , 0 } ;
     countT pczfCustEmail[] = { (countT)"email" , 0 } ;
 
-    //chatterAllF( tinP , etThread , puseCust , puseTran , T("before anything") ) ;
+    //chatterAllF( tinBaseP , etThread , puseCust , puseTran , T("before anything") ) ;
     
-    //puseC puseTran( tinP , "transactions" , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
-    puseC puseCust( tinP , "customers"    , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ; //--------------------------------------------------------------------------------------------------
+    //puseC puseTran( tinBaseP , "transactions" , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
+    puseC puseCust( tinBaseP , "customers"    , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ; //--------------------------------------------------------------------------------------------------
 
     osTextT postEmailMe[] = "abcd" ;
 {
@@ -80,40 +80,40 @@ THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
 TODO
 
 }
-    //etThread.strokeF( tinP , T(psttP)+T("/-:\r\n") ) ;
+    //etThread.strokeF( tinBaseP , T(psttP)+T("/-:\r\n") ) ;
 
-    etThread.strokeF( tinP , T("index/-:\r\n") ) ;
-    listC::chatterIF( tinP ) ;
-    etThread.strokeF( tinP , T("index/+:\r\n") ) ;
-    puseC puseIndex( tinP , ifcIDpOOL_HOMEtEMP ) ;
+    etThread.strokeF( tinBaseP , T("index/-:\r\n") ) ;
+    listC::chatterIF( tinBaseP ) ;
+    etThread.strokeF( tinBaseP , T("index/+:\r\n") ) ;
+    puseC puseIndex( tinBaseP , ifcIDpOOL_HOMEtEMP ) ;
     
-    //etThread.strokeF( tinP , T("transactions/-\r\n") ) ;
-    //listC::chatterIF( tinP ) ;
-    //etThread.strokeF( tinP , T("transactions/+\r\n") ) ;
+    //etThread.strokeF( tinBaseP , T("transactions/-\r\n") ) ;
+    //listC::chatterIF( tinBaseP ) ;
+    //etThread.strokeF( tinBaseP , T("transactions/+\r\n") ) ;
     //puseC puseTransactions( puseTransactionsP ) ;
     //
-    //etThread.strokeF( tinP , T("customers/-\r\n") ) ;
-    //listC::chatterIF( tinP ) ;
-    //etThread.strokeF( tinP , T("customers/+\r\n") ) ;
+    //etThread.strokeF( tinBaseP , T("customers/-\r\n") ) ;
+    //listC::chatterIF( tinBaseP ) ;
+    //etThread.strokeF( tinBaseP , T("customers/+\r\n") ) ;
     //puseC puseCustomers( puseCustomersP ) ;
 
-    //etThread.strokeF( tinP , T(psttP)+T("/+:\r\n") ) ;
+    //etThread.strokeF( tinBaseP , T(psttP)+T("/+:\r\n") ) ;
 {
-voidT chatterAllF( tinS& tinP , etherC& etThread , puseC& puseCustomersP /*, puseC& puseTransactionsP*/ , const strokeS* const psttP )
+voidT chatterAllF( tinBaseS& tinBaseP , etherC& etThread , puseC& puseCustomersP /*, puseC& puseTransactionsP*/ , const strokeS* const psttP )
 
 }
     return flSELECTwALKcALLbACKrc_null ;
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
     POPtINaRGS
-    flagsT flagsRC = listC::walkIF( tinP , hRecordP ) ;
-    tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-    tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->nameF() ;
-    tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-    tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+    flagsT flagsRC = listC::walkIF( tinBaseP , hRecordP ) ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->nameF() ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
     PUSHtINaRGS
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
 {
-flagsT selectWalkCBF( tinS& tinP , etherC& etThread , handleC& hRecordP )
+flagsT selectWalkCBF( tinBaseS& tinBaseP , etherC& etThread , handleC& hRecordP )
 
 /*1*/WAKEsHOWtEXT( "doodle.paypal.notices.to.listC" )/*1*/
 /**/

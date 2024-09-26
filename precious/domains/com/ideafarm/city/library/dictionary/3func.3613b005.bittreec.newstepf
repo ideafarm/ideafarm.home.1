@@ -27,7 +27,7 @@
                 {
                 if( pbRawBegin )
 
-                bitNodeS* pbn = newNodeF( tinP ) ;
+                bitNodeS* pbn = newNodeF( tinBaseP ) ;
             {
             else
             }
@@ -63,7 +63,7 @@
                 {
                 if( pbRawBegin )
 
-                bitNodeS* pbn = newNodeF( tinP ) ;
+                bitNodeS* pbn = newNodeF( tinBaseP ) ;
             {
             else
             }
@@ -112,7 +112,7 @@
                 // CONVERT *pThis INTO AN ESCAPE NODE
 
                 *pbn = *PtHIS ;
-                bitNodeS* pbn = newNodeF( tinP ) ;
+                bitNodeS* pbn = newNodeF( tinBaseP ) ;
             {
             if( pp.pcDatum )
 
@@ -152,13 +152,13 @@
 
     if( !pp.pbBits ) { BLAMMO ; }                                                                           // SOURCE BITS MUST BE SPECIFIED
 
-    //etherC::etRockIF( tinP ).traceF( tinP , TF3(espAM(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , TF3(espAM(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
     pp.cSteps ++ ;
 
-    rParam_new_S& pp = *(rParam_new_S*)tinP.pbRecursiveParameters ;
+    rParam_new_S& pp = *(rParam_new_S*)((tinNormalS&)tinBaseP).pbRecursiveParameters ;
     _IO_
 {
-/*1*/boolT bitTreeC::newStepF( tinS& tinP )/*1*/
+/*1*/boolT bitTreeC::newStepF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

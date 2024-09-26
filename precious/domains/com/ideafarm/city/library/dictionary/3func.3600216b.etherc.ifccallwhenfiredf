@@ -8,8 +8,8 @@
 
 
 }
-    tinP.pag1->_etherC_.pCalledWhenFiredF = pFP ;
-    tinP.pag1->_etherC_.pCalledWhenFiredArg = pcArgP ;
+    ((tinNormalS&)tinBaseP).pag1->_etherC_.pCalledWhenFiredF = pFP ;
+    ((tinNormalS&)tinBaseP).pag1->_etherC_.pCalledWhenFiredArg = pcArgP ;
     _IO_
 
     }
@@ -18,7 +18,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcCallWhenFiredF( tinS& tinP , ifcFT pFP , countT* const pcArgP )/*1*/
+/*1*/voidT etherC::ifcCallWhenFiredF( tinBaseS& tinBaseP , ifcFT pFP , countT* const pcArgP )/*1*/
 
 /**/
 */
@@ -27,10 +27,10 @@
  pcArgP
   if not 0 then will be called when tmWatchF detects asynchronous impotence
  pFP
- tinP
+ tinBaseP
 arguments
  application code must ensure that this does not happen
- since i am not serialized, tinP.pag1->_etherC_.pCalledWhenFiredF might be called with an arg that is legal only for its predecessor
+ since i am not serialized, ((tinNormalS&)tinBaseP).pag1->_etherC_.pCalledWhenFiredF might be called with an arg that is legal only for its predecessor
 i can be called to reset pFP
 /*
 

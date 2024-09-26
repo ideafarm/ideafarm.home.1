@@ -19,80 +19,80 @@
                             }
                                 }
                                     }
-                                        etThread.traceF( tinP , T("!exception: could not set file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tLongZip ) ;
+                                        etThread.traceF( tinBaseP , T("!exception: could not set file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tLongZip ) ;
                                         const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                         POOPRqUIET
                                         countT rc = POOP ;
                                     {
                                     if( POOP )
 
-                                    ((thirdC&)etThread).setFileTimeF( tinP , fiw , &timeWritten , &timeWritten , &timeWritten ) ;
+                                    ((thirdC&)etThread).setFileTimeF( tinBaseP , fiw , &timeWritten , &timeWritten , &timeWritten ) ;
 
                                     }
-                                        etThread.traceF( tinP , T("!exception: could not open file to set its file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tLongZip ) ;
+                                        etThread.traceF( tinBaseP , T("!exception: could not open file to set its file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tLongZip ) ;
                                         const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                         POOPRqUIET
                                         countT rc = POOP ;
                                     {
                                     if( POOP )
 
-                                    fileC fiw( tinP , (strokeS*)tLongZip , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+                                    fileC fiw( tinBaseP , (strokeS*)tLongZip , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 
-                                    //etThread.traceF( tinP , tLongZip ) ;
+                                    //etThread.traceF( tinBaseP , tLongZip ) ;
 
                                     TN( tLongZip , "" ) ; tLongZip = tToPath+tNewFileZip ;
                                 {
                                 if( timeWritten )            
 
-                                third.diskZipF( tinP , tToShort , tFrom , 0 , 0 , "-max -move" , "-9m" , 0 ) ;
+                                third.diskZipF( tinBaseP , tToShort , tFrom , 0 , 0 , "-max -move" , "-9m" , 0 ) ;
 
-                                  etThread.traceF( tinP , tFrom    ) ;
-                                //etThread.traceF( tinP , tFrom5   ) ;
-                                //etThread.traceF( tinP , tFrom4   ) ;
-                                //etThread.traceF( tinP , tFrom3   ) ;
-                                //etThread.traceF( tinP , tFrom2   ) ;
-                                  etThread.traceF( tinP , tToShort ) ;
+                                  etThread.traceF( tinBaseP , tFrom    ) ;
+                                //etThread.traceF( tinBaseP , tFrom5   ) ;
+                                //etThread.traceF( tinBaseP , tFrom4   ) ;
+                                //etThread.traceF( tinBaseP , tFrom3   ) ;
+                                //etThread.traceF( tinBaseP , tFrom2   ) ;
+                                  etThread.traceF( tinBaseP , tToShort ) ;
 
                                 TN( tFrom , "" ) ; tFrom = tq + tFrom1 + tqbq + tFrom2 + tqbq + tFrom3 + tqbq + tFrom4 + tqbq + tFrom5 + tq ;
 
-                                TN( tFrom5   , osFileNameC( tinP , third , tNewFileMetaPathLeaf    ) ) ;
-                                TN( tFrom4   , osFileNameC( tinP , third , tNewFileMetaPathRoot    ) ) ;
-                                TN( tFrom3   , osFileNameC( tinP , third , tNewFileMetaCurrentName ) ) ;
-                                TN( tFrom2   , osFileNameC( tinP , third , tNewFileMetaHashedName  ) ) ;
-                                TN( tFrom1   , osFileNameC( tinP , third , tNewFileData            ) ) ;
-                                TN( tToShort , osFileNameC( tinP , third , tNewFileZip             ) ) ;
+                                TN( tFrom5   , osFileNameC( tinBaseP , third , tNewFileMetaPathLeaf    ) ) ;
+                                TN( tFrom4   , osFileNameC( tinBaseP , third , tNewFileMetaPathRoot    ) ) ;
+                                TN( tFrom3   , osFileNameC( tinBaseP , third , tNewFileMetaCurrentName ) ) ;
+                                TN( tFrom2   , osFileNameC( tinBaseP , third , tNewFileMetaHashedName  ) ) ;
+                                TN( tFrom1   , osFileNameC( tinBaseP , third , tNewFileData            ) ) ;
+                                TN( tToShort , osFileNameC( tinBaseP , third , tNewFileZip             ) ) ;
                                 TN( tq     , "\"" ) ;
                                 TN( tqbq     , "\" \"" ) ;
                                 thirdC& third = etThread ;
 
-                                //countT rc = thirdC::c_systemIF( tinP , "dir" ) ;
-                                hoverC hover( tinP , etThread , tToPath ) ;
-                                //etThread.traceF( tinP , tToPath ) ;
+                                //countT rc = thirdC::c_systemIF( tinBaseP , "dir" ) ;
+                                hoverC hover( tinBaseP , etThread , tToPath ) ;
+                                //etThread.traceF( tinBaseP , tToPath ) ;
 
                                 }
                                     }
-                                        etThread.traceF( tinP , T("             [timeAccessedLook]:    ")+TT(timeAccessedLook.time1,timeAccessedLook.time2) ) ;
-                                        etThread.traceF( tinP , T("              [timeCreatedLook]:    ")+TT(timeCreatedLook.time1,timeCreatedLook.time2) ) ;
-                                        etThread.traceF( tinP , T("              [timeWrittenLook]:    ")+TT(timeWrittenLook.time1,timeWrittenLook.time2) ) ;
-                                        etThread.traceF( tinP , T("original file     [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
+                                        etThread.traceF( tinBaseP , T("             [timeAccessedLook]:    ")+TT(timeAccessedLook.time1,timeAccessedLook.time2) ) ;
+                                        etThread.traceF( tinBaseP , T("              [timeCreatedLook]:    ")+TT(timeCreatedLook.time1,timeCreatedLook.time2) ) ;
+                                        etThread.traceF( tinBaseP , T("              [timeWrittenLook]:    ")+TT(timeWrittenLook.time1,timeWrittenLook.time2) ) ;
+                                        etThread.traceF( tinBaseP , T("original file     [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
                                         }
                                             }
                                                 }
-                                                    etThread.traceF( tinP , T("!exception: could not get file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tOld ) ;
+                                                    etThread.traceF( tinBaseP , T("!exception: could not get file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tOld ) ;
                                                     const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                     POOPRqUIET
                                                     countT rc = POOP ;
                                                 {
                                                 if( POOP )
 
-                                                thirdC::getFileTimeIF( tinP , fir , &timeWrittenLook , &timeCreatedLook , &timeAccessedLook ) ;
+                                                thirdC::getFileTimeIF( tinBaseP , fir , &timeWrittenLook , &timeCreatedLook , &timeAccessedLook ) ;
 
                                                 SCOOPS
                                                 _IO_
                                             {
                                             IFsCRATCH
 
-                                            fileC fir( tinP , (strokeS*)*pptLong[ offt ] , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+                                            fileC fir( tinBaseP , (strokeS*)*pptLong[ offt ] , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
                                         {
                                         timeS timeAccessedLook = timeS() ;
                                         timeS timeCreatedLook  = timeS() ;
@@ -100,24 +100,24 @@
 
                                         }
                                             }
-                                                etThread.traceF( tinP , T("!exception: could not set file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+*pptLong[ offt ] ) ;
+                                                etThread.traceF( tinBaseP , T("!exception: could not set file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+*pptLong[ offt ] ) ;
                                                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                 POOPRqUIET
                                                 countT rc = POOP ;
                                             {
                                             if( POOP )
 
-                                            ((thirdC&)etThread).setFileTimeF( tinP , fiw , &timeWritten , &timeWritten , &timeWritten ) ;
+                                            ((thirdC&)etThread).setFileTimeF( tinBaseP , fiw , &timeWritten , &timeWritten , &timeWritten ) ;
 
                                             }
-                                                etThread.traceF( tinP , T("!exception: could not open file to set its file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+*pptLong[ offt ] ) ;
+                                                etThread.traceF( tinBaseP , T("!exception: could not open file to set its file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+*pptLong[ offt ] ) ;
                                                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                                 POOPRqUIET
                                                 countT rc = POOP ;
                                             {
                                             if( POOP )
 
-                                            fileC fiw( tinP , (strokeS*)*pptLong[ offt ] , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+                                            fileC fiw( tinBaseP , (strokeS*)*pptLong[ offt ] , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
                                         {
                                     {
                                     for( countT offt = 0 ; offt < sizeof pptLong / sizeof pptLong[ 0 ] ; offt ++ )
@@ -131,25 +131,25 @@
                                 {
                                 if( timeWritten )            
 
-                                etThread.boxPutF(            tinP , tToPath+tNewFileMetaPathLeaf    , tPathLeaf , tPathLeaf.csF( tinP ) ) ;
-                                etThread.boxPutF(            tinP , tToPath+tNewFileMetaPathRoot    , tPathRoot , tPathRoot.csF( tinP ) ) ;
-                                etThread.boxPutF(            tinP , tToPath+tNewFileMetaCurrentName , tShort    , tShort.csF(    tinP ) ) ;
-                                etThread.boxPutF(            tinP , tToPath+tNewFileMetaHashedName  , tShort    , tShort.csF(    tinP ) ) ;
-                                etThread.diskMoveFileOrDirF( tinP , tToPath+tNewFileData            , tOld ) ;
+                                etThread.boxPutF(            tinBaseP , tToPath+tNewFileMetaPathLeaf    , tPathLeaf , tPathLeaf.csF( tinBaseP ) ) ;
+                                etThread.boxPutF(            tinBaseP , tToPath+tNewFileMetaPathRoot    , tPathRoot , tPathRoot.csF( tinBaseP ) ) ;
+                                etThread.boxPutF(            tinBaseP , tToPath+tNewFileMetaCurrentName , tShort    , tShort.csF(    tinBaseP ) ) ;
+                                etThread.boxPutF(            tinBaseP , tToPath+tNewFileMetaHashedName  , tShort    , tShort.csF(    tinBaseP ) ) ;
+                                etThread.diskMoveFileOrDirF( tinBaseP , tToPath+tNewFileData            , tOld ) ;
 
-                                //etThread.traceF( tinP , tNewFileMetaCurrentName ) ;
-                                //etThread.traceF( tinP , tNewFileMetaHashedName ) ;
+                                //etThread.traceF( tinBaseP , tNewFileMetaCurrentName ) ;
+                                //etThread.traceF( tinBaseP , tNewFileMetaHashedName ) ;
 
-                                //etThread.traceF( tinP , tNewFileData+T("    ")+tOld , flTRACE_null , ifcIDtRACEdIVERT_8 ) ;
+                                //etThread.traceF( tinBaseP , tNewFileData+T("    ")+tOld , flTRACE_null , ifcIDtRACEdIVERT_8 ) ;
 
                                 }
                                     ) ;
-                                        || etThread.diskFileExistsF( tinP , tToPath+tNewFileMetaPathLeaf    )
-                                        || etThread.diskFileExistsF( tinP , tToPath+tNewFileMetaPathRoot    )
-                                        || etThread.diskFileExistsF( tinP , tToPath+tNewFileMetaCurrentName )
-                                        || etThread.diskFileExistsF( tinP , tToPath+tNewFileMetaHashedName  )
-                                        || etThread.diskFileExistsF( tinP , tToPath+tNewFileData            )
-                                           etThread.diskFileExistsF( tinP , tToPath+tNewFileZip             )
+                                        || etThread.diskFileExistsF( tinBaseP , tToPath+tNewFileMetaPathLeaf    )
+                                        || etThread.diskFileExistsF( tinBaseP , tToPath+tNewFileMetaPathRoot    )
+                                        || etThread.diskFileExistsF( tinBaseP , tToPath+tNewFileMetaCurrentName )
+                                        || etThread.diskFileExistsF( tinBaseP , tToPath+tNewFileMetaHashedName  )
+                                        || etThread.diskFileExistsF( tinBaseP , tToPath+tNewFileData            )
+                                           etThread.diskFileExistsF( tinBaseP , tToPath+tNewFileZip             )
                                     (
                                     while
                                     }
@@ -172,13 +172,13 @@
                                     ZE( countT , idSeq ) ;
 
                                     }
-                                        etThread.delF( tinP , psttHash ) ;
+                                        etThread.delF( tinBaseP , psttHash ) ;
                                         tHash = T(psttHash) ;
-                                        hasher.queryStringF( tinP , psttHash ) ; ___( psttHash ) ;
+                                        hasher.queryStringF( tinBaseP , psttHash ) ; ___( psttHash ) ;
                                         ZE( strokeS* , psttHash ) ;
 
-                                        hasher.eatF( tinP , tShort , tShort.csF( tinP ) ) ;
-                                        hasherC hasher( tinP , etThread ) ;
+                                        hasher.eatF( tinBaseP , tShort , tShort.csF( tinBaseP ) ) ;
+                                        hasherC hasher( tinBaseP , etThread ) ;
                                     {
                                     TN( tHash , "" ) ;
                                 {
@@ -190,18 +190,18 @@
                                 TN( tNewFileZip  , "" ) ;
                                 TN( tDotFsetDotZip , ".fset.zip" ) ;                                                                                            // 20240807@1800: NOW THE LEAF VALUE WILL SPECIFY THE NAME OF THE ARCHIVE TO PLACE THE FILESET INTO
                                                                                                                                                                 // ORIGINALLY, THE LEAF VALUE DESCRIBED THE SOURCE OF THE FILE
-                                TN( tToPath , ifFileNameC( tinP , etThread , postzToP ) ) ; tToPath += tPathLeaf+T("/") ;                                       // DESTINATION FOLDER
+                                TN( tToPath , ifFileNameC( tinBaseP , etThread , postzToP ) ) ; tToPath += tPathLeaf+T("/") ;                                       // DESTINATION FOLDER
 
                                 }
                                     }
-                                        etThread.delF( tinP , psttSansDots ) ;
+                                        etThread.delF( tinBaseP , psttSansDots ) ;
                                         tTimePair = T(psttSansDots) ;
-                                        etThread.strSubstringF( tinP , psttSansDots , idf , idl , tTimePair ) ; ___( psttSansDots ) ;
-                                        countT idl = tTimePair.csF( tinP) - 1 ;
+                                        etThread.strSubstringF( tinBaseP , psttSansDots , idf , idl , tTimePair ) ; ___( psttSansDots ) ;
+                                        countT idl = tTimePair.csF( tinBaseP) - 1 ;
                                         countT idf = 2 ;
                                         ZE( strokeS* , psttSansDots ) ;
                                     {
-                                    if( tTimePair.csF( tinP ) > 2 )
+                                    if( tTimePair.csF( tinBaseP ) > 2 )
 
                                     }
                                         }
@@ -211,28 +211,28 @@
                                                 {
                                                 else                    // THERE IS NO TIME AFTER HEY
                                                 }
-                                                    etThread.delF( tinP , psttSingleTime ) ;
+                                                    etThread.delF( tinBaseP , psttSingleTime ) ;
                                                     tTimePair = T(psttSingleTime)+tDateAtTimeFromFileMeta+tDot ;
-                                                    etThread.strSubstringF( tinP , psttSingleTime , idf , idl , tShort ) ; ___( psttSingleTime ) ;
+                                                    etThread.strSubstringF( tinBaseP , psttSingleTime , idf , idl , tShort ) ; ___( psttSingleTime ) ;
                                                     countT idf = idHit2 ;
                                                     countT idl = idf - 1 ;
                                                     ZE( strokeS* , psttSingleTime ) ;
                                                 {
                                                 if( idHit2 )            // I HAVE A SINGLE TIME AFTER HEY                                                  
-                                                idHit2 = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDot , tShort ) ;
+                                                idHit2 = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDot , tShort ) ;
                                                 idf = idfSave ;
                                             {
                                             else
                                             }
-                                                etThread.delF( tinP , psttDoubleTime ) ;
+                                                etThread.delF( tinBaseP , psttDoubleTime ) ;
                                                 tTimePair = T(psttDoubleTime) ;
-                                                etThread.strSubstringF( tinP , psttDoubleTime , idf , idl , tShort ) ; ___( psttDoubleTime ) ;
+                                                etThread.strSubstringF( tinBaseP , psttDoubleTime , idf , idl , tShort ) ; ___( psttDoubleTime ) ;
                                                 countT idf = idHit2 ;
                                                 countT idl = idf - 1 ;
                                                 ZE( strokeS* , psttDoubleTime ) ;
                                             {
                                             if( idHit2 )            // I HAVE A DOUBLE TIME AFTER HEY                                                  
-                                            countT idHit2 = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDotDateAtTimeDot , tShort ) ;
+                                            countT idHit2 = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDotDateAtTimeDot , tShort ) ;
                                             countT idfSave = -- idf ;                             
                                         {
                                         else                        // I HAVE A DOT HEY DOT
@@ -240,22 +240,22 @@
                                             tTimePair = tDot+tTimeFromPrefix+tDot+tDateAtTimeFromFileMeta+tDot ;
                                         {
                                         if( !idHit )
-                                        idHit = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tDotHeyDot , tShort ) ;
+                                        idHit = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tDotHeyDot , tShort ) ;
 
                                         tSequenceNumber = tSequenceNumberFromPrefix ;
                                         }
-                                            etThread.delF( tinP , psttSequenceNumberFromPrefix ) ;
+                                            etThread.delF( tinBaseP , psttSequenceNumberFromPrefix ) ;
                                             tSequenceNumberFromPrefix = T(psttSequenceNumberFromPrefix) ;
-                                            etThread.strSubstringF( tinP , psttSequenceNumberFromPrefix , idf , idl , tShort ) ; ___( psttSequenceNumberFromPrefix ) ;
+                                            etThread.strSubstringF( tinBaseP , psttSequenceNumberFromPrefix , idf , idl , tShort ) ; ___( psttSequenceNumberFromPrefix ) ;
                                             countT idl = ++ idf + 2 ;
                                             ZE( strokeS* , psttSequenceNumberFromPrefix ) ;
                                         {
                                         TN( tSequenceNumberFromPrefix , "" ) ;
 
                                         }
-                                            etThread.delF( tinP , psttTimeFromPrefix ) ;
+                                            etThread.delF( tinBaseP , psttTimeFromPrefix ) ;
                                             tTimeFromPrefix = T(psttTimeFromPrefix) ;
-                                            etThread.strSubstringF( tinP , psttTimeFromPrefix , idf , idl , tShort ) ; ___( psttTimeFromPrefix ) ;
+                                            etThread.strSubstringF( tinBaseP , psttTimeFromPrefix , idf , idl , tShort ) ; ___( psttTimeFromPrefix ) ;
                                             countT idl = idf + 0xc ;
                                             ZE( strokeS* , psttTimeFromPrefix ) ;
                                         {
@@ -272,91 +272,91 @@
                                                         {
                                                         else
                                                         }
-                                                            etThread.delF( tinP , psttMMDDYYHHMM ) ;
+                                                            etThread.delF( tinBaseP , psttMMDDYYHHMM ) ;
                                                             tTimePair = tDot+T(psttSingle)+tDot+tDateAtTimeFromFileMeta+tDot ;
 
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x09 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x08 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x07 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x06 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , tAt                               ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x03 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x02 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x01 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x00 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x05 ] ) ;
-                                                            etThread.strFuseF( tinP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x04 ] ) ;
-                                                            etThread.strMakeF( tinP , LF , psttSingle , t20                               , TUCK ) ; ___( psttSingle ) ; // TUCK IS WAY MORE THAN NEEDED
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x09 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x08 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x07 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x06 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , tAt                               ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x03 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x02 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x01 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x00 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x05 ] ) ;
+                                                            etThread.strFuseF( tinBaseP , psttSingle , psttMMDDYYHHMM[ CSpREFIX + 0x04 ] ) ;
+                                                            etThread.strMakeF( tinBaseP , LF , psttSingle , t20                               , TUCK ) ; ___( psttSingle ) ; // TUCK IS WAY MORE THAN NEEDED
                                                             ZE( strokeS* , psttSingle ) ;
 
-                                                            etThread.strSubstringF( tinP , psttMMDDYYHHMM , idf , idl , tShort ) ; ___( psttMMDDYYHHMM ) ;
+                                                            etThread.strSubstringF( tinBaseP , psttMMDDYYHHMM , idf , idl , tShort ) ; ___( psttMMDDYYHHMM ) ;
                                                             countT idf = idHit ;
                                                             countT idl = idf - 1 ;
                                                             ZE( strokeS* , psttMMDDYYHHMM ) ;
                                                         {
                                                         if( idHit == 1 )
-                                                        idHit = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tSssMMDDYYHHMM , tShort ) ;
+                                                        idHit = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssMMDDYYHHMM , tShort ) ;
                                                         idf = 1 ;
                                                     {
                                                     else
                                                     }
-                                                        etThread.delF( tinP , psttSingleTime ) ;
+                                                        etThread.delF( tinBaseP , psttSingleTime ) ;
                                                         tTimePair = tDot+T(psttSingleTime)+tDateAtTimeFromFileMeta+tDot ;
-                                                        etThread.strSubstringF( tinP , psttSingleTime , idf , idl , tShort ) ; ___( psttSingleTime ) ;
+                                                        etThread.strSubstringF( tinBaseP , psttSingleTime , idf , idl , tShort ) ; ___( psttSingleTime ) ;
                                                         countT idf = idHit ;
                                                         countT idl = idf - 1 ;
                                                         ZE( strokeS* , psttSingleTime ) ;
                                                     {
                                                     if( idHit == 1 )
-                                                    idHit = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tSssDateAtTimeDot , tShort ) ;
+                                                    idHit = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssDateAtTimeDot , tShort ) ;
                                                     idf = 1 ;
                                                 {
                                                 else
                                                 }
-                                                    etThread.delF( tinP , psttSingleTime ) ;
+                                                    etThread.delF( tinBaseP , psttSingleTime ) ;
                                                     tTimePair = T(psttSingleTime)+tDateAtTimeFromFileMeta+tDot ;
-                                                    etThread.strSubstringF( tinP , psttSingleTime , idf , idl , tShort ) ; ___( psttSingleTime ) ;
+                                                    etThread.strSubstringF( tinBaseP , psttSingleTime , idf , idl , tShort ) ; ___( psttSingleTime ) ;
                                                     countT idf = idHit ;
                                                     countT idl = idf - 1 ;
                                                     ZE( strokeS* , psttSingleTime ) ;
                                                 {
                                                 if( idHit )
-                                                idHit = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDot , tShort ) ;
+                                                idHit = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDot , tShort ) ;
                                                 idf = 1 ;
                                             {
                                             else
                                             }
-                                                etThread.delF( tinP , psttDoubleTime ) ;
+                                                etThread.delF( tinBaseP , psttDoubleTime ) ;
                                                 tTimePair = tDot+T(psttDoubleTime) ;
-                                                etThread.strSubstringF( tinP , psttDoubleTime , idf , idl , tShort ) ; ___( psttDoubleTime ) ;
-                                                //etThread.traceF( tinP , T("[idf,idl]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                etThread.strSubstringF( tinBaseP , psttDoubleTime , idf , idl , tShort ) ; ___( psttDoubleTime ) ;
+                                                //etThread.traceF( tinBaseP , T("[idf,idl]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idl,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 countT idf = idHit ;
                                                 countT idl = idf - 1 ;
                                                 ZE( strokeS* , psttDoubleTime ) ;
                                             {
                                             if( idHit == 1 )
-                                            idHit = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tSssDateAtTimeDotDateAtTimeDot , tShort ) ;
+                                            idHit = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssDateAtTimeDotDateAtTimeDot , tShort ) ;
                                             idf = 1 ;
                                         {
                                         else
                                         }
-                                            etThread.delF( tinP , psttDoubleTime ) ;
+                                            etThread.delF( tinBaseP , psttDoubleTime ) ;
                                             tTimePair = T(psttDoubleTime) ;
-                                            etThread.strSubstringF( tinP , psttDoubleTime , idf , idl , tShort ) ; ___( psttDoubleTime ) ;
+                                            etThread.strSubstringF( tinBaseP , psttDoubleTime , idf , idl , tShort ) ; ___( psttDoubleTime ) ;
                                             countT idf = idHit ;
                                             countT idl = idf - 1 ;
                                             ZE( strokeS* , psttDoubleTime ) ;
                                         {
                                         if( idHit )
-                                        idHit = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDotDateAtTimeDot , tShort ) ;
+                                        idHit = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDotDateAtTimeDot , tShort ) ;
                                         idf = 1 ;
 
-                                        //etThread.traceF( tinP , T("[tPatt2]: ")+tSssDotDateAtTimeDotDateAtTimeDot ) ;                             
-                                        //etThread.traceF( tinP , T("[tShort]: ")+tShort ) ;                             
+                                        //etThread.traceF( tinBaseP , T("[tPatt2]: ")+tSssDotDateAtTimeDotDateAtTimeDot ) ;                             
+                                        //etThread.traceF( tinBaseP , T("[tShort]: ")+tShort ) ;                             
                                     {
                                     if( idHit != 1 )
 
-                                    countT idHit = etThread.strIdF( tinP , 0 , flSTRmATCH_null , idf , sttq , tPrefix6 , tShort ) ;
+                                    countT idHit = etThread.strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tPrefix6 , tShort ) ;
 
                                     TN( tPrefix6   , "!ideafarm.6." ) ;
                                     TN( tDotHeyDot , ".!." ) ;
@@ -367,15 +367,15 @@
                                 TN( tSequenceNumber , "001" ) ;
                                 TN( tTimePair , "" ) ;
                             {
-                            if( 1 != etThread.strIdF( tinP , tNewPrefix , tShort ) )
+                            if( 1 != etThread.strIdF( tinBaseP , tNewPrefix , tShort ) )
                         {
-                        if( tShort.csF( tinP ) )
+                        if( tShort.csF( tinBaseP ) )
 
                         }
-                            etThread.delF( tinP , psttDotExt ) ;
-                            etThread.delF( tinP , psttnu ) ;
+                            etThread.delF( tinBaseP , psttDotExt ) ;
+                            etThread.delF( tinBaseP , psttnu ) ;
                             tDotExt = T(psttDotExt) ;
-                            etThread.strBisectF( tinP , psttnu , psttDotExt , tShort , tDot , - 1 , flSTRbISECT_PREPENDdELIMITER ) ; ___( psttnu ) ; ___( psttDotExt ) ;
+                            etThread.strBisectF( tinBaseP , psttnu , psttDotExt , tShort , tDot , - 1 , flSTRbISECT_PREPENDdELIMITER ) ; ___( psttnu ) ; ___( psttDotExt ) ;
                             ZE( strokeS* , psttDotExt ) ;
                             ZE( strokeS* , psttnu ) ;
                         {
@@ -393,7 +393,7 @@
     
                             tDateAtTimeFromFileMeta =
     
-                            etThread.osTimeToOldTimeF( tinP , ms , ss , mm , hh , da , mo , ye , dow , pInfo->timeWritten1 , pInfo->timeWritten2 ) ;
+                            etThread.osTimeToOldTimeF( tinBaseP , ms , ss , mm , hh , da , mo , ye , dow , pInfo->timeWritten1 , pInfo->timeWritten2 ) ;
                             ZE( countT , dow ) ;
                             ZE( sCountT , ye ) ;
                             ZE( countT , mo ) ;
@@ -406,11 +406,11 @@
                         TN( tDateAtTimeFromFileMeta , "" ) ;
 
                         }
-                            etThread.delF( tinP , psttPathRoot ) ;
-                            etThread.delF( tinP , psttPathLeaf ) ;
+                            etThread.delF( tinBaseP , psttPathRoot ) ;
+                            etThread.delF( tinBaseP , psttPathLeaf ) ;
                             tPathLeaf  = T(psttPathLeaf) ;
                             tPathRoot  = T(psttPathRoot) ;
-                            etThread.strBisectF( tinP , psttPathRoot , psttPathLeaf , tPath , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathLeaf ) ; ___( psttPathRoot ) ;
+                            etThread.strBisectF( tinBaseP , psttPathRoot , psttPathLeaf , tPath , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathLeaf ) ; ___( psttPathRoot ) ;
                             ZE( strokeS* , psttPathLeaf ) ;
                             ZE( strokeS* , psttPathRoot ) ;
                         {
@@ -418,11 +418,11 @@
                         TN( tPathRoot , "" ) ;
 
                         }
-                            etThread.delF( tinP , psttShort ) ;
-                            etThread.delF( tinP , psttPath ) ;
+                            etThread.delF( tinBaseP , psttShort ) ;
+                            etThread.delF( tinBaseP , psttPath ) ;
                             tShort = T(psttShort) ;
                             tPath  = T(psttPath) ;
-                            etThread.strBisectF( tinP , psttPath , psttShort , tOld , tSlash , - 1 , flSTRbISECT_null ) ; ___( psttPath ) ; ___( psttShort ) ;
+                            etThread.strBisectF( tinBaseP , psttPath , psttShort , tOld , tSlash , - 1 , flSTRbISECT_null ) ; ___( psttPath ) ; ___( psttShort ) ;
                             ZE( strokeS* , psttShort ) ;
                             ZE( strokeS* , psttPath ) ;
                         {
@@ -430,27 +430,27 @@
                         TN( tPath , "" ) ;
                     {
 
-                    etThread.traceF( tinP , T("original file     [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
+                    etThread.traceF( tinBaseP , T("original file     [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
                     }
                         }
                             }
-                                etThread.traceF( tinP , T("!exception: could not get file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tOld ) ;
+                                etThread.traceF( tinBaseP , T("!exception: could not get file time [rc,postRc,name]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc)+T("    ")+tOld ) ;
                                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                                 POOPRqUIET
                                 countT rc = POOP ;
                             {
                             if( POOP )
 
-                            thirdC::getFileTimeIF( tinP , hFile , &timeWritten , 0 , 0 ) ;
+                            thirdC::getFileTimeIF( tinBaseP , hFile , &timeWritten , 0 , 0 ) ;
 
                             SCOOPS
                             _IO_
                         {
                         IFsCRATCH
 
-                        etThread.diskFileQueryF( tinP , pInfo , hFile ) ; ___( pInfo ) ;
-                        etThread.fileOpenF( tinP , hFile , countTC() , tOld , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_NOcACHE | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER | flOPENdETAILS_LOCnONE , ifcOPENhOW_nFeO ) ;
-                        handleC hFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                        etThread.diskFileQueryF( tinBaseP , pInfo , hFile ) ; ___( pInfo ) ;
+                        etThread.fileOpenF( tinBaseP , hFile , countTC() , tOld , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_NOcACHE | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER | flOPENdETAILS_LOCnONE , ifcOPENhOW_nFeO ) ;
+                        handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
                     {
                     timeS timeWritten = timeS() ;
                     ZE( infoFileS* , pInfo ) ;
@@ -482,16 +482,16 @@
                 osTextT* postzToP         = (osTextT*)infoP.pcArgApp[ 0 ] ;
             {
             )
-                !etThread.strIdF( tinP , tSlash+tIdeaFarmDot9Dot , tOld )
+                !etThread.strIdF( tinBaseP , tSlash+tIdeaFarmDot9Dot , tOld )
                 &&
-                !etThread.strIdF( tinP , tSlash+tIdeaFarmDotADot , tOld )
+                !etThread.strIdF( tinBaseP , tSlash+tIdeaFarmDotADot , tOld )
             (
             if
             TN( tSlash , "/" ) ;
-            TN( tOld , ifFileNameC( tinP , etThread , postNameP ) ) ;                                       // OLD IFC FILE NAME
+            TN( tOld , ifFileNameC( tinBaseP , etThread , postNameP ) ) ;                                       // OLD IFC FILE NAME
             TN( tIdeaFarmDotADot , "!ideafarm.a.2.00000000.00000001." ) ;                                   //20231122@1235: STORE THE FILESET AS A SINGLE ZIP FILE
             TN( tIdeaFarmDot9Dot , "!ideafarm.9.2.00000000.00000001." ) ;                                   //U:: idOwner IS HARDCODED HERE TO ".2.00000000.00000001." (FOREIGN ORDERING)
-            etherC& etThread = *tinP.pEther ;
+            etherC& etThread = *((tinNormalS&)tinBaseP).pEther ;
         {
         if( bDoIt )
 
@@ -499,20 +499,20 @@
 
         ;
             : 1
-            ? (*infoP.pCbf)( tinP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
+            ? (*infoP.pCbf)( tinBaseP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
         bDoIt = infoP.pCbf
 
         diskWalkCopyInfoS& infoP = *(diskWalkCopyInfoS*)pcArgP ;
 
-        //tinP.pEther->traceF( tinP , T("diskWalkRenameForArchivalCBF [postNameP]:    ")+T(postNameP) ) ;
+        //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("diskWalkRenameForArchivalCBF [postNameP]:    ")+T(postNameP) ) ;
     {
-    else if( tinP.pEther )
-    else if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] == '\\' ) bDoIt = 1 ; // IF A DIRECTORY
+    else if( ((tinNormalS&)tinBaseP).pEther )
+    else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] == '\\' ) bDoIt = 1 ; // IF A DIRECTORY
     if( !postNameP ) ;
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkRenameForArchivalCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkRenameForArchivalCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 /**/
 */

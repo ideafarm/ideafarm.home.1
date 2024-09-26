@@ -6,7 +6,7 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-//#define TAG(offP) LF , (byteT*)bitsC( tinP , CbITSlIFI , 0 , (countT)(offP+1) )
+//#define TAG(offP) LF , (byteT*)bitsC( tinBaseP , CbITSlIFI , 0 , (countT)(offP+1) )
   #define TAG(offP) LF , 0
 
 //20240913@1415: bitsC IS USED HERE TO ALLOW CODE THAT TAGS A NEW poolC DROP TO USE ___BITS() TO AUGMENT THE LF INFORMATION ASSOCIATED WITH THE DROP WITH ADDITIONAL INFORMATION ABOUT WHERE IN THE CODE THE DROP WAS NEW'D ; BUT THIS CAPABILITY IS NOT USED BY CURRENT CODE AND FINDING LEAKS HAS NOT BEEN A PROBLEM SO SUCH A CAPABILITY WILL LIKELY NOT EVER BE NEEDED

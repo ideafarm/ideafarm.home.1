@@ -15,34 +15,34 @@
         while( bFail && ( bNoQuit || ( !cTriesP && !etPrime ) || ( cTriesP && -- cTriesP ) ) ) ;
         }
             }
-                ++ s ; ( bNoQuit ? (etherC&)*tinP.pEtScratch : etPrime ).osSleepF( tinP , TOCK * 0x10 ) ;
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ( bNoQuit ? (etherC&)*((tinNormalS&)tinBaseP).pEtScratch : etPrime ).osSleepF( tinBaseP , TOCK * 0x10 ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             if( bFail )
 
             else       bFail = 0 ;
             if( POOP ) POOPR
 
-            sChat2.writeF( tinP , sOut3 ) ;
-            soulC sOut3( tinP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_BYE ) ;
+            sChat2.writeF( tinBaseP , sOut3 ) ;
+            soulC sOut3( tinBaseP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_BYE ) ;
     
             }
-                b_idaLeverP.ungrabF( tinP ) ;
-                b_idhLeverP.ungrabF( tinP ) ;
+                b_idaLeverP.ungrabF( tinBaseP ) ;
+                b_idhLeverP.ungrabF( tinBaseP ) ;
                 }
                     }
                         }
-                            tblCellsP.newObjectF( tinP , *pNicName ) ;
-                            tblCellsP.newObjectF( tinP , idaLeverP   ) ;
-                            tblCellsP.newEventF( tinP ) ;
+                            tblCellsP.newObjectF( tinBaseP , *pNicName ) ;
+                            tblCellsP.newObjectF( tinBaseP , idaLeverP   ) ;
+                            tblCellsP.newEventF( tinBaseP ) ;
                             stDelete_nicNameC_ptrP << pNicName ;
     
                             swsNicNameP << pNicName2 ;
                             *pNicName2 = *pNicName = idhLeverP ;
                         {
                         if( pNicName && pNicName2 )
-                        tinP.pEtScratch->newF( tinP , LF , pNicName2 ) ; ___( pNicName2 ) ;
-                        tinP.pEtScratch->newF( tinP , LF , pNicName  ) ; ___( pNicName  ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->newF( tinBaseP , LF , pNicName2 ) ; ___( pNicName2 ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->newF( tinBaseP , LF , pNicName  ) ; ___( pNicName  ) ;
                         ZE( nicNameC* , pNicName2 ) ;
                         ZE( nicNameC* , pNicName  ) ;
     
@@ -59,8 +59,8 @@
                     idhLeverP = 0 ;
                 {
                 while( cFlavors -- )
-                b_idhLeverP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                b_idaLeverP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                b_idhLeverP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                b_idaLeverP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
                 sIn2 >> cFlavors ;
                 ZE( countT , cFlavors ) ;
@@ -70,14 +70,14 @@
             sIn2 >> idReply ;
             idReply = 0 ;
     
-            sChat2.readF( tinP , sIn2 ) ;
-            sChat2.writeF( tinP , sOut2 ) ;
-            soulC sOut2( tinP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_QUERYaDAMS ) ;
-            soulC sIn2( tinP , TAG( TAGiDnULL ) ) ;
+            sChat2.readF( tinBaseP , sIn2 ) ;
+            sChat2.writeF( tinBaseP , sOut2 ) ;
+            soulC sOut2( tinBaseP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_QUERYaDAMS ) ;
+            soulC sIn2( tinBaseP , TAG( TAGiDnULL ) ) ;
     
             }
                 }
-                    tblHostsP.newObjectF( tinP , *pStk_pNicName ) ;
+                    tblHostsP.newObjectF( tinBaseP , *pStk_pNicName ) ;
                     }
                         }
                             *pStk_pNicName << pNicName ;
@@ -86,22 +86,22 @@
                             //(pNicName WILL BE DELETED WHEN pStk_pNicName IS DELETED) stDelete_nicNameC_ptrP << pNicName ;
                         {
                         if( pNicName )
-                        tinP.pEtScratch->newF( tinP , LF , pNicName ) ; ___( pNicName ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->newF( tinBaseP , LF , pNicName ) ; ___( pNicName ) ;
                         ZE( nicNameC* , pNicName ) ;
                     {
                     while( cNicName -- )
                     sIn1 >> cNicName ;
                     ZE( countT , cNicName ) ;
     
-                    tblHostsP.newObjectF( tinP , *pNicNameRegistrand     ) ;
-                    tblHostsP.newObjectF( tinP , psttOldCommentUsedByIFC   ) ; stDelete_strokeS_ptrP << psttOldCommentUsedByIFC   ;
-                    tblHostsP.newObjectF( tinP , psttOldCommentUsedByOwner ) ; stDelete_strokeS_ptrP << psttOldCommentUsedByOwner ;
-                    tblHostsP.newObjectF( tinP , psttNameUsedByInternet ) ; stDelete_strokeS_ptrP << psttNameUsedByInternet ;
-                    tblHostsP.newObjectF( tinP , psttNameUsedByIFC      ) ; stDelete_strokeS_ptrP << psttNameUsedByIFC      ;
-                    tblHostsP.newObjectF( tinP , psttNameUsedByOwner    ) ; stDelete_strokeS_ptrP << psttNameUsedByOwner    ;
-                    tblHostsP.newObjectF( tinP , psttEmailOwner         ) ; stDelete_strokeS_ptrP << psttEmailOwner         ;
-                    tblHostsP.newObjectF( tinP , idComputer             ) ;
-                    tblHostsP.newEventF( tinP ) ;
+                    tblHostsP.newObjectF( tinBaseP , *pNicNameRegistrand     ) ;
+                    tblHostsP.newObjectF( tinBaseP , psttOldCommentUsedByIFC   ) ; stDelete_strokeS_ptrP << psttOldCommentUsedByIFC   ;
+                    tblHostsP.newObjectF( tinBaseP , psttOldCommentUsedByOwner ) ; stDelete_strokeS_ptrP << psttOldCommentUsedByOwner ;
+                    tblHostsP.newObjectF( tinBaseP , psttNameUsedByInternet ) ; stDelete_strokeS_ptrP << psttNameUsedByInternet ;
+                    tblHostsP.newObjectF( tinBaseP , psttNameUsedByIFC      ) ; stDelete_strokeS_ptrP << psttNameUsedByIFC      ;
+                    tblHostsP.newObjectF( tinBaseP , psttNameUsedByOwner    ) ; stDelete_strokeS_ptrP << psttNameUsedByOwner    ;
+                    tblHostsP.newObjectF( tinBaseP , psttEmailOwner         ) ; stDelete_strokeS_ptrP << psttEmailOwner         ;
+                    tblHostsP.newObjectF( tinBaseP , idComputer             ) ;
+                    tblHostsP.newEventF( tinBaseP ) ;
     
                     *pNicNameRegistrand << sIn1    ;
                     sIn1 >> psttOldCommentUsedByIFC   ; ___( psttOldCommentUsedByIFC   ) ;
@@ -126,8 +126,8 @@
                 {
                 if( pNicNameRegistrand && pStk_pNicName )
     
-                stackC* pStk_pNicName = new( 0 , tinP , LF ) stackC( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ; ___( pStk_pNicName ) ;
-                tinP.pEtScratch->newF( tinP , LF , pNicNameRegistrand ) ; ___( pNicNameRegistrand ) ;
+                stackC* pStk_pNicName = new( 0 , tinBaseP , LF ) stackC( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ; ___( pStk_pNicName ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->newF( tinBaseP , LF , pNicNameRegistrand ) ; ___( pNicNameRegistrand ) ;
                 ZE( nicNameC* , pNicNameRegistrand ) ;
             {
             while( cHosts -- )
@@ -139,30 +139,30 @@
             sIn1 >> idReply ;
             ZE( countT , idReply ) ;
     
-            sChat2.readF( tinP , sIn1 ) ;
-            sChat2.writeF( tinP , sOut1 ) ;
-            soulC sOut1( tinP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_QUERYnICnAME ) ;
-            soulC sIn1( tinP , TAG( TAGiDnULL ) ) ;
+            sChat2.readF( tinBaseP , sIn1 ) ;
+            sChat2.writeF( tinBaseP , sOut1 ) ;
+            soulC sOut1( tinBaseP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_QUERYnICnAME ) ;
+            soulC sIn1( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-            sChat2.connectF( tinP , idPort2 , idhIfc ) ;
-            socketC sChat2( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            sChat2.connectF( tinBaseP , idPort2 , idhIfc ) ;
+            socketC sChat2( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     
             }
                 souli >> idPort2 ;
                 __( idReply - ifcIDcMDsESSION_NEWsOCKETrEPLY ) ;
                 souli >> idReply ;
                 ZE( countT , idReply ) ;
-                sChat.readF( tinP , souli ) ;
-                soulC souli( tinP , TAG( TAGiDnULL ) ) ;
+                sChat.readF( tinBaseP , souli ) ;
+                soulC souli( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-                sChat.writeF( tinP , soulo ) ;
-                soulC soulo( tinP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_NEWsOCKET ) ;
+                sChat.writeF( tinBaseP , soulo ) ;
+                soulC soulo( tinBaseP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_NEWsOCKET ) ;
     
-                sChat.connectF( tinP , ifcPORToLD2_CHAT , idhIfc ) ;
-                socketC sChat( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                sChat.connectF( tinBaseP , ifcPORToLD2_CHAT , idhIfc ) ;
+                socketC sChat( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
             {
             ZE( countT , idPort2 ) ;
-            nicNameC idhIfc = socketC::nicNameIF( tinP , *tinP.pEtScratch , T(WWWiDEAFARMcOM) ) ;
+            nicNameC idhIfc = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , T(WWWiDEAFARMcOM) ) ;
     
             ZE( boolT , bOk ) ;
         {
@@ -172,40 +172,40 @@
     IFsCRATCH
     boolT bFail = 1 ;
     boolT bNoQuit = cTriesP == - 1 ;
-    etherC& etPrime = etPrimeIF( tinP ) ;
+    etherC& etPrime = etPrimeIF( tinBaseP ) ;
 
-    tblHostsP.newColF( tinP , T("nicNameAll") ) ;
-    tblHostsP.newColF( tinP , T("nicNameRegistrand") ) ;
-    tblHostsP.newColF( tinP , T("commentUsedByIFC") ) ;
-    tblHostsP.newColF( tinP , T("commentUsedByOwner") ) ;
-    tblHostsP.newColF( tinP , T("nameUsedByInternet") ) ;
-    tblHostsP.newColF( tinP , T("nameUsedByIFC") ) ;
-    tblHostsP.newColF( tinP , T("nameUsedByOwner") ) ;
-    tblHostsP.newColF( tinP , T("emailOwner") ) ;
-    tblHostsP.newColF( tinP , T("idComputer") ) ;
+    tblHostsP.newColF( tinBaseP , T("nicNameAll") ) ;
+    tblHostsP.newColF( tinBaseP , T("nicNameRegistrand") ) ;
+    tblHostsP.newColF( tinBaseP , T("commentUsedByIFC") ) ;
+    tblHostsP.newColF( tinBaseP , T("commentUsedByOwner") ) ;
+    tblHostsP.newColF( tinBaseP , T("nameUsedByInternet") ) ;
+    tblHostsP.newColF( tinBaseP , T("nameUsedByIFC") ) ;
+    tblHostsP.newColF( tinBaseP , T("nameUsedByOwner") ) ;
+    tblHostsP.newColF( tinBaseP , T("emailOwner") ) ;
+    tblHostsP.newColF( tinBaseP , T("idComputer") ) ;
 
-    tblCellsP.newColF( tinP , T("nicName") ) ;
-    tblCellsP.newColF( tinP , T("idAdam") ) ;
+    tblCellsP.newColF( tinBaseP , T("nicName") ) ;
+    tblCellsP.newColF( tinBaseP , T("idAdam") ) ;
 
     _IO_
 
     }
         if( POOP ) return ;
         //U: VERIFY THAT IS IN INITIAL PHASE AND THAT NO COLS HAVE YET BEEN DEFINED
-        __( tblHostsP.cRowsF( tinP ) ) ;
-        __( tblCellsP.cRowsF( tinP ) ) ;
-        __( stDelete_nicNameC_ptrP.idTypeF( tinP ) - ifcSTACKtYPE_PTR_nicNameC ) ;
-        __( stDelete_strokeS_ptrP.idTypeF( tinP ) - ifcSTACKtYPE_PTR_strokeS ) ;
-        __( swsIdAdamP.cFlavorsF( tinP ) ) ;
-        __( swsIdAdamP.idTypeF( tinP ) - ifcSTACKtYPE_countT ) ;
-        __( swsNicNameP.cFlavorsF( tinP ) ) ;
-        __( swsNicNameP.idTypeF( tinP ) - ifcSTACKtYPE_PTR_nicNameC ) ;
+        __( tblHostsP.cRowsF( tinBaseP ) ) ;
+        __( tblCellsP.cRowsF( tinBaseP ) ) ;
+        __( stDelete_nicNameC_ptrP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_nicNameC ) ;
+        __( stDelete_strokeS_ptrP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_strokeS ) ;
+        __( swsIdAdamP.cFlavorsF( tinBaseP ) ) ;
+        __( swsIdAdamP.idTypeF( tinBaseP ) - ifcSTACKtYPE_countT ) ;
+        __( swsNicNameP.cFlavorsF( tinBaseP ) ) ;
+        __( swsNicNameP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_nicNameC ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcCellHostsF( tinS& tinP , switchStackC& swsNicNameP , countT& idaLeverP , batonC& b_idaLeverP , switchStackC& swsIdAdamP , nicNameC& idhLeverP , batonC& b_idhLeverP , tableC& tblCellsP , tableC& tblHostsP , stackC& stDelete_strokeS_ptrP , stackC& stDelete_nicNameC_ptrP , stackC& stDelete_stackC_ptrP , countT cTriesP )/*1*/
+/*1*/voidT etherC::ifcCellHostsF( tinBaseS& tinBaseP , switchStackC& swsNicNameP , countT& idaLeverP , batonC& b_idaLeverP , switchStackC& swsIdAdamP , nicNameC& idhLeverP , batonC& b_idhLeverP , tableC& tblCellsP , tableC& tblHostsP , stackC& stDelete_strokeS_ptrP , stackC& stDelete_nicNameC_ptrP , stackC& stDelete_stackC_ptrP , countT cTriesP )/*1*/
 
 /**/
 */
@@ -242,7 +242,7 @@
   must be of type ifcSTACKtYPE_PTR_nicNameC
   must be empty
  swsNicNameP
- tinP
+ tinBaseP
   | 
   | }
   |     DEL( pStk ) ;
@@ -254,21 +254,21 @@
   | !tblHosts ;
   | !tblCells ;
   | 
-  | etThread.ifcCellHostsF( tinP , swsNicName , idaLever , b_idaLever , swsIdAdam , idhLever , b_idhLever , tblCells , tblHosts , stDelete_strokeS_ptr , stDelete_nicNameC_ptr , stDelete_stackC_ptr ) ;
+  | etThread.ifcCellHostsF( tinBaseP , swsNicName , idaLever , b_idaLever , swsIdAdam , idhLever , b_idhLever , tblCells , tblHosts , stDelete_strokeS_ptr , stDelete_nicNameC_ptr , stDelete_stackC_ptr ) ;
   | 
-  | stackC stDelete_stackC_ptr(  tinP , etThread , TAG( TAGiDnULL ) ) ;
-  | stackC stDelete_nicNameC_ptr( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
-  | stackC stDelete_strokeS_ptr( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+  | stackC stDelete_stackC_ptr(  tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+  | stackC stDelete_nicNameC_ptr( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
+  | stackC stDelete_strokeS_ptr( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
   | 
-  | tableC tblHosts( tinP , etThread , T("hosts") ) ;
-  | tableC tblCells( tinP , etThread , T("cells") ) ;
+  | tableC tblHosts( tinBaseP , etThread , T("hosts") ) ;
+  | tableC tblCells( tinBaseP , etThread , T("cells") ) ;
   | 
-  | switchStackC swsIdAdam( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idhLever ) ;
-  | batonC b_idhLever( tinP , TAG( TAGiDnULL ) ) ;
+  | switchStackC swsIdAdam( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idhLever ) ;
+  | batonC b_idhLever( tinBaseP , TAG( TAGiDnULL ) ) ;
   | nicNameC idhLever ;
   | 
-  | switchStackC swsNicName( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idaLever , ifcSTACKtYPE_PTR_nicNameC ) ;
-  | batonC b_idaLever( tinP , TAG( TAGiDnULL ) ) ;
+  | switchStackC swsNicName( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idaLever , ifcSTACKtYPE_PTR_nicNameC ) ;
+  | batonC b_idaLever( tinBaseP , TAG( TAGiDnULL ) ) ;
   | ZE( countT , idaLever ) ;
   | 
    the only part that is not required is the 2 "!tbl" lines, which log the contents of the tables

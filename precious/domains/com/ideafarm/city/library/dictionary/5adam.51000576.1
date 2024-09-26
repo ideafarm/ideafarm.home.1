@@ -18,30 +18,30 @@ REST
 }
     }
         }
-            etThread.delF( tinP , pbs ) ;
-            if( pbs ) del_sessionS_ptrs_F( tinP , (sessionS*)pbs ) ;
+            etThread.delF( tinBaseP , pbs ) ;
+            if( pbs ) del_sessionS_ptrs_F( tinBaseP , (sessionS*)pbs ) ;
             sws_session >> pbs ;
             ZE( byteT* , pbs ) ;
         {
         while( sws_session )
-        idhLever = *(nicNameC*)sws_session.leverF( tinP , idf ) ;
+        idhLever = *(nicNameC*)sws_session.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = sws_session.cFlavorsF( tinP ) ;
+    countT cFlavors = sws_session.cFlavorsF( tinBaseP ) ;
 {
 TELL( "cleaning up" ) ;
 
-etThread.delF( tinP , postxHelpExe   ) ;
-etThread.delF( tinP , postxLoggedOut ) ;
-etThread.delF( tinP , postxLoggedIn  ) ;
-etThread.delF( tinP , postxNotFound  ) ;
+etThread.delF( tinBaseP , postxHelpExe   ) ;
+etThread.delF( tinBaseP , postxLoggedOut ) ;
+etThread.delF( tinBaseP , postxLoggedIn  ) ;
+etThread.delF( tinBaseP , postxNotFound  ) ;
 
-etThread.ifcDrivenServerF( tinP , i1 , i2 ) ;
-//etThread.ifcHireF( tinP , T("ifcIDaDAM_ROOThTTPsERVER") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+etThread.ifcDrivenServerF( tinBaseP , i1 , i2 ) ;
+//etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_ROOThTTPsERVER") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
 
-etThread.ifcHireF( tinP , T("ifcIDaDAM_ROOThTTPsERVER") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_ROOThTTPsERVER") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
 
-serverInfo2S i2( ifcIDpORT_HTTP , flSOCKETc_null , TF2(thirdC::third_idAdamRootI_IF( tinP ),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , 0 , (countT)&c3p , 0 , - 1 , 1 , sizeof( stateS ) , translateStateF ) ;
+serverInfo2S i2( ifcIDpORT_HTTP , flSOCKETc_null , TF2(thirdC::third_idAdamRootI_IF( tinBaseP ),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , 0 , (countT)&c3p , 0 , - 1 , 1 , sizeof( stateS ) , translateStateF ) ;
 serverInfo1S i1( &pbdVarying , b_pbdVarying , bHandedOff , sgnIdPortReplaced , tmcF , countTC() , ether ) ;
 TELL( "serving the HTTP port" ) ;
 
@@ -71,21 +71,21 @@ count8S c8p3 ;
 count8S c8p2 ;
 count8S c8p1 ;
 
-switchStackC sws_session( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idhLever , flSTACKc_null , ifcSTACKtYPE_PTR_byteT ) ;
-batonC b_idhLever( tinP , TAG( TAGiDnULL ) ) ;
+switchStackC sws_session( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idhLever , flSTACKc_null , ifcSTACKtYPE_PTR_byteT ) ;
+batonC b_idhLever( tinBaseP , TAG( TAGiDnULL ) ) ;
 nicNameC idhLever ;
 
 //}
-//    etThread.delF( tinP , pbExe ) ;
-//    etThread.memCopyF( tinP , postxHelpExe + cb0 , pbExe , cbExe ) ;
-//    etThread.memCopyF( tinP , postxHelpExe       , pb0   , cb0   ) ;
-//    etThread.newF( tinP , LF , postxHelpExe , cb0 + cbExe ) ; ___( postxHelpExe ) ;
+//    etThread.delF( tinBaseP , pbExe ) ;
+//    etThread.memCopyF( tinBaseP , postxHelpExe + cb0 , pbExe , cbExe ) ;
+//    etThread.memCopyF( tinBaseP , postxHelpExe       , pb0   , cb0   ) ;
+//    etThread.newF( tinBaseP , LF , postxHelpExe , cb0 + cbExe ) ; ___( postxHelpExe ) ;
 //
-//    countT cb0 = t0.csF( tinP ) ;
+//    countT cb0 = t0.csF( tinBaseP ) ;
 //    byteT* pb0 = t0 ;
 //    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: application/octet-stream\r\nContent-Length: ")+TF4(cbExe,flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 //
-//    etThread.boxGetShadowF( tinP , pbExe , cbExe , T("///" ifc PAPERS "/ifcwhelp.exe") ) ; ___( pbExe ) ;
+//    etThread.boxGetShadowF( tinBaseP , pbExe , cbExe , T("///" ifc PAPERS "/ifcwhelp.exe") ) ; ___( pbExe ) ;
 //    ZE( countT , cbExe ) ;
 //    ZE( byteT* , pbExe ) ;
 //{
@@ -93,24 +93,24 @@ ZE( countT   , costxHelpExe ) ;
 ZE( osTextT* , postxHelpExe ) ;
 
 }
-    costxLoggedOut = etThread.strMakeF( tinP , LF , postxLoggedOut , t0+tnf ) ; ___( postxLoggedOut ) ;
-    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+    costxLoggedOut = etThread.strMakeF( tinBaseP , LF , postxLoggedOut , t0+tnf ) ; ___( postxLoggedOut ) ;
+    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
     TN( tnf , "You have been logged out.  If you are a visitor, thank you for visiting us in IdeaFarm " "(tm) City.  While we value the opportunity to exchange goods, services, and money with you, that is not why we want you to visit us.  You are welcome because you are an important part of God's creation, and we want you to enjoy true community when with us.   If you are a resident, please act immediately and decisively if you ever find that any aspect of the operation of the city does not proclaim Jesus's rule for our lives: \"Love God.  Love Neighbor.\"" ) ;
 {
 ZE( countT   , costxLoggedOut ) ;
 ZE( osTextT* , postxLoggedOut ) ;
 
 }
-    costxLoggedIn = etThread.strMakeF( tinP , LF , postxLoggedIn , t0+tnf ) ; ___( postxLoggedIn ) ;
-    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+    costxLoggedIn = etThread.strMakeF( tinBaseP , LF , postxLoggedIn , t0+tnf ) ; ___( postxLoggedIn ) ;
+    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
     TN( tnf , "You have been logged in.  Please be sure to log out when you are no longer using, or supervising the use of, this computer.  If you have an account with the IdeaFarm " "(tm) City central bank, logging out is important to prevent someone else from spending your money." ) ;
 {
 ZE( countT   , costxLoggedIn ) ;
 ZE( osTextT* , postxLoggedIn ) ;
 
 }
-    costxNotFound = etThread.strMakeF( tinP , LF , postxNotFound , t0+tnf ) ; ___( postxNotFound ) ;
-    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+    costxNotFound = etThread.strMakeF( tinBaseP , LF , postxNotFound , t0+tnf ) ; ___( postxNotFound ) ;
+    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 
     ) ;
 
@@ -136,8 +136,8 @@ ZE( countT   , costxNotFound ) ;
 ZE( osTextT* , postxNotFound ) ;
 
 }
-    costxTM = etThread.strMakeF( tinP , LF , postxTM , t0+tnf ) ; ___( postxTM ) ;
-    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+    costxTM = etThread.strMakeF( tinBaseP , LF , postxTM , t0+tnf ) ; ___( postxTM ) ;
+    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 
 
 
@@ -393,8 +393,8 @@ ZE( countT   , costxTM ) ;
 ZE( osTextT* , postxTM ) ;
 
 }
-    costxIPDOS = etThread.strMakeF( tinP , LF , postxIPDOS , t0+tnf ) ; ___( postxIPDOS ) ;
-    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+    costxIPDOS = etThread.strMakeF( tinBaseP , LF , postxIPDOS , t0+tnf ) ; ___( postxIPDOS ) ;
+    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 
     ) ;
 
@@ -447,8 +447,8 @@ ZE( countT   , costxIPDOS ) ;
 ZE( osTextT* , postxIPDOS ) ;
 
 }
-    costxIA = etThread.strMakeF( tinP , LF , postxIA , t0+tnf ) ; ___( postxIA ) ;
-    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+    costxIA = etThread.strMakeF( tinBaseP , LF , postxIA , t0+tnf ) ; ___( postxIA ) ;
+    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 
     ) ;
 
@@ -541,8 +541,8 @@ ZE( countT   , costxIA ) ;
 ZE( osTextT* , postxIA ) ;
 
 }
-    costxHome = etThread.strMakeF( tinP , LF , postxHome , t0+tnf ) ; ___( postxHome ) ;
-    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+    costxHome = etThread.strMakeF( tinBaseP , LF , postxHome , t0+tnf ) ; ___( postxHome ) ;
+    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 
     ) ;
 
@@ -623,8 +623,8 @@ ZE( osTextT* , postxHome ) ;
 #define TRADEMARKnOTICE "IdeaFarm " "(tm) has been a registered trademark for the software product category since 1992 and has been in continuous use to mark the custom and packaged software products of Wo Ideafarm."
 
 //OLD: }
-//OLD:     costxHome = etThread.strMakeF( tinP , LF , postxHome , t0+tnf ) ; ___( postxHome ) ;
-//OLD:     textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+//OLD:     costxHome = etThread.strMakeF( tinBaseP , LF , postxHome , t0+tnf ) ; ___( postxHome ) ;
+//OLD:     textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 //OLD: 
 //OLD:     ) ;
 //OLD: 
@@ -857,11 +857,11 @@ ZE( osTextT* , postxHome ) ;
 //OLD: ZE( osTextT* , postxHome ) ;
 
 ZE( boolT , bHandedOff ) ;
-batonC b_pbdVarying( tinP , TAG( TAGiDnULL ) , 0 , flBATONc_ALLOWsLEEPwHILEgRABBED /*LEGACY WORKAROUND*/ ) ;
+batonC b_pbdVarying( tinBaseP , TAG( TAGiDnULL ) , 0 , flBATONc_ALLOWsLEEPwHILEgRABBED /*LEGACY WORKAROUND*/ ) ;
 ZE( byteT* , pbdVarying ) ;
-signC sgnIdPortReplaced( tinP , TAG( TAGiDnULL ) ) ;
+signC sgnIdPortReplaced( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-//etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_RUSH ) ;
+//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
 
 TELL( "preparing for work" ) ;
 TODO
@@ -876,56 +876,56 @@ DONEdRIVENsERVER( tmcF )
 
         TELL( "cleaning up" ) ;
         }
-            ++ s ; etThread.osSleepF( tinP , TOCK * 8 ) ; // THIS IS USED INSTEAD OF shutdown TO GIVE PACKETS TIME TO REACH THE PEER; IT IS DONE THIS WAY TO AVOID HAVING THE "SHUTDOWN" CONCEPT IN THE IFC API
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ++ s ; etThread.osSleepF( tinBaseP , TOCK * 8 ) ; // THIS IS USED INSTEAD OF shutdown TO GIVE PACKETS TIME TO REACH THE PEER; IT IS DONE THIS WAY TO AVOID HAVING THE "SHUTDOWN" CONCEPT IN THE IFC API
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         TELL( "sleeping so client can close connection wo'th" ) ;
     
         }
-            etThread.delF( tinP , psttPeer ) ;
-            etThread.delF( tinP , psttKeyValueReply ) ;
-            etThread.delF( tinP , psttName ) ;
-            etThread.delF( tinP , pcIdName ) ;
+            etThread.delF( tinBaseP , psttPeer ) ;
+            etThread.delF( tinBaseP , psttKeyValueReply ) ;
+            etThread.delF( tinBaseP , psttName ) ;
+            etThread.delF( tinBaseP , pcIdName ) ;
             }
                 if( bHttpWoZe ) postxNotFound[ 7 ] = '1' ;
-                pso->writeF( tinP , postxNotFound , costxNotFound ) ;
+                pso->writeF( tinBaseP , postxNotFound , costxNotFound ) ;
                 if( bHttpWoZe ) postxNotFound[ 7 ] = '0' ;
                 POOPR
             {
             else
             }
                 if( bHttpWoZe ) postxIPDOS[ 7 ] = '1' ;
-                pso->writeF( tinP , postxTM , costxTM ) ;
+                pso->writeF( tinBaseP , postxTM , costxTM ) ;
                 if( bHttpWoZe ) postxIPDOS[ 7 ] = '0' ;
                 POOPR
             {
-            else if( !etThread.strCompareF( tinP , psttName , T("/tm.html") ) )
+            else if( !etThread.strCompareF( tinBaseP , psttName , T("/tm.html") ) )
             }
                 if( bHttpWoZe ) postxIPDOS[ 7 ] = '1' ;
-                pso->writeF( tinP , postxIPDOS , costxIPDOS ) ;
+                pso->writeF( tinBaseP , postxIPDOS , costxIPDOS ) ;
                 if( bHttpWoZe ) postxIPDOS[ 7 ] = '0' ;
                 POOPR
             {
-            else if( !etThread.strCompareF( tinP , psttName , T("/ipdos.html") ) )
+            else if( !etThread.strCompareF( tinBaseP , psttName , T("/ipdos.html") ) )
             }
                 if( bHttpWoZe ) postxIA[ 7 ] = '1' ;
-                pso->writeF( tinP , postxIA , costxIA ) ;
+                pso->writeF( tinBaseP , postxIA , costxIA ) ;
                 if( bHttpWoZe ) postxIA[ 7 ] = '0' ;
                 POOPR
             {
-            else if( !etThread.strCompareF( tinP , psttName , T("/ia.html") ) )
+            else if( !etThread.strCompareF( tinBaseP , psttName , T("/ia.html") ) )
             }
                 if( bHttpWoZe ) postxHome[ 7 ] = '1' ;
-                pso->writeF( tinP , postxHome , costxHome ) ;
+                pso->writeF( tinBaseP , postxHome , costxHome ) ;
                 if( bHttpWoZe ) postxHome[ 7 ] = '0' ;
                 POOPR
             {
-            else if( !etThread.strCompareF( tinP , psttName , T("/") ) )
+            else if( !etThread.strCompareF( tinBaseP , psttName , T("/") ) )
             }
                 }
-                    pso->writeF( tinP , postxReply , costxReply ) ;
-                    costxReply = etThread.strMakeF( tinP , LF , postxReply , t0+tnf ) ; ___( postxReply ) ;
-                    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
+                    pso->writeF( tinBaseP , postxReply , costxReply ) ;
+                    costxReply = etThread.strMakeF( tinBaseP , LF , postxReply , t0+tnf ) ; ___( postxReply ) ;
+                    textC t0 = T("HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tnf.csF(tinBaseP),flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 
                     tnf += T(psttKeyValueReply)+T("</FONT></BODY>") ;
                 
@@ -952,13 +952,13 @@ DONEdRIVENsERVER( tmcF )
 
                 POOPR
             {
-            else if( !etThread.strCompareF( tinP , psttName , T("/emailzip.html") ) )
+            else if( !etThread.strCompareF( tinBaseP , psttName , T("/emailzip.html") ) )
             if( !psttName ) ;
 
 #endif
             }
                 if( bHttpWoZe ) postxNotFound[ 7 ] = '1' ;
-                pso->writeF( tinP , postxNotFound , costxNotFound ) ;
+                pso->writeF( tinBaseP , postxNotFound , costxNotFound ) ;
                 if( bHttpWoZe ) postxNotFound[ 7 ] = '0' ;
                 POOPR
             {
@@ -970,29 +970,29 @@ DONEdRIVENsERVER( tmcF )
                 OStEXT( ostoFile , 0x100 )
                 }
                     }
-                        lake.readCloseF( tinP , handle ) ;
+                        lake.readCloseF( tinBaseP , handle ) ;
                         if( bHttpWoZe ) postx[ 7 ] = '1' ;
-                        pso->writeF( tinP , postx , costx ) ;
+                        pso->writeF( tinBaseP , postx , costx ) ;
                         if( bHttpWoZe ) postx[ 7 ] = '0' ;
                     {
                     else
                     }
                         if( bHttpWoZe ) postxNotFound[ 7 ] = '1' ;
-                        pso->writeF( tinP , postxNotFound , costxNotFound ) ;
+                        pso->writeF( tinBaseP , postxNotFound , costxNotFound ) ;
                         if( bHttpWoZe ) postxNotFound[ 7 ] = '0' ;
                     {
                     if( !postx )
                     TELL( "writing the requested fish image" ) ;
             
                     //}
-                    //    lake.readF( tinP , postx , costx , handle , count3S( 1 , 1 ) , cSkip ) ; //SERVE HOME PAGE IF THE SPECIFIED PAGE IS NOT FOUND
+                    //    lake.readF( tinBaseP , postx , costx , handle , count3S( 1 , 1 ) , cSkip ) ; //SERVE HOME PAGE IF THE SPECIFIED PAGE IS NOT FOUND
                     //    cSkip = 0 ;
                     //{
                     //if( !postx )
             
-                    if( *pcIdName ) lake.readF( tinP , postx , costx , handle , pcIdName , cSkip ) ;
+                    if( *pcIdName ) lake.readF( tinBaseP , postx , costx , handle , pcIdName , cSkip ) ;
                     ZE( countT , cSkip ) ;
-                    handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FISH ) ;
+                    handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FISH ) ;
                     ZE( countT , costx ) ;
                     ZE( osTextT* , postx ) ;
                     TELL( "retrieving the requested fish from the lake" ) ;
@@ -1000,24 +1000,24 @@ DONEdRIVENsERVER( tmcF )
                 else
                 }
                     if( bHttpWoZe ) postxLoggedOut[ 7 ] = '1' ;
-                    pso->writeF( tinP , postxLoggedOut , costxLoggedOut ) ;
+                    pso->writeF( tinBaseP , postxLoggedOut , costxLoggedOut ) ;
                     if( bHttpWoZe ) postxLoggedOut[ 7 ] = '0' ;
             
-                    b_idhLever.ungrabF( tinP ) ;
+                    b_idhLever.ungrabF( tinBaseP ) ;
                     }
-                        etThread.osTimeNowF( tinP , ps->timeLogout1 , ps->timeLogout2 ) ;
+                        etThread.osTimeNowF( tinBaseP , ps->timeLogout1 , ps->timeLogout2 ) ;
                         ps->flags |= fliSESSION_ENDED ;
                     {
                     if( ps )
                     sessionS* ps = sws_session ? (sessionS*)sws_session[ 1 ] : 0 ;
                     idhLever = nicNamePeer ;
-                    b_idhLever.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    b_idhLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                     TELL( "writing logout confirmation reply" ) ;
                 {
                 else if( idRequestType == ifcIDrEQtYPE_LOGOUT )
                 }
                     if( bHttpWoZe ) postxLoggedIn[ 7 ] = '1' ;
-                    pso->writeF( tinP , postxLoggedIn , costxLoggedIn ) ;
+                    pso->writeF( tinBaseP , postxLoggedIn , costxLoggedIn ) ;
                     if( bHttpWoZe ) postxLoggedIn[ 7 ] = '0' ;
                     TELL( "writing login confirmation reply" ) ;
                 {
@@ -1028,7 +1028,7 @@ DONEdRIVENsERVER( tmcF )
                         }
                             }
                                 }
-                                    //U:etThread.boxPutF( tinP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM ) , tNote ) ;
+                                    //U:etThread.boxPutF( tinBaseP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM ) , tNote ) ;
                                     //TELL( "sending login confirmation email" ) ;
                                     ;
             
@@ -1062,61 +1062,61 @@ DONEdRIVENsERVER( tmcF )
                                     ranUniC ru( 0xffffffff ) ;
             
                                     bLogin = 1 ;
-                                    b_idhLever.ungrabF( tinP ) ;
+                                    b_idhLever.ungrabF( tinBaseP ) ;
                                     }
                                         sws_session << (byteT*)ps ;
-                                        etThread.osTimeNowF( tinP , ps->timeLogin1 , ps->timeLogin2 ) ;
-                                        etThread.strMakeF( tinP , LF , ps->psttEmail , psttv ) ; ___( ps->psttEmail ) ;
+                                        etThread.osTimeNowF( tinBaseP , ps->timeLogin1 , ps->timeLogin2 ) ;
+                                        etThread.strMakeF( tinBaseP , LF , ps->psttEmail , psttv ) ; ___( ps->psttEmail ) ;
                                     {
                                     if( ps )
-                                    sessionS* ps = new_sessionS_F( tinP ) ;
+                                    sessionS* ps = new_sessionS_F( tinBaseP ) ;
                                     idhLever = nicNamePeer ;
-                                    b_idhLever.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                    b_idhLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                                     TELL( "composing a login confirmation email" ) ;
                                 {
                                 if( psttv && psttv->idAdam )
-                                etThread.strTrimF( tinP , psttv , 0 , T(TbLACKnEWlINE) ) ;
+                                etThread.strTrimF( tinBaseP , psttv , 0 , T(TbLACKnEWlINE) ) ;
                             {
                             if( psttv && psttv->idAdam )
                             strokeS*& psttv = tblKeyValue._CT1_07F( idr , 2 ) ;
                         {
-                        if( !etThread.strCompareF( tinP , tEmail , tblKeyValue._CT1_07F( idr , 1 ) ) )
+                        if( !etThread.strCompareF( tinBaseP , tEmail , tblKeyValue._CT1_07F( idr , 1 ) ) )
                     {
                     for( countT idr = 1 ; idr <= cRows ; idr ++ )
-                    countT cRows = tblKeyValue.cRowsF( tinP ) ;
+                    countT cRows = tblKeyValue.cRowsF( tinBaseP ) ;
                     TN( tEmail , "email" ) ;
             
                     !tblKeyValue ;
                 {
-                if( !POOP && tblKeyValue.cRowsF( tinP ) )
+                if( !POOP && tblKeyValue.cRowsF( tinBaseP ) )
                 ZE( boolT , bLogin ) ;
             {
             else if( !POOP )
             if( etThread ) ;
 #if defined( NEVERdEFINED )
             TELL( "preparing to compose a reply" ) ;
-            countT idRequestType = readRequestF( tinP , etThread , *pso , bMore , bHttpWoZe , pcIdName , psttName , tblKeyValue , psttKeyValueReply /*KLUDGE*/ , std_pstt , psttPeer , nicNamePeer /*, dict*/ ) ;
+            countT idRequestType = readRequestF( tinBaseP , etThread , *pso , bMore , bHttpWoZe , pcIdName , psttName , tblKeyValue , psttKeyValueReply /*KLUDGE*/ , std_pstt , psttPeer , nicNamePeer /*, dict*/ ) ;
             ZE( strokeS* , psttKeyValueReply ) ;
             ZE( strokeS* , psttName ) ;
             TELL( "reading a request" ) ;
             ZE( boolT , bHttpWoZe ) ;
-            stackC std_pstt( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+            stackC std_pstt( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
             ZE( strokeS* , psttPeer ) ;
         
-            tblKeyValue.newColF( tinP , T("value") ) ;
-            tblKeyValue.newColF( tinP , T("key") ) ;
-            tableC tblKeyValue( tinP , etThread , T("keyValue") ) ;
+            tblKeyValue.newColF( tinBaseP , T("value") ) ;
+            tblKeyValue.newColF( tinBaseP , T("key") ) ;
+            tableC tblKeyValue( tinBaseP , etThread , T("keyValue") ) ;
         
-            b_pbdVarying.ungrabF( tinP ) ;
+            b_pbdVarying.ungrabF( tinBaseP ) ;
             }
                 TN( t_cHamburgers , "" ) ; t_cHamburgers = TF3(++state.cHamburgers,0,8) ;
                 TN( t_idMe        , "" ) ; t_idMe        = TF3(state.idMe,0,8) ;
                 stateS& state = *(stateS*)pbdVarying ;
             {
             if( pbdVarying )
-            b_pbdVarying.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            b_pbdVarying.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         
-            etThread.newF( tinP , LF , pcIdName , CCiDnAMEmAX + 1 ) ; ___( pcIdName ) ;
+            etThread.newF( tinBaseP , LF , pcIdName , CCiDnAMEmAX + 1 ) ; ___( pcIdName ) ;
             ZE( countT* , pcIdName ) ;
         
             nicNameC nicNamePeer ;
@@ -1144,31 +1144,31 @@ TASKdRIVENsERVER( tmcF )
         {
         if( POOP )
 
-        etThread.delF( tinP , psttName ) ;
-        etThread.delF( tinP , psttAction ) ;
+        etThread.delF( tinBaseP , psttName ) ;
+        etThread.delF( tinBaseP , psttAction ) ;
         }
             }
-                tinP.pEtScratch->delF( tinP , psttNameTrimmed ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttNameTrimmed ) ;
     
                 if( offi < CCiDnAMEmAX ) pcIdNameP[ offi ++ ] = 0 ;
                 }
-                    tinP.pEtScratch->delF( tinP , psttw ) ;
+                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
                     else __1
                     }
                         }
                             __( !pcIdNameP[ offi ++ ] ) ;
-                            tinP.pEtScratch->delF( tinP , psttw2 ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
                             //pcIdNameP[ offi ] = dictP( psttw2 ) ;
-                            tinP.pEtScratch->strSubstringF( tinP , psttw2 , idf2 , idl2 , psttw ) ; ___( psttw2 ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttw2 , idf2 , idl2 , psttw ) ; ___( psttw2 ) ;
                             ZE( strokeS* , psttw2 ) ;
                             ZE( countT , idl2 ) ;
                             countT idf2 = 2 ;
                         {
                         else
-                        if( 1 != tinP.pEtScratch->strIdF( tinP , sttDollar , psttw ) ) pcIdNameP[ offi ++ ] = tinP.pEtScratch->strDigitsToSCountF( tinP , psttw ) ;
+                        if( 1 != ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , sttDollar , psttw ) ) pcIdNameP[ offi ++ ] = ((tinNormalS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttw ) ;
                     {
                     if( offi < CCiDnAMEmAX - 1 )
-                    tinP.pEtScratch->strSubstringF( tinP , psttw , idf , sttq , sttDot , psttNameTrimmed ) ; ___( psttw ) ;            // "$foo"
+                    ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttw , idf , sttq , sttDot , psttNameTrimmed ) ; ___( psttw ) ;            // "$foo"
                     ZE( strokeS* , psttw ) ;
                 {
                 while( !POOP && idf )
@@ -1177,13 +1177,13 @@ TASKdRIVENsERVER( tmcF )
                 idf = 1 ;
                 ZE( countT , offi ) ;
     
-                tinP.pEtScratch->strSubstringF( tinP , psttNameTrimmed , idf , idl , psttName ) ; ___( psttNameTrimmed ) ;      // "1.2.$foo.4"
+                ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttNameTrimmed , idf , idl , psttName ) ; ___( psttNameTrimmed ) ;      // "1.2.$foo.4"
                 ZE( strokeS* , psttNameTrimmed ) ;
                 countT idl = idDot0 ? idDot0 - 1 : 0 ;
                 idf = 2 ;
     
                 __( psttName->idAdam - 1 - idDot0 ) ;
-                countT idDot0 = tinP.pEtScratch->strIdF( tinP , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
+                countT idDot0 = ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
                 TN( tDot0 , ".0" ) ;
                 idf = 1 ;
             {
@@ -1197,46 +1197,46 @@ TASKdRIVENsERVER( tmcF )
             if( idRequestType != ifcIDrEQtYPE_FISH ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
-            __( tinP.pEtScratch->strIdF( tinP , sttSlash , psttName ) - 1 ) ;                                                  // "/1.2.$foo.4.0"
+            __( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , sttSlash , psttName ) - 1 ) ;                                                  // "/1.2.$foo.4.0"
             __( !psttName->idAdam ) ;
         {
         if( !POOP && !etThread )
         __Z( psttName ) ; // WILL BE NULL IF CLIENT CLOSES WITHOUT TELLING ME TO CLOSE
     
-        etThread.delF( tinP , psttKV ) ;
+        etThread.delF( tinBaseP , psttKV ) ;
         }
             }
-                etThread.strMakeF( tinP , LF , psttKeyValueReplyP , tReply ) ; ___( psttKeyValueReplyP ) ;
+                etThread.strMakeF( tinBaseP , LF , psttKeyValueReplyP , tReply ) ; ___( psttKeyValueReplyP ) ;
             {
-            if( tReply.csF( tinP ) )
+            if( tReply.csF( tinBaseP ) )
 
-            etThread.delF( tinP , psttFileName ) ;
-            etThread.delF( tinP , pbFileImage ) ;
-            etThread.boxPutUniqueF( tinP , psttFileName , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(ifcIDaDAM_ROOTfORMdATAeATER)+T("/in/form") , pbFileImage , offo ) ;
+            etThread.delF( tinBaseP , psttFileName ) ;
+            etThread.delF( tinBaseP , pbFileImage ) ;
+            etThread.boxPutUniqueF( tinBaseP , psttFileName , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(ifcIDaDAM_ROOTfORMdATAeATER)+T("/in/form") , pbFileImage , offo ) ;
             ZE( strokeS* , psttFileName ) ;
 
-            tinP.pEtScratch->delF( tinP , pstt1e ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , pstt1e ) ;
             }
                 }
-                    tblKeyValueP.newObjectF( tinP , psttv ) ;
-                    tblKeyValueP.newObjectF( tinP , psttk ) ;
-                    tblKeyValueP.newEventF( tinP ) ;
+                    tblKeyValueP.newObjectF( tinBaseP , psttv ) ;
+                    tblKeyValueP.newObjectF( tinBaseP , psttk ) ;
+                    tblKeyValueP.newEventF( tinBaseP ) ;
     
                     std_psttP << psttv ;
                     std_psttP << psttk ;
 
                     }
-                        etThread.delF( tinP , postv ) ;
-                        thirdC::c_memcpyIF( tinP , pbFileImage + offo , postv , costa ) ; offo += costa ;
-                        countT costa = 1 + etThread.strMakeF( tinP , LF , postv , psttv ) ; ___( postv ) ;
+                        etThread.delF( tinBaseP , postv ) ;
+                        thirdC::c_memcpyIF( tinBaseP , pbFileImage + offo , postv , costa ) ; offo += costa ;
+                        countT costa = 1 + etThread.strMakeF( tinBaseP , LF , postv , psttv ) ; ___( postv ) ;
                         ZE( osTextT* , postv ) ;
                     {
                     if( offo + psttv->idAdam + 1 < cbaFileImage )
 
                     }
-                        etThread.delF( tinP , postk ) ;
-                        thirdC::c_memcpyIF( tinP , pbFileImage + offo , postk , costa ) ; offo += costa ;
-                        countT costa = 1 + etThread.strMakeF( tinP , LF , postk , psttk ) ; ___( postk ) ;
+                        etThread.delF( tinBaseP , postk ) ;
+                        thirdC::c_memcpyIF( tinBaseP , pbFileImage + offo , postk , costa ) ; offo += costa ;
+                        countT costa = 1 + etThread.strMakeF( tinBaseP , LF , postk , psttk ) ; ___( postk ) ;
                         ZE( osTextT* , postk ) ;
                     {
                     if( offo + psttk->idAdam + 1 < cbaFileImage )
@@ -1244,18 +1244,18 @@ TASKdRIVENsERVER( tmcF )
                     tReply += T(psttk)+T(":")+T(psttv)+T("\r\n") ;
 
                     }
-                        etThread.delF( tinP , psttd ) ;
-                        etThread.strSubstringF( tinP , psttv , idf , idl , psttd ) ; ___( psttv ) ;
+                        etThread.delF( tinBaseP , psttd ) ;
+                        etThread.strSubstringF( tinBaseP , psttv , idf , idl , psttd ) ; ___( psttv ) ;
                         countT idl = csMax ;
                         countT idf = 1 ;
                         strokeS* psttd = psttv ; psttv = 0 ;
                     {
                     if( psttv->idAdam > csMax ) 
-                    const countT csMax = !etThread.strCompareF( tinP , psttk , T("note") ) ? TUCK * 0x10 : TUCK ;
+                    const countT csMax = !etThread.strCompareF( tinBaseP , psttk , T("note") ) ? TUCK * 0x10 : TUCK ;
 
                     }
-                        etThread.delF( tinP , psttd ) ;
-                        etThread.strSubstringF( tinP , psttk , idf , idl , psttd ) ; ___( psttk ) ;
+                        etThread.delF( tinBaseP , psttd ) ;
+                        etThread.strSubstringF( tinBaseP , psttk , idf , idl , psttd ) ; ___( psttk ) ;
                         countT idl = TUCK ;
                         countT idf = 1 ;
                         strokeS* psttd = psttk ; psttk = 0 ;
@@ -1265,11 +1265,11 @@ TASKdRIVENsERVER( tmcF )
                 else
                 if( POOP ) { POOPR ; }
     
-                tinP.pEtScratch->strFromUrlF( tinP , psttv ) ; ___( psttv ) ;
-                tinP.pEtScratch->strFromUrlF( tinP , psttk ) ; ___( psttk ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strFromUrlF( tinBaseP , psttv ) ; ___( psttv ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strFromUrlF( tinBaseP , psttk ) ; ___( psttk ) ;
     
-                tinP.pEtScratch->strSubstringF( tinP , psttv , idf , sttq , sttEq , psttc1 ) ; ___( psttv ) ;
-                tinP.pEtScratch->strSubstringF( tinP , psttk , idf , sttq , sttEq , psttc1 ) ; ___( psttk ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttv , idf , sttq , sttEq , psttc1 ) ; ___( psttv ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttk , idf , sttq , sttEq , psttc1 ) ; ___( psttk ) ;
                 ZE( strokeS* , psttv ) ;
                 ZE( strokeS* , psttk ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
@@ -1277,11 +1277,11 @@ TASKdRIVENsERVER( tmcF )
             {
             FORsTRINGSiN1( pstt1e )
             ZE( countT , offo ) ;
-            etThread.newF( tinP , LF , pbFileImage , cbaFileImage ) ; ___( pbFileImage ) ;
+            etThread.newF( tinBaseP , LF , pbFileImage , cbaFileImage ) ; ___( pbFileImage ) ;
             const countT cbaFileImage = TOCK ;
             ZE( byteT* , pbFileImage ) ;
             strokeS sttEq( '=' ) ;
-            tinP.pEtScratch->strWordsOldF( tinP , pstt1e , psttKV , sttq , T("&") ) ; ___( pstt1e ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1e , psttKV , sttq , T("&") ) ; ___( pstt1e ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , pstt1e ) ;
             TN( tReply , "" ) ;
@@ -1289,74 +1289,74 @@ TASKdRIVENsERVER( tmcF )
         if( !POOP && psttKV ) // STORE THE KEY/VALUE PAIRS
     
         }
-            etThread.strMakeF( tinP , LF , psttKV , ( psttw ? T(psttw)+T("&") : T("") )+tBody ) ; ___( psttKV ) ; //ASSUME: psttKV IS OF FORM T("aaaa=1111&bbbb=2222&cccc=3333&dddd=4444")
+            etThread.strMakeF( tinBaseP , LF , psttKV , ( psttw ? T(psttw)+T("&") : T("") )+tBody ) ; ___( psttKV ) ; //ASSUME: psttKV IS OF FORM T("aaaa=1111&bbbb=2222&cccc=3333&dddd=4444")
             psttKV = 0 ;
             strokeS* psttw = psttKV ;
             TN( tBody , "" ) ; tBody = T(postBody) ;
     
             //LOGrAW( T("--------\r\n")+T(postBody)+T("\r\n--------\r\n") ) ; //U::
             if( postBody ) postBody[ costBody ] = 0 ;
-            sInP.readF( tinP , postBody , costBody ) ;
-            etThread.newF( tinP , LF , postBody , costBody + 1 ) ;
+            sInP.readF( tinBaseP , postBody , costBody ) ;
+            etThread.newF( tinBaseP , LF , postBody , costBody + 1 ) ;
             ZE( osTextT* , postBody ) ;
         {
         if( !POOP && costBody ) // HTTP/1.1 KEYvALUE PAIRS
     
         }
-            tinP.pEtScratch->delF( tinP , psttw ) ;
-            tinP.pEtScratch->strWordF( tinP , psttKV   , psttw , sttq , sttQuest , 2 ) ; ___( psttKV   ) ;
-            tinP.pEtScratch->strWordF( tinP , psttName , psttw , sttq , sttQuest , 1 ) ; ___( psttName ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttKV   , psttw , sttq , sttQuest , 2 ) ; ___( psttKV   ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttName , psttw , sttq , sttQuest , 1 ) ; ___( psttName ) ;
             psttName = 0 ;
             strokeS* psttw = psttName ;
         {
-        if( tinP.pEtScratch->strIdF( tinP , T("?") , psttName ) ) // HTTP/1.0 KEYvALUE PAIRS
+        if( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("?") , psttName ) ) // HTTP/1.0 KEYvALUE PAIRS
         ZE( strokeS* , psttKV ) ;
     
         }
-            tinP.pEtScratch->delF( tinP , psttl ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
             }
                 break ;
-                tinP.pEtScratch->delF( tinP , psttl ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
             {
             else
             }
-                tinP.pEtScratch->delF( tinP , psttValue ) ;
-                tinP.pEtScratch->delF( tinP , psttKey ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttValue ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttKey ) ;
                 }
-                    if( tinP.pEtScratch->strIdF( tinP , tClose , psttValue ) ) bMoreP = 0 ;
+                    if( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , tClose , psttValue ) ) bMoreP = 0 ;
                 {
-                else if( !tinP.pEtScratch->strCompareF( tinP , tConnection    , psttKey ) )
-                     if( !tinP.pEtScratch->strCompareF( tinP , tContentLength , psttKey ) ) costBody = tinP.pEtScratch->strDigitsToSCountF( tinP , psttValue , 0xa , 1 ) ;
-                tinP.pEtScratch->strSubstringF( tinP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
+                else if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , tConnection    , psttKey ) )
+                     if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , tContentLength , psttKey ) ) costBody = ((tinNormalS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttValue , 0xa , 1 ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
                 ZE( countT , idl ) ;
-                tinP.pEtScratch->strConvertToLowerCaseF( tinP , psttKey ) ; ___( psttKey ) ;
-                tinP.pEtScratch->strSubstringF( tinP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttKey ) ; ___( psttKey ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttValue ) ;
                 ZE( strokeS* , psttKey ) ;
             {
             else if( psttl && psttl->idAdam ) // HEADER LINE ASSUMED TO BE OF THE FORM, FOR EXAMPLE,  "Content-Length:1234"
             }
-                if( tinP.pEtScratch->strIdF( tinP , idf , sttq , T("logout") , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGOUT ;
+                if( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , idf , sttq , T("logout") , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGOUT ;
                 countT idf = 1 ;
-                tinP.pEtScratch->delF( tinP , psttw ) ;
-                bHttpWoZeP = !tinP.pEtScratch->strIdF( tinP , tHttp11 , psttw ) ;
-                bMoreP = !!tinP.pEtScratch->strIdF( tinP , tHttp11 , psttw ) ;
-                tinP.pEtScratch->strConvertToLowerCaseF( tinP , psttw ) ; ___( psttw ) ;
-                tinP.pEtScratch->strWordF( tinP , psttw , psttl , sttq , sttb , 3 ) ; ___( psttw ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                bHttpWoZeP = !((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , tHttp11 , psttw ) ;
+                bMoreP = !!((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , tHttp11 , psttw ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw ) ; ___( psttw ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw , psttl , sttq , sttb , 3 ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;
-                etThread.strMakeF( tinP , LF , psttNameP , psttName ) ; ___( psttNameP ) ;
+                etThread.strMakeF( tinBaseP , LF , psttNameP , psttName ) ; ___( psttNameP ) ;
                 //LOGrAW( T("url requested: \"")+T(psttName)+T("\"") ) ; //U::
-                tinP.pEtScratch->strWordF( tinP , psttName , psttl , sttq , sttb , 2 ) ; ___( psttName ) ;
-                tinP.pEtScratch->strConvertToLowerCaseF( tinP , psttAction ) ; ___( psttAction ) ;
-                tinP.pEtScratch->strWordF( tinP , psttAction , psttl , sttq , sttb , 1 ) ; ___( psttAction ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttName , psttl , sttq , sttb , 2 ) ; ___( psttName ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttAction ) ; ___( psttAction ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttAction , psttl , sttq , sttb , 1 ) ; ___( psttAction ) ;
             {
             if( !psttAction ) // IF WO'TH LINE
 
             //LOGrAW( T(psttl)+T("\r\n") ) ; //U::
     
             if( POOP ) break ;
-            sInP.readWoLineF( tinP , psttl , 0x200 ) ; ___( psttl ) ;
+            sInP.readWoLineF( tinBaseP , psttl , 0x200 ) ; ___( psttl ) ;
             ZE( strokeS* , psttl ) ;
         {
         while( !POOP && !etThread )
@@ -1378,14 +1378,14 @@ TASKdRIVENsERVER( tmcF )
     {
     IFsCRATCH
 
-    etThread.sockPsttHostF( tinP , psttPeerP , nicNamePeerP ) ; ___( psttPeerP ) ;
-    { ZE( countT , idp ) ; sInP.peerNameF( tinP , idp , nicNamePeerP ) ; }
+    etThread.sockPsttHostF( tinBaseP , psttPeerP , nicNamePeerP ) ; ___( psttPeerP ) ;
+    { ZE( countT , idp ) ; sInP.peerNameF( tinBaseP , idp , nicNamePeerP ) ; }
 
     countT idRequestType = ifcIDrEQtYPE_FISH ;
     __( bHttpWoZeP ) ;
     __( bMoreP - 1 ) ;
 {
-countT readRequestF( tinS& tinP , etherC& etThread , socketC& sInP , boolT& bMoreP , boolT& bHttpWoZeP , countT* pcIdNameP , strokeS*& psttNameP /*KLUDGE ADDED FOR SIMPLE SERVER*/ , tableC& tblKeyValueP , strokeS*& psttKeyValueReplyP /*KLUDGE*/ , stackC& std_psttP , strokeS*& psttPeerP , nicNameC& nicNamePeerP /*, dictionary1C& dictP*/ )
+countT readRequestF( tinBaseS& tinBaseP , etherC& etThread , socketC& sInP , boolT& bMoreP , boolT& bHttpWoZeP , countT* pcIdNameP , strokeS*& psttNameP /*KLUDGE ADDED FOR SIMPLE SERVER*/ , tableC& tblKeyValueP , strokeS*& psttKeyValueReplyP /*KLUDGE*/ , stackC& std_psttP , strokeS*& psttPeerP , nicNameC& nicNamePeerP /*, dictionary1C& dictP*/ )
 */
  terminate pcIdNameP with a 0
   if     begin with '$': look up the word in the dictionary; if not found, use -1
@@ -1433,25 +1433,25 @@ struct stateS
 }
     }
         if( POOP ) POOPR
-        if( psP ) tinP.pEtScratch->delF( tinP , psP->psttEmail ) ;
+        if( psP ) ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psP->psttEmail ) ;
         SCOOPS
     {
     IFsCRATCH
 {
-voidT del_sessionS_ptrs_F( tinS& tinP , sessionS* psP )
+voidT del_sessionS_ptrs_F( tinBaseS& tinBaseP , sessionS* psP )
 
 }
     return (sessionS*)pbs ;
     }
         if( POOP ) POOPR
-        tinP.pEtScratch->memSetF( tinP , pbs , sizeof( sessionS ) ) ;
-        tinP.pEtScratch->newF(    tinP , pbs , sizeof( sessionS ) ) ; ___( pbs ) ;
+        ((tinNormalS&)tinBaseP).pEtScratch->memSetF( tinBaseP , pbs , sizeof( sessionS ) ) ;
+        ((tinNormalS&)tinBaseP).pEtScratch->newF(    tinBaseP , pbs , sizeof( sessionS ) ) ; ___( pbs ) ;
         SCOOPS
     {
     IFsCRATCH
     ZE( byteT* , pbs ) ;
 {
-sessionS* new_sessionS_F( tinS& tinP )
+sessionS* new_sessionS_F( tinBaseS& tinBaseP )
 
 ;
 }

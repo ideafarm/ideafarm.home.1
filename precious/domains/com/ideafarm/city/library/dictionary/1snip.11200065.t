@@ -7,7 +7,7 @@
 //
 
 
-#define T(valueP) textC( tinP , TAG( TAGiDnULL ) , flTEXTc_null , (valueP) )
+#define T(valueP) textC( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , (valueP) )
 /*1*//*T*//*1*/
 /**/
 */

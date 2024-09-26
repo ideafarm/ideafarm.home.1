@@ -11,14 +11,14 @@
     return idHere ;
     }
         }
-            strSubstringF( tinP , psttPart2P , idf , countTC() , psttBigP , csttExtraP ) ; // CALLER MUST TAG ___( psttPart2P ) ;
+            strSubstringF( tinBaseP , psttPart2P , idf , countTC() , psttBigP , csttExtraP ) ; // CALLER MUST TAG ___( psttPart2P ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = F(flagsP) & flSTRbISECT_PREPENDdELIMITER ? idHere : idfBisect ;
         {
         else
         }
             }
-                strMakeF( tinP , LF , psttPart2P , tDelimiter ) ; //CALLER MUST TAG ___( psttPart2P ) ;
+                strMakeF( tinBaseP , LF , psttPart2P , tDelimiter ) ; //CALLER MUST TAG ___( psttPart2P ) ;
             {
             if( F(flagsP) & flSTRbISECT_PREPENDdELIMITER )
         {
@@ -26,7 +26,7 @@
         //PART 2
 
         }
-            strSubstringF( tinP , psttPart1P , idf , idl , psttBigP , csttExtraP ) ; //CALLER MUST TAG ___( psttPart1P ) ;
+            strSubstringF( tinBaseP , psttPart1P , idf , idl , psttBigP , csttExtraP ) ; //CALLER MUST TAG ___( psttPart1P ) ;
             ;
                     : idfBisect - 1
                     ? 0
@@ -38,7 +38,7 @@
         {
         else
         }
-            if( F(flagsP) & flSTRbISECT_APPENDdELIMITER  ) { strMakeF( tinP , LF , psttPart1P , tDelimiter ) ; ___( psttPart1P ) ; }
+            if( F(flagsP) & flSTRbISECT_APPENDdELIMITER  ) { strMakeF( tinBaseP , LF , psttPart1P , tDelimiter ) ; ___( psttPart1P ) ; }
         {
         if( idHere == 1 )
         //PART 1
@@ -47,8 +47,8 @@
 
     ;
 
-        : strIdF(    tinP , 0 , flSTRmATCH_null , idfBisect , sttq , tDelimiter , psttBigP , 0 , idP )
-        ? strIdAnyF( tinP , 0 , flSTRmATCH_null , idfBisect , sttq , tDelimiter , psttBigP , 0 , idP )
+        : strIdF(    tinBaseP , 0 , flSTRmATCH_null , idfBisect , sttq , tDelimiter , psttBigP , 0 , idP )
+        ? strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idfBisect , sttq , tDelimiter , psttBigP , 0 , idP )
     countT idHere = F(flagsP) & flSTRbISECT_ANY
     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
     countT idfBisect = 1 ;
@@ -68,7 +68,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/countT etherC::strBisectF( tinS& tinP , strokeS*& psttPart1P , strokeS*& psttPart2P , const strokeS* const psttBigP , const strokeS* const psttDelimiterP , const countT idP , const flagsT flagsP , const countT csttExtraP )/*1*/
+/**//*1*/countT etherC::strBisectF( tinBaseS& tinBaseP , strokeS*& psttPart1P , strokeS*& psttPart2P , const strokeS* const psttBigP , const strokeS* const psttDelimiterP , const countT idP , const flagsT flagsP , const countT csttExtraP )/*1*/
 */
   modifies behavior
  flagsP

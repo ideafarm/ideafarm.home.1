@@ -8,19 +8,19 @@
 
 
 }
-    grab.ungrabF( tinP ) ;
+    grab.ungrabF( tinBaseP ) ;
 
     }
         }
-            ether.delF( tinP , *(byteT**)&pKid ) ;
-            hdr.pSwsKids->insertF( tinP , (countT)pKid , ifcSTACKtYPE_BLOB , 0 , bLeftP ) ;
+            ether.delF( tinBaseP , *(byteT**)&pKid ) ;
+            hdr.pSwsKids->insertF( tinBaseP , (countT)pKid , ifcSTACKtYPE_BLOB , 0 , bLeftP ) ;
             psttLeverKidsShared = pCursor->psttLeverKids ;
-            if( !pCursor->psttLeverKids ) wifeF( tinP ) ;
+            if( !pCursor->psttLeverKids ) wifeF( tinBaseP ) ;
             SET_psttLeverKids( pCursor )
             }
                 }
                     }
-                        ether.delF( tinP , pKid->psttLeverKids ) ;
+                        ether.delF( tinBaseP , pKid->psttLeverKids ) ;
                         *pSoulP >> pKid->psttLeverKids ; //U::ELIMINATE THIS
                     {
                     if( F(flagsTreeWrite) & flTREEwRITE_psttLeverKids )
@@ -41,7 +41,7 @@
                             ZE( countT , cFlavors ) ;
                         {
                         if( pKid->pSw_psttWife )
-                        ether( tinP , pKid->pSw_psttWife , TAG( TAGiDnULL ) , flagsSwitch , cLeverWifeShared , sw_pCursor.pLeverLathRefF( tinP ) ) ;
+                        ether( tinBaseP , pKid->pSw_psttWife , TAG( TAGiDnULL ) , flagsSwitch , cLeverWifeShared , sw_pCursor.pLeverLathRefF( tinBaseP ) ) ;
         
                         const countT save = pKid->cLeverWife ;
                     {
@@ -57,23 +57,23 @@
                 {
                 if( pSoulP )
     
-                (*pBranchDefinitionCBF)( tinP , ether , ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_NEW , flTREEwALK_null , handle , (byteT*)( pKid + 1 ) , cbd , cArg ) ;
+                (*pBranchDefinitionCBF)( tinBaseP , ether , ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_NEW , flTREEwALK_null , handle , (byteT*)( pKid + 1 ) , cbd , cArg ) ;
 
                 handle.osF( ifcIDtYPEhANDLE_TREEwALK , (countT)pKid ) ;
-                handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_TREEwALK ) ;
+                handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_TREEwALK ) ;
 
                 countT cArg = (countT)psttP ;
-                new( 0 , tinP , (byteT*)pKid , sizeof( branchHeaderOldS ) ) branchHeaderOldS( &hdr ) ;
+                new( 0 , tinBaseP , (byteT*)pKid , sizeof( branchHeaderOldS ) ) branchHeaderOldS( &hdr ) ;
             {
             if( pKid )
-            ether.newF( tinP , LF , *(byteT**)&pKid , sizeof( branchHeaderOldS ) + cbd ) ; ___( pKid ) ;
+            ether.newF( tinBaseP , LF , *(byteT**)&pKid , sizeof( branchHeaderOldS ) + cbd ) ; ___( pKid ) ;
             ZE( branchHeaderOldS* , pKid ) ;
         {
         if( hdr.pSwsKids && hdr.pSw_psttWife && hdr.pSw_idKidLathHugged )
 
-        if( !hdr.pSwsKids            ) { ether( tinP , hdr.pSwsKids            , TAG( TAGiDnULL ) , flagsSwitch , psttLeverKidsShared , flagsStack | flSTACKc_BLOB , sizeof( branchHeaderOldS ) + cbd , sw_pCursor.pLeverLathRefF( tinP ) ) ; }
-        if( !hdr.pSw_idKidLathHugged ) { ether( tinP , hdr.pSw_idKidLathHugged , TAG( TAGiDnULL ) , flagsSwitch , psttLeverKidsShared , sw_pCursor.pLeverLathRefF( tinP ) ) ; }
-        if( !hdr.pSw_psttWife        ) { ether( tinP , hdr.pSw_psttWife        , TAG( TAGiDnULL ) , flagsSwitch , cLeverWifeShared    , sw_pCursor.pLeverLathRefF( tinP ) ) ; }
+        if( !hdr.pSwsKids            ) { ether( tinBaseP , hdr.pSwsKids            , TAG( TAGiDnULL ) , flagsSwitch , psttLeverKidsShared , flagsStack | flSTACKc_BLOB , sizeof( branchHeaderOldS ) + cbd , sw_pCursor.pLeverLathRefF( tinBaseP ) ) ; }
+        if( !hdr.pSw_idKidLathHugged ) { ether( tinBaseP , hdr.pSw_idKidLathHugged , TAG( TAGiDnULL ) , flagsSwitch , psttLeverKidsShared , sw_pCursor.pLeverLathRefF( tinBaseP ) ) ; }
+        if( !hdr.pSw_psttWife        ) { ether( tinBaseP , hdr.pSw_psttWife        , TAG( TAGiDnULL ) , flagsSwitch , cLeverWifeShared    , sw_pCursor.pLeverLathRefF( tinBaseP ) ) ; }
         branchHeaderOldS& hdr = *pCursor ;
     {
     else
@@ -81,7 +81,7 @@
         }
             }
                 }
-                    ether.delF( tinP , pRoot->psttLeverKids ) ;
+                    ether.delF( tinBaseP , pRoot->psttLeverKids ) ;
                     *pSoulP >> pRoot->psttLeverKids ; //U::ELIMINATE THIS
                 {
                 if( F(flagsTreeWrite) & flTREEwRITE_psttLeverKids )
@@ -102,7 +102,7 @@
                         ZE( countT , cFlavors ) ;
                     {
                     if( pRoot->pSw_psttWife )
-                    ether( tinP , pRoot->pSw_psttWife , TAG( TAGiDnULL ) , flagsSwitch , cLeverWifeShared , sw_pCursor.pLeverLathRefF( tinP ) ) ;
+                    ether( tinBaseP , pRoot->pSw_psttWife , TAG( TAGiDnULL ) , flagsSwitch , cLeverWifeShared , sw_pCursor.pLeverLathRefF( tinBaseP ) ) ;
 
                     const countT save = pRoot->cLeverWife ;
                 {
@@ -118,27 +118,27 @@
             {
             if( pSoulP )
     
-            (*pBranchDefinitionCBF)( tinP , ether , ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_NEW , flTREEwALK_null , handle , (byteT*)( pRoot + 1 ) , cbd , cArg ) ;
+            (*pBranchDefinitionCBF)( tinBaseP , ether , ifcIDtYPEtREEbRANCHdEFINITIONoLDcb_NEW , flTREEwALK_null , handle , (byteT*)( pRoot + 1 ) , cbd , cArg ) ;
             countT cArg = (countT)(strokeS*)tRoot ;
 
             handle.osF( ifcIDtYPEhANDLE_TREEwALK , (countT)pRoot ) ;
-            handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_TREEwALK ) ;
+            handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_TREEwALK ) ;
     
             TN( tRoot , "" ) ; tRoot = T(psttP) ;
 
-            new( 0 , tinP , (byteT*)pRoot , sizeof( branchHeaderOldS ) ) branchHeaderOldS( 0 ) ;
+            new( 0 , tinBaseP , (byteT*)pRoot , sizeof( branchHeaderOldS ) ) branchHeaderOldS( 0 ) ;
             PcURSOR
         {
         if( pRoot )
-        ether.newF( tinP , LF , *(byteT**)&pRoot , sizeof( branchHeaderOldS ) + cbd ) ; ___( pRoot ) ;
+        ether.newF( tinBaseP , LF , *(byteT**)&pRoot , sizeof( branchHeaderOldS ) + cbd ) ; ___( pRoot ) ;
     {
     if( !pCursor )
     PcURSOR
 
-    *sw_pCursor.pLeverLathRefF( tinP ) = cLeverCursor ;
-    grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    *sw_pCursor.pLeverLathRefF( tinBaseP ) = cLeverCursor ;
+    grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT treeOldC::newKidF( tinS& tinP , const strokeS* const psttP , soulC* pSoulP , const boolT bLeftP )/*1*/
+/*1*/voidT treeOldC::newKidF( tinBaseS& tinBaseP , const strokeS* const psttP , soulC* pSoulP , const boolT bLeftP )/*1*/
 
 /**/
 */

@@ -9,19 +9,19 @@
 
 REST
 
-etThread.strokeF( tinP , T("aok\r\n") ) ;
-etThread.loafIF( tinP ) ;
+etThread.strokeF( tinBaseP , T("aok\r\n") ) ;
+etThread.loafIF( tinBaseP ) ;
 
-if( bFail ) etThread.strokeF( tinP , T("could not write the file\r\n") ) ;
-etThread.delF( tinP , pbi ) ;
+if( bFail ) etThread.strokeF( tinBaseP , T("could not write the file\r\n") ) ;
+etThread.delF( tinBaseP , pbi ) ;
 }
     if( POOP ) bFail = 1 ;
-    tinP.pEtScratch->boxPutF( tinP , T("///d/blob3") , pbi , cbi ) ;
+    ((tinNormalS&)tinBaseP).pEtScratch->boxPutF( tinBaseP , T("///d/blob3") , pbi , cbi ) ;
     SCOOPS
 {
 IFsCRATCH
 ZE( boolT , bFail ) ;
-etThread.boxGetShadowF( tinP , pbi , cbi , T("///d/blob1") ) ; ___( pbi ) ;
+etThread.boxGetShadowF( tinBaseP , pbi , cbi , T("///d/blob1") ) ; ___( pbi ) ;
 ZE( countT , cbi ) ;
 ZE( byteT* , pbi ) ;
 

@@ -15,27 +15,27 @@
             }
                 }
                     break ;
-                    tinP.pPanLifiRecurseGrabbedLevel[ off + 4 ] = idGrabLayer ;
-                    tinP.pPanLifiRecurseGrabbedLevel[ off + 3 ] = 0 ;
-                    tinP.pPanLifiRecurseGrabbedLevel[ off + 2 ] = idiFileP ;
-                    tinP.pPanLifiRecurseGrabbedLevel[ off + 1 ] = idLineP  ;
-                    tinP.pPanLifiRecurseGrabbedLevel[ off     ] = pandle   ;
+                    ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off + 4 ] = idGrabLayer ;
+                    ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off + 3 ] = 0 ;
+                    ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off + 2 ] = idiFileP ;
+                    ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off + 1 ] = idLineP  ;
+                    ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off     ] = pandle   ;
                 {
-                if( !tinP.pPanLifiRecurseGrabbedLevel[ off ] )
+                if( !((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off ] )
             {
             for( ; off < offEnd ; off += 5 )
             ZE( countT , off ) ;
 
-            tinP.monitor.cGrabbed ++ ;
+            ((tinNormalS&)tinBaseP).monitor.cGrabbed ++ ;
         {
         if( off == offEnd )
 
         }
             }
                 break ;
-                tinP.pPanLifiRecurseGrabbedLevel[ off + 3 ] ++ ;
+                ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off + 3 ] ++ ;
             {
-            if( tinP.pPanLifiRecurseGrabbedLevel[ off ] == pandle )
+            if( ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off ] == pandle )
         {
         for( ; off < offEnd ; off += 5 )
         ZE( countT , off ) ;
@@ -46,7 +46,7 @@
             ? (countT)this
         const countT pandle = idTypeCt == ifcIDtYPEdERIVEDbASEgRABc_grabC
 
-        tinP.monitor.pPanLifiGrabbing[ 2 ] = tinP.monitor.pPanLifiGrabbing[ 1 ] = tinP.monitor.pPanLifiGrabbing[ 0 ] = 0 ;
+        ((tinNormalS&)tinBaseP).monitor.pPanLifiGrabbing[ 2 ] = ((tinNormalS&)tinBaseP).monitor.pPanLifiGrabbing[ 1 ] = ((tinNormalS&)tinBaseP).monitor.pPanLifiGrabbing[ 0 ] = 0 ;
     {
     if( !( F(flagsCt) & flBASEgRABc_DOnOTrEGISTER ) )
 
@@ -54,7 +54,7 @@
 
     SCOOP
 {
-/*1*/voidT baseGrabC::registerDoneF( tinS& tinP , const countT idLineP , const countT idiFileP )/*1*/
+/*1*/voidT baseGrabC::registerDoneF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )/*1*/
 /**/
 */
 /*

@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.strokeF( tinP , T("ok\r\n") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.strokeF( tinBaseP , T("ok\r\n") ) ;
 }
-    if( !etThread.diskFileExistsF( tinP , tTest ) ) etThread.strokeF( tinP , tTest+tcr ) ;
+    if( !etThread.diskFileExistsF( tinBaseP , tTest ) ) etThread.strokeF( tinBaseP , tTest+tcr ) ;
 
     TN( tTest , postTuck ) ; tTest += tExt ;
     
@@ -22,7 +22,7 @@ for( countT offi = 0 ; !ether && offi < sizeof ppostShort / sizeof ppostShort[ 0
 TN( tcr  , "\r\n" ) ;
 TN( tExt , ".mp3" ) ;
 
-osTextT* postAt = postTuck + tinP.brcRaw ;
+osTextT* postAt = postTuck + ((tinNormalS&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , strlen( postTuck ) )
 strcpy( postTuck , "///ideafarm/IdeaFarm " "(tm)/2.1. Drop Files Here To Archive Them/" ) ;
 osTextT postTuck[ TUCK ] ;

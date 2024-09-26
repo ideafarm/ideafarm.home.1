@@ -14,7 +14,7 @@
         #endif
 
             BOSpOOP
-            BOS( WHATsfr , BOSoK , ReadFile( (HANDLE)tinP.brcRaw , pbP , cbP , &cba , 0 ) )
+            BOS( WHATsfr , BOSoK , ReadFile( (HANDLE)((tinNormalS&)tinBaseP).brcRaw , pbP , cbP , &cba , 0 ) )
 
             BOSpOOP
             BOS( WHATgbo , BOShANDLE , GetStdHandle( STD_INPUT_HANDLE ) ) //INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
@@ -28,7 +28,7 @@
     if( !POOP )
 
     if( pbP ) *pbP = 0 ;
-    newF( tinP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
+    newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
     cbP += 2 ; // FOR CRLF
 
     _IO_
@@ -42,7 +42,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::dosReadStdInF( tinS& tinP , byteT*& pbP , countT& cbP )/*1*/
+/*1*/voidT thirdC::dosReadStdInF( tinBaseS& tinBaseP , byteT*& pbP , countT& cbP )/*1*/
 
 /**/
 */

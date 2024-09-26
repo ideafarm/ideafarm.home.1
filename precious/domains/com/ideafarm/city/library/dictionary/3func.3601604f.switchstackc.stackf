@@ -9,19 +9,19 @@
 
 }
     return *pStFound ;
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
     else        pStFound = pStack ;
     if( third ) pStFound = &stnu ;
     ZE( stackC* , pStFound ) ;
 
     __Z( pStack ) ;
     stackC* pStack = (stackC*)(countT)swMe[ idP ] ;
-    __( idP > swMe.cFlavorsF( tinP ) ) ;
+    __( idP > swMe.cFlavorsF( tinBaseP ) ) ;
 
     _IO_
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return stnu ;
@@ -31,7 +31,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/stackC& switchStackC::stackF( tinS& tinP , const countT idP )/*1*/
+/*1*/stackC& switchStackC::stackF( tinBaseS& tinBaseP , const countT idP )/*1*/
 
 /**/
 */

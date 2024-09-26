@@ -10,17 +10,17 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( etThread )
-etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
 
-workF( tinP , etThread , bTidy ) ;
-etThread.strokeF( tinP , T("\r\n\r\n    yes\r\n") ) ;
+workF( tinBaseP , etThread , bTidy ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\n    yes\r\n") ) ;
 bTidy = 1 ;
-workF( tinP , etThread , bTidy ) ;
+workF( tinBaseP , etThread , bTidy ) ;
 
-etThread.strokeF( tinP , TPS("    tidy?",0x10,S1C('-'))+T("    ")+TPS("threads",0xc,S1C('-'))+T("    ")+TPS("cFlavors",0xc,S1C('-'))+T("\r\n\r\n    no\r\n") ) ;
+etThread.strokeF( tinBaseP , TPS("    tidy?",0x10,S1C('-'))+T("    ")+TPS("threads",0xc,S1C('-'))+T("    ")+TPS("cFlavors",0xc,S1C('-'))+T("\r\n\r\n    no\r\n") ) ;
 
 ZE( boolT , bTidy ) ;
 
@@ -28,27 +28,27 @@ TODO
 
 }
     }
-        etThread.osSleepF( tinP , 0 ) ;
-        etThread.strokeF( tinP , T("\r")+TP(" ",0x14)+TF3(cKids,0,0xc)+T("    ")+TF3(cFlavors,0,0xc) ) ;
-        const countT cFlavors = swit.cFlavorsF( tinP ) ;
+        etThread.osSleepF( tinBaseP , 0 ) ;
+        etThread.strokeF( tinBaseP , T("\r")+TP(" ",0x14)+TF3(cKids,0,0xc)+T("    ")+TF3(cFlavors,0,0xc) ) ;
+        const countT cFlavors = swit.cFlavorsF( tinBaseP ) ;
     {
-    while( ( cKids = etThread.os_cAllKidThreadsI_IF( tinP ) , cKids > cKidsBefore ) || oneMore -- )
+    while( ( cKids = etThread.os_cAllKidThreadsI_IF( tinBaseP ) , cKids > cKidsBefore ) || oneMore -- )
     boolT oneMore = 1 ;
     ZE( countT , cKids ) ;
 
-    while( cTries -- ) { ZE( countT , cnu ) ; etThread.osThreadF( tinP , cnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&swit , (countT)&bTidyP ) ; }
+    while( cTries -- ) { ZE( countT , cnu ) ; etThread.osThreadF( tinBaseP , cnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&swit , (countT)&bTidyP ) ; }
     countT cTries = 0x10 ;
-    const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinP ) ;
+    const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinBaseP ) ;
 
-    switchC swit( ether , tinP , TAG( TAGiDnULL ) ) ;
+    switchC swit( ether , tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-voidT workF( tinS& tinP , etherC& etThread , boolT& bTidyP )
+voidT workF( tinBaseS& tinBaseP , etherC& etThread , boolT& bTidyP )
 
 DONE( tmF )
 }
-    if( bTidy ) swit.freeF( tinP ) ;
+    if( bTidy ) swit.freeF( tinBaseP ) ;
 
-    etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+    etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
 
     swit = 0x123 ;
 

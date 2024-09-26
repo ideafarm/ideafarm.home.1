@@ -17,22 +17,22 @@ REST
 
 }
     }
-        etThread.delF( tinP , (byteT*&)pInfo ) ;
-        if( pInfo ) etThread.delF( tinP , pInfo->pczName ) ;
+        etThread.delF( tinBaseP , (byteT*&)pInfo ) ;
+        if( pInfo ) etThread.delF( tinBaseP , pInfo->pczName ) ;
         swsEvent >> (countT&)pInfo ;
         ZE( infoS* , pInfo ) ;
     {
     while( swsEvent )
-    psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+    psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
+countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
 
-etThread.delF( tinP , pbOut ) ;
-etThread.ifcDrivenServerF( tinP , i1 , i2 ) ;
-serverInfo2S( 0xb9e , flSOCKETc_null , TF2(thirdC::third_idAdamRootI_IF( tinP ),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , 0 , (countT)&c2p , 0 , - 1 , 1 , sizeof( stateS ) , translateStateF ) ;
+etThread.delF( tinBaseP , pbOut ) ;
+etThread.ifcDrivenServerF( tinBaseP , i1 , i2 ) ;
+serverInfo2S( 0xb9e , flSOCKETc_null , TF2(thirdC::third_idAdamRootI_IF( tinBaseP ),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , 0 , (countT)&c2p , 0 , - 1 , 1 , sizeof( stateS ) , translateStateF ) ;
 serverInfo1S( &pbdVarying , b_pbdVarying , bHandedOff , sgnIdPortReplaced , tmcF , countTC() , ether ) ;
-etThread.ifcChatF( tinP , (countT)&c2p , DDNUMB , jobFillCourseF ) ;
+etThread.ifcChatF( tinBaseP , (countT)&c2p , DDNUMB , jobFillCourseF ) ;
 
 count2S c2p( (countT)&c8p1 , (countT)&c8p2 ) ;
 c8p2.c1 = (countT)&swsOwner ;
@@ -47,34 +47,34 @@ c8p1.c1 = (countT)&pbdVarying ;
 count8S c8p2 ;
 count8S c8p1 ;
 
-switchStackC swsOwner( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , psttDomain , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; //FIFO IS USED TO LIMIT STORAGE TO THE MOST RECENT x OWNERS, TO ENSURE THAT POOLoLD USAGE DOES NOT GROW WITHOUT BOUND
-switchStackC swsEvent( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttDomain , flSTACKc_null ) ;
+switchStackC swsOwner( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , psttDomain , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; //FIFO IS USED TO LIMIT STORAGE TO THE MOST RECENT x OWNERS, TO ENSURE THAT POOLoLD USAGE DOES NOT GROW WITHOUT BOUND
+switchStackC swsEvent( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttDomain , flSTACKc_null ) ;
 ZE( strokeS* , psttDomain ) ;
-batonC b_psttDomain( tinP , TAG( TAGiDnULL ) ) ;
+batonC b_psttDomain( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-pbOutF( tinP , etThread , pbOut , cbOut ) ;
+pbOutF( tinBaseP , etThread , pbOut , cbOut ) ;
 ZE( countT , cbOut ) ;
 ZE( byteT* , pbOut ) ;
 
 ZE( countT , idRequestLast ) ;
 ZE( boolT , bHandedOff ) ;
-batonC b_pbdVarying( tinP , TAG( TAGiDnULL ) ) ;
+batonC b_pbdVarying( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( byteT* , pbdVarying ) ;
-signC sgnIdPortReplaced( tinP , TAG( TAGiDnULL ) ) ;
+signC sgnIdPortReplaced( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-//etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_RUSH ) ;
+//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
 
 TODO
 
 }
-    etThread.delF( tinP , postxHead ) ;
-    etThread.memCopyF( tinP , pbP + costxHead , pbGif     , sizeof pbGif ) ;
-    etThread.memCopyF( tinP , pbP             , postxHead , costxHead    ) ;
-    etThread.newF( tinP , LF , pbP , cbP ) ; ___( pbP ) ;
+    etThread.delF( tinBaseP , postxHead ) ;
+    etThread.memCopyF( tinBaseP , pbP + costxHead , pbGif     , sizeof pbGif ) ;
+    etThread.memCopyF( tinBaseP , pbP             , postxHead , costxHead    ) ;
+    etThread.newF( tinBaseP , LF , pbP , cbP ) ; ___( pbP ) ;
     cbP = costxHead + sizeof pbGif ;
 
     }
-        costxHead = etThread.strMakeF( tinP , LF , postxHead , t0 ) ; ___( postxHead ) ;
+        costxHead = etThread.strMakeF( tinBaseP , LF , postxHead , t0 ) ; ___( postxHead ) ;
         textC t0 = T("HTTP/1.0 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nContent-Type: image/gif\r\nContent-Length: ")+TF4(sizeof pbGif,flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
     {
     ZE( countT   , costxHead ) ;
@@ -82,48 +82,48 @@ TODO
 
     byteT pbGif[] = { BYTEaRRAYiMAGEgIF_1PEL } ;
 {
-voidT pbOutF( tinS& tinP , etherC& etThread , byteT*& pbP , countT& cbP )
+voidT pbOutF( tinBaseS& tinBaseP , etherC& etThread , byteT*& pbP , countT& cbP )
 
 DONEdRIVENsERVER( tmcF )
 }
-    pso->readF( tinP , pbIn , sizeof pbIn , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+    pso->readF( tinBaseP , pbIn , sizeof pbIn , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
 
     }
-        b_psttDomain.ungrabF( tinP ) ;
-        etThread.delF( tinP , psttDomain ) ;
+        b_psttDomain.ungrabF( tinBaseP ) ;
+        etThread.delF( tinBaseP , psttDomain ) ;
         }
-            etThread.strokeF( tinP , TF1(++idRequestLast)+T(" ")+T(pInfo->idhPeer)+T(" ")+T(psttDomain)+T(" ")+T(pcIdName)+T("\r\n") ) ;
+            etThread.strokeF( tinBaseP , TF1(++idRequestLast)+T(" ")+T(pInfo->idhPeer)+T(" ")+T(psttDomain)+T(" ")+T(pcIdName)+T("\r\n") ) ;
 
             }
-                etThread.delF( tinP , (byteT*&)pInfo ) ;
-                if( pInfo ) etThread.delF( tinP , pInfo->pczName ) ;
+                etThread.delF( tinBaseP , (byteT*&)pInfo ) ;
+                if( pInfo ) etThread.delF( tinBaseP , pInfo->pczName ) ;
                 swsEvent >> (countT&)pInfo ;
                 ZE( infoS* , pInfo ) ;
             {
             while( (countT)swsEvent > 0x1000 )
 
-            swsEvent.sinkF( tinP , ids , (countT)pInfo , flSTACKsINK_null , 0 , subtractF ) ;
-            etThread.memCopyF( tinP , (byteT*)pInfo->pczName , (byteT*)pcIdName , ( pInfo->cczName + 1 ) * sizeof( countT ) ) ;
-            etThread.newF( tinP , LF , pInfo->pczName , pInfo->cczName + 1 ) ; ___( pInfo->pczName ) ;
-            pInfo->cczName = etThread.strBodyLengthF( tinP , pcIdName ) ;
+            swsEvent.sinkF( tinBaseP , ids , (countT)pInfo , flSTACKsINK_null , 0 , subtractF ) ;
+            etThread.memCopyF( tinBaseP , (byteT*)pInfo->pczName , (byteT*)pcIdName , ( pInfo->cczName + 1 ) * sizeof( countT ) ) ;
+            etThread.newF( tinBaseP , LF , pInfo->pczName , pInfo->cczName + 1 ) ; ___( pInfo->pczName ) ;
+            pInfo->cczName = etThread.strBodyLengthF( tinBaseP , pcIdName ) ;
         {
         else
-        if( !psttDomain ) etThread.delF( tinP , (byteT*&)pInfo ) ;
+        if( !psttDomain ) etThread.delF( tinBaseP , (byteT*&)pInfo ) ;
         ZE( countT , ids ) ;
-        pcIdNameF( tinP , *tinP.zEtScratch , pcIdName , sizeof pcIdName , psttDomain , pInfo->idhPeer , *pso ) ;
+        pcIdNameF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , pcIdName , sizeof pcIdName , psttDomain , pInfo->idhPeer , *pso ) ;
         psttDomain = 0 ;
-        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        etThread.memSetF( tinP , (byteT*)pcIdName , sizeof pcIdName ) ;
+        etThread.memSetF( tinBaseP , (byteT*)pcIdName , sizeof pcIdName ) ;
         countT pcIdName[ CCiDnAMEmAX + 1 ] ;
 
-        etThread.osTimeNowF( tinP , pInfo->timeE1 , pInfo->timeE2 ) ;
+        etThread.osTimeNowF( tinBaseP , pInfo->timeE1 , pInfo->timeE2 ) ;
     {
     if( pInfo )
-    newF( tinP , LF , etThread , pInfo ) ; ___( pInfo ) ;
+    newF( tinBaseP , LF , etThread , pInfo ) ; ___( pInfo ) ;
     ZE( infoS* , pInfo ) ;
 
-    pso->writeF( tinP , pbOut , cbOut ) ;
+    pso->writeF( tinBaseP , pbOut , cbOut ) ;
 
     PARAMS( cArg )
 {
@@ -132,7 +132,7 @@ TASKdRIVENsERVER( tmcF )
 
 }
     return sgn ;
-    if( tinP.fingerprint && c3P ) ;
+    if( ((tinNormalS&)tinBaseP).fingerprint && c3P ) ;
 
     }
 
@@ -156,61 +156,61 @@ TASKdRIVENsERVER( tmcF )
     {
     IFbEcAREFUL
 {
-countT subtractF( tinS& tinP , countT& pEtherP , countT& c1P , countT& c2P , countT& c3P )
+countT subtractF( tinBaseS& tinBaseP , countT& pEtherP , countT& c1P , countT& c2P , countT& c3P )
 
 }
-    etThread.memSetF( tinP , (byteT*)pInfoP , sizeof( infoS ) ) ;
-    etThread.newF( tinP , idLineP , idiFileP , (byteT*&)pInfoP , sizeof( infoS ) ) ; ___( pInfoP ) ;
+    etThread.memSetF( tinBaseP , (byteT*)pInfoP , sizeof( infoS ) ) ;
+    etThread.newF( tinBaseP , idLineP , idiFileP , (byteT*&)pInfoP , sizeof( infoS ) ) ; ___( pInfoP ) ;
 {
-voidT newF( tinS& tinP , const countT idLineP , const countT idiFileP , etherC& etThread , infoS*& pInfoP )
+voidT newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , etherC& etThread , infoS*& pInfoP )
 //U: CODE DUPLICATED IN a440104 AND b440104
 
 }
-    tinP.zEtScratch->delF( tinP , pstt1n ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pstt1n ) ;
     }
         *( pcP ++ ) = cn ;
 
         if( ( ccP -- ) == 1 ) break ; // WON'T USE THE LAST ELT, TO ENSURE THAT A NULL TERMINATOR EXISTS
         if( !cn ) continue ;          // WON'T USE A NULL VALUE
-        countT cn = tinP.zEtScratch->strDigitsToSCountF( tinP , psttc1 ) ;
+        countT cn = ((tinNormalS&)tinBaseP).zEtScratch->strDigitsToSCountF( tinBaseP , psttc1 ) ;
         if( !psttc1->idAdam ) continue ;
     {
     FORsTRINGSiN1( pstt1n )
-    tinP.zEtScratch->delF( tinP , psttEventName ) ;
-    tinP.zEtScratch->strWordsOldF( tinP , pstt1n , psttEventName , sttq , tDot ) ; ___( pstt1n ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttEventName ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strWordsOldF( tinBaseP , pstt1n , psttEventName , sttq , tDot ) ; ___( pstt1n ) ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     ZE( strokeS* , pstt1n ) ;
 
-    tinP.zEtScratch->delF( tinP , psttw1 ) ;
-    tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttDomainP ) ; ___( psttDomainP ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttDomainP , idf , sttq , tSlash , psttw1 ) ; ___( psttDomainP ) ; // "ideafarm.com" (domain)
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttw1 ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttDomainP ) ; ___( psttDomainP ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttDomainP , idf , sttq , tSlash , psttw1 ) ; ___( psttDomainP ) ; // "ideafarm.com" (domain)
 
-    tinP.zEtScratch->strSubstringF( tinP , psttEventName , idf , sttq , tSlash , psttw1 ) ; ___( psttEventName ) ; // "1.2.3.4.5.6.7.8" (eventName)
+    ((tinNormalS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttEventName , idf , sttq , tSlash , psttw1 ) ; ___( psttEventName ) ; // "1.2.3.4.5.6.7.8" (eventName)
     ZE( strokeS* , psttEventName ) ;
 
-    tinP.zEtScratch->delF( tinP , psttw2 ) ;
-    countT rn = tinP.zEtScratch->strDigitsToSCountF( tinP , psttw2 ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "9999"   (random number to defeat caching)
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttw2 ) ;
+    countT rn = ((tinNormalS&)tinBaseP).zEtScratch->strDigitsToSCountF( tinBaseP , psttw2 ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "9999"   (random number to defeat caching)
 
-    tinP.zEtScratch->delF( tinP , psttw2 ) ;
-    __( tinP.zEtScratch->strCompareF( tinP , psttw2 , T("1") ) ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "1"    (idVersionRecord)
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttw2 ) ;
+    __( ((tinNormalS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttw2 , T("1") ) ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "1"    (idVersionRecord)
 
-    tinP.zEtScratch->delF( tinP , psttw2 ) ;
-    __( tinP.zEtScratch->strCompareF( tinP , psttw2 , T("1") ) ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "1"    (idTypeRecord)
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttw2 ) ;
+    __( ((tinNormalS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttw2 , T("1") ) ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // "1"    (idTypeRecord)
 
-    tinP.zEtScratch->delF( tinP , psttw2 ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // ""
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttw2 ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw2 , idf , sttq , tSlash , psttw1 ) ; ___( psttw2 ) ; // ""
     sttq = strokeS( (countT)0 , sc_IGNOREqUOTES ) ;
     idf = 1 ;
 
-    tinP.zEtScratch->delF( tinP , psttl ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw1 , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw1 ) ; // "/1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com"
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw1 , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw1 ) ; // "/1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com"
 
-    tinP.zEtScratch->delF( tinP , psttw1 ) ;
-    __( tinP.zEtScratch->strCompareF( tinP , psttw1 , T("get") ) ) ;
-    tinP.zEtScratch->strSubstringF( tinP , psttw1 , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw1 ) ; // "get"
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttw1 ) ;
+    __( ((tinNormalS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttw1 , T("get") ) ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw1 , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw1 ) ; // "get"
 
     ZE( strokeS* , psttw2 ) ;
     ZE( strokeS* , psttw1 ) ;
@@ -221,13 +221,13 @@ voidT newF( tinS& tinP , const countT idLineP , const countT idiFileP , etherC& 
     TN( tBlank , " " ) ;
     TN( tNull , "" ) ;
 
-    tinP.zEtScratch->strConvertToLowerCaseF( tinP , psttl ) ; ___( psttl ) ;       // "get /1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com http/1.1"
-    sInP.readWoLineF( tinP , psttl , 0x200 ) ; ___( psttl ) ;        // "GET /1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com HTTP/1.1"
+    ((tinNormalS&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttl ) ; ___( psttl ) ;       // "get /1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com http/1.1"
+    sInP.readWoLineF( tinBaseP , psttl , 0x200 ) ; ___( psttl ) ;        // "GET /1/1/9999/1.2.3.4.5.6.7.8/ideafarm.com HTTP/1.1"
     ZE( strokeS* , psttl ) ;
 
-    sInP.peerNameF( tinP , countTC() , idhPeerP ) ;
+    sInP.peerNameF( tinBaseP , countTC() , idhPeerP ) ;
 {
-voidT pcIdNameF( tinS& tinP , countT* pcP , countT ccP , strokeS*& psttDomainP , nicNameC& idhPeerP , socketC& sInP )
+voidT pcIdNameF( tinBaseS& tinBaseP , countT* pcP , countT ccP , strokeS*& psttDomainP , nicNameC& idhPeerP , socketC& sInP )
 
 byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM IS DONE IF THERE IS MORE INPUT; WE'LL JUST CLOSE THE CONNECTION WITHOUT WAITING FOR THE CLIENT TO DO SO WO'TH
 
@@ -243,7 +243,7 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
 //==============================================================================================================================================================
 
 }
-    if( ether && *tinP.zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tinNormalS&)tinBaseP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
@@ -253,12 +253,12 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                 default : { break ; }
                 }
                     break ;
-                    etThread.delF( tinP , psttJobType ) ;
+                    etThread.delF( tinBaseP , psttJobType ) ;
 
                     else __1
                     }
                     {
-                    if( !etThread.strCompareF( tinP , psttJobType , T("!fooey") ) )
+                    if( !etThread.strCompareF( tinBaseP , psttJobType , T("!fooey") ) )
 
                     sOrderP >> psttJobType ; ___( psttJobType ) ;
                     ZE( strokeS* , psttJobType )
@@ -267,26 +267,26 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                 }
                     break ;
 
-                    etThread.delF( tinP , psttBody ) ;
-                    etThread.delF( tinP , psttFrom ) ;
+                    etThread.delF( tinBaseP , psttBody ) ;
+                    etThread.delF( tinBaseP , psttFrom ) ;
                     }
-                        etThread.delF( tinP , postBody ) ;
-                        etThread.delF( tinP , psttu ) ;
-                        etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/1/in") , postBody , costBody ) ;
+                        etThread.delF( tinBaseP , postBody ) ;
+                        etThread.delF( tinBaseP , psttu ) ;
+                        etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/1/in") , postBody , costBody ) ;
                         ZE( strokeS* , psttu ) ;
 
-                        countT costBody = etThread.strMakeF( tinP , LF , postBody , psttBody ) ; ___( postBody ) ;
+                        countT costBody = etThread.strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
                         ZE( osTextT* , postBody ) ;
                     {
 
-                    etThread.delF( tinP , psttFromDomain ) ;
+                    etThread.delF( tinBaseP , psttFromDomain ) ;
                     }
                         }
                             }
-                                etThread.delF( tinP , psttValue ) ;
+                                etThread.delF( tinBaseP , psttValue ) ;
                                 }
                                     }
-                                        etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                        etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
                                         ;
 
@@ -309,7 +309,7 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                     {
                                     else
                                     }
-                                        etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttValue)+T("//")+T(psttFrom)+T("/" ifcEMAIL_OLDfROM "") , tm , tm.csF( tinP ) ) ;
+                                        etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttValue)+T("//")+T(psttFrom)+T("/" ifcEMAIL_OLDfROM "") , tm , tm.csF( tinBaseP ) ) ;
 
                                         ;
 
@@ -342,11 +342,11 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                         TN( tm , "" ) ; tm =
                                     {
                                     else if( psttValue && psttValue->idAdam )
-                                    if( psttValue && !etThread.strCompareF( tinP , psttValue , tFooAtBarDotCom ) ) ;
+                                    if( psttValue && !etThread.strCompareF( tinBaseP , psttValue , tFooAtBarDotCom ) ) ;
                                 {
-                                else if( !etThread.strCompareF( tinP , psttKey , T("goContact") ) )
+                                else if( !etThread.strCompareF( tinBaseP , psttKey , T("goContact") ) )
                                 }
-                                    etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                    etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
                                     ;
 
@@ -376,26 +376,26 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
 
                                     TN( tm , "" ) ; tm =
                                 {
-                                else if( !etThread.strCompareF( tinP , psttKey , T("snippetInstructions") ) && ++ idOrderSnippet == 1 )
+                                else if( !etThread.strCompareF( tinBaseP , psttKey , T("snippetInstructions") ) && ++ idOrderSnippet == 1 )
                                 }
                                     }
-                                        b_psttDomain.ungrabF( tinP ) ;
+                                        b_psttDomain.ungrabF( tinBaseP ) ;
 
                                         }
-                                            etThread.delF( tinP , psttu ) ;
-                                            etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/9440104/in/in") , WS( sAsynchOrder ) ) ; ___( psttu ) ;
+                                            etThread.delF( tinBaseP , psttu ) ;
+                                            etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/9440104/in/in") , WS( sAsynchOrder ) ) ; ___( psttu ) ;
                                             ZE( strokeS* , psttu ) ;
 
                                             sAsynchOrder << sOrder ;
-                                            soulC sAsynchOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , stJobTo[ 1 ] ) ;
+                                            soulC sAsynchOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , stJobTo[ 1 ] ) ;
 
                                             }
                                                 }
                                                     while( !etThread && ~hDown ) ;
                                                     }
-                                                        etThread.delF( tinP , (byteT*&)pInfo ) ;
+                                                        etThread.delF( tinBaseP , (byteT*&)pInfo ) ;
                                                         }
-                                                            etThread.delF( tinP , pInfo->pczName ) ;
+                                                            etThread.delF( tinBaseP , pInfo->pczName ) ;
                                                             sOrder << pInfo->pczName ;
                                                             sOrder << pInfo->cczName ;
                                                             sOrder << pInfo->idhPeer ;
@@ -404,21 +404,21 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                         {
                                                         if( pInfo )
                                                         __Z( pInfo ) ;
-                                                        infoS* pInfo = (infoS*)swsEvent.downF( tinP , hDown ) ;
+                                                        infoS* pInfo = (infoS*)swsEvent.downF( tinBaseP , hDown ) ;
                                                     {
                                                     do
-                                                    handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                                    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                                     sOrder << (countT)swsEvent ;
                                                     sOrder << psttDomain ;
                                                 {
-                                                countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
-                                                psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                                countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
+                                                psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                             {
                                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                         {
                                         else
                                         }
-                                            etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                            etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
                                             ;
 
@@ -435,56 +435,56 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                         if( !cFlavors )
 
                                         sOrder << cFlavors ;
-                                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
+                                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
 
-                                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                         sOrder << psttFrom ;
                                         }
                                             while( ~hDown && !etThread ) ;
                                             }
-                                                else sOrder << stJobTo.downF( tinP , hDown ) ;
+                                                else sOrder << stJobTo.downF( tinBaseP , hDown ) ;
                                                 }
-                                                    stJobTo.downF( tinP , hDown ) ;
+                                                    stJobTo.downF( tinBaseP , hDown ) ;
                                                     bWoth = 0 ;
                                                 {
                                                 if( bWoth )
                                             {
                                             do
-                                            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                             boolT bWoth = 1 ;
                                         {
                                         sOrder << (countT)( stJobTo - 1 ) ;                            
                                         sOrder << (countT)1 ; // IDvERSION
                                         sOrder << (countT)1 ; // IDoUT HARDCODED VALUE
                                         sOrder << (countT)DDNUMB ;
-                                        soulC sOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_IDaDAMiDoUT ) ;
+                                        soulC sOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_IDaDAMiDoUT ) ;
                                     {
                                     else
                                     }
-                                        etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                        etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
-                                        b_psttDomain.ungrabF( tinP ) ;
+                                        b_psttDomain.ungrabF( tinBaseP ) ;
                                         }
                                             tm += T("!\r\n") ;
                                             }
                                                 while( ~hDown && !etThread ) ;
                                                 }
                                                     if( pInfo ) tm += TT(pInfo->timeE1,pInfo->timeE2)+T(" ")+T(pInfo->idhPeer)+T(" ")+T(pInfo->pczName)+T("\r\n") ;
-                                                    infoS* pInfo = (infoS*)swsEvent.downF( tinP , hDown ) ;
+                                                    infoS* pInfo = (infoS*)swsEvent.downF( tinBaseP , hDown ) ;
                                                 {
                                                 do
-                                                handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                             {
                                             if( swsEvent )
 
                                             tm += T("!data/")+TF1(DDNUMB)+T("/domain/1: ")+T(psttDomain)+T("\r\n!data/")+TF1(DDNUMB)+T("/time.nicName.eventName/1\r\n") ;
-                                            psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                            psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                         {
                                         else for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                         if( !cFlavors ) tm += T("there is no data to report\r\n") ;
-                                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
-                                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
+                                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                         ;
 
@@ -520,25 +520,25 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                     {
                                     if( !stJobTo )
                                 {
-                                else if( !etThread.strCompareF( tinP , psttKey , T("copyDataToMeAllDomains_42934753") ) && ++ idOrderMoveAll == 1 )
+                                else if( !etThread.strCompareF( tinBaseP , psttKey , T("copyDataToMeAllDomains_42934753") ) && ++ idOrderMoveAll == 1 )
                                 }
                                     }
-                                        b_psttDomain.ungrabF( tinP ) ;
+                                        b_psttDomain.ungrabF( tinBaseP ) ;
 
                                         }
-                                            etThread.delF( tinP , psttu ) ;
-                                            etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/9440104/in/in") , WS( sAsynchOrder ) ) ; ___( psttu ) ;
+                                            etThread.delF( tinBaseP , psttu ) ;
+                                            etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/9440104/in/in") , WS( sAsynchOrder ) ) ; ___( psttu ) ;
                                             ZE( strokeS* , psttu ) ;
 
                                             sAsynchOrder << sOrder ;
-                                            soulC sAsynchOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , stJobTo[ 1 ] ) ;
+                                            soulC sAsynchOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , stJobTo[ 1 ] ) ;
 
                                             }
                                                 }
                                                     }
-                                                        etThread.delF( tinP , (byteT*&)pInfo ) ;
+                                                        etThread.delF( tinBaseP , (byteT*&)pInfo ) ;
                                                         }
-                                                            etThread.delF( tinP , pInfo->pczName ) ;
+                                                            etThread.delF( tinBaseP , pInfo->pczName ) ;
                                                             sOrder << pInfo->pczName ;
                                                             sOrder << pInfo->cczName ;
                                                             sOrder << pInfo->idhPeer ;
@@ -554,14 +554,14 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                     sOrder << (countT)swsEvent ;
                                                     sOrder << psttDomain ;
                                                 {
-                                                countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
-                                                psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                                countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
+                                                psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                             {
                                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                         {
                                         else
                                         }
-                                            etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                            etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
                                             ;
 
@@ -578,42 +578,42 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                         if( !cFlavors )
 
                                         sOrder << cFlavors ;
-                                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
+                                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
 
-                                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                         sOrder << psttFrom ;
                                         }
                                             while( ~hDown && !etThread ) ;
                                             }
-                                                else sOrder << stJobTo.downF( tinP , hDown ) ;
+                                                else sOrder << stJobTo.downF( tinBaseP , hDown ) ;
                                                 }
-                                                    stJobTo.downF( tinP , hDown ) ;
+                                                    stJobTo.downF( tinBaseP , hDown ) ;
                                                     bWoth = 0 ;
                                                 {
                                                 if( bWoth )
                                             {
                                             do
-                                            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                             boolT bWoth = 1 ;
                                         {
                                         sOrder << (countT)( stJobTo - 1 ) ;                            
                                         sOrder << (countT)1 ; // IDvERSION
                                         sOrder << (countT)1 ; // IDoUT HARDCODED VALUE
                                         sOrder << (countT)DDNUMB ;
-                                        soulC sOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_IDaDAMiDoUT ) ;
+                                        soulC sOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_IDaDAMiDoUT ) ;
                                     {
                                     else
                                     }
-                                        etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                        etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
-                                        b_psttDomain.ungrabF( tinP ) ;
+                                        b_psttDomain.ungrabF( tinBaseP ) ;
                                         }
                                             tm += T("!\r\n") ;
                                             }
-                                                etThread.delF( tinP , (byteT*&)pInfo ) ;
+                                                etThread.delF( tinBaseP , (byteT*&)pInfo ) ;
                                                 }
-                                                    etThread.delF( tinP , pInfo->pczName ) ;
+                                                    etThread.delF( tinBaseP , pInfo->pczName ) ;
                                                     tm += TT(pInfo->timeE1,pInfo->timeE2)+T(" ")+T(pInfo->idhPeer)+T(" ")+T(pInfo->pczName)+T("\r\n") ;
                                                 {
                                                 if( pInfo )
@@ -623,12 +623,12 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                             {
                                             while( swsEvent )
                                             tm += T("!data/")+TF1(DDNUMB)+T("/domain/1: ")+T(psttDomain)+T("\r\n!data/")+TF1(DDNUMB)+T("/time.nicName.eventName/1\r\n") ;
-                                            psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                            psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                         {
                                         else for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                         if( !cFlavors ) tm += T("there is no data to report\r\n") ;
-                                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
-                                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
+                                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                         ;
 
@@ -664,18 +664,18 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                     {
                                     if( !stJobTo )
                                 {
-                                else if( !etThread.strCompareF( tinP , psttKey , T("moveDataToMeAllDomains_89346823") ) && ++ idOrderMoveAll == 1 )
+                                else if( !etThread.strCompareF( tinBaseP , psttKey , T("moveDataToMeAllDomains_89346823") ) && ++ idOrderMoveAll == 1 )
                                 }
                                     }
-                                        b_psttDomain.ungrabF( tinP ) ;
+                                        b_psttDomain.ungrabF( tinBaseP ) ;
 
                                         }
-                                            etThread.delF( tinP , psttu ) ;
-                                            etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/9440104/in/in") , WS( sAsynchOrder ) ) ; ___( psttu ) ;
+                                            etThread.delF( tinBaseP , psttu ) ;
+                                            etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/9440104/in/in") , WS( sAsynchOrder ) ) ; ___( psttu ) ;
                                             ZE( strokeS* , psttu ) ;
 
                                             sAsynchOrder << sOrder ;
-                                            soulC sAsynchOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , stJobTo[ 1 ] ) ;
+                                            soulC sAsynchOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , stJobTo[ 1 ] ) ;
 
                                             __( cFlavorsVisible ) ;
                                             }
@@ -692,10 +692,10 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                             {
                                                             if( pInfo )
                                                             __Z( pInfo ) ;
-                                                            infoS* pInfo = (infoS*)swsEvent.downF( tinP , hDown ) ;
+                                                            infoS* pInfo = (infoS*)swsEvent.downF( tinBaseP , hDown ) ;
                                                         {
                                                         do
-                                                        handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                                        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                                     {
                                                     if( swsEvent )
                                                     sOrder << (countT)swsEvent ;
@@ -708,14 +708,14 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                     idFromDomain && psttFromDomain && psttFromDomain->idAdam && psttDomain && psttDomain->idAdam
                                                 (
                                                 if
-                                                countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
-                                                psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                                countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
+                                                psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                             {
                                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                         {
                                         else
                                         }
-                                            etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                            etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
                                             ;
 
@@ -741,44 +741,44 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                     idFromDomain && psttFromDomain && psttFromDomain->idAdam && psttDomain && psttDomain->idAdam
                                                 (
                                                 if
-                                                countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
-                                                psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                                countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
+                                                psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                             {
                                             else for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                             if( !cFlavors ) ;
                                         {
                                         ZE( countT , cFlavorsVisible ) ;
 
-                                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
+                                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
 
-                                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                         sOrder << psttFrom ;
                                         }
                                             while( ~hDown && !etThread ) ;
                                             }
-                                                else sOrder << stJobTo.downF( tinP , hDown ) ;
+                                                else sOrder << stJobTo.downF( tinBaseP , hDown ) ;
                                                 }
-                                                    stJobTo.downF( tinP , hDown ) ;
+                                                    stJobTo.downF( tinBaseP , hDown ) ;
                                                     bWoth = 0 ;
                                                 {
                                                 if( bWoth )
                                             {
                                             do
-                                            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                             boolT bWoth = 1 ;
                                         {
                                         sOrder << (countT)( stJobTo - 1 ) ;                            
                                         sOrder << (countT)1 ; // IDvERSION
                                         sOrder << (countT)1 ; // IDoUT HARDCODED VALUE
                                         sOrder << (countT)DDNUMB ;
-                                        soulC sOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_IDaDAMiDoUT ) ;
+                                        soulC sOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_IDaDAMiDoUT ) ;
                                     {
                                     else
                                     }
-                                        etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                        etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
-                                        b_psttDomain.ungrabF( tinP ) ;
+                                        b_psttDomain.ungrabF( tinBaseP ) ;
                                         }
                                             }
                                                 tm += T("!\r\n") ;
@@ -786,10 +786,10 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                     while( ~hDown && !etThread ) ;
                                                     }
                                                         if( pInfo ) tm += TT(pInfo->timeE1,pInfo->timeE2)+T(" ")+T(pInfo->idhPeer)+T(" ")+T(pInfo->pczName)+T("\r\n") ;
-                                                        infoS* pInfo = (infoS*)swsEvent.downF( tinP , hDown ) ;
+                                                        infoS* pInfo = (infoS*)swsEvent.downF( tinBaseP , hDown ) ;
                                                     {
                                                     do
-                                                    handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                                    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                                 {
                                                 if( swsEvent )
                                                 tm += T("!data/")+TF1(DDNUMB)+T("/domain/1: ")+T(psttDomain)+T("\r\n!data/")+TF1(DDNUMB)+T("/time.nicName.eventName/1\r\n") ;
@@ -800,13 +800,13 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                 idFromDomain && psttFromDomain && psttFromDomain->idAdam && psttDomain && psttDomain->idAdam
                                             (
                                             if
-                                            countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
-                                            psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                            countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
+                                            psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                         {
                                         else for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                         if( !cFlavors ) tm += T("there is no data to report\r\n") ;
-                                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
-                                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
+                                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                         ;
 
@@ -842,26 +842,26 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                     {
                                     if( !stJobTo )
                                 {
-                                else if( !etThread.strCompareF( tinP , psttKey , T("copyDataToMe") ) && ++ idOrderCopy == 1 )
+                                else if( !etThread.strCompareF( tinBaseP , psttKey , T("copyDataToMe") ) && ++ idOrderCopy == 1 )
                                 }
                                     }
-                                        b_psttDomain.ungrabF( tinP ) ;
+                                        b_psttDomain.ungrabF( tinBaseP ) ;
 
                                         }
-                                            etThread.delF( tinP , psttu ) ;
-                                            etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/9440104/in/in") , WS( sAsynchOrder ) ) ; ___( psttu ) ;
+                                            etThread.delF( tinBaseP , psttu ) ;
+                                            etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/9440104/in/in") , WS( sAsynchOrder ) ) ; ___( psttu ) ;
                                             ZE( strokeS* , psttu ) ;
 
                                             sAsynchOrder << sOrder ;
-                                            soulC sAsynchOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , stJobTo[ 1 ] ) ;
+                                            soulC sAsynchOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , stJobTo[ 1 ] ) ;
 
                                             __( cFlavorsVisible ) ;
                                             }
                                                 }
                                                     }
-                                                        etThread.delF( tinP , (byteT*&)pInfo ) ;
+                                                        etThread.delF( tinBaseP , (byteT*&)pInfo ) ;
                                                         }
-                                                            etThread.delF( tinP , pInfo->pczName ) ;
+                                                            etThread.delF( tinBaseP , pInfo->pczName ) ;
                                                             sOrder << pInfo->pczName ;
                                                             sOrder << pInfo->cczName ;
                                                             sOrder << pInfo->idhPeer ;
@@ -884,14 +884,14 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                     idFromDomain && psttFromDomain && psttFromDomain->idAdam && psttDomain && psttDomain->idAdam
                                                 (
                                                 if
-                                                countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
-                                                psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                                countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
+                                                psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                             {
                                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                         {
                                         else
                                         }
-                                            etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                            etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
                                             ;
 
@@ -917,51 +917,51 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                     idFromDomain && psttFromDomain && psttFromDomain->idAdam && psttDomain && psttDomain->idAdam
                                                 (
                                                 if
-                                                countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
-                                                psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                                countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
+                                                psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                             {
                                             else for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                             if( !cFlavors ) ;
                                         {
                                         ZE( countT , cFlavorsVisible ) ;
 
-                                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
+                                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
 
-                                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                         sOrder << psttFrom ;
                                         }
                                             while( ~hDown && !etThread ) ;
                                             }
-                                                else sOrder << stJobTo.downF( tinP , hDown ) ;
+                                                else sOrder << stJobTo.downF( tinBaseP , hDown ) ;
                                                 }
-                                                    stJobTo.downF( tinP , hDown ) ;
+                                                    stJobTo.downF( tinBaseP , hDown ) ;
                                                     bWoth = 0 ;
                                                 {
                                                 if( bWoth )
                                             {
                                             do
-                                            handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                             boolT bWoth = 1 ;
                                         {
                                         sOrder << (countT)( stJobTo - 1 ) ;                            
                                         sOrder << (countT)1 ; // IDvERSION
                                         sOrder << (countT)1 ; // IDoUT HARDCODED VALUE
                                         sOrder << (countT)DDNUMB ;
-                                        soulC sOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_IDaDAMiDoUT ) ;
+                                        soulC sOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_IDaDAMiDoUT ) ;
                                     {
                                     else
                                     }
-                                        etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                                        etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
-                                        b_psttDomain.ungrabF( tinP ) ;
+                                        b_psttDomain.ungrabF( tinBaseP ) ;
                                         }
                                             }
                                                 tm += T("!\r\n") ;
                                                 }
-                                                    etThread.delF( tinP , (byteT*&)pInfo ) ;
+                                                    etThread.delF( tinBaseP , (byteT*&)pInfo ) ;
                                                     }
-                                                        etThread.delF( tinP , pInfo->pczName ) ;
+                                                        etThread.delF( tinBaseP , pInfo->pczName ) ;
                                                         tm += TT(pInfo->timeE1,pInfo->timeE2)+T(" ")+T(pInfo->idhPeer)+T(" ")+T(pInfo->pczName)+T("\r\n") ;
                                                     {
                                                     if( pInfo )
@@ -977,13 +977,13 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                                 idFromDomain && psttFromDomain && psttFromDomain->idAdam && psttDomain && psttDomain->idAdam
                                             (
                                             if
-                                            countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
-                                            psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                                            countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
+                                            psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                                         {
                                         else for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                                         if( !cFlavors ) tm += T("there is no data to report\r\n") ;
-                                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
-                                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
+                                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                         ;
 
@@ -1019,20 +1019,20 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                                     {
                                     if( !stJobTo )
                                 {
-                                else if( !etThread.strCompareF( tinP , psttKey , T("moveDataToMe") ) && ++ idOrderMove == 1 )
+                                else if( !etThread.strCompareF( tinBaseP , psttKey , T("moveDataToMe") ) && ++ idOrderMove == 1 )
                                 }
                                     }
                                         stJobTo << idAdamTo ;
                                         __Z( idAdamTo ) ;
-                                        countT idAdamTo = etThread.strDigitsToSCountF( tinP , psttc1 ) ;
-                                        __( !etThread.strIsDigitsF( tinP , psttc1 ) ) ;
+                                        countT idAdamTo = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ;
+                                        __( !etThread.strIsDigitsF( tinBaseP , psttc1 ) ) ;
                                     {
                                     FORsTRINGSiN1( pstt1w )
-                                    etThread.strWordsOldF( tinP , pstt1w , psttValue , sttq , T("/") ) ;
+                                    etThread.strWordsOldF( tinBaseP , pstt1w , psttValue , sttq , T("/") ) ;
                                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                     ZE( strokeS* , pstt1w ) ;
                                 {
-                                if( !etThread.strCompareF( tinP , psttKey , T("jobTo") ) && ++ idJobTo == 1 )
+                                if( !etThread.strCompareF( tinBaseP , psttKey , T("jobTo") ) && ++ idJobTo == 1 )
                                 sws_psttValue >> psttValue ;
                                 ZE( strokeS* , psttValue ) ;
                             {
@@ -1042,11 +1042,11 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                             ZE( countT , idOrderMove ) ;
                             ZE( countT , idOrderCopy ) ;
                             ZE( countT , idJobTo ) ;
-                            psttKey = (strokeS*)sws_psttValue.leverF( tinP , idf ) ;
+                            psttKey = (strokeS*)sws_psttValue.leverF( tinBaseP , idf ) ;
                         {
                         else for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                         }
-                            etThread.boxPutF( tinP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinP ) ) ;
+                            etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
 
                             ;
 
@@ -1126,29 +1126,29 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                             TN( tm , "" ) ; tm =
                         {
                         if( !cFlavors )
-                        countT cFlavors = sws_psttValue.cFlavorsF( tinP ) ;
+                        countT cFlavors = sws_psttValue.cFlavorsF( tinBaseP ) ;
                         TN( tFooAtBarDotCom , "foo@bar.com" ) ;
-                        stackC stJobTo( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+                        stackC stJobTo( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
                     {
 
                     }
                         }
                             }
-                                etThread.delF( tinP , psttKey ) ;
+                                etThread.delF( tinBaseP , psttKey ) ;
                                 }
                                     sws_psttValue << psttValue ;
-                                    if( idf ) { etThread.strSubstringF( tinP , psttValue , idf , sttq , tCRLF , psttBody , 1 ) ; ___( psttValue ) ; }
+                                    if( idf ) { etThread.strSubstringF( tinBaseP , psttValue , idf , sttq , tCRLF , psttBody , 1 ) ; ___( psttValue ) ; }
                                     ZE( strokeS* , psttValue ) ;
                                 {
-                                if( idf && etThread.strSubstringF( tinP , psttKey , idf , sttq , tCW , psttBody , 1 ) && psttKey && psttKey->idAdam )
-                                etThread.delF( tinP , psttKey ) ;
+                                if( idf && etThread.strSubstringF( tinBaseP , psttKey , idf , sttq , tCW , psttBody , 1 ) && psttKey && psttKey->idAdam )
+                                etThread.delF( tinBaseP , psttKey ) ;
                             {
                             else
                             }
                                 break ;
-                                etThread.delF( tinP , psttKey ) ;
+                                etThread.delF( tinBaseP , psttKey ) ;
                             {
-                            if( !etThread.strSubstringF( tinP , psttKey , idf , sttq , sttHey , psttBody ) )
+                            if( !etThread.strSubstringF( tinBaseP , psttKey , idf , sttq , sttHey , psttBody ) )
                         {
                         while( !etThread && idf )
                         TN( tCRLF , "\r\n" ) ;
@@ -1157,42 +1157,42 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
                         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                         countT idf = 1 ;
                     {
-                    switchStackC sws_psttValue( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , psttKey , flSTACKc_ALLOWzE | flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+                    switchStackC sws_psttValue( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , psttKey , flSTACKc_ALLOWzE | flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
                     ZE( strokeS* , psttKey ) ;
                     //U: MOVE THIS INTO AN etherC API: PARSING TEXT FOR FIELD NAMES AND VALUES
 
                     }
-                        b_psttDomain.ungrabF( tinP ) ;
+                        b_psttDomain.ungrabF( tinBaseP ) ;
                         }
                             }
                                 }
-                                    etThread.delF( tinP , psttOwner ) ;
+                                    etThread.delF( tinBaseP , psttOwner ) ;
                                     swsOwner >> psttOwner ; ___( psttOwner ) ;
                                     ZE( strokeS* , psttOwner ) ;
                                 {
                                 while( swsOwner > 0x20 )
                                 swsOwner << pstto ;
-                                strokeS* pstto = psttOldC( tinP , etThread , psttFrom ) ; ___( pstto ) ;
+                                strokeS* pstto = psttOldC( tinBaseP , etThread , psttFrom ) ; ___( pstto ) ;
                             {
                             )
-                                ( !psttOwner || etThread.strCompareF( tinP , psttFrom , psttOwner ) )
+                                ( !psttOwner || etThread.strCompareF( tinBaseP , psttFrom , psttOwner ) )
                                 &&
                                 idFromDomain - 1 + psttFromDomain->idAdam == psttDomain->idAdam
                                 &&
                                 idFromDomain && psttFromDomain && psttFromDomain->idAdam && psttDomain && psttDomain->idAdam
                             (
                             if
-                            countT idFromDomain = etThread.strIdF( tinP , psttFromDomain , psttDomain ) ;
+                            countT idFromDomain = etThread.strIdF( tinBaseP , psttFromDomain , psttDomain ) ;
                             strokeS* psttOwner = swsOwner ? (strokeS*)swsOwner[ - 1 ] : 0 ;
-                            psttDomain = (strokeS*)swsEvent.leverF( tinP , idf ) ;
+                            psttDomain = (strokeS*)swsEvent.leverF( tinBaseP , idf ) ;
                         {
                         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                        countT cFlavors = swsEvent.cFlavorsF( tinP ) ;
-                        b_psttDomain.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                        countT cFlavors = swsEvent.cFlavorsF( tinBaseP ) ;
+                        b_psttDomain.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                     {
 
-                    etThread.strConvertToLowerCaseF( tinP , psttFromDomain ) ; ___( psttFromDomain ) ;
-                    etThread.strWordF( tinP , psttFromDomain , psttFrom , sttq , S1C('@') , 2 ) ; ___( psttFromDomain ) ;
+                    etThread.strConvertToLowerCaseF( tinBaseP , psttFromDomain ) ; ___( psttFromDomain ) ;
+                    etThread.strWordF( tinBaseP , psttFromDomain , psttFrom , sttq , S1C('@') , 2 ) ; ___( psttFromDomain ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     ZE( strokeS* , psttFromDomain ) ;
 
@@ -1224,7 +1224,7 @@ byteT pbIn[ TUCK ] ; // SHOULD BE LONGER THAN ANY EXPECTED TOTAL INPUT.  NO HARM
 
     PARAMS( cArgP )
 {
-voidT jobFillCourseF( tinS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 ;
 }

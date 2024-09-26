@@ -9,16 +9,16 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 }
-    vtProgress.setF( tinP , tSay ) ;
+    vtProgress.setF( tinBaseP , tSay ) ;
 
     ;
 
         +S2(0,scOld_POPfRAME)
         +tValue
-        +S3((measureT)tValue.csF(tinP),scOld_mmFRAMEcELLS,1.0)
+        +S3((measureT)tValue.csF(tinBaseP),scOld_mmFRAMEcELLS,1.0)
 
     TN( tSay , "" ) ; tSay = tn
 
@@ -26,10 +26,10 @@ etherC::loafIF( tinP ) ;
 {
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
 
     }
-        vtProgress.setF( tinP , tSay ) ;
+        vtProgress.setF( tinBaseP , tSay ) ;
 
         ;
 
@@ -60,17 +60,17 @@ countT cAfter = 1 ;
 {
 countT pcRGB[] =
 
-++ s ; etThread.osSleepF( tinP , TOCK ) ;
+++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
 etThread.osThreadF( TaRG1( tmCopyF ) , (countT)&cDirsCopied , (countT)&cFilesCopied , (countT)&bDoneCopying  ) ;
 
 }
-    vtProgress.setF( tinP , tSay ) ;
+    vtProgress.setF( tinBaseP , tSay ) ;
 
     ;
 
         +S2(0,scOld_POPfRAME)
         +tValue
-        +S3((measureT)tValue.csF(tinP),scOld_mmFRAMEcELLS,1.0)
+        +S3((measureT)tValue.csF(tinBaseP),scOld_mmFRAMEcELLS,1.0)
 
     TN( tSay , "" ) ; tSay = tn
 
@@ -82,7 +82,7 @@ etThread.osThreadF( TaRG1( tmCopyF ) , (countT)&cDirsCopied , (countT)&cFilesCop
     {
     if( cDirsSnap == cDirs && cFilesSnap == cFiles )
 
-    ++ s ; ether.osSleepF( tinP , TOCK << 2 ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;
     countT cFilesSnap = cFiles ;
     countT cDirsSnap  = cDirs  ;
 {
@@ -97,10 +97,10 @@ ZE( countT , cDirsCopied   ) ;
 ZE( countT , cFiles        ) ;
 ZE( countT , cDirs         ) ;
 
-++ s ; ether.osSleepF( tinP , TOCK ) ;
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.strokeF( tinP , tSay ) ;
+etThread.strokeF( tinBaseP , tSay ) ;
 
 ;
 
@@ -128,16 +128,16 @@ etThread.strokeF( tinP , tSay ) ;
                         +S2(3,scOld_cPUSHoFFfRAME)
                         +tTitle
                     +S2(0,scOld_POPoFFfRAME)
-                +S3((measureT)tTitle.csF(tinP),scOld_mmFRAMEcELLS,16.0)
+                +S3((measureT)tTitle.csF(tinBaseP),scOld_mmFRAMEcELLS,16.0)
                     +S2(1,scOld_cPUSHoFFfRAME)
                     tn
 //FRAME:    1   2   3   4   5   6
 
 TN( tSay , "" ) ; tSay =
 
-vTextC vtProgress( tinP , "vtProgress" , 0 , 1 ) ;
+vTextC vtProgress( tinBaseP , "vtProgress" , 0 , 1 ) ;
 TN( tTitle , "" ) ; tTitle = tcQuit+T("  Copying files and folders") ;
-tcButtonQuitC tcQuit( tinP , "tcQuit" , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT ) ;
+tcButtonQuitC tcQuit( tinBaseP , "tcQuit" , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT ) ;
 TN( tcr , "\r\n" ) ;
 TN( tb , " " ) ;
 TN( tn , "" ) ;
@@ -148,7 +148,7 @@ DONE( tmCopyF )
 }
     bDoneP = 1 ;
 
-    ((thirdC&)etThread).diskWalkCopyF( tinP , cDirsP , cFilesP , ether , postTO , postFROM , myCBF ) ;
+    ((thirdC&)etThread).diskWalkCopyF( tinBaseP , cDirsP , cFilesP , ether , postTO , postFROM , myCBF ) ;
 
     boolT&  bDoneP  =  *(boolT*)pTaskP->c3 ;
     countT& cFilesP = *(countT*)pTaskP->c2 ;
@@ -163,10 +163,10 @@ DONE( tmCountF )
     cFilesP -- ;
     cDirsP -- ;
 
-    thirdC::diskWalkIF( tinP , cDirsP , cFilesP , postFROM , ether ) ;
+    thirdC::diskWalkIF( tinBaseP , cDirsP , cFilesP , postFROM , ether ) ;
 
-    ++ s ; ether.osSleepF( tinP , TOCK << 3 ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK << 3 ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     cFilesP ++ ;
     cDirsP ++ ;
@@ -184,9 +184,9 @@ TASK( tmCountF )
 }
     return bDoIt ;
 
-    boolT  bDoIt = !thirdC::c_strstrIF( tinP , postNameP , "do.not.copy.a.file.with.this.in.its.name" ) ;
+    boolT  bDoIt = !thirdC::c_strstrIF( tinBaseP , postNameP , "do.not.copy.a.file.with.this.in.its.name" ) ;
 {
-boolT myCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP )
+boolT myCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOW( "ifcIDaDAM_STARTER4.progress" )/*1*/
 /**/

@@ -10,8 +10,8 @@
 }
     ETHERlIST3aFTERoPTIONALbREAK
     ETHERlIST2bEFOREoPTIONALbREAK
-    box.putF( tinP , pbP , cbP , flagsPutP ) ;
-    boxC box( tinP , *this , psttc1 , ifcOPENaCCESS_W , ifcOPENhOW_nCeR , 0 , cOpenTriesP , time1P , time2P , flagsOpenDetailsP ) ;
+    box.putF( tinBaseP , pbP , cbP , flagsPutP ) ;
+    boxC box( tinBaseP , *this , psttc1 , ifcOPENaCCESS_W , ifcOPENhOW_nCeR , 0 , cOpenTriesP , time1P , time2P , flagsOpenDetailsP ) ;
     ETHERlIST1bEFOREwORK( psttP )
 
     _IO_
@@ -25,7 +25,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::boxPutF( tinS& tinP , const strokeS* const psttP , const byteT* const pbP , const countT cbP , countT cOpenTriesP , countT time1P , const sCountT time2P , const flagsT flagsOpenDetailsP , const flagsT flagsPutP )/*1*/
+/**//*1*/voidT etherC::boxPutF( tinBaseS& tinBaseP , const strokeS* const psttP , const byteT* const pbP , const countT cbP , countT cOpenTriesP , countT time1P , const sCountT time2P , const flagsT flagsOpenDetailsP , const flagsT flagsPutP )/*1*/
 */
   if not 0 then will try cTriesP times
   if 0 then will retry forever
@@ -40,7 +40,7 @@
  pbP
    else i will return immediately upon impotence
    if so, then i will try all listed file names and will become impotent only if all file names fail
-  impotence behavior depends upon whether i am *tinP.pEtScratch
+  impotence behavior depends upon whether i am *((tinNormalS&)tinBaseP).pEtScratch
    the result is as if the caller called me repeatedly
   may also be a string of strings
   must not be 0

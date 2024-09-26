@@ -10,9 +10,9 @@
 REST
 
 }
-    etThread.delF( tinP , psttServer ) ;
-    etThread.strokeF( tinP , T("the mail server for domain \"")+T(psttDomain)+T("\" is \"")+T(psttServer)+T("\"\r\n") ) ;
-    etThread.dnsNicNamesF( tinP , psttServer , psttDomain , ifcIDtYPEdNSqUERY_MX ) ; ___( psttServer ) ;
+    etThread.delF( tinBaseP , psttServer ) ;
+    etThread.strokeF( tinBaseP , T("the mail server for domain \"")+T(psttDomain)+T("\" is \"")+T(psttServer)+T("\"\r\n") ) ;
+    etThread.dnsNicNamesF( tinBaseP , psttServer , psttDomain , ifcIDtYPEdNSqUERY_MX ) ; ___( psttServer ) ;
     ZE( strokeS* , psttServer ) ;
 {
 if( psttDomain )
@@ -25,7 +25,7 @@ if( psttDomain )
     {
     FORsTRINGSiN1( pstt1p )
     countT cSkip = 2 ;
-    const strokeS* const pstt1p = etThread.ether_pstt1_processParametersI_F( tinP ) ;
+    const strokeS* const pstt1p = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
 {
 ZE( const strokeS* , psttDomain ) ;
 

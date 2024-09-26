@@ -12,50 +12,50 @@ DONE( tmRelayOldChatRepliesF )
     }
         if( POOP ) POOPR
         TELL( "tmRelayOldChatRepliesF: cleaning up" )
-        if( bWoth ) sgnUpTested.giveF( tinP ) ;
+        if( bWoth ) sgnUpTested.giveF( tinBaseP ) ;
         }
             if( !sReply ) break ;
     
-            soDn.writeF( tinP , sWrite ) ;
-            etThread.traceF( tinP , T("writing sWrite (sNull or sReply)") ) ;
+            soDn.writeF( tinBaseP , sWrite ) ;
+            etThread.traceF( tinBaseP , T("writing sWrite (sNull or sReply)") ) ;
             TELL( "writing to below the reply soul read from above" )
-            soulC& sWrite = soUp.etherF( tinP ) ? sNull : sReply ;
-            soulC sNull( tinP , TAG( TAGiDnULL ) ) ;
+            soulC& sWrite = soUp.etherF( tinBaseP ) ? sNull : sReply ;
+            soulC sNull( tinBaseP , TAG( TAGiDnULL ) ) ;
     
             }
                 break ;
-                soDn.stopWaitingF( tinP ) ;
+                soDn.stopWaitingF( tinBaseP ) ;
                 }
-                    thirdC::dosTellMonitorIF( tinP , tellC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEtELLsYS_LOG , ostoe , ostoe.costF() + 1 ) , ifcIDbOOKStELL_SYS ) ;
-                    OStEXTV( ostoe , "!tinS tmRelayOldChatRepliesF: canceling soDn because soUp is impotent" )
+                    thirdC::dosTellMonitorIF( tinBaseP , tellC( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEtELLsYS_LOG , ostoe , ostoe.costF() + 1 ) , ifcIDbOOKStELL_SYS ) ;
+                    OStEXTV( ostoe , "!tinNormalS tmRelayOldChatRepliesF: canceling soDn because soUp is impotent" )
                 {
-                //etText.strokeF( tinP , T("RcHAT/")+TF1(idRelay)+T("/tmRelayOldChatRepliesF/telling soDn to stop waiting for an order\r\n") ) ;
+                //etText.strokeF( tinBaseP , T("RcHAT/")+TF1(idRelay)+T("/tmRelayOldChatRepliesF/telling soDn to stop waiting for an order\r\n") ) ;
                 POOPR
             {
             if( POOP )
             }
-                sgnUpTested.giveF( tinP ) ;
+                sgnUpTested.giveF( tinBaseP ) ;
                 bWoth = 0 ;
             {
             if( bWoth )
     
-            //else                      etText.strokeF( tinP , T("RcHAT/")+TF1(idRelay)+T("/tmRelayOldChatRepliesF/read a nonnull sReply from up\r\n") ) ;
-            //else if( !sReply )        etText.strokeF( tinP , T("RcHAT/")+TF1(idRelay)+T("/tmRelayOldChatRepliesF/read a null sReply from up\r\n") ) ;
-            //if( soUp.etherF( tinP ) ) etText.strokeF( tinP , T("RcHAT/")+TF1(idRelay)+T("/tmRelayOldChatRepliesF/could not read sReply from up\r\n") ) ;
+            //else                      etText.strokeF( tinBaseP , T("RcHAT/")+TF1(idRelay)+T("/tmRelayOldChatRepliesF/read a nonnull sReply from up\r\n") ) ;
+            //else if( !sReply )        etText.strokeF( tinBaseP , T("RcHAT/")+TF1(idRelay)+T("/tmRelayOldChatRepliesF/read a null sReply from up\r\n") ) ;
+            //if( soUp.etherF( tinBaseP ) ) etText.strokeF( tinBaseP , T("RcHAT/")+TF1(idRelay)+T("/tmRelayOldChatRepliesF/could not read sReply from up\r\n") ) ;
     
             TELL( "handling the soulC read from above" )
-            soUp.readF( tinP , sReply ) ;
+            soUp.readF( tinBaseP , sReply ) ;
             TELL( "reading from above a reply soulC" )
-            soulC sReply( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sReply( tinBaseP , TAG( TAGiDnULL ) ) ;
             idTray ++ ;
         {
         while( !POOP && !etThread )
         ZE( countT , idTray ) ;
         boolT bWoth = 1 ;
     
-        soUp.etherF( tinP , *tinP.pEtScratch ) ;
-        soDn.etherF( tinP , *tinP.pEtScratch ) ;
-        etherC& etText = etherC::etTextIF( tinP ) ;
+        soUp.etherF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
+        soDn.etherF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
+        etherC& etText = etherC::etTextIF( tinBaseP ) ;
         SCOOPS
     {
     IFsCRATCH

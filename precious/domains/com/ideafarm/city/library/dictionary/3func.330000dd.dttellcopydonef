@@ -12,32 +12,32 @@
 
     }
         //conGF( "\r\n" ) ;
-        //conGF( NAME( pTinF()->idTinNamed ) ) ;
+        //conGF( NAME( ((tinNormalS*)pTinF())->idTinNamed ) ) ;
         //conGF( " " ) ;
     
-        pTinF() = tinP.pTinOld ;                                                            // I BECOME RETIRED HERE
+        pTinF() = ((tinNormalS&)tinBaseP).pTinOld ;                                                            // I BECOME RETIRED HERE
 
-        //if( tinP.idTinNamed == ifcIDtINnAMED_tinEarlyLateMain ) bTlsEarlyLateI = 1 ;
-        if( tinP.idTinNamed == ifcIDtINnAMED_tinEarlyLateMain ) bTlsEarlyLateIF() = 1 ;
+        //if( ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinEarlyLateMain ) bTlsEarlyLateI = 1 ;
+        if( ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinEarlyLateMain ) bTlsEarlyLateIF() = 1 ;
     
-        //conGF( NAME( pTinF()->idTinNamed ) ) ;
+        //conGF( NAME( ((tinNormalS*)pTinF())->idTinNamed ) ) ;
         //conGF( "dtCopy pTinF() [before,after]: " ) ;
     {
-    if( tinP.pTinOld )
+    if( ((tinNormalS&)tinBaseP).pTinOld )
 
-    putNegAM( tinP.fingerprint , FINGERnEG_TINszOMBIE ) ;                                   //I AM ABOUT TO BECOME RETIRED
-    if( tinP.pTinOld ) putNegAM( tinP.pTinOld->fingerprint , FINGERnEG_TINs ) ;             //MY ELDER IS READY TO BECOME ACTIVE
+    putNegAM( ((tinNormalS&)tinBaseP).fingerprint , FINGERnEG_TINszOMBIE ) ;                                   //I AM ABOUT TO BECOME RETIRED
+    if( ((tinNormalS&)tinBaseP).pTinOld ) putNegAM( ((tinNormalS&)tinBaseP).pTinOld->fingerprint , FINGERnEG_TINs ) ;             //MY ELDER IS READY TO BECOME ACTIVE
 
     //}
     //    conGF( "\r\n" ) ;
-    //    conGF( NAME( tinP.pTinOld->idTinNamed ) ) ;
+    //    conGF( NAME( ((tinNormalS&)tinBaseP).pTinOld->idTinNamed ) ) ;
     //    conGF( " " ) ;
-    //    conGF( NAME( tinP.idTinNamed ) ) ;
+    //    conGF( NAME( ((tinNormalS&)tinBaseP).idTinNamed ) ) ;
     //    conGF( "dtCopy              [new,old]: " ) ;
     //{
-    //if( tinP.pTinOld )
+    //if( ((tinNormalS&)tinBaseP).pTinOld )
 
-    tinS& tinP = *(tinS*)c_thisP ;
+    tinBaseS& tinBaseP = *(tinBaseS*)c_thisP ;
 {
 /*1*/countT dtTellCopyDoneF( countT c_thisP )/*1*/
 

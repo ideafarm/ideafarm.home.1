@@ -9,9 +9,9 @@
 
 }
     }
-        er.strFuseF( tinP , psttP , T("}") ) ;
+        er.strFuseF( tinBaseP , psttP , T("}") ) ;
         }
-            er.strFuseF( tinP , psttP , T("]") ) ;
+            er.strFuseF( tinBaseP , psttP , T("]") ) ;
 
             pbc += cbToDoWo ;
             }
@@ -45,16 +45,16 @@
                     }
                         }
                             }
-                                er.delF( tinP , psttd ) ;
-                                er.strFuseF( tinP , psttP , T(":")+T(psttd) ) ;
-                                er.delF( tinP , psttDecoded ) ;
-                                er.strDumpStrokesIF( tinP , psttd , psttDecoded ) ; ___( psttd ) ;
+                                er.delF( tinBaseP , psttd ) ;
+                                er.strFuseF( tinBaseP , psttP , T(":")+T(psttd) ) ;
+                                er.delF( tinBaseP , psttDecoded ) ;
+                                er.strDumpStrokesIF( tinBaseP , psttd , psttDecoded ) ; ___( psttd ) ;
                                 ZE( strokeS* , psttd ) ;
                             {
                             else
                             }
-                                er.delF( tinP , psttDecoded ) ;
-                                er.strFuseF( tinP , psttP , T(":")+T(psttDecoded) ) ;
+                                er.delF( tinBaseP , psttDecoded ) ;
+                                er.strFuseF( tinBaseP , psttP , T(":")+T(psttDecoded) ) ;
                             {
                             if( !bDump )
         
@@ -70,25 +70,25 @@
                         if( psttDecoded )
                         ZE( boolT , bDump ) ;
     
-                        er.strReplaceF( tinP , psttDecoded , 0 , ifcIDtYPEsTRrEPLACE_MAKEiMPORT , psttDecoded[ 2 ].idAdam ) ; ___( psttDecoded ) ;
-                        er.strDecodeF( tinP , psttDecoded , pbEncoded ) ; ___( psttDecoded ) ;
+                        er.strReplaceF( tinBaseP , psttDecoded , 0 , ifcIDtYPEsTRrEPLACE_MAKEiMPORT , psttDecoded[ 2 ].idAdam ) ; ___( psttDecoded ) ;
+                        er.strDecodeF( tinBaseP , psttDecoded , pbEncoded ) ; ___( psttDecoded ) ;
                         ZE( strokeS* , psttDecoded ) ;
                         const byteT* pbEncoded = pbc ;
                     {
                     else
-                    if( F(flags) & flSOULiTEM_NULLpTR ) er.strFuseF( tinP , psttP , T(" is null") ) ;
+                    if( F(flags) & flSOULiTEM_NULLpTR ) er.strFuseF( tinBaseP , psttP , T(" is null") ) ;
                 {
                 case ifcIDtYPEsOULiTEM_strokeSptr :
                 }
                     break ;
-                    er.strFuseF( tinP , psttP , T(":")+TF2(*(countT*)pbc,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; //U::FOR SOME OS, NEED TO SWAB HERE (REORDER BYTES)
+                    er.strFuseF( tinBaseP , psttP , T(":")+TF2(*(countT*)pbc,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; //U::FOR SOME OS, NEED TO SWAB HERE (REORDER BYTES)
                 {
                 case ifcIDtYPEsOULiTEM_countT :
                 }
                     break ;
-                    er.delF( tinP , psttd ) ;
-                    er.strFuseF( tinP , psttP , psttd ) ;
-                    dumpIF( tinP , psttd , pbc ) ; ___( psttd ) ;
+                    er.delF( tinBaseP , psttd ) ;
+                    er.strFuseF( tinBaseP , psttP , psttd ) ;
+                    dumpIF( tinBaseP , psttd , pbc ) ; ___( psttd ) ;
                     ZE( strokeS* , psttd ) ;
                 {
                 case ifcIDtYPEsOULiTEM_soulC :
@@ -97,27 +97,27 @@
 
             flagsT flags = *(flagsT*)pbc ; pbc += sizeof( flagsT ) ; cbToDoWo -= sizeof( flagsT ) ;
 
-            er.strFuseF( tinP , psttP , T("[")+T(processGlobal4I.mapSoulItem(idType)) ) ;
+            er.strFuseF( tinBaseP , psttP , T("[")+T(processGlobal4I.mapSoulItem(idType)) ) ;
             countT idType = *(countT*)pbc ; pbc += sizeof( countT ) ; cbToDoWo -= sizeof( countT ) ;
 
             countT cbToDoWo = *(countT*)pbc ; pbc += sizeof( countT ) ; cbToDo -= sizeof( countT ) + cbToDoWo ;
         {
         while( cbToDo )
 
-        er.strFuseF( tinP , psttP , T("{") ) ;
+        er.strFuseF( tinBaseP , psttP , T("{") ) ;
         countT cbToDo = *(countT*)pbc ; pbc += sizeof( countT ) ;
         pbc += sizeof( countT ) ;
     {
     else
-    else if( pbc += sizeof( countT ) , *(countT*)pbc != 1 ) er.strFuseF( tinP , psttP , T("invalid idFormat") ) ;
-    if( getNegAM( *(countT*)pbc ) != FINGERnEG_SOULc ) er.strFuseF( tinP , psttP , T("invalid fingerprint") ) ;
+    else if( pbc += sizeof( countT ) , *(countT*)pbc != 1 ) er.strFuseF( tinBaseP , psttP , T("invalid idFormat") ) ;
+    if( getNegAM( *(countT*)pbc ) != FINGERnEG_SOULc ) er.strFuseF( tinBaseP , psttP , T("invalid fingerprint") ) ;
     const byteT* pbc = pbSoulImageP ;
 
-    er.strMakeF( tinP , LF , psttP , 0 , TOCK * 0x10 ) ; ___( psttP ) ; //U::ALLOCATE ACCORDING TO NUMBER OF ELTS
-    etherC& er = etherC::etRockIF( tinP ) ;
+    er.strMakeF( tinBaseP , LF , psttP , 0 , TOCK * 0x10 ) ; ___( psttP ) ; //U::ALLOCATE ACCORDING TO NUMBER OF ELTS
+    etherC& er = etherC::etRockIF( tinBaseP ) ;
     _IO_
 {
-/*1*/voidT soulC::dumpIF( tinS& tinP , strokeS*& psttP , const byteT* const pbSoulImageP )/*1*/
+/*1*/voidT soulC::dumpIF( tinBaseS& tinBaseP , strokeS*& psttP , const byteT* const pbSoulImageP )/*1*/
 
 /**/
 */

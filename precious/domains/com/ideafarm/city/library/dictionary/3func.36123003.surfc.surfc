@@ -15,8 +15,8 @@ pSpaceFromPaperEpilogCBF( pSpaceFromPaperEpilogCBFP ) ,
 pSpaceFromPaperPrologCBF( pSpaceFromPaperPrologCBFP ) ,
 cArg( cArgP ) ,
 pSurfaceCBF( pSurfaceCBFP ) ,
-associateC( tinP , etherP , IDgROUP , sizeof( spaceC ) ) ,
-/*1*/surfC::surfC( tinS& tinP , etherC& etherP , const measureT surfaceErrorLimitP , surfaceCBFT pSurfaceCBFP , const countT cArgP , spaceFromPaperPrologCBFT pSpaceFromPaperPrologCBFP , spaceFromPaperEpilogCBFT pSpaceFromPaperEpilogCBFP , const flagsT flagsP ) :/*1*/
+associateC( tinBaseP , etherP , IDgROUP , sizeof( spaceC ) ) ,
+/*1*/surfC::surfC( tinBaseS& tinBaseP , etherC& etherP , const measureT surfaceErrorLimitP , surfaceCBFT pSurfaceCBFP , const countT cArgP , spaceFromPaperPrologCBFT pSpaceFromPaperPrologCBFP , spaceFromPaperEpilogCBFT pSpaceFromPaperEpilogCBFP , const flagsT flagsP ) :/*1*/
 
 /**/
 */
@@ -25,14 +25,14 @@ associateC( tinP , etherP , IDgROUP , sizeof( spaceC ) ) ,
  pSpaceFromPaperPrologCBFP
  cArgP
    for example, if the surface has nonze linear and/or angular velocity, application code must call moonThePhotographersF so that each associate updates its view of *this
-  whenever the behavior of this function changes, application code must call this->moonThePhotographersF( tinP ) ;
+  whenever the behavior of this function changes, application code must call this->moonThePhotographersF( tinBaseP ) ;
   if 0 then associated paperC instances will be mapped directly to associated devices
   normally is not 0
   can be 0
  pSurfaceCBFP
  surfaceErrorLimitP
  etherP
- tinP
+ tinBaseP
 parameters
 /*
 

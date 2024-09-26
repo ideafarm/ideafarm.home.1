@@ -9,19 +9,19 @@
 
 REST
 
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
 }
-    etThread.strokeF( tinP , T("elapsed time: ")+TF2(timeEnd1,flFORMAT_NObIGITvALUES) ) ;
+    etThread.strokeF( tinBaseP , T("elapsed time: ")+TF2(timeEnd1,flFORMAT_NObIGITvALUES) ) ;
     WW( timeEnd1 )
 
-    etThread.osTimeSubtractF( tinP , timeEnd1 , timeEnd2 , timeBegin1 , timeBegin2 ) ;
+    etThread.osTimeSubtractF( tinBaseP , timeEnd1 , timeEnd2 , timeBegin1 , timeBegin2 ) ;
 
-    etThread.osTimeNowF( tinP , timeEnd1 , timeEnd2 ) ;
+    etThread.osTimeNowF( tinBaseP , timeEnd1 , timeEnd2 ) ;
 
     for( countT id = 1 ; id ; id ++ ) WW( id )
 
-    etThread.osTimeNowF( tinP , timeBegin1 , timeBegin2 ) ;
+    etThread.osTimeNowF( tinBaseP , timeBegin1 , timeBegin2 ) ;
 
     ZE( sCountT , timeEnd2 ) ;
     ZE( countT , timeEnd1 ) ;
@@ -29,7 +29,7 @@ etThread.loafIF( tinP ) ;
     ZE( countT , timeBegin1 ) ;
     WWiNIT
 {
-if( etherC::ifc_idMemorySpaceI_IF( tinP ) == 2 )
+if( etherC::ifc_idMemorySpaceI_IF( tinBaseP ) == 2 )
 
 TODO
 

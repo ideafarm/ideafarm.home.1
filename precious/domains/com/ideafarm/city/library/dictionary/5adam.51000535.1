@@ -9,27 +9,27 @@
 
 REST
 
-etThread.delF( tinP , pcCode ) ;
-etThread.delF( tinP , pbIn ) ;
+etThread.delF( tinBaseP , pcCode ) ;
+etThread.delF( tinBaseP , pbIn ) ;
     
-etThread.strokeF( tinP , T("in:\"")+T(pbIn)+T("\"\r\n") ) ;
-dad( tinP , pbIn , cbIn , pcCode , ccCode ) ; ___( pbIn ) ;
+etThread.strokeF( tinBaseP , T("in:\"")+T(pbIn)+T("\"\r\n") ) ;
+dad( tinBaseP , pbIn , cbIn , pcCode , ccCode ) ; ___( pbIn ) ;
 ZE( countT , cbIn ) ;
 ZE( byteT* , pbIn ) ;
 
-etThread.strokeF( tinP , T("\r\n") ) ;
-for( countT off = 0 ; off < ccCode ; off ++ ) etThread.strokeF( tinP , TF3(pcCode[off],flFORMAT_UNSIGNED|flFORMAT_FILLzE,4)+T(" ") ) ;
-etThread.strokeF( tinP , T("codes: ") ) ;
-mom( tinP , pcCode , ccCode , pbOut , cbOut ) ; ___( pcCode ) ;
+etThread.strokeF( tinBaseP , T("\r\n") ) ;
+for( countT off = 0 ; off < ccCode ; off ++ ) etThread.strokeF( tinBaseP , TF3(pcCode[off],flFORMAT_UNSIGNED|flFORMAT_FILLzE,4)+T(" ") ) ;
+etThread.strokeF( tinBaseP , T("codes: ") ) ;
+mom( tinBaseP , pcCode , ccCode , pbOut , cbOut ) ; ___( pcCode ) ;
 ZE( countT    , ccCode ) ;
 ZE( count01T* , pcCode ) ;
 
-etThread.strokeF( tinP , T("in: \"")+T(pbOut)+T("\"\r\n") ) ;
+etThread.strokeF( tinBaseP , T("in: \"")+T(pbOut)+T("\"\r\n") ) ;
 countT cbOut = sizeof pbOut - 1 ;
 byteT pbOut[] = "abcdefghabcdefghhgfedcba" ;
 
-dadC dad( tinP , etThread , TAG( TAGiDnULL ) ) ;
-momC mom( tinP , etThread , TAG( TAGiDnULL ) ) ;
+dadC dad( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+momC mom( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

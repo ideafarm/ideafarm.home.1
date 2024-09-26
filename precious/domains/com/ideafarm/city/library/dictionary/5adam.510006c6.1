@@ -9,30 +9,30 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.delF( tinP , psttEncoded ) ;
-raxDeleteWoFileF( tinP , etThread , psttEncoded , resultAuth ) ;
-etThread.strToUrlF( tinP , psttEncoded , tRaw ) ; ___( psttEncoded ) ;
+etThread.delF( tinBaseP , psttEncoded ) ;
+raxDeleteWoFileF( tinBaseP , etThread , psttEncoded , resultAuth ) ;
+etThread.strToUrlF( tinBaseP , psttEncoded , tRaw ) ; ___( psttEncoded ) ;
 ZE( strokeS* , psttEncoded ) ;
 TN( tRaw , "/archive/!ideafarm.6.19981210@0259.002.000b2284.75555555.ab10f1c3.archiveold.gather.to.!.000b2284.75555555.pc100.msv" ) ;
 
-//raxDeleteWoFileF( tinP , etThread , T("/archive/%21ideafarm%2e6%2e19981226%401232%2e001%2e000b2294%2edb0734b7%2eab10f1c3%2earchiveold%2egather%2eto%2e%21%2e000b2294%2edb0734b7%2edadflag%2ejpeg") , resultAuth ) ;
+//raxDeleteWoFileF( tinBaseP , etThread , T("/archive/%21ideafarm%2e6%2e19981226%401232%2e001%2e000b2294%2edb0734b7%2eab10f1c3%2earchiveold%2egather%2eto%2e%21%2e000b2294%2edb0734b7%2edadflag%2ejpeg") , resultAuth ) ;
 
 }
-    raxGetAuthF( tinP , etThread , resultAuth , tUser , tKey ) ;
+    raxGetAuthF( tinBaseP , etThread , resultAuth , tUser , tKey ) ;
     TN( tKey  , "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" ) ;
     TN( tUser , "ideafarm" ) ;
 {
-resultAuthS resultAuth( tinP ) ;
+resultAuthS resultAuth( tinBaseP ) ;
 
 TODO
 
 }
-    //etherP.traceF( tinP , tIn ) ;
+    //etherP.traceF( tinBaseP , tIn ) ;
 
-    //etherP.boxPutF( tinP , T("///d/tmp/x/goo.ttt") , tIn , tIn.csF( tinP ) ) ;
+    //etherP.boxPutF( tinBaseP , T("///d/tmp/x/goo.ttt") , tIn , tIn.csF( tinBaseP ) ) ;
     //}
     //    }
     //        }
@@ -61,31 +61,31 @@ TODO
     //        if( postJson )
     //
     //        if( postJsonSq && postJsonSq < postJson ) postJson = postJsonSq ;
-    //        osTextT* postJson   = thirdC::c_strstrIF( tinP , postBody , "{" ) ;
-    //        osTextT* postJsonSq = thirdC::c_strstrIF( tinP , postBody , "[" ) ;
+    //        osTextT* postJson   = thirdC::c_strstrIF( tinBaseP , postBody , "{" ) ;
+    //        osTextT* postJsonSq = thirdC::c_strstrIF( tinBaseP , postBody , "[" ) ;
     //    {
     //    if( postBody )
-    //    osTextT* postBody = thirdC::c_strstrIF( tinP , postHear , "\r\n\r\n" ) ;
+    //    osTextT* postBody = thirdC::c_strstrIF( tinBaseP , postHear , "\r\n\r\n" ) ;
     //{
     //TN( tIn , "" ) ; // WILL CONTAIN A SINGLE, TRIMMED JSON WORD
 
-    etherP.boxPutF( tinP , T("///d/tmp/x/foo.")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") , postHear , costHear ) ;
+    etherP.boxPutF( tinBaseP , T("///d/tmp/x/foo.")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") , postHear , costHear ) ;
     countT idIn = ++ idInLath ;
     static countT idInLath ;
 
-    etherP.traceF( tinP , T(postHear) ) ;
-    countT costHear = ss.readF( tinP , postHear , sizeof postHear ) ;
+    etherP.traceF( tinBaseP , T(postHear) ) ;
+    countT costHear = ss.readF( tinBaseP , postHear , sizeof postHear ) ;
     memset( postHear , 0 , sizeof postHear ) ;
     char postHear[ TOCK ] ; 
 
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
-    etherP.delF( tinP , psttHost ) ;
-    ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , etherP , T(psttHost) ) ) ;
-    socketC ss( tinP , etherP , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+    etherP.delF( tinBaseP , psttHost ) ;
+    ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , etherP , T(psttHost) ) ) ;
+    socketC ss( tinBaseP , etherP , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
-    etherP.traceF( tinP , tSay ) ;
+    etherP.traceF( tinBaseP , tSay ) ;
 
-    etherP.delF( tinP , psttShort ) ;
+    etherP.delF( tinBaseP , psttShort ) ;
     TN( tSay , "" ) ; tSay = T("DELETE ")+T(psttShort)+T(psttShortEncodedP)+T(" HTTP/1.1\r\nHost: ")+T(psttHost)+T("\r\nX-Auth-Token: ")+rAuthP.tAccessToken+T("\r\n\r\n") ;
 
     // Content-Length: 1234
@@ -97,25 +97,25 @@ TODO
 
     }
         }
-            etherP.strSubstringF( tinP , psttShort , idfShort , idlShort , rAuthP.tPublicUrl ) ; ___( psttShort ) ;
-            etherP.strSubstringF( tinP , psttHost  , idfHost  , idlHost  , rAuthP.tPublicUrl ) ; ___( psttHost  ) ;
+            etherP.strSubstringF( tinBaseP , psttShort , idfShort , idlShort , rAuthP.tPublicUrl ) ; ___( psttShort ) ;
+            etherP.strSubstringF( tinBaseP , psttHost  , idfHost  , idlHost  , rAuthP.tPublicUrl ) ; ___( psttHost  ) ;
             ZE( countT , idlShort ) ;
             countT idlHost = idfShort - 1 ;
             idfHost ++ ;
         {
         if( idfHost && idfShort )
-        countT idfShort = etherP.strIdF( tinP , strokeS( '/' ) , rAuthP.tPublicUrl , 3 ) ;
-        countT idfHost  = etherP.strIdF( tinP , strokeS( '/' ) , rAuthP.tPublicUrl , 2 ) ;
+        countT idfShort = etherP.strIdF( tinBaseP , strokeS( '/' ) , rAuthP.tPublicUrl , 3 ) ;
+        countT idfHost  = etherP.strIdF( tinBaseP , strokeS( '/' ) , rAuthP.tPublicUrl , 2 ) ;
     {
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttHost  ) ;
 {
-voidT raxDeleteWoFileF( tinS& tinP , etherC& etherP , const strokeS* const psttShortEncodedP , resultAuthS& rAuthP )
+voidT raxDeleteWoFileF( tinBaseS& tinBaseP , etherC& etherP , const strokeS* const psttShortEncodedP , resultAuthS& rAuthP )
 
 }
-    wordF( tinP , etherP , rP , scratchAuth , stPath , tIn ) ;
-    stackC stPath( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
-    scratchAuthS scratchAuth( tinP ) ;
+    wordF( tinBaseP , etherP , rP , scratchAuth , stPath , tIn ) ;
+    stackC stPath( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+    scratchAuthS scratchAuth( tinBaseP ) ;
 
     }
         }
@@ -145,23 +145,23 @@ voidT raxDeleteWoFileF( tinS& tinP , etherC& etherP , const strokeS* const psttS
             if( postJson )
 
             if( postJsonSq && postJsonSq < postJson ) postJson = postJsonSq ;
-            osTextT* postJson   = thirdC::c_strstrIF( tinP , postBody , "{" ) ;
-            osTextT* postJsonSq = thirdC::c_strstrIF( tinP , postBody , "[" ) ;
+            osTextT* postJson   = thirdC::c_strstrIF( tinBaseP , postBody , "{" ) ;
+            osTextT* postJsonSq = thirdC::c_strstrIF( tinBaseP , postBody , "[" ) ;
         {
         if( postBody )
-        osTextT* postBody = thirdC::c_strstrIF( tinP , postHear , "\r\n\r\n" ) ;
+        osTextT* postBody = thirdC::c_strstrIF( tinBaseP , postHear , "\r\n\r\n" ) ;
     {
     TN( tIn , "" ) ; // WILL CONTAIN A SINGLE, TRIMMED JSON WORD
 
-    countT cbIn = ss.readF( tinP , postHear , sizeof postHear ) ;
+    countT cbIn = ss.readF( tinBaseP , postHear , sizeof postHear ) ;
     memset( postHear , 0 , sizeof postHear ) ;
     char postHear[ TOCK ] ; 
 
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
-    ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , etherP , T("identity.api.rackspacecloud.com") ) ) ;
-    socketC ss( tinP , etherP , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+    ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , etherP , T("identity.api.rackspacecloud.com") ) ) ;
+    socketC ss( tinBaseP , etherP , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
-    tSay += TF4(tSayBody.csF(tinP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
+    tSay += TF4(tSayBody.csF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
     ) ;
 
         "Content-Length: "
@@ -204,13 +204,13 @@ voidT raxDeleteWoFileF( tinS& tinP , etherC& etherP , const strokeS* const psttS
 
     TN( tSayBody ,
 {
-voidT raxGetAuthF( tinS& tinP , etherC& etherP , resultAuthS& rP , const strokeS* const psttUserP , const strokeS* const psttKeyP )
+voidT raxGetAuthF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , const strokeS* const psttUserP , const strokeS* const psttKeyP )
 
 }
     }
         }
             //}
-            //    etherP.traceF( tinP , T("[ids,idLevel]: ")+TF2(ids,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idLevel,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //    etherP.traceF( tinBaseP , T("[ids,idLevel]: ")+TF2(ids,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idLevel,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             //{
             //if( idLevelLag != idLevel )
 
@@ -222,10 +222,10 @@ voidT raxGetAuthF( tinS& tinP , etherC& etherP , resultAuthS& rP , const strokeS
                             ? ids + 1
                         idPairWoth = ids + 1 < idWordLath
 
-                        etherP.delF( tinP , psttPair ) ;
-                        pairF( tinP , etherP , rP , sP , stPathP , psttPair ) ;
-                        etherP.strTrimF( tinP , psttPair ) ; ___( psttPair ) ;
-                        etherP.strSubstringF( tinP , psttPair , idPairWoth , idPairLath , psttP ) ; ___( psttPair ) ;
+                        etherP.delF( tinBaseP , psttPair ) ;
+                        pairF( tinBaseP , etherP , rP , sP , stPathP , psttPair ) ;
+                        etherP.strTrimF( tinBaseP , psttPair ) ; ___( psttPair ) ;
+                        etherP.strSubstringF( tinBaseP , psttPair , idPairWoth , idPairLath , psttP ) ; ___( psttPair ) ;
                         ZE( strokeS* , psttPair ) ;
 
                         countT idPairLath = ids - 1 ;
@@ -248,9 +248,9 @@ voidT raxGetAuthF( tinS& tinP , etherC& etherP , resultAuthS& rP , const strokeS
 
             }
                 //}
-                //    etherP.delF( tinP , psttIgnored ) ;
-                //    etherP.traceF( tinP , T("ignored: ")+T(psttIgnored) ) ;
-                //    etherP.strSubstringF( tinP , psttIgnored , idf , idl , psttP ) ; ___( psttIgnored ) ;
+                //    etherP.delF( tinBaseP , psttIgnored ) ;
+                //    etherP.traceF( tinBaseP , T("ignored: ")+T(psttIgnored) ) ;
+                //    etherP.strSubstringF( tinBaseP , psttIgnored , idf , idl , psttP ) ; ___( psttIgnored ) ;
                 //    ZE( strokeS* , psttIgnored ) ;
                 //
                 //    countT idl = ids ;
@@ -295,16 +295,16 @@ voidT raxGetAuthF( tinS& tinP , etherC& etherP , resultAuthS& rP , const strokeS
     // 
     // RECIPE
 {
-voidT wordF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT wordF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     }
         }
             idValueWoth = 0 ;
-            etherP.delF( tinP , psttValue ) ;
-            valueF( tinP , etherP , rP , sP , stPathP , psttValue ) ;
-            etherP.strTrimF( tinP , psttValue ) ; ___( psttValue ) ;
-            etherP.strSubstringF( tinP , psttValue , idValueWoth , idValueLath , psttP ) ; ___( psttValue ) ;
+            etherP.delF( tinBaseP , psttValue ) ;
+            valueF( tinBaseP , etherP , rP , sP , stPathP , psttValue ) ;
+            etherP.strTrimF( tinBaseP , psttValue ) ; ___( psttValue ) ;
+            etherP.strSubstringF( tinBaseP , psttValue , idValueWoth , idValueLath , psttP ) ; ___( psttValue ) ;
             ZE( countT , idValueLath ) ;
             ZE( strokeS* , psttValue ) ;
         {
@@ -322,10 +322,10 @@ voidT wordF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , 
                         idValueWoth = ids + 1 <= idPairLath
 
                         idKeyWoth = 0 ;
-                        etherP.delF( tinP , psttKey ) ;
-                        keyF( tinP , etherP , rP , sP , stPathP , psttKey ) ;
-                        etherP.strTrimF( tinP , psttKey ) ; ___( psttKey ) ;
-                        etherP.strSubstringF( tinP , psttKey , idKeyWoth , idKeyLath , psttP ) ; ___( psttKey ) ;
+                        etherP.delF( tinBaseP , psttKey ) ;
+                        keyF( tinBaseP , etherP , rP , sP , stPathP , psttKey ) ;
+                        etherP.strTrimF( tinBaseP , psttKey ) ; ___( psttKey ) ;
+                        etherP.strSubstringF( tinBaseP , psttKey , idKeyWoth , idKeyLath , psttP ) ; ___( psttKey ) ;
                         ZE( strokeS* , psttKey ) ;
 
                         countT idKeyLath = ids - 1 ;
@@ -371,13 +371,13 @@ voidT wordF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , 
     // 
     // RECIPE
 
-    //etherP.traceF( tinP , T("[pair]: ")+T(psttP) ) ;
+    //etherP.traceF( tinBaseP , T("[pair]: ")+T(psttP) ) ;
 {
-voidT pairF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT pairF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     }
-        etherP.delF( tinP , psttKey ) ;
+        etherP.delF( tinBaseP , psttKey ) ;
         stPathP >> psttKey ;
         ZE( strokeS* , psttKey ) ;
     {
@@ -386,15 +386,15 @@ voidT pairF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , 
     }
         }
             break ;
-            wordF( tinP , etherP , rP , sP , stPathP , psttP ) ;
+            wordF( tinBaseP , etherP , rP , sP , stPathP , psttP ) ;
             if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) { BLAMMO ; }
         {
         case '{' :
         }
             break ;
-            etherP.delF( tinP , psttList ) ;
-            listF( tinP , etherP , rP , sP , stPathP , psttList ) ;
-            etherP.strSubstringF( tinP , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+            etherP.delF( tinBaseP , psttList ) ;
+            listF( tinBaseP , etherP , rP , sP , stPathP , psttList ) ;
+            etherP.strSubstringF( tinBaseP , psttList , idf , idl , psttP ) ; ___( psttList ) ;
             countT idl = psttP->idAdam - 1 ;
             countT idf = 2 ;
             ZE( strokeS* , psttList ) ;
@@ -408,46 +408,46 @@ voidT pairF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , 
     }
         }
             }
-                etherP.delF( tinP , psttw ) ;
+                etherP.delF( tinBaseP , psttw ) ;
                 rP.tTenantId = T(psttw) ;
-                strFromJsonF( tinP , etherP , psttw , sP.tMaybeTenantId ) ; ___( psttw ) ;
+                strFromJsonF( tinBaseP , etherP , psttw , sP.tMaybeTenantId ) ; ___( psttw ) ;
 
-                etherP.delF( tinP , psttw ) ;
+                etherP.delF( tinBaseP , psttw ) ;
                 rP.tPublicUrl = T(psttw) ;
-                strFromJsonF( tinP , etherP , psttw , sP.tMaybePublicUrl ) ; ___( psttw ) ;
+                strFromJsonF( tinBaseP , etherP , psttw , sP.tMaybePublicUrl ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;
             {
-            if( !etherP.strCompareF( tinP , psttP , T("\"object-store\"") ) )
+            if( !etherP.strCompareF( tinBaseP , psttP , T("\"object-store\"") ) )
         {
-        else if( !etherP.strCompareF( tinP , tPath , tWantObjectStore ) )
+        else if( !etherP.strCompareF( tinBaseP , tPath , tWantObjectStore ) )
         }
             }
                 sP.tMaybeTenantId = T(psttP) ;
             {
             if( F(sP.flags) & flME_MYrEGION )
         {
-        else if( !etherP.strCompareF( tinP , tPath , tWantTenantId ) )
+        else if( !etherP.strCompareF( tinBaseP , tPath , tWantTenantId ) )
         }
             }
                 sP.tMaybePublicUrl = T(psttP) ;
             {
             if( F(sP.flags) & flME_MYrEGION )
         {
-        else if( !etherP.strCompareF( tinP , tPath , tWantPublicURL ) )
+        else if( !etherP.strCompareF( tinBaseP , tPath , tWantPublicURL ) )
         }
             else                                                        sP.flags &= ~( flME_MYrEGION ) ;
-            if( !etherP.strCompareF( tinP , T(psttP) , T("\"IAD\"") ) ) sP.flags |=    flME_MYrEGION   ;
+            if( !etherP.strCompareF( tinBaseP , T(psttP) , T("\"IAD\"") ) ) sP.flags |=    flME_MYrEGION   ;
         {
-        else if( !etherP.strCompareF( tinP , tPath , tWantRegion ) )
+        else if( !etherP.strCompareF( tinBaseP , tPath , tWantRegion ) )
         }
-            etherP.delF( tinP , psttw ) ;
+            etherP.delF( tinBaseP , psttw ) ;
             rP.tAccessToken = T(psttw) ;
-            strFromJsonF( tinP , etherP , psttw , psttP ) ; ___( psttw ) ;
+            strFromJsonF( tinBaseP , etherP , psttw , psttP ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
         {
-        if( !etherP.strCompareF( tinP , tPath , tWantToken ) )
+        if( !etherP.strCompareF( tinBaseP , tPath , tWantToken ) )
 
-        //etherP.traceF( tinP , tPath ) ;
+        //etherP.traceF( tinBaseP , tPath ) ;
 
         TN( tWantObjectStore , "\"access\"/\"serviceCatalog\"/\"type\"/" ) ;
         TN( tWantPublicURL   , "\"access\"/\"serviceCatalog\"/\"endpoints\"/\"publicURL\"/" ) ;
@@ -463,30 +463,30 @@ voidT pairF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , 
 
     }
         while( ~hWalk ) ;
-        do tPath += T((strokeS*)stPathP.upF(tinP,hWalk))+T("/") ;
+        do tPath += T((strokeS*)stPathP.upF(tinBaseP,hWalk))+T("/") ;
     {
     if( stPathP )
     TN( tPath , "" ) ;
-    handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+    handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 {
-voidT valueF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT valueF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     stPathP << psttw ;
-    etherP.strMakeF( tinP , LF , psttw , psttP ) ; ___( psttw ) ;
+    etherP.strMakeF( tinBaseP , LF , psttw , psttP ) ; ___( psttw ) ;
     ZE( strokeS* , psttw ) ;
 
-    //etherP.traceF( tinP , T("[key]: ")+T(psttP) ) ;
+    //etherP.traceF( tinBaseP , T("[key]: ")+T(psttP) ) ;
 {
-voidT keyF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT keyF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     }
         }
-            etherP.delF( tinP , psttItem ) ;
-            itemF( tinP , etherP , rP , sP , stPathP , psttItem ) ;
-            etherP.strTrimF( tinP , psttItem ) ; ___( psttItem ) ;
-            etherP.strSubstringF( tinP , psttItem , idItemWoth , idItemLath , psttP ) ; ___( psttItem ) ;
+            etherP.delF( tinBaseP , psttItem ) ;
+            itemF( tinBaseP , etherP , rP , sP , stPathP , psttItem ) ;
+            etherP.strTrimF( tinBaseP , psttItem ) ; ___( psttItem ) ;
+            etherP.strSubstringF( tinBaseP , psttItem , idItemWoth , idItemLath , psttP ) ; ___( psttItem ) ;
             ZE( countT , idItemLath ) ;
             ZE( strokeS* , psttItem ) ;
         {
@@ -503,10 +503,10 @@ voidT keyF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , s
                             ? ids + 1
                         idItemWoth = ids + 1 <= idListLath
 
-                        etherP.delF( tinP , psttItem ) ;
-                        itemF( tinP , etherP , rP , sP , stPathP , psttItem ) ;
-                        etherP.strTrimF( tinP , psttItem ) ; ___( psttItem ) ;
-                        etherP.strSubstringF( tinP , psttItem , idItemWoth , idItemLath , psttP ) ; ___( psttItem ) ;
+                        etherP.delF( tinBaseP , psttItem ) ;
+                        itemF( tinBaseP , etherP , rP , sP , stPathP , psttItem ) ;
+                        etherP.strTrimF( tinBaseP , psttItem ) ; ___( psttItem ) ;
+                        etherP.strSubstringF( tinBaseP , psttItem , idItemWoth , idItemLath , psttP ) ; ___( psttItem ) ;
                         ZE( strokeS* , psttItem ) ;
 
                         countT idItemLath = ids - 1 ;
@@ -539,24 +539,24 @@ voidT keyF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , s
     {
     if( psttP->idAdam > 2 )
 
-    //etherP.traceF( tinP , T("[list]: ")+T(psttP) ) ;
+    //etherP.traceF( tinBaseP , T("[list]: ")+T(psttP) ) ;
 {
-voidT listF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT listF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
     }
         }
             }
                 break ;
-                wordF( tinP , etherP , rP , sP , stPathP , psttP ) ;
+                wordF( tinBaseP , etherP , rP , sP , stPathP , psttP ) ;
                 if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) { BLAMMO ; }
             {
             case '{' :
             }
                 break ;
-                etherP.delF( tinP , psttList ) ;
-                listF( tinP , etherP , rP , sP , stPathP , psttList ) ;
-                etherP.strSubstringF( tinP , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+                etherP.delF( tinBaseP , psttList ) ;
+                listF( tinBaseP , etherP , rP , sP , stPathP , psttList ) ;
+                etherP.strSubstringF( tinBaseP , psttList , idf , idl , psttP ) ; ___( psttList ) ;
                 countT idl = psttP->idAdam - 1 ;
                 countT idf = 2 ;
                 ZE( strokeS* , psttList ) ;
@@ -569,36 +569,36 @@ voidT listF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , 
     {
     if( psttP->idAdam )
 
-    //etherP.traceF( tinP , T("[item]: ")+T(psttP) ) ;
+    //etherP.traceF( tinBaseP , T("[item]: ")+T(psttP) ) ;
 {
-voidT itemF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
+voidT itemF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP )
 
 }
-    etherP.strReplaceF( tinP , psttP , 0 , T("\\/") , T("/") ) ; ___( psttP ) ;
-    etherP.strTrimF(    tinP , psttP , psttFromP , 0 , T("\"") ) ; ___( psttP ) ;
+    etherP.strReplaceF( tinBaseP , psttP , 0 , T("\\/") , T("/") ) ; ___( psttP ) ;
+    etherP.strTrimF(    tinBaseP , psttP , psttFromP , 0 , T("\"") ) ; ___( psttP ) ;
 {
-voidT strFromJsonF( tinS& tinP , etherC& etherP , strokeS*& psttP , const strokeS* const psttFromP )
+voidT strFromJsonF( tinBaseS& tinBaseP , etherC& etherP , strokeS*& psttP , const strokeS* const psttFromP )
 
-voidT wordF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP ) ;
-voidT listF( tinS& tinP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP ) ;
-
-}
-{
-tTenantId( tinP , TAG( TAGiDnULL ) )
-tPublicUrl( tinP , TAG( TAGiDnULL ) ) ,
-tAccessToken( tinP , TAG( TAGiDnULL ) ) ,
-resultAuthS::resultAuthS( tinS& tinP ) :
+voidT wordF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP ) ;
+voidT listF( tinBaseS& tinBaseP , etherC& etherP , resultAuthS& rP , scratchAuthS& sP , stackC& stPathP , const strokeS* const psttP ) ;
 
 }
 {
-tMaybeTenantId( tinP , TAG( TAGiDnULL ) )
-tMaybePublicUrl( tinP , TAG( TAGiDnULL ) ) ,
+tTenantId( tinBaseP , TAG( TAGiDnULL ) )
+tPublicUrl( tinBaseP , TAG( TAGiDnULL ) ) ,
+tAccessToken( tinBaseP , TAG( TAGiDnULL ) ) ,
+resultAuthS::resultAuthS( tinBaseS& tinBaseP ) :
+
+}
+{
+tMaybeTenantId( tinBaseP , TAG( TAGiDnULL ) )
+tMaybePublicUrl( tinBaseP , TAG( TAGiDnULL ) ) ,
 flags( flME_null ) ,
-scratchAuthS::scratchAuthS( tinS& tinP ) :
+scratchAuthS::scratchAuthS( tinBaseS& tinBaseP ) :
 
 ;
 }
-    resultAuthS( tinS& tinP ) ;
+    resultAuthS( tinBaseS& tinBaseP ) ;
 
     textC   tTenantId ;
     textC   tPublicUrl ;
@@ -608,7 +608,7 @@ struct resultAuthS
 
 ;
 }
-    scratchAuthS( tinS& tinP ) ;
+    scratchAuthS( tinBaseS& tinBaseP ) ;
 
     textC   tMaybeTenantId ;
     textC   tMaybePublicUrl ;

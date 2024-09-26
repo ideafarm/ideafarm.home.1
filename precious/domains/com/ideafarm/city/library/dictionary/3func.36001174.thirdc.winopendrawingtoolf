@@ -13,7 +13,7 @@
         }
             __1
             __( rc ) ;
-            countT rc = tinP.brcRaw ;
+            countT rc = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , GetLastError() )
         {
         if( !hP )
@@ -29,19 +29,19 @@
                         cAppNotes.c1 = pcP[ 0 ] ;
                         HANDLEaPPnOTEScOUNTcLASS& cAppNotes = hP ;
     
-                        delF( tinP , pcBlack ) ;
+                        delF( tinBaseP , pcBlack ) ;
 
                         INCoShANDLES
 
-                        hP.osF( ifcIDtYPEhANDLE_DRAWINGtOOL , tinP.brcRaw ) ;
+                        hP.osF( ifcIDtYPEhANDLE_DRAWINGtOOL , ((tinNormalS&)tinBaseP).brcRaw ) ;
                         BOSpOOP
                         BOS( WHATgbo , BOSoK , CreateBitmap( pcP[ 0 ] , pcP[ 1 ] , 1 , 1 , (voidT*)pcBlack ) )
                     {
                     if( pcBlack )
 
                     }
-                        c_memsetIF( tinP , (byteT*)pcBlack , cwca * sizeof( count01T ) ) ;
-                        newF( tinP , LF , pcBlack , cwca ) ; ___( pcBlack ) ;
+                        c_memsetIF( tinBaseP , (byteT*)pcBlack , cwca * sizeof( count01T ) ) ;
+                        newF( tinBaseP , LF , pcBlack , cwca ) ; ___( pcBlack ) ;
                         countT cwca = wpl * pcP[ 1 ] ;
                         countT wpl = ( pcP[ 0 ] + bpw - 1 ) / bpw ; //WEE PER LINE
 
@@ -69,7 +69,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::winOpenDrawingToolF( tinS& tinP , handleC& hP , const countT idTypeP , const countT* const pcP )/*1*/
+/*1*/voidT thirdC::winOpenDrawingToolF( tinBaseS& tinBaseP , handleC& hP , const countT idTypeP , const countT* const pcP )/*1*/
 
 /**/
 */
@@ -78,7 +78,7 @@
  pcP
  idTypeP
  hP
- tinP
+ tinBaseP
 arguments
 /*
 

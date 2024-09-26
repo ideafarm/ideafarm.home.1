@@ -12,7 +12,7 @@ REST
 }
     }
         }
-            etThread.delF( tinP , psttn ) ;
+            etThread.delF( tinBaseP , psttn ) ;
             CONoUTrAW( T(psttn)+tcr ) ;
     
             sIn >> psttn ;
@@ -38,15 +38,15 @@ __( idReply - ifcIDrEPLYmONITOR_POOLoLDnAMES ) ;
 sIn >> idReply ;
 ZE( countT , idReply ) ;
 
-sockm.readF( tinP , sIn ) ;
-soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+sockm.readF( tinBaseP , sIn ) ;
+soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-sockm.writeF( tinP , sOut ) ;
+sockm.writeF( tinBaseP , sOut ) ;
 sOut << (countT)ifcIDcMDmONITOR_POOLoLDnAMES ;
-soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-sockm.connectF( tinP , homeS::homeIF().idPortGlass2 , socketC::nicNameIF( tinP , etThread , T("10.1.1.1") ) ) ;
-socketC sockm( tinP , etThread , TAG( TAGiDnULL ) ) ;
+sockm.connectF( tinBaseP , homeS::homeIF().idPortGlass2 , socketC::nicNameIF( tinBaseP , etThread , T("10.1.1.1") ) ) ;
+socketC sockm( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

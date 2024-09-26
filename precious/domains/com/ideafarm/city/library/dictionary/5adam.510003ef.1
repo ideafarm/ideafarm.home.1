@@ -8,56 +8,56 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        etThread.osSleepF( tinP , TOCK ) ;
+        etThread.osSleepF( tinBaseP , TOCK ) ;
 
         }
-            etThread.strokeF( tinP , T("connecting to data eater\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("connecting to data eater\r\n") ) ;
             etThread = 0 ;
-            sOut.writeMsgF( tinP , "!amDry" ) ;
+            sOut.writeMsgF( tinBaseP , "!amDry" ) ;
             etThread = 0 ;
 
-            etThread.strokeF( tinP , T("sending termination to data eater\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("sending termination to data eater\r\n") ) ;
             }
-                etThread.osSleepF( tinP , TUCK * 32 ) ;
+                etThread.osSleepF( tinBaseP , TUCK * 32 ) ;
             {
-            while( !ether && etThread.os_cAllKidThreadsI_IF( tinP ) > !!( ether & fliEC_QUITTING ) )
+            while( !ether && etThread.os_cAllKidThreadsI_IF( tinBaseP ) > !!( ether & fliEC_QUITTING ) )
 
-            etThread.strokeF( tinP , T("a failure has been detected.  waiting for all kid threads to end\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("a failure has been detected.  waiting for all kid threads to end\r\n") ) ;
             }
-                else        { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmRouteF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&sOut ) ; }
+                else        { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmRouteF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&sOut ) ; }
                 if( ether ) { DEL( pso ) ; }
 
-                sIn.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+                sIn.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
                 ZE( countT , idPortPeer ) ;
                 nicNameC nnPeer ;
                 ZE( socketC* , pso ) ;
             {
             while( !etThread )
 
-            sIn.listenF( tinP ) ;
-            sIn.bindF( tinP , ifcPORToLD1rIVERrESERVED ) ;
-            socketC sIn( tinP , etThread , TAG( TAGiDnULL ) ) ;
+            sIn.listenF( tinBaseP ) ;
+            sIn.bindF( tinBaseP , ifcPORToLD1rIVERrESERVED ) ;
+            socketC sIn( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
-            sOut.connectF( tinP , ifcPORToLD1dATAeATER ) ;
-            socketC sOut( tinP , etThread , TAG( TAGiDnULL ) ) ;
+            sOut.connectF( tinBaseP , ifcPORToLD1dATAeATER ) ;
+            socketC sOut( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
         {
     {
     while( !ether )
 
-    etThread.strokeF( tinP , T("IdeaFarm " "(tm) City Data Router to Handler Process\r\ni route incoming data (normally from remote hosts) to the (normally local)\r\nsocket that handles its type\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Data Router to Handler Process\r\ni route incoming data (normally from remote hosts) to the (normally local)\r\nsocket that handles its type\r\n") ) ;
 {
 else
 }
-    etThread.strokeF( tinP , T("Another ")+textIdFileC( tinP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tinBaseP , T("Another ")+textIdFileC( tinBaseP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinP , TAG( TAGiDnULL ) , T("1f30104") ) ;
+batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("1f30104") ) ;
 
 __1 // RETIRED
 
@@ -70,18 +70,18 @@ DONE( tmRouteF )
 
     while( !bDry ) ;
     }
-        etThread.delF( tinP , pbMsg ) ;
-        if( !bDry ) sOut.writeMsgF( tinP , pbMsg , cbMsg ) ; // CAN INSPECT DATA TYPE AND SELECT AMONG MULTIPLE POSSIBLE RECIPIENTS, INCLUDING RECIPIENTS AT HOSTS MAINTAINED BY OTHER HUMAN CITIZENS.  (NOTE: pbMsg MIGHT CONTAIN MORE THAN ONE DATUM)
-        bDry = cbMsg == tDry.csF( tinP ) && !etThread.strCompareF( tinP , T(pbMsg) , tDry ) ;
-        pso->readMsgOkF( tinP ) ;
-        countT cbMsg = pso->readMsgF( tinP , pbMsg ) ;
+        etThread.delF( tinBaseP , pbMsg ) ;
+        if( !bDry ) sOut.writeMsgF( tinBaseP , pbMsg , cbMsg ) ; // CAN INSPECT DATA TYPE AND SELECT AMONG MULTIPLE POSSIBLE RECIPIENTS, INCLUDING RECIPIENTS AT HOSTS MAINTAINED BY OTHER HUMAN CITIZENS.  (NOTE: pbMsg MIGHT CONTAIN MORE THAN ONE DATUM)
+        bDry = cbMsg == tDry.csF( tinBaseP ) && !etThread.strCompareF( tinBaseP , T(pbMsg) , tDry ) ;
+        pso->readMsgOkF( tinBaseP ) ;
+        countT cbMsg = pso->readMsgF( tinBaseP , pbMsg ) ;
         ZE( byteT* , pbMsg ) ;
     {
     do
     ZE( boolT , bDry ) ;
     TN( tDry , "!amDry" ) ;
 
-    pso->etherF( tinP , etThread ) ;
+    pso->etherF( tinBaseP , etThread ) ;
     socketC& sOut = *(socketC*)pTaskP->c2 ;
     socketC* pso  =  (socketC*)pTaskP->c1 ;
 {

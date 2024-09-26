@@ -32,16 +32,16 @@
         {
         if( F(flagsP) & flBOUND_OIL )
 
-        //snapF( tinP , ether , 1 , (countT*)(const countT*)aIdAdam ) ;
+        //snapF( tinBaseP , ether , 1 , (countT*)(const countT*)aIdAdam ) ;
         stqr_boundingFrame >> pb_bf ;
         byteT* pb_bf = (byteT*)&bf ;
 
         }
             flagsMode = flagsSave ;
 
-            if( F(flagsP) & flBOUND_RELATIVE11 ) x1.back.wrapRenderF( tinP , T("")+S2(0,scOld_POPoRIGIN)                   , &hClone            ) ;
-                                         cWrap = x1.back.wrapRenderF( tinP , psttP                                      , &hClone  , aIdAdam ) ;
-            if( F(flagsP) & flBOUND_RELATIVE11 ) x1.back.wrapRenderF( tinP , T("")+S2(flPUSHoRIGIN_WOwO,scOld_cPUSHoRIGIN) , &hClone            ) ;
+            if( F(flagsP) & flBOUND_RELATIVE11 ) x1.back.wrapRenderF( tinBaseP , T("")+S2(0,scOld_POPoRIGIN)                   , &hClone            ) ;
+                                         cWrap = x1.back.wrapRenderF( tinBaseP , psttP                                      , &hClone  , aIdAdam ) ;
+            if( F(flagsP) & flBOUND_RELATIVE11 ) x1.back.wrapRenderF( tinBaseP , T("")+S2(flPUSHoRIGIN_WOwO,scOld_cPUSHoRIGIN) , &hClone            ) ;
 
             flagsMode |= flPULPmODE_SUPPRESSpELcOLORcHANGES ;
             const flagsT flagsSave = flagsMode ;
@@ -50,10 +50,10 @@
         stqr_boundingFrame << (byteT*)&bf ;
         strokingFrameS bf ;
 
-        sadamsC::pSadamsIF( tinP )->freezeF( tinP , hClone , phCloneP ) ;
-        handleC hClone( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_sadamsC ) ;
+        sadamsC::pSadamsIF( tinBaseP )->freezeF( tinBaseP , hClone , phCloneP ) ;
+        handleC hClone( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_sadamsC ) ;
 
-        //snapF( tinP , ether , 0 , (countT*)(const countT*)aIdAdam ) ;
+        //snapF( tinBaseP , ether , 0 , (countT*)(const countT*)aIdAdam ) ;
     {
     if( psttP && psttP->idAdam )
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //TO ALLOW DT OF stInvalid
@@ -69,7 +69,7 @@
         if( pczIdAdamSnapP ) while( *pczIdAdamSnapP ) *(countT*)&aIdAdam[ offoNext ++ ] = *( pczIdAdamSnapP ++ ) ;
         ZE( countT , offoNext ) ;
     {
-    arrayC aIdAdam( tinP , sizeof( countT ) , TUCK ) ;
+    arrayC aIdAdam( tinBaseP , sizeof( countT ) , TUCK ) ;
     ZE( countT , cWrap ) ;
 
     _IO_
@@ -85,7 +85,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT pulpOldC::boundingRectF( tinS& tinP , measureT& mIdColMinP , measureT& mIdRowMinP , measureT& mColsP , measureT& mRowsP , const strokeS* const psttP , const handleC* const phCloneP , const countT* pczIdAdamSnapP , const flagsT flagsP )/*1*/
+/*1*/countT pulpOldC::boundingRectF( tinBaseS& tinBaseP , measureT& mIdColMinP , measureT& mIdRowMinP , measureT& mColsP , measureT& mRowsP , const strokeS* const psttP , const handleC* const phCloneP , const countT* pczIdAdamSnapP , const flagsT flagsP )/*1*/
 
 /**/
 */
@@ -98,7 +98,7 @@
  mColsP
  mIdRowMinP
  mIdColMinP
- tinP
+ tinBaseP
 arguments
  example: if the current position is the lowest, leftmost pel drawn, mIdColMinP will be set to 1
 the values returned can optionally be relative to the current position (1,1)

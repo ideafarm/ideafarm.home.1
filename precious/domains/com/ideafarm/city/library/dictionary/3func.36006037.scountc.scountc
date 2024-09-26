@@ -8,10 +8,10 @@
 
 
 }
-    setBitRangeF( tinP , pc , cbit , SC - 1 ) ;
-    ether.memCopyF( tinP , (byteT*)pc , (byteT*)&cP , (SC/SB) ) ;
-    ether.memSetF( tinP , (byteT*)pc , (SC/SB) ) ;
-    ether.newF( tinP , LF , pc , 1 ) ; ___( pc ) ;
+    setBitRangeF( tinBaseP , pc , cbit , SC - 1 ) ;
+    ether.memCopyF( tinBaseP , (byteT*)pc , (byteT*)&cP , (SC/SB) ) ;
+    ether.memSetF( tinBaseP , (byteT*)pc , (SC/SB) ) ;
+    ether.newF( tinBaseP , LF , pc , 1 ) ; ___( pc ) ;
     _IO_
 
     }
@@ -20,9 +20,9 @@
     IFbEcAREFUL
 {
 pc( 0 )
-cbit( cbitF( tinP , cP ) ) ,
+cbit( cbitF( tinBaseP , cP ) ) ,
 ether( etherP ) ,
-/**//*1*/sCountC::sCountC( tinS& tinP , etherC& etherP , const sCountT cP )/*1*/ :
+/**//*1*/sCountC::sCountC( tinBaseS& tinBaseP , etherC& etherP , const sCountT cP )/*1*/ :
 */
  cP
  etherP

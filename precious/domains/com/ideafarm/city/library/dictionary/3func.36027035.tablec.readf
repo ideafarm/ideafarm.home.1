@@ -11,7 +11,7 @@
     return cbi ;
 
     }
-        readF( tinP , stStringsOfBytesToDeleteP , stTablesToDeleteP , stStacksToDeleteP , pbi2 , pbi + cbi ) ;
+        readF( tinBaseP , stStringsOfBytesToDeleteP , stTablesToDeleteP , stStacksToDeleteP , pbi2 , pbi + cbi ) ;
         const byteT*& pbi2 = (const byteT*&)pbi ;
 
         stStringsOfBytesToDeleteP << (countT)pbi ;
@@ -27,7 +27,7 @@
             POOPR
         {
         if( POOP && !cTriesP )
-        tinP.pEtScratch->boxGetShadowF( tinP , pbi , cbi , psttP , cTriesP ) ; ___( pbi ) ;
+        ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbi , cbi , psttP , cTriesP ) ; ___( pbi ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -45,7 +45,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT tableC::readF( tinS& tinP , stackC& stStringsOfBytesToDeleteP , stackC& stTablesToDeleteP , stackC& stStacksToDeleteP , const strokeS* const psttP , const countT cTriesP )/*1*/
+/*1*/countT tableC::readF( tinBaseS& tinBaseP , stackC& stStringsOfBytesToDeleteP , stackC& stTablesToDeleteP , stackC& stStacksToDeleteP , const strokeS* const psttP , const countT cTriesP )/*1*/
 
 /**/
 */
@@ -67,7 +67,7 @@
   the caller is responsible for deleting these strings
   pointers to strings of byteT objects created by me will be put onto this stack
  stStringsOfBytesToDeleteP
- tinP
+ tinBaseP
 arguments
 i can either contain no rows or already contain rows
 i must be set up and ready to accept new rows

@@ -12,12 +12,12 @@
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     POPtINaRGS
-    flagsRC |= list.walkF( tinP , idGrabLayerP ) ;
-    tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT | flagsP ;
-    tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkIndexCBF ;
+    flagsRC |= list.walkF( tinBaseP , idGrabLayerP ) ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT | flagsP ;
+    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkIndexCBF ;
     PUSHtINaRGS
 
-    grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+    grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     if( !( list.flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
     listC& list = *(listC*)hListP.osF( ifcIDtYPEhANDLE_LISTING ) ;
@@ -35,7 +35,7 @@
 
     flagsT flagsRC = flLISTwALKrETURNcODE_null ;
 {
-/*1*/flagsT listC::indexIF( tinS& tinP , handleC& hListP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT listC::indexIF( tinBaseS& tinBaseP , handleC& hListP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
 
 /**/
 */

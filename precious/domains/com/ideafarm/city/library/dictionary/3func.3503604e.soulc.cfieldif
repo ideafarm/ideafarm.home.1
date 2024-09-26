@@ -8,7 +8,7 @@
 
 
 }
-    return pbc ? ((countT*)pbc)[ 3 ] : tinP.pag1->_soulC_.cnu ;
+    return pbc ? ((countT*)pbc)[ 3 ] : ((tinNormalS&)tinBaseP).pag1->_soulC_.cnu ;
 
     if( POOP ) pbc = 0 ;
     }
@@ -42,11 +42,11 @@
     _IO_
 
     }
-        if( !idFieldP || !pbsP ) return tinP.pag1->_soulC_.cnu ;
+        if( !idFieldP || !pbsP ) return ((tinNormalS&)tinBaseP).pag1->_soulC_.cnu ;
     {
     IFbEcAREFUL    
 {
-/*1*/countT& soulC::cFieldIF( tinS& tinP , countT idFieldP , const byteT* const pbsP )/*1*/
+/*1*/countT& soulC::cFieldIF( tinBaseS& tinBaseP , countT idFieldP , const byteT* const pbsP )/*1*/
 
 /**/
 */
@@ -57,7 +57,7 @@
   1 refers to the wo'th field in the soul
   must not be 0
  idFieldP
- tinP
+ tinBaseP
 arguments
 warning: do not use the reference that i evaluate to after calling any function that removes the referenced object from the soulC object
 my return value can be used to modify the field

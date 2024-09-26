@@ -8,32 +8,32 @@
 
 
 }
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
     }
         }
             while( ~hUp && !third && !pStack->third ) ;
-            do stackP << pStack->upF( tinP , hUp ) ;
-            handleC hUp( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            do stackP << pStack->upF( tinBaseP , hUp ) ;
+            handleC hUp( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         {
         if( pStack && *pStack )
         stackC* pStack = (stackC*)(countT)swMe[ idf ] ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swMe.cFlavorsF( tinP ) ;
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    countT cFlavors = swMe.cFlavorsF( tinBaseP ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return ;
-        __( stackP.flagsF( tinP )  - flagsStack  ) ;
-        __( stackP.idTypeF( tinP ) != ifcSTACKtYPE_ANY && stackP.idTypeF( tinP ) != idType ) ;
+        __( stackP.flagsF( tinBaseP )  - flagsStack  ) ;
+        __( stackP.idTypeF( tinBaseP ) != ifcSTACKtYPE_ANY && stackP.idTypeF( tinBaseP ) != idType ) ;
         if( third ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT switchStackC::stackF( tinS& tinP , stackC& stackP )/*1*/
+/*1*/voidT switchStackC::stackF( tinBaseS& tinBaseP , stackC& stackP )/*1*/
 
 /**/
 */
@@ -41,7 +41,7 @@
   must have the same flags as me
   must either be of same type as me or of type ifcSTACKtYPE_ANY
  stackP
- tinP
+ tinBaseP
 arguments
  it is the caller's responsibility to ensure that the pointer values are not used after they are no longer valid
  i do not create copies of the data being pointed to

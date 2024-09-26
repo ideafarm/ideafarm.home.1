@@ -8,13 +8,13 @@
 
 
 }
-    dosWriteF( tinP , handle , pbP , cbP ) ;
-    dosOpenF( tinP , handle , idr , postP , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_FAIL , ifcOPENhOW_nCeR ) ;
+    dosWriteF( tinBaseP , handle , pbP , cbP ) ;
+    dosOpenF( tinBaseP , handle , idr , postP , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_FAIL , ifcOPENhOW_nCeR ) ;
     ZE( countT , idr ) ;
-    handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
     SCOOP
 {
-/*1*/voidT thirdC::dosWriteF( tinS& tinP , const osTextT* const postP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/voidT thirdC::dosWriteF( tinBaseS& tinBaseP , const osTextT* const postP , const byteT* const pbP , const countT cbP )/*1*/
 
 /**/
 */

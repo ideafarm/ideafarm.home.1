@@ -9,11 +9,11 @@
 
 REST
 
-while( stPhrasesLog || tinP.cKidThreads ) etThread.osSleepF( tinP , TOCK ) ;
+while( stPhrasesLog || ((tinNormalS&)tinBaseP).cKidThreads ) etThread.osSleepF( tinBaseP , TOCK ) ;
 }
-    etThread.delF( tinP , psttr ) ;
-    etThread.boxPutF( tinP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM) , postr , costr ) ;
-    countT costr = etThread.strMakeF( tinP , LF , postr , tr ) ; ___( postr ) ;
+    etThread.delF( tinBaseP , psttr ) ;
+    etThread.boxPutF( tinBaseP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM) , postr , costr ) ;
+    countT costr = etThread.strMakeF( tinBaseP , LF , postr , tr ) ; ___( postr ) ;
     ZE( osTextT* , postr ) ;
 
     tr = tr1+tr2 ;
@@ -23,32 +23,32 @@ while( stPhrasesLog || tinP.cKidThreads ) etThread.osSleepF( tinP , TOCK ) ;
     TN( tr1 , "" ) ;
     TN( tr , "" ) ;
 
-    etThread.strConcatenateF( tinP , psttr , stPhrases ) ; ___( psttr ) ;
+    etThread.strConcatenateF( tinBaseP , psttr , stPhrases ) ; ___( psttr ) ;
     ZE( strokeS* , psttr ) ;
 {
 
-etThread.ifcDrivenServerF( tinP , i1 , i2 ) ;
-serverInfo2S i2( 0x1f40 , flSOCKETc_null , TF2(thirdC::third_idAdamRootI_IF( tinP ),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , 0 , (countT)&c8p , 0 , - 1 , 1 , sizeof( stateS ) , translateStateF ) ;
+etThread.ifcDrivenServerF( tinBaseP , i1 , i2 ) ;
+serverInfo2S i2( 0x1f40 , flSOCKETc_null , TF2(thirdC::third_idAdamRootI_IF( tinBaseP ),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , 0 , (countT)&c8p , 0 , - 1 , 1 , sizeof( stateS ) , translateStateF ) ;
 serverInfo1S i1( &pbdVarying , b_pbdVarying , bHandedOff , sgnIdPortReplaced , tmcF , countTC() , ether ) ;
-etThread.ifcChatF( tinP , cArg , DDNUMB , chatHandlerF ) ;
-etThread.osThreadF(  tinP , countTC() , tmLogF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cArg ) ;
+etThread.ifcChatF( tinBaseP , cArg , DDNUMB , chatHandlerF ) ;
+etThread.osThreadF(  tinBaseP , countTC() , tmLogF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cArg ) ;
 
 countT cArg = (countT)&c8p ;
-c8p.c5 = (countT)&tinP.cKidThreads ;
+c8p.c5 = (countT)&((tinNormalS&)tinBaseP).cKidThreads ;
 c8p.c4 = (countT)&stPhrasesLog ;
 c8p.c3 = (countT)&stPhrases ;
 c8p.c2 = (countT)&b_pbdVarying ;
 c8p.c1 = (countT)&pbdVarying ;
 count8S c8p ;
 
-stackC stPhrasesLog( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-stackC stPhrases(    tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC stPhrasesLog( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC stPhrases(    tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
 ZE( boolT , bHandedOff ) ;
-batonC b_pbdVarying( tinP , TAG( TAGiDnULL ) ) ;
+batonC b_pbdVarying( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( byteT* , pbdVarying ) ;
-signC sgnIdPortReplaced( tinP , TAG( TAGiDnULL ) ) ;
+signC sgnIdPortReplaced( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.boxPutF( tinP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM) , "Subject: wiretapper reporting for duty\r\n\r\na new wiretapper is now on duty.\r\nwhen i am dismissed, i will report the results of my shift to you\r\n" ) ; //U::
+etThread.boxPutF( tinBaseP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM) , "Subject: wiretapper reporting for duty\r\n\r\na new wiretapper is now on duty.\r\nwhen i am dismissed, i will report the results of my shift to you\r\n" ) ; //U::
 
 TODO
 
@@ -66,32 +66,32 @@ TODO
                 case ifcIDcMDsESSION_BYE :
                 }
                     break ;
-                    psoP->writeF( tinP , sInP ) ;
+                    psoP->writeF( tinBaseP , sInP ) ;
                 {
                 case ifcIDcMDsESSION_ECHO :
             {
-            switch( sInP.cFieldF( tinP ) )
+            switch( sInP.cFieldF( tinBaseP ) )
         {
-        if( !etThread && !*tinP.zEtScratch )
-        psoP->readF( tinP , sInP ) ;
-        soulC sInP( tinP , TAG( TAGiDnULL ) ) ;
+        if( !etThread && !*((tinNormalS&)tinBaseP).zEtScratch )
+        psoP->readF( tinBaseP , sInP ) ;
+        soulC sInP( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    while( !ether && !etThread && !*tinP.zEtScratch && !bBye )
+    while( !ether && !etThread && !*((tinNormalS&)tinBaseP).zEtScratch && !bBye )
     ZE( boolT , bBye ) ;
 {
-voidT chatHandlerF( tinS& tinP , etherC& ether , etherC& etThread , socketC*& psoP , const countT idChatSessionP , countT cArgP , const countT idAdamHandlingP )
+voidT chatHandlerF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , socketC*& psoP , const countT idChatSessionP , countT cArgP , const countT idAdamHandlingP )
 
 DONE( tmLogF )
 
 }
     }
-        ether.osSleepF( tinP , TOCK ) ;
+        ether.osSleepF( tinBaseP , TOCK ) ;
         }
-            etThread.delF( tinP , psttp ) ;
+            etThread.delF( tinBaseP , psttp ) ;
             }
-                etThread.delF( tinP , postp ) ;
-                thirdC::logIF( tinP , "\\log.ifc.c240104" , 0 , 0 , 0 , (countT)postp , 0 , costp ) ;
-                countT costp = etThread.strMakeF( tinP , LF , postp , psttp ) ; ___( postp ) ;
+                etThread.delF( tinBaseP , postp ) ;
+                thirdC::logIF( tinBaseP , "\\log.ifc.c240104" , 0 , 0 , 0 , (countT)postp , 0 , costp ) ;
+                countT costp = etThread.strMakeF( tinBaseP , LF , postp , psttp ) ; ___( postp ) ;
                 ZE( osTextT* , postp ) ;
             {
             if( psttp )
@@ -114,17 +114,17 @@ TASK( tmLogF )
 
 DONEdRIVENsERVER( tmcF )
 }
-    while( !bQuit ) bQuit = woRequestF( tinP , etThread , *tinP.zEtScratch , *pso , stPhrases , stPhrasesLog ) ;
+    while( !bQuit ) bQuit = woRequestF( tinBaseP , etThread , *((tinNormalS&)tinBaseP).zEtScratch , *pso , stPhrases , stPhrasesLog ) ;
     ZE( boolT , bQuit ) ;
 
-    b_pbdVarying.ungrabF( tinP ) ;
+    b_pbdVarying.ungrabF( tinBaseP ) ;
     }
         TN( t_cHamburgers , "" ) ; t_cHamburgers = TF3(++state.cHamburgers,0,8) ;
         TN( t_idMe        , "" ) ; t_idMe        = TF3(state.idMe,0,8) ;
         stateS& state = *(stateS*)pbdVarying ;
     {
     if( pbdVarying )
-    b_pbdVarying.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    b_pbdVarying.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 
     countT&      cKidThreads   =      *(countT*)c8p.c5 ;
@@ -146,187 +146,187 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
 
 }
     return 1 ;
-    stPhrasesP.ungrabF( tinP ) ;
+    stPhrasesP.ungrabF( tinBaseP ) ;
 
     }
-        sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_9) ) ;
+        sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_9) ) ;
         }
-            etThread.delF( tinP , postBody ) ;
+            etThread.delF( tinBaseP , postBody ) ;
             }
-                sClientP.writeF( tinP , postBody , costBody ) ;
-                sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_4C) ) ;
-                else               sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postBody) ) ;
-                if( bEncodedBody ) sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , tEncoded    ) ;
-                sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_4B) ) ;
+                sClientP.writeF( tinBaseP , postBody , costBody ) ;
+                sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_4C) ) ;
+                else               sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postBody) ) ;
+                if( bEncodedBody ) sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , tEncoded    ) ;
+                sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_4B) ) ;
             {
             if( postBody && costBody )
         {
-        if( !*tinP.zEtScratch )
-        sClientP.writeF( tinP , "\r\n" , 2 ) ;
+        if( !*((tinNormalS&)tinBaseP).zEtScratch )
+        sClientP.writeF( tinBaseP , "\r\n" , 2 ) ;
         }
-            etThread.delF( tinP , postl ) ;
-            sClientP.writeF( tinP , "\r\n" , 2 ) ;
-            sClientP.writeF( tinP , postl , costl ) ;
-            sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postl)+tCRLF ) ;
-            etThread.delF( tinP , psttl ) ;
-            countT costl = etThread.strMakeF( tinP , LF , postl , psttl ) ; ___( postl ) ;
+            etThread.delF( tinBaseP , postl ) ;
+            sClientP.writeF( tinBaseP , "\r\n" , 2 ) ;
+            sClientP.writeF( tinBaseP , postl , costl ) ;
+            sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postl)+tCRLF ) ;
+            etThread.delF( tinBaseP , psttl ) ;
+            countT costl = etThread.strMakeF( tinBaseP , LF , postl , psttl ) ; ___( postl ) ;
             ZE( osTextT* , postl ) ;
             stHeaderLines >> psttl ;
             ZE( strokeS* , psttl ) ;
         {
         while( stHeaderLines )
-        sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_4A) ) ;
+        sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_4A) ) ;
         // WRITE REPLY TO CLIENT
 
-        sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_3C) ) ;
+        sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_3C) ) ;
         }
-            else               sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postBody) ) ;
-            if( bEncodedBody ) sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , tEncoded    ) ;
+            else               sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postBody) ) ;
+            if( bEncodedBody ) sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , tEncoded    ) ;
             if( postBody ) postBody[ costBody ] = 0 ;
-            sServer.readF( tinP , postBody , costBody ) ;
-            etThread.newF( tinP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
-            sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_3B) ) ;
+            sServer.readF( tinBaseP , postBody , costBody ) ;
+            etThread.newF( tinBaseP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
+            sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_3B) ) ;
         {
         if( costBody )
-        { ZE( strokeS* , psttHost ) ; bEncodedBody = 0 ; readHeaderLinesF( tinP , etThread , etThread , sServer , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , psttHost , 1 ) ; etThread.delF( tinP , psttHost ) ; }
-        sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_3A) ) ;
+        { ZE( strokeS* , psttHost ) ; bEncodedBody = 0 ; readHeaderLinesF( tinBaseP , etThread , etThread , sServer , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , psttHost , 1 ) ; etThread.delF( tinBaseP , psttHost ) ; }
+        sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_3A) ) ;
         ZE( countT , costBody ) ;
         ZE( osTextT* , postBody ) ;
         // READ REPLY FROM SERVER
 
-        etThread.delF( tinP , psttBody ) ;
-        sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2C) ) ;
+        etThread.delF( tinBaseP , psttBody ) ;
+        sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2C) ) ;
         }
-            etThread.delF( tinP , postBody ) ;
-            sServer.writeF( tinP , postBody , costBody ) ;
-            else               sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , psttBody ) ;
-            if( bEncodedBody ) sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , tEncoded    ) ;
-            countT costBody = etThread.strMakeF( tinP , LF , postBody , psttBody ) ; ___( postBody ) ;
+            etThread.delF( tinBaseP , postBody ) ;
+            sServer.writeF( tinBaseP , postBody , costBody ) ;
+            else               sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , psttBody ) ;
+            if( bEncodedBody ) sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , tEncoded    ) ;
+            countT costBody = etThread.strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
             ZE( osTextT* , postBody ) ;
-            sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2B) ) ;
+            sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2B) ) ;
         {
         if( psttBody && psttBody->idAdam )
-        sServer.writeF( tinP , "\r\n" , 2 ) ;
+        sServer.writeF( tinBaseP , "\r\n" , 2 ) ;
         }
-            etThread.delF( tinP , postl ) ;
-            sServer.writeF( tinP , "\r\n" , 2 ) ;
-            sServer.writeF( tinP , postl , costl ) ;
-            sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postl)+tCRLF ) ;
-            etThread.delF( tinP , psttl ) ;
-            countT costl = etThread.strMakeF( tinP , LF , postl , psttl ) ; ___( postl ) ;
+            etThread.delF( tinBaseP , postl ) ;
+            sServer.writeF( tinBaseP , "\r\n" , 2 ) ;
+            sServer.writeF( tinBaseP , postl , costl ) ;
+            sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postl)+tCRLF ) ;
+            etThread.delF( tinBaseP , psttl ) ;
+            countT costl = etThread.strMakeF( tinBaseP , LF , postl , psttl ) ; ___( postl ) ;
             ZE( osTextT* , postl ) ;
             stHeaderLines >> psttl ;
             ZE( strokeS* , psttl ) ;
         {
         while( stHeaderLines )
-        sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2A) ) ;
-        etThread.delF( tinP , psttHost ) ;
-        sServer.connectF( tinP , 0x50 , socketC::nicNameIF( tinP , etThread , psttHost ) ) ;
-        socketC sServer( tinP , etThread , TAG( TAGiDnULL ) ) ;
+        sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2A) ) ;
+        etThread.delF( tinBaseP , psttHost ) ;
+        sServer.connectF( tinBaseP , 0x50 , socketC::nicNameIF( tinBaseP , etThread , psttHost ) ) ;
+        socketC sServer( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
         // WRITE REQUEST TO SERVER
     {
-    if( !*tinP.zEtScratch && stHeaderLines ) // DO NOT KNOW WHY THIS HAPPENS WITH IE5.5: CONJ: WHEN I AM RUN ON IFC21, I AM SO SLOW THAT IE5.5 ABANDONS THE REQUEST
+    if( !*((tinNormalS&)tinBaseP).zEtScratch && stHeaderLines ) // DO NOT KNOW WHY THIS HAPPENS WITH IE5.5: CONJ: WHEN I AM RUN ON IFC21, I AM SO SLOW THAT IE5.5 ABANDONS THE REQUEST
 
-    sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T("psttHost: \"")+T(psttHost)+T("\"\r\n") ) ;
+    sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T("psttHost: \"")+T(psttHost)+T("\"\r\n") ) ;
 
     }
-        sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1C) ) ;
+        sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1C) ) ;
         }
             }
-                else               sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , psttBody ) ;
-                if( bEncodedBody ) sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , tEncoded ) ;
-                etThread.delF( tinP , postBody ) ;
-                etThread.strMakeF( tinP , LF , psttBody , T(postBody) ) ; ___( psttBody ) ;
+                else               sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , psttBody ) ;
+                if( bEncodedBody ) sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , tEncoded ) ;
+                etThread.delF( tinBaseP , postBody ) ;
+                etThread.strMakeF( tinBaseP , LF , psttBody , T(postBody) ) ; ___( psttBody ) ;
                 if( postBody ) postBody[ costBody ] = 0 ;
             {
-            if( !*tinP.zEtScratch )
-            sClientP.readF( tinP , postBody , costBody ) ;
-            etThread.newF( tinP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
+            if( !*((tinNormalS&)tinBaseP).zEtScratch )
+            sClientP.readF( tinBaseP , postBody , costBody ) ;
+            etThread.newF( tinBaseP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
             ZE( osTextT* , postBody ) ;
-            sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1B) ) ;
+            sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1B) ) ;
         {
-        if( !*tinP.zEtScratch && costBody )
+        if( !*((tinNormalS&)tinBaseP).zEtScratch && costBody )
 
-        readHeaderLinesF( tinP , etThread , *tinP.zEtScratch , sClientP , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , psttHost ) ;
+        readHeaderLinesF( tinBaseP , etThread , *((tinNormalS&)tinBaseP).zEtScratch , sClientP , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , psttHost ) ;
         bEncodedBody = 0 ;
-        sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1A) ) ;
+        sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1A) ) ;
         ZE( countT , costBody ) ;
     {
-    stackC stHeaderLines( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stHeaderLines( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
     ZE( boolT , bEncodedBody ) ;
     ZE( strokeS* , psttBody ) ;
     ZE( strokeS* , psttHost ) ;
     // READ REQUEST FROM CLIENT
-    sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_0) ) ;
+    sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_0) ) ;
     TN( tEncoded , "[encoded]\r\n" ) ;
     TN( tCRLF , "\r\n" ) ;
 
-    stPhrasesP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stPhrasesP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-boolT woRequestF( tinS& tinP , etherC& etThread , socketC& sClientP , stackC& stPhrasesP , stackC& stPhrasesLogP )
+boolT woRequestF( tinBaseS& tinBaseP , etherC& etThread , socketC& sClientP , stackC& stPhrasesP , stackC& stPhrasesLogP )
 */
 /*
 
 }
-    etThread.delF( tinP , psttPVersion ) ;
-    etThread.delF( tinP , psttProtocol ) ;
-    etThread.delF( tinP , psttUrl ) ;
-    etThread.delF( tinP , psttAction ) ;
+    etThread.delF( tinBaseP , psttPVersion ) ;
+    etThread.delF( tinBaseP , psttProtocol ) ;
+    etThread.delF( tinBaseP , psttUrl ) ;
+    etThread.delF( tinBaseP , psttAction ) ;
 
     }
-        etThread.delF( tinP , psttl ) ;
+        etThread.delF( tinBaseP , psttl ) ;
         }
             break ;
-            etThread.delF( tinP , psttl ) ;
+            etThread.delF( tinBaseP , psttl ) ;
         {
         else
         }
             }
-                etThread.delF( tinP , psttValue ) ;
-                etThread.delF( tinP , psttKey ) ;
+                etThread.delF( tinBaseP , psttValue ) ;
+                etThread.delF( tinBaseP , psttKey ) ;
                 }
-                    bEncodedBodyP = 1 == etThread.strIdF( tinP , idf , sttq , tImage , psttValue ) ;
+                    bEncodedBodyP = 1 == etThread.strIdF( tinBaseP , idf , sttq , tImage , psttValue ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf = 1 ;
-                    etThread.strConvertToLowerCaseF( tinP , psttValue ) ; ___( psttValue ) ;
+                    etThread.strConvertToLowerCaseF( tinBaseP , psttValue ) ; ___( psttValue ) ;
                 {
-                else if( !etThread.strCompareF( tinP , psttKey , tContentType   ) )
-                     if( !etThread.strCompareF( tinP , psttKey , tContentLength ) ) costBodyP = etThread.strDigitsToSCountF( tinP , psttValue , 0xa , 1 ) ;
-                etThread.strSubstringF( tinP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
+                else if( !etThread.strCompareF( tinBaseP , psttKey , tContentType   ) )
+                     if( !etThread.strCompareF( tinBaseP , psttKey , tContentLength ) ) costBodyP = etThread.strDigitsToSCountF( tinBaseP , psttValue , 0xa , 1 ) ;
+                etThread.strSubstringF( tinBaseP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
                 ZE( countT , idl ) ;
-                etThread.strConvertToLowerCaseF( tinP , psttKey ) ; ___( psttKey ) ;
-                etThread.strSubstringF( tinP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
+                etThread.strConvertToLowerCaseF( tinBaseP , psttKey ) ; ___( psttKey ) ;
+                etThread.strSubstringF( tinBaseP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttValue ) ;
                 ZE( strokeS* , psttKey ) ;
             {
             else
             }
-                sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T("psttHostP:    \"")+T(psttHostP)+tEQCRLF ) ;
-                sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T("psttPVersion: \"")+T(psttPVersion)+tEQCRLF ) ;
-                sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T("psttProtocol: \"")+T(psttProtocol)+tEQCRLF ) ;
-                sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T("psttUrl:      \"")+T(psttUrl)+tEQCRLF ) ;
-                sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T("psttAction:   \"")+T(psttAction)+tEQCRLF ) ;
+                sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T("psttHostP:    \"")+T(psttHostP)+tEQCRLF ) ;
+                sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T("psttPVersion: \"")+T(psttPVersion)+tEQCRLF ) ;
+                sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T("psttProtocol: \"")+T(psttProtocol)+tEQCRLF ) ;
+                sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T("psttUrl:      \"")+T(psttUrl)+tEQCRLF ) ;
+                sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T("psttAction:   \"")+T(psttAction)+tEQCRLF ) ;
 
                 else __1
                 }
-                    etThread.strSubstringF( tinP , psttHostP , idf , sttq , tSlash , psttUrl ) ; ___( psttPVersion ) ;
+                    etThread.strSubstringF( tinBaseP , psttHostP , idf , sttq , tSlash , psttUrl ) ; ___( psttPVersion ) ;
                 {
-                if( 1 == etThread.strIdF( tinP , idf , sttq , tHttpColonSS , psttUrl ) )
+                if( 1 == etThread.strIdF( tinBaseP , idf , sttq , tHttpColonSS , psttUrl ) )
                 idf = 1 ; /*sttq = ze ;*/
 
-                etThread.delF( tinP , psttw ) ;
-                etThread.strSubstringF( tinP , psttPVersion , idf , sttq , tSlash , psttw ) ; ___( psttPVersion ) ;
-                etThread.strSubstringF( tinP , psttProtocol , idf , sttq , tSlash , psttw ) ; ___( psttProtocol ) ;
+                etThread.delF( tinBaseP , psttw ) ;
+                etThread.strSubstringF( tinBaseP , psttPVersion , idf , sttq , tSlash , psttw ) ; ___( psttPVersion ) ;
+                etThread.strSubstringF( tinBaseP , psttProtocol , idf , sttq , tSlash , psttw ) ; ___( psttProtocol ) ;
                 idf = 1 ; /*sttq = ze ;*/
-                etThread.strConvertToLowerCaseF( tinP , psttw ) ; ___( psttw ) ;
-                etThread.strSubstringF( tinP , psttw , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw ) ;
+                etThread.strConvertToLowerCaseF( tinBaseP , psttw ) ; ___( psttw ) ;
+                etThread.strSubstringF( tinBaseP , psttw , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;
 
-                etThread.strSubstringF( tinP , psttUrl , idf , sttq , tBlank , psttl , 1 ) ; ___( psttUrl ) ;
+                etThread.strSubstringF( tinBaseP , psttUrl , idf , sttq , tBlank , psttl , 1 ) ; ___( psttUrl ) ;
 
-                etThread.strConvertToLowerCaseF( tinP , psttAction ) ; ___( psttAction ) ;
-                etThread.strSubstringF( tinP , psttAction , idf , sttq , tBlank , psttl , 1 ) ; ___( psttAction ) ;
+                etThread.strConvertToLowerCaseF( tinBaseP , psttAction ) ; ___( psttAction ) ;
+                etThread.strSubstringF( tinBaseP , psttAction , idf , sttq , tBlank , psttl , 1 ) ; ___( psttAction ) ;
 
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 countT idf = 1 ;
@@ -338,16 +338,16 @@ boolT woRequestF( tinS& tinP , etherC& etThread , socketC& sClientP , stackC& st
                 TN( tBlank       , " "       ) ;
             {
             if( !bReplyP && !psttAction )
-            sayF( tinP , etThread , stPhrasesP , stPhrasesLogP , T(psttl)+tCRLF ) ;
+            sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(psttl)+tCRLF ) ;
 
-            stP << psttOldC( tinP , etThread , psttl ) ;
+            stP << psttOldC( tinBaseP , etThread , psttl ) ;
         {
-        if( !*tinP.zEtScratch && psttl && psttl->idAdam )
-        sInP.readWoLineF( tinP , psttl , 0x200 ) ; ___( psttl ) ;
+        if( !*((tinNormalS&)tinBaseP).zEtScratch && psttl && psttl->idAdam )
+        sInP.readWoLineF( tinBaseP , psttl , 0x200 ) ; ___( psttl ) ;
         ZE( strokeS* , psttl ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     {
-    while( !*tinP.zEtScratch && !etThread )
+    while( !*((tinNormalS&)tinBaseP).zEtScratch && !etThread )
 
     ZE( strokeS* , psttPVersion ) ;
     ZE( strokeS* , psttProtocol ) ;
@@ -360,13 +360,13 @@ boolT woRequestF( tinS& tinP , etherC& etThread , socketC& sClientP , stackC& st
     TN( tColonWhite , ": " ) ;
     TN( tCRLF , "\r\n" ) ;
 {
-voidT readHeaderLinesF( tinS& tinP , etherC& etThread , socketC& sInP , stackC& stPhrasesP , stackC& stPhrasesLogP , stackC& stP , countT& costBodyP , boolT& bEncodedBodyP , strokeS*& psttHostP , const boolT bReplyP = 0 )
+voidT readHeaderLinesF( tinBaseS& tinBaseP , etherC& etThread , socketC& sInP , stackC& stPhrasesP , stackC& stPhrasesLogP , stackC& stP , countT& costBodyP , boolT& bEncodedBodyP , strokeS*& psttHostP , const boolT bReplyP = 0 )
 
 }
-    stPhrasesLogP << psttOldC( tinP , etThread , psttP ) ;
-    stPhrasesP    << psttOldC( tinP , etThread , psttP ) ;
+    stPhrasesLogP << psttOldC( tinBaseP , etThread , psttP ) ;
+    stPhrasesP    << psttOldC( tinBaseP , etThread , psttP ) ;
 {
-voidT sayF( tinS& tinP , etherC& etThread , stackC& stPhrasesP , stackC& stPhrasesLogP , const strokeS* const psttP )
+voidT sayF( tinBaseS& tinBaseP , etherC& etThread , stackC& stPhrasesP , stackC& stPhrasesLogP , const strokeS* const psttP )
 
 ;
 }

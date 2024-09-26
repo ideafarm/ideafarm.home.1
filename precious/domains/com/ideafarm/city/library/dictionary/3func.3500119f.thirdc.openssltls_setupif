@@ -18,7 +18,7 @@
 
 
 
-        if( ec ) etherC::etTextIF( tinP ).traceF( tinP , T("openSslTls_setupIF / exception caught") ) ;
+        if( ec ) etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslTls_setupIF / exception caught") ) ;
                             c_openSslTls_setupIF( &ec ) ;
         ZE( countT , ec ) ;
 
@@ -36,9 +36,9 @@
 
 
 
-    if( !( F(tinP.flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL ) ) { BLAMMO ; }
+    if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL ) ) { BLAMMO ; }
 {
-/**//*1*/voidT thirdC::openSslTls_setupIF( tinS& tinP )/*1*/
+/**//*1*/voidT thirdC::openSslTls_setupIF( tinBaseS& tinBaseP )/*1*/
 */
 /*
 

@@ -17,16 +17,16 @@
             break ;
 
             }
-                etherC::etRockIF( tinP ).traceF( tinP , T("pushed : ")+T(psttShortP) ) ;
+                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("pushed : ")+T(psttShortP) ) ;
             {
             else
             }
                 continue ;
-                etPrime.osSleepF( tinP , TICK << 0 ) ; // NAP IS LONG TO DEACTIVATE THIS THREAD SO THAT OTHER THREADS HAVE A CHANCE TO COMPLETE ; THIS IS INTENDED TODYNAMICALLY RESPOND TO CHANGING CONNECTIVITY AND SERVER RESPONSIVENESS CONDITIONS
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                etPrime.osSleepF( tinBaseP , TICK << 0 ) ; // NAP IS LONG TO DEACTIVATE THIS THREAD SO THAT OTHER THREADS HAVE A CHANCE TO COMPLETE ; THIS IS INTENDED TODYNAMICALLY RESPOND TO CHANGING CONNECTIVITY AND SERVER RESPONSIVENESS CONDITIONS
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                etherC::etRockIF( tinP ).traceF( tinP , T("pushFileF / unexpected or unsatisfactory reply (only \"created\" is satisfactory) ; will retry after napping 1 tick") ) ;
-                etherC::etRockIF( tinP ).traceF( tinP , tHear ) ;
+                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("pushFileF / unexpected or unsatisfactory reply (only \"created\" is satisfactory) ; will retry after napping 1 tick") ) ;
+                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , tHear ) ;
                 POOPR
             {
             if( POOP )
@@ -34,45 +34,45 @@
             __Z( bOk ) ;
 
             ;
-                //!etScratch.strIdF( tinP , tReplyCode202_Accepted , tHear )
+                //!etScratch.strIdF( tinBaseP , tReplyCode202_Accepted , tHear )
                 //&&
-                !!etScratch.strIdF( tinP , tReplyCode201_Created , tHear )
+                !!etScratch.strIdF( tinBaseP , tReplyCode201_Created , tHear )
             boolT bOk =
 
-            if( etScratch.strIdF( tinP , tReplyCode202_Accepted , tHear ) ) etherC::etRockIF( tinP ).traceF( tinP , T("\"accepted\" response received, which is not satisfactory so i will retry") ) ;
+            if( etScratch.strIdF( tinBaseP , tReplyCode202_Accepted , tHear ) ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("\"accepted\" response received, which is not satisfactory so i will retry") ) ;
 
             }
                 continue ;
 
                 tSay = tn ;
-                bHandle.ungrabF( tinP ) ;
-                openF( tinP , idCloud , tBuilding , tUser , tPassword ) ;
+                bHandle.ungrabF( tinBaseP ) ;
+                openF( tinBaseP , idCloud , tBuilding , tUser , tPassword ) ;
                 hCloud.closeIfF() ;
-                bHandle.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                etherC::etRockIF( tinP ).traceF( tinP , T("authorization refused ; obtaining new authorization") ) ;
+                bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("authorization refused ; obtaining new authorization") ) ;
 
                 POOPR
             {
             if( POOP )
 
-            __NZ( 1 == etScratch.strIdF( tinP , tReplyCode401_Unauthorized , tHear ) ) ;
+            __NZ( 1 == etScratch.strIdF( tinBaseP , tReplyCode401_Unauthorized , tHear ) ) ;
 
             TN( tHear , postHear ) ;
 
             }
                 //}
                 //    break ;
-                //    etherC::etRockIF( tinP ).traceF( tinP , T("pushFileF / connect , write, or read failed ; not forgiven") ) ;
+                //    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("pushFileF / connect , write, or read failed ; not forgiven") ) ;
                 //    bPermanentFailure = 1 ;
                 //{
                 //else
                 //}
                     continue ;
-                    etPrime.osSleepF( tinP , TOCK << 3 ) ;
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                    etPrime.osSleepF( tinBaseP , TOCK << 3 ) ;
+                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                    etherC::etRockIF( tinP ).traceF( tinP , T("pushFileF / connect , write, or read failed ; forgiven ; will retry after napping 8 tock.") ) ;
-                    //etherC::etRockIF( tinP ).traceF( tinP , T("pushFileF / connect , write, or read failed ; forgiven ; will retry after napping 01 tock.  (")+TF2(cForgive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" remain)") ) ;
+                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("pushFileF / connect , write, or read failed ; forgiven ; will retry after napping 8 tock.") ) ;
+                    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("pushFileF / connect , write, or read failed ; forgiven ; will retry after napping 01 tock.  (")+TF2(cForgive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" remain)") ) ;
                 //{
                 //if( cForgive -- )
 
@@ -82,20 +82,20 @@
 
             //}
             //    __1
-            //    etherC::etRockIF( tinP ).traceF( tinP , T("simulated connect write or read error") ) ;
+            //    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("simulated connect write or read error") ) ;
             //{
             //if( bFuckItUp )
 
             }
-                costHear = ss.readF( tinP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
-                thirdC::c_memsetIF(  tinP , postHear , sizeof postHear ) ;
+                costHear = ss.readF( tinBaseP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+                thirdC::c_memsetIF(  tinBaseP , postHear , sizeof postHear ) ;
 
                 }
-                    etScratch.delF( tinP , pbBuffer ) ;
+                    etScratch.delF( tinBaseP , pbBuffer ) ;
                     }
                         }
-                            ss.writeF(           tinP , pbBuffer , cbNow      ) ;
-                            etScratch.fileReadF( tinP , pbBuffer , cbNow , fi ) ;
+                            ss.writeF(           tinBaseP , pbBuffer , cbNow      ) ;
+                            etScratch.fileReadF( tinBaseP , pbBuffer , cbNow , fi ) ;
                 
                             cDoLo -= cbNow ;
                             if( cDoLo < cbNow ) cDoHi -- ;
@@ -110,7 +110,7 @@
                     {
                     if( pbBuffer )
                 
-                    etScratch.newF( tinP , LF , pbBuffer , cbChunk ) ; ___( pbBuffer ) ;
+                    etScratch.newF( tinBaseP , LF , pbBuffer , cbChunk ) ; ___( pbBuffer ) ;
                     ZE( byteT* , pbBuffer ) ;
                 
                     ;
@@ -121,38 +121,38 @@
                     }
                         DEL( pInfo ) ;
                         if( pInfo ) cbUsed = pInfo->cbUsed ;
-                        etScratch.diskFileQueryF( tinP , pInfo , fi ) ;
+                        etScratch.diskFileQueryF( tinBaseP , pInfo , fi ) ;
                         ZE( infoFileS* , pInfo ) ;
                     {
-                    fileC fi( tinP , (strokeS*)( T(psttLocalContainerP)+T(psttShortP) ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+                    fileC fi( tinBaseP , (strokeS*)( T(psttLocalContainerP)+T(psttShortP) ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
                     ZE( countT , cbUsed ) ;
                 {
                 if( !bGhost )
 
-                batConnectP.ungrabF( tinP ) ;
-                ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
-                ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , etScratch , tHost ) ) ;
-                batConnectP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                socketC ss( tinP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL /*, &idleTimeAllowedRead , &idleTimeAllowedWrite*/ ) ;
+                batConnectP.ungrabF( tinBaseP ) ;
+                ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+                ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , etScratch , tHost ) ) ;
+                batConnectP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                socketC ss( tinBaseP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL /*, &idleTimeAllowedRead , &idleTimeAllowedWrite*/ ) ;
                 //countT idleTimeAllowedWrite = TICK >> 1 ;
                 //countT idleTimeAllowedRead  = TICK >> 1 ;
             {
 
             }
-                etScratch.delF( tinP , psttShortUrlEncoded ) ;
+                etScratch.delF( tinBaseP , psttShortUrlEncoded ) ;
                 }
-                    bHandle.ungrabF( tinP ) ;
+                    bHandle.ungrabF( tinBaseP ) ;
                     tSay = T("PUT ")+tUrlCloudAgent+T("/")+T(psttCloudContainerP)+T("/")+T(psttShortUrlEncoded)+T(" HTTP/1.1\r\nHost: ")+tHost+T("\r\nX-Auth-Token: ")+cloudInfo.tRackspaceAccessToken+T("\r\nContent-Length: ")+TF4(cbUsed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
                     cloudInfoS& cloudInfo = *(cloudInfoS*)hCloud.osF( ifcIDtYPEhANDLE_CLOUD ) ;
-                    bHandle.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
 
                 }
                     DEL( pInfo ) ;
                     if( pInfo ) cbUsed = pInfo->cbUsed ;
-                    etScratch.diskFileQueryF( tinP , pInfo , fi ) ;
+                    etScratch.diskFileQueryF( tinBaseP , pInfo , fi ) ;
                     ZE( infoFileS* , pInfo ) ;
-                    fileC fi( tinP , (strokeS*)( T(psttLocalContainerP)+T(psttShortP) ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+                    fileC fi( tinBaseP , (strokeS*)( T(psttLocalContainerP)+T(psttShortP) ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
                 {
                 if( !bGhost )
                 ZE( countT , cbUsed ) ;
@@ -167,17 +167,17 @@
                 // 
                 // EXAMPLE
 
-                etScratch.strToUrlF( tinP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
+                etScratch.strToUrlF( tinBaseP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
                 ZE( strokeS* , psttShortUrlEncoded ) ;
             {
-            if( !tSay.csF( tinP ) )
+            if( !tSay.csF( tinBaseP ) )
         {
         while( !etPrime && !POOP )
         TN( tSay , "" ) ;
         TN( tn , "" ) ;
         //countT cForgive = 0x4 ;
-        etherC& etScratch = *tinP.pEtScratch ;
-        etherC& etPrime   = etherC::etPrimeIF( tinP ) ;
+        etherC& etScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
+        etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
         ZE( countT , costHear ) ;
         char postHear[ TOCK ] ; 
         const boolT bGhost = F(flagsCtF()) & flCLOUDc_GHOST ;
@@ -187,12 +187,12 @@
     IFsCRATCH
     //ZE( boolT , bPermanentFailure ) ;
 
-    //etRock.traceF( tinP , T("the PUT utterance has been appended to the log") ) ;
+    //etRock.traceF( tinBaseP , T("the PUT utterance has been appended to the log") ) ;
     //LOGrAW( tSay ) ;
 
     //}
     //    bFuckItUp = 1 ;
-    //    etherC::etRockIF( tinP ).traceF( tinP , T("simulating a permanent error for this file because idIn is ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    //    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("simulating a permanent error for this file because idIn is ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     //{
     //if( !( idIn % 0x4 ) )
     //ZE( boolT , bFuckItUp ) ;
@@ -201,8 +201,8 @@
     //static countT idInLath ;
     //U::TO TEST AND FIND A BUG
 
-    etRock.traceF( tinP , T("pushing: ")+T(psttShortP) ) ;
-    etherC& etRock = etherC::etherC::etRockIF( tinP ) ;
+    etRock.traceF( tinBaseP , T("pushing: ")+T(psttShortP) ) ;
+    etherC& etRock = etherC::etherC::etRockIF( tinBaseP ) ;
 
     _IO_
 
@@ -217,7 +217,7 @@
 
     SCOOP
 {
-/*1*/voidT cloudC::pushFileF( tinS& tinP , batonC& batConnectP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP , const strokeS* const psttLocalContainerP )/*1*/
+/*1*/voidT cloudC::pushFileF( tinBaseS& tinBaseP , batonC& batConnectP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP , const strokeS* const psttLocalContainerP )/*1*/
 
 /**/
 */

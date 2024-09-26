@@ -10,14 +10,14 @@
 REST
 
 
-//etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("bye!") ) ;
+//etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("bye!") ) ;
 
 #endif
 
-if( !bStop ) ether.ifcHireF( tinP , T("f hiring self") , ifcIDaDAM_SCRATCH0f , T("!stop") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+if( !bStop ) ether.ifcHireF( tinBaseP , T("f hiring self") , ifcIDaDAM_SCRATCH0f , T("!stop") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
 
-etThread.traceF( tinP , T("[idNumaNode]: ")+TF2(processGlobal2S::_processGlobal2I_IF().idNumaNode,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tinBaseP , T("[idNumaNode]: ")+TF2(processGlobal2S::_processGlobal2I_IF().idNumaNode,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
 if( !bStop ) *(countT*)&processGlobal2S::_processGlobal2I_IF().idNumaNode = 0x87654321 ;
 
@@ -27,10 +27,10 @@ if( !bStop ) *(countT*)&processGlobal2S::_processGlobal2I_IF().idNumaNode = 0x87
             break ;
             bStop = 1 ;
         {
-        if( !etThread.strCompareF( tinP , psttc1 , T("!stop") ) )
+        if( !etThread.strCompareF( tinBaseP , psttc1 , T("!stop") ) )
     {
     FORsTRINGSiN1( pzstt1p )
-    strokeS*& pzstt1p = etThread.ether_pstt1_processParametersI_F( tinP ) ;
+    strokeS*& pzstt1p = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
 {
 ZE( boolT , bStop ) ;
 
@@ -41,7 +41,7 @@ static BOOL bOk = QueryWorkingSetEx( GetCurrentProcess() , &info , sizeof info )
 
 
 info.VirtualAddress = &info ;
-thirdC::c_memsetIF( tinP , (byteT*)&info  , sizeof info , 0xbb ) ;
+thirdC::c_memsetIF( tinBaseP , (byteT*)&info  , sizeof info , 0xbb ) ;
 static PSAPI_WORKING_SET_EX_INFORMATION info ;
 
 if( foo ) ;
@@ -65,19 +65,19 @@ static countT foo = PSAPI_VERSION ;
         {
         if( pInfoGrain[ offg ].VirtualAttributes.Node != processGlobal2S::_processGlobal2I_IF().idNumaNode - 1 )
 
-        thirdC::c_strcatIF( tinP , postSay, "\r\n" ) ;
+        thirdC::c_strcatIF( tinBaseP , postSay, "\r\n" ) ;
         }
-            default                      : { thirdC::c_strcatIF( tinP , postSay, " notRecognized   " ) ; break ; }
-            //case PAGE_TARGETS_NO_UPDATE  : { thirdC::c_strcatIF( tinP , postSay, " targetsNoUpdate " ) ; break ; }
-            //case PAGE_TARGETS_INVALID    : { thirdC::c_strcatIF( tinP , postSay, " targetsInvalid  " ) ; break ; }
-            case PAGE_WRITECOPY          : { thirdC::c_strcatIF( tinP , postSay, " writeCopy       " ) ; break ; }
-            case PAGE_READWRITE          : { thirdC::c_strcatIF( tinP , postSay, " readWrite       " ) ; break ; }
-            case PAGE_READONLY           : { thirdC::c_strcatIF( tinP , postSay, " readOnly        " ) ; break ; }
-            case PAGE_NOACCESS           : { thirdC::c_strcatIF( tinP , postSay, " noAccess        " ) ; break ; }
-            case PAGE_EXECUTE_WRITECOPY  : { thirdC::c_strcatIF( tinP , postSay, " executeWriteCopy" ) ; break ; }
-            case PAGE_EXECUTE_READWRITE  : { thirdC::c_strcatIF( tinP , postSay, " executeReadWrite" ) ; break ; }
-            case PAGE_EXECUTE_READ       : { thirdC::c_strcatIF( tinP , postSay, " executeRead     " ) ; break ; }
-            case PAGE_EXECUTE            : { thirdC::c_strcatIF( tinP , postSay, " execute         " ) ; break ; }
+            default                      : { thirdC::c_strcatIF( tinBaseP , postSay, " notRecognized   " ) ; break ; }
+            //case PAGE_TARGETS_NO_UPDATE  : { thirdC::c_strcatIF( tinBaseP , postSay, " targetsNoUpdate " ) ; break ; }
+            //case PAGE_TARGETS_INVALID    : { thirdC::c_strcatIF( tinBaseP , postSay, " targetsInvalid  " ) ; break ; }
+            case PAGE_WRITECOPY          : { thirdC::c_strcatIF( tinBaseP , postSay, " writeCopy       " ) ; break ; }
+            case PAGE_READWRITE          : { thirdC::c_strcatIF( tinBaseP , postSay, " readWrite       " ) ; break ; }
+            case PAGE_READONLY           : { thirdC::c_strcatIF( tinBaseP , postSay, " readOnly        " ) ; break ; }
+            case PAGE_NOACCESS           : { thirdC::c_strcatIF( tinBaseP , postSay, " noAccess        " ) ; break ; }
+            case PAGE_EXECUTE_WRITECOPY  : { thirdC::c_strcatIF( tinBaseP , postSay, " executeWriteCopy" ) ; break ; }
+            case PAGE_EXECUTE_READWRITE  : { thirdC::c_strcatIF( tinBaseP , postSay, " executeReadWrite" ) ; break ; }
+            case PAGE_EXECUTE_READ       : { thirdC::c_strcatIF( tinBaseP , postSay, " executeRead     " ) ; break ; }
+            case PAGE_EXECUTE            : { thirdC::c_strcatIF( tinBaseP , postSay, " execute         " ) ; break ; }
         {
         switch( pInfoGrain[ offg ].VirtualAttributes.Win32Protection )
         
@@ -106,7 +106,7 @@ static processGlobal2S& pg1 = processGlobal2S::_processGlobal2I_IF() ;
 
 #if defined( NEVERdEFINED )
 
-fooF( tinP ) ;
+fooF( tinBaseP ) ;
 
 
 
@@ -188,24 +188,24 @@ fooF( tinP ) ;
 // //static countT rc = (countT)LoadLibraryEx( "d:\\tmp\\ssleay32.dll" , 0 , /*LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR*/0x100 ) ;
 // static countT rc = (countT)LoadLibraryEx( "d:\\tmp\\libeay32.dll" , 0 , /*LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR*/0x100 ) ;
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("loafing!") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("loafing!") ) ;
 
 TODO
 
 }
-    thirdC::osTraceWrongNodeIF( tinP , (byteT*)fooF , "adam f fooF" ) ;
+    thirdC::osTraceWrongNodeIF( tinBaseP , (byteT*)fooF , "adam f fooF" ) ;
 
     _IO_
 {
-voidT gooF( tinS& tinP )
+voidT gooF( tinBaseS& tinBaseP )
 
 }
-    thirdC::osTraceWrongNodeIF( tinP , (byteT*)fooF , "adam f fooF" ) ;
+    thirdC::osTraceWrongNodeIF( tinBaseP , (byteT*)fooF , "adam f fooF" ) ;
 
     _IO_
 {
-voidT fooF( tinS& tinP )
+voidT fooF( tinBaseS& tinBaseP )
 
 
 /*1*/WAKEsHOWtEXT( "was.scratch.f.archived.20180508@1202.scr" )/*1*/

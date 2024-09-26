@@ -8,7 +8,7 @@
 
 
 }
-    if( cbP && flagsP && tinP.fingerprint && etherP && !handleP ) ;
+    if( cbP && flagsP && ((tinNormalS&)tinBaseP).fingerprint && etherP && !handleP ) ;
 
     }
         }
@@ -23,11 +23,11 @@
                     }
                         sBranch << (countT)*hdr.pSw_idKidLathHugged ;
                         sBranch << hdr.psttLeverKids ;
-                        treeP.psttLeverKidsShared = hdr.psttLeverKids = (strokeS*)hdr.pSwsKids->leverF( tinP , idf ) ;
+                        treeP.psttLeverKidsShared = hdr.psttLeverKids = (strokeS*)hdr.pSwsKids->leverF( tinBaseP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                     sBranch << cFlavors ;
-                    countT cFlavors = hdr.pSwsKids->cFlavorsF( tinP ) ;
+                    countT cFlavors = hdr.pSwsKids->cFlavorsF( tinBaseP ) ;
                 {
                 if( F(flagsTreeWrite) & flTREEwRITE_pSwsKids )
 
@@ -48,13 +48,13 @@
                 }
                     }
                         *hdr.pSw_idKidLathHugged = idLathRef ;
-                        stKids.pPlateF( tinP , idLathRef ) ;
+                        stKids.pPlateF( tinBaseP , idLathRef ) ;
                         ZE( countT , idLathRef ) ;
                         stackC& stKids = *hdr.pSwsKids ;
-                        treeP.psttLeverKidsShared = hdr.psttLeverKids = (strokeS*)hdr.pSwsKids->leverF( tinP , idf ) ;
+                        treeP.psttLeverKidsShared = hdr.psttLeverKids = (strokeS*)hdr.pSwsKids->leverF( tinBaseP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                    countT cFlavors = hdr.pSwsKids->cFlavorsF( tinP ) ;
+                    countT cFlavors = hdr.pSwsKids->cFlavorsF( tinBaseP ) ;
                 {
                 if( F(flagsTreeWrite) & flTREEwRITE_pSwsKids )
 
@@ -67,11 +67,11 @@
                     }
                         sBranch << *(strokeS**)&(countT&)*hdr.pSw_psttWife ;
                         sBranch << hdr.cLeverWife ;
-                        hdr.cLeverWife = treeP.cLeverWifeShared = hdr.pSw_psttWife->leverF( tinP , idf ) ;
+                        hdr.cLeverWife = treeP.cLeverWifeShared = hdr.pSw_psttWife->leverF( tinBaseP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                     sBranch << cFlavors ;
-                    countT cFlavors = hdr.pSw_psttWife->cFlavorsF( tinP ) ;
+                    countT cFlavors = hdr.pSw_psttWife->cFlavorsF( tinBaseP ) ;
                 {
                 if( F(flagsTreeWrite) & flTREEwRITE_pSw_psttWife )
 
@@ -102,7 +102,7 @@
     treeOldC& treeP   = *(treeOldC*)c2p.c1 ;
     count2S& c2p   = *(count2S*)cArgP ;
 {
-/*1*/voidT _treeWriteCBF( tinS& tinP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP )/*1*/
+/*1*/voidT _treeWriteCBF( tinBaseS& tinBaseP , etherC& etherP , const countT idTypeP , const flagsT flagsP , const handleC& handleP , byteT* pbP , countT cbP , countT& cArgP )/*1*/
 
 /**/
 */

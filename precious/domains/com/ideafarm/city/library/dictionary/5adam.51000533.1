@@ -14,13 +14,13 @@ REST
         }
             break ;
             stAgain << idPacketNext ;
-            //etThread.strokeF( tinP , T("packet ")+TF1(idPacketNext)+T(" requesting resend\r\n") ) ;
+            //etThread.strokeF( tinBaseP , T("packet ")+TF1(idPacketNext)+T(" requesting resend\r\n") ) ;
         {
         else
         }
             ++ idPacketNext ;
             if( idPacket != idPacketNext ) { BLAMMO ; }
-            etThread.strokeF( tinP , T("packet ")+TF1(idPacket)+T(" received\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("packet ")+TF1(idPacket)+T(" received\r\n") ) ;
             stGen >> idPacket ;
             ZE( countT , idPacket ) ;
         {
@@ -28,33 +28,33 @@ REST
     {
     while( stGen && !ether && !etThread )
 
-    stGen.waitF( tinP ) ;
+    stGen.waitF( tinBaseP ) ;
 {
 while( !ether && !etThread )
 countT idPacketNext = 1 ;
 
-etThread.osThreadF( tinP , countTC() , tmGenF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stGen , (countT)&stAgain ) ;
+etThread.osThreadF( tinBaseP , countTC() , tmGenF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stGen , (countT)&stAgain ) ;
 
-stackC stAgain( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
-stackC stGen( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_GIVEsIGNnEWpLATE ) ;
+stackC stAgain( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+stackC stGen( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_GIVEsIGNnEWpLATE ) ;
 
 TODO
 
 DONE( tmGenF )
 }
-    stGenP.sinkF( tinP , countTC() , (countT)-1 ) ;
+    stGenP.sinkF( tinBaseP , countTC() , (countT)-1 ) ;
     }
-        while( cTries -- && !stAgainP ) { ++ s ; ether.osSleepF( tinP , TUCK * 0x10 ) ; }
+        while( cTries -- && !stAgainP ) { ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x10 ) ; }
         countT cTries = 0x10 ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        else            stGenP.sinkF( tinP , countTC() , ++ idPacket , flSTACKsINK_UNIQUE ) ;
-        if( !cDrawing ) ++ idPacket ;//etThread.strokeF( tinP , T("packet ")+TF1(++idPacket)+T(" omitted\r\n") ) ;
+        else            stGenP.sinkF( tinBaseP , countTC() , ++ idPacket , flSTACKsINK_UNIQUE ) ;
+        if( !cDrawing ) ++ idPacket ;//etThread.strokeF( tinBaseP , T("packet ")+TF1(++idPacket)+T(" omitted\r\n") ) ;
         countT cDrawing = ru ;
 
         }
-            stGenP.sinkF( tinP , countTC() , idPacketAgain , flSTACKsINK_UNIQUE ) ;
-            //etThread.strokeF( tinP , T("packet ")+TF1(idPacketAgain)+T(" sending again\r\n") ) ;
+            stGenP.sinkF( tinBaseP , countTC() , idPacketAgain , flSTACKsINK_UNIQUE ) ;
+            //etThread.strokeF( tinBaseP , T("packet ")+TF1(idPacketAgain)+T(" sending again\r\n") ) ;
             stAgainP >> idPacketAgain ;
             ZE( countT , idPacketAgain ) ;
         {

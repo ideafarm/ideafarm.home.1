@@ -28,19 +28,19 @@
                     OStEXTAK( ostoSay , "[offg,@,offNode]:    " ) ;
                     OStEXT(   ostoSay , TUCK << 1 ) ;
 
-                    c_strcatIF( tinP , postSay, "\r\n" ) ;
+                    c_strcatIF( tinBaseP , postSay, "\r\n" ) ;
                     }
-                        default                      : { thirdC::c_strcatIF( tinP , postSay, " notRecognized   " ) ; break ; }
-                        //case PAGE_TARGETS_NO_UPDATE  : { thirdC::c_strcatIF( tinP , postSay, " targetsNoUpdate " ) ; break ; }
-                        //case PAGE_TARGETS_INVALID    : { thirdC::c_strcatIF( tinP , postSay, " targetsInvalid  " ) ; break ; }
-                        case PAGE_WRITECOPY          : { thirdC::c_strcatIF( tinP , postSay, " writeCopy       " ) ; break ; }
-                        case PAGE_READWRITE          : { thirdC::c_strcatIF( tinP , postSay, " readWrite       " ) ; break ; }
-                        case PAGE_READONLY           : { thirdC::c_strcatIF( tinP , postSay, " readOnly        " ) ; break ; }
-                        case PAGE_NOACCESS           : { thirdC::c_strcatIF( tinP , postSay, " noAccess        " ) ; break ; }
-                        case PAGE_EXECUTE_WRITECOPY  : { thirdC::c_strcatIF( tinP , postSay, " executeWriteCopy" ) ; break ; }
-                        case PAGE_EXECUTE_READWRITE  : { thirdC::c_strcatIF( tinP , postSay, " executeReadWrite" ) ; break ; }
-                        case PAGE_EXECUTE_READ       : { thirdC::c_strcatIF( tinP , postSay, " executeRead     " ) ; break ; }
-                        case PAGE_EXECUTE            : { thirdC::c_strcatIF( tinP , postSay, " execute         " ) ; break ; }
+                        default                      : { thirdC::c_strcatIF( tinBaseP , postSay, " notRecognized   " ) ; break ; }
+                        //case PAGE_TARGETS_NO_UPDATE  : { thirdC::c_strcatIF( tinBaseP , postSay, " targetsNoUpdate " ) ; break ; }
+                        //case PAGE_TARGETS_INVALID    : { thirdC::c_strcatIF( tinBaseP , postSay, " targetsInvalid  " ) ; break ; }
+                        case PAGE_WRITECOPY          : { thirdC::c_strcatIF( tinBaseP , postSay, " writeCopy       " ) ; break ; }
+                        case PAGE_READWRITE          : { thirdC::c_strcatIF( tinBaseP , postSay, " readWrite       " ) ; break ; }
+                        case PAGE_READONLY           : { thirdC::c_strcatIF( tinBaseP , postSay, " readOnly        " ) ; break ; }
+                        case PAGE_NOACCESS           : { thirdC::c_strcatIF( tinBaseP , postSay, " noAccess        " ) ; break ; }
+                        case PAGE_EXECUTE_WRITECOPY  : { thirdC::c_strcatIF( tinBaseP , postSay, " executeWriteCopy" ) ; break ; }
+                        case PAGE_EXECUTE_READWRITE  : { thirdC::c_strcatIF( tinBaseP , postSay, " executeReadWrite" ) ; break ; }
+                        case PAGE_EXECUTE_READ       : { thirdC::c_strcatIF( tinBaseP , postSay, " executeRead     " ) ; break ; }
+                        case PAGE_EXECUTE            : { thirdC::c_strcatIF( tinBaseP , postSay, " execute         " ) ; break ; }
                     {
                     switch( pInfoGrain[ offg ].VirtualAttributes.Win32Protection )
 
@@ -83,7 +83,7 @@
 
             if( cGrains != sizeof pInfoGrain / sizeof pInfoGrain[ 0 ] ) { BLAMMO ; }
             countT cGrains = BM_HIGH / cbGrain ;
-            countT cbGrain = thirdC::os_cbAllocationGrain_IF( tinP ) ;
+            countT cbGrain = thirdC::os_cbAllocationGrain_IF( tinBaseP ) ;
         {
         if( pg1.idNumaNode )
         //if( pg1.idAdamRoot != ifcIDaDAM_ADAM && pg1.idAdamRoot != ifcIDaDAM_EVE && pg1.idAdamRoot != ifcIDaDAM_ELF ) //U:: REMOVE THIS LINE IN PRODUCTION
@@ -92,7 +92,7 @@
 
     #if defined( __NT__ )
 {
-/*1*/voidT thirdC::osLogWrongNodeIF( tinS& tinP )/*1*/
+/*1*/voidT thirdC::osLogWrongNodeIF( tinBaseS& tinBaseP )/*1*/
 
 PSAPI_WORKING_SET_EX_INFORMATION pInfoGrain[ TOCK >> 1 ] ;
 

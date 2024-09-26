@@ -18,20 +18,20 @@
                     }
                         BOSpOOP
                         BOS( WHATgbo , BOSoK , GlobalUnlock( handle ) )
-                        thirdC::c_strncpyIF( tinP , postP , posti , costx + 1 ) ;
-                        newF( tinP , LF , postP , costx + 1 ) ; ___( postP ) ;
-                        costx = c_strlenIF( tinP , posti ) ;    
-                        char* posti = (char*)tinP.brcRaw ;
+                        thirdC::c_strncpyIF( tinBaseP , postP , posti , costx + 1 ) ;
+                        newF( tinBaseP , LF , postP , costx + 1 ) ; ___( postP ) ;
+                        costx = c_strlenIF( tinBaseP , posti ) ;    
+                        char* posti = (char*)((tinNormalS&)tinBaseP).brcRaw ;
                     {
-                    if( !tinP.bosFail )
+                    if( !((tinNormalS&)tinBaseP).bosFail )
                     BOS( WHATgbo , BOSoK , GlobalLock( handle ) )
                 {
-                HANDLE handle = (HANDLE)tinP.brcRaw ;
+                HANDLE handle = (HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
             {
-            if( !tinP.bosFail )
+            if( !((tinNormalS&)tinBaseP).bosFail )
             BOS( WHATgbo , BOSoK , GetClipboardData( CF_TEXT ) )
         {
-        if( !tinP.bosFail )
+        if( !((tinNormalS&)tinBaseP).bosFail )
         BOS( WHATgbo , BOSoK , IsClipboardFormatAvailable( CF_TEXT ) )
 
     #elif defined( __NT__ )
@@ -52,13 +52,13 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/countT thirdC::osClipboardReadF( tinS& tinP , osTextT*& postP )/*1*/
+/*1*/countT thirdC::osClipboardReadF( tinBaseS& tinBaseP , osTextT*& postP )/*1*/
 
 /**/
 */
   must be 0
  postP
- tinP
+ tinBaseP
 arguments
 if no text is available on the clipboard, postP remains 0, i evaluate to 0, and impotence does not occur
 evaluates to the length of the returned string, excluding the null terminator

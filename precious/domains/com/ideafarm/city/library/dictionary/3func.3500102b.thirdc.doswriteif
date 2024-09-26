@@ -13,14 +13,14 @@
 
         }
             }
-                tinP.pag1->_thirdC_.pSwFileOpen->ungrabF( tinP ) ;
+                ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen->ungrabF( tinBaseP ) ;
                 if( pInfo ) pInfo->flagsAtClose |= flFILEaTcLOSE_DELETE ;
-                fileOpenS* pInfo = (fileOpenS*)(countT)*tinP.pag1->_thirdC_.pSwFileOpen ;
-                tinP.pag1->_thirdC_.cLever_pSwFileOpen = handleP.osh ;
-                tinP.pag1->_thirdC_.pSwFileOpen->grabF( tinP , TAG( TAGiDnULL ) ) ;
-                puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                fileOpenS* pInfo = (fileOpenS*)(countT)*((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen ;
+                ((tinNormalS&)tinBaseP).pag1->_thirdC_.cLever_pSwFileOpen = handleP.osh ;
+                ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
             {
-            if( tinP.pag1->_thirdC_.pSwFileOpen )
+            if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen )
         {
         if( POOP )
 
@@ -34,7 +34,7 @@
         BOS( WHATsfw , BOSfAIL , DosWrite( (HFILE)handleP.osF( ifcIDtYPEhANDLE_FILE ) , (voidT*)pbP , cbr , &cba ) )
         ZE( ULONG , cba ) ;
     #ifdef __OS2__
-    if( !cbr ) cbr = c_strlenIF( tinP , pbP ) ;
+    if( !cbr ) cbr = c_strlenIF( tinBaseP , pbP ) ;
     countT cbr = cbP ;
     _IO_
 
@@ -52,7 +52,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT thirdC::dosWriteIF( tinS& tinP , const handleC& handleP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/voidT thirdC::dosWriteIF( tinBaseS& tinBaseP , const handleC& handleP , const byteT* const pbP , const countT cbP )/*1*/
 
 /**/
 */

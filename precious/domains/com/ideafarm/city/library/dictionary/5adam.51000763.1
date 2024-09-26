@@ -9,9 +9,9 @@
                             
 REST
 
-etThread.traceF( tinP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 WAITuNTILaLMOSTaLONE( 1 )
-etThread.traceF( tinP , T("waiting for all threads to finish") ) ;
+etThread.traceF( tinBaseP , T("waiting for all threads to finish") ) ;
 
 }
     etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)pptRoot[ offt ] , (countT)pcArgInner ) ;
@@ -28,8 +28,8 @@ switch( idComputer )
 textC*  pptRoot[ 0x10 ] ; //CS:CODEsYNC 51000760 51000760
 ZE( countT , cRoot ) ;
 
-etThread.traceF( tinP , T("idComputer: ")+TF2(idComputer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-countT idComputer = etThread.diskIdF( tinP , T("///c") ) ;
+etThread.traceF( tinBaseP , T("idComputer: ")+TF2(idComputer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+countT idComputer = etThread.diskIdF( tinBaseP , T("///c") ) ;
 
 TN( tRootTest , "///d/archive.test/1999/" ) ;
 
@@ -148,9 +148,9 @@ TODO
 
 DONE( tmWorkerF )
 }
-    etThread.traceF( tinP , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-    etThread.diskWalkF( tinP , cDirs , cFiles , *ptRootP , ether , flDISKwALK_null , inspectCBF , pcArgInnerP , 0 , 0 ) ;
-    etThread.traceF( tinP , T("root ++++               :    ")+*ptRootP ) ;
+    etThread.traceF( tinBaseP , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    etThread.diskWalkF( tinBaseP , cDirs , cFiles , *ptRootP , ether , flDISKwALK_null , inspectCBF , pcArgInnerP , 0 , 0 ) ;
+    etThread.traceF( tinBaseP , T("root ++++               :    ")+*ptRootP ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
 
@@ -175,60 +175,60 @@ TASK( tmWorkerF )
                     }
                         }
                             break ;
-                            if( !isPngF( pbCopy ) ) traceActualTypeF( tinP , etherP , pbCopy , cbwIn , tName , idType ) ;
+                            if( !isPngF( pbCopy ) ) traceActualTypeF( tinBaseP , etherP , pbCopy , cbwIn , tName , idType ) ;
                         {
                         case ADAMdATAtYPE_PNG :
                         }
                             break ;
-                            if( !isMp3F( pbCopy ) ) traceActualTypeF( tinP , etherP , pbCopy , cbwIn , tName , idType ) ;
+                            if( !isMp3F( pbCopy ) ) traceActualTypeF( tinBaseP , etherP , pbCopy , cbwIn , tName , idType ) ;
                         {
                         case ADAMdATAtYPE_MP3 :
                         }
                             break ;
-                            if( !isAviF( pbCopy ) ) traceActualTypeF( tinP , etherP , pbCopy , cbwIn , tName , idType ) ;
+                            if( !isAviF( pbCopy ) ) traceActualTypeF( tinBaseP , etherP , pbCopy , cbwIn , tName , idType ) ;
                         {
                         case ADAMdATAtYPE_AVI :
                         }
                             break ;
-                            if( !isMsvF( pbCopy ) ) traceActualTypeF( tinP , etherP , pbCopy , cbwIn , tName , idType ) ;
+                            if( !isMsvF( pbCopy ) ) traceActualTypeF( tinBaseP , etherP , pbCopy , cbwIn , tName , idType ) ;
                         {
                         case ADAMdATAtYPE_MSV :
                         }
                             break ;
-                            if( !isPdfF( pbCopy ) ) traceActualTypeF( tinP , etherP , pbCopy , cbwIn , tName , idType ) ;
+                            if( !isPdfF( pbCopy ) ) traceActualTypeF( tinBaseP , etherP , pbCopy , cbwIn , tName , idType ) ;
                         {
                         case ADAMdATAtYPE_PDF :
                         }
                             break ;
-                            if( !isJpgF( pbCopy ) ) traceActualTypeF( tinP , etherP , pbCopy , cbwIn , tName , idType ) ;
+                            if( !isJpgF( pbCopy ) ) traceActualTypeF( tinBaseP , etherP , pbCopy , cbwIn , tName , idType ) ;
                         {
                         case ADAMdATAtYPE_JPG :
                     {
                     else switch( idType )
-                    else if( cbwIn < 0x10 ) etherP.traceF( tinP , T("error: window is tiny") ) ;
-                    if( !pbwIn ) etherP.traceF( tinP , T("error: could not get window pointer") ) ;
+                    else if( cbwIn < 0x10 ) etherP.traceF( tinBaseP , T("error: window is tiny") ) ;
+                    if( !pbwIn ) etherP.traceF( tinBaseP , T("error: could not get window pointer") ) ;
 
                     }
                         pbCopy[ cbwIn - 1 ] = 0 ;
-                        thirdC::c_memcpyIF( tinP , pbCopy , pbwIn , cbwIn ) ;
+                        thirdC::c_memcpyIF( tinBaseP , pbCopy , pbwIn , cbwIn ) ;
                     {
                     if( pbwIn && cbwIn )
                     byteT pbCopy[ CBwINDOW + 1 ] ;
 
-                    pFwsIn->getF( tinP , pbwIn , cbwIn , CBwINDOW ) ;
+                    pFwsIn->getF( tinBaseP , pbwIn , cbwIn , CBwINDOW ) ;
                     ZE( countT , cbwIn ) ;
                     ZE( byteT* , pbwIn ) ;
                 {
                 else
                 }
-                    etherP.traceF( tinP , T("could not ct file windows") ) ;
+                    etherP.traceF( tinBaseP , T("could not ct file windows") ) ;
 
                     DELzOMBIE( pFwsIn ) ;
                     POOPR ;
                 {
                 if( POOP )
 
-                fileWindowsC* pFwsIn = new( 0 , tinP , pb_fwsIn , sizeof pb_fwsIn ) fileWindowsC( tinP , *tinP.pEtScratch , tName , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsIn = new( 0 , tinBaseP , pb_fwsIn , sizeof pb_fwsIn ) fileWindowsC( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , tName , flFILEwINDOW_null , 1 ) ;
 
                 byteT pb_fwsIn[ sizeof( fileWindowsC ) ] ;
 
@@ -236,41 +236,41 @@ TASK( tmWorkerF )
             {
             IFsCRATCH
 
-            //etherP.traceF( tinP , tName ) ;
+            //etherP.traceF( tinBaseP , tName ) ;
         {
         if( idType )
 
-        else if( !etherP.strCompareF( tinP , tDataDotExt , tDataDotPngP  ) ) idType = ADAMdATAtYPE_PNG ;
-        else if( !etherP.strCompareF( tinP , tDataDotExt , tDataDotAviP  ) ) idType = ADAMdATAtYPE_AVI ;
-        else if( !etherP.strCompareF( tinP , tDataDotExt , tDataDotMsvP  ) ) idType = ADAMdATAtYPE_MSV ;
-        else if( !etherP.strCompareF( tinP , tDataDotExt , tDataDotPdfP  ) ) idType = ADAMdATAtYPE_PDF ;
-        else if( !etherP.strCompareF( tinP , tDataDotExt , tDataDotJpegP ) ) idType = ADAMdATAtYPE_JPG ;
-             if( !etherP.strCompareF( tinP , tDataDotExt , tDataDotJpgP  ) ) idType = ADAMdATAtYPE_JPG ;
+        else if( !etherP.strCompareF( tinBaseP , tDataDotExt , tDataDotPngP  ) ) idType = ADAMdATAtYPE_PNG ;
+        else if( !etherP.strCompareF( tinBaseP , tDataDotExt , tDataDotAviP  ) ) idType = ADAMdATAtYPE_AVI ;
+        else if( !etherP.strCompareF( tinBaseP , tDataDotExt , tDataDotMsvP  ) ) idType = ADAMdATAtYPE_MSV ;
+        else if( !etherP.strCompareF( tinBaseP , tDataDotExt , tDataDotPdfP  ) ) idType = ADAMdATAtYPE_PDF ;
+        else if( !etherP.strCompareF( tinBaseP , tDataDotExt , tDataDotJpegP ) ) idType = ADAMdATAtYPE_JPG ;
+             if( !etherP.strCompareF( tinBaseP , tDataDotExt , tDataDotJpgP  ) ) idType = ADAMdATAtYPE_JPG ;
         ZE( countT , idType ) ;
 
         }
-            etherP.delF( tinP , psttDataDotExt ) ;
-            etherP.delF( tinP , psttNU ) ;
+            etherP.delF( tinBaseP , psttDataDotExt ) ;
+            etherP.delF( tinBaseP , psttNU ) ;
             tDataDotExt = T(psttDataDotExt) ;
-            etherP.strBisectF( tinP , psttNU , psttDataDotExt , tName , tDotP , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttNU ) ; ___( psttDataDotExt ) ;
+            etherP.strBisectF( tinBaseP , psttNU , psttDataDotExt , tName , tDotP , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttNU ) ; ___( psttDataDotExt ) ;
             ZE( strokeS* , psttDataDotExt ) ;
             ZE( strokeS* , psttNU ) ;
         {
         TN( tDataDotExt , "" ) ;
 
-        etherP.traceF( tinP , tName ) ;
-        etherP.traceF( tinP , T("------------------------------------------------------------------") ) ;
+        etherP.traceF( tinBaseP , tName ) ;
+        etherP.traceF( tinBaseP , T("------------------------------------------------------------------") ) ;
 
         }
-            etherP.delF( tinP , psttLower ) ;
+            etherP.delF( tinBaseP , psttLower ) ;
             tName = T(psttLower) ;
-            etherP.strConvertToLowerCaseF( tinP , psttLower , T(ifName) ) ; ___( psttLower ) ;
+            etherP.strConvertToLowerCaseF( tinBaseP , psttLower , T(ifName) ) ; ___( psttLower ) ;
             ZE( strokeS* , psttLower ) ;
-            ifFileNameC ifName( tinP , etherP , postNameP ) ;
+            ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
         {
         TN( tName , "" ) ;
 
-        if( !( cFilesP % ( TOCK >> 4 ) ) ) etherP.traceF( tinP , T("[cFiles]:    ")+TF2(cFilesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        if( !( cFilesP % ( TOCK >> 4 ) ) ) etherP.traceF( tinBaseP , T("[cFiles]:    ")+TF2(cFilesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         textC&  tDataDotPngP  =  *(textC*)pcArgP[ 8 ] ;
         textC&  tDataDotMp3P  =  *(textC*)pcArgP[ 7 ] ;
@@ -286,12 +286,12 @@ TASK( tmWorkerF )
     if( postNameP )
     _IO_
 {
-boolT inspectCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT inspectCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 }
-    etherP.boxPutF( tinP , tNameP+T(".woth.window") , pbP , cbP ) ;
+    etherP.boxPutF( tinBaseP , tNameP+T(".woth.window") , pbP , cbP ) ;
 
-    if( !bSilent ) etherP.traceF( tinP , tError ) ;
+    if( !bSilent ) etherP.traceF( tinBaseP , tError ) ;
 
     else                                                                             tError = T("error:    unk    ")+tNameP ;
     else if( isPngF( pbP ) ) {    if( idTypeP == ADAMdATAtYPE_PDF ) bSilent = 1 ;    tError = T("error:    png    ")+tNameP ; }
@@ -305,7 +305,7 @@ boolT inspectCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& b
     ZE( boolT , bSilent ) ;
     _IO_
 {
-voidT traceActualTypeF( tinS& tinP , etherC& etherP , const byteT* const pbP , const countT cbP , textC& tNameP , const countT idTypeP )
+voidT traceActualTypeF( tinBaseS& tinBaseP , etherC& etherP , const byteT* const pbP , const countT cbP , textC& tNameP , const countT idTypeP )
 
 }
     ;

@@ -9,12 +9,12 @@
 
 REST
 
-etThread.strokeF( tinP , T("\f") ) ;
+etThread.strokeF( tinBaseP , T("\f") ) ;
 
 }
-    napF( tinP , ether ) ;
+    napF( tinBaseP , ether ) ;
     bClear = !bClear ;
-    etThread.strokeF( tinP , bClear ? tSayClear : tSay ) ;
+    etThread.strokeF( tinBaseP , bClear ? tSayClear : tSay ) ;
 {
 while( !ether && cTries -- )
 ZE( boolT , bClear ) ; //PERIODIC CLEARING MUST BE DONE TO AVOID UNBOUNDED MEMORY AND CPU LEAKAGE
@@ -50,9 +50,9 @@ TN( tSayClear , "" ) ;
 tSay = 
 TN( tSay , "" ) ;
 
-paperOldC::setBeforeAnimatingIF( tinP , animateCBF , (countT)&button ) ;
+paperOldC::setBeforeAnimatingIF( tinBaseP , animateCBF , (countT)&button ) ;
 
-tcButtonC button( tinP , 0 , tcStateCBF , 0 , flFeature , 0 , tBody , 8 ) ;
+tcButtonC button( tinBaseP , 0 , tcStateCBF , 0 , flFeature , 0 , tBody , 8 ) ;
 flagsT flFeature = ( flTCfEATURE_defaultButton | flTCfEATURE_DRAGGABLE ) /*& ~( F(flTCfEATURE_FRAME|flTCfEATURE_FLYOVERhIGHLIGHT) )*/ ;
 //flagsT flFeature = flTCfEATURE_defaultButton & ~( F(flTCfEATURE_FRAME) ) ;
 TN( tBody , "\\" ) ;
@@ -61,19 +61,19 @@ TODO
 
 }
     if( etherP ) ;
-    button.setF( tinP , T("")+S3(9.0,scOld_mmFRAMEcELLS,1.0)+T(" ")+TF1(idCycleP)+S2(0,scOld_POPfRAME) ) ;
+    button.setF( tinBaseP , T("")+S3(9.0,scOld_mmFRAMEcELLS,1.0)+T(" ")+TF1(idCycleP)+S2(0,scOld_POPfRAME) ) ;
     tcButtonC& button = *(tcButtonC*)cArgP ;
 {
-voidT animateCBF( tinS& tinP , etherC& etherP /*, paperBackC& backP*/ , const countT idCycleP , const countT cArgP )
+voidT animateCBF( tinBaseS& tinBaseP , etherC& etherP /*, paperBackC& backP*/ , const countT idCycleP , const countT cArgP )
 
 }
-    ++ s ; etherP.osSleepF( tinP , idIn % 2 ? TOCK * 0x3 * SLOW : TOCK * SLOW ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; etherP.osSleepF( tinBaseP , idIn % 2 ? TOCK * 0x3 * SLOW : TOCK * SLOW ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     countT idIn = 1 + incv02AM( idInLath ) ;
     static countT idInLath ;
 {
-voidT napF( tinS& tinP , etherC& etherP )
+voidT napF( tinBaseS& tinBaseP , etherC& etherP )
 
 #define SLOW 0x1
 
@@ -94,7 +94,7 @@ voidT napF( tinS& tinP , etherC& etherP )
     {
     switch( idTypeCallP )
 {
-voidT tcStateCBF( tinS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP )
+voidT tcStateCBF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP )
 
 /*1*/WAKEsHOW( "example.other.snip.00300d3.tcButtonC.persistent.dragging" )/*1*/
 /**/

@@ -13,19 +13,19 @@
         while( !POOP && ( bNoQuitEarly || ( cTriesP && -- cTriesP ) ) ) ;
         }
             }
-                ++ s ; dosSleepIF( tinP , TOCK >> 2 ) ;
+                ++ s ; dosSleepIF( tinBaseP , TOCK >> 2 ) ;
 
-                if( pEtRock ) pEtRock->traceF( tinP , T("dosCopyF [brcQuery,cTries,new,old]: ")+TF2(tinP.brcQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cTriesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postNewP)+T("    ")+T(postOldP) ) ;
-                etherC* pEtRock = &etherC::etRockIF( tinP ) ;
+                if( pEtRock ) pEtRock->traceF( tinBaseP , T("dosCopyF [brcQuery,cTries,new,old]: ")+TF2(((tinNormalS&)tinBaseP).brcQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cTriesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postNewP)+T("    ")+T(postOldP) ) ;
+                etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
             {
             else if( ( !cTriesP || cTriesP > 1 ) )
-            if( !tinP.bosFail ) break ;
+            if( !((tinNormalS&)tinBaseP).bosFail ) break ;
 
             }
-                tinP.brcQuery = tinP.brcRaw ;
+                ((tinNormalS&)tinBaseP).brcQuery = ((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , GetLastError() )
             {
-            if( tinP.bosFail )
+            if( ((tinNormalS&)tinBaseP).bosFail )
 
             #endif
                 BOS( WHATsfw , BOSoK , CopyFile( postOldP , postNewP , 0 ) )
@@ -34,7 +34,7 @@
             #ifdef __OS2__
         {
         do
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     const boolT bNoQuitEarly = !cTriesP ;
     _IO_
@@ -48,7 +48,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT thirdC::dosCopyF( tinS& tinP , const osTextT* const postNewP , const osTextT* const postOldP , countT cTriesP )/*1*/
+/**//*1*/voidT thirdC::dosCopyF( tinBaseS& tinBaseP , const osTextT* const postNewP , const osTextT* const postOldP , countT cTriesP )/*1*/
 
 */
  cTriesP

@@ -25,13 +25,13 @@
                 _IO_
             {
             if( postLower == c_strstrIF( postLower , "c:\\ideafarm.home.1" ) )
-            c_strlwrIF( tinP , postLower ) ;
-            c_strncpyIF( tinP , postLower , postP , sizeof postLower ) ;
+            c_strlwrIF( tinBaseP , postLower ) ;
+            c_strncpyIF( tinBaseP , postLower , postP , sizeof postLower ) ;
             osTextT postLower[ TUCK ] ;
         {
         else if( idComputer == IDcOMPUTER_IPDOSmASTERcRAFTWORK )                    //A:ASSUME: THE CRAFTWORK COMPUTER USES DRIVE D FOR ALL HOMES
         if( POOP ) POOPRqUIET
-        countT idComputer = tinP.pEtScratch->diskIdF( tinP , T("///c") ) ;
+        countT idComputer = ((tinNormalS&)tinBaseP).pEtScratch->diskIdF( tinBaseP , T("///c") ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -50,16 +50,16 @@
         if( POOP ) return ;
     {
     IFbEcAREFUL
-    const countT costP = postP ? c_strlenIF( tinP , postP ) : 0 ;
+    const countT costP = postP ? c_strlenIF( tinBaseP , postP ) : 0 ;
 {
-/*1*/voidT thirdC::dosCreateDirIF( tinS& tinP , const osTextT* const postP )/*1*/
+/*1*/voidT thirdC::dosCreateDirIF( tinBaseS& tinBaseP , const osTextT* const postP )/*1*/
 
 /**/
 */
   note that the normal terminating backslash is not to be used when calling me
   format: "?:\\foo\\bar"
  postP
- tinP
+ tinBaseP
 arguments
 /*
 

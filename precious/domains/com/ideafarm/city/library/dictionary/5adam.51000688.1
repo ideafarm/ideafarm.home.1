@@ -9,19 +9,19 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("done") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("done") ) ;
 
-etThread.delF( tinP , psttDecoded ) ;
-etThread.delF( tinP , pbEncoded ) ;
-etThread.traceF( tinP , T("[psttDecoded]: \"")+T(psttDecoded)+T("\"") ) ;
-countT rc2 = etThread.strDecodeF( tinP , psttDecoded , pbEncoded ) ; ___( psttDecoded ) ;
-etThread.traceF( tinP , T("decoding") ) ;
+etThread.delF( tinBaseP , psttDecoded ) ;
+etThread.delF( tinBaseP , pbEncoded ) ;
+etThread.traceF( tinBaseP , T("[psttDecoded]: \"")+T(psttDecoded)+T("\"") ) ;
+countT rc2 = etThread.strDecodeF( tinBaseP , psttDecoded , pbEncoded ) ; ___( psttDecoded ) ;
+etThread.traceF( tinBaseP , T("decoding") ) ;
 ZE( strokeS* , psttDecoded ) ;
 
-etThread.traceF( tinP , T("encoded") ) ;
-countT rc = etThread.strEncodeF( tinP , pbEncoded , tIn ) ; ___( pbEncoded ) ;
-etThread.traceF( tinP , T("encoding") ) ;
+etThread.traceF( tinBaseP , T("encoded") ) ;
+countT rc = etThread.strEncodeF( tinBaseP , pbEncoded , tIn ) ; ___( pbEncoded ) ;
+etThread.traceF( tinBaseP , T("encoding") ) ;
 ZE( byteT* , pbEncoded ) ;
 
 TN( tIn , "abcd" ) ;

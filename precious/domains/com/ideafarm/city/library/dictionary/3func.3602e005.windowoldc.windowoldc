@@ -8,40 +8,40 @@
 
 
 }
-    ctF( tinP , &windowP , idColP , idRowP , cColP , cRowP , cColClientP , cRowClientP , bRootP , bNotVisibleP , cTriesP , pPaperToBackCBFP , cPaperToBackArgP ) ;
+    ctF( tinBaseP , &windowP , idColP , idRowP , cColP , cRowP , cColClientP , cRowClientP , bRootP , bNotVisibleP , cTriesP , pPaperToBackCBFP , cPaperToBackArgP ) ;
     //NOT SERIALIZED BECAUSE CT/DT FUNCTION
     SCOOP
 {
-//signShown( tinP , TAG( TAGiDnULL ) ) ,
-swKeyName(                 tinP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , leverIdKey )
+//signShown( tinBaseP , TAG( TAGiDnULL ) ) ,
+swKeyName(                 tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , leverIdKey )
 leverIdKey( 0 ) ,
-swKey(                     tinP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttlKeyName ) ,
-swKeyLathDown(             tinP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttlKeyName ) ,
+swKey(                     tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttlKeyName ) ,
+swKeyLathDown(             tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttlKeyName ) ,
 psttlKeyName( 0 ) ,
 idKeyLathDown( 0 ) ,
 idKeyLathDownLag( 0 ) ,
-hDrawWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWpRIVATE ) ,
+hDrawWindow( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWpRIVATE ) ,
 mIdRowOsOrigin( 0.0 ) ,
 mIdColOsOrigin( 0.0 ) ,
 mIdRowFrameInDad( idRowP ) ,
 mIdColFrameInDad( idColP ) ,
-mIdRowInDad( idRowP + tinP.pag1->_thirdC_.mRowsAdjForWinFrame ) ,
-mIdColInDad( idColP + tinP.pag1->_thirdC_.mColsAdjForWinFrame ) ,
-idWindow( ++ tinP.pag1->_windowOldC_.idWindowLath ) ,
-hWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ,
+mIdRowInDad( idRowP + ((tinNormalS&)tinBaseP).pag1->_thirdC_.mRowsAdjForWinFrame ) ,
+mIdColInDad( idColP + ((tinNormalS&)tinBaseP).pag1->_thirdC_.mColsAdjForWinFrame ) ,
+idWindow( ++ ((tinNormalS&)tinBaseP).pag1->_windowOldC_.idWindowLath ) ,
+hWindow( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ,
 bDoomed( 0 ) ,
 cReferences( 0 ) ,
-backOldC( tinP , etherP , cPapersP ) ,
-/*1*/windowOldC::windowOldC( tinS& tinP , etherC& etherP , const countT cPapersP , const windowOldC& windowP , const countT cTriesP , const boolT bNotVisibleP , const sCountT idColP , const sCountT idRowP , const countT cColP , const countT cRowP , const countT cColClientP , const countT cRowClientP , const boolT bRootP , paperToBackCBFT pPaperToBackCBFP , countT cPaperToBackArgP )/*1*/ :
+backOldC( tinBaseP , etherP , cPapersP ) ,
+/*1*/windowOldC::windowOldC( tinBaseS& tinBaseP , etherC& etherP , const countT cPapersP , const windowOldC& windowP , const countT cTriesP , const boolT bNotVisibleP , const sCountT idColP , const sCountT idRowP , const countT cColP , const countT cRowP , const countT cColClientP , const countT cRowClientP , const boolT bRootP , paperToBackCBFT pPaperToBackCBFP , countT cPaperToBackArgP )/*1*/ :
 
 /**/
 */
  bNotVisibleP
  bRootP
  windowP
-  tinP.monitor.idThread must be thirdC::idThreadWindow
+  ((tinNormalS&)tinBaseP).monitor.idThread must be thirdC::idThreadWindow
   must not be 0
- tinP
+ tinBaseP
 arguments
  in other words, it is to ensure that the object is programmatically deletable i.e. not on the stack or in static memory
  this is to ensure that the windowOldC object can be d eleted automatically by calling DEL() on its "this" value

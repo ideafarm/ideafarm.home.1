@@ -13,27 +13,27 @@ REST
     }
         }
             }
-                etThread.winSetTitleF( tinP , TF1(state.idMe)+tb+TF1(++state.cThreads)+tb+TF1(cThreads) ) ;
+                etThread.winSetTitleF( tinBaseP , TF1(state.idMe)+tb+TF1(++state.cThreads)+tb+TF1(cThreads) ) ;
                 cAll ++ ;
                 cThreads ++ ;
             {
             if( !etThread )
-            etThread.osThreadF( tinP , countTC() , tmNullF ) ;
+            etThread.osThreadF( tinBaseP , countTC() , tmNullF ) ;
         {
         else
-        if( cThreads > 0x10 ) ether.osSleepF( tinP , TOCK ) ;
+        if( cThreads > 0x10 ) ether.osSleepF( tinBaseP , TOCK ) ;
     {
     while( !ether && !etThread )
     ZE( countT , cAll ) ;
     TN( tb , " " ) ;
 
-    if( !( F(napDebug.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napDebug.formattingIsDoneF( tinP ) ;
-    napkinC napDebug( tinP , LF , (byteT*)bits , "2a40104/1" , 0 , 1 ) ;
-    bitsC bits( tinP , CbITSlIFI , 0 , 1 ) ;
-    //boxC boxDebug( tinP , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/debug/")+TF1(DDNUMB)+T("/1") ) ; //U::CONJ: WILL LOCK UP DURING CT
+    if( !( F(napDebug.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napDebug.formattingIsDoneF( tinBaseP ) ;
+    napkinC napDebug( tinBaseP , LF , (byteT*)bits , "2a40104/1" , 0 , 1 ) ;
+    bitsC bits( tinBaseP , CbITSlIFI , 0 , 1 ) ;
+    //boxC boxDebug( tinBaseP , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/debug/")+TF1(DDNUMB)+T("/1") ) ; //U::CONJ: WILL LOCK UP DURING CT
 
-    //U::{ countT idAdam = DDNUMB ; etThread.ifcHireF( tinP , T("tool.gorilla.monitor.1.cell.generations") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
-    stateS state( tinP , etThread ) ;
+    //U::{ countT idAdam = DDNUMB ; etThread.ifcHireF( tinBaseP , T("tool.gorilla.monitor.1.cell.generations") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO
@@ -41,11 +41,11 @@ TODO
 DONE( tmNullF )
 cThreads -- ;
 }
-    etThread.osSleepF( tinP , TOCK ) ;
-    if( !( F(napDebug.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napDebug.formattingIsDoneF( tinP ) ;
-    napkinC napDebug( tinP , LF , (byteT*)bits , "2a40104/1" , 0 , 1 ) ;
-    bitsC bits( tinP , CbITSlIFI , 0 , 1 ) ;
-    //boxC boxDebug( tinP , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/debug/")+TF1(DDNUMB)+T("/2") ) ; //U::CONJ: WILL LOCK UP DURING CT
+    etThread.osSleepF( tinBaseP , TOCK ) ;
+    if( !( F(napDebug.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napDebug.formattingIsDoneF( tinBaseP ) ;
+    napkinC napDebug( tinBaseP , LF , (byteT*)bits , "2a40104/1" , 0 , 1 ) ;
+    bitsC bits( tinBaseP , CbITSlIFI , 0 , 1 ) ;
+    //boxC boxDebug( tinBaseP , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/debug/")+TF1(DDNUMB)+T("/2") ) ; //U::CONJ: WILL LOCK UP DURING CT
 {
 TASK( tmNullF )
 
@@ -53,8 +53,8 @@ countT cThreads ;
 
 }
 {                                                                                                                                                       \
-stateC( tinP , etherP , sizeof *this , 0 , translateStateF )                                                                                            \
-stateS::stateS( tinS& tinP , etherC& etherP ) :                                                                                                         \
+stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )                                                                                            \
+stateS::stateS( tinBaseS& tinBaseP , etherC& etherP ) :                                                                                                         \
                                                                                                                                                             \
 TRANSLATEsTATE_END                                                                                                                                      \
     state.idMe ++ ;                                                                                                                                     \
@@ -64,7 +64,7 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )                                              
                                                                                                                                                             \
 ;                                                                                                                                                       \
 }                                                                                                                                                       \
-    stateS( tinS& tinP , etherC& etherP ) ;                                                                                                             \
+    stateS( tinBaseS& tinBaseP , etherC& etherP ) ;                                                                                                             \
 
     countT cThreads ;                                                                                                                                                            \
     countT idMe ;                                                                                                                                       \

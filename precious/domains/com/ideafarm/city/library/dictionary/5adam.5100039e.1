@@ -10,14 +10,14 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
 
 DEL( pSwitch ) ;
 
-etThread.strokeF( tinP , T("for the lever value ")+TF1(lever)+T(", the switch contains the value ")+TF1(*pSwitch)+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("for the lever value ")+TF1(lever)+T(", the switch contains the value ")+TF1(*pSwitch)+T("\r\n") ) ;
 lever = 2 ;
 
 *pSwitch = 0x444 ;
@@ -32,7 +32,7 @@ lever = 2 ;
 *pSwitch = 0x111 ;
 lever = 1 ;
 
-switchC* pSwitch = new( 0 , tinP , LF ) switchC( tinP , ether , TAG( TAGiDnULL ) , lever ) ;
+switchC* pSwitch = new( 0 , tinBaseP , LF ) switchC( tinBaseP , ether , TAG( TAGiDnULL ) , lever ) ;
 ZE( countT , lever ) ;
 
 TODO

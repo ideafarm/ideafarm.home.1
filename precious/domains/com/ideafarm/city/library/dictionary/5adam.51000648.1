@@ -9,9 +9,9 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 CONoUTrAW5( "[cDirs,cFiles]: " , cDirs , " " , cFiles , "\r\n" ) ;
-((thirdC&)etThread).diskWalkCopyF( tinP , cDirs , cFiles , ether , "\\tmp\\2011.10.03\\1\\" , "\\" , myCBF ) ;
+((thirdC&)etThread).diskWalkCopyF( tinBaseP , cDirs , cFiles , ether , "\\tmp\\2011.10.03\\1\\" , "\\" , myCBF ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
 
@@ -21,30 +21,30 @@ TODO
     ;
 
         )
-            thirdC::c_strstrIF( tinP , postNameP , ".mp3" )
+            thirdC::c_strstrIF( tinBaseP , postNameP , ".mp3" )
             ||
-            thirdC::c_strstrIF( tinP , postNameP , ".jpg" )
+            thirdC::c_strstrIF( tinBaseP , postNameP , ".jpg" )
             ||
-            thirdC::c_strstrIF( tinP , postNameP , ".dvf" )
+            thirdC::c_strstrIF( tinBaseP , postNameP , ".dvf" )
             ||
-            thirdC::c_strstrIF( tinP , postNameP , ".msv" )
+            thirdC::c_strstrIF( tinBaseP , postNameP , ".msv" )
             ||
-            thirdC::c_strstrIF( tinP , postNameP , "body" )
+            thirdC::c_strstrIF( tinBaseP , postNameP , "body" )
             ||
-            thirdC::c_strstrIF( tinP , postNameP , "mov0" )
+            thirdC::c_strstrIF( tinBaseP , postNameP , "mov0" )
             ||
-            thirdC::c_strstrIF( tinP , postNameP , "dsc0" )
+            thirdC::c_strstrIF( tinBaseP , postNameP , "dsc0" )
             ||
-            thirdC::c_strstrIF( tinP , postNameP , "archive" )
+            thirdC::c_strstrIF( tinBaseP , postNameP , "archive" )
         (
         &&
-        !thirdC::c_strstrIF( tinP , postNameP , "\\tmp\\" )
+        !thirdC::c_strstrIF( tinBaseP , postNameP , "\\tmp\\" )
 
     return
 
-    thirdC::c_strlwrIF( tinP , (osTextT*)postNameP ) ;
+    thirdC::c_strlwrIF( tinBaseP , (osTextT*)postNameP ) ;
 {
-boolT myCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
+boolT myCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOWtEXT( "2011.10.03.tool.gather.all.audio.video.files" )/*1*/
 /**/

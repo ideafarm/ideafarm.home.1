@@ -12,13 +12,13 @@
     DEL( pInfoFile ) ;
     if( !ether && pInfoFile ) cbFile = pInfoFile->cbUsed ;
     ZE( countT , cbFile ) ;
-    ether.diskFileQueryF( tinP , pInfoFile , handle ) ; ___( pInfoFile ) ;
+    ether.diskFileQueryF( tinBaseP , pInfoFile , handle ) ; ___( pInfoFile ) ;
     }
-        ether.delF( tinP , psttMapped ) ;
-        ether.fileOpenF( tinP , handle , flagsResult , psttMapped , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , 0 , 0 , 0 , cOpenTries ) ; //20230604@1409: ifcOPENsHARE_WR <- ifcOPENsHARE_R W/O ANALYSIS SO CAN INPUT A bookC FILE ; WITH THIS CHANGE, CALLER IS REPONSIBLE FOR HANDLING A FILE WITH VOLATILE CONTENT OR LENGTH
-        ether.diskMakeDirIfNeededF( tinP , psttMapped ) ;
+        ether.delF( tinBaseP , psttMapped ) ;
+        ether.fileOpenF( tinBaseP , handle , flagsResult , psttMapped , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , 0 , 0 , 0 , cOpenTries ) ; //20230604@1409: ifcOPENsHARE_WR <- ifcOPENsHARE_R W/O ANALYSIS SO CAN INPUT A bookC FILE ; WITH THIS CHANGE, CALLER IS REPONSIBLE FOR HANDLING A FILE WITH VOLATILE CONTENT OR LENGTH
+        ether.diskMakeDirIfNeededF( tinBaseP , psttMapped ) ;
         ZE( countT , flagsResult ) ;
-        ether.diskMapFileNameF( tinP , psttMapped , psttAll ) ; ___( psttMapped ) ;
+        ether.diskMapFileNameF( tinBaseP , psttMapped , psttAll ) ; ___( psttMapped ) ;
         ZE( strokeS* , psttMapped ) ;
     {
     if( !handle )
@@ -31,7 +31,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/countT boxC::cbFileF( tinS& tinP )/*1*/
+/*1*/countT boxC::cbFileF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

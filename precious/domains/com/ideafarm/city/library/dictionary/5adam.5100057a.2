@@ -11,20 +11,20 @@
     return *this ;
 
     }
-        else { ether.strMakeF( tinP , LF , psttEmail , datum.psttEmail ) ; ___( psttEmail ) ; }
+        else { ether.strMakeF( tinBaseP , LF , psttEmail , datum.psttEmail ) ; ___( psttEmail ) ; }
         }
             }
-                ether.delF( tinP , psttd ) ;
-                ether.strMakeF( tinP , LF , psttEmail , T(psttd)+T("\r\n")+T(datum.psttEmail) ) ; ___( psttEmail ) ;
+                ether.delF( tinBaseP , psttd ) ;
+                ether.strMakeF( tinBaseP , LF , psttEmail , T(psttd)+T("\r\n")+T(datum.psttEmail) ) ; ___( psttEmail ) ;
                 strokeS* psttd = psttEmail ; psttEmail = 0 ;
             {
-            if( ether.strCompareF( tinP , psttEmail , datum.psttEmail ) )
+            if( ether.strCompareF( tinBaseP , psttEmail , datum.psttEmail ) )
         {
         if( psttEmail )
     {
     if( datum.psttEmail )
 
-    if( !psttZip ) { ether.strMakeF( tinP , LF , psttZip , datum.psttZip ) ; ___( psttZip ) ; }
+    if( !psttZip ) { ether.strMakeF( tinBaseP , LF , psttZip , datum.psttZip ) ; ___( psttZip ) ; }
     const datumEmailZipC& datum = *(datumEmailZipC*)&plateP ;
     TINSL
 {
@@ -33,9 +33,9 @@ plateC& datumEmailZipC::operator +=( plateC& plateP )
 }
     return psttRpt ;
 
-    ether.strMakeF( tinP , LF , psttRpt , psttEmail ) ; ___( psttRpt ) ;
+    ether.strMakeF( tinBaseP , LF , psttRpt , psttEmail ) ; ___( psttRpt ) ;
 
-    ether.delF( tinP , psttRpt ) ; //U::RECALC ONLY IF STALE
+    ether.delF( tinBaseP , psttRpt ) ; //U::RECALC ONLY IF STALE
     TINSL
 {
 datumEmailZipC::operator const strokeS*( voidT )
@@ -43,19 +43,19 @@ datumEmailZipC::operator const strokeS*( voidT )
 }
     }
         }
-            ether.delF( tinP , psttk ) ;
+            ether.delF( tinBaseP , psttk ) ;
 
             }
                 soulP >> *ppsttv ;
-                ether.delF( tinP , *ppsttv ) ;
+                ether.delF( tinBaseP , *ppsttv ) ;
             {
             if( ppsttv )
 
-            else if( !ether.strCompareF( tinP , psttk , T("zip"     ) ) ) { ppsttv = &psttZip      ; }
-            else if( !ether.strCompareF( tinP , psttk , T("note"    ) ) ) { ppsttv = &psttNote     ; }
-            else if( !ether.strCompareF( tinP , psttk , T("language") ) ) { ppsttv = &psttLanguage ; }
-            else if( !ether.strCompareF( tinP , psttk , T("email"   ) ) ) { ppsttv = &psttEmail    ; }
-                 if( !ether.strCompareF( tinP , psttk , T("country" ) ) ) { ppsttv = &psttOldCountry  ; }
+            else if( !ether.strCompareF( tinBaseP , psttk , T("zip"     ) ) ) { ppsttv = &psttZip      ; }
+            else if( !ether.strCompareF( tinBaseP , psttk , T("note"    ) ) ) { ppsttv = &psttNote     ; }
+            else if( !ether.strCompareF( tinBaseP , psttk , T("language") ) ) { ppsttv = &psttLanguage ; }
+            else if( !ether.strCompareF( tinBaseP , psttk , T("email"   ) ) ) { ppsttv = &psttEmail    ; }
+                 if( !ether.strCompareF( tinBaseP , psttk , T("country" ) ) ) { ppsttv = &psttOldCountry  ; }
             ZE( strokeS** , ppsttv ) ;
         {
         else
@@ -71,7 +71,7 @@ psttEmail( 0 ) ,
 psttOldCountry( 0 ) ,
 psttRpt( 0 ) ,
 ether( etherP ) ,
-datumEmailZipC::datumEmailZipC( tinS& tinP , etherC& etherP , soulC& soulP ) :
+datumEmailZipC::datumEmailZipC( tinBaseS& tinBaseP , etherC& etherP , soulC& soulP ) :
 
 }
 {
@@ -81,8 +81,8 @@ psttLanguage( 0 ) ,
 psttEmail( 0 ) ,
 psttOldCountry( 0 ) ,
 psttRpt( 0 ) ,
-ether( *tinP.pEther ) ,
-datumEmailZipC::datumEmailZipC( tinS& tinP ) :
+ether( *((tinNormalS&)tinBaseP).pEther ) ,
+datumEmailZipC::datumEmailZipC( tinBaseS& tinBaseP ) :
 
 }
     return scSgn ;
@@ -137,12 +137,12 @@ sCountT datumEmailZipC::operator -( const plateC& plateP ) const
 plateC& datumEmailZipC::operator =( plateC& plateP )
 
 }
-    ether.delF( tinP , psttZip ) ;
-    ether.delF( tinP , psttNote ) ;
-    ether.delF( tinP , psttLanguage ) ;
-    ether.delF( tinP , psttEmail ) ;
-    ether.delF( tinP , psttOldCountry ) ;
-    ether.delF( tinP , psttRpt ) ;
+    ether.delF( tinBaseP , psttZip ) ;
+    ether.delF( tinBaseP , psttNote ) ;
+    ether.delF( tinBaseP , psttLanguage ) ;
+    ether.delF( tinBaseP , psttEmail ) ;
+    ether.delF( tinBaseP , psttOldCountry ) ;
+    ether.delF( tinBaseP , psttRpt ) ;
     TINSL
 {
 datumEmailZipC::~datumEmailZipC( voidT )
@@ -153,9 +153,9 @@ datumEmailZipC::~datumEmailZipC( voidT )
 plateC& datumEmailZipC::operator >>( soulC& sP )
 
 }
-    return new( 0 , tinP , idLineP , idiFileP ) datumEmailZipC( tinP ) ;
+    return new( 0 , tinBaseP , idLineP , idiFileP ) datumEmailZipC( tinBaseP ) ;
 {
-datumEmailZipC* datumEmailZipC::newF( tinS& tinP , const countT idLineP , const countT idiFileP , p oolC& poolOldSetOldP )
+datumEmailZipC* datumEmailZipC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , p oolC& poolOldSetOldP )
 
 NEWdELcLASS( 1 , datumEmailZipC )
 

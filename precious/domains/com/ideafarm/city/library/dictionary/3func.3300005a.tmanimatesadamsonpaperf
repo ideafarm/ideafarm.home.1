@@ -14,11 +14,11 @@ DONE( tmAnimateSadamsOnPaperF )
     }
         if( POOP ) POOPR
 
-        paperOldC::obeyAnimateCbfStrokesIF( tinP , etThread , 0 , ether ) ;
+        paperOldC::obeyAnimateCbfStrokesIF( tinBaseP , etThread , 0 , ether ) ;
 
         }
-            if( !( idCycle % cyclesPerSleep ) ) { ++ s ; thirdC::dosSleepRawIF( tinP , msSleep ) ; }
-            if( F(paperOldC::flagsModeIF( tinP )) & flPAPERmODEi_ANIMATIONtHREADfIRED ) break ;
+            if( !( idCycle % cyclesPerSleep ) ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , msSleep ) ; }
+            if( F(paperOldC::flagsModeIF( tinBaseP )) & flPAPERmODEi_ANIMATIONtHREADfIRED ) break ;
 
 #endif
             }
@@ -26,29 +26,29 @@ DONE( tmAnimateSadamsOnPaperF )
                     pRootI->letRefF() ;
                     }
 
-                        paperOldC::ungrabIF( tinP ) ;
-                        paper.flushF( tinP ) ;
-                        paperOldC& paper = (paperOldC&)pRootI->selectPaperF(tinP,ifcIDcMDpAPERsELECT_QUERYsHOW) ;
-                        //paperOldC& paper = (paperOldC&)pRootI->selectPaperF( tinP , ifcIDcMDpAPERsELECT_QUERYrENDER ) ;
+                        paperOldC::ungrabIF( tinBaseP ) ;
+                        paper.flushF( tinBaseP ) ;
+                        paperOldC& paper = (paperOldC&)pRootI->selectPaperF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYsHOW) ;
+                        //paperOldC& paper = (paperOldC&)pRootI->selectPaperF( tinBaseP , ifcIDcMDpAPERsELECT_QUERYrENDER ) ;
 
                         }
-                            sadamsC::pSadamsIF( tinP )->tabFreshF( tinP , etThread ) ;
+                            sadamsC::pSadamsIF( tinBaseP )->tabFreshF( tinBaseP , etThread ) ;
                             //LOGrAWtID( "calling tabFreshF" ) ;
                         {
-                        if( paperOldC::queryResetTabFreshIF( tinP ) || !( idCycle % TUCK ) )
+                        if( paperOldC::queryResetTabFreshIF( tinBaseP ) || !( idCycle % TUCK ) )
                         //LOGrAWtID( T("[idCycle]: ")+TF1(idCycle) ) ;
             
                         }
-                            sadamsC::pSadamsIF( tinP )->highlightIfF( tinP ) ;
-                            paperOldC::freshVolatileTextIF( tinP , etThread , pcNotes , idCycle ) ;
-                            paperOldC::obeyAnimateCbfStrokesIF( tinP , etThread , idCycle , ether ) ;
-                            paperOldC::beforeAnimatingIF( tinP , etThread , idCycle ) ;
+                            sadamsC::pSadamsIF( tinBaseP )->highlightIfF( tinBaseP ) ;
+                            paperOldC::freshVolatileTextIF( tinBaseP , etThread , pcNotes , idCycle ) ;
+                            paperOldC::obeyAnimateCbfStrokesIF( tinBaseP , etThread , idCycle , ether ) ;
+                            paperOldC::beforeAnimatingIF( tinBaseP , etThread , idCycle ) ;
                         {
-                        if( !( F(paperOldC::flagsModeIF( tinP )) & flPAPERmODEi_SUPPRESSaNIMATION ) && !( F(paperOldC::flagsModeIF( tinP )) & flPAPERmODEi_ANIMATIONtHREADfIRED ) )
-                        paperOldC::grabIF( tinP , TAG( TAGiDnULL ) ) ;
+                        if( !( F(paperOldC::flagsModeIF( tinBaseP )) & flPAPERmODEi_SUPPRESSaNIMATION ) && !( F(paperOldC::flagsModeIF( tinBaseP )) & flPAPERmODEi_ANIMATIONtHREADfIRED ) )
+                        paperOldC::grabIF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                         }
-                            etThread.osTimeNowF( tinP , timeL1 , timeL2 ) ;
+                            etThread.osTimeNowF( tinBaseP , timeL1 , timeL2 ) ;
                             timeL2 = timeL1 = 0 ;
             
                             }
@@ -106,8 +106,8 @@ DONE( tmAnimateSadamsOnPaperF )
                             {
                             if( timeE1 < timeTarget1 )
             
-                            etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeL1 , timeL2 ) ;
-                            etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+                            etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeL1 , timeL2 ) ;
+                            etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
                             ZE( sCountT , timeE2 ) ;
                             ZE( countT , timeE1 ) ; //U::MOVE ALL OF THIS ADJUSTMENT LOGIC INTO BASE LIBRARY
                         {
@@ -118,10 +118,10 @@ DONE( tmAnimateSadamsOnPaperF )
                     if( !pRootI->backAbsentF() )
                 {
                 if( pRootI )
-                windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
             {
             
-            backOldC::freshJoyIfIF( tinP , etThread ) ;
+            backOldC::freshJoyIfIF( tinBaseP , etThread ) ;
 
             //SPECIAL APPLICATIONS SUCH AS SCREEN CAPTURE CAN SET flPAPERbACKmODE_POLLjOYeVENwHENcONSOLEhIDDEN TEMPORARILY
             //JOYSTICK IS NORMALLY NOT POLLED WHEN CONSOLE IS NOT ACTIVE (HENCE NOT VISIBLE); THIS IS TO MINIMIZE CPU LOAD WHEN OPERATOR IS NOT INTERACTING WITH CONSOLE
@@ -130,7 +130,7 @@ DONE( tmAnimateSadamsOnPaperF )
             if( !( ++ pcNotes[ 2 ] ) ) ++ pcNotes[ 3 ] ;
             if( !( ++ idCycle ) ) ++ idCycle ;
         {
-        while( !( F(paperOldC::flagsModeIF( tinP )) & flPAPERmODEi_ANIMATIONtHREADfIRED ) )
+        while( !( F(paperOldC::flagsModeIF( tinBaseP )) & flPAPERmODEi_ANIMATIONtHREADfIRED ) )
         ZE( sCountT , timeTarget2 ) ;
         countT msStep = msPowerAbove >> 4 ;
         ZE( boolT , bLathUpLag ) ;
@@ -143,20 +143,20 @@ DONE( tmAnimateSadamsOnPaperF )
         countT cyclesPerSleep = 1 ;
         TN( tb , " " ) ;
         TN( tcr , "\r\n" ) ;
-        etThread.osTimeNowF( tinP , timeL1 , timeL2 ) ;
+        etThread.osTimeNowF( tinBaseP , timeL1 , timeL2 ) ;
         ZE( sCountT , timeL2 ) ;
         ZE( countT , timeL1 ) ;
         ZE( countT , idCycle ) ;
         countT pcNotes[ 5 ] = { 1 , 2 , 0 , 0 , 0 } ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
     IFsCRATCH
 
-    tinP.tell_tmWatchF_toIgnoreMeF() ;
+    ((tinNormalS&)tinBaseP).tell_tmWatchF_toIgnoreMeF() ;
 
-    thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 if( pTaskP )
 /*1*/TASK( tmAnimateSadamsOnPaperF )/*1*/

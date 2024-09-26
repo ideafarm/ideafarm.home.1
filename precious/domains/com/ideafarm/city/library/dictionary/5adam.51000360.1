@@ -8,23 +8,23 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.strokeF( tinP , T("main is ending\r\n") ) ; //U:
+etThread.strokeF( tinBaseP , T("main is ending\r\n") ) ; //U:
 //U: WAIT FOR sgnQuitting HERE
 
 }
-    etThread.strokeF( tinP , T("i could not connect to the Lena server\r\ngoodbye, cruel world!\r\n\r\npress the Enter key to fire me\r\n\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("i could not connect to the Lena server\r\ngoodbye, cruel world!\r\n\r\npress the Enter key to fire me\r\n\r\n") ) ;
     etThread = 0 ;
 {
 if( etThread )
 
 }
-    etThread.delF( tinP , psttl ) ;
-    sock.readWoLineF( tinP , psttl , 0x1000 ) ; ___( psttl ) ;
+    etThread.delF( tinBaseP , psttl ) ;
+    sock.readWoLineF( tinBaseP , psttl , 0x1000 ) ; ___( psttl ) ;
     ZE( strokeS* , psttl ) ;
-    sock.connectF( tinP , IDpORTlISTEN , 0x01010101 ) ;
-    socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tinBaseP , IDpORTlISTEN , 0x01010101 ) ;
+    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 {
 while( !ether && !etThread )
 

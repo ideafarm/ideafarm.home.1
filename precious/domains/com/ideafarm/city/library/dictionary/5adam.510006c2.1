@@ -9,19 +9,19 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.boxPutF( tinP , T("///d/tmp/foo.ttt") , postHear , cbIn ) ;
-etThread.traceF( tinP , T(postHear) ) ;
+etThread.boxPutF( tinBaseP , T("///d/tmp/foo.ttt") , postHear , cbIn ) ;
+etThread.traceF( tinBaseP , T(postHear) ) ;
 
-countT cbIn = ss.readF( tinP , postHear , sizeof postHear ) ;
+countT cbIn = ss.readF( tinBaseP , postHear , sizeof postHear ) ;
 memset( postHear , 0 , sizeof postHear ) ;
 char postHear[ 0x10000 ] ; 
 
-ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
 
-tSay += TF4(tSayBody.csF(tinP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
+tSay += TF4(tSayBody.csF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
 ) ;
 
     "Content-Length: "
@@ -48,8 +48,8 @@ TN( tSay ,
 
 TN( tSayBody ,
 
-ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , etThread , T("identity.api.rackspacecloud.com") ) ) ;
-socketC ss( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , etThread , T("identity.api.rackspacecloud.com") ) ) ;
+socketC ss( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
 TODO
 

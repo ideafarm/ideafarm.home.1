@@ -8,7 +8,7 @@
 
 
 }
-    diskWalkPrivateIF( tinP , cDirsP , cFilesP , postBuffer , bQuitP , flagsP , pCbfP , pcArgP , pModuloDirsP , pModuloFilesP ) ;
+    diskWalkPrivateIF( tinBaseP , cDirsP , cFilesP , postBuffer , bQuitP , flagsP , pCbfP , pcArgP , pModuloDirsP , pModuloFilesP ) ;
     
     BOSdOnOTtEST( WHATgbo , strcpy( postBuffer , postNameP ) )
     osTextT postBuffer[ TUCK << 1 ] ; //A:ASSUME: THIS IS BIG ENOUGH TO HOLD THE LONGEST POSSIBLE DIRECTORY NAME INCLUDING DRIVE INDICATOR PLUS TERMINATING '\' PLUS TERMINATING 0
@@ -29,7 +29,7 @@
         countT cMin = postNameP[ 1 ] == ':' ? 3 : 1 ;
         if( POOP ) return ;
         __( costLike < 1 ) ;
-        countT costLike = c_strlenIF( tinP , postNameP ) ;
+        countT costLike = c_strlenIF( tinBaseP , postNameP ) ;
         if( POOP ) return ;
         FV( flDISKwALK , flagsP ) ;
         __Z( postNameP ) ;
@@ -37,7 +37,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::diskWalkIF( tinS& tinP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , const boolT& bQuitP , const flagsT flagsP , diskWalkCBFT pCbfP , countT* const pcArgP , countT* pModuloDirsP , countT* pModuloFilesP )/*1*/
+/*1*/voidT thirdC::diskWalkIF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , const boolT& bQuitP , const flagsT flagsP , diskWalkCBFT pCbfP , countT* const pcArgP , countT* pModuloDirsP , countT* pModuloFilesP )/*1*/
 
 /**/
 */
@@ -76,7 +76,7 @@
   upon return from the outermost call, will contain the resulting count
   normally is set to 0 for the outermost call
  cDirsP
- tinP
+ tinBaseP
 arguments
 for max speed, i contain no overhead code
 i count files and directories

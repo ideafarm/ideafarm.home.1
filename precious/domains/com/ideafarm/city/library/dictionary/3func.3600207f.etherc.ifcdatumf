@@ -10,8 +10,8 @@
 }
     }
         }
-            delF( tinP , pbOut ) ;
-            if( !bSent ) boxPutF( tinP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/out/dat.")+TF3(flags1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idCitizenHirerI,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idComputer,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(tinP.monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) , pbOut , cbOut ) ;
+            delF( tinBaseP , pbOut ) ;
+            if( !bSent ) boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/out/dat.")+TF3(flags1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idCitizenHirerI,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idComputer,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) , pbOut , cbOut ) ;
     
             }
                 }
@@ -21,67 +21,67 @@
                 bSent = !POOP ;
     
                 }
-                    sOut.writeMsgF( tinP , "!amDry" ) ;
-                    sOut.writeMsgF( tinP , pbOut , cbOut ) ;
+                    sOut.writeMsgF( tinBaseP , "!amDry" ) ;
+                    sOut.writeMsgF( tinBaseP , pbOut , cbOut ) ;
     
-                    sOut.connectF( tinP , ifcPORToLD1rIVERrESERVED ) ;
-                    socketC sOut( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    sOut.connectF( tinBaseP , ifcPORToLD1rIVERrESERVED ) ;
+                    socketC sOut( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 {
                 SCOOPS
             {
             IFsCRATCH
             ZE( boolT , bSent ) ;
     
-            //else          { boxPutUniqueF( tinP , psttu , tFile+T(".uid.unk.uid" )                                             , pbOut , cbOut ) ; ___( psttu ) ; }
-            //if( psttUid ) { boxPutUniqueF( tinP , psttu , tFile+T(".uid.")+T(psttUid)+T(".uid") , pbOut , cbOut ) ; ___( psttu ) ; }
+            //else          { boxPutUniqueF( tinBaseP , psttu , tFile+T(".uid.unk.uid" )                                             , pbOut , cbOut ) ; ___( psttu ) ; }
+            //if( psttUid ) { boxPutUniqueF( tinBaseP , psttu , tFile+T(".uid.")+T(psttUid)+T(".uid") , pbOut , cbOut ) ; ___( psttu ) ; }
             //U: REPLACE ALL Uid CODE WITH CODE THAT USES idCitizenHirerI
     
-            //delF( tinP , postUid ) ;
+            //delF( tinBaseP , postUid ) ;
             //}
-            //    memCopyF( tinP , pbOut + 0xb * sizeof(countT) + cbr + costUid , "\"" , 2 ) ;
-            //    memCopyF( tinP , pbOut + 0xb * sizeof(countT) + cbr + costUid + 1 , pbP , cbd ) ;
-            //    memCopyF( tinP , pbOut + 0xb * sizeof(countT) + cbr + costUid , " \"" , 2 ) ;
+            //    memCopyF( tinBaseP , pbOut + 0xb * sizeof(countT) + cbr + costUid , "\"" , 2 ) ;
+            //    memCopyF( tinBaseP , pbOut + 0xb * sizeof(countT) + cbr + costUid + 1 , pbP , cbd ) ;
+            //    memCopyF( tinBaseP , pbOut + 0xb * sizeof(countT) + cbr + costUid , " \"" , 2 ) ;
             //{
             //if( cbd )
-            //memCopyF( tinP , pbOut + 0xb * sizeof(countT) + cbr , postUid                 , costUid        ) ;
+            //memCopyF( tinBaseP , pbOut + 0xb * sizeof(countT) + cbr , postUid                 , costUid        ) ;
             // ENABLE THE COMMENTED OUT CODE (AND EDIT) IN ORDER TO INCLUDE THE UID IN THE DATA
     
-            if( cbd ) memCopyF( tinP , pbOut + 0xb * sizeof(countT) + processGlobal2I.cb_nicNameC_ + cbr , pbP                         , cbd              ) ;
-                      memCopyF( tinP , pbOut + 0xb * sizeof(countT) + processGlobal2I.cb_nicNameC_       , (byteT*)pcResourceId        , cbr              ) ;
-                      memCopyF( tinP , pbOut + 0xb * sizeof(countT)                          , (byteT*)&nicName            , processGlobal2I.cb_nicNameC_      ) ;
-                      memCopyF( tinP , pbOut + 0xa * sizeof(countT)                          , (byteT*)&processGlobal1I.idAdamRoot            , sizeof(countT)   ) ; // a
-                      memCopyF( tinP , pbOut +   9 * sizeof(countT)                          , (byteT*)&idComputer         , sizeof(countT)   ) ; // 9
-                      memCopyF( tinP , pbOut +   8 * sizeof(countT)                          , (byteT*)&flags2             , sizeof(countT)   ) ; // 8
-                      memCopyF( tinP , pbOut +   7 * sizeof(countT)                          , (byteT*)&flags1             , sizeof(countT)   ) ; // 8
-                      memCopyF( tinP , pbOut +   6 * sizeof(countT)                          , (byteT*)&amountP            , sizeof(countT)   ) ; // 7
-                      memCopyF( tinP , pbOut +   5 * sizeof(countT)                          , (byteT*)&cbd                , sizeof(countT)   ) ; // 6
-                      memCopyF( tinP , pbOut +   3 * sizeof(countT)                          , (byteT*)&time2              , sizeof(countT)   ) ; // 4
-                      memCopyF( tinP , pbOut +   2 * sizeof(countT)                          , (byteT*)&time1              , sizeof(countT)   ) ; // 3
-                      memCopyF( tinP , pbOut +   1 * sizeof(countT)                          , (byteT*)&idCitizenHirerI     , sizeof(countT)   ) ; // 2
-                      memCopyF( tinP , pbOut                                                 , (byteT*)&cbOutNet           , sizeof(countT)   ) ; // 1
+            if( cbd ) memCopyF( tinBaseP , pbOut + 0xb * sizeof(countT) + processGlobal2I.cb_nicNameC_ + cbr , pbP                         , cbd              ) ;
+                      memCopyF( tinBaseP , pbOut + 0xb * sizeof(countT) + processGlobal2I.cb_nicNameC_       , (byteT*)pcResourceId        , cbr              ) ;
+                      memCopyF( tinBaseP , pbOut + 0xb * sizeof(countT)                          , (byteT*)&nicName            , processGlobal2I.cb_nicNameC_      ) ;
+                      memCopyF( tinBaseP , pbOut + 0xa * sizeof(countT)                          , (byteT*)&processGlobal1I.idAdamRoot            , sizeof(countT)   ) ; // a
+                      memCopyF( tinBaseP , pbOut +   9 * sizeof(countT)                          , (byteT*)&idComputer         , sizeof(countT)   ) ; // 9
+                      memCopyF( tinBaseP , pbOut +   8 * sizeof(countT)                          , (byteT*)&flags2             , sizeof(countT)   ) ; // 8
+                      memCopyF( tinBaseP , pbOut +   7 * sizeof(countT)                          , (byteT*)&flags1             , sizeof(countT)   ) ; // 8
+                      memCopyF( tinBaseP , pbOut +   6 * sizeof(countT)                          , (byteT*)&amountP            , sizeof(countT)   ) ; // 7
+                      memCopyF( tinBaseP , pbOut +   5 * sizeof(countT)                          , (byteT*)&cbd                , sizeof(countT)   ) ; // 6
+                      memCopyF( tinBaseP , pbOut +   3 * sizeof(countT)                          , (byteT*)&time2              , sizeof(countT)   ) ; // 4
+                      memCopyF( tinBaseP , pbOut +   2 * sizeof(countT)                          , (byteT*)&time1              , sizeof(countT)   ) ; // 3
+                      memCopyF( tinBaseP , pbOut +   1 * sizeof(countT)                          , (byteT*)&idCitizenHirerI     , sizeof(countT)   ) ; // 2
+                      memCopyF( tinBaseP , pbOut                                                 , (byteT*)&cbOutNet           , sizeof(countT)   ) ; // 1
             // KEEP THIS IN SYNC WITH headerS IN 3f30104
     
             const countT cbOutNet = cbOut - sizeof( countT ) ;
-            newF( tinP , LF , pbOut , cbOut ) ; ___( pbOut ) ;
+            newF( tinBaseP , LF , pbOut , cbOut ) ; ___( pbOut ) ;
             countT cbOut = 0xb * sizeof( countT ) + processGlobal2I.cb_nicNameC_ + cbr + cbd ;
-            countT cbr = ( strBodyLengthF( tinP , pcResourceId ) + 1 ) * sizeof( countT ) ; // EXCLUDING THE idFileImmutable OF THE OWNER OF THIS etherC OBJECT
-            third.osTimeNowF( tinP , time1 , time2 ) ;
+            countT cbr = ( strBodyLengthF( tinBaseP , pcResourceId ) + 1 ) * sizeof( countT ) ; // EXCLUDING THE idFileImmutable OF THE OWNER OF THIS etherC OBJECT
+            third.osTimeNowF( tinBaseP , time1 , time2 ) ;
             ZE( sCountT , time2 ) ;
             ZE( countT , time1 ) ;
             }
                 if( POOP ) POOPR
-                nicName = socketC::nicNameIF( tinP , *tinP.pEtScratch ) ;
+                nicName = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
                 SCOOPS
             {
             IFsCRATCH
             nicNameC nicName ;
-            countT idComputer = diskIdF( tinP , T("///c") ) ;
-            const countT idCitizenHirerI = ether_idCitizenHirerI_F( tinP ) ;
+            countT idComputer = diskIdF( tinBaseP , T("///c") ) ;
+            const countT idCitizenHirerI = ether_idCitizenHirerI_F( tinBaseP ) ;
     
-            //strMakeF( tinP , LF , postUid , psttUid ) ;
+            //strMakeF( tinBaseP , LF , postUid , psttUid ) ;
             //ZE( countT , costUid ) ;
             //ZE( osTextT* , postUid ) ;
-            //if( !psttUid ) strMakeF( tinP , LF , psttUid , T("") ) ;
+            //if( !psttUid ) strMakeF( tinBaseP , LF , psttUid , T("") ) ;
     
             ZE( byteT* , pbOut ) ;
         {
@@ -127,11 +127,11 @@
             case 'w' : { flags2 |= flDATUM2_WINDOWSnT ; break ; }
             case 'o' : { flags2 |= flDATUM2_OS2       ; break ; }
         {
-        switch( third.osIdIF( tinP ) )
+        switch( third.osIdIF( tinBaseP ) )
     
         flagsT flags2 = flags2P ;
         flagsT flags1 = flags1P ;
-        if( pbP && !cbd && F(flags2P) & flDATUM2_osTextT ) cbd = strBodyLengthF( tinP , pbP ) + 1 ;
+        if( pbP && !cbd && F(flags2P) & flDATUM2_osTextT ) cbd = strBodyLengthF( tinBaseP , pbP ) + 1 ;
         countT cbd = cbP ;
     
         else                pcResourceId = &ze ;
@@ -139,7 +139,7 @@
         ZE( const countT* , pcResourceId ) ;
         ZE( countT , ze ) ;
     {
-    if( tinP.pEtScratch )
+    if( ((tinNormalS&)tinBaseP).pEtScratch )
 
     _IO_
 
@@ -154,7 +154,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcDatumF( tinS& tinP , const flagsT flags1P , const flagsT flags2P , countT amountP , const countT* const pcResourceIdP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/voidT etherC::ifcDatumF( tinBaseS& tinBaseP , const flagsT flags1P , const flagsT flags2P , countT amountP , const countT* const pcResourceIdP , const byteT* const pbP , const countT cbP )/*1*/
 
 /**/
 */

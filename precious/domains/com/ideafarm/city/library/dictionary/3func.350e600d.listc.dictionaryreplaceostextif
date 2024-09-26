@@ -10,7 +10,7 @@
 }
     }
         pccName ++ ;
-        if( !( *pccName & BM_HIGH ) ) *pccName = dictionaryQueryFromTextIF( tinP , (osTextT*)*pccName ) ;
+        if( !( *pccName & BM_HIGH ) ) *pccName = dictionaryQueryFromTextIF( tinBaseP , (osTextT*)*pccName ) ;
     {
     while( *pccName )
     countT* pccName = pczNameP ;
@@ -19,14 +19,14 @@
 
     }
         if( POOP ) return ;
-        __( tinP.monitor.cGrabbed && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING ) ) ; // TO PREVENT DEADLOCKING, A THREAD MAY NOT BEGIN A WALK IN THE LIST TREE WHILE IT POSESSES A listingC ; THIS PROHIBITION IS MORE THAN NECESSARY BUT IS SIMPLE TO ENFORCE ; THE NECESSARY CONDITION IS TO PREVENT "BACKWARD" WALKING ; cGrabbed COUNTS ANY grabitC GRAB, NOT JUST GRABS OF listingC INSTANCES
+        __( ((tinNormalS&)tinBaseP).monitor.cGrabbed && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING ) ) ; // TO PREVENT DEADLOCKING, A THREAD MAY NOT BEGIN A WALK IN THE LIST TREE WHILE IT POSESSES A listingC ; THIS PROHIBITION IS MORE THAN NECESSARY BUT IS SIMPLE TO ENFORCE ; THE NECESSARY CONDITION IS TO PREVENT "BACKWARD" WALKING ; cGrabbed COUNTS ANY grabitC GRAB, NOT JUST GRABS OF listingC INSTANCES
         if( POOP ) return ;
         __Z( pczNameP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT listC::dictionaryReplaceOsTextIF( tinS& tinP , countT* const pczNameP )/*1*/
+/*1*/voidT listC::dictionaryReplaceOsTextIF( tinBaseS& tinBaseP , countT* const pczNameP )/*1*/
 
 /**/
 */

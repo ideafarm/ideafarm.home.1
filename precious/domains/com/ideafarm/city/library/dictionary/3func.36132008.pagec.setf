@@ -11,15 +11,15 @@
     }
         }
             }
-                tinP.pBookMark[ offbm ].pcpIdBook[ 1 ] = pcpIdBookOriginal[ 1 ] ;
-                tinP.pBookMark[ offbm ].pcpIdBook[ 0 ] = pcpIdBookOriginal[ 0 ] ;
+                ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 1 ] = pcpIdBookOriginal[ 1 ] ;
+                ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] = pcpIdBookOriginal[ 0 ] ;
                 if( pcpIdBookOriginal[ 0 ] != 1 ) { BLAMMO ; }
                 const countT* pcpIdBookOriginal = books.pcpIdBookF()  ;
 
-                tinP.pBookMark[ offbm ].pcpIdBook[ 0 ] = 0 ;
-                tinP.pBookMark[ offbm ].pbz = pbzP ;
+                ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] = 0 ;
+                ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pbz = pbzP ;
             {
-            if( !( tinP.pBookMark[ offbm ].cRef ++ ) )
+            if( !( ((tinNormalS&)tinBaseP).pBookMark[ offbm ].cRef ++ ) )
 
             if( offbm == -1 ) { BLAMMO ; }
 
@@ -27,41 +27,41 @@
                 }
                     break ;
                     offbm = offr ;
-                    tinP.pBookMark[ offr ].pcpIdBook[ 0 ] = 0       ;
-                    tinP.pBookMark[ offr ].pbz            = 0       ;
-                    tinP.pBookMark[ offr ].cRef           = 0       ;
-                    tinP.pBookMark[ offr ].pBooks         = &booksP ;
+                    ((tinNormalS&)tinBaseP).pBookMark[ offr ].pcpIdBook[ 0 ] = 0       ;
+                    ((tinNormalS&)tinBaseP).pBookMark[ offr ].pbz            = 0       ;
+                    ((tinNormalS&)tinBaseP).pBookMark[ offr ].cRef           = 0       ;
+                    ((tinNormalS&)tinBaseP).pBookMark[ offr ].pBooks         = &booksP ;
                 {
-                if( !tinP.pBookMark[ offr ].pBooks )
+                if( !((tinNormalS&)tinBaseP).pBookMark[ offr ].pBooks )
             {
-            if( offbm == -1 ) for( countT offr = 0 ; offr < sizeof tinP.pBookMark / sizeof tinP.pBookMark[ 0 ] ; offr ++ )
+            if( offbm == -1 ) for( countT offr = 0 ; offr < sizeof ((tinNormalS&)tinBaseP).pBookMark / sizeof ((tinNormalS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
 
             }
                 }
                     break ;
                     offbm = offr ;
                 {
-                if( tinP.pBookMark[ offr ].pBooks == &booksP )
+                if( ((tinNormalS&)tinBaseP).pBookMark[ offr ].pBooks == &booksP )
             {
-            for( countT offr = 0 ; offr < sizeof tinP.pBookMark / sizeof tinP.pBookMark[ 0 ] ; offr ++ )
+            for( countT offr = 0 ; offr < sizeof ((tinNormalS&)tinBaseP).pBookMark / sizeof ((tinNormalS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
             countT offbm = -1 ;
         {
-        if( !( F(tinP.flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
+        if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
 
         }
-            thirdC::c_memcpyIF( tinP , *(byteT**)&pbz , pbzP , cbzP ) ;
+            thirdC::c_memcpyIF( tinBaseP , *(byteT**)&pbz , pbzP , cbzP ) ;
             __Z( pbz ) ;
-            PUSE.newF( tinP , LF , *(byteT**)&pbz , cbzP ) ; ___( pbz ) ;
-            if( pbz ) { PUSE( tinP , *(byteT**)&pbz ) ; }
-            //if( tinP.pc Utility[ 0 ] && tinP.pEther ) tinP.pEther->traceF( tinP , T("DELETE flag is set") ) ;
-            //if( tinP.pc Utility[ 0 ] && tinP.pEther ) tinP.pEther->traceF( tinP , T("pageC::setF [pcRefP,pbzP,cbzP,flagsP]:    ")+TF2((countT)pcRefP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)pbzP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbzP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(flagsP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            PUSE.newF( tinBaseP , LF , *(byteT**)&pbz , cbzP ) ; ___( pbz ) ;
+            if( pbz ) { PUSE( tinBaseP , *(byteT**)&pbz ) ; }
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("DELETE flag is set") ) ;
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("pageC::setF [pcRefP,pbzP,cbzP,flagsP]:    ")+TF2((countT)pcRefP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)pbzP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbzP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(flagsP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         else
         }
             if( !( 1 + cRefWas ) ) { BLAMMO ; } ;
 
             //}
-            //    tinP.pEther->trace F( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
+            //    ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    OStEXTAK( ostoSay , " +" ) ;
             //    OStEXTC(  ostoSay , cRefWas , 0 ) ;
@@ -72,12 +72,12 @@
             //    OStEXTAK( ostoSay , "pageC  [this,pcRef,cRefWas]:    " ) ;
             //    OStEXT(   ostoSay , TUCK << 2 ) ;
             //{
-            //if( tinP.pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+            //if( ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
 
             countT cRefWas = incv02AM( *pcRef ) ;
 
             pbz = pbzP ;
-            //if( tinP.pc Utility[ 0 ] && tinP.pEther ) tinP.pEther->traceF( tinP , T("DELETE flag is not set") ) ;
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("DELETE flag is not set") ) ;
         {
         if( !( F(flagsP) & flPAGEc_DELETE ) )
 
@@ -92,7 +92,7 @@
     if( pbz || flags ) { BLAMMO ; }
     SCOOP
 {
-/*1*/voidT pageC::setF( tinS& tinP , booksC& booksP , countT* pcRefP , const byteT* const pbzP , countT cbzP , flagsT flagsP )/*1*/
+/*1*/voidT pageC::setF( tinBaseS& tinBaseP , booksC& booksP , countT* pcRefP , const byteT* const pbzP , countT cbzP , flagsT flagsP )/*1*/
 
 /**/
 

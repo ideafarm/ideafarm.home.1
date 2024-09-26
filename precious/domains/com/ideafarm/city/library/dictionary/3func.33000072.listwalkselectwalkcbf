@@ -16,25 +16,25 @@
             }
                 CONoUTrAW( "================== CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
                 POPtINaRGS
-                flagsT flagsRC = listC::walkIF( tinP , hRecord ) ; //U::BUG: NEED pcP[ 0 ] AND pcP[ 1 ]
-                tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-                tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
-                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-                tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+                flagsT flagsRC = listC::walkIF( tinBaseP , hRecord ) ; //U::BUG: NEED pcP[ 0 ] AND pcP[ 1 ]
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
                 PUSHtINaRGS
                 CONoUTrAW( "================== CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
             {
             else
-            if( pSelectWalkCBFP ) (*pSelectWalkCBFP)( tinP , *tinP.pEther , hRecord ) ;
+            if( pSelectWalkCBFP ) (*pSelectWalkCBFP)( tinBaseP , *((tinNormalS&)tinBaseP).pEther , hRecord ) ;
 
-            puseC puseRecord( tinP , *tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+            puseC puseRecord( tinBaseP , *((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
             
-            record.openF( tinP , hRecord , 0 , tinP.ta.retained.u.listWalk.walk.idGrabLayer ) ;
-            handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            record.openF( tinBaseP , hRecord , 0 , ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
+            handleC hRecord( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
             
-            grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+            grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            __( !listingC::bIsListingIF( tinP , &record ) ) ;
+            __( !listingC::bIsListingIF( tinBaseP , &record ) ) ;
             listC& record = *(listC*)(const listingC*)spRecord ;
 
             listingVSP spRecord = entry ;
@@ -45,25 +45,25 @@
             }
                 CONoUTrAW( "================== CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
                 POPtINaRGS
-                flagsT flagsRC = listC::walkIF( tinP , hRecord ) ; //U::BUG: NEED pcP[ 0 ] AND pcP[ 1 ]
-                tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-                tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
-                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-                tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+                flagsT flagsRC = listC::walkIF( tinBaseP , hRecord ) ; //U::BUG: NEED pcP[ 0 ] AND pcP[ 1 ]
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = record.nameF() ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
                 PUSHtINaRGS
                 CONoUTrAW( "================== CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
             {
             else
-            if( pSelectWalkCBFP ) (*pSelectWalkCBFP)( tinP , *tinP.pEther , hRecord ) ;
+            if( pSelectWalkCBFP ) (*pSelectWalkCBFP)( tinBaseP , *((tinNormalS&)tinBaseP).pEther , hRecord ) ;
 
-            puseC puseRecord( tinP , *tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;
+            puseC puseRecord( tinBaseP , *((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
             
-            record.openF( tinP , hRecord , 0 , tinP.ta.retained.u.listWalk.walk.idGrabLayer ) ;
-            handleC hRecord( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            record.openF( tinBaseP , hRecord , 0 , ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
+            handleC hRecord( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
             
-            grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+            grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            __( !listingOfSetC::bIsListingIF( tinP , &record ) ) ;
+            __( !listingOfSetC::bIsListingIF( tinBaseP , &record ) ) ;
             listOfSetC& record = *(listOfSetC*)(const listingC*)spRecord ;
 
             listingVSP spRecord = entry ;
@@ -73,14 +73,14 @@
     {
     if( pListing && !( pListing->flagsF() & fliLISTINGc_MIXINlIST ) && pListing->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
 
-    selectWalkCBFT pSelectWalkCBFP = (selectWalkCBFT)tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-    listingC*      pListing        =                 tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    selectWalkCBFT pSelectWalkCBFP = (selectWalkCBFT)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+    listingC*      pListing        =                 ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
-/*1*/flagsT _export listWalkSelectWalkCBF( tinS& tinP )/*1*/
+/*1*/flagsT _export listWalkSelectWalkCBF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

@@ -14,14 +14,14 @@
     
                 }
                     //BOSpOOP
-                    BOS( WHATsfw , BOSoK , WriteFile( (HANDLE)tinP.brcRaw , postP , cost , &cba , 0 ) ) //U: ENABLE THIS CODE ONLY IF THERE IS A CONSOLE
+                    BOS( WHATsfw , BOSoK , WriteFile( (HANDLE)((tinNormalS&)tinBaseP).brcRaw , postP , cost , &cba , 0 ) ) //U: ENABLE THIS CODE ONLY IF THERE IS A CONSOLE
     
                     BOSpOOP
                     BOS( WHATgbo , BOShANDLE , GetStdHandle( STD_OUTPUT_HANDLE ) ) //INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
                 {
                 else
                 if( pRootI ) pRootI->letRefF() ;
-                windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
     
             #elif defined( __NT__ )
     
@@ -34,10 +34,10 @@
         if( cost )
     
         ZE( ULONG , cba ) ;
-        countT cost = tinP.brcRaw ;
+        countT cost = ((tinNormalS&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , strlen( postP ) )
     {
-    if( !( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_QUIETcONSOLE ) && postP )
+    if( !( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_QUIETcONSOLE ) && postP )
 
     _IO_
 
@@ -48,12 +48,12 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::dosWriteStdOutIF( tinS& tinP , const osTextT* const postP )/*1*/
+/*1*/voidT thirdC::dosWriteStdOutIF( tinBaseS& tinBaseP , const osTextT* const postP )/*1*/
 
 /**/
 */
  postP
- tinP
+ tinBaseP
 arguments
 writes the specified text to standard out
 \<A HREF=\"5.1020143.1.0.html\"\>definition\</A\>

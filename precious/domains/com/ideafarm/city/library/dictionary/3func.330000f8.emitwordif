@@ -10,13 +10,13 @@
 }
     }
        }
-           processGlobal4S::_processGlobal4I_IF().bksWord.writeF(  tinP , (byteT*)&word , sizeof word , 0                 , 0                            , flBOOKScwRITE_ALLoRnONE ) ;
+           processGlobal4S::_processGlobal4I_IF().bksWord.writeF(  tinBaseP , (byteT*)&word , sizeof word , 0                 , 0                            , flBOOKScwRITE_ALLoRnONE ) ;
 
            ;
 
-               ( tinP.pag1->idCell & 0x7    ) << 0x1d
+               ( ((tinNormalS&)tinBaseP).pag1->idCell & 0x7    ) << 0x1d
                |
-               ( tinP.monitor.idThread     & 0x7    ) << 0x1a
+               ( ((tinNormalS&)tinBaseP).monitor.idThread     & 0x7    ) << 0x1a
                |
                ( idFileP                   & 0x1fff ) << 0xd
                |
@@ -27,7 +27,7 @@
        if( F(processGlobal2I.flCt) & flCTdTg_bksWord  && !( F(processGlobal2I.flDt) & flCTdTg_bksWord  ) && ph && !( F(ph->flags) & flHOMEs_EXCEPTIONhASoCCURRED ) )
        homeS* ph = &homeS::homeIF() ;
     {
-    if( F(tinP.flagsThreadMode2) & flTHREADmODE2_ALLOWeMITwORD )
+    if( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_ALLOWeMITwORD )
 
     TINSL
 {

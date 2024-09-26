@@ -10,23 +10,23 @@
 }
     return pbLB ? ((countT*)pbLB)[ 1 ] : *(countT*)pbnu ;
     //OUT
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
 
     }
-        third.delF( tinP , pbLB ) ;
+        third.delF( tinBaseP , pbLB ) ;
         }
             stackk << pbLB ;
             ((countT*)pbLB)[ 1 ] = 0 ;
             *(countT*)pbLB = query ;
         {
         if( pbLB )
-        third.newF( tinP , LF , pbLB , sizeof( countT ) + cbData ) ; ___BITScT( pbLB , 0xe52 ) ;
+        third.newF( tinBaseP , LF , pbLB , sizeof( countT ) + cbData ) ; ___BITScT( pbLB , 0xe52 ) ;
     {
     if( !pbLB )
 
     }
         else                                                   pbLB = 0 ;
-        if( !third && bHitF( tinP , query , *(countT*)pbLB ) ) break ;
+        if( !third && bHitF( tinBaseP , query , *(countT*)pbLB ) ) break ;
         __Z( pbLB ) ;
         pbLB = (byteT*)&stackk[ idp ] ; //U::EDIT THIS DEF TO USE A SINK QUERY (SEE FOR EXAMPLE freeF)
     {
@@ -34,19 +34,19 @@
 
     ZE( byteT* , pbLB ) ;
     const countT cPlates = stackk ;
-    const countT query = tinP.monitor.idThread ;
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    const countT query = ((tinNormalS&)tinBaseP).monitor.idThread ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     //IN
-    //THESE LINES HERE CAN BE ENABLED IF NEEDED.  THEY ARE COMMENTED OUT ONLY FOR COSMETIC REASONS (TO IMPROVE THE READABILITY OF THE TRACE INFORMATION IN tinS)
+    //THESE LINES HERE CAN BE ENABLED IF NEEDED.  THEY ARE COMMENTED OUT ONLY FOR COSMETIC REASONS (TO IMPROVE THE READABILITY OF THE TRACE INFORMATION IN tinNormalS)
     //OTHERWISE, I WOULD APPEAR ALL OVER THE PLACE BECAUSE IN, OUT CALL ME FOR EVERY FUNCTION
-    //IN, OUT ARE SUPPRESSED SO THAT THIS FUNCTION DOES NOT APPEAR IN tinP'S TRACE FOR THIS THREAD
+    //IN, OUT ARE SUPPRESSED SO THAT THIS FUNCTION DOES NOT APPEAR IN tinBaseP'S TRACE FOR THIS THREAD
 
     }
         if( third ) return *(countT*)pbnu ;
-        __( !tinP.monitor.idThread ) ;
+        __( !((tinNormalS&)tinBaseP).monitor.idThread ) ;
         if( third ) return *(countT*)pbnu ;
         __( idLeverType - ifcIDtYPElEVER_countT ) ;
         if( third ) return *(countT*)pbnu ;
@@ -54,12 +54,12 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT& switchC::forIfcThreadF( tinS& tinP )/*1*/
+/*1*/countT& switchC::forIfcThreadF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */
 the switchC object must have been constructed with a lever of type countT& specified
-like operator countT& except uses tinP.monitor.idThread as the lever value
+like operator countT& except uses ((tinNormalS&)tinBaseP).monitor.idThread as the lever value
   \<A HREF=\"5.e230104.1.1.0.html\"\>e230104:  WAKEsHOW( "example.simplest.func.120000d.switchC.forIfcThreadF" )\</A\>
  simplest
 examples

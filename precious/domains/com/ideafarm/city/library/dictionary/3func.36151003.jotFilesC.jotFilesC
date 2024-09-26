@@ -9,8 +9,8 @@
 
                             
 }
-    tinP.tlsDelF( LF , countTC() ) ; //TLS:1
-    tinP.tlsDelF( LF , countTC() ) ; //TLS:2
+    ((tinNormalS&)tinBaseP).tlsDelF( LF , countTC() ) ; //TLS:1
+    ((tinNormalS&)tinBaseP).tlsDelF( LF , countTC() ) ; //TLS:2
     // A SINGLE TLS DROP COULD BE REUSED, BUT IS DONE THIS WAY FOR SAFETY
 {
 )
@@ -19,15 +19,15 @@
         )
             ".jotFilesC.jotNeverChanges"
             ) ,
-                tinP , tinP.pbF() , postP
+                tinBaseP , ((tinNormalS&)tinBaseP).pbF() , postP
             (
             thirdC::c_strcpyIF
-            tinP ,
+            tinBaseP ,
         (
         thirdC::c_strcatIF
-        tinP.tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:2:     "[postP].jotFilesC.jotNeverChanges"
+        ((tinNormalS&)tinBaseP).tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:2:     "[postP].jotFilesC.jotNeverChanges"
     (
-    tinP ,
+    tinBaseP ,
 (
 jotNeverChanges
 ) ,
@@ -36,24 +36,24 @@ jotNeverChanges
         )
             ".jotFilesC.jotCanChange"
             ) ,
-                tinP , tinP.pbF() , postP
+                tinBaseP , ((tinNormalS&)tinBaseP).pbF() , postP
             (
             thirdC::c_strcpyIF
-            tinP ,
+            tinBaseP ,
         (
         thirdC::c_strcatIF
-        tinP.tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:1:     "[postP].jotFilesC.jotCanChange"
+        ((tinNormalS&)tinBaseP).tlsNewF( LF , TUCK << 1 ) ,                                                                    //TLS:1:     "[postP].jotFilesC.jotCanChange"
     (
-    tinP ,
+    tinBaseP ,
 (
 jotCanChange
-/*1*/jotFilesC::jotFilesC( tinS& tinP , const osTextT* const postP , const flagsT flagsJotP , const countT cKeepInactiveP , const countT cbDataBookCanChangeP , const countT cbDataBookNeverChangesP , const countT cIndexEntriesBookCanChangeP , const countT cIndexEntriesBookNeverChangesP , countT idGrabLayerP , flagsT flagsGrabP , countT idMemorySpaceP ) :/*1*/
+/*1*/jotFilesC::jotFilesC( tinBaseS& tinBaseP , const osTextT* const postP , const flagsT flagsJotP , const countT cKeepInactiveP , const countT cbDataBookCanChangeP , const countT cbDataBookNeverChangesP , const countT cIndexEntriesBookCanChangeP , const countT cIndexEntriesBookNeverChangesP , countT idGrabLayerP , flagsT flagsGrabP , countT idMemorySpaceP ) :/*1*/
 
 
 /**/
 
 */
-caller needs: tlsAllocStackExp_a_C tls( tinP ) ;
+caller needs: tlsAllocStackExp_a_C tls( tinBaseP ) ;
 /*
 
 //

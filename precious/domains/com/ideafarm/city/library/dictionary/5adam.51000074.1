@@ -10,37 +10,37 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
-    //etThread.osSleepF( tinP , TUCK ) ;
+    //etThread.osSleepF( tinBaseP , TUCK ) ;
     ether = 0 ;
     time2last = time2 ;
     time1last = time1 ;
 
-    else           etThread.strokeF( tinP , tDot ) ;
-    if( bNewTock ) etThread.strokeF( tinP , tX ) ;
+    else           etThread.strokeF( tinBaseP , tDot ) ;
+    if( bNewTock ) etThread.strokeF( tinBaseP , tX ) ;
 
     const boolT bNewTock = offTOCK( time1 ) != offTOCK( time1last ) ;
 
-    etThread.delF( tinP , psttNow ) ;
-    etThread.strokeF( tinP , T("\r")+T(psttNow)+T("    ") ) ;
-    etThread.strFromTimeF( tinP , psttNow , time1 , time2 ) ; ___( psttNow ) ;
+    etThread.delF( tinBaseP , psttNow ) ;
+    etThread.strokeF( tinBaseP , T("\r")+T(psttNow)+T("    ") ) ;
+    etThread.strFromTimeF( tinBaseP , psttNow , time1 , time2 ) ; ___( psttNow ) ;
     ZE( strokeS* , psttNow ) ;
 
-    etThread.osTimeNowF( tinP , time1 , time2 ) ;
+    etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
     ZE( sCountT , time2 ) ;
     ZE( countT , time1 ) ;
 {
 while( !ether )
-etThread.osTimeNowF( tinP , time1last , time2last ) ;
+etThread.osTimeNowF( tinBaseP , time1last , time2last ) ;
 ZE( sCountT , time2last ) ;
 ZE( countT , time1last ) ;
 TN( tX   , "x" ) ;
 TN( tDot , "." ) ;
 
-etThread.strokeF( tinP , T("press the enter key to fire me\r\n\r\n") ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmHearF ) ; }
+etThread.strokeF( tinBaseP , T("press the enter key to fire me\r\n\r\n") ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmHearF ) ; }
 
 TODO
 
@@ -48,7 +48,7 @@ DONE( tmHearF )
 }
     FIREmYSELF ;
     HEAReNTER( ether )
-    etThread.osSleepF( tinP , TOCK * 4 ) ;
+    etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
 {
 if( pTaskP )
 TASK( tmHearF )

@@ -12,9 +12,9 @@ REST
 #endif
 
 }
-    etThread.strokeF( tinP , TP( tzs.postShort , 0x20 )+TX(idz)+ts+TX(yU)+TX(mU)+TX(dU)+TX(hhU)+TX(mmU)/*+TX(ssU)+TX(msU)*/+tc ) ;
+    etThread.strokeF( tinBaseP , TP( tzs.postShort , 0x20 )+TX(idz)+ts+TX(yU)+TX(mU)+TX(dU)+TX(hhU)+TX(mmU)/*+TX(ssU)+TX(msU)*/+tc ) ;
 
-    thThread.osTimeOldUtcFromOldLocalF( tinP , msU , ssU , mmU , hhU , dU , mU , yU , dowU , msL , ssL , mmL , hhL , dL , mL , yL , dowL , idz ) ;
+    thThread.osTimeOldUtcFromOldLocalF( tinBaseP , msU , ssU , mmU , hhU , dU , mU , yU , dowU , msL , ssL , mmL , hhL , dL , mL , yL , dowL , idz ) ;
     ZE( countT  , dowU ) ;
     ZE( sCountT , yU   ) ;
     ZE( countT  , mU   ) ;
@@ -24,14 +24,14 @@ REST
     ZE( countT  , ssU  ) ;
     ZE( countT  , msU  ) ;
 
-    const timeZoneSpecS& tzs = timeZoneSpecF( tinP , idz ) ;
+    const timeZoneSpecS& tzs = timeZoneSpecF( tinBaseP , idz ) ;
 {
 for( countT idz = 1 ; idz <= cZones ; idz ++ )
-etThread.strokeF( tinP , T("LOC ")+ts+TX(yL)+TX(mL)+TX(dL)+TX(hhL)+TX(mmL)/*+TX(ssL)+TX(msL)*/+tc+tc ) ;
+etThread.strokeF( tinBaseP , T("LOC ")+ts+TX(yL)+TX(mL)+TX(dL)+TX(hhL)+TX(mmL)/*+TX(ssL)+TX(msL)*/+tc+tc ) ;
 //for( countT idz = 0x2f ; idz <= 0x2f ; idz ++ ) //U.S. PACIFIC TIME
-countT cZones = cTimeZonesF( tinP ) ;
+countT cZones = cTimeZonesF( tinBaseP ) ;
 
-thThread.osTimeToOldTimeF( tinP , msL , ssL , mmL , hhL , dL , mL , yL , dowL , timeL1 , timeL2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+thThread.osTimeToOldTimeF( tinBaseP , msL , ssL , mmL , hhL , dL , mL , yL , dowL , timeL1 , timeL2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
 ZE( countT  , dowL ) ;
 ZE( sCountT , yL   ) ;
 ZE( countT  , mL   ) ;
@@ -42,18 +42,18 @@ ZE( countT  , ssL  ) ;
 ZE( countT  , msL  ) ;
 
 //timeL1 = 0 ;
-etThread.osTimeNowF( tinP , timeL1 , timeL2 ) ;
+etThread.osTimeNowF( tinBaseP , timeL1 , timeL2 ) ;
 ZE( sCountT , timeL2 ) ;
 ZE( countT  , timeL1 ) ;
 
-//etThread.strokeF( tinP , T("VALIDATE: ")+tc+TT(timeL1,timeL2)+tc+TT(timeL1V,timeL2V)+tc ) ;
-//thThread.osTimeFromOldTimeF( tinP , timeL1V , timeL2V , yL , mL , dL , hhL , mmL , ssL , msL ) ;
+//etThread.strokeF( tinBaseP , T("VALIDATE: ")+tc+TT(timeL1,timeL2)+tc+TT(timeL1V,timeL2V)+tc ) ;
+//thThread.osTimeFromOldTimeF( tinBaseP , timeL1V , timeL2V , yL , mL , dL , hhL , mmL , ssL , msL ) ;
 ZE( sCountT , timeL2V ) ;
 ZE( countT  , timeL1V ) ;
 
 }
-    etThread.strokeF( tinP , TP(timeZoneSpecF(tinP,idZone).postShort,0x20)+T(": ")+TX(dowL)+tb+TX(yL)+tb+TX(mL)+tb+TX(dL)+tb+TX(hhL)+tb+TX(mmL)/*+tb+TX(ssL)+tb+TX(msL)*/+tc ) ;
-    thThread.osTimeOldUtcToOldLocalF( tinP , msL , ssL , mmL , hhL , dL , mL , yL , dowL , msU , ssU , mmU , hhU , dU , mU , yU , dowU , idZone ) ;
+    etThread.strokeF( tinBaseP , TP(timeZoneSpecF(tinBaseP,idZone).postShort,0x20)+T(": ")+TX(dowL)+tb+TX(yL)+tb+TX(mL)+tb+TX(dL)+tb+TX(hhL)+tb+TX(mmL)/*+tb+TX(ssL)+tb+TX(msL)*/+tc ) ;
+    thThread.osTimeOldUtcToOldLocalF( tinBaseP , msL , ssL , mmL , hhL , dL , mL , yL , dowL , msU , ssU , mmU , hhU , dU , mU , yU , dowU , idZone ) ;
     ZE( countT  , dowL ) ;
     ZE( sCountT , yL   ) ;
     ZE( countT  , mL   ) ;
@@ -64,7 +64,7 @@ ZE( countT  , timeL1V ) ;
     ZE( countT  , msL  ) ;
 {
 for( countT idZone = 1 ; idZone <= cZones ; idZone ++ )
-const countT cZones = cTimeZonesF( tinP ) ;
+const countT cZones = cTimeZonesF( tinBaseP ) ;
 
 ZE( countT  , dowU ) ;
 sCountT yU   = 2003 ;
@@ -78,8 +78,8 @@ ZE( countT  , msU  ) ;
 #if defined( NEVERdEFINED )
 
 }
-    etThread.strokeF( tinP , T("just after newyear in ")+TP(timeZoneSpecF(tinP,idZone).postShort,0x20)+T(", UTC is: ")+TX(dowU)+tb+TX(yU)+tb+TX(mU)+tb+TX(dU)+tb+TX(hhU)+tb+TX(mmU)/*+tb+TX(ssU)+tb+TX(msU)*/+tc ) ;
-    thThread.osTimeOldUtcFromOldLocalF( tinP , msU , ssU , mmU , hhU , dU , mU , yU , dowU , msL , ssL , mmL , hhL , dL , mL , yL , dowL , idZone ) ;
+    etThread.strokeF( tinBaseP , T("just after newyear in ")+TP(timeZoneSpecF(tinBaseP,idZone).postShort,0x20)+T(", UTC is: ")+TX(dowU)+tb+TX(yU)+tb+TX(mU)+tb+TX(dU)+tb+TX(hhU)+tb+TX(mmU)/*+tb+TX(ssU)+tb+TX(msU)*/+tc ) ;
+    thThread.osTimeOldUtcFromOldLocalF( tinBaseP , msU , ssU , mmU , hhU , dU , mU , yU , dowU , msL , ssL , mmL , hhL , dL , mL , yL , dowL , idZone ) ;
     ZE( countT  , dowU ) ;
     ZE( sCountT , yU   ) ;
     ZE( countT  , mU   ) ;
@@ -90,7 +90,7 @@ ZE( countT  , msU  ) ;
     ZE( countT  , msU  ) ;
 {
 for( countT idZone = 5 ; idZone <= 5 ; idZone ++ )
-const countT cZones = cTimeZonesF( tinP ) ;
+const countT cZones = cTimeZonesF( tinBaseP ) ;
 
 ZE( countT  , dowL ) ;
 sCountT yL   = 2003 ;
@@ -103,9 +103,9 @@ ZE( countT  , msL  ) ;
 
 #endif  
 
-etThread.strokeF( tinP , /*TP(timeZoneSpecF(tinP,idZone).postShort,0x20)+T(": ")+*/TX(dowL)+tb+TX(yL)+tb+TX(mL)+tb+TX(dL)+tb+TX(hhL)+tb+TX(mmL)/*+tb+TX(ssL)+tb+TX(msL)*/+tc ) ;
+etThread.strokeF( tinBaseP , /*TP(timeZoneSpecF(tinBaseP,idZone).postShort,0x20)+T(": ")+*/TX(dowL)+tb+TX(yL)+tb+TX(mL)+tb+TX(dL)+tb+TX(hhL)+tb+TX(mmL)/*+tb+TX(ssL)+tb+TX(msL)*/+tc ) ;
 
-thThread.osTimeToOldTimeF( tinP , msL , ssL , mmL , hhL , dL , mL , yL , dowL , timeB1 , timeB2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+thThread.osTimeToOldTimeF( tinBaseP , msL , ssL , mmL , hhL , dL , mL , yL , dowL , timeB1 , timeB2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
 ZE( countT  , dowL ) ;
 ZE( sCountT , yL   ) ;
 ZE( countT  , mL   ) ;
@@ -119,8 +119,8 @@ sCountT timeB2 = 0xb29bb ;
 countT timeB1 = 0xffffffff ;
 
 
-etThread.strokeF( tinP , TT(timeL1,timeL2)+tc ) ;
-thThread.osTimeFromOldTimeF( tinP , timeL1 , timeL2 , yL , mL , dL , hhL , 0 , 0 , 0 ) ;
+etThread.strokeF( tinBaseP , TT(timeL1,timeL2)+tc ) ;
+thThread.osTimeFromOldTimeF( tinBaseP , timeL1 , timeL2 , yL , mL , dL , hhL , 0 , 0 , 0 ) ;
 ZE( sCountT , timeL2 ) ;
 ZE( countT  , timeL1 ) ;
 ZE( countT  , dowL ) ;

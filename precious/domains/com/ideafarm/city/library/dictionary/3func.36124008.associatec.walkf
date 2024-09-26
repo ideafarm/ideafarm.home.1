@@ -10,7 +10,7 @@
 }
     return bQuit ;
 
-    stAss.ungrabF( tinP ) ;
+    stAss.ungrabF( tinBaseP ) ;
     }
         while( ~hWalk && !bQuit ) ;
         }
@@ -26,12 +26,12 @@
                 {
                 if( !bDestroy ) 
 
-                bQuit = ass.walkF( tinP , pAssociateCBFP , cArgP , flagsP , pczIncludeP , pczExcludeP , pStqWalkerP ) ;
+                bQuit = ass.walkF( tinBaseP , pAssociateCBFP , cArgP , flagsP , pczIncludeP , pczExcludeP , pStqWalkerP ) ;
 
                 *pStqWalkerP << (countT)this ;
 
                 }
-                    *(staqC**)&pStqWalkerP = new( 0 , tinP , pbStq , sizeof pbStq ) staqC( tinP , sizeof( countT ) , TUCK ) ;
+                    *(staqC**)&pStqWalkerP = new( 0 , tinBaseP , pbStq , sizeof pbStq ) staqC( tinBaseP , sizeof( countT ) , TUCK ) ;
                     bDestroy = 1 ;
                 {
                 if( !pStqWalkerP )
@@ -41,11 +41,11 @@
             if( F(flagsP) & flASSOCIATEcwALK_RECURSE )
 
             if( bQuit ) break ;
-            bQuit = (*pAssociateCBFP)( tinP , assView , ass , *this , cArgP , pStqWalkerP ) ;
+            bQuit = (*pAssociateCBFP)( tinBaseP , assView , ass , *this , cArgP , pStqWalkerP ) ;
 
             }
-                if( pczExcludeP && (  thirdC::c_strstrIF( tinP , pczExcludeP , pczMyGroupSubject ) ||  thirdC::c_strstrIF( tinP , pczExcludeP , pczMyGroup ) ||  thirdC::c_strstrIF( tinP , pczExcludeP , pczMe ) ) ) continue ;
-                if( pczIncludeP &&   !thirdC::c_strstrIF( tinP , pczIncludeP , pczMyGroupSubject ) && !thirdC::c_strstrIF( tinP , pczIncludeP , pczMyGroup ) && !thirdC::c_strstrIF( tinP , pczIncludeP , pczMe )   ) continue ;
+                if( pczExcludeP && (  thirdC::c_strstrIF( tinBaseP , pczExcludeP , pczMyGroupSubject ) ||  thirdC::c_strstrIF( tinBaseP , pczExcludeP , pczMyGroup ) ||  thirdC::c_strstrIF( tinBaseP , pczExcludeP , pczMe ) ) ) continue ;
+                if( pczIncludeP &&   !thirdC::c_strstrIF( tinBaseP , pczIncludeP , pczMyGroupSubject ) && !thirdC::c_strstrIF( tinBaseP , pczIncludeP , pczMyGroup ) && !thirdC::c_strstrIF( tinBaseP , pczIncludeP , pczMe )   ) continue ;
 
                 countT pczMyGroup[]        = { assView.idGroupF() | BM_HIGH2 , 0 } ; // APPLICATION CODERS MUST REMEMBER TO SET BM_HIGH2 WHEN SPECIFYING idGroup VALUES
                 countT pczMyGroupSubject[] = { ass.idGroupF() | BM_HIGH      , 0 } ; // APPLICATION CODERS MUST REMEMBER TO SET BM_HIGH WHEN SPECIFYING idGroup VALUES
@@ -57,13 +57,13 @@
 
             assViewC&   assView =   *(assViewC*)( pcPlate + 1 ) ;
             associateC& ass     = **(associateC**)pcPlate       ;
-            countT*     pcPlate = &stAss.downF( tinP , hWalk ) ;
+            countT*     pcPlate = &stAss.downF( tinBaseP , hWalk ) ;
         {
         do
-        handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stAss )
-    stAss.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stAss.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     ZE( boolT , bQuit ) ;
 
     }
@@ -74,7 +74,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/boolT associateC::walkF( tinS& tinP , associateCBFT pAssociateCBFP , countT cArgP , const flagsT flagsP , const countT* const pczIncludeP , const countT* const pczExcludeP , staqC* const pStqWalkerP )/*1*/
+/*1*/boolT associateC::walkF( tinBaseS& tinBaseP , associateCBFT pAssociateCBFP , countT cArgP , const flagsT flagsP , const countT* const pczIncludeP , const countT* const pczExcludeP , staqC* const pStqWalkerP )/*1*/
 
 /**/
 */
@@ -101,7 +101,7 @@
   i will call this callback for each view that i encounter during the walk
   must not be 0
  pAssociateCBFP
- tinP
+ tinBaseP
 arguments
 /*
 

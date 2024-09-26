@@ -13,30 +13,30 @@
     BOSpOOP
     BOS( WHATgbo , BOSoK , DeleteObject( oshBrush  ) )
 
-    dtBitmapF( tinP ) ;
+    dtBitmapF( tinBaseP ) ;
 
     }
-        //ether.etherWhereF( tinP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
-        //ether.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+        //ether.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
+        //ether.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
 
         }
-            ++ s ; ether.osSleepF( tinP , TOCK >> 3 ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TOCK >> 3 ) ;
         {
-        while( tinP.pag1->_deviceC_cHelper )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        while( ((tinNormalS&)tinBaseP).pag1->_deviceC_cHelper )
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         }
             stJob << (byteT*)&job ;
             inc02AM( drawJobS::cInstancesIF() ) ;
             drawJobS job ;
-            stackC& stJob = *tinP.pag1->_deviceC_pStkJob ;
+            stackC& stJob = *((tinNormalS&)tinBaseP).pag1->_deviceC_pStkJob ;
         {
 
-        tinP.pag1->_deviceC_flagsHelper |= flDEVICEchELPER_QUIT ;
+        ((tinNormalS&)tinBaseP).pag1->_deviceC_flagsHelper |= flDEVICEchELPER_QUIT ;
     {
-    if( 1 == decv02AM( tinP.pag1->_deviceC_cMe ) )
+    if( 1 == decv02AM( ((tinNormalS&)tinBaseP).pag1->_deviceC_cMe ) )
 
-    quitDrawingF( tinP ) ;
+    quitDrawingF( tinBaseP ) ;
 
     TINSL
 {

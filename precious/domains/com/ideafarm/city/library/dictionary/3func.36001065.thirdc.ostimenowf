@@ -9,8 +9,8 @@
 
 }
     }
-        osTimeAddIF( tinP , time1P , time2P , timeSinceBoot1 , timeSinceBoot2 ) ;
-        dosQuerySysInfoTimeSinceBootF( tinP , timeSinceBoot1 , timeSinceBoot2 ) ;
+        osTimeAddIF( tinBaseP , time1P , time2P , timeSinceBoot1 , timeSinceBoot2 ) ;
+        dosQuerySysInfoTimeSinceBootF( tinBaseP , timeSinceBoot1 , timeSinceBoot2 ) ;
         ZE( sCountT , timeSinceBoot2 ) ;
         ZE( countT , timeSinceBoot1 ) ;
         time2P = ph->timeBoot2 ;
@@ -19,15 +19,15 @@
     {
     else
     }
-        osTimeAddIF( tinP , time1P , time2P , timeSince60s1 , timeSince60s2 ) ;
-        dosQuerySysInfoTimeSince1960sDecadeF( tinP , timeSince60s1 , timeSince60s2 ) ;
+        osTimeAddIF( tinBaseP , time1P , time2P , timeSince60s1 , timeSince60s2 ) ;
+        dosQuerySysInfoTimeSince1960sDecadeF( tinBaseP , timeSince60s1 , timeSince60s2 ) ;
         ZE( sCountT , timeSince60s2 ) ;
         ZE( countT , timeSince60s1 ) ;
 
 
         }
             if( y != 1969 ) BLAMMOiD( y - 1969 ) ;
-            osTimeToOldTimeF( tinP , ms , ss , mm , hh , d , m , y , dow , time1P , time2P , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+            osTimeToOldTimeF( tinBaseP , ms , ss , mm , hh , d , m , y , dow , time1P , time2P , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
             ZE( countT  , dow ) ;
             ZE( sCountT , y ) ;
             ZE( countT  , m ) ;
@@ -38,7 +38,7 @@
             ZE( countT  , ms ) ;
         {
 
-        osTimeFromOldTimeIF( tinP , time1P , time2P , 1969 , 0 , 0 , 0 , 0 , 0 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+        osTimeFromOldTimeIF( tinBaseP , time1P , time2P , 1969 , 0 , 0 , 0 , 0 , 0 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
     {
     if( fDoNotUseTimeAtBootP )
     _IO_
@@ -54,7 +54,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::osTimeNowF( tinS& tinP , countT& time1P , sCountT& time2P , const boolT fDoNotUseTimeAtBootP )/*1*/
+/*1*/voidT thirdC::osTimeNowF( tinBaseS& tinBaseP , countT& time1P , sCountT& time2P , const boolT fDoNotUseTimeAtBootP )/*1*/
 
 /**/
 */

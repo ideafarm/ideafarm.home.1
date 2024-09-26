@@ -8,50 +8,50 @@
 
 
     }
-        tinP.ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                          \
+        ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                          \
                                                                                                                                                                     \
         }                                                                                                                                                           \
             DEL( pPuseIndex ) ;                                                                                                                                     \
-            PUSE( tinP , *(byteT**)&pczV ) ;                                                                                                                        \
-            puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                             \
+            PUSE( tinBaseP , *(byteT**)&pczV ) ;                                                                                                                        \
+            puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                             \
         {                                                                                                                                                           \
                                                                                                                                                                     \
         }                                                                                                                                                           \
-            { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczIKV ) ; }                                                                      \
+            { puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinBaseP , *(byteT**)&pczIKV ) ; }                                                                      \
                                                                                                                                                                     \
             }                                                                                                                                                       \
                 }                                                                                                                                                   \
                     pczIKV[ ccDoomed ] = 0 ;                                                                                                                        \
                     ccDoomed -- ;                                                                                                                                   \
                 {                                                                                                                                                   \
-                while( ccDoomed > 1 && F(flLISTwALKrETURNcODE_LISTINGdELETED) & listC::deleteIF( tinP , pczIKV , flLISTdELETE_IFeMPTY ) )                           \
+                while( ccDoomed > 1 && F(flLISTwALKrETURNcODE_LISTINGdELETED) & listC::deleteIF( tinBaseP , pczIKV , flLISTdELETE_IFeMPTY ) )                           \
                 countT ccDoomed = ccIKV ;                                                                                                                           \
                                                                                                                                                                     \
-                thirdC::c_memcpyIF( tinP , (byteT*)( pczIKV + ccIK ) , (byteT*)pczV  , sizeof( countT ) * ( ccV      + 1 ) ) ;                                      \
-                thirdC::c_memcpyIF( tinP , (byteT*)  pczIKV          , (byteT*)pczIK , sizeof( countT ) *   ccIK           ) ;                                      \
+                thirdC::c_memcpyIF( tinBaseP , (byteT*)( pczIKV + ccIK ) , (byteT*)pczV  , sizeof( countT ) * ( ccV      + 1 ) ) ;                                      \
+                thirdC::c_memcpyIF( tinBaseP , (byteT*)  pczIKV          , (byteT*)pczIK , sizeof( countT ) *   ccIK           ) ;                                      \
             {                                                                                                                                                       \
             if( !bFail )                                                                                                                                            \
                                                                                                                                                                     \
             }                                                                                                                                                       \
                 __Z( pczIKV ) ;                                                                                                                                     \
-                PUSE.newF( tinP , LF , *(byteT**)&pczIKV , sizeof( countT ) * ( ccIKV + 1 ) ) ; ___( pczIKV ) ;                                                     \
-                puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                         \
+                PUSE.newF( tinBaseP , LF , *(byteT**)&pczIKV , sizeof( countT ) * ( ccIKV + 1 ) ) ; ___( pczIKV ) ;                                                     \
+                puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                         \
             {                                                                                                                                                       \
             countT ccIKV = ccIK + ccV ;                                                                                                                             \
-            countT ccV   = thirdC::c_strlenIF( tinP , pczV  ) ;                                                                                                     \
-            countT ccIK  = thirdC::c_strlenIF( tinP , pczIK ) ;                                                                                                     \
+            countT ccV   = thirdC::c_strlenIF( tinBaseP , pczV  ) ;                                                                                                     \
+            countT ccIK  = thirdC::c_strlenIF( tinBaseP , pczIK ) ;                                                                                                     \
             ZE( countT* , pczIKV ) ;                                                                                                                                \
         {                                                                                                                                                           \
         if( !bFail )                                                                                                                                                \
                                                                                                                                                                     \
         }                                                                                                                                                           \
             DELlIST( fieldEditParamOutC , pOut ) ;                                                                                                                  \
-            puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                             \
+            puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                             \
         {                                                                                                                                                           \
                                                                                                                                                                     \
         }                                                                                                                                                           \
             }                                                                                                                                                       \
-                listC::fieldIF( tinP , pOut , hIKV , pczField , _fe_deleteC() +  _fe_ok_equal_C( recordP ) , LF ) ;                                                    \
+                listC::fieldIF( tinBaseP , pOut , hIKV , pczField , _fe_deleteC() +  _fe_ok_equal_C( recordP ) , LF ) ;                                                    \
                 countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                       \
             {                                                                                                                                                       \
             if( !bFail )                                                                                                                                            \
@@ -59,8 +59,8 @@
             if( bOpenIK ) hIKP.closeIfF() ;                                                                                                                         \
             if( bFail && bSmelly ) { __1 }                                                                                                                          \
             if( !hIKV ) bFail = 1 ;                                                                                                                                 \
-            listC::openIF( tinP , hIKV , hIKP , pczV , flLISToPEN_IFeXISTS ) ;                                                                                      \
-            handleC hIKV( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                     \
+            listC::openIF( tinBaseP , hIKV , hIKP , pczV , flLISToPEN_IFeXISTS ) ;                                                                                      \
+            handleC hIKV( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                     \
         {                                                                                                                                                           \
         if( !bFail )                                                                                                                                                \
         ZE( fieldEditParamOutC* , pOut ) ;                                                                                                                          \
@@ -68,9 +68,9 @@
         }                                                                                                                                                           \
             if( bFail && bSmelly ) { __1 }                                                                                                                          \
             if( !hIKP ) bFail = 1 ;                                                                                                                                 \
-            listC::openIF( tinP , hIKP , pczIK , flLISToPEN_IFeXISTS ) ;                                                                                            \
+            listC::openIF( tinBaseP , hIKP , pczIK , flLISToPEN_IFeXISTS ) ;                                                                                            \
             THREADmODE3rESTORE                                                                                                                                      \
-            listC::dictionaryReplaceOsTextIF( tinP , pczIK ) ;                                                                                                      \
+            listC::dictionaryReplaceOsTextIF( tinBaseP , pczIK ) ;                                                                                                      \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
         {                                                                                                                                                           \
         if( bOpenIK )                                                                                                                                               \
@@ -82,25 +82,25 @@
             }                                                                                                                                                       \
                 }                                                                                                                                                   \
                     DELzOMBIE( pvspPostKey ) ;                                                                                                                      \
-                    idKeyInIndex = dictionaryQueryFromTextIF( tinP , *pvspPostKey ) ;                                                                               \
+                    idKeyInIndex = dictionaryQueryFromTextIF( tinBaseP , *pvspPostKey ) ;                                                                               \
                 {                                                                                                                                                   \
                 if( !bLiteralKey )                                                                                                                                  \
                                                                                                                                                                     \
                 }                                                                                                                                                   \
                     ___( pPuseIndex ) ;                                                                                                                             \
-                    puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                     \
+                    puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                     \
                 {                                                                                                                                                   \
                                                                                                                                                                     \
                 ;                                                                                                                                                   \
-                    : new( 0 , tinP , LF ) puseC( tinP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) \
-                    ? new( 0 , tinP , LF ) puseC( puseIndexP )                                                                                                      \
+                    : new( 0 , tinBaseP , LF ) puseC( tinBaseP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) \
+                    ? new( 0 , tinBaseP , LF ) puseC( puseIndexP )                                                                                                      \
                 pPuseIndex = !bOpenIK                                                                                                                               \
                 puseat.doNotRestoreTinWhenDieF() ;                                                                                                                  \
-                puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                         \
+                puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                         \
                                                                                                                                                                     \
                 }                                                                                                                                                   \
-                    *pvspPostKey = dictionaryQueryFromIdIF( tinP , idKeyP ) ;                                                                                       \
-                    pvspPostKey = new( 0 , tinP , pbvsp , sizeof pbvsp ) blobVSP ;                                                                                  \
+                    *pvspPostKey = dictionaryQueryFromIdIF( tinBaseP , idKeyP ) ;                                                                                       \
+                    pvspPostKey = new( 0 , tinBaseP , pbvsp , sizeof pbvsp ) blobVSP ;                                                                                  \
                 {                                                                                                                                                   \
                 if( !bLiteralKey )                                                                                                                                  \
                 ZE( blobVSP* , pvspPostKey ) ;                                                                                                                      \
@@ -116,14 +116,14 @@
             {                                                                                                                                                       \
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                             \
         {                                                                                                                                                           \
-        if( !bOpenIK || thirdC::c_strcmpIF( tinP , postMasterPool , "adam.temp" ) )                                                                                 \
+        if( !bOpenIK || thirdC::c_strcmpIF( tinBaseP , postMasterPool , "adam.temp" ) )                                                                                 \
         countT idKeyInIndex = idKeyP ;                                                                                                                              \
         ZE( puseC* , pPuseIndex ) ;                                                                                                                                 \
-        puseC puseMaster( tinP , *tinP.pPoolUse ) ;                                                                                                                 \
+        puseC puseMaster( tinBaseP , *((tinNormalS&)tinBaseP).pPoolUse ) ;                                                                                                                 \
                                                                                                                                                                     \
         const countT idStateSpace = PUSE.idStateSpaceF() ;                                                                                                          \
         ;                                                                                                                                                           \
-            : PUSE.postNameF( tinP )                                                                                                                                \
+            : PUSE.postNameF( tinBaseP )                                                                                                                                \
             ? 0                                                                                                                                                     \
         const osTextT* postMasterPool = !bOpenIK                                                                                                                    \
                                                                                                                                                                     \
@@ -131,12 +131,12 @@
         boolT bOpenIK = !hIKP ;                                                                                                                                     \
                                                                                                                                                                     \
         }                                                                                                                                                           \
-            etherC::strStretchIF( tinP , pczV , 0 , valueP , cNetP ) ; ___( pczV ) ;                                                                                \
-            puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                             \
+            etherC::strStretchIF( tinBaseP , pczV , 0 , valueP , cNetP ) ; ___( pczV ) ;                                                                                \
+            puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;                                                                                                             \
         {                                                                                                                                                           \
         ZE(  countT* , pczV ) ;                                                                                                                                     \
                                                                                                                                                                     \
-        tinP.ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                      \
+        ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                      \
                                                                                                                                                                     \
         }                                                                                                                                                           \
             if( POOP ) return ;                                                                                                                                     \
@@ -144,13 +144,13 @@
             if( bCareful != - 1 ) { __( bCareful ) ; }                                                                                                              \
             countT bCareful = (expCarefulP) ;                                                                                                                       \
             if( POOP ) return ;                                                                                                                                     \
-            __( !!tinP.ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                  \
+            __( !!((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                  \
             __Z( idKeyP ) ;                                                                                                                                         \
             if( POOP ) return ;                                                                                                                                     \
         {                                                                                                                                                           \
         IFbEcAREFUL                                                                                                                                                 \
     {                                                                                                                                                               \
-    voidT listC::unIndexIF( tinS& tinP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP ) \
+    voidT listC::unIndexIF( tinBaseS& tinBaseP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP ) \
                                                                                                                                                                     \
 #define FD_UNiNDEXif(typeP,expCarefulP)                                                                                                                             \
 
@@ -188,7 +188,7 @@
  hIKP
   if !hIKP then specify puseC()
  puseIndexP
- tinP
+ tinBaseP
 args
 i remove an index entry for a particular value of a particular field in a particular record
 /*

@@ -9,24 +9,24 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK << EXPtOCKSpERePOCH ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK << EXPtOCKSpERePOCH ) ;
 
-    etThread.traceMemoryGrainRptF( tinP ) ;
+    etThread.traceMemoryGrainRptF( tinBaseP ) ;
 
-    etThread.traceF( tinP , T("all are alive now") ) ;
+    etThread.traceF( tinBaseP , T("all are alive now") ) ;
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
     {
     while( cAlive < cDone )
 
         etThread.osThreadF( TaRG3fLAGScBtLS( tmCatchF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , 0/*CBmYtLS*/ ) , ++ idHostLath , (countT)&cAlive ) ;
     while( cDo -- )
 
-    etThread.traceF( tinP , T("[idEpoch,cDone(after i launch)]:    ")+TF2(idEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , T("[idEpoch,cDone(after i launch)]:    ")+TF2(idEpoch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     cDone += cDo ;
 
@@ -38,7 +38,7 @@ etThread.traceF( tinP , T("ok") ) ;
 while( !ether )
 ZE( countT , cAlive ) ;
 ZE( countT , cDone ) ;
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( countT , idHostLath ) ;
 ZE( countT , idEpoch ) ;
 TN( tb4 , "    " ) ;
@@ -48,26 +48,26 @@ TODO
 DONE( tmCatchF )
 }
     }
-        ++ s ; ether.osSleepF( tinP , idHostP == 1 ? TOCK << EXPtOCKSpERePOCH : TOCK ) ;
+        ++ s ; ether.osSleepF( tinBaseP , idHostP == 1 ? TOCK << EXPtOCKSpERePOCH : TOCK ) ;
 
-//etThread.traceF( tinP , T("zzzz...") ) ;
+//etThread.traceF( tinBaseP , T("zzzz...") ) ;
 
 #endif
-        etThread.delF( tinP , pbi ) ;
+        etThread.delF( tinBaseP , pbi ) ;
 
         }
             }
                 }
                     break ;
-                    sCatch.writeF( tinP , idpHe , nnHe , ifcIDtYPEdATAGRAM_IaMaLIVE ) ;
+                    sCatch.writeF( tinBaseP , idpHe , nnHe , ifcIDtYPEdATAGRAM_IaMaLIVE ) ;
                 {
                 case ifcIDtYPEdATAGRAM_AREyOUaLIVE :
                 }
                     break ;
-                    stActiveUse.ungrabF( tinP ) ;
-                    //etThread.traceF( tinP , T("registered [offUpdate,cPlatesAfter]:    ")+TF2(offUpdate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stActiveUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    stActiveUse.sinkF( tinP , countTC() , idpHe , flSTACKsINK_UNIQUE , 0 , 0 ) ;
-                    stActiveUse.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    stActiveUse.ungrabF( tinBaseP ) ;
+                    //etThread.traceF( tinBaseP , T("registered [offUpdate,cPlatesAfter]:    ")+TF2(offUpdate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stActiveUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    stActiveUse.sinkF( tinBaseP , countTC() , idpHe , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                    stActiveUse.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                     stackC& stActiveUse = *ppStActive[ offUpdate ] ;
                     countT offUpdate = ( idEpoch + 1 ) % CePOCHsTACKS ;
@@ -80,12 +80,12 @@ DONE( tmCatchF )
         {
         if( !ether && !POOP && cbi >= sizeof( countT ) )
 
-        portTimeHe.timeStampIfF( tinP , etThread ) ;
+        portTimeHe.timeStampIfF( tinBaseP , etThread ) ;
         portTimeC portTimeHe( portHe ) ;
         portHe = nnHe ;
         portC portHe( idpHe ) ;
 
-        sCatch.readF( tinP , pbi , cbi , idpHe , nnHe ) ;
+        sCatch.readF( tinBaseP , pbi , cbi , idpHe , nnHe ) ;
         nicNameC     nnHe    ;
         ZE( countT , idpHe ) ;
         ZE( countT , cbi   ) ;
@@ -93,7 +93,7 @@ DONE( tmCatchF )
 #if defined( NEVERdEFINED )
     {
     while( !ether && !POOP )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     inc02AM( cAliveP ) ;
 
@@ -102,20 +102,20 @@ DONE( tmCatchF )
 
     ZE( countT , idEpoch ) ;
     stackC* const ppStActive[] = { &stActive1 , &stActive2 } ;                                                                                              //CS:CODEsYNC: 5101200f 5101200f
-    stackC  stActive2( tinP , etThread , TAG( TAGiDnULL ), flSTACKc_null , ifcSTACKtYPE_countT , ifcIDgRABlAYER_7BASEmISC1 , 0 , 0 , 0 , 0 , 0 ) ;
-    stackC  stActive1( tinP , etThread , TAG( TAGiDnULL ), flSTACKc_null , ifcSTACKtYPE_countT , ifcIDgRABlAYER_7BASEmISC1 , 0 , 0 , 0 , 0 , 0 ) ;
+    stackC  stActive2( tinBaseP , etThread , TAG( TAGiDnULL ), flSTACKc_null , ifcSTACKtYPE_countT , ifcIDgRABlAYER_7BASEmISC1 , 0 , 0 , 0 , 0 , 0 ) ;
+    stackC  stActive1( tinBaseP , etThread , TAG( TAGiDnULL ), flSTACKc_null , ifcSTACKtYPE_countT , ifcIDgRABlAYER_7BASEmISC1 , 0 , 0 , 0 , 0 , 0 ) ;
 
-    stackC stActiveNew( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stActiveNew( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
 
     }
-        //etThread.traceF( tinP , T("[&sCatch,idpRoot]:    ")+TfORsTRING((countT)&sCatch)+tb4+TF4(idpRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+        //etThread.traceF( tinBaseP , T("[&sCatch,idpRoot]:    ")+TfORsTRING((countT)&sCatch)+tb4+TF4(idpRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
         nnRoot  = nicNameC( 1 ) ;
         idpRoot = idpMe ;
     {
     if( idHostP == 1 )
 
-    countT idpMe = sCatch.bindF( tinP ) ;
-    socketC sCatch( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_NOsECRECY | flSOCKETc_NOdUALsTACK , 0 , 0 , 0 , 0 , 0 , 0 ) ;
+    countT idpMe = sCatch.bindF( tinBaseP ) ;
+    socketC sCatch( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_NOsECRECY | flSOCKETc_NOdUALsTACK , 0 , 0 , 0 , 0 , 0 , 0 ) ;
     TN( tb4 , "    " ) ;
 #if defined( NEVERdEFINED )
 
@@ -128,40 +128,40 @@ TASK( tmCatchF )
 DONE( tmThrowP )
 }
     }
-        ++ s ; ether.osSleepF( tinP , idHostP == 1 ? TOCK << EXPtOCKSpERePOCH : TOCK ) ;
+        ++ s ; ether.osSleepF( tinBaseP , idHostP == 1 ? TOCK << EXPtOCKSpERePOCH : TOCK ) ;
 
 #endif
         }
             }
                 break ;
 
-                sThrow.writeF( tinP , idpRoot , nicNameC( 1 ) , ifcIDtYPEdATAGRAM_IaMaLIVE ) ;
+                sThrow.writeF( tinBaseP , idpRoot , nicNameC( 1 ) , ifcIDtYPEdATAGRAM_IaMaLIVE ) ;
             {
             default :
             }
                 break ;
 
-                stActiveUse.ungrabF( tinP ) ;
+                stActiveUse.ungrabF( tinBaseP ) ;
                 }
                     while( ~hWalk ) ;
                     }
-                        etThread.traceF( tinP , T("    listed [idpHe]:    ")+TF4(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
-                        countT idpHe = stActiveUse.downF( tinP , hWalk ) ;
+                        etThread.traceF( tinBaseP , T("    listed [idpHe]:    ")+TF4(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+                        countT idpHe = stActiveUse.downF( tinBaseP , hWalk ) ;
                     {
                     do
-                    handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( stActiveUse )
-                etThread.traceF( tinP , T("active ports [offReport]:    ")+TF2(offReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                stActiveUse.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                etThread.traceF( tinBaseP , T("active ports [offReport]:    ")+TF2(offReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                stActiveUse.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                 stackC& stActiveUse = *ppStActiveP[ offReport ] ;
                 countT offReport = idEpochP % CePOCHsTACKS ;
 
-                stActivePurge.ungrabF( tinP ) ;
-                stActivePurge.purgeF( tinP , 0 ) ;
-                //etThread.traceF( tinP , T("purging [offPurge,cPlates]:    ")+TF2(offPurge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stActivePurge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                stActivePurge.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                stActivePurge.ungrabF( tinBaseP ) ;
+                stActivePurge.purgeF( tinBaseP , 0 ) ;
+                //etThread.traceF( tinBaseP , T("purging [offPurge,cPlates]:    ")+TF2(offPurge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stActivePurge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                stActivePurge.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                 idEpochP ++ ;
 
@@ -174,12 +174,12 @@ DONE( tmThrowP )
 #if defined( NEVERdEFINED )
     {
     while( !ether && !POOP )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     TN( tb4 , "    " ) ;
 
 #endif
-    countT idpMe = sThrow.bindF( tinP ) ;
-    socketC sThrow( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_NOsECRECY | flSOCKETc_NOdUALsTACK , 0 , 0 , 0 , 0 , 0 , 0 ) ;
+    countT idpMe = sThrow.bindF( tinBaseP ) ;
+    socketC sThrow( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_NOsECRECY | flSOCKETc_NOdUALsTACK , 0 , 0 , 0 , 0 , 0 , 0 ) ;
 
     countT&        idEpochP    = *(countT*)pTaskP->c3 ;
     stackC** const ppStActiveP = (stackC**)pTaskP->c2 ;
@@ -223,7 +223,7 @@ TASK( tmThrowP )
     {
     IFbEcAREFUL
 {
-/*1*/countT _export subtractIdPortTimesF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT _export subtractIdPortTimesF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 /**/
 */
 /*

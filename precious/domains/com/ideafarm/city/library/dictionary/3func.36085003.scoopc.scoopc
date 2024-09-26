@@ -10,22 +10,22 @@
 }
     }
         { BLAMMOiD( 0x55555555 ) ; }    //OCCURRED: 20151006@0804(tmObeySoilF) ; 20160430@0859 20160502@0757 (tmObeySoilF no exception rpt) ; 20160513@1429 (tmObeySoilF no exception rpt)
-        LOGrAW3(    "error: not negative of FINGERnEG_POOPc" ": " , tinP.pPoop->fingerprint , "\r\n" ) ;
-        CONoUTrAW3( "error: not negative of FINGERnEG_POOPc" ": " , tinP.pPoop->fingerprint , "\r\n" ) ;
+        LOGrAW3(    "error: not negative of FINGERnEG_POOPc" ": " , ((tinNormalS&)tinBaseP).pPoop->fingerprint , "\r\n" ) ;
+        CONoUTrAW3( "error: not negative of FINGERnEG_POOPc" ": " , ((tinNormalS&)tinBaseP).pPoop->fingerprint , "\r\n" ) ;
     {
-    if( getNegAM( tinP.pPoop->fingerprint ) != FINGERnEG_POOPc )
+    if( getNegAM( ((tinNormalS&)tinBaseP).pPoop->fingerprint ) != FINGERnEG_POOPc )
 
-    if( !tinP.pPoop ) { BLAMMOiD( 0x44444444 ) ; }
-    tinP.pPoop = &poopP ;
+    if( !((tinNormalS&)tinBaseP).pPoop ) { BLAMMOiD( 0x44444444 ) ; }
+    ((tinNormalS&)tinBaseP).pPoop = &poopP ;
     //_IO_
 {
-pEtherSave( tinP.pEther )
-pPoopSave( tinP.pPoop ) ,
+pEtherSave( ((tinNormalS&)tinBaseP).pEther )
+pPoopSave( ((tinNormalS&)tinBaseP).pPoop ) ,
 flagsCt( flagsP ) ,
 idiFileCt( idiFileP ) ,
 idLineCt( idLineP ) ,
-idSerial( F(flagsP) & flSCOOPc_DOnOTcHECKtINiD ? 0 : tinP.idSerial ) ,
-/*1*/scoopC::scoopC( tinS& tinP , const countT idLineP , const countT idiFileP , const poopC& poopP , flagsT flagsP ) :/*1*/
+idSerial( F(flagsP) & flSCOOPc_DOnOTcHECKtINiD ? 0 : ((tinNormalS&)tinBaseP).idSerial ) ,
+/*1*/scoopC::scoopC( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , const poopC& poopP , flagsT flagsP ) :/*1*/
 
 /**/
 */

@@ -18,11 +18,11 @@
         if( - FUZZ1 < maybe( idAxisOther ) && maybe( idAxisOther ) < FUZZ1 )
 
         maybe = e1P + diff ;
-        vectorOldC maybe( tinP , ether ) ;
+        vectorOldC maybe( tinBaseP , ether ) ;
         
         diff *= ratio ;
         diff = e2P - e1P ;
-        vectorOldC  diff( tinP , ether ) ;
+        vectorOldC  diff( tinBaseP , ether ) ;
         
         measureT ratio = magx1 / ( magx1 + magx2 ) ;
         measureT magx2 = e2P( idAxis ) >= 0 ? e2P( idAxis ) : - e2P( idAxis ) ;
@@ -49,9 +49,9 @@
         (
     boolT bx =
 
-    vectorOldC found( tinP , ether ) ; // THIS WILL REMAIN NULL UNLESS THERE IS A CLEAR NEED TO CALCULATE AN INTERMEDIATE "ABOVEbELOW POINT"
+    vectorOldC found( tinBaseP , ether ) ; // THIS WILL REMAIN NULL UNLESS THERE IS A CLEAR NEED TO CALCULATE AN INTERMEDIATE "ABOVEbELOW POINT"
 {
-/*1*/vectorOldC eyeC::aboveOrBelowF( tinS& tinP , vectorOldC& e1P , vectorOldC& e2P ) const/*1*/
+/*1*/vectorOldC eyeC::aboveOrBelowF( tinBaseS& tinBaseP , vectorOldC& e1P , vectorOldC& e2P ) const/*1*/
 
 /**/
 */

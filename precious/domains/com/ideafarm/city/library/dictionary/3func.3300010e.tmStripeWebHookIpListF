@@ -9,75 +9,75 @@
 
 DONE( tmStripeWebHookIpListF )
 }
-    grab_pnnAllowP.ungrabF( tinP ) ;                
-    etThread.delF( tinP , pnnAllowP ) ;                     //OTHER THREADS THAT REFERENCE pnnAllowP MUST GRAB AND THEN VERIFY THAT pnnAllowP IS NOT 0 BEFORE ACCESSING IT
-    grab_pnnAllowP.grabF( tinP , TAG( TAGiDnULL ) ) ;                
+    grab_pnnAllowP.ungrabF( tinBaseP ) ;                
+    etThread.delF( tinBaseP , pnnAllowP ) ;                     //OTHER THREADS THAT REFERENCE pnnAllowP MUST GRAB AND THEN VERIFY THAT pnnAllowP IS NOT 0 BEFORE ACCESSING IT
+    grab_pnnAllowP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                
 
     }
         }
-            ++ s ; ether.osSleepF( tinP , time1NapP ) ;
+            ++ s ; ether.osSleepF( tinBaseP , time1NapP ) ;
 
-            etThread.delF( tinP , postIn ) ;
+            etThread.delF( tinBaseP , postIn ) ;
 
             DEL( pSwPathValue ) ;
 
             }
-                grab_pnnAllowP.ungrabF( tinP ) ;                
+                grab_pnnAllowP.ungrabF( tinBaseP ) ;                
                 }
-                    etThread.delF( tinP , psttValue ) ;
+                    etThread.delF( tinBaseP , psttValue ) ;
 
                     }
                         }
                             pnnAllowP[ cnnAllowP ++ ] = nn ;
-                            //etThread.traceF( tinP , T("[nn,isIPv4F()]:    ")+T(nn)+T("    ")+TF2(nn.isIPv4F(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            //etThread.traceF( tinBaseP , T("[nn,isIPv4F()]:    ")+T(nn)+T("    ")+TF2(nn.isIPv4F(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( ~nn )
-                        nicNameC nn = socketC::nicNameIF( tinP , etThread , psttValue ) ;
+                        nicNameC nn = socketC::nicNameIF( tinBaseP , etThread , psttValue ) ;
 
-                        //etThread.traceF( tinP , T("[ip]:    ")+T(psttValue) ) ;
+                        //etThread.traceF( tinBaseP , T("[ip]:    ")+T(psttValue) ) ;
                     {
                     if( psttValue && psttPath->idAdam == 0x19 && 1 == idHit )
 
-                    //etThread.traceF( tinP , T("[idAdam,idHit]:    ")+TF2(psttPath->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    countT idHit = etThread.strIdF( tinP , T("\"WEBHOOKS\"/item.") , psttPath , 1 ) ;
+                    //etThread.traceF( tinBaseP , T("[idAdam,idHit]:    ")+TF2(psttPath->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    countT idHit = etThread.strIdF( tinBaseP , T("\"WEBHOOKS\"/item.") , psttPath , 1 ) ;
 
-                    //etThread.traceF( tinP , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etThread.traceF( tinBaseP , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                     // "WEBHOOKS"/item.0000000c/
                     // 123456789abcdef0123456789abcdef0
 
                     strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                    psttPath = (strokeS*)pSwPathValue->leverF( tinP , idf ) ;
+                    psttPath = (strokeS*)pSwPathValue->leverF( tinBaseP , idf ) ;
 
                     _IO_
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
 
-                etThread.newF( tinP , LF , pnnAllowP , cFlavors ) ; ___( pnnAllowP ) ;      //LARGER THAN NECESSARY BECAUSE SOME FLAVORS ARE NOT IP ADDRESSES
-                etThread.delF( tinP , pnnAllowP ) ;
+                etThread.newF( tinBaseP , LF , pnnAllowP , cFlavors ) ; ___( pnnAllowP ) ;      //LARGER THAN NECESSARY BECAUSE SOME FLAVORS ARE NOT IP ADDRESSES
+                etThread.delF( tinBaseP , pnnAllowP ) ;
                 cnnAllowP = 0 ;
-                grab_pnnAllowP.grabF( tinP , TAG( TAGiDnULL ) ) ;                
+                grab_pnnAllowP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                
 
-                countT cFlavors = pSwPathValue->cFlavorsF( tinP ) ;
+                countT cFlavors = pSwPathValue->cFlavorsF( tinBaseP ) ;
             {
             if( !POOP )
 
             __Z( pSwPathValue ) ;
-            etThread.strParseJsonF( tinP , pSwPathValue , psttPath , postIn , flSTACKc_null ) ;
+            etThread.strParseJsonF( tinBaseP , pSwPathValue , psttPath , postIn , flSTACKc_null ) ;
             ZE( switchC* , pSwPathValue ) ;
             ZE( strokeS* , psttPath     ) ;
 
-            //etThread.traceF( tinP , T("---- END ----") ) ;
-            //etThread.traceF( tinP , T(postIn)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-            //etThread.traceF( tinP , T("---- BEGIN ----") ) ;
+            //etThread.traceF( tinBaseP , T("---- END ----") ) ;
+            //etThread.traceF( tinBaseP , T(postIn)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            //etThread.traceF( tinBaseP , T("---- BEGIN ----") ) ;
 
             }
                 }
-                    etThread.traceF( tinP , T("boxGetShadowF failed") ) ;
+                    etThread.traceF( tinBaseP , T("boxGetShadowF failed") ) ;
                     POOPRqUIET
                 {
                 if( POOP )
-                tinP.pEtScratch->boxGetShadowF( tinP , postIn , costIn , tUri , 1 , SOCKETtIMEOUTdEFAULTwAN ) ; ___( postIn ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postIn , costIn , tUri , 1 , SOCKETtIMEOUTdEFAULTwAN ) ; ___( postIn ) ;
                 SCOOPS
             {
             IFsCRATCH
@@ -85,10 +85,10 @@ DONE( tmStripeWebHookIpListF )
             ZE( countT , costIn ) ;
             ZE( byteT* , postIn ) ;
 
-            etThread.traceF( tinP , T("querying Stripe for the current Stripe Webhook client IP list") ) ;
+            etThread.traceF( tinBaseP , T("querying Stripe for the current Stripe Webhook client IP list") ) ;
         {
         while( !ether )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( !POOP )
 

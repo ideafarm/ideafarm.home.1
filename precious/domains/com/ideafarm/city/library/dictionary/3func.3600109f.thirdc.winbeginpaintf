@@ -26,17 +26,17 @@
             *pswWinFromDrawDuringPaint = hWindowP.osF( ifcIDtYPEhANDLE_WINDOW ) ;
             lever_swPaintInfoFromDrawingHandle = lever_swWinFromDrawDuringPaint = hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
     
-            if( pInfo ) hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE , tinP.brcRaw ) ;
+            if( pInfo ) hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE , ((tinNormalS&)tinBaseP).brcRaw ) ;
             INCoShANDLES
         {
         else
-        if( tinP.bosFail ) delF( tinP , pbInfo ) ;
+        if( ((tinNormalS&)tinBaseP).bosFail ) delF( tinBaseP , pbInfo ) ;
 
         BOS( WHATgbd , BOSoK , BeginPaint( (HWND)hWindowP.osF( ifcIDtYPEhANDLE_WINDOW ) , pInfo ) )
 
         PAINTSTRUCT* pInfo = (PAINTSTRUCT*)pbInfo ;
-        c_memsetIF( tinP , pbInfo , sizeof( PAINTSTRUCT ) ) ;
-        newF( tinP , LF , pbInfo , sizeof( PAINTSTRUCT ) ) ; ___CT( pbInfo ) ;
+        c_memsetIF( tinBaseP , pbInfo , sizeof( PAINTSTRUCT ) ) ;
+        newF( tinBaseP , LF , pbInfo , sizeof( PAINTSTRUCT ) ) ; ___CT( pbInfo ) ;
         ZE( byteT* , pbInfo ) ;
 
     #elif defined( __NT__ )
@@ -45,7 +45,7 @@
 
     #if defined( __OS2__ )
 
-    windowOldC* pw = windowOldC::pWindowIF( tinP , hWindowP ) ;
+    windowOldC* pw = windowOldC::pWindowIF( tinBaseP , hWindowP ) ;
 
     _IO_
 
@@ -64,7 +64,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::winBeginPaintF( tinS& tinP , handleC& hDrawP , const handleC& hWindowP , sCountT& idColMinP , sCountT& idRowMinP , sCountT& idColMaxP , sCountT& idRowMaxP )/*1*/
+/*1*/voidT thirdC::winBeginPaintF( tinBaseS& tinBaseP , handleC& hDrawP , const handleC& hWindowP , sCountT& idColMinP , sCountT& idRowMinP , sCountT& idColMaxP , sCountT& idRowMaxP )/*1*/
 
 /**/
 */
@@ -82,7 +82,7 @@
   normally, will be set
   must be 0
  hDrawP
- tinP
+ tinBaseP
 arguments
  for example, do not call me against a thirdC object that is explicitly constructed in the definition of an adam
 my thirdC object must be contained within an etherC object that is fully constructed

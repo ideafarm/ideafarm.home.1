@@ -18,7 +18,7 @@
                     }
                         DEL( pInfo ) ;
                         }
-                            tinP.pEtScratch->delF( tinP , posti ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , posti ) ;
                             }
                                 CONoUTrAW( tSay ) ;
 
@@ -50,7 +50,7 @@
                                             (
                                             if
                                         {
-                                        for( countT offi = offFound + thirdC::c_strlenIF( tinP , info.postFind ) ; offi < costi ; offi ++ )    //TRUNCATE THE CONTAINING LINE
+                                        for( countT offi = offFound + thirdC::c_strlenIF( tinBaseP , info.postFind ) ; offi < costi ; offi ++ )    //TRUNCATE THE CONTAINING LINE
                                         osTextT* poste = posti + costi ;
 
                                         idCol = offFound - offCurrentLine + 1 ;
@@ -78,7 +78,7 @@
                                         countT offFound = postHit - posti ;
                                     {
                                     if( postHit )
-                                    const osTextT* const postHit = thirdC::c_strstrIF( tinP , posti , info.postFind ) ;
+                                    const osTextT* const postHit = thirdC::c_strstrIF( tinBaseP , posti , info.postFind ) ;
 
                                     }
                                         }
@@ -105,7 +105,7 @@
                                 {
                                 if( POOP )
 
-                                tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , T(ifFileNameC(tinP,*tinP.pEtScratch,postNameP)) , 1 ) ; ___( posti ) ;
+                                ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , T(ifFileNameC(tinBaseP,*((tinNormalS&)tinBaseP).pEtScratch,postNameP)) , 1 ) ; ___( posti ) ;
                             {
                             else
                             }
@@ -129,7 +129,7 @@
                         {
                         if( POOP )
                     
-                        tinP.pEtScratch->diskFileQueryF( tinP , pInfo , fi ) ; ___( pInfo ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->diskFileQueryF( tinBaseP , pInfo , fi ) ; ___( pInfo ) ;
                         ZE( infoFileS* , pInfo ) ;
                     {
                     else
@@ -141,7 +141,7 @@
                     {
                     if( POOP )
 
-                    fileC fi( tinP , postNameP , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
+                    fileC fi( tinBaseP , postNameP , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
 
                     //}
                     //    countT foo = 2 ;
@@ -161,14 +161,14 @@
             if( bDir )
 
             boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-            countT costLike = tinP.brcRaw ;
+            countT costLike = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
         {
         if( bDoIt )
 
         ;
             : 1
-            ? (*info.pCbf)( tinP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
+            ? (*info.pCbf)( tinBaseP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
         bDoIt = info.pCbf
 
         boolT bIgnoreCase = F(info.flagsSearch) & flSEARCH_IGNOREcASE ;
@@ -179,7 +179,7 @@
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkSearchCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkSearchCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 /**/
 */

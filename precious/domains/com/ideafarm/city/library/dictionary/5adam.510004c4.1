@@ -9,27 +9,27 @@
 
 REST
 
-etThread.strokeF( tinP , tc ) ;
-for( off = 0 ; off < oOut ; off ++ ) etThread.strokeF( tinP , tb+TF1(pbOut[off]) ) ;
-etThread.strokeF( tinP , T("heard:") ) ;
+etThread.strokeF( tinBaseP , tc ) ;
+for( off = 0 ; off < oOut ; off ++ ) etThread.strokeF( tinBaseP , tb+TF1(pbOut[off]) ) ;
+etThread.strokeF( tinBaseP , T("heard:") ) ;
 
-hearF( tinP , pbOut , sizeof pbOut , oOut , pcConnection , oConnection ) ;
-thirdC::c_memsetIF( tinP , pbOut , sizeof pbOut ) ;
+hearF( tinBaseP , pbOut , sizeof pbOut , oOut , pcConnection , oConnection ) ;
+thirdC::c_memsetIF( tinBaseP , pbOut , sizeof pbOut ) ;
 byteT pbOut[ 0x60 ] ;
 ZE( countT , oOut ) ;
 
-etThread.strokeF( tinP , tc ) ;
-for( off = 0 ; off < oConnection ; off ++ ) etThread.strokeF( tinP , tb+TF1(pcConnection[off]) ) ;
-etThread.strokeF( tinP , T("code:") ) ;
+etThread.strokeF( tinBaseP , tc ) ;
+for( off = 0 ; off < oConnection ; off ++ ) etThread.strokeF( tinBaseP , tb+TF1(pcConnection[off]) ) ;
+etThread.strokeF( tinBaseP , T("code:") ) ;
 
-talkF( tinP , pcConnection , sizeof pcConnection / sizeof pcConnection[ 0 ] , oConnection , pbIn , sizeof pbIn ) ;
+talkF( tinBaseP , pcConnection , sizeof pcConnection / sizeof pcConnection[ 0 ] , oConnection , pbIn , sizeof pbIn ) ;
 ZE( countT , oConnection ) ;
-thirdC::c_memsetIF( tinP , (byteT*)pcConnection , sizeof pcConnection ) ;
+thirdC::c_memsetIF( tinBaseP , (byteT*)pcConnection , sizeof pcConnection ) ;
 countT pcConnection[ 0x100 ] ;
 
-etThread.strokeF( tinP , tc ) ;
-for( off = 0 ; off < sizeof pbIn ; off ++ ) etThread.strokeF( tinP , tb+TF1(pbIn[off]) ) ;
-etThread.strokeF( tinP , T("said:") ) ;
+etThread.strokeF( tinBaseP , tc ) ;
+for( off = 0 ; off < sizeof pbIn ; off ++ ) etThread.strokeF( tinBaseP , tb+TF1(pbIn[off]) ) ;
+etThread.strokeF( tinBaseP , T("said:") ) ;
 TN( tc , "\r\n" ) ;
 TN( tb , " " ) ;
 
@@ -39,31 +39,31 @@ byteT pbIn[ 0x40 ] ;
 TODO
 
 }
-        decodeF( tinP , pbOutP , cbOutP , oOutP , pcConnectionP , ccConnectionP , oIn , pbRemember , sizeof pbRemember , oWindow , pbAppend ) ;
+        decodeF( tinBaseP , pbOutP , cbOutP , oOutP , pcConnectionP , ccConnectionP , oIn , pbRemember , sizeof pbRemember , oWindow , pbAppend ) ;
     while( oIn < ccConnectionP )
     ZE( countT , oIn ) ;
     
     ZE( countT , oWindow ) ;
-    thirdC::c_memsetIF( tinP , pbAppend   , sizeof pbAppend   ) ;
-    thirdC::c_memsetIF( tinP , pbRemember , sizeof pbRemember ) ;
+    thirdC::c_memsetIF( tinBaseP , pbAppend   , sizeof pbAppend   ) ;
+    thirdC::c_memsetIF( tinBaseP , pbRemember , sizeof pbRemember ) ;
     byteT pbAppend[ CBwINDOW - 1 ] ; //MUST FOLLOW pbRemember CONTIGUOUSLY
     byteT pbRemember[ CBrEMEMBER ] ;
 {
-voidT hearF( tinS& tinP , byteT* const pbOutP , const countT cbOutP , countT& oOutP , countT* const pcConnectionP , const countT ccConnectionP )
+voidT hearF( tinBaseS& tinBaseP , byteT* const pbOutP , const countT cbOutP , countT& oOutP , countT* const pcConnectionP , const countT ccConnectionP )
 
 }
-        encodeF( tinP , pcConnectionP , ccConnectionP , oConnectionP , pbInP , cbInP , oIn , pbRemember , sizeof pbRemember , oWindow , pbAppend ) ;
+        encodeF( tinBaseP , pcConnectionP , ccConnectionP , oConnectionP , pbInP , cbInP , oIn , pbRemember , sizeof pbRemember , oWindow , pbAppend ) ;
     while( oIn < cbInP )
     ZE( countT , oOut ) ;
     ZE( countT , oIn ) ;
     
     ZE( countT , oWindow ) ;
-    thirdC::c_memsetIF( tinP , pbAppend   , sizeof pbAppend   ) ;
-    thirdC::c_memsetIF( tinP , pbRemember , sizeof pbRemember ) ;
+    thirdC::c_memsetIF( tinBaseP , pbAppend   , sizeof pbAppend   ) ;
+    thirdC::c_memsetIF( tinBaseP , pbRemember , sizeof pbRemember ) ;
     byteT pbAppend[ CBwINDOW - 1 ] ; //MUST FOLLOW pbRemember CONTIGUOUSLY
     byteT pbRemember[ CBrEMEMBER ] ;
 {
-voidT talkF( tinS& tinP , countT* const pcConnectionP , const countT ccConnectionP , countT& oConnectionP , const byteT* const pbInP , const countT cbInP )
+voidT talkF( tinBaseS& tinBaseP , countT* const pcConnectionP , const countT ccConnectionP , countT& oConnectionP , const byteT* const pbInP , const countT cbInP )
 
 }
     if( cbOutP && ccConnectionP ) ;
@@ -75,7 +75,7 @@ voidT talkF( tinS& tinP , countT* const pcConnectionP , const countT ccConnectio
         {
         while( cbHit -- ) //U::THIS CAN BE DONE FASTER WITH WO OR OO MEMCPY CALLS
 
-        thirdC::c_memcpyIF( tinP , pbOutP + oOutP , pbRememberP + oWindowP + code - 0x100 , cbHit ) ;
+        thirdC::c_memcpyIF( tinBaseP , pbOutP + oOutP , pbRememberP + oWindowP + code - 0x100 , cbHit ) ;
     {
     else
     }
@@ -91,9 +91,9 @@ voidT talkF( tinS& tinP , countT* const pcConnectionP , const countT ccConnectio
     countT code  = pcConnectionP[ oInP ++ ] ;
     countT cbHit = pcConnectionP[ oInP ++ ] ;
 
-    if( oWindowP + CBwINDOW > cbRememberP ) thirdC::c_memcpyIF( tinP , pbAppendP , pbRememberP , CBwINDOW - ( cbRememberP - oWindowP ) ) ; //U::O: DO THIS ONLY IF I HAVEN'T DONE IT SINCE WRITING THE SOURCE BYTES
+    if( oWindowP + CBwINDOW > cbRememberP ) thirdC::c_memcpyIF( tinBaseP , pbAppendP , pbRememberP , CBwINDOW - ( cbRememberP - oWindowP ) ) ; //U::O: DO THIS ONLY IF I HAVEN'T DONE IT SINCE WRITING THE SOURCE BYTES
 {
-voidT decodeF( tinS& tinP , byteT* const pbOutP , const countT cbOutP , countT& oOutP , const countT* const pcConnectionP , const countT ccConnectionP , countT& oInP , byteT* const pbRememberP , const countT cbRememberP , countT& oWindowP , byteT* const pbAppendP )
+voidT decodeF( tinBaseS& tinBaseP , byteT* const pbOutP , const countT cbOutP , countT& oOutP , const countT* const pcConnectionP , const countT ccConnectionP , countT& oInP , byteT* const pbRememberP , const countT cbRememberP , countT& oWindowP , byteT* const pbAppendP )
 
 }
     if( ccOutP && cbInP ) ;
@@ -120,9 +120,9 @@ voidT decodeF( tinS& tinP , byteT* const pbOutP , const countT cbOutP , countT& 
     ZE( countT , cbHit ) ;
     ZE( countT , oHit ) ;
 
-    if( oWindowP + CBwINDOW > cbRememberP ) thirdC::c_memcpyIF( tinP , pbAppendP , pbRememberP , CBwINDOW - ( cbRememberP - oWindowP ) ) ; //U::O: DO THIS ONLY IF I HAVEN'T DONE IT SINCE WRITING THE SOURCE BYTES
+    if( oWindowP + CBwINDOW > cbRememberP ) thirdC::c_memcpyIF( tinBaseP , pbAppendP , pbRememberP , CBwINDOW - ( cbRememberP - oWindowP ) ) ; //U::O: DO THIS ONLY IF I HAVEN'T DONE IT SINCE WRITING THE SOURCE BYTES
 {
-voidT encodeF( tinS& tinP , countT* const pcOutP , const countT ccOutP , countT& oOutP , const byteT* const pbInP , const countT cbInP , countT& oInP , byteT* const pbRememberP , const countT cbRememberP , countT& oWindowP , byteT* const pbAppendP )
+voidT encodeF( tinBaseS& tinBaseP , countT* const pcOutP , const countT ccOutP , countT& oOutP , const byteT* const pbInP , const countT cbInP , countT& oInP , byteT* const pbRememberP , const countT cbRememberP , countT& oWindowP , byteT* const pbAppendP )
 
 }
     }

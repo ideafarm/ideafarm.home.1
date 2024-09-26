@@ -11,21 +11,21 @@
     return costx ;
     }
         }
-            thirdC::c_strncpyIF( tinP , postP , pInfo->h_name , costax ) ;
-            newF( tinP , LF , postP , costax ) ; ___( postP ) ;
-            const countT costax = tinP.brcRaw + 1 ;
+            thirdC::c_strncpyIF( tinBaseP , postP , pInfo->h_name , costax ) ;
+            newF( tinBaseP , LF , postP , costax ) ; ___( postP ) ;
+            const countT costax = ((tinNormalS&)tinBaseP).brcRaw + 1 ;
             BOSdOnOTtEST( WHATgbo , strlen( pInfo->h_name ) )
         {
-        if( !tinP.bosFail && pInfo && pInfo->h_name && pInfo->h_name[ 0 ] )
-        hostent* pInfo = (hostent*)tinP.brcRaw ;
+        if( !((tinNormalS&)tinBaseP).bosFail && pInfo && pInfo->h_name && pInfo->h_name[ 0 ] )
+        hostent* pInfo = (hostent*)((tinNormalS&)tinBaseP).brcRaw ;
         //BOSpOOP
         BOSS( WHATsir , BOSoK , gethostbyaddr( (char*)&nicNameV4 , sizeof nicNameV4 , PF_INET ) ) //ON WINDOWS, THIS WILL HANG IF NICnAMElOCAL
-        c_zReverseByteOrderF( tinP , (byteT*)&nicNameV4 , sizeof nicNameV4 ) ;
+        c_zReverseByteOrderF( tinBaseP , (byteT*)&nicNameV4 , sizeof nicNameV4 ) ;
     {
     if( nicNameV4 != NICnAMElOCAL )
     ZE( countT , costx ) ;
     countT nicNameV4 = *(const countT*)nicName ; //U: SUPPORTS ONLY IPV4 (NOT IPV6)
-    if( !nicName ) nicName = s_nicNameF( tinP ) ;
+    if( !nicName ) nicName = s_nicNameF( tinBaseP ) ;
     nicNameC nicName = nicNameP ;
 
     _IO_
@@ -39,7 +39,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/countT thirdC::s_postHostF( tinS& tinP , osTextT*& postP , const nicNameC nicNameP )/*1*/
+/*1*/countT thirdC::s_postHostF( tinBaseS& tinBaseP , osTextT*& postP , const nicNameC nicNameP )/*1*/
 
 /**/
 */
@@ -52,7 +52,7 @@
   after evaluation, this will be nonze and will point to the name that was retrieved
   must be 0
  postP
- tinP
+ tinBaseP
 arguments
 evaluates to the length of the string obtained
   not really true: 2000.10.07: get "ifc14" rather than "www.ideafarm.com"

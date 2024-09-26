@@ -10,25 +10,25 @@
 REST
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
 
     DEL( pInfo ) ;
     }
-        else etThread.traceF( tinP , T(F(pInfo->flags)&flINFOdISK1s_READoNLY?"readonly":"writeable") ) ;
+        else etThread.traceF( tinBaseP , T(F(pInfo->flags)&flINFOdISK1s_READoNLY?"readonly":"writeable") ) ;
         }
-            etThread.traceF( tinP , T("could not obtain file system info") ) ;
+            etThread.traceF( tinBaseP , T("could not obtain file system info") ) ;
             POOPRqUIET
-            //etThread.traceF( tinP , T("[POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etThread.traceF( tinBaseP , T("[POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         if( POOP )
-        ((thirdC&)*tinP.pEtScratch).dosQueryFSInfoF( tinP , pInfo , "///e" , 1 ) ;
+        ((thirdC&)*((tinNormalS&)tinBaseP).pEtScratch).dosQueryFSInfoF( tinBaseP , pInfo , "///e" , 1 ) ;
         SCOOPS
     {
     IFsCRATCH
     ZE( infoDisk1S* , pInfo ) ;
 {
 while( !ether )
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 

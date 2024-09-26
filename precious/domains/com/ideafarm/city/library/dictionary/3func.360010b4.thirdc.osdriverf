@@ -11,30 +11,30 @@
     }
         phDll = 0 ;
         }
-            dec02AM( tinP.cKidThreads ) ;
-            dec02AM( tinP.pag1->_thirdC_.cAllKidThreads ) ;
+            dec02AM( ((tinNormalS&)tinBaseP).cKidThreads ) ;
+            dec02AM( ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllKidThreads ) ;
         {
         if( POOP )
-        //if( POOP ) dec02AM( tinP.pag1->_thirdC_.cAllOrphanThreads ) ;
+        //if( POOP ) dec02AM( ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllOrphanThreads ) ;
 
-        if( !( ++ processGlobal2I.pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
+        if( !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
         BOSpOOP
         BOS( WHATgbo , BOSoK , StartServiceCtrlDispatcher( tbl ) )
-        if( !( ++ processGlobal2I.pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-        tinP.pag1->_etherC_.pHdll = phDll = &hDll ;
-        handleC hDll( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ; //OPENED BY tmServiceMainF; CANNOT BE CLOSED (FOR UNK REASON) UNTIL AFTER StartServiceCtrlDispatcher RETURNS
+        if( !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+        ((tinNormalS&)tinBaseP).pag1->_etherC_.pHdll = phDll = &hDll ;
+        handleC hDll( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ; //OPENED BY tmServiceMainF; CANNOT BE CLOSED (FOR UNK REASON) UNTIL AFTER StartServiceCtrlDispatcher RETURNS
 
-        inc02AM( tinP.cKidThreads ) ;
-        inc02AM( tinP.pag1->_thirdC_.cAllKidThreads ) ;
-        //inc02AM( tinP.pag1->_thirdC_.cAllOrphanThreads ) ;
+        inc02AM( ((tinNormalS&)tinBaseP).cKidThreads ) ;
+        inc02AM( ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllKidThreads ) ;
+        //inc02AM( ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllOrphanThreads ) ;
 
         processGlobal2I.pEtThreadServiceEventHandler = pEtherContainsMe ;
-        processGlobal2I.pTinDadService = &tinP ;
+        processGlobal2I.pTinBaseDadService = &tinBaseP ;
 
         tbl[ 1 ].lpServiceProc = 0 ;
         tbl[ 1 ].lpServiceName = 0 ;
         tbl[ 0 ].lpServiceProc = osServiceMainF ;
-        tbl[ 0 ].lpServiceName = (osTextT*)tinP.pag1->postServiceName ;
+        tbl[ 0 ].lpServiceName = (osTextT*)((tinNormalS&)tinBaseP).pag1->postServiceName ;
         SERVICE_TABLE_ENTRY tbl[ 2 ] ;
     {
     if( !POOP )
@@ -47,24 +47,24 @@
     BOSpOOP
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
     BOSpOOP
-    BOS( WHATgbo , BOSoK , QueryServiceStatus( hsv , (SERVICE_STATUS*)tinP.pag1->pcServiceStatus ) )
+    BOS( WHATgbo , BOSoK , QueryServiceStatus( hsv , (SERVICE_STATUS*)((tinNormalS&)tinBaseP).pag1->pcServiceStatus ) )
     BOSpOOP
-    SC_HANDLE hsv = (SC_HANDLE)tinP.brcRaw ;
+    SC_HANDLE hsv = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
     INCoShANDLES
     BOSpOOP
-    BOS( WHATgbo , BOSoK , OpenService( hsm , tinP.pag1->postServiceName , SERVICE_ALL_ACCESS ) )
+    BOS( WHATgbo , BOSoK , OpenService( hsm , ((tinNormalS&)tinBaseP).pag1->postServiceName , SERVICE_ALL_ACCESS ) )
     INCoShANDLES
-    SC_HANDLE hsm = (SC_HANDLE)tinP.brcRaw ;
+    SC_HANDLE hsm = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
-    tinP.pag1->postServiceName = postNameP ;
+    ((tinNormalS&)tinBaseP).pag1->postServiceName = postNameP ;
 
     _IO_
 
     }
         if( POOP ) return ;
         __( !!( F(flagsMode) & flTHIRDmODE_TINoWNER ) ) ; // THIS AND THE PRECEDING LINE ENSURES THAT pEtherContainsMe DOES NOT POINT TO etPrime (HOPEFULLY IT POINTS TO etThread) SO THAT THAT IDENTIFIER IS NOT MISLEADING
-        __( tinP.monitor.idThread - 1 ) ;
+        __( ((tinNormalS&)tinBaseP).monitor.idThread - 1 ) ;
         __Z( pEtherContainsMe ) ;
         if( POOP ) return ;
         __( cIn > 1 ) ;
@@ -76,7 +76,7 @@
     cIn ++ ;
     static countT cIn ;
 {
-/*1*/voidT thirdC::osDriverF( tinS& tinP , const osTextT* postNameP )/*1*/
+/*1*/voidT thirdC::osDriverF( tinBaseS& tinBaseP , const osTextT* postNameP )/*1*/
 
 }
     processGlobal2I.pcPhaseLow[ ifcIDtHREADlOW_tmWindowsOrServiceMainF ] = - 1 ;
@@ -87,7 +87,7 @@
             tmServiceMainF( (countT)&fake ) ;
         #if defined( __OS2__ )
 
-        taskS fake( *processGlobal2I.pTinDadService , 0 , 0 , 0 , flTHREADlAUNCH_FAKE /* | flTHREADlAUNCH_ORPHAN */ , 0 , 0 , cHowP , (countT)ppostHowP , (countT)phDll ) ;
+        taskS fake( *processGlobal2I.pTinBaseDadService , 0 , 0 , 0 , flTHREADlAUNCH_FAKE /* | flTHREADlAUNCH_ORPHAN */ , 0 , 0 , cHowP , (countT)ppostHowP , (countT)phDll ) ;
     {
 {
 VOID WINAPI osServiceMainF( DWORD cHowP , LPTSTR* ppostHowP ) // RUNS ON A NEW THREAD CREATED WITHIN StartServiceCtrlDispatcher

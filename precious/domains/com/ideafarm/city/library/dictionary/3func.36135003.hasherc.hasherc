@@ -10,11 +10,11 @@
 }
     DEL( pInfo ) ;
     }
-        ether.delF( tinP , pbBuffer ) ;
+        ether.delF( tinBaseP , pbBuffer ) ;
         }
             }
-                eatF( tinP , pbBuffer , cbNow ) ;
-                ether.fileReadF( tinP , pbBuffer , cbNow , fi ) ;
+                eatF( tinBaseP , pbBuffer , cbNow ) ;
+                ether.fileReadF( tinBaseP , pbBuffer , cbNow , fi ) ;
 
                 cDoLo -= cbNow ;
                 if( cDoLo < cbNow ) cDoHi -- ;
@@ -29,7 +29,7 @@
         {
         if( pbBuffer )
 
-        ether.newF( tinP , LF , pbBuffer , cbChunk ) ; ___( pbBuffer ) ;
+        ether.newF( tinBaseP , LF , pbBuffer , cbChunk ) ; ___( pbBuffer ) ;
         ZE( byteT* , pbBuffer ) ;
 
         ;
@@ -40,12 +40,12 @@
     if( !POOP )
 
     __Z( pInfo ) ;
-    ether.diskFileQueryF( tinP , pInfo , fi ) ; ___( pInfo ) ;
+    ether.diskFileQueryF( tinBaseP , pInfo , fi ) ; ___( pInfo ) ;
     ZE( infoFileS* , pInfo ) ;
 
-    fileC fi( tinP , psttP , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+    fileC fi( tinBaseP , psttP , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
 {
-/*wo*/voidT hasherC::eatF( tinS& tinP , const strokeS* const psttP )/*wo*/
+/*wo*/voidT hasherC::eatF( tinBaseS& tinBaseP , const strokeS* const psttP )/*wo*/
 
 /**/
 */
@@ -53,12 +53,12 @@
 
 
 }
-    ether.strDumpIF( tinP , psttP , (char*)pbOut , sizeof pbOut , flSTRdUMP_FOREIGN ) ; ___( psttP ) ;
+    ether.strDumpIF( tinBaseP , psttP , (char*)pbOut , sizeof pbOut , flSTRdUMP_FOREIGN ) ; ___( psttP ) ;
 
-    queryF( tinP , pbOut , sizeof pbOut ) ;
+    queryF( tinBaseP , pbOut , sizeof pbOut ) ;
     byteT pbOut[ 4 * sizeof( int ) ] ;
 {
-/*wo*/voidT hasherC::queryStringF( tinS& tinP , strokeS*& psttP )/*wo*/
+/*wo*/voidT hasherC::queryStringF( tinBaseS& tinBaseP , strokeS*& psttP )/*wo*/
 
 /**/
 */
@@ -70,7 +70,7 @@
 
     if( cbP != 4 * sizeof( count02T ) ) { BLAMMO ; }
 {
-/*wo*/voidT hasherC::queryF( tinS& tinP , byteT* const pbP , const countT cbP )/*wo*/
+/*wo*/voidT hasherC::queryF( tinBaseS& tinBaseP , byteT* const pbP , const countT cbP )/*wo*/
 
 /**/
 */
@@ -80,7 +80,7 @@
 }
     MD5_Update( (MD5_CTX*)pbState , pbP , cbP ) ;
 {
-/*wo*/voidT hasherC::eatF( tinS& tinP , const byteT* const pbP , const countT cbP )/*wo*/
+/*wo*/voidT hasherC::eatF( tinBaseS& tinBaseP , const byteT* const pbP , const countT cbP )/*wo*/
 
 /**/
 */
@@ -95,7 +95,7 @@
     countT aa = sizeof pbState ;
 {
 ether( etherP )
-/*1*/hasherC::hasherC( tinS& tinP , etherC& etherP ) :/*1*/
+/*1*/hasherC::hasherC( tinBaseS& tinBaseP , etherC& etherP ) :/*1*/
 
 #endif
 

@@ -9,14 +9,14 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    //sorta.traceRangeF( tinP , pbArray , cbArray , T("after") ) ;
-    sorta.sortF( tinP ) ;
-    //sorta.traceRangeF( tinP , pbArray , cbArray , T("before") ) ;
-    sortaC sorta( tinP , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , sizeof( countT ) , sizeof( countT ) ) ;
+    //sorta.traceRangeF( tinBaseP , pbArray , cbArray , T("after") ) ;
+    sorta.sortF( tinBaseP ) ;
+    //sorta.traceRangeF( tinBaseP , pbArray , cbArray , T("before") ) ;
+    sortaC sorta( tinBaseP , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , sizeof( countT ) , sizeof( countT ) ) ;
     ZE( boolT , bQuit ) ;
 
     }
@@ -29,12 +29,12 @@ etThread.traceF( tinP , T("ok") ) ;
     {
     for( countT offca = 0 ; offca < ccArray ; offca ++ )
 
-    ranUniC ruChallenge( tinP , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
-    //etThread.traceF( tinP , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
+    ranUniC ruChallenge( tinBaseP , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
+    //etThread.traceF( tinBaseP , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
     cSeedLath = cSeed ;
     countT cSeed = /*0xBA6D6DB9*/ slab.trueRandom ;
 
-    if( !( ++ idPass % ( TOCK << 4 ) ) ) etThread.traceF( tinP , T("[idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; ;
+    if( !( ++ idPass % ( TOCK << 4 ) ) ) etThread.traceF( tinBaseP , T("[idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; ;
 {
 while( !ether )
 ZE( countT , idPass ) ;
@@ -50,15 +50,15 @@ countT cbArray = sizeof pbArray ;
 byteT  pbArray[ sizeof( countT ) * 0x30 ] ;
 
 }
-    if( cbArray >= ( cbElt << 1 ) * modulo ) doBitF( tinP , pbArray , cbArray , cbKey * SB - 1 ) ;
+    if( cbArray >= ( cbElt << 1 ) * modulo ) doBitF( tinBaseP , pbArray , cbArray , cbKey * SB - 1 ) ;
 {
-voidT sortaC::sortF( tinS& tinP )
+voidT sortaC::sortF( tinBaseS& tinBaseP )
 
 }
     }
         }
-            if( cEltsHigh > 1 ) doBitF( tinP , pbHighs , cbP - cbLows , shiftP ) ;
-            if( cEltsLow  > 1 ) doBitF( tinP , pbP     , cbLows , shiftP ) ;
+            if( cEltsHigh > 1 ) doBitF( tinBaseP , pbHighs , cbP - cbLows , shiftP ) ;
+            if( cEltsLow  > 1 ) doBitF( tinBaseP , pbP     , cbLows , shiftP ) ;
 
             countT cEltsHigh = ( cbP - cbLows ) / cbElt ;
             countT cEltsLow  = cbLows / cbElt ;
@@ -66,7 +66,7 @@ voidT sortaC::sortF( tinS& tinP )
         {
         else
         }
-            doBitF( tinP , pbP , cbP , shiftP ) ;
+            doBitF( tinBaseP , pbP , cbP , shiftP ) ;
         {
         if( !pbHighs || pbHighs == pbP )
 
@@ -76,18 +76,18 @@ voidT sortaC::sortF( tinS& tinP )
 
     while( idError ) ;
     }
-        pbHighs = swapF( tinP , pbP , cbP , shiftP ) ;
+        pbHighs = swapF( tinBaseP , pbP , cbP , shiftP ) ;
         idError = 0 ;
     {
     do
     ZE( byteT* , pbHighs ) ;
 {
-voidT sortaC::doBitF( tinS& tinP , byteT* pbP , countT cbP , countT shiftP )
+voidT sortaC::doBitF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , countT shiftP )
 
 }
     return pbHighs ;
 
-    //tinP.pEther->traceF( tinP , T("swapF returning [offEltHighs]:    ")+TF3(offeh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4) , flTRACE_NOpREFIX ) ;
+    //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("swapF returning [offEltHighs]:    ")+TF3(offeh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4) , flTRACE_NOpREFIX ) ;
     ;
         : ( pbHighs - pbArray ) / cbElt ;
         ? - 1
@@ -95,8 +95,8 @@ voidT sortaC::doBitF( tinS& tinP , byteT* pbP , countT cbP , countT shiftP )
 
     }
         }
-            //verifySortF( tinP , pbP , cbP , shiftP ) ;
-            //traceRangeIsSortedF( tinP , pbP , cbP , shiftP ) ;
+            //verifySortF( tinBaseP , pbP , cbP , shiftP ) ;
+            //traceRangeIsSortedF( tinBaseP , pbP , cbP , shiftP ) ;
         {
         if( !bNestedP )
 
@@ -118,7 +118,7 @@ voidT sortaC::doBitF( tinS& tinP , byteT* pbP , countT cbP , countT shiftP )
 
                 }
                     }
-                        pbHighsInner = swapF( tinP , pbInner , cbInner , shiftP , 1 ) ;                     // RANGE THAT IS ENCLOSED BY THE SWAP THAT I JUST DID
+                        pbHighsInner = swapF( tinBaseP , pbInner , cbInner , shiftP , 1 ) ;                     // RANGE THAT IS ENCLOSED BY THE SWAP THAT I JUST DID
                     {
                     if( cbInner >= ( cbElt << 1 ) * modulo )                                                // IF THE NEW RANGE CONTAINS AT LEAST OO * modulo ELEMENTS THEN RECURSIVELY CALL MYSELF
                     countT cbInner = pbDn - pbUp - cbElt * modulo ;
@@ -126,12 +126,12 @@ voidT sortaC::doBitF( tinS& tinP , byteT* pbP , countT cbP , countT shiftP )
                 {
                 ZE( byteT* , pbHighsInner ) ;
 
-                //traceRangeF( tinP , pbP , cbP , T("after  swap") ) ;
+                //traceRangeF( tinBaseP , pbP , cbP , T("after  swap") ) ;
                 memcpy(                      pbUp , pbScratch , cbElt ) ;
                 memcpy(              pbDn , pbUp              , cbElt ) ;
                 memcpy( pbScratch , pbDn                      , cbElt ) ;            // DO THE SWAP
-                //traceMarkSelectedElementsF( tinP , ppbUpDn ) ;
-                //traceRangeF( tinP , pbP , cbP , T("before swap") ) ;
+                //traceMarkSelectedElementsF( tinBaseP , ppbUpDn ) ;
+                //traceRangeF( tinBaseP , pbP , cbP , T("before swap") ) ;
 
                 byteT* ppbUpDn[] = { pbUp , pbDn } ;
             {
@@ -196,7 +196,7 @@ voidT sortaC::doBitF( tinS& tinP , byteT* pbP , countT cbP , countT shiftP )
 
     if( !pbP || !cbP ) { BLAMMO ; }
 {
-byteT* sortaC::swapF( tinS& tinP , byteT* const pbP , const countT cbP , const countT shiftP , const boolT bNestedP )
+byteT* sortaC::swapF( tinBaseS& tinBaseP , byteT* const pbP , const countT cbP , const countT shiftP , const boolT bNestedP )
 
 }
     }
@@ -223,30 +223,30 @@ byteT* sortaC::swapF( tinS& tinP , byteT* const pbP , const countT cbP , const c
     ZE( byteT* , pbUpNew ) ;
     ZE( boolT , bMaskChanged ) ;
 {
-voidT sortaC::verifySortF( tinS& tinP , byteT* pbP , countT cbP , const countT shiftP )
+voidT sortaC::verifySortF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , const countT shiftP )
 
 }
-    tinP.pEther->delF( tinP , psttd ) ;
-    tinP.pEther->traceF( tinP , T("range is sorted by bit ")+TF3(bit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("33333333") , T("<<<<<<<<") ) ;   ___( psttd ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("11111111") , T(">>>>>>>>") ) ;   ___( psttd ) ;
-    etherC::strDumpIF( tinP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * cEltRange , cbElt / 3 , 0 , 0 ) ;  ___( psttd ) ;
+    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
+    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("range is sorted by bit ")+TF3(bit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
+    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T("<<<<<<<<") ) ;   ___( psttd ) ;
+    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T(">>>>>>>>") ) ;   ___( psttd ) ;
+    etherC::strDumpIF( tinBaseP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * cEltRange , cbElt / 3 , 0 , 0 ) ;  ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
 
     countT bit = 1 << shiftP ;
 
-    textC tIndent( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , 7 + myOff * 2 + ( myOff / cbElt ) * 3 ) ;
+    textC tIndent( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , 7 + myOff * 2 + ( myOff / cbElt ) * 3 ) ;
     countT cEltRange = cbP / cbElt ;
     countT myOff = pbP - pbArray ;
 {
-voidT sortaC::traceRangeIsSortedF( tinS& tinP , byteT* pbP , countT cbP , const countT shiftP )
+voidT sortaC::traceRangeIsSortedF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , const countT shiftP )
 
 }
     }
-        tinP.pEther->traceF( tinP , T("        ")+tIndent2+tMark+tIndent3+tMark , flTRACE_NOpREFIX ) ;
-        textC tIndent3( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndentDelta ) ;
-        textC tIndent2( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndent2 ) ;
+        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("        ")+tIndent2+tMark+tIndent3+tMark , flTRACE_NOpREFIX ) ;
+        textC tIndent3( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndentDelta ) ;
+        textC tIndent2( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndent2 ) ;
         countT csttIndentDelta = csttIndent3 - csttIndent2 - ( cbElt << 1 ) - 2 ;
         countT csttIndent3 = myOff3 * 2 + ( myOff3 / cbElt ) * 3 + 0x1e ;
         countT csttIndent2 = myOff2 * 2 + ( myOff2 / cbElt ) * 3 + 0x1e ;
@@ -259,21 +259,21 @@ voidT sortaC::traceRangeIsSortedF( tinS& tinP , byteT* pbP , countT cbP , const 
     else if( cpbP != 2 ) { BLAMMO ; }
     if( !ppbP ) { BLAMMO ; }
 {
-voidT sortaC::traceMarkSelectedElementsF(  tinS& tinP , byteT** ppbP , countT cpbP )
+voidT sortaC::traceMarkSelectedElementsF(  tinBaseS& tinBaseP , byteT** ppbP , countT cpbP )
 
 }
-    tinP.pEther->delF( tinP , psttd ) ;
-    tinP.pEther->traceF( tinP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("33333333") , T("<-------") ) ;   ___( psttd ) ;
-    tinP.pEther->strReplaceF( tinP , psttd , 0 , T("11111111") , T("------->") ) ;   ___( psttd ) ;
-    etherC::strDumpIF( tinP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * cEltRange , cbElt / 3 , 0 , 0 ) ;  ___( psttd ) ;
+    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
+    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
+    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T("<-------") ) ;   ___( psttd ) ;
+    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T("------->") ) ;   ___( psttd ) ;
+    etherC::strDumpIF( tinBaseP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * cEltRange , cbElt / 3 , 0 , 0 ) ;  ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
-    textC tIndent( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" , myOff * 2 + ( myOff / cbElt ) * 3 ) ;
+    textC tIndent( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , myOff * 2 + ( myOff / cbElt ) * 3 ) ;
     countT cEltRange = cbP / cbElt ;
     countT myOff = pbP - pbArray ;
 {
-voidT sortaC::traceRangeF( tinS& tinP , byteT* pbP , countT cbP , strokeS* psttSayP )
+voidT sortaC::traceRangeF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , strokeS* psttSayP )
 
 }
     if( cbArrayP % cbElt ) { BLAMMO ; }
@@ -287,21 +287,21 @@ cbPrefix(  cbPrefixP                      ) ,
 cbSuffix(  cbSuffixP                      ) ,
 cbArray(   cbArrayP                       ) ,
 pbArray(   pbArrayP                       ) ,
-sortaC::sortaC( tinS& tinP , etherC& etherP , const boolT& bQuitP , byteT* pbArrayP , countT cbArrayP , countT cbSuffixP , countT cbPrefixP , countT cbKeyP , countT moduloP , countT remainderP ) :
+sortaC::sortaC( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQuitP , byteT* pbArrayP , countT cbArrayP , countT cbSuffixP , countT cbPrefixP , countT cbKeyP , countT moduloP , countT remainderP ) :
 
 ;
 }
-    voidT  traceRangeF( tinS& tinP , byteT* pbP , countT cbP , strokeS* psttSayP ) ;
-    voidT  sortF( tinS& tinP ) ;
-    sortaC( tinS& tinP , etherC& etherP , const boolT& bQuitP , byteT* pbArrayP , countT cbArrayP , countT cbSuffixP , countT cbPrefixP , countT cbKeyP , countT moduloP = 1 , countT remainderP = 0 ) ;
+    voidT  traceRangeF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , strokeS* psttSayP ) ;
+    voidT  sortF( tinBaseS& tinBaseP ) ;
+    sortaC( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQuitP , byteT* pbArrayP , countT cbArrayP , countT cbSuffixP , countT cbPrefixP , countT cbKeyP , countT moduloP = 1 , countT remainderP = 0 ) ;
 
     public :
 
-    voidT  verifySortF( tinS& tinP , byteT* pbP , countT cbP , const countT shiftP ) ;
-    voidT  traceRangeIsSortedF( tinS& tinP , byteT* pbP , countT cbP , const countT shiftP ) ;
-    voidT  traceMarkSelectedElementsF(  tinS& tinP , byteT** ppbP , countT cpbP = 2 ) ;
-    byteT* swapF( tinS& tinP , byteT* const pbP , const countT cbP , const countT shiftP , const boolT bNestedP = 0 ) ;
-    voidT  doBitF( tinS& tinP , byteT* pbP , countT cbP , countT shiftP ) ;
+    voidT  verifySortF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , const countT shiftP ) ;
+    voidT  traceRangeIsSortedF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , const countT shiftP ) ;
+    voidT  traceMarkSelectedElementsF(  tinBaseS& tinBaseP , byteT** ppbP , countT cpbP = 2 ) ;
+    byteT* swapF( tinBaseS& tinBaseP , byteT* const pbP , const countT cbP , const countT shiftP , const boolT bNestedP = 0 ) ;
+    voidT  doBitF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , countT shiftP ) ;
 
     byteT        pbScratch[ TUCK ] ;
 

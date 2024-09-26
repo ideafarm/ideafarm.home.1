@@ -21,35 +21,35 @@
         {
         for( countT idFile = 1 ; idFile <= cSourceFiles ; idFile ++ )
 
-        memCopyF( tinP , (byteT*)pcRaceId , (byteT*)pcRaceIdP , sizeof( countT ) * ( ccRaceId + 1 ) ) ;
-        newF( tinP , LF , pcRaceId , ccRaceId + 1 ) ; ___( pcRaceId ) ;
-        countT ccRaceId = strBodyLengthF( tinP , pcRaceIdP ) ;
+        memCopyF( tinBaseP , (byteT*)pcRaceId , (byteT*)pcRaceIdP , sizeof( countT ) * ( ccRaceId + 1 ) ) ;
+        newF( tinBaseP , LF , pcRaceId , ccRaceId + 1 ) ; ___( pcRaceId ) ;
+        countT ccRaceId = strBodyLengthF( tinBaseP , pcRaceIdP ) ;
     {
     if( pcRaceIdP )
 
-    delF( tinP , pcRaceId ) ;
+    delF( tinBaseP , pcRaceId ) ;
     }
-        delF( tinP , pcRace ) ;
+        delF( tinBaseP , pcRace ) ;
         }
-            delF( tinP , pcPart ) ;
-            ifcDatumF( tinP , flDATUM1_CLASStIMER , flDATUM2_countT , cActive , pcPart , (byteT*)( pcRace + 5 ) , cActive * 5 * sizeof( countT ) ) ;
+            delF( tinBaseP , pcPart ) ;
+            ifcDatumF( tinBaseP , flDATUM1_CLASStIMER , flDATUM2_countT , cActive , pcPart , (byteT*)( pcRace + 5 ) , cActive * 5 * sizeof( countT ) ) ;
 
             }
-                memCopyF( tinP , (byteT*)( pcPart + 3 ) , (byteT*)pcRaceId , sizeof( countT ) * ( ccRaceId + 1 ) ) ;
+                memCopyF( tinBaseP , (byteT*)( pcPart + 3 ) , (byteT*)pcRaceId , sizeof( countT ) * ( ccRaceId + 1 ) ) ;
                 pcPart[ 2 ] = 1 + !!( F(flagsWatch) & flWATCH_EMPLOYERS ) ;
                 pcPart[ 1 ] = 1 ;
                 pcPart[ 0 ] = 0x2600301 ;
             {
             if( pcPart )
-            newF( tinP , LF , pcPart , 4 + ccRaceId ) ; ___( pcPart ) ;
-            countT ccRaceId = strBodyLengthF( tinP , pcRaceId ) ;
+            newF( tinBaseP , LF , pcPart , 4 + ccRaceId ) ; ___( pcPart ) ;
+            countT ccRaceId = strBodyLengthF( tinBaseP , pcRaceId ) ;
             ZE( countT* , pcPart ) ;
         {
         if( cActive ) // KEEP THIS CODE IN SYNC WITH 3f30104
 
         }
             pcRaceFun += 5 ;
-            *pcRaceFun = processGlobal8I.source.idFileImmutableF( tinP , *pcRaceFun ) ;
+            *pcRaceFun = processGlobal8I.source.idFileImmutableF( tinBaseP , *pcRaceFun ) ;
         {
         for( countT ida = 1 ; ida <= cActive ; ida ++ ) // WE DO THIS SEPARATELY SO processGlobal8I.source.idFileImmutableF IS NOT INCLUDED IN DATA
         pcRaceFun = pcRace ? pcRace + 5 : 0 ;
@@ -71,11 +71,11 @@
 
         ZE( countT , cActive ) ;
         countT* pcRaceFun = pcRace ? pcRace + 5 : 0 ;
-        newF( tinP , LF , pcRace , ( 1 + cSourceFiles ) * 5 ) ; ___( pcRace ) ;
+        newF( tinBaseP , LF , pcRace , ( 1 + cSourceFiles ) * 5 ) ; ___( pcRace ) ;
         ZE( countT* , pcRace ) ;
     {
     if( pcRaceId )
-    const countT cSourceFiles = processGlobal8I.source.cFilesF( tinP ) ;
+    const countT cSourceFiles = processGlobal8I.source.cFilesF( tinBaseP ) ;
 
     //IN_E
 
@@ -88,11 +88,11 @@
 
 #if defined( NEVERdEFINED )
 
-    if( tinP.fingerprint && pcRaceIdP ) ;
+    if( ((tinNormalS&)tinBaseP).fingerprint && pcRaceIdP ) ;
     BLAMMO ; //U:: REDESIGN THIS SUBSYSTEM
     SCOOP
 {
-/*1*/voidT etherC::ifcRaceIdF( tinS& tinP , const countT* const pcRaceIdP )/*1*/
+/*1*/voidT etherC::ifcRaceIdF( tinBaseS& tinBaseP , const countT* const pcRaceIdP )/*1*/
 
 /**/
 */
@@ -102,7 +102,7 @@
   can be 0
   the current race is ended by flushing race totals to city center and a new race is begun
  pcRaceIdP
- tinP
+ tinBaseP
 arguments
 the part number of the datum is { 0x1030062 , 1 , 1 + F(flagsWatch) & flWATCH_EMPLOYERS } followed by pcRaceIdP
  for max speed when updating counters, this function is not serialized w.r.t. the code that updates timing counters

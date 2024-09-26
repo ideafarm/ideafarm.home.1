@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 THREADmODE5rESTORE
 
@@ -18,14 +18,14 @@ THREADmODE5rESTORE
     }
         if( POOP ) POOPR
 
-        etThread.traceF( tinP , T("generated  key pair") ) ;
-        thirdC::openSslCrypto_keyPairIF( tinP , hKeyPair , cBits ) ;
-        etThread.traceF( tinP , T("generating key pair [cBits]:    ")+TF2(cBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tinBaseP , T("generated  key pair") ) ;
+        thirdC::openSslCrypto_keyPairIF( tinBaseP , hKeyPair , cBits ) ;
+        etThread.traceF( tinBaseP , T("generating key pair [cBits]:    ")+TF2(cBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         SCOOPS
     {
     IFsCRATCH
-    handleC hKeyPair( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR ) ;
+    handleC hKeyPair( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR ) ;
 {
 for( countT cBits = 0x200 ; cBits <= cBitsMax ; cBits <<= 1 )
 
@@ -35,7 +35,7 @@ countT cBitsMax = 0x2000 ;
 
 TODO
 
-//rcOpenSsl = thirdC::openSslCrypto_errorCodeIF( tinP ) ;
+//rcOpenSsl = thirdC::openSslCrypto_errorCodeIF( tinBaseP ) ;
 countT rcOpenSsl ;
 
 /*1*/WAKEsHOWtEXT( "example.other.opensslcrypto_keyPairif" )/*1*/

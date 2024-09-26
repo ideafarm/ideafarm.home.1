@@ -9,42 +9,42 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     while( !ether && ~hFind && !POOP ) ;
     }
         DEL( pInfo ) ;
         }
-            //etThread.traceF( tinP , T("host [nnPeer,name]:    ")+T(nnPeer)+tb4+tHost ) ;
+            //etThread.traceF( tinBaseP , T("host [nnPeer,name]:    ")+T(nnPeer)+tb4+tHost ) ;
 
             }
                 }
-                    etThread.delF( tinP , pNicName ) ;
+                    etThread.delF( tinBaseP , pNicName ) ;
                     }
                         }
                             }
                                 }
-                                    tinP.pEtScratch->boxZapF( tinP , T(psttc1)+T(fn) , 1 ) ;
+                                    ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , T(psttc1)+T(fn) , 1 ) ;
                                     SCOOPS
                                 {
                                 IFsCRATCH
-                                etThread.boxPutF( tinP , T(psttc2)+T(fn) , tHost , tHost.csF( tinP ) ) ;
+                                etThread.boxPutF( tinBaseP , T(psttc2)+T(fn) , tHost , tHost.csF( tinBaseP ) ) ;
                             {
                             FORsTRINGSiN2( psttzListWhite )
                         {
                         else for( countT offn = 0 ; offn < cNicName ; offn ++ )
-                        if( !bWhite ) etThread.traceF( tinP , tHost+T("    VERIFIED: blocked pending human inspection of web site") ) ;
+                        if( !bWhite ) etThread.traceF( tinBaseP , tHost+T("    VERIFIED: blocked pending human inspection of web site") ) ;
 
                         }
                             }
                                 break ;
-                                //etThread.traceF( tinP , T("================================================ White Bot found! [tHost]:    ")+tHost ) ;
+                                //etThread.traceF( tinBaseP , T("================================================ White Bot found! [tHost]:    ")+tHost ) ;
                                 bWhite = 1 ;
                             {
-                            if( idHit && idHit - 1 + pptWhite[ offw ]->csF( tinP ) == tHost.csF( tinP ) )
-                            countT idHit = etThread.strIdF( tinP , *pptWhite[ offw ] , tHost , 1 ) ;
+                            if( idHit && idHit - 1 + pptWhite[ offw ]->csF( tinBaseP ) == tHost.csF( tinBaseP ) )
+                            countT idHit = etThread.strIdF( tinBaseP , *pptWhite[ offw ] , tHost , 1 ) ;
                         {
                         for( countT offw = 0 ; offw < sizeof pptWhite / sizeof pptWhite[ 0 ] ; offw ++ )
                         ZE( boolT , bWhite ) ;
@@ -61,7 +61,7 @@ etThread.traceF( tinP , T("ok") ) ;
                     for( countT offn = 0 ; offn < cNicName ; offn ++ )
                     ZE( boolT , bVerified ) ;
 
-                    etThread.sockNicNameF( tinP , pNicName , cNicName , tHost ) ;
+                    etThread.sockNicNameF( tinBaseP , pNicName , cNicName , tHost ) ;
                     ZE( countT    , cNicName ) ;
                     ZE( nicNameC* , pNicName ) ;
                 {
@@ -72,25 +72,25 @@ etThread.traceF( tinP , T("ok") ) ;
                         break ;
                         bBlack = 1 ;
                     {
-                    if( idHit && idHit - 1 + pptBlack[ offw ]->csF( tinP ) == tHost.csF( tinP ) )
-                    countT idHit = etThread.strIdF( tinP , *pptBlack[ offw ] , tHost , 1 ) ;
+                    if( idHit && idHit - 1 + pptBlack[ offw ]->csF( tinBaseP ) == tHost.csF( tinBaseP ) )
+                    countT idHit = etThread.strIdF( tinBaseP , *pptBlack[ offw ] , tHost , 1 ) ;
                 {
                 for( countT offw = 0 ; offw < sizeof pptBlack / sizeof pptBlack[ 0 ] ; offw ++ )
                 ZE( boolT , bBlack ) ;
             {
-            if( tHost.csF( tinP ) )
+            if( tHost.csF( tinBaseP ) )
 
             }
-                etThread.delF( tinP , psttHost ) ;
+                etThread.delF( tinBaseP , psttHost ) ;
                 tHost = T(psttHost) ;
-                etThread.sockPsttHostF( tinP , psttHost , nnPeer ) ; ___( psttHost ) ;
+                etThread.sockPsttHostF( tinBaseP , psttHost , nnPeer ) ; ___( psttHost ) ;
                 ZE( strokeS* , psttHost ) ;
             {
             TN( tHost , "" ) ;
 
-            nicNameC nnPeer = etThread.strDigitsToNicNameF( tinP , fn , 0 , 0 ) ;
+            nicNameC nnPeer = etThread.strDigitsToNicNameF( tinBaseP , fn , 0 , 0 ) ;
 
-            fileNameC fn( tinP , etThread , pInfo->psttIfoName ) ;
+            fileNameC fn( tinBaseP , etThread , pInfo->psttIfoName ) ;
         {
         else
         }
@@ -99,11 +99,11 @@ etThread.traceF( tinP , T("ok") ) ;
         {
         if( !pInfo || !pInfo->psttIfoName )
 
-        etThread.diskFindFileOrDirF( tinP , pInfo , hFind , psttc1 ) ;
+        etThread.diskFindFileOrDirF( tinBaseP , pInfo , hFind , psttc1 ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 {
 FORsTRINGSiN1( psttzListBlock )
 
@@ -284,12 +284,12 @@ TN( tSuffixBaidu             , ".baidu.com" ) ;
 /**********************************************************************************************************************************************/
 
 }
-    etThread.delF( tinP , pNicName ) ;
+    etThread.delF( tinBaseP , pNicName ) ;
     }
-        etThread.traceF( tinP , T(pNicName[offn])+tb4+tName ) ;
+        etThread.traceF( tinBaseP , T(pNicName[offn])+tb4+tName ) ;
     {
     for( countT offn = 0 ; offn < cNicName ; offn ++ )
-    etThread.sockNicNameF( tinP , pNicName , cNicName , tName ) ;
+    etThread.sockNicNameF( tinBaseP , pNicName , cNicName , tName ) ;
     ZE( countT    , cNicName ) ;
     ZE( nicNameC* , pNicName ) ;
     TN( tName , "ideafarm.com" ) ;

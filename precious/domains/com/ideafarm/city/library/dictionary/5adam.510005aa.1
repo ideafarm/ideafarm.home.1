@@ -10,9 +10,9 @@
 REST
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK * 0x1 ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-    //CONoUTrAW3( "swCapture: " , swCapture.cFlavorsF( tinP ) , "\r\n" ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x1 ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //CONoUTrAW3( "swCapture: " , swCapture.cFlavorsF( tinBaseP ) , "\r\n" ) ;
 
     }
         }
@@ -21,7 +21,7 @@ REST
             }
                 LOGrAW( tLine ) ;
                 tLine += tcr ;
-                tLine += tb8+T(source.postFileTitleF(tinP,source.idFileRankF(tinP,pczFileLine[0]))) ;
+                tLine += tb8+T(source.postFileTitleF(tinBaseP,source.idFileRankF(tinBaseP,pczFileLine[0]))) ;
                 tLine += TF2(pczFileLine[0],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("(")+TF4(pczFileLine[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(")") ;
                 const countT* pczFileLine = (const countT*)pc3i->c2 ;
             
@@ -30,16 +30,16 @@ REST
                 TN( tLine , "|    " ) ; tLine += TF3((sCountT)pc3i->c1,flFORMAT_NObIGITvALUES,9) ;
             
                 const countT* pcCell = (const countT*)pc3i->c3 ;
-                const count3S* pc3i = (const count3S*)&stSorted.upF( tinP , hWalk ) ;
+                const count3S* pc3i = (const count3S*)&stSorted.upF( tinBaseP , hWalk ) ;
             {
             do
-            handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             TN( tb8 , "        " ) ;
             LOGrAW( tTitle ) ;
             TN( tTitle , "|\r\n| IdeaFarm " "(tm) Piggyback Distributed Operating System <> IPDOS (tm)\r\n| Memory Leakage Report\r\n| " ) ; tTitle += TT(timeN1,timeN2)+T("\r\n|\r\n") ;
             TN( tcr , "\r\n" ) ;
         
-            etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
         
@@ -50,7 +50,7 @@ REST
         }
             }
                 }
-                    stSorted.sinkF( tinP , countTC() , (byteT*)&c3i , flSTACKsINK_null , subtractScoredF ) ;
+                    stSorted.sinkF( tinBaseP , countTC() , (byteT*)&c3i , flSTACKsINK_null , subtractScoredF ) ;
                     count3S c3i( (countT)scScore , (countT)pczFileLine , (countT)pcCell ) ;
                 {
                 if( scScore > 0 )
@@ -63,15 +63,15 @@ REST
                 ZE( sCountT , scScore ) ;
         
                 countT* pcCell = &(countT&)swCellRow ;
-                pczFileLine = (const countT*)swCellRow.leverF( tinP , idf ) ;
+                pczFileLine = (const countT*)swCellRow.leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swCellRow.cFlavorsF( tinP ) ;
+            countT cFlavors = swCellRow.cFlavorsF( tinBaseP ) ;
         {
-        stackC stSorted( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE|flSTACKc_BLOB , 3 * sizeof( countT ) ) ;
+        stackC stSorted( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE|flSTACKc_BLOB , 3 * sizeof( countT ) ) ;
         
         }
-            swCapture.freeNullsF( tinP ) ;
+            swCapture.freeNullsF( tinBaseP ) ;
             }
                 else swCapture = 0 ;
                 }
@@ -92,26 +92,26 @@ REST
                 (
                 if
                 countT idPassFlavor = *pczPassFileLine ;
-                pczPassFileLine = (const countT*)swCapture.leverF( tinP , idf ) ;
+                pczPassFileLine = (const countT*)swCapture.leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swCapture.cFlavorsF( tinP ) ;
+            countT cFlavors = swCapture.cFlavorsF( tinBaseP ) ;
         {
-        switchC swCellRow( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pczFileLine , 0 , 0 , CcOLUMNS * sizeof( countT ) ) ;
+        switchC swCellRow( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pczFileLine , 0 , 0 , CcOLUMNS * sizeof( countT ) ) ;
         ZE( const countT* , pczFileLine ) ;
     {
     if( idPass > CcOLUMNS )
     
-    PUSE.walkF( tinP , ifcIDtYPEpOOLoLDwALK_REPORTlEAKS , cArg , flPOOLoLDwALK_INCLUDEdROPSoTHERcLIENTS ) ;
+    PUSE.walkF( tinBaseP , ifcIDtYPEpOOLoLDwALK_REPORTlEAKS , cArg , flPOOLoLDwALK_INCLUDEdROPSoTHERcLIENTS ) ;
 
-    { ZE( byteT* , pbLeak ) ; etThread.newF( tinP , LF , pbLeak , 1 ) ; ___( pbLeak ) ; }
+    { ZE( byteT* , pbLeak ) ; etThread.newF( tinBaseP , LF , pbLeak , 1 ) ; ___( pbLeak ) ; }
     
     countT cArg = (countT)&c8p ;
     count8S c8p( 1/*IDfORMAT*/ , (countT)&pczPassFileLine , (countT)&swCapture , ++ idPass ) ;
 {
 while( !ether )
 ZE( countT , idPass ) ;
-switchC swCapture( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pczPassFileLine ) ;
+switchC swCapture( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pczPassFileLine ) ;
 ZE( const countT* , pczPassFileLine ) ;
 
 TODO
@@ -129,7 +129,7 @@ TODO
     {
     IFbEcAREFUL
 {
-countT subtractScoredF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractScoredF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 
 #define CcOLUMNS 8

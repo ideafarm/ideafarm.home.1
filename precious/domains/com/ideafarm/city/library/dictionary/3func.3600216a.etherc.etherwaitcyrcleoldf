@@ -9,8 +9,8 @@
 
 }
     }
-        while( ph->cbWritten != ph->cbRead ) { ++ s ; thirdC::dosSleepRawIF( tinP , 0x20 ) ; }
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        while( ph->cbWritten != ph->cbRead ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 0x20 ) ; }
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     
     if( !ph ) BLAMMO
@@ -21,12 +21,12 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::etherWaitCyrcleOldF( tinS& tinP , napkinC& napkinP )/*1*/
+/*1*/voidT etherC::etherWaitCyrcleOldF( tinBaseS& tinBaseP , napkinC& napkinP )/*1*/
 
 /**/
 */
  napkinP
- tinP
+ tinBaseP
 arguments
 i sleep until all bytes written to the circle have been read
 \<A HREF=\"5.10301bb.1.0.html\"\>definition\</A\>

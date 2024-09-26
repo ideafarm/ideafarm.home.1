@@ -10,17 +10,17 @@
 REST
 
 }
-    etThread.strokeF( tinP , TP("idMe: ",0x10)+TF1(state.idMe)+T("\r\n")+TP("idCycle: ",0x10)+TF1(state.idCycle)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , TP("idMe: ",0x10)+TF1(state.idMe)+T("\r\n")+TP("idCycle: ",0x10)+TF1(state.idCycle)+T("\r\n") ) ;
     state.idCycle += 0x100 ;
-    stateS state( tinP , etThread ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO
 
     }
     {
-    stateC( tinP , etherP , sizeof *this , 0 , translateStateF )
-    stateS::stateS( tinS& tinP , etherC& etherP ) :
+    stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )
+    stateS::stateS( tinBaseS& tinBaseP , etherC& etherP ) :
 
     TRANSLATEsTATE_END
         state.idMe ++ ;
@@ -37,7 +37,7 @@ TODO
 
     ;
     }
-        stateS( tinS& tinP , etherC& etherP ) ;
+        stateS( tinBaseS& tinBaseP , etherC& etherP ) ;
 
         countT idCycle ;
         countT idMe ;

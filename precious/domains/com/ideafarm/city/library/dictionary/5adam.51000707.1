@@ -8,46 +8,46 @@
 
 REST
 
-sgnDone_tmWorkF.waitF( tinP ) ;
+sgnDone_tmWorkF.waitF( tinBaseP ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmWorkF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmWorkF )
 }
-    etThread.traceF( tinP , T("bye") ) ;
+    etThread.traceF( tinBaseP , T("bye") ) ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         }
-            etThread.strokeF( tinP , tOut ) ;
+            etThread.strokeF( tinBaseP , tOut ) ;
 
-            etThread.boxPutF( tinP , T("///ideafarm/tmp/time.ttt") , tOut , tOut.csF( tinP ) ) ;
+            etThread.boxPutF( tinBaseP , T("///ideafarm/tmp/time.ttt") , tOut , tOut.csF( tinBaseP ) ) ;
 
-            etThread.delF( tinP , pstto ) ;
+            etThread.delF( tinBaseP , pstto ) ;
             TN( tOut , pstto ) ;
 
-            etThread.strFuseF( tinP , pstto , T("\r\n") ) ;
+            etThread.strFuseF( tinBaseP , pstto , T("\r\n") ) ;
 
             }
-                etThread.delF( tinP , psttc ) ;
-                etThread.strFuseF( tinP  , pstto , psttc ) ;
-                etThread.strCalendarF( tinP , psttc , time2 ) ; ___( psttc ) ;
+                etThread.delF( tinBaseP , psttc ) ;
+                etThread.strFuseF( tinBaseP  , pstto , psttc ) ;
+                etThread.strCalendarF( tinBaseP , psttc , time2 ) ; ___( psttc ) ;
                 ZE( strokeS* , psttc ) ;
 
             {
 
-            etThread.strFuseF( tinP , pstto , T("\r\nminute: ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n\r\n") ) ;
+            etThread.strFuseF( tinBaseP , pstto , T("\r\nminute: ")+TF2(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n\r\n") ) ;
 
-            etThread.strMakeF( tinP , LF , pstto , 0 , TOCK ) ; ___( pstto ) ;
+            etThread.strMakeF( tinBaseP , LF , pstto , 0 , TOCK ) ; ___( pstto ) ;
             ZE( strokeS* , pstto ) ;
 
             }
                 }
-                    //etThread.traceF( tinP , tSay ) ;
+                    //etThread.traceF( tinBaseP , tSay ) ;
                     //}
                     //    else                                   tSay += TF2(pcTallyInDelta[offt],(bDone?flFORMAT_NObIGITvALUES:flFORMAT_NObIGITvALUES|flFORMAT_FILLzE)) ;
                     //    if( !pcTallyInDelta[ offt ] && bDone ) break ;
@@ -66,7 +66,7 @@ DONE( tmWorkF )
                     //TN( tSay , "home speed [inOutFrameC ct per minute]: " ) ;
                     //REPORT DELTA
 
-                    thirdC::c_memcpyIF( tinP , (byteT*)pcTallyInLath , (byteT*)pcTallyInSnap , sizeof pcTallyInLath ) ;
+                    thirdC::c_memcpyIF( tinBaseP , (byteT*)pcTallyInLath , (byteT*)pcTallyInSnap , sizeof pcTallyInLath ) ;
 
                     }
                         pcTallyInDelta[ offt ] -= pcTallyInLath[ offt ] ;
@@ -86,10 +86,10 @@ DONE( tmWorkF )
                     for( countT offt = 0 ; offt < sizeof pcTallyInDelta / sizeof pcTallyInDelta[ 0 ] ; offt ++ )
                     ZE( boolT , bBorrow ) ;
 
-                    thirdC::c_memcpyIF( tinP , (byteT*)pcTallyInDelta , (byteT*)pcTallyInSnap , sizeof pcTallyInDelta ) ;
+                    thirdC::c_memcpyIF( tinBaseP , (byteT*)pcTallyInDelta , (byteT*)pcTallyInSnap , sizeof pcTallyInDelta ) ;
                     countT pcTallyInDelta[ CCtALLYiN ] ;
 
-                    thirdC::c_memcpyIF( tinP , (byteT*)pcTallyInSnap , (byteT*)ph->pcTallyIn , sizeof pcTallyInSnap ) ;
+                    thirdC::c_memcpyIF( tinBaseP , (byteT*)pcTallyInSnap , (byteT*)ph->pcTallyIn , sizeof pcTallyInSnap ) ;
                     countT pcTallyInSnap[ CCtALLYiN ] ;
                 {
                 if( ph )
@@ -102,7 +102,7 @@ DONE( tmWorkF )
         if( minuteLath != minute)
 
         countT minute = time1 >> 0x14 ;
-        etThread.osTimeNowF( tinP , time1 , time2 ) ;
+        etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
     {
@@ -110,7 +110,7 @@ DONE( tmWorkF )
     static countT pcTallyInLath[ CCtALLYiN ] ;
     ZE( countT , minuteLath ) ;
 
-    if( !bSandbox ) ether.ifcHireF( tinP , T("ifcIDaDAM_TIME") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING 
+    if( !bSandbox ) ether.ifcHireF( tinBaseP , T("ifcIDaDAM_TIME") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING 
     bSandbox = 0 ;
     boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 {

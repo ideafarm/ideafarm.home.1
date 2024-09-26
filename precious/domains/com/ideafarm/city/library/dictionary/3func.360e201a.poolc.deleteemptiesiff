@@ -9,15 +9,15 @@
 
 }
     }
-        guts.pGrabNewElt[ offs ].ungrabF( tinP ) ;
-        if( guts.ppSlots[ offs ] ) guts.ppSlots[ offs ]->deleteEmptiesIfF( tinP ) ;
-        guts.pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ;
+        guts.pGrabNewElt[ offs ].ungrabF( tinBaseP ) ;
+        if( guts.ppSlots[ offs ] ) guts.ppSlots[ offs ]->deleteEmptiesIfF( tinBaseP ) ;
+        guts.pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( !( F(guts.flagsCt) & flPOOLc_KEEPeMPTIES ) ) for( countT offs = guts.expCbDropMin ; offs <= guts.expCbDropMax ; offs ++ )
 
     _IO_
 {
-/*1*/voidT poolC::deleteEmptiesIfF( tinS& tinP )/*1*/
+/*1*/voidT poolC::deleteEmptiesIfF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 

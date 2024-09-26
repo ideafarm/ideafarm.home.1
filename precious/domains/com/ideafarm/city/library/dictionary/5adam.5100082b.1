@@ -9,18 +9,18 @@
 
 REST
 
-etThread.traceF( tinP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    nnAllowed.traceF( tinP ) ;
+    nnAllowed.traceF( tinBaseP ) ;
 
-    ++ s ; ether.osSleepF( tinP , TOCK << 2 ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;
 {
 while( !ether )
 
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-nicNamesAllowedStripeWebHookNotificationsC nnAllowed( tinP , etThread , ether ) ;
+nicNamesAllowedStripeWebHookNotificationsC nnAllowed( tinBaseP , etThread , ether ) ;
 
 TODO
 

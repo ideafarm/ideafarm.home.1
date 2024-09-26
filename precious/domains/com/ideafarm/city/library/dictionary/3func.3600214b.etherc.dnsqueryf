@@ -9,36 +9,36 @@
 
 }
     }
-        delF( tinP , pbQuery ) ;
-        if( time1P || time2P ) sgnDone_tmTimeout.waitF( tinP ) ;
-        sgnDone_tmAsk.waitF( tinP ) ;
+        delF( tinBaseP , pbQuery ) ;
+        if( time1P || time2P ) sgnDone_tmTimeout.waitF( tinBaseP ) ;
+        sgnDone_tmAsk.waitF( tinBaseP ) ;
 
         }
             }
                 cbP = 0 ;
-                delF( tinP , pbP ) ;
+                delF( tinBaseP , pbP ) ;
             {
             else
             if( pbP && cbP >= cbQuery ) bGoItIt = *(count01T*)pbP == *(count01T*)pbQuery ; // TEST FOR EQUALITY OF THE idQuery VALUES
-            sockd.readF( tinP , pbP , cbP , idPort , nicName ) ; ___( pbP ) ;
+            sockd.readF( tinBaseP , pbP , cbP , idPort , nicName ) ; ___( pbP ) ;
             nicNameC nicName ;
             ZE( countT , idPort ) ;
         {
         while( !POOP && !bGoItIt && !etPrime && !bTimeout )
-        etherC& etPrime = etPrimeIF( tinP ) ;
+        etherC& etPrime = etPrimeIF( tinBaseP ) ;
 
-        if( time1P || time2P ) osThreadF( tinP , countTC() , tmTimeoutF , &sgnDone_tmTimeout , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd , (countT)&bGoItIt , (countT)&bTimeout , time1P , time2P , idPortMe ) ;
-        osThreadF( tinP , countTC() , tmAskDnsF , &sgnDone_tmAsk , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd , (countT)&bGoItIt , (countT)&bTimeout , (countT)pbQuery , cbQuery ) ;
-        signC sgnDone_tmTimeout( tinP , TAG( TAGiDnULL ) ) ;
-        signC sgnDone_tmAsk( tinP , TAG( TAGiDnULL ) ) ;
+        if( time1P || time2P ) osThreadF( tinBaseP , countTC() , tmTimeoutF , &sgnDone_tmTimeout , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd , (countT)&bGoItIt , (countT)&bTimeout , time1P , time2P , idPortMe ) ;
+        osThreadF( tinBaseP , countTC() , tmAskDnsF , &sgnDone_tmAsk , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd , (countT)&bGoItIt , (countT)&bTimeout , (countT)pbQuery , cbQuery ) ;
+        signC sgnDone_tmTimeout( tinBaseP , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmAsk( tinBaseP , TAG( TAGiDnULL ) ) ;
         ZE( boolT , bTimeout ) ;
         ZE( boolT , bGoItIt ) ;
-        dnsFormatQueryF( tinP , pbQuery , cbQuery , psttDomainP , idTypeP ) ; ___( pbQuery ) ;
+        dnsFormatQueryF( tinBaseP , pbQuery , cbQuery , psttDomainP , idTypeP ) ; ___( pbQuery ) ;
         ZE( countT , cbQuery ) ;
         ZE( byteT* , pbQuery ) ;
 
-        countT idPortMe = sockd.bindF( tinP ) ;
-        socketC sockd( tinP , *this , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        countT idPortMe = sockd.bindF( tinBaseP ) ;
+        socketC sockd( tinBaseP , *this , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
     {
 
     _IO_
@@ -52,7 +52,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::dnsQueryF( tinS& tinP , byteT*& pbP , countT& cbP , const strokeS* const psttDomainP , const countT idTypeP , const countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT etherC::dnsQueryF( tinBaseS& tinBaseP , byteT*& pbP , countT& cbP , const strokeS* const psttDomainP , const countT idTypeP , const countT time1P , const sCountT time2P )/*1*/
 
 /**/
 */
@@ -64,7 +64,7 @@
  psttDomainP
  cbP
  pbP
- tinP
+ tinBaseP
 arguments
 the caller must test whether pbP is 0 to determine whether a reply was received
 impotence will -not- occur if i do not receive a valid reply

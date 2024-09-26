@@ -8,16 +8,16 @@
 
 
 }
-    baton.ungrabF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
     DEL( psOut ) ;
-    writeMsgF( tinP , "!amDry" ) ;
-    sgnDone_tmRiverAccept.waitF( tinP ) ;
+    writeMsgF( tinBaseP , "!amDry" ) ;
+    sgnDone_tmRiverAccept.waitF( tinBaseP ) ;
     }
-        snu.connectF( tinP , idPort ) ;
-        socketC snu( tinP , ether , TAG( TAGiDnULL ) ) ;
+        snu.connectF( tinBaseP , idPort ) ;
+        socketC snu( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
     {
     bDestroy = 1 ;
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     SCOOP
     TINSL

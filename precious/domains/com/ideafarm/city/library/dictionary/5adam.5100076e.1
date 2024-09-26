@@ -9,14 +9,14 @@
 
 REST
 
-etherC::loafIF( tinP ) ;                            
+etherC::loafIF( tinBaseP ) ;                            
 
 }
     }
         }
-            etThread.traceF( tinP , T("ok [disk,cDirs,cFiles]:    ")+T(postDisk)+T("    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tinBaseP , T("ok [disk,cDirs,cFiles]:    ")+T(postDisk)+T("    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             
-            etThread.diskWalkF( tinP , cDirs , cFiles , T(postDisk) , bQuit , diskWalkSearchCBF , pcArg ) ;
+            etThread.diskWalkF( tinBaseP , cDirs , cFiles , T(postDisk) , bQuit , diskWalkSearchCBF , pcArg ) ;
             ZE( boolT , bQuit ) ;
             ZE( countT , cFiles ) ;
             ZE( countT , cDirs ) ;
@@ -24,11 +24,11 @@ etherC::loafIF( tinP ) ;
             countT pcArg[] = { 0 , 0 } ;
             
             DEL( pInfo ) ;
-            etThread.traceF( tinP , T(postDisk) ) ;
+            etThread.traceF( tinBaseP , T(postDisk) ) ;
         {
         else
         if( POOP ) { POOPR ; }
-        tinP.pEtScratch->diskInfoF( tinP , pInfo , T(postDisk) , 1 ) ;
+        ((tinNormalS&)tinBaseP).pEtScratch->diskInfoF( tinBaseP , pInfo , T(postDisk) , 1 ) ;
         ZE( infoDiskS* , pInfo ) ;
     {    
     for( postDisk[ 3 ] = 'a' ; postDisk[ 3 ] <= 'z' ; postDisk[ 3 ] ++ )
@@ -50,54 +50,54 @@ TODO
             DEL( pInfo ) ;
 
             }
-                if( thirdC::c_strstrIF( tinP , pbBuffer , postFind ) ) etherC::etRockIF( tinP ).traceF( tinP , T("hit contents:    ")+tName+T("    ")+T(pbBuffer) ) ;
+                if( thirdC::c_strstrIF( tinBaseP , pbBuffer , postFind ) ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("hit contents:    ")+tName+T("    ")+T(pbBuffer) ) ;
 
-                //etherC::etRockIF( tinP ).traceF( tinP , TF2(pcArgP[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    read:       ")+tName ) ;
+                //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , TF2(pcArgP[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    read:       ")+tName ) ;
                 pbBuffer[ cbEat ] = 0 ;
-                tinP.pEther->fileReadF( tinP , pbBuffer , cbEat , file ) ;
-                //etherC::etRockIF( tinP ).traceF( tinP , TF2(pcArgP[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    reading:    ")+tName ) ;
+                ((tinNormalS&)tinBaseP).pEther->fileReadF( tinBaseP , pbBuffer , cbEat , file ) ;
+                //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , TF2(pcArgP[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    reading:    ")+tName ) ;
 
                 countT cbEat = pInfo->cbUsed < sizeof pbBuffer - 1 ? pInfo->cbUsed : sizeof pbBuffer - 1 ;
 
                 pcArgP[ 1 ] ++ ;
             {
             if( pInfo && pInfo->cbUsed )
-            tinP.pEther->diskFileQueryF( tinP , pInfo , file ) ; ___( pInfo ) ;
+            ((tinNormalS&)tinBaseP).pEther->diskFileQueryF( tinBaseP , pInfo , file ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         else
         }
-            etherC::etRockIF( tinP ).traceF( tinP , T("could not open a handle to file::    ")+tName ) ;
+            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("could not open a handle to file::    ")+tName ) ;
             POOPR
         {
         if( POOP )
 
-        fileC file( tinP , postNameP , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ;
+        fileC file( tinBaseP , postNameP , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ;
 
-        if( thirdC::c_strstrIF( tinP , postNameP , postFind ) ) etherC::etRockIF( tinP ).traceF( tinP , T("hit name:    ")+tName ) ;
+        if( thirdC::c_strstrIF( tinBaseP , postNameP , postFind ) ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("hit name:    ")+tName ) ;
 
         pcArgP[ 0 ] ++ ;
 
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinP , *tinP.pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ;
     {
     else
     }
-        etherC::etRockIF( tinP ).traceF( tinP , T("directory::    ")+tName ) ;
+        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("directory::    ")+tName ) ;
 
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinP , *tinP.pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ;
     {
-    else if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] == '\\' && tinP.pEther ) // IF DIRECTORY
+    else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] == '\\' && ((tinNormalS&)tinBaseP).pEther ) // IF DIRECTORY
     }
-        //etherC::etRockIF( tinP ).traceF( tinP , T("scan completed for a directory") ) ;
+        //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("scan completed for a directory") ) ;
     {
     if( !postNameP )
     ZE( boolT , bDoIt ) ;
 
     _IO_
 {
-/*1*/boolT diskWalkSearchCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkSearchCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 countT idFile ;
 

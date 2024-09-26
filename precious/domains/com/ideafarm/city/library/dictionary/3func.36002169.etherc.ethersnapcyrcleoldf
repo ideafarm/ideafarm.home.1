@@ -77,8 +77,8 @@
                         {
                         else
                         }
-                            ++ s ; osSleepF( tinP , TUCK * 0x20 ) ;
-                            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                            ++ s ; osSleepF( tinBaseP , TUCK * 0x20 ) ;
+                            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     
                             pbtc = (byteT*)&flags2 + cbToDo ;
                             cbToDo = sizeof flags2 ;
@@ -164,7 +164,7 @@
         cbP = cbToDoAll ;
     {
     if( pbP )
-    newF( tinP , LF , pbP , cbToDoAll + 1 ) ; ___( pbP ) ;
+    newF( tinBaseP , LF , pbP , cbToDoAll + 1 ) ; ___( pbP ) ;
     countT cbToDoAll = cbCyrcleOld > ph->cbWritten ? ph->cbWritten : cbCyrcleOld ;
 
     byteT* pbEnd   = pbBegin + cbCyrcleOld ;
@@ -183,7 +183,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::etherSnapCyrcleOldF( tinS& tinP , byteT*& pbP , countT& cbP , countT& offBeginP , napkinC& napkinP )/*1*/
+/*1*/voidT etherC::etherSnapCyrcleOldF( tinBaseS& tinBaseP , byteT*& pbP , countT& cbP , countT& offBeginP , napkinC& napkinP )/*1*/
 
 /**/
 */
@@ -200,7 +200,7 @@
   will point to bytes that i allocate and then fill with the contents of the circular buffer
   must be 0
  pbP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.10301ba.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$etherSnapCyrcleOldF.0.html\"\>instances\</A\>

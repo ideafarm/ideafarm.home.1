@@ -9,7 +9,7 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 while( cWorkers -- ) etThread.osThreadF( TaRG1( tmWorkerF ) ) ;
 countT cWorkers = 0x10 ;
@@ -20,18 +20,18 @@ DONE( tmWorkerF )
 
 }
     costi = 0 ;
-    etThread.delF( tinP , posti ) ;
-    etThread.traceF( tinP , T(posti) ) ;
+    etThread.delF( tinBaseP , posti ) ;
+    etThread.traceF( tinBaseP , T(posti) ) ;
 
-    etThread.traceF( tinP , TT(timeE1,timeE2) ) ;
-    etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeN1 , timeN2 ) ;
-    etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+    etThread.traceF( tinBaseP , TT(timeE1,timeE2) ) ;
+    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT , timeE1 ) ;
 
-    etThread.boxGetShadowF( tinP , posti , costi , tBox ) ; ___( posti ) ;
+    etThread.boxGetShadowF( tinBaseP , posti , costi , tBox ) ; ___( posti ) ;
 
-    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 {

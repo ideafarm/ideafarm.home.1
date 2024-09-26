@@ -13,44 +13,44 @@ DONE( tmKillSocketF )
     bQuitKillSocket = 0 ;
     }
         }
-            ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
-            //etThread.osSleepF( tinP , TUCK * 0x20 ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
+            //etThread.osSleepF( tinBaseP , TUCK * 0x20 ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            swKillSocket.ungrabF( tinP ) ;
+            swKillSocket.ungrabF( tinBaseP ) ;
             }
                 }
                     }
-                        //etThread.traceF( tinP , T("tmKillSocketF / killed a socket") ) ;
+                        //etThread.traceF( tinBaseP , T("tmKillSocketF / killed a socket") ) ;
                         hDoomed.closeIfF() ;
                         //CONoUTrAW( "TIMEOUT\r\n" ) ;
                         handleC& hDoomed = *(handleC*)cLever ;
-                        //etThread.traceF( tinP , T("tmKillSocketF / killing a socket") ) ;
+                        //etThread.traceF( tinBaseP , T("tmKillSocketF / killing a socket") ) ;
                     {
                     if( te2 < 0 )
-                    etThread.osTimeSubtractF( tinP , te1 , te2 , timeN1 , timeN2 ) ;
+                    etThread.osTimeSubtractF( tinBaseP , te1 , te2 , timeN1 , timeN2 ) ;
                     sCountT te2 = pks->timeExpire2 ;
                     countT  te1 = pks->timeExpire1 ;
                 {
                 if( pks )
                 killSocketS* pks = (killSocketS*)&(countT&)swKillSocket ;
-                cLever = swKillSocket.leverF( tinP , idf ) ;
+                cLever = swKillSocket.leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swKillSocket.cFlavorsF( tinP ) ;
-            swKillSocket.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            countT cFlavors = swKillSocket.cFlavorsF( tinBaseP ) ;
+            swKillSocket.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
         {
         while( !etThread && !bQuitKillSocket )
-        //__( tinP.monitor.idThread - ifcIDtHREADlOW_tmKillSocketF ) ;
+        //__( ((tinNormalS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmKillSocketF ) ;
     
-        switchC& swKillSocket = *tinP.pag1->_thirdC_.pSwKillSocket ;
-        countT& cLever = tinP.pag1->_thirdC_.cLever_pSwKillSocket ;
+        switchC& swKillSocket = *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwKillSocket ;
+        countT& cLever = ((tinNormalS&)tinBaseP).pag1->_thirdC_.cLever_pSwKillSocket ;
     {
-    boolT& bQuitKillSocket = tinP.pag1->_thirdC_.bQuitKillSocket ;
+    boolT& bQuitKillSocket = ((tinNormalS&)tinBaseP).pag1->_thirdC_.bQuitKillSocket ;
     TELL( "working" )
 {
 if( pTaskP )

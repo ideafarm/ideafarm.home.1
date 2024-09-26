@@ -15,11 +15,11 @@ REST
         CONoUTrAW( "setting bQuit\r\n" ) ;
 
         }
-            ++ s ; ether.osSleepF( tinP , TOCK ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
             CONoUTrAW3( "\r        \r" , ++ *pcHello , "\r" ) ;
         {
         while( !*pQuit && !ether )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         CONoUTrAW3( "idSlot is " , idSlot , " ; waiting for you to fire me\r\n" ) ;
         countT idSlot = sex[ (byteT*)pQuit ] ;
@@ -28,7 +28,7 @@ REST
     countT* pcHello = (countT*)(byteT*)sex ;
     boolT*  pQuit   =  (boolT*)(byteT*)sex ;
 
-    sexC sex( tinP , TAG( TAGiDnULL ) , "mySlotExtent" , 2/*sizeof( countT )*/ , 1 ) ;
+    sexC sex( tinBaseP , TAG( TAGiDnULL ) , "mySlotExtent" , 2/*sizeof( countT )*/ , 1 ) ;
 {
 
 TODO

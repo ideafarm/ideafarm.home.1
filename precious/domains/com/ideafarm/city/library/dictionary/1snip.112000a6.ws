@@ -7,7 +7,7 @@
 //
 
 
-#define WS(objP) (objP) , (objP).cbF( tinP )
+#define WS(objP) (objP) , (objP).cbF( tinBaseP )
 /*1*//*WS*//*1*/
 
 /**/

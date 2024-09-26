@@ -10,7 +10,7 @@
 }
     return rc ;
 
-    if( bDoDefault ) rc = thirdC::winDefaultMessageHandlerIF( tinP , oshWindowP , idCmdP , p1P , p2P ) ;
+    if( bDoDefault ) rc = thirdC::winDefaultMessageHandlerIF( tinBaseP , oshWindowP , idCmdP , p1P , p2P ) ;
 
     }
         }
@@ -22,17 +22,17 @@
         }
             //}
             //    }
-            //        etThread.winPostMessageAfterNapF( tinP , TUCK * 0x20 , hWindow , idwm_BECOMEaCTIVE ) ;
+            //        etThread.winPostMessageAfterNapF( tinBaseP , TUCK * 0x20 , hWindow , idwm_BECOMEaCTIVE ) ;
             //        timeL2 = timeN2 ;
             //        timeL1 = timeN1 ;
             //    {
             //    if( timeE2 || timeE1 > TOCK )
             //
-            //    etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeL1 , timeL2 ) ;
+            //    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeL1 , timeL2 ) ;
             //    sCountT timeE2 = timeN2 ;
             //    countT  timeE1 = timeN1 ;
             //
-            //    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            //    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             //    ZE( sCountT , timeN2 ) ;
             //    ZE( countT , timeN1 ) ;
             //
@@ -51,21 +51,21 @@
             if( bOkToUseIfcObjects ) THREADmODE2rESTORE //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
 
             }
-                default: { rc = thirdC::winDefaultMessageHandlerIF( tinP , oshWindowP , idCmdP , p1P , p2P ) ; break ; }
+                default: { rc = thirdC::winDefaultMessageHandlerIF( tinBaseP , oshWindowP , idCmdP , p1P , p2P ) ; break ; }
                 }
                     break ;
 
                     }
-                        etThread.delF( tinP , pc3p ) ;
+                        etThread.delF( tinBaseP , pc3p ) ;
                         }
-                            thThread.winPostMessageF( tinP , hWindow , pc3p->c1 , pc3p->c2 , pc3p->c3 ) ;
+                            thThread.winPostMessageF( tinBaseP , hWindow , pc3p->c1 , pc3p->c2 , pc3p->c3 ) ;
                         {
                         if( pc3p )
                         count3S* pc3p = (count3S*)p2P ;
                     {
                     else
                     }
-                        thThread.winPostMessageF( tinP , hWindow , idCmdP , p1P - 1 , p2P ) ;
+                        thThread.winPostMessageF( tinBaseP , hWindow , idCmdP , p1P - 1 , p2P ) ;
                     {
                     if( p1P )
 
@@ -88,8 +88,8 @@
                 }
                     break ;
                     }
-                        etThread.winPostMessageAfterNapF( tinP , TUCK * 0x20 , hWindow , idwm_BECOMEaCTIVE ) ; //DELAY IS NEEDED; OTHERWISE TASKBAR RETAINS ACTIVE STATUS AND I RECEIVE A DEACTIVATION
-                        etThread.winPostMessageAfterNapF( tinP , TUCK * 0x10 , hWindow , idwm_SHOW , idcWINsHOW_SHOW ) ; //DELAY IS NEEDED; OTHERWISE TASKBAR RETAINS ACTIVE STATUS AND I RECEIVE A DEACTIVATION
+                        etThread.winPostMessageAfterNapF( tinBaseP , TUCK * 0x20 , hWindow , idwm_BECOMEaCTIVE ) ; //DELAY IS NEEDED; OTHERWISE TASKBAR RETAINS ACTIVE STATUS AND I RECEIVE A DEACTIVATION
+                        etThread.winPostMessageAfterNapF( tinBaseP , TUCK * 0x10 , hWindow , idwm_SHOW , idcWINsHOW_SHOW ) ; //DELAY IS NEEDED; OTHERWISE TASKBAR RETAINS ACTIVE STATUS AND I RECEIVE A DEACTIVATION
                         //etherC::ifcSayIF( T("idwm_TASKbARiCON: asking for show to be posted after TOCK nap") , flSAY_APPEND | flSAY_LOG ) ;
                     {
                     if( p2P == WM_LBUTTONDOWN )
@@ -104,8 +104,8 @@
                 }
                     break ;
     
-                    thThread.delF( tinP , postt ) ;
-                    rc = thThread.winSetTitleF( tinP , postt , hWindow ) ;
+                    thThread.delF( tinBaseP , postt ) ;
+                    rc = thThread.winSetTitleF( tinBaseP , postt , hWindow ) ;
                     osTextT* postt = (osTextT*)p1P ;
                     TELL( "winMessageHandlerWorkF: idwm_SETwINDOWtEXT" )
                 {
@@ -113,15 +113,15 @@
                 }
                     break ;
     
-                    etThread.delF( tinP , pc2 ) ;
+                    etThread.delF( tinBaseP , pc2 ) ;
                     else __1
                     }
-                        etThread.delF( tinP , pc8b ) ;
-                        etThread.delF( tinP , pc8a ) ;
+                        etThread.delF( tinBaseP , pc8b ) ;
+                        etThread.delF( tinBaseP , pc8a ) ;
                         }
-                            thThread.winPaintNowF( tinP , hWindow ) ;
-                            //U::TO CATCH A BUG: thThread.winShowWindowF( tinP , hWindow , idcWINsHOW_SHOW ) ;
-                            thThread.winCreateWindowF( tinP , hWindow , *phWindow , MAINwINDOWcLASSnAME , MAINwINDOWcLASSnAME , bRoot ? idtWIN_ROOT : idtWIN_KID , idCol , idRow , cCol , cRow , cColClient , cRowClient , thirdC::third_hWindowingClientIF( tinP ) , bNotVisible ) ;
+                            thThread.winPaintNowF( tinBaseP , hWindow ) ;
+                            //U::TO CATCH A BUG: thThread.winShowWindowF( tinBaseP , hWindow , idcWINsHOW_SHOW ) ;
+                            thThread.winCreateWindowF( tinBaseP , hWindow , *phWindow , MAINwINDOWcLASSnAME , MAINwINDOWcLASSnAME , bRoot ? idtWIN_ROOT : idtWIN_KID , idCol , idRow , cCol , cRow , cColClient , cRowClient , thirdC::third_hWindowingClientIF( tinBaseP ) , bNotVisible ) ;
                             //LOGrAWtID4( "idwm_CREATEwINDOW calling winCreateWindowF (cColP,cRowP): " , cCol , " " , cRow ) ;
         
                             countT   cTries      =           pc8b->c3 ;
@@ -148,7 +148,7 @@
                 case idwm_CREATEwINDOW :
                 }
                     break ;
-                    thThread.winShowWindowF( tinP , hWindow , (countT)p1P ) ;
+                    thThread.winShowWindowF( tinBaseP , hWindow , (countT)p1P ) ;
 
                     }
                         default                         : { idTone = 0x1 ; break ; }
@@ -167,13 +167,13 @@
                 }
                     break ;
     
-                    thThread.winPostMessageF( tinP , hWindow , idwm_RENDER ) ;
+                    thThread.winPostMessageF( tinBaseP , hWindow , idwm_RENDER ) ;
 
                     thPaint = 0 ;
 
                     }
                         if( hDrawWindow == pRootI->hDrawWindowF() ) hDrawWindow.resetF() ;
-                        thPaint.winEndPaintF( tinP , hDrawWindow ) ;
+                        thPaint.winEndPaintF( tinBaseP , hDrawWindow ) ;
         
                         }
                             pRootI->letRefF() ;
@@ -181,32 +181,32 @@
                             BOS( WHATgbd , BOSoK , SetWindowOrgEx( (HDC)hDrawWindow.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , pRootI->mIdColOsOriginF() + 0.5 , pRootI->mIdRowOsOriginF() + 0.5 , 0 ) )
                         {
                         if( pRootI )
-                        windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                        windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                     {
                     if( ~hDrawWindow )
 
                     }
-                        thPaint.winBeginPaintF( tinP , hDrawWindow , hWindow , idColMin , idRowMin , idColMax , idRowMax ) ;
+                        thPaint.winBeginPaintF( tinBaseP , hDrawWindow , hWindow , idColMin , idRowMin , idColMax , idRowMax ) ;
                         ZE( sCountT , idRowMax ) ;
                         ZE( sCountT , idColMax ) ;
                         ZE( sCountT , idRowMin ) ;
                         ZE( sCountT , idColMin ) ;
                     {
-                    handleC hDrawWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
+                    handleC hDrawWindow( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
         
                     //}
                     //    }
-                    //        pRootI->mColsRowsF( tinP , cCols , cRows ) ;
-                    //        ((thirdC&)etThread).winClientSizeF( tinP , cCols , cRows , *pRootI ) ;
+                    //        pRootI->mColsRowsF( tinBaseP , cCols , cRows ) ;
+                    //        ((thirdC&)etThread).winClientSizeF( tinBaseP , cCols , cRows , *pRootI ) ;
                     //        ZE( countT , cRows ) ;
                     //        ZE( countT , cCols ) ;
                     //    {
                     //    if( pRootI )
-                    //    windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                    //    windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                     //{
                     //NEEDS TO BE DONE HERE SO THAT winBeginPaintF WILL HAVE THE CURRENT mRows VALUE
 
-                    thirdC& thPaint = (thirdC&)etherC::etPaintIF( tinP ) ;
+                    thirdC& thPaint = (thirdC&)etherC::etPaintIF( tinBaseP ) ;
     
                     TELL( "winMessageHandlerWorkF: WM_PAINT" )
                 {
@@ -224,7 +224,7 @@
     
                                     //Shell_NotifyIcon( NIM_DELETE , &info ) ;
                                     //    
-                                    //thirdC::c_strncpyIF( tinP , info.szTip , oston , sizeof info.szTip ) ;
+                                    //thirdC::c_strncpyIF( tinBaseP , info.szTip , oston , sizeof info.szTip ) ;
                                     //}
                                     //    OStEXTAK( oston , ")" )
                                     //    OStEXTC(  oston , processGlobal2I.idHome , 0 )
@@ -234,7 +234,7 @@
                                     //OStEXTAK( oston , "IPDOS (tm) IdeaFarm " "(tm) Piggyback Distributed Operating System" )
                                     //OStEXT( oston , 0x80 )
                                     //    
-                                    //info.hIcon = LoadIcon( (HINSTANCE)thirdC::third_hWindowingClientIF( tinP ).osF( ifcIDtYPEhANDLE_WINDOWINGcLIENT ) , MAKEINTRESOURCE( 1 ) ) ;
+                                    //info.hIcon = LoadIcon( (HINSTANCE)thirdC::third_hWindowingClientIF( tinBaseP ).osF( ifcIDtYPEhANDLE_WINDOWINGcLIENT ) , MAKEINTRESOURCE( 1 ) ) ;
                                     //info.uCallbackMessage = idwm_TASKbARiCON ;
                                     //info.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP ;
                                     //info.uID = 0x1 ;
@@ -245,10 +245,10 @@
                                 if( pwDoomed == pRootI )
                             {
                             if( pRootI )
-                            windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                            windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                         {
                         if( pwDoomed )
-                        windowOldC* pwDoomed = windowOldC::pWindowIF( tinP , hWindow ) ;
+                        windowOldC* pwDoomed = windowOldC::pWindowIF( tinBaseP , hWindow ) ;
                     {
                     TELL( "winMessageHandlerWorkF: WM_DESTROY" )
                 {
@@ -259,10 +259,10 @@
                     //bDoDefault = 0 ;
                     }
                         pRootI->letRefF() ;
-                        pRootI->keyUpF( tinP , p2P ) ;
+                        pRootI->keyUpF( tinBaseP , p2P ) ;
                     {
                     if( pRootI )
-                    windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                    windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                 {
                 case WM_SYSKEYUP :
                 case WM_KEYUP :
@@ -273,10 +273,10 @@
                         TELL( "winMessageHandlerWorkF: WM_CHAR WM_KEYDOWN WM_SYSKEYDOWN" )
                         }
                             pRootI->letRefF() ;
-                            pRootI->keyDownF( tinP , idCmdP , p1P , p2P ) ;
+                            pRootI->keyDownF( tinBaseP , idCmdP , p1P , p2P ) ;
                         {
                         if( pRootI )
-                        windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                        windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                         TELL( "winMessageHandlerWorkF: WM_CHAR WM_KEYDOWN WM_SYSKEYDOWN" )
                     {
                     if( bDo )
@@ -394,7 +394,7 @@
                         }
                             pRootI->letRefF() ;
                     
-                            paperOldC::callSadamsIF( tinP , ether , ifcIDtYPEsTROKEcALLbACK_MOUSE , c8n , 0 ) ;
+                            paperOldC::callSadamsIF( tinBaseP , ether , ifcIDtYPEsTROKEcALLbACK_MOUSE , c8n , 0 ) ;
                             count8S c8n( 1 , 4 , idTool , idAction , xpRaw + 1 , pRootI->mRowsF() - ypRaw ) ;
     
                             //LOGrAW( T("mouse message ")+T(processGlobal4I.mapWindowMessage(idCmdP))+T(": xpRaw,ypRaw is ")+TF1(xpRaw)+T(" ")+TF1(ypRaw)+T(" ")+TF1(winIfColIF(xpRaw))+T(" ")+TF1(winIfRowIF(ypRaw,pRoot->mRowsF()))+T("\r\n") ) ;
@@ -402,7 +402,7 @@
                             const countT ypRaw = p2P >> 0x10 ;
                             const countT xpRaw = p2P & 0xffff ;
 
-                            ((backOldC*)pRootI)->setToolFlagsF( tinP , idTool , flagsOn , flagsOff ) ;
+                            ((backOldC*)pRootI)->setToolFlagsF( tinBaseP , idTool , flagsOn , flagsOff ) ;
                             }
                                 case WM_RBUTTONUP     : { idTool = ifcIDtYPEtOOL_MOUSEbUTTONrIGHT  ; idAction = ifcIDtYPEaCTION_UP   ; flagsOff = flTOOL_DOWN ; break ; }
                                 case WM_RBUTTONDOWN   : { idTool = ifcIDtYPEtOOL_MOUSEbUTTONrIGHT  ; idAction = ifcIDtYPEaCTION_DOWN ; flagsOn  = flTOOL_DOWN ; break ; }
@@ -418,11 +418,11 @@
                             ZE( countT , idAction ) ;
                             ZE( countT , idTool ) ;
 
-                            ((backOldC*)pRootI)->freshToolsMousePositionF( tinP ) ;
-                            ((backOldC*)pRootI)->resetToolMousePositionFlagsF( tinP ) ;
+                            ((backOldC*)pRootI)->freshToolsMousePositionF( tinBaseP ) ;
+                            ((backOldC*)pRootI)->resetToolMousePositionFlagsF( tinBaseP ) ;
                         {
                         if( pRootI )
-                        windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                        windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                     {
                     TELL( "winMessageHandlerWorkF: WM_MOUSEMOVE" )
                 {
@@ -444,16 +444,16 @@
                     }
                         //THREADmODE2rESTORE
                         //}
-                        //    while( !( F(thirdC::third_flagsProcessStateI_IF(tinP)) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ; }
-                        //    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                        //    while( !( F(thirdC::third_flagsProcessStateI_IF(tinBaseP)) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }
+                        //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                         //{
                         //THREADmODE2oN( flTHREADmODE2_ALLOWuNMONITOREDsLEEP )
                         //CONJ: THE PURPOSE OF THIS BLOCKAGE WAS TO ENSURE THAT SHUTDOWN DOES NOT COMPLETE UNTIL MAIN COMPLETES
 
                         //MAY NOT REFER TO IFC OBJECTS NOW SINCE MAIN IS DELETING THEM ALL
-                        thirdC::third_flagsProcessStateI_IF( tinP , flPROCESSsTATE_WM_CLOSE_RECEIVED , 1 ) ; // main WILL PROCEED TO CLEANUP WHEN IT SEES THIS
+                        thirdC::third_flagsProcessStateI_IF( tinBaseP , flPROCESSsTATE_WM_CLOSE_RECEIVED , 1 ) ; // main WILL PROCEED TO CLEANUP WHEN IT SEES THIS
     
-                        DEL( etherC::ether_pMainRefsIF( tinP ) ) ; // NO FURTHER USE FOR THIS
+                        DEL( etherC::ether_pMainRefsIF( tinBaseP ) ) ; // NO FURTHER USE FOR THIS
                         TINSL //WILL REFERENCE sf.tinEarlyLate
                     {
 
@@ -479,7 +479,7 @@
 
 
 
-                    //DEL( pEtThread ) ; //THIS ALSO CAUSES tinP TO BE DESTROYED
+                    //DEL( pEtThread ) ; //THIS ALSO CAUSES tinBaseP TO BE DESTROYED
 
 
 
@@ -490,13 +490,13 @@
 
 
                     if( thirdC::third_idPhaseProcess_IF() < ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE ) thirdC::third_idPhaseProcess_IF() = ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE ;
-                    DEL( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
-                    DEL( tinP.pEtScratch ) ;
+                    DEL( ((tinNormalS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
+                    DEL( ((tinNormalS&)tinBaseP).pEtScratch ) ;
 
                     bOkToUseIfcObjects = 0 ; hWindow.closeIfF() ;
                     FIREmYSELF ;
 
-                    DEL( tinP.pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
+                    DEL( ((tinNormalS&)tinBaseP).pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
                     }
                         THREADmODE2rESTORE
                         }
@@ -509,36 +509,36 @@
                                         case ifcIDtYPErECYCLE_stackC       : { DEL(       *(stackC**)&pObject ) ; break ; }
                                         case ifcIDtYPErECYCLE_soulC        : { DEL(        *(soulC**)&pObject ) ; break ; }
                                     {
-                                    switch( *tinP.pczl_pSwsRecycle )
+                                    switch( *((tinNormalS&)tinBaseP).pczl_pSwsRecycle )
                                 {
-                                if( tinP.pczl_pSwsRecycle && pObject )
+                                if( ((tinNormalS&)tinBaseP).pczl_pSwsRecycle && pObject )
 
-                                //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , tinP.pczl_pSwsRecycle ) ; //U::
+                                //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , ((tinNormalS&)tinBaseP).pczl_pSwsRecycle ) ; //U::
             
-                                *tinP.pSwsRecycle >> *(countT*)&pObject ;
+                                *((tinNormalS&)tinBaseP).pSwsRecycle >> *(countT*)&pObject ;
                                 ZE( voidT* , pObject ) ;
                             {
-                            while( *tinP.pSwsRecycle )
+                            while( *((tinNormalS&)tinBaseP).pSwsRecycle )
             
-                            tinP.pczl_pSwsRecycle = (countT*)tinP.pSwsRecycle->leverF( tinP , idf ) ;
+                            ((tinNormalS&)tinBaseP).pczl_pSwsRecycle = (countT*)((tinNormalS&)tinBaseP).pSwsRecycle->leverF( tinBaseP , idf ) ;
                         {
                         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                        countT cFlavors = tinP.pSwsRecycle->cFlavorsF( tinP ) ;
+                        countT cFlavors = ((tinNormalS&)tinBaseP).pSwsRecycle->cFlavorsF( tinBaseP ) ;
                         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                     {
-                    if( tinP.pSwsRecycle )
+                    if( ((tinNormalS&)tinBaseP).pSwsRecycle )
                     //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
 
                     }
-                        thThread.winSendMessageF( tinP , hr , idwm_DESTROY ) ;
+                        thThread.winSendMessageF( tinBaseP , hr , idwm_DESTROY ) ;
                         }
                             pRootI->letRefF() ;
                             hr.osF( ifcIDtYPEhANDLE_WINDOW , ((const handleC&)*pRootI).osF(  ifcIDtYPEhANDLE_WINDOW ) , 0 , 1 ) ;
                         {
                         if( pRootI )
-                        windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
-                        //U:: 2011.06.24: WHY IS THIS HERE?: handleC hi( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
-                        handleC hr( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
+                        windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
+                        //U:: 2011.06.24: WHY IS THIS HERE?: handleC hi( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
+                        handleC hr( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
                     {
 
                     TELL( "winMessageHandlerWorkF: WM_CLOSE" )
@@ -558,43 +558,43 @@
                         }
                             pRootI->letRefF() ;
 
-                            else thThread.winShowWindowF( tinP , hWindow , idcWINsHOW_SHOW ) ;
+                            else thThread.winShowWindowF( tinBaseP , hWindow , idcWINsHOW_SHOW ) ;
                             }
-                                //if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DEBUG ) ) thThread.winShowWindowF( tinP , hWindow , bHideWithIcon ? idcWINsHOW_HIDE : idcWINsHOW_MINIMIZE ) ;
+                                //if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DEBUG ) ) thThread.winShowWindowF( tinBaseP , hWindow , bHideWithIcon ? idcWINsHOW_HIDE : idcWINsHOW_MINIMIZE ) ;
                                 const boolT bHideWithIcon = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_HIDEwITHiCON ) ;
     
-                                ((backOldC*)pRootI)->resetAllF( tinP ) ;
+                                ((backOldC*)pRootI)->resetAllF( tinBaseP ) ;
                             {
                             if( idMyNewState == WA_INACTIVE )
                         {
                         if( pRootI )
-                        windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                        windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                     {
                     if( bRoot )
                     
-                    paperOldC::callSadamsIF( tinP , ether , idMyNewState == WA_INACTIVE ? ifcIDtYPEsTROKEcALLbACK_SLEEP : ifcIDtYPEsTROKEcALLbACK_WAKE , 0 , 0 , idMyNewState != WA_INACTIVE ? flCALLsADAMS_FIFO : flCALLsADAMS_null ) ;
+                    paperOldC::callSadamsIF( tinBaseP , ether , idMyNewState == WA_INACTIVE ? ifcIDtYPEsTROKEcALLbACK_SLEEP : ifcIDtYPEsTROKEcALLbACK_WAKE , 0 , 0 , idMyNewState != WA_INACTIVE ? flCALLsADAMS_FIFO : flCALLsADAMS_null ) ;
 
                     }
                         pRootI->letRefF() ;
-                        else                              pRootI->setModeFlagsF( tinP , flPAPERbACKmODE_null   , flPAPERbACKmODE_ABSENT ) ;
-                        if( idMyNewState == WA_INACTIVE ) pRootI->setModeFlagsF( tinP , flPAPERbACKmODE_ABSENT , flPAPERbACKmODE_null   ) ;
+                        else                              pRootI->setModeFlagsF( tinBaseP , flPAPERbACKmODE_null   , flPAPERbACKmODE_ABSENT ) ;
+                        if( idMyNewState == WA_INACTIVE ) pRootI->setModeFlagsF( tinBaseP , flPAPERbACKmODE_ABSENT , flPAPERbACKmODE_null   ) ;
                     {
                     if( pRootI )
-                    windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                    windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
 
                     }
                         }
                             pRootI->letRefF() ;
 
                              }
-                                 ((backOldC*)pRootI)->freshToolsMouseButtonsNotPresentF( tinP ) ;
+                                 ((backOldC*)pRootI)->freshToolsMouseButtonsNotPresentF( tinBaseP ) ;
                                  bDone = 1 ;
                              {
                              if( !bDone )
                              static boolT bDone ;
 
-                            ((backOldC*)pRootI)->freshToolsMousePositionF( tinP ) ;
-                            //SetCursorPos( winOsColIF( tinP.brcRaw / 2 ) , winOsRowIF( 1 ) ) ;
+                            ((backOldC*)pRootI)->freshToolsMousePositionF( tinBaseP ) ;
+                            //SetCursorPos( winOsColIF( ((tinNormalS&)tinBaseP).brcRaw / 2 ) , winOsRowIF( 1 ) ) ;
                             //BOSpOOP
                             //BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CXSCREEN ) )
     
@@ -604,10 +604,10 @@
                             //const countT offmc = ifcIDtYPEtOOL_MOUSEpOSITION - ifcIDtYPEtOOL_x2Begin - 1 ;
                             //USE FOR DEBUGGING, TO POSITION CURSOR AT LOWER LEFT CORNER
     
-                            ((backOldC*)pRootI)->freshToolsAllFlagOnDownF( tinP ) ;
+                            ((backOldC*)pRootI)->freshToolsAllFlagOnDownF( tinBaseP ) ;
                         {
                         if( pRootI )
-                        windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                        windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
 
                         }
                             if( !bDown ) break ;
@@ -625,7 +625,7 @@
                     {
                     else
                     }
-                        //if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_ENABLEsECURITYsHUTDOWN && etThread.diskFileExistsF( tinP , T("///d/ideafarm.home.")+TF1(etherC::ifc_idHomeIdisk_IF())+T(".setting.flag.secure") ) ) etThread.osFireF( tinP ) ;
+                        //if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_ENABLEsECURITYsHUTDOWN && etThread.diskFileExistsF( tinBaseP , T("///d/ideafarm.home.")+TF1(etherC::ifc_idHomeIdisk_IF())+T(".setting.flag.secure") ) ) etThread.osFireF( tinBaseP ) ;
 
                         // CAUSES ICON TO NOT FUNCTION
                         // CAUSES ICON TO DISAPPEAR
@@ -635,9 +635,9 @@
                     if( idMyNewState == WA_INACTIVE )
 
                     countT hWindowOther = p2P ;
-                    boolT bWasMinimized = tinP.brcRaw ;
+                    boolT bWasMinimized = ((tinNormalS&)tinBaseP).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , HIWORD( p1P ) )
-                    countT idMyNewState = tinP.brcRaw ;
+                    countT idMyNewState = ((tinNormalS&)tinBaseP).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , LOWORD( p1P ) )
                     TELL( "winMessageHandlerWorkF: WM_ACTIVATE" )
                 {
@@ -645,7 +645,7 @@
                 }
                     break ;
                     }
-                        //etThread.winPostMessageAfterNapF( tinP , TOCK , hWindow , idwm_SHOW , idcWINsHOW_SHOW ) ; //U::CONJ: THIS WILL WORKAROUND FOCUS AND ACTIVATION PROBLEM
+                        //etThread.winPostMessageAfterNapF( tinBaseP , TOCK , hWindow , idwm_SHOW , idcWINsHOW_SHOW ) ; //U::CONJ: THIS WILL WORKAROUND FOCUS AND ACTIVATION PROBLEM
                         //etherC::ifcSayIF( T("WM_ACTIVATEAPP: asking for show to be posted after TOCK nap") , flSAY_APPEND | flSAY_LOG ) ;
                     {
                     if( bRoot && p1P )
@@ -658,21 +658,21 @@
                     }
                         }
                             pRootI->letRefF() ;
-                            paperOldC::ungrabIF( tinP ) ;
-                            paper.flushF( tinP ) ;
-                            paperOldC& paper = (paperOldC&)pRootI->selectPaperF(tinP,ifcIDcMDpAPERsELECT_QUERYsHOW) ;
-                            paperOldC::grabIF( tinP , TAG( TAGiDnULL ) ) ;
+                            paperOldC::ungrabIF( tinBaseP ) ;
+                            paper.flushF( tinBaseP ) ;
+                            paperOldC& paper = (paperOldC&)pRootI->selectPaperF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYsHOW) ;
+                            paperOldC::grabIF( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         if( pRootI )
-                        windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                        windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                     {
 
                     }
                         pRootI->letRefF() ;
 
-                        //pRootI->signShown.giveF( tinP ) ;
-                        paperOldC::requestTabFreshIF( tinP ) ;
-                        pRootI->strokeAllPapersF( tinP ) ;
+                        //pRootI->signShown.giveF( tinBaseP ) ;
+                        paperOldC::requestTabFreshIF( tinBaseP ) ;
+                        pRootI->strokeAllPapersF( tinBaseP ) ;
 
                         //LOGrAWtID4( "idwm_RENDER (cCols,cRows): " , cCols , " " , cRows ) ;
                         ((HANDLEaPPnOTEScOUNTcLASS&)hDrawWindow).c2 = ((HANDLEaPPnOTEScOUNTcLASS&)hWindow).c2 = cRows ;
@@ -680,13 +680,13 @@
                         handleC& hDrawWindow = pRootI->hDrawWindowF() ;
                         handleC& hWindow     = (handleC&)(const handleC&)*pRootI ;
 
-                        pRootI->mColsRowsF( tinP , cCols , cRows ) ;
-                        ((thirdC&)etThread).winClientSizeF( tinP , cCols , cRows , *pRootI ) ;
+                        pRootI->mColsRowsF( tinBaseP , cCols , cRows ) ;
+                        ((thirdC&)etThread).winClientSizeF( tinBaseP , cCols , cRows , *pRootI ) ;
                         ZE( countT , cRows ) ;
                         ZE( countT , cCols ) ;
                     {
                     if( pRootI )
-                    windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                    windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
                 {
                 case idwm_RENDER :
                 }
@@ -695,7 +695,7 @@
 
                     }
 #endif
-                        thThread.winPostMessageF( tinP , hWindow , idwm_RENDER ) ;
+                        thThread.winPostMessageF( tinBaseP , hWindow , idwm_RENDER ) ;
                         //LOGrAW( "WM_WINDOWPOSCHANGING: posting idwm_RENDER\r\n" )
                         
                         }
@@ -716,10 +716,10 @@
                                         
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , AdjustWindowRect( &info , WS_OVERLAPPEDWINDOW , 0 ) )
-                            info.bottom = tinP.brcRaw - 1 ;
+                            info.bottom = ((tinNormalS&)tinBaseP).brcRaw - 1 ;
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CYSCREEN ) )
-                            info.right  = tinP.brcRaw - 1 ;
+                            info.right  = ((tinNormalS&)tinBaseP).brcRaw - 1 ;
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CXSCREEN ) )
                             info.top    = 0 ;
@@ -738,19 +738,19 @@
                 }
                     break ;
                     }
-                        // while( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepIF( tinP , TUCK * 0x40 ) ; }
-                        // sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                        // while( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; }
+                        // sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                         // FIREmYSELF ;
-                        // thirdC::third_flagsProcessStateI_IF( tinP , flPROCESSsTATE_WM_CLOSE_RECEIVED , 1 ) ; // main WILL PROCEED TO CLEANUP WHEN IT SEES THIS
+                        // thirdC::third_flagsProcessStateI_IF( tinBaseP , flPROCESSsTATE_WM_CLOSE_RECEIVED , 1 ) ; // main WILL PROCEED TO CLEANUP WHEN IT SEES THIS
                         // }
                         //     TELLsYSc1( ifcIDtYPEtELLsYS_READYtOdIEnu ) ;
-                        //     state C::writeToDiskIfIF( tinP ) ;
+                        //     state C::writeToDiskIfIF( tinBaseP ) ;
                         // {
                         // if( !( F( thirdC::third_flagsModeProcess1I_IF() ) & flMODEpROCESS1_QUITaTsHUTDOWN ) )
-                        // //THIS WOULD LOAD THE CPU WITH CLEANUP ACTIVITY: ((poolOld SideS&)poolC::poolOld RootIF( tinP )).flags ForestFire |= flFORESTfIRE_SHUTDOWN ;
+                        // //THIS WOULD LOAD THE CPU WITH CLEANUP ACTIVITY: ((poolOld SideS&)poolC::poolOld RootIF( tinBaseP )).flags ForestFire |= flFORESTfIRE_SHUTDOWN ;
                         //U::REMOVE THIS OBSOLETED CODE AFTER STUDYING WHAT IT DOES WITH STATE INFO
 
-                        thThread.winSendMessageCloseF( tinP , hWindow ) ;
+                        thThread.winSendMessageCloseF( tinBaseP , hWindow ) ;
                     {
                     if( p1P && !p2P ) //SESSION ENDING AND NOT BECAUSE OF LOGOFF
                     bEndSessionPending = 0 ;
@@ -764,12 +764,12 @@
                 case WM_QUERYENDSESSION :
             {
             switch( idCmdP )
-            tinS* pTinDebug3 = &tinP ; //U::
+            tinBaseS* pTinDebug3 = &tinBaseP ; //U::
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
 
             //WWiNIT
 
-            tinS* pTinDebug2 = &tinP ; //U::
+            tinBaseS* pTinDebug2 = &tinBaseP ; //U::
 
             //}
             //    LOGrAW( tn ) ;
@@ -800,7 +800,7 @@
             //    const osTextT* const postw = processGlobal4I.mapWindowMessage( idCmdP ) ;
             //    TN( tn , "" ) ;
             //
-            //    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            //    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             //    ZE( sCountT , timeN2 ) ;
             //    ZE( countT , timeN1 ) ;
             //{
@@ -829,13 +829,13 @@
                         //TN( te , "" ) ;
                         //osTextT* postWm = processGlobal4I.mapWindowMessage( idCmdP ) ;
                         //
-                        //etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                        //etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                         //ZE( sCountT , timeN2 ) ;
                         //ZE( countT , timeN1 ) ;
 
                         //LOGrAW( TT(timeN1,timeN2)+T("| ")+(postWm?T(postWm):TF1(idCmdP))+T(" ")+TF3(p1P,flFORMAT_UNSIGNED,9)+TF3(p2P,flFORMAT_UNSIGNED,8)+T("\r\n") ) ;
                         //osTextT* postWm = processGlobal4I.mapWindowMessage( idCmdP ) ;
-                        //etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                        //etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                         //ZE( sCountT , timeN2 ) ;
                         //ZE( countT , timeN1 ) ;
                     {
@@ -850,7 +850,7 @@
             {
             //if( !bOkToUseIfcObjects )
 
-            const boolT bWorkingPhase = ifcIDpHASEhANDOFFoLD_WORKING == thirdC::osProcessIdPhaseAdamIF( tinP ) ;
+            const boolT bWorkingPhase = ifcIDpHASEhANDOFFoLD_WORKING == thirdC::osProcessIdPhaseAdamIF( tinBaseP ) ;
 
             }
                 }
@@ -858,35 +858,35 @@
                     bRoot = hWindow == *pRootI ;
                 {
                 if( pRootI )
-                windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+                windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
             {
             ZE( boolT , bRoot ) ;
 
             thirdC&  thThread  = etThread ;
             etherC&  etThread   = *pEtThread ;
-            etherC*& pEtThread  = etherC::ether_pMainRefsIF( tinP )->pEtThread ;
-            etherC&  ether      = etherC::ether_pMainRefsIF( tinP )->ether ;
-            //tinS&    tinP      = etherC::ether_pMainRefsIF( tinP )->tin ; //THIS IS OBSOLETE; REMOVE IT
-            if( &tinP != &etherC::ether_pMainRefsIF( tinP )->tin ) BLAMMO ;
+            etherC*& pEtThread  = etherC::ether_pMainRefsIF( tinBaseP )->pEtThread ;
+            etherC&  ether      = etherC::ether_pMainRefsIF( tinBaseP )->ether ;
+            //tinBaseS&    tinBaseP      = etherC::ether_pMainRefsIF( tinBaseP )->tin ; //THIS IS OBSOLETE; REMOVE IT
+            if( &tinBaseP != &etherC::ether_pMainRefsIF( tinBaseP )->tinBase ) BLAMMO ;
             TELL( "winMessageHandlerWorkF: setting up" )
         {
         else
         }
             }
-                default: { rc = thirdC::winDefaultMessageHandlerIF( tinP , oshWindowP , idCmdP , p1P , p2P ) ; break ; }
+                default: { rc = thirdC::winDefaultMessageHandlerIF( tinBaseP , oshWindowP , idCmdP , p1P , p2P ) ; break ; }
                 }
                     break ;
                     }
                         hDrawWindow.resetF() ; //A:ASSUME: PRIVATE DEVICE CONTEXT THAT WILL BE CLOSED BY ~windowOldC
-                        thThread.winEndPaintF( tinP , hDrawWindow ) ;
+                        thThread.winEndPaintF( tinBaseP , hDrawWindow ) ;
                     {
                     if( ~hDrawWindow )
-                    thThread.winBeginPaintF( tinP , hDrawWindow , hWindow , idColMin , idRowMin , idColMax , idRowMax ) ;
+                    thThread.winBeginPaintF( tinBaseP , hDrawWindow , hWindow , idColMin , idRowMin , idColMax , idRowMax ) ;
                     ZE( sCountT , idRowMax ) ;
                     ZE( sCountT , idColMax ) ;
                     ZE( sCountT , idRowMin ) ;
                     ZE( sCountT , idColMin ) ;
-                    handleC hDrawWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
+                    handleC hDrawWindow( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
                 {
                 case WM_PAINT :
                 }
@@ -902,10 +902,10 @@
             {
             switch( idCmdP )
     
-            TELL( "winMessageHandlerWorkF: defaulting because tinP.pag1->_etherC_.pMainRefs is 0" )
-            thirdC& thThread = etherC::etThreadIF( tinP ) ;
+            TELL( "winMessageHandlerWorkF: defaulting because ((tinNormalS&)tinBaseP).pag1->_etherC_.pMainRefs is 0" )
+            thirdC& thThread = etherC::etThreadIF( tinBaseP ) ;
         {
-        if( !etherC::ether_pMainRefsIF( tinP ) ) //U::
+        if( !etherC::ether_pMainRefsIF( tinBaseP ) ) //U::
         WHATga
     {
     else
@@ -923,14 +923,14 @@
     ZE( boolT , bDoDefault ) ;
 
     hWindow.osF( ifcIDtYPEhANDLE_WINDOW , oshWindowP , 0 , 1 ) ;
-    handleC hWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
+    handleC hWindow( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
 
     //}
     //    LOGrAW( ostoBuf ) ;
     //
     //    OStEXTAK( ostoBuf , "\r\n" ) ;
-    //    OStEXTC( ostoBuf , (countT)&tinP , 0 ) ;
-    //    OStEXTAK( ostoBuf , "win handler ref tinS at " ) ;
+    //    OStEXTC( ostoBuf , (countT)&tinBaseP , 0 ) ;
+    //    OStEXTAK( ostoBuf , "win handler ref tinNormalS at " ) ;
     //    OStEXT( ostoBuf , 0x100 )
     //{
     //U::

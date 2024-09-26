@@ -8,13 +8,13 @@
 
 
 }
-    if( POOP ) delF( tinP , postP ) ;
-    delF( tinP , postOs ) ;
-    c_strncpyIF( tinP , postP , ifFileNameC( tinP , *this  , postOs ) , cMax + 2 ) ;
-    newF( tinP , LF , postP , cMax + 2 ) ; ___( postP ) ;
+    if( POOP ) delF( tinBaseP , postP ) ;
+    delF( tinBaseP , postOs ) ;
+    c_strncpyIF( tinBaseP , postP , ifFileNameC( tinBaseP , *this  , postOs ) , cMax + 2 ) ;
+    newF( tinBaseP , LF , postP , cMax + 2 ) ; ___( postP ) ;
     #endif
 
-        __( tinP.brcRaw == ERROR_INSUFFICIENT_BUFFER ) ;
+        __( ((tinNormalS&)tinBaseP).brcRaw == ERROR_INSUFFICIENT_BUFFER ) ;
         BOSdOnOTtEST( WHATgbo , GetLastError() )
 
         BOSpOOP
@@ -25,10 +25,10 @@
         BOSI( WHATgbo , BOSfAIL , DosQueryModuleName( (HMODULE)handleP.osF( ifcIDtYPEhANDLE_DLL ) , cMax + 1 , postOs ) )
     #ifdef __OS2__
 
-    newF( tinP , LF , postOs , cMax + 2 ) ; ___( postOs ) ;
+    newF( tinBaseP , LF , postOs , cMax + 2 ) ; ___( postOs ) ;
     ZE( osTextT* , postOs ) ;
     __Z( cMax ) ;
-    const countT cMax = dosQuerySysInfoMaxPathLengthIF( tinP ) ;
+    const countT cMax = dosQuerySysInfoMaxPathLengthIF( tinBaseP ) ;
 
     _IO_
 
@@ -43,7 +43,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT thirdC::dosQueryModuleNameF( tinS& tinP , osTextT*& postP , const handleC& handleP )/*1*/
+/**//*1*/voidT thirdC::dosQueryModuleNameF( tinBaseS& tinBaseP , osTextT*& postP , const handleC& handleP )/*1*/
 */
  handleP
  postP

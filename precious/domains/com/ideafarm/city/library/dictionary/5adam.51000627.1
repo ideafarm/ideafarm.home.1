@@ -10,8 +10,8 @@
 REST
 
 }
-    ++ s ; etThread.osSleepF( tinP , TOCK << 0 ) ;
-    vtSpoke.setF( tinP , tSay ) ;
+    ++ s ; etThread.osSleepF( tinBaseP , TOCK << 0 ) ;
+    vtSpoke.setF( tinBaseP , tSay ) ;
         
     tSay += tn+S2(0,scOld_POPfRAME) ;
     while( cToDo -- ) tSay += T(post2) ;
@@ -24,11 +24,11 @@ REST
 {
 while( !ether && !etThread )
 
-++ s ; etThread.osSleepF( tinP , TOCK  ) ;
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+++ s ; etThread.osSleepF( tinBaseP , TOCK  ) ;
+sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( countT , idCycle ) ;
 
-etThread.strokeF( tinP , tSay ) ;
+etThread.strokeF( tinBaseP , tSay ) ;
 
 ;
 
@@ -41,8 +41,8 @@ etThread.strokeF( tinP , tSay ) ;
 TN( tSay , "" ) ; tSay =
 
 TN( tn , "" ) ;
-vTextC        vtSpoke( tinP , "vtSpoke" , 0 , 8 ) ;
-tcButtonQuitC tcQuit( tinP , "tcQuit" , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT ) ;
+vTextC        vtSpoke( tinBaseP , "vtSpoke" , 0 , 8 ) ;
+tcButtonQuitC tcQuit( tinBaseP , "tcQuit" , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT ) ;
 
 // flTCfEATURE_KEYaCTION
 // flTCfEATURE_TABhEREsUPPRESSEShOTkEYS
@@ -76,7 +76,7 @@ TODO
     {
     switch( idTypeCallP )
 {
-voidT _export tcButtonCBF( tinS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP )
+voidT _export tcButtonCBF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP )
 
 #define HOWmANY 26
 

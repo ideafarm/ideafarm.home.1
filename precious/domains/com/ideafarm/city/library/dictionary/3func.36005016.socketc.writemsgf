@@ -11,14 +11,14 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
-        pOdometer->cbWrite += tinP.odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += tinP.odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
-        tinP.pag3->_socketC_.nnLever = nnPeer ;
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
+        pOdometer->cbWrite += ((tinNormalS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tinNormalS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        bWrite.ungrabF( tinP ) ;
+        bWrite.ungrabF( tinBaseP ) ;
     
         if( idleTimeAllowedWrite ) FRESHtIMEaTOMIC( *pEther , timeLathWrite.time1 , timeLathWrite.time2 )
     
@@ -26,14 +26,14 @@
         THREADmODE2rESTORE
 
         }
-            pEther->sockReadF( tinP , handle , (byteT*)&cbr , sizeof cbr ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            pEther->sockReadF( tinBaseP , handle , (byteT*)&cbr , sizeof cbr ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
         {
         else
         }
-            pEther->openSslTls_readF( tinP , (byteT*)&cbr , sizeof cbr , handle ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            pEther->openSslTls_readF( tinBaseP , (byteT*)&cbr , sizeof cbr , handle ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
 
@@ -41,90 +41,90 @@
         __( idMsgOut - idMsgOutLast ) ;
 
         }
-            pEther->sockReadF( tinP , handle , (byteT*)&idMsgOut , sizeof idMsgOut ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            pEther->sockReadF( tinBaseP , handle , (byteT*)&idMsgOut , sizeof idMsgOut ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
         {
         else
         }
-            pEther->openSslTls_readF( tinP , (byteT*)&idMsgOut , sizeof idMsgOut , handle ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            pEther->openSslTls_readF( tinBaseP , (byteT*)&idMsgOut , sizeof idMsgOut , handle ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
 
         __( idType - 2 ) ;
 
         }
-            pEther->sockReadF( tinP , handle , (byteT*)&idType , sizeof idType ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            pEther->sockReadF( tinBaseP , handle , (byteT*)&idType , sizeof idType ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
         {
         else
         }
-            pEther->openSslTls_readF( tinP , (byteT*)&idType , sizeof idType , handle ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            pEther->openSslTls_readF( tinBaseP , (byteT*)&idType , sizeof idType , handle ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
 
         }
-            pEther->sockWriteF( tinP , handle , pbP , cbo ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            pEther->sockWriteF( tinBaseP , handle , pbP , cbo ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
         {
         else
         }
-            pEther->openSslTls_writeF( tinP , handle , pbP , cbo ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            pEther->openSslTls_writeF( tinBaseP , handle , pbP , cbo ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
 
         }
-            pEther->sockWriteF( tinP , handle , (byteT*)&cbo , sizeof cbo ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            pEther->sockWriteF( tinBaseP , handle , (byteT*)&cbo , sizeof cbo ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
         {
         else
         }
-            pEther->openSslTls_writeF( tinP , handle , (byteT*)&cbo , sizeof cbo ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            pEther->openSslTls_writeF( tinBaseP , handle , (byteT*)&cbo , sizeof cbo ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
 
         }
-            pEther->sockWriteF( tinP , handle , (byteT*)&idMsgOut , sizeof idMsgOut ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            pEther->sockWriteF( tinBaseP , handle , (byteT*)&idMsgOut , sizeof idMsgOut ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
         {
         else
         }
-            pEther->openSslTls_writeF( tinP , handle , (byteT*)&idMsgOut , sizeof idMsgOut ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            pEther->openSslTls_writeF( tinBaseP , handle , (byteT*)&idMsgOut , sizeof idMsgOut ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
 
         countT idMsgOut = ++ idMsgOutLast ;
 
         }
-            pEther->sockWriteF( tinP , handle , (byteT*)&idType , sizeof idType ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            pEther->sockWriteF( tinBaseP , handle , (byteT*)&idType , sizeof idType ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
         {
         else
         }
-            pEther->openSslTls_writeF( tinP , handle , (byteT*)&idType , sizeof idType ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            pEther->openSslTls_writeF( tinBaseP , handle , (byteT*)&idType , sizeof idType ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
 
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
         countT idType = 1 ;
     
-        bWrite.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bWrite.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        countT cbo = cbP ? cbP : pEther->strBodyLengthF( tinP , pbP ) ;
+        countT cbo = cbP ? cbP : pEther->strBodyLengthF( tinBaseP , pbP ) ;
     
-        const countT _odoSockCbWriteOpen = tinP.odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = tinP.odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinBaseP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinBaseP).odoSockCbRead  ;
     
         _IO_
     
@@ -148,7 +148,7 @@
     {
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/voidT socketC::writeMsgF( tinS& tinP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/voidT socketC::writeMsgF( tinBaseS& tinBaseP , const byteT* const pbP , const countT cbP )/*1*/
 
 /**/
 */

@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 }
-    etThread.strokeF( tinP , T("[bUndefined,theta,aHeading,aElevation]: ")+TF2(bHeadingUndefined,flFORMAT_NObIGITvALUES)+T("    ")+TF2(theta,flFORMAT_NObIGITvALUES)+T("    ")+TF2(aHeading,flFORMAT_NObIGITvALUES)+T("    ")+TF2(aElevation,flFORMAT_NObIGITvALUES)+T("    [")+TF2(mXYZ[0],flFORMAT_NObIGITvALUES)+T(",")+TF2(mXYZ[1],flFORMAT_NObIGITvALUES)+T(",")+TF2(mXYZ[2],flFORMAT_NObIGITvALUES)+T("]\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("[bUndefined,theta,aHeading,aElevation]: ")+TF2(bHeadingUndefined,flFORMAT_NObIGITvALUES)+T("    ")+TF2(theta,flFORMAT_NObIGITvALUES)+T("    ")+TF2(aHeading,flFORMAT_NObIGITvALUES)+T("    ")+TF2(aElevation,flFORMAT_NObIGITvALUES)+T("    [")+TF2(mXYZ[0],flFORMAT_NObIGITvALUES)+T(",")+TF2(mXYZ[1],flFORMAT_NObIGITvALUES)+T(",")+TF2(mXYZ[2],flFORMAT_NObIGITvALUES)+T("]\r\n") ) ;
     boolT bHeadingUndefined = directionAM( aHeading , aElevation , mXYZ , 0 ) ;
 
     }
@@ -22,10 +22,10 @@ etherC::loafIF( tinP ) ;
     {
     for( countT offc = 0 ; offc <= 2 ; offc ++ )
 
-    //measureT mXYZ[] = { 0.0 , tinP.brcm04Raw , m1 } ;
-    measureT mXYZ[] = { tinP.brcm04Raw , 0.0 , m1 } ;
+    //measureT mXYZ[] = { 0.0 , ((tinNormalS&)tinBaseP).brcm04Raw , m1 } ;
+    measureT mXYZ[] = { ((tinNormalS&)tinBaseP).brcm04Raw , 0.0 , m1 } ;
     BOSmEASURE04( WHATgbo , sin( theta ) )
-    measure04T m1 = tinP.brcm04Raw ;
+    measure04T m1 = ((tinNormalS&)tinBaseP).brcm04Raw ;
     BOSmEASURE04( WHATgbo , cos( theta ) )
     ZE( measureT , aElevation ) ;
     ZE( measureT , aHeading   ) ;

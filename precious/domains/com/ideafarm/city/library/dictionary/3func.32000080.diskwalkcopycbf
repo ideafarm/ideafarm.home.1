@@ -18,10 +18,10 @@
             {
             else
             }
-                if( tinP.bosFail && tinP.brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
+                if( ((tinNormalS&)tinBaseP).bosFail && ((tinNormalS&)tinBaseP).brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
                 BOS( WHATsfr , BOSoK , CreateDirectory( info.postTo , 0 ) ) ;
                 info.postTo[ costTo - 1 ] = 0 ;
-                countT costTo = tinP.brcRaw ;
+                countT costTo = ((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , strlen( info.postTo ) )
             {
             if( bDir )
@@ -30,16 +30,16 @@
             //CONoUTrAW( info.postTo ) ;
         
             boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-            countT costLike = tinP.brcRaw ;
+            countT costLike = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
 
-            diskMakePathIfF( tinP , info.postTo ) ;
+            diskMakePathIfF( tinBaseP , info.postTo ) ;
         {
         if( bDoIt )
 
         ;
             : 1
-            ? (*info.pCbf)( tinP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
+            ? (*info.pCbf)( tinBaseP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
         bDoIt = info.pCbf
 
         BOSdOnOTtEST( WHATgbo , strcpy( info.postTo + info.costToRoot , postNameP + info.costFromRoot ) )
@@ -49,7 +49,7 @@
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkCopyCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkCopyCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 /**/
 */

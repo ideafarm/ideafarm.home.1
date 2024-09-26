@@ -17,68 +17,68 @@ REST
     {
     while( param.stButtonList )
     
-    etThread.delF( tinP , pbContent ) ;
+    etThread.delF( tinBaseP , pbContent ) ;
     
-    etThread.strokeF( tinP , T("\f") ) ;
-    param.win.selectPaperF( tinP , ifcIDcMDpAPERsELECT_SETsHOW , ifcIDpAPER_NOTsHOW ) ;
-    //napF( tinP , etThread , TOCK * 1 ) ; //SIMILATES TIME SPENT SHUTTING DOWN
-    etThread.strokeF( tinP , T("\f") ) ;
-    param.win.selectPaperF( tinP , ifcIDcMDpAPERsELECT_SETsHOW , ifcIDpAPER_NOTsHOW ) ;
-    //etThread.strokeF( tinP , T("")+S3(64.0,scOld_mmFRAMEcELLS,8.0)+T("IPDOS is shutting down")+S2(0,scOld_POPfRAME) ) ;
+    etThread.strokeF( tinBaseP , T("\f") ) ;
+    param.win.selectPaperF( tinBaseP , ifcIDcMDpAPERsELECT_SETsHOW , ifcIDpAPER_NOTsHOW ) ;
+    //napF( tinBaseP , etThread , TOCK * 1 ) ; //SIMILATES TIME SPENT SHUTTING DOWN
+    etThread.strokeF( tinBaseP , T("\f") ) ;
+    param.win.selectPaperF( tinBaseP , ifcIDcMDpAPERsELECT_SETsHOW , ifcIDpAPER_NOTsHOW ) ;
+    //etThread.strokeF( tinBaseP , T("")+S3(64.0,scOld_mmFRAMEcELLS,8.0)+T("IPDOS is shutting down")+S2(0,scOld_POPfRAME) ) ;
     
-    //param.win.baton.ungrabF( tinP ) ;
-    paperOldC::setBeforeAnimatingIF( tinP ) ;
-    //param.win.baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
-    paperOldC::fireAnimatorIfIF( tinP ) ; //U::ELIMINATE NEED FOR THIS IN APPLICATION CODE
+    //param.win.baton.ungrabF( tinBaseP ) ;
+    paperOldC::setBeforeAnimatingIF( tinBaseP ) ;
+    //param.win.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    paperOldC::fireAnimatorIfIF( tinBaseP ) ; //U::ELIMINATE NEED FOR THIS IN APPLICATION CODE
     
-    ether.loafIF( tinP ) ;
+    ether.loafIF( tinBaseP ) ;
 
-    param.eye.setModeFlagsF( tinP , flPAPERbACKmODE_null , flPAPERbACKmODE_ABSENT ) ; //U::
+    param.eye.setModeFlagsF( tinBaseP , flPAPERbACKmODE_null , flPAPERbACKmODE_ABSENT ) ; //U::
     
     //etThread.osThreadF( TaRG1( tmTestF ) , (countT)&param ) ;
     
     //LOGrAW( "--------------------------- WAITING TO BE FIRED -------------------------------------------------------------\r\n" )
-    param.win.selectPaperF( tinP , ifcIDcMDpAPERsELECT_SETsHOW , ifcIDpAPER_NOTsHOW ) ;
+    param.win.selectPaperF( tinBaseP , ifcIDcMDpAPERsELECT_SETsHOW , ifcIDpAPER_NOTsHOW ) ;
     
     param.bBegin = 1 ;
-    setFloorF( tinP , etThread , (countT)&param , ifcIDfLOOR_BANNER ) ;
+    setFloorF( tinBaseP , etThread , (countT)&param , ifcIDfLOOR_BANNER ) ;
     
-    //param.win.baton.ungrabF( tinP ) ;
-    paperOldC::setBeforeAnimatingIF( tinP , animateCBF , (countT)&param ) ;
-    //param.win.baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    //param.win.baton.ungrabF( tinBaseP ) ;
+    paperOldC::setBeforeAnimatingIF( tinBaseP , animateCBF , (countT)&param ) ;
+    //param.win.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-    param.win.selectPaperF( tinP , ifcIDcMDpAPERsELECT_SETrENDERdEFAULT , ifcIDpAPER_NOTsHOW ) ;
+    param.win.selectPaperF( tinBaseP , ifcIDcMDpAPERsELECT_SETrENDERdEFAULT , ifcIDpAPER_NOTsHOW ) ;
     
-    resizeIfF( tinP , (countT)&param , etThread ) ;
-    loadContentF( tinP , etThread , (countT)&param , pbContent , countTC() ) ;
+    resizeIfF( tinBaseP , (countT)&param , etThread ) ;
+    loadContentF( tinBaseP , etThread , (countT)&param , pbContent , countTC() ) ;
     ZE( byteT* , pbContent ) ;
     
-    paramS param( tinP , etThread ) ;
+    paramS param( tinBaseP , etThread ) ;
 {
 
-//etherC::ether_cUtility_IF( tinP , 0 ) ++ ; //U::TO FIND A BUG
+//etherC::ether_cUtility_IF( tinBaseP , 0 ) ++ ; //U::TO FIND A BUG
 
 TODO
 
 DONE( tmTestF )
 
 }
-    //buEscapeCBF( tinP , etThread , (countT)&paramP , ifcIDtYPEsTROKEcALLbACK_HOTkEY , 0 , 0 , 0 , 0 , *(sadamStateOldS*)0 ) ; //U::TO FIND A BUG
+    //buEscapeCBF( tinBaseP , etThread , (countT)&paramP , ifcIDtYPEsTROKEcALLbACK_HOTkEY , 0 , 0 , 0 , 0 , *(sadamStateOldS*)0 ) ; //U::TO FIND A BUG
     //}
-    //    ++ s ; etThread.osSleepF( tinP , TOCK * thirdC::third_idTrialI_IF( tinP ) ) ;
-    //    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    //    ++ s ; etThread.osSleepF( tinBaseP , TOCK * thirdC::third_idTrialI_IF( tinBaseP ) ) ;
+    //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     //{
 
     }
-          buF1CBF( tinP , etThread , (countT)&paramP , ifcIDtYPEsTROKEcALLbACK_HOTkEY , 0 , 0 , 0 , 0 , *(sadamStateOldS*)0 ) ; //U::TO FIND A BUG
+          buF1CBF( tinBaseP , etThread , (countT)&paramP , ifcIDtYPEsTROKEcALLbACK_HOTkEY , 0 , 0 , 0 , 0 , *(sadamStateOldS*)0 ) ; //U::TO FIND A BUG
           }
-              ++ s ; etThread.osSleepF( tinP , TOCK * 6 ) ;
-              sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+              ++ s ; etThread.osSleepF( tinBaseP , TOCK * 6 ) ;
+              sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
           {
-          buF1CBF( tinP , etThread , (countT)&paramP , ifcIDtYPEsTROKEcALLbACK_HOTkEY , 0 , 0 , 0 , 0 , *(sadamStateOldS*)0 ) ; //U::TO FIND A BUG
+          buF1CBF( tinBaseP , etThread , (countT)&paramP , ifcIDtYPEsTROKEcALLbACK_HOTkEY , 0 , 0 , 0 , 0 , *(sadamStateOldS*)0 ) ; //U::TO FIND A BUG
           }
-              ++ s ; etThread.osSleepF( tinP , TOCK * 6 ) ;
-              sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+              ++ s ; etThread.osSleepF( tinBaseP , TOCK * 6 ) ;
+              sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
           {
     {
     while( !ether )
@@ -91,15 +91,15 @@ TASK( tmTestF )
 
 ;
 }
-    eye.setHullAimTiltF( tinP , angh , angv , angt ) ;
+    eye.setHullAimTiltF( tinBaseP , angh , angv , angt ) ;
     measureT angt = - 1.0 + 2.0 * offHullAimtTick / cHullAimtTicks ;
     measureT angv = - 1.0 + 2.0 * offHullAimvTick / cHullAimvTicks ;
     measureT angh = - 1.0 + 2.0 * offHullAimhTick / cHullAimhTicks ;
 
-    eye.setHullLocationF( tinP , xHullAt , yHullAt , zHullAt ) ;
+    eye.setHullLocationF( tinBaseP , xHullAt , yHullAt , zHullAt ) ;
 
     }
-        vtHoverPad.setF( tinP , tHoverPad ) ;
+        vtHoverPad.setF( tinBaseP , tHoverPad ) ;
 
         ;
     
@@ -154,12 +154,12 @@ TASK( tmTestF )
         TN( tIdeaFarm  , "" ) ; tIdeaFarm  = T("IdeaFarm")+S3(2.0,scOld_mmFRAMEtO,0.25)+S2(saA1_TRADEmARK,sc_cALPHABET1)+S2(0,scOld_POPfRAME)+T("  ") ;
     {
 
-    vtView.setF( tinP , T("[thisTextNotUsedButMustBeNonNullInitially]") ) ;
+    vtView.setF( tinBaseP , T("[thisTextNotUsedButMustBeNonNullInitially]") ) ;
 
     }
         }
-            if( pbvt ) ppvtClock[ off ] = new( 0 , tinP , pbvt , sizeof( vTextC ) ) vTextC( tinP , "ppvtClock" , 0 , 1 ) ;
-            etherP.newF( tinP , LF , pbvt , sizeof( vTextC ) ) ; ___( pbvt ) ;
+            if( pbvt ) ppvtClock[ off ] = new( 0 , tinBaseP , pbvt , sizeof( vTextC ) ) vTextC( tinBaseP , "ppvtClock" , 0 , 1 ) ;
+            etherP.newF( tinBaseP , LF , pbvt , sizeof( vTextC ) ) ; ___( pbvt ) ;
             ZE( byteT* , pbvt ) ;
         {
         for( countT off = 0 ; off < cpvtClock ; off ++ )
@@ -167,8 +167,8 @@ TASK( tmTestF )
     {
     }
         }
-            if( pbvt ) ppvtClockBanner[ off ] = new( 0 , tinP , pbvt , sizeof( vTextC ) ) vTextC( tinP , "ppvtClockBanner" , 0 , 1 ) ;
-            etherP.newF( tinP , LF , pbvt , sizeof( vTextC ) ) ; ___( pbvt ) ;
+            if( pbvt ) ppvtClockBanner[ off ] = new( 0 , tinBaseP , pbvt , sizeof( vTextC ) ) vTextC( tinBaseP , "ppvtClockBanner" , 0 , 1 ) ;
+            etherP.newF( tinBaseP , LF , pbvt , sizeof( vTextC ) ) ; ___( pbvt ) ;
             ZE( byteT* , pbvt ) ;
         {
         for( countT off = 0 ; off < cpvtClockBanner ; off ++ )
@@ -176,126 +176,126 @@ TASK( tmTestF )
     {
 
     tHintDefault = vtHintClockBanner ;
-    thirdC::c_memsetIF( tinP , (byteT*)ppsttLoginSecret , sizeof ppsttLoginSecret ) ;
-    thirdC::c_memsetIF( tinP , (byteT*)ppvtClock , sizeof ppvtClock ) ;
-    thirdC::c_memsetIF( tinP , (byteT*)ppvtClockBanner , sizeof ppvtClockBanner ) ;
+    thirdC::c_memsetIF( tinBaseP , (byteT*)ppsttLoginSecret , sizeof ppsttLoginSecret ) ;
+    thirdC::c_memsetIF( tinBaseP , (byteT*)ppvtClock , sizeof ppvtClock ) ;
+    thirdC::c_memsetIF( tinBaseP , (byteT*)ppvtClockBanner , sizeof ppvtClockBanner ) ;
     win.letRefF() ; //U::KLUDGE
 {
 offLoginSecret( 0 )
-buLoginKey8(          tinP , "buLoginKey8"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
-buLoginKey7(          tinP , "buLoginKey7"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
-buLoginKey6(          tinP , "buLoginKey6"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
-buLoginKey5(          tinP , "buLoginKey5"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
-buLoginKey4(          tinP , "buLoginKey4"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
-buLoginKey3(          tinP , "buLoginKey3"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
-buLoginKey2(          tinP , "buLoginKey2"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
-buLoginKey1(          tinP , "buLoginKey1"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
-prPrompt(            tinP , etherP , "prPrompt" , psttPromptValue , T("key: ") , 0 , 0 , flTCfEATURE_defaultPrompt | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT , 8 , prPromptCBF , (countT)this , 0 , 1 , 0 , ifcRGB_BROWN , 2 , 7 ) ,
-buStartGame(         tinP , "buStartGame" , buStartGameCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("start the game!") ) ,
-buContent1bigitfU(   tinP , "buContent1bigitfU" , buContent1bigitfUCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("fU") ) ,
-buContent1bigitEe(   tinP , "buContent1bigitEe" , buContent1bigitEeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ee") ) ,
-buContent1bigitDe(   tinP , "buContent1bigitDe" , buContent1bigitDeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("De") ) ,
-buContent1bigitCe(   tinP , "buContent1bigitCe" , buContent1bigitCeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ce") ) ,
-buContent1bigitBe(   tinP , "buContent1bigitBe" , buContent1bigitBeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Be") ) ,
-buContent1bigitAy(   tinP , "buContent1bigitAy" , buContent1bigitAyCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ay") ) ,
-buContent1bigitNi(   tinP , "buContent1bigitNi" , buContent1bigitNiCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ni") ) ,
-buContent1bigitTa(   tinP , "buContent1bigitTa" , buContent1bigitTaCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ta") ) ,
-buContent1bigitVe(   tinP , "buContent1bigitVe" , buContent1bigitVeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ve") ) ,
-buContent1bigitSe(   tinP , "buContent1bigitSe" , buContent1bigitSeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Se") ) ,
-buContent1bigitfI(   tinP , "buContent1bigitfI" , buContent1bigitfICBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("fI") ) ,
-buContent1bigitFo(   tinP , "buContent1bigitFo" , buContent1bigitFoCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Fo") ) ,
-buContent1bigitRe(   tinP , "buContent1bigitRe" , buContent1bigitReCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Re") ) ,
-buContent1bigitOo(   tinP , "buContent1bigitOo" , buContent1bigitOoCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Oo") ) ,
-buContent1bigitWo(   tinP , "buContent1bigitWo" , buContent1bigitWoCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Wo") ) ,
-buContent1bigitZe(   tinP , "buContent1bigitZe" , buContent1bigitZeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ze") ) ,
-buHoverPad(          tinP , "buHoverPad" , buHoverPadCBF          , (countT)this , flTCfEATURE_FLYOVER | flTCfEATURE_MOUSE | flTCfEATURE_DRAGGABLE                                 , 0 , vtHoverPad ) ,
-buClockBannerLabel(  tinP , "buClockBannerLabel" , buClockBannerLabelCBF  , (countT)this ,                     flTCfEATURE_MOUSE | flTCfEATURE_FLYOVER                                                             , 0 , 0 , 1 ) ,
-buClockLaunch(       tinP , "buClockLaunch" , buClockLaunchCBF       , (countT)this ,                     flTCfEATURE_MOUSE | flTCfEATURE_FLYOVER                                                             , 0 , 0 , 1 ) ,
-buSubscribe(         tinP , "buSubscribe" , buSubscribeCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("subscribe") , 0 , ifcRGB_BROWN , 2 , 2 ) ,
-buClockBanner(       tinP , "buClockBanner" , buClockBannerCBF       , (countT)this ,                     flTCfEATURE_MOUSE | flTCfEATURE_FLYOVER                                                             , 0 , 0 , 1 ) ,
-buClock(             tinP , "buClock" , buClockCBF             , (countT)this ,                     flTCfEATURE_MOUSE | flTCfEATURE_FLYOVER                                                             , 0 , 0 , 1 ) ,
-buEyeTiltRight(      tinP , "buEyeTiltRight" , buEyeTiltRightCBF      , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLPAGEuP,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeTiltLeft(       tinP , "buEyeTiltLeft" , buEyeTiltLeftCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLPAGEdOWN,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeAimUp(          tinP , "buEyeAimUp" , buEyeAimUpCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLUP,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeAimDown(        tinP , "buEyeAimDown" , buEyeAimDownCBF        , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLDOWN,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeAimRight(       tinP , "buEyeAimRight" , buEyeAimRightCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLRIGHT,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeAimLeft(        tinP , "buEyeAimLeft" , buEyeAimLeftCBF        , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLLEFT,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeAimTiltReset(   tinP , "buEyeAimTiltReset" , buEyeAimTiltResetCBF   , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("aimReset") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeMoveUp(         tinP , "buEyeMoveUp" , buEyeMoveUpCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("up") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeMoveDown(       tinP , "buEyeMoveDown" , buEyeMoveDownCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("down") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeMoveNorth(      tinP , "buEyeMoveNorth" , buEyeMoveNorthCBF      , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("north") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeMoveSouth(      tinP , "buEyeMoveSouth" , buEyeMoveSouthCBF      , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("south") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeMoveEast(       tinP , "buEyeMoveEast" , buEyeMoveEastCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("eastz") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeMoveWest(       tinP , "buEyeMoveWest" , buEyeMoveWestCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("west") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeMoveReset(      tinP , "buEyeMoveReset" , buEyeMoveResetCBF      , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("moveReset") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeEscape(         tinP , "buEyeEscape" , buEyeEscapeCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLESCAPE,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEyeEnter(          tinP , "buEyeEnter" , buEyeEnterCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("eye") , 0 , ifcRGB_BROWN , 1 , 1         , 0 , 0x33333333 ) ,
-buClimbRight(        tinP , "buClimbRight" , buClimbRightCBF        , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLRIGHT,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 3 , 4 ) ,
-buClimbLeft(         tinP , "buClimbLeft" , buClimbLeftCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLLEFT,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 3 , 3 ) ,
-buClimbUp(           tinP , "buClimbUp" , buClimbUpCBF           , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLUP,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 3 , 2 ) ,
-buClimbDown(         tinP , "buClimbDown" , buClimbDownCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLDOWN,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 3 , 1 ) ,
-buDisagree(          tinP , "buDisagree" , buDisagreeCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(ifcRGB_ORANGE,scOld_cPUSHcOLOR)+T("no, i am not ready to enter into that contract")+S2(0,scOld_POPcOLOR) ) ,
-buAgree(             tinP , "buAgree" , buAgreeCBF             , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+T("yes, i hereby contract with you")+S2(0,scOld_POPcOLOR) ) ,
-buSermon(            tinP , "buSermon" , buSermonCBF            , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("sermon") , 0 , ifcRGB_BROWN , 2 , 6 ) ,
-buCredits(           tinP , "buCredits" , buCreditsCBF           , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("credits") , 0 , ifcRGB_BROWN , 2 , 5 ) ,
-buIntro(             tinP , "buIntro" , buIntroCBF             , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("introduction") , 0 , ifcRGB_BROWN , 2 , 4 ) ,
-buGate(              tinP , "buGate" , buGateCBF              , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("gate") , 0 , ifcRGB_BROWN , 2 , 8 ) ,
-buConsole(           tinP , "buConsole" , buConsoleCBF           , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("console") , 0 , ifcRGB_BROWN , 2 , 9 ) ,
+buLoginKey8(          tinBaseP , "buLoginKey8"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
+buLoginKey7(          tinBaseP , "buLoginKey7"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
+buLoginKey6(          tinBaseP , "buLoginKey6"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
+buLoginKey5(          tinBaseP , "buLoginKey5"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
+buLoginKey4(          tinBaseP , "buLoginKey4"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
+buLoginKey3(          tinBaseP , "buLoginKey3"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
+buLoginKey2(          tinBaseP , "buLoginKey2"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
+buLoginKey1(          tinBaseP , "buLoginKey1"        , buLoginKeyCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("") , 0x10 , ifcRGB_BROWN , 2 , 9 ) ,
+prPrompt(            tinBaseP , etherP , "prPrompt" , psttPromptValue , T("key: ") , 0 , 0 , flTCfEATURE_defaultPrompt | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT , 8 , prPromptCBF , (countT)this , 0 , 1 , 0 , ifcRGB_BROWN , 2 , 7 ) ,
+buStartGame(         tinBaseP , "buStartGame" , buStartGameCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("start the game!") ) ,
+buContent1bigitfU(   tinBaseP , "buContent1bigitfU" , buContent1bigitfUCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("fU") ) ,
+buContent1bigitEe(   tinBaseP , "buContent1bigitEe" , buContent1bigitEeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ee") ) ,
+buContent1bigitDe(   tinBaseP , "buContent1bigitDe" , buContent1bigitDeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("De") ) ,
+buContent1bigitCe(   tinBaseP , "buContent1bigitCe" , buContent1bigitCeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ce") ) ,
+buContent1bigitBe(   tinBaseP , "buContent1bigitBe" , buContent1bigitBeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Be") ) ,
+buContent1bigitAy(   tinBaseP , "buContent1bigitAy" , buContent1bigitAyCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ay") ) ,
+buContent1bigitNi(   tinBaseP , "buContent1bigitNi" , buContent1bigitNiCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ni") ) ,
+buContent1bigitTa(   tinBaseP , "buContent1bigitTa" , buContent1bigitTaCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ta") ) ,
+buContent1bigitVe(   tinBaseP , "buContent1bigitVe" , buContent1bigitVeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ve") ) ,
+buContent1bigitSe(   tinBaseP , "buContent1bigitSe" , buContent1bigitSeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Se") ) ,
+buContent1bigitfI(   tinBaseP , "buContent1bigitfI" , buContent1bigitfICBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("fI") ) ,
+buContent1bigitFo(   tinBaseP , "buContent1bigitFo" , buContent1bigitFoCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Fo") ) ,
+buContent1bigitRe(   tinBaseP , "buContent1bigitRe" , buContent1bigitReCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Re") ) ,
+buContent1bigitOo(   tinBaseP , "buContent1bigitOo" , buContent1bigitOoCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Oo") ) ,
+buContent1bigitWo(   tinBaseP , "buContent1bigitWo" , buContent1bigitWoCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Wo") ) ,
+buContent1bigitZe(   tinBaseP , "buContent1bigitZe" , buContent1bigitZeCBF   , (countT)this , flTCfEATURE_ACTIONhIGHLIGHT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_HOTkEY | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEYbIGIT | flTCfEATURE_FLYOVER | flTCfEATURE_TABpARTICIPANT , 0 , T("Ze") ) ,
+buHoverPad(          tinBaseP , "buHoverPad" , buHoverPadCBF          , (countT)this , flTCfEATURE_FLYOVER | flTCfEATURE_MOUSE | flTCfEATURE_DRAGGABLE                                 , 0 , vtHoverPad ) ,
+buClockBannerLabel(  tinBaseP , "buClockBannerLabel" , buClockBannerLabelCBF  , (countT)this ,                     flTCfEATURE_MOUSE | flTCfEATURE_FLYOVER                                                             , 0 , 0 , 1 ) ,
+buClockLaunch(       tinBaseP , "buClockLaunch" , buClockLaunchCBF       , (countT)this ,                     flTCfEATURE_MOUSE | flTCfEATURE_FLYOVER                                                             , 0 , 0 , 1 ) ,
+buSubscribe(         tinBaseP , "buSubscribe" , buSubscribeCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("subscribe") , 0 , ifcRGB_BROWN , 2 , 2 ) ,
+buClockBanner(       tinBaseP , "buClockBanner" , buClockBannerCBF       , (countT)this ,                     flTCfEATURE_MOUSE | flTCfEATURE_FLYOVER                                                             , 0 , 0 , 1 ) ,
+buClock(             tinBaseP , "buClock" , buClockCBF             , (countT)this ,                     flTCfEATURE_MOUSE | flTCfEATURE_FLYOVER                                                             , 0 , 0 , 1 ) ,
+buEyeTiltRight(      tinBaseP , "buEyeTiltRight" , buEyeTiltRightCBF      , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLPAGEuP,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeTiltLeft(       tinBaseP , "buEyeTiltLeft" , buEyeTiltLeftCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLPAGEdOWN,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeAimUp(          tinBaseP , "buEyeAimUp" , buEyeAimUpCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLUP,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeAimDown(        tinBaseP , "buEyeAimDown" , buEyeAimDownCBF        , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLDOWN,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeAimRight(       tinBaseP , "buEyeAimRight" , buEyeAimRightCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLRIGHT,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeAimLeft(        tinBaseP , "buEyeAimLeft" , buEyeAimLeftCBF        , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLLEFT,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeAimTiltReset(   tinBaseP , "buEyeAimTiltReset" , buEyeAimTiltResetCBF   , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("aimReset") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeMoveUp(         tinBaseP , "buEyeMoveUp" , buEyeMoveUpCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("up") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeMoveDown(       tinBaseP , "buEyeMoveDown" , buEyeMoveDownCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("down") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeMoveNorth(      tinBaseP , "buEyeMoveNorth" , buEyeMoveNorthCBF      , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("north") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeMoveSouth(      tinBaseP , "buEyeMoveSouth" , buEyeMoveSouthCBF      , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("south") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeMoveEast(       tinBaseP , "buEyeMoveEast" , buEyeMoveEastCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("eastz") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeMoveWest(       tinBaseP , "buEyeMoveWest" , buEyeMoveWestCBF       , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("west") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeMoveReset(      tinBaseP , "buEyeMoveReset" , buEyeMoveResetCBF      , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("moveReset") , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeEscape(         tinBaseP , "buEyeEscape" , buEyeEscapeCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLESCAPE,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEyeEnter(          tinBaseP , "buEyeEnter" , buEyeEnterCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("eye") , 0 , ifcRGB_BROWN , 1 , 1         , 0 , 0x33333333 ) ,
+buClimbRight(        tinBaseP , "buClimbRight" , buClimbRightCBF        , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLRIGHT,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 3 , 4 ) ,
+buClimbLeft(         tinBaseP , "buClimbLeft" , buClimbLeftCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLLEFT,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 3 , 3 ) ,
+buClimbUp(           tinBaseP , "buClimbUp" , buClimbUpCBF           , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLUP,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 3 , 2 ) ,
+buClimbDown(         tinBaseP , "buClimbDown" , buClimbDownCBF         , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLDOWN,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 3 , 1 ) ,
+buDisagree(          tinBaseP , "buDisagree" , buDisagreeCBF          , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(ifcRGB_ORANGE,scOld_cPUSHcOLOR)+T("no, i am not ready to enter into that contract")+S2(0,scOld_POPcOLOR) ) ,
+buAgree(             tinBaseP , "buAgree" , buAgreeCBF             , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+T("yes, i hereby contract with you")+S2(0,scOld_POPcOLOR) ) ,
+buSermon(            tinBaseP , "buSermon" , buSermonCBF            , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("sermon") , 0 , ifcRGB_BROWN , 2 , 6 ) ,
+buCredits(           tinBaseP , "buCredits" , buCreditsCBF           , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("credits") , 0 , ifcRGB_BROWN , 2 , 5 ) ,
+buIntro(             tinBaseP , "buIntro" , buIntroCBF             , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("introduction") , 0 , ifcRGB_BROWN , 2 , 4 ) ,
+buGate(              tinBaseP , "buGate" , buGateCBF              , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("gate") , 0 , ifcRGB_BROWN , 2 , 8 ) ,
+buConsole(           tinBaseP , "buConsole" , buConsoleCBF           , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("console") , 0 , ifcRGB_BROWN , 2 , 9 ) ,
 
-//buTest(              tinP , "buTest" , buTestCBF            , (countT)this , ( flTCfEATURE_defaultButton | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT ) & ~( F(flTCfEATURE_FRAME) ) , 0 , T("-") , 0 , ifcRGB_BROWN , 9 , 1 ) ,
-  buTest(              tinP , "buTest" , buTestCBF            , (countT)this ,   flTCfEATURE_defaultButton | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT                               , 0 , T("X") , 0 , ifcRGB_BROWN , 9 , 1 ) ,
-//buTest(              tinP , "buTest" , buTestCBF            , (countT)this , ( flTCfEATURE_defaultButton | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT ) & ~( F(flTCfEATURE_FRAME) ) , 0 , T("")+S2(0,scOld_FRAMEdETACH)+S3(1.0,scOld_mmLINEtO,0.0)+S2(ifcRGB_R4,scOld_cPUSHcOLOR)+S3(1.0,scOld_mmLINEtO,1.0)+S2(0,scOld_POPcOLOR)+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+S3(0.0,scOld_mmLINEtO,1.0)+S2(0,scOld_POPcOLOR)+S2(ifcRGB_B4,scOld_cPUSHcOLOR)+S3(0.0,scOld_mmLINEtO,0.0)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAMEdETACH) , 0 , ifcRGB_BROWN , 9 , 1 ) ,
-buSecure(              tinP , "buSecure" , buSecureCBF            , (countT)this ,   flTCfEATURE_defaultButton | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT                               , 0 , T("secure") , 0 , ifcRGB_BROWN , 9 , 1 ) ,
+//buTest(              tinBaseP , "buTest" , buTestCBF            , (countT)this , ( flTCfEATURE_defaultButton | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT ) & ~( F(flTCfEATURE_FRAME) ) , 0 , T("-") , 0 , ifcRGB_BROWN , 9 , 1 ) ,
+  buTest(              tinBaseP , "buTest" , buTestCBF            , (countT)this ,   flTCfEATURE_defaultButton | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT                               , 0 , T("X") , 0 , ifcRGB_BROWN , 9 , 1 ) ,
+//buTest(              tinBaseP , "buTest" , buTestCBF            , (countT)this , ( flTCfEATURE_defaultButton | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT ) & ~( F(flTCfEATURE_FRAME) ) , 0 , T("")+S2(0,scOld_FRAMEdETACH)+S3(1.0,scOld_mmLINEtO,0.0)+S2(ifcRGB_R4,scOld_cPUSHcOLOR)+S3(1.0,scOld_mmLINEtO,1.0)+S2(0,scOld_POPcOLOR)+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+S3(0.0,scOld_mmLINEtO,1.0)+S2(0,scOld_POPcOLOR)+S2(ifcRGB_B4,scOld_cPUSHcOLOR)+S3(0.0,scOld_mmLINEtO,0.0)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAMEdETACH) , 0 , ifcRGB_BROWN , 9 , 1 ) ,
+buSecure(              tinBaseP , "buSecure" , buSecureCBF            , (countT)this ,   flTCfEATURE_defaultButton | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT                               , 0 , T("secure") , 0 , ifcRGB_BROWN , 9 , 1 ) ,
 
-buFc(                tinP , "buFc" , buFcCBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF12,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buFb(                tinP , "buFb" , buFbCBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF11,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buFa(                tinP , "buFa" , buFaCBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF10,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buF9(                tinP , "buF9" , buF9CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF9,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buF8(                tinP , "buF8" , buF8CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF8,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buF7(                tinP , "buF7" , buF7CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF7,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buF6(                tinP , "buF6" , buF6CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF6,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buF5(                tinP , "buF5" , buF5CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF5,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buF4(                tinP , "buF4" , buF4CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF4,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buF3(                tinP , "buF3" , buF3CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF3,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buF2(                tinP , "buF2" , buF2CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF2,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buFc(                tinBaseP , "buFc" , buFcCBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF12,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buFb(                tinBaseP , "buFb" , buFbCBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF11,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buFa(                tinBaseP , "buFa" , buFaCBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF10,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buF9(                tinBaseP , "buF9" , buF9CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF9,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buF8(                tinBaseP , "buF8" , buF8CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF8,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buF7(                tinBaseP , "buF7" , buF7CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF7,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buF6(                tinBaseP , "buF6" , buF6CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF6,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buF5(                tinBaseP , "buF5" , buF5CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF5,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buF4(                tinBaseP , "buF4" , buF4CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF4,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buF3(                tinBaseP , "buF3" , buF3CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF3,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buF2(                tinBaseP , "buF2" , buF2CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF2,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
 //U:: ENABLE buF2 AFTER DEBUGGING PERSISTENT DRAGGING (ON RENDER, PERSISTENT DRAGGABLE IS MOVED TO 0,0 RATHER THAN PRIOR POSITION)
-buF1(                tinP , "buF1" , buF1CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF1,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-buEscape(            tinP , "buEscape" , buEscapeCBF        , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLESCAPE,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
-vtToolStateCapsLock( tinP , "vtToolStateCapsLock" ) ,
-vt2bigitHelp( tinP , "vt2bigitHelp" ) ,
-vt2bigitName( tinP , "vt2bigitName" ) ,
-vt2bigit( tinP , "vt2bigit" ) ,
-vtHoverPadAnimation( tinP , "vtHoverPadAnimation" ) ,
-vtHoverPad( tinP , "vtHoverPad" ) ,
-vt1tutorial( tinP , "vt1tutorial" ) ,
-vtGraphSpeed( tinP , "vtGraphSpeed" , 0 , 1 , 0 , vtGraphSpeedCBF , (countT)this ) ,
-vtGraphSpeedMinMax( tinP , "vtGraphSpeedMinMax" ) ,
-vtMonitorPoolNames( tinP , "vtMonitorPoolNames" ) ,
-vtHintClockBanner( tinP , "vtHintClockBanner" , 0 , 0x3e ) ,
-vtHintClock( tinP , "vtHintClock" , 0 , 0x3e ) ,
-vtView( tinP , "vtView" , 0 , 1 , 0 , vtViewCBF , (countT)this ) ,
-vtEyeNote5( tinP , "vtEyeNote5" ) ,
-vtEyeNote4( tinP , "vtEyeNote4" ) ,
-vtEyeNote3( tinP , "vtEyeNote3" ) ,
-vtEyeNote2( tinP , "vtEyeNote2" ) ,
-vtEyeNote1( tinP , "vtEyeNote1" ) ,
-vtEye( tinP , "vtEye" , 0 , 1 , 0 , vtEyeCBF , (countT)this ) ,
-vtButtonsPad( tinP , "vtButtonsPad" ) ,
-vtButtons( tinP , "vtButtons" ) ,
-vtHint( tinP , "vtHint" ) ,
-vtSlidesRemaining( tinP , "vtSlidesRemaining" ) ,
-vtSpeech( tinP , "vtSpeech" ) ,
-vtTest( tinP , "vtTest" , 0 , 1 , 0 , vtTestCBF , (countT)this ) ,
-tHoverPadDrag( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tHoverPad( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tHintDefault( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-win( *windowOldC::getRefIF( tinP ) ) , //U::KLUDGE
-eye( tinP , etherP , 1 , paperToEyeGoofyCBF /*, 0xaabbccdd*/ ) ,
-stButtonList( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( buttonListS ) ) ,
-treeKt( tinP , etherP ) ,
-stSpeech( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_BLOB , sizeof( count3S ) ) ,
-bHoverPadDrag( tinP , TAG( TAGiDnULL ) , 0 /*, flBATONc_DOnOTrEGISTERiNtIN*/ ) ,
-bOldViews( tinP , TAG( TAGiDnULL ) ) ,
+buF1(                tinBaseP , "buF1" , buF1CBF                , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLF1,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+buEscape(            tinBaseP , "buEscape" , buEscapeCBF        , (countT)this , flTCfEATURE_defaultButton             | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_TABpARTICIPANT , 0 , T("")+S2(saA1_TOOLESCAPE,sc_cALPHABET1) , 0 , ifcRGB_BROWN , 2 , 1 ) ,
+vtToolStateCapsLock( tinBaseP , "vtToolStateCapsLock" ) ,
+vt2bigitHelp( tinBaseP , "vt2bigitHelp" ) ,
+vt2bigitName( tinBaseP , "vt2bigitName" ) ,
+vt2bigit( tinBaseP , "vt2bigit" ) ,
+vtHoverPadAnimation( tinBaseP , "vtHoverPadAnimation" ) ,
+vtHoverPad( tinBaseP , "vtHoverPad" ) ,
+vt1tutorial( tinBaseP , "vt1tutorial" ) ,
+vtGraphSpeed( tinBaseP , "vtGraphSpeed" , 0 , 1 , 0 , vtGraphSpeedCBF , (countT)this ) ,
+vtGraphSpeedMinMax( tinBaseP , "vtGraphSpeedMinMax" ) ,
+vtMonitorPoolNames( tinBaseP , "vtMonitorPoolNames" ) ,
+vtHintClockBanner( tinBaseP , "vtHintClockBanner" , 0 , 0x3e ) ,
+vtHintClock( tinBaseP , "vtHintClock" , 0 , 0x3e ) ,
+vtView( tinBaseP , "vtView" , 0 , 1 , 0 , vtViewCBF , (countT)this ) ,
+vtEyeNote5( tinBaseP , "vtEyeNote5" ) ,
+vtEyeNote4( tinBaseP , "vtEyeNote4" ) ,
+vtEyeNote3( tinBaseP , "vtEyeNote3" ) ,
+vtEyeNote2( tinBaseP , "vtEyeNote2" ) ,
+vtEyeNote1( tinBaseP , "vtEyeNote1" ) ,
+vtEye( tinBaseP , "vtEye" , 0 , 1 , 0 , vtEyeCBF , (countT)this ) ,
+vtButtonsPad( tinBaseP , "vtButtonsPad" ) ,
+vtButtons( tinBaseP , "vtButtons" ) ,
+vtHint( tinBaseP , "vtHint" ) ,
+vtSlidesRemaining( tinBaseP , "vtSlidesRemaining" ) ,
+vtSpeech( tinBaseP , "vtSpeech" ) ,
+vtTest( tinBaseP , "vtTest" , 0 , 1 , 0 , vtTestCBF , (countT)this ) ,
+tHoverPadDrag( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
+tHoverPad( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
+tHintDefault( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
+win( *windowOldC::getRefIF( tinBaseP ) ) , //U::KLUDGE
+eye( tinBaseP , etherP , 1 , paperToEyeGoofyCBF /*, 0xaabbccdd*/ ) ,
+stButtonList( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( buttonListS ) ) ,
+treeKt( tinBaseP , etherP ) ,
+stSpeech( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_BLOB , sizeof( count3S ) ) ,
+bHoverPadDrag( tinBaseP , TAG( TAGiDnULL ) , 0 /*, flBATONc_DOnOTrEGISTERiNtIN*/ ) ,
+bOldViews( tinBaseP , TAG( TAGiDnULL ) ) ,
 timeHintExpires2( 0 ) ,
 pptcView( 0 ) ,
 psttPromptValue( 0 ) ,
@@ -343,18 +343,18 @@ cHullAimhTicks( AIMtICKS ) ,
 idFloor( 0 ) ,
 bQuitTmUsers( 0 ) ,
 bInside( 0 ) ,
-paramS::paramS( tinS& tinP , etherC& etherP ) :
+paramS::paramS( tinBaseS& tinBaseP , etherC& etherP ) :
 
 }
-    ether.delF( tinP , psttHintEscape ) ;
+    ether.delF( tinBaseP , psttHintEscape ) ;
 
     }
-        for( countT off = 0 ; off < celts ; off ++ ) ether.delF( tinP , ppsttLoginSecret[ off ] ) ;
+        for( countT off = 0 ; off < celts ; off ++ ) ether.delF( tinBaseP , ppsttLoginSecret[ off ] ) ;
         const countT celts = sizeof ppsttLoginSecret / sizeof ppsttLoginSecret[ 0 ] ;
     {
     }
         }
-            ether.delF( tinP , *(byteT**)&ppvtClock[ off ] ) ;
+            ether.delF( tinBaseP , *(byteT**)&ppvtClock[ off ] ) ;
             delete ppvtClock[ off ] ;
         {
         for( countT off = 0 ; off < cpvtClock ; off ++ )
@@ -362,7 +362,7 @@ paramS::paramS( tinS& tinP , etherC& etherP ) :
     {
     }
         }
-            ether.delF( tinP , *(byteT**)&ppvtClockBanner[ off ] ) ;
+            ether.delF( tinBaseP , *(byteT**)&ppvtClockBanner[ off ] ) ;
             delete ppvtClockBanner[ off ] ;
         {
         for( countT off = 0 ; off < cpvtClockBanner ; off ++ )
@@ -373,8 +373,8 @@ paramS::paramS( tinS& tinP , etherC& etherP ) :
 paramS::~paramS( voidT )
 
 }
-    etherP.strMakeF( tinP , LF , psttHint    , psttHintP ) ; ___( psttHint ) ;
-    etherP.strMakeF( tinP , LF , psttButtons , psttButtonsP ) ; ___( psttButtons ) ;
+    etherP.strMakeF( tinBaseP , LF , psttHint    , psttHintP ) ; ___( psttHint ) ;
+    etherP.strMakeF( tinBaseP , LF , psttButtons , psttButtonsP ) ; ___( psttButtons ) ;
 
     }
         if( POOP ) return ;
@@ -389,7 +389,7 @@ time1Hint( time1HintP ) ,
 psttHint( 0 ) ,
 csttMin( csttMinP ) ,
 psttButtons( 0 ) ,
-buttonListS::buttonListS( tinS& tinP , etherC& etherP , const strokeS* const psttButtonsP , countT csttMinP , const strokeS* const psttHintP , const countT time1HintP , const flagsT flagsHintP ) :
+buttonListS::buttonListS( tinBaseS& tinBaseP , etherC& etherP , const strokeS* const psttButtonsP , countT csttMinP , const strokeS* const psttHintP , const countT time1HintP , const flagsT flagsHintP ) :
 
 }
 {
@@ -401,8 +401,8 @@ psttButtons( 0 ) ,
 buttonListS::buttonListS( voidT ) :
 
 }
-    tinP.pEther->delF( tinP , psttHint    ) ;
-    tinP.pEther->delF( tinP , psttButtons ) ;
+    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttHint    ) ;
+    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttButtons ) ;
     TINSL
 {
 buttonListS::~buttonListS( voidT )

@@ -8,12 +8,12 @@
 
 
 }
-    third.dosOpenSharedMemIF( tinP , handleP , flagsResultP , T(psttP) , phFileP , cbUse , idHowP ) ;
+    third.dosOpenSharedMemIF( tinBaseP , handleP , flagsResultP , T(psttP) , phFileP , cbUse , idHowP ) ;
 
     }
         DEL( pInfo ) ;
         if( pInfo && !pInfo->cbUsedHigh ) cbUse = pInfo->cbUsed ;
-        diskFileQueryF( tinP , pInfo , *phFileP ) ; ___( pInfo ) ;
+        diskFileQueryF( tinBaseP , pInfo , *phFileP ) ; ___( pInfo ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     if( phFileP && !cbUse )
@@ -23,8 +23,8 @@
 
     }
         if( POOP ) return ;
-        __( strIdF( tinP , S1C('\\') , psttP ) ) ;
-        __( strIdF( tinP , S1C('/') , psttP ) ) ;
+        __( strIdF( tinBaseP , S1C('\\') , psttP ) ) ;
+        __( strIdF( tinBaseP , S1C('/') , psttP ) ) ;
         __Z( psttP ) ;
         __( flagsResultP ) ;
         __NZ( handleP ) ;
@@ -33,7 +33,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::memOpenSharedF( tinS& tinP , handleC& handleP , flagsT& flagsResultP , const strokeS* const psttP , handleC* phFileP , const countT cbP , const countT idHowP )/*1*/
+/*1*/voidT etherC::memOpenSharedF( tinBaseS& tinBaseP , handleC& handleP , flagsT& flagsResultP , const strokeS* const psttP , handleC* phFileP , const countT cbP , const countT idHowP )/*1*/
 
 /**/
 */

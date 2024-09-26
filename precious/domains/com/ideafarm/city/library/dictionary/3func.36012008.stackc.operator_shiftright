@@ -15,18 +15,18 @@
 
     }
         }
-            if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNdELpLATE ) pSgnEvent->giveF( tinP ) ;
+            if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNdELpLATE ) pSgnEvent->giveF( tinBaseP ) ;
     
-            else                           third.delF( tinP , (byteT*&)ppd ) ;
-            if( F(flags) & flSTACKc_XRAY ) pXray->freeF( tinP ) ;
+            else                           third.delF( tinBaseP , (byteT*&)ppd ) ;
+            if( F(flags) & flSTACKc_XRAY ) pXray->freeF( tinBaseP ) ;
 
             }
                 default : { valueP = PLATE_countT_REF( ppd ) ; break ; }
                 }
                     break ;
     
-                    third.c_memcpyIF( tinP , pbv , (byteT*)&cd , cbData ? cbData : sizeof( countT ) + cd ) ;
-                    if( !pbv ) { third.newF( tinP , LF , pbv , cbData ? cbData : sizeof( countT ) + cd ) ; ___BITScT( pbv , 0xdf4 ) ; }
+                    third.c_memcpyIF( tinBaseP , pbv , (byteT*)&cd , cbData ? cbData : sizeof( countT ) + cd ) ;
+                    if( !pbv ) { third.newF( tinBaseP , LF , pbv , cbData ? cbData : sizeof( countT ) + cd ) ; ___BITScT( pbv , 0xdf4 ) ; }
                     countT& cd = PLATE_countT_REF( ppd ) ;
                     byteT*& pbv = *(byteT**)&valueP ;
                 {
@@ -36,7 +36,7 @@
             {
             switch( idType )
     
-            newTabsIfF( tinP , ppd , 1 ) ;
+            newTabsIfF( tinBaseP , ppd , 1 ) ;
     
             }
                 ppBottom = 0 ;
@@ -54,15 +54,15 @@
             ppTop = ppTop->ppD ;
             plateS* ppd = ppTop ;
 
-            adjustRefsF( tinP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_DELETED ) ;
+            adjustRefsF( tinBaseP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_DELETED ) ;
         {
         else
         }
             }
-                default                            : { valueP = randomF( tinP )                     ;         __( extractF( tinP , 0  ) - valueP )    ; break ; }
-                case ifcSTACKtYPE_BLOB             : { randomF( tinP ,            (byteT*&)valueP ) ;             extractF( 0 , tinP , 0 )            ; break ; }
-                case ifcSTACKtYPE_timeS            : { randomF( tinP ,            *(timeS*)valueP ) ;             extractF( 0 , tinP , 0 )            ; break ; }
-                case ifcSTACKtYPE_nicNameC         : { randomF( tinP ,         *(nicNameC*)valueP ) ;             extractF( 0 , tinP , 0 )            ; break ; }
+                default                            : { valueP = randomF( tinBaseP )                     ;         __( extractF( tinBaseP , 0  ) - valueP )    ; break ; }
+                case ifcSTACKtYPE_BLOB             : { randomF( tinBaseP ,            (byteT*&)valueP ) ;             extractF( 0 , tinBaseP , 0 )            ; break ; }
+                case ifcSTACKtYPE_timeS            : { randomF( tinBaseP ,            *(timeS*)valueP ) ;             extractF( 0 , tinBaseP , 0 )            ; break ; }
+                case ifcSTACKtYPE_nicNameC         : { randomF( tinBaseP ,         *(nicNameC*)valueP ) ;             extractF( 0 , tinBaseP , 0 )            ; break ; }
             {
             switch( idType )
         {

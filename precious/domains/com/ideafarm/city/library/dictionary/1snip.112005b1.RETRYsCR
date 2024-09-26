@@ -18,12 +18,12 @@
                 {                                                                                           \
                 else                                                                                        \
                 }                                                                                           \
-                    thirdC::dosSleepWinkIF( tinP ) ;                                                        \
-                    etThread.traceF( tinP , T("retrying [code]:    ")+T(#codeP) ) ;                         \
+                    thirdC::dosSleepWinkIF( tinBaseP ) ;                                                        \
+                    etThread.traceF( tinBaseP , T("retrying [code]:    ")+T(#codeP) ) ;                         \
                     POOPR                                                                                   \
                 {                                                                                           \
                 if( POOP )                                                                                  \
-                tinP.pEtScratch->##codeP ;                                                                  \
+                ((tinNormalS&)tinBaseP).pEtScratch->##codeP ;                                                                  \
             {                                                                                               \
             while( !ether && !POOP && ( bNeverQuit || cTimes -- ) )                                         \
             SCOOPS                                                                                          \

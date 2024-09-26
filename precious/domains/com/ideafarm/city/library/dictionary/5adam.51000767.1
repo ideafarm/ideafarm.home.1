@@ -9,8 +9,8 @@
 
 REST
 
-swFlock.ungrabF( tinP ) ;
-swFlock.freeAllF( tinP ) ;
+swFlock.ungrabF( tinBaseP ) ;
+swFlock.freeAllF( tinBaseP ) ;
 
 }
     DEL( pFlock ) ;
@@ -21,12 +21,12 @@ swFlock.freeAllF( tinP ) ;
                 else                        break ;
                 if( info3.NextEntryOffset ) pbInfo3 += info3.NextEntryOffset ;
 
-                //etThread.traceF( tinP , T("    [name]:    ")+T(postName) ) ;
+                //etThread.traceF( tinBaseP , T("    [name]:    ")+T(postName) ) ;
                 if( bOk ) ;
 
                 unicodeToAnsiF( postName , sizeof postName , (byteT*)info3.FileName , info3.FileNameLength >> 1 ) ;
 
-                thirdC::c_memsetIF( tinP , postName , sizeof postName ) ;
+                thirdC::c_memsetIF( tinBaseP , postName , sizeof postName ) ;
                 osTextT postName[ TUCK << 1 ] ;
 
                 FILE_FULL_DIR_INFO& info3 = *(FILE_FULL_DIR_INFO*)pbInfo3 ;
@@ -46,12 +46,12 @@ swFlock.freeAllF( tinP ) ;
     byteT* pbInfo3 = pbBuffer ;
 
     }
-        //etThread.traceF( tinP , T("[name]:    ")+T(postName) ) ;
+        //etThread.traceF( tinBaseP , T("[name]:    ")+T(postName) ) ;
         if( bOk ) ;
 
         unicodeToAnsiF( postName , sizeof postName , (byteT*)info2.FileName , info2.FileNameLength >> 1 ) ;
 
-        thirdC::c_memsetIF( tinP , postName , sizeof postName ) ;
+        thirdC::c_memsetIF( tinBaseP , postName , sizeof postName ) ;
         osTextT postName[ TUCK << 1 ] ;
     {
     else
@@ -65,7 +65,7 @@ swFlock.freeAllF( tinP ) ;
     byteT pbBuffer[ TOCK ] ;
 
     }
-        //etThread.traceF( tinP , T("uncloaking [volume,idiFile]:    ")+TF3((countT)info.dwVolumeSerialNumber,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+TF3((countT)info.nFileIndexLow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3((countT)info.nFileIndexHigh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+        //etThread.traceF( tinBaseP , T("uncloaking [volume,idiFile]:    ")+TF3((countT)info.dwVolumeSerialNumber,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb4+TF3((countT)info.nFileIndexLow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3((countT)info.nFileIndexHigh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
     {
     if( bOk )
     boolT bOk = GetFileInformationByHandle( (HANDLE)hFile.osF( ifcIDtYPEhANDLE_FILE ) , &info ) ;
@@ -73,15 +73,15 @@ swFlock.freeAllF( tinP ) ;
     handleC& hFile = *pFlock ;
 
     fileC*& pFlock   = *(fileC**)&(countT&)swFlock ;
-    psttzLeverFolder = (strokeS*)swFlock.leverF( tinP , idf ) ;
+    psttzLeverFolder = (strokeS*)swFlock.leverF( tinBaseP , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = swFlock.cFlavorsF( tinP ) ;
-swFlock.grabF( tinP , TAG( TAGiDnULL ) ) ;
+countT cFlavors = swFlock.cFlavorsF( tinBaseP ) ;
+swFlock.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 TN( tb4    , "    " ) ;
 
-//etThread.traceF( tinP , T("unlocking") ) ;
-ether.loafIF( tinP ) ;
+//etThread.traceF( tinBaseP , T("unlocking") ) ;
+ether.loafIF( tinBaseP ) ;
 
 etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 1 ) ) ;
 
@@ -89,16 +89,16 @@ etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 1 ) ) ;
 
 etThread.osThreadF( TaRG2cBsTACK( tmServerF , CBsTACKmIN << 1 ) , (countT)&psttzLeverFolder , (countT)&swFlock ) ;
 
-//etThread.traceF( tinP , T("folder:    ")+tFolder ) ;
+//etThread.traceF( tinBaseP , T("folder:    ")+tFolder ) ;
 //}
-//    etThread.delF( tinP , psttFolder ) ;
+//    etThread.delF( tinBaseP , psttFolder ) ;
 //    tFolder = T(psttFolder) ;
-//    ZE( strokeS* , psttFolder ) ; etThread.querySettingF( tinP , psttFolder , T("!ipdos.cloak.folder")  ) ; ___( psttFolder ) ;
+//    ZE( strokeS* , psttFolder ) ; etThread.querySettingF( tinBaseP , psttFolder , T("!ipdos.cloak.folder")  ) ; ___( psttFolder ) ;
 //{
 //TN( tFolder , "" ) ;
 
 }
-    etThread.delF( tinP , psttf ) ;
+    etThread.delF( tinBaseP , psttf ) ;
 
     }
         }
@@ -109,24 +109,24 @@ etThread.osThreadF( TaRG2cBsTACK( tmServerF , CBsTACKmIN << 1 ) , (countT)&psttz
 
             }
                 }
-                    swFlock.ungrabF( tinP ) ;
+                    swFlock.ungrabF( tinBaseP ) ;
                     else          { swFlock = (countT)pFlock ; pFlock = 0 ; }
                     if( swFlock ) DEL( pFlock )                                   //SHOULD BE IMPOSSIBLE
                     psttzLeverFolder = psttf ;
-                    swFlock.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                    //etThread.traceF( tinP , T("folder locked:    ")+T(psttf) ) ;
+                    swFlock.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    //etThread.traceF( tinBaseP , T("folder locked:    ")+T(psttf) ) ;
                 {
                 if( !cDo )
             {
             else
             }
                 DEL( pFlock ) ;
-                etThread.traceF( tinP , T("error: could not lock folder:    ")+T(psttf) ) ;
+                etThread.traceF( tinBaseP , T("error: could not lock folder:    ")+T(psttf) ) ;
                 POOPRqUIET
             {
             if( POOP )
 
-            fileC* pFlock = new( 0 , tinP , LF ) fileC( tinP , psttf , ifcOPENaCCESS_R , 0 , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_BUMPkEY | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ; ___( pFlock ) ;
+            fileC* pFlock = new( 0 , tinBaseP , LF ) fileC( tinBaseP , psttf , ifcOPENaCCESS_R , 0 , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_BUMPkEY | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ; ___( pFlock ) ;
         {
         while( cDo -- )  //THIS IS TO VERIFY THAT I CAN DESTROY AND RECREATE THE FILE LOCK
         countT cDo = 2 ;
@@ -141,7 +141,7 @@ etThread.osThreadF( TaRG2cBsTACK( tmServerF , CBsTACKmIN << 1 ) , (countT)&psttz
 {
 while( stFolderToCloak )
 
-switchC swFlock( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzLeverFolder ) ;
+switchC swFlock( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzLeverFolder ) ;
 ZE( strokeS* , psttzLeverFolder ) ;
 
 }
@@ -151,12 +151,12 @@ ZE( strokeS* , psttzLeverFolder ) ;
                 psttf = 0 ; // psttf HAS BEEN SUNK, SO THIS COPY IS A ZOMBIE
 
                 }
-                    etThread.traceF( tinP , T("error: could not walk:    ")+T(psttf) ) ;
+                    etThread.traceF( tinBaseP , T("error: could not walk:    ")+T(psttf) ) ;
                     POOPR
                 {
                 if( POOP )
 
-                tinP.pEtScratch->diskWalkF( tinP , cDirs , cFiles , psttf , ether , flDISKwALK_DIRECTORIESoNLY , sinkFolderToCloakCBF , pcArg , 0 , 0 ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , psttf , ether , flDISKwALK_DIRECTORIESoNLY , sinkFolderToCloakCBF , pcArg , 0 , 0 ) ;
                 ZE( countT , cFiles ) ;
                 ZE( countT , cDirs ) ;
 
@@ -165,9 +165,9 @@ ZE( strokeS* , psttzLeverFolder ) ;
             IFsCRATCH
         {
         else
-        if( !ids ) etThread.delF( tinP , psttf ) ;
+        if( !ids ) etThread.delF( tinBaseP , psttf ) ;
 
-        stFolderToCloak.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+        stFolderToCloak.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
         ZE( countT , ids ) ;
 
         stFoldersToWalk >> psttf ;
@@ -175,97 +175,97 @@ ZE( strokeS* , psttzLeverFolder ) ;
     {
     while( stFoldersToWalk )
 
-    countT pcArg[] = { (countT)tinP.pEtScratch , (countT)&stFolderToCloak , (countT)&stFolderExclude , (countT)&stFoldersExclude } ;
+    countT pcArg[] = { (countT)((tinNormalS&)tinBaseP).pEtScratch , (countT)&stFolderToCloak , (countT)&stFolderExclude , (countT)&stFoldersExclude } ;
 
     }
         //else       psttf = 0 ;
-        //if( !ids ) etThread.delF( tinP , psttf ) ;
-        //stFoldersExclude.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+        //if( !ids ) etThread.delF( tinBaseP , psttf ) ;
+        //stFoldersExclude.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
         //ids = 0 ;
-        //etThread.strMakeF( tinP , LF , psttf , tHome+T("tmp/") ) ; ___( psttf ) ;
+        //etThread.strMakeF( tinBaseP , LF , psttf , tHome+T("tmp/") ) ; ___( psttf ) ;
 
         else       psttf = 0 ;
-        if( !ids ) etThread.delF( tinP , psttf ) ;
-        stFoldersExclude.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+        if( !ids ) etThread.delF( tinBaseP , psttf ) ;
+        stFoldersExclude.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
         ids = 0 ;
-        etThread.strMakeF( tinP , LF , psttf , tHome+T("controls/") ) ; ___( psttf ) ;
+        etThread.strMakeF( tinBaseP , LF , psttf , tHome+T("controls/") ) ; ___( psttf ) ;
 
         //else       psttf = 0 ;
-        //if( !ids ) etThread.delF( tinP , psttf ) ;
-        //stFoldersExclude.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+        //if( !ids ) etThread.delF( tinBaseP , psttf ) ;
+        //stFoldersExclude.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
         //ids = 0 ;
-        //etThread.strMakeF( tinP , LF , psttf , tHome+T("precious/domains/com/ideafarm/city/workshop/handle/") ) ; ___( psttf ) ;
+        //etThread.strMakeF( tinBaseP , LF , psttf , tHome+T("precious/domains/com/ideafarm/city/workshop/handle/") ) ; ___( psttf ) ;
 
         //else       psttf = 0 ;
-        //if( !ids ) etThread.delF( tinP , psttf ) ;
-        //stFoldersExclude.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+        //if( !ids ) etThread.delF( tinBaseP , psttf ) ;
+        //stFoldersExclude.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
         //ids = 0 ;
-        //etThread.strMakeF( tinP , LF , psttf , tHome+T("ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/") ) ; ___( psttf ) ;
+        //etThread.strMakeF( tinBaseP , LF , psttf , tHome+T("ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/") ) ; ___( psttf ) ;
 
         //else       psttf = 0 ;
-        //if( !ids ) etThread.delF( tinP , psttf ) ;
-        //stFoldersExclude.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+        //if( !ids ) etThread.delF( tinBaseP , psttf ) ;
+        //stFoldersExclude.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
         //ids = 0 ;
-        //etThread.strMakeF( tinP , LF , psttf , tHome+T("ephemeral/domains/com/ideafarm/city/park/exedll/1/master/") ) ; ___( psttf ) ;
+        //etThread.strMakeF( tinBaseP , LF , psttf , tHome+T("ephemeral/domains/com/ideafarm/city/park/exedll/1/master/") ) ; ___( psttf ) ;
 
         else       psttf = 0 ;
-        if( !ids ) etThread.delF( tinP , psttf ) ;
-        stFoldersExclude.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+        if( !ids ) etThread.delF( tinBaseP , psttf ) ;
+        stFoldersExclude.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
         ids = 0 ;
-        etThread.strMakeF( tinP , LF , psttf , tHome+T("IdeaFarm (tm)/") ) ; ___( psttf ) ;
+        etThread.strMakeF( tinBaseP , LF , psttf , tHome+T("IdeaFarm (tm)/") ) ; ___( psttf ) ;
 
         // SINK EXCLUSIONS
 
         else       psttf = 0 ;
-        if( !ids ) etThread.delF( tinP , psttf ) ;
-        stFoldersToWalk.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
-        //U::etThread.strMakeF( tinP , LF , psttf , tHome ) ; ___( psttf ) ;
-        etThread.strMakeF( tinP , LF , psttf , /*U:: tHome */ T("///d/tmp/locked.test/") ) ; ___( psttf ) ;
+        if( !ids ) etThread.delF( tinBaseP , psttf ) ;
+        stFoldersToWalk.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+        //U::etThread.strMakeF( tinBaseP , LF , psttf , tHome ) ; ___( psttf ) ;
+        etThread.strMakeF( tinBaseP , LF , psttf , /*U:: tHome */ T("///d/tmp/locked.test/") ) ; ___( psttf ) ;
         ZE( countT , ids ) ;
 
         // SINK FOLDERS TO WALK
 
         ZE( strokeS* , psttf ) ;
         
-        //etThread.traceF( tinP , T("home:  ")+tHome ) ;
+        //etThread.traceF( tinBaseP , T("home:  ")+tHome ) ;
         }
-            etThread.delF( tinP , psttNU ) ;
-            etThread.delF( tinP , psttHome ) ;
+            etThread.delF( tinBaseP , psttNU ) ;
+            etThread.delF( tinBaseP , psttHome ) ;
             tHome  = T(psttHome) ;
-            etThread.strBisectF( tinP , psttHome , psttNU , tName , tSlash , 5 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttHome ) ; ___( psttNU ) ;
+            etThread.strBisectF( tinBaseP , psttHome , psttNU , tName , tSlash , 5 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttHome ) ; ___( psttNU ) ;
             ZE( strokeS* , psttNU ) ;
             ZE( strokeS* , psttHome ) ;
         
-            //etThread.traceF( tinP , T("if name:  ")+tName ) ;
+            //etThread.traceF( tinBaseP , T("if name:  ")+tName ) ;
             }
                 break ;
                 tName = T(ifName) ;
-                etThread.delF( tinP , psttLower ) ;
-                ifFileNameC ifName( tinP , etThread , T(psttLower) ) ;
-                etThread.strConvertToLowerCaseF( tinP , psttLower , psttc1 ) ; ___( psttLower ) ;    // D:\iDeAfArM.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover\ideafarm.00000180.ipdos-we
+                etThread.delF( tinBaseP , psttLower ) ;
+                ifFileNameC ifName( tinBaseP , etThread , T(psttLower) ) ;
+                etThread.strConvertToLowerCaseF( tinBaseP , psttLower , psttc1 ) ; ___( psttLower ) ;    // D:\iDeAfArM.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover\ideafarm.00000180.ipdos-we
                 ZE( strokeS* , psttLower ) ;
-                //etThread.traceF( tinP , T("parameter:  ")+T(psttc1) ) ;
+                //etThread.traceF( tinBaseP , T("parameter:  ")+T(psttc1) ) ;
             {
-            FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinP ) )
+            FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinBaseP ) )
             TN( tName , "" ) ;
             TN( tSlash , "/" ) ;
         {
         TN( tHome , "" ) ;
     {
-    stackC stFoldersExclude( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;        // PLURAL:        THE EXACT MATCH FOLDER AND ALL CONTAINED SUBFOLDERS
-    stackC stFolderExclude(  tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;        // SINGULAR: ONLY THE EXACT MATCH FOLDER
-    stackC stFoldersToWalk(  tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stFoldersExclude( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;        // PLURAL:        THE EXACT MATCH FOLDER AND ALL CONTAINED SUBFOLDERS
+    stackC stFolderExclude(  tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;        // SINGULAR: ONLY THE EXACT MATCH FOLDER
+    stackC stFoldersToWalk(  tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 {
-stackC stFolderToCloak(      tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC stFolderToCloak(      tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 
 TODO
 
 DONE( tmHireF )
 }
     FIREmYSELF
-    etThread.traceF( tinP , T("GLASS2 is gone") ) ;
-    etThread.ifcHireF( tinP , T("ifcIDaDAM_CLOAK") , ifcIDaDAM_GLASS1 , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO | flHIRE_WAIT , nicNameC() ) ; //THIS PREVENTS ME FROM ENDING UNTIL GLASS2 ENDS, WHICH PREVENTS SERVICE FROM ENDING
-    etThread.traceF( tinP , T("hiring GLASS2 and waiting for it to die") ) ;
+    etThread.traceF( tinBaseP , T("GLASS2 is gone") ) ;
+    etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_CLOAK") , ifcIDaDAM_GLASS1 , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO | flHIRE_WAIT , nicNameC() ) ; //THIS PREVENTS ME FROM ENDING UNTIL GLASS2 ENDS, WHICH PREVENTS SERVICE FROM ENDING
+    etThread.traceF( tinBaseP , T("hiring GLASS2 and waiting for it to die") ) ;
 {
 if( pTaskP )
 TASK( tmHireF )         //U:: 20240415@1439: ELIMINATE tmHireF BY MOVING ITS CODE TO WHERE tmHireF IS LAUNCHED
@@ -280,32 +280,32 @@ DONE( tmServerF )
                     else                { DEL( pso ) ; }
                     if( !ether && pso ) etThread.osThreadF( TaRG1( tmcCloakServerF ) , (countT)pso , (countT)&psttzLeverFolderP , (countT)&swFlockP ) ;
 
-                    //etRock.traceF( tinP , T("cloak: called  acceptF for sListen") ) ;
-                    sListen.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ;
-                    //etRock.traceF( tinP , T("cloak: calling acceptF for sListen") ) ;
+                    //etRock.traceF( tinBaseP , T("cloak: called  acceptF for sListen") ) ;
+                    sListen.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
+                    //etRock.traceF( tinBaseP , T("cloak: calling acceptF for sListen") ) ;
                     ZE( countT , idPortPeer ) ;
                     nicNameC nnPeer ;
                     ZE( socketC* , pso ) ;
                 {
                 while( !POOP && !etThread && !ether )
-                sListen.listenF( tinP ) ;
+                sListen.listenF( tinBaseP ) ;
             {
             else
             }
-                etRock.traceF( tinP , T("cloak: could not bind to a port") ) ;
+                etRock.traceF( tinBaseP , T("cloak: could not bind to a port") ) ;
                 POOPR
             {
             if( POOP )
 
             //LOGrAW3( "home.idPortGlass2: " , home.idPortGlass2 , "\r\n" ) ;
-            //etRock.traceF( tinP , T("cloak: sListen bound to port ")+TF2(home.portCloak,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-            home.portCloak = sListen.bindF( tinP ) ;
+            //etRock.traceF( tinBaseP , T("cloak: sListen bound to port ")+TF2(home.portCloak,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+            home.portCloak = sListen.bindF( tinBaseP ) ;
             homeS& home = homeS::homeIF() ;
-            socketC sListen( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
+            socketC sListen( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
             SCOOPSnEW
         {
         IFsCRATCH
-        //etThread.traceF( tinP , T("listening for clients") ) ;
+        //etThread.traceF( tinBaseP , T("listening for clients") ) ;
     {
     while( !ether )
 
@@ -318,13 +318,13 @@ TASK( tmServerF )
 DONE( tmWatchHandlesF )
 }
     }
-        ether.osSleepF( tinP , TOCK >> 1 ) ;
+        ether.osSleepF( tinBaseP , TOCK >> 1 ) ;
 
         }
-            //etThread.traceF( tinP , T("hired handle.exe [value,idDeathType]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idDeathType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            etThread.osProcessF( tinP , osTid , osPid , value , idDeathType , T("///ideafarm/precious/domains/com/ideafarm/city/workshop/handle/handle64.exe") , 0 , flPROCESShIRE_null , &hfOut , &hfError , 0 ) ;
-            //G:etThread.osProcessF( tinP , osTid , osPid , value , idDeathType , T("///ideafarm/precious/domains/com/ideafarm/city/workshop/bench.baseless/bench.exe") , 0 , flPROCESShIRE_null , &hfOut , &hfError , 0 ) ;
-            //etThread.traceF( tinP , T("hiring handle.exe") ) ;
+            //etThread.traceF( tinBaseP , T("hired handle.exe [value,idDeathType]:    ")+TF2(value,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idDeathType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.osProcessF( tinBaseP , osTid , osPid , value , idDeathType , T("///ideafarm/precious/domains/com/ideafarm/city/workshop/handle/handle64.exe") , 0 , flPROCESShIRE_null , &hfOut , &hfError , 0 ) ;
+            //G:etThread.osProcessF( tinBaseP , osTid , osPid , value , idDeathType , T("///ideafarm/precious/domains/com/ideafarm/city/workshop/bench.baseless/bench.exe") , 0 , flPROCESShIRE_null , &hfOut , &hfError , 0 ) ;
+            //etThread.traceF( tinBaseP , T("hiring handle.exe") ) ;
             ZE( countT , idDeathType ) ;
             ZE( countT , value ) ;
             ZE( countT , osPid ) ;
@@ -332,10 +332,10 @@ DONE( tmWatchHandlesF )
             TN( tb4 , "    " ) ;
 
             const handleC& hfError = fError ;
-            fileC fError( tinP , (strokeS*)tError , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+            fileC fError( tinBaseP , (strokeS*)tError , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
 
             const handleC& hfOut = fOut ;
-            fileC fOut( tinP , (strokeS*)tOut , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+            fileC fOut( tinBaseP , (strokeS*)tOut , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
 
             TN( tError  , "" ) ; tError  = T("///d/tmp/handle.error.")+tSuffix ;
             TN( tOut    , "" ) ; tOut    = T("///d/tmp/handle.out.")+tSuffix ;
@@ -360,33 +360,33 @@ DONE( tmcCloakServerF )
                 }
                     DEL( psOut ) ;
                     }
-                        psoP->writeF( tinP , *psOut ) ;
-                        psOut = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
+                        psoP->writeF( tinBaseP , *psOut ) ;
+                        psOut = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
                         DEL( psOut ) ;
-                        psoP->writeF( tinP , *psOut ) ;
+                        psoP->writeF( tinBaseP , *psOut ) ;
             
                         }
                             }
                                 break ;
 
                                 }
-                                    swFlockP.ungrabF( tinP ) ;
+                                    swFlockP.ungrabF( tinBaseP ) ;
                                     }
-                                        //U::reportFilesF( tinP , etThread , psOut , psoP , pFlock , psttzLeverFolderP , flagsWant ) ;
+                                        //U::reportFilesF( tinBaseP , etThread , psOut , psoP , pFlock , psttzLeverFolderP , flagsWant ) ;
 
                                         fileC*& pFlock   = *(fileC**)&(countT&)swFlockP ;
-                                        psttzLeverFolderP = (strokeS*)swFlockP.leverF( tinP , idf ) ;
+                                        psttzLeverFolderP = (strokeS*)swFlockP.leverF( tinBaseP , idf ) ;
                                     {
                                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                    countT cFlavors = swFlockP.cFlavorsF( tinP ) ;
-                                    swFlockP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                    countT cFlavors = swFlockP.cFlavorsF( tinBaseP ) ;
+                                    swFlockP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                                     *psOut << (countT)ifcIDrEPLYcLOAK_ALLlOCKEDfOLDERScONTENTS ;
                                     *psOut << (countT)1 ;
                                     *psOut << (countT)FINGERnEG_CLOAKrEPLY ;
                                 {
                                 else
-                                if( POOP ) etThread.traceF( tinP , T("error: invalid value received [flagsWant]:    ")+TF2(flagsWant,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                if( POOP ) etThread.traceF( tinBaseP , T("error: invalid value received [flagsWant]:    ")+TF2(flagsWant,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                 FV(flFILEiNFO,flagsWant) ;
                                 sIn >> flagsWant ;
@@ -397,9 +397,9 @@ DONE( tmcCloakServerF )
                                 break ;
 
                                 }
-                                    swFlockP.ungrabF( tinP ) ;
+                                    swFlockP.ungrabF( tinBaseP ) ;
                                     }
-                                        //U::reportFilesF( tinP , etThread , psOut , psoP , pFlock , psttFolder , flagsWant ) ;
+                                        //U::reportFilesF( tinBaseP , etThread , psOut , psoP , pFlock , psttFolder , flagsWant ) ;
 
                                         *psOut << (countT)ifcIDrEPLYcLOAK_FOLDERcONTENTS ;
                                         *psOut << (countT)1 ;
@@ -409,11 +409,11 @@ DONE( tmcCloakServerF )
                                         psttzLeverFolderP = psttFolder ;
                                     {
                                     else
-                                    if( !swFlockP.idSlotOfLeverF( tinP , (countT)psttFolder ) ) etThread.traceF( tinP , T("flavor not found [psttFolder]:    ")+T(psttFolder) ) ;
-                                    swFlockP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                    if( !swFlockP.idSlotOfLeverF( tinBaseP , (countT)psttFolder ) ) etThread.traceF( tinBaseP , T("flavor not found [psttFolder]:    ")+T(psttFolder) ) ;
+                                    swFlockP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                                 {
                                 else
-                                if( POOP ) etThread.traceF( tinP , T("error: invalid value received [flagsWant]:    ")+TF2(flagsWant,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                if( POOP ) etThread.traceF( tinBaseP , T("error: invalid value received [flagsWant]:    ")+TF2(flagsWant,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                 FV(flFILEiNFO,flagsWant) ;
                                 sIn >> flagsWant ;
@@ -439,10 +439,10 @@ DONE( tmcCloakServerF )
                     else
                     if( POOP ) { POOPR DEL( psoP ) ; }
             
-                    psoP->readF( tinP , sIn ) ;
+                    psoP->readF( tinBaseP , sIn ) ;
 
-                    soulC* psOut = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
-                    soulC sIn(  tinP , TAG( TAGiDnULL ) ) ;
+                    soulC* psOut = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
+                    soulC sIn(  tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 while( !POOP && !etThread && !ether && psoP )
             {
@@ -452,55 +452,55 @@ DONE( tmcCloakServerF )
 
                 }
                     }
-                        swFlockP.ungrabF( tinP ) ;
+                        swFlockP.ungrabF( tinBaseP ) ;
                         }
-                            reportFilesSimpleF( tinP , etThread , psoP , pFlock , fnLike.pathF() , fnLike ) ;
+                            reportFilesSimpleF( tinBaseP , etThread , psoP , pFlock , fnLike.pathF() , fnLike ) ;
 
                             fileC*& pFlock    = *(fileC**)&(countT&)swFlockP ;
                             psttzLeverFolderP = tLike ;
                         {
                         else
-                        if( !swFlockP.idSlotOfLeverF( tinP , (countT)psttzLike ) ) etThread.traceF( tinP , T("flavor not found [psttFolder]:    ")+T(psttzLike) ) ;
-                        swFlockP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                        if( !swFlockP.idSlotOfLeverF( tinBaseP , (countT)psttzLike ) ) etThread.traceF( tinBaseP , T("flavor not found [psttFolder]:    ")+T(psttzLike) ) ;
+                        swFlockP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                         strokeS* psttzLike = tLike ;
                         TN( tLike , fnLike.pathF() ) ;
 
-                        patternC pat( tinP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-                        fileNameC fnLike( tinP , etThread , T(iffn) ) ;
+                        patternC pat( tinBaseP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                        fileNameC fnLike( tinBaseP , etThread , T(iffn) ) ;
 
-                        ifFileNameC iffn( tinP , etThread , postLike ) ;
+                        ifFileNameC iffn( tinBaseP , etThread , postLike ) ;
 
                         postLike[ costLike ] = 0 ;
-                        psoP->readF( tinP , postLike , costLike ) ;
+                        psoP->readF( tinBaseP , postLike , costLike ) ;
                     {
                     if( postLike )
                     
-                    etThread.newF( tinP , LF , postLike , costLike + 1 ) ; ___( postLike ) ;
+                    etThread.newF( tinBaseP , LF , postLike , costLike + 1 ) ; ___( postLike ) ;
                     ZE( osTextT* , postLike ) ;
                 {
                 else
-                if( POOP ) etThread.traceF( tinP , T("error: invalid request prefix") ) ;
+                if( POOP ) etThread.traceF( tinBaseP , T("error: invalid request prefix") ) ;
 
                 __( costLike > TUCK << 2 ) ;     // DEFENSIVE
-                psoP->readF( tinP , (byteT*)&costLike , sizeof costLike ) ;
+                psoP->readF( tinBaseP , (byteT*)&costLike , sizeof costLike ) ;
                 ZE( countT , costLike ) ;
 
                 __( idFormat - 1 ) ;
-                psoP->readF( tinP , (byteT*)&idFormat , sizeof idFormat ) ;
+                psoP->readF( tinBaseP , (byteT*)&idFormat , sizeof idFormat ) ;
                 ZE( countT , idFormat ) ;
 
                 __( finger - FINGERnEG_CLOAKsIMPLEcONNECTION ) ;
-                psoP->readF( tinP , (byteT*)&finger , sizeof finger ) ;
+                psoP->readF( tinBaseP , (byteT*)&finger , sizeof finger ) ;
                 ZE( countT , finger ) ;
             {
             case ifcIDtYPEcLOAKcONNECTION_SIMPLE :
         {
         switch( idTypeConnection )
-        psoP->readF( tinP , (byteT*)&idTypeConnection , sizeof idTypeConnection ) ;
+        psoP->readF( tinBaseP , (byteT*)&idTypeConnection , sizeof idTypeConnection ) ;
         ZE( countT , idTypeConnection ) ;
     
-        psoP->etherF( tinP , *tinP.pEtScratch ) ;
+        psoP->etherF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -515,18 +515,18 @@ TASK( tmcCloakServerF )
 
 }
     }
-        replaceCloakF( tinP , etherP , pFlockP , psttFolderP ) ;
+        replaceCloakF( tinBaseP , etherP , pFlockP , psttFolderP ) ;
 
         }
-            etherP.delF( tinP , pbBuffer ) ;
+            etherP.delF( tinBaseP , pbBuffer ) ;
             while( !POOP && !bDone ) ;
             }
                 }
                     }
                         }
-                            psOutP = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psOutP ) ;
+                            psOutP = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psOutP ) ;
                             DEL( psOutP ) ;
-                            psoP->writeF( tinP , *psOutP ) ;
+                            psoP->writeF( tinBaseP , *psOutP ) ;
                         {
                         if( *psOutP >= TUCK )   // THIS IS TO AVOID CAPACITY CONSTRAINT AND TO ALLOW CLIENT TO BEGIN PROCESSING THE FILE LIST
 
@@ -547,13 +547,13 @@ TASK( tmcCloakServerF )
 
                             if( F(flagsP) & flFILEiNFO_NAME ) *psOutP << (strokeS*)T(postName) ;
                         {
-                        if( thirdC::c_strcmpIF( tinP , postName , "." ) && thirdC::c_strcmpIF( tinP , postName , ".." ) )
+                        if( thirdC::c_strcmpIF( tinBaseP , postName , "." ) && thirdC::c_strcmpIF( tinBaseP , postName , ".." ) )
 
-                        //etherP.traceF( tinP , T("    [name]:    ")+T(postName) ) ;
+                        //etherP.traceF( tinBaseP , T("    [name]:    ")+T(postName) ) ;
 
                         unicodeToAnsiF( postName , sizeof postName , (byteT*)info3.FileName , info3.FileNameLength >> 1 ) ;
 
-                        thirdC::c_memsetIF( tinP , postName , sizeof postName ) ;
+                        thirdC::c_memsetIF( tinBaseP , postName , sizeof postName ) ;
                         osTextT postName[ TUCK << 1 ] ;
 
                         FILE_FULL_DIR_INFO& info3 = *(FILE_FULL_DIR_INFO*)pbInfo3 ;
@@ -570,16 +570,16 @@ TASK( tmcCloakServerF )
                         case ERROR_NO_MORE_FILES :
                         }
                             break ;
-                            thirdC::c_memsetIF( tinP , pbBuffer , cbBuffer ) ;
-                            etherP.newF( tinP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
+                            thirdC::c_memsetIF( tinBaseP , pbBuffer , cbBuffer ) ;
+                            etherP.newF( tinBaseP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
                             cbBuffer <<= 1 ;
-                            etherP.delF( tinP , pbBuffer ) ;
+                            etherP.delF( tinBaseP , pbBuffer ) ;
                         {
                         case ERROR_BAD_LENGTH :
                         case ERROR_MORE_DATA :
                     {
                     switch( rc )
-                    //etherP.traceF( tinP , T("GetFileInformationByHandleEx [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etherP.traceF( tinBaseP , T("GetFileInformationByHandleEx [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT rc = GetLastError() ;
                 {
                 if( !bOk )
@@ -589,10 +589,10 @@ TASK( tmcCloakServerF )
             do
             ZE( boolT , bDone ) ;
 
-            //etherP.traceF( tinP , T("[sizeof FILE_FULL_DIR_INFO]:    ")+TF2( sizeof FILE_FULL_DIR_INFO , flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED ) ) ;
+            //etherP.traceF( tinBaseP , T("[sizeof FILE_FULL_DIR_INFO]:    ")+TF2( sizeof FILE_FULL_DIR_INFO , flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED ) ) ;
 
-            thirdC::c_memsetIF( tinP , pbBuffer , cbBuffer ) ;
-            etherP.newF( tinP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
+            thirdC::c_memsetIF( tinBaseP , pbBuffer , cbBuffer ) ;
+            etherP.newF( tinBaseP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
             countT cbBuffer = TUCK << 1 ;
             ZE( byteT* , pbBuffer ) ;
 
@@ -613,15 +613,15 @@ TASK( tmcCloakServerF )
     {
     IFbEcAREFUL
 {
-voidT reportFilesF( tinS& tinP , etherC& etherP , soulC*& psOutP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const flagsT flagsP )
+voidT reportFilesF( tinBaseS& tinBaseP , etherC& etherP , soulC*& psOutP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const flagsT flagsP )
 
 }
-    psoP->writeF( tinP , (byteT*)&costo , sizeof costo ) ;
+    psoP->writeF( tinBaseP , (byteT*)&costo , sizeof costo ) ;
     ZE( countT , costo ) ;
 
     DEL( pPat ) ;
     }
-        etherP.delF( tinP , pbIn ) ;
+        etherP.delF( tinBaseP , pbIn ) ;
 
         }
             else                        break ;
@@ -629,10 +629,10 @@ voidT reportFilesF( tinS& tinP , etherC& etherP , soulC*& psOutP , socketC*& pso
 
             }
                 }
-                    etherP.traceF( tinP , T("reportFilesSimpleF / sending [posto]:    ")+T(posto) ) ;
-                    psoP->writeF( tinP , posto , costo ) ;
-                    psoP->writeF( tinP , (byteT*)&costo , sizeof costo ) ;
-                    countT   costo = tShort.csF( tinP ) ;
+                    etherP.traceF( tinBaseP , T("reportFilesSimpleF / sending [posto]:    ")+T(posto) ) ;
+                    psoP->writeF( tinBaseP , posto , costo ) ;
+                    psoP->writeF( tinBaseP , (byteT*)&costo , sizeof costo ) ;
+                    countT   costo = tShort.csF( tinBaseP ) ;
                     osTextT* posto = tShort ;
                 {
                 if( bOk )
@@ -645,14 +645,14 @@ voidT reportFilesF( tinS& tinP , etherC& etherP , soulC*& psOutP , socketC*& pso
                 boolT bOk = 1 ;
                 TN( tShort , postName ) ;
 
-                if( pPat ) etherP.traceF( tinP , T("reportFilesSimpleF [postName]:    \"")+T(postName)+T("\"") ) ;
+                if( pPat ) etherP.traceF( tinBaseP , T("reportFilesSimpleF [postName]:    \"")+T(postName)+T("\"") ) ;
 
                 boolT bDir = info3.FileAttributes & FILE_ATTRIBUTE_DIRECTORY ;
             {
-            if( thirdC::c_strcmpIF( tinP , postName , "." ) && thirdC::c_strcmpIF( tinP , postName , ".." ) )
+            if( thirdC::c_strcmpIF( tinBaseP , postName , "." ) && thirdC::c_strcmpIF( tinBaseP , postName , ".." ) )
 
             unicodeToAnsiF( postName , sizeof postName , (byteT*)info3.FileName , info3.FileNameLength >> 1 ) ;
-            thirdC::c_memsetIF( tinP , postName , sizeof postName ) ;
+            thirdC::c_memsetIF( tinBaseP , postName , sizeof postName ) ;
             osTextT postName[ TUCK << 1 ] ;
 
             FILE_FULL_DIR_INFO& info3 = *(FILE_FULL_DIR_INFO*)pbCursor ;
@@ -664,23 +664,23 @@ voidT reportFilesF( tinS& tinP , etherC& etherP , soulC*& psOutP , socketC*& pso
         ZE( byteT* , pbIn ) ;
     {
     while( stBlobIn )
-    patternC* pPat = !psttPatternP || !psttPatternP->idAdam ? 0 : new( 0 , tinP , LF ) patternC( tinP , etherP , psttPatternP , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; ___( pPat ) ;
+    patternC* pPat = !psttPatternP || !psttPatternP->idAdam ? 0 : new( 0 , tinBaseP , LF ) patternC( tinBaseP , etherP , psttPatternP , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ; ___( pPat ) ;
 
-    etherP.traceF( tinP , T("reportFilesSimpleF / replaced  cloak [psttFolderP]:    \"")+T(psttFolderP)+T("\"") ) ;
+    etherP.traceF( tinBaseP , T("reportFilesSimpleF / replaced  cloak [psttFolderP]:    \"")+T(psttFolderP)+T("\"") ) ;
 
-    replaceCloakF( tinP , etherP , pFlockP , psttFolderP ) ;
+    replaceCloakF( tinBaseP , etherP , pFlockP , psttFolderP ) ;
 
-    etherP.traceF( tinP , T("reportFilesSimpleF / replacing cloak [psttFolderP]:    \"")+T(psttFolderP)+T("\"") ) ;
+    etherP.traceF( tinBaseP , T("reportFilesSimpleF / replacing cloak [psttFolderP]:    \"")+T(psttFolderP)+T("\"") ) ;
 
     }
-        etherP.delF( tinP , pbBuffer ) ;
+        etherP.delF( tinBaseP , pbBuffer ) ;
         while( !POOP && !bDone ) ;
         }
             }
                 stBlobIn << pbUsed ;
 
-                thirdC::c_memcpyIF( tinP , pbUsed , pbBuffer , cbUsed ) ;
-                etherP.newF( tinP , LF , pbUsed , cbUsed ) ; ___( pbUsed ) ;
+                thirdC::c_memcpyIF( tinBaseP , pbUsed , pbBuffer , cbUsed ) ;
+                etherP.newF( tinBaseP , LF , pbUsed , cbUsed ) ; ___( pbUsed ) ;
                 ZE( byteT* , pbUsed ) ;
 
                 }
@@ -711,10 +711,10 @@ voidT reportFilesF( tinS& tinP , etherC& etherP , soulC*& psOutP , socketC*& pso
                     case ERROR_NO_MORE_FILES :
                     }
                         break ;
-                        thirdC::c_memsetIF( tinP , pbBuffer , cbBuffer ) ;
-                        etherP.newF( tinP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
+                        thirdC::c_memsetIF( tinBaseP , pbBuffer , cbBuffer ) ;
+                        etherP.newF( tinBaseP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
                         cbBuffer <<= 1 ;
-                        etherP.delF( tinP , pbBuffer ) ;
+                        etherP.delF( tinBaseP , pbBuffer ) ;
                     {
                     case ERROR_BAD_LENGTH :
                     case ERROR_MORE_DATA :
@@ -729,16 +729,16 @@ voidT reportFilesF( tinS& tinP , etherC& etherP , soulC*& psOutP , socketC*& pso
         do
         ZE( boolT , bDone ) ;
 
-        thirdC::c_memsetIF( tinP , pbBuffer , cbBuffer ) ;
-        etherP.newF( tinP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
+        thirdC::c_memsetIF( tinBaseP , pbBuffer , cbBuffer ) ;
+        etherP.newF( tinBaseP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
         countT cbBuffer = TOCK ; // PRODUCTION
         ZE( byteT* , pbBuffer ) ;
 
         handleC& hFile = *pFlockP ;
     {
-    stackC stBlobIn( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_byteT ) ;
+    stackC stBlobIn( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_byteT ) ;
 
-    etherP.traceF( tinP , T("reportFilesSimpleF [psttFolderP]:    \"")+T(psttFolderP)+T("\"") ) ;
+    etherP.traceF( tinBaseP , T("reportFilesSimpleF [psttFolderP]:    \"")+T(psttFolderP)+T("\"") ) ;
 
     // QUEUE FILE INFORMATION FOR DISPENSING LATER, AFTER RELOCK psttFolderP: THIS IS NECESSARY BECAUSE CLIENT MIGHT USE FILE INFORMATION RECEIVED TO OPEN FILES, WHICH WOULD PREVENT ME FROM RELOCKING
 
@@ -747,25 +747,25 @@ voidT reportFilesF( tinS& tinP , etherC& etherP , soulC*& psOutP , socketC*& pso
     {
     IFbEcAREFUL
 {
-voidT reportFilesSimpleF( tinS& tinP , etherC& etherP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const strokeS* const psttPatternP )
+voidT reportFilesSimpleF( tinBaseS& tinBaseP , etherC& etherP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const strokeS* const psttPatternP )
 
 }
     THREADmODE2rESTORE
     }
         }
-            //etherP.traceF( tinP , T("folder relocked:    ")+T(psttFolderP) ) ;
+            //etherP.traceF( tinBaseP , T("folder relocked:    ")+T(psttFolderP) ) ;
         {
         else
         }
             //U:: SHUTDOWN THE COMPUTER BY FORCE HERE (SECURITY HOLE)
 
             DEL( pFlockP ) ;
-            etherP.traceF( tinP , T("error: could not relock folder so am shutting this computer down (U::not really):    ")+T(psttFolderP) ) ;
+            etherP.traceF( tinBaseP , T("error: could not relock folder so am shutting this computer down (U::not really):    ")+T(psttFolderP) ) ;
             POOPRqUIET
         {
         if( POOP )
 
-        pFlockP = new( 0 , tinP , LF ) fileC( tinP , psttFolderP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_BUMPkEY | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ; ___( pFlockP ) ;
+        pFlockP = new( 0 , tinBaseP , LF ) fileC( tinBaseP , psttFolderP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_BUMPkEY | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ; ___( pFlockP ) ;
 
         SCOOPS
     {
@@ -780,7 +780,7 @@ voidT reportFilesSimpleF( tinS& tinP , etherC& etherP , socketC*& psoP , fileC*&
     //U:: ALT: SUPPORT THIS COMMAND ONLY ONCE PER PERIOD AND LAUNCH A THREAD TO WAIT A RANDOM AMOUNT OF TIME BEFORE CLOSING AND IMMEDIATELY REOPENING THIS FILE
     //U:: SECURITY HOLE: A MALICIOUS CLIENT CAN EXPLOIT THIS BY EMITTING THIS COMMAND AND THEN STARTING A CYCLING RACE TO TRY TO OPEN THE HANDLE ITSELF, PREVENTING ME FROM OPENING IT
 {
-voidT replaceCloakF( tinS& tinP , etherC& etherP , fileC*& pFlockP , const strokeS* const psttFolderP )
+voidT replaceCloakF( tinBaseS& tinBaseP , etherC& etherP , fileC*& pFlockP , const strokeS* const psttFolderP )
 
 }
     return 0 ;
@@ -788,19 +788,19 @@ voidT replaceCloakF( tinS& tinP , etherC& etherP , fileC*& pFlockP , const strok
     }
         }
             else       psttf = 0 ;
-            if( !ids ) etherP.delF( tinP , psttf ) ;
-            stFolderToCloakP.sinkF( tinP , ids , psttf , flSTACKsINK_UNIQUE ) ;
+            if( !ids ) etherP.delF( tinBaseP , psttf ) ;
+            stFolderToCloakP.sinkF( tinBaseP , ids , psttf , flSTACKsINK_UNIQUE ) ;
             ZE( countT , ids ) ;
         {
         if( psttf )
 
         }
             }
-                etherP.delF( tinP , psttf ) ;
-                etherP.traceF( tinP , T("excluding folder but not its tree:    ")+T(psttf) ) ;
+                etherP.delF( tinBaseP , psttf ) ;
+                etherP.traceF( tinBaseP , T("excluding folder but not its tree:    ")+T(psttf) ) ;
             {
             if( ids )
-            stFolderExcludeP.sinkF( tinP , ids , psttf , flSTACKsINK_QUERY ) ;
+            stFolderExcludeP.sinkF( tinBaseP , ids , psttf , flSTACKsINK_QUERY ) ;
             ZE( countT , ids ) ;
         {
         if( psttf && stFolderExcludeP )
@@ -810,26 +810,26 @@ voidT replaceCloakF( tinS& tinP , etherC& etherP , fileC*& pFlockP , const strok
             }
                 }
                     break ;
-                    etherP.delF( tinP , psttf ) ;
-                    etherP.traceF( tinP , T("excluding folder and its tree:    ")+T(psttf) ) ;
+                    etherP.delF( tinBaseP , psttf ) ;
+                    etherP.traceF( tinBaseP , T("excluding folder and its tree:    ")+T(psttf) ) ;
                 {
-                if( 1 == etherP.strIdF( tinP , psttzf , psttf ) )
+                if( 1 == etherP.strIdF( tinBaseP , psttzf , psttf ) )
 
-                strokeS* psttzf = (strokeS*)stFoldersExcludeP.downF( tinP , hWalk ) ;
+                strokeS* psttzf = (strokeS*)stFoldersExcludeP.downF( tinBaseP , hWalk ) ;
             {
             do
-            handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             ZE( countT , csttNeeded ) ;
         {
         if( stFoldersExcludeP )
 
-        etherP.strMakeF( tinP , LF , psttf , tName ) ; ___( psttf ) ;
+        etherP.strMakeF( tinBaseP , LF , psttf , tName ) ; ___( psttf ) ;
         ZE( strokeS* , psttf ) ;
 
-        //etherP.traceF( tinP , tName ) ;
+        //etherP.traceF( tinBaseP , tName ) ;
 
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinP , etherP , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
 
         stackC& stFoldersExcludeP = *(stackC*)pcArgP[ 3 ] ;
         stackC& stFolderExcludeP  = *(stackC*)pcArgP[ 2 ] ;
@@ -841,7 +841,7 @@ voidT replaceCloakF( tinS& tinP , etherC& etherP , fileC*& pFlockP , const strok
     if( postNameP )
     _IO_
 {
-boolT sinkFolderToCloakCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT sinkFolderToCloakCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 }
     return 0 ;

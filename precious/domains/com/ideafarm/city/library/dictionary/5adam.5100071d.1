@@ -11,24 +11,24 @@ REST
 
 THREADmODE4rESTORE
 
-//etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+//etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-if( F(tinP.pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP ) tinP.pag1->_thirdC_.flagsModeAdam2 &= ~( F(flADAMmODE2_STOP) ) ;
+if( F(((tinNormalS&)tinBaseP).pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP ) ((tinNormalS&)tinBaseP).pag1->_thirdC_.flagsModeAdam2 &= ~( F(flADAMmODE2_STOP) ) ;
 
 }
-    CONoUTrAW( F(tinP.pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP ? "\r\nstopped\r\n" : "\r\nstarted\r\n" ) ;
-    tinP.pag1->_thirdC_.flagsModeAdam2 ^= F(flADAMmODE2_STOP) ;
+    CONoUTrAW( F(((tinNormalS&)tinBaseP).pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP ? "\r\nstopped\r\n" : "\r\nstarted\r\n" ) ;
+    ((tinNormalS&)tinBaseP).pag1->_thirdC_.flagsModeAdam2 ^= F(flADAMmODE2_STOP) ;
 
-    ++ s ; ether.osSleepF( tinP , TOCK ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
 {
 while( !ether )
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
 {
 while( post2[ 0 ] < 'a' )
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 etThread.osThreadF( TaRG1( tmCountF ) ) ;
 

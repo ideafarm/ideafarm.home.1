@@ -11,8 +11,8 @@
     }
         cNestP -- ;
 
-        else             ((bitNodeS*)( (*pNapkinsP)[ - 1 + (countT)p1 & ~BM_HIGH ] ))->walkF( tinP , pbBufferP , cbBufferP , cNestP , pNapkinsP , pCBFP , pcArgP ) ;
-        if( !pNapkinsP ) ((bitNodeS*)(                     (countT)p1 & ~BM_HIGH   ))->walkF( tinP , pbBufferP , cbBufferP , cNestP , pNapkinsP , pCBFP , pcArgP ) ;
+        else             ((bitNodeS*)( (*pNapkinsP)[ - 1 + (countT)p1 & ~BM_HIGH ] ))->walkF( tinBaseP , pbBufferP , cbBufferP , cNestP , pNapkinsP , pCBFP , pcArgP ) ;
+        if( !pNapkinsP ) ((bitNodeS*)(                     (countT)p1 & ~BM_HIGH   ))->walkF( tinBaseP , pbBufferP , cbBufferP , cNestP , pNapkinsP , pCBFP , pcArgP ) ;
 
         cNestP ++ ;
 
@@ -23,8 +23,8 @@
     }
         cNestP -- ;
 
-        else             ((bitNodeS*)( (*pNapkinsP)[ - 1 + (countT)p0 & ~BM_HIGH ] ))->walkF( tinP , pbBufferP , cbBufferP , cNestP , pNapkinsP , pCBFP , pcArgP ) ;
-        if( !pNapkinsP ) ((bitNodeS*)(                     (countT)p0 & ~BM_HIGH   ))->walkF( tinP , pbBufferP , cbBufferP , cNestP , pNapkinsP , pCBFP , pcArgP ) ;
+        else             ((bitNodeS*)( (*pNapkinsP)[ - 1 + (countT)p0 & ~BM_HIGH ] ))->walkF( tinBaseP , pbBufferP , cbBufferP , cNestP , pNapkinsP , pCBFP , pcArgP ) ;
+        if( !pNapkinsP ) ((bitNodeS*)(                     (countT)p0 & ~BM_HIGH   ))->walkF( tinBaseP , pbBufferP , cbBufferP , cNestP , pNapkinsP , pCBFP , pcArgP ) ;
 
         cNestP ++ ;
 
@@ -38,7 +38,7 @@
 
     }
         }
-            etherC::etRockIF( tinP ).traceF( tinP , tSay ) ;
+            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , tSay ) ;
             }
                 tSay += T(*pbc&mask?"1":"0") ;
 
@@ -52,11 +52,11 @@
             //DISPLAY THE WOTH cNestP BITS IN pbBufferP
         {
         else                                     //20141116@2129: U::BUG: HUH?  THAT LOOKS LIKE AN A.V. FOR SURE BUG, SAILOR
-        if( pCBFP ) (*pCBFP)( tinP , *pcArgP ) ; // pcArgP == 0 IS ALLOWED ; CALLEE MUST NOT ACCESS THIS REFERENCE PARAMETER UNLESS MY CALLER SET pcArgP
+        if( pCBFP ) (*pCBFP)( tinBaseP , *pcArgP ) ; // pcArgP == 0 IS ALLOWED ; CALLEE MUST NOT ACCESS THIS REFERENCE PARAMETER UNLESS MY CALLER SET pcArgP
     {
     if( (countT)p0 & BM_HIGH )
 {
-/*1*/voidT bitNodeS::walkF( tinS& tinP , byteT* pbBufferP , countT cbBufferP , countT& cNestP , napkinsC* pNapkinsP , ifcFT pCBFP , countT* pcArgP )/*1*/
+/*1*/voidT bitNodeS::walkF( tinBaseS& tinBaseP , byteT* pbBufferP , countT cbBufferP , countT& cNestP , napkinsC* pNapkinsP , ifcFT pCBFP , countT* pcArgP )/*1*/
 
 /**/
 */

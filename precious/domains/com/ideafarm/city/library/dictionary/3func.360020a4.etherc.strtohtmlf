@@ -8,21 +8,21 @@
 
 
 }
-    strReplaceF( tinP , psttP , 0 , T("\\&quot;") , T("\"") ) ;
-    strReplaceF( tinP , psttP , 0 , T("\"") , T("&quot;") ) ;
+    strReplaceF( tinBaseP , psttP , 0 , T("\\&quot;") , T("\"") ) ;
+    strReplaceF( tinBaseP , psttP , 0 , T("\"") , T("&quot;") ) ;
 
-    strReplaceF( tinP , psttP , 0 , T("\\&gt;") , T(">") ) ;
-    strReplaceF( tinP , psttP , 0 , T(">") , T("&gt;") ) ;
+    strReplaceF( tinBaseP , psttP , 0 , T("\\&gt;") , T(">") ) ;
+    strReplaceF( tinBaseP , psttP , 0 , T(">") , T("&gt;") ) ;
 
-    strReplaceF( tinP , psttP , 0 , T("\\&lt;") , T("<") ) ;
-    strReplaceF( tinP , psttP , 0 , T("<") , T("&lt;") ) ;
+    strReplaceF( tinBaseP , psttP , 0 , T("\\&lt;") , T("<") ) ;
+    strReplaceF( tinBaseP , psttP , 0 , T("<") , T("&lt;") ) ;
 
-    strReplaceF( tinP , psttP , 0 , T("\\&amp;") , T("&") ) ;
-    strReplaceF( tinP , psttP , 0 , T("&") , T("&amp;") ) ;
+    strReplaceF( tinBaseP , psttP , 0 , T("\\&amp;") , T("&") ) ;
+    strReplaceF( tinBaseP , psttP , 0 , T("&") , T("&amp;") ) ;
 
     //2011.04.12: THIS SEQUENCE MIGHT FAIL NOW THAT TAGGING IS CHECKED
 
-    if( psttOldP ) strFuseF( tinP , psttP , psttOldP ) ;
+    if( psttOldP ) strFuseF( tinBaseP , psttP , psttOldP ) ;
 
     _IO_
 
@@ -34,7 +34,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::strToHtmlF( tinS& tinP , strokeS*& psttP , const strokeS* const psttOldP )/*1*/
+/**//*1*/voidT etherC::strToHtmlF( tinBaseS& tinBaseP , strokeS*& psttP , const strokeS* const psttOldP )/*1*/
 */
  psttOldP
   if nonze then psttOldP will be fused to it before the replacements are done

@@ -15,56 +15,56 @@ REST
     }
         }
             }
-                etThread.delF( tinP , pbr ) ;
+                etThread.delF( tinBaseP , pbr ) ;
                 }
                     HEAReNTER( etThread ) ;
-                    etThread.strokeF( tinP , T("\freceived reply: \"")+T(psttReply)+T("\"\r\npress enter") ) ;
+                    etThread.strokeF( tinBaseP , T("\freceived reply: \"")+T(psttReply)+T("\"\r\npress enter") ) ;
                     __( cbr - ( CSpREFIX + psttOldCmd->idAdam ) * sizeof( strokeS ) ) ;
                     strokeS* psttReply = (strokeS*)pbr ;
                 {
                 if( pbr )
-                soulr.shiftRightF( tinP , pbr , cbr , idTypeVerify ) ; ___( pbr ) ;
+                soulr.shiftRightF( tinBaseP , pbr , cbr , idTypeVerify ) ; ___( pbr ) ;
                 ZE( countT , idTypeVerify ) ;
                 ZE( countT , cbr ) ;
                 ZE( byteT* , pbr ) ;
 
-                soc.readF( tinP , soulr ) ;
-                soulC soulr( tinP , TAG( TAGiDnULL ) ) ;
+                soc.readF( tinBaseP , soulr ) ;
+                soulC soulr( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                soc.writeF( tinP , soulc ) ;
-                soulC soulc( tinP , TAG( TAGiDnULL ) , (byteT*)psttOldCmd , flSOUL_null , ( CSpREFIX + psttOldCmd->idAdam ) * sizeof( strokeS ) ) ;
+                soc.writeF( tinBaseP , soulc ) ;
+                soulC soulc( tinBaseP , TAG( TAGiDnULL ) , (byteT*)psttOldCmd , flSOUL_null , ( CSpREFIX + psttOldCmd->idAdam ) * sizeof( strokeS ) ) ;
             {
             if( psttOldCmd )
 
-            etThread.faceHearF( tinP , psttOldCmd ) ; ___( psttOldCmd ) ;
+            etThread.faceHearF( tinBaseP , psttOldCmd ) ; ___( psttOldCmd ) ;
             ZE( strokeS* , psttOldCmd ) ;
-            etThread.strokeF( tinP , T("\fenter a command: ") ) ;
+            etThread.strokeF( tinBaseP , T("\fenter a command: ") ) ;
         {
         while( !ether && !etThread )
 
-        etThread.strokeF( tinP , T("connected to port ")+TF1(idPort)+TF1(" of host ")+TF1(nicName)+T("\r\n") ) ;
-        soc.connectF( tinP , idPort , nicName ) ;
-        socketC soc( tinP , etThread , TAG( TAGiDnULL ) ) ;
+        etThread.strokeF( tinBaseP , T("connected to port ")+TF1(idPort)+TF1(" of host ")+TF1(nicName)+T("\r\n") ) ;
+        soc.connectF( tinBaseP , idPort , nicName ) ;
+        socketC soc( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
     {
-    etThread.strokeF( tinP , T("connecting to port ")+TF1(idPort)+TF1(" of host ")+TF1(nicName)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("connecting to port ")+TF1(idPort)+TF1(" of host ")+TF1(nicName)+T("\r\n") ) ;
 
     }
-        etThread.delF( tinP , psttNicName ) ;
-        //U:nicName = etThread.strDigitsToSCountF( tinP , psttNicName ) ;
+        etThread.delF( tinBaseP , psttNicName ) ;
+        //U:nicName = etThread.strDigitsToSCountF( tinBaseP , psttNicName ) ;
         nicName = NICnAMElOCAL ; //U:
-        etThread.faceHearF( tinP , psttNicName ) ; ___( psttNicName ) ;
+        etThread.faceHearF( tinBaseP , psttNicName ) ; ___( psttNicName ) ;
         ZE( strokeS* , psttNicName ) ;
-        etThread.strokeF( tinP , T("\fenter the nicName that you want to connect to (only v4 is supported): ") ) ;
+        etThread.strokeF( tinBaseP , T("\fenter the nicName that you want to connect to (only v4 is supported): ") ) ;
     {
     nicNameC nicName ;
 
     }
-        etThread.delF( tinP , psttIdPort ) ;
-        //U:idPort = etThread.strDigitsToSCountF( tinP , psttIdPort ) ;
+        etThread.delF( tinBaseP , psttIdPort ) ;
+        //U:idPort = etThread.strDigitsToSCountF( tinBaseP , psttIdPort ) ;
         idPort = ifcPORToLD1_ECHO ; //U:
-        etThread.faceHearF( tinP , psttIdPort ) ; ___( psttIdPort ) ;
+        etThread.faceHearF( tinBaseP , psttIdPort ) ; ___( psttIdPort ) ;
         ZE( strokeS* , psttIdPort ) ;
-        etThread.strokeF( tinP , T("\fenter the idPort that you want to connect to: ") ) ;
+        etThread.strokeF( tinBaseP , T("\fenter the idPort that you want to connect to: ") ) ;
     {
     ZE( countT , idPort ) ;
 {

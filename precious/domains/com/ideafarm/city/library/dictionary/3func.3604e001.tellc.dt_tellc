@@ -8,13 +8,13 @@
 
 
 }
-    else                   PUSE( tinP , pbData ) ;
-    else if( !bUsePool   ) processGlobal4I.heap.delF( tinP , pbData ) ;
+    else                   PUSE( tinBaseP , pbData ) ;
+    else if( !bUsePool   ) processGlobal4I.heap.delF( tinBaseP , pbData ) ;
          if(  bUseZombie ) ;
 
     POOPIE
-    tinS& tinP = *pTin ; //DO IT THIS WAY SO CAN TELL ON CT/DT OF tinEarlyLate
-    //tinS& tinP = ebp ? *pTin2AM( ebp ) : thirdC::third_tinS_ref_IF() ; //USED BY THE EXCEPTION HANDLER IN f*.handleC.handleC
+    tinBaseS& tinBaseP = *pTin ; //DO IT THIS WAY SO CAN TELL ON CT/DT OF tinEarlyLate
+    //tinBaseS& tinBaseP = ebp ? *pTin2AM( ebp ) : thirdC::third_tinBaseS_ref_IF() ; //USED BY THE EXCEPTION HANDLER IN f*.handleC.handleC
 {
 /*1*/tellC::~tellC( voidT )/*1*/
 

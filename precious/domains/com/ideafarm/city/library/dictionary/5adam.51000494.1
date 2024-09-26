@@ -11,9 +11,9 @@ REST
 
 OUT
 
-etThread.osSleepF( tinP , TOCK * 4 ) ;
+etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
 FIREmYSELF ;
-thirdC::thirdImpotenceHandlerIF( tinP , ifcImpotenceHandlerF ) ;
+thirdC::thirdImpotenceHandlerIF( tinBaseP , ifcImpotenceHandlerF ) ;
 
 IN_
 
@@ -23,22 +23,22 @@ TODO
     return 0 ;
     if( cP && thirdImpotentP ) ;
 
-    else while( !bRelease ) tinP.zEtScratch->osSleepF( tinP , TUCK * 0x40 ) ;
+    else while( !bRelease ) ((tinNormalS&)tinBaseP).zEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ;
     }
         bRelease = 1 ;
-        thirdC::DosOutputDebugStringIF( tinP , "aok/cmd/watchWhereRWPD_on" ) ;
-        thirdC::DosOutputDebugStringIF( tinP , "aok/cmd/watchWhereMoveT2PWD_on" ) ;
-        thirdC::DosOutputDebugStringIF( tinP , "aok/cmd/watchWhereAllOn" ) ;
+        thirdC::DosOutputDebugStringIF( tinBaseP , "aok/cmd/watchWhereRWPD_on" ) ;
+        thirdC::DosOutputDebugStringIF( tinBaseP , "aok/cmd/watchWhereMoveT2PWD_on" ) ;
+        thirdC::DosOutputDebugStringIF( tinBaseP , "aok/cmd/watchWhereAllOn" ) ;
     {
     if( idEntry == 1 )
-    ungrabF( tinP , grab ) ;
+    ungrabF( tinBaseP , grab ) ;
     countT idEntry = ++ idEntryLast ;
-    grabF( tinP , grab ) ;
+    grabF( tinBaseP , grab ) ;
     static boolT  bRelease ;
     static countT idEntryLast ;
     static grabOldS grab( LF2 ) ;
 {
-countT ifcImpotenceHandlerF( tinS& tinP , thirdC& thirdImpotentP , countT cP )
+countT ifcImpotenceHandlerF( tinBaseS& tinBaseP , thirdC& thirdImpotentP , countT cP )
 
 /*1*/WAKEhIDE( "example.other.func.102010a.thirdC.DosOutputDebugStringIF.where" )/*1*/
 /**/

@@ -9,13 +9,13 @@
 
 }
     return bHit ;
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
     }
         default : { __( idLeverType ) ; __1 break ; }
         }
             break ;
             ;
-                : !thirdC::c_memcmpIF( tinP , (byteT*)c1P , (byteT*)c2P , cbLever )
+                : !thirdC::c_memcmpIF( tinBaseP , (byteT*)c1P , (byteT*)c2P , cbLever )
                 ? c1P == c2P
             bHit = !c1P || !c2P
         {
@@ -25,7 +25,7 @@
         }
             break ;
 
-                bHit = c1P && c2P && !thirdC::c_strcmpIF( tinP , (osTextT*)c1P , (osTextT*)c2P ) ;
+                bHit = c1P && c2P && !thirdC::c_strcmpIF( tinBaseP , (osTextT*)c1P , (osTextT*)c2P ) ;
         {
         case ifcIDtYPElEVER_PTR_osTextT    :
         }
@@ -37,31 +37,31 @@
         }
             break ;
 
-                bHit = ( !c1P && !c2P ) || ( c1P && c2P && pEther && !pEther->strCompareF( tinP , (strokeS*)c1P , (strokeS*)c2P ) ) ;
+                bHit = ( !c1P && !c2P ) || ( c1P && c2P && pEther && !pEther->strCompareF( tinBaseP , (strokeS*)c1P , (strokeS*)c2P ) ) ;
                 etherC* pEther = third.third_pEtherContainsMe_F() ;
         {
         case ifcIDtYPElEVER_PTR_strokeS    :
-        case ifcIDtYPElEVER_PTR_countT     : { bHit =  c1P &&  c2P             && !third.strCompareF(  tinP , (countT*)c1P , (countT*)c2P           ) ; break ; }
-        case ifcIDtYPElEVER_PTR_BLOB       : { bHit = !c1P || !c2P ? c1P == c2P : !thirdC::c_memcmpIF( tinP , (byteT*)c1P  , (byteT*)c2P  , cbLever ) ; break ; }
+        case ifcIDtYPElEVER_PTR_countT     : { bHit =  c1P &&  c2P             && !third.strCompareF(  tinBaseP , (countT*)c1P , (countT*)c2P           ) ; break ; }
+        case ifcIDtYPElEVER_PTR_BLOB       : { bHit = !c1P || !c2P ? c1P == c2P : !thirdC::c_memcmpIF( tinBaseP , (byteT*)c1P  , (byteT*)c2P  , cbLever ) ; break ; }
         case ifcIDtYPElEVER_PTR_lenPrefixedCountT :
         case ifcIDtYPElEVER_countT         : { bHit = c1P == c2P ; break ; }
         case ifcIDtYPElEVER_tid            :
         }
             break ;
 
-                bHit = ( !c1P && !c2P ) || ( c1P && c2P && pEther && !pEther->strCompareF( tinP , (const strokeS**)c1P , (const strokeS**)c2P ) ) ;
+                bHit = ( !c1P && !c2P ) || ( c1P && c2P && pEther && !pEther->strCompareF( tinBaseP , (const strokeS**)c1P , (const strokeS**)c2P ) ) ;
                 etherC* pEther = third.third_pEtherContainsMe_F() ;
         {
         case ifcIDtYPElEVER_PTR_ptrStrokeS :
     {
     switch( idLeverType )
     ZE( boolT , bHit ) ;
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     SCOOP
 {
-/*1*/boolT switchC::bHitF( tinS& tinP , const countT c1P  , const countT c2P )/*1*/
+/*1*/boolT switchC::bHitF( tinBaseS& tinBaseP , const countT c1P  , const countT c2P )/*1*/
 
 /**/
 */

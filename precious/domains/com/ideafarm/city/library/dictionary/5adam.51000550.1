@@ -11,29 +11,29 @@ REST
 
 }
     }
-        ++ s ; ether.osSleepF( tinP , bFail ? TOCK * 0x10 : TICK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , bFail ? TOCK * 0x10 : TICK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( !ether )
     
-    etThread.delF( tinP , pstt1m ) ;
+    etThread.delF( tinBaseP , pstt1m ) ;
     }
         }
             }
                 break ;
                 bFail = 1 ;
-                etThread.strokeF( tinP , T(" failed\r\n") ) ;
+                etThread.strokeF( tinBaseP , T(" failed\r\n") ) ;
             {
             else
             }
-                tinP.pEtScratch->boxZapF( tinP , psttc1 , 1 ) ;
-                etThread.strokeF( tinP , T(" aok\r\n") ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttc1 , 1 ) ;
+                etThread.strokeF( tinBaseP , T(" aok\r\n") ) ;
             {
             if( !POOP )
 
-            etThread.delF( tinP , postm ) ;
-            if( postm && costm ) tinP.pEtScratch->boxPutF( tinP , tHead , postm , costm , 1 ) ;
-            tinP.pEtScratch->boxGetShadowF( tinP , postm , costm , psttc1 , 1 ) ; ___( postm ) ;
+            etThread.delF( tinBaseP , postm ) ;
+            if( postm && costm ) ((tinNormalS&)tinBaseP).pEtScratch->boxPutF( tinBaseP , tHead , postm , costm , 1 ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postm , costm , psttc1 , 1 ) ; ___( postm ) ;
             ZE( countT   , costm ) ;
             ZE( osTextT* , postm ) ;
         
@@ -41,19 +41,19 @@ REST
         {
         IFsCRATCH
 
-        etThread.strokeF( tinP , psttc1 ) ;
+        etThread.strokeF( tinBaseP , psttc1 ) ;
     {
     FORsTRINGSiN1( pstt1m )
     ZE( boolT , bFail ) ;
-    etThread.boxMenuF( tinP , soul , tDepository+T("*") , 0 , 1 ) ; ___( pstt1m ) ;
+    etThread.boxMenuF( tinBaseP , soul , tDepository+T("*") , 0 , 1 ) ; ___( pstt1m ) ;
     ZE( strokeS* , pstt1m ) ;
 {
 while( !ether && !etThread )
 TN( tcr , "\r\n" ) ;
-handleC hDirChange( tinP , TAG( TAGiDnULL ) ) ;
+handleC hDirChange( tinBaseP , TAG( TAGiDnULL ) ) ;
 TN( tHead , "" ) ; tHead = T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/" ifcEMAIL_OLDfROM "") ;
     
-etThread.diskMakeDirIfNeededF( tinP , tDepository ) ;
+etThread.diskMakeDirIfNeededF( tinBaseP , tDepository ) ;
 TN( tDepository , "///ideafarm/ephemeral/domains/com/ideafarm/data/" ) ;
 
 etThread.osThreadF( TaRG1( tmWatchCeeF ) ) ;
@@ -64,29 +64,29 @@ DONE( tmWatchCeeF )
 
 }
     }
-        ++ s ; ether.osSleepF( tinP , bFail ? TOCK * 0x10 : TICK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , bFail ? TOCK * 0x10 : TICK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( !ether )
     
-    etThread.delF( tinP , pstt1m ) ;
+    etThread.delF( tinBaseP , pstt1m ) ;
     }
         }
             }
                 break ;
                 bFail = 1 ;
-                etThread.strokeF( tinP , T(" failed\r\n") ) ;
+                etThread.strokeF( tinBaseP , T(" failed\r\n") ) ;
             {
             else
             }
-                tinP.pEtScratch->boxZapF( tinP , psttc1 , 1 ) ;
-                etThread.strokeF( tinP , T(" aok\r\n") ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttc1 , 1 ) ;
+                etThread.strokeF( tinBaseP , T(" aok\r\n") ) ;
             {
             if( !POOP )
 
-            etThread.delF( tinP , postm ) ;
-            if( postm ) tinP.pEtScratch->boxPutF( tinP , tHead , postm , costm , 1 ) ;
-            tinP.pEtScratch->boxGetShadowF( tinP , postm , costm , psttc1 , 1 ) ; ___( postm ) ;
+            etThread.delF( tinBaseP , postm ) ;
+            if( postm ) ((tinNormalS&)tinBaseP).pEtScratch->boxPutF( tinBaseP , tHead , postm , costm , 1 ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postm , costm , psttc1 , 1 ) ; ___( postm ) ;
             ZE( countT   , costm ) ;
             ZE( osTextT* , postm ) ;
         
@@ -94,23 +94,23 @@ DONE( tmWatchCeeF )
         {
         IFsCRATCH
 
-        etThread.strokeF( tinP , psttc1 ) ;
+        etThread.strokeF( tinBaseP , psttc1 ) ;
     {
     FORsTRINGSiN1( pstt1m )
     ZE( boolT , bFail ) ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( cFiles ) //TO GIVE THE WRITER TIME TO CLOSE THE FILE (CURRENT TAGGING PROTOCOL IS FLAWED AND CAN CAUSE ME TO DELETE A FILE IF I SEE THE TAG JUST BEFORE IT IS REMOVED)
 
-    countT cFiles = etThread.boxMenuF( tinP , soul , tDepository+T("ideafarm.rpt.*") , 0 , 1 ) ; ___( pstt1m ) ;
+    countT cFiles = etThread.boxMenuF( tinBaseP , soul , tDepository+T("ideafarm.rpt.*") , 0 , 1 ) ; ___( pstt1m ) ;
     ZE( strokeS* , pstt1m ) ;
 {
 while( !ether && !etThread )
 TN( tcr , "\r\n" ) ;
-handleC hDirChange( tinP , TAG( TAGiDnULL ) ) ;
+handleC hDirChange( tinBaseP , TAG( TAGiDnULL ) ) ;
 TN( tHead , "" ) ; tHead = T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/" ifcEMAIL_OLDfROM "") ;
     
 TN( tDepository , "///d/" ) ;

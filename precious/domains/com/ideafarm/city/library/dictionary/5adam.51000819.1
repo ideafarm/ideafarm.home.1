@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 //**********************************************************************************************************************************************************************************************
 //**********************************************************************************************************************************************************************************************
@@ -22,20 +22,20 @@ etThread.traceF( tinP , T("ok") ) ;
 //**********************************************************************************************************************************************************************************************
 #endif
 }
-    jotFiles.reportF( tinP ) ;
+    jotFiles.reportF( tinBaseP ) ;
 
-//                       jotFiles.writeF( tinP , "f2br1p2" , 0 , 0 , 0 , idjSoilRoot , flJOTfILEScwRITE_APPENDpART  , 0 , 0x5555 , 0x11111111 ) ;
+//                       jotFiles.writeF( tinBaseP , "f2br1p2" , 0 , 0 , 0 , idjSoilRoot , flJOTfILEScwRITE_APPENDpART  , 0 , 0x5555 , 0x11111111 ) ;
 
-//                       jotFiles.writeF( tinP , "f2br1p1" , 0 , 0 , 0 , idjSoilRoot , flJOTfILEScwRITE_REPLACEfILE , 0 , 0x4444 , 0x11111111 ) ;
+//                       jotFiles.writeF( tinBaseP , "f2br1p1" , 0 , 0 , 0 , idjSoilRoot , flJOTfILEScwRITE_REPLACEfILE , 0 , 0x4444 , 0x11111111 ) ;
 
-                         jotFiles.writeF( tinP , "f1br2p1" , 0 , 0 , 0 , idjSoilRoot , flJOTfILEScwRITE_null        , 0 , 0x3333 , 0x11111111 ) ;
+                         jotFiles.writeF( tinBaseP , "f1br2p1" , 0 , 0 , 0 , idjSoilRoot , flJOTfILEScwRITE_null        , 0 , 0x3333 , 0x11111111 ) ;
 
-//                       jotFiles.writeF( tinP , "f1br1p2" , 0 , 0 , 0 , idjSoilRoot , flJOTfILEScwRITE_APPENDpART  , 0 , 0x2222 , 0x11111111 ) ;
+//                       jotFiles.writeF( tinBaseP , "f1br1p2" , 0 , 0 , 0 , idjSoilRoot , flJOTfILEScwRITE_APPENDpART  , 0 , 0x2222 , 0x11111111 ) ;
 
-    countT idjSoilRoot = jotFiles.writeF( tinP , "f1br1p1" , 0 , 0 , 0 , 0           , flJOTfILEScwRITE_null        , 0 , 0x1111 , 0x11111111 ) ;
+    countT idjSoilRoot = jotFiles.writeF( tinBaseP , "f1br1p1" , 0 , 0 , 0 , 0           , flJOTfILEScwRITE_null        , 0 , 0x1111 , 0x11111111 ) ;
 
-    jotFilesC jotFiles( tinP , "foo" , flJOTc_WRITE ) ;
-    tlsAllocStackExp_a_C tls( tinP ) ;
+    jotFilesC jotFiles( tinBaseP , "foo" , flJOTc_WRITE ) ;
+    tlsAllocStackExp_a_C tls( tinBaseP ) ;
 {
 #if defined( NEVERdEFINED )
 //**********************************************************************************************************************************************************************************************
@@ -59,21 +59,21 @@ DEL( pJotSortedShort ) ;
 
                         }
                             bWoth = 0 ;
-//tinP.pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
-                            idjSoilRoot = archive.writeToNameF( tinP , tPrefixMe+tDot+tType , 0 , pbw , cbw , 0 , 0 , bWoth ? flJOTfILEScwRITE_ALLoRsOME : flJOTfILEScwRITE_ALLoRsOME | flJOTfILEScwRITE_APPENDpART  , 0 , 0x2222 , 0x11111111 ) ;
-//tinP.pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
-                            //etThread.traceF( tinP , T("file window [cbw]:    ")+TF4(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0x10,0xa)+tb4+tShort ) ;
+//((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                            idjSoilRoot = archive.writeToNameF( tinBaseP , tPrefixMe+tDot+tType , 0 , pbw , cbw , 0 , 0 , bWoth ? flJOTfILEScwRITE_ALLoRsOME : flJOTfILEScwRITE_ALLoRsOME | flJOTfILEScwRITE_APPENDpART  , 0 , 0x2222 , 0x11111111 ) ;
+//((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                            //etThread.traceF( tinBaseP , T("file window [cbw]:    ")+TF4(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0x10,0xa)+tb4+tShort ) ;
                         {
                         if( bWoth || ( pbw && cbw ) )
 
-                        fwsIn.getF( tinP , pbw , cbw ) ;
+                        fwsIn.getF( tinBaseP , pbw , cbw ) ;
                         ZE( countT , cbw ) ;
                         ZE( byteT* , pbw ) ;
                     {
                     while( !ether )
                     boolT bWoth = 1 ;
 
-                    fileWindowsC fwsIn( tinP , etThread , tPathIn+tShort ) ;
+                    fileWindowsC fwsIn( tinBaseP , etThread , tPathIn+tShort ) ;
                 {
                 ZE( countT , idjSoilRoot ) ;
             {
@@ -81,53 +81,53 @@ DEL( pJotSortedShort ) ;
 
             }
                 tPrefix = tPrefixMe ;
-                //else etThread.traceF( tinP , T("prefix has changed") ) ;
+                //else etThread.traceF( tinBaseP , T("prefix has changed") ) ;
                 }
                     __1
-                    etThread.traceF( tinP , T("!exception: prefix has changed and file is meta not data") ) ;
+                    etThread.traceF( tinBaseP , T("!exception: prefix has changed and file is meta not data") ) ;
                 {
                 if( !bData )
             {
-            if( etThread.strCompareF( tinP , tPrefixMe , tPrefix ) )
+            if( etThread.strCompareF( tinBaseP , tPrefixMe , tPrefix ) )
 
-            if( !tPrefix.csF( tinP ) ) tPrefix = tPrefixMe ;
+            if( !tPrefix.csF( tinBaseP ) ) tPrefix = tPrefixMe ;
 
             }
-                etThread.delF( tinP , psttPrefixMe ) ;
-                //etThread.traceF( tinP , T("[prefix]:    ")+tPrefixMe ) ;
+                etThread.delF( tinBaseP , psttPrefixMe ) ;
+                //etThread.traceF( tinBaseP , T("[prefix]:    ")+tPrefixMe ) ;
                 if( !POOP ) tPrefixMe = T(psttPrefixMe) ;
 
                 }
                     }
                         __1
-                        etThread.traceF( tinP , T("!exception: file is neither data nor meta") ) ;
-                        etThread.delF( tinP , psttPrefixMe ) ;
+                        etThread.traceF( tinBaseP , T("!exception: file is neither data nor meta") ) ;
+                        etThread.delF( tinBaseP , psttPrefixMe ) ;
                     {
                     else
                     }
-                        //etThread.traceF( tinP , T("[meta type]:    ")+tType ) ;
-                        etThread.delF( tinP , psttType ) ;
+                        //etThread.traceF( tinBaseP , T("[meta type]:    ")+tType ) ;
+                        etThread.delF( tinBaseP , psttType ) ;
                         tType = T(psttType) ;
-                        etThread.strSubstringF( tinP , psttType , idf , countTC() , tShort , 0 ) ; ___( psttType ) ;
+                        etThread.strSubstringF( tinBaseP , psttType , idf , countTC() , tShort , 0 ) ; ___( psttType ) ;
                         ZE( strokeS* , psttType ) ;
                         bMeta = 1 ;
                     {
                     if( idf )                                                                                                           // THIS WORKS BECAUSE tDotMetaDot MUST BE FOLLOWED BY THE META TYPE
-                    etThread.strSubstringF( tinP , psttPrefixMe , idf , sttq , tDotMetaDot , tShort , 0 , 0 ) ; ___( psttPrefixMe ) ;
+                    etThread.strSubstringF( tinBaseP , psttPrefixMe , idf , sttq , tDotMetaDot , tShort , 0 , 0 ) ; ___( psttPrefixMe ) ;
                     idf = 1 ;            
-                    etThread.delF( tinP , psttPrefixMe ) ;
+                    etThread.delF( tinBaseP , psttPrefixMe ) ;
                 {
                 else
                 }
-                    //etThread.traceF( tinP , T("[data type]:    ")+tType ) ;
-                    etThread.delF( tinP , psttType ) ;
+                    //etThread.traceF( tinBaseP , T("[data type]:    ")+tType ) ;
+                    etThread.delF( tinBaseP , psttType ) ;
                     tType = T(psttType) ;
-                    etThread.strSubstringF( tinP , psttType , idf , countTC() , tShort , 0 ) ; ___( psttType ) ;
+                    etThread.strSubstringF( tinBaseP , psttType , idf , countTC() , tShort , 0 ) ; ___( psttType ) ;
                     ZE( strokeS* , psttType ) ;
                     bData = 1 ;
                 {
                 if( idf )                                                                                                               // THIS WORKS BECAUSE tDotDataDot MUST BE FOLLOWED BY THE FILE TYPE (NTFS FILE NAME "EXTENSION")
-                etThread.strSubstringF( tinP , psttPrefixMe , idf , sttq , tDotDataDot , tShort , 0 , 0 ) ; ___( psttPrefixMe ) ;
+                etThread.strSubstringF( tinBaseP , psttPrefixMe , idf , sttq , tDotDataDot , tShort , 0 , 0 ) ; ___( psttPrefixMe ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttPrefixMe ) ;
@@ -142,7 +142,7 @@ DEL( pJotSortedShort ) ;
             {
             if( idFile >= 0xe3e )
 
-            if( !( idFile % TUCK ) ) etThread.traceF( tinP , T("[idFile,tShort]:    ")+TF2(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
+            if( !( idFile % TUCK ) ) etThread.traceF( tinBaseP , T("[idFile,tShort]:    ")+TF2(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
             TN( tShort , (byteT*)(const byteT*)pageShort ) ;
             ++ idFile ;
         {
@@ -160,28 +160,28 @@ DEL( pJotSortedShort ) ;
 
     jotC& jotShort = *pJotSortedShort ;
     
-    jotFilesNamedC archive( tinP , etThread , osfnArchive /*"d:\\tmp\\dut.out.jotfiles\\archive"*/ , flJOTc_WRITE | flJOTc_NOsHORTfILENAMEpREFIX ) ;
-    tlsAllocStackExp_a_C tls( tinP ) ;
+    jotFilesNamedC archive( tinBaseP , etThread , osfnArchive /*"d:\\tmp\\dut.out.jotfiles\\archive"*/ , flJOTc_WRITE | flJOTc_NOsHORTfILENAMEpREFIX ) ;
+    tlsAllocStackExp_a_C tls( tinBaseP ) ;
 {
 if( pJotSortedShort )
 
 }
-    etThread.delF( tinP , psttName ) ;
-    sortF( tinP , etThread , countTC() , pJotSortedShort , jotShortFileNames , psttName , T("doodle.sorted.short.filenames") , TICK , TUCK << 0 , flSORTERc_SILENTLYsUPPRESSdUPLICATES , flJOTc_null , idFile , sizeof( count04T ) ) ;
+    etThread.delF( tinBaseP , psttName ) ;
+    sortF( tinBaseP , etThread , countTC() , pJotSortedShort , jotShortFileNames , psttName , T("doodle.sorted.short.filenames") , TICK , TUCK << 0 , flSORTERc_SILENTLYsUPPRESSdUPLICATES , flJOTc_null , idFile , sizeof( count04T ) ) ;
     ZE( strokeS* , psttName ) ;
 
     while( !ether && ~hFindOuter && !POOP && idFile < CfILES ) ;
     }
         DEL( pInfoOuter ) ;
         }
-            if( !( idFile % TUCK ) ) etThread.traceF( tinP , T("[idFile,idJot,tShort]:    ")+TF2(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
-            countT idJot = jotShortFileNames.writeF( tinP , tShort , tShort.csF( tinP ) + 1 ) ;
+            if( !( idFile % TUCK ) ) etThread.traceF( tinBaseP , T("[idFile,idJot,tShort]:    ")+TF2(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
+            countT idJot = jotShortFileNames.writeF( tinBaseP , tShort , tShort.csF( tinBaseP ) + 1 ) ;
             }
-                etThread.delF( tinP , psttShort ) ;
-                etThread.delF( tinP , psttPath ) ;
+                etThread.delF( tinBaseP , psttShort ) ;
+                etThread.delF( tinBaseP , psttPath ) ;
                 tShort = T(psttShort) ;
                 tPath  = T(psttPath) ;
-                etThread.strBisectF( tinP , psttPath , psttShort , tFileNameData , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                etThread.strBisectF( tinBaseP , psttPath , psttShort , tFileNameData , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttPath ) ;
             {
@@ -199,18 +199,18 @@ if( pJotSortedShort )
         {
         if( !pInfoOuter || !pInfoOuter->psttIfoName )
     
-        etThread.diskFindFileOrDirF( tinP , pInfoOuter , hFindOuter , tPathIn ) ;
+        etThread.diskFindFileOrDirF( tinBaseP , pInfoOuter , hFindOuter , tPathIn ) ;
         ZE( infoFileS* , pInfoOuter ) ;
     {
     do
-    handleC hFindOuter( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFindOuter( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     ZE( countT , idFile ) ;
 
-    jotC jotShortFileNames( tinP , "short.file.names" , flJOTc_WRITE | flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_PURGEoNcT , 1 ) ;
+    jotC jotShortFileNames( tinBaseP , "short.file.names" , flJOTc_WRITE | flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_PURGEoNcT , 1 ) ;
 {
 ZE( jotC* , pJotSortedShort ) ;
 
-osFileNameC osfnArchive( tinP , etThread , tArchiveLong ) ;
+osFileNameC osfnArchive( tinBaseP , etThread , tArchiveLong ) ;
 TN( tArchiveLong , "///d/tmp//dut.out.jotfiles//archive" ) ;
 TN( tPathIn      , "///d/tmp/dut.in.archived/" ) ;
 TN( tb4          , "    " ) ;

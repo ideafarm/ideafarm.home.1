@@ -9,14 +9,14 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
         }
             }
-                etThread.traceF( tinP , T(postFile) ) ;
+                etThread.traceF( tinBaseP , T(postFile) ) ;
             {
             else
             if( !postFile ) break ;
@@ -26,7 +26,7 @@ etThread.traceF( tinP , T("ok") ) ;
         {
         while( !ether && !POOP )
 
-        jotC myJotFile( tinP , "myjot.file" ) ;
+        jotC myJotFile( tinBaseP , "myjot.file" ) ;
     {
 
     }
@@ -36,22 +36,22 @@ etThread.traceF( tinP , T("ok") ) ;
                 }
                     }
                         DEL( pInfo ) ;
-                        myJotFile.writeF( tinP , tShort , tShort.csF( tinP ) + 1 ) ;
-                        etThread.traceF( tinP , T("file: ")+tShort ) ;
+                        myJotFile.writeF( tinBaseP , tShort , tShort.csF( tinBaseP ) + 1 ) ;
+                        etThread.traceF( tinBaseP , T("file: ")+tShort ) ;
                     {
                     else
                     }
                         DEL( pInfo ) ;
-                        myJotDir.writeF( tinP , tShort , tShort.csF( tinP ) + 1 ) ;
-                        etThread.traceF( tinP , T("dir:  ")+tShort ) ;
+                        myJotDir.writeF( tinBaseP , tShort , tShort.csF( tinBaseP ) + 1 ) ;
+                        etThread.traceF( tinBaseP , T("dir:  ")+tShort ) ;
                     {
                     if( bDir )
 
                     }
-                        etThread.delF( tinP , psttShort ) ;
+                        etThread.delF( tinBaseP , psttShort ) ;
                         tShort = T(psttShort) ;
-                        etThread.delF( tinP , psttnu ) ;
-                        etThread.strBisectF( tinP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                        etThread.delF( tinBaseP , psttnu ) ;
+                        etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                         ZE( strokeS* , psttShort ) ;
                         ZE( strokeS* , psttnu ) ;
                     {
@@ -59,7 +59,7 @@ etThread.traceF( tinP , T("ok") ) ;
 
                     const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
 
-                    //etRock.traceF( tinP , T("cloudC: [file]: ")+tIfoName ) ;
+                    //etRock.traceF( tinBaseP , T("cloudC: [file]: ")+tIfoName ) ;
                     TN( tIfoName , pInfo->psttIfoName ) ;
                 {
                 else
@@ -71,32 +71,32 @@ etThread.traceF( tinP , T("ok") ) ;
 
                 }
                     break ;
-                    ++ s ; etPrime.osSleepF( tinP , TOCK << 4 ) ;
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-                    etRock.traceF( tinP , T("could not access local disk while obtaining \"file find\" info for a file ; will retry after napping 01 tock") ) ;
+                    ++ s ; etPrime.osSleepF( tinBaseP , TOCK << 4 ) ;
+                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    etRock.traceF( tinBaseP , T("could not access local disk while obtaining \"file find\" info for a file ; will retry after napping 01 tock") ) ;
                     DEL( pInfo ) ;
                     POOPR
                 {
                 if( POOP )
 
-                etScratch.diskFindFileOrDirOldF( tinP , pInfo , hFind , T("///d/ideafarm.home.1/precious/domains/com/ideafarm/city/library/dictionary/1*") ) ;
+                etScratch.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , T("///d/ideafarm.home.1/precious/domains/com/ideafarm/city/library/dictionary/1*") ) ;
                 ZE( infoFileS* , pInfo ) ;
             {
             do
-            handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
             SCOOPS
         {
         IFsCRATCH
 
         TN( tSlash , "/" ) ;
-        etherC& etScratch = *tinP.pEtScratch ;
-        etherC& etPrime   = etherC::etPrimeIF( tinP ) ;
-        etherC& etRock    = etherC::etRockIF( tinP ) ;
+        etherC& etScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
+        etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
+        etherC& etRock    = etherC::etRockIF( tinBaseP ) ;
     {
 
-    jotC myJotFile( tinP , "myjot.file" , flJOTc_DELETE | flJOTc_WRITE ) ;
-    jotC myJotDir(  tinP , "myjot.dir"  , flJOTc_DELETE | flJOTc_WRITE ) ;
+    jotC myJotFile( tinBaseP , "myjot.file" , flJOTc_DELETE | flJOTc_WRITE ) ;
+    jotC myJotDir(  tinBaseP , "myjot.dir"  , flJOTc_DELETE | flJOTc_WRITE ) ;
 {
 
 TODO

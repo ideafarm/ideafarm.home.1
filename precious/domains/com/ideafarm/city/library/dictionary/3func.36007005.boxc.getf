@@ -10,7 +10,7 @@
 }
     }
         cbP = 0 ;
-        ether.delF( tinP , pbP ) ;
+        ether.delF( tinBaseP , pbP ) ;
     {
     if( POOP )
 
@@ -19,145 +19,145 @@
         else __1
         }
             }
-                ether.memCopyF( tinP , pbP , pbNapkin , cbP ) ;
-                ether.newF( tinP , LF , pbP , cbP ) ; ___( pbP ) ;
+                ether.memCopyF( tinBaseP , pbP , pbNapkin , cbP ) ;
+                ether.newF( tinBaseP , LF , pbP , cbP ) ; ___( pbP ) ;
                 if( !POOP ) cbP = cbNapkin ;
                 __( cbP ) ;
                 countT cbNapkin = *(countT*)( pbNapkin - sizeof(countT) ) ;
             {
             if( pbNapkin )
         {
-        else if( !ether.strCompareF( tinP , psttType , T("napkin.make") ) || !ether.strCompareF( tinP , psttType , T("napkin") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("napkin.make") ) || !ether.strCompareF( tinBaseP , psttType , T("napkin") ) )
         }
-            if( !ether && pHoseProcessError ) { pHoseProcessError->getF( tinP , pbP , cbP ) ; ___( pbP ) ; }
+            if( !ether && pHoseProcessError ) { pHoseProcessError->getF( tinBaseP , pbP , cbP ) ; ___( pbP ) ; }
         {
-        else if( !ether.strCompareF( tinP , psttType , T("process.error") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("process.error") ) )
         }
-            if( !ether && pHoseProcessOut ) { pHoseProcessOut->getF( tinP , pbP , cbP ) ; ___( pbP ) ; }
+            if( !ether && pHoseProcessOut ) { pHoseProcessOut->getF( tinBaseP , pbP , cbP ) ; ___( pbP ) ; }
         {
-        else if( !ether.strCompareF( tinP , psttType , T("process.out") ) )
-        }
-        {
-        else if( !ether.strCompareF( tinP , psttType , T("process.in") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("process.out") ) )
         }
         {
-        else if( !ether.strCompareF( tinP , psttType , T("process") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("process.in") ) )
+        }
+        {
+        else if( !ether.strCompareF( tinBaseP , psttType , T("process") ) )
         }
             #endif
                 }
                     else break ;
                     }
                         }
-                            ++ s ; ether.osSleepF( tinP ) ;
-                            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                            ++ s ; ether.osSleepF( tinBaseP ) ;
+                            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         ether = 0 ;
                     {
                     if( POOP )
-                    pBatHPC->ungrabF( tinP ) ;
-                    ether.fileReadF( tinP , pbP , cbP , hHoseCommand ) ;
-                    pBatHPC->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    pBatHPC->ungrabF( tinBaseP ) ;
+                    ether.fileReadF( tinBaseP , pbP , cbP , hHoseCommand ) ;
+                    pBatHPC->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 while( !ether )
                 if( !POOP ) pbP[ cbP ] = 0 ;
-                ether.newF( tinP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
+                ether.newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
                 }
                     else break ;
                     }
                         }
-                            ++ s ; ether.osSleepF( tinP ) ;
-                            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                            ++ s ; ether.osSleepF( tinBaseP ) ;
+                            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         ether = 0 ;
                     {
                     if( POOP )
-                    pBatHPC->ungrabF( tinP ) ;
-                    ether.fileReadF( tinP , (byteT*)&cbP , cb1 , hHoseCommand ) ;
+                    pBatHPC->ungrabF( tinBaseP ) ;
+                    ether.fileReadF( tinBaseP , (byteT*)&cbP , cb1 , hHoseCommand ) ;
                     countT cb1 = sizeof cbP ;
-                    pBatHPC->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    pBatHPC->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 while( !ether )
                 //U:ASSUME: MESSAGES ARE SMALL ENOUGH THAT FILE POINTER WILL NEVER BE MOVED UNLESS THE ENTIRE MESSAGE CAN BE READ
                 //U:NT: ENHANCE THIS CODE TO IMPLEMENT cbP == -1 I.E. CLIENT DOES NOT KNOW HOW MANY BYTES IT WILL WRITE TO THIS HOSE
             #elif defined( __NT__ )
-                ether.fileReadF( tinP , pbP , cbP , handle , fStupidClient ) ;
+                ether.fileReadF( tinBaseP , pbP , cbP , handle , fStupidClient ) ;
                 }
                     else                pbP[ cbP ] = 0 ;
-                    if( fStupidClient ) ether.memSetF( tinP , pbP , cbP + 1 ) , *pbP = '\xDB' ;
+                    if( fStupidClient ) ether.memSetF( tinBaseP , pbP , cbP + 1 ) , *pbP = '\xDB' ;
                 {
                 if( !ether && pbP )
-                ether.newF( tinP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
+                ether.newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
                 if( cbP == - 1 ) fStupidClient = 1 , cbP = CBlIMITfROMsTUPIDcLIENT ;
-                ether.fileReadF( tinP , (byteT*)&cbP , cb1 , handle ) ;
+                ether.fileReadF( tinBaseP , (byteT*)&cbP , cb1 , handle ) ;
                 countT cb1 = sizeof cbP ;
                 ZE( boolT , fStupidClient ) ;
             #ifdef __OS2__
             _IO_
         {
-        else if( !ether.strCompareF( tinP , psttType , T("tap") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("tap") ) )
         }
             #endif
                 }
                     else break ;
                     }
                         }
-                            ++ s ; ether.osSleepF( tinP ) ;
-                            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                            ++ s ; ether.osSleepF( tinBaseP ) ;
+                            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         ether = 0 ;
                     {
                     if( POOP )
-                    pBatHPR->ungrabF( tinP ) ;
-                    ether.fileReadF( tinP , pbP , cbP , hHoseReply ) ;
-                    pBatHPR->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    pBatHPR->ungrabF( tinBaseP ) ;
+                    ether.fileReadF( tinBaseP , pbP , cbP , hHoseReply ) ;
+                    pBatHPR->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 while( !ether )
                 if( !POOP ) pbP[ cbP ] = 0 ;
-                ether.newF( tinP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
+                ether.newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
                 }
                     else break ;
                     }
                         }
-                            ++ s ; ether.osSleepF( tinP ) ;
-                            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                            ++ s ; ether.osSleepF( tinBaseP ) ;
+                            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         ether = 0 ;
                     {
                     if( POOP )
-                    pBatHPR->ungrabF( tinP ) ;
-                    ether.fileReadF( tinP , (byteT*)&cbP , cb1 , hHoseReply ) ;
+                    pBatHPR->ungrabF( tinBaseP ) ;
+                    ether.fileReadF( tinBaseP , (byteT*)&cbP , cb1 , hHoseReply ) ;
                     countT cb1 = sizeof cbP ;
-                    pBatHPR->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    pBatHPR->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 while( !ether )
                 //U:ASSUME: MESSAGES ARE SMALL ENOUGH THAT FILE POINTER WILL NEVER BE MOVED UNLESS THE ENTIRE MESSAGE CAN BE READ
             #elif defined( __NT__ )
-                ether.fileReadF( tinP , pbP , cbP , handle ) ;
+                ether.fileReadF( tinBaseP , pbP , cbP , handle ) ;
                 if( !POOP ) pbP[ cbP ] = 0 ;
-                ether.newF( tinP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
-                ether.fileReadF( tinP , (byteT*)&cbP , cb1 , handle ) ;
+                ether.newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
+                ether.fileReadF( tinBaseP , (byteT*)&cbP , cb1 , handle ) ;
                 countT cb1 = sizeof cbP ;
             #ifdef __OS2__
         {
-        else if( !ether.strCompareF( tinP , psttType , T("hose") ) )
+        else if( !ether.strCompareF( tinBaseP , psttType , T("hose") ) )
         }
             }
                 }
                     cbP = 0 ;
-                    ether.delF( tinP , pbP ) ;
+                    ether.delF( tinBaseP , pbP ) ;
                 {
                 if( POOP )
 
-                ether.fileReadF( tinP , pbP , cbP , handle ) ;
+                ether.fileReadF( tinBaseP , pbP , cbP , handle ) ;
                 }
                     }
-                        ether.delF( tinP , psttMapped ) ;
+                        ether.delF( tinBaseP , psttMapped ) ;
                         _IO_
                     {
-                    ether.fileOpenF( tinP , handle , flagsResult , psttMapped , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , 0 , 0 , 0 , cOpenTries ) ;
-                    ether.diskMakeDirIfNeededF( tinP , psttMapped ) ;
+                    ether.fileOpenF( tinBaseP , handle , flagsResult , psttMapped , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , 0 , 0 , 0 , cOpenTries ) ;
+                    ether.diskMakeDirIfNeededF( tinBaseP , psttMapped ) ;
                     ZE( countT , flagsResult ) ;
-                    ether.diskMapFileNameF( tinP , psttMapped , psttAll ) ; ___( psttMapped ) ;
+                    ether.diskMapFileNameF( tinBaseP , psttMapped , psttAll ) ; ___( psttMapped ) ;
                     ZE( strokeS* , psttMapped ) ;
                 {
                 if( !handle )
@@ -165,8 +165,8 @@
             {
             if( cbP )
             if( pbP ) pbP[ cbP ] = 0 ;
-            if( !POOP ) { ether.newF( tinP , LF , pbP , cbP + 1 ) ; ___( pbP ) ; }
-            cbP = cbFileF( tinP ) ;
+            if( !POOP ) { ether.newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ; }
+            cbP = cbFileF( tinBaseP ) ;
         {
         if( psttType && !psttType->idAdam )
         __NZ( cbP ) ;
@@ -174,43 +174,43 @@
     {
     else if( !psttHost->idAdam )
     }
-        so.writeF( tinP , soulo2 ) ;
-        soulC soulo2( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
+        so.writeF( tinBaseP , soulo2 ) ;
+        soulC soulo2( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
 
-        souli.shiftRightF( tinP , pbP , cbP , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbP ) ;
+        souli.shiftRightF( tinBaseP , pbP , cbP , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbP ) ;
         __( idCmd - ifcIDcMDsESSION_GETfYLErEPLY ) ;
         souli >> idCmd ;
         ZE( countT , idCmd ) ;
-        so.readF( tinP , souli ) ;
-        soulC souli( tinP , TAG( TAGiDnULL ) ) ;
+        so.readF( tinBaseP , souli ) ;
+        soulC souli( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        so.writeF( tinP , soulo ) ;
-        so.connectF( tinP , ifcPORToLD2_CHAT , socketC::nicNameIF( tinP , ether , T(WWWiDEAFARMcOM) ) ) ;
-        socketC so( tinP , ether , TAG( TAGiDnULL ) ) ;
+        so.writeF( tinBaseP , soulo ) ;
+        so.connectF( tinBaseP , ifcPORToLD2_CHAT , socketC::nicNameIF( tinBaseP , ether , T(WWWiDEAFARMcOM) ) ) ;
+        socketC so( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 
         soulo << psttName ;
-        soulC soulo( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_GETfYLE ) ;
+        soulC soulo( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_GETfYLE ) ;
         _IO_
     {
-    else if( !ether.strCompareF( tinP , psttType , T("fyle") ) )
+    else if( !ether.strCompareF( tinBaseP , psttType , T("fyle") ) )
     }
         }
             }
                 }
-                    ether.delF( tinP , pstti ) ;
+                    ether.delF( tinBaseP , pstti ) ;
                     _IO_
                 {
-                cbP = ether.strMakeF( tinP , LF , pbP , pstti ) ; ___( pbP ) ;
-                pSControl->readWoMultilineF( tinP , pstti , T(".") , 0x10000 ) ; ___( pbP ) ; //U: csttEstimateP
+                cbP = ether.strMakeF( tinBaseP , LF , pbP , pstti ) ; ___( pbP ) ;
+                pSControl->readWoMultilineF( tinBaseP , pstti , T(".") , 0x10000 ) ; ___( pbP ) ; //U: csttEstimateP
                 ZE( strokeS* , pstti ) ;
             {
             if( !POOP )
             //U: info.fZombie = 0 ;
-            verifyReplyF( tinP , 215 ) ;
-            pSControl->writeF( tinP , (osTextT*)T("list newsgroups\r\n") ) ;
+            verifyReplyF( tinBaseP , 215 ) ;
+            pSControl->writeF( tinBaseP , (osTextT*)T("list newsgroups\r\n") ) ;
 
-            //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
-            infoBoxGetPutS info( tinP , ether , *pSControl ) ;
+            //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
+            infoBoxGetPutS info( tinBaseP , ether , *pSControl ) ;
 
             __( cbP ) ;
             _IO_
@@ -219,28 +219,28 @@
         }
             }
                 }
-                    ether.delF( tinP , pstti ) ;
+                    ether.delF( tinBaseP , pstti ) ;
                     _IO_
                 {
-                cbP = ether.strMakeF( tinP , LF , pbP , pstti ) ; ___( pbP ) ;
-                pSControl->readWoMultilineF( tinP , pstti , T(".") , 0x10000 ) ; ___( pbP ) ; //U: csttEstimateP
+                cbP = ether.strMakeF( tinBaseP , LF , pbP , pstti ) ; ___( pbP ) ;
+                pSControl->readWoMultilineF( tinBaseP , pstti , T(".") , 0x10000 ) ; ___( pbP ) ; //U: csttEstimateP
                 ZE( strokeS* , pstti ) ;
                 _IO_
             {
             if( !POOP )
             //U: info.fZombie = 0 ;
-            verifyReplyF( tinP , 220 ) ;
+            verifyReplyF( tinBaseP , 220 ) ;
             }
-                ether.delF( tinP , psttIdWanted ) ;
+                ether.delF( tinBaseP , psttIdWanted ) ;
                 _IO_
             {
-            { textC txt = T("article ")+T(psttIdWanted)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+            { textC txt = T("article ")+T(psttIdWanted)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
 
-            //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
-            infoBoxGetPutS info( tinP , ether , *pSControl ) ;
+            //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
+            infoBoxGetPutS info( tinBaseP , ether , *pSControl ) ;
 
             }
-                ether.strFromF( tinP , psttIdWanted , idWanted , flFORMAT_NObASE|flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttIdWanted ) ;
+                ether.strFromF( tinBaseP , psttIdWanted , idWanted , flFORMAT_NObASE|flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttIdWanted ) ;
                 cbP = 0 ;
                 __Z( idWanted ) ;
                 sCountT idWanted = cbP ;
@@ -252,45 +252,45 @@
         if( psttName && psttName->idAdam )
         _IO_
     {
-    else if( !ether.strCompareF( tinP , psttType , T("news") ) && pSControl )
+    else if( !ether.strCompareF( tinBaseP , psttType , T("news") ) && pSControl )
     }
         }
             }
-                ether.delF( tinP , pstti ) ;
+                ether.delF( tinBaseP , pstti ) ;
                 _IO_
             {
-            cbP = ether.strMakeF( tinP , LF , pbP , pstti ) ; ___( pbP ) ;
-            pSControl->readWoMultilineF( tinP , pstti , T(".") , 0x10000 ) ; ___( pbP ) ; //U: csttEstimateP
+            cbP = ether.strMakeF( tinBaseP , LF , pbP , pstti ) ; ___( pbP ) ;
+            pSControl->readWoMultilineF( tinBaseP , pstti , T(".") , 0x10000 ) ; ___( pbP ) ; //U: csttEstimateP
             ZE( strokeS* , pstti ) ;
             _IO_
         {
         if( !POOP )
 
         //U: info.fZombie = 0 ;
-        verifyReplyF( tinP ) ;
+        verifyReplyF( tinBaseP ) ;
         }
-            ether.delF( tinP , psttIdWanted ) ;
+            ether.delF( tinBaseP , psttIdWanted ) ;
             _IO_
         {
-        else { textC txt = T("retr ") + T(psttIdWanted) + T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        else { textC txt = T("retr ") + T(psttIdWanted) + T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
         }
             }
-                ether.delF( tinP , psttTop ) ;
+                ether.delF( tinBaseP , psttTop ) ;
                 _IO_
             {
-            { textC txt = T("top ") + T(psttIdWanted) + T(" ") + T(psttTop) + T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+            { textC txt = T("top ") + T(psttIdWanted) + T(" ") + T(psttTop) + T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
             _IO_
         {
         if( psttTop )
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
-        infoBoxGetPutS info( tinP , ether , *pSControl ) ;
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
+        infoBoxGetPutS info( tinBaseP , ether , *pSControl ) ;
 
         }
-            ether.strFromF( tinP , psttIdWanted , idWanted , flFORMAT_NObASE|flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttIdWanted ) ;
+            ether.strFromF( tinBaseP , psttIdWanted , idWanted , flFORMAT_NObASE|flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttIdWanted ) ;
             cbP = 0 ;
             __Z( idWanted ) ;
             }
-                ether.strMakeF( tinP , LF , psttTop , T("200") ) ; ___( psttTop ) ;
+                ether.strMakeF( tinBaseP , LF , psttTop , T("200") ) ; ___( psttTop ) ;
                 idWanted = - idWanted ;
             {
             if( idWanted < 0 )
@@ -300,7 +300,7 @@
         ZE( strokeS* , psttIdWanted ) ;
         _IO_
     {
-    else if( !ether.strCompareF( tinP , psttType , T("pop") ) && pSControl )
+    else if( !ether.strCompareF( tinBaseP , psttType , T("pop") ) && pSControl )
     }
         //THREADmODE5rESTORE
         }
@@ -312,37 +312,37 @@
                 {
                 if( POOP )
 
-                while( !ether && ( bNoQuitEarly || ( cTries && -- cTries ) ) ) ; // thirdC::thPrimeIF( tinP ) IS NOT CHECKED HERE BECAUSE IT WOULD HANG IF I AM CALLED DURING TERMINATION, AFTER thPrimeIF HAS BEEN DESTROYED
+                while( !ether && ( bNoQuitEarly || ( cTries && -- cTries ) ) ) ; // thirdC::thPrimeIF( tinBaseP ) IS NOT CHECKED HERE BECAUSE IT WOULD HANG IF I AM CALLED DURING TERMINATION, AFTER thPrimeIF HAS BEEN DESTROYED
                 }
                     TESTsCRATCH //U:: TO FIND A BUG
                     }
                         }
-                            ++ s ; ether.osSleepF( tinP ) ;
-                            ether.traceF( tinP , T("boxC::getF / napping for a wink") ) ;
+                            ++ s ; ether.osSleepF( tinBaseP ) ;
+                            ether.traceF( tinBaseP , T("boxC::getF / napping for a wink") ) ;
                         {
                         if( bNoQuitEarly || cTries > 1 )
 
                         }
-                            ether.traceF( tinP , T("boxC::getF / could not replace socket and connect") ) ;
+                            ether.traceF( tinBaseP , T("boxC::getF / could not replace socket and connect") ) ;
                             POOPRqUIET
                         {
                         if( POOP )
 
                         }
-                            pSControl->connectF( tinP , /*port 80*/idPort , hidIfo , cOpenTries ) ;
-                            nicNameC hidIfo = socketC::nicNameIF( tinP , ether , psttHost->idAdam ? psttHost : 0 ) ;
+                            pSControl->connectF( tinBaseP , /*port 80*/idPort , hidIfo , cOpenTries ) ;
+                            nicNameC hidIfo = socketC::nicNameIF( tinBaseP , ether , psttHost->idAdam ? psttHost : 0 ) ;
                         {
                         if( !POOP )
 
-                        pSControl->etherF( tinP , *tinP.pEtScratch ) ;
+                        pSControl->etherF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
 
                         __Z( pSControl ) ;
-                        pSControl = new( 0 , tinP , LF ) socketC( tinP , ether , TAG( TAGiDnULL ) , 0 , bHttps ? flSOCKETc_CRYPTfOREIGNsSL : flSOCKETc_null , 0 , countTC( timeAllowed1 ) , countTC( timeAllowed1 ) , countTC( timeAllowed1 ) ) ; ___( pSControl ) ;
+                        pSControl = new( 0 , tinBaseP , LF ) socketC( tinBaseP , ether , TAG( TAGiDnULL ) , 0 , bHttps ? flSOCKETc_CRYPTfOREIGNsSL : flSOCKETc_null , 0 , countTC( timeAllowed1 ) , countTC( timeAllowed1 ) , countTC( timeAllowed1 ) ) ; ___( pSControl ) ;
                         //PSEUDOdUPLICATEcODE: 36007001 36007005
 
                         DEL( pSControl ) ;
 
-                        pSControl->etherF( tinP , etSave ) ;
+                        pSControl->etherF( tinBaseP , etSave ) ;
 
                         POOPRqUIET
                         _IO_
@@ -350,15 +350,15 @@
                     else
                     }
                         break ;
-                        pSControl->etherF( tinP , etSave ) ;
+                        pSControl->etherF( tinBaseP , etSave ) ;
                     {
                     if( !POOP && !bFail )
 
-                    ether.delF( tinP , postHeadPlus ) ;
+                    ether.delF( tinBaseP , postHeadPlus ) ;
                     }
                         TESTsCRATCH //U:: TO FIND A BUG
 
-                        //ether.traceF( tinP , T("getF [name]:    ")+T(psttNameP) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
+                        //ether.traceF( tinBaseP , T("getF [name]:    ")+T(psttNameP) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
 
                         }
                             }
@@ -372,8 +372,8 @@
                                             }
                                                 }
                                                     }
-                                                        if( !pSControl->readF( tinP , &ostWo , 1 ) ) { BLAMMO ; } ; // '\n'
-                                                        if( !pSControl->readF( tinP , &ostWo , 1 ) ) { BLAMMO ; } ; // '\r'
+                                                        if( !pSControl->readF( tinBaseP , &ostWo , 1 ) ) { BLAMMO ; } ; // '\n'
+                                                        if( !pSControl->readF( tinBaseP , &ostWo , 1 ) ) { BLAMMO ; } ; // '\r'
 
                                                         }
                                                             }
@@ -383,24 +383,24 @@
                                                             if( !POOP )
 
                                                             __Z( costGot ) ;
-                                                            countT costGot = pSControl->readF( tinP , pbP + cbP , costDo ) ;
+                                                            countT costGot = pSControl->readF( tinBaseP , pbP + cbP , costDo ) ;
                                                         {
                                                         while( costDo && !POOP )
 
-                                                        if( !pSControl->readF( tinP , &ostWo , 1 ) ) { BLAMMO ; } ; // '\n'
+                                                        if( !pSControl->readF( tinBaseP , &ostWo , 1 ) ) { BLAMMO ; } ; // '\n'
                                                         osTextT ostWo ;
                                                     {
                                                     else
                                                     if( !costDo ) break ;
 
                                                     offl = - 1 ;
-                                                    countT costDo = ether.strDigitsToSCountF( tinP , T(postLengthBuffer) , 0 , 1 ) ;
-                                                    thirdC::c_strlwrIF( tinP , postLengthBuffer) ;
+                                                    countT costDo = ether.strDigitsToSCountF( tinBaseP , T(postLengthBuffer) , 0 , 1 ) ;
+                                                    thirdC::c_strlwrIF( tinBaseP , postLengthBuffer) ;
                                                     postLengthBuffer[ offl ] = 0 ;
                                                 {
                                                 if( postLengthBuffer[ offl ] == '\r' )
 
-                                                if( !pSControl->readF( tinP , postLengthBuffer + offl , 1 ) ) { BLAMMO ; } ;
+                                                if( !pSControl->readF( tinBaseP , postLengthBuffer + offl , 1 ) ) { BLAMMO ; } ;
                                             {
                                             for( countT offl = 0 ; offl < sizeof postLengthBuffer - 1 ; offl ++ )
                                             osTextT postLengthBuffer[ TUCK ] = { 0 } ;
@@ -418,12 +418,12 @@
                                                 else costToDo -= costGot ;
                                                 }
                                                     bFail = 1 ;
-                                                    ether.delF( tinP , pbP ) ;
-                                                    ether.traceF( tinP , T("getF: could not read socket 175 [costToDo]:    ")+TF2(costToDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    ether.delF( tinBaseP , pbP ) ;
+                                                    ether.traceF( tinBaseP , T("getF: could not read socket 175 [costToDo]:    ")+TF2(costToDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     POOPR
                                                 {
                                                 if( POOP )
-                                                countT costGot = pSControl->readF( tinP , postc , costToDo ) ;
+                                                countT costGot = pSControl->readF( tinBaseP , postc , costToDo ) ;
                                                 SCOOPS
                                             {
                                             IFsCRATCH
@@ -431,7 +431,7 @@
                                         while( costToDo )
                                         countT costToDo = costBody - costzBodySome ;
 
-                                        if( costzBodySome ) { ether.memCopyF( tinP , postc , postzBodySome , costzBodySome ) ; postc += costzBodySome ; }
+                                        if( costzBodySome ) { ether.memCopyF( tinBaseP , postc , postzBodySome , costzBodySome ) ; postc += costzBodySome ; }
                                         osTextT* postc = pbP ;
                                     {
                                     if( !bChunked )
@@ -439,7 +439,7 @@
                                 if( costBody )
                             {
                             if( pbP )
-                            ether.newF( tinP , LF , pbP , costBody + 1 ) ; ___( pbP ) ;
+                            ether.newF( tinBaseP , LF , pbP , costBody + 1 ) ; ___( pbP ) ;
                             cbP = costBody ;
 
                             _IO_
@@ -448,41 +448,41 @@
 
                         }
                             }
-                                ether.delF( tinP , pstt1Line ) ;
+                                ether.delF( tinBaseP , pstt1Line ) ;
                                 _IO_
                             {
                             }
                                 }
-                                    ether.delF( tinP , psttl ) ;
+                                    ether.delF( tinBaseP , psttl ) ;
                                     _IO_
                                 {
                                 }
                                     }
-                                        ether.delF( tinP , psttValue ) ;
+                                        ether.delF( tinBaseP , psttValue ) ;
                                         _IO_
                                     {
                                     }
-                                        ether.delF( tinP , psttKey ) ;
+                                        ether.delF( tinBaseP , psttKey ) ;
                                         _IO_
                                     {
                                 
                                     }
                                         }
-                                            bChunked = !ether.strCompareF( tinP , psttValue , tChunked ) ;
+                                            bChunked = !ether.strCompareF( tinBaseP , psttValue , tChunked ) ;
                                         {
-                                        else if( !ether.strCompareF( tinP , psttKey , tTransferEncoding ) )
+                                        else if( !ether.strCompareF( tinBaseP , psttKey , tTransferEncoding ) )
                                         }
                                             bLengthSet = 1 ;
-                                            costBody = ether.strDigitsToSCountF( tinP , psttValue , 0xa , 1 ) ;
+                                            costBody = ether.strDigitsToSCountF( tinBaseP , psttValue , 0xa , 1 ) ;
                                         {
-                                        if( !ether.strCompareF( tinP , psttKey , tKeyContentLength ) )
+                                        if( !ether.strCompareF( tinBaseP , psttKey , tKeyContentLength ) )
                                     
-                                        ether.strTrimF( tinP , psttValue , 0 , T(TbLACKnEWlINE) ) ; ___( psttValue ) ;
-                                        ether.strSubstringF( tinP , psttValue , idf , countTC() , psttl ) ; ___( psttValue ) ;
+                                        ether.strTrimF( tinBaseP , psttValue , 0 , T(TbLACKnEWlINE) ) ; ___( psttValue ) ;
+                                        ether.strSubstringF( tinBaseP , psttValue , idf , countTC() , psttl ) ; ___( psttValue ) ;
                                     {
                                     if( idf )
-                                    ether.strConvertToLowerCaseF( tinP , psttKey ) ; ___( psttKey ) ;
-                                    ether.strSubstringF( tinP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
+                                    ether.strConvertToLowerCaseF( tinBaseP , psttKey ) ; ___( psttKey ) ;
+                                    ether.strSubstringF( tinBaseP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
                                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                     countT idf = 1 ;
                                     ZE( strokeS* , psttValue ) ;
@@ -492,17 +492,17 @@
                                 }
                                     }
                                         }
-                                            ether.delF( tinP , pstt1w ) ;
+                                            ether.delF( tinBaseP , pstt1w ) ;
                                             _IO_
                                         {
                                         }
                                             break ;
-                                            if( ether.strCompareF( tinP , psttc1 , t200 ) && ether.strCompareF( tinP , psttc1 , t307 ) ) { bFail = 1 ; } ;
+                                            if( ether.strCompareF( tinBaseP , psttc1 , t200 ) && ether.strCompareF( tinBaseP , psttc1 , t307 ) ) { bFail = 1 ; } ;
                                             if( ++ idWord == 1 ) continue ;
                                         {
                                         FORsTRINGSiN1( pstt1w )
                                         ZE( countT , idWord ) ;
-                                        ether.strWordsF( tinP , pstt1w , psttl , sttq ) ; ___( pstt1w ) ;
+                                        ether.strWordsF( tinBaseP , pstt1w , psttl , sttq ) ; ___( pstt1w ) ;
                                         ZE( strokeS* , pstt1w ) ;
                                     {
                                     if( !POOP )                        
@@ -511,13 +511,13 @@
                                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                     countT idf = 1 ;
 
-                                    ether.traceF( tinP , psttl , flTRACE_NOpREFIX ) ;
+                                    ether.traceF( tinBaseP , psttl , flTRACE_NOpREFIX ) ;
 
                                     bWoth = 0 ;
                                 {
                                 if( bWoth )
 
-                                ether.strConvertToLowerCaseF( tinP , psttl , psttc1 ) ; ___( psttl ) ;
+                                ether.strConvertToLowerCaseF( tinBaseP , psttl , psttc1 ) ; ___( psttl ) ;
                                 ZE( strokeS* , psttl ) ;
                                 _IO_
                             {
@@ -525,7 +525,7 @@
                             boolT bWoth = 1 ;
 
                             }
-                                ether.strWordsF( tinP , pstt1Line , T(postHeadPlus) , sttq , T("\r\n") ) ; ___( pstt1Line ) ;
+                                ether.strWordsF( tinBaseP , pstt1Line , T(postHeadPlus) , sttq , T("\r\n") ) ; ___( pstt1Line ) ;
                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                             {
                             ZE( strokeS* , pstt1Line ) ;
@@ -553,7 +553,7 @@
                     {
                     if( !bFail )
 
-                    etherC::etRockIF( tinP ).traceF( tinP , T(postHeadPlus) , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
+                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T(postHeadPlus) , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
 
                     TESTsCRATCH //U:: TO FIND A BUG
                     }
@@ -610,11 +610,11 @@
                                     }
                                         break ;
                                         bFail = 1 ;
-                                        ether.traceF( tinP , T("getF: could not read socket 175") ) ;
+                                        ether.traceF( tinBaseP , T("getF: could not read socket 175") ) ;
                                         POOPRqUIET
                                     {
                                     if( POOP )
-                                    delta = pSControl->readF( tinP , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+                                    delta = pSControl->readF( tinBaseP , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
                                     SCOOPS
                                 {
                                 IFsCRATCH
@@ -628,12 +628,12 @@
                             osTextT* postc      = postHeadPlus  ;
                             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
 
-                            //ether.memSetF( tinP , postHeadPlus , costaHeadPlus ) ;
+                            //ether.memSetF( tinBaseP , postHeadPlus , costaHeadPlus ) ;
                             TESTsCRATCH //U:: TO FIND A BUG
                             _IO_
                         {
                         if( postHeadPlus )
-                        ether.newF( tinP , LF , postHeadPlus , costaHeadPlus ) ; ___( postHeadPlus ) ;
+                        ether.newF( tinBaseP , LF , postHeadPlus , costaHeadPlus ) ; ___( postHeadPlus ) ;
                         const countT costaHeadPlus = TOCK >> 2 ;
                         TESTsCRATCH //U:: TO FIND A BUG
                         _IO_
@@ -647,13 +647,13 @@
                     }
                         }
                             bFail = 1 ;
-                            ether.traceF( tinP , T("getF: could not write socket 640") ) ;
+                            ether.traceF( tinBaseP , T("getF: could not write socket 640") ) ;
                             POOPRqUIET
                         {
                         if( POOP )
 
-                        etherC::etRockIF( tinP ).traceF( tinP , tRequest , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
-                        pSControl->writeF( tinP , (osTextT*)tRequest ) ;
+                        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , tRequest , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
+                        pSControl->writeF( tinBaseP , (osTextT*)tRequest ) ;
 
                         if( postBodyP ) tRequest += T(postBodyP) ;
 
@@ -661,25 +661,25 @@
 
                         }
                             if( costBodyP  ) tRequest += T("\r\nContent-Length: ")+TF4(costBodyP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ;
-                            if( !costBodyP ) costBodyP = thirdC::c_strlenIF( tinP , postBodyP ) ;
+                            if( !costBodyP ) costBodyP = thirdC::c_strlenIF( tinBaseP , postBodyP ) ;
                         {
                         if( postBodyP )
 
                         TN( tRequest , "" ) ; tRequest = T(F(flagsP)&flBOXcgETf_HTTPpOST?"POST /":"GET /")+T(psttName)+T(" HTTP/1.1\r\nHost: ")+T(psttHost)+T("\r\nConnection: close") ;
                     {
 
-                    pSControl->etherF( tinP , *tinP.pEtScratch ) ;
+                    pSControl->etherF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
                     TESTsCRATCH //U:: TO FIND A BUG
                     _IO_
                 {
                 do
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                 countT cTries = cOpenTries ;
                 TN( t307 , "307" ) ; //U:: 20190817@1559: EDIT TO FULLY SUPPORT TEMPORARY AND PERMANENT REDIRECTS (SILENTLY FOLLOW REDIRECTS UNLESS CALLER TELLS ME NOT TO)
                 TN( t200 , "200" ) ;
 
                 __NZ( &etSave != &ether ) ;
-                etherC& etSave = pSControl->etherF( tinP ) ;
+                etherC& etSave = pSControl->etherF( tinBaseP ) ;
                 TESTsCRATCH //U:: TO FIND A BUG
 
                 SCOOPS
@@ -701,154 +701,154 @@
         __Z( pSControl ) ;
         //THREADmODE5oN( flTHREADmODE5_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY )
 
-        const boolT bHttps = !ether.strCompareF( tinP , psttType , T("https") ) ;
+        const boolT bHttps = !ether.strCompareF( tinBaseP , psttType , T("https") ) ;
 
         _IO_
     {
-    else if( ( !ether.strCompareF( tinP , psttType , T("http") ) || !ether.strCompareF( tinP , psttType , T("https") ) ) )
+    else if( ( !ether.strCompareF( tinBaseP , psttType , T("http") ) || !ether.strCompareF( tinBaseP , psttType , T("https") ) ) )
     }
-        else         ether.delF( tinP , pbP ) ;
+        else         ether.delF( tinBaseP , pbP ) ;
         if( !POOP ) cbP = cbFile ;
         DEL( pso ) ;
-        verifyReplyF( tinP , 0xe2 ) ; // 226
+        verifyReplyF( tinBaseP , 0xe2 ) ; // 226
 
         }
             }
-                pso->readF( tinP , pbP , cbFile ) ;
+                pso->readF( tinBaseP , pbP , cbFile ) ;
                 pbP[ cbFile ] = 0 ;
-                ether.newF( tinP , LF , pbP , cbFile + 1 ) ; ___( pbP ) ;
+                ether.newF( tinBaseP , LF , pbP , cbFile + 1 ) ; ___( pbP ) ;
             {
             if( cbFile ) //THIS WILL HANG FOREVER IF THE REMOTE HOST FAILS TO SEND ENOUGH BYTES
             _IO_
         {
         if( !POOP )
 
-        verifyReplyF( tinP , 0x96 ) ; // 150
+        verifyReplyF( tinBaseP , 0x96 ) ; // 150
         __Z( pso ) ;
         __( bRefuse ) ;
-        sData.acceptF( tinP , pso , idPortPeer , nnPeer , bRefuse ) ;
+        sData.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ;
         ZE( boolT , bRefuse ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
 
-        { textC txt = T("retr ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        { textC txt = T("retr ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
 
-        verifyReplyF( tinP , 200 ) ;
+        verifyReplyF( tinBaseP , 200 ) ;
         }
-            ether.delF( tinP , pstthp ) ;
+            ether.delF( tinBaseP , pstthp ) ;
             _IO_
         {
-        { textC txt = T("port ")+T(pstthp)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
-        ether.strFromIdPortNicNameF( tinP , pstthp , idPort , nicName ) ; ___( pstthp ) ;
+        { textC txt = T("port ")+T(pstthp)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
+        ether.strFromIdPortNicNameF( tinBaseP , pstthp , idPort , nicName ) ; ___( pstthp ) ;
         ZE( strokeS* , pstthp ) ;
-        { nicNameC nicNamenu ; sData.myNameF( tinP , idPort , nicNamenu ) ; }
+        { nicNameC nicNamenu ; sData.myNameF( tinBaseP , idPort , nicNamenu ) ; }
         ZE( countT , idPort ) ;
-        { ZE( countT , idpnu ) ; pSControl->myNameF( tinP , idpnu , nicName ) ; }
+        { ZE( countT , idpnu ) ; pSControl->myNameF( tinBaseP , idpnu , nicName ) ; }
         nicNameC nicName ;
-        sData.listenF( tinP ) ;
-        sData.bindF( tinP ) ;
-        socketC sData( tinP , ether , TAG( TAGiDnULL ) ) ;
+        sData.listenF( tinBaseP ) ;
+        sData.bindF( tinBaseP ) ;
+        socketC sData( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 
         //U: info.fZombie = 0 ;
         }
             __( rc != 213 && rc != 211 ) ;
             }
-                ether.delF( tinP , psttReply ) ;
+                ether.delF( tinBaseP , psttReply ) ;
                 _IO_
             {
-            cbFile = cbFileF( tinP , psttReply ) ;
-            countT rc = pSControl->readWoReplyF( tinP , psttReply ) ; ___( psttReply ) ;
+            cbFile = cbFileF( tinBaseP , psttReply ) ;
+            countT rc = pSControl->readWoReplyF( tinBaseP , psttReply ) ; ___( psttReply ) ;
             ZE( strokeS* , psttReply ) ;
             _IO_
         {
         if( !POOP )
         ZE( sCountT , cbFile ) ;
 
-        { textC txt = T("stat ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        { textC txt = T("stat ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
         __NZ( cbP ) ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
-        infoBoxGetPutS info( tinP , ether , *pSControl ) ;
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
+        infoBoxGetPutS info( tinBaseP , ether , *pSControl ) ;
         _IO_
     {
-    else if( !ether.strCompareF( tinP , psttType , T("ftp") ) && pSControl )
+    else if( !ether.strCompareF( tinBaseP , psttType , T("ftp") ) && pSControl )
     }
         }
             cbP = 0 ;
-            ether.delF( tinP , pbP ) ;
+            ether.delF( tinBaseP , pbP ) ;
         {
         if( POOP )
         //U: info.fZombie = 0 ;
 
-        pSControl->readF( tinP , pbP , cbP ) ;
-        ether.newF( tinP , LF , pbP , cbP ) ; ___( pbP ) ;
+        pSControl->readF( tinBaseP , pbP , cbP ) ;
+        ether.newF( tinBaseP , LF , pbP , cbP ) ; ___( pbP ) ;
         cbP = 2 * sizeof( countT ) ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
-        infoBoxGetPutS info( tinP , ether , *pSControl ) ;
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
+        infoBoxGetPutS info( tinBaseP , ether , *pSControl ) ;
         _IO_
     {
-    else if( !ether.strCompareF( tinP , psttHost , T(WWWiDEAFARMcOM) ) && !ether.strCompareF( tinP , psttType , T("dispatcher") ) && pSControl )
+    else if( !ether.strCompareF( tinBaseP , psttHost , T(WWWiDEAFARMcOM) ) && !ether.strCompareF( tinBaseP , psttType , T("dispatcher") ) && pSControl )
     }
         }
             cbP = 0 ;
-            ether.delF( tinP , pbP ) ;
+            ether.delF( tinBaseP , pbP ) ;
         {
         if( POOP )
         //U: info.fZombie = 0 ;
 
-        pSControl->readF( tinP , pbP , cbP ) ;
-        ether.newF( tinP , LF , pbP , cbP ) ; ___( pbP ) ;
+        pSControl->readF( tinBaseP , pbP , cbP ) ;
+        ether.newF( tinBaseP , LF , pbP , cbP ) ; ___( pbP ) ;
         cbP = sizeof( sCountT ) + sizeof( countT ) ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
-        infoBoxGetPutS info( tinP , ether , *pSControl ) ;
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
+        infoBoxGetPutS info( tinBaseP , ether , *pSControl ) ;
         _IO_
     {
-    else if( !ether.strCompareF( tinP , psttHost , T(WWWiDEAFARMcOM) ) && !ether.strCompareF( tinP , psttType , T("time") ) && pSControl )
+    else if( !ether.strCompareF( tinBaseP , psttHost , T(WWWiDEAFARMcOM) ) && !ether.strCompareF( tinBaseP , psttType , T("time") ) && pSControl )
     }
         }
             }
                 cbP = 0 ;
-                ether.delF( tinP , pbP ) ;
+                ether.delF( tinBaseP , pbP ) ;
             {
             if( POOP )
 
             }
-                if( cbP ) pSControl->readF( tinP , pbP , cbP ) ;
+                if( cbP ) pSControl->readF( tinBaseP , pbP , cbP ) ;
                 if( pbP ) pbP[ cbP ] = 0 ;
-                ether.newF( tinP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
+                ether.newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
                 __( cbAll - sizeof( countT ) - cbP ) ;
-                pSControl->readF( tinP , (byteT*)&cbP , sizeof cbP ) ;
+                pSControl->readF( tinBaseP , (byteT*)&cbP , sizeof cbP ) ;
             {
             else
             }
-                pSControl->readF( tinP , pbP , cbP ) ;
-                ether.newF( tinP , LF , pbP , cbP ) ; ___( pbP ) ;
+                pSControl->readF( tinBaseP , pbP , cbP ) ;
+                ether.newF( tinBaseP , LF , pbP , cbP ) ; ___( pbP ) ;
                 cbP = cbAll ;
             {
-            if( !!ether.strIdF( tinP , idf , sttq , S1C(' ') , psttName ) )
+            if( !!ether.strIdF( tinBaseP , idf , sttq , S1C(' ') , psttName ) )
             _IO_
         {
         if( !POOP )
         }
             __1
-            if( !( F(ether.flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ) ether.traceF( tinP , psttName ) ;
+            if( !( F(ether.flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ) ether.traceF( tinBaseP , psttName ) ;
         {
         if( !cbAll )
         //U: info.fZombie = 0 ;
-        pSControl->readF( tinP , (byteT*)&cbAll , sizeof cbAll ) ;
+        pSControl->readF( tinBaseP , (byteT*)&cbAll , sizeof cbAll ) ;
         ZE( countT , cbAll ) ;
-        { textC txt = T(psttName)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        { textC txt = T(psttName)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
 
-        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
-        infoBoxGetPutS info( tinP , ether , *pSControl ) ;
+        //U:{ ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmBoxGetPutDeadmanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&info ) ; }
+        infoBoxGetPutS info( tinBaseP , ether , *pSControl ) ;
         _IO_
     {
-    if( !ether.strCompareF( tinP , psttType , T("box.server") ) || !ether.strCompareF( tinP , psttType , T("box.server.adam") ) || !ether.strCompareF( tinP , psttType , T("box.server.deputy") ) && pSControl )
+    if( !ether.strCompareF( tinBaseP , psttType , T("box.server") ) || !ether.strCompareF( tinBaseP , psttType , T("box.server.adam") ) || !ether.strCompareF( tinBaseP , psttType , T("box.server.deputy") ) && pSControl )
     // GET THE BACKING FILE BYTES
     _IO_
 
@@ -864,7 +864,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT boxC::getF( tinS& tinP , byteT*& pbP , countT& cbP , const flagsT flagsP , const osTextT* const postBodyP , countT costBodyP )/*1*/
+/*1*/voidT boxC::getF( tinBaseS& tinBaseP , byteT*& pbP , countT& cbP , const flagsT flagsP , const osTextT* const postBodyP , countT costBodyP )/*1*/
 
 /**/
 */

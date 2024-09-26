@@ -11,19 +11,19 @@ REST
 
 }
     }
-        ++ s ; ether.osSleepF( tinP , TUCK * 0x20 ) ;
-        sgnGo.giveF( tinP ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x20 ) ;
+        sgnGo.giveF( tinBaseP ) ;
     {
     while( !sgnDone_tmWaiterF )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-    sgnDone_tmGiverF.waitF( tinP ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sgnDone_tmGiverF.waitF( tinBaseP ) ;
 
-    etThread.osThreadF( tinP , countTC() , tmGiverF  , &sgnDone_tmGiverF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
-    etThread.osThreadF( tinP , countTC() , tmWaiterF , &sgnDone_tmWaiterF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
-    signC sgnDone_tmGiverF( tinP , TAG( TAGiDnULL ) ) ;
-    signC sgnDone_tmWaiterF( tinP , TAG( TAGiDnULL ) ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGiverF  , &sgnDone_tmGiverF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmWaiterF , &sgnDone_tmWaiterF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
+    signC sgnDone_tmGiverF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmWaiterF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    signC sgnGo( tinP , TAG( TAGiDnULL ) ) ;
+    signC sgnGo( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 TODO
@@ -31,16 +31,16 @@ TODO
 DONE( tmGiverF )
 }
     }
-        ++ s ; ether.osSleepF( tinP , TOCK * 4 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK * 4 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        sgnGo.giveF( tinP ) ;
+        sgnGo.giveF( tinBaseP ) ;
         CONoUTrAW( "g" ) ;
-        sgnGo.giveF( tinP ) ;
+        sgnGo.giveF( tinBaseP ) ;
         CONoUTrAW( "g" ) ;
-        sgnGo.giveF( tinP ) ;
+        sgnGo.giveF( tinBaseP ) ;
         CONoUTrAW( "g" ) ;
-        sgnGo.giveF( tinP ) ;
+        sgnGo.giveF( tinBaseP ) ;
         CONoUTrAW( "g" ) ;
     {
     while( !ether )
@@ -53,18 +53,18 @@ TASK( tmGiverF )
 DONE( tmWaiterF )
 }
     }
-        ++ s ; ether.osSleepF( tinP , TUCK * 0x40 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         CONoUTrAW( "+" ) ;
-        sgnGo.waitF( tinP /*, flSIGNcWAIT_CLEAR*/ ) ;
+        sgnGo.waitF( tinBaseP /*, flSIGNcWAIT_CLEAR*/ ) ;
     {
     while( !ether )
     CONoUTrAW( "\r\ntmWaiterF going to work\r\n" ) ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK * 5 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK * 5 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 
     signC& sgnGo = *(signC*)pTaskP->c1 ;

@@ -10,33 +10,33 @@
 }
     else __1
     }
-        ether.delF( tinP , pstt ) ;
-        ether.diskFileOrDirDeleteF( tinP , pstt , flFILEoRdIRdELETE_null , cTriesP ) ;
-        ether.strFuseF( tinP , pstt , psttName ) ; ___( pstt ) ;
-        ether.strMakeF( tinP , LF , pstt , T("///") , psttName->idAdam ) ; ___( pstt ) ;
+        ether.delF( tinBaseP , pstt ) ;
+        ether.diskFileOrDirDeleteF( tinBaseP , pstt , flFILEoRdIRdELETE_null , cTriesP ) ;
+        ether.strFuseF( tinBaseP , pstt , psttName ) ; ___( pstt ) ;
+        ether.strMakeF( tinBaseP , LF , pstt , T("///") , psttName->idAdam ) ; ___( pstt ) ;
         ZE( strokeS* , pstt ) ;
         __NZ( psttP ) ;
         handle.closeIfF() ;
     {
     else if( !psttHost->idAdam && !psttType->idAdam )
     }
-        verifyReplyF( tinP ) ;
-        ether.delF( tinP , psttw ) ;
-        if( pSControl ) { textC txt = T("dele ") + T(psttw) + T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
-        ether.strFromF( tinP , psttw , idDoomed , flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttw ) ;
+        verifyReplyF( tinBaseP ) ;
+        ether.delF( tinBaseP , psttw ) ;
+        if( pSControl ) { textC txt = T("dele ") + T(psttw) + T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
+        ether.strFromF( tinBaseP , psttw , idDoomed , flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttw ) ;
         ZE( strokeS* , psttw ) ;
 
         __Z( idDoomed ) ;
-        countT idDoomed = ether.strDigitsToSCountF( tinP , psttP ) ;
+        countT idDoomed = ether.strDigitsToSCountF( tinBaseP , psttP ) ;
         __Z( psttP ) ;
     {
-    else if( psttHost->idAdam && !ether.strCompareF( tinP , psttType , T("pop") ) )
+    else if( psttHost->idAdam && !ether.strCompareF( tinBaseP , psttType , T("pop") ) )
     }
-        verifyReplyF( tinP , 250 ) ;
-        if( pSControl ) { textC txt = T("dele ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        verifyReplyF( tinBaseP , 250 ) ;
+        if( pSControl ) { textC txt = T("dele ")+T(psttName)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
         __NZ( psttP ) ;
     {
-    if( psttHost->idAdam && !ether.strCompareF( tinP , psttType , T("ftp") ) )
+    if( psttHost->idAdam && !ether.strCompareF( tinBaseP , psttType , T("ftp") ) )
     // ZAP THE BACKING FILE BYTES
     _IO_
 
@@ -50,7 +50,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT boxC::zapF( tinS& tinP , countT cTriesP , strokeS* psttP )/*1*/
+/*1*/voidT boxC::zapF( tinBaseS& tinBaseP , countT cTriesP , strokeS* psttP )/*1*/
 
 /**/
 */
@@ -62,7 +62,7 @@
  psttP
   can be 0
  cTriesP
- tinP
+ tinBaseP
 arguments
  local file
  pop

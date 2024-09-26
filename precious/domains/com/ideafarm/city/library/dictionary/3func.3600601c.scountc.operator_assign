@@ -9,13 +9,13 @@
 
 }
     return *this ;
-    ether.memCopyF( tinP , (byteT*)pc , (byteT*)cP.pc , cBytes ) ;
-    ether.memSetF( tinP , (byteT*)pc , cWords * (SC/SB) ) ;
-    ether.newF( tinP , LF , pc , cWords ) ; ___( pc ) ;
+    ether.memCopyF( tinBaseP , (byteT*)pc , (byteT*)cP.pc , cBytes ) ;
+    ether.memSetF( tinBaseP , (byteT*)pc , cWords * (SC/SB) ) ;
+    ether.newF( tinBaseP , LF , pc , cWords ) ; ___( pc ) ;
     countT cWords = 1 + cbit / SC ;
     countT cBytes = 1 + cbit / SB ;
 
-    ether.delF( tinP , pc ) ;
+    ether.delF( tinBaseP , pc ) ;
     cbit = cP.cbit ;
     _IO_
 

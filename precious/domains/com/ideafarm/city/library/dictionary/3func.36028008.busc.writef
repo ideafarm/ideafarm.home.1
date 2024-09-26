@@ -8,43 +8,43 @@
 
 
 }
-    baton.ungrabF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
 
     }
-        sock.writeF( tinP , (byteT*)&cbv , sizeof cbv ) ;
+        sock.writeF( tinBaseP , (byteT*)&cbv , sizeof cbv ) ;
         ZE( countT , cbv ) ;
     {
     else
     }
-        if( cbv ) sock.writeF( tinP , pbP , cbv ) ;
-        sock.writeF( tinP , (byteT*)&cbv , sizeof cbv ) ;
+        if( cbv ) sock.writeF( tinBaseP , pbP , cbv ) ;
+        sock.writeF( tinBaseP , (byteT*)&cbv , sizeof cbv ) ;
 
-        countT cbv = cbP ? cbP : ether.strBodyLengthF( tinP , pbP ) ;
+        countT cbv = cbP ? cbP : ether.strBodyLengthF( tinBaseP , pbP ) ;
     {
     if( pbP )
 
-    { countT idCmd = idCMDbUS_WRITE ; sock.writeF( tinP , (byteT*)&idCmd , sizeof idCmd ) ; }
-    sock.writeF( tinP , (byteT*)&idBus , sizeof idBus ) ;
+    { countT idCmd = idCMDbUS_WRITE ; sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ; }
+    sock.writeF( tinBaseP , (byteT*)&idBus , sizeof idBus ) ;
 
-    sock.connectF( tinP , ifcPORToLD1bUSsERVER , socketC::nicNameIF( tinP , ether , T(WWWiDEAFARMcOM) ) ) ;
-    socketC sock( tinP , ether , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tinBaseP , ifcPORToLD1bUSsERVER , socketC::nicNameIF( tinBaseP , ether , T(WWWiDEAFARMcOM) ) ) ;
+    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 
     _IO_
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( ether ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT busC::writeF( tinS& tinP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/voidT busC::writeF( tinBaseS& tinBaseP , const byteT* const pbP , const countT cbP )/*1*/
 
 /**/
 
 */
  cbP
  pbP
- tinP
+ tinBaseP
 arguments
   \<A HREF=\"5.4230104.1.1.0.html\"\>4230104:  WAKEsHOW( "example.simplest.func.1330008.busC.writeF" )\</A\>
  simplest

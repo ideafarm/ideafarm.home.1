@@ -10,60 +10,60 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("press the enter key") ) ;
+etThread.strokeF( tinBaseP , T("press the enter key") ) ;
 
-etThread.delF( tinP , pstt1m ) ;
-etThread.delF( tinP , pstt1c ) ;
+etThread.delF( tinBaseP , pstt1m ) ;
+etThread.delF( tinBaseP , pstt1c ) ;
 
-etThread.delF( tinP , pstt1InUse ) ;
+etThread.delF( tinBaseP , pstt1InUse ) ;
 
 }
     }
-        etThread.strokeF( tinP , T(" \"")+T(psttc1)+T("\"\r\n") ) ;
+        etThread.strokeF( tinBaseP , T(" \"")+T(psttc1)+T("\"\r\n") ) ;
     {
     FORsTRINGSiN1( pstt1InUse )
-    etThread.strokeF( tinP , T("the following files could not be refreshed, probably because they are being used:\r\n\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("the following files could not be refreshed, probably because they are being used:\r\n\r\n") ) ;
 {
 else
-else if( !pstt1InUse->idAdam ) etThread.strokeF( tinP , T("ok\r\n") ) ;
+else if( !pstt1InUse->idAdam ) etThread.strokeF( tinBaseP , T("ok\r\n") ) ;
 if( !pstt1InUse ) ;
 
-sDone.waitF( tinP ) ;
+sDone.waitF( tinBaseP ) ;
 FIREmYSELF ;
-etThread.delF( tinP , psttDots ) ;
-etThread.diskFileRefreshF( tinP , pstt1InUse , pstt1c , pstt1m , T(psttDots)+T("//box.server.adam/") ) ; ___( pstt1InUse ) ;
+etThread.delF( tinBaseP , psttDots ) ;
+etThread.diskFileRefreshF( tinBaseP , pstt1InUse , pstt1c , pstt1m , T(psttDots)+T("//box.server.adam/") ) ; ___( pstt1InUse ) ;
 ZE( strokeS* , pstt1InUse ) ;
 
-etThread.strReplaceF( tinP , psttDots , 0 , T(",") , T(".") ) ; ___( psttDots ) ;
-etThread.strFromIdPortNicNameF( tinP , psttDots ) ;
+etThread.strReplaceF( tinBaseP , psttDots , 0 , T(",") , T(".") ) ; ___( psttDots ) ;
+etThread.strFromIdPortNicNameF( tinBaseP , psttDots ) ;
 ZE( strokeS* , psttDots ) ;
 
-etThread.osSleepF( tinP , TUCK * 64 ) ;
-sReady.waitF( tinP ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmBoxServerF , &sDone , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReady ) ; }
-signC sDone(  tinP , TAG( TAGiDnULL ) ) ;
-signC sReady(  tinP , TAG( TAGiDnULL ) ) ;
+etThread.osSleepF( tinBaseP , TUCK * 64 ) ;
+sReady.waitF( tinBaseP ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmBoxServerF , &sDone , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReady ) ; }
+signC sDone(  tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sReady(  tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.strFuseSeparateF( tinP , pstt1c , tCopy4 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1c ) ;
-etThread.strFuseSeparateF( tinP , pstt1c , tCopy3 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1c ) ;
-etThread.strFuseSeparateF( tinP , pstt1c , tCopy2 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1c ) ;
-etThread.strFuseSeparateF( tinP , pstt1c , tCopy1 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1c ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1c , tCopy4 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1c ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1c , tCopy3 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1c ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1c , tCopy2 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1c ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1c , tCopy1 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1c ) ;
 ZE( strokeS* , pstt1c ) ;
 
-etThread.strFuseSeparateF( tinP , pstt1m , tMaster4 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1m ) ;
-etThread.strFuseSeparateF( tinP , pstt1m , tMaster3 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1m ) ;
-etThread.strFuseSeparateF( tinP , pstt1m , tMaster2 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1m ) ;
-etThread.strFuseSeparateF( tinP , pstt1m , tMaster1 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1m ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1m , tMaster4 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1m ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1m , tMaster3 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1m ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1m , tMaster2 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1m ) ;
+etThread.strFuseSeparateF( tinBaseP , pstt1m , tMaster1 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( pstt1m ) ;
 ZE( strokeS* , pstt1m ) ;
 
-etThread.fileTimestampsF( tinP , tMasterLike ) ;
-etThread.boxPutF( tinP , tMaster4 , "ghij" ) ;
-etThread.boxPutF( tinP , tMaster3 , "def"  ) ;
-etThread.boxPutF( tinP , tMaster2 , "bc"   ) ;
-etThread.boxPutF( tinP , tMaster1 , "a"    ) ;
+etThread.fileTimestampsF( tinBaseP , tMasterLike ) ;
+etThread.boxPutF( tinBaseP , tMaster4 , "ghij" ) ;
+etThread.boxPutF( tinBaseP , tMaster3 , "def"  ) ;
+etThread.boxPutF( tinBaseP , tMaster2 , "bc"   ) ;
+etThread.boxPutF( tinBaseP , tMaster1 , "a"    ) ;
 
 TN( tCopy4      , "///ideafarm/ephemeral/tmp/7210104/copy/file4"   ) ;
 TN( tCopy3      , "///ideafarm/ephemeral/tmp/7210104/copy/file3"   ) ;
@@ -82,7 +82,7 @@ TODO
 
 DONE( tmBoxServerF )
 }
-    etThread.boxServerF( tinP , 0 , 1 ) ;
+    etThread.boxServerF( tinBaseP , 0 , 1 ) ;
     ++ sReady ;
     signC& sReady = *(signC*)pTaskP->c1 ;
 {
@@ -92,7 +92,7 @@ TASK( tmBoxServerF )
 /*1*/WAKEhIDE( "example.simplest.func.1030017.etherC.diskFileRefreshF" )/*1*/
 /**/
 */
- for example: etThread.diskFileRefreshF( tinP , pstt1InUse , pstt1c , pstt1m , T("209.24.233.22//box.server.adam/") ) ;
+ for example: etThread.diskFileRefreshF( tinBaseP , pstt1InUse , pstt1c , pstt1m , T("209.24.233.22//box.server.adam/") ) ;
 in such a setup, the ip address of the server computer would be specified in the diskFileRefreshF code line
 client computers elsewhere on the internet would use diskFileRefreshF to refresh their local copies of the master files
 the master files would be kept on this server computer

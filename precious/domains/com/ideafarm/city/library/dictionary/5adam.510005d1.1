@@ -19,7 +19,7 @@ THREADmODE3rESTORE
                 else       etThread.osThreadF( TaRG1( tmListServeF ) , (countT)pso , (countT)&puseMaster , (countT)&puseHelper ) ;
                 if( POOP ) { DEL( pso ) ; }
                 __( bRefuse ) ;
-                socket.acceptF( tinP , pso , idPortPeer , nnPeer , bRefuse ) ; ___( pso ) ;
+                socket.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ; ___( pso ) ;
                 ZE( boolT , bRefuse ) ;
                 ZE( countT , idPortPeer ) ;
                 nicNameC nnPeer ;
@@ -29,9 +29,9 @@ THREADmODE3rESTORE
     
             if( idCycle == 1 ) etThread.osThreadF( TaRG1( tmLoadHelperF ) , (countT)&puseMaster , (countT)&puseHelper ) ;
     
-            socket.listenF( tinP ) ;
-            homeS::homeIF().idPortListServerEmailIdAccount = socket.bindF( tinP ) ;
-            socketC socket( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            socket.listenF( tinBaseP ) ;
+            homeS::homeIF().idPortListServerEmailIdAccount = socket.bindF( tinBaseP ) ;
+            socketC socket( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     
             ++ idCycle ;
         {
@@ -40,10 +40,10 @@ THREADmODE3rESTORE
     {
     IFsCRATCH
     
-    puseC puseWork2( tinP , ifcIDpOOL_ADAMtEMP ) ;
-    puseC puseMaster( tinP , "list.idAccount.to.email" , flPOOLc_null , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) ) ;
-    puseC puseWork1( tinP , ifcIDpOOL_ADAMtEMP ) ;
-    puseC puseHelper( tinP , "list.email.to.idAccount" ) ;
+    puseC puseWork2( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
+    puseC puseMaster( tinBaseP , "list.idAccount.to.email" , flPOOLc_null , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) ) ;
+    puseC puseWork1( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
+    puseC puseHelper( tinBaseP , "list.email.to.idAccount" ) ;
     _IO_
 {
 THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
@@ -52,7 +52,7 @@ TODO
 
 DONE( tmLoadHelperF )
 }
-    /*PROD*/ ether.osThreadAdamF( tinP , ifcIDaDAM_LISTsERVERiDaCCOUNTdESCRIPTION ) ; //PRODUCTION
+    /*PROD*/ ether.osThreadAdamF( tinBaseP , ifcIDaDAM_LISTsERVERiDaCCOUNTdESCRIPTION ) ; //PRODUCTION
 
     //etThread.osThreadF( TaRG1( tmTestQueryF ) ) ;
 
@@ -70,18 +70,18 @@ DONE( tmLoadHelperF )
         sIn >> finger ;
         ZE( countT , finger ) ;
     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
         sOut << (strokeS*)tEmail ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     
         TN( tEmail , "9bn.3vho@gmail.com" ) ;
     {
@@ -89,16 +89,16 @@ DONE( tmLoadHelperF )
 
     THREADmODE3rESTORE
     }
-        PUSE.listOld2012F( tinP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , ifcIDhOWlIST_FIFO , 0 , 0 , listingInspect_ad5_chatterHelper_CBF ) ;
+        PUSE.listOld2012F( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , ifcIDhOWlIST_FIFO , 0 , 0 , listingInspect_ad5_chatterHelper_CBF ) ;
         puseC puseh( puseHelperP ) ;
     {
 
     }
         POPtINaRGS
-        listC::walkIF( tinP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ; //U::FUNCTION CHANGED: THE OLD CODE WALKED FIFO
-        tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = (countT)&puseHelperP  ;
-        tinP.ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
-        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listingInspect_ad5_chatterMaster_CBF  ;
+        listC::walkIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ; //U::FUNCTION CHANGED: THE OLD CODE WALKED FIFO
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = (countT)&puseHelperP  ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listingInspect_ad5_chatterMaster_CBF  ;
         PUSHtINaRGS
 
         puseC pusem( puseMasterP ) ;
@@ -106,8 +106,8 @@ DONE( tmLoadHelperF )
     THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK >> 2 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !homeS::homeIF().idPortListServerEmailIdAccount )
 
@@ -135,18 +135,18 @@ DONE( tmTestQueryF )
         sIn >> finger ;
         ZE( countT , finger ) ;
     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
         sOut << idAccount ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     {
     for( countT idAccount = 1 ; idAccount <= 1 ; idAccount ++ )
 {
@@ -171,18 +171,18 @@ DONE( tmTestQueryF )
         sIn >> finger ;
         ZE( countT , finger ) ;
     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
         sOut << (strokeS*)tEmail ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         TN( tEmail , "123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0" ) ;
     {
@@ -204,14 +204,14 @@ TASK( tmTestQueryF )
                         }
                             break ;
                             }
-                                PUSE( tinP , postEmail ) ;
+                                PUSE( tinBaseP , postEmail ) ;
                                 CONoUTrAW( T("HELPER| idAccount: ")+TF3(idAccount,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T(" ; email: \"")+T(postEmail)+T("\"\r\n") ) ;
-                                etherC::strSquishIF( tinP , postEmail , pcStretched , ccStretched ) ; ___( postEmail ) ;
+                                etherC::strSquishIF( tinBaseP , postEmail , pcStretched , ccStretched ) ; ___( postEmail ) ;
                                 ZE( osTextT* , postEmail ) ;
-                                puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                                puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
 
                                 countT idAccount = *(countT*)Ac OUNT ;
-                                countT  ccStretched = thirdC::c_strlenIF( tinP , pcStretched ) ;
+                                countT  ccStretched = thirdC::c_strlenIF( tinBaseP , pcStretched ) ;
                                 const countT* pcStretched = pczListNameP + 1 ;
                             {
                         {
@@ -224,31 +224,31 @@ TASK( tmTestQueryF )
                     break ;
 
                     }
-                        PUSE( tinP , *(byteT**)&pczListNameKid ) ;
-                        puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                        PUSE( tinBaseP , *(byteT**)&pczListNameKid ) ;
+                        puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
                     {
 
                     }
                         argP.flagsWalk = flagsSave ;
 
-                        aList.walkOldF( tinP , ifcIDmODEaPTsINK_LEADsHOES , &argP , 0 , listingInspect_ad5_chatterHelper_CBF , pczListNameKid ) ;
+                        aList.walkOldF( tinBaseP , ifcIDmODEaPTsINK_LEADsHOES , &argP , 0 , listingInspect_ad5_chatterHelper_CBF , pczListNameKid ) ;
 
                         argP.flagsWalk |= flLISTwALKoLD_DOnOTuNGRABlIST ;
                         flagsT flagsSave = argP.flagsWalk ;
     
                         pczListNameKid[ ccDad    ] = 0 ;
                         pczListNameKid[ ccDad ++ ] = A lIST.idNameF() ;
-                        thirdC::c_memcpyIF( tinP , (byteT*)pczListNameKid , (byteT*)pczListNameP , sizeof( countT ) * ccDad ) ;
+                        thirdC::c_memcpyIF( tinBaseP , (byteT*)pczListNameKid , (byteT*)pczListNameP , sizeof( countT ) * ccDad ) ;
                             
                     {
                     if( pczListNameKid )
 
                     }
-                        pczListNameKid = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccDad + 2 ) ) ; ___( pczListNameKid ) ;
-                        puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                        pczListNameKid = (countT*)PUSE.newF( tinBaseP , LF , sizeof( countT ) * ( ccDad + 2 ) ) ; ___( pczListNameKid ) ;
+                        puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
                     {
                     ZE( countT* , pczListNameKid ) ;
-                    countT ccDad = thirdC::c_strlenIF( tinP , pczListNameP ) ;
+                    countT ccDad = thirdC::c_strlenIF( tinBaseP , pczListNameP ) ;
                     
                     listC& aList = A lIST ;
                 {
@@ -258,7 +258,7 @@ TASK( tmTestQueryF )
         {
         if( !POOP )
 
-        __( !listingC::bIsListingIF( tinP , aptP ) ) ;
+        __( !listingC::bIsListingIF( tinBaseP , aptP ) ) ;
         listingC* pdListing = &APT( listingC , aptP ) ;
     {
     if( aptP )
@@ -268,7 +268,7 @@ TASK( tmTestQueryF )
 
     if( POOP ) return 0 ;
 {
-sCountT listingInspect_ad5_chatterHelper_CBF( tinS& tinP , aptC& aptP , listWalkArgOldS& argP , const countT* pczListNameP )
+sCountT listingInspect_ad5_chatterHelper_CBF( tinBaseS& tinBaseP , aptC& aptP , listWalkArgOldS& argP , const countT* pczListNameP )
 
 }
     return heavy ;
@@ -282,17 +282,17 @@ sCountT listingInspect_ad5_chatterHelper_CBF( tinS& tinP , aptC& aptP , listWalk
                         }
                             break ;
 
-                            if( bDelete ) listingC::deleteOldIF( tinP , aptP , argP.cValueTestSpec , argP.pStk_aptPrune ) ;
+                            if( bDelete ) listingC::deleteOldIF( tinBaseP , aptP , argP.cValueTestSpec , argP.pStk_aptPrune ) ;
 
                             }
-                                PUSE( tinP , *(byteT**)&pczEmail ) ;
+                                PUSE( tinBaseP , *(byteT**)&pczEmail ) ;
                                 }
                                     if( idAccountVerify != idAccount ) bDelete = 1 ;
     
                                     THREADmODE3rESTORE
                                     //CONoUTrAW3( "STORED  idAcc " , idAccount , " into helper file using postzEmail as list name\r\n" ) ;
                                     }
-                                        idAccountVerify = PUSE.list_countT_Old2012F( tinP , pczEmail , idAccount ) ;
+                                        idAccountVerify = PUSE.list_countT_Old2012F( tinBaseP , pczEmail , idAccount ) ;
                                         puseC puseHelper( *(puseC*)argP.pc Utility[ 0 ] ) ;
                                     {
                                     //CONoUTrAW3( "STORING idAcc " , idAccount , " into helper file using postzEmail as list name\r\n" ) ;
@@ -300,26 +300,26 @@ sCountT listingInspect_ad5_chatterHelper_CBF( tinS& tinP , aptC& aptP , listWalk
                                     ZE( countT , idAccountVerify ) ;
             
                                     //CONoUTrAW( T(pczEmail)+T("\r\n") ) ;
-                                    etherC::strStretchIF( tinP , pczEmail , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , postzEmail ) ;
+                                    etherC::strStretchIF( tinBaseP , pczEmail , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , postzEmail ) ;
                                     pczEmail[ offo ] = 0 ;
                                     for( countT offo = 0 ; offo < ccHelper ; offo ++ ) pczEmail[ offo ] = LISTnAMEsYS_PLACEhOLDER ;
                                 {
                                 if( pczEmail )
-                                countT* pczEmail = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccHelper + 1 ) ) ; ___( pczEmail ) ;
-                                const countT ccHelper = 1 + thirdC::c_strlenIF( tinP , postzEmail ) ;
+                                countT* pczEmail = (countT*)PUSE.newF( tinBaseP , LF , sizeof( countT ) * ( ccHelper + 1 ) ) ; ___( pczEmail ) ;
+                                const countT ccHelper = 1 + thirdC::c_strlenIF( tinBaseP , postzEmail ) ;
     
                                 CONoUTrAW( T(/*DASH127 "\r\n" DASH127 "\r\n"*/ "MASTER| idAccount: ")+TF3(idAccount,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T(" ; email: \"")+T(postzEmail)+T("\"\r\n") ) ;
-                                etherC::strSquishIF( tinP , idAccount , pcStretched ) ;
+                                etherC::strSquishIF( tinBaseP , idAccount , pcStretched ) ;
                                 ZE( countT , idAccount ) ;
     
-                                puseC puset( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                                puseC puset( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
                             {
                             ZE( boolT , bDelete ) ;
 
-                            thirdC::c_strlwrIF( tinP , postzEmail ) ; //U::REMOVE AFTER ELIMINATED ALL SOURCES OF MIXED CASE OR UPPER CASE VALUES
+                            thirdC::c_strlwrIF( tinBaseP , postzEmail ) ; //U::REMOVE AFTER ELIMINATED ALL SOURCES OF MIXED CASE OR UPPER CASE VALUES
 
                             osTextT*      postzEmail  = (osTextT*)Ao StEXT ;
-                            countT        ccStretched = thirdC::c_strlenIF( tinP , pcStretched ) ;
+                            countT        ccStretched = thirdC::c_strlenIF( tinBaseP , pcStretched ) ;
                             const countT* pcStretched = pczListNameP + 1 ;
                         {
                         case ifcIDtYPEmIXINdATUM_blob : //listing_blob_C
@@ -331,30 +331,30 @@ sCountT listingInspect_ad5_chatterHelper_CBF( tinS& tinP , aptC& aptP , listWalk
                     break ;
 
                     }
-                        PUSE( tinP , *(byteT**)&pczListNameKid ) ;
-                        puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                        PUSE( tinBaseP , *(byteT**)&pczListNameKid ) ;
+                        puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
                     {
 
                     }
                         argP.flagsWalk = flagsSave ;
 
-                        aList.walkOldF( tinP , ifcIDmODEaPTsINK_LEADsHOES , &argP , 0 , listingInspect_ad5_chatterMaster_CBF , pczListNameKid ) ;
+                        aList.walkOldF( tinBaseP , ifcIDmODEaPTsINK_LEADsHOES , &argP , 0 , listingInspect_ad5_chatterMaster_CBF , pczListNameKid ) ;
 
                         argP.flagsWalk |= flLISTwALKoLD_DOnOTuNGRABlIST ;
                         flagsT flagsSave = argP.flagsWalk ;
     
                         pczListNameKid[ ccDad    ] = 0 ;
                         pczListNameKid[ ccDad ++ ] = A lIST.idNameF() ;
-                        thirdC::c_memcpyIF( tinP , (byteT*)pczListNameKid , (byteT*)pczListNameP , sizeof( countT ) * ccDad ) ;
+                        thirdC::c_memcpyIF( tinBaseP , (byteT*)pczListNameKid , (byteT*)pczListNameP , sizeof( countT ) * ccDad ) ;
                     {
                     if( pczListNameKid )
 
                     }
-                        pczListNameKid = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccDad + 2 ) ) ; ___( pczListNameKid ) ;
-                        puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                        pczListNameKid = (countT*)PUSE.newF( tinBaseP , LF , sizeof( countT ) * ( ccDad + 2 ) ) ; ___( pczListNameKid ) ;
+                        puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
                     {
                     ZE( countT* , pczListNameKid ) ;
-                    countT ccDad = thirdC::c_strlenIF( tinP , pczListNameP ) ;
+                    countT ccDad = thirdC::c_strlenIF( tinBaseP , pczListNameP ) ;
                     
                     listC& aList = A lIST ;
                 {
@@ -364,7 +364,7 @@ sCountT listingInspect_ad5_chatterHelper_CBF( tinS& tinP , aptC& aptP , listWalk
         {
         if( !POOP )
 
-        __( !listingC::bIsListingIF( tinP , aptP ) ) ;
+        __( !listingC::bIsListingIF( tinBaseP , aptP ) ) ;
         listingC* pdListing = &APT( listingC , aptP ) ;
     {
     if( aptP )
@@ -374,7 +374,7 @@ sCountT listingInspect_ad5_chatterHelper_CBF( tinS& tinP , aptC& aptP , listWalk
 
     if( POOP ) return 0 ;
 {
-sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalkArgOldS& argP , const countT* pczListNameP )
+sCountT listingInspect_ad5_chatterMaster_CBF( tinBaseS& tinBaseP , aptC& aptP , listWalkArgOldS& argP , const countT* pczListNameP )
 
 
 
@@ -392,16 +392,16 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
             }
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */
                 if( !bFake ) { DEL( pTaskP ) ; } /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.  THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */
-                if( tinP.monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] = - 1 ;
+                if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] = - 1 ;
                 TELL( "DONE0: i am outa here" )
                 ;
-                    : thirdC::os_cAllKidThreadsI_IF( tinP )
-                    ? thirdC::os_cAllOrphanThreadsI_IF( tinP )
+                    : thirdC::os_cAllKidThreadsI_IF( tinBaseP )
+                    ? thirdC::os_cAllOrphanThreadsI_IF( tinBaseP )
                 countT& cAllThreads = bOrphan
                 boolT bFake   = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE   ) : 0 ;
                 boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;
                 TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )
-                TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
+                TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
             {
             if( pEtThread ) *pEtThread = 0 ;
 
@@ -409,55 +409,55 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                 }
                     }
                         }
-                            TELL( "DONE0: after deleting pEtThread, which destroys tinP in poolOld" )
+                            TELL( "DONE0: after deleting pEtThread, which destroys tinBaseP in poolOld" )
                             if( pEtThread ) { BLAMMO ; }
-                            PUSE( tinP , *(byteT**)&pEtThread ) ;
+                            PUSE( tinBaseP , *(byteT**)&pEtThread ) ;
                             TINSL
                         {
                         }
-                            DELzOMBIE( pDoomed ) ; /* tinP IS DESTROYED HERE */
+                            DELzOMBIE( pDoomed ) ; /* tinBaseP IS DESTROYED HERE */
                             etherC* pDoomed = pEtThread ;
                         {
-                        DEL( tinP.pEtScratch ) ;
-                        DEL( tinP.pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
-                        TELL( "DONE0: deleting etThread (and tinP)" ) ;
-                        tinP.pEther = 0 ;
+                        DEL( ((tinNormalS&)tinBaseP).pEtScratch ) ;
+                        DEL( ((tinNormalS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
+                        TELL( "DONE0: deleting etThread (and tinBaseP)" ) ;
+                        ((tinNormalS&)tinBaseP).pEther = 0 ;
                         TELL( "DONE0: testing poolOld" ) ;
 
                         }
-                            tinP.pEtScratch->delF( tinP , psttThreadFile ) ;
-                            tinP.pEtScratch->boxZapF( tinP , psttThreadFile ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;
                             TELL( "DONE0: deleting thread file" ) ;
                         {
                         if( psttThreadFile )
                     {
                     if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/
-                    TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
+                    TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
                 {
 
                 }
                     }
-                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
+                        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                        if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
                         }
                             TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;
                             }
-                                while( tinP.cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ; }
-                                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                                while( ((tinNormalS&)tinBaseP).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }
+                                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                             {
                             TELL( "DONE0: waiting for my kid threads to end" ) ;
 
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tinP)) & flADAMmODE1_WHEREaLL && !( F(tinP.monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
                             TELL( "DONE0: conditionally calling etherWhereF" ) ;
                         {
                         else
-                        if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
+                        if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
 
                         TELL( "DONE0: after returning from application code" ) ;
-                        tinP.idPhase2 = 0 ;
-                        if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
-                        if( tinP.monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ tinP.monitor.idThread ] ) ) { BLAMMO ; }
-                        TINSL /*THIS IS NEEDED BECAUSE tinP WAS DELETED IF I AM tmWindowsF */
+                        ((tinNormalS&)tinBaseP).idPhase2 = 0 ;
+                        if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
+                        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                        TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
                     {
                     /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/
                                                                                                                                                                     \
@@ -475,7 +475,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
         if( POOP ) POOPR
 
         }
-            psoP->writeF( tinP , sOut ) ;
+            psoP->writeF( tinBaseP , sOut ) ;
             }
                 }
                     break ;
@@ -487,25 +487,25 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                     break ;
 
                     DELlIST( fieldEditParamOutC , pOutMaster ) ;
-                    puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                    puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                     if( !POOP ) sOut << ( postzEmail ? (strokeS*)T(postzEmail) : (strokeS*)0 ) ;
 
                     if( !POOP && pOutMaster && pOutMaster->spBlob ) postzEmail = pOutMaster->spBlob ;
                     ZE( const osTextT* , postzEmail ) ;
 
                     }
-                        PUSE( tinP , *(byteT**)&pczIdAccount ) ;
+                        PUSE( tinBaseP , *(byteT**)&pczIdAccount ) ;
                         }
                             THREADmODE3rESTORE
                             }
                                 }
-                                    listC::fieldIF( tinP , pOutMaster , hList , pczField ,  _fe_queryC() , LF ) ; ___( pOutMaster ) ;
+                                    listC::fieldIF( tinBaseP , pOutMaster , hList , pczField ,  _fe_queryC() , LF ) ; ___( pOutMaster ) ;
                                     countT pczField[] = { /*postEmail*/0x87654321 , 0 } ;
                                             
-                                    listC::openIF( tinP , hList , pczIdAccount ) ;
-                                    handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                    listC::openIF( tinBaseP , hList , pczIdAccount ) ;
+                                    handleC hList( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                         
-                                    grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+                                    grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
                                 {
 
                                 puseC puseMaster( puseMasterP ) ;
@@ -513,12 +513,12 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                             THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
 
                             //CONoUTrAW( T(pczIdAccount)+T("\r\n") ) ;
-                            etherC::strStretchIF( tinP , pczIdAccount , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , idAccount ) ;
+                            etherC::strStretchIF( tinBaseP , pczIdAccount , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , idAccount ) ;
                             pczIdAccount[ offo ] = 0 ;
                             for( countT offo = 0 ; offo < ccMaster ; offo ++ ) pczIdAccount[ offo ] = LISTnAMEsYS_PLACEhOLDER ;
                         {
                         if( pczIdAccount )
-                        countT* pczIdAccount = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccMaster + 1 ) ) ; ___( pczIdAccount ) ;
+                        countT* pczIdAccount = (countT*)PUSE.newF( tinBaseP , LF , sizeof( countT ) * ( ccMaster + 1 ) ) ; ___( pczIdAccount ) ;
                         const countT ccMaster = 1 + sizeof idAccount ;
                     {
                     if( idAccount )
@@ -535,13 +535,13 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                     if( !POOP ) sOut << idAccount ;
 
                     }
-                        PUSE( tinP , *(byteT**)&pczEmail ) ;
+                        PUSE( tinBaseP , *(byteT**)&pczEmail ) ;
                         }
                             THREADmODE3rESTORE
                             }
                                 }
                                     DELlIST( fieldEditParamOutC , pOutMaster ) ;
-                                    puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                                    puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                                 {
                                 //DELlIST( fieldEditParamOutC , pOutMaster ) ;
 
@@ -553,7 +553,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                                             LOGrAW( T("[helper,master] : \"")+T(postzEmail)+T("\" \"")+tEmail+T("\"\r\n") ) ;
                                             LOGrAW( "EXCEPTION: a new idAccount value was dispensed for an email, but that new idAccount value already existed in the master list, so the master was not modified:\r\nthis leaves the master and helper in an inconsistent state\r\n" ) ;
                                         {
-                                        if( thirdC::c_strcmpIF( tinP , postzEmail , tEmail ) )
+                                        if( thirdC::c_strcmpIF( tinBaseP , postzEmail , tEmail ) )
                                     {
                                     if( !POOP )
                                     __Z( postzEmail ) ;
@@ -561,38 +561,38 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                                 {
                                 if( !POOP )
                 
-                                PUSE( tinP , *(byteT**)&pczIdAccount ) ;
+                                PUSE( tinBaseP , *(byteT**)&pczIdAccount ) ;
                                 }
                                     }
                                         __Z( pOutMaster ) ;
-                                        flagsT flagsRC = listC::fieldIF( tinP , pOutMaster , hList , pczField , _fe_modePushIfNotExistC() | _fe_pushC( (osTextT*)tEmail ) | _fe_modeQueryNewC() |  _fe_queryC() , LF ) ; ___( pOutMaster ) ;
+                                        flagsT flagsRC = listC::fieldIF( tinBaseP , pOutMaster , hList , pczField , _fe_modePushIfNotExistC() | _fe_pushC( (osTextT*)tEmail ) | _fe_modeQueryNewC() |  _fe_queryC() , LF ) ; ___( pOutMaster ) ;
                                         countT pczField[] = { /*postEmail*/0x87654321 , 0 } ;
                                             
-                                        listC::openIF( tinP , hList , pczIdAccount ) ;
-                                        handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                        listC::openIF( tinBaseP , hList , pczIdAccount ) ;
+                                        handleC hList( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                         
-                                        grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+                                        grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
                                     {
 
                                     puseC puseMaster( puseMasterP ) ;
                         
                                     //CONoUTrAW( T(pczIdAccount)+T("\r\n") ) ;
-                                    etherC::strStretchIF( tinP , pczIdAccount , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , idAccount ) ;
+                                    etherC::strStretchIF( tinBaseP , pczIdAccount , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , idAccount ) ;
                                     pczIdAccount[ offo ] = 0 ;
                                     for( countT offo = 0 ; offo < ccMaster ; offo ++ ) pczIdAccount[ offo ] = LISTnAMEsYS_PLACEhOLDER ;
                                 {
                                 if( pczIdAccount )
                                 ZE( fieldEditParamOutC* , pOutMaster ) ;
-                                countT* pczIdAccount = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccMaster + 1 ) ) ; ___( pczIdAccount ) ;
+                                countT* pczIdAccount = (countT*)PUSE.newF( tinBaseP , LF , sizeof( countT ) * ( ccMaster + 1 ) ) ; ___( pczIdAccount ) ;
                                 const countT ccMaster = 1 + sizeof idAccount ;
-                                puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                                puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
                             {
                             if( bNew ) // IF WASN'T ON THE HELPER LIST THEN ADD THIS ACCOUNT TO THE MASTER LIST
 
                             }
                                 }
                                     DELlIST( fieldEditParamOutC , pOutHelper ) ;
-                                    puseC puseAT( tinP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                                    puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                                 {
                                 //DELlIST( fieldEditParamOutC , pOutHelper ) ;
                                 }
@@ -608,13 +608,13 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
 
                                 }
                                     __Z( pOutHelper ) ;
-                                    bNew = !!( F(flLISTwALKrETURNcODE_NEWlISTING) & listC::fieldIF( tinP , pOutHelper , hList , pczField , _fe_modePushIfNotExistC() | _fe_pushIdSerialC( "idAccount" ) | _fe_modeQueryNewC() |  _fe_queryC() ) , LF ) ; ___( pOutHelper ) ;
+                                    bNew = !!( F(flLISTwALKrETURNcODE_NEWlISTING) & listC::fieldIF( tinBaseP , pOutHelper , hList , pczField , _fe_modePushIfNotExistC() | _fe_pushIdSerialC( "idAccount" ) | _fe_modeQueryNewC() |  _fe_queryC() ) , LF ) ; ___( pOutHelper ) ;
                                     countT pczField[] = { /*U::idAccount*/0x87654321 , 0 } ;
                         
-                                    listC::openIF( tinP , hList , pczEmail ) ;
-                                    handleC hList( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                    listC::openIF( tinBaseP , hList , pczEmail ) ;
+                                    handleC hList( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     
-                                    grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+                                    grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
                                 {
                                 ZE( fieldEditParamOutC* , pOutHelper ) ;
     
@@ -637,20 +637,20 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
                             // I AM A SINGLE CELL OF A POTENTIALLY MULTICELL LIST SERVER FOR THIS DATA
 
                             //CONoUTrAW( T(pczEmail)+T("\r\n") ) ;
-                            etherC::strStretchIF( tinP , pczEmail , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , tEmail ) ;
+                            etherC::strStretchIF( tinBaseP , pczEmail , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , tEmail ) ;
                             pczEmail[ offo ] = 0 ;
                             for( countT offo = 0 ; offo < ccHelper ; offo ++ ) pczEmail[ offo ] = LISTnAMEsYS_PLACEhOLDER ;
                         {
                         if( pczEmail )
-                        countT* pczEmail = (countT*)PUSE.newF( tinP , LF , sizeof( countT ) * ( ccHelper + 1 ) ) ; ___( pczEmail ) ;
-                        const countT ccHelper = 1 + tEmail.csF( tinP ) ;
+                        countT* pczEmail = (countT*)PUSE.newF( tinBaseP , LF , sizeof( countT ) * ( ccHelper + 1 ) ) ; ___( pczEmail ) ;
+                        const countT ccHelper = 1 + tEmail.csF( tinBaseP ) ;
                     {
-                    if( tEmail.csF( tinP ) )
+                    if( tEmail.csF( tinBaseP ) )
                     ZE( countT , idAccount ) ;
 
-                    etThread.delF( tinP , psttEmail ) ;
+                    etThread.delF( tinBaseP , psttEmail ) ;
                     TN( tEmail , "" ) ; tEmail = T(psttEmail) ;
-                    if( psttEmail ) etThread.strConvertToLowerCaseF( tinP , psttEmail ) ;
+                    if( psttEmail ) etThread.strConvertToLowerCaseF( tinBaseP , psttEmail ) ;
                     sIn >> psttEmail ; ___( psttEmail ) ;
                     ZE( strokeS* , psttEmail ) ;
                     _IO_
@@ -661,7 +661,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
 
             sOut << (countT)1 ; //idFormat
             sOut << (countT)FINGERnEG_LISTsERVERrEPLY ;
-            soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             sIn >> idCmd ;
             ZE( countT , idCmd ) ;
@@ -674,13 +674,13 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinS& tinP , aptC& aptP , listWalk
             sIn >> finger ;
             ZE( countT , finger ) ;
 
-            psoP->readF( tinP , sIn ) ;
-            soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+            psoP->readF( tinBaseP , sIn ) ;
+            soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
             _IO_
         {
         while( !ether && !POOP )
 
-        psoP->etherF( tinP , *tinP.pEtScratch ) ;
+        psoP->etherF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH

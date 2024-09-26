@@ -10,19 +10,19 @@
 }
     return bFound ;
     }
-        else                             strSubstringF( tinP , psttP , idfSave , ccBig   , psttBigP , csttExtraP ) ;
-        else if( idd                   ) strSubstringF( tinP , psttP , idfSave , idLathI , psttBigP , csttExtraP ) ;
-             if( idd && idd == idfSave ) strMakeF(      tinP , LF , psttP                                , T("")    , csttExtraP ) ;
+        else                             strSubstringF( tinBaseP , psttP , idfSave , ccBig   , psttBigP , csttExtraP ) ;
+        else if( idd                   ) strSubstringF( tinBaseP , psttP , idfSave , idLathI , psttBigP , csttExtraP ) ;
+             if( idd && idd == idfSave ) strMakeF(      tinBaseP , LF , psttP                                , T("")    , csttExtraP ) ;
 
         countT idLathI = idd - 1 ;_WQ
         bFound = !!idd ;_WQ
-        countT idd = strIdF( tinP , idFirstP , sttQuoteP , sttSmallP , psttBigP ) ;_WQ
+        countT idd = strIdF( tinBaseP , idFirstP , sttQuoteP , sttSmallP , psttBigP ) ;_WQ
         countT idfSave = idFirstP ;_WQ
     {
     else
     }
         idFirstP = 0 ;_WQ
-        strMakeF( tinP , LF , psttP , T("") ) ;_WQ
+        strMakeF( tinBaseP , LF , psttP , T("") ) ;_WQ
     {
     if( ccBig < idFirstP )
     countT ccBig = psttBigP->idAdam ;_WQ
@@ -42,7 +42,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT etherC::strSubstringF( tinS& tinP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , const strokeS& sttSmallP , const strokeS* psttBigP , const countT csttExtraP )/*1*/
+/*1*/boolT etherC::strSubstringF( tinBaseS& tinBaseP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , const strokeS& sttSmallP , const strokeS* psttBigP , const countT csttExtraP )/*1*/
 
 /**/
 */

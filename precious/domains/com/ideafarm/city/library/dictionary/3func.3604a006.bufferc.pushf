@@ -10,12 +10,12 @@
 }
     return bRefused ;
 
-    grab.ungrabF( tinP ) ;
+    grab.ungrabF( tinBaseP ) ;
     }
-        else freezeF( tinP , 1 ) ;
+        else freezeF( tinBaseP , 1 ) ;
         }
             pbCursor += cbP ;
-            thirdC::c_memcpyIF( tinP , pbCursor , pbP , cbP ) ;
+            thirdC::c_memcpyIF( tinBaseP , pbCursor , pbP , cbP ) ;
             pbCursor += sizeof( countT ) ;
             *(countT*)pbCursor = cbP ;
             bRefused = 0 ;
@@ -25,9 +25,9 @@
     {
     if( !bFrozen )
     boolT bRefused = 1 ;
-    grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/boolT bufferC::pushF( tinS& tinP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/boolT bufferC::pushF( tinBaseS& tinBaseP , const byteT* const pbP , const countT cbP )/*1*/
 
 /**/
 */

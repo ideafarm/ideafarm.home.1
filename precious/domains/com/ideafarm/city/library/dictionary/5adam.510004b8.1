@@ -10,17 +10,17 @@
 REST
 
 }
-    while( cGorillas ) { ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ; }
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    while( cGorillas ) { ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 }
-    etThread.osThreadF( tinP , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cGorillas , (countT)&gg ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cGorillas , (countT)&gg ) ;
     cGorillas ++ ;
 
     }
-        ++ s ; etThread.osSleepF( tinP , TOCK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     else
     if( bWoth ) bWoth = 0 ;
@@ -31,7 +31,7 @@ countT cTries = 0x3 ;
 //CNR: countT cTries = 0x2 ;
 //SAMEO: countT cTries = 0x10 ;
 
-grabOldS gg( tinP , TAG( TAGiDnULL ) ) ;
+grabOldS gg( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( countT , cGorillas ) ;
 
 TODO
@@ -41,25 +41,25 @@ DONE( tmGorillaF )
     cGorillas -- ;
     }
         }
-            ungrabF( tinP , gg ) ;
+            ungrabF( tinBaseP , gg ) ;
             if( !( ++ idGrab % 0x10000 ) ) { CONoUTrAW( postt ) ; }
-            grabF( tinP , gg ) ;
+            grabF( tinBaseP , gg ) ;
         {
         for( countT ii = 1 ; ii <= 0x1 ; ii ++ )
 
         //}
-        //    ++ s ; etThread.osSleepF( tinP ) ;
-        //    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        //    ++ s ; etThread.osSleepF( tinBaseP ) ;
+        //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         //{
         //U::WITHOUT THIS SLEEP, ONLY WO GORILLA EVER TRACES TO CONSOLE
     {
     while( !etThread && !ether )
-    const osTextT postt[] = { 'A' + ( tinP.monitor.idThread - idThreadWoth ) % 26 , 0 } ;
-    setIfZeAM( idThreadWoth , tinP.monitor.idThread ) ;
+    const osTextT postt[] = { 'A' + ( ((tinNormalS&)tinBaseP).monitor.idThread - idThreadWoth ) % 26 , 0 } ;
+    setIfZeAM( idThreadWoth , ((tinNormalS&)tinBaseP).monitor.idThread ) ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 
     grabOldS&  gg        =  *(grabOldS*)pTaskP->c2 ;

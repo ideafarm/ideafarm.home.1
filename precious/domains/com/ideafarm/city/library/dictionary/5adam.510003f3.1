@@ -8,34 +8,34 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        etThread.osSleepF( tinP , TOCK * 0x20 , TOCK , flSLEEP_TALK ) ;
-        ep.strokeF( tinP , T("\r" BLANK79 "\r") ) ;
+        etThread.osSleepF( tinBaseP , TOCK * 0x20 , TOCK , flSLEEP_TALK ) ;
+        ep.strokeF( tinBaseP , T("\r" BLANK79 "\r") ) ;
 
         }
-            ep.delF( tinP , pstt1m ) ;
+            ep.delF( tinBaseP , pstt1m ) ;
             }
-                ep.delF( tinP , psttEmail ) ;
+                ep.delF( tinBaseP , psttEmail ) ;
                 }
-                    ep.strokeF( tinP , T("statement mailed to \"")+T(psttEmail)+T("\"\r\n") ) ;
-                    ep.delF( tinP , postr ) ;
+                    ep.strokeF( tinBaseP , T("statement mailed to \"")+T(psttEmail)+T("\"\r\n") ) ;
+                    ep.delF( tinBaseP , postr ) ;
 
                     }
-                        sOut.writeMsgF( tinP , T(postr) ) ;
-                        sOut.writeMsgF( tinP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+tTo ) ;
-                        etThread.strokeF( tinP , T("\"")+tTo+T("\"\r\n") ) ;
+                        sOut.writeMsgF( tinBaseP , T(postr) ) ;
+                        sOut.writeMsgF( tinBaseP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+tTo ) ;
+                        etThread.strokeF( tinBaseP , T("\"")+tTo+T("\"\r\n") ) ;
                         textC tTo = T(psttEmail)+T("/" ifcEMAIL_OLDfROM "") ;
-                        sOut.connectF( tinP , ifcPORToLD1oUTGOINGmAILBOX , 0x01010102 ) ;
-                        socketC sOut( tinP , ether , TAG( TAGiDnULL ) ) ;
+                        sOut.connectF( tinBaseP , ifcPORToLD1oUTGOINGmAILBOX , 0x01010102 ) ;
+                        socketC sOut( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
                     {
 
-                    { ZE( strokeS* , psttnu ) ; ep.boxPutUniqueF( tinP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/5f30104/email") , postr , costr ) ; ep.delF( tinP , psttnu ) ; }
+                    { ZE( strokeS* , psttnu ) ; ep.boxPutUniqueF( tinBaseP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/5f30104/email") , postr , costr ) ; ep.delF( tinBaseP , psttnu ) ; }
 
-                    ep.delF( tinP , psttr1 ) ;
-                    countT costr = ep.strMakeF( tinP , LF , postr , psttr1 ) ; ___( postr ) ;
+                    ep.delF( tinBaseP , psttr1 ) ;
+                    countT costr = ep.strMakeF( tinBaseP , LF , postr , psttr1 ) ; ___( postr ) ;
                     ZE( osTextT* , postr ) ;
 
                     }
@@ -65,7 +65,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
                             "You are receiving this report because you, or an impostxr who claimed to be you,\r\n"
                             T("Subject: Statement ")+( mBalance > - 20.0 ? T("(FYI)") : T("(Please Pay)") )+T("\r\n\r\n"
 
-                        ep.strMakeF( tinP , LF , psttr1 ,
+                        ep.strMakeF( tinBaseP , LF , psttr1 ,
                     {
                     ZE( strokeS* , psttr1 ) ;
 
@@ -74,72 +74,72 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
                 {
                 if( psttEmail )
 
-                ep.strokeF( tinP , T("  mBalance =")+TF4(mBalance,flFORMAT_EXPONENT,2,6)+T("\r\n") ) ;
+                ep.strokeF( tinBaseP , T("  mBalance =")+TF4(mBalance,flFORMAT_EXPONENT,2,6)+T("\r\n") ) ;
 
                 }
-                    ep.delF( tinP , pstt1m2 ) ;
+                    ep.delF( tinBaseP , pstt1m2 ) ;
                     }
                         mShare += *(measureT*)&c2b.c2 ; // ASSUME: sizeof( measureT ) == sizeof( countT )
                         __( idcHirer - c2b.c1 ) ;
-                        ep.delF( tinP , pbi ) ;
-                        ep.memCopyF( tinP , (byteT*)&c2b , pbi , cbi ) ;
+                        ep.delF( tinBaseP , pbi ) ;
+                        ep.memCopyF( tinBaseP , (byteT*)&c2b , pbi , cbi ) ;
                         __( cbi - sizeof c2b ) ;
-                        ep.boxGetShadowF( tinP , pbi , cbi , psttc2 ) ; ___( pbi ) ;
+                        ep.boxGetShadowF( tinBaseP , pbi , cbi , psttc2 ) ; ___( pbi ) ;
                         ZE( countT , cbi ) ;
                         ZE( byteT* , pbi ) ;
                         count2S c2b ;
                     {
                     FORsTRINGSiN2( pstt1m2 )
-                    ep.boxMenuF( tinP , soul1m2 , T(psttc1)+T("/share.*") ) ; ___( pstt1m2 ) ;
+                    ep.boxMenuF( tinBaseP , soul1m2 , T(psttc1)+T("/share.*") ) ; ___( pstt1m2 ) ;
                     ZE( strokeS* , pstt1m2 ) ;
                 {
                 ZE( measureT , mShare ) ;
 
                 }
-                    ep.delF( tinP , pstt1m2 ) ;
+                    ep.delF( tinBaseP , pstt1m2 ) ;
                     }
                         mBalance += *(measureT*)&c2b.c2 ; // ASSUME: sizeof( measureT ) == sizeof( countT )
                         __( idcHirer - c2b.c1 ) ;
-                        ep.delF( tinP , pbi ) ;
-                        ep.memCopyF( tinP , (byteT*)&c2b , pbi , cbi ) ;
+                        ep.delF( tinBaseP , pbi ) ;
+                        ep.memCopyF( tinBaseP , (byteT*)&c2b , pbi , cbi ) ;
                         __( cbi - sizeof c2b ) ;
-                        ep.boxGetShadowF( tinP , pbi , cbi , psttc3 ) ; ___( pbi ) ;
+                        ep.boxGetShadowF( tinBaseP , pbi , cbi , psttc3 ) ; ___( pbi ) ;
                         ZE( countT , cbi ) ;
                         ZE( byteT* , pbi ) ;
                         count2S c2b ;
                     {
                     FORsTRINGSiN3( pstt1m2 )
-                    ep.boxMenuF( tinP , soul1m2 , T(psttc1)+T("/payin.*") ) ; ___( pstt1m2 ) ;
+                    ep.boxMenuF( tinBaseP , soul1m2 , T(psttc1)+T("/payin.*") ) ; ___( pstt1m2 ) ;
 
-                    ep.delF( tinP , pstt1m2 ) ;
+                    ep.delF( tinBaseP , pstt1m2 ) ;
                     }
                         mBalance -= *(measureT*)&c2b.c2 ; // ASSUME: sizeof( measureT ) == sizeof( countT )
                         __( idcHirer - c2b.c1 ) ;
-                        ep.delF( tinP , pbi ) ;
-                        ep.memCopyF( tinP , (byteT*)&c2b , pbi , cbi ) ;
+                        ep.delF( tinBaseP , pbi ) ;
+                        ep.memCopyF( tinBaseP , (byteT*)&c2b , pbi , cbi ) ;
                         __( cbi - sizeof c2b ) ;
-                        ep.boxGetShadowF( tinP , pbi , cbi , psttc2 ) ; ___( pbi ) ;
+                        ep.boxGetShadowF( tinBaseP , pbi , cbi , psttc2 ) ; ___( pbi ) ;
                         ZE( countT , cbi ) ;
                         ZE( byteT* , pbi ) ;
                         count2S c2b ;
                     {
                     FORsTRINGSiN2( pstt1m2 )
-                    ep.boxMenuF( tinP , soul1m2 , T(psttc1)+T("/debit.*") ) ; ___( pstt1m2 ) ;
+                    ep.boxMenuF( tinBaseP , soul1m2 , T(psttc1)+T("/debit.*") ) ; ___( pstt1m2 ) ;
                     ZE( strokeS* , pstt1m2 ) ;
                 {
                 ZE( measureT , mBalance ) ;
 
-                if( !psttEmail ) { ep.ifcExternalEmailFromIdCitizenF( tinP , psttEmail , 1 ) ; }
-                if( idcHirer ) { ep.ifcExternalEmailFromIdCitizenF( tinP , psttEmail , idcHirer ) ; ___( psttEmail ) ; }
+                if( !psttEmail ) { ep.ifcExternalEmailFromIdCitizenF( tinBaseP , psttEmail , 1 ) ; }
+                if( idcHirer ) { ep.ifcExternalEmailFromIdCitizenF( tinBaseP , psttEmail , idcHirer ) ; ___( psttEmail ) ; }
                 ZE( strokeS* , psttEmail ) ;
-                ep.delF( tinP , psttw ) ;
-                countT idcHirer = ep.strDigitsToSCountF( tinP , psttw ) ;
-                ep.strWordF( tinP , psttw , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttw ) ;
+                ep.delF( tinBaseP , psttw ) ;
+                countT idcHirer = ep.strDigitsToSCountF( tinBaseP , psttw ) ;
+                ep.strWordF( tinBaseP , psttw , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttw ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , psttw ) ;
             {
             FORsTRINGSiN1( pstt1m )
-            ep.boxMenuF( tinP , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/1350007/transactions/" "*") ) ; ___( pstt1m ) ;
+            ep.boxMenuF( tinBaseP , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/1350007/transactions/" "*") ) ; ___( pstt1m ) ;
             ZE( strokeS* , pstt1m ) ;
         {
         if( bNewDay )
@@ -157,31 +157,31 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         const boolT bNewQtr       = bNewDuck   || offQTR(    time2 ) != offQTR(    time2last ) ;
         const boolT bNewDuck      =               offDUCK(   time2 ) != offDUCK(   time2last ) ;
 
-        ep.osTimeNowF( tinP , time1 , time2 ) ;
+        ep.osTimeNowF( tinBaseP , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
         idCycle ++ ;
 
-        etherC ep( tinP , TAG( TAGiDnULL ) , etThread.os_cAllKidThreadsI_IF( tinP ) ) ;
+        etherC ep( tinBaseP , TAG( TAGiDnULL ) , etThread.os_cAllKidThreadsI_IF( tinBaseP ) ) ;
     {
     while( !ether )
     ZE( countT , idCycle ) ;
 
-    etThread.osTimeNowF( tinP , time1last , time2last ) ;
+    etThread.osTimeNowF( tinBaseP , time1last , time2last ) ;
     ZE( sCountT , time2last ) ;
     ZE( countT , time1last ) ;
     ZE( strokeS* , psttw ) ;
 
-    etThread.strokeF( tinP , T("IdeaFarm " "(tm) City Revenue Collector\r\ni periodically (daily) send a statement to each citizen to collect revenue\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Revenue Collector\r\ni periodically (daily) send a statement to each citizen to collect revenue\r\n") ) ;
 {
 else
 }
-    etThread.strokeF( tinP , T("Another ")+textIdFileC( tinP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tinBaseP , T("Another ")+textIdFileC( tinBaseP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinP , TAG( TAGiDnULL ) , T("5f30104") ) ;
+batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("5f30104") ) ;
 
 TODO
 

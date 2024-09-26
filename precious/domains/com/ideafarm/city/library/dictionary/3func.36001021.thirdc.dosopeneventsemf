@@ -13,12 +13,12 @@
 
         else __1
         }
-            fCreator = ERROR_ALREADY_EXISTS != tinP.brcRaw ;
+            fCreator = ERROR_ALREADY_EXISTS != ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , GetLastError() )
             INCoShANDLES
         {
         if( ~handleP )
-        handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE , (countT)tinP.brcRaw ) ;
+        handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE , (countT)((tinNormalS&)tinBaseP).brcRaw ) ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , CreateEvent( &sa , 1 , fGivenP , postP ) )
         SECURITYaTTRIBUTE_saUNRESTRICTED( 0 ) ;
@@ -26,13 +26,13 @@
 
     #elif defined( __NT__ )
 
-        delF( tinP , post ) ;
+        delF( tinBaseP , post ) ;
         }
             __Z( handleP ) ;
 
             }
                 }
-                    __( tinP.brcRaw ) ;
+                    __( ((tinNormalS&)tinBaseP).brcRaw ) ;
                 {
                 else
                 }
@@ -44,7 +44,7 @@
                     ZE( HEV , osh ) ;
                     fCreator = 0 ;
                 {
-                if( tinP.brcRaw == ERROR_DUPLICATE_NAME )
+                if( ((tinNormalS&)tinBaseP).brcRaw == ERROR_DUPLICATE_NAME )
 
                 handleP.osF( ifcIDtYPEhANDLE_EVENTsEMAPHORE , (countT)osh ) ;
                 BOSdOnOTtEST( WHATgbo , DosCreateEventSem( post , &osh , 0 , fGivenP ) )
@@ -55,9 +55,9 @@
             countT cntTries = 10 ;
         {
         }
-            thirdC::c_strcpatF( tinP , post , postP ) ;
-            thirdC::c_strcpyIF( tinP , post , ostoPrefix ) ;
-            newF( tinP , LF , post , ostoPrefix.costF() + tinP.brcRaw + 1 ) ; ___( post ) ;
+            thirdC::c_strcpatF( tinBaseP , post , postP ) ;
+            thirdC::c_strcpyIF( tinBaseP , post , ostoPrefix ) ;
+            newF( tinBaseP , LF , post , ostoPrefix.costF() + ((tinNormalS&)tinBaseP).brcRaw + 1 ) ; ___( post ) ;
             BOSdOnOTtEST( WHATgbo , strlen( postP ) )
             OStEXTV( ostoPrefix , "\\sem32\\" )
         {
@@ -79,7 +79,7 @@
         #ifdef __OS2__
         ZE( boolT , fnu ) ;
         }
-            __( tinP.brcRaw ) ;
+            __( ((tinNormalS&)tinBaseP).brcRaw ) ;
             BOSdOnOTtEST( WHATgbo , strchr( postP , '\\' ) )
         {
         if( postP )
@@ -90,7 +90,7 @@
 
     ZE( countT* , pcb ) ; *pcb = 0 ;
 {
-/*1*/boolT thirdC::dosOpenEventSemF( tinS& tinP , handleC& handleP , const osTextT* const postP , const boolT fGivenP )/*1*/
+/*1*/boolT thirdC::dosOpenEventSemF( tinBaseS& tinBaseP , handleC& handleP , const osTextT* const postP , const boolT fGivenP )/*1*/
 
 /**/
 */

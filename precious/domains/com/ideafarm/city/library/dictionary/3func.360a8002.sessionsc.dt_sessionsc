@@ -8,25 +8,25 @@
 
 
 }
-    baton.ungrabF( tinP ) ;
-    swSession.freeAllF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
+    swSession.freeAllF( tinBaseP ) ;
     }
         THREADmODE2rESTORE
         DEL( pSession ) ;
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
         sessionC*& pSession = *(sessionC**)&(countT&)swSession ;
-        nnLever_peer = *(nicNameC*)swSession.leverF( tinP , idf ) ;
+        nnLever_peer = *(nicNameC*)swSession.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swSession.cFlavorsF( tinP ) ;
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    countT cFlavors = swSession.cFlavorsF( tinBaseP ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     THREADmODE2rESTORE
     }
-        ++ s ; ether.osSleepF( tinP , TOCK >> 3 ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK >> 3 ) ;
     {
     while( bQuitWatching )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
     bQuitWatching = 1 ;
 

@@ -8,15 +8,15 @@
 
 
 }
-    diskMoveFileOrDirF( tinP , psttNewP , psttOldP , cTriesP ) ;
+    diskMoveFileOrDirF( tinBaseP , psttNewP , psttOldP , cTriesP ) ;
 
     }
-        delF( tinP , psttShort ) ;
-        delF( tinP , psttPath ) ;
+        delF( tinBaseP , psttShort ) ;
+        delF( tinBaseP , psttPath ) ;
 
-        strFuseF( tinP , psttNewP , tNewShort ) ;
+        strFuseF( tinBaseP , psttNewP , tNewShort ) ;
     
-        if( !psttNewP ) { strMakeF( tinP , LF , psttNewP , T(psttPath) , tNewShort.csF( tinP ) ) ; ___( psttNewP ) ; }
+        if( !psttNewP ) { strMakeF( tinBaseP , LF , psttNewP , T(psttPath) , tNewShort.csF( tinBaseP ) ) ; ___( psttNewP ) ; }
 
         if( bDirOld ) tNewShort += T("/") ;                            //20221205@1059: BUGFIX WITHOUT ANALYSIS.  ADDED THIS LINE SO TRAILING SLASH IS PRESERVED
         ;
@@ -26,17 +26,17 @@
         TN( tNewShort , "" ) ;
 
         if( bDirOld && psttShort->idAdam ) psttShort->idAdam -- ; // TRUNCATE AWAY THE TRAILING SLASH
-        strBisectF( tinP , psttPath , psttShort , psttNewLikeP ? psttNewLikeP : psttOldP , T("/") , - 1 - bDirOld , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+        strBisectF( tinBaseP , psttPath , psttShort , psttNewLikeP ? psttNewLikeP : psttOldP , T("/") , - 1 - bDirOld , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
         ZE( strokeS* , psttShort ) ;
         ZE( strokeS* , psttPath ) ;
     
         }
-            delF( tinP , psttu ) ;
+            delF( tinBaseP , psttu ) ;
             tUnique = T(psttu) ;
-            strUniqueF( tinP , psttu ) ; ___( psttu ) ;
+            strUniqueF( tinBaseP , psttu ) ; ___( psttu ) ;
             ZE( strokeS* , psttu ) ;
         {
-        if( !tUnique.csF( tinP ) )
+        if( !tUnique.csF( tinBaseP ) )
         TN( tUnique , psttUniqueP ) ;
     {
 
@@ -56,7 +56,7 @@
 
     SCOOP
 {
-/**//*1*/voidT etherC::diskMoveFileOrDirUniqueF( tinS& tinP , strokeS*& psttNewP , const strokeS* const psttOldP , const strokeS* const psttNewLikeP , const countT cTriesP , const strokeS* const psttUniqueP , const boolT bPrefixP )/*1*/
+/**//*1*/voidT etherC::diskMoveFileOrDirUniqueF( tinBaseS& tinBaseP , strokeS*& psttNewP , const strokeS* const psttOldP , const strokeS* const psttNewLikeP , const countT cTriesP , const strokeS* const psttUniqueP , const boolT bPrefixP )/*1*/
 */
   if 0 then will retry forever
  cTriesP

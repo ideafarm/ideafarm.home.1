@@ -8,38 +8,38 @@
 
 
 }
-    { _IO_ ether.delF( tinP , psttKeyDefPending ) ; }
+    { _IO_ ether.delF( tinBaseP , psttKeyDefPending ) ; }
 
     }
-        { _IO_ ether.delF( tinP , *(strokeS**)&(countT&)swStringVariable ) ; }
-        psttzKey = (strokeS*)swStringVariable.leverF( tinP , idf ) ;
+        { _IO_ ether.delF( tinBaseP , *(strokeS**)&(countT&)swStringVariable ) ; }
+        psttzKey = (strokeS*)swStringVariable.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swStringVariable.cFlavorsF( tinP ) ;
+    countT cFlavors = swStringVariable.cFlavorsF( tinBaseP ) ;
 
-    { _IO_ ether.delF( tinP , pbAppMemory ) ; }
-    { _IO_ ether.delF( tinP , psttFolder ) ; }
-    { _IO_ ether.delF( tinP , psttu ) ; }
-    ether.delF( tinP , psttPeer ) ;
-    //ether.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/domains/com/ideafarm/ipdos/sessions/")+TF2(etherC::ifc_idAdamI_IF(tinP),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("/")+T(psttFolder)+T("/")+T(psttPeer)+T("/session") , WS( soul ) ) ; ___( psttu ) ;
+    { _IO_ ether.delF( tinBaseP , pbAppMemory ) ; }
+    { _IO_ ether.delF( tinBaseP , psttFolder ) ; }
+    { _IO_ ether.delF( tinBaseP , psttu ) ; }
+    ether.delF( tinBaseP , psttPeer ) ;
+    //ether.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/domains/com/ideafarm/ipdos/sessions/")+TF2(etherC::ifc_idAdamI_IF(tinBaseP),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("/")+T(psttFolder)+T("/")+T(psttPeer)+T("/session") , WS( soul ) ) ; ___( psttu ) ;
     //20211001@0957: COMMENTED OUT THE FOLLOWING LINE IN ORDER TO AVOID CREATING TONS OF THESE FILES THAT AFAIK ARE NO LONGER NEEDED
     ZE( strokeS* , psttu ) ;
 
-    ether.strReplaceF( tinP , psttPeer , 0 , T(":") , T(".") ) ;        // IPv4: a.b.c.d ; IPv6: a:b:c:d:e:f:g:h
-    ether.strMakeF( tinP , LF , psttPeer , (strokeS*)T(nnPeer) ) ; ___( psttPeer ) ;
+    ether.strReplaceF( tinBaseP , psttPeer , 0 , T(":") , T(".") ) ;        // IPv4: a.b.c.d ; IPv6: a:b:c:d:e:f:g:h
+    ether.strMakeF( tinBaseP , LF , psttPeer , (strokeS*)T(nnPeer) ) ; ___( psttPeer ) ;
     ZE( strokeS* , psttPeer ) ;
 
-    { _IO_ ether.delF( tinP , psttEmailLoggedIn     ) ; }
-    { _IO_ ether.delF( tinP , *(strokeS**)&psttUser ) ; }
-    { _IO_ ether.delF( tinP , *(strokeS**)&psttPeer ) ; }
+    { _IO_ ether.delF( tinBaseP , psttEmailLoggedIn     ) ; }
+    { _IO_ ether.delF( tinBaseP , *(strokeS**)&psttUser ) ; }
+    { _IO_ ether.delF( tinBaseP , *(strokeS**)&psttPeer ) ; }
     //U::THE FINE INOUT IS TO FIND A BUG: I AM DELETING A strokeS* DROP THAT IS NOT OWNED
 
-    else                                     { ether.strMakeF( tinP , LF , psttFolder , T("!anonymous") ) ; ___( psttFolder ) ; }
-    if( psttUser    &&    psttUser->idAdam ) { ether.strMakeF( tinP , LF , psttFolder , psttUser        ) ; ___( psttFolder ) ; }
+    else                                     { ether.strMakeF( tinBaseP , LF , psttFolder , T("!anonymous") ) ; ___( psttFolder ) ; }
+    if( psttUser    &&    psttUser->idAdam ) { ether.strMakeF( tinBaseP , LF , psttFolder , psttUser        ) ; ___( psttFolder ) ; }
     ZE( strokeS* , psttFolder ) ;
 
     (*this) >> soul ;
-    soulC soul( tinP , TAG( TAGiDnULL ) ) ;
+    soulC soul( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     _IO_
 

@@ -12,7 +12,7 @@
 
     }
         }
-            tinP.pEther->delF( tinP , pnn ) ;
+            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , pnn ) ;
             }
                 else            (countT&)idpth = pnn->pcId[ 0 ] & 0xffff ; // THE HIGH ORDER 01 BITS OF spaceport.ideafarm.com ARE NOW SET TO MAKE THE IPv4 ADDRESS ROUTABLE, BECAUSE getaddrinfo RETURNS WSANO_DATA WHEN THE HIGH WORD IS NULL
                 //else            (countT&)idpth = ( pnn->pcId[ 0 ] & 0xffff ) + 0x4 ; //U:: TO FIND A BUG: THIS IS AN INTENTIONAL SMUDGE SO THAT I WILL NEVER BE ABLE TO CONNECT WITH HANDLE
@@ -20,8 +20,8 @@
             {
             if( cnn == 1 ) //U::IPV6
             THREADmODE2rESTORE
-            socketC::nicNameIF( tinP , *tinP.pEther , pnn , cnn , T(idDo==1?"spacenn.ideafarm.com":"spaceport.ideafarm.com") ) ;
-            //OLD:socketC::nicNameIF( tinP , *tinP.pEther , pnn , cnn , T(idDo==1?"nicname.":"port.")+TF1(idSpace)+T(".space.ideafarm.com") ) ;
+            socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEther , pnn , cnn , T(idDo==1?"spacenn.ideafarm.com":"spaceport.ideafarm.com") ) ;
+            //OLD:socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEther , pnn , cnn , T(idDo==1?"nicname.":"port.")+TF1(idSpace)+T(".space.ideafarm.com") ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
             ZE( countT    , cnn ) ;
             ZE( nicNameC* , pnn ) ;
@@ -38,11 +38,11 @@
         //    {
         //    else switch( idHomeDisk )
         //    if( idSpacew && idSpacew <= 3 ) idSpace = idSpacew ;
-        //    tinP.pEther->delF( tinP , psttw ) ;
-        //    if( psttw ) idSpacew = tinP.pEther->strDigitsToSCountF( tinP , psttw ) ;
+        //    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttw ) ;
+        //    if( psttw ) idSpacew = ((tinNormalS&)tinBaseP).pEther->strDigitsToSCountF( tinBaseP , psttw ) ;
         //    ZE( countT , idSpacew ) ;
         //    THREADmODE2rESTORE
-        //    tinP.pEther->boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinP , psttw , T("///d/ideafarm.home.")+TF1(idHomeDisk)+T(".setting.keyValue.idSpace") ) ; ___( psttw ) ;
+        //    ((tinNormalS&)tinBaseP).pEther->boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinBaseP , psttw , T("///d/ideafarm.home.")+TF1(idHomeDisk)+T(".setting.keyValue.idSpace") ) ; ___( psttw ) ;
         //    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
         //    countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
         //    ZE( strokeS* , psttw ) ;
@@ -50,17 +50,17 @@
         //ENABLE WHEN A PRODUCTION RELAY SYSTEM EXISTS AND NEED TO DO DEVELOPMENT IN A SANDBOX
         countT idSpace = 1 ;
     {
-    if( !*tinP.pEther )
+    if( !*((tinNormalS&)tinBaseP).pEther )
 
     //}
-    //    tinP.pag5->_relayOldC_grabHandleAll.ungrabF( tinP ) ;
-    //    idpth = tinP.pag1->_relayOldC_.idptHandleAll ;
-    //    tinP.pag5->_relayOldC_grabHandleAll.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    //    ((tinNormalS&)tinBaseP).pag5->_relayOldC_grabHandleAll.ungrabF( tinBaseP ) ;
+    //    idpth = ((tinNormalS&)tinBaseP).pag1->_relayOldC_.idptHandleAll ;
+    //    ((tinNormalS&)tinBaseP).pag5->_relayOldC_grabHandleAll.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     //{
     //if( !pczChannelP )
     portTimeC idpth ;
 {
-/*1*/portTimeC relayOldC::handleQueryIF( tinS& tinP , const countT* const pczChannelP )/*1*/
+/*1*/portTimeC relayOldC::handleQueryIF( tinBaseS& tinBaseP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*

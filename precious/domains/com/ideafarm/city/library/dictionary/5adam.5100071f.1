@@ -9,24 +9,24 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 }
-    etThread.diskWalkF( tinP , cDirs , cFiles , tArchive3 , bQuit , diskWalkRename7to8CBF , 0 , 0 , 0 ) ;
+    etThread.diskWalkF( tinBaseP , cDirs , cFiles , tArchive3 , bQuit , diskWalkRename7to8CBF , 0 , 0 , 0 ) ;
     ZE( boolT , bQuit ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
 {
 
 }
-    etThread.diskWalkF( tinP , cDirs , cFiles , tArchive2 , bQuit , diskWalkRename7to8CBF , 0 , 0 , 0 ) ;
+    etThread.diskWalkF( tinBaseP , cDirs , cFiles , tArchive2 , bQuit , diskWalkRename7to8CBF , 0 , 0 , 0 ) ;
     ZE( boolT , bQuit ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
 {
 
 }
-    etThread.diskWalkF( tinP , cDirs , cFiles , tArchive1 , bQuit , diskWalkRename7to8CBF , 0 , 0 , 0 ) ;
+    etThread.diskWalkF( tinBaseP , cDirs , cFiles , tArchive1 , bQuit , diskWalkRename7to8CBF , 0 , 0 , 0 ) ;
     ZE( boolT , bQuit ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
@@ -42,27 +42,27 @@ TODO
     return bDoIt ;
 
     }
-        tinP.pEther->delF( tinP , psttShortNew ) ;
-        tinP.pEther->delF( tinP , psttShortOld ) ;
-        tinP.pEther->delF( tinP , psttPath ) ;
+        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttShortNew ) ;
+        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttShortOld ) ;
+        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
 
-        etherC::etRockIF( tinP ).traceF( tinP , T("new: ")+T(psttShortNew) ) ;
-        tinP.pEther->diskMoveFileOrDirF( tinP , T(psttPath)+T(psttShortNew) , tOld , 0 ) ;
-        tinP.pEther->strReplaceF( tinP , psttShortNew , psttShortOld , T("!ideafarm.7.") , T("!ideafarm.8.2.00000000.00000001.") , 0 , flSTRrEPLACE_null ) ;
+        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("new: ")+T(psttShortNew) ) ;
+        ((tinNormalS&)tinBaseP).pEther->diskMoveFileOrDirF( tinBaseP , T(psttPath)+T(psttShortNew) , tOld , 0 ) ;
+        ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttShortNew , psttShortOld , T("!ideafarm.7.") , T("!ideafarm.8.2.00000000.00000001.") , 0 , flSTRrEPLACE_null ) ;
         ZE( strokeS* , psttShortNew ) ;
 
-        tinP.pEther->strBisectF( tinP , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
+        ((tinNormalS&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
         ZE( strokeS* , psttShortOld ) ;
         ZE( strokeS* , psttPath ) ;
 
         TN( tOld , ifName ) ;
-        ifFileNameC ifName( tinP , *tinP.pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ;
     {
-    if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] != '\\' && tinP.pEther ) // IF NOT A DIRECTORY
+    if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] != '\\' && ((tinNormalS&)tinBaseP).pEther ) // IF NOT A DIRECTORY
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkRename7to8CBF( tinS& tinP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkRename7to8CBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 /*1*/WAKEsHOWtEXT( "tool.archive.rename.format.7.to.format.8.hardcoded.userid" )/*1*/
 /**/

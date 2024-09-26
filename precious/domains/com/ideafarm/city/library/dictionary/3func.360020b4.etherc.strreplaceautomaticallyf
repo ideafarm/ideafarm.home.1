@@ -8,20 +8,20 @@
 
 
 }
-    delF( tinP , psttDelimiter ) ;
+    delF( tinBaseP , psttDelimiter ) ;
 
     }
         }
-            delF( tinP , psttPair ) ;
+            delF( tinBaseP , psttPair ) ;
             }
                 idf = 1 ; // NEED TO RESCAN FROM THE BEGINNING CAUSE HAVE MODIFIED THE STRING
-                delF( tinP , psttNew ) ;
-                delF( tinP , psttOld ) ;
-                strReplaceF( tinP , psttP , 0 , psttOld , psttNew , csttExtraP ) ;
-                strReplaceF( tinP , psttP , 0 , T(psttDelimiter) + T(psttPair) + T(psttDelimiter) , T("") , csttExtraP ) ;
+                delF( tinBaseP , psttNew ) ;
+                delF( tinBaseP , psttOld ) ;
+                strReplaceF( tinBaseP , psttP , 0 , psttOld , psttNew , csttExtraP ) ;
+                strReplaceF( tinBaseP , psttP , 0 , T(psttDelimiter) + T(psttPair) + T(psttDelimiter) , T("") , csttExtraP ) ;
                 }
-                    strSubstringF( tinP , psttNew , idfp , sttqp , S1C('/') , psttPair ) ; ___( psttNew ) ;
-                    strSubstringF( tinP , psttOld , idfp , sttqp , S1C('/') , psttPair ) ; ___( psttOld ) ;
+                    strSubstringF( tinBaseP , psttNew , idfp , sttqp , S1C('/') , psttPair ) ; ___( psttNew ) ;
+                    strSubstringF( tinBaseP , psttOld , idfp , sttqp , S1C('/') , psttPair ) ; ___( psttOld ) ;
                     strokeS sttqp( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idfp = 1 ;
                 {
@@ -31,7 +31,7 @@
             if( idcFound == idClass )
         {
         if( psttPair )
-        strSubstringDelimitedF( tinP , psttPair , idcFound , idf , sttq , psttP ) ; ___( psttPair ) ;
+        strSubstringDelimitedF( tinBaseP , psttPair , idcFound , idf , sttq , psttP ) ; ___( psttPair ) ;
         idcFound = 0 ;
     {
     while( idf && !POOP )
@@ -41,15 +41,15 @@
     ZE( strokeS* , psttPair ) ;
 
     }
-        delF( tinP , psttId ) ;
-        strMakeF( tinP , LF , psttDelimiter , T("/*") + T(psttId) + T("*/") ) ; ___( psttDelimiter ) ;
-        strFromF( tinP , psttId , idClass ) ; ___( psttId ) ;
+        delF( tinBaseP , psttId ) ;
+        strMakeF( tinBaseP , LF , psttDelimiter , T("/*") + T(psttId) + T("*/") ) ; ___( psttDelimiter ) ;
+        strFromF( tinBaseP , psttId , idClass ) ; ___( psttId ) ;
         ZE( strokeS* , psttId ) ;
     {
     ZE( strokeS* , psttDelimiter ) ;
 
     }
-        strMakeF( tinP , LF , psttP , psttOldP , psttOldP[ 2 ].idAdam + csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;
+        strMakeF( tinBaseP , LF , psttP , psttOldP , psttOldP[ 2 ].idAdam + csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;
     {
     if( psttOldP )
     const countT idClass = idClassP ? idClassP : 2 ;
@@ -64,7 +64,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::strReplaceAutomaticallyF( tinS& tinP , strokeS*& psttP , const strokeS* const psttOldP , const countT idClassP , const countT csttExtraP )/*1*/
+/**//*1*/voidT etherC::strReplaceAutomaticallyF( tinBaseS& tinBaseP , strokeS*& psttP , const strokeS* const psttOldP , const countT idClassP , const countT csttExtraP )/*1*/
 */
   use csttExtraP to specify additional extra strokes
   i always preserve the extra strokes that are present in the source string

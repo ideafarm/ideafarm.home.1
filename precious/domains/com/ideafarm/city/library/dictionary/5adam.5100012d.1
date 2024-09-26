@@ -10,21 +10,21 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.delF( tinP , pstth2 ) ;
-etThread.delF( tinP , pstth1 ) ;
-etThread.diskFileOrDirDeleteF( tinP , T(pstth2)+T("/") ) ;
-etThread.diskFileOrDirDeleteF( tinP , T(pstth1)+T("/") ) ;
+etThread.delF( tinBaseP , pstth2 ) ;
+etThread.delF( tinBaseP , pstth1 ) ;
+etThread.diskFileOrDirDeleteF( tinBaseP , T(pstth2)+T("/") ) ;
+etThread.diskFileOrDirDeleteF( tinBaseP , T(pstth1)+T("/") ) ;
 
 HEAReNTER( ether )
 
-etThread.strokeF( tinP , T("the home for key \"")+tKey+T("\" is \"")+T(pstth2)+T("\"\r\npress the enter key") ) ;
-etThread.diskChooseSiteF( tinP , pstth2 , tKey , T("///?/")+tKey+T(".myDomicile") ) ; ___( pstth2 ) ;
+etThread.strokeF( tinBaseP , T("the home for key \"")+tKey+T("\" is \"")+T(pstth2)+T("\"\r\npress the enter key") ) ;
+etThread.diskChooseSiteF( tinBaseP , pstth2 , tKey , T("///?/")+tKey+T(".myDomicile") ) ; ___( pstth2 ) ;
 ZE( strokeS* , pstth2 ) ;
 
-etThread.strokeF( tinP , T("the home for key \"")+tKey+T("\" is \"")+T(pstth1)+T("\"\r\n") ) ;
-etThread.diskChooseSiteF( tinP , pstth1 , tKey ) ; ___( pstth1 ) ;
+etThread.strokeF( tinBaseP , T("the home for key \"")+tKey+T("\" is \"")+T(pstth1)+T("\"\r\n") ) ;
+etThread.diskChooseSiteF( tinBaseP , pstth1 , tKey ) ; ___( pstth1 ) ;
 ZE( strokeS* , pstth1 ) ;
 
 TN( tKey , "d210104" ) ;

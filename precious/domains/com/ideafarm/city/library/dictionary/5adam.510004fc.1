@@ -12,16 +12,16 @@ REST
 }
     }
         }
-            sIn2.removeAllF( tinP ) ;
+            sIn2.removeAllF( tinBaseP ) ;
             }
                 }
                     }
-                        etThread.delF( tinP , pch ) ;
-                        etThread.strokeF( tinP , T("this poolOld contains ")+TF1(ph.cdUsed)+T(" drops in use\r\n") ) ;
+                        etThread.delF( tinBaseP , pch ) ;
+                        etThread.strokeF( tinBaseP , T("this poolOld contains ")+TF1(ph.cdUsed)+T(" drops in use\r\n") ) ;
                         poolOldHeaderS& ph = *(poolOldHeaderS*)pch ;
                     {
                     if( pch && cch == sizeof( poolOldHeaderS ) / sizeof( countT ) )
-                    sIn2.shiftRightF( tinP , pch , cch ) ; ___( pch ) ;
+                    sIn2.shiftRightF( tinBaseP , pch , cch ) ; ___( pch ) ;
                     ZE( countT  , cch ) ;
                     ZE( countT* , pch ) ;
                 {
@@ -30,15 +30,15 @@ REST
             if( idReply == ifcIDrEPLYmONITOR_POOLoLDhEADER )
             sIn2 >> idReply ;
             ZE( countT , idReply ) ;
-            sock.readF( tinP , sIn2 ) ;
+            sock.readF( tinBaseP , sIn2 ) ;
 
-            etThread.delF( tinP , psttName ) ;
-            sOut.removeAllF( tinP ) ;
-            sock.writeF( tinP , sOut ) ;
+            etThread.delF( tinBaseP , psttName ) ;
+            sOut.removeAllF( tinBaseP ) ;
+            sock.writeF( tinBaseP , sOut ) ;
             sOut << psttName ;
             sOut << idMemorySpace ;
             sOut << (countT)ifcIDcMDmONITOR_POOLoLDhEADER ;
-            etThread.strokeF( tinP , T("for memory space ")+TF1(idMemorySpace)+T(", received name: \"")+T(psttName)+T("\"\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("for memory space ")+TF1(idMemorySpace)+T(", received name: \"")+T(psttName)+T("\"\r\n") ) ;
             sIn >> psttName ; ___( psttName ) ;
             ZE( strokeS* , psttName ) ;
         {
@@ -56,14 +56,14 @@ if( idReply == ifcIDrEPLYmONITOR_POOLoLDnAMES )
 sIn >> idReply ;
 ZE( countT , idReply ) ;
 
-sock.readF( tinP , sIn ) ;
-soulC sIn2( tinP , TAG( TAGiDnULL ) ) ;
-soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
-sOut.removeAllF( tinP ) ;
-sock.writeF( tinP , sOut ) ;
-soulC sOut( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDmONITOR_POOLoLDnAMES ) ;
-sock.connectF( tinP , ifcIDpORT_DOOR ) ;
-socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+sock.readF( tinBaseP , sIn ) ;
+soulC sIn2( tinBaseP , TAG( TAGiDnULL ) ) ;
+soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+sOut.removeAllF( tinBaseP ) ;
+sock.writeF( tinBaseP , sOut ) ;
+soulC sOut( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDmONITOR_POOLoLDnAMES ) ;
+sock.connectF( tinBaseP , ifcIDpORT_DOOR ) ;
+socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

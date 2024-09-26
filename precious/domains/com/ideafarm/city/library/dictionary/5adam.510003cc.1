@@ -8,21 +8,21 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 
-while( idhNext ) etThread.osSleepF( tinP , TOCK ) ;
+while( idhNext ) etThread.osSleepF( tinBaseP , TOCK ) ;
 
-for( countT idThread = 1 ; idThread <= CtHREADS ; idThread ++ ) { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmScanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&idhNext , (countT)&bConsole , (countT)&bIdhNext , (countT)&bFile , hFile ) ; }
+for( countT idThread = 1 ; idThread <= CtHREADS ; idThread ++ ) { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmScanF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&idhNext , (countT)&bConsole , (countT)&bIdhNext , (countT)&bFile , hFile ) ; }
 countT idhNext = 1 ;
 
-{ ZE( countT , idnu ) ; etThread.fileOpenF( tinP , hFile , idnu , T("///ideafarm/ephemeral/tmp/ec30104.httpServers") , ifcOPENaCCESS_W , 0 , 0 , ifcOPENhOW_nCeR , 0 , 0 ) ; }
-handleC hFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
-batonC bFile( tinP , TAG( TAGiDnULL ) ) ;
-batonC bIdhNext( tinP , TAG( TAGiDnULL ) ) ;
-batonC bConsole( tinP , TAG( TAGiDnULL ) ) ;
+{ ZE( countT , idnu ) ; etThread.fileOpenF( tinBaseP , hFile , idnu , T("///ideafarm/ephemeral/tmp/ec30104.httpServers") , ifcOPENaCCESS_W , 0 , 0 , ifcOPENhOW_nCeR , 0 , 0 ) ; }
+handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+batonC bFile( tinBaseP , TAG( TAGiDnULL ) ) ;
+batonC bIdhNext( tinBaseP , TAG( TAGiDnULL ) ) ;
+batonC bConsole( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-//etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
+//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
 
 TODO
 
@@ -30,53 +30,53 @@ DONE( tmScanF )
 
 }
     }
-        bConsole.ungrabF( tinP ) ;
+        bConsole.ungrabF( tinBaseP ) ;
 
         }
-            etThread.delF( tinP , posth ) ;
-            etThread.delF( tinP , posti ) ;
+            etThread.delF( tinBaseP , posth ) ;
+            etThread.delF( tinBaseP , posti ) ;
 
-            bFile.ungrabF( tinP ) ;
-            etThread.fileWriteF( tinP , hFile , "\r\n" ) ;
-            etThread.fileWriteF( tinP , hFile , posth ) ;
-            etThread.fileWriteF( tinP , hFile , "  " ) ;
-            etThread.fileWriteF( tinP , hFile , posti ) ;
-            bFile.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            bFile.ungrabF( tinBaseP ) ;
+            etThread.fileWriteF( tinBaseP , hFile , "\r\n" ) ;
+            etThread.fileWriteF( tinBaseP , hFile , posth ) ;
+            etThread.fileWriteF( tinBaseP , hFile , "  " ) ;
+            etThread.fileWriteF( tinBaseP , hFile , posti ) ;
+            bFile.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            etThread.strMakeF( tinP , LF , posti , tId ) ; ___( posti ) ;
+            etThread.strMakeF( tinBaseP , LF , posti , tId ) ; ___( posti ) ;
             ZE( osTextT* , posti ) ;
 
-            etThread.strokeF( tinP , T("  \"")+T(posth)+T("\"\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("  \"")+T(posth)+T("\"\r\n") ) ;
 
-            if( !posth ) etThread.strMakeF( tinP , LF , posth , T("<unnamed>") ) ;
-            ((thirdC&)etThread).s_postHostF( tinP , posth , idhMe ) ;
+            if( !posth ) etThread.strMakeF( tinBaseP , LF , posth , T("<unnamed>") ) ;
+            ((thirdC&)etThread).s_postHostF( tinBaseP , posth , idhMe ) ;
             ZE( osTextT* , posth ) ;
         {
         else
         }
-            etThread.strokeF( tinP , T("  could not connect\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("  could not connect\r\n") ) ;
             etThread = 0 ;
         {
         if( etThread )
 
-        etThread.strokeF( tinP , tId ) ;
+        etThread.strokeF( tinBaseP , tId ) ;
 
-        bConsole.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bConsole.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        textC tId( tinP , (sCountT)idhMe , flFORMAT_UNSIGNED|flFORMAT_FILLzE , 8 ) ;
+        textC tId( tinBaseP , (sCountT)idhMe , flFORMAT_UNSIGNED|flFORMAT_FILLzE , 8 ) ;
 
         }
-            sock.connectF( tinP , ifcIDpORT_HTTP , idhMe ) ;
-            socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+            sock.connectF( tinBaseP , ifcIDpORT_HTTP , idhMe ) ;
+            socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
         {
 
         if( bMyQuit ) break ;
 
-        bIdhNext.ungrabF( tinP ) ;
+        bIdhNext.ungrabF( tinBaseP ) ;
         if( !bMyQuit ) idhMe = idhNext ++ ;
         ZE( countT , idhMe ) ;
         boolT bMyQuit = !idhNext ;
-        bIdhNext.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bIdhNext.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !ether )
 

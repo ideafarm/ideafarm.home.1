@@ -10,23 +10,23 @@
 REST
 
 }
-    if( !etThread.diskFileExistsF( tinP , tDirHe ) ) etThread.diskMakeDirF( tinP , tDirHe ) ;
+    if( !etThread.diskFileExistsF( tinBaseP , tDirHe ) ) etThread.diskMakeDirF( tinBaseP , tDirHe ) ;
     TN( tDirHe , (strokeS*)tOut ) ; tDirHe += tnnHe+tSlash ;
 
-    etThread.strokeF( tinP , tnnHe+tcr ) ;
+    etThread.strokeF( tinBaseP , tnnHe+tcr ) ;
 
     TN( tnnHe , (strokeS*)TF1(nnHe) ) ;
 
-    sockHear.readF( tinP , sIn , idPortHe , nnHe ) ;
+    sockHear.readF( tinBaseP , sIn , idPortHe , nnHe ) ;
     nicNameC nnHe ;
     ZE( countT , idPortHe ) ;
-    soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 while( !ether && !POOP )
 
 __( idPortMe - ifcIDpORT_DOOR ) ;
-countT idPortMe = sockHear.bindF( tinP , ifcIDpORT_DOOR ) ;
-socketC sockHear( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+countT idPortMe = sockHear.bindF( tinBaseP , ifcIDpORT_DOOR ) ;
+socketC sockHear( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 TN( tcr , "\r\n" ) ;
 
 TN( tOut          , "///ideafarm/IdeaFarm " "(tm)/Drop Outgoing Files Here/"  ) ;

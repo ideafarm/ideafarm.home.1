@@ -8,12 +8,12 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
-    tinP.pag1->_paperOldC_.varsHandlerArg = cArgP ;
-    tinP.pag1->_paperOldC_.pVarsHandlerF = pVarsHandlerFIFP ;
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+    ((tinNormalS&)tinBaseP).pag1->_paperOldC_.varsHandlerArg = cArgP ;
+    ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pVarsHandlerF = pVarsHandlerFIFP ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT paperOldC::varsHandlerIF( tinS& tinP , varsHandlerFT pVarsHandlerFIFP , countT cArgP )/*1*/
+/*1*/voidT paperOldC::varsHandlerIF( tinBaseS& tinBaseP , varsHandlerFT pVarsHandlerFIFP , countT cArgP )/*1*/
 /**/
 */
   its value is not used at all by the base library
@@ -24,7 +24,7 @@
   if not 0 then must be the address of an application defined handler function
   can be 0
  pVarsHandlerFIP
- tinP
+ tinBaseP
 arguments
 /*
 

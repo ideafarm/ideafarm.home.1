@@ -27,7 +27,7 @@ REST
                 }
                     break ;
     
-                    if( idTypeAnswer == ifcIDtYPEdNSrEPLY_ANSWER ) etThread.strokeF( tinP , tMyDomainName+T(" is registered as being at ")+T(nnSingularity)+T("\r\n") ) ;
+                    if( idTypeAnswer == ifcIDtYPEdNSrEPLY_ANSWER ) etThread.strokeF( tinBaseP , tMyDomainName+T(" is registered as being at ")+T(nnSingularity)+T("\r\n") ) ;
     
                     soul >> nnSingularity ;
                     nicNameC nnSingularity ;
@@ -50,7 +50,7 @@ REST
             ZE( countT , idTypeInfo ) ;
     
             }
-                etThread.delF( tinP , psttw ) ;
+                etThread.delF( tinBaseP , psttw ) ;
                 soul >> psttw ;
                 ZE( strokeS* , psttw ) ;
             {
@@ -66,14 +66,14 @@ REST
     {
     while( !etThread && stSoul )
     
-    if( !stSoul ) etThread.strokeF( tinP , tMyDomainName+T(" is not registered\r\n") ) ;
+    if( !stSoul ) etThread.strokeF( tinBaseP , tMyDomainName+T(" is not registered\r\n") ) ;
     
-    etThread.dnsQueryF( tinP , stSoul , tMyDomainName , ifcIDtYPEdNSqUERY_A ) ;
-    stackC stSoul( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
+    etThread.dnsQueryF( tinBaseP , stSoul , tMyDomainName , ifcIDtYPEdNSqUERY_A ) ;
+    stackC stSoul( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
 {
 while( !etThread && !ether )
 
-TN( tMyDomainName , "" ) ; tMyDomainName = TF1(etThread.diskIdF(tinP,T("///c")))+T(".host.ideafarm.com") ;
+TN( tMyDomainName , "" ) ; tMyDomainName = TF1(etThread.diskIdF(tinBaseP,T("///c")))+T(".host.ideafarm.com") ;
 
 TODO
 

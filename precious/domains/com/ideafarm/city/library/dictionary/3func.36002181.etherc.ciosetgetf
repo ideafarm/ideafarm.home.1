@@ -8,10 +8,10 @@
 
 
 }
-    tinP.pag1->_etherC_.cio_pBaton->ungrabF( tinP ) ;
-    tinP.pag1->_etherC_.cio_pGetF = pCioGetFP ;
-    tinP.pag1->_etherC_.cio_pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
-    if( !tinP.pag1->_etherC_.cio_pStkOut ) cioSetupF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pBaton->ungrabF( tinBaseP ) ;
+    ((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pGetF = pCioGetFP ;
+    ((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( !((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pStkOut ) cioSetupF( tinBaseP ) ;
     _IO_
 
     }
@@ -20,7 +20,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::cioSetGetF( tinS& tinP , cioGetFT pCioGetFP )/*1*/
+/*1*/voidT etherC::cioSetGetF( tinBaseS& tinBaseP , cioGetFT pCioGetFP )/*1*/
 
 /**/
 */

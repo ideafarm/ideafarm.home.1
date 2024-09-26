@@ -12,20 +12,20 @@ REST
 }
     }
         }
-            ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
-        while( tinP.cKidThreads - cKidThreadsBefore > ( TUCK >> 1 ) && !ether )
+        while( ((tinNormalS&)tinBaseP).cKidThreads - cKidThreadsBefore > ( TUCK >> 1 ) && !ether )
     {
-    if( tinP.cKidThreads - cKidThreadsBefore > ( TUCK >> 0 ) && !ether )
+    if( ((tinNormalS&)tinBaseP).cKidThreads - cKidThreadsBefore > ( TUCK >> 0 ) && !ether )
 
     etThread.osThreadF( TaRG1( tmWorkerF ) ) ;
 {
 while( !ether )
-const countT cKidThreadsBefore = tinP.cKidThreads ;
+const countT cKidThreadsBefore = ((tinNormalS&)tinBaseP).cKidThreads ;
 
-//countT goo = (countT)tinS::tlsDelF ;
-//countT foo = (countT)tinS::tlsNewF ;
+//countT goo = (countT)tinNormalS::tlsDelF ;
+//countT foo = (countT)tinNormalS::tlsNewF ;
 
 TODO
 

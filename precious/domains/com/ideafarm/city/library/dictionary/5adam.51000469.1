@@ -10,44 +10,44 @@
 REST
 
 }
-    //etThread.osSleepF( tinP , TOCK ) ;
+    //etThread.osSleepF( tinBaseP , TOCK ) ;
 
-    etThread.strokeF( tinP , T("S") ) ;
+    etThread.strokeF( tinBaseP , T("S") ) ;
     __( idType - IDtYPE ) ;
-    scs.readF( tinP , idType ) ;
+    scs.readF( tinBaseP , idType ) ;
     idType = 0 ;
-    scs.writeF( tinP , IDtYPE ) ;
-    scs.connectF( tinP , idPortMe ) ;
-    scs.bindF( tinP ) ;
-    socketC scs( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    scs.writeF( tinBaseP , IDtYPE ) ;
+    scs.connectF( tinBaseP , idPortMe ) ;
+    scs.bindF( tinBaseP ) ;
+    socketC scs( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
-    etThread.strokeF( tinP , T("D") ) ;
+    etThread.strokeF( tinBaseP , T("D") ) ;
     __( idType - IDtYPE ) ;
-    scd.readF( tinP , idType , idPort , nicName ) ;
+    scd.readF( tinBaseP , idType , idPort , nicName ) ;
     nicNameC nicName ;
     ZE( countT , idPort ) ;
     ZE( countT , idType ) ;
-    scd.writeF( tinP , idPortMe , nicNameC() , IDtYPE ) ;
+    scd.writeF( tinBaseP , idPortMe , nicNameC() , IDtYPE ) ;
 {
 while( !etThread && !ether )
 
-scd.bindF( tinP ) ;
-socketC scd( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+scd.bindF( tinBaseP ) ;
+socketC scd( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
 }
-    etThread.strokeF( tinP , T("main: saw sReadyS\r\n") ) ;
-    sReadyS.waitF( tinP ) ;
-    etThread.strokeF( tinP , T("main: waiting for sReadyS\r\n") ) ;
-    etThread.osThreadF( tinP , countTC() , tmServeStreamF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReadyS ) ;
-    signC sReadyS( tinP , TAG( TAGiDnULL ) ) ;
+    etThread.strokeF( tinBaseP , T("main: saw sReadyS\r\n") ) ;
+    sReadyS.waitF( tinBaseP ) ;
+    etThread.strokeF( tinBaseP , T("main: waiting for sReadyS\r\n") ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmServeStreamF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReadyS ) ;
+    signC sReadyS( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 }
-    etThread.strokeF( tinP , T("main: saw sReadyD; idPortMe: ")+TF1(idPortMe)+T("\r\n") ) ;
-    sReadyD.waitF( tinP ) ;
-    etThread.strokeF( tinP , T("main: waiting for sReadyD\r\n") ) ;
-    etThread.osThreadF( tinP , countTC() , tmServeDatagramF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReadyD ) ;
-    signC sReadyD( tinP , TAG( TAGiDnULL ) ) ;
+    etThread.strokeF( tinBaseP , T("main: saw sReadyD; idPortMe: ")+TF1(idPortMe)+T("\r\n") ) ;
+    sReadyD.waitF( tinBaseP ) ;
+    etThread.strokeF( tinBaseP , T("main: waiting for sReadyD\r\n") ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmServeDatagramF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sReadyD ) ;
+    signC sReadyD( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 TODO
@@ -55,10 +55,10 @@ TODO
 DONE( tmServeDatagramF )
 }
     }
-        ssd.writeF( tinP , idPort , nicName , idType ) ;
-        etThread.strokeF( tinP , T("d") ) ;
+        ssd.writeF( tinBaseP , idPort , nicName , idType ) ;
+        etThread.strokeF( tinBaseP , T("d") ) ;
         __( idType - IDtYPE ) ;
-        ssd.readF( tinP , idType , idPort , nicName ) ;
+        ssd.readF( tinBaseP , idType , idPort , nicName ) ;
         nicNameC nicName ;
         ZE( countT , idPort ) ;
         ZE( countT , idType ) ;
@@ -66,8 +66,8 @@ DONE( tmServeDatagramF )
     while( !etThread && !ether )
 
     ++ sReadyD ;
-    idPortMe = ssd.bindF( tinP ) ;
-    socketC ssd( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    idPortMe = ssd.bindF( tinBaseP ) ;
+    socketC ssd( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
     signC& sReadyD = *(signC*)pTaskP->c1 ;
 {
@@ -79,17 +79,17 @@ DONE( tmServeStreamF )
     }
         DEL( pso ) ;
         }
-            pso->readF( tinP , &bb , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+            pso->readF( tinBaseP , &bb , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
             ZE( byteT , bb ) ;
-            pso->writeF( tinP , idType ) ;
-            etThread.strokeF( tinP , T("s") ) ;
+            pso->writeF( tinBaseP , idType ) ;
+            etThread.strokeF( tinBaseP , T("s") ) ;
             __( idType - IDtYPE ) ;
-            pso->readF( tinP , idType ) ;
+            pso->readF( tinBaseP , idType ) ;
             ZE( countT , idType ) ;
         {
         else if( pso )
         if( ether ) { DEL( pso ) ; }
-        sss.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+        sss.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
@@ -97,9 +97,9 @@ DONE( tmServeStreamF )
     while( !etThread && !ether )
 
     ++ sReadyS ;
-    sss.listenF( tinP ) ;
-    __( sss.bindF( tinP , idPortMe ) - idPortMe ) ;
-    socketC sss( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sss.listenF( tinBaseP ) ;
+    __( sss.bindF( tinBaseP , idPortMe ) - idPortMe ) ;
+    socketC sss( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
     signC& sReadyS = *(signC*)pTaskP->c1 ;
 {

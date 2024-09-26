@@ -9,9 +9,9 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
-tinP.pJot8 = 0 ;
+((tinNormalS&)tinBaseP).pJot8 = 0 ;
 }
     if( vv - foo ) { BLAMMO ; }
 
@@ -21,16 +21,16 @@ tinP.pJot8 = 0 ;
 
     const byteT* pbzj = (const byteT*)JpOINTER_8 ;
 
-    const byteT* pbzInJot = *tinP.pJot8 ;
+    const byteT* pbzInJot = *((tinNormalS&)tinBaseP).pJot8 ;
 
     __( idJot - 1 ) ;
-    countT idJot = tinP.pJot8->writeF( tinP , pbzPush , sizeof foo ) ;
+    countT idJot = ((tinNormalS&)tinBaseP).pJot8->writeF( tinBaseP , pbzPush , sizeof foo ) ;
 
     const byteT* pbzPush = (const byteT*)&foo ;
     countT foo = 0x12345678 ;
 
-    tinP.pJot8 = &myJot ;
-    jotC myJot( tinP , "myJot" , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE ) ;
+    ((tinNormalS&)tinBaseP).pJot8 = &myJot ;
+    jotC myJot( tinBaseP , "myJot" , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE ) ;
 {
 
 TODO

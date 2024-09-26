@@ -15,13 +15,13 @@ DONE( tmRiverServeF )
     TELL( "tmRiverServeF: cleaning up" )
     etThread = 0 ;
     }
-        etThread.delF( tinP , pbMsg ) ;
-        if( !bClose ) river.writeMsgF( tinP , pbMsg , cbMsg ) ;
+        etThread.delF( tinBaseP , pbMsg ) ;
+        if( !bClose ) river.writeMsgF( tinBaseP , pbMsg , cbMsg ) ;
         TELL( "writing the message just received to the river" )
-        bClose = !etThread && cbMsg == tDry.csF( tinP ) && !etThread.strCompareF( tinP , T(pbMsg) , tDry ) ;
-        pso->readMsgOkF( tinP ) ;
+        bClose = !etThread && cbMsg == tDry.csF( tinBaseP ) && !etThread.strCompareF( tinBaseP , T(pbMsg) , tDry ) ;
+        pso->readMsgOkF( tinBaseP ) ;
         TELL( "acknowledging receipt of a message" )
-        countT cbMsg = pso->readMsgF( tinP , pbMsg ) ;
+        countT cbMsg = pso->readMsgF( tinBaseP , pbMsg ) ;
         TELL( "waiting for a message to arrive on a socket" )
         ZE( byteT* , pbMsg ) ;
     {
@@ -30,7 +30,7 @@ DONE( tmRiverServeF )
     TN( tDry , "!amDry" ) ;
 
     cClients ++ ;
-    pso->etherF( tinP , etThread ) ;
+    pso->etherF( tinBaseP , etThread ) ;
     countT&  cClients = *(countT*)pTaskP->c4 ;
     riverC&  river    = *(riverC*)pTaskP->c3 ;
     socketC* pso      = (socketC*)pTaskP->c2 ;

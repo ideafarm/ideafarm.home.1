@@ -9,15 +9,15 @@
 
 REST
 
-etThread.strokeF( tinP , T("aok\r\n") ) ; //U::
-etThread.delF( tinP , pstt1m ) ;
+etThread.strokeF( tinBaseP , T("aok\r\n") ) ; //U::
+etThread.delF( tinBaseP , pstt1m ) ;
 }
-    etThread.boxPutF( tinP , psttc1 , tNew , tNew.csF( tinP ) ) ;
+    etThread.boxPutF( tinBaseP , psttc1 , tNew , tNew.csF( tinBaseP ) ) ;
     }
-        etThread.delF( tinP , psttSnip ) ;
-        etThread.strokeF( tinP , T("\r        \r")+TF1(idLath) ) ; //U::
+        etThread.delF( tinBaseP , psttSnip ) ;
+        etThread.strokeF( tinBaseP , T("\r        \r")+TF1(idLath) ) ; //U::
         tNew += T(psttSnip)+( bFound ? tx+TF2(++idLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN) : tb ) ;
-        boolT bFound = etThread.strSubstringF( tinP , psttSnip , idf , sttq , tSearchFor , tOld ) ; ___( psttSnip ) ;
+        boolT bFound = etThread.strSubstringF( tinBaseP , psttSnip , idf , sttq , tSearchFor , tOld ) ; ___( psttSnip ) ;
         ZE( strokeS* , psttSnip ) ;
     {
     while( idf )
@@ -25,18 +25,18 @@ etThread.delF( tinP , pstt1m ) ;
     countT idf = 1 ;
     TN( tNew , "" ) ;
 
-    etThread.delF( tinP , postIn ) ;
+    etThread.delF( tinBaseP , postIn ) ;
     TN( tOld , "" ) ; tOld = T(postIn) ;
 
-    etThread.boxGetShadowF( tinP , postIn , costIn , psttc1 ) ; ___( postIn ) ;
+    etThread.boxGetShadowF( tinBaseP , postIn , costIn , psttc1 ) ; ___( postIn ) ;
     ZE( countT   , costIn ) ;
     ZE( osTextT* , postIn ) ;
-    //etThread.strokeF( tinP , T(psttc1)+T("\r\n") ) ; //U::
+    //etThread.strokeF( tinBaseP , T(psttc1)+T("\r\n") ) ; //U::
 
-    if( etThread.strIdF( tinP , tSearchFor , psttc1 ) ) continue ;
+    if( etThread.strIdF( tinBaseP , tSearchFor , psttc1 ) ) continue ;
 {
 FORsTRINGSiN1( pstt1m )
-etThread.boxMenuF( tinP , soul , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/*") ) ; ___( pstt1m ) ;
+etThread.boxMenuF( tinBaseP , soul , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/*") ) ; ___( pstt1m ) ;
 ZE( strokeS* , pstt1m ) ;
 TN( tSearchFor , "T" ) ; tSearchFor += T("AGiDnULL") ;
 TN( tx , "0x" ) ;

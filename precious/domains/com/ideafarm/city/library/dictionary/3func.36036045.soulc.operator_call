@@ -11,14 +11,14 @@
     }
         }
             break ;
-            PUSE( tinP , *(byteT**)&psttw ) ;
+            PUSE( tinBaseP , *(byteT**)&psttw ) ;
             }
                 }
                     POPUP( T(postName)+T(": \"?\" received.") ) ;
                 {
-                if( !tinP.pEther->strCompareF( tinP , psttw , T("?") ) )
+                if( !((tinNormalS&)tinBaseP).pEther->strCompareF( tinBaseP , psttw , T("?") ) )
             {
-            if( tinP.pEther )
+            if( ((tinNormalS&)tinBaseP).pEther )
 
             slP >> psttw ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
@@ -47,7 +47,7 @@
         case ifcIDcMDbASE_INSTANCEnAME :
         }
             break ;
-            slP << (strokeS*)T(tinP.pag1->_soulC_.postOldClassName) ;
+            slP << (strokeS*)T(((tinNormalS&)tinBaseP).pag1->_soulC_.postOldClassName) ;
         {
         case ifcIDcMDbASE_CLASSnAME :
     {
@@ -66,7 +66,7 @@
 
     SCOOP
 {
-/*1*/voidT soulC::operator ()( tinS& tinP , soulC& slP )/*1*/
+/*1*/voidT soulC::operator ()( tinBaseS& tinBaseP , soulC& slP )/*1*/
 /**/
 */
 /*

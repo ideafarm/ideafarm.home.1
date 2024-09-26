@@ -12,18 +12,18 @@
         }
             psttOutP = psttNew ;_WQ
             }
-                delF( tinP , psttOutP ) ;_WQ
+                delF( tinBaseP , psttOutP ) ;_WQ
                 for( countT off = CSpREFIX ; off < offEnd ; off ++ ) psttNew[ off + 1 ] = psttOutP[ off ] ;_WQ
                 countT offEnd = CSpREFIX + cLengthOut ;_WQ
             {
             if( psttNew && psttOutP )
             if( psttNew ) psttNew[ CSpREFIX ] = sttInP ;_WQ
             SETpREFIX( psttNew , cLengthOut + 1 , csttExtraP ) ;_WQ
-            third.newF( tinP , LF , psttNew , CSpREFIX + cLengthOut + 1 + csttExtraP ) ; // CALLER MUST TAG ___( psttNew ) ;_WQ
+            third.newF( tinBaseP , LF , psttNew , CSpREFIX + cLengthOut + 1 + csttExtraP ) ; // CALLER MUST TAG ___( psttNew ) ;_WQ
             ZE( strokeS* , psttNew ) ;_WQ
 
             }
-                third.dosWriteStdOutBadCodeStyleF( tinP ) ;_WQ
+                third.dosWriteStdOutBadCodeStyleF( tinBaseP ) ;_WQ
                 LOGrAW3( "" , DDNUMB , " calling dosWriteStdOutBadCodeStyleF\r\n" ) ;_WQ
                 _IO_
             {
@@ -46,17 +46,17 @@
             psttOutP = psttNew ;_WQ
             if( psttNew ) psttNew[ CSpREFIX + cLengthOut ] = sttInP ;_WQ
             }
-                delF( tinP , psttOutP ) ;_WQ
+                delF( tinBaseP , psttOutP ) ;_WQ
                 for( countT off = CSpREFIX ; off < offEnd ; off ++ ) psttNew[ off ] = psttOutP[ off ] ;_WQ
                 countT offEnd = CSpREFIX + cLengthOut ;_WQ
             {
             if( psttOutP && psttNew )
             SETpREFIX( psttNew , cLengthOut + 1 , csttExtraP ) ;_WQ
-            third.newF( tinP , LF , psttNew , CSpREFIX + cLengthOut + 1 + csttExtraP ) ; // CALLER MUST TAG ___( psttNew ) ;_WQ
+            third.newF( tinBaseP , LF , psttNew , CSpREFIX + cLengthOut + 1 + csttExtraP ) ; // CALLER MUST TAG ___( psttNew ) ;_WQ
             ZE( strokeS* , psttNew ) ;_WQ
 
             }
-                third.dosWriteStdOutBadCodeStyleF( tinP ) ;_WQ
+                third.dosWriteStdOutBadCodeStyleF( tinBaseP ) ;_WQ
                 LOGrAW3( "" , DDNUMB , " calling dosWriteStdOutBadCodeStyleF\r\n" ) ;_WQ
                 _IO_
             {
@@ -85,7 +85,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strFuseF( tinS& tinP , strokeS*& psttOutP , const strokeS sttInP , const countT csttExtraP , const boolT fLeadingP )/*1*/
+/*1*/voidT etherC::strFuseF( tinBaseS& tinBaseP , strokeS*& psttOutP , const strokeS sttInP , const countT csttExtraP , const boolT fLeadingP )/*1*/
 
 /**/
 */

@@ -9,10 +9,10 @@
 
 }
     DEL( prPosts ) ;
-    if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+    if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
     }
-        etThread.delF( tinP , postEmail ) ;
+        etThread.delF( tinBaseP , postEmail ) ;
         }
             , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
         
@@ -59,7 +59,7 @@
                                             "<!--\r\n"
                                         "<SCRIPT LANGUAGE=\"JavaScript\">\r\n"
                                         "Email: <INPUT ID=idaEmail TYPE=\"text\" MAXLENGTH=\"64\" SIZE=\"64\" NAME=\"email\" value=\"\"><BR>\r\n"
-                                        "<INPUT TYPE=\"hidden\" NAME=\"port\" VALUE=\"")+TF2(meP.idPortF(tinP),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\">\r\n"
+                                        "<INPUT TYPE=\"hidden\" NAME=\"port\" VALUE=\"")+TF2(meP.idPortF(tinBaseP),flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\">\r\n"
                                         "<INPUT TYPE=\"hidden\" NAME=\"form\" VALUE=\"loginviaemaillink\">\r\n"
                                     "<TD rowspan=3 align=center style=\"background-color:" ifcCOLORhTMLwHAT_BACKnORMAL " ; color:" ifcCOLORhTMLwHAT_FOREnORMAL " ;\">\r\n"
                                     "</TD>\r\n"
@@ -80,7 +80,7 @@
         
                 T(
         
-            etThread.strMakeF( tinP , LF , prPosts , 
+            etThread.strMakeF( tinBaseP , LF , prPosts , 
         {
         else
         }
@@ -94,16 +94,16 @@
         
                 T(
         
-            etThread.strMakeF( tinP , LF , prPosts , 
+            etThread.strMakeF( tinBaseP , LF , prPosts , 
 
-            session.setIdAccountF( tinP , - 1 ) ;
-            session.setEmailF( tinP , T(postEmail) ) ;
+            session.setIdAccountF( tinBaseP , - 1 ) ;
+            session.setEmailF( tinBaseP , T(postEmail) ) ;
         {
         if( postEmail )
     
         }
             if( POOP ) { POOPR ; }
-            tinP.pEtScratch->boxGetShadowF( tinP , postEmail , costEmail , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/accounts/3z141z1/txt.email.owner.txt") , 1 ) ; ___( postEmail ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postEmail , costEmail , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/accounts/3z141z1/txt.email.owner.txt") , 1 ) ; ___( postEmail ) ;
             // 3z141z1 IS THE VALUE -1 FOR idAccount
             ZE( countT , costEmail ) ;
             SCOOPS
@@ -114,21 +114,21 @@
     ZE( pbRefC* , prPosts ) ;
 
     }
-        session.setIdAccountF( tinP ) ;
-        session.setEmailF( tinP ) ;
+        session.setIdAccountF( tinBaseP ) ;
+        session.setEmailF( tinBaseP ) ;
     {
     else
     }
-        session.privilegesF( tinP , flagsp ) ;
+        session.privilegesF( tinBaseP , flagsp ) ;
     
         }
             if( info.psttPaypalPayerEmail && info.psttPaypalPayerEmail->idAdam ) flagsp |= flSESSIONpRIVILEGE_FULLhEADER ;
-            accountS info( tinP , etThread , pcIdAccount[ offa ] , flACCOUNT1_null , flACCOUNT2_QUERYpAYPALpAYEReMAIL ) ;
+            accountS info( tinBaseP , etThread , pcIdAccount[ offa ] , flACCOUNT1_null , flACCOUNT2_QUERYpAYPALpAYEReMAIL ) ;
         {
         flagsT flagsp = flSESSIONpRIVILEGE_HIDEaDlINKS | flSESSIONpRIVILEGE_HIDEiMAGEaDS | flSESSIONpRIVILEGE_SENDaNDrECEIVEeMAIL | flSESSIONpRIVILEGE_VIEWuNTESTEDpAGES | flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ;
     
-        session.setIdAccountF( tinP , pcIdAccount[ offa ] ) ;
-        session.setEmailF( tinP , T(ppostEmail[offa]) ) ;
+        session.setIdAccountF( tinBaseP , pcIdAccount[ offa ] ) ;
+        session.setEmailF( tinBaseP , T(ppostEmail[offa]) ) ;
     
         }
             offa = offIn % ( sizeof pcIdAccount / sizeof pcIdAccount[ 0 ] ) ;
@@ -137,11 +137,11 @@
         {
         ZE( countT , offa ) ;
     {
-    if( etThread.diskIdF( tinP , T("///c") ) == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 ) //FOR DEVELOPMENT CONVENIENCE; THIS BLOCK CAN REMAIN IN PRODUCTION CODE
+    if( etThread.diskIdF( tinBaseP , T("///c") ) == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 ) //FOR DEVELOPMENT CONVENIENCE; THIS BLOCK CAN REMAIN IN PRODUCTION CODE
 
-    sessionC& session = sessionsP( tinP , nnPeerP ) ;
+    sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-/*1*/voidT loginCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT loginCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 } ;
     //0x10 ,

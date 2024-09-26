@@ -10,18 +10,18 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
 
-etThread.strokeF( tinP , TT(timeB1,timeB2)+T("\r\n\r\nsome of this time was spent within osSleepF checking occasionally for impotence\r\nmost of this excess time is due to delays in waking up that were caused by\r\nother threads (in other processes) keeping the computer busy\r\n\r\npress the enter key") ) ;
-etThread.osTimeSubtractF( tinP , timeB1 , timeB2 , timeToSleep , 0 ) ;
-etThread.strokeF( tinP , T("\r\n\r\nthe elapsed time was actually\r\n\r\n")+TT(timeB1,timeB2)+T("\r\n\r\nnote that this is slightly longer than 8 TOCKs\r\nthe excess time was\r\n\r\n") ) ;
+etThread.strokeF( tinBaseP , TT(timeB1,timeB2)+T("\r\n\r\nsome of this time was spent within osSleepF checking occasionally for impotence\r\nmost of this excess time is due to delays in waking up that were caused by\r\nother threads (in other processes) keeping the computer busy\r\n\r\npress the enter key") ) ;
+etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeToSleep , 0 ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\nthe elapsed time was actually\r\n\r\n")+TT(timeB1,timeB2)+T("\r\n\r\nnote that this is slightly longer than 8 TOCKs\r\nthe excess time was\r\n\r\n") ) ;
 
-etThread.osTimeSubtractF( tinP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
-etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
-etThread.osSleepF( tinP , timeToSleep , 0 , flSLEEP_TALK ) ;
-etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
+etThread.osSleepF( tinBaseP , timeToSleep , 0 , flSLEEP_TALK ) ;
+etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
 
 const countT timeToSleep = TOCK * 8 ;
 
@@ -30,7 +30,7 @@ ZE( countT , timeB1 ) ;
 ZE( sCountT , timeA2 ) ;
 ZE( countT , timeA1 ) ;
 
-etThread.strokeF( tinP , T("sleeping for 8 TOCKs\r\n\r\n") ) ;
+etThread.strokeF( tinBaseP , T("sleeping for 8 TOCKs\r\n\r\n") ) ;
 
 TODO
 

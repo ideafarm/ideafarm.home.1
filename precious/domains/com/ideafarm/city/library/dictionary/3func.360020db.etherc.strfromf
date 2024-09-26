@@ -8,14 +8,14 @@
 
 
 }
-    strFromF( tinP , psttP , (sCountT)valueP , flagsFormatP | flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED , csP , radixP , csttExtraP ) ; // CALLER MUST TAG ; 20240818@1156: ADDED flFORMAT_NObIGITvALUES | W/O ANALYSIS
+    strFromF( tinBaseP , psttP , (sCountT)valueP , flagsFormatP | flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED , csP , radixP , csttExtraP ) ; // CALLER MUST TAG ; 20240818@1156: ADDED flFORMAT_NObIGITvALUES | W/O ANALYSIS
     _IO_
 
     }
         if( POOP ) return ;
         { countT cb = 4 ; __( sizeof valueP - cb ) ; }
-        __(  tinP.strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
-        __( !tinP.strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
+        __(  ((tinNormalS&)tinBaseP).strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
+        __( !((tinNormalS&)tinBaseP).strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
         __( radixP && radixP < 2 ) ;_WQ
         __NZ( psttP ) ;_WQ
         if( POOP ) return ;
@@ -23,7 +23,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strFromF( tinS& tinP , strokeS*& psttP , const countT valueP , const flagsT flagsFormatP , const countT csP , const countT radixP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strFromF( tinBaseS& tinBaseP , strokeS*& psttP , const countT valueP , const flagsT flagsFormatP , const countT csP , const countT radixP , const countT csttExtraP )/*1*/
 
 /**/
 */

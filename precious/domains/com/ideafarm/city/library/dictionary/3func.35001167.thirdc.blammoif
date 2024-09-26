@@ -8,16 +8,16 @@
 
 
 }
-    thirdC::dosRaiseExceptionIF( tinP , ifcIDeVENTeXCEPTIONmONITORED_BLAMMO , pcArgs , sizeof pcArgs / sizeof pcArgs[ 0 ] ) ;
-    countT pcArgs[] = { idLineP , idiFileP , idLineCtP , idiFileCtP , idBlammoP , tinP.idTinNamed , tinP.monitor.idThread , tinP.osTid , osTidIF() } ;
+    thirdC::dosRaiseExceptionIF( tinBaseP , ifcIDeVENTeXCEPTIONmONITORED_BLAMMO , pcArgs , sizeof pcArgs / sizeof pcArgs[ 0 ] ) ;
+    countT pcArgs[] = { idLineP , idiFileP , idLineCtP , idiFileCtP , idBlammoP , ((tinNormalS&)tinBaseP).idTinNamed , ((tinNormalS&)tinBaseP).monitor.idThread , ((tinNormalS&)tinBaseP).osTid , osTidIF() } ;
 
     }
-        //etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)"blammoIF: raising exception" , flTRACE_PARAMETERiSoStEXT ) ;
+        //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)"blammoIF: raising exception" , flTRACE_PARAMETERiSoStEXT ) ;
         //LOGrAW( "blammoIF: raising exception ; an exception handler is registered, so an exception report file should be written to the \\tmp folder of the current drive (the same folder that contains this log file)\r\n" ) ;
     {
     else
     }
-        //etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)"blammoIF: raising exception with no exception handler registered" , flTRACE_PARAMETERiSoStEXT ) ;
+        //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)"blammoIF: raising exception with no exception handler registered" , flTRACE_PARAMETERiSoStEXT ) ;
         LOGrAW( "blammoIF: raising exception ; **** no exception handler is registered ****\r\n" ) ;
     {
     if( !( F(processGlobal2I.flCt) & flCTdTg_EXCEPTIONhANDLERrEGISTERED ) || F(processGlobal2I.flDt) & flCTdTg_EXCEPTIONhANDLERrEGISTERED )
@@ -25,14 +25,14 @@
     //LOGrAW( "**************************** BLAMMO ******************************\r\n" ) ;
 
     }
-        tinP.pag1->idBlammo        = idBlammoP  ;
-        tinP.pag1->idiFileBlammoCt = idiFileCtP ;
-        tinP.pag1->idLineBlammoCt  = idLineCtP  ;
-        tinP.pag1->idiFileBlammo   = idiFileP   ;
-        tinP.pag1->idLineBlammo    = idLineP    ;
+        ((tinNormalS&)tinBaseP).pag1->idBlammo        = idBlammoP  ;
+        ((tinNormalS&)tinBaseP).pag1->idiFileBlammoCt = idiFileCtP ;
+        ((tinNormalS&)tinBaseP).pag1->idLineBlammoCt  = idLineCtP  ;
+        ((tinNormalS&)tinBaseP).pag1->idiFileBlammo   = idiFileP   ;
+        ((tinNormalS&)tinBaseP).pag1->idLineBlammo    = idLineP    ;
     {
     if( c_pTin )
-    countT c_pTin = (countT)&tinP ;
+    countT c_pTin = (countT)&tinBaseP ;
 
     }
         pg1.idBlammo        = idBlammoP  ;
@@ -45,13 +45,13 @@
     {
 
     }
-        //etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+        //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
         //U:: PERHAPS USE RESTART HERE ; IF THIS FAILS, IT CAN BLOW THE STACK AND PREVENT AN EXCEPTION REPORT FROM BEING WRITTEN
 
         //LOGrAW( ostoSay ) ; //JUST IN CASE traceF FAILS
 
         OStEXTAK( ostoSay , "\r\n" ) ;
-        OStEXTA(  ostoSay , &tinP ? tinP.postThreadName : "[&tinP is 0]" ) ;
+        OStEXTA(  ostoSay , &tinBaseP ? ((tinNormalS&)tinBaseP).postThreadName : "[&tinBaseP is 0]" ) ;
         OStEXTAK( ostoSay , ") on thread " ) ;
         OStEXTC( ostoSay , idiFileCtP , 0 ) ;
         OStEXTAK( ostoSay , "(" ) ;

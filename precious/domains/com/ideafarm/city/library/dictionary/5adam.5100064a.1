@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 CONoUTrAW5( "[cDirs,cFiles]: " , cDirs , " " , cFiles , "\r\n" ) ;
 
-etThread.diskWalkGatherF( tinP , cDirs , cFiles , ether , psttTo , psttFrom , myCBF , 0 ) ;
+etThread.diskWalkGatherF( tinBaseP , cDirs , cFiles , ether , psttTo , psttFrom , myCBF , 0 ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
 
@@ -26,11 +26,11 @@ TODO
 }
     return bDoIt ;
 
-    boolT  bDoIt = !!thirdC::c_strstrIF( tinP , postNameP , ".csv" ) ;
+    boolT  bDoIt = !!thirdC::c_strstrIF( tinBaseP , postNameP , ".csv" ) ;
 
     _strlwr( (osTextT*)postNameP ) ;
 {
-boolT myCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
+boolT myCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOWtEXT( "example.simplest.3func.341be.etherC.diskWalkGatherF" )/*1*/
 /**/

@@ -13,11 +13,11 @@
 
     }
         }
-            if( cba > cbd ) thirdC::c_memsetIF( tinP , pba + cbd , cba - cbd ) ;
-            etRock.delF( tinP , pbd ) ;
-            if( pbd ) thirdC::c_memcpyIF( tinP , pba , pbd , cbd ) ;
-            etRock.newF( tinP , LF , pba , cbaNew ) ; ___( pba ) ;
-            etherC& etRock = etherC::etRockIF( tinP ) ;
+            if( cba > cbd ) thirdC::c_memsetIF( tinBaseP , pba + cbd , cba - cbd ) ;
+            etRock.delF( tinBaseP , pbd ) ;
+            if( pbd ) thirdC::c_memcpyIF( tinBaseP , pba , pbd , cbd ) ;
+            etRock.newF( tinBaseP , LF , pba , cbaNew ) ; ___( pba ) ;
+            etherC& etRock = etherC::etRockIF( tinBaseP ) ;
 
             countT cbd = cba ; cba = cbaNew ;
             byteT* pbd = pba ; pba = 0 ;

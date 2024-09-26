@@ -11,19 +11,19 @@
     #endif
 
         handle.resetF() ;
-        tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
+        ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
         }
-            if( !POOP ) cSuspendPrior = tinP.brcRaw ;
+            if( !POOP ) cSuspendPrior = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSpOOP
             BOS( WHATssu , BOSmAXcOUNTT , SuspendThread( (HANDLE)osh ) )
         {
         if( ~handle )
         countT osh = handle.osF( ifcIDtYPEhANDLE_THREAD ) ;
         ZE( countT , cSuspendPrior ) ;
-        handle.osF( ifcIDtYPEhANDLE_THREAD , *tinP.pag1->_thirdC_.pSwThreadHandle ) ; //ASSUME: 0 IS AN INVALID HANDLE, SO THAT IF THE THREAD HAS ALREADY DEREGISTERED ITSELF, I WILL DO NOTHING
-        handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
-        tinP.pag1->_thirdC_.lOsTid = osTidP ;
-        tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        handle.osF( ifcIDtYPEhANDLE_THREAD , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ; //ASSUME: 0 IS AN INVALID HANDLE, SO THAT IF THE THREAD HAS ALREADY DEREGISTERED ITSELF, I WILL DO NOTHING
+        handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
+        ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid = osTidP ;
+        ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     #if defined( __NT__ )
 
@@ -35,7 +35,7 @@
     //IFbEcAREFUL
     //WORKS UNCONDITIONALLY SO THAT GRABBING/UNGRABBING WILL WORK
 {
-/*1*/voidT thirdC::dosSuspendThreadIF( tinS& tinP , const countT osTidP )/*1*/
+/*1*/voidT thirdC::dosSuspendThreadIF( tinBaseS& tinBaseP , const countT osTidP )/*1*/
 
 /**/
 */

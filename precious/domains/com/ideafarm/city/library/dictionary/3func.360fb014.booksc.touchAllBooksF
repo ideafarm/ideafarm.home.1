@@ -13,20 +13,20 @@
             if( !pbi ) break ;
     
             __NZ( bDelete ) ;
-            bDelete = readF( tinP , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK | flBOOKScrEAD_CURRENTbOOKoNLY , &bQuit ) ;
+            bDelete = readF( tinBaseP , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK | flBOOKScrEAD_CURRENTbOOKoNLY , &bQuit ) ;
             cbi = - 1 ;
             pbi = 0 ;
 
             if( !pbi ) break ;
     
             __NZ( bDelete ) ;
-            boolT bDelete = readF( tinP , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK | flBOOKScrEAD_CURRENTbOOKoNLY , &bQuit ) ; // NEEDED BECAUSE "READ REMAINDER OF CURRENT BOOK" REPEATEDLY WILL NEVER ADVANCE TO THE NEXT BOOK; SO WE BEGIN EACH ITERATION WITH READING THE WOTH BYTE OF THE CURRENT BOOK
+            boolT bDelete = readF( tinBaseP , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK | flBOOKScrEAD_CURRENTbOOKoNLY , &bQuit ) ; // NEEDED BECAUSE "READ REMAINDER OF CURRENT BOOK" REPEATEDLY WILL NEVER ADVANCE TO THE NEXT BOOK; SO WE BEGIN EACH ITERATION WITH READING THE WOTH BYTE OF THE CURRENT BOOK
             countT cbi = 1 ;
 
             ZE( const byteT* , pbi ) ;
         {
         while( !POOP && !bQuit )
-        handleC hRead( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+        handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
         ZE( countT , idBook ) ;
 
         const boolT& bQuit = pbQuitP ? *pbQuitP : bnu ;
@@ -41,12 +41,12 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT booksC::touchAllBooksF( tinS& tinP , const boolT* pbQuitP )/*1*/
+/*1*/voidT booksC::touchAllBooksF( tinBaseS& tinBaseP , const boolT* pbQuitP )/*1*/
 
 /**/
 */
 i set pcpIdBookScratch1
- tinP
+ tinBaseP
 arguments
 /*
 

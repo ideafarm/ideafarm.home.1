@@ -10,7 +10,7 @@
 REST
 
 }
-    etThread.delF( tinP , pbr ) ;
+    etThread.delF( tinBaseP , pbr ) ;
     }
         etherC::ifcSayIF( T("list: ")+TF1(c2r.c1)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ; //U::
         count2S& c2r = *(count2S*)pbr ;
@@ -23,7 +23,7 @@ while( stBlob )
 
 }
     if( !ids ) { BLAMMO ; }
-    stBlob.sinkF( tinP , ids , (byteT*)&c2r , flSTACKsINK_UNIQUE , subtractFooF ) ;
+    stBlob.sinkF( tinBaseP , ids , (byteT*)&c2r , flSTACKsINK_UNIQUE , subtractFooF ) ;
     etherC::ifcSayIF( TF1(idTry)+TPS("-",0x40,S1C('-'))+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ; //U::
     ZE( countT , ids ) ;
 
@@ -31,7 +31,7 @@ while( stBlob )
 {
 for( countT idTry = 1 ; idTry <= 0x80 ; idTry ++ )
 
-stackC stBlob( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count2S ) ) ;
+stackC stBlob( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count2S ) ) ;
 ranUniC ru( 0x10000 , 1 ) ;
 
 TODO
@@ -46,7 +46,7 @@ TODO
         osTextT post3[] = "> " ;
     {
 
-    if( tinP.fingerprint && c3P ) ;
+    if( ((tinNormalS&)tinBaseP).fingerprint && c3P ) ;
 
     }
         else if( pe1->c1 < pe2->c1 ) sgn = - 1 ;
@@ -64,7 +64,7 @@ TODO
     {
     IFbEcAREFUL
 {
-countT subtractFooF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractFooF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 /*1*/WAKEhIDE( "example.other.stackC.sinkF" )/*1*/
 /**/

@@ -10,15 +10,15 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinP , TOCK * 4 ) ;
+etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
 
-if( 4 == value ) etThread.strokeF( tinP , T("value has been doubled, again, to 4\r\n") ) ;
-value = (*pf)( tinP , value ) ;
+if( 4 == value ) etThread.strokeF( tinBaseP , T("value has been doubled, again, to 4\r\n") ) ;
+value = (*pf)( tinBaseP , value ) ;
 
-if( 2 == value ) etThread.strokeF( tinP , T("value has been doubled to 2\r\n") ) ;
-value = doF( tinP , value ) ;
+if( 2 == value ) etThread.strokeF( tinBaseP , T("value has been doubled to 2\r\n") ) ;
+value = doF( tinBaseP , value ) ;
 
 countT value = 1 ;
 
@@ -29,7 +29,7 @@ TODO
 }
     return cP * 2 ;
 {
-countT doF( tinS& tinP , countT& cP )
+countT doF( tinBaseS& tinBaseP , countT& cP )
 
 /*1*/WAKEhIDE( "example.simplest.snip.002000f.ifcFT" )/*1*/
 /**/

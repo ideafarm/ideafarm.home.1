@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinP ) ;                            
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;                            
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 
-etThread.traceF( tinP , T("                ")+T("0              1               2               3") ) ;
-etThread.traceF( tinP , T("                ")+T("123456789abcdef0123456789abcdef0123456789abcdef0") ) ;
-etThread.traceF( tinP , T("                ")+tBig ) ;
+etThread.traceF( tinBaseP , T("                ")+T("0              1               2               3") ) ;
+etThread.traceF( tinBaseP , T("                ")+T("123456789abcdef0123456789abcdef0123456789abcdef0") ) ;
+etThread.traceF( tinBaseP , T("                ")+tBig ) ;
 }
-    etThread.traceF( tinP , T("                ")+TP("",idHit-1)+tLine ) ;
+    etThread.traceF( tinBaseP , T("                ")+TP("",idHit-1)+tLine ) ;
 
     ;
 
@@ -28,12 +28,12 @@ etThread.traceF( tinP , T("                ")+tBig ) ;
 
     TN( tLine , "" ) ; tLine = csttHit > 2
     static countT csttHit = idl - idHit + 1 ;
-    static countT idl = idf ? idf - 1 : tBig.csF( tinP ) ;
+    static countT idl = idf ? idf - 1 : tBig.csF( tinBaseP ) ;
 {
 if( idHit )
-etThread.traceF( tinP , T("[idHit,idf]:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tinBaseP , T("[idHit,idf]:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-countT idHit = etThread.strIdOptimizedClosureF( tinP , idf , sttq , tre , tBig , flSTRiDoPTIMIZEDcLOSURE_RIGHTtOlEFT , pFlagsOverride , pcMinOverride , pcMaxOverride ) ;
+countT idHit = etThread.strIdOptimizedClosureF( tinBaseP , idf , sttq , tre , tBig , flSTRiDoPTIMIZEDcLOSURE_RIGHTtOlEFT , pFlagsOverride , pcMinOverride , pcMaxOverride ) ;
 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 countT idf = 1 ;
 

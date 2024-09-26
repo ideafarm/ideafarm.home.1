@@ -10,9 +10,9 @@
 }
     return cUngrabsDone ;
 
-    //if( tinP.pc Utility[ 0 ] ) { CONoUTrAW3( "\r\n" , this , " - - - - \r\n" ) ; }
+    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) { CONoUTrAW3( "\r\n" , this , " - - - - \r\n" ) ; }
 
-    //if( (countT)this == etherC::ether_cUtility_IF( tinP , 0 ) ) { LOGrAWtID( "U-" ) ; }
+    //if( (countT)this == etherC::ether_cUtility_IF( tinBaseP , 0 ) ) { LOGrAWtID( "U-" ) ; }
 
     //}
     //    CONoUTrAW( os ) ;
@@ -20,7 +20,7 @@
     //    OStEXTAK(  os , "\r\n" ) ;
     //    }
     //        if( offi % 5 == 3 ) { OStEXTAK(  os , "]" ) ; }
-    //        OStEXTC(   os , tinP.pPanLifiRecurseGrabbedLevel[ offi ] , 0 ) ;
+    //        OStEXTC(   os , ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] , 0 ) ;
     //        else { OStEXTAK(  os , "," ) ; }
     //        }
     //            else { OStEXTAK(  os , " [" ) ; }
@@ -28,11 +28,11 @@
     //                continue ;
     //                offi += 4 ;
     //            {
-    //            if( !tinP.pPanLifiRecurseGrabbedLevel[ offi ] )
+    //            if( !((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] )
     //        {
     //        if( !( offi % 5 ) )
     //    {
-    //    for( countT offi = 0 ; offi < sizeof tinP.pPanLifiRecurseGrabbedLevel / sizeof tinP.pPanLifiRecurseGrabbedLevel[ 0 ] ; offi ++ )
+    //    for( countT offi = 0 ; offi < sizeof ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel / sizeof ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ 0 ] ; offi ++ )
     //
     //    OStEXTAK( os , "} ----" ) ;
     //    OStEXTC(  os , idiFileCt , 0 ) ;
@@ -41,15 +41,15 @@
     //    OStEXTAK( os , "," ) ;
     //    OStEXTC(  os , this , 0 ) ;
     //    OStEXTAK( os , " | {" ) ;
-    //    OStEXTA(  os , tinP.postThreadName ) ;
+    //    OStEXTA(  os , ((tinNormalS&)tinBaseP).postThreadName ) ;
     //    OStEXTAK( os , " " ) ;
-    //    OStEXTC(  os , tinP.monitor.idThread , 0 ) ;
+    //    OStEXTC(  os , ((tinNormalS&)tinBaseP).monitor.idThread , 0 ) ;
     //    OStEXTAK( os , " | " ) ;
-    //    OStEXTC9( os , tinP.osTid ) ;
+    //    OStEXTC9( os , ((tinNormalS&)tinBaseP).osTid ) ;
     //    OStEXTAK( os , "         | " ) ;
     //    OStEXT(   os , TUCK << 2 ) ;
     //{
-    //if( tinP.pag1->idAdam == 0x4010501 )
+    //if( ((tinNormalS&)tinBaseP).pag1->idAdam == 0x4010501 )
 
     }
         THREADmODE2rESTORE
@@ -58,9 +58,9 @@
             }
                 if( !bFound && F(flagsP) & flGRABcUNGRABf_DEPOSITkISSiF ) inc02AM( stat.cKissBank ) ;
 
-                thirdC::dosPriorityIF( tinP , idDesireSave ) ;
+                thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
 
-                tinP.cYield = 0 ;
+                ((tinNormalS&)tinBaseP).cYield = 0 ;
                 }
                     if( !bWoth && ogw < processGlobal2I._grabC_cgw ) break ;
         
@@ -69,14 +69,14 @@
                             break ;
 
                             bFound = 1 ;
-                            thirdC::dosResumeThreadIF( tinP , hThreadWant , 1 ) ;
+                            thirdC::dosResumeThreadIF( tinBaseP , hThreadWant , 1 ) ;
         
                             }
                                 thirdC::dosWriteStdOutIF( ostoBuf ) ;
                                 OStEXTA( ostoBuf , ")\r\n" ) ;
-                                OStEXTA( ostoBuf , tinP.postThreadName ) ;
+                                OStEXTA( ostoBuf , ((tinNormalS&)tinBaseP).postThreadName ) ;
                                 OStEXTA( ostoBuf , " " ) ;
-                                OStEXTC( ostoBuf , tinP.monitor.idThread , 0 ) ;
+                                OStEXTC( ostoBuf , ((tinNormalS&)tinBaseP).monitor.idThread , 0 ) ;
                                 OStEXTA( ostoBuf , " (heater: " ) ;
                                 OStEXTC( ostoBuf , processGlobal2I._grabC_pgw[ ogw ].idThread , 0 ) ;
                                 OStEXTA( ostoBuf , "heatin " ) ;
@@ -84,29 +84,29 @@
                             {
                             if( F(processGlobal2I._grabC_pgw[ogw].flags) & flGRABwANT_CHATTERrESUME )
         
-                            thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ; //THIS WILL GIVE THE WANTER TIME TO GET TO SLEEP
+                            thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ; //THIS WILL GIVE THE WANTER TIME TO GET TO SLEEP
                         
                             if( !hThreadWant ) { BLAMMO ; }
-                            hThreadWant.cloneF( processGlobal2I._grabC_pgw[ ogw ].hThread , osPidIF( tinP ) , hProcessMe , hProcessWant ) ;
-                            handleC hThreadWant( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
+                            hThreadWant.cloneF( processGlobal2I._grabC_pgw[ ogw ].hThread , osPidIF( tinBaseP ) , hProcessMe , hProcessWant ) ;
+                            handleC hThreadWant( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
         
                             if( !hProcessWant ) { BLAMMO ; }
-                            handleC hProcessWant = hProcessF( tinP , processGlobal2I._grabC_pgw[ ogw ].osPid , osPidIF( tinP ) ) ;
+                            handleC hProcessWant = hProcessF( tinBaseP , processGlobal2I._grabC_pgw[ ogw ].osPid , osPidIF( tinBaseP ) ) ;
         
                             hProcessMe.osF( ifcIDtYPEhANDLE_PROCESS , (countT)thirdC::osOpenProcessIF() ) ;
-                            handleC hProcessMe( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
-                            //U:O: if processGlobal2I._grabC_pgw[ ogw ].osPid == tinP.osPid THEN JUST USE PSEUDOHANDLE FOR hProcessWant
-                            //U:O: USE tinP.osPid
+                            handleC hProcessMe( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+                            //U:O: if processGlobal2I._grabC_pgw[ ogw ].osPid == ((tinNormalS&)tinBaseP).osPid THEN JUST USE PSEUDOHANDLE FOR hProcessWant
+                            //U:O: USE ((tinNormalS&)tinBaseP).osPid
         
                             if( !processGlobal2I._grabC_pgw[ ogw ].hThread ) { BLAMMO ; }
 
                             }
                                 if( processGlobal2I._grabC_pgw[ ogw ].idGrab != idMe || processGlobal2I._grabC_pgw[ ogw ].idGrabber != idGrabberKiss ) continue ;
 
-                                tinP.cYield = save ;
-                                while( processGlobal2I._grabC_pgw[ ogw ].bDirty ) thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
-                                              tinP.cYield = 0 ;
-                                countT save = tinP.cYield ;
+                                ((tinNormalS&)tinBaseP).cYield = save ;
+                                while( processGlobal2I._grabC_pgw[ ogw ].bDirty ) thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                              ((tinNormalS&)tinBaseP).cYield = 0 ;
+                                countT save = ((tinNormalS&)tinBaseP).cYield ;
                                 ZE( countT , idCycle2 ) ;
                             {
                             if( processGlobal2I._grabC_pgw[ ogw ].bDirty ) //SOME DIRTY ENTRIES ARE TENTATIVE AND WILL DISAPPEAR (E.G. IF WANTER IS WILLING TO WITHDRAW FROM KISS BANK)
@@ -116,23 +116,23 @@
                     for( ; ogw < processGlobal2I._grabC_cgw ; ogw ++ )
                     ZE( countT , ogw ) ;
 
-                    else        thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
+                    else        thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ;
                     if( bWoth ) bWoth = 0 ;
                 {
                 while( !cGrabbed && idGrabberOk == idGrabberKiss && (sCountT)( idGrabberHigh - idGrabberKiss ) >= 0 )
                 //while( !cGrabbed && idGrabberOk == idGrabberKiss && idGrabberKiss <= idGrabberHigh )
                 ZE( countT , idCycle ) ;
                 ZE( boolT  , bFound ) ;
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                 boolT bWoth = 1 ; //ALSO USED TO INDICATE "bKissChanged"
 
                 countT idGrabberKiss = 1 + incv02AM( idGrabberOk ) ;
 
-                thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
-                const countT idDesireSave = thirdC::dosPriorityIF( tinP ) ;
+                thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
+                const countT idDesireSave = thirdC::dosPriorityIF( tinBaseP ) ;
         
                 osTid = idDesireGrabber = 0 ;
-                tinP.cYield = 0 ;
+                ((tinNormalS&)tinBaseP).cYield = 0 ;
             {
             if( bKiss )
     
@@ -145,17 +145,17 @@
                     if( prior == 1 ) bKiss = 1 ;
                     countT prior = decv02AM( cGrabbed ) ;
                     cDone ++ ;
-                    unregisterF( tinP ) ;
+                    unregisterF( tinBaseP ) ;
                 {
                 for(;;)
                 ZE( countT , cDone ) ;
     
-                if( osTid != tinP.osTid ) { BLAMMO ; } //CATCH PROBABLE APPLICATION CODE ERROR
+                if( osTid != ((tinNormalS&)tinBaseP).osTid ) { BLAMMO ; } //CATCH PROBABLE APPLICATION CODE ERROR
             {
             else
             }
                 if( 1 == decv02AM( cGrabbed ) ) bKiss = 1 ;
-                unregisterF( tinP ) ;
+                unregisterF( tinBaseP ) ;
             {
             if( !( F(flagsP) & flGRABcUNGRABf_ALLrECURSIONS ) )
             ZE( boolT , bKiss ) ;
@@ -165,12 +165,12 @@
     
         }
             }
-                ++ s ; thirdC::dosSleepRawIF( tinP , 0x20 ) ;
+                ++ s ; thirdC::dosSleepRawIF( tinBaseP , 0x20 ) ;
     
                 if( !cIgnore || !( -- cIgnore ) ) { BLAMMO ; } ;
             {
             while( !cGrabbed )
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             countT cIgnore = 0x80 ;
         {
         else //U::EDIT TO NOT BLOCK IF flGRABcUNGRABf_ALLrECURSIONS IS SPECIFIED
@@ -187,23 +187,23 @@
             FV(flGRABcUNGRABf,flagsP)
             POOPIE
         {
-        if( F(tinP.pag1->_thirdC_.flagsModeAdam1) & flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
-        if( F(tinP.flagsThreadMode2     ) &   flTHREADmODE2_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
+        if( F(((tinNormalS&)tinBaseP).pag1->_thirdC_.flagsModeAdam1) & flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
+        if( F(((tinNormalS&)tinBaseP).flagsThreadMode2     ) &   flTHREADmODE2_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
         if( F(flags) & flGRABc_DISABLED ) { BLAMMO ; }
     {
     else
-    if( this == &tinP.grabPseudo ) cGrabbed -- ;
+    if( this == &((tinNormalS&)tinBaseP).grabPseudo ) cGrabbed -- ;
     countT cUngrabsDone = 1 ;
 
     SCOOP
 {
-/*1*/countT grabC::ungrabF( tinS& tinP , const flagsT flagsP )/*1*/
+/*1*/countT grabC::ungrabF( tinBaseS& tinBaseP , const flagsT flagsP )/*1*/
 
 /**/
 */
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010393.flUNGRAB!||
  flagsP
- tinP
+ tinBaseP
 arguments
 i evaluate to the number of ungrabs i did, which will always be 1 if flagsP is flGRABcUNGRABf_null
 excess calls to me will block

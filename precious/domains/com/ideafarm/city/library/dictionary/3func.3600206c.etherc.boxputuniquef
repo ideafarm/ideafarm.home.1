@@ -11,17 +11,17 @@
     }
         }
             break ;
-            strMakeF( tinP , LF , psttP , psttc1 ) ; ___( psttP ) ;
+            strMakeF( tinBaseP , LF , psttP , psttc1 ) ; ___( psttP ) ;
         {
         FORsTRINGSiN1( pstt1zUse )
     {
     else
-    if( bStringOfStrings ) { strMakeF( tinP , LF , psttP , pstt1zUse ) ; ___( psttP ) ; }
+    if( bStringOfStrings ) { strMakeF( tinBaseP , LF , psttP , pstt1zUse ) ; ___( psttP ) ; }
 
     __( cFail ) ;
 
-                            delF( tinP , psttU     ) ;
-    if( !bStringOfStrings ) delF( tinP , pstt1Like ) ;
+                            delF( tinBaseP , psttU     ) ;
+    if( !bStringOfStrings ) delF( tinBaseP , pstt1Like ) ;
 
     }
         }
@@ -31,8 +31,8 @@
                     POOPRqUIET
                 {
                 if( POOP )
-                box.putF( tinP , pbP , cbP ) ;
-                boxC box( tinP , *this , psttc1 , 0 , 0 , 0 , cOpenTriesP , 0 , 0 , flagsOpenDetailsP ) ;
+                box.putF( tinBaseP , pbP , cbP ) ;
+                boxC box( tinBaseP , *this , psttc1 , 0 , 0 , 0 , cOpenTriesP , 0 , 0 , flagsOpenDetailsP ) ;
                 SCOOPS
             {
             IFsCRATCH
@@ -40,10 +40,10 @@
         else
         }
             if( POOP ) break ;
-            box.putF( tinP , pbP , cbP ) ;
-            boxC box( tinP , *this , psttc1 , 0 , 0 , 0 , cOpenTriesP , 0 , 0 , flagsOpenDetailsP ) ;
+            box.putF( tinBaseP , pbP , cbP ) ;
+            boxC box( tinBaseP , *this , psttc1 , 0 , 0 , 0 , cOpenTriesP , 0 , 0 , flagsOpenDetailsP ) ;
         {
-        if( this != tinP.pEtScratch )
+        if( this != ((tinNormalS&)tinBaseP).pEtScratch )
     {
     FORsTRINGSiN1( pstt1zUse )
     ZE( countT , cFail ) ;
@@ -51,16 +51,16 @@
     strokeS* pstt1zUse = tListUse ;
     }
         }
-            delF( tinP , psttUse ) ;
+            delF( tinBaseP , psttUse ) ;
             tListUse += T(psttUse) ;
 
             }
-                strFuseF( tinP , psttUse , psttU ) ; ___( psttP ) ;
-                strFuseF( tinP , psttUse , T(".") ) ; ___( psttP ) ;
-                strMakeF( tinP , LF , psttUse , psttLikeP , ( psttU ? 1 + psttU->idAdam : 0 ) ) ; ___( psttUse ) ;
+                strFuseF( tinBaseP , psttUse , psttU ) ; ___( psttP ) ;
+                strFuseF( tinBaseP , psttUse , T(".") ) ; ___( psttP ) ;
+                strMakeF( tinBaseP , LF , psttUse , psttLikeP , ( psttU ? 1 + psttU->idAdam : 0 ) ) ; ___( psttUse ) ;
             {
             else
-            if( strIdF( tinP , tMark , psttc1 ) ) { strReplaceF( tinP , psttUse , psttc1 , tMark , psttU ) ; ___( psttUse ) ; }
+            if( strIdF( tinBaseP , tMark , psttc1 ) ) { strReplaceF( tinBaseP , psttUse , psttc1 , tMark , psttU ) ; ___( psttUse ) ; }
             ZE( strokeS* , psttUse ) ;
         {
         FORsTRINGSiN1( pstt1Like )
@@ -69,11 +69,11 @@
     TlIST( tListUse ) ;
 
     else                    pstt1Like = (strokeS*)psttLikeP ;
-    if( !bStringOfStrings ) { strFuseSeparateF( tinP , pstt1Like , psttLikeP ) ; ___( pstt1Like ) ; }
+    if( !bStringOfStrings ) { strFuseSeparateF( tinBaseP , pstt1Like , psttLikeP ) ; ___( pstt1Like ) ; }
     ZE( strokeS* , pstt1Like ) ;
     boolT bStringOfStrings = ISsTRINGoFsTRINGS( psttLikeP ) ;
 
-    strUniqueF( tinP , psttU ) ; ___( psttU ) ;
+    strUniqueF( tinBaseP , psttU ) ; ___( psttU ) ;
     ZE( strokeS* , psttU ) ;
 
     _IO_
@@ -87,7 +87,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::boxPutUniqueF( tinS& tinP , strokeS*& psttP , const strokeS* const psttLikeP , const byteT* const pbP , const countT cbP , countT cOpenTriesP , const flagsT flagsOpenDetailsP )/*1*/
+/*1*/voidT etherC::boxPutUniqueF( tinBaseS& tinBaseP , strokeS*& psttP , const strokeS* const psttLikeP , const byteT* const pbP , const countT cbP , countT cOpenTriesP , const flagsT flagsOpenDetailsP )/*1*/
 
 /**/
 */
@@ -102,7 +102,7 @@
  pbP
    else i will return immediately upon impotence
    if so, then i will try all listed file names
-  impotence behavior depends upon whether i am *tinP.pEtScratch
+  impotence behavior depends upon whether i am *((tinNormalS&)tinBaseP).pEtScratch
    the result is as if the caller called me repeatedly
   may also be a string of strings
    example: T("///ideafarm/ephemeral/tmp/1030078")

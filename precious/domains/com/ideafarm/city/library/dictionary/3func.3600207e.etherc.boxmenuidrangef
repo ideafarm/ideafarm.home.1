@@ -12,26 +12,26 @@
     }
         if( idMaxP < idFile            ) idMaxP = idFile ;
         if( idMinP > idFile || !idMinP ) idMinP = idFile ;
-        delF( tinP , psttw ) ;
-        else idFile = strDigitsToSCountF( tinP , psttw , 0 , 1 ) ;
+        delF( tinBaseP , psttw ) ;
+        else idFile = strDigitsToSCountF( tinBaseP , psttw , 0 , 1 ) ;
         }
-            delF( tinP , psttw2 ) ;
-            idFile = strDigitsToSCountF( tinP , psttw2 , 0 , 1 ) ;
-            strWordF( tinP , psttw2 , psttw , sttq , S1C('.') , 2 ) ; ___( psttw2 ) ;
+            delF( tinBaseP , psttw2 ) ;
+            idFile = strDigitsToSCountF( tinBaseP , psttw2 , 0 , 1 ) ;
+            strWordF( tinBaseP , psttw2 , psttw , sttq , S1C('.') , 2 ) ; ___( psttw2 ) ;
             //sttq = ze ;
             ZE( strokeS* , psttw2 ) ;
         {
         if( sttDelimiterP == S1C('/') )
         ZE( countT , idFile ) ;
-        strWordF( tinP , psttw , psttc1 , sttq , sttDelimiterP , - 1 ) ; ___( psttw ) ;
+        strWordF( tinBaseP , psttw , psttc1 , sttq , sttDelimiterP , - 1 ) ; ___( psttw ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , psttw ) ;
 
         if( bSkip ) continue ;
         }
-            delF( tinP , psttw ) ;
-            bSkip = psttw && !strCompareF( tinP , tTag , psttw ) ;
-            strWordF( tinP , psttw , psttc1 , sttq , S1C('.') , - 4 ) ; ___( psttw ) ;
+            delF( tinBaseP , psttw ) ;
+            bSkip = psttw && !strCompareF( tinBaseP , tTag , psttw ) ;
+            strWordF( tinBaseP , psttw , psttc1 , sttq , S1C('.') , - 4 ) ; ___( psttw ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , psttw ) ;
         {
@@ -41,9 +41,9 @@
     {
     FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soulm )
     TN( tTag , "!writing" ) ;
-    countT cItemsNU = box.menuF( tinP , soulm ) ;
-    soulC soulm( tinP , TAG( TAGiDnULL ) ) ;
-    boxC box( tinP , *this , psttLikeP ) ;
+    countT cItemsNU = box.menuF( tinBaseP , soulm ) ;
+    soulC soulm( tinBaseP , TAG( TAGiDnULL ) ) ;
+    boxC box( tinBaseP , *this , psttLikeP ) ;
 
     if( !sttDelimiterP ) sttDelimiterP = S1C('.') ;
     _IO_
@@ -60,7 +60,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::boxMenuIdRangeF( tinS& tinP , countT& idMinP , countT& idMaxP , const strokeS* psttLikeP , const countT csttEstimateP , strokeS sttDelimiterP )/*1*/
+/**//*1*/voidT etherC::boxMenuIdRangeF( tinBaseS& tinBaseP , countT& idMinP , countT& idMaxP , const strokeS* psttLikeP , const countT csttEstimateP , strokeS sttDelimiterP )/*1*/
 
 //U::REWRITE THIS TO ELIMINATE CAPACITY LIMIT
 

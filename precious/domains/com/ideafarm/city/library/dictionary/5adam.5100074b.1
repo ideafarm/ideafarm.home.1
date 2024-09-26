@@ -9,14 +9,14 @@
                             
 REST
 
-etThread.traceF( tinP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
-        //etThread.traceF( tinP , T("napped") ) ;
-        ++ s ; etThread.osSleepF( tinP , TOCK << 2 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-        //etThread.traceF( tinP , T("napping") ) ;
+        //etThread.traceF( tinBaseP , T("napped") ) ;
+        ++ s ; etThread.osSleepF( tinBaseP , TOCK << 2 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //etThread.traceF( tinBaseP , T("napping") ) ;
 
         if( bQuit ) break ;
 
@@ -26,7 +26,7 @@ etThread.traceF( tinP , T("ok") ) ;
                 bPrefix = !bPrefix ;
 
                 else          pbi = 0 ;
-                if( bDelete ) PUSE( tinP , *(byteT**)&pbi ) ;
+                if( bDelete ) PUSE( tinBaseP , *(byteT**)&pbi ) ;
 
                 ;
                     : sizeof( countT )
@@ -37,17 +37,17 @@ etThread.traceF( tinP , T("ok") ) ;
                     }
                         #endif
 
-                        etThread.delF( tinP , psttBrowser ) ;
-                        etThread.delF( tinP , psttProtocol ) ;
-                        etThread.delF( tinP , psttQuery ) ;
-                        etThread.delF( tinP , psttUri ) ;
-                        etThread.delF( tinP , psttContainer ) ;
-                        etThread.delF( tinP , psttLogBucket ) ;
-                        etThread.delF( tinP , psttMethod ) ;
+                        etThread.delF( tinBaseP , psttBrowser ) ;
+                        etThread.delF( tinBaseP , psttProtocol ) ;
+                        etThread.delF( tinBaseP , psttQuery ) ;
+                        etThread.delF( tinBaseP , psttUri ) ;
+                        etThread.delF( tinBaseP , psttContainer ) ;
+                        etThread.delF( tinBaseP , psttLogBucket ) ;
+                        etThread.delF( tinBaseP , psttMethod ) ;
 
                         }
                             }
-                                etThread.traceF( tinP , T("[nnHe,time,method,bucket,container,uri,query,protocol,code,cb,browser]:    ")+tSay ) ;
+                                etThread.traceF( tinBaseP , T("[nnHe,time,method,bucket,container,uri,query,protocol,code,cb,browser]:    ")+tSay ) ;
                             
                                 ;
                             
@@ -76,7 +76,7 @@ etThread.traceF( tinP , T("ok") ) ;
 
                             // A:ASSUME:  THIS CODE ASSUMES THAT EVENTS ARE UNIQUELY IDENTIFIED BY [hash,idJot,time,nn]; MULTIPLE EVENTS WILL RESULT IN MULTIPLE VALUES FOR THE FIELDS
 
-                            etThread.traceF( tinP , T(psttUri) ) ;
+                            etThread.traceF( tinBaseP , T(psttUri) ) ;
 
                             // *****************************************************************************************************************************************************************************************************************************************************
                             // *****************************************************************************************************************************************************************************************************************************************************
@@ -89,7 +89,7 @@ etThread.traceF( tinP , T("ok") ) ;
                             _IO_
                         {
                         else
-                        if( getNegAM( finger ) != FINGERnEG_ACCESSeVENTrAW || idFormat != 1 ) etThread.traceF( tinP , T("unexpected format [finger,idFormat]:    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        if( getNegAM( finger ) != FINGERnEG_ACCESSeVENTrAW || idFormat != 1 ) etThread.traceF( tinBaseP , T("unexpected format [finger,idFormat]:    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                         sBookEntryIn >> psttBrowser ;             ___( psttBrowser ) ;
                         sBookEntryIn >> cbReply ;
@@ -122,28 +122,28 @@ etThread.traceF( tinP , T("ok") ) ;
                         ZE( countT   , finger        ) ;
 
                         }
-                            etThread.delF( tinP , pbPageCopy ) ;
+                            etThread.delF( tinBaseP , pbPageCopy ) ;
                             }
-                                sBookEntryIn.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbPageCopy , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                                sBookEntryIn.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbPageCopy , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
 
-                                bksAccessEvents.unlockF( tinP ) ;
-                                etThread.memCopyF( tinP , pbPageCopy , pbzPage , cbzPage ) ;
+                                bksAccessEvents.unlockF( tinBaseP ) ;
+                                etThread.memCopyF( tinBaseP , pbPageCopy , pbzPage , cbzPage ) ;
                                 const byteT* pbzPage = pageEvent ;
-                                bksAccessEvents.lockF( tinP , TAG( TAGiDnULL ) ) ;
+                                bksAccessEvents.lockF( tinBaseP , TAG( TAGiDnULL ) ) ;
                             {
                             if( !POOP )
 
                             __Z( pbPageCopy ) ;
-                            etThread.newF( tinP , LF , pbPageCopy , cbzPage ) ; ___( pbPageCopy ) ;
+                            etThread.newF( tinBaseP , LF , pbPageCopy , cbzPage ) ; ___( pbPageCopy ) ;
                             ZE( byteT* , pbPageCopy ) ;                                                 //U:: WHY DO I NEED TO MAKE A COPY?
 
                             countT cbzPage = pageEvent ;
                         {
-                        soulC sBookEntryIn( tinP , TAG( TAGiDnULL ) ) ;
+                        soulC sBookEntryIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                         #if defined( NEVERdEFINED )
 
-                        etThread.traceF( tinP , T("ACCESSeVENTS6aUDITbOOKS / [idIn]:    ")+TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        etThread.traceF( tinBaseP , T("ACCESSeVENTS6aUDITbOOKS / [idIn]:    ")+TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     if( !ether )
 
@@ -158,8 +158,8 @@ etThread.traceF( tinP , T("ok") ) ;
                     {
                     if( !(const byteT*)pageEvent )        //SHOULD BE IMPOSSIBLE SINCE "ALL OR NONE" USED FOR WRITING BOOKTOGETHER AND I'VE ALREADY READ THE PREFIX
 
-                    bksAccessEvents.readF( tinP , pageEvent , hRead , flBOOKScrEAD_null/*PERSISTENTcURSOR*/ ) ;
-                    pageC pageEvent( tinP , bksAccessEvents , cbi ) ;
+                    bksAccessEvents.readF( tinBaseP , pageEvent , hRead , flBOOKScrEAD_null/*PERSISTENTcURSOR*/ ) ;
+                    pageC pageEvent( tinBaseP , bksAccessEvents , cbi ) ;
                 {
                 else
                 }
@@ -171,7 +171,7 @@ etThread.traceF( tinP , T("ok") ) ;
                         cbi = cbiSave ;
                     {
                     if( !pbi )
-                    bDelete = bksAccessEvents.readF( tinP , pbi , cbi , hRead , flBOOKScrEAD_null/*PERSISTENTcURSOR*/ , &bQuit ) ;
+                    bDelete = bksAccessEvents.readF( tinBaseP , pbi , cbi , hRead , flBOOKScrEAD_null/*PERSISTENTcURSOR*/ , &bQuit ) ;
                 {
                 if( bPrefix )
                 ZE( boolT , bDelete ) ;
@@ -197,12 +197,12 @@ etThread.traceF( tinP , T("ok") ) ;
         {
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-        handleC hRead( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
-        etThread.traceF( tinP , T("ACCESSeVENTS6aUDITbOOKS / enering loop to read events") ) ;
+        handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+        etThread.traceF( tinBaseP , T("ACCESSeVENTS6aUDITbOOKS / enering loop to read events") ) ;
 
         TN( tb4 , "    " ) ;
-        booksC bksAccessEvents( tinP , TAG( TAGiDnULL ) , "bksAccessEvents.1.raw" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_null , 0 , 1 , 0 , 0 , 0 , 0 , &bQuit ) ;
-        etThread.traceF( tinP , T("ACCESSeVENTS6aUDITbOOKS / ct bksAccessEvents") ) ;
+        booksC bksAccessEvents( tinBaseP , TAG( TAGiDnULL ) , "bksAccessEvents.1.raw" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_null , 0 , 1 , 0 , 0 , 0 , 0 , &bQuit ) ;
+        etThread.traceF( tinBaseP , T("ACCESSeVENTS6aUDITbOOKS / ct bksAccessEvents") ) ;
     {
     while( !bQuit && !bQuit2 && !POOP )
     ZE( boolT , bQuit2 ) ;

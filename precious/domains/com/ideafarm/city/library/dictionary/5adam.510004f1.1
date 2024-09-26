@@ -9,23 +9,23 @@
 
 REST
 
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
-while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
+while( cTries -- ) etThread.osThreadF( tinBaseP , countTC() , tmClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
 cTries = CcLIENTS ;
 
 }
     }
-        ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+        ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
     {
     while( stIdPort < CsERVERS )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
-while( cTries -- ) etThread.osThreadF( tinP , countTC() , tmAcceptorF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
+while( cTries -- ) etThread.osThreadF( tinBaseP , countTC() , tmAcceptorF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort ) ;
 countT cTries = CsERVERS ;
 
-stackC stIdPort( tinP , etThread , TAG( TAGiDnULL ) ) ;
+stackC stIdPort( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -36,54 +36,54 @@ DONE( tmAcceptorF )
     DEL( pStBang0 ) ;
     }
         }
-            ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+            ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
         {
-        while( tinP.cKidThreads )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        while( ((tinNormalS&)tinBaseP).cKidThreads )
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 
-    if( pStBang2 ) *pStBang2 << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-    if( pStBang1 ) *pStBang1 << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-    if( pStBang0 ) *pStBang0 << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
+    if( pStBang2 ) *pStBang2 << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( pStBang1 ) *pStBang1 << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( pStBang0 ) *pStBang0 << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         else                { DEL( pso ) ; }
-        if( !ether && pso ) etThread.osThreadF( tinP , countTC() , tmServerF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort , (countT)pso , idPort , ideMe , (countT)pStBang0 , (countT)pStBang1 , (countT)pStBang2 ) ;
-        sListen.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ;
+        if( !ether && pso ) etThread.osThreadF( tinBaseP , countTC() , tmServerF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stIdPort , (countT)pso , idPort , ideMe , (countT)pStBang0 , (countT)pStBang1 , (countT)pStBang2 ) ;
+        sListen.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
     {
     while( !etThread && !ether )
 
-    if( idPortExplode2 && pStBang2 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortExplode2 , (countT)pStBang2 ) ;
-    if( idPortExplode1 && pStBang1 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortExplode1 , (countT)pStBang1 ) ;
-    if( idPortImplode  && pStBang0 ) etThread.osThreadF( tinP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortImplode  , (countT)pStBang0 ) ;
-    stackC* pStBang2 = idPortExplode2 ? new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;
-    stackC* pStBang1 = idPortExplode1 ? new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;
-    stackC* pStBang0 = idPortImplode  ? new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;
+    if( idPortExplode2 && pStBang2 ) etThread.osThreadF( tinBaseP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortExplode2 , (countT)pStBang2 ) ;
+    if( idPortExplode1 && pStBang1 ) etThread.osThreadF( tinBaseP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortExplode1 , (countT)pStBang1 ) ;
+    if( idPortImplode  && pStBang0 ) etThread.osThreadF( tinBaseP , countTC() , tmBangClientF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idPortImplode  , (countT)pStBang0 ) ;
+    stackC* pStBang2 = idPortExplode2 ? new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;
+    stackC* pStBang1 = idPortExplode1 ? new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;
+    stackC* pStBang0 = idPortImplode  ? new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) : 0 ;
 
-    stIdPort.ungrabF( tinP ) ;
+    stIdPort.ungrabF( tinBaseP ) ;
     countT idPortExplode2 = stIdPort >= ideMe * 2 + 1 ? stIdPort[ ideMe * 2 + 1 ] : 0 ;
     countT idPortExplode1 = stIdPort >= ideMe * 2     ? stIdPort[ ideMe * 2     ] : 0 ;
     countT idPortImplode  = ideMe != 1                ? stIdPort[ ideMe / 2     ] : 0 ;
     countT ideMe = stIdPort( idPort ) ;
     countT cRelays = stIdPort ;
-    stIdPort.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stIdPort.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         }
-            ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+            ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
         {
         while( stIdPort < CsERVERS )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 
-    stIdPort.sinkF( tinP , countTC() , idPort , flSTACKsINK_UNIQUE ) ;
+    stIdPort.sinkF( tinBaseP , countTC() , idPort , flSTACKsINK_UNIQUE ) ;
 
-    sListen.listenF( tinP ) ;
-    const countT idPort = sListen.bindF( tinP ) ;
-    socketC sListen( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sListen.listenF( tinBaseP ) ;
+    const countT idPort = sListen.bindF( tinBaseP ) ;
+    socketC sListen( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
     stackC& stIdPort = *(stackC*)pTaskP->c1 ;
 {
@@ -104,7 +104,7 @@ DONE( tmServerF )
                         *psBang = sIn ;
                     {
                     if( psBang )
-                    soulC* psBang = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
+                    soulC* psBang = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
                 {
                 if( pStBang2 )
                 
@@ -114,7 +114,7 @@ DONE( tmServerF )
                         *psBang = sIn ;
                     {
                     if( psBang )
-                    soulC* psBang = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
+                    soulC* psBang = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
                 {
                 if( pStBang1 )
             {
@@ -126,7 +126,7 @@ DONE( tmServerF )
                         *psBang = sIn ;
                     {
                     if( psBang )
-                    soulC* psBang = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
+                    soulC* psBang = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
                 {
                 if( pStBang0 )
             {
@@ -134,38 +134,38 @@ DONE( tmServerF )
         {
         else
         }
-            sock.writeF( tinP , sIn ) ;
-            sock.connectF( tinP , stIdPort[ 1 ] ) ;
-            socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+            sock.writeF( tinBaseP , sIn ) ;
+            sock.connectF( tinBaseP , stIdPort[ 1 ] ) ;
+            socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
             bIncoming = 0 ;
             CONoUTrAW( TF1(ideMe)+T(": forwarding incoming ")+TF1(idSerial)+T(" from ")+T(nnHim)+tcr ) ;
         {
         if( bIncoming && !bImplosion )
         TN( tcr , "\r\n" ) ;
     
-        osTextT* postIn      = sIn.pbFieldF( tinP , countTC() , countTC() , countTC() , 0xa ) ;
-        countT   idCmd       = sIn.cFieldF( tinP , 9 ) ;
-        countT&  idBang      = sIn.cFieldF( tinP , 8 ) ;
-        countT   bImplosion  = sIn.cFieldF( tinP , 7 ) ;
-        countT&  bIncoming   = sIn.cFieldF( tinP , 6 ) ;
-        countT   idSerial    = sIn.cFieldF( tinP , 5 ) ;
-        countT   idPortReply = sIn.cFieldF( tinP , 4 ) ;
-        nicNameC nnHim       = sIn.nicNameFieldF( tinP , 3 ) ;
-        countT   idFormat    = sIn.cFieldF( tinP , 2 ) ;
-        countT   fingerprint = sIn.cFieldF( tinP , 1 ) ;
+        osTextT* postIn      = sIn.pbFieldF( tinBaseP , countTC() , countTC() , countTC() , 0xa ) ;
+        countT   idCmd       = sIn.cFieldF( tinBaseP , 9 ) ;
+        countT&  idBang      = sIn.cFieldF( tinBaseP , 8 ) ;
+        countT   bImplosion  = sIn.cFieldF( tinBaseP , 7 ) ;
+        countT&  bIncoming   = sIn.cFieldF( tinBaseP , 6 ) ;
+        countT   idSerial    = sIn.cFieldF( tinBaseP , 5 ) ;
+        countT   idPortReply = sIn.cFieldF( tinBaseP , 4 ) ;
+        nicNameC nnHim       = sIn.nicNameFieldF( tinBaseP , 3 ) ;
+        countT   idFormat    = sIn.cFieldF( tinBaseP , 2 ) ;
+        countT   fingerprint = sIn.cFieldF( tinBaseP , 1 ) ;
 
         }
             break ;
             DEL( pso ) ;
-            *tinP.zEtScratch = 0 ;
+            *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
         {
-        if( *tinP.zEtScratch )
-        pso->readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        if( *((tinNormalS&)tinBaseP).zEtScratch )
+        pso->readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !etThread && !ether )
 
-    pso->etherF( tinP , *tinP.zEtScratch ) ;
+    pso->etherF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch ) ;
 
     stackC*  pStBang2 =  (stackC*)pTaskP->c7 ;
     stackC*  pStBang1 =  (stackC*)pTaskP->c6 ;
@@ -184,20 +184,20 @@ DONE( tmBangClientF )
         }
             DEL( ps ) ;
             }
-                sock.writeF( tinP , *ps ) ;
-                ps->cFieldF( tinP , 8 ) ++ ; //idBang
+                sock.writeF( tinBaseP , *ps ) ;
+                ps->cFieldF( tinBaseP , 8 ) ++ ; //idBang
             {
             if( !ether && *ps >= 8 )
             stBang >> ps ;
             ZE( soulC* , ps ) ;
         {
         while( stBang )
-        stBang.waitF( tinP ) ;
+        stBang.waitF( tinBaseP ) ;
     {
     while( !ether )
 
-    sock.connectF( tinP , idPortExplode ) ;
-    socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tinBaseP , idPortExplode ) ;
+    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
     stackC& stBang        = *(stackC*)pTaskP->c2 ;
     countT  idPortExplode =           pTaskP->c1 ;
@@ -207,10 +207,10 @@ TASK( tmBangClientF )
 
 DONE( tmClientF )
 }
-    sock.writeF( tinP , sOut ) ;
+    sock.writeF( tinBaseP , sOut ) ;
     
-    sock.connectF( tinP , stIdPort.randomF( tinP ) ) ;
-    socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tinBaseP , stIdPort.randomF( tinBaseP ) ) ;
+    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
     
     sOut << ostoOut ;
     sOut << (countT)IDcMDwRITE ;
@@ -222,13 +222,13 @@ DONE( tmClientF )
     sOut << nnMe ;
     sOut << (countT)1 ; //idFormat
     sOut << (countT)FINGERnEG ;
-    soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     OStEXTV( ostoOut , "This is the day that the Lord has made.  Let us rejoice!\r\n" )
     
     countT idSerial = 1 + incv02AM( host.idSerialLath ) ;
     homeS& host = homeS::homeIF() ;
-    nicNameC nnMe = socketC::nicNameIF( tinP , etThread ) ;
+    nicNameC nnMe = socketC::nicNameIF( tinBaseP , etThread ) ;
 
     stackC& stIdPort = *(stackC*)pTaskP->c1 ;
 {

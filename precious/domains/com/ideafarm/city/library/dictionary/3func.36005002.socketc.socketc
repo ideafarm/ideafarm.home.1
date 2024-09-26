@@ -11,20 +11,20 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        bWrite.ungrabF( tinP ) ;
-        bRead.ungrabF( tinP ) ;
+        bWrite.ungrabF( tinBaseP ) ;
+        bRead.ungrabF( tinBaseP ) ;
     
         if( timeAllowedConnected && F(flagsP) & flSOCKETc_CTbYlISTENER ) FRESHtIMEaTOMIC( *pEther , timeConnected.time1 , timeConnected.time2 )
     
         }
             __Z( idSlot ) ;
-            etherC::sockStkIdleTimeoutersF( tinP ).sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
+            etherC::sockStkIdleTimeoutersF( tinBaseP ).sinkF( tinBaseP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
             ZE( countT , idSlot ) ;
         {
         if( !( F(flags) & flSOCKETc_DOnOTrEGISTERtIMEoUT ) )
     
         }
-            pEther->cioMakeKeyF( tinP , pczKeyTopSecret , idbKEYtYPE_PIN , idbKEYpINtYPE_SOCKETcONNECTION ) ; ___( pczKeyTopSecret ) ;
+            pEther->cioMakeKeyF( tinBaseP , pczKeyTopSecret , idbKEYtYPE_PIN , idbKEYpINtYPE_SOCKETcONNECTION ) ; ___( pczKeyTopSecret ) ;
             __NZ( pczKeyTopSecret ) ;
             //CONoUTrAW( "ACCEPTED IN TOP SECRET MODE\r\n" ) ;
         {
@@ -32,43 +32,43 @@
     
         }
             __Z( idSlot ) ;
-            etherC::sockStkQuittersF( tinP ).sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
+            etherC::sockStkQuittersF( tinBaseP ).sinkF( tinBaseP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
             ZE( countT , idSlot ) ;
-            //__( F(tinP.flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
+            //__( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
         {
         if( idType != ifcSOCKETtYPE_DATAgRAM && !( F(flags) & flSOCKETc_DOnOTrEGISTERqUITTER ) )
     
-        if(    ~nnMulticast                                   && idType == ifcSOCKETtYPE_DATAgRAM ) pEther->sockOptionMulticastF( tinP , handle , psttAddrMulticastP ) ; //U:: 20210313@1322: CRAFTWORK IN PROGRESS
-        if(    F(flags) & flSOCKETc_CANbROADCASToLDdOnOTuSE   && idType == ifcSOCKETtYPE_DATAgRAM ) pEther->sockOptionBroadcastF( tinP , handle ) ;
-        if( !( F(flags) & flSOCKETc_NOsENDnOW               ) && idType == ifcSOCKETtYPE_STREAM   ) pEther->sockOptionSendNowF(   tinP , handle ) ;
-        if( !( F(flags) & flSOCKETc_NOlINGER                ) && idType == ifcSOCKETtYPE_STREAM   ) pEther->sockOptionLingerF(    tinP , handle ) ; //U: PROBABLY DON'T WANT TO ALTER THE PROPERTIES OF THE SPECIFIED SOCKET
-        if( !( F(flags) & flSOCKETc_NOdUALsTACK             )                                     ) pEther->sockOptionDualStackF( tinP , handle ) ;
+        if(    ~nnMulticast                                   && idType == ifcSOCKETtYPE_DATAgRAM ) pEther->sockOptionMulticastF( tinBaseP , handle , psttAddrMulticastP ) ; //U:: 20210313@1322: CRAFTWORK IN PROGRESS
+        if(    F(flags) & flSOCKETc_CANbROADCASToLDdOnOTuSE   && idType == ifcSOCKETtYPE_DATAgRAM ) pEther->sockOptionBroadcastF( tinBaseP , handle ) ;
+        if( !( F(flags) & flSOCKETc_NOsENDnOW               ) && idType == ifcSOCKETtYPE_STREAM   ) pEther->sockOptionSendNowF(   tinBaseP , handle ) ;
+        if( !( F(flags) & flSOCKETc_NOlINGER                ) && idType == ifcSOCKETtYPE_STREAM   ) pEther->sockOptionLingerF(    tinBaseP , handle ) ; //U: PROBABLY DON'T WANT TO ALTER THE PROPERTIES OF THE SPECIFIED SOCKET
+        if( !( F(flags) & flSOCKETc_NOdUALsTACK             )                                     ) pEther->sockOptionDualStackF( tinBaseP , handle ) ;
         __Z( handle ) ;
         handle << handleP ;
     
-        bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        bWrite.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bWrite.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         //20141028@0638: REGISTRATION MOVED FROM HERE
     
-        else            thirdC::c_memsetIF( tinP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
-        if( pbBitsCtP ) thirdC::c_memcpyIF( tinP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
+        else            thirdC::c_memsetIF( tinBaseP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
+        if( pbBitsCtP ) thirdC::c_memcpyIF( tinBaseP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
 
         }
-            etherP.openSslTls_getContextF( tinP , hSslContext , psttPemCertificatesP , psttPemPrivateKeyP ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            etherP.openSslTls_getContextF( tinBaseP , hSslContext , psttPemCertificatesP , psttPemPrivateKeyP ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL )
 
-        if( idleTimeAllowedWrite && idleTimeAllowedWrite != SOCKETtIMEOUTdEFAULTwANiMPATIENT && idleTimeAllowedWrite != SOCKETtIMEOUTdEFAULTwAN && idleTimeAllowedWrite != SOCKETtIMEOUTdEFAULTlAN ) pEther->traceF( tinP , T("socketC / unusual parameter value [this,idleTimeAllowedWrite]: ")+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idleTimeAllowedWrite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        if( idleTimeAllowedRead  && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTwANiMPATIENT && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTwAN && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTlAN ) pEther->traceF( tinP , T("socketC / unusual parameter value [this,idleTimeAllowedRead ]: ")+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idleTimeAllowedRead ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        if( idleTimeAllowedWrite && idleTimeAllowedWrite != SOCKETtIMEOUTdEFAULTwANiMPATIENT && idleTimeAllowedWrite != SOCKETtIMEOUTdEFAULTwAN && idleTimeAllowedWrite != SOCKETtIMEOUTdEFAULTlAN ) pEther->traceF( tinBaseP , T("socketC / unusual parameter value [this,idleTimeAllowedWrite]: ")+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idleTimeAllowedWrite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        if( idleTimeAllowedRead  && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTwANiMPATIENT && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTwAN && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTlAN ) pEther->traceF( tinBaseP , T("socketC / unusual parameter value [this,idleTimeAllowedRead ]: ")+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idleTimeAllowedRead ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     
         //if( idleTimeAllowedWrite && idleTimeAllowedWrite != SOCKETtIMEOUTdEFAULTwAN && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTlAN ) { BLAMMO ; } 
         //if( idleTimeAllowedRead  && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTwAN && idleTimeAllowedRead  != SOCKETtIMEOUTdEFAULTlAN ) { BLAMMO ; }
     
-        if( psttPemPrivateKey   ) { etherP.strMakeF( tinP , LF , psttPemPrivateKey   , psttPemPrivateKeyP   ) ; ___( psttPemPrivateKey   ) ; }
-        if( psttPemCertificates ) { etherP.strMakeF( tinP , LF , psttPemCertificates , psttPemCertificatesP ) ; ___( psttPemCertificates ) ; }
+        if( psttPemPrivateKey   ) { etherP.strMakeF( tinBaseP , LF , psttPemPrivateKey   , psttPemPrivateKeyP   ) ; ___( psttPemPrivateKey   ) ; }
+        if( psttPemCertificates ) { etherP.strMakeF( tinBaseP , LF , psttPemCertificates , psttPemCertificatesP ) ; ___( psttPemCertificates ) ; }
     
         _IO_
     
@@ -94,53 +94,53 @@
         IFbEcAREFUL
         SCOOPP
 
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
         }
-            tinP.pag3->_socketC_.pSwOdometer = new( 0 , tinP , LF ) switchC( tinP , etRock , idLineCtP , idiFileCtP , pbBitsCtP , flSTACKc_null , tinP.pag3->_socketC_.nnLever , 0 , sizeof( sockOdometerS ) ) ; ___( tinP.pag3->_socketC_.pSwOdometer ) ;
-            etherC& etRock = etherC::etRockIF( tinP ) ;
+            ((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer = new( 0 , tinBaseP , LF ) switchC( tinBaseP , etRock , idLineCtP , idiFileCtP , pbBitsCtP , flSTACKc_null , ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever , 0 , sizeof( sockOdometerS ) ) ; ___( ((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ) ;
+            etherC& etRock = etherC::etRockIF( tinBaseP ) ;
 
             }
                 THREADmODE2rESTORE
                 }
                     }
-                        ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
+                        ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
                     {
-                    while( tinP.pag3->_socketC_.pSwOdometer )
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                    while( ((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer )
+                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             {
-            if( tinP.pag3->_socketC_.pSwOdometer )
+            if( ((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer )
         {
-        if( !incv02AM( tinP.pag3->_socketC_.cRef ) )
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        if( !incv02AM( ((tinNormalS&)tinBaseP).pag3->_socketC_.cRef ) )
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         //20141028@0638: REGISTRATION MOVED TO HERE
     {
     inc02AM( cFunctionsPending ) ;
 {
 psttPemPrivateKey( 0 )
 psttPemCertificates( 0 ) ,
-hSslContext( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslContext ) ,
+hSslContext( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslContext ) ,
 pMapPortBind( 0 ) ,
-idleTimeAllowedWrite( pIdleTimeAllowedWriteP ? *pIdleTimeAllowedWriteP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? tinP.pag3->_socketC_.alwaysTimeoutDefaultWan : tinP.pag3->_socketC_.alwaysZe ) ,
-idleTimeAllowedRead(  pIdleTimeAllowedReadP  ? *pIdleTimeAllowedReadP  : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? tinP.pag3->_socketC_.alwaysTimeoutDefaultWan : tinP.pag3->_socketC_.alwaysZe ) ,
-timeAllowedConnected( pTimeAllowedConnectedP ? *pTimeAllowedConnectedP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? tinP.pag3->_socketC_.alwaysZe                : tinP.pag3->_socketC_.alwaysZe ) , // SSL IS A PIECE OF SHIT: IT CAN PEG CPU FOREVER IN AN INFINITE LOOP ; 20161201@1201: CHANGED FROM TICK TO ZE TO AVOID CANCELING LONG CLOUD TRANSFERS.  HOPEFULLY THE IDLE LIMITS WILL SUFFICE TO KILL SSL PEGGING CPU
+idleTimeAllowedWrite( pIdleTimeAllowedWriteP ? *pIdleTimeAllowedWriteP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tinNormalS&)tinBaseP).pag3->_socketC_.alwaysTimeoutDefaultWan : ((tinNormalS&)tinBaseP).pag3->_socketC_.alwaysZe ) ,
+idleTimeAllowedRead(  pIdleTimeAllowedReadP  ? *pIdleTimeAllowedReadP  : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tinNormalS&)tinBaseP).pag3->_socketC_.alwaysTimeoutDefaultWan : ((tinNormalS&)tinBaseP).pag3->_socketC_.alwaysZe ) ,
+timeAllowedConnected( pTimeAllowedConnectedP ? *pTimeAllowedConnectedP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tinNormalS&)tinBaseP).pag3->_socketC_.alwaysZe                : ((tinNormalS&)tinBaseP).pag3->_socketC_.alwaysZe ) , // SSL IS A PIECE OF SHIT: IT CAN PEG CPU FOREVER IN AN INFINITE LOOP ; 20161201@1201: CHANGED FROM TICK TO ZE TO AVOID CANCELING LONG CLOUD TRANSFERS.  HOPEFULLY THE IDLE LIMITS WILL SUFFICE TO KILL SSL PEGGING CPU
 psttName( 0 ) ,
 pczKeyTopSecretPeer( 0 ) ,
 pczKeyTopSecret( 0 ) ,
 idPhaseTopSecret( ifcIDpHASEsOCKETtOPsECRET_1SENDpINnAME ) ,
-dad( tinP , etherP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) ) ,
-mom( tinP , etherP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) ) ,
-hnu( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ,
+dad( tinBaseP , etherP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) ) ,
+mom( tinBaseP , etherP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) ) ,
+hnu( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ,
 idPortMe( 0 ) ,
 bCatcher( 0 ) ,
 bAcceptor( 0 ) ,
 cbMsgInLast( 0 ) ,
 idMsgInLast( 0 ) ,
 idMsgOutLast( 0 ) ,
-handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ,
-bRead( tinP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER ) ,
-bWrite( tinP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER ) ,
+handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ,
+bRead( tinBaseP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER ) ,
+bWrite( tinBaseP , TAGoR( TAGiDnULL , idLineCtP , idiFileCtP , pbBitsCtP ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS | flBATONc_SHARElAYER ) ,
 flagsOpenSslFails( flSOCKETcoPENsSLfAILS_null ) ,
 flagsMode( flSOCKETcmODE_null ) ,
 ) ,
@@ -158,12 +158,12 @@ pPoop( &(const poopC&)etherP ) ,
 pEther( &etherP ) ,
 bAcceptedByLF( 0 ) ,
 pOdometer( 0 ) ,
-nnMulticast( !psttAddrMulticastP ? nicNameC() : socketC::nicNameIF( tinP , etherP , psttAddrMulticastP ) ) ,
+nnMulticast( !psttAddrMulticastP ? nicNameC() : socketC::nicNameIF( tinBaseP , etherP , psttAddrMulticastP ) ) ,
 nnPeer( nnPeerP ) ,
 cFunctionsPending( 0 ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
-/*1*/socketC::socketC( etherC& etherP , tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , handleC& handleP , const boolT idTypeP , const flagsT flagsP , const strokeS* const psttAddrMulticastP , const countT* const pIdleTimeAllowedReadP , const countT* const pIdleTimeAllowedWriteP , const countT* const pTimeAllowedConnectedP , nicNameC& nnPeerP , const strokeS* const psttPemCertificatesP , const strokeS* const psttPemPrivateKeyP )/*1*/ :
+/*1*/socketC::socketC( etherC& etherP , tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , handleC& handleP , const boolT idTypeP , const flagsT flagsP , const strokeS* const psttAddrMulticastP , const countT* const pIdleTimeAllowedReadP , const countT* const pIdleTimeAllowedWriteP , const countT* const pTimeAllowedConnectedP , nicNameC& nnPeerP , const strokeS* const psttPemCertificatesP , const strokeS* const psttPemPrivateKeyP )/*1*/ :
 
 /**/
 */

@@ -8,27 +8,27 @@
 
 
 }
-    delF( tinP , pstti ) ;
-    delF( tinP , psttw ) ;
-    strFuseF( tinP , psttP , psttw ) ;
-    strSubstringF( tinP , psttw , idf , idl , pstti ) ; ___( psttw ) ;
+    delF( tinBaseP , pstti ) ;
+    delF( tinBaseP , psttw ) ;
+    strFuseF( tinBaseP , psttP , psttw ) ;
+    strSubstringF( tinBaseP , psttw , idf , idl , pstti ) ; ___( psttw ) ;
     ZE( countT , idl ) ;
 
-    if( !( F(flagsP) & flSTRiNSERT_BEFORE ) ) strFuseF( tinP , psttP , psttWhatP ) ;
+    if( !( F(flagsP) & flSTRiNSERT_BEFORE ) ) strFuseF( tinBaseP , psttP , psttWhatP ) ;
 
-    strFuseF( tinP , psttP , psttMarkP ) ;
+    strFuseF( tinBaseP , psttP , psttMarkP ) ;
 
-    if( F(flagsP) & flSTRiNSERT_BEFORE ) strFuseF( tinP , psttP , psttWhatP ) ;
+    if( F(flagsP) & flSTRiNSERT_BEFORE ) strFuseF( tinBaseP , psttP , psttWhatP ) ;
 
-    delF( tinP , psttw ) ;
-    strFuseF( tinP , psttP , psttw ) ;
-    strSubstringF( tinP , psttw , idf , sttq , psttMarkP , pstti ) ; ___( psttw ) ;
+    delF( tinBaseP , psttw ) ;
+    strFuseF( tinBaseP , psttP , psttw ) ;
+    strSubstringF( tinBaseP , psttw , idf , sttq , psttMarkP , pstti ) ; ___( psttw ) ;
 
     ZE( strokeS* , psttw ) ;
     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
 
-    strMakeF( tinP , LF , psttP , 0 , cstto ) ; //CALLER MUST TAG: ___( psttP ) ;
+    strMakeF( tinBaseP , LF , psttP , 0 , cstto ) ; //CALLER MUST TAG: ___( psttP ) ;
     countT cstto = pstti->idAdam + psttWhatP->idAdam + csttExtraP ;
 
     strokeS* pstti = psttP ; psttP = 0 ;
@@ -50,7 +50,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strInsertF( tinS& tinP , strokeS*& psttP , const strokeS* const psttMarkP , const strokeS* const psttWhatP , const flagsT flagsP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strInsertF( tinBaseS& tinBaseP , strokeS*& psttP , const strokeS* const psttMarkP , const strokeS* const psttWhatP , const flagsT flagsP , const countT csttExtraP )/*1*/
 
 /**/
 
@@ -64,7 +64,7 @@
   will be replaced
   must not be ze
  psttP
- tinP
+ tinBaseP
 arguments
 /*
 

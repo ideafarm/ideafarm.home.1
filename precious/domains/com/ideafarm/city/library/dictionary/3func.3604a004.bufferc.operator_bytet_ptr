@@ -10,7 +10,7 @@
 }
     return pbo ;
 
-    grab.ungrabF( tinP ) ;
+    grab.ungrabF( tinBaseP ) ;
 
     }
         pbCursor += sizeof( countT ) + *(countT*)pbCursor ;
@@ -19,9 +19,9 @@
     if( pbCursor + *(countT*)pbCursor < pbEnd )
     ZE( byteT* , pbo ) ;
 
-    if( !bFrozen ) freezeF( tinP ) ;
+    if( !bFrozen ) freezeF( tinBaseP ) ;
 
-    grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     TINSL
 {
 /*1*/bufferC::operator byteT*( voidT )/*1*/

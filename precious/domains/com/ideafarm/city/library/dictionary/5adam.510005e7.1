@@ -10,15 +10,15 @@
 REST
 
 }
-    etThread.diskFindFileOrDirOldF( tinP , psttf , hFind , tLike ) ; ___( psttf ) ;
+    etThread.diskFindFileOrDirOldF( tinBaseP , psttf , hFind , tLike ) ; ___( psttf ) ;
     if( !hFind ) break ;
 
-    etThread.delF( tinP , psttf ) ;
+    etThread.delF( tinBaseP , psttf ) ;
     }
-        etThread.delF( tinP , posti ) ;
+        etThread.delF( tinBaseP , posti ) ;
         }
             }
-                etThread.delF( tinP , psttLine ) ;
+                etThread.delF( tinBaseP , psttLine ) ;
     
                 }
                     LOGrAW( tSay ) ;
@@ -27,11 +27,11 @@ REST
                 {
                 if( id1 && id3 && !id2 )
     
-                countT id3 = etThread.strIdF( tinP , t3 , psttLine ) ;
-                countT id2 = etThread.strIdF( tinP , t2 , psttLine ) ;
-                countT id1 = etThread.strIdF( tinP , t1 , psttLine ) ;
+                countT id3 = etThread.strIdF( tinBaseP , t3 , psttLine ) ;
+                countT id2 = etThread.strIdF( tinBaseP , t2 , psttLine ) ;
+                countT id1 = etThread.strIdF( tinBaseP , t1 , psttLine ) ;
                 
-                etThread.strSubstringLineF( tinP , psttLine , idf , sttq , tAll ) ; ___( psttLine ) ;
+                etThread.strSubstringLineF( tinBaseP , psttLine , idf , sttq , tAll ) ; ___( psttLine ) ;
                 ZE( strokeS* , psttLine ) ;
             {
             while( idf )
@@ -43,15 +43,15 @@ REST
         {
         else if( posti && costi )
         if( POOP ) { POOPR ; }
-        tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , psttf ) ; ___( posti ) ;
+        ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , psttf ) ; ___( posti ) ;
         ZE( countT , costi ) ;
         ZE( osTextT* , posti ) ;
     
-        etThread.winSetTitleF( tinP , psttf ) ;
+        etThread.winSetTitleF( tinBaseP , psttf ) ;
     {
     if( psttf && psttf[ CSpREFIX - 1 + psttf->idAdam ].idAdam != '/' )
 
-    etThread.traceF( tinP , psttf ) ;
+    etThread.traceF( tinBaseP , psttf ) ;
 {
 while( !ether && !etThread && psttf )
 TN( tSep , " <> " ) ;
@@ -60,9 +60,9 @@ TN( t3 , "___" ) ;
 TN( t2 , "{" ) ;
 TN( t1 , "if(" ) ;
                         
-etThread.diskFindFileOrDirOldF( tinP , psttf , hFind , tLike ) ; ___( psttf ) ;
+etThread.diskFindFileOrDirOldF( tinBaseP , psttf , hFind , tLike ) ; ___( psttf ) ;
 ZE( strokeS* , psttf ) ;
-handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 TN( tLike , "///d/ideafarm.home.1/precious/domains/com/ideafarm/city/library/dictionary/*" ) ;
 
 TODO

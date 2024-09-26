@@ -16,9 +16,9 @@
         ti.idLineCt  = idLineCt ;
         ti.cbData    = ((napkinHeaderS*)pbNapkin)->cbData ;
         ti.pbData    = pbNapkin + sizeof( napkinHeaderS ) ;
-        ti.costName  = thirdC::c_strlenIF( tinP , ti.postName ) ;
-        thirdC::c_strncpyIF( tinP , ti.postName , postName , sizeof ti.postName ) ;
-        ti.osPid     = tinP.osPid ;
+        ti.costName  = thirdC::c_strlenIF( tinBaseP , ti.postName ) ;
+        thirdC::c_strncpyIF( tinBaseP , ti.postName , postName , sizeof ti.postName ) ;
+        ti.osPid     = ((tinNormalS&)tinBaseP).osPid ;
         tellInfoSysNapkinS ti ;
     {
     if( pbNapkin && this != &processGlobal4I.napHome ) //ASSUME: napHome IS CT WOTH
@@ -28,7 +28,7 @@
     }
         if( POOP ) BLAMMO ;
         __Z( pbNapkin ) ;
-        __( osTidCt - tinP.osTid ) ;
+        __( osTidCt - ((tinNormalS&)tinBaseP).osTid ) ;
         __( !bDataAreaFormatted ) ;
         __( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ;
         if( POOP ) BLAMMO ;
@@ -36,7 +36,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT napkinC::tellAboutFormattingBeingDoneF( tinS& tinP )/*1*/
+/*1*/voidT napkinC::tellAboutFormattingBeingDoneF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

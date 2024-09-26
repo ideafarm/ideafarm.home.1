@@ -10,24 +10,24 @@
 }
     return sum ;
 
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
 
     }
         while( !stackk.third && ~hDown ) ;
         }
             if( pcLB ) sum += pcLB[ idFieldP ] ;
-            countT* pcLB = &stackk.downF( tinP , hDown ) ;
+            countT* pcLB = &stackk.downF( tinBaseP , hDown ) ;
         {
         do 
-        handleC hDown( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stackk )
     ZE( countT , sum ) ;
 
     _IO_
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return 0 ;
@@ -37,7 +37,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT switchC::sumF( tinS& tinP , const countT idFieldP )/*1*/
+/*1*/countT switchC::sumF( tinBaseS& tinBaseP , const countT idFieldP )/*1*/
 
 /**/
 */
@@ -46,7 +46,7 @@
   if 1 then i return the sum of the countT values in the switch
   if 0 then i return the sum of the raw lever values
  idFieldP
- tinP
+ tinBaseP
 arguments
 /*
 

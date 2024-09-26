@@ -10,24 +10,24 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("press the enter key") ) ;
+etThread.strokeF( tinBaseP , T("press the enter key") ) ;
 
 }
-    etThread.delF( tinP , pb ) ;
+    etThread.delF( tinBaseP , pb ) ;
 
-    else             etThread.strokeF( tinP , T("the guard countT in the header for the poolOld drop at pb is corrupt (test 2).\r\n") ) ;
-    if( bOkF( pb ) ) etThread.strokeF( tinP , T("the guard countT in the header for the poolOld drop at pb is ok (test 2).\r\n") ) ;
+    else             etThread.strokeF( tinBaseP , T("the guard countT in the header for the poolOld drop at pb is corrupt (test 2).\r\n") ) ;
+    if( bOkF( pb ) ) etThread.strokeF( tinBaseP , T("the guard countT in the header for the poolOld drop at pb is ok (test 2).\r\n") ) ;
 
     ((countT*)pb)[ - 5 ] = 0x12345678 ; //ILLEGAL: CODE LIKE THIS THAT MODIFIES THE HEADER OF A POOLoLD DROP IS ILLEGAL IN ADAM DEFINITIONS
 
-    else             etThread.strokeF( tinP , T("the guard countT in the header for the poolOld drop at pb is corrupt (test 1).\r\n") ) ;
-    if( bOkF( pb ) ) etThread.strokeF( tinP , T("the guard countT in the header for the poolOld drop at pb is ok (test 1).\r\n") ) ;
+    else             etThread.strokeF( tinBaseP , T("the guard countT in the header for the poolOld drop at pb is corrupt (test 1).\r\n") ) ;
+    if( bOkF( pb ) ) etThread.strokeF( tinBaseP , T("the guard countT in the header for the poolOld drop at pb is ok (test 1).\r\n") ) ;
 {
 if( pb )
-etThread.newF( tinP , LF , pb , 1 ) ; ___( pb ) ;
+etThread.newF( tinBaseP , LF , pb , 1 ) ; ___( pb ) ;
 ZE( byteT* , pb ) ;
 
 TODO

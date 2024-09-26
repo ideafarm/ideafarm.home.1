@@ -9,7 +9,7 @@
 
 }
     _OUTbATONsTACKc_
-    sinkF( tinP , idSlotP , (countT)psttP , flagsP , pSubtractF , subtractionParmP ) ;
+    sinkF( tinBaseP , idSlotP , (countT)psttP , flagsP , pSubtractF , subtractionParmP ) ;
     if( !pSubtractF ) pSubtractF = subtractStringsF ;
     ifc4FT pSubtractF = pSubtractFP ;
     _INbATONsTACKc_
@@ -23,13 +23,13 @@
     if( third ) return ;
     SCOOP   
 {
-/*1*/voidT stackC::sinkF( tinS& tinP , countT& idSlotP , const strokeS* const psttP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP )/*1*/
+/*1*/voidT stackC::sinkF( tinBaseS& tinBaseP , countT& idSlotP , const strokeS* const psttP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP )/*1*/
 
 }
     return scSgn ;
 
     }
-        scSgn = ether.strCompareF( tinP , (strokeS*)c1P + csPrefixIgnore , (strokeS*)c2P + csPrefixIgnore ) ;
+        scSgn = ether.strCompareF( tinBaseP , (strokeS*)c1P + csPrefixIgnore , (strokeS*)c2P + csPrefixIgnore ) ;
         etherC& ether = *(etherC*)pEther ;
     {
     if( pEther )
@@ -43,7 +43,7 @@
     {
     IFbEcAREFUL
 {
-/**/countT subtractStringsF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+/**/countT subtractStringsF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 */
    if 3 etc. etc.
    if 2 then i will assume "string of strings of strings"
@@ -56,12 +56,12 @@
  flagsP
  psttP
  idSlotP
- tinP
+ tinBaseP
 arguments
-after calling this function, stackC::extractF( tinP ) can be used to remove the item that it references
-  the function must be of type ifc3FT, i.e.: "countT (*ifc3FT)( tinS& tinP , countT& , countT& , countT& )"
+after calling this function, stackC::extractF( tinBaseP ) can be used to remove the item that it references
+  the function must be of type ifc3FT, i.e.: "countT (*ifc3FT)( tinBaseS& tinBaseP , countT& , countT& , countT& )"
    }
-   return ether.strCompareF( tinP , (strokeS*)c1P , (strokeS*)c2P ) ;
+   return ether.strCompareF( tinBaseP , (strokeS*)c1P , (strokeS*)c2P ) ;
    etherC& ether = *(etherC*)pEther ;
    if( !pEther ) return ;
 {

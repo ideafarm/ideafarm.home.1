@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 }
-    af1.walkF( tinP , associateCBF , 0 , flASSOCIATEcwALK_RECURSE , pcInclude , pcExclude ) ;
+    af1.walkF( tinBaseP , associateCBF , 0 , flASSOCIATEcwALK_RECURSE , pcInclude , pcExclude ) ;
 
     //countT pcExclude[] = { IDG_vGooS | BM_HIGH2 , 0 } ;
     //countT pcExclude[] = { IDG_aGooS | BM_HIGH  , 0 } ;
@@ -33,15 +33,15 @@ etherC::loafIF( tinP ) ;
     af2 += af3 ;
     af1 += af2 ;
     
-    aGooS ag4( tinP , etThread ) ;
-    aGooS ag3( tinP , etThread ) ;
-    aGooS ag2( tinP , etThread ) ;
-    aGooS ag1( tinP , etThread ) ;
+    aGooS ag4( tinBaseP , etThread ) ;
+    aGooS ag3( tinBaseP , etThread ) ;
+    aGooS ag2( tinBaseP , etThread ) ;
+    aGooS ag1( tinBaseP , etThread ) ;
     
-    aFooS af4( tinP , etThread ) ;
-    aFooS af3( tinP , etThread ) ;
-    aFooS af2( tinP , etThread ) ;
-    aFooS af1( tinP , etThread ) ;
+    aFooS af4( tinBaseP , etThread ) ;
+    aFooS af3( tinBaseP , etThread ) ;
+    aFooS af2( tinBaseP , etThread ) ;
+    aFooS af1( tinBaseP , etThread ) ;
 {
 
 TODO
@@ -103,7 +103,7 @@ TODO
     ZE( countT , idMeViewer ) ;
     countT idGroupViewer = viewerP.idGroupF() ;
 {
-boolT associateCBF( tinS& tinP , const assViewC& assViewP , const associateC& viewerP , const countT cArgP , staqC* const pStqWalkerP )
+boolT associateCBF( tinBaseS& tinBaseP , const assViewC& assViewP , const associateC& viewerP , const countT cArgP , staqC* const pStqWalkerP )
 
 }
 {
@@ -131,31 +131,31 @@ NEWdELcLASS( 1 , vFooS )
 
 }
     }
-        new( 0 , tinP , pbaViewP , sizeof( vGooS ) ) vGooS( sizeof( vGooS ) , idGroup , idMe ) ;
+        new( 0 , tinBaseP , pbaViewP , sizeof( vGooS ) ) vGooS( sizeof( vGooS ) , idGroup , idMe ) ;
     {
     if( cbaViewP >= sizeof( vGooS ) )
 {
-voidT aGooS::viewF( tinS& tinP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP )
+voidT aGooS::viewF( tinBaseS& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP )
 
 }
 {
 idMe( 1 + incv02AM( idMeLathGoo ) )
-associateC( tinP , etherP , IDG_aGooS , sizeof( vGooS ) ) ,
-aGooS::aGooS( tinS& tinP , etherC& etherP ) :
+associateC( tinBaseP , etherP , IDG_aGooS , sizeof( vGooS ) ) ,
+aGooS::aGooS( tinBaseS& tinBaseP , etherC& etherP ) :
 
 }
     }
-        new( 0 , tinP , pbaViewP , sizeof( vFooS ) ) vFooS( sizeof( vFooS ) , idGroup , idMe ) ;
+        new( 0 , tinBaseP , pbaViewP , sizeof( vFooS ) ) vFooS( sizeof( vFooS ) , idGroup , idMe ) ;
     {
     if( cbaViewP >= sizeof( vFooS ) )
 {
-voidT aFooS::viewF( tinS& tinP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP )
+voidT aFooS::viewF( tinBaseS& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP )
 
 }
 {
 idMe( 1 + incv02AM( idMeLathFoo ) )
-associateC( tinP , etherP , IDG_aFooS , sizeof( vFooS ) ) ,
-aFooS::aFooS( tinS& tinP , etherC& etherP ) :
+associateC( tinBaseP , etherP , IDG_aFooS , sizeof( vFooS ) ) ,
+aFooS::aFooS( tinBaseS& tinBaseP , etherC& etherP ) :
 
 ;
 }
@@ -179,8 +179,8 @@ struct vFooS : public assViewC
 
 ;
 }
-    virtual voidT viewF( tinS& tinP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) ;
-    aGooS( tinS& tinP , etherC& etherP ) ;
+    virtual voidT viewF( tinBaseS& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) ;
+    aGooS( tinBaseS& tinBaseP , etherC& etherP ) ;
 
     const countT idMe ;
 {
@@ -188,8 +188,8 @@ struct aGooS : public associateC
 
 ;
 }
-    virtual voidT viewF( tinS& tinP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) ;
-    aFooS( tinS& tinP , etherC& etherP ) ;
+    virtual voidT viewF( tinBaseS& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) ;
+    aFooS( tinBaseS& tinBaseP , etherC& etherP ) ;
 
     const countT idMe ;
 {

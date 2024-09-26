@@ -10,7 +10,7 @@
 }
     return bExists ;
     }
-        bExists = sexC::bStateExistsIF( tinP , ostoName , expCbDropP , cbDropAdjustP , offs , idStateSpaceP ) ;
+        bExists = sexC::bStateExistsIF( tinBaseP , ostoName , expCbDropP , cbDropAdjustP , offs , idStateSpaceP ) ;
             
         OStEXTCF( ostoName , offs , '0' ) ;
         OStEXTAK( ostoName , ".slotsC.sex." ) ;
@@ -21,16 +21,16 @@
 
     THREADmODE2rESTORE
     ;
-        : tinP.pEther->diskFileExistsF( tinP , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+T(thirdC::postUserNameIF())+T("/")+TfORsTRING(tinP.pag1->idMemorySpace)+T("/stateSpaces/")+TfORsTRING(idStateSpaceP)+T("/")+T(postNameP)+T(".slotsC.sex.*") )
+        : ((tinNormalS&)tinBaseP).pEther->diskFileExistsF( tinBaseP , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+T(thirdC::postUserNameIF())+T("/")+TfORsTRING(((tinNormalS&)tinBaseP).pag1->idMemorySpace)+T("/stateSpaces/")+TfORsTRING(idStateSpaceP)+T("/")+T(postNameP)+T(".slotsC.sex.*") )
         ? 0
     boolT bStateExists = !idStateSpaceP
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
     ZE( boolT , bExists ) ;
-    puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
+    puseC puse( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
     _IO_
 {
-/*1*/boolT slotsC::bStateExistsIF( tinS& tinP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT idStateSpaceP )/*1*/
+/*1*/boolT slotsC::bStateExistsIF( tinBaseS& tinBaseP , const osTextT* const postNameP , const countT expCbDropP , const countT cbDropAdjustP , const countT idStateSpaceP )/*1*/
 
 /**/
 */

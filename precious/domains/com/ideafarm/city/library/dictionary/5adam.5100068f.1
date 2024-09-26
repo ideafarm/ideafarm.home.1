@@ -9,16 +9,16 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 
-const byteT* pbi = myJot.readF( tinP , cbi , idJot1 ) ;
+const byteT* pbi = myJot.readF( tinBaseP , cbi , idJot1 ) ;
 ZE( countT , cbi ) ;
 
-countT idJot2 = myJot.writeF( tinP , pbo , sizeof pbo - 1 ) ;
-countT idJot1 = myJot.writeF( tinP , pbo , sizeof pbo - 1 ) ;
+countT idJot2 = myJot.writeF( tinBaseP , pbo , sizeof pbo - 1 ) ;
+countT idJot1 = myJot.writeF( tinBaseP , pbo , sizeof pbo - 1 ) ;
 
-jotC myJot( tinP , "myJot" , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE ) ;
+jotC myJot( tinBaseP , "myJot" , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE ) ;
 
 osTextT pbo[] = "abcdefg" ;
 

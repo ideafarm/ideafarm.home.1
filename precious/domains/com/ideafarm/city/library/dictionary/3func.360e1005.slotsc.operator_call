@@ -11,7 +11,7 @@
     }
         }
             //}
-            //    pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+            //    pEtRock->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    }
             //        OStEXTC(  ostoSay , offsTry , 0 ) ;
@@ -37,7 +37,7 @@
             }
                 }
                     if( !pbP ) break ;
-                    (*ppSex[ offsTry ])( tinP , pbP ) ;
+                    (*ppSex[ offsTry ])( tinBaseP , pbP ) ;
                 {
                 if( ppSex[ offsTry ] )
             {
@@ -45,14 +45,14 @@
             ZE( countT , offsTry ) ;
 
             //}
-            //    pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+            //    pEtRock->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    OStEXTC(  ostoSay , expCbDrop , 0 ) ;
             //    OStEXTAK( ostoSay , "slotsC::operator (): trying harder [expCbDrop]:    " ) ;
             //    OStEXT(   ostoSay , TUCK << 0 ) ;
             //{
             //if( pEtRock )
-            //etherC* pEtRock = &etherC::etRockIF( tinP ) ;
+            //etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
         {
         else
         }
@@ -66,13 +66,13 @@
                 THREADmODE4rESTORE
 
                 }
-                    //tinP.pc Utility[ 7 ] = bDeleted ? BM_HIGH | offsTry              : 0 ;
-                    //tinP.pc Utility[ 6 ] =            BM_HIGH | bDeleted                 ;
-                    //tinP.pc Utility[ 5 ] =            BM_HIGH | offs                     ;
-                    //tinP.pc Utility[ 4 ] =            BM_HIGH | poolC_cBitsExpCbDrop     ;
-                    //tinP.pc Utility[ 3 ] =            BM_HIGH | expSlotsMin              ;
-                    //tinP.pc Utility[ 2 ] = mask ;
-                    //tinP.pc Utility[ 1 ] = dropHeader ;
+                    //((tinNormalS&)tinBaseP).pc Utility[ 7 ] = bDeleted ? BM_HIGH | offsTry              : 0 ;
+                    //((tinNormalS&)tinBaseP).pc Utility[ 6 ] =            BM_HIGH | bDeleted                 ;
+                    //((tinNormalS&)tinBaseP).pc Utility[ 5 ] =            BM_HIGH | offs                     ;
+                    //((tinNormalS&)tinBaseP).pc Utility[ 4 ] =            BM_HIGH | poolC_cBitsExpCbDrop     ;
+                    //((tinNormalS&)tinBaseP).pc Utility[ 3 ] =            BM_HIGH | expSlotsMin              ;
+                    //((tinNormalS&)tinBaseP).pc Utility[ 2 ] = mask ;
+                    //((tinNormalS&)tinBaseP).pc Utility[ 1 ] = dropHeader ;
 
                     }
                         }
@@ -82,7 +82,7 @@
                             {
                             if( !pbP )
 
-                            (*ppSex[ offsTry ])( tinP , pbP ) ;
+                            (*ppSex[ offsTry ])( tinBaseP , pbP ) ;
                         {
                         if( ppSex[ offsTry ] )
                     {
@@ -91,9 +91,9 @@
                     ZE( boolT , bDeleted ) ;
                 {
                 else
-                if( pPoolContainsMe ) (*pPoolContainsMe)( tinP , pbP ) ;
+                if( pPoolContainsMe ) (*pPoolContainsMe)( tinBaseP , pbP ) ;
 
-                //tinP.pc Utility[ 0 ] = (countT)pbP ;
+                //((tinNormalS&)tinBaseP).pc Utility[ 0 ] = (countT)pbP ;
 
                 THREADmODE4oN( flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
             {
@@ -101,7 +101,7 @@
 
             }
                 //}
-                //    pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                //    pEtRock->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
                 //
                 //    OStEXTC(  ostoSay , offs , 0 ) ;
                 //    OStEXTAK( ostoSay , "    " ) ;
@@ -116,10 +116,10 @@
                 //    OStEXT(   ostoSay , TUCK << 0 ) ;
                 //{
                 //if( pEtRock )
-                //etherC* pEtRock = &etherC::etRockIF( tinP ) ;
+                //etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
             {
             else                                                                    // OBSERVED CLOUD 6d9: 20211202@1230 20211211@0800
-            if( ppSex[ offs ] ) (*ppSex[ offs ])( tinP , pbP ) ;                    // I TRY TO DELETE pbP HERE
+            if( ppSex[ offs ] ) (*ppSex[ offs ])( tinBaseP , pbP ) ;                    // I TRY TO DELETE pbP HERE
 
             inc02AM( pcTallyIn[ offs ] ) ;
 
@@ -127,14 +127,14 @@
             countT mask = ( 1 << CbITSeXPsLOTS ) - 1 ;
             countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
         {
-        if( cbDropHeader && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
+        if( cbDropHeader && !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
     {
     if( pbP )
 
     if( F(flagsCt) & flSLOTSc_READoNLY ) { BLAMMO ; }
     _IO_
 {
-/*1*/voidT slotsC::operator ()( tinS& tinP , byteT*& pbP )/*1*/
+/*1*/voidT slotsC::operator ()( tinBaseS& tinBaseP , byteT*& pbP )/*1*/
 
 /**/
 

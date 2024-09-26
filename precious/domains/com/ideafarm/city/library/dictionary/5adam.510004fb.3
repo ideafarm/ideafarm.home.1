@@ -12,11 +12,11 @@
 DONE( tmHooF )
 }
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ; //INTENTIONALLY NOT RESTORED
-    grab1.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    grab1.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( bNap )
 
@@ -31,14 +31,14 @@ TASK( tmHooF )
 DONE( tmGooF )
 }
     THREADmODE2rESTORE ;
-    //CONoUTrAW3( "tmGooF/" , tinP.monitor.idThread , ": you'll never see this\r\n" ) ;
-    grab2.grabF( tinP , TAG( TAGiDnULL ) ) ;
-    //CONoUTrAW3( "tmGooF/" , tinP.monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
+    //CONoUTrAW3( "tmGooF/" , ((tinNormalS&)tinBaseP).monitor.idThread , ": you'll never see this\r\n" ) ;
+    grab2.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //CONoUTrAW3( "tmGooF/" , ((tinNormalS&)tinBaseP).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    grab1.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    grab1.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
 
     grabitC& grab2 = *(grabitC*)pTaskP->c2 ;
@@ -50,14 +50,14 @@ TASK( tmGooF )
 DONE( tmFooF )
 }
     THREADmODE2rESTORE ;
-    //CONoUTrAW3( "tmFooF/" , tinP.monitor.idThread , ": you'll never see this\r\n" ) ;
-    grab2.grabF( tinP , TAG( TAGiDnULL ) ) ;
-    //CONoUTrAW3( "tmFooF/" , tinP.monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
+    //CONoUTrAW3( "tmFooF/" , ((tinNormalS&)tinBaseP).monitor.idThread , ": you'll never see this\r\n" ) ;
+    grab2.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //CONoUTrAW3( "tmFooF/" , ((tinNormalS&)tinBaseP).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    grab1.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    grab1.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
 
     grabC& grab2 = *(grabC*)pTaskP->c2 ;
@@ -69,23 +69,23 @@ TASK( tmFooF )
 DONE( tmConsoleF )
 }
     }
-        ++ s ; etThread.osSleepF( tinP , TOCK * 0x8 ) ;
+        ++ s ; etThread.osSleepF( tinBaseP , TOCK * 0x8 ) ;
    
         }
-            etThread.delF( tinP , psttr ) ;
+            etThread.delF( tinBaseP , psttr ) ;
 
             }
-                etThread.delF( tinP , psttf ) ;
-                etThread.boxPutGenerationF( tinP , psttf , T("///d/ideafarm.rpt.monitor.console") , TUCK , (osTextT*)tRpt , tRpt.csF( tinP ) ) ; ___( psttf ) ;
+                etThread.delF( tinBaseP , psttf ) ;
+                etThread.boxPutGenerationF( tinBaseP , psttf , T("///d/ideafarm.rpt.monitor.console") , TUCK , (osTextT*)tRpt , tRpt.csF( tinBaseP ) ) ; ___( psttf ) ;
                 ZE( strokeS* , psttf ) ;
                 TN( tRpt , psttr ) ;
             {
             else
-            if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE ) ) etThread.strokeF( tinP , psttr ) ;
+            if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE ) ) etThread.strokeF( tinBaseP , psttr ) ;
 
-            swMemorySpaceP.ungrabF( tinP ) ;
+            swMemorySpaceP.ungrabF( tinBaseP ) ;
             }
-                memorySpace.grab.ungrabF( tinP ) ;
+                memorySpace.grab.ungrabF( tinBaseP ) ;
 
                 }
                     }
@@ -100,11 +100,11 @@ DONE( tmConsoleF )
                                                 +top+TF2(pCopyGrab->idLineCt,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcp+tcr
                                                 TP("",0x29)+TF2(pCopyGrab->idiFileCt,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)
                                         
-                                            etThread.strFuseF( tinP , psttr ,
+                                            etThread.strFuseF( tinBaseP , psttr ,
                                         {
                                         else
                                         if( !bOk || getNegAM( pCopyGrab->finger ) != FINGERnEG_GRABc ) pCopyGrab = 0 ;
-                                        thirdC::dosReadProcessMemoryIF( tinP , pbCopyGrab , sizeof( grabC ) , bOk , (voidT*)pCopyTin->pPanLifiRecurseGrabbedLevel[ off ] , info.osPid ) ;
+                                        thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopyGrab , sizeof( grabC ) , bOk , (voidT*)pCopyTin->pPanLifiRecurseGrabbedLevel[ off ] , info.osPid ) ;
                                         ZE( boolT , bOk ) ;
                                         grabC* pCopyGrab = (grabC*)pbCopyGrab ;
                                         byteT pbCopyGrab[ sizeof( grabC ) ] ;
@@ -113,41 +113,41 @@ DONE( tmConsoleF )
                                 {                                                                                                                              //U::BUG: SHOULD BE off += 5?
                                 for( countT off = 0 ; off < sizeof pCopyTin->pPanLifiRecurseGrabbedLevel / sizeof pCopyTin->pPanLifiRecurseGrabbedLevel[ 0 ] ; off ++ ) //U::OBSOLETED BY MIGRATION TO pPanLifiRecurseGrabbedLevel; SEE tmReportF
     
-                                etThread.strFuseF( tinP , psttr , tcr ) ;
+                                etThread.strFuseF( tinBaseP , psttr , tcr ) ;
     
                                 ) ;
                                     
                                     +top+TF2(pCopyTin->monitor.pPanLifiGrabbing[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcp
                                     tb+TF2(pCopyTin->monitor.pPanLifiGrabbing[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)
                                     
-                                etThread.strFuseF( tinP , psttr ,
+                                etThread.strFuseF( tinBaseP , psttr ,
     
                                 ) ;
             
                                     +TP(info.postThreadName,0x20)
                                     TF3(info.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)
                             
-                                etThread.strFuseF( tinP , psttr , 
+                                etThread.strFuseF( tinBaseP , psttr , 
                             {
                             if( pCopyTin && pCopyTin->monitor.pPanLifiGrabbing[ 0 ] )
     
                             }
                                 if( !bOk || getNegAM( pc2[ 0 ] ) != FINGERnEG_TINs || info.idSerial != pc2[ 1 ] ) pCopyTin = 0 ;
-                                thirdC::dosReadProcessMemoryIF( tinP , (byteT*)pc2 , sizeof pc2 , bOk , (voidT*)info.ip , info.osPid ) ;
+                                thirdC::dosReadProcessMemoryIF( tinBaseP , (byteT*)pc2 , sizeof pc2 , bOk , (voidT*)info.ip , info.osPid ) ;
                                 bOk = 0 ;
                                 countT pc2[ 2 ] ; //CODE SYNC: ad40104 003002a: fingerprint idSerial MUST BE AT OFFSETS 0 4
                             {
                             else
                             if( !bOk || getNegAM( pCopyTin->fingerprint ) != FINGERnEG_TINs || info.idSerial != pCopyTin->idSerial ) pCopyTin = 0 ;
-                            thirdC::dosReadProcessMemoryIF( tinP , pbCopyTin , sizeof( tinS ) , bOk , (voidT*)info.ip , info.osPid ) ;
+                            thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopyTin , sizeof( tinNormalS ) , bOk , (voidT*)info.ip , info.osPid ) ;
                             ZE( boolT , bOk ) ;
-                            tinS* pCopyTin = (tinS*)pbCopyTin ;
-                            byteT pbCopyTin[ sizeof( tinS ) ] ;
+                            tinBaseS* pCopyTin = (tinBaseS*)pbCopyTin ;
+                            byteT pbCopyTin[ sizeof( tinNormalS ) ] ;
     
-                            tinEntryS& info = *(tinEntryS*)&memorySpace.swsTin.downF( tinP , hWalk ) ;
+                            tinEntryS& info = *(tinEntryS*)&memorySpace.swsTin.downF( tinBaseP , hWalk ) ;
                         {
                         do
-                        handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     if( memorySpace.swsTin )
 
@@ -156,28 +156,28 @@ DONE( tmConsoleF )
                         +T("swsTin       : ")+TF2(memorySpace.swsTin,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr
                          T("Memory space: ")+TF2(cLeverIdMemoryP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr
     
-                    etThread.strFuseF( tinP , psttr , 
+                    etThread.strFuseF( tinBaseP , psttr , 
 
-                    memorySpace.pczLeverAdam = (countT*)memorySpace.swsTin.leverF( tinP , idf ) ;
+                    memorySpace.pczLeverAdam = (countT*)memorySpace.swsTin.leverF( tinBaseP , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                const countT cFlavors = memorySpace.swsTin.cFlavorsF( tinP ) ;
+                const countT cFlavors = memorySpace.swsTin.cFlavorsF( tinBaseP ) ;
 
-                memorySpace.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                memorySpace.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 
                 memorySpaceS& memorySpace = *(memorySpaceS*)&(countT&)swMemorySpaceP ;
-                cLeverIdMemoryP = swMemorySpaceP.leverF( tinP , idf ) ;
+                cLeverIdMemoryP = swMemorySpaceP.leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swMemorySpaceP.cFlavorsF( tinP ) ;
-            swMemorySpaceP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            countT cFlavors = swMemorySpaceP.cFlavorsF( tinBaseP ) ;
+            swMemorySpaceP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            etThread.strMakeF( tinP , LF , psttr , T("\fIPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System\r\nPerformance Monitor\r\ncycle: ")+TF2(++icCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") , TOCK ) ; ___( psttr ) ;
+            etThread.strMakeF( tinBaseP , LF , psttr , T("\fIPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System\r\nPerformance Monitor\r\ncycle: ")+TF2(++icCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") , TOCK ) ; ___( psttr ) ;
             ZE( strokeS* , psttr ) ;
         {
         if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE ) )
 
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !POOP && !bQuitConsoleP )
     TN( tcp , ")" ) ;

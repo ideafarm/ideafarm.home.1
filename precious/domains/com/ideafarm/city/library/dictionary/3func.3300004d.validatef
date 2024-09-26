@@ -10,8 +10,8 @@
 }
     }
         }
-            swc2P.freeF( tinP ) ;
-            etThread.delF( tinP , pc2cp ) ;
+            swc2P.freeF( tinBaseP ) ;
+            etThread.delF( tinBaseP , pc2cp ) ;
             count2S*& pc2cp = (count2S*&)(countT&)swc2P ;
             idProcessOldP = idp ;
             stIdProcessGone >> idp ;
@@ -36,17 +36,17 @@
             ZE( boolT , bFail ) ;
     
             count2S* pc2cp = (count2S*)(countT)swc2P ;
-            idProcessOldP = swc2P.leverF( tinP , idf ) ;
+            idProcessOldP = swc2P.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swc2P.cFlavorsF( tinP ) ;
-        stackC stIdProcessGone( tinP , etThread , TAG( TAGiDnULL ) ) ;
+        countT cFlavors = swc2P.cFlavorsF( tinBaseP ) ;
+        stackC stIdProcessGone( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
     {
     IFsCRATCH
 
     //ASSUME: CALLER HAS SERLIALIZED ON b_idProcessOld, SO IS SERIALIZED ON THE TWO SWITCHES
 {
-/*1*/voidT validateF( tinS& tinP , etherC& etThread , switchC& swc2P , countT& idProcessOldP )/*1*/
+/*1*/voidT validateF( tinBaseS& tinBaseP , etherC& etThread , switchC& swc2P , countT& idProcessOldP )/*1*/
 /**/
 */
 /*

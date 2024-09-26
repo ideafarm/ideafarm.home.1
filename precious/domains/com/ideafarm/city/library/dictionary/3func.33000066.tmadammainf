@@ -19,19 +19,19 @@
         DEL( pTaskP ) ;
         }
     
-            dec02AM( thirdC::os_cAllKidThreadsI_IF( tinP ) ) ;
+            dec02AM( thirdC::os_cAllKidThreadsI_IF( tinBaseP ) ) ;
     
-            tinP.pag6 = pag6save ;
-            tinP.pag5 = pag5save ;
-            tinP.pag4 = pag4save ;
-            tinP.pag3 = pag3save ;
-            tinP.pag2 = pag2save ;
-            tinP.pag1 = pag1save ;
+            ((tinNormalS&)tinBaseP).pag6 = pag6save ;
+            ((tinNormalS&)tinBaseP).pag5 = pag5save ;
+            ((tinNormalS&)tinBaseP).pag4 = pag4save ;
+            ((tinNormalS&)tinBaseP).pag3 = pag3save ;
+            ((tinNormalS&)tinBaseP).pag2 = pag2save ;
+            ((tinNormalS&)tinBaseP).pag1 = pag1save ;
 
             THREADmODE3rESTORE
             }
                 DEL( pamP ) ;
-                puseC( tinP , pamP->poolUsedByLauncher ) ;
+                puseC( tinBaseP , pamP->poolUsedByLauncher ) ;
             {
             THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
 
@@ -40,14 +40,14 @@
             __( rc - ifcEXITcODE_EXITpROCESSaOK ) ;
             }
                 }
-                    tinP.pPoolUse = pSave ;
-                    rc = adamMainF( tinP , ifcIDtYPEtLS_WITHINpROCESS , 0 , 0 , 0 , 0 , ostoCmdLine , 0 ) ;
-                    poolC* pSave = tinP.pPoolUse ; tinP.pPoolUse = 0 ; //U::BUG: I SHOULD NOT BE PASSING MY OWN tinP INTO adamMainF ; I SHOULD CT A VIRGIN tinS
-                {                                                      //20181112@2041: CONJ: THE NEXT LINE'S COMMENT IS WRONG.  THERE IS NOTHING WRONG WITH USING tinP, WHICH I THINK WAS CT BY A CALLER
+                    ((tinNormalS&)tinBaseP).pPoolUse = pSave ;
+                    rc = adamMainF( tinBaseP , ifcIDtYPEtLS_WITHINpROCESS , 0 , 0 , 0 , 0 , ostoCmdLine , 0 ) ;
+                    poolC* pSave = ((tinNormalS&)tinBaseP).pPoolUse ; ((tinNormalS&)tinBaseP).pPoolUse = 0 ; //U::BUG: I SHOULD NOT BE PASSING MY OWN tinBaseP INTO adamMainF ; I SHOULD CT A VIRGIN tinNormalS
+                {                                                      //20181112@2041: CONJ: THE NEXT LINE'S COMMENT IS WRONG.  THERE IS NOTHING WRONG WITH USING tinBaseP, WHICH I THINK WAS CT BY A CALLER
                 _IO_
             {
 
-            if( postArgsP ) PUSE( tinP , postArgsP ) ;
+            if( postArgsP ) PUSE( tinBaseP , postArgsP ) ;
         
             }
                 OStEXTA(  ostoCmdLine , postArgsP )
@@ -57,12 +57,12 @@
             OStEXTCF(  ostoCmdLine , idAdamP , 0 )
             OStEXT(   ostoCmdLine , 0x80 )
     
-            adamGlobal6S* const pag6save = tinP.pag6 ; tinP.pag6 = pamP->pag6 ;
-            adamGlobal5S* const pag5save = tinP.pag5 ; tinP.pag5 = pamP->pag5 ;
-            adamGlobal4S* const pag4save = tinP.pag4 ; tinP.pag4 = pamP->pag4 ;
-            adamGlobal3S* const pag3save = tinP.pag3 ; tinP.pag3 = pamP->pag3 ;
-            adamGlobal2S* const pag2save = tinP.pag2 ; tinP.pag2 = pamP->pag2 ;
-            adamGlobal1S* const pag1save = tinP.pag1 ; tinP.pag1 = pamP->pag1 ;
+            adamGlobal6S* const pag6save = ((tinNormalS&)tinBaseP).pag6 ; ((tinNormalS&)tinBaseP).pag6 = pamP->pag6 ;
+            adamGlobal5S* const pag5save = ((tinNormalS&)tinBaseP).pag5 ; ((tinNormalS&)tinBaseP).pag5 = pamP->pag5 ;
+            adamGlobal4S* const pag4save = ((tinNormalS&)tinBaseP).pag4 ; ((tinNormalS&)tinBaseP).pag4 = pamP->pag4 ;
+            adamGlobal3S* const pag3save = ((tinNormalS&)tinBaseP).pag3 ; ((tinNormalS&)tinBaseP).pag3 = pamP->pag3 ;
+            adamGlobal2S* const pag2save = ((tinNormalS&)tinBaseP).pag2 ; ((tinNormalS&)tinBaseP).pag2 = pamP->pag2 ;
+            adamGlobal1S* const pag1save = ((tinNormalS&)tinBaseP).pag1 ; ((tinNormalS&)tinBaseP).pag1 = pamP->pag1 ;
 
             parm_tmAdamMainF_S* pamP      = (parm_tmAdamMainF_S*)pTaskP->c3 ;
             osTextT*            postArgsP =            (osTextT*)pTaskP->c2 ;

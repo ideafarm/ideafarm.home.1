@@ -22,21 +22,21 @@
     sIn >> finger ;
     ZE( countT , finger ) ;
 
-    sock.readF( tinP , sIn ) ;
-    soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+    sock.readF( tinBaseP , sIn ) ;
+    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    sock.writeF( tinP , sOut ) ;
+    sock.writeF( tinBaseP , sOut ) ;
 
     sOut << (strokeS*)tSerialName ;
     sOut << (countT)ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEsTROKEsTRING ;
     sOut << (countT)1 ;
     sOut << (countT)FINGERnEG_SERIALnUMBERdISPENSERcMD ;
-    soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     TN( tSerialName , postP ) ;
 
-    sock.connectF( tinP , idPortDispenser ) ;
-    socketC sock( tinP , *this , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tinBaseP , idPortDispenser ) ;
+    socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
 
     CONoUTrAW( T("ifcGetNextSerialNumberF [postP]: \"")+T(postP)+T("\"\r\n") ) ; //U::
 
@@ -55,7 +55,7 @@
     //static countT idLath ;
     //FOR TESTING STANDALONE
 {
-/*1*/countT etherC::ifcGetNextSerialNumberF( tinS& tinP , const osTextT* const postP )/*1*/
+/*1*/countT etherC::ifcGetNextSerialNumberF( tinBaseS& tinBaseP , const osTextT* const postP )/*1*/
 
 /**/
 */
@@ -64,7 +64,7 @@
   must be terminated by 0
   must not be 0
  postP
- tinP
+ tinBaseP
 parameters
 /*
 

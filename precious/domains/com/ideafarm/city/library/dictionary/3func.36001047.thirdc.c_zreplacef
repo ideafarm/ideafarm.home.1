@@ -8,7 +8,7 @@
 
 
 }
-    delF( tinP , postDoomed ) ;
+    delF( tinBaseP , postDoomed ) ;
 
     }
         postP[ costNew ] = 0 ;
@@ -22,12 +22,12 @@
             }
                 postcGet += costEach ;
                 postcPut += costEachNew ;
-                c_memcpyIF( tinP , postcPut , postNewP , costEachNew ) ;
+                c_memcpyIF( tinBaseP , postcPut , postNewP , costEachNew ) ;
             {
-            if( postcGet == c_strstrIF( tinP , postcGet , postOldP ) )
+            if( postcGet == c_strstrIF( tinBaseP , postcGet , postOldP ) )
         {
         while( postcGet < postEnd )
-        countT costEachNew = c_strlenIF( tinP , postNewP ) ;
+        countT costEachNew = c_strlenIF( tinBaseP , postNewP ) ;
         postcPut = postP ;
         postcGet = postDoomed ;
         ZE( osTextT* , postcPut ) ;
@@ -37,23 +37,23 @@
 
     }
         if( postP ) postP[ costNew ] = 0 ;
-        newF( tinP , LF , postP , costNew + 1 ) ; ___( postP ) ;
-        costNew = c_strlenIF( tinP , postDoomed ) + costExtra ;
+        newF( tinBaseP , LF , postP , costNew + 1 ) ; ___( postP ) ;
+        costNew = c_strlenIF( tinBaseP , postDoomed ) + costExtra ;
         postP = 0 ;
         postDoomed = postP ;
 
-        sCountT costExtra = cHit * ( (sCountT)c_strlenIF( tinP , postNewP ) - costEach ) ;
+        sCountT costExtra = cHit * ( (sCountT)c_strlenIF( tinBaseP , postNewP ) - costEach ) ;
         }
             if( postc == postEnd ) break ;
             postc += costEach ;
             cHit ++ ;
         {
-        while( postHit = c_strstrIF( tinP , postc , postOldP ) , postHit )
+        while( postHit = c_strstrIF( tinBaseP , postc , postOldP ) , postHit )
         ZE( osTextT* , postHit ) ;
         postc = postP ;
         ZE( osTextT* , postc ) ;
-        postEnd = postP + c_strlenIF( tinP , postP ) ;
-        costEach = c_strlenIF( tinP , postOldP ) ;
+        postEnd = postP + c_strlenIF( tinBaseP , postP ) ;
+        costEach = c_strlenIF( tinBaseP , postOldP ) ;
         ZE( countT , cHit ) ;
     {
     ZE( countT , costNew ) ;
@@ -64,8 +64,8 @@
 
     }
         if( POOP ) return ;
-        __( !c_strlenIF( tinP , postNewP ) ) ;
-        __( !c_strlenIF( tinP , postOldP ) ) ;
+        __( !c_strlenIF( tinBaseP , postNewP ) ) ;
+        __( !c_strlenIF( tinBaseP , postOldP ) ) ;
         __Z( postNewP ) ;
         __Z( postOldP ) ;
         __Z( postP ) ;
@@ -74,7 +74,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::c_zReplaceF( tinS& tinP , osTextT*& postP , const osTextT* const postOldP , const osTextT* const postNewP )/*1*/
+/*1*/voidT thirdC::c_zReplaceF( tinBaseS& tinBaseP , osTextT*& postP , const osTextT* const postOldP , const osTextT* const postNewP )/*1*/
 
 /**/
 */

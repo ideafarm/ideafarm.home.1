@@ -14,29 +14,29 @@
         }
             }
                 }
-                    *pstx << (countT)!ether.strCompareF( tinP , tableP._CT1_07F( idrr , idc1 ) , tableP._CT1_07F( idrr , idc2 ) ) ;
+                    *pstx << (countT)!ether.strCompareF( tinBaseP , tableP._CT1_07F( idrr , idc1 ) , tableP._CT1_07F( idrr , idc2 ) ) ;
                 {
                 for( countT idrr = 1 ; idrr <= cRowsr ; idrr ++ )
-                const countT cRowsr = tableP.cRowsF( tinP ) ;
+                const countT cRowsr = tableP.cRowsF( tinBaseP ) ;
 
                 stStacksToDeleteP << (countT)pstx ;    
-                rslt.newObjectF( tinP , *pstx ) ;
+                rslt.newObjectF( tinBaseP , *pstx ) ;
             {
             if( pstx )
-            stackC* pstx = new( 0 , tinP , LF ) stackC( tinP , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ; ___( pstx ) ;
+            stackC* pstx = new( 0 , tinBaseP , LF ) stackC( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ; ___( pstx ) ;
 
             __( idop - idcOPERATOR_EQUALS ) ;
             }
-                __( idc2 > tableP.cColsF( tinP ) ) ;
-                __( idc1 > tableP.cColsF( tinP ) ) ;
+                __( idc2 > tableP.cColsF( tinBaseP ) ) ;
+                __( idc1 > tableP.cColsF( tinBaseP ) ) ;
 
                 __Z( idc2 ) ;
                 __Z( idop ) ;
                 __Z( idc1 ) ;
-                idc2 = stx.downF( tinP , handle ) ;
-                idop = stx.downF( tinP , handle ) ;
-                idc1 = stx.downF( tinP , handle ) ;
-                handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                idc2 = stx.downF( tinBaseP , handle ) ;
+                idop = stx.downF( tinBaseP , handle ) ;
+                idc1 = stx.downF( tinBaseP , handle ) ;
+                handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                 stackC& stx = *(stackC*)operator()( idr , idc ).c2 ;
             {
@@ -45,15 +45,15 @@
             ZE( countT , idc1 ) ;
         {
         for( countT idc = 1 ; idc <= cCols ; idc ++ )
-        rslt.newEventF( tinP ) ;
+        rslt.newEventF( tinBaseP ) ;
     {
     for( countT idr = 1 ; idr <= cRows ; idr ++ )
-    const countT cRows = cRowsF( tinP ) ;
+    const countT cRows = cRowsF( tinBaseP ) ;
 
-    for( countT idc = 1 ; idc <= cCols ; idc ++ ) rslt.newColF( tinP , T(psttName)+T(".")+T(nameF(tinP,idc)) ) ;
-    const countT cCols = cColsF( tinP ) ;
+    for( countT idc = 1 ; idc <= cCols ; idc ++ ) rslt.newColF( tinBaseP , T(psttName)+T(".")+T(nameF(tinBaseP,idc)) ) ;
+    const countT cCols = cColsF( tinBaseP ) ;
 
-    tableC rslt( tinP , ether ) ;
+    tableC rslt( tinBaseP , ether ) ;
     _IO_
 
     }

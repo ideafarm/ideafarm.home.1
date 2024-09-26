@@ -9,20 +9,20 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.delF( tinP , pbPlain ) ;
-    etThread.delF( tinP , psttEncoded ) ;
+    etThread.delF( tinBaseP , pbPlain ) ;
+    etThread.delF( tinBaseP , psttEncoded ) ;
 
-    etThread.traceF( tinP , T("[plain,decoded]:    ")+TP((strokeS*)tPlain,26)+tb4+T(pbPlain) ) ;
-    etThread.strDecodeBlobFromRFC4648F( tinP , pbPlain , cbPlain , psttEncoded ) ; ___( pbPlain ) ;
+    etThread.traceF( tinBaseP , T("[plain,decoded]:    ")+TP((strokeS*)tPlain,26)+tb4+T(pbPlain) ) ;
+    etThread.strDecodeBlobFromRFC4648F( tinBaseP , pbPlain , cbPlain , psttEncoded ) ; ___( pbPlain ) ;
     ZE( countT , cbPlain ) ;
     ZE( byteT* , pbPlain ) ;
 
-    etThread.traceF( tinP , T("[plain,encoded]:    ")+TP((strokeS*)tPlain,26)+tb4+T(psttEncoded) ) ;
-    etThread.strEncodeBlobToRFC4648F( tinP , psttEncoded , tPlain , tPlain.csF( tinP ) ) ; ___( psttEncoded ) ;
+    etThread.traceF( tinBaseP , T("[plain,encoded]:    ")+TP((strokeS*)tPlain,26)+tb4+T(psttEncoded) ) ;
+    etThread.strEncodeBlobToRFC4648F( tinBaseP , psttEncoded , tPlain , tPlain.csF( tinBaseP ) ) ; ___( psttEncoded ) ;
     ZE( strokeS* , psttEncoded ) ;
 
     tPlain += T(post2) ;

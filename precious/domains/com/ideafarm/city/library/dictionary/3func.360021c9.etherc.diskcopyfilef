@@ -8,17 +8,17 @@
 
 
 }
-    delF( tinP , postOld ) ;
-    delF( tinP , postNew ) ;
-    third.dosCopyF( tinP , osFileNameC( tinP , *this , postNew ) , osFileNameC( tinP , *this , postOld ) , cTriesP ) ;
+    delF( tinBaseP , postOld ) ;
+    delF( tinBaseP , postNew ) ;
+    third.dosCopyF( tinBaseP , osFileNameC( tinBaseP , *this , postNew ) , osFileNameC( tinBaseP , *this , postOld ) , cTriesP ) ;
 
-    delF( tinP , pstto ) ;
-    delF( tinP , psttn ) ;
-    countT costOld = strMakeF( tinP , LF , postOld , pstto ) ; ___( postOld ) ;
-    countT costNew = strMakeF( tinP , LF , postNew , psttn ) ; ___( postNew ) ;
-    diskMakeDirIfNeededF( tinP , psttn ) ;
-    diskMapFileNameF( tinP , pstto , psttOldP ) ; ___( pstto ) ;
-    diskMapFileNameF( tinP , psttn , psttNewP ) ; ___( psttn ) ;
+    delF( tinBaseP , pstto ) ;
+    delF( tinBaseP , psttn ) ;
+    countT costOld = strMakeF( tinBaseP , LF , postOld , pstto ) ; ___( postOld ) ;
+    countT costNew = strMakeF( tinBaseP , LF , postNew , psttn ) ; ___( postNew ) ;
+    diskMakeDirIfNeededF( tinBaseP , psttn ) ;
+    diskMapFileNameF( tinBaseP , pstto , psttOldP ) ; ___( pstto ) ;
+    diskMapFileNameF( tinBaseP , psttn , psttNewP ) ; ___( psttn ) ;
     ZE( strokeS* , pstto ) ;
     ZE( strokeS* , psttn ) ;
     ZE( osTextT* , postOld ) ;
@@ -40,7 +40,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::diskCopyFileF( tinS& tinP , const strokeS* const psttNewP , const strokeS* const psttOldP , const countT cTriesP )/*1*/
+/**//*1*/voidT etherC::diskCopyFileF( tinBaseS& tinBaseP , const strokeS* const psttNewP , const strokeS* const psttOldP , const countT cTriesP )/*1*/
 */
 /*
 

@@ -8,14 +8,14 @@
 
 
 }
-    delF( tinP , postOs ) ;
-    strMakeF( tinP , LF , psttP , tOut ) ; ___( psttP ) ;
+    delF( tinBaseP , postOs ) ;
+    strMakeF( tinBaseP , LF , psttP , tOut ) ; ___( psttP ) ;
 
-    if( tOut.csF( tinP ) > 5 ) tOut += T("/") ;     // BASE OS (WINDOWS 10) IS INCONSISTENT IN THAT IT WILL RETURN NAMES OF FORM "x:\" OR "x:\foo".  I.E. THE NAME INCLUDES A TRAILING BACKSLASH IF AND ONLY IF THE NAME IS TO THE ROOT FOLDER OF A DRIVE
+    if( tOut.csF( tinBaseP ) > 5 ) tOut += T("/") ;     // BASE OS (WINDOWS 10) IS INCONSISTENT IN THAT IT WILL RETURN NAMES OF FORM "x:\" OR "x:\foo".  I.E. THE NAME INCLUDES A TRAILING BACKSLASH IF AND ONLY IF THE NAME IS TO THE ROOT FOLDER OF A DRIVE
     TN( tOut , iffn ) ;
 
-    ifFileNameC iffn( tinP , third , postOs ) ;
-    third.dosGetCurrentDirF( tinP , postOs ) ; ___( postOs ) ;
+    ifFileNameC iffn( tinBaseP , third , postOs ) ;
+    third.dosGetCurrentDirF( tinBaseP , postOs ) ; ___( postOs ) ;
     ZE( osTextT* , postOs ) ;
     _IO_
 
@@ -27,7 +27,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::diskGetHoverF( tinS& tinP , strokeS*& psttP )/*1*/
+/**//*1*/voidT etherC::diskGetHoverF( tinBaseS& tinBaseP , strokeS*& psttP )/*1*/
 */
   must be 0
  psttP

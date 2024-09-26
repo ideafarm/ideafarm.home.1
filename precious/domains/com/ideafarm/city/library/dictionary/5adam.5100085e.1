@@ -9,26 +9,26 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
         break ;
 
-        sgnFoo.waitF( tinP ) ;
+        sgnFoo.waitF( tinBaseP ) ;
     {
     case 2 :
     }
         break ;
 
-        sgnFoo.giveF( tinP ) ;
+        sgnFoo.giveF( tinBaseP ) ;
     {
     case 1 :
 {
-switch( tinP.pag1->idCell )
+switch( ((tinNormalS&)tinBaseP).pag1->idCell )
 
-signC sgnFoo( tinP , TAG( TAGiDnULL ) , "foo" , tinP.pag1->idCell == 1 ? flSIGNc_GIVER : flSIGNc_null ) ;
+signC sgnFoo( tinBaseP , TAG( TAGiDnULL ) , "foo" , ((tinNormalS&)tinBaseP).pag1->idCell == 1 ? flSIGNc_GIVER : flSIGNc_null ) ;
 
 // USE WDW TO STEP INTO AN OO'TH INSTANCE OF ME TO VERIFY THAT THE FLAG BLOCKS THE CT'OR UNTIL THE WO'TH INSTANCE RESETS IT
 // I CAN BE USED TO TEST THIS CODE BY STEPPING INTO THE NEXT LINE AND STEPPING THROUGH batonC::batonC TO AFTER formattingIsDoneF() IS CALLED BUT BEFORE THE FLAG IS RESET

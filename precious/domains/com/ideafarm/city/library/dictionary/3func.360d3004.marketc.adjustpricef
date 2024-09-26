@@ -8,7 +8,7 @@
 
 
 }
-    grab.ungrabF( tinP ) ;
+    grab.ungrabF( tinBaseP ) ;
 
     }
         }
@@ -17,7 +17,7 @@
             if( bOk ) pmPrice[ offBucket ] = ep ;
             pmDemand[ offBucket ] = pmSupply[ offBucket ] = 0.0 ;
     
-            boolT bOk = equilibriumF( tinP , ep , eq , pmPrice[ 0 ] , pmSupply[ 0 ] , pmPrice[ 1 ] , pmSupply[ 1 ] , pmPrice[ 0 ] , pmDemand[ 0 ] , pmPrice[ 1 ] , pmDemand[ 1 ] ) ;
+            boolT bOk = equilibriumF( tinBaseP , ep , eq , pmPrice[ 0 ] , pmSupply[ 0 ] , pmPrice[ 1 ] , pmSupply[ 1 ] , pmPrice[ 0 ] , pmDemand[ 0 ] , pmPrice[ 1 ] , pmDemand[ 1 ] ) ;
             ZE( measure04T , eq ) ;
             ZE( measure04T , ep ) ;
         {
@@ -31,14 +31,14 @@
 
     }
         offTockNow >>= 0x10 ; //0x10 SCALES TO UNIT==TOCK
-        etherP.osTimeNowF( tinP , offTockNow , timeN2 ) ;
+        etherP.osTimeNowF( tinBaseP , offTockNow , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
     {
     ZE( countT , offTockNow ) ;
 
-    grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT marketC::adjustPriceF( tinS& tinP , etherC& etherP )/*1*/
+/*1*/voidT marketC::adjustPriceF( tinBaseS& tinBaseP , etherC& etherP )/*1*/
 
 /**/
 */

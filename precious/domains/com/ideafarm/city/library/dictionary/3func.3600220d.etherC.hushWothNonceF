@@ -19,12 +19,12 @@
                 winner = c3Plain.c3 ;
             {
             if( result <= maxP )
-            delF( tinP , pbSymCypherText ) ;            
+            delF( tinBaseP , pbSymCypherText ) ;            
             countT result = *(countT*)pbSymCypherText ;
         {
         else
         if( cbSymCypherText <= sizeof( countT ) ) { BLAMMO ; }
-        hushEncryptF( tinP , pbSymCypherText , cbSymCypherText , pbHushedSymKey , cbHushedSymKey , pbSeed , sizeof pbSeed , (byteT*)&c3Plain , sizeof c3Plain , handleP  ) ; ___( pbSymCypherText ) ;
+        hushEncryptF( tinBaseP , pbSymCypherText , cbSymCypherText , pbHushedSymKey , cbHushedSymKey , pbSeed , sizeof pbSeed , (byteT*)&c3Plain , sizeof c3Plain , handleP  ) ; ___( pbSymCypherText ) ;
         ZE( countT , cbSymCypherText ) ;
         ZE( byteT* , pbSymCypherText ) ;
 
@@ -42,7 +42,7 @@
 
     }
         if( POOP ) return 0 ;
-        __Z( F(tinP.flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL )
+        __Z( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL )
         __NZ( handleP.cNoteF() ) ;
         }
             __1
@@ -56,7 +56,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::hushWothNonceF( tinS& tinP , const boolT& bQuitP , countT moduloP , countT randomP , countT maxP , handleC& handleP )/*1*/
+/*1*/countT etherC::hushWothNonceF( tinBaseS& tinBaseP , const boolT& bQuitP , countT moduloP , countT randomP , countT maxP , handleC& handleP )/*1*/
 
 /**/
 */

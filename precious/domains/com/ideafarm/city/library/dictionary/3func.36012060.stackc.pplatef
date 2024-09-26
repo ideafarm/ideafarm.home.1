@@ -88,7 +88,7 @@
             sCountT scSteps = *p_idCursor ? idP - *p_idCursor : 0 ;
     
             }
-                newTabsIfF( tinP , 0 , 0 ) ;
+                newTabsIfF( tinBaseP , 0 , 0 ) ;
                 cTabAge = - 1 ;
                 flagsState |= flSTACKsTATE_MAINTAINtABS ;
             {
@@ -103,7 +103,7 @@
         idP = *p_idLathRef ;
         ppc = *p_ppLathRef ;
 
-        if( *p_ppLathRef && !*p_idLathRef ) setIdLathRefF( tinP ) ;
+        if( *p_ppLathRef && !*p_idLathRef ) setIdLathRefF( tinBaseP ) ;
 
         LATHrEF
     {
@@ -119,7 +119,7 @@
     _INbATONsTACKc_
     SCOOP
 {
-/*1*/plateS* stackC::pPlateF( tinS& tinP , countT& idP )/*1*/
+/*1*/plateS* stackC::pPlateF( tinBaseS& tinBaseP , countT& idP )/*1*/
 
 /**/
 */
@@ -129,7 +129,7 @@
    i will search if necessary and set *p_idLathRef
   if idP is 0 then i return the plate last referenced, and set idP to the id of that plate
  idP
- tinP
+ tinBaseP
 arguments
 for speed, i have no overhead code or serialization code
 see operator []

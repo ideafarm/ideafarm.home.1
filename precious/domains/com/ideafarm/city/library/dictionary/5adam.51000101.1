@@ -10,9 +10,9 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
 ) ;
     T("\r\n\r\npress esc\r\n")
@@ -23,7 +23,7 @@ etThread.loafIF( tinP ) ;
     T("\r\n\r\ntrials per time unit           : ")+T(mTrialsPerTime          )+T("    (")+TF4((countT)mTrialsPerTime          ,flFORMAT_FOREIGN,0,0xa)+T(")")+
     T(    "\r\nnumber of trials               : ")+T(cTrials                 )+T("    (")+TF4((countT)cTrials                 ,flFORMAT_FOREIGN,0,0xa)+T(")")+
     T(      "\ftotal time                     : ")+TT(timeA1,timeA2)+
-etThread.strokeF( tinP ,
+etThread.strokeF( tinBaseP ,
 
 measureT mSecondsPerMillionTrials = 1e6 / mTrialsPerSecond ;
 measureT mTrialsPerSecond = mTrialsPerDay / 86400 ;
@@ -31,15 +31,15 @@ measureT mTrialsPerDay    = mTrialsPerTock * TOCK ;
 measureT mTrialsPerTock   = mTrialsPerTime * TOCK ;
 measureT mTrialsPerTime   = (measureT)cTrials / (measureT)timeA1 ;
 
-etThread.osTimeSubtractF( tinP , timeA1 , timeA2 , timeB1 , timeB2 ) ;
+etThread.osTimeSubtractF( tinBaseP , timeA1 , timeA2 , timeB1 , timeB2 ) ;
 
-etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
 while( cTries -- ) (measureT)ran ;
 countT cTries = cTrials ;
 const countT cTrials = 0x01000000 ;
-etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
+etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
 
-etThread.strokeF( tinP , T("please wait about 01 tocks\r\n") ) ;
+etThread.strokeF( tinBaseP , T("please wait about 01 tocks\r\n") ) ;
 
 ZE( sCountT , timeA2 ) ;
 ZE( countT , timeA1 ) ;

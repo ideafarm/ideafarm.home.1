@@ -11,7 +11,7 @@
     flagsInstance |= flPOOLiNSTANCE_FACEcONSTRUCTED ;
 
     THREADmODE2rESTORE
-    new( 0 , tinP , pbFileFace , sizeof pbFileFace ) fileC( tinP , (strokeS*)tNameFace , ifcOPENaCCESS_WR , ifcOPENsHARE_WR , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER | flOPENdETAILS_LOCrANDOM | flOPENdETAILS_NOcACHE , ifcOPENhOW_nCeO ) ;
+    new( 0 , tinBaseP , pbFileFace , sizeof pbFileFace ) fileC( tinBaseP , (strokeS*)tNameFace , ifcOPENaCCESS_WR , ifcOPENsHARE_WR , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER | flOPENdETAILS_LOCrANDOM | flOPENdETAILS_NOcACHE , ifcOPENhOW_nCeO ) ;
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
     }
@@ -20,14 +20,14 @@
             FORsTRINGSiNsPANNEDcOMBINEDtAIL1
             }
                 //CONoUTrAW( " done\r\n" ) ;
-                tinP.pEther->boxZapF( tinP , psttc1 ) ;
+                ((tinNormalS&)tinBaseP).pEther->boxZapF( tinBaseP , psttc1 ) ;
                 //CONoUTrAW( "\" ..." ) ;
                 //CONoUTrAW( T(psttc1) ) ;
                 //CONoUTrAW( " \"" ) ;
             {
             FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-            tinP.pEther->boxMenuF( tinP , soul1m , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+T(thirdC::postUserNameIF())+T("/")+TfORsTRING(idm)+T("/stateSpaces/")+TfORsTRING(ifcIDsTATEsPACE_SCRATCH)+T("/scratch.poolC.*") ) ;
-            soulC soul1m( tinP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinBaseP).pEther->boxMenuF( tinBaseP , soul1m , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+T(thirdC::postUserNameIF())+T("/")+TfORsTRING(idm)+T("/stateSpaces/")+TfORsTRING(ifcIDsTATEsPACE_SCRATCH)+T("/scratch.poolC.*") ) ;
+            soulC soul1m( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             if( idm >= ifcIDmEMORYsPACE_RESERVEDmIN && idm <= ifcIDmEMORYsPACE_RESERVEDmAX ) continue ;
         {
@@ -38,12 +38,12 @@
     {
     )
         )
-            tinP.pag1->idCell == 1
+            ((tinNormalS&)tinBaseP).pag1->idCell == 1
             ||
-            tinP.pag1->idAdam == ifcIDaDAM_PREPARElISTS
+            ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_PREPARElISTS
         (
         &&
-        !thirdC::c_strcmpIF( tinP , postNameP , "scratch" )
+        !thirdC::c_strcmpIF( tinBaseP , postNameP , "scratch" )
     (
     if
 
@@ -53,13 +53,13 @@
         +T(postNameP)
         +T("/")
         +TfORsTRING(idStateSpaceP)
-        T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+T(thirdC::postUserNameIF())+T("/")+TfORsTRING(tinP.pag1->idMemorySpace)+T("/stateSpaces/")
+        T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+T(thirdC::postUserNameIF())+T("/")+TfORsTRING(((tinNormalS&)tinBaseP).pag1->idMemorySpace)+T("/stateSpaces/")
 
     TN( tNameFace , "" ) ; tNameFace = 
-    puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
+    puseC puse( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
     _IO_
 {
-/*1*/voidT poolC::ctFilesF( tinS& tinP , const osTextT* const postNameP , const countT idStateSpaceP )/*1*/
+/*1*/voidT poolC::ctFilesF( tinBaseS& tinBaseP , const osTextT* const postNameP , const countT idStateSpaceP )/*1*/
 
 /**/
 */

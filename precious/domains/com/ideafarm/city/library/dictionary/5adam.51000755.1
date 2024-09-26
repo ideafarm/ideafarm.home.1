@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 #endif
 
@@ -39,41 +39,41 @@ etThread.traceF( tinP , T("ok") ) ;
 
     CONoUTrAW( "\r\nafter writing password\r\n" ) ;
 
-    ss.verifyReplyF( tinP , 235 ) ;
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+    ss.verifyReplyF( tinBaseP , 235 ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
     tSay = T("[redacted]\r\n") ;
 
     CONoUTrAW( "\r\nwriting password\r\n" ) ;
 
-    ss.verifyReplyF( tinP , 334 ) ;
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+    ss.verifyReplyF( tinBaseP , 334 ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
     tSay = T("[redacted]\r\n") ;
 
     CONoUTrAW( "\r\nwriting username\r\n" ) ;
 
-    ss.verifyReplyF( tinP , 334 ) ;
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+    ss.verifyReplyF( tinBaseP , 334 ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
     tSay = T("auth login\r\n") ;
     //B: tSay = T("auth plain postmaster@unconfirmed.ideafarm.com [redacted]\r\n") ;
 
-    ss.verifyReplyF( tinP , 250 ) ;
+    ss.verifyReplyF( tinBaseP , 250 ) ;
 
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
     tSay = T("ehlo unconfirmed.ideafarm.com\r\n") ;
 
-    ss.shakeHandsAsClientF( tinP ) ;
+    ss.shakeHandsAsClientF( tinBaseP ) ;
 
-    ss.verifyReplyF( tinP , 220 ) ;
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+    ss.verifyReplyF( tinBaseP , 220 ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
     tSay = T("starttls\r\n") ;
 
-    ss.verifyReplyF( tinP , 250 ) ;
-    ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+    ss.verifyReplyF( tinBaseP , 250 ) ;
+    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
     TN( tSay , "ehlo unconfirmed.ideafarm.com\r\n" ) ;
 
-    ss.verifyReplyF( tinP , 220 ) ;
-    ss.connectF( tinP , 587 , socketC::nicNameIF( tinP , etThread , T("smtp.mailgun.org") ) ) ;
-    socketC ss( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE ) ;
+    ss.verifyReplyF( tinBaseP , 220 ) ;
+    ss.connectF( tinBaseP , 587 , socketC::nicNameIF( tinBaseP , etThread , T("smtp.mailgun.org") ) ) ;
+    socketC ss( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE ) ;
 {
 
 TODO

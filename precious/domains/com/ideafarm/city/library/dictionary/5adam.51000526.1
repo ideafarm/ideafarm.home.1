@@ -9,34 +9,34 @@
 
 REST
 
-countT cAux = tinP.brcRaw ;
+countT cAux = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , auxGetNumDevs() )
 
 if( foo2 ) ;
-MMRESULT foo2 = tinP.brcRaw ;
+MMRESULT foo2 = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , waveOutGetDevCaps( 0 , &info2 , sizeof info2 ) )
 WAVEOUTCAPS info2 ;
 
-MMRESULT foo = (MMRESULT)tinP.brcRaw ;
+MMRESULT foo = (MMRESULT)((tinNormalS&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , waveInGetDevCaps( 0 , &info , sizeof info ) )
 WAVEINCAPS info ;
 
-etThread.strokeF( tinP , T("i have ")+TF1(cIn)+T(" audio input devices and ")+TF1(cOut)+T(" audio output devices\r\n") ) ;
-countT cOut = tinP.brcRaw ;
+etThread.strokeF( tinBaseP , T("i have ")+TF1(cIn)+T(" audio input devices and ")+TF1(cOut)+T(" audio output devices\r\n") ) ;
+countT cOut = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , waveOutGetNumDevs() )
-countT cIn  = tinP.brcRaw ;
+countT cIn  = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , waveInGetNumDevs() )
 
 }
     if( rc ) ;
-    countT rc = tinP.brcRaw ;
+    countT rc = ((tinNormalS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , joyGetPosEx( off , &info ) )
     info.dwSize = sizeof info ;
     JOYINFOEX info ;
 {
 for( countT off = 0 ; off < cJoy ; off ++ )
 
-UINT cJoy = tinP.brcRaw ;
+UINT cJoy = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , joyGetNumDevs() )
 
 TODO

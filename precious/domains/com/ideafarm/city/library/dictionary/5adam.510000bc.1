@@ -10,20 +10,20 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.strokeF( tinP , T("\r\ni just closed the file\r\nok\r\n") ) ;
-etThread.delF( tinP , psttMapped ) ;
+etThread.strokeF( tinBaseP , T("\r\ni just closed the file\r\nok\r\n") ) ;
+etThread.delF( tinBaseP , psttMapped ) ;
 
-etThread.osSleepF( tinP , TOCK * 0x10 , 0 , flSLEEP_TALK ) ;
-etThread.strokeF( tinP , T("\b\b\b\b.  opened\r\nsleeping now, with the file open\r\n") ) ;
-etThread.fileOpenF( tinP , handle , flagsResult , psttMapped , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR ) ;
+etThread.osSleepF( tinBaseP , TOCK * 0x10 , 0 , flSLEEP_TALK ) ;
+etThread.strokeF( tinBaseP , T("\b\b\b\b.  opened\r\nsleeping now, with the file open\r\n") ) ;
+etThread.fileOpenF( tinBaseP , handle , flagsResult , psttMapped , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR ) ;
 ZE( countT , flagsResult ) ;
-handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
-etThread.strokeF( tinP , T("opening the file ...") ) ;
+handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+etThread.strokeF( tinBaseP , T("opening the file ...") ) ;
 
-etThread.diskMakeDirIfNeededF( tinP , psttMapped ) ;
-etThread.diskMapFileNameF( tinP , psttMapped , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/cb00104") ) ; ___( psttMapped ) ;
+etThread.diskMakeDirIfNeededF( tinBaseP , psttMapped ) ;
+etThread.diskMapFileNameF( tinBaseP , psttMapped , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/cb00104") ) ; ___( psttMapped ) ;
 ZE( strokeS* , psttMapped ) ;
 
 TODO

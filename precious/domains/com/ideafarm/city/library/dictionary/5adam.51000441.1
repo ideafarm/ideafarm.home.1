@@ -13,10 +13,10 @@ REST
 
 }                                                                                                                                                      
     }
-        etThread.ifcJobF( tinP , stCourses , ifcIDaDAMoLD_CENTRALbANKtELLER , sOrder , stOrders , TF1(DDNUMB)+T("/gorilla.central.bank.teller/!changeAccountBalance") ) ;
-        stOrders << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-        stackC stOrders(  tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-        stackC stCourses( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        etThread.ifcJobF( tinBaseP , stCourses , ifcIDaDAMoLD_CENTRALbANKtELLER , sOrder , stOrders , TF1(DDNUMB)+T("/gorilla.central.bank.teller/!changeAccountBalance") ) ;
+        stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+        stackC stOrders(  tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        stackC stCourses( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
 
         sOrder << pstt1_accountHolderNotes ;
         sOrder << pstt1_ifcDualTransactionNotes ;
@@ -24,12 +24,12 @@ REST
         sOrder << unixDelta1 ;
         sOrder << (strokeS*)tEmail ;
         sOrder << (strokeS*)T("!changeAccountBalance") ;
-        soulC sOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_NAMED ) ;
+        soulC sOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_NAMED ) ;
 
         }
-            etThread.strFuseSeparateF( tinP , pstt1_accountHolderNotes      , T("<account holder's notes>")                  ) ; ___( pstt1_accountHolderNotes      ) ;
-            etThread.strFuseSeparateF( tinP , pstt1_ifcDualTransactionNotes , TF1(DDNUMB)+T(": gorilla stomp ")+TF1(idStomp) ) ; ___( pstt1_ifcDualTransactionNotes ) ;
-            etThread.osTimeSubtractF( tinP , unixDelta1 , unixDelta2 , TICK , 0 ) ;
+            etThread.strFuseSeparateF( tinBaseP , pstt1_accountHolderNotes      , T("<account holder's notes>")                  ) ; ___( pstt1_accountHolderNotes      ) ;
+            etThread.strFuseSeparateF( tinBaseP , pstt1_ifcDualTransactionNotes , TF1(DDNUMB)+T(": gorilla stomp ")+TF1(idStomp) ) ; ___( pstt1_ifcDualTransactionNotes ) ;
+            etThread.osTimeSubtractF( tinBaseP , unixDelta1 , unixDelta2 , TICK , 0 ) ;
         {
         ZE( strokeS* , pstt1_accountHolderNotes ) ;
         ZE( strokeS* , pstt1_ifcDualTransactionNotes ) ;
@@ -40,8 +40,8 @@ REST
     while( !ether && !etThread )
     ZE( countT , idStomp ) ;
 
-    etThread.ifcChatF( tinP , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;                                                                   
-    stateS state( tinP , etThread ) ;                                                                                                                  
+    etThread.ifcChatF( tinBaseP , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;                                                                   
+    stateS state( tinBaseP , etThread ) ;                                                                                                                  
 {                                                                                                                                                      
 
 TODO                                                                                                                                                   
@@ -49,7 +49,7 @@ TODO
 STATE0                                                                                                                                                 
 
 }
-    if( ether && *tinP.zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tinNormalS&)tinBaseP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
@@ -58,12 +58,12 @@ STATE0
             }
                 }
                     break ;
-                    etThread.delF( tinP , psttJobType ) ;
+                    etThread.delF( tinBaseP , psttJobType ) ;
 
                     else __1
                     }
                     {
-                    if( !etThread.strCompareF( tinP , psttJobType , T("!fooey") ) )
+                    if( !etThread.strCompareF( tinBaseP , psttJobType , T("!fooey") ) )
 
                     sOrderP >> psttJobType ; ___( psttJobType ) ;
                     ZE( strokeS* , psttJobType )
@@ -72,16 +72,16 @@ STATE0
                 }
                     break ;
 
-                    etThread.delF( tinP , psttBody ) ;
-                    etThread.delF( tinP , psttFrom ) ;
+                    etThread.delF( tinBaseP , psttBody ) ;
+                    etThread.delF( tinBaseP , psttFrom ) ;
 
                     }
-                        etThread.delF( tinP , postBody ) ;
-                        etThread.delF( tinP , psttu ) ;
-                        etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
+                        etThread.delF( tinBaseP , postBody ) ;
+                        etThread.delF( tinBaseP , psttu ) ;
+                        etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
                         ZE( strokeS* , psttu ) ;
 
-                        countT costBody = etThread.strMakeF( tinP , LF , postBody , psttBody ) ; ___( postBody ) ;
+                        countT costBody = etThread.strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
                         ZE( osTextT* , postBody ) ;
                     {
 
@@ -111,14 +111,14 @@ STATE0
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tinS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if( cArgP && c8argP.c1 && sOrderP && ether && *tinP.zEtScratch && idChatSessionP ) ;
+    if( cArgP && c8argP.c1 && sOrderP && ether && *((tinNormalS&)tinBaseP).zEtScratch && idChatSessionP ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tinS& tinP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 /*1*/WAKEhIDE( "tool.gorilla.central.bank.teller" )/*1*/
 /**/

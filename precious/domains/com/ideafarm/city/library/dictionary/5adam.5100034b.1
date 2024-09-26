@@ -8,38 +8,38 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.delF( tinP , postReply ) ;
+etThread.delF( tinBaseP , postReply ) ;
 
-while( !etThread && cSessions ) etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+while( !etThread && cSessions ) etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
 
 }
     }
         else { DEL( pso ) ; }
         }
-            { ZE( countT , tid ) ; etThread.osThreadF( tinP , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso ) ; }
+            { ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso ) ; }
             cSessions ++ ;
         {
         if( pso && !ether )
-        etThread.strokeF( tinP , T("\f")+TF1(++idClient) ) ;
+        etThread.strokeF( tinBaseP , T("\f")+TF1(++idClient) ) ;
 
-        sock.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+        sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
     {
     while( !ether && !etThread )
     ZE( countT , idClient ) ;
-    sock.listenF( tinP ) ;
-    sock.bindF( tinP , 0x50 ) ;
-    socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.listenF( tinBaseP ) ;
+    sock.bindF( tinBaseP , 0x50 ) ;
+    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 {
 
 }
-    costReply = etThread.strMakeF( tinP , LF , postReply , T(postHead1)+TF4(costBody,flFORMAT_NObASE|flFORMAT_FOREIGN,0,0xa)+T(postHead2)+T(postBody) ) ; ___( postReply ) ;
+    costReply = etThread.strMakeF( tinBaseP , LF , postReply , T(postHead1)+TF4(costBody,flFORMAT_NObASE|flFORMAT_FOREIGN,0,0xa)+T(postHead2)+T(postBody) ) ; ___( postReply ) ;
 
-    countT costBody = etThread.strBodyLengthF( tinP , postBody ) ;
+    countT costBody = etThread.strBodyLengthF( tinBaseP , postBody ) ;
     ;
         "http://talentmarket.monster.com/viewauction.asp?auctionid=75832&view=1\r\n"
         "The Alpha Site Program for IdeaFarm " "(tm) City is marketed at\r\n"
@@ -58,7 +58,7 @@ while( !etThread && cSessions ) etThread.osSleepF( tinP , TUCK * 0x40 ) ;
     byteT* postHead1 =
 {
 
-etThread.strokeF( tinP , T("ifc11.05.server\r\n \r\n") ) ;
+etThread.strokeF( tinBaseP , T("ifc11.05.server\r\n \r\n") ) ;
 
 TODO
 
@@ -68,14 +68,14 @@ cSessions -- ;
     DEL( pso ) ;
 
     etThread = 0 ;
-    etThread.delF( tinP , posti ) ;
-    pso->readF( tinP , posti , CBpOSTI ) ;
-    etThread.newF( tinP , LF , posti , CBpOSTI ) ; ___( posti ) ;
+    etThread.delF( tinBaseP , posti ) ;
+    pso->readF( tinBaseP , posti , CBpOSTI ) ;
+    etThread.newF( tinBaseP , LF , posti , CBpOSTI ) ; ___( posti ) ;
     ZE( osTextT* , posti ) ;
 
-    pso->writeF( tinP , postReply , costReply ) ;
+    pso->writeF( tinBaseP , postReply , costReply ) ;
 
-    pso->etherF( tinP , etThread ) ;
+    pso->etherF( tinBaseP , etThread ) ;
     socketC* pso = (socketC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

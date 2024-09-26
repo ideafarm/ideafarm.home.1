@@ -8,37 +8,37 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        etThread.delF( tinP , pcRaceAll ) ;
+        etThread.delF( tinBaseP , pcRaceAll ) ;
         countT* pcRaceAll = (countT*)(countT)sw_pcRace ;
-        pcRaceId = (countT*)sw_pcRace.leverF( tinP , idf ) ;
+        pcRaceId = (countT*)sw_pcRace.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; !etThread && idf <= cFlavors ; idf ++ )
-    cFlavors = sw_pcRace.cFlavorsF( tinP ) ;
+    cFlavors = sw_pcRace.cFlavorsF( tinBaseP ) ;
 
     }
         DEL( pCar ) ;
         carC* pCar = (carC*)(countT)swCar ;
-        idcHirer = swCar.leverF( tinP , idf ) ;
+        idcHirer = swCar.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; !etThread && idf <= cFlavors ; idf ++ )
-    countT cFlavors = swCar.cFlavorsF( tinP ) ;
+    countT cFlavors = swCar.cFlavorsF( tinBaseP ) ;
 
     }
-        etThread.osSleepF( tinP , TOCK ) ;
+        etThread.osSleepF( tinBaseP , TOCK ) ;
     {
-    while( idTry ++ , !etThread && etThread.os_cAllKidThreadsI_IF( tinP ) > cctAtStart )
+    while( idTry ++ , !etThread && etThread.os_cAllKidThreadsI_IF( tinBaseP ) > cctAtStart )
     ZE( countT , idTry ) ;
 
     }
-        etThread.osSleepF( tinP , TOCK * 8 ) ;
+        etThread.osSleepF( tinBaseP , TOCK * 8 ) ;
         }
-            etThread.delF( tinP , pbDatum ) ;
+            etThread.delF( tinBaseP , pbDatum ) ;
             }
-                eatDatumF( tinP , *tinP.zEtScratch , pbDatum , swCar , idcHirer , b_idcHirer , sw_pcRace , pcRaceId , b_pcRaceId ) ;
+                eatDatumF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , pbDatum , swCar , idcHirer , b_idcHirer , sw_pcRace , pcRaceId , b_pcRaceId ) ;
             {
             byteT* pbDatum = (byteT*)cDatum ;
             stDatum >> cDatum ;
@@ -46,38 +46,38 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         {
         while( !ether && !etThread && stDatum )
 
-        etThread.strokeF( tinP , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT)+S2(0,scOld_SYSmARK) ) ;
+        etThread.strokeF( tinBaseP , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT)+S2(0,scOld_SYSmARK) ) ;
     {
     while( !ether )
-    etThread.etherCryF( tinP ) ;
+    etThread.etherCryF( tinBaseP ) ;
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmRaceReportsF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_pcRaceId , (countT)&pcRaceId , (countT)&sw_pcRace ) ; }
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmArchiveF     , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
-    //{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmObeyF        , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmRaceReportsF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_pcRaceId , (countT)&pcRaceId , (countT)&sw_pcRace ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmArchiveF     , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
+    //{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmObeyF        , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
 
-    switchC sw_pcRace( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pcRaceId ) ;
+    switchC sw_pcRace( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pcRaceId ) ;
     ZE( countT* , pcRaceId ) ;
-    batonC b_pcRaceId( tinP , TAG( TAGiDnULL ) ) ;
+    batonC b_pcRaceId( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    switchC swCar( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idcHirer ) ;
+    switchC swCar( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idcHirer ) ;
     ZE( countT , idcHirer ) ;
-    batonC b_idcHirer( tinP , TAG( TAGiDnULL ) ) ;
+    batonC b_idcHirer( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmAcceptF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stDatum ) ; }
-    stackC stDatum( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmAcceptF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stDatum ) ; }
+    stackC stDatum( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
 
-    etThread.strokeF( tinP , T("IdeaFarm " "(tm) City Data Eater\r\ni eat incoming data\r\n")+S2(0,scOld_SYSmARK) ) ;
+    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Data Eater\r\ni eat incoming data\r\n")+S2(0,scOld_SYSmARK) ) ;
 
-    const countT cctAtStart = etThread.os_cAllKidThreadsI_IF( tinP ) ;
+    const countT cctAtStart = etThread.os_cAllKidThreadsI_IF( tinBaseP ) ;
 {
 else
 }
-    etThread.strokeF( tinP , T("Another ")+textIdFileC( tinP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tinBaseP , T("Another ")+textIdFileC( tinBaseP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinP , TAG( TAGiDnULL ) , T("3f30104") ) ;
+batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("3f30104") ) ;
 
 TODO
 
@@ -85,18 +85,18 @@ DONE( tmAcceptF )
 }
     }
         }
-            else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmPeerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stDatum , (countT)pso ) ; }
+            else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmPeerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stDatum , (countT)pso ) ; }
             if( ether || etThread ) { DEL( pso ) ; }
-            sIn.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ;
+            sIn.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
             ZE( countT , idPortPeer ) ;
             nicNameC nnPeer ;
             ZE( socketC* , pso ) ;
         {
         while( !ether && !etThread )
 
-        sIn.listenF( tinP ) ;
-        sIn.bindF( tinP , ifcPORToLD1rIVERrESERVED ) ;
-        socketC sIn( tinP , etThread , TAG( TAGiDnULL ) ) ;
+        sIn.listenF( tinBaseP ) ;
+        sIn.bindF( tinBaseP , ifcPORToLD1rIVERrESERVED ) ;
+        socketC sIn( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
     {
     while( !ether )
 
@@ -110,28 +110,28 @@ DONE( tmPeerF )
     DEL( pso ) ;
 
     }
-        etThread.delF( tinP , pbMsg ) ;
+        etThread.delF( tinBaseP , pbMsg ) ;
         }
-            pso->etherF( tinP , etThread ) ;
-            pso->readMsgNokF( tinP ) ;
-            pso->etherF( tinP , *tinP.zEtScratch ) ;
+            pso->etherF( tinBaseP , etThread ) ;
+            pso->readMsgNokF( tinBaseP ) ;
+            pso->etherF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch ) ;
         {
         else
-        if( !etThread ) pso->readMsgOkF( tinP ) ;
-        pushDataF( tinP , etThread , stDatum , pbMsg , cbMsg ) ;
+        if( !etThread ) pso->readMsgOkF( tinBaseP ) ;
+        pushDataF( tinBaseP , etThread , stDatum , pbMsg , cbMsg ) ;
         }
             break ;
-            pso->readMsgOkF( tinP ) ;
-            etThread.delF( tinP , pbMsg ) ;
+            pso->readMsgOkF( tinBaseP ) ;
+            etThread.delF( tinBaseP , pbMsg ) ;
         {
-        if( cbMsg == tDry.csF( tinP ) && !etThread.strCompareF( tinP , T(pbMsg) , tDry ) )
-        countT cbMsg = pso->readMsgF( tinP , pbMsg ) ; ___( pbMsg ) ;
+        if( cbMsg == tDry.csF( tinBaseP ) && !etThread.strCompareF( tinBaseP , T(pbMsg) , tDry ) )
+        countT cbMsg = pso->readMsgF( tinBaseP , pbMsg ) ; ___( pbMsg ) ;
         ZE( byteT* , pbMsg ) ;
     {
     while( !ether && !etThread )    
     TN( tDry , "!amDry" ) ;
 
-    pso->etherF( tinP , etThread ) ;
+    pso->etherF( tinBaseP , etThread ) ;
     socketC* pso     = (socketC*)pTaskP->c2 ;
     stackC&  stDatum = *(stackC*)pTaskP->c1 ;
 {
@@ -143,14 +143,14 @@ TASK( tmPeerF )
         }
             pbc += cbDatum ;
             if( pbDatum ) stDatumP << (countT)pbDatum ;
-            etThread.memCopyF( tinP , pbDatum , pbc , cbDatum ) ;
+            etThread.memCopyF( tinBaseP , pbDatum , pbc , cbDatum ) ;
             if( pbDatum ) pbDatum[ cbDatum ] = 0 ;
-            etThread.newF( tinP , LF , pbDatum , cbDatum + 1 ) ;
+            etThread.newF( tinBaseP , LF , pbDatum , cbDatum + 1 ) ;
             ZE( byteT* , pbDatum ) ;
 
             __( pbc + cbDatum > pbEnd ) ;
             countT cbDatum = sizeof( headerS ) + sizeof( countT ) * ccRid + pHdr->cbd ;
-            countT ccRid = etThread.strBodyLengthF( tinP , &pHdr->cResourceId ) ;
+            countT ccRid = etThread.strBodyLengthF( tinBaseP , &pHdr->cResourceId ) ;
             headerS* pHdr = (headerS*)pbc ;
             __( pbc + sizeof( headerS ) > pbEnd ) ;
         {
@@ -160,16 +160,16 @@ TASK( tmPeerF )
     {
     if( pbMsgP )
 {
-voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT* const pbMsgP , const cbMsgP )
+voidT pushDataF( tinBaseS& tinBaseP , etherC& etThread , stackC& stDatumP , const byteT* const pbMsgP , const cbMsgP )
 
 }
     }
-        pCar->baton.ungrabF( tinP ) ;
+        pCar->baton.ungrabF( tinBaseP ) ;
 
         }
             }
-                etThread.delF( tinP , psttnu ) ;
-                etThread.boxPutUniqueF( tinP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/3f30104/impotences/impotence") , pbd , pHdr->cbd ) ;
+                etThread.delF( tinBaseP , psttnu ) ;
+                etThread.boxPutUniqueF( tinBaseP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/3f30104/impotences/impotence") , pbd , pHdr->cbd ) ;
                 ZE( strokeS* , psttnu ) ;
             {
             else if( F(pHdr->flags2) & flDATUM2_impotenceS )
@@ -177,14 +177,14 @@ voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT*
                 else                                                pCar->stLog          << psttl ;
                 if( F(pHdr->flags1) & flDATUM1_CLASSeXCEPTIONiMPOTENCE ) pCar->stLogImpotence << psttl ;
 
-                //etThread.strokeF( tinP , T(USCORE79 "\r\n\r\n\"")+T(psttl)+T("\"\r\n" USCORE79 "\r\n\r\n") ) ;
+                //etThread.strokeF( tinBaseP , T(USCORE79 "\r\n\r\n\"")+T(psttl)+T("\"\r\n" USCORE79 "\r\n\r\n") ) ;
 
                 }
-                    if( off < cc - 1 ) { etThread.strFuseF( tinP , psttl , T(" ") ) ; ___( psttl ) ; }
-                    etThread.strFuseF( tinP , psttl , TF3(((sCountT*)pbd)[off],0,8) ) ; ___( psttl ) ;
+                    if( off < cc - 1 ) { etThread.strFuseF( tinBaseP , psttl , T(" ") ) ; ___( psttl ) ; }
+                    etThread.strFuseF( tinBaseP , psttl , TF3(((sCountT*)pbd)[off],0,8) ) ; ___( psttl ) ;
                 {
                 for( countT off = 0 ; off < cc ; off ++ )
-                etThread.strMakeF( tinP , LF , psttl , T("") , cc * 0xa ) ; ___( psttl ) ;
+                etThread.strMakeF( tinBaseP , LF , psttl , T("") , cc * 0xa ) ; ___( psttl ) ;
                 countT cc = pHdr->cbd / sizeof( countT ) ;
                 ZE( strokeS* , psttl ) ;
             {
@@ -193,14 +193,14 @@ voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT*
                 else                                                pCar->stLog          << psttl ;
                 if( F(pHdr->flags1) & flDATUM1_CLASSeXCEPTIONiMPOTENCE ) pCar->stLogImpotence << psttl ;
 
-                //etThread.strokeF( tinP , T(USCORE79 "\r\n\r\n\"")+T(psttl)+T("\"\r\n" USCORE79 "\r\n\r\n") ) ;
+                //etThread.strokeF( tinBaseP , T(USCORE79 "\r\n\r\n\"")+T(psttl)+T("\"\r\n" USCORE79 "\r\n\r\n") ) ;
 
                 }
-                    if( off < cc - 1 ) { etThread.strFuseF( tinP , psttl , T(" ") ) ; ___( psttl ) ; }
-                    etThread.strFuseF( tinP , psttl , TF3(((countT*)pbd)[off],0,8) ) ; ___( psttl ) ;
+                    if( off < cc - 1 ) { etThread.strFuseF( tinBaseP , psttl , T(" ") ) ; ___( psttl ) ; }
+                    etThread.strFuseF( tinBaseP , psttl , TF3(((countT*)pbd)[off],0,8) ) ; ___( psttl ) ;
                 {
                 for( countT off = 0 ; off < cc ; off ++ )
-                etThread.strMakeF( tinP , LF , psttl , T("") , cc * 0xa ) ; ___( psttl ) ;
+                etThread.strMakeF( tinBaseP , LF , psttl , T("") , cc * 0xa ) ; ___( psttl ) ;
                 countT cc = pHdr->cbd / sizeof( countT ) ;
                 ZE( strokeS* , psttl ) ;
             {
@@ -209,9 +209,9 @@ voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT*
                 else                                                pCar->stLog          << psttl ;
                 if( F(pHdr->flags1) & flDATUM1_CLASSeXCEPTIONiMPOTENCE ) pCar->stLogImpotence << psttl ;
 
-                //etThread.strokeF( tinP , T(USCORE79 "\r\n\r\n\"")+T(psttl)+T("\"\r\n" USCORE79 "\r\n\r\n") ) ;
+                //etThread.strokeF( tinBaseP , T(USCORE79 "\r\n\r\n\"")+T(psttl)+T("\"\r\n" USCORE79 "\r\n\r\n") ) ;
 
-                etThread.strMakeF( tinP , LF , psttl , (strokeS*)pbd ) ; ___( psttl ) ;
+                etThread.strMakeF( tinBaseP , LF , psttl , (strokeS*)pbd ) ; ___( psttl ) ;
                 ZE( strokeS* , psttl ) ;
             {
             else if( F(pHdr->flags2) & flDATUM2_strokeS )
@@ -219,9 +219,9 @@ voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT*
                 else                                                pCar->stLog          << psttl ;
                 if( F(pHdr->flags1) & flDATUM1_CLASSeXCEPTIONiMPOTENCE ) pCar->stLogImpotence << psttl ;
 
-                //etThread.strokeF( tinP , T(USCORE79 "\r\n\r\n\"")+T(psttl)+T("\"\r\n" USCORE79 "\r\n\r\n") ) ;
+                //etThread.strokeF( tinBaseP , T(USCORE79 "\r\n\r\n\"")+T(psttl)+T("\"\r\n" USCORE79 "\r\n\r\n") ) ;
 
-                etThread.strMakeF( tinP , LF , psttl , T(pbd) ) ; ___( psttl ) ;
+                etThread.strMakeF( tinBaseP , LF , psttl , T(pbd) ) ; ___( psttl ) ;
                 ZE( strokeS* , psttl ) ;
             {
             if( F(pHdr->flags2) & flDATUM2_osTextT )
@@ -235,10 +235,10 @@ voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT*
             }
                 }
                     pcc += 5 ;
-                    etThread.osTimeAddF( tinP , pcRaceAll[ 5 * cRank + 3 ] , (sCountT&)pcRaceAll[ 5 * cRank + 4 ] , pcc[ 3 ] , pcc[ 4 ] ) ;
+                    etThread.osTimeAddF( tinBaseP , pcRaceAll[ 5 * cRank + 3 ] , (sCountT&)pcRaceAll[ 5 * cRank + 4 ] , pcc[ 3 ] , pcc[ 4 ] ) ;
                     pcRaceAll[ 5 * cRank + 2 ] += pcc[ 2 ]         ; // cExits
                     pcRaceAll[ 5 * cRank + 1 ] += pcc[ 1 ]         ; // cEntries
-                    countT cRank = processGlobal8I.source.idFileRankF( tinP , pcc[ 0 ] ) ; // IMMUTABLE FILE ID
+                    countT cRank = processGlobal8I.source.idFileRankF( tinBaseP , pcc[ 0 ] ) ; // IMMUTABLE FILE ID
                 {
                 for( countT ida = 1 ; ida <= cActive ; ida ++ )
                 countT* pcc = (countT*)pbd ;
@@ -253,7 +253,7 @@ voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT*
             __( pcPart[ 4 ] > 2 ) ;
             __( pcPart[ 3 ] - 1 ) ;
             __( pcPart[ 2 ] - 0x2600301 ) ;
-            __( etThread.strBodyLengthF( tinP , pcPart ) < 6 ) ;
+            __( etThread.strBodyLengthF( tinBaseP , pcPart ) < 6 ) ;
             countT* pcPart = &pHdr->idComputer ;
             __( !pHdr->cbd ) ;
             __( !( F(pHdr->flags2) & flDATUM2_countT ) ) ;
@@ -264,48 +264,48 @@ voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT*
         }
             pCar->mPayin += *(measureT*)&pHdr->amount ;
 
-            //etThread.ifcDatumF( tinP , flDATUM1_CLASSpAYiN , flDATUM2_null , *(countT*)&mPayin , pcPart , pstt1d ) ;
+            //etThread.ifcDatumF( tinBaseP , flDATUM1_CLASSpAYiN , flDATUM2_null , *(countT*)&mPayin , pcPart , pstt1d ) ;
             //countT pcPart[] = { 0x40103d9 , 1 , idCitizen , idCheck , 0 } ;
-            //etThread.ether_idCitizenHirer_F( tinP ) = idCitizen ;
+            //etThread.ether_idCitizenHirer_F( tinBaseP ) = idCitizen ;
             // LINES SIMILAR TO THE FOLLOWING ARE ASSUMED TO HAVE CREATED THE DATUM
         {
         if( F(pHdr->flags1) & flDATUM1_CLASSpAYiN )
 
         pCar->cDatum ++ ;
 
-        pCar->baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        pCar->baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( pCar )
 
     }
-        b_pcRaceIdP.ungrabF( tinP ) ;
+        b_pcRaceIdP.ungrabF( tinBaseP ) ;
         }
             if( pcRaceAll ) sw_pcRaceP = (countT)pcRaceAll ;
-            etThread.memSetF( tinP , (byteT*)pcRaceAll , ccRace * sizeof( countT ) ) ;
-            etThread.newF( tinP , LF , pcRaceAll , ccRace ) ;
+            etThread.memSetF( tinBaseP , (byteT*)pcRaceAll , ccRace * sizeof( countT ) ) ;
+            etThread.newF( tinBaseP , LF , pcRaceAll , ccRace ) ;
 
             const countT ccRace = ( 1 + cSourceFiles ) * 5 ;
-            const countT cSourceFiles = processGlobal8I.source.cFilesF( tinP ) ;
+            const countT cSourceFiles = processGlobal8I.source.cFilesF( tinBaseP ) ;
         {
         if( !pcRaceAll )
 
         pcRaceAll = (countT*)(countT)sw_pcRaceP ;
         pcRaceIdP = &pHdr->idiOwner ;
-        b_pcRaceIdP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        b_pcRaceIdP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( F(pHdr->flags1) & flDATUM1_CLASStIMER )
     ZE( countT* , pcRaceAll ) ;
 
     }
-        b_idcHirerP.ungrabF( tinP ) ;
+        b_idcHirerP.ungrabF( tinBaseP ) ;
         }
             swCarP = (countT)pCar ;
-            pCar = new( 0 , tinP , LF ) carC( tinP , etThread.etPrimeIF( tinP ) , idcHirerP ) ;
+            pCar = new( 0 , tinBaseP , LF ) carC( tinBaseP , etThread.etPrimeIF( tinBaseP ) , idcHirerP ) ;
         {
         if( !pCar )
         pCar = (carC*)(countT)swCarP ;
         idcHirerP = pHdr->idCitizenHirer ;
-        b_idcHirerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        b_idcHirerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     ZE( carC* , pCar ) ;
 
@@ -316,14 +316,14 @@ voidT pushDataF( tinS& tinP , etherC& etThread , stackC& stDatumP , const byteT*
     if( !F(pHdr->flags1)  ) pHdr->flags1     |= F(-1) ;
 
     byteT*   pbd   = pbDatumP + sizeof( headerS ) + sizeof( countT ) * ccRid ;
-    countT   ccRid = etThread.strBodyLengthF( tinP , &pHdr->cResourceId ) ;
+    countT   ccRid = etThread.strBodyLengthF( tinBaseP , &pHdr->cResourceId ) ;
     headerS* pHdr  = (headerS*)pbDatumP ;
 
     if( etThread ) return ;
     __Z( pbDatumP ) ;
     if( etThread ) return ;
 {
-voidT eatDatumF( tinS& tinP , etherC& etThread , byteT* const pbDatumP , switchC& swCarP , countT& idcHirerP , batonC& b_idcHirerP , switchC& sw_pcRaceP , countT*& pcRaceIdP , batonC& b_pcRaceIdP )
+voidT eatDatumF( tinBaseS& tinBaseP , etherC& etThread , byteT* const pbDatumP , switchC& swCarP , countT& idcHirerP , batonC& b_idcHirerP , switchC& sw_pcRaceP , countT*& pcRaceIdP , batonC& b_pcRaceIdP )
 
 DONE( tmObeyF )
 }
@@ -331,19 +331,19 @@ DONE( tmObeyF )
         etThread = 0 ;
 
         }
-            else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmShitF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
+            else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmShitF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&b_idcHirer , (countT)&idcHirer , (countT)&swCar ) ; }
             if( ether || etThread ) { DEL( pso ) ; }
 
-            socket.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+            socket.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
             ZE( countT , idPortPeer ) ;
             nicNameC nnPeer ;
             ZE( socketC* , pso ) ;
         {
         while( !ether && !etThread )
 
-        socket.listenF( tinP ) ;
-        socket.bindF( tinP , ifcPORToLD1dATAaNUS ) ;
-        socketC socket( tinP , etThread , TAG( TAGiDnULL ) ) ;
+        socket.listenF( tinBaseP ) ;
+        socket.bindF( tinBaseP , ifcPORToLD1dATAaNUS ) ;
+        socketC socket( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
     {
     while( !ether )
 
@@ -369,36 +369,36 @@ DONE( tmShitF )
             }
                 break ;
                 }
-                    etThread.delF( tinP , pbSoul ) ;
-                    pso->writeF( tinP , pbSoul , cbSoul ) ;
-                    pCar->baton.ungrabF( tinP ) ;
-                    countT cbSoul = pCar->soulF( tinP , pbSoul ) ;
-                    pCar->baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    etThread.delF( tinBaseP , pbSoul ) ;
+                    pso->writeF( tinBaseP , pbSoul , cbSoul ) ;
+                    pCar->baton.ungrabF( tinBaseP ) ;
+                    countT cbSoul = pCar->soulF( tinBaseP , pbSoul ) ;
+                    pCar->baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                     ZE( byteT* , pbSoul ) ;
                 {
                 if( pCar )
                 __Z( pCar ) ;
 
-                b_idcHirer.ungrabF( tinP ) ;
+                b_idcHirer.ungrabF( tinBaseP ) ;
                 carC* pCar = (carC*)(countT)swCar ;
                 idcHirer = idcHirerIn ;
-                b_idcHirer.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                b_idcHirer.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                pso->readF( tinP , (byteT*)&idcHirerIn , sizeof idcHirerIn ) ;
+                pso->readF( tinBaseP , (byteT*)&idcHirerIn , sizeof idcHirerIn ) ;
                 ZE( countT , idcHirerIn ) ;
             {
             case idCMDdATAaNUS_GETaCTIVITY :
             }
                 break ;
-                b_idcHirer.ungrabF( tinP ) ;
+                b_idcHirer.ungrabF( tinBaseP ) ;
                 }
-                    pso->writeF( tinP , (byteT*)&idcHirer , sizeof idcHirer ) ;
-                    idcHirer = swCar.leverF( tinP , idf ) ;
+                    pso->writeF( tinBaseP , (byteT*)&idcHirer , sizeof idcHirer ) ;
+                    idcHirer = swCar.leverF( tinBaseP , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                pso->writeF( tinP , (byteT*)&cFlavors , sizeof cFlavors ) ;
-                countT cFlavors = swCar.cFlavorsF( tinP ) ;
-                b_idcHirer.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                pso->writeF( tinBaseP , (byteT*)&cFlavors , sizeof cFlavors ) ;
+                countT cFlavors = swCar.cFlavorsF( tinBaseP ) ;
+                b_idcHirer.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 ZE( countT , idcHirer ) ;
             {
             case idCMDdATAaNUS_ENUMERATEhIRERS :
@@ -408,12 +408,12 @@ DONE( tmShitF )
             case idCMDdATAaNUS_CLOSE :
         {
         switch( idCmd )
-        pso->readF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
+        pso->readF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
     {
     while( !ether && !etThread && idCmd != idCMDdATAaNUS_CLOSE )
     ZE( countT , idCmd ) ;
 
-    pso->etherF( tinP , etThread ) ;
+    pso->etherF( tinBaseP , etThread ) ;
 
     switchC& swCar      = *(switchC*)pTaskP->c4 ;
     countT&  idcHirer   = *(countT*) pTaskP->c3 ;
@@ -425,10 +425,10 @@ TASK( tmShitF )
 
 DONE( tmArchiveF )
 }
-    toArchiveF( tinP , etThread , b_idcHirer , idcHirer , swCar ) ;
+    toArchiveF( tinBaseP , etThread , b_idcHirer , idcHirer , swCar ) ;
     }
-        if( !( ++ idTock % 0x100 ) ) toArchiveF( tinP , etThread , b_idcHirer , idcHirer , swCar ) ;
-        etThread.osSleepF( tinP , TOCK ) ;
+        if( !( ++ idTock % 0x100 ) ) toArchiveF( tinBaseP , etThread , b_idcHirer , idcHirer , swCar ) ;
+        etThread.osSleepF( tinBaseP , TOCK ) ;
     {
     while( !ether && !etThread )
     ZE( countT , idTock ) ;
@@ -443,44 +443,44 @@ TASK( tmArchiveF )
 DONE( tmRaceReportsF )
 }
     }
-        etThread.osSleepF( tinP , TOCK * 0x8 ) ;
-        //etThread.strokeF( tinP , T("\r" BLANK79 "\r") ) ;
+        etThread.osSleepF( tinBaseP , TOCK * 0x8 ) ;
+        //etThread.strokeF( tinBaseP , T("\r" BLANK79 "\r") ) ;
 
         }
-            b_pcRaceId.ungrabF( tinP ) ;
+            b_pcRaceId.ungrabF( tinBaseP ) ;
 
-            //etThread.strokeF( tinP , T("writing race files -\r\n") ) ;
+            //etThread.strokeF( tinBaseP , T("writing race files -\r\n") ) ;
 
             }
-                etThread.boxPutF( tinP , T("///ideafarm/ephemeral/domains/com/ideafarm/3f30104/races/race.")+tRaceId , (byteT*)pci , sizeof( countT ) * cci ) ;
+                etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/3f30104/races/race.")+tRaceId , (byteT*)pci , sizeof( countT ) * cci ) ;
                 textC tRaceId = TF3(pcRaceId[0],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T(".")+TF3(pcRaceId[1],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T(".")+TF5(pcRaceId+2,0,0,0,psttDot) ;
                 strokeS* psttDot = tDot ;
                 TN( tDot , "." ) ;
 
-                etThread.memCopyF( tinP , pbi , (byteT*)pcRaceAll , cbi ) ;
+                etThread.memCopyF( tinBaseP , pbi , (byteT*)pcRaceAll , cbi ) ;
                 cbi = sizeof( countT ) * ccRace ;                
                 pbi += cbi ;
 
-                etThread.memCopyF( tinP , pbi , (byteT*)pcRaceId , cbi ) ;
+                etThread.memCopyF( tinBaseP , pbi , (byteT*)pcRaceId , cbi ) ;
                 countT cbi = sizeof( countT ) * ( ccRaceId + 1 ) ;                
                 byteT* pbi = (byteT*)pci ;
 
-                etThread.newF( tinP , LF , pci , cci ) ;
+                etThread.newF( tinBaseP , LF , pci , cci ) ;
                 ZE( countT* , pci ) ;
                 countT cci = ccRaceId + 1 + ccRace ;
-                countT ccRaceId  = etThread.strBodyLengthF( tinP , pcRaceId  ) ;
+                countT ccRaceId  = etThread.strBodyLengthF( tinBaseP , pcRaceId  ) ;
                 __Z( pcRaceAll ) ;
                 countT* pcRaceAll = (countT*)(countT)sw_pcRace ;
                 __Z( pcRaceId ) ;
-                pcRaceId = (countT*)sw_pcRace.leverF( tinP , idr ) ;
+                pcRaceId = (countT*)sw_pcRace.leverF( tinBaseP , idr ) ;
             {
             for( countT idr = 1 ; idr <= cFlavors ; idr ++ )
 
-            //etThread.strokeF( tinP , T("writing race files (")+TF1(cFlavors)+T(" races)+\r\n") ) ;
+            //etThread.strokeF( tinBaseP , T("writing race files (")+TF1(cFlavors)+T(" races)+\r\n") ) ;
 
-            const countT cFlavors = sw_pcRace.cFlavorsF( tinP ) ;
+            const countT cFlavors = sw_pcRace.cFlavorsF( tinBaseP ) ;
 
-            b_pcRaceId.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            b_pcRaceId.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( bNewTick )
 
@@ -497,18 +497,18 @@ DONE( tmRaceReportsF )
         const boolT bNewQtr       = bNewDuck   || offQTR(    time2 ) != offQTR(    time2last ) ;
         const boolT bNewDuck      =               offDUCK(   time2 ) != offDUCK(   time2last ) ;
 
-        etThread.osTimeNowF( tinP , time1 , time2 ) ;
+        etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
     {
     while( !ether && !etThread )
 
-    etThread.osTimeNowF( tinP , time1last , time2last ) ;
+    etThread.osTimeNowF( tinBaseP , time1last , time2last ) ;
     ZE( sCountT , time2last ) ;
     ZE( countT , time1last ) ;
 
     const countT ccRace = ( 1 + cSourceFiles ) * 5 ;
-    const countT cSourceFiles = processGlobal8I.source.cFilesF( tinP ) ;
+    const countT cSourceFiles = processGlobal8I.source.cFilesF( tinBaseP ) ;
 
     switchC& sw_pcRace  = *(switchC*)pTaskP->c3 ;
     countT*& pcRaceId   = *(countT**)pTaskP->c2 ;
@@ -518,39 +518,39 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TASK( tmRaceReportsF )
 
 }
-    b_idcHirerP.ungrabF( tinP ) ;
+    b_idcHirerP.ungrabF( tinBaseP ) ;
     }
         }
-            pCar->baton.ungrabF( tinP ) ;
+            pCar->baton.ungrabF( tinBaseP ) ;
             }
-                etThread.delF( tinP , pbSoul ) ;
+                etThread.delF( tinBaseP , pbSoul ) ;
                 }
-                    etThread.delF( tinP , psttnu ) ;
-                    etThread.boxPutUniqueF( tinP , psttnu , tArchiveLike , pbSoul , cbSoul ) ;
+                    etThread.delF( tinBaseP , psttnu ) ;
+                    etThread.boxPutUniqueF( tinBaseP , psttnu , tArchiveLike , pbSoul , cbSoul ) ;
                     ZE( strokeS* , psttnu ) ;
-                    //etThread.strokeF( tinP , T("writing soul: cbSoul = ")+TF1(cbSoul)+T("\r\n") ) ;
+                    //etThread.strokeF( tinBaseP , T("writing soul: cbSoul = ")+TF1(cbSoul)+T("\r\n") ) ;
                 {
                 if( !etThread )
 
                 __Z( cbSoul ) ;
                 __Z( pbSoul ) ;
-                countT cbSoul = pCar->soulF( tinP , pbSoul , 1 ) ;
+                countT cbSoul = pCar->soulF( tinBaseP , pbSoul , 1 ) ;
                 ZE( byteT* , pbSoul ) ;
             {
             if( pCar->cDatum )
-            pCar->baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            pCar->baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( pCar )
         __Z( pCar ) ;
         carC* pCar = (carC*)(countT)swCarP ;
-        idcHirerP = swCarP.leverF( tinP , idf ) ;
+        idcHirerP = swCarP.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swCarP.cFlavorsF( tinP ) ;
-    b_idcHirerP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    countT cFlavors = swCarP.cFlavorsF( tinBaseP ) ;
+    b_idcHirerP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     TN( tArchiveLike , "///ideafarm/ephemeral/domains/com/ideafarm/3f30104/carC/carC" ) ;
 {
-voidT toArchiveF( tinS& tinP , etherC& etThread , batonC& b_idcHirerP , countT& idcHirerP , switchC& swCarP )
+voidT toArchiveF( tinBaseS& tinBaseP , etherC& etThread , batonC& b_idcHirerP , countT& idcHirerP , switchC& swCarP )
 
 ;
 }

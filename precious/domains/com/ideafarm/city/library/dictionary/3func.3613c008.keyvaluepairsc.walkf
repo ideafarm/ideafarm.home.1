@@ -10,7 +10,7 @@
 }
     if( pcArgP ) *pcArgP = 0 ;  // THE VALUE THAT i PLACED HERE IS ONLY FOR THE BENEFIT OF THE CALLBACK FUNCTION THAT I WAS CALLING ; IT MUST BE CLEARED SO THAT pcArgP WILL BE VALID IF PASSED TO ME AGAIN
 
-    btKeys.walkF( tinP , stThisP , stKidsDoneP , pbBufferP , cbBufferP , cNestP , pCBFP , pcArgP , pQuitP ) ;
+    btKeys.walkF( tinBaseP , stThisP , stKidsDoneP , pbBufferP , cbBufferP , cNestP , pCBFP , pcArgP , pQuitP ) ;
 
     if( !( F(flagsCt) & flKEYvALUEpAIRSc_NOjOT ) ) *pcArgUse = (countT)pbDockJot ;
 
@@ -27,7 +27,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT keyValuePairsC::walkF( tinS& tinP , stackC& stThisP , stackC& stKidsDoneP , byteT* pbBufferP , countT cbBufferP , countT& cNestP , ifc2FT pCBFP , countT* pcArgP , const boolT* const pQuitP )/*1*/
+/*1*/voidT keyValuePairsC::walkF( tinBaseS& tinBaseP , stackC& stThisP , stackC& stKidsDoneP , byteT* pbBufferP , countT cbBufferP , countT& cNestP , ifc2FT pCBFP , countT* pcArgP , const boolT* const pQuitP )/*1*/
 
 /**/
 */
@@ -43,7 +43,7 @@
  pbBufferP
  stKidsDoneP
  stThisP
- tinP
+ tinBaseP
 parameters
 /*
 

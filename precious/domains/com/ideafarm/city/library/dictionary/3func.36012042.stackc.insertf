@@ -15,8 +15,8 @@
     }
         }
             }
-                if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tinP ) ;
-                newTabsIfF( tinP , ppNew , 0 ) ;
+                if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tinBaseP ) ;
+                newTabsIfF( tinBaseP , ppNew , 0 ) ;
 
                 cPlates ++ ;
                 }
@@ -50,15 +50,15 @@
                 {
                 if( bAbove )
 
-                adjustRefsF( tinP , idP , bAbove ? ifcIDaCTIONsTACKaDJUSTrEFS_NEWaBOVE : ifcIDaCTIONsTACKaDJUSTrEFS_NEWbELOW , ppNew ) ;
-                newPlateF( tinP , ppNew , valueP ) ;
+                adjustRefsF( tinBaseP , idP , bAbove ? ifcIDaCTIONsTACKaDJUSTrEFS_NEWaBOVE : ifcIDaCTIONsTACKaDJUSTrEFS_NEWbELOW , ppNew ) ;
+                newPlateF( tinBaseP , ppNew , valueP ) ;
                 ZE( plateS* , ppNew ) ;
 
                 if( bOtherWayP ) bAbove = !bAbove ;
                 boolT bAbove = !( F(flags) & flSTACKc_FIFO ) ;
             {
             if( idP )
-            plateS* ppc = pPlateF( tinP , idP ) ;
+            plateS* ppc = pPlateF( tinBaseP , idP ) ;
         {
         else
         if( !cPlates ) operator << ( valueP ) ;
@@ -88,7 +88,7 @@
 
     SCOOP
 {
-/*1*/voidT stackC::insertF( tinS& tinP , const countT valueP , const countT idTypeP , countT idP , const boolT bOtherWayP )/*1*/
+/*1*/voidT stackC::insertF( tinBaseS& tinBaseP , const countT valueP , const countT idTypeP , countT idP , const boolT bOtherWayP )/*1*/
 
 /**/
 */
@@ -121,7 +121,7 @@
   valueP must really be of the type that is declared for it with flagsP
   must not be 0 unless i was configured with flSTACKc_ALLOWzE
  valueP
- tinP
+ tinBaseP
 arguments
   flSTACKc_FIFO = 0: the new item is inserted immediately above the referenced item
   flSTACKc_FIFO = 1: the new item is inserted immediately below the referenced item

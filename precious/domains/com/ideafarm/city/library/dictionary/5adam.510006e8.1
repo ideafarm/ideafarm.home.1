@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
@@ -27,7 +27,7 @@ etThread.traceF( tinP , T("ok") ) ;
 
                             //U::REPORT FRAME DETAILS HERE
 
-                            etThread.traceF( tinP , T("frame [off,cb]:    ")+TF3(offCurrentFrame,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF2(cbFrame,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            etThread.traceF( tinBaseP , T("frame [off,cb]:    ")+TF3(offCurrentFrame,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF2(cbFrame,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( offo > 2 )
 
@@ -39,7 +39,7 @@ etThread.traceF( tinP , T("ok") ) ;
                 {
                 if( bArmed )
 
-                etThread.fileReadF( tinP , pbTock + ( offo ++ ) , cbr , fi , 0 ) ; cbToDo -- ;
+                etThread.fileReadF( tinBaseP , pbTock + ( offo ++ ) , cbr , fi , 0 ) ; cbToDo -- ;
             {
             while( !POOP )
             boolT bArmed = 1 ;  // I KNOW THAT THE CURRENT BYTE IS 0xff AND THAT IT MUST BE A SYNC BYTE
@@ -61,7 +61,7 @@ etThread.traceF( tinP , T("ok") ) ;
             if( pInfo ) cbUsedNet = pInfo->cbUsed - cbFileTag ;
 
             __Z( pInfo ) ;
-            etThread.diskFileQueryF( tinP , pInfo , fi ) ; ___( pInfo ) ;
+            etThread.diskFileQueryF( tinBaseP , pInfo , fi ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         ZE( countT , cbUsedNet ) ;
@@ -71,14 +71,14 @@ etThread.traceF( tinP , T("ok") ) ;
     __( pbTock[ 0 ] != 0xff ) ;
 
     }
-        etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ; // LOAD THE WOTH BYTE OF THE WOTH SYNC
+        etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ; // LOAD THE WOTH BYTE OF THE WOTH SYNC
         cbr = 1 ;
 
         }
             }
                 }
                     cbToDo -= cbWo ;
-                    etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ;
+                    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
                     cbr = cbWo ;
 
                     ;
@@ -91,7 +91,7 @@ etThread.traceF( tinP , T("ok") ) ;
             {
             else
             }
-                etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ;
+                etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
                 cbr = cbId3 ;
             {
             if( cbId3 <= sizeof pbTock )
@@ -118,19 +118,19 @@ etThread.traceF( tinP , T("ok") ) ;
         __Z( cbr == 0x9 && pbTock[ 0 ] == 'I' && pbTock[ 1 ] == 'D' && pbTock[ 2 ] == '3' ) ;
 
         cbFileTag += cbr ;
-        etThread.fileReadF( tinP , pbTock + 1 , cbr , fi , 0 ) ;
+        etThread.fileReadF( tinBaseP , pbTock + 1 , cbr , fi , 0 ) ;
         cbr = 0x9 ;
         cbFileTag = 1 ;
     {
     if( pbTock[ 0 ] != 0xff ) // IF NOT A SYNC BYTE
     ZE( countT , cbFileTag ) ;
 
-    etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ;
+    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
     countT cbr = 1 ;
 
     byteT pbTock[ TOCK ] ;
 
-    fileC fi( tinP , (strokeS*)T("///d/tmp/x/test2.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
+    fileC fi( tinBaseP , (strokeS*)T("///d/tmp/x/test2.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
 {
 
 TODO

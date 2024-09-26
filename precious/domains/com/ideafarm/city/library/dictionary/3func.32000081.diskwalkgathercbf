@@ -13,10 +13,10 @@
     }
         }
             }
-                if( tinP.bosFail ) etherC::etRockIF( tinP ).traceF( tinP , T("diskWalkGatherCBF / error: could not move [postNameP,postNameClean]:    ")+T(postNameP)+T("    ")+T(postNameClean) ) ;
+                if( ((tinNormalS&)tinBaseP).bosFail ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("diskWalkGatherCBF / error: could not move [postNameP,postNameClean]:    ")+T(postNameP)+T("    ")+T(postNameClean) ) ;
                 BOS( WHATsfr , BOSoK , MoveFile( postNameP , T(info.postTo)+T(postNameClean) ) ) ;
 
-                //etherC::etRockIF( tinP ).traceF( tinP , T("diskWalkGatherCBF [postNameP,to]:  ")+T(postNameP)+T("                ")+T(postNameClean) ) ;
+                //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("diskWalkGatherCBF [postNameP,to]:  ")+T(postNameP)+T("                ")+T(postNameClean) ) ;
 
                 }
                     }
@@ -43,23 +43,23 @@
             {
             else
             }
-                //if( tinP.bosFail && tinP.brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
+                //if( ((tinNormalS&)tinBaseP).bosFail && ((tinNormalS&)tinBaseP).brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
                 //BOS( WHATsfr , BOSoK , CreateDirectory( info.postTo , 0 ) ) ;
                 //info.postTo[ costTo - 1 ] = 0 ;
-                //countT costTo = tinP.brcRaw ;
+                //countT costTo = ((tinNormalS&)tinBaseP).brcRaw ;
                 //BOSdOnOTtEST( WHATgbo , strlen( info.postTo ) )
             {
             if( bDir )
 
             boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-            countT costLike = tinP.brcRaw ;
+            countT costLike = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
         {
         if( bDoIt )
 
         ;
             : 1
-            ? (*info.pCbf)( tinP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
+            ? (*info.pCbf)( tinBaseP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
         bDoIt = info.pCbf
 
         //BOSdOnOTtEST( WHATgbo , strcpy( info.postTo + info.costToRoot , postNameP + info.costFromRoot ) )
@@ -69,7 +69,7 @@
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkGatherCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkGatherCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 /**/
 */

@@ -8,16 +8,16 @@
 
 
 }
-    bClocks.ungrabF( tinP ) ;_WQ
+    bClocks.ungrabF( tinBaseP ) ;_WQ
     }
-        thirdC::osTimeAddIF( tinP , timeSlept1 , timeSlept2 , time1 , time2 ) ;_WQ
-        third.osTimeSubtractF( tinP , time1 , time2 , timeSleep1 , timeSleep2 ) ;_WQ
-        third.osTimeNowF( tinP , time1 , time2 ) ;_WQ
+        thirdC::osTimeAddIF( tinBaseP , timeSlept1 , timeSlept2 , time1 , time2 ) ;_WQ
+        third.osTimeSubtractF( tinBaseP , time1 , time2 , timeSleep1 , timeSleep2 ) ;_WQ
+        third.osTimeNowF( tinBaseP , time1 , time2 ) ;_WQ
         ZE( sCountT , time2 ) ;_WQ
         ZE( countT , time1 ) ;_WQ
     {
     if( timeSleep2 || timeSleep1 )
-    bClocks.grabF( tinP , TAG( TAGiDnULL ) ) ;_WQ
+    bClocks.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;_WQ
     _IO_
 
     }
@@ -26,7 +26,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::sleepEndF( tinS& tinP )/*1*/
+/*1*/voidT etherC::sleepEndF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

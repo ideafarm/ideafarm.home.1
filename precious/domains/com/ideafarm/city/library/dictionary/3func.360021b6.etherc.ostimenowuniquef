@@ -8,7 +8,7 @@
 
 
 }
-    home.grabTimeUnique.ungrabF( tinP ) ;
+    home.grabTimeUnique.ungrabF( tinBaseP ) ;
 
     }
         timeU2P = timeU1P = 0 ;
@@ -21,11 +21,11 @@
         if( home.timeUniqueLath1 != timeU1P )
 
         timeU2P |= BM_HIGH ; //ALLOWS APPLICATION CODE SUCH AS DEF OF depositS TO ENFORCE MY USE TO OBTAIN TIME VALUES
-        osTimeNowF( tinP , timeU1P , timeU2P ) ;
+        osTimeNowF( tinBaseP , timeU1P , timeU2P ) ;
     {
     for(;;)
 
-    home.grabTimeUnique.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    home.grabTimeUnique.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     homeS& home = homeS::homeIF() ;
 
@@ -39,7 +39,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::osTimeNowUniqueF( tinS& tinP , countT& timeU1P , sCountT& timeU2P )/*1*/
+/*1*/voidT etherC::osTimeNowUniqueF( tinBaseS& tinBaseP , countT& timeU1P , sCountT& timeU2P )/*1*/
 
 /**/
 */

@@ -15,11 +15,11 @@ REST
 
     }
         }
-            ++ s ; ether.osSleepF( tinP , TUCK * 0x40 ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ;
             }
                 HIRE( T("os.login") , 0x401012a , 0x10000000 , 0x401012a , 0x10000000 )
-                //U::etThread.osSessionF( tinP , countTC() , countTC() , ifcIDaDAMoLD_COMMANDcONSOLE , 0 ) ;
-                //U::etThread.osMessageBoxF( tinP , T(postORIENTATION) , T("IdeaFarm " "(tm) City: Operator Console Orientation") ) ;
+                //U::etThread.osSessionF( tinBaseP , countTC() , countTC() , ifcIDaDAMoLD_COMMANDcONSOLE , 0 ) ;
+                //U::etThread.osMessageBoxF( tinBaseP , T(postORIENTATION) , T("IdeaFarm " "(tm) City: Operator Console Orientation") ) ;
                 TELL( "hiring console" ) ;
                 bRequestConsole = 0 ;
             {
@@ -27,85 +27,85 @@ REST
 
             }
                 bRequestConsole = 1 ;
-                etThread.diskFileOrDirDeleteF( tinP , tConsole ) ;
+                etThread.diskFileOrDirDeleteF( tinBaseP , tConsole ) ;
             {
-            if( etThread.diskFileExistsF( tinP , tConsole ) ) //U::KLUGE PENDING RESOLUTION OF SECURITY PROBLEM WITH napHomeJot AND PACKAGE
+            if( etThread.diskFileExistsF( tinBaseP , tConsole ) ) //U::KLUGE PENDING RESOLUTION OF SECURITY PROBLEM WITH napHomeJot AND PACKAGE
         {
         while( !ether && !etThread )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         TN( tConsole , "///d/ideafarm.sign.wantTour" ) ;
     {
 
-    etThread.osThreadF( tinP , countTC() , tmTimeRemainingF ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmTimeRemainingF ) ;
 
     OStEXTAK( napHomeJot  , postNAPhOSTjOTsTATUSrEADY ) ;
 
     }
-        etThread.delF( tinP , psttIdAdam ) ;
+        etThread.delF( tinBaseP , psttIdAdam ) ;
         }
             HIRE( T("os.login") , idAdam , 0x1000000 , idAdam , 0x1000000 )
             __Z( idAdam ) ;
-            countT idAdam = etThread.strDigitsToSCountF( tinP , psttIdAdam ) ;
+            countT idAdam = etThread.strDigitsToSCountF( tinBaseP , psttIdAdam ) ;
             TELL( "setting up/hiring a cell" )
         {
         if( psttIdAdam )
-        etThread.boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinP , psttIdAdam , T("///d/ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".setting.keyValue.idAdamHire") ) ; ___( psttIdAdam ) ;
+        etThread.boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinBaseP , psttIdAdam , T("///d/ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".setting.keyValue.idAdamHire") ) ; ___( psttIdAdam ) ;
         TELL( "setting up/reading setting file to see who to hire" )
         ZE( strokeS* , psttIdAdam ) ;
     {
 
-    //etThread.ifcHireF( tinP , T("hired by ")+TF1(DDNUMB) , ifcIDaDAMoLD_VIEWjOT ) ;
+    //etThread.ifcHireF( tinBaseP , T("hired by ")+TF1(DDNUMB) , ifcIDaDAMoLD_VIEWjOT ) ;
 
-    //etThread.osClipboardLetGoF( tinP ) ;
-    //etThread.osClipboardWriteF( tinP , T("http://www.ideafarm.com/1.14.0") ) ;
-    //etThread.osClipboardGrabF( tinP ) ;
+    //etThread.osClipboardLetGoF( tinBaseP ) ;
+    //etThread.osClipboardWriteF( tinBaseP , T("http://www.ideafarm.com/1.14.0") ) ;
+    //etThread.osClipboardGrabF( tinBaseP ) ;
     OStEXTAK( napHomeJot  , "login: setting up" ) ;
 
-    stateS state( tinP , etThread ) ;
+    stateS state( tinBaseP , etThread ) ;
     OStEXTAK( napHomeJot  , "login: inheriting state" ) ;
 {
 
 }
-    napConsoleRequest.formattingIsDoneF( tinP ) ;
+    napConsoleRequest.formattingIsDoneF( tinBaseP ) ;
     if( !etThread ) bRequestConsole = 0 ;
 {
 if( !( F(napConsoleRequest.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
 boolT& bRequestConsole = *(boolT*)(byteT*)napConsoleRequest ;
 __( !(byteT*)napConsoleRequest ) ;
 __( (countT)napConsoleRequest - sizeof( boolT ) ) ;
-napkinC napConsoleRequest( tinP , LF , (byteT*)bits , "napConsoleRequest" , 0 , sizeof( boolT ) ) ;
+napkinC napConsoleRequest( tinBaseP , LF , (byteT*)bits , "napConsoleRequest" , 0 , sizeof( boolT ) ) ;
 
 }
-    napHomeJot.formattingIsDoneF( tinP ) ;
+    napHomeJot.formattingIsDoneF( tinBaseP ) ;
     if( !etThread ) *napHomeJot = 0 ;
 {
 if( !( F(napHomeJot.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
 __( !(byteT*)napHomeJot ) ;
 __( (countT)napHomeJot - CBnAPjOT ) ;
-napkinC napHomeJot( tinP , LF , (byteT*)bits , "napHomeJot" , 0 , CBnAPjOT ) ;
-bitsC bits( tinP , CbITSlIFI , 0 , 1 ) ;
+napkinC napHomeJot( tinBaseP , LF , (byteT*)bits , "napHomeJot" , 0 , CBnAPjOT ) ;
+bitsC bits( tinBaseP , CbITSlIFI , 0 , 1 ) ;
 
 TODO
 
 DONE( tmTimeRemainingF )
 
 }
-    *tinP.zEtScratch = 0 ;
+    *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
     }
-        ++ s ; ether.osSleepF( tinP , TOCK * 0x10 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x10 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     idType = idType == 1 ? 2 : 1 ;
     
     }
-        while( cTries -- ) sockd.writeF( tinP , idType == 1 ? ifcPORToLD2_ENABLEpRIVATEhTTP1 : ifcPORToLD2_ENABLEpRIVATEhTTP2 , nnIfc , (byteT*)pnn , cnnOut * sizeof( nicNameC ) ) ;
-        tinP.zEtScratch->strokeF( tinP , T("throwing ")+TF1(cTries)+T(" datagrams requesting access to private http\r\n") ) ; //U::
+        while( cTries -- ) sockd.writeF( tinBaseP , idType == 1 ? ifcPORToLD2_ENABLEpRIVATEhTTP1 : ifcPORToLD2_ENABLEpRIVATEhTTP2 , nnIfc , (byteT*)pnn , cnnOut * sizeof( nicNameC ) ) ;
+        ((tinNormalS&)tinBaseP).zEtScratch->strokeF( tinBaseP , T("throwing ")+TF1(cTries)+T(" datagrams requesting access to private http\r\n") ) ; //U::
         countT cTries = 0x8 ;
     
         countT cnnOut = cnn <= cnnMax ? cnn : cnnMax ;
         const countT cnnMax = ifcCBdATAGRAMmAX / sizeof( nicNameC ) ;
     
-        socketC::nicNameIF( tinP , *tinP.zEtScratch , pnn , cnn ) ;
+        socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , pnn , cnn ) ;
         ZE( countT , cnn ) ;
         ZE( nicNameC* , pnn ) ;
         //CODE SYNC: ea40104 a210104
@@ -120,8 +120,8 @@ DONE( tmTimeRemainingF )
 
             *psCourse >> sData ;
             *psCourse >> sCodes ;
-            soulC sData( tinP , TAG( TAGiDnULL ) ) ;
-            soulC sCodes( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sData( tinBaseP , TAG( TAGiDnULL ) ) ;
+            soulC sCodes( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( psCourse )
         stCourses >> psCourse ;
@@ -129,38 +129,38 @@ DONE( tmTimeRemainingF )
         //U::__( stCourses - 1 ) ;
 
         else            { CONoUTrAW( "!queryTimeRemaining job aok\r\n" ) ; }    
-        if( *tinP.zEtScratch ) { CONoUTrAW( "!queryTimeRemaining job FAILED\r\n" ) ; }    
-        tinP.zEtScratch->ifcJobF( tinP , stCourses , 0x4010120 , sOrder , stOrders , T("!queryTimeRemaining") , 1 , nnIfc ) ;
-        stOrders << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-        stackC stOrders(  tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-        stackC stCourses( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        if( *((tinNormalS&)tinBaseP).zEtScratch ) { CONoUTrAW( "!queryTimeRemaining job FAILED\r\n" ) ; }    
+        ((tinNormalS&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , 0x4010120 , sOrder , stOrders , T("!queryTimeRemaining") , 1 , nnIfc ) ;
+        stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+        stackC stOrders(  tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        stackC stCourses( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
     
         sOrder << qq.idType ;
         sOrder << qq.idComputer ;
         sOrder << (strokeS*)T("!queryTimeRemaining") ;
         sOrder << ifcIDcMDjOBoRDER_NAMED ;
-        soulC sOrder( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOrder( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
             
     ZE( sCountT , timeR2 ) ;
     ZE( countT , timeR1 ) ;
-    tinP.zEtScratch->memCopyF( tinP , pbq + sizeof( countT ) , (byteT*)&qq , sizeof qq ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->memCopyF( tinBaseP , pbq + sizeof( countT ) , (byteT*)&qq , sizeof qq ) ;
     *(countT*)pbq = 1 ;
     byteT pbq[ sizeof( countT ) + sizeof qq ] ;
     qq.idType = idType ;
-    qq.idComputer = tinP.zEtScratch->diskIdF( tinP , T("///d/") ) ;
+    qq.idComputer = ((tinNormalS&)tinBaseP).zEtScratch->diskIdF( tinBaseP , T("///d/") ) ;
     queryTimeRemainingS qq ;
                 
-    countT idPortMe = sockd.bindF( tinP ) ;
-    socketC sockd( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
-    nicNameC nnIfc = socketC::nicNameIF( tinP , *tinP.zEtScratch , T("www.ideafarm.com") ) ;
+    countT idPortMe = sockd.bindF( tinBaseP ) ;
+    socketC sockd( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    nicNameC nnIfc = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , T("www.ideafarm.com") ) ;
 {
 while( !ether && !etThread )
 countT idType = 1 ; //CYCLE 1,2,1,2,...
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK * 0x40 ) ; //IF I AM www.ideafarm.com, THIS GIVES ME TIME FOR BRAIN TO OPEN; U::CONJ: THIS IS NOT NEEDED NOW THAT I USE etScratch
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x40 ) ; //IF I AM www.ideafarm.com, THIS GIVES ME TIME FOR BRAIN TO OPEN; U::CONJ: THIS IS NOT NEEDED NOW THAT I USE etScratch
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 //U::DEBUG WHY THIS IS STILL NEEDED

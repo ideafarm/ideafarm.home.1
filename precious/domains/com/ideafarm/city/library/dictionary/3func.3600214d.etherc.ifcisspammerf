@@ -12,7 +12,7 @@
     }
         DEL( ps ) ;
         }
-            delF( tinP , pstto ) ;
+            delF( tinBaseP , pstto ) ;
             }
                 default  : { break ; }
                 }
@@ -54,19 +54,19 @@
     while( stsReplies )
     ZE( boolT , bSpammer ) ;
 
-    delF( tinP , psttDomain ) ;
-    dnsQueryF( tinP , stsReplies , psttDomain , ifcIDtYPEdNSqUERY_ALL ) ;
-    stackC stsReplies( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
+    delF( tinBaseP , psttDomain ) ;
+    dnsQueryF( tinBaseP , stsReplies , psttDomain , ifcIDtYPEdNSqUERY_ALL ) ;
+    stackC stsReplies( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
 
     }
-        strFuseF( tinP , psttDomain , tSuffix ) ; ___( psttDomain ) ;
-        delF( tinP , psttw ) ;
-        strReverseF( tinP , psttDomain , psttw , T(".") , 0 , 0 , tSuffix.csF( tinP ) ) ; ___( psttDomain ) ;
-        delF( tinP , psttDomain ) ;
-        strWordF( tinP , psttw , psttDomain , sttq , strokeS('/') , 1 ) ; ___( psttw ) ;
+        strFuseF( tinBaseP , psttDomain , tSuffix ) ; ___( psttDomain ) ;
+        delF( tinBaseP , psttw ) ;
+        strReverseF( tinBaseP , psttDomain , psttw , T(".") , 0 , 0 , tSuffix.csF( tinBaseP ) ) ; ___( psttDomain ) ;
+        delF( tinBaseP , psttDomain ) ;
+        strWordF( tinBaseP , psttw , psttDomain , sttq , strokeS('/') , 1 ) ; ___( psttw ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , psttw ) ;
-        strFromF( tinP , psttDomain , nicNameP ) ; ___( psttDomain ) ;
+        strFromF( tinBaseP , psttDomain , nicNameP ) ; ___( psttDomain ) ;
         TN( tSuffix , ".blackholes.mail-abuse.org" ) ;
     {
     ZE( strokeS* , psttDomain ) ;
@@ -82,7 +82,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT etherC::ifcIsSpammerF( tinS& tinP , strokeS*& psttP , const nicNameC& nicNameP )/*1*/
+/*1*/boolT etherC::ifcIsSpammerF( tinBaseS& tinBaseP , strokeS*& psttP , const nicNameC& nicNameP )/*1*/
 
 /**/
 */

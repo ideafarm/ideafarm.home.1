@@ -8,25 +8,25 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     etThread = 0 ;
 
-    etThread.delF( tinP , psttNickname ) ;
-    etThread.delF( tinP , psttEmail ) ;
-    etThread.delF( tinP , psttPayor ) ;
+    etThread.delF( tinBaseP , psttNickname ) ;
+    etThread.delF( tinBaseP , psttEmail ) ;
+    etThread.delF( tinBaseP , psttPayor ) ;
 
     }
-        etThread.strokeF( tinP , T("payment acknowledgement mailed to \"")+T(psttEmail)+T("\"\r\n") ) ;
-        etThread.delF( tinP , postr ) ;
-        etThread.boxPutF( tinP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+T(psttEmail)+T("//" ifcEMAIL_OLDfROM "") , postr , costr ) ;
+        etThread.strokeF( tinBaseP , T("payment acknowledgement mailed to \"")+T(psttEmail)+T("\"\r\n") ) ;
+        etThread.delF( tinBaseP , postr ) ;
+        etThread.boxPutF( tinBaseP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+T(psttEmail)+T("//" ifcEMAIL_OLDfROM "") , postr , costr ) ;
 
-        { ZE( strokeS* , psttnu ) ; etThread.boxPutUniqueF( tinP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/9d30104/email") , postr , costr ) ; etThread.delF( tinP , psttnu ) ; }
+        { ZE( strokeS* , psttnu ) ; etThread.boxPutUniqueF( tinBaseP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/9d30104/email") , postr , costr ) ; etThread.delF( tinBaseP , psttnu ) ; }
 
         }
-            etThread.delF( tinP , psttr1 ) ;
-            costr = etThread.strMakeF( tinP , LF , postr , psttr1 ) ; ___( postr ) ;
+            etThread.delF( tinBaseP , psttr1 ) ;
+            costr = etThread.strMakeF( tinBaseP , LF , postr , psttr1 ) ; ___( postr ) ;
 
             }
                 ) ; ___( psttr1 ) ;
@@ -49,7 +49,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
                     "You are receiving this report because you, or an impostxr who claimed to be you,\r\n"
                     T("Subject: Payment Acknowledgement\r\n\r\n"
 
-                etThread.strMakeF( tinP , LF , psttr1 ,
+                etThread.strMakeF( tinBaseP , LF , psttr1 ,
             {
             ZE( strokeS* , psttr1 ) ;
 
@@ -59,46 +59,46 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         ZE( countT   , costr ) ;
         ZE( osTextT* , postr ) ;
 
-        etThread.delF( tinP , pstt1d ) ;
+        etThread.delF( tinBaseP , pstt1d ) ;
         }
-            etThread.ether_idCitizenHirer_F( tinP ) = idchs ;
-            etThread.ifcDatumF( tinP , flDATUM1_CLASSpAYiN , flDATUM2_null , *(countT*)&mPayin , pcPart , pstt1d ) ;
-            etThread.ether_idCitizenHirer_F( tinP ) = idCitizen ;
-            countT idchs = etThread.ether_idCitizenHirer_F( tinP ) ;
+            etThread.ether_idCitizenHirer_F( tinBaseP ) = idchs ;
+            etThread.ifcDatumF( tinBaseP , flDATUM1_CLASSpAYiN , flDATUM2_null , *(countT*)&mPayin , pcPart , pstt1d ) ;
+            etThread.ether_idCitizenHirer_F( tinBaseP ) = idCitizen ;
+            countT idchs = etThread.ether_idCitizenHirer_F( tinBaseP ) ;
         {
         countT pcPart[] = { DDNUMB , 1 , idCitizen , idCheck , 0 } ;
 
-        etThread.strFuseSeparateF( tinP , pstt1d , psttPayor ) ; ___( pstt1d ) ;
-        etThread.strFuseSeparateF( tinP , pstt1d , psttNickname ) ; ___( pstt1d ) ;
-        etThread.strFuseSeparateF( tinP , pstt1d , psttEmail , 0 , 0 , 0 , 0 , /*U::SOUL?*/ CSpREFIX * 2 +  psttNickname->idAdam + psttPayor->idAdam ) ; ___( pstt1d ) ;
+        etThread.strFuseSeparateF( tinBaseP , pstt1d , psttPayor ) ; ___( pstt1d ) ;
+        etThread.strFuseSeparateF( tinBaseP , pstt1d , psttNickname ) ; ___( pstt1d ) ;
+        etThread.strFuseSeparateF( tinBaseP , pstt1d , psttEmail , 0 , 0 , 0 , 0 , /*U::SOUL?*/ CSpREFIX * 2 +  psttNickname->idAdam + psttPayor->idAdam ) ; ___( pstt1d ) ;
         ZE( strokeS* , pstt1d ) ;
     {
     if( !ether && !etThread && psttEmail && psttNickname && psttPayor )
 
     }
-        etThread.delF( tinP , psttw ) ;
-        etThread.faceHearF( tinP , psttPayor ) ; ___( psttPayor ) ;
-        etThread.strokeF( tinP , T("quickly enter the payor's approximate name: ") ) ;
+        etThread.delF( tinBaseP , psttw ) ;
+        etThread.faceHearF( tinBaseP , psttPayor ) ; ___( psttPayor ) ;
+        etThread.strokeF( tinBaseP , T("quickly enter the payor's approximate name: ") ) ;
 
         mPayin = (measureT)cPayin / 100 ;
         __Z( cPayin ) ;
-        etThread.delF( tinP , psttw ) ;
-        cPayin = etThread.strDigitsToSCountF( tinP , psttw , 0xa ) ;
-        etThread.faceHearF( tinP , psttw ) ; ___( psttw ) ;
-        etThread.strokeF( tinP , T("enter (using a radix 10 number) the nonze""ro number of cents paid in (for $25, enter 2500): ") ) ;
+        etThread.delF( tinBaseP , psttw ) ;
+        cPayin = etThread.strDigitsToSCountF( tinBaseP , psttw , 0xa ) ;
+        etThread.faceHearF( tinBaseP , psttw ) ; ___( psttw ) ;
+        etThread.strokeF( tinBaseP , T("enter (using a radix 10 number) the nonze""ro number of cents paid in (for $25, enter 2500): ") ) ;
 
         __Z( idCheck ) ;
-        etThread.delF( tinP , psttw ) ;
-        idCheck = etThread.strDigitsToSCountF( tinP , psttw ) ;
-        etThread.faceHearF( tinP , psttw ) ; ___( psttw ) ;
-        etThread.strokeF( tinP , T("enter nonze""ro check number (or date other nonze""ro identifying number): ") ) ;
+        etThread.delF( tinBaseP , psttw ) ;
+        idCheck = etThread.strDigitsToSCountF( tinBaseP , psttw ) ;
+        etThread.faceHearF( tinBaseP , psttw ) ; ___( psttw ) ;
+        etThread.strokeF( tinBaseP , T("enter nonze""ro check number (or date other nonze""ro identifying number): ") ) ;
 
-        etThread.strokeF( tinP , TP(psttEmail,0x20)+T("  ")+T(psttNickname)+T("\r\n") ) ;
-        etThread.ifcNicknameFromIdCitizenF( tinP , psttNickname , idCitizen ) ; ___( psttNickname ) ;
-        etThread.ifcExternalEmailFromIdCitizenF( tinP , psttEmail , idCitizen ) ; ___( psttEmail ) ;
+        etThread.strokeF( tinBaseP , TP(psttEmail,0x20)+T("  ")+T(psttNickname)+T("\r\n") ) ;
+        etThread.ifcNicknameFromIdCitizenF( tinBaseP , psttNickname , idCitizen ) ; ___( psttNickname ) ;
+        etThread.ifcExternalEmailFromIdCitizenF( tinBaseP , psttEmail , idCitizen ) ; ___( psttEmail ) ;
 
-        etThread.delF( tinP , psttw ) ;
-        idCitizen = etThread.strDigitsToSCountF( tinP , psttw ) ;
+        etThread.delF( tinBaseP , psttw ) ;
+        idCitizen = etThread.strDigitsToSCountF( tinBaseP , psttw ) ;
     {
     ZE( strokeS* , psttPayor    ) ;
     ZE( strokeS* , psttNickname ) ;
@@ -110,17 +110,17 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
     }
         break ;
-        etThread.delF( tinP , psttw ) ;
+        etThread.delF( tinBaseP , psttw ) ;
     {
     if( !psttw || !psttw->idAdam )
-    etThread.faceHearF( tinP , psttw ) ; ___( psttw ) ;
-    etThread.strokeF( tinP , T("(optional) enter an idCitizen value: ") ) ;
+    etThread.faceHearF( tinBaseP , psttw ) ; ___( psttw ) ;
+    etThread.strokeF( tinBaseP , T("(optional) enter an idCitizen value: ") ) ;
 
     ZE( strokeS* , psttw ) ;
 {
 while( !ether && !etThread )
 
-etThread.strokeF( tinP , T("IdeaFarm " "(tm) City Payin Recorder\r\ni record payments made by citizens into the IFC kitty\r\n\r\n") ) ;
+etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Payin Recorder\r\ni record payments made by citizens into the IFC kitty\r\n\r\n") ) ;
 
 TODO
 

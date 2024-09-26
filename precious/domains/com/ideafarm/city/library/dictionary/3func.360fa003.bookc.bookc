@@ -19,12 +19,12 @@
         //    OStEXT(   ostoSay , TUCK << 2 ) ;
         //{
 
-        // if( tinP.pEther ) tinP.pEther->trace F( tinP , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": bookC constructed") ) ; //U:: TO FIND A BUG
+        // if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": bookC constructed") ) ; //U:: TO FIND A BUG
 
         }
-            if( !bMemoryExisted ) napkin.formattingIsDoneF( tinP ) ;
+            if( !bMemoryExisted ) napkin.formattingIsDoneF( tinBaseP ) ;
 
-            provisionF( tinP , napkin , napkin , flagsProvision , bFillP ) ;
+            provisionF( tinBaseP , napkin , napkin , flagsProvision , bFillP ) ;
 
             if( bMemoryExisted || bFileExisted ) flagsProvision &= ~( F(flBOOK0pROVISION_FORMAT) ) ; //U::20201124@1544: POSSIBLE BUG: HOW CAN FILE PREEXIST WITHOUT MEMORY ALSO PREEXISTING?
 
@@ -51,9 +51,9 @@
                     pbBitsCtP ,
                     idiFileCtP ,
                     idLineCtP ,
-                    tinP ,
+                    tinBaseP ,
                 (
-                new( 0 , tinP , pbNapkin , sizeof pbNapkin ) napkinC
+                new( 0 , tinBaseP , pbNapkin , sizeof pbNapkin ) napkinC
 
                 }
                     OStEXTCF( ostoBuf , idStateSpaceP , '0' ) ;
@@ -78,30 +78,30 @@
                         {
                         //if( cbHead == sizeof head && info.cbUsed == sizeof head + head.cbBody )
                     
-                        //thirdC::dosReadIF( tinP , (byteT*)&head , cbHead , (const handleC&)file ) ;
+                        //thirdC::dosReadIF( tinBaseP , (byteT*)&head , cbHead , (const handleC&)file ) ;
                         //countT cbHead = sizeof head ;
                         //bookHeadS head ;
                     {
                     if( info.cbUsed >= sizeof( napkinHeaderS ) + sizeof( bookHeadS ) )
 
-                    thirdC::dosQueryFileInfoIF( tinP , pInfo , file ) ;
+                    thirdC::dosQueryFileInfoIF( tinBaseP , pInfo , file ) ;
                     infoFileS* pInfo = &info ;
-                    infoFileS info( tinP ) ;
+                    infoFileS info( tinBaseP ) ;
                 {
                 //if( bFileExisted )
 
-                bFileExisted = file.idOpenResultF( tinP  ) == ifcOPENrESULT_EXISTED ;
+                bFileExisted = file.idOpenResultF( tinBaseP  ) == ifcOPENrESULT_EXISTED ;
 
                 fileC& file = *(fileC*)pbFile ;
-                ctFileF( tinP , postShort , postShort ? postPath : 0 , idStateSpaceP , idMemorySpaceP ) ;
+                ctFileF( tinBaseP , postShort , postShort ? postPath : 0 , idStateSpaceP , idMemorySpaceP ) ;
             {
             if( idStateSpaceP )
             ZE( boolT , bFileExisted ) ;
         {
         else
         }
-            provisionF( tinP , pbFromHeap , cba , flagsProvision , bFillP ) ;
-            pbFromHeap = processGlobal4I.heap.newF( tinP , idLineCtP , idiFileCtP , cba ) ;
+            provisionF( tinBaseP , pbFromHeap , cba , flagsProvision , bFillP ) ;
+            pbFromHeap = processGlobal4I.heap.newF( tinBaseP , idLineCtP , idiFileCtP , cba ) ;
             countT cba = sizeof( bookHeadS ) + cbP ;
         {
         if( F(flagsCt) & flBOOKc_USEhEAPnOTnAPKIN )
@@ -113,7 +113,7 @@
 
         if( F(flagsCt) & flBOOKc_USEhEAPnOTnAPKIN ) flagsCt |= flBOOKc_RESETcREFoNcT | flBOOKc_PRIORbOOKnOTcONTINUEDhERE ;
 
-        // if( tinP.pEther ) tinP.pEther->trace F( tinP , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": bookC constructing") ) ; //U:: TO FIND A BUG
+        // if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": bookC constructing") ) ; //U:: TO FIND A BUG
 
         //}
         //    CONoUTrAW(   ostoSay ) ;
@@ -128,20 +128,20 @@
     if( !POOP )
 
     }
-        __( thirdC::c_strchrIF( tinP , postShort , ':' ) ) ;
-        __( thirdC::c_strchrIF( tinP , postShort , '\\' ) ) ;
+        __( thirdC::c_strchrIF( tinBaseP , postShort , ':' ) ) ;
+        __( thirdC::c_strchrIF( tinBaseP , postShort , '\\' ) ) ;
     {
     if( postShort )
 
     }
         }
             postPath = postPathBuf ;
-            thirdC::c_memcpyIF( tinP , postPathBuf , postShortOrLongP , postShort - postShortOrLongP ) ;
-            thirdC::c_memsetIF( tinP , postPathBuf , sizeof postPathBuf , 0 ) ;
+            thirdC::c_memcpyIF( tinBaseP , postPathBuf , postShortOrLongP , postShort - postShortOrLongP ) ;
+            thirdC::c_memsetIF( tinBaseP , postPathBuf , sizeof postPathBuf , 0 ) ;
             postShort ++ ;
         {
         if( postShort )
-        postShort = thirdC::c_strrchrIF( tinP , postShort , '\\' ) ;
+        postShort = thirdC::c_strrchrIF( tinBaseP , postShort , '\\' ) ;
     {
     )
         postShort[ 2 ] == '\\'
@@ -163,7 +163,7 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinBaseP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         }
             __( !*postShortOrLongP ) ;
             if( POOP ) return ;
@@ -191,8 +191,8 @@ pbFromHeap( 0 )
     idStateSpaceP
 (
 flagsCt
-book0C( tinP , 0 , 0 ) ,
-/*1*/bookC::bookC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postShortOrLongP , const countT idStateSpaceP , const flagsT flagsP , countT cbP , const byteT bFillP , const countT idMemorySpaceP ) :/*1*/
+book0C( tinBaseP , 0 , 0 ) ,
+/*1*/bookC::bookC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postShortOrLongP , const countT idStateSpaceP , const flagsT flagsP , countT cbP , const byteT bFillP , const countT idMemorySpaceP ) :/*1*/
 
 /**/
 */
@@ -205,7 +205,7 @@ book0C( tinP , 0 , 0 ) ,
  pbBitsCtP
  idiFileCtP
  idLineCtP
- tinP
+ tinBaseP
 parameters
 /*
 

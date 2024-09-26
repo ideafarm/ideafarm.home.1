@@ -14,40 +14,40 @@ REST
 }
     }
         }
-            //if( idCycle == 1 ) etThread.osEditF( tinP , tPrefix+T(".summary") ) ;
-            etThread.delF( tinP , pbts ) ;
+            //if( idCycle == 1 ) etThread.osEditF( tinBaseP , tPrefix+T(".summary") ) ;
+            etThread.delF( tinBaseP , pbts ) ;
             }
-                etThread.delF( tinP , postr ) ;
-                etThread.boxPutF( tinP , tPrefix+T(".summary") , postr , costr ) ;
-                etThread.delF( tinP , psttr ) ;
-                countT costr = etThread.strMakeF( tinP , LF , postr , psttr ) ; ___( postr ) ;
+                etThread.delF( tinBaseP , postr ) ;
+                etThread.boxPutF( tinBaseP , tPrefix+T(".summary") , postr , costr ) ;
+                etThread.delF( tinBaseP , psttr ) ;
+                countT costr = etThread.strMakeF( tinBaseP , LF , postr , psttr ) ; ___( postr ) ;
                 ZE( osTextT* , postr ) ;
 
-                /* if( idFile == 2 ) */ etThread.strokeF( tinP , T("\f")+T(psttr) ) ;
+                /* if( idFile == 2 ) */ etThread.strokeF( tinBaseP , T("\f")+T(psttr) ) ;
         
-                etThread.delF( tinP , psttd ) ;
+                etThread.delF( tinBaseP , psttd ) ;
                 ;
                 )
         
                     TT(timeN1,timeN2)+T("    cThreads: ")+TF1(cThreads)+tc+T(" ")+tc+T(psttd)
         
-                etThread.strFuseF( tinP , psttr ,
+                etThread.strFuseF( tinBaseP , psttr ,
                 ZE( strokeS* , psttr ) ;
         
                 }
-                    pbc += sizeof( tinS ) ;
+                    pbc += sizeof( tinNormalS ) ;
         
-                    etThread.strFuseF( tinP , psttd , TF3(etherC::ifc_idAdamG_IF(tinP),flFORMAT_null,9)+TP(pTin->postThreadName,0x10)+TP(ppostWhere[idWhere2],0x18)+T(pTin->postTell)+tc ) ;
+                    etThread.strFuseF( tinBaseP , psttd , TF3(etherC::ifc_idAdamG_IF(tinBaseP),flFORMAT_null,9)+TP(((tinNormalS*)pTin)->postThreadName,0x10)+TP(ppostWhere[idWhere2],0x18)+T(((tinNormalS*)pTin)->postTell)+tc ) ;
                     cThreads ++ ;
         
-                    countT idWhere2 = pTin->idWhere - ifcIDwHERE_IFC + 1 < sizeof ppostWhere / sizeof ppostWhere[ 0 ] ? pTin->idWhere - ifcIDwHERE_IFC + 1 : 0 ;
+                    countT idWhere2 = ((tinNormalS*)pTin)->idWhere - ifcIDwHERE_IFC + 1 < sizeof ppostWhere / sizeof ppostWhere[ 0 ] ? ((tinNormalS*)pTin)->idWhere - ifcIDwHERE_IFC + 1 : 0 ;
             
-                    tinS* pTin = (tinS*)pbc ;
+                    tinBaseS* pTin = (tinBaseS*)pbc ;
                 {
                 while( pbc < pbe )
                 byteT* const pbe = pbts + cbts ;
                 byteT*       pbc = pbts ;
-                etThread.strFuseF( tinP , psttd , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ;
+                etThread.strFuseF( tinBaseP , psttd , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ;
                 ZE( strokeS* , psttd ) ;
                 TN( tq , "\"" ) ;
                 TN( tb , " " ) ;
@@ -75,22 +75,22 @@ REST
                 "IFC" ,
                 "<invalid value>" ,
             {
-            static osTextT* ppostWhere[] = // 0010*.ifcIDwHERE AND func.12f0007.tinS.strFuseF AND adam.c740104 MUST BE KEPT IN SYNC
+            static osTextT* ppostWhere[] = // 0010*.ifcIDwHERE AND func.12f0007.tinNormalS.strFuseF AND adam.c740104 MUST BE KEPT IN SYNC
         
-            etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
         
-            __( cbts % sizeof( tinS ) ) ;
+            __( cbts % sizeof( tinNormalS ) ) ;
     
-            ether.boxGetF( tinP , pbts , cbts , tFile ) ;
+            ether.boxGetF( tinBaseP , pbts , cbts , tFile ) ;
             ZE( countT , cbts ) ;
             ZE( byteT* , pbts ) ; // "tin set"
         {
         //else                                           
-        //if( !etThread.diskFileExistsF( tinP , tFile ) ) etThread.osMessageBoxF( tinP , tFile+T(" does not exist") ) ;
+        //if( !etThread.diskFileExistsF( tinBaseP , tFile ) ) etThread.osMessageBoxF( tinBaseP , tFile+T(" does not exist") ) ;
     
-        TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinP,T("///c")))+T("/tinSet.")+TF1(idFile) ;
+        TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinBaseP,T("///c")))+T("/tinNormalSet.")+TF1(idFile) ;
         TN( tIdFile , "" ) ; tIdFile = TF1(idFile) ;
     {
     //U: for( countT idFile = 1 ; idFile <= 2 ; idFile ++ )

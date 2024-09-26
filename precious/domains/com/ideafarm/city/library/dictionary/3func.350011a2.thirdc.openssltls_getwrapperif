@@ -17,14 +17,14 @@
 
         __Z( pWrap ) ;
         __( ec ) ;
-        if( ec ) etherC::etTextIF( tinP ).traceF( tinP , T("openSslTls_getWrapperIF / exception caught") ) ;
+        if( ec ) etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslTls_getWrapperIF / exception caught") ) ;
         SSL* pWrap        = c_openSslTls_getWrapperIF( &ec , (SSL_CTX*)hContextP.osF( ifcIDtYPEhANDLE_openSslContext ) ) ;
         ZE( countT , ec ) ;
 
     #elif defined( __NT__ )
     #ifdef __OS2__
 
-    if( !( F(tinP.flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL ) ) { BLAMMO ; }
+    if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL ) ) { BLAMMO ; }
 
     _IO_
 
@@ -38,7 +38,7 @@
     {
     IFbEcAREFUL
 {
-/**//*1*/voidT thirdC::openSslTls_getWrapperIF( tinS& tinP , handleC& handleP , const handleC& hContextP )/*1*/
+/**//*1*/voidT thirdC::openSslTls_getWrapperIF( tinBaseS& tinBaseP , handleC& handleP , const handleC& hContextP )/*1*/
 */
 /*
 

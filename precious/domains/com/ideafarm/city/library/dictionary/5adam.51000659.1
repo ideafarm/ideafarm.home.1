@@ -9,13 +9,13 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
-etThread.winSetTitleF( tinP , T("Done!") ) ;
+etThread.winSetTitleF( tinBaseP , T("Done!") ) ;
 
 CONoUTrAW5( "" , cDirs , " " , cFiles , "\r\n" ) ;
 
-etThread.diskWalkTimePrefixF( tinP , cDirs , cFiles , ether , psttFrom , myCBF , 0 ) ;
+etThread.diskWalkTimePrefixF( tinBaseP , cDirs , cFiles , ether , psttFrom , myCBF , 0 ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
 
@@ -28,7 +28,7 @@ TODO
     return bDoIt ;
     boolT bDoIt = 1 ;
 {
-boolT myCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
+boolT myCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOWtEXT( "tool.rename.files.for.archival" )/*1*/
 /**/

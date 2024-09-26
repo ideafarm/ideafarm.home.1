@@ -9,26 +9,26 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.openSsl_shutdownF( tinP ) ;
+etThread.openSsl_shutdownF( tinBaseP ) ;
 }
     }
         }
             }
                 shutdown( oshSock , 2 ) ;
 
-                etThread.boxPutF( tinP , T("///d/tmp/foo.ttt") , postHear , rc ) ;
-                etThread.traceF( tinP , T(postHear) ) ;
+                etThread.boxPutF( tinBaseP , T("///d/tmp/foo.ttt") , postHear , rc ) ;
+                etThread.traceF( tinBaseP , T(postHear) ) ;
 
-                etThread.openSsl_readF( tinP , postHear , sizeof postHear , hSslWrapper ) ;
+                etThread.openSsl_readF( tinBaseP , postHear , sizeof postHear , hSslWrapper ) ;
                 memset( postHear , 0 , sizeof postHear ) ;
                 char postHear[ 0x10000 ] ; 
 
-                etThread.openSsl_writeF( tinP , hSslWrapper , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+                etThread.openSsl_writeF( tinBaseP , hSslWrapper , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
 
-                tSay += TF4(tSayBody.csF(tinP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
+                tSay += TF4(tSayBody.csF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
                 ) ;
 
                     "Content-Length: "
@@ -54,13 +54,13 @@ etThread.openSsl_shutdownF( tinP ) ;
                     "{\r\n"
 
                 TN( tSayBody ,
-                etThread.openSsl_shakeHandsAsClientF( tinP , hSslWrapper ) ;
+                etThread.openSsl_shakeHandsAsClientF( tinBaseP , hSslWrapper ) ;
 
                 }
                     hSock.resetF() ;
-                    etThread.openSsl_wrapSocketF( tinP , hSslWrapper , hSock ) ;
+                    etThread.openSsl_wrapSocketF( tinBaseP , hSslWrapper , hSock ) ;
                     hSock.osF( ifcIDtYPEhANDLE_SOCKET , oshSock ) ;
-                    handleC hSock( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+                    handleC hSock( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
                 {
 
                 int rc = connect( oshSock , (sockaddr*)&info , sizeof info ) ;
@@ -79,15 +79,15 @@ etThread.openSsl_shutdownF( tinP ) ;
     {
     if( ~hSslWrapper )
 
-    etThread.openSsl_getWrapperF( tinP , hSslWrapper , hSslContext ) ;
-    handleC hSslWrapper( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslWrapper ) ;
+    etThread.openSsl_getWrapperF( tinBaseP , hSslWrapper , hSslContext ) ;
+    handleC hSslWrapper( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslWrapper ) ;
 {
 if( ~hSslContext )
 
-etThread.openSsl_getContextF( tinP , hSslContext ) ;
-handleC hSslContext( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslContext ) ;
+etThread.openSsl_getContextF( tinBaseP , hSslContext ) ;
+handleC hSslContext( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslContext ) ;
 
-etThread.openSsl_setupF( tinP ) ;
+etThread.openSsl_setupF( tinBaseP ) ;
 
 TODO
 

@@ -9,25 +9,25 @@
 
 REST
 }
-    etThread.loafIF( tinP ) ;
-    etThread.osThreadF( tinP , countTC() , tmGorillaF ) ;
-    etThread.osThreadF( tinP , countTC() , tmGorillaF ) ;
-    etThread.osThreadF( tinP , countTC() , tmGorillaF ) ;
-    etThread.osThreadF( tinP , countTC() , tmGorillaF ) ;
+    etThread.loafIF( tinBaseP ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF ) ;
 
-    stateS state( tinP , etThread ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 TODO
 
 DONE( tmGorillaF )
 }
-    CONoUT( TF1(tinP.monitor.idThread)+tb+TF1(++idTrial)+tc ) ;
-    grabOldS grab( tinP , TAG( TAGiDnULL ) ) ;    
+    CONoUT( TF1(((tinNormalS&)tinBaseP).monitor.idThread)+tb+TF1(++idTrial)+tc ) ;
+    grabOldS grab( tinBaseP , TAG( TAGiDnULL ) ) ;    
 {
 while( !etThread && !ether )
 TN( tc , "\r\n" ) ;
 TN( tb , " " ) ;
-//etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
+//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
 TASK( tmGorillaF )
 
 countT idTrial ;

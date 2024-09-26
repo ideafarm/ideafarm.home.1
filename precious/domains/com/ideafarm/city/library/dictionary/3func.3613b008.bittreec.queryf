@@ -9,13 +9,13 @@
 
 }
     return PtHIS ;
-    tinP.pbRecursiveParameters = pbSave ;
+    ((tinNormalS&)tinBaseP).pbRecursiveParameters = pbSave ;
 
-    tinP.pbRecursiveParameters = 0 ;
+    ((tinNormalS&)tinBaseP).pbRecursiveParameters = 0 ;
 
-    while( PtHIS && !queryStepF( tinP ) ) ;
+    while( PtHIS && !queryStepF( tinBaseP ) ) ;
 
-    tinP.pbRecursiveParameters = (byteT*)&pp ;
+    ((tinNormalS&)tinBaseP).pbRecursiveParameters = (byteT*)&pp ;
 
     rParam_new_S pp( pbRawBegin ? 0 : 1 , pbRawBegin ? pRoot : 0 , pbBitsP , offBitP , cBitsP , pcDatumP ) ;
 
@@ -24,11 +24,11 @@
         ? (bitNodeS*)pbRawBegin
     bitNodeS* pRoot = pbRawBegin
 
-                    tinP.pbRecursiveParameters = 0 ;
-    byteT* pbSave = tinP.pbRecursiveParameters     ;
+                    ((tinNormalS&)tinBaseP).pbRecursiveParameters = 0 ;
+    byteT* pbSave = ((tinNormalS&)tinBaseP).pbRecursiveParameters     ;
     _IO_
 {
-/*1*/bitNodeS* bitTreeC::queryF( tinS& tinP , const byteT* pbBitsP , countT offBitP , countT cBitsP , countT* const pcDatumP )/*1*/
+/*1*/bitNodeS* bitTreeC::queryF( tinBaseS& tinBaseP , const byteT* pbBitsP , countT offBitP , countT cBitsP , countT* const pcDatumP )/*1*/
 
 /**/
 */

@@ -9,21 +9,21 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
-        if(  bMatch ) etThread.traceF( tinP , T("false positive: ")+T(ppostTest[offr][0])+tb+T(ppostTest[offr][1])+tb+T(ppostTest[offr][2]) ) ;
+        if(  bMatch ) etThread.traceF( tinBaseP , T("false positive: ")+T(ppostTest[offr][0])+tb+T(ppostTest[offr][1])+tb+T(ppostTest[offr][2]) ) ;
     {
     else
     }
-        if( !bMatch ) etThread.traceF( tinP , T("false negative: ")+T(ppostTest[offr][0])+tb+T(ppostTest[offr][1])+tb+T(ppostTest[offr][2]) ) ;
+        if( !bMatch ) etThread.traceF( tinBaseP , T("false negative: ")+T(ppostTest[offr][0])+tb+T(ppostTest[offr][1])+tb+T(ppostTest[offr][2]) ) ;
     {
     if( *ppostTest[ offr ] [ 2 ] == 'y' )
 
-    boolT bMatch = etThread.strFileMatchF( tinP , T(ppostTest[offr][0]) , T(ppostTest[offr][1]) ) ;
-    //boolT bMatch = bMatchF( tinP , etThread , T(ppostTest[offr][0]) , T(ppostTest[offr][1]) ) ;
+    boolT bMatch = etThread.strFileMatchF( tinBaseP , T(ppostTest[offr][0]) , T(ppostTest[offr][1]) ) ;
+    //boolT bMatch = bMatchF( tinBaseP , etThread , T(ppostTest[offr][0]) , T(ppostTest[offr][1]) ) ;
 {
 for( countT offr = 0 ; offr < sizeof ppostTest / sizeof ppostTest[ 0 ] ; offr ++ )
 TN( tb , " " ) ;

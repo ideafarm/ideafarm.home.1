@@ -10,20 +10,20 @@
 }
     }
         }
-            delF( tinP , psttp ) ;_WQ
+            delF( tinBaseP , psttp ) ;_WQ
 
             }
-                delF( tinP , psttOut ) ;_WQ
-                if( pGrabP ) pGrabP->ungrabF( tinP ) ;_WQ
+                delF( tinBaseP , psttOut ) ;_WQ
+                if( pGrabP ) pGrabP->ungrabF( tinBaseP ) ;_WQ
                 soulOutP << psttOut ;_WQ
-                if( pGrabP ) pGrabP->grabF( tinP , TAG( TAGiDnULL ) ) ;_WQ
+                if( pGrabP ) pGrabP->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;_WQ
             {
             if( psttOut )
 
-            strFuseF( tinP , psttOut , psttp , &soulOutP , pGrabP , sttEscapeP ) ; ___( psttOut ) ;_WQ
+            strFuseF( tinBaseP , psttOut , psttp , &soulOutP , pGrabP , sttEscapeP ) ; ___( psttOut ) ;_WQ
             ZE( strokeS* , psttOut ) ;_WQ
 
-            strDecodeF( tinP , psttp , pbzEncoded ) ; ___( psttp ) ;_WQ
+            strDecodeF( tinBaseP , psttp , pbzEncoded ) ; ___( psttp ) ;_WQ
             ZE( strokeS* , psttp ) ;_WQ
         {
         if( !POOP )
@@ -31,7 +31,7 @@
         __( !cbIn ) ;_WQ
         __( flagsIn - flSOULiTEM_null ) ;_WQ
         __( idTypeIn - ifcIDtYPEsOULiTEM_strokeSptr ) ;_WQ
-        byteT* pbzEncoded = soulInP.pbFieldF( tinP , idTypeIn , flagsIn , cbIn , idFieldIn ) ;_WQ
+        byteT* pbzEncoded = soulInP.pbFieldF( tinBaseP , idTypeIn , flagsIn , cbIn , idFieldIn ) ;_WQ
         ZE( countT , cbIn     ) ;_WQ
         ZE( flagsT , flagsIn  ) ;_WQ
         ZE( countT , idTypeIn ) ;_WQ
@@ -49,7 +49,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/ voidT etherC::strFuseF( tinS& tinP , soulC& soulOutP , soulC& soulInP , grabC* pGrabP , const strokeS sttEscapeP , const strokeS* psttDelimiterPairsP , const countT csttMaxDelimiterP )/*1*/
+/*1*/ voidT etherC::strFuseF( tinBaseS& tinBaseP , soulC& soulOutP , soulC& soulInP , grabC* pGrabP , const strokeS sttEscapeP , const strokeS* psttDelimiterPairsP , const countT csttMaxDelimiterP )/*1*/
 
 //etherSoilF USED TO CALL ME TO POUR soulOut INTO soulOutP BUT THIS TOOK FOREEEEEVER
 //U::O: THERE IS SOMETHING EXTREMELY INEFFICIENT HERE; STUDY WHY I AM SO SLOOOOOW FOR LARGE INPUT

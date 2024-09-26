@@ -19,12 +19,12 @@
         {
         else
         }
-            bExisted = diskMakeDirStupidlyF( tinP , psttP ) ;
+            bExisted = diskMakeDirStupidlyF( tinBaseP , psttP ) ;
 
             }
-                delF( tinP , psttDad ) ;
-                diskMakeDirF( tinP , psttDad ) ;
-                strSubstringF( tinP , psttDad , idf , idSlashDad , psttP ) ; ___( psttDad ) ;
+                delF( tinBaseP , psttDad ) ;
+                diskMakeDirF( tinBaseP , psttDad ) ;
+                strSubstringF( tinBaseP , psttDad , idf , idSlashDad , psttP ) ; ___( psttDad ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttDad ) ;
             {
@@ -39,13 +39,13 @@
             if( idSlashDad <= idSlashStop ) // SHOULDN'T EVER BE TRUE
 
             }
-                idSlashDad = strIdF( tinP , countTC( 1 ) , sttq , S1C('/') , psttP , psttP->idAdam - 1 , - 1 ) ;
+                idSlashDad = strIdF( tinBaseP , countTC( 1 ) , sttq , S1C('/') , psttP , psttP->idAdam - 1 , - 1 ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             {
             ZE( countT , idSlashDad ) ;
 
             }
-                idSlashStop = strIdF( tinP , countTC( 1 ) , sttq , S1C('/') , psttP , psttP->idAdam - 1 , ( bLan ? 6 : 4 ) ) ;
+                idSlashStop = strIdF( tinBaseP , countTC( 1 ) , sttq , S1C('/') , psttP , psttP->idAdam - 1 , ( bLan ? 6 : 4 ) ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             {
             ZE( countT , idSlashStop ) ;
@@ -65,7 +65,7 @@
         {
         else if( POOP == ifcIDiMPOTENCEbASEeRRORcODE_PATHnOTfOUND )
         if( !POOP ) SCOOPSdEL
-        bExisted = tinP.pEtScratch->diskMakeDirStupidlyF( tinP , psttP ) ;
+        bExisted = ((tinNormalS&)tinBaseP).pEtScratch->diskMakeDirStupidlyF( tinBaseP , psttP ) ;
         SCOOPSnEW
     {
     IFsCRATCH
@@ -86,7 +86,7 @@
     
     SCOOP
 {
-/*1*/boolT etherC::diskMakeDirF( tinS& tinP , const strokeS* const psttP )/*1*/
+/*1*/boolT etherC::diskMakeDirF( tinBaseS& tinBaseP , const strokeS* const psttP )/*1*/
 
 //RULE FOR NETBIOS psttP: DON'T TRY TO MAKE THE SHARE NAME
 

@@ -10,7 +10,7 @@
 }
     return cFound ;
 
-    if( !bStringOfStrings ) delF( tinP , pstt1u ) ;
+    if( !bStringOfStrings ) delF( tinBaseP , pstt1u ) ;
 
     }
         }
@@ -43,7 +43,7 @@
                 if( !POOP ) cFound = 1 ;
 
                 THREADmODE2rESTORE
-                fileC fileTest( tinP , psttc1 , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_BUMPkEY | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
+                fileC fileTest( tinBaseP , psttc1 , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_BUMPkEY | flOPENdETAILS_DOnOTmAKEdIRiFnEEDED , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
                 THREADmODE2oN( flTHREADmODE2_QUIETiMPOTENCE ) ;
 
                 SCOOPS
@@ -53,24 +53,24 @@
         {
         else
         }
-            delF( tinP , pstt1nu ) ;
-            cFound = diskFindFileOrDirF( tinP , pstt1nu , fnLike.pathF() , &pat ) ; ___( pstt1nu ) ;
+            delF( tinBaseP , pstt1nu ) ;
+            cFound = diskFindFileOrDirF( tinBaseP , pstt1nu , fnLike.pathF() , &pat ) ; ___( pstt1nu ) ;
             ZE( strokeS* , pstt1nu ) ;
             
-            patternC pat( tinP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-            fileNameC fnLike( tinP , *this , psttc1 ) ;
+            patternC pat( tinBaseP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+            fileNameC fnLike( tinBaseP , *this , psttc1 ) ;
         {
         )
-            strIdF( tinP , S1C( '?' ) , psttc1 )
+            strIdF( tinBaseP , S1C( '?' ) , psttc1 )
             ||
-            strIdF( tinP , S1C( '*' ) , psttc1 )
+            strIdF( tinBaseP , S1C( '*' ) , psttc1 )
         (
         if
     {
     FORsTRINGSiN1( pstt1u )
 
     else                    pstt1u = (strokeS*)psttLikeP ;
-    if( !bStringOfStrings ) { strFuseSeparateF( tinP , pstt1u , psttLikeP ) ; ___( pstt1u ) ; }
+    if( !bStringOfStrings ) { strFuseSeparateF( tinBaseP , pstt1u , psttLikeP ) ; ___( pstt1u ) ; }
     ZE( strokeS* , pstt1u ) ;
     boolT bStringOfStrings = ISsTRINGoFsTRINGS( psttLikeP ) ;
 
@@ -86,7 +86,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/countT etherC::diskFileExistsF( tinS& tinP , const strokeS* const psttLikeP )/*1*/
+/**//*1*/countT etherC::diskFileExistsF( tinBaseS& tinBaseP , const strokeS* const psttLikeP )/*1*/
 */
   the result is as if the caller called me repeatedly and accumulated my return value
    for example, wildcards and paths may differ

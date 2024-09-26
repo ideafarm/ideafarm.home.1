@@ -9,16 +9,16 @@
 
 REST
 
-etThread.strokeF( tinP , T("final aok\r\n") ) ;
+etThread.strokeF( tinBaseP , T("final aok\r\n") ) ;
 }
-    else           for( countT idAdam = idMin ; !ether && idAdam <= idMax && !etThread ; idAdam ++ ) workF( tinP , etThread , idAdam ) ;
-    if( bReverse ) for( countT idAdam = idMax ; !ether && idAdam >= idMin && !etThread ; idAdam -- ) workF( tinP , etThread , idAdam ) ;
+    else           for( countT idAdam = idMin ; !ether && idAdam <= idMax && !etThread ; idAdam ++ ) workF( tinBaseP , etThread , idAdam ) ;
+    if( bReverse ) for( countT idAdam = idMax ; !ether && idAdam >= idMin && !etThread ; idAdam -- ) workF( tinBaseP , etThread , idAdam ) ;
 
-    const boolT bReverse = bReverseF( tinP , etThread ) ;
+    const boolT bReverse = bReverseF( tinBaseP , etThread ) ;
 
     if( idMin == 0x51000000 ) idMin ++ ;
 
-    else etThread.boxMenuIdRangeF( tinP , idMin , idMax , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.51000???") , 0x100000 , S1C('/') ) ;
+    else etThread.boxMenuIdRangeF( tinBaseP , idMin , idMax , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.51000???") , 0x100000 , S1C('/') ) ;
     }
         idMax = 0x5100061f ;
         idMin = 0x5100061f ;
@@ -27,25 +27,25 @@ etThread.strokeF( tinP , T("final aok\r\n") ) ;
     ZE( countT , idMax ) ;
     ZE( countT , idMin ) ;
 
-    const boolT bTest = bTestF( tinP , etThread ) ;
+    const boolT bTest = bTestF( tinBaseP , etThread ) ;
 
-    stateS state( tinP , etThread ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO
 
 }
-    etThread.delF( tinP , psttLog ) ;
-    //etThread.ifcSayF( tinP , psttLog , flSAY_APPEND | flSAY_LOG ) ;
-    etThread.strConcatenateF( tinP , psttLog , stPhrases ) ; ___( psttLog ) ;
+    etThread.delF( tinBaseP , psttLog ) ;
+    //etThread.ifcSayF( tinBaseP , psttLog , flSAY_APPEND | flSAY_LOG ) ;
+    etThread.strConcatenateF( tinBaseP , psttLog , stPhrases ) ; ___( psttLog ) ;
     ZE( strokeS* , psttLog ) ;
 
     }
         DEL( ps ) ;
         }
-            etThread.delF( tinP , psttNote ) ;
-            etThread.delF( tinP , psttLine ) ;
-            stPhrases << postOldC( tinP , etThread , T("note: ")+T(psttNote)+T("\r\nbad line: \"")+T(psttLine)+T("\"\r\nidLine: ")+TF4(idLine,flFORMAT_FOREIGN,0,0xa)+T("\r\nidColumn: ")+TF4(idColumn,flFORMAT_FOREIGN,0,0xa)+T("\r\n") ) ;
+            etThread.delF( tinBaseP , psttNote ) ;
+            etThread.delF( tinBaseP , psttLine ) ;
+            stPhrases << postOldC( tinBaseP , etThread , T("note: ")+T(psttNote)+T("\r\nbad line: \"")+T(psttLine)+T("\"\r\nidLine: ")+TF4(idLine,flFORMAT_FOREIGN,0,0xa)+T("\r\nidColumn: ")+TF4(idColumn,flFORMAT_FOREIGN,0,0xa)+T("\r\n") ) ;
 
             soul >> psttNote ; ___( psttNote ) ;
             soul >> psttLine ; ___( psttLine ) ;
@@ -63,21 +63,21 @@ TODO
         ZE( soulC* , ps ) ;
     {
     while( stErrors )
-    stPhrases << postOldC( tinP , etThread , T("make ")+TF1(idAdamP)+T("\r\n") ) ;
-    stackC stPhrases( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
+    stPhrases << postOldC( tinBaseP , etThread , T("make ")+TF1(idAdamP)+T("\r\n") ) ;
+    stackC stPhrases( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
 
-    etThread.osMakeF( tinP , stErrors , idAdamP /*U: , flMAKE_MINIMALtIME | flMAKE_MINIMALtIMErISKY*/ ) ;
-    stackC stErrors( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
+    etThread.osMakeF( tinBaseP , stErrors , idAdamP /*U: , flMAKE_MINIMALtIME | flMAKE_MINIMALtIMErISKY*/ ) ;
+    stackC stErrors( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
 {
-voidT workF( tinS& tinP , etherC& etThread , const countT idAdamP )
+voidT workF( tinBaseS& tinBaseP , etherC& etThread , const countT idAdamP )
 
 }
     return bTest ;
 
     }
         }
-            if( bOk ) etThread.strokeF( tinP , T("\"")+T(psttc1)+T("\" ok\r\n") ) ;
-            else if( !etThread.strCompareF( tinP , psttc1 , T("!test") ) ) { bTest = bOk = 1 ; }
+            if( bOk ) etThread.strokeF( tinBaseP , T("\"")+T(psttc1)+T("\" ok\r\n") ) ;
+            else if( !etThread.strCompareF( tinBaseP , psttc1 , T("!test") ) ) { bTest = bOk = 1 ; }
             }
                 //}
                 //    default : { idArg = 0 ; break ; }
@@ -89,20 +89,20 @@ voidT workF( tinS& tinP , etherC& etThread , const countT idAdamP )
 
             ZE( boolT , bOk ) ;
         {
-        FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinP ) )
+        FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinBaseP ) )
         ZE( countT , idArg ) ;
     {
     ZE( boolT , bTest ) ;
 {
-boolT bTestF( tinS& tinP , etherC& etThread )
+boolT bTestF( tinBaseS& tinBaseP , etherC& etThread )
 
 }
     return bReverse ;
 
     }
         }
-            if( bOk ) etThread.strokeF( tinP , T("\"")+T(psttc1)+T("\" ok\r\n") ) ;
-            else if( !etThread.strCompareF( tinP , psttc1 , T("!reverse") ) ) { bReverse = bOk = 1 ; }
+            if( bOk ) etThread.strokeF( tinBaseP , T("\"")+T(psttc1)+T("\" ok\r\n") ) ;
+            else if( !etThread.strCompareF( tinBaseP , psttc1 , T("!reverse") ) ) { bReverse = bOk = 1 ; }
             }
                 //}
                 //    default : { idArg = 0 ; break ; }
@@ -114,17 +114,17 @@ boolT bTestF( tinS& tinP , etherC& etThread )
 
             ZE( boolT , bOk ) ;
         {
-        FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinP ) )
+        FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinBaseP ) )
         ZE( countT , idArg ) ;
     {
     ZE( boolT , bReverse ) ;
 {
-boolT bReverseF( tinS& tinP , etherC& etThread )
+boolT bReverseF( tinBaseS& tinBaseP , etherC& etThread )
 
 }
 {
-stateC( tinP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tinS& tinP , etherC& etherP ) :
+stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )
+stateS::stateS( tinBaseS& tinBaseP , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -134,7 +134,7 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
 
 ;
 }
-    stateS( tinS& tinP , etherC& etherP ) ;
+    stateS( tinBaseS& tinBaseP , etherC& etherP ) ;
 
     countT idMe ;
     countT idVersion ;

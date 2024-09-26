@@ -9,13 +9,13 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("[cNames]:    ")+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("[cNames]:    ")+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
 }
-    if( !( cNames % ( TOCK >> 2 ) ) ) etThread.traceF( tinP , T("[cNames]:    ")+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    if( !( cNames % ( TOCK >> 2 ) ) ) etThread.traceF( tinBaseP , T("[cNames]:    ")+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     cNames ++ ;
-    jotShortFileNamesNew.writeF( tinP , pbIn , cbIn ) ;
+    jotShortFileNamesNew.writeF( tinBaseP , pbIn , cbIn ) ;
 
     if( !pbIn ) break ;
 
@@ -28,8 +28,8 @@ countT cDo = jotShortFileNamesOld.cElementsF() ;
 
 ZE( countT , cNames ) ;
 
-jotC jotShortFileNamesNew( tinP , "healarchive.sorted.short.filenames.new.wo.ideafarm.2014"     , flJOTc_WRITE , 0 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ;
-jotC jotShortFileNamesOld( tinP , "healarchive.sorted.short.filenames.old.wo.ideafarm.2014" ) ;
+jotC jotShortFileNamesNew( tinBaseP , "healarchive.sorted.short.filenames.new.wo.ideafarm.2014"     , flJOTc_WRITE , 0 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ;
+jotC jotShortFileNamesOld( tinBaseP , "healarchive.sorted.short.filenames.old.wo.ideafarm.2014" ) ;
 
 TODO
 

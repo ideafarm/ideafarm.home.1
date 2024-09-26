@@ -9,20 +9,20 @@
                             
 REST
 
-etThread.traceF( tinP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.delF( tinP , pstt1List ) ;
+etThread.delF( tinBaseP , pstt1List ) ;
 }
     }
-        etThread.traceF( tinP , T("archive instance:    ")+T(psttc1) ) ;
+        etThread.traceF( tinBaseP , T("archive instance:    ")+T(psttc1) ) ;
     {
     FORsTRINGSiN1( pstt1List )
 {
 if( pstt1List && pstt1List->idAdam )
-etThread.diskFindFileOrDirF( tinP , pstt1List , fnLike.pathF() , &pat ) ; ___( pstt1List ) ;
+etThread.diskFindFileOrDirF( tinBaseP , pstt1List , fnLike.pathF() , &pat ) ; ___( pstt1List ) ;
 
-patternC pat( tinP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-fileNameC fnLike( tinP , etThread , tLike ) ;
+patternC pat( tinBaseP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+fileNameC fnLike( tinBaseP , etThread , tLike ) ;
 
 TN( tLike , "///?/archive/" ) ;
 ZE( strokeS* , pstt1List ) ;

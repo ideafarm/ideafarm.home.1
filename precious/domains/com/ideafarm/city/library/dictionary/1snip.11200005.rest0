@@ -9,45 +9,45 @@
 
         }
             TELL( "REST: outahere" ) ;                                                                                              \
-            etThread.ifcDatumF( tinP , flDATUM1_CLASStRACEaLWAYSfIREdLL , flDATUM2_null , 0 , 0 , 0 , (voidT*)DDNAME , (byteT*)&timeLife , sizeof timeLife ) ; \
+            etThread.ifcDatumF( tinBaseP , flDATUM1_CLASStRACEaLWAYSfIREdLL , flDATUM2_null , 0 , 0 , 0 , (voidT*)DDNAME , (byteT*)&timeLife , sizeof timeLife ) ; \
                                                                                                                                     \
-            etThread.osTimeSubtractF( tinP , timeLife.time1 , timeLife.time2 , timeBorn.time1 , timeBorn.time2 ) ;                  \
-            etThread.osTimeNowF( tinP , timeLife.time1 , timeLife.time2 ) ;                                                         \
+            etThread.osTimeSubtractF( tinBaseP , timeLife.time1 , timeLife.time2 , timeBorn.time1 , timeBorn.time2 ) ;                  \
+            etThread.osTimeNowF( tinBaseP , timeLife.time1 , timeLife.time2 ) ;                                                         \
             timeS timeLife ;                                                                                                        \
                                                                                                                                     \
-            thirdC::thirdImpotenceHandlerIF( tinP ) ;                                                                               \
+            thirdC::thirdImpotenceHandlerIF( tinBaseP ) ;                                                                               \
             TELL( "REST: cleaning up" ) ;                                                                                           \
             etThread = 0 ;                                                                                                          \
-            tinP.pSgnUtility = 0 ;                                                                                                  \
+            ((tinNormalS&)tinBaseP).pSgnUtility = 0 ;                                                                                                  \
             }                                                                                                                       \
                 }                                                                                                                   \
                     pRootI->letRefF() ;                                                                                             \
-                    pRootI->strokeAllPapersF( tinP , T("\f") ) ;                                                                    \
+                    pRootI->strokeAllPapersF( tinBaseP , T("\f") ) ;                                                                    \
                 {                                                                                                                   \
                 if( pRootI )                                                                                                        \
-                windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;                                                                 \
+                windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;                                                                 \
                                                                                                                                     \
                 TELL( "REST: destroying all adam objects that remain on the thread stack" ) ;                                       \
                 }                                                                                                                   \
-                    if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;             \
-                        thirdC::third_idPhaseAdam_IF( tinP ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE ;                      \
-                    if( thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE )                      \
+                    if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;             \
+                        thirdC::third_idPhaseAdam_IF( tinBaseP ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE ;                      \
+                    if( thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE )                      \
                 {                                                                                                                   \
-                if( !( F(tinP.flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
+                if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
                 TELL( "REST: called WAITuNTILaLMOSTaLONE" ) ;                                                                       \
                 WAITuNTILaLMOSTaLONE( 0 )                                                                                           \
                 TELL( "REST: calling WAITuNTILaLMOSTaLONE" ) ;                                                                      \
                 FIREmYSELF ;                                                                                                        \
                 TELL( "REST: calling FIREmYSELF" ) ;                                                                                \
                 /*LOGrAW( "REST0: calling FIREmYSELF\r\n" ) ;*/                                                                     \
-                if( thirdC::osProcessIdPhaseAdamIF( tinP ) < ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) thirdC::osProcessIdPhaseAdamIF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ; \
+                if( thirdC::osProcessIdPhaseAdamIF( tinBaseP ) < ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) thirdC::osProcessIdPhaseAdamIF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ; \
                 }                                                                                                                   \
-                    tinP.idPhase2 = 0 ;                                                                                             \
-                    if( tinP.idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) tinP.idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                 \
-                        thirdC::third_idPhaseAdam_IF( tinP ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE ;            \
-                    if( thirdC::third_idPhaseAdam_IF( tinP ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE )            \
+                    ((tinNormalS&)tinBaseP).idPhase2 = 0 ;                                                                                             \
+                    if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                 \
+                        thirdC::third_idPhaseAdam_IF( tinBaseP ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE ;            \
+                    if( thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE )            \
                 {                                                                                                                   \
-                if( !( F(tinP.flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
+                if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
                 TELL( "REST: ++" ) ;                                                                                                \
                 /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                  \
                                                                                                                                     \

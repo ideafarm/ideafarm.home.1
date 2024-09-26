@@ -14,10 +14,10 @@
 
             }
                 }
-                    etPrime.osSleepF( tinP , TOCK ) ;
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                    etPrime.osSleepF( tinBaseP , TOCK ) ;
+                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                    etRock.traceF( tinP , T("will retry after napping for a tock") ) ;
+                    etRock.traceF( tinBaseP , T("will retry after napping for a tock") ) ;
 
                     POOPR ;
                 {
@@ -30,38 +30,38 @@
 
                 }
                     __1
-                    etherC::etRockIF( tinP ).traceF( tinP , T("[tSay]: ")+tSay ) ;
-                    etherC::etRockIF( tinP ).traceF( tinP , T("exception: did not expect [tHear]: ")+tHear ) ;
+                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[tSay]: ")+tSay ) ;
+                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("exception: did not expect [tHear]: ")+tHear ) ;
                 {
-                if( !etScratch.strIdF( tinP , tReplyCode201_Created , tHear ) )
+                if( !etScratch.strIdF( tinBaseP , tReplyCode201_Created , tHear ) )
 
                 }
                     break ;
-                    etherC::etRockIF( tinP ).traceF( tinP , T("authorization refused") ) ;
+                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("authorization refused") ) ;
                 {
                 if( POOP )
-                __NZ( 1 == etScratch.strIdF( tinP , tReplyCode401_Unauthorized , tHear ) ) ;
+                __NZ( 1 == etScratch.strIdF( tinBaseP , tReplyCode401_Unauthorized , tHear ) ) ;
             {
             if( !POOP )
 
-            //etRock.traceF( tinP , T(postHear) ) ;
+            //etRock.traceF( tinBaseP , T(postHear) ) ;
             TN( tHear , postHear ) ;
 
-            costHear = ss.readF( tinP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
-            thirdC::c_memsetIF(  tinP , postHear , sizeof postHear ) ;
+            costHear = ss.readF( tinBaseP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+            thirdC::c_memsetIF(  tinBaseP , postHear , sizeof postHear ) ;
 
-            ss.writeF( tinP , pbP , cbP ) ;
-            ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
-            ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , etScratch , tHost ) ) ;
-            socketC ss( tinP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+            ss.writeF( tinBaseP , pbP , cbP ) ;
+            ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+            ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , etScratch , tHost ) ) ;
+            socketC ss( tinBaseP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
             }
-                etScratch.delF( tinP , psttShortUrlEncoded ) ;
+                etScratch.delF( tinBaseP , psttShortUrlEncoded ) ;
                 }
-                    bHandle.ungrabF( tinP ) ;
+                    bHandle.ungrabF( tinBaseP ) ;
                     tSay = T("PUT ")+tUrlCloudAgent+T("/")+T(psttCloudContainerP)+T("/")+T(psttShortUrlEncoded)+T(" HTTP/1.1\r\nHost: ")+tHost+T("\r\nX-Auth-Token: ")+cloudInfo.tRackspaceAccessToken+T("\r\nContent-Length: ")+TF4(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
                     cloudInfoS& cloudInfo = *(cloudInfoS*)hCloud.osF( ifcIDtYPEhANDLE_CLOUD ) ;
-                    bHandle.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
 
                 // 
@@ -74,34 +74,34 @@
                 // 
                 // EXAMPLE
 
-                etScratch.strToUrlF( tinP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
+                etScratch.strToUrlF( tinBaseP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
                 ZE( strokeS* , psttShortUrlEncoded ) ;
             {
-            if( !tSay.csF( tinP ) )
+            if( !tSay.csF( tinBaseP ) )
 
             SCOOPS
         {
         while( cTries -- && !etPrime && !POOP )
         TN( tSay , "" ) ;
         countT cTries = TUCK >> 5 ;
-        etherC& etScratch = *tinP.pEtScratch ;
-        etherC& etPrime   = etherC::etPrimeIF( tinP ) ;
+        etherC& etScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
+        etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
         ZE( boolT , bOk ) ;
         ZE( countT , costHear ) ;
         char postHear[ TOCK ] ; 
     {
     IFsCRATCH
 
-    //etRock.traceF( tinP , T("the PUT utterance has been appended to the log") ) ;
+    //etRock.traceF( tinBaseP , T("the PUT utterance has been appended to the log") ) ;
     //LOGrAW( tSay ) ;
-    etherC& etRock = etherC::etherC::etRockIF( tinP ) ;
+    etherC& etRock = etherC::etherC::etRockIF( tinBaseP ) ;
 
     _IO_
 
     }
         if( POOP ) return ;
         __Z( cbP ) ;
-        if( !cbP ) cbP = thirdC::c_strlenIF( tinP , pbP ) ;    
+        if( !cbP ) cbP = thirdC::c_strlenIF( tinBaseP , pbP ) ;    
         if( POOP ) return ;
         __Z( pbP ) ;
         __Z( psttCloudContainerP ) ;
@@ -111,7 +111,7 @@
 
     SCOOP
 {
-/*1*/voidT cloudC::pushFileF( tinS& tinP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP , const byteT* const pbP , countT cbP )/*1*/
+/*1*/voidT cloudC::pushFileF( tinBaseS& tinBaseP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP , const byteT* const pbP , countT cbP )/*1*/
 
 /**/
 */

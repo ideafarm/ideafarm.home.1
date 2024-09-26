@@ -8,19 +8,19 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.boxPutF( tinP , tLast , (byteT*)&idStepLast , sizeof idStepLast ) ;
+etThread.boxPutF( tinBaseP , tLast , (byteT*)&idStepLast , sizeof idStepLast ) ;
 
-etThread.strokeF( tinP , T("idStepLast now ")+TF1(idStepLast)+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("idStepLast now ")+TF1(idStepLast)+T("\r\n") ) ;
 idStepLast -- ;
-etThread.strokeF( tinP , T("idStepLast was ")+TF1(idStepLast)+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("idStepLast was ")+TF1(idStepLast)+T("\r\n") ) ;
 
 }
-    etThread.delF( tinP , pbi ) ;
-    if( pbi && cbi == sizeof idStepLast ) etThread.memCopyF( tinP , (byteT*)&idStepLast , pbi , sizeof idStepLast ) ;
+    etThread.delF( tinBaseP , pbi ) ;
+    if( pbi && cbi == sizeof idStepLast ) etThread.memCopyF( tinBaseP , (byteT*)&idStepLast , pbi , sizeof idStepLast ) ;
     etThread = 0 ;
-    etThread.boxGetShadowF( tinP , pbi , cbi , tLast , 1 ) ; ___( pbi ) ;
+    etThread.boxGetShadowF( tinBaseP , pbi , cbi , tLast , 1 ) ; ___( pbi ) ;
     ZE( countT , cbi ) ;
     ZE( byteT* , pbi ) ;
 { 

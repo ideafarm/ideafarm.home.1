@@ -11,44 +11,44 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
-        pOdometer->cbWrite += tinP.odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += tinP.odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
-        tinP.pag3->_socketC_.nnLever = nnPeer ;
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
+        pOdometer->cbWrite += ((tinNormalS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tinNormalS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        bRead.ungrabF( tinP ) ;
+        bRead.ungrabF( tinBaseP ) ;
     
         if( idleTimeAllowedRead ) FRESHtIMEaTOMIC( *pEther , timeLathRead.time1 , timeLathRead.time2 )
     
         }
             }
-                pEther->delF( tinP , pbIn2 ) ;
-                pEther->delF( tinP , pbAll ) ;
+                pEther->delF( tinBaseP , pbIn2 ) ;
+                pEther->delF( tinBaseP , pbAll ) ;
                 }
-                    soulP.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbAll , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
-                    if( cbIn2 ) pEther->memCopyF( tinP , pbAll + 3 * sizeof( countT ) , pbIn2 , cbIn2 ) ;
+                    soulP.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbAll , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                    if( cbIn2 ) pEther->memCopyF( tinBaseP , pbAll + 3 * sizeof( countT ) , pbIn2 , cbIn2 ) ;
                     ((countT*)pbAll)[ 2 ] = length   ;
                     ((countT*)pbAll)[ 1 ] = idFormat ;
                     ((countT*)pbAll)[ 0 ] = finger   ;
                 {
                 if( pbAll )
-                pEther->newF( tinP , LF , pbAll , 3 * sizeof( countT ) + length ) ; ___( pbAll ) ;
+                pEther->newF( tinBaseP , LF , pbAll , 3 * sizeof( countT ) + length ) ; ___( pbAll ) ;
                 ZE( byteT* , pbAll ) ;
     
                 }
-                    pEther->delF( tinP , pcCode2 ) ;
+                    pEther->delF( tinBaseP , pcCode2 ) ;
                     }
                         }        
                             __( cbIn2 - length ) ;
-                            dad( tinP , pbIn2 , cbIn2 , pcCode2 , length ) ; ___( pbIn2 ) ;
+                            dad( tinBaseP , pbIn2 , cbIn2 , pcCode2 , length ) ; ___( pbIn2 ) ;
                         {
                         if( !*pEther )
-                        readF( tinP , (byteT*)pcCode2 , sizeof( count01T ) * length , flSOCKETcrEAD_null , time1P , time2P ) ;
+                        readF( tinBaseP , (byteT*)pcCode2 , sizeof( count01T ) * length , flSOCKETcrEAD_null , time1P , time2P ) ;
                     {
                     if( pcCode2 )
-                    pEther->newF( tinP , LF , pcCode2 , length ) ; ___( pcCode2 ) ;
+                    pEther->newF( tinBaseP , LF , pcCode2 , length ) ; ___( pcCode2 ) ;
                     ZE( count01T* , pcCode2 ) ;
                 {
                 if( length )
@@ -57,7 +57,7 @@
     
                 }    
                     }
-                        pEther->delF( tinP , pbIn1 ) ;
+                        pEther->delF( tinBaseP , pbIn1 ) ;
                         }
                             length   = ((countT*)pbIn1)[ 2 ] ;
                             idFormat = ((countT*)pbIn1)[ 1 ] ;
@@ -65,13 +65,13 @@
                         {
                         if( pbIn1 )
                         __( cbIn1 - 3 * sizeof( countT ) ) ;
-                        dad( tinP , pbIn1 , cbIn1 , pcCode1 , 3 * sizeof( countT ) ) ; ___( pbIn1 ) ;
+                        dad( tinBaseP , pbIn1 , cbIn1 , pcCode1 , 3 * sizeof( countT ) ) ; ___( pbIn1 ) ;
                         ZE( countT , cbIn1 ) ;
                         ZE( byteT* , pbIn1 ) ;
                     {
                     if( !*pEther )
             
-                    readF( tinP , (byteT*)( pcCode1 + 1 ) , sizeof pcCode1 - sizeof pcCode1[ 0 ] , flSOCKETcrEAD_null , time1P , time2P ) ;
+                    readF( tinBaseP , (byteT*)( pcCode1 + 1 ) , sizeof pcCode1 - sizeof pcCode1[ 0 ] , flSOCKETcrEAD_null , time1P , time2P ) ;
                     count01T pcCode1[ 3 * sizeof( countT ) ] = { woth } ;
                 {
                 ZE( countT , length   ) ;
@@ -81,35 +81,35 @@
             else
             }
                 }
-                    pEther->delF( tinP , pcCodeE ) ;
+                    pEther->delF( tinBaseP , pcCodeE ) ;
                     }
                         }
-                            pEther->delF( tinP , pbIn1 ) ;
-                            soulP.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbIn1 , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ; //WILL NOT BE DONE IF PEER JUST SENT A PIN REFERENCE
+                            pEther->delF( tinBaseP , pbIn1 ) ;
+                            soulP.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbIn1 , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ; //WILL NOT BE DONE IF PEER JUST SENT A PIN REFERENCE
                             __Z( cbIn1 ) ;
                             __Z( pbIn1 ) ;
-                            dad( tinP , pbIn1 , cbIn1 , pcCodeE , ccCodeE ) ; ___( pbIn1 ) ;
+                            dad( tinBaseP , pbIn1 , cbIn1 , pcCodeE , ccCodeE ) ; ___( pbIn1 ) ;
                             ZE( countT , cbIn1 ) ;
                             ZE( byteT* , pbIn1 ) ;
                         {
                         if( !*pEther )
             
-                        readF( tinP , (byteT*)( pcCodeE + 3 ) , sizeof( count01T ) * pcCodeEp[ 2 ] , flSOCKETcrEAD_null , time1P , time2P ) ;
+                        readF( tinBaseP , (byteT*)( pcCodeE + 3 ) , sizeof( count01T ) * pcCodeEp[ 2 ] , flSOCKETcrEAD_null , time1P , time2P ) ;
                         pcCodeE[ 2 ] = pcCodeEp[ 2 ] ;
                         pcCodeE[ 1 ] = pcCodeEp[ 1 ] ;
                         pcCodeE[ 0 ] = pcCodeEp[ 0 ] ;
                     {
                     if( pcCodeE )
-                    pEther->newF( tinP , LF , pcCodeE , ccCodeE ) ; ___( pcCodeE ) ;
+                    pEther->newF( tinBaseP , LF , pcCodeE , ccCodeE ) ; ___( pcCodeE ) ;
                     countT ccCodeE = 3 + pcCodeEp[ 2 ] ;
                     ZE( count01T* , pcCodeE ) ;
                 {
                 if( pcCodeEp[ 2 ] )
-                readF( tinP , (byteT*)( pcCodeEp + 1 ) , sizeof pcCodeEp - sizeof pcCodeEp[ 0 ] , flSOCKETcrEAD_null , time1P , time2P ) ;
+                readF( tinBaseP , (byteT*)( pcCodeEp + 1 ) , sizeof pcCodeEp - sizeof pcCodeEp[ 0 ] , flSOCKETcrEAD_null , time1P , time2P ) ;
                 count01T pcCodeEp[ 3 ] = { woth } ; //"Ep": "ESCAPE SEQUENCE PREFIX: NULL IDcMD CCaRG"
             {
             if( !woth ) //THIS SOUL'S ENCODING IS AN ESCAPE SEQUENCE
-            readF( tinP , (byteT*)&woth , sizeof woth , flSOCKETcrEAD_null , time1P , time2P ) ;
+            readF( tinBaseP , (byteT*)&woth , sizeof woth , flSOCKETcrEAD_null , time1P , time2P ) ;
             ZE( count01T , woth ) ;
         {
         else if( !*pEther )
@@ -117,14 +117,14 @@
             THREADmODE2rESTORE
 
             }
-                pEther->sockReadF( tinP , soulP , handle , time1P , time2P ) ;
-                //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+                pEther->sockReadF( tinBaseP , soulP , handle , time1P , time2P ) ;
+                //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
             {
             else
             }
-                /*U::pEther->openSslTls_readF( tinP ,  , handle )*/ ;
-                //armSslC armMe( tinP , flagsOpenSslFails ) ;
-                //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+                /*U::pEther->openSslTls_readF( tinBaseP ,  , handle )*/ ;
+                //armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+                //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
             {
             if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
 
@@ -144,39 +144,39 @@
                     }
                         break ;
     
-                        (*pEther)( tinP , psFinger ) ;
+                        (*pEther)( tinBaseP , psFinger ) ;
                         }
                             __( finger - FINGERnEG_SOCKETsECREThANDSHAKE ) ;
                             *psFinger >> finger ;
                             ZE( countT , finger ) ;
-                            readF( tinP , *psFinger ) ;
+                            readF( tinBaseP , *psFinger ) ;
                         {
                         if( psFinger )
-                        (*pEther)( tinP , psFinger , TAG( TAGiDnULL ) ) ;
+                        (*pEther)( tinBaseP , psFinger , TAG( TAGiDnULL ) ) ;
                         ZE( soulC* , psFinger ) ;
     
                         }
                             }
-                                pEther->delF( tinP , pcCode ) ;
+                                pEther->delF( tinBaseP , pcCode ) ;
                                 }
                                     }
                                         __NZ( pbIn1 ) ;
-                                        dad( tinP , pbIn1 , cbIn1 , pcCode , ccCode ) ; ___( pbIn1 ) ;
+                                        dad( tinBaseP , pbIn1 , cbIn1 , pcCode , ccCode ) ; ___( pbIn1 ) ;
                                         ZE( countT , cbIn1 ) ;
                                         ZE( byteT* , pbIn1 ) ;
                                     {
                                     if( !*pEther )
                 
-                                    readF( tinP , (byteT*)pcCode , ccCode * sizeof( count01T ) ) ; //CANNOT USE soulC BECAUSE PIN HAS ALREADY BEEN APPLIED TO PEER AND I DO NOT WANT TO FIDDLE WITH MY flags MEMBER BECAUSE I AM NOT SERIALIZED WRT writeF
+                                    readF( tinBaseP , (byteT*)pcCode , ccCode * sizeof( count01T ) ) ; //CANNOT USE soulC BECAUSE PIN HAS ALREADY BEEN APPLIED TO PEER AND I DO NOT WANT TO FIDDLE WITH MY flags MEMBER BECAUSE I AM NOT SERIALIZED WRT writeF
                                 {
                                 if( pcCode )
-                                pEther->newF( tinP , LF , pcCode , ccCode ) ; ___( pcCode ) ;
+                                pEther->newF( tinBaseP , LF , pcCode , ccCode ) ; ___( pcCode ) ;
                                 ZE( count01T* , pcCode ) ;
                             {
                             else
                             if( !ccCode ) __1
     
-                            readF( tinP , (byteT*)&ccCode , sizeof ccCode ) ;
+                            readF( tinBaseP , (byteT*)&ccCode , sizeof ccCode ) ;
                             ZE( countT , ccCode ) ;
                         {
                     {
@@ -187,52 +187,52 @@
                         }
                             }
                                 }
-                                    //CONoUTrAW( TF1(tinP.monitor.idThread)+T(".- ")+T(tinP.postThreadName)+T("\r\n") ) ;
-                                    pEther->delF( tinP , pbKey ) ;
+                                    //CONoUTrAW( TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(".- ")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\r\n") ) ;
+                                    pEther->delF( tinBaseP , pbKey ) ;
                             
                                     }
-                                        (*pEther)( tinP , psSecret ) ;
-                                        (*pEther)( tinP , psTo ) ;
+                                        (*pEther)( tinBaseP , psSecret ) ;
+                                        (*pEther)( tinBaseP , psTo ) ;
                                         }
                                             }
-                                                pEther->cioPutSecretF( tinP , etherC::etPrimeIF( tinP ) , *psSecret , *psTo , count8S( ifcIDaDAM_3BANG , ifcOLDiDcHANNELfUNCTION_SECREThANDsHAKEkEY ) ) ;
+                                                pEther->cioPutSecretF( tinBaseP , etherC::etPrimeIF( tinBaseP ) , *psSecret , *psTo , count8S( ifcIDaDAM_3BANG , ifcOLDiDcHANNELfUNCTION_SECREThANDsHAKEkEY ) ) ;
                                                 CONoUTrAW( "whispering\r\n" ) ;
                                             {
                                             //if( !incv02AM( cIn ) && idHomeDisk == 2 ) //U::TO FIND A BUG
                                             //static countT cIn ;
         
-                                            //CONoUTrAW( TF1(tinP.monitor.idThread)+T(".")+T(tinP.postThreadName)+T(": whispering\r\n")+T(pczKeyTopSecret)+T("\r\n") ) ; //U::
-                                            psSecret->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_byteTptr , pbKey , cbKey ) ;
+                                            //CONoUTrAW( TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(".")+T(((tinNormalS&)tinBaseP).postThreadName)+T(": whispering\r\n")+T(pczKeyTopSecret)+T("\r\n") ) ; //U::
+                                            psSecret->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbKey , cbKey ) ;
                                             *psSecret << pczKeyTopSecret ;
                                             idptRelayTopSecretPeer >> *psTo ;
                                         {
                                         if( psSecret && psTo )
-                                        (*pEther)( tinP , psTo , TAG( TAGiDnULL ) ) ;
+                                        (*pEther)( tinBaseP , psTo , TAG( TAGiDnULL ) ) ;
                                         ZE( soulC* , psTo ) ;
-                                        (*pEther)( tinP , psSecret , TAG( TAGiDnULL ) ) ;
+                                        (*pEther)( tinBaseP , psSecret , TAG( TAGiDnULL ) ) ;
                                         ZE( soulC* , psSecret ) ;
                                     {
                                     else
                                     if( !pbKey || !cbKey ) __1
                             
                                     if( POOP ) break ;
-                                    pEther->boxGetShadowF( tinP , pbKey , cbKey , tLong , 1 ) ; ___( pbKey ) ;
+                                    pEther->boxGetShadowF( tinBaseP , pbKey , cbKey , tLong , 1 ) ; ___( pbKey ) ;
                                     ZE( countT , cbKey ) ;
                                     ZE( byteT* , pbKey ) ;
                             
                                     TN( tLong , "" ) ; tLong = T("///desk/" POSTfOLDERsECURITYkEYdEPOSITORY)+(idHomeDisk==1?T(""):T(" (Home ")+TF1(idHomeDisk)+T(")"))+T("/")+tShort ;
                                     countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
-                                    textC tShort( tinP , TAG( TAGiDnULL ) , flTEXTc_null , (countT*)pczKeyTopSecret , flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 , 0 , tDot ) ;
+                                    textC tShort( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , (countT*)pczKeyTopSecret , flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 , 0 , tDot ) ;
                                     TN( tDot , "." ) ;
                 
                                     timeLathTopSecretPinSend.time2 = timeN2 ;
                                     timeLathTopSecretPinSend.time1 = timeN1 ;
-                                    //CONoUTrAW( TT(timeD1,timeD2)+T("\r\n")+TF1(tinP.monitor.idThread)+T(".+ ")+T(tinP.postThreadName)+T("\r\n") ) ;
+                                    //CONoUTrAW( TT(timeD1,timeD2)+T("\r\n")+TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(".+ ")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\r\n") ) ;
                                     //CONoUTrAW( "request not ignored 2\r\n" ) ;
                                 {
                                 if( timeD2 || timeD1 > TOCK * 0x40 ) //THIS TEST ELIMINATES REDUNDANT JOB ORDERS TO SECRET SERVICE
             
-                                pEther->osTimeSubtractF( tinP , timeD1 , timeD2 , timeLathTopSecretPinSend.time1 , timeLathTopSecretPinSend.time2 ) ;
+                                pEther->osTimeSubtractF( tinBaseP , timeD1 , timeD2 , timeLathTopSecretPinSend.time1 , timeLathTopSecretPinSend.time2 ) ;
                                 sCountT timeD2 = timeN2 ;
                                 countT timeD1 = timeN1 ;
                                 //CONoUTrAW( "request not ignored 1\r\n" ) ;
@@ -240,7 +240,7 @@
                             if( timeD2 || timeD1 > TOCK * 0x40 ) //U::TICK
                             //THE NEXT LINE SUPPRESSES TOP SECRECY FOR INFANT CONNECTIONS, TO REDUCE THE LOAD ON THE SECRET SERVERS
         
-                            pEther->osTimeSubtractF( tinP , timeD1 , timeD2 , timeWothTopSecretPinRequestReceived.time1 , timeWothTopSecretPinRequestReceived.time2 ) ;
+                            pEther->osTimeSubtractF( tinBaseP , timeD1 , timeD2 , timeWothTopSecretPinRequestReceived.time1 , timeWothTopSecretPinRequestReceived.time2 ) ;
                             sCountT timeD2 = timeN2 ;
                             countT timeD1 = timeN1 ;
                         {
@@ -252,7 +252,7 @@
                         {
                         if( !timeWothTopSecretPinRequestReceived.time1 && !timeWothTopSecretPinRequestReceived.time2 )
     
-                        pEther->osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                        pEther->osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                         ZE( sCountT , timeN2 ) ;
                         ZE( countT , timeN1 ) ;
                     {
@@ -260,14 +260,14 @@
                     }
                         break ;
     
-                        (*pEther)( tinP , pSoul ) ;
+                        (*pEther)( tinBaseP , pSoul ) ;
                         }
                             idptRelayTopSecretPeer << *pSoul ;
                             *pSoul >> pczKeyTopSecretPeer ; ___( pczKeyTopSecretPeer ) ;
-                            readF( tinP , *pSoul ) ;
+                            readF( tinBaseP , *pSoul ) ;
                         {
                         if( pSoul )
-                        (*pEther)( tinP , pSoul , TAG( TAGiDnULL ) ) ;
+                        (*pEther)( tinBaseP , pSoul , TAG( TAGiDnULL ) ) ;
                         ZE( soulC* , pSoul ) ;
                     {
                     case ifcIDcMDsOCKETtOPsECRET_1MYpINnAMEiS :
@@ -278,7 +278,7 @@
                     case ifcIDcMDsOCKETtOPsECRET_PAYLOAD :
                 {
                 switch( idCmd )
-                readF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
+                readF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
         
                 ZE( countT , idCmd ) ;
             {
@@ -287,12 +287,12 @@
         {
         if( F(flags) & flSOCKETc_TOPsECRET )
     
-        bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = tinP.odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = tinP.odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinBaseP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinBaseP).odoSockCbRead  ;
 
-//tinP.pc Utility[ 2 ] = idIn ;
+//((tinNormalS&)tinBaseP).pc Utility[ 2 ] = idIn ;
 countT idIn = 1 + incv02AM( idInLath ) ;
 static countT idInLath ;
 //U:: TO FIND A BUG
@@ -319,7 +319,7 @@ static countT idInLath ;
     {
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/voidT socketC::readF( tinS& tinP , soulC& soulP , const countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT socketC::readF( tinBaseS& tinBaseP , soulC& soulP , const countT time1P , const sCountT time2P )/*1*/
 
 /**/
 */

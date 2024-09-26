@@ -22,7 +22,7 @@
                 }
                     BOSpOOP
                 {
-                if( tinP.bosFail && tinP.brcRaw != ERROR_INVALID_HANDLE && tinP.brcRaw != ERROR_SEM_BUSY )
+                if( ((tinNormalS&)tinBaseP).bosFail && ((tinNormalS&)tinBaseP).brcRaw != ERROR_INVALID_HANDLE && ((tinNormalS&)tinBaseP).brcRaw != ERROR_SEM_BUSY )
                 handleP = 0 ;
                 BOSI( WHATgbo , BOSfAIL , DosCloseMutexSem( (HMTX)handleP.osF( ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) ) )
             {
@@ -42,7 +42,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::dosCloseMutexSemIF( tinS& tinP , handleC& handleP )/*1*/
+/*1*/voidT thirdC::dosCloseMutexSemIF( tinBaseS& tinBaseP , handleC& handleP )/*1*/
 
 /**/
 */

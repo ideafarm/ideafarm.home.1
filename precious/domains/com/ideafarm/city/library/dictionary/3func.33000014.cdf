@@ -9,8 +9,8 @@
 
 }
     }
-        third.dosSetCurrentDirIF( tinP , postP ) ;
-        third.dosCreateDirF( tinP , postP ) ;
+        third.dosSetCurrentDirIF( tinBaseP , postP ) ;
+        third.dosCreateDirF( tinBaseP , postP ) ;
     {
     _IO_
 
@@ -22,9 +22,9 @@
         if( third ) return ;
     {
     IFbEcAREFUL
-    const countT costP = postP ? thirdC::c_strlenIF( tinP , postP ) : 0 ;
+    const countT costP = postP ? thirdC::c_strlenIF( tinBaseP , postP ) : 0 ;
 {
-/*1*/voidT cdF( tinS& tinP , thirdC& third , const osTextT* const postP )/*1*/
+/*1*/voidT cdF( tinBaseS& tinBaseP , thirdC& third , const osTextT* const postP )/*1*/
 /**/
 */
 \<A HREF=\"5.0c00008.1.0.html\"\>definition\</A\>

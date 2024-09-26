@@ -10,11 +10,11 @@
 }
     _OUTsTACKc_
     //O: __NZ( ppValue ) ;
-    sinkPrivateF( tinP , idSlotP , valueP , ppValue , flagsP , pSubtractFP , subtractionParmP ) ;
+    sinkPrivateF( tinBaseP , idSlotP , valueP , ppValue , flagsP , pSubtractFP , subtractionParmP ) ;
     ZE( plateS* , ppValue ) ;
     _INsTACKc_
 {
-/*1*/voidT stackC::sinkF( tinS& tinP , countT& idSlotP , const countT valueP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP )/*1*/
+/*1*/voidT stackC::sinkF( tinBaseS& tinBaseP , countT& idSlotP , const countT valueP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP )/*1*/
 
 /**/
 */
@@ -43,7 +43,7 @@ arguments
  this array of tabs is not set up until i am called for the wo'th time
  i use an array of tabs to jump around, doing a binary search
 for efficiency, i should not be called until after the initial plates have been loaded
-after calling this function, stackC::extractF( tinP ) can be used to remove the item that it references
+after calling this function, stackC::extractF( tinBaseP ) can be used to remove the item that it references
 if a plate is added, this function zees the internal cursor that is used to make operator [] speedy
  flSTACKsINK_QUERY can only be used when all plates were sunk into the stack using sinkF
  impotence does not occur when an item is not found
@@ -51,13 +51,13 @@ if a plate is added, this function zees the internal cursor that is used to make
  instead, idSlotP is set to 0 if the item is not found, or to the position where the item was found
  if flSTACKsINK_QUERY is specified in flagsP, the item is never added to the stack
 this can also be used to query whether the item is on the stack without changing the stack
-  the function must be of type ifc3FT, i.e.: "countT (*ifcFT)( tinS& tinP , countT& , countT& , countT& )"
+  the function must be of type ifc3FT, i.e.: "countT (*ifcFT)( tinBaseS& tinBaseP , countT& , countT& , countT& )"
    }
    return c1P - c2P ;
    etherC& ether = *(etherC*)pEther ;
    if( !pEther ) return ;
 {
-   countT subtractF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+   countT subtractF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
   cast its parameters as in this example (which is the default subtration function)
   pSubtractFP should be a function that returns the "relative density" of two objects
    an item will not sink past another item of the same density

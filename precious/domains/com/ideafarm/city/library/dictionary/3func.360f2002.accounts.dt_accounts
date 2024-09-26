@@ -11,25 +11,25 @@
     }
         if( POOP ) POOPR
 
-        PUSE( tinP , *(byteT**)&psttHelloGreeting ) ;
-        PUSE( tinP , *(byteT**)&psttDirectoryGreeting ) ;
-        PUSE( tinP , *(byteT**)&psttPaypalProtectionEligibility ) ;
-        PUSE( tinP , *(byteT**)&psttPaypalPayerStatus ) ;
-        PUSE( tinP , *(byteT**)&psttPaypalPayerId ) ;
-        PUSE( tinP , *(byteT**)&psttPaypalPayerEmail ) ;
-        PUSE( tinP , *(byteT**)&psttCharset ) ;
-        PUSE( tinP , *(byteT**)&psttZipAt ) ;
-        PUSE( tinP , *(byteT**)&psttResidenceCountry ) ;
-        PUSE( tinP , *(byteT**)&psttLastName ) ;
-        PUSE( tinP , *(byteT**)&psttFirstName ) ;
-        PUSE( tinP , *(byteT**)&psttAddressStatus ) ;
-        PUSE( tinP , *(byteT**)&psttAddressCountry ) ;
-        PUSE( tinP , *(byteT**)&psttAddressZip ) ;
-        PUSE( tinP , *(byteT**)&psttAddressCountryCode ) ;
-        PUSE( tinP , *(byteT**)&psttAddressState ) ;
-        PUSE( tinP , *(byteT**)&psttAddressCity ) ;
-        PUSE( tinP , *(byteT**)&psttAddressStreet ) ;
-        PUSE( tinP , *(byteT**)&psttAddressName ) ;
+        PUSE( tinBaseP , *(byteT**)&psttHelloGreeting ) ;
+        PUSE( tinBaseP , *(byteT**)&psttDirectoryGreeting ) ;
+        PUSE( tinBaseP , *(byteT**)&psttPaypalProtectionEligibility ) ;
+        PUSE( tinBaseP , *(byteT**)&psttPaypalPayerStatus ) ;
+        PUSE( tinBaseP , *(byteT**)&psttPaypalPayerId ) ;
+        PUSE( tinBaseP , *(byteT**)&psttPaypalPayerEmail ) ;
+        PUSE( tinBaseP , *(byteT**)&psttCharset ) ;
+        PUSE( tinBaseP , *(byteT**)&psttZipAt ) ;
+        PUSE( tinBaseP , *(byteT**)&psttResidenceCountry ) ;
+        PUSE( tinBaseP , *(byteT**)&psttLastName ) ;
+        PUSE( tinBaseP , *(byteT**)&psttFirstName ) ;
+        PUSE( tinBaseP , *(byteT**)&psttAddressStatus ) ;
+        PUSE( tinBaseP , *(byteT**)&psttAddressCountry ) ;
+        PUSE( tinBaseP , *(byteT**)&psttAddressZip ) ;
+        PUSE( tinBaseP , *(byteT**)&psttAddressCountryCode ) ;
+        PUSE( tinBaseP , *(byteT**)&psttAddressState ) ;
+        PUSE( tinBaseP , *(byteT**)&psttAddressCity ) ;
+        PUSE( tinBaseP , *(byteT**)&psttAddressStreet ) ;
+        PUSE( tinBaseP , *(byteT**)&psttAddressName ) ;
 
         }
             if( POOP ) { POOPR ; }
@@ -46,10 +46,10 @@
             sIn >> finger ;
             ZE( countT , finger ) ;
                     
-            sock.readF( tinP , sIn ) ;
-            soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+            sock.readF( tinBaseP , sIn ) ;
+            soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
-            sock.writeF( tinP , sOut ) ;
+            sock.writeF( tinBaseP , sOut ) ;
 
             sOut << psttHelloGreeting ;
             sOut << psttDirectoryGreeting ;
@@ -75,10 +75,10 @@
             sOut << (countT)ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETaCCOUNTdESCRIPTION ;
             sOut << (countT)1 ;
             sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-            soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
-            sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-            socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
+            socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
         {
         if( F(flagsThis1) & flACCOUNT1_SET )
 

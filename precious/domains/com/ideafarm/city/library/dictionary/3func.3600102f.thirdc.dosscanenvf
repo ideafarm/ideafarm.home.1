@@ -8,33 +8,33 @@
 
 
 }
-    delF( tinP , postKey ) ;
+    delF( tinBaseP , postKey ) ;
 
     #endif
 
         #endif
 
             }
-                delF( tinP , postv ) ;
+                delF( tinBaseP , postv ) ;
                 if( postValueP ) postValueP[ costv ] = 0 ;
-                c_memcpyIF( tinP , postValueP , postv , costv ) ; // THIS COSTS CPU CYCLES BUT AVOIDS WASTING POOLoLD BYTES
-                newF( tinP , LF , postValueP , costv + 1 ) ; ___( postValueP ) ;
-                countT costv = tinP.brcRaw ;
+                c_memcpyIF( tinBaseP , postValueP , postv , costv ) ; // THIS COSTS CPU CYCLES BUT AVOIDS WASTING POOLoLD BYTES
+                newF( tinBaseP , LF , postValueP , costv + 1 ) ; ___( postValueP ) ;
+                countT costv = ((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , strlen( postv ) )
             {
             if( postv )
 
             }
                 cbTry *= 2 ;
-                delF( tinP , postv ) ;
+                delF( tinBaseP , postv ) ;
 
                 if( *postv ) break ;
 
                 }
                     break ;
-                    delF( tinP , postv ) ;
+                    delF( tinBaseP , postv ) ;
                 {
-                if( tinP.brcRaw <= cbTry || *postv != '%' )
+                if( ((tinNormalS&)tinBaseP).brcRaw <= cbTry || *postv != '%' )
 
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , ExpandEnvironmentStrings( postKey , postv , cbTry ) )
@@ -52,18 +52,18 @@
                             pNote->idType       = ifcIDtYPEdROPnOTE_thirdCdosScanEnvFpostv ;
                         {
                         if( pNote )
-                        dropNoteS* pNote = PUSE.pDropNoteF( tinP , (byteT*)postv ) ;
+                        dropNoteS* pNote = PUSE.pDropNoteF( tinBaseP , (byteT*)postv ) ;
                     #if defined( ENABLEdROPnOTES )
                 {
                 if( postv )
-                PUSE.newF( tinP , LF , postv , cbTry ) ; ___( postv ) ; // DONE THIS WAY SO IMPOTENCE DOES NOT OCCUR IF CANNOT ALLOC
+                PUSE.newF( tinBaseP , LF , postv , cbTry ) ; ___( postv ) ; // DONE THIS WAY SO IMPOTENCE DOES NOT OCCUR IF CANNOT ALLOC
             {
             while( !*this )
             ZE( osTextT* , postv ) ;
             countT cbTry = 0x10 ;
-            //c_struprIF( tinP , postKey ) ; (NOT REQUIRED BY NT; NT IGNORES CASE)
+            //c_struprIF( tinBaseP , postKey ) ; (NOT REQUIRED BY NT; NT IGNORES CASE)
             }
-                c_strncpyIF( tinP , postKey , ostot , costaKey ) ;
+                c_strncpyIF( tinBaseP , postKey , ostot , costaKey ) ;
                 OStEXTAK( ostot  , "%" ) ;
                 OStEXTA(  ostot  , postKeyP ) ;
                 OStEXTAK( ostot  , "%" ) ;
@@ -72,27 +72,27 @@
 
         #else
 
-            delF( tinP , postValue ) ;
+            delF( tinBaseP , postValue ) ;
             }
                 OStEXTA( postValueP  , postValue ) ;
-                newF( tinP , LF , postValueP , tinP.brcRaw + 1 ) ; ___( postValueP ) ;
+                newF( tinBaseP , LF , postValueP , ((tinNormalS&)tinBaseP).brcRaw + 1 ) ; ___( postValueP ) ;
                 BOSdOnOTtEST( WHATgbo , strlen( postValue ) )
             {
             if( !*this && postValue )
             }
-                if( POOP || *postValue == '%' ) delF( tinP , postValue ) ; //U::THIS CHECK TO SEE WHETHER THE BUFFER IS MODIFIED MIGHT NOT BE NEEDED NOW THAT THE CODE HAS BEEN CORRECTED TO COMPARE THE RETURN VALUE WITH THE BUFFER SIZE
+                if( POOP || *postValue == '%' ) delF( tinBaseP , postValue ) ; //U::THIS CHECK TO SEE WHETHER THE BUFFER IS MODIFIED MIGHT NOT BE NEEDED NOW THAT THE CODE HAS BEEN CORRECTED TO COMPARE THE RETURN VALUE WITH THE BUFFER SIZE
 
-                __( tinP.brcRaw > CBbATCH ) ;
+                __( ((tinNormalS&)tinBaseP).brcRaw > CBbATCH ) ;
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , ExpandEnvironmentStrings( postKey , postValue , CBcATCH ) )
 
-                //c_struprIF( tinP , postKey ) ; (NOT REQUIRED BY NT; NT IGNORES CASE)
+                //c_struprIF( tinBaseP , postKey ) ; (NOT REQUIRED BY NT; NT IGNORES CASE)
                 OStEXTAK( postKey  , "%" ) ;
                 OStEXTA( postKey  , postKeyP ) ;
                 OStEXTAK( postKey  , "%" ) ;
             {
             if( !*this && postValue )
-            newF( tinP , LF , postValue , CBcATCH ) ; ___( postValue ) ;
+            newF( tinBaseP , LF , postValue , CBcATCH ) ; ___( postValue ) ;
             ZE( osTextT* , postValue ) ;
 
         #if defined( NEVERdEFINED )
@@ -102,24 +102,24 @@
 
         }
             OStEXTA( postValueP  , postValue ) ;
-            newF( tinP , LF , postValueP , tinP.brcRaw + 1 ) ; ___( postValueP ) ;
+            newF( tinBaseP , LF , postValueP , ((tinNormalS&)tinBaseP).brcRaw + 1 ) ; ___( postValueP ) ;
             BOSdOnOTtEST( WHATgbo , strlen( postValue ) )
         {
         if( !*this && postValue )
         }
-            if( tinP.brcRaw ) __NZ( postValue ) ;
-            __( tinP.brcRaw && tinP.brcRaw != ERROR_ENVVAR_NOT_FOUND ) ; 
+            if( ((tinNormalS&)tinBaseP).brcRaw ) __NZ( postValue ) ;
+            __( ((tinNormalS&)tinBaseP).brcRaw && ((tinNormalS&)tinBaseP).brcRaw != ERROR_ENVVAR_NOT_FOUND ) ; 
             BOSdOnOTtEST( WHATgbo , DosScanEnv( postKey , (const osTextT**)&postValue ) ) //U: VERIFY THAT THIS SETS postValue TO A VALUE THAT WE SHOULD -NOT- DELETE                
         {
         if( !POOP )
-        c_struprIF( tinP , postKey ) ;
+        c_struprIF( tinBaseP , postKey ) ;
         OStEXTA( postKey  , postKeyP ) ;
         ZE( osTextT* , postValue ) ;
 
     #ifdef __OS2__
 
-    newF( tinP , LF , postKey , costaKey ) ; ___( postKey ) ; // +1 NEEDED FOR OS/2; +3 NEEDED FOR NT
-    const countT costaKey = tinP.brcRaw + 3 ;
+    newF( tinBaseP , LF , postKey , costaKey ) ; ___( postKey ) ; // +1 NEEDED FOR OS/2; +3 NEEDED FOR NT
+    const countT costaKey = ((tinNormalS&)tinBaseP).brcRaw + 3 ;
     BOSdOnOTtEST( WHATgbo , strlen( postKeyP ) )
     ZE( osTextT* , postKey ) ;
     _IO_
@@ -133,7 +133,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::dosScanEnvF( tinS& tinP , osTextT*& postValueP , const osTextT* const postKeyP )/*1*/
+/*1*/voidT thirdC::dosScanEnvF( tinBaseS& tinBaseP , osTextT*& postValueP , const osTextT* const postKeyP )/*1*/
 
 //U: REWRITE THE NT CODE TO USE GetEnvironmentVariable (SEE THE 102* CODE THAT CALLS GetCurrentDirectory WHICH IS VERY SIMILAR)
 

@@ -8,24 +8,24 @@
 
 
 }
-    delF( tinP , psttOld ) ;
-    delF( tinP , psttDelimiter ) ;
+    delF( tinBaseP , psttOld ) ;
+    delF( tinBaseP , psttDelimiter ) ;
 
     }
-        if( idd ) { strFuseF( tinP , psttP , psttDelimiter ) ; ___( psttP ) ; }
+        if( idd ) { strFuseF( tinBaseP , psttP , psttDelimiter ) ; ___( psttP ) ; }
 
-        delF( tinP , psttw ) ;
-        strFuseF( tinP , psttP , psttw ) ; ___( psttP ) ;
+        delF( tinBaseP , psttw ) ;
+        strFuseF( tinBaseP , psttP , psttw ) ; ___( psttP ) ;
 
-        strSubstringF( tinP , psttw , idf , sttq , psttDelimiter , psttOld , 0 ) ; ___( psttw ) ;
-        { countT idf1 = idf ; strokeS sttq1 = sttq ; idd = strIdF( tinP , 0 , flSTRmATCH_null , idf1 , sttq1 , psttDelimiter , psttOld ) ; }
+        strSubstringF( tinBaseP , psttw , idf , sttq , psttDelimiter , psttOld , 0 ) ; ___( psttw ) ;
+        { countT idf1 = idf ; strokeS sttq1 = sttq ; idd = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf1 , sttq1 , psttDelimiter , psttOld ) ; }
         ZE( countT , idd ) ;
 
         }
-            delF( tinP , psttw ) ;
-            strFuseF( tinP , psttP , psttw ) ; ___( psttP ) ;
-            strResizeF( tinP , psttw , csttP , stti , 0 ) ; ___( psttw ) ;
-            strMakeF( tinP , LF , psttw , T("") , csttP ) ;
+            delF( tinBaseP , psttw ) ;
+            strFuseF( tinBaseP , psttP , psttw ) ; ___( psttP ) ;
+            strResizeF( tinBaseP , psttw , csttP , stti , 0 ) ; ___( psttw ) ;
+            strMakeF( tinBaseP , LF , psttw , T("") , csttP ) ;
         {
         if( idf != 1 )
 
@@ -35,10 +35,10 @@
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
 
-    strFuseF( tinP , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ psttOld->idAdam + cLines * csttP ) ; // CALLER MUST TAG
+    strFuseF( tinBaseP , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ psttOld->idAdam + cLines * csttP ) ; // CALLER MUST TAG
 
     }
-        while( idf1 && strIdF( tinP , 0 , flSTRmATCH_null , idf1 , sttq1 , psttDelimiter , psttOld ) ) cLines ++ ;
+        while( idf1 && strIdF( tinBaseP , 0 , flSTRmATCH_null , idf1 , sttq1 , psttDelimiter , psttOld ) ) cLines ++ ;
         strokeS sttq1( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf1 = 1 ;
     {
@@ -51,11 +51,11 @@
         psttOld = psttP ;
     {
     else
-    if( psttOldP ) { strFuseF( tinP , psttOld , psttOldP ) ; ___( psttOld ) ; }
+    if( psttOldP ) { strFuseF( tinBaseP , psttOld , psttOldP ) ; ___( psttOld ) ; }
     ZE( strokeS* , psttOld ) ;
 
-    else                 { strMakeF( tinP , LF , psttDelimiter , T("\r\n")      ) ; ___( psttDelimiter ) ; }
-    if( psttDelimiterP ) { strMakeF( tinP , LF , psttDelimiter , psttDelimiterP ) ; ___( psttDelimiter ) ; }
+    else                 { strMakeF( tinBaseP , LF , psttDelimiter , T("\r\n")      ) ; ___( psttDelimiter ) ; }
+    if( psttDelimiterP ) { strMakeF( tinBaseP , LF , psttDelimiter , psttDelimiterP ) ; ___( psttDelimiter ) ; }
     ZE( strokeS* , psttDelimiter ) ;
 
     if( (countT)sttP ) stti = sttP ;
@@ -73,7 +73,7 @@
     // THIS FUNCTION DOES NOT INDENT THE FIRST DELIMITED, SINCE IT IS EASY FOR THE CALLER TO DO SO
     SCOOP
 {
-/**//*1*/voidT etherC::strIndentOldF( tinS& tinP , strokeS*& psttP , const countT csttP , const strokeS sttP , const strokeS* const psttOldP , const strokeS* const psttDelimiterP )/*1*/
+/**//*1*/voidT etherC::strIndentOldF( tinBaseS& tinBaseP , strokeS*& psttP , const countT csttP , const strokeS sttP , const strokeS* const psttOldP , const strokeS* const psttDelimiterP )/*1*/
 */
   if 0, then T("\r\n") is used
   line delimiter

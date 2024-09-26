@@ -10,32 +10,32 @@
 DONE( tmHttpCacheF )
 }
     }
-        (*pHttpFreshenCacheCBFP)( tinP , etThread , _bQuitP , meP , meP.sessions , cArgAppP , 1 ) ;
-        etThread.traceF( tinP , T("cleaning up") ) ;
+        (*pHttpFreshenCacheCBFP)( tinBaseP , etThread , _bQuitP , meP , meP.sessions , cArgAppP , 1 ) ;
+        etThread.traceF( tinBaseP , T("cleaning up") ) ;
     {
     if( pHttpFreshenCacheCBFP )
 
     }
         }
             }
-                ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+                ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
                 if( _bQuitP ) break ;
             {
             while( cToDo -- )
             countT cToDo = 0x40 ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
-        //etThread.traceF( tinP , T("napping") ) ;
+        //etThread.traceF( tinBaseP , T("napping") ) ;
 
         }
-            (*pHttpFreshenCacheCBFP)( tinP , etThread , _bQuitP , meP , meP.sessions , cArgAppP , 0 ) ;
-            etThread.traceF( tinP , T("freshening cache") ) ;
+            (*pHttpFreshenCacheCBFP)( tinBaseP , etThread , _bQuitP , meP , meP.sessions , cArgAppP , 0 ) ;
+            etThread.traceF( tinBaseP , T("freshening cache") ) ;
         {
         if( pHttpFreshenCacheCBFP )
     {
     while( !_bQuitP && !etThread )
 
-    etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
+    etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
 
     HTTPsYSpARAMS( cArgSysP )
 

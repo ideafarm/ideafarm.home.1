@@ -14,8 +14,8 @@
     //CONoUTrAW9( "listWalkLintCBF/- [pListingP,flrc,idUpdateBegunP,idUpdateCompletedP]: " , pListingP , " " , flrc , " " , idUpdateBegunP , " " , idUpdateCompletedP , "\r\n" ) ;
     }
         }
-            tinP.tlsDelF( LF , *(byteT**)&pczName ) ;
-            //{ puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczName ) ; }
+            ((tinNormalS&)tinBaseP).tlsDelF( LF , *(byteT**)&pczName ) ;
+            //{ puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinBaseP , *(byteT**)&pczName ) ; }
             }
                 pczValue[ - 2 ] = 0 ; //CS:CODEsYNC: 2200010 2240003
                 CONoUTrAW3( " resetting cRef of " , pczValue[ - 2 ] , " for a countT string datum\r\n" ) ;
@@ -163,7 +163,7 @@
             }
                 if( pDatum->getBitsF() & fliDATUMc_INDEXED ) { BLAMMO ; } //U::REMOVE WHEN CONFIDENT
 
-                pDatum->unIndexF( tinP , flUNiNDEXf_IFiNDEXED ) ;
+                pDatum->unIndexF( tinBaseP , flUNiNDEXf_IFiNDEXED ) ;
 
                 if( pDatum->getBitsF() & fliDATUMc_INDEXED ) { CONoUTrAW( " unindexing a datumC\r\n" ) ; }
 
@@ -178,7 +178,7 @@
             {
             if( pListingP->idTypeDatumF() )
 
-            pListingP->nameF( tinP , pczName ) ; // ___( pczName ) ;
+            pListingP->nameF( tinBaseP , pczName ) ; // ___( pczName ) ;
             ZE( countT* , pczName ) ;
         {
         else
@@ -187,23 +187,23 @@
             __1
             CONoUTrAW( "EXCEPTION: An apartment was encountered that does not contain a valid listingC object.  quitting\r\n" ) ;
         {
-        if( !listingC::bIsListingIF( tinP , aptC( tinP , pListingP ) ) )
+        if( !listingC::bIsListingIF( tinBaseP , aptC( tinBaseP , pListingP ) ) )
     {
     if( pListingP )
     //CONoUTrAW9( "listWalkLintCBF/+ [pListingP,flrc,idUpdateBegunP,idUpdateCompletedP]: " , pListingP , " " , flrc , " " , idUpdateBegunP , " " , idUpdateCompletedP , "\r\n" ) ;
     flagsT flrc = flLISTwALKcALLbACKrETURNcODE_null ;
 
-    countT& idUpdateCompletedP = tinP.ta.retained.u.listWalk.util.pcP[ 1 ] ; // LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESScOMPLETED
-    countT& idUpdateBegunP     = tinP.ta.retained.u.listWalk.util.pcP[ 0 ] ; // LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESSbEGUN
+    countT& idUpdateCompletedP = ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 1 ] ; // LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESScOMPLETED
+    countT& idUpdateBegunP     = ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 0 ] ; // LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESSbEGUN
     //CS:CODEsYNC: 330e6010 320000b4
 
-    listingC* pListingP = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    listingC* pListingP = ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
-/*1*/flagsT listWalkLintCBF( tinS& tinP )/*1*/
+/*1*/flagsT listWalkLintCBF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

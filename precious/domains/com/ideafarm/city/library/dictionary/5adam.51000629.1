@@ -9,23 +9,23 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 CONoUTrAW5( "Files and dirs counted, all and per tock [cAll,cPer]: " , cAll , " " , cPer , "\r\n" ) ;
 
 countT cPer = (measureT)cAll * (measureT)TOCK / (measureT)timeE1 ;
 countT cAll = cDirs + cFiles ;
 
-etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeB1 , timeB2 ) ;
-etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeB1 , timeB2 ) ;
+etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
 ZE( sCountT , timeE2 ) ;
 ZE( countT , timeE1 ) ;
 
-((thirdC&)etThread).diskWalkCopyF( tinP , cDirs , cFiles , ether , "\\tmp\\test.copy\\" , "\\tmp\\test\\" , myCBF ) ;
+((thirdC&)etThread).diskWalkCopyF( tinBaseP , cDirs , cFiles , ether , "\\tmp\\test.copy\\" , "\\tmp\\test\\" , myCBF ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
 
-etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
+etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
 ZE( sCountT , timeB2 ) ;
 ZE( countT , timeB1 ) ;
 
@@ -46,13 +46,13 @@ TODO
     CONoUTrAW( postNameP ) ;
     CONoUTrAW( bDir ? "directory: " : "     file: " ) ;
     boolT bDir = postNameP[ costName - 1 ] == '\\' ;
-    countT costName = tinP.brcRaw ;
+    countT costName = ((tinNormalS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
     diskWalkCopyInfoS& info = *(diskWalkCopyInfoS*)pcArgP ;
 
-    boolT  bDoIt = !thirdC::c_strstrIF( tinP , postNameP , "do.not.copy.a.file.with.this.in.its.name" ) ;
+    boolT  bDoIt = !thirdC::c_strstrIF( tinBaseP , postNameP , "do.not.copy.a.file.with.this.in.its.name" ) ;
 {
-boolT myCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
+boolT myCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOWtEXT( "example.other.3func.34194.thirdC.diskWalkCopyF" )/*1*/
 /**/

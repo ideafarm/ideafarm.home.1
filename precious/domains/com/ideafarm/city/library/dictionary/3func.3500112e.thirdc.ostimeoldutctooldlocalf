@@ -42,7 +42,7 @@
         tzos.DaylightBias = (LONG)tzs.biasDay ;
         tzos.StandardBias = (LONG)tzs.biasStd ;
         tzos.Bias         = (LONG)tzs.bias ;
-        const timeZoneSpecS& tzs = timeZoneSpecF( tinP , idZoneP ) ;
+        const timeZoneSpecS& tzs = timeZoneSpecF( tinBaseP , idZoneP ) ;
 
         tosU.wYear = (WORD)( yUP + 1 ) ;
         tosU.wMonth = (WORD)( mUP + 1 ) ;
@@ -53,8 +53,8 @@
         tosU.wSecond = (WORD)ssUP ;
         tosU.wMilliseconds = (WORD)msUP ;
 
-        c_memsetIF( tinP , (byteT*)&tosL , sizeof tosL ) ;
-        c_memsetIF( tinP , (byteT*)&tosU , sizeof tosU ) ;
+        c_memsetIF( tinBaseP , (byteT*)&tosL , sizeof tosL ) ;
+        c_memsetIF( tinBaseP , (byteT*)&tosU , sizeof tosU ) ;
     {
     TIME_ZONE_INFORMATION tzos ;
     SYSTEMTIME tosL ;
@@ -64,7 +64,7 @@
 
     }
         if( POOP ) return ;
-        __( idZoneP > cTimeZonesF( tinP ) ) ;
+        __( idZoneP > cTimeZonesF( tinBaseP ) ) ;
         __Z( idZoneP ) ;
         __( dowLP ) ;
         __( yLP ) ;
@@ -79,7 +79,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::osTimeOldUtcToOldLocalF( tinS& tinP , countT& msLP , countT& ssLP , countT& mmLP , countT& hhLP , countT& dLP , countT& mLP , sCountT& yLP , countT& dowLP , const countT msUP , const countT ssUP , const countT mmUP , const countT hhUP , const countT dUP , const countT mUP , const sCountT yUP , const countT dowUP , const countT idZoneP )/*1*/
+/*1*/voidT thirdC::osTimeOldUtcToOldLocalF( tinBaseS& tinBaseP , countT& msLP , countT& ssLP , countT& mmLP , countT& hhLP , countT& dLP , countT& mLP , sCountT& yLP , countT& dowLP , const countT msUP , const countT ssUP , const countT mmUP , const countT hhUP , const countT dUP , const countT mUP , const sCountT yUP , const countT dowUP , const countT idZoneP )/*1*/
 
 /**/
 */

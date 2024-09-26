@@ -10,9 +10,9 @@
 REST
 
 }
-    etThread.delF( tinP , pbi ) ;
+    etThread.delF( tinBaseP , pbi ) ;
 
-    thirdC::logIF( tinP , T("==== END ========================================================================================================================") ) ;
+    thirdC::logIF( tinBaseP , T("==== END ========================================================================================================================") ) ;
     }
         pbc += sizeof( rHeaderS ) + rHeader.cbData ;
 
@@ -20,20 +20,20 @@ REST
             default : { break ; }
             }
                 break ;
-                logLabelsF( tinP , pbData , (byteT*)&header ) ;
+                logLabelsF( tinBaseP , pbData , (byteT*)&header ) ;
                 pbData += sizeof( count01T ) ;
-                thirdC::logIF( tinP , T("mx server rank: ")+TF1(cRank) ) ;
+                thirdC::logIF( tinBaseP , T("mx server rank: ")+TF1(cRank) ) ;
                 countT cRank = *(count01T*)pbData ;
             {
             case 0xf : //MX
             }
                 break ;
-                logLabelsF( tinP , pbData , (byteT*)&header ) ;
+                logLabelsF( tinBaseP , pbData , (byteT*)&header ) ;
             {
             case 0x2 : //NS
             }
                 break ;
-                thirdC::logIF( tinP , T("host address: ")+T(idh) ) ;
+                thirdC::logIF( tinBaseP , T("host address: ")+T(idh) ) ;
                 nicNameC idh( SWAB4( *(countT*)pbData ) ) ;
             {
             case 0x1 : //A
@@ -41,13 +41,13 @@ REST
         switch( rHeader.idType )
         byteT* pbData = pbc + sizeof rHeader ;
 
-        rHeader.logF( tinP ) ;
+        rHeader.logF( tinBaseP ) ;
         rHeader.swabF() ;
         rHeaderS& rHeader = *(rHeaderS*)pbc ;
-        logLabelsF( tinP , pbc , (byteT*)&header ) ;
+        logLabelsF( tinBaseP , pbc , (byteT*)&header ) ;
 
         }
-            thirdC::logIF( tinP , T(postSep) ) ;
+            thirdC::logIF( tinBaseP , T(postSep) ) ;
             else if( cNote && cNote -- ) postSep = "==== NOTE =====================================================================================================================" ;
             else if( cAuth && cAuth -- ) postSep = "==== AUTHORITY ================================================================================================================" ;
                  if( cAnsw && cAnsw -- ) postSep = "==== ANSWER ===================================================================================================================" ;
@@ -63,36 +63,36 @@ REST
     countT cResources = header.cAnswers + header.cAuthorities + header.cNotes ;
     pbc = pbi + sizeof( headerS ) + sizeof( questionS ) ;
 
-    question.logF( tinP ) ;
-    logLabelsF( tinP , pbc , (byteT*)&header ) ;
-    thirdC::logIF( tinP , T("==== QUESTION =================================================================================================================") ) ;
+    question.logF( tinBaseP ) ;
+    logLabelsF( tinBaseP , pbc , (byteT*)&header ) ;
+    thirdC::logIF( tinBaseP , T("==== QUESTION =================================================================================================================") ) ;
     question.swabF() ;
     questionS& question = *(questionS*)pbc ;
     pbc = pbi + sizeof( headerS ) ;
 
-    header.logF( tinP ) ;
-    thirdC::logIF( tinP , T("==== HEADER =================================================================================================================") ) ;
+    header.logF( tinBaseP ) ;
+    thirdC::logIF( tinBaseP , T("==== HEADER =================================================================================================================") ) ;
     header.swabF() ;
 
     headerS& header = *(headerS*)pbi ;
 
     }
-        so.readF( tinP , pbi , cbi , idPort , nicName ) ; ___( pbi ) ;
+        so.readF( tinBaseP , pbi , cbi , idPort , nicName ) ; ___( pbi ) ;
         nicNameC nicName ;
         ZE( countT , idPort ) ;
 
         query.swabF() ;
-        so.writeF( tinP , 0x35 , so.nicNameF( tinP , etThread , T("NS4.BAYAREA.NET") ) , (byteT*)&query , sizeof query ) ;
+        so.writeF( tinBaseP , 0x35 , so.nicNameF( tinBaseP , etThread , T("NS4.BAYAREA.NET") ) , (byteT*)&query , sizeof query ) ;
         query.swabF() ;
-        so.bindF( tinP ) ;
-        socketC so( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        so.bindF( tinBaseP ) ;
+        socketC so( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-        query.logF( tinP ) ;
+        query.logF( tinBaseP ) ;
 
         }
             query.question.pbLabels[ off ] = 0 ;                                                                                                                 off +=   1 ;
-            query.question.pbLabels[ off ] = 3 ; thirdC::c_memcpyIF( tinP , query.question.pbLabels + off + 1 , "com"       , query.question.pbLabels[ off ] ) ; off +=   4 ;
-            query.question.pbLabels[ off ] = 9 ; thirdC::c_memcpyIF( tinP , query.question.pbLabels + off + 1 , "chevrolet" , query.question.pbLabels[ off ] ) ; off += 0xa ;
+            query.question.pbLabels[ off ] = 3 ; thirdC::c_memcpyIF( tinBaseP , query.question.pbLabels + off + 1 , "com"       , query.question.pbLabels[ off ] ) ; off +=   4 ;
+            query.question.pbLabels[ off ] = 9 ; thirdC::c_memcpyIF( tinBaseP , query.question.pbLabels + off + 1 , "chevrolet" , query.question.pbLabels[ off ] ) ; off += 0xa ;
             ZE( countT , off ) ;
         {
 
@@ -112,12 +112,12 @@ TODO
 voidT queryS::swabF( voidT )
 
 }
-    question.logF( tinP ) ;
-    logLabelsF( tinP , pbc , (byteT*)&header ) ;
+    question.logF( tinBaseP ) ;
+    logLabelsF( tinBaseP , pbc , (byteT*)&header ) ;
     byteT* pbc = (byteT*)&header + sizeof( headerS ) ;
-    header.logF( tinP ) ;
+    header.logF( tinBaseP ) ;
 {
-voidT queryS::logF( tinS& tinP )
+voidT queryS::logF( tinBaseS& tinBaseP )
 
 }
     cbData        = SWAB2( cbData        ) ;
@@ -128,9 +128,9 @@ voidT queryS::logF( tinS& tinP )
 voidT rHeaderS::swabF( voidT )
 
 }
-    thirdC::logIF( tinP , T("question: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass) ) ;
+    thirdC::logIF( tinBaseP , T("question: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass) ) ;
 {
-voidT questionS::logF( tinS& tinP )
+voidT questionS::logF( tinBaseS& tinBaseP )
 
 }
     idClass = SWAB2( idClass ) ;
@@ -154,9 +154,9 @@ idType( 0xf ) ,  //MX
 questionS::questionS( voidT ) :
 
 }
-    thirdC::logIF( tinP , T("header: cQuestions: ")+TF1(cQuestions)+T(" cAnswers: ")+TF1(cAnswers)+T(" cAuthorities: ")+TF1(cAuthorities)+T(" cNotes: ")+TF1(cNotes) ) ;
+    thirdC::logIF( tinBaseP , T("header: cQuestions: ")+TF1(cQuestions)+T(" cAnswers: ")+TF1(cAnswers)+T(" cAuthorities: ")+TF1(cAuthorities)+T(" cNotes: ")+TF1(cNotes) ) ;
 {
-voidT headerS::logF( tinS& tinP )
+voidT headerS::logF( tinBaseS& tinBaseP )
 
 }
 {
@@ -178,9 +178,9 @@ headerS::headerS( voidT ) :
 count01T headerS::idQueryLast ;
 
 }
-    thirdC::logIF( tinP , T("rHeader: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass)+T(" secondsToLive: ")+TF1(secondsToLive)+T(" cbData: ")+TF1(cbData) ) ;
+    thirdC::logIF( tinBaseP , T("rHeader: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass)+T(" secondsToLive: ")+TF1(secondsToLive)+T(" cbData: ")+TF1(cbData) ) ;
 {
-voidT rHeaderS::logF( tinS& tinP )
+voidT rHeaderS::logF( tinBaseS& tinBaseP )
 
 }
 {
@@ -191,7 +191,7 @@ idType( 0 ) ,
 rHeaderS::rHeaderS( voidT ) :
 
 }
-    if( osto.costF() ) thirdC::logIF( tinP , T("label portion: \"")+T(osto001)+T("\"") ) ;
+    if( osto.costF() ) thirdC::logIF( tinBaseP , T("label portion: \"")+T(osto001)+T("\"") ) ;
 
     }
         }
@@ -208,20 +208,20 @@ rHeaderS::rHeaderS( voidT ) :
             countT   cbLabel = *pbP ; pbP += 1 ;
         {
         else
-        else if( *pbP & 0xc0 ) thirdC::logIF( tinP , T("error: label is too long") ) ;
+        else if( *pbP & 0xc0 ) thirdC::logIF( tinBaseP , T("error: label is too long") ) ;
         }
             break ;
             pbP += 2 ;
-            logLabelsF( tinP , pbr , pbOriginP ) ;
+            logLabelsF( tinBaseP , pbr , pbOriginP ) ;
             byteT* pbr = pbOriginP + ( SWAB2( *(count01T*)pbP ) & ~0xc000 ) ;
-            if( osto.costF() ) thirdC::logIF( tinP , T("label portion before compressed portion: \"")+T(osto001)+T("\"") ) ;
+            if( osto.costF() ) thirdC::logIF( tinBaseP , T("label portion before compressed portion: \"")+T(osto001)+T("\"") ) ;
         {
         if( ( *pbP & 0xc0 ) == 0xc0 )
     {
     for(;;) // ASSUME: *pbP IS INITIALLY NOT 0. CODE STRUCTURE REFLECTS NONCOMPRESSED, NULL TERMINATED FORMAT. COMPRESSION CODE ASSUMED TO ONLY OCCUR AT END (PER RFC SPEC)
     OStEXT( osto001 , 0x100 )
 {
-voidT logLabelsF( tinS& tinP , byteT*& pbP , byteT* const pbOriginP )
+voidT logLabelsF( tinBaseS& tinBaseP , byteT*& pbP , byteT* const pbOriginP )
 */
   must point to the beginning of the header record for the message being parsed
  pbOriginP
@@ -234,7 +234,7 @@ arguments
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinS& tinP ) ;
+    voidT logF( tinBaseS& tinBaseP ) ;
     questionS question ;
     headerS   header ;
 {
@@ -243,7 +243,7 @@ struct queryS
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinS& tinP ) ;
+    voidT logF( tinBaseS& tinBaseP ) ;
     rHeaderS( voidT ) ;
 
     count01T cbData ;
@@ -256,7 +256,7 @@ struct rHeaderS //THIS IS THE PART OF THE "RESOURCE RECORD" THAT FOLLOWS THE LAB
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinS& tinP ) ;
+    voidT logF( tinBaseS& tinBaseP ) ;
     questionS( voidT ) ;
 
     count01T           idClass             ;
@@ -268,7 +268,7 @@ struct questionS
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinS& tinP ) ;
+    voidT logF( tinBaseS& tinBaseP ) ;
     headerS( voidT ) ;
 
     count01T           cNotes              ;

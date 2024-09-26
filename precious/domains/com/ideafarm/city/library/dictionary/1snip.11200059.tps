@@ -7,7 +7,7 @@
 //
 
 
-#define TPS(valueP,csP,sttP) textC( tinP , TAG( TAGiDnULL ) , flTEXTc_null , (valueP) , csP , sttP )
+#define TPS(valueP,csP,sttP) textC( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , (valueP) , csP , sttP )
 /*1*//*TPS(valueP,csP,sttP)*//*1*/
 /**/
 */

@@ -8,27 +8,27 @@
 
 
 }
-    //etherP.traceF( tinP , T("loadIF / -") ) ;
+    //etherP.traceF( tinBaseP , T("loadIF / -") ) ;
     __( bFail ) ;
-    etherP.delF( tinP , psttRootBranch ) ;
+    etherP.delF( tinBaseP , psttRootBranch ) ;
     }
         }
             DELzOMBIE( pSw_jbr ) ;
             }
-                //etherP.traceF( tinP , T("stuffed pSoulLinkP") ) ;
+                //etherP.traceF( tinBaseP , T("stuffed pSoulLinkP") ) ;
                 }
                     }
-                        etherP.delF( tinP , psttText ) ;
+                        etherP.delF( tinBaseP , psttText ) ;
                         *pSoulLinkP << psttText ;
-                        //etherP.traceF( tinP , T("loadIF: export: stuffing *pSoulLinkP [idf,idType,hashv,hashId,pstText]: ")+T("    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(hashv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(hashId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttText) ) ; //U;; TO FIND A BUG
+                        //etherP.traceF( tinBaseP , T("loadIF: export: stuffing *pSoulLinkP [idf,idType,hashv,hashId,pstText]: ")+T("    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(hashv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(hashId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttText) ) ; //U;; TO FIND A BUG
                         }
-                            etherP.strDecodeF( tinP , psttText , pbzEncoded ) ; ___( psttText ) ;
+                            etherP.strDecodeF( tinBaseP , psttText , pbzEncoded ) ; ___( psttText ) ;
                             __Z( pbzEncoded ) ;
                             const byteT* pbzEncoded = idType == ifcIDtYPEbRANCHs_strokeSstr ? (const byteT*)pageEncoded : 0 ;
                             PSP( pageEncoded , jbrText ) ;
                         {
                         else
-                        if( !idf ) { etherP.strMakeF( tinP , LF , psttText , psttRootBranch ) ; ___( psttText ) ; }
+                        if( !idf ) { etherP.strMakeF( tinBaseP , LF , psttText , psttRootBranch ) ; ___( psttText ) ; }
                         ZE( strokeS* , psttText ) ;
 
                         *pSoulLinkP << ( !idf ? 0 : hashId ) ;
@@ -50,14 +50,14 @@
                     if( idf ) { __Z( jbrc ) ; }
                     countT jbrc = !idf ? 0 : *pSw_jbr ;
                     *pSoulLinkP << psttzLabelShort ;
-                    //etherP.traceF( tinP , T("loadIF: stuffing *pSoulLinkP [idf,psttzLabelShort]: ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttzLabelShort) ) ; //U;; TO FIND A BUG
-                    psttzLabelShort = !idf ? (strokeS*)tHeyMyRoot : (strokeS*)pSw_jbr->leverF( tinP , idf ) ;
+                    //etherP.traceF( tinBaseP , T("loadIF: stuffing *pSoulLinkP [idf,psttzLabelShort]: ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttzLabelShort) ) ; //U;; TO FIND A BUG
+                    psttzLabelShort = !idf ? (strokeS*)tHeyMyRoot : (strokeS*)pSw_jbr->leverF( tinBaseP , idf ) ;
                 {
                 for( countT idf = 0 ; idf <= cFlavors ; idf ++ ) //FLAVOR 0 IS FOR AN IMPLICIT LABEL FOR THE ROOT BRANCH
                 TN( tHeyMyRoot , "!myRoot" ) ;
-                //etherP.traceF( tinP , T("loadIF: stuffing *pSoulLinkP [pSw_jbr->cFlavors]: ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U;; TO FIND A BUG
+                //etherP.traceF( tinBaseP , T("loadIF: stuffing *pSoulLinkP [pSw_jbr->cFlavors]: ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U;; TO FIND A BUG
                 *pSoulLinkP << ( !!psttRootBranch + cFlavors ) ;
-                countT cFlavors = pSw_jbr->cFlavorsF( tinP ) ; //U:: 20160429@1510: pSw_jbr NULL DURING QUIT
+                countT cFlavors = pSw_jbr->cFlavorsF( tinBaseP ) ; //U:: 20160429@1510: pSw_jbr NULL DURING QUIT
                 TN( tb , " " ) ;
 
                 }
@@ -67,25 +67,25 @@
                     ZE( countT , finger ) ;
                     *pSoulLinkP << (osTextT*)T(" >> IdeaFarm (tm) - (c) Wo'O Ideafarm - ideafarm.com << ") ;
                 {
-                //etherP.traceF( tinP , T("stuffing pSoulLinkP") ) ;
+                //etherP.traceF( tinBaseP , T("stuffing pSoulLinkP") ) ;
             {                                         //EXPORT [psttLabelShort,hashv,hashId] TO A FILE SO THAT OTHER KT CAN REFERENCE THE LABELS IN THE INSTANT KT
             if( !POOP && pSoulLinkP && pSw_jbr ) // pSw_jbr NULL TEST ADDED 20160429@1518 WITHOUT ANALYSIS
 
             }
-                //etherP.traceF( tinP , tTraceWhat+T("-") ) ;
+                //etherP.traceF( tinBaseP , tTraceWhat+T("-") ) ;
                 DELzOMBIE( pSwHashId ) ;
-                //etherP.traceF( tinP , T("deleting pSwHashId") ) ;
+                //etherP.traceF( tinBaseP , T("deleting pSwHashId") ) ;
 
                 }
-                    //etherP.traceF( tinP , T("deleted pBarryUtility") ) ;
-                    DELzOMBIE( tinP.pBarryUtility ) // USED TO DELETE HERE BUT REMOVED TO SUPPORT bRepeat
-                    //etherP.traceF( tinP , T("deleting pBarryUtility") ) ;
+                    //etherP.traceF( tinBaseP , T("deleted pBarryUtility") ) ;
+                    DELzOMBIE( ((tinNormalS&)tinBaseP).pBarryUtility ) // USED TO DELETE HERE BUT REMOVED TO SUPPORT bRepeat
+                    //etherP.traceF( tinBaseP , T("deleting pBarryUtility") ) ;
                 {
                 if( bDeleteBarryAsZombie )
 
-                //etherP.traceF( tinP , tTraceWhat+T("- / after loop") ) ;
+                //etherP.traceF( tinBaseP , tTraceWhat+T("- / after loop") ) ;
                 }
-                    if( POOP ) etherP.traceF( tinP , T("poop at loop - [idBranch]: ")+TF3(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+                    if( POOP ) etherP.traceF( tinBaseP , T("poop at loop - [idBranch]: ")+TF3(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
             
                     }
                         else jbrc = 0 ;
@@ -127,7 +127,7 @@
 
                         }
                             }
-                                //if( !B(brc).hashv || ( offPass && !B(brc).hashId ) ) etherP.traceF( tinP , T("branch [idBranch,hashv,hashId]: ")+TP("",stq_jbrDad)+TF3(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T("    ")+TF3(B(brc).hashv,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T("    ")+TF3(B(brc).hashId,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+                                //if( !B(brc).hashv || ( offPass && !B(brc).hashId ) ) etherP.traceF( tinBaseP , T("branch [idBranch,hashv,hashId]: ")+TP("",stq_jbrDad)+TF3(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T("    ")+TF3(B(brc).hashv,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+T("    ")+TF3(B(brc).hashId,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
                             {
                             if( B(brc).idType == ifcIDtYPEbRANCHs_strokeSstr )
                             BSP( brc , jbrc ) ;
@@ -137,28 +137,28 @@
             
                         }
                             }
-                                etherP.delF( tinP , psttLabelWordElement ) ;
-                                etherP.delF( tinP , psttLabelWordLever ) ;
-                                etherP.delF( tinP , psttLabelWordBox ) ;
-                                etherP.delF( tinP , psttLabelLong ) ;
-                                etherP.delF( tinP , psttLabelWordLever ) ;
+                                etherP.delF( tinBaseP , psttLabelWordElement ) ;
+                                etherP.delF( tinBaseP , psttLabelWordLever ) ;
+                                etherP.delF( tinBaseP , psttLabelWordBox ) ;
+                                etherP.delF( tinBaseP , psttLabelLong ) ;
+                                etherP.delF( tinBaseP , psttLabelWordLever ) ;
                                 }
                                     }
-                                        etherP.delF( tinP , psttTextGot ) ;
-                                        etherP.delF( tinP , psttFileTinyGot ) ;
+                                        etherP.delF( tinBaseP , psttTextGot ) ;
+                                        etherP.delF( tinBaseP , psttFileTinyGot ) ;
 
                                         }
                                             B(brc).value  = (countT)pbEncoded ;
                                             B(brc).idType = ifcIDtYPEbRANCHs_strokeSstr ;
                                             BSP( brc , jbrc ) ;
 
-                                            if( POOP ) etherP.delF( tinP , pbEncoded ) ;
+                                            if( POOP ) etherP.delF( tinBaseP , pbEncoded ) ;
 
-                                            etherP.strEncodeF( tinP , pbEncoded , tTextNew ) ; ___( pbEncoded ) ;
+                                            etherP.strEncodeF( tinBaseP , pbEncoded , tTextNew ) ; ___( pbEncoded ) ;
                                             ZEJ( byteT* , pbEncoded , jotP ) ;
                                         {
 
-                                        //etherP.traceF( tinP , T("new text:   \"")+tTextNew+T("\"") ) ;
+                                        //etherP.traceF( tinBaseP , T("new text:   \"")+tTextNew+T("\"") ) ;
 
                                         ;
                                             : T("<a href=\"http://")+tUri+(!psttLabelWordElement?tn:T("#")+T(psttLabelWordElement))+T("\"><span style=\"color:#c80\" onmouseout=\"sayMessageF( 0 , 16000 )\" onmouseover=\"sayMessageF( 'Click to jump from this IdeaFarm (tm) Knowledge Tree to the one at ")+tHost+T("!' , 0 )\">")+sttMark01+sttMarkf2+tDisplay+sttMark01+T("</span></a>")
@@ -169,14 +169,14 @@
                                         ;
                                             : T(psttTextGot)
                                             ? tNoteFromCloud
-                                        TN( tDisplay , "" ) ; tDisplay = tNoteFromCloud.csF( tinP )
+                                        TN( tDisplay , "" ) ; tDisplay = tNoteFromCloud.csF( tinBaseP )
 
                                         //
                                         // EXAMPLE: <a href="http://test.mydomain.com/pages/index.z.black.a1587c89.10000000.html#here"><span style="color:#c80" onmouseout="sayMessageF( 0 , 16000 )" onmouseover="sayMessageF( 'Click to jump from this IdeaFarm (tm) Knowledge Tree to another one!' , 0 )">20100815: 22222222222222222222222</span></a>
                                         //
                                         // BUILD THE REPLACEMENT BRANCH TEXT (HTML HYPERTEXT LINK)
 
-                                        //etherP.traceF( tinP , T("uri" ":   \"")+tUri+T("\"") ) ;
+                                        //etherP.traceF( tinBaseP , T("uri" ":   \"")+tUri+T("\"") ) ;
                                         }
                                             ;
                                                 : T(".z.black.")+TF3(hashvGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+sttDot+TF3(hashIdGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".html") ;
@@ -185,7 +185,7 @@
                                             strokeS sttDot( '.' ) ;
 
                                             }
-                                                etherP.delF( tinP , psttw ) ;
+                                                etherP.delF( tinBaseP , psttw ) ;
 
                                                 }
                                                     default : {         tUri += !idf ? T(bRoot?"/":"/pages/")+T(psttw) : tSlash+T(psttw) ; break ; }
@@ -195,7 +195,7 @@
                                                 {
                                                 switch( ++ idWord )
 
-                                                etherP.strSubstringF( tinP , psttw , idf , sttq , sttSlash , psttLabelWordBox ) ; ___( psttw ) ;
+                                                etherP.strSubstringF( tinBaseP , psttw , idf , sttq , sttSlash , psttLabelWordBox ) ; ___( psttw ) ;
                                                 ZE( strokeS* , psttw ) ;
                                             {
                                             while( idf )
@@ -210,15 +210,15 @@
                                         // BUILD THE URI
 
                                         }
-                                            //etherP.traceF( tinP , T("got trimmed [text]:   \"")+T(psttTextGot)+T("\"") ) ;
+                                            //etherP.traceF( tinBaseP , T("got trimmed [text]:   \"")+T(psttTextGot)+T("\"") ) ;
                                             }
-                                                etherP.delF( tinP , psttd ) ;
-                                                etherP.strSubstringF( tinP , psttTextGot , idf , sttq , sttMark01 , psttd ) ; ___( psttTextGot ) ;
+                                                etherP.delF( tinBaseP , psttd ) ;
+                                                etherP.strSubstringF( tinBaseP , psttTextGot , idf , sttq , sttMark01 , psttd ) ; ___( psttTextGot ) ;
 
                                                                  psttTextGot = 0 ;
                                                 strokeS* psttd = psttTextGot ;
                                             {
-                                            if( etherP.strIdF( tinP , idf , sttq , sttMark01 , psttTextGot , idl , 1 ) )
+                                            if( etherP.strIdF( tinBaseP , idf , sttq , sttMark01 , psttTextGot , idl , 1 ) )
                                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                             ZE( countT , idl ) ;
                                             countT idf = 1 ;
@@ -226,17 +226,17 @@
                                         if( psttTextGot )
                                         // TRIM THE TEXT
 
-                                        //etherP.traceF( tinP , T("got   [note]: \"")+tNoteFromCloud+T("\"") ) ;
-                                        //etherP.traceF( tinP , T("got   [text]: \"")+T(psttTextGot)+T("\"") ) ;
-                                        //etherP.traceF( tinP , T("got [hashId]: ")+TF2(hashIdGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        //etherP.traceF( tinP , T("got  [hashv]: ")+TF2(hashvGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        //etherP.traceF( tinP , T("got   [tiny]: \"")+T(psttFileTinyGot)+T("\"") ) ;
+                                        //etherP.traceF( tinBaseP , T("got   [note]: \"")+tNoteFromCloud+T("\"") ) ;
+                                        //etherP.traceF( tinBaseP , T("got   [text]: \"")+T(psttTextGot)+T("\"") ) ;
+                                        //etherP.traceF( tinBaseP , T("got [hashId]: ")+TF2(hashIdGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //etherP.traceF( tinBaseP , T("got  [hashv]: ")+TF2(hashvGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //etherP.traceF( tinBaseP , T("got   [tiny]: \"")+T(psttFileTinyGot)+T("\"") ) ;
                                     {
                                     if( !POOP )
 
                                     }
                                         __1
-                                        etherP.traceF( tinP , T("!exception: loadIF: error: could not find far label [box,label]:    ")+T(psttLabelWordBox)+T("    ")+T(psttLabelWordLever) ) ;
+                                        etherP.traceF( tinBaseP , T("!exception: loadIF: error: could not find far label [box,label]:    ")+T(psttLabelWordBox)+T("    ")+T(psttLabelWordLever) ) ;
                                     {
                                     if( !bGotIt )
 
@@ -244,7 +244,7 @@
                                         }
                                             }
                                                 }
-                                                    etherP.delF( tinP , psttText ) ;
+                                                    etherP.delF( tinBaseP , psttText ) ;
 
                                                     }
                                                         bGotIt = 1 ;
@@ -255,43 +255,43 @@
                                                     {
                                                     if( bFound )
 
-                                                    //etherP.traceF( tinP , T("inner [text]:   \"")+T(psttText)+T("\"") ) ;
+                                                    //etherP.traceF( tinBaseP , T("inner [text]:   \"")+T(psttText)+T("\"") ) ;
                                                     soulLinkInner >> psttText ; ___( psttText ) ;
                                                     ZE( strokeS* , psttText ) ;
 
-                                                    //etherP.traceF( tinP , T("inner [hashId]:   ")+TF2(hashId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etherP.traceF( tinBaseP , T("inner [hashId]:   ")+TF2(hashId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     soulLinkInner >> hashId ;
                                                     ZE( countT , hashId ) ;
 
-                                                    //etherP.traceF( tinP , T("inner [hashv]:   ")+TF2(hashv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etherP.traceF( tinBaseP , T("inner [hashv]:   ")+TF2(hashv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     soulLinkInner >> hashv ;
                                                     ZE( countT , hashv ) ;
 
-                                                    etherP.delF( tinP , psttLabelShort ) ;
-                                                    if( !etherP.strCompareF( tinP , psttLabelShort , psttLabelWordLever ) ) bFound = 1 ;
+                                                    etherP.delF( tinBaseP , psttLabelShort ) ;
+                                                    if( !etherP.strCompareF( tinBaseP , psttLabelShort , psttLabelWordLever ) ) bFound = 1 ;
 
-                                                    //etherP.traceF( tinP , T("inner [label]:   \"")+T(psttLabelShort)+T("\"") ) ;
+                                                    //etherP.traceF( tinBaseP , T("inner [label]:   \"")+T(psttLabelShort)+T("\"") ) ;
                                                     soulLinkInner >> psttLabelShort ; ___( psttLabelShort ) ;
                                                     ZE( strokeS* , psttLabelShort ) ;
                                                 {
                                                 while( soulLinkInner && !bFound )
                                                 ZE( boolT , bFound ) ;
 
-                                                //etherP.traceF( tinP , T("inner [cFlavors]:   ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                //etherP.traceF( tinBaseP , T("inner [cFlavors]:   ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 soulLinkInner >> cFlavors ;
                                                 ZE( countT , cFlavors ) ;
 
                                                 }
-                                                    //etherP.traceF( tinP , T("inner [idFormat]:   ")+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etherP.traceF( tinBaseP , T("inner [idFormat]:   ")+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     soulLinkInner >> idFormat ;
                                                     ZE( countT , idFormat ) ;
 
-                                                    //etherP.traceF( tinP , T("inner [finger]:   ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etherP.traceF( tinBaseP , T("inner [finger]:   ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     soulLinkInner >> finger ;
                                                     ZE( countT , finger ) ;
 
-                                                    etherP.delF( tinP , postTM ) ;
-                                                    //etherP.traceF( tinP , T("inner [tm]:   \"")+T(postTM)+T("\"") ) ;
+                                                    etherP.delF( tinBaseP , postTM ) ;
+                                                    //etherP.traceF( tinBaseP , T("inner [tm]:   \"")+T(postTM)+T("\"") ) ;
                                                     soulLinkInner >> postTM ; ___( postTM ) ;
                                                     ZE( osTextT* , postTM ) ;
                                                 {
@@ -301,33 +301,33 @@
                                             }
                                                 soulLinkOuter >> soulLinkInner ;
 
-                                                //etherP.traceF( tinP , T("outer [fileTiny]:   \"")+T(psttFileTinyGot)+T("\"") ) ;
+                                                //etherP.traceF( tinBaseP , T("outer [fileTiny]:   \"")+T(psttFileTinyGot)+T("\"") ) ;
                                                 }
-                                                    etherP.delF( tinP , psttFolderFile ) ;
+                                                    etherP.delF( tinBaseP , psttFolderFile ) ;
 
                                                     }
-                                                        etherP.strSubstringF( tinP , psttFileTinyGot , idHit , countTC() , psttFolderFile ) ; ___( psttFileTinyGot ) ;
+                                                        etherP.strSubstringF( tinBaseP , psttFileTinyGot , idHit , countTC() , psttFolderFile ) ; ___( psttFileTinyGot ) ;
                                                         idHit ++ ;
                                                     {
                                                     if( idHit )
-                                                    countT idHit = etherP.strIdF( tinP , strokeS( '/' ) , psttFolderFile , - 1 ) ;
+                                                    countT idHit = etherP.strIdF( tinBaseP , strokeS( '/' ) , psttFolderFile , - 1 ) ;
 
-                                                    //etherP.traceF( tinP , T("outer [folderFile]:   \"")+T(psttFolderFile)+T("\"") ) ;
+                                                    //etherP.traceF( tinBaseP , T("outer [folderFile]:   \"")+T(psttFolderFile)+T("\"") ) ;
                                                     soulLinkOuter >> psttFolderFile ; ___( psttFolderFile ) ;
                                                     ZE( strokeS* , psttFolderFile ) ;
                                                 {
 
                                                 }
-                                                    //etherP.traceF( tinP , T("outer [idFormat]:   ")+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etherP.traceF( tinBaseP , T("outer [idFormat]:   ")+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     soulLinkOuter >> idFormat ;
                                                     ZE( countT , idFormat ) ;
 
-                                                    //etherP.traceF( tinP , T("outer [finger]:   ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etherP.traceF( tinBaseP , T("outer [finger]:   ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     soulLinkOuter >> finger ;
                                                     ZE( countT , finger ) ;
 
-                                                    etherP.delF( tinP , postTM ) ;
-                                                    //etherP.traceF( tinP , T("outer [tm]:   \"")+T(postTM)+T("\"") ) ;
+                                                    etherP.delF( tinBaseP , postTM ) ;
+                                                    //etherP.traceF( tinBaseP , T("outer [tm]:   \"")+T(postTM)+T("\"") ) ;
                                                     soulLinkOuter >> postTM ; ___( postTM ) ;
                                                     ZE( osTextT* , postTM ) ;
                                                 {
@@ -335,18 +335,18 @@
                                             if( soulLinkOuter )
 
                                             }
-                                                etherP.delF( tinP , pbLink ) ;
-                                                if( pbLink ) soulLinkOuter.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbLink , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                                                etherP.delF( tinBaseP , pbLink ) ;
+                                                if( pbLink ) soulLinkOuter.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbLink , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
 
-                                                //if( pbLink ) ; etherP.boxPutF( tinP , T("///d/tmp/x/verify.soul.blob.not.html") , pbLink , cbLink ) ; //U:: TO FIND A BUG
+                                                //if( pbLink ) ; etherP.boxPutF( tinBaseP , T("///d/tmp/x/verify.soul.blob.not.html") , pbLink , cbLink ) ; //U:: TO FIND A BUG
 
                                                 }
                                                     }
-                                                        etherP.traceF( tinP , T("!exception: error:  could not get page linkage from ")+tBox ) ;
+                                                        etherP.traceF( tinBaseP , T("!exception: error:  could not get page linkage from ")+tBox ) ;
                                                         POOPR ;
                                                     {
                                                     if( POOP )
-                                                    tinP.pEtScratch->boxGetShadowF( tinP , pbLink , cbLink , tBox ) ; ___( pbLink ) ;
+                                                    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbLink , cbLink , tBox ) ; ___( pbLink ) ;
                                                     SCOOPS
                                                 {
                                                 IFsCRATCH
@@ -354,9 +354,9 @@
                                                 ZE( countT , cbLink ) ;
                                                 ZE( byteT* , pbLink ) ;
                                             {
-                                            soulC soulLinkOuter( tinP , TAG( TAGiDnULL ) ) ;
+                                            soulC soulLinkOuter( tinBaseP , TAG( TAGiDnULL ) ) ;
                                         {
-                                        soulC soulLinkInner( tinP , TAG( TAGiDnULL ) ) ;
+                                        soulC soulLinkInner( tinBaseP , TAG( TAGiDnULL ) ) ;
                                     {
                                     ZE( boolT    , bGotIt ) ;
                                     ZE( strokeS* , psttTextGot ) ;
@@ -365,7 +365,7 @@
                                     ZE( countT   , hashvGot ) ;
 
                                     }
-                                        etherP.strMakeF( tinP , LF , psttLabelWordLever , T("!myRoot") ) ; ___( psttLabelWordLever ) ;
+                                        etherP.strMakeF( tinBaseP , LF , psttLabelWordLever , T("!myRoot") ) ; ___( psttLabelWordLever ) ;
                                         bRoot = 1 ;
                                     {
                                     if( !psttLabelWordLever )
@@ -373,14 +373,14 @@
 
                                     }
                                         }
-                                            etherP.delF( tinP , psttp ) ;
-                                            //etherP.traceF( tinP , T("soulIdFragCloud [psttp]: ")+T(psttp) ) ;
+                                            etherP.delF( tinBaseP , psttp ) ;
+                                            //etherP.traceF( tinBaseP , T("soulIdFragCloud [psttp]: ")+T(psttp) ) ;
 
                                             }
                                                 break ;
-                                                etherP.delF( tinP , psttp ) ;
-                                                etherP.delF( tinP , postNote ) ;
-                                                //etherP.traceF( tinP , T("soulIdFragCloud [psttp]: ")+T(psttp) ) ;
+                                                etherP.delF( tinBaseP , psttp ) ;
+                                                etherP.delF( tinBaseP , postNote ) ;
+                                                //etherP.traceF( tinBaseP , T("soulIdFragCloud [psttp]: ")+T(psttp) ) ;
 
                                                 }
                                                     if( POOP ) POOPR
@@ -392,18 +392,18 @@
                                                         POOPR
                                                     {
                                                     if( POOP )
-                                                    tinP.pEtScratch->boxGetShadowF( tinP , postNote , costNote , psttp ) ; ___( postNote ) ;
+                                                    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postNote , costNote , psttp ) ; ___( postNote ) ;
                                                     SCOOPS
                                                 {
                                                 IFsCRATCH
                                                 ZE( countT , costNote ) ;
                                                 ZE( byteT* , postNote ) ;
 
-                                                //etherP.traceF( tinP , T("retrieving note from [psttp]: \"")+T(psttp)+T("\"") ) ;
+                                                //etherP.traceF( tinBaseP , T("retrieving note from [psttp]: \"")+T(psttp)+T("\"") ) ;
                                             {
                                             else if( bFound )
                                             }
-                                                if( !etherP.strCompareF( tinP , psttp , psttLabelWordElement ) ) bFound = 1 ;
+                                                if( !etherP.strCompareF( tinBaseP , psttp , psttLabelWordElement ) ) bFound = 1 ;
                                             {
                                             if( bLabelShort )
 
@@ -419,15 +419,15 @@
                                         }
                                             if( POOP ) POOPR
 
-                                            etherP.delF( tinP , pbLink ) ;
-                                            else soulIdFragCloud.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbLink , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                                            etherP.delF( tinBaseP , pbLink ) ;
+                                            else soulIdFragCloud.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbLink , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                                             }
                                                 tNoteFromCloud = T("Please report this error:  Could not get frag note linkage from ")+tBox ;
                                                 POOPR ;
                                             {
                                             if( POOP )
 
-                                            tinP.pEtScratch->boxGetShadowF( tinP , pbLink , cbLink , tBox ) ; ___( pbLink ) ;
+                                            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbLink , cbLink , tBox ) ; ___( pbLink ) ;
                                             ZE( countT , cbLink ) ;
                                             ZE( byteT* , pbLink ) ;
 
@@ -436,17 +436,17 @@
                                             SCOOPS
                                         {
                                         IFsCRATCH
-                                        soulC soulIdFragCloud( tinP , TAG( TAGiDnULL ) ) ;
+                                        soulC soulIdFragCloud( tinBaseP , TAG( TAGiDnULL ) ) ;
                                     {
                                     if( psttLabelWordElement )
                                     TN( tNoteFromCloud , "" ) ;
 
-                                    //etherP.traceF( tinP , T("link label [label,box]:    \"")+T(psttLabelWordLever)+T("\"")+T("    \"")+T(psttLabelWordBox)+T(".link.pages.soul.blob.not.html")+T("\"") ) ;
+                                    //etherP.traceF( tinBaseP , T("link label [label,box]:    \"")+T(psttLabelWordLever)+T("\"")+T("    \"")+T(psttLabelWordBox)+T(".link.pages.soul.blob.not.html")+T("\"") ) ;
                                 {
                                 else
                                 }
                                     }
-                                        //etherP.traceF( tinP , T("setting reference [jbrHe,psttzLabelShort,psttRefHtmlId]:")+TF2(*pSw_jbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttzLabelShort)+T("\"    \"")+T(B(brc).psttRefHtmlId)+T("\"") ) ;
+                                        //etherP.traceF( tinBaseP , T("setting reference [jbrHe,psttzLabelShort,psttRefHtmlId]:")+TF2(*pSw_jbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttzLabelShort)+T("\"    \"")+T(B(brc).psttRefHtmlId)+T("\"") ) ;
                                         B(brc).value = *pSw_jbr ; // jbrzHe        (THIS LINE OVERWRITES pbEncoded WHICH IS NOW A ZOMBIE POINTER
                                                                psttLabelWordElement = 0 ;
                                         B(brc).psttRefHtmlId = psttLabelWordElement  ;
@@ -455,42 +455,42 @@
                                     else if( psttLabelWordLever )
                                     }
                                         __1                                                                                                       //20180420@1949: COMMENTED OUT WITHOUT ANALYSIS TO HANDLE MISSING LABEL
-                                        etherP.traceF( tinP , T("error: could not find reference \"")+T(psttLabelLong)+T("\"") ) ;
+                                        etherP.traceF( tinBaseP , T("error: could not find reference \"")+T(psttLabelLong)+T("\"") ) ;
                                         B(brc).value = 0 ;        // jbrzHe        (THIS LINE OVERWRITES pbEncoded WHICH IS NOW A ZOMBIE POINTER
                                     {
-                                    if( !pSw_jbr->idSlotOfLeverF( tinP , (countT)psttLabelWordLever ) )
+                                    if( !pSw_jbr->idSlotOfLeverF( tinBaseP , (countT)psttLabelWordLever ) )
                                     BSP( brc , jbrc ) ;
 
                                     __Z( pSw_jbr ) ;
                                 {
                                 if( !psttLabelWordBox )
 
-                                //etherP.traceF( tinP , T("loadIF: label word [element]:   ")+T(psttLabelWordElement) ) ;
-                                //etherP.traceF( tinP , T("loadIF: label word   [lever]:   ")+T(psttLabelWordLever  ) ) ;
-                                //etherP.traceF( tinP , T("loadIF: label word     [box]:   ")+T(psttLabelWordBox    ) ) ;
-                                etherP.strTrimF( tinP , psttLabelWordBox , 0 , 0 , T("\"") ) ;
+                                //etherP.traceF( tinBaseP , T("loadIF: label word [element]:   ")+T(psttLabelWordElement) ) ;
+                                //etherP.traceF( tinBaseP , T("loadIF: label word   [lever]:   ")+T(psttLabelWordLever  ) ) ;
+                                //etherP.traceF( tinBaseP , T("loadIF: label word     [box]:   ")+T(psttLabelWordBox    ) ) ;
+                                etherP.strTrimF( tinBaseP , psttLabelWordBox , 0 , 0 , T("\"") ) ;
 
                                 }
-                                    etherP.delF( tinP , pstt1LabelLongWords ) ;
+                                    etherP.delF( tinBaseP , pstt1LabelLongWords ) ;
                                     }
                                         }
-                                            else if( !psttLabelWordElement ) { etherP.strMakeF( tinP , LF , psttLabelWordElement , psttc1 ) ; ___( psttLabelWordElement ) ; }
-                                            else if( !psttLabelWordLever   ) { etherP.strMakeF( tinP , LF , psttLabelWordLever   , psttc1 ) ; ___( psttLabelWordLever   ) ; }
-                                                 if( !psttLabelWordBox     ) { etherP.strMakeF( tinP , LF , psttLabelWordBox     , psttc1 ) ; ___( psttLabelWordBox     ) ; }
+                                            else if( !psttLabelWordElement ) { etherP.strMakeF( tinBaseP , LF , psttLabelWordElement , psttc1 ) ; ___( psttLabelWordElement ) ; }
+                                            else if( !psttLabelWordLever   ) { etherP.strMakeF( tinBaseP , LF , psttLabelWordLever   , psttc1 ) ; ___( psttLabelWordLever   ) ; }
+                                                 if( !psttLabelWordBox     ) { etherP.strMakeF( tinBaseP , LF , psttLabelWordBox     , psttc1 ) ; ___( psttLabelWordBox     ) ; }
                                         {
                                         else
                                         }
-                                            else if( !psttLabelWordElement ) { etherP.strMakeF( tinP , LF , psttLabelWordElement , psttc1 ) ; ___( psttLabelWordElement ) ; }
-                                                 if( !psttLabelWordLever   ) { etherP.strMakeF( tinP , LF , psttLabelWordLever   , psttc1 ) ; ___( psttLabelWordLever   ) ; }
+                                            else if( !psttLabelWordElement ) { etherP.strMakeF( tinBaseP , LF , psttLabelWordElement , psttc1 ) ; ___( psttLabelWordElement ) ; }
+                                                 if( !psttLabelWordLever   ) { etherP.strMakeF( tinBaseP , LF , psttLabelWordLever   , psttc1 ) ; ___( psttLabelWordLever   ) ; }
                                         {
                                         else if( !bFarLabel )
-                                        if( !etherP.strCompareF( tinP , psttc1 , T("!link") ) ) bFarLabel = 1 ;
+                                        if( !etherP.strCompareF( tinBaseP , psttc1 , T("!link") ) ) bFarLabel = 1 ;
 
-                                        //etherP.traceF( tinP , T("loadIF: labelLong word:    ")+T(psttc1) ) ;
+                                        //etherP.traceF( tinBaseP , T("loadIF: labelLong word:    ")+T(psttc1) ) ;
                                     {
                                     FORsTRINGSiN1( pstt1LabelLongWords )
                                     ZE( boolT , bFarLabel ) ;
-                                    etherP.strWordsF( tinP , pstt1LabelLongWords , psttLabelLong , sttq , T(",") , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1LabelLongWords ) ;
+                                    etherP.strWordsF( tinBaseP , pstt1LabelLongWords , psttLabelLong , sttq , T(",") , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1LabelLongWords ) ;
                                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                     ZE( strokeS* , pstt1LabelLongWords ) ;
                                 {
@@ -499,10 +499,10 @@
                                 ZE( strokeS* , psttLabelWordBox ) ;         //REQUIRED
 
                                 }
-                                    //etherP.traceF( tinP , T("loadIF: [psttLabelLong]:    ")+T(psttLabelLong) ) ;
+                                    //etherP.traceF( tinBaseP , T("loadIF: [psttLabelLong]:    ")+T(psttLabelLong) ) ;
 
-                                    etherP.delF( tinP , pbEncoded ) ;
-                                    etherP.strDecodeF( tinP , psttLabelLong , (byteT*)valuec ) ; ___( psttLabelLong ) ;
+                                    etherP.delF( tinBaseP , pbEncoded ) ;
+                                    etherP.strDecodeF( tinBaseP , psttLabelLong , (byteT*)valuec ) ; ___( psttLabelLong ) ;
                                     byteT* pbEncoded = (byteT*)valuec ;
                                 {
                                 ZE( strokeS* , psttLabelLong ) ;
@@ -543,7 +543,7 @@
                         {
                         else
                         }
-                            else                                               B(brc).hashF( tinP , jbrc , *tinP.pBarryUtility , stHashCollisions ) ;
+                            else                                               B(brc).hashF( tinBaseP , jbrc , *((tinNormalS&)tinBaseP).pBarryUtility , stHashCollisions ) ;
                             if( B(brc).idType != ifcIDtYPEbRANCHs_strokeSstr ) B(brc).hashv = 0xeeeeeeee ; //U::TO FIND A BUG
 
                             BSP( brc , jbrc ) ;
@@ -555,7 +555,7 @@
                                 }
                                     break ;
                                     __1
-                                    etherP.traceF( tinP , T("!exception: unexpected type [idType]: ")+TF3(B(brc).idType,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+                                    etherP.traceF( tinBaseP , T("!exception: unexpected type [idType]: ")+TF3(B(brc).idType,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
                                 {
                                 default :
                                 }
@@ -570,15 +570,15 @@
                         {
 
                         //}
-                        //    //LOGrAW5( "loadIF [idThread,idBranch]:    " , tinP.monitor.idThread , "    " , idBranch , "\r\n" ) ;
+                        //    //LOGrAW5( "loadIF [idThread,idBranch]:    " , ((tinNormalS&)tinBaseP).monitor.idThread , "    " , idBranch , "\r\n" ) ;
                         //
-                        //    //etherP.traceF( tinP , T("loadIF [idBranch]: ")+TF2(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , flTRACE_null , ifcIDtRACEdIVERT_8 ) ;
+                        //    //etherP.traceF( tinBaseP , T("loadIF [idBranch]: ")+TF2(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , flTRACE_null , ifcIDtRACEdIVERT_8 ) ;
                         //
-                        //    //if( !( F(tinP.flagsThreadMode3) & flTHREADmODE3_INoUTcHATTER ) ) { THREADmODE3oN( flTHREADmODE3_INoUTcHATTER ); }
+                        //    //if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_INoUTcHATTER ) ) { THREADmODE3oN( flTHREADmODE3_INoUTcHATTER ); }
                         //{
                         //if( !offPass && idBranch >= 0x13aa0 ) //U:: TO FIND A BUG, WE TRACE: loadIF / setting hashv / [idBranch]: aaa31
             
-                        ///*if( !( idBranch % ( TUCK << 4 ) ) )*/ etherP.traceF( tinP , tTraceWhat+T("[idBranch]: ")+TF2(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                        ///*if( !( idBranch % ( TUCK << 4 ) ) )*/ etherP.traceF( tinBaseP , tTraceWhat+T("[idBranch]: ")+TF2(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                         ++ idBranch ;
 
                         _IO_
@@ -586,62 +586,62 @@
                     else
                     }
                         jbrc = 0 ;
-                        //etherP.traceF( tinP , T("setting jbrc to ze [idBranch before incrementing]: ")+TF3(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
+                        //etherP.traceF( tinBaseP , T("setting jbrc to ze [idBranch before incrementing]: ")+TF3(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9) ) ;
                     {
                     if( !(const byteT*)jotP[ jbrc & ~NM_HIGH ] )
                 {
                 while( !POOP && !bQuitP && jbrc )
-                switchC* pSwHashId = !cCollisions ? 0 : new( 0 , tinP , pbSwHashId , sizeof pbSwHashId ) switchC( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverHash ) ;
+                switchC* pSwHashId = !cCollisions ? 0 : new( 0 , tinBaseP , pbSwHashId , sizeof pbSwHashId ) switchC( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverHash ) ;
                 ZE( countT , cLeverHash ) ;
                 byteT pbSwHashId[ sizeof( switchC ) ] ;
                 const countT cCollisions = !offPass ? 0 : stHashCollisions ;
                 countT jbrc = 2 | jotP.tagHighNibbleF() ;
                 ZE( countT , idBranch ) ;
-                staqC stq_jbrDad( tinP ) ;
+                staqC stq_jbrDad( tinBaseP ) ;
 
                 }
                     }
                         }
                             }
                                 }
-                                    etherP.delF( tinP , psttzLabelShort ) ;
+                                    etherP.delF( tinBaseP , psttzLabelShort ) ;
                                     *pSw_jbr = *(countT*)(const byteT*)pi ;
 
                                     }
                                         break ;
                                         __1
-                                        etherP.delF( tinP , psttzLabelShort ) ;
-                                        //etherP.traceF( tinP , T("error: label is not unique [label]: \"")+T(psttzLabelShort)+T("\"") ) ;                         //U:: TEST ERRORS SUCH AS THIS TO ENSURE THAT SOFTWARE DOESN'T CRASH
+                                        etherP.delF( tinBaseP , psttzLabelShort ) ;
+                                        //etherP.traceF( tinBaseP , T("error: label is not unique [label]: \"")+T(psttzLabelShort)+T("\"") ) ;                         //U:: TEST ERRORS SUCH AS THIS TO ENSURE THAT SOFTWARE DOESN'T CRASH
                                     {
                                     if( jbrSwitched )
 
                                     countT& jbrSwitched = *pSw_jbr ;
                                 {
                                 else
-                                if( !psttzLabelShort ) { etherP.strDecodeF( tinP , psttzLabelShort , pi ) ; ___( psttzLabelShort ) ; }
+                                if( !psttzLabelShort ) { etherP.strDecodeF( tinBaseP , psttzLabelShort , pi ) ; ___( psttzLabelShort ) ; }
                             {
                             else
                             if( !(const byteT*)pi ) { BLAMMO ; }    //SHOULD BE IMPOSSIBLE
                             pi = jotReferences ;
-                            pageC pi( tinP , jotReferences , 0 ) ;
+                            pageC pi( tinBaseP , jotReferences , 0 ) ;
                         {
                         while( cDo -- && !bQuitP )
                         countT cDo = jotReferences.cElementsF() ;
                     {
                     if( pSw_jbr )
-                    pSw_jbr = new( 0 , tinP , pb_sw_jbr , sizeof pb_sw_jbr ) switchC( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLabelShort ) ;
+                    pSw_jbr = new( 0 , tinBaseP , pb_sw_jbr , sizeof pb_sw_jbr ) switchC( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLabelShort ) ;
                 {
                 if( offPass )
 
                 }
                     }
                         bDeleteBarryAsZombie = 1 ;
-                        //etherP.traceF( tinP , T("constructed  barryC instance") ) ;
-                        tinP.pBarryUtility = new( 0 , tinP , pb_barryHash , sizeof pb_barryHash ) barryC( tinP ) ; //TO ALLOW APP TO PRECONSTRUCT barryC
-                        //etherP.traceF( tinP , T("constructing barryC instance") ) ;
+                        //etherP.traceF( tinBaseP , T("constructed  barryC instance") ) ;
+                        ((tinNormalS&)tinBaseP).pBarryUtility = new( 0 , tinBaseP , pb_barryHash , sizeof pb_barryHash ) barryC( tinBaseP ) ; //TO ALLOW APP TO PRECONSTRUCT barryC
+                        //etherP.traceF( tinBaseP , T("constructing barryC instance") ) ;
                     {
                     else
-                    if( tinP.pBarryUtility ) tinP.pBarryUtility->setF( tinP ) ; // ALLOW CALLER TO PRECONSTRUCT barryC INSTANCE SO THAT INABILITY TO CT CAN BE DETECTED EARLIER (barryC HAS A HUGE MEMORY FOOTPRINT)
+                    if( ((tinNormalS&)tinBaseP).pBarryUtility ) ((tinNormalS&)tinBaseP).pBarryUtility->setF( tinBaseP ) ; // ALLOW CALLER TO PRECONSTRUCT barryC INSTANCE SO THAT INABILITY TO CT CAN BE DETECTED EARLIER (barryC HAS A HUGE MEMORY FOOTPRINT)
                 {
                 if( !offPass )
                 ZE( boolT , bDeleteBarryAsZombie ) ;
@@ -649,11 +649,11 @@
                 byteT pb_sw_jbr[    sizeof( switchC ) ] ;
                 byteT pb_barryHash[ sizeof( barryC  ) ] ;
             
-                //etherP.traceF( tinP , tTraceWhat+T("+") ) ;
+                //etherP.traceF( tinBaseP , tTraceWhat+T("+") ) ;
                 TN( tTraceWhat , !offPass ? "loadIF / setting hashv / " : "loadIF / setting hashId and setting reference jPointers / " ) ;
             {
             for( countT offPass = 0 ; !bQuitP && offPass <= 1 ; offPass ++ )
-            stackC stHashCollisions( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE ) ;
+            stackC stHashCollisions( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE ) ;
         {
         if( !bFail )
         ZE( switchC* , pSw_jbr ) ;
@@ -671,7 +671,7 @@
                                 __NZ( B(brLeft).jbrRight ) ;
                                 BSP( brLeft , stCursor[ 1 ] ) ;
                     
-                                if( idLevel < idLevelLath ) stCursor.purgeF( tinP , idLevel ) ;
+                                if( idLevel < idLevelLath ) stCursor.purgeF( tinBaseP , idLevel ) ;
                             {
                             else
                             }
@@ -690,59 +690,59 @@
 
                         else { __1 }
                         }
-                            if( POOP ) etherP.delF( tinP , pbEncoded ) ;
+                            if( POOP ) etherP.delF( tinBaseP , pbEncoded ) ;
 
-                            etherP.delF( tinP , psttLabelShort ) ;
+                            etherP.delF( tinBaseP , psttLabelShort ) ;
 
-                            //etherP.traceF( tinP , T("loadIF new reference [jNew,psttLabelShort]: ")+TF2(jNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+T(psttLabelShort) ) ;
+                            //etherP.traceF( tinBaseP , T("loadIF new reference [jNew,psttLabelShort]: ")+TF2(jNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+T(psttLabelShort) ) ;
 
                             }
-                                new( 0 , tinP , (byteT*)(const byteT*)pageNew , pageNew ) branchS( (countT)pbEncoded , !bNoRefs ? ifcIDtYPEbRANCHs_branchSptr : ifcIDtYPEbRANCHs_strokeSstr ) ;
+                                new( 0 , tinBaseP , (byteT*)(const byteT*)pageNew , pageNew ) branchS( (countT)pbEncoded , !bNoRefs ? ifcIDtYPEbRANCHs_branchSptr : ifcIDtYPEbRANCHs_strokeSstr ) ;
                                 PSP( pageNew , jNew ) ;
                             {
                             if( !POOP )
 
                             __Z( jNew ) ;
-                            jNew = jotP.writeF( tinP , 0 , sizeof( branchS ) ) ;
+                            jNew = jotP.writeF( tinBaseP , 0 , sizeof( branchS ) ) ;
                             jNewLag = jNew ;
 
-                            etherP.strEncodeF( tinP , pbEncoded , psttLabelShort ) ; ___( pbEncoded ) ;
+                            etherP.strEncodeF( tinBaseP , pbEncoded , psttLabelShort ) ; ___( pbEncoded ) ;
                             ZE( byteT* , pbEncoded ) ;
 
                             csttTrimmedP += psttLabelShort->idAdam ;
                         {
                         else if( psttLabelShort )
                         }
-                            etherP.delF( tinP , psttLabelShort ) ;
+                            etherP.delF( tinBaseP , psttLabelShort ) ;
                             }
                                 }
-                                    jotReferences.writeF( tinP , (byteT*)&jNew , sizeof jNew ) ; // jotReferences WILL CONTAIN A SEQUENCE OF [psttLabelShort,jNew] PAIRS
-                                    etherP.strEncodeF( tinP , pbEncoded , psttLabelShort ) ; ___( pbEncoded ) ;
+                                    jotReferences.writeF( tinBaseP , (byteT*)&jNew , sizeof jNew ) ; // jotReferences WILL CONTAIN A SEQUENCE OF [psttLabelShort,jNew] PAIRS
+                                    etherP.strEncodeF( tinBaseP , pbEncoded , psttLabelShort ) ; ___( pbEncoded ) ;
                                     ZEJ( byteT* , pbEncoded , jotReferences ) ;
                                 {
                                 if( psttLabelShort )
                                 pbEncoded = 0 ;
                             {
                             else
-                            if( POOP ) etherP.delF( tinP , pbEncoded ) ;
+                            if( POOP ) etherP.delF( tinBaseP , pbEncoded ) ;
 
-                            etherP.delF( tinP , pstttBranch ) ;
+                            etherP.delF( tinBaseP , pstttBranch ) ;
 
-                            if( !psttRootBranch ) etherP.strMakeF( tinP , LF , psttRootBranch , pstttBranch ) ; ___( psttRootBranch ) ;
+                            if( !psttRootBranch ) etherP.strMakeF( tinBaseP , LF , psttRootBranch , pstttBranch ) ; ___( psttRootBranch ) ;
 
-                            //etherP.traceF( tinP , T("loadIF new branch   [jNew,pstttBranch]: ")+TF2(jNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+T(pstttBranch) ) ;
+                            //etherP.traceF( tinBaseP , T("loadIF new branch   [jNew,pstttBranch]: ")+TF2(jNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+T(pstttBranch) ) ;
 
                             }
-                                new( 0 , tinP , (byteT*)(const byteT*)pageNew , pageNew ) branchS( (countT)pbEncoded ) ;
+                                new( 0 , tinBaseP , (byteT*)(const byteT*)pageNew , pageNew ) branchS( (countT)pbEncoded ) ;
                                 PSP( pageNew , jNew ) ;
                             {
                             if( !POOP )
 
                             __Z( jNew ) ;
-                            jNew = jotP.writeF( tinP , 0 , sizeof( branchS ) ) ;
+                            jNew = jotP.writeF( tinBaseP , 0 , sizeof( branchS ) ) ;
                             jNewLag = jNew ;
 
-                            etherP.strEncodeF( tinP , pbEncoded , pstttBranch ) ; ___( pbEncoded ) ;
+                            etherP.strEncodeF( tinBaseP , pbEncoded , pstttBranch ) ; ___( pbEncoded ) ;
                             ZEJ( byteT* , pbEncoded , jotP ) ;
 
                             //P:PERSONALITY: THE INTENT OF THIS CHANGE IS TO ELIMINATE ALL MODIFICATION BY loadIF OF THE TEXT OF EACH BRANCH SO THAT THE BRANCH TREE JUST CONTAINS WHAT IS SPECIFIED IN THE INPUT SOIL FILE
@@ -751,43 +751,43 @@
                             csttTrimmedP += pstttBranch->idAdam ;
 
                             }
-                                if( cFoundMark ) idMark = etherP.strIdF( tinP , sttMark01 , pstttBranch , 1 ) ;
+                                if( cFoundMark ) idMark = etherP.strIdF( tinBaseP , sttMark01 , pstttBranch , 1 ) ;
 
-                                if( cFoundLit )     etherP.strReplaceF( tinP , pstttBranch , 0 , tmff , tBackSlash   , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // SHOW ALL LITERAL BACKSLASH
+                                if( cFoundLit )     etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tmff , tBackSlash   , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // SHOW ALL LITERAL BACKSLASH
 
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbj  , tmf2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\j"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbh  , tme2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\h"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbw  , tmd2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\w"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tby  , tmc2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\y"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbz  , tmb2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\z"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb9  , tma2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\9"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb8  , tm92 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\8"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb7  , tm82 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\7"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb6  , tm72 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\6"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb5  , tm62 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\5"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb4  , tm52 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\4"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb3  , tm42 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\3"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb2  , tm32 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\2"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb1  , tm22 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\1"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tb0  , tm12 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\0"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbn  , tm02 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\n"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbi  , tmf1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\i"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbk  , tme1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\k"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbd  , tmd1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\d"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbr  , tmc1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\r"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbx  , tmb1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\x"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbo  , tma1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\o"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbt  , tm91 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\t"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbl  , tm81 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\l"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbp  , tm71 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\p"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbe  , tm61 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\e"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbc  , tm51 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\c"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbv  , tm41 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\v"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbs  , tm31 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\s"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tba  , tm21 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\a"
-                                                    etherP.strReplaceF( tinP , pstttBranch , 0 , tbf  , tm11 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\f"
-                                countT cFoundMark = etherP.strReplaceF( tinP , pstttBranch , 0 , tbm  , tm01 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\m"
-                                countT cFoundLit  = etherP.strReplaceF( tinP , pstttBranch , 0 , tbb  , tmff , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // HIDE ALL LITERAL BACKSLASH
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbj  , tmf2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\j"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbh  , tme2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\h"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbw  , tmd2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\w"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tby  , tmc2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\y"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbz  , tmb2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\z"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb9  , tma2 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\9"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb8  , tm92 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\8"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb7  , tm82 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\7"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb6  , tm72 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\6"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb5  , tm62 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\5"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb4  , tm52 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\4"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb3  , tm42 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\3"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb2  , tm32 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\2"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb1  , tm22 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\1"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tb0  , tm12 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\0"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbn  , tm02 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\n"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbi  , tmf1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\i"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbk  , tme1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\k"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbd  , tmd1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\d"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbr  , tmc1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\r"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbx  , tmb1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\x"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbo  , tma1 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\o"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbt  , tm91 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\t"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbl  , tm81 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\l"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbp  , tm71 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\p"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbe  , tm61 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\e"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbc  , tm51 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\c"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbv  , tm41 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\v"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbs  , tm31 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\s"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tba  , tm21 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\a"
+                                                    etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbf  , tm11 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\f"
+                                countT cFoundMark = etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbm  , tm01 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // ENCODE ALL "\m"
+                                countT cFoundLit  = etherP.strReplaceF( tinBaseP , pstttBranch , 0 , tbb  , tmff , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // HIDE ALL LITERAL BACKSLASH
                             {
                             ZE( countT , idMark ) ;
                             //ENCODE ESCAPE CHARACTERS
@@ -802,47 +802,47 @@
                         {
                         if( idLevel > idLevelLath + 1 ) // CAN SPECIFY KID OF LATH BRANCH, BUT NO HIGHER
 
-                        //etherP.traceF( tinP , T("loadIfIF [idLevel,psttLabelShort,pstttBranch]: ")+TF2(idLevel,flFORMAT_NObIGITvALUES)+T(" \"")+T(psttLabelShort)+T("\" \"")+T(pstttBranch)+T("\"\r\n") ) ;
+                        //etherP.traceF( tinBaseP , T("loadIfIF [idLevel,psttLabelShort,pstttBranch]: ")+TF2(idLevel,flFORMAT_NObIGITvALUES)+T(" \"")+T(psttLabelShort)+T("\" \"")+T(pstttBranch)+T("\"\r\n") ) ;
 
                         }
                             }
-                                else                                 etherP.delF( tinP , psttLabelShort   ) ;
-                                if( psttLabelShort && psttLabelShort->idAdam ) etherP.delF( tinP , pstttBranch ) ;
-                                etherP.strTrimF( tinP , psttLabelShort , 0 , tBlank ) ; ___( psttLabelShort ) ;
-                                etherP.strSubstringF( tinP , psttLabelShort , idf , countTC() , pstttBranch ) ; ___( psttLabelShort ) ;
+                                else                                 etherP.delF( tinBaseP , psttLabelShort   ) ;
+                                if( psttLabelShort && psttLabelShort->idAdam ) etherP.delF( tinBaseP , pstttBranch ) ;
+                                etherP.strTrimF( tinBaseP , psttLabelShort , 0 , tBlank ) ; ___( psttLabelShort ) ;
+                                etherP.strSubstringF( tinBaseP , psttLabelShort , idf , countTC() , pstttBranch ) ; ___( psttLabelShort ) ;
                                 countT idf = 2 ;
                             {
                             else if( !idColon2 && pstttBranch->idAdam > 1 )                                                                             // IF THIS LOOKS LIKE A REFERENCE TO A LABELED BRANCH
                             }
                                 }
                                     }
-                                        etherP.delF( tinP , pstttAfterLabelShort ) ;
-                                        etherP.delF( tinP , psttLabelShort ) ;
+                                        etherP.delF( tinBaseP , pstttAfterLabelShort ) ;
+                                        etherP.delF( tinBaseP , psttLabelShort ) ;
                                     {
                                     else 
                                     }
                                                       pstttAfterLabelShort = 0 ;
                                         pstttBranch = pstttAfterLabelShort ;
-                                        etherP.delF( tinP , pstttBranch ) ;
-                                        //etherP.strokeF( tinP , T("[psttLabelShort,pstttAfterLabelShort]: \"")+T(psttLabelShort)+T("\" \"")+T(pstttAfterLabelShort)+T("\"\r\n") ) ;
+                                        etherP.delF( tinBaseP , pstttBranch ) ;
+                                        //etherP.strokeF( tinBaseP , T("[psttLabelShort,pstttAfterLabelShort]: \"")+T(psttLabelShort)+T("\" \"")+T(pstttAfterLabelShort)+T("\"\r\n") ) ;
                                     {
                                     if( pstttAfterLabelShort && pstttAfterLabelShort->idAdam )
-                                    etherP.strTrimF( tinP , pstttAfterLabelShort , 0 , tBlank ) ; ___( pstttAfterLabelShort ) ;
-                                    etherP.strSubstringF( tinP , pstttAfterLabelShort , idf , countTC() , pstttBranch ) ; ___( pstttAfterLabelShort ) ;
+                                    etherP.strTrimF( tinBaseP , pstttAfterLabelShort , 0 , tBlank ) ; ___( pstttAfterLabelShort ) ;
+                                    etherP.strSubstringF( tinBaseP , pstttAfterLabelShort , idf , countTC() , pstttBranch ) ; ___( pstttAfterLabelShort ) ;
                                     idf = idColon2 + 1 ;
                                 {
                                 ZE( strokeS* , pstttAfterLabelShort ) ;
 
-                                etherP.strSubstringF( tinP , psttLabelShort , idf , idl , pstttBranch ) ; ___( psttLabelShort ) ;
+                                etherP.strSubstringF( tinBaseP , psttLabelShort , idf , idl , pstttBranch ) ; ___( psttLabelShort ) ;
                                 countT idl = idColon2 - 1 ;
                                 countT idf = 2 ;
                             {
                             if( idColon2 > 2 && idColon2 < pstttBranch->idAdam )                                                                        // IF THIS LOOKS LIKE A LABELED BRANCH
-                            const countT idColon2 = etherP.strIdF( tinP , sttColon , pstttBranch , 2 ) ;
+                            const countT idColon2 = etherP.strIdF( tinBaseP , sttColon , pstttBranch , 2 ) ;
 
                             }
                                 break ;
-                                etherP.delF( tinP , pstttBranch ) ;
+                                etherP.delF( tinBaseP , pstttBranch ) ;
                                 bFail = 1 ;
                             {
                             if( idFieldIn == 1 ) // THE ROOT BRANCH MAY NOT BE EXPLICITLY LABELED (IT IS ALWAYS IMPLICITLY LABELED USING THE RESERVED LABEL "!myRoot"
@@ -850,8 +850,8 @@
                         if( pstttBranch->idAdam && pstttBranch[ CSpREFIX ] == sttColon )
                         ZE( strokeS* , psttLabelShort ) ;
 
-                        etherP.delF( tinP , psttLine ) ;
-                        etherP.strTrimF( tinP , pstttBranch , psttLine , tBlank ) ; ___( pstttBranch ) ;
+                        etherP.delF( tinBaseP , psttLine ) ;
+                        etherP.strTrimF( tinBaseP , pstttBranch , psttLine , tBlank ) ; ___( pstttBranch ) ;
                         ZE( strokeS* , pstttBranch ) ;
                     
                         }
@@ -860,26 +860,26 @@
                         {
                         if( !idLevel ) //NULL LINE OR LINE OF BLANKS
 
-                        countT idLevel = etherP.strIdAnyF( tinP , 0 , flSTRmATCH_null , idf , sttq , tBlank , psttLine , 0 , 1 , flSTRiDaNY_NOT ) ;
+                        countT idLevel = etherP.strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tBlank , psttLine , 0 , 1 , flSTRiDaNY_NOT ) ;
                         countT idf = 1 ;
 
                         countT idLevelLath = stCursor ;
 
-                        //etherP.traceF( tinP , psttLine ) ;
-                        etherP.strDecodeF( tinP , psttLine , pbzEncoded ) ; ___( psttLine ) ;
+                        //etherP.traceF( tinBaseP , psttLine ) ;
+                        etherP.strDecodeF( tinBaseP , psttLine , pbzEncoded ) ; ___( psttLine ) ;
                         ZE( strokeS* , psttLine ) ;
                     {
                     if( !POOP )
 
                     }
-                        ///*if( idFieldIn == 1 || !( cRemain % TUCK ) )*/ etherP.traceF( tinP , tTraceWhat+T(" [cRemain]: ")+TF2(cRemain,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                        ///*if( idFieldIn == 1 || !( cRemain % TUCK ) )*/ etherP.traceF( tinBaseP , tTraceWhat+T(" [cRemain]: ")+TF2(cRemain,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                         countT cRemain = idFieldIn == 1 ? cFieldsIn : cFieldsIn - idFieldIn ;
                     {
 
                     __( !cbIn ) ;
                     __( flagsIn - flSOULiTEM_null ) ;
                     __( idTypeIn - ifcIDtYPEsOULiTEM_strokeSptr ) ;
-                    byteT* pbzEncoded = soulLinesP.pbFieldF( tinP , idTypeIn , flagsIn , cbIn , idFieldIn ) ;
+                    byteT* pbzEncoded = soulLinesP.pbFieldF( tinBaseP , idTypeIn , flagsIn , cbIn , idFieldIn ) ;
                     ZE( countT , cbIn     ) ;
                     ZE( flagsT , flagsIn  ) ;
                     ZE( countT , idTypeIn ) ;
@@ -969,15 +969,15 @@
                 strokeS sttColon( ':' ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             {
-            stackC  stCursor( tinP , etherP , TAG( TAGiDnULL ), flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY , ifcSTACKtYPE_countT ) ;
+            stackC  stCursor( tinBaseP , etherP , TAG( TAGiDnULL ), flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY , ifcSTACKtYPE_countT ) ;
         {
         strokeS sttMarkf2( 0x2f , sc_MARK ) ;
         strokeS sttMark01( 0x10 , sc_MARK ) ;
-        jotC jotReferences( tinP , "branchs.loadif.references" , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE ) ;
+        jotC jotReferences( tinBaseP , "branchs.loadif.references" , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE ) ;
     {
     ZE( strokeS* , psttRootBranch ) ;
     ZE( boolT , bFail ) ;
-    //etherP.traceF( tinP , T("loadIF / +") ) ;
+    //etherP.traceF( tinBaseP , T("loadIF / +") ) ;
 
     _IO_
 
@@ -992,7 +992,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT branchS::loadIF( tinS& tinP , etherC& etherP , const boolT& bQuitP , jotC& jotP , countT& csttTrimmedP , soulC& soulLinesP , const flagsT flagsP , soulC* pSoulLinkP )/*1*/
+/*1*/voidT branchS::loadIF( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQuitP , jotC& jotP , countT& csttTrimmedP , soulC& soulLinesP , const flagsT flagsP , soulC* pSoulLinkP )/*1*/
 
 /**/
 */

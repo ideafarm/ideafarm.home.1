@@ -12,7 +12,7 @@
             }                                                                                                                                           \
                 break ;                                                                                                                                 \
                 }                                                                                                                                       \
-                    PUSE( tinP , pbDoomed ) ;                                                                                                           \
+                    PUSE( tinBaseP , pbDoomed ) ;                                                                                                           \
                     byteT* pbDoomed = (byteT*)( (countT)( (const byteT*)*(blobSP*)pbvspP - 2 * sizeof( countT ) ) ) ;                                   \
                                                                                                                                                         \
                     DELzOMBIE( pDoomed ) ;                                                                                                              \
@@ -26,7 +26,7 @@
         {                                                                                                                                               \
         switch( idEventP )                                                                                                                              \
     {                                                                                                                                                   \
-    voidT _garbageCollector##idP##CBF( tinS& tinP , byteT* pbvspP , countT idEventP , countT cRefOldP , countT cRefNewLaterP , countT cArgP )           \
+    voidT _garbageCollector##idP##CBF( tinBaseS& tinBaseP , byteT* pbvspP , countT idEventP , countT cRefOldP , countT cRefNewLaterP , countT cArgP )           \
                                                                                                                                                         \
 #define GARBAGEcOLLECTORdEF(idP,classP)                                                                                                                 \
 

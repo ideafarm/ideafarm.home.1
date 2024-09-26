@@ -15,35 +15,35 @@
     BOSdOnOTtEST( WHATgbo , SelectObject( (HDC)hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , hbrusho ) ) //U::DEVELOP ERROR CHECKING THAT WILL WORK FOR SelectObject
     BOSdOnOTtEST( WHATgbo , SelectObject( (HDC)hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , hpeno ) ) //U::DEVELOP ERROR CHECKING THAT WILL WORK FOR SelectObject
     
-    winSetPaintTypeF( tinP , hDrawP ) ;
+    winSetPaintTypeF( tinBaseP , hDrawP ) ;
     
     //}
     //    paperP.mIdRow = mIdRowSave ;
     //    paperP.mIdCol = mIdColSave ;
     //
-    //    //winLineF( tinP , wP , wP.mColsF() , wP.mRowsF() ) ;
-    //    //winMoveF( tinP , wP ) ;
+    //    //winLineF( tinBaseP , wP , wP.mColsF() , wP.mRowsF() ) ;
+    //    //winMoveF( tinBaseP , wP ) ;
     //    //paperP.mIdCol = paperP.mIdRow = 1 ;
     //
-    //    winDrawTextF( tinP , wP , countTC() , countTC() , tn , tn.csF( tinP ) ) ;
-    //    winMoveF( tinP , wP ) ;
+    //    winDrawTextF( tinBaseP , wP , countTC() , countTC() , tn , tn.csF( tinBaseP ) ) ;
+    //    winMoveF( tinBaseP , wP ) ;
     //    paperP.mIdRow = wP.mRowsF() - crt ;
     //    paperP.mIdCol = 1 ;
     //
-    //    winDrawTextF( tinP , wP , countTC() , countTC() , tn , tn.csF( tinP ) ) ;
-    //    winMoveF( tinP , wP ) ;
+    //    winDrawTextF( tinBaseP , wP , countTC() , countTC() , tn , tn.csF( tinBaseP ) ) ;
+    //    winMoveF( tinBaseP , wP ) ;
     //    paperP.mIdRow = wP.mRowsF() - crt ;
     //    paperP.mIdCol = wP.mColsF() - cct ;
     //
-    //    winDrawTextF( tinP , wP , countTC() , countTC() , tn , tn.csF( tinP ) ) ;
-    //    winMoveF( tinP , wP ) ;
+    //    winDrawTextF( tinBaseP , wP , countTC() , countTC() , tn , tn.csF( tinBaseP ) ) ;
+    //    winMoveF( tinBaseP , wP ) ;
     //    paperP.mIdRow = 1 ;
     //    paperP.mIdCol = wP.mColsF() - cct ;
     //
-    //    winDrawTextF( tinP , wP , cct , crt , tn , tn.csF( tinP ) ) ;
+    //    winDrawTextF( tinBaseP , wP , cct , crt , tn , tn.csF( tinBaseP ) ) ;
     //    ZE( countT , crt ) ;
     //    ZE( countT , cct ) ;
-    //    winMoveF( tinP , wP ) ;
+    //    winMoveF( tinBaseP , wP ) ;
     //    paperP.mIdRow = 1 ;
     //    paperP.mIdCol = 1 ;
     //
@@ -53,15 +53,15 @@
     //    const measureT mIdRowSave = paperP.mIdRow ;
     //    const measureT mIdColSave = paperP.mIdCol ;
     //
-    //    //winMoveF( tinP , wP ) ;
+    //    //winMoveF( tinBaseP , wP ) ;
     //    //paperP.mIdRow = wP.mRowsF() / 2 ;
     //    //paperP.mIdCol = wP.mColsF() / 2 ;
     //
-    //    //winLineF( tinP , wP , mColMin , mRowMin ) ;
-    //    //winLineF( tinP , wP , mColMin , mRowMax ) ;
-    //    //winLineF( tinP , wP , mColMax , mRowMax ) ;
-    //    //winLineF( tinP , wP , mColMax , mRowMin ) ;
-    //    //winMoveF( tinP , wP ) ;
+    //    //winLineF( tinBaseP , wP , mColMin , mRowMin ) ;
+    //    //winLineF( tinBaseP , wP , mColMin , mRowMax ) ;
+    //    //winLineF( tinBaseP , wP , mColMax , mRowMax ) ;
+    //    //winLineF( tinBaseP , wP , mColMax , mRowMin ) ;
+    //    //winMoveF( tinBaseP , wP ) ;
     //    //paperP.mIdRow = mRowMin ;
     //    //paperP.mIdCol = mColMin ;
     //    //measureT mRowMax = wP.mRowsF() / 2 + 0x20 ;
@@ -69,38 +69,38 @@
     //    //measureT mRowMin = wP.mRowsF() / 2 - 0x20 ;
     //    //measureT mColMin = wP.mColsF() / 2 - 0x20 ;
     //
-    //    //winLineF( tinP , wP , wP.mColsF() , 0 , 1        ) ;
-    //    //winMoveF( tinP , wP ) ;
+    //    //winLineF( tinBaseP , wP , wP.mColsF() , 0 , 1        ) ;
+    //    //winMoveF( tinBaseP , wP ) ;
     //    //paperP.mIdRow = wP.mRowsF() ;
     //    //paperP.mIdCol = 1 ;
-    //    //winLineF( tinP , wP , wP.mColsF() , 0 , wP.mRowsF() ) ;
-    //    //winLineF( tinP , wP , 1        , 0 , 1        ) ;
-    //    //winLineF( tinP , wP , 1        , 0 , wP.mRowsF() ) ;
-    //    //winLineF( tinP , wP , wP.mColsF() , 0 , wP.mRowsF() ) ;
-    //    //winLineF( tinP , wP , wP.mColsF() , 0 , 1        ) ;
-    //    //winMoveF( tinP , wP ) ;
+    //    //winLineF( tinBaseP , wP , wP.mColsF() , 0 , wP.mRowsF() ) ;
+    //    //winLineF( tinBaseP , wP , 1        , 0 , 1        ) ;
+    //    //winLineF( tinBaseP , wP , 1        , 0 , wP.mRowsF() ) ;
+    //    //winLineF( tinBaseP , wP , wP.mColsF() , 0 , wP.mRowsF() ) ;
+    //    //winLineF( tinBaseP , wP , wP.mColsF() , 0 , 1        ) ;
+    //    //winMoveF( tinBaseP , wP ) ;
     //    //paperP.mIdCol = paperP.mIdRow = 1 ;
     //{
     //U::FOR DEBUGGING ONLY; COMMENT OUT IN PRODUCTION
     
-    winRectangleF( tinP , hDrawP , 1.0 , 1.0 , wP.mColsF() , wP.mRowsF() ) ;
-    winSetPaintTypeF( tinP , hDrawP , ifcIDtYPEpAINT_OPAQUE ) ;
+    winRectangleF( tinBaseP , hDrawP , 1.0 , 1.0 , wP.mColsF() , wP.mRowsF() ) ;
+    winSetPaintTypeF( tinBaseP , hDrawP , ifcIDtYPEpAINT_OPAQUE ) ;
     
     INCoShANDLES
-    HBRUSH hbrusho = (HBRUSH)tinP.brcRaw ;
+    HBRUSH hbrusho = (HBRUSH)((tinNormalS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , SelectObject( (HDC)hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , hbrush ) ) //U::DEVELOP ERROR CHECKING THAT WILL WORK FOR SelectObject
 
     INCoShANDLES
-    HPEN   hpeno   = (HPEN)tinP.brcRaw ;
+    HPEN   hpeno   = (HPEN)((tinNormalS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , SelectObject( (HDC)hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , hpen ) ) //U::DEVELOP ERROR CHECKING THAT WILL WORK FOR SelectObject
 
     INCoShANDLES
-    HBRUSH hbrush  = (HBRUSH)tinP.brcRaw ;
+    HBRUSH hbrush  = (HBRUSH)((tinNormalS&)tinBaseP).brcRaw ;
     BOSpOOP
     BOS( WHATsww , BOSoK , CreateSolidBrush(         RGB( 0x00 , 0x00 , 0x00 ) ) )
 
     INCoShANDLES
-    HPEN hpen = (HPEN)tinP.brcRaw ;
+    HPEN hpen = (HPEN)((tinNormalS&)tinBaseP).brcRaw ;
     BOSpOOP
     BOS( WHATsww , BOSoK , CreatePen( PS_SOLID , 1 , RGB( 0x00 , 0x00 , 0x00 ) ) )
 
@@ -122,12 +122,12 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::winResetF( tinS& tinP , const handleC& hDrawP , windowOldC& wP )/*1*/
+/*1*/voidT thirdC::winResetF( tinBaseS& tinBaseP , const handleC& hDrawP , windowOldC& wP )/*1*/
 
 /**/
 */
  wP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.102013e.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$winResetF.0.html\"\>instances\</A\>

@@ -10,11 +10,11 @@
 }
     return cDone ;
 
-    //traceF( tinP , T("strReplaceF / -") ) ; //U::TO FIND A BUG
+    //traceF( tinBaseP , T("strReplaceF / -") ) ; //U::TO FIND A BUG
 
     }
         }
-            delF( tinP , psttp ) ;
+            delF( tinBaseP , psttp ) ;
             soulP << psttp ;
             sAfter >> psttp ; ___( psttp ) ;
             ZE( strokeS* , psttp ) ;
@@ -24,35 +24,35 @@
     else
     if( !soulP.bUsesJotF() && !sAfter.bUsesJotF() ) soulP = sAfter ;
 
-    //traceF( tinP , T("strReplaceF / 0 [sAfter]:  ")+TF2((countT)sAfter,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::TO FIND A BUG
+    //traceF( tinBaseP , T("strReplaceF / 0 [sAfter]:  ")+TF2((countT)sAfter,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::TO FIND A BUG
 
     }
-        delF( tinP , psttp ) ;
+        delF( tinBaseP , psttp ) ;
         sAfter << psttp ;
-        cDone += strReplaceF( tinP , psttp , 0 , psttOldSmallP , psttNewSmallP , 0 , flagsP ) ; ___( psttp ) ;
+        cDone += strReplaceF( tinBaseP , psttp , 0 , psttOldSmallP , psttNewSmallP , 0 , flagsP ) ; ___( psttp ) ;
         soulP >> psttp ; ___( psttp ) ;
         ZE( strokeS* , psttp ) ;
     {
     while( soulP )
     ZE( countT , cDone ) ;
 
-    //traceF( tinP , T("strReplaceF / 1 [soulP]:  ")+TF2((countT)soulP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::TO FIND A BUG
+    //traceF( tinBaseP , T("strReplaceF / 1 [soulP]:  ")+TF2((countT)soulP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::TO FIND A BUG
 
-    if( postJot ) tinP.pEther->delF( tinP , postJot ) ;
-    soulC sAfter( tinP , TAG( TAGiDnULL ) , flSOUL_null , postJot ) ;
+    if( postJot ) ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , postJot ) ;
+    soulC sAfter( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , postJot ) ;
 
-    //traceF( tinP , T("strReplaceF / 2") ) ; //U::TO FIND A BUG
+    //traceF( tinBaseP , T("strReplaceF / 2") ) ; //U::TO FIND A BUG
 
     }
-        tinP.pEther->delF( tinP , psttJot ) ;
-        tinP.pEther->strMakeF( tinP , LF , postJot , psttJot ) ; ___( postJot ) ;
-        tinP.pEther->strUniqueF( tinP , psttJot ) ; ___( psttJot ) ;
+        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttJot ) ;
+        ((tinNormalS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , postJot , psttJot ) ; ___( postJot ) ;
+        ((tinNormalS&)tinBaseP).pEther->strUniqueF( tinBaseP , psttJot ) ; ___( psttJot ) ;
         ZE( strokeS* , psttJot ) ;
     {
     if( F(flagsP) & flSTRrEPLACE_USEjOT )
     ZE( osTextT* , postJot ) ;
 
-    //traceF( tinP , T("strReplaceF / +") ) ; //U::TO FIND A BUG
+    //traceF( tinBaseP , T("strReplaceF / +") ) ; //U::TO FIND A BUG
 
     }
         if( POOP ) return 0 ;
@@ -64,7 +64,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT etherC::strReplaceF( tinS& tinP , soulC& soulP , const strokeS* const psttOldSmallP , const strokeS* const psttNewSmallP , const flagsT flagsP )/*1*/
+/*1*/countT etherC::strReplaceF( tinBaseS& tinBaseP , soulC& soulP , const strokeS* const psttOldSmallP , const strokeS* const psttNewSmallP , const flagsT flagsP )/*1*/
 
 /**/
 */

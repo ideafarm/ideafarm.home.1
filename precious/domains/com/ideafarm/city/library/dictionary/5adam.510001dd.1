@@ -10,22 +10,22 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("\r\npress the enter key") ) ;
+etThread.strokeF( tinBaseP , T("\r\npress the enter key") ) ;
 
 }
-    etThread.strokeF( tinP , TF3(vv,0,2)+T("\t") ) ;
+    etThread.strokeF( tinBaseP , TF3(vv,0,2)+T("\t") ) ;
 
     stack >> vv ;
     ZE( countT , vv ) ;
 {
 while( stack )
 
-while( cDone < cThreads ) etThread.osSleepF( tinP , TUCK * 32 ) ;
+while( cDone < cThreads ) etThread.osSleepF( tinBaseP , TUCK * 32 ) ;
 }
-    etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stack , idt , (countT)&cDone ) ;
+    etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&stack , idt , (countT)&cDone ) ;
     ZE( countT , tnu ) ;
 {
 for( countT idt = 1 ; idt <= cThreads ; idt ++ )
@@ -33,7 +33,7 @@ const countT cThreads = 8 ;
 
 ZE( countT , cDone ) ;
 
-stackC stack( tinP , ether , TAG( TAGiDnULL ) ) ;
+stackC stack( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -41,13 +41,13 @@ DONE( tmF )
 }
     cDone ++ ;
 
-    stack.ungrabF( tinP ) ;
+    stack.ungrabF( tinBaseP ) ;
     }
-        etThread.osSleepF( tinP , TUCK ) ;
+        etThread.osSleepF( tinBaseP , TUCK ) ;
         stack << idThread * 0x10 + digit ;
     {
     for( countT digit = 1 ; digit <= 0xa ; digit ++ )
-    stack.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stack.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     countT& cDone    = *(countT*)pTaskP->c3 ;
     countT  idThread =           pTaskP->c2 ;

@@ -11,14 +11,14 @@ REST
 
 }
     }
-        ++ s ; ether.osSleepF( tinP , TUCK * 2 ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TUCK * 2 ) ;
 
         }
             bPrefix = !bPrefix ;
 
             }
                 else          pbi = 0 ;
-                if( bDelete ) PUSE( tinP , *(byteT**)&pbi ) ;
+                if( bDelete ) PUSE( tinBaseP , *(byteT**)&pbi ) ;
 
                 }
                     cbi = sizeof( countT ) ;
@@ -37,12 +37,12 @@ REST
                 cbi = cbiSave ;
             {
             if( !pbi )
-            boolT bDelete = books.readF( tinP , pbi , cbi , hRead ) ;
+            boolT bDelete = books.readF( tinBaseP , pbi , cbi , hRead ) ;
             handleC hReadSave = hRead ;
             countT cbiSave = cbi ;
         {
         while( !ether )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !ether )
     ZE( countT , idCycle ) ;
@@ -50,9 +50,9 @@ REST
     countT cbi = sizeof( countT ) ;
     ZE( const byteT* , pbi ) ;
 
-    handleC hRead( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+    handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
 
-    booksC books( tinP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) ) ;
+    booksC books( tinBaseP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) ) ;
 {
 
 etThread.osThreadF( TaRG1( tmWriteF ) ) ;
@@ -62,21 +62,21 @@ TODO
 DONE( tmWriteF )
 }
     }
-        ++ s ; ether.osSleepF( tinP , TUCK ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TUCK ) ;
 
-        tinP.pc Utility[ 0 ] -- ;
-        books.writeF( tinP , pbTuck       , cbo        , 0 , 0 , flBOOKScwRITE_ALLOWoDDlENGTH ) ;
-        books.writeF( tinP , (byteT*)&cbo , sizeof cbo , 0 , 0 , flBOOKScwRITE_ALLOWoDDlENGTH ) ;
-        tinP.pc Utility[ 0 ] ++ ;
+        ((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
+        books.writeF( tinBaseP , pbTuck       , cbo        , 0 , 0 , flBOOKScwRITE_ALLOWoDDlENGTH ) ;
+        books.writeF( tinBaseP , (byteT*)&cbo , sizeof cbo , 0 , 0 , flBOOKScwRITE_ALLOWoDDlENGTH ) ;
+        ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
         countT cbo = 1 + idCycle % sizeof pbTuck ;
 
         ++ idCycle ;
     {
     while( !ether )
     ZE( countT , idCycle ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-    booksC books( tinP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinP ) , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , 1 + ( TUCK << 1 ) ) ;
+    booksC books( tinBaseP , TAG( TAGiDnULL ) , "varying.size" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , 1 + ( TUCK << 1 ) ) ;
 
     for( countT offo = 0 ; offo < sizeof pbTuck ; offo ++ ) pbTuck[ offo ] = (byteT)offo ;
     byteT pbTuck[ TUCK ] ;

@@ -116,9 +116,9 @@
     ZE( countT* , pco ) ;
 
     }
-        if( pcP ) thirdC::c_memsetIF( tinP , (byteT*)pcP , ( cco + 1 ) * sizeof( countT ) ) ;
-        PUSE.newF( tinP , LF , *(byteT**)&pcP , ( cco + 1 ) * sizeof( countT ) ) ; ___( pcP ) ;
-        const countT cco = thirdC::c_strlenIF( tinP , pczInP ) ; //U::O: CALCULATE LENGTH NEEDED
+        if( pcP ) thirdC::c_memsetIF( tinBaseP , (byteT*)pcP , ( cco + 1 ) * sizeof( countT ) ) ;
+        PUSE.newF( tinBaseP , LF , *(byteT**)&pcP , ( cco + 1 ) * sizeof( countT ) ) ; ___( pcP ) ;
+        const countT cco = thirdC::c_strlenIF( tinBaseP , pczInP ) ; //U::O: CALCULATE LENGTH NEEDED
     {
     if( !pcP )                                                                                                                             // IFF (IF AND ONLY IF) ALLOCATED NOW, OUTPUT IS ENTIRELY INITIALIZED TO PLACEhOLDER
 
@@ -131,7 +131,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT etherC::strSquishIF( tinS& tinP , countT*& pcP , const countT* pczInP )/*1*/
+/*1*/countT etherC::strSquishIF( tinBaseS& tinBaseP , countT*& pcP , const countT* pczInP )/*1*/
 
 //20240828@1049: CHANGED BEHAVIOR: NOW DOES NOT EMIT BM_HIGH WHEN !got ; NOW RETURNS LENGTH OF OUTPUT STRING ; CALLERS MUST NOW USE THAT LENGTH AND HANDLE NULL VALUES WITHIN THE OUTPUT STRING
 
@@ -142,7 +142,7 @@
   if preallocated, must be sufficiently large (overrun will not be detected)
   may be preallocated
  pcP
- tinP
+ tinBaseP
 arguments
 /*
 

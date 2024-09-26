@@ -10,34 +10,34 @@
     }
         }                                                                                                                           \
             }                                                                                                                       \
-                tinP.pag1->_etherC_.pSwsRecycle->ungrabF( tinP ) ;                                                                                      \
-                *tinP.pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                tinP.pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                        \
-                tinP.pag1->_etherC_.pSwsRecycle->grabF( tinP , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
+                *((tinNormalS&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tinNormalS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                        \
+                ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
                 /*LOGrAWtID8( "GETfROMrECYCLER5: RETURN process                      " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                             */   \
             {                                                                                                                       \
             else                                                                                                                    \
             }                                                                                                                       \
-                *tinP.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
-                tinP.pczl_pSwsRecycle = c7Lever ;                                                                                   \
+                *((tinNormalS&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
+                ((tinNormalS&)tinBaseP).pczl_pSwsRecycle = c7Lever ;                                                                                   \
                 /*LOGrAWtID8( "GETfROMrECYCLER5: RETURN thread                       " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                             */   \
             {                                                                                                                       \
-            if( F(tinP.flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && tinP.pSwsRecycle )                                        \
+            if( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tinNormalS&)tinBaseP).pSwsRecycle )                                        \
                                                                                                                                     \
-            pObjectP->recycleCleanF( tinP ) ;                                                                                       \
+            pObjectP->recycleCleanF( tinBaseP ) ;                                                                                       \
             ___( pObjectP ) ;                                                                                                       \
                                                                                                                                     \
             if( !c7Lever.c2 ) c7Lever.c2 = - 1 ;                                                                                    \
             if( !c7Lever.c3 ) c7Lever.c3 = - 1 ;                                                                                    \
             if( !c7Lever.c4 ) c7Lever.c4 = - 1 ;                                                                                    \
             if( !c7Lever.c5 ) c7Lever.c5 = - 1 ;                                                                                    \
-            count7S c7Lever( ifcIDtYPErECYCLE_##classP , pObjectP->recycleLever1F( tinP ) , pObjectP->recycleLever2F( tinP ) , pObjectP->recycleLever3F( tinP ) , pObjectP->recycleLever4F( tinP ) , pObjectP->recycleLever5F( tinP ) ) ; \
+            count7S c7Lever( ifcIDtYPErECYCLE_##classP , pObjectP->recycleLever1F( tinBaseP ) , pObjectP->recycleLever2F( tinBaseP ) , pObjectP->recycleLever3F( tinBaseP ) , pObjectP->recycleLever4F( tinBaseP ) , pObjectP->recycleLever5F( tinBaseP ) ) ; \
         {                                                                                                                           \
         if( pObjectP )                                                                                                              \
         _IO_                                                                                                                        \
         SCOOP                                                                                                                       \
     {                                                                                                                               \
-    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP )                                                                     \
                                                                                                                                     \
 #define RETURNtOrECYCLER5(classP)                                                                                                   \
 

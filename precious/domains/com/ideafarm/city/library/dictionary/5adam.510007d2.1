@@ -9,84 +9,84 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
         }
-            ++ s ; ether.osSleepF( tinP , TOCK ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
         {
         else
         }
-            if( etThread.diskFileExistsF( tinP , tFileSecretReceived ) ) etThread.boxZapF( tinP , tFileSecretReceived ) ;
-            if( etThread.diskFileExistsF( tinP , tFileSecret         ) ) etThread.boxZapF( tinP , tFileSecret         ) ;
+            if( etThread.diskFileExistsF( tinBaseP , tFileSecretReceived ) ) etThread.boxZapF( tinBaseP , tFileSecretReceived ) ;
+            if( etThread.diskFileExistsF( tinBaseP , tFileSecret         ) ) etThread.boxZapF( tinBaseP , tFileSecret         ) ;
 
             }
                 }
-                    etThread.traceF( tinP , T("could not close RDP") ) ;
-                    etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("Could not close RDP.") ) ;
+                    etThread.traceF( tinBaseP , T("could not close RDP") ) ;
+                    etThread.emailFactoryReportF( tinBaseP , T("RDP Open House") , T("Could not close RDP.") ) ;
                 {
                 else
                 }
-                    etThread.traceF( tinP , T("closed RDP aok") ) ;
-                    etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("Closed RDP aok.") ) ;
+                    etThread.traceF( tinBaseP , T("closed RDP aok") ) ;
+                    etThread.emailFactoryReportF( tinBaseP , T("RDP Open House") , T("Closed RDP aok.") ) ;
                 {
                 if( bOk )
-                bOk = sendCommandF( tinP , etThread , tHeadEnable , tBodyEnable ) ;
-                etThread.traceF( tinP , T("closing rdp") ) ;
+                bOk = sendCommandF( tinBaseP , etThread , tHeadEnable , tBodyEnable ) ;
+                etThread.traceF( tinBaseP , T("closing rdp") ) ;
 
-                ++ s ; ether.osSleepF( tinP , TICK ) ;
-                etThread.traceF( tinP , T("napping for a tick") ) ;
+                ++ s ; ether.osSleepF( tinBaseP , TICK ) ;
+                etThread.traceF( tinBaseP , T("napping for a tick") ) ;
 
                 }
-                    etThread.traceF( tinP , T("could not open RDP") ) ;
-                    etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("Could not open RDP.") ) ;
+                    etThread.traceF( tinBaseP , T("could not open RDP") ) ;
+                    etThread.emailFactoryReportF( tinBaseP , T("RDP Open House") , T("Could not open RDP.") ) ;
                 {
                 else
                 }
-                    etThread.traceF( tinP , T("opened RDP aok") ) ;
-                    etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("Opened RDP aok.") ) ;
+                    etThread.traceF( tinBaseP , T("opened RDP aok") ) ;
+                    etThread.emailFactoryReportF( tinBaseP , T("RDP Open House") , T("Opened RDP aok.") ) ;
                 {
                 if( bOk )
-                boolT bOk = sendCommandF( tinP , etThread , tHeadDisable , tBodyDisable ) ;
-                etThread.traceF( tinP , T("opening rdp") ) ;
+                boolT bOk = sendCommandF( tinBaseP , etThread , tHeadDisable , tBodyDisable ) ;
+                etThread.traceF( tinBaseP , T("opening rdp") ) ;
             {
             else
             }
-                etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("I did not receive the correct secret, so will not open RDP.") ) ;
-                etThread.traceF( tinP , T("i did not receive the correct secret, so will not open RDP.") ) ;
+                etThread.emailFactoryReportF( tinBaseP , T("RDP Open House") , T("I did not receive the correct secret, so will not open RDP.") ) ;
+                etThread.traceF( tinBaseP , T("i did not receive the correct secret, so will not open RDP.") ) ;
             {
-            if( /*!bAlways &&*/ !etThread.diskFileExistsF( tinP , tFileSecretReceived ) )
+            if( /*!bAlways &&*/ !etThread.diskFileExistsF( tinBaseP , tFileSecretReceived ) )
             //boolT bAlways = 1 ;     //U:: REMOVE THIS WHEN HTTP SERVICE IS STABLE
 
-            ++ s ; ether.osSleepF( tinP , TICK << 1 ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TICK << 1 ) ;
 
-            etThread.traceF( tinP , T("napping for 2 tick before opening rdp") ) ;
-            //U:: PROD: etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://www.ideafarm.com/admin.rdp.open.house?secret=")+tSecret ) ;
-            etThread.emailFactoryReportF( tinP , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://38.111.147.102/admin.rdp.open.house?secret=")+tSecret ) ; //U:: WORKAROUND TO FIND A BUG
+            etThread.traceF( tinBaseP , T("napping for 2 tick before opening rdp") ) ;
+            //U:: PROD: etThread.emailFactoryReportF( tinBaseP , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://www.ideafarm.com/admin.rdp.open.house?secret=")+tSecret ) ;
+            etThread.emailFactoryReportF( tinBaseP , T("RDP Open House") , T("RDP will open in 2 tick, for 1 tick, but only if you click this link:  http://38.111.147.102/admin.rdp.open.house?secret=")+tSecret ) ; //U:: WORKAROUND TO FIND A BUG
 
             TN( tSecret , "" ) ; tSecret = TF2(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 
-            if( etThread.diskFileExistsF( tinP , tFileSecretReceived ) ) etThread.boxZapF( tinP , tFileSecretReceived ) ;
+            if( etThread.diskFileExistsF( tinBaseP , tFileSecretReceived ) ) etThread.boxZapF( tinBaseP , tFileSecretReceived ) ;
         
-            etThread.boxPutF( tinP , tFileSecret , (byteT*)&secret , sizeof secret ) ;
+            etThread.boxPutF( tinBaseP , tFileSecret , (byteT*)&secret , sizeof secret ) ;
             countT secret = slab.trueRandom ;
 
             time2L = time2N ;
             time1L = time1N ;
         {
         if( time2E || time1E > ( TICK << 4 ) )
-        etThread.osTimeSubtractF( tinP , time1E , time2E , time1L , time2L ) ;
+        etThread.osTimeSubtractF( tinBaseP , time1E , time2E , time1L , time2L ) ;
 
         sCountT time2E = time2N ;
         countT  time1E = time1N ;
-        etThread.osTimeNowF( tinP , time1N , time2N ) ;
+        etThread.osTimeNowF( tinBaseP , time1N , time2N ) ;
         ZE( sCountT , time2N ) ;
         ZE( countT  , time1N ) ;
     {
     while( !ether )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     ZE( countT , time2L ) ;
     ZE( countT , time1L ) ;
 
@@ -96,7 +96,7 @@ etThread.traceF( tinP , T("ok") ) ;
     ) ;
 
         "\r\n"
-        "Content-Length: ")+TF4(tBodyEnable.csF(tinP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
+        "Content-Length: ")+TF4(tBodyEnable.csF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
         "Content-Type: application/json\r\n"
         "Authorization: Basic ")+tPass+T("\r\n"
         "accept: */*\r\n"
@@ -109,7 +109,7 @@ etThread.traceF( tinP , T("ok") ) ;
     ) ;
 
         "\r\n"
-        "Content-Length: ")+TF4(tBodyDisable.csF(tinP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
+        "Content-Length: ")+TF4(tBodyDisable.csF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n"
         "Content-Type: application/json\r\n"
         "Authorization: Basic ")+tPass+T("\r\n"
         "accept: */*\r\n"
@@ -122,12 +122,12 @@ etThread.traceF( tinP , T("ok") ) ;
     TN( tBodyEnable  , "{ \"deactivated\": false }" ) ;
     TN( tBodyDisable , "{ \"deactivated\": true }" ) ;
 {
-if( tPass.csF( tinP ) )
+if( tPass.csF( tinBaseP ) )
 
 }
-    etThread.delF( tinP , psttPass ) ;
+    etThread.delF( tinBaseP , psttPass ) ;
     if( psttPass && psttPass->idAdam ) tPass = T(psttPass) ;
-    ZE( strokeS* , psttPass ) ; etThread.querySettingF( tinP , psttPass , T("!ipdos.barracuda.firewall.credentials64")  ) ; ___( psttPass ) ;
+    ZE( strokeS* , psttPass ) ; etThread.querySettingF( tinBaseP , psttPass , T("!ipdos.barracuda.firewall.credentials64")  ) ; ___( psttPass ) ;
 {
 TN( tPass , "" ) ;
 
@@ -142,8 +142,8 @@ TODO
     }
         }
             }
-                etherP.delF( tinP , psttr ) ;
-                bOk = 1 == etherP.strIdF( tinP , T("HTTP/1.1 204 No Content") , psttr ) ;
+                etherP.delF( tinBaseP , psttr ) ;
+                bOk = 1 == etherP.strIdF( tinBaseP , T("HTTP/1.1 204 No Content") , psttr ) ;
 
                 }
                     }
@@ -158,7 +158,7 @@ TODO
                             else
                             if( *post2 != '\r' && *post2 != '\n' ) bArmed = 0 ;
 
-                            etherP.strFuseF( tinP , psttr , T(post2) ) ;
+                            etherP.strFuseF( tinBaseP , psttr , T(post2) ) ;
                         {
                         else
                         }
@@ -167,25 +167,25 @@ TODO
                         {    
                         if( POOP )
 
-                        ss.readF( tinP , post2 , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+                        ss.readF( tinBaseP , post2 , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
                         osTextT post2[] = { 0 , 0 } ;
                     {
                     for(;;)
                     ZE( boolT , bArmed ) ;
                 {
-                etherP.strMakeF( tinP , LF , psttr , 0 , TUCK << 4 ) ; ___( psttr ) ;
+                etherP.strMakeF( tinBaseP , LF , psttr , 0 , TUCK << 4 ) ; ___( psttr ) ;
                 ZE( strokeS* , psttr ) ;
             {
             else
             if( POOP ) { POOPRqUIET ; }
 
-            ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
+            ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
         {
         else
         if( POOP ) { POOPRqUIET ; }
 
-        ss.connectF( tinP , 8080 , socketC::nicNameIF( tinP , *tinP.pEtScratch , T("10.1.0.9") ) ) ;
-        socketC ss( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        ss.connectF( tinBaseP , 8080 , socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , T("10.1.0.9") ) ) ;
+        socketC ss( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -194,7 +194,7 @@ TODO
 
     TN( tSay , "" ) ; tSay = tHeadP + tBodyP ;
 {
-boolT sendCommandF( tinS& tinP , etherC& etherP , textC& tHeadP , textC& tBodyP )
+boolT sendCommandF( tinBaseS& tinBaseP , etherC& etherP , textC& tHeadP , textC& tBodyP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_REMOTEdESKTOPoPENhOUSE" )/*1*/
 /**/

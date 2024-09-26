@@ -10,13 +10,13 @@
 }
     return *this ;
 
-    ether.strMakeF( tinP , LF , psttName , TF1(idTable) ) ; ___( psttName ) ;
-    copyCellsF( tinP , tableP ) ;
+    ether.strMakeF( tinBaseP , LF , psttName , TF1(idTable) ) ; ___( psttName ) ;
+    copyCellsF( tinBaseP , tableP ) ;
 
-    for( countT idc = 1 ; idc <= cColsNew ; idc ++ ) newColF( tinP , tableP.nameF( tinP , idc ) ) ;
-    countT cColsNew = tableP.cColsF( tinP ) ;
+    for( countT idc = 1 ; idc <= cColsNew ; idc ++ ) newColF( tinBaseP , tableP.nameF( tinBaseP , idc ) ) ;
+    countT cColsNew = tableP.cColsF( tinBaseP ) ;
 
-    purgeF( tinP ) ;
+    purgeF( tinBaseP ) ;
     _IO_
 
     SCOOP

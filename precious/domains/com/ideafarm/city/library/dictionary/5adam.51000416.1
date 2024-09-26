@@ -9,7 +9,7 @@
 
 REST
 
-if( bReboot ) etThread.osFireF( tinP ) ;
+if( bReboot ) etThread.osFireF( tinBaseP ) ;
 
 }
     }
@@ -19,7 +19,7 @@ if( bReboot ) etThread.osFireF( tinP ) ;
                     //}
                         //}
                     //        TELL( "hired self" )
-                    //        { countT idAdam = DDNUMB ; etThread.ifcHireF( tinP , T("tool.gorilla.ephemeral.threads") , idAdam , 0 ) ; }
+                    //        { countT idAdam = DDNUMB ; etThread.ifcHireF( tinBaseP , T("tool.gorilla.ephemeral.threads") , idAdam , 0 ) ; }
                     //        TELL( "hiring self" )                                       
                         //{
                         //else
@@ -32,32 +32,32 @@ if( bReboot ) etThread.osFireF( tinP ) ;
                     //{
                     //if( cAll == 0x10 )
 
-                    if( !( cAll % 0x10 ) ) etThread.winSetTitleF( tinP , /*TF1(state.idMe)+tb+TF1(state.cThreads)+tb+*/TF1(cAll)+tb+TF1(cAlive) ) ;
+                    if( !( cAll % 0x10 ) ) etThread.winSetTitleF( tinBaseP , /*TF1(state.idMe)+tb+TF1(state.cThreads)+tb+*/TF1(cAll)+tb+TF1(cAlive) ) ;
                     cAll ++ ;
                     //state.cThreads ++ ;
                     }
-                        //etThread.ifcSayF( tinP , TF1(cAll) , flSAY_APPEND | flSAY_LOG ) ;
-                        etThread.strokeF( tinP , T("\r        \r")+TF1(cAll) ) ;
+                        //etThread.ifcSayF( tinBaseP , TF1(cAll) , flSAY_APPEND | flSAY_LOG ) ;
+                        etThread.strokeF( tinBaseP , T("\r        \r")+TF1(cAll) ) ;
                     {
                     if( !( cAll % 0x10000 ) )
                 {
                 if( !etThread )
-                etThread.osThreadF( tinP , countTC() , tmNullF ) ;
+                etThread.osThreadF( tinBaseP , countTC() , tmNullF ) ;
             {
             if( !ether )
             }
-                //++ s ; ether.osSleepF( tinP , TUCK * 0x10 ) ;
-                //sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                //++ s ; ether.osSleepF( tinBaseP , TUCK * 0x10 ) ;
+                //sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
         {
         else
         }
-            thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-            tinP.cYield = 0 ;
-            thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) ) ;
-            tinP.cYield = 0 ;
-            thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_RUSH ) ;
-            const countT idDesireSave = tinP.idDesireSetBySelf ;
+            thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
+            ((tinNormalS&)tinBaseP).cYield = 0 ;
+            thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinBaseP).cYield = 0 ;
+            thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+            const countT idDesireSave = ((tinNormalS&)tinBaseP).idDesireSetBySelf ;
         {
         //if( cAlive > 0x10 )
         //if( cAlive > 0x40 )
@@ -65,36 +65,36 @@ if( bReboot ) etThread.osFireF( tinP ) ;
     {
     while( !ether && !etThread )
     ranUniC ru( TOCK * 4 , 1 ) ;
-    countT& cAlive = thirdC::os_cAllKidThreadsI_IF( tinP ) ;
+    countT& cAlive = thirdC::os_cAllKidThreadsI_IF( tinBaseP ) ;
     ZE( countT , cAll ) ;
     TN( tb , " " ) ;
 
     TN( tLog , "\\log.8140104" ) ;
 
-    etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
+    etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
 
-    //U::COMMENTED OUT SO CAN HAVE MULTIPLE CELLS OF ME: stateS state( tinP , etThread ) ;
+    //U::COMMENTED OUT SO CAN HAVE MULTIPLE CELLS OF ME: stateS state( tinBaseP , etThread ) ;
 {
 ZE( boolT , bReboot ) ;
 
 //}
-//    ++ s ; ether.osSleepF( tinP , TOCK * 0x40 ) ; //TO GIVE OTHER HOSTS TIME TO INITIALIZE
-//    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+//    ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x40 ) ; //TO GIVE OTHER HOSTS TIME TO INITIALIZE
+//    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 //{
 
 TODO
 
 DONE( tmNullF )
 }
-    ++ s ; etThread.osSleepF( tinP , TUCK * 0x10 ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x10 ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 TASK( tmNullF )
 
 }
 {
-stateC( tinP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tinS& tinP , etherC& etherP ) :
+stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )
+stateS::stateS( tinBaseS& tinBaseP , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -105,7 +105,7 @@ TRANSLATEsTATE_BEGIN( stateS , 2 )
 
 ;
 }
-    stateS( tinS& tinP , etherC& etherP ) ;
+    stateS( tinBaseS& tinBaseP , etherC& etherP ) ;
 
     countT cThreads ;
     countT idMe ;

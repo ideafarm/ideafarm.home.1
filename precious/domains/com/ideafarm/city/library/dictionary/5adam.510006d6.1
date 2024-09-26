@@ -9,80 +9,80 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-//btCloudFileNames.traceF( tinP , countTC() ) ;
+//btCloudFileNames.traceF( tinBaseP , countTC() ) ;
 
 while( ~hFind && !ether ) ;
 }
     }
         DEL( pInfo ) ;
-        etThread.delF( tinP , postQuery ) ;
+        etThread.delF( tinBaseP , postQuery ) ;
 
-        etThread.traceF( tinP , T(bFound?"    found: ":"not found: ")+tShort ) ;
-        boolT bFound = btCloudFileNames.queryF( tinP , postQuery , 0 , costQuery * SB ) ;
+        etThread.traceF( tinBaseP , T(bFound?"    found: ":"not found: ")+tShort ) ;
+        boolT bFound = btCloudFileNames.queryF( tinBaseP , postQuery , 0 , costQuery * SB ) ;
 
         for( countT offr = 0 ; offr < costQuery ; offr ++ ) postQuery[ offr ] = reverseBitsF( postQuery[ offr ] ) ;
 
-        countT costQuery = etThread.strMakeF( tinP , LF , postQuery , tShort ) ; ___( postQuery ) ;
+        countT costQuery = etThread.strMakeF( tinBaseP , LF , postQuery , tShort ) ; ___( postQuery ) ;
         ZE( osTextT* , postQuery ) ;
 
         }
-            etThread.delF( tinP , psttShort ) ;
+            etThread.delF( tinBaseP , psttShort ) ;
             tShort = T(psttShort) ;
-            etThread.delF( tinP , psttnu ) ;
-            etThread.strBisectF( tinP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+            etThread.delF( tinBaseP , psttnu ) ;
+            etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
             ZE( strokeS* , psttShort ) ;
             ZE( strokeS* , psttnu ) ;
         {
         TN( tShort , "" ) ;
     {
     if( pInfo && pInfo->psttIfoName && pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam != '/' )
-    etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ;
+    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 TN( tSlash       , "/" ) ;
 TN( tLike        , ""  ) ; tLike = tPathArchive+T("*") ;
 TN( tPathArchive , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/2.1. Drop Files Here To Archive Them/" ) ;
 
-btCloudFileNames.walkF( tinP , pbBuffer , sizeof pbBuffer , cNest , myCBF ) ;
+btCloudFileNames.walkF( tinBaseP , pbBuffer , sizeof pbBuffer , cNest , myCBF ) ;
 
-etThread.traceF( tinP , T("loaded  btCloudFileNames") ) ;
-while( !ether && !etThread && cloudRax.listFilesF( tinP , T("archive") , btCloudFileNames , tMarker ) ) ;
+etThread.traceF( tinBaseP , T("loaded  btCloudFileNames") ) ;
+while( !ether && !etThread && cloudRax.listFilesF( tinBaseP , T("archive") , btCloudFileNames , tMarker ) ) ;
 TN( tMarker , "" ) ;
-etThread.traceF( tinP , T("loading btCloudFileNames") ) ;
+etThread.traceF( tinBaseP , T("loading btCloudFileNames") ) ;
 
-cloudRax.getCloudInfoF( tinP ) ;
+cloudRax.getCloudInfoF( tinBaseP ) ;
 
 }
-    etThread.traceF( tinP , T("tenant      : ")+cloudInfo.tRackspaceTenantId    ) ;
-    etThread.traceF( tinP , T("internal url: ")+cloudInfo.tRackspaceInternalUrl ) ;
-    etThread.traceF( tinP , T("url         : ")+cloudInfo.tRackspacePublicUrl   ) ;
-    etThread.traceF( tinP , T("password    : ")+cloudInfo.tRackspaceAccessToken ) ;
+    etThread.traceF( tinBaseP , T("tenant      : ")+cloudInfo.tRackspaceTenantId    ) ;
+    etThread.traceF( tinBaseP , T("internal url: ")+cloudInfo.tRackspaceInternalUrl ) ;
+    etThread.traceF( tinBaseP , T("url         : ")+cloudInfo.tRackspacePublicUrl   ) ;
+    etThread.traceF( tinBaseP , T("password    : ")+cloudInfo.tRackspaceAccessToken ) ;
     cloudInfoS& cloudInfo = cloudRax ;
 {
 
-cloudC cloudRax( tinP , ifcIDcLOUD_RACKSPACE , T("IAD") , T("ideafarm") , T("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") ) ;
+cloudC cloudRax( tinBaseP , ifcIDcLOUD_RACKSPACE , T("IAD") , T("ideafarm") , T("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") ) ;
 
-bitTreeC btCloudFileNames( tinP , "bt.cloud.file.names" /*, 0*/ ) ;
+bitTreeC btCloudFileNames( tinBaseP , "bt.cloud.file.names" /*, 0*/ ) ;
 
 TODO
 
 }
     return 0 ;
 
-    etherC::etRockIF( tinP ).traceF( tinP , T("file: \"")+T(pbBufferDisplay)+T("\"") ) ;
+    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("file: \"")+T(pbBufferDisplay)+T("\"") ) ;
 
     for( countT offr = 0 ; offr < costfn ; offr ++ ) pbBufferDisplay[ offr ] = reverseBitsF( pbBufferDisplay[ offr ] ) ;
 
     pbBufferDisplay[ costfn ] = 0 ;
-    thirdC::c_memcpyIF( tinP , pbBufferDisplay , pbBuffer , costfn ) ;
+    thirdC::c_memcpyIF( tinBaseP , pbBufferDisplay , pbBuffer , costfn ) ;
     countT costfn = cNest / SB ;
 {
-countT myCBF( tinS& tinP , countT& cP )
+countT myCBF( tinBaseS& tinBaseP , countT& cP )
 
 byteT pbBufferDisplay[ TUCK ] ;
 byteT pbBuffer[        TUCK ] ;

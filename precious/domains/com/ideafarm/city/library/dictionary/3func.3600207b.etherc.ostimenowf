@@ -8,7 +8,7 @@
 
 
 }
-    //if( !fRawP ) third.osTimeSubtractF( tinP , time1P , time2P , ((poolOld SideS&)pool Work).timeError1 , ((poolOld SideS&)pool Work).timeError2 ) ;
+    //if( !fRawP ) third.osTimeSubtractF( tinBaseP , time1P , time2P , ((poolOld SideS&)pool Work).timeError1 , ((poolOld SideS&)pool Work).timeError2 ) ;
 
     // WHEN THE CENTRALIZED TIME SUBSYSTEM IS REWRITTEN, THESE ADJUSTMENT VALUES SHOULD BE MEMBERS OF homeS RATHER THAN STORED IN THE ROOT POOLoLD
     // SUCH A SUBSYSTEM SHOULD BE BASED UPON THE OO POWER EXPLOSIVE RELAY COMMUNICATION SUBSYSTEM
@@ -16,7 +16,7 @@
     // THEY WERE USED TO APPLY AN ADJUSTMENT THAT WAS CALCULATED USING TIME VALUES OBTAINED FROM A SERVER
     // THE "timeError" MEMBERS OF poolOld SideS WERE ELIMINATED DURING ELIMINATION OF poolOld SideS
 
-    third.osTimeNowF( tinP , time1P , time2P ) ;
+    third.osTimeNowF( tinBaseP , time1P , time2P ) ;
     _IO_
 
     }
@@ -29,7 +29,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::osTimeNowF( tinS& tinP , countT& time1P , sCountT& time2P , boolT fRawP )/*1*/
+/*1*/voidT etherC::osTimeNowF( tinBaseS& tinBaseP , countT& time1P , sCountT& time2P , boolT fRawP )/*1*/
 
 //DON'T USE _ IN HERE (WILL BLOW STACK)
 

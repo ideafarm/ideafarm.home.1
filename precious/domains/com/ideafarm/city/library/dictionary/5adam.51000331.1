@@ -10,35 +10,35 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
 
 }
-    etThread.strokeF( tinP , T("lever= ")+TF1(lever)+T("    cPlates= ")+TF1(cPlates)+T("    value= ")+TF1(value)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("lever= ")+TF1(lever)+T("    cPlates= ")+TF1(cPlates)+T("    value= ")+TF1(value)+T("\r\n") ) ;
 
-    swsMe.pullF( tinP , value ) ;
+    swsMe.pullF( tinBaseP , value ) ;
     ZE( countT , value ) ;
-    countT cPlates = swsMe.cPlatesF( tinP ) ;
+    countT cPlates = swsMe.cPlatesF( tinBaseP ) ;
 
-    lever = swsMe.leverF( tinP , idf ) ;
+    lever = swsMe.leverF( tinBaseP , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
 
 __( cFlavors != CtRIES ) ;
-countT cFlavors = swsMe.cFlavorsF( tinP ) ;
+countT cFlavors = swsMe.cFlavorsF( tinBaseP ) ;
 
-swsMe.replaceLeverF( tinP , lever ) ;
+swsMe.replaceLeverF( tinBaseP , lever ) ;
 ZE( countT , lever ) ;
 
-while( cDone < CtRIES ) etThread.osSleepF( tinP , TUCK * 0x20 ) ;
+while( cDone < CtRIES ) etThread.osSleepF( tinBaseP , TUCK * 0x20 ) ;
 
-for( countT idTry = 1 ; idTry <= CtRIES ; idTry ++ ) { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&swsMe , (countT)&cDone , (countT)&baton ) ; }
+for( countT idTry = 1 ; idTry <= CtRIES ; idTry ++ ) { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&swsMe , (countT)&cDone , (countT)&baton ) ; }
 
-batonC baton( tinP , TAG( TAGiDnULL ) ) ;
+batonC baton( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( countT , cDone ) ;
-switchStackC swsMe( ether , tinP , TAG( TAGiDnULL ) ) ;
+switchStackC swsMe( ether , tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -49,18 +49,18 @@ DONE( tmF )
 }
     cDone ++ ;
 
-    baton.ungrabF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
 
-    etThread.strokeF( tinP , T("thread ")+TF1(tinP.monitor.idThread)+T("    pulled vlue= ")+TF1(value)+T("\r\n") ) ;
-    swsMe.pullF( tinP , value , 1 ) ;
+    etThread.strokeF( tinBaseP , T("thread ")+TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T("    pulled vlue= ")+TF1(value)+T("\r\n") ) ;
+    swsMe.pullF( tinBaseP , value , 1 ) ;
     ZE( countT , value ) ;
 
-    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
-    swsMe.pushF( tinP , ( tinP.monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinBaseP , ( ((tinNormalS&)tinBaseP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinBaseP , ( ((tinNormalS&)tinBaseP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinBaseP , ( ((tinNormalS&)tinBaseP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
+    swsMe.pushF( tinBaseP , ( ((tinNormalS&)tinBaseP).monitor.idThread << 8 ) + ( ++ cFooeyLast ) , 1 ) ;
 
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     static countT cFooeyLast ;
 

@@ -58,24 +58,24 @@
         if( getNegAM( finger ) != FINGERnEG_GRABOTc ) { BLAMMO ; }  //U:: 20201027@1358: TO FIND A BUG
         if( getNegAM( finger ) == FINGERnEG_LINKEDc ) { BLAMMO ; }  //U:: 20201027@1358: TO FIND A BUG
 
-        //if( tinP.pc Utility[ 0 ] ) { CONoUTrAW( "linkedC 2\r\n" ) ; } //U:: TO FIND A BUG
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) { CONoUTrAW( "linkedC 2\r\n" ) ; } //U:: TO FIND A BUG
 
         _IO_
     {
     THREADmODE5oN( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY )
-    tinP.flushPendingInOutFrameTelemetryIfF() ;
+    ((tinNormalS&)tinBaseP).flushPendingInOutFrameTelemetryIfF() ;
 {
-idAdam( tinP.pag1->idAdam )
+idAdam( ((tinNormalS&)tinBaseP).pag1->idAdam )
 pKid( 0 ) ,
 root( *this ) ,
 idType( idTypeP ) ,
-grabotC( tinP , idLineCtP , idiFileCtP , pbBitsCtP , this == &processGlobal4I._handleC_linked_sm ? flGRABITc_SHARElAYER | flGRABITc_SNEAKYlOVER : flGRABITc_SHARElAYER , 0 , idGrabLayerP ) ,
-/*1*/linkedC::linkedC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const countT idGrabLayerP ) :/*1*/
+grabotC( tinBaseP , idLineCtP , idiFileCtP , pbBitsCtP , this == &processGlobal4I._handleC_linked_sm ? flGRABITc_SHARElAYER | flGRABITc_SNEAKYlOVER : flGRABITc_SHARElAYER , 0 , idGrabLayerP ) ,
+/*1*/linkedC::linkedC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const countT idGrabLayerP ) :/*1*/
 
 /**/
 
 */
- the caller must construct: tlsAllocStackExp_8_C tls( tinP )
+ the caller must construct: tlsAllocStackExp_8_C tls( tinBaseP )
  idGrabLayerP
   application code can specify a unique idType value so that it can identify the derived class when walking heterogeneous linked instances
   normally 0
@@ -84,7 +84,7 @@ grabotC( tinP , idLineCtP , idiFileCtP , pbBitsCtP , this == &processGlobal4I._h
  pbBitsCtP
  idiFileCtP
  idLineCtP
- tinP
+ tinBaseP
 parameters
 my idTypeP and idGrabLayerP are copied into each instance linked to me
 the root has no application data associated with it

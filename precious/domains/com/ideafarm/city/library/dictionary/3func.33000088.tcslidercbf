@@ -15,11 +15,11 @@
             break ;
 
             }
-                tcSlider.baton.ungrabF( tinP ) ;
+                tcSlider.baton.ungrabF( tinBaseP ) ;
 
                 }
-                    tcSlider.sign.giveF( tinP ) ;
-                    tcSlider.drawF( tinP ) ;
+                    tcSlider.sign.giveF( tinBaseP ) ;
+                    tcSlider.drawF( tinBaseP ) ;
                 {
                 if( bDo )
 
@@ -59,7 +59,7 @@
                     case ifcIDtYPEtOOL_MOUSEbUTTONlEFT :
                 {
                 switch( idTool )
-                tcSlider.baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                tcSlider.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 TN( tNewValue , "" ) ;
                 ZE( boolT , bDo ) ;
             {
@@ -72,7 +72,7 @@
         case ifcIDtYPEsTROKEcALLbACK_MOUSE :
         }
             break ;
-            if( tcSlider.pTcStateCBF ) (*tcSlider.pTcStateCBF)( tinP , etherP , tcSlider.cArg , idTypeCallP , idEventP , pcNotesP , flTcStateNewP , flTcStateOldP , sadamP ) ;
+            if( tcSlider.pTcStateCBF ) (*tcSlider.pTcStateCBF)( tinBaseP , etherP , tcSlider.cArg , idTypeCallP , idEventP , pcNotesP , flTcStateNewP , flTcStateOldP , sadamP ) ;
         {
         case ifcIDtYPEsTROKEcALLbACK_FLYOVER :
     {
@@ -81,7 +81,7 @@
     tcSliderC& tcSlider = *(tcSliderC*)cArgP ;
     ZE( boolT , bHandled ) ;
 {
-/*1*/boolT tcSliderCBF( tinS& tinP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamC& sadamP )/*1*/
+/*1*/boolT tcSliderCBF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamC& sadamP )/*1*/
 
 /**/
 */

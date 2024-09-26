@@ -73,8 +73,8 @@
     __( bMod && cb2 % sizeof( countT ) ) ;
     __( bMod && cb1 % sizeof( countT ) ) ;
 
-    countT cb2 = pb2P ? ( cb2P ? cb2P : third.c_strlenIF( tinP , pb2P ) ) : 0 ;
-    countT cb1 = pb1P ? ( cb1P ? cb1P : third.c_strlenIF( tinP , pb1P ) ) : 0 ;
+    countT cb2 = pb2P ? ( cb2P ? cb2P : third.c_strlenIF( tinBaseP , pb2P ) ) : 0 ;
+    countT cb1 = pb1P ? ( cb1P ? cb1P : third.c_strlenIF( tinBaseP , pb1P ) ) : 0 ;
 
     const boolT bMod = bNumericP && !bSignificanceIncreasingP ;
     const boolT bUp  = !bSignificanceIncreasingP ;
@@ -92,7 +92,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/sCountT subtractF( tinS& tinP , thirdC& third , const byteT* const pb1P , const byteT* const pb2P , const countT cb1P , const countT cb2P , const boolT bNumericP , const boolT bSignificanceIncreasingP )/*1*/
+/*1*/sCountT subtractF( tinBaseS& tinBaseP , thirdC& third , const byteT* const pb1P , const byteT* const pb2P , const countT cb1P , const countT cb2P , const boolT bNumericP , const boolT bSignificanceIncreasingP )/*1*/
 
     )
             (xP)                                                                                                        \
@@ -118,7 +118,7 @@
  cb1P
  pb2P
  pb1P
- tinP
+ tinBaseP
 arguments
  -1: pb1P < pb2P
  0: pb1P == pb2P

@@ -9,35 +9,35 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.traceF( tinP , T("[current value]: ")+T(post9) ) ;
+    etThread.traceF( tinBaseP , T("[current value]: ")+T(post9) ) ;
 
     post9[ 8 ] = 0 ;
-    thirdC::c_memcpyIF( tinP , post9 , pbi , 8 ) ;
+    thirdC::c_memcpyIF( tinBaseP , post9 , pbi , 8 ) ;
     osTextT post9[ 9 ] ;
 
     countT       cbi = pagei ;
     const byteT* pbi = pagei ;
 
-    pageC pagei = jotFiles.readF( tinP , idJot ) ;
-    jotFilesC jotFiles( tinP , "myJotFiles" , flJOTc_null ) ;
-    tlsAllocStackExp_a_C tls( tinP ) ;
+    pageC pagei = jotFiles.readF( tinBaseP , idJot ) ;
+    jotFilesC jotFiles( tinBaseP , "myJotFiles" , flJOTc_null ) ;
+    tlsAllocStackExp_a_C tls( tinBaseP ) ;
 {
 
 }
-    idJot = jotFiles.writeF( tinP , "hhhhhhhh" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    idJot = jotFiles.writeF( tinP , "gggggggg" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    idJot = jotFiles.writeF( tinP , "ffffffff" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    idJot = jotFiles.writeF( tinP , "eeeeeeee" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    idJot = jotFiles.writeF( tinP , "dddddddd" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    idJot = jotFiles.writeF( tinP , "cccccccc" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    idJot = jotFiles.writeF( tinP , "bbbbbbbb" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    idJot = jotFiles.writeF( tinP , "aaaaaaaa" , 8 , 0 , 0 , 0     ) ;    etThread.traceF( tinP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    jotFilesC jotFiles( tinP , "myJotFiles" , flJOTc_WRITE ) ;
-    tlsAllocStackExp_a_C tls( tinP ) ;
+    idJot = jotFiles.writeF( tinBaseP , "hhhhhhhh" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    idJot = jotFiles.writeF( tinBaseP , "gggggggg" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    idJot = jotFiles.writeF( tinBaseP , "ffffffff" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    idJot = jotFiles.writeF( tinBaseP , "eeeeeeee" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    idJot = jotFiles.writeF( tinBaseP , "dddddddd" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    idJot = jotFiles.writeF( tinBaseP , "cccccccc" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    idJot = jotFiles.writeF( tinBaseP , "bbbbbbbb" , 8 , 0 , 0 , idJot ) ;    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    idJot = jotFiles.writeF( tinBaseP , "aaaaaaaa" , 8 , 0 , 0 , 0     ) ;    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    jotFilesC jotFiles( tinBaseP , "myJotFiles" , flJOTc_WRITE ) ;
+    tlsAllocStackExp_a_C tls( tinBaseP ) ;
 {
 ZE( countT , idJot ) ;
 

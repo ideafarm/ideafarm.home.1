@@ -8,20 +8,20 @@
 
 
 }
-    delF( tinP , psttWhite ) ;
+    delF( tinBaseP , psttWhite ) ;
 
     }
         }
             }
-                strReplaceF(    tinP , psttP , 0 , T(psttTokenP)+T(" ")+T(sttOpen) , T(psttTokenP)+T(sttOpen) ) ; // CALLER MUST TAG ___( psttP ) ;
-                strReplaceAnyF( tinP , psttP , 0 , psttWhite                       , T(" ")                   ) ; // CALLER MUST TAG ___( psttP ) ;
-                strSubstringF(  tinP , psttP , idfTrim , idlTrim        , psttBigP                 ) ; // CALLER MUST TAG ___( psttP ) ;
+                strReplaceF(    tinBaseP , psttP , 0 , T(psttTokenP)+T(" ")+T(sttOpen) , T(psttTokenP)+T(sttOpen) ) ; // CALLER MUST TAG ___( psttP ) ;
+                strReplaceAnyF( tinBaseP , psttP , 0 , psttWhite                       , T(" ")                   ) ; // CALLER MUST TAG ___( psttP ) ;
+                strSubstringF(  tinBaseP , psttP , idfTrim , idlTrim        , psttBigP                 ) ; // CALLER MUST TAG ___( psttP ) ;
             {
             if( idfTrim && idlTrim )
 
             }
                 }
-                    idlTrim = strIdMatchingF( tinP , flagsState , idfc , sttqc , psttBigP ) ;
+                    idlTrim = strIdMatchingF( tinBaseP , flagsState , idfc , sttqc , psttBigP ) ;
                     flagsT flagsState = flSTRiDmATCHINGf_null ;
                 {
                 if( psttBigP[ CSpREFIX - 1 + idfc ] == sttOpen )
@@ -32,7 +32,7 @@
                         idfc = idfc2 ;
                         sttqc = sttqc2 ;
                     {
-                    if( idfc == strIdAnyF( tinP , 0 , flSTRmATCH_null , idfc2 , sttqc2 , psttWhite , psttBigP ) )
+                    if( idfc == strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idfc2 , sttqc2 , psttWhite , psttBigP ) )
                     countT idfc2 = idfc ;
                     strokeS sttqc2 = sttqc ;
                 {
@@ -44,12 +44,12 @@
             countT idfTrim = idfTok ;
         {
         if( idfTok && ( idfTok == 1 || !psttBigP[ CSpREFIX - 2 + idfTok ].bOkForIdentifiersF() ) )
-        const countT idfTok = strIdF( tinP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , psttTokenP , psttBigP ) ;
+        const countT idfTok = strIdF( tinBaseP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , psttTokenP , psttBigP ) ;
     {
     while( !psttP && idFirstP )
 
-    else             { strMakeF( tinP , LF , psttWhite , T(TbLACK) ) ; ___( psttWhite ) ; }
-    if( psttWhiteP ) { strMakeF( tinP , LF , psttWhite , psttWhiteP    ) ; ___( psttWhite ) ; }
+    else             { strMakeF( tinBaseP , LF , psttWhite , T(TbLACK) ) ; ___( psttWhite ) ; }
+    if( psttWhiteP ) { strMakeF( tinBaseP , LF , psttWhite , psttWhiteP    ) ; ___( psttWhite ) ; }
     ZE( strokeS* , psttWhite ) ;
     const strokeS sttOpen = (countT)sttOpenP ? sttOpenP : S1C('(') ;
     _IO_
@@ -65,7 +65,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strSubstringExampleF( tinS& tinP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* const psttBigP , const strokeS* const psttTokenP , const strokeS sttOpenP , const strokeS* const psttWhiteP )/*1*/
+/*1*/voidT etherC::strSubstringExampleF( tinBaseS& tinBaseP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* const psttBigP , const strokeS* const psttTokenP , const strokeS sttOpenP , const strokeS* const psttWhiteP )/*1*/
 /**/
 */
  psttWhite

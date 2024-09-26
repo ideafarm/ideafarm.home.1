@@ -9,8 +9,8 @@
 
 }
     return bHandled ;
-    paperOldC::ungrabIF( tinP ) ; //U::TO FIND A BUG
-    //tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    paperOldC::ungrabIF( tinBaseP ) ; //U::TO FIND A BUG
+    //((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
     //}
     //    LOGrAW( ostoSay ) ;
     //    OStEXTAK( ostoSay , " -----------------------------------------------------------------------------------------------------------------------\r\n" ) ;
@@ -18,12 +18,12 @@
     //    OStEXTAK( ostoSay , "/- [idIn]: " ) ;
     //    OStEXTA(  ostoSay , postIdType ) ;
     //    OStEXTAK( ostoSay , " | doF/" ) ;
-    //    OStEXTA(  ostoSay , tinP.postThreadName ) ;
+    //    OStEXTA(  ostoSay , ((tinNormalS&)tinBaseP).postThreadName ) ;
     //    OStEXT(   ostoSay , TUCK << 2 ) ;
     //{
     //if( idTypeCallP != ifcIDtYPEsTROKEcALLbACK_ANIMATE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_MOUSE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABaRRIVING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABlEAVING )
 
-    //if( bGoItRender ) tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    //if( bGoItRender ) ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
 
     }
         DELzOMBIE( pStrike ) ;
@@ -41,22 +41,22 @@
     if( bDeleteStrike )
 
     }
-        (*features.fc.pSadamEpilogCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+        (*features.fc.pSadamEpilogCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
         _IO_
     {
     if( pStrike && F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamEpilogCBF )
 
     }
-        pStrike->sc.pPaper->renderVolatilesF( tinP , *this , phCloneP , flSTRIKEvOLATILE_LOADpOSITION ) ;
+        pStrike->sc.pPaper->renderVolatilesF( tinBaseP , *this , phCloneP , flSTRIKEvOLATILE_LOADpOSITION ) ;
     {
     if( idTypeCallP == ifcIDtYPEsTROKEcALLbACK_STRIKE )
 
     }
         }
-            if( F(pStrike->sc.flagsHighlighted) & flSADAMhIGHLIGHT_DOWN ) pStrike->sc.pPaper->sadamHighlightF( tinP , *this , flSADAMhIGHLIGHT_DOWN ) ;
+            if( F(pStrike->sc.flagsHighlighted) & flSADAMhIGHLIGHT_DOWN ) pStrike->sc.pPaper->sadamHighlightF( tinBaseP , *this , flSADAMhIGHLIGHT_DOWN ) ;
     
             }
-                pStrike->sc.pPaper->sadamHighlightF( tinP , *this , flSADAMhIGHLIGHT_FLYOVER ) ;
+                pStrike->sc.pPaper->sadamHighlightF( tinBaseP , *this , flSADAMhIGHLIGHT_FLYOVER ) ;
                 pStrike->sc.flags &= ~( F(flSTRIKEs_FLY) ) ;
             {
             if( F(pStrike->sc.flags) & flSTRIKEs_FLY )
@@ -70,7 +70,7 @@
     }
         }
             break ;
-            if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+            if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
         {
         case ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED  :
         case ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING :
@@ -81,21 +81,21 @@
             }
                 }
                     vb.ppsttSpec = &features.psttDefaultHighlightTabOwnerOff ;
-                    if( !vb.flags ) new( 0 , tinP , (byteT*)&vb , features.pswVolBody->cbDataF() ) vBodyS ;
+                    if( !vb.flags ) new( 0 , tinBaseP , (byteT*)&vb , features.pswVolBody->cbDataF() ) vBodyS ;
                     vBodyS& vb = *(vBodyS*)&(countT&)*features.pswVolBody ;
                     features.cLeverVolBody = IDVB_SYShIGHLIGHToWNtAB ;
                 {
-                pStrike->sc.pPaper->sadamHighlightF( tinP , *this , flSADAMhIGHLIGHT_OWNtAB ) ; //PROVISIONAL; CAN BE USED UNTIL eyeOldC IS USED; THEN WILL NEED TO USE SOMETHING THAT DOES NOT REQUIRE FLOODFILL
+                pStrike->sc.pPaper->sadamHighlightF( tinBaseP , *this , flSADAMhIGHLIGHT_OWNtAB ) ; //PROVISIONAL; CAN BE USED UNTIL eyeOldC IS USED; THEN WILL NEED TO USE SOMETHING THAT DOES NOT REQUIRE FLOODFILL
     
                 }
-                    (*features.fc.pSadamTabCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_TABlEAVING , idEventP , pcNotesP , *this ) ;
-                    if( F(features.fc.flagsAdam) & flFEATUREsADAMaDAM_TABhEREsUPPRESSEShOTkEYS ) backOldC::setModeFlagsIF( tinP , flPAPERbACKmODE_null , flPAPERbACKmODE_SUPPRESShOTkEYS ) ; //U::CONJ: BUG: THIS SHOULD BE DONE EVEN IF THERE ISN'T A CBF
+                    (*features.fc.pSadamTabCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_TABlEAVING , idEventP , pcNotesP , *this ) ;
+                    if( F(features.fc.flagsAdam) & flFEATUREsADAMaDAM_TABhEREsUPPRESSEShOTkEYS ) backOldC::setModeFlagsIF( tinBaseP , flPAPERbACKmODE_null , flPAPERbACKmODE_SUPPRESShOTkEYS ) ; //U::CONJ: BUG: THIS SHOULD BE DONE EVEN IF THERE ISN'T A CBF
                     _IO_
                 {
                 if( features.fc.pSadamTabCBF )
 
                 //LOGrAWtID( TTtOCK(timeN1,timeN2)+T(" TABlEAVING/idAdam: ")+TF1(features.fc.idAdam)+T(" ")+T(features.fc.postOldComment) ) ;
-                //etherP.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                //etherP.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                 //ZE( sCountT , timeN2 ) ;
                 //ZE( countT , timeN1 ) ;
             {
@@ -110,8 +110,8 @@
 
             //}
             //    LOGrAW( tSay ) ;
-            //    TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(tinP.postThreadName)+T(" TABaRRIVING (already owned so doing nada/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
-            //    etherP.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            //    TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(((tinNormalS&)tinBaseP).postThreadName)+T(" TABaRRIVING (already owned so doing nada/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
+            //    etherP.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             //    ZE( sCountT , timeN2 ) ;
             //    ZE( countT , timeN1 ) ;
             //{
@@ -120,25 +120,25 @@
             }
                 }
                     vb.ppsttSpec = &features.psttDefaultHighlightTabOwnerOn ;
-                    if( !vb.flags ) new( 0 , tinP , (byteT*)&vb , features.pswVolBody->cbDataF() ) vBodyS ;
+                    if( !vb.flags ) new( 0 , tinBaseP , (byteT*)&vb , features.pswVolBody->cbDataF() ) vBodyS ;
                     vBodyS& vb = *(vBodyS*)&(countT&)*features.pswVolBody ;
                     features.cLeverVolBody = IDVB_SYShIGHLIGHToWNtAB ;
                 {
                 //THIS SNIPPET IS EXERCISED BUT DOES NOTHING BECAUSE ps ttDefaultHighlightTabOwnerOn IS NULL STRING
 
-                pStrike->sc.pPaper->sadamHighlightF( tinP , *this , flSADAMhIGHLIGHT_OWNtAB ) ; //PROVISIONAL; CAN BE USED UNTIL eyeOldC IS USED; THEN WILL NEED TO USE SOMETHING THAT DOES NOT REQUIRE FLOODFILL
+                pStrike->sc.pPaper->sadamHighlightF( tinBaseP , *this , flSADAMhIGHLIGHT_OWNtAB ) ; //PROVISIONAL; CAN BE USED UNTIL eyeOldC IS USED; THEN WILL NEED TO USE SOMETHING THAT DOES NOT REQUIRE FLOODFILL
     
                 }
-                    (*features.fc.pSadamTabCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_TABaRRIVING , idEventP , pcNotesP , *this ) ;
+                    (*features.fc.pSadamTabCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_TABaRRIVING , idEventP , pcNotesP , *this ) ;
 
-                    if( F(features.fc.flagsAdam) & flFEATUREsADAMaDAM_TABhEREsUPPRESSEShOTkEYS ) backOldC::setModeFlagsIF( tinP , flPAPERbACKmODE_SUPPRESShOTkEYS , flPAPERbACKmODE_null ) ; //U::CONJ: BUG: THIS SHOULD BE DONE EVEN IF THERE ISN'T A CBF
+                    if( F(features.fc.flagsAdam) & flFEATUREsADAMaDAM_TABhEREsUPPRESSEShOTkEYS ) backOldC::setModeFlagsIF( tinBaseP , flPAPERbACKmODE_SUPPRESShOTkEYS , flPAPERbACKmODE_null ) ; //U::CONJ: BUG: THIS SHOULD BE DONE EVEN IF THERE ISN'T A CBF
 
                     _IO_
                 {
                 if( features.fc.pSadamTabCBF )
 
                 //LOGrAWtID( TTtOCK(timeN1,timeN2)+T(" TABaRRIVING/idAdam: ")+TF1(features.fc.idAdam)+T(" ")+T(features.fc.postOldComment) ) ;
-                //etherP.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                //etherP.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                 //ZE( sCountT , timeN2 ) ;
                 //ZE( countT , timeN1 ) ;
             {
@@ -157,9 +157,9 @@
                         }
                             }
                                 }
-                                    etherP( tinP , psReport ) ;
+                                    etherP( tinBaseP , psReport ) ;
                                     }
-                                        etherP.cioPutF( tinP , etherC::etPrimeIF( tinP ) , features.pczChannelOut , *psReport ) ;
+                                        etherP.cioPutF( tinBaseP , etherC::etPrimeIF( tinBaseP ) , features.pczChannelOut , *psReport ) ;
     
                                         *psReport << idRow ;
                                         *psReport << idCol ;
@@ -170,13 +170,13 @@
                                         *psReport << idTypeCallP ;
                                     {
                                     if( psReport )
-                                    etherP( tinP , psReport , TAG( TAGiDnULL ) ) ;
+                                    etherP( tinBaseP , psReport , TAG( TAGiDnULL ) ) ;
                                     ZE( soulC* , psReport ) ;
                                 {
                                 if( F(features.fc.flagsCio) & flFEATUREsADAMcIO_EXISTS && features.pczChannelOut )
     
                                 }
-                                    bHandled = (*features.fc.pSadamIfHitCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+                                    bHandled = (*features.fc.pSadamIfHitCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
                                     _IO_
                                 {
                                 if( F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamIfHitCBF )
@@ -198,12 +198,12 @@
                                     if( F(features.fc.flagsMouse) & flFEATUREsADAMmOUSE_ACTIONmOVE )
     
                                     //LOGrAW( tSay ) ;
-                                    //TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(tinP.postThreadName)+T(" MOUSEmOVE/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
-                                    //etherP.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                                    //TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(((tinNormalS&)tinBaseP).postThreadName)+T(" MOUSEmOVE/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
+                                    //etherP.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                                     //ZE( sCountT , timeN2 ) ;
                                     //ZE( countT , timeN1 ) ;
     
-                                    if( bIn && features.fc.pSadamFlyoverCBF ) (*features.fc.pSadamFlyoverCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_FLYOVER , idEventP , pcNotesP , *this ) ;
+                                    if( bIn && features.fc.pSadamFlyoverCBF ) (*features.fc.pSadamFlyoverCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_FLYOVER , idEventP , pcNotesP , *this ) ;
                                 {
                                 case ifcIDtYPEaCTION_MOVE :
                                 }
@@ -223,7 +223,7 @@
                                 }
                                     break ;
     
-                                    if( idTool == ifcIDtYPEtOOL_MOUSEbUTTONlEFT && features.fc.idTabClass && bIn ) sadamsC::pSadamsIF( tinP )->tabFreshF( tinP , etherP , ifcIDtYPEtABfRESH_JUMP , this ) ;
+                                    if( idTool == ifcIDtYPEtOOL_MOUSEbUTTONlEFT && features.fc.idTabClass && bIn ) sadamsC::pSadamsIF( tinBaseP )->tabFreshF( tinBaseP , etherP , ifcIDtYPEtABfRESH_JUMP , this ) ;
     
                                     }
                                         }
@@ -253,7 +253,7 @@
                             }
                                 }
                                     }
-                                        (*features.fc.pSadamInOutQueryCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_DRAGeND , idEventP , pcNotes , *this ) ;
+                                        (*features.fc.pSadamInOutQueryCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_DRAGeND , idEventP , pcNotes , *this ) ;
                                         countT pcNotes[] = { (countT)&bIn , idCol , idRow , 0 } ;
                                     {
                                     if( features.fc.pSadamDragCBF )
@@ -263,7 +263,7 @@
                                 else if( idAction == ifcIDtYPEaCTION_UP )
                                 }
                                     }
-                                        (*features.fc.pSadamInOutQueryCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_DRAGbEGIN , idEventP , pcNotes , *this ) ;
+                                        (*features.fc.pSadamInOutQueryCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_DRAGbEGIN , idEventP , pcNotes , *this ) ;
                                         countT pcNotes[] = { (countT)&bIn , idCol , idRow , 0 } ;
                                     {
                                     if( features.fc.pSadamDragCBF )
@@ -282,7 +282,7 @@
     
                         }
                             }
-                                pStrike->sc.pPaper->sadamHighlightF( tinP , *this , flSADAMhIGHLIGHT_FLYOVER ) ;
+                                pStrike->sc.pPaper->sadamHighlightF( tinBaseP , *this , flSADAMhIGHLIGHT_FLYOVER ) ;
 
                                 else      pStrike->sc.flags &= ~( F(flSTRIKEs_FLY) ) ;
                                 if( bIn ) pStrike->sc.flags |=      flSTRIKEs_FLY ;
@@ -292,7 +292,7 @@
                         if( F(features.fc.flagsFlyoverHighlight) & flFEATUREsADAMfLYOVERhIGHLIGHT_EXISTS && !( F(pStrike->sc.flags) & flSTRIKEs_DRAG ) )
     
                         }
-                            (*features.fc.pSadamInOutQueryCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_INoUTqUERY , idEventP , pcNotes , *this ) ;
+                            (*features.fc.pSadamInOutQueryCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_INoUTqUERY , idEventP , pcNotes , *this ) ;
                             countT pcNotes[] = { 1 , 3 , (countT)&bIn , idCol , idRow , 0 } ;
                         {
                         if( features.fc.pSadamInOutQueryCBF )
@@ -304,20 +304,20 @@
                             (sCountT)idRow >= R( pStrike->sc.mIdRowHot )                                   &&
                             (sCountT)idCol <= R( pStrike->sc.mIdColHot ) - 1.0 + R( pStrike->sc.mColsHot )    &&
                             (sCountT)idCol >= R( pStrike->sc.mIdColHot )                                   &&
-                            pStrike->sc.pPaper->bShowF( tinP )                                             &&
+                            pStrike->sc.pPaper->bShowF( tinBaseP )                                             &&
                         (
                         boolT bIn =
                     {
                     if( pcNotesP[ 0 ] == 1 && pcNotesP[ 1 ] == 4 ) //U::CONJ: THIS TEST IS OBSOLETE
                 {
-                if( pStrike->sc.pPaper->bToolFilterAllowsF( tinP , idTool , idAction , features.fc.idAdam , features.fc.idToolFilterList ) )
+                if( pStrike->sc.pPaper->bToolFilterAllowsF( tinBaseP , idTool , idAction , features.fc.idAdam , features.fc.idToolFilterList ) )
 
                 const countT& idRow    = pcNotesP[ 5 ] ;
                 const countT& idCol    = pcNotesP[ 4 ] ;
                 const countT& idAction = pcNotesP[ 3 ] ;
                 const countT& idTool   = pcNotesP[ 2 ] ;
             {
-            if( F(features.fc.flagsMouse) & flFEATUREsADAMmOUSE_EXISTS && pStrike->sc.pPaper->bShowF( tinP ) )
+            if( F(features.fc.flagsMouse) & flFEATUREsADAMmOUSE_EXISTS && pStrike->sc.pPaper->bShowF( tinBaseP ) )
         {
         case ifcIDtYPEsTROKEcALLbACK_MOUSE :
         }
@@ -327,9 +327,9 @@
                 }
                     }
                         }
-                            etherP( tinP , psReport ) ;
+                            etherP( tinBaseP , psReport ) ;
                             }
-                                etherP.cioPutF( tinP , etherC::etPrimeIF( tinP ) , features.pczChannelOut , *psReport ) ;
+                                etherP.cioPutF( tinBaseP , etherC::etPrimeIF( tinBaseP ) , features.pczChannelOut , *psReport ) ;
     
                                 }
                                     *psReport << pmxP[ 6 ] ;
@@ -350,25 +350,25 @@
                                 const measureT* pmxP   = idAction == ifcIDtYPEaCTION_MOVE ? (const measureT*)pcNotesP[ 4 ] : 0 ;
                             {
                             if( psReport )
-                            etherP( tinP , psReport , TAG( TAGiDnULL ) ) ;
+                            etherP( tinBaseP , psReport , TAG( TAGiDnULL ) ) ;
                             ZE( soulC* , psReport ) ;
                         {
                         if( F(features.fc.flagsCio) & flFEATUREsADAMcIO_EXISTS && features.pczChannelOut )
     
                         }
-                            bHandled = (*features.fc.pSadamIfHitCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+                            bHandled = (*features.fc.pSadamIfHitCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
                             _IO_
                         {
                         if( F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamIfHitCBF )
                     {
                     if( pcNotesP[ 0 ] == 1 && pcNotesP[ 1 ] >= 2 && pcNotesP[ 1 ] <= 4 ) //U::INSPECT WHAT THIS CODE LINE SHOULD BE
                 {
-                if( pStrike->sc.pPaper->bToolFilterAllowsF( tinP , idTool , idAction , features.fc.idAdam , features.fc.idToolFilterList ) )
+                if( pStrike->sc.pPaper->bToolFilterAllowsF( tinBaseP , idTool , idAction , features.fc.idAdam , features.fc.idToolFilterList ) )
 
                 const countT& idAction = pcNotesP[ 3 ] ;
                 const countT& idTool   = pcNotesP[ 2 ] ;
             {
-            if( F(features.fc.flagsJoyStick) & flFEATUREsADAMjOYsTICK_EXISTS && pStrike->sc.pPaper->bShowF( tinP ) )
+            if( F(features.fc.flagsJoyStick) & flFEATUREsADAMjOYsTICK_EXISTS && pStrike->sc.pPaper->bShowF( tinBaseP ) )
         {
         case ifcIDtYPEsTROKEcALLbACK_JOYsTICK :
         }
@@ -377,7 +377,7 @@
             }
                 }
                     }
-                        (*features.fc.pSadamHotKeyCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_HOTkEY , idEventP , pcNotesP , *this ) ;
+                        (*features.fc.pSadamHotKeyCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_HOTkEY , idEventP , pcNotesP , *this ) ;
                         //LOGrAW( "KEYBOARD: calling hot key cbf\r\n" ) ;
                     {
                     )
@@ -388,7 +388,7 @@
                         (
                         features.fc.pSadamHotKeyCBF &&
                         idAction == ifcIDtYPEaCTION_DOWN &&
-                        !( F(tinP.pag1->_backOldC_.rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_SUPPRESShOTkEYS ) &&
+                        !( F(((tinNormalS&)tinBaseP).pag1->_backOldC_.rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_SUPPRESShOTkEYS ) &&
                     (
                     if
                     //EXAMPLE: A HOTKEY THAT JUMPS THE TAB TO A PROMPT WILL NOT ALSO BE APPENDED TO THE PROMPT'S VALUE
@@ -398,9 +398,9 @@
                         }
                             }
                                 }
-                                    etherP( tinP , psReport ) ;
+                                    etherP( tinBaseP , psReport ) ;
                                     }
-                                        etherP.cioPutF( tinP , etherC::etPrimeIF( tinP ) , features.pczChannelOut , *psReport ) ;
+                                        etherP.cioPutF( tinBaseP , etherC::etPrimeIF( tinBaseP ) , features.pczChannelOut , *psReport ) ;
     
                                         *psReport << idAction ;
                                         *psReport << idTool ;
@@ -409,13 +409,13 @@
                                         *psReport << idTypeCallP ;
                                     {
                                     if( psReport )
-                                    etherP( tinP , psReport , TAG( TAGiDnULL ) ) ;
+                                    etherP( tinBaseP , psReport , TAG( TAGiDnULL ) ) ;
                                     ZE( soulC* , psReport ) ;
                                 {
                                 if( F(features.fc.flagsCio) & flFEATUREsADAMcIO_EXISTS && features.pczChannelOut )
     
                                 }
-                                    bHandled = (*features.fc.pSadamIfHitCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+                                    bHandled = (*features.fc.pSadamIfHitCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
                                     _IO_
                                 {
                                 if( F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamIfHitCBF )
@@ -446,12 +446,12 @@
                     {
                     if( F(features.fc.flagsKeyboard) & flFEATUREsADAMkEYBOARD_EXISTS )
                 {
-                if( pStrike->sc.pPaper->bToolFilterAllowsF( tinP , idTool , idAction , features.fc.idAdam , features.fc.idToolFilterList ) )
+                if( pStrike->sc.pPaper->bToolFilterAllowsF( tinBaseP , idTool , idAction , features.fc.idAdam , features.fc.idToolFilterList ) )
 
                 const countT& idAction = pcNotesP[ 3 ] ;
                 const countT& idTool   = pcNotesP[ 2 ] ;
             {
-            if( pcNotesP[ 0 ] == 1 && pcNotesP[ 1 ] == 2 && pStrike->sc.pPaper->bShowF( tinP ) )
+            if( pcNotesP[ 0 ] == 1 && pcNotesP[ 1 ] == 2 && pStrike->sc.pPaper->bShowF( tinBaseP ) )
         {
         case ifcIDtYPEsTROKEcALLbACK_KEYBOARD :
         }
@@ -467,13 +467,13 @@
 
             if( bErase ) bDeleteStrike = 1 ;
 
-            if( F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamAfterRenderCBF ) (*features.fc.pSadamAfterRenderCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+            if( F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamAfterRenderCBF ) (*features.fc.pSadamAfterRenderCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
 
-            etherP.delF( tinP , psttFramedBody ) ;
+            etherP.delF( tinBaseP , psttFramedBody ) ;
             }
                 //U::CONJ: BUG: SHOULD STRIKE VOLATILE VALUE HERE
 
-                pStrike->sc.pPaper->x1.pPulp->x1.back.wrapRenderOverrideF( tinP , psttFramedBody , phCloneP , pczIdAdamSnap , !bErase ? flPULPmODE_null : flPULPmODE_SUPPRESSpELcOLORcHANGES , flPULPmODE_null ) ;
+                pStrike->sc.pPaper->x1.pPulp->x1.back.wrapRenderOverrideF( tinBaseP , psttFramedBody , phCloneP , pczIdAdamSnap , !bErase ? flPULPmODE_null : flPULPmODE_SUPPRESSpELcOLORcHANGES , flPULPmODE_null ) ;
 
                 }
                     }
@@ -492,11 +492,11 @@
                     {
                     if( bRestoreMove )
 
-                    thirdC::c_memcpyIF( tinP , (byteT*)&pStrike->sc.sfDad , (byteT*)&sfd , sizeof pStrike->sc.sfDad ) ;
-                    thirdC::c_memcpyIF( tinP , (byteT*)&pStrike->sc.sf    , (byteT*)&sf  , sizeof pStrike->sc.sf    ) ;
+                    thirdC::c_memcpyIF( tinBaseP , (byteT*)&pStrike->sc.sfDad , (byteT*)&sfd , sizeof pStrike->sc.sfDad ) ;
+                    thirdC::c_memcpyIF( tinBaseP , (byteT*)&pStrike->sc.sf    , (byteT*)&sf  , sizeof pStrike->sc.sf    ) ;
 
-                    const strokingFrameS& sfd = pStrike->sc.pPaper->sfF( tinP , 1 ) ;
-                    const strokingFrameS& sf  = pStrike->sc.pPaper->sfF( tinP , 0 ) ;
+                    const strokingFrameS& sfd = pStrike->sc.pPaper->sfF( tinBaseP , 1 ) ;
+                    const strokingFrameS& sf  = pStrike->sc.pPaper->sfF( tinBaseP , 0 ) ;
                 {
                 else
                 }
@@ -508,8 +508,8 @@
             
             //LOGrAW( "STRIKE: preparing to render\r\n" ) ; //U::
 
-            else                                                           pStrike->sc.pPaper->makeFramedSadamBodyF( tinP , psttFramedBody , *this , features.psttBody , cFrameNestDown , cFrameNestLeft , cFrameNestUp , cFrameNestRight ) ; ___( psttFramedBody ) ;
-            if( !( F(features.fc.flagsFrame) & flFEATUREsADAMfRAME_EXISTS ) ) { etherP.strMakeF( tinP , LF , psttFramedBody , features.psttBody ) ; ___( psttFramedBody ) ; }
+            else                                                           pStrike->sc.pPaper->makeFramedSadamBodyF( tinBaseP , psttFramedBody , *this , features.psttBody , cFrameNestDown , cFrameNestLeft , cFrameNestUp , cFrameNestRight ) ; ___( psttFramedBody ) ;
+            if( !( F(features.fc.flagsFrame) & flFEATUREsADAMfRAME_EXISTS ) ) { etherP.strMakeF( tinBaseP , LF , psttFramedBody , features.psttBody ) ; ___( psttFramedBody ) ; }
             ZE( strokeS* , psttFramedBody ) ;
 
             //LOGrAW( "STRIKE: perhaps adjusting hot rect for frame\r\n" ) ; //U::
@@ -518,13 +518,13 @@
                 //LOGrAW( tSay ) ; //U::
                 //TN( tSay , "" ) ; tSay = T("STRIKE: set pStrike->sc.mIdRowHot to ")+TF1(pStrike->sc.mIdRowHot)+T("\r\n") ;
                 }
-                    pStrike->sc.pPaper->x1.pPulp->boundingRectF( tinP , pStrike->sc.mIdColHot , pStrike->sc.mIdRowHot , pStrike->sc.mColsHot , pStrike->sc.mRowsHot , features.psttBody , phCloneP , pczIdAdamSnap , flBOUND_OIL ) ;
+                    pStrike->sc.pPaper->x1.pPulp->boundingRectF( tinBaseP , pStrike->sc.mIdColHot , pStrike->sc.mIdRowHot , pStrike->sc.mColsHot , pStrike->sc.mRowsHot , features.psttBody , phCloneP , pczIdAdamSnap , flBOUND_OIL ) ;
                     pStrike->sc.mRowsHot = pStrike->sc.mColsHot = pStrike->sc.mIdRowHot = pStrike->sc.mIdColHot = 0.0 ;
                 
-                    pStrike->sc.pPaper->x1.pPulp->x1.back.wrapRenderOverrideF( tinP , T("\r\n") , phCloneP , pczIdAdamSnap , flPULPmODE_null , flPULPmODE_null ) ;
+                    pStrike->sc.pPaper->x1.pPulp->x1.back.wrapRenderOverrideF( tinBaseP , T("\r\n") , phCloneP , pczIdAdamSnap , flPULPmODE_null , flPULPmODE_null ) ;
                     //LOGrAW( "STRIKE: wrap detected; going to new line and getting hot rect again\r\n" ) ; //U::
                 {
-                if( pStrike->sc.pPaper->x1.pPulp->boundingRectF( tinP , pStrike->sc.mIdColHot , pStrike->sc.mIdRowHot , pStrike->sc.mColsHot , pStrike->sc.mRowsHot , features.psttBody , phCloneP , pczIdAdamSnap , flBOUND_OIL ) )
+                if( pStrike->sc.pPaper->x1.pPulp->boundingRectF( tinBaseP , pStrike->sc.mIdColHot , pStrike->sc.mIdRowHot , pStrike->sc.mColsHot , pStrike->sc.mRowsHot , features.psttBody , phCloneP , pczIdAdamSnap , flBOUND_OIL ) )
                 pStrike->sc.mRowsHot = pStrike->sc.mColsHot = pStrike->sc.mIdRowHot = pStrike->sc.mIdColHot = 0.0 ;
 
                 strokingFrameS& sfw = *(strokingFrameS*)&pulp.stqr_strokingFrame[ 2 + pulp.rCache.offFrame + pulp.rCache.offFrameWrap ] ;
@@ -547,7 +547,7 @@
             paper.renderStartF() ;
             flags &= ~( F(flSADAMc_DESTROYED) ) ;
 
-            else          pStrike = new( 0 , tinP , pbStrike , sizeof pbStrike ) strikeS( tinP ) ;
+            else          pStrike = new( 0 , tinBaseP , pbStrike , sizeof pbStrike ) strikeS( tinBaseP ) ;
             if( pStrike ) bErase = 1 ;
             ZE( boolT , bErase ) ;
 
@@ -559,7 +559,7 @@
             break ;
 
             }
-                if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+                if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
                 bStrikeKilled = 1 ;
                 pStrike->sc.flags &= ~( F(flSTRIKEs_AWAKE) ) ;
             {
@@ -571,7 +571,7 @@
             break ;
 
             }
-                if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+                if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
                 pStrike->sc.flags |= flSTRIKEs_AWAKE ;
             {
             if( !( F(pStrike->sc.flags) & flSTRIKEs_AWAKE ) )
@@ -579,12 +579,12 @@
             }
                 }
                     }
-                        (*features.fc.pSadamFlyoverCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_FLYOVER , idEventP , pcNotes , *this ) ;
+                        (*features.fc.pSadamFlyoverCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_FLYOVER , idEventP , pcNotes , *this ) ;
                         countT pcNotes[] = { 1 , 4 , ifcIDtYPEtOOL_MOUSEpOSITION , ifcIDtYPEaCTION_MOVE , idCol , idRow , 0 } ;
                     {
                     if( features.fc.pSadamFlyoverCBF )
 
-                    pStrike->sc.pPaper->sadamHighlightF( tinP , *this , flSADAMhIGHLIGHT_FLYOVER ) ;
+                    pStrike->sc.pPaper->sadamHighlightF( tinBaseP , *this , flSADAMhIGHLIGHT_FLYOVER ) ;
 
                     pStrike->sc.flags |= flSTRIKEs_FLY ;
                 {
@@ -592,7 +592,7 @@
                 if( !bIn ) pStrike->sc.flags &= ~( F(flSTRIKEs_FLY) ) ;
 
                 }
-                    (*features.fc.pSadamInOutQueryCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_INoUTqUERY , idEventP , pcNotes , *this ) ;
+                    (*features.fc.pSadamInOutQueryCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_INoUTqUERY , idEventP , pcNotes , *this ) ;
                     countT pcNotes[] = { 1 , 3 , (countT)&bIn , idCol , idRow , 0 } ;
                 {
                 if( features.fc.pSadamInOutQueryCBF )
@@ -604,7 +604,7 @@
                     idRow >= R( pStrike->sc.mIdRowHot )                                   &&
                     idCol <= R( pStrike->sc.mIdColHot ) - 1.0 + R( pStrike->sc.mColsHot ) &&
                     idCol >= R( pStrike->sc.mIdColHot )                                   &&
-                    pStrike->sc.pPaper->bShowF( tinP )                                       &&
+                    pStrike->sc.pPaper->bShowF( tinBaseP )                                       &&
                 (
                 boolT bIn =
                 sCountT idRow = pStrike->sc.pPaper->rowBackF().ro.pcToolState_22[ ifcIDtYPEtOOL_MOUSEpOSITION - ifcIDtYPEtOOL_x2Begin - 1 ] ;
@@ -625,19 +625,19 @@
                         bDeleteStrike = 1 ;
                         //LOGrAW( "DESTROY: zapping my sadamState structure\r\n" ) ;
 
-                        if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+                        if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
             
                         }
-                            if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinP , etherP , ifcIDtYPEsTROKEcALLbACK_SLEEP , idEventP , pcNotesP , *this ) ;
+                            if( features.fc.pSadamAnimateCBF ) (*features.fc.pSadamAnimateCBF)( tinBaseP , etherP , ifcIDtYPEsTROKEcALLbACK_SLEEP , idEventP , pcNotesP , *this ) ;
                             bStrikeKilled = 1 ;
                             pStrike->sc.flags &= ~( F(flSTRIKEs_AWAKE) ) ;
                         {
                         if( F(pStrike->sc.flags) & flSTRIKEs_AWAKE )
                         //CODEsYNC: PSEUDOdUPLICATE CODE 0b50007 0b50007
     
-                        if( F(flags) & flSADAMc_OWNtAB && F(features.fc.flagsAdam) & flFEATUREsADAMaDAM_TABhEREsUPPRESSEShOTkEYS ) backOldC::setModeFlagsIF( tinP , flPAPERbACKmODE_null , flPAPERbACKmODE_SUPPRESShOTkEYS ) ;
+                        if( F(flags) & flSADAMc_OWNtAB && F(features.fc.flagsAdam) & flFEATUREsADAMaDAM_TABhEREsUPPRESSEShOTkEYS ) backOldC::setModeFlagsIF( tinBaseP , flPAPERbACKmODE_null , flPAPERbACKmODE_SUPPRESShOTkEYS ) ;
             
-                        if( F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamBeforeDestroyCBF ) (*features.fc.pSadamBeforeDestroyCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+                        if( F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamBeforeDestroyCBF ) (*features.fc.pSadamBeforeDestroyCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
                     {
                     if( pStrike )
     
@@ -649,13 +649,13 @@
                 //LOGrAW( tSay ) ; //U::
                 //TN( tSay , "" ) ; tSay = T("doF destroy/+/idAdam,b OwnTab,b TabWasHere: \"")+T(pStrike?features.fc.postOldComment:"")+T("\" ")+TF1(F(flags)&flSADAMc_OWNtAB)+T(" ")+TF1(F(flags)&flSADAMc_TABwAShERE)+T("\r\n") ;
             {
-            //if( &w P.papers.selectF( tinP , ifcIDcMDpAPERsELECT_QUERYrENDER ) == pStrike->sc.pPaper )
+            //if( &w P.papers.selectF( tinBaseP , ifcIDcMDpAPERsELECT_QUERYrENDER ) == pStrike->sc.pPaper )
         {
         case ifcIDtYPEsTROKEcALLbACK_DESTROY :
         }
             break ;
             }
-                (*features.fc.pSadamIntercomCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+                (*features.fc.pSadamIntercomCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
                 _IO_
             {
             if( features.fc.idIntercom && features.fc.pSadamIntercomCBF )
@@ -684,12 +684,12 @@
     //if
 
     }
-        (*features.fc.pSadamPrologCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
+        (*features.fc.pSadamPrologCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotesP , *this ) ;
         _IO_
     {
     if( pStrike && F(features.fc.flagsCallBack) & flFEATUREsADAMcALLbACK_EXISTS && features.fc.pSadamPrologCBF )
 
-    if( idTypeCallP == ifcIDtYPEsTROKEcALLbACK_STRIKE && pStrike ) pStrike->sc.pPaper->eraseGlyphF( tinP , *this , idEventP , phCloneP ) ;
+    if( idTypeCallP == ifcIDtYPEsTROKEcALLbACK_STRIKE && pStrike ) pStrike->sc.pPaper->eraseGlyphF( tinBaseP , *this , idEventP , phCloneP ) ;
 
     ZE( boolT , bDeleteStrike ) ;
     ZE( boolT , bStrikeKilled ) ;
@@ -699,13 +699,13 @@
     //}
     //    if( idTypeCallP != ifcIDtYPEsTROKEcALLbACK_ANIMATE ) { LOGrAWtID( T("vtTest: idAdam ")+TF1(features.fc.idAdam)+T(" \"")+T(processGlobal4I.mapSadamCall(idTypeCallP))+T("\"") ) ; }
     //{
-    //if( !thirdC::c_strcmpIF( tinP , features.fc.postOldComment , "vtTest" ) && !etherC::ether_cUtility_IF( tinP ) )
+    //if( !thirdC::c_strcmpIF( tinBaseP , features.fc.postOldComment , "vtTest" ) && !etherC::ether_cUtility_IF( tinBaseP ) )
 
-    //if( bGoItStrike ) tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    //if( bGoItStrike ) ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     //const boolT bGoItStrike = idTypeCallP == ifcIDtYPEsTROKEcALLbACK_STRIKE || idTypeCallP == ifcIDtYPEsTROKEcALLbACK_DESTROY ;
-    //tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    //((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    paperOldC::grabIF( tinP , TAG( TAGiDnULL ) ) ; //U::TO FIND A BUG
+    paperOldC::grabIF( tinBaseP , TAG( TAGiDnULL ) ) ; //U::TO FIND A BUG
 
     //}
     //    LOGrAW( ostoSay ) ;
@@ -714,7 +714,7 @@
     //    OStEXTAK( ostoSay , "/+ [idIn]: " ) ;
     //    OStEXTA(  ostoSay , postIdType ) ;
     //    OStEXTAK( ostoSay , " | doF/" ) ;
-    //    OStEXTA(  ostoSay , tinP.postThreadName ) ;
+    //    OStEXTA(  ostoSay , ((tinNormalS&)tinBaseP).postThreadName ) ;
     //    OStEXT(   ostoSay , TUCK << 2 ) ;
     //{
     //if( idTypeCallP != ifcIDtYPEsTROKEcALLbACK_ANIMATE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_MOUSE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABaRRIVING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABlEAVING )
@@ -732,7 +732,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/boolT sadamC::doF( tinS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const handleC* const phCloneP )/*1*/
+/*1*/boolT sadamC::doF( tinBaseS& tinBaseP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const handleC* const phCloneP )/*1*/
 
 //IF "doF" IS SPECIFIED AS A SADAM FEATURE, IT WILL NOT BE FOUND IN THE ADAM DLL BECAUSE THE NAME CONFLICTS WITH THE ENTRY POINT EXPORTED BY THE BASE DLL (THIS MODULE)
 //THE UNDERSCORE PREVENTS COLLISION WITH A CALLBACK FUNCTION SPECIFIED AS A SADAM FEATURE

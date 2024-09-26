@@ -10,17 +10,17 @@
 }
     return idCmd ;
     }
-        sock.readF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
+        sock.readF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
 
-        sock.writeF( tinP , psttP ) ;
+        sock.writeF( tinBaseP , psttP ) ;
 
-        sock.writeF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
+        sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
         idCmd = sizeof( strokeS ) * ( CSpREFIX + psttP->idAdam ) ;
 
-        sock.writeF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
+        sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
 
-        sock.connectF( tinP , ifcPORToLD1nICKNAME , socketC::nicNameIF( tinP , *this , T(WWWiDEAFARMcOM) ) ) ;
-        socketC sock( tinP , *this , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , ifcPORToLD1nICKNAME , socketC::nicNameIF( tinBaseP , *this , T(WWWiDEAFARMcOM) ) ) ;
+        socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
     {
     countT idCmd = idcNICKNAMEcMD_QUERYiDfROMeXTERNALeMAIL ;
 
@@ -34,13 +34,13 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::ifcIdCitizenFromExternalEmailF( tinS& tinP , const strokeS* const psttP )/*1*/
+/*1*/countT etherC::ifcIdCitizenFromExternalEmailF( tinBaseS& tinBaseP , const strokeS* const psttP )/*1*/
 
 /**/
 */
   must not be 0
  psttP
- tinP
+ tinBaseP
 arguments
  if the address is not recognized, impotence will -not- occur
  0 if there is no idCitizen with that email address

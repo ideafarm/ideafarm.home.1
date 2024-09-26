@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     while( ~hFindDir && !ether && !POOP ) ;
@@ -26,41 +26,41 @@ etThread.traceF( tinP , T("ok") ) ;
 
 
                         }
-                            etThread.delF( tinP , psttSourceShortRoot ) ;
-                            etThread.delF( tinP , psttTargetShortRoot ) ;
-                            etThread.delF( tinP , pstt1Doomed ) ;
+                            etThread.delF( tinBaseP , psttSourceShortRoot ) ;
+                            etThread.delF( tinBaseP , psttTargetShortRoot ) ;
+                            etThread.delF( tinBaseP , pstt1Doomed ) ;
 
                             }
-                                etThread.diskFileOrDirDeleteF( tinP , psttc1 ) ;
-                                etThread.traceF( tinP , T("                                           doomed: ")+T(psttc1) ) ;
+                                etThread.diskFileOrDirDeleteF( tinBaseP , psttc1 ) ;
+                                etThread.traceF( tinBaseP , T("                                           doomed: ")+T(psttc1) ) ;
                             {
                             FORsTRINGSiN1( pstt1Doomed )
-                            etThread.diskFindFileOrDirOldF( tinP , pstt1Doomed , tPathArchive+tYearSlash+T(psttSourceShortRoot)+tStar ) ; ___( pstt1Doomed ) ;
+                            etThread.diskFindFileOrDirOldF( tinBaseP , pstt1Doomed , tPathArchive+tYearSlash+T(psttSourceShortRoot)+tStar ) ; ___( pstt1Doomed ) ;
                             ZE( strokeS* , pstt1Doomed ) ;
 
-                            etThread.traceF( tinP , T("                                      doomed root: ")+tPathArchive+tYearSlash+T(psttSourceShortRoot) ) ;
+                            etThread.traceF( tinBaseP , T("                                      doomed root: ")+tPathArchive+tYearSlash+T(psttSourceShortRoot) ) ;
 
-                            etThread.diskMoveFileOrDirF( tinP , tPathArchive+tYearSlash+tNewName , tPathArchive+tYearSlash+T(psttzDataThumb) ) ;
+                            etThread.diskMoveFileOrDirF( tinBaseP , tPathArchive+tYearSlash+tNewName , tPathArchive+tYearSlash+T(psttzDataThumb) ) ;
 
-                            etThread.traceF( tinP , T("                                         new name: ")+tPathArchive+tYearSlash+tNewName ) ;
-                            etThread.traceF( tinP , T("                                         old name: ")+tPathArchive+tYearSlash+T(psttzDataThumb) ) ;
+                            etThread.traceF( tinBaseP , T("                                         new name: ")+tPathArchive+tYearSlash+tNewName ) ;
+                            etThread.traceF( tinBaseP , T("                                         old name: ")+tPathArchive+tYearSlash+T(psttzDataThumb) ) ;
 
                             TN( tNewName , psttTargetShortRoot ) ; tNewName += tMetaDotThumbDot0600xDotJpg ;
 
-                            etThread.strSubstringF( tinP , psttSourceShortRoot , idf4 , idHit4 , psttzDataThumb ) ; ___( psttSourceShortRoot ) ;
+                            etThread.strSubstringF( tinBaseP , psttSourceShortRoot , idf4 , idHit4 , psttzDataThumb ) ; ___( psttSourceShortRoot ) ;
                             countT idf4 = 1 ;
                             ZE( strokeS* , psttSourceShortRoot ) ;
 
-                            etThread.strSubstringF( tinP , psttTargetShortRoot , idf3 , idHit3 , psttzDataFull ) ; ___( psttTargetShortRoot ) ;
+                            etThread.strSubstringF( tinBaseP , psttTargetShortRoot , idf3 , idHit3 , psttzDataFull ) ; ___( psttTargetShortRoot ) ;
                             countT idf3 = 1 ;
                             ZE( strokeS* , psttTargetShortRoot ) ;
                         {
                         if( idHit3 && idHit4 )
-                        countT idHit4 = etThread.strIdF( tinP , tDotDataDot , psttzDataThumb ) ;
-                        countT idHit3 = etThread.strIdF( tinP , tDotDataDot , psttzDataFull ) ;
+                        countT idHit4 = etThread.strIdF( tinBaseP , tDotDataDot , psttzDataThumb ) ;
+                        countT idHit3 = etThread.strIdF( tinBaseP , tDotDataDot , psttzDataFull ) ;
 
-                        etThread.traceF( tinP , T("                     full: ")+T(psttzDataFull) ) ;
-                        etThread.traceF( tinP , T("                    thumb: ")+T(psttzDataThumb) ) ;
+                        etThread.traceF( tinBaseP , T("                     full: ")+T(psttzDataFull) ) ;
+                        etThread.traceF( tinBaseP , T("                    thumb: ")+T(psttzDataThumb) ) ;
                     {
                     if( psttzDataThumb && psttzDataFull )
 
@@ -72,13 +72,13 @@ etThread.traceF( tinP , T("ok") ) ;
                                     }
                                         break ;
                                         ( b600 ? psttzDataThumb : psttzDataFull ) = psttc1 ;
-                                        etThread.traceF( tinP , T("                dataname: ")+T(psttc1) ) ;
+                                        etThread.traceF( tinBaseP , T("                dataname: ")+T(psttc1) ) ;
                                     {
                                     case 3 :
                                     }
                                         break ;
-                                        b600 = !!etThread.strIdF( tinP , tDot0600xDotJpg , psttc1 ) ;
-                                        etThread.traceF( tinP , T("        currentnamevalue: ")+T(psttc1) ) ;
+                                        b600 = !!etThread.strIdF( tinBaseP , tDot0600xDotJpg , psttc1 ) ;
+                                        etThread.traceF( tinBaseP , T("        currentnamevalue: ")+T(psttc1) ) ;
                                     {
                                     case 2 :
                                 {
@@ -88,32 +88,32 @@ etThread.traceF( tinP , T("ok") ) ;
                             ZE( boolT , b600 ) ;
                             ZE( countT , ids ) ;
 
-                            strokeS* pstt1Set = (strokeS*)swsSets.downF( tinP , hWalk ) ;
-                            etThread.traceF( tinP , T("    set") ) ;
+                            strokeS* pstt1Set = (strokeS*)swsSets.downF( tinBaseP , hWalk ) ;
+                            etThread.traceF( tinBaseP , T("    set") ) ;
                         {
                         do
-                        handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     if( swsSets > 1 )
                     ZE( strokeS* , psttzDataThumb ) ;
                     ZE( strokeS* , psttzDataFull  ) ;
-                    etThread.traceF( tinP , T("sets [swsSets]:")+TF2(swsSets,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tinBaseP , T("sets [swsSets]:")+TF2(swsSets,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                    psttzLever = (strokeS*)swsSets.leverF( tinP , idf ) ;
+                    psttzLever = (strokeS*)swsSets.leverF( tinBaseP , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                countT cFlavors = swsSets.cFlavorsF( tinP ) ;
+                countT cFlavors = swsSets.cFlavorsF( tinBaseP ) ;
 
                 }
                     swsSets << pstt1Set ;
-                    etThread.traceF( tinP , T("lever: ")+T(psttzLever) ) ;
+                    etThread.traceF( tinBaseP , T("lever: ")+T(psttzLever) ) ;
                     psttzLever = pstt1Set + CSpREFIX ;
                 
                     stCurrentNameValueDataFileName >> pstt1Set ;
                     ZE( strokeS* , pstt1Set ) ;
                 {
                 while( stCurrentNameValueDataFileName )
-                switchStackC swsSets( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLever , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+                switchStackC swsSets( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLever , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
                 ZE( strokeS* , psttzLever ) ;
 
                 while( ~hFindFile && !ether && !POOP ) ;
@@ -123,50 +123,50 @@ etThread.traceF( tinP , T("ok") ) ;
                     }
                         }
                             }
-                                etThread.delF( tinP , psttShortest ) ;
-                                stCurrentNameValueDataFileName.sinkF( tinP , countTC() , pstt1Set , flSTACKsINK_null , 0 , 1 ) ;
-                                etThread.strFuseSeparateF( tinP , pstt1Set , tShort            ) ;
-                                etThread.strFuseSeparateF( tinP , pstt1Set , tCurrentNameValue ) ;
-                                etThread.strFuseSeparateF( tinP , pstt1Set , psttShortest      , 0 , 0 , 0 , 0 , 2 * CSpREFIX + tCurrentNameValue.csF( tinP ) + tShort.csF( tinP ) ) ; ___( pstt1Set ) ;
+                                etThread.delF( tinBaseP , psttShortest ) ;
+                                stCurrentNameValueDataFileName.sinkF( tinBaseP , countTC() , pstt1Set , flSTACKsINK_null , 0 , 1 ) ;
+                                etThread.strFuseSeparateF( tinBaseP , pstt1Set , tShort            ) ;
+                                etThread.strFuseSeparateF( tinBaseP , pstt1Set , tCurrentNameValue ) ;
+                                etThread.strFuseSeparateF( tinBaseP , pstt1Set , psttShortest      , 0 , 0 , 0 , 0 , 2 * CSpREFIX + tCurrentNameValue.csF( tinBaseP ) + tShort.csF( tinBaseP ) ) ; ___( pstt1Set ) ;
                                 ZE( strokeS* , pstt1Set ) ;
 
-                                etThread.strSubstringF( tinP , psttShortest , idf2 , idHit2 , tCurrentNameValue ) ; ___( psttShortest ) ;
+                                etThread.strSubstringF( tinBaseP , psttShortest , idf2 , idHit2 , tCurrentNameValue ) ; ___( psttShortest ) ;
                                 countT idf2 = 1 ;
                                 ZE( strokeS* , psttShortest ) ;
 
                                 if( !idHit2 ) { BLAMMO ; }
-                                if( !idHit2 ) idHit2 = etThread.strIdF( tinP , tDotJpg         , tCurrentNameValue ) ;
-                                countT        idHit2 = etThread.strIdF( tinP , tDot0600xDotJpg , tCurrentNameValue ) ;
+                                if( !idHit2 ) idHit2 = etThread.strIdF( tinBaseP , tDotJpg         , tCurrentNameValue ) ;
+                                countT        idHit2 = etThread.strIdF( tinBaseP , tDot0600xDotJpg , tCurrentNameValue ) ;
 
     
                                 }
-                                    etThread.delF( tinP , postCurrentNameValue ) ;
+                                    etThread.delF( tinBaseP , postCurrentNameValue ) ;
                                     tCurrentNameValue = T(postCurrentNameValue) ;
-                                    etThread.boxGetShadowF( tinP , postCurrentNameValue , costCurrentNameValue , tFileMetaNameLong ) ; ___( postCurrentNameValue ) ;
+                                    etThread.boxGetShadowF( tinBaseP , postCurrentNameValue , costCurrentNameValue , tFileMetaNameLong ) ; ___( postCurrentNameValue ) ;
                                     ZE( countT   , costCurrentNameValue ) ;
                                     ZE( osTextT* , postCurrentNameValue ) ;
                                 {
                                 else
-                                if( !etThread.diskFileExistsF( tinP , tFileMetaNameLong ) ) etThread.traceF( tinP , T("error / file does not exist: ")+tFileMetaNameLong ) ;
+                                if( !etThread.diskFileExistsF( tinBaseP , tFileMetaNameLong ) ) etThread.traceF( tinBaseP , T("error / file does not exist: ")+tFileMetaNameLong ) ;
                                 TN( tCurrentNameValue , "" ) ;
                                 TN( tFileMetaNameLong , "" ) ; tFileMetaNameLong = tPathArchive+tYearSlash+tShortMetaName ;
     
-                                etThread.delF( tinP , psttShorter ) ;
+                                etThread.delF( tinBaseP , psttShorter ) ;
                                 TN( tLongMetaDotStar , "" ) ; tLongMetaDotStar = tPathArchive+tYearSlash+T(psttShorter)+tMetaDotStar ;
                                 TN( tShortMetaName , "" ) ; tShortMetaName = T(psttShorter)+tMetaDotCurrentName ;
     
-                                etThread.strSubstringF( tinP , psttShorter , idf , idHit , tShort ) ; ___( psttShorter ) ;
+                                etThread.strSubstringF( tinBaseP , psttShorter , idf , idHit , tShort ) ; ___( psttShorter ) ;
                                 countT idf = 1 ;
                                 ZE( strokeS* , psttShorter ) ;
                             {
                             if( idHit )
-                            countT idHit = etThread.strIdF( tinP , tDotDataDot , tShort ) ;
+                            countT idHit = etThread.strIdF( tinBaseP , tDotDataDot , tShort ) ;
     
                             }
-                                etThread.delF( tinP , psttShort ) ;
+                                etThread.delF( tinBaseP , psttShort ) ;
                                 tShort = T(psttShort) ;
-                                etThread.delF( tinP , psttnu ) ;
-                                etThread.strBisectF( tinP , psttnu , psttShort , pInfoFile->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                etThread.delF( tinBaseP , psttnu ) ;
+                                etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfoFile->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                                 ZE( strokeS* , psttShort ) ;
                                 ZE( strokeS* , psttnu ) ;
                             {
@@ -184,22 +184,22 @@ etThread.traceF( tinP , T("ok") ) ;
                     {
                     if( !pInfoFile || !pInfoFile->psttIfoName )
     
-                    etThread.diskFindFileOrDirOldF( tinP , pInfoFile , hFindFile , tPathArchive+tYearSlash+t7DotStarDotDataDotJpg ) ; ___( pInfoFile ) ;
+                    etThread.diskFindFileOrDirOldF( tinBaseP , pInfoFile , hFindFile , tPathArchive+tYearSlash+t7DotStarDotDataDotJpg ) ; ___( pInfoFile ) ;
                     ZE( infoFileS* , pInfoFile ) ;
                 {
                 do
-                handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-                stackC stCurrentNameValueDataFileName( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+                handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                stackC stCurrentNameValueDataFileName( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
     
-                etThread.traceF( tinP , tYearSlash ) ;
+                etThread.traceF( tinBaseP , tYearSlash ) ;
             {
-            if( bDir && etThread.strCompareF( tinP , tDotSlash , tYearSlash ) && etThread.strCompareF( tinP , tDotDotSlash , tYearSlash ) )
+            if( bDir && etThread.strCompareF( tinBaseP , tDotSlash , tYearSlash ) && etThread.strCompareF( tinBaseP , tDotDotSlash , tYearSlash ) )
     
             }
-                etThread.delF( tinP , psttYearSlash ) ;
+                etThread.delF( tinBaseP , psttYearSlash ) ;
                 tYearSlash = T(psttYearSlash) ;
-                etThread.delF( tinP , psttnu ) ;
-                etThread.strBisectF( tinP , psttnu , psttYearSlash , pInfoDir->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttYearSlash ) ;
+                etThread.delF( tinBaseP , psttnu ) ;
+                etThread.strBisectF( tinBaseP , psttnu , psttYearSlash , pInfoDir->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttYearSlash ) ;
                 ZE( strokeS* , psttYearSlash ) ;
                 ZE( strokeS* , psttnu ) ;
             {
@@ -215,11 +215,11 @@ etThread.traceF( tinP , T("ok") ) ;
         {
         if( !pInfoDir || !pInfoDir->psttIfoName )
     
-        etThread.diskFindFileOrDirOldF( tinP , pInfoDir , hFindDir , tPathArchive+tStar ) ; ___( pInfoDir ) ;
+        etThread.diskFindFileOrDirOldF( tinBaseP , pInfoDir , hFindDir , tPathArchive+tStar ) ; ___( pInfoDir ) ;
         ZE( infoFileS* , pInfoDir ) ;
     {
     do
-    handleC hFindDir( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFindDir( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     
     TN( tMetaDotThumbDot0600xDotJpg , "meta.thumb.0600x.jpg" ) ;
     TN( tDotJpg , ".jpg" ) ;

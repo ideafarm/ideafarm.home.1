@@ -9,28 +9,28 @@
 
 REST
 
-etThread.delF( tinP , psttNameOn   ) ;
-etThread.delF( tinP , psttNameFrom ) ;
-etThread.delF( tinP , psttNameTo   ) ;
+etThread.delF( tinBaseP , psttNameOn   ) ;
+etThread.delF( tinBaseP , psttNameFrom ) ;
+etThread.delF( tinBaseP , psttNameTo   ) ;
 
 }
-    etThread.delF( tinP , pbAll ) ;
-    tinP.zEtScratch->boxPutF( tinP , psttNameTo , pbAll , cbAll ) ;
+    etThread.delF( tinBaseP , pbAll ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->boxPutF( tinBaseP , psttNameTo , pbAll , cbAll ) ;
     
     }
         off += cbf ;
-        tinP.zEtScratch->delF( tinP , pbf ) ;
-        tinP.zEtScratch->memCopyF( tinP , pbAll + off , pbf , cbf ) ;
-        tinP.zEtScratch->strokeF( tinP , T("got ")+TF1(cbf)+T(" bytes at offset ")+TF1(off)+T("\r\n") ) ;
+        ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pbf ) ;
+        ((tinNormalS&)tinBaseP).zEtScratch->memCopyF( tinBaseP , pbAll + off , pbf , cbf ) ;
+        ((tinNormalS&)tinBaseP).zEtScratch->strokeF( tinBaseP , T("got ")+TF1(cbf)+T(" bytes at offset ")+TF1(off)+T("\r\n") ) ;
         }
             }
-                etThread.strokeF( tinP , T("retrying query for bytes at offset ")+TF1(off)+T("\r\n") ) ;
-                tinP.zEtScratch->delF( tinP , pbf ) ;
-                *tinP.zEtScratch = 0 ;
+                etThread.strokeF( tinBaseP , T("retrying query for bytes at offset ")+TF1(off)+T("\r\n") ) ;
+                ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pbf ) ;
+                *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
             {
             else
-            if( !*tinP.zEtScratch ) break ;
-            getF( tinP , *tinP.zEtScratch , pbf , cbf , cbr , psttNameFrom , nnOn , off , CBeACH ) ; ___( pbf ) ;
+            if( !*((tinNormalS&)tinBaseP).zEtScratch ) break ;
+            getF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , pbf , cbf , cbr , psttNameFrom , nnOn , off , CBeACH ) ; ___( pbf ) ;
         {
         for(;;)
         ZE( countT , cbr ) ;
@@ -41,29 +41,29 @@ etThread.delF( tinP , psttNameTo   ) ;
     ZE( countT , off ) ;
     
     if( pbAll ) pbAll[ cbAll ] = 0 ;
-    tinP.zEtScratch->newF( tinP , LF , pbAll , cbAll + 1 ) ; ___( pbAll ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->newF( tinBaseP , LF , pbAll , cbAll + 1 ) ; ___( pbAll ) ;
     countT cbAll = cbr ;
     ZE( byteT* , pbAll ) ;
     
-    tinP.zEtScratch->delF( tinP , pbf ) ;
+    ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pbf ) ;
     }
         }
-            etThread.strokeF( tinP , T("retrying (file size query)\r\n") ) ;
-            tinP.zEtScratch->delF( tinP , pbf ) ;
-            *tinP.zEtScratch = 0 ;
+            etThread.strokeF( tinBaseP , T("retrying (file size query)\r\n") ) ;
+            ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pbf ) ;
+            *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
         {
         else
-        if( !*tinP.zEtScratch ) break ;
-        getF( tinP , *tinP.zEtScratch , pbf , cbf , cbr , psttNameFrom , nnOn , 0 , 0 ) ; ___( pbf ) ;
+        if( !*((tinNormalS&)tinBaseP).zEtScratch ) break ;
+        getF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , pbf , cbf , cbr , psttNameFrom , nnOn , 0 , 0 ) ; ___( pbf ) ;
     {
     for(;;)
     ZE( countT , cbr ) ;
     ZE( countT , cbf ) ;
     ZE( byteT* , pbf ) ;
     
-    if( !psttNameTo ) { etThread.strMakeF( tinP , LF , psttNameTo , psttNameFrom ) ; ___( psttNameTo ) ; }
+    if( !psttNameTo ) { etThread.strMakeF( tinBaseP , LF , psttNameTo , psttNameFrom ) ; ___( psttNameTo ) ; }
     
-    if( psttNameOn ) nnOn = etThread.sockNicNameF( tinP , psttNameOn ) ;
+    if( psttNameOn ) nnOn = etThread.sockNicNameF( tinBaseP , psttNameOn ) ;
     nicNameC nnOn ;
 {
 if( psttNameFrom )
@@ -72,23 +72,23 @@ if( psttNameFrom )
     }
         }
             default: { __( idArm ) ; }
-            case 3 : { idArm = 0 ; etThread.delF( tinP , psttNameOn   ) ; etThread.strMakeF( tinP , LF , psttNameOn   , psttc1 ) ; ___( psttNameOn   ) ;  break ; }
-            case 2 : { idArm = 0 ; etThread.delF( tinP , psttNameFrom ) ; etThread.strMakeF( tinP , LF , psttNameFrom , psttc1 ) ; ___( psttNameFrom ) ;  break ; }
-            case 1 : { idArm = 0 ; etThread.delF( tinP , psttNameTo   ) ; etThread.strMakeF( tinP , LF , psttNameTo   , psttc1 ) ; ___( psttNameTo   ) ;  break ; }
+            case 3 : { idArm = 0 ; etThread.delF( tinBaseP , psttNameOn   ) ; etThread.strMakeF( tinBaseP , LF , psttNameOn   , psttc1 ) ; ___( psttNameOn   ) ;  break ; }
+            case 2 : { idArm = 0 ; etThread.delF( tinBaseP , psttNameFrom ) ; etThread.strMakeF( tinBaseP , LF , psttNameFrom , psttc1 ) ; ___( psttNameFrom ) ;  break ; }
+            case 1 : { idArm = 0 ; etThread.delF( tinBaseP , psttNameTo   ) ; etThread.strMakeF( tinBaseP , LF , psttNameTo   , psttc1 ) ; ___( psttNameTo   ) ;  break ; }
             }
                 break ;
-                else if( !etThread.strCompareF( tinP , psttc1 , tOn   ) ) idArm = 3 ;
-                else if( !etThread.strCompareF( tinP , psttc1 , tFrom ) ) idArm = 2 ;
-                     if( !etThread.strCompareF( tinP , psttc1 , tTo   ) ) idArm = 1 ;
+                else if( !etThread.strCompareF( tinBaseP , psttc1 , tOn   ) ) idArm = 3 ;
+                else if( !etThread.strCompareF( tinBaseP , psttc1 , tFrom ) ) idArm = 2 ;
+                     if( !etThread.strCompareF( tinBaseP , psttc1 , tTo   ) ) idArm = 1 ;
             {
             case 0 :
         {
         switch( idArm )
         
-        etThread.strokeF( tinP , T("parm: \"")+T(psttc1)+T("\"\r\n") ) ;
+        etThread.strokeF( tinBaseP , T("parm: \"")+T(psttc1)+T("\"\r\n") ) ;
     {
     FORsTRINGSiN1( pstt1pp )
-    strokeS*& pstt1pp = etThread.ether_pstt1_processParametersI_F( tinP ) ;
+    strokeS*& pstt1pp = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
     ZE( countT , idArm ) ;
     TN( tOn   , "!on" ) ;
     TN( tFrom , "!from" ) ;
@@ -101,25 +101,25 @@ ZE( strokeS* , psttNameTo   ) ;
 TODO
 
 }
-    etherP.strokeF( tinP , T("got it\r\n") ) ;
-    sIn.shiftRightF( tinP , pbP , cbP ) ; ___( pbP ) ;
+    etherP.strokeF( tinBaseP , T("got it\r\n") ) ;
+    sIn.shiftRightF( tinBaseP , pbP , cbP ) ; ___( pbP ) ;
     sIn >> cbrP ;
     
-    sock.readF( tinP , sIn ) ;
-    soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+    sock.readF( tinBaseP , sIn ) ;
+    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-    sock.writeF( tinP , sOut ) ;
-    etherP.strokeF( tinP , T("requesting \"")+T(psttP)+T("\" offset ")+TF1(offP)+T("\r\n") ) ;
-    sock.connectF( tinP , ifcPORToLD2_IFCfTP , nnOnP , 0 , TOCK * 0x20 ) ;
-    etherP.strokeF( tinP , T("connecting\r\n") ) ;
-    socketC sock( tinP , etherP , TAG( TAGiDnULL ) ) ;
+    sock.writeF( tinBaseP , sOut ) ;
+    etherP.strokeF( tinBaseP , T("requesting \"")+T(psttP)+T("\" offset ")+TF1(offP)+T("\r\n") ) ;
+    sock.connectF( tinBaseP , ifcPORToLD2_IFCfTP , nnOnP , 0 , TOCK * 0x20 ) ;
+    etherP.strokeF( tinBaseP , T("connecting\r\n") ) ;
+    socketC sock( tinBaseP , etherP , TAG( TAGiDnULL ) ) ;
 
     sOut << cbwP ;
     sOut << offP ;
     sOut << psttP ;
-    soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-voidT getF( tinS& tinP , etherC& etherP , byteT*& pbP , countT& cbP , countT& cbrP , const strokeS* const psttP , nicNameC& nnOnP , const countT offP = 0 , const countT cbwP = - 1 )
+voidT getF( tinBaseS& tinBaseP , etherC& etherP , byteT*& pbP , countT& cbP , countT& cbrP , const strokeS* const psttP , nicNameC& nnOnP , const countT offP = 0 , const countT cbwP = - 1 )
 
 #define CBeACH 0x10000
 

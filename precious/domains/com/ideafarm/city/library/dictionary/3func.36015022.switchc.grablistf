@@ -8,13 +8,13 @@
 
 
 }
-    stackk.grabListF( tinP , ppcDownP , ppcUpP , cDownP , cUpP , 1 ) ;
+    stackk.grabListF( tinBaseP , ppcDownP , ppcUpP , cDownP , cUpP , 1 ) ;
 
     _IO_
 
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    else if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    else if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     if( bNoGrabP ) ;
 
     }
@@ -23,7 +23,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT switchC::grabListF( tinS& tinP , countT**& ppcDownP , countT**& ppcUpP , countT& cDownP , countT& cUpP , const boolT bNoGrabP )/*1*/
+/*1*/voidT switchC::grabListF( tinBaseS& tinBaseP , countT**& ppcDownP , countT**& ppcUpP , countT& cDownP , countT& cUpP , const boolT bNoGrabP )/*1*/
 /**/
 */
  see stackC::grabListF

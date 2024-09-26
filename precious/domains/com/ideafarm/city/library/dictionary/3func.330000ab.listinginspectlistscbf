@@ -15,8 +15,8 @@
             argP.flagsInspect |= flAPTiNSPECT_ABORT | flAPTiNSPECT_DOnOTuNGRABhERE ;
 //            argP.pcUtility[ 2 ] = (countT)&APT( listC , aptP ).id NameKidDefaultLath ;
             *(aptC*)&argP.pcUtility[ 1 ] = aptP ;
-            else         grabitListKidP.aimF( tinP , flGRABITcaIMmASK_null , &APT(      listC , aptP ).flagsRefF() ) ;
-            if( bOfSet ) grabitListKidP.aimF( tinP , flGRABITcaIMmASK_null , &APT( listOfSetC , aptP ).flagsRefF() ) ;
+            else         grabitListKidP.aimF( tinBaseP , flGRABITcaIMmASK_null , &APT(      listC , aptP ).flagsRefF() ) ;
+            if( bOfSet ) grabitListKidP.aimF( tinBaseP , flGRABITcaIMmASK_null , &APT( listOfSetC , aptP ).flagsRefF() ) ;
         {
         if( !sgn )
         sgn = argP.idNameSpec - idName ;
@@ -28,11 +28,11 @@
     grabitC& grabitListKidP = *(grabitC*)argP.pcUtility[ 0 ] ;
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 
     _IO_
 {
-/*1*/sCountT listingInspectListsCBF( tinS& tinP , aptC& aptP , listWalkArgOldS& argP , const countT* pczListNameP )/*1*/
+/*1*/sCountT listingInspectListsCBF( tinBaseS& tinBaseP , aptC& aptP , listWalkArgOldS& argP , const countT* pczListNameP )/*1*/
 
 /**/
 */

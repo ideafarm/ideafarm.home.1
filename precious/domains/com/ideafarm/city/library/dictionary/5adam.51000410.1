@@ -9,26 +9,26 @@
 
 REST
 
-else             etThread.strokeF( tinP , T("-not- handed off\r\n") ) ;
-if( bHandedOff ) etThread.strokeF( tinP , T("handed off\r\n") ) ;
+else             etThread.strokeF( tinBaseP , T("-not- handed off\r\n") ) ;
+if( bHandedOff ) etThread.strokeF( tinBaseP , T("handed off\r\n") ) ;
 
 }
-    ether.osSleepF( tinP , TICK * 8 ) ;
-    etThread.strokeF( tinP , T("working\r\n") ) ;
+    ether.osSleepF( tinBaseP , TICK * 8 ) ;
+    etThread.strokeF( tinBaseP , T("working\r\n") ) ;
 
-    //etThread.osProcessF( tinP , countTC() , countTC() , DDNUMB ) ;
+    //etThread.osProcessF( tinBaseP , countTC() , countTC() , DDNUMB ) ;
 
-    etThread.strokeF( tinP , T("idMe = ")+TF1(state.idMe)+T("\r\npress Ctrl-c to fire me\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("idMe = ")+TF1(state.idMe)+T("\r\npress Ctrl-c to fire me\r\n") ) ;
     state.idMe ++ ; !state ;
 
     __( state.cbdVarying - CBDV ) ;
-    stateS state( tinP , etThread , bHandedOff , CBDV ) ;
+    stateS state( tinBaseP , etThread , bHandedOff , CBDV ) ;
 {
 ZE( boolT , bHandedOff ) ;
 
-etThread.delF( tinP , psttw ) ;
-etThread.strokeF( tinP , T("translated from tFoo: \"")+T(psttw)+T("\"\r\n") ) ;
-etThread.strReplaceF( tinP , psttw , tFoo , ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES ) ; ___( psttw ) ;
+etThread.delF( tinBaseP , psttw ) ;
+etThread.strokeF( tinBaseP , T("translated from tFoo: \"")+T(psttw)+T("\"\r\n") ) ;
+etThread.strReplaceF( tinBaseP , psttw , tFoo , ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES ) ; ___( psttw ) ;
 ZE( strokeS* , psttw ) ;
 TN( tFoo , "0123" ) ;
 
@@ -36,16 +36,16 @@ TODO
 
 }
 {
-stateC( tinP , etherP , bHandedOffP , sizeof *this , cbdVaryingP , translateStateF )
-stateS::stateS( tinS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVaryingP ) :
+stateC( tinBaseP , etherP , bHandedOffP , sizeof *this , cbdVaryingP , translateStateF )
+stateS::stateS( tinBaseS& tinBaseP , etherC& etherP , boolT& bHandedOffP , countT cbdVaryingP ) :
 //THE MEMBERS OF THE DERIVED CLASS stateS ARE NOT EXPLICITLY INITIALIZED HERE BECAUSE THE CT'OR FOR stateC INITIALIZES THEM
 
 }
     if( cArgP ) ;
 
     }
-        else                                 etherP.memSetF(  tinP , pbToVaryingP , cbToVaryingP ) ;
-        if( cbToVaryingP == cbFromVaryingP ) etherP.memCopyF( tinP , pbToVaryingP , pbFromVaryingP , cbToVaryingP ) ;
+        else                                 etherP.memSetF(  tinBaseP , pbToVaryingP , cbToVaryingP ) ;
+        if( cbToVaryingP == cbFromVaryingP ) etherP.memCopyF( tinBaseP , pbToVaryingP , pbFromVaryingP , cbToVaryingP ) ;
     {
     if( cbToVaryingP )
 
@@ -53,8 +53,8 @@ stateS::stateS( tinS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVar
         if( !etherP ) state.idVersion = IDvERSION ;
 
         }
-            if( cbToP ) etherP.memSetF( tinP , pbToP , cbToP ) ;
-            etherP.strokeF( tinP , T("generating a blank version ")+TF1(IDvERSION)+T("\r\n") ) ;
+            if( cbToP ) etherP.memSetF( tinBaseP , pbToP , cbToP ) ;
+            etherP.strokeF( tinBaseP , T("generating a blank version ")+TF1(IDvERSION)+T("\r\n") ) ;
         {
         else
         }
@@ -74,12 +74,12 @@ stateS::stateS( tinS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVar
                     case 7 : { state.idMe      = stateOther.idMe      ; }
                 {
                 switch( stateOther.idVersion )
-                etherP.memSetF( tinP , pbToP        , cbToP        ) ;
+                etherP.memSetF( tinBaseP , pbToP        , cbToP        ) ;
             {
             else
-            if( stateOther.idVersion == IDvERSION && cbToP == cbFromP ) etherP.memCopyF( tinP , pbToP , pbFromP , cbToP ) ;
+            if( stateOther.idVersion == IDvERSION && cbToP == cbFromP ) etherP.memCopyF( tinBaseP , pbToP , pbFromP , cbToP ) ;
 
-            etherP.strokeF( tinP , T("translating from version ")+TF1(stateOther.idVersion)+T(" to version ")+TF1(IDvERSION)+T("\r\n") ) ;
+            etherP.strokeF( tinBaseP , T("translating from version ")+TF1(stateOther.idVersion)+T(" to version ")+TF1(IDvERSION)+T("\r\n") ) ;
             stateS& stateOther = *(stateS*)( pbFromP - sizeof( stateC ) ) ; // BE CAREFUL WHEN USING, AS pbFromP CAN BE 0, AND stateC AND/OR stateS MIGHT HAVE CHANGED.  FOR EXAMPLE, USE AN idVersion FIELD TO AVOID REFERRING TO FIELDS THAT DO NOT NOW, OR DID NOT BEFORE, EXIST
         {
         if( !etherP && pbFromP && cbFromP >= sizeof( countT ) )
@@ -91,11 +91,11 @@ stateS::stateS( tinS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVar
 
     __( cbToVaryingP - CBDV ) ;
 {
-voidT translateStateF( tinS& tinP , etherC& etherP , byteT* pbToP , countT cbToP , const byteT* pbFromP , countT cbFromP , byteT* pbToVaryingP , countT cbToVaryingP , const byteT* pbFromVaryingP , countT cbFromVaryingP , countT cArgP )
+voidT translateStateF( tinBaseS& tinBaseP , etherC& etherP , byteT* pbToP , countT cbToP , const byteT* pbFromP , countT cbFromP , byteT* pbToVaryingP , countT cbToVaryingP , const byteT* pbFromVaryingP , countT cbFromVaryingP , countT cArgP )
 
 ;
 }
-    stateS( tinS& tinP , etherC& etherP , boolT& bHandedOffP , countT cbdVaryingP = 0 ) ;
+    stateS( tinBaseS& tinBaseP , etherC& etherP , boolT& bHandedOffP , countT cbdVaryingP = 0 ) ;
 
     countT idMe ;
     countT cVersion7 ;

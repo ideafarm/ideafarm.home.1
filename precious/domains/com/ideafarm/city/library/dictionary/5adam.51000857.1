@@ -9,8 +9,8 @@
 
 REST
 
-etThread.traceF( tinP , T("bye") ) ;
-etherC::loafIF( tinP ) ;
+etThread.traceF( tinBaseP , T("bye") ) ;
+etherC::loafIF( tinBaseP ) ;
 
 
 THREADmODE2rESTORE
@@ -18,16 +18,16 @@ THREADmODE3rESTORE
 THREADmODE4rESTORE
 
 }
-    etherC::loafIF( tinP ) ;
+    etherC::loafIF( tinBaseP ) ;
 
-    etThread.traceF( tinP , TfORsTRING((countT)pcFoo)+tb4+TF2(*pcFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , TfORsTRING((countT)pcFoo)+tb4+TF2(*pcFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     *pcFoo += 0x11111111 ;
-    //tinP.pc Utility[ 0 ] -- ;
-    PUSE.newF( tinP , LF , *(byteT**)&pcFoo , sizeof( countT ) , flPOOLcnEW_null ) ; ___( pcFoo ) ;
-    //tinP.pc Utility[ 0 ] ++ ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
+    PUSE.newF( tinBaseP , LF , *(byteT**)&pcFoo , sizeof( countT ) , flPOOLcnEW_null ) ; ___( pcFoo ) ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
     ZE( countT* , pcFoo ) ;
 
-    puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+    puseC puseHT( tinBaseP , ifcIDpOOL_HOMEtEMP ) ;
 
     _IO_
 {

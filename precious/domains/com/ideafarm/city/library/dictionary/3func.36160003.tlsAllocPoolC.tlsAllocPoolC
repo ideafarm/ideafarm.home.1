@@ -7,17 +7,17 @@
 //
 
 }
-    thirdC::c_memsetIF( tinP.pbTls , tinP.cbTls ) ;
-    if( !tinP.pbTls ) { BLAMMOiD( 0x88448844 ) ; }
-    PUSE.newF( tinP , LF , *(byteT**)&tinP.pbTls , tinP.cbTls , flPOOLcnEW_null ) ; ___( tinP.pbTls ) ;
-    *(countT*)&tinP.cTls  = 0      ;
-    *(countT*)&tinP.cbTls = cbTlsP ;
-    *(byteT**)&tinP.pbTls = 0      ;
+    thirdC::c_memsetIF( ((tinNormalS&)tinBaseP).pbTls , ((tinNormalS&)tinBaseP).cbTls ) ;
+    if( !((tinNormalS&)tinBaseP).pbTls ) { BLAMMOiD( 0x88448844 ) ; }
+    PUSE.newF( tinBaseP , LF , *(byteT**)&((tinNormalS&)tinBaseP).pbTls , ((tinNormalS&)tinBaseP).cbTls , flPOOLcnEW_null ) ; ___( ((tinNormalS&)tinBaseP).pbTls ) ;
+    *(countT*)&((tinNormalS&)tinBaseP).cTls  = 0      ;
+    *(countT*)&((tinNormalS&)tinBaseP).cbTls = cbTlsP ;
+    *(byteT**)&((tinNormalS&)tinBaseP).pbTls = 0      ;
 {
-cTlsSave(   tinP.cTls )
-cbTlsSave( tinP.cbTls ) ,
-pbTlsSave( tinP.pbTls ) ,
-/*1*/tlsAllocPoolC::tlsAllocPoolC( tinS& tinP , const countT cbTlsP ) :/*1*/
+cTlsSave(   ((tinNormalS&)tinBaseP).cTls )
+cbTlsSave( ((tinNormalS&)tinBaseP).cbTls ) ,
+pbTlsSave( ((tinNormalS&)tinBaseP).pbTls ) ,
+/*1*/tlsAllocPoolC::tlsAllocPoolC( tinBaseS& tinBaseP , const countT cbTlsP ) :/*1*/
 
 /**/
 */

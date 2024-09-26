@@ -9,31 +9,31 @@
                             
 REST
 
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
 }
-    //etThread.strokeF( tinP , T("unread: ")+TF2(stPending,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
-    readF( tinP , etThread , stPending , rRead ) ;
+    //etThread.strokeF( tinBaseP , T("unread: ")+TF2(stPending,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    readF( tinBaseP , etThread , stPending , rRead ) ;
 {
 while( !ether )
 
 while( cToDo -- ) etThread.osThreadF( TaRG1( tmHelpF ) , (countT)&stPending , (countT)&rWrite ) ;
 countT cToDo = 8 ;
 
-stackC stPending( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
+stackC stPending( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
 
-rRead.pOffPendingPeerF(  tinP , rWrite ) ;
-rWrite.pOffPendingPeerF( tinP , rRead ) ;
+rRead.pOffPendingPeerF(  tinBaseP , rWrite ) ;
+rWrite.pOffPendingPeerF( tinBaseP , rRead ) ;
 
-rangeC rRead(  tinP , &cOnPlate , flRANGEc_CONSUMER ) ;
-rangeC rWrite( tinP , &cOnPlate ) ;
+rangeC rRead(  tinBaseP , &cOnPlate , flRANGEc_CONSUMER ) ;
+rangeC rWrite( tinBaseP , &cOnPlate ) ;
 
 TODO
 
 DONE( tmHelpF )
 }
     }
-        writeF( tinP , etThread , stPendingP , rWriteP ) ;
+        writeF( tinBaseP , etThread , stPendingP , rWriteP ) ;
     {
     while( !ether )
 
@@ -44,33 +44,33 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmHelpF )
 
 }
-    rWriteP.closeF( tinP , offGot , CsLOTSmINUSwO ) ;
-    etThread.strokeF( tinP , T("wrote value ")+TF2(pcv[offv%4],flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    rWriteP.closeF( tinBaseP , offGot , CsLOTSmINUSwO ) ;
+    etThread.strokeF( tinBaseP , T("wrote value ")+TF2(pcv[offv%4],flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
     pcv[ offv % 4 ] = 1 + incv02AM( vvLath ) ;
 
     countT offv = offGot >> 0x1e ;
 
-    stPendingP.sinkF( tinP , countTC() , offGot ) ;
-    countT offGot = rWriteP.openF( tinP , CsLOTSmINUSwO ) ;
+    stPendingP.sinkF( tinBaseP , countTC() , offGot ) ;
+    countT offGot = rWriteP.openF( tinBaseP , CsLOTSmINUSwO ) ;
 {
-voidT writeF( tinS& tinP , etherC& etThread , stackC& stPendingP , rangeC& rWriteP )
+voidT writeF( tinBaseS& tinBaseP , etherC& etThread , stackC& stPendingP , rangeC& rWriteP )
 
 }
-    etThread.strokeF( tinP , T("got value ")+TF2(vvGot,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
-    rReadP.closeF( tinP , offGot , CsLOTSmINUSwO ) ;
+    etThread.strokeF( tinBaseP , T("got value ")+TF2(vvGot,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    rReadP.closeF( tinBaseP , offGot , CsLOTSmINUSwO ) ;
     countT vvGot = pcv[ offv % 4 ] ;
     countT offv = offGot >> 0x1e ;
 
-    stPendingP.ungrabF( tinP ) ;
+    stPendingP.ungrabF( tinBaseP ) ;
     else      { BLAMMO ; }
-    if( ids ) stPendingP.extractF( 0 , tinP ) ;
-    stPendingP.sinkF( tinP , ids , offGot , flSTACKsINK_QUERY ) ;
-    stPendingP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    if( ids ) stPendingP.extractF( 0 , tinBaseP ) ;
+    stPendingP.sinkF( tinBaseP , ids , offGot , flSTACKsINK_QUERY ) ;
+    stPendingP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     ZE( countT , ids ) ;
-    countT offGot = rReadP.openF( tinP , CsLOTSmINUSwO ) ;
+    countT offGot = rReadP.openF( tinBaseP , CsLOTSmINUSwO ) ;
     //BOSdOnOTtEST( WHATgbo , getch() )
 {
-voidT readF( tinS& tinP , etherC& etThread , stackC& stPendingP , rangeC& rReadP )
+voidT readF( tinBaseS& tinBaseP , etherC& etThread , stackC& stPendingP , rangeC& rReadP )
 
 countT vvLath ;
 countT pcv[ 4 ] ;

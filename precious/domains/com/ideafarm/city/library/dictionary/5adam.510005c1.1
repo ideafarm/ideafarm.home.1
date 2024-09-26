@@ -9,15 +9,15 @@
                             
 REST
 
-etThread.delF( tinP , postr ) ;
+etThread.delF( tinBaseP , postr ) ;
 LOGrAW( postr ) ;
-etherC::ifcBitDumpIF( tinP , postr , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
-etThread.newF( tinP , LF , postr , cbaNeeded ) ; ___( postr ) ;
+etherC::ifcBitDumpIF( tinBaseP , postr , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
+etThread.newF( tinBaseP , LF , postr , cbaNeeded ) ; ___( postr ) ;
 ZE( osTextT* , postr ) ;
 
 LOGrAW3( "[cbaNeeded]: " , cbaNeeded , "\r\n" ) ;
-countT cbaNeeded = etherC::ifcBitDumpIF( tinP , 0 , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
-countT cbGrain = thirdC::osMemoryReadabilityMapIF( tinP , pbBits , sizeof pbBits ) ;
+countT cbaNeeded = etherC::ifcBitDumpIF( tinBaseP , 0 , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
+countT cbGrain = thirdC::osMemoryReadabilityMapIF( tinBaseP , pbBits , sizeof pbBits ) ;
 
 TODO
 

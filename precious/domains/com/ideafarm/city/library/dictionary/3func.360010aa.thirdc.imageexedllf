@@ -21,7 +21,7 @@
                             pInfoP->costDescriptionAlloc = pPeInfo3[ off ].SizeOfRawData ;
                             pInfoP->postDescription = (osTextT*)( pbP + pPeInfo3[ off ].PointerToRawData ) ;
                         {
-                        else if( !c_strcmpIF( tinP , pbSectionName , ".desc" ) )
+                        else if( !c_strcmpIF( tinBaseP , pbSectionName , ".desc" ) )
                         }
                             }
                                 pInfo ++ ;
@@ -42,7 +42,7 @@
                             byteT* pbOff = (byteT*)pInfo - pPeInfo3[ off ].VirtualAddress ;
                             oneImportImageExeDllS* pInfo = (oneImportImageExeDllS*)( pbP + pPeInfo3[ off ].PointerToRawData ) ;
                         {
-                        else if( !c_strcmpIF( tinP , pbSectionName , ".idata" ) )
+                        else if( !c_strcmpIF( tinBaseP , pbSectionName , ".idata" ) )
                         }
                             //}
                             //    }
@@ -61,7 +61,7 @@
                             byteT* pbOff = (byteT*)pInfo - pPeInfo3[ off ].VirtualAddress ;
                             IMAGE_EXPORT_DIRECTORY* pInfo = (IMAGE_EXPORT_DIRECTORY*)( pbP + pPeInfo3[ off ].PointerToRawData ) ;
                         {
-                        if( !c_strcmpIF( tinP , pbSectionName , ".edata" ) )
+                        if( !c_strcmpIF( tinBaseP , pbSectionName , ".edata" ) )
                         if( POOP ) break ; //c_strcmpIF WILL RETURN 0 IF IMPOTENT
 
                         if( pInfoP->pSt_postSectionName ) *pInfoP->pSt_postSectionName << (countT)pbSectionName ;
@@ -90,7 +90,7 @@
     {
     if( pInfoP )
     __Z( pInfoP ) ;
-    pInfoP = new( 0 , tinP , LF ) imageExeDllC( tinP , *this ) ; ___( pInfoP ) ;
+    pInfoP = new( 0 , tinBaseP , LF ) imageExeDllC( tinBaseP , *this ) ; ___( pInfoP ) ;
 
     }
         if( POOP ) return ;
@@ -101,7 +101,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::imageExeDllF( tinS& tinP , imageExeDllC*& pInfoP , const byteT* const pbP )/*1*/
+/*1*/voidT thirdC::imageExeDllF( tinBaseS& tinBaseP , imageExeDllC*& pInfoP , const byteT* const pbP )/*1*/
 
 ;
 }

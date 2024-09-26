@@ -9,12 +9,12 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
-        etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ;
+        etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
         cbr = 72 - sizeof frameHead ;
 
         pbfh[ 3 ] = pbTock[ 0 ] ;
@@ -25,7 +25,7 @@ etThread.traceF( tinP , T("ok") ) ;
         byteT* pbfh = (byteT*)&frameHead ;
         frameHeadS frameHead ;
 
-        etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ;
+        etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
         cbr = 4 ;
     {
     while( !POOP )
@@ -34,7 +34,7 @@ etThread.traceF( tinP , T("ok") ) ;
         }
             }
                 cbToDo -= cbWo ;
-                etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ;
+                etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
                 cbr = cbWo ;
 
                 ;
@@ -47,7 +47,7 @@ etThread.traceF( tinP , T("ok") ) ;
         {
         else
         }
-            etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ;
+            etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
             cbr = cbId3 ;
         {
         if( cbId3 <= sizeof pbTock )
@@ -72,11 +72,11 @@ etThread.traceF( tinP , T("ok") ) ;
 
     __Z( cbr == 0xa && pbTock[ 0 ] == 'I' && pbTock[ 1 ] == 'D' && pbTock[ 2 ] == '3' ) ;
 
-    etThread.fileReadF( tinP , pbTock , cbr , fi , 0 ) ;
+    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
     countT cbr = 0xa ;
     byteT pbTock[ TOCK ] ;
 
-    fileC fi( tinP , (strokeS*)T("///d/tmp/x/test2.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
+    fileC fi( tinBaseP , (strokeS*)T("///d/tmp/x/test2.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
 {
 
 TODO

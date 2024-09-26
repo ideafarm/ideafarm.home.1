@@ -9,29 +9,29 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
-        etThread.delF( tinP , pstt2sans ) ;
-        etThread.delF( tinP , pstt1sans ) ;
-        etThread.delF( tinP , pstt2 ) ;
-        etThread.delF( tinP , pstt1 ) ;
+        etThread.delF( tinBaseP , pstt2sans ) ;
+        etThread.delF( tinBaseP , pstt1sans ) ;
+        etThread.delF( tinBaseP , pstt2 ) ;
+        etThread.delF( tinBaseP , pstt1 ) ;
 
-        etThread.traceF( tinP , pstt2sans ) ;
-        etThread.traceF( tinP , pstt1sans ) ;
-        etThread.traceF( tinP , tLine ) ;
+        etThread.traceF( tinBaseP , pstt2sans ) ;
+        etThread.traceF( tinBaseP , pstt1sans ) ;
+        etThread.traceF( tinBaseP , tLine ) ;
 
         }
             }
-                etThread.diskMoveFileOrDirF( tinP , tDscDoneFolder+tShort , tDscFolder+tShort ) ;
+                etThread.diskMoveFileOrDirF( tinBaseP , tDscDoneFolder+tShort , tDscFolder+tShort ) ;
 
                 }
-                    etThread.delF( tinP , psttShort ) ;
+                    etThread.delF( tinBaseP , psttShort ) ;
                     tShort = T(psttShort) ;
-                    etThread.delF( tinP , psttnu ) ;
-                    etThread.strBisectF( tinP , psttnu , psttShort , ppsttName[ offn ] , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                    etThread.delF( tinBaseP , psttnu ) ;
+                    etThread.strBisectF( tinBaseP , psttnu , psttShort , ppsttName[ offn ] , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                     ZE( strokeS* , psttShort ) ;
                     ZE( strokeS* , psttnu ) ;
                 {
@@ -41,15 +41,15 @@ etThread.traceF( tinP , T("ok") ) ;
 
             strokeS* ppsttName[] = { pstt1 , pstt2 } ;
         {
-        if( !etThread.strCompareF( tinP , pstt1sans , pstt2sans ) )
+        if( !etThread.strCompareF( tinBaseP , pstt1sans , pstt2sans ) )
 
         ___( pstt2sans ) ;
-        if( etThread.strSubstringF( tinP , pstt2sans , idf2 , sttq , tSss , pstt2 , 0 , TUCK ) && !idf2 ) etThread.strFuseF( tinP , pstt2sans , tJpg ) ;
+        if( etThread.strSubstringF( tinBaseP , pstt2sans , idf2 , sttq , tSss , pstt2 , 0 , TUCK ) && !idf2 ) etThread.strFuseF( tinBaseP , pstt2sans , tJpg ) ;
         idf2 = 1 ;
         ZE( strokeS* , pstt2sans ) ;
 
         ___( pstt1sans ) ;
-        if( etThread.strSubstringF( tinP , pstt1sans , idf2 , sttq , tSss , pstt1 , 0 , TUCK ) && !idf2 ) etThread.strFuseF( tinP , pstt1sans , tJpg ) ;
+        if( etThread.strSubstringF( tinBaseP , pstt1sans , idf2 , sttq , tSss , pstt1 , 0 , TUCK ) && !idf2 ) etThread.strFuseF( tinBaseP , pstt1sans , tJpg ) ;
         countT idf2 = 1 ;
         ZE( strokeS* , pstt1sans ) ;
 
@@ -61,10 +61,10 @@ etThread.traceF( tinP , T("ok") ) ;
         ZE( strokeS* , pstt1 ) ;
     {
     while( swsNameByIdPic >= 2 )
-    cLeverIdPic = swsNameByIdPic.leverF( tinP , idf ) ;
+    cLeverIdPic = swsNameByIdPic.leverF( tinBaseP , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors && !ether && !POOP ; idf ++ )
-countT cFlavors = swsNameByIdPic.cFlavorsF( tinP ) ;
+countT cFlavors = swsNameByIdPic.cFlavorsF( tinBaseP ) ;
 
 TN( tSlash , "/" ) ;
 
@@ -87,7 +87,7 @@ TN( tJpg , ".jpg" ) ;
 TN( tb4 , "    " ) ;
 TN( tLine , "------------------" ) ;
 
-//etThread.traceF( tinP , tSay+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cLeverIdPic,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//etThread.traceF( tinBaseP , tSay+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cLeverIdPic,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 //TN( tSay , "[idf,idPic,cFiles]:    " ) ;
 
 while( ~hFind && !ether && !POOP ) ;
@@ -97,28 +97,28 @@ while( ~hFind && !ether && !POOP ) ;
         }
             }
                 swsNameByIdPic << psttName ;
-                cLeverIdPic = etThread.strDigitsToSCountF( tinP , psttDigits , 0xa , 1 ) ;
+                cLeverIdPic = etThread.strDigitsToSCountF( tinBaseP , psttDigits , 0xa , 1 ) ;
 
-                etThread.strConvertToLowerCaseF( tinP , psttName ) ;
-                etThread.strMakeF( tinP , LF , psttName , pInfo->psttIfoName ) ; ___( psttName ) ;
+                etThread.strConvertToLowerCaseF( tinBaseP , psttName ) ;
+                etThread.strMakeF( tinBaseP , LF , psttName , pInfo->psttIfoName ) ; ___( psttName ) ;
                 ZE( strokeS* , psttName ) ;
             {
-            if( etThread.strIsDigitsF( tinP , psttDigits , 0xa ) )
-            etThread.strSubstringF( tinP , psttDigits , idf , sttq , sttDot , pInfo->psttIfoName ) ; ___( psttDigits ) ;
+            if( etThread.strIsDigitsF( tinBaseP , psttDigits , 0xa ) )
+            etThread.strSubstringF( tinBaseP , psttDigits , idf , sttq , sttDot , pInfo->psttIfoName ) ; ___( psttDigits ) ;
             ZE( strokeS* , psttDigits ) ;
         {
-        if( etThread.strIdF( tinP , idf , sttq , tDotDsc , pInfo->psttIfoName , idl , 1 ) )
+        if( etThread.strIdF( tinBaseP , idf , sttq , tDotDsc , pInfo->psttIfoName , idl , 1 ) )
         ZE( countT , idl ) ;
         countT idf = 1 ;
     {
     if( pInfo )
-    etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ;
+    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
 {
 do
 ZE( infoFileS* , pInfo ) ;
-handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
-switchStackC swsNameByIdPic( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverIdPic , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+switchStackC swsNameByIdPic( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverIdPic , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 ZE( countT , cLeverIdPic ) ;
 
 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;

@@ -8,19 +8,19 @@
 
 
 }
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
-    if( !third ) pStack->sinkF( tinP , idSlotP , pSoulP , flagsP , pSubtractFP , subtractionParmP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
+    if( !third ) pStack->sinkF( tinBaseP , idSlotP , pSoulP , flagsP , pSubtractFP , subtractionParmP ) ;
     }
-        ( bTinHasLeverP ? swMe.forIfcThreadF( tinP ) : (countT&)swMe ) = (countT)pStack ;
+        ( bTinHasLeverP ? swMe.forIfcThreadF( tinBaseP ) : (countT&)swMe ) = (countT)pStack ;
         __Z( pStack ) ;
-        pStack = new( 0 , tinP , LF ) stackC( tinP , third , TAG( TAGiDnULL ) , flagsStack , idType , idGrabLayer , swMe.pLeverLathRefF( tinP ) , 0 , pCbF ) ; ___BITScT( pStack , 0xefb ) ;
+        pStack = new( 0 , tinBaseP , LF ) stackC( tinBaseP , third , TAG( TAGiDnULL ) , flagsStack , idType , idGrabLayer , swMe.pLeverLathRefF( tinBaseP ) , 0 , pCbF ) ; ___BITScT( pStack , 0xefb ) ;
     {
     if( !pStack )
-    stackC* pStack = (stackC*)( bTinHasLeverP ? swMe.forIfcThreadF( tinP ) : (countT)swMe ) ;
+    stackC* pStack = (stackC*)( bTinHasLeverP ? swMe.forIfcThreadF( tinBaseP ) : (countT)swMe ) ;
     _IO_
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return ;
@@ -32,7 +32,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT switchStackC::sinkF( tinS& tinP , countT& idSlotP , const soulC* const pSoulP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP , const boolT bTinHasLeverP )/*1*/
+/*1*/voidT switchStackC::sinkF( tinBaseS& tinBaseP , countT& idSlotP , const soulC* const pSoulP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP , const boolT bTinHasLeverP )/*1*/
 /**/
 */
 \<A HREF=\"5.1210058.1.0.html\"\>definition\</A\>

@@ -11,19 +11,19 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.delF( tinP , pb2 ) ;
-    etThread.delF( tinP , pb1 ) ;
+    etThread.delF( tinBaseP , pb2 ) ;
+    etThread.delF( tinBaseP , pb1 ) ;
 
     }
         if( pb1[ offi ] == '\n' ) { idLine ++ ; idColumn = 0 ; }
 
         }
             break ;
-            etThread.traceF( tinP , T("difference found [idLine,idColumn]:    ")+TF4(idLine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T("    ")+TF4(idColumn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+            etThread.traceF( tinBaseP , T("difference found [idLine,idColumn]:    ")+TF4(idLine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T("    ")+TF4(idColumn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
         {
         if( pb1[ offi ] != pb2[ offi ] )
 
@@ -38,8 +38,8 @@ etThread.traceF( tinP , T("ok") ) ;
         ? cb1
     countT cbDo = cb1 < cb2
 
-    etThread.boxGetShadowF( tinP , pb2 , cb2 , T("///d/tmp/arc.102.part.1.ttt"  ) ) ; ___( pb2 ) ;
-    etThread.boxGetShadowF( tinP , pb1 , cb1 , T("///d/tmp/arc.cloud.part.1.ttt") ) ; ___( pb1 ) ;
+    etThread.boxGetShadowF( tinBaseP , pb2 , cb2 , T("///d/tmp/arc.102.part.1.ttt"  ) ) ; ___( pb2 ) ;
+    etThread.boxGetShadowF( tinBaseP , pb1 , cb1 , T("///d/tmp/arc.cloud.part.1.ttt") ) ; ___( pb1 ) ;
     ZE( countT , cb2 ) ;
     ZE( countT , cb1 ) ;
     ZE( byteT* , pb2 ) ;

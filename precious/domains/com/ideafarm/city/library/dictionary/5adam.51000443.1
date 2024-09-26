@@ -13,20 +13,20 @@ REST
 
 }
     }
-        etThread.delF( tinP , pstt1m ) ;
+        etThread.delF( tinBaseP , pstt1m ) ;
         }
-            ether.osSleepF( tinP , time1 ) ; //1
-            etThread.strokeF( tinP , T("taking a nap for ")+TT(time1,0)+T("\r\n") ) ;
+            ether.osSleepF( tinBaseP , time1 ) ; //1
+            etThread.strokeF( tinBaseP , T("taking a nap for ")+TT(time1,0)+T("\r\n") ) ;
             countT time1 = ( CmIN - cToDo ) * TOCK ;
         {
         else
         }
             }
-                etThread.delF( tinP , psttu ) ;
-                etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/1.delta/delta") , WS( souDelta ) ) ; ___( psttu ) ;
+                etThread.delF( tinBaseP , psttu ) ;
+                etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/1.delta/delta") , WS( souDelta ) ) ; ___( psttu ) ;
 
-                etThread.delF( tinP , psttu ) ;
-                etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/1.arc/arc") , WS( souArchive ) ) ; ___( psttu ) ;
+                etThread.delF( tinBaseP , psttu ) ;
+                etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/1.arc/arc") , WS( souArchive ) ) ; ___( psttu ) ;
                 ZE( strokeS* , psttu ) ;
 
                 }
@@ -36,7 +36,7 @@ REST
                     }
                         DEL( psouWo ) ;
                         }
-                            etThread.osTimeAddF( tinP , unixDeltaBig1 , unixDeltaBig2 , unixDeltaSmall1 , unixDeltaSmall2 ) ;
+                            etThread.osTimeAddF( tinBaseP , unixDeltaBig1 , unixDeltaBig2 , unixDeltaSmall1 , unixDeltaSmall2 ) ;
                             *psouWo >> (countT&)unixDeltaSmall2 ;
                             *psouWo >> unixDeltaSmall1 ;
                             *psouWo >> idVersion ;
@@ -66,24 +66,24 @@ REST
                     souArchive << (countT)1 ; // IDvERSION
                     souArchive << (countT)1 ; // IDtYPE
                 {
-                soulC souDelta( tinP , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
-                soulC souArchive( tinP , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
+                soulC souDelta( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
+                soulC souArchive( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
 
-                psttEmail = (strokeS*)swsAll.leverF( tinP , idf ) ;
+                psttEmail = (strokeS*)swsAll.leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swsAll.cFlavorsF( tinP ) ;
+            countT cFlavors = swsAll.cFlavorsF( tinBaseP ) ;
 
             }
-                etThread.delF( tinP , pstt1m2 ) ;
-                FORsTRINGSiN5( pstt1m2 ) etThread.boxZapF( tinP , psttc5 ) ;
+                etThread.delF( tinBaseP , pstt1m2 ) ;
+                FORsTRINGSiN5( pstt1m2 ) etThread.boxZapF( tinBaseP , psttc5 ) ;
 
                 }
-                    etThread.delF( tinP , pbs ) ;
+                    etThread.delF( tinBaseP , pbs ) ;
                     }
-                        etThread.delF( tinP , pstt1_accountHolderNotes ) ;
-                        etThread.delF( tinP , pstt1_ifcDualTransactionNotes ) ;
-                        etThread.delF( tinP , psttEmail ) ;
+                        etThread.delF( tinBaseP , pstt1_accountHolderNotes ) ;
+                        etThread.delF( tinBaseP , pstt1_ifcDualTransactionNotes ) ;
+                        etThread.delF( tinBaseP , psttEmail ) ;
 
                         }
                             swsAll << psouWo ;
@@ -100,10 +100,10 @@ REST
                             *psouWo << idAdam ;
                         {
                         if( psouWo )
-                        soulC* psouWo = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
+                        soulC* psouWo = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                         }
-                            //etThread.ifcSayF( tinP , tLog , flSAY_APPEND | flSAY_LOG ) ;
+                            //etThread.ifcSayF( tinBaseP , tLog , flSAY_APPEND | flSAY_LOG ) ;
 
                             FORsTRINGSiN4( pstt1_accountHolderNotes      ) tLog += T("ownerNote: ")+tQuote+T(psttc4)+tQuote+tCRLF ;
                             FORsTRINGSiN3( pstt1_ifcDualTransactionNotes ) tLog += T("ifcNote  : ")+tQuote+T(psttc3)+tQuote+tCRLF ;
@@ -147,29 +147,29 @@ REST
                         ZE( countT , idType ) ;
                         ZE( countT , idAdam ) ;
 
-                        souIn.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
-                        soulC souIn( tinP , TAG( TAGiDnULL ) ) ;
+                        souIn.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                        soulC souIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                         __( cbs - sizeof( countT ) - *(countT*)pbs ) ;
                     {
                     if( pbs )
-                    etThread.boxGetShadowF( tinP , pbs , cbs , psttc2 ) ; ___( pbs ) ;
+                    etThread.boxGetShadowF( tinBaseP , pbs , cbs , psttc2 ) ; ___( pbs ) ;
                     ZE( countT , cbs ) ;
                     ZE( byteT* , pbs ) ;
                 {
                 FORsTRINGSiN2( pstt1m2 )
-                const countT cToDo2 = etThread.boxMenuF( tinP , soul1m2 , tWork+T("*") , 0 , CmAX ) ; ___( pstt1m2 ) ;
+                const countT cToDo2 = etThread.boxMenuF( tinBaseP , soul1m2 , tWork+T("*") , 0 , CmAX ) ; ___( pstt1m2 ) ;
                 ZE( strokeS* , pstt1m2 ) ;
             {
-            switchStackC swsAll( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttEmail , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
+            switchStackC swsAll( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttEmail , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
             ZE( strokeS* , psttEmail ) ;
 
-            { ZE( countT , idFile ) ; FORsTRINGSiN1( pstt1m ) etThread.diskMoveFileOrDirF( tinP , tWork+TF1(idCycle)+tDot+TF1(++idFile)+tDot+TI(ifcIDtEXTgEN_UNIQUE) , psttc1 ) ; }
+            { ZE( countT , idFile ) ; FORsTRINGSiN1( pstt1m ) etThread.diskMoveFileOrDirF( tinBaseP , tWork+TF1(idCycle)+tDot+TF1(++idFile)+tDot+TI(ifcIDtEXTgEN_UNIQUE) , psttc1 ) ; }
 
-            etThread.strokeF( tinP , T("cycle ")+TF1(++idCycle)+T(": ")+TF1(cToDo)+T(" files\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("cycle ")+TF1(++idCycle)+T(": ")+TF1(cToDo)+T(" files\r\n") ) ;
         {
         if( cToDo >= CmIN ) //1
-        const countT cToDo = etThread.boxMenuF( tinP , soul1m , tLikeIn , 0 , CmAX ) ; ___( pstt1m ) ;
+        const countT cToDo = etThread.boxMenuF( tinBaseP , soul1m , tLikeIn , 0 , CmAX ) ; ___( pstt1m ) ;
         ZE( strokeS* , pstt1m ) ;
     {
     while( !ether && !etThread )
@@ -181,8 +181,8 @@ REST
     TN( tWork   , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/" ) ; tWork += TF1(DDNUMB)+T("/" ) ;
     TN( tLikeIn , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/3440104/1.deltaBal/*" ) ;
 
-    etThread.ifcChatF( tinP , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;
-    stateS state( tinP , etThread ) ;
+    etThread.ifcChatF( tinBaseP , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO
@@ -194,7 +194,7 @@ TODO
 STATE0
 
 }
-    if( ether && *tinP.zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tinNormalS&)tinBaseP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
@@ -203,12 +203,12 @@ STATE0
             }
                 }
                     break ;
-                    etThread.delF( tinP , psttJobType ) ;
+                    etThread.delF( tinBaseP , psttJobType ) ;
 
                     else __1
                     }
                     {
-                    if( !etThread.strCompareF( tinP , psttJobType , T("!fooey") ) )
+                    if( !etThread.strCompareF( tinBaseP , psttJobType , T("!fooey") ) )
 
                     sOrderP >> psttJobType ; ___( psttJobType ) ;
                     ZE( strokeS* , psttJobType )
@@ -217,16 +217,16 @@ STATE0
                 }
                     break ;
 
-                    etThread.delF( tinP , psttBody ) ;
-                    etThread.delF( tinP , psttFrom ) ;
+                    etThread.delF( tinBaseP , psttBody ) ;
+                    etThread.delF( tinBaseP , psttFrom ) ;
 
                     }
-                        etThread.delF( tinP , postBody ) ;
-                        etThread.delF( tinP , psttu ) ;
-                        etThread.boxPutUniqueF( tinP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
+                        etThread.delF( tinBaseP , postBody ) ;
+                        etThread.delF( tinBaseP , psttu ) ;
+                        etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
                         ZE( strokeS* , psttu ) ;
 
-                        countT costBody = etThread.strMakeF( tinP , LF , postBody , psttBody ) ; ___( postBody ) ;
+                        countT costBody = etThread.strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
                         ZE( osTextT* , postBody ) ;
                     {
 
@@ -256,14 +256,14 @@ STATE0
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tinS& tinP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
     if( cArgP && c8argP.c1 && sOrderP && ether && idChatSessionP ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tinS& tinP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 /*1*/WAKEhIDE( "ifcIDaDAMoLD_CENTRALbANKcOMPACTOR.sentient.central.banker.compactor" )/*1*/
 /**/

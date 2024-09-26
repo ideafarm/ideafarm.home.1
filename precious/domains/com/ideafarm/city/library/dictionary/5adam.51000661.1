@@ -9,21 +9,21 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 }
-    etThread.delF( tinP , posti ) ;
-    etThread.strokeF( tinP , T(posti)+T("\r\n") ) ;
-    sock.readToNullLineF( tinP , posti , TOCK ) ; ___( posti ) ;
+    etThread.delF( tinBaseP , posti ) ;
+    etThread.strokeF( tinBaseP , T(posti)+T("\r\n") ) ;
+    sock.readToNullLineF( tinBaseP , posti , TOCK ) ; ___( posti ) ;
     ZE( osTextT* , posti ) ;
 
-    sock.writeF( tinP , postQuery ) ;
-    sock.connectF( tinP , 0x50 , nnCheckout ) ;
+    sock.writeF( tinBaseP , postQuery ) ;
+    sock.connectF( tinBaseP , 0x50 , nnCheckout ) ;
 {
 if( nnCheckout )
-//nicNameC nnCheckout = socketC::nicNameIF( tinP , etThread , T("checkout.ideafarm.com") ) ;
-nicNameC nnCheckout = socketC::nicNameIF( tinP , etThread , T("127.1.1.1") ) ;
-socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+//nicNameC nnCheckout = socketC::nicNameIF( tinBaseP , etThread , T("checkout.ideafarm.com") ) ;
+nicNameC nnCheckout = socketC::nicNameIF( tinBaseP , etThread , T("127.1.1.1") ) ;
+socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

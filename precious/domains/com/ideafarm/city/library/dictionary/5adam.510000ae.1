@@ -15,22 +15,22 @@ DEL( pSgn ) ;
 }
     }
         }
-            ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+            ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
         {
         while( cWaiters || cGivers )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    etThread.loafIF( tinP ) ;
+    etThread.loafIF( tinBaseP ) ;
 
     }
-        etThread.osSleepF( tinP , TUCK * 0x40 ) ;
-        etThread.osThreadF( tinP , countTC() , tmGiveF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idt , (countT)pSgn , (countT)&cWaiters , (countT)&cGivers ) ;
+        etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+        etThread.osThreadF( tinBaseP , countTC() , tmGiveF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idt , (countT)pSgn , (countT)&cWaiters , (countT)&cGivers ) ;
         inc02AM( cGivers ) ;
     {
     for( countT idt = 1 ; idt <= 1 ; idt ++ )
 
     }
-        etThread.osThreadF( tinP , countTC() , tmWaitF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idt , (countT)pSgn , (countT)&cWaiters , (countT)&cGivers ) ;
+        etThread.osThreadF( tinBaseP , countTC() , tmWaitF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idt , (countT)pSgn , (countT)&cWaiters , (countT)&cGivers ) ;
         inc02AM( cWaiters ) ;
     {
     for( countT idt = 1 ; idt <= 4 ; idt ++ )
@@ -39,7 +39,7 @@ DEL( pSgn ) ;
     ZE( countT , cWaiters ) ;
 {
 if( pSgn )
-signC* pSgn = new( 0 , tinP , LF ) signC( tinP , TAG( TAGiDnULL ) ) ; ___( pSgn ) ;
+signC* pSgn = new( 0 , tinBaseP , LF ) signC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( pSgn ) ;
 
 TODO
 
@@ -47,8 +47,8 @@ DONE( tmWaitF )
 }
     dec02AM( cWaiters ) ;
     }
-        etThread.strokeF( tinP , tMe ) ;
-        ss.waitF( tinP ) ;
+        etThread.strokeF( tinBaseP , tMe ) ;
+        ss.waitF( tinBaseP ) ;
     {
     while( !ether && !etThread )
     TN( tMe , post2 ) ;
@@ -66,16 +66,16 @@ DONE( tmGiveF )
 }
     dec02AM( cGivers ) ;
     }
-        etThread.osSleepF( tinP , TOCK ) ;
-        ss.giveF( tinP ) ;
-        etThread.strokeF( tinP , tMe ) ;
+        etThread.osSleepF( tinBaseP , TOCK ) ;
+        ss.giveF( tinBaseP ) ;
+        etThread.strokeF( tinBaseP , tMe ) ;
     {
     while( cWaiters && !etThread )
 
     }
-        ether.osSleepF( tinP , TOCK ) ;
-        ss.giveF( tinP ) ;
-        etThread.strokeF( tinP , tMe ) ;
+        ether.osSleepF( tinBaseP , TOCK ) ;
+        ss.giveF( tinBaseP ) ;
+        etThread.strokeF( tinBaseP , tMe ) ;
     {
     while( !ether && !etThread )
     TN( tMe , post2 ) ;

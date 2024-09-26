@@ -8,7 +8,7 @@
 
 
 }
-    storeReplyPrivateF( tinP , arg ) ;
+    storeReplyPrivateF( tinBaseP , arg ) ;
     arg.idSnipHttpLocation      = idSnipHttpLocationP  ;
     arg.pCBF                    = (httpDynamicReplyBodyCBFT)pCBFP ;
     arg.pprPostBody             = &prPostBody ;
@@ -26,35 +26,35 @@
 
     }
         *(countT*)&COSTS( *prPostBody ) += cbP ;
-        ether.memCopyF( tinP , (byteT*)POSTS( *prPostBody ) + COSTS( *prPostBody ) , pbP , cbP ) ;
+        ether.memCopyF( tinBaseP , (byteT*)POSTS( *prPostBody ) + COSTS( *prPostBody ) , pbP , cbP ) ;
 
         }
             }
-                prPostBody = new( 0 , tinP , LF ) pbRefC( pzost ) ; ___( prPostBody ) ;
+                prPostBody = new( 0 , tinBaseP , LF ) pbRefC( pzost ) ; ___( prPostBody ) ;
 
                 *pcc = 0 ;          // costs (psttP MUST BE 0 TO GET HERE)
                 *pcc = 0 ; pcc ++ ; // refCounterC
                 countT* pcc = (countT*)pzost ;
             {
             if( pzost )
-            PUSE.newF( tinP , LF , pzost , 2 * sizeof( countT ) + cbP ) ; ___( pzost ) ;
+            PUSE.newF( tinBaseP , LF , pzost , 2 * sizeof( countT ) + cbP ) ; ___( pzost ) ;
             ZE( osTextT* , pzost ) ;
         {
         if( !prPostBody )
     {
     if( pbP && cbP )
 
-    ZE( pbRefC* , prPostBody            ) ; if( psttP                 && psttP->idAdam                   ) { ether.strMakeF( tinP , LF , prPostBody            , psttP                  , cbP , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostBody            ) ; }
-    ZE( pbRefC* , prPostPageHelp        ) ; if( psttsPageHelpP        && psttsPageHelpP->idAdam          ) { ether.strMakeF( tinP , LF , prPostPageHelp        , psttsPageHelpP         , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostPageHelp        ) ; }
-    ZE( pbRefC* , prPostSlogan          ) ; if( psttsSloganP          && psttsSloganP->idAdam            ) { ether.strMakeF( tinP , LF , prPostSlogan          , psttsSloganP           , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostSlogan          ) ; }
-    ZE( pbRefC* , prPostKeywords        ) ; if( psttsKeywordsP        && psttsKeywordsP->idAdam          ) { ether.strMakeF( tinP , LF , prPostKeywords        , psttsKeywordsP         , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostKeywords        ) ; }
-    ZE( pbRefC* , prPostMetaDescription ) ; if( psttsMetaDescriptionP && psttsMetaDescriptionP->idAdam   ) { ether.strMakeF( tinP , LF , prPostMetaDescription , psttsMetaDescriptionP  , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostMetaDescription ) ; }
-    ZE( pbRefC* , prPostDescription     ) ; if( psttsDescriptionP     && psttsDescriptionP->idAdam       ) { ether.strMakeF( tinP , LF , prPostDescription     , psttsDescriptionP      , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostDescription     ) ; }
-    ZE( pbRefC* , prPostTitle           ) ; if( psttsTitleP           && psttsTitleP->idAdam             ) { ether.strMakeF( tinP , LF , prPostTitle           , psttsTitleP            , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostTitle           ) ; }
+    ZE( pbRefC* , prPostBody            ) ; if( psttP                 && psttP->idAdam                   ) { ether.strMakeF( tinBaseP , LF , prPostBody            , psttP                  , cbP , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostBody            ) ; }
+    ZE( pbRefC* , prPostPageHelp        ) ; if( psttsPageHelpP        && psttsPageHelpP->idAdam          ) { ether.strMakeF( tinBaseP , LF , prPostPageHelp        , psttsPageHelpP         , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostPageHelp        ) ; }
+    ZE( pbRefC* , prPostSlogan          ) ; if( psttsSloganP          && psttsSloganP->idAdam            ) { ether.strMakeF( tinBaseP , LF , prPostSlogan          , psttsSloganP           , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostSlogan          ) ; }
+    ZE( pbRefC* , prPostKeywords        ) ; if( psttsKeywordsP        && psttsKeywordsP->idAdam          ) { ether.strMakeF( tinBaseP , LF , prPostKeywords        , psttsKeywordsP         , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostKeywords        ) ; }
+    ZE( pbRefC* , prPostMetaDescription ) ; if( psttsMetaDescriptionP && psttsMetaDescriptionP->idAdam   ) { ether.strMakeF( tinBaseP , LF , prPostMetaDescription , psttsMetaDescriptionP  , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostMetaDescription ) ; }
+    ZE( pbRefC* , prPostDescription     ) ; if( psttsDescriptionP     && psttsDescriptionP->idAdam       ) { ether.strMakeF( tinBaseP , LF , prPostDescription     , psttsDescriptionP      , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostDescription     ) ; }
+    ZE( pbRefC* , prPostTitle           ) ; if( psttsTitleP           && psttsTitleP->idAdam             ) { ether.strMakeF( tinBaseP , LF , prPostTitle           , psttsTitleP            , 0   , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostTitle           ) ; }
 
     _IO_
 {
-/*1*/voidT httpServerC::storeReplyF( tinS& tinP , const countT idFormP , const strokeS* const psttUrlP , httpReplyRefC** ppRefOverrideP , const countT idSnipHttpPrefixP , const strokeS* const psttsTitleP , const strokeS* const psttsDescriptionP , const strokeS* const psttsMetaDescriptionP , const strokeS* const psttsSloganP , const strokeS* const psttsPageHelpP , const strokeS* const psttsKeywordsP , voidT* pCBFP , const strokeS* const psttP , const byteT* const pbP , const countT cbP , const countT idSnipHttpLocationP )/*1*/
+/*1*/voidT httpServerC::storeReplyF( tinBaseS& tinBaseP , const countT idFormP , const strokeS* const psttUrlP , httpReplyRefC** ppRefOverrideP , const countT idSnipHttpPrefixP , const strokeS* const psttsTitleP , const strokeS* const psttsDescriptionP , const strokeS* const psttsMetaDescriptionP , const strokeS* const psttsSloganP , const strokeS* const psttsPageHelpP , const strokeS* const psttsKeywordsP , voidT* pCBFP , const strokeS* const psttP , const byteT* const pbP , const countT cbP , const countT idSnipHttpLocationP )/*1*/
 /**/
 */
 /*

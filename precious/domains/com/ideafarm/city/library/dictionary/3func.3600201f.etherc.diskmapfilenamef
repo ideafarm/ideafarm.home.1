@@ -9,24 +9,24 @@
 
 }
     }
-        delF( tinP , psttSlash ) ;
-        delF( tinP , psttw ) ;
+        delF( tinBaseP , psttSlash ) ;
+        delF( tinBaseP , psttw ) ;
         }
             }
-                if( idf ) { strSubstringF( tinP , psttw , idf , sttq , S1C('/') , psttRawP ) ; ___( psttw ) ; }
-                strFuseF( tinP , psttP , psttSlash ) ; ___( psttP ) ;
+                if( idf ) { strSubstringF( tinBaseP , psttw , idf , sttq , S1C('/') , psttRawP ) ; ___( psttw ) ; }
+                strFuseF( tinBaseP , psttP , psttSlash ) ; ___( psttP ) ;
             {
             if( idf || bEndWithSlash )
 
-            delF( tinP , psttw ) ;
-            else { strFuseF( tinP , psttP , psttw ) ; ___( psttP ) ; }                                      // OTHERWISE
+            delF( tinBaseP , psttw ) ;
+            else { strFuseF( tinBaseP , psttP , psttw ) ; ___( psttP ) ; }                                      // OTHERWISE
             }
                 }
                     }
-                        delF( tinP , pstts ) ;
-                        strFuseF( tinP , psttP , pstts ) ; ___( psttP ) ;
-                        delF( tinP , psttHome ) ;
-                        strSubstringF( tinP , pstts , idf2 , idl2 , psttHome ) ; ___( pstts ) ;
+                        delF( tinBaseP , pstts ) ;
+                        strFuseF( tinBaseP , psttP , pstts ) ; ___( psttP ) ;
+                        delF( tinBaseP , psttHome ) ;
+                        strSubstringF( tinBaseP , pstts , idf2 , idl2 , psttHome ) ; ___( pstts ) ;
                         ZE( strokeS* , pstts ) ;
                         countT idl2 = psttHome->idAdam - 1 ;
                         countT idf2 = 4 ;
@@ -35,25 +35,25 @@
     
                     __( psttHome && psttHome[ CSpREFIX - 1 + psttHome->idAdam ].idAdam - '/' ) ;
                     __Z( psttHome ) ;
-                    diskChooseSiteF( tinP , psttHome , psttw ) ; ___( psttHome ) ;
+                    diskChooseSiteF( tinBaseP , psttHome , psttw ) ; ___( psttHome ) ;
                     ZE( strokeS* , psttHome ) ;
                 {
                 else
                 }
-                    delF( tinP , psttd ) ;
-                    strFuseF( tinP , psttP , psttd , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ psttRawP->idAdam + third.dosQuerySysInfoMaxPathLengthIF( tinP ) ) ; ___( psttP ) ;
-                    strSubstringF( tinP , psttd , idf , idl , tIdf ) ; ___( psttd ) ;
-                    countT idl = tIdf.csF( tinP ) - 1 ;
+                    delF( tinBaseP , psttd ) ;
+                    strFuseF( tinBaseP , psttP , psttd , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ psttRawP->idAdam + third.dosQuerySysInfoMaxPathLengthIF( tinBaseP ) ) ; ___( psttP ) ;
+                    strSubstringF( tinBaseP , psttd , idf , idl , tIdf ) ; ___( psttd ) ;
+                    countT idl = tIdf.csF( tinBaseP ) - 1 ;
                     countT idf = 1 ;
                     TN( tIdf , "" ) ; tIdf = T(iff) ;
 
-                    delF( tinP , psttP ) ;
-                    delF( tinP , psttd ) ;
-                    ifFileNameC iff( tinP , *this , T(psttd)+T("\\Desktop\\") ) ;
-                    osEnvironmentVariableF( tinP , psttd , T("ALLUSERSPROFILE") ) ; ___( psttd ) ;
+                    delF( tinBaseP , psttP ) ;
+                    delF( tinBaseP , psttd ) ;
+                    ifFileNameC iff( tinBaseP , *this , T(psttd)+T("\\Desktop\\") ) ;
+                    osEnvironmentVariableF( tinBaseP , psttd , T("ALLUSERSPROFILE") ) ; ___( psttd ) ;
                     ZE( strokeS* , psttd ) ;
                 {
-                if( !strCompareF( tinP , psttw , T("desk") ) )
+                if( !strCompareF( tinBaseP , psttw , T("desk") ) )
             {
             )
                 )
@@ -72,13 +72,13 @@
         {
         while( !POOP && psttw )
         ZE( countT , idWord ) ;
-        strSubstringF( tinP , psttw , idf , sttq , S1C('/') , psttRawP ) ; ___( psttw ) ;
+        strSubstringF( tinBaseP , psttw , idf , sttq , S1C('/') , psttRawP ) ; ___( psttw ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
         ZE( strokeS* , psttw ) ;
-        strMakeF( tinP , LF , psttSlash , T("/") ) ; ___( psttSlash ) ;
+        strMakeF( tinBaseP , LF , psttSlash , T("/") ) ; ___( psttSlash ) ;
         ZE( strokeS* , psttSlash ) ;
-        strMakeF( tinP , LF , psttP , T("") , psttRawP->idAdam + third.dosQuerySysInfoMaxPathLengthIF( tinP ) + 2 ) ; // THERE ARE A FEW EXTRA BYTES
+        strMakeF( tinBaseP , LF , psttP , T("") , psttRawP->idAdam + third.dosQuerySysInfoMaxPathLengthIF( tinBaseP ) + 2 ) ; // THERE ARE A FEW EXTRA BYTES
 
         boolT bEndWithSlash = psttRawP[ CSpREFIX - 1 + psttRawP->idAdam ] == S1C('/') ;
     {
@@ -95,7 +95,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::diskMapFileNameF( tinS& tinP , strokeS*& psttP , const strokeS* const psttRawP )/*1*/
+/*1*/voidT etherC::diskMapFileNameF( tinBaseS& tinBaseP , strokeS*& psttP , const strokeS* const psttRawP )/*1*/
 
 /**/
 */

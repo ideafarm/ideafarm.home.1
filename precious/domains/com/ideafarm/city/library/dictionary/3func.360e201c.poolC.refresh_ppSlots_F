@@ -8,11 +8,11 @@
 
 }
     }
-        guts.pGrabNewElt[ offs ].ungrabF( tinP ) ;
+        guts.pGrabNewElt[ offs ].ungrabF( tinBaseP ) ;
         }
             if( !( F(guts.flagsCt) & ( flPOOLc_MAKEaLL | flPOOLc_KEEPeMPTIES ) ) && !*guts.ppSlots[ offs ] ) { DELzOMBIE( guts.ppSlots[ offs ] ) ; }
     
-            guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , expCbDrop , face.pcCbDropAdjust[ expCbDrop ] , face.cbDropSeparator , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
+            guts.ppSlots[ offs ] = new( 0 , tinBaseP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinBaseP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , expCbDrop , face.pcCbDropAdjust[ expCbDrop ] , face.cbDropSeparator , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
     
             if( F(guts.flagsCt) & flPOOLc_NOdROPhEADERS ) flagsc |= flSLOTSc_NOdROPhEADERS ;
             if( F(guts.flagsCt) & flPOOLc_NOsEXiNpOOL   ) flagsc |= flSLOTSc_NOsEXiNpOOL   ;
@@ -21,7 +21,7 @@
             flagsT                                        flagsc  = flSLOTSc_null          ;
         {
         if( !guts.ppSlots[ offs ] )
-        guts.pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ;
+        guts.pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         const countT expCbDrop   = offs ;
 
@@ -30,7 +30,7 @@
         //    CONoUTrAW( ostoName ) ;
         //    CONoUTrAW3( "\r\nrefreshing [offs,name]:    " , offs , "    " ) ;
         //{
-        //if( tinP.pc Utility[ 0 ] )
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 
         OStEXTCF( ostoName , offs , '0' ) ;
         OStEXTAK( ostoName , ".slots." ) ;
@@ -46,7 +46,7 @@
 
     // ostoNameGroup IS CALCULATED HERE RATHER THAN RECEIVED AS A PARAMETER, WHICH WOULD BE FASTER, TO PREVENT APPLICATION CODE FROM SPECIFYING AN INCORRECT VALUE
 {
-/*1*/voidT poolC::refresh_ppSlots_F( tinS& tinP )/*1*/
+/*1*/voidT poolC::refresh_ppSlots_F( tinBaseS& tinBaseP )/*1*/
 
 /**/
 

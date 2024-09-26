@@ -12,11 +12,11 @@ DONE( tmAskDnsF )
     TELL( "tmAskDnsF: cleaning up" )
     }
         }
-            ++ s ; ether.osSleepF( tinP , TOCK * 2 ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TOCK * 2 ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         TELL( "sleeping for 2 tock" )
-        sockd.writeF( tinP , 0x35 , socketC::nicNameIF( tinP , ether , T(postIFCnAMEsERVER) ) , pbQuery , cbQuery ) ;
+        sockd.writeF( tinBaseP , 0x35 , socketC::nicNameIF( tinBaseP , ether , T(postIFCnAMEsERVER) ) , pbQuery , cbQuery ) ;
         TELL( "writing query datagram to the IdeaFarm " "(tm) City name server" )
     {
     while( !ether && !etThread && !bGoItIt && !bTimeout )

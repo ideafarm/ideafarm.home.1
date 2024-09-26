@@ -8,9 +8,9 @@
 
 
 }
-    baton.ungrabF( tinP ) ;
-    if( idPort ) third.osThreadF( tinP , countTC() , _tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&bQuit_tmCatch , (countT)&bDone_tmCatch , idPort , (countT)&b_stCatch , (countT)&stCatch , (countT)&sgnCatch , (countT)&thirdP ) ;
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    baton.ungrabF( tinBaseP ) ;
+    if( idPort ) third.osThreadF( tinBaseP , countTC() , _tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&bQuit_tmCatch , (countT)&bDone_tmCatch , idPort , (countT)&b_stCatch , (countT)&stCatch , (countT)&sgnCatch , (countT)&thirdP ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _IO_
 
     }
@@ -21,17 +21,17 @@
 {
 bDestructionInProgress( 0 )
 cReadPending( 0 ) ,
-sgnCatch( tinP , TAG( TAGiDnULL ) ) ,
-stCatch( tinP , thirdP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ,
-b_stCatch( tinP , TAG( TAGiDnULL ) ) ,
-b_idGramLath( tinP , TAG( TAGiDnULL ) ) ,
+sgnCatch( tinBaseP , TAG( TAGiDnULL ) ) ,
+stCatch( tinBaseP , thirdP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ,
+b_stCatch( tinBaseP , TAG( TAGiDnULL ) ) ,
+b_idGramLath( tinBaseP , TAG( TAGiDnULL ) ) ,
 idGramLast( 0 ) ,
 bDone_tmCatch( 0 ) ,
 bQuit_tmCatch( 0 ) ,
-baton( tinP , TAG( TAGiDnULL ) ) ,
+baton( tinBaseP , TAG( TAGiDnULL ) ) ,
 idPort( idPortP ) ,
 third( thirdP ) ,
-/*1*/netC::netC( tinS& tinP , thirdC& thirdP , const countT idPortP )/*1*/ :
+/*1*/netC::netC( tinBaseS& tinBaseP , thirdC& thirdP , const countT idPortP )/*1*/ :
 
 /**/
 */
@@ -39,7 +39,7 @@ third( thirdP ) ,
   can be 0
  idPortP
  thirdP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.1510003.1.0.html\"\>definition\</A\>
 /*

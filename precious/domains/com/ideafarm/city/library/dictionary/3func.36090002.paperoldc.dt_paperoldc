@@ -8,30 +8,30 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
 
     putNegAM( *(countT*)&finger , FINGERnEG_PAPERczOMBIE ) ;
 
     }
-        else tinP.pag1->_paperOldC_.pStInstances->ungrabF( tinP ) ;
+        else ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances->ungrabF( tinBaseP ) ;
         }
-            DEL( tinP.pag1->_paperOldC_.pSwHotKey ) ;
-            //U::FIRING WAS DONE HERE, BUT THIS DOESN'T WORK WITH CURRENT CODE; tmAnimateSad... WILL REFERENCE NULL x1.pPulp: fireAnimatorIfIF( tinP ) ;
+            DEL( ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pSwHotKey ) ;
+            //U::FIRING WAS DONE HERE, BUT THIS DOESN'T WORK WITH CURRENT CODE; tmAnimateSad... WILL REFERENCE NULL x1.pPulp: fireAnimatorIfIF( tinBaseP ) ;
 
-            ether( tinP , tinP.pag1->_paperOldC_.pStInstances ) ;
-            tinP.pag1->_paperOldC_.pStInstances->ungrabF( tinP ) ;
+            ether( tinBaseP , ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances ) ;
+            ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances->ungrabF( tinBaseP ) ;
         {
-        if( !*tinP.pag1->_paperOldC_.pStInstances )
+        if( !*((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances )
 
-        else       tinP.pag1->_paperOldC_.pStInstances->extractF( 0 , tinP ) ;
+        else       ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances->extractF( 0 , tinBaseP ) ;
         if( !ids ) { BLAMMO ; }
-        tinP.pag1->_paperOldC_.pStInstances->sinkF( tinP , ids , (countT)this , flSTACKsINK_QUERY ) ;
+        ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances->sinkF( tinBaseP , ids , (countT)this , flSTACKsINK_QUERY ) ;
         ZE( countT , ids ) ;
 
-        tinP.pag1->_paperOldC_.pStInstances->grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     else
-    if( !tinP.pag1->_paperOldC_.pStInstances || !*tinP.pag1->_paperOldC_.pStInstances ) { BLAMMO ; }
+    if( !((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances || !*((tinNormalS&)tinBaseP).pag1->_paperOldC_.pStInstances ) { BLAMMO ; }
 
     }
         if( pstt->idCaste == sc_cADAM ) pstt->deregisterF() ;
@@ -42,11 +42,11 @@
     while( stDef )
 
     DEL( x1.pPulp ) ;
-    x1.pPulp->x1.back.backDtPaperF( tinP , *x1.pPulp ) ;
+    x1.pPulp->x1.back.backDtPaperF( tinBaseP , *x1.pPulp ) ;
 
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    fireAnimatorIfIF( tinP ) ; //DONE EARLY TO WORK AROUND BUG: tmAnimateSada... CAN REFERENCE A NULL x1.pPulp ONCE A PAPER HAS BEEN DT ; THIS WORKAROUND WILL ONLY WORK IF NO windowOldC IS DT UNTIL THE ENTIRE APPLICATION IS TERMINATING
+    fireAnimatorIfIF( tinBaseP ) ; //DONE EARLY TO WORK AROUND BUG: tmAnimateSada... CAN REFERENCE A NULL x1.pPulp ONCE A PAPER HAS BEEN DT ; THIS WORKAROUND WILL ONLY WORK IF NO windowOldC IS DT UNTIL THE ENTIRE APPLICATION IS TERMINATING
 
     if( getNegAM( finger ) != FINGERnEG_PAPERc ) { BLAMMO ; }
 

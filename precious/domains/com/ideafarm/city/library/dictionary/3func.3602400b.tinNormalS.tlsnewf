@@ -10,12 +10,12 @@
 }
     return pbData ;
 
-    //if( !thirdC::c_strcmpIF( tinP , postThreadName , "tmNodeF" ) ) tlsTraceF() ; //U::DISABLE IN PRODUCTION
+    //if( !thirdC::c_strcmpIF( tinBaseP , postThreadName , "tmNodeF" ) ) tlsTraceF() ; //U::DISABLE IN PRODUCTION
     tlsCheckF() ;
 
     //}
-    //    LOGrAWtID2( "tinS::newF [pb]: " , pbData ) //U:: TO FIND A BUG: REMOVE IN PRODUCTION FOR SPEED
-    //    tinS& tinP = *this ;
+    //    LOGrAWtID2( "tinNormalS::newF [pb]: " , pbData ) //U:: TO FIND A BUG: REMOVE IN PRODUCTION FOR SPEED
+    //    tinBaseS& tinBaseP = *this ;
     //{
 
     }
@@ -30,7 +30,7 @@
 
         }
             cTls ++ ;
-            if( postNameP ) thirdC::c_memsetIF( tinP , pbData , cbP ) ; //tlsBlobC RELIES ON THIS LINE TO SMUDGE ITS FOOT FINGERPRINTS
+            if( postNameP ) thirdC::c_memsetIF( tinBaseP , pbData , cbP ) ; //tlsBlobC RELIES ON THIS LINE TO SMUDGE ITS FOOT FINGERPRINTS
             pbData = pbc ;
 
             }
@@ -40,7 +40,7 @@
             if( pbe < pbc + cbP )
 
             }
-                thirdC::c_memcpyIF( tinP , pbc , postInGroupP , costaInGroupP )  ; pbc += costaInGroupP    ; // postInGroup
+                thirdC::c_memcpyIF( tinBaseP , pbc , postInGroupP , costaInGroupP )  ; pbc += costaInGroupP    ; // postInGroup
                 }
                     BLAMMO ;                                    //IF BLOW HERE THEN NEED TO MAKE TLS LARGER FOR THIS THREAD
                     tlsTraceF() ;
@@ -49,7 +49,7 @@
             {
             if( costaInGroupP )
             }
-                thirdC::c_memcpyIF( tinP , pbc , postNameP , costaNameP )           ; pbc += costaNameP       ; // postName
+                thirdC::c_memcpyIF( tinBaseP , pbc , postNameP , costaNameP )           ; pbc += costaNameP       ; // postName
                 }
                     BLAMMO ;                            //IF BLOW HERE THEN NEED TO MAKE TLS LARGER FOR THIS THREAD
                     tlsTraceF() ;
@@ -66,10 +66,10 @@
             *(countT*)pbc = idiFileP                                                                             ; pbc += sizeof( countT ) ; // idiFile
             *(countT*)pbc = idLineP                                                                              ; pbc += sizeof( countT ) ; // idLine
             *(countT*)pbc = ( TLSeNTRYoFF_endNotUsed - 1 ) * sizeof( countT ) + costaNameP + costaInGroupP + cbP ; pbc += sizeof( countT ) ; // cbEntry
-            //if( tinP.pc Utility[ 0 ] && costaInGroupP ) { CONoUTrAW( postInGroupP ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( tinP.pc Utility[ 0 ] && costaNameP    ) { CONoUTrAW( postNameP    ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( tinP.pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinS::newF/entry formatted at " , (countT)pbc , "\r\n" ) ; }
-            //if( tinP.pc Utility[ 0 ] ) tinP.pc Utility[ 1 ] ++ ;
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && costaInGroupP ) { CONoUTrAW( postInGroupP ) ; CONoUTrAW( "\r\n" ) ; }
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && costaNameP    ) { CONoUTrAW( postNameP    ) ; CONoUTrAW( "\r\n" ) ; }
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinNormalS::newF/entry formatted at " , (countT)pbc , "\r\n" ) ; }
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) ((tinNormalS&)tinBaseP).pc Utility[ 1 ] ++ ;
             const byteT* const pbe = pbTls + cbTls ;
             byteT*             pbc = pbTls + th.offTopEntry ;
         
@@ -84,7 +84,7 @@
                         countT& offNextInGroup = ( (countT*)( pbTls + offCursor ) )[ TLSeNTRYoFF_offNextInGroup ] ;
                     {
                     )
-                        ( costaInGroupP && postInGroup && !thirdC::c_strcmpIF( tinP , postInGroup , postInGroupP ) )
+                        ( costaInGroupP && postInGroup && !thirdC::c_strcmpIF( tinBaseP , postInGroup , postInGroupP ) )
                         ||
                         ( !costaInGroup && !costaInGroupP )
                     (
@@ -144,9 +144,9 @@
                         __( !( cRef ++ ) ) ;
                         countT& cRef = ( (countT*)( pbTls + offMe ) )[ TLSeNTRYoFF_cRef ] ;
                     {
-                    if( postName && !thirdC::c_strcmpIF( tinP , postName , postNameP ) )
+                    if( postName && !thirdC::c_strcmpIF( tinBaseP , postName , postNameP ) )
                 {
-                if( !postInGroupP || ( postInGroup && !thirdC::c_strcmpIF( tinP , postInGroup , postInGroupP ) ) )
+                if( !postInGroupP || ( postInGroup && !thirdC::c_strcmpIF( tinBaseP , postInGroup , postInGroupP ) ) )
         
                 const osTextT* const postInGroup  = !costaInGroup ? 0 : (byteT*)&costaInGroup + sizeof( countT ) + costaName ;
                 const osTextT* const postName     = !costaName    ? 0 : (byteT*)&costaInGroup + sizeof( countT ) ;
@@ -183,16 +183,16 @@
 
         tlsHeaderS& th = *(tlsHeaderS*)pbTls ;
 
-        const countT costaInGroupP = !postInGroupP ? 0 : 1 + thirdC::c_strlenIF( tinP , postInGroupP ) ;
-        const countT costaNameP    = !postNameP    ? 0 : 1 + thirdC::c_strlenIF( tinP , postNameP    ) ;
+        const countT costaInGroupP = !postInGroupP ? 0 : 1 + thirdC::c_strlenIF( tinBaseP , postInGroupP ) ;
+        const countT costaNameP    = !postNameP    ? 0 : 1 + thirdC::c_strlenIF( tinBaseP , postNameP    ) ;
     {
     ZE( byteT* , pbData ) ;
 
     }
-        scoopC _scoop( tinP , LF , _poop ) ;
+        scoopC _scoop( tinBaseP , LF , _poop ) ;
         poopC _poop( flPOOP_SMELLY ) ;
     {
-    //THIS BUG WAS FOUND; IT WAS A ZOMBIE tinP REFERENCE; THE TEST IS RETAINED TO DETECT NEW INTRODUCTIONS OF THAT BUG
+    //THIS BUG WAS FOUND; IT WAS A ZOMBIE tinBaseP REFERENCE; THE TEST IS RETAINED TO DETECT NEW INTRODUCTIONS OF THAT BUG
 
     }
         *pcBlammo = -1 ;
@@ -204,9 +204,9 @@
         ;
             : "\r\nerror:  tlsNewF called on raw thread (tmBreakF)\r\n"
             ? "\r\nerror:  tlsNewF called on raw thread (tmHeartF)\r\n"
-        osTextT* postSay = tinP.idTinNamed == ifcIDtINnAMED_tinHeartI
+        osTextT* postSay = ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinHeartI
     {
-    if( tinP.idTinNamed == ifcIDtINnAMED_tinHeartI || tinP.idTinNamed == ifcIDtINnAMED_tinBreakI  ) // RAW THREAD, SO CANNOT CALL TINSL
+    if( ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinHeartI || ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinBreakI  ) // RAW THREAD, SO CANNOT CALL TINSL
 
     //_IO_
     //SPEED OPTIMIZATION: THIS _IO_ WOULD HAVE THE #1 HIGHEST FREQUENCY OF CALLS
@@ -219,7 +219,7 @@
     if( !thirdC::c_strcmpIF( *this , postThreadName , "tmWorkerF" ) )
 
     tlsCheckF() ;
-    //if( !thirdC::c_strcmpIF( tinP , postThreadName , "tmNodeF" ) ) tlsTraceF() ; //U::DISABLE IN PRODUCTION
+    //if( !thirdC::c_strcmpIF( tinBaseP , postThreadName , "tmNodeF" ) ) tlsTraceF() ; //U::DISABLE IN PRODUCTION
 
     }
         if( POOP ) return 0 ;
@@ -227,9 +227,9 @@
     IFbEcAREFUL
     POOPIES
 
-    tinS& tinP = *this ;
+    tinBaseS& tinBaseP = *this ;
 {
-/*1*/byteT* tinS::tlsNewF( const countT idLineP , const countT idiFileP , const countT cbP , const osTextT* const postNameP , const osTextT* const postInGroupP )/*1*/
+/*1*/byteT* tinNormalS::tlsNewF( const countT idLineP , const countT idiFileP , const countT cbP , const osTextT* const postNameP , const osTextT* const postInGroupP )/*1*/
 
 //
 //    postInGroup

@@ -9,8 +9,8 @@
 
 }
     }
-        osTimeAddIF( tinP , time1P , time2P , timeToday1 , timeToday2 ) ;
-        timeFromMsIF( tinP , timeToday1 , timeToday2 , 60*60*1000*utc.wHour + 60*1000*utc.wMinute + 1000*utc.wSecond + utc.wMilliseconds ) ;
+        osTimeAddIF( tinBaseP , time1P , time2P , timeToday1 , timeToday2 ) ;
+        timeFromMsIF( tinBaseP , timeToday1 , timeToday2 , 60*60*1000*utc.wHour + 60*1000*utc.wMinute + 1000*utc.wSecond + utc.wMilliseconds ) ;
         ZE( sCountT , timeToday2 ) ;
         ZE( countT , timeToday1 ) ;
         // TIME ELAPSED TODAY
@@ -46,7 +46,7 @@
 
         BOSpOOP
         BOS( WHATgbo , BOSoK , TzSpecificLocalTimeToSystemTime( 0 , &local , &utc ) ) ;
-        thirdC::c_memsetIF( tinP , (byteT*)&utc , sizeof utc ) ;
+        thirdC::c_memsetIF( tinBaseP , (byteT*)&utc , sizeof utc ) ;
         local.wMilliseconds = (WORD)msP ;
         local.wSecond       = (WORD)ssP ;
         local.wMinute       = (WORD)mmP ;
@@ -122,7 +122,7 @@
     {
     IFbEcAREFUL        
 {
-/*1*/voidT thirdC::osTimeFromOldTimeIF( tinS& tinP , countT& time1P , sCountT& time2P , sCountT yP , countT mP , countT dP , countT hhP , countT mmP , countT ssP , countT msP , const flagsT flagsP )/*1*/
+/*1*/voidT thirdC::osTimeFromOldTimeIF( tinBaseS& tinBaseP , countT& time1P , sCountT& time2P , sCountT yP , countT mP , countT dP , countT hhP , countT mmP , countT ssP , countT msP , const flagsT flagsP )/*1*/
 
 /**/
 */

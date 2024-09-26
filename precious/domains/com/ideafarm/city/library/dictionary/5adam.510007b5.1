@@ -9,8 +9,8 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
@@ -52,7 +52,7 @@ etThread.traceF( tinP , T("ok") ) ;
 
 
 
-    etThread.ifcHireF( tinP , psttFoo , ifcIDaDAM_SCRATCH0d , psttGoo , flHIRE_DISPLAYaUTO | flHIRE_MONITORtHIS | flHIRE_MONITORkIDS , nnHoo ) ;
+    etThread.ifcHireF( tinBaseP , psttFoo , ifcIDaDAM_SCRATCH0d , psttGoo , flHIRE_DISPLAYaUTO | flHIRE_MONITORtHIS | flHIRE_MONITORkIDS , nnHoo ) ;
 
 
 
@@ -89,7 +89,7 @@ etThread.traceF( tinP , T("ok") ) ;
                 sinfo.StartupInfo.wShowWindow = /*SW_SHOWMAXIMIZED*/ SW_SHOWMINNOACTIVE ;
                 sinfo.StartupInfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USEPOSITION | STARTF_USECOUNTCHARS | STARTF_USEFILLATTRIBUTE ;
                 sinfo.StartupInfo.cb = sizeof sinfo ;
-                thirdC::c_memsetIF( tinP , (byteT*)&sinfo , sizeof sinfo ) ;
+                thirdC::c_memsetIF( tinBaseP , (byteT*)&sinfo , sizeof sinfo ) ;
                 STARTUPINFOEX sinfo ;
             {
             if( bOk )
@@ -112,7 +112,7 @@ etThread.traceF( tinP , T("ok") ) ;
         unsigned pcInfo2[ 0x100 / sizeof( unsigned ) ] ;
     {
     if( cba < 0x100 )
-    thirdC::c_memsetIF( tinP , (byteT*)&pinfo , sizeof pinfo ) ;
+    thirdC::c_memsetIF( tinBaseP , (byteT*)&pinfo , sizeof pinfo ) ;
     PROCESS_INFORMATION pinfo ;
 
     InitializeProcThreadAttributeList( 0 , 1 , 0 , &cba ) ;

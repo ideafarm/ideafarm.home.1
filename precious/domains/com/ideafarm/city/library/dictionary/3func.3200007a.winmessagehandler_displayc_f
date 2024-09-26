@@ -20,7 +20,7 @@
         }
             break ;
             if( bLog ) { LOGrAW( "winmess/default -\r\n" ) ; }
-            rc = tinP.brcRaw ;
+            rc = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( (HWND)oshWindowP , idCmdP , p1P , p2P ) )
             if( bLog ) { LOGrAW( "winmess/default +\r\n" ) ; }
         {
@@ -39,10 +39,10 @@
             
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , AdjustWindowRect( &info , WS_OVERLAPPEDWINDOW , 0 ) )
-                info.bottom = ( tinP.brcRaw - 1 ) >> DISPLAYsHRINK ; // ">> 4" FOR DEBUGGING TINY; ">> 0" FOR PROD
+                info.bottom = ( ((tinNormalS&)tinBaseP).brcRaw - 1 ) >> DISPLAYsHRINK ; // ">> 4" FOR DEBUGGING TINY; ">> 0" FOR PROD
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CYSCREEN ) )
-                info.right  = ( tinP.brcRaw - 1 ) >> DISPLAYsHRINK ; // ">> 4" FOR DEBUGGING TINY; ">> 0" FOR PROD
+                info.right  = ( ((tinNormalS&)tinBaseP).brcRaw - 1 ) >> DISPLAYsHRINK ; // ">> 4" FOR DEBUGGING TINY; ">> 0" FOR PROD
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CXSCREEN ) )
                 info.top    = /*0x8*/0 ;
@@ -63,8 +63,8 @@
             }
                 }
                     if( pStuff->pDisplay->pDeviceCBF ) (*pStuff->pDisplay->pDeviceCBF)( *pStuff->pTinWindow , flDEVICEcbf_null , *pStuff->pDisplay , pStuff->pDisplay->cArg , ifcIDeVENTdEVICEc_RESIZED , 0 ) ;
-                    pStuff->pDisplay->positionF( tinP , flDISPLAYpOSITION_DOnOTpOSITION , info.right , info.bottom , info.left , info.top ) ;
-                    tinS& tinP = *pStuff->pTinWindow ;
+                    pStuff->pDisplay->positionF( tinBaseP , flDISPLAYpOSITION_DOnOTpOSITION , info.right , info.bottom , info.left , info.top ) ;
+                    tinBaseS& tinBaseP = *pStuff->pTinWindow ;
                 {
                 if( info.right && info.bottom ) //CONDITIONAL BECAUSE I AM CALLED (SEND MESSAGE) DURING THE positionF CALL WITHIN WM_DISPLAYCHANGE
 
@@ -91,7 +91,7 @@
             EndPaint( (HWND)oshWindowP , &info ) ;
 
             }
-                pStuff->pDisplay->ungrabF( tinP ) ;
+                pStuff->pDisplay->ungrabF( tinBaseP ) ;
 
                 }
                     pStuff->pDisplay->bSuppressAnimation = 0 ;
@@ -103,7 +103,7 @@
                 bNeedRepaint = 0 ;
 
                 }
-                    if( bLog ) { LOGrAW7( "winmess/WM_PAINT BitBlt [bOk,oshDevice,oshDeviceMemory]:    " , tinP.brcRaw , "    " , oshDevice , "    " , oshDeviceMemory , "\r\n" ) ; }
+                    if( bLog ) { LOGrAW7( "winmess/WM_PAINT BitBlt [bOk,oshDevice,oshDeviceMemory]:    " , ((tinNormalS&)tinBaseP).brcRaw , "    " , oshDevice , "    " , oshDeviceMemory , "\r\n" ) ; }
 
                     //U::BOSpOOP
                     //20230327@1519: BitBlt OCCASIONALLY FAILS AND GetLastError() RETURNS 0, USING DUT ADAM b (COPY OF 72b_)
@@ -115,13 +115,13 @@
                 countT cRow = pStuff->pDisplay->cRowF() ;
                 countT cCol = pStuff->pDisplay->cColF() ;
 
-                pStuff->pDisplay->grabF( tinP , TAG( TAGiDnULL ) ) ;
+                pStuff->pDisplay->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                tinS& tinP = *pStuff->pTinWindow ;
+                tinBaseS& tinBaseP = *pStuff->pTinWindow ;
             {
             if( pStuff )
 
-            HDC oshDevice = (HDC)tinP.brcRaw ;
+            HDC oshDevice = (HDC)((tinNormalS&)tinBaseP).brcRaw ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , BeginPaint( (HWND)oshWindowP , &info ) )
             PAINTSTRUCT info ;
@@ -178,7 +178,7 @@
     {
     switch( idCmdP )
 
-    tinS& tinP = *pStuff->pTinWindow ;
+    tinBaseS& tinBaseP = *pStuff->pTinWindow ;
 
     ZE( countT , rc ) ;
     static boolT  bWothPaintDone ;

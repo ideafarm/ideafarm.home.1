@@ -10,29 +10,29 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
-    etThread.osSleepF( tinP , TOCK * 0x10 ) ;
+    etThread.osSleepF( tinBaseP , TOCK * 0x10 ) ;
     ether = 0 ;
     time2last = time2 ;
     time1last = time1 ;
 
-    if( bNewDock ) etThread.strokeF( tinP , T("\r" BLANK79 "\rnew dock: this will display once per 10000 (65536_9) days (about 179 years)") ) ;
+    if( bNewDock ) etThread.strokeF( tinBaseP , T("\r" BLANK79 "\rnew dock: this will display once per 10000 (65536_9) days (about 179 years)") ) ;
 
     const boolT bNewDock = offDOCK( time2 ) != offDOCK( time2last ) ;
 
-    etThread.osTimeNowF( tinP , time1 , time2 ) ;
+    etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
     ZE( sCountT , time2 ) ;
     ZE( countT , time1 ) ;
 {
 while( !ether )
-etThread.osTimeNowF( tinP , time1last , time2last ) ;
+etThread.osTimeNowF( tinBaseP , time1last , time2last ) ;
 ZE( sCountT , time2last ) ;
 ZE( countT , time1last ) ;
 
-etThread.strokeF( tinP , T("press the enter key to fire me\r\n\r\n") ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmHearF ) ; }
+etThread.strokeF( tinBaseP , T("press the enter key to fire me\r\n\r\n") ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmHearF ) ; }
 
 TODO
 
@@ -40,7 +40,7 @@ DONE( tmHearF )
 }
     FIREmYSELF ;
     HEAReNTER( ether )
-    etThread.osSleepF( tinP , TOCK * 4 ) ;
+    etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
 {
 if( pTaskP )
 TASK( tmHearF )

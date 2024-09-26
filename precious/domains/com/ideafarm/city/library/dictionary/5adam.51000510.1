@@ -17,18 +17,18 @@ THREADmODE2rESTORE ;
         ZE( soulC* , psPayload ) ;
     {
     while( stRelayOut )
-    //U::sgnDone_tmOutF.waitF( tinP ) ;
+    //U::sgnDone_tmOutF.waitF( tinBaseP ) ;
     bQuit = 1 ;
     
-    etThread.relayOldF( tinP , ether , stRelayOut , pcArg , pCioGetF , b_pCioGetF ) ;
+    etThread.relayOldF( tinBaseP , ether , stRelayOut , pcArg , pCioGetF , b_pCioGetF ) ;
     ZE( countT* , pcArg ) ;
-    batonC b_pCioGetF( tinP , TAG( TAGiDnULL ) ) ;
+    batonC b_pCioGetF( tinBaseP , TAG( TAGiDnULL ) ) ;
     cioGetFT pCioGetF = cioGetF ;
     
-    //U:: etThread.osThreadF( tinP , countTC() , tmOutF , &sgnDone_tmOutF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&etThread , (countT)&bQuit , (countT)&stRelayOut ) ;
+    //U:: etThread.osThreadF( tinBaseP , countTC() , tmOutF , &sgnDone_tmOutF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&etThread , (countT)&bQuit , (countT)&stRelayOut ) ;
     ZE( boolT , bQuit ) ;
-    //U:: signC sgnDone_tmOutF( tinP , TAG( TAGiDnULL ) ) ;
-    stackC stRelayOut( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_GIVEsIGNnEWpLATE ) ;
+    //U:: signC sgnDone_tmOutF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stackC stRelayOut( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO|flSTACKc_GIVEsIGNnEWpLATE ) ;
 {
 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
 
@@ -38,20 +38,20 @@ TODO
     if( cArgP && idptOriginP && bQuitP ) ;
     }
         DEL( psPayloadP ) ; //OPTIONAL
-        etherP.delF( tinP , pczChannelP ) ; //OPTIONAL
-        etherP.strokeF( tinP , T(pczChannelP)+T("| ")+T(psttMsg) ) ;
+        etherP.delF( tinBaseP , pczChannelP ) ; //OPTIONAL
+        etherP.strokeF( tinBaseP , T(pczChannelP)+T("| ")+T(psttMsg) ) ;
         *psPayloadP >> psttMsg ;
         ZE( strokeS* , psttMsg ) ;
     {
     if( idPayloadTypeP == ifcOLDiDtYPEgIFT_APPLICATION )
 {
-voidT cioGetF( tinS& tinP , etherC& etherP , const boolT& bQuitP , const countT idPayloadTypeP , soulC*& psPayloadP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
+voidT cioGetF( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQuitP , const countT idPayloadTypeP , soulC*& psPayloadP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
 
 DONE( tmOutF )
 }
     }
-        ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         }
             stRelayOutP << (countT)psWrap ;
@@ -71,13 +71,13 @@ DONE( tmOutF )
             sGift << (strokeS*)tMsg ;
             TN( tMsg , "" ) ; tMsg = T("how now brown cow! ")+TF1(++cOut)+T("\r\n") ;
             static countT cOut ;
-            soulC sGift( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sGift( tinBaseP , TAG( TAGiDnULL ) ) ;
             flagsT flags = flCIOpUT_null ;
-            soulC sToMediator( tinP , TAG( TAGiDnULL ) ) ;
-            soulC sTo( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sToMediator( tinBaseP , TAG( TAGiDnULL ) ) ;
+            soulC sTo( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( psWrap )
-        soulC* psWrap = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+        soulC* psWrap = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
     {
     while( !bQuitP && !stRelayOutP.third && !etThread )
 
@@ -86,7 +86,7 @@ DONE( tmOutF )
             stRelayOutP << (countT)psEnvelope ;
 
             *psEnvelope << (countT)4 ; // ccFilter
-            psEnvelope->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_countTptr , (countT*)c8Filter , 4 ) ; // pcFilter
+            psEnvelope->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_countTptr , (countT*)c8Filter , 4 ) ; // pcFilter
             *psEnvelope << (countT)0 ; // ccTestMax ;
             *psEnvelope << (countT*)c8Channel ;
             *psEnvelope << (countT)ifcOLDiDtYPEwRAP_CHANNELeXCLUDEpUSH ;
@@ -98,7 +98,7 @@ DONE( tmOutF )
             c8Channel.c4 = 4 ; //MUST BE NONZE; MATCHES CHANNELS THAT HAVE SAME LOW 2 BITS
         {
         if( psEnvelope )
-        soulC* psEnvelope = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psEnvelope ) ;
+        soulC* psEnvelope = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psEnvelope ) ;
     {
     //SET AN EXCLUSION FILTER THAT SELECTS CHANNELS THAT ARE MODULO 4 (4 8 c 01 ...)
 
@@ -107,7 +107,7 @@ DONE( tmOutF )
             stRelayOutP << (countT)psEnvelope ;
 
             *psEnvelope << (countT)4 ; // ccFilter
-            psEnvelope->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_countTptr , (countT*)c8Filter , 4 ) ; // pcFilter
+            psEnvelope->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_countTptr , (countT*)c8Filter , 4 ) ; // pcFilter
             *psEnvelope << (countT)0 ; // ccTestMax ;
             *psEnvelope << (countT*)c8Channel ;
             *psEnvelope << (countT)ifcOLDiDtYPEwRAP_CHANNELiNCLUDEpUSH ;
@@ -119,7 +119,7 @@ DONE( tmOutF )
             c8Channel.c4 = 2 ; //MUST BE NONZE; SPECIFY ANY EVEN VALUE TO GET EVEN CHANNELS; ANY ODD VALUE TO GET ODD CHANNELS
         {
         if( psEnvelope )
-        soulC* psEnvelope = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psEnvelope ) ;
+        soulC* psEnvelope = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psEnvelope ) ;
     {
     //SET A FILTER THAT SELECTS CHANNELS THAT ARE EVEN
 
@@ -128,7 +128,7 @@ DONE( tmOutF )
     //        stRelayOutP << (countT)psEnvelope ;
     //
     //        *psEnvelope << (countT)0 ; // ccFilter
-    //        psEnvelope->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_countTptr , (countT*)0 ) ; // pcFilter
+    //        psEnvelope->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_countTptr , (countT*)0 ) ; // pcFilter
     //        *psEnvelope << (countT)4 ; // ccTestMax ;
     //        *psEnvelope << (countT*)c8Channel ;
     //        *psEnvelope << (countT)ifcOLDiDtYPEwRAP_CHANNELiNCLUDEpUSH ;
@@ -139,7 +139,7 @@ DONE( tmOutF )
     //        c8Channel.c4 = idChannel ;
     //    {
     //    if( psEnvelope )
-    //    soulC* psEnvelope = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
+    //    soulC* psEnvelope = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
     //{
     //for( countT idChannel = 3 ; idChannel <= 4 ; idChannel ++ )
     //SET A FILTER TO REQUEST CHANNELS 3 AND 4

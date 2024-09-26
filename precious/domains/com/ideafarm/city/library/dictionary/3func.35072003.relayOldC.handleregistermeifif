@@ -11,19 +11,19 @@
     return bOk ;
 
     }
-        tinP.pag5->_relayOldC_grabHandleAll.ungrabF( tinP ) ;
+        ((tinNormalS&)tinBaseP).pag5->_relayOldC_grabHandleAll.ungrabF( tinBaseP ) ;
         }
-            tinP.pEther->traceF( tinP , T("i am now the handle port for this adam [idAdam,idptHandleAll]:    ")+TF2(tinP.pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T((nicNameC&)tinP.pag1->_relayOldC_.idptHandleAll)+T(" ( ")+TF2((countT)tinP.pag1->_relayOldC_.idptHandleAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
+            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("i am now the handle port for this adam [idAdam,idptHandleAll]:    ")+TF2(((tinNormalS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T((nicNameC&)((tinNormalS&)tinBaseP).pag1->_relayOldC_.idptHandleAll)+T(" ( ")+TF2((countT)((tinNormalS&)tinBaseP).pag1->_relayOldC_.idptHandleAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
             bOk = 1 ;
-            tinP.pag1->_relayOldC_.idptHandleAll = idptMeP ;
+            ((tinNormalS&)tinBaseP).pag1->_relayOldC_.idptHandleAll = idptMeP ;
         {
-        if( !tinP.pag1->_relayOldC_.idptHandleAll || idptMeP - tinP.pag1->_relayOldC_.idptHandleAll < 0 )
-        tinP.pag5->_relayOldC_grabHandleAll.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        if( !((tinNormalS&)tinBaseP).pag1->_relayOldC_.idptHandleAll || idptMeP - ((tinNormalS&)tinBaseP).pag1->_relayOldC_.idptHandleAll < 0 )
+        ((tinNormalS&)tinBaseP).pag5->_relayOldC_grabHandleAll.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT relayOldC::handleRegisterMeIfIF( tinS& tinP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT relayOldC::handleRegisterMeIfIF( tinBaseS& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*

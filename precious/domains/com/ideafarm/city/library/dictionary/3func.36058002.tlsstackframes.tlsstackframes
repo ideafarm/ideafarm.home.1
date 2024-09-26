@@ -17,10 +17,10 @@
 
     //(countT&)tlsBlobStackTop = (countT)( this + 1 ) ;
 {
-//tlsBlobStackTop( thirdC::third_tinS_ref_IF() , "sysStackTop" , "tin" )
-//tlsBlobTellInfoSysExceptionLath( thirdC::third_tinS_ref_IF() , "tlsBlobTellInfoSysExceptionLath" , "tin" , !cArgP || ((taskS*)cArgP)->cbTlsInPool >= CB tLSmAIN ? sizeof( tellInfoSysExceptionS ) : - 1 ) ,
-//tlsForMe( thirdC::third_tinS_ref_IF() ) ,
-rc( ( pTin->flagsThreadMode5 &= ~F(flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) , 0 ) )
+//tlsBlobStackTop( thirdC::third_tinBaseS_ref_IF() , "sysStackTop" , "tin" )
+//tlsBlobTellInfoSysExceptionLath( thirdC::third_tinBaseS_ref_IF() , "tlsBlobTellInfoSysExceptionLath" , "tin" , !cArgP || ((taskS*)cArgP)->cbTlsInPool >= CB tLSmAIN ? sizeof( tellInfoSysExceptionS ) : - 1 ) ,
+//tlsForMe( thirdC::third_tinBaseS_ref_IF() ) ,
+rc( ( ((tinNormalS*)pTin)->flagsThreadMode5 &= ~F(flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) , 0 ) )
 ) ,
     ((taskS*)cArgP)->cbTlsInPool
     ((taskS*)cArgP)->pbTlsInPool ,
@@ -45,7 +45,7 @@ rc( ( pTin->flagsThreadMode5 &= ~F(flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEME
         : POSTtHREADnAMEmAIN
         ? postP
     idTypeP == ifcIDtYPEtLS_KID || idTypeP == ifcIDtYPEtLS_EXCEPTION
-    idTypeP == ifcIDtYPEtLS_KID ? ((taskS*)cArgP)->pTinDad : 0 ,
+    idTypeP == ifcIDtYPEtLS_KID ? ((taskS*)cArgP)->pTinBaseDad : 0 ,
     idTypeP == ifcIDtYPEtLS_KID ? ((taskS*)cArgP)->idThread : 0 ,
     *pTin , LF , (byteT*)0 , ebpP ,
 (
@@ -53,9 +53,9 @@ tinEarlyLate
 ) ,
     )
                 : &tinEarlyLate
-                ? (tinS*)((count3S*)cArgP)->c1 // tinOffender
+                ? (tinBaseS*)((count3S*)cArgP)->c1 // tinOffender
             : idTypeP == ifcIDtYPEtLS_EXCEPTION
-            ? &processGlobal5I.tinVeryEarlyLateMain
+            ? &processGlobal5I.tinNormalVeryEarlyLateMain
         idTypeP == ifcIDtYPEtLS_BENCH || idTypeP == ifcIDtYPEtLS_CONSOLE || idTypeP == ifcIDtYPEtLS_WINDOW
         putNegAM( *(countT*)&finger       , FINGERnEG_THREADlOCALsTORAGE       ) ,
         putNegAM( *(countT*)&fingerVerify , FINGERnEG_THREADlOCALsTORAGEvERIFY ) ,
@@ -70,7 +70,7 @@ zap_fingerVerify( (byteT*)&fingerVerify , sizeof fingerVerify , flZAP_DT ) ,
     1
     ) , 
             : 0
-            ? &((taskS*)cArgP)->pTinDad->cKidThreads 
+            ? &((tinNormalS*)((taskS*)cArgP)->pTinBaseDad)->cKidThreads 
         idTypeP == ifcIDtYPEtLS_KID && !( F(((taskS*)cArgP)->flags) & flTHREADlAUNCH_ORPHAN )
     (
 ( 

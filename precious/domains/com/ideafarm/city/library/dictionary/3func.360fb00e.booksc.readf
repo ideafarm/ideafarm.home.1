@@ -12,14 +12,14 @@
 
     THREADmODE4rESTORE
 
-    grabBookNow.ungrabF( tinP ) ;
+    grabBookNow.ungrabF( tinBaseP ) ;
 
     }
         }
             if( cRefWas == 1 ) { BLAMMO ; }                             //SHOULD BE IMPOSSIBLE SINCE pageP NOW CONTAINS A REFERENCE
 
             //}
-            //    tinP.pEther->trace F( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
+            //    ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    OStEXTAK(   ostoSay , " -" ) ;
             //    OStEXTC(    ostoSay , cRefWas , 0 ) ;
@@ -30,25 +30,25 @@
             //    OStEXTAK(   ostoSay , "booksC [this,pcRef,cRefWas]:    " ) ;
             //    OStEXT(     ostoSay , TUCK << 2 ) ;
             //{
-            //if( tinP.pEther && tinP.pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+            //if( ((tinNormalS&)tinBaseP).pEther && ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
 
             countT cRefWas = decv02AM( cRefBookF() ) ;
         {
         if( !bCallerMustDelete )
 
         }
-            pageP = pageC( tinP , *this , bCallerMustDelete ? 0 : &((bookHeadS&)BOOKnOW).cRef , pbz , cbz , bCallerMustDelete ? flPAGEc_DELETE : flPAGEc_null ) ; //U: 20181210@1339: CONJ: BUG: IF flPAGEc_DELETE THEN COPY CONSTRUCTOR SHOULD COPY THE pbz SO THAT EACH INSTANCE CAN DELETE IT
+            pageP = pageC( tinBaseP , *this , bCallerMustDelete ? 0 : &((bookHeadS&)BOOKnOW).cRef , pbz , cbz , bCallerMustDelete ? flPAGEc_DELETE : flPAGEc_null ) ; //U: 20181210@1339: CONJ: BUG: IF flPAGEc_DELETE THEN COPY CONSTRUCTOR SHOULD COPY THE pbz SO THAT EACH INSTANCE CAN DELETE IT
         {
         if( !pbQuitP || !*pbQuitP )
     {
     if( pbz )
 
-    boolT bCallerMustDelete = readF( tinP , pbz , cbz , handleP , flagsP | flBOOKScrEAD_INCREMENTrEFERENCEcOUNTiF , pbQuitP , phCursorP , idCursorP ) ;
+    boolT bCallerMustDelete = readF( tinBaseP , pbz , cbz , handleP , flagsP | flBOOKScrEAD_INCREMENTrEFERENCEcOUNTiF , pbQuitP , phCursorP , idCursorP ) ;
 
     countT cbz = pageP ;
     ZE( const byteT* , pbz ) ;
 
-    grabBookNow.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    grabBookNow.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP )
 
@@ -62,7 +62,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT booksC::readF( tinS& tinP , pageC& pageP , handleC& handleP , const flagsT flagsP , const boolT* pbQuitP , handleC* const phCursorP , const countT idCursorP )/*1*/
+/*1*/voidT booksC::readF( tinBaseS& tinBaseP , pageC& pageP , handleC& handleP , const flagsT flagsP , const boolT* pbQuitP , handleC* const phCursorP , const countT idCursorP )/*1*/
 
 /**/
 */

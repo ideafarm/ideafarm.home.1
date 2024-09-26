@@ -10,10 +10,10 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
-    b_pczLever.ungrabF( tinP ) ;
+    b_pczLever.ungrabF( tinBaseP ) ;
 
     }
         DEL( prd ) ;
@@ -23,37 +23,37 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     {
     while( swsDir )
 
-    pczLever = (countT*)swsDir.leverF( tinP , idf ) ;
+    pczLever = (countT*)swsDir.leverF( tinBaseP , idf ) ;
 
-    b_pczLever.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    b_pczLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = swsDir.cFlavorsF( tinP ) ;
+countT cFlavors = swsDir.cFlavorsF( tinBaseP ) ;
 
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
 }
     }
-        else                    { ZE( countT , tid ) ; etThread.osThreadF( tinP , tid , tmDirectoryServeClientF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&etThread , (countT)&b_pczLever , (countT)&pczLever , (countT)&swsDir ) ; }
+        else                    { ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmDirectoryServeClientF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&etThread , (countT)&b_pczLever , (countT)&pczLever , (countT)&swsDir ) ; }
         if( ether || etThread ) { DEL( pso ) ; }
-        sock.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+        sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
     {
     while( !ether && !etThread )
 
-    sock.listenF( tinP ) ;
-    sock.bindF( tinP , ifcPORToLD1_DIRECTORY ) ;
-    socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.listenF( tinBaseP ) ;
+    sock.bindF( tinBaseP , ifcPORToLD1_DIRECTORY ) ;
+    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 {
 while( !ether && !etThread )
 
-etThread.etherCryF( tinP ) ;
+etThread.etherCryF( tinBaseP ) ;
 
-switchStackC swsDir( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pczLever ) ;
+switchStackC swsDir( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pczLever ) ;
 ZE( countT* , pczLever ) ;
-batonC b_pczLever( tinP , TAG( TAGiDnULL ) ) ;
+batonC b_pczLever( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -61,11 +61,11 @@ DONE( tmDirectoryServeClientF )
 }
     DEL( pso ) ;
     etThread = 0 ;
-    { ZE( byteT , bnu ) ; pso->readF( tinP , &bnu , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ; }
+    { ZE( byteT , bnu ) ; pso->readF( tinBaseP , &bnu , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ; }
     etThread = 0 ;
 
     }
-        pso->writeF( tinP , (byteT*)&idAck , sizeof idAck ) ;
+        pso->writeF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ;
         etThread = 0 ;
         countT idAck = etThread ? ifcREPLY_NACK : ifcREPLY_ACK ;
 
@@ -73,46 +73,46 @@ DONE( tmDirectoryServeClientF )
             }
                 break ;
 
-                etThread.delF( tinP , pczl ) ;
+                etThread.delF( tinBaseP , pczl ) ;
 
                 }
                     }
                         //}
                         //    __( dr != dr2 ) ;
-                        //    etThread.delF( tinP , pbSoul ) ;
-                        //    recDirC dr2( tinP , ether , pbSoul ) ;
-                        //    dr.soulF( tinP , pbSoul ) ; ___( pbSoul ) ;
+                        //    etThread.delF( tinBaseP , pbSoul ) ;
+                        //    recDirC dr2( tinBaseP , ether , pbSoul ) ;
+                        //    dr.soulF( tinBaseP , pbSoul ) ; ___( pbSoul ) ;
                         //    ZE( byteT* , pbSoul ) ;
                         //    recDirC& dr = *prd ;
                         //{
                         //if( prd )
                         //THIS CODE TESTS CREATING AND USING pbSoul
 
-                        b_pczLever.ungrabF( tinP ) ;
+                        b_pczLever.ungrabF( tinBaseP ) ;
 
                         }
                             __1
                             DEL( prd ) ;
                         {
                         if( !idSlot )
-                        swsDir.sinkF( tinP , idSlot , (countT)prd , flSTACKsINK_UNIQUE , 0 , subtract_recDirC_F ) ;
+                        swsDir.sinkF( tinBaseP , idSlot , (countT)prd , flSTACKsINK_UNIQUE , 0 , subtract_recDirC_F ) ;
                         ZE( countT , idSlot ) ;
 
                         pczLever = pczl ;
-                        b_pczLever.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                        b_pczLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                     {
                     if( prd )
 
-                    recDirC* prd = new( 0 , tinP , LF ) recDirC( tinP , ettListener , *pso ) ; ___( prd ) ;
+                    recDirC* prd = new( 0 , tinBaseP , LF ) recDirC( tinBaseP , ettListener , *pso ) ; ___( prd ) ;
                 {
                 if( pczl )
 
                 }
                     if( pczl ) pczl[ cLever ] = 0 ;
-                    __( sizeof( countT ) * cLever - pso->readF( tinP , (byteT*)pczl , sizeof( countT ) * cLever ) ) ;
-                    etThread.newF( tinP , LF , pczl , cLever + 1 ) ; ___( pczl ) ;
+                    __( sizeof( countT ) * cLever - pso->readF( tinBaseP , (byteT*)pczl , sizeof( countT ) * cLever ) ) ;
+                    etThread.newF( tinBaseP , LF , pczl , cLever + 1 ) ; ___( pczl ) ;
                     __Z( cLever ) ;
-                    __( sizeof cLever - pso->readF( tinP , (byteT*)&cLever , sizeof cLever ) ) ;
+                    __( sizeof cLever - pso->readF( tinBaseP , (byteT*)&cLever , sizeof cLever ) ) ;
                     ZE( countT , cLever ) ;
                 {
                 ZE( countT* , pczl ) ;
@@ -121,30 +121,30 @@ DONE( tmDirectoryServeClientF )
             }
                 break ;
 
-                etThread.delF( tinP , pczl ) ;
+                etThread.delF( tinBaseP , pczl ) ;
 
-                b_pczLever.ungrabF( tinP ) ;
+                b_pczLever.ungrabF( tinBaseP ) ;
 
                 else __1
                 }
                     DEL( prd ) ;
-                    recDirC* prd = (recDirC*)swsDir.extractF( tinP ) ;
+                    recDirC* prd = (recDirC*)swsDir.extractF( tinBaseP ) ;
                 {
                 if( idSlot )
-                swsDir.sinkF( tinP , idSlot , (countT)&rd , flSTACKsINK_QUERY , 0 , subtract_recDirC_F ) ;
+                swsDir.sinkF( tinBaseP , idSlot , (countT)&rd , flSTACKsINK_QUERY , 0 , subtract_recDirC_F ) ;
                 ZE( countT , idSlot ) ;
 
                 pczLever = pczl ;
-                b_pczLever.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                b_pczLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                recDirC rd( tinP , ettListener , *pso ) ;
+                recDirC rd( tinBaseP , ettListener , *pso ) ;
 
                 }
                     if( pczl ) pczl[ cLever ] = 0 ;
-                    __( sizeof( countT ) * cLever - pso->readF( tinP , (byteT*)pczl , sizeof( countT ) * cLever ) ) ;
-                    etThread.newF( tinP , LF , pczl , cLever + 1 ) ; ___( pczl ) ;
+                    __( sizeof( countT ) * cLever - pso->readF( tinBaseP , (byteT*)pczl , sizeof( countT ) * cLever ) ) ;
+                    etThread.newF( tinBaseP , LF , pczl , cLever + 1 ) ; ___( pczl ) ;
                     __Z( cLever ) ;
-                    __( sizeof cLever - pso->readF( tinP , (byteT*)&cLever , sizeof cLever ) ) ;
+                    __( sizeof cLever - pso->readF( tinBaseP , (byteT*)&cLever , sizeof cLever ) ) ;
                     ZE( countT , cLever ) ;
                 {
                 ZE( countT* , pczl ) ;
@@ -153,32 +153,32 @@ DONE( tmDirectoryServeClientF )
             }
                 break ;
 
-                etThread.delF( tinP , pczl ) ;
+                etThread.delF( tinBaseP , pczl ) ;
 
-                b_pczLever.ungrabF( tinP ) ;
+                b_pczLever.ungrabF( tinBaseP ) ;
 
                 }
                     while( handle ) ;
                     }
-                        if( prd ) pso->writeF( tinP , WS( *prd ) ) ;
-                        recDirC* prd = (recDirC*)swsDir.downF( tinP , handle ) ;
+                        if( prd ) pso->writeF( tinBaseP , WS( *prd ) ) ;
+                        recDirC* prd = (recDirC*)swsDir.downF( tinBaseP , handle ) ;
                     {
                     do
-                    handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( cPlates )
-                pso->writeF( tinP , (byteT*)&cPlates , sizeof cPlates ) ;
+                pso->writeF( tinBaseP , (byteT*)&cPlates , sizeof cPlates ) ;
                 countT cPlates = swsDir ;
 
                 pczLever = pczl ;
-                b_pczLever.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                b_pczLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                 }
                     if( pczl ) pczl[ cLever ] = 0 ;
-                    __( sizeof( countT ) * cLever - pso->readF( tinP , (byteT*)pczl , sizeof( countT ) * cLever ) ) ;
-                    etThread.newF( tinP , LF , pczl , cLever + 1 ) ; ___( pczl ) ;
+                    __( sizeof( countT ) * cLever - pso->readF( tinBaseP , (byteT*)pczl , sizeof( countT ) * cLever ) ) ;
+                    etThread.newF( tinBaseP , LF , pczl , cLever + 1 ) ; ___( pczl ) ;
                     __Z( cLever ) ;
-                    __( sizeof cLever - pso->readF( tinP , (byteT*)&cLever , sizeof cLever ) ) ;
+                    __( sizeof cLever - pso->readF( tinBaseP , (byteT*)&cLever , sizeof cLever ) ) ;
                     ZE( countT , cLever ) ;
                 {
                 ZE( countT* , pczl ) ;
@@ -192,13 +192,13 @@ DONE( tmDirectoryServeClientF )
         {
         switch( idCmd )
 
-        __( sizeof idCmd - pso->readF( tinP , (byteT*)&idCmd , sizeof idCmd ) ) ;
+        __( sizeof idCmd - pso->readF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ) ;
         ZE( countT , idCmd ) ;
     {
     while( !etThread && !bDirQuit )
     ZE( boolT , bDirQuit ) ;
 
-    pso->etherF( tinP , etThread ) ;
+    pso->etherF( tinBaseP , etThread ) ;
 
     switchStackC& swsDir = *(switchStackC*)pTaskP->c5 ;
     countT*& pczLever    =      *(countT**)pTaskP->c4 ;
@@ -216,7 +216,7 @@ TASK( tmDirectoryServeClientF )
     else if( sccSgn > scc0 ) scSgn =   1 ;
          if( sccSgn < scc0 ) scSgn = - 1 ;
     ZE( sCountT , scSgn ) ;
-    sCountC scc0 = sCountC( tinP , ether ) ;
+    sCountC scc0 = sCountC( tinBaseP , ether ) ;
     sCountC sccSgn = *(recDirC*)c1P - *(recDirC*)c2P ;
 
     etherC& ether = *(etherC*)pEtherP ;
@@ -226,7 +226,7 @@ TASK( tmDirectoryServeClientF )
     {
     IFbEcAREFUL
 {
-countT subtract_recDirC_F( tinS& tinP , countT& pEtherP , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_recDirC_F( tinBaseS& tinBaseP , countT& pEtherP , countT& c1P , countT& c2P , countT& c3P )
 
 /*1*/WAKEhIDE( "directory.port.groups" )/*1*/
 /**/

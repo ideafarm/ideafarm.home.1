@@ -12,12 +12,12 @@
         DEL( psWrap ) ;
         }
             }
-                swsWrapRefP.ungrabF( tinP ) ;
+                swsWrapRefP.ungrabF( tinBaseP ) ;
                 }
                     }
                         }
                             swsWrapRefP << (countT)pc2WrapRef ; //W: WARNING: THESE DUPLICATE POINTERS MUST ONLY BE DELETED WHEN !cRef, I.E. ONLY WO TIME
-                            cLeverPayloadP = swsWrapRefP.leverF( tinP , idf ) ;
+                            cLeverPayloadP = swsWrapRefP.leverF( tinBaseP , idf ) ;
                             //CONoUTrAW( "doWrapLocallyIfIF: pushed a wrap ref\r\n" ) ; //U::
                         {
                         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
@@ -25,86 +25,86 @@
                         pc2WrapRef->c1 = (countT)psWrap ; psWrap = 0 ;
                     {
                     if( pc2WrapRef )
-                    etThread.newF( tinP , LF , pc2WrapRef ) ; ___( pc2WrapRef ) ;
+                    etThread.newF( tinBaseP , LF , pc2WrapRef ) ; ___( pc2WrapRef ) ;
                     ZE( count2S* , pc2WrapRef ) ;
                 {
                 else
-                if( !cFlavors ) etThread( tinP , psWrap ) ;
-                countT cFlavors = swsWrapRefP.cFlavorsF( tinP ) ;
-                swsWrapRefP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                if( !cFlavors ) etThread( tinBaseP , psWrap ) ;
+                countT cFlavors = swsWrapRefP.cFlavorsF( tinBaseP ) ;
+                swsWrapRefP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                 //}
                 //    }
                 //        }
                 //            }
-                //                etThread( tinP , psGift ) ;
+                //                etThread( tinBaseP , psGift ) ;
                 //                }
-                //                    etThread( tinP , psSecret ) ;
+                //                    etThread( tinBaseP , psSecret ) ;
                 //                    }
-                //                        etThread.delF( tinP , psttw ) ;
+                //                        etThread.delF( tinBaseP , psttw ) ;
                 //                        }
-                //                            etThread.delF( tinP , psttw2 ) ;
+                //                            etThread.delF( tinBaseP , psttw2 ) ;
                 //                            }
-                //                                etThread.delF( tinP , psttw3 ) ;
+                //                                etThread.delF( tinBaseP , psttw3 ) ;
                 //                                }
-                //                                    etThread.strokeF( tinP , T("\f")+TF1(idMsg1Lath)+T(" ")+TF1(idMsg2Lath)+T(bM?" MEDIATED":" FINAL") ) ;
+                //                                    etThread.strokeF( tinBaseP , T("\f")+TF1(idMsg1Lath)+T(" ")+TF1(idMsg2Lath)+T(bM?" MEDIATED":" FINAL") ) ;
                 //
                 //                                    ( bM ? idMsg1Lath : idMsg2Lath ) = idMessage ;
                 //                                    static countT idMsg2Lath ;
                 //                                    static countT idMsg1Lath ;
                 //
-                //                                    countT bM = soulC::cFieldsIF( tinP , pbsToM ) ;
-                //                                    byteT* pbsToM = psWrap->pbFieldF( tinP , idTypesToM , flagssToM , cbfsToM , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ;
+                //                                    countT bM = soulC::cFieldsIF( tinBaseP , pbsToM ) ;
+                //                                    byteT* pbsToM = psWrap->pbFieldF( tinBaseP , idTypesToM , flagssToM , cbfsToM , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ;
                 //                                    ZE( countT , cbfsToM ) ;
                 //                                    ZE( flagsT , flagssToM ) ;
                 //                                    ZE( countT , idTypesToM ) ;
                 //                                {
-                //                                countT idMessage = etThread.strDigitsToSCountF( tinP , psttw3 ) ;
-                //                                etThread.strSubstringF( tinP , psttw3 , idf , idl , psttw2 ) ; ___( psttw3 ) ;
+                //                                countT idMessage = etThread.strDigitsToSCountF( tinBaseP , psttw3 ) ;
+                //                                etThread.strSubstringF( tinBaseP , psttw3 , idf , idl , psttw2 ) ; ___( psttw3 ) ;
                 //                                countT idl = idBlank - 1 ;
                 //                                countT idf = 1 ;
                 //                                ZE( strokeS* , psttw3 ) ;
                 //                            {
                 //                            if( idBlank )
-                //                            countT idBlank = etThread.strIdF( tinP , T(" ") , psttw2 ) ;
-                //                            etThread.strSubstringF( tinP , psttw2 , idf , idl , psttw ) ; ___( psttw2 ) ;
+                //                            countT idBlank = etThread.strIdF( tinBaseP , T(" ") , psttw2 ) ;
+                //                            etThread.strSubstringF( tinBaseP , psttw2 , idf , idl , psttw ) ; ___( psttw2 ) ;
                 //                            ZE( countT , idl ) ;
                 //                            countT idf = idColon + 1 ;
                 //                            ZE( strokeS* , psttw2 ) ;
                 //                        {
                 //                        if( idColon )
-                //                        countT idColon = etThread.strIdF( tinP , T(":") , psttw ) ;
+                //                        countT idColon = etThread.strIdF( tinBaseP , T(":") , psttw ) ;
                 //    
                 //                        *psSecret >> psttw ; ___( psttw ) ;
                 //                        ZE( strokeS* , psttw ) ;
                 //                    {
                 //                    if( psSecret )
-                //                    etThread.cioGetSecretF( tinP , psSecret , *psGift ) ; ___( psSecret ) ;
+                //                    etThread.cioGetSecretF( tinBaseP , psSecret , *psGift ) ; ___( psSecret ) ;
                 //                    ZE( soulC* , psSecret ) ;
                 //
-                //                    psGift->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbsGift , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                //                    psGift->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsGift , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                 //                {
                 //                if( psGift )
-                //                etThread( tinP , psGift , TAG( TAGiDnULL ) ) ;
+                //                etThread( tinBaseP , psGift , TAG( TAGiDnULL ) ) ;
                 //                ZE( soulC* , psGift ) ;
                 //            {
                 //            if( pbsGift )
                 //
-                //            byteT* pbsGift = soulC::pbFieldIF( tinP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
+                //            byteT* pbsGift = soulC::pbFieldIF( tinBaseP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
                 //            ZE( countT , cbGift ) ;
                 //            ZE( flagsT , flagsGift ) ;
                 //            ZE( countT , idTypeGift ) ;
                 //        {
                 //        if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATED && pczChannel[ 2 ] == ifcIDaDAM_SECRETsERVICE && pczChannel[ 3 ] == ifcIDaDAM_CONSOLE && pczChannel[ 4 ] == ifcOLDiDcHANNELfUNCTION_STROKEcONSOLE )
                 //
-                //        countT* pczChannel = (countT*)soulC::pbFieldIF( tinP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
+                //        countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
                 //        ZE( countT , cbC ) ;
                 //        ZE( flagsT , flagsC ) ;
                 //        ZE( countT , idTypeC ) ;
                 //    {
                 //    if( pbidType && *(countT*)pbidType == ifcOLDiDtYPEwRAP_GIFT )
                 //
-                //    byteT* pbidType = soulC::pbFieldIF( tinP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
+                //    byteT* pbidType = soulC::pbFieldIF( tinBaseP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
                 //    ZE( countT , cbidType ) ;
                 //    ZE( flagsT , flagsidType ) ;
                 //    ZE( countT , idTypeidType ) ;
@@ -128,28 +128,28 @@
                                     {
                                     if( *psGift == 2 )
                             
-                                    psGift->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbsGift , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                                    psGift->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsGift , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                                 {
                                 if( psGift )
-                                soulC* psGift = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
+                                soulC* psGift = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
                             {
                             if( pbsGift )
 
-                            byteT* pbsGift = soulC::pbFieldIF( tinP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
+                            byteT* pbsGift = soulC::pbFieldIF( tinBaseP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
                             ZE( countT , cbGift ) ;
                             ZE( flagsT , flagsGift ) ;
                             ZE( countT , idTypeGift ) ;
                         {
                         if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION )
                 
-                        countT* pczChannel = (countT*)soulC::pbFieldIF( tinP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
+                        countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
                         ZE( countT , cbC ) ;
                         ZE( flagsT , flagsC ) ;
                         ZE( countT , idTypeC ) ;
                     {
                     if( pbidType && *(countT*)pbidType == ifcOLDiDtYPEwRAP_GIFT )
                 
-                    byteT* pbidType = soulC::pbFieldIF( tinP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
+                    byteT* pbidType = soulC::pbFieldIF( tinBaseP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
                     ZE( countT , cbidType ) ;
                     ZE( flagsT , flagsidType ) ;
                     ZE( countT , idTypeidType ) ;
@@ -177,31 +177,31 @@
                         {
                         if( *psTo )
             
-                        psTo->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbsToOrToM , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                        psTo->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsToOrToM , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                     {
                     if( psTo )
-                    soulC* psTo = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psTo ) ;
+                    soulC* psTo = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psTo ) ;
                 {
                 if( pbsToOrToM )
         
-                byteT* pbsToOrToM = psWrap->pbFieldF( tinP , idTypesToOrToM , flagssToOrToM , cbfsToOrToM , bToMediators ? ifcOLDiDfIELDwRAP_TOmEDIATOR : ifcOLDiDfIELDwRAP_TO ) ;
+                byteT* pbsToOrToM = psWrap->pbFieldF( tinBaseP , idTypesToOrToM , flagssToOrToM , cbfsToOrToM , bToMediators ? ifcOLDiDfIELDwRAP_TOmEDIATOR : ifcOLDiDfIELDwRAP_TO ) ;
                 ZE( countT , cbfsToOrToM ) ;
                 ZE( flagsT , flagssToOrToM ) ;
                 ZE( countT , idTypesToOrToM ) ;
 
                 //bDo WAS RESET HERE ; ON 2011.01.13 THE RESET LINE WAS MOVED SO THAT RESET ONLY OCCURS IF *psTo ; WAS NOT GETTING OWN WRAP ON A DUT WITH RELAY IN LONE HOME
         
-                boolT bToMediators = !( F(flagsPut) & flCIOpUT_IGNOREmEDIATORlIST ) && !psWrap->bKidEmptyF( tinP , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ;
-                flagsT flagsPut = psWrap->cFieldF( tinP , ifcOLDiDfIELDwRAP_FLAGS ) ;
+                boolT bToMediators = !( F(flagsPut) & flCIOpUT_IGNOREmEDIATORlIST ) && !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ;
+                flagsT flagsPut = psWrap->cFieldF( tinBaseP , ifcOLDiDfIELDwRAP_FLAGS ) ;
             {
-            if( !psWrap->bKidEmptyF( tinP , ifcOLDiDfIELDwRAP_TO ) )
+            if( !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TO ) )
             boolT bDo = 1 ;
             ZE( boolT , bTargeted ) ; //U::
 
-            psWrap->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbsWrapP , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+            psWrap->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsWrapP , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
         {
         if( psWrap )
-        soulC* psWrap = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+        soulC* psWrap = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
     {
     if( !idPhaseP || idPhaseP == 2 )
 
@@ -210,14 +210,14 @@
             }
                 }
                     }
-                        swsIdptMediatorP.ungrabF( tinP ) ;
+                        swsIdptMediatorP.ungrabF( tinBaseP ) ;
 
                         }
                             }
                                 break ;
                                 }
-                                    if( ids ) ppSws[ off ]->extractF( 0 , tinP ) ;
-                                    ppSws[ off ]->sinkF( tinP , ids , (byteT*)&idptOriginP , flSTACKsINK_QUERY , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
+                                    if( ids ) ppSws[ off ]->extractF( 0 , tinBaseP ) ;
+                                    ppSws[ off ]->sinkF( tinBaseP , ids , (byteT*)&idptOriginP , flSTACKsINK_QUERY , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                                     ZE( countT , ids ) ;
                                 {
                                 for( countT off = 0 ; off < 2 ; off ++ )
@@ -225,16 +225,16 @@
                                 switchStackC* ppSws[] = { &swsIdptMediatorP , &swsIdptMediatorAltP } ;
 
                                 THREADmODE2rESTORE
-                                etThread.strokeF( tinP , T("m-: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
+                                etThread.strokeF( tinBaseP , T("m-: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
                                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                             {
                             case ifcOLDiDcMDrEGISTERmEDIATOR_AMdEAD  :
                             }
                                 break ;
-                                swsIdptMediatorP.sinkF( tinP , countTC() , (byteT*)&idptOriginP , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
+                                swsIdptMediatorP.sinkF( tinBaseP , countTC() , (byteT*)&idptOriginP , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
 
                                 //THREADmODE2rESTORE
-                                //etThread.strokeF( tinP , T("m+: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
+                                //etThread.strokeF( tinBaseP , T("m+: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
                                 //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                             {
                             case ifcOLDiDcMDrEGISTERmEDIATOR_AMaLIVE :
@@ -242,36 +242,36 @@
                         switch( idCmd )
 
                         idAdamMediatorP = idAdam ;
-                        swsIdptMediatorP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                        swsIdptMediatorP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                                                 
                         countT idAdam = *(countT*)pb_idAdam ;
                         countT idCmd  = *(countT*)pb_idCmd ;
                     {
                     if( idptOriginP && pb_idCmd && pb_idAdam )
     
-                    byteT* pb_idAdam = soulC::pbFieldIF( tinP , idType2 , flags2 , cb2 , 2 , pbsGift ) ;
+                    byteT* pb_idAdam = soulC::pbFieldIF( tinBaseP , idType2 , flags2 , cb2 , 2 , pbsGift ) ;
                     ZE( countT , cb2 ) ;
                     ZE( flagsT , flags2 ) ;
                     ZE( countT , idType2 ) ;
     
-                    byteT* pb_idCmd = soulC::pbFieldIF( tinP , idType1 , flags1 , cb1 , 1 , pbsGift ) ;
+                    byteT* pb_idCmd = soulC::pbFieldIF( tinBaseP , idType1 , flags1 , cb1 , 1 , pbsGift ) ;
                     ZE( countT , cb1 ) ;
                     ZE( flagsT , flags1 ) ;
                     ZE( countT , idType1 ) ;
     
-                    byteT* pbsGift = soulC::pbFieldIF( tinP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
+                    byteT* pbsGift = soulC::pbFieldIF( tinBaseP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
                     ZE( countT , cbGift ) ;
                     ZE( flagsT , flagsGift ) ;
                     ZE( countT , idTypeGift ) ;
                 {
                 if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION )
                                 
-                countT* pczChannel = (countT*)soulC::pbFieldIF( tinP , idTypec , flagsc , cbc , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
+                countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypec , flagsc , cbc , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
                 ZE( countT , cbc ) ;
                 ZE( flagsT , flagsc ) ;
                 ZE( countT , idTypec ) ;
             {
-            if( soulC::cFieldsIF( tinP , pbsWrapP ) >= ifcOLDiDfIELDwRAP_GIFT && soulC::cFieldIF( tinP , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) == ifcOLDiDtYPEwRAP_GIFT )
+            if( soulC::cFieldsIF( tinBaseP , pbsWrapP ) >= ifcOLDiDfIELDwRAP_GIFT && soulC::cFieldIF( tinBaseP , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) == ifcOLDiDtYPEwRAP_GIFT )
     
             }
                 }
@@ -282,9 +282,9 @@
                             }
                                 //}
                                 //    THREADmODE2rESTORE
-                                //    etThread.strokeF( tinP , T("patched to ")+TF1(*(countT*)pb_idPort)+T(*(nicNameC*)pb_nn)+T("\r\n") ) ; //U::
-                                //    etThread.strokeF( tinP , T("patched from ")+T(idptm)+T("\r\n") ) ; //U::
-                                //    etThread.strokeF( tinP , T("top plate is ")+T(idptms)+T("\r\n") ) ; //U::
+                                //    etThread.strokeF( tinBaseP , T("patched to ")+TF1(*(countT*)pb_idPort)+T(*(nicNameC*)pb_nn)+T("\r\n") ) ; //U::
+                                //    etThread.strokeF( tinBaseP , T("patched from ")+T(idptm)+T("\r\n") ) ; //U::
+                                //    etThread.strokeF( tinBaseP , T("top plate is ")+T(idptms)+T("\r\n") ) ; //U::
                                 //    portTimeC& idptms = *(portTimeC*)&swsIdptMediatorP[ 1 ] ;
                                 //    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                                 //{
@@ -295,19 +295,19 @@
                                 *(nicNameC*)pb_nn   = (nicNameC&)idptm ;
                                 *(countT*)pb_idPort = idptm ;
         
-                                swsIdptMediatorP.ungrabF( tinP ) ;
-                                swsIdptMediatorAltP.ungrabF( tinP ) ;
+                                swsIdptMediatorP.ungrabF( tinBaseP ) ;
+                                swsIdptMediatorAltP.ungrabF( tinBaseP ) ;
     
                                 //THREADmODE2rESTORE
-                                //etThread.strokeF( tinP , T("patched null mediator to ")+TF1(idAdamMediatorP)+T(" mediator\r\n")+T(idptm)+T("\r\n") ) ; //U::
+                                //etThread.strokeF( tinBaseP , T("patched null mediator to ")+TF1(idAdamMediatorP)+T(" mediator\r\n")+T(idptm)+T("\r\n") ) ; //U::
                                 //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
                                 }
                                     LOGrAW7( bAlt ? "could not assign a mediator because -->" : "could not assign a mediator because <--" , swsIdptMediatorP , " " , swsIdptMediatorAltP , " cells of " , idAdamMediator , " are registered\r\n" ) ;
-                                    tinP.pEther->traceF( tinP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
+                                    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
                                 {
                                 if( !idptm )
-                                swsm.randomF( tinP , pb_idptm ) ;
+                                swsm.randomF( tinBaseP , pb_idptm ) ;
                                 byteT* pb_idptm = (byteT*)&idptm ;
                                 portTimeC idptm ;
                                 switchStackC& swsm = bAlt ? swsIdptMediatorAltP : swsIdptMediatorP ;
@@ -316,39 +316,39 @@
                                         : 1
                                         ? 0
                                     : swsIdptMediatorP
-                                    ? ( tinP.ranUni % TUCK ) / TUCK * 2
+                                    ? ( ((tinNormalS&)tinBaseP).ranUni % TUCK ) / TUCK * 2
                                 const boolT bAlt = swsIdptMediatorP && swsIdptMediatorAltP
                                 idAdamMediatorP = idAdamMediator ;
     
-                                swsIdptMediatorAltP.grabF( tinP , TAG( TAGiDnULL ) ) ;
-                                swsIdptMediatorP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                swsIdptMediatorAltP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                swsIdptMediatorP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                             {
                             else if( !*(countT*)pb_idPort )
                             if( !pb_time2 ) break ;
         
-                            byteT* pb_time2 = soulC::pbFieldIF( tinP , idType_time2 , flags_time2 , cb_time2 , off + 4 , pbsToM ) ;
+                            byteT* pb_time2 = soulC::pbFieldIF( tinBaseP , idType_time2 , flags_time2 , cb_time2 , off + 4 , pbsToM ) ;
                             ZE( countT , cb_time2 ) ;
                             ZE( flagsT , flags_time2 ) ;
                             ZE( countT , idType_time2 ) ;
         
-                            byteT* pb_time1 = soulC::pbFieldIF( tinP , idType_time1 , flags_time1 , cb_time1 , off + 3 , pbsToM ) ;
+                            byteT* pb_time1 = soulC::pbFieldIF( tinBaseP , idType_time1 , flags_time1 , cb_time1 , off + 3 , pbsToM ) ;
                             ZE( countT , cb_time1 ) ;
                             ZE( flagsT , flags_time1 ) ;
                             ZE( countT , idType_time1 ) ;
         
-                            byteT* pb_nn = soulC::pbFieldIF( tinP , idType_nn , flags_nn , cb_nn , off + 2 , pbsToM ) ;
+                            byteT* pb_nn = soulC::pbFieldIF( tinBaseP , idType_nn , flags_nn , cb_nn , off + 2 , pbsToM ) ;
                             ZE( countT , cb_nn ) ;
                             ZE( flagsT , flags_nn ) ;
                             ZE( countT , idType_nn ) ;
         
-                            byteT* pb_idPort = soulC::pbFieldIF( tinP , idType_idPort , flags_idPort , cb_idPort , off + 1 , pbsToM ) ;
+                            byteT* pb_idPort = soulC::pbFieldIF( tinBaseP , idType_idPort , flags_idPort , cb_idPort , off + 1 , pbsToM ) ;
                             ZE( countT , cb_idPort ) ;
                             ZE( flagsT , flags_idPort ) ;
                             ZE( countT , idType_idPort ) ;
                         {
                         for(;;)
                         ZE( countT , off ) ;
-                        if( portTimeC::cFieldsF( tinP ) - 4 ) { BLAMMO ; }
+                        if( portTimeC::cFieldsF( tinBaseP ) - 4 ) { BLAMMO ; }
     
                         countT idAdamMediator = pczChannel[ 2 ] ;
                     {
@@ -356,19 +356,19 @@
                 {
                 if( pczChannel && pbsToM )
         
-                byteT* pbsToM = soulC::pbFieldIF( tinP , idTypesToM , flagssToM , cbsToM , ifcOLDiDfIELDwRAP_TOmEDIATOR , pbsWrapP ) ;
+                byteT* pbsToM = soulC::pbFieldIF( tinBaseP , idTypesToM , flagssToM , cbsToM , ifcOLDiDfIELDwRAP_TOmEDIATOR , pbsWrapP ) ;
                 ZE( countT , cbsToM ) ;
                 ZE( flagsT , flagssToM ) ;
                 ZE( countT , idTypesToM ) ;
 
-                countT* pczChannel = (countT*)soulC::pbFieldIF( tinP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
+                countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
                 ZE( countT , cbC ) ;
                 ZE( flagsT , flagsC ) ;
                 ZE( countT , idTypeC ) ;
             {
             if( pbidType && *(countT*)pbidType == ifcOLDiDtYPEwRAP_GIFT )
         
-            byteT* pbidType = soulC::pbFieldIF( tinP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
+            byteT* pbidType = soulC::pbFieldIF( tinBaseP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
             ZE( countT , cbidType ) ;
             ZE( flagsT , flagsidType ) ;
             ZE( countT , idTypeidType ) ;
@@ -382,7 +382,7 @@
 
     RELAYiNFOf
 {
-/*1*/voidT relayOldC::doWrapLocallyIfIF( tinS& tinP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
+/*1*/voidT relayOldC::doWrapLocallyIfIF( tinBaseS& tinBaseP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
 
 /**/
 */

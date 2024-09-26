@@ -8,22 +8,22 @@
 
 
 }
-    ether.delF( tinP , psttReply ) ;
+    ether.delF( tinBaseP , psttReply ) ;
     }
         __1
         __( rc ) ;
-        if( !( F(ether.flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ) ether.traceF( tinP , T(": 14 ::::")+T(psttReply)+T(":::: ") ) ;
-        ether.strokeF( tinP , T("\r\nunexpected telnet reply: \"")+T(psttReply)+T("\"\r\n") ) ;
+        if( !( F(ether.flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ) ether.traceF( tinBaseP , T(": 14 ::::")+T(psttReply)+T(":::: ") ) ;
+        ether.strokeF( tinBaseP , T("\r\nunexpected telnet reply: \"")+T(psttReply)+T("\"\r\n") ) ;
     {
     else if( rcP != rc )
     }
-        ether.delF( tinP , psttw ) ;
-        ether.strokeF( tinP , T(psttw)+T(" :::: ")+T(psttReply) ) ;
-        ether.strFromF( tinP , psttw , rc ) ; ___( psttw ) ;
+        ether.delF( tinBaseP , psttw ) ;
+        ether.strokeF( tinBaseP , T(psttw)+T(" :::: ")+T(psttReply) ) ;
+        ether.strFromF( tinBaseP , psttw , rc ) ; ___( psttw ) ;
         ZE( strokeS* , psttw ) ;
     {
     if( rcP == -1 )
-    countT rc = pSControl->readWoReplyF( tinP , psttReply ) ; ___( psttReply ) ;
+    countT rc = pSControl->readWoReplyF( tinBaseP , psttReply ) ; ___( psttReply ) ;
     ZE( strokeS* , psttReply ) ;
     _IO_
 
@@ -35,7 +35,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT boxC::verifyReplyF( tinS& tinP , const countT rcP )/*1*/
+/*1*/voidT boxC::verifyReplyF( tinBaseS& tinBaseP , const countT rcP )/*1*/
 
 /**/
 */

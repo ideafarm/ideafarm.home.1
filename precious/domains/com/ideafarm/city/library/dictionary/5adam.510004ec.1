@@ -9,21 +9,21 @@
 
 REST
 
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
-etThread.strokeF( tinP , T("\felapsed time: ")+TT(timeB1,timeB2) ) ;
-etThread.osTimeSubtractF( tinP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
-etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
+etThread.strokeF( tinBaseP , T("\felapsed time: ")+TT(timeB1,timeB2) ) ;
+etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
 ZE( sCountT , timeB2 ) ;
 ZE( countT , timeB1 ) ;
 
 }
-    etThread.delF( tinP , psttw ) ;
-    etThread.strokeF( tinP , psttw ) ;
+    etThread.delF( tinBaseP , psttw ) ;
+    etThread.strokeF( tinBaseP , psttw ) ;
 
-    for( countT idl = 1 ; idl <= 0x100 ; idl ++ ) etThread.strFuseF( tinP , psttw , tNull+OLDmOVEtO(xx1,yy1)+OLDlINEtO(xx2+idl,yy2) ) ;
+    for( countT idl = 1 ; idl <= 0x100 ; idl ++ ) etThread.strFuseF( tinBaseP , psttw , tNull+OLDmOVEtO(xx1,yy1)+OLDlINEtO(xx2+idl,yy2) ) ;
 
-    etThread.strMakeF( tinP , LF , psttw , tWoth+TF1(idt) , 0x10000 ) ; ___( psttw ) ;
+    etThread.strMakeF( tinBaseP , LF , psttw , tWoth+TF1(idt) , 0x10000 ) ; ___( psttw ) ;
     ZE( strokeS* , psttw ) ;
 
     }
@@ -43,7 +43,7 @@ ZE( countT , timeB1 ) ;
 {
 for( countT idt = 1 ; !ether && idt <= 0x10 ; idt ++ )
 
-etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
 ZE( sCountT , timeA2 ) ;
 ZE( countT , timeA1 ) ;
 

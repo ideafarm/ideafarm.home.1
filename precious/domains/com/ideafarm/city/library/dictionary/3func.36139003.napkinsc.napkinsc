@@ -15,45 +15,45 @@
 
     }
         }
-            tinP.pEther->delF( tinP , pstt1f ) ;
+            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , pstt1f ) ;
             }
-                //etherC::etRockIF( tinP ).traceF( tinP , T("deleted : ")+T(psttc1) ) ;
-                tinP.pEther->diskFileOrDirDeleteF( tinP , psttc1 ) ;
-                //etherC::etRockIF( tinP ).traceF( tinP , T("deleting: ")+T(psttc1) ) ;
+                //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("deleted : ")+T(psttc1) ) ;
+                ((tinNormalS&)tinBaseP).pEther->diskFileOrDirDeleteF( tinBaseP , psttc1 ) ;
+                //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("deleting: ")+T(psttc1) ) ;
             {
             FORsTRINGSiN1( pstt1f )
 
-            tinP.pcQuit = pcQuitSave ;
+            ((tinNormalS&)tinBaseP).pcQuit = pcQuitSave ;
 
-            countT cFound = tinP.pEther->diskFindFileOrDirF( tinP , pstt1f , fnLike.pathF() , &pat , flDISKfIND_null , 0 , 0 , 0 , 8 ) ; ___( pstt1f ) ;
+            countT cFound = ((tinNormalS&)tinBaseP).pEther->diskFindFileOrDirF( tinBaseP , pstt1f , fnLike.pathF() , &pat , flDISKfIND_null , 0 , 0 , 0 , 8 ) ; ___( pstt1f ) ;
             ZE( strokeS* , pstt1f ) ;
 
-            patternC pat( tinP , *tinP.pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-            fileNameC fnLike( tinP , *tinP.pEther , tLike ) ;
+            patternC pat( tinBaseP , *((tinNormalS&)tinBaseP).pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+            fileNameC fnLike( tinBaseP , *((tinNormalS&)tinBaseP).pEther , tLike ) ;
 
-                                       tinP.pcQuit = 0 ;
-            const countT* pcQuitSave = tinP.pcQuit ;
+                                       ((tinNormalS&)tinBaseP).pcQuit = 0 ;
+            const countT* pcQuitSave = ((tinNormalS&)tinBaseP).pcQuit ;
 
-            //etherC::etRockIF( tinP ).traceF( tinP , T("deleting: ")+tLike ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("deleting: ")+tLike ) ;
 
             TN( tLike , "" ) ; tLike = T(iffn)+T(postName)+T(".*") ;
 
-            ifFileNameC iffn( tinP , *tinP.pEther , postPath ) ;
+            ifFileNameC iffn( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postPath ) ;
         {
         if( !POOP )
 
         __Z( *postPath ) ;
-        thirdC::postPathStateSpaceIF( tinP , postPath , sizeof postPath , idStateSpace , idMemorySpaceCt ) ;
+        thirdC::postPathStateSpaceIF( tinBaseP , postPath , sizeof postPath , idStateSpace , idMemorySpaceCt ) ;
         osTextT postPath[ TUCK << 1 ] ;
     {
     if( F(flagsCt) & flNAPKINSc_PURGEoNcT )
 
-    thirdC::c_strncpyIF( tinP , postName , postP , sizeof postName ) ;
+    thirdC::c_strncpyIF( tinBaseP , postName , postP , sizeof postName ) ;
 
-    thirdC::c_memsetIF( tinP , (byteT*)pcDockOffNapkin , sizeof pcDockOffNapkin , - 1 ) ;
+    thirdC::c_memsetIF( tinBaseP , (byteT*)pcDockOffNapkin , sizeof pcDockOffNapkin , - 1 ) ;
 
-    else            thirdC::c_memsetIF( tinP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
-    if( pbBitsCtP ) thirdC::c_memcpyIF( tinP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
+    else            thirdC::c_memsetIF( tinBaseP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
+    if( pbBitsCtP ) thirdC::c_memcpyIF( tinBaseP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
 
     _IO_
 
@@ -62,13 +62,13 @@
 flagsCt( flagsP )
 expCbPerItem( expCbPerItemP ) ,
 expCbPerNapkin( expCbPerNapkinP ) ,
-idStateSpace( idStateSpaceP ? idStateSpaceP : ifcIDsTATEsPACE_SINGLEaDAM( tinP ) ) ,
+idStateSpace( idStateSpaceP ? idStateSpaceP : ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) ) ,
 offDockNextCt( 0 ) ,
 cDocks( sizeof pbDockNapkin / SIZEOF_napkinC ) ,
 idMemorySpaceCt( idMemorySpaceP ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
-/*1*/napkinsC::napkinsC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , countT expCbPerNapkinP , countT expCbPerItemP , const countT idStateSpaceP , const flagsT flagsP , const countT idMemorySpaceP ) :/*1*/
+/*1*/napkinsC::napkinsC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , countT expCbPerNapkinP , countT expCbPerItemP , const countT idStateSpaceP , const flagsT flagsP , const countT idMemorySpaceP ) :/*1*/
 
 /**/
 */

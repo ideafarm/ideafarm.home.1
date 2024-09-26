@@ -8,25 +8,25 @@
 
 
 }
-    //U: THIS CANNOT BE DONE HERE SINCE CHILD THREADS MIGHT STILL EXIST: if( tinP.pEther ) tinP.pEther->flagsMode &= ~( F(flTHIRDmODE_QUITTER) ) ;
-    //tinP.pc Utility[ 0 ] -- ; //U::TO FIND A BUG
-    ((thirdC&)*tinP.pag1->_etherC_.pEtPrime).thirdWaitTillQuittingF( tinP ) ;
-    //tinP.pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
+    //U: THIS CANNOT BE DONE HERE SINCE CHILD THREADS MIGHT STILL EXIST: if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->flagsMode &= ~( F(flTHIRDmODE_QUITTER) ) ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
+    ((thirdC&)*((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime).thirdWaitTillQuittingF( tinBaseP ) ;
+    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
 
     _IO_
 
     }
         if( POOP ) return ;
-        __( !tinP.pag1->_etherC_.pEtPrime ) ;
+        __( !((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT etherC::loafIF( tinS& tinP )/*1*/
+/*1*/voidT etherC::loafIF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */
- tinP
+ tinBaseP
 arguments
 if pThird then before returning, i make *pThird a nonquitter so it will not become impotent during the quit phase
 i will block efficiently until the process is quitting

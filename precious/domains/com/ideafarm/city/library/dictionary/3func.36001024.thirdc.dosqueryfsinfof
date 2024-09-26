@@ -20,7 +20,7 @@
 
             }
                 }
-                    ++ s ; dosSleepIF( tinP , TOCK >> 2 ) ;
+                    ++ s ; dosSleepIF( tinBaseP , TOCK >> 2 ) ;
                     POOPRqUIET
                 {
                 else if( bForever || cTriesP )
@@ -35,8 +35,8 @@
                         }
                             if( bLocal ) pInfoDisk1P->flags |= flINFOdISK1s_LOCAL ;
 
-                            else       bLocal = tinP.brcRaw == DRIVE_FIXED || tinP.brcRaw == DRIVE_RAMDISK /*|| tinP.brcRaw == DRIVE_REMOVABLE || tinP.brcRaw == DRIVE_CDROM*/ ;
-                            if( POOP ) { if( !bQuiet ) { LOGrAW3( "dosQueryFSInfoF / GetDriveType [brcQuery]: " , tinP.brcQuery , "\r\n" ) ; } }
+                            else       bLocal = ((tinNormalS&)tinBaseP).brcRaw == DRIVE_FIXED || ((tinNormalS&)tinBaseP).brcRaw == DRIVE_RAMDISK /*|| ((tinNormalS&)tinBaseP).brcRaw == DRIVE_REMOVABLE || ((tinNormalS&)tinBaseP).brcRaw == DRIVE_CDROM*/ ;
+                            if( POOP ) { if( !bQuiet ) { LOGrAW3( "dosQueryFSInfoF / GetDriveType [brcQuery]: " , ((tinNormalS&)tinBaseP).brcQuery , "\r\n" ) ; } }
                             ZE( boolT , bLocal ) ;
 
                             BOSpOOP
@@ -44,7 +44,7 @@
 
                             if( osFlags & FILE_READ_ONLY_VOLUME ) pInfoDisk1P->flags |= flINFOdISK1s_READoNLY ;
 
-                            c_strncpyIF( tinP , pInfoDisk1P->postVolumeName , postVolumeName , sizeof pInfoDisk1P->postVolumeName ) ;
+                            c_strncpyIF( tinBaseP , pInfoDisk1P->postVolumeName , postVolumeName , sizeof pInfoDisk1P->postVolumeName ) ;
                             pInfoDisk1P->idVolume = cSerial ;
                             pInfoDisk1P->cUnusedUnits = cFreeClusters ;
                             pInfoDisk1P->cAllocationUnits = cClusters ;
@@ -55,10 +55,10 @@
                         if( POOP ) { if( !bQuiet ) { LOGrAW( "dosQueryFSInfoF / new failed\r\n" ) ; } }
 
                         __Z( pInfoDisk1P ) ;
-                        pInfoDisk1P = new( 0 , tinP , LF ) infoDisk1S( tinP , *this ) ; ___( pInfoDisk1P ) ;
+                        pInfoDisk1P = new( 0 , tinBaseP , LF ) infoDisk1S( tinBaseP , *this ) ; ___( pInfoDisk1P ) ;
                     {
                     else
-                    if( POOP ) { if( !bQuiet ) { LOGrAW3( "dosQueryFSInfoF / GetVolumeInformation [brcQuery]: " , tinP.brcQuery , "\r\n" ) ; } }
+                    if( POOP ) { if( !bQuiet ) { LOGrAW3( "dosQueryFSInfoF / GetVolumeInformation [brcQuery]: " , ((tinNormalS&)tinBaseP).brcQuery , "\r\n" ) ; } }
 
                     BOSpOOP
                     BOS( WHATsfr , BOSoK , GetVolumeInformation( postDriveNameUse , postVolumeName , sizeof postVolumeName , &cSerial , &cnu1 , &osFlags , 0 , 0 ) )
@@ -73,7 +73,7 @@
                     }
                         //LOGrAW( "\r\n" ) ;
                         //LOGrAW( postDriveNameUse ) ;
-                        //LOGrAW3( "dosQueryFSInfoF / GetDiskFreeSpace [brcQuery]: " , tinP.brcQuery , "\r\n" ) ;
+                        //LOGrAW3( "dosQueryFSInfoF / GetDiskFreeSpace [brcQuery]: " , ((tinNormalS&)tinBaseP).brcQuery , "\r\n" ) ;
                     {
                     if( !bQuiet )
                 {
@@ -96,7 +96,7 @@
             while( bForever || cTriesP -- )
             const boolT bQuiet   = cTriesP == 1 ;
             const boolT bForever = !cTriesP ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             SCOOPS
         {
@@ -132,9 +132,9 @@
             BOSpOOP
             }
                 pInfoDisk1P->b Local = 0 ;
-                tinP.bosFail = 0 ;
+                ((tinNormalS&)tinBaseP).bosFail = 0 ;
             {
-            if( tinP.brcRaw == ERROR_ACCESS_DENIED )
+            if( ((tinNormalS&)tinBaseP).brcRaw == ERROR_ACCESS_DENIED )
             BOSI( WHATsfr , BOSfAIL , DosOpen( postRoot , &hfi , &action , 0 , 0 , OPEN_ACTION_OPEN_IF_EXISTS , OPEN_FLAGS_DASD|OPEN_SHARE_DENYNONE , 0 ) )
             const osTextT postRoot[] = { postDriveNameP[ 3 ] , ':' , 0 } ;
             ZE( ULONG , action ) ;
@@ -145,18 +145,18 @@
         if( !*this && pInfoDisk1P ) *pInfoDisk1P << infoDisk1a << infoDisk1b ;
         }
             __Z( pInfoDisk1P ) ;
-            pInfoDisk1P = new( 0 , tinP , LF ) infoDisk1S( tinP , *this ) ; ___( pInfoDisk1P ) ;
+            pInfoDisk1P = new( 0 , tinBaseP , LF ) infoDisk1S( tinBaseP , *this ) ; ___( pInfoDisk1P ) ;
         {
         if( !*this && cFound == 2 )
         }
             BOSpOOP
-            if( tinP.bosFail && ( tinP.brcRaw == ERROR_INVALID_DRIVE /*|| tinP.brcRaw == ERROR_ NOT_READY*/ ) ) tinP.bosFail = 0 ;
-            cFound += !tinP.bosFail ;
+            if( ((tinNormalS&)tinBaseP).bosFail && ( ((tinNormalS&)tinBaseP).brcRaw == ERROR_INVALID_DRIVE /*|| ((tinNormalS&)tinBaseP).brcRaw == ERROR_ NOT_READY*/ ) ) ((tinNormalS&)tinBaseP).bosFail = 0 ;
+            cFound += !((tinNormalS&)tinBaseP).bosFail ;
             BOSI( WHATsfr , BOSfAIL , DosQueryFSInfo( idDrive , FSIL_VOLSER , &infoDisk1b , sizeof infoDisk1b ) )
 
             BOSpOOP
-            if( tinP.bosFail && ( tinP.brcRaw == ERROR_INVALID_DRIVE /*|| tinP.brcRaw == ERROR_ NOT_READY*/ ) ) tinP.bosFail = 0 ;
-            cFound += !tinP.bosFail ;
+            if( ((tinNormalS&)tinBaseP).bosFail && ( ((tinNormalS&)tinBaseP).brcRaw == ERROR_INVALID_DRIVE /*|| ((tinNormalS&)tinBaseP).brcRaw == ERROR_ NOT_READY*/ ) ) ((tinNormalS&)tinBaseP).bosFail = 0 ;
+            cFound += !((tinNormalS&)tinBaseP).bosFail ;
             BOSI( WHATsfr , BOSfAIL , DosQueryFSInfo( idDrive , FSIL_ALLOC , &infoDisk1a , sizeof infoDisk1a ) )
         {
         if( !POOP )
@@ -183,7 +183,7 @@
             if( postDriveNameP[ 2 ] != '\\'                            ) { __( postDriveNameP[ 2          ] ) ;     }
             if( postDriveNameP[ 0 ] < 'a' || postDriveNameP[ 0 ] > 'z' ) { __( postDriveNameP[ 0          ] ) ;     }
             if( postDriveNameP[ costdn - 1 ] != '\\'                   ) { __( postDriveNameP[ costdn - 1 ] ) ;     }
-            countT costdn = c_strlenIF( tinP , postDriveNameP ) ;
+            countT costdn = c_strlenIF( tinBaseP , postDriveNameP ) ;
         {
         if( postDriveNameP[ 1 ] == ':' )
         if( POOP ) return ;
@@ -206,7 +206,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::dosQueryFSInfoF( tinS& tinP , infoDisk1S*& pInfoDisk1P , const osTextT* const postDriveNameP , countT cTriesP )/*1*/
+/*1*/voidT thirdC::dosQueryFSInfoF( tinBaseS& tinBaseP , infoDisk1S*& pInfoDisk1P , const osTextT* const postDriveNameP , countT cTriesP )/*1*/
 
 //U:: MIGRATE ALL CODE AWAY FROM USING THE "///d" FORM OF INPUT AND REMOVE SUPPORT FOR IT
 

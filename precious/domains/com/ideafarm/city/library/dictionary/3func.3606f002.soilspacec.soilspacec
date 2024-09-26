@@ -10,21 +10,21 @@
 }
     stLex << (countT)pLex ; pLex = 0 ;
     PoBJECT( tNameLexDefault ) = pLex ;
-    lexC* pLex = new( 0 , tinP , LF ) lexC( tinP , etherP , TAG( TAGiDnULL ) , tNameLexDefault ) ; ___( pLex ) ;
+    lexC* pLex = new( 0 , tinBaseP , LF ) lexC( tinBaseP , etherP , TAG( TAGiDnULL ) , tNameLexDefault ) ; ___( pLex ) ;
     TN( tNameLexDefault , "lex1" ) ;
 
     PoBJECT( tNameRootWordDefault ) = paRootWord ;
-    paRootWord = new( 0 , tinP , LF ) rootWordC( tinP , etherP , tNameRootWordDefault ) ; ___( paRootWord ) ;
+    paRootWord = new( 0 , tinBaseP , LF ) rootWordC( tinBaseP , etherP , tNameRootWordDefault ) ; ___( paRootWord ) ;
     TN( tNameRootWordDefault , "rootWord1" ) ;
 
     PoBJECT( tNameStackDefault ) = paStack ;
-    paStack = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE , (osTextT*)0 , 0 , (osTextT*)tNameStackDefault )  ; ___( paStack ) ;
+    paStack = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE , (osTextT*)0 , 0 , (osTextT*)tNameStackDefault )  ; ___( paStack ) ;
     TN( tNameStackDefault , "stack1" ) ;
 
     PoBJECT( postName ) = this ;
 
-    etherP.memSetF( tinP , (byteT*)ppsttRawWord , sizeof ppsttRawWord ) ;
-    if( psttNameP ) etherP.strMakeF( tinP , LF , *(osTextT**)&postName , psttNameP ) ;
+    etherP.memSetF( tinBaseP , (byteT*)ppsttRawWord , sizeof ppsttRawWord ) ;
+    if( psttNameP ) etherP.strMakeF( tinBaseP , LF , *(osTextT**)&postName , psttNameP ) ;
 {
 bQuit( 0 )
 scOff( 0 ) ,
@@ -37,16 +37,16 @@ bLiteralCount( 0 ) ,
 bLiteralNull( 0 ) ,
 paStack( 0 ) ,
 paRootWord( 0 ) ,
-sw_pObject( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , (byteT**)&postLever ) ,
+sw_pObject( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , (byteT**)&postLever ) ,
 psttLever( 0 ) ,
 postLever( 0 ) ,
 psttUseLex( 0 ) ,
-stLex( tinP , etherP , TAG( TAGiDnULL ) ) ,
-stackPrivate( tinP , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ,
+stLex( tinBaseP , etherP , TAG( TAGiDnULL ) ) ,
+stackPrivate( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ,
 ether( etherP ) ,
 postName( 0 ) ,
-baseSoilXxxxC( tinP.pag1->_soixlOldSpaceC_.postOldClassName , postName ) ,
-/*1*/soixlOldSpaceC::soixlOldSpaceC( tinS& tinP , etherC& etherP , const strokeS* const psttNameP ) :/*1*/
+baseSoilXxxxC( ((tinNormalS&)tinBaseP).pag1->_soixlOldSpaceC_.postOldClassName , postName ) ,
+/*1*/soixlOldSpaceC::soixlOldSpaceC( tinBaseS& tinBaseP , etherC& etherP , const strokeS* const psttNameP ) :/*1*/
 
 /**/
 */

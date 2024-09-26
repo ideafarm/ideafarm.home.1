@@ -20,9 +20,9 @@ thirdC::third_flagsModeProcess1I_IF() &= ~( F(flMODEpROCESS1_DEBUG) ) ;
         //{
         //if( idCycle == 4 )
 
-        //if( !( idCycle % ( TUCK * 0x4 ) ) ) PUSE.walkF( tinP , ifcIDtYPEpOOLoLDwALK_DESTRUCTION , countTC() , flPOOLoLDwALK_INCLUDEdROPSoTHERcLIENTS ) ;
+        //if( !( idCycle % ( TUCK * 0x4 ) ) ) PUSE.walkF( tinBaseP , ifcIDtYPEpOOLoLDwALK_DESTRUCTION , countTC() , flPOOLoLDwALK_INCLUDEdROPSoTHERcLIENTS ) ;
     
-        ++ s ; ether.osSleepF( tinP , TOCK * 4 ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK * 4 ) ;
     
         }
             while( cToDo -- ) etThread.osThreadF( TaRG1( tmStompF ) ) ;
@@ -32,7 +32,7 @@ thirdC::third_flagsModeProcess1I_IF() &= ~( F(flMODEpROCESS1_DEBUG) ) ;
             //CONoUTrAW3( "\r\nLAUNCH " , idCycle , "\r\n" ) ;
             //LOGrAW( "LAUNCHING STOMP THREAD\r\n" ) ;
             cSuppressed = 0 ;
-            //etherC::ether_cUtility_IF( tinP ) = 0 ; //U::TO FIND A BUG
+            //etherC::ether_cUtility_IF( tinBaseP ) = 0 ; //U::TO FIND A BUG
         {
         else
         }
@@ -42,18 +42,18 @@ thirdC::third_flagsModeProcess1I_IF() &= ~( F(flMODEpROCESS1_DEBUG) ) ;
                 //LOGrAW( TT(timeN1,timeN2)+T(": tmStompF launches suppressed because i currently have ")+TF2(cKids,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" kid threads\r\n") ) ;
             {
             if( cSuppressed <= 8 )
-            etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
             ++ cSuppressed ;
-            //etherC::ether_cUtility_IF( tinP ) = 1 ; //U::TO FIND A BUG
+            //etherC::ether_cUtility_IF( tinBaseP ) = 1 ; //U::TO FIND A BUG
         {
         if( cKids > 0x10 )
-        countT cKids = tinP.cKidThreads ;
+        countT cKids = ((tinNormalS&)tinBaseP).cKidThreads ;
     
         //}
         //    }
-        //        etThread.newF( tinP , LF , pbLeak , 1 ) ; ___( pbLeak ) ; //INTENTIONAL LEAK, TO TEST LEAK LOGGER
+        //        etThread.newF( tinBaseP , LF , pbLeak , 1 ) ; ___( pbLeak ) ; //INTENTIONAL LEAK, TO TEST LEAK LOGGER
         //        ZE( byteT* , pbLeak ) ;
         //    {
         //    _IO_
@@ -66,7 +66,7 @@ thirdC::third_flagsModeProcess1I_IF() &= ~( F(flMODEpROCESS1_DEBUG) ) ;
 while( !ether )
 ZE( countT , cSuppressed ) ;
 ZE( countT , idCycle ) ;
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_DEBUG ;
 //STOMP ON HTTP SERVER
 
@@ -78,41 +78,41 @@ thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_DEBUG ;
 //            LOGrAW( "blammoing\r\n" ) ;
 //        {
 //        if( !ether )
-//        ++ s ; ether.osSleepF( tinP , TICK ) ;
-//        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+//        ++ s ; ether.osSleepF( tinBaseP , TICK ) ;
+//        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 //        LOGrAW( "sleeping before blammoing\r\n" ) ;
 //
-//        etThread.diskFileOrDirDeleteF( tinP , tFile ) ;
+//        etThread.diskFileOrDirDeleteF( tinBaseP , tFile ) ;
 //        LOGrAW( "deleting ideafarm.blammo\r\n" ) ;
 //    {
-//    if( etThread.diskFileExistsF( tinP , tFile ) )
+//    if( etThread.diskFileExistsF( tinBaseP , tFile ) )
 //    LOGrAW( "looking for ideafarm.blammo\r\n" ) ;
 //    TN( tFile , "///d/ideafarm.blammo" ) ;
 //{
 
 //}
-//    byteT* pb2 = PUSE.newF( tinP , LF , 1 ) ; //SHOULD BLAMMO
-//    byteT* pb1 = PUSE.newF( tinP , LF , 1 ) ; //INTENTIONALLY NOT TAGGED
+//    byteT* pb2 = PUSE.newF( tinBaseP , LF , 1 ) ; //SHOULD BLAMMO
+//    byteT* pb1 = PUSE.newF( tinBaseP , LF , 1 ) ; //INTENTIONALLY NOT TAGGED
 //{
 
 //}
-//    etThread.delF( tinP , postr ) ;
+//    etThread.delF( tinBaseP , postr ) ;
 //    LOGrAW( postr ) ;
 //    LOGrAW( "GORILLA: memory readability map:\r\n" ) ;
-//    etherC::ifcBitDumpIF( tinP , postr , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
-//    etThread.newF( tinP , LF , postr , cbaNeeded ) ; ___( postr ) ;
+//    etherC::ifcBitDumpIF( tinBaseP , postr , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
+//    etThread.newF( tinBaseP , LF , postr , cbaNeeded ) ; ___( postr ) ;
 //    ZE( osTextT* , postr ) ;
 //    
 //    LOGrAW3( "[cbaNeeded]: " , cbaNeeded , "\r\n" ) ;
-//    countT cbaNeeded = etherC::ifcBitDumpIF( tinP , 0 , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
-//    countT cbGrain = thirdC::osMemoryReadabilityMapIF( tinP , pbBits , sizeof pbBits ) ;
+//    countT cbaNeeded = etherC::ifcBitDumpIF( tinBaseP , 0 , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;
+//    countT cbGrain = thirdC::osMemoryReadabilityMapIF( tinBaseP , pbBits , sizeof pbBits ) ;
 //    
 //{
 //DISPLAY A MEMORY READABILITY MAP
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
-//else etherC::loafIF( tinP ) ;
+//else etherC::loafIF( tinBaseP ) ;
 //}
 //    homeS::homeIF().flags |= flHOMEs_FIREtHIShOME ;
 //    CONoUTrAW( "setting flHOMEs_FIREtHIShOME\r\n" ) ;
@@ -132,21 +132,21 @@ etherC::loafIF( tinP ) ;
 //    sIn >> finger ;
 //    ZE( countT , finger ) ;
 //
-//    sock.readF( tinP , sIn ) ;
-//    soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+//    sock.readF( tinBaseP , sIn ) ;
+//    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 //
-//    sock.writeF( tinP , sOut ) ;
+//    sock.writeF( tinBaseP , sOut ) ;
 //
 //    sOut << (strokeS*)tEmailFoo ;
 //    sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL ;
 //    sOut << (countT)1 ;
 //    sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-//    soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+//    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 //
 //    TN( tEmailFoo , "foo@goo.com" ) ;
 //
-//    sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-//    socketC sock( tinP , etThread , TAG( TAGiDnULL ) ) ;
+//    sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+//    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 //
 //    if( POOP ) break ;
 //    __( !homeS::homeIF().idPortListServerEmailIdAccount ) ;
@@ -154,7 +154,7 @@ etherC::loafIF( tinP ) ;
 //while( !ether && !etThread )
 //TEST idAccount QUERY
  
-//U:: etThread.osThreadAdamF( tinP , ifcIDaDAM_GORILLAlISTS ) ; //PRODUCTION
+//U:: etThread.osThreadAdamF( tinBaseP , ifcIDaDAM_GORILLAlISTS ) ; //PRODUCTION
 
 TODO
 
@@ -171,13 +171,13 @@ DONE( tmStompF )
         if( !POOP ) { CONoUTrAW( "tmStompF/pass\r\n" ) ; }
     
         }
-            etThread.delF( tinP , postBody ) ;
+            etThread.delF( tinBaseP , postBody ) ;
             }
                 postBody[ costBody ] = 0 ;
-                countT costActual = sockc.readF( tinP , postBody , costBody ) ;
+                countT costActual = sockc.readF( tinBaseP , postBody , costBody ) ;
             {
             if( postBody )
-            etThread.newF( tinP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
+            etThread.newF( tinBaseP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
             ZE( osTextT* , postBody ) ;
         {
         if( !POOP )
@@ -185,13 +185,13 @@ DONE( tmStompF )
     
         }
             }
-                etThread.delF( tinP , pstt1w ) ;
+                etThread.delF( tinBaseP , pstt1w ) ;
                 }
                     }
-                        else if( !etThread.strCompareF( tinP , tContentLength , psttc1 ) ) bArmed = 1 ;
+                        else if( !etThread.strCompareF( tinBaseP , tContentLength , psttc1 ) ) bArmed = 1 ;
                         }
                             break ;
-                            costBody = etThread.strDigitsToSCountF( tinP , psttc1 , 0xa , 1 ) ;
+                            costBody = etThread.strDigitsToSCountF( tinBaseP , psttc1 , 0xa , 1 ) ;
                         {
                         if( bArmed )
                     {
@@ -201,22 +201,22 @@ DONE( tmStompF )
                 else if( cWords == 2 && !costBody )
                 }
                     break ;
-                    etThread.delF( tinP , pstt1w ) ;
+                    etThread.delF( tinBaseP , pstt1w ) ;
                 {
                 if( !cWords )
-                etThread.delF( tinP , psttLine ) ;
-                countT cWords = etThread.strWordsOldF( tinP , pstt1w , psttLine , sttq ) ; ___( pstt1w ) ;
+                etThread.delF( tinBaseP , psttLine ) ;
+                countT cWords = etThread.strWordsOldF( tinBaseP , pstt1w , psttLine , sttq ) ; ___( pstt1w ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , pstt1w ) ;
 
                 }
                     break ;
-                    etThread.delF( tinP , psttLine ) ;
+                    etThread.delF( tinBaseP , psttLine ) ;
                 {
                 if( POOP )
                 __Z( psttLine ) ;
         
-                osTextT ostEscape = sockc.readWoLineF( tinP , psttLine , TOCK ) ; ___( psttLine ) ;
+                osTextT ostEscape = sockc.readWoLineF( tinBaseP , psttLine , TOCK ) ; ___( psttLine ) ;
                 ZE( strokeS* , psttLine ) ;
             {
             while( !POOP && !ether )
@@ -224,9 +224,9 @@ DONE( tmStompF )
         {
         ZE( countT , costBody ) ;
     
-        sockc.writeF( tinP , "GET /deadman1 HTTP/1.0\r\n\r\n" ) ;
-        sockc.connectF( tinP , 80 , socketC::nicNameIF( tinP , etThread , T("ideafarm.com") ) ) ;
-        socketC sockc( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sockc.writeF( tinBaseP , "GET /deadman1 HTTP/1.0\r\n\r\n" ) ;
+        sockc.connectF( tinBaseP , 80 , socketC::nicNameIF( tinBaseP , etThread , T("ideafarm.com") ) ) ;
+        socketC sockc( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {

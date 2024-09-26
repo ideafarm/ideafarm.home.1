@@ -11,16 +11,16 @@
     }
         }
             else                                                                                                                                                { TELLsYSc3SlIFI( idTypeSay , (byteT*)&info , sizeof info , idLineCt , idiFileCt ) ; }
-            if( F(tinP.flagsThreadMode2) & flTHREADmODE2_USEaSYNCHtELLmONITOR || F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYNCHRONOUStELLS ) { TELLsYSc3LIFI(  idTypeSay , (byteT*)&info , sizeof info , idLineCt , idiFileCt ) ; }
+            if( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_USEaSYNCHtELLmONITOR || F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYNCHRONOUStELLS ) { TELLsYSc3LIFI(  idTypeSay , (byteT*)&info , sizeof info , idLineCt , idiFileCt ) ; }
             //IF I AM A MONITOR THREAD EXCEPTION THEN I MIGHT BE HOLDING SOMETHING THAT BLOCKS cirMonitorF, SO I DO NOT WANT TO DO A SYNCH TELL
 
-            //pEther->traceF( tinP , T("tinS::deregisterIfF: U::: telling dt [postThreadName]: ")+T(info.postThreadName) ) ; //U:: TO FIND A BUG
+            //pEther->traceF( tinBaseP , T("tinNormalS::deregisterIfF: U::: telling dt [postThreadName]: ")+T(info.postThreadName) ) ; //U:: TO FIND A BUG
 
             
             info.idiFileCt  = idiFileCt ;
             info.idLineCt   = idLineCt ;
             info.idTinNamed = idTinNamed ;
-            thirdC::c_strncpyIF( tinP , info.postThreadName , postThreadName , sizeof info.postThreadName ) ;
+            thirdC::c_strncpyIF( tinBaseP , info.postThreadName , postThreadName , sizeof info.postThreadName ) ;
             info.idTin      = idTin ;
             //info.ip         = aptMe ? aptMe : (countT)this ;
             info.ip         = (countT)this ;
@@ -28,7 +28,7 @@
             tellInfoSysTinS info ;
             //countT idTypeSay = aptMe ? ifcIDtYPEtELLsYS_TINdTI : ifcIDtYPEtELLsYS_TINdTP ;
             countT idTypeSay = ifcIDtYPEtELLsYS_TINdTP ;
-            //ap_artmentOldC aptMe( tinP , (byteT*)this ) ;
+            //ap_artmentOldC aptMe( tinBaseP , (byteT*)this ) ;
             POOPIES
         {
         if( !( F(flags) & flTINs_CONSTRUCTqUIETLY ) )
@@ -36,7 +36,7 @@
     {
     if( !( F(flags) & flTINs_DEREGISTERED ) )
 {
-/*1*/voidT tinS::deregisterIfF( tinS& tinP )/*1*/
+/*1*/voidT tinNormalS::deregisterIfF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

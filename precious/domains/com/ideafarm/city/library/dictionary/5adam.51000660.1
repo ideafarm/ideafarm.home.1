@@ -10,27 +10,27 @@
 REST
 
 }
-    etThread.delF( tinP , psttOrder ) ;
+    etThread.delF( tinBaseP , psttOrder ) ;
 
-    etThread.osHttpViewF( tinP , psttOrder , 1 ) ;
-    fieldF( tinP , etThread , psttOrder , T("invoice") , TT(timeN1,timeN2) ) ;
-    //fieldF( tinP , etThread , psttOrder , T("specialtext") , T("Your first issue will be sent to you on October 9.") ) ;
-    fieldF( tinP , etThread , psttOrder , T("country") , T("usa") ) ;
-    fieldF( tinP , etThread , psttOrder , T("typemailmethod") , T("standard") ) ;
-    fieldF( tinP , etThread , psttOrder , T("zip") , T("94042") ) ;
-    fieldF( tinP , etThread , psttOrder , T("st") , T("CA") ) ;
-    fieldF( tinP , etThread , psttOrder , T("city") , T("Mountain View") ) ;
-    fieldF( tinP , etThread , psttOrder , T("addr") , T("211 Hope Street #276") ) ;
-    fieldF( tinP , etThread , psttOrder , T("co") , T("IdeaFarm " "(tm) Operations") ) ;
-    fieldF( tinP , etThread , psttOrder , T("name") , T("Wo'O Ideafarm") ) ;
-    fieldF( tinP , etThread , psttOrder , T("email") , T("ideafarm@uchicago.edu") ) ;
-
-
+    etThread.osHttpViewF( tinBaseP , psttOrder , 1 ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("invoice") , TT(timeN1,timeN2) ) ;
+    //fieldF( tinBaseP , etThread , psttOrder , T("specialtext") , T("Your first issue will be sent to you on October 9.") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("country") , T("usa") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("typemailmethod") , T("standard") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("zip") , T("94042") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("st") , T("CA") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("city") , T("Mountain View") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("addr") , T("211 Hope Street #276") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("co") , T("IdeaFarm " "(tm) Operations") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("name") , T("Wo'O Ideafarm") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("email") , T("ideafarm@uchicago.edu") ) ;
 
 
 
 
-    fieldF( tinP , etThread , psttOrder , T("mode") , T("prod") ) ;
+
+
+    fieldF( tinBaseP , etThread , psttOrder , T("mode") , T("prod") ) ;
 
     //***********************************************************************************************************************************************
     //***********************************************************************************************************************************************
@@ -53,20 +53,20 @@ REST
 
 
 
-    fieldF( tinP , etThread , psttOrder , T("source") , T("cdfulfill") ) ;
-    fieldF( tinP , etThread , psttOrder , T("cologinpassword") , T("ogBrq3V7") ) ;
-    fieldF( tinP , etThread , psttOrder , T("cologinemail") , T("ideafarmcity@gmail.com") ) ;
-    fieldF( tinP , etThread , psttOrder , T("quantity") , TF4(qty,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ) ;
-    fieldF( tinP , etThread , psttOrder , T("ordermethod") , T("url") ) ;
-    fieldF( tinP , etThread , psttOrder , T("companyid") , T("34880") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("source") , T("cdfulfill") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("cologinpassword") , T("ogBrq3V7") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("cologinemail") , T("ideafarmcity@gmail.com") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("quantity") , TF4(qty,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("ordermethod") , T("url") ) ;
+    fieldF( tinBaseP , etThread , psttOrder , T("companyid") , T("34880") ) ;
 
-    //etThread.strMakeF( tinP , LF , psttOrder , T("www.a1tech.com//http/zshared/custdata.asp?productid=112070") , TOCK ) ; ___( psttOrder ) ; // V2
-    etThread.strMakeF( tinP , LF , psttOrder , T("www.a1tech.com//http/zshared/custdata.asp?productid=112390") , TOCK ) ; ___( psttOrder ) ; // V1-1
+    //etThread.strMakeF( tinBaseP , LF , psttOrder , T("www.a1tech.com//http/zshared/custdata.asp?productid=112070") , TOCK ) ; ___( psttOrder ) ; // V2
+    etThread.strMakeF( tinBaseP , LF , psttOrder , T("www.a1tech.com//http/zshared/custdata.asp?productid=112390") , TOCK ) ; ___( psttOrder ) ; // V1-1
 
-    //etThread.strMakeF( tinP , LF , psttOrder , T("www.ideafarm.com//http/index.html?") , TOCK ) ; ___( psttOrder ) ;
+    //etThread.strMakeF( tinBaseP , LF , psttOrder , T("www.ideafarm.com//http/index.html?") , TOCK ) ; ___( psttOrder ) ;
     ZE( strokeS* , psttOrder ) ;
 
-    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 {
@@ -75,12 +75,12 @@ for( countT qty = 1 ; qty <= 1 ; qty ++ )
 TODO
 
 }
-    etThread.delF( tinP , psttv ) ;
-    etThread.strFuseF( tinP , psttToP , T("&")+T(psttFieldP)+T("=")+T(psttv) ) ;
-    etThread.strToUrlF( tinP , psttv , psttValueP ) ; ___( psttv ) ;
+    etThread.delF( tinBaseP , psttv ) ;
+    etThread.strFuseF( tinBaseP , psttToP , T("&")+T(psttFieldP)+T("=")+T(psttv) ) ;
+    etThread.strToUrlF( tinBaseP , psttv , psttValueP ) ; ___( psttv ) ;
     ZE( strokeS* , psttv ) ;
 {
-voidT fieldF( tinS& tinP , etherC& etThread , strokeS*& psttToP , const strokeS* psttFieldP , const strokeS* psttValueP )
+voidT fieldF( tinBaseS& tinBaseP , etherC& etThread , strokeS*& psttToP , const strokeS* psttFieldP , const strokeS* psttValueP )
 
 //U::EDIT TO INPUT SUBSCRIPTION LIST DOWNLOADED FROM PAYPAL
 // THIS IS A CRUDE QUICK AND DIRTY PROVISIONAL DEF

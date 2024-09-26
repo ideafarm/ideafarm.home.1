@@ -11,10 +11,10 @@ REST
 
 }
     }
-        ++ s ; tinP.pEtScratch->osSleepF( tinP , TOCK * 0x4 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ((tinNormalS&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TOCK * 0x4 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        etThread.delF( tinP , pstt1m ) ;
+        etThread.delF( tinBaseP , pstt1m ) ;
         }
             CONoUTrAW( (!flagsFail?T("aok"):T("flagsFail:")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED))+T("\r\n") ) ;
 
@@ -23,9 +23,9 @@ REST
                 POOPR
             {
             if( POOP )
-            tinP.pEtScratch->delF( tinP , psttShort ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttShort ) ;
 
-            tinP.pEtScratch->diskMoveFileOrDirF( tinP , tWhere+T(psttShort) , psttc1 ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tWhere+T(psttShort) , psttc1 ) ;
 
             ;
                     : tSent
@@ -43,7 +43,7 @@ REST
             {
             if( POOP )
 
-            tinP.pEtScratch->strWordF( tinP , psttShort , psttc1 , sttq , sSlash , - 1 ) ; ___( psttShort ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttShort , psttc1 , sttq , sSlash , - 1 ) ; ___( psttShort ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , psttShort ) ;
             CONoUTrAW( "cleaning up 3\r\n" ) ;
@@ -57,15 +57,15 @@ REST
             CONoUTrAW( "cleaning up 2\r\n" ) ;
 
             }
-                stBc.purgeF( tinP ) ;
-                stCc.purgeF( tinP ) ;
-                stTo.purgeF( tinP ) ;
+                stBc.purgeF( tinBaseP ) ;
+                stCc.purgeF( tinBaseP ) ;
+                stTo.purgeF( tinBaseP ) ;
 
-                etThread.delF( tinP , psttFileBody ) ;
+                etThread.delF( tinBaseP , psttFileBody ) ;
 
                 CONoUTrAW( "cleaning up 1\r\n" ) ;
-                etThread( tinP , pStkEmailRelay ) ;
-                etThread.delF( tinP , psttFrom ) ;
+                etThread( tinBaseP , pStkEmailRelay ) ;
+                etThread.delF( tinBaseP , psttFrom ) ;
                 }
                     }
                         }
@@ -74,22 +74,22 @@ REST
                                 while( ~hWalk ) ;
                                 }
                                     CONoUTrAW( T("end of recipient \"")+T(psttr)+T("\"\r\n") ) ;
-                                    etThread.delF( tinP , psttBccLine ) ;
+                                    etThread.delF( tinBaseP , psttBccLine ) ;
     
                                     CONoUTrAW( "destroyed socket\r\n" ) ;
                                     }
                                         CONoUTrAW( "writing quit: aok; destroying socket\r\n" ) ;
                                         }
                                             break ;
-                                            etThread.delF( tinP , psttBccLine ) ;
+                                            etThread.delF( tinBaseP , psttBccLine ) ;
                                             CONoUTrAW( "writing quit: failed\r\n" ) ;
                                             flagsFail |= flFAIL_QUITcOMMANDrEJECTED ;
                                             POOPR
                                         {
                                         if( POOP )
-                                        sockc.verifyReplyF( tinP , 221 ) ;
+                                        sockc.verifyReplyF( tinBaseP , 221 ) ;
                                         CONoUTrAW( "writing quit: verifying reply\r\n" ) ;
-                                        sockc.writeF( tinP , (osTextT*)T("quit\r\n") ) ;
+                                        sockc.writeF( tinBaseP , (osTextT*)T("quit\r\n") ) ;
         
                                         CONoUTrAW( "writing data: aok; writing quit\r\n" ) ;
 
@@ -97,7 +97,7 @@ REST
                                         //    break ;
                                         //
                                         //    }
-                                        //        etThread.boxPutF( tinP , T("//smtp/" ifcEMAIL_MAILoUT "/")+T(psttFrom) , tReply , tReply.csF( tinP ) ) ;
+                                        //        etThread.boxPutF( tinBaseP , T("//smtp/" ifcEMAIL_MAILoUT "/")+T(psttFrom) , tReply , tReply.csF( tinBaseP ) ) ;
                                         //
                                         //        ) ;
                                         //
@@ -110,15 +110,15 @@ REST
                                         //    //NOTIFY from THAT EMAIL WAS SENT
                                         //    CONoUTrAW( T("an email was sent.  notifying \"")+T(psttFrom)+T("\"\r\n") ) ;
                                         //{
-                                        //else if( etThread.strCompareF( tinP , psttFrom , T(ifcEMAIL_MAILoUT) ) )
+                                        //else if( etThread.strCompareF( tinBaseP , psttFrom , T(ifcEMAIL_MAILoUT) ) )
                                         //THIS CAN CYCLE INFINITELY
 
                                         }
                                             break ;
-                                            etThread.delF( tinP , psttBccLine ) ;
+                                            etThread.delF( tinBaseP , psttBccLine ) ;
 
                                             }
-                                                etThread.boxPutF( tinP , T("//smtp/" ifcEMAIL_MAILoUT "/")+T(psttFrom) , tReply , tReply.csF( tinP ) ) ;
+                                                etThread.boxPutF( tinBaseP , T("//smtp/" ifcEMAIL_MAILoUT "/")+T(psttFrom) , tReply , tReply.csF( tinBaseP ) ) ;
 
                                                 ) ;
 
@@ -149,12 +149,12 @@ REST
 
                                             //}
                                             //    }
-                                            //        __( logBodySnipFromFileF( tinP , etThread , psttc1 ) ) ;
+                                            //        __( logBodySnipFromFileF( tinBaseP , etThread , psttc1 ) ) ;
                                             //    {
                                             //    FORsTRINGSiN1( psttFileBody )
                                             //{
                                             //else
-                                            //if( !ISsTRINGoFsTRINGS( psttFileBody ) ) { __( logBodySnipFromFileF( tinP , etThread , psttFileBody ) ) ; }
+                                            //if( !ISsTRINGoFsTRINGS( psttFileBody ) ) { __( logBodySnipFromFileF( tinBaseP , etThread , psttFileBody ) ) ; }
                                             //
                                             //}
                                             //    CONoUTrAW( tHeaders ) ;
@@ -167,14 +167,14 @@ REST
                                             POOPR
                                         {
                                         if( POOP )
-                                        sockc.verifyReplyF( tinP , 250 ) ; //WILL FAIL IF ANTISPAM RELAYER REFUSES DATA BECAUSE IT CONTAINS REFERENCE TO BLACKLISTED (SPAMMER) WEB SITE
+                                        sockc.verifyReplyF( tinBaseP , 250 ) ; //WILL FAIL IF ANTISPAM RELAYER REFUSES DATA BECAUSE IT CONTAINS REFERENCE TO BLACKLISTED (SPAMMER) WEB SITE
                                         CONoUTrAW( "writing data: verifying reply\r\n" ) ;
                                         }
-                                            sockc.writeF( tinP , "\r\n.\r\n" , 5 ) ;
+                                            sockc.writeF( tinBaseP , "\r\n.\r\n" , 5 ) ;
     
                                             }
                                                break ;
-                                               etThread.delF( tinP , psttBccLine ) ;
+                                               etThread.delF( tinBaseP , psttBccLine ) ;
                                                POOPR
                                             {
                                             if( POOP )
@@ -183,19 +183,19 @@ REST
                                                 }
                                                     }
                                                         break ;
-                                                        etThread.delF( tinP , psttBccLine ) ;
+                                                        etThread.delF( tinBaseP , psttBccLine ) ;
                                                         POOPR
                                                     {
                                                     if( POOP )
-                                                    __( writeBodySnipFromFileF( tinP , etThread , sockc , psttc1 , flagsFail ) ) ;
+                                                    __( writeBodySnipFromFileF( tinBaseP , etThread , sockc , psttc1 , flagsFail ) ) ;
                                                 {
                                                 FORsTRINGSiN1( psttFileBody )
                                             {
                                             else
-                                            if( !ISsTRINGoFsTRINGS( psttFileBody ) ) { __( writeBodySnipFromFileF( tinP , etThread , sockc , psttFileBody , flagsFail ) ) ; }
+                                            if( !ISsTRINGoFsTRINGS( psttFileBody ) ) { __( writeBodySnipFromFileF( tinBaseP , etThread , sockc , psttFileBody , flagsFail ) ) ; }
     
                                             }
-                                                sockc.writeF( tinP , (osTextT*)tHeaders , tHeaders.csF( tinP ) ) ;
+                                                sockc.writeF( tinBaseP , (osTextT*)tHeaders , tHeaders.csF( tinBaseP ) ) ;
                                                 TN( tHeaders , "" ) ; tHeaders = (!bIncoming?tFrToCcOutgoing:tFrToCcIncoming)+T(psttBccLine) ;
                                             {
                                         {
@@ -203,83 +203,83 @@ REST
                                         CONoUTrAW( "writing data cmd: aok; writing data\r\n" ) ;
                                         }
                                             break ;
-                                            etThread.delF( tinP , psttBccLine ) ;
+                                            etThread.delF( tinBaseP , psttBccLine ) ;
                                             CONoUTrAW( "writing data cmd: failed\r\n" ) ;
                                             flagsFail |= flFAIL_DATAcOMMANDrREJECTED ;
                                             POOPR
                                         {
                                         if( POOP )
-                                        sockc.verifyReplyF( tinP , 354 ) ;
+                                        sockc.verifyReplyF( tinBaseP , 354 ) ;
                                         CONoUTrAW( "writing data cmd: verifying reply\r\n" ) ;
-                                        sockc.writeF( tinP , (osTextT*)T("data\r\n") ) ;
+                                        sockc.writeF( tinBaseP , (osTextT*)T("data\r\n") ) ;
                             
                                         CONoUTrAW( "writing rcpt to: aok; writing data cmd\r\n" ) ;
                                         }
                                             break ;
-                                            etThread.delF( tinP , psttBccLine ) ;
+                                            etThread.delF( tinBaseP , psttBccLine ) ;
                                             CONoUTrAW( "writing rcpt to: failed\r\n" ) ;
                                             flagsFail |= flFAIL_RCPTtOrEJECTED ;
                                             POOPR
                                         {
                                         if( POOP )
-                                        sockc.verifyReplyF( tinP , 250 ) ;
+                                        sockc.verifyReplyF( tinBaseP , 250 ) ;
                                         CONoUTrAW( "writing rcpt to: verifying reply\r\n" ) ;
-                                        { textC txt = T("rcpt to:<")+T(psttr)+T(">\r\n") ; sockc.writeF( tinP , (osTextT*)txt ) ; }
+                                        { textC txt = T("rcpt to:<")+T(psttr)+T(">\r\n") ; sockc.writeF( tinBaseP , (osTextT*)txt ) ; }
                             
                                         CONoUTrAW( "mail from: aok; writing rcpt to\r\n" ) ;
                                         }
                                             break ;
-                                            etThread.delF( tinP , psttBccLine ) ;
+                                            etThread.delF( tinBaseP , psttBccLine ) ;
                                             CONoUTrAW( "mail from: failed\r\n" ) ;
                                             flagsFail |= flFAIL_MAILfROMrEJECTED ;
                                             POOPR
                                         {
                                         if( POOP )
-                                        sockc.verifyReplyF( tinP , 250 ) ;
+                                        sockc.verifyReplyF( tinBaseP , 250 ) ;
                                         CONoUTrAW( "mail from: verifying reply\r\n" ) ;
-                                        { textC txt = T("mail from:<")+T(psttFrom)+T(">\r\n") ; sockc.writeF( tinP , (osTextT*)txt ) ; }
+                                        { textC txt = T("mail from:<")+T(psttFrom)+T(">\r\n") ; sockc.writeF( tinBaseP , (osTextT*)txt ) ; }
                     
                                         CONoUTrAW( "helloed: writing mail from\r\n" ) ;
                                         }
                                             break ;
-                                            etThread.delF( tinP , psttBccLine ) ;
+                                            etThread.delF( tinBaseP , psttBccLine ) ;
                                             CONoUTrAW( "hello: failed\r\n" ) ;
                                             flagsFail |= flFAIL_HELLOrEJECTED ;
                                             POOPR
                                         {
                                         if( POOP )
-                                        sockc.verifyReplyF( tinP , 250 ) ;
+                                        sockc.verifyReplyF( tinBaseP , 250 ) ;
                                         CONoUTrAW( "hello: verifying reply\r\n" ) ;
-                                        sockc.writeF( tinP , (osTextT*)T("helo ipdos.ideafarm.com\r\n") ) ; //U: QUERY FOR MY REAL psttName
+                                        sockc.writeF( tinBaseP , (osTextT*)T("helo ipdos.ideafarm.com\r\n") ) ; //U: QUERY FOR MY REAL psttName
                         
                                         CONoUTrAW( "connected: writing hello\r\n" ) ;
                                         }
                                             break ;
-                                            etThread.delF( tinP , psttBccLine ) ;
+                                            etThread.delF( tinBaseP , psttBccLine ) ;
                                             CONoUTrAW( "connecting: failed\r\n" ) ;
                                             flagsFail |= flFAIL_COULDnOTcONNECT ;
                                             POOPR
                                         {
                                         if( POOP )
     
-                                        sockc.verifyReplyF( tinP , 220 ) ;
+                                        sockc.verifyReplyF( tinBaseP , 220 ) ;
     
                                         CONoUTrAW( "connecting: verifying reply\r\n" ) ;
-                                        sockc.connectF( tinP , 25 , hidServer ) ;
+                                        sockc.connectF( tinBaseP , 25 , hidServer ) ;
                                         //CONoUTrAW( "connecting\r\n" ) ;
         
                                         }
-                                            etThread.delF( tinP , psttServer ) ;
-                                            hidServer = socketC::nicNameIF( tinP , *tinP.pEtScratch , psttServer ) ;
+                                            etThread.delF( tinBaseP , psttServer ) ;
+                                            hidServer = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , psttServer ) ;
         
-                                            etThread.delF( tinP , psttMxExclude ) ;
-                                            etThread.delF( tinP , psttRelayServer ) ;
+                                            etThread.delF( tinBaseP , psttMxExclude ) ;
+                                            etThread.delF( tinBaseP , psttRelayServer ) ;
                                             }
-                                                etThread.delF( tinP , psttMxName ) ;
-                                                else                                                                                                                               { tinP.pEtScratch->strMakeF(     tinP , psttServer , psttRelayServer                   ) ; ___( psttServer ) ; }
-                                                if( !psttRelayServer || !psttRelayServer->idAdam || ( psttMxExclude && !tinP.pEtScratch->strCompareF( tinP , psttMxExclude , psttMxName ) ) ) { tinP.pEtScratch->dnsNicNamesF( tinP , psttServer , psttMxName , ifcIDtYPEdNSqUERY_MX ) ; ___( psttServer ) ; }
+                                                etThread.delF( tinBaseP , psttMxName ) ;
+                                                else                                                                                                                               { ((tinNormalS&)tinBaseP).pEtScratch->strMakeF(     tinBaseP , psttServer , psttRelayServer                   ) ; ___( psttServer ) ; }
+                                                if( !psttRelayServer || !psttRelayServer->idAdam || ( psttMxExclude && !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttMxExclude , psttMxName ) ) ) { ((tinNormalS&)tinBaseP).pEtScratch->dnsNicNamesF( tinBaseP , psttServer , psttMxName , ifcIDtYPEdNSqUERY_MX ) ; ___( psttServer ) ; }
         
-                                                tinP.pEtScratch->strWordF( tinP , psttMxName , psttr , sttq , strokeS('@') , -1 ) ; ___( psttMxName ) ;
+                                                ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttMxName , psttr , sttq , strokeS('@') , -1 ) ; ___( psttMxName ) ;
                                                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                                 ZE( strokeS* , psttMxName ) ;
                                             {
@@ -288,24 +288,24 @@ REST
                                             }
                                                 //CONoUTrAW( T("mx exclude  : \"")+T(psttMxExclude)+T("\"\r\n") ) ;
                                                 //CONoUTrAW( T("relay server: \"")+T(psttRelayServer)+T("\"\r\n") ) ;
-                                                //etThread.delF( tinP , psttSetting ) ;
+                                                //etThread.delF( tinBaseP , psttSetting ) ;
                                                 //}
-                                                //    etThread.delF( tinP , pstt1l ) ;
+                                                //    etThread.delF( tinBaseP , pstt1l ) ;
                                                 //    }
                                                 //        else break ;
-                                                //        else if( !psttMxExclude   ) { tinP.pEtScratch->strMakeF( tinP , LF , psttMxExclude   , psttc1 ) ; ___( psttMxExclude   ) ; }
-                                                //             if( !psttRelayServer ) { tinP.pEtScratch->strMakeF( tinP , LF , psttRelayServer , psttc1 ) ; ___( psttRelayServer ) ; }
+                                                //        else if( !psttMxExclude   ) { ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttMxExclude   , psttc1 ) ; ___( psttMxExclude   ) ; }
+                                                //             if( !psttRelayServer ) { ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttRelayServer , psttc1 ) ; ___( psttRelayServer ) ; }
                                                 //    {
                                                 //    FORsTRINGSiN1( pstt1l )
-                                                //    tinP.pEtScratch->strWordsOldF( tinP , pstt1l , psttSetting , sttq , T("\r\n") ) ; ___( pstt1l ) ;
+                                                //    ((tinNormalS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1l , psttSetting , sttq , T("\r\n") ) ; ___( pstt1l ) ;
                                                 //    strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                                 //    ZE( strokeS* , pstt1l ) ;
                                                 //{
                                                 //if( psttSetting )
-                                                //tinP.pEtScratch->boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinP , psttSetting , T("///d/ideafarm.home.")+TF1(etherC::ifc_idHomeIdisk_IF())+T(".setting.keyValue.smtprelay") ) ; ___( psttSetting ) ;
+                                                //((tinNormalS&)tinBaseP).pEtScratch->boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinBaseP , psttSetting , T("///d/ideafarm.home.")+TF1(etherC::ifc_idHomeIdisk_IF())+T(".setting.keyValue.smtprelay") ) ; ___( psttSetting ) ;
                                                 //U:: 20190728@1932:  REWRITE TO USE A SETTING RATHER THAN HARDCODE
 
-                                                //tinP.pEtScratch->strMakeF( tinP , LF , psttRelayServer , T("") ) ; ___( psttRelayServer ) ;
+                                                //((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttRelayServer , T("") ) ; ___( psttRelayServer ) ;
                                                 U:: THIS CODE IS OBSOLETE; SEE 750
 
                                                 ZE( strokeS* , psttSetting ) ;
@@ -315,7 +315,7 @@ REST
                                         {
                                         nicNameC hidServer ;
     
-                                        socketC sockc( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                                        socketC sockc( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
                                         countT idleTimeAllowedWrite = TOCK * 0x4 ;
                                         countT idleTimeAllowedRead  = TOCK * 0x4 ;
                                         countT timeAllowedConnected = TICK >> 2 ;
@@ -324,9 +324,9 @@ REST
                                     {
     
                                     }
-                                        tinP.pEtScratch->strFuseF( tinP , psttBccLine , T(">\r\n") ) ;
-                                        tinP.pEtScratch->strFuseF( tinP , psttBccLine , psttr ) ;
-                                        tinP.pEtScratch->strFuseF( tinP , psttBccLine , T("Bcc" ": <") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ 3 + psttr->idAdam ) ; ___( psttBccLine ) ;
+                                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttBccLine , T(">\r\n") ) ;
+                                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttBccLine , psttr ) ;
+                                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttBccLine , T("Bcc" ": <") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ 3 + psttr->idAdam ) ; ___( psttBccLine ) ;
                                     {
                                     if( offs == 2 )
                                     ZE( strokeS* , psttBccLine ) ;
@@ -338,20 +338,20 @@ REST
                                                 break ;
                                                 bIncoming = 1 ;
                                             {
-                                            if( !tinP.pEtScratch->strCompareF( tinP , psttr , psttw ) )
-                                            strokeS* psttw = (strokeS*)pStkEmailRelay->downF( tinP , hWalk ) ;
+                                            if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttr , psttw ) )
+                                            strokeS* psttw = (strokeS*)pStkEmailRelay->downF( tinBaseP , hWalk ) ;
                                         {
                                         do
-                                        handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                        handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                     {
                                     if( *pStkEmailRelay )
                                     ZE( boolT , bIncoming ) ;
     
                                     CONoUTrAW( T("beginning of recipient \"")+T(psttr)+T("\"\r\n") ) ;
-                                    strokeS* psttr = (strokeS*)ppzStk[ offs ]->downF( tinP , hWalk ) ;
+                                    strokeS* psttr = (strokeS*)ppzStk[ offs ]->downF( tinBaseP , hWalk ) ;
                                 {
                                 do
-                                handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             if( *ppzStk[ offs ] )
                             CONoUTrAW( T("beginning of handling ")+TF2(*ppzStk[offs],flFORMAT_NObIGITvALUES)+T(" recipients for list ")+TF2(offs,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
@@ -367,7 +367,7 @@ REST
                     if( POOP )
     
                     }
-                        etThread.delF( tinP , psttFrToCc ) ;
+                        etThread.delF( tinBaseP , psttFrToCc ) ;
                         *pptFrToCc[ offc ] = T(psttFrToCc) ;
     
                         }
@@ -375,13 +375,13 @@ REST
                                 }
                                     while( ~hWalk ) ;
                                     }
-                                        tinP.pEtScratch->strFuseF( tinP , psttFrToCc , T(">\r\n") ) ;
-                                        tinP.pEtScratch->strFuseF( tinP , psttFrToCc , psttw ) ;
-                                        tinP.pEtScratch->strFuseF( tinP , psttFrToCc , T(!off?"To: <":"Cc" ": <") ) ;
-                                        strokeS* psttw = (strokeS*)ppzStk[ off ]->downF( tinP , hWalk ) ;
+                                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttFrToCc , T(">\r\n") ) ;
+                                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttFrToCc , psttw ) ;
+                                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttFrToCc , T(!off?"To: <":"Cc" ": <") ) ;
+                                        strokeS* psttw = (strokeS*)ppzStk[ off ]->downF( tinBaseP , hWalk ) ;
                                     {
                                     do
-                                    handleC hWalk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                    handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                 {
                                 if( *ppzStk[ off ] )
                             {
@@ -389,16 +389,16 @@ REST
                             stackC* ppzStk[] = { &stTo , &stCc } ;
                         {
     
-                        tinP.pEtScratch->strFuseF( tinP , psttFrToCc , T(">\r\n") ) ;
-                        tinP.pEtScratch->strFuseF( tinP , psttFrToCc , psttFrom ) ;
-                        tinP.pEtScratch->strFuseF( tinP , psttFrToCc , T("<") ) ;
-                        if( csttName ) tinP.pEtScratch->strFuseF( tinP , psttFrToCc , T("\"")+tName+T("\" ") ) ;
-                        tinP.pEtScratch->strFuseF( tinP , psttFrToCc , T("From: ") ) ;
-                        tinP.pEtScratch->strMakeF( tinP , LF , psttFrToCc , 0 , cstta ) ; ___( psttFrToCc ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttFrToCc , T(">\r\n") ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttFrToCc , psttFrom ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttFrToCc , T("<") ) ;
+                        if( csttName ) ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttFrToCc , T("\"")+tName+T("\" ") ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttFrToCc , T("From: ") ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttFrToCc , 0 , cstta ) ; ___( psttFrToCc ) ;
     
                         const countT cstta = csttFrToCc + cFrToCcLines * 0x10 + csttName ; //0x10 IS MORE THAN NEEDED (0xa)
     
-                        const countT csttName = !tName.csF( tinP ) ? 0 : tName.csF( tinP ) + 3 ;
+                        const countT csttName = !tName.csF( tinBaseP ) ? 0 : tName.csF( tinBaseP ) + 3 ;
                         textC& tName = !offc ? tNameOut : tNameIn ;
                         
                         ZE( strokeS* , psttFrToCc ) ;
@@ -407,10 +407,10 @@ REST
                     textC* pptFrToCc[] = { &tFrToCcOutgoing , &tFrToCcIncoming } ;
 
                     //}
-                    //    tinP.pEtScratch->strMakeF( tinP , LF , psttFrom , T("hello@ideafarm.com") ) ; ___( psttFrom ) ;
-                    //    tinP.pEtScratch->delF( tinP , psttFrom ) ;
+                    //    ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttFrom , T("hello@ideafarm.com") ) ; ___( psttFrom ) ;
+                    //    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttFrom ) ;
                     //{
-                    //if( !tinP.pEtScratch->strCompareF( tinP , psttFrom , T(ifcEMAIL_HELLO) ) )
+                    //if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttFrom , T(ifcEMAIL_HELLO) ) )
                     //SUPPORT FOR hello@ideafarm.com COMMENTED OUT DUE TO DECISION TO NOT PROVIDE ANY FUNCTIONALITY TO ANONYMOUS INTERNET USERS
                     //CS:CODEsYNC: b750104 3a50104
                     //MAPPING GLOBAL ALIASES
@@ -431,13 +431,13 @@ REST
                                 tNameOut = T(info.psttNameOut) ;
                                 tNameIn  = T(info.psttNameIn) ;
                             
-                                subaccountS info( tinP , etThread , cPassAccount , cPassSubaccount , flSUBACCOUNT_QUERYeMAILrELAY | flSUBACCOUNT_QUERYnAMEiN | flSUBACCOUNT_QUERYnAMEoUT ) ;
+                                subaccountS info( tinBaseP , etThread , cPassAccount , cPassSubaccount , flSUBACCOUNT_QUERYeMAILrELAY | flSUBACCOUNT_QUERYnAMEiN | flSUBACCOUNT_QUERYnAMEoUT ) ;
                             {
     
                             }
-                                etThread.delF( tinP , psttw ) ;
+                                etThread.delF( tinBaseP , psttw ) ;
                                 tEmailOwner = T(psttw) ;
-                                queryEmailFromIdAccountF( tinP , psttw , cPassAccount ) ; ___( psttw ) ;
+                                queryEmailFromIdAccountF( tinBaseP , psttw , cPassAccount ) ; ___( psttw ) ;
                                 ZE( strokeS* , psttw ) ;
                             {
                         {
@@ -445,9 +445,9 @@ REST
                         if( POOP ) POOPR
     
                         }
-                            etThread.delF( tinP , psttw ) ;
+                            etThread.delF( tinBaseP , psttw ) ;
                             }
-                                etThread.delF( tinP , pstt1w ) ;
+                                etThread.delF( tinBaseP , pstt1w ) ;
                                 }
                                     }
                                         }
@@ -456,9 +456,9 @@ REST
                                                 }
                                                     if( idWord ++ == 4 ) break ;
             
-                                                    else { __( tinP.pEtScratch->strCompareF( tinP , psttc2 , T("doubleblind") ) ) ; }
+                                                    else { __( ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc2 , T("doubleblind") ) ) ; }
                                                     }
-                                                        if( pco ) *pco = tinP.pEtScratch->strDigitsToSCountF( tinP , psttc2 , 36 ) ;
+                                                        if( pco ) *pco = ((tinNormalS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttc2 , 36 ) ;
                 
                                                         }
                                                             case 3 : { pco = &cPassAccount    ; break ; }
@@ -472,7 +472,7 @@ REST
                                                             POOPR
                                                         {
                                                         if( POOP )
-                                                        __( !tinP.pEtScratch->strIsDigitsF( tinP , psttc2 , 36 ) ) ;                           // REJECT IF NOT ALL DIGITS
+                                                        __( !((tinNormalS&)tinBaseP).pEtScratch->strIsDigitsF( tinBaseP , psttc2 , 36 ) ) ;                           // REJECT IF NOT ALL DIGITS
                                                     {
                                                     if( idWord <= 3 )
                                                 {
@@ -491,17 +491,17 @@ REST
                                     switch( idFormat )
             
                                     }
-                                        if( BlATHsTRING1 ) idFormat = tinP.pEtScratch->strDigitsToSCountF( tinP , psttc1 , 36 ) ;
+                                        if( BlATHsTRING1 ) idFormat = ((tinNormalS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttc1 , 36 ) ;
                                     {
                                     FORsTRINGSiN1( pstt1w )
                                 {
                                 if( pstt1w )
-                                const countT cWords = tinP.pEtScratch->strWordsOldF( tinP , pstt1w , psttw , sttq , T(".") ) ; ___( pstt1w ) ;
+                                const countT cWords = ((tinNormalS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1w , psttw , sttq , T(".") ) ; ___( pstt1w ) ;
                                 ZE( strokeS* , pstt1w ) ;
                             {
                             else if( psttw && psttw->idAdam )
                             if( POOP ) POOPR
-                            tinP.pEtScratch->strSubstringF( tinP , psttw , idf , sttq , S1C('@') , psttFrom ) ; ___( psttw ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttw , idf , sttq , S1C('@') , psttFrom ) ; ___( psttw ) ;
                             countT idf = 1 ;
                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                             ZE( strokeS* , psttw ) ;
@@ -514,16 +514,16 @@ REST
                     TN( tNameOut , "" ) ;
                 {
                 if( pStkEmailRelay )
-                etThread( tinP , pStkEmailRelay , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay ) ;
+                etThread( tinBaseP , pStkEmailRelay , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay ) ;
                 ZE( stackC* , pStkEmailRelay ) ;
                 TN( tEmailOwner , "" ) ;
                 //PARSE psttFrom AND LOOKUP ACCOUNT OWNER NAME
 
                 //else { //CONoUTrAW( "bad news, bro! psttFileBody is null or short\r\n" ) ; }
                 }
-                    etThread.delF( tinP , psttDump ) ;
+                    etThread.delF( tinBaseP , psttDump ) ;
                     //CONoUTrAW( T("****DUMPbEGIN\r\n")+T(psttDump)+T("\r\n****DUMPeND\r\n") ) ;
-                    etThread.strDumpIF( tinP , psttDump , (byteT*)psttFileBody , sizeof( strokeS ) * ( CSpREFIX * 2 + 1 ) , sizeof( strokeS ) , sizeof( countT ) ) ; ___( psttDump ) ;
+                    etThread.strDumpIF( tinBaseP , psttDump , (byteT*)psttFileBody , sizeof( strokeS ) * ( CSpREFIX * 2 + 1 ) , sizeof( strokeS ) , sizeof( countT ) ) ; ___( psttDump ) ;
                     ZE( strokeS* , psttDump ) ;
 
                     //CONoUTrAW3( "ISsTRINGoFsTRINGS evaluates to " , ISsTRINGoFsTRINGS( psttFileBody ) , "\r\n" ) ;
@@ -573,29 +573,29 @@ REST
             {
             if( POOP )
             ZE( boolT , bFailPermanent ) ;
-            tinP.pEtScratch->boxGetShadowF( tinP , sIn , psttc1 ) ;
-            soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , sIn , psttc1 ) ;
+            soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             ZE( flagsT , flagsFail ) ;
             CONoUTrAW( TT(timeN1,timeN2)+T(" | mailing out ")+T(psttc1)+T(": ") ) ;
         {
         FORsTRINGSiN1( pstt1m )
-        etThread.boxMenuF( tinP , soul , tToSend+tStar , 0 , 0x10 ) ; ___( pstt1m ) ;
+        etThread.boxMenuF( tinBaseP , soul , tToSend+tStar , 0 , 0x10 ) ; ___( pstt1m ) ;
         ZE( strokeS* , pstt1m ) ;
 
         }
-            etThread.delF( tinP , pstt1m ) ;
+            etThread.delF( tinBaseP , pstt1m ) ;
             }
-                etThread.delF( tinP , psttPart2 ) ;
-                etThread.delF( tinP , psttPart1 ) ;
-                etThread.diskMoveFileOrDirF( tinP , tToSend+T(psttPart2) , psttc1 ) ;
-                etThread.strBisectF( tinP , psttPart1 , psttPart2 , psttc1 , 0 , - 1 ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
+                etThread.delF( tinBaseP , psttPart2 ) ;
+                etThread.delF( tinBaseP , psttPart1 ) ;
+                etThread.diskMoveFileOrDirF( tinBaseP , tToSend+T(psttPart2) , psttc1 ) ;
+                etThread.strBisectF( tinBaseP , psttPart1 , psttPart2 , psttc1 , 0 , - 1 ) ; ___( psttPart1 ) ; ___( psttPart2 ) ;
                 ZE( strokeS* , psttPart2 ) ;
                 ZE( strokeS* , psttPart1 ) ;
             {
             FORsTRINGSiN1( pstt1m )
-            etThread.boxMenuF( tinP , pstt1m , tNotSent+tStar , 0 , 0x10 ) ; ___( pstt1m ) ;
-            etThread.boxMenuF( tinP , soul , tNotSent+tStar , 0 , 0x10 ) ; ___( pstt1m ) ;
+            etThread.boxMenuF( tinBaseP , pstt1m , tNotSent+tStar , 0 , 0x10 ) ; ___( pstt1m ) ;
+            etThread.boxMenuF( tinBaseP , soul , tNotSent+tStar , 0 , 0x10 ) ; ___( pstt1m ) ;
             ZE( strokeS* , pstt1m ) ;
 
             timeL2 = timeE2 ;
@@ -603,12 +603,12 @@ REST
         {
         if( timeE2 || timeE1 > TICK * 0x10 )
         
-        etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , timeL1 , timeL2 ) ;
-        etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+        etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeL1 , timeL2 ) ;
+        etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
         ZE( sCountT , timeE2 ) ;
         ZE( countT  , timeE1 ) ;
 
-        etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+        etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
     {
@@ -618,17 +618,17 @@ REST
     TN( tLeadingDoubleDot , "\r\n.." ) ;
     TN( tLeadingDot , "\r\n." ) ;
     TN( tDotRN , ".\r\n" ) ;
-    stackC stBc( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-    stackC stCc( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-    stackC stTo( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stBc( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stCc( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stTo( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
     strokeS sSlash( '/' , sc_cFROMaSCII ) ;
     TN( tStar , "*" ) ;
-    etThread.osThreadAdamF( tinP , ifcIDaDAM_ROOTfORMdATAeATER ) ;
+    etThread.osThreadAdamF( tinBaseP , ifcIDaDAM_ROOTfORMdATAeATER ) ;
 
-    etThread.diskMakeDirIfNeededF( tinP , tNotSentAbandoned ) ;
-    etThread.diskMakeDirIfNeededF( tinP , tNotSent ) ;
-    etThread.diskMakeDirIfNeededF( tinP , tSent ) ;
-    etThread.diskMakeDirIfNeededF( tinP , tToSend ) ;
+    etThread.diskMakeDirIfNeededF( tinBaseP , tNotSentAbandoned ) ;
+    etThread.diskMakeDirIfNeededF( tinBaseP , tNotSent ) ;
+    etThread.diskMakeDirIfNeededF( tinBaseP , tSent ) ;
+    etThread.diskMakeDirIfNeededF( tinBaseP , tToSend ) ;
 
     TN( tNotSentAbandoned , "" ) ; tNotSentAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.notsentabandoned/") ;
     TN( tNotSent          , "" ) ; tNotSent          = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.notsent/") ;
@@ -642,8 +642,8 @@ REST
 IFsCRATCH
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK * 0x10 ) ; //TO AVOID LOADING SERVER DURING SYSTEM GEN
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x10 ) ; //TO AVOID LOADING SERVER DURING SYSTEM GEN
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 TODO
@@ -656,13 +656,13 @@ TODO
                 DEL( pInfo ) ;
                 }
                     }
-                        etherP.delF( tinP , posti ) ;
+                        etherP.delF( tinBaseP , posti ) ;
                         }
-                            etherP.strFuseF( tinP , psttP , T(posti) ) ; ___( psttP ) ;
-                            etherP.fileReadF( tinP , posti , cToDo , hFileBody ) ;
+                            etherP.strFuseF( tinBaseP , psttP , T(posti) ) ; ___( psttP ) ;
+                            etherP.fileReadF( tinBaseP , posti , cToDo , hFileBody ) ;
                         {
                         if( posti )
-                        etherP.newF( tinP , LF , posti , costa ) ; ___( posti ) ;
+                        etherP.newF( tinBaseP , LF , posti , costa ) ; ___( posti ) ;
                         ZE( osTextT* , posti ) ;
             
                         const countT costa = cToDo ;
@@ -690,7 +690,7 @@ TODO
                     POOPR
                 {
                 if( POOP )
-                tinP.pEtScratch->diskFileQueryF( tinP , pInfo , hFileBody ) ; ___( pInfo ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskFileQueryF( tinBaseP , pInfo , hFileBody ) ; ___( pInfo ) ;
                 ZE( infoFileS* , pInfo ) ;
             {
             if( !bFail )
@@ -701,8 +701,8 @@ TODO
                 POOPR
             {
             if( POOP )
-            tinP.pEtScratch->fileOpenF( tinP , hFileBody , countTC() , psttFileBodyP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ;
-            handleC hFileBody( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->fileOpenF( tinBaseP , hFileBody , countTC() , psttFileBodyP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ;
+            handleC hFileBody( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
             //CONoUTrAW( T("opening body file\r\n") ) ;
         {
     {
@@ -710,38 +710,38 @@ TODO
     }
         bFail = 1 ;
     {
-    else if( !etherP.diskFileExistsF( tinP , psttFileBodyP ) )
+    else if( !etherP.diskFileExistsF( tinBaseP , psttFileBodyP ) )
     }
         }
-            etherP.strMakeF( tinP , LF , psttP , tBody ) ; ___( psttP ) ;
-            etherP.delF( tinP , psttb ) ;
+            etherP.strMakeF( tinBaseP , LF , psttP , tBody ) ; ___( psttP ) ;
+            etherP.delF( tinBaseP , psttb ) ;
             TN( tBody , "" ) ; tBody = T(psttb) ;
-            etherP.strSubstringF( tinP , psttb , idf , idl , psttFileBodyP ) ; ___( psttb ) ;
+            etherP.strSubstringF( tinBaseP , psttb , idf , idl , psttFileBodyP ) ; ___( psttb ) ;
             ZE( countT , idl ) ;
-            countT idf = tLit.csF( tinP ) + 1 ;
+            countT idf = tLit.csF( tinBaseP ) + 1 ;
             ZE( strokeS* , psttb ) ;
         {
-        if( tLit.csF( tinP ) < psttFileBodyP->idAdam )
+        if( tLit.csF( tinBaseP ) < psttFileBodyP->idAdam )
     {
-    if( 1 == etherP.strIdF( tinP , tLit , psttFileBodyP ) )
+    if( 1 == etherP.strIdF( tinBaseP , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
 
     ZE( boolT , bFail ) ;
     _IO_
 {
-boolT getBodySnipFromFileF( tinS& tinP , etherC& etherP , strokeS*& psttP , const strokeS* const psttFileBodyP , const countT csttMaxP = TOCK )
+boolT getBodySnipFromFileF( tinBaseS& tinBaseP , etherC& etherP , strokeS*& psttP , const strokeS* const psttFileBodyP , const countT csttMaxP = TOCK )
 
 }
     return bFail ;
     }
-        //U::CANNOT DO THIS HERE BECAUSE THERE MIGHT BE MUTLIPLE RECIPIENTS, EACH OF WHICH NEEDS THIS FILE TO EXIST: if( !bFail && etherP.diskFileExistsF( tinP , psttFileBodyP ) ) etherP.boxZapF( tinP , psttFileBodyP ) ;
+        //U::CANNOT DO THIS HERE BECAUSE THERE MIGHT BE MUTLIPLE RECIPIENTS, EACH OF WHICH NEEDS THIS FILE TO EXIST: if( !bFail && etherP.diskFileExistsF( tinBaseP , psttFileBodyP ) ) etherP.boxZapF( tinBaseP , psttFileBodyP ) ;
 
         }
             }
                 DEL( pInfo ) ;
                 }
                     }
-                        etherP.delF( tinP , posti ) ;
+                        etherP.delF( tinBaseP , posti ) ;
                         }
                             }
                                 }
@@ -774,14 +774,14 @@ boolT getBodySnipFromFileF( tinS& tinP , etherC& etherP , strokeS*& psttP , cons
                                 for( countT offi = 0 ; offi < cNibble ; offi ++ )
             
                                 cToDo -= cNibble ;
-                                etherP.fileReadF( tinP , posti , cNibble , hFileBody ) ;
+                                etherP.fileReadF( tinBaseP , posti , cNibble , hFileBody ) ;
                                 countT cNibble = costa < cToDo ? costa : cToDo ;
                             {
                             while( cToDo )
                             boolT bNew = 1 ;
                         {
                         if( posti )
-                        etherP.newF( tinP , LF , posti , costa ) ; ___( posti ) ;
+                        etherP.newF( tinBaseP , LF , posti , costa ) ; ___( posti ) ;
                         ZE( osTextT* , posti ) ;
             
                         const countT costa = TOCK < cToDo ? TOCK : cToDo ;
@@ -806,7 +806,7 @@ boolT getBodySnipFromFileF( tinS& tinP , etherC& etherP , strokeS*& psttP , cons
                     POOPR
                 {
                 if( POOP )
-                tinP.pEtScratch->diskFileQueryF( tinP , pInfo , hFileBody ) ; ___( pInfo ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskFileQueryF( tinBaseP , pInfo , hFileBody ) ; ___( pInfo ) ;
                 ZE( infoFileS* , pInfo ) ;
             {
             if( !bFail )
@@ -817,8 +817,8 @@ boolT getBodySnipFromFileF( tinS& tinP , etherC& etherP , strokeS*& psttP , cons
                 POOPR
             {
             if( POOP )
-            tinP.pEtScratch->fileOpenF( tinP , hFileBody , countTC() , psttFileBodyP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ;
-            handleC hFileBody( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->fileOpenF( tinBaseP , hFileBody , countTC() , psttFileBodyP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ;
+            handleC hFileBody( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
             //CONoUTrAW( T("opening body file\r\n") ) ;
         {
     {
@@ -826,41 +826,41 @@ boolT getBodySnipFromFileF( tinS& tinP , etherC& etherP , strokeS*& psttP , cons
     }
         bFail = 1 ;
     {
-    else if( !etherP.diskFileExistsF( tinP , psttFileBodyP ) )
+    else if( !etherP.diskFileExistsF( tinBaseP , psttFileBodyP ) )
     }
         }
             CONoUTrAW( tBody ) ;
-            etherP.delF( tinP , psttb ) ;
+            etherP.delF( tinBaseP , psttb ) ;
             TN( tBody , "" ) ; tBody = T(psttb) ;
-            etherP.strSubstringF( tinP , psttb , idf , idl , psttFileBodyP ) ; ___( psttb ) ;
+            etherP.strSubstringF( tinBaseP , psttb , idf , idl , psttFileBodyP ) ; ___( psttb ) ;
             ZE( countT , idl ) ;
-            countT idf = tLit.csF( tinP ) + 1 ;
+            countT idf = tLit.csF( tinBaseP ) + 1 ;
             ZE( strokeS* , psttb ) ;
         {
-        if( tLit.csF( tinP ) < psttFileBodyP->idAdam )
+        if( tLit.csF( tinBaseP ) < psttFileBodyP->idAdam )
         //CONoUTrAW( T("sending literal value\r\n") ) ;
     {
-    if( 1 == etherP.strIdF( tinP , tLit , psttFileBodyP ) )
+    if( 1 == etherP.strIdF( tinBaseP , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
 
     //CONoUTrAW( T("processing body file \"")+T(psttFileBodyP)+T("\"\r\n") ) ;
     ZE( boolT , bFail ) ;
     _IO_
 {
-boolT logBodySnipFromFileF( tinS& tinP , etherC& etherP , const strokeS* const psttFileBodyP )
+boolT logBodySnipFromFileF( tinBaseS& tinBaseP , etherC& etherP , const strokeS* const psttFileBodyP )
 
 }
     return bFail ;
 
     }
-        //U::CANNOT DO THIS HERE BECAUSE THERE MIGHT BE MUTLIPLE RECIPIENTS, EACH OF WHICH NEEDS THIS FILE TO EXIST: if( !bFail && etherP.diskFileExistsF( tinP , psttFileBodyP ) ) etherP.boxZapF( tinP , psttFileBodyP ) ;
+        //U::CANNOT DO THIS HERE BECAUSE THERE MIGHT BE MUTLIPLE RECIPIENTS, EACH OF WHICH NEEDS THIS FILE TO EXIST: if( !bFail && etherP.diskFileExistsF( tinBaseP , psttFileBodyP ) ) etherP.boxZapF( tinBaseP , psttFileBodyP ) ;
 
         }
             }
                 DEL( pInfo ) ;
                 }
                     }
-                        etherP.delF( tinP , posti ) ;
+                        etherP.delF( tinBaseP , posti ) ;
                         }
                             }
                                 }
@@ -873,7 +873,7 @@ boolT logBodySnipFromFileF( tinS& tinP , etherC& etherP , const strokeS* const p
                                         }
                                             break ;
                                             }
-                                                sockP.writeF( tinP , "." , 1 ) ;
+                                                sockP.writeF( tinBaseP , "." , 1 ) ;
                                                 bNew = 0 ;
                                             {
                                             if( bNew )
@@ -887,19 +887,19 @@ boolT logBodySnipFromFileF( tinS& tinP , etherC& etherP , const strokeS* const p
                                         case '\r' :
                                     {
                                     switch( posti[ offi ] )
-                                    sockP.writeF( tinP , posti + offi , 1 ) ;
+                                    sockP.writeF( tinBaseP , posti + offi , 1 ) ;
                                 {
                                 for( countT offi = 0 ; offi < cNibble ; offi ++ )
             
                                 cToDo -= cNibble ;
-                                etherP.fileReadF( tinP , posti , cNibble , hFileBody ) ;
+                                etherP.fileReadF( tinBaseP , posti , cNibble , hFileBody ) ;
                                 countT cNibble = costa < cToDo ? costa : cToDo ;
                             {
                             while( cToDo )
                             boolT bNew = 1 ;
                         {
                         if( posti )
-                        etherP.newF( tinP , LF , posti , costa ) ; ___( posti ) ;
+                        etherP.newF( tinBaseP , LF , posti , costa ) ; ___( posti ) ;
                         ZE( osTextT* , posti ) ;
             
                         const countT costa = TOCK < cToDo ? TOCK : cToDo ;
@@ -926,7 +926,7 @@ boolT logBodySnipFromFileF( tinS& tinP , etherC& etherP , const strokeS* const p
                     POOPR
                 {
                 if( POOP )
-                tinP.pEtScratch->diskFileQueryF( tinP , pInfo , hFileBody ) ; ___( pInfo ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskFileQueryF( tinBaseP , pInfo , hFileBody ) ; ___( pInfo ) ;
                 ZE( infoFileS* , pInfo ) ;
             {
             if( !bFail )
@@ -938,8 +938,8 @@ boolT logBodySnipFromFileF( tinS& tinP , etherC& etherP , const strokeS* const p
                 POOPR
             {
             if( POOP )
-            tinP.pEtScratch->fileOpenF( tinP , hFileBody , countTC() , psttFileBodyP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ;
-            handleC hFileBody( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->fileOpenF( tinBaseP , hFileBody , countTC() , psttFileBodyP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ;
+            handleC hFileBody( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
             //CONoUTrAW( T("opening body file\r\n") ) ;
         {
     {
@@ -948,27 +948,27 @@ boolT logBodySnipFromFileF( tinS& tinP , etherC& etherP , const strokeS* const p
         bFail = 1 ;
         flagsFailP |= flFAIL_DATAfILEdOESnOTeXIST ;
     {
-    else if( !etherP.diskFileExistsF( tinP , psttFileBodyP ) )
+    else if( !etherP.diskFileExistsF( tinBaseP , psttFileBodyP ) )
     }
         }
-            sockP.writeF( tinP , (osTextT*)tBody , tBody.csF( tinP ) ) ;
-            etherP.delF( tinP , psttb ) ;
+            sockP.writeF( tinBaseP , (osTextT*)tBody , tBody.csF( tinBaseP ) ) ;
+            etherP.delF( tinBaseP , psttb ) ;
             TN( tBody , "" ) ; tBody = T(psttb) ;
-            etherP.strSubstringF( tinP , psttb , idf , idl , psttFileBodyP ) ; ___( psttb ) ;
+            etherP.strSubstringF( tinBaseP , psttb , idf , idl , psttFileBodyP ) ; ___( psttb ) ;
             ZE( countT , idl ) ;
-            countT idf = tLit.csF( tinP ) + 1 ;
+            countT idf = tLit.csF( tinBaseP ) + 1 ;
             ZE( strokeS* , psttb ) ;
         {
-        if( tLit.csF( tinP ) < psttFileBodyP->idAdam )
+        if( tLit.csF( tinBaseP ) < psttFileBodyP->idAdam )
         //CONoUTrAW( T("sending literal value\r\n") ) ;
     {
-    if( 1 == etherP.strIdF( tinP , tLit , psttFileBodyP ) )
+    if( 1 == etherP.strIdF( tinBaseP , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
 
     //CONoUTrAW( T("processing body file \"")+T(psttFileBodyP)+T("\"\r\n") ) ;
     ZE( boolT , bFail ) ;
 {
-boolT writeBodySnipFromFileF( tinS& tinP , etherC& etherP , socketC& sockP , const strokeS* const psttFileBodyP , flagsT& flagsFailP )
+boolT writeBodySnipFromFileF( tinBaseS& tinBaseP , etherC& etherP , socketC& sockP , const strokeS* const psttFileBodyP , flagsT& flagsFailP )
 
 }
     }
@@ -982,18 +982,18 @@ boolT writeBodySnipFromFileF( tinS& tinP , etherC& etherP , socketC& sockP , con
         sIn >> finger ;
         ZE( countT , finger ) ;
     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
         sOut << cPassAccountSP ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -1003,7 +1003,7 @@ boolT writeBodySnipFromFileF( tinS& tinP , etherC& etherP , socketC& sockP , con
     __NZ( psttP ) ;
     if( POOP ) return ;
 {
-voidT queryEmailFromIdAccountF( tinS& tinP , strokeS*& psttP , const countT cPassAccountSP )
+voidT queryEmailFromIdAccountF( tinBaseS& tinBaseP , strokeS*& psttP , const countT cPassAccountSP )
 //DUPLICATE CODE: b750104 3a50104
 
 #define flFAIL_DATAfILEdOESnOTeXIST                 0x8000

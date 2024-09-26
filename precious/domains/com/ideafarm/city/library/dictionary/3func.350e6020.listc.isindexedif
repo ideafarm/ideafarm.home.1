@@ -19,48 +19,48 @@
                             }
                                 bYes = ~hIndex ;
                                 h3.closeIfF() ;
-                                listC::openIF( tinP , hIndex , h3 , pczIndex , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
-                                handleC hIndex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                listC::openIF( tinBaseP , hIndex , h3 , pczIndex , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
+                                handleC hIndex( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                                 countT pczIndex[] = { idNameIndex , 0 } ;
                             {
                             if( idNameIndex )
                         {
                         if( ~h3 )
                         h2.closeIfF() ;
-                        listC::openIF( tinP , h3 , pcz3 , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
+                        listC::openIF( tinBaseP , h3 , pcz3 , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
                         countT pcz3[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , LISTnAMEsYS_FIELDvALUEiNDEX , 0 } ;
-                        handleC h3( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                        handleC h3( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     {
                     if( ~h2 )
                     h1.closeIfF() ;
-                    listC::openIF( tinP , h2 , pcz2 , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
+                    listC::openIF( tinBaseP , h2 , pcz2 , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
                     countT pcz2[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , 0 } ;
-                    handleC h2( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                    handleC h2( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                 {
                 if( ~h1 )
-                listC::openIF( tinP , h1 , pcz1 , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
+                listC::openIF( tinBaseP , h1 , pcz1 , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
                 countT pcz1[] = { LISTnAMEsYS_ROOT , 0 } ;
-                handleC h1( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                handleC h1( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
 
-                grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+                grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             if( idNameIndex )
 
             THREADmODE3rESTORE
-            countT idNameIndex = listC::dictionaryQueryFromTextIF( tinP , postMasterPool , flDICTIONARYqUERYfROMtEXT_IFeXISTS ) ;
+            countT idNameIndex = listC::dictionaryQueryFromTextIF( tinBaseP , postMasterPool , flDICTIONARYqUERYfROMtEXT_IFeXISTS ) ;
             THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )
 
-            puseC puseIndex( tinP , idPoolUse ) ;
+            puseC puseIndex( tinBaseP , idPoolUse ) ;
         {
-        if( idPoolUse == ifcIDpOOL_ADAMtEMP || tinP.pag1->pPoolHomeTemp )       // IF ifcIDpOOL_HOMEtEMP && !tinP.pag1->pPoolHomeTemp THEN CLEARLY IS NOT INDEXED
+        if( idPoolUse == ifcIDpOOL_ADAMtEMP || ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp )       // IF ifcIDpOOL_HOMEtEMP && !((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp THEN CLEARLY IS NOT INDEXED
 
-        const countT idPoolUse = !idStateSpace || idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ; // "!idStateSpace" ADDED WITHOUT ANALYSIS
+        const countT idPoolUse = !idStateSpace || idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ; // "!idStateSpace" ADDED WITHOUT ANALYSIS
 
         const countT idStateSpace = PUSE.idStateSpaceF() ;
  
-        const osTextT* postMasterPool = PUSE.postNameF( tinP ) ;
+        const osTextT* postMasterPool = PUSE.postNameF( tinBaseP ) ;
     {
-    if( tinP.pPoolUse ) //I MIGHT BE CALLED LATE, WHEN !tinP.pPoolUse
+    if( ((tinNormalS&)tinBaseP).pPoolUse ) //I MIGHT BE CALLED LATE, WHEN !((tinNormalS&)tinBaseP).pPoolUse
     ZE( boolT , bYes ) ;
 
     _IO_
@@ -70,7 +70,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/boolT listC::isIndexedIF( tinS& tinP , const countT idGrabLayerP )/*1*/
+/*1*/boolT listC::isIndexedIF( tinBaseS& tinBaseP , const countT idGrabLayerP )/*1*/
 /**/
 */
 /*

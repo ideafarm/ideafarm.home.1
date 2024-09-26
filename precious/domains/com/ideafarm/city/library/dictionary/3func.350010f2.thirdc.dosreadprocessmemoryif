@@ -15,10 +15,10 @@
             if( bOkP ) { __( cba - cbP ) ; }
             }
                 __1
-                __( tinP.brcLath ) ;
+                __( ((tinNormalS&)tinBaseP).brcLath ) ;
             {
             if( bOkRequired && !bOkP )
-            bOkP = !tinP.bosFail ;
+            bOkP = !((tinNormalS&)tinBaseP).bosFail ;
             BOS( WHATgbo , BOSoK , ReadProcessMemory( (HANDLE)handle.osF( ifcIDtYPEhANDLE_PROCESS ) , (voidT*)pvFromP , pbP , cbP , &cba ) )
             ZE( DWORD , cba ) ;
             BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
@@ -33,8 +33,8 @@
         {
         if( !handle )
 
-        { POOPIE osOpenProcessIF( tinP , handle , osPidP ) ; }
-        handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+        { POOPIE osOpenProcessIF( tinBaseP , handle , osPidP ) ; }
+        handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
 
     #elif defined( __NT__ )
         //U:
@@ -53,7 +53,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::dosReadProcessMemoryIF( tinS& tinP , byteT* const pbP , const countT cbP , boolT& bOkP , const voidT* const pvFromP , const countT osPidP )/*1*/
+/*1*/voidT thirdC::dosReadProcessMemoryIF( tinBaseS& tinBaseP , byteT* const pbP , const countT cbP , boolT& bOkP , const voidT* const pvFromP , const countT osPidP )/*1*/
 
 /**/
 */
@@ -70,7 +70,7 @@
   must point to cbP bytes that the caller has write access to
   must not be 0
  pbP
- tinP
+ tinBaseP
 arguments
  the impotence behavior depends on bOkP
 impotence might or might not be caused by inability to read

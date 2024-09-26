@@ -25,14 +25,14 @@ REST
     CoReLSE STEP( T("You have now \"seen\" an example of each of the three main types of IdeaFarm " "(tm) City application programs.") ) ;
     CoReLSE STEP( T("This tour program, even though it displays these dialog boxes, is another example of an invisible application program.") ) ;
     CoReLSE STEP( T("Sample Invisible program: The IdeaFarm (tm) City software that you installed, and that will run until you reboot this computer, is an example of IdeaFarm " "(tm) City invisible program.") ) ;
-    //U::CoReLSE etThread.osSessionF( tinP , countTC() , countTC() , countTC() , countTC() , 0x40100f9 ) ;
+    //U::CoReLSE etThread.osSessionF( tinBaseP , countTC() , countTC() , countTC() , countTC() , 0x40100f9 ) ;
     STEP( T("Please click \"Ok\" here when the Sample Text Dialog has ended.") ) ; //U::THIS SAMPLE DOES NOT ALWAYS END COMPLETELY
 
-    CoReLSE etThread.osThreadF( tinP , countTC() , tmLaunchDialogF ) ;
+    CoReLSE etThread.osThreadF( tinBaseP , countTC() , tmLaunchDialogF ) ;
     CoReLSE STEP( T("Sample Text Dialog program: Select \"Ok\", and I will launch a program that displays a simple text-only dialog.  You will see that text presentation is useable but rudimentary.") ) ;
     STEP( T("You can leave the clock open while you continue the tour.  (To close it, press the Esc key while it is visible.)") ) ;
-    etThread.osSleepF( tinP , TOCK * 8 ) ;
-    CoReLSE etThread.osSessionF( tinP , countTC() , countTC() , 0x4010485 ) ;
+    etThread.osSleepF( tinBaseP , TOCK * 8 ) ;
+    CoReLSE etThread.osSessionF( tinBaseP , countTC() , countTC() , 0x4010485 ) ;
     CoReLSE STEP( T("Sample Graphics program: Select \"Ok\", and I will launch a program that displays an analog clock.  You will see that clocks in IdeaFarm " "(tm) City look alien, resembling conventional clocks only in a very general way.") ) ;
 
     CoReLSE STEP( T("When IdeaFarm (tm) City is ready for general release, an operator's console, rather than this tour dialog, will appear.  You will use that console to launch IdeaFarm " "(tm) City application programs.  This tour includes three sample programs that I will launch for you.") ) ;
@@ -86,26 +86,26 @@ REST
 {
 else
 }
-    etThread.delF( tinP , psttEmail ) ;
+    etThread.delF( tinBaseP , psttEmail ) ;
 
     }}
         }}}} }}}} }}}} }}}} }
 
         STEP1( T("You can add days to your residency at any time.  Welcome.  You can use \"residentBlab\" immediately to introduce yourself and get involved!") ) ;
         STEP1( T("The IdeaFarm " "(tm) City New Resident Welcome page should be visible now.  You will have access to the \"residents only\" part of IdeaFarm " "(tm) City until your Residency Tax for this computer expires.") ) ;
-        etThread.osSleepF( tinP , TOCK * 4 ) ;
-        CoReLSE etThread.osHttpViewF( tinP , T("www.ideafarm.com//http/1.24.0.html") , 1 ) ;
+        etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
+        CoReLSE etThread.osHttpViewF( tinBaseP , T("www.ideafarm.com//http/1.24.0.html") , 1 ) ;
 
-        CoReLSE bindF( tinP , etThread , rc , psttEmail ) ;
+        CoReLSE bindF( tinBaseP , etThread , rc , psttEmail ) ;
         CoReLSE STEP( T("I will now bind new payments made by \"")+T(psttEmail)+T("\" to the computer that you are now using.") ) ;
-        getEmailF( tinP , etThread , psttEmail ) ; ___( psttEmail ) ;
+        getEmailF( tinBaseP , etThread , psttEmail ) ; ___( psttEmail ) ;
         CoReLSE STEP( T("An editor window will appear next.  Please use it to enter the exact email address that you just used to purchase a tour pass.") ) ;
         CoReLSE STEP( T("If you did not make the payment, please select \"Cancel\".  Else, select \"Ok\" to continue.") ) ;
-        etThread.osSleepF( tinP , TOCK * 0x20 ) ;
+        etThread.osSleepF( tinBaseP , TOCK * 0x20 ) ;
         STEP( T("The Residency Tax page should now either be visible behind me or appear as an icon on the task bar.  Please click the Residency Tax button on that page.") ) ;
-        etThread.osSleepF( tinP , TOCK * 4 ) ;
+        etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
 
-        CoReLSE etThread.osHttpViewF( tinP , T("www.ideafarm.com//http/1.14.0.html") , 1 ) ;
+        CoReLSE etThread.osHttpViewF( tinBaseP , T("www.ideafarm.com//http/1.14.0.html") , 1 ) ;
         CoReLSE STEP( T("If you would like your children to be able to say, \"Let us marry, raise our children, and live our lives in IdeaFarm " "(tm) City, where we can build our lives upon the foundation of Deep Love.\", join us now!") ) ;
         CoReLSE STEP( T("The focus of the Community of Women is to develop and direct the family, civic, and cultural life of the settlement.") ) ;
         CoReLSE STEP( T("The focus of the Community of Men is to establish profitable businesses by identifying and developing export opportunities.") ) ;
@@ -124,13 +124,13 @@ else
         tTitle2 = T("IdeaFarm " "(tm) City Residency Tax (8 $US for 64 days)") ;
     {
     else
-    CoReLSE if( rc == ifcMESSAGEbOXrESULT_NO ) etThread.osMessageBoxF( tinP , T("If you are interested in purchasing a confidential technical and strategic disclosure, please contact Wo'O Ideafarm via email (" ifcEMAIL_OLDfROM ") or by telephone (650-759-5306).") , TITLE ,  flMESSAGEbOXbUTTON_OK ) ;
-    rc = etThread.osMessageBoxF( tinP , T("If you would like to purchase residency (12 cents US per day), click \"Yes\":") , TITLE ,  flMESSAGEbOXbUTTON_NO | flMESSAGEbOXbUTTON_YES | flMESSAGEbOXbUTTON_CANCEL , flMESSAGEbOXbUTTON_YES ) ;
+    CoReLSE if( rc == ifcMESSAGEbOXrESULT_NO ) etThread.osMessageBoxF( tinBaseP , T("If you are interested in purchasing a confidential technical and strategic disclosure, please contact Wo'O Ideafarm via email (" ifcEMAIL_OLDfROM ") or by telephone (650-759-5306).") , TITLE ,  flMESSAGEbOXbUTTON_OK ) ;
+    rc = etThread.osMessageBoxF( tinBaseP , T("If you would like to purchase residency (12 cents US per day), click \"Yes\":") , TITLE ,  flMESSAGEbOXbUTTON_NO | flMESSAGEbOXbUTTON_YES | flMESSAGEbOXbUTTON_CANCEL , flMESSAGEbOXbUTTON_YES ) ;
 
     ZE( strokeS* , psttEmail ) ;
 {
 CoReLSE if( rc == ifcMESSAGEbOXrESULT_YES )
-CoReLSE rc = etThread.osMessageBoxF( tinP , T("Have you already taken the free tour?") , TITLE ,  flMESSAGEbOXbUTTON_NO | flMESSAGEbOXbUTTON_YES | flMESSAGEbOXbUTTON_CANCEL , flMESSAGEbOXbUTTON_NO ) ;
+CoReLSE rc = etThread.osMessageBoxF( tinBaseP , T("Have you already taken the free tour?") , TITLE ,  flMESSAGEbOXbUTTON_NO | flMESSAGEbOXbUTTON_YES | flMESSAGEbOXbUTTON_CANCEL , flMESSAGEbOXbUTTON_NO ) ;
 STEP( T("Thank you for enabling your computer for access to IdeaFarm " "(tm) City. Access will be disabled when you shut down and restart your computer.  You can also disable access by stopping the \"IdeaFarm\" service.  To completely remove, delete the x:\\ideafarm.home.* directory and all c" ":\\ideafarm.* files.") ) ;
 
 ZE( countT , rc ) ;
@@ -142,36 +142,36 @@ TN( tTitle1 , "[" ) ;
 TODO
 
 DONE( tmLaunchDialogF )
-etThread.osSessionF( tinP , countTC() , countTC() , 0x40100f9 ) ; //U::
-etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+etThread.osSessionF( tinBaseP , countTC() , countTC() , 0x40100f9 ) ; //U::
+etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
 TASK( tmLaunchDialogF )
 
 }
-    ether.delF( tinP , psttRaw ) ;
-    ether.strTrimF( tinP , psttEmailP , 0 , T(TbLACKnEWlINE) ) ;
-    ether.strSubstringLineF( tinP , psttEmailP , idf , sttq , psttRaw ) ; ___( psttEmailP ) ;
+    ether.delF( tinBaseP , psttRaw ) ;
+    ether.strTrimF( tinBaseP , psttEmailP , 0 , T(TbLACKnEWlINE) ) ;
+    ether.strSubstringLineF( tinBaseP , psttEmailP , idf , sttq , psttRaw ) ; ___( psttEmailP ) ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
 
-    ether.delF( tinP , pbi ) ;
-    ether.strMakeF( tinP , LF , psttRaw , T(pbi) ) ;
+    ether.delF( tinBaseP , pbi ) ;
+    ether.strMakeF( tinBaseP , LF , psttRaw , T(pbi) ) ;
     ZE( strokeS* , psttRaw ) ;
 
-    ether.boxGetShadowF( tinP , pbi , cbi , tFile ) ; ___( pbi ) ;
+    ether.boxGetShadowF( tinBaseP , pbi , cbi , tFile ) ; ___( pbi ) ;
     ZE( countT , cbi ) ;
     ZE( byteT* , pbi ) ;
 
-    ether.osEditF( tinP , tFile ) ;
+    ether.osEditF( tinBaseP , tFile ) ;
 
     }
-        ether.boxPutF( tinP , tFile , poste , sizeof poste - 1 ) ;
+        ether.boxPutF( tinBaseP , tFile , poste , sizeof poste - 1 ) ;
         byteT poste[] = "your@email.here" ;
     {
-    if( !ether.diskFileExistsF( tinP , tFile ) )
+    if( !ether.diskFileExistsF( tinBaseP , tFile ) )
 
     TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/payer.email" ) ;
 {
-voidT getEmailF( tinS& tinP , etherC& ether , strokeS*& psttEmailP )
+voidT getEmailF( tinBaseS& tinBaseP , etherC& ether , strokeS*& psttEmailP )
 
 }
     }
@@ -179,20 +179,20 @@ voidT getEmailF( tinS& tinP , etherC& ether , strokeS*& psttEmailP )
         }
             break ;
 
-            etThread.osSleepF( tinP , TOCK * 2 ) ; // TO GIVE SERVER TIME TO RECEIVE THIS SALVO
+            etThread.osSleepF( tinBaseP , TOCK * 2 ) ; // TO GIVE SERVER TIME TO RECEIVE THIS SALVO
             STEP( T("IdeaFarm " "(tm) City Administration has just bound ")+TF4(cBound,flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(" payments for your email address to the computer that you are now using.  The file \"")+tFile+T("\" will prevent IdeaFarm (tm) City from uninstalling itself when you shut down this computer.  You can use the (Windows) Services icon to control IdeaFarm " "(tm) City.") ) ;
-            etThread.boxPutF( tinP , tFile , "To uninstall IdeaFarm " "(tm) City, delete this file and then reboot.\r\nSee http://www.ideafarm.com for more information." ) ;
+            etThread.boxPutF( tinBaseP , tFile , "To uninstall IdeaFarm " "(tm) City, delete this file and then reboot.\r\nSee http://www.ideafarm.com for more information." ) ;
             TN( tFile , "///d/ideafarm." ) ; tFile += TF1(etherC::ifc_idHomeI_IF())+T(".setting.keyValue.keep") ;
             }
-                sockd.writeF( tinP , ifcPORToLD2_ENABLEpRIVATEhTTP1 , nnIfc , (byteT*)pnn , cnnOut * sizeof( nicNameC ) ) ;
-                nicNameC nnIfc = socketC::nicNameIF( tinP , etThread , T("www.ideafarm.com") ) ;
-                sockd.bindF( tinP ) ;
-                socketC sockd( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+                sockd.writeF( tinBaseP , ifcPORToLD2_ENABLEpRIVATEhTTP1 , nnIfc , (byteT*)pnn , cnnOut * sizeof( nicNameC ) ) ;
+                nicNameC nnIfc = socketC::nicNameIF( tinBaseP , etThread , T("www.ideafarm.com") ) ;
+                sockd.bindF( tinBaseP ) ;
+                socketC sockd( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
         
                 countT cnnOut = cnn <= cnnMax ? cnn : cnnMax ;
                 const countT cnnMax = ifcCBdATAGRAMmAX / sizeof( nicNameC ) ;
         
-                socketC::nicNameIF( tinP , etThread , pnn , cnn ) ;
+                socketC::nicNameIF( tinBaseP , etThread , pnn , cnn ) ;
                 ZE( countT , cnn ) ;
                 ZE( nicNameC* , pnn ) ;
                 //CODE SYNC: ea40104 a210104
@@ -210,35 +210,35 @@ voidT getEmailF( tinS& tinP , etherC& ether , strokeS*& psttEmailP )
         {
         if( bJobFailed )
 
-        *tinP.zEtScratch = 0 ;
+        *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
         }
             CONoUTrAW( T("cBound: ")+TF1(cBound)+T("\r\n") ) ;
             else            { CONoUTrAW( "!bindPaymentsToMe job aok\r\n" ) ; }    
-            if( *tinP.zEtScratch ) { CONoUTrAW( "!bindPaymentsToMe job FAILED\r\n" ) ; bJobFailed = 1 ; }    
+            if( *((tinNormalS&)tinBaseP).zEtScratch ) { CONoUTrAW( "!bindPaymentsToMe job FAILED\r\n" ) ; bJobFailed = 1 ; }    
             }
                 sData >> cBound ;
     
                 *psCourse >> sData ;
                 *psCourse >> sCodes ;
-                soulC sData( tinP , TAG( TAGiDnULL ) ) ;
-                soulC sCodes( tinP , TAG( TAGiDnULL ) ) ;
+                soulC sData( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC sCodes( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             if( psCourse )
             stCourses >> psCourse ;
             ZE( soulC* , psCourse ) ;
             //U::__( stCourses - 2 ) ;
     
-            tinP.zEtScratch->ifcJobF( tinP , stCourses , 0x4010120 , sOrder , stOrders , T("!bindPaymentsToMe") , 1 , nnIfc ) ;
-            nicNameC nnIfc = socketC::nicNameIF( tinP , etThread , T("www.ideafarm.com") ) ;
-            stOrders << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-            stackC stOrders(  tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-            stackC stCourses( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+            ((tinNormalS&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , 0x4010120 , sOrder , stOrders , T("!bindPaymentsToMe") , 1 , nnIfc ) ;
+            nicNameC nnIfc = socketC::nicNameIF( tinBaseP , etThread , T("www.ideafarm.com") ) ;
+            stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+            stackC stOrders(  tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+            stackC stCourses( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
         
             sOrder << psttEmailP ;
-            sOrder << etThread.diskIdF( tinP , T("///c" "/") ) ;
+            sOrder << etThread.diskIdF( tinBaseP , T("///c" "/") ) ;
             sOrder << (strokeS*)T("!bindPaymentsToMe") ;
             sOrder << ifcIDcMDjOBoRDER_NAMED ;
-            soulC sOrder( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sOrder( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         ZE( boolT , bJobFailed ) ;
         ZE( countT , cBound ) ;
@@ -250,15 +250,15 @@ voidT getEmailF( tinS& tinP , etherC& ether , strokeS*& psttEmailP )
     TN( tTitle1 , "[" ) ;
     //CODE SYNCH: THIS THIS
 {
-voidT bindF( tinS& tinP , etherC& etThread , countT& rc , const strokeS* const psttEmailP )
+voidT bindF( tinBaseS& tinBaseP , etherC& etThread , countT& rc , const strokeS* const psttEmailP )
 
 #define TITLE (cStepsRemaining?T("[")+TF4(--cStepsRemaining,flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FOREIGN,0,0xa)+T("] "):T(""))+tTitle2
 
-#define STEP1(textP) rc = etThread.osMessageBoxF( tinP , textP , TITLE , flMESSAGEbOXbUTTON_OK )
-#define STEP(textP) rc = etThread.osMessageBoxF( tinP , textP , TITLE , flMESSAGEbOXbUTTON_OK | flMESSAGEbOXbUTTON_CANCEL )
+#define STEP1(textP) rc = etThread.osMessageBoxF( tinBaseP , textP , TITLE , flMESSAGEbOXbUTTON_OK )
+#define STEP(textP) rc = etThread.osMessageBoxF( tinBaseP , textP , TITLE , flMESSAGEbOXbUTTON_OK | flMESSAGEbOXbUTTON_CANCEL )
 
     else {
-        etThread.osMessageBoxF( tinP , T("Tour canceled.  Access to IdeaFarm (tm) City is still enabled on this computer.  To disable that, either reboot or stop the IdeaFarm " "(tm) service.") , TITLE ,  flMESSAGEbOXbUTTON_OK ) ; \
+        etThread.osMessageBoxF( tinBaseP , T("Tour canceled.  Access to IdeaFarm (tm) City is still enabled on this computer.  To disable that, either reboot or stop the IdeaFarm " "(tm) service.") , TITLE ,  flMESSAGEbOXbUTTON_OK ) ; \
     if( rc == ifcMESSAGEbOXrESULT_CANCEL )                                                                          \
                                                                                                                     \
 #define CoReLSE                                                                                                     \

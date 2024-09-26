@@ -11,7 +11,7 @@
     #endif
 
         __( ec ) ;
-        if( ec ) etherC::etTextIF( tinP ).traceF( tinP , T("openSslCrypto_encryptIF / failed") ) ;
+        if( ec ) etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslCrypto_encryptIF / failed") ) ;
 
         if( was < cbSymCypherTextP ) { BLAMMO ; } //SHITTY OPENSSL CODE HAS OVERWRITTEN MEMORY ; CALLER MUST ENSURE THAT THIS DOES NOT HAPPEN BY ENSURING THAT THE BUFFER IS LARGE ENOUGH
         c_openSslCrypto_encryptIF( &ec , (unsigned char*)pbSymCypherTextP , (int*)&cbSymCypherTextP , (unsigned char*)pbInnerKeyP , (int*)&cbInnerKeyP , (unsigned char*)pbSeedP , cbSeedP , (unsigned char*)pbPlainTextP , cbPlainTextP , c_pKey ) ;
@@ -27,7 +27,7 @@
 
     }
         if( POOP ) return ;
-        __Z( F(tinP.flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL )
+        __Z( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL )
         __NZ( handleP.cNoteF() ) ;
         }
             __1
@@ -39,7 +39,7 @@
     {
     IFbEcAREFUL
 {
-/**//*1*/voidT thirdC::openSslCrypto_encryptIF( tinS& tinP , byteT* pbSymCypherTextP , countT& cbSymCypherTextP , byteT* pbInnerKeyP , countT& cbInnerKeyP , byteT* pbSeedP , countT cbSeedP , byteT* pbPlainTextP , countT cbPlainTextP , handleC& handleP )/*1*/
+/**//*1*/voidT thirdC::openSslCrypto_encryptIF( tinBaseS& tinBaseP , byteT* pbSymCypherTextP , countT& cbSymCypherTextP , byteT* pbInnerKeyP , countT& cbInnerKeyP , byteT* pbSeedP , countT cbSeedP , byteT* pbPlainTextP , countT cbPlainTextP , handleC& handleP )/*1*/
 */
 /*
 

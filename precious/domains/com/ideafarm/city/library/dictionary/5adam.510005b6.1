@@ -13,10 +13,10 @@ CONoUTrAW3( "final value is: " , target , "\r\n" ) ;
 
 }
     }
-        ++ s ; ether.osSleepF( tinP , 0x40 ) ;
+        ++ s ; ether.osSleepF( tinBaseP , 0x40 ) ;
     {
     while( !ether && cGorillas )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 CONoUTrAW( "go!\r\n" ) ;
@@ -24,18 +24,18 @@ bGo = 1 ;
 
 }
     }
-        ++ s ; ether.osSleepF( tinP , 0x40 ) ;
+        ++ s ; ether.osSleepF( tinBaseP , 0x40 ) ;
     {
     while( !ether && cGorillas < CgORILLAS )
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 while( cToDo -- ) etThread.osThreadF( TaRG1( tmStompF ) ) ;
 countT cToDo = CgORILLAS ;
 
-boolT bOk = tinP.brcRaw ;
+boolT bOk = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSpOOP
-BOS( WHATgbo , BOSoK , GetProcessAffinityMask( (HANDLE)tinP.brcRaw , &infoProcess , &infoSystem ) )
+BOS( WHATgbo , BOSoK , GetProcessAffinityMask( (HANDLE)((tinNormalS&)tinBaseP).brcRaw , &infoProcess , &infoSystem ) )
 ZE( DWORD , infoSystem ) ;
 ZE( DWORD , infoProcess ) ;
 
@@ -51,16 +51,16 @@ dec02AM( cGorillas ) ;
     
     }
         }
-            ++ s ; ether.osSleepF( tinP , 0x40 ) ;
+            ++ s ; ether.osSleepF( tinBaseP , 0x40 ) ;
         {
         while( !ether && !bGo )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 {
 inc02AM( cGorillas ) ;
-boolT bOk = tinP.brcRaw ;
+boolT bOk = ((tinNormalS&)tinBaseP).brcRaw ;
 BOSpOOP
-BOS( WHATgbo , BOSoK , SetThreadAffinityMask ( (HANDLE)tinP.brcRaw , 8 ) )
+BOS( WHATgbo , BOSoK , SetThreadAffinityMask ( (HANDLE)((tinNormalS&)tinBaseP).brcRaw , 8 ) )
 
 BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
 

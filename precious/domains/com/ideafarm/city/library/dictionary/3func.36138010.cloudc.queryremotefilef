@@ -11,12 +11,12 @@
     }
         }
             if( POOP ) POOPR ;
-            //etScratch.boxPutF( tinP , T("///d/tmp/x/query.reply.")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") , postHear , costHear ) ;
+            //etScratch.boxPutF( tinBaseP , T("///d/tmp/x/query.reply.")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") , postHear , costHear ) ;
             //countT idIn = ++ idInLath ;
             //static countT idInLath ;
 
             }
-                ether.strMakeFromOsTextF( tinP , psttHashP , postc2 ) ; ___( psttHashP ) ;
+                ether.strMakeFromOsTextF( tinBaseP , psttHashP , postc2 ) ; ___( psttHashP ) ;
                 *poste = 0 ;
                 while( *poste && *poste != '\r' && *poste != '\n' ) poste ++ ;
                 osTextT* poste = postc2 ;
@@ -28,7 +28,7 @@
 
             }
                 cbHiP = 0 ; //U::SUPPORT LARGE FILES
-                cbLoP = ether.strDigitsToSCountF( tinP , T(postc1) , 0xa , 1 ) ;
+                cbLoP = ether.strDigitsToSCountF( tinBaseP , T(postc1) , 0xa , 1 ) ;
 
                 *poste = 0 ;
                 while( *poste && *poste != '\r' && *poste != '\n' ) poste ++ ;
@@ -39,8 +39,8 @@
             {
             if( postc1 )
 
-            osTextT* postc2 = thirdC::c_strstrIF( tinP , postHear , postTagHash ) ;
-            osTextT* postc1 = thirdC::c_strstrIF( tinP , postHear , postTagLength ) ;
+            osTextT* postc2 = thirdC::c_strstrIF( tinBaseP , postHear , postTagHash ) ;
+            osTextT* postc1 = thirdC::c_strstrIF( tinBaseP , postHear , postTagLength ) ;
 
             osTextT postTagHash[] = "\nEtag:" ;
             osTextT postTagLength[] = "\nContent-Length:" ;
@@ -56,10 +56,10 @@
 
                 }
                     }
-                        etPrime.osSleepF( tinP , TOCK ) ;
-                        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                        etPrime.osSleepF( tinBaseP , TOCK ) ;
+                        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                        ether.traceF( tinP , T("will retry after napping for a tock") ) ;
+                        ether.traceF( tinBaseP , T("will retry after napping for a tock") ) ;
 
                         POOPR ;
                     {
@@ -70,26 +70,26 @@
                     {
                     if( !POOP )
 
-                    __( !ether.strIdF( tinP , tReplyCode200_OK , tHear ) ) ;
+                    __( !ether.strIdF( tinBaseP , tReplyCode200_OK , tHear ) ) ;
 
                     }
                         break ;
-                        etherC::etRockIF( tinP ).traceF( tinP , T("authorization refused") ) ;
+                        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("authorization refused") ) ;
                     {
                     if( POOP )
-                    __NZ( 1 == ether.strIdF( tinP , tReplyCode401_Unauthorized , tHear ) ) ;
+                    __NZ( 1 == ether.strIdF( tinBaseP , tReplyCode401_Unauthorized , tHear ) ) ;
                 {
                 if( !POOP )
 
-                ether.traceF( tinP , T(postHear) ) ;
+                ether.traceF( tinBaseP , T(postHear) ) ;
                 TN( tHear , postHear ) ;
 
-                costHear = ss.readF( tinP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
-                thirdC::c_memsetIF(  tinP , postHear , sizeof postHear ) ;
+                costHear = ss.readF( tinBaseP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+                thirdC::c_memsetIF(  tinBaseP , postHear , sizeof postHear ) ;
 
-                ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
-                ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , etScratch , tHost ) ) ;
-                socketC ss( tinP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+                ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+                ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , etScratch , tHost ) ) ;
+                socketC ss( tinBaseP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
                 //}
                 //    __1 ;
@@ -103,24 +103,24 @@
         while( cTries -- && !etPrime && !POOP )
         countT cTries = TUCK >> 5 ;
         //boolT bWoth = 1 ; //U::TO FIND A BUG
-        etherC& etScratch = *tinP.pEtScratch ;
-        etherC& etPrime   = etherC::etPrimeIF( tinP ) ;
+        etherC& etScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
+        etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
         ZE( boolT , bOk ) ;
         ZE( countT , costHear ) ;
         char postHear[ TOCK ] ; 
     {
     IFsCRATCH
 
-    //ether.traceF( tinP , T("the HEAD utterance has been appended to the log") ) ;
+    //ether.traceF( tinBaseP , T("the HEAD utterance has been appended to the log") ) ;
     //LOGrAW( tSay ) ;
 
     }
-        ether.delF( tinP , psttShortUrlEncoded ) ;
+        ether.delF( tinBaseP , psttShortUrlEncoded ) ;
         }
-            bHandle.ungrabF( tinP ) ;
+            bHandle.ungrabF( tinBaseP ) ;
             tSay = T("HEAD ")+tUrlCloudAgent+T("/")+T(psttCloudContainerP)+T("/")+T(psttShortUrlEncoded)+T(" HTTP/1.1\r\nHost: ")+tHost+T("\r\nX-Auth-Token: ")+cloudInfo.tRackspaceAccessToken+T("\r\n\r\n") ;
             cloudInfoS& cloudInfo = *(cloudInfoS*)hCloud.osF( ifcIDtYPEhANDLE_CLOUD ) ;
-            bHandle.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
 
         //  
@@ -130,7 +130,7 @@
         // 
         // EXAMPLE
 
-        ether.strToUrlF( tinP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
+        ether.strToUrlF( tinBaseP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
         ZE( strokeS* , psttShortUrlEncoded ) ;
     {
     TN( tSay , "" ) ;
@@ -150,7 +150,7 @@
 
     SCOOP
 {
-/*1*/voidT cloudC::queryRemoteFileF( tinS& tinP , countT& cbLoP , countT& cbHiP , strokeS*& psttHashP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP )/*1*/
+/*1*/voidT cloudC::queryRemoteFileF( tinBaseS& tinBaseP , countT& cbLoP , countT& cbHiP , strokeS*& psttHashP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP )/*1*/
 
 /**/
 */

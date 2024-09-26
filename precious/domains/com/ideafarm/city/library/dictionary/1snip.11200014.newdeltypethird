@@ -13,14 +13,14 @@
             }                                                                           \
                 }                                                                       \
                     }                                                                   \
-                        thirdC::c_memsetIF( tinP , (byteT*)pP , cba ) ;                 \
+                        thirdC::c_memsetIF( tinBaseP , (byteT*)pP , cba ) ;                 \
                         /*ENSURES NO sc_cADAM CASTE VALUES*/                            \
                     {                                                                   \
                     if( idType == ifcIDtYPEdROPnOTE_strokeS )                           \
                     countT idType = idTypeP ;                                           \
                 {                                                                       \
                 if( pP )                                                                \
-                poolNewF( tinP , idLineP , idiFileP , *(byteT**)&pP , cba ) ; /*___( pP ) ; CALLER MUST TAG*/ \
+                poolNewF( tinBaseP , idLineP , idiFileP , *(byteT**)&pP , cba ) ; /*___( pP ) ; CALLER MUST TAG*/ \
                 countT cba = cP * NDsIZEoF( typeP ) ;                                   \
             {                                                                           \
             if( !*this )                                                                \
@@ -33,11 +33,11 @@
             DROPnOTEdOESnOTwANTmE                                                       \
             _IO_                                                                        \
         {                                                                               \
-        voidT thirdC::newF( tinS& tinP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
+        voidT thirdC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
                                                                                         \
         }                                                                               \
             if( pP ) pP = 0 ;                                                           \
-            poolDelF( tinP , (voidT*)pP ) ;                                             \
+            poolDelF( tinBaseP , (voidT*)pP ) ;                                             \
                                                                                         \
             }                                                                           \
                 }                                                                       \
@@ -56,7 +56,7 @@
             countT idType = idTypeP ;                                                   \
             _IO_                                                                        \
         {                                                                               \
-        voidT thirdC::delF( tinS& tinP , typeP*& pP )                                   \
+        voidT thirdC::delF( tinBaseS& tinBaseP , typeP*& pP )                                   \
                                                                                         \
     #define NEWdELtYPEtHIRD(typeP,idTypeP)                                              \
 
@@ -66,7 +66,7 @@
             }                                                                           \
                 }                                                                       \
                     }                                                                   \
-                        thirdC::c_memsetIF( tinP , (byteT*)pP , cba ) ;                 \
+                        thirdC::c_memsetIF( tinBaseP , (byteT*)pP , cba ) ;                 \
                         /*ENSURES NO sc_cADAM CASTE VALUES*/                            \
                     {                                                                   \
                     if( idType == ifcIDtYPEdROPnOTE_strokeS )                           \
@@ -77,11 +77,11 @@
                         pNote->idType       = ifcIDtYPEdROPnOTE_##typeP ;               \
                     {                                                                   \
                     if( pNote )                                                         \
-                    dropNoteS* pNote = PUSE.pDropNoteF( tinP , (byteT*)pP ) ;           \
+                    dropNoteS* pNote = PUSE.pDropNoteF( tinBaseP , (byteT*)pP ) ;           \
                     _IO_                                                                \
                 {                                                                       \
                 if( pP )                                                                \
-                poolNewF( tinP , idLineP , idiFileP , *(byteT**)&pP , cba ) ; ___LF( pP , idLineP , idiFileP ) ; \
+                poolNewF( tinBaseP , idLineP , idiFileP , *(byteT**)&pP , cba ) ; ___LF( pP , idLineP , idiFileP ) ; \
                 countT cba = cP * NDsIZEoF( typeP ) ;                                   \
                 _IO_                                                                    \
             {                                                                           \
@@ -93,14 +93,14 @@
             if( ( (countT)(-1) >> 1 ) / NDsIZEoF( typeP ) <= cP ) /*NOT ADDRESSABLE*/   \
                                                                                         \
             DROPnOTEdOESnOTwANTmE                                                       \
-            if( !tinP.pPoolUse ) { BLAMMO ; }                                           \
+            if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                           \
             _IO_                                                                        \
         {                                                                               \
-        voidT thirdC::newF( tinS& tinP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
+        voidT thirdC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
                                                                                         \
         }                                                                               \
             if( pP ) pP = 0 ;                                                           \
-            poolDelF( tinP , (voidT*)pP ) ;                                             \
+            poolDelF( tinBaseP , (voidT*)pP ) ;                                             \
                                                                                         \
             }                                                                           \
                 }                                                                       \
@@ -121,7 +121,7 @@
             countT idType = idTypeP ;                                                   \
             _IO_                                                                        \
         {                                                                               \
-        voidT thirdC::delF( tinS& tinP , typeP*& pP )                                   \
+        voidT thirdC::delF( tinBaseS& tinBaseP , typeP*& pP )                                   \
                                                                                         \
     #define NEWdELtYPEtHIRD(typeP,idTypeP)                                              \
 

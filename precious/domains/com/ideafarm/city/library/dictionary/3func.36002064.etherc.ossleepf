@@ -11,14 +11,14 @@
     }
         }
             }
-                if( F(flagsP) & flSLEEP_TALK ) strokeF( tinP , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT) ) ;_WQ
-                sleepEndF( tinP ) ;_WQ
-                third.dosSleepIF( tinP , timeGrain ) ;_WQ
-                sleepStartF( tinP ) ;_WQ
+                if( F(flagsP) & flSLEEP_TALK ) strokeF( tinBaseP , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT) ) ;_WQ
+                sleepEndF( tinBaseP ) ;_WQ
+                third.dosSleepIF( tinBaseP , timeGrain ) ;_WQ
+                sleepStartF( tinBaseP ) ;_WQ
                 }
-                    delF( tinP , psttw ) ;_WQ
-                    strokeF( tinP , T("\r")+S2(0,scOld_SYSmARK)+T(psttw) ) ;_WQ
-                    strFromTimeF( tinP , psttw , time , 0 ) ; ___( psttw ) ;_WQ
+                    delF( tinBaseP , psttw ) ;_WQ
+                    strokeF( tinBaseP , T("\r")+S2(0,scOld_SYSmARK)+T(psttw) ) ;_WQ
+                    strFromTimeF( tinBaseP , psttw , time , 0 ) ; ___( psttw ) ;_WQ
                     ZE( strokeS* , psttw ) ;_WQ
                 {
                 if( F(flagsP) & flSLEEP_TALK )
@@ -28,9 +28,9 @@
         {
         else
         }
-            sleepEndF( tinP ) ;_WQ
-            third.dosSleepIF( tinP , 0 ) ;_WQ
-            sleepStartF( tinP ) ;_WQ
+            sleepEndF( tinBaseP ) ;_WQ
+            third.dosSleepIF( tinBaseP , 0 ) ;_WQ
+            sleepStartF( tinBaseP ) ;_WQ
         {
         if( !time )
 
@@ -49,12 +49,12 @@
         FV( flSLEEP , flagsP ) ;_WQ
         if( POOP ) return ;
 
-        if( POOP && this != &etPrimeIF( tinP ) ) { BLAMMO ; }  // PREVENTS CPU PEGGING; WILL GET BLAMMO INSTEAD
+        if( POOP && this != &etPrimeIF( tinBaseP ) ) { BLAMMO ; }  // PREVENTS CPU PEGGING; WILL GET BLAMMO INSTEAD
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::osSleepF( tinS& tinP , const countT timeP , const countT timeGrainP , const flagsT flagsP )/*1*/
+/*1*/voidT etherC::osSleepF( tinBaseS& tinBaseP , const countT timeP , const countT timeGrainP , const flagsT flagsP )/*1*/
 
 /**/
 */
@@ -69,7 +69,7 @@
  timeP
 arguments
 returns early if impotence is detected
-checks for asynchronous impotence (etPrimeIF( tinP )) after each timeGrainP nap
+checks for asynchronous impotence (etPrimeIF( tinBaseP )) after each timeGrainP nap
 takes naps of length timeGrainP each until have napped for timeP
   \<A HREF=\"5.1510104.1.1.0.html\"\>1510104:  WAKEsHOW( "example.simplest.func.103006f.etherC.osSleepF" )\</A\>
  simplest

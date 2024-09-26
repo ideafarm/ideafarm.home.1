@@ -10,57 +10,57 @@
 }
     else __1
     }
-        ether.boxPutF( tinP , psttGeneratedNameP , pbP , cbw ) ;
-        ether.strMakeF( tinP , LF , psttGeneratedNameP , T("///")+T(psttName)+T(".")+TF3(++idMax,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) ) ; ___( psttGeneratedNameP ) ;
-        ether.boxMenuIdRangeF( tinP , idMin , idMax , T("///")+T(psttName)+T(".*") , csttEstimateP ) ;
+        ether.boxPutF( tinBaseP , psttGeneratedNameP , pbP , cbw ) ;
+        ether.strMakeF( tinBaseP , LF , psttGeneratedNameP , T("///")+T(psttName)+T(".")+TF3(++idMax,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) ) ; ___( psttGeneratedNameP ) ;
+        ether.boxMenuIdRangeF( tinBaseP , idMin , idMax , T("///")+T(psttName)+T(".*") , csttEstimateP ) ;
         ZE( countT , idMax ) ;
         ZE( countT , idMin ) ;
     {
     else if( !psttHost->idAdam && !psttType->idAdam )
     }
-        verifyReplyF( tinP , 226 ) ;
+        verifyReplyF( tinBaseP , 226 ) ;
         }
             }
                 __( rc != 150 ) ;
-                ether.delF( tinP , psttg ) ;
+                ether.delF( tinBaseP , psttg ) ;
                 }
-                    ether.delF( tinP , psttPrefix ) ;
-                    ether.strFuseF( tinP , psttGeneratedNameP , T(psttPrefix)+T(psttg) ) ; ___( psttGeneratedNameP ) ;
-                    ether.strSubstringF( tinP , psttPrefix , idf , idl , psttAll ) ; ___( psttPrefix ) ;
+                    ether.delF( tinBaseP , psttPrefix ) ;
+                    ether.strFuseF( tinBaseP , psttGeneratedNameP , T(psttPrefix)+T(psttg) ) ; ___( psttGeneratedNameP ) ;
+                    ether.strSubstringF( tinBaseP , psttPrefix , idf , idl , psttAll ) ; ___( psttPrefix ) ;
                     ZE( strokeS* , psttPrefix ) ;
                     __Z( idl ) ;
-                    countT idl = ether.strIdF( tinP , countTC( 1 ) , sttq , S1C('/') , psttAll , 0 , - 1 ) ;
+                    countT idl = ether.strIdF( tinBaseP , countTC( 1 ) , sttq , S1C('/') , psttAll , 0 , - 1 ) ;
 
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf = 1 ;
                 {
-                ether.delF( tinP , psttReply ) ;
-                stouGeneratedFileNameF( tinP , psttg , psttReply ) ; ___( psttg ) ;
+                ether.delF( tinBaseP , psttReply ) ;
+                stouGeneratedFileNameF( tinBaseP , psttg , psttReply ) ; ___( psttg ) ;
                 ZE( strokeS* , psttg ) ;
-                countT rc = pSControl->readWoReplyF( tinP , psttReply ) ; ___( psttReply ) ;
+                countT rc = pSControl->readWoReplyF( tinBaseP , psttReply ) ; ___( psttReply ) ;
                 ZE( strokeS* , psttReply ) ;
             {
             if( !POOP )
-            sData.writeF( tinP , pbP , cbw ) ;
-            sData.connectF( tinP , idPortData , nicNameData ) ;
-            socketC sData( tinP , ether , TAG( TAGiDnULL ) ) ;
+            sData.writeF( tinBaseP , pbP , cbw ) ;
+            sData.connectF( tinBaseP , idPortData , nicNameData ) ;
+            socketC sData( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
         {
 
-        ether.delF( tinP , psttLike ) ;
-        { textC txt = T("stou ")+T(psttLike)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
+        ether.delF( tinBaseP , psttLike ) ;
+        { textC txt = T("stou ")+T(psttLike)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
 
         }
-            verifyReplyF( tinP , 250 ) ;
-            ether.delF( tinP , psttDir ) ;
-            { textC txt = T("cwd ")+T(psttDir)+T("\r\n") ; pSControl->writeF( tinP , (osTextT*)txt ) ; }
-            ether.strSubstringF( tinP , psttLike , idf , idLathI , psttName ) ; ___( psttLike ) ;
+            verifyReplyF( tinBaseP , 250 ) ;
+            ether.delF( tinBaseP , psttDir ) ;
+            { textC txt = T("cwd ")+T(psttDir)+T("\r\n") ; pSControl->writeF( tinBaseP , (osTextT*)txt ) ; }
+            ether.strSubstringF( tinBaseP , psttLike , idf , idLathI , psttName ) ; ___( psttLike ) ;
             idLathI = 0 ;
             idf = idBetween + 1 ;
-            ether.strSubstringF( tinP , psttDir , idf , idLathI , psttName ) ; ___( psttDir ) ;
+            ether.strSubstringF( tinBaseP , psttDir , idf , idLathI , psttName ) ; ___( psttDir ) ;
             ZE( strokeS* , psttDir ) ;
             countT idLathI = idBetween - 1 ;
             countT idf = 1 ;
-            countT idBetween = ether.strIdF( tinP , countTC( 1 ) , sttq , S1C('/') , psttName , 0 , - 1 ) ;
+            countT idBetween = ether.strIdF( tinBaseP , countTC( 1 ) , sttq , S1C('/') , psttName , 0 , - 1 ) ;
 
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         {
@@ -70,21 +70,21 @@
             __Z( idPortData ) ;
             __Z( nicNameData ) ;
             __( rc != 227 ) ;
-            ether.delF( tinP , psttReply ) ;
-            readNicNameIdPortF( tinP , nicNameData , idPortData , psttReply ) ;
-            countT rc = pSControl->readWoReplyF( tinP , psttReply ) ; ___( psttReply ) ;
+            ether.delF( tinBaseP , psttReply ) ;
+            readNicNameIdPortF( tinBaseP , nicNameData , idPortData , psttReply ) ;
+            countT rc = pSControl->readWoReplyF( tinBaseP , psttReply ) ; ___( psttReply ) ;
             ZE( strokeS* , psttReply ) ;
         {
         if( !POOP )
         ZE( countT , idPortData ) ;
         nicNameC nicNameData ;
 
-        pSControl->writeF( tinP , (osTextT*)T("pasv\r\n") ) ;
+        pSControl->writeF( tinBaseP , (osTextT*)T("pasv\r\n") ) ;
     {
-    if( psttHost->idAdam && !ether.strCompareF( tinP , psttType , T("ftp") ) && pSControl )
+    if( psttHost->idAdam && !ether.strCompareF( tinBaseP , psttType , T("ftp") ) && pSControl )
     // PUT THE BACKING FILE BYTES
 
-    if( !cbw ) cbw = ether.strBodyLengthF( tinP , pbP ) ;
+    if( !cbw ) cbw = ether.strBodyLengthF( tinBaseP , pbP ) ;
     countT cbw = cbP ;
     _IO_
 
@@ -99,7 +99,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT boxC::putGenerationF( tinS& tinP , strokeS*& psttGeneratedNameP , const countT csttEstimateP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/voidT boxC::putGenerationF( tinBaseS& tinBaseP , strokeS*& psttGeneratedNameP , const countT csttEstimateP , const byteT* const pbP , const countT cbP )/*1*/
 /**/
 */
  cbP

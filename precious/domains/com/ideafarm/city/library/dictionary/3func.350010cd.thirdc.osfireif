@@ -16,7 +16,7 @@
         }
             BOSpOOP
         {
-        if( tinP.bosFail && tinP.brcLath != ERROR_SHUTDOWN_IN_PROGRESS )
+        if( ((tinNormalS&)tinBaseP).bosFail && ((tinNormalS&)tinBaseP).brcLath != ERROR_SHUTDOWN_IN_PROGRESS )
 
         BOS( WHATgbo , BOSoK , InitiateSystemShutdown( 0 , 0 , 0 , 1 , !bDoNotComeBackP ) )
         
@@ -33,10 +33,10 @@
             BOSpOOP
             BOS( WHATgbo , BOSoK , OpenProcessToken( (HANDLE)handle.osF( ifcIDtYPEhANDLE_PROCESS ) , TOKEN_ADJUST_PRIVILEGES , &osh ) )
             ZE( HANDLE , osh ) ;
-            handleC hToken( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESStOKEN ) ; //NOT REALLY A HANDLE, SO I DO NOT REGISTER/DEREGISTER IT; NOTE THAT I DO NOT "CLOSE" IT
+            handleC hToken( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESStOKEN ) ; //NOT REALLY A HANDLE, SO I DO NOT REGISTER/DEREGISTER IT; NOTE THAT I DO NOT "CLOSE" IT
         
-            osOpenProcessIF( tinP , handle ) ;
-            handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+            osOpenProcessIF( tinBaseP , handle ) ;
+            handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
         {
 
     #elif defined( __NT__ )
@@ -45,7 +45,7 @@
 
     _IO_
 {
-/**//*1*/voidT thirdC::osFireIF( tinS& tinP , const boolT bDoNotComeBackP )/*1*/
+/**//*1*/voidT thirdC::osFireIF( tinBaseS& tinBaseP , const boolT bDoNotComeBackP )/*1*/
 */
 \<A HREF=\"5.10200f4.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$osFireIF.0.html\"\>instances\</A\>

@@ -17,27 +17,27 @@
             __( *(countT*)pbe != ( FINGERnEG_STReNCODEf + 1 ) &&  *(countT*)pbe != ( FINGERnEGoLD_strEncodeF + 1 ) ) ; //TO CATCH OVERWRITE
 
             //}
-            //    delF( tinP , psttdCodes ) ;
+            //    delF( tinBaseP , psttdCodes ) ;
             //    LOGrAW( td ) ;
             //    TN( td , "" ) ; td = T("to codes    : ")+T(psttdCodes)+T("\r\n") ;
-            //    strDumpIF( tinP , psttdCodes , pbOut , ((countT*)pbOut)[ 1 ] + 2 * sizeof( countT ) ) ; ___( psttdCodes ) ;
+            //    strDumpIF( tinBaseP , psttdCodes , pbOut , ((countT*)pbOut)[ 1 ] + 2 * sizeof( countT ) ) ; ___( psttdCodes ) ;
             //    ZE( strokeS* , psttdCodes ) ;
             //{
-            //if( tinP.pc Utility[ 0 ] )
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
             //COMMENT OUT IN PRODUCTION
             
             //}
-            //    delF( tinP , psttdStrokes ) ;
+            //    delF( tinBaseP , psttdStrokes ) ;
             //    LOGrAW( td ) ;
             //    TN( td , "" ) ; td = T("\r\nfrom strokes: ")+T(psttdStrokes)+T("\r\n") ;
-            //    strDumpIF( tinP , psttdStrokes , (byteT*)psttP , ( CSpREFIX + psttP->idAdam ) * sizeof( strokeS ) ) ; ___( psttdStrokes ) ;
+            //    strDumpIF( tinBaseP , psttdStrokes , (byteT*)psttP , ( CSpREFIX + psttP->idAdam ) * sizeof( strokeS ) ) ; ___( psttdStrokes ) ;
             //    ZE( strokeS* , psttdStrokes ) ;
             //{
-            //if( tinP.pc Utility[ 0 ] )
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
             //COMMENT OUT IN PRODUCTION
 
             }
-                //tinP.pDropNoteNewest->cbRequested  = tinP.pDropNoteNewest->cbUsedReally = cbUsed ;
+                //((tinNormalS&)tinBaseP).pDropNoteNewest->cbRequested  = ((tinNormalS&)tinBaseP).pDropNoteNewest->cbUsedReally = cbUsed ;
             {
             if( !pbeP )
             ((countT*)pbOut)[ 1 ] = cbUsed - 2 * sizeof( countT ) ;
@@ -48,14 +48,14 @@
                     offs  += csImage - 1 ;
                     offbo += cbImage * SB ;
 
-                    //delF( tinP , psttd ) ;
+                    //delF( tinBaseP , psttd ) ;
                     //LOGrAW( "\r\n" ) ;
-                    //strokeF( tinP , psttd ) ;
+                    //strokeF( tinBaseP , psttd ) ;
                     //LOGrAW3( "encoded this soul image at bit offset " , offbo , "\r\n" ) ;
-                    //strDumpIF( tinP , psttd , (byteT*)&psttP[ offs ] , cbImage ) ;
+                    //strDumpIF( tinBaseP , psttd , (byteT*)&psttP[ offs ] , cbImage ) ;
                     //ZE( strokeS* , psttd ) ;
 
-                    /*WCBC(C):8*cbImage*/ thirdC::c_memcpyIF( tinP , pbOut + offbo / SB , (byteT*)&psttP[ offs ] , cbImage ) ;
+                    /*WCBC(C):8*cbImage*/ thirdC::c_memcpyIF( tinBaseP , pbOut + offbo / SB , (byteT*)&psttP[ offs ] , cbImage ) ;
                     countT cbImage = csImage * sizeof( strokeS ) ;
 
                     /*WCBC(C):7*/ { count2S c2t = valueF( offbo , offboa , 0 , ( SB - offbo ) % SB ) ; count2RefF( pbOut , offbo ) |= c2t ; offbo = offboa ; }
@@ -99,10 +99,10 @@
 
             pbOut += cbHeadP ;
 
-            if( pbHeadP ) memCopyF( tinP , pbOut , pbHeadP , cbHeadP ) ;
+            if( pbHeadP ) memCopyF( tinBaseP , pbOut , pbHeadP , cbHeadP ) ;
 
             *(countT*)pbe = FINGERnEG_STReNCODEf + 1 ; //TO CATCH OVERWRITE ; U:: BUG: THIS SHOULD BE A UNIQUE FINGER_ VALUE THAT IS NOT USED ANYWHERE ELSE
-            memSetF( tinP , pbOut , cba ) ; //ALL OF THE WRITES THAT FOLLOW ARE DONE BY OR'ING INTO THIS RANGE
+            memSetF( tinBaseP , pbOut , cba ) ; //ALL OF THE WRITES THAT FOLLOW ARE DONE BY OR'ING INTO THIS RANGE
 
             const byteT* const pbe = pbOut + cba ;
 
@@ -112,7 +112,7 @@
             byteT* pbOut = !bIsIdJot
 
             ;
-                : new( 0 , tinP , pb_pageOut , sizeof pb_pageOut ) pageC( jotC::readIF( tinP , (countT)pbP ) ) ;
+                : new( 0 , tinBaseP , pb_pageOut , sizeof pb_pageOut ) pageC( jotC::readIF( tinBaseP , (countT)pbP ) ) ;
                 ? 0
             pageC* pPageOut = !bIsIdJot
             byteT pb_pageOut[ sizeof pageC ] ;
@@ -123,7 +123,7 @@
 
         }
             __NZ( ISnULLjpOINTER( pbP ) ) ;
-            newF( tinP , LF , pbP , cba + sizeof( countT ) ) ; ___( pbP ) ;
+            newF( tinBaseP , LF , pbP , cba + sizeof( countT ) ) ; ___( pbP ) ;
         {
         if( ISnULLjpOINTER( pbP ) )
 
@@ -187,7 +187,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT etherC::strEncodeF( tinS& tinP , byteT*& pbP , const strokeS* const psttP , const byteT* const pbeP , const countT cbHeadP , const byteT* pbHeadP )/*1*/
+/*1*/countT etherC::strEncodeF( tinBaseS& tinBaseP , byteT*& pbP , const strokeS* const psttP , const byteT* const pbeP , const countT cbHeadP , const byteT* pbHeadP )/*1*/
 
 /**/
 */
@@ -210,7 +210,7 @@
   if not 0 then must contain enough bytes to receive the worst case length encoding
   can be 0
  pbP
- tinP
+ tinBaseP
 arguments
  pbP + myReturnValue is the pbEnd of the encoding
 i evaluate to the number of bytes actually used in the encoding

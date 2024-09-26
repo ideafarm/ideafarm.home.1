@@ -8,7 +8,7 @@
 
 
 }
-    if( pcz ) thirdC::c_memcpyIF( tinP , (byteT*)pcz , (byteT*)&cP , cba ) ;
+    if( pcz ) thirdC::c_memcpyIF( tinBaseP , (byteT*)pcz , (byteT*)&cP , cba ) ;
     ZE( countT , ecnu ) ;
     }
         #endif
@@ -18,12 +18,12 @@
                 pNote->idType       = ifcIDtYPEdROPnOTE_pczCpcz ;
             {
             if( pNote )
-            dropNoteS* pNote = tinP.pag1->pPoolHomeTemp->pDropNoteF( tinP , (byteT*)pcz ) ;
+            dropNoteS* pNote = ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp->pDropNoteF( tinBaseP , (byteT*)pcz ) ;
 
         #if defined( ENABLEdROPnOTES )
     {
     if( pcz )
-    tinP.pag1->pPoolHomeTemp->newF( tinP , LF , *(byteT**)&pcz , cba ) ; ___( pcz ) ;
+    ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp->newF( tinBaseP , LF , *(byteT**)&pcz , cba ) ; ___( pcz ) ;
     countT cba = sizeof( countT ) * ( cc + 1 ) ;
     TINSL
 

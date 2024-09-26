@@ -10,16 +10,16 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.delF( tinP , pbBuffer ) ;
+etThread.delF( tinBaseP , pbBuffer ) ;
 
 }
-    etThread.fileWriteF( tinP , fiOut , pbBuffer , cbChunk ) ;
-    etThread.fileReadF( tinP , pbBuffer , cbChunk , fiLog ) ;
+    etThread.fileWriteF( tinBaseP , fiOut , pbBuffer , cbChunk ) ;
+    etThread.fileReadF( tinBaseP , pbBuffer , cbChunk , fiLog ) ;
 
-    fileC fiOut( tinP , (strokeS*)( T("///d/tmp/desk/split.")+TF3(++idOutLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(".ttt") ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+    fileC fiOut( tinBaseP , (strokeS*)( T("///d/tmp/desk/split.")+TF3(++idOutLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(".ttt") ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
 
     cbDo -= cbChunk ;
     ;
@@ -30,18 +30,18 @@ etThread.delF( tinP , pbBuffer ) ;
 while( cbDo )
 ZE( countT , idOutLath ) ;
 
-etThread.newF( tinP , LF , pbBuffer , TOCK << 4 ) ; ___( pbBuffer ) ;
+etThread.newF( tinBaseP , LF , pbBuffer , TOCK << 4 ) ; ___( pbBuffer ) ;
 ZE( byteT* , pbBuffer ) ;
 
 }
     DEL( pInfo ) ;
     cbDo = pInfo->cbUsed ;
-    etThread.diskFileQueryF( tinP , pInfo , fiLog ) ; ___( pInfo ) ;
+    etThread.diskFileQueryF( tinBaseP , pInfo , fiLog ) ; ___( pInfo ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 ZE( countT , cbDo ) ;
 
-fileC fiLog( tinP , (strokeS*)T("///d/ideafarm.home.101/tmp/log.routine.txt") ) ;
+fileC fiLog( tinBaseP , (strokeS*)T("///d/ideafarm.home.101/tmp/log.routine.txt") ) ;
 
 TODO
 

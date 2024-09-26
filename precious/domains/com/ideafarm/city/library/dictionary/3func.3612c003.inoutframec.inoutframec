@@ -11,23 +11,23 @@
     }
 
 //}
-//    tinP.pc Utility[ 1 ] ++ ;
+//    ((tinNormalS&)tinBaseP).pc Utility[ 1 ] ++ ;
 //    }
 //        TRACEcALLnEST( "ifcTHREADpRIORITY_LAZIEST 2" ) ;
 //        LOGcALLnEST(   "ifcTHREADpRIORITY_LAZIEST 2" ) ;
 //    {
-//    if( ifcTHREADpRIORITY_LAZIEST == thirdC::dosPriorityIF( tinP ) )
-//    tinP.pc Utility[ 1 ] ++ ;
+//    if( ifcTHREADpRIORITY_LAZIEST == thirdC::dosPriorityIF( tinBaseP ) )
+//    ((tinNormalS&)tinBaseP).pc Utility[ 1 ] ++ ;
 //{
-//if( tinP.pc Utility[ 0 ] )
+//if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 //U:: TO FIND A BUG
 
         }
             say.dTimeCt      = say.cTime2      - say.cTime1      ;
             say.dCpuCyclesCt = say.cCpuCycles2 - say.cCpuCycles1 ;
 
-            tinP.cTime2Or5Lath      = say.cTime2      ;
-            tinP.cCpuCycles2Or5Lath = say.cCpuCycles2 ;
+            ((tinNormalS&)tinBaseP).cTime2Or5Lath      = say.cTime2      ;
+            ((tinNormalS&)tinBaseP).cCpuCycles2Or5Lath = say.cCpuCycles2 ;
 
             }
                 pDad->auditTime.dTimeAuditKidCt           += say.cTime2      - say.cTime1      ;
@@ -44,14 +44,14 @@
         //
         //    }
         //        THREADmODE5rESTORE
-        //        PUSE.testDropHeadersF( tinP ) ;
+        //        PUSE.testDropHeadersF( tinBaseP ) ;
         //        THREADmODE5oN( flTHREADmODE5_DOnOTtESTdROPhEADERS )
         //    {
-        //    if( tinP.pag1->idAdam == ifcIDaDAM_ROOThTTPsERVER && !( F(tinP.flagsThreadMode5) & flTHREADmODE5_DOnOTtESTdROPhEADERS ) && tinP.pPoolUse )
+        //    if( ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ROOThTTPsERVER && !( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_DOnOTtESTdROPhEADERS ) && ((tinNormalS&)tinBaseP).pPoolUse )
         //
         //#if defined( ENABLEdROPnOTES )
 
-        tinP.monitor.idWhat1 = ifcIDwHAT_GOiNoUTfRAMED ;_
+        ((tinNormalS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GOiNoUTfRAMED ;_
         }
             _MOLE
             //}
@@ -65,9 +65,9 @@
             //
             //}
             //    BLAMMO ;_
-            //    LOGrAW5( "_IO_ tinP [valueExpectedByInOut,*pcWatchedByInOut]: " , tinP.valueExpectedByInOut , " != " , *tinP.pcWatchedByInOut , "\r\n" ) ;_
+            //    LOGrAW5( "_IO_ tinBaseP [valueExpectedByInOut,*pcWatchedByInOut]: " , ((tinNormalS&)tinBaseP).valueExpectedByInOut , " != " , *((tinNormalS&)tinBaseP).pcWatchedByInOut , "\r\n" ) ;_
             //{
-            //if( tinP.pcWatchedByInOut && *tinP.pcWatchedByInOut != tinP.valueExpectedByInOut )
+            //if( ((tinNormalS&)tinBaseP).pcWatchedByInOut && *((tinNormalS&)tinBaseP).pcWatchedByInOut != ((tinNormalS&)tinBaseP).valueExpectedByInOut )
             //
             //}
             //    }
@@ -82,7 +82,7 @@
             }
                 }
                     }
-                        thirdC::dosSleepRawIF( tinP , TUCK ) ;
+                        thirdC::dosSleepRawIF( tinBaseP , TUCK ) ;
                         
                         }
                             //CONoUTrAW( "\r\nstop\r\n" ) ;
@@ -92,9 +92,9 @@
                         if( bWoth )
                     {
                     )
-                        !( F(tinP.flagsThreadMode4) & flTHREADmODE4_GO )
+                        !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_GO )
                         &&
-                        F(tinP.pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP
+                        F(((tinNormalS&)tinBaseP).pag1->_thirdC_.flagsModeAdam2) & flADAMmODE2_STOP
                         &&
                         thirdC::third_idPhaseProcess_IF() <  ifcIDpHASEpROCESS_EPILOGdESTROYINGgLOBALS
                         &&
@@ -103,29 +103,29 @@
                     while
                     boolT bWoth = 1 ;                                                                                               // OBEY flADAMmODE2_STOP AND flTHREADmODE4_GO
                 {
-                if( tinP.idTinNamed != ifcIDtINnAMED_tinHeartI && tinP.idTinNamed != ifcIDtINnAMED_tinBreakI && thirdC::third_idPhaseProcess_IF() >= ifcIDpHASEpROCESS_PROLOGaLLgLOBALScONSTRUCTED && thirdC::third_idPhaseProcess_IF() < ifcIDpHASEpROCESS_EPILOGdESTROYINGgLOBALS )
+                if( ((tinNormalS&)tinBaseP).idTinNamed != ifcIDtINnAMED_tinHeartI && ((tinNormalS&)tinBaseP).idTinNamed != ifcIDtINnAMED_tinBreakI && thirdC::third_idPhaseProcess_IF() >= ifcIDpHASEpROCESS_PROLOGaLLgLOBALScONSTRUCTED && thirdC::third_idPhaseProcess_IF() < ifcIDpHASEpROCESS_EPILOGdESTROYINGgLOBALS )
 
-                tinP.monitor.idWhat2 = idiFileCt >> 0xc ;_
+                ((tinNormalS&)tinBaseP).monitor.idWhat2 = idiFileCt >> 0xc ;_
 
-                thirdC::inOutChatterIfIF( tinP ) ;_
+                thirdC::inOutChatterIfIF( tinBaseP ) ;_
 
                 }
-                    tinP.bSuppressInOutTrace -- ;_
+                    ((tinNormalS&)tinBaseP).bSuppressInOutTrace -- ;_
                     }
-                        //U::SUSPECTED DEADLOCK: ((etherC*)0)->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;_
+                        //U::SUSPECTED DEADLOCK: ((etherC*)0)->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;_
 
                         }
                             OStEXTA( ostoSay , postTitle ) ;_
                         {
                         if( postTitle )
-                        const osTextT* postTitle = processGlobal8S::_processGlobal8I_IF().source.postFileTitleF( tinP , processGlobal8S::_processGlobal8I_IF().source.idFileRankF( tinP , idiFileCt ) ) ;_
+                        const osTextT* postTitle = processGlobal8S::_processGlobal8I_IF().source.postFileTitleF( tinBaseP , processGlobal8S::_processGlobal8I_IF().source.idFileRankF( tinBaseP , idiFileCt ) ) ;_
                         OStEXTAK( ostoSay , ") ++    " ) ;_
                         OStEXTC9( ostoSay , idLineCt ) ;_
                         OStEXTAK( ostoSay , "(" ) ;_
                         OStEXTC(  ostoSay , idiFileCt , 0 ) ;_
                         OStEXT(   ostoSay , TUCK << 1 ) ;_
                     {
-                    if( !( tinP.bSuppressInOutTrace ++ ) && tinP.monitor.idThread != ifcIDtHREADlOW_tmHeartF && tinP.monitor.idThread != ifcIDtHREADlOW_break && tinP.monitor.idThread != ifcIDtHREADlOW_tmKillSocketF && tinP.monitor.idThread != ifcIDtHREADlOW_tmWatchF && tinP.monitor.idThread != ifcIDtHREADlOW_tmTimeNowF )
+                    if( !( ((tinNormalS&)tinBaseP).bSuppressInOutTrace ++ ) && ((tinNormalS&)tinBaseP).monitor.idThread != ifcIDtHREADlOW_tmHeartF && ((tinNormalS&)tinBaseP).monitor.idThread != ifcIDtHREADlOW_break && ((tinNormalS&)tinBaseP).monitor.idThread != ifcIDtHREADlOW_tmKillSocketF && ((tinNormalS&)tinBaseP).monitor.idThread != ifcIDtHREADlOW_tmWatchF && ((tinNormalS&)tinBaseP).monitor.idThread != ifcIDtHREADlOW_tmTimeNowF )
                 {
                 if( ph && ph->flags & F(flHOMEs_INoUTtRACE) )
 
@@ -145,36 +145,36 @@
 
                 homeS* ph = &homeS::homeIF() ;_
 
-                tinP.monitor.idDirty ++ ;_
+                ((tinNormalS&)tinBaseP).monitor.idDirty ++ ;_
 
-                                                  eipF( &tinP.pEIPInNest[ offon ] ) ;_
-                eipInNestSave               =            tinP.pEIPInNest[ offon ]   ;_
+                                                  eipF( &((tinNormalS&)tinBaseP).pEIPInNest[ offon ] ) ;_
+                eipInNestSave               =            ((tinNormalS&)tinBaseP).pEIPInNest[ offon ]   ;_
 
-                tinP.pIdInNest[ offonk    ] = 0 ;_
-                tinP.pIdInNest[ offon     ] ++ ;_
+                ((tinNormalS&)tinBaseP).pIdInNest[ offonk    ] = 0 ;_
+                ((tinNormalS&)tinBaseP).pIdInNest[ offon     ] ++ ;_
 
-                tinP.pLFstep  [ offos2 + 1 ] =           tinP.monitor.pLFnest      [ offon2 + 1 ] = idiFileCt                                                       ;_
-                idFileNestSave               =           tinP.monitor.pLFnest      [ offon2 + 1 ]                                                                   ;_
+                ((tinNormalS&)tinBaseP).pLFstep  [ offos2 + 1 ] =           ((tinNormalS&)tinBaseP).monitor.pLFnest      [ offon2 + 1 ] = idiFileCt                                                       ;_
+                idFileNestSave               =           ((tinNormalS&)tinBaseP).monitor.pLFnest      [ offon2 + 1 ]                                                                   ;_
 
-                tinP.pLFstep  [ offos2     ] =      (    tinP.monitor.pLFnest      [ offon2     ] = idLineCt & ~fliSTEP_FLAGmASK    )    |    fliSTEP_NESTcHANGE    ;_
-                idLineNestSave               =           tinP.monitor.pLFnest      [ offon2     ]                                                                   ;_
+                ((tinNormalS&)tinBaseP).pLFstep  [ offos2     ] =      (    ((tinNormalS&)tinBaseP).monitor.pLFnest      [ offon2     ] = idLineCt & ~fliSTEP_FLAGmASK    )    |    fliSTEP_NESTcHANGE    ;_
+                idLineNestSave               =           ((tinNormalS&)tinBaseP).monitor.pLFnest      [ offon2     ]                                                                   ;_
 
-                pFlagsThreadLevelModeSave    =           tinP.pFlagsThreadLevelMode[ offon ]                                                                       ;_
-                idProgressNestSave           =           tinP.pIdProgressNest      [ offon ]                                                                       ;_
+                pFlagsThreadLevelModeSave    =           ((tinNormalS&)tinBaseP).pFlagsThreadLevelMode[ offon ]                                                                       ;_
+                idProgressNestSave           =           ((tinNormalS&)tinBaseP).pIdProgressNest      [ offon ]                                                                       ;_
 
-                const countT offonk = ( tinP.monitor.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
-                const countT offon  = tinP.monitor.cInNest & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
-                const countT offos  = tinP.monitor.idStep  & OFFsLOTtINsTEPmAX ; const countT offos2 = offos << 1 ;_
+                const countT offonk = ( ((tinNormalS&)tinBaseP).monitor.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
+                const countT offon  = ((tinNormalS&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
+                const countT offos  = ((tinNormalS&)tinBaseP).monitor.idStep  & OFFsLOTtINsTEPmAX ; const countT offos2 = offos << 1 ;_
 
-                tinP.monitor.cInNest ++ ;_
-                tinP.monitor.idStep ++ ;_
-                tinP.monitor.idDirty ++ ;_
+                ((tinNormalS&)tinBaseP).monitor.cInNest ++ ;_
+                ((tinNormalS&)tinBaseP).monitor.idStep ++ ;_
+                ((tinNormalS&)tinBaseP).monitor.idDirty ++ ;_
             {
-            if( F(tinP.flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( tinP.monitor.idDirty % 2 ) )
+            if( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tinNormalS&)tinBaseP).monitor.idDirty % 2 ) )
             _MILE
         {
         if( F(flagsCt) & flINoUTfRAMEc_REGISTERcALLnEST )
-        tinP.monitor.idWhat1 = ifcIDwHAT_GOiNoUTcT ;_
+        ((tinNormalS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GOiNoUTcT ;_
 
         }
             }
@@ -182,16 +182,16 @@
                 LOGrAW(    "inOutFrameC: error fingerprint\r\n" ) ;
                 CONoUTrAW( "inOutFrameC: error fingerprint\r\n" ) ;
 
-                //U:: CONJ: OBSOLETE CODE LINE: *(countT*)0 = 1 ;       // CANNOT USE BLAMMO BECAUSE DON'T HAVE tinP
+                //U:: CONJ: OBSOLETE CODE LINE: *(countT*)0 = 1 ;       // CANNOT USE BLAMMO BECAUSE DON'T HAVE tinBaseP
             {
-            if( getNegAM( pTin->fingerprint ) != FINGERnEG_TINs && getNegAM( pTin->fingerprint ) != FINGERnEG_TINszOMBIE )      //CT OF WOTH tinS INSTANCE IN EACH THREAD INVOLVES CALLING INOUT BEFORE ZOMBIE FINGERPRINT IS REPLACED
+            if( getNegAM( ((tinNormalS*)pTin)->fingerprint ) != FINGERnEG_TINs && getNegAM( ((tinNormalS*)pTin)->fingerprint ) != FINGERnEG_TINszOMBIE )      //CT OF WOTH tinNormalS INSTANCE IN EACH THREAD INVOLVES CALLING INOUT BEFORE ZOMBIE FINGERPRINT IS REPLACED
             }
                 BLAMMO ;
                 LOGrAW(    "inOutFrameC: error !pTin\r\n" ) ;
                 CONoUTrAW( "inOutFrameC: error !pTin\r\n" ) ;
             {
             if( !pTin )
-            tinS* pTin = &tinP ;
+            tinBaseS* pTin = &tinBaseP ;
         {
 
         }
@@ -200,12 +200,12 @@
         {
 
         }
-            say.dTimeB4      = !pDad ? 0 : say.cTime1      - tinP.cTime2Or5Lath      ;
-            say.dCpuCyclesB4 = !pDad ? 0 : say.cCpuCycles1 - tinP.cCpuCycles2Or5Lath ;
+            say.dTimeB4      = !pDad ? 0 : say.cTime1      - ((tinNormalS&)tinBaseP).cTime2Or5Lath      ;
+            say.dCpuCyclesB4 = !pDad ? 0 : say.cCpuCycles1 - ((tinNormalS&)tinBaseP).cCpuCycles2Or5Lath ;
 
             }
-                pDad->auditTime     .dTimeAuditKidBetween      += say.cTime1      - tinP.cTime2Or5Lath      ;
-                pDad->auditCpuCycles.dCpuCyclesAuditKidBetween += say.cCpuCycles1 - tinP.cCpuCycles2Or5Lath ;
+                pDad->auditTime     .dTimeAuditKidBetween      += say.cTime1      - ((tinNormalS&)tinBaseP).cTime2Or5Lath      ;
+                pDad->auditCpuCycles.dCpuCyclesAuditKidBetween += say.cCpuCycles1 - ((tinNormalS&)tinBaseP).cCpuCycles2Or5Lath ;
             {
             if( pDad )
             processGlobal1I.trueRandom ^= (countT)say.cCpuCycles1 ;
@@ -265,47 +265,47 @@
         //        pc = pc->pDad ;
         //    {
         //    while( pc->pDad )
-        //    inOutFrameC* pc = tinP.pInOutFrame ;
+        //    inOutFrameC* pc = ((tinNormalS&)tinBaseP).pInOutFrame ;
         //    ZE( countT , cNest ) ;
         //{
 
         if( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY ) { BLAMMO ; } //U:: THIS FLAG CANNOT BE SUPPORTED UNTIL CODE THAT MUST SUPPRESS inOutFrameC APP TELEMETRY IGNORES IT ; THIS COULD BE DONE WITH A NEW THREAD MODE FLAG
 
-        // if( processGlobal1I.pHome && tinP.pc Utility[ 0 ] ) { *(countT*)0 = 0x1234 ; }
+        // if( processGlobal1I.pHome && ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) { *(countT*)0 = 0x1234 ; }
 
         }
             //}
-            //    CONoUTrAW5( "\r\ninOutFrameC thread stack max usage [idThread,usedPerTuck]:    " , tinP.monitor.idThread , "    " , usedPerTuck , "\r\n" ) ;
+            //    CONoUTrAW5( "\r\ninOutFrameC thread stack max usage [idThread,usedPerTuck]:    " , ((tinNormalS&)tinBaseP).monitor.idThread , "    " , usedPerTuck , "\r\n" ) ;
             //    countT usedPerTuck = cbStackUsed * 0x100 / cbStackAll ;
-            //    countT cbStackUsed = tinP.pbThreadStackEnd - tinP.pbThreadStackLowest ;
-            //    countT cbStackAll  = tinP.pbThreadStackEnd - tinP.pbThreadStackStart ;
+            //    countT cbStackUsed = ((tinNormalS&)tinBaseP).pbThreadStackEnd - ((tinNormalS&)tinBaseP).pbThreadStackLowest ;
+            //    countT cbStackAll  = ((tinNormalS&)tinBaseP).pbThreadStackEnd - ((tinNormalS&)tinBaseP).pbThreadStackStart ;
             //{
-            //if( !( idIn % TICK ) && tinP.pbThreadStackStart && tinP.pbThreadStackEnd >= tinP.pbThreadStackStart )
+            //if( !( idIn % TICK ) && ((tinNormalS&)tinBaseP).pbThreadStackStart && ((tinNormalS&)tinBaseP).pbThreadStackEnd >= ((tinNormalS&)tinBaseP).pbThreadStackStart )
             countT idIn = ++ idInLath ; // COLLISIONS CAN OCCUR SINCE NOT USING incv02AM() (FOR SPEED)
             static countT idInLath ;
 
-            if( pbEbp <  tinP.pbThreadStackLowest ) tinP.pbThreadStackLowest = pbEbp ;
+            if( pbEbp <  ((tinNormalS&)tinBaseP).pbThreadStackLowest ) ((tinNormalS&)tinBaseP).pbThreadStackLowest = pbEbp ;
 
-            if( tinP.pbThreadStackEnd   && pbEbp >= tinP.pbThreadStackEnd    ) { BLAMMO ; }
-            if( tinP.pbThreadStackStart && pbEbp <  tinP.pbThreadStackStart  ) { BLAMMO ; }
+            if( ((tinNormalS&)tinBaseP).pbThreadStackEnd   && pbEbp >= ((tinNormalS&)tinBaseP).pbThreadStackEnd    ) { BLAMMO ; }
+            if( ((tinNormalS&)tinBaseP).pbThreadStackStart && pbEbp <  ((tinNormalS&)tinBaseP).pbThreadStackStart  ) { BLAMMO ; }
 
             const byteT* pbEbp = (const byteT*)ebpAM() ;
         {
-        if( tinP.idTinNamed != ifcIDtINnAMED_tinHeartI && tinP.idTinNamed != ifcIDtINnAMED_tinBreakI )
+        if( ((tinNormalS&)tinBaseP).idTinNamed != ifcIDtINnAMED_tinHeartI && ((tinNormalS&)tinBaseP).idTinNamed != ifcIDtINnAMED_tinBreakI )
 
 //}
-//    tinP.pc Utility[ 1 ] ++ ;
+//    ((tinNormalS&)tinBaseP).pc Utility[ 1 ] ++ ;
 //    }
 //        TRACEcALLnEST( "ifcTHREADpRIORITY_LAZIEST 1" ) ;
 //        LOGcALLnEST(   "ifcTHREADpRIORITY_LAZIEST 1" ) ;
 //    {
-//    if( ifcTHREADpRIORITY_LAZIEST == thirdC::dosPriorityIF( tinP ) )
-//    tinP.pc Utility[ 1 ] ++ ;
+//    if( ifcTHREADpRIORITY_LAZIEST == thirdC::dosPriorityIF( tinBaseP ) )
+//    ((tinNormalS&)tinBaseP).pc Utility[ 1 ] ++ ;
 //{
-//if( tinP.pc Utility[ 0 ] )
+//if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 //U:: TO FIND A BUG
 
-        tinP.pInOutFrame = this ;
+        ((tinNormalS&)tinBaseP).pInOutFrame = this ;
     {
     if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ) )
 {
@@ -318,8 +318,8 @@
 //INTENTIONALLY UNINITIALIZED FOR SPEED: eipInNestSave
 //INTENTIONALLY UNINITIALIZED FOR SPEED: idLineNestSave
 //INTENTIONALLY UNINITIALIZED FOR SPEED: idFileNestSave
-idWhat2Save( tinP.monitor.idWhat2 )
-idWhat1Save( tinP.monitor.idWhat1 ) ,
+idWhat2Save( ((tinNormalS&)tinBaseP).monitor.idWhat2 )
+idWhat1Save( ((tinNormalS&)tinBaseP).monitor.idWhat1 ) ,
 ) ,
     )
                         //: flINoUTfRAMEc_null                            //TO ENABLE  GENERALLY  (ENABLE THIS LINE IN PRODUCTION IFF WANT FULL TIME TELEMETRY)
@@ -331,11 +331,11 @@ idWhat1Save( tinP.monitor.idWhat1 ) ,
                 )
                   || processGlobal1I.idAdamRoot == 0 /*ifcIDaDAM_SCRATCH08*/       //THIS LINE DISABLES TELEMETRY FOR THE SPECIFIED ADAM (IF NOT 0)
                   || F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY
-                     F(tinP.flagsThreadMode5) & flTHREADmODE5_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY
+                     F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY
                 (
                 :
                 ? flINoUTfRAMEc_null
-            : F(tinP.flagsThreadMode5) & flTHREADmODE5_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY
+            : F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY
             ? flINoUTfRAMEc_null
         F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY             // CS:CODEsYNC: 360cc003 3612c003: "TICK >> 0" IS NEEDED IF flINoUTfRAMEc_DOnOTcOLLECTaPPtELEMETRY IS EVER NOT USED (SEE inOutFrameC CT'OR)
     (
@@ -343,20 +343,20 @@ idWhat1Save( tinP.monitor.idWhat1 ) ,
     )
         : flINoUTfRAMEc_null
         ? flINoUTfRAMEc_DEFERwRITINGaPPtELEMETRY
-    ( F(tinP.flagsThreadMode5) & flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY
+    ( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY
     |
     )
         : flINoUTfRAMEc_null
         ? flINoUTfRAMEc_REGISTERcALLnEST
-    ( F(tinP.flagsThreadMode4) & flTHREADmODE4_INoUTfRAMErEGISTERcALLnEST
+    ( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_INoUTfRAMErEGISTERcALLnEST
 (
 flagsCt
 idFileRankCt( idFileRankP ) ,
 idiFileCt( idiFileP ) ,
 idLineCt( idLineP ) ,
-tinCt( tinP ) ,
-pDad( tinP.pInOutFrame ) ,
-/*1*/inOutFrameC::inOutFrameC( tinS& tinP , const countT idLineP , const countT idiFileP , const countT idFileRankP , const boolT bClassP ) :/*1*/
+tinBaseCt( tinBaseP ) ,
+pDad( ((tinNormalS&)tinBaseP).pInOutFrame ) ,
+/*1*/inOutFrameC::inOutFrameC( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , const countT idFileRankP , const boolT bClassP ) :/*1*/
 
 /* ASSUME: 02 BITS PER countT */
 

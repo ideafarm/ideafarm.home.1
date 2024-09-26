@@ -13,40 +13,40 @@ DONE( tmSetFloorUsersF )
 
     paramP.bQuitTmUsers = 0 ;
     }
-        etThread( tinP , pSwSecrets ) ;
+        etThread( tinBaseP , pSwSecrets ) ;
         }
             }
-                { ++ s ; etThread.osSleepF( tinP , TOCK ) ; }
+                { ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ; }
 
-                pSwSecrets->freeAllF( tinP ) ;
+                pSwSecrets->freeAllF( tinBaseP ) ;
 
                 psttLeverName = 0 ;
                 }
-                    else etThread.delF( tinP , psttSwitchedSecret ) ;
+                    else etThread.delF( tinBaseP , psttSwitchedSecret ) ;
                     }
                         psttSwitchedSecret = 0 ;
                         paramP.ppsttLoginSecret[ cButtonsSet ++ ] = psttSwitchedSecret ;
-                        etThread.delF( tinP , paramP.ppsttLoginSecret[ cButtonsSet ] ) ;
+                        etThread.delF( tinBaseP , paramP.ppsttLoginSecret[ cButtonsSet ] ) ;
 
-                        etThread.delF( tinP , psttn ) ;
-                        (pButton++)->setF( tinP , T("")+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttn)+S2(0,scOld_POPfRAME) ) ;
-                        measureT mCs  = squeezeF( tinP , etThread , psttn  , psttLeverName , 4 ) ; ___( psttn  ) ;
+                        etThread.delF( tinBaseP , psttn ) ;
+                        (pButton++)->setF( tinBaseP , T("")+S3(mCs,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttn)+S2(0,scOld_POPfRAME) ) ;
+                        measureT mCs  = squeezeF( tinBaseP , etThread , psttn  , psttLeverName , 4 ) ; ___( psttn  ) ;
                         ZE( strokeS* , psttn ) ;  
                     {
                     if( cButtonsSet < cButtonsNew )
     
                     strokeS*& psttSwitchedSecret = *(strokeS**)&(countT&)*pSwSecrets ;
-                    psttLeverName = (strokeS*)pSwSecrets->leverF( tinP , idf ) ;
+                    psttLeverName = (strokeS*)pSwSecrets->leverF( tinBaseP , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 ZE( countT , cButtonsSet ) ;
-                countT cFlavors = pSwSecrets->cFlavorsF( tinP ) ;
+                countT cFlavors = pSwSecrets->cFlavorsF( tinBaseP ) ;
 
                 tcButtonC* pButton = &paramP.buLoginKey1 ;
                 cButtonsOld = cButtonsNew ;
 
                 }
-                    replaceButtonsF( tinP , etThread , pTaskP->c1 , tb , CSTTmINbUTTONS , T("insert your key; click your name") ) ;
+                    replaceButtonsF( tinBaseP , etThread , pTaskP->c1 , tb , CSTTmINbUTTONS , T("insert your key; click your name") ) ;
 
                     while( cToDo -- ) tb += T(" ")+*(pButton++) ;
                     countT cToDo = cButtonsNew ;
@@ -57,14 +57,14 @@ DONE( tmSetFloorUsersF )
                 if( cButtonsOld != cButtonsNew )
 
                 if( cButtonsNew > 8 ) cButtonsNew = 8 ;
-                countT cButtonsNew = pSwSecrets->cFlavorsF( tinP ) ;
+                countT cButtonsNew = pSwSecrets->cFlavorsF( tinBaseP ) ;
         
                 }
                     }
                         }
                             }
-                                etThread.delF( tinP , psttLeverName ) ;
-                                etThread.delF( tinP , psttSecret ) ;
+                                etThread.delF( tinBaseP , psttLeverName ) ;
+                                etThread.delF( tinBaseP , psttSecret ) ;
                                 }
                                     }
                                         psttSecret = 0 ;
@@ -77,10 +77,10 @@ DONE( tmSetFloorUsersF )
     
                                 }
                                     }
-                                        etThread.delF( tinP , psttEntryName ) ;
+                                        etThread.delF( tinBaseP , psttEntryName ) ;
                                         }
-                                            etThread.delF( tinP , postEntrySecret ) ;
-                                            etThread.strMakeFromOsTextF( tinP , psttSecret , postEntrySecret ) ; ___( psttSecret ) ;
+                                            etThread.delF( tinBaseP , postEntrySecret ) ;
+                                            etThread.strMakeFromOsTextF( tinBaseP , psttSecret , postEntrySecret ) ; ___( psttSecret ) ;
         
                                             postEntrySecret[ offo ++ ] = 0 ;
                                             }
@@ -91,15 +91,15 @@ DONE( tmSetFloorUsersF )
                                             ZE( countT , offo ) ;
                                             ZE( countT , offi ) ;
         
-                                            etThread.newF( tinP , LF , postEntrySecret , 1 + thirdC::c_strlenIF( tinP , pppostNameSecret[ offe ][ 1 ] ) ) ; ___( postEntrySecret ) ;
+                                            etThread.newF( tinBaseP , LF , postEntrySecret , 1 + thirdC::c_strlenIF( tinBaseP , pppostNameSecret[ offe ][ 1 ] ) ) ; ___( postEntrySecret ) ;
                                             ZE( osTextT* , postEntrySecret ) ;
     
                                             bFound = 1 ;
                                         {
-                                        if( !etThread.strCompareF( tinP , psttEntryName , psttLeverName ) )
+                                        if( !etThread.strCompareF( tinBaseP , psttEntryName , psttLeverName ) )
     
-                                        etThread.delF( tinP , postEntryName ) ;
-                                        etThread.strMakeFromOsTextF( tinP , psttEntryName , postEntryName ) ; ___( psttEntryName ) ;
+                                        etThread.delF( tinBaseP , postEntryName ) ;
+                                        etThread.strMakeFromOsTextF( tinBaseP , psttEntryName , postEntryName ) ; ___( psttEntryName ) ;
                                         ZE( strokeS* , psttEntryName ) ;
     
                                         postEntryName[ offo ++ ] = 0 ;
@@ -111,7 +111,7 @@ DONE( tmSetFloorUsersF )
                                         ZE( countT , offo ) ;
                                         ZE( countT , offi ) ;
     
-                                        etThread.newF( tinP , LF , postEntryName , 1 + thirdC::c_strlenIF( tinP , pppostNameSecret[ offe ][ 0 ] ) ) ; ___( postEntryName ) ;
+                                        etThread.newF( tinBaseP , LF , postEntryName , 1 + thirdC::c_strlenIF( tinBaseP , pppostNameSecret[ offe ][ 0 ] ) ) ; ___( postEntryName ) ;
                                         ZE( osTextT* , postEntryName ) ;
                                     {
                                     for( countT offe = 0 ; offe < cEntries ; offe ++ )
@@ -168,8 +168,8 @@ DONE( tmSetFloorUsersF )
                             {
                             else
                             if( POOP ) POOPR
-                            tinP.pEtScratch->boxGetShadowF( tinP , sIn , psttc1 ) ;
-                            soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , sIn , psttc1 ) ;
+                            soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
                             SCOOPS
                         {
                         IFsCRATCH
@@ -177,16 +177,16 @@ DONE( tmSetFloorUsersF )
                     FORsTRINGSiN1( ppstt1m[ offm ] )
                 {
                 for( countT offm = 0 ; offm < sizeof ppstt1m / sizeof ppstt1m[ 0 ] ; offm ++ )
-                etThread.diskFindFileOrDirOldF( tinP , ppstt1m[ 1 ] , tLike2 , 0 , 0x8 ) ;
-                etThread.diskFindFileOrDirOldF( tinP , ppstt1m[ 0 ] , tLike1 , 0 , 0x8 ) ;
+                etThread.diskFindFileOrDirOldF( tinBaseP , ppstt1m[ 1 ] , tLike2 , 0 , 0x8 ) ;
+                etThread.diskFindFileOrDirOldF( tinBaseP , ppstt1m[ 0 ] , tLike1 , 0 , 0x8 ) ;
                 strokeS* ppstt1m[] = { 0 , 0 } ;
             {
             while( !etThread && !ether && !paramP.bQuitTmUsers )
             countT cButtonsOld = - 1 ; //TO GET A REFRESH EVEN IF NEW NUMBER OF BUTTONS IS 0
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( pSwSecrets )
-        etThread( tinP , pSwSecrets , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE|flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttLeverName ) ;
+        etThread( tinBaseP , pSwSecrets , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE|flSTACKc_ALLOWmULTIPLEuNSERIALIZED , psttLeverName ) ;
         ZE( strokeS* , psttLeverName ) ;
         ZE( switchC* , pSwSecrets ) ;
 
@@ -194,16 +194,16 @@ DONE( tmSetFloorUsersF )
         TN( tLike1 , "///?/ideafarm.key" ) ; //Neal Basu's ORIGINAL KEY WAS NAMED LIKE THIS; REMOVE THIS SUPPORT WHEN HIS ORIGINAL KEY IS OBSOLETE
     {
     
-    //replaceButtonsF( tinP , etThread , pTaskP->c1 , paramP.buEscape+T(" ")+paramP.buSubscribe+T(" ")+paramP.prPrompt , CSTTmINbUTTONS , T("IPDOS (tm)  buttons") ) ;
-    replaceButtonsF( tinP , etThread , pTaskP->c1 , T("") , CSTTmINbUTTONS , T("insert your key; click your name") ) ;
+    //replaceButtonsF( tinBaseP , etThread , pTaskP->c1 , paramP.buEscape+T(" ")+paramP.buSubscribe+T(" ")+paramP.prPrompt , CSTTmINbUTTONS , T("IPDOS (tm)  buttons") ) ;
+    replaceButtonsF( tinBaseP , etThread , pTaskP->c1 , T("") , CSTTmINbUTTONS , T("insert your key; click your name") ) ;
 
-    etThread.strMakeF( tinP , LF , paramP.psttHintEscape , T("escape (to IPDOS (tm) banner)") ) ; ___( paramP.psttHintEscape ) ;
-    etThread.delF( tinP , paramP.psttHintEscape ) ;
+    etThread.strMakeF( tinBaseP , LF , paramP.psttHintEscape , T("escape (to IPDOS (tm) banner)") ) ; ___( paramP.psttHintEscape ) ;
+    etThread.delF( tinBaseP , paramP.psttHintEscape ) ;
 
     }
         }
             }
-                ++ s ; etThread.osSleepF( tinP , TUCK * 0x40 ) ;      
+                ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;      
                 dec02AM( cInstances ) ;
             {
             else
@@ -211,7 +211,7 @@ DONE( tmSetFloorUsersF )
             idInstance = 1 + incv02AM( cInstances ) ;
         {
         for(;;)
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     ZE( countT , idInstance ) ;
     static countT cInstances ;
@@ -223,15 +223,15 @@ TASK( tmSetFloorUsersF )
 
 DONE( tmRestoreTabbingF )
 }
-    paramP.bHoverPadDrag.ungrabF( tinP ) ; //GRABBED BY buHoverPadCBF
-    etThread.strokeF( tinP , T("")+S2(0,scOld_POPtABfRESH) ) ;
+    paramP.bHoverPadDrag.ungrabF( tinBaseP ) ; //GRABBED BY buHoverPadCBF
+    etThread.strokeF( tinBaseP , T("")+S2(0,scOld_POPtABfRESH) ) ;
 
     }
         }
-            { ++ s ; etThread.osSleepF( tinP , TUCK * 0x20 ) ; }
+            { ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x20 ) ; }
         {
-        while( paramP.vtHoverPad.bPendingF( tinP ) )
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        while( paramP.vtHoverPad.bPendingF( tinBaseP ) )
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 
     ARGgET( pTaskP->c1 )

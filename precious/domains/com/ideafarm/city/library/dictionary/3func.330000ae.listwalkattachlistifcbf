@@ -19,46 +19,46 @@
                 }
                     pListFoundP = pNew ;
                     }
-                        pNew->openF( tinP , *ppHand[ !offWoth ] , 0 , tinP.ta.retained.u.listWalk.walk.idGrabLayer ) ;
+                        pNew->openF( tinBaseP , *ppHand[ !offWoth ] , 0 , ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
                         _IO_
                     {
-                    ppHand[ !offWoth ] = new( 0 , tinP , pbh , SIZEOF_handleC ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                    ppHand[ !offWoth ] = new( 0 , tinBaseP , pbh , SIZEOF_handleC ) handleC( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     }
                         DELzOMBIE( ppHand[ !offWoth ] ) ;
                         _IO_
                     {
                     byteT* pbh = (byteT*)ppHand[ !offWoth ] ;
-                    listC* pNew = pNewF( tinP , ppPreP , idNameWantP , bOfSetP ) ;
+                    listC* pNew = pNewF( tinBaseP , ppPreP , idNameWantP , bOfSetP ) ;
                     _IO_
                 {
                 else
-                if( F(flagsP) & flLISToPEN_IFeXISTS ) tinP.ta.pushed.u.listWalk.walk.flagsWalkP &= ~( F(flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK) ) ;
+                if( F(flagsP) & flLISToPEN_IFeXISTS ) ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP &= ~( F(flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK) ) ;
             {
             else if( idNameWantP < idNameAt )
             }
                 flagsListWalkRetCode |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
 
-                else                                          tinP.ta.pushed.u.listWalk.walk.flagsWalkP &= ~( F(flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK) ) ;
+                else                                          ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP &= ~( F(flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK) ) ;
                 if( !( F(flagsP) & flLISToPEN_IFnOTeXISTS ) ) pListFoundP = (listC*)pListing ;
             {
             if( idNameWantP == idNameAt )
             countT idNameAt = pListing->nameF() ;
         {
         )
-            && ( listingC::bIsListingIF( tinP , aptListing , fliLISTINGc_MIXINlIST ) || listingC::bIsListingIF( tinP , aptListing , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
+            && ( listingC::bIsListingIF( tinBaseP , aptListing , fliLISTINGc_MIXINlIST ) || listingC::bIsListingIF( tinBaseP , aptListing , fliLISTINGc_MIXINlIST | fliLISTINGc_MIXINdATUM ) )
             !POOP
         (
         if
 
-        __( !listingC::bIsListingIF( tinP , aptListing ) ) ;
-        aptC aptListing( tinP , pListing ) ;
+        __( !listingC::bIsListingIF( tinBaseP , aptListing ) ) ;
+        aptC aptListing( tinBaseP , pListing ) ;
     {
     else
     }
         }
             pListFoundP = pNew ;
-            pNew->openF( tinP , *ppHand[ !offWoth ] , 0 , tinP.ta.retained.u.listWalk.walk.idGrabLayer ) ;
-            listC* pNew = pNewF( tinP , ppPreP , idNameWantP , bOfSetP ) ;
+            pNew->openF( tinBaseP , *ppHand[ !offWoth ] , 0 , ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
+            listC* pNew = pNewF( tinBaseP , ppPreP , idNameWantP , bOfSetP ) ;
             _IO_
         {
         if( !( F(flagsP) & flLISToPEN_IFeXISTS ) )
@@ -66,36 +66,36 @@
     if( !pListing )
     flagsT flagsListWalkRetCode = flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE ;
 
-    listC*&   pListFoundP       = *(listC**)&tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
-    flagsT    flagsP            =            tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-    countT    idNameWantP       =            tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+    listC*&   pListFoundP       = *(listC**)&((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] ;
+    flagsT    flagsP            =            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+    countT    idNameWantP       =            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
 
-    boolT     bOfSetP           =            tinP.ta.retained.u.listWalk.util.pcP[ 4 ] ;
+    boolT     bOfSetP           =            ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 4 ] ;
 
-    listC**   ppPreP            = tinP.ta.pushed.u.listWalk.cbf.ppPreallocatedListsP ;
+    listC**   ppPreP            = ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.ppPreallocatedListsP ;
 
-    countT&   offWoth           = *tinP.ta.pushed.u.listWalk.walk.pOffWothP ;
-    handleC*  ppHand[ 2 ]       = { tinP.ta.pushed.u.listWalk.walk.pHandleLoP , tinP.ta.pushed.u.listWalk.walk.pHandleHiP } ;
-    listingC* pListing          = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    countT&   offWoth           = *((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pOffWothP ;
+    handleC*  ppHand[ 2 ]       = { ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleLoP , ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleHiP } ;
+    listingC* pListing          = ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 
     _IO_
 {
-/*1*/flagsT listWalkAttachListIfCBF( tinS& tinP )/*1*/
+/*1*/flagsT listWalkAttachListIfCBF( tinBaseS& tinBaseP )/*1*/
 
 }
     return pNew ;
 
     }
         }
-            if( !tinP.ta.pushed.u.listWalk.cbf.pNewP ) tinP.ta.pushed.u.listWalk.cbf.pNewP = pNew ;
-            __( tinP.ta.pushed.u.listWalk.cbf.pNewP ) ;
+            if( !((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP ) ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP = pNew ;
+            __( ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP ) ;
 
             *pNew = idNameWantP ;
-            *pNew = *tinP.ta.pushed.u.listWalk.cbf.pDadP ;
+            *pNew = *((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP ;
         {
         if( pNew )
 
@@ -113,14 +113,14 @@
     }
         ___( pNew ) ;
         ;
-            : new( 0 , tinP , LF ) listC(      tinP ,              *tinP.ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
-            ? new( 0 , tinP , LF ) listOfSetC( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
+            : new( 0 , tinBaseP , LF ) listC(      tinBaseP ,              *((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
+            ? new( 0 , tinBaseP , LF ) listOfSetC( tinBaseP , *(listOfSetC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
         pNew = bOfSetP
     {
     if( !ppPreP )
     ZE( listC* , pNew ) ;
 {
-listC* pNewF( tinS& tinP , listC** ppPreP , const countT idNameWantP , const boolT bOfSetP )
+listC* pNewF( tinBaseS& tinBaseP , listC** ppPreP , const countT idNameWantP , const boolT bOfSetP )
 
 /**/
 */

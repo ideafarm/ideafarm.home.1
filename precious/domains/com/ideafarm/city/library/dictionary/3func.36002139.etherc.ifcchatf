@@ -8,9 +8,9 @@
 
 
 }
-    sgnRegistered.waitF( tinP ) ;
-    osThreadF(  tinP , countTC() , tmChatF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnRegistered , cArgP , idAdamHandlingP , (countT)chatHandlerFP , idPortHintP , (countT)jobFillCourseFP , (countT)jobHearOrderFP ) ;
-    signC sgnRegistered( tinP , TAG( TAGiDnULL ) ) ;
+    sgnRegistered.waitF( tinBaseP ) ;
+    osThreadF(  tinBaseP , countTC() , tmChatF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnRegistered , cArgP , idAdamHandlingP , (countT)chatHandlerFP , idPortHintP , (countT)jobFillCourseFP , (countT)jobHearOrderFP ) ;
+    signC sgnRegistered( tinBaseP , TAG( TAGiDnULL ) ) ;
     
     _IO_
     
@@ -24,7 +24,7 @@
     static countT cIn ;
     SCOOP
 {
-/*1*/voidT etherC::ifcChatF( tinS& tinP , const countT cArgP , const countT idAdamHandlingP , chatHandlerFT chatHandlerFP , const countT idPortHintP , jobFillCourseFT jobFillCourseFP , jobHearOrderFT jobHearOrderFP )/*1*/
+/*1*/voidT etherC::ifcChatF( tinBaseS& tinBaseP , const countT cArgP , const countT idAdamHandlingP , chatHandlerFT chatHandlerFP , const countT idPortHintP , jobFillCourseFT jobFillCourseFP , jobHearOrderFT jobHearOrderFP )/*1*/
 
 //---- THE CODE BELOW THIS LINE ONLY APPLIES IF THE DEFAULT HANDLER (A JOB HANDLER) IS USED
 
@@ -43,10 +43,10 @@
  cArgP
    use "__Z( pso ) ;" at the beginning; this is guaranteed to never be triggered, even for a misbehaving client
   pso not 0 is guaranteed
-  should check *tinP.pEtScratch for impotence after each access to pso
+  should check *((tinNormalS&)tinBaseP).pEtScratch for impotence after each access to pso
   must not be 0
  chatHandlerFP
- tinP
+ tinBaseP
 arguments
   replies an empty sTray
   replies sTrays until i have written an sTray containing an empty sCourse

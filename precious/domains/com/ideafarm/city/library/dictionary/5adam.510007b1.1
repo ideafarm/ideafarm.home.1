@@ -9,38 +9,38 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.delF( tinP , pcCode ) ;
-    etThread.delF( tinP , pbIn ) ;
+    etThread.delF( tinBaseP , pcCode ) ;
+    etThread.delF( tinBaseP , pbIn ) ;
     
-    etThread.traceF( tinP , T("in:  \"")+T(pbIn)+T("\"\r\n") ) ;
-    dad( tinP , pbIn , cbIn , pcCode , ccCode ) ; ___( pbIn ) ;
+    etThread.traceF( tinBaseP , T("in:  \"")+T(pbIn)+T("\"\r\n") ) ;
+    dad( tinBaseP , pbIn , cbIn , pcCode , ccCode ) ; ___( pbIn ) ;
     ZE( countT , cbIn ) ;
     ZE( byteT* , pbIn ) ;
 
-    etThread.delF( tinP , psttCodes ) ;
-    etThread.traceF( tinP , T("codes:    ")+T(psttCodes) ) ;
-    for( countT off = 0 ; off < ccCode ; off ++ ) etThread.strFuseF( tinP , psttCodes , TF3(pcCode[off],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,4)+T(" ") ) ;
-    mom( tinP , pcCode , ccCode , pbOut , cbOut ) ; ___( pcCode ) ;
+    etThread.delF( tinBaseP , psttCodes ) ;
+    etThread.traceF( tinBaseP , T("codes:    ")+T(psttCodes) ) ;
+    for( countT off = 0 ; off < ccCode ; off ++ ) etThread.strFuseF( tinBaseP , psttCodes , TF3(pcCode[off],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,4)+T(" ") ) ;
+    mom( tinBaseP , pcCode , ccCode , pbOut , cbOut ) ; ___( pcCode ) ;
     ZE( countT    , ccCode ) ;
     ZE( count01T* , pcCode ) ;
 
-    etThread.strMakeF( tinP , LF , psttCodes , 0 , TOCK ) ; ___( psttCodes ) ;
+    etThread.strMakeF( tinBaseP , LF , psttCodes , 0 , TOCK ) ; ___( psttCodes ) ;
     ZE( strokeS* , psttCodes ) ;
 {
 //while( !ether )
 
-etThread.traceF( tinP , T("out: \"")+T(pbOut)+T("\"") ) ;
+etThread.traceF( tinBaseP , T("out: \"")+T(pbOut)+T("\"") ) ;
 countT cbOut = sizeof pbOut - 1 ;
 //byteT pbOut[] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" ;
 byteT pbOut[] = "aaaabbbb" ;
 //byteT pbOut[] = "aaaaaaaa" ;
 
-dadC dad( tinP , etThread , TAG( TAGiDnULL ) ) ;
-momC mom( tinP , etThread , TAG( TAGiDnULL ) ) ;
+dadC dad( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+momC mom( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

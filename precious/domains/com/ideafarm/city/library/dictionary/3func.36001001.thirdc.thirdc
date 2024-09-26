@@ -12,44 +12,44 @@
 
         }
             __Z( idSlot ) ;
-            tinP.pag1->_thirdC_.pStk_pThird->ungrabF( tinP ) ;
-            tinP.pag1->_thirdC_.pStk_pThird->sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
-            tinP.pag1->_thirdC_.pStk_pThird->grabF( tinP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird->ungrabF( tinBaseP ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird->sinkF( tinBaseP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
             ZE( countT , idSlot ) ;
         {
-        if( tinP.pag1->_thirdC_.pStk_pThird && !( F(flagsMode) & flTHIRDmODE_DISABLEiNSPECTION ) )
+        if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird && !( F(flagsMode) & flTHIRDmODE_DISABLEiNSPECTION ) )
 
         }
             }
                 TELLsYSc3LIFI( ifcIDtYPEtELLsYS_FIREDcTP , (byteT*)&info , sizeof info , idLineCt , idiFileCt ) 
-                countT info = (countT)&tinP.pag1->_thirdC_.bFired01 ;
+                countT info = (countT)&((tinNormalS&)tinBaseP).pag1->_thirdC_.bFired01 ;
             {
 
             #endif
                 }
                     //U: }
-                        //U: -- *tinP.pag1->_thirdC_.pSwThreadHandle ;
-                        //U: THIS CAUSES WO DRIVER TO FAIL TO INSTALL: *tinP.pag1->_thirdC_.pSwThreadHandle = (countT)realHandle ;
-                        //U: tinP.pag1->_thirdC_.lOsTid = tinP.brcRaw ;
+                        //U: -- *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ;
+                        //U: THIS CAUSES WO DRIVER TO FAIL TO INSTALL: *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = (countT)realHandle ;
+                        //U: ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid = ((tinNormalS&)tinBaseP).brcRaw ;
                         //U: BOSpOOP
                         //U: BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
-                        //U: ++ *tinP.pag1->_thirdC_.pSwThreadHandle ;
+                        //U: ++ *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ;
                     //U: {
                     //U: if( !POOP )
-                    //U: __( !DuplicateHandle( oshMe , tinP.brcRaw , oshMe , &realHandle , THREAD_ALL_ACCESS , 0 , 0 ) ) ;
+                    //U: __( !DuplicateHandle( oshMe , ((tinNormalS&)tinBaseP).brcRaw , oshMe , &realHandle , THREAD_ALL_ACCESS , 0 , 0 ) ) ;
                     //U: BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
-                    //U: HANDLE oshMe = tinP.brcRaw ;
+                    //U: HANDLE oshMe = ((tinNormalS&)tinBaseP).brcRaw ;
                     //U: BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
                     //U: ZE( HANDLE , realHandle ) ;
                 {
-                //U: if( tinP.pag1->_thirdC_.pSwThreadHandle )
+                //U: if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle )
             #if defined( __NT__ )
             //U: MYSTERY: THIS CODE TOGETHER WITH THE PRESENCE OF THE DEFINITIONS OF 3 thirdC::Dos???ThreadContext* CAUSES WO DRIVER TO FAIL TO INSTALL EVERY TIME
 
-            tinP.pag1->_thirdC_.pStk_pThird->ungrabF( tinP ) ;
-            tinP.pag1->_thirdC_.pStk_pThird->grabF( tinP , TAG( TAGiDnULL ) ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird->ungrabF( tinBaseP ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
-        if( tinP.pag1->_thirdC_.pThPrime == this )
+        if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pThPrime == this )
 
     #endif
         BOSdOnOTtEST( WHATgbo , SetErrorMode( SEM_FAILCRITICALERRORS | SEM_NOOPENFILEERRORBOX ) )
@@ -61,38 +61,38 @@
 
     }
         }
-            osTimeSubtractF( tinP , ph->timeBoot1 , ph->timeBoot2 , timeE1 , timeE2 ) ;
-            dosQuerySysInfoTimeSinceBootF( tinP , timeE1 , timeE2 ) ;
+            osTimeSubtractF( tinBaseP , ph->timeBoot1 , ph->timeBoot2 , timeE1 , timeE2 ) ;
+            dosQuerySysInfoTimeSinceBootF( tinBaseP , timeE1 , timeE2 ) ;
             ZE( sCountT , timeE2 ) ;
             ZE( countT , timeE1 ) ;
-            osTimeNowF( tinP , ph->timeBoot1 , ph->timeBoot2 , 1 ) ;
+            osTimeNowF( tinBaseP , ph->timeBoot1 , ph->timeBoot2 , 1 ) ;
             // TIME AT BOOT = TIME NOW - ELAPSED TIME SINCE BOOT
         {
         if( ph && !ph->timeBoot1 && !ph->timeBoot2 ) //ASSUME: NO RACE.  SATISFIED IF CLOAK STARTS WOTH AND IT LAUNCHES ALL OTHER IFC PROCESSES
         homeS* ph = (homeS*)(byteT*)processGlobal4I.napHome ;
     {
 
-    spacerSetF( tinP ) ;
+    spacerSetF( tinBaseP ) ;
 
     }
-        //c_memsetIF( tinP , (byteT*)pcFunctionTime2   , cBytes ) ;
-        //c_memsetIF( tinP , (byteT*)pcFunctionTime1   , cBytes ) ;
-        //c_memsetIF( tinP , (byteT*)pcFunctionExits   , cBytes ) ;
-        //c_memsetIF( tinP , (byteT*)pcFunctionEntries , cBytes ) ;
+        //c_memsetIF( tinBaseP , (byteT*)pcFunctionTime2   , cBytes ) ;
+        //c_memsetIF( tinBaseP , (byteT*)pcFunctionTime1   , cBytes ) ;
+        //c_memsetIF( tinBaseP , (byteT*)pcFunctionExits   , cBytes ) ;
+        //c_memsetIF( tinBaseP , (byteT*)pcFunctionEntries , cBytes ) ;
         //const countT cBytes = sizeof(countT) * ( 1 + cSourceFiles ) ;
-        //newF( tinP , LF , pcFunctionTime2   , 1 + cSourceFiles ) ; ___( pcFunctionTime2 ) ;
-        //newF( tinP , LF , pcFunctionTime1   , 1 + cSourceFiles ) ; ___( pcFunctionTime1 ) ;
-        //newF( tinP , LF , pcFunctionExits   , 1 + cSourceFiles ) ; ___( pcFunctionExits ) ;
-        //newF( tinP , LF , pcFunctionEntries , 1 + cSourceFiles ) ; ___( pcFunctionEntries ) ;
-        //countT cSourceFiles = processGlobal8I.source.cFilesF( tinP ) ;
+        //newF( tinBaseP , LF , pcFunctionTime2   , 1 + cSourceFiles ) ; ___( pcFunctionTime2 ) ;
+        //newF( tinBaseP , LF , pcFunctionTime1   , 1 + cSourceFiles ) ; ___( pcFunctionTime1 ) ;
+        //newF( tinBaseP , LF , pcFunctionExits   , 1 + cSourceFiles ) ; ___( pcFunctionExits ) ;
+        //newF( tinBaseP , LF , pcFunctionEntries , 1 + cSourceFiles ) ; ___( pcFunctionEntries ) ;
+        //countT cSourceFiles = processGlobal8I.source.cFilesF( tinBaseP ) ;
     {
 
-    else            thirdC::c_memsetIF( tinP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
-    if( pbBitsCtP ) thirdC::c_memcpyIF( tinP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
+    else            thirdC::c_memsetIF( tinBaseP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
+    if( pbBitsCtP ) thirdC::c_memcpyIF( tinBaseP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
     
-    idThreadMadeMe = tinP.monitor.idThread ;
-    c_strncpyIF( tinP , postThreadNameMadeMe , tinP.postThreadName , sizeof postThreadNameMadeMe ) ;
-    newF( tinP , LF , postThreadNameMadeMe , c_strlenIF( tinP , tinP.postThreadName ) + 1 ) ; ___( postThreadNameMadeMe ) ;
+    idThreadMadeMe = ((tinNormalS&)tinBaseP).monitor.idThread ;
+    c_strncpyIF( tinBaseP , postThreadNameMadeMe , ((tinNormalS&)tinBaseP).postThreadName , sizeof postThreadNameMadeMe ) ;
+    newF( tinBaseP , LF , postThreadNameMadeMe , c_strlenIF( tinBaseP , ((tinNormalS&)tinBaseP).postThreadName ) + 1 ) ; ___( postThreadNameMadeMe ) ;
 
     _IO_
 
@@ -104,7 +104,7 @@
     {
     IFbEcAREFUL
     SCOOP
-    tinP.pag1->_thirdC_.cThirdObjects ++ ;
+    ((tinNormalS&)tinBaseP).pag1->_thirdC_.cThirdObjects ++ ;
 {
 postThreadNameMadeMe( 0 )
 bConstructed( 0 ) ,
@@ -121,7 +121,7 @@ cProgressDflt( 0 ) ,
 //pcFunctionExits( 0 ) ,
 //pcFunctionEntries( 0 ) ,
 third( *this ) ,
-thirdInit( tinP , (countT)this ) ,
+thirdInit( tinBaseP , (countT)this ) ,
 ) ,
             : flPOOP_SMELLY
             ? flPOOP_null
@@ -137,7 +137,7 @@ flagsWatch( flagsWatchP ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( ( putNegAM( *(countT*)&fingerprint , FINGERnEG_THIRDczOMBIE ) , idLineCtP ) ) ,
 fingerprint( 0 ) ,
-/*1*/thirdC::thirdC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsModeP , const flagsT flagsWatchP )/*1*/ :
+/*1*/thirdC::thirdC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsModeP , const flagsT flagsWatchP )/*1*/ :
 
 /**/
 */

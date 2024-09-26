@@ -8,24 +8,24 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.traceF( tinP , T("[cbIn,pbIn]:    ")+TF2(cbIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pbIn) ) ;
+    etThread.traceF( tinBaseP , T("[cbIn,pbIn]:    ")+TF2(cbIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pbIn) ) ;
 
     countT       cbIn = pageIn ;
     const byteT* pbIn = pageIn ;
     pageC pageIn = myJot ;
 
-    jotC myJot( tinP , T("d:\\tmp\\desk\\puddle\\foo") , flJOTc_null                     , 0 , 8 ) ;
+    jotC myJot( tinBaseP , T("d:\\tmp\\desk\\puddle\\foo") , flJOTc_null                     , 0 , 8 ) ;
 {
 
 }
-    etThread.traceF( tinP , T("[idjBig,cbWrote]:    ")+TF2(idjBig,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbWrote,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    countT idjBig = myJot.writeF( tinP , posto , sizeof posto , 0 , 0 , flJOTcwRITE_ALLoRsOME , &cbWrote ) ;
+    etThread.traceF( tinBaseP , T("[idjBig,cbWrote]:    ")+TF2(idjBig,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbWrote,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    countT idjBig = myJot.writeF( tinBaseP , posto , sizeof posto , 0 , 0 , flJOTcwRITE_ALLoRsOME , &cbWrote ) ;
     ZE( countT , cbWrote ) ;
-    jotC myJot( tinP , T("d:\\tmp\\desk\\puddle\\foo") , flJOTc_WRITE | flJOTc_PURGEoNcT , 0 , 8 ) ;
+    jotC myJot( tinBaseP , T("d:\\tmp\\desk\\puddle\\foo") , flJOTc_WRITE | flJOTc_PURGEoNcT , 0 , 8 ) ;
 
     osTextT posto[] = "abcdefghijklmnopqrstuvwxyz" ;
     //osTextT posto[] = "abcd" ;

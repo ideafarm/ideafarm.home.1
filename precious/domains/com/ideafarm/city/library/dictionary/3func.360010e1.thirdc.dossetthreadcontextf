@@ -10,7 +10,7 @@
 #endif
 
 }
-    tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
     }
         #endif
 
@@ -21,9 +21,9 @@
     {
     if( !POOP )
     __Z( osh ) ;
-    HANDLE osh = (HANDLE)(countT)*tinP.pag1->_thirdC_.pSwThreadHandle ;
-    tinP.pag1->_thirdC_.lOsTid = tidP ;
-    tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    HANDLE osh = (HANDLE)(countT)*((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ;
+    ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid = tidP ;
+    ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     _IO_
 
@@ -34,8 +34,8 @@
             __( cbP - sizeof( CONTEXT ) ) ;
         #if defined( __NT__ )
         __Z( pbP ) ;
-        __( !tinP.pag1->_thirdC_.pSwThreadHandle ) ;
-        __1 //U: THIS CANNOT BE SUPPORTED UNTIL FIGURE OUT WHY STUFFING *tinP.pag1->_thirdC_.pSwThreadHandle IN thirdC::ct CAUSES WO DRIVER TO FAIL TO INSTALL
+        __( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
+        __1 //U: THIS CANNOT BE SUPPORTED UNTIL FIGURE OUT WHY STUFFING *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle IN thirdC::ct CAUSES WO DRIVER TO FAIL TO INSTALL
         if( POOP ) return ;
     {
     IFbEcAREFUL
@@ -44,7 +44,7 @@
     ZE( countT* , pcb ) ; //U:
     SCOOP
 {
-/*1*/voidT thirdC::dosSetThreadContextF( tinS& tinP , const byteT* const pbP , const countT cbP , const countT tidP )/*1*/
+/*1*/voidT thirdC::dosSetThreadContextF( tinBaseS& tinBaseP , const byteT* const pbP , const countT cbP , const countT tidP )/*1*/
 
 #if defined( NEVERdEFINED )
 //U:
@@ -61,7 +61,7 @@
   must point to a valid image of a context record
   must not be 0
  pbP
- tinP
+ tinBaseP
 arguments
   the current version is hardware specific (i386)
  this function is provisional and is subject to change

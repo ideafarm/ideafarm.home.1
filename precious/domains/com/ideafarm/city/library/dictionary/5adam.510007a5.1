@@ -11,18 +11,18 @@ REST
 
 
 }
-    sockc.writeF( tinP , sOut , 0 , 0 , 0 ) ;
-    sockc.connectF( tinP , idps , nicNameC() , 0 , 0 , 0 ) ;
-    socketC sockc( tinP , etThread , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , 0 , 0 , 0 , 0 ) ;
+    sockc.writeF( tinBaseP , sOut , 0 , 0 , 0 ) ;
+    sockc.connectF( tinBaseP , idps , nicNameC() , 0 , 0 , 0 ) ;
+    socketC sockc( tinBaseP , etThread , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , 0 , 0 , 0 , 0 ) ;
 
     sOut << (countT)0x44444444 ;
     sOut << (countT)0x33333333 ;
     sOut << (countT)0x22222222 ;
     sOut << (countT)0x11111111 ;
-    soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
-etThread.osSleepF( tinP , TOCK ) ;
+etThread.osSleepF( tinBaseP , TOCK ) ;
 
 etThread.osThreadF( TaRG1( tmWorkF ) ) ;
 
@@ -40,19 +40,19 @@ CONoUTrAW( postBuffer ) ;
 while( sIn )
 
 DEL( psoa ) ;
-psoa->readF( tinP , sIn , 0 , 0 ) ;
-soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+psoa->readF( tinBaseP , sIn , 0 , 0 ) ;
+soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-socks.acceptF( tinP , psoa , idpPeer , nnPeer , bRefuse ) ;
+socks.acceptF( tinBaseP , psoa , idpPeer , nnPeer , bRefuse ) ;
 ZE( boolT , bRefuse ) ;
 nicNameC nnPeer ;
 ZE( countT , idpPeer ) ;
 ZE( socketC* , psoa ) ;
 
-socks.listenF( tinP ) ;
-idps = socks.bindF( tinP , 0 , nicNameC() , 0 , 0 ) ;
+socks.listenF( tinBaseP ) ;
+idps = socks.bindF( tinBaseP , 0 , nicNameC() , 0 , 0 ) ;
 
-socketC socks( tinP , etThread , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , 0 , 0 , 0 , 0 ) ;
+socketC socks( tinBaseP , etThread , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , 0 , 0 , 0 , 0 ) ;
 
 TASK( tmWorkF )
 

@@ -10,15 +10,15 @@
 }
     return *this ;
 
-    baton.ungrabF( tinP ) ;
-    vtP.baton.ungrabF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
+    vtP.baton.ungrabF( tinBaseP ) ;
 
     vtP.psttVolatile = 0 ;
     psttVolatile = vtP.psttVolatile ;
-    if( psttVolatile ) ether.delF( tinP , psttVolatile ) ; //psttVolatile WILL USUALLY BE 0 SINCE I AM USUALLY USED TO SHIFT VALUES WITHIN A SET OF MANY INSTANCES
+    if( psttVolatile ) ether.delF( tinBaseP , psttVolatile ) ; //psttVolatile WILL USUALLY BE 0 SINCE I AM USUALLY USED TO SHIFT VALUES WITHIN A SET OF MANY INSTANCES
 
-    vtP.baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    vtP.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     TINSL
 {
 /*1*/vTextC& vTextC::operator <<( vTextC& vtP )/*1*/

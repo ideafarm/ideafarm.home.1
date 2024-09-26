@@ -9,14 +9,14 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.newF( tinP , LF , pbLeak , TOCK ) ; ___( pbLeak ) ;
+    etThread.newF( tinBaseP , LF , pbLeak , TOCK ) ; ___( pbLeak ) ;
     ZE( byteT* , pbLeak ) ;
 
-    if( !( idCycle % TOCK ) ) etThread.traceF( tinP , TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    if( !( idCycle % TOCK ) ) etThread.traceF( tinBaseP , TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     idCycle ++ ;
 {
 while( !ether )

@@ -9,26 +9,26 @@
     
 REST
 
-etThread.delF( tinP , pbAll ) ;
+etThread.delF( tinBaseP , pbAll ) ;
 
 }
-    etThread.delF( tinP , psttw ) ;
-    etThread.strokeF( tinP , T("decoded: \"")+T(psttw)+T("\"\r\n") ) ;
-    pbc += etThread.strDecodeF( tinP , psttw , pbc ) ; ___( psttw ) ;
+    etThread.delF( tinBaseP , psttw ) ;
+    etThread.strokeF( tinBaseP , T("decoded: \"")+T(psttw)+T("\"\r\n") ) ;
+    pbc += etThread.strDecodeF( tinBaseP , psttw , pbc ) ; ___( psttw ) ;
 {
 while( pbc < pbe )
 ZE( strokeS* , psttw ) ;
 pbc = pbAll ;
 
 pbe = pbc ;
-pbc += etThread.strEncodeF( tinP , pbc , tD , pbe ) ;
-pbc += etThread.strEncodeF( tinP , pbc , tC , pbe ) ;
-pbc += etThread.strEncodeF( tinP , pbc , tB , pbe ) ;
-pbc += etThread.strEncodeF( tinP , pbc , tA , pbe ) ;
+pbc += etThread.strEncodeF( tinBaseP , pbc , tD , pbe ) ;
+pbc += etThread.strEncodeF( tinBaseP , pbc , tC , pbe ) ;
+pbc += etThread.strEncodeF( tinBaseP , pbc , tB , pbe ) ;
+pbc += etThread.strEncodeF( tinBaseP , pbc , tA , pbe ) ;
 byteT* pbc = pbAll ;
 
 const byteT* pbe = pbAll + cbAll ;
-etThread.newF( tinP , LF , pbAll , cbAll ) ; ___( pbAll ) ;
+etThread.newF( tinBaseP , LF , pbAll , cbAll ) ; ___( pbAll ) ;
 const countT cbAll = TOCK ;
 ZE( byteT* , pbAll ) ;
 

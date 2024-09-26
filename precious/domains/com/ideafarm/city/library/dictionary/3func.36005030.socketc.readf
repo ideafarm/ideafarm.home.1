@@ -10,27 +10,27 @@
 }
     dec02AM( cFunctionsPending ) ;
     }
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
-        pOdometer->cbWrite += tinP.odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += tinP.odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
-        tinP.pag3->_socketC_.nnLever = nnPeer = nicNameP ;
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
+        pOdometer->cbWrite += ((tinNormalS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tinNormalS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer = nicNameP ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        bRead.ungrabF( tinP ) ;
+        bRead.ungrabF( tinBaseP ) ;
    
         if( idleTimeAllowedRead ) FRESHtIMEaTOMIC( *pEther , timeLathRead.time1 , timeLathRead.time2 )
     
         THREADmODE2rESTORE
         }
-            pEther->sockReadF( tinP , soulP , idPortP , nicNameP , handle , time1P , time2P ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            pEther->sockReadF( tinBaseP , soulP , idPortP , nicNameP , handle , time1P , time2P ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
         {
         else
         }
-            pEther->sockReadF( tinP , soulP , idPortP , nicNameP , handle , time1P , time2P ) ;
-            armSslC armMe( tinP , flagsOpenSslFails ) ;
-            //etherC::etRockIF( tinP ).traceF( tinP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            pEther->sockReadF( tinBaseP , soulP , idPortP , nicNameP , handle , time1P , time2P ) ;
+            armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
         {
         if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL )
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
@@ -38,19 +38,19 @@
         }
             }
                 __Z( idSlot ) ;
-                etherC::sockStkCatchersF( tinP ).sinkF( tinP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
+                etherC::sockStkCatchersF( tinBaseP ).sinkF( tinBaseP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
                 ZE( countT , idSlot ) ;
-                //__( F(tinP.flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
+                //__( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
             {
             if( !( F(flags) & flSOCKETc_DOnOTrEGISTERcATCHER ) )
             bCatcher = 1 ;
         {
         if( !bCatcher )
 
-        bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = tinP.odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = tinP.odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinBaseP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinBaseP).odoSockCbRead  ;
     
         _IO_
     
@@ -75,7 +75,7 @@
     {
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/voidT socketC::readF( tinS& tinP , soulC& soulP , countT& idPortP , nicNameC& nicNameP , const countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT socketC::readF( tinBaseS& tinBaseP , soulC& soulP , countT& idPortP , nicNameC& nicNameP , const countT time1P , const sCountT time2P )/*1*/
 
 /**/
 */

@@ -10,29 +10,29 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.strokeF( tinP , T("ok\r\n") ) ;
-ss.waitF( tinP ) ;
-sayF( tinP , etThread , bb , S1C('1') ) ;
-etThread.osThreadF( tinP , tid , tmF , &ss , flTHREADlAUNCH_null , 0 , 0 , (countT)&bb ) ;
+etThread.strokeF( tinBaseP , T("ok\r\n") ) ;
+ss.waitF( tinBaseP ) ;
+sayF( tinBaseP , etThread , bb , S1C('1') ) ;
+etThread.osThreadF( tinBaseP , tid , tmF , &ss , flTHREADlAUNCH_null , 0 , 0 , (countT)&bb ) ;
 ZE( countT , tid ) ;
-signC ss( tinP , TAG( TAGiDnULL ) ) ;
-batonC bb( tinP , TAG( TAGiDnULL ) ) ;
+signC ss( tinBaseP , TAG( TAGiDnULL ) ) ;
+batonC bb( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmF )
-if( pTaskP && pTaskP->c1 ) sayF( tinP , etThread , *(batonC*)pTaskP->c1 , S1C('2') ) ;
+if( pTaskP && pTaskP->c1 ) sayF( tinBaseP , etThread , *(batonC*)pTaskP->c1 , S1C('2') ) ;
 TASK( tmF )
 
 }
-    batonP.ungrabF( tinP ) ;
-    while( cTries -- ) etThread.strokeF( tinP , sttP ) ;
+    batonP.ungrabF( tinBaseP ) ;
+    while( cTries -- ) etThread.strokeF( tinBaseP , sttP ) ;
     countT cTries = 0x1000 ;
-    batonP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    batonP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-voidT sayF( tinS& tinP , etherC& etThread , batonC& batonP , const strokeS sttP )
+voidT sayF( tinBaseS& tinBaseP , etherC& etThread , batonC& batonP , const strokeS sttP )
 
 /*1*/WAKEhIDE( "example.simplest.snip.0030001.batonC" )/*1*/
 /**/

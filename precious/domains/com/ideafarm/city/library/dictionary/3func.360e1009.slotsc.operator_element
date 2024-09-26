@@ -17,7 +17,7 @@
     __( !ppSex[ offs ] ) ;
 
     }
-        pGrabNewElt[ offs ].ungrabF( tinP ) ;
+        pGrabNewElt[ offs ].ungrabF( tinBaseP ) ;
         }
             }
                 ppSex[ offs ] = pSexNew ;
@@ -45,8 +45,8 @@
 
             THREADmODE2rESTORE
             }
-                pSexNew = new( 0 , tinP , pbza + offs * sizeof( sexC ) , sizeof( sexC ) ) sexC( tinP , TAG( TAGiDnULL ) , LF , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
-                tlsAllocStackExp_a_C tls( tinP ) ;
+                pSexNew = new( 0 , tinBaseP , pbza + offs * sizeof( sexC ) , sizeof( sexC ) ) sexC( tinBaseP , TAG( TAGiDnULL ) , LF , ostoName , expCbDrop , cbDropAdjust , offs , cbDropSeparator , flagsc , idStateSpace , idMemorySpace , pPoolContainsMe ) ;
+                tlsAllocStackExp_a_C tls( tinBaseP ) ;
             {
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             ZE( sexC* , pSexNew ) ;
@@ -63,14 +63,14 @@
             flagsT                                    flagsc  = fliSEXc_null          ;
         {
         if( !ppSex[ offs ] )
-        pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ;
+        pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( !ppSex[ offs ] )
 
     inc02AM( pcTallyIn[ offs ] ) ;
 
     countT offs = expSlotsMin + ( offP & ( 1 << CbITSeXPsLOTS ) - 1 ) ;
-    if( F(tinP.flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+    if( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
     _IO_
 
     }

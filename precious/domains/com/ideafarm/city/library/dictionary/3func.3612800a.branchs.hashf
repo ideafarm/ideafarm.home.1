@@ -22,10 +22,10 @@
 
                     }
                         }
-                            else                   stHashCollisionsP.sinkF( tinP , countTC() , B(brThis).hashv , flSTACKsINK_UNIQUE ) ;
+                            else                   stHashCollisionsP.sinkF( tinBaseP , countTC() , B(brThis).hashv , flSTACKsINK_UNIQUE ) ;
                             if( !( bits & mask ) ) bits |= mask ;
                         
-                            countT& bits = barryHashP( tinP , B(brThis).hashv , mask , offBit ) ;
+                            countT& bits = barryHashP( tinBaseP , B(brThis).hashv , mask , offBit ) ;
                             countT offBit ; //INTENTIONALLY UNINITIALIZED FOR SPEED
                             countT mask   ; //INTENTIONALLY UNINITIALIZED FOR SPEED
                         {
@@ -34,7 +34,7 @@
                         __Z( B(brThis).hashv ) ;
                         }
                             B(brThis).hashv = - 1 ;
-                            etherC::etRockIF( tinP ).traceF( tinP , T("::hashF returned a null hash") ) ;
+                            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("::hashF returned a null hash") ) ;
                         {
                         if( !B(brThis).hashv )
 
@@ -51,16 +51,16 @@
                 }
                     DELzOMBIE( pPageRelease ) ;
                     DELzOMBIE( pPageEncoded ) ;
-                    etherC::etRockIF( tinP ).traceF( tinP , T("branchS::hashF / invalid finger in encoding") ) ;
+                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("branchS::hashF / invalid finger in encoding") ) ;
                 {
                 if( POOP )
             
                 __( ((countT*)(const byteT*)*pPageEncoded)[ 0 ] - FINGERnEG_STReNCODEf ) ;
 
-                pageC* pPageEncoded = new( 0 , tinP , pb_pageEncoded , sizeof pb_pageEncoded ) pageC( jotC::readIF( tinP , value ) ) ; //U::BUG: THIS MIGHT BE IN ANOTHER BOOK
+                pageC* pPageEncoded = new( 0 , tinBaseP , pb_pageEncoded , sizeof pb_pageEncoded ) pageC( jotC::readIF( tinBaseP , value ) ) ; //U::BUG: THIS MIGHT BE IN ANOTHER BOOK
                 byteT pb_pageEncoded[ sizeof( pageC ) ] ;
 
-                pageReleaseC* pPageRelease = new( 0 , tinP , pb_pageRelease , sizeof pb_pageRelease ) pageReleaseC( tinP , (const byteT*)this ) ;
+                pageReleaseC* pPageRelease = new( 0 , tinBaseP , pb_pageRelease , sizeof pb_pageRelease ) pageReleaseC( tinBaseP , (const byteT*)this ) ;
                 byteT pb_pageRelease[ sizeof( pageReleaseC ) ] ;
             {
             if( value )
@@ -69,7 +69,7 @@
     {
     switch( idType )    
 {
-/*1*/voidT branchS::hashF( tinS& tinP , const countT jbrMeP , barryC& barryHashP , stackC& stHashCollisionsP )/*1*/
+/*1*/voidT branchS::hashF( tinBaseS& tinBaseP , const countT jbrMeP , barryC& barryHashP , stackC& stHashCollisionsP )/*1*/
 
 /**/
 */

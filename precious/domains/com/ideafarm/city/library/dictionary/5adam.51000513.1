@@ -11,22 +11,22 @@
 
 REST
 
-sgnDone_tmServerF.waitF( tinP ) ;
+sgnDone_tmServerF.waitF( tinBaseP ) ;
 }
-    sock.writeF( tinP , soulOut ) ;
+    sock.writeF( tinBaseP , soulOut ) ;
     
     soulOut << (countT)0x87654321 ;
-    soulC soulOut( tinP , TAG( TAGiDnULL ) ) ;
+    soulC soulOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-    sock.connectF( tinP , idPort ) ;
-    socketC sock( tinP , ether , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tinBaseP , idPort ) ;
+    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 {
 
-sgnReady.waitF( tinP ) ;
-etThread.osThreadF( tinP , countTC() , tmServerF , &sgnDone_tmServerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sgnReady ) ;
+sgnReady.waitF( tinBaseP ) ;
+etThread.osThreadF( tinBaseP , countTC() , tmServerF , &sgnDone_tmServerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sgnReady ) ;
 ZE( countT , idPort ) ;
-signC sgnDone_tmServerF(  tinP , TAG( TAGiDnULL ) ) ;
-signC sgnReady(  tinP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmServerF(  tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnReady(  tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -34,23 +34,23 @@ DONE( tmServerF )
 }
     DEL( pso ) ;
     }
-        etThread.strokeF( tinP , T("value received over secure socket: ")+TF1(value)+T("\r\n") ) ;
+        etThread.strokeF( tinBaseP , T("value received over secure socket: ")+TF1(value)+T("\r\n") ) ;
         soulIn >> value ;
         ZE( countT , value ) ;
 
-        pso->readF( tinP , soulIn ) ;
-        soulC soulIn( tinP , TAG( TAGiDnULL ) ) ;
+        pso->readF( tinBaseP , soulIn ) ;
+        soulC soulIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( pso )
-    sock.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+    sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
     ZE( countT , idPortPeer ) ;
     nicNameC nnPeer ;
     ZE( socketC* , pso ) ;
 
-    sgnReadyP.giveF( tinP ) ;
-    sock.listenF( tinP ) ;
-    idPortP = sock.bindF( tinP ) ;
-    socketC sock( tinP , ether , TAG( TAGiDnULL ) ) ;
+    sgnReadyP.giveF( tinBaseP ) ;
+    sock.listenF( tinBaseP ) ;
+    idPortP = sock.bindF( tinBaseP ) ;
+    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
 
     signC&  sgnReadyP =  *(signC*)pTaskP->c2 ;
     countT& idPortP   = *(countT*)pTaskP->c1 ;

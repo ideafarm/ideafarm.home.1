@@ -11,20 +11,20 @@
     }
         if( POOP ) POOPR
 
-        { _IO_ if( pStkEmailPenpalContainsAnd ) (*tinP.pEtScratch)( tinP , pStkEmailPenpalContainsAnd ) ; }
-        { _IO_ if( pStkEmailPenpalContainsOr  ) (*tinP.pEtScratch)( tinP , pStkEmailPenpalContainsOr  ) ; }
-        { _IO_ if( pStkEmailPenpalExactOr     ) (*tinP.pEtScratch)( tinP , pStkEmailPenpalExactOr     ) ; }
-        { _IO_ if( pStkRecipe                 ) (*tinP.pEtScratch)( tinP , pStkRecipe                 ) ; }
-        { _IO_ if( pStkAutoresponse           ) (*tinP.pEtScratch)( tinP , pStkAutoresponse           ) ; }
-        { _IO_ if( pStkEmailRelay             ) (*tinP.pEtScratch)( tinP , pStkEmailRelay             ) ; }
+        { _IO_ if( pStkEmailPenpalContainsAnd ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsAnd ) ; }
+        { _IO_ if( pStkEmailPenpalContainsOr  ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsOr  ) ; }
+        { _IO_ if( pStkEmailPenpalExactOr     ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalExactOr     ) ; }
+        { _IO_ if( pStkRecipe                 ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkRecipe                 ) ; }
+        { _IO_ if( pStkAutoresponse           ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkAutoresponse           ) ; }
+        { _IO_ if( pStkEmailRelay             ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailRelay             ) ; }
     
-        PUSE( tinP , *(byteT**)&psttNameOut ) ;
-        PUSE( tinP , *(byteT**)&psttNameIn  ) ;
-        PUSE( tinP , *(byteT**)&psttTitle   ) ;
+        PUSE( tinBaseP , *(byteT**)&psttNameOut ) ;
+        PUSE( tinBaseP , *(byteT**)&psttNameIn  ) ;
+        PUSE( tinBaseP , *(byteT**)&psttTitle   ) ;
 
         }
-            //CONoUTrAWb( "\r\nsubaccountS/dt [idAdam,idThread,idAcc,idSub,bDone]: " , tinP.pag1->idAdam , "(" , tinP.monitor.idThread , ") " , idAcc , ":" , idSub , " bDone:" , bDone , "\r\n" ) ; //U::
-            //CONoUTrAW( tinP.postThreadName ) ;
+            //CONoUTrAWb( "\r\nsubaccountS/dt [idAdam,idThread,idAcc,idSub,bDone]: " , ((tinNormalS&)tinBaseP).pag1->idAdam , "(" , ((tinNormalS&)tinBaseP).monitor.idThread , ") " , idAcc , ":" , idSub , " bDone:" , bDone , "\r\n" ) ; //U::
+            //CONoUTrAW( ((tinNormalS&)tinBaseP).postThreadName ) ;
 
             if( POOP ) { POOPR ; }
 
@@ -44,18 +44,18 @@
             sIn >> finger ;
             ZE( countT , finger ) ;
                     
-            sock.readF( tinP , sIn ) ;
-            soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+            sock.readF( tinBaseP , sIn ) ;
+            soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
-            sock.writeF( tinP , sOut ) ;
+            sock.writeF( tinBaseP , sOut ) ;
 
-            pushFieldValuesF( tinP , sOut , pStkEmailPenpalContainsAnd ) ;
-            pushFieldValuesF( tinP , sOut , pStkEmailPenpalContainsOr  ) ;
-            pushFieldValuesF( tinP , sOut , pStkEmailPenpalExactOr     ) ;
-            pushFieldValuesF( tinP , sOut , pStkRecipe                 ) ;
-            pushFieldValuesF( tinP , sOut , pStkAutoresponse           ) ;
+            pushFieldValuesF( tinBaseP , sOut , pStkEmailPenpalContainsAnd ) ;
+            pushFieldValuesF( tinBaseP , sOut , pStkEmailPenpalContainsOr  ) ;
+            pushFieldValuesF( tinBaseP , sOut , pStkEmailPenpalExactOr     ) ;
+            pushFieldValuesF( tinBaseP , sOut , pStkRecipe                 ) ;
+            pushFieldValuesF( tinBaseP , sOut , pStkAutoresponse           ) ;
             sOut << cEmailRelayDrawings ;
-            pushFieldValuesF( tinP , sOut , pStkEmailRelay             ) ;
+            pushFieldValuesF( tinBaseP , sOut , pStkEmailRelay             ) ;
             sOut << psttNameOut ;
             sOut << psttNameIn ;
             sOut << psttTitle ;
@@ -65,10 +65,10 @@
             sOut << (countT)ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETsUBACCOUNTdESCRIPTION ;
             sOut << (countT)1 ;
             sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-            soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
-            sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-            socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
+            socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
         {
         if( F(flagsThis) & flSUBACCOUNT_SET )
 

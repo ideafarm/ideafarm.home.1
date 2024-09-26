@@ -11,15 +11,15 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok\r\n") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok\r\n") ) ;
 
-etThread.boxZapF( tinP , tLong ) ;
+etThread.boxZapF( tinBaseP , tLong ) ;
 
-etThread.traceF( tinP , T("[cFound]:    ")+TF2(cFound,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-countT cFound = etThread.diskFileExistsF( tinP , tLong ) ;
+etThread.traceF( tinBaseP , T("[cFound]:    ")+TF2(cFound,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+countT cFound = etThread.diskFileExistsF( tinBaseP , tLong ) ;
 
-etThread.boxPutF( tinP , tLong , "1" ) ;
+etThread.boxPutF( tinBaseP , tLong , "1" ) ;
 
 TN( tLong , "///ideafarm/tmp/wo" ) ;
 

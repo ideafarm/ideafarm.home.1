@@ -9,30 +9,30 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 }
     }
-        //etThread.traceF( tinP , T("napped") ) ;
-        ++ s ; etThread.osSleepF( tinP , TOCK << 2 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-        //etThread.traceF( tinP , T("napping") ) ;
+        //etThread.traceF( tinBaseP , T("napped") ) ;
+        ++ s ; etThread.osSleepF( tinBaseP , TOCK << 2 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //etThread.traceF( tinBaseP , T("napping") ) ;
 
         if( bQuit ) break ;
         if( !bQuit ) break ; //U::LATER: CYCLE THIS ONCE PER MONTH.  NOW: RUN MANUALLY FOR A SINGLE PASS
 
         }
-            etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tTo+T("//wo@ideafarm.com") , tBody ) ;
+            etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tTo+T("//wo@ideafarm.com") , tBody ) ;
 
-            etThread.traceF( tinP , T("[tTo]:    ")+tTo ) ;
+            etThread.traceF( tinBaseP , T("[tTo]:    ")+tTo ) ;
 
             }
-                etThread.delF( tinP , pstte ) ;
+                etThread.delF( tinBaseP , pstte ) ;
 
                 }
                     tTo += T(pstte) ;                
-                    if( tTo.csF( tinP ) ) tTo += tSlash ;
-                    etThread.traceF( tinP , tb4+T(pstte) ) ;
+                    if( tTo.csF( tinBaseP ) ) tTo += tSlash ;
+                    etThread.traceF( tinBaseP , tb4+T(pstte) ) ;
                 {
                 if( !swDelete )
                 psttzEmail = pstte ;
@@ -96,18 +96,18 @@ etherC::loafIF( tinP ) ;
 
             boolT bLonely = cFriends == 1 ;
             countT cFriends = swsEmail ;
-            etThread.traceF( tinP , psttzCountryZip ) ;
-            psttzCountryZip = (strokeS*)swsEmail.leverF( tinP , idf ) ;
+            etThread.traceF( tinBaseP , psttzCountryZip ) ;
+            psttzCountryZip = (strokeS*)swsEmail.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swsEmail.cFlavorsF( tinP ) ;
+        countT cFlavors = swsEmail.cFlavorsF( tinBaseP ) ;
 
         }
-            if( !tHost.csF( tinP ) ) tHost = T("factories") ;
-            etThread.delF( tinP , psttHost ) ;
+            if( !tHost.csF( tinBaseP ) ) tHost = T("factories") ;
+            etThread.delF( tinBaseP , psttHost ) ;
             else       tHost = T(psttHost) ;
             if( POOP ) { POOPR ; }
-            tinP.pEtScratch->sockPsttHostF( tinP , psttHost ) ; ___( psttHost ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->sockPsttHostF( tinBaseP , psttHost ) ; ___( psttHost ) ;
             ZE( strokeS* , psttHost ) ;
 
             SCOOPS
@@ -120,54 +120,54 @@ etherC::loafIF( tinP ) ;
             DEL( pInfo ) ;
             }
                 }
-                    etThread.delF( tinP , psttCountry ) ;
-                    etThread.delF( tinP , psttZip     ) ;
-                    etThread.delF( tinP , psttDelete  ) ;
-                    etThread.delF( tinP , psttPeer    ) ;
+                    etThread.delF( tinBaseP , psttCountry ) ;
+                    etThread.delF( tinBaseP , psttZip     ) ;
+                    etThread.delF( tinBaseP , psttDelete  ) ;
+                    etThread.delF( tinBaseP , psttPeer    ) ;
 
 
                     }
-                        etThread.delF( tinP , psttEmail ) ;
+                        etThread.delF( tinBaseP , psttEmail ) ;
                     {
                     else
                     }
-                        else      etThread.delF( tinP , psttEmail ) ;
+                        else      etThread.delF( tinBaseP , psttEmail ) ;
                         if( ids ) psttEmail = 0 ;
-                        swsEmail.sinkF( tinP , ids , psttEmail , flSTACKsINK_UNIQUE ) ;
+                        swsEmail.sinkF( tinBaseP , ids , psttEmail , flSTACKsINK_UNIQUE ) ;
                         ZE( countT , ids ) ;
 
                         psttzCountryZip = tFlavor ;
 
                         TN( tFlavor , "" ) ; tFlavor = T(psttCountry)+tBlankDashBlank+T(psttZip) ;
 
-                        swDelete = (boolT)!etThread.strCompareF( tinP , psttDelete , tYes ) ; //ONLY THE LATH IS EFFECTIVE
+                        swDelete = (boolT)!etThread.strCompareF( tinBaseP , psttDelete , tYes ) ; //ONLY THE LATH IS EFFECTIVE
                         psttzEmail = psttEmail ;
 
-                        etThread.traceF( tinP , T("rec:")+tb4+T(psttPeer)+tb4+T(psttDelete)+tb4+T(psttEmail)+tb4+T(psttZip)+tb4+T(psttCountry) ) ;
-                        //etThread.traceF( tinP , T(USCORE79) ) ;
-                        //etThread.traceF( tinP , T("country:    \"")+T(psttCountry)+T("\"") ) ;
-                        //etThread.traceF( tinP , T("zip:        \"")+T(psttZip)+T("\"") ) ;
-                        //etThread.traceF( tinP , T("email:      \"")+T(psttEmail)+T("\"") ) ;
-                        //etThread.traceF( tinP , T("delete:     \"")+T(psttDelete)+T("\"") ) ;
-                        //etThread.traceF( tinP , T("peer:       \"")+T(psttPeer)+T("\"") ) ;
-                        //etThread.traceF( tinP , T("cFields:    ")+TF2(cFields,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        //etThread.traceF( tinP , T("idFormat:   ")+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        //etThread.traceF( tinP , T(USCORE79) ) ;
+                        etThread.traceF( tinBaseP , T("rec:")+tb4+T(psttPeer)+tb4+T(psttDelete)+tb4+T(psttEmail)+tb4+T(psttZip)+tb4+T(psttCountry) ) ;
+                        //etThread.traceF( tinBaseP , T(USCORE79) ) ;
+                        //etThread.traceF( tinBaseP , T("country:    \"")+T(psttCountry)+T("\"") ) ;
+                        //etThread.traceF( tinBaseP , T("zip:        \"")+T(psttZip)+T("\"") ) ;
+                        //etThread.traceF( tinBaseP , T("email:      \"")+T(psttEmail)+T("\"") ) ;
+                        //etThread.traceF( tinBaseP , T("delete:     \"")+T(psttDelete)+T("\"") ) ;
+                        //etThread.traceF( tinBaseP , T("peer:       \"")+T(psttPeer)+T("\"") ) ;
+                        //etThread.traceF( tinBaseP , T("cFields:    ")+TF2(cFields,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //etThread.traceF( tinBaseP , T("idFormat:   ")+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //etThread.traceF( tinBaseP , T(USCORE79) ) ;
                     {
-                    if( ( idFormat > 1 || cFields == 7 ) && etThread.strCompareF( tinP , psttEmail , tEmailIgnore1 ) && etThread.strCompareF( tinP , psttEmail , tEmailIgnore2 ) )
+                    if( ( idFormat > 1 || cFields == 7 ) && etThread.strCompareF( tinBaseP , psttEmail , tEmailIgnore1 ) && etThread.strCompareF( tinBaseP , psttEmail , tEmailIgnore2 ) )
 
-                    //etThread.strConvertToLowerCaseF( tinP , psttCountry ) ;
-                    etThread.strTrimF( tinP , psttCountry ) ; ___( psttCountry ) ;
+                    //etThread.strConvertToLowerCaseF( tinBaseP , psttCountry ) ;
+                    etThread.strTrimF( tinBaseP , psttCountry ) ; ___( psttCountry ) ;
                     souli >> psttCountry ; ___( psttCountry ) ;
                     ZE( strokeS* , psttCountry ) ;
 
-                    etThread.strConvertToLowerCaseF( tinP , psttZip ) ;
-                    etThread.strTrimF( tinP , psttZip ) ; ___( psttZip ) ;
+                    etThread.strConvertToLowerCaseF( tinBaseP , psttZip ) ;
+                    etThread.strTrimF( tinBaseP , psttZip ) ; ___( psttZip ) ;
                     souli >> psttZip ; ___( psttZip ) ;
                     ZE( strokeS* , psttZip ) ;
 
-                    etThread.strConvertToLowerCaseF( tinP , psttEmail ) ;
-                    etThread.strTrimF( tinP , psttEmail ) ; ___( psttEmail ) ;
+                    etThread.strConvertToLowerCaseF( tinBaseP , psttEmail ) ;
+                    etThread.strTrimF( tinBaseP , psttEmail ) ; ___( psttEmail ) ;
                     souli >> psttEmail ; ___( psttEmail ) ;
                     ZE( strokeS* , psttEmail ) ;
 
@@ -185,17 +185,17 @@ etherC::loafIF( tinP ) ;
 
                     countT cFields = souli.cFieldsF() ;
 
-                    //etThread.traceF( tinP , T("got soul") ) ;
-                    etThread.boxGetShadowF( tinP , souli , tIfoName ) ;
-                    soulC souli( tinP , TAG( TAGiDnULL ) ) ;
+                    //etThread.traceF( tinBaseP , T("got soul") ) ;
+                    etThread.boxGetShadowF( tinBaseP , souli , tIfoName ) ;
+                    soulC souli( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                    //etThread.traceF( tinP , tShort ) ;
+                    //etThread.traceF( tinBaseP , tShort ) ;
 
                     }
-                        etThread.delF( tinP , psttShort ) ;
+                        etThread.delF( tinBaseP , psttShort ) ;
                         tShort = T(psttShort) ;
-                        etThread.delF( tinP , psttnu ) ;
-                        etThread.strBisectF( tinP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                        etThread.delF( tinBaseP , psttnu ) ;
+                        etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                         ZE( strokeS* , psttShort ) ;
                         ZE( strokeS* , psttnu ) ;
                     {
@@ -215,17 +215,17 @@ etherC::loafIF( tinP ) ;
             {
             if( !pInfo || !pInfo->psttIfoName )
 
-            etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ;
+            etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         do
-        handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-        etThread.traceF( tinP , T(USCORE79) ) ;
+        handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+        etThread.traceF( tinBaseP , T(USCORE79) ) ;
 
-        switchC swDelete( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzEmail ) ;
+        switchC swDelete( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzEmail ) ;
         ZE( strokeS* , psttzEmail ) ;
 
-        switchStackC swsEmail( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzCountryZip , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+        switchStackC swsEmail( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzCountryZip , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
         ZE( strokeS* , psttzCountryZip ) ;
     {
     while( !bQuit && !POOP )
@@ -245,8 +245,8 @@ etherC::loafIF( tinP ) ;
     TN( tLike , "////factory5/d/ideafarm.home.102/ephemeral/backed.up.daily/domains/com/ideafarm/wo.o.s.table/confirmed.email/*" ) ;
 {
 
-//etThread.traceF( tinP , T(folder) ) ;
-osFileNameC folder( tinP , etThread , "////factory5/d/ideafarm.home.102/ephemeral/backed.up.daily/domains/com/ideafarm/wo.o.s.table/confirmed.email/" ) ;
+//etThread.traceF( tinBaseP , T(folder) ) ;
+osFileNameC folder( tinBaseP , etThread , "////factory5/d/ideafarm.home.102/ephemeral/backed.up.daily/domains/com/ideafarm/wo.o.s.table/confirmed.email/" ) ;
 
 //RUN MONTHLY AFTER MANUALLY POURING ALL CONFIRMED EMAIL SOUL FILES TO FACTORY5
 

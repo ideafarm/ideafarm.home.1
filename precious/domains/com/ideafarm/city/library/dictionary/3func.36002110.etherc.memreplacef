@@ -37,7 +37,7 @@
     if( cbSmall && cbSmall <= cbBigP )
     ZE( countT , cFound ) ;
 
-    const countT cbSmall = cbSmallP ? cbSmallP : third.c_strlenIF( tinP , pbSmallOldP ) ;
+    const countT cbSmall = cbSmallP ? cbSmallP : third.c_strlenIF( tinBaseP , pbSmallOldP ) ;
 
     _IO_
 
@@ -51,7 +51,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::memReplaceF( tinS& tinP , byteT* const pbBigP , const countT cbBigP , const byteT* const pbSmallOldP , const byteT* const pbSmallNewP , const countT cbSmallP )/*1*/
+/*1*/countT etherC::memReplaceF( tinBaseS& tinBaseP , byteT* const pbBigP , const countT cbBigP , const byteT* const pbSmallOldP , const byteT* const pbSmallNewP , const countT cbSmallP )/*1*/
 
 /**/
 */
@@ -75,7 +75,7 @@
   must point to cbBigP bytesP of memory that the current process can write to and read from
   must not be 0
  pbBigP
- tinP
+ tinBaseP
 arguments
 evaluates to the number of replacements made
 replaces, in place, occurances of pbSmallOldP with pbSmallNewP

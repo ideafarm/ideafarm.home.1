@@ -24,17 +24,17 @@
 
             if( ((napkinHeaderS*)pbNapkin)->cRef ) { BLAMMO ; } // BLAMMO BECAUSE SOMEONE HAS INCREMENTED cRef BEFORE I GOT A CHANCE TO FORMAT
 
-            if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) ) pzbMemorySpaceUse->grabF( tinP , TAG( TAGiDnULL ) ) ;   // CALLER MUST CALL formattingIsDoneF
+            if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) ) pzbMemorySpaceUse->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;   // CALLER MUST CALL formattingIsDoneF
 
-            tinS& tinP = *pTin ;
+            tinBaseS& tinBaseP = *pTin ;
             ;
                         : 0
-                        ? &processGlobal4I.tinVeryVeryEarlyLateMain
-                    :                               F(processGlobal2I.flCt) & flCTdTg_tinVeryVeryEarlyLateMainI && !( F(processGlobal2I.flDt) & flCTdTg_tinVeryVeryEarlyLateMainI )
-                    ? &processGlobal5I.tinVeryEarlyLateMain
-                :                                   F(processGlobal2I.flCt) & flCTdTg_tinVeryEarlyLateMainI && !( F(processGlobal2I.flDt) & flCTdTg_tinVeryEarlyLateMainI )
-                ? &thirdC::third_tinS_ref_IF()
-            tinS* pTin =                            F(processGlobal2I.flCt) & flCTdTg_tinMainInPool && !( F(processGlobal2I.flDt) & flCTdTg_tinMainInPool )
+                        ? &processGlobal4I.tinNormalVeryVeryEarlyLateMain
+                    :                               F(processGlobal2I.flCt) & flCTdTg_tinNormalVeryVeryEarlyLateMainI && !( F(processGlobal2I.flDt) & flCTdTg_tinNormalVeryVeryEarlyLateMainI )
+                    ? &processGlobal5I.tinNormalVeryEarlyLateMain
+                :                                   F(processGlobal2I.flCt) & flCTdTg_tinNormalVeryEarlyLateMainI && !( F(processGlobal2I.flDt) & flCTdTg_tinNormalVeryEarlyLateMainI )
+                ? &thirdC::third_tinBaseS_ref_IF()
+            tinBaseS* pTin =                            F(processGlobal2I.flCt) & flCTdTg_tinMainInPool && !( F(processGlobal2I.flDt) & flCTdTg_tinMainInPool )
         {
         if( !( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
         //CS:CODEsYNC: 3603e003 3603e007

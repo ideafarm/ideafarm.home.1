@@ -10,10 +10,10 @@
 }
     DEL( psFeaturesP ) ;
 
-    (*tinP.pEther)( tinP , psFeature ) ;
+    (*((tinNormalS&)tinBaseP).pEther)( tinBaseP , psFeature ) ;
     }
         }
-            psFeature->removeAllF( tinP ) ;
+            psFeature->removeAllF( tinBaseP ) ;
             }
                 }
                     }
@@ -25,7 +25,7 @@
                             ZE( flagsT , flags ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
 
                         fc.flagsDraggable |= flFEATUREsADAMdRAGGABLE_EXISTS ;
@@ -42,17 +42,17 @@
                         }
                             }
                                 *psFeature >> psttFlyover ;
-                                tinP.pEther->delF( tinP , psttFlyover ) ;
+                                ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttFlyover ) ;
                             {
                             if( idTypeItem == ifcIDtYPEsOULiTEM_strokeSptr )
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             idTypeItem = 0 ;
 
                             *psFeature >> fc.idIntercomFlyover ;
                             fc.idIntercomFlyover = 0 ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
 
                         fc.flagsFlyover |= flFEATUREsADAMfLYOVER_EXISTS ;
@@ -65,7 +65,7 @@
                             fc.idIntercom = 0 ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
                         fc.flagsIntercom |= flFEATUREsADAMiNTERCOM_EXISTS ;
                     {
@@ -82,7 +82,7 @@
                             ZE( flagsT , flags ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
 
                         fc.flagsMouse |= flFEATUREsADAMmOUSE_EXISTS ;
@@ -106,7 +106,7 @@
                             ZE( flagsT , flags ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
 
                         fc.flagsJoyStick |= flFEATUREsADAMjOYsTICK_EXISTS ;
@@ -124,7 +124,7 @@
                             ZE( flagsT , flags ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
 
                         fc.flagsKeyboard |= flFEATUREsADAMkEYBOARD_EXISTS ;
@@ -143,25 +143,25 @@
                                                 *psFeature >> fc.cFrameNestRight ;
                                             {
                                             if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                                             idTypeItem = 0 ;
 
                                             *psFeature >> fc.cFrameNestUp ;
                                         {
                                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                                         idTypeItem = 0 ;
 
                                         *psFeature >> fc.cFrameNestLeft ;
                                     {
                                     if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                                    psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                                    psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                                     idTypeItem = 0 ;
 
                                     *psFeature >> fc.cFrameNestDown ;
                                 {
                                 if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                                psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                                psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                                 idTypeItem = 0 ;
 
                                 if( !POOP ) fc.flagsFrame |= flags ;
@@ -172,7 +172,7 @@
                                 ZE( flagsT , flags ) ;
                             {
                             if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             idTypeItem = 0 ;
 
                             *psFeature >> fc.rgbFrame ;
@@ -180,7 +180,7 @@
                         {
                         else
                         if( idTypeItem != ifcIDtYPEsOULiTEM_countT ) fc.rgbFrame = 0xff000000 ; //INVALID COLOR SO NO COLOR WILL BE PUSHED
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
 
                         fc.flagsFrame |= flFEATUREsADAMfRAME_EXISTS ;
@@ -191,10 +191,10 @@
                         }
                             }
                                 *ppczChannel = pczChannel ;
-                                if( *ppczChannel ) tinP.pEther->delF( tinP , *ppczChannel ) ;
+                                if( *ppczChannel ) ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , *ppczChannel ) ;
                             {
                             else
-                            if( !ppczChannel ) tinP.pEther->delF( tinP , pczChannel ) ;
+                            if( !ppczChannel ) ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , pczChannel ) ;
 
                             }
                                 case ifcIDtYPEsADAMcHANNEL_IN  : { ppczChannel = &pczChannelIn  ; break ; }
@@ -207,14 +207,14 @@
                             ZE( countT* , pczChannel ) ;
 
                             if( idTypeItem != ifcIDtYPEsOULiTEM_countTptr ) break ;
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             idTypeItem = 0 ;
 
                             *psFeature >> idTypeChannel ;
                             ZE( countT , idTypeChannel ) ;
 
                             if( idTypeItem != ifcIDtYPEsOULiTEM_countT ) break ;
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             ZE( countT , idTypeItem ) ;
                         {
                         while( (countT)*psFeature >= 2 )
@@ -230,25 +230,25 @@
                                 fc.callBackArg = 0 ;
                             {
                             if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             ZE( countT , idTypeItem ) ;
                         {
                         if( (countT)*psFeature )
 
                         }
-                            tinP.pEther->delF( tinP , psttOldCB ) ;
+                            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttOldCB ) ;
                             }
                                 }
                                     hBase.resetF() ;
-                                    tinP.pEther->dllEntryF( tinP , *ppSadamCBF , hBase , psttOldCB ) ;
-                                    ((thirdC&)(*tinP.pEther)).dosQueryModuleHandleF( tinP , hBase , thirdC::postBaseNameIF( tinP ) ) ;
-                                    handleC hBase( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ;
+                                    ((tinNormalS&)tinBaseP).pEther->dllEntryF( tinBaseP , *ppSadamCBF , hBase , psttOldCB ) ;
+                                    ((thirdC&)(*((tinNormalS&)tinBaseP).pEther)).dosQueryModuleHandleF( tinBaseP , hBase , thirdC::postBaseNameIF( tinBaseP ) ) ;
+                                    handleC hBase( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ;
                                 {
                                 if( !*ppSadamCBF )
 
                                 }
                                     if( POOP ) POOPR ;
-                                    tinP.pEtScratch->dllEntryF( tinP , *ppSadamCBF , *tinP.pag1->_etherC_.pHdll , psttOldCB ) ;
+                                    ((tinNormalS&)tinBaseP).pEtScratch->dllEntryF( tinBaseP , *ppSadamCBF , *((tinNormalS&)tinBaseP).pag1->_etherC_.pHdll , psttOldCB ) ;
                                     SCOOPS
                                 {
                                 IFsCRATCH
@@ -278,14 +278,14 @@
                             ZE( strokeS* , psttOldCB ) ;
 
                             if( idTypeItem != ifcIDtYPEsOULiTEM_strokeSptr ) break ;
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             idTypeItem = 0 ;
 
                             *psFeature >> idTypeCallBack ;
                             ZE( countT , idTypeCallBack ) ;
 
                             if( idTypeItem != ifcIDtYPEsOULiTEM_countT ) break ;
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             ZE( countT , idTypeItem ) ;
                         {
                         while( (countT)*psFeature >= 2 )
@@ -302,26 +302,26 @@
                                 }
                                     fc.bBigit = 0 ;
                                     )
-                                        thirdC::c_strcmpIF( tinP , postBody , "fU" )
-                                        thirdC::c_strcmpIF( tinP , postBody , "Ee" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "De" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Ce" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Be" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Ay" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Ni" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Ta" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Ve" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Se" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "fI" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Fo" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Re" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Oo" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Wo" ) &&
-                                        thirdC::c_strcmpIF( tinP , postBody , "Ze" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "fU" )
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Ee" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "De" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Ce" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Be" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Ay" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Ni" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Ta" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Ve" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Se" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "fI" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Fo" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Re" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Oo" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Wo" ) &&
+                                        thirdC::c_strcmpIF( tinBaseP , postBody , "Ze" ) &&
                                     (
                                     else if
                                     if( csttBody != 2 ) fc.bBigit = 0 ;
-                                    countT   csttBody = tBody.csF( tinP ) ;
+                                    countT   csttBody = tBody.csF( tinBaseP ) ;
                                     osTextT* postBody = tBody ;
 
                                     fc.bBigit = 1 ;
@@ -335,11 +335,11 @@
                                 ZE( flagsT , flagshk ) ;
                             {
                             if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             idTypeItem = 0 ;
 
                             if( idTypeItem == ifcIDtYPEsOULiTEM_countT ) *psFeature >> fc.assignedHotKey ;
-                            psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                            psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             ZE( countT , idTypeItem ) ;
                         {
                         fc.assignedHotKey = 0 ;
@@ -354,7 +354,7 @@
                         }
                             }
                                 cLeverVolBody = 0 ;
-                                pswVolBody->freeF( tinP ) ;
+                                pswVolBody->freeF( tinBaseP ) ;
                                 DELzOMBIE( pvb ) ;
                             {
                             if( bDiscard ) 
@@ -367,21 +367,21 @@
                                                                  pvb->zBaton_ppsttSpec = 0 ;
                                     {
                                     if( idTypeItem == ifcIDtYPEsOULiTEM_countT && pvb->ppsttSpec )
-                                    psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                                    psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                                     idTypeItem = 0 ;
 
                                     *psFeature >> *(countT*)&pvb->ppsttSpec ;
                                                              pvb->ppsttSpec = 0 ;
                                 {
                                 if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                                psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                                psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                             {
                             if( pvb )
                             boolT bDiscard = 1 ;
 
                             }
                                 }
-                                    pvb = new( 0 , tinP , pba , pswVolBody->cbDataF() ) vBodyS ;
+                                    pvb = new( 0 , tinBaseP , pba , pswVolBody->cbDataF() ) vBodyS ;
                                     byteT* pba = (byteT*)&(countT&)*pswVolBody ;
                                 {
                                 if( cLeverVolBody )
@@ -391,7 +391,7 @@
                             ZE( vBodyS* , pvb ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
 
                     {
@@ -402,22 +402,22 @@
                             *psFeature >> psttBody ; ___( psttBody ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_strokeSptr )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
                     {
                     case ifcIDtYPEfEATUREsADAM_BODY :
                     }
                         break ;
 
-                        tinP.pEther->strMakeF( tinP , LF , psttDefaultHighlightTabOwnerOff , T("") ) ; ___( psttDefaultHighlightTabOwnerOff ) ;
-                        tinP.pEther->delF( tinP , psttDefaultHighlightTabOwnerOff ) ;
+                        ((tinNormalS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOff , T("") ) ; ___( psttDefaultHighlightTabOwnerOff ) ;
+                        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttDefaultHighlightTabOwnerOff ) ;
 
-                        //U::tinP.pEther->strMakeF( tinP , LF , psttDefaultHighlightTabOwnerOn , T("X") ) ; ___( psttDefaultHighlightTabOwnerOn ) ;
-                        tinP.pEther->strMakeF( tinP , LF , psttDefaultHighlightTabOwnerOn , T("") ) ; ___( psttDefaultHighlightTabOwnerOn ) ; //U::
+                        //U::((tinNormalS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOn , T("X") ) ; ___( psttDefaultHighlightTabOwnerOn ) ;
+                        ((tinNormalS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOn , T("") ) ; ___( psttDefaultHighlightTabOwnerOn ) ; //U::
                         //U:: WHEN eyeOldC GOES INTO PRODUCTION, EITHER 'X' HIGHLIGHTING WILL BE NEEDED FOR TAB HIGHLIGHTING, OR SOMETHING BETTER THAN 'X' THAT CAN BE SUPPORTED WITHOUT USING FLOODFILL (UNTIL eycC SUPPORTS FLOODFILL, IF IT EVER DOES)
                         //U:: 'X' IS USED PROVISIONALLY WHEN eyeOldC IS SUPPORTED.  UNTIL THEN, 'X' IS NOT USED (COLOR HIGHLIGHTING IS USED INSTEAD, BECAUSE IT LOOKS BETTER THAN THE X HIGHLIGHTING)
 
-                        tinP.pEther->delF( tinP , psttDefaultHighlightTabOwnerOn ) ;
+                        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttDefaultHighlightTabOwnerOn ) ;
 
                         else fc.idTab = - 1 ;
                         }
@@ -425,7 +425,7 @@
                             fc.idTab = 0 ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         idTypeItem = 0 ;
 
                         else fc.idTabClass = - 1 ;
@@ -434,7 +434,7 @@
                             fc.idTabClass = 0 ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
                     {
                     case ifcIDtYPEfEATUREsADAM_TABpARTICIPANT :
@@ -450,7 +450,7 @@
                             ZE( flagsT , flags ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
                     {
                     case ifcIDtYPEfEATUREsADAM_ADAM :
@@ -461,7 +461,7 @@
                             fc.idToolFilterList = 0 ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
                     {
                     case ifcIDtYPEfEATUREsADAM_TOOLfILTERlIST :
@@ -470,7 +470,7 @@
                         }
                             }
                                 //    { LOGrAWtID4( T("ifcIDtYPEfEATUREsADAM_STATErEFERENCE/")+T(ssc.postOldComment)+T("/[ppSadamState,this]: ") , (countT)ppSadamState , " " , (countT)this ) ; }
-                                //if( !thirdC::c_strcmpIF( tinP , ssc.postOldComment , "vtHint" ) )
+                                //if( !thirdC::c_strcmpIF( tinBaseP , ssc.postOldComment , "vtHint" ) )
                                 *ppSadam = (sadamC*)( (byteT*)this - sizeof( countT ) - sizeof( zapC ) ) ; //U::ENFORCE: ASSUMES THAT I AM AT THE BEGINNING OF sadamC AFTER neverZe
                             {
                             if( ppSadam )
@@ -478,7 +478,7 @@
                             ZE( sadamC** , ppSadam ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
                     {
                     case ifcIDtYPEfEATUREsADAM_STATErEFERENCE : //U::RENAME
@@ -489,7 +489,7 @@
                             fc.pOwner = 0 ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
                     {
                     case ifcIDtYPEfEATUREsADAM_OWNER :
@@ -499,7 +499,7 @@
                             //}
                             //    LOGrAWtID( T("ifcIDtYPEfEATUREsADAM_COMMENT [fc.idAdam]: ")+TF1(fc.idAdam)+T(" \"")+T(fc.postOldComment)+T("\"") )
                             //{
-                            //if( !thirdC::c_strcmpIF( tinP , fc.postOldComment , "buEyeMoveEast" ) || !thirdC::c_strcmpIF( tinP , fc.postOldComment , "buTest" ) )
+                            //if( !thirdC::c_strcmpIF( tinBaseP , fc.postOldComment , "buEyeMoveEast" ) || !thirdC::c_strcmpIF( tinBaseP , fc.postOldComment , "buTest" ) )
 
                             //}
                             //    LOGrAWtID( tSay ) ;
@@ -507,14 +507,14 @@
                             //{
                             //if( fc.idAdam == 0x5 || fc.idAdam == 0xb )
 
-                            tinP.pEther->delF( tinP , posti ) ;
-                            if( posti && *posti ) thirdC::c_strncpyIF( tinP , fc.postOldComment , posti , sizeof fc.postOldComment ) ;
+                            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , posti ) ;
+                            if( posti && *posti ) thirdC::c_strncpyIF( tinBaseP , fc.postOldComment , posti , sizeof fc.postOldComment ) ;
                             *psFeature >> posti ; ___( posti ) ;
                             ZE( osTextT* , posti ) ;
-                            thirdC::c_memsetIF( tinP , fc.postOldComment , sizeof fc.postOldComment ) ;
+                            thirdC::c_memsetIF( tinBaseP , fc.postOldComment , sizeof fc.postOldComment ) ;
                         {
                         if( idTypeItem == ifcIDtYPEsOULiTEM_byteTptr )
-                        psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+                        psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
                         ZE( countT , idTypeItem ) ;
                     {
                     case ifcIDtYPEfEATUREsADAM_COMMENT :
@@ -525,19 +525,19 @@
                 ZE( countT , idType ) ;
             {
             if( idTypeItem == ifcIDtYPEsOULiTEM_countT )
-            const byteT* pb_idType = psFeature->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+            const byteT* pb_idType = psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
             idTypeItem = 0 ;
 
             *psFeaturesP >> *psFeature ;
 
             if( idTypeItem != ifcIDtYPEsOULiTEM_soulC ) break ;
-            psFeaturesP->pbFieldF( tinP , idTypeItem , countTC() , countTC() , 1 ) ;
+            psFeaturesP->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
             ZE( countT , idTypeItem ) ;
         {
         while( (countT)*psFeaturesP )
     {
     if( psFeature )
-    (*tinP.pEther)( tinP , psFeature , TAG( TAGiDnULL ) ) ;
+    (*((tinNormalS&)tinBaseP).pEther)( tinBaseP , psFeature , TAG( TAGiDnULL ) ) ;
     ZE( soulC* , psFeature ) ;
 
     }
@@ -548,7 +548,7 @@
     fc.idIntercom = 0 ;
     fc.cyclesPerDragRedraw = 4 ;
 
-    (*tinP.pEther)( tinP , pswVolBody , TAG( TAGiDnULL ) , flSTACKc_PATCHnEWfLAVOR | flSTACKc_BLOB | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , cLeverVolBody , 0 , sizeof( vBodyS ) ) ; ___( pswVolBody ) ;
+    (*((tinNormalS&)tinBaseP).pEther)( tinBaseP , pswVolBody , TAG( TAGiDnULL ) , flSTACKc_PATCHnEWfLAVOR | flSTACKc_BLOB | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , cLeverVolBody , 0 , sizeof( vBodyS ) ) ; ___( pswVolBody ) ;
 
     }
         if( POOP ) return ;
@@ -566,7 +566,7 @@ psttBody( 0 ) ,
 pczChannelIn( 0 ) ,
 pczChannelOut( 0 ) ,
 fc( idAdamP ) ,
-/*1*/featuresS::featuresS( tinS& tinP , const countT idAdamP , soulC*& psFeaturesP ) :/*1*/
+/*1*/featuresS::featuresS( tinBaseS& tinBaseP , const countT idAdamP , soulC*& psFeaturesP ) :/*1*/
 
 /**/
 */

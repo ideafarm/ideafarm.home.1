@@ -9,9 +9,9 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("loafing") ) ;
-etThread.traceF( tinP , T("[cTests,cHits,cMisses]: ")+TF2(cTests,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHits,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cMisses,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("loafing") ) ;
+etThread.traceF( tinBaseP , T("[cTests,cHits,cMisses]: ")+TF2(cTests,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cHits,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(cMisses,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
 countT cMisses = cTests - cHits ;
 
 }
@@ -19,12 +19,12 @@ countT cMisses = cTests - cHits ;
         }
             break ;
 
-            etThread.delF( tinP , psttAfterSerial2 ) ;
-            etThread.delF( tinP , psttAfterSerial1 ) ;
-            etThread.delF( tinP , psttSerial2      ) ;
-            etThread.delF( tinP , psttSerial1      ) ;
-            etThread.delF( tinP , psttTime2        ) ;
-            etThread.delF( tinP , psttTime1        ) ;
+            etThread.delF( tinBaseP , psttAfterSerial2 ) ;
+            etThread.delF( tinBaseP , psttAfterSerial1 ) ;
+            etThread.delF( tinBaseP , psttSerial2      ) ;
+            etThread.delF( tinBaseP , psttSerial1      ) ;
+            etThread.delF( tinBaseP , psttTime2        ) ;
+            etThread.delF( tinBaseP , psttTime1        ) ;
 
 
             }
@@ -43,14 +43,14 @@ countT cMisses = cTests - cHits ;
             /*************************************************************************************************************************************************/
 
             }
-                else       etThread.traceF( tinP , tRename ) ;
+                else       etThread.traceF( tinBaseP , tRename ) ;
                 if( POOP ) { POOPR ; }
-                tinP.pEtScratch->diskMoveFileOrDirF( tinP , tPathArchive+tNewName , tPathArchive+tRename , 1 ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tPathArchive+tNewName , tPathArchive+tRename , 1 ) ;
 
-                else       etThread.traceF( tinP , tRemove ) ;
+                else       etThread.traceF( tinBaseP , tRemove ) ;
                 if( POOP ) { POOPR ; }
-                tinP.pEtScratch->diskMoveFileOrDirF( tinP , tPathArchive+tRelPathRemoved4+tRemove , tPathArchive+tRemove , 1 ) ;
-                etThread.traceF( tinP , T("") ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tPathArchive+tRelPathRemoved4+tRemove , tPathArchive+tRemove , 1 ) ;
+                etThread.traceF( tinBaseP , T("") ) ;
 
                 ;
 
@@ -92,7 +92,7 @@ countT cMisses = cTests - cHits ;
                 ;
                     : t2
                     ? t1
-                textC& tRemove = etThread.strCompareF( tinP , psttTime1 , psttTime2 ) > 0
+                textC& tRemove = etThread.strCompareF( tinBaseP , psttTime1 , psttTime2 ) > 0
 
                 /*********************************************************************************************************************************************/
                 /*********************************************************************************************************************************************/
@@ -100,7 +100,7 @@ countT cMisses = cTests - cHits ;
                 /*********************************************************************************************************************************************/
                 /*********************************************************************************************************************************************/
             {
-            else if( etThread.strCompareF( tinP , psttTime1 , psttTime2 ) )
+            else if( etThread.strCompareF( tinBaseP , psttTime1 , psttTime2 ) )
             /*************************************************************************************************************************************************/
             /*************************************************************************************************************************************************/
             /**** IF TIMES DIFFER                                                                                                                         ****/
@@ -108,14 +108,14 @@ countT cMisses = cTests - cHits ;
             /*************************************************************************************************************************************************/
 
             }
-                else       etThread.traceF( tinP , tDoomed ) ;
+                else       etThread.traceF( tinBaseP , tDoomed ) ;
                 if( POOP ) { POOPR ; }
-                tinP.pEtScratch->diskMoveFileOrDirF( tinP , tPathArchive+tRelPathRemoved5+tDoomed , tPathArchive+tDoomed , 1 ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tPathArchive+tRelPathRemoved5+tDoomed , tPathArchive+tDoomed , 1 ) ;
                 
                 ;
                     : t2
                     ? t1
-                textC& tDoomed = etThread.strIdF( tinP , tTest2 , psttAfterSerial1 )
+                textC& tDoomed = etThread.strIdF( tinBaseP , tTest2 , psttAfterSerial1 )
                 
                 cHits ++ ;
 
@@ -125,7 +125,7 @@ countT cMisses = cTests - cHits ;
                 /*********************************************************************************************************************************************/
                 /*********************************************************************************************************************************************/
             {
-            else if( etThread.strIdF( tinP , tTest2 , psttAfterSerial1 ) || etThread.strIdF( tinP , tTest2 , psttAfterSerial2 ) )
+            else if( etThread.strIdF( tinBaseP , tTest2 , psttAfterSerial1 ) || etThread.strIdF( tinBaseP , tTest2 , psttAfterSerial2 ) )
             /*************************************************************************************************************************************************/
             /*************************************************************************************************************************************************/
             /**** IF FIND ".essay.!."                                                                                                  ****/
@@ -133,14 +133,14 @@ countT cMisses = cTests - cHits ;
             /*************************************************************************************************************************************************/
 
             }
-                //else       etThread.traceF( tinP , tDoomed ) ;
+                //else       etThread.traceF( tinBaseP , tDoomed ) ;
                 //if( POOP ) { POOPR ; }
-                //tinP.pEtScratch->diskMoveFileOrDirF( tinP , tPathArchive+tRelPathRemoved2+tDoomed , tPathArchive+tDoomed , 1 ) ;
+                //((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tPathArchive+tRelPathRemoved2+tDoomed , tPathArchive+tDoomed , 1 ) ;
                 //
                 //;
                 //    : t2
                 //    ? t1
-                //textC& tDoomed = etThread.strIdF( tinP , tTest1 , psttAfterSerial1 )
+                //textC& tDoomed = etThread.strIdF( tinBaseP , tTest1 , psttAfterSerial1 )
                 //
                 //cHits ++ ;
                 //DONE 20140629@0920
@@ -151,7 +151,7 @@ countT cMisses = cTests - cHits ;
                 /*********************************************************************************************************************************************/
                 /*********************************************************************************************************************************************/
             {
-            else if( etThread.strIdF( tinP , tTest1 , psttAfterSerial1 ) || etThread.strIdF( tinP , tTest1 , psttAfterSerial2 ) )
+            else if( etThread.strIdF( tinBaseP , tTest1 , psttAfterSerial1 ) || etThread.strIdF( tinBaseP , tTest1 , psttAfterSerial2 ) )
             /*************************************************************************************************************************************************/
             /*************************************************************************************************************************************************/
             /**** IF FIND ".txt.from.thumb.voice.new.!."                                                                                                  ****/
@@ -159,14 +159,14 @@ countT cMisses = cTests - cHits ;
             /*************************************************************************************************************************************************/
 
             }
-                else       etThread.traceF( tinP , tDoomed ) ;
+                else       etThread.traceF( tinBaseP , tDoomed ) ;
                 if( POOP ) { POOPR ; }
-                tinP.pEtScratch->diskMoveFileOrDirF( tinP , tPathArchive+tRelPathRemoved6+tDoomed , tPathArchive+tDoomed , 1 ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tPathArchive+tRelPathRemoved6+tDoomed , tPathArchive+tDoomed , 1 ) ;
                 
                 ;
                     : t1
                     ? t2
-                textC& tDoomed = t2.csF( tinP ) > t1.csF( tinP )
+                textC& tDoomed = t2.csF( tinBaseP ) > t1.csF( tinBaseP )
                 
                 cHits ++ ;
 
@@ -176,7 +176,7 @@ countT cMisses = cTests - cHits ;
                 /*********************************************************************************************************************************************/
                 /*********************************************************************************************************************************************/
             {
-            else if( !etThread.strCompareF( tinP , psttTime1 , psttTime2 ) )
+            else if( !etThread.strCompareF( tinBaseP , psttTime1 , psttTime2 ) )
             /*************************************************************************************************************************************************/
             /*************************************************************************************************************************************************/
             /**** TIMES ARE SAME                                                                                                                          ****/
@@ -184,21 +184,21 @@ countT cMisses = cTests - cHits ;
             /*************************************************************************************************************************************************/
 
             }
-                //etThread.diskMoveFileOrDirF( tinP , tPathArchive+tRelPathRemoved1+tDoomed , tPathArchive+tDoomed ) ;
+                //etThread.diskMoveFileOrDirF( tinBaseP , tPathArchive+tRelPathRemoved1+tDoomed , tPathArchive+tDoomed ) ;
                 //
-                //etThread.traceF( tinP , tDoomed ) ;
-                //etThread.traceF( tinP , T("") ) ;
-                //etThread.traceF( tinP , T(ppostIn[offi]) ) ;
-                //etThread.traceF( tinP , T(ppostIn[offi-1]) ) ;
-                //etThread.traceF( tinP , T("") ) ;
+                //etThread.traceF( tinBaseP , tDoomed ) ;
+                //etThread.traceF( tinBaseP , T("") ) ;
+                //etThread.traceF( tinBaseP , T(ppostIn[offi]) ) ;
+                //etThread.traceF( tinBaseP , T(ppostIn[offi-1]) ) ;
+                //etThread.traceF( tinBaseP , T("") ) ;
                 //
                 //;
                 //    : t1
                 //    ? t2
                 //textC& tDoomed = idSerial1 < idSerial2
                 //
-                //countT idSerial2 = etThread.strDigitsToSCountF( tinP , psttSerial2 , 0 , 1 ) ;
-                //countT idSerial1 = etThread.strDigitsToSCountF( tinP , psttSerial1 , 0 , 1 ) ;
+                //countT idSerial2 = etThread.strDigitsToSCountF( tinBaseP , psttSerial2 , 0 , 1 ) ;
+                //countT idSerial1 = etThread.strDigitsToSCountF( tinBaseP , psttSerial1 , 0 , 1 ) ;
                 //
                 //cHits ++ ;
                 //DONE 20140629@0843
@@ -209,7 +209,7 @@ countT cMisses = cTests - cHits ;
                 /*********************************************************************************************************************************************/
                 /*********************************************************************************************************************************************/
             {
-            if( !etThread.strCompareF( tinP , psttTime1 , psttTime2 ) && !etThread.strCompareF( tinP , psttAfterSerial1 , psttAfterSerial2 ) )
+            if( !etThread.strCompareF( tinBaseP , psttTime1 , psttTime2 ) && !etThread.strCompareF( tinBaseP , psttAfterSerial1 , psttAfterSerial2 ) )
             /*************************************************************************************************************************************************/
             /*************************************************************************************************************************************************/
             /**** NAMES ARE IDENTICAL OTHER THAN SEQUENCE NUMBER                                                                                          ****/
@@ -217,27 +217,27 @@ countT cMisses = cTests - cHits ;
             /*************************************************************************************************************************************************/
 
             }
-                etThread.strSubstringF( tinP , psttAfterSerial2 , idf , idl , t2 ) ; ___( psttAfterSerial2 ) ;
+                etThread.strSubstringF( tinBaseP , psttAfterSerial2 , idf , idl , t2 ) ; ___( psttAfterSerial2 ) ;
                 idl = 0 ;
                 idf = 0x1e ;
 
-                etThread.strSubstringF( tinP , psttAfterSerial1 , idf , idl , t1 ) ; ___( psttAfterSerial1 ) ;
+                etThread.strSubstringF( tinBaseP , psttAfterSerial1 , idf , idl , t1 ) ; ___( psttAfterSerial1 ) ;
                 idl = 0 ;
                 idf = 0x1e ;
 
-                etThread.strSubstringF( tinP , psttSerial2 , idf , idl , t2 ) ; ___( psttSerial2 ) ;
+                etThread.strSubstringF( tinBaseP , psttSerial2 , idf , idl , t2 ) ; ___( psttSerial2 ) ;
                 idl = 0x1d ;
                 idf = 0x1b ;
 
-                etThread.strSubstringF( tinP , psttSerial1 , idf , idl , t1 ) ; ___( psttSerial1 ) ;
+                etThread.strSubstringF( tinBaseP , psttSerial1 , idf , idl , t1 ) ; ___( psttSerial1 ) ;
                 idl = 0x1d ;
                 idf = 0x1b ;
 
-                etThread.strSubstringF( tinP , psttTime2 , idf , idl , t2 ) ; ___( psttTime2 ) ;
+                etThread.strSubstringF( tinBaseP , psttTime2 , idf , idl , t2 ) ; ___( psttTime2 ) ;
                 idl = 0x19 ;
                 idf = 0x0d ;
 
-                etThread.strSubstringF( tinP , psttTime1 , idf , idl , t1 ) ; ___( psttTime1 ) ;
+                etThread.strSubstringF( tinBaseP , psttTime1 , idf , idl , t1 ) ; ___( psttTime1 ) ;
                 countT idl = 0x19 ;
                 countT idf = 0x0d ;
             {
@@ -266,7 +266,7 @@ countT cMisses = cTests - cHits ;
     {
     switch( offi % 3 )
 
-    thirdC::c_strlwrIF( tinP , ppostIn[ offi ] ) ;
+    thirdC::c_strlwrIF( tinBaseP , ppostIn[ offi ] ) ;
 {
 for( countT offi = 0 ; !ether && offi < cElts ; offi ++ )
 countT cElts = sizeof ppostIn / sizeof ppostIn[ 0 ] ;

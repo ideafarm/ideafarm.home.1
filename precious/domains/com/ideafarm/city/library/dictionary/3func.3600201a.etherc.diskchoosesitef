@@ -12,12 +12,12 @@
 
     }
         }
-            thirdC::c_strncpyIF( tinP , home.postHome , tHome , sizeof home.postHome ) ;
+            thirdC::c_strncpyIF( tinBaseP , home.postHome , tHome , sizeof home.postHome ) ;
 
-            delF( tinP , psttNoSlash ) ;
+            delF( tinBaseP , psttNoSlash ) ;
             TN( tHome , psttNoSlash ) ;
 
-            strSubstringF( tinP , psttNoSlash , idf , idl , psttP ) ; ___( psttNoSlash ) ;
+            strSubstringF( tinBaseP , psttNoSlash , idf , idl , psttP ) ; ___( psttNoSlash ) ;
             countT idl = psttP->idAdam - 1 ;
             countT idf = 1 ;
             ZE( strokeS* , psttNoSlash ) ;
@@ -27,76 +27,76 @@
         }
             DEL( pInfo ) ;
             if( pInfo ) cbFree = pInfo->cBytesPerSector * pInfo->cSectorsPerAllocationUnit * pInfo->cUnusedUnits ;
-            diskInfoF( tinP , pInfo , psttP ) ; ___( pInfo ) ;
+            diskInfoF( tinBaseP , pInfo , psttP ) ; ___( pInfo ) ;
             ZE( infoDiskS* , pInfo ) ;
         {
 
-        delF( tinP , psttEnv ) ;
-        delF( tinP , psttSetting ) ;
+        delF( tinBaseP , psttEnv ) ;
+        delF( tinBaseP , psttSetting ) ;
         }
-            delF( tinP , psttPath ) ;
+            delF( tinBaseP , psttPath ) ;
 
             }
-                strMakeF( tinP , LF , psttP , psttPath ) ; ___( psttP ) ;
-                diskMakeDirF( tinP , psttPath ) ;
-                delF( tinP , psttDiskBest ) ;
+                strMakeF( tinBaseP , LF , psttP , psttPath ) ; ___( psttP ) ;
+                diskMakeDirF( tinBaseP , psttPath ) ;
+                delF( tinBaseP , psttDiskBest ) ;
                 if( !POOP ) psttPath[ CSpREFIX + 3 ] = psttDiskBest[ CSpREFIX + 3 ] ;
-                diskFindMostFreeSpaceF( tinP , psttDiskBest ) ; ___( psttDiskBest ) ;
+                diskFindMostFreeSpaceF( tinBaseP , psttDiskBest ) ; ___( psttDiskBest ) ;
                 ZE( strokeS* , psttDiskBest ) ;
             {
             if( !psttP )
 
             }
-                delF( tinP , pstt1List ) ;
+                delF( tinBaseP , pstt1List ) ;
                 }
                     }
                         break ;
-                        strMakeF( tinP , LF , psttP , psttc1 ) ; ___( psttP ) ;
+                        strMakeF( tinBaseP , LF , psttP , psttc1 ) ; ___( psttP ) ;
                     {
                     FORsTRINGSiN1( pstt1List )
                 {
                 if( pstt1List && pstt1List->idAdam )
-                QUITOZ diskFindFileOrDirF( tinP , pstt1List , fnLike.pathF() , &pat ) ; ___( pstt1List ) ; QUITR
+                QUITOZ diskFindFileOrDirF( tinBaseP , pstt1List , fnLike.pathF() , &pat ) ; ___( pstt1List ) ; QUITR
                 ZE( strokeS* , pstt1List ) ;
                 
-                patternC pat( tinP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-                fileNameC fnLike( tinP , *this , psttPath ) ;
+                patternC pat( tinBaseP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                fileNameC fnLike( tinBaseP , *this , psttPath ) ;
             {
 
             }
-                strFuseF( tinP , psttPath , tPath ) ; ___( psttPath ) ;
+                strFuseF( tinBaseP , psttPath , tPath ) ; ___( psttPath ) ;
                 }
                     __1 ;   //20231123@1755: ADDED BECAUSE AFAIK THE CODE NEVER USES A KEY OTHER THAN "ideafarm" ; IF THIS FUNCTIONALITY IS EVER NEEDED, DEFINE A THREADmODE FLAG TO ENABLE THIS (TO NOT WARN AND TO NOT BECOME IMPOTENT)
-                    traceF( tinP , T("diskChooseSiteF / warning: probable configuration error (missing drive letter?): unexpected key [pattern]: ")+tPath ) ;
+                    traceF( tinBaseP , T("diskChooseSiteF / warning: probable configuration error (missing drive letter?): unexpected key [pattern]: ")+tPath ) ;
                 {
-                if( strCompareF( tinP , psttKeyP , T("ideafarm") ) )
+                if( strCompareF( tinBaseP , psttKeyP , T("ideafarm") ) )
                 TN( tPath , "" ) ; tPath = T("///?/")+T(psttKeyP)+T(".home.")+TF2(idHomeDisk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("/") ;
             {
             else
-            if( psttPathP ) { strFuseF( tinP , psttPath , psttPathP                                                 ) ; ___( psttPath ) ; }
+            if( psttPathP ) { strFuseF( tinBaseP , psttPath , psttPathP                                                 ) ; ___( psttPath ) ; }
             ZE( strokeS* , psttPath ) ;
             const countT idHomeDisk = ifc_idHomeIdisk_IF() ;
         {
         else
         //}
-        //    strMakeF( tinP , LF , psttP , psttEnv ) ; ___( psttP ) ;
-        //    delF( tinP , psttb ) ;
-        //    if( psttb && !psttb->idAdam ) diskMakeDirF( tinP , psttEnv ) ;
-        //    diskFindFileOrDirF( tinP , psttb , psttEnv ) ; ___( psttb ) ;
+        //    strMakeF( tinBaseP , LF , psttP , psttEnv ) ; ___( psttP ) ;
+        //    delF( tinBaseP , psttb ) ;
+        //    if( psttb && !psttb->idAdam ) diskMakeDirF( tinBaseP , psttEnv ) ;
+        //    diskFindFileOrDirF( tinBaseP , psttb , psttEnv ) ; ___( psttb ) ;
         //    ZE( strokeS* , psttb ) ;
         //    __( psttEnv[ CSpREFIX - 1 + psttEnv->idAdam ].idAdam - '/' ) ;
         //{
         //else if( psttEnv )
         //DEPRECATED FOR PORTABILITY: ALL "ENVIRONMENT" SETTINGS ARE PICKED UP FROM LITTLE FILES IN THE ROOT DIRECTORY "c"":\"
         }
-            strMakeF( tinP , LF , psttP , psttSetting ) ; ___( psttP ) ;
-            delF( tinP , psttb ) ;
-            if( psttb && !psttb->idAdam ) diskMakeDirF( tinP , psttSetting ) ;
-            diskFindFileOrDirF( tinP , psttb , fnLike.pathF() , &pat ) ; ___( psttb ) ;
+            strMakeF( tinBaseP , LF , psttP , psttSetting ) ; ___( psttP ) ;
+            delF( tinBaseP , psttb ) ;
+            if( psttb && !psttb->idAdam ) diskMakeDirF( tinBaseP , psttSetting ) ;
+            diskFindFileOrDirF( tinBaseP , psttb , fnLike.pathF() , &pat ) ; ___( psttb ) ;
             ZE( strokeS* , psttb ) ;
 
-            patternC pat( tinP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-            fileNameC fnLike( tinP , *this , psttSetting ) ;
+            patternC pat( tinBaseP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+            fileNameC fnLike( tinBaseP , *this , psttSetting ) ;
 
             __( psttSetting[ CSpREFIX - 1 + psttSetting->idAdam ].idAdam - '/' ) ;
         {
@@ -104,9 +104,9 @@
 
         //A: }
         //A:     else        POOPR
-        //A:     if( !POOP ) { strMakeF( tinP , LF , psttSetting , T(postValue) ) ; ___( psttSetting ) ; }
+        //A:     if( !POOP ) { strMakeF( tinBaseP , LF , psttSetting , T(postValue) ) ; ___( psttSetting ) ; }
         //A: 
-        //A:     thirdC::dosReadIF( tinP , postValue , costValue , tFile ) ;
+        //A:     thirdC::dosReadIF( tinBaseP , postValue , costValue , tFile ) ;
         //A:     POOPIE
         //A: 
         //A:     countT  costValue = sizeof postValue ;
@@ -118,14 +118,14 @@
 
         ZE( strokeS* , psttSetting ) ;
 
-        //osEnvironmentVariableF( tinP , psttEnv , psttKeyP ) ; ___( psttEnv ) ;
+        //osEnvironmentVariableF( tinBaseP , psttEnv , psttKeyP ) ; ___( psttEnv ) ;
         ZE( strokeS* , psttEnv ) ;
     {
     else
-    if( bIdeafarm && home.postHome[ 0 ] ) { strMakeFromOsTextF( tinP , psttP , T(ifFileNameC(tinP,third,home.postHome))+T("/") ) ; ___( psttP ) ; }
+    if( bIdeafarm && home.postHome[ 0 ] ) { strMakeFromOsTextF( tinBaseP , psttP , T(ifFileNameC(tinBaseP,third,home.postHome))+T("/") ) ; ___( psttP ) ; }
     ZE( countT , cbFree ) ;
 
-    boolT bIdeafarm = !psttPathP && !strCompareF( tinP , psttKeyP , T("ideafarm") ) ;
+    boolT bIdeafarm = !psttPathP && !strCompareF( tinBaseP , psttKeyP , T("ideafarm") ) ;
     homeS& home = homeS::homeIF() ;
 
     _IO_
@@ -141,7 +141,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::diskChooseSiteF( tinS& tinP , strokeS*& psttP , const strokeS* const psttKeyP , const strokeS* const psttPathP )/*1*/
+/*1*/countT etherC::diskChooseSiteF( tinBaseS& tinBaseP , strokeS*& psttP , const strokeS* const psttKeyP , const strokeS* const psttPathP )/*1*/
 
 /**/
 */

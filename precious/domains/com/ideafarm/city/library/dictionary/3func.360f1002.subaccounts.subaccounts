@@ -17,23 +17,23 @@
                 else       bOk = 1 ;
                 if( POOP ) { POOPR ; }
 
-                push_pstt_F( tinP , pStkEmailPenpalContainsAnd , sIn ) ;
-                push_pstt_F( tinP , pStkEmailPenpalContainsOr  , sIn ) ;
-                push_pstt_F( tinP , pStkEmailPenpalExactOr     , sIn ) ;
-                push_pstt_F( tinP , pStkRecipe                 , sIn ) ;
-                push_pstt_F( tinP , pStkAutoresponse           , sIn ) ;
+                push_pstt_F( tinBaseP , pStkEmailPenpalContainsAnd , sIn ) ;
+                push_pstt_F( tinBaseP , pStkEmailPenpalContainsOr  , sIn ) ;
+                push_pstt_F( tinBaseP , pStkEmailPenpalExactOr     , sIn ) ;
+                push_pstt_F( tinBaseP , pStkRecipe                 , sIn ) ;
+                push_pstt_F( tinBaseP , pStkAutoresponse           , sIn ) ;
                 if( !bAll && !( F(flagsThis) & flSUBACCOUNT_QUERYrELAYdRAWINGS ) ) cEmailRelayDrawings = 0 ;
                 sIn >> cEmailRelayDrawings ;
-                push_pstt_F( tinP , pStkEmailRelay             , sIn ) ;
+                push_pstt_F( tinBaseP , pStkEmailRelay             , sIn ) ;
 
     
-                if( !bAll && !( F(flagsThis) & flSUBACCOUNT_QUERYnAMEoUT ) ) PUSE( tinP , *(byteT**)&psttNameOut ) ;
+                if( !bAll && !( F(flagsThis) & flSUBACCOUNT_QUERYnAMEoUT ) ) PUSE( tinBaseP , *(byteT**)&psttNameOut ) ;
                 sIn >> psttNameOut ; ___( psttNameOut ) ;
     
-                if( !bAll && !( F(flagsThis) & flSUBACCOUNT_QUERYnAMEiN ) ) PUSE( tinP , *(byteT**)&psttNameIn ) ;
+                if( !bAll && !( F(flagsThis) & flSUBACCOUNT_QUERYnAMEiN ) ) PUSE( tinBaseP , *(byteT**)&psttNameIn ) ;
                 sIn >> psttNameIn ; ___( psttNameIn ) ;
     
-                if( !bAll && !( F(flagsThis) & flSUBACCOUNT_QUERYtITLE ) ) PUSE( tinP , *(byteT**)&psttTitle ) ;
+                if( !bAll && !( F(flagsThis) & flSUBACCOUNT_QUERYtITLE ) ) PUSE( tinBaseP , *(byteT**)&psttTitle ) ;
                 sIn >> psttTitle ; ___( psttTitle ) ;
             
                 if( !bAll && !( F(flagsThis) & flSUBACCOUNT_QUERYfLAGSmEMBERoF ) ) flagsMemberOf = 0 ;
@@ -67,26 +67,26 @@
         else
         if( POOP ) { POOPR ; }
     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
         sOut << idSub ;
         sOut << idAcc ;
         sOut << (countT)ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYsUBACCOUNTdESCRIPTION ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALcONTAINSaND ) { (*tinP.pEtScratch)( tinP , pStkEmailPenpalContainsAnd , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsAnd ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALcONTAINSoR  ) { (*tinP.pEtScratch)( tinP , pStkEmailPenpalContainsOr  , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsOr  ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALeXACToR     ) { (*tinP.pEtScratch)( tinP , pStkEmailPenpalExactOr     , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalExactOr     ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYrECIPE                 ) { (*tinP.pEtScratch)( tinP , pStkRecipe                 , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkRecipe                 ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYaUTORESPONSE           ) { (*tinP.pEtScratch)( tinP , pStkAutoresponse           , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkAutoresponse           ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILrELAY             ) { (*tinP.pEtScratch)( tinP , pStkEmailRelay             , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay             ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALcONTAINSaND ) { (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsAnd , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsAnd ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALcONTAINSoR  ) { (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsOr  , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsOr  ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALeXACToR     ) { (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalExactOr     , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalExactOr     ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYrECIPE                 ) { (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkRecipe                 , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkRecipe                 ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYaUTORESPONSE           ) { (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkAutoresponse           , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkAutoresponse           ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILrELAY             ) { (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailRelay             , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay             ) ; }
 
         const boolT bAll = ( flagsThis & ~( F(flSUBACCOUNT_SET) ) ) == flSUBACCOUNT_null ;
 
@@ -108,8 +108,8 @@
     {
     IFbEcAREFUL
 
-    //CONoUTrAWb( "\r\nsubaccountS/ct [idAdam,idThread,idAcc,idSub,flags]: " , tinP.pag1->idAdam , "(" , tinP.monitor.idThread , ") " , idAccP , ":" , idSubP , " " , flagsP , "\r\n" ) ; //U::
-    //CONoUTrAW( tinP.postThreadName ) ;
+    //CONoUTrAWb( "\r\nsubaccountS/ct [idAdam,idThread,idAcc,idSub,flags]: " , ((tinNormalS&)tinBaseP).pag1->idAdam , "(" , ((tinNormalS&)tinBaseP).monitor.idThread , ") " , idAccP , ":" , idSubP , " " , flagsP , "\r\n" ) ; //U::
+    //CONoUTrAW( ((tinNormalS&)tinBaseP).postThreadName ) ;
 {
 pStkEmailPenpalContainsAnd( 0 )
 pStkEmailPenpalContainsOr( 0 ) ,
@@ -127,7 +127,7 @@ flagsMode( 0 ) ,
 flagsThis( flagsP ) ,
 idSub( idSubP ) ,
 idAcc( idAccP ) ,
-/*1*/subaccountS::subaccountS( tinS& tinP , etherC& etherP , const countT idAccP , countT& idSubP , flagsT flagsP ) :/*1*/
+/*1*/subaccountS::subaccountS( tinBaseS& tinBaseP , etherC& etherP , const countT idAccP , countT& idSubP , flagsT flagsP ) :/*1*/
 
 /**/
 */

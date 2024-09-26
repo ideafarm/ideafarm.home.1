@@ -8,21 +8,21 @@
 
 
 }
-    bHandle.ungrabF( tinP ) ;
+    bHandle.ungrabF( tinBaseP ) ;
 
     }
-        //ether.traceF( tinP , T("[tUrlCloudAgent]: ")+tUrlCloudAgent ) ;
-        //ether.traceF( tinP , T("[tHost]: ")+tHost ) ;
+        //ether.traceF( tinBaseP , T("[tUrlCloudAgent]: ")+tUrlCloudAgent ) ;
+        //ether.traceF( tinBaseP , T("[tHost]: ")+tHost ) ;
 
-        ether.delF( tinP , psttUrlCloudAgent ) ;
-        ether.delF( tinP , psttHost ) ;
+        ether.delF( tinBaseP , psttUrlCloudAgent ) ;
+        ether.delF( tinBaseP , psttHost ) ;
 
         tUrlCloudAgent = T(psttUrlCloudAgent) ;
         tHost          = T(psttHost) ;
 
         }
-            ether.strSubstringF( tinP , psttUrlCloudAgent , idfShort , idlShort , tUrl ) ; ___( psttUrlCloudAgent ) ;
-            ether.strSubstringF( tinP , psttHost          , idfHost  , idlHost  , tUrl ) ; ___( psttHost          ) ;
+            ether.strSubstringF( tinBaseP , psttUrlCloudAgent , idfShort , idlShort , tUrl ) ; ___( psttUrlCloudAgent ) ;
+            ether.strSubstringF( tinBaseP , psttHost          , idfHost  , idlHost  , tUrl ) ; ___( psttHost          ) ;
             ZE( countT , idlShort ) ;
             countT idlHost = idfShort - 1 ;
             idfHost ++ ;
@@ -31,10 +31,10 @@
         ZE( strokeS* , psttUrlCloudAgent ) ;
         ZE( strokeS* , psttHost  ) ;
 
-        countT idfShort = ether.strIdF( tinP , strokeS( '/' ) , tUrl , 3 ) ;
-        countT idfHost  = ether.strIdF( tinP , strokeS( '/' ) , tUrl , 2 ) ;
+        countT idfShort = ether.strIdF( tinBaseP , strokeS( '/' ) , tUrl , 3 ) ;
+        countT idfHost  = ether.strIdF( tinBaseP , strokeS( '/' ) , tUrl , 2 ) ;
 
-        //ether.traceF( tinP , T("cloud opened [tUrl]: ")+tUrl ) ;
+        //ether.traceF( tinBaseP , T("cloud opened [tUrl]: ")+tUrl ) ;
 
         ;
             : cloudInfo.tRackspacePublicUrl
@@ -45,11 +45,11 @@
     {
     if( !POOP )
 
-    ether.delF( tinP , postBody ) ;
+    ether.delF( tinBaseP , postBody ) ;
     }
-        wordF( tinP , openScratch , stPath , tIn ) ;
-        stackC stPath( tinP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
-        cloudOpenScratchS openScratch( tinP , idCloudP , psttBuildingP ) ;
+        wordF( tinBaseP , openScratch , stPath , tIn ) ;
+        stackC stPath( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+        cloudOpenScratchS openScratch( tinBaseP , idCloudP , psttBuildingP ) ;
 
         }
             }
@@ -78,8 +78,8 @@
             if( postJson )
 
             if( postJsonSq && postJsonSq < postJson ) postJson = postJsonSq ;
-            osTextT* postJson   = thirdC::c_strstrIF( tinP , postBody , "{" ) ;
-            osTextT* postJsonSq = thirdC::c_strstrIF( tinP , postBody , "[" ) ;
+            osTextT* postJson   = thirdC::c_strstrIF( tinBaseP , postBody , "{" ) ;
+            osTextT* postJsonSq = thirdC::c_strstrIF( tinBaseP , postBody , "[" ) ;
         {
         TN( tIn , "" ) ; // WILL CONTAIN A SINGLE, TRIMMED JSON WORD
     {
@@ -515,12 +515,12 @@
             }
                 THREADmODE2rESTORE ;
                 }
-                    etPrime.osSleepF( tinP , TOCK ) ;
-                    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                    etPrime.osSleepF( tinBaseP , TOCK ) ;
+                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ; // CALLER MIGHT HAVE GRABBED MY HANDLE TO PREVENT ACCESS WHILE MOMENTARILY CLOSED
 
-                etRock.traceF( tinP , T("cloudC::openF: could not obtain authorization reply; will retry after 1 tock") ) ;
+                etRock.traceF( tinBaseP , T("cloudC::openF: could not obtain authorization reply; will retry after 1 tock") ) ;
                 POOPR
             {
             else
@@ -528,10 +528,10 @@
 
             }
                 }
-                    if( !POOP ) { __Z( costBody == ss.readF( tinP , postBody , costBody ) ) ; }
+                    if( !POOP ) { __Z( costBody == ss.readF( tinBaseP , postBody , costBody ) ) ; }
 
                     __Z( postBody ) ;
-                    ether.newF( tinP , LF , postBody , costBody ) ; ___( postBody ) ;
+                    ether.newF( tinBaseP , LF , postBody , costBody ) ; ___( postBody ) ;
                 {
                 else
                 }
@@ -544,16 +544,16 @@
                                     LOGrAW( "\r\n\r\n---- end ------------------------------------\r\n" ) ;
                                     LOGrAW( postBody ) ;
                                     LOGrAW( "\r\ncloudC::openF: unexpected character received after receiving:\r\n\r\n" ) ;
-                                    etRock.traceF( tinP , T("cloudC::openF: unexpected character received [idFail,ostWo]: ")+TF2(idFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(ostWo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; 
+                                    etRock.traceF( tinBaseP , T("cloudC::openF: unexpected character received [idFail,ostWo]: ")+TF2(idFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(ostWo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; 
                                 {
                                 if( idFail )
 
                                 }
                                     }
                                         else if( ostWo != '\n'                  ) idFail = 6 ;
-                                        else if( !ss.readF( tinP , &ostWo , 1 ) ) idFail = 5 ; // '\n'
+                                        else if( !ss.readF( tinBaseP , &ostWo , 1 ) ) idFail = 5 ; // '\n'
                                         else if( ostWo != '\r'                  ) idFail = 4 ;
-                                             if( !ss.readF( tinP , &ostWo , 1 ) ) idFail = 3 ; // '\r'
+                                             if( !ss.readF( tinBaseP , &ostWo , 1 ) ) idFail = 3 ; // '\r'
                                     {
                                     if( !POOP )
 
@@ -565,13 +565,13 @@
                                         if( !POOP )
 
                                         __Z( costGot ) ;
-                                        countT costGot = ss.readF( tinP , postBody + costBody , costDo ) ;
+                                        countT costGot = ss.readF( tinBaseP , postBody + costBody , costDo ) ;
                                     {
                                     while( costDo && !POOP )
                                 {
                                 else
                                 else if( ostWo != '\n'                  ) idFail = 2 ;
-                                     if( !ss.readF( tinP , &ostWo , 1 ) ) idFail = 1 ; // '\n'
+                                     if( !ss.readF( tinBaseP , &ostWo , 1 ) ) idFail = 1 ; // '\n'
                                 osTextT ostWo ;
 
                                 ZE( countT , idFail ) ;
@@ -580,20 +580,20 @@
                             if( !costDo ) break ;
 
                             offl = - 1 ;
-                            countT costDo = ether.strDigitsToSCountF( tinP , T(postLengthBuffer) , 0 , 1 ) ;
-                            thirdC::c_strlwrIF( tinP , postLengthBuffer) ;
+                            countT costDo = ether.strDigitsToSCountF( tinBaseP , T(postLengthBuffer) , 0 , 1 ) ;
+                            thirdC::c_strlwrIF( tinBaseP , postLengthBuffer) ;
                             postLengthBuffer[ offl ] = 0 ;
                         {
                         if( postLengthBuffer[ offl ] == '\r' )
                         
-                        if( !ss.readF( tinP , postLengthBuffer + offl , 1 ) ) { BLAMMO ; } ;
+                        if( !ss.readF( tinBaseP , postLengthBuffer + offl , 1 ) ) { BLAMMO ; } ;
                     {
                     for( countT offl = 0 ; !POOP && offl < sizeof postLengthBuffer - 1 ; offl ++ )
 
                     osTextT  postLengthBuffer[ TUCK ] = { 0 } ;
 
                     __Z( postBody ) ;
-                    ether.newF( tinP , LF , postBody , TOCK ) ; ___( postBody ) ; //CAPACITY LIMIT FOR BODY
+                    ether.newF( tinBaseP , LF , postBody , TOCK ) ; ___( postBody ) ; //CAPACITY LIMIT FOR BODY
 
                     __NZ( costBody ) ;
                 {
@@ -610,32 +610,32 @@
 
                         }
                             }
-                                bChunked = !!ether.strIdF( tinP , tChunked , tLine ) ;
+                                bChunked = !!ether.strIdF( tinBaseP , tChunked , tLine ) ;
                             {
-                            else if( 1 == ether.strIdF( tinP , tTransferEncoding , tLine ) )
+                            else if( 1 == ether.strIdF( tinBaseP , tTransferEncoding , tLine ) )
                             }
-                                ether.delF( tinP , psttw ) ;
-                                costBody = ether.strDigitsToSCountF( tinP , psttw , 0xa , 1 ) ;
-                                ether.strSubstringF( tinP , psttw , idf , idl , psttLine ) ; ___( psttw ) ;
+                                ether.delF( tinBaseP , psttw ) ;
+                                costBody = ether.strDigitsToSCountF( tinBaseP , psttw , 0xa , 1 ) ;
+                                ether.strSubstringF( tinBaseP , psttw , idf , idl , psttLine ) ; ___( psttw ) ;
                                 ZE( strokeS* , psttw ) ;
 
                                 ZE( countT , idl ) ;
                                 while( psttLine[ CSpREFIX - 1 + idf ] == sttBlank ) idf ++ ;
-                                countT idf = tContentLength.csF( tinP ) + 1 ;
+                                countT idf = tContentLength.csF( tinBaseP ) + 1 ;
                                 strokeS* psttLine = tLine ;
                             {
-                            if( 1 == ether.strIdF( tinP , tContentLength , tLine ) )
+                            if( 1 == ether.strIdF( tinBaseP , tContentLength , tLine ) )
                             strokeS sttBlank( ' ' ) ;
                         {
                         if( !POOP )
 
                         }
                             __NZ( ostLF != '\n' ) ;
-                            __Z( ss.readF( tinP , &ostLF , 1 ) ) ;
+                            __Z( ss.readF( tinBaseP , &ostLF , 1 ) ) ;
                             osTextT ostLF ;
 
                             }
-                                //ether.traceF( tinP , T("header line: ")+T(postLineBuffer) ) ;
+                                //ether.traceF( tinBaseP , T("header line: ")+T(postLineBuffer) ) ;
                                 postLineBuffer[ offb ] = 0 ;
                             {
                             if( offb )
@@ -644,14 +644,14 @@
 
                         }
                             }
-                                __( !ether.strIdF( tinP , tReplyCode200_OK , tLine ) ) ;
+                                __( !ether.strIdF( tinBaseP , tReplyCode200_OK , tLine ) ) ;
 
                                 }
                                     break ;
-                                    etherC::etRockIF( tinP ).traceF( tinP , T("authorization refused") ) ;
+                                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("authorization refused") ) ;
                                 {
                                 if( POOP )
-                                __NZ( 1 == ether.strIdF( tinP , tReplyCode401_Unauthorized , tLine ) ) ;
+                                __NZ( 1 == ether.strIdF( tinBaseP , tReplyCode401_Unauthorized , tLine ) ) ;
                             {
                             if( !POOP )
 
@@ -665,7 +665,7 @@
                     {
                     if( !POOP && postLineBuffer[ offb ] == '\r' )         // IF I HAVE A LINE OF HEADER
 
-                    __Z( ss.readF( tinP , postLineBuffer + offb , 1 ) ) ;
+                    __Z( ss.readF( tinBaseP , postLineBuffer + offb , 1 ) ) ;
                 {
                 for( offb = 0 ; !POOP && offb < sizeof postLineBuffer ; offb ++ )
                 TN( tChunked , "chunked" ) ;
@@ -679,26 +679,26 @@
             ZE( boolT  , bChunked ) ;
             ZE( countT , costBody ) ;
 
-            ss.writeF( tinP , (osTextT*)tSay , (countT)tSay.csF( tinP ) ) ;
-            //etRock.traceF( tinP , T("cloudC::openF / perhaps connected to ")+tRackApiIdentity ) ;
-            ss.connectF( tinP , 443 , socketC::nicNameIF( tinP , ether , tRackApiIdentity ) ) ;
-            //etRock.traceF( tinP , T("cloudC::openF / connecting        to ")+tRackApiIdentity ) ;
+            ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+            //etRock.traceF( tinBaseP , T("cloudC::openF / perhaps connected to ")+tRackApiIdentity ) ;
+            ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , ether , tRackApiIdentity ) ) ;
+            //etRock.traceF( tinBaseP , T("cloudC::openF / connecting        to ")+tRackApiIdentity ) ;
 
-            socketC ss( tinP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+            socketC ss( tinBaseP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
         {
         while( !POOP && !etPrime )
 
-        etherC& etScratch = *tinP.pEtScratch ;
+        etherC& etScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
 
         SCOOPS
     {
     IFsCRATCH
     ZE( osTextT* , postBody ) ;
 
-    etherC& etRock  = etherC::etRockIF( tinP ) ;
-    etherC& etPrime = etherC::etPrimeIF( tinP ) ;
+    etherC& etRock  = etherC::etRockIF( tinBaseP ) ;
+    etherC& etPrime = etherC::etPrimeIF( tinBaseP ) ;
 
-    tSay += TF4(tSayBody.csF(tinP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
+    tSay += TF4(tSayBody.csF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
     ) ;
 
         "Content-Length: "
@@ -744,9 +744,9 @@
 
     }
         hCloud.osF( ifcIDtYPEhANDLE_CLOUD , (countT)pch ) ;
-        cloudInfoS* pch = new( 0 , tinP , LF ) cloudInfoS( tinP , ifcIDcLOUD_RACKSPACE ) ; ___( pch ) ;
+        cloudInfoS* pch = new( 0 , tinBaseP , LF ) cloudInfoS( tinBaseP , ifcIDcLOUD_RACKSPACE ) ; ___( pch ) ;
     {
-    bHandle.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     _IO_
 
@@ -762,7 +762,7 @@
 
     SCOOP
 {
-/*1*/voidT cloudC::openF( tinS& tinP , const countT idCloudP , const strokeS* const psttBuildingP , const strokeS* const psttUserP , const strokeS* const psttKeyP )/*1*/
+/*1*/voidT cloudC::openF( tinBaseS& tinBaseP , const countT idCloudP , const strokeS* const psttBuildingP , const strokeS* const psttUserP , const strokeS* const psttKeyP )/*1*/
 
 /**/
 */

@@ -25,17 +25,17 @@
 
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
 
     }
-        third.delF( tinP , postOsFile ) ;
+        third.delF( tinBaseP , postOsFile ) ;
         }
             DEL( pSoul ) ;
             THREADmODE2rESTORE
             }
-                third.dosWriteF( tinP , hFile , *pSoul ) ;
-                { ZE( countT , idr ) ; third.dosOpenIF( tinP , tinP.pEther , hFile , idr , postOsFile , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; }
-                handleC hFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                third.dosWriteF( tinBaseP , hFile , *pSoul ) ;
+                { ZE( countT , idr ) ; third.dosOpenIF( tinBaseP , ((tinNormalS&)tinBaseP).pEther , hFile , idr , postOsFile , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL | flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; }
+                handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
             {
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             //ASSUME: THE DESTINATION DIRECTORY EXISTS
@@ -44,14 +44,14 @@
     {
     if( postOsFile ) //U:: IF postOsFile THEN I WILL BLOW THE STACK
 
-    purgeF( tinP ) ;
-    third.delF( tinP , pbnu ) ;
+    purgeF( tinBaseP ) ;
+    third.delF( tinBaseP , pbnu ) ;
 
     if( pSoul ) operator >>( *pSoul ) ;
 
-    soulC* pSoul = !postOsFile ? 0 : new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
+    soulC* pSoul = !postOsFile ? 0 : new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    unlockIfF( tinP ) ;
+    unlockIfF( tinBaseP ) ;
 
     }
         THREADmODE2rESTORE
@@ -59,13 +59,13 @@
 
         }
             }
-                third.dosSleepIF( tinP , TOCK ) ;
-                pSgnEvent->giveF( tinP ) ;
+                third.dosSleepIF( tinBaseP , TOCK ) ;
+                pSgnEvent->giveF( tinBaseP ) ;
                 ++ s ;
             {
             while( cWaitingForEvent )
             ZE( countT , idTry ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( cWaitingForEvent )
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )

@@ -14,8 +14,8 @@
             // U:: REFRESH THE ENCLOSED SNAPSHOT OF OPENSSL TO CURRENT STABLE RELEASE (PERHAPS THIS CRAP BEHAVIOR WILL BE GONE)
             // THIS CODE WILL LEAK IF COULD HAVE FREED ITS CONTEXT SUCCESSFULLY, BUT THERE IS NO WAY TO KNOW (OpenSSL IS SUCH A PIECE OF SHIT)
             THREADmODE5oN( flTHREADmODE5_DOnOTfREEsSLcONTEXT )  // WILL BE DETECTED AND RESET DURING DT OF hSslContext
-            etherC::etTextIF( tinP ).traceF( tinP , T("~socketC / suppressing OpenSSL free context call to avoid blocking this thread") ) ;
-            etherC::etTextIF( tinP ).traceF( tinP , T("~socketC [this,flagsOpenSslFails]:    ")+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(flagsOpenSslFails,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("~socketC / suppressing OpenSSL free context call to avoid blocking this thread") ) ;
+            etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("~socketC [this,flagsOpenSslFails]:    ")+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(flagsOpenSslFails,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             TN( tb4 , "    " ) ;
         {
         if( F(flagsOpenSslFails) )
@@ -24,22 +24,22 @@
     
         *pEther = ecSave ;
     
-        pEther->delF( tinP , psttPemPrivateKey   ) ;
-        pEther->delF( tinP , psttPemCertificates ) ;
+        pEther->delF( tinBaseP , psttPemPrivateKey   ) ;
+        pEther->delF( tinBaseP , psttPemCertificates ) ;
 
         }
             }
-                pEther->delF( tinP , *pppczKTS[ off ] ) ;
+                pEther->delF( tinBaseP , *pppczKTS[ off ] ) ;
                 }
                     }
                         if( POOP ) POOPR
-                        tinP.pEtScratch->boxZapF( tinP , tLong , 1 ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , tLong , 1 ) ;
                         SCOOPS
                     {
                     IFsCRATCH
             
                     TN( tLong , "" ) ; tLong = T("///desk/" POSTfOLDERsECURITYkEYdEPOSITORY)+(idHomeDisk==1?T(""):T(" (Home ")+TF1(idHomeDisk)+T(")"))+T("/")+tShort ;
-                    textC tShort( tinP , TAG( TAGiDnULL ) , flTEXTc_null , *pppczKTS[ off ] , flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 , 0 , tDot ) ;
+                    textC tShort( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , *pppczKTS[ off ] , flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 , 0 , tDot ) ;
                     TN( tDot , "." ) ;
                 {                                      //U::ALT: SET A FLAG TO REMEMBER THAT PEER'S KEY ALREADY EXISTED, SO DON'T DELETE IT
                 if( /*off == 0 &&*/ *pppczKTS[ off ] ) //U::DELETE MY COPY OF THE PEER'S KEY IFF IT DID NOT OVERWRITE EXISTING COPY
@@ -52,76 +52,76 @@
     
         if( !( F(flags) & flSOCKETc_LEAVEsOCKEToPENwHENdIE ) && ~handle ) handle.closeIfF() ;
     
-        bRead.ungrabF( tinP ) ;
+        bRead.ungrabF( tinBaseP ) ;
         }
-            etherC::sockStkIdleTimeoutersF( tinP ).ungrabF( tinP ) ;
+            etherC::sockStkIdleTimeoutersF( tinBaseP ).ungrabF( tinBaseP ) ;
             else                                                     __1
-            if( etherC::sockStkIdleTimeoutersF( tinP )( (countT)this ) ) etherC::sockStkIdleTimeoutersF( tinP ).extractF( tinP ) ;
-            etherC::sockStkIdleTimeoutersF( tinP ).grabF( tinP , TAG( TAGiDnULL ) ) ;
+            if( etherC::sockStkIdleTimeoutersF( tinBaseP )( (countT)this ) ) etherC::sockStkIdleTimeoutersF( tinBaseP ).extractF( tinBaseP ) ;
+            etherC::sockStkIdleTimeoutersF( tinBaseP ).grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( !( F(flags) & flSOCKETc_DOnOTrEGISTERtIMEoUT ) )
     
         }
-            etherC::sockStkAcceptorsF( tinP ).ungrabF( tinP ) ;
+            etherC::sockStkAcceptorsF( tinBaseP ).ungrabF( tinBaseP ) ;
             else                                                     __1
-            if( etherC::sockStkAcceptorsF( tinP )( (countT)this ) ) etherC::sockStkAcceptorsF( tinP ).extractF( tinP ) ;
-            etherC::sockStkAcceptorsF( tinP ).grabF( tinP , TAG( TAGiDnULL ) ) ;
+            if( etherC::sockStkAcceptorsF( tinBaseP )( (countT)this ) ) etherC::sockStkAcceptorsF( tinBaseP ).extractF( tinBaseP ) ;
+            etherC::sockStkAcceptorsF( tinBaseP ).grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( bAcceptor && !( F(flags) & flSOCKETc_DOnOTrEGISTERaCCEPTOR ) )
     
         }
-            etherC::sockStkQuittersF( tinP ).ungrabF( tinP ) ;
+            etherC::sockStkQuittersF( tinBaseP ).ungrabF( tinBaseP ) ;
             else if( !fListening )                                 __1
-            if( etherC::sockStkQuittersF( tinP )( (countT)this ) ) etherC::sockStkQuittersF( tinP ).extractF( tinP ) ;
-            etherC::sockStkQuittersF( tinP ).grabF( tinP , TAG( TAGiDnULL ) ) ;
+            if( etherC::sockStkQuittersF( tinBaseP )( (countT)this ) ) etherC::sockStkQuittersF( tinBaseP ).extractF( tinBaseP ) ;
+            etherC::sockStkQuittersF( tinBaseP ).grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( idType != ifcSOCKETtYPE_DATAgRAM && !( F(flags) & flSOCKETc_DOnOTrEGISTERqUITTER ) )
     
         }
-            etherC::sockStkCatchersF( tinP ).ungrabF( tinP ) ;
+            etherC::sockStkCatchersF( tinBaseP ).ungrabF( tinBaseP ) ;
             else                                                   __1
-            if( etherC::sockStkCatchersF( tinP )( (countT)this ) ) etherC::sockStkCatchersF( tinP ).extractF( tinP ) ;
-            etherC::sockStkCatchersF( tinP ).grabF( tinP , TAG( TAGiDnULL ) ) ;
+            if( etherC::sockStkCatchersF( tinBaseP )( (countT)this ) ) etherC::sockStkCatchersF( tinBaseP ).extractF( tinBaseP ) ;
+            etherC::sockStkCatchersF( tinBaseP ).grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         if( bCatcher && !( F(flags) & flSOCKETc_DOnOTrEGISTERcATCHER ) )
     
         *pEther = 0 ;
         const countT ecSave = *pEther ;
     
-        pEther->delF( tinP , psttName ) ;
+        pEther->delF( tinBaseP , psttName ) ;
     
-        bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
         }
-            DEL( tinP.pag3->_socketC_.pSwOdometer ) ;
+            DEL( ((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ) ;
     
             }
-                //if( tinP.pc Utility[ 0 ] ) { LOGrAW( TD("socketC::~socketC/odometer/")+TF3(pOdometer->cbRead,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+T(" ")+TF3(pOdometer->cbWrite,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+T(tinP.pag3->_socketC_.nnLever)+T("\r\n") ) ; }
-                pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
-                tinP.pag3->_socketC_.nnLever = *(nicNameC*)tinP.pag3->_socketC_.pSwOdometer->leverF( tinP , idf ) ;
+                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) { LOGrAW( TD("socketC::~socketC/odometer/")+TF3(pOdometer->cbRead,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+T(" ")+TF3(pOdometer->cbWrite,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,8)+T(((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever)+T("\r\n") ) ; }
+                pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+                ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever = *(nicNameC*)((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer->leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = tinP.pag3->_socketC_.pSwOdometer->cFlavorsF( tinP ) ;
+            countT cFlavors = ((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer->cFlavorsF( tinBaseP ) ;
     
-            if( !tinP.pag3->_socketC_.pSwOdometer ) { BLAMMO ; }
+            if( !((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ) { BLAMMO ; }
         {
-        if( 1 == decv02AM( tinP.pag3->_socketC_.cRef ) )
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        if( 1 == decv02AM( ((tinNormalS&)tinBaseP).pag3->_socketC_.cRef ) )
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         }
             THREADmODE2rESTORE
             }
-                ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
+                ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
             {
             while( cFunctionsPending > 1 )
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
         {
     
         SCOOPP
 
-        //if( tinP.pc Utility[ 0 ] == (countT)this ) tinP.pEther->traceF( tinP , T("~socketC: it's being deleted!") ) ; //U:: TO FIND A BUG
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] == (countT)this ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("~socketC: it's being deleted!") ) ; //U:: TO FIND A BUG
     
         _IO_
         TINSL

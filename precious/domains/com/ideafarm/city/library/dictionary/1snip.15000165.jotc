@@ -10,12 +10,12 @@
 ;
 }
     }
-        return jot.readF( tinP , idJotP ) ;
-        jotC& jot = *tinP.ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
+        return jot.readF( tinBaseP , idJotP ) ;
+        jotC& jot = *((tinNormalS&)tinBaseP).ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
 
         if( !ISvALIDjpOINTER( idJotP ) ) { BLAMMO ; }
     {
-    inline static pageC readIF( tinS& tinP , countT idJotP )
+    inline static pageC readIF( tinBaseS& tinBaseP , countT idJotP )
 
     }
         return ids ;
@@ -25,12 +25,12 @@
                 break ;
                 ids = offs + 1 ;
             {
-            if( tinP.ppJot[ offs ] == this )
+            if( ((tinNormalS&)tinBaseP).ppJot[ offs ] == this )
         {
-        for( countT offs = 0 ; offs < sizeof tinP.ppJot / sizeof tinP.ppJot[ 0 ] ; offs ++ )
+        for( countT offs = 0 ; offs < sizeof ((tinNormalS&)tinBaseP).ppJot / sizeof ((tinNormalS&)tinBaseP).ppJot[ 0 ] ; offs ++ )
         ZE( countT , ids ) ;
     {
-    inline countT idSlotJotF( tinS& tinP ) const // IT IS ILLEGAL FOR ANY CODE OTHER THAN ZEJ() TO CALL ME
+    inline countT idSlotJotF( tinBaseS& tinBaseP ) const // IT IS ILLEGAL FOR ANY CODE OTHER THAN ZEJ() TO CALL ME
 
     inline flagsT&        flagsCtRefF( voidT ) { return *(flagsT*)&flagsCt ; }         //INTENDED TO ALLOW CALLER TO MODIFY MY FLAGS TO, E.G., MODIFY BEHAVIOR DURING DT
     inline flagsT         flagsCtF(    voidT ) { return            flagsCt ; }
@@ -48,13 +48,13 @@
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d006.jotC.operator_element!||
     pageC operator []( countT idJotP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d005.jotC.readF!||
-    pageC readF( tinS& tinP , countT idJotP ) ;
+    pageC readF( tinBaseS& tinBaseP , countT idJotP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d004.jotC.writeF!||
-    countT writeF( tinS& tinP , const byteT* const pb1P = 0 , countT cb1P = 0 , const byteT* const pb2P = 0 , countT cb2P = 0 , const flagsT flagsP = flJOTcwRITE_null , countT* pcWroteP = 0 ) ;
+    countT writeF( tinBaseS& tinBaseP , const byteT* const pb1P = 0 , countT cb1P = 0 , const byteT* const pb2P = 0 , countT cb2P = 0 , const flagsT flagsP = flJOTcwRITE_null , countT* pcWroteP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d008.jotC.peekIdBookF!||
-    countT peekIdBookF( tinS& tinP , countT idP ) ;
+    countT peekIdBookF( tinBaseS& tinBaseP , countT idP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d003.jotC.jotC!||
-    jotC( tinS& tinP , const osTextT* const postNameP , const flagsT flagsP = flJOTc_null , const countT cKeepInactiveP = 0 , const countT cbDataBookP = 0 , const countT cIndexEntriesBookP = 0 , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , flagsT flagsGrabP = flGRABc_null , countT idMemorySpaceP = 0 ) ;
+    jotC( tinBaseS& tinBaseP , const osTextT* const postNameP , const flagsT flagsP = flJOTc_null , const countT cKeepInactiveP = 0 , const countT cbDataBookP = 0 , const countT cIndexEntriesBookP = 0 , countT idGrabLayerP = ifcIDgRABlAYER_7BASEmISC1 , flagsT flagsGrabP = flGRABc_null , countT idMemorySpaceP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d002.jotC.dt_jotC!||
     ~jotC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3612d001.jotC.NEWdELcLASSb!||

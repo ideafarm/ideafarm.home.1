@@ -10,74 +10,74 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("press the enter key") ) ;
+etThread.strokeF( tinBaseP , T("press the enter key") ) ;
 
-etThread.socksShutdownF( tinP ) ;
+etThread.socksShutdownF( tinBaseP ) ;
 
-sDone.waitF( tinP ) ;
-etThread.sockWriteF( tinP , hs , "abcdefgh" ) ;
+sDone.waitF( tinBaseP ) ;
+etThread.sockWriteF( tinBaseP , hs , "abcdefgh" ) ;
 
 ) ;
     T("server: idPortYou =     ")+TF3(idPortYou,flFORMAT_UNSIGNED|flFORMAT_FILLzE,4)+T("\r\n")
     T("server: nicNameYou = "    )+TF3(nicNameYou,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("\r\n")+
     T("server: idPortMe  =     ")+TF3(idPortMe ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,4)+T("\r\n")+
     T("server: nicNameMe  = "    )+TF3(nicNameMe ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("\r\n")+
-    tinP ,
+    tinBaseP ,
 (
 etThread.strokeF
-etThread.sockPeerNameF( tinP , idPortYou , nicNameYou , hs ) ;
-etThread.sockMyNameF( tinP ,   idPortMe  , nicNameMe  , hs ) ;
+etThread.sockPeerNameF( tinBaseP , idPortYou , nicNameYou , hs ) ;
+etThread.sockMyNameF( tinBaseP ,   idPortMe  , nicNameMe  , hs ) ;
 ZE( countT , idPortYou ) ;
 nicNameC nicNameYou ;
 ZE( countT , idPortMe ) ;
 nicNameC nicNameMe ;
 
-etThread.sockOptionLingerF( tinP , hs ) ;
-etThread.sockAcceptF( tinP , hs , idPortPeer , nnPeer , hl , countTC() ) ;
+etThread.sockOptionLingerF( tinBaseP , hs ) ;
+etThread.sockAcceptF( tinBaseP , hs , idPortPeer , nnPeer , hl , countTC() ) ;
 ZE( countT , idPortPeer ) ;
 nicNameC nnPeer ;
-handleC hs( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , &sDone , flTHREADlAUNCH_null , 0 , 0 , idpa ) ; }
-signC sDone(  tinP , ether ) ;
+handleC hs( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sDone , flTHREADlAUNCH_null , 0 , 0 , idpa ) ; }
+signC sDone(  tinBaseP , ether ) ;
 
-etThread.sockListenF( tinP , hl ) ;
-countT idpa = etThread.sockBindF( tinP , hl ) ;
-etThread.sockOptionLingerF( tinP , hl ) ;
-etThread.sockF( tinP , hl ) ;
-handleC hl( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+etThread.sockListenF( tinBaseP , hl ) ;
+countT idpa = etThread.sockBindF( tinBaseP , hl ) ;
+etThread.sockOptionLingerF( tinBaseP , hl ) ;
+etThread.sockF( tinBaseP , hl ) ;
+handleC hl( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 
-etThread.socksSetupF( tinP ) ;
+etThread.socksSetupF( tinBaseP ) ;
 
 TODO
 
 DONE( tmF )
-etThread.strokeF( tinP , T("tmF received \"")+T(post80)+T("\"\r\n") ) ;
+etThread.strokeF( tinBaseP , T("tmF received \"")+T(post80)+T("\"\r\n") ) ;
 
 ) ;
     T("client: idPortYou =     ")+TF3(idPortYou,flFORMAT_UNSIGNED|flFORMAT_FILLzE,4)+T("\r\n")
     T("client: nicNameYou = "    )+TF3(nicNameYou,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("\r\n")+
     T("client: idPortMe  =     ")+TF3(idPortMe ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,4)+T("\r\n")+
     T("client: nicNameMe  = "    )+TF3(nicNameMe ,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("\r\n")+
-    tinP ,
+    tinBaseP ,
 (
 etThread.strokeF
-etThread.sockPeerNameF( tinP , idPortYou , nicNameYou , hc ) ;
-etThread.sockMyNameF( tinP ,   idPortMe  , nicNameMe  , hc ) ;
+etThread.sockPeerNameF( tinBaseP , idPortYou , nicNameYou , hc ) ;
+etThread.sockMyNameF( tinBaseP ,   idPortMe  , nicNameMe  , hc ) ;
 ZE( countT , idPortYou ) ;
 nicNameC nicNameYou ;
 ZE( countT , idPortMe ) ;
 nicNameC nicNameMe ;
 
-etThread.sockReadF( tinP , hc , post80 , 8 ) ;
-etThread.memSetF( tinP , post80 , sizeof post80 ) ;
+etThread.sockReadF( tinBaseP , hc , post80 , 8 ) ;
+etThread.memSetF( tinBaseP , post80 , sizeof post80 ) ;
 osTextT post80[ 0x80 ] ;
-etThread.sockConnectF( tinP , hc , idpa ) ;
-etThread.sockOptionLingerF( tinP , hc ) ;
-etThread.sockF( tinP , hc ) ;
-handleC hc( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+etThread.sockConnectF( tinBaseP , hc , idpa ) ;
+etThread.sockOptionLingerF( tinBaseP , hc ) ;
+etThread.sockF( tinBaseP , hc ) ;
+handleC hc( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 countT idpa = pTaskP ? pTaskP->c1 : 0 ;
 TASK( tmF )
 

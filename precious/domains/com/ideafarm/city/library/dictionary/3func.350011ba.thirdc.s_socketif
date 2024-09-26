@@ -14,11 +14,11 @@
         handleP.osF( ifcIDtYPEhANDLE_SOCKET , oshSocket , 0 , c_pWrapper ) ;
         handleP.resetF() ;
         countT c_pWrapper = handleP.cNoteF() ;
-        openSslTls_getWrapperIF( tinP , handleP , *phContextP ) ;
-        countT oshSocket = tinP.brcRaw ;
+        openSslTls_getWrapperIF( tinBaseP , handleP , *phContextP ) ;
+        countT oshSocket = ((tinNormalS&)tinBaseP).brcRaw ;
     {
     else
-    if( !phContextP ) handleP.osF( ifcIDtYPEhANDLE_SOCKET , tinP.brcRaw ) ;
+    if( !phContextP ) handleP.osF( ifcIDtYPEhANDLE_SOCKET , ((tinNormalS&)tinBaseP).brcRaw ) ;
     //CS:CODEsYNC: PSEUDODUPLICATE 3600103f 360010b1
 
     }
@@ -33,14 +33,14 @@
         //ZE( int , cbMax ) ;
         //THIS WORKS BUT IS NOT USED
 
-        //LOGrAW5( "" , oshSocket , "    " , tinP.pag1->idAdam , " ++++\r\n" ) ;
-        countT oshSocket = tinP.brcRaw ;
+        //LOGrAW5( "" , oshSocket , "    " , ((tinNormalS&)tinBaseP).pag1->idAdam , " ++++\r\n" ) ;
+        countT oshSocket = ((tinNormalS&)tinBaseP).brcRaw ;
     {
     BOSpOOP
     BOS( WHATgbo , BOSsOCKETcODE , socket( PF_INET6 , idTypeOs , 0 ) )      //20210223@1233: CHANGED FROM PF_INET TO PF_INET6
 
     //#endif
-    //    if( 'w' == osIdIF( tinP ) ) { int opt = SO_SYNCHRONOUS_NONALERT ; __( NO_ERROR - setsockopt( INVALID_SOCKET , SOL_SOCKET , SO_OPENTYPE , (char*)&opt , sizeof opt ) ) ; } // OPTIMIZE: THIS ONLY NEEDS TO BE DONE ONCE FOR EACH THREAD
+    //    if( 'w' == osIdIF( tinBaseP ) ) { int opt = SO_SYNCHRONOUS_NONALERT ; __( NO_ERROR - setsockopt( INVALID_SOCKET , SOL_SOCKET , SO_OPENTYPE , (char*)&opt , sizeof opt ) ) ; } // OPTIMIZE: THIS ONLY NEEDS TO BE DONE ONCE FOR EACH THREAD
     //#if defined( __NT__ )
 
     }
@@ -64,7 +64,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT thirdC::s_socketIF( tinS& tinP , handleC& handleP , const boolT idTypeP , const handleC* const phContextP )/*1*/
+/*1*/voidT thirdC::s_socketIF( tinBaseS& tinBaseP , handleC& handleP , const boolT idTypeP , const handleC* const phContextP )/*1*/
 
 /**/
 */

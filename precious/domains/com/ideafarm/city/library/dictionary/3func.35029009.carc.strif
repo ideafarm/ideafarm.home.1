@@ -11,29 +11,29 @@
     }
         }
             }
-                off += 1 + ether.strBodyLengthF( tinP , pcPart ) ;
-                ether.strFuseF( tinP , psttP , TF1(pcPart)+T("\r\n") ) ; ___( psttP ) ;
+                off += 1 + ether.strBodyLengthF( tinBaseP , pcPart ) ;
+                ether.strFuseF( tinBaseP , psttP , TF1(pcPart)+T("\r\n") ) ; ___( psttP ) ;
                 countT* pcPart = &pcUsage[ off ] ;
-                ether.strFuseF( tinP , psttP , TF3(qty,0,8)+T(" ") ) ; ___( psttP ) ;
+                ether.strFuseF( tinBaseP , psttP , TF3(qty,0,8)+T(" ") ) ; ___( psttP ) ;
                 countT qty = pcUsage[ off ++ ] ;
             {
             while( cResources -- )
 
-            ether.strFuseF( tinP , psttP , T("cResources"": ")+TF1(cResources)+T("\r\n") ) ; ___( psttP ) ;
+            ether.strFuseF( tinBaseP , psttP , T("cResources"": ")+TF1(cResources)+T("\r\n") ) ; ___( psttP ) ;
             countT cResources = pcUsage[ off ++ ] ;
             ZE( countT , off ) ;
 
             // FORMAT OF pcUsage: FIRST countT IS cResources.  FOR EACH RESOURCE: qty , rid. rid is null terminated.
         {
 
-        { FORsTRINGSiN1( pstt1LogImpotence ) { ether.strFuseF( tinP , psttP , T("logImp: \"")+T(psttc1)+T("\"\r\n") ) ; ___( psttP ) ; } }
-        { FORsTRINGSiN1( pstt1Log          ) { ether.strFuseF( tinP , psttP , T("log:    \"")+T(psttc1)+T("\"\r\n") ) ; ___( psttP ) ; } }
+        { FORsTRINGSiN1( pstt1LogImpotence ) { ether.strFuseF( tinBaseP , psttP , T("logImp: \"")+T(psttc1)+T("\"\r\n") ) ; ___( psttP ) ; } }
+        { FORsTRINGSiN1( pstt1Log          ) { ether.strFuseF( tinBaseP , psttP , T("log:    \"")+T(psttc1)+T("\"\r\n") ) ; ___( psttP ) ; } }
 
         countT*  pcUsage           = (countT*) ( (byteT*)&pcc[ 7 ] + cbLog + cbLogImpotence ) ;
         strokeS* pstt1LogImpotence = (strokeS*)( (byteT*)&pcc[ 7 ] + cbLog                  ) ;
         strokeS* pstt1Log          = (strokeS*)(         &pcc[ 7 ]                          ) ;
 
-        ether.strMakeF( tinP , LF , psttP , T("") , csttEstimateP ) ;
+        ether.strMakeF( tinBaseP , LF , psttP , T("") , csttEstimateP ) ;
     {
     if( !ether )
 
@@ -53,7 +53,7 @@
     __Z( pbSoulP ) ;
     if( ether ) return ;
 {
-/*1*/voidT carC::strIF( tinS& tinP , etherC& ether , strokeS*& psttP , const byteT* const pbSoulP , const countT csttEstimateP )/*1*/
+/*1*/voidT carC::strIF( tinBaseS& tinBaseP , etherC& ether , strokeS*& psttP , const byteT* const pbSoulP , const countT csttEstimateP )/*1*/
 
 /**/
 */

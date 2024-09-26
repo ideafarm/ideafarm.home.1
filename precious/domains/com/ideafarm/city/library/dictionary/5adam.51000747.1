@@ -9,28 +9,28 @@
                             
 REST
 
-etThread.traceF( tinP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    ether.traceF( tinP , T("ifcIDaDAM_ACCESSeVENTS7rEPORTbYcONTAINERuRI napped") ) ;
-    ++ s ; ether.osSleepF( tinP , TICK << 4 ) ;
-    etThread.traceF( tinP , T("ifcIDaDAM_ACCESSeVENTS7rEPORTbYcONTAINERuRI napping [cIn,cOut]:    ")+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    ether.traceF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS7rEPORTbYcONTAINERuRI napped") ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TICK << 4 ) ;
+    etThread.traceF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS7rEPORTbYcONTAINERuRI napping [cIn,cOut]:    ")+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     }
-        //etThread.traceF( tinP , T("waited  for workers") ) ;
+        //etThread.traceF( tinBaseP , T("waited  for workers") ) ;
         }
-            ++ s ; etThread.osSleepF( tinP , TOCK ) ;
+            ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
         {
         while( ws.cWorkers )
-        //etThread.traceF( tinP , T("waiting for workers") ) ;
+        //etThread.traceF( tinBaseP , T("waiting for workers") ) ;
         ws.bNoMoreToPush = 1 ;
 
         }
-            etThread.fileWriteF( tinP , fileReportAll , tSay , tSay.csF( tinP ) ) ;
+            etThread.fileWriteF( tinBaseP , fileReportAll , tSay , tSay.csF( tinBaseP ) ) ;
             tSay = TF3(tally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttBrowser)+ws.tcr ;
 
             }
-                if( pbEncodedHe && cbEncodedHe ) { etThread.strDecodeF( tinP , psttBrowser , pbEncodedHe + sizeof( countT ) ) ; ___( psttBrowser ) ; }
+                if( pbEncodedHe && cbEncodedHe ) { etThread.strDecodeF( tinBaseP , psttBrowser , pbEncodedHe + sizeof( countT ) ) ; ___( psttBrowser ) ; }
 
                 countT       cbEncodedHe = pageHe ;
                 const byteT* pbEncodedHe = pageHe ;
@@ -40,12 +40,12 @@ etThread.traceF( tinP , T("ok") ) ;
             ZE( strokeS* , psttBrowser ) ;
 
             countT tally = swTallyAllByBrowser ;
-            lever_idjBrowser = swTallyAllByBrowser.leverF( tinP , idf ) ;
+            lever_idjBrowser = swTallyAllByBrowser.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swTallyAllByBrowser.cFlavorsF( tinP ) ;
+        countT cFlavors = swTallyAllByBrowser.cFlavorsF( tinBaseP ) ;
 
-        etThread.fileWriteF( tinP , fileReportAll , tSay , tSay.csF( tinP ) ) ;
+        etThread.fileWriteF( tinBaseP , fileReportAll , tSay , tSay.csF( tinBaseP ) ) ;
 
         ) ;
 
@@ -63,11 +63,11 @@ etThread.traceF( tinP , T("ok") ) ;
         }
             }
                 }
-                    ++ s ; etThread.osSleepF( tinP , TOCK >> 3 ) ;
-                    //etThread.traceF( tinP , T("waiting for queue to shrink [cPending]:    ")+TF2(ws.st_psttContainerUriBooksName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ++ s ; etThread.osSleepF( tinBaseP , TOCK >> 3 ) ;
+                    //etThread.traceF( tinBaseP , T("waiting for queue to shrink [cPending]:    ")+TF2(ws.st_psttContainerUriBooksName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 while( ws.st_psttContainerUriBooksName > TUCK )
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             if( ws.st_psttContainerUriBooksName > ( TUCK << 1 ) )
 
@@ -76,28 +76,28 @@ etThread.traceF( tinP , T("ok") ) ;
                 }
                     ws.st_psttContainerUriBooksName << psttShorter ;
 
-                    //switchC swTallyPageByBrowser( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , lever_idjBrowser , 0 , 0 , ifcIDgRABlAYER_7BASEmISC1 ) ;
+                    //switchC swTallyPageByBrowser( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , lever_idjBrowser , 0 , 0 , ifcIDgRABlAYER_7BASEmISC1 ) ;
 
-                    etThread.traceF( tinP , T("pushing [tShorter]:    ")+tShorter ) ;
+                    etThread.traceF( tinBaseP , T("pushing [tShorter]:    ")+tShorter ) ;
 
                     }
                         tShorter = T(psttShorter) ;
-                        etThread.delF( tinP , psttnu ) ;
-                        etThread.strBisectF( tinP , psttShorter , psttnu , tShort , ws.tDot , 5 , flSTRbISECT_null ) ; ___( psttShorter ) ; ___( psttnu ) ;
+                        etThread.delF( tinBaseP , psttnu ) ;
+                        etThread.strBisectF( tinBaseP , psttShorter , psttnu , tShort , ws.tDot , 5 , flSTRbISECT_null ) ; ___( psttShorter ) ; ___( psttnu ) ;
                         ZE( strokeS* , psttnu ) ;
                     {
                     ZE( strokeS* , psttShorter ) ;
                     TN( tShorter , "" ) ;
 
-                    //etThread.traceF( tinP , tShort ) ;
+                    //etThread.traceF( tinBaseP , tShort ) ;
                 {
                 if( !bDir )
         
                 }
-                    etThread.delF( tinP , psttShort ) ;
+                    etThread.delF( tinBaseP , psttShort ) ;
                     tShort = T(psttShort) ;
-                    etThread.delF( tinP , psttnu ) ;
-                    etThread.strBisectF( tinP , psttnu , psttShort , pInfo->psttIfoName , ws.tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                    etThread.delF( tinBaseP , psttnu ) ;
+                    etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , ws.tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                     ZE( strokeS* , psttShort ) ;
                     ZE( strokeS* , psttnu ) ;
                 {
@@ -114,21 +114,21 @@ etThread.traceF( tinP , T("ok") ) ;
             {
             if( !pInfo || !pInfo->psttIfoName )
         
-            etThread.diskFindFileOrDirF( tinP , pInfo , hFind , fnLike.pathF() , &pat ) ;
+            etThread.diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         do
-        handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+        handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
-        patternC pat( tinP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-        fileNameC fnLike( tinP , etThread , ws.tLike ) ;
+        patternC pat( tinBaseP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+        fileNameC fnLike( tinBaseP , etThread , ws.tLike ) ;
 
-        switchC swTallyAllByBrowser( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , lever_idjBrowser , 0 , 0 , ifcIDgRABlAYER_7BASEmISC1 ) ;
+        switchC swTallyAllByBrowser( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , lever_idjBrowser , 0 , 0 , ifcIDgRABlAYER_7BASEmISC1 ) ;
         ZE( countT , lever_idjBrowser ) ;
 
-        etThread.fileWriteF( tinP , fileReportAll , tSay , tSay.csF( tinP ) ) ;
+        etThread.fileWriteF( tinBaseP , fileReportAll , tSay , tSay.csF( tinBaseP ) ) ;
 
-        fileC fileReportAll( tinP , (strokeS*)( ws.tPathReport+ws.tAll+ws.tDotTxt ) , ifcOPENaCCESS_W , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+        fileC fileReportAll( tinBaseP , (strokeS*)( ws.tPathReport+ws.tAll+ws.tDotTxt ) , ifcOPENaCCESS_W , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
 
         ) ;
 
@@ -147,27 +147,27 @@ etThread.traceF( tinP , T("ok") ) ;
 
         TN( tSay , "" ) ; tSay = T(
 
-        //etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+        //etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
         //ZE( sCountT , timeN2 ) ;
         //ZE( countT , timeN1 ) ;
         //TIME IS NOT PUT INTO THE REPORT IN ORDER TO AVOID CLOUD REFRESHES FOR REPORTS THAT HAVE NOT CHANGED
         //U:: GENERATE A SPECIAL REPORT THAT PRESENTS THE TIME THAT RECENT CYCLES (SINCE I WAS HIRED) BEGAN AND ENDED
 
         }
-            etThread.osThreadF( tinP , countTC() , tmWorkerF , 0 , 0 , 0  , flTHREADlAUNCH_INHERITjOTrEGISTRATIONS , TOCK , (countT)&ws ) ;
+            etThread.osThreadF( tinBaseP , countTC() , tmWorkerF , 0 , 0 , 0  , flTHREADlAUNCH_INHERITjOTrEGISTRATIONS , TOCK , (countT)&ws ) ;
             inc02AM( ws.cWorkers ) ;
         {
         while( cDo -- )
         countT cDo = 0x10 ;
-        //etThread.traceF( tinP , T("launching workers") ) ;
+        //etThread.traceF( tinBaseP , T("launching workers") ) ;
         
-        workS ws( tinP , etThread ) ;
+        workS ws( tinBaseP , etThread ) ;
     {
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 while( !ether && !POOP )
 
-//U::ether.ifcHireF( tinP , T("ifcIDaDAM_ACCESSeVENTS7rEPORTbYcONTAINERuRI") , ifcIDaDAM_ACCESSeVENTS8aUDITbOOKS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
+//U::ether.ifcHireF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS7rEPORTbYcONTAINERuRI") , ifcIDaDAM_ACCESSeVENTS8aUDITbOOKS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
 
 TODO
 
@@ -176,12 +176,12 @@ DONE( tmWorkerF )
     dec02AM( wsP.cWorkers ) ;
     }
         }
-            wsP.st_psttContainerUriBooksName.ungrabF( tinP ) ;
+            wsP.st_psttContainerUriBooksName.ungrabF( tinBaseP ) ;
 
             }
-                wsP.st_psttContainerUriBooksName.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                wsP.st_psttContainerUriBooksName.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                etThread.delF( tinP , psttContainerUriBooksName ) ;
+                etThread.delF( tinBaseP , psttContainerUriBooksName ) ;
                 }
                     }
                         }
@@ -193,7 +193,7 @@ DONE( tmWorkerF )
                             //*******************************************************************************************************************************************************************************************************
                             //*******************************************************************************************************************************************************************************************************
 
-                            etThread.fileWriteF( tinP , fileReport , tSay , tSay.csF( tinP ) ) ;
+                            etThread.fileWriteF( tinBaseP , fileReport , tSay , tSay.csF( tinBaseP ) ) ;
 
                             ) ;
 
@@ -213,7 +213,7 @@ DONE( tmWorkerF )
                                     bPrefix = !bPrefix ;
 
                                     else          pbi = 0 ;
-                                    if( bDelete ) PUSE( tinP , *(byteT**)&pbi ) ;
+                                    if( bDelete ) PUSE( tinBaseP , *(byteT**)&pbi ) ;
 
                                     ;
                                         : sizeof( countT )
@@ -225,27 +225,27 @@ DONE( tmWorkerF )
                                             }
                                                 inc02AM( cOut ) ;
 
-                                                etThread.fileWriteF( tinP , fileReport , tSay , tSay.csF( tinP ) ) ;
+                                                etThread.fileWriteF( tinBaseP , fileReport , tSay , tSay.csF( tinBaseP ) ) ;
 
-                                                etThread.delF( tinP , psttBrowser ) ;
-                                                etThread.delF( tinP , psttProtocol ) ;
-                                                etThread.delF( tinP , psttQuery ) ;
-                                                etThread.delF( tinP , psttBucket ) ;
-                                                etThread.delF( tinP , psttMethod ) ;
-                                                etThread.delF( tinP , psttSay ) ;
+                                                etThread.delF( tinBaseP , psttBrowser ) ;
+                                                etThread.delF( tinBaseP , psttProtocol ) ;
+                                                etThread.delF( tinBaseP , psttQuery ) ;
+                                                etThread.delF( tinBaseP , psttBucket ) ;
+                                                etThread.delF( tinBaseP , psttMethod ) ;
+                                                etThread.delF( tinBaseP , psttSay ) ;
 
                                                 tSay = T(psttSay) ;
 
-                                                etThread.strFuseF( tinP , psttSay , T("browser:   ") ) ; etThread.strFuseF( tinP , psttSay , psttBrowser                                           ) ; etThread.strFuseF( tinP , psttSay , wsP.tcr ) ;
-                                                etThread.strFuseF( tinP , psttSay , T("protocol:  ") ) ; etThread.strFuseF( tinP , psttSay , psttProtocol                                          ) ; etThread.strFuseF( tinP , psttSay , wsP.tcr ) ;
-                                                etThread.strFuseF( tinP , psttSay , T("bucket:    ") ) ; etThread.strFuseF( tinP , psttSay , psttBucket                                            ) ; etThread.strFuseF( tinP , psttSay , wsP.tcr ) ;
-                                                etThread.strFuseF( tinP , psttSay , T("method:    ") ) ; etThread.strFuseF( tinP , psttSay , psttMethod                                            ) ; etThread.strFuseF( tinP , psttSay , wsP.tcr ) ;
-                                                etThread.strFuseF( tinP , psttSay , T("length:    ") ) ; etThread.strFuseF( tinP , psttSay , TF2(cbReply,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; etThread.strFuseF( tinP , psttSay , wsP.tcr ) ;
-                                                etThread.strFuseF( tinP , psttSay , T("code:      ") ) ; etThread.strFuseF( tinP , psttSay , TF2(code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)    ) ; etThread.strFuseF( tinP , psttSay , wsP.tcr ) ;
-                                                etThread.strFuseF( tinP , psttSay , T("nicName:   ") ) ; etThread.strFuseF( tinP , psttSay , TF2(nnHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)    ) ; etThread.strFuseF( tinP , psttSay , wsP.tcr ) ;
-                                                etThread.strFuseF( tinP , psttSay , T("time:      ") ) ; etThread.strFuseF( tinP , psttSay , TT(timeW1,timeW2)                                     ) ; etThread.strFuseF( tinP , psttSay , wsP.tcr ) ;
+                                                etThread.strFuseF( tinBaseP , psttSay , T("browser:   ") ) ; etThread.strFuseF( tinBaseP , psttSay , psttBrowser                                           ) ; etThread.strFuseF( tinBaseP , psttSay , wsP.tcr ) ;
+                                                etThread.strFuseF( tinBaseP , psttSay , T("protocol:  ") ) ; etThread.strFuseF( tinBaseP , psttSay , psttProtocol                                          ) ; etThread.strFuseF( tinBaseP , psttSay , wsP.tcr ) ;
+                                                etThread.strFuseF( tinBaseP , psttSay , T("bucket:    ") ) ; etThread.strFuseF( tinBaseP , psttSay , psttBucket                                            ) ; etThread.strFuseF( tinBaseP , psttSay , wsP.tcr ) ;
+                                                etThread.strFuseF( tinBaseP , psttSay , T("method:    ") ) ; etThread.strFuseF( tinBaseP , psttSay , psttMethod                                            ) ; etThread.strFuseF( tinBaseP , psttSay , wsP.tcr ) ;
+                                                etThread.strFuseF( tinBaseP , psttSay , T("length:    ") ) ; etThread.strFuseF( tinBaseP , psttSay , TF2(cbReply,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; etThread.strFuseF( tinBaseP , psttSay , wsP.tcr ) ;
+                                                etThread.strFuseF( tinBaseP , psttSay , T("code:      ") ) ; etThread.strFuseF( tinBaseP , psttSay , TF2(code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)    ) ; etThread.strFuseF( tinBaseP , psttSay , wsP.tcr ) ;
+                                                etThread.strFuseF( tinBaseP , psttSay , T("nicName:   ") ) ; etThread.strFuseF( tinBaseP , psttSay , TF2(nnHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)    ) ; etThread.strFuseF( tinBaseP , psttSay , wsP.tcr ) ;
+                                                etThread.strFuseF( tinBaseP , psttSay , T("time:      ") ) ; etThread.strFuseF( tinBaseP , psttSay , TT(timeW1,timeW2)                                     ) ; etThread.strFuseF( tinBaseP , psttSay , wsP.tcr ) ;
 
-                                                etThread.strMakeF( tinP , LF , psttSay , wsP.tcrcr , TUCK + csNeeded ) ; ___( psttSay ) ;
+                                                etThread.strMakeF( tinBaseP , LF , psttSay , wsP.tcrcr , TUCK + csNeeded ) ; ___( psttSay ) ;
                                                 ZE( strokeS* , psttSay ) ;
 
                                                 }
@@ -255,14 +255,14 @@ DONE( tmWorkerF )
                                                         }
                                                                                psttTruncated = 0 ;
                                                             *pppsttX[ offs ] = psttTruncated ;
-                                                            etThread.delF( tinP , *pppsttX[ offs ] ) ;
-                                                            etThread.strSubstringF( tinP , psttTruncated , idf , idl , *pppsttX[ offs ] ) ; ___( *pppsttX[ offs ] ) ;
+                                                            etThread.delF( tinBaseP , *pppsttX[ offs ] ) ;
+                                                            etThread.strSubstringF( tinBaseP , psttTruncated , idf , idl , *pppsttX[ offs ] ) ; ___( *pppsttX[ offs ] ) ;
                                                             ZE( strokeS* , psttTruncated ) ;
                                                             countT idl = TUCK ;
                                                             countT idf = 1 ;
                                                         {
                                                         else if( ( *pppsttX[ offs ] )->idAdam > TUCK )
-                                                        if( !*pppsttX[ offs ] ) { etThread.strMakeF( tinP , LF , *pppsttX[ offs ] , wsP.tn ) ; ___( *pppsttX[ offs ] ) ; }
+                                                        if( !*pppsttX[ offs ] ) { etThread.strMakeF( tinBaseP , LF , *pppsttX[ offs ] , wsP.tn ) ; ___( *pppsttX[ offs ] ) ; }
                                                     {
                                                     for( countT offs = 0 ; offs < sizeof pppsttX / sizeof pppsttX[ 0 ] ; offs ++ )
                                                     strokeS** pppsttX[] = { &psttMethod , &psttBucket , &psttQuery , &psttProtocol , &psttBrowser } ;                   // TRUNCATE ALL STRINGS TO LENGTH TUCK (TO PROTECT AGAINST ATTACK)
@@ -271,23 +271,23 @@ DONE( tmWorkerF )
                                             {
                                             if( !ether )
 
-                                            //etThread.traceF( tinP , T("    [idjBrowser] :    ")+TF2(idjBrowser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [cbReply]    :    ")+TF2(cbReply,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [code]       :    ")+TF2(code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [idjProtocol]:    ")+TF2(idjProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [idjQuery]   :    ")+TF2(idjQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [idjBucket]  :    ")+TF2(idjBucket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [idjMethod]  :    ")+TF2(idjMethod,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [nnHe]       :    ")+TF2(nnHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                              etThread.traceF( tinP , T("    [timeW2]     :    ")+TF2(timeW2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [timeW1]     :    ")+TF2(timeW1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [idFormat]   :    ")+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                            //etThread.traceF( tinP , T("    [finger]     :    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [idjBrowser] :    ")+TF2(idjBrowser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [cbReply]    :    ")+TF2(cbReply,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [code]       :    ")+TF2(code,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [idjProtocol]:    ")+TF2(idjProtocol,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [idjQuery]   :    ")+TF2(idjQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [idjBucket]  :    ")+TF2(idjBucket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [idjMethod]  :    ")+TF2(idjMethod,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [nnHe]       :    ")+TF2(nnHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                              etThread.traceF( tinBaseP , T("    [timeW2]     :    ")+TF2(timeW2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [timeW1]     :    ")+TF2(timeW1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [idFormat]   :    ")+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("    [finger]     :    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                             }
                                                 }
-                                                    //etThread.traceF( tinP , T("event [psttBrowser]:    ")+T(psttBrowser) ) ;
-                                                    etThread.strDecodeF( tinP , psttBrowser , pbEncodedHe + sizeof( countT ) ) ; ___( psttBrowser ) ;
+                                                    //etThread.traceF( tinBaseP , T("event [psttBrowser]:    ")+T(psttBrowser) ) ;
+                                                    etThread.strDecodeF( tinBaseP , psttBrowser , pbEncodedHe + sizeof( countT ) ) ; ___( psttBrowser ) ;
                                                 {
                                                 if( pbEncodedHe && cbEncodedHe )
 
@@ -300,8 +300,8 @@ DONE( tmWorkerF )
 
                                             }
                                                 }
-                                                    //etThread.traceF( tinP , T("event [psttProtocol]:    ")+T(psttProtocol) ) ;
-                                                    etThread.strDecodeF( tinP , psttProtocol , pbEncodedHe + sizeof( countT ) ) ; ___( psttProtocol ) ;
+                                                    //etThread.traceF( tinBaseP , T("event [psttProtocol]:    ")+T(psttProtocol) ) ;
+                                                    etThread.strDecodeF( tinBaseP , psttProtocol , pbEncodedHe + sizeof( countT ) ) ; ___( psttProtocol ) ;
                                                 {
                                                 if( pbEncodedHe && cbEncodedHe )
 
@@ -314,8 +314,8 @@ DONE( tmWorkerF )
 
                                             }
                                                 }
-                                                    //etThread.traceF( tinP , T("event [psttQuery]:    ")+T(psttQuery) ) ;
-                                                    etThread.strDecodeF( tinP , psttQuery , pbEncodedHe + sizeof( countT ) ) ; ___( psttQuery ) ;
+                                                    //etThread.traceF( tinBaseP , T("event [psttQuery]:    ")+T(psttQuery) ) ;
+                                                    etThread.strDecodeF( tinBaseP , psttQuery , pbEncodedHe + sizeof( countT ) ) ; ___( psttQuery ) ;
                                                 {
                                                 if( pbEncodedHe && cbEncodedHe )
 
@@ -328,8 +328,8 @@ DONE( tmWorkerF )
 
                                             }
                                                 }
-                                                    //etThread.traceF( tinP , T("event [psttBucket]:    ")+T(psttBucket) ) ;
-                                                    etThread.strDecodeF( tinP , psttBucket , pbEncodedHe + sizeof( countT ) ) ; ___( psttBucket ) ;
+                                                    //etThread.traceF( tinBaseP , T("event [psttBucket]:    ")+T(psttBucket) ) ;
+                                                    etThread.strDecodeF( tinBaseP , psttBucket , pbEncodedHe + sizeof( countT ) ) ; ___( psttBucket ) ;
                                                 {
                                                 if( pbEncodedHe && cbEncodedHe )
 
@@ -342,8 +342,8 @@ DONE( tmWorkerF )
 
                                             }
                                                 }
-                                                    //etThread.traceF( tinP , T("event [psttMethod]:    ")+T(psttMethod) ) ;
-                                                    etThread.strDecodeF( tinP , psttMethod , pbEncodedHe + sizeof( countT ) ) ; ___( psttMethod ) ;
+                                                    //etThread.traceF( tinBaseP , T("event [psttMethod]:    ")+T(psttMethod) ) ;
+                                                    etThread.strDecodeF( tinBaseP , psttMethod , pbEncodedHe + sizeof( countT ) ) ; ___( psttMethod ) ;
                                                 {
                                                 if( pbEncodedHe && cbEncodedHe )
 
@@ -385,24 +385,24 @@ DONE( tmWorkerF )
                                             DEL( pPageEvent ) ;
                                             THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
                                             }
-                                                etThread.delF( tinP , pbPageCopy ) ;
+                                                etThread.delF( tinBaseP , pbPageCopy ) ;
                                                 }
-                                                    sBookEntry.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_soulC , pbPageCopy , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                                                    sBookEntry.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbPageCopy , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
 
-                                                    bksAccessEvents.unlockF( tinP ) ;
-                                                    etThread.memCopyF( tinP , pbPageCopy , pbzPage , cbzPage ) ;
+                                                    bksAccessEvents.unlockF( tinBaseP ) ;
+                                                    etThread.memCopyF( tinBaseP , pbPageCopy , pbzPage , cbzPage ) ;
                                                     const byteT* pbzPage = *pPageEvent ;
-                                                    bksAccessEvents.lockF( tinP , TAG( TAGiDnULL ) ) ;
+                                                    bksAccessEvents.lockF( tinBaseP , TAG( TAGiDnULL ) ) ;
                                                 {
                                                 if( !POOP )
 
                                                 __Z( pbPageCopy ) ;
-                                                etThread.newF( tinP , LF , pbPageCopy , cbzPage ) ; ___( pbPageCopy ) ;
+                                                etThread.newF( tinBaseP , LF , pbPageCopy , cbzPage ) ; ___( pbPageCopy ) ;
                                                 ZE( byteT* , pbPageCopy ) ;
 
                                                 countT cbzPage = *pPageEvent ;
                                             {
-                                            soulC sBookEntry( tinP , TAG( TAGiDnULL ) ) ;
+                                            soulC sBookEntry( tinBaseP , TAG( TAGiDnULL ) ) ;
                                         {
                                         else
                                         }
@@ -427,8 +427,8 @@ DONE( tmWorkerF )
                                         if( !(const byteT*)*pPageEvent )
 
                                         THREADmODE4rESTORE
-                                        bksAccessEvents.readF( tinP , *pPageEvent , hRead , flBOOKScrEAD_null , &bQuit ) ;
-                                        pPageEvent = new( 0 , tinP , LF ) pageC( tinP , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
+                                        bksAccessEvents.readF( tinBaseP , *pPageEvent , hRead , flBOOKScrEAD_null , &bQuit ) ;
+                                        pPageEvent = new( 0 , tinBaseP , LF ) pageC( tinBaseP , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
                                         THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
                                         ZE( pageC* , pPageEvent ) ;
                                     {
@@ -442,7 +442,7 @@ DONE( tmWorkerF )
                                             cbi = cbiSave ;
                                         {
                                         if( !pbi )
-                                        bDelete = bksAccessEvents.readF( tinP , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK , &bQuit ) ;
+                                        bDelete = bksAccessEvents.readF( tinBaseP , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK , &bQuit ) ;
                                     {
                                     if( bPrefix )
                                     ZE( boolT , bDelete ) ;
@@ -457,13 +457,13 @@ DONE( tmWorkerF )
                                 boolT bPrefix = 1 ;
                                 countT cbi = sizeof( countT ) ;
                                 ZE( const byteT* , pbi ) ;
-                                handleC hRead( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+                                handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
                             {
                             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-                            etThread.fileWriteF( tinP , fileReport , tSay , tSay.csF( tinP ) ) ;
+                            etThread.fileWriteF( tinBaseP , fileReport , tSay , tSay.csF( tinBaseP ) ) ;
 
-                            fileC fileReport( tinP , (strokeS*)( wsP.tPathReport+tContainerUri+wsP.tDotTxt ) , ifcOPENaCCESS_W , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+                            fileC fileReport( tinBaseP , (strokeS*)( wsP.tPathReport+tContainerUri+wsP.tDotTxt ) , ifcOPENaCCESS_W , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
 
                             ) ;
 
@@ -482,48 +482,48 @@ DONE( tmWorkerF )
 
                             tSay = T(
 
-                            etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                            etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                             ZE( sCountT , timeN2 ) ;
                             ZE( countT , timeN1 ) ;
 
-                            etThread.traceF( tinP , T("[tContainerUri]:    ")+tContainerUri ) ;
+                            etThread.traceF( tinBaseP , T("[tContainerUri]:    ")+tContainerUri ) ;
 
                             }
                                 ;
                                     : tContainer+wsP.tSlash+tUriUse
                                     ? wsP.tUnknownContainer+wsP.tDot+TF2(idjContainer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+wsP.tDot+TF2(idjUri,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)
-                                tContainerUri = !tContainer.csF( tinP )
+                                tContainerUri = !tContainer.csF( tinBaseP )
 
-                                etThread.traceF( tinP , T("[tUriUse]:    ")+tUriUse ) ;
+                                etThread.traceF( tinBaseP , T("[tUriUse]:    ")+tUriUse ) ;
                                 }
-                                    etThread.delF( tinP , pstt1w ) ;
+                                    etThread.delF( tinBaseP , pstt1w ) ;
                                     }
                                         }
-                                            default : {                                                               tUriUse += T(tUriUse.csF(tinP)?"/":"")+T(psttc1) ; break ; }
-                                            case 3  : { if( etThread.strCompareF( tinP , tContainer      , psttc1 ) ) tUriUse += T(tUriUse.csF(tinP)?"/":"")+T(psttc1) ; break ; }
-                                            case 2  : { if( !etThread.strIdF(     tinP , wsP.tMossoCloud , psttc1 ) ) tUriUse += T(tUriUse.csF(tinP)?"/":"")+T(psttc1) ; break ; }
-                                            case 1  : { if( etThread.strCompareF( tinP , wsP.tV1         , psttc1 ) ) tUriUse +=                             T(psttc1) ; break ; }
+                                            default : {                                                               tUriUse += T(tUriUse.csF(tinBaseP)?"/":"")+T(psttc1) ; break ; }
+                                            case 3  : { if( etThread.strCompareF( tinBaseP , tContainer      , psttc1 ) ) tUriUse += T(tUriUse.csF(tinBaseP)?"/":"")+T(psttc1) ; break ; }
+                                            case 2  : { if( !etThread.strIdF(     tinBaseP , wsP.tMossoCloud , psttc1 ) ) tUriUse += T(tUriUse.csF(tinBaseP)?"/":"")+T(psttc1) ; break ; }
+                                            case 1  : { if( etThread.strCompareF( tinBaseP , wsP.tV1         , psttc1 ) ) tUriUse +=                             T(psttc1) ; break ; }
                                         {
                                         switch( ++ idw )
 
-                                        //etThread.traceF( tinP , T("uri word: ")+T(psttc1) ) ;
+                                        //etThread.traceF( tinBaseP , T("uri word: ")+T(psttc1) ) ;
                                     {
                                     FORsTRINGSiN1( pstt1w )
                                     ZE( countT , idw ) ;
-                                    etThread.strWordsF( tinP , pstt1w , tUri , sttq , wsP.tSlash ) ; ___( pstt1w ) ;
+                                    etThread.strWordsF( tinBaseP , pstt1w , tUri , sttq , wsP.tSlash ) ; ___( pstt1w ) ;
                                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                     ZE( strokeS* , pstt1w ) ;
                                 {
-                                if( tUri.csF( tinP ) )
+                                if( tUri.csF( tinBaseP ) )
                                 TN( tUriUse , "" ) ;
 
-                                etThread.traceF( tinP , T("[tUri]:    ")+tUri ) ;
+                                etThread.traceF( tinBaseP , T("[tUri]:    ")+tUri ) ;
                                 }
-                                    else etThread.traceF( tinP , T("error: could not get tUri [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    else etThread.traceF( tinBaseP , T("error: could not get tUri [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     }
-                                        etThread.delF( tinP , psttUri ) ;
+                                        etThread.delF( tinBaseP , psttUri ) ;
                                         tUri = T(psttUri) ;
-                                        etThread.strDecodeF( tinP , psttUri , pbEncodedHe + sizeof( countT ) ) ; ___( psttUri ) ;
+                                        etThread.strDecodeF( tinBaseP , psttUri , pbEncodedHe + sizeof( countT ) ) ; ___( psttUri ) ;
                                         ZE( strokeS* , psttUri ) ;
                                     {
                                     if( pbEncodedHe && cbEncodedHe )
@@ -535,13 +535,13 @@ DONE( tmWorkerF )
                                 {
                                 TN( tUri , "" ) ;
 
-                                etThread.traceF( tinP , T("[tContainer]:    ")+tContainer ) ;
+                                etThread.traceF( tinBaseP , T("[tContainer]:    ")+tContainer ) ;
                                 }
-                                    else etThread.traceF( tinP , T("error: could not get tContainer [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    else etThread.traceF( tinBaseP , T("error: could not get tContainer [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     }
-                                        etThread.delF( tinP , psttContainer ) ;
+                                        etThread.delF( tinBaseP , psttContainer ) ;
                                         tContainer = T(psttContainer) ;
-                                        etThread.strDecodeF( tinP , psttContainer , pbEncodedHe + sizeof( countT ) ) ; ___( psttContainer ) ;
+                                        etThread.strDecodeF( tinBaseP , psttContainer , pbEncodedHe + sizeof( countT ) ) ; ___( psttContainer ) ;
                                         ZE( strokeS* , psttContainer ) ;
                                     {
                                     if( pbEncodedHe && cbEncodedHe )
@@ -557,27 +557,27 @@ DONE( tmWorkerF )
                         {
                         if( !ether )
 
-                        booksC bksAccessEvents( tinP , TAG( TAGiDnULL ) , tContainerUriBooksName , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
+                        booksC bksAccessEvents( tinBaseP , TAG( TAGiDnULL ) , tContainerUriBooksName , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
                     {
                     if( !ether )
 
                     //}
-                    //    booksC bksAccessEvents( tinP , TAG( TAGiDnULL ) , tContainerUriBooksName , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_RESETcREFoNcT ) ; //NULL FLAG IN PRODUCTION
+                    //    booksC bksAccessEvents( tinBaseP , TAG( TAGiDnULL ) , tContainerUriBooksName , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_RESETcREFoNcT ) ; //NULL FLAG IN PRODUCTION
                     //{
                     //DISABLE IN PRODUCTION
 
-                    etThread.traceF( tinP , T("[idjContainer,idjUri,tContainerUriBooksName]:    ")+TF2(idjContainer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idjUri,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tContainerUriBooksName ) ;
+                    etThread.traceF( tinBaseP , T("[idjContainer,idjUri,tContainerUriBooksName]:    ")+TF2(idjContainer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idjUri,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tContainerUriBooksName ) ;
 
                     TN( tContainerUriBooksName , psttContainerUriBooksName ) ;
 
                     }
-                        etThread.delF( tinP , pstt1w ) ;
+                        etThread.delF( tinBaseP , pstt1w ) ;
                         }
                             }
                                 }
                                     break ;
 
-                                    = etThread.strDigitsToSCountF( tinP , psttc1 , 0 , 1 ) ;
+                                    = etThread.strDigitsToSCountF( tinBaseP , psttc1 , 0 , 1 ) ;
                                     )
                                             : idjUri
                                             ? idjContainer
@@ -589,11 +589,11 @@ DONE( tmWorkerF )
                             {
                             switch( ++ idw )
 
-                            //etThread.traceF( tinP , psttc1 ) ;
+                            //etThread.traceF( tinBaseP , psttc1 ) ;
                         {
                         FORsTRINGSiN1( pstt1w )
                         ZE( countT , idw ) ;
-                        etThread.strWordsF( tinP , pstt1w , psttContainerUriBooksName , sttq , wsP.tDot ) ; ___( pstt1w ) ;
+                        etThread.strWordsF( tinBaseP , pstt1w , psttContainerUriBooksName , sttq , wsP.tDot ) ; ___( pstt1w ) ;
                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                         ZE( strokeS* , pstt1w ) ;
                     {
@@ -610,24 +610,24 @@ DONE( tmWorkerF )
                 {
                 if( !ether )
 
-                etThread.traceF( tinP , T("pulled [cRemain,psttContainerUriBooksName]:    ")+TF2(wsP.st_psttContainerUriBooksName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttContainerUriBooksName) ) ;
-                wsP.st_psttContainerUriBooksName.ungrabF( tinP ) ;
+                etThread.traceF( tinBaseP , T("pulled [cRemain,psttContainerUriBooksName]:    ")+TF2(wsP.st_psttContainerUriBooksName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttContainerUriBooksName) ) ;
+                wsP.st_psttContainerUriBooksName.ungrabF( tinBaseP ) ;
                 wsP.st_psttContainerUriBooksName >> psttContainerUriBooksName ;
                 ZE( strokeS* , psttContainerUriBooksName ) ;
                 _IO_
             {
             while( !ether && wsP.st_psttContainerUriBooksName )
 
-            wsP.st_psttContainerUriBooksName.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            wsP.st_psttContainerUriBooksName.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             _IO_
         {
         else
         }
-            etThread.traceF( tinP , T("napped (waited  to pull)") ) ;
-            ++ s ; etThread.osSleepF( tinP , TOCK << 2 ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-            etThread.traceF( tinP , T("napping (waiting to pull)") ) ;
+            etThread.traceF( tinBaseP , T("napped (waited  to pull)") ) ;
+            ++ s ; etThread.osSleepF( tinBaseP , TOCK << 2 ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            etThread.traceF( tinBaseP , T("napping (waiting to pull)") ) ;
 
             if( wsP.bNoMoreToPush ) break ;
         {
@@ -647,29 +647,29 @@ TASK( tmWorkerF )
 }
     tLike = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+tUser+T("/" ifcSTR( ifcIDmEMORYsPACE_APPLICATION ) "/stateSpaces/ffffefff/bksAccessEvents.5.containerUri.????????.????????.booksC.1.book.00000001.00000001.bookC") ;
 {
-tMossoCloud(       tinP , TAG( TAGiDnULL ) , flTEXTc_null , "MossoCloud"               )
-tV1(               tinP , TAG( TAGiDnULL ) , flTEXTc_null , "v1"                       ) ,
-tAll(              tinP , TAG( TAGiDnULL ) , flTEXTc_null , "all"                      ) ,
-tUnknownContainer( tinP , TAG( TAGiDnULL ) , flTEXTc_null , "unknownContainer"         ) ,
-tn(                tinP , TAG( TAGiDnULL ) , flTEXTc_null , ""                         ) ,
-tcrcr(             tinP , TAG( TAGiDnULL ) , flTEXTc_null , "\r\n\r\n"                 ) ,
-tcr(               tinP , TAG( TAGiDnULL ) , flTEXTc_null , "\r\n"                     ) ,
-tPathReport(       tinP , TAG( TAGiDnULL ) , flTEXTc_null , "///d/web.reports/access/" ) ,
-tDotTxt(           tinP , TAG( TAGiDnULL ) , flTEXTc_null , ".txt"                     ) ,
-tDot(              tinP , TAG( TAGiDnULL ) , flTEXTc_null , "."                        ) ,
-tSlash(            tinP , TAG( TAGiDnULL ) , flTEXTc_null , "/"                        ) ,
-tLike(             tinP , TAG( TAGiDnULL ) , flTEXTc_null , ""                         ) ,
-tUser(             tinP , TAG( TAGiDnULL ) , flTEXTc_null , thirdC::postUserNameIF()   ) ,
-tb4(               tinP , TAG( TAGiDnULL ) , flTEXTc_null , "    "                     ) ,
+tMossoCloud(       tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "MossoCloud"               )
+tV1(               tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "v1"                       ) ,
+tAll(              tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "all"                      ) ,
+tUnknownContainer( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "unknownContainer"         ) ,
+tn(                tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , ""                         ) ,
+tcrcr(             tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "\r\n\r\n"                 ) ,
+tcr(               tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "\r\n"                     ) ,
+tPathReport(       tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "///d/web.reports/access/" ) ,
+tDotTxt(           tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , ".txt"                     ) ,
+tDot(              tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "."                        ) ,
+tSlash(            tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "/"                        ) ,
+tLike(             tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , ""                         ) ,
+tUser(             tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , thirdC::postUserNameIF()   ) ,
+tb4(               tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "    "                     ) ,
 idAccess( 0 ) ,
-st_psttContainerUriBooksName( tinP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ,
-jhsOther(      tinP , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [STRING]; WO JOT PER UNIQUE STRING
-jhsBrowser(    tinP , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-jhsQuery(      tinP , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-jhsUri(        tinP , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+st_psttContainerUriBooksName( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ,
+jhsOther(      tinBaseP , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [STRING]; WO JOT PER UNIQUE STRING
+jhsBrowser(    tinBaseP , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+jhsQuery(      tinBaseP , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+jhsUri(        tinBaseP , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 cWorkers( 0 ) ,
 bNoMoreToPush( 0 ) ,
-workS::workS( tinS& tinP , etherC& etherP ) :
+workS::workS( tinBaseS& tinBaseP , etherC& etherP ) :
 
 }
     TINSL
@@ -681,7 +681,7 @@ countT cIn ;
 
 ;
 }
-    workS( tinS& tinP , etherC& etherP ) ;
+    workS( tinBaseS& tinBaseP , etherC& etherP ) ;
     ~workS( voidT ) ;
 
     textC         tMossoCloud ;

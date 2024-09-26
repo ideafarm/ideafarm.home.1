@@ -8,15 +8,15 @@
 
 
 }
-    if( !bFound ) PUSE( tinP , *(byteT**)&prP ) ;
+    if( !bFound ) PUSE( tinBaseP , *(byteT**)&prP ) ;
     
-    swSnipById.ungrabF( tinP ) ;
-    if( bFound ) new( 0 , tinP , (byteT*)prP , sizeof( pbRefC ) ) pbRefC( *(pbRefC*)&(countT&)swSnipById ) ;
-    boolT bFound = swSnipById.idSlotOfLeverF( tinP , idSnipP ) ;
+    swSnipById.ungrabF( tinBaseP ) ;
+    if( bFound ) new( 0 , tinBaseP , (byteT*)prP , sizeof( pbRefC ) ) pbRefC( *(pbRefC*)&(countT&)swSnipById ) ;
+    boolT bFound = swSnipById.idSlotOfLeverF( tinBaseP , idSnipP ) ;
     cLeverIdSnip = idSnipP ;
-    swSnipById.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    swSnipById.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    PUSE.newF( tinP , LF , *(byteT**)&prP , sizeof( pbRefC ) ) ; ___( prP ) ;
+    PUSE.newF( tinBaseP , LF , *(byteT**)&prP , sizeof( pbRefC ) ) ; ___( prP ) ;
 
     _IO_
 
@@ -27,7 +27,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT httpServerC::getSnipF( tinS& tinP , pbRefC*& prP , const countT idSnipP )/*1*/
+/*1*/voidT httpServerC::getSnipF( tinBaseS& tinBaseP , pbRefC*& prP , const countT idSnipP )/*1*/
 /**/
 */
 /*

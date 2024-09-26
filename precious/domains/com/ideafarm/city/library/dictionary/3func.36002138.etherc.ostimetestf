@@ -18,14 +18,14 @@
 
     }
         bAct = timeT2 >= 0 ;
-        third.osTimeSubtractF( tinP , timeT1 , timeT2 , timeD1P , timeD2P ) ;
-        third.osTimeSubtractF( tinP , timeT1 , timeT2 , timeA1P , timeA2P ) ;
+        third.osTimeSubtractF( tinBaseP , timeT1 , timeT2 , timeD1P , timeD2P ) ;
+        third.osTimeSubtractF( tinBaseP , timeT1 , timeT2 , timeA1P , timeA2P ) ;
         sCountT timeT2 = timeN2 ;
         countT  timeT1 = timeN1 ;
     {
     ZE( boolT , bAct ) ;
 
-    third.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+    third.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT  , timeN1 ) ;
 
@@ -37,7 +37,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT etherC::osTimeTestF( tinS& tinP , countT& timeA1P , sCountT& timeA2P , const countT timeD1P , const sCountT timeD2P )/*1*/
+/*1*/boolT etherC::osTimeTestF( tinBaseS& tinBaseP , countT& timeA1P , sCountT& timeA2P , const countT timeD1P , const sCountT timeD2P )/*1*/
 
 /**/
 */
@@ -49,7 +49,7 @@
  timeA2P
   can be 0
  timeA1P
- tinP
+ tinBaseP
 arguments
 usage: use timeD to specify the Delta time that is to elapse before the action is taken again
 usage: use timeA to specify the last time that some Action was taken

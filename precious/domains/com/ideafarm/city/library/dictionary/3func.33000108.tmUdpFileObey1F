@@ -15,7 +15,7 @@ DONE( tmUdpFileObey1F )
         Sleep( 0 ) ;
 
         }
-            //etThread.traceF( tinP , T("poured wo [cPouredP (after)]:    ")+TF2(cPouredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etThread.traceF( tinBaseP , T("poured wo [cPouredP (after)]:    ")+TF2(cPouredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             pbci     += cbThis ;
             cPouredP ++ ;
 
@@ -31,7 +31,7 @@ DONE( tmUdpFileObey1F )
                 pbco = pbw ;
                 pbwe = pbw + cbw ;
                 if( !pbw || !cbw ) { BLAMMO ; }
-                fwsBuffer.getF( tinP , pbw , cbw ) ;
+                fwsBuffer.getF( tinBaseP , pbw , cbw ) ;
                 cbw = 0 ;
                 pbw = 0 ;
 
@@ -74,7 +74,7 @@ DONE( tmUdpFileObey1F )
             if( pcLagOffNext                   ) pbci = pbFastBufferP + *pcLagOffNext ;      // THE PRECEDING RECORD TELLS ME WHERE IN THE CIRCULAR BUFFER TO POSITION MYSELF
             if( pcLagOffNext && !*pcLagOffNext ) { BLAMMO ; }
 
-            //etThread.traceF( tinP , T("[idGramLath,cPouredP]:    ")+TF2(idGramLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cPouredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etThread.traceF( tinBaseP , T("[idGramLath,cPouredP]:    ")+TF2(idGramLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cPouredP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         while( cPouredP != idGramLath )      // INTENDED TO HANDLE WRAP AOK
     {
@@ -89,35 +89,35 @@ DONE( tmUdpFileObey1F )
     }
         etThread.osThreadF( TaRG1( tmUdpFileObey2F ) , (countT)&bQuitP , (countT)&psoEndpointP , (countT)&grab_psoEndpointP , (countT)pNicNameToUseP , (countT)pSecretToUseP , (countT)pcReceivedFileWindowsP , ++ cWorker , cProcessorsObey2 , (countT)&cPouredP , (countT)ppcSecretsP , (countT)ppcHashSecretsP , (countT)&offEpochFresheningP , (countT)psttFileBuffer , (countT)&pNicNameWhiteP , (countT)&cNicNameWhiteP , (countT)&grab_pNicNameWhiteP ) ;
 
-        //etThread.traceF( tinP , T("launching Obey2 [pSecretToUseP]:    ")+TF2((countT)pSecretToUseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tinBaseP , T("launching Obey2 [pSecretToUseP]:    ")+TF2((countT)pSecretToUseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        etThread.strMakeF( tinP , LF , psttFileBuffer , tFileBuffer ) ; ___( psttFileBuffer ) ;
+        etThread.strMakeF( tinBaseP , LF , psttFileBuffer , tFileBuffer ) ; ___( psttFileBuffer ) ;
         ZE( strokeS* , psttFileBuffer ) ;
     {
     while( cDo -- )
     ZE( countT , cWorker ) ;
     countT cDo = cProcessorsObey2 ;
 
-    etThread.traceF( tinP , T("using [cProcessors,cProcessorsObey2]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessorsObey2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , T("using [cProcessors,cProcessorsObey2]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessorsObey2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     const countT cProcessorsObey2 = pSecretToUseP ? 1 : cProcessors < 7 ? 1 : cProcessors - 5 ;     // "- 5" IS OPTIMAL ON factory2
-    const countT cProcessors      = thirdC::osProcessorsIF( tinP ) ;
+    const countT cProcessors      = thirdC::osProcessorsIF( tinBaseP ) ;
 
     byteT* pbco = pbw ;
     byteT* pbwe = pbw + cbw ;
     if( !pbw || !cbw ) { BLAMMO ; }         //SHOULD BE IMPOSSIBLE SINCE OPENING FOR WRITING ; U:: fileWindowsC WILL FAIL IF NO MORE SPACE ON DISK OR DISK I/O FAILURE
-    fwsBuffer.getF( tinP , pbw , cbw ) ;    //U:: ACCESSES TO THIS MEMORY WILL EXCEPTION IF DISK I/O FAILURE ; NEED TO USE RESTART TO RECOVER FROM SUCH A FAILURE
+    fwsBuffer.getF( tinBaseP , pbw , cbw ) ;    //U:: ACCESSES TO THIS MEMORY WILL EXCEPTION IF DISK I/O FAILURE ; NEED TO USE RESTART TO RECOVER FROM SUCH A FAILURE
     ZE( countT , cbw ) ;
     ZE( byteT* , pbw ) ;
     TN( tb4 , "    " ) ;
 
-    fileWindowsC fwsBuffer( tinP , etThread , tFileBuffer , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
-    //etThread.boxPutF( tinP , tFileBuffer , "X" , 1 ) ;
+    fileWindowsC fwsBuffer( tinBaseP , etThread , tFileBuffer , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
+    //etThread.boxPutF( tinBaseP , tFileBuffer , "X" , 1 ) ;
 
     }
-        etThread.delF( tinP , psttu ) ;
+        etThread.delF( tinBaseP , psttu ) ;
         tFileBuffer = T("///ideafarm/tmp/udp.file.buffer.")+T(psttu) ;
-        etThread.strUniqueF( tinP , psttu ) ; ___( psttu ) ;
+        etThread.strUniqueF( tinBaseP , psttu ) ; ___( psttu ) ;
         ZE( strokeS* , psttu ) ;
     {
     TN( tFileBuffer , "" ) ;

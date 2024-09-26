@@ -8,8 +8,8 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
-    freshHullF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+    freshHullF( tinBaseP ) ;
 
     }
         }
@@ -25,11 +25,11 @@
             state.vaHull_x(2) /= len_x ;
             state.vaHull_x(1) /= len_x ;
             
-            measureT len_z = tinP.brcm04Raw ;
+            measureT len_z = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , sqrt( state.vaHull_z * state.vaHull_z ) )
-            measureT len_y = tinP.brcm04Raw ;
+            measureT len_y = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , sqrt( state.vaHull_y * state.vaHull_y ) )
-            measureT len_x = tinP.brcm04Raw ;
+            measureT len_x = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , sqrt( state.vaHull_x * state.vaHull_x ) )
             //U::O: USE bigMeasureT AND THEN ONLY NORMALIZE WHEN off == 2
             
@@ -65,11 +65,11 @@
                 ROTATION MATRIX FOR TILT
             /*
             
-            const measureT cram = tinP.brcm04Raw ;
+            const measureT cram = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos( ( 0.5 - nang ) * PI ) )
-            const measureT crap = tinP.brcm04Raw ;
+            const measureT crap = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos( ( 0.5 + nang ) * PI ) )
-            const measureT cra  = tinP.brcm04Raw ;
+            const measureT cra  = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos(         nang   * PI ) )
             const measureT nang = - angtP ;
         {
@@ -96,11 +96,11 @@
                 ROTATION MATRIX FOR AIM VERTICAL
             /*
             
-            const measureT cram = tinP.brcm04Raw ;
+            const measureT cram = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos( ( 0.5 - nang ) * PI ) )
-            const measureT crap = tinP.brcm04Raw ;
+            const measureT crap = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos( ( 0.5 + nang ) * PI ) )
-            const measureT cra  = tinP.brcm04Raw ;
+            const measureT cra  = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos(         nang   * PI ) )
             const measureT nang = - angvP ;
         {
@@ -127,26 +127,26 @@
                 ROTATION MATRIX FOR AIM HORIZONTAL
             /*
             
-            const measureT cram = tinP.brcm04Raw ;
+            const measureT cram = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos( ( 0.5 - nang ) * PI ) )
-            const measureT crap = tinP.brcm04Raw ;
+            const measureT crap = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos( ( 0.5 + nang ) * PI ) )
-            const measureT cra  = tinP.brcm04Raw ;
+            const measureT cra  = ((tinNormalS&)tinBaseP).brcm04Raw ;
             BOSmEASURE04( WHATgbo , cos(         nang   * PI ) )
             const measureT nang = - anghP ;
         {
-        sqMatrixOldC sqmrt( tinP , ether ) ;
-        sqMatrixOldC sqmrv( tinP , ether ) ;
-        sqMatrixOldC sqmrh( tinP , ether ) ;
+        sqMatrixOldC sqmrt( tinBaseP , ether ) ;
+        sqMatrixOldC sqmrv( tinBaseP , ether ) ;
+        sqMatrixOldC sqmrh( tinBaseP , ether ) ;
     {
     //U::if( anghP || angvP || angtP )
 
     state.vaHull_z = unit_z ;
     state.vaHull_y = unit_y ;
     state.vaHull_x = unit_x ;
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT eyeOldC::setHullAimTiltF( tinS& tinP , const measureT anghP , const measureT angvP , const measureT angtP )/*1*/
+/*1*/voidT eyeOldC::setHullAimTiltF( tinBaseS& tinBaseP , const measureT anghP , const measureT angvP , const measureT angtP )/*1*/
 
 /**/
 

@@ -9,28 +9,28 @@
 
 REST
 
-etThread.traceF( tinP , T("bye") ) ;
+etThread.traceF( tinBaseP , T("bye") ) ;
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("press Ctl-C to quit") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("press Ctl-C to quit") ) ;
 
-tinP.monitor.idWhat2 = 0 ;
-etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
-etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
+((tinNormalS&)tinBaseP).monitor.idWhat2 = 0 ;
+etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
+etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
 
-etThread.delF( tinP , pstt1m ) ;
+etThread.delF( tinBaseP , pstt1m ) ;
 }
-    etThread.traceF( tinP , T("found:    ")+T(psttc1) ) ;
+    etThread.traceF( tinBaseP , T("found:    ")+T(psttc1) ) ;
 {
 FORsTRINGSiN1( pstt1m )
-etThread.traceF( tinP , T("called  diskFindFileOrDirF") ) ;
-etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
-etThread.diskFindFileOrDirF( tinP , pstt1m , tPath , &pat , 0 , 0 , 0 , 0 ) ; ___( pstt1m ) ;
-etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
-etThread.traceF( tinP , T("calling diskFindFileOrDirF") ) ;
+etThread.traceF( tinBaseP , T("called  diskFindFileOrDirF") ) ;
+etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
+etThread.diskFindFileOrDirF( tinBaseP , pstt1m , tPath , &pat , 0 , 0 , 0 , 0 ) ; ___( pstt1m ) ;
+etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;
+etThread.traceF( tinBaseP , T("calling diskFindFileOrDirF") ) ;
 ZE( strokeS* , pstt1m ) ;
 
-patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
 //TN( tPattern , "*.newdeltypeether" ) ;
 //TN( tPattern , "5adam.510004fb.*" ) ;
 TN( tPattern , "5adam.510004fb.*.h" ) ;
@@ -39,9 +39,9 @@ TN( tPath , "///d/ideafarm.home.1/precious/domains/com/ideafarm/city/library/dic
 //TN( tPath , "///d/tmp/wildcard.test.6/" ) ;
 //TN( tPath , "///d/tmp/wildcard.test.5/" ) ;
 
-etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
-etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , 1 ) ;
-tinP.monitor.idWhat2 = - 1 ;
+etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
+etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , 1 ) ;
+((tinNormalS&)tinBaseP).monitor.idWhat2 = - 1 ;
 
 TODO
 

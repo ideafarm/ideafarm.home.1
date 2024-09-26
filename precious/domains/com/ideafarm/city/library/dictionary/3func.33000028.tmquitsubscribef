@@ -13,13 +13,13 @@ DONE( tmQuitSubscribeF )
     etThread = 0 ;
     TELL( "tmQuitSubscribeF: cleaning up" )
     }
-        sockz.connectF( tinP , idPortSubscribe ) ;
-        socketC sockz( tinP , etThread , TAG( TAGiDnULL ) ) ;
+        sockz.connectF( tinBaseP , idPortSubscribe ) ;
+        socketC sockz( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
     {
     bQuitSubscribe = 1 ;
 
     TELL( "cleaning up: connecting to idPortSubscribe" )
-    sgnQuit_tmSubscribe.waitF( tinP ) ;
+    sgnQuit_tmSubscribe.waitF( tinBaseP ) ;
     TELL( "waiting for sgnQuit_tmSubscribe to be given" )
 
     countT& idPortSubscribe     = *(countT*)pTaskP->c3 ;

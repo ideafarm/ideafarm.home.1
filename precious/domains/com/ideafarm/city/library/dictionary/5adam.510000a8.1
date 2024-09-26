@@ -11,20 +11,20 @@
 
 REST
 
-etThread.osSleepF( tinP , TOCK ) ;
-etThread.strokeF( tinP , T("i waited until the sign was given by another thread\r\n") ) ;
-ss.waitF( tinP ) ;
-etThread.strokeF( tinP , T("i have created a thread and will now wait for it to give the sign\r\n") ) ;
+etThread.osSleepF( tinBaseP , TOCK ) ;
+etThread.strokeF( tinBaseP , T("i waited until the sign was given by another thread\r\n") ) ;
+ss.waitF( tinBaseP ) ;
+etThread.strokeF( tinBaseP , T("i have created a thread and will now wait for it to give the sign\r\n") ) ;
 
-{ ZE( countT , tid ) ; etThread.osThreadF( tinP , tid , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&ss ) ; }
-signC ss(  tinP , TAG( TAGiDnULL ) ) ;
+{ ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&ss ) ; }
+signC ss(  tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmF )
 }
-    ss.giveF( tinP ) ;
-    etThread.osSleepF( tinP , TOCK * 4 ) ;
+    ss.giveF( tinBaseP ) ;
+    etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
     signC& ss = *(signC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

@@ -10,44 +10,44 @@
 REST
 
 }
-    etThread.delF( tinP , pstt1m ) ;
+    etThread.delF( tinBaseP , pstt1m ) ;
     }
         }
-            etThread.delF( tinP , pstt2m ) ;
+            etThread.delF( tinBaseP , pstt2m ) ;
             }
                 }
                     }
                         }
                             *info.pStkEmailPenpalExactOrExactOr << psttv ; psttv = 0 ;
-                            psttv = psttOldC( tinP , etThread , tEmailPenpalExactOr ) ; ___( psttv ) ;
+                            psttv = psttOldC( tinBaseP , etThread , tEmailPenpalExactOr ) ; ___( psttv ) ;
                         {
-                        if( tEmailPenpalExactOr.csF( tinP ) )
+                        if( tEmailPenpalExactOr.csF( tinBaseP ) )
 
                         }
                             *info.pStkRecipeExactOr << psttv ; psttv = 0 ;
-                            psttv = psttOldC( tinP , etThread , tRecipe ) ; ___( psttv ) ;
+                            psttv = psttOldC( tinBaseP , etThread , tRecipe ) ; ___( psttv ) ;
                         {
-                        if( tRecipe.csF( tinP ) )
+                        if( tRecipe.csF( tinBaseP ) )
 
                         }
                             *info.pStkAutoresponseExactOr << psttv ; psttv = 0 ;
-                            psttv = psttOldC( tinP , etThread , tAutoresponse ) ; ___( psttv ) ;
+                            psttv = psttOldC( tinBaseP , etThread , tAutoresponse ) ; ___( psttv ) ;
                         {
-                        if( tAutoresponse.csF( tinP ) )
+                        if( tAutoresponse.csF( tinBaseP ) )
 
                         }
                             *info.pStkEmailRelay << psttv ; psttv = 0 ;
-                            strokeS* psttv = psttOldC( tinP , etThread , tEmailRelay ) ; ___( psttv ) ;
+                            strokeS* psttv = psttOldC( tinBaseP , etThread , tEmailRelay ) ; ___( psttv ) ;
                         {
-                        if( tEmailRelay.csF( tinP ) )
+                        if( tEmailRelay.csF( tinBaseP ) )
 
-                        subaccountS info( tinP , etThread , 1 , idSub , tTitle , tNameIn , tNameOut , fliSUBACCOUNTmODE_OWNERcONFIRMED ) ;
+                        subaccountS info( tinBaseP , etThread , 1 , idSub , tTitle , tNameIn , tNameOut , fliSUBACCOUNTmODE_OWNERcONFIRMED ) ;
                     {
                     //SET SUBACCOUNT
 
-                    if( !tNameOut.csF( tinP ) ) tNameOut = T("no name") ;
-                    if( !tNameIn.csF( tinP ) ) tNameIn = T("no name") ;
-                    if( !tTitle.csF( tinP ) ) tTitle = T("no title") ;
+                    if( !tNameOut.csF( tinBaseP ) ) tNameOut = T("no name") ;
+                    if( !tNameIn.csF( tinBaseP ) ) tNameIn = T("no name") ;
+                    if( !tTitle.csF( tinBaseP ) ) tTitle = T("no title") ;
                 
                     CONoUTrAW( T("penpal      : \"")+tEmailPenpalExactOr+T("\"\r\n") ) ;
                     CONoUTrAW( T("autoresponse: \"")+tAutoresponse+T("\"\r\n") ) ;
@@ -60,37 +60,37 @@ REST
                     CONoUTrAW( T("subaccount  : \"")+TF4(idSub,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T(".1.doubleblind.1@ideafarm.com\"\r\n") ) ;
                     CONoUTrAW( T("-----------------------------------------------------------------------------------------------------\r\n") ) ;
                 {
-                if( tEmailOwner.csF( tinP ) )
+                if( tEmailOwner.csF( tinBaseP ) )
 
-                etThread.delF( tinP , pstt3m ) ;
+                etThread.delF( tinBaseP , pstt3m ) ;
                 }
                     }
-                        etThread.delF( tinP , psttw ) ;
-                        etThread.delF( tinP , posti ) ;
+                        etThread.delF( tinBaseP , psttw ) ;
+                        etThread.delF( tinBaseP , posti ) ;
                         }
-                            else if( !etThread.strCompareF( tinP , psttw , T("txt.autoresponse.txt") ) ) tAutoresponse = T(posti) ;
-                            else if( !etThread.strCompareF( tinP , psttw , T("txt.email.penpal.txt") ) ) tEmailPenpalExactOr  = T(posti) ;
-                            else if( !etThread.strCompareF( tinP , psttw , T("txt.recipe.txt"      ) ) ) tRecipe       = T(posti) ;
-                            else if( !etThread.strCompareF( tinP , psttw , T("txt.email.relay.txt" ) ) ) tEmailRelay   = T(posti) ;
-                            else if( !etThread.strCompareF( tinP , psttw , T("txt.name.in.txt"     ) ) ) tNameIn       = T(posti) ;
-                            else if( !etThread.strCompareF( tinP , psttw , T("txt.name.out.txt"    ) ) ) tNameOut      = T(posti) ;
-                                 if( !etThread.strCompareF( tinP , psttw , T("txt.title.txt"       ) ) ) tTitle        = T(posti) ;
+                            else if( !etThread.strCompareF( tinBaseP , psttw , T("txt.autoresponse.txt") ) ) tAutoresponse = T(posti) ;
+                            else if( !etThread.strCompareF( tinBaseP , psttw , T("txt.email.penpal.txt") ) ) tEmailPenpalExactOr  = T(posti) ;
+                            else if( !etThread.strCompareF( tinBaseP , psttw , T("txt.recipe.txt"      ) ) ) tRecipe       = T(posti) ;
+                            else if( !etThread.strCompareF( tinBaseP , psttw , T("txt.email.relay.txt" ) ) ) tEmailRelay   = T(posti) ;
+                            else if( !etThread.strCompareF( tinBaseP , psttw , T("txt.name.in.txt"     ) ) ) tNameIn       = T(posti) ;
+                            else if( !etThread.strCompareF( tinBaseP , psttw , T("txt.name.out.txt"    ) ) ) tNameOut      = T(posti) ;
+                                 if( !etThread.strCompareF( tinBaseP , psttw , T("txt.title.txt"       ) ) ) tTitle        = T(posti) ;
                         {
                         else if( posti && costi )
                         if( POOP ) { POOPR ; }
-                        tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , psttc3 , 1 ) ; ___( posti ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , psttc3 , 1 ) ; ___( posti ) ;
                         ZE( countT   , costi ) ;
                         ZE( osTextT* , posti ) ;
 
                         //CONoUTrAW( T("name: \"")+T(psttw)+T("\"\r\n") ) ;
-                        etThread.strWordF( tinP , psttw , psttc3 , sttq , S1C('/') , - 1 ) ; ___( psttw ) ;
+                        etThread.strWordF( tinBaseP , psttw , psttc3 , sttq , S1C('/') , - 1 ) ; ___( psttw ) ;
                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                         ZE( strokeS* , psttw ) ;
                     {
                     if( psttc3[ CSpREFIX + psttc3->idAdam - 1 ].idAdam != '/' )
                 {
                 FORsTRINGSiN3( pstt3m )
-                etThread.boxMenuF( tinP , soul , T(psttc2)+T("*") , 0 , TUCK ) ; ___( pstt3m ) ;
+                etThread.boxMenuF( tinBaseP , soul , T(psttc2)+T("*") , 0 , TUCK ) ; ___( pstt3m ) ;
                 ZE( strokeS* , pstt3m ) ;
 
                 TN( tEmailPenpalExactOr , "" ) ;
@@ -102,16 +102,16 @@ REST
                 TN( tTitle , "" ) ;
 
                 }
-                    etThread.delF( tinP , psttw ) ;
-                    idSub = etThread.strDigitsToSCountF( tinP , psttw , 36 ) ;    
-                    etThread.strWordF( tinP , psttw , psttc2 , sttq , S1C('/') , - 2 ) ; ___( psttw ) ;
+                    etThread.delF( tinBaseP , psttw ) ;
+                    idSub = etThread.strDigitsToSCountF( tinBaseP , psttw , 36 ) ;    
+                    etThread.strWordF( tinBaseP , psttw , psttc2 , sttq , S1C('/') , - 2 ) ; ___( psttw ) ;
                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                     ZE( strokeS* , psttw ) ;
                 {
                 ZE( countT , idSub ) ;
             {
             FORsTRINGSiN2( pstt2m )
-            etThread.boxMenuF( tinP , soul , T(psttc1)+T("subaccounts/*") , 0 , TUCK ) ; ___( pstt2m ) ;
+            etThread.boxMenuF( tinBaseP , soul , T(psttc1)+T("subaccounts/*") , 0 , TUCK ) ; ___( pstt2m ) ;
             ZE( strokeS* , pstt2m ) ;
 
             }
@@ -128,10 +128,10 @@ REST
                 sIn >> finger ;
                 ZE( countT , finger ) ;
             
-                sock.readF( tinP , sIn ) ;
-                soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                sock.readF( tinBaseP , sIn ) ;
+                soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
             
-                sock.writeF( tinP , sOut ) ;
+                sock.writeF( tinBaseP , sOut ) ;
                 sOut << (strokeS*)0 ; //psttPaypalProtectionEligibility ;
                 sOut << (strokeS*)0 ; //psttPaypalPayerStatus ;
                 sOut << (strokeS*)0 ; //psttPaypalPayerId ;
@@ -154,10 +154,10 @@ REST
                 sOut << (countT)ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETaCCOUNTdESCRIPTION ;
                 sOut << (countT)1 ;
                 sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-                soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+                soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
             
-                sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
+                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
             {
             //SET ACCOUNT
 
@@ -174,28 +174,28 @@ REST
                 sIn >> finger ;
                 ZE( countT , finger ) ;
             
-                sock.readF( tinP , sIn ) ;
-                soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                sock.readF( tinBaseP , sIn ) ;
+                soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
             
-                sock.writeF( tinP , sOut ) ;
+                sock.writeF( tinBaseP , sOut ) ;
                 sOut << (strokeS*)tEmailOwner ;
                 sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL ;
                 sOut << (countT)1 ;
                 sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-                soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+                soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
             
-                sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
             {
             ZE( countT , idAccountVerify ) ;
         {
-        if( tEmailOwner.csF( tinP ) )
+        if( tEmailOwner.csF( tinBaseP ) )
 
         }
-            etThread.delF( tinP , posti ) ;
+            etThread.delF( tinBaseP , posti ) ;
             else if( posti && costi ) tEmailOwner = T(posti) ;
             if( POOP ) { POOPR ; }
-            tinP.pEtScratch->boxGetShadowF( tinP , posti , costi , T(psttc1)+T("txt.email.owner.txt") , 1 ) ; ___( posti ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , T(psttc1)+T("txt.email.owner.txt") , 1 ) ; ___( posti ) ;
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
         {
@@ -203,16 +203,16 @@ REST
 
         CONoUTrAW3( "idAccount: " , idAccount , "\r\n" ) ;
         }
-            etThread.delF( tinP , psttw ) ;
-            idAccount = etThread.strDigitsToSCountF( tinP , psttw , 36 ) ;    
-            etThread.strWordF( tinP , psttw , psttc1 , sttq , S1C('/') , - 2 ) ; ___( psttw ) ;
+            etThread.delF( tinBaseP , psttw ) ;
+            idAccount = etThread.strDigitsToSCountF( tinBaseP , psttw , 36 ) ;    
+            etThread.strWordF( tinBaseP , psttw , psttc1 , sttq , S1C('/') , - 2 ) ; ___( psttw ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , psttw ) ;
         {
         ZE( countT , idAccount ) ;
     {
     FORsTRINGSiN1( pstt1m )
-    etThread.boxMenuF( tinP , soul , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/accounts/*") , 0 , TUCK ) ; ___( pstt1m ) ;
+    etThread.boxMenuF( tinBaseP , soul , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/accounts/*") , 0 , TUCK ) ; ___( pstt1m ) ;
     ZE( strokeS* , pstt1m ) ;
 
     SCOOPS

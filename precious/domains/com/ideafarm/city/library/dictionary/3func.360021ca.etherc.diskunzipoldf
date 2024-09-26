@@ -8,21 +8,21 @@
 
 
 }
-    delF( tinP , psttFromShort ) ;
-    delF( tinP , psttToPath ) ;
-    diskMoveFileOrDirF( tinP , psttToP , T(psttToPath)+T(psttFromShort?psttFromShort:psttFromFileP) ) ;
+    delF( tinBaseP , psttFromShort ) ;
+    delF( tinBaseP , psttToPath ) ;
+    diskMoveFileOrDirF( tinBaseP , psttToP , T(psttToPath)+T(psttFromShort?psttFromShort:psttFromFileP) ) ;
 
-    third.diskUnzipOldF( tinP , osFileNameC( tinP , third , T(psttFromFileP) ) , osFileNameC( tinP , third , T(psttFromZipP) ) , flagsP ) ;
-    hoverC hover( tinP , *this , psttToPath ) ;
+    third.diskUnzipOldF( tinBaseP , osFileNameC( tinBaseP , third , T(psttFromFileP) ) , osFileNameC( tinBaseP , third , T(psttFromZipP) ) , flagsP ) ;
+    hoverC hover( tinBaseP , *this , psttToPath ) ;
 
-    delF( tinP , psttFromPath ) ;
-    strBisectF( tinP , psttFromPath , psttFromShort , psttFromFileP , 0 , -1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttFromPath ) ; ___( psttFromShort ) ;
+    delF( tinBaseP , psttFromPath ) ;
+    strBisectF( tinBaseP , psttFromPath , psttFromShort , psttFromFileP , 0 , -1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttFromPath ) ; ___( psttFromShort ) ;
     ZE( strokeS* , psttFromShort ) ;
     ZE( strokeS* , psttFromPath  ) ;
 
     __Z( psttToPath ) ;
-    delF( tinP , psttToShort ) ;
-    strBisectF( tinP , psttToPath , psttToShort , psttToP , 0 , -1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttToPath ) ; ___( psttToShort ) ;
+    delF( tinBaseP , psttToShort ) ;
+    strBisectF( tinBaseP , psttToPath , psttToShort , psttToP , 0 , -1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttToPath ) ; ___( psttToShort ) ;
     ZE( strokeS* , psttToShort ) ;
     ZE( strokeS* , psttToPath  ) ;
 
@@ -36,7 +36,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT etherC::diskUnzipOldF( tinS& tinP , const strokeS* const psttToP , const strokeS* const psttFromFileP , const strokeS* const psttFromZipP , const flagsT flagsP )/*1*/
+/*1*/voidT etherC::diskUnzipOldF( tinBaseS& tinBaseP , const strokeS* const psttToP , const strokeS* const psttFromFileP , const strokeS* const psttFromZipP , const flagsT flagsP )/*1*/
 
 /**/
 */

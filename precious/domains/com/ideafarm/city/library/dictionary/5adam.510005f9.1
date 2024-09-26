@@ -9,7 +9,7 @@
                     
 REST
 
-etThread.strokeF( tinP , T("aok\r\n") ) ;
+etThread.strokeF( tinBaseP , T("aok\r\n") ) ;
 
 }
     }
@@ -22,7 +22,7 @@ etThread.strokeF( tinP , T("aok\r\n") ) ;
                 {
                 else
                 if( !POOP ) { CONoUTrAW( pb2 ) ; }
-                pso->readF( tinP , pb2 , 1 ) ;
+                pso->readF( tinBaseP , pb2 , 1 ) ;
                 byteT pb2[] = { 0 , 0 } ;
             {
             while( !ether )
@@ -31,7 +31,7 @@ etThread.strokeF( tinP , T("aok\r\n") ) ;
         if( !pso ) break ;
         
         }
-            socka.acceptF( tinP , pso , idpc , nnc , bRefuse ) ; ___( pso ) ;
+            socka.acceptF( tinBaseP , pso , idpc , nnc , bRefuse ) ; ___( pso ) ;
             ZE( boolT , bRefuse ) ;
             nicNameC nnc ;
             ZE( countT , idpc ) ;
@@ -42,10 +42,10 @@ etThread.strokeF( tinP , T("aok\r\n") ) ;
     
     etThread.osThreadF( TaRG1( tmWorkF ) , idPort ) ;
     
-    socka.listenF( tinP ) ;
-    countT idPort = socka.bindF( tinP ) ;
+    socka.listenF( tinBaseP ) ;
+    countT idPort = socka.bindF( tinBaseP ) ;
     
-    socketC socka( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+    socketC socka( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     SCOOPS
 {
 IFsCRATCH
@@ -57,7 +57,7 @@ DONE( tmWorkF )
     }
         }
             }
-                ++ s ; ether.osSleepF( tinP , TOCK ) ;
+                ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
         
                 if( bo ++ == 'z' ) bo = 'a' ;
 
@@ -66,19 +66,19 @@ DONE( tmWorkF )
                     POOPR ;
                 {
                 if( POOP )
-                socko.writeF( tinP , &bo , 1 ) ;
+                socko.writeF( tinBaseP , &bo , 1 ) ;
             {
             while( !ether )
             byteT bo = 'a' ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             
-            socko.connectF( tinP , idPort ) ;
-            socketC socko( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_null , 0 , 0 , &timeAllowedConnected ) ;
+            socko.connectF( tinBaseP , idPort ) ;
+            socketC socko( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_null , 0 , 0 , &timeAllowedConnected ) ;
             countT timeAllowedConnected = TOCK << 3 ;
 
             }
-                ++ s ; ether.osSleepF( tinP , TOCK ) ;
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
         {
         while( !ether )

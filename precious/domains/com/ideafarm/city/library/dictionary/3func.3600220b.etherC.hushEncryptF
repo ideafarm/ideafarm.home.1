@@ -8,18 +8,18 @@
 
 
 }
-    delF( tinP , pbSymCypherText ) ;
+    delF( tinBaseP , pbSymCypherText ) ;
 
-    soulP.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_byteTptr , pbSymCypherText , cbSymCypherText ) ;
+    soulP.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbSymCypherText , cbSymCypherText ) ;
     soulP << cbSymCypherText ;
 
-    soulP.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_byteTptr , pbSeed          , cbSeed         ) ;
+    soulP.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbSeed          , cbSeed         ) ;
     soulP << cbSeed ;
 
-    soulP.shiftLeftF( tinP , ifcIDtYPEsOULiTEM_byteTptr , pbHushedSymKey  , cbHushedSymKey ) ;
+    soulP.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbHushedSymKey  , cbHushedSymKey ) ;
     soulP << cbHushedSymKey ;
 
-    hushEncryptF( tinP , pbSymCypherText , cbSymCypherText , pbHushedSymKey , cbHushedSymKey , pbSeed , sizeof pbSeed , pbPlainTextP , cbPlainTextP , handleP  ) ; ___( pbSymCypherText ) ;
+    hushEncryptF( tinBaseP , pbSymCypherText , cbSymCypherText , pbHushedSymKey , cbHushedSymKey , pbSeed , sizeof pbSeed , pbPlainTextP , cbPlainTextP , handleP  ) ; ___( pbSymCypherText ) ;
     ZE( countT , cbSymCypherText ) ;
     ZE( byteT* , pbSymCypherText ) ;
 
@@ -41,7 +41,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::hushEncryptF( tinS& tinP , soulC& soulP , byteT* pbPlainTextP , countT cbPlainTextP , handleC& handleP )/*1*/
+/*1*/voidT etherC::hushEncryptF( tinBaseS& tinBaseP , soulC& soulP , byteT* pbPlainTextP , countT cbPlainTextP , handleC& handleP )/*1*/
 
 /**/
 */

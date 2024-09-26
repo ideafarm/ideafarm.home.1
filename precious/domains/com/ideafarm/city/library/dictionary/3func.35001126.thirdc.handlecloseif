@@ -9,7 +9,7 @@
 
 }
     }
-        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / \r\n" ) ;
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / \r\n" ) ;
         handleP.osh = handleP.oshInvalid ;
 
         }
@@ -48,17 +48,17 @@
                 }
                     DECoShANDLES
 
-                    //etherC::etTextIF( tinP ).traceF( tinP , T("~handleCloseIF / called  OpenSSL free context") ) ;
+                    //etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("~handleCloseIF / called  OpenSSL free context") ) ;
                     BOSnOvALUE( WHATgbo , SSL_CTX_free( (SSL_CTX*)handleP.osh ) )     //20211111@1551: OBSERVED TO NEVER RETURN AFTER EXCEPTION CAUGHT WITHIN acceptF CALL TO shakeHandsAsServerF
-                    //etherC::etTextIF( tinP ).traceF( tinP , T("~handleCloseIF / calling OpenSSL free context") ) ;
+                    //etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("~handleCloseIF / calling OpenSSL free context") ) ;
                     _IO_
                 {
                 else
                 }
-                    etherC::etTextIF( tinP ).traceF( tinP , T("~handleCloseIF / suppressing OpenSSL free context call") ) ;
+                    etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("~handleCloseIF / suppressing OpenSSL free context call") ) ;
                     THREADmODE5oFF( flTHREADmODE5_DOnOTfREEsSLcONTEXT )
                 {
-                if( F(tinP.flagsThreadMode5) & flTHREADmODE5_DOnOTfREEsSLcONTEXT )
+                if( F(((tinNormalS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_DOnOTfREEsSLcONTEXT )
 
                 _IO_
             {
@@ -71,7 +71,7 @@
                     }
                         DECoShANDLES
 
-                        PUSE( tinP , *(byteT**)&handleP.osh ) ;
+                        PUSE( tinBaseP , *(byteT**)&handleP.osh ) ;
                         if( !POOP ) { BOSnOvALUE( WHATgbo , DeleteCriticalSection( (CRITICAL_SECTION*)handleP.osh ) ) }
                         __( !handleP.osh ) ;
                         TINSL
@@ -107,8 +107,8 @@
                 break ;
 
                 }
-                    thirdC::openSslTls_wrapperFreeIF( tinP , handleP ) ;
-                    armSslC armMe( tinP , flagsOpenSslFails ) ;
+                    thirdC::openSslTls_wrapperFreeIF( tinBaseP , handleP ) ;
+                    armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
                     ZE( flagsT , flagsOpenSslFails ) ;
                 {
                 if( handleP.cNoteF() )
@@ -120,26 +120,26 @@
                     DECoShANDLES
 
                     }
-                        BLAMMOiD( tinP.brcLath ) ;
-                        //tinP.pc Utility[ 0 ] = tinP.brcLath - WSABASEERR ;
+                        BLAMMOiD( ((tinNormalS&)tinBaseP).brcLath ) ;
+                        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] = ((tinNormalS&)tinBaseP).brcLath - WSABASEERR ;
                     {
                     )
-                        && tinP.brcLath != ERROR_HANDLE_EOF             //20210214@1745: OBSERVED ON factory9 within voidT socketC::acceptF( tinS& tinP , socketC*& pSocketP , countT& idPortP , nicNameC& nicNameP , boolT& bRefuseP )
-                        && tinP.brcLath != WSAENOTSOCK
-                        && tinP.brcLath != WSAENOTCONN
+                        && ((tinNormalS&)tinBaseP).brcLath != ERROR_HANDLE_EOF             //20210214@1745: OBSERVED ON factory9 within voidT socketC::acceptF( tinBaseS& tinBaseP , socketC*& pSocketP , countT& idPortP , nicNameC& nicNameP , boolT& bRefuseP )
+                        && ((tinNormalS&)tinBaseP).brcLath != WSAENOTSOCK
+                        && ((tinNormalS&)tinBaseP).brcLath != WSAENOTCONN
                         && handleP.osh != handleP.oshInvalid
-                           tinP.bosFail
+                           ((tinNormalS&)tinBaseP).bosFail
                     (
                     if
 
                     BOSS( WHATgbo , BOSfAIL , closesocket( handleP.osh ) )
-                    //LOGrAW5( "" , handleP.osh , "    " , tinP.pag1->idAdam , " ----\r\n" ) ;
+                    //LOGrAW5( "" , handleP.osh , "    " , ((tinNormalS&)tinBaseP).pag1->idAdam , " ----\r\n" ) ;
                     
                 #elif defined( __NT__ )
 
                     DECoShANDLES
 
-                    if( 0 > (sCountT)tinP.brcLath ) { BLAMMO ; }
+                    if( 0 > (sCountT)((tinNormalS&)tinBaseP).brcLath ) { BLAMMO ; }
                     BOSdOnOTtEST( WHATgbo , soclose( handleP.osh ) )
 
                 #ifdef __OS2__
@@ -156,16 +156,16 @@
                 
                 //}
                 //    thp = 0 ;
-                //    thp.s_optionLingerF( tinP , handleP , 60 ) ; //20150322@1105: 0->60 TO FIND A BUG
-                //    thirdC thp( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;
+                //    thp.s_optionLingerF( tinBaseP , handleP , 60 ) ; //20150322@1105: 0->60 TO FIND A BUG
+                //    thirdC thp( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;
                 //    //U::O: ELIMINATE CONSTRUCTION OF THIS thp
                 //    TINSL
                 //{
                 //U:: 20200524@2335: WHY NEEDED?  CAN'T DO THIS EARLY OR LATE.  COMMENTED OUT BECAUSE CAUSES PROCESS C++ INIT TO FAIL WHEN HOME IS CLOAKED
 
                 }
-                    thirdC::openSslTls_waveByeIF( tinP , handleP ) ;
-                    armSslC armMe( tinP , flagsOpenSslFails ) ;
+                    thirdC::openSslTls_waveByeIF( tinBaseP , handleP ) ;
+                    armSslC armMe( tinBaseP , flagsOpenSslFails ) ;
                     ZE( flagsT , flagsOpenSslFails ) ;
                 {
                 if( handleP.cNoteF() )
@@ -221,7 +221,7 @@
                 
                     DECoShANDLES
 
-                    if( tinP.bosFail ) { BLAMMO ; }
+                    if( ((tinNormalS&)tinBaseP).bosFail ) { BLAMMO ; }
                     BOS( WHATgbd , BOSoK , DeleteDC( (HDC)handleP.osh ) )
         
                     //U::hDrawP = 0 ;
@@ -232,7 +232,7 @@
                     //U::{
                     //U::if( !hWindow ) //ASSUME: IF hWindow THEN IS A PRIVATE DC; ELSE IS A MEMORY (BITMAP) DC
                     //U::
-                    //U::pswWinFromDraw->freeF( tinP ) ;
+                    //U::pswWinFromDraw->freeF( tinBaseP ) ;
                     //U::countT hWindow = *pswWinFromDraw ;
                     //U::thirdC::lever_swWinFromDraw = handleP.osh ;
                 
@@ -295,7 +295,7 @@
                 #endif
 
                     }
-                        processGlobal4I.heap.delF( tinP , pbd ) ;
+                        processGlobal4I.heap.delF( tinBaseP , pbd ) ;
                         DELzOMBIE( pOsh ) ;
                         byteT* pbd = (byteT*)pOsh ;
                     {
@@ -318,7 +318,7 @@
                     
                     DECoShANDLES
 
-                    //if( tinP.pc Utility[ 0 ] && tinP.pEther ) tinP.pEther->traceF( tinP , T("---- [oshFind]:    ")+TF3(handleP.osh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("---- [oshFind]:    ")+TF3(handleP.osh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
                     
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , FindClose( (HANDLE)handleP.osh ) )
@@ -360,13 +360,13 @@
                 // INTENTIONAL FALLTHROUGH
 
                 //}
-                //    //etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+                //    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
                 //    LOGrAW(   ostoSay ) ;
                 //    OStEXTA(  ostoSay , !POOP ? " - (file mapping) / handleCloseIF / FILEmAPPING\r\n" : " - (file mapping) / handleCloseIF / FILEmAPPING (failed)\r\n" ) ;
                 //    OStEXTC(  ostoSay , save , '0' ) ;
                 //    OStEXT(   ostoSay , TUCK >> 2 ) ;
                 //{
-                //if( tinP.pc Utility[ 0 ] )
+                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , UnmapViewOfFile( (voidT*)handleP.cNote ) )
@@ -384,43 +384,43 @@
 
                         BOSpOOP
                         BOS( WHATgbo , BOSoK , CloseHandle( (HANDLE)handleP.osh ) )
-                        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 0\r\n" ) ;
+                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 0\r\n" ) ;
         
-                        thirdC::dosPriorityIF( tinP , idDesireSave ) ;
+                        thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
                         }
                             }
                                 //}
-                                //    //etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+                                //    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
                                 //    LOGrAW(   ostoSay ) ;
                                 //    OStEXTA(  ostoSay , !POOP ? " - (file mapping) / handleCloseIF / SHAREDmEMORY\r\n" : " - (file mapping) / handleCloseIF / SHAREDmEMORY (failed)\r\n" ) ;
                                 //    OStEXTC(  ostoSay , save , '0' ) ;
                                 //    OStEXT(   ostoSay , TUCK >> 2 ) ;
                                 //{
-                                //if( tinP.pc Utility[ 0 ] )
+                                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
 
-                                //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 1\r\n" ) ;
+                                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 1\r\n" ) ;
                                 BOSpOOP
                                 BOS( WHATgbo , BOSoK , UnmapViewOfFile( (voidT*)handleP.cNote ) )
                                 countT save = handleP.cNote ;
-                                //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 2\r\n" ) ;
+                                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 2\r\n" ) ;
                             {
                             if( !bFoundAlias )
-                            //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 3\r\n" ) ;
+                            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 3\r\n" ) ;
 
                             }
                                 THREADmODE5rESTORE
                                 }
-                                    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 4\r\n" ) ;
+                                    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 4\r\n" ) ;
                                     }
-                                        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 5\r\n" ) ;
+                                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 5\r\n" ) ;
                                         }
-                                            linkedC::nextIF( tinP , hx ) ;
+                                            linkedC::nextIF( tinBaseP , hx ) ;
                                             _IO_
                                         {
             
                                         }
                                             break ;
-                                            //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 6\r\n" ) ;
+                                            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 6\r\n" ) ;
                                             ++ bFoundAlias ;
                                         {
                                         )
@@ -431,51 +431,51 @@
                                         if
             
                                         handleC& he = *(handleC*)( (byteT*)&linked - SIZEOF_baseSoilXxxxC ) ;
-                                        linkedC& linked = linkedC::getLinkIF( tinP , hx ) ;
+                                        linkedC& linked = linkedC::getLinkIF( tinBaseP , hx ) ;
 
 #endif
 
-                                        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 7\r\n" ) ;
+                                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 7\r\n" ) ;
 
                                         }
                                             }
                                                 }
-                                                    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 8\r\n" ) ;
-                                                    thirdC::dosSleepIF( tinP , TICK , TOCK ) ;
-                                                    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 9\r\n" ) ;
+                                                    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 8\r\n" ) ;
+                                                    thirdC::dosSleepIF( tinBaseP , TICK , TOCK ) ;
+                                                    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / 9\r\n" ) ;
                                                 {
                                                 while( !etPrime )
                                                 etherC& etPrime = etherC::etPrimeIF() ;
                                                 LOGrAW( "calling dosSleepIF because hopefully i've logged enough loop handle values" ) ; // THIS RATHER THAN BLAMMO SO MINUTE REPORTS CAN REVEAL WHO CALLED ME
-                                                //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / a\r\n" ) ;
+                                                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / a\r\n" ) ;
 
                                                 }
-                                                    linkedC::nextIF( tinP , hx2 ) ;
-                                                    LOGrAWd( "[idThread,INtALLY,hx2,idLineCt,idiFileCt]:    " , tinP.monitor.idThread , "    " , INtALLY , "    " , hx2.osF( ifcIDtYPEhANDLE_LINKED ) , "    " , linked.idLineCtF() , "    " , linked.idiFileCtF() , "    " , linked.idThreadCtF() , "\r\n" ) ;
-                                                    linkedC& linked = linkedC::getLinkIF( tinP , hx2 ) ;
+                                                    linkedC::nextIF( tinBaseP , hx2 ) ;
+                                                    LOGrAWd( "[idThread,INtALLY,hx2,idLineCt,idiFileCt]:    " , ((tinNormalS&)tinBaseP).monitor.idThread , "    " , INtALLY , "    " , hx2.osF( ifcIDtYPEhANDLE_LINKED ) , "    " , linked.idLineCtF() , "    " , linked.idiFileCtF() , "    " , linked.idThreadCtF() , "\r\n" ) ;
+                                                    linkedC& linked = linkedC::getLinkIF( tinBaseP , hx2 ) ;
 
                                                     _IO_
                                                 {
                                                 while( cDo -- && ~hx2 )
                                                 countT cDo = TUCK ;
-                                                //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / b\r\n" ) ;
+                                                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / b\r\n" ) ;
                                             
-                                                root.openKidF( tinP , hx2 ) ;
+                                                root.openKidF( tinBaseP , hx2 ) ;
                                                 linkedC& root = processGlobal4I._handleC_linked_sm ;
-                                                handleC hx2( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LINKED ) ;
+                                                handleC hx2( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LINKED ) ;
 
                                                 LOGrAW( "walking from the root to document the state of the list (hopefully i've logged enough loop handle values)" ) ;
-                                                //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / c\r\n" ) ;
+                                                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / c\r\n" ) ;
                                             {
                                             if( ++ cLogged > TOCK )
 
-                                            LOGrAW7( "[idThread,INtALLY,hx]:    " , tinP.monitor.idThread , "    " , INtALLY , "    " , hx.osF( ifcIDtYPEhANDLE_LINKED ) , "\r\n" ) ;
+                                            LOGrAW7( "[idThread,INtALLY,hx]:    " , ((tinNormalS&)tinBaseP).monitor.idThread , "    " , INtALLY , "    " , hx.osF( ifcIDtYPEhANDLE_LINKED ) , "\r\n" ) ;
 
                                             static countT cLogged ;
                                         {
                                         if( INtALLY > TUCK ) //20161219@0929: LIST REPEATS WITH GROUPS OF 8
                                         //U:: TO FIND A BUG
-                                        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / d\r\n" ) ;
+                                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / d\r\n" ) ;
 
 #if defined( NEVERdEFINED )
 
@@ -483,11 +483,11 @@
                                     {
                                     while( ~hx )
                                 
-                                    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / e\r\n" ) ;
-                                    root.openKidF( tinP , hx ) ;
+                                    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / e\r\n" ) ;
+                                    root.openKidF( tinBaseP , hx ) ;
                                     linkedC& root = processGlobal4I._handleC_linked_sm ;
-                                    handleC hx( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LINKED ) ;
-                                    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / f\r\n" ) ;
+                                    handleC hx( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LINKED ) ;
+                                    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / f\r\n" ) ;
 
 
                                     _IO_
@@ -499,12 +499,12 @@
                             TINSL
                         {
                         if( handleP.cNote ) //WILL BE 0 IF WAS NOT ABLE TO MAP A VIEW
-                        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / g\r\n" ) ;
+                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / g\r\n" ) ;
 
-                        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / h\r\n" ) ;
+                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / h\r\n" ) ;
         
                         }
-                            if( F(processGlobal2I.flCt) & flCTdTg_tinMainInPool && !( F(processGlobal2I.flDt) & flCTdTg_tinMainInPool ) ) processGlobal4I.grabMemorySpace.ungrabF( tinP ) ;
+                            if( F(processGlobal2I.flCt) & flCTdTg_tinMainInPool && !( F(processGlobal2I.flDt) & flCTdTg_tinMainInPool ) ) processGlobal4I.grabMemorySpace.ungrabF( tinBaseP ) ;
                             }
                                 }
                                     break ;
@@ -515,11 +515,11 @@
                                 if( processGlobal2I._thirdC_pSharedMemInfo[ offr ].osh == handleP.osh )
                             {
                             for( countT offr = 0 ; offr < CsHAREDmEMiNFO ; offr ++ )
-                            if( F(processGlobal2I.flCt) & flCTdTg_tinMainInPool && !( F(processGlobal2I.flDt) & flCTdTg_tinMainInPool ) ) processGlobal4I.grabMemorySpace.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                            if( F(processGlobal2I.flCt) & flCTdTg_tinMainInPool && !( F(processGlobal2I.flDt) & flCTdTg_tinMainInPool ) ) processGlobal4I.grabMemorySpace.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
-                        thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
-                        const countT idDesireSave = thirdC::dosPriorityIF( tinP ) ;
-                        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / i\r\n" ) ;
+                        thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
+                        const countT idDesireSave = thirdC::dosPriorityIF( tinBaseP ) ;
+                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / i\r\n" ) ;
                     {
                     //if( !( F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_SIGNAL_TO_CRY ) )
     
@@ -569,14 +569,14 @@
 
                     }
                         }
-                            tinP.pag1->_thirdC_.pSwFileOpen->ungrabF( tinP ) ;
-                            tinP.pag1->_thirdC_.pSwFileOpen->freeF( tinP ) ;
-                            pInfo = (fileOpenS*)(countT)*tinP.pag1->_thirdC_.pSwFileOpen ;
-                            tinP.pag1->_thirdC_.cLever_pSwFileOpen = handleP.osh ;
-                            tinP.pag1->_thirdC_.pSwFileOpen->grabF( tinP , TAG( TAGiDnULL ) ) ;
-                            puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+                            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen->ungrabF( tinBaseP ) ;
+                            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen->freeF( tinBaseP ) ;
+                            pInfo = (fileOpenS*)(countT)*((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen ;
+                            ((tinNormalS&)tinBaseP).pag1->_thirdC_.cLever_pSwFileOpen = handleP.osh ;
+                            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
                         {
-                        if( tinP.pag1->_thirdC_.pSwFileOpen ) //DEREGISTRATION MUST OCCUR BEFORE HANDLE CLOSURE BECAUSE THE OS MIGHT IMMEDIATELY REUSE THAT HANDLE, RESULTING IN AN ATTEMPT TO REGISTER IT (WHICH WOULD FAIL IF IT WINS THE RACE)
+                        if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen ) //DEREGISTRATION MUST OCCUR BEFORE HANDLE CLOSURE BECAUSE THE OS MIGHT IMMEDIATELY REUSE THAT HANDLE, RESULTING IN AN ATTEMPT TO REGISTER IT (WHICH WOULD FAIL IF IT WINS THE RACE)
                     {
                     if( F(handleP.cNote) & flFILEhANDLEnOTE_OPENrEGISTERED )
                     ZE( fileOpenS* , pInfo ) ;
@@ -607,47 +607,47 @@
                 break ;
 
                 //}
-                //    etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                //    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
                 //
                 //    OStEXTC(  ostoSay , idNameDebug , 0 ) ;
                 //    OStEXTAK( ostoSay , "openF / COULD NOT UNGRAB (NOT REGISTERED) [idName]: " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //else if( tinP.pc Utility[ 0 ] && tinP.pag1->idAdam == ifcIDaDAM_ 2GLASS2 )
+                //else if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ 2GLASS2 )
                 }
                     //}
                     //    CONoUTrAW( ostoSay ) ;
-                    //    //PUSE( tinP , postName ) ;
+                    //    //PUSE( tinBaseP , postName ) ;
                     //    //OStEXTA(  ostoSay , postName ) ;
                     //    OStEXTC(  ostoSay , pListing->nameF() , 0 ) ;
                     //    OStEXTAK( ostoSay , " | ----- " ) ;
-                    //    OStEXTC(  ostoSay , tinP.monitor.idThread , 0 ) ;
+                    //    OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).monitor.idThread , 0 ) ;
                     //    OStEXTAK( ostoSay , "\r\n" ) ;
                     //    OStEXT(   ostoSay , TUCK << 1 ) ;
                     //
-                    //    //getListNameGF( tinP , postName , pListing->nameF() ) ; ___( postName ) ;
+                    //    //getListNameGF( tinBaseP , postName , pListing->nameF() ) ; ___( postName ) ;
                     //    //ZE( osTextT* , postName ) ;
                     //{
                     //if( pListing->flagsF() & fliLISTINGc_MIXINlIST )
 
                     //}
-                    //    etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                    //    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
                     //
                     //    OStEXTC(  ostoSay , idNameDebug , 0 ) ;
                     //    OStEXTAK( ostoSay , "openF / ungrabbed  [idName]: " ) ;
                     //    OStEXT(   ostoSay , TUCK << 2 ) ;
                     //{
-                    //if( tinP.pc Utility[ 0 ] && tinP.pag1->idAdam == ifcIDaDAM_ 2GLASS2 )
+                    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ 2GLASS2 )
 
 
-                    //etherC::etRockIF( tinP ).traceF( tinP , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
                     OStEXTAK( ostoSay , " --   ungrabbed" ) ;
                     //U:: TO FIND A BUG
 
-                    grabitx.ungrabF( tinP ) ; //FOR APPLICATION CODING CONVENIENCE; AS OF THIS WRITING THERE IS NO WAY TO EXPLICITLY UNGRAB A LIST THAT HAS BEEN OPENED AND KEPT OPEN EXCEPT TO MAKE SURE THAT THE LATH LIST WALK DOES NOT SPECIFY THE "DO NOT UNGRAB LIST" FLAG
+                    grabitx.ungrabF( tinBaseP ) ; //FOR APPLICATION CODING CONVENIENCE; AS OF THIS WRITING THERE IS NO WAY TO EXPLICITLY UNGRAB A LIST THAT HAS BEEN OPENED AND KEPT OPEN EXCEPT TO MAKE SURE THAT THE LATH LIST WALK DOES NOT SPECIFY THE "DO NOT UNGRAB LIST" FLAG
 
 
-                    //etherC::etRockIF( tinP ).traceF( tinP , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
                     //THESE HAVE TRIGGERED DEADLOCK WHEN CAUSES A NEW bookC INSTANCE TO BE CT'D; ENABLE WHEN traceF IS ENHANCED TO AVOID CREATING bookC INSTANCES
                     OStEXTAK( ostoSay , " : --   ungrabbing" ) ;
                     OStEXTCF( ostoSay , (countT)&pListing->flagsRefF() , '0' ) ;
@@ -657,18 +657,18 @@
 
                     _IO_
                 {
-                if( grabitx.isRegisteredF( tinP ) )
+                if( grabitx.isRegisteredF( tinBaseP ) )
 
                 //}
-                //    etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                //    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
                 //
                 //    OStEXTC(  ostoSay , idNameDebug , 0 ) ;
                 //    OStEXTAK( ostoSay , "openF / ungrabbing [idName]: " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( tinP.pc Utility[ 0 ] && tinP.pag1->idAdam == ifcIDaDAM_ 2GLASS2 )
+                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ 2GLASS2 )
 
-                grabitC grabitx( tinP , TAG( TAGiDnULL ) , pListing->flagsRefF() , ifcIDgRABITbIT_00 + offLISTINGgRABBEDbIT , *(grabitC*)0 , 0 , 0 , 0 , flagsx ) ;
+                grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) , pListing->flagsRefF() , ifcIDgRABITbIT_00 + offLISTINGgRABBEDbIT , *(grabitC*)0 , 0 , 0 , 0 , flagsx ) ;
 
                 }
                     flagsx |= flGRABITc_RECURSEuSINGtINs ;
@@ -693,13 +693,13 @@
 
                 listingC* pListing = (listingC*)handleP.osh ;
 
-                //__( thirdC::dosPriorityIF( tinP ) - ifcTHREADpRIORITY_SPINLOCK ) ;
+                //__( thirdC::dosPriorityIF( tinBaseP ) - ifcTHREADpRIORITY_SPINLOCK ) ;
                 _IO_
             {
             case ifcIDtYPEhANDLE_LISTING :
             }
                 break ;
-                ((linkedC*)handleP.osh)->ungrabF( tinP ) ;
+                ((linkedC*)handleP.osh)->ungrabF( tinBaseP ) ;
                 _IO_
             {
             case ifcIDtYPEhANDLE_LINKED :
@@ -709,7 +709,7 @@
             case ifcIDtYPEhANDLE_BOOKS :
             }
                 break ;
-                sadamsC::pSadamsIF( tinP )->unlockF( tinP , handleP ) ;
+                sadamsC::pSadamsIF( tinBaseP )->unlockF( tinBaseP , handleP ) ;
                 _IO_
             {
             case ifcIDtYPEhANDLE_sadamsC :
@@ -718,9 +718,9 @@
 
         _IO_
 
-        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / j\r\n" ) ;
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "thirdC::handleCloseIF / j\r\n" ) ;
 
-        TINSL //U::CONJ: THIS WILL FAIL VERY EARLY; IF NOT THEN LET'S JUST ADD tinP TO THE PARAMETERS
+        TINSL //U::CONJ: THIS WILL FAIL VERY EARLY; IF NOT THEN LET'S JUST ADD tinBaseP TO THE PARAMETERS
     {
     if( ~handleP.osh != handleP.oshInvalid )
 {

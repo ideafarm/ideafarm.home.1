@@ -9,13 +9,13 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.traceF( tinP , T("got this:    ")+T(posti) ) ;
+    etThread.traceF( tinBaseP , T("got this:    ")+T(posti) ) ;
 
-    etThread.fileReadF( tinP , posti , costi , home.hUtility1 , 1 ) ;
+    etThread.fileReadF( tinBaseP , posti , costi , home.hUtility1 , 1 ) ;
 
     countT costi = sizeof posti ;
 
@@ -23,15 +23,15 @@ etThread.traceF( tinP , T("ok") ) ;
 {
 else
 }
-    etThread.ifcHireF( tinP , T("ifcIDaDAM_SCRATCH0f") , ifcIDaDAM_SCRATCH0f , T("!kid") , flHIRE_DISPLAYaUTO ) ;
+    etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_SCRATCH0f") , ifcIDaDAM_SCRATCH0f , T("!kid") , flHIRE_DISPLAYaUTO ) ;
 
     home.hUtility1 = fileShare ;
 
-    fileC fileShare( tinP , psttLong , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCrANDOM , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+    fileC fileShare( tinBaseP , psttLong , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCrANDOM , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
 
     }
-        etThread.fileWriteF( tinP , fileShare , "abcdefgh" ) ;
-        fileC fileShare( tinP , psttLong , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCrANDOM , ifcOPENhOW_nCeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+        etThread.fileWriteF( tinBaseP , fileShare , "abcdefgh" ) ;
+        fileC fileShare( tinBaseP , psttLong , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCrANDOM , ifcOPENhOW_nCeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
     {
 
     const strokeS* const psttLong = tLong ;
@@ -43,13 +43,13 @@ homeS& home = homeS::homeIF() ;
 
 }
     }
-        if( !etThread.strCompareF( tinP , psttc1 , tArgKeyKid ) )   bKid  = 1 ;
-        etThread.traceF( tinP , T("param: ")+T(psttc1) ) ;
+        if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyKid ) )   bKid  = 1 ;
+        etThread.traceF( tinBaseP , T("param: ")+T(psttc1) ) ;
         _IO_
     {
     FORsTRINGSiN1( pstt1Param )
     TN( tArgKeyKid , "!kid" ) ;
-    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinP ) ;
+    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
 {
 ZE( boolT , bKid ) ;
 

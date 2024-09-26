@@ -8,19 +8,19 @@
 
 
 }
-    tinP.pag1->_etherC_.nicNamePaper = tinP.pag1->_etherC_.idPortFace = 0 ;
+    ((tinNormalS&)tinBaseP).pag1->_etherC_.nicNamePaper = ((tinNormalS&)tinBaseP).pag1->_etherC_.idPortFace = 0 ;
 
     }
         __( idAck - ifcREPLY_ACK ) ;
-        sock.readF( tinP , (byteT*)&idAck , sizeof idAck ) ;
+        sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ;
         ZE( countT , idAck ) ;
 
-        sock.writeF( tinP , (byteT*)&c2o , sizeof c2o ) ;
-        sock.connectF( tinP , ifcPORToLD1pORTaUTHORITY ) ;
-        socketC sock( tinP , *this , TAG( TAGiDnULL ) ) ;
+        sock.writeF( tinBaseP , (byteT*)&c2o , sizeof c2o ) ;
+        sock.connectF( tinBaseP , ifcPORToLD1pORTaUTHORITY ) ;
+        socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
     {
 
-    c2o.c2 = tinP.pag1->_etherC_.idProcessOld ;
+    c2o.c2 = ((tinNormalS&)tinBaseP).pag1->_etherC_.idProcessOld ;
     c2o.c1 = ifcCMDpORTaUTHORITY_DELETE ;
     count2S c2o ;
 
@@ -28,16 +28,16 @@
 
     }
         if( POOP ) return ;
-        __( !tinP.pag1->_etherC_.idProcessOld ) ;
+        __( !((tinNormalS&)tinBaseP).pag1->_etherC_.idProcessOld ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcPortDelF( tinS& tinP )/*1*/
+/*1*/voidT etherC::ifcPortDelF( tinBaseS& tinBaseP )/*1*/
 /**/
 */
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.1030123.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$ifcPortDelF.0.html\"\>instances\</A\>

@@ -19,7 +19,7 @@
                     BOS( WHATgbo , BOSoK , FindNextChangeNotification( (HANDLE)handleP.osF( ifcIDtYPEhANDLE_FILEwAIT ) ) )
                     bChanged = 1 ;
                 {
-                if( tinP.brcRaw == WAIT_OBJECT_0 )
+                if( ((tinNormalS&)tinBaseP).brcRaw == WAIT_OBJECT_0 )
 
                 BOSpOOP
                 BOS( WHATsfr , BOSwAITcODE , WaitForSingleObject( (HANDLE)handleP.osF( ifcIDtYPEhANDLE_FILEwAIT ) , 250 ) ) //MS
@@ -32,11 +32,11 @@
                 else
                 }
                     __1
-                    __( tinP.brcLath ) ;
-                    if( pEtherContainsMe ) pEtherContainsMe->traceF( tinP , T("dosWaitDirF / error [brcLath,postDirP]:    ")+TF2(tinP.brcLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postDirP) ) ;
+                    __( ((tinNormalS&)tinBaseP).brcLath ) ;
+                    if( pEtherContainsMe ) pEtherContainsMe->traceF( tinBaseP , T("dosWaitDirF / error [brcLath,postDirP]:    ")+TF2(((tinNormalS&)tinBaseP).brcLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postDirP) ) ;
                 {
                 if( !handleP )
-                handleP.osF( ifcIDtYPEhANDLE_FILEwAIT , tinP.brcRaw ) ;
+                handleP.osF( ifcIDtYPEhANDLE_FILEwAIT , ((tinNormalS&)tinBaseP).brcRaw ) ;
                 BOS( WHATgbo , BOShANDLE , FindFirstChangeNotification( postDirP , bRecurse , osFlags ) )
 
                 }
@@ -81,7 +81,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/boolT thirdC::dosWaitDirF( tinS& tinP , handleC& handleP , const boolT& bQuitP , const osTextT* const postDirP , const flagsT flagsP )/*1*/
+/*1*/boolT thirdC::dosWaitDirF( tinBaseS& tinBaseP , handleC& handleP , const boolT& bQuitP , const osTextT* const postDirP , const flagsT flagsP )/*1*/
 
 /**/
 
@@ -94,7 +94,7 @@
  bQuitP
   must be null on woth call
  handleP
- tinP
+ tinBaseP
 arguments
   caller calls me again, which blocks
   caller sees that my return code is 0 but inspects the directory anyway, so caller sees file "A"

@@ -9,18 +9,18 @@
 
 }
     DEL( pBaton ) ;
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
-    third.delF( tinP , pbnu ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
+    third.delF( tinBaseP , pbnu ) ;
     //OUT
-    freeAllF( tinP ) ;
+    freeAllF( tinBaseP ) ;
     //IN_E
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(stackk.flagsF(tinP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     stackk.bDying ++ ;
     bDying ++ ;
 
-    unlockIfF( tinP ) ;
+    unlockIfF( tinBaseP ) ;
 
     SCOOP
     TINSL

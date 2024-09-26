@@ -10,8 +10,8 @@
 }
     return idLath ;
 
-    fileWriteF(  tinP , fi , (byteT*)&idLath , sizeof idLath ) ;
-    fileSetPtrF( tinP , fi , flSETfILEpTR_BEGINNING , c2z ) ;
+    fileWriteF(  tinBaseP , fi , (byteT*)&idLath , sizeof idLath ) ;
+    fileSetPtrF( tinBaseP , fi , flSETfILEpTR_BEGINNING , c2z ) ;
     count2S c2z ;
 
     if( !idLath ) { BLAMMO ; }
@@ -22,14 +22,14 @@
     if( cbIn != sizeof idLath ) idLath = 0 ;        //THIS SHOULD BE IMPOSSIBLE
 
     }
-        fileReadF( tinP , (byteT*)&idLath , cbIn , fi , 0 ) ;
+        fileReadF( tinBaseP , (byteT*)&idLath , cbIn , fi , 0 ) ;
         cbIn = sizeof idLath ;
     {
-    if( fi.idOpenResultF( tinP ) == ifcOPENrESULT_EXISTED )
+    if( fi.idOpenResultF( tinBaseP ) == ifcOPENrESULT_EXISTED )
     ZE( countT   , cbIn   ) ;
     ZE( count04T , idLath ) ;
 
-    fileC fi( tinP , psttFileP , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+    fileC fi( tinBaseP , psttFileP , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
 
     _IO_
 
@@ -41,7 +41,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/count04T etherC::etherDispenseSerialNumberF( tinS& tinP , const strokeS* const psttFileP )/*1*/
+/*1*/count04T etherC::etherDispenseSerialNumberF( tinBaseS& tinBaseP , const strokeS* const psttFileP )/*1*/
 
 /**/
 */

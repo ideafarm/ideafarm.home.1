@@ -12,14 +12,14 @@ REST
 }
     timeL2 = timeN2 ;
     timeL1 = timeN1 ;
-    etThread.delF( tinP , pbi ) ;
+    etThread.delF( tinBaseP , pbi ) ;
     }
-        etThread.winSetTitleF( tinP , TT4(sum1,sum2,4,5)+T("    ")+TT4(amb1,amb2,4,5)+T("    ")+TF1(offDay)+T("'da  ")+TF1(offStrong)+T("'str  ")+TF1(offQuarter)+T("'qu  ")+TF1(offDuck)+T("'du   ")+T("... the time is now ")+TT4(timeN1,timeN2,4,7) ) ;
-        etThread.osTimeSubtractF( tinP , amb1 , amb2 , timeB1 , timeB2 ) ;
+        etThread.winSetTitleF( tinBaseP , TT4(sum1,sum2,4,5)+T("    ")+TT4(amb1,amb2,4,5)+T("    ")+TF1(offDay)+T("'da  ")+TF1(offStrong)+T("'str  ")+TF1(offQuarter)+T("'qu  ")+TF1(offDuck)+T("'du   ")+T("... the time is now ")+TT4(timeN1,timeN2,4,7) ) ;
+        etThread.osTimeSubtractF( tinBaseP , amb1 , amb2 , timeB1 , timeB2 ) ;
         sCountT amb2 = sum2 ;
         countT  amb1 = sum1 ;
 
-        while( cTries -- ) etThread.osTimeAddF( tinP , timeB1 , timeB2 , 0x60 * TICK , 0 ) ; // 6 HOURS PER CORE WORK DAY (FULL TIME IS 6)
+        while( cTries -- ) etThread.osTimeAddF( tinBaseP , timeB1 , timeB2 , 0x60 * TICK , 0 ) ; // 6 HOURS PER CORE WORK DAY (FULL TIME IS 6)
         countT cTries = offDay > 5 ? 0 : 1 + offDay ;
         ZE( sCountT , timeB2 ) ;
         ZE( countT , timeB1 ) ;
@@ -30,8 +30,8 @@ REST
         {
         if( !etThread )
 
-        etThread.boxPutF( tinP , tFileName , pbi , cbi ) ;
-        etThread.osTimeAddF( tinP , sum1 , sum2 , timeNew1 , timeNew2 ) ;
+        etThread.boxPutF( tinBaseP , tFileName , pbi , cbi ) ;
+        etThread.osTimeAddF( tinBaseP , sum1 , sum2 , timeNew1 , timeNew2 ) ;
 
         sCountT& sum2 = ((sCountT*)pbi)[ 1 ] ;
         countT&  sum1 =  ((countT*)pbi)[ 0 ] ;
@@ -40,14 +40,14 @@ REST
 
     }
         }
-            etThread.memSetF( tinP , pbi , cbi ) ;
-            etThread.newF( tinP , LF , pbi , cbi ) ; ___( pbi ) ;
+            etThread.memSetF( tinBaseP , pbi , cbi ) ;
+            etThread.newF( tinBaseP , LF , pbi , cbi ) ; ___( pbi ) ;
             cbi = 2 * sizeof( countT ) ;
-            etThread.delF( tinP , pbi ) ;
+            etThread.delF( tinBaseP , pbi ) ;
             POOPR
         {
         if( POOP )
-        tinP.pEtScratch->boxGetShadowF( tinP , pbi , cbi , tFileName , 1 ) ; ___( pbi ) ;
+        ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbi , cbi , tFileName , 1 ) ; ___( pbi ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -68,22 +68,22 @@ REST
     {
     TN( tFileName , "" ) ;
 
-    etThread.osTimeSubtractF( tinP , timeNew1 , timeNew2 , timeL1 , timeL2 ) ;
+    etThread.osTimeSubtractF( tinBaseP , timeNew1 , timeNew2 , timeL1 , timeL2 ) ;
     sCountT timeNew2 = timeN2 ;
     countT timeNew1  = timeN1 ;
 
     countT timeN2a = timeN2 + 2 ; //"a" IS FOR "ADJUSTED"; VE'DA, TA'DA ARE TREATED AS PART OF NEXT STRONG
-    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK * 0x4 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x4 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 {
 while( !ether && !etThread )
-etThread.osTimeNowF( tinP , timeL1 , timeL2 ) ;
+etThread.osTimeNowF( tinBaseP , timeL1 , timeL2 ) ;
 ZE( sCountT , timeL2 ) ;
 ZE( countT , timeL1 ) ;
 

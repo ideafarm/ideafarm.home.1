@@ -11,44 +11,44 @@
     DEL( prPostsEmail ) ;
     }
         }
-            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DOc ) ;
-            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DOb ) ;
-            meP.pushSnipF( tinP , stBodyP , *prPostsEmail ) ;
-            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DOa ) ;
+            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DOc ) ;
+            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DOb ) ;
+            meP.pushSnipF( tinBaseP , stBodyP , *prPostsEmail ) ;
+            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DOa ) ;
         {
         if( F(flagsPrivilege) & flSESSIONpRIVILEGE_FULLhEADER ) //A:ASSUME: WILL HAVE THIS PRIVILEGE IFF HAVE MADE A DEPOSIT
 
-        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DO9 ) ;
+        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DO9 ) ;
 
-        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DO8 ) ;
+        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DO8 ) ;
 
-        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DO5 ) ;
-        meP.pushSnipF( tinP , stBodyP , *prPostsEmail ) ;
-        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DO4 ) ;
+        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DO5 ) ;
+        meP.pushSnipF( tinBaseP , stBodyP , *prPostsEmail ) ;
+        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DO4 ) ;
 
-        //meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DO3 ) ;
-        //meP.pushSnipF( tinP , stBodyP , TF4(idAccCommission , flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36) ) ;
-        //meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DO2 ) ;
-        //meP.pushSnipF( tinP , stBodyP , TF4(idAcc,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36) ) ;
-        //meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_DO1 ) ;
+        //meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DO3 ) ;
+        //meP.pushSnipF( tinBaseP , stBodyP , TF4(idAccCommission , flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36) ) ;
+        //meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DO2 ) ;
+        //meP.pushSnipF( tinBaseP , stBodyP , TF4(idAcc,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36) ) ;
+        //meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_DO1 ) ;
         //PAYPAL LINK (FOR BECOMING AN ASSOCIATE?)
     {
     if( prPostsEmail )
 
     }
-        etThread.delF( tinP , psttEmail ) ;
-        if( psttEmail ) { etThread.strMakeF( tinP , LF , prPostsEmail , psttEmail , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostsEmail ) ; }
-        session.getEmailF( tinP , psttEmail ) ; ___( psttEmail ) ;
+        etThread.delF( tinBaseP , psttEmail ) ;
+        if( psttEmail ) { etThread.strMakeF( tinBaseP , LF , prPostsEmail , psttEmail , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostsEmail ) ; }
+        session.getEmailF( tinBaseP , psttEmail ) ; ___( psttEmail ) ;
         ZE( strokeS* , psttEmail ) ;
     {
     if( idAcc )
     ZE( pbRefC* , prPostsEmail ) ;
-    countT          idAccCommission = session.getIdAccountCommissionF( tinP ) ;
-    countT          idAcc           = session.getIdAccountF( tinP ) ;
-    flagsT          flagsPrivilege  = session.privilegesF( tinP ) ;
-    sessionC&       session         = sessionsP( tinP , nnPeerP ) ;
+    countT          idAccCommission = session.getIdAccountCommissionF( tinBaseP ) ;
+    countT          idAcc           = session.getIdAccountF( tinBaseP ) ;
+    flagsT          flagsPrivilege  = session.privilegesF( tinBaseP ) ;
+    sessionC&       session         = sessionsP( tinBaseP , nnPeerP ) ;
 {
-/*1*/voidT doCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT doCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

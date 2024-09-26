@@ -12,10 +12,10 @@
         __( pbc - pbP < cbs ) ;
         __( pbc - pbP > cbs ) ;
 
-        if( cbBlob ) ether.memCopyF( tinP , (byteT*)pbc , pbBlob , cbBlob ) ; pbc += cbBlob ;
+        if( cbBlob ) ether.memCopyF( tinBaseP , (byteT*)pbc , pbBlob , cbBlob ) ; pbc += cbBlob ;
 
         }
-            ether.memCopyF( tinP , (byteT*)pbc , (byteT*)psttName , cbn ) ; pbc += cbn ;
+            ether.memCopyF( tinBaseP , (byteT*)pbc , (byteT*)psttName , cbn ) ; pbc += cbn ;
             countT cbn = sizeof( strokeS ) * ( CSpREFIX + psttName->idAdam ) ;
         {
         if( psttName )
@@ -30,7 +30,7 @@
     {
     if( pbP )
 
-    ether.newF( tinP , LF , pbP , cbs ) ; ___( pbP ) ;
+    ether.newF( tinBaseP , LF , pbP , cbs ) ; ___( pbP ) ;
     countT cbs = sizeof( countT ) * 4 + sizeof( boolT ) + processGlobal2I.cb_nicNameC_ + ( psttName ? sizeof( strokeS ) * ( CSpREFIX + psttName->idAdam ) : 0 ) + cbBlob ;
 
     }
@@ -40,12 +40,12 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT recDirC::soulF( tinS& tinP , byteT*& pbP )/*1*/
+/*1*/voidT recDirC::soulF( tinBaseS& tinBaseP , byteT*& pbP )/*1*/
 /**/
 */
   must be 0
  pbP
- tinP
+ tinBaseP
 arguments
 creates a length prefixed string of bytes that can be used to construct an identical recDirC object
 \<A HREF=\"5.1470005.1.0.html\"\>definition\</A\>

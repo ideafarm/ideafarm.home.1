@@ -8,17 +8,17 @@
 
 
 }
-    {for( countT off = 0 ; off < sizeof ppsttDayOfWeek / sizeof ppsttDayOfWeek[ 0 ] ; off ++ ) delF( tinP , ppsttDayOfWeek[ off ] ) ;}
-    {for( countT off = 0 ; off < sizeof ppsttMonth     / sizeof ppsttMonth[     0 ] ; off ++ ) delF( tinP , ppsttMonth[     off ] ) ;}
-    {for( countT off = 0 ; off < sizeof ppsttQOD       / sizeof ppsttQOD[       0 ] ; off ++ ) delF( tinP , ppsttQOD[       off ] ) ;}
-    {for( countT off = 0 ; off < sizeof ppsttDOS       / sizeof ppsttDOS[       0 ] ; off ++ ) delF( tinP , ppsttDOS[       off ] ) ;}
-    {for( countT off = 0 ; off < sizeof ppsttSOQ1       / sizeof ppsttSOQ1[       0 ] ; off ++ ) delF( tinP , ppsttSOQ1[       off ] ) ;}
-    {for( countT off = 0 ; off < sizeof ppsttSOQ2       / sizeof ppsttSOQ2[       0 ] ; off ++ ) delF( tinP , ppsttSOQ2[       off ] ) ;}
+    {for( countT off = 0 ; off < sizeof ppsttDayOfWeek / sizeof ppsttDayOfWeek[ 0 ] ; off ++ ) delF( tinBaseP , ppsttDayOfWeek[ off ] ) ;}
+    {for( countT off = 0 ; off < sizeof ppsttMonth     / sizeof ppsttMonth[     0 ] ; off ++ ) delF( tinBaseP , ppsttMonth[     off ] ) ;}
+    {for( countT off = 0 ; off < sizeof ppsttQOD       / sizeof ppsttQOD[       0 ] ; off ++ ) delF( tinBaseP , ppsttQOD[       off ] ) ;}
+    {for( countT off = 0 ; off < sizeof ppsttDOS       / sizeof ppsttDOS[       0 ] ; off ++ ) delF( tinBaseP , ppsttDOS[       off ] ) ;}
+    {for( countT off = 0 ; off < sizeof ppsttSOQ1       / sizeof ppsttSOQ1[       0 ] ; off ++ ) delF( tinBaseP , ppsttSOQ1[       off ] ) ;}
+    {for( countT off = 0 ; off < sizeof ppsttSOQ2       / sizeof ppsttSOQ2[       0 ] ; off ++ ) delF( tinBaseP , ppsttSOQ2[       off ] ) ;}
 
     }
-        //FORCE APPLICATION CODE TO DO THIS IF IT WANTS IT: strFuseF( tinP , psttP , tcr ) ; ___( psttP ) ;
+        //FORCE APPLICATION CODE TO DO THIS IF IT WANTS IT: strFuseF( tinBaseP , psttP , tcr ) ; ___( psttP ) ;
         }
-            strFuseF( tinP , psttP , TP("",cPadL)+T(ppsttDOS[off])+TP("",cPadR) ) ; ___( psttP ) ;
+            strFuseF( tinBaseP , psttP , TP("",cPadL)+T(ppsttDOS[off])+TP("",cPadR) ) ; ___( psttP ) ;
         {
         for( countT off = 0 ; off < sizeof ppsttDOS / sizeof ppsttDOS[ 0 ] ; off ++ )
 
@@ -29,27 +29,27 @@
 
     }
         }
-            else                                  { strFuseF( tinP , psttP , tcrPlus ) ; ___( psttP ) ; }                                   // SCAN LINE 2 (DIVIDER)
-            else if( oScan % cRowP              ) { strFuseF( tinP , psttP , T("| ")+T(ppsttSOQ2[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE 1 (FOREIGN DATE)
-                 if( oScan % cRowP == cRowP / 2 ) { strFuseF( tinP , psttP , T("| ")+T(ppsttSOQ1[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE  (DAY)
+            else                                  { strFuseF( tinBaseP , psttP , tcrPlus ) ; ___( psttP ) ; }                                   // SCAN LINE 2 (DIVIDER)
+            else if( oScan % cRowP              ) { strFuseF( tinBaseP , psttP , T("| ")+T(ppsttSOQ2[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE 1 (FOREIGN DATE)
+                 if( oScan % cRowP == cRowP / 2 ) { strFuseF( tinBaseP , psttP , T("| ")+T(ppsttSOQ1[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE  (DAY)
         {
         else                                                                                                                            // ELSE
         }
-            else                                  { strFuseF( tinP , psttP , tcrAt  ) ; ___( psttP ) ; }                                    // SCAN LINE 2 (DIVIDER)
-            else if( oScan % cRowP              ) { strFuseF( tinP , psttP , T("| ")+T(ppsttSOQ2[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE 1 (FOREIGN DATE)
-                 if( oScan % cRowP == cRowP / 2 ) { strFuseF( tinP , psttP , T("| ")+T(ppsttSOQ1[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE  (DAY)
+            else                                  { strFuseF( tinBaseP , psttP , tcrAt  ) ; ___( psttP ) ; }                                    // SCAN LINE 2 (DIVIDER)
+            else if( oScan % cRowP              ) { strFuseF( tinBaseP , psttP , T("| ")+T(ppsttSOQ2[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE 1 (FOREIGN DATE)
+                 if( oScan % cRowP == cRowP / 2 ) { strFuseF( tinBaseP , psttP , T("| ")+T(ppsttSOQ1[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE  (DAY)
         {
         else if( oScan / cRowP == oStrong + 1 && oDay % 8 == 7 )                                                                        // IF THE FOCUS DAY IS THE LATH DAY OF THE NEXT STRONG
         }
-            else                                  { strFuseF( tinP , psttP , tcrAt ) ; ___( psttP ) ; }                                     // SCAN LINE 2 (DIVIDER)
-            else if( oScan % cRowP              ) { strFuseF( tinP , psttP , T("@ ")+T(ppsttSOQ2[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE 1 (FOREIGN DATE)
-                 if( oScan % cRowP == cRowP / 2 ) { strFuseF( tinP , psttP , T("@ ")+T(ppsttSOQ1[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE  (DAY)
+            else                                  { strFuseF( tinBaseP , psttP , tcrAt ) ; ___( psttP ) ; }                                     // SCAN LINE 2 (DIVIDER)
+            else if( oScan % cRowP              ) { strFuseF( tinBaseP , psttP , T("@ ")+T(ppsttSOQ2[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE 1 (FOREIGN DATE)
+                 if( oScan % cRowP == cRowP / 2 ) { strFuseF( tinBaseP , psttP , T("@ ")+T(ppsttSOQ1[oScan/cRowP])+tcr ) ; ___( psttP ) ; }     // SCAN LINE  (DAY)
         {
         if( oScan / cRowP == oStrong && oDay % 8 == 7 )                                                                                 // IF THE FOCUS DAY IS THE LATH DAY OF THIS STRONG
         // NOW APPEND THE EPILOG FOR THIS SCAN LINE, WHICH IS EITHER '+' CR OR '|' CR OR '|' STRONG CR
 
         }
-            cellScanCalendarF( tinP , *this , psttP , oScan % cRowP , od , oDay , cColP , time2P , ppsttDayOfWeek , ppsttMonth , !( od % 2 ) || !( ( oScan / cRowP ) % 2 ) ? flCELLsCANcALENDAR_CAVE : flCELLsCANcALENDAR_null ) ;
+            cellScanCalendarF( tinBaseP , *this , psttP , oScan % cRowP , od , oDay , cColP , time2P , ppsttDayOfWeek , ppsttMonth , !( od % 2 ) || !( ( oScan / cRowP ) % 2 ) ? flCELLsCANcALENDAR_CAVE : flCELLsCANcALENDAR_null ) ;
 
             countT od = 0x40 * oQtr + ( oScan / cRowP ) * 8 + oCol ;
         {
@@ -58,7 +58,7 @@
     for( sCountT oScan = cScan ; oScan >= 0 ; oScan -- )                                                                                // SCAN PROCEEDS "TOP TO BOTTOM", SO THAT THE TOP LINE OF THE BODY OF THE CALENDAR IS FUSED WOTH
     countT cScan = cRowP * 8 ;                                                                                                          // cRowP IS NORMALLY 3 ; cScan IS THE NUMBER OF "SCAN LINES", NAMED ANALOGOUSLY TO A CATHOD RAY TUBE SCAN LINE ;
 
-    { ZE( countT , time1 ) ; strFuseF( tinP , psttP , ti+(time2P<0?T(""):T("+"))+TT(time1,time2P)+(time2P<0?T(""):T("+"))+TP("",8*cColP-0x1e)+T(ppsttQOD[oQtr])+tcr ) ; ___( psttP ) ; }
+    { ZE( countT , time1 ) ; strFuseF( tinBaseP , psttP , ti+(time2P<0?T(""):T("+"))+TT(time1,time2P)+(time2P<0?T(""):T("+"))+TP("",8*cColP-0x1e)+T(ppsttQOD[oQtr])+tcr ) ; ___( psttP ) ; }
 
     }
         tcrPlus += ti ;
@@ -74,68 +74,68 @@
     TN( tcr     , "\r\n" ) ;
     TN( ti , "" ) ;
 
-    strMakeF( tinP , LF , ppsttDayOfWeek[ 0x6 ] , T("sat") ) ; ___( ppsttDayOfWeek[ 0x6 ] ) ;
-    strMakeF( tinP , LF , ppsttDayOfWeek[ 0x5 ] , T("fri") ) ; ___( ppsttDayOfWeek[ 0x5 ] ) ;
-    strMakeF( tinP , LF , ppsttDayOfWeek[ 0x4 ] , T("thu") ) ; ___( ppsttDayOfWeek[ 0x4 ] ) ;
-    strMakeF( tinP , LF , ppsttDayOfWeek[ 0x3 ] , T("wed") ) ; ___( ppsttDayOfWeek[ 0x3 ] ) ;
-    strMakeF( tinP , LF , ppsttDayOfWeek[ 0x2 ] , T("tue") ) ; ___( ppsttDayOfWeek[ 0x2 ] ) ;
-    strMakeF( tinP , LF , ppsttDayOfWeek[ 0x1 ] , T("mon") ) ; ___( ppsttDayOfWeek[ 0x1 ] ) ;
-    strMakeF( tinP , LF , ppsttDayOfWeek[ 0x0 ] , T("sun") ) ; ___( ppsttDayOfWeek[ 0x0 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDayOfWeek[ 0x6 ] , T("sat") ) ; ___( ppsttDayOfWeek[ 0x6 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDayOfWeek[ 0x5 ] , T("fri") ) ; ___( ppsttDayOfWeek[ 0x5 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDayOfWeek[ 0x4 ] , T("thu") ) ; ___( ppsttDayOfWeek[ 0x4 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDayOfWeek[ 0x3 ] , T("wed") ) ; ___( ppsttDayOfWeek[ 0x3 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDayOfWeek[ 0x2 ] , T("tue") ) ; ___( ppsttDayOfWeek[ 0x2 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDayOfWeek[ 0x1 ] , T("mon") ) ; ___( ppsttDayOfWeek[ 0x1 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDayOfWeek[ 0x0 ] , T("sun") ) ; ___( ppsttDayOfWeek[ 0x0 ] ) ;
     {for( countT off = 0 ; off < sizeof ppsttDayOfWeek / sizeof ppsttDayOfWeek[ 0 ] ; off ++ ) ppsttDayOfWeek[ off ] = 0 ;}
     strokeS* ppsttDayOfWeek[ 7 ] ;
 
-    strMakeF( tinP , LF , ppsttMonth[ 0xb ] , T("dec") ) ; ___( ppsttMonth[ 0xb ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0xa ] , T("nov") ) ; ___( ppsttMonth[ 0xa ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x9 ] , T("oct") ) ; ___( ppsttMonth[ 0x9 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x8 ] , T("sep") ) ; ___( ppsttMonth[ 0x8 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x7 ] , T("aug") ) ; ___( ppsttMonth[ 0x7 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x6 ] , T("jul") ) ; ___( ppsttMonth[ 0x6 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x5 ] , T("jun") ) ; ___( ppsttMonth[ 0x5 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x4 ] , T("may") ) ; ___( ppsttMonth[ 0x4 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x3 ] , T("apr") ) ; ___( ppsttMonth[ 0x3 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x2 ] , T("mar") ) ; ___( ppsttMonth[ 0x2 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x1 ] , T("feb") ) ; ___( ppsttMonth[ 0x1 ] ) ;
-    strMakeF( tinP , LF , ppsttMonth[ 0x0 ] , T("jan") ) ; ___( ppsttMonth[ 0x0 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0xb ] , T("dec") ) ; ___( ppsttMonth[ 0xb ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0xa ] , T("nov") ) ; ___( ppsttMonth[ 0xa ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x9 ] , T("oct") ) ; ___( ppsttMonth[ 0x9 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x8 ] , T("sep") ) ; ___( ppsttMonth[ 0x8 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x7 ] , T("aug") ) ; ___( ppsttMonth[ 0x7 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x6 ] , T("jul") ) ; ___( ppsttMonth[ 0x6 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x5 ] , T("jun") ) ; ___( ppsttMonth[ 0x5 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x4 ] , T("may") ) ; ___( ppsttMonth[ 0x4 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x3 ] , T("apr") ) ; ___( ppsttMonth[ 0x3 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x2 ] , T("mar") ) ; ___( ppsttMonth[ 0x2 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x1 ] , T("feb") ) ; ___( ppsttMonth[ 0x1 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttMonth[ 0x0 ] , T("jan") ) ; ___( ppsttMonth[ 0x0 ] ) ;
     {for( countT off = 0 ; off < sizeof ppsttMonth / sizeof ppsttMonth[ 0 ] ; off ++ ) ppsttMonth[ off ] = 0 ;}
     strokeS* ppsttMonth[ 12 ] ;
 
-    strMakeF( tinP , LF , ppsttQOD[ 3 ] , T("re'qu (the reaping)") ) ; ___( ppsttQOD[ 3 ] ) ;
-    strMakeF( tinP , LF , ppsttQOD[ 2 ] , T("oo'qu (the tending)") ) ; ___( ppsttQOD[ 2 ] ) ;
-    strMakeF( tinP , LF , ppsttQOD[ 1 ] , T("wo'qu (the sowing)") ) ; ___( ppsttQOD[ 1 ] ) ;
-    strMakeF( tinP , LF , ppsttQOD[ 0 ] , T("ze'qu (the fallow)") ) ; ___( ppsttQOD[ 0 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttQOD[ 3 ] , T("re'qu (the reaping)") ) ; ___( ppsttQOD[ 3 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttQOD[ 2 ] , T("oo'qu (the tending)") ) ; ___( ppsttQOD[ 2 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttQOD[ 1 ] , T("wo'qu (the sowing)") ) ; ___( ppsttQOD[ 1 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttQOD[ 0 ] , T("ze'qu (the fallow)") ) ; ___( ppsttQOD[ 0 ] ) ;
     {for( countT off = 0 ; off < sizeof ppsttQOD / sizeof ppsttQOD[ 0 ] ; off ++ ) ppsttQOD[ off ] = 0 ;}
     strokeS* ppsttQOD[ 4 ] ;
 
-    strMakeF( tinP , LF , ppsttDOS[ 7 ] , T("ve'da") ) ; ___( ppsttDOS[ 7 ] ) ;
-    strMakeF( tinP , LF , ppsttDOS[ 6 ] , T("se'da") ) ; ___( ppsttDOS[ 6 ] ) ;
-    strMakeF( tinP , LF , ppsttDOS[ 5 ] , T("fi'da") ) ; ___( ppsttDOS[ 5 ] ) ;
-    strMakeF( tinP , LF , ppsttDOS[ 4 ] , T("fo'da") ) ; ___( ppsttDOS[ 4 ] ) ;
-    strMakeF( tinP , LF , ppsttDOS[ 3 ] , T("re'da") ) ; ___( ppsttDOS[ 3 ] ) ;
-    strMakeF( tinP , LF , ppsttDOS[ 2 ] , T("oo'da") ) ; ___( ppsttDOS[ 2 ] ) ;
-    strMakeF( tinP , LF , ppsttDOS[ 1 ] , T("wo'da") ) ; ___( ppsttDOS[ 1 ] ) ;
-    strMakeF( tinP , LF , ppsttDOS[ 0 ] , T("ze'da") ) ; ___( ppsttDOS[ 0 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDOS[ 7 ] , T("ve'da") ) ; ___( ppsttDOS[ 7 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDOS[ 6 ] , T("se'da") ) ; ___( ppsttDOS[ 6 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDOS[ 5 ] , T("fi'da") ) ; ___( ppsttDOS[ 5 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDOS[ 4 ] , T("fo'da") ) ; ___( ppsttDOS[ 4 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDOS[ 3 ] , T("re'da") ) ; ___( ppsttDOS[ 3 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDOS[ 2 ] , T("oo'da") ) ; ___( ppsttDOS[ 2 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDOS[ 1 ] , T("wo'da") ) ; ___( ppsttDOS[ 1 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttDOS[ 0 ] , T("ze'da") ) ; ___( ppsttDOS[ 0 ] ) ;
     {for( countT off = 0 ; off < sizeof ppsttDOS / sizeof ppsttDOS[ 0 ] ; off ++ ) ppsttDOS[ off ] = 0 ;}
     strokeS* ppsttDOS[ 8 ] ;
 
-    strMakeF( tinP , LF , ppsttSOQ2[ 7 ] , T("") ) ; ___( ppsttSOQ2[ 7 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ2[ 6 ] , T("CAVE") ) ; ___( ppsttSOQ2[ 6 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ2[ 5 ] , T("") ) ; ___( ppsttSOQ2[ 5 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ2[ 4 ] , T("CAVE") ) ; ___( ppsttSOQ2[ 4 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ2[ 3 ] , T("") ) ; ___( ppsttSOQ2[ 3 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ2[ 2 ] , T("CAVE") ) ; ___( ppsttSOQ2[ 2 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ2[ 1 ] , T("") ) ; ___( ppsttSOQ2[ 1 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ2[ 0 ] , T("CAVE") ) ; ___( ppsttSOQ2[ 0 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ2[ 7 ] , T("") ) ; ___( ppsttSOQ2[ 7 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ2[ 6 ] , T("CAVE") ) ; ___( ppsttSOQ2[ 6 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ2[ 5 ] , T("") ) ; ___( ppsttSOQ2[ 5 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ2[ 4 ] , T("CAVE") ) ; ___( ppsttSOQ2[ 4 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ2[ 3 ] , T("") ) ; ___( ppsttSOQ2[ 3 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ2[ 2 ] , T("CAVE") ) ; ___( ppsttSOQ2[ 2 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ2[ 1 ] , T("") ) ; ___( ppsttSOQ2[ 1 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ2[ 0 ] , T("CAVE") ) ; ___( ppsttSOQ2[ 0 ] ) ;
     {for( countT off = 0 ; off < sizeof ppsttSOQ2 / sizeof ppsttSOQ2[ 0 ] ; off ++ ) ppsttSOQ2[ off ] = 0 ;}
     strokeS* ppsttSOQ2[ 8 ] ;
 
-    strMakeF( tinP , LF , ppsttSOQ1[ 7 ] , T("ve'str") ) ; ___( ppsttSOQ1[ 7 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ1[ 6 ] , T("se'str") ) ; ___( ppsttSOQ1[ 6 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ1[ 5 ] , T("fi'str") ) ; ___( ppsttSOQ1[ 5 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ1[ 4 ] , T("fo'str") ) ; ___( ppsttSOQ1[ 4 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ1[ 3 ] , T("re'str") ) ; ___( ppsttSOQ1[ 3 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ1[ 2 ] , T("oo'str") ) ; ___( ppsttSOQ1[ 2 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ1[ 1 ] , T("wo'str") ) ; ___( ppsttSOQ1[ 1 ] ) ;
-    strMakeF( tinP , LF , ppsttSOQ1[ 0 ] , T("ze'str") ) ; ___( ppsttSOQ1[ 0 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ1[ 7 ] , T("ve'str") ) ; ___( ppsttSOQ1[ 7 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ1[ 6 ] , T("se'str") ) ; ___( ppsttSOQ1[ 6 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ1[ 5 ] , T("fi'str") ) ; ___( ppsttSOQ1[ 5 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ1[ 4 ] , T("fo'str") ) ; ___( ppsttSOQ1[ 4 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ1[ 3 ] , T("re'str") ) ; ___( ppsttSOQ1[ 3 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ1[ 2 ] , T("oo'str") ) ; ___( ppsttSOQ1[ 2 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ1[ 1 ] , T("wo'str") ) ; ___( ppsttSOQ1[ 1 ] ) ;
+    strMakeF( tinBaseP , LF , ppsttSOQ1[ 0 ] , T("ze'str") ) ; ___( ppsttSOQ1[ 0 ] ) ;
     {for( countT off = 0 ; off < sizeof ppsttSOQ1 / sizeof ppsttSOQ1[ 0 ] ; off ++ ) ppsttSOQ1[ off ] = 0 ;}
     strokeS* ppsttSOQ1[ 8 ] ;
 
@@ -144,7 +144,7 @@
     countT oDay  = offDAY( time2P ) ;
 
     }
-        strFuseF( tinP , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ csttEstimate + csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;
+        strFuseF( tinBaseP , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ csttEstimate + csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;
         countT csttEstimate = cRowsAlloc * cColsAlloc ;
         countT cColsAlloc   = csttIndentP + cColP * 8 + 0xa ;
         countT cRowsAlloc   =               cRowP * 8 + 3 ;
@@ -164,7 +164,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strCalendarF( tinS& tinP , strokeS*& psttP , const sCountT time2P , const countT cColP , const countT cRowP , const countT csttIndentP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strCalendarF( tinBaseS& tinBaseP , strokeS*& psttP , const sCountT time2P , const countT cColP , const countT cRowP , const countT csttIndentP , const countT csttExtraP )/*1*/
 
 /**/
 */
@@ -183,7 +183,7 @@
   if null then will be allocated
   can be null
  psttP
- tinP
+ tinBaseP
 arguments
   \<A HREF=\"5.7b30104.1.1.0.html\"\>7b30104:  WAKEsHOW( "example.simplest.func.1030117.etherC.strCalendarF" )\</A\>
  simplest

@@ -12,7 +12,7 @@
 
     #endif
 
-        if( !POOP ) bCanWrite = !!tinP.brcRaw ;
+        if( !POOP ) bCanWrite = !!((tinNormalS&)tinBaseP).brcRaw ;
 
         BOSpOOP
         BOSS( WHATsiw , BOSsOCKETcODE2 , select( 0 , 0 , (fd_set*)&c3s , 0 , &timew ) )
@@ -34,7 +34,7 @@
     #ifdef __OS2__
     ZE( boolT , bCanWrite ) ;
 
-    const countT cSeconds = thirdC::secondsFromTimeIF( tinP , time1P , time2P ) ;
+    const countT cSeconds = thirdC::secondsFromTimeIF( tinBaseP , time1P , time2P ) ;
 
     _IO_
 
@@ -47,12 +47,12 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/boolT thirdC::s_bCanWriteF( tinS& tinP , const handleC& handleP , const countT time1P , const sCountT time2P )/*1*/
+/**//*1*/boolT thirdC::s_bCanWriteF( tinBaseS& tinBaseP , const handleC& handleP , const countT time1P , const sCountT time2P )/*1*/
 */
  time2P
  time1P
  handleP
- tinP
+ tinBaseP
 arguments
 if connection is not in progress, will return immediately
 then returns 1 if connected (or ready to write), or 0 if not yet connected (or ready to write)

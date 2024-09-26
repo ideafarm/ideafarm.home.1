@@ -9,13 +9,13 @@
 
 }
     //OUT
-    if( csP ) { ether.strResizeF( tinP , psttMe , csP , sttPadP , fLeadingP ) ;  ___BITScT( psttMe , 0xd56 ) ; }
-    ether.strFuseF( tinP , psttMe , sttP ) ;  ___BITScT( psttMe , 0xd57 ) ;
-    ether.strMakeF( tinP , LF , psttMe , T("") , csP ? csP : 1 ) ;  ___BITScT( psttMe , 0xd58 ) ;
+    if( csP ) { ether.strResizeF( tinBaseP , psttMe , csP , sttPadP , fLeadingP ) ;  ___BITScT( psttMe , 0xd56 ) ; }
+    ether.strFuseF( tinBaseP , psttMe , sttP ) ;  ___BITScT( psttMe , 0xd57 ) ;
+    ether.strMakeF( tinBaseP , LF , psttMe , T("") , csP ? csP : 1 ) ;  ___BITScT( psttMe , 0xd58 ) ;
 
-    else            thirdC::c_memsetIF( tinP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
-    if( pbBitsCtP ) thirdC::c_memcpyIF( tinP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
-    puseC puse( tinP , ifcIDpOOL_ADAMtEMP ) ;
+    else            thirdC::c_memsetIF( tinBaseP , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
+    if( pbBitsCtP ) thirdC::c_memcpyIF( tinBaseP , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
+    puseC puse( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
     
     //IN_C
 
@@ -31,11 +31,11 @@ psttLower( 0 ) ,
 puntMe( 0 ) ,
 postMe( 0 ) ,
 psttMe( 0 ) ,
-ether( etherC::etTextIF( tinP ) ) ,
+ether( etherC::etTextIF( tinBaseP ) ) ,
 flags( flagsP ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
-/*1*/textC::textC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const strokeS sttP , const countT csP , const strokeS sttPadP , const boolT fLeadingP )/*1*/ :
+/*1*/textC::textC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const strokeS sttP , const countT csP , const strokeS sttPadP , const boolT fLeadingP )/*1*/ :
 
 /**/
 */

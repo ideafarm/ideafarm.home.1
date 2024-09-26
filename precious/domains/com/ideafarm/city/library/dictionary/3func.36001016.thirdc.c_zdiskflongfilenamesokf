@@ -12,12 +12,12 @@
     #endif
 
         BOSpOOP
-        else if( tinP.brcLath == ERROR_FILENAME_EXCED_RANGE || tinP.brcLath == ERROR_INVALID_NAME /*|| tinP.brcLath == ERROR _NOT_READY*/ || tinP.brcLath == ERROR_PATH_NOT_FOUND ) tinP.bosFail = 0 ;
+        else if( ((tinNormalS&)tinBaseP).brcLath == ERROR_FILENAME_EXCED_RANGE || ((tinNormalS&)tinBaseP).brcLath == ERROR_INVALID_NAME /*|| ((tinNormalS&)tinBaseP).brcLath == ERROR _NOT_READY*/ || ((tinNormalS&)tinBaseP).brcLath == ERROR_PATH_NOT_FOUND ) ((tinNormalS&)tinBaseP).bosFail = 0 ;
         }
             fLongOK = 1 ;
-            tinP.bosFail = 0 ;
+            ((tinNormalS&)tinBaseP).bosFail = 0 ;
         {
-        if( !tinP.bosFail || tinP.brcLath == ERROR_FILE_NOT_FOUND )
+        if( !((tinNormalS&)tinBaseP).bosFail || ((tinNormalS&)tinBaseP).brcLath == ERROR_FILE_NOT_FOUND )
 
         if( bRetry ) { __( ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY ) ; }
         while( bRetry && -- cDo ) ;
@@ -35,7 +35,7 @@
                 Sleep( 2000 ) ;
             {
             if( (countT)osh == ERROR_NOT_READY )
-            HANDLE osh = (HANDLE)tinP.brcLath ;
+            HANDLE osh = (HANDLE)((tinNormalS&)tinBaseP).brcLath ;
             BOS( WHATsfr , BOShANDLE , FindFirstFile( ostoTest , &info ) )
         {
         do                                                 //SILENTLY RETRY 8 TIMES IF ERROR_NOT_READY
@@ -47,7 +47,7 @@
 
     #elif defined( __NT__ )
 
-        fLongOK = ERROR_FILENAME_EXCED_RANGE != tinP.brcRaw ;
+        fLongOK = ERROR_FILENAME_EXCED_RANGE != ((tinNormalS&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATsfr , DosFindFirst( ostoTest , &handle , 0 , &info , sizeof info , &cc, FIL_STANDARD ) )
         FILEFINDBUF3 info ;
         HDIR handle = HDIR_SYSTEM ;
@@ -71,7 +71,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/boolT thirdC::c_zDiskFLongFileNamesOKF( tinS& tinP , const osTextT* const postDiskP )/*1*/
+/*1*/boolT thirdC::c_zDiskFLongFileNamesOKF( tinBaseS& tinBaseP , const osTextT* const postDiskP )/*1*/
 
 /**/
 */

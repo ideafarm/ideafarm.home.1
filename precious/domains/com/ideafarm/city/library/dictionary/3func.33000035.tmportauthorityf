@@ -10,18 +10,18 @@
 DONE( tmPortAuthorityF )
 
 }
-    swc2.freeF( tinP ) ;
-    etThread.delF( tinP , pc2cp ) ;
+    swc2.freeF( tinBaseP ) ;
+    etThread.delF( tinBaseP , pc2cp ) ;
     count2S*& pc2cp = (count2S*&)(countT&)swc2 ;
-    idProcessOldI = swc2.leverF( tinP , idf ) ;
+    idProcessOldI = swc2.leverF( tinBaseP , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = swc2.cFlavorsF( tinP ) ;
+countT cFlavors = swc2.cFlavorsF( tinBaseP ) ;
 TELL( "cleaning up: final" )
 
 }
-    while( !etThread && tinP.cKidThreads ) { ++ s ; etThread.osSleepF( tinP , TOCK ) ; }
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    while( !etThread && ((tinNormalS&)tinBaseP).cKidThreads ) { ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ; }
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 TELL( "cleaning up: sleeping while i have kid threads" )
 
@@ -29,10 +29,10 @@ TELL( "cleaning up: sleeping while i have kid threads" )
     etThread = 0 ;
 
     }
-        else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmServePortF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&c7p1 ) ; }
+        else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmServePortF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&c7p1 ) ; }
         if( ether || etThread ) { DEL( pso ) ; }
         __( bRefuse ) ;
-        socket.acceptF( tinP , pso , idPortPeer , nnPeer , bRefuse ) ; ___( pso ) ;
+        socket.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ; ___( pso ) ;
         ZE( boolT , bRefuse ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
@@ -41,9 +41,9 @@ TELL( "cleaning up: sleeping while i have kid threads" )
     {
     while( !ether && !etThread )
 
-    socket.listenF( tinP ) ;
-    countT idPort = socket.bindF( tinP , ifcPORToLD1pORTaUTHORITY ) ;
-    socketC socket( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    socket.listenF( tinBaseP ) ;
+    countT idPort = socket.bindF( tinBaseP , ifcPORToLD1pORTaUTHORITY ) ;
+    socketC socket( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
     TELL( "in outer loop: setting up" )
 {
 while( !ether && !etThread )
@@ -58,12 +58,12 @@ c7p1.c1 = (countT)&b_idProcessOldI ;
 count7S c7p1 ;
 
 ZE( countT , idMiscLast ) ;
-batonC b_idMiscLast( tinP , TAG( TAGiDnULL ) ) ;
+batonC b_idMiscLast( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( countT , idProcessOldLast ) ;
-batonC b_idProcessOldLast( tinP , TAG( TAGiDnULL ) ) ;
-switchC swc2( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idProcessOldI ) ;
+batonC b_idProcessOldLast( tinBaseP , TAG( TAGiDnULL ) ) ;
+switchC swc2( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idProcessOldI ) ;
 ZE( countT , idProcessOldI ) ;
-batonC b_idProcessOldI( tinP , TAG( TAGiDnULL ) ) ;
+batonC b_idProcessOldI( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TELL( "setting up" )
 /*1*/TASK( tmPortAuthorityF )/*1*/

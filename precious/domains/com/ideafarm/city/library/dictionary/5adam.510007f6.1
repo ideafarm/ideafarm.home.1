@@ -9,32 +9,32 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 THREADmODE5rESTORE
 }
-    etThread.traceF( tinP , T("[pbOut2]:    ")+T(pbOut2) ) ;
+    etThread.traceF( tinBaseP , T("[pbOut2]:    ")+T(pbOut2) ) ;
 
-    thirdC::openSslCrypto_decryptIF( tinP , pbOut2 , cbOut2 , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed                      , hKeyPrivate ) ;
-    thirdC::openSslCrypto_encryptIF( tinP                   , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed , pbIn , sizeof pbIn , hKeyPublic  ) ;
+    thirdC::openSslCrypto_decryptIF( tinBaseP , pbOut2 , cbOut2 , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed                      , hKeyPrivate ) ;
+    thirdC::openSslCrypto_encryptIF( tinBaseP                   , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed , pbIn , sizeof pbIn , hKeyPublic  ) ;
 
-    thirdC::openSslCrypto_writePublicKeyToFileIF(  tinP , "\\tmp\\scratch.adam.4.key.public.verify.pem"  , hKeyPublic  ) ;
-    thirdC::openSslCrypto_writePrivateKeyToFileIF( tinP , "\\tmp\\scratch.adam.4.key.private.verify.pem" , hKeyPrivate ) ;
+    thirdC::openSslCrypto_writePublicKeyToFileIF(  tinBaseP , "\\tmp\\scratch.adam.4.key.public.verify.pem"  , hKeyPublic  ) ;
+    thirdC::openSslCrypto_writePrivateKeyToFileIF( tinBaseP , "\\tmp\\scratch.adam.4.key.private.verify.pem" , hKeyPrivate ) ;
 
-    thirdC::openSslCrypto_readPublicKeyFromFileIF(  tinP , hKeyPublic  , "\\tmp\\scratch.adam.4.key.public.pem"  ) ;
-    thirdC::openSslCrypto_readPrivateKeyFromFileIF( tinP , hKeyPrivate , "\\tmp\\scratch.adam.4.key.private.pem" ) ;
+    thirdC::openSslCrypto_readPublicKeyFromFileIF(  tinBaseP , hKeyPublic  , "\\tmp\\scratch.adam.4.key.public.pem"  ) ;
+    thirdC::openSslCrypto_readPrivateKeyFromFileIF( tinBaseP , hKeyPrivate , "\\tmp\\scratch.adam.4.key.private.pem" ) ;
 
-    thirdC::openSslCrypto_writePublicKeyToFileIF(  tinP , "\\tmp\\scratch.adam.4.key.public.pem"         , hKeyPair    ) ;
-    thirdC::openSslCrypto_writePrivateKeyToFileIF( tinP , "\\tmp\\scratch.adam.4.key.private.pem"        , hKeyPair    ) ;
+    thirdC::openSslCrypto_writePublicKeyToFileIF(  tinBaseP , "\\tmp\\scratch.adam.4.key.public.pem"         , hKeyPair    ) ;
+    thirdC::openSslCrypto_writePrivateKeyToFileIF( tinBaseP , "\\tmp\\scratch.adam.4.key.private.pem"        , hKeyPair    ) ;
 
-    etThread.traceF( tinP , T("generated") ) ;
-    thirdC::openSslCrypto_keyPairIF( tinP , hKeyPair , 0x400 ) ;
-    etThread.traceF( tinP , T("generating...") ) ;
+    etThread.traceF( tinBaseP , T("generated") ) ;
+    thirdC::openSslCrypto_keyPairIF( tinBaseP , hKeyPair , 0x400 ) ;
+    etThread.traceF( tinBaseP , T("generating...") ) ;
 
-    handleC hKeyPublic(  tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
-    handleC hKeyPrivate( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
-    handleC hKeyPair(    tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
+    handleC hKeyPublic(  tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
+    handleC hKeyPrivate( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
+    handleC hKeyPair(    tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
 {
 THREADmODE5oN( flTHREADmODE5_ARMoPENsSL )
 

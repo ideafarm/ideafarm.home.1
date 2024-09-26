@@ -11,17 +11,17 @@
     //U:IMPOTENCE IF VALIDATION FAILS
     //U:VALIDATE THE REPLY (AT LEAST CALL FV FOR THE flags FIELD IN THE WOTH monitorReplyOldS
 
-    PUSE( tinP , pbCatch ) ;
+    PUSE( tinBaseP , pbCatch ) ;
     //}
-    //    memCopyF( tinP , pbP , pbCatch , cbP ) ;
-    //    newF( tinP , LF , pbP , cbP ) ; ___( pbP ) ;
+    //    memCopyF( tinBaseP , pbP , pbCatch , cbP ) ;
+    //    newF( tinBaseP , LF , pbP , cbP ) ; ___( pbP ) ;
     //    cbP = sizeof( monitorReplyOldS ) + ((monitorReplyOldS*)pbCatch)->cbReply ;
     //    
     //    ;//TELLsYSc3LIFI( ifcIDtYPEtELLsYS_QUERY , (byteT*)&info , sizeof info , idLineCt , idiFileCt )
     //    
     //    info.cbCatch = CBcATCH ;
     //    __( !info.ap_artmentOldCatch ) ;
-    //    info.ap_artmentOldCatch = ap_artmentOldC( tinP , pbCatch ) ;
+    //    info.ap_artmentOldCatch = ap_artmentOldC( tinBaseP , pbCatch ) ;
     //    info.idQuery = idP ;
     //    info ;
     //    }
@@ -31,12 +31,12 @@
     //    {
     //    struct
     //    
-    //    memSetF( tinP , pbCatch , CBcATCH ) ; //IF THE MONITOR DOES NOT ALTER THIS BUFFER THEN I WILL DETECT THIS FAILURE WHEN I TEST THE FLAGS
+    //    memSetF( tinBaseP , pbCatch , CBcATCH ) ; //IF THE MONITOR DOES NOT ALTER THIS BUFFER THEN I WILL DETECT THIS FAILURE WHEN I TEST THE FLAGS
     //{
     //if( pbCatch )
     //U::EDIT ap_artmentOldC TO SUPPORT poolC (MULTIPLE ROOT POOLoLDS BREAK THE ASSUMPTION OF ap_artmentOldC CODING)
     __Z( pbCatch ) ;
-    tinP.pag1->pPoolHomeTemp->newF( tinP , LF , pbCatch , CBcATCH ) ; ___( pbCatch ) ;
+    ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp->newF( tinBaseP , LF , pbCatch , CBcATCH ) ; ___( pbCatch ) ;
     ZE( byteT* , pbCatch ) ;
 
     _IO_
@@ -51,7 +51,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcMonitorQueryOldF( tinS& tinP , byteT*& pbP , countT& cbP , const countT idP )/*1*/
+/*1*/voidT etherC::ifcMonitorQueryOldF( tinBaseS& tinBaseP , byteT*& pbP , countT& cbP , const countT idP )/*1*/
 
 //U::REWRITE THIS FUNCTION TO LET THE MONITOR TELL ME HOW MANY BYTES TO ALLOCATE
 

@@ -16,14 +16,14 @@
         case ifcIDcMDbASE_CMDsPECIFIED :
         }
             break ;
-            PUSE( tinP , *(byteT**)&psttw ) ;
+            PUSE( tinBaseP , *(byteT**)&psttw ) ;
             }
                 }
                     POPUP( T(postName)+T(": \"?\" received.") ) ;
                 {
-                if( !tinP.pEther->strCompareF( tinP , psttw , T("?") ) )
+                if( !((tinNormalS&)tinBaseP).pEther->strCompareF( tinBaseP , psttw , T("?") ) )
             {
-            if( tinP.pEther )
+            if( ((tinNormalS&)tinBaseP).pEther )
 
             slP >> psttw ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
@@ -66,7 +66,7 @@
         ZE( baseSoilXxxxC* , pMeI ) ;
     {
 {
-/*1*/voidT handleC::operator ()( tinS& tinP , soulC& slP )/*1*/
+/*1*/voidT handleC::operator ()( tinBaseS& tinBaseP , soulC& slP )/*1*/
 /**/
 */
 /*

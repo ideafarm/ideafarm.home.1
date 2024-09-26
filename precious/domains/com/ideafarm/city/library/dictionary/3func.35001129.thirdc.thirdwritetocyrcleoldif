@@ -31,13 +31,13 @@
     
                 if( pbWrite == pbEnd ) pbWrite = pbCircle ;
                 pbWrite += cbThis ;
-                c_memcpyIF( tinP , pbWrite , pbc , cbThis ) ;
+                c_memcpyIF( tinBaseP , pbWrite , pbc , cbThis ) ;
             {
             if( !POOP )
     
             }
                 }
-                    ++ s ; thirdC::dosSleepRawIF( tinP , 50 ) ;
+                    ++ s ; thirdC::dosSleepRawIF( tinBaseP , 50 ) ;
 
                     }
                         break ;
@@ -47,7 +47,7 @@
 
                 {
                 while( cbwNew - ph->cbRead > cbCircle )
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
     
             countT cbwNew = cbWrittenPrior + cbThis ; //U::2008.07.05: CONJ: CNR NOW: 
@@ -122,8 +122,8 @@
         __( cbP >= TOCK ) ; //U::TO CATCH A BUG
         __(  pbP + cbP - pbBad2 ) ;
         __(  pbP + cbP - pbBad1 ) ;
-        byteT* pbBad2 = c_memmemIF( tinP , pbP , cbP , (byteT*)&finger2 , sizeof finger2 ) ;
-        byteT* pbBad1 = c_memmemIF( tinP , pbP , cbP , (byteT*)&finger1 , sizeof finger1 ) ;
+        byteT* pbBad2 = c_memmemIF( tinBaseP , pbP , cbP , (byteT*)&finger2 , sizeof finger2 ) ;
+        byteT* pbBad1 = c_memmemIF( tinBaseP , pbP , cbP , (byteT*)&finger1 , sizeof finger1 ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
@@ -135,7 +135,7 @@
     {
     if( bWoth )
 {
-/*1*/voidT thirdC::thirdWriteToCyrcleOldIF( tinS& tinP , napkinC& napkinP , const byteT* const pbP , countT cbP )/*1*/
+/*1*/voidT thirdC::thirdWriteToCyrcleOldIF( tinBaseS& tinBaseP , napkinC& napkinP , const byteT* const pbP , countT cbP )/*1*/
 
 boolT bWoth = 1 ;
 const countT finger2 = 0 ;
@@ -147,7 +147,7 @@ const countT finger1 = 0 ;
   this blob must not contain the value FINGERnEG_CYRCLEoLDwRITE
  pbP
  napkinP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.1020166.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$thirdWriteToCyrcleOldIF.0.html\"\>instances\</A\>

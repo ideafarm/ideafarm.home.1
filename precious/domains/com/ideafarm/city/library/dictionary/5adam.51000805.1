@@ -9,14 +9,14 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.delF( tinP , pcArray ) ;
+    etThread.delF( tinBaseP , pcArray ) ;
 
     }
-        etThread.traceF( tinP , T("out [cbUsed[0],cbUsed[1],tShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
+        etThread.traceF( tinBaseP , T("out [cbUsed[0],cbUsed[1],tShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
 
         TN( tShort , "" ) ; tShort = T(pbIn+sizeof(count04T)) ;
 
@@ -29,12 +29,12 @@ etThread.traceF( tinP , T("ok") ) ;
     for( countT* pco = pcArray ; pco < pce ; )
     countT* pce = pcArray + ccArray ;
 
-    etThread.ifcSortaF( tinP , bQuit , (byteT*)pcArray , ccArray * sizeof( countT ) , sizeof( countT ) , 0 , sizeof( count04T ) , flSORTAc_null ) ;
+    etThread.ifcSortaF( tinBaseP , bQuit , (byteT*)pcArray , ccArray * sizeof( countT ) , sizeof( countT ) , 0 , sizeof( count04T ) , flSORTAc_null ) ;
     ZE( boolT , bQuit ) ;
 
     }
         }
-            etThread.traceF( tinP , T("in  [cbUsed[0],cbUsed[1],tShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
+            etThread.traceF( tinBaseP , T("in  [cbUsed[0],cbUsed[1],tShort]:    ")+TF2(((countT*)&c4CbUsed)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((countT*)&c4CbUsed)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
 
             }
                 }
@@ -45,7 +45,7 @@ etThread.traceF( tinP , T("ok") ) ;
                     c4CbUsed = *(count04T*)pbIn ;
                 {
                 else
-                if( !pbIn ) ether.traceF( tinP , T("TODO / !exception: could not obtain blob so ignoring this page") ) ;
+                if( !pbIn ) ether.traceF( tinBaseP , T("TODO / !exception: could not obtain blob so ignoring this page") ) ;
                 const byteT* pbIn = pageIn ;
                 pageC pageIn = jotIn ;
             {
@@ -58,16 +58,16 @@ etThread.traceF( tinP , T("ok") ) ;
         countT cDo = cShortNames ;
         countT* pcCursor = pcArray ;
         
-        etThread.memSetF( tinP , (byteT*)pcArray , ccArray * sizeof( countT ) ) ;
-        etThread.newF( tinP , LF , pcArray , ccArray ) ; ___( pcArray ) ;
+        etThread.memSetF( tinBaseP , (byteT*)pcArray , ccArray * sizeof( countT ) ) ;
+        etThread.newF( tinBaseP , LF , pcArray , ccArray ) ; ___( pcArray ) ;
         ccArray = cShortNames * 3 ;
 
-        etThread.traceF( tinP , T("[cShortNames]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tinBaseP , T("[cShortNames]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         const countT cShortNames = jotIn.cElementsF() ;
         jotIn.resetLathReadF() ;
 
     {
-    jotC jotIn( tinP , T("healarchive.sorted.short.filenames.dut1.1234") , flJOTc_null , 0 , 0 , 0 , ifcIDgRABlAYER_7BASEmISC1 , flGRABc_null , 0 ) ;
+    jotC jotIn( tinBaseP , T("healarchive.sorted.short.filenames.dut1.1234") , flJOTc_null , 0 , 0 , 0 , ifcIDgRABlAYER_7BASEmISC1 , flGRABc_null , 0 ) ;
     ZE( countT  , ccArray ) ;
     ZE( countT* , pcArray ) ;
 

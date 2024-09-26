@@ -8,24 +8,24 @@
 
 
 }
-    ether.delF( tinP , psttAll ) ;
-    ether.strSubstringF( tinP , psttMe , idf , sttq , S1C('.') , psttAll ) ; ___( psttMe ) ;
-    ether.delF( tinP , psttw ) ;
-    ether.strSubstringF( tinP , psttw , idf , sttq , S1C('.') , psttAll ) ; ___( psttw ) ;
+    ether.delF( tinBaseP , psttAll ) ;
+    ether.strSubstringF( tinBaseP , psttMe , idf , sttq , S1C('.') , psttAll ) ; ___( psttMe ) ;
+    ether.delF( tinBaseP , psttw ) ;
+    ether.strSubstringF( tinBaseP , psttw , idf , sttq , S1C('.') , psttAll ) ; ___( psttw ) ;
     }
-        ether.delF( tinP , psttw ) ;
-        ether.strSubstringF( tinP , psttw , idf , sttq , T("/dictionary/") , psttAll ) ; ___( psttw ) ;
+        ether.delF( tinBaseP , psttw ) ;
+        ether.strSubstringF( tinBaseP , psttw , idf , sttq , T("/dictionary/") , psttAll ) ; ___( psttw ) ;
     {
     if( postP[ 1 ] == ':' ) //U: VERIFY THAT THIS IS A CORRECT TEST OF WHETHER THE NAME IS QUATAG( TAGiDnULL )ED
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
     ZE( strokeS* , psttw ) ;
 
-    ether.delF( tinP , postMe ) ;
-    ether.strMakeF( tinP , LF , psttAll , T(iffn) ) ; ___( psttAll ) ;
-    ifFileNameC iffn( tinP , ether , postMe ) ;
-    ether.delF( tinP , psttMe ) ;
-    ether.strMakeF( tinP , LF , postMe , psttMe ) ; ___( postMe ) ;
+    ether.delF( tinBaseP , postMe ) ;
+    ether.strMakeF( tinBaseP , LF , psttAll , T(iffn) ) ; ___( psttAll ) ;
+    ifFileNameC iffn( tinBaseP , ether , postMe ) ;
+    ether.delF( tinBaseP , psttMe ) ;
+    ether.strMakeF( tinBaseP , LF , postMe , psttMe ) ; ___( postMe ) ;
     ZE( osTextT* , postMe ) ;
     ZE( strokeS* , psttAll ) ;
     _IO_
@@ -37,8 +37,8 @@
     {
     IFbEcAREFUL
 {
-textC( tinP , TAG( TAGiDnULL ) , flTEXTc_null , postP )
-/*1*/textIdFileC::textIdFileC( tinS& tinP , const osTextT* const postP )/*1*/ :
+textC( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , postP )
+/*1*/textIdFileC::textIdFileC( tinBaseS& tinBaseP , const osTextT* const postP )/*1*/ :
 /**/
 */
  postP

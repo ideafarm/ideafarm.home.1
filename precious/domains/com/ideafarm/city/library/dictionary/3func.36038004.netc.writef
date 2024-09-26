@@ -8,51 +8,51 @@
 
 
 }
-    baton.ungrabF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
 
     __Z( cOut ) ;
-    third.delF( tinP , pMeI ) ;
+    third.delF( tinBaseP , pMeI ) ;
 
-    b_idGramLath.ungrabF( tinP ) ;
+    b_idGramLath.ungrabF( tinBaseP ) ;
     }
         }
             else      cOut ++ ;
             if( thp ) thp = 0 ;
-            thp.s_writeF( tinP , hsoo , idPortP ? idPortP : idPort , nicNameP , soulo ) ;
+            thp.s_writeF( tinBaseP , hsoo , idPortP ? idPortP : idPort , nicNameP , soulo ) ;
 
             soulo << soulP ;
             pMeI[ offMe ] >> soulo ;
             soulo << idGramLast ;
             soulo << idDisk ;
-            soulC soulo( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDtYPEdATAGRAM_NETc_SOULc ) ;
+            soulC soulo( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDtYPEdATAGRAM_NETc_SOULc ) ;
         {
         else
         if( thp ) thp = 0 ;
-        thp.s_bindF( tinP , hsoo , 0 , pMeI[ offMe ] ) ;
-        thp.s_socketIF( tinP , hsoo , ifcSOCKETtYPE_DATAgRAM ) ;
-        handleC hsoo( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+        thp.s_bindF( tinBaseP , hsoo , 0 , pMeI[ offMe ] ) ;
+        thp.s_socketIF( tinBaseP , hsoo , ifcSOCKETtYPE_DATAgRAM ) ;
+        handleC hsoo( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
     {
     for( countT offMe = 0 ; offMe < cMe ; offMe ++ )
     idGramLast ++ ;
-    b_idGramLath.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    b_idGramLath.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     ZE( countT , cOut ) ;
 
-    thirdC thp( tinP , TAG( TAGiDnULL ) ) ;
+    thirdC thp( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         DEL( pInfo ) ;
         if( pInfo ) idDisk = pInfo->idVolume ;
-        third.dosQueryFSInfoF( tinP , pInfo , "///c" ) ; ___( pInfo ) ;
+        third.dosQueryFSInfoF( tinBaseP , pInfo , "///c" ) ; ___( pInfo ) ;
         ZE( infoDisk1S* , pInfo ) ;
     {
     ZE( countT , idDisk ) ;
 
-    third.s_nicNameF( tinP , pMeI , cMe ) ; ___( pMeI ) ;
+    third.s_nicNameF( tinBaseP , pMeI , cMe ) ; ___( pMeI ) ;
     ZE( countT , cMe ) ;
     ZE( nicNameC* , pMeI ) ;
 
     _IO_
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return ;
@@ -61,7 +61,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT netC::writeF( tinS& tinP , const nicNameC& nicNameP , soulC& soulP , const countT idPortP )/*1*/
+/*1*/voidT netC::writeF( tinBaseS& tinBaseP , const nicNameC& nicNameP , soulC& soulP , const countT idPortP )/*1*/
 /**/
 */
   should be 0 except for special applications
@@ -72,7 +72,7 @@
   if 0 then the local host is implied
   can be 0
  nicNameP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.1510004.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$writeF.0.html\"\>instances\</A\>

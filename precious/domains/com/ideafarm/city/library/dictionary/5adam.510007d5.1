@@ -9,29 +9,29 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.delF( tinP , pbi ) ;
+    etThread.delF( tinBaseP , pbi ) ;
 
     }
         }
-            ++ s ; ether.osSleepF( tinP , TOCK ) ;
+            ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
 
-            sock.writeF( tinP , idpi , idhi , (byteT*)&idSay , sizeof idSay ) ;
-            etThread.traceF( tinP , T("throwing ")+TF2(idSay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(idhi) ) ;
+            sock.writeF( tinBaseP , idpi , idhi , (byteT*)&idSay , sizeof idSay ) ;
+            etThread.traceF( tinBaseP , T("throwing ")+TF2(idSay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(idhi) ) ;
         {
         while( cDo -- )
         countT cDo = 2 ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        etThread.traceF( tinP , T("caught ")+TF2(idSay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" on port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(idhi) ) ;
+        etThread.traceF( tinBaseP , T("caught ")+TF2(idSay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" on port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(idhi) ) ;
         countT& idSay = *(countT*)pbi ;
     {
     if( !ether && cbi >= sizeof( countT ) )
 
-    sock.readF( tinP , pbi , cbi , idpi , idhi ) ;
+    sock.readF( tinBaseP , pbi , cbi , idpi , idhi ) ;
     nicNameC idhi ;
     ZE( countT , idpi ) ;
     ZE( countT , cbi ) ;
@@ -39,8 +39,8 @@ etThread.traceF( tinP , T("ok") ) ;
 {
 while( !ether && !etThread )
 
-idPortBind = sock.bindF( tinP , idPortBind ) ;
-socketC sock( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+idPortBind = sock.bindF( tinBaseP , idPortBind ) ;
+socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
 countT idPortBind = 0xfade ;
 

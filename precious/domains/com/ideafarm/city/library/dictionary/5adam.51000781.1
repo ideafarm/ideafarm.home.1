@@ -9,7 +9,7 @@
 
 REST
 
-etherC::loafIF( tinP ) ;                            
+etherC::loafIF( tinBaseP ) ;                            
 
 while( !ether && ~hFind && !POOP ) ;
 }
@@ -17,19 +17,19 @@ while( !ether && ~hFind && !POOP ) ;
     }
         }
             }
-                etThread.traceF( tinP , T(fn)+T("                         rejected") ) ;
+                etThread.traceF( tinBaseP , T(fn)+T("                         rejected") ) ;
             {
             else
             }
-                etThread.traceF( tinP , T(fn)+T("                accepted") ) ;
+                etThread.traceF( tinBaseP , T(fn)+T("                accepted") ) ;
             {
             IFpATTERN( etThread , pat , fn )
 
-            etThread.traceF( tinP , fn ) ;
+            etThread.traceF( tinBaseP , fn ) ;
         {
         if( fn )
 
-        fileNameC fn( tinP , etThread , pInfo->psttIfoName ) ;
+        fileNameC fn( tinBaseP , etThread , pInfo->psttIfoName ) ;
     {
     else
     }
@@ -38,16 +38,16 @@ while( !ether && ~hFind && !POOP ) ;
     {
     if( !pInfo || !pInfo->psttIfoName )
 
-    etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ;
+    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
 
-etThread.traceF( tinP , T("wildcard pattern: ")+tPattern ) ;
+etThread.traceF( tinBaseP , T("wildcard pattern: ")+tPattern ) ;
 
-patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
 TN( tPattern , "a@z" ) ;                                                            // SEE etherC::strPatternFromWildcardsMicrosoftF (ENABLE THE SWITCH CASE FOR '@')
 TN( tLike , "///d/tmp/wildcard.test.2/*" ) ;
 

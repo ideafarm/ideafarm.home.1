@@ -13,9 +13,9 @@
     }
         sData >> cHandles ;
         *psCourse >> sData ;
-        soulC sData( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sData( tinBaseP , TAG( TAGiDnULL ) ) ;
         *psCourse >> sCodes ;
-        soulC sCodes( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sCodes( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     if( psCourse )
     ZE( countT , cHandles ) ;
@@ -23,13 +23,13 @@
     stCourses >> psCourse ;
     ZE( soulC* , psCourse ) ;
     __Z( stCourses ) ;
-    ifcJobF( tinP , stCourses , ifcIDaDAM_2GLASS2 , sOrder , stOrders , psttOldCommentP , cTriesP , nicNameP ) ;
-    if( !nicNameP ) nicNameP = socketC::nicNameIF( tinP , *this ) ;
+    ifcJobF( tinBaseP , stCourses , ifcIDaDAM_2GLASS2 , sOrder , stOrders , psttOldCommentP , cTriesP , nicNameP ) ;
+    if( !nicNameP ) nicNameP = socketC::nicNameIF( tinBaseP , *this ) ;
 
-    stOrders << new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ;
-    stackC stOrders( tinP , third , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-    soulC sOrder( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_QUERYchANDLES ) ;
-    stackC stCourses( tinP , third , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+    stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stackC stOrders( tinBaseP , third , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+    soulC sOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_QUERYchANDLES ) ;
+    stackC stCourses( tinBaseP , third , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
 
     _IO_
 
@@ -43,7 +43,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::ifcQueryHandlesF( tinS& tinP , const strokeS* const psttOldCommentP , const countT cTriesP , nicNameC nicNameP )/*1*/
+/*1*/countT etherC::ifcQueryHandlesF( tinBaseS& tinBaseP , const strokeS* const psttOldCommentP , const countT cTriesP , nicNameC nicNameP )/*1*/
 
 /**/
 */
@@ -56,7 +56,7 @@
   should be an informative short title for the current job
   must not be 0 and must not be null length
  psttOldCommentP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.10301b3.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$ifcQueryHandlesF.0.html\"\>instances\</A\>

@@ -8,18 +8,18 @@
 
 
 }
-    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "~booksC/-\r\n" ) ; //U:: TO FIND A BUG
+    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "~booksC/-\r\n" ) ; //U:: TO FIND A BUG
 
     THREADmODE4rESTORE
 
     }
-        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    psttFindLike\r\n" ) ;
-        tinP.pEther->delF( tinP , psttFindLike ) ;
-        //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    psttFindLike\r\n" ) ;
+        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttFindLike ) ;
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
         }
-            //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
             }
-                if( !bDoneAll  ) tinP.pEther->traceF( tinP , T("~booksC / could not delete some badking files and am abandoning the effort because this process has been fired") ) ;
+                if( !bDoneAll  ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("~booksC / could not delete some badking files and am abandoning the effort because this process has been fired") ) ;
                 }
                     if( !cFail ) bDoneAll = 1 ;
                     while( ~hFind && !cFail ) ;
@@ -28,33 +28,33 @@
                         }
                             }
                                 }
-                                    tinP.pEther->traceF( tinP , T("~booksC / could not delete ; will retry several times [like,path,short]:    ")+T(psttFindLike)+tb4+T(fnLike.pathF())+(!pInfo?T(""):tb4+T(pInfo->psttIfoName)) ) ;
+                                    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("~booksC / could not delete ; will retry several times [like,path,short]:    ")+T(psttFindLike)+tb4+T(fnLike.pathF())+(!pInfo?T(""):tb4+T(pInfo->psttIfoName)) ) ;
                                     POOPRqUIET ;
                                 {
                                 else
                                 if( !POOP ) bDoneWo = 1 ;
 
-                                tinP.pEtScratch->diskFileOrDirDeleteF( tinP , pInfo->psttIfoName ) ;
+                                ((tinNormalS&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , pInfo->psttIfoName ) ;
                             {
                             while( !bDoneWo )
                             ZE( boolT , bDoneWo ) ;
                             ZE( boolT , bDoneAll ) ;
 
-                            //tinP.pEther->traceF( tinP , T("~booksC / deleting [short]:    ")+T(pInfo->psttIfoName) ) ;
+                            //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("~booksC / deleting [short]:    ")+T(pInfo->psttIfoName) ) ;
                         {
                         if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) )
 
                         }
-                            tinP.pEther->traceF( tinP , T("~booksC / impotence while finding a file [like,path,short]:    ")+T(psttFindLike)+tb4+T(fnLike.pathF())+(!pInfo?T(""):tb4+T(pInfo->psttIfoName)) ) ;
+                            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("~booksC / impotence while finding a file [like,path,short]:    ")+T(psttFindLike)+tb4+T(fnLike.pathF())+(!pInfo?T(""):tb4+T(pInfo->psttIfoName)) ) ;
                             cFail ++ ;
                             POOPRqUIET ;
                         {
                         if( POOP )
-                        tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
                         ZE( infoFileS* , pInfo ) ;
                     {
                     do
-                    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                     ZE( countT , cFail ) ;
                 {
                 while( cTries -- && !bDoneAll )
@@ -65,48 +65,48 @@
             {
             IFsCRATCH
             TN( tb4 , "    " ) ;
-            //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
 
-            patternC pat( tinP , *tinP.pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+            patternC pat( tinBaseP , *((tinNormalS&)tinBaseP).pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
 
-            //tinP.pEther->traceF( tinP , T("[fnLike.pathF()]:    ")+T(fnLike.pathF()) ) ;
-            //tinP.pEther->traceF( tinP , T("        [fnLike]:    ")+T(fnLike) ) ;
-            //tinP.pEther->traceF( tinP , T("  [psttFindLike]:    ")+T(psttFindLike) ) ;
-            fileNameC fnLike( tinP , *tinP.pEther , psttFindLike ) ;
+            //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("[fnLike.pathF()]:    ")+T(fnLike.pathF()) ) ;
+            //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("        [fnLike]:    ")+T(fnLike) ) ;
+            //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("  [psttFindLike]:    ")+T(psttFindLike) ) ;
+            fileNameC fnLike( tinBaseP , *((tinNormalS&)tinBaseP).pEther , psttFindLike ) ;
         {
-        if( F(flagsCt) & flBOOKSc_PURGEoNdT && tinP.pEther )
+        if( F(flagsCt) & flBOOKSc_PURGEoNdT && ((tinNormalS&)tinBaseP).pEther )
     {
     else
     }
         }
             while( ~hFind ) ;
             }
-                thirdC::dosDeleteIF( tinP , postName ) ;
+                thirdC::dosDeleteIF( tinBaseP , postName ) ;
 
                 }
                     break ;
                     __( ~hFind ) ;
                 {
                 if( !postName[ 0 ] )
-                thirdC::dosFindFileOrDirSimpleIF( tinP , postName , sizeof postName , hFind , postFindLike ) ;
+                thirdC::dosFindFileOrDirSimpleIF( tinBaseP , postName , sizeof postName , hFind , postFindLike ) ;
                 postName[ 0 ] = 0 ;
                 osTextT postName[ TUCK << 1 ] ;
             {
             do
-            handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
         {
         if( F(flagsCt) & flBOOKSc_PURGEoNdT )
     {
     if( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE ) //BOTH FLAVORS ARE RETAINED IN ORDER TO HAVE TRUE UNLIMITED CAPACITY WHEN PUSE EXISTS
-    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
+    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
 
-    processGlobal4I.heap.delF( tinP , *(byteT**)&ppcpIdBook           ) ;
-    processGlobal4I.heap.delF( tinP , *(byteT**)&pcpIdBookScratchMax  ) ;
-    processGlobal4I.heap.delF( tinP , *(byteT**)&pcpIdBookScratchMin  ) ;
-    processGlobal4I.heap.delF( tinP , *(byteT**)&pcpIdBookScratch1    ) ;
-    processGlobal4I.heap.delF( tinP , pbFlagsiBookBackCt              ) ;
-    processGlobal4I.heap.delF( tinP , pbBookBack                      ) ;
-    processGlobal4I.heap.delF( tinP , postBookNameScratch             ) ;
+    processGlobal4I.heap.delF( tinBaseP , *(byteT**)&ppcpIdBook           ) ;
+    processGlobal4I.heap.delF( tinBaseP , *(byteT**)&pcpIdBookScratchMax  ) ;
+    processGlobal4I.heap.delF( tinBaseP , *(byteT**)&pcpIdBookScratchMin  ) ;
+    processGlobal4I.heap.delF( tinBaseP , *(byteT**)&pcpIdBookScratch1    ) ;
+    processGlobal4I.heap.delF( tinBaseP , pbFlagsiBookBackCt              ) ;
+    processGlobal4I.heap.delF( tinBaseP , pbBookBack                      ) ;
+    processGlobal4I.heap.delF( tinBaseP , postBookNameScratch             ) ;
 
     }
         DELzOMBIE( pfDoomed ) ;
@@ -118,7 +118,7 @@
 
     }
         DELzOMBIEbOOKbACKnOWiF
-        processGlobal4I.heap.delF( tinP , *(byteT**)&ppcpIdBook[ offBookBackNow ] ) ;
+        processGlobal4I.heap.delF( tinBaseP , *(byteT**)&ppcpIdBook[ offBookBackNow ] ) ;
     {
     for( offBookBackNow = 0 ; offBookBackNow < CbOOKsLOTS ; offBookBackNow ++ )
 
@@ -127,11 +127,11 @@
     else if( this == &processGlobal4I.bksTelemetryApp ) processGlobal2I.flDt |= flCTdTg_bksTelemetryApp ;
          if( this == &processGlobal4I.bksTelemetrySys ) processGlobal2I.flDt |= flCTdTg_bksTelemetrySys ;
 
-    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
+    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
 
     THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP )
 
-    //if( tinP.pc Utility[ 0 ] ) CONoUTrAW( "~booksC/+\r\n" ) ; //U:: TO FIND A BUG
+    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW( "~booksC/+\r\n" ) ; //U:: TO FIND A BUG
 
     _IO_
 

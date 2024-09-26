@@ -9,21 +9,21 @@
 
 REST
 
-etThread.traceF( tinP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.delF( tinP , posti ) ;
+etThread.delF( tinBaseP , posti ) ;
 DEL( pfo ) ;
-if( offi && pfo ) etThread.fileWriteF( tinP , *pfo , posti , offi ) ;
+if( offi && pfo ) etThread.fileWriteF( tinBaseP , *pfo , posti , offi ) ;
 
 }
     }
         else offi = 0 ;
         }
             offi = offt ;
-            etThread.memCopyF( tinP , posti , postt , offt ) ;                                                  // MOVE UNWRITTEN PARTIAL TOKEN TO BEGINNING OF INPUT BUFFER
+            etThread.memCopyF( tinBaseP , posti , postt , offt ) ;                                                  // MOVE UNWRITTEN PARTIAL TOKEN TO BEGINNING OF INPUT BUFFER
         {
         if( offt )                                                                                          // IF PARTIAL TOKEN
-        etThread.fileWriteF( tinP , *pfo , posti , offi - offt ) ;                                          // FLUSH BUFFER EXCLUDING ANY PARTIAL TERMINATING TOKEN
+        etThread.fileWriteF( tinBaseP , *pfo , posti , offi - offt ) ;                                          // FLUSH BUFFER EXCLUDING ANY PARTIAL TERMINATING TOKEN
     {
     if( offi == costai )
 
@@ -35,14 +35,14 @@ if( offi && pfo ) etThread.fileWriteF( tinP , *pfo , posti , offi ) ;
     else
     }
         }
-            etThread.traceF( tinP , TF3(idFileLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
-            pfo = new( 0 , tinP , LF ) fileC( tinP , (strokeS*)( T("///d/tmp/gmail.download/1.separated/mail.")+TF3(++idFileLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".eml") ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; ___( pfo ) ;
+            etThread.traceF( tinBaseP , TF3(idFileLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+            pfo = new( 0 , tinBaseP , LF ) fileC( tinBaseP , (strokeS*)( T("///d/tmp/gmail.download/1.separated/mail.")+TF3(++idFileLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".eml") ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; ___( pfo ) ;
             DEL( pfo ) ;                                                                                        // CLOSE THE OUTPUT FILE AND OPEN THE NEXT OUTPUT FILE
 
             offt = 0 ;
             offi = offt ;
-            etThread.memCopyF( tinP , posti , postt , offt ) ;                                                  // MOVE UNWRITTEN TOKEN TO BEGINNING OF INPUT BUFFER
-            etThread.fileWriteF( tinP , *pfo , posti , offi - offt ) ;                                          // FLUSH BUFFER EXCLUDING TERMINATING TOKEN
+            etThread.memCopyF( tinBaseP , posti , postt , offt ) ;                                                  // MOVE UNWRITTEN TOKEN TO BEGINNING OF INPUT BUFFER
+            etThread.fileWriteF( tinBaseP , *pfo , posti , offi - offt ) ;                                          // FLUSH BUFFER EXCLUDING TERMINATING TOKEN
         {
         if( ++ offt == sizeof postt - 1 && offt < offi )                                                    // IF WHOLE TOKEN MATCH AND AM NOT AT BEGINNING OF INPUT
 
@@ -52,11 +52,11 @@ if( offi && pfo ) etThread.fileWriteF( tinP , *pfo , posti , offi ) ;
     
     }
         break ;
-        etThread.traceF( tinP , T("eof reached") ) ;
+        etThread.traceF( tinBaseP , T("eof reached") ) ;
     {
     if( !cba )
 
-    etThread.fileReadF( tinP , posti + ( offi ++ ) , cba , fi , 1 ) ;
+    etThread.fileReadF( tinBaseP , posti + ( offi ++ ) , cba , fi , 1 ) ;
     countT cba = 1 ;
 {
 while( !ether && !POOP )
@@ -66,15 +66,15 @@ ZE( countT , offt ) ;
 osTextT postt[] = "From " ;
 
 __Z( posti ) ;
-etThread.newF( tinP , LF , posti , costai ) ; ___( posti ) ;
+etThread.newF( tinBaseP , LF , posti , costai ) ; ___( posti ) ;
 const countT costai = TOCK ;
 ZE( countT , offi ) ;
 ZE( osTextT* , posti ) ;
 
-fileC fi( tinP , (strokeS*)T("///d/tmp/gmail.download/gmail.mbox") ) ;
+fileC fi( tinBaseP , (strokeS*)T("///d/tmp/gmail.download/gmail.mbox") ) ;
 
-etThread.traceF( tinP , TF3(idFileLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
-fileC* pfo = new( 0 , tinP , LF ) fileC( tinP , (strokeS*)( T("///d/tmp/gmail.download/1.separated/mail.")+TF3(++idFileLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".eml") ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; ___( pfo ) ;
+etThread.traceF( tinBaseP , TF3(idFileLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+fileC* pfo = new( 0 , tinBaseP , LF ) fileC( tinBaseP , (strokeS*)( T("///d/tmp/gmail.download/1.separated/mail.")+TF3(++idFileLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".eml") ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; ___( pfo ) ;
 ZE( countT , idFileLath ) ;
 
 TODO

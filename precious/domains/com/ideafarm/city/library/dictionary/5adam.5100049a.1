@@ -9,8 +9,8 @@
 
 REST
 
-etThread.osThreadF( tinP , countTC() , tmDeadlocked2F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grabDead1 , (countT)&grabDead2 ) ;
-etThread.osThreadF( tinP , countTC() , tmDeadlocked1F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grabDead1 , (countT)&grabDead2 ) ; //THESE DEMONSTRATE DEADLOCK REPORTING
+etThread.osThreadF( tinBaseP , countTC() , tmDeadlocked2F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grabDead1 , (countT)&grabDead2 ) ;
+etThread.osThreadF( tinBaseP , countTC() , tmDeadlocked1F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grabDead1 , (countT)&grabDead2 ) ; //THESE DEMONSTRATE DEADLOCK REPORTING
 grabOldS grabDead2( thirdC::third_tinMainG_IF() , TAG( TAGiDnULL ) ) ;
 grabOldS grabDead1( thirdC::third_tinMainG_IF() , TAG( TAGiDnULL ) ) ;
 
@@ -18,14 +18,14 @@ TODO
 
 DONE( tmDeadlocked2F )
 }
-    ungrabF( tinP , grabDead2 ) ;
-    ungrabF( tinP , grabDead1 ) ;
+    ungrabF( tinBaseP , grabDead2 ) ;
+    ungrabF( tinBaseP , grabDead1 ) ;
     TELL( "cleaning up" )
-    grabF( tinP , grabDead1 ) ;
+    grabF( tinBaseP , grabDead1 ) ;
     TELL( "grabbing 1" )
-    etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+    etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
     TELL( "napping" )
-    grabF( tinP , grabDead2 ) ;
+    grabF( tinBaseP , grabDead2 ) ;
     TELL( "grabbing 2" )
     grabOldS& grabDead2 = *(grabOldS*)pTaskP->c2 ;
     grabOldS& grabDead1 = *(grabOldS*)pTaskP->c1 ;
@@ -35,14 +35,14 @@ TASK( tmDeadlocked2F )
 
 DONE( tmDeadlocked1F )
 }
-    ungrabF( tinP , grabDead1 ) ;
-    ungrabF( tinP , grabDead2 ) ;
+    ungrabF( tinBaseP , grabDead1 ) ;
+    ungrabF( tinBaseP , grabDead2 ) ;
     TELL( "cleaning up" )
-    grabF( tinP , grabDead2 ) ;
+    grabF( tinBaseP , grabDead2 ) ;
     TELL( "grabbing 2" )
-    etThread.osSleepF( tinP , TUCK * 0x40 ) ;
+    etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
     TELL( "napping" )
-    grabF( tinP , grabDead1 ) ;
+    grabF( tinBaseP , grabDead1 ) ;
     TELL( "grabbing 1" )
     grabOldS& grabDead2 = *(grabOldS*)pTaskP->c2 ;
     grabOldS& grabDead1 = *(grabOldS*)pTaskP->c1 ;

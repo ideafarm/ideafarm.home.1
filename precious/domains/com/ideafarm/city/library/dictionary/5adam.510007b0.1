@@ -9,17 +9,17 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
         }
-            etThread.traceF( tinP , T("found ")+T(pb2f)+T(" at [offrFound]: ")+TF2(offrFound,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tinBaseP , T("found ")+T(pb2f)+T(" at [offrFound]: ")+TF2(offrFound,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             byteT pb2f[] = { circle[ offrFound ] , 0 } ;
         {
         else
-        if( !offrFound ) etThread.traceF( tinP , T("did not find '")+T(pb2s)+T("'") ) ;
+        if( !offrFound ) etThread.traceF( tinBaseP , T("did not find '")+T(pb2s)+T("'") ) ;
         countT offrFound = circle.findF( *pb2s ) ;
         byteT pb2s[] = { bb , 0 } ;
     {
@@ -34,9 +34,9 @@ etThread.traceF( tinP , T("ok") ) ;
     ZE( byteT , bbPushEnd ) ;
     byteT bbPushWoth = 'a' ;
 
-    etThread.traceF( tinP , T("pass [cPush]: ")+TF2(cPush,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , T("pass [cPush]: ")+TF2(cPush,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-    circleC circle( tinP , etThread , 4 ) ;
+    circleC circle( tinBaseP , etThread , 4 ) ;
 {
 for( countT cPush = 0 ; cPush <= 0x10 ; cPush ++ )
 

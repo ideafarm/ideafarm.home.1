@@ -10,29 +10,29 @@
     }
         }                                                                                                                           \
             }                                                                                                                       \
-                tinP.pag1->_etherC_.pSwsRecycle->ungrabF( tinP ) ;                                                                                      \
-                *tinP.pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                tinP.pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                        \
-                tinP.pag1->_etherC_.pSwsRecycle->grabF( tinP , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
+                *((tinNormalS&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tinNormalS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                        \
+                ((tinNormalS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
             {                                                                                                                       \
             else                                                                                                                    \
             }                                                                                                                       \
-                *tinP.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
-                tinP.pczl_pSwsRecycle = c4Lever ;                                                                                   \
+                *((tinNormalS&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
+                ((tinNormalS&)tinBaseP).pczl_pSwsRecycle = c4Lever ;                                                                                   \
             {                                                                                                                       \
-            if( F(tinP.flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && tinP.pSwsRecycle )                                        \
+            if( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tinNormalS&)tinBaseP).pSwsRecycle )                                        \
                                                                                                                                     \
-            pObjectP->recycleCleanF( tinP ) ;                                                                                       \
+            pObjectP->recycleCleanF( tinBaseP ) ;                                                                                       \
             ___( pObjectP ) ;                                                                                                       \
                                                                                                                                     \
             if( !c4Lever.c2 ) c4Lever.c2 = - 1 ;                                                                                    \
-            count4S c4Lever( ifcIDtYPErECYCLE_##classP , pObjectP->recycleLever1F( tinP ) , pObjectP->recycleLever2F( tinP ) ) ;    \
+            count4S c4Lever( ifcIDtYPErECYCLE_##classP , pObjectP->recycleLever1F( tinBaseP ) , pObjectP->recycleLever2F( tinBaseP ) ) ;    \
         {                                                                                                                           \
         if( pObjectP )                                                                                                              \
         _IO_                                                                                                                        \
         SCOOP                                                                                                                       \
     {                                                                                                                               \
-    voidT etherC::operator ()( tinS& tinP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP )                                                                     \
                                                                                                                                     \
 #define RETURNtOrECYCLER2(classP)                                                                                                   \
 

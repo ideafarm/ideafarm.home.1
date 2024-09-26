@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.diskWalkF( tinP , cDirs , cFiles , T("///d/archive/") , bQuit , diskWalkFooCBF , 0 , 0 , 0 ) ;
+etThread.diskWalkF( tinBaseP , cDirs , cFiles , T("///d/archive/") , bQuit , diskWalkFooCBF , 0 , 0 , 0 ) ;
 ZE( boolT , bQuit ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
@@ -24,46 +24,46 @@ TODO
     return bDoIt ;
 
     }
-        tinP.pEther->delF( tinP , psttOldLower ) ;
+        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttOldLower ) ;
         }
-            tinP.pEther->delF( tinP , psttShortNew ) ;
-            tinP.pEther->delF( tinP , psttShortOld ) ;
-            tinP.pEther->delF( tinP , psttPath ) ;
+            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttShortNew ) ;
+            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttShortOld ) ;
+            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
 
             }
-                tinP.pEther->diskCopyFileF( tinP , tNew , tOld , 0 ) ;
-                etherC::etRockIF( tinP ).traceF( tinP , T("copying to: ")+tNew ) ;
+                ((tinNormalS&)tinBaseP).pEther->diskCopyFileF( tinBaseP , tNew , tOld , 0 ) ;
+                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("copying to: ")+tNew ) ;
             {
-            if( !tinP.pEther->diskFileExistsF( tinP , T(psttPath)+T(psttShortNew) ) )
+            if( !((tinNormalS&)tinBaseP).pEther->diskFileExistsF( tinBaseP , T(psttPath)+T(psttShortNew) ) )
 
             TN( tNew , "" ) ; tNew = T("///d/tmp/archive.unshrunk/")+T(psttShortNew) ;
 
-            tinP.pEther->strReplaceF( tinP , psttShortNew , psttShortOld , T(".data.") , T(".meta.thumb.0600x.") , 0 , flSTRrEPLACE_null ) ;
+            ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttShortNew , psttShortOld , T(".data.") , T(".meta.thumb.0600x.") , 0 , flSTRrEPLACE_null ) ;
             ZE( strokeS* , psttShortNew ) ;
 
-            tinP.pEther->strBisectF( tinP , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
+            ((tinNormalS&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
             ZE( strokeS* , psttShortOld ) ;
             ZE( strokeS* , psttPath ) ;
         {
         )
-            tinP.pEther->strIdF( tinP , T(".data.ico") , psttOldLower )
-            tinP.pEther->strIdF( tinP , T(".data.bmp") , psttOldLower )                     ||
-            tinP.pEther->strIdF( tinP , T(".data.png") , psttOldLower )                     ||
-            tinP.pEther->strIdF( tinP , T(".data.jpg") , psttOldLower )                     ||
+            ((tinNormalS&)tinBaseP).pEther->strIdF( tinBaseP , T(".data.ico") , psttOldLower )
+            ((tinNormalS&)tinBaseP).pEther->strIdF( tinBaseP , T(".data.bmp") , psttOldLower )                     ||
+            ((tinNormalS&)tinBaseP).pEther->strIdF( tinBaseP , T(".data.png") , psttOldLower )                     ||
+            ((tinNormalS&)tinBaseP).pEther->strIdF( tinBaseP , T(".data.jpg") , psttOldLower )                     ||
         (
         if
 
-        tinP.pEther->strConvertToLowerCaseF( tinP , psttOldLower , tOld ) ; ___( psttOldLower ) ;
+        ((tinNormalS&)tinBaseP).pEther->strConvertToLowerCaseF( tinBaseP , psttOldLower , tOld ) ; ___( psttOldLower ) ;
         ZE( strokeS* , psttOldLower ) ;
 
         TN( tOld , ifName ) ;
-        ifFileNameC ifName( tinP , *tinP.pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ;
     {
-    if( postNameP[ thirdC::c_strlenIF( tinP , postNameP ) - 1 ] != '\\' && tinP.pEther ) // IF NOT A DIRECTORY
+    if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] != '\\' && ((tinNormalS&)tinBaseP).pEther ) // IF NOT A DIRECTORY
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkFooCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkFooCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 
 /*1*/WAKEsHOWtEXT( "tool.archive.create.meta.thumb.0600x.files" )/*1*/

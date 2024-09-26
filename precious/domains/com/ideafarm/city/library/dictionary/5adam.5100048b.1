@@ -11,32 +11,32 @@
 
 REST
 
-third.s_writeF( tinP , handleJob , (byteT*)&value , sizeof value ) ;
+third.s_writeF( tinBaseP , handleJob , (byteT*)&value , sizeof value ) ;
 countT value = 0x12344321 ;
 
-third.s_acceptF( tinP , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
+third.s_acceptF( tinBaseP , handleJob , idPortPeer , nnPeer , handleServer , countTC() ) ;
 ZE( countT , idPortPeer ) ;
 nicNameC nnPeer ;
-handleC handleJob( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+handleC handleJob( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 
-etThread.osThreadF( tinP , countTC() , tmF ) ;
+etThread.osThreadF( tinBaseP , countTC() , tmF ) ;
 
-third.s_listenF( tinP , handleServer ) ;
-idPort = third.s_bindF( tinP , handleServer ) ;
-third.s_socketIF( tinP , handleServer ) ;
-handleC handleServer( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+third.s_listenF( tinBaseP , handleServer ) ;
+idPort = third.s_bindF( tinBaseP , handleServer ) ;
+third.s_socketIF( tinBaseP , handleServer ) ;
+handleC handleServer( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 
 thirdC& third = ether ;
 
 TODO
 
 DONE( tmF )
-etThread.strokeF( tinP , T("value: ")+TF1(value)+T("\r\n") ) ;
-thThread.s_readF( tinP , (byteT*)&value , sizeof value , handleClient ) ;
+etThread.strokeF( tinBaseP , T("value: ")+TF1(value)+T("\r\n") ) ;
+thThread.s_readF( tinBaseP , (byteT*)&value , sizeof value , handleClient ) ;
 ZE( countT , value ) ;
-thThread.s_connectF( tinP , handleClient , idPort ) ;
-thThread.s_socketIF( tinP , handleClient ) ;
-handleC handleClient( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+thThread.s_connectF( tinBaseP , handleClient , idPort ) ;
+thThread.s_socketIF( tinBaseP , handleClient ) ;
+handleC handleClient( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 
 thirdC& thThread = etThread ;
 TASK( tmF )

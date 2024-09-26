@@ -18,18 +18,18 @@
     THREADmODE4rESTORE
 
     }
-        //if( bDeleteOutParam ) { PUSE( tinP , *(byteT**)ppcpIdAptP ) ; }
+        //if( bDeleteOutParam ) { PUSE( tinBaseP , *(byteT**)ppcpIdAptP ) ; }
 
-        if( processGlobal2I._grabC_pgw ) grabBookNow.ungrabF( tinP ) ;
+        if( processGlobal2I._grabC_pgw ) grabBookNow.ungrabF( tinBaseP ) ;
 
         }
-            processGlobal4I.heap.delF( tinP , pbtScratchBuffer ) ;
-            tinP.tlsDelF( LF , *(byteT**)&pBk0Doomed ) ;
+            processGlobal4I.heap.delF( tinBaseP , pbtScratchBuffer ) ;
+            ((tinNormalS&)tinBaseP).tlsDelF( LF , *(byteT**)&pBk0Doomed ) ;
             DELzOMBIE( pBk0Doomed ) ;
 
             }
                 THREADmODE2rESTORE ;
-                writeF( tinP , pbi , cbi ) ; //THIS LINE MIGHT USE CONSTRUCT AND USE A NEW SCRATCH BOOK
+                writeF( tinBaseP , pbi , cbi ) ; //THIS LINE MIGHT USE CONSTRUCT AND USE A NEW SCRATCH BOOK
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
                 _IO_
             {
@@ -37,7 +37,7 @@
 
                                  *ppBk0Scratch = 0 ;
             book0C* pBk0Doomed = *ppBk0Scratch ;
-            (*ppBk0Scratch)->readF( tinP , pbi , cbi , offi ) ;
+            (*ppBk0Scratch)->readF( tinBaseP , pbi , cbi , offi ) ;
             ZE( countT , offi ) ;
             countT cbi = - 1 ;
             ZE( const byteT* , pbi ) ;
@@ -95,7 +95,7 @@
                     if
 
                     pcRef_postBookNameNoPuse2[ offEltMyHeap ] = 0 ;                                     //THIS FREES THE HEAP ALLOCATION THAT I WAS USING FOR THE NAME
-                    //if( !( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE ) ) PUSE( tinP , postBookName ) ;
+                    //if( !( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE ) ) PUSE( tinBaseP , postBookName ) ;
                     THREADmODE2rESTORE ;
                     //CONoUTrAW( "\r\n+++++++++++ NEWED  BOOK ------------" ) ;
 
@@ -104,13 +104,13 @@
                     }
                         NEWbOOK2sETfLAG
 
-                        //tinP.pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
                         THREADmODE4rESTORE
                         }
                             THREADmODE4rESTORE
                             }
                                 THREADmODE4rESTORE
-                                new( 0 , tinP , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tinP , TAG( TAGiDnULL ) , postBookName , idStateSpace , flagsCtBook , F(flagsCt) & flBOOKSc_WRITER ? cbBodyNew : 0 , bFill , idMemorySpace ) ;
+                                new( 0 , tinBaseP , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tinBaseP , TAG( TAGiDnULL ) , postBookName , idStateSpace , flagsCtBook , F(flagsCt) & flBOOKSc_WRITER ? cbBodyNew : 0 , bFill , idMemorySpace ) ;
                                 THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
                                 _IO_
                             {
@@ -118,15 +118,15 @@
                             _IO_
                         {
                         THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
-                        //tinP.pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
 
                         //}
-                        //                  tinP.pc Utility[ 0 ] = save ;
-                        //    tinP.pEther->traceF( tinP , T("newing book [idBook]:    ")+TF2(PCPiDbOOKnOW[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        //                  tinP.pc Utility[ 0 ] = 0 ;
-                        //    countT save = tinP.pc Utility[ 0 ] ;
+                        //                  ((tinNormalS&)tinBaseP).pc Utility[ 0 ] = save ;
+                        //    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("newing book [idBook]:    ")+TF2(PCPiDbOOKnOW[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //                  ((tinNormalS&)tinBaseP).pc Utility[ 0 ] = 0 ;
+                        //    countT save = ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ;
                         //{
-                        //if( tinP.pc Utility[ 0 ] && tinP.pEther ) //U:: TO FIND A BUG
+                        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pEther ) //U:: TO FIND A BUG
 
                         NEWbOOK1bLAMMOiFcT
                         _IO_
@@ -137,8 +137,8 @@
                     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
 
                     //}
-                    //    if( postBookName ) thirdC::c_strcpyIF( tinP , postBookName , tName ) ;
-                    //    PUSE.newF( tinP , LF , *(byteT**)&postBookName , tName.csF( tinP ) + 1 ) ; ___( postBookName ) ;
+                    //    if( postBookName ) thirdC::c_strcpyIF( tinBaseP , postBookName , tName ) ;
+                    //    PUSE.newF( tinBaseP , LF , *(byteT**)&postBookName , tName.csF( tinBaseP ) + 1 ) ; ___( postBookName ) ;
                     //    ;
                     //        : T(postPath)+T(postShort)+T(".booksC.1.book.")+tIdBook
                     //        ? T(postShort)+T(".booksC.1.book.")+tIdBook
@@ -153,7 +153,7 @@
                     //{
                     //else
                     }
-                        thirdC::c_strcpyIF( tinP , postBookName , ostoName ) ;
+                        thirdC::c_strcpyIF( tinBaseP , postBookName , ostoName ) ;
             
                         }
                             OStEXTCF(  ostoName , PCPiDbOOKnOW[ offi ] , '0' ) ;
@@ -175,11 +175,11 @@
 
                     }
                         //}
-                        //    //if( tinP.pEther ) tinP.pEther->trace F( tinP , T("booksC::writeF [idBook]: ")+TF2(PCPiDbOOKnOW[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //    //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , T("booksC::writeF [idBook]: ")+TF2(PCPiDbOOKnOW[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         //{
                         //if( PCPiDbOOKnOW[ 0 ] && PCPiDbOOKnOW[ 1 ] >= TUCK ) //U::20141104@0740: TO FIND A BUG (RUNAWAY WHILE PROCESSING all.soil)
 
-                        addF( tinP , PCPiDbOOKnOW , PCPiDbOOKlAG , pcpWo ) ;
+                        addF( tinBaseP , PCPiDbOOKnOW , PCPiDbOOKlAG , pcpWo ) ;
                         countT pcpWo[] = { 1 , 1 } ;
                         _IO_
                     {
@@ -187,43 +187,43 @@
                     }
                         //CONoUTrAW( "\r\n----------- DELETED  BOOK ------------" ) ;
                         bBookNowIsDestroyed = 1 ;
-                        //tinP.pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
                         DELzOMBIEbOOKbACKnOWiF
-                        //tinP.pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
                         pBookUse = 0 ;
                         //CONoUTrAW( "\r\n----------- DELETING BOOK ++++++++++++" ) ;
 
                         //}
-                        //                  tinP.pc Utility[ 0 ] = save ;
-                        //    tinP.pEther->traceF( tinP , T("deleting book [idBook]:    ")+TF2(PCPiDbOOKnOW[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        //                  tinP.pc Utility[ 0 ] = 0 ;
-                        //    countT save = tinP.pc Utility[ 0 ] ;
+                        //                  ((tinNormalS&)tinBaseP).pc Utility[ 0 ] = save ;
+                        //    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("deleting book [idBook]:    ")+TF2(PCPiDbOOKnOW[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //                  ((tinNormalS&)tinBaseP).pc Utility[ 0 ] = 0 ;
+                        //    countT save = ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ;
                         //{
-                        //if( PCPiDbOOKnOW[ 1 ] && tinP.pc Utility[ 0 ] && tinP.pEther ) //U:: TO FIND A BUG
+                        //if( PCPiDbOOKnOW[ 1 ] && ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pEther ) //U:: TO FIND A BUG
                         _IO_
                     {
                     else if( !bSameBook )
                     }
-                        else                              BOOKnOW.purgeF( tinP ) ;
+                        else                              BOOKnOW.purgeF( tinBaseP ) ;
                         if( offBookBackNow < CbOOKsLOTS ) bBookNowIsDestroyed = 1 ;
                         _IO_
                     {
                     if( F(flagsCt) & flBOOKSc_CYCLE )
                     ZE( boolT , bBookNowIsDestroyed ) ;
-                    //if( tinP.pEther ) tinP.pEther->trace F( tinP , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": ")+T(postShort)+T(": ")+TF2(offBookBackNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": writeF / incremented") ) ; //U:: TO FIND A BUG
+                    //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": ")+T(postShort)+T(": ")+TF2(offBookBackNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": writeF / incremented") ) ; //U:: TO FIND A BUG
 
                     }
                         }
-                            bSameBook = pcpIdBookTest[ 0 ] == PCPiDbOOKnOW[ 0 ] && !thirdC::c_memcmpIF( tinP , (byteT*)pcpIdBookTest , (byteT*)PCPiDbOOKnOW , sizeof( countT ) * ( 1 + pcpIdBookTest[ 0 ] ) ) ;
+                            bSameBook = pcpIdBookTest[ 0 ] == PCPiDbOOKnOW[ 0 ] && !thirdC::c_memcmpIF( tinBaseP , (byteT*)pcpIdBookTest , (byteT*)PCPiDbOOKnOW , sizeof( countT ) * ( 1 + pcpIdBookTest[ 0 ] ) ) ;
 
-                            addF( tinP , pcTest , PCPiDbOOKlAG , pcpWo ) ;
+                            addF( tinBaseP , pcTest , PCPiDbOOKlAG , pcpWo ) ;
                             countT* pcTest = pcpIdBookTest ;
                             countT pcpWo[] = { 1 , 1 } ;
                             countT pcpIdBookTest[ 9 ] = { 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 } ;
                         {                              // 1   2   3   4   5   6   7   8   9
                         else
                         }
-                            if( tinP.pEther ) tinP.pEther->traceF( tinP , T("!exception: booksC::writeF: idBookNow is too long to test so unnecesary close/open might occur [ccMax]:    ")+TF2(ccMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("!exception: booksC::writeF: idBookNow is too long to test so unnecesary close/open might occur [ccMax]:    ")+TF2(ccMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( ccMax > 8 )
 
@@ -246,14 +246,14 @@
                             //if( !(    (bookHeadS&)**ppBk0Scratch    ).cbBody ) { BLAMMO ; } //U::TO FIND A BUG  20140401
                             ((bookHeadS&)**ppBk0Scratch).flags |= flBOOKhEADs_PRIORbOOKnOTcONTINUEDhERE ;
                             }
-                                *ppBk0Scratch = new( 0 , tinP , pbtBook0 , cbtBook0 ) book0C( tinP , pbtScratchBuffer , cbtBuffer ) ;
+                                *ppBk0Scratch = new( 0 , tinBaseP , pbtBook0 , cbtBook0 ) book0C( tinBaseP , pbtScratchBuffer , cbtBuffer ) ;
                             {
 
                             ;
-                                    : &tinP.pBk0TraceScratch
-                                    ? &tinP.pBk0TelemetryAppScratch
+                                    : &((tinNormalS&)tinBaseP).pBk0TraceScratch
+                                    ? &((tinNormalS&)tinBaseP).pBk0TelemetryAppScratch
                                 : bTelemetryApp
-                                ? &tinP.pBk0TelemetrySysScratch
+                                ? &((tinNormalS&)tinBaseP).pBk0TelemetrySysScratch
                             ppBk0Scratch = bTelemetrySys
                             _IO_
                         {
@@ -262,7 +262,7 @@
 
                         }
                             TELL( "booksC::writeF / called tlsNewF 2" )
-                            pbtBook0  = tinP.tlsNewF( LF , cbtBook0 ) ;
+                            pbtBook0  = ((tinNormalS&)tinBaseP).tlsNewF( LF , cbtBook0 ) ;
                             TELL( "booksC::writeF / calling tlsNewF 2" )
                             _IO_
                         {
@@ -270,7 +270,7 @@
 
                         }
                             TELL( "booksC::writeF / called heapC::newF 1" )
-                            pbtScratchBuffer = processGlobal4I.heap.newF( tinP , LF , cbtBuffer ) ;
+                            pbtScratchBuffer = processGlobal4I.heap.newF( tinBaseP , LF , cbtBuffer ) ;
                             TELL( "booksC::writeF / calling heapC::newF 1" )
                             _IO_
                         {
@@ -288,11 +288,11 @@
                         _IO_
                     {
                     )
-                        ( bTrace     && !tinP.pBk0TraceScratch )
+                        ( bTrace     && !((tinNormalS&)tinBaseP).pBk0TraceScratch )
                         ||
-                        ( bTelemetryApp && !tinP.pBk0TelemetryAppScratch )
+                        ( bTelemetryApp && !((tinNormalS&)tinBaseP).pBk0TelemetryAppScratch )
                         ||
-                        ( bTelemetrySys && !tinP.pBk0TelemetrySysScratch )
+                        ( bTelemetrySys && !((tinNormalS&)tinBaseP).pBk0TelemetrySysScratch )
                     (
                     if
 
@@ -344,9 +344,9 @@
                     BLAMMO ;
                     fileWriteGF( "\\tmp\\booksc.scratch.buffer.image.ttt" , pbtScratchBuffer , CBTsCRATCHbUFFER , flSAY_null ) ;    //U:: TO FIND A BUG ; THIS TEMP CODE WILL FAIL IF \\tmp DOES NOT EXIST
                 {
-                else if( pBookUse == tinP.pBk0TraceScratch )
-                else if( pBookUse == tinP.pBk0TelemetryAppScratch ) { BLAMMO ; }
-                else if( pBookUse == tinP.pBk0TelemetrySysScratch ) { BLAMMO ; } //20141206@0700: OBSERVED WITHIN ifcIDaDAM_CLOUD WHILE 3 INSTANCES EXISTED ; 20151026@2013: DITTO WHILE MORE THAN 3 EXISTED BUT ONLY WO WAS ACTIVE AT A TIME ; 20151125@1532 piss (156)
+                else if( pBookUse == ((tinNormalS&)tinBaseP).pBk0TraceScratch )
+                else if( pBookUse == ((tinNormalS&)tinBaseP).pBk0TelemetryAppScratch ) { BLAMMO ; }
+                else if( pBookUse == ((tinNormalS&)tinBaseP).pBk0TelemetrySysScratch ) { BLAMMO ; } //20141206@0700: OBSERVED WITHIN ifcIDaDAM_CLOUD WHILE 3 INSTANCES EXISTED ; 20151026@2013: DITTO WHILE MORE THAN 3 EXISTED BUT ONLY WO WAS ACTIVE AT A TIME ; 20151125@1532 piss (156)
                 }
                     break ;
                     if( ( !( F(flagsP) & flBOOKScwRITE_SETrEMAINING ) && cbDone1 != cb1P ) || cbDone2 != cb2P ) { BLAMMO ; } // cbDoneX MUST EQUAL cbXP; IF I DIDN'T WRITE THE LATH BYTE THEN I MUST HAVE WRITTEN ALL THAT I WANTED TO WRITE
@@ -359,19 +359,19 @@
                 //        countT foo = 2 ;
                 //    {
                 //    if( !bWroteLath && !bWroteAll )
-                //                  tinP.pc Utility[ 0 ] = save ;
-                //    tinP.pEther->traceF( tinP , T("[cb1P,cbDone1,bWroteLath,bWroteAll]:    ")+TF2(cb1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbDone1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bWroteLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bWroteAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                //                  tinP.pc Utility[ 0 ] = 0 ;
-                //    countT save = tinP.pc Utility[ 0 ] ;
+                //                  ((tinNormalS&)tinBaseP).pc Utility[ 0 ] = save ;
+                //    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("[cb1P,cbDone1,bWroteLath,bWroteAll]:    ")+TF2(cb1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbDone1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bWroteLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bWroteAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //                  ((tinNormalS&)tinBaseP).pc Utility[ 0 ] = 0 ;
+                //    countT save = ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ;
                 //{
-                //if( tinP.pc Utility[ 0 ] && tinP.pEther )
+                //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && ((tinNormalS&)tinBaseP).pEther )
 
                 boolT bWroteAll  =  !( F(flagsResult) & flBOOK0cwRITErESULT_COULDnOTwRITEaLL ) ;
                 boolT bWroteLath = !!( F(flagsResult) & flBOOK0cwRITErESULT_WROTElATHbYTE    ) ;
 
                 //}
                 //    }
-                //        thirdC::c_memcpyIF( tinP , (byteT*)( *ppcpIdAptP + 2 ) , (byteT*)( PCPiDbOOKnOW + 1 ) , sizeof( countT ) * *PCPiDbOOKnOW ) ;
+                //        thirdC::c_memcpyIF( tinBaseP , (byteT*)( *ppcpIdAptP + 2 ) , (byteT*)( PCPiDbOOKnOW + 1 ) , sizeof( countT ) * *PCPiDbOOKnOW ) ;
                 //        (*ppcpIdAptP)[ 1 ] = offAt ;
                 //        (*ppcpIdAptP)[ 0 ] = 1 + *PCPiDbOOKnOW ;
                 //    {
@@ -403,7 +403,7 @@
 
                 }
                     THREADmODE2rESTORE ;
-                    offAt = pBookUse->writeF( tinP , flagsResult , pb1P , cbDone1 , pb2P , cbDone2 , flagsWrite , phWroteP ? &offWrote : 0 ) ;
+                    offAt = pBookUse->writeF( tinBaseP , flagsResult , pb1P , cbDone1 , pb2P , cbDone2 , flagsWrite , phWroteP ? &offWrote : 0 ) ;
                     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
                     _IO_
                 {
@@ -437,7 +437,7 @@
             if( F(flagsP) & flBOOKScwRITE_FLUSHaFTER                   ) flagsWrite |= flBOOK0cwRITE_FLUSHaFTER                     ;
             _IO_
         {
-        if( pBookUse != tinP.pBk0TelemetrySysScratch && pBookUse != tinP.pBk0TelemetryAppScratch && pBookUse != tinP.pBk0TraceScratch )
+        if( pBookUse != ((tinNormalS&)tinBaseP).pBk0TelemetrySysScratch && pBookUse != ((tinNormalS&)tinBaseP).pBk0TelemetryAppScratch && pBookUse != ((tinNormalS&)tinBaseP).pBk0TraceScratch )
 
         if( F(flagsP) & flBOOKScwRITE_SETrEMAINING                  ) flagsWrite |= flBOOK0cwRITE_SETrEMAINING                  ;
         if( F(flagsP) & flBOOKScwRITE_ALLOWoDDlENGTH                ) flagsWrite |= flBOOK0cwRITE_ALLOWoDDlENGTH                ;
@@ -457,31 +457,31 @@
 
         ;
                     : &BOOKnOW
-                    ? tinP.pBk0TraceScratch
-                : bTrace && tinP.pBk0TraceScratch
-                ? tinP.pBk0TelemetryAppScratch
-            : bTelemetryApp && tinP.pBk0TelemetryAppScratch
-            ? tinP.pBk0TelemetrySysScratch
-        book0C* pBookUse = bTelemetrySys && tinP.pBk0TelemetrySysScratch
+                    ? ((tinNormalS&)tinBaseP).pBk0TraceScratch
+                : bTrace && ((tinNormalS&)tinBaseP).pBk0TraceScratch
+                ? ((tinNormalS&)tinBaseP).pBk0TelemetryAppScratch
+            : bTelemetryApp && ((tinNormalS&)tinBaseP).pBk0TelemetryAppScratch
+            ? ((tinNormalS&)tinBaseP).pBk0TelemetrySysScratch
+        book0C* pBookUse = bTelemetrySys && ((tinNormalS&)tinBaseP).pBk0TelemetrySysScratch
 
         //}
         //    }
-        //        grabBookNow.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        //        PUSE.newF( tinP , LF , *(byteT**)ppcpIdAptP , sizeof( countT ) * ( 2 + save ) ) ; ___( *ppcpIdAptP ) ;
+        //        grabBookNow.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //        PUSE.newF( tinBaseP , LF , *(byteT**)ppcpIdAptP , sizeof( countT ) * ( 2 + save ) ) ; ___( *ppcpIdAptP ) ;
         //        save = *PCPiDbOOKnOW ;
-        //        PUSE( tinP , *(byteT**)ppcpIdAptP ) ;
-        //        grabBookNow.ungrabF( tinP ) ;
+        //        PUSE( tinBaseP , *(byteT**)ppcpIdAptP ) ;
+        //        grabBookNow.ungrabF( tinBaseP ) ;
         //    {
         //    while( *PCPiDbOOKnOW - save )
         //
-        //    grabBookNow.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        //    PUSE.newF( tinP , LF , *(byteT**)ppcpIdAptP , sizeof( countT ) * ( 2 + save ) ) ; ___( *ppcpIdAptP ) ;
+        //    grabBookNow.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //    PUSE.newF( tinBaseP , LF , *(byteT**)ppcpIdAptP , sizeof( countT ) * ( 2 + save ) ) ; ___( *ppcpIdAptP ) ;
         //    countT save = *PCPiDbOOKnOW ;
         //{
         //else
         //}
             }
-                grabBookNow.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                grabBookNow.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 _IO_
 
                 //CONoUTrAW3( "[idIn]: " , idIn , "\r\n" ) ;
@@ -490,7 +490,7 @@
             {
             if( processGlobal2I._grabC_pgw )
         //{
-        //if( !ppcpIdAptP || !tinP.pPoolUse || !processGlobal2I._grabC_pgw )
+        //if( !ppcpIdAptP || !((tinNormalS&)tinBaseP).pPoolUse || !processGlobal2I._grabC_pgw )
         //20171117@2104: ppcpIdAptP SUPPORT IS COMMENTED OUT BECAUSE IT IS NOT CURRENTLY USED AND ITS CURRENT CODE REQUIRES USE OF PUSE, WHICH CAUSES NONMONOTONIC GRABBING.  BEFORE ENABLING, MUST BE REWRITTEN TO AVOID USING PUSE
 
         //const boolT bTraceDivert1 = this == &processGlobal4I.bksTraceDivert01 ;
@@ -503,7 +503,7 @@
     ZE( countT , idBook ) ;
 
     //;
-    //    : new( 0 , tinP , _pbInOutFrame , sizeof _pbInOutFrame ) inOutFrameC( tinP , LF , IDFILE , BiFCcLASS )
+    //    : new( 0 , tinBaseP , _pbInOutFrame , sizeof _pbInOutFrame ) inOutFrameC( tinBaseP , LF , IDFILE , BiFCcLASS )
     //    ? 0 
     //inOutFrameC* pInOutFrame = this == &processGlobal4I.bksTrace || this == &processGlobal4I.bksTraceDivert01 || this == &processGlobal4I.bksTraceDivert02 || this == &processGlobal4I.bksTraceDivert03 || this == &processGlobal4I.bksTraceDivert04 || this == &processGlobal4I.bksTraceDivert05 || this == &processGlobal4I.bksTraceDivert06 || this == &processGlobal4I.bksTraceDivert07 || this == &processGlobal4I.bksTraceDivert08
     //byteT _pbInOutFrame[ sizeof( inOutFrameC ) ] ;
@@ -547,9 +547,9 @@
                     break ;
                     __1 ;
                 {
-                if( tinP.pBookMark[ offr ].pBooks == this )                                                     //THIS ENFORCEMENT ADDED 20231111@1839
+                if( ((tinNormalS&)tinBaseP).pBookMark[ offr ].pBooks == this )                                                     //THIS ENFORCEMENT ADDED 20231111@1839
             {                                                                                                   //THIS IS TO PREVENT A DEADLOCK IF I TRY TO CHANGE THE CURRENT bookC AND THE SMARTPOINTER HAPPENS TO BE POINTING INTO THE bookC TO BE DELETED
-            for( countT offr = 0 ; offr < sizeof tinP.pBookMark / sizeof tinP.pBookMark[ 0 ] ; offr ++ )        //ENFORCES RULE: THREAD IS NOT ALLOWED TO WRITE TO A booksC OBJECT WHILE HOLDING A SMARTPOINTER INTO THAT booksC OBJECT
+            for( countT offr = 0 ; offr < sizeof ((tinNormalS&)tinBaseP).pBookMark / sizeof ((tinNormalS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )        //ENFORCES RULE: THREAD IS NOT ALLOWED TO WRITE TO A booksC OBJECT WHILE HOLDING A SMARTPOINTER INTO THAT booksC OBJECT
         {
         }
             __( *PCPiDbOOKnOW != 1 ) ; // IDbOOK VALUES ARE UNLIMITED.  BUT ONLY LENGTH 1 IDbOOK VALUES CAN BE STORED WITHIN A handleC.  FOR MORE CAPACITY, INCREASE THE SIZE OF handleC::c2AppNote
@@ -566,10 +566,10 @@
         __NZ( cbBodyNew < cb1P + cb2P && F(flagsP) & flBOOKScwRITE_ALLoRnONE ) ;
         __NZ( !pb2P && cb2P ) ;
 
-        //if( pb2P && !cb2P ) cb2P = thirdC::c_strlenIF( tinP , pb2P ) ;
-        //if( pb1P && !cb1P ) cb1P = thirdC::c_strlenIF( tinP , pb1P ) ;  //20200920@1713: MOVED THESE 2 LINES EARLIER TO HERE W/O ANALYSIS
-        if( pb2P && !cb2P && tinP.pEther ) tinP.pEther->traceF( tinP , T("!exception: coding error ; booksC::writeF no longer calculates string length for pb2P") ) ;
-        if( pb1P && !cb1P && tinP.pEther ) tinP.pEther->traceF( tinP , T("!exception: coding error ; booksC::writeF no longer calculates string length for pb1P") ) ;
+        //if( pb2P && !cb2P ) cb2P = thirdC::c_strlenIF( tinBaseP , pb2P ) ;
+        //if( pb1P && !cb1P ) cb1P = thirdC::c_strlenIF( tinBaseP , pb1P ) ;  //20200920@1713: MOVED THESE 2 LINES EARLIER TO HERE W/O ANALYSIS
+        if( pb2P && !cb2P && ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("!exception: coding error ; booksC::writeF no longer calculates string length for pb2P") ) ;
+        if( pb1P && !cb1P && ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("!exception: coding error ; booksC::writeF no longer calculates string length for pb1P") ) ;
         //20231114@1257: REMOVED THE CALCULATION OF STRING LENGTH ; NOW !cb1P MEANS DO A NULL LENGTH WRITE
 
         if( POOP ) return 0 ;
@@ -583,7 +583,7 @@
 
     SCOOP
 {
-/*1*/countT booksC::writeF( tinS& tinP , const byteT* pb1P , countT cb1P , const byteT* pb2P , countT cb2P , const flagsT flagsP , handleC* const phWroteP /*U::, countT** ppcpIdAptP*/ )/*1*/
+/*1*/countT booksC::writeF( tinBaseS& tinBaseP , const byteT* pb1P , countT cb1P , const byteT* pb2P , countT cb2P , const flagsT flagsP , handleC* const phWroteP /*U::, countT** ppcpIdAptP*/ )/*1*/
 
 countT pcRef_postBookNameNoPuse2[ 0x10 ] ;                  //CS:CODEsYNC: 360fb005 360fb005
 
@@ -651,7 +651,7 @@ osTextT postBookNameNoPuse2_0[ TUCK ] ;
   is normally not 0
   can be 0
  pb1P
- tinP
+ tinBaseP
 parameters
 for caller convenience, i optionally take input from oo sources
 /*

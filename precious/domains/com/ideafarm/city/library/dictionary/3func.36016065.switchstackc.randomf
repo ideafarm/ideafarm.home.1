@@ -9,13 +9,13 @@
 
 }
     return vv ;
-    if( pBaton ) pBaton->ungrabF( tinP ) ;
-    countT& vv = pStack ? pStack->randomF( tinP ) : *(countT*)pbnu ;
-    stackC* pStack = (stackC*)( bTinHasLeverP ? swMe.forIfcThreadF( tinP ) : (countT)swMe ) ;
+    if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
+    countT& vv = pStack ? pStack->randomF( tinBaseP ) : *(countT*)pbnu ;
+    stackC* pStack = (stackC*)( bTinHasLeverP ? swMe.forIfcThreadF( tinBaseP ) : (countT)swMe ) ;
     _IO_
-    else if( osTidOwner != tinP.osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = tinP.osTid ;
-    if( pBaton ) pBaton->grabF( tinP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(flagsSwitch) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return *(countT*)pbnu ;
@@ -23,7 +23,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT& switchStackC::randomF( tinS& tinP , const boolT bTinHasLeverP )/*1*/
+/*1*/countT& switchStackC::randomF( tinBaseS& tinBaseP , const boolT bTinHasLeverP )/*1*/
 /**/
 */
 \<A HREF=\"5.1210068.1.0.html\"\>definition\</A\>

@@ -15,11 +15,11 @@
         }
             }
                 }
-                    tinP.pBookMark[ offbm ].pcpIdBook[ 0 ] = 0 ;
-                    tinP.pBookMark[ offbm ].pbz            = 0 ;
-                    tinP.pBookMark[ offbm ].pBooks         = 0 ;
+                    ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] = 0 ;
+                    ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pbz            = 0 ;
+                    ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pBooks         = 0 ;
                 {
-                if( !( -- tinP.pBookMark[ offbm ].cRef ) )
+                if( !( -- ((tinNormalS&)tinBaseP).pBookMark[ offbm ].cRef ) )
             {
             else
             if( offbm == -1 ) { BLAMMO ; }
@@ -29,23 +29,23 @@
                     break ;
                     offbm = offr ;
                 {
-                if( tinP.pBookMark[ offr ].pBooks == &books )
+                if( ((tinNormalS&)tinBaseP).pBookMark[ offr ].pBooks == &books )
             {
-            for( countT offr = 0 ; offr < sizeof tinP.pBookMark / sizeof tinP.pBookMark[ 0 ] ; offr ++ )
+            for( countT offr = 0 ; offr < sizeof ((tinNormalS&)tinBaseP).pBookMark / sizeof ((tinNormalS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
             countT offbm = -1 ;
         {
-        if( !( F(tinP.flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
+        if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
 
         flags = 0 ;
 
         else                            pbz = 0 ;
-        if( F(flags) & flPAGEc_DELETE ) PUSE( tinP , *(byteT**)&pbz ) ;
+        if( F(flags) & flPAGEc_DELETE ) PUSE( tinBaseP , *(byteT**)&pbz ) ;
 
         }
             //U:: BLAMMO SHOULD BE HERE, BUT WHEN IT IS HERE I GET CNR
 
             //}
-            //    tinP.pEther->trace F( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
+            //    ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    OStEXTAK( ostoSay , " -" ) ;
             //    OStEXTC(  ostoSay , cRefWas , 0 ) ;
@@ -56,33 +56,33 @@
             //    OStEXTAK( ostoSay , "pageC  [this,pcRef,cRefWas]:    " ) ;
             //    OStEXT(   ostoSay , TUCK << 2 ) ;
             //{
-            //if( tinP.pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+            //if( ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
 
-            books.unlockF( tinP ) ;
+            books.unlockF( tinBaseP ) ;
 
             }
                 BLAMMO ;
                 //}
-                //    tinP.pEther->trace F( tinP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
+                //    ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
                 //
                 //    OStEXTAK( ostoSay , "    BLAMMO!  (!cRefWas)" ) ;
                 //    OStEXTCmIN( ostoSay , this , 8 ) ;
                 //    OStEXTAK( ostoSay , "pageC  [this]:    " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( tinP.pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+                //if( ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
             {
             if( !cRefWas )
 
             countT cRefWas = decv02AM( *pcRef ) ;
-            books.lockF( tinP , TAG( TAGiDnULL ) ) ; //U:: CONJ: DON'T NEED TO LOCK THE CURRENT BOOK (THIS COMMENT APPLIES EVERYWHERE THAT i HAVE pcRef, WHICH SHOULD POINT INTO A bookC INSTANCE THAT WILL NEVER BE DELETED WHILE *pcRef IS NOT 0
+            books.lockF( tinBaseP , TAG( TAGiDnULL ) ) ; //U:: CONJ: DON'T NEED TO LOCK THE CURRENT BOOK (THIS COMMENT APPLIES EVERYWHERE THAT i HAVE pcRef, WHICH SHOULD POINT INTO A bookC INSTANCE THAT WILL NEVER BE DELETED WHILE *pcRef IS NOT 0
         {
         if( pcRef )
     {
     if( pbz )
     SCOOP
 {
-/*1*/voidT pageC::resetF( tinS& tinP )/*1*/
+/*1*/voidT pageC::resetF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 

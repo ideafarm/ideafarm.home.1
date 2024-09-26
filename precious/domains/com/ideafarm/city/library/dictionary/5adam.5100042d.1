@@ -19,21 +19,21 @@ while( stDelete_stackC_ptr )
 !tblHosts ;
 !tblCells ;
 
-etThread.ifcCellHostsF( tinP , swsNicName , idaLever , b_idaLever , swsIdAdam , idhLever , b_idhLever , tblCells , tblHosts , stDelete_strokeS_ptr , stDelete_nicNameC_ptr , stDelete_stackC_ptr ) ;
+etThread.ifcCellHostsF( tinBaseP , swsNicName , idaLever , b_idaLever , swsIdAdam , idhLever , b_idhLever , tblCells , tblHosts , stDelete_strokeS_ptr , stDelete_nicNameC_ptr , stDelete_stackC_ptr ) ;
 
-stackC stDelete_stackC_ptr(  tinP , etThread , TAG( TAGiDnULL ) ) ;
-stackC stDelete_nicNameC_ptr( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
-stackC stDelete_strokeS_ptr( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC stDelete_stackC_ptr(  tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+stackC stDelete_nicNameC_ptr( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
+stackC stDelete_strokeS_ptr( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
 
-tableC tblHosts( tinP , etThread , T("hosts") ) ;
-tableC tblCells( tinP , etThread , T("cells") ) ;
+tableC tblHosts( tinBaseP , etThread , T("hosts") ) ;
+tableC tblCells( tinBaseP , etThread , T("cells") ) ;
 
-switchStackC swsIdAdam( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idhLever ) ;
-batonC b_idhLever( tinP , TAG( TAGiDnULL ) ) ;
+switchStackC swsIdAdam( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idhLever ) ;
+batonC b_idhLever( tinBaseP , TAG( TAGiDnULL ) ) ;
 nicNameC idhLever ;
 
-switchStackC swsNicName( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idaLever , ifcSTACKtYPE_PTR_nicNameC ) ;
-batonC b_idaLever( tinP , TAG( TAGiDnULL ) ) ;
+switchStackC swsNicName( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idaLever , ifcSTACKtYPE_PTR_nicNameC ) ;
+batonC b_idaLever( tinBaseP , TAG( TAGiDnULL ) ) ;
 ZE( countT , idaLever ) ;
 
 TODO

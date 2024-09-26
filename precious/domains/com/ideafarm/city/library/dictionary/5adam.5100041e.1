@@ -11,29 +11,29 @@ REST
 
 }
     }
-        ((thirdC&)etThread).logF( tinP , tEntry ) ;
+        ((thirdC&)etThread).logF( tinBaseP , tEntry ) ;
 
-        etThread.strokeF( tinP , tEntry ) ;
+        etThread.strokeF( tinBaseP , tEntry ) ;
 
         if( cbHome != cbHomeWoth || cbFlag != cbFlagWoth || cbMural != cbMuralWoth ) tEntry += T(" ****sin:****") ;
 
         TN( tEntry , "" ) ; tEntry = TF3(cbHome,flFORMAT_null,9)+TF3(cbFlag,flFORMAT_null,9)+TF3(cbMural,flFORMAT_null,8)+T("\r\n") ;
 
-        if( idTrial % 0x10 == 1 ) etThread.strokeF( tinP , T("\fcbHome-- cbFlag-- cbMural-\r\n \r\n") ) ;
+        if( idTrial % 0x10 == 1 ) etThread.strokeF( tinBaseP , T("\fcbHome-- cbFlag-- cbMural-\r\n \r\n") ) ;
 
         if( !cbMuralWoth ) cbMuralWoth = cbMural ;
         if( !cbFlagWoth  ) cbFlagWoth  = cbFlag ;   
         if( !cbHomeWoth  ) cbHomeWoth  = cbHome ;   
 
-        { ZE( byteT* , pbMural ) ; etThread.boxGetShadowF( tinP , pbMural , cbMural , tMural ) ; ___( pbMural ) ; etThread.delF( tinP , pbMural ) ; }
-        { ZE( byteT* , pbFlag  ) ; etThread.boxGetShadowF( tinP , pbFlag  , cbFlag  , tFlag  ) ; ___( pbFlag  ) ; etThread.delF( tinP , pbFlag  ) ; }
-        { ZE( byteT* , pbHome  ) ; etThread.boxGetShadowF( tinP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; etThread.delF( tinP , pbHome  ) ; }
+        { ZE( byteT* , pbMural ) ; etThread.boxGetShadowF( tinBaseP , pbMural , cbMural , tMural ) ; ___( pbMural ) ; etThread.delF( tinBaseP , pbMural ) ; }
+        { ZE( byteT* , pbFlag  ) ; etThread.boxGetShadowF( tinBaseP , pbFlag  , cbFlag  , tFlag  ) ; ___( pbFlag  ) ; etThread.delF( tinBaseP , pbFlag  ) ; }
+        { ZE( byteT* , pbHome  ) ; etThread.boxGetShadowF( tinBaseP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; etThread.delF( tinBaseP , pbHome  ) ; }
 
         ZE( countT , cbMural ) ;
         ZE( countT , cbFlag ) ;
         ZE( countT , cbHome ) ;
 
-        etThread.winSetTitleF( tinP , TF1(++idTrial) ) ;
+        etThread.winSetTitleF( tinBaseP , TF1(++idTrial) ) ;
     {
     while( !etThread && !ether )
     ZE( countT , cbMuralWoth ) ;
@@ -45,7 +45,7 @@ REST
     TN( tFlag  , "www.ideafarm.com//http//2.1.0" ) ;
     TN( tHome  , "www.ideafarm.com//http//" ) ;
 
-    stateS state( tinP , etThread ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO

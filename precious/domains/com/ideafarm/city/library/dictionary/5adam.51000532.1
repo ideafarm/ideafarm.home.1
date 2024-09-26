@@ -9,19 +9,19 @@
 
 REST
 
-etThread.strokeF( tinP , T("kid 2 is ")+T(bEmpty2?"empty":"not empty")+T("\r\n") ) ;
-etThread.strokeF( tinP , T("kid 1 is ")+T(bEmpty1?"empty":"not empty")+T("\r\n") ) ;
-boolT bEmpty2 = sEnvelope.bKidEmptyF( tinP , 2 ) ;
-boolT bEmpty1 = sEnvelope.bKidEmptyF( tinP , 1 ) ;
+etThread.strokeF( tinBaseP , T("kid 2 is ")+T(bEmpty2?"empty":"not empty")+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("kid 1 is ")+T(bEmpty1?"empty":"not empty")+T("\r\n") ) ;
+boolT bEmpty2 = sEnvelope.bKidEmptyF( tinBaseP , 2 ) ;
+boolT bEmpty1 = sEnvelope.bKidEmptyF( tinBaseP , 1 ) ;
 
 sEnvelope << sNotEmpty ;
 sEnvelope << sEmpty ;
-soulC sEnvelope( tinP , TAG( TAGiDnULL ) ) ;
+soulC sEnvelope( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 sNotEmpty << (countT)0x77777777 ;
-soulC sNotEmpty( tinP , TAG( TAGiDnULL ) ) ;
+soulC sNotEmpty( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-soulC sEmpty( tinP , TAG( TAGiDnULL ) ) ;
+soulC sEmpty( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 

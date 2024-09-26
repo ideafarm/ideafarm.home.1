@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 THREADmODE2rESTORE
 THREADmODE3rESTORE
@@ -19,15 +19,15 @@ THREADmODE4rESTORE
 }
     }
         }
-            PUSE( tinP , *(byteT**)&ppcFoo[ offo ] ) ;
+            PUSE( tinBaseP , *(byteT**)&ppcFoo[ offo ] ) ;
         {
         for( countT offo = 0 ; offo < sizeof ppcFoo / sizeof ppcFoo[ 0 ] ; offo ++ )
 
-        puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+        puseC puseHT( tinBaseP , ifcIDpOOL_HOMEtEMP ) ;
     {
 
     }
-        etThread.traceF( tinP , TfORsTRING((countT)ppcFoo[offo])+tb4+TF2(*ppcFoo[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tinBaseP , TfORsTRING((countT)ppcFoo[offo])+tb4+TF2(*ppcFoo[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     for( countT offo = 0 ; offo < sizeof ppcFoo / sizeof ppcFoo[ 0 ] ; offo ++ )
     TN( tb4 , "    " ) ;
@@ -35,13 +35,13 @@ THREADmODE4rESTORE
     }
         }
             *ppcFoo[ offo ] = ( ++ idFoo ) * 0x11111111 ;
-            PUSE.newF( tinP , LF , *(byteT**)&ppcFoo[ offo ] , sizeof( countT ) , flPOOLcnEW_null ) ; ___( ppcFoo[ offo ] ) ;
+            PUSE.newF( tinBaseP , LF , *(byteT**)&ppcFoo[ offo ] , sizeof( countT ) , flPOOLcnEW_null ) ; ___( ppcFoo[ offo ] ) ;
             ppcFoo[ offo ] = 0 ;
         {
         for( countT offo = 0 ; offo < sizeof ppcFoo / sizeof ppcFoo[ 0 ] ; offo ++ )
         ZE( countT , idFoo ) ;
 
-        puseC puseHT( tinP , ifcIDpOOL_HOMEtEMP ) ;
+        puseC puseHT( tinBaseP , ifcIDpOOL_HOMEtEMP ) ;
     {
     countT* ppcFoo[ TUCK >> 4 ] ;
 

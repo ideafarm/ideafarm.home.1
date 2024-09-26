@@ -21,11 +21,11 @@
                             break ;
                             }
                                 continue ;
-                                tinP.pEtScratch->delF( tinP , psttP ) ;
+                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttP ) ;
                                 POOPR
                             {
                             if( POOP )
-                            tinP.pEtScratch->strDecodeF( tinP , psttP , pbEncodedHe + cbJotStringDecodePrefixP ) ; ___( psttP ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->strDecodeF( tinBaseP , psttP , pbEncodedHe + cbJotStringDecodePrefixP ) ; ___( psttP ) ;
                         {
                         else
                         if( !pbEncodedHe || !cbEncodedHe ) continue ;
@@ -40,9 +40,9 @@
                 {
                 if( bTagOk )
                 boolT  bTagOk = !( idJotP & NM_HIGH ) || ( idJotP & NM_HIGH ) == jc.tagHighNibbleF() ;
-                jotC& jc = *tinP.ppJot[ offr ] ;
+                jotC& jc = *((tinNormalS&)tinBaseP).ppJot[ offr ] ;
             {
-            if( tinP.ppJot[ offr ] )
+            if( ((tinNormalS&)tinBaseP).ppJot[ offr ] )
         {
         for( countT offr = 0 ; offr < CsLOTSjOTrEGISTRY ; offr ++ )
 
@@ -62,7 +62,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strFromIdJotF( tinS& tinP , strokeS*& psttP , const countT idJotP , const countT cbJotStringDecodePrefixP )/*1*/
+/*1*/voidT etherC::strFromIdJotF( tinBaseS& tinBaseP , strokeS*& psttP , const countT idJotP , const countT cbJotStringDecodePrefixP )/*1*/
 
 /**/
 

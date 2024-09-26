@@ -9,17 +9,17 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
-etThread.cioPutF( tinP , bQuit , c8c , sGift ) ;
+etThread.cioPutF( tinBaseP , bQuit , c8c , sGift ) ;
 count8S c8c( 1 , 2 , 3 , 4 ) ;
 ZE( boolT , bQuit ) ;
 
 sGift << (strokeS*)tMsg ;
 TN( tMsg , "how now brown cow" ) ;
-soulC sGift( tinP , TAG( TAGiDnULL ) ) ;
+soulC sGift( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.cioSetGetF( tinP , cioGetF ) ;
+etThread.cioSetGetF( tinBaseP , cioGetF ) ;
 
 TODO
 
@@ -29,10 +29,10 @@ TODO
         FIREmYSELF ;
 
         DEL( psPayloadP ) ; //OPTIONAL
-        etherP.delF( tinP , pczChannelP ) ; //OPTIONAL
-        etherP.delF( tinP , psttMsg ) ;
+        etherP.delF( tinBaseP , pczChannelP ) ; //OPTIONAL
+        etherP.delF( tinBaseP , psttMsg ) ;
 
-        etherP.strokeF( tinP , T("cioGetF [channel,message]: ")+TF2(pczChannelP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" \"")+T(psttMsg)+T("\"\r\n") ) ;
+        etherP.strokeF( tinBaseP , T("cioGetF [channel,message]: ")+TF2(pczChannelP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" \"")+T(psttMsg)+T("\"\r\n") ) ;
 
         *psPayloadP >> psttMsg ; ___( psttMsg ) ;
         ZE( strokeS* , psttMsg ) ;
@@ -41,7 +41,7 @@ TODO
 
     //CONoUTrAW3( "cioGetF [idPayloadTypeP]: " , idPayloadTypeP , "\r\n" ) ;
 {
-voidT cioGetF( tinS& tinP , etherC& etherP , const boolT& bQuitP , const countT idPayloadTypeP , soulC*& psPayloadP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
+voidT cioGetF( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQuitP , const countT idPayloadTypeP , soulC*& psPayloadP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
 
 /*1*/WAKEsHOWtEXT( "example.simplest.func.10301db.etherC.cioPutF" )/*1*/
 /**/

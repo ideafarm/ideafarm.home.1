@@ -26,10 +26,10 @@
             sIn >> finger ;
             ZE( countT , finger ) ;
                     
-            sock.readF( tinP , sIn ) ;
-            soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+            sock.readF( tinBaseP , sIn ) ;
+            soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
-            sock.writeF( tinP , sOut ) ;
+            sock.writeF( tinBaseP , sOut ) ;
 
             sOut << (countT)moneyT2 ;
             sOut << moneyT1 ;
@@ -46,10 +46,10 @@
             sOut << (countT)ifcIDcMDlISTsERVERmONEYbUCKETS_PUT ;
             sOut << (countT)1 ;
             sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-            soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+            soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
-            sock.connectF( tinP , homeS::homeIF().idPortListMoneyBuckets ) ;
-            socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+            sock.connectF( tinBaseP , homeS::homeIF().idPortListMoneyBuckets ) ;
+            socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
         {
         if( F(flagsThis) & flDEPOSIT_SET )
 

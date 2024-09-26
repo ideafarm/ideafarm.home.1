@@ -10,16 +10,16 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
 
 }
     }
         }
-            etThread.delF( tinP , pcv ) ;
-            etThread.strokeF( tinP , T("lever = ")+TF1(lever)+T("  pcv->c1 = ")+TF1(pcv->c1)+T("\r\n") ) ;
+            etThread.delF( tinBaseP , pcv ) ;
+            etThread.strokeF( tinBaseP , T("lever = ")+TF1(lever)+T("  pcv->c1 = ")+TF1(pcv->c1)+T("\r\n") ) ;
         {
         if( pcv )
 
@@ -31,17 +31,17 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
 for( lever = 1 ; lever <= 4 ; lever ++ )
 
 }
-    pcv = 0 ; etThread.newF( tinP , LF , pcv ) ; if( pcv ) { pcv->c2 = pcv->c1 = 0x40 + lever ; ids = 0 ; sws << pcv ; }
-    pcv = 0 ; etThread.newF( tinP , LF , pcv ) ; if( pcv ) { pcv->c2 = pcv->c1 = 0x30 + lever ; ids = 0 ; sws << pcv ; }
-    pcv = 0 ; etThread.newF( tinP , LF , pcv ) ; if( pcv ) { pcv->c2 = pcv->c1 = 0x20 + lever ; ids = 0 ; sws << pcv ; }
-    pcv = 0 ; etThread.newF( tinP , LF , pcv ) ; if( pcv ) { pcv->c2 = pcv->c1 = 0x10 + lever ; ids = 0 ; sws << pcv ; }
+    pcv = 0 ; etThread.newF( tinBaseP , LF , pcv ) ; if( pcv ) { pcv->c2 = pcv->c1 = 0x40 + lever ; ids = 0 ; sws << pcv ; }
+    pcv = 0 ; etThread.newF( tinBaseP , LF , pcv ) ; if( pcv ) { pcv->c2 = pcv->c1 = 0x30 + lever ; ids = 0 ; sws << pcv ; }
+    pcv = 0 ; etThread.newF( tinBaseP , LF , pcv ) ; if( pcv ) { pcv->c2 = pcv->c1 = 0x20 + lever ; ids = 0 ; sws << pcv ; }
+    pcv = 0 ; etThread.newF( tinBaseP , LF , pcv ) ; if( pcv ) { pcv->c2 = pcv->c1 = 0x10 + lever ; ids = 0 ; sws << pcv ; }
     ZE( count2S* , pcv ) ;
 {
 for( lever = 1 ; lever <= 4 ; lever ++ )
 
 ZE( countT , ids ) ;
 
-switchStackC sws( tinP , ether , TAG( TAGiDnULL ) , flSTACKc_null , lever , flSTACKc_null , ifcSTACKtYPE_PTR_count2S ) ;
+switchStackC sws( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , lever , flSTACKc_null , ifcSTACKtYPE_PTR_count2S ) ;
 ZE( countT , lever ) ;
 
 TODO

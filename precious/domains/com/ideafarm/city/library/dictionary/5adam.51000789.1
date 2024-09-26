@@ -9,16 +9,16 @@
 
 REST
 
-etThread.traceF( tinP , T("bye") ) ;
+etThread.traceF( tinBaseP , T("bye") ) ;
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("press Ctl-C to quit") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("press Ctl-C to quit") ) ;
 
-etThread.delF( tinP , psttSite ) ;
-etThread.traceF( tinP , psttSite ) ;
-//tinP.pc Utility[ 0 ] -- ;
-etThread.diskChooseSiteF( tinP , psttSite , tIdeafarm , 0 ) ; ___( psttSite ) ;
-//tinP.pc Utility[ 0 ] ++ ;
+etThread.delF( tinBaseP , psttSite ) ;
+etThread.traceF( tinBaseP , psttSite ) ;
+//((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
+etThread.diskChooseSiteF( tinBaseP , psttSite , tIdeafarm , 0 ) ; ___( psttSite ) ;
+//((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
 ZE( strokeS* , psttSite ) ;
 
 TN( tIdeafarm , "ideafarm" ) ;

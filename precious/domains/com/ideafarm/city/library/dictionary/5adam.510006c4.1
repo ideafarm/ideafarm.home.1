@@ -9,14 +9,14 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     DEL( pFout ) ;
-    etThread.delF( tinP , pstt1Files ) ;
+    etThread.delF( tinBaseP , pstt1Files ) ;
     }
-        etThread.delF( tinP , posti ) ;
+        etThread.delF( tinBaseP , posti ) ;
         }
             }
                 else        break ;
@@ -29,33 +29,33 @@ etThread.traceF( tinP , T("ok") ) ;
                     {
                     if( ++ cOut == TUCK )
 
-                    etThread.delF( tinP , psttEncoded ) ;
-                    etThread.fileWriteF( tinP , *pFout , tSay , tSay.csF( tinP ) ) ;
+                    etThread.delF( tinBaseP , psttEncoded ) ;
+                    etThread.fileWriteF( tinBaseP , *pFout , tSay , tSay.csF( tinBaseP ) ) ;
                     TN( tSay , "/archive/" ) ; tSay += T(psttEncoded)+T("\n") ;
-                    //etThread.traceF( tinP , psttEncoded ) ;
-                    etThread.strToUrlF( tinP , psttEncoded , T(postc) ) ; ___( psttEncoded ) ;
+                    //etThread.traceF( tinBaseP , psttEncoded ) ;
+                    etThread.strToUrlF( tinBaseP , psttEncoded , T(postc) ) ; ___( psttEncoded ) ;
                     ZE( strokeS* , psttEncoded ) ;
 
-                    if( !pFout ) { pFout = new( 0 , tinP , LF ) fileC( tinP , (strokeS*)( T("///d/tmp/x/delete.from.archive.")+TF3(++idfoLath,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,4)+T(".ttt") ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; ___( pFout ) ; }
+                    if( !pFout ) { pFout = new( 0 , tinBaseP , LF ) fileC( tinBaseP , (strokeS*)( T("///d/tmp/x/delete.from.archive.")+TF3(++idfoLath,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,4)+T(".ttt") ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ; ___( pFout ) ; }
 
-                    etThread.traceF( tinP , tShort ) ;
+                    etThread.traceF( tinBaseP , tShort ) ;
                 {
-                if( !etThread.diskFileExistsF( tinP , tPathArchive+tShort ) )
+                if( !etThread.diskFileExistsF( tinBaseP , tPathArchive+tShort ) )
 
                 TN( tShort , postc ) ;
 
                 if( postd ) *postd = 0 ;
-                osTextT* postd = thirdC::c_strchrIF( tinP , postc , '\n' ) ;
+                osTextT* postd = thirdC::c_strchrIF( tinBaseP , postc , '\n' ) ;
             {
             while( !ether && !POOP )
             osTextT* postc = posti         ;
             osTextT* poste = posti + costi ;
         {
         if( posti && costi )
-        etThread.boxGetShadowF( tinP , posti , costi , psttc1 ) ; ___( posti ) ;
+        etThread.boxGetShadowF( tinBaseP , posti , costi , psttc1 ) ; ___( posti ) ;
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
-        etThread.traceF( tinP , psttc1 ) ;
+        etThread.traceF( tinBaseP , psttc1 ) ;
 
         if( ether || POOP ) break ;
     {
@@ -63,7 +63,7 @@ etThread.traceF( tinP , T("ok") ) ;
     ZE( countT , cOut ) ;
     ZE( fileC* , pFout ) ;
     ZE( countT , idfoLath ) ;
-    countT cFound = etThread.diskFindFileOrDirOldF( tinP , pstt1Files , T("///d/tmp/x/files.archive.*.ttt") ) ; ___( pstt1Files ) ;
+    countT cFound = etThread.diskFindFileOrDirOldF( tinBaseP , pstt1Files , T("///d/tmp/x/files.archive.*.ttt") ) ; ___( pstt1Files ) ;
     ZE( strokeS* , pstt1Files ) ;
     TN( tPathArchive , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/2.1. Drop Files Here To Archive Them/" ) ;
 {

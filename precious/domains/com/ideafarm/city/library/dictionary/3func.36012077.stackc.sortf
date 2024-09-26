@@ -11,19 +11,19 @@
     _OUTbATONsTACKc_
 
     }    
-        if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNdELpLATE|flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tinP ) ;
+        if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNdELpLATE|flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tinBaseP ) ;
 
-        third.delF( tinP , *(countT**)&ppDoomed ) ;
+        third.delF( tinBaseP , *(countT**)&ppDoomed ) ;
 
         }
             __( !!ppDoomed[ off ] ) ; //U::O: COMMENT THIS OUT
-            sinkPrivateF( tinP , countTC() , PLATE_countT_REF( ppDoomed[ off ] ) , ppDoomed[ off ] , flSTACKsINK_null , pSubtractFP , subtractionParmP ) ;
+            sinkPrivateF( tinBaseP , countTC() , PLATE_countT_REF( ppDoomed[ off ] ) , ppDoomed[ off ] , flSTACKsINK_null , pSubtractFP , subtractionParmP ) ;
         {
         for( countT off = 0 ; off < cpDoomed ; off ++ )
     
-        third.delF( tinP , pcTabIdSlot ) ;
-        third.delF( tinP , *(countT**)&ppTab ) ;
-        newTabsIfF( tinP , 0 , 0 ) ;
+        third.delF( tinBaseP , pcTabIdSlot ) ;
+        third.delF( tinBaseP , *(countT**)&ppTab ) ;
+        newTabsIfF( tinBaseP , 0 , 0 ) ;
     
         }
             flagsState = flSTACKsTATE_null ; //115005c 0050011 0010121: VERIFY THAT THIS MAKES SENSE FOR NEWLY DEFINED STATE FLAGS
@@ -33,12 +33,12 @@
                 if( ppTop ) ppTop->ppU = 0 ;
                 ppTop = ppTop->ppD ;
                 ppDoomed[ off ] = ppTop ; //U::OBEY flagsP
-                adjustRefsF( tinP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_DELETED ) ;
+                adjustRefsF( tinBaseP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_DELETED ) ;
             {
             for( countT off = 0 ; off < cpDoomed ; off ++ ) //U::O: CALL adjustRefsF OUTSIDE OF THIS LOOP, WO TIME
         {
         if( ppDoomed )
-        third.newF( tinP , LF , *(countT**)&ppDoomed , cpDoomed ) ; ___CT( ppDoomed ) ;
+        third.newF( tinBaseP , LF , *(countT**)&ppDoomed , cpDoomed ) ; ___CT( ppDoomed ) ;
         const countT cpDoomed = cPlates ;
         ZE( plateS** , ppDoomed ) ;
 
@@ -86,7 +86,7 @@
     IFbEcAREFUL
     SCOOP   
 {
-/*1*/voidT stackC::sortF( tinS& tinP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP )/*1*/
+/*1*/voidT stackC::sortF( tinBaseS& tinBaseP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP )/*1*/
 
 /**/
 */

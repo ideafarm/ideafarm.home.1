@@ -9,12 +9,12 @@
 
 }
     }
-        if( cbd ) thirdC::c_memcpyIF( tinP , pbData + sizeof( tellS ) , pbP , cbd ) ;
+        if( cbd ) thirdC::c_memcpyIF( tinBaseP , pbData + sizeof( tellS ) , pbP , cbd ) ;
 
         //}
         //    head.ipMe = head.bIda ? idaMe : (countT)&head ;
         //    head.bIda = !!idaMe ;
-        //    ap_artmentOldC idaMe( tinP , (byteT*)&head ) ;
+        //    ap_artmentOldC idaMe( tinBaseP , (byteT*)&head ) ;
         //{
         //else
         //if( !bSynchP ) head.ipMe = head.bIda = 0 ;
@@ -23,7 +23,7 @@
 
         //CONoUTrAW3( "W " , head.idTell , "\r\n" ) ; //U::
         //tellS& head = *(tellS*)pbData ;
-        new( 0 , tinP , pbData , sizeof( tellS ) ) tellS( tinP , idLineCtP , idiFileCtP , pbBitsCtP , idTypeP , cbd ) ;
+        new( 0 , tinBaseP , pbData , sizeof( tellS ) ) tellS( tinBaseP , idLineCtP , idiFileCtP , pbBitsCtP , idTypeP , cbd ) ;
     
         countT cbd = cbP ;
     
@@ -34,8 +34,8 @@
         if( bUsePool ) { ___( pbData ) ; }
         }
             ;
-                    : processGlobal4I.heap.newF( tinP , LF , sizeof( tellS ) + cbP )
-                    ? ( PUSE.newF( tinP , LF , pbFromPool , sizeof( tellS ) + cbP ) , pbFromPool )
+                    : processGlobal4I.heap.newF( tinBaseP , LF , sizeof( tellS ) + cbP )
+                    ? ( PUSE.newF( tinBaseP , LF , pbFromPool , sizeof( tellS ) + cbP ) , pbFromPool )
                 : bUsePool
                 ? pbZombieP
             pbData = bUseZombie
@@ -48,12 +48,12 @@
 
     if( cbP % sizeof( countT ) ) { BLAMMO ; } //ENFORCES CODE CONFORMANCE RULE FOR SPEEDILY WRITEABLE AND READABLE TELEMETRY
 {
-pTin( &tinP ) //FOR MY DESTRUCTOR
+pTin( &tinBaseP ) //FOR MY DESTRUCTOR
 pbData( 0 ) ,
 ebp( ebpP ) ,
-bUsePool(    !pbZombieP && tinP.pPoolUse ) ,
+bUsePool(    !pbZombieP && ((tinNormalS&)tinBaseP).pPoolUse ) ,
 bUseZombie( !!pbZombieP ) ,
-/*1*/tellC::tellC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const byteT* const pbP , const countT cbP , byteT* const pbZombieP , const countT cbZombieP , const boolT bSynchP , const countT ebpP ) :/*1*/
+/*1*/tellC::tellC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const byteT* const pbP , const countT cbP , byteT* const pbZombieP , const countT cbZombieP , const boolT bSynchP , const countT ebpP ) :/*1*/
 
 //ASSUME: poolOldWork IS GUARANTEED TO EXIST BEFORE ANY CHILD THREADS ARE LAUNCHED AND TO CONTINUE TO EXIST UNTIL AFTER ALL CHILD THREADS END
 
@@ -63,7 +63,7 @@ bUseZombie( !!pbZombieP ) ,
   if pbZombieP then must be >= sizeof( tellS ) + cbP
   if !pbZombieP then can be 0
  cbZombieP
-  if 0 then *tinP.pPoolUse or processGlobal4I.heap will be used
+  if 0 then *((tinNormalS&)tinBaseP).pPoolUse or processGlobal4I.heap will be used
   for speed, specify bytes on the thread stack if cbP is known at compile time
   can be 0
  pbZombieP
@@ -78,7 +78,7 @@ bUseZombie( !!pbZombieP ) ,
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.11200170.ifcIDtYPEtELLsYS!||
  must not be 0
  idTypeP
- tinP
+ tinBaseP
 parameters
 else i will use the zombie memory area that you specify
 if poolOldWork exists then i will use it, and the size of the data is limited only by the unused area of the poolOld

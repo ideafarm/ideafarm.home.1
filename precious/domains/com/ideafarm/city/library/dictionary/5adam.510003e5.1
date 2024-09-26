@@ -8,13 +8,13 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        etThread.osSleepF( tinP , TOCK , TOCK ) ;
+        etThread.osSleepF( tinBaseP , TOCK , TOCK ) ;
 
-        //baton.ungrabF( tinP ) ;
+        //baton.ungrabF( tinBaseP ) ;
 
         }
             ) ;
@@ -30,7 +30,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
                 T(" ")+TF3(cbPool,flFORMAT_UNSIGNED,8)+
                 T("\r")+TT(time1,time2)+
 
-            etThread.strokeF( tinP , 
+            etThread.strokeF( tinBaseP , 
 
             if( perTuckUsedHighest < perTuckUsed ) perTuckUsedHighest = perTuckUsed ;
             countT perTuckUsed = cbUsed / ( cbPool >> 8 ) ;
@@ -38,21 +38,21 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         if( !ether )
         __Z( cbPool ) ;
 
-        const countT cAccesses = poolOldDflt.cAccessesF( tinP ) ;
+        const countT cAccesses = poolOldDflt.cAccessesF( tinBaseP ) ;
 
         cCollisionsLag = cCollisions ;
-        const countT cCollisionsNew = ( cCollisions = poolOldDflt.cCollisionsF( tinP ) ) - cCollisionsLag ;
+        const countT cCollisionsNew = ( cCollisions = poolOldDflt.cCollisionsF( tinBaseP ) ) - cCollisionsLag ;
 
-        const countT cdUsed = poolOldDflt.cdUsedF( tinP ) ;
-        const countT cbUsed = poolOldDflt.cbUsedF( tinP ) ;
-        const countT cbPool = poolOldDflt.cbPoolF( tinP ) ;
+        const countT cdUsed = poolOldDflt.cdUsedF( tinBaseP ) ;
+        const countT cbUsed = poolOldDflt.cbUsedF( tinBaseP ) ;
+        const countT cbPool = poolOldDflt.cbPoolF( tinBaseP ) ;
 
-        etThread.osTimeNowF( tinP , time1 , time2 ) ;
+        etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
 
-        //baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        //batonC baton( tinP , TAG( TAGiDnULL ) , T("ifc.hog") ) ;
+        //baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("ifc.hog") ) ;
     {
     while( !ether )
     ZE( countT , perTuckUsedHighest ) ;
@@ -73,16 +73,16 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         T(" ")+TPS("total",0x8,S1C('-'))+
         TPS("time",0x17,S1C('-'))+
 
-    etThread.strokeF( tinP , 
+    etThread.strokeF( tinBaseP , 
 {
 else
 }
-    etThread.strokeF( tinP , T("Another ")+textIdFileC( tinP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tinBaseP , T("Another ")+textIdFileC( tinBaseP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinP , TAG( TAGiDnULL ) , T("7e30104") ) ;
+batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("7e30104") ) ;
 
 TODO
 

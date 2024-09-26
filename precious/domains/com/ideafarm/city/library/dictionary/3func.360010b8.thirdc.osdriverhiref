@@ -8,7 +8,7 @@
 
 
 }
-    delF( tinP , pc_ppostHow ) ;
+    delF( tinBaseP , pc_ppostHow ) ;
 
     DECoShANDLES
     BOSpOOP
@@ -18,28 +18,28 @@
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
     BOSpOOP
 
-    if( tinP.bosFail ) { LOGrAW3( "StartService returned " , tinP.brcLath , "\r\n" ) ; }
+    if( ((tinNormalS&)tinBaseP).bosFail ) { LOGrAW3( "StartService returned " , ((tinNormalS&)tinBaseP).brcLath , "\r\n" ) ; }
 
     BOS( WHATgbo , BOSoK , StartService( hsv , 0 , 0 ) ) //U: DEBUG: __( !StartService( hsv , 1 + cHowP , (const osTextT**)pc_ppostHow ) ) ;
     INCoShANDLES
     __Z( hsv ) ;
-    SC_HANDLE hsv = (SC_HANDLE)tinP.brcRaw ;
+    SC_HANDLE hsv = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
     BOS( WHATgbo , BOSoK , OpenService( hsm , postNameP , SERVICE_ALL_ACCESS ) )
     __Z( hsm ) ;
     INCoShANDLES
-    SC_HANDLE hsm = (SC_HANDLE)tinP.brcRaw ;
+    SC_HANDLE hsm = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
 
-    if( cHowP ) c_memcpyIF( tinP , (byteT*)&pc_ppostHow[ 1 ] , (byteT*)&ppostHowP[ 0 ] , sizeof( countT ) * cHowP ) ;
+    if( cHowP ) c_memcpyIF( tinBaseP , (byteT*)&pc_ppostHow[ 1 ] , (byteT*)&ppostHowP[ 0 ] , sizeof( countT ) * cHowP ) ;
     pc_ppostHow[ 0 ] = (countT)postNameP ;
-    newF( tinP , LF , pc_ppostHow , 1 + cHowP ) ; ___( pc_ppostHow ) ; //ASSUME: sizeof( countT ) == sizeof( osTextT* )
+    newF( tinBaseP , LF , pc_ppostHow , 1 + cHowP ) ; ___( pc_ppostHow ) ; //ASSUME: sizeof( countT ) == sizeof( osTextT* )
     ZE( countT* , pc_ppostHow ) ;
 
     _IO_
 
     }
         if( POOP ) return ;
-        costn = c_strlenIF( tinP , postNameP ) ;
+        costn = c_strlenIF( tinBaseP , postNameP ) ;
         if( POOP ) return ;
         __( cHowP && !ppostHowP ) ;
         __( cHowP ) ; //U: DEBUG CASE WHERE THERE ARE PARAMETERS
@@ -50,14 +50,14 @@
     SCOOP
     ZE( countT , costn ) ;
 {
-/*1*/voidT thirdC::osDriverHireF( tinS& tinP , const osTextT* const postNameP , const countT cHowP , const osTextT** ppostHowP )/*1*/
+/*1*/voidT thirdC::osDriverHireF( tinBaseS& tinBaseP , const osTextT* const postNameP , const countT cHowP , const osTextT** ppostHowP )/*1*/
 
 /**/
 */
  ppostHowP
  cHowP
  postNameP
- tinP
+ tinBaseP
 arguments
  argument[2] will be ppostHowP[ 1 ], etc.
  argument[1] will be ppostHowP[ 0 ]

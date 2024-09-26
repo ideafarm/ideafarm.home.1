@@ -19,7 +19,7 @@
                         CONoUTrAW( info.postTo ) ;
                         CONoUTrAW( "Could not move: " ) ;
                     {
-                    if( tinP.bosFail )
+                    if( ((tinNormalS&)tinBaseP).bosFail )
                     BOS( WHATsfr , BOSoK , MoveFile( postNameP , postTo ) ) ;
 
                     //LOGrAW( "\r\n" ) ;
@@ -41,7 +41,7 @@
                         else
                         }
                             }
-                                PUSE( tinP , *(byteT**)&pInfo ) ;
+                                PUSE( tinBaseP , *(byteT**)&pInfo ) ;
         
                                 *( postc ++ ) = '.' ;
                                 postc += 8 ;
@@ -60,13 +60,13 @@
                             {
                             if( pInfo )
         
-                            thirdC::dosQueryFileInfoIF( tinP , pInfo , hFile ) ;
+                            thirdC::dosQueryFileInfoIF( tinBaseP , pInfo , hFile ) ;
                             ZE( infoFileS* , pInfo ) ;
                         {
                         if( ~hFile )
         
-                        thirdC::dosOpenIF( tinP , tinP.pEther , hFile , countTC() , postNameP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_NOcACHE | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER , ifcOPENhOW_nFeO ) ;
-                        handleC hFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                        thirdC::dosOpenIF( tinBaseP , ((tinNormalS&)tinBaseP).pEther , hFile , countTC() , postNameP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_NOcACHE | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER , ifcOPENhOW_nFeO ) ;
+                        handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
                     {
 
                     memcpy( postc , postNameP , costPrefix ) ; postc += costPrefix ;
@@ -78,28 +78,28 @@
                     postShort ++ ;
                 {
                 if( postShort )
-                osTextT* postShort = (osTextT*)tinP.brcRaw ;
+                osTextT* postShort = (osTextT*)((tinNormalS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , strrchr( postNameP , '\\' ) )
             {
             else
             }
-                //if( tinP.bosFail && tinP.brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
+                //if( ((tinNormalS&)tinBaseP).bosFail && ((tinNormalS&)tinBaseP).brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
                 //BOS( WHATsfr , BOSoK , CreateDirectory( info.postTo , 0 ) ) ;
                 //info.postTo[ costTo - 1 ] = 0 ;
-                //countT costTo = tinP.brcRaw ;
+                //countT costTo = ((tinNormalS&)tinBaseP).brcRaw ;
                 //BOSdOnOTtEST( WHATgbo , strlen( info.postTo ) )
             {
             if( bDir )
 
             boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-            countT costLike = tinP.brcRaw ;
+            countT costLike = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
         {
         if( bDoIt )
 
         ;
             : 1
-            ? (*info.pCbf)( tinP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
+            ? (*info.pCbf)( tinBaseP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP )
         bDoIt = info.pCbf
 
         diskWalkCopyInfoS& info = *(diskWalkCopyInfoS*)pcArgP ;
@@ -108,7 +108,7 @@
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkTimePrefixCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkTimePrefixCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 /**/
 */

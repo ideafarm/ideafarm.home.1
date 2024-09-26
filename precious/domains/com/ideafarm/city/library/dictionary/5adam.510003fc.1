@@ -8,38 +8,38 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
         }
-            etThread.osSleepF( tinP , TOCK * 0x10 , TOCK * 0x10 ) ;
-            etThread.strokeF( tinP , T("\r" BLANK79 "\r") ) ;
+            etThread.osSleepF( tinBaseP , TOCK * 0x10 , TOCK * 0x10 ) ;
+            etThread.strokeF( tinBaseP , T("\r" BLANK79 "\r") ) ;
         {
         if( !ether )
 
         }
-            etThread.strokeF( tinP , T("clock    updated at ")+TT(time1,time2)+T("-\r\n") ) ;
-            etThread.delF( tinP , postc ) ;
+            etThread.strokeF( tinBaseP , T("clock    updated at ")+TT(time1,time2)+T("-\r\n") ) ;
+            etThread.delF( tinBaseP , postc ) ;
 
             }
-                sOut.writeF( tinP , postc  , costc ) ;
-                { countT cbWrite = costc ; sOut.writeF( tinP , (byteT*)&cbWrite , sizeof cbWrite ) ; }
-                { countT offTarget = 0x1ad ; sOut.writeF( tinP , (byteT*)&offTarget , sizeof offTarget ) ; }
-                sOut.writeF( tinP , (byteT*)pcIdName  , ccIdName * sizeof( countT ) ) ;
-                sOut.writeF( tinP , (byteT*)&ccIdName , sizeof ccIdName ) ;
-                { countT idCmd = idCMDlAKEsERVER_WRITE ; sOut.writeF( tinP , (byteT*)&idCmd , sizeof idCmd ) ; }
-                sOut.connectF( tinP , ifcPORToLD1lAKE , 0x01010102 ) ;
-                socketC sOut( tinP , ether , TAG( TAGiDnULL ) ) ;
+                sOut.writeF( tinBaseP , postc  , costc ) ;
+                { countT cbWrite = costc ; sOut.writeF( tinBaseP , (byteT*)&cbWrite , sizeof cbWrite ) ; }
+                { countT offTarget = 0x1ad ; sOut.writeF( tinBaseP , (byteT*)&offTarget , sizeof offTarget ) ; }
+                sOut.writeF( tinBaseP , (byteT*)pcIdName  , ccIdName * sizeof( countT ) ) ;
+                sOut.writeF( tinBaseP , (byteT*)&ccIdName , sizeof ccIdName ) ;
+                { countT idCmd = idCMDlAKEsERVER_WRITE ; sOut.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ; }
+                sOut.connectF( tinBaseP , ifcPORToLD1lAKE , 0x01010102 ) ;
+                socketC sOut( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
             {
 
-            etThread.delF( tinP , psttc ) ;
-            countT costc = etThread.strMakeF( tinP , LF , postc , psttc ) ; ___( postc ) ;
+            etThread.delF( tinBaseP , psttc ) ;
+            countT costc = etThread.strMakeF( tinBaseP , LF , postc , psttc ) ; ___( postc ) ;
             ZE( osTextT* , postc ) ;
-            etThread.strClockOldF( tinP , psttc , time1 ) ; ___( psttc ) ;
+            etThread.strClockOldF( tinBaseP , psttc , time1 ) ; ___( psttc ) ;
             ZE( strokeS* , psttc ) ;
 
-            etThread.strokeF( tinP , T("clock    updated at ")+TT(time1,time2)+T("+\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("clock    updated at ")+TT(time1,time2)+T("+\r\n") ) ;
         {
         if( idCycle == 1 || bNewTick )
 
@@ -53,7 +53,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         const boolT bNewQtr       = bNewDuck   || offQTR(    time2 ) != offQTR(    time2last ) ;
         const boolT bNewDuck      =               offDUCK(   time2 ) != offDUCK(   time2last ) ;
 
-        etThread.osTimeNowF( tinP , time1 , time2 ) ;
+        etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
         idCycle ++ ;
@@ -62,25 +62,25 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     ZE( countT , idCycle ) ;
     ZE( countT , idTry )
 
-    etThread.osTimeNowF( tinP , time1last , time2last ) ;
+    etThread.osTimeNowF( tinBaseP , time1last , time2last ) ;
     ZE( sCountT , time2last ) ;
     ZE( countT , time1last ) ;
 
-    countT ccIdName   = etThread.strBodyLengthF( tinP , pcIdName ) ;    
+    countT ccIdName   = etThread.strBodyLengthF( tinBaseP , pcIdName ) ;    
     countT pcIdName[] = { 1 , 0x3f , 2 , 0 } ;
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmCalendarF ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmCalendarF ) ; }
 
-    etThread.strokeF( tinP , T("IdeaFarm " "(tm) City Template Updater\r\ni overwrite revisions onto the template images in the lake\r\n\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Template Updater\r\ni overwrite revisions onto the template images in the lake\r\n\r\n") ) ;
 {
 else
 }
-    etThread.strokeF( tinP , T("Another ef30104 appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tinBaseP , T("Another ef30104 appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinP , TAG( TAGiDnULL ) , T("ef30104") ) ;
+batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("ef30104") ) ;
 
 TODO
 
@@ -88,33 +88,33 @@ DONE( tmCalendarF )
 }
     }
         }
-            etThread.osSleepF( tinP , TOCK * 0x40 , TOCK * 0x40 ) ;
-            etThread.strokeF( tinP , T("\r" BLANK79 "\r") ) ;
+            etThread.osSleepF( tinBaseP , TOCK * 0x40 , TOCK * 0x40 ) ;
+            etThread.strokeF( tinBaseP , T("\r" BLANK79 "\r") ) ;
         {
         if( !ether )
 
         }
-            etThread.strokeF( tinP , T("calendar updated at ")+TT(time1,time2)+T("-\r\n") ) ;
-            etThread.delF( tinP , postc ) ;
+            etThread.strokeF( tinBaseP , T("calendar updated at ")+TT(time1,time2)+T("-\r\n") ) ;
+            etThread.delF( tinBaseP , postc ) ;
 
             }
-                sOut.writeF( tinP , postc  , costc ) ;
-                { countT cbWrite = costc ; sOut.writeF( tinP , (byteT*)&cbWrite , sizeof cbWrite ) ; }
-                { countT offTarget = 0x1a7 ; sOut.writeF( tinP , (byteT*)&offTarget , sizeof offTarget ) ; }
-                sOut.writeF( tinP , (byteT*)pcIdName  , ccIdName * sizeof( countT ) ) ;
-                sOut.writeF( tinP , (byteT*)&ccIdName , sizeof ccIdName ) ;
-                { countT idCmd = idCMDlAKEsERVER_WRITE ; sOut.writeF( tinP , (byteT*)&idCmd , sizeof idCmd ) ; }
-                sOut.connectF( tinP , ifcPORToLD1lAKE , 0x01010102 ) ;
-                socketC sOut( tinP , ether , TAG( TAGiDnULL ) ) ;
+                sOut.writeF( tinBaseP , postc  , costc ) ;
+                { countT cbWrite = costc ; sOut.writeF( tinBaseP , (byteT*)&cbWrite , sizeof cbWrite ) ; }
+                { countT offTarget = 0x1a7 ; sOut.writeF( tinBaseP , (byteT*)&offTarget , sizeof offTarget ) ; }
+                sOut.writeF( tinBaseP , (byteT*)pcIdName  , ccIdName * sizeof( countT ) ) ;
+                sOut.writeF( tinBaseP , (byteT*)&ccIdName , sizeof ccIdName ) ;
+                { countT idCmd = idCMDlAKEsERVER_WRITE ; sOut.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ; }
+                sOut.connectF( tinBaseP , ifcPORToLD1lAKE , 0x01010102 ) ;
+                socketC sOut( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
             {
 
-            etThread.delF( tinP , psttc ) ;
-            countT costc = etThread.strMakeF( tinP , LF , postc , psttc ) ; ___( postc ) ;
+            etThread.delF( tinBaseP , psttc ) ;
+            countT costc = etThread.strMakeF( tinBaseP , LF , postc , psttc ) ; ___( postc ) ;
             ZE( osTextT* , postc ) ;
-            etThread.strCalendarF( tinP , psttc , time2 ) ; ___( psttc ) ;
+            etThread.strCalendarF( tinBaseP , psttc , time2 ) ; ___( psttc ) ;
             ZE( strokeS* , psttc ) ;
 
-            etThread.strokeF( tinP , T("calendar updated at ")+TT(time1,time2)+T("+\r\n") ) ;
+            etThread.strokeF( tinBaseP , T("calendar updated at ")+TT(time1,time2)+T("+\r\n") ) ;
         {
         if( idCycle == 1 || bNewDay )
 
@@ -126,7 +126,7 @@ DONE( tmCalendarF )
         const boolT bNewQtr       = bNewDuck   || offQTR(    time2 ) != offQTR(    time2last ) ;
         const boolT bNewDuck      =               offDUCK(   time2 ) != offDUCK(   time2last ) ;
 
-        etThread.osTimeNowF( tinP , time1 , time2 ) ;
+        etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
         idCycle ++ ;
@@ -135,11 +135,11 @@ DONE( tmCalendarF )
     ZE( countT , idCycle ) ;
     ZE( countT , idTry )
 
-    etThread.osTimeNowF( tinP , time1last , time2last ) ;
+    etThread.osTimeNowF( tinBaseP , time1last , time2last ) ;
     ZE( sCountT , time2last ) ;
     ZE( countT , time1last ) ;
 
-    countT ccIdName   = etThread.strBodyLengthF( tinP , pcIdName ) ;    
+    countT ccIdName   = etThread.strBodyLengthF( tinBaseP , pcIdName ) ;    
     countT pcIdName[] = { 1 , 0x3f , 3 , 0 } ;
 {
 if( pTaskP )

@@ -28,7 +28,7 @@
         //    if( cbP == 0x241b0 )
         //    CONoUTrAW3( "\r\npoolC::newF - [cbP]: " , cbP , "" ) ;
         //{
-        //if( tinP.pc Utility[ 0 ] ) //TO FIND A BUG
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) //TO FIND A BUG
 
         }
             }
@@ -43,7 +43,7 @@
             //    for( countT offs = 0 ; offs < sizeof guts.ppSlots / sizeof guts.ppSlots[ 0 ] ; offs ++ )
             //    CONoUTrAW( "\r\nslotsC instances:\r\n" ) ;
             //{
-            //if( tinP.pc Utility[ 0 ] )
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
             //U::DISABLE THIS IN PRODUCTION ; TO FIND A BUG
 
             }
@@ -73,19 +73,19 @@
 
                     if( pDropNote ) putNegAM( pDropNote->finger , FINGERnEG_dropNotePoolIsAdjustingDropHeader ) ;
 
-                    dropNoteS* pDropNote = guts.ppSlots[ offs ]->pDropNoteF( tinP , pbP ) ;
+                    dropNoteS* pDropNote = guts.ppSlots[ offs ]->pDropNoteF( tinBaseP , pbP ) ;
                 {
                 else
                 }
-                    etherC::etRockIF( tinP ).traceF( tinP , T("poolC::newF / could not obtain a drop") ) ;
+                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("poolC::newF / could not obtain a drop") ) ;
                 {
                 if( !pbP )
 
-                pbP = guts.ppSlots[ offs ]->newF( tinP , idLineP , idiFileP , flagsSlots ) ;
+                pbP = guts.ppSlots[ offs ]->newF( tinBaseP , idLineP , idiFileP , flagsSlots ) ;
 
                 THREADmODE5oN( flTHREADmODE5_DOnOTtESTdROPhEADERS )
 
-                //if( offs == 0x18 ) etherC::etRockIF( tinP ).traceF( tinP , T("++++++++ new") ) ; //U::20140808@1936: TO FIND A BUG
+                //if( offs == 0x18 ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("++++++++ new") ) ; //U::20140808@1936: TO FIND A BUG
 
                 if( bDoNotBlock                        ) flagsSlots |= flSLOTScnEW_DOnOTbLOCK  ;
                 if( F(flagsP) & flPOOLcnEW_DOnOTcTsEXc ) flagsSlots |= flSLOTScnEW_DOnOTcTsEXc ;
@@ -93,10 +93,10 @@
                 boolT bDoNotBlock = F(guts.flagsCt) & flPOOLc_DOnOTbLOCK || F(flagsP) & flPOOLcnEW_DOnOTbLOCK ;
 
                 }
-                    guts.pGrabNewElt[ offs ].ungrabF( tinP ) ;
+                    guts.pGrabNewElt[ offs ].ungrabF( tinBaseP ) ;
                     }
                         THREADmODE2rESTORE
-                        guts.ppSlots[ offs ] = new( 0 , tinP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinP , TAG( TAGiDnULL ) , idLineP , idiFileP , ostoName , guts.cBitsExpCbDrop , offs , face.pcCbDropAdjust[ offs ] , face.cbDropSeparator , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
+                        guts.ppSlots[ offs ] = new( 0 , tinBaseP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinBaseP , TAG( TAGiDnULL ) , idLineP , idiFileP , ostoName , guts.cBitsExpCbDrop , offs , face.pcCbDropAdjust[ offs ] , face.cbDropSeparator , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
                         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                 
                         if( F(guts.flagsCt) & flPOOLc_NOdROPhEADERS ) flagsc |= flSLOTSc_NOdROPhEADERS ;
@@ -112,7 +112,7 @@
                         OStEXT(   ostoName , TUCK << 2 )
                     {
                     if( !guts.ppSlots[ offs ] )
-                    guts.pGrabNewElt[ offs ].grabF( tinP , TAG( TAGiDnULL ) ) ;
+                    guts.pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( !guts.ppSlots[ offs ] )
             {
@@ -127,43 +127,43 @@
             //    for( countT offs = 0 ; offs < sizeof guts.ppSlots / sizeof guts.ppSlots[ 0 ] ; offs ++ )
             //    CONoUTrAW( "\r\nslotsC instances:\r\n" ) ;
             //{
-            //if( tinP.pc Utility[ 0 ] )
+            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
             //DISABLE THIS IN PRODUCTION ; TO FIND A BUG
 
-            if( F(tinP.flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
-            if( this != tinP.pag1->pPoolAdamTemp && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ) { BLAMMO ; }
+            if( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+            if( this != ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ) { BLAMMO ; }
 
             if( F(guts.flagsCt) & flPOOLc_READoNLY ) { BLAMMO ; }
         {
         else
-        else if( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tinP , idLineP , idiFileP , cbP ) ;
+        else if( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tinBaseP , idLineP , idiFileP , cbP ) ;
         }
             pbP          = (byteT*)idJot ;
-            countT idJot = juse.writeF( tinP , 0 , cbP ) ;
-            jotC&  juse  = *tinP.ppJot[ (countT)pbP - JrEQUEST_min ] ;
+            countT idJot = juse.writeF( tinBaseP , 0 , cbP ) ;
+            jotC&  juse  = *((tinNormalS&)tinBaseP).ppJot[ (countT)pbP - JrEQUEST_min ] ;
         {
         if( pbP ) // IF I AM TO DIVERT THIS REQUEST TO A SPECIFIED jotC INSTANCE RATHER THAN ALLOCATE FROM MY sexC INSTANCES
 
         //}
         //    CONoUTrAW3( "\r\npoolC::newF + [cbP]: " , cbP , "" ) ;
         //{
-        //if( tinP.pc Utility[ 0 ] ) //TO FIND A BUG
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) //TO FIND A BUG
 
         //    }
         //        BLAMMOiFcALLEDbY( "bookC" )
         //        BLAMMOiFcALLEDbY( "booksC" )
         //    {
-        //    if( thirdC::third_idPhaseAdam_IF( tinP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 )
+        //    if( thirdC::third_idPhaseAdam_IF( tinBaseP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 )
         //    //U:: 20180208@0638: TO ELIMINATE ALL USE OF poolC BY booksC AND bookC
 
         _IO_
     {
 
     //}
-    //    tinP.pEther->traceF( tinP , T("poolC::newF called for wo of these suckas") ) ;
+    //    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("poolC::newF called for wo of these suckas") ) ;
     //    BLAMMO ;
     //{
-    //if( /*tinP.pEther &&*/ idLineP == 0x120 && idiFileP == 0x36008003 )
+    //if( /*((tinNormalS&)tinBaseP).pEther &&*/ idLineP == 0x120 && idiFileP == 0x36008003 )
 
     }
         if( POOP ) return ;
@@ -176,7 +176,7 @@
     SCOOP ;  // THIS IS INTENDED TO PREVENT AMBIENT IMPOTENCE FROM AFFECTING ME ; WO REASON IS TO ENSURE THAT C++ CALLS TO OVERLOADED OPERATOR new RETURN A NONZE POINTER IF POSSIBLE ; WHEN AN OVERLOADD new RETURNS 0, C++ (WATCOM) JUMPS IMMEDIATELY BEYOND THE ASSOCIATED CT'OR CALL AND CALLS DT'OR FOR TEMPORARIES (bitsC) THAT WERE NEVER CT'D ; THE ROOT PROBLEM HERE IS THAT THE COMPILER DOES NOT GENERATE CORRECT CODE; THE GENERATED CODE SHOULD JUMP BEYOND THE DT'OR CALLS FOR THE TEMPORARIES
     poopC poop ;
 {
-/*1*/voidT poolC::newF( tinS& tinP , const countT idLineP , const countT idiFileP , byteT*& pbP , const countT cbP , const flagsT flagsP )/*1*/
+/*1*/voidT poolC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , byteT*& pbP , const countT cbP , const flagsT flagsP )/*1*/
 
 /**/
 

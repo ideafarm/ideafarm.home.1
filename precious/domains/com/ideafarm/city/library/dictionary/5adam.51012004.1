@@ -11,32 +11,32 @@ REST
 
 }
     }
-        sThrow.writeF( tinP , idPortCatch , socketC::nicNameIF( tinP , etThread , T("2600:381:9f04:ed6e:58a8:5006:7e65:73fb") ) , postSay , sizeof postSay - 1 ) ;
-        //G:sThrow.writeF( tinP , idPortCatch , socketC::nicNameIF( tinP , etThread , T("2600:381:9f04:ed6e:58a8:5006:7e65:73fb") ) , postSay , sizeof postSay - 1 ) ;
-        //G:sThrow.writeF( tinP , idPortCatch , socketC::nicNameIF( tinP , etThread , T("192.168.192.136") ) , postSay , sizeof postSay - 1 ) ;
-        //B:sThrow.writeF( tinP , idPortCatch , socketC::nicNameIF( tinP , etThread , T("10.1.1.1") ) , postSay , sizeof postSay - 1 ) ;
-        etThread.traceF( tinP , T("++++") ) ;
+        sThrow.writeF( tinBaseP , idPortCatch , socketC::nicNameIF( tinBaseP , etThread , T("2600:381:9f04:ed6e:58a8:5006:7e65:73fb") ) , postSay , sizeof postSay - 1 ) ;
+        //G:sThrow.writeF( tinBaseP , idPortCatch , socketC::nicNameIF( tinBaseP , etThread , T("2600:381:9f04:ed6e:58a8:5006:7e65:73fb") ) , postSay , sizeof postSay - 1 ) ;
+        //G:sThrow.writeF( tinBaseP , idPortCatch , socketC::nicNameIF( tinBaseP , etThread , T("192.168.192.136") ) , postSay , sizeof postSay - 1 ) ;
+        //B:sThrow.writeF( tinBaseP , idPortCatch , socketC::nicNameIF( tinBaseP , etThread , T("10.1.1.1") ) , postSay , sizeof postSay - 1 ) ;
+        etThread.traceF( tinBaseP , T("++++") ) ;
     {
     if( idPortCatch )
-    ++ s ; ether.osSleepF( tinP , TOCK >> 4 ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 4 ) ;
 {
 while( !ether )
-sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 osTextT postSay[] = "Thank you, Jesus!" ;
 
 etThread.osThreadF( TaRG1( tmCatchF ) ) ;
-sThrow.bindF( tinP ) ;
-socketC sThrow( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+sThrow.bindF( tinBaseP ) ;
+socketC sThrow( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
 TODO
 
 DONE( tmCatchF )
 }
     }
-        etThread.delF( tinP , pbi ) ;
-        etThread.traceF( tinP , T(nicNameHe)+tb4+TF2(idPortHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pbi) ) ;
-        sCatch.readF( tinP , pbi , cbi , idPortHe , nicNameHe ) ; ___( pbi ) ;
+        etThread.delF( tinBaseP , pbi ) ;
+        etThread.traceF( tinBaseP , T(nicNameHe)+tb4+TF2(idPortHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(pbi) ) ;
+        sCatch.readF( tinBaseP , pbi , cbi , idPortHe , nicNameHe ) ; ___( pbi ) ;
         nicNameC nicNameHe ;
         ZE( countT , idPortHe ) ;
         ZE( countT , cbi ) ;
@@ -46,10 +46,10 @@ DONE( tmCatchF )
 
     TN( tb4 , "    " ) ;
 
-    etThread.traceF( tinP , T("[idPortCatch]:    ")+TF4(idPortCatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    etThread.traceF( tinBaseP , T("[idPortCatch]:    ")+TF4(idPortCatch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
 
-    idPortCatch = sCatch.bindF( tinP , 80 ) ;
-    socketC sCatch( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    idPortCatch = sCatch.bindF( tinBaseP , 80 ) ;
+    socketC sCatch( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 {
 if( pTaskP )
 TASK( tmCatchF )

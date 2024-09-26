@@ -12,21 +12,21 @@
 
             hWindow.resetF() ;
             }
-                delF( tinP , pbInfo ) ;
+                delF( tinBaseP , pbInfo ) ;
                 BOSpOOP
                 BOS( WHATgbd , BOSoK , EndPaint( (HWND)hWindow.osF( ifcIDtYPEhANDLE_WINDOW ) , (PAINTSTRUCT*)pbInfo ) )
             {
             if( pbInfo )
 
-            pswPaintInfoFromDrawingHandle->freeF( tinP ) ;
+            pswPaintInfoFromDrawingHandle->freeF( tinBaseP ) ;
 
             byteT* pbInfo = (byteT*)(countT)*pswPaintInfoFromDrawingHandle ;
             lever_swPaintInfoFromDrawingHandle = hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
 
             __Z( hWindow ) ;
-            pswWinFromDrawDuringPaint->freeF( tinP ) ;
+            pswWinFromDrawDuringPaint->freeF( tinBaseP ) ;
             hWindow.osF( ifcIDtYPEhANDLE_WINDOW , *pswWinFromDrawDuringPaint ) ;
-            handleC hWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
+            handleC hWindow( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
             lever_swWinFromDrawDuringPaint = hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
 
         #elif defined( __NT__ )
@@ -47,13 +47,13 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::winEndPaintF( tinS& tinP , handleC& hDrawP )/*1*/
+/*1*/voidT thirdC::winEndPaintF( tinBaseS& tinBaseP , handleC& hDrawP )/*1*/
 
 /**/
 */
   must not be 0
  hDrawP
- tinP
+ tinBaseP
 arguments
  for example, do not call me against a thirdC object that is explicitly constructed in the definition of an adam
 my thirdC object must be contained within an etherC object that is fully constructed

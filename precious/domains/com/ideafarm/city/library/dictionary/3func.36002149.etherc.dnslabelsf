@@ -8,7 +8,7 @@
 
 
 }
-    delF( tinP , pstt1w ) ;
+    delF( tinBaseP , pstt1w ) ;
     }
         cbP = cba ;
 
@@ -31,7 +31,7 @@
         byteT* pbc = pbP ;
     {
     if( pbP )
-    newF( tinP , LF , pbP , cba ) ; ___( pbP ) ;
+    newF( tinBaseP , LF , pbP , cba ) ; ___( pbP ) ;
 
     }
         __( cba > 0xff ) ; //RFC1035/2/3/4
@@ -41,8 +41,8 @@
             __( !psttc1->idAdam ) ;
         {
         FORsTRINGSiN1( pstt1w )
-        if( psttBest != psttP ) delF( tinP , psttBest ) ;
-        strWordsOldF( tinP , pstt1w , psttBest , sttq , T(".") ) ; ___( pstt1w ) ;
+        if( psttBest != psttP ) delF( tinBaseP , psttBest ) ;
+        strWordsOldF( tinBaseP , pstt1w , psttBest , sttq , T(".") ) ; ___( pstt1w ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     {
     if( psttBest )
@@ -59,41 +59,41 @@
         }
             }
                 }
-                    delF( tinP , pstts ) ;
+                    delF( tinBaseP , pstts ) ;
                     else       idc += idp + 1 ;
                     if( !idp ) idc = 0 ;
-                    countT idp = strIdF( tinP , T(".") , pstts ) ;
+                    countT idp = strIdF( tinBaseP , T(".") , pstts ) ;
                 {
                 else
                 }
                     break ;
-                    delF( tinP , pstts ) ;
-                    else delF( tinP , psttn ) ;
+                    delF( tinBaseP , pstts ) ;
+                    else delF( tinBaseP , psttn ) ;
                     }
                         offBest = swOffP ;
                         psttBest = psttn ;
-                        delF( tinP , psttBest ) ;
+                        delF( tinBaseP , psttBest ) ;
                     {
                     if( !psttBest || !psttn || psttn->idAdam < psttBest->idAdam )
                     //ifcSayIF(psttn ? T("bingo: the new portion is: \"")+T(psttn)+T("\"") : T("bingo: an exact repeat (no new prefix)") , flSAY_APPEND | flSAY_LOG ) ;
     
-                    if( ida + idc >= 3 ) { strSubstringF( tinP , psttn , countTC( 1 ) , countTC( ida + idc - 3 ) , psttP ) ; ___( psttn ) ; }
+                    if( ida + idc >= 3 ) { strSubstringF( tinBaseP , psttn , countTC( 1 ) , countTC( ida + idc - 3 ) , psttP ) ; ___( psttn ) ; }
                     ZE( strokeS* , psttn ) ;
                 {
                 if( ida && ( ( ida == 1 && idc == 1 ) || psttP[ CSpREFIX - 3 + ida + idc ] == S1C('.') ) )
-                countT ida = strIdF( tinP , pstts , psttP ) ;
+                countT ida = strIdF( tinBaseP , pstts , psttP ) ;
     
                 //ifcSayIF( T("looking for \"")+T(pstts)+T("\" in \"")+T(psttP)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
-                strSubstringF( tinP , pstts , countTC( idc ) , countTC() , psttLeverP ) ; ___( pstts ) ;
+                strSubstringF( tinBaseP , pstts , countTC( idc ) , countTC() , psttLeverP ) ; ___( pstts ) ;
                 ZE( strokeS* , pstts ) ;
             {
             while( idc )
             countT idc = 1 ;
             //ifcSayIF( T("looking for portions of \"")+T(psttLeverP)+T("\", registered at ")+TF1(swOffP)+T(", in \"")+T(psttP)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
-            psttLeverP = (strokeS*)swOffP.leverF( tinP , idf ) ;
+            psttLeverP = (strokeS*)swOffP.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swOffP.cFlavorsF( tinP ) ;
+        countT cFlavors = swOffP.cFlavorsF( tinBaseP ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     {
     ZE( strokeS* , psttBest ) ;
@@ -111,7 +111,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::dnsLabelsF( tinS& tinP , byteT*& pbP , countT& cbP , const strokeS* const psttP , switchC& swOffP , strokeS*& psttLeverP )/*1*/
+/*1*/voidT etherC::dnsLabelsF( tinBaseS& tinBaseP , byteT*& pbP , countT& cbP , const strokeS* const psttP , switchC& swOffP , strokeS*& psttLeverP )/*1*/
 
 /**/
 */

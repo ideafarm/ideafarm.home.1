@@ -8,11 +8,11 @@
 
 
 }
-    baton.ungrabF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
 
     }
         cReadPending -- ;
-        b_stCatch.ungrabF( tinP ) ;
+        b_stCatch.ungrabF( tinBaseP ) ;
 
         }
             stP << psi ;
@@ -21,32 +21,32 @@
         {
         while( !third && stCatch )
 
-        b_stCatch.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
-        sgnCatch.waitF( tinP ) ;
-        baton.ungrabF( tinP ) ;
+        b_stCatch.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sgnCatch.waitF( tinBaseP ) ;
+        baton.ungrabF( tinBaseP ) ;
         cReadPending ++ ;
     {
     if( !bDestructionInProgress )
 
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _IO_
 
     }
         if( third ) return ;
-        __( stP.idTypeF( tinP ) - ifcSTACKtYPE_PTR_soulC ) ;
+        __( stP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_soulC ) ;
         __Z( idPort ) ;
         if( third ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT netC::readF( tinS& tinP , stackC& stP )/*1*/
+/*1*/voidT netC::readF( tinBaseS& tinBaseP , stackC& stP )/*1*/
 /**/
 */
   after evaluation, will contain wo or more soulC objects, each containing annotation fields followed by the received soulC object
   must be of type ifcSTACKtYPE_PTR_soulC
  stP
- tinP
+ tinBaseP
 arguments
 i block until wo or more soulC objects have been received or until i am being destroyed
 i cannot be used if idPort was 0 when i was constructed

@@ -23,15 +23,15 @@
             
             T(
 
-        meP.pushSnipF( tinP , stBodyP ,
+        meP.pushSnipF( tinBaseP , stBodyP ,
     {
     if( bNewAccount )
 
     DEL( prPosts ) ;
-    if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+    if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
     }
-        etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+        etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
 
         ) ;
 
@@ -82,7 +82,7 @@
                 
                 T(
         
-            etThread.strMakeF( tinP , LF , prPosts , 
+            etThread.strMakeF( tinBaseP , LF , prPosts , 
         {
         else
         }
@@ -105,7 +105,7 @@
                 
                 T(
         
-            etThread.strMakeF( tinP , LF , prPosts , 
+            etThread.strMakeF( tinBaseP , LF , prPosts , 
         {
         if( idPortVerify == ifcIDpORT_HTTP )
     {
@@ -129,7 +129,7 @@
                 
                 T(
         
-            etThread.strMakeF( tinP , LF , prPosts , 
+            etThread.strMakeF( tinBaseP , LF , prPosts , 
         {
         else
         }
@@ -147,14 +147,14 @@
                 
                 T(
         
-            etThread.strMakeF( tinP , LF , prPosts , 
+            etThread.strMakeF( tinBaseP , LF , prPosts , 
         {
         if( idPortVerify == ifcIDpORT_HTTP )
     {
     if( bOk && bOkPort )
     ZE( pbRefC* , prPosts ) ;
 
-    boolT bOkPort = idPortVerify == meP.idPortF( tinP ) ;
+    boolT bOkPort = idPortVerify == meP.idPortF( tinBaseP ) ;
 
     }
         if( POOP ) POOPR
@@ -167,29 +167,29 @@
                             }
                                 bOk = 1 ;
 
-                                session.privilegesF( tinP , flagsp ) ;
+                                session.privilegesF( tinBaseP , flagsp ) ;
 
                                 if( idAccount == 1 ) flagsp |= flSESSIONpRIVILEGE_HIDEaDlINKS | flSESSIONpRIVILEGE_HIDEiMAGEaDS | flSESSIONpRIVILEGE_SENDaNDrECEIVEeMAIL | flSESSIONpRIVILEGE_VIEWuNTESTEDpAGES | flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ;
 
                                 }
                                     if( info.psttPaypalPayerEmail && info.psttPaypalPayerEmail->idAdam ) flagsp = flSESSIONpRIVILEGE_FULLhEADER ;
-                                    accountS info( tinP , etThread , idAccount , flACCOUNT1_null , flACCOUNT2_QUERYpAYPALpAYEReMAIL ) ;
+                                    accountS info( tinBaseP , etThread , idAccount , flACCOUNT1_null , flACCOUNT2_QUERYpAYPALpAYEReMAIL ) ;
                                 {
 
                                 flagsT flagsp = flSESSIONpRIVILEGE_null ;
 
-                                session.setIdAccountF( tinP , idAccount ) ;
-                                session.setEmailF( tinP , tEmail ) ;
-                                sessionC& session = sessionsP( tinP , nnPeerP ) ;
+                                session.setIdAccountF( tinBaseP , idAccount ) ;
+                                session.setEmailF( tinBaseP , tEmail ) ;
+                                sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
                             {
                             if( idAccount )
                             __Z( idAccount ) ;
-                            countT idAccount = queryIdAccountFromEmailF( tinP , tEmail ) ;
+                            countT idAccount = queryIdAccountFromEmailF( tinBaseP , tEmail ) ;
 
                             sIn >> idPortVerify ;
 
                             }
-                                etThread.delF( tinP , psttEmail ) ;
+                                etThread.delF( tinBaseP , psttEmail ) ;
                                 tEmail = T(psttEmail) ;
                                 sIn >> psttEmail ; ___( psttEmail ) ;
                                 ZE( strokeS* , psttEmail ) ;
@@ -207,25 +207,25 @@
                 sIn >> finger ;
                 ZE( countT , finger ) ;
 
-                tinP.pEtScratch->boxGetShadowF( tinP , sIn , tFileNew ) ;
-                soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , sIn , tFileNew ) ;
+                soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             else
             if( POOP ) { POOPR ; }
-            tinP.pEtScratch->diskMoveFileOrDirF( tinP , tFileNew , tDirOld+tShort , 1 ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tFileNew , tDirOld+tShort , 1 ) ;
             TN( tFileNew , "" ) ; tFileNew = tDirNew+tShort ;
             TN( tShort  , "soul.ticket." ) ; tShort += T(zsttIdTicket)+T(".soul") ;
 
             if( POOP ) { POOPR ; }
-            tinP.pEtScratch->diskMakeDirIfNeededF( tinP , tDirNew ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->diskMakeDirIfNeededF( tinBaseP , tDirNew ) ;
             TN( tDirNew , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets.used/" ) ;
             TN( tDirOld , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets/" ) ;
 
-            if( zsttIdTicket ) { etThread.strTrimF( tinP , zsttIdTicket , 0 , T(TbLACKnEWlINE) ) ; ___( zsttIdTicket ) ; }
+            if( zsttIdTicket ) { etThread.strTrimF( tinBaseP , zsttIdTicket , 0 , T(TbLACKnEWlINE) ) ; ___( zsttIdTicket ) ; }
             strokeS*& zsttIdTicket = *(strokeS**)&(countT&)swKVP ;
             psttLeverKVP = tKey ;
         {
-        if( swKVP.idSlotOfLeverF( tinP , (countT)(strokeS*)tKey ) )
+        if( swKVP.idSlotOfLeverF( tinBaseP , (countT)(strokeS*)tKey ) )
         TN( tKey , "idticket" ) ;
         SCOOPS
     {
@@ -236,14 +236,14 @@
     ZE( boolT , bOk ) ;
 
     }
-        idAccountAlready = session.getIdAccountF( tinP ) ;
-        //session.getEmailF( tinP , psttEmailAlready ) ; ___( psttEmailAlready ) ;
-        sessionC& session = sessionsP( tinP , nnPeerP ) ;
+        idAccountAlready = session.getIdAccountF( tinBaseP ) ;
+        //session.getEmailF( tinBaseP , psttEmailAlready ) ; ___( psttEmailAlready ) ;
+        sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
     {
     ZE( countT   , idAccountAlready ) ;
     //ZE( strokeS* , psttEmailAlready ) ;
 {
-/*1*/voidT obeyLoginViaEmailLinkCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT obeyLoginViaEmailLinkCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
     "  If the window or browser tab containing the \"login\" link that you clicked is still open, click \"IDEAFARM.COM\" in it after closing the new window or tab that you are now reading.\r\n"
     "You can get to the home page from any other page by clicking \"IDEAFARM.COM\" in the page header.\r\n"                                                     \

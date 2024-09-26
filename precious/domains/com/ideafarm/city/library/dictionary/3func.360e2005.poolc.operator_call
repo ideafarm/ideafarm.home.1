@@ -14,7 +14,7 @@
                 //if( !*guts.ppSlots[ offs ] ) { DELzOMBIE( guts.ppSlots[ offs ] ) ; }
             {
             if( !pbP )
-            (*guts.ppSlots[ offs ])( tinP , pbP ) ;
+            (*guts.ppSlots[ offs ])( tinBaseP , pbP ) ;
         {
         if( guts.ppSlots[ offs ] )
     {
@@ -31,7 +31,7 @@
             //if( !pbP && offs - offsTry ) { BLAMMOiD( offs - offsTry ) ; }
 
             //}
-            //    pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+            //    pEtRock->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    }
             //        OStEXTC(  ostoSay , offsTry , 0 ) ;
@@ -55,7 +55,7 @@
             }
                 }
                     if( !pbP ) break ;
-                    (*guts.ppSlots[ offsTry ])( tinP , pbP ) ;
+                    (*guts.ppSlots[ offsTry ])( tinBaseP , pbP ) ;
                 {
                 if( guts.ppSlots[ offsTry ] )
             {
@@ -63,24 +63,24 @@
             ZE( countT , offsTry ) ;
 
             //}
-            //    pEtRock->traceF( tinP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+            //    pEtRock->traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    OStEXTA( ostoSay , "poolC::operator (): trying harder" ) ;
             //    OStEXT( ostoSay , TUCK << 0 ) ;
             //{
             //if( pEtRock )
-            //etherC* pEtRock = &etherC::etRockIF( tinP ) ;
+            //etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
         {
         else
         }
-            (*guts.ppSlots[ offs ])( tinP , pbP ) ;
+            (*guts.ppSlots[ offs ])( tinBaseP , pbP ) ;
 
-            //if( offs == 0x18 ) etherC::etRockIF( tinP ).traceF( tinP , T("-------- DELETE") ) ; //U::20140808@1936: TO FIND A BUG
+            //if( offs == 0x18 ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("-------- DELETE") ) ; //U::20140808@1936: TO FIND A BUG
             if( !guts.ppSlots[ offs ] ) { BLAMMO ; }
             if( c_this && F(guts.flagsCt) & flPOOLc_READoNLY ) { BLAMMO ; }
             countT c_this = (countT)this ;
         {
-        if( bDropHeader && !( F(tinP.flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
+        if( bDropHeader && !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
 
         //}
         //    CONoUTrAW7( "[dropHeader,mask,offs]:    " , dropHeader , "    " , mask , "    " , offs , "\r\n" ) ;
@@ -106,7 +106,7 @@
     else if( pbP )
     }
         if( pbP ) { BLAMMO ; }
-        processGlobal4I.heap.delF( tinP , pbP ) ;
+        processGlobal4I.heap.delF( tinBaseP , pbP ) ;
     {
     if( processGlobal1I.pbHeap <= pbP && pbP < processGlobal1I.pbHeapEnd )
     //20201106@1436: WITHOUT ANALYSIS, CHANGED "< pbP" to "<= pbP"
@@ -122,14 +122,14 @@
     //    static slotsC** ppSlotsDebug                ;
     //
     //    CONoUTrAW( "\r\n" ) ;
-    //    CONoUTrAW( postNameF( tinP ) ) ;
+    //    CONoUTrAW( postNameF( tinBaseP ) ) ;
     //    CONoUTrAW( "\r\n" ) ;
     //{
     //if( bChatter )
 
-    //boolT bChatter = !!tinP.pc Utility[ 0 ] ;
+    //boolT bChatter = !!((tinNormalS&)tinBaseP).pc Utility[ 0 ] ;
 {
-/*1*/voidT poolC::operator ()( tinS& tinP , byteT*& pbP )/*1*/
+/*1*/voidT poolC::operator ()( tinBaseS& tinBaseP , byteT*& pbP )/*1*/
 
 /**/
 

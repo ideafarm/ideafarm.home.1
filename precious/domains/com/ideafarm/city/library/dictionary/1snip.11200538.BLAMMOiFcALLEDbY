@@ -20,9 +20,9 @@
                 LOGrAW( "\r\nBLAMMO BECAUSE A CALLER'S NAME CONTAINS " ) ;                                                                                                                          \
                 LOGcALLnEST( "BLAMMOiFcALLEDbY" ) ;                                                                                                                                                 \
             {                                                                                                                                                                                       \
-            if( postzFileTitle && postP && thirdC::c_strstrIF( tinP , postzFileTitle , postP ) )                                                                                                    \
+            if( postzFileTitle && postP && thirdC::c_strstrIF( tinBaseP , postzFileTitle , postP ) )                                                                                                    \
                                                                                                                                                                                                     \
-            const osTextT* postzFileTitle = processGlobal8S::_processGlobal8I_IF().source.postFileTitleF( tinP , processGlobal8S::_processGlobal8I_IF().source.idFileRankF( tinP , *pcc ) ) ;       \
+            const osTextT* postzFileTitle = processGlobal8S::_processGlobal8I_IF().source.postFileTitleF( tinBaseP , processGlobal8S::_processGlobal8I_IF().source.idFileRankF( tinBaseP , *pcc ) ) ;       \
         {                                                                                                                                                                                           \
         while( pcc < pce && *pcc )                                                                                                                                                                  \
                                                                                                                                                                                                     \
@@ -30,9 +30,9 @@
         countT* pce = pcNest + ccNest ;                                                                                                                                                             \
         countT* pcc = pcNest ;                                                                                                                                                                      \
                                                                                                                                                                                                     \
-        tinP.get_pLFnest_F( tinP , pcNest , ccNest + 1 ) ;                                                                                                                                          \
+        ((tinNormalS&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                                                                                                          \
         countT pcNest[ ccNest + 1 ] ;                                                                                                                                                               \
-        const countT ccNest = sizeof tinP.monitor.pLFnest / sizeof tinP.monitor.pLFnest[ 0 ] ;                                                                                                      \
+        const countT ccNest = sizeof ((tinNormalS&)tinBaseP).monitor.pLFnest / sizeof ((tinNormalS&)tinBaseP).monitor.pLFnest[ 0 ] ;                                                                                                      \
     {                                                                                                                                                                                               \
                                                                                                                                                                                                     \
 #define BLAMMOiFcALLEDbY(postP)                                                                                                                                                                     \

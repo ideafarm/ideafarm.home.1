@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 CONoUTrAW( "\r\n\r\nloafing\r\n" ) ;
 
-tinP.pc Utility[ 0 ] -- ;
+((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
 }
-    handleC h2( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SHAREDmEMORY ) ;
-    handleC h1( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SHAREDmEMORY ) ;
+    handleC h2( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SHAREDmEMORY ) ;
+    handleC h1( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SHAREDmEMORY ) ;
 {
-tinP.pc Utility[ 0 ] ++ ;
+((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
 
 //etThread.osThreadF( TaRG1( tmWorkF ) ) ;
 
@@ -25,13 +25,13 @@ TODO
 
 DONE( tmWorkF )
 
-tinP.pc Utility[ 0 ] -- ;
+((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
 }
-    handleC h2( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SHAREDmEMORY ) ;
+    handleC h2( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SHAREDmEMORY ) ;
 
-    etThread.osSleepF( tinP , TOCK ) ;
+    etThread.osSleepF( tinBaseP , TOCK ) ;
 {
-tinP.pc Utility[ 0 ] ++ ;
+((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
 
 
 TASK( tmWorkF )

@@ -9,7 +9,7 @@
 
 }
     }
-        meP.pushSnipF( tinP , stBodyP , tSay ) ;
+        meP.pushSnipF( tinBaseP , stBodyP , tSay ) ;
 
         ) ;
 
@@ -23,7 +23,7 @@
     {
     if( !bOk )
 
-    meP.pushSnipF( tinP , stBodyP , tSay ) ;
+    meP.pushSnipF( tinBaseP , stBodyP , tSay ) ;
 
     ) ;
 
@@ -58,11 +58,11 @@
                     }
                         }
                             }
-                                session.setIdAccountCommissionF( tinP , idAccCommission ) ;
-                                sessionC& session = sessionsP( tinP , nnPeerP ) ;
+                                session.setIdAccountCommissionF( tinBaseP , idAccCommission ) ;
+                                sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 
                                 //U::LOGrAW3( "idAccCommission: " , idAccCommission , "\r\n" ) ;
-                                countT idAccCommission = queryIdAccountFromEmailF( tinP , tEmail ) ;
+                                countT idAccCommission = queryIdAccountFromEmailF( tinBaseP , tEmail ) ;
 
                                 bOk = 1 ;
                             {
@@ -70,7 +70,7 @@
                             if( POOP ) { POOPR ; }
 
                             }
-                                etThread.delF( tinP , psttEmail ) ;
+                                etThread.delF( tinBaseP , psttEmail ) ;
                                 tEmail = T(psttEmail) ;
                                 sIn >> psttEmail ; ___( psttEmail ) ;
                                 ZE( strokeS* , psttEmail ) ;
@@ -89,32 +89,32 @@
                 sIn >> finger ;
                 ZE( countT , finger ) ;
 
-                tinP.pEtScratch->boxGetShadowF( tinP , sIn , tFileNew ) ;
-                soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , sIn , tFileNew ) ;
+                soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             else
             if( POOP ) { POOPR ; }
-            tinP.pEtScratch->diskMoveFileOrDirF( tinP , tFileNew , tDirOld+tShort , 1 ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tFileNew , tDirOld+tShort , 1 ) ;
             TN( tFileNew , "" ) ; tFileNew = tDirNew+tShort ;
             TN( tShort  , "soul.ticket." ) ; tShort += T(zsttIdTicket)+T(".soul") ;
 
             if( POOP ) { POOPR ; }
-            tinP.pEtScratch->diskMakeDirIfNeededF( tinP , tDirNew ) ;
+            ((tinNormalS&)tinBaseP).pEtScratch->diskMakeDirIfNeededF( tinBaseP , tDirNew ) ;
             TN( tDirNew , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets.used/" ) ;
             TN( tDirOld , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets/" ) ;
 
-            if( zsttIdTicket ) { etThread.strTrimF( tinP , zsttIdTicket , 0 , T(TbLACKnEWlINE) ) ; ___( zsttIdTicket ) ; }
+            if( zsttIdTicket ) { etThread.strTrimF( tinBaseP , zsttIdTicket , 0 , T(TbLACKnEWlINE) ) ; ___( zsttIdTicket ) ; }
             strokeS*& zsttIdTicket = *(strokeS**)&(countT&)swKVP ;
             psttLeverKVP = tKey ;
         {
-        if( swKVP.idSlotOfLeverF( tinP , (countT)(strokeS*)tKey ) )
+        if( swKVP.idSlotOfLeverF( tinBaseP , (countT)(strokeS*)tKey ) )
         TN( tKey , "idticket" ) ;
         SCOOPS
     {
     IFsCRATCH
     ZE( boolT , bOk ) ;
 {
-/*1*/voidT obeyEarnMoneyLinkCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT obeyEarnMoneyLinkCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

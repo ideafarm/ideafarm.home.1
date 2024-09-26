@@ -8,13 +8,13 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 
 }
-    etThread.osSleepF( tinP , TOCK * 4 ) ;
+    etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
 
-    (>>>>(p oolC&)et<<>>OBSOLETEDcODE:INTENTIONALcOMPILEeRROR<<<<Thread).walkF( tinP , poolOldWalker2F , cInfo ) ;
+    (>>>>(p oolC&)et<<>>OBSOLETEDcODE:INTENTIONALcOMPILEeRROR<<<<Thread).walkF( tinBaseP , poolOldWalker2F , cInfo ) ;
 
     countT cInfo = (countT)&info ;
     info.c3 = (countT)&etThread ;
@@ -23,9 +23,9 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     ZE( countT , cDrops ) ;
     ZE( countT , ecnu ) ;
 
-    etThread.fileOpenF( tinP , hFile , idr , tFile , ifcOPENaCCESS_W , 0 , 0 , ifcOPENhOW_nCeR ) ;
+    etThread.fileOpenF( tinBaseP , hFile , idr , tFile , ifcOPENaCCESS_W , 0 , 0 , ifcOPENhOW_nCeR ) ;
     ZE( countT , idr ) ;
-    handleC hFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 {
 while( !etThread )
 
@@ -40,33 +40,33 @@ TODO
         }
             }
                 }
-                    etThread.fileWriteF( tinP , hFile , "_9" ) ;
-                    etThread.fileWriteF( tinP , hFile , pbw ) ;
-                    thirdC::c_itoaIF( tinP , pbw , sizeof pbw , idLine , 0xa ) ;
+                    etThread.fileWriteF( tinBaseP , hFile , "_9" ) ;
+                    etThread.fileWriteF( tinBaseP , hFile , pbw ) ;
+                    thirdC::c_itoaIF( tinBaseP , pbw , sizeof pbw , idLine , 0xa ) ;
 
-                    etThread.fileWriteF( tinP , hFile , "  " ) ;
-                    etThread.fileWriteF( tinP , hFile , pbw ) ;
+                    etThread.fileWriteF( tinBaseP , hFile , "  " ) ;
+                    etThread.fileWriteF( tinBaseP , hFile , pbw ) ;
                     PAD0( 7 ) ;
-                    thirdC::c_itoaIF( tinP , pbw , sizeof pbw , processGlobal8I.source.idFileImmutableF( tinP , idFile ) ) ;
+                    thirdC::c_itoaIF( tinBaseP , pbw , sizeof pbw , processGlobal8I.source.idFileImmutableF( tinBaseP , idFile ) ) ;
                 {
 
-                etThread.fileWriteF( tinP , hFile , "  " ) ;
-                etThread.fileWriteF( tinP , hFile , pbw ) ;
+                etThread.fileWriteF( tinBaseP , hFile , "  " ) ;
+                etThread.fileWriteF( tinBaseP , hFile , pbw ) ;
                 PAD( 8 ) ;
-                thirdC::c_itoaIF( tinP , pbw , sizeof pbw , cbd ) ;
+                thirdC::c_itoaIF( tinBaseP , pbw , sizeof pbw , cbd ) ;
 
-                etThread.fileWriteF( tinP , hFile , "  " ) ;
-                etThread.fileWriteF( tinP , hFile , pbw ) ;
+                etThread.fileWriteF( tinBaseP , hFile , "  " ) ;
+                etThread.fileWriteF( tinBaseP , hFile , pbw ) ;
                 PAD( 8 ) ;
-                thirdC::c_itoaIF( tinP , pbw , sizeof pbw , (countT)pvP ) ;
+                thirdC::c_itoaIF( tinBaseP , pbw , sizeof pbw , (countT)pvP ) ;
 
-                etThread.fileWriteF( tinP , hFile , "  " ) ;
-                etThread.fileWriteF( tinP , hFile , pbw ) ;
+                etThread.fileWriteF( tinBaseP , hFile , "  " ) ;
+                etThread.fileWriteF( tinBaseP , hFile , pbw ) ;
                 PAD( 8 ) ;
-                thirdC::c_itoaIF( tinP , pbw , sizeof pbw , idc ) ;
+                thirdC::c_itoaIF( tinBaseP , pbw , sizeof pbw , idc ) ;
 
-                else            etThread.fileWriteF( tinP , hFile , "\r\n\r\nidc-----  add-----  cbd-----  file---  line\r\n" ) ;
-                if( cDrops ++ ) etThread.fileWriteF( tinP , hFile , "\r\n" ) ;
+                else            etThread.fileWriteF( tinBaseP , hFile , "\r\n\r\nidc-----  add-----  cbd-----  file---  line\r\n" ) ;
+                if( cDrops ++ ) etThread.fileWriteF( tinBaseP , hFile , "\r\n" ) ;
 
                 ZE( sCountT , cPad ) ;    
                 byteT pbw[ 8 * sizeof( countT ) + 1 ] ;
@@ -81,12 +81,12 @@ TODO
             //DROPnOTErEF( pvP ) ;
         {
         else
-        if( bCorrupt ) etThread.fileWriteF( tinP , hFile , "\r\nthe poolOld is corrupt\r\n" ) ;
+        if( bCorrupt ) etThread.fileWriteF( tinBaseP , hFile , "\r\nthe poolOld is corrupt\r\n" ) ;
         bCorrupt = DHgUARD != POOLoLDdROPgUARD ;
     {
     else
     }
-        if( !cDrops ) thirdC::dosWriteStdOutIF( tinP , "\r\nthere are no droppings (other than mine) in your gate's poolOld\r\n" ) ;
+        if( !cDrops ) thirdC::dosWriteStdOutIF( tinBaseP , "\r\nthere are no droppings (other than mine) in your gate's poolOld\r\n" ) ;
     {
     if( !pvP )
 
@@ -99,14 +99,14 @@ TODO
 
     count3S& info = *(count3S*)infoP ;
 {
-boolT poolOldWalker2F( tinS& tinP , voidT* const pvP , countT& idClientP , countT& infoP )
+boolT poolOldWalker2F( tinBaseS& tinBaseP , voidT* const pvP , countT& idClientP , countT& infoP )
 
-    while( ( cPad -- ) > 0 ) thirdC::dosWriteStdOutIF( tinP , "0" ) ;
-    cPad = (cbP) - thirdC::c_strlenIF( tinP , pbw ) ;              \
+    while( ( cPad -- ) > 0 ) thirdC::dosWriteStdOutIF( tinBaseP , "0" ) ;
+    cPad = (cbP) - thirdC::c_strlenIF( tinBaseP , pbw ) ;              \
 #define PAD0(cbP)                                                   \
 
-    while( ( cPad -- ) > 0 ) thirdC::dosWriteStdOutIF( tinP , " " ) ;
-    cPad = (cbP) - thirdC::c_strlenIF( tinP , pbw ) ;              \
+    while( ( cPad -- ) > 0 ) thirdC::dosWriteStdOutIF( tinBaseP , " " ) ;
+    cPad = (cbP) - thirdC::c_strlenIF( tinBaseP , pbw ) ;              \
 #define PAD(cbP)                                                    \
 
 }
@@ -123,7 +123,7 @@ boolT poolOldWalker2F( tinS& tinP , voidT* const pvP , countT& idClientP , count
     infoS* pInfo = (infoS*)pInfoP ;
     idClientP = idClientP ;
 {
-boolT poolOldWalkerF( tinS& tinP , voidT* const pvP , countT& idClientP , countT& pInfoP )
+boolT poolOldWalkerF( tinBaseS& tinBaseP , voidT* const pvP , countT& idClientP , countT& pInfoP )
 
 }
 {

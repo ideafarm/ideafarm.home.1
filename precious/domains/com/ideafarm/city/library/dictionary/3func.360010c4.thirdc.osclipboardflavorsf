@@ -11,7 +11,7 @@
     return cFlavors ;
     #endif
 
-        countT cFlavors = tinP.brcRaw ;
+        countT cFlavors = ((tinNormalS&)tinBaseP).brcRaw ;
         BOS( WHATgbo , BOSoK , CountClipboardFormats() )
 
     #elif defined( __NT__ )
@@ -28,11 +28,11 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/countT thirdC::osClipboardFlavorsF( tinS& tinP )/*1*/
+/*1*/countT thirdC::osClipboardFlavorsF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */
- tinP
+ tinBaseP
 arguments
 evaluates to the number of flavors available of the data that is on the clipboard
 the caller must grab the clipboard before calling me, and let go afterward

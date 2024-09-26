@@ -9,8 +9,8 @@
                             
 REST
 
-etThread.traceF( tinP , T("ok") ) ;
-etThread.traceF( tinP , T("final total [idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tinBaseP , T("final total [idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
 while( !ether && ~hFind && !POOP ) ;
 }
@@ -23,7 +23,7 @@ while( !ether && ~hFind && !POOP ) ;
                     bPrefix = !bPrefix ;
 
                     else          pbi = 0 ;
-                    if( bDelete ) PUSE( tinP , *(byteT**)&pbi ) ;       //SHOULD BE IMPOSSIBLE SINCE EACH EVENT WAS WRITTEN "ALL OR NONE"
+                    if( bDelete ) PUSE( tinBaseP , *(byteT**)&pbi ) ;       //SHOULD BE IMPOSSIBLE SINCE EACH EVENT WAS WRITTEN "ALL OR NONE"
 
                     ;
                         : sizeof( countT )
@@ -31,7 +31,7 @@ while( !ether && ~hFind && !POOP ) ;
                     cbi = bPrefix
 
                     }
-                        if( !( ++ idIn % ( TUCK << 4 ) ) ) etThread.traceF( tinP , T("[idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        if( !( ++ idIn % ( TUCK << 4 ) ) ) etThread.traceF( tinBaseP , T("[idIn]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     if( !bPrefix )
 
@@ -44,7 +44,7 @@ while( !ether && ~hFind && !POOP ) ;
                     {
                     if( !pbi )
 
-                    boolT bDelete = bksPageAccessEvents.readF( tinP , pbi , cbi , hRead , flBOOKScrEAD_null , &(countT&)ether ) ;
+                    boolT bDelete = bksPageAccessEvents.readF( tinBaseP , pbi , cbi , hRead , flBOOKScrEAD_null , &(countT&)ether ) ;
 
                     HANDLEaPPnOTEScOUNTcLASS ch = hRead ;
 
@@ -55,19 +55,19 @@ while( !ether && ~hFind && !POOP ) ;
                 boolT bPrefix = 1 ;
                 countT cbi = sizeof( countT ) ;
                 ZE( const byteT* , pbi ) ;
-                handleC hRead( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+                handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
             {
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-            booksC bksPageAccessEvents( tinP , TAG( TAGiDnULL ) , tShorter , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
+            booksC bksPageAccessEvents( tinBaseP , TAG( TAGiDnULL ) , tShorter , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
 
-            //etThread.traceF( tinP , T("[tShorter]:    ")+tShorter ) ;
+            //etThread.traceF( tinBaseP , T("[tShorter]:    ")+tShorter ) ;
 
             }
-                etThread.delF( tinP , psttShorter ) ;
+                etThread.delF( tinBaseP , psttShorter ) ;
                 tShorter = T(psttShorter) ;
-                etThread.delF( tinP , psttnu ) ;
-                etThread.strBisectF( tinP , psttShorter , psttnu , tShort , tDot , 3 , flSTRbISECT_null ) ; ___( psttShorter ) ; ___( psttnu ) ;
+                etThread.delF( tinBaseP , psttnu ) ;
+                etThread.strBisectF( tinBaseP , psttShorter , psttnu , tShort , tDot , 3 , flSTRbISECT_null ) ; ___( psttShorter ) ; ___( psttnu ) ;
                 ZE( strokeS* , psttnu ) ;
                 ZE( strokeS* , psttShorter ) ;
             {
@@ -76,10 +76,10 @@ while( !ether && ~hFind && !POOP ) ;
         if( !bDir )
 
         }
-            etThread.delF( tinP , psttShort ) ;
+            etThread.delF( tinBaseP , psttShort ) ;
             tShort = T(psttShort) ;
-            etThread.delF( tinP , psttnu ) ;
-            etThread.strBisectF( tinP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+            etThread.delF( tinBaseP , psttnu ) ;
+            etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
             ZE( strokeS* , psttShort ) ;
             ZE( strokeS* , psttnu ) ;
         {
@@ -96,11 +96,11 @@ while( !ether && ~hFind && !POOP ) ;
     {
     if( !pInfo || !pInfo->psttIfoName )
 
-    etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ;
+    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 ZE( countT , idIn ) ;
 TN( tDot , "." ) ;
 TN( tSlash , "/" ) ;

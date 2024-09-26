@@ -11,45 +11,45 @@ REST
 
 }
     }
-        etThread.delF( tinP , *(nicNameC**)&tblAdam( idr , 2 ).c2 ) ;
+        etThread.delF( tinBaseP , *(nicNameC**)&tblAdam( idr , 2 ).c2 ) ;
     {
     for( countT idr = 1 ; idr <= cRows ; idr ++ )
-    countT cRows = tblAdam.cRowsF( tinP ) ;
+    countT cRows = tblAdam.cRowsF( tinBaseP ) ;
 {
 
 }
     }
         DEL(                   *(stackC**)&tblHost(          idr , 9 ).c2 ) ;
-        etThread.delF( tinP , *(nicNameC**)&tblHost(          idr , 8 ).c2 ) ;
-        etThread.delF( tinP ,              tblHost._CT1_07F( idr , 7 )    ) ;
-        etThread.delF( tinP ,              tblHost._CT1_07F( idr , 6 )    ) ;
-        etThread.delF( tinP ,              tblHost._CT1_07F( idr , 5 )    ) ;
-        etThread.delF( tinP ,              tblHost._CT1_07F( idr , 4 )    ) ;
-        etThread.delF( tinP ,              tblHost._CT1_07F( idr , 3 )    ) ;
-        etThread.delF( tinP ,              tblHost._CT1_07F( idr , 2 )    ) ;
+        etThread.delF( tinBaseP , *(nicNameC**)&tblHost(          idr , 8 ).c2 ) ;
+        etThread.delF( tinBaseP ,              tblHost._CT1_07F( idr , 7 )    ) ;
+        etThread.delF( tinBaseP ,              tblHost._CT1_07F( idr , 6 )    ) ;
+        etThread.delF( tinBaseP ,              tblHost._CT1_07F( idr , 5 )    ) ;
+        etThread.delF( tinBaseP ,              tblHost._CT1_07F( idr , 4 )    ) ;
+        etThread.delF( tinBaseP ,              tblHost._CT1_07F( idr , 3 )    ) ;
+        etThread.delF( tinBaseP ,              tblHost._CT1_07F( idr , 2 )    ) ;
     {
     for( countT idr = 1 ; idr <= cRows ; idr ++ )
-    countT cRows = tblHost.cRowsF( tinP ) ;
+    countT cRows = tblHost.cRowsF( tinBaseP ) ;
 {
 
 !tblAdam ;
 !tblHost ;
 
 }
-    sChat2.writeF( tinP , soulo3 ) ;
-    soulC soulo3( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
+    sChat2.writeF( tinBaseP , soulo3 ) ;
+    soulC soulo3( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
 
     }
         }
             }
                 }
-                    tblAdam.newObjectF( tinP , *pNicName ) ;
-                    tblAdam.newObjectF( tinP , idAdam   ) ;
-                    tblAdam.newEventF( tinP ) ;
+                    tblAdam.newObjectF( tinBaseP , *pNicName ) ;
+                    tblAdam.newObjectF( tinBaseP , idAdam   ) ;
+                    tblAdam.newEventF( tinBaseP ) ;
                     *pNicName = idhLever ;
                 {
                 if( pNicName )
-                etThread.newF( tinP , LF , pNicName ) ; ___( pNicName ) ;
+                etThread.newF( tinBaseP , LF , pNicName ) ; ___( pNicName ) ;
                 ZE( nicNameC* , pNicName ) ;
 
                 sws_idAdam << idAdam ;
@@ -69,21 +69,21 @@ REST
         sIn2 >> cFlavors ;
         ZE( countT , cFlavors ) ;
     {
-    switchStackC sws_idAdam( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idhLever ) ;
+    switchStackC sws_idAdam( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idhLever ) ;
     nicNameC idhLever ;
 
     __( idReply - ifcIDcMDsESSION_QUERYaDAMSrEPLY ) ;
     sIn2 >> idReply ;
     idReply = 0 ;
 
-    sChat2.readF( tinP , sIn2 ) ;
-    sChat2.writeF( tinP , sOut2 ) ;
-    soulC sOut2( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYaDAMS ) ;
-    soulC sIn2( tinP , TAG( TAGiDnULL ) ) ;
+    sChat2.readF( tinBaseP , sIn2 ) ;
+    sChat2.writeF( tinBaseP , sOut2 ) ;
+    soulC sOut2( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYaDAMS ) ;
+    soulC sIn2( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         }
-            tblHost.newObjectF( tinP , *pStk_pNicName ) ;
+            tblHost.newObjectF( tinBaseP , *pStk_pNicName ) ;
             }
                 }
                     *pStk_pNicName << pNicName ;
@@ -91,22 +91,22 @@ REST
                     *pNicName = 0 ;
                 {
                 if( pNicName )
-                etThread.newF( tinP , LF , pNicName ) ; ___( pNicName ) ;
+                etThread.newF( tinBaseP , LF , pNicName ) ; ___( pNicName ) ;
                 ZE( nicNameC* , pNicName ) ;
             {
             while( cNicName -- )
             sIn1 >> cNicName ;
             ZE( countT , cNicName ) ;
 
-            tblHost.newObjectF( tinP , *pNicNameRegistrand     ) ;
-            tblHost.newObjectF( tinP , psttOldCommentUsedByIFC   ) ;
-            tblHost.newObjectF( tinP , psttOldCommentUsedByOwner ) ;
-            tblHost.newObjectF( tinP , psttNameUsedByInternet ) ;
-            tblHost.newObjectF( tinP , psttNameUsedByIFC      ) ;
-            tblHost.newObjectF( tinP , psttNameUsedByOwner    ) ;
-            tblHost.newObjectF( tinP , psttEmailOwner         ) ;
-            tblHost.newObjectF( tinP , idComputer             ) ;
-            tblHost.newEventF( tinP ) ;
+            tblHost.newObjectF( tinBaseP , *pNicNameRegistrand     ) ;
+            tblHost.newObjectF( tinBaseP , psttOldCommentUsedByIFC   ) ;
+            tblHost.newObjectF( tinBaseP , psttOldCommentUsedByOwner ) ;
+            tblHost.newObjectF( tinBaseP , psttNameUsedByInternet ) ;
+            tblHost.newObjectF( tinBaseP , psttNameUsedByIFC      ) ;
+            tblHost.newObjectF( tinBaseP , psttNameUsedByOwner    ) ;
+            tblHost.newObjectF( tinBaseP , psttEmailOwner         ) ;
+            tblHost.newObjectF( tinBaseP , idComputer             ) ;
+            tblHost.newEventF( tinBaseP ) ;
 
             sIn1 >> *pNicNameRegistrand     ;
             sIn1 >> psttOldCommentUsedByIFC   ; ___( psttOldCommentUsedByIFC   ) ;
@@ -128,8 +128,8 @@ REST
             *pNicNameRegistrand = 0 ;
         {
         if( pNicNameRegistrand && pStk_pNicName )
-        stackC* pStk_pNicName = new( 0 , tinP , LF ) stackC( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ;
-        etThread.newF( tinP , LF , pNicNameRegistrand ) ; ___( pNicNameRegistrand ) ;
+        stackC* pStk_pNicName = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ;
+        etThread.newF( tinBaseP , LF , pNicNameRegistrand ) ; ___( pNicNameRegistrand ) ;
         ZE( nicNameC* , pNicNameRegistrand ) ;
     {
     while( cHosts -- )
@@ -141,46 +141,46 @@ REST
     sIn1 >> idReply ;
     ZE( countT , idReply ) ;
 
-    sChat2.readF( tinP , sIn1 ) ;
-    sChat2.writeF( tinP , sOut1 ) ;
-    soulC sOut1( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYnICnAME ) ;
-    soulC sIn1( tinP , TAG( TAGiDnULL ) ) ;
+    sChat2.readF( tinBaseP , sIn1 ) ;
+    sChat2.writeF( tinBaseP , sOut1 ) ;
+    soulC sOut1( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYnICnAME ) ;
+    soulC sIn1( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    sChat2.connectF( tinP , idPort2 , idhIfc ) ;
-    socketC sChat2( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sChat2.connectF( tinBaseP , idPort2 , idhIfc ) ;
+    socketC sChat2( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
     }
         souli >> idPort2 ;
         __( idReply - ifcIDcMDsESSION_NEWsOCKETrEPLY ) ;
         souli >> idReply ;
         ZE( countT , idReply ) ;
-        sChat.readF( tinP , souli ) ;
-        soulC souli( tinP , TAG( TAGiDnULL ) ) ;
+        sChat.readF( tinBaseP , souli ) ;
+        soulC souli( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        sChat.writeF( tinP , soulo ) ;
-        soulC soulo( tinP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKET ) ;
+        sChat.writeF( tinBaseP , soulo ) ;
+        soulC soulo( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKET ) ;
 
-        sChat.connectF( tinP , ifcPORToLD2_CHAT , idhIfc ) ;
-        socketC sChat( tinP , etThread , TAG( TAGiDnULL ) ) ;
+        sChat.connectF( tinBaseP , ifcPORToLD2_CHAT , idhIfc ) ;
+        socketC sChat( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
     {
     ZE( countT , idPort2 ) ;
-    nicNameC idhIfc = socketC::nicNameIF( tinP , etThread , T("www.ideafarm.com") ) ;
+    nicNameC idhIfc = socketC::nicNameIF( tinBaseP , etThread , T("www.ideafarm.com") ) ;
 
-    tblAdam.newColF( tinP , T("nicName") ) ;
-    tblAdam.newColF( tinP , T("idAdam") ) ;
+    tblAdam.newColF( tinBaseP , T("nicName") ) ;
+    tblAdam.newColF( tinBaseP , T("idAdam") ) ;
 
-    tblHost.newColF( tinP , T("nicNameAll") ) ;
-    tblHost.newColF( tinP , T("nicNameRegistrand") ) ;
-    tblHost.newColF( tinP , T("commentUsedByIFC") ) ;
-    tblHost.newColF( tinP , T("commentUsedByOwner") ) ;
-    tblHost.newColF( tinP , T("nameUsedByInternet") ) ;
-    tblHost.newColF( tinP , T("nameUsedByIFC") ) ;
-    tblHost.newColF( tinP , T("nameUsedByOwner") ) ;
-    tblHost.newColF( tinP , T("emailOwner") ) ;
-    tblHost.newColF( tinP , T("idComputer") ) ;
+    tblHost.newColF( tinBaseP , T("nicNameAll") ) ;
+    tblHost.newColF( tinBaseP , T("nicNameRegistrand") ) ;
+    tblHost.newColF( tinBaseP , T("commentUsedByIFC") ) ;
+    tblHost.newColF( tinBaseP , T("commentUsedByOwner") ) ;
+    tblHost.newColF( tinBaseP , T("nameUsedByInternet") ) ;
+    tblHost.newColF( tinBaseP , T("nameUsedByIFC") ) ;
+    tblHost.newColF( tinBaseP , T("nameUsedByOwner") ) ;
+    tblHost.newColF( tinBaseP , T("emailOwner") ) ;
+    tblHost.newColF( tinBaseP , T("idComputer") ) ;
 {
-tableC tblAdam( tinP , etThread , T("adamCells") ) ;
-tableC tblHost( tinP , etThread , T("host" ) ) ;
+tableC tblAdam( tinBaseP , etThread , T("adamCells") ) ;
+tableC tblHost( tinBaseP , etThread , T("host" ) ) ;
 
 TODO
 

@@ -9,27 +9,27 @@
 
 REST
 
-etherC::loafIF( tinP ) ;                            
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;                            
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.traceF( tinP , T("found 3:    ")+T(psttc1) ) ;
+    etThread.traceF( tinBaseP , T("found 3:    ")+T(psttc1) ) ;
 {
 FORsTRINGSiN1( pstt1f )
-countT cFound = etThread.diskFindFileOrDirF( tinP , pstt1f , tPath , &pat ) ; ___( pstt1f ) ;
+countT cFound = etThread.diskFindFileOrDirF( tinBaseP , pstt1f , tPath , &pat ) ; ___( pstt1f ) ;
 ZE( strokeS* , pstt1f ) ;
 
 
 }
     while( !ether && ~hFind && !POOP ) ;
     }
-        etThread.delF( tinP , psttWo ) ;
-        if( psttWo ) etThread.traceF( tinP , T("found 2:    ")+T(psttWo) ) ;
-        etThread.diskFindFileOrDirF( tinP , psttWo , hFind , tPath , &pat ) ; ___( psttWo ) ;
+        etThread.delF( tinBaseP , psttWo ) ;
+        if( psttWo ) etThread.traceF( tinBaseP , T("found 2:    ")+T(psttWo) ) ;
+        etThread.diskFindFileOrDirF( tinBaseP , psttWo , hFind , tPath , &pat ) ; ___( psttWo ) ;
         ZE( strokeS* , psttWo ) ;
     {
     do
-    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 {
 
 }
@@ -37,8 +37,8 @@ ZE( strokeS* , pstt1f ) ;
     }
         DEL( pInfo ) ;
         }
-            etThread.traceF( tinP , T("found 1:    ")+T(pInfo->psttIfoName) ) ;
-            fileNameC fn( tinP , etThread , pInfo->psttIfoName ) ;
+            etThread.traceF( tinBaseP , T("found 1:    ")+T(pInfo->psttIfoName) ) ;
+            fileNameC fn( tinBaseP , etThread , pInfo->psttIfoName ) ;
         {
         else
         }
@@ -47,17 +47,17 @@ ZE( strokeS* , pstt1f ) ;
         {
         if( !pInfo || !pInfo->psttIfoName )
 
-        etThread.diskFindFileOrDirF( tinP , pInfo , hFind , tPath , &pat ) ;
-        //etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tPath+T("*") ) ;
+        etThread.diskFindFileOrDirF( tinBaseP , pInfo , hFind , tPath , &pat ) ;
+        //etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tPath+T("*") ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 {
 
-etThread.traceF( tinP , T("wildcard pattern: ")+tPattern ) ;
+etThread.traceF( tinBaseP , T("wildcard pattern: ")+tPattern ) ;
 
-patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
 //TN( tPattern , "a@z" ) ;                                                            // SEE etherC::strPatternFromWildcardsMicrosoftF (ENABLE THE SWITCH CASE FOR '@')
 TN( tPattern , "foo/" ) ;
 TN( tPath , "///d/tmp/wildcard.test.2/" ) ;

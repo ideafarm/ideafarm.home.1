@@ -12,24 +12,24 @@
 REST
 
 }
-    etThread.osSleepF( tinP , TOCK * 32 ) ;
+    etThread.osSleepF( tinBaseP , TOCK * 32 ) ;
 
-    etThread.delF( tinP , psttw ) ;
-    etThread.strokeF( tinP , T("\fIdeaFarm " "(tm) City time is\r\n\r\n")+T(psttw)+T("\r\npress the enter key\r\n") ) ;
-    etThread.strClockOldF( tinP , psttw ) ; ___( psttw ) ;
+    etThread.delF( tinBaseP , psttw ) ;
+    etThread.strokeF( tinBaseP , T("\fIdeaFarm " "(tm) City time is\r\n\r\n")+T(psttw)+T("\r\npress the enter key\r\n") ) ;
+    etThread.strClockOldF( tinBaseP , psttw ) ; ___( psttw ) ;
     ZE( strokeS* , psttw ) ;
 {
 while( !ether )
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmHearF ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmHearF ) ; }
 
 TODO
 
 DONE( tmHearF )
 }
     FIREmYSELF ;
-    etThread.delF( tinP , psttnu ) ;
-    etThread.faceHearF( tinP , psttnu ) ; ___( psttnu ) ;
+    etThread.delF( tinBaseP , psttnu ) ;
+    etThread.faceHearF( tinBaseP , psttnu ) ; ___( psttnu ) ;
     ZE( strokeS* , psttnu ) ;
 {
 if( pTaskP )

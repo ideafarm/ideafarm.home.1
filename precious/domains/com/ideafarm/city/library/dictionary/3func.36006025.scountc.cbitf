@@ -10,9 +10,9 @@
 }
     return cbitLocal ;
     cbitLocal = off + 2 ; //RETAINS ONE OF THE SIGN BITS
-    while( off && bitF( tinP , pcP , off ) == fNeg ) off -- ;
+    while( off && bitF( tinBaseP , pcP , off ) == fNeg ) off -- ;
     countT off = cbitP - 1 ;
-    boolT fNeg = bitF( tinP , pcP , cbitP - 1 ) ;
+    boolT fNeg = bitF( tinBaseP , pcP , cbitP - 1 ) ;
     ZE( countT , cbitLocal ) ;
     _IO_
 
@@ -21,7 +21,7 @@
     {
     IFbEcAREFUL
 {
-/**//*1*/countT sCountC::cbitF( tinS& tinP , const countT* const pcP , const countT cbitP )/*1*/
+/**//*1*/countT sCountC::cbitF( tinBaseS& tinBaseP , const countT* const pcP , const countT cbitP )/*1*/
 */
  cbitP
  pcP

@@ -11,28 +11,28 @@
     return sgn ;
 
     }
-        ether.delF( tinP , pb1Copy ) ;
+        ether.delF( tinBaseP , pb1Copy ) ;
         }
             }
                 }
                     bFailP = 1 ;
-                    ether.traceF( tinP , T("subtractJotsF / unexpected duplicate found [idJot1,idJot2]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ether.traceF( tinBaseP , T("subtractJotsF / unexpected duplicate found [idJot1,idJot2]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 if( !sgn && F(flagsModeP) & flSORTERc_REQUIREuNIQUE )
 
                 if( !sgn && !bFailP ) sgn = cb1Copy - cb2 ;
-                sgn = bFailP ? 0 : thirdC::c_memcmpIF( tinP , pb1Copy + cbIgnoreP , pb2 + cbIgnoreP , cbCompare ) ;
+                sgn = bFailP ? 0 : thirdC::c_memcmpIF( tinBaseP , pb1Copy + cbIgnoreP , pb2 + cbIgnoreP , cbCompare ) ;
                 countT cbCompare = ( cb1Copy < cb2 ? cb1Copy : cb2 ) - cbIgnoreP ;
             {
             else
             }
                 bFailP = 1 ;
-                ether.traceF( tinP , T("subtractJotsF / blob for 2 (cursor) is too short [idJot]:    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                ether.traceF( tinBaseP , T("subtractJotsF / blob for 2 (cursor) is too short [idJot]:    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             else if( cb2 < cbIgnoreP )
             }
                 bFailP = 1 ;
-                ether.traceF( tinP , T("subtractJotsF / could not obtain blob for 2 (cursor) [idJot]:    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                ether.traceF( tinBaseP , T("subtractJotsF / could not obtain blob for 2 (cursor) [idJot]:    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             if( !pb2 )
 
@@ -43,12 +43,12 @@
                 {
                 else
                 }
-                    tinP.pEther->traceF( tinP , T("subtractJotsF / jotC::readIF became impotent for 2 (cursor) [idJot,idReason]:    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idReason,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("subtractJotsF / jotC::readIF became impotent for 2 (cursor) [idJot,idReason]:    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idReason,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
                     countT idReason = POOP ;
                 {
                 if( POOP )
-                pageC page2 = jotC::readIF( tinP , c2P ) ;
+                pageC page2 = jotC::readIF( tinBaseP , c2P ) ;
 
                 SCOOPS
             {
@@ -60,19 +60,19 @@
 
         }
             }
-                thirdC::c_memcpyIF( tinP , pb1Copy , pb1 , cb1Copy ) ;    
-                ether.newF( tinP , LF , pb1Copy , cb1Copy ) ; ___( pb1Copy ) ;
+                thirdC::c_memcpyIF( tinBaseP , pb1Copy , pb1 , cb1Copy ) ;    
+                ether.newF( tinBaseP , LF , pb1Copy , cb1Copy ) ; ___( pb1Copy ) ;
                 cb1Copy = cb1 ;
             {
             else
             }
                 bFailP = 1 ;
-                ether.traceF( tinP , T("subtractJotsF / blob for 1 (new) is too short [idJot]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                ether.traceF( tinBaseP , T("subtractJotsF / blob for 1 (new) is too short [idJot]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             else if( cb1 < cbIgnoreP )
             }
                 bFailP = 1 ;
-                ether.traceF( tinP , T("subtractJotsF / could not obtain blob for 1 (new) [idJot]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                ether.traceF( tinBaseP , T("subtractJotsF / could not obtain blob for 1 (new) [idJot]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             if( !pb1 )
 
@@ -83,12 +83,12 @@
                 {
                 else
                 }
-                    tinP.pEther->traceF( tinP , T("subtractJotsF / jotC::readIF became impotent for 1 (new) [idJot,idReason]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idReason,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("subtractJotsF / jotC::readIF became impotent for 1 (new) [idJot,idReason]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idReason,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
                     countT idReason = POOP ;
                 {
                 if( POOP )
-                pageC page1 = jotC::readIF( tinP , c1P ) ;
+                pageC page1 = jotC::readIF( tinBaseP , c1P ) ;
 
                 SCOOPS
             {
@@ -117,7 +117,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT subtractJotsF( tinS& tinP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractJotsF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 
 /**/

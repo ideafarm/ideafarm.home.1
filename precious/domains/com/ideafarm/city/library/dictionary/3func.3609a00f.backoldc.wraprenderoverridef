@@ -8,21 +8,21 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
 
     pulp.flagsMode = _savemode ;
 
-    wrapRenderF( tinP , psttP , phCloneP , pczIdAdamSnapP ) ;
+    wrapRenderF( tinBaseP , psttP , phCloneP , pczIdAdamSnapP ) ;
 
     pulp.flagsMode &= ~( F(flagsModeOffP) ) ;
     pulp.flagsMode |= flagsModeOnP ;
     const flagsT _savemode = pulp.flagsMode ;
 
-    pulpOldC& pulp = *papers.selectF( tinP , ifcIDcMDpAPERsELECT_QUERYrENDER ).x1.pPulp ; //A:ASSUME: psttP DOES NOT CHANGE p PaperDraw
+    pulpOldC& pulp = *papers.selectF( tinBaseP , ifcIDcMDpAPERsELECT_QUERYrENDER ).x1.pPulp ; //A:ASSUME: psttP DOES NOT CHANGE p PaperDraw
 
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT backOldC::wrapRenderOverrideF( tinS& tinP , const strokeS* const psttP , const handleC* const phCloneP , const countT* pczIdAdamSnapP , const flagsT flagsModeOnP , const flagsT flagsModeOffP )/*1*/
+/*1*/voidT backOldC::wrapRenderOverrideF( tinBaseS& tinBaseP , const strokeS* const psttP , const handleC* const phCloneP , const countT* pczIdAdamSnapP , const flagsT flagsModeOnP , const flagsT flagsModeOffP )/*1*/
 
 /**/
 */

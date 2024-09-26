@@ -8,11 +8,11 @@
 
 
 }
-    ether.strMakeF( tinP , LF , psttName , TF1(idTable) ) ; ___( psttName ) ;
-    copyCellsF( tinP , tableP ) ;
+    ether.strMakeF( tinBaseP , LF , psttName , TF1(idTable) ) ; ___( psttName ) ;
+    copyCellsF( tinBaseP , tableP ) ;
 
-    for( countT idc = 1 ; idc <= cColsNew ; idc ++ ) newColF( tinP , tableP.nameF( tinP , idc ) ) ;
-    countT cColsNew = tableP.cColsF( tinP ) ;
+    for( countT idc = 1 ; idc <= cColsNew ; idc ++ ) newColF( tinBaseP , tableP.nameF( tinBaseP , idc ) ) ;
+    countT cColsNew = tableP.cColsF( tinBaseP ) ;
 
     _IO_
 
@@ -23,7 +23,7 @@ flags( 0 )
 tblnu( *this ) ,
 cnu( 0 ) ,
 stnu( tableP.ether , tableP.ether , TAGnOtIN( TAGiDnULL ) ) ,
-idTable( ++ pTinF()->pag1->_tableC_.idTableLath ) ,
+idTable( ++ ((tinNormalS*)pTinF())->pag1->_tableC_.idTableLath ) ,
 psttName( 0 ) ,
 psttnu( 0 ) ,
 cObjectsDue( 0 ) ,

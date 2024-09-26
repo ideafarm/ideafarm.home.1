@@ -10,22 +10,22 @@
 REST
 
 }
-    etherC::loafIF( tinP ) ;
+    etherC::loafIF( tinBaseP ) ;
 
-    etThread.traceF( tinP , T(postFoo) ) ;
+    etThread.traceF( tinBaseP , T(postFoo) ) ;
 
     }
-        etThread.traceF( tinP , T("i formatted napFoo") ) ;
-        napFoo.formattingIsDoneF( tinP ) ;
-        thirdC::c_strcpyIF( tinP , postFoo , "abcdefghijklmnopqrstuvwxyz" ) ;
+        etThread.traceF( tinBaseP , T("i formatted napFoo") ) ;
+        napFoo.formattingIsDoneF( tinBaseP ) ;
+        thirdC::c_strcpyIF( tinBaseP , postFoo , "abcdefghijklmnopqrstuvwxyz" ) ;
     {
     if( !( F(napFoo.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
 
     //CODING CONFORMANCE: IT IS ILLEGAL TO "DO MUCH" AFTER CT'ING A napkinC AND CALLING formattingIsDoneF, BECAUSE GLOBAL (PLATFORM WIDE) SERIALIZATION IS IN EFFECT, WHICH CAN BOTH DEGRADE PERFORMANCE AND CAUSE "NONMONOTONIC GRAB" FAILURES
 
     osTextT* postFoo = napFoo ;
-    napkinC napFoo( tinP , TAG( TAGiDnULL ) , "napFoo" , 0 , TUCK , ifcOPENsHAREDmEMORYhOW_nCeO ) ;
-    etThread.traceF( tinP , T("ct'ing napFoo") ) ;
+    napkinC napFoo( tinBaseP , TAG( TAGiDnULL ) , "napFoo" , 0 , TUCK , ifcOPENsHAREDmEMORYhOW_nCeO ) ;
+    etThread.traceF( tinBaseP , T("ct'ing napFoo") ) ;
 {
 
 TODO

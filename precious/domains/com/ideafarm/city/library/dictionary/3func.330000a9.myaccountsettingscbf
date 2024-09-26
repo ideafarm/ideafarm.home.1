@@ -10,8 +10,8 @@
 #undef SETcOL2EMAILrELAY
 
 }
-    etThread.delF( tinP , psttIdAccount ) ;
-    etThread.delF( tinP , psttEmail ) ;
+    etThread.delF( tinBaseP , psttIdAccount ) ;
+    etThread.delF( tinBaseP , psttEmail ) ;
 
     }
         }
@@ -19,47 +19,47 @@
 
             }
                 }
-                    meP.pushSnipF( tinP , stBodyP , idSnipEnd ) ;
+                    meP.pushSnipF( tinBaseP , stBodyP , idSnipEnd ) ;
                     }
                         }
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT81 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT81 ) ;
     
                             }
                                }
-                                    etThread.delF( tinP , psttEmailPenpalContainsAnd ) ;
-                                    meP.sayFieldF( tinP , stBodyP , tTitleEmailPenpalContainsAnd , psttEmailPenpalContainsAnd ) ;
+                                    etThread.delF( tinBaseP , psttEmailPenpalContainsAnd ) ;
+                                    meP.sayFieldF( tinBaseP , stBodyP , tTitleEmailPenpalContainsAnd , psttEmailPenpalContainsAnd ) ;
                                     *info.pStkEmailPenpalContainsAnd >> psttEmailPenpalContainsAnd ; ___( psttEmailPenpalContainsAnd ) ;
                                     ZE( strokeS* , psttEmailPenpalContainsAnd ) ;
                                 {
                                 while( *info.pStkEmailPenpalContainsAnd )
     
                                 }
-                                    etThread.delF( tinP , psttEmailPenpalContainsOr ) ;
-                                    meP.sayFieldF( tinP , stBodyP , tTitleEmailPenpalContainsOr , psttEmailPenpalContainsOr ) ;
+                                    etThread.delF( tinBaseP , psttEmailPenpalContainsOr ) ;
+                                    meP.sayFieldF( tinBaseP , stBodyP , tTitleEmailPenpalContainsOr , psttEmailPenpalContainsOr ) ;
                                     *info.pStkEmailPenpalContainsOr >> psttEmailPenpalContainsOr ; ___( psttEmailPenpalContainsOr ) ;
                                     ZE( strokeS* , psttEmailPenpalContainsOr ) ;
                                 {
                                 while( *info.pStkEmailPenpalContainsOr )
     
                                 }
-                                    etThread.delF( tinP , psttEmailPenpalExactOr ) ;
-                                    meP.sayFieldF( tinP , stBodyP , tTitleEmailPenpalExactOr , psttEmailPenpalExactOr ) ;
+                                    etThread.delF( tinBaseP , psttEmailPenpalExactOr ) ;
+                                    meP.sayFieldF( tinBaseP , stBodyP , tTitleEmailPenpalExactOr , psttEmailPenpalExactOr ) ;
                                     *info.pStkEmailPenpalExactOr >> psttEmailPenpalExactOr ; ___( psttEmailPenpalExactOr ) ;
                                     ZE( strokeS* , psttEmailPenpalExactOr ) ;
                                 {
                                 while( *info.pStkEmailPenpalExactOr )
     
                                 }
-                                    etThread.delF( tinP , psttRecipe ) ;
-                                    meP.sayFieldF( tinP , stBodyP , tTitleRecipe , psttRecipe ) ;
+                                    etThread.delF( tinBaseP , psttRecipe ) ;
+                                    meP.sayFieldF( tinBaseP , stBodyP , tTitleRecipe , psttRecipe ) ;
                                     *info.pStkRecipe >> psttRecipe ; ___( psttRecipe ) ;
                                     ZE( strokeS* , psttRecipe ) ;
                                 {
                                 while( *info.pStkRecipe )
     
                                 }
-                                    etThread.delF( tinP , psttAutoresponse ) ;
-                                    meP.sayFieldF( tinP , stBodyP , tTitleAutoresponse , psttAutoresponse ) ;
+                                    etThread.delF( tinBaseP , psttAutoresponse ) ;
+                                    meP.sayFieldF( tinBaseP , stBodyP , tTitleAutoresponse , psttAutoresponse ) ;
                                     *info.pStkAutoresponse >> psttAutoresponse ; ___( psttAutoresponse ) ;
                                     ZE( strokeS* , psttAutoresponse ) ;
                                 {
@@ -67,16 +67,16 @@
     
                                 }
                                     }
-                                        meP.pushSnipF( tinP , stBodyP , idSnipTagOff ) ;
-                                        meP.pushSnipF( tinP , stBodyP , T("relayed to all<BR>") ) ;
-                                        meP.pushSnipF( tinP , stBodyP , idSnipTagOn ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , idSnipTagOff ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , T("relayed to all<BR>") ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , idSnipTagOn ) ;
                                     {
                                     else
                                     }
-                                        etThread.delF( tinP , psttw ) ;
-                                        if( psttw ) { meP.sayFieldF( tinP , stBodyP , tTitlew , psttw ) ; }
+                                        etThread.delF( tinBaseP , psttw ) ;
+                                        if( psttw ) { meP.sayFieldF( tinBaseP , stBodyP , tTitlew , psttw ) ; }
                                         TN( tTitlew , "relay random drawings" ) ;
-                                        etThread.strMakeF( tinP , LF , psttw , TF2(info.cEmailRelayDrawings,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; ___( psttw ) ;
+                                        etThread.strMakeF( tinBaseP , LF , psttw , TF2(info.cEmailRelayDrawings,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; ___( psttw ) ;
                                         ZE( strokeS* , psttw ) ;
                                     {
                                     if( info.cEmailRelayDrawings )
@@ -84,19 +84,19 @@
                                 if( cRelays )
     
                                 }
-                                    etThread.delF( tinP , psttEmailRelay ) ;
-                                    meP.sayFieldF( tinP , stBodyP , tTitleEmailRelay , psttEmailRelay ) ;
+                                    etThread.delF( tinBaseP , psttEmailRelay ) ;
+                                    meP.sayFieldF( tinBaseP , stBodyP , tTitleEmailRelay , psttEmailRelay ) ;
                                     *info.pStkEmailRelay >> psttEmailRelay ; ___( psttEmailRelay ) ;
                                     ZE( strokeS* , psttEmailRelay ) ;
                                 {
                                 while( *info.pStkEmailRelay )
                                 const countT cRelays = *info.pStkEmailRelay ;
     
-                                meP.sayFieldF( tinP , stBodyP , tTitleNameOut , info.psttNameOut ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleNameIn  , info.psttNameIn  ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleNameOut , info.psttNameOut ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleNameIn  , info.psttNameIn  ) ;
 
                                 }
-                                    meP.pushSnipF( tinP , stBodyP , tMode ) ;
+                                    meP.pushSnipF( tinBaseP , stBodyP , tMode ) ;
     
                                     ) ;
                                         : "reply from relay continues conversation<BR>"
@@ -104,55 +104,55 @@
                                     TN( tMode , F(info.flagsMode) & fliSUBACCOUNTmODE_RELAYrEPLYeNDScONVERSATION
                                 {
     
-                                if( F(info.flagsMode) & fliSUBACCOUNTmODE_OWNEDbYdIRECTORYoRhELLO ) meP.pushSnipF( tinP , stBodyP , T("directory clicker<BR>") ) ;
+                                if( F(info.flagsMode) & fliSUBACCOUNTmODE_OWNEDbYdIRECTORYoRhELLO ) meP.pushSnipF( tinBaseP , stBodyP , T("directory clicker<BR>") ) ;
     
-                                meP.sayFieldF( tinP , stBodyP , tTitleTitle   , info.psttTitle   ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleTitle   , info.psttTitle   ) ;
                                 ZE( osTextT* , postsw ) ;
         
                                 }
                                     DEL( prPostsIdSub ) ;
                                     DEL( prPostsEmailSub ) ;
                                     }
-                                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT71 ) ;
-                                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT61 ) ;
-                                        meP.pushSnipF( tinP , stBodyP , *prPostsIdSub ) ;
-                                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT51 ) ;
-                                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT41 ) ;
-                                        meP.pushSnipF( tinP , stBodyP , *prPostsIdSub ) ;
-                                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT31 ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT71 ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT61 ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , *prPostsIdSub ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT51 ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT41 ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , *prPostsIdSub ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT31 ) ;
 
                                         }
-                                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT21 ) ;
-                                            meP.pushSnipF( tinP , stBodyP , *prPostsIdSub ) ;
-                                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT11 ) ;
+                                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT21 ) ;
+                                            meP.pushSnipF( tinBaseP , stBodyP , *prPostsIdSub ) ;
+                                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT11 ) ;
                                         {
                                         if( !( F(info.flagsMode) & fliSUBACCOUNTmODE_OWNEDbYdIRECTORYoRhELLO ) )
 
-                                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT01 ) ;
-                                        meP.pushSnipF( tinP , stBodyP , *prPostsIdSub ) ;
-                                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTf ) ;
-                                        meP.pushSnipF( tinP , stBodyP , *prPostsEmailSub ) ;
-                                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTe ) ;
-                                        meP.pushSnipF( tinP , stBodyP , idSnipParagraph ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT01 ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , *prPostsIdSub ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTf ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , *prPostsEmailSub ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTe ) ;
+                                        meP.pushSnipF( tinBaseP , stBodyP , idSnipParagraph ) ;
                                     {
                                     if( prPostsEmailSub && prPostsIdSub )
                 
-                                    etThread.strMakeF( tinP , LF , prPostsIdSub , TF4(idSub,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36) , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostsIdSub ) ;
+                                    etThread.strMakeF( tinBaseP , LF , prPostsIdSub , TF4(idSub,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36) , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostsIdSub ) ;
                                     ZE( pbRefC* , prPostsIdSub ) ;
 
-                                    etThread.strMakeF( tinP , LF , prPostsEmailSub , TF4(idSub,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+tSuffix , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostsEmailSub ) ;
+                                    etThread.strMakeF( tinBaseP , LF , prPostsEmailSub , TF4(idSub,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+tSuffix , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPostsEmailSub ) ;
                                     ZE( pbRefC* , prPostsEmailSub ) ;
                                 {
                             {
                             if( !POOP && F(info.flagsMode) & fliSUBACCOUNTmODE_OWNERcONFIRMED && !( F(info.flagsMode) & fliSUBACCOUNTmODE_DELETED ) )
-                            subaccountS info( tinP , etThread , idAccount , idSub ) ;
+                            subaccountS info( tinBaseP , etThread , idAccount , idSub ) ;
     
                             //CONoUTrAW3( "enumeration [idSub]: " , idSub , "\r\n" ) ;
                             stkIdSub >> idSub ;
                             ZE( countT , idSub ) ;
                         {
                         while( stkIdSub )
-                        stkIdSubC stkIdSub( tinP , idAccount ) ;
+                        stkIdSubC stkIdSub( tinBaseP , idAccount ) ;
 
                         TN( tcr , "\r\n" ) ;
                         //CONoUTrAW( "querying enumeration of idSub\r\n" ) ;
@@ -161,30 +161,30 @@
 
                     }
                         }
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT83 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT83 ) ;
 
                             }
-                                meP.sayFieldF( tinP , stBodyP , tTitlePaypalProtectionEligibility     , info.psttPaypalProtectionEligibility     ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitlePaypalPayerStatus               , info.psttPaypalPayerStatus               ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitlePaypalPayerId                   , info.psttPaypalPayerId                   ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitlePaypalPayerEmail                , info.psttPaypalPayerEmail                ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleCharset                         , info.psttCharset                         ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleZipAt                           , info.psttZipAt                           ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleResidenceCountry                , info.psttResidenceCountry                ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleLastName                        , info.psttLastName                        ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleFirstName                       , info.psttFirstName                       ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleAddressStatus                   , info.psttAddressStatus                   ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleAddressCountry                  , info.psttAddressCountry                  ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleAddressZip                      , info.psttAddressZip                      ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleAddressCountryCode              , info.psttAddressCountryCode              ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleAddressState                    , info.psttAddressState                    ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleAddressCity                     , info.psttAddressCity                     ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleAddressStreet                   , info.psttAddressStreet                   ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleAddressName                     , info.psttAddressName                     ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleHelloGreeting                   , info.psttHelloGreeting                   ) ;
-                                meP.sayFieldF( tinP , stBodyP , tTitleDirectoryGreeting               , info.psttDirectoryGreeting               ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitlePaypalProtectionEligibility     , info.psttPaypalProtectionEligibility     ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitlePaypalPayerStatus               , info.psttPaypalPayerStatus               ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitlePaypalPayerId                   , info.psttPaypalPayerId                   ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitlePaypalPayerEmail                , info.psttPaypalPayerEmail                ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleCharset                         , info.psttCharset                         ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleZipAt                           , info.psttZipAt                           ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleResidenceCountry                , info.psttResidenceCountry                ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleLastName                        , info.psttLastName                        ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleFirstName                       , info.psttFirstName                       ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleAddressStatus                   , info.psttAddressStatus                   ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleAddressCountry                  , info.psttAddressCountry                  ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleAddressZip                      , info.psttAddressZip                      ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleAddressCountryCode              , info.psttAddressCountryCode              ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleAddressState                    , info.psttAddressState                    ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleAddressCity                     , info.psttAddressCity                     ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleAddressStreet                   , info.psttAddressStreet                   ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleAddressName                     , info.psttAddressName                     ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleHelloGreeting                   , info.psttHelloGreeting                   ) ;
+                                meP.sayFieldF( tinBaseP , stBodyP , tTitleDirectoryGreeting               , info.psttDirectoryGreeting               ) ;
                                 }
-                                    meP.pushSnipF( tinP , stBodyP , tMode ) ;
+                                    meP.pushSnipF( tinBaseP , stBodyP , tMode ) ;
     
                                     ) ;
                                         : "i am not listed in " postIFH "<BR>"
@@ -192,7 +192,7 @@
                                     TN( tMode , F(info.flagsMode) & fliACCOUNTmODE_LISTmEhELLO
                                 {
                                 }
-                                    meP.pushSnipF( tinP , stBodyP , tMode ) ;
+                                    meP.pushSnipF( tinBaseP , stBodyP , tMode ) ;
     
                                     ) ;
                                         : "i am not listed in " postIFD "<BR>"
@@ -202,9 +202,9 @@
                             {
                             else
                             }
-                                meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT44 ) ;
-                                meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT24 ) ;
-                                meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT34 ) ;
+                                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT44 ) ;
+                                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT24 ) ;
+                                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT34 ) ;
                             {
                             if( bNoFieldsOccupied )
 
@@ -234,30 +234,30 @@
 
                             ZE( osTextT* , postsw ) ;
 
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT73 ) ;
-                            meP.pushSnipF( tinP , stBodyP , psttEmail ) ;
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT63 ) ;
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT14 ) ;
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT44 ) ;
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTe3 ) ;
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT34 ) ;
-                            meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT04 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT73 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , psttEmail ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT63 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT14 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT44 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTe3 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT34 ) ;
+                            meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT04 ) ;
                         {
                         if( !POOP )
-                        accountS info( tinP , etThread , idAccount ) ;
+                        accountS info( tinBaseP , etThread , idAccount ) ;
                     {
     
-                    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT4 ) ;
-                    meP.pushSnipF( tinP , stBodyP , psttEmail ) ;
-                    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT3 ) ;
-                    meP.pushSnipF( tinP , stBodyP , psttIdAccount ) ;
-                    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT2 ) ;
+                    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT4 ) ;
+                    meP.pushSnipF( tinBaseP , stBodyP , psttEmail ) ;
+                    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT3 ) ;
+                    meP.pushSnipF( tinBaseP , stBodyP , psttIdAccount ) ;
+                    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT2 ) ;
                 {
                 if( !POOP )
 
                 }
-                    tinP.pEtScratch->delF( tinP , psttEmailOwner ) ;
-                    __( tinP.pEtScratch->strCompareF( tinP , psttEmail , psttEmailOwner ) ) ;
+                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttEmailOwner ) ;
+                    __( ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttEmail , psttEmailOwner ) ) ;
                     sIn >> psttEmailOwner ; ___( psttEmailOwner ) ;
                     ZE( strokeS* , psttEmailOwner ) ;
                 
@@ -269,32 +269,32 @@
                     sIn >> finger ;
                     ZE( countT , finger ) ;
                 
-                    sock.readF( tinP , sIn ) ;
-                    soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                    sock.readF( tinBaseP , sIn ) ;
+                    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
                 
-                    sock.writeF( tinP , sOut ) ;
+                    sock.writeF( tinBaseP , sOut ) ;
                     sOut << idAccount ;
                     sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT ;
                     sOut << (countT)1 ;
                     sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-                    soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+                    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                 
-                    sock.connectF( tinP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-                    socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
+                    socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 {
             {
             if( bShowAll )
 
             }
                 }
-                    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT62 ) ;
+                    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT62 ) ;
 
                     }
                         EPILOGeDIT( EmailPenpalContainsAnd , ifcIDsNIPpREDEFINED_HELPd , ifcIDsNIPpREDEFINED_HELP21 , 0 )
                         }
-                            etThread.delF( tinP , psttEmailPenpalContainsAnd ) ;
+                            etThread.delF( tinBaseP , psttEmailPenpalContainsAnd ) ;
                             if( F(flagsSay) & flSAYfIELDeDIT_WOTH ) flagsSay &= ~F(flSAYfIELDeDIT_WOTH) ;
-                            meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleEmailPenpalContainsAnd , tKeyEmailPenpalContainsAnd , flagsSay , ifcIDsNIPpREDEFINED_HELPd , ifcIDsNIPpREDEFINED_HELP21 , psttEmailPenpalContainsAnd ) ;
+                            meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleEmailPenpalContainsAnd , tKeyEmailPenpalContainsAnd , flagsSay , ifcIDsNIPpREDEFINED_HELPd , ifcIDsNIPpREDEFINED_HELP21 , psttEmailPenpalContainsAnd ) ;
                             *info.pStkEmailPenpalContainsAnd >> psttEmailPenpalContainsAnd ; ___( psttEmailPenpalContainsAnd ) ;
                             ZE( strokeS* , psttEmailPenpalContainsAnd ) ;
                         {
@@ -303,9 +303,9 @@
 
                         EPILOGeDIT( EmailPenpalContainsOr , ifcIDsNIPpREDEFINED_HELPc , ifcIDsNIPpREDEFINED_HELP11 , 0 )
                         }
-                            etThread.delF( tinP , psttEmailPenpalContainsOr ) ;
+                            etThread.delF( tinBaseP , psttEmailPenpalContainsOr ) ;
                             if( F(flagsSay) & flSAYfIELDeDIT_WOTH ) flagsSay &= ~F(flSAYfIELDeDIT_WOTH) ;
-                            meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleEmailPenpalContainsOr , tKeyEmailPenpalContainsOr , flagsSay , ifcIDsNIPpREDEFINED_HELPc , ifcIDsNIPpREDEFINED_HELP11 , psttEmailPenpalContainsOr ) ;
+                            meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleEmailPenpalContainsOr , tKeyEmailPenpalContainsOr , flagsSay , ifcIDsNIPpREDEFINED_HELPc , ifcIDsNIPpREDEFINED_HELP11 , psttEmailPenpalContainsOr ) ;
                             *info.pStkEmailPenpalContainsOr >> psttEmailPenpalContainsOr ; ___( psttEmailPenpalContainsOr ) ;
                             ZE( strokeS* , psttEmailPenpalContainsOr ) ;
                         {
@@ -314,9 +314,9 @@
 
                         EPILOGeDIT( EmailPenpalExactOr , ifcIDsNIPpREDEFINED_HELPb , ifcIDsNIPpREDEFINED_HELP01 , 0 )
                         }
-                            etThread.delF( tinP , psttEmailPenpalExactOr ) ;
+                            etThread.delF( tinBaseP , psttEmailPenpalExactOr ) ;
                             if( F(flagsSay) & flSAYfIELDeDIT_WOTH ) flagsSay &= ~F(flSAYfIELDeDIT_WOTH) ;
-                            meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleEmailPenpalExactOr , tKeyEmailPenpalExactOr , flagsSay , ifcIDsNIPpREDEFINED_HELPb , ifcIDsNIPpREDEFINED_HELP01 , psttEmailPenpalExactOr ) ;
+                            meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleEmailPenpalExactOr , tKeyEmailPenpalExactOr , flagsSay , ifcIDsNIPpREDEFINED_HELPb , ifcIDsNIPpREDEFINED_HELP01 , psttEmailPenpalExactOr ) ;
                             *info.pStkEmailPenpalExactOr >> psttEmailPenpalExactOr ; ___( psttEmailPenpalExactOr ) ;
                             ZE( strokeS* , psttEmailPenpalExactOr ) ;
                         {
@@ -326,9 +326,9 @@
                         }
                             EPILOGeDIT( Recipe , ifcIDsNIPpREDEFINED_HELPa , ifcIDsNIPpREDEFINED_HELPf , 0 )
                             }
-                                etThread.delF( tinP , psttRecipe ) ;
+                                etThread.delF( tinBaseP , psttRecipe ) ;
                                 if( F(flagsSay) & flSAYfIELDeDIT_WOTH ) flagsSay &= ~F(flSAYfIELDeDIT_WOTH) ;
-                                meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleRecipe , tKeyRecipe , flagsSay , ifcIDsNIPpREDEFINED_HELPa , ifcIDsNIPpREDEFINED_HELPf , psttRecipe ) ;
+                                meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleRecipe , tKeyRecipe , flagsSay , ifcIDsNIPpREDEFINED_HELPa , ifcIDsNIPpREDEFINED_HELPf , psttRecipe ) ;
                                 *info.pStkRecipe >> psttRecipe ; ___( psttRecipe ) ;
                                 ZE( strokeS* , psttRecipe ) ;
                             {
@@ -341,9 +341,9 @@
                         flagsSay |= flSAYfIELDeDIT_MOREaLLOWED ;
                         EPILOGeDIT( Autoresponse , ifcIDsNIPpREDEFINED_HELP9 , 0 , 0 )
                         }
-                            etThread.delF( tinP , psttAutoresponse ) ;
+                            etThread.delF( tinBaseP , psttAutoresponse ) ;
                             if( F(flagsSay) & flSAYfIELDeDIT_WOTH ) flagsSay &= ~F(flSAYfIELDeDIT_WOTH) ;
-                            meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAutoresponse , tKeyAutoresponse , flagsSay , ifcIDsNIPpREDEFINED_HELP9 , 0 , psttAutoresponse ) ;
+                            meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAutoresponse , tKeyAutoresponse , flagsSay , ifcIDsNIPpREDEFINED_HELP9 , 0 , psttAutoresponse ) ;
                             *info.pStkAutoresponse >> psttAutoresponse ; ___( psttAutoresponse ) ;
                             ZE( strokeS* , psttAutoresponse ) ;
                         {
@@ -353,16 +353,16 @@
                         flagsSay |= flSAYfIELDeDIT_AREA ;
 
                         }
-                            meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleEmailRelay , tKeyEmailRelay , flagsSay , ifcIDsNIPpREDEFINED_HELP8 , ifcIDsNIPpREDEFINED_HELPe , 0 , tCol2 ) ;
+                            meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleEmailRelay , tKeyEmailRelay , flagsSay , ifcIDsNIPpREDEFINED_HELP8 , ifcIDsNIPpREDEFINED_HELPe , 0 , tCol2 ) ;
                             SETcOL2EMAILrELAY( info.cEmailRelayDrawings )
                         {
                         while( cExtra -- )
                         }
                             if( idRow == 2 ) tCol2 = T("") ;
 
-                            etThread.delF( tinP , psttEmailRelay ) ;
+                            etThread.delF( tinBaseP , psttEmailRelay ) ;
                             if( F(flagsSay) & flSAYfIELDeDIT_WOTH ) flagsSay &= ~F(flSAYfIELDeDIT_WOTH) ;
-                            meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleEmailRelay , tKeyEmailRelay , flagsSay , ifcIDsNIPpREDEFINED_HELP7 , ifcIDsNIPpREDEFINED_HELPe , psttEmailRelay , tCol2 ) ;
+                            meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleEmailRelay , tKeyEmailRelay , flagsSay , ifcIDsNIPpREDEFINED_HELP7 , ifcIDsNIPpREDEFINED_HELPe , psttEmailRelay , tCol2 ) ;
                             *info.pStkEmailRelay >> psttEmailRelay ; ___( psttEmailRelay ) ;
                             ZE( strokeS* , psttEmailRelay ) ;
 
@@ -376,33 +376,33 @@
 
                         TN( tCol2 , "" ) ;
 
-                        meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleNameOut , tKeyNameOut , flagsSay , ifcIDsNIPpREDEFINED_HELP6 , 0 , info.psttNameOut ) ;
+                        meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleNameOut , tKeyNameOut , flagsSay , ifcIDsNIPpREDEFINED_HELP6 , 0 , info.psttNameOut ) ;
                         idBoxLath = 0 ;
-                        meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleNameIn , tKeyNameIn , flagsSay , ifcIDsNIPpREDEFINED_HELP5 , 0 , info.psttNameIn ) ;
+                        meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleNameIn , tKeyNameIn , flagsSay , ifcIDsNIPpREDEFINED_HELP5 , 0 , info.psttNameIn ) ;
                         idBoxLath = 0 ;
 
                         flagsSay &= ~( F(flSAYfIELDeDIT_CHECKBOX) ) ;
-                        meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleFlagReplyEndsConversation , tKeyFlagReplyEndsConversation , flagsSay , ifcIDsNIPpREDEFINED_HELP31 , 0 , (strokeS*)!!( F(info.flagsMode) & fliSUBACCOUNTmODE_RELAYrEPLYeNDScONVERSATION ) ) ;
+                        meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleFlagReplyEndsConversation , tKeyFlagReplyEndsConversation , flagsSay , ifcIDsNIPpREDEFINED_HELP31 , 0 , (strokeS*)!!( F(info.flagsMode) & fliSUBACCOUNTmODE_RELAYrEPLYeNDScONVERSATION ) ) ;
                         idBoxLath = 0 ;
-                        meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleFlagOwnedByDirectory , tKeyFlagOwnedByDirectory , flagsSay , ifcIDsNIPpREDEFINED_HELP31 , 0 , (strokeS*)!!( F(info.flagsMode) & fliSUBACCOUNTmODE_OWNEDbYdIRECTORYoRhELLO ) ) ;
+                        meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleFlagOwnedByDirectory , tKeyFlagOwnedByDirectory , flagsSay , ifcIDsNIPpREDEFINED_HELP31 , 0 , (strokeS*)!!( F(info.flagsMode) & fliSUBACCOUNTmODE_OWNEDbYdIRECTORYoRhELLO ) ) ;
                         idBoxLath = 0 ;
                         flagsSay |= flSAYfIELDeDIT_CHECKBOX ;
 
-                        meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleTitle , tKeyTitle , flagsSay , ifcIDsNIPpREDEFINED_HELP4 , 0 , info.psttTitle ) ;
+                        meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleTitle , tKeyTitle , flagsSay , ifcIDsNIPpREDEFINED_HELP4 , 0 , info.psttTitle ) ;
                         ZE( countT , cNew ) ;
                         ZE( osTextT* , postsw    ) ;
                         ZE( countT   , idBoxLath ) ;
                         ZE( countT   , cExtra    ) ;
                         flagsT flagsSay = flSAYfIELDeDIT_WOTH ;
 
-                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTd1 ) ;
-                        if( !bAllFieldsOccupied && !bAllFields ) { meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTc1 ) ; }
-                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTb1 ) ;
-                        meP.pushSnipF( tinP , stBodyP , tSubaccount ) ;
-                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTa1 ) ;
-                        meP.pushSnipF( tinP , stBodyP , tEmailSub ) ;
-                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT91 ) ;
-                        meP.pushSnipF( tinP , stBodyP , idSnipParagraph ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTd1 ) ;
+                        if( !bAllFieldsOccupied && !bAllFields ) { meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTc1 ) ; }
+                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTb1 ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , tSubaccount ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTa1 ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , tEmailSub ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT91 ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , idSnipParagraph ) ;
 
                         ;
 
@@ -417,7 +417,7 @@
                     {
                     if( !POOP && F(info.flagsMode) & fliSUBACCOUNTmODE_OWNERcONFIRMED && !( F(info.flagsMode) & fliSUBACCOUNTmODE_DELETED ) )
 
-                    subaccountS info( tinP , etThread , idAccount , idSub ) ;
+                    subaccountS info( tinBaseP , etThread , idAccount , idSub ) ;
                     bShowAll = 0 ;
                 {
                 else if( bEditSub )
@@ -434,25 +434,25 @@
                     sIn >> finger ;
                     ZE( countT , finger ) ;
                 
-                    sock.readF( tinP , sIn ) ;
-                    soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                    sock.readF( tinBaseP , sIn ) ;
+                    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
                 
-                    sock.writeF( tinP , sOut ) ;
+                    sock.writeF( tinBaseP , sOut ) ;
                     sOut << idSub ;
                     sOut << idAccount ;
                     sOut << (countT)ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEsUBACCOUNTdESCRIPTION ;
                     sOut << (countT)1 ;
                     sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-                    soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+                    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                 
-                    sock.connectF( tinP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-                    socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
+                    socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 {
                 if( bDeleteSub )
 
                 }
                     //bDeleteSub = 1 ;
-                    etThread.boxPutF( tinP , T("//smtp/" ifcEMAIL_WEBsITEcOMPLAINTfORWARDER "/" ifcEMAIL_WEBmASTER) , tSay , tSay.csF( tinP ) ) ;
+                    etThread.boxPutF( tinBaseP , T("//smtp/" ifcEMAIL_WEBsITEcOMPLAINTfORWARDER "/" ifcEMAIL_WEBmASTER) , tSay , tSay.csF( tinBaseP ) ) ;
 
                     ) ;
 
@@ -464,7 +464,7 @@
 
                     }
                         break ;
-                        etThread.delF( tinP , psttw ) ;
+                        etThread.delF( tinBaseP , psttw ) ;
                         tSpammer = T(psttw) ;
                         *sub.pStkEmailPenpalExactOr >> psttw ;
                         ZE( strokeS* , psttw ) ;
@@ -473,46 +473,46 @@
 
                     TN( tSpammer , "" ) ;
 
-                    subaccountS sub( tinP , etThread , idAccount , idSub , flSUBACCOUNT_QUERYeMAILpENPALeXACToR ) ;
+                    subaccountS sub( tinBaseP , etThread , idAccount , idSub , flSUBACCOUNT_QUERYeMAILpENPALeXACToR ) ;
                 {
                 if( bSpamSub )
 
                 }
-                    { _IO_ etThread( tinP , pStkEmailPenpalContainsAnd     ) ; }
-                    { _IO_ etThread( tinP , pStkEmailPenpalContainsOr      ) ; }
-                    { _IO_ etThread( tinP , pStkEmailPenpalExactOr         ) ; }
-                    { _IO_ etThread( tinP , pStkRecipe                     ) ; }
-                    { _IO_ etThread( tinP , pStkAutoresponse               ) ; }
-                    { _IO_ etThread( tinP , pStkEmailRelayDrawings         ) ; }
-                    { _IO_ etThread( tinP , pStkEmailRelay                 ) ; }
-                    { _IO_ etThread( tinP , pStkNameOut                    ) ; }
-                    { _IO_ etThread( tinP , pStkNameIn                     ) ; }
-                    { _IO_ etThread( tinP , pStkFlagReplyEndsConversation  ) ; }
-                    { _IO_ etThread( tinP , pStkFlagOwnedByDirectory       ) ; }
-                    { _IO_ etThread( tinP , pStkTitle                      ) ; }
+                    { _IO_ etThread( tinBaseP , pStkEmailPenpalContainsAnd     ) ; }
+                    { _IO_ etThread( tinBaseP , pStkEmailPenpalContainsOr      ) ; }
+                    { _IO_ etThread( tinBaseP , pStkEmailPenpalExactOr         ) ; }
+                    { _IO_ etThread( tinBaseP , pStkRecipe                     ) ; }
+                    { _IO_ etThread( tinBaseP , pStkAutoresponse               ) ; }
+                    { _IO_ etThread( tinBaseP , pStkEmailRelayDrawings         ) ; }
+                    { _IO_ etThread( tinBaseP , pStkEmailRelay                 ) ; }
+                    { _IO_ etThread( tinBaseP , pStkNameOut                    ) ; }
+                    { _IO_ etThread( tinBaseP , pStkNameIn                     ) ; }
+                    { _IO_ etThread( tinBaseP , pStkFlagReplyEndsConversation  ) ; }
+                    { _IO_ etThread( tinBaseP , pStkFlagOwnedByDirectory       ) ; }
+                    { _IO_ etThread( tinBaseP , pStkTitle                      ) ; }
 
                     }
-                        pushFieldValuesF( tinP , *info.pStkEmailPenpalContainsAnd , *pStkEmailPenpalContainsAnd ) ;
-                        pushFieldValuesF( tinP , *info.pStkEmailPenpalContainsOr  , *pStkEmailPenpalContainsOr  ) ;
-                        pushFieldValuesF( tinP , *info.pStkEmailPenpalExactOr     , *pStkEmailPenpalExactOr     ) ;
-                        pushFieldValuesF( tinP , *info.pStkRecipe                 , *pStkRecipe                 ) ;
-                        pushFieldValuesF( tinP , *info.pStkAutoresponse           , *pStkAutoresponse           ) ;
+                        pushFieldValuesF( tinBaseP , *info.pStkEmailPenpalContainsAnd , *pStkEmailPenpalContainsAnd ) ;
+                        pushFieldValuesF( tinBaseP , *info.pStkEmailPenpalContainsOr  , *pStkEmailPenpalContainsOr  ) ;
+                        pushFieldValuesF( tinBaseP , *info.pStkEmailPenpalExactOr     , *pStkEmailPenpalExactOr     ) ;
+                        pushFieldValuesF( tinBaseP , *info.pStkRecipe                 , *pStkRecipe                 ) ;
+                        pushFieldValuesF( tinBaseP , *info.pStkAutoresponse           , *pStkAutoresponse           ) ;
                         if( *pStkEmailRelayDrawings ) *pStkEmailRelayDrawings >> info.cEmailRelayDrawings ; //DROP DOWN MENU WILL NOT APPEAR IF < 2 RELAYS
-                        pushFieldValuesF( tinP , *info.pStkEmailRelay             , *pStkEmailRelay             ) ;
+                        pushFieldValuesF( tinBaseP , *info.pStkEmailRelay             , *pStkEmailRelay             ) ;
 
-                        etThread.delF( tinP , psttNameOut ) ;
-                        etThread.delF( tinP , psttNameIn ) ;
-                        etThread.delF( tinP , psttTitle ) ;
-                        subaccountS info( tinP , etThread , idAccount , idSub , psttTitle , psttNameIn , psttNameOut , flagsMode ) ;
+                        etThread.delF( tinBaseP , psttNameOut ) ;
+                        etThread.delF( tinBaseP , psttNameIn ) ;
+                        etThread.delF( tinBaseP , psttTitle ) ;
+                        subaccountS info( tinBaseP , etThread , idAccount , idSub , psttTitle , psttNameIn , psttNameOut , flagsMode ) ;
 
                         }
-                            if( !etThread.strCompareF( tinP , psttv , T("yes") ) ) flagsMode |= fliSUBACCOUNTmODE_RELAYrEPLYeNDScONVERSATION ;
+                            if( !etThread.strCompareF( tinBaseP , psttv , T("yes") ) ) flagsMode |= fliSUBACCOUNTmODE_RELAYrEPLYeNDScONVERSATION ;
                             *pStkFlagReplyEndsConversation >> psttv ;
                             ZE( strokeS* , psttv ) ;
                         {
                         if( *pStkFlagReplyEndsConversation )
                         }
-                            if( !etThread.strCompareF( tinP , psttv , T("yes") ) ) flagsMode |= fliSUBACCOUNTmODE_OWNEDbYdIRECTORYoRhELLO ;
+                            if( !etThread.strCompareF( tinBaseP , psttv , T("yes") ) ) flagsMode |= fliSUBACCOUNTmODE_OWNEDbYdIRECTORYoRhELLO ;
                             *pStkFlagOwnedByDirectory >> psttv ;
                             ZE( strokeS* , psttv ) ;
                         {
@@ -533,14 +533,14 @@
                             }
                                 }
                                     *pStko << psttc ;
-                                    strokeS* psttc = psttOldC( tinP , etThread , zsttv ) ; ___( psttc ) ;
-                                    if( zsttv && !bArea ) { etThread.strTrimF( tinP , zsttv , 0 , T(TbLACKnEWlINE) ) ; ___( zsttv ) ; }
+                                    strokeS* psttc = psttOldC( tinBaseP , etThread , zsttv ) ; ___( psttc ) ;
+                                    if( zsttv && !bArea ) { etThread.strTrimF( tinBaseP , zsttv , 0 , T(TbLACKnEWlINE) ) ; ___( zsttv ) ; }
                                 {
                                 else
                                 }
                                     }
                                         if( vv ) *pStko << vv ;
-                                        countT vv = etThread.strDigitsToSCountF( tinP , zsttv ) ;
+                                        countT vv = etThread.strDigitsToSCountF( tinBaseP , zsttv ) ;
                                     {
                                     if( zsttv )
                                 {
@@ -550,28 +550,28 @@
                             if( pStko )
     
                             }
-                                else if( 1 == etThread.strIdF( tinP , tKeyEmailPenpalContainsAnd    , psttLeverKVP ) )   pStko = pStkEmailPenpalContainsAnd    ;
-                                else if( 1 == etThread.strIdF( tinP , tKeyEmailPenpalContainsOr     , psttLeverKVP ) )   pStko = pStkEmailPenpalContainsOr     ;
-                                else if( 1 == etThread.strIdF( tinP , tKeyEmailPenpalExactOr        , psttLeverKVP ) )   pStko = pStkEmailPenpalExactOr        ;
-                                else if( 1 == etThread.strIdF( tinP , tKeyRecipe                    , psttLeverKVP ) )   pStko = pStkRecipe                    ;
-                                else if( 1 == etThread.strIdF( tinP , tKeyAutoresponse              , psttLeverKVP ) ) { pStko = pStkAutoresponse              ; bArea  = 1 ; }
-                                else if( 1 == etThread.strIdF( tinP , tKeyEmailRelayDrawings        , psttLeverKVP ) ) { pStko = pStkEmailRelayDrawings        ; bCount = 1 ; }
-                                else if( 1 == etThread.strIdF( tinP , tKeyEmailRelay                , psttLeverKVP ) )   pStko = pStkEmailRelay                ;
-                                else if( 1 == etThread.strIdF( tinP , tKeyNameOut                   , psttLeverKVP ) )   pStko = pStkNameOut                   ;
-                                else if( 1 == etThread.strIdF( tinP , tKeyNameIn                    , psttLeverKVP ) )   pStko = pStkNameIn                    ;
-                                else if( 1 == etThread.strIdF( tinP , tKeyFlagReplyEndsConversation , psttLeverKVP ) )   pStko = pStkFlagReplyEndsConversation ;
-                                else if( 1 == etThread.strIdF( tinP , tKeyFlagOwnedByDirectory      , psttLeverKVP ) )   pStko = pStkFlagOwnedByDirectory      ;
-                                     if( 1 == etThread.strIdF( tinP , tKeyTitle                     , psttLeverKVP ) )   pStko = pStkTitle                     ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyEmailPenpalContainsAnd    , psttLeverKVP ) )   pStko = pStkEmailPenpalContainsAnd    ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyEmailPenpalContainsOr     , psttLeverKVP ) )   pStko = pStkEmailPenpalContainsOr     ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyEmailPenpalExactOr        , psttLeverKVP ) )   pStko = pStkEmailPenpalExactOr        ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyRecipe                    , psttLeverKVP ) )   pStko = pStkRecipe                    ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyAutoresponse              , psttLeverKVP ) ) { pStko = pStkAutoresponse              ; bArea  = 1 ; }
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyEmailRelayDrawings        , psttLeverKVP ) ) { pStko = pStkEmailRelayDrawings        ; bCount = 1 ; }
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyEmailRelay                , psttLeverKVP ) )   pStko = pStkEmailRelay                ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyNameOut                   , psttLeverKVP ) )   pStko = pStkNameOut                   ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyNameIn                    , psttLeverKVP ) )   pStko = pStkNameIn                    ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyFlagReplyEndsConversation , psttLeverKVP ) )   pStko = pStkFlagReplyEndsConversation ;
+                                else if( 1 == etThread.strIdF( tinBaseP , tKeyFlagOwnedByDirectory      , psttLeverKVP ) )   pStko = pStkFlagOwnedByDirectory      ;
+                                     if( 1 == etThread.strIdF( tinBaseP , tKeyTitle                     , psttLeverKVP ) )   pStko = pStkTitle                     ;
                             {
                             if( psttLeverKVP )
                             ZE( stackC* , pStko ) ;
                             ZE( boolT , bCount ) ;
                             ZE( boolT , bArea ) ;
 
-                            psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+                            psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
                         {
                         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                        countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+                        countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
                     {
                     )
                         pStkEmailPenpalContainsAnd
@@ -589,18 +589,18 @@
                     (
                     if
 
-                    etThread( tinP , pStkEmailPenpalContainsAnd    , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsAnd    ) ;
-                    etThread( tinP , pStkEmailPenpalContainsOr     , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsOr     ) ;
-                    etThread( tinP , pStkEmailPenpalExactOr        , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalExactOr        ) ;
-                    etThread( tinP , pStkRecipe                    , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkRecipe                    ) ;
-                    etThread( tinP , pStkAutoresponse              , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkAutoresponse              ) ;
-                    etThread( tinP , pStkEmailRelayDrawings        , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_countT      ) ; ___( pStkEmailRelayDrawings        ) ;
-                    etThread( tinP , pStkEmailRelay                , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay                ) ;
-                    etThread( tinP , pStkNameOut                   , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkNameOut                   ) ;
-                    etThread( tinP , pStkNameIn                    , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkNameIn                    ) ;
-                    etThread( tinP , pStkFlagReplyEndsConversation , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkFlagReplyEndsConversation ) ;
-                    etThread( tinP , pStkFlagOwnedByDirectory      , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkFlagOwnedByDirectory      ) ;
-                    etThread( tinP , pStkTitle                     , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkTitle                     ) ;
+                    etThread( tinBaseP , pStkEmailPenpalContainsAnd    , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsAnd    ) ;
+                    etThread( tinBaseP , pStkEmailPenpalContainsOr     , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsOr     ) ;
+                    etThread( tinBaseP , pStkEmailPenpalExactOr        , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalExactOr        ) ;
+                    etThread( tinBaseP , pStkRecipe                    , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkRecipe                    ) ;
+                    etThread( tinBaseP , pStkAutoresponse              , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkAutoresponse              ) ;
+                    etThread( tinBaseP , pStkEmailRelayDrawings        , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_countT      ) ; ___( pStkEmailRelayDrawings        ) ;
+                    etThread( tinBaseP , pStkEmailRelay                , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay                ) ;
+                    etThread( tinBaseP , pStkNameOut                   , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkNameOut                   ) ;
+                    etThread( tinBaseP , pStkNameIn                    , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkNameIn                    ) ;
+                    etThread( tinBaseP , pStkFlagReplyEndsConversation , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkFlagReplyEndsConversation ) ;
+                    etThread( tinBaseP , pStkFlagOwnedByDirectory      , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkFlagOwnedByDirectory      ) ;
+                    etThread( tinBaseP , pStkTitle                     , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkTitle                     ) ;
 
                     ZE( stackC* , pStkEmailPenpalContainsAnd ) ;
                     ZE( stackC* , pStkEmailPenpalContainsOr ) ;
@@ -630,44 +630,44 @@
             }
                 }
                     }
-                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT72 ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT72 ) ;
                         }
                             }
-                                if( bAllFields || ( info.psttPaypalProtectionEligibility  && info.psttPaypalProtectionEligibility->idAdam ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitlePaypalProtectionEligibility , tKeyPaypalProtectionEligibility    , flagsSay , ifcIDsNIPpREDEFINED_HELP42 , 0 , info.psttPaypalProtectionEligibility     ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttPaypalPayerStatus            && info.psttPaypalPayerStatus->idAdam           ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitlePaypalPayerStatus           , tKeyPaypalPayerStatus              , flagsSay , ifcIDsNIPpREDEFINED_HELP32 , 0 , info.psttPaypalPayerStatus               ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttPaypalPayerId                && info.psttPaypalPayerId->idAdam               ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitlePaypalPayerId               , tKeyPaypalPayerId                  , flagsSay , ifcIDsNIPpREDEFINED_HELP22 , 0 , info.psttPaypalPayerId                   ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttPaypalPayerEmail             && info.psttPaypalPayerEmail->idAdam            ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitlePaypalPayerEmail            , tKeyPaypalPayerEmail               , flagsSay , ifcIDsNIPpREDEFINED_HELP12 , 0 , info.psttPaypalPayerEmail                ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttCharset                      && info.psttCharset->idAdam                     ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleCharset                     , tKeyCharset                        , flagsSay , ifcIDsNIPpREDEFINED_HELP02 , 0 , info.psttCharset                         ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttResidenceCountry             && info.psttResidenceCountry->idAdam            ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleResidenceCountry            , tKeyResidenceCountry               , flagsSay , ifcIDsNIPpREDEFINED_HELPe1 , 0 , info.psttResidenceCountry                ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttLastName                     && info.psttLastName->idAdam                    ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleLastName                    , tKeyLastName                       , flagsSay , ifcIDsNIPpREDEFINED_HELPd1 , 0 , info.psttLastName                        ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttFirstName                    && info.psttFirstName->idAdam                   ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleFirstName                   , tKeyFirstName                      , flagsSay , ifcIDsNIPpREDEFINED_HELPc1 , 0 , info.psttFirstName                       ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttAddressStatus                && info.psttAddressStatus->idAdam               ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAddressStatus               , tKeyAddressStatus                  , flagsSay , ifcIDsNIPpREDEFINED_HELPb1 , 0 , info.psttAddressStatus                   ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttAddressCountry               && info.psttAddressCountry->idAdam              ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAddressCountry              , tKeyAddressCountry                 , flagsSay , ifcIDsNIPpREDEFINED_HELPa1 , 0 , info.psttAddressCountry                  ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttAddressZip                   && info.psttAddressZip->idAdam                  ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAddressZip                  , tKeyAddressZip                     , flagsSay , ifcIDsNIPpREDEFINED_HELP91 , 0 , info.psttAddressZip                      ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttAddressCountryCode           && info.psttAddressCountryCode->idAdam          ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAddressCountryCode          , tKeyAddressCountryCode             , flagsSay , ifcIDsNIPpREDEFINED_HELP81 , 0 , info.psttAddressCountryCode              ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttAddressState                 && info.psttAddressState->idAdam                ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAddressState                , tKeyAddressState                   , flagsSay , ifcIDsNIPpREDEFINED_HELP71 , 0 , info.psttAddressState                    ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttAddressCity                  && info.psttAddressCity->idAdam                 ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAddressCity                 , tKeyAddressCity                    , flagsSay , ifcIDsNIPpREDEFINED_HELP61 , 0 , info.psttAddressCity                     ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttAddressStreet                && info.psttAddressStreet->idAdam               ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAddressStreet               , tKeyAddressStreet                  , flagsSay , ifcIDsNIPpREDEFINED_HELP51 , 0 , info.psttAddressStreet                   ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttAddressName                  && info.psttAddressName->idAdam                 ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleAddressName                 , tKeyAddressName                    , flagsSay , ifcIDsNIPpREDEFINED_HELP41 , 0 , info.psttAddressName                     ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttPaypalProtectionEligibility  && info.psttPaypalProtectionEligibility->idAdam ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitlePaypalProtectionEligibility , tKeyPaypalProtectionEligibility    , flagsSay , ifcIDsNIPpREDEFINED_HELP42 , 0 , info.psttPaypalProtectionEligibility     ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttPaypalPayerStatus            && info.psttPaypalPayerStatus->idAdam           ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitlePaypalPayerStatus           , tKeyPaypalPayerStatus              , flagsSay , ifcIDsNIPpREDEFINED_HELP32 , 0 , info.psttPaypalPayerStatus               ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttPaypalPayerId                && info.psttPaypalPayerId->idAdam               ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitlePaypalPayerId               , tKeyPaypalPayerId                  , flagsSay , ifcIDsNIPpREDEFINED_HELP22 , 0 , info.psttPaypalPayerId                   ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttPaypalPayerEmail             && info.psttPaypalPayerEmail->idAdam            ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitlePaypalPayerEmail            , tKeyPaypalPayerEmail               , flagsSay , ifcIDsNIPpREDEFINED_HELP12 , 0 , info.psttPaypalPayerEmail                ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttCharset                      && info.psttCharset->idAdam                     ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleCharset                     , tKeyCharset                        , flagsSay , ifcIDsNIPpREDEFINED_HELP02 , 0 , info.psttCharset                         ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttResidenceCountry             && info.psttResidenceCountry->idAdam            ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleResidenceCountry            , tKeyResidenceCountry               , flagsSay , ifcIDsNIPpREDEFINED_HELPe1 , 0 , info.psttResidenceCountry                ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttLastName                     && info.psttLastName->idAdam                    ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleLastName                    , tKeyLastName                       , flagsSay , ifcIDsNIPpREDEFINED_HELPd1 , 0 , info.psttLastName                        ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttFirstName                    && info.psttFirstName->idAdam                   ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleFirstName                   , tKeyFirstName                      , flagsSay , ifcIDsNIPpREDEFINED_HELPc1 , 0 , info.psttFirstName                       ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttAddressStatus                && info.psttAddressStatus->idAdam               ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAddressStatus               , tKeyAddressStatus                  , flagsSay , ifcIDsNIPpREDEFINED_HELPb1 , 0 , info.psttAddressStatus                   ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttAddressCountry               && info.psttAddressCountry->idAdam              ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAddressCountry              , tKeyAddressCountry                 , flagsSay , ifcIDsNIPpREDEFINED_HELPa1 , 0 , info.psttAddressCountry                  ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttAddressZip                   && info.psttAddressZip->idAdam                  ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAddressZip                  , tKeyAddressZip                     , flagsSay , ifcIDsNIPpREDEFINED_HELP91 , 0 , info.psttAddressZip                      ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttAddressCountryCode           && info.psttAddressCountryCode->idAdam          ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAddressCountryCode          , tKeyAddressCountryCode             , flagsSay , ifcIDsNIPpREDEFINED_HELP81 , 0 , info.psttAddressCountryCode              ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttAddressState                 && info.psttAddressState->idAdam                ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAddressState                , tKeyAddressState                   , flagsSay , ifcIDsNIPpREDEFINED_HELP71 , 0 , info.psttAddressState                    ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttAddressCity                  && info.psttAddressCity->idAdam                 ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAddressCity                 , tKeyAddressCity                    , flagsSay , ifcIDsNIPpREDEFINED_HELP61 , 0 , info.psttAddressCity                     ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttAddressStreet                && info.psttAddressStreet->idAdam               ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAddressStreet               , tKeyAddressStreet                  , flagsSay , ifcIDsNIPpREDEFINED_HELP51 , 0 , info.psttAddressStreet                   ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttAddressName                  && info.psttAddressName->idAdam                 ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleAddressName                 , tKeyAddressName                    , flagsSay , ifcIDsNIPpREDEFINED_HELP41 , 0 , info.psttAddressName                     ) ; idBoxLath = 0 ; }
                                 flagsSay |= flSAYfIELDeDIT_LOCKED ;
                                 //FIELDS THAT THE ACCOUNT OWNER IS NOT ALLOWED TO MODIFY
     
-                                if( bAllFields || ( info.psttZipAt                        && info.psttZipAt->idAdam                       ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleZipAt                       , tKeyZipAt                          , flagsSay , ifcIDsNIPpREDEFINED_HELPf1 , 0 , info.psttZipAt                           ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttHelloGreeting                && info.psttHelloGreeting->idAdam               ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleDirectoryGreeting           , tKeyHelloGreeting                  , flagsSay , ifcIDsNIPpREDEFINED_HELP72 , 0 , info.psttHelloGreeting                   ) ; idBoxLath = 0 ; }
-                                if( bAllFields || ( info.psttDirectoryGreeting            && info.psttDirectoryGreeting->idAdam           ) ) { meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleDirectoryGreeting           , tKeyDirectoryGreeting              , flagsSay , ifcIDsNIPpREDEFINED_HELP62 , 0 , info.psttDirectoryGreeting               ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttZipAt                        && info.psttZipAt->idAdam                       ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleZipAt                       , tKeyZipAt                          , flagsSay , ifcIDsNIPpREDEFINED_HELPf1 , 0 , info.psttZipAt                           ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttHelloGreeting                && info.psttHelloGreeting->idAdam               ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleDirectoryGreeting           , tKeyHelloGreeting                  , flagsSay , ifcIDsNIPpREDEFINED_HELP72 , 0 , info.psttHelloGreeting                   ) ; idBoxLath = 0 ; }
+                                if( bAllFields || ( info.psttDirectoryGreeting            && info.psttDirectoryGreeting->idAdam           ) ) { meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleDirectoryGreeting           , tKeyDirectoryGreeting              , flagsSay , ifcIDsNIPpREDEFINED_HELP62 , 0 , info.psttDirectoryGreeting               ) ; idBoxLath = 0 ; }
                                 flagsSay &= ~( F(flSAYfIELDeDIT_CHECKBOX) ) ;
-                                meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleFlagListInHello     , tKeyFlagListInHello     , flagsSay , ifcIDsNIPpREDEFINED_HELP82 , 0 , (strokeS*)!!( F(info.flagsMode) & fliACCOUNTmODE_LISTmEhELLO     ) ) ;
-                                meP.sayFieldEditF( tinP , stBodyP , idBoxLath , tTitleFlagListInDirectory , tKeyFlagListInDirectory , flagsSay , ifcIDsNIPpREDEFINED_HELP52 , 0 , (strokeS*)!!( F(info.flagsMode) & fliACCOUNTmODE_LISTmEdIRECTORY ) ) ;
+                                meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleFlagListInHello     , tKeyFlagListInHello     , flagsSay , ifcIDsNIPpREDEFINED_HELP82 , 0 , (strokeS*)!!( F(info.flagsMode) & fliACCOUNTmODE_LISTmEhELLO     ) ) ;
+                                meP.sayFieldEditF( tinBaseP , stBodyP , idBoxLath , tTitleFlagListInDirectory , tKeyFlagListInDirectory , flagsSay , ifcIDsNIPpREDEFINED_HELP52 , 0 , (strokeS*)!!( F(info.flagsMode) & fliACCOUNTmODE_LISTmEdIRECTORY ) ) ;
                                 flagsSay |= flSAYfIELDeDIT_CHECKBOX ;
                                 //FIELDS THAT THE ACCOUNT OWNER IS ALLOWED TO MODIFY
                             {
                             else
                             }
-                                meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTf3 ) ;
-                                meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT44 ) ;
-                                meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTe3 ) ;
-                                meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT34 ) ;
-                                meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTd3 ) ;
+                                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTf3 ) ;
+                                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT44 ) ;
+                                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTe3 ) ;
+                                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT34 ) ;
+                                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTd3 ) ;
                             {
                             if( !bAllFields && bNoFieldsOccupied )
 
@@ -679,11 +679,11 @@
                         {
                         //FOR EACH FIELD:
 
-                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTc3 ) ;
-                        if( !bAllFieldsOccupied && !bAllFields ) { meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTb3 ) ; }
-                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTa3 ) ;
-                        meP.pushSnipF( tinP , stBodyP , psttEmail ) ;
-                        meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT93 ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTc3 ) ;
+                        if( !bAllFieldsOccupied && !bAllFields ) { meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTb3 ) ; }
+                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNTa3 ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , psttEmail ) ;
+                        meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT93 ) ;
 
                         ;
 
@@ -735,46 +735,46 @@
                     {
                     if( !POOP )
     
-                    accountS info( tinP , etThread , idAccount ) ;
+                    accountS info( tinBaseP , etThread , idAccount ) ;
                     bShowAll = 0 ;
                 {
                 if( bEditAcc )
 
                 }
                     }
-                        if( ppstto ) { etThread.strMakeF( tinP , LF , *ppstto , *(strokeS**)&(countT&)swKVP ) ; ___( *ppstto ) ; }
+                        if( ppstto ) { etThread.strMakeF( tinBaseP , LF , *ppstto , *(strokeS**)&(countT&)swKVP ) ; ___( *ppstto ) ; }
     
-                        else if( 1 == etThread.strIdF( tinP , tKeyHelloGreeting                 , psttLeverKVP ) ) ppstto = &info.psttHelloGreeting                 ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyDirectoryGreeting             , psttLeverKVP ) ) ppstto = &info.psttDirectoryGreeting             ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyPaypalProtectionEligibility   , psttLeverKVP ) ) ppstto = &info.psttPaypalProtectionEligibility   ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyPaypalPayerStatus             , psttLeverKVP ) ) ppstto = &info.psttPaypalPayerStatus             ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyPaypalPayerId                 , psttLeverKVP ) ) ppstto = &info.psttPaypalPayerId                 ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyPaypalPayerEmail              , psttLeverKVP ) ) ppstto = &info.psttPaypalPayerEmail              ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyCharset                       , psttLeverKVP ) ) ppstto = &info.psttCharset                       ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyZipAt                         , psttLeverKVP ) ) ppstto = &info.psttZipAt                         ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyResidenceCountry              , psttLeverKVP ) ) ppstto = &info.psttResidenceCountry              ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyLastName                      , psttLeverKVP ) ) ppstto = &info.psttLastName                      ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyFirstName                     , psttLeverKVP ) ) ppstto = &info.psttFirstName                     ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyAddressStatus                 , psttLeverKVP ) ) ppstto = &info.psttAddressStatus                 ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyAddressCountry                , psttLeverKVP ) ) ppstto = &info.psttAddressCountry                ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyAddressZip                    , psttLeverKVP ) ) ppstto = &info.psttAddressZip                    ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyAddressCountryCode            , psttLeverKVP ) ) ppstto = &info.psttAddressCountryCode            ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyAddressState                  , psttLeverKVP ) ) ppstto = &info.psttAddressState                  ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyAddressCity                   , psttLeverKVP ) ) ppstto = &info.psttAddressCity                   ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyAddressStreet                 , psttLeverKVP ) ) ppstto = &info.psttAddressStreet                 ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyAddressName                   , psttLeverKVP ) ) ppstto = &info.psttAddressName                   ;
-                        else if( 1 == etThread.strIdF( tinP , tKeyFlagListInHello               , psttLeverKVP ) && !etThread.strCompareF( tinP , tYes , *(strokeS**)&(countT&)swKVP ) ) info.flagsMode |= fliACCOUNTmODE_LISTmEhELLO ;
-                             if( 1 == etThread.strIdF( tinP , tKeyFlagListInDirectory           , psttLeverKVP ) && !etThread.strCompareF( tinP , tYes , *(strokeS**)&(countT&)swKVP ) ) info.flagsMode |= fliACCOUNTmODE_LISTmEdIRECTORY ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyHelloGreeting                 , psttLeverKVP ) ) ppstto = &info.psttHelloGreeting                 ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyDirectoryGreeting             , psttLeverKVP ) ) ppstto = &info.psttDirectoryGreeting             ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyPaypalProtectionEligibility   , psttLeverKVP ) ) ppstto = &info.psttPaypalProtectionEligibility   ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyPaypalPayerStatus             , psttLeverKVP ) ) ppstto = &info.psttPaypalPayerStatus             ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyPaypalPayerId                 , psttLeverKVP ) ) ppstto = &info.psttPaypalPayerId                 ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyPaypalPayerEmail              , psttLeverKVP ) ) ppstto = &info.psttPaypalPayerEmail              ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyCharset                       , psttLeverKVP ) ) ppstto = &info.psttCharset                       ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyZipAt                         , psttLeverKVP ) ) ppstto = &info.psttZipAt                         ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyResidenceCountry              , psttLeverKVP ) ) ppstto = &info.psttResidenceCountry              ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyLastName                      , psttLeverKVP ) ) ppstto = &info.psttLastName                      ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyFirstName                     , psttLeverKVP ) ) ppstto = &info.psttFirstName                     ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyAddressStatus                 , psttLeverKVP ) ) ppstto = &info.psttAddressStatus                 ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyAddressCountry                , psttLeverKVP ) ) ppstto = &info.psttAddressCountry                ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyAddressZip                    , psttLeverKVP ) ) ppstto = &info.psttAddressZip                    ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyAddressCountryCode            , psttLeverKVP ) ) ppstto = &info.psttAddressCountryCode            ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyAddressState                  , psttLeverKVP ) ) ppstto = &info.psttAddressState                  ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyAddressCity                   , psttLeverKVP ) ) ppstto = &info.psttAddressCity                   ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyAddressStreet                 , psttLeverKVP ) ) ppstto = &info.psttAddressStreet                 ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyAddressName                   , psttLeverKVP ) ) ppstto = &info.psttAddressName                   ;
+                        else if( 1 == etThread.strIdF( tinBaseP , tKeyFlagListInHello               , psttLeverKVP ) && !etThread.strCompareF( tinBaseP , tYes , *(strokeS**)&(countT&)swKVP ) ) info.flagsMode |= fliACCOUNTmODE_LISTmEhELLO ;
+                             if( 1 == etThread.strIdF( tinBaseP , tKeyFlagListInDirectory           , psttLeverKVP ) && !etThread.strCompareF( tinBaseP , tYes , *(strokeS**)&(countT&)swKVP ) ) info.flagsMode |= fliACCOUNTmODE_LISTmEdIRECTORY ;
                         ZE( strokeS** , ppstto ) ;
 
                         TN( tYes , "yes" ) ;
     
-                        psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+                        psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                    countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+                    countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
     
-                    accountS info( tinP , etThread , idAccount , fliACCOUNTmODE_OWNERcONFIRMED , (strokeS*)0 ) ;
+                    accountS info( tinBaseP , etThread , idAccount , fliACCOUNTmODE_OWNERcONFIRMED , (strokeS*)0 ) ;
                 {
                 if( bSaveAcc )
 
@@ -890,36 +890,36 @@
 
         }
             }
-                idSub = etThread.strDigitsToSCountF( tinP , tSubaccount , 36 ) ;
+                idSub = etThread.strDigitsToSCountF( tinBaseP , tSubaccount , 36 ) ;
                 tSubaccount = T(zsttv) ;
-                if( zsttv ) { etThread.strTrimF( tinP , zsttv , 0 , T(TbLACKnEWlINE) ) ; ___( zsttv ) ; }
+                if( zsttv ) { etThread.strTrimF( tinBaseP , zsttv , 0 , T(TbLACKnEWlINE) ) ; ___( zsttv ) ; }
                 strokeS*& zsttv = *(strokeS**)&(countT&)swKVP ;
                 psttLeverKVP = tKeySuba ;
             {
-            if( ( bAllFields || bSpamSub || bEditSub || bDeleteSub || bSaveSub || bFieldMore ) && swKVP.idSlotOfLeverF( tinP , (countT)(strokeS*)tKeySuba ) )
+            if( ( bAllFields || bSpamSub || bEditSub || bDeleteSub || bSaveSub || bFieldMore ) && swKVP.idSlotOfLeverF( tinBaseP , (countT)(strokeS*)tKeySuba ) )
 
             }
                 }
-                    else if( !etThread.strCompareF( tinP , tValueFormEditAcc , tForm ) ) bEditAcc = 1 ;
-                         if( !etThread.strCompareF( tinP , tValueFormEditSub , tForm ) ) bEditSub = 1 ;
+                    else if( !etThread.strCompareF( tinBaseP , tValueFormEditAcc , tForm ) ) bEditAcc = 1 ;
+                         if( !etThread.strCompareF( tinBaseP , tValueFormEditSub , tForm ) ) bEditSub = 1 ;
                 {
-                else if( !etThread.strCompareF( tinP , zsttw , tValueDoEdit   ) )
+                else if( !etThread.strCompareF( tinBaseP , zsttw , tValueDoEdit   ) )
                 }
-                    if( !etThread.strCompareF( tinP , tValueFormSpamSub , tForm ) ) bSpamSub = 1 ;
+                    if( !etThread.strCompareF( tinBaseP , tValueFormSpamSub , tForm ) ) bSpamSub = 1 ;
                 {
-                else if( !etThread.strCompareF( tinP , zsttw , tValueDoSpam   ) )
+                else if( !etThread.strCompareF( tinBaseP , zsttw , tValueDoSpam   ) )
                 }
-                    else if( !etThread.strCompareF( tinP , tValueFormSaveAcc , tForm ) ) bSaveAcc = 1 ;
-                         if( !etThread.strCompareF( tinP , tValueFormSaveSub , tForm ) ) bSaveSub = 1 ;
+                    else if( !etThread.strCompareF( tinBaseP , tValueFormSaveAcc , tForm ) ) bSaveAcc = 1 ;
+                         if( !etThread.strCompareF( tinBaseP , tValueFormSaveSub , tForm ) ) bSaveSub = 1 ;
                 {
-                else if( !etThread.strCompareF( tinP , zsttw , tValueDoSave   ) )
-                else if( !etThread.strCompareF( tinP , zsttw , tValueDoMore   ) ) bAllFields = 1 ;
-                     if( !etThread.strCompareF( tinP , zsttw , tValueDoDelete ) ) bDeleteSub    = 1 ;
+                else if( !etThread.strCompareF( tinBaseP , zsttw , tValueDoSave   ) )
+                else if( !etThread.strCompareF( tinBaseP , zsttw , tValueDoMore   ) ) bAllFields = 1 ;
+                     if( !etThread.strCompareF( tinBaseP , zsttw , tValueDoDelete ) ) bDeleteSub    = 1 ;
 
                 strokeS* zsttw = (strokeS*)(countT)swKVP ;
                 psttLeverKVP = tKeyDo ;
             {
-            if( !bFieldMore && swKVP.idSlotOfLeverF( tinP , (countT)(strokeS*)tKeyDo ) )
+            if( !bFieldMore && swKVP.idSlotOfLeverF( tinBaseP , (countT)(strokeS*)tKeyDo ) )
 
             }
                 }
@@ -927,9 +927,9 @@
                         break ;
                         tForm = T((strokeS*)(countT)swKVP) ;
                     {
-                    if( !etThread.strCompareF( tinP , tKeyForm , psttLeverKVP ) )
+                    if( !etThread.strCompareF( tinBaseP , tKeyForm , psttLeverKVP ) )
 
-                    psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+                    psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
 
@@ -938,20 +938,20 @@
                         }
                             break ;
                             bFieldMore = 1 ;
-                            etThread.delF( tinP , psttw ) ;
+                            etThread.delF( tinBaseP , psttw ) ;
                             tFieldMore = T(psttw) ;
-                            etThread.strSubstringF( tinP , psttw , idf , idl , psttLeverKVP ) ; ___( psttw ) ;
+                            etThread.strSubstringF( tinBaseP , psttw , idf , idl , psttLeverKVP ) ; ___( psttw ) ;
                             ZE( countT , idl ) ;
-                            countT idf = tKeyDoFieldDot.csF( tinP ) + 1 ;
+                            countT idf = tKeyDoFieldDot.csF( tinBaseP ) + 1 ;
                             ZE( strokeS* , psttw ) ;
                         {
-                        if( 1 == etThread.strIdF( tinP , tKeyDoFieldDot , psttLeverKVP ) )
+                        if( 1 == etThread.strIdF( tinBaseP , tKeyDoFieldDot , psttLeverKVP ) )
     
-                        psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+                        psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                 {
-                countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+                countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
             {
             TN( tForm , "" ) ;
 
@@ -983,32 +983,32 @@
         ZE( boolT  , bDeleteSub ) ;
     {
     else
-    if( !psttEmail ){ meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT1 ) ; }
+    if( !psttEmail ){ meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT1 ) ; }
 
     }
-        if( psttEmail && psttEmail->idAdam ) { etThread.strFromF( tinP , psttIdAccount , idAccount , flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE , 0 , 36 ) ; ___( psttIdAccount ) ; }
-        idAccount = session.getIdAccountF( tinP ) ;
-        session.getEmailF( tinP , psttEmail ) ; ___( psttEmail ) ;
-        sessionC& session = sessionsP( tinP , nnPeerP ) ;
+        if( psttEmail && psttEmail->idAdam ) { etThread.strFromF( tinBaseP , psttIdAccount , idAccount , flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE , 0 , 36 ) ; ___( psttIdAccount ) ; }
+        idAccount = session.getIdAccountF( tinBaseP ) ;
+        session.getEmailF( tinBaseP , psttEmail ) ; ___( psttEmail ) ;
+        sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
     {
     ZE( strokeS* , psttIdAccount ) ;
     ZE( countT   , idAccount ) ;
     ZE( strokeS* , psttEmail ) ;
 
     //}
-    //    if( tSay.csF( tinP ) ) { P OPUP( tSay ) ; }
+    //    if( tSay.csF( tinBaseP ) ) { P OPUP( tSay ) ; }
     //    }
     //        tSay += T(psttLeverKVP)+T(": \"")+T((strokeS*)(countT&)swKVP)+T("\"")+tcr ;
-    //        psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+    //        psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
     //    {
     //    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    //    countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+    //    countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
     //    
     //    TN( tSay , "" ) ;
     //    TN( tcr , "\r\n" ) ;
     //{
 {
-/*1*/voidT myAccountSettingsCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT myAccountSettingsCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 
     }

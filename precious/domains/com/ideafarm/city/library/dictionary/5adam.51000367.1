@@ -10,22 +10,22 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        else                    { ZE( countT , tid ) ; etThread.osThreadF( tinP , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso ) ; }
+        else                    { ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso ) ; }
         if( ether || etThread ) { DEL( pso ) ; }
-        socHear.acceptF( tinP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+        socHear.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
     {
     while( !ether && !etThread )
 
-    socHear.listenF( tinP ) ;
-    socHear.bindF( tinP , ifcPORToLD1_ECHO ) ;
-    socketC socHear( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    socHear.listenF( tinBaseP ) ;
+    socHear.bindF( tinBaseP , ifcPORToLD1_ECHO ) ;
+    socketC socHear( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 {
 
 TODO
@@ -36,13 +36,13 @@ DONE( tmServeF )
     DEL( pso ) ;
 
     }
-        pso->writeF( tinP , sIn ) ;
-        pso->readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        pso->writeF( tinBaseP , sIn ) ;
+        pso->readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !etThread )
 
-    pso->etherF( tinP , etThread ) ;
+    pso->etherF( tinBaseP , etThread ) ;
     socketC* pso = (socketC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

@@ -12,19 +12,19 @@ REST
 OSsLEEPf( - 1 ) ;
 
 etThread.osThreadF( TaRG1( tmExHandlerF ) ) ;
-//doF( tinP ) ;
+//doF( tinBaseP ) ;
 
 }
-    etThread.delF( tinP , pbc ) ;    
-    etThread.delF( tinP , pbe ) ;    
+    etThread.delF( tinBaseP , pbc ) ;    
+    etThread.delF( tinBaseP , pbe ) ;    
     }
-        etThread.memCopyF( tinP , (byteT*)&processGlobal2S::_processGlobal2I_IF().cInfo , pbc , cbc ) ;
-        etThread.memCopyF( tinP , (byteT*)&processGlobal2S::_processGlobal2I_IF().eInfo , pbe , cbe ) ;
+        etThread.memCopyF( tinBaseP , (byteT*)&processGlobal2S::_processGlobal2I_IF().cInfo , pbc , cbc ) ;
+        etThread.memCopyF( tinBaseP , (byteT*)&processGlobal2S::_processGlobal2I_IF().eInfo , pbe , cbe ) ;
     {
     else
     if( POOP ) POOPR
-    tinP.pEtScratch->boxGetShadowF( tinP , pbc , cbc , T("///d/tmp/cinfo") , 1 ) ; ___( pbc ) ;
-    tinP.pEtScratch->boxGetShadowF( tinP , pbe , cbe , T("///d/tmp/einfo") , 1 ) ; ___( pbe ) ;
+    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbc , cbc , T("///d/tmp/cinfo") , 1 ) ; ___( pbc ) ;
+    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbe , cbe , T("///d/tmp/einfo") , 1 ) ; ___( pbe ) ;
     ZE( countT , cbc ) ;
     ZE( countT , cbe ) ;
     ZE( byteT* , pbc ) ;
@@ -34,14 +34,14 @@ etThread.osThreadF( TaRG1( tmExHandlerF ) ) ;
 {
 IFsCRATCH
 
-CONoUTrAW3( "TODO [osTid]: " , tinP.osTid , "\r\n" ) ;
+CONoUTrAW3( "TODO [osTid]: " , ((tinNormalS&)tinBaseP).osTid , "\r\n" ) ;
 
 TODO
 
 DONE( tmExHandlerF )
 thirdC::dosExitProcessIF( 0 ) ; //THIS IS NEEDED BECAUSE THE HANDLER SIMULATION HAS PARTIALLY CLEANED UP THE MAIN THREAD, AND "DONE" WILL FAIL
-doF( tinP ) ;
-CONoUTrAW3( "tmExHandlerF [osTid]: " , tinP.osTid , "\r\n" ) ;
+doF( tinBaseP ) ;
+CONoUTrAW3( "tmExHandlerF [osTid]: " , ((tinNormalS&)tinBaseP).osTid , "\r\n" ) ;
 TASK( tmExHandlerF )
 
 }
@@ -51,10 +51,10 @@ TASK( tmExHandlerF )
     count8S c8p( (countT)&processGlobal2S::_processGlobal2I_IF().ecInfo , (countT)&idMile , ebpAM() , (countT)&prFloat ) ;
     ZE( countT , idMile ) ;
     
-    thirdC::c_memcpyIF( poopC() , tinP.pTieLath->pbTin , (byteT*)&tinP , sizeof tinP.pTieLath->pbTin ) ;
-    thirdC::c_memsetIF( (byteT*)tinP.pTieLath , sizeof *tinP.pTieLath ) ;
+    thirdC::c_memcpyIF( poopC() , ((tinNormalS&)tinBaseP).pTieLath->pbTin , (byteT*)&tinBaseP , sizeof ((tinNormalS&)tinBaseP).pTieLath->pbTin ) ;
+    thirdC::c_memsetIF( (byteT*)((tinNormalS&)tinBaseP).pTieLath , sizeof *((tinNormalS&)tinBaseP).pTieLath ) ;
 {
-voidT doF( tinS& tinP )
+voidT doF( tinBaseS& tinBaseP )
 
 restartC  restart( prFloat ) ;
 restartC* prFloat ;

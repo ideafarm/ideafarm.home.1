@@ -14,16 +14,16 @@
             colP += winPulpP.mIdColTransformAnchor ;
             rowP *= mLen ;
             colP *= mLen ;
-            rowP = thirdC::mathSinIF( tinP , mOsAngle2 ) ;
-            colP = thirdC::mathCosIF( tinP , mOsAngle2 ) ;
+            rowP = thirdC::mathSinIF( tinBaseP , mOsAngle2 ) ;
+            colP = thirdC::mathCosIF( tinBaseP , mOsAngle2 ) ;
             measureT mOsAngle2 = mOsAngle1 + mOsAngleT /*+ PI / 2*/ ;
-            measureT mOsAngleT = thirdC::mathAtanIF( tinP , mColRay , mRowRay ) ;
+            measureT mOsAngleT = thirdC::mathAtanIF( tinBaseP , mColRay , mRowRay ) ;
 
             measureT mRowRay = winPulpP.mSinHotAngle ;
             measureT mColRay = winPulpP.mCosHotAngle ;
 
-            measureT mOsAngle1 = thirdC::mathAtanIF( tinP , mCol , mRow ) ;
-            measureT mLen      = thirdC::mathSqrtIF( tinP , mCol * mCol + mRow * mRow ) ;
+            measureT mOsAngle1 = thirdC::mathAtanIF( tinBaseP , mCol , mRow ) ;
+            measureT mLen      = thirdC::mathSqrtIF( tinBaseP , mCol * mCol + mRow * mRow ) ;
         {
         if( mCol || mRow )
         measureT mRow = rowP - winPulpP.mIdRowTransformAnchor ;
@@ -33,10 +33,10 @@
     {
     if( F(winPulpP.flagsMode) & flPULPmODE_TRANSFORMaTaNGLE )
 {
-/*1*/voidT windowOldC::transformHotAngleF( tinS& tinP , measureT& colP , measureT& rowP , winPulpOldC& winPulpP )/*1*/
+/*1*/voidT windowOldC::transformHotAngleF( tinBaseS& tinBaseP , measureT& colP , measureT& rowP , winPulpOldC& winPulpP )/*1*/
 
-// tinP ADDED PROVISIONALLY DURING PREPARATION FOR PORT TO LINUX, WHICH INVOLVED ADDING tinP PARAMETER TO THE MATH FUNCTIONS AND OTHER FUNCTIONS IN ORDER TO MAKE THE CODE MORE CONFORMANT AND TO ENABLE THE USE OF THE BOS() MACROS FOR ALL THIRD PARTY CALLS
-// tinS& tinP PARAMETER INTENTIONALLY OMITTED, FOR MAX SPEED
+// tinBaseP ADDED PROVISIONALLY DURING PREPARATION FOR PORT TO LINUX, WHICH INVOLVED ADDING tinBaseP PARAMETER TO THE MATH FUNCTIONS AND OTHER FUNCTIONS IN ORDER TO MAKE THE CODE MORE CONFORMANT AND TO ENABLE THE USE OF THE BOS() MACROS FOR ALL THIRD PARTY CALLS
+// tinBaseS& tinBaseP PARAMETER INTENTIONALLY OMITTED, FOR MAX SPEED
 
 /**/
 */

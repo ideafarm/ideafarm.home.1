@@ -8,7 +8,7 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
     state.vaPod_z(3) /= len_z ;
     state.vaPod_z(2) /= len_z ;
     state.vaPod_z(1) /= len_z ;
@@ -21,11 +21,11 @@
     state.vaPod_x(2) /= len_x ;
     state.vaPod_x(1) /= len_x ;
 
-    measureT len_z = tinP.brcm04Raw ;
+    measureT len_z = ((tinNormalS&)tinBaseP).brcm04Raw ;
     BOSmEASURE04( WHATgbo , sqrt( state.vaPod_z * state.vaPod_z ) )
-    measureT len_y = tinP.brcm04Raw ;
+    measureT len_y = ((tinNormalS&)tinBaseP).brcm04Raw ;
     BOSmEASURE04( WHATgbo , sqrt( state.vaPod_y * state.vaPod_y ) )
-    measureT len_x = tinP.brcm04Raw ;
+    measureT len_x = ((tinNormalS&)tinBaseP).brcm04Raw ;
     BOSmEASURE04( WHATgbo , sqrt( state.vaPod_x * state.vaPod_x ) )
 
     state.vaPod_z = sqmAbsFromHull * state.vhPod_z ;
@@ -33,9 +33,9 @@
     state.vaPod_x = sqmAbsFromHull * state.vhPod_x ;
 
     sqmPodFromAbs = sqmPodFromHull * sqmHullFromAbs ;
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT eyeOldC::freshPodAbsF( tinS& tinP )/*1*/
+/*1*/voidT eyeOldC::freshPodAbsF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 

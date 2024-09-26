@@ -12,20 +12,20 @@
     }
         }
             }
-                delF( tinP , psttDir ) ;
+                delF( tinBaseP , psttDir ) ;
                 _IO_
             {
     
             else { __( idSlash ) ; }
-            else if( idSlash == 5 ) bMade = !diskMakeDirStupidlyF( tinP , psttDir ) ; //ROOT DIRECTORY SPECIFIED. THIS JUST VERIFIES THAT THE DRIVE EXISTS
+            else if( idSlash == 5 ) bMade = !diskMakeDirStupidlyF( tinBaseP , psttDir ) ; //ROOT DIRECTORY SPECIFIED. THIS JUST VERIFIES THAT THE DRIVE EXISTS
             }
                 }
-                    delF( tinP , pstt1b ) ;
+                    delF( tinBaseP , pstt1b ) ;
                     _IO_
                 {
 
                 }
-                    bMade = !diskMakeDirF( tinP , psttDir ) ;
+                    bMade = !diskMakeDirF( tinBaseP , psttDir ) ;
                     _IO_
                 {
                 if( !bFound && !POOP )
@@ -43,11 +43,11 @@
                 FORsTRINGSiN1( pstt1b )
                 ZE( boolT , bFound ) ;
     
-                diskFindFileOrDirF( tinP , pstt1b , fnLike.pathF() , &pat ) ; ___( pstt1b ) ;
+                diskFindFileOrDirF( tinBaseP , pstt1b , fnLike.pathF() , &pat ) ; ___( pstt1b ) ;
                 ZE( strokeS* , pstt1b ) ;
 
-                patternC pat( tinP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-                fileNameC fnLike( tinP , *this , psttDir ) ;
+                patternC pat( tinBaseP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                fileNameC fnLike( tinBaseP , *this , psttDir ) ;
                 _IO_
             {
             if( idSlash > ( bLan ? 8 : 5 ) )
@@ -60,7 +60,7 @@
             boolT bLan =                        //20200319@1858: EDITED TO HANDLE psttP OF THE FORM "////factory8/x/tmp/"  (4TH SLASH INDICATES NetBIOS HOST NAME FOLLOWS)
             //CS:CODEsYNCH: PSEUDODUPLICATE: 3600201c 3600201d
     
-            strSubstringF( tinP , psttDir , idf , idl , psttFileOrDirP ) ; ___( psttDir ) ;
+            strSubstringF( tinBaseP , psttDir , idf , idl , psttFileOrDirP ) ; ___( psttDir ) ;
             countT idl = idSlash ;
             countT idf = 1 ;
             ZE( strokeS* , psttDir ) ;
@@ -68,7 +68,7 @@
         {
         if( idSlash )
 
-        const countT idSlash = strIdF( tinP , countTC( 1 ) , sttq , S1C('/') , psttFileOrDirP , 0 , - 1 /*- bDir*/ ) ; //20170714@1243: COMMENTED OUT "- bDir" SO WILL NOW CREATE THE ENTIRE PATH SPECIFIED IN psttFileOrDirP RATHER THAN IGNORE THE LEAF DIRECTORY
+        const countT idSlash = strIdF( tinBaseP , countTC( 1 ) , sttq , S1C('/') , psttFileOrDirP , 0 , - 1 /*- bDir*/ ) ; //20170714@1243: COMMENTED OUT "- bDir" SO WILL NOW CREATE THE ENTIRE PATH SPECIFIED IN psttFileOrDirP RATHER THAN IGNORE THE LEAF DIRECTORY
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
 
         //boolT bDir = psttFileOrDirP[ CSpREFIX - 1 + psttFileOrDirP->idAdam ].idAdam == '/' ;
@@ -85,7 +85,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT etherC::diskMakeDirIfNeededF( tinS& tinP , const strokeS* const psttFileOrDirP )/*1*/
+/*1*/boolT etherC::diskMakeDirIfNeededF( tinBaseS& tinBaseP , const strokeS* const psttFileOrDirP )/*1*/
 
 // 20200319@1842: EDIT TO HANDLE NAMES OF THE FORM "////factory8/x/tmp/foo.ttt"
 //                                                 "////n/x/tmp/foo.ttt"

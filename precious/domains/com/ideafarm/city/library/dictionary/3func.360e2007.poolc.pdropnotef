@@ -15,7 +15,7 @@
         }
             }
                 if( pNote ) break ;
-                pNote = (*guts.ppSlots[ offs ]).pDropNoteF( tinP , pbP ) ;
+                pNote = (*guts.ppSlots[ offs ]).pDropNoteF( tinBaseP , pbP ) ;
                 _IO_
             {
             if( guts.ppSlots[ offs ] )
@@ -24,7 +24,7 @@
         ZE( dropNoteS* , pNote ) ;
         _IO_
     {
-    /*1*/dropNoteS* poolC::pDropNoteF( tinS& tinP , const byteT* const pbP )/*1*/
+    /*1*/dropNoteS* poolC::pDropNoteF( tinBaseS& tinBaseP , const byteT* const pbP )/*1*/
 
 #if defined( ENABLEdROPnOTES )
 

@@ -34,14 +34,14 @@
             ZE( countT , offo ) ;
         {
         if( pczP )
-        PUSE.newF( tinP , LF , *(byteT**)&pczP , ( cco + 1 ) * sizeof( countT ) ) ; ___( pczP ) ;
+        PUSE.newF( tinBaseP , LF , *(byteT**)&pczP , ( cco + 1 ) * sizeof( countT ) ) ; ___( pczP ) ;
         const countT cco = ccPrefix + cbi + 2 + ccSuffix ; // PREFIX BEGINmARK VALUE ENDmARK SUFFIX
     {
     if( !pczP )                                                                                                                             // IFF (IF AND ONLY IF) ALLOCATED NOW, OUTPUT IS ENTIRELY INITIALIZED TO PLACEhOLDER
 
-    countT cbi      = sizeof( countT ) * ( cNetP ? cNetP : thirdC::c_strlenIF( tinP , pczInP ) ) ;                                          // INPUT: CCiN IS EITHER EXPLICIT OR IMPLIED BY NULL TERMINATOR
-    countT ccSuffix = !pczSuffixP ? 0 : thirdC::c_strlenIF( tinP , pczSuffixP ) ;
-    countT ccPrefix = !pczPrefixP ? 0 : thirdC::c_strlenIF( tinP , pczPrefixP ) ;
+    countT cbi      = sizeof( countT ) * ( cNetP ? cNetP : thirdC::c_strlenIF( tinBaseP , pczInP ) ) ;                                          // INPUT: CCiN IS EITHER EXPLICIT OR IMPLIED BY NULL TERMINATOR
+    countT ccSuffix = !pczSuffixP ? 0 : thirdC::c_strlenIF( tinBaseP , pczSuffixP ) ;
+    countT ccPrefix = !pczPrefixP ? 0 : thirdC::c_strlenIF( tinBaseP , pczPrefixP ) ;
 
     _IO_
 
@@ -52,7 +52,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT etherC::strStretchIF( tinS& tinP , countT*& pczP , const countT* pczPrefixP , const countT* pczInP , const countT cNetP , const countT* pczSuffixP )/*1*/
+/*1*/voidT etherC::strStretchIF( tinBaseS& tinBaseP , countT*& pczP , const countT* pczPrefixP , const countT* pczInP , const countT cNetP , const countT* pczSuffixP )/*1*/
 
 // I DIFFER FROM THE osTextT OVERLOAD IN THAT I TREAT THE TERMINATING NULL AS IMPLIED (I DO NOT STORE IT)
 
@@ -73,7 +73,7 @@
   else must point to a sufficiently long string of the value LISTnAMEsYS_PLACEhOLDER
   if 0 then i will allocate it from PUSE
  pczP
- tinP
+ tinBaseP
 parameters
 /*
 

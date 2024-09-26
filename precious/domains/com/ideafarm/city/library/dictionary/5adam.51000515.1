@@ -10,8 +10,8 @@
 REST
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK * ( bHiredKid ? 0x10 : 0x1 ) ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK * ( bHiredKid ? 0x10 : 0x1 ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
         CONoUTrAW3( "" , ++ cIn , ": iduuHome is still 0\r\n" ) ;
@@ -19,31 +19,31 @@ REST
     {
     else if( !home.iduuHome )
     }
-//U::ENABLE IN PRODUCTION:         etThread.ifcHireF( tinP , T("ifcIDaDAM_4IDhOME") , ifcIDaDAM_CONSOLE , T("!noTells !ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+//U::ENABLE IN PRODUCTION:         etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_4IDhOME") , ifcIDaDAM_CONSOLE , T("!noTells !ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
         bHiredKid = 1 ;
     {
     if( home.iduuHome && !bHiredKid )
 
     else { CONoUTrAW( "home.idptRelay is still 0\r\n" ) ; }
     }
-        etThread( tinP , psPayload ) ;
+        etThread( tinBaseP , psPayload ) ;
         }
-            etThread.cioPutF( tinP , ether , count8S( ifcOLDiDcHANNEL1_BYfUNCTION , ifcOLDiDcHANNELfUNCTION_QUERYiDhOME ) , *psPayload ) ;
-            /*if( (countT)home.idptRelay != ifcIDpORT_RELAYtEST )*/ etThread.strokeF( tinP , T(".\r\n") ) ;
+            etThread.cioPutF( tinBaseP , ether , count8S( ifcOLDiDcHANNEL1_BYfUNCTION , ifcOLDiDcHANNELfUNCTION_QUERYiDhOME ) , *psPayload ) ;
+            /*if( (countT)home.idptRelay != ifcIDpORT_RELAYtEST )*/ etThread.strokeF( tinBaseP , T(".\r\n") ) ;
             CONoUTrAW( etThread ? "etThread is impotent\r\n" : "putting query\r\n" ) ;
         
             *psPayload << home.iduuHome ;
             home.idptRelay >> *psPayload ;
         {
         if( psPayload )
-        etThread( tinP , psPayload , TAG( TAGiDnULL ) ) ;
+        etThread( tinBaseP , psPayload , TAG( TAGiDnULL ) ) ;
         ZE( soulC* , psPayload ) ;
     {
     if( home.idptRelay )
 
-    etThread( tinP , psEnvelope ) ;
+    etThread( tinBaseP , psEnvelope ) ;
     }
-        etThread.cioPutF( tinP , ether , 0 , *psEnvelope ) ;
+        etThread.cioPutF( tinBaseP , ether , 0 , *psEnvelope ) ;
 
         *psEnvelope << (countT)ifcOLDiDtYPEwRAP_QUERYrELAYiDpORTtIMEc ;
         *psEnvelope << (countT)1 ; // idVersion
@@ -51,11 +51,11 @@ REST
         *psEnvelope << (strokeS*)tTM ;
     {
     if( psEnvelope )
-    etThread( tinP , psEnvelope , TAG( TAGiDnULL ) ) ;
+    etThread( tinBaseP , psEnvelope , TAG( TAGiDnULL ) ) ;
 
-    etThread( tinP , psEnvelope ) ;
+    etThread( tinBaseP , psEnvelope ) ;
     }
-        etThread.cioPutF( tinP , ether , 0 , *psEnvelope ) ;
+        etThread.cioPutF( tinBaseP , ether , 0 , *psEnvelope ) ;
 
         *psEnvelope << (countT)ifcOLDiDtYPEwRAP_QUERYrELAYrANK ;
         *psEnvelope << (countT)1 ; // idVersion
@@ -63,19 +63,19 @@ REST
         *psEnvelope << (strokeS*)tTM ;
     {
     if( psEnvelope )
-    etThread( tinP , psEnvelope , TAG( TAGiDnULL ) ) ;
+    etThread( tinBaseP , psEnvelope , TAG( TAGiDnULL ) ) ;
     ZE( soulC* , psEnvelope ) ;
 {
 while( !ether && !etThread )
 ZE( boolT , bHiredKid ) ;
 
 }
-    etThread( tinP , psEnvelope ) ;
+    etThread( tinBaseP , psEnvelope ) ;
     }
-        etThread.cioPutF( tinP , ether , 0 , *psEnvelope ) ;
+        etThread.cioPutF( tinBaseP , ether , 0 , *psEnvelope ) ;
 
         *psEnvelope << (countT)0 ; // ccFilter
-        psEnvelope->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_countTptr , (countT*)0 ) ; // pcFilter
+        psEnvelope->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_countTptr , (countT*)0 ) ; // pcFilter
         *psEnvelope << (countT)0 ; // ccTestMax ;
         *psEnvelope << (countT*)count8S( ifcOLDiDcHANNEL1_BYfUNCTION , ifcOLDiDcHANNELfUNCTION_REPLYiDhOME ) ;
         *psEnvelope << (countT)ifcOLDiDtYPEwRAP_CHANNELiNCLUDEpUSH ;
@@ -84,14 +84,14 @@ ZE( boolT , bHiredKid ) ;
         *psEnvelope << (strokeS*)tTM ;
     {
     if( psEnvelope )
-    etThread( tinP , psEnvelope , TAG( TAGiDnULL ) ) ;
+    etThread( tinBaseP , psEnvelope , TAG( TAGiDnULL ) ) ;
 
-    etThread( tinP , psEnvelope ) ;
+    etThread( tinBaseP , psEnvelope ) ;
     }
-        etThread.cioPutF( tinP , ether , 0 , *psEnvelope ) ;
+        etThread.cioPutF( tinBaseP , ether , 0 , *psEnvelope ) ;
 
         *psEnvelope << (countT)0 ; // ccFilter
-        psEnvelope->shiftLeftF( tinP , ifcIDtYPEsOULiTEM_countTptr , (countT*)0 ) ; // pcFilter
+        psEnvelope->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_countTptr , (countT*)0 ) ; // pcFilter
         *psEnvelope << (countT)0 ; // ccTestMax ;
         *psEnvelope << (countT*)count8S( ifcOLDiDcHANNEL1_BYfUNCTION , ifcOLDiDcHANNELfUNCTION_QUERYiDhOME ) ;
         *psEnvelope << (countT)ifcOLDiDtYPEwRAP_CHANNELiNCLUDEpUSH ;
@@ -100,20 +100,20 @@ ZE( boolT , bHiredKid ) ;
         *psEnvelope << (strokeS*)tTM ;
     {
     if( psEnvelope )
-    etThread( tinP , psEnvelope , TAG( TAGiDnULL ) ) ;
+    etThread( tinBaseP , psEnvelope , TAG( TAGiDnULL ) ) ;
     ZE( soulC* , psEnvelope ) ;
 {
 TN( tTM , "IdeaFarm " "(tm)" ) ;
 
-etThread.cioSetGetF( tinP , cioGetF ) ;
-etThread.cioSetArgF( tinP , cArg ) ;
+etThread.cioSetGetF( tinBaseP , cioGetF ) ;
+etThread.cioSetArgF( tinBaseP , cArg ) ;
 
 }
-    etThread.delF( tinP , pbi ) ;
+    etThread.delF( tinBaseP , pbi ) ;
     else if( pbi && cbi == sizeof( home.iduuHome ) ) home.iduuHome = *(countT*)pbi ;
     if( POOP ) POOPR
-    tinP.pEtScratch->boxGetShadowF( tinP , pbi , cbi , tFileIdHome , 1 ) ; ___( pbi ) ;
-    tinP.pEtScratch->boxZapF( tinP , tFileIdHome , 1 ) ; //U::
+    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbi , cbi , tFileIdHome , 1 ) ; ___( pbi ) ;
+    ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , tFileIdHome , 1 ) ; //U::
     SCOOPS
 
     TN( tFileIdHome , "///ideafarm/ephemeral/domains/com/ideafarm/" ) ; tFileIdHome += TF1(DDNUMB)+T("/iduuHome") ;
@@ -125,7 +125,7 @@ homeS& home = homeS::homeIF() ;
 
 countT cArg = (countT)&c8p ;
 count8S c8p( (countT)&lever , (countT)&swIdp ) ;
-switchC swIdp( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever , 0 , sizeof( portC ) ) ;
+switchC swIdp( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever , 0 , sizeof( portC ) ) ;
 ZE( countT , lever ) ;
 
 TODO
@@ -133,20 +133,20 @@ TODO
 }
     if( idptOriginP ) ;
     DEL( psGiftP ) ; //OPTIONAL
-    etherP.delF( tinP , pczChannelP ) ; //OPTIONAL
+    etherP.delF( tinBaseP , pczChannelP ) ; //OPTIONAL
     }
         //CONoUTrAW( "cioGetF: _APPLICATION\r\n" ) ; //U::
         }
             }
                 }
-                    etherP.strokeF( tinP , T("my iduuHome is now ")+TF1(home.iduuHome)+T("\r\n") ) ;
-                    etherP.boxPutF( tinP , tFileIdHome , (byteT*)&home.iduuHome , sizeof home.iduuHome ) ;
+                    etherP.strokeF( tinBaseP , T("my iduuHome is now ")+TF1(home.iduuHome)+T("\r\n") ) ;
+                    etherP.boxPutF( tinBaseP , tFileIdHome , (byteT*)&home.iduuHome , sizeof home.iduuHome ) ;
                     TN( tFileIdHome , "///ideafarm/ephemeral/domains/com/ideafarm/" ) ; tFileIdHome += TF1(DDNUMB)+T("/iduuHome") ;
 
                     home.iduuHome = iduuHomeAssigned ;
                 {
                 if( idptRelay == home.idptRelay && home.iduuHome != iduuHomeAssigned )
-                if( (countT)idptRelay != ifcIDpORT_RELAYtEST ) etherP.strokeF( tinP , T("R\r\n") ) ;
+                if( (countT)idptRelay != ifcIDpORT_RELAYtEST ) etherP.strokeF( tinBaseP , T("R\r\n") ) ;
                 *psGiftP >> iduuHomeAssigned ;
                 ZE( countT , iduuHomeAssigned ) ;
                 idptRelay << *psGiftP ;
@@ -155,23 +155,23 @@ TODO
             else if( pczChannelP[ 1 ] == ifcOLDiDcHANNELfUNCTION_REPLYiDhOME )
             }
                 }
-                    etherP( tinP , psQuery ) ;
+                    etherP( tinBaseP , psQuery ) ;
                     }
                         }
-                            etherP( tinP , psGift ) ;
+                            etherP( tinBaseP , psGift ) ;
                             }
-                                etherP.cioPutF( tinP , bQuitP , count8S( ifcOLDiDcHANNEL1_BYfUNCTION , ifcOLDiDcHANNELfUNCTION_REPLYiDhOME ) , *psGift ) ;
+                                etherP.cioPutF( tinBaseP , bQuitP , count8S( ifcOLDiDcHANNEL1_BYfUNCTION , ifcOLDiDcHANNELfUNCTION_REPLYiDhOME ) , *psGift ) ;
                             
                                 *psGift << iduuHomeRequested ;
                                 idptRequestor >> *psGift ;
                             {
                             if( psGift )
-                            etherP( tinP , psGift , TAG( TAGiDnULL ) ) ;
+                            etherP( tinBaseP , psGift , TAG( TAGiDnULL ) ) ;
                             ZE( soulC* , psGift ) ;
                         {
                         if( bReply )
 
-                        swIdpP.ungrabF( tinP ) ;
+                        swIdpP.ungrabF( tinBaseP ) ;
 
                         else if( idpAssigned != idptRequestor ) { BLAMMO ; }
                         }
@@ -188,7 +188,7 @@ TODO
 
                         }
                             iduuHomeRequested = heavyLever + 1 ;
-                            countT heavyLever = swIdpP.leverF( tinP , swIdpP.cFlavorsF( tinP ) ) ;
+                            countT heavyLever = swIdpP.leverF( tinBaseP , swIdpP.cFlavorsF( tinBaseP ) ) ;
                         {
                         if( !iduuHomeRequested )
 
@@ -200,23 +200,23 @@ TODO
                                 {
                                 if( idptRequestor == idpTest )
                                 portC& idpTest = *(portC*)&(countT&)swIdpP ;
-                                leverP = swIdpP.leverF( tinP , idf ) ;
+                                leverP = swIdpP.leverF( tinBaseP , idf ) ;
                             {
                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                            countT cFlavors = swIdpP.cFlavorsF( tinP ) ;
+                            countT cFlavors = swIdpP.cFlavorsF( tinBaseP ) ;
                         {
                         if( !iduuHomeRequested )
 
-                        swIdpP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                        swIdpP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                        if( (countT)idptRequestor != ifcIDpORT_RELAYtEST ) etherP.strokeF( tinP , T("Q\r\n") ) ;
+                        if( (countT)idptRequestor != ifcIDpORT_RELAYtEST ) etherP.strokeF( tinBaseP , T("Q\r\n") ) ;
                         *psGiftP >> iduuHomeRequested ;
                         ZE( countT , iduuHomeRequested ) ;
                         idptRequestor << *psGiftP ;
                         portTimeC idptRequestor ;
                     {
                     if( psQuery )
-                    etherP( tinP , psQuery , TAG( TAGiDnULL ) ) ;
+                    etherP( tinBaseP , psQuery , TAG( TAGiDnULL ) ) ;
                     ZE( soulC* , psQuery ) ;
                 {
                 if( home.idRank == 1 )
@@ -225,7 +225,7 @@ TODO
             if( pczChannelP[ 1 ] == ifcOLDiDcHANNELfUNCTION_QUERYiDhOME )
         {
         if( pczChannelP && pczChannelP[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION )
-        //etherP.strokeF( tinP , T("idRank ")+TF1(home.idRank)+T(" received application payload on channel ")+T(pczChannelP)+T("\r\n") ) ;
+        //etherP.strokeF( tinBaseP , T("idRank ")+TF1(home.idRank)+T(" received application payload on channel ")+T(pczChannelP)+T("\r\n") ) ;
         //CONoUTrAW( "cioGetF: _APPLICATION\r\n" ) ; //U::
     {
     else if( idGiftTypeP == ifcOLDiDtYPEgIFT_APPLICATION )
@@ -233,7 +233,7 @@ TODO
         //CONoUTrAW( "cioGetF: _REPLYrELAYiDpORTtIMEc\r\n" ) ; //U::
         }
             home.idptRelay = idpt ;
-            //etherP.strokeF( tinP , T("changing my time from ")+TT(tOld.time1,tOld.time2)+T(" to ")+TT(tNew.time1,tNew.time2)+T("\r\n") ) ; //U::
+            //etherP.strokeF( tinBaseP , T("changing my time from ")+TT(tOld.time1,tOld.time2)+T(" to ")+TT(tNew.time1,tNew.time2)+T("\r\n") ) ; //U::
 
             const timeS& tNew = idpt ;
             const timeS& tOld = home.idptRelay ;
@@ -241,7 +241,7 @@ TODO
         if( home.idptRelay != idpt )
         idpt << *psGiftP ;
         portTimeC idpt ;
-        //etherP.strokeF( tinP , T("received my relay timestamp\r\n") ) ; //U::
+        //etherP.strokeF( tinBaseP , T("received my relay timestamp\r\n") ) ; //U::
         //CONoUTrAW( "cioGetF: _REPLYrELAYiDpORTtIMEc\r\n" ) ; //U::
     {
     else if( idGiftTypeP == ifcOLDiDtYPEgIFT_REPLYrELAYiDpORTtIMEc )
@@ -249,12 +249,12 @@ TODO
         //CONoUTrAW( "cioGetF: _REPLYrELAYrANK\r\n" ) ; //U::
         }
             home.idRank = idRank ;
-            //etherP.strokeF( tinP , T("changing my idRank from ")+TF1(home.idRank)+T(" to ")+TF1(idRank)+T("\r\n") ) ; //U::
+            //etherP.strokeF( tinBaseP , T("changing my idRank from ")+TF1(home.idRank)+T(" to ")+TF1(idRank)+T("\r\n") ) ; //U::
         {
         if( home.idRank != idRank )
         *psGiftP >> idRank ;
         ZE( countT , idRank ) ;
-        //etherP.strokeF( tinP , T("received my relay rank\r\n") ) ; //U::
+        //etherP.strokeF( tinBaseP , T("received my relay rank\r\n") ) ; //U::
         //CONoUTrAW( "cioGetF: _REPLYrELAYrANK\r\n" ) ; //U::
     {
     if( idGiftTypeP == ifcOLDiDtYPEgIFT_REPLYrELAYrANK )
@@ -265,7 +265,7 @@ TODO
     countT&      leverP    =      *(countT*)c8p.c1 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-voidT cioGetF( tinS& tinP , etherC& etherP , const boolT& bQuitP , const countT idGiftTypeP , soulC*& psGiftP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
+voidT cioGetF( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQuitP , const countT idGiftTypeP , soulC*& psGiftP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_4IDhOME" )/*1*/
 /**/

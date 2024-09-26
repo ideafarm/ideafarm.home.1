@@ -1,19 +1,19 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     }
-        etThread.delF( tinP , pbi ) ;
+        etThread.delF( tinBaseP , pbi ) ;
 
         }
             }
                 }
                     }
-                        sock.writeF( tinP , idpi , nni , (byteT*)&epOut , sizeof epOut ) ;
-                        etThread.traceF( tinP , T("throwing ")+TF2(epOut.idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(nni) ) ;
+                        sock.writeF( tinBaseP , idpi , nni , (byteT*)&epOut , sizeof epOut ) ;
+                        etThread.traceF( tinBaseP , T("throwing ")+TF2(epOut.idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(nni) ) ;
 
                         epOut.cbData = 0 ;
                         epOut.idType = ifcIDtYPEeCHOpACKET_ECHOrEPLY ;
@@ -21,8 +21,8 @@ etThread.traceF( tinP , T("ok") ) ;
 
                         }
                             }
-                                if( ids ) etThread.traceF( tinP , T("remembering [nn]:    ")+T(nnHe) ) ;
-                                stNicNameKnown.sinkF( tinP , ids , nnHe , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                                if( ids ) etThread.traceF( tinBaseP , T("remembering [nn]:    ")+T(nnHe) ) ;
+                                stNicNameKnown.sinkF( tinBaseP , ids , nnHe , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                                 ZE( countT , ids ) ;
 
                                 nicNameC& nnHe = *( pnni ++ ) ;
@@ -37,11 +37,11 @@ etThread.traceF( tinP , T("ok") ) ;
                 {
                 switch( epIn.idType )
 
-                if( ids ) etThread.traceF( tinP , T("remembering [nn]:    ")+T(nni) ) ;
-                stNicNameKnown.sinkF( tinP , ids , nni , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                if( ids ) etThread.traceF( tinBaseP , T("remembering [nn]:    ")+T(nni) ) ;
+                stNicNameKnown.sinkF( tinBaseP , ids , nni , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 ZE( countT , ids ) ;
 
-                etThread.traceF( tinP , T("caught   ")+TF2(epIn.idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(nni) ) ;
+                etThread.traceF( tinBaseP , T("caught   ")+TF2(epIn.idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(nni) ) ;
             {
             if( getNegAM( epIn.finger ) == FINGERnEG_echoPacketS )
             echoPacketS& epIn = *(echoPacketS*)pbi ;
@@ -49,11 +49,11 @@ etThread.traceF( tinP , T("ok") ) ;
         if( !ether && cbi >= sizeof( echoPacketS ) )
 
         }
-            etThread.traceF( tinP , T("oops!") ) ;
+            etThread.traceF( tinBaseP , T("oops!") ) ;
             POOPR
         {
         if( POOP )
-        sock.readF( tinP , pbi , cbi , idpi , nni ) ;
+        sock.readF( tinBaseP , pbi , cbi , idpi , nni ) ;
         nicNameC nni ;
         ZE( countT , idpi ) ;
         ZE( countT , cbi ) ;
@@ -62,25 +62,25 @@ etThread.traceF( tinP , T("ok") ) ;
     while( !ether )
 
     etThread.osThreadF( TaRG1( tmOpenDoorToAllF ) , (countT)&sock , (countT)&stNicNameKnown ) ;
-    idPortBind = sock.bindF( tinP , idPortBind ) ;
-    socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    idPortBind = sock.bindF( tinBaseP , idPortBind ) ;
+    socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
     SCOOPS
 {
 IFsCRATCH
 
 }
-    etThread.delF( tinP , pnnTo ) ;
+    etThread.delF( tinBaseP , pnnTo ) ;
 
     }
-        if( ids ) etThread.traceF( tinP , T("remembering [nn]:    ")+T(pnnTo[offn]) ) ;
-        stNicNameKnown.sinkF( tinP , ids , pnnTo[ offn ] , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+        if( ids ) etThread.traceF( tinBaseP , T("remembering [nn]:    ")+T(pnnTo[offn]) ) ;
+        stNicNameKnown.sinkF( tinBaseP , ids , pnnTo[ offn ] , flSTACKsINK_UNIQUE , 0 , 0 ) ;
         ZE( countT , ids ) ;
 
-        etThread.traceF( tinP , T("black  :    ")+T(pnnTo[offn]) ) ;
+        etThread.traceF( tinBaseP , T("black  :    ")+T(pnnTo[offn]) ) ;
     {
     for( countT offn = 0 ; offn < cnnTo  ; offn ++ )
-    socketC::nicNameIF( tinP , etThread , pnnTo  , cnnTo  , ppsttTo[ offt ] ) ;
+    socketC::nicNameIF( tinBaseP , etThread , pnnTo  , cnnTo  , ppsttTo[ offt ] ) ;
     ZE( countT    , cnnTo  ) ;
     ZE( nicNameC* , pnnTo  ) ;
 {
@@ -92,27 +92,27 @@ TN( tBlack4  , "192.168.24.32" ) ;
 TN( tBlack6  , "2600:380:442e:e76a:3309:635e:c64f:6d6f" ) ;
 TN( tEcho    , "echo.ideafarm.com" ) ;
 
-stackC stNicNameKnown( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
+stackC stNicNameKnown( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ;
 
 TODO
 
 DONE( tmOpenDoorToAllF )
 }
     }
-        ++ s ; ether.osSleepF( tinP , TOCK ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
 
-        stNicNameKnownP.ungrabF( tinP ) ;
+        stNicNameKnownP.ungrabF( tinBaseP ) ;
         }
             }
                 while( ~hStk ) ;
                 }
-                    pSock->writeF( tinP , idPortTo , nnHe , pbGram , sizeof pbGram ) ;
-                    etThread.traceF( tinP , T("throwing ")+TF2(pepOut->idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idPortTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(nnHe) ) ;
+                    pSock->writeF( tinBaseP , idPortTo , nnHe , pbGram , sizeof pbGram ) ;
+                    etThread.traceF( tinBaseP , T("throwing ")+TF2(pepOut->idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idPortTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(nnHe) ) ;
 
-                    nicNameC& nnHe = *(nicNameC*)&stNicNameKnownP.downF( tinP , hStk ) ;
+                    nicNameC& nnHe = *(nicNameC*)&stNicNameKnownP.downF( tinBaseP , hStk ) ;
                 {
                 do
-                handleC hStk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hStk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             {
 
             }
@@ -127,10 +127,10 @@ DONE( tmOpenDoorToAllF )
                     else if( cRemain -- )
                     if( cnnSkip ) cnnSkip -- ;
 
-                    nicNameC& nnHe = *(nicNameC*)&stNicNameKnownP.downF( tinP , hStk ) ;
+                    nicNameC& nnHe = *(nicNameC*)&stNicNameKnownP.downF( tinBaseP , hStk ) ;
                 {
                 do
-                handleC hStk( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hStk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                 countT cnnSkip = cnnDone ;
                 if( stNicNameKnownP <= cnnDone ) cnnDone = 0 ;
@@ -143,18 +143,18 @@ DONE( tmOpenDoorToAllF )
             countT       cRemain = CBpAYLOAD / sizeof( nicNameC ) ;
             nicNameC*    pnnOut = (nicNameC*)( pbGram + sizeof( echoPacketS ) ) ;
             echoPacketS* pepOut = (echoPacketS*)pbGram ;
-            thirdC::c_memsetIF( tinP , pbGram , sizeof pbGram ) ;
+            thirdC::c_memsetIF( tinBaseP , pbGram , sizeof pbGram ) ;
             byteT pbGram[ sizeof( echoPacketS ) + CBpAYLOAD ] ;
         {
         if( stNicNameKnownP )
-        stNicNameKnownP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        stNicNameKnownP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         idPass ++ ;
     {
     while( !ether )
     ZE( countT , cnnDone ) ;
     ZE( countT , idPass ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     countT idSayLath  = 0x10000000 ;
 
     stackC&  stNicNameKnownP = *(stackC*)pTaskP->c2 ;

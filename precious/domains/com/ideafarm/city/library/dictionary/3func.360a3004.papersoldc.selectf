@@ -35,7 +35,7 @@
         //LOGrAW9( "papersOldC::selectF [idPaperRenderDefault,idPaperRender,idPaperShow,idPaperScratch]: " , idPaperRenderDefault , " " , idPaperRender , " " , idPaperShow , " " , idPaperScratch , "\r\n" ) ;
 
         }
-            pPaperScratch = !swPaper.idSlotOfLeverF( tinP , cLeverIdPaper ) ? 0 : (paperOldC*)&(countT&)swPaper ;
+            pPaperScratch = !swPaper.idSlotOfLeverF( tinBaseP , cLeverIdPaper ) ? 0 : (paperOldC*)&(countT&)swPaper ;
             cLeverIdPaper = idPaperScratch ;
         {
         else
@@ -43,7 +43,7 @@
         //SCRATCH
 
         }
-            pPaperRender = !swPaper.idSlotOfLeverF( tinP , cLeverIdPaper ) ? 0 : (paperOldC*)&(countT&)swPaper ;
+            pPaperRender = !swPaper.idSlotOfLeverF( tinBaseP , cLeverIdPaper ) ? 0 : (paperOldC*)&(countT&)swPaper ;
             cLeverIdPaper = idPaper ;
             }
                 case ifcIDpAPER_SCRATCH : { idPaper = idPaperScratch           ; break ; }
@@ -57,7 +57,7 @@
         if( idPaperRender == ifcIDpAPER_DEFAULT ) pPaperRender = pPaperRenderDefault ;
         //RENDER
 
-        pPaperRenderDefault = !swPaper.idSlotOfLeverF( tinP , cLeverIdPaper ) ? 0 : (paperOldC*)&(countT&)swPaper ;
+        pPaperRenderDefault = !swPaper.idSlotOfLeverF( tinBaseP , cLeverIdPaper ) ? 0 : (paperOldC*)&(countT&)swPaper ;
         cLeverIdPaper = idPaper ;
         }
             case ifcIDpAPER_SCRATCH : { idPaper = idPaperScratch           ; break ; }
@@ -69,7 +69,7 @@
         countT idPaper = idPaperRenderDefault ;
         //RENDERdEFAULT
 
-        pPaperShow = !swPaper.idSlotOfLeverF( tinP , cLeverIdPaper ) ? 0 : (paperOldC*)&(countT&)swPaper ;
+        pPaperShow = !swPaper.idSlotOfLeverF( tinBaseP , cLeverIdPaper ) ? 0 : (paperOldC*)&(countT&)swPaper ;
         cLeverIdPaper = idPaperShow ;
         //SHOW
     {
@@ -149,7 +149,7 @@
     ZE( boolT , bFreshCache ) ;
     //LOGrAW5( "****************************************************************************************************\r\npapersOldC::selectF [idCmdP,idPaperP]: " , idCmdP , " " , idPaperP , "\r\n" ) ;
 {
-/*1*/paperOldC& papersOldC::selectF( tinS& tinP , const countT idCmdP , countT idPaperP )/*1*/
+/*1*/paperOldC& papersOldC::selectF( tinBaseS& tinBaseP , const countT idCmdP , countT idPaperP )/*1*/
 
 #define ifcIDcMDrETURNsCRATCH         0x4
 #define ifcIDcMDrETURNrENDER          0x3
@@ -163,7 +163,7 @@
   can be 0 < idPaperP <= cPapers
  idPaperP
  idCmdP
- tinP
+ tinBaseP
 arguments
 it is illegal to call me when there are no papers
 i always return a valid reference

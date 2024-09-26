@@ -8,129 +8,129 @@
 
 REST
 
-sgnDone_tmWorkF.waitF( tinP ) ;
+sgnDone_tmWorkF.waitF( tinBaseP ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmWorkF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmWorkF )
 }
-    etThread.traceF( tinP , T("bye") ) ;
-    etherC::loafIF( tinP ) ;
-    etThread.traceF( tinP , T("ok") ) ;
+    etThread.traceF( tinBaseP , T("bye") ) ;
+    etherC::loafIF( tinBaseP ) ;
+    etThread.traceF( tinBaseP , T("ok") ) ;
 
     }
-        etThread.traceF( tinP , T("flashed sign") ) ;
-        sgnGo.giveF( tinP , ifcIDmODEsIGNgIVE_FLASH ) ;
-        etThread.traceF( tinP , T("flashing sign") ) ;
+        etThread.traceF( tinBaseP , T("flashed sign") ) ;
+        sgnGo.giveF( tinBaseP , ifcIDmODEsIGNgIVE_FLASH ) ;
+        etThread.traceF( tinBaseP , T("flashing sign") ) ;
 
         }
-            grabAccumulators.ungrabF( tinP ) ;
+            grabAccumulators.ungrabF( tinBaseP ) ;
             mMax = 0 ;
             mSum = 0 ;
             mMin = MAXcOUNTT ;
             cGorillasWaiting = 0 ;
-            etThread.traceF( tinP , T("----------------------------------------------------------------------- [idCycle,mMin,mMean,mMax]:   ")+TF2(++idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mMin,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mSum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
+            etThread.traceF( tinBaseP , T("----------------------------------------------------------------------- [idCycle,mMin,mMean,mMax]:   ")+TF2(++idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mMin,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mSum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)mMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_1 ) ;
             mSum /= cProcessors ;
-            grabAccumulators.grabF( tinP , TAG( TAGiDnULL ) ) ;
-            etThread.traceF( tinP , T("grabbing accumulators") ) ;
+            grabAccumulators.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            etThread.traceF( tinBaseP , T("grabbing accumulators") ) ;
         {
         if( !ether )
 
         }
-            ether.osSleepF( tinP , TOCK >> 6 ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ether.osSleepF( tinBaseP , TOCK >> 6 ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             if( cWaiting == cProcessors ) break ;
-            ether.traceF( tinP , T("[cProcessors,cWaiting]:   ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cWaiting,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            ether.traceF( tinBaseP , T("[cProcessors,cWaiting]:   ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cWaiting,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             countT cWaiting = grabb.idGrabberHighF() - grabb.idGrabberOkF() ;
             const grabC& grabb = sgnGo ;
         {
         while( !ether )     // THIS LOOP PREVENTS RACE IN WHICH I GIVE SIGN BEFORE ALL GORILLA THREADS ARE ACTUALLY REGISTERED AS WAITING WITHIN THE grabC OBJECT WITHIN THE SIGN
-        etThread.traceF( tinP , T("looping until gorillas are really ready") ) ;
+        etThread.traceF( tinBaseP , T("looping until gorillas are really ready") ) ;
 
         }
-            ether.osSleepF( tinP , TICK >> 4 , TOCK , flSLEEP_null ) ;
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            ether.osSleepF( tinBaseP , TICK >> 4 , TOCK , flSLEEP_null ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         while( !ether && cGorillasWaiting < cProcessors )  // NORMALLY WILL EXECUTE ONLY WO ITERATION ; CODED THIS WAY TO HANDLE HEAVILY LOADED COMPUTER ON WHICH exerciseF DOES NOT COMPLETE WITHIN THE INTENDED PERIOD
-        etThread.traceF( tinP , T("waiting for gorillas to get ready") ) ;
+        etThread.traceF( tinBaseP , T("waiting for gorillas to get ready") ) ;
     {
     while( !ether || cExtra -- )
     countT cExtra = 0 ;
     ZE( countT , idCycle ) ;
 
-    ether.ifcHireF( tinP , T("ifcIDaDAM_WATCHiDLEcPU") , ifcIDaDAM_HOMEfLAGS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+    ether.ifcHireF( tinBaseP , T("ifcIDaDAM_WATCHiDLEcPU") , ifcIDaDAM_HOMEfLAGS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
 
     while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&sgnGo , (countT)&cGorillasWaiting , (countT)&grabAccumulators , (countT)&mMin , (countT)&mSum , (countT)&mMax ) ;
     countT cDo = cProcessors ;
     TN( tb4 , "    " ) ;
-    grabC grabAccumulators( tinP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS , ifcIDgRABlAYER_7BASEmISC1 ) ;    //20200610@2039: flGRABc_NOTjEALOUS ADDED WITHOUT ANALYSIS WITHOUT IDENTIFYING THIS AS THE CULPRIT IN A JEALOUSY
+    grabC grabAccumulators( tinBaseP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS , ifcIDgRABlAYER_7BASEmISC1 ) ;    //20200610@2039: flGRABc_NOTjEALOUS ADDED WITHOUT ANALYSIS WITHOUT IDENTIFYING THIS AS THE CULPRIT IN A JEALOUSY
     ZE( measure04T , mMax  ) ;
     ZE( measure04T , mSum  ) ;
     ZE( measure04T , mMin  ) ;
-    signC sgnGo( tinP , TAG( TAGiDnULL ) ) ;
+    signC sgnGo( tinBaseP , TAG( TAGiDnULL ) ) ;
     ZE( countT , cGorillasWaiting ) ;
 
-    etThread.traceF( tinP , T("[cProcessors]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    const countT cProcessors = thirdC::osProcessorsIF( tinP ) ;
+    etThread.traceF( tinBaseP , T("[cProcessors]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    const countT cProcessors = thirdC::osProcessorsIF( tinBaseP ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
                             
 DONE( tmGorillaF )
 }
-    etThread.osThreadSwitchingDesireF( tinP , idPriorityDefault ) ;
+    etThread.osThreadSwitchingDesireF( tinBaseP , idPriorityDefault ) ;
     }
         }
             }
-                grabAccumulatorsP.ungrabF( tinP ) ;
+                grabAccumulatorsP.ungrabF( tinBaseP ) ;
 
                 if( mMaxP < timeB1 ) mMaxP  = timeB1 ;
                                      mSumP += timeB1 ;
                 if( mMinP > timeB1 ) mMinP  = timeB1 ;
 
-                grabAccumulatorsP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                grabAccumulatorsP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                etThread.traceF( tinP , T("time to complete: ")+TF2(timeB1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                etThread.osTimeSubtractF( tinP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
-                etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
+                etThread.traceF( tinBaseP , T("time to complete: ")+TF2(timeB1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
+                etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
                 ZE( sCountT , timeB2 ) ;
                 ZE( countT , timeB1 ) ;
             {
             if( !bQuit )
 
-            etThread.osThreadSwitchingDesireF( tinP , idPriorityRude ) ;
+            etThread.osThreadSwitchingDesireF( tinBaseP , idPriorityRude ) ;
             }
-                //etThread.traceF( tinP , t2 ) ;
+                //etThread.traceF( tinBaseP , t2 ) ;
                 exerciseF( bQuit ) ;
-                //etThread.traceF( tinP , t1 ) ;
+                //etThread.traceF( tinBaseP , t1 ) ;
             {
             while( !bQuit && cDo -- )
-            countT idPriorityRude = etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
+            countT idPriorityRude = etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
 
             const countT& bQuit = ether ;
             countT cDo = CeXERCISES ;
 
-            etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+            etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
             ZE( sCountT , timeA2 ) ;
             ZE( countT , timeA1 ) ;
         {
         if( !ether )        
 
-        sgnGoP.waitF( tinP , flSIGNcWAIT_null ) ;
+        sgnGoP.waitF( tinBaseP , flSIGNcWAIT_null ) ;
 
         //}
-        //    ether.osSleepF( tinP , TOCK << 6 ) ;
-        //    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        //    ether.osSleepF( tinBaseP , TOCK << 6 ) ;
+        //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         //{
         //U::REMOVE IN PRODUCTION ; THIS IS TO ELICIT RACE CONDITION TO VERIFY THAT CODE HANDLES IT BY NOT ALLOWING SIGN TO BE GIVEN BEFORE ALL ARE WAITING
 
         inc02AM( cGorillasWaitingP ) ;
     {
     while( !ether )
-    countT idPriorityDefault = etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_RUDE ) ;
+    countT idPriorityDefault = etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUDE ) ;
 
     TN( t2 , "called  exerciseF" ) ;
     TN( t1 , "calling exerciseF" ) ;

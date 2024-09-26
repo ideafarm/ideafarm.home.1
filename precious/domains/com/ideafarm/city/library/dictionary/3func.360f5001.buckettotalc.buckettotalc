@@ -26,10 +26,10 @@
         sIn >> finger ;
         ZE( countT , finger ) ;
                     
-        sock.readF( tinP , sIn ) ;
-        soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tinBaseP , sIn ) ;
+        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
-        sock.writeF( tinP , sOut ) ;
+        sock.writeF( tinBaseP , sOut ) ;
 
         sOut << idAccCommissionP ;
         sOut << (countT)timeT2P ;
@@ -43,10 +43,10 @@
         sOut << (countT)ifcIDcMDlISTsERVERmONEYbUCKETS_GETtOTAL ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
-        sock.connectF( tinP , homeS::homeIF().idPortListMoneyBuckets ) ;
-        socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tinBaseP , homeS::homeIF().idPortListMoneyBuckets ) ;
+        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         if( POOP ) { POOPR ; }
 
@@ -62,7 +62,7 @@
 {
 moneyT2( 0 )
 moneyT1( 0 ) ,
-/*1*/bucketTotalC::bucketTotalC( tinS& tinP , countT idAccBucketOwnerP , countT idBucketP , countT idProductP , countT idAccDepositorP , countT* pczNoteP , countT timeT1P , sCountT timeT2P , countT idAccCommissionP ) :/*1*/
+/*1*/bucketTotalC::bucketTotalC( tinBaseS& tinBaseP , countT idAccBucketOwnerP , countT idBucketP , countT idProductP , countT idAccDepositorP , countT* pczNoteP , countT timeT1P , sCountT timeT2P , countT idAccCommissionP ) :/*1*/
 
 /**/
 */

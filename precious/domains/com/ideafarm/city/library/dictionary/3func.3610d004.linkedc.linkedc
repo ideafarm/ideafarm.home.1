@@ -10,26 +10,26 @@
 }
     THREADmODE5rESTORE
     }
-        root.ungrabF( tinP ) ;
+        root.ungrabF( tinBaseP ) ;
 
         }
-            //20161225@0937: CONJ: NOT NEEDED: pKid->ungrabF( tinP ) ;
+            //20161225@0937: CONJ: NOT NEEDED: pKid->ungrabF( tinBaseP ) ;
 
                    root.pKid = this ;
             pKid = root.pKid ;
 
-            //20161225@0937: CONJ: NOT NEEDED: root.pKid->grabF( tinP , TAGoR( TAGiDnULL , idLineCt , idiFileCt , (byteT*)0 ) ) ;
+            //20161225@0937: CONJ: NOT NEEDED: root.pKid->grabF( tinBaseP , TAGoR( TAGiDnULL , idLineCt , idiFileCt , (byteT*)0 ) ) ;
         {
         else
         if( !root.pKid ) { root.pKid = this ; }
 
-        root.grabF( tinP , TAGoR( TAGiDnULL , idLineCt , idiFileCt , (byteT*)0 ) ) ;
+        root.grabF( tinBaseP , TAGoR( TAGiDnULL , idLineCt , idiFileCt , (byteT*)0 ) ) ;
 
         }
-            pc->ungrabF( tinP ) ;
+            pc->ungrabF( tinBaseP ) ;
             }
                 pc = pc->pKid ;
-                pc->ungrabF( tinP ) ;
+                pc->ungrabF( tinBaseP ) ;
         
                 }
                     BLAMMO ;
@@ -37,47 +37,47 @@
                 {
                 if( pc->pKid == this )
         
-                //LOGrAW5( "linkedC ++++      walk [idThread,pc->pKid]:    " , tinP.monitor.idThread , "                      " , pc->pKid , "\r\n" ) ;
+                //LOGrAW5( "linkedC ++++      walk [idThread,pc->pKid]:    " , ((tinNormalS&)tinBaseP).monitor.idThread , "                      " , pc->pKid , "\r\n" ) ;
 
-                pc->pKid->grabF( tinP , TAGoR( TAGiDnULL , idLineCt , idiFileCt , (byteT*)0 ) ) ;
+                pc->pKid->grabF( tinBaseP , TAGoR( TAGiDnULL , idLineCt , idiFileCt , (byteT*)0 ) ) ;
                 if( getNegAM( pc->pKid->finger ) != FINGERnEG_LINKEDc ) { BLAMMO ; }
                 if( getNegAM( pc->finger ) != FINGERnEG_LINKEDc ) { BLAMMO ; }
             {
             while( pc->pKid )
             linkedC* pc = &root ;
         
-            //LOGrAW5( "linkedC ++++                              :    " , tinP.monitor.idThread , "    " , this , "\r\n" ) ;
+            //LOGrAW5( "linkedC ++++                              :    " , ((tinNormalS&)tinBaseP).monitor.idThread , "    " , this , "\r\n" ) ;
 
-            root.grabF( tinP , TAGoR( TAGiDnULL , idLineCt , idiFileCt , (byteT*)0 ) ) ;
+            root.grabF( tinBaseP , TAGoR( TAGiDnULL , idLineCt , idiFileCt , (byteT*)0 ) ) ;
         {
         //U::TO FIND A BUG 20161225@0951
 
-        grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+        grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         putNegAM( finger , FINGERnEG_LINKEDc ) ;
         if( getNegAM( finger ) != FINGERnEG_GRABOTc ) { BLAMMO ; }  //U:: 20201027@1358: TO FIND A BUG
         if( getNegAM( finger ) == FINGERnEG_LINKEDc ) { BLAMMO ; }  //U:: 20201027@1358: TO FIND A BUG
 
-        //if( tinP.pc Utility[ 0 ] ) { CONoUTrAW( "linkedC 1\r\n" ) ; } //U:: TO FIND A BUG
+        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) { CONoUTrAW( "linkedC 1\r\n" ) ; } //U:: TO FIND A BUG
 
         _IO_
     {
     THREADmODE5oN( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY )
-    tinP.flushPendingInOutFrameTelemetryIfF() ;
+    ((tinNormalS&)tinBaseP).flushPendingInOutFrameTelemetryIfF() ;
 
     //LOGrAW3( " linkedC ++++++++ [this]:    " , this , "\r\n" ) ; //U:: TO FIND A BUG
 {
-idAdam( tinP.pag1->idAdam )
+idAdam( ((tinNormalS&)tinBaseP).pag1->idAdam )
 pKid( 0 ) ,
 root( rootP ) ,
 idType( rootP.idType ) ,
-grabotC( tinP , idLineCtP , idiFileCtP , pbBitsCtP , &rootP == &processGlobal4I._handleC_linked_sm ? flGRABITc_SHARElAYER | flGRABITc_SNEAKYlOVER : flGRABITc_SHARElAYER , 0 , rootP.idGrabLayer ) ,
-/*1*/linkedC::linkedC( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , linkedC& rootP ) :/*1*/
+grabotC( tinBaseP , idLineCtP , idiFileCtP , pbBitsCtP , &rootP == &processGlobal4I._handleC_linked_sm ? flGRABITc_SHARElAYER | flGRABITc_SNEAKYlOVER : flGRABITc_SHARElAYER , 0 , rootP.idGrabLayer ) ,
+/*1*/linkedC::linkedC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , linkedC& rootP ) :/*1*/
 
 /**/
 
 */
- the caller must construct: tlsAllocStackExp_8_C tls( tinP )
+ the caller must construct: tlsAllocStackExp_8_C tls( tinBaseP )
     but ct and dt is fastest when it is strictly lifo
     lifo is not required
    this is most efficient when ct and dt is probabilistically lifo
@@ -89,7 +89,7 @@ grabotC( tinP , idLineCtP , idiFileCtP , pbBitsCtP , &rootP == &processGlobal4I.
  pbBitsCtP
  idiFileCtP
  idLineCtP
- tinP
+ tinBaseP
 parameters
 /*
 

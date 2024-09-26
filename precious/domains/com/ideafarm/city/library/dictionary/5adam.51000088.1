@@ -10,23 +10,23 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinP , TOCK * 4 ) ;
+etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
 
-etThread.delF( tinP , psttv ) ;
-etThread.strokeF( tinP , T(psttv)+T(" quarters have elapsed in the current duck\r\n") ) ;
-etThread.strFromF( tinP , psttv , offQuarter ) ; ___( psttv ) ;
+etThread.delF( tinBaseP , psttv ) ;
+etThread.strokeF( tinBaseP , T(psttv)+T(" quarters have elapsed in the current duck\r\n") ) ;
+etThread.strFromF( tinBaseP , psttv , offQuarter ) ; ___( psttv ) ;
 ZE( strokeS* , psttv ) ;
 
 countT offQuarter = offQTR( time2 ) ;
 
-etThread.delF( tinP , psttNow ) ;
-etThread.strokeF( tinP , T("the time is now ")+T(psttNow)+T("\r\n") ) ;
-etThread.strFromTimeF( tinP , psttNow , time1 , time2 ) ;
+etThread.delF( tinBaseP , psttNow ) ;
+etThread.strokeF( tinBaseP , T("the time is now ")+T(psttNow)+T("\r\n") ) ;
+etThread.strFromTimeF( tinBaseP , psttNow , time1 , time2 ) ;
 ZE( strokeS* , psttNow ) ;
 
-etThread.osTimeNowF( tinP , time1 , time2 ) ;
+etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
 ZE( sCountT , time2 ) ;
 ZE( countT , time1 ) ;
 

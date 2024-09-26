@@ -9,24 +9,24 @@
 
 REST
 
-etThread.loafIF( tinP ) ;
+etThread.loafIF( tinBaseP ) ;
 
-etThread.strokeF( tinP , T("\felapsed time: ")+TT(timeB1,timeB2) ) ;
-etThread.osTimeSubtractF( tinP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
-etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
+etThread.strokeF( tinBaseP , T("\felapsed time: ")+TT(timeB1,timeB2) ) ;
+etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
 ZE( sCountT , timeB2 ) ;
 ZE( countT , timeB1 ) ;
 
 }
-    //++ s ; etThread.osSleepF( tinP , TOCK ) ;
-    //sleepC s( tinP , TAG( TAGiDnULL ) ) ;
-    linesF( tinP , etThread , st_a ) ;
+    //++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
+    //sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    linesF( tinBaseP , etThread , st_a ) ;
     st_a[ 1 ] = step ;
-    etThread.strokeF( tinP , T("\f(")+TF1(*(measureT*)&st_a[1])+T(",")+TF1(*(measureT*)&st_a[2])+T(",")+TF1(*(measureT*)&st_a[3])+T(")") ) ;
+    etThread.strokeF( tinBaseP , T("\f(")+TF1(*(measureT*)&st_a[1])+T(",")+TF1(*(measureT*)&st_a[2])+T(",")+TF1(*(measureT*)&st_a[3])+T(")") ) ;
 {
 for( measureT step = 0.0 ; !ether && step <= 0.1 ; step += 0.001 )
 
-etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
 ZE( sCountT , timeA2 ) ;
 ZE( countT , timeA1 ) ;
 
@@ -38,42 +38,42 @@ measureT st_a[ 1 + CdIM ] ;
 TODO
 
 }
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP , 1 ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP , 1 ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)1.0 ;
     st_b[ 1 ] =(measureT)1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP , 1 ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP , 1 ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)1.0 ;
     st_b[ 1 ] =(measureT)1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP , 1 ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP , 1 ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP , 1 ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP , 1 ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
@@ -81,27 +81,27 @@ TODO
     
     
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)1.0 ;
     st_b[ 1 ] =(measureT)1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP , 1 ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP , 1 ) ;
     st_b[ 3 ] =(measureT)110.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
@@ -109,27 +109,27 @@ TODO
 
 
 
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)1.0 ;
     st_b[ 1 ] =(measureT)1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)1.0 ;
     
-    lineF( tinP , etThread , st_b , st_aP , 1 ) ;
+    lineF( tinBaseP , etThread , st_b , st_aP , 1 ) ;
     st_b[ 3 ] =(measureT)100.0 ;
     st_b[ 2 ] =(measureT)-1.0 ;
     st_b[ 1 ] =(measureT)-1.0 ;
@@ -138,26 +138,26 @@ TODO
 
     measureT st_b[ 1 + CdIM ] ;
 {
-voidT linesF( tinS& tinP , etherC& etThread , measureT* st_aP )
+voidT linesF( tinBaseS& tinBaseP , etherC& etThread , measureT* st_aP )
 
 }
     //U: O: 3/4 OF ALL PROCESSING TIME IS SPENT IN THE PRECEDING LINE
-    etThread.strokeF( tinP , T("")+(bWothP?OLDmOVEtO(xx*10000+400,yy*10000+300):OLDlINEtO(xx*10000+400,yy*10000+300))/*+T(". (")+TF1(xx)+T(",")+TF1(yy)+T(")")+OLDmOVEtO(xx*100,yy*100)*/ ) ;
+    etThread.strokeF( tinBaseP , T("")+(bWothP?OLDmOVEtO(xx*10000+400,yy*10000+300):OLDlINEtO(xx*10000+400,yy*10000+300))/*+T(". (")+TF1(xx)+T(",")+TF1(yy)+T(")")+OLDmOVEtO(xx*100,yy*100)*/ ) ;
     measureT yy = st_bP[ 2 ] ;
     measureT xx = st_bP[ 1 ] ;
-    mapF( tinP , etThread , st_bP , st_aP ) ;
+    mapF( tinBaseP , etThread , st_bP , st_aP ) ;
 {
-voidT lineF( tinS& tinP , etherC& etThread , measureT* st_bP , measureT* st_aP , const boolT bWothP = 0 )
+voidT lineF( tinBaseS& tinBaseP , etherC& etThread , measureT* st_bP , measureT* st_aP , const boolT bWothP = 0 )
 
 }
-    /*while( st_bP > 2 )*/ visionF( tinP , etThread , st_bP , st_aP ) ;
+    /*while( st_bP > 2 )*/ visionF( tinBaseP , etThread , st_bP , st_aP ) ;
 {
-voidT mapF( tinS& tinP , etherC& etThread , measureT* st_bP , measureT* st_aP )
+voidT mapF( tinBaseS& tinBaseP , etherC& etThread , measureT* st_bP , measureT* st_aP )
 
 }
     //if( *(measureT*)&st_bP[ CdIM ] ) { BLAMMO ; }
 
-    projectionF( tinP , etThread , st_bP , st_a2 , st_b2 ) ;
+    projectionF( tinBaseP , etThread , st_bP , st_a2 , st_b2 ) ;
 
     }
         st_b2[ idd ] = st_bP[ idd ] + lb * st_t[ idd ] ;
@@ -170,14 +170,14 @@ voidT mapF( tinS& tinP , etherC& etThread , measureT* st_bP , measureT* st_aP )
     const measureT la = lengthF( st_aP ) ;
 
     }
-        projectionF( tinP , etThread , st_t , st_aP , st_b ) ;
+        projectionF( tinBaseP , etThread , st_t , st_aP , st_b ) ;
 
         for( countT idd = 1 ; idd <= CdIM ; idd ++ ) st_b[ idd ] = (measureT)( idd < CdIM ? 0.0 : 1.0 ) ;
         measureT st_b[ 1 + CdIM ] ;
     {
     measureT st_t[ 1 + CdIM ] ;
 {
-voidT visionF( tinS& tinP , etherC& etThread , measureT* st_bP , measureT* st_aP )
+voidT visionF( tinBaseS& tinBaseP , etherC& etThread , measureT* st_bP , measureT* st_aP )
 
 }
     }
@@ -202,7 +202,7 @@ voidT visionF( tinS& tinP , etherC& etThread , measureT* st_bP , measureT* st_aP
 
     const measureT la = lengthF( st_aP ) ;
 {
-voidT projectionF( tinS& tinP , etherC& etThread , measureT* st_tP , measureT* st_aP , measureT* st_bP )
+voidT projectionF( tinBaseS& tinBaseP , etherC& etThread , measureT* st_tP , measureT* st_aP , measureT* st_bP )
 
 }
     return ip ;

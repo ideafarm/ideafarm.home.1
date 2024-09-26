@@ -11,10 +11,10 @@
 
         }
             return pvr ;                                                                                                                        \
-            voidT* pvr = operator new( cbP , 0 , tinP , pNapkinP ) ;                                                                            \
+            voidT* pvr = operator new( cbP , 0 , tinBaseP , pNapkinP ) ;                                                                            \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , napkinC* const pNapkinP )                                           \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                                           \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
@@ -22,14 +22,14 @@
             if( cbZombieP - cbP ) BLAMMO ;                                                                                                      \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )                         \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                         \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
-            voidT* pvr = operator new( cbP , 0 , tinP , idLineP , idiFileP ) ;                                                                  \
+            voidT* pvr = operator new( cbP , 0 , tinBaseP , idLineP , idiFileP ) ;                                                                  \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , const countT idLineP , const countT idiFileP )                      \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )                      \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
@@ -49,7 +49,7 @@
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP )                      \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                      \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
@@ -64,7 +64,7 @@
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )    \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )    \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
@@ -76,13 +76,13 @@
             {                                                                                                                                   \
             if( cbaFoot )                                                                                                                       \
             __Z( pvn ) ;                                                                                                                        \
-            PUSE.newF( tinP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ; ___( pvn ) ;                                                          \
-            if( !tinP.pPoolUse ) { BLAMMO ; }                                                                                                   \
+            PUSE.newF( tinBaseP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ; ___( pvn ) ;                                                          \
+            if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
             ZE( voidT* , pvn ) ;                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP ) \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP ) \
                                                                                                                                                 \
         }                                                                                                                                       \
             operator delete( pvP ) ;                                                                                                            \
@@ -93,10 +93,10 @@
                                                                                                                                                 \
         }                                                                                                                                       \
             }                                                                                                                                   \
-                PUSE( tinP , *(byteT**)&pvP ) ;                                                                                                 \
-                if( !tinP.pPoolUse ) { BLAMMO ; }                                                                                               \
+                PUSE( tinBaseP , *(byteT**)&pvP ) ;                                                                                                 \
+                if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
             {                                                                                                                                   \
-            if( pvP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             _IO_                                                                                                                                \
@@ -110,10 +110,10 @@
 
         }
             return pvr ;                                                                                                                        \
-            voidT* pvr = operator new( cbP , 0 , tinP , pNapkinP ) ;                                                                            \
+            voidT* pvr = operator new( cbP , 0 , tinBaseP , pNapkinP ) ;                                                                            \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , napkinC* const pNapkinP )                                           \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                                           \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
@@ -121,14 +121,14 @@
             if( cbZombieP - cbP ) BLAMMO ;                                                                                                      \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )                         \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                         \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
-            voidT* pvr = operator new( cbP , 0 , tinP , idLineP , idiFileP ) ;                                                                  \
+            voidT* pvr = operator new( cbP , 0 , tinBaseP , idLineP , idiFileP ) ;                                                                  \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinS& tinP , const countT idLineP , const countT idiFileP )                      \
+        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )                      \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
@@ -148,7 +148,7 @@
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , napkinC* const pNapkinP )                      \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                      \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
@@ -163,7 +163,7 @@
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , byteT* pbZombieP , const countT cbZombieP )    \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )    \
                                                                                                                                                 \
         }                                                                                                                                       \
             return pvr ;                                                                                                                        \
@@ -181,16 +181,16 @@
                     pNote->idType       = ifcIDtYPEdROPnOTE_##typeP ;                                                                           \
                 {                                                                                                                               \
                 if( pNote )                                                                                                                     \
-                dropNoteS* pNote = PUSE.pDropNoteF( tinP , (byteT*)pvn ) ;                                                                      \
+                dropNoteS* pNote = PUSE.pDropNoteF( tinBaseP , (byteT*)pvn ) ;                                                                      \
             {                                                                                                                                   \
             if( pvn )                                                                                                                           \
-            PUSE.newF( tinP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ; ___( pvn ) ;                                                          \
-            if( !tinP.pPoolUse ) { BLAMMO ; }                                                                                                   \
+            PUSE.newF( tinBaseP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ; ___( pvn ) ;                                                          \
+            if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
             ZE( voidT* , pvn ) ;                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
         {                                                                                                                                       \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinS& tinP , const countT idLineP , const countT idiFileP ) \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP ) \
                                                                                                                                                 \
         }                                                                                                                                       \
             operator delete( pvP ) ;                                                                                                            \
@@ -201,10 +201,10 @@
                                                                                                                                                 \
         }                                                                                                                                       \
             }                                                                                                                                   \
-                PUSE( tinP , *(byteT**)&pvP ) ;                                                                                                 \
-                if( !tinP.pPoolUse ) { BLAMMO ; }                                                                                               \
+                PUSE( tinBaseP , *(byteT**)&pvP ) ;                                                                                                 \
+                if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
             {                                                                                                                                   \
-            if( pvP && !( F(tinP.flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             _IO_                                                                                                                                \

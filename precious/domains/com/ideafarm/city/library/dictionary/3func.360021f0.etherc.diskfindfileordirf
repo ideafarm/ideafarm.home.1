@@ -11,10 +11,10 @@
     }
         }
             DEL( pInfo ) ;
-            strMakeF( tinP , LF , psttNameP , pInfo->psttIfoName ) ; ___( psttNameP ) ;
+            strMakeF( tinBaseP , LF , psttNameP , pInfo->psttIfoName ) ; ___( psttNameP ) ;
         {
         if( pInfo )
-        diskFindFileOrDirF( tinP , pInfo , handleP , psttPathP , pPatternP ) ; ___( pInfo ) ;
+        diskFindFileOrDirF( tinBaseP , pInfo , handleP , psttPathP , pPatternP ) ; ___( pInfo ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     _IO_
@@ -30,7 +30,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::diskFindFileOrDirF( tinS& tinP , strokeS*& psttNameP , handleC& handleP , const strokeS* const psttPathP , const patternC* pPatternP , const flagsT flagsP )/*1*/
+/*1*/voidT etherC::diskFindFileOrDirF( tinBaseS& tinBaseP , strokeS*& psttNameP , handleC& handleP , const strokeS* const psttPathP , const patternC* pPatternP , const flagsT flagsP )/*1*/
 
 //U: IMPOTENCE IF handleP BEFORE OR AFTER I OBTAIN A FILE (OR, ALLOW IT BUT CALL CLOSEEARLY)
 

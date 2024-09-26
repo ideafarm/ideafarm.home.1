@@ -10,32 +10,32 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
-    etThread.delF( tinP , psttArgs ) ;
-    etThread.delF( tinP , psttOldClass ) ;
+    etThread.delF( tinBaseP , psttArgs ) ;
+    etThread.delF( tinBaseP , psttOldClass ) ;
 
-    if( idPhase > 2 ) etThread.osProcessF( tinP , countTC() , countTC() , etThread.strDigitsToSCountF( tinP , psttOldClass ) , psttArgs ) ;
+    if( idPhase > 2 ) etThread.osProcessF( tinBaseP , countTC() , countTC() , etThread.strDigitsToSCountF( tinBaseP , psttOldClass ) , psttArgs ) ;
 
     }
         }
             }
                 break ;
                 idPhase ++ ;
-                etThread.strFuseF( tinP , psttArgs , psttc1 ) ; ___( psttOldClass ) ;
-                if( idPhase > 3 ) { etThread.strFuseF( tinP , psttArgs , tBlank ) ; ___( psttOldClass ) ; }
+                etThread.strFuseF( tinBaseP , psttArgs , psttc1 ) ; ___( psttOldClass ) ;
+                if( idPhase > 3 ) { etThread.strFuseF( tinBaseP , psttArgs , tBlank ) ; ___( psttOldClass ) ; }
             {
             default :
             }
                 break ;
                 idPhase ++ ;
-                etThread.strMakeF( tinP , LF , psttOldClass , psttc1 ) ; ___( psttOldClass ) ;
+                etThread.strMakeF( tinBaseP , LF , psttOldClass , psttc1 ) ; ___( psttOldClass ) ;
             {
             case 2 :
             }
                 break ;
-                if( !etThread.strCompareF( tinP , tDetach , psttc1 ) ) idPhase ++ ;
+                if( !etThread.strCompareF( tinBaseP , tDetach , psttc1 ) ) idPhase ++ ;
             {
             case 1 :
         {
@@ -44,7 +44,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     FORsTRINGSiN1( pstt1p )
     countT idPhase = 1 ;
 
-    etThread.strMakeF( tinP , LF , psttArgs , T("") , pstt1p->idAdam ) ; ___( psttArgs ) ;
+    etThread.strMakeF( tinBaseP , LF , psttArgs , T("") , pstt1p->idAdam ) ; ___( psttArgs ) ;
     ZE( strokeS* , psttArgs ) ;
 
     ZE( strokeS* , psttOldClass ) ;
@@ -53,7 +53,7 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     TN( tDetach , "!detach" ) ;
 {
 if( pstt1p )
-strokeS*& pstt1p = etThread.ether_pstt1_processParametersI_F( tinP ) ;
+strokeS*& pstt1p = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
 
 TODO
 

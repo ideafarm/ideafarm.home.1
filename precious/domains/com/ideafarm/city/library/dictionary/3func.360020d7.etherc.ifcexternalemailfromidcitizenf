@@ -9,27 +9,27 @@
 
 }
     }
-        delF( tinP , pbi ) ;
+        delF( tinBaseP , pbi ) ;
 
-        strMakeF( tinP , LF , psttP , psttn ) ;    
+        strMakeF( tinBaseP , LF , psttP , psttn ) ;    
         strokeS* psttn = (strokeS*)pbi ;
 
-        sock.readF( tinP , pbi , cbi ) ;
-        newF( tinP , LF , pbi , cbi ) ; ___( pbi ) ;
+        sock.readF( tinBaseP , pbi , cbi ) ;
+        newF( tinBaseP , LF , pbi , cbi ) ; ___( pbi ) ;
         ZE( byteT* , pbi ) ;
     {
     if( cbi )
 
-    sock.readF( tinP , (byteT*)&cbi , sizeof cbi ) ;
+    sock.readF( tinBaseP , (byteT*)&cbi , sizeof cbi ) ;
     ZE( countT , cbi ) ;
 
-    sock.writeF( tinP , (byteT*)&idP , sizeof idP ) ;
+    sock.writeF( tinBaseP , (byteT*)&idP , sizeof idP ) ;
 
-    sock.writeF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
+    sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
     countT idCmd = idcNICKNAMEcMD_QUERYeXTERNALeMAILfROMiD ;
 
-    sock.connectF( tinP , ifcPORToLD1nICKNAME , socketC::nicNameIF( tinP , *this , T(WWWiDEAFARMcOM) ) ) ;
-    socketC sock( tinP , *this , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tinBaseP , ifcPORToLD1nICKNAME , socketC::nicNameIF( tinBaseP , *this , T(WWWiDEAFARMcOM) ) ) ;
+    socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
 
     _IO_
 
@@ -42,7 +42,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcExternalEmailFromIdCitizenF( tinS& tinP , strokeS*& psttP , const countT idP )/*1*/
+/*1*/voidT etherC::ifcExternalEmailFromIdCitizenF( tinBaseS& tinBaseP , strokeS*& psttP , const countT idP )/*1*/
 
 /**/
 */

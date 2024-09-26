@@ -9,7 +9,7 @@
 
 }
     //}
-    //    if( F(tinP.flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the thread") ) ;
+    //    if( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the thread") ) ;
     //    if( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SUPPRESStELLS           ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the process") ) ;
     //    _bWoth = 0 ;
     //{
@@ -18,12 +18,12 @@
     
         //U::COMMENTED OUT TO DEBUG A BUG: }
         //U::COMMENTED OUT TO DEBUG A BUG:     }
-        //U::COMMENTED OUT TO DEBUG A BUG:         thirdC::dosSleepRawIF( tinP , 0x20 ) ; //U::PASS ebp INTO sleepC OBJECT SO THAT IT WON'T USE TINSL
+        //U::COMMENTED OUT TO DEBUG A BUG:         thirdC::dosSleepRawIF( tinBaseP , 0x20 ) ; //U::PASS ebp INTO sleepC OBJECT SO THAT IT WON'T USE TINSL
         //U::COMMENTED OUT TO DEBUG A BUG:         ++ s ;
         //U::COMMENTED OUT TO DEBUG A BUG:     {
         //U::COMMENTED OUT TO DEBUG A BUG:     while( head.ipMe )
-        //U::COMMENTED OUT TO DEBUG A BUG:     //while( head.ipMe ) { ++ s ; thirdC::dosSleepWinkIF( tinP ) ; }
-        //U::COMMENTED OUT TO DEBUG A BUG:     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        //U::COMMENTED OUT TO DEBUG A BUG:     //while( head.ipMe ) { ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ; }
+        //U::COMMENTED OUT TO DEBUG A BUG:     sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         //U::COMMENTED OUT TO DEBUG A BUG: {
         //U::COMMENTED OUT TO DEBUG A BUG: tellS& head = *(tellS*)(byteT*)tellP ;
 
@@ -50,7 +50,7 @@
                         boolT bWroteAll  =  !( F(flagsResult) & flBOOK0cwRITErESULT_COULDnOTwRITEaLL ) ;
                         boolT bWroteLath = !!( F(flagsResult) & flBOOK0cwRITErESULT_WROTElATHbYTE    ) ;
 
-                        processGlobal4I.bkTelemetryAppEarlyLate.writeF( tinP , flagsResult , tellP , cb1 , 0 , cb2 , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_ELSEfILLtOeND | flBOOK0cwRITE_HEADfINGER1 | flBOOK0cwRITE_HEADiDfORMAT | flBOOK0cwRITE_HEADcBdATA | flBOOK0cwRITE_HEADfINGER2 | flBOOK0cwRITE_TAILfINGER | flBOOK0cwRITE_FLUSHaFTER | flBOOK0cwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
+                        processGlobal4I.bkTelemetryAppEarlyLate.writeF( tinBaseP , flagsResult , tellP , cb1 , 0 , cb2 , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_ELSEfILLtOeND | flBOOK0cwRITE_HEADfINGER1 | flBOOK0cwRITE_HEADiDfORMAT | flBOOK0cwRITE_HEADcBdATA | flBOOK0cwRITE_HEADfINGER2 | flBOOK0cwRITE_TAILfINGER | flBOOK0cwRITE_FLUSHaFTER | flBOOK0cwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
 
                         ZE( countT , cb2 ) ;
                         countT cb1 = tellP ;
@@ -58,7 +58,7 @@
                     {
                     else
                     }
-                        processGlobal4I.bksTelemetryApp.writeF( tinP , tellP , tellP , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND | flBOOKScwRITE_HEADfINGER1 | flBOOKScwRITE_HEADiDfORMAT | flBOOKScwRITE_HEADcBdATA | flBOOKScwRITE_HEADfINGER2 | flBOOKScwRITE_TAILfINGER | flBOOKScwRITE_FLUSHaFTER | flBOOKScwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
+                        processGlobal4I.bksTelemetryApp.writeF( tinBaseP , tellP , tellP , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND | flBOOKScwRITE_HEADfINGER1 | flBOOKScwRITE_HEADiDfORMAT | flBOOKScwRITE_HEADcBdATA | flBOOKScwRITE_HEADfINGER2 | flBOOKScwRITE_TAILfINGER | flBOOKScwRITE_FLUSHaFTER | flBOOKScwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
                     {
                     if( F(processGlobal2I.flCt) & flCTdTg_bksTelemetryApp && !( F(processGlobal2I.flDt) & flCTdTg_bksTelemetryApp ) )
 #if defined( NEVERdEFINED )
@@ -74,7 +74,7 @@
                         boolT bWroteAll  =  !( F(flagsResult) & flBOOK0cwRITErESULT_COULDnOTwRITEaLL ) ;
                         boolT bWroteLath = !!( F(flagsResult) & flBOOK0cwRITErESULT_WROTElATHbYTE    ) ;
 
-                        processGlobal4I.bkTelemetrySysEarlyLate.writeF( tinP , flagsResult , tellP , cb1 , 0 , cb2 , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_ELSEfILLtOeND | flBOOK0cwRITE_HEADfINGER1 | flBOOK0cwRITE_HEADiDfORMAT | flBOOK0cwRITE_HEADcBdATA | flBOOK0cwRITE_HEADfINGER2 | flBOOK0cwRITE_TAILfINGER | flBOOK0cwRITE_FLUSHaFTER | flBOOK0cwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
+                        processGlobal4I.bkTelemetrySysEarlyLate.writeF( tinBaseP , flagsResult , tellP , cb1 , 0 , cb2 , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_ELSEfILLtOeND | flBOOK0cwRITE_HEADfINGER1 | flBOOK0cwRITE_HEADiDfORMAT | flBOOK0cwRITE_HEADcBdATA | flBOOK0cwRITE_HEADfINGER2 | flBOOK0cwRITE_TAILfINGER | flBOOK0cwRITE_FLUSHaFTER | flBOOK0cwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
 
                         ZE( countT , cb2 ) ;
                         countT cb1 = tellP ;
@@ -82,7 +82,7 @@
                     {
                     else
                     }
-                        processGlobal4I.bksTelemetrySys.writeF( tinP , tellP , tellP , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND | flBOOKScwRITE_HEADfINGER1 | flBOOKScwRITE_HEADiDfORMAT | flBOOKScwRITE_HEADcBdATA | flBOOKScwRITE_HEADfINGER2 | flBOOKScwRITE_TAILfINGER | flBOOKScwRITE_FLUSHaFTER | flBOOKScwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
+                        processGlobal4I.bksTelemetrySys.writeF( tinBaseP , tellP , tellP , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND | flBOOKScwRITE_HEADfINGER1 | flBOOKScwRITE_HEADiDfORMAT | flBOOKScwRITE_HEADcBdATA | flBOOKScwRITE_HEADfINGER2 | flBOOKScwRITE_TAILfINGER | flBOOKScwRITE_FLUSHaFTER | flBOOKScwRITE_FLUSHaTpAGE ) ; //THESE FLAGS OPTIMIZE FOR DATA INTEGRITY AND WILL PRODUCE 1 DISK WRITE FOR EACH TELEMETRY EVENT PLUS A DISK WRITE AT THE END OF EACH PAGE
                     {
                     if( F(processGlobal2I.flCt) & flCTdTg_bksTelemetrySys && !( F(processGlobal2I.flDt) & flCTdTg_bksTelemetrySys ) )
                 {
@@ -136,8 +136,8 @@
             //static countT cbMax ;
 
             //U:: }
-            //U::     ++ s ; thirdC::thirdWriteToMonitorIF( tinP , tellP , tellP ) ;
-            //U::     sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            //U::     ++ s ; thirdC::thirdWriteToMonitorIF( tinBaseP , tellP , tellP ) ;
+            //U::     sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             //U:: {
             //U:: COMMENTED OUT TO FIND A BUG: CONJ: SERVER WILL BE STABLE IF NOTHING IS WRITTEN TO THE MONITOR
 
@@ -166,15 +166,15 @@
         IFbEcAREFUL
     {
     )
-        !( F(tinP.flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR )
+        !( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR )
         &&
         !( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SUPPRESStELLS )
     (
     if
 
-    if( F(tinP.flagsThreadMode2) & flTHREADmODE2_DISALLOWtELLmONITOR ) { BLAMMO ; }
+    if( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DISALLOWtELLmONITOR ) { BLAMMO ; }
 {
-/*1*/voidT thirdC::dosTellMonitorIF( tinS& tinP , const tellC& tellP , const countT idBooksP )/*1*/
+/*1*/voidT thirdC::dosTellMonitorIF( tinBaseS& tinBaseP , const tellC& tellP , const countT idBooksP )/*1*/
 
 //boolT _bWoth = 1 ; //U::
 

@@ -10,9 +10,9 @@
 }
     }
         }
-            delF( tinP , psttw ) ;
-            strFuseSeparateF( tinP , pstt1P , psttw ) ; ___( pstt1P ) ;
-            strSubstringF( tinP , psttw , idf , idl , psttP ) ; ___( psttw ) ;
+            delF( tinBaseP , psttw ) ;
+            strFuseSeparateF( tinBaseP , pstt1P , psttw ) ; ___( pstt1P ) ;
+            strSubstringF( tinBaseP , psttw , idf , idl , psttP ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
             countT idl = off ;
             countT idf = 1 + offWoth ;
@@ -25,9 +25,9 @@
                 offWoth = off ;
 
                 }
-                    delF( tinP , psttw ) ;
-                    strFuseSeparateF( tinP , pstt1P , psttw ) ; ___( pstt1P ) ;
-                    strSubstringF( tinP , psttw , idf , idl , psttP ) ; ___( psttw ) ;
+                    delF( tinBaseP , psttw ) ;
+                    strFuseSeparateF( tinBaseP , pstt1P , psttw ) ; ___( pstt1P ) ;
+                    strSubstringF( tinBaseP , psttw , idf , idl , psttP ) ; ___( psttw ) ;
                     ZE( strokeS* , psttw ) ;
                     countT idl = off ;
                     countT idf = 1 + offWoth ;
@@ -46,7 +46,7 @@
         ZE( countT , offWoth ) ;
     {
 
-    strMakeF( tinP , LF , pstt1P , T("") , psttP->idAdam + CSpREFIX * cString + csttExtraP ) ; // CALLER MUST TAG ___( pstt1P ) ;
+    strMakeF( tinBaseP , LF , pstt1P , T("") , psttP->idAdam + CSpREFIX * cString + csttExtraP ) ; // CALLER MUST TAG ___( pstt1P ) ;
 
     }
         }
@@ -62,8 +62,8 @@
     {
     ZE( countT , cString ) ;
 
-    const countT cExclude = pczIdCasteExcludeP ? thirdC::c_strlenIF( tinP , pczIdCasteExcludeP ) : 0 ;
-    const countT cInclude = pczIdCasteIncludeP ? thirdC::c_strlenIF( tinP , pczIdCasteIncludeP ) : 0 ;
+    const countT cExclude = pczIdCasteExcludeP ? thirdC::c_strlenIF( tinBaseP , pczIdCasteExcludeP ) : 0 ;
+    const countT cInclude = pczIdCasteIncludeP ? thirdC::c_strlenIF( tinBaseP , pczIdCasteIncludeP ) : 0 ;
 
     _IO_
 
@@ -78,7 +78,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strByCasteF( tinS& tinP , strokeS*& pstt1P , const strokeS* const psttP , const countT* const pczIdCasteIncludeP , const countT* const pczIdCasteExcludeP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strByCasteF( tinBaseS& tinBaseP , strokeS*& pstt1P , const strokeS* const psttP , const countT* const pczIdCasteIncludeP , const countT* const pczIdCasteExcludeP , const countT csttExtraP )/*1*/
 
 /**/
 */
@@ -89,7 +89,7 @@
  pczIdCasteIncludeP
  psttP
  pstt1P
- tinP
+ tinBaseP
 arguments
  a new string is begun whenever the caste of the current stroke is not equal to the caste of the preceding stroke
 parses a string into separate strings, each of homogeneous caste

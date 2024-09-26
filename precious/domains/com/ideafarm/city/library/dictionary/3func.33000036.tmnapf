@@ -11,20 +11,20 @@ DONE( tmNapF )
 }
     }
         hWindow.resetF() ;
-        thPrime.winPostMessageF( tinP , hWindow , idCmd , arg1 , arg2 ) ;
+        thPrime.winPostMessageF( tinBaseP , hWindow , idCmd , arg1 , arg2 ) ;
         hWindow.osF( ifcIDtYPEhANDLE_WINDOW , oshWindow ) ;
-        handleC hWindow( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
+        handleC hWindow( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) ;
     {
     if( !ether )
     TELL( "tmNapF: cleaning up" )
     }
-        ++ s ; thPrime.dosSleepIF( tinP , time1 ) ;
+        ++ s ; thPrime.dosSleepIF( tinBaseP , time1 ) ;
         POOPIES
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     TELL( "sleeping before work" )
 
-    thirdC& thPrime = etherC::etPrimeIF( tinP ) ;
+    thirdC& thPrime = etherC::etPrimeIF( tinBaseP ) ;
 
     countT  arg2      =           pTaskP->c5 ;
     countT  arg1      =           pTaskP->c4 ;

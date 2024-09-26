@@ -8,17 +8,17 @@
 
 
 }
-    ether.delF( tinP , *(countT**)&pzPaper ) ;
+    ether.delF( tinBaseP , *(countT**)&pzPaper ) ;
 
-    if( pzPaper ) for( countT idp = 1 ; idp <= cPapers ; idp ++ ) pzPaper[ idp ]->strokeF( tinP , psttP ) ;
+    if( pzPaper ) for( countT idp = 1 ; idp <= cPapers ; idp ++ ) pzPaper[ idp ]->strokeF( tinBaseP , psttP ) ;
     //CODEsYNC: 1c60006 1c60003: PAPER LIST IS ASSUMED TO BE INVARIANT UNTIL *this IS DESTROYED
 
     }
-        tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
-        if( pzPaper ) for( countT idp = 1 ; idp <= cPapers ; idp ++ ) pzPaper[ idp ] = papers( tinP , idp ) ;
-        if( cPapers ) { ether.newF( tinP , LF , *(countT**)&pzPaper , 1 + cPapers ) ; ___( pzPaper ) ; }
+        ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+        if( pzPaper ) for( countT idp = 1 ; idp <= cPapers ; idp ++ ) pzPaper[ idp ] = papers( tinBaseP , idp ) ;
+        if( cPapers ) { ether.newF( tinBaseP , LF , *(countT**)&pzPaper , 1 + cPapers ) ; ___( pzPaper ) ; }
         cPapers = papers ;
-        tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     ZE( countT , cPapers ) ;
     ZE( paperOldC** , pzPaper ) ;
@@ -28,7 +28,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT backOldC::strokeAllPapersF( tinS& tinP , const strokeS* const psttP )/*1*/
+/*1*/voidT backOldC::strokeAllPapersF( tinBaseS& tinBaseP , const strokeS* const psttP )/*1*/
 
 /**/
 */

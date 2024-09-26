@@ -11,7 +11,7 @@ DONE( tmSubscribeF )
 
 }
     TELL( "tmSubscribeF: cleaning up" )
-    sgnDone_tmQuitSubscribe.waitF( tinP ) ;
+    sgnDone_tmQuitSubscribe.waitF( tinBaseP ) ;
     TELL( "cleaning up: waiting for sgnDone_tmQuitSubscribe to be given" )
 
     }
@@ -23,32 +23,32 @@ DONE( tmSubscribeF )
                 }
                     break ;
 
-                    sgn_pbv.giveF( tinP ) ;
+                    sgn_pbv.giveF( tinBaseP ) ;
                     }
                         bus.pbv = pbv ;
-                        if( cbv ) pso->readF( tinP , pbv , cbv ) ;
+                        if( cbv ) pso->readF( tinBaseP , pbv , cbv ) ;
                         TELL( "idCMDbUS_WRITE idCMDbUS_READ: reading bytes" )
                         pbv[ cbv ] = 0 ;
                     {
                     if( pbv )
-                    ether.newF( tinP , LF , pbv , cbv + 1 ) ; ___( pbv ) ;
+                    ether.newF( tinBaseP , LF , pbv , cbv + 1 ) ; ___( pbv ) ;
                     ZE( byteT* , pbv ) ;
 
                     bus.cbv = cbv ;
-                    pso->readF( tinP , (byteT*)&cbv , sizeof cbv ) ;
+                    pso->readF( tinBaseP , (byteT*)&cbv , sizeof cbv ) ;
                     TELL( "idCMDbUS_WRITE idCMDbUS_READ: reading cbv" )
                     ZE( countT , cbv ) ;
 
-                    ether.delF( tinP , bus.pbv ) ;
+                    ether.delF( tinBaseP , bus.pbv ) ;
                 {
                 case idCMDbUS_READ :
                 case idCMDbUS_WRITE :
                 }
                     break ;
 
-                    sgn_cSubscribers.giveF( tinP ) ;
+                    sgn_cSubscribers.giveF( tinBaseP ) ;
                     bus.cSubscribers = cSub ;
-                    pso->readF( tinP , (byteT*)&cSub , sizeof cSub ) ;
+                    pso->readF( tinBaseP , (byteT*)&cSub , sizeof cSub ) ;
                     TELL( "idCMDbUS_GOODbYE: reading cSub" )
                     ZE( countT , cSub ) ;
                 {
@@ -56,9 +56,9 @@ DONE( tmSubscribeF )
                 }
                     break ;
 
-                    sgn_cSubscribers.giveF( tinP ) ;
+                    sgn_cSubscribers.giveF( tinBaseP ) ;
                     bus.cSubscribers = cSub ;
-                    pso->readF( tinP , (byteT*)&cSub , sizeof cSub ) ;
+                    pso->readF( tinBaseP , (byteT*)&cSub , sizeof cSub ) ;
                     TELL( "idCMDbUS_HELLO: reading cSub" )
                     ZE( countT , cSub ) ;
                 {
@@ -66,14 +66,14 @@ DONE( tmSubscribeF )
             {
             switch( idCmd )
 
-            pso->readF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
+            pso->readF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
             TELL( "reading idCmd" )
             ZE( countT , idCmd ) ;
         {
         else if( pso )
         if( bQuitSubscribe ) { DEL( pso ) ; }
         __( bRefuse ) ;
-        sockSub.acceptF( tinP , pso , idPortPeer , nnPeer , bRefuse ) ; ___( pso ) ;
+        sockSub.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ; ___( pso ) ;
         ZE( boolT , bRefuse ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
@@ -82,13 +82,13 @@ DONE( tmSubscribeF )
     {
     while( !ether && !etThread && !bQuitSubscribe )
 
-    sgnReady.giveF( tinP ) ;
-    sockSub.listenF( tinP ) ;
-    idPortSubscribe = sockSub.bindF( tinP ) ;
-    socketC sockSub( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sgnReady.giveF( tinBaseP ) ;
+    sockSub.listenF( tinBaseP ) ;
+    idPortSubscribe = sockSub.bindF( tinBaseP ) ;
+    socketC sockSub( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
-    { ZE( countT , tnu ) ; ether.osThreadF( tinP , tnu , tmQuitSubscribeF , &sgnDone_tmQuitSubscribe , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnQuit_tmSubscribe , (countT)&bQuitSubscribe , (countT)&idPortSubscribe ) ; }
-    signC sgnDone_tmQuitSubscribe( tinP , TAG( TAGiDnULL ) ) ;
+    { ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmQuitSubscribeF , &sgnDone_tmQuitSubscribe , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnQuit_tmSubscribe , (countT)&bQuitSubscribe , (countT)&idPortSubscribe ) ; }
+    signC sgnDone_tmQuitSubscribe( tinBaseP , TAG( TAGiDnULL ) ) ;
     ZE( boolT , bQuitSubscribe ) ;
 
     signC&  sgn_pbv             = *(signC*) pTaskP->c6 ;

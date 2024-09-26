@@ -9,8 +9,8 @@
 
 DONE( tmWindowsF )
 
-//CONJ: THIS COMMENT IS WRONG BECAUSE tinP IS NOW tinEarlyLate
-//DONE WILL NOT DO THIS BECAUSE tinP AND etThread ARE ALREADY GONE
+//CONJ: THIS COMMENT IS WRONG BECAUSE tinBaseP IS NOW tinEarlyLate
+//DONE WILL NOT DO THIS BECAUSE tinBaseP AND etThread ARE ALREADY GONE
 //WARNING: IF I AM EDITED TO LAUNCH KID THREADS, I MUST EXPLICITLY WAIT HERE FOR THEM ALL TO END
 
 processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_tmWindowsF_HASeNDED | flPROCESSsTATE_MAINtHREADiSaLONE ;
@@ -22,15 +22,15 @@ THREADmODE2rESTORE
     
 #endif
 
-        etherC::loafIF( tinP ) ; //U::DOODLING
-        sgnReady.giveF( tinP ) ;
-        etThread.delF( tinP , psttTitle ) ;
+        etherC::loafIF( tinBaseP ) ; //U::DOODLING
+        sgnReady.giveF( tinBaseP ) ;
+        etThread.delF( tinBaseP , psttTitle ) ;
 
 #else
 
         }
-            thirdC::winDestroyWindowClassIF( tinP , MAINwINDOWcLASSnAME ) ;
-            tinP.idPhase2 = 3 ;
+            thirdC::winDestroyWindowClassIF( tinBaseP , MAINwINDOWcLASSnAME ) ;
+            ((tinNormalS&)tinBaseP).idPhase2 = 3 ;
             //LOGrAW( "tmWindowsF/dispatchola/-\r\n" ) ;
             TINSL
         {
@@ -38,47 +38,47 @@ THREADmODE2rESTORE
 
         }
             FIREmYSELF ;
-            thirdC::third_flagsModeAdam1I_IF( tinP ) &= ~( F(flADAMmODE1_tmWindows) ) ;
+            thirdC::third_flagsModeAdam1I_IF( tinBaseP ) &= ~( F(flADAMmODE1_tmWindows) ) ;
             }
-                thirdC::third_flagsProcessStateI_IF( tinP , flPROCESSsTATE_WM_CLOSE_RECEIVED , 1 ) ; // main WILL PROCEED TO CLEANUP WHEN IT SEES THIS
+                thirdC::third_flagsProcessStateI_IF( tinBaseP , flPROCESSsTATE_WM_CLOSE_RECEIVED , 1 ) ; // main WILL PROCEED TO CLEANUP WHEN IT SEES THIS
                 POOPIES
             {
         {
         else
         }
-            thirdC::winDispatchMessagesIF( tinP ) ; // WM_CLOSE WILL DELETE pEtThread (WHICH DELETES tinP) BEFORE THIS RETURNS
+            thirdC::winDispatchMessagesIF( tinBaseP ) ; // WM_CLOSE WILL DELETE pEtThread (WHICH DELETES tinBaseP) BEFORE THIS RETURNS
             //LOGrAW( "tmWindowsF/dispatchola/+\r\n" ) ;
             //FROM HERE ON DO NOT REFER TO ANY IFC OBJECTS (EG etThread)
-            tinP.idPhase2 = 2 ;
+            ((tinNormalS&)tinBaseP).idPhase2 = 2 ;
             DEL( pTaskP ) ;
             TELL( "pumping window messages" )
         {
         if( !etThread )
-        sgnReady.giveF( tinP ) ;
+        sgnReady.giveF( tinBaseP ) ;
 
         else __1 ;        
         }
             pRootI->letRefF() ;
         
-            etThread.delF( tinP , psttTitle ) ;
-            if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_HIDEwITHiCON ) ) thThread.winShowWindowF( tinP , *pRootI , F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_LAUNCHmINIMIZED ? idcWINsHOW_MINIMIZE : /*idcWINsHOW_MAXIMIZE*/idcWINsHOW_SHOW ) ;
+            etThread.delF( tinBaseP , psttTitle ) ;
+            if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_HIDEwITHiCON ) ) thThread.winShowWindowF( tinBaseP , *pRootI , F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_LAUNCHmINIMIZED ? idcWINsHOW_MINIMIZE : /*idcWINsHOW_MAXIMIZE*/idcWINsHOW_SHOW ) ;
     
             }
                 }
-                    ((paperOldC&)paper).purgeF( tinP ) ;
-                    const paperOldC& paper = pRootI->selectPaperF( tinP , ifcIDcMDpAPERsELECT_SETrENDER , idPaper ) ;
+                    ((paperOldC&)paper).purgeF( tinBaseP ) ;
+                    const paperOldC& paper = pRootI->selectPaperF( tinBaseP , ifcIDcMDpAPERsELECT_SETrENDER , idPaper ) ;
                 {
                 for( countT idPaper = cPapersRoot ; idPaper >= 1 ; idPaper -- )
             {
 
-            thThread.winSetTitleF( tinP , T(psttTitle) , *pRootI ) ;
+            thThread.winSetTitleF( tinBaseP , T(psttTitle) , *pRootI ) ;
         {
         if( pRootI )
-        windowOldC* pRootI = windowOldC::getRefIF( tinP ) ;
+        windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
 
         }
-            { windowOldC* pwq = new( 0 , tinP , LF ) windowOldC( tinP , etThread , cPapersRoot , 0 , 1 , ifCol , ifRow , cCol , cRow , cColClient , cRowClient , 1 ) ; ___( pwq ) ; } // winRoot MUST BE THE WO'TH WINDOW CONSTRUCTED
-            thThread.winAdjustWindowPositionF( tinP , ifCol , ifRow , cCol , cRow ) ;
+            { windowOldC* pwq = new( 0 , tinBaseP , LF ) windowOldC( tinBaseP , etThread , cPapersRoot , 0 , 1 , ifCol , ifRow , cCol , cRow , cColClient , cRowClient , 1 ) ; ___( pwq ) ; } // winRoot MUST BE THE WO'TH WINDOW CONSTRUCTED
+            thThread.winAdjustWindowPositionF( tinBaseP , ifCol , ifRow , cCol , cRow ) ;
 
             }
                 cRow = cRowClient ;
@@ -110,7 +110,7 @@ THREADmODE2rESTORE
                 //if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DEBUG ) )
 //#if defined( NEVERdEFINED )
     
-                thThread.osDisplaySizeF( tinP , cColDisplay , cRowDisplay ) ;
+                thThread.osDisplaySizeF( tinBaseP , cColDisplay , cRowDisplay ) ;
                 ZE( countT , cRowDisplay ) ;
                 ZE( countT , cColDisplay ) ;
             {
@@ -125,27 +125,27 @@ THREADmODE2rESTORE
         {
         const countT cPapersRoot = 3 ; //MUST BE 3 OR GREATER BECAUSE EXIST 3 IS GUARANTEED (3 CAN BE USED AS SCRATCH)
     
-        thThread.winCreateWindowClassF( tinP , MAINwINDOWcLASSnAME , winMessageHandlerF ) ;
-        //thThread.winCreateWindowClassF( tinP , MAINwINDOWcLASSnAME , winMessageHandlerDebugF ) ;
-        etherC::ether_pMainRefsIF( tinP ) = new( 0 , tinP , LF ) mainRefsS( tinP , ether , pEtThread ) ; ___( etherC::ether_pMainRefsIF( tinP ) ) ;
+        thThread.winCreateWindowClassF( tinBaseP , MAINwINDOWcLASSnAME , winMessageHandlerF ) ;
+        //thThread.winCreateWindowClassF( tinBaseP , MAINwINDOWcLASSnAME , winMessageHandlerDebugF ) ;
+        etherC::ether_pMainRefsIF( tinBaseP ) = new( 0 , tinBaseP , LF ) mainRefsS( tinBaseP , ether , pEtThread ) ; ___( etherC::ether_pMainRefsIF( tinBaseP ) ) ;
 #if defined( NEVERdEFINED )
 //20230403@1610: !defined -> defiend IN ORDER TO UNBREAK PRODUCTION CODE
 //20230403@1109: defined -> !defined IN ORDER TO SEE WHETHER OLD GRAPHICS CODE WORKS (WHEN THIS THREAD IS SUPPRESSED, THE NEW GRAPHICS CODE WORKS)
 
         thirdC& thThread = etThread ;
-        thirdC::third_idThreadWindowsIF( tinP ) = tinP.monitor.idThread ;
+        thirdC::third_idThreadWindowsIF( tinBaseP ) = ((tinNormalS&)tinBaseP).monitor.idThread ;
         strokeS*& psttTitle = *(strokeS**)pTaskP->c2 ;
         signC&    sgnReady  =    *(signC*)pTaskP->c1 ;
-        //THIS IS A NO NO.  A FAILURE ON THIS THREAD CAN CAUSE RUSH SPIN OF THE CPU: etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_RUSH ) ;
+        //THIS IS A NO NO.  A FAILURE ON THIS THREAD CAN CAUSE RUSH SPIN OF THE CPU: etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
         }
             __( ifMin < osMin ) ;
             countT ifMin = idwm_USER ;
-            countT osMin = thirdC::winIdMsgUserIF( tinP ) ;
+            countT osMin = thirdC::winIdMsgUserIF( tinBaseP ) ;
         {
     
-        tinP.idPhase2 = 1 ;
-        processGlobal2I.ebp_tmWindowsF_ = ebpAM() ; //winMessageHandlerWorkF WILL USE THIS VALUE TO FIND tinP
-        if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( tinP.monitor.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
+        ((tinNormalS&)tinBaseP).idPhase2 = 1 ;
+        processGlobal2I.ebp_tmWindowsF_ = ebpAM() ; //winMessageHandlerWorkF WILL USE THIS VALUE TO FIND tinBaseP
+        if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tinNormalS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
         TELL( "setting up" )
     {
     if( pTaskP && pTaskP->c1 && pTaskP->c2 )
@@ -153,7 +153,7 @@ THREADmODE2rESTORE
 {
 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //OBSERVED SLEEP BLAMMO FOR CONSOLE a45 OCCASIONALLY July 31,2005 DURING INSTALL; DID NOT ANALYZE
 
-tinP.tell_tmWatchF_toIgnoreMeF() ;
+((tinNormalS&)tinBaseP).tell_tmWatchF_toIgnoreMeF() ;
 
 
 /*1*/TASK( tmWindowsF )/*1*/
@@ -170,8 +170,8 @@ tinP.tell_tmWatchF_toIgnoreMeF() ;
  i must do this because MS Windows is such a piece of shit
  i am essentially an orphan thread, hanging around while main d eletes all of this processes ifc objects
   for example, i must not use the T macro
- after that time, i must avoid referring to etThread or tinP and i must also avoid referring to other ifc objects
-wo tricky aspect of this thread is that it blocks in the WM_CLOSE handler, which destroys its etThread and its tinP objects
+ after that time, i must avoid referring to etThread or tinBaseP and i must also avoid referring to other ifc objects
+wo tricky aspect of this thread is that it blocks in the WM_CLOSE handler, which destroys its etThread and its tinBaseP objects
  psttTitle
  sgnReady
 arguments
@@ -200,7 +200,7 @@ i create windows, handle their messages, and destroy them
     }
         }
             break ;
-            rc = tinP.brcRaw ;
+            rc = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( (HWND)hWindowP , idCmdP , p1P , p2P ) )
         {
         default:
@@ -215,19 +215,19 @@ i create windows, handle their messages, and destroy them
             break ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , PostMessage( (HANDLE)hWindowP , WM_QUIT , 0 , 0 ) )
-            rc = tinP.brcRaw ;
+            rc = ((tinNormalS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( (HWND)hWindowP , idCmdP , p1P , p2P ) )
             }
-                while( !( F(thirdC::third_flagsProcessStateI_IF(tinP)) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepRawIF( tinP , 250 ) ; }
-                sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+                while( !( F(thirdC::third_flagsProcessStateI_IF(tinBaseP)) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }
+                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
-            thirdC::third_flagsProcessStateI_IF( tinP , flPROCESSsTATE_WM_CLOSE_RECEIVED , 1 ) ; // main WILL PROCEED TO CLEANUP WHEN IT SEES THIS
+            thirdC::third_flagsProcessStateI_IF( tinBaseP , flPROCESSsTATE_WM_CLOSE_RECEIVED , 1 ) ; // main WILL PROCEED TO CLEANUP WHEN IT SEES THIS
 
-            DEL( etherC::ether_pMainRefsIF( tinP ) ) ; // NO FURTHER USE FOR THIS
+            DEL( etherC::ether_pMainRefsIF( tinBaseP ) ) ; // NO FURTHER USE FOR THIS
             TINSL
-            DEL( pEtThread ) ; //THIS ALSO CAUSES tinP TO BE DESTROYED
-            DEL( tinP.pEtScratch ) ;
-            etherC*& pEtThread  = etherC::ether_pMainRefsIF( tinP )->pEtThread ;
+            DEL( pEtThread ) ; //THIS ALSO CAUSES tinBaseP TO BE DESTROYED
+            DEL( ((tinNormalS&)tinBaseP).pEtScratch ) ;
+            etherC*& pEtThread  = etherC::ether_pMainRefsIF( tinBaseP )->pEtThread ;
         {
         case idwm_CLOSE :
         case WM_CLOSE :

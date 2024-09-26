@@ -12,11 +12,11 @@
 REST
 
 }
-    etThread.delF( tinP , pbZombie ) ;
+    etThread.delF( tinBaseP , pbZombie ) ;
 
     }
         ptc = ptc->pKidF() ;
-        etThread.strokeF( tinP , T("after : ")+T(*(countT*)(byteT*)*ptc)+tc ) ;
+        etThread.strokeF( tinBaseP , T("after : ")+T(*(countT*)(byteT*)*ptc)+tc ) ;
     {
     while( ptc )
     ptc = &tRoot ;
@@ -25,7 +25,7 @@ REST
 
     }
         ptc = ptc->pKidF() ;
-        etThread.strokeF( tinP , T("before: ")+T(*(countT*)(byteT*)*ptc)+tc ) ;
+        etThread.strokeF( tinBaseP , T("before: ")+T(*(countT*)(byteT*)*ptc)+tc ) ;
     {
     while( ptc )
     TN( tc , "\r\n" ) ;
@@ -42,12 +42,12 @@ REST
 
     thugC& tRoot = hood ; *(countT*)(byteT*)tRoot = 0 ;
 
-    hoodC hood( tinP , "hood" , cbDatum , cData ) ;
+    hoodC hood( tinBaseP , "hood" , cbDatum , cData ) ;
 
 
-    thirdC::dosPriorityIF( tinP , idDesireSave ) ;
-    thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_RUSH ) ;
-    const countT idDesireSave = tinP.idDesireSetBySelf ;
+    thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
+    thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+    const countT idDesireSave = ((tinNormalS&)tinBaseP).idDesireSetBySelf ;
     U::ALL CODE THAT CALLS thugC::grabF MUST BE RUSH
 
     countT cData = 8 ;

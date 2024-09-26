@@ -8,29 +8,29 @@
 
 
 }
-    tinP.flags |= flTINs_REGISTERED ; //U::CONJ: THIS IS NOT NEEDED NOW THAT pTinF IS USED
+    ((tinNormalS&)tinBaseP).flags |= flTINs_REGISTERED ; //U::CONJ: THIS IS NOT NEEDED NOW THAT pTinF IS USED
     }
         }
-            tinP.pag1->_thirdC_.pStk_pThird           = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL )                                                                                                         ) ; ___( tinP.pag1->_thirdC_.pStk_pThird           ) ;
-            tinP.pag1->_thirdC_.pStkTasksWhenQuitting = new( 0 , tinP , LF ) stackC(  tinP , *tinP.pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL )                                                                                                         ) ; ___( tinP.pag1->_thirdC_.pStkTasksWhenQuitting ) ;
-            tinP.pag1->_thirdC_.pSwKillSocket         = new( 0 , tinP , LF ) switchC( tinP , *tinP.pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , tinP.pag1->_thirdC_.cLever_pSwKillSocket , 0 , sizeof( killSocketS )          ) ; ___( tinP.pag1->_thirdC_.pSwKillSocket         ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird           = new( 0 , tinBaseP , LF ) stackC(  tinBaseP , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL )                                                                                                         ) ; ___( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird           ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting = new( 0 , tinBaseP , LF ) stackC(  tinBaseP , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL )                                                                                                         ) ; ___( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwKillSocket         = new( 0 , tinBaseP , LF ) switchC( tinBaseP , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , ((tinNormalS&)tinBaseP).pag1->_thirdC_.cLever_pSwKillSocket , 0 , sizeof( killSocketS )          ) ; ___( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwKillSocket         ) ;
             THREADmODE4rESTORE
-            tinP.pag1->_thirdC_.pSwFileOpen           = new( 0 , tinP , LF ) switchC( tinP , *tinP.pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , tinP.pag1->_thirdC_.cLever_pSwFileOpen   , 0 , 0 , ifcIDgRABlAYER_dSWfILEoPEN ) ; ___( tinP.pag1->_thirdC_.pSwFileOpen           ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen           = new( 0 , tinBaseP , LF ) switchC( tinBaseP , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , ((tinNormalS&)tinBaseP).pag1->_thirdC_.cLever_pSwFileOpen   , 0 , 0 , ifcIDgRABlAYER_dSWfILEoPEN ) ; ___( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen           ) ;
             THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP )     // THIS IS NEEDED BECAUSE pSwFileOpen->stackk WILL GRAB ITSELF DURING CT AND THEN WILL ALLOCATE FROM POOL, WHICH WOULD CAUSE NONMONOTONIC GRAB
-            tinP.pag1->_thirdC_.pSwThreadHandle       = new( 0 , tinP , LF ) switchC( tinP , *tinP.pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , tinP.pag1->_thirdC_.lOsTid                                                    ) ; ___( tinP.pag1->_thirdC_.pSwThreadHandle       ) ;
-            tinP.pag1->_thirdC_.pSwProcessHandle      = new( 0 , tinP , LF ) switchC( tinP , *tinP.pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , tinP.pag1->_thirdC_.lOsPid                                                    ) ; ___( tinP.pag1->_thirdC_.pSwProcessHandle      ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle       = new( 0 , tinBaseP , LF ) switchC( tinBaseP , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid                                                    ) ; ___( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle       ) ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle      = new( 0 , tinBaseP , LF ) switchC( tinBaseP , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting , TAG( TAGiDnULL ) , flSTACKc_null , ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsPid                                                    ) ; ___( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle      ) ;
         {
-        if( tinP.pag1->_thirdC_.pThLongLasting )
-        tinP.pag1->_thirdC_.pThLongLasting = new( 0 , tinP , LF ) thirdC( tinP , TAG( TAGiDnULL ) ) ; ___( tinP.pag1->_thirdC_.pThLongLasting ) ;
-        tinP.pag1->_thirdC_.phCritSec = new( 0 , tinP , tinP.pag1->_thirdC_.pbZombieCritSec , sizeof tinP.pag1->_thirdC_.pbZombieCritSec ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_CRITICALsECTION ) ;
-        tinP.pag1->_thirdC_.pThPrime = &third ;
+        if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting )
+        ((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting = new( 0 , tinBaseP , LF ) thirdC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting ) ;
+        ((tinNormalS&)tinBaseP).pag1->_thirdC_.phCritSec = new( 0 , tinBaseP , ((tinNormalS&)tinBaseP).pag1->_thirdC_.pbZombieCritSec , sizeof ((tinNormalS&)tinBaseP).pag1->_thirdC_.pbZombieCritSec ) handleC( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_CRITICALsECTION ) ;
+        ((tinNormalS&)tinBaseP).pag1->_thirdC_.pThPrime = &third ;
     {
-    if( !tinP.pag1->_thirdC_.pThPrime )
+    if( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pThPrime )
     putNegAM( *(countT*)&third.fingerprint , FINGERnEG_THIRDc ) ;
     _IO_
 {
 third( *(thirdC*)c_pP ) //ASSUME: c_pP IS NEVER 0.  CAN HAVE ACCESS VIOLATION
-/*1*/thirdInitC::thirdInitC( tinS& tinP , countT c_pP )/*1*/ :
+/*1*/thirdInitC::thirdInitC( tinBaseS& tinBaseP , countT c_pP )/*1*/ :
 
 /**/
 */

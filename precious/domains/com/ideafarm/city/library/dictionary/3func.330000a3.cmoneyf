@@ -10,13 +10,13 @@
 }
     return cCents + cDollars * 100 ;
 
-    PUSE( tinP , *(byteT**)&pstt1w ) ;
+    PUSE( tinBaseP , *(byteT**)&pstt1w ) ;
 
     }
         else            bDollars = 0 ;
         if( !bDollars ) break ;
 
-        *ppcOut[ bDollars ] = etherP.strDigitsToSCountF( tinP , psttc1 , 0xa , 1 ) ;
+        *ppcOut[ bDollars ] = etherP.strDigitsToSCountF( tinBaseP , psttc1 , 0xa , 1 ) ;
     {
     FORsTRINGSiN1( pstt1w )
     countT* ppcOut[] = { &cCents , &cDollars } ;
@@ -24,11 +24,11 @@
     ZE( countT , cDollars ) ;
     ZE( countT , cCents   ) ;
 
-    countT cWords = etherP.strWordsOldF( tinP , pstt1w , psttP , sttq , T(".") ) ; ___( pstt1w ) ;
+    countT cWords = etherP.strWordsOldF( tinBaseP , pstt1w , psttP , sttq , T(".") ) ; ___( pstt1w ) ;
     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
     ZE( strokeS* , pstt1w ) ;
 {
-/*1*/countT cMoneyF( tinS& tinP , etherC& etherP , const strokeS* const psttP )/*1*/
+/*1*/countT cMoneyF( tinBaseS& tinBaseP , etherC& etherP , const strokeS* const psttP )/*1*/
 
 /**/
 */

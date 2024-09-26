@@ -11,7 +11,7 @@
     }
         }
             break ;
-            ether.delF( tinP , psttw ) ;
+            ether.delF( tinBaseP , psttw ) ;
             }
                 //E.G. POPUPsOIXLoLD(/*5*/osTextT*/*5*/postP)
                 //ALT: REQUIRE TYPING INFO TO BE PRESENT IN THE MACRO #define STATEMENT WO'TH TOKEN
@@ -19,10 +19,10 @@
                 //ISSUE: SHOULD SUPPORT FOR GLOBAL API'S BE HARDCODED HERE OR GENERATED: CONJ: GENERATED AND INCLUDED HERE
                 //DO NOT PUT API'S TO CLASSES HERE; DERIVE CLASSES FROM baseSoilXxxxC; SEE etherC AS AN EXAMPLE
 
-                else if( !( F(tinP.flagsThreadMode3) & flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUPsOIXLoLD( T("The word \"")+T(psttw)+T("\" is not a root word.") ) ; }
+                else if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUPsOIXLoLD( T("The word \"")+T(psttw)+T("\" is not a root word.") ) ; }
                 }
                     }
-                        ether.delF( tinP , psttw ) ;
+                        ether.delF( tinBaseP , psttw ) ;
 
                         POPUPsOIXLoLD( T(psttw) ) ;
                         //CONoUTrAW( T("POPUP suppressed: \"")+T(psttw)+T("\"\r\n") ) ;
@@ -33,15 +33,15 @@
                     else
                     IFbADpEEK( slP , psttw , ifcIDtYPEsOULiTEM_strokeSptr )
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("POPUP") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("POPUP") ) )
                 }
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("null") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("null") ) )
                 }
                     }
                         }
-                            PUSE( tinP , *(byteT**)&psttDo ) ;
-                            PUSE( tinP , *(byteT**)&psttExpr ) ;
+                            PUSE( tinBaseP , *(byteT**)&psttDo ) ;
+                            PUSE( tinBaseP , *(byteT**)&psttExpr ) ;
                         
                             }
                                 if( bAbort ) break ;
@@ -53,7 +53,7 @@
                                         ZE( countT , vv ) ;
                                     {
                                     if( !cExpr )
-                                    countT& cExpr = slP.cFieldF( tinP ) ;
+                                    countT& cExpr = slP.cFieldF( tinBaseP ) ;
                                     bAbort = 0 ;
                                 {
                                 else
@@ -77,12 +77,12 @@
                     else
                     IFbADpEEK( slP , psttw , ifcIDtYPEsOULiTEM_strokeSptr )
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("dowhile") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("dowhile") ) )
                 }
                     }
                         }
-                            PUSE( tinP , *(byteT**)&psttDo ) ;
-                            PUSE( tinP , *(byteT**)&psttExpr ) ;
+                            PUSE( tinBaseP , *(byteT**)&psttDo ) ;
+                            PUSE( tinBaseP , *(byteT**)&psttExpr ) ;
                         
                             }
                                 if( bAbort ) break ;
@@ -95,7 +95,7 @@
                                         ZE( countT , vv ) ;
                                     {
                                     if( !cExpr )
-                                    countT& cExpr = slP.cFieldF( tinP ) ;
+                                    countT& cExpr = slP.cFieldF( tinBaseP ) ;
                                     bAbort = 0 ;
                                 {
                                 else
@@ -117,16 +117,16 @@
                     else
                     IFbADpEEK( slP , psttw , ifcIDtYPEsOULiTEM_strokeSptr )
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("whiledo") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("whiledo") ) )
                 }
                     }
                         }
                             }
                                 }
-                                    PUSE( tinP , *(byteT**)&psttEpilog ) ;
-                                    PUSE( tinP , *(byteT**)&psttDo ) ;
-                                    PUSE( tinP , *(byteT**)&psttProlog ) ;
-                                    PUSE( tinP , *(byteT**)&psttExpr ) ;
+                                    PUSE( tinBaseP , *(byteT**)&psttEpilog ) ;
+                                    PUSE( tinBaseP , *(byteT**)&psttDo ) ;
+                                    PUSE( tinBaseP , *(byteT**)&psttProlog ) ;
+                                    PUSE( tinBaseP , *(byteT**)&psttExpr ) ;
                         
                                     }
                                         if( bAbort ) break ;
@@ -139,7 +139,7 @@
                                                 ZE( countT , vv ) ;
                                             {
                                             if( !cExpr )
-                                            countT& cExpr = slP.cFieldF( tinP ) ;
+                                            countT& cExpr = slP.cFieldF( tinBaseP ) ;
                                             bAbort = 0 ;
                                         {
                                         else
@@ -173,15 +173,15 @@
                     else
                     IFbADpEEK( slP , psttw , ifcIDtYPEsOULiTEM_strokeSptr )
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("for") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("for") ) )
                 }
                     }
                         }
                             }
                                 slP O(*pParser) ;
                         
-                                PUSE( tinP , *(byteT**)&psttThen ) ;
-                                PUSE( tinP , *(byteT**)&psttElse ) ;
+                                PUSE( tinBaseP , *(byteT**)&psttThen ) ;
+                                PUSE( tinBaseP , *(byteT**)&psttElse ) ;
                         
                                 else        slP << psttElse ;
                                 if( bThen ) slP << psttThen ;
@@ -204,7 +204,7 @@
                     else
                     IFbADpEEK( slP , psttw , ifcIDtYPEsOULiTEM_strokeSptr )
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("if") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("if") ) )
                 }
                     }
                         slP << ++ vv ;
@@ -214,7 +214,7 @@
                     else
                     IFbADpEEK( slP , psttw , ifcIDtYPEsOULiTEM_countT )
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("++") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("++") ) )
                 }
                     }
                         slP << -- vv ;
@@ -224,7 +224,7 @@
                     else
                     IFbADpEEK( slP , psttw , ifcIDtYPEsOULiTEM_countT )
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("--") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("--") ) )
                 }
                     }
                         slP << vv << vv ;
@@ -234,11 +234,11 @@
                     else
                     IFbADpEEK( slP , psttw , ifcIDtYPEsOULiTEM_countT )
                 {
-                else if( !ether.strCompareF( tinP , psttw , T("dup") ) )
+                else if( !ether.strCompareF( tinBaseP , psttw , T("dup") ) )
                 }
                     POPUP( T(postName)+T(": \"?\" received.") ) ;
                 {
-                if( !ether.strCompareF( tinP , psttw , T("?") ) )
+                if( !ether.strCompareF( tinBaseP , psttw , T("?") ) )
             
                 ZE( countT , cbFieldNext ) ;
                 ZE( flagsT , flagsNext ) ;
@@ -278,7 +278,7 @@
         case ifcIDcMDbASE_INSTANCEnAME :
         }
             break ;
-            slP << (strokeS*)T(tinP.pag1->_rootWordC_.postOldClassName) ;
+            slP << (strokeS*)T(((tinNormalS&)tinBaseP).pag1->_rootWordC_.postOldClassName) ;
         {
         case ifcIDcMDbASE_CLASSnAME :
     {
@@ -292,7 +292,7 @@
         ZE( baseSoilXxxxC* , pMeI ) ;
     {
 {
-/*1*/voidT rootWordC::operator ()( tinS& tinP , soulC& slP )/*1*/
+/*1*/voidT rootWordC::operator ()( tinBaseS& tinBaseP , soulC& slP )/*1*/
 
 /**/
 */

@@ -15,7 +15,7 @@
             }
                 break ;
                 __1
-                __( tinP.brcRaw ) ;
+                __( ((tinNormalS&)tinBaseP).brcRaw ) ;
             {
             default:
             case IDNO     : { idResult = ifcMESSAGEbOXrESULT_NO     ; break ; }
@@ -26,9 +26,9 @@
             case IDRETRY  : { idResult = ifcMESSAGEbOXrESULT_RETRY  ; break ; }
             case IDABORT  : { idResult = ifcMESSAGEbOXrESULT_ABORT  ; break ; }
         {
-        switch( tinP.brcRaw )
+        switch( ((tinNormalS&)tinBaseP).brcRaw )
         BOSpOOP
-        BOS( WHATsww , BOSoK , MessageBox( 0 , postP , postTitle , MB_SERVICE_NOTIFICATION | flagsButtons | flagSelectedF( tinP , flagsButtonsP , flagButtonSelectedP ) ) )
+        BOS( WHATsww , BOSoK , MessageBox( 0 , postP , postTitle , MB_SERVICE_NOTIFICATION | flagsButtons | flagSelectedF( tinBaseP , flagsButtonsP , flagButtonSelectedP ) ) )
 
         }
             __( flagsButtonsP ) ;
@@ -62,7 +62,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/countT thirdC::osMessageBoxIF( tinS& tinP , const osTextT* const postP , const osTextT* const postTitleP , const flagsT flagsButtonsP , const flagsT flagButtonSelectedP )/*1*/
+/*1*/countT thirdC::osMessageBoxIF( tinBaseS& tinBaseP , const osTextT* const postP , const osTextT* const postTitleP , const flagsT flagsButtonsP , const flagsT flagButtonSelectedP )/*1*/
 
 /**/
 */
@@ -72,7 +72,7 @@
  flagsButtonsP
  postTitleP
  postP
- tinP
+ tinBaseP
 arguments
 \<A HREF=\"5.1020104.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$osMessageBoxIF.0.html\"\>instances\</A\>

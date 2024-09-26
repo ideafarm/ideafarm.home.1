@@ -8,10 +8,10 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
-    freshPodAbsF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+    freshPodAbsF( tinBaseP ) ;
 
-    sqmAbsFromHull = sqmHullFromAbs.transposeF( tinP ) ;
+    sqmAbsFromHull = sqmHullFromAbs.transposeF( tinBaseP ) ;
 
     sqmHullFromAbs( 3 , 3 ) = state.vaHull_z * unit_z ;
     sqmHullFromAbs( 3 , 2 ) = state.vaHull_z * unit_y ;
@@ -24,9 +24,9 @@
     sqmHullFromAbs( 1 , 3 ) = state.vaHull_x * unit_z ;
     sqmHullFromAbs( 1 , 2 ) = state.vaHull_x * unit_y ;
     sqmHullFromAbs( 1 , 1 ) = state.vaHull_x * unit_x ;
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT eyeOldC::freshHullF( tinS& tinP )/*1*/
+/*1*/voidT eyeOldC::freshHullF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 

@@ -8,7 +8,7 @@
 
 
 }
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
 
     }
         }
@@ -17,7 +17,7 @@
             sadamP.pStrike->sc.mColsMoved += mDeltaCol ;
 
             }
-                if( !( F(sadamP.pStrike->sc.flags) & flSTRIKEs_FLY ) != !bFlyOld ) sadamHighlightF( tinP , sadamP , flSADAMhIGHLIGHT_FLYOVER ) ;
+                if( !( F(sadamP.pStrike->sc.flags) & flSTRIKEs_FLY ) != !bFlyOld ) sadamHighlightF( tinBaseP , sadamP , flSADAMhIGHLIGHT_FLYOVER ) ;
                 else      sadamP.pStrike->sc.flags &= ~( F(flSTRIKEs_FLY) ) ;
                 if( bIn ) sadamP.pStrike->sc.flags |= flSTRIKEs_FLY ;
                 const boolT bFlyOld = F(sadamP.pStrike->sc.flags) & flSTRIKEs_FLY ;
@@ -36,30 +36,30 @@
             if( F(sadamP.features.fc.flagsFlyoverHighlight) & flFEATUREsADAMfLYOVERhIGHLIGHT_EXISTS && !( F(sadamP.pStrike->sc.flags) & flSTRIKEs_DRAG ) )
     
             }
-                winPulp.positionPaperBackF( tinP ) ;
-                winPulp.cacheF( tinP , saOLD_POPfRAME ) ;
+                winPulp.positionPaperBackF( tinBaseP ) ;
+                winPulp.cacheF( tinBaseP , saOLD_POPfRAME ) ;
                 winPulp.stqr_strokingFrame >> pbsf ;
                 winPulp.stqr_strokingFrame >> pbsf ;
                 byteT* pbsf = (byteT*)&sf ;
                 strokingFrameS sf ;
             {
     
-            if( F(flHighSave) ) sadamHighlightF( tinP , sadamP , flHighSave ) ;
+            if( F(flHighSave) ) sadamHighlightF( tinBaseP , sadamP , flHighSave ) ;
 
-            tinP.pag1->_pulpOldC_.flagsMode = _saveModeI ;
-            renderVolatilesF( tinP , sadamP , phCloneP ) ;
-            winPulp.x1.back.wrapRenderF( tinP , sadamP.features.psttBody , phCloneP ) ;
+            ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode = _saveModeI ;
+            renderVolatilesF( tinBaseP , sadamP , phCloneP ) ;
+            winPulp.x1.back.wrapRenderF( tinBaseP , sadamP.features.psttBody , phCloneP ) ;
             //DRAW NEW
     
-            winPulp.positionPaperBackF( tinP ) ;
-            winPulp.cacheF( tinP , scOld_mmFRAME ) ;
+            winPulp.positionPaperBackF( tinBaseP ) ;
+            winPulp.cacheF( tinBaseP , scOld_mmFRAME ) ;
             sadamP.pStrike->sc.mIdRowHot += mDeltaRow ;
             sadamP.pStrike->sc.mIdColHot += mDeltaCol ;
             sadamP.pStrike->sc.sf.mIdRow = sf.mIdRow = mIdRowMoveTo ;
             sadamP.pStrike->sc.sf.mIdCol = sf.mIdCol = mIdColMoveTo ;
 
-            thirdC::c_memcpyIF( tinP , (byteT*)&sfd , (byteT*)&sadamP.pStrike->sc.sfDad , sizeof sfd ) ;
-            thirdC::c_memcpyIF( tinP , (byteT*)&sf  , (byteT*)&sadamP.pStrike->sc.sf    , sizeof sf ) ;
+            thirdC::c_memcpyIF( tinBaseP , (byteT*)&sfd , (byteT*)&sadamP.pStrike->sc.sfDad , sizeof sfd ) ;
+            thirdC::c_memcpyIF( tinBaseP , (byteT*)&sf  , (byteT*)&sadamP.pStrike->sc.sf    , sizeof sf ) ;
             strokingFrameS& sfd = *(strokingFrameS*)&winPulp.stqr_strokingFrame[ 2 ] ; //U::WHAT ABOUT NONDEFAULT OFFSETS
             strokingFrameS& sf  = *(strokingFrameS*)&winPulp.stqr_strokingFrame[ 1 ] ; //U::WHAT ABOUT NONDEFAULT OFFSET
 
@@ -67,25 +67,25 @@
             sadamP.pStrike->sc.sfDad.mIdCol += mDeltaCol ;
 
             winPulp.flagsMode = _saveMode ;
-            renderVolatilesF( tinP , sadamP , phCloneP ) ;
-            winPulp.x1.back.wrapRenderF( tinP , sadamP.features.psttBody , phCloneP ) ;
-            tinP.pag1->_pulpOldC_.flagsMode |= flPAPERmODEi_SUPPRESStABfRESH ;
+            renderVolatilesF( tinBaseP , sadamP , phCloneP ) ;
+            winPulp.x1.back.wrapRenderF( tinBaseP , sadamP.features.psttBody , phCloneP ) ;
+            ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode |= flPAPERmODEi_SUPPRESStABfRESH ;
             const flagsT _saveMode  = winPulp.flagsMode ;
-            const flagsT _saveModeI = tinP.pag1->_pulpOldC_.flagsMode ;
+            const flagsT _saveModeI = ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode ;
             //ERASE OLD
     
-            if( F(flHighSave) ) sadamHighlightF( tinP , sadamP , flHighSave ) ;
+            if( F(flHighSave) ) sadamHighlightF( tinBaseP , sadamP , flHighSave ) ;
             const flagsT flHighSave = sadamP.pStrike->sc.flagsHighlighted ;
     
-            winPulp.positionPaperBackF( tinP ) ;
-            winPulp.cacheF( tinP , scOld_mmFRAME ) ;
+            winPulp.positionPaperBackF( tinBaseP ) ;
+            winPulp.cacheF( tinBaseP , scOld_mmFRAME ) ;
             winPulp.stqr_strokingFrame << (byteT*)&sfw ;
             winPulp.stqr_strokingFrame << (byteT*)&sfwd ;
 
             winPulpOldC& winPulp = *(winPulpOldC*)x1.pPulp ;
     
-            thirdC::c_memcpyIF( tinP , (byteT*)&sfwd , (byteT*)&sadamP.pStrike->sc.sfDad , sizeof sfwd ) ;
-            thirdC::c_memcpyIF( tinP , (byteT*)&sfw  , (byteT*)&sadamP.pStrike->sc.sf    , sizeof sfw ) ;
+            thirdC::c_memcpyIF( tinBaseP , (byteT*)&sfwd , (byteT*)&sadamP.pStrike->sc.sfDad , sizeof sfwd ) ;
+            thirdC::c_memcpyIF( tinBaseP , (byteT*)&sfw  , (byteT*)&sadamP.pStrike->sc.sf    , sizeof sfw ) ;
             strokingFrameS sfwd ;
             strokingFrameS sfw ;
 
@@ -108,9 +108,9 @@
     if( sadamP.pStrike->sc.mIdColMoveTo != MAXmEASUREt )
 
     //U::DO I NEED TO BE SERIALIZED?: NOT SERIALIZED CAUSE PRIVATE
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT paperOldC::moveGlyphF( tinS& tinP , sadamC& sadamP , const handleC* const phCloneP )/*1*/
+/*1*/voidT paperOldC::moveGlyphF( tinBaseS& tinBaseP , sadamC& sadamP , const handleC* const phCloneP )/*1*/
 
 /**/
 */

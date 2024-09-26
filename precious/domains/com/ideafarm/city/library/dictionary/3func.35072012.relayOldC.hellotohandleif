@@ -11,7 +11,7 @@
     }
         }
             //CONoUTrAW( "helloToHandleIF: 0 end of loop snippet\r\n" ) ;
-            handleUnregisterIF( tinP , idpthc ) ;
+            handleUnregisterIF( tinBaseP , idpthc ) ;
             //CONoUTrAW( "helloToHandleIF: 1 unregistering handle\r\n" ) ;
     
             if( bOk ) break ;
@@ -19,7 +19,7 @@
 
             }
                 }
-                    tinP.pEther->traceF( tinP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -29,41 +29,41 @@
                     DEL( psBag ) ;
                     }
                         }
-                            tinP.pEther->traceF( tinP , T("could not verify that my hello was received") ) ;
+                            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("could not verify that my hello was received") ) ;
                             POOPRqUIET
                         {
                         else
                         if( !POOP ) bOk = 1 ;
                         VERIFYrELAY2( sock , *psBagOk ) ;
 
-                        sock.writeF( tinP , *psBag ) ; //ASSUME: SERVER WILL, IF ROOT, ADD ME TO ITS LIST
-                        tinP.pEther->traceF( tinP , T("writing hello bag") ) ;
+                        sock.writeF( tinBaseP , *psBag ) ; //ASSUME: SERVER WILL, IF ROOT, ADD ME TO ITS LIST
+                        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("writing hello bag") ) ;
             
                         idptP >> *psBag ;
                         idptP >> *psBag ;
-                        hdrBagIF( tinP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPuNgOSSIP ) ;
+                        hdrBagIF( tinBaseP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPuNgOSSIP ) ;
                     {
                     if( psBag && psBagOk )
-                    soulC* psBagOk = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psBagOk ) ;
-                    soulC* psBag = new( 0 , tinP , LF ) soulC( tinP , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+                    soulC* psBagOk = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagOk ) ;
+                    soulC* psBag = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
                 {
                 if( !POOP )
-                sock.connectF( tinP , idpthc , (nicNameC&)idpthc ) ;
+                sock.connectF( tinBaseP , idpthc , (nicNameC&)idpthc ) ;
 
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
+                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
                 SCOOPS
             {
             ZE( boolT , bOk ) ;
     
             if( !idpthc ) break ;
     
-            portTimeC idpthc = handleQueryIF( tinP ) ;
+            portTimeC idpthc = handleQueryIF( tinBaseP ) ;
         {
         for(;;)
     {
     IFsCRATCH
 {
-/*1*/voidT relayOldC::helloToHandleIF( tinS& tinP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
+/*1*/voidT relayOldC::helloToHandleIF( tinBaseS& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
 /**/
 */
 /*

@@ -9,17 +9,17 @@
 
 REST
 
-sgnDone_tmWorkF.waitF( tinP ) ;
+sgnDone_tmWorkF.waitF( tinBaseP ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmWorkF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmWorkF )
 }
     }
-        etherC::loafIF( tinP ) ;
-        ether.strokeF( tinP , T("Errors occured, so I am loafing.") ) ;
+        etherC::loafIF( tinBaseP ) ;
+        ether.strokeF( tinBaseP , T("Errors occured, so I am loafing.") ) ;
     {
     if( cErrors )
 
@@ -27,20 +27,20 @@ DONE( tmWorkF )
         }
             }
                 }
-                    etThread.diskZipOldF( tinP , tZip , tTo , flZIP_DELETE ) ;
+                    etThread.diskZipOldF( tinBaseP , tZip , tTo , flZIP_DELETE ) ;
 
                     if( POOP ) POOPR ;
-                    tinP.pEtScratch->diskFileOrDirDeleteF( tinP , tZip , flFILEoRdIRdELETE_null , 1 ) ;
+                    ((tinNormalS&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , tZip , flFILEoRdIRdELETE_null , 1 ) ;
 
                     TN( tZip , "" ) ; tZip = T("20990009@0001.")+tTime+T(".ideafarm.!confidential.")+T(bPrecious?"precious":"elves")+T(".zip") ;
 
-                    textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
+                    textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                    hoverC hoverRelease( tinP , etThread , tRelease ) ;
+                    hoverC hoverRelease( tinBaseP , etThread , tRelease ) ;
                 {
 
                 }
-                    etThread.diskWalkCopyF( tinP , cDirs , cFiles , ether , tBigTo , tFrom , bPrecious ? preciousCBF : toolCBF ) ;
+                    etThread.diskWalkCopyF( tinBaseP , cDirs , cFiles , ether , tBigTo , tFrom , bPrecious ? preciousCBF : toolCBF ) ;
                     ZE( countT , cFiles ) ;
                     ZE( countT , cDirs ) ;
 
@@ -48,9 +48,9 @@ DONE( tmWorkF )
                 {
 
                 if( POOP ) POOPR ;
-                tinP.pEtScratch->traceF( tinP , T("zapped  ")+tBigTo ) ;
-                tinP.pEtScratch->diskFileOrDirDeleteF( tinP , tBigTo  , flFILEoRdIRdELETE_RECURSE , 1 ) ;
-                tinP.pEtScratch->traceF( tinP , T("zapping ")+tBigTo ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->traceF( tinBaseP , T("zapped  ")+tBigTo ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , tBigTo  , flFILEoRdIRdELETE_RECURSE , 1 ) ;
+                ((tinNormalS&)tinBaseP).pEtScratch->traceF( tinBaseP , T("zapping ")+tBigTo ) ;
                 SCOOPS
             {
             IFbEcAREFUL
@@ -63,34 +63,34 @@ DONE( tmWorkF )
             TN( tRelease , "" ) ; tRelease = tPrefix+T("tmp/ps/") ; // SHORT AS POSSIBLE.  THIS INCREMENT TO THE LENGTH OF THE FILE NAME CAN CAUSE A FILE COPY TO SILENTLY FAIL
 
             }
-                etThread.delF( tinP , psttHover ) ;
-                etThread.delF( tinP , psttPrefix ) ;
+                etThread.delF( tinBaseP , psttHover ) ;
+                etThread.delF( tinBaseP , psttPrefix ) ;
                 tPrefix = T(psttPrefix) ;
-                etThread.strSubstringF( tinP , psttPrefix , countTC( 1 ) , countTC( 5 ) , psttHover ) ; ___( psttPrefix ) ;
+                etThread.strSubstringF( tinBaseP , psttPrefix , countTC( 1 ) , countTC( 5 ) , psttHover ) ; ___( psttPrefix ) ;
                 ZE( strokeS* , psttPrefix ) ;
 
-                etThread.diskGetHoverF( tinP , psttHover ) ; ___( psttHover ) ;
+                etThread.diskGetHoverF( tinBaseP , psttHover ) ; ___( psttHover ) ;
                 ZE( strokeS* , psttHover ) ;
             {
             TN( tPrefix , "" ) ;
 
-            const boolT bPrecious = !etThread.strCompareF( tinP , psttc1 , tCmdPrecious ) ;
+            const boolT bPrecious = !etThread.strCompareF( tinBaseP , psttc1 , tCmdPrecious ) ;
         {
         )
-            !etThread.strCompareF( tinP , psttc1 , tCmdTool )
+            !etThread.strCompareF( tinBaseP , psttc1 , tCmdTool )
             ||
-            !etThread.strCompareF( tinP , psttc1 , tCmdPrecious )
+            !etThread.strCompareF( tinBaseP , psttc1 , tCmdPrecious )
         (
         else if
-        else if( !etThread.strCompareF( tinP , psttc1 , tCmdMake ) ) bArmMake = 1 ;
+        else if( !etThread.strCompareF( tinBaseP , psttc1 , tCmdMake ) ) bArmMake = 1 ;
         }
             }
                 DEL( ps ) ;
 
-                etThread.delF( tinP , psttNote ) ;
-                etThread.delF( tinP , psttLine ) ;
+                etThread.delF( tinBaseP , psttNote ) ;
+                etThread.delF( tinBaseP , psttLine ) ;
 
-                etThread.strokeF( tinP , TF2(idLine,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("(")+TF2(idCol,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("): ")+T(psttLine)+tcri2+T(psttNote)+tcr ) ;
+                etThread.strokeF( tinBaseP , TF2(idLine,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("(")+TF2(idCol,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("): ")+T(psttLine)+tcri2+T(psttNote)+tcr ) ;
                 *ps >> psttNote ; ___( psttNote ) ;
                 ZE( strokeS* , psttNote ) ;
 
@@ -110,12 +110,12 @@ DONE( tmWorkF )
             {
             while( stErrors )
 
-            etThread.osMakeF( tinP , stErrors , idAdam , flMAKE_DEBUG | flMAKE_ENABLEtHIRDpARTIES ) ; //U::ELIMINATE flMAKE_ENABLEtHIRDpARTIES
-            stackC stErrors( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
+            etThread.osMakeF( tinBaseP , stErrors , idAdam , flMAKE_DEBUG | flMAKE_ENABLEtHIRDpARTIES ) ; //U::ELIMINATE flMAKE_ENABLEtHIRDpARTIES
+            stackC stErrors( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_soulC ) ;
 
             CONoUTrAW3( "[idAdam]: " , idAdam , "\r\n" ) ;
 
-            countT idAdam = etThread.strDigitsToSCountF( tinP , psttc1 ) | 0x51000000 ;
+            countT idAdam = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) | 0x51000000 ;
             bArmMake = 0 ;
         {
         if( bArmMake )
@@ -125,7 +125,7 @@ DONE( tmWorkF )
 
         //CONoUTrAW( T("parameter: \"")+T(psttc1)+T("\"\r\n") ) ;
     {
-    FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinP ) )
+    FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinBaseP ) )
     strokeS sttExclaim('!') ;
     countT cSkip = 1 ;
     ZE( boolT , bArmMake ) ;
@@ -150,19 +150,19 @@ TASK( tmWorkF )
 
     ;
 
-        //!thirdC::c_strstrIF( tinP , postNameP , "\\workshop\\release" )
+        //!thirdC::c_strstrIF( tinBaseP , postNameP , "\\workshop\\release" )
         //&&
         //REDUNDANT SINCE release IS NOT IN precious
 
-        !thirdC::c_strcmpIF( tinP , postName , ":\\ideafarm.home.1\\readme.pdf" )
+        !thirdC::c_strcmpIF( tinBaseP , postName , ":\\ideafarm.home.1\\readme.pdf" )
         ||
-        postName == thirdC::c_strstrIF( tinP , postName , ":\\ideafarm.home.1\\precious" )
+        postName == thirdC::c_strstrIF( tinBaseP , postName , ":\\ideafarm.home.1\\precious" )
 
     boolT  bDoIt =
 
     const osTextT* postName = postNameP + 1 ;
 {
-boolT preciousCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP )
+boolT preciousCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP )
 
 }
     return bDoIt ;
@@ -187,7 +187,7 @@ boolT preciousCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& 
                         }
                             break ;
 
-                            if( !thirdC::c_strcmpIF( tinP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\microsoft\\Msi.Lib" ) ) bDoIt = 1 ;
+                            if( !thirdC::c_strcmpIF( tinBaseP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\microsoft\\Msi.Lib" ) ) bDoIt = 1 ;
                         {
                         case 7 :
                         }
@@ -195,7 +195,7 @@ boolT preciousCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& 
 
                             bDoIt = 1 ;
                             )
-                                !thirdC::c_strcmpIF( tinP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip\\zip.exe\\zip.exe" )
+                                !thirdC::c_strcmpIF( tinBaseP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip\\zip.exe\\zip.exe" )
                             (
                             if
                         {
@@ -205,8 +205,8 @@ boolT preciousCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& 
 
                             bDoIt = 1 ;
                             )
-                                || !thirdC::c_strcmpIF( tinP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0050010.gen_CsOURCEfILES.h" )
-                                   !thirdC::c_strcmpIF( tinP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\ipdos.h"                          )
+                                || !thirdC::c_strcmpIF( tinBaseP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0050010.gen_CsOURCEfILES.h" )
+                                   !thirdC::c_strcmpIF( tinBaseP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\ipdos.h"                          )
                             (
                             if
                         {
@@ -214,25 +214,25 @@ boolT preciousCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& 
                         }
                             break ;
 
-                            if( postName == thirdC::c_strstrIF( tinP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\5adam.51001" ) ) bDoIt = 1 ;
+                            if( postName == thirdC::c_strstrIF( tinBaseP , postName , ":\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\5adam.51001" ) ) bDoIt = 1 ;
                         {
                         case 2 :
                     {
                     switch( offi )
                 {
-                if( postName == thirdC::c_strstrIF( tinP , postName , ppostDW[ offi ] ) )
+                if( postName == thirdC::c_strstrIF( tinBaseP , postName , ppostDW[ offi ] ) )
             {
             for( countT offi = 0 ; offi < sizeof ppostDW / sizeof ppostDW[ 0 ] ; offi ++ )
         {
         )
-            !thirdC::c_strstrIF( tinP , postNameP , ".ClINESiNdEF" )
+            !thirdC::c_strstrIF( tinBaseP , postNameP , ".ClINESiNdEF" )
         (
         else if
         }
             bDoIt = 1 ;
         {
         )
-            !thirdC::c_strcmpIF( tinP , postName , ":\\ideafarm.home.1\\readme.pdf"                    )
+            !thirdC::c_strcmpIF( tinBaseP , postName , ":\\ideafarm.home.1\\readme.pdf"                    )
         (
         else if
         }
@@ -242,13 +242,13 @@ boolT preciousCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& 
                     break ;
                     bDoIt = 1 ;
                 {
-                if( ppostDW[ offi ] == thirdC::c_strstrIF( tinP , ppostDW[ offi ] , postName ) )
+                if( ppostDW[ offi ] == thirdC::c_strstrIF( tinBaseP , ppostDW[ offi ] , postName ) )
             {
             for( countT offi = 0 ; offi < sizeof ppostDW / sizeof ppostDW[ 0 ] ; offi ++ )
         {
         if( bDir )
 
-        boolT bDir = postName[ thirdC::c_strlenIF( tinP , postName ) - 1 ] == '\\' ;
+        boolT bDir = postName[ thirdC::c_strlenIF( tinBaseP , postName ) - 1 ] == '\\' ;
 
         } ;
 
@@ -268,7 +268,7 @@ boolT preciousCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& 
     if( !POOP )
     ZE( boolT , bDoIt ) ;
 {
-boolT toolCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP )
+boolT toolCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOW( "ifcIDaDAM_ELF" )/*1*/
 /**/

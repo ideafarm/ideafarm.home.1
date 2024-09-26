@@ -16,7 +16,7 @@
         if( !POOP )
     
         }
-            dosReadIF( tinP , pbP , cbUsed , handle ) ;
+            dosReadIF( tinBaseP , pbP , cbUsed , handle ) ;
             __( cbP < cbUsed ) ;
         {
         if( cbUsed )
@@ -39,10 +39,10 @@
     {
     if( !POOP )
 
-    dosOpenIF( tinP , tinP.pEther , handle , idr , postP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_FAIL | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO , 0 , 0 , 1 ) ;
+    dosOpenIF( tinBaseP , ((tinNormalS&)tinBaseP).pEther , handle , idr , postP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_FAIL | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO , 0 , 0 , 1 ) ;
     ZE( countT , cbUsed ) ;
     ZE( countT , idr ) ;
-    handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
     _IO_
 
@@ -55,7 +55,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT thirdC::dosReadIF( tinS& tinP , byteT* const pbP , countT& cbP , const osTextT* const postP )/*1*/
+/*1*/voidT thirdC::dosReadIF( tinBaseS& tinBaseP , byteT* const pbP , countT& cbP , const osTextT* const postP )/*1*/
 
 /**/
 */
@@ -69,7 +69,7 @@
   on return, if the entire file could be read, it will be here
   must not be 0
  pbP
- tinP
+ tinBaseP
 arguments
 if there aren't enough bytes, i do not read anything and impotence occurs
 i read an entire file into a preallocated string of bytes

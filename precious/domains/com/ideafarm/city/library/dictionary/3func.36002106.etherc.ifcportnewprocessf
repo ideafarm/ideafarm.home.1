@@ -11,15 +11,15 @@
     }
         }
             __( idAck - ifcREPLY_ACK ) ;
-            sock.readF( tinP , (byteT*)&idAck , sizeof idAck ) ;
+            sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ;
             ZE( countT , idAck ) ;
 
-            __( !tinP.pag1->_etherC_.idProcessOld ) ;
-            sock.readF( tinP , (byteT*)&tinP.pag1->_etherC_.idProcessOld , sizeof tinP.pag1->_etherC_.idProcessOld ) ;
+            __( !((tinNormalS&)tinBaseP).pag1->_etherC_.idProcessOld ) ;
+            sock.readF( tinBaseP , (byteT*)&((tinNormalS&)tinBaseP).pag1->_etherC_.idProcessOld , sizeof ((tinNormalS&)tinBaseP).pag1->_etherC_.idProcessOld ) ;
 
-            sock.writeF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
-            sock.connectF( tinP , ifcPORToLD1pORTaUTHORITY ) ;
-            socketC sock( tinP , *this , TAG( TAGiDnULL ) ) ;
+            sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
+            sock.connectF( tinBaseP , ifcPORToLD1pORTaUTHORITY ) ;
+            socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
         {
 
         countT idCmd = ifcCMDpORTaUTHORITY_NEWpROCESS ;
@@ -28,7 +28,7 @@
 
         }
             if( POOP ) return ;
-            __( tinP.pag1->_etherC_.idProcessOld ) ;
+            __( ((tinNormalS&)tinBaseP).pag1->_etherC_.idProcessOld ) ;
             if( POOP ) return ;
         {
         IFbEcAREFUL
@@ -38,10 +38,10 @@
     static countT cIn ;
     SCOOP
 {
-/*1*/voidT etherC::ifcPortNewProcessF( tinS& tinP )/*1*/
+/*1*/voidT etherC::ifcPortNewProcessF( tinBaseS& tinBaseP )/*1*/
 /**/
 */
- tinP
+ tinBaseP
 arguments
  subsequent calls have no effect and do not cause impotence
 only the first call has effect

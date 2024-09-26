@@ -9,27 +9,27 @@
 
 REST
 
-sgnDone_tmFooF.waitF( tinP ) ;
-etThread.osThreadF( tinP , countTC() , tmFooF , &sgnDone_tmFooF ) ;
-signC sgnDone_tmFooF( tinP , TAG( 0 ) ) ;
+sgnDone_tmFooF.waitF( tinBaseP ) ;
+etThread.osThreadF( tinBaseP , countTC() , tmFooF , &sgnDone_tmFooF ) ;
+signC sgnDone_tmFooF( tinBaseP , TAG( 0 ) ) ;
 
 TODO
 
 DONE( tmFooF )
 
-etThread.strokeF( tinP , T("cbSysO: ")+TF1(cbSysOther)+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("cbSysO: ")+TF1(cbSysOther)+T("\r\n") ) ;
 countT cbSysOther = cbSys - sizeof( tlsStackFrameNoTlsS ) ;
 
-etThread.strokeF( tinP , T("cbSys:  ")+TF1(cbSys)+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("cbSys:  ")+TF1(cbSys)+T("\r\n") ) ;
 countT cbSys = sysTop-appTop ;
 
-etThread.strokeF( tinP , T("appTop: ")+TF1(appTop)+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("appTop: ")+TF1(appTop)+T("\r\n") ) ;
 countT appTop = appStackTop ;
-tlsBlobC appStackTop( tinP , "appStackTop" , "tin" ) ;                                                         \
+tlsBlobC appStackTop( tinBaseP , "appStackTop" , "tin" ) ;                                                         \
 
-etThread.strokeF( tinP , T("sysTop: ")+TF1(sysTop)+T("\r\n") ) ;
+etThread.strokeF( tinBaseP , T("sysTop: ")+TF1(sysTop)+T("\r\n") ) ;
 countT sysTop = sysStackTop ;
-tlsBlobC sysStackTop( tinP , "sysStackTop" , "tin" ) ;                                                         \
+tlsBlobC sysStackTop( tinBaseP , "sysStackTop" , "tin" ) ;                                                         \
 
 TASK( tmFooF )
 

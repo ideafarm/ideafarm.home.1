@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
-etThread.diskWalkF( tinP , cDirs , cFiles , tPath , bQuit , diskWalkRenameCBF , pcArg ) ;
+etThread.diskWalkF( tinBaseP , cDirs , cFiles , tPath , bQuit , diskWalkRenameCBF , pcArg ) ;
 ZE( countT , bQuit ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
@@ -36,25 +36,25 @@ TODO
 }
     return 0 ;
 
-    tinP.pEther->delF( tinP , psttShort ) ;
-    tinP.pEther->delF( tinP , psttPath ) ;
+    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttShort ) ;
+    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
 
     }
-        tinP.pEther->diskMoveFileOrDirF( tinP , T(psttPath)+T(psttShort) , tNameOld , 1 ) ;
-        etherC::etRockIF( tinP ).traceF( tinP , (strokeS*)tNameOld ) ;
+        ((tinNormalS&)tinBaseP).pEther->diskMoveFileOrDirF( tinBaseP , T(psttPath)+T(psttShort) , tNameOld , 1 ) ;
+        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)tNameOld ) ;
     {
     if( bHit )
-    boolT bHit = tinP.pEther->strReplaceF( tinP , psttShort , 0 , tDotsP , tDotP ) ; ___( psttShort ) ;
+    boolT bHit = ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttShort , 0 , tDotsP , tDotP ) ; ___( psttShort ) ;
 
     ___( psttShort ) ;
     ___( psttPath ) ;
-    tinP.pEther->strBisectF( tinP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+    ((tinNormalS&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttPath ) ;
 
-    TN( tNameOld , ifFileNameC( tinP , *tinP.pEther , postNameP ) ) ;
+    TN( tNameOld , ifFileNameC( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ) ;
 
-    if( !( cDoneP % TUCK ) ) etherC::etRockIF( tinP ).traceF( tinP , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    if( !( cDoneP % TUCK ) ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     cDoneP ++ ;
 
     textC&        tDotP          =         *(textC*)pcArgP[ 3 ] ;
@@ -62,7 +62,7 @@ TODO
     textC&        tIdeafarm6DotP =         *(textC*)pcArgP[ 1 ] ;
     countT&       cDoneP         =        *(countT*)pcArgP[ 0 ] ; 
 {
-boolT diskWalkRenameCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT diskWalkRenameCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.rename.archive.format.6.nix.redundant.dots" )/*1*/
 /**/

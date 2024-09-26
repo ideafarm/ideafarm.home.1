@@ -9,10 +9,10 @@
 
     }
         }                                                                                                                                                                                             \
-            etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoLine , flTRACE_PARAMETERiSoStEXT ) ;                                                              \
+            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS* const)(const osTextT* const)ostoLine , flTRACE_PARAMETERiSoStEXT ) ;                                                              \
             else           { OStEXTC(  ostoLine , *( pcc - 1 ) , 0 ) }                                                                                                                                \
             if( postFile ) { OStEXTA(  ostoLine , postFile ) ; }                                                                                                                                      \
-            const osTextT* postFile = processGlobal8S::_processGlobal8I_IF().source.postFileTitleF( tinP , processGlobal8S::_processGlobal8I_IF().source.idFileRankF( tinP , *( pcc ++ ) ) ) ;        \
+            const osTextT* postFile = processGlobal8S::_processGlobal8I_IF().source.postFileTitleF( tinBaseP , processGlobal8S::_processGlobal8I_IF().source.idFileRankF( tinBaseP , *( pcc ++ ) ) ) ;        \
             OStEXTAK( ostoLine , "  " ) ;                                                                                                                                                             \
             OStEXTC(  ostoLine , *( pcc ++ ) , 0 ) ;                                                                                                                                                  \
             OStEXTAK( ostoLine , "  " ) ;                                                                                                                                                             \
@@ -26,11 +26,11 @@
         countT* pce = pcNest + ccNest ;                                                                                                                                                               \
         countT* pcc = pcNest ;                                                                                                                                                                        \
                                                                                                                                                                                                       \
-        tinP.get_pLFnest_F( tinP , pcNest , ccNest + 1 ) ;                                                                                                                                            \
+        ((tinNormalS&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                                                                                                            \
         countT pcNest[ ccNest + 1 ] ;                                                                                                                                                                 \
-        const countT ccNest = sizeof tinP.monitor.pLFnest / sizeof tinP.monitor.pLFnest[ 0 ] ;                                                                                                        \
+        const countT ccNest = sizeof ((tinNormalS&)tinBaseP).monitor.pLFnest / sizeof ((tinNormalS&)tinBaseP).monitor.pLFnest[ 0 ] ;                                                                                                        \
                                                                                                                                                                                                       \
-        etherC::etRockIF( tinP ).traceF( tinP , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;                                                \
+        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;                                                \
         OStEXTAK( ostoSay , " / call nest:" ) ;                                                                                                                                                       \
         OStEXTA(  ostoSay , postP ) ;                                                                                                                                                                 \
         OStEXT(   ostoSay , TUCK << 0 ) ;                                                                                                                                                             \

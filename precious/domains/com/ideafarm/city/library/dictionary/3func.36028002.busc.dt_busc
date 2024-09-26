@@ -8,17 +8,17 @@
 
 
 }
-    baton.ungrabF( tinP ) ;
+    baton.ungrabF( tinBaseP ) ;
 
-    if( pbv ) ether.delF( tinP , pbv ) ;
+    if( pbv ) ether.delF( tinBaseP , pbv ) ;
 
     }
-        sgnDone_tmSubscribe.waitF( tinP ) ;
-        sgnQuit_tmSubscribe.giveF( tinP ) ;
+        sgnDone_tmSubscribe.waitF( tinBaseP ) ;
+        sgnQuit_tmSubscribe.giveF( tinBaseP ) ;
     {
     if( bSubscribe )
     _IO_
-    baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     TINSL
 {
 /*1*/busC::~busC( voidT )/*1*/

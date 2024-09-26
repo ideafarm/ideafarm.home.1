@@ -10,8 +10,8 @@
 }
     __( idDeathType ) ;
     __( value ) ;
-      dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , "unzip.exe"  , ostoArgs ) ;
-    //dosExecPgmF( tinP , countTC() , countTC() , value , idDeathType , "pkzipc.exe" , ostoArgs ) ;
+      dosExecPgmF( tinBaseP , countTC() , countTC() , value , idDeathType , "unzip.exe"  , ostoArgs ) ;
+    //dosExecPgmF( tinBaseP , countTC() , countTC() , value , idDeathType , "pkzipc.exe" , ostoArgs ) ;
     ZE( countT , idDeathType ) ;
     ZE( countT , value ) ;
 
@@ -37,10 +37,10 @@
 
     if( postZipFile[ costZipfile - 1 ] == '\\' ) postZipFile[ costZipfile - 1 ] = 0 ;
     if( postFileP && postFile[    costFile    - 1 ] == '\\' ) postFile[    costFile    - 1 ] = 0 ;
-    countT costZipfile = c_strlenIF( tinP , postZipFile ) ;
-    countT costFile    = !postFileP ? 0 : c_strlenIF( tinP , postFile    ) ;
-    c_strcpyIF( tinP , postZipFile , postZipFileP ) ;
-    if( postFileP ) c_strcpyIF( tinP , postFile    , postFileP    ) ;
+    countT costZipfile = c_strlenIF( tinBaseP , postZipFile ) ;
+    countT costFile    = !postFileP ? 0 : c_strlenIF( tinBaseP , postFile    ) ;
+    c_strcpyIF( tinBaseP , postZipFile , postZipFileP ) ;
+    if( postFileP ) c_strcpyIF( tinBaseP , postFile    , postFileP    ) ;
     osTextT postZipFile[ TUCK << 1 ] ;
     osTextT postFile[    TUCK << 1 ] ;
 
@@ -56,7 +56,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::diskUnzipOldF( tinS& tinP , const osTextT* const postFileP , const osTextT* const postZipFileP , const flagsT flagsP )/*1*/
+/*1*/voidT thirdC::diskUnzipOldF( tinBaseS& tinBaseP , const osTextT* const postFileP , const osTextT* const postZipFileP , const flagsT flagsP )/*1*/
 
 /**/
 */
@@ -65,7 +65,7 @@
   if not 0 then can include wildcard characters and all matching filenames in the zip file will be unzipped
   can be 0
  postFileP
- tinP
+ tinBaseP
 arguments
 if the file name contains a path, the path portion will be discarded
 the file obtained will be placed in the current directory

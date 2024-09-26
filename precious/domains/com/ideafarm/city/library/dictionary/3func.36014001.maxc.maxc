@@ -37,7 +37,7 @@
 
                 mostRecentGood = value ;
             {
-            if( (*pTrialFP)( tinP , pEther , value , pMemory ) )
+            if( (*pTrialFP)( tinBaseP , pEther , value , pMemory ) )
 
             if( mostRecentGood == value ) break ; // I AM CYCLING
         {
@@ -69,7 +69,7 @@
             if(  highestGood < value ) highestGood = value ;
             mostRecentGood = value ;
         {
-        if( (*pTrialFP)( tinP , pEther , value , pMemory ) )
+        if( (*pTrialFP)( tinBaseP , pEther , value , pMemory ) )
 
         if( mostRecentGood == value ) break ; // I AM CYCLING
     {
@@ -83,7 +83,7 @@
     value = (countT)( - 1 ) / 2 ;
     if( ( pEtherP && *pEtherP ) || !bZeOk ) return ;
     if( pEtherP ) __Z( bZeOk ) ;
-    countT bZeOk = (*pTrialFP)( tinP , pEther , value , pMemory ) ;
+    countT bZeOk = (*pTrialFP)( tinBaseP , pEther , value , pMemory ) ;
     countT pMemory = (countT)pMemoryP ;
     countT pEther = (countT)pEtherP ;
     value = 0 ;
@@ -104,7 +104,7 @@
     //U: CRAFT CODE TO IMPLEMENT STEPS 2-9
 {
 value( 0 )
-/*1*/maxC::maxC( tinS& tinP , etherC* pEtherP , ifc3FT pTrialFP , voidT* const pMemoryP )/*1*/ :
+/*1*/maxC::maxC( tinBaseS& tinBaseP , etherC* pEtherP , ifc3FT pTrialFP , voidT* const pMemoryP )/*1*/ :
 /**/
 */
  pMemoryP

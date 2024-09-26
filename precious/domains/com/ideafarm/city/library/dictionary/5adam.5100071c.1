@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 while( ~hFindDir && !ether && !POOP ) ;
 }
@@ -18,8 +18,8 @@ while( ~hFindDir && !ether && !POOP ) ;
 
     }
         }
-            flushTimeGroupF( tinP , etThread , stSortKeyShortRoot ,tPathDirTo+tShortDir , tPathDirFrom+tShortDir ) ;
-            etThread.traceF( tinP , T("flushing time group: ")+tTimeGroupLath ) ;
+            flushTimeGroupF( tinBaseP , etThread , stSortKeyShortRoot ,tPathDirTo+tShortDir , tPathDirFrom+tShortDir ) ;
+            etThread.traceF( tinBaseP , T("flushing time group: ")+tTimeGroupLath ) ;
             while( ~hFindFile && !ether && !POOP ) ;
             }
                 DEL( pInfoFile ) ;
@@ -31,43 +31,43 @@ while( ~hFindDir && !ether && !POOP ) ;
                             //     //boolT bOk = CreateSymbolicLink( tOsNameTo , tOsNameFrom , 0 ) ;
                             // 
                             //     }
-                            //         etThread.traceF( tinP , T("        to: ")+tOsNameTo   ) ;
-                            //         etThread.traceF( tinP , T("      from: ")+tOsNameFrom ) ;
-                            //         etThread.traceF( tinP , T("name: ")+tName  ) ;
+                            //         etThread.traceF( tinBaseP , T("        to: ")+tOsNameTo   ) ;
+                            //         etThread.traceF( tinBaseP , T("      from: ")+tOsNameFrom ) ;
+                            //         etThread.traceF( tinBaseP , T("name: ")+tName  ) ;
                             //     {
                             //     if( bSay ) 
                             // {
                             // else
                             // }
-                            //     etThread.traceF( tinP , T("destination file exists [tIfNameTo]: ")+tIfNameTo ) ;
+                            //     etThread.traceF( tinBaseP , T("destination file exists [tIfNameTo]: ")+tIfNameTo ) ;
                             // {
-                            // if( etThread.diskFileExistsF( tinP , tIfNameTo ) )
+                            // if( etThread.diskFileExistsF( tinBaseP , tIfNameTo ) )
                             // 
-                            // TN( tOsNameTo   , "" ) ; tOsNameTo   = T( osFileNameC( tinP , etThread , tIfNameTo ) ) ;
+                            // TN( tOsNameTo   , "" ) ; tOsNameTo   = T( osFileNameC( tinBaseP , etThread , tIfNameTo ) ) ;
                             // TN( tIfNameTo   , "" ) ; tIfNameTo   = tPathDirTo+tShortDir+TF3(++idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+tDot+tName ;
-                            // TN( tOsNameFrom , "" ) ; tOsNameFrom = T( osFileNameC( tinP , etThread , tIfoName                                                                                                                     ) ) ;
-                            // etThread.diskMakeDirIfNeededF( tinP , tPathDirTo+tShortDir ) ;
+                            // TN( tOsNameFrom , "" ) ; tOsNameFrom = T( osFileNameC( tinBaseP , etThread , tIfoName                                                                                                                     ) ) ;
+                            // etThread.diskMakeDirIfNeededF( tinBaseP , tPathDirTo+tShortDir ) ;
                             // 
-                            // //etThread.diskMoveFileOrDirF( tinP , tPathDirFrom+tShortDir+TF3(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+tDot+tName , tIfoName ) ;
+                            // //etThread.diskMoveFileOrDirF( tinBaseP , tPathDirFrom+tShortDir+TF3(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+tDot+tName , tIfoName ) ;
 
                             }
-                                stSortKeyShortRoot.sinkF( tinP , countTC() , pstt1KeyRoot , flSTACKsINK_null , 0 , 1 ) ;
-                                etThread.strFuseSeparateF( tinP , pstt1KeyRoot , tShortRoot ) ;
-                                etThread.strFuseSeparateF( tinP , pstt1KeyRoot , tName      , 0 , 0 , 0 , 0 , CSpREFIX + tShortRoot.csF( tinP ) ) ; ___( pstt1KeyRoot ) ;
+                                stSortKeyShortRoot.sinkF( tinBaseP , countTC() , pstt1KeyRoot , flSTACKsINK_null , 0 , 1 ) ;
+                                etThread.strFuseSeparateF( tinBaseP , pstt1KeyRoot , tShortRoot ) ;
+                                etThread.strFuseSeparateF( tinBaseP , pstt1KeyRoot , tName      , 0 , 0 , 0 , 0 , CSpREFIX + tShortRoot.csF( tinBaseP ) ) ; ___( pstt1KeyRoot ) ;
                                 ZE( strokeS* , pstt1KeyRoot ) ;
 
-                                //etThread.traceF( tinP , tb8+tName+tb8+tShortRoot ) ;
+                                //etThread.traceF( tinBaseP , tb8+tName+tb8+tShortRoot ) ;
 
-                                etThread.delF( tinP , psttTimeGroup ) ;
+                                etThread.delF( tinBaseP , psttTimeGroup ) ;
                                 }
-                                    flushTimeGroupF( tinP , etThread , stSortKeyShortRoot ,tPathDirTo+tShortDir ,tPathDirFrom+tShortDir ) ;
+                                    flushTimeGroupF( tinBaseP , etThread , stSortKeyShortRoot ,tPathDirTo+tShortDir ,tPathDirFrom+tShortDir ) ;
 
                                     tTimeGroupLath = T(psttTimeGroup) ;
-                                    etThread.traceF( tinP , T("flushing time group: ")+tTimeGroupLath ) ;
+                                    etThread.traceF( tinBaseP , T("flushing time group: ")+tTimeGroupLath ) ;
                                 {
-                                if( etThread.strCompareF( tinP , tTimeGroupLath , psttTimeGroup ) )
+                                if( etThread.strCompareF( tinBaseP , tTimeGroupLath , psttTimeGroup ) )
 
-                                etThread.strSubstringF( tinP , psttTimeGroup , idf , idl , tShortRoot ) ; ___( psttTimeGroup ) ;
+                                etThread.strSubstringF( tinBaseP , psttTimeGroup , idf , idl , tShortRoot ) ; ___( psttTimeGroup ) ;
                                 ZE( strokeS* , psttTimeGroup ) ;
                                 countT idl = 0x28 ;
                                 countT idf = 1 ;
@@ -76,44 +76,44 @@ while( ~hFindDir && !ether && !POOP ) ;
                                 // 123456789abcdef0123456789abcdef0123456789abc
                                 // 0              1               2 
                             {
-                            if( tShortRoot.csF( tinP ) && tName.csF( tinP ) )
+                            if( tShortRoot.csF( tinBaseP ) && tName.csF( tinBaseP ) )
 
                             }
                                 }
-                                    etThread.delF( tinP , postName ) ;
+                                    etThread.delF( tinBaseP , postName ) ;
                                     tName = T(postName) ;
-                                    etThread.boxGetShadowF( tinP , postName , costName , tFileMetaNameLong ) ; ___( postName ) ;
+                                    etThread.boxGetShadowF( tinBaseP , postName , costName , tFileMetaNameLong ) ; ___( postName ) ;
                                     ZE( countT   , costName ) ;
                                     ZE( osTextT* , postName ) ;
                                 {
                                 else
-                                if( !etThread.diskFileExistsF( tinP , tFileMetaNameLong ) ) etThread.traceF( tinP , T("error / file does not exist: ")+tFileMetaNameLong ) ;
+                                if( !etThread.diskFileExistsF( tinBaseP , tFileMetaNameLong ) ) etThread.traceF( tinBaseP , T("error / file does not exist: ")+tFileMetaNameLong ) ;
 
                                 TN( tFileMetaNameLong , "" ) ; tFileMetaNameLong = tPathDirFrom+tShortDir+tShortRoot+tMetaDotCurrentName ;
                             {
                             TN( tName , "" ) ;
 
                             }
-                                etThread.delF( tinP , psttShortRoot ) ;
+                                etThread.delF( tinBaseP , psttShortRoot ) ;
                                 tShortRoot = T(psttShortRoot) ;
-                                etThread.strSubstringF( tinP , psttShortRoot , idf , idHit , tShortFile ) ; ___( psttShortRoot ) ;
+                                etThread.strSubstringF( tinBaseP , psttShortRoot , idf , idHit , tShortFile ) ; ___( psttShortRoot ) ;
                                 countT idf = 1 ;
                                 ZE( strokeS* , psttShortRoot ) ;
                             {
                             TN( tShortRoot , "" ) ;
                         {
                         if( idHit )
-                        countT idHit = etThread.strIdF( tinP , tDotDataDot , tShortFile ) ;
+                        countT idHit = etThread.strIdF( tinBaseP , tDotDataDot , tShortFile ) ;
 
                         boolT bSay = 1 /* !( ++ idFile % TUCK ) || idFile == 1 */ ;
                     {
                     if( !bDir )
 
                     }
-                        etThread.delF( tinP , psttShortFile ) ;
+                        etThread.delF( tinBaseP , psttShortFile ) ;
                         tShortFile = T(psttShortFile) ;
-                        etThread.delF( tinP , psttnu ) ;
-                        etThread.strBisectF( tinP , psttnu , psttShortFile , pInfoFile->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShortFile ) ;
+                        etThread.delF( tinBaseP , psttnu ) ;
+                        etThread.strBisectF( tinBaseP , psttnu , psttShortFile , pInfoFile->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShortFile ) ;
                         ZE( strokeS* , psttShortFile ) ;
                         ZE( strokeS* , psttnu ) ;
                     {
@@ -129,24 +129,24 @@ while( ~hFindDir && !ether && !POOP ) ;
                 {
                 if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                etThread.diskFindFileOrDirOldF( tinP , pInfoFile , hFindFile , tPathDirFrom+tShortDir+tLikeFile ) ; ___( pInfoFile ) ;
+                etThread.diskFindFileOrDirOldF( tinBaseP , pInfoFile , hFindFile , tPathDirFrom+tShortDir+tLikeFile ) ; ___( pInfoFile ) ;
                 ZE( infoFileS* , pInfoFile ) ;
             {
             do
-            handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-            stackC stSortKeyShortRoot( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+            handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            stackC stSortKeyShortRoot( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
             ZE( countT , idFile ) ;
             TN( tTimeGroupLath , "" ) ;
 
-            etThread.traceF( tinP , tShortDir ) ;
+            etThread.traceF( tinBaseP , tShortDir ) ;
         {
-        if( bDir && etThread.strCompareF( tinP , tDotSlash , tShortDir ) && etThread.strCompareF( tinP , tDotDotSlash , tShortDir ) )
+        if( bDir && etThread.strCompareF( tinBaseP , tDotSlash , tShortDir ) && etThread.strCompareF( tinBaseP , tDotDotSlash , tShortDir ) )
 
         }
-            etThread.delF( tinP , psttShortDir ) ;
+            etThread.delF( tinBaseP , psttShortDir ) ;
             tShortDir = T(psttShortDir) ;
-            etThread.delF( tinP , psttnu ) ;
-            etThread.strBisectF( tinP , psttnu , psttShortDir , pInfoDir->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShortDir ) ;
+            etThread.delF( tinBaseP , psttnu ) ;
+            etThread.strBisectF( tinBaseP , psttnu , psttShortDir , pInfoDir->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShortDir ) ;
             ZE( strokeS* , psttShortDir ) ;
             ZE( strokeS* , psttnu ) ;
         {
@@ -162,11 +162,11 @@ while( ~hFindDir && !ether && !POOP ) ;
     {
     if( !pInfoDir || !pInfoDir->psttIfoName )
 
-    etThread.diskFindFileOrDirOldF( tinP , pInfoDir , hFindDir , tPathDirFrom+tLikeDir ) ; ___( pInfoDir ) ;
+    etThread.diskFindFileOrDirOldF( tinBaseP , pInfoDir , hFindDir , tPathDirFrom+tLikeDir ) ; ___( pInfoDir ) ;
     ZE( infoFileS* , pInfoDir ) ;
 {
 do
-handleC hFindDir( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFindDir( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
 TN( tDot , "." ) ;
 TN( tDotDotSlash , "../" ) ;
@@ -186,7 +186,7 @@ TODO
 
 }
     }
-        etherP.delF( tinP , pstt1KeyRoot ) ;
+        etherP.delF( tinBaseP , pstt1KeyRoot ) ;
 
         }
             while( ~hFindFile && !POOP ) ;
@@ -195,14 +195,14 @@ TODO
 
                 }
                     }
-                        etherP.delF( tinP , psttShortNew ) ;
-                        etherP.diskMoveFileOrDirF( tinP , tFolderTo+T(psttShortNew) , tFolderFrom+tShortFile ) ;
+                        etherP.delF( tinBaseP , psttShortNew ) ;
+                        etherP.diskMoveFileOrDirF( tinBaseP , tFolderTo+T(psttShortNew) , tFolderFrom+tShortFile ) ;
 
-                        //etherP.traceF( tinP , T("moving from: ")+tShortFile ) ;
-                        //etherP.traceF( tinP , T("moving to  : ")+T(psttShortNew)   ) ;
-                        //etherP.traceF( tinP , T("        ")+tShortFile ) ;
+                        //etherP.traceF( tinBaseP , T("moving from: ")+tShortFile ) ;
+                        //etherP.traceF( tinBaseP , T("moving to  : ")+T(psttShortNew)   ) ;
+                        //etherP.traceF( tinBaseP , T("        ")+tShortFile ) ;
 
-                        //etherP.traceF( tinP , T("[psttShortNew]: ")+T(psttShortNew) ) ;
+                        //etherP.traceF( tinBaseP , T("[psttShortNew]: ")+T(psttShortNew) ) ;
             
                         }
                             }
@@ -218,14 +218,14 @@ TODO
                         // 123456789abcdef0123456789abcdef0123456789abc
                         // 0              1               2 
             
-                        etherP.strMakeF( tinP , LF , psttShortNew , tShortFile ) ; ___( psttShortNew ) ;
+                        etherP.strMakeF( tinBaseP , LF , psttShortNew , tShortFile ) ; ___( psttShortNew ) ;
                         ZE( strokeS* , psttShortNew ) ;
 
                         }
-                            etherP.delF( tinP , psttShortFile ) ;
+                            etherP.delF( tinBaseP , psttShortFile ) ;
                             tShortFile = T(psttShortFile) ;
-                            etherP.delF( tinP , psttnu ) ;
-                            etherP.strBisectF( tinP , psttnu , psttShortFile , pInfoFile->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShortFile ) ;
+                            etherP.delF( tinBaseP , psttnu ) ;
+                            etherP.strBisectF( tinBaseP , psttnu , psttShortFile , pInfoFile->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShortFile ) ;
                             ZE( strokeS* , psttShortFile ) ;
                             ZE( strokeS* , psttnu ) ;
                         {
@@ -243,11 +243,11 @@ TODO
                 {
                 if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                etherP.diskFindFileOrDirOldF( tinP , pInfoFile , hFindFile , tFolderFrom+tLikeFile ) ; ___( pInfoFile ) ;
+                etherP.diskFindFileOrDirOldF( tinBaseP , pInfoFile , hFindFile , tFolderFrom+tLikeFile ) ; ___( pInfoFile ) ;
                 ZE( infoFileS* , pInfoFile ) ;
             {
             do
-            handleC hFindFile( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
             TN( tLikeFile , "" ) ; tLikeFile = T(psttzRoot)+T("*") ;
         {
@@ -276,13 +276,13 @@ TODO
             else if( !psttzRoot ) psttzRoot = psttc1 ;
                  if( !psttzKey  ) psttzKey  = psttc1 ;
 
-            //etherP.traceF( tinP , T("    ")+T(psttc1) ) ;
+            //etherP.traceF( tinBaseP , T("    ")+T(psttc1) ) ;
         {
         FORsTRINGSiN1( pstt1KeyRoot )
         ZE( strokeS* , psttzRoot ) ;
         ZE( strokeS* , psttzKey ) ;
-        //etherP.traceF( tinP , T("[idDataFileInGroupLathP]: ")+tIdFile ) ;
-        textC tIdFile( tinP , TAG( TAGiDnULL ) , flTEXTc_null , ++idFile , flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE|flFORMAT_NObASE , 3 , 0xa ) ;
+        //etherP.traceF( tinBaseP , T("[idDataFileInGroupLathP]: ")+tIdFile ) ;
+        textC tIdFile( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , ++idFile , flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE|flFORMAT_NObASE , 3 , 0xa ) ;
 
         stSortKeyShortRootP >> pstt1KeyRoot ;
         ZE( strokeS* , pstt1KeyRoot ) ;
@@ -294,7 +294,7 @@ TODO
     TN( tFolderFrom , psttFolderFromP ) ;
     TN( tFolderTo   , psttFolderToP   ) ;
 {
-voidT flushTimeGroupF( tinS& tinP , etherC& etherP , stackC& stSortKeyShortRootP , const strokeS* const psttFolderToP , const strokeS* const psttFolderFromP )
+voidT flushTimeGroupF( tinBaseS& tinBaseP , etherC& etherP , stackC& stSortKeyShortRootP , const strokeS* const psttFolderToP , const strokeS* const psttFolderFromP )
 
 
 /*1*/WAKEsHOWtEXT( "tool.archive.sort.by.name.within.timestamp" )/*1*/

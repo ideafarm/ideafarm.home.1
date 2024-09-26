@@ -14,19 +14,19 @@
     }
         }
             flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
-            else         { ___( new( 0 , tinP , LF )      list_blob_C( tinP , *             tinP.ta.pushed.u.listWalk.cbf.pDadP , tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] , LF , postMe )  ) ; }
-            if( bOfSet ) { ___( new( 0 , tinP , LF ) listOfSet_blob_C( tinP , *(listOfSetC*)tinP.ta.pushed.u.listWalk.cbf.pDadP , tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] , LF , postMe )  ) ; }
-            tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = tinP.ta.pushed.u.listWalk.cbf.pDadP->dispenseNameF() ;
+            else         { ___( new( 0 , tinBaseP , LF )      list_blob_C( tinBaseP , *             ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] , LF , postMe )  ) ; }
+            if( bOfSet ) { ___( new( 0 , tinBaseP , LF ) listOfSet_blob_C( tinBaseP , *(listOfSetC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] , LF , postMe )  ) ; }
+            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP->dispenseNameF() ;
         {
-        else if( (sCountT)0 < thirdC::c_strcmpIF( tinP , postHe , postMe ) )
+        else if( (sCountT)0 < thirdC::c_strcmpIF( tinBaseP , postHe , postMe ) )
         }
             flagsRC |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
-            tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = pListing->nameF() ;
+            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = pListing->nameF() ;
         {
-        if( !thirdC::c_strcmpIF( tinP , postHe , postMe ) )
+        if( !thirdC::c_strcmpIF( tinBaseP , postHe , postMe ) )
 
         osTextT* postHe = (osTextT*)*(list_blob_C*)pListing ;
-        osTextT* postMe = (osTextT*)tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        osTextT* postMe = (osTextT*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
     {
     )
         && pListing->idTypeDatumF() == ifcIDtYPEmIXINdATUM_blob
@@ -34,19 +34,19 @@
     (
     else if
     }
-        ___( new( 0 , tinP , LF ) list_blob_C( tinP , *tinP.ta.pushed.u.listWalk.cbf.pDadP , tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] , LF , (osTextT*)tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] ) ) ;
-        tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = tinP.ta.pushed.u.listWalk.cbf.pDadP->dispenseNameF() ;
+        ___( new( 0 , tinBaseP , LF ) list_blob_C( tinBaseP , *((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] , LF , (osTextT*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ) ) ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP->dispenseNameF() ;
     {
     if( !pListing )
 
-    listingC* pListing = tinP.ta.pushed.u.listWalk.cbf.pListingP ;
+    listingC* pListing = ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     flagsT flagsRC = flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !tinP.pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 {
-/*1*/flagsT listWalkQueryFromTextCBF( tinS& tinP )/*1*/
+/*1*/flagsT listWalkQueryFromTextCBF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

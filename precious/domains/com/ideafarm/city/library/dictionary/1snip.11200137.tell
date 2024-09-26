@@ -8,8 +8,8 @@
 
 
     }
-        *tinP.postTellIf = 0 ;                                                                  \
-        thirdC::c_strncpyIF( tinP , tinP.postTell , postFromP , sizeof tinP.postTell ) ;        \
+        *((tinNormalS&)tinBaseP).postTellIf = 0 ;                                                                  \
+        thirdC::c_strncpyIF( tinBaseP , ((tinNormalS&)tinBaseP).postTell , postFromP , sizeof ((tinNormalS&)tinBaseP).postTell ) ;        \
     {                                                                                           \
                                                                                                 \
 #define TELL(postFromP)                                                                         \

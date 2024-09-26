@@ -10,8 +10,8 @@
     else
     }                                                                                       \
         }                                                                                   \
-            delF( tinP , pcNext ) ;                                                         \
-            delF( tinP , pcHere ) ;                                                         \
+            delF( tinBaseP , pcNext ) ;                                                         \
+            delF( tinBaseP , pcHere ) ;                                                         \
             idFirstP = pcNext[ idP ] ;                                                      \
             idHit    = pcHere[ idP ] ;                                                      \
             }                                                                               \
@@ -32,10 +32,10 @@
             while( idf )                                                                    \
             countT idf = idFirstP ;                                                         \
                                                                                             \
-            memSetF( tinP , (byteT*)pcNext , ( 1 + idP ) * sizeof( countT ) , 0 ) ;         \
-            memSetF( tinP , (byteT*)pcHere , ( 1 + idP ) * sizeof( countT ) , 0 ) ;         \
-            newF( tinP , LF , pcNext , 1 + idP ) ; ___( pcNext ) ;                          \
-            newF( tinP , LF , pcHere , 1 + idP ) ; ___( pcHere ) ;                          \
+            memSetF( tinBaseP , (byteT*)pcNext , ( 1 + idP ) * sizeof( countT ) , 0 ) ;         \
+            memSetF( tinBaseP , (byteT*)pcHere , ( 1 + idP ) * sizeof( countT ) , 0 ) ;         \
+            newF( tinBaseP , LF , pcNext , 1 + idP ) ; ___( pcNext ) ;                          \
+            newF( tinBaseP , LF , pcHere , 1 + idP ) ; ___( pcHere ) ;                          \
             ZE( countT* , pcNext ) ;                                                        \
             ZE( countT* , pcHere ) ;                                                        \
                                                                                             \

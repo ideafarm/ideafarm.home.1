@@ -15,16 +15,16 @@
             aptData.setBitsF( aptData.getBitsF() | fliDATUMc_INDEXED ) ;
 
             }
-                case ifcIDtYPEmIXINdATUM_countTstrz : {                                                                                     listC::indexIF( tinP , puseIndex , hIndex , idKey , (countT*)pbData + 2           , 0    , *pRecord , listing ) ; break ; }
-                case ifcIDtYPEmIXINdATUM_blob       : { countT cNet = ((countT*)pbData)[ 1 ] > CnETmAX ? CnETmAX : ((countT*)pbData)[ 1 ] ; listC::indexIF( tinP , puseIndex , hIndex , idKey , pbData + 2 * sizeof( countT ) , cNet , *pRecord , listing ) ; break ; }
-                case ifcIDtYPEmIXINdATUM_countT     : {                                                                                     listC::indexIF( tinP , puseIndex , hIndex , idKey , ((countT*)pbData)[ 1 ]        , 0    , *pRecord , listing ) ; break ; }
+                case ifcIDtYPEmIXINdATUM_countTstrz : {                                                                                     listC::indexIF( tinBaseP , puseIndex , hIndex , idKey , (countT*)pbData + 2           , 0    , *pRecord , listing ) ; break ; }
+                case ifcIDtYPEmIXINdATUM_blob       : { countT cNet = ((countT*)pbData)[ 1 ] > CnETmAX ? CnETmAX : ((countT*)pbData)[ 1 ] ; listC::indexIF( tinBaseP , puseIndex , hIndex , idKey , pbData + 2 * sizeof( countT ) , cNet , *pRecord , listing ) ; break ; }
+                case ifcIDtYPEmIXINdATUM_countT     : {                                                                                     listC::indexIF( tinBaseP , puseIndex , hIndex , idKey , ((countT*)pbData)[ 1 ]        , 0    , *pRecord , listing ) ; break ; }
             {
             switch( listing.idTypeDatumF() )
 
             //U:: ifcIDtYPEmIXINdATUM_countTstrz : INDEX ONLY THE WOTH 01 ELEMENTS
             //U:: ifcIDtYPEmIXINdATUM_blob       : INDEX ONLY THE WOTH 01 BYTES
 
-            handleC hIndex( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            handleC hIndex( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
             puseC puseIndex ; //WON'T BE USED
         {
         if( pRecord )
@@ -50,12 +50,12 @@
 
         byteT* pbData = aptData ;
     {
-    if( !( F(tinP.ta.retained.u.listWalk.walk.flagsWalkP) & flLISTwALK_DOnOTiNDEXdATA ) )
+    if( !( F(((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP) & flLISTwALK_DOnOTiNDEXdATA ) )
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     __( aptData.getBitsF() & fliDATUMc_INDEXED ) ;
 {
-/*1*/voidT datumC::indexF( tinS& tinP )/*1*/
+/*1*/voidT datumC::indexF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

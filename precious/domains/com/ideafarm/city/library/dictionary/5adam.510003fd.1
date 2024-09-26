@@ -8,10 +8,10 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
-    etThread.delF( tinP , pcIdName ) ;
+    etThread.delF( tinBaseP , pcIdName ) ;
     }
         cDone ++ ;
 
@@ -28,48 +28,48 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
                     }
                         }
-                            lake.readCloseF( tinP , handle ) ;
+                            lake.readCloseF( tinBaseP , handle ) ;
 
-                            if( offTarget + cbWrite <= cbo ) ppso[ off ]->readF( tinP , pbo + offTarget , cbWrite ) ;
+                            if( offTarget + cbWrite <= cbo ) ppso[ off ]->readF( tinBaseP , pbo + offTarget , cbWrite ) ;
 
-                            ppso[ off ]->readF( tinP , (byteT*)&cbWrite , sizeof cbWrite ) ;
+                            ppso[ off ]->readF( tinBaseP , (byteT*)&cbWrite , sizeof cbWrite ) ;
                             ZE( countT , cbWrite ) ;
 
-                            ppso[ off ]->readF( tinP , (byteT*)&offTarget , sizeof offTarget ) ;
+                            ppso[ off ]->readF( tinBaseP , (byteT*)&offTarget , sizeof offTarget ) ;
                             ZE( countT , offTarget ) ;
                         {
                         if( pbo )
-                        lake.readF( tinP , pbo , cbo , handle , pcIdName , cSkip ) ;
+                        lake.readF( tinBaseP , pbo , cbo , handle , pcIdName , cSkip ) ;
                         ZE( countT , cSkip ) ;
-                        handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FISH ) ;
+                        handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FISH ) ;
                         ZE( countT , cbo ) ;
                         ZE( byteT* , pbo ) ;
                     {
                     if( *pcIdName )
 
                     pcIdName[ ccIdName ] = 0 ;
-                    ppso[ off ]->readF( tinP , (byteT*)pcIdName  , ccIdName * sizeof( countT ) ) ;
+                    ppso[ off ]->readF( tinBaseP , (byteT*)pcIdName  , ccIdName * sizeof( countT ) ) ;
                     __( ccIdName > CCiDnAMEmAX ) ;
-                    ppso[ off ]->readF( tinP , (byteT*)&ccIdName , sizeof ccIdName ) ;
+                    ppso[ off ]->readF( tinBaseP , (byteT*)&ccIdName , sizeof ccIdName ) ;
                     ZE( countT , ccIdName ) ;
                 {
                 case idCMDlAKEsERVER_WRITE :
             {
             switch( idCmd )
 
-            ppso[ off ]->readF( tinP , (byteT*)&idCmd , sizeof idCmd ) ;
+            ppso[ off ]->readF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
             ZE( countT , idCmd ) ;
         {
         else
         if( etThread ) { DEL( ppso[ off ] ) ; }
 
-        sIn.acceptF( tinP , ppso[ off ] , idPortPeer , nnPeer , countTC() ) ;
+        sIn.acceptF( tinBaseP , ppso[ off ] , idPortPeer , nnPeer , countTC() ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         DEL( ppso[ off ] ) ;
 
         }
-            etThread.strokeF( tinP , T(post2) ) ;
+            etThread.strokeF( tinBaseP , T(post2) ) ;
             const osTextT post2[] = { 'a' + cDone % 26 , 0 } ;
         {
         off = cDone % CsLOTpSO ;
@@ -78,28 +78,28 @@ etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     ZE( countT , cDone ) ;
     ZE( countT , off ) ;
 
-    lakeC lake( tinP , etThread ) ;
+    lakeC lake( tinBaseP , etThread ) ;
 
-    etThread.newF( tinP , LF , pcIdName , CCiDnAMEmAX + 1 ) ; ___( pcIdName ) ;
+    etThread.newF( tinBaseP , LF , pcIdName , CCiDnAMEmAX + 1 ) ; ___( pcIdName ) ;
     ZE( countT* , pcIdName ) ;
 
-    etThread.memSetF( tinP , (byteT*)ppso , sizeof( ppso ) ) ;
+    etThread.memSetF( tinBaseP , (byteT*)ppso , sizeof( ppso ) ) ;
     socketC* ppso[ CsLOTpSO ] ;
 
-    sIn.listenF( tinP ) ;
-    sIn.bindF( tinP , ifcPORToLD1lAKE ) ;
-    socketC sIn( tinP , etThread , TAG( TAGiDnULL ) ) ;
+    sIn.listenF( tinBaseP ) ;
+    sIn.bindF( tinBaseP , ifcPORToLD1lAKE ) ;
+    socketC sIn( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
 
-    etThread.strokeF( tinP , T("IdeaFarm " "(tm) City Lake Server\r\ni give remote nodes access to the local lake\r\n\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Lake Server\r\ni give remote nodes access to the local lake\r\n\r\n") ) ;
 {
 else
 }
-    etThread.strokeF( tinP , T("Another ff30104 appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tinBaseP , T("Another ff30104 appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinP , TAG( TAGiDnULL ) , T("ff30104") ) ;
+batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("ff30104") ) ;
 
 TODO
 

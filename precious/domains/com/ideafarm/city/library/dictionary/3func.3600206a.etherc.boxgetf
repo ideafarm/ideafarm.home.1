@@ -11,9 +11,9 @@
     __Z( pbP ) ;
     ETHERlIST3aFTERoPTIONALbREAK
     ETHERlIST2bEFOREoPTIONALbREAK
-    box.zapF( tinP , cZapTriesP ) ;
-    if( !pbP ) { box.getF( tinP , pbP , cbP ) ; ___( pbP ) ; }
-    boxC box( tinP , *this , psttc1 , 0 , 0 , 0 , cOpenTriesP , time1P , time2P , flagsOpenDetailsP ) ;
+    box.zapF( tinBaseP , cZapTriesP ) ;
+    if( !pbP ) { box.getF( tinBaseP , pbP , cbP ) ; ___( pbP ) ; }
+    boxC box( tinBaseP , *this , psttc1 , 0 , 0 , 0 , cOpenTriesP , time1P , time2P , flagsOpenDetailsP ) ;
     ETHERlIST1bEFOREwORK( psttP )
 
     _IO_
@@ -24,14 +24,14 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::boxGetF( tinS& tinP , byteT*& pbP , countT& cbP , const strokeS* const psttP , countT cOpenTriesP , const countT cZapTriesP , countT time1P , const sCountT time2P , const flagsT flagsOpenDetailsP )/*1*/
+/**//*1*/voidT etherC::boxGetF( tinBaseS& tinBaseP , byteT*& pbP , countT& cbP , const strokeS* const psttP , countT cOpenTriesP , const countT cZapTriesP , countT time1P , const sCountT time2P , const flagsT flagsOpenDetailsP )/*1*/
 */
   if not 0 then will try cOpenTriesP times
   if 0 then will retry forever
  cOpenTriesP
    else i will return immediately upon impotence
    if so, then i will try all listed file names and will become impotent only if all file names fail
-  impotence behavior depends upon whether i am *tinP.pEtScratch
+  impotence behavior depends upon whether i am *((tinNormalS&)tinBaseP).pEtScratch
    the result is as if the caller called me repeatedly
   may also be a string of strings
   must not be 0

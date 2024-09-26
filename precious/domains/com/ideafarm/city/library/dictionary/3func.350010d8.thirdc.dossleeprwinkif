@@ -11,20 +11,20 @@
     #endif
         BOSnOvALUE( WHATsn , OSsLEEPf( ( msn + 7 * osTid ) % 0x80 + 0x40 ) )
 
-        countT osTid = tinP.brcRaw ;
-        BOSdOnOTtEST( WHATgbo , tinP.brcRaw )
+        countT osTid = ((tinNormalS&)tinBaseP).brcRaw ;
+        BOSdOnOTtEST( WHATgbo , ((tinNormalS&)tinBaseP).brcRaw )
     
         BOSpOOP
         BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
 
-        countT msn = tinP.brcRaw ;
+        countT msn = ((tinNormalS&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , clock() )
 
 
     #elif defined( __NT__ )
 
         BOSpOOP
-        BOS( WHATsn , BOSfAIL , DosSleep( ( clock() + 7 * tinP.brcRaw ) % 0x80 + 0x40 ) )
+        BOS( WHATsn , BOSfAIL , DosSleep( ( clock() + 7 * ((tinNormalS&)tinBaseP).brcRaw ) % 0x80 + 0x40 ) )
         BOSpOOP
         BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
 
@@ -35,10 +35,10 @@
     countT idIn = 1 + incv02AM( idInLath ) ;
     static countT idInLath ;
 
-    sleepC::blammoIfIF( tinP ) ;
+    sleepC::blammoIfIF( tinBaseP ) ;
     _IO_
 {
-/*1*/voidT thirdC::dosSleepRWinkIF( tinS& tinP )/*1*/
+/*1*/voidT thirdC::dosSleepRWinkIF( tinBaseS& tinBaseP )/*1*/
 
 /**/
 */

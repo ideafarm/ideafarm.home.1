@@ -10,8 +10,8 @@
 
 REST
 
-etThread.loafIF( tinP ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etThread.loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
     while( ~hFind && !ether && !POOP ) ;
@@ -19,59 +19,59 @@ etThread.traceF( tinP , T("ok") ) ;
         DEL( pInfo ) ;
         }
             }
-                etThread.delF( tinP , posti ) ;
+                etThread.delF( tinBaseP , posti ) ;
                 }
                     }
-                        etThread.fileWriteF( tinP , fo , postBar , sizeof postBar - 1 ) ;
-                        etThread.fileWriteF( tinP , fo , posti , costi ) ;
+                        etThread.fileWriteF( tinBaseP , fo , postBar , sizeof postBar - 1 ) ;
+                        etThread.fileWriteF( tinBaseP , fo , posti , costi ) ;
                         swOuterTally ++ ;
 
-                        if( !swOuterTally.idSlotOfLeverF( tinP , (countT)psttLever ) ) etThread.fileWriteF( tinP , fo , postBar , sizeof postBar - 1 ) ;
+                        if( !swOuterTally.idSlotOfLeverF( tinBaseP , (countT)psttLever ) ) etThread.fileWriteF( tinBaseP , fo , postBar , sizeof postBar - 1 ) ;
 
-                        etThread.fileSetPtrF( tinP , fo , flSETfILEpTR_END , c2z ) ;
+                        etThread.fileSetPtrF( tinBaseP , fo , flSETfILEpTR_END , c2z ) ;
                         count2S c2z ;
 
-                        fileC fo( tinP , (strokeS*)( tPrefix+T(psttLever)+tSuffix ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
+                        fileC fo( tinBaseP , (strokeS*)( tPrefix+T(psttLever)+tSuffix ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
 
-                        //etThread.traceF( tinP , psttLever ) ;
-                        psttLever = (strokeS*)swInnerUnique.leverF( tinP , idf ) ;
+                        //etThread.traceF( tinBaseP , psttLever ) ;
+                        psttLever = (strokeS*)swInnerUnique.leverF( tinBaseP , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )                                                                    // FOR EACH EMAIL ADDRESS THAT OCCURS WITHIN THIS ITEM
-                    countT cFlavors = swInnerUnique.cFlavorsF( tinP ) ;
+                    countT cFlavors = swInnerUnique.cFlavorsF( tinBaseP ) ;
 
                     }
-                        etThread.delF( tinP , pstt1Lines ) ;
+                        etThread.delF( tinBaseP , pstt1Lines ) ;
                         }
                             }
-                                etThread.delF( tinP , pstt1Words ) ;
+                                etThread.delF( tinBaseP , pstt1Words ) ;
                                 }
                                     if( save > 0x30 ) psttc2->idAdam = save ;
                                     swInnerUnique ++ ;                                                                                  // TALLY THE EMAIL ADDRESS
                                     psttLever = psttc2 ;
 
-                                    etThread.strCleanF( tinP , psttc2 , S1C('.') , ifcIDtYPEsTROKEcLEAN_CnAMESoRaT ) ;
+                                    etThread.strCleanF( tinBaseP , psttc2 , S1C('.') , ifcIDtYPEsTROKEcLEAN_CnAMESoRaT ) ;
 
                                     if( save > 0x30 ) psttc2->idAdam = 0x30 ;
                                     countT save = psttc2->idAdam ;
                                 {
                                 FORsTRINGSiN2( pstt1Words )                                                                             // FOR EACH EMAIL ADDRESS
-                                etThread.strWordsF( tinP , pstt1Words , psttc1 , sttq , tPattern , flSTRwORDS_DELIMITERsTRING|flSTRwORDS_DELIMITERS|flSTRwORDS_ONLYdELIMITERS ) ; ___( pstt1Words ) ;
+                                etThread.strWordsF( tinBaseP , pstt1Words , psttc1 , sttq , tPattern , flSTRwORDS_DELIMITERsTRING|flSTRwORDS_DELIMITERS|flSTRwORDS_ONLYdELIMITERS ) ; ___( pstt1Words ) ;
                                 ZE( strokeS* , pstt1Words ) ;
 
-                                //etThread.traceF( tinP , psttc1 ) ;
+                                //etThread.traceF( tinBaseP , psttc1 ) ;
                             {
                             )
-                                || 1 == etThread.strIdF( tinP , tLook4 , psttc1 )
-                                || 1 == etThread.strIdF( tinP , tLook3 , psttc1 )
-                                || 1 == etThread.strIdF( tinP , tLook2 , psttc1 )
-                                   1 == etThread.strIdF( tinP , tLook1 , psttc1 )
+                                || 1 == etThread.strIdF( tinBaseP , tLook4 , psttc1 )
+                                || 1 == etThread.strIdF( tinBaseP , tLook3 , psttc1 )
+                                || 1 == etThread.strIdF( tinBaseP , tLook2 , psttc1 )
+                                   1 == etThread.strIdF( tinBaseP , tLook1 , psttc1 )
                             (
                             if
 
-                            etThread.strConvertToLowerCaseF( tinP , psttc1 ) ;
+                            etThread.strConvertToLowerCaseF( tinBaseP , psttc1 ) ;
                         {
                         FORsTRINGSiN1( pstt1Lines )
-                        etThread.strWordsF( tinP , pstt1Lines, tHead , sttq , tcrlf , flSTRwORDS_DELIMITERsTRING ) ; ___( pstt1Lines ) ;
+                        etThread.strWordsF( tinBaseP , pstt1Lines, tHead , sttq , tcrlf , flSTRwORDS_DELIMITERsTRING ) ; ___( pstt1Lines ) ;
                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                         ZE( strokeS* , pstt1Lines ) ;
 
@@ -86,40 +86,40 @@ etThread.traceF( tinP , T("ok") ) ;
                         ZE( osTextT , save ) ;
                         TN( tHead , "" ) ;
 
-                        osTextT* poste = thirdC::c_strstrIF( tinP , posti , "\r\n\r\n" ) ;
+                        osTextT* poste = thirdC::c_strstrIF( tinBaseP , posti , "\r\n\r\n" ) ;
                     {
-                    switchC swInnerUnique( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLever ) ;
+                    switchC swInnerUnique( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLever ) ;
 
-                    etThread.fileWriteF( tinP , fo , postBar , sizeof postBar - 1 ) ;
-                    etThread.fileWriteF( tinP , fo , posti , costi ) ;
+                    etThread.fileWriteF( tinBaseP , fo , postBar , sizeof postBar - 1 ) ;
+                    etThread.fileWriteF( tinBaseP , fo , posti , costi ) ;
                 {
                 if( posti && costi )
             
-                etThread.boxGetShadowF( tinP , posti , costi , pInfo->psttIfoName ) ; ___( posti ) ;
+                etThread.boxGetShadowF( tinBaseP , posti , costi , pInfo->psttIfoName ) ; ___( posti ) ;
                 ZE( countT   , costi ) ;
                 ZE( osTextT* , posti ) ;
 
-                etThread.traceF( tinP , tShort ) ;
+                etThread.traceF( tinBaseP , tShort ) ;
             {
 
             }
-                etThread.delF( tinP , psttShort ) ;
-                etThread.delF( tinP , psttPath ) ;
+                etThread.delF( tinBaseP , psttShort ) ;
+                etThread.delF( tinBaseP , psttPath ) ;
                 tShort = T(psttShort) ;
                 ___( psttShort ) ;
                 ___( psttPath ) ;
-                etThread.strBisectF( tinP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+                etThread.strBisectF( tinBaseP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttPath ) ;
             {
             TN( tShort , "" ) ;
         {
         if( pInfo && pInfo->psttIfoName && pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam != '/' )
-        etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ; ___( pInfo ) ;
+        etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ; ___( pInfo ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     TN( tLook4 , "bcc" ":" ) ;
     TN( tLook3 , "cc" ":" ) ;
     TN( tLook2 , "to:" ) ;
@@ -129,12 +129,12 @@ etThread.traceF( tinP , T("ok") ) ;
     TN( tLike , "///d/tmp/gmail.download/3.renamed/*") ;
     //TN( tLike , "///d/tmp/gmail.download/3.renamed/20071214@035705.000051bd.eml") ;
 
-    switchC swOuterTally( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLever ) ;
+    switchC swOuterTally( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLever ) ;
     ZE( strokeS* , psttLever ) ;
 
-    etThread.fileWriteF( tinP , fo , postBar , sizeof postBar - 1 ) ;
+    etThread.fileWriteF( tinBaseP , fo , postBar , sizeof postBar - 1 ) ;
 
-    fileC fo( tinP , (strokeS*)( tPrefix+T("all")+tSuffix ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+    fileC fo( tinBaseP , (strokeS*)( tPrefix+T("all")+tSuffix ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
     TN( tSuffix , ".txt" ) ;
     TN( tPrefix , "///d/tmp/gmail.download/4.dialogs/20990024@0001.email.dialog." ) ;
 {

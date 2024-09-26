@@ -33,7 +33,7 @@
             __( cbP - sizeof( CONTEXT ) ) ;
         #if defined( __NT__ )
         __Z( pbP ) ;
-        __1 //U: THIS CANNOT BE SUPPORTED UNTIL FIGURE OUT WHY STUFFING *tinP.pag1->_thirdC_.pSwThreadHandle IN thirdC::ct CAUSES WO DRIVER TO FAIL TO INSTALL
+        __1 //U: THIS CANNOT BE SUPPORTED UNTIL FIGURE OUT WHY STUFFING *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle IN thirdC::ct CAUSES WO DRIVER TO FAIL TO INSTALL
         if( POOP ) return ;
     {
     IFbEcAREFUL
@@ -42,7 +42,7 @@
     ZE( countT* , pcb ) ; //U:
     SCOOP
 {
-/*1*/voidT thirdC::dosSetThreadContextField_singleStep_F( tinS& tinP , byteT* const pbP , const countT cbP , const boolT bOnP )/*1*/
+/*1*/voidT thirdC::dosSetThreadContextField_singleStep_F( tinBaseS& tinBaseP , byteT* const pbP , const countT cbP , const boolT bOnP )/*1*/
 
 #if defined( NEVERdEFINED )
 //U:
@@ -55,7 +55,7 @@
   must point to a valid image of a context record
   must not be 0
  pbP
- tinP
+ tinBaseP
 arguments
   the current version is hardware specific (i386)
  this function is provisional and is subject to change

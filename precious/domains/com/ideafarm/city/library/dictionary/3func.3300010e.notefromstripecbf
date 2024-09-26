@@ -9,7 +9,7 @@
 
 }
 #endif
-    etThread.traceF( tinP , T("noteFromStripeCBF [bGot,bValid]:    ")+TF2(bGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bValid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , T("noteFromStripeCBF [bGot,bValid]:    ")+TF2(bGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bValid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //}
     //    }
@@ -20,10 +20,10 @@
     //        tKey   = T(psttLeverKVP) ;
     //
     //        strokeS* psttv = (strokeS*)(countT)swKVP ;
-    //        psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+    //        psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
     //    {
     //    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    //    countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+    //    countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
     //    TN( tValue , "" ) ;
     //    TN( tKey   , "" ) ;
     //{
@@ -37,7 +37,7 @@
         }
             THREADmODE2rESTORE
 
-            etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
+            etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
 
             ;
                 : tValueStripePayerEmail
@@ -79,25 +79,25 @@
 
             TN( tBody ,
 
-            textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
+            textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinBaseP , TAG( TAGiDnULL ) ) ;
 
             }
-                etThread.delF( tinP , psttFile ) ;
+                etThread.delF( tinBaseP , psttFile ) ;
                 }
                     }
-                        etThread.delF( tinP , psttShort ) ;
-                        etThread.delF( tinP , psttnu ) ;
+                        etThread.delF( tinBaseP , psttShort ) ;
+                        etThread.delF( tinBaseP , psttnu ) ;
                         tShort = T(psttShort) ;
-                        etThread.strBisectF( tinP , psttnu , psttShort , psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                        etThread.strBisectF( tinBaseP , psttnu , psttShort , psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                         ZE( strokeS* , psttShort ) ;
                         ZE( strokeS* , psttnu ) ;
                     {
-                    if( !tShort.csF( tinP ) )
+                    if( !tShort.csF( tinBaseP ) )
 
-                    etThread.traceF( tinP , T("wrote   ")+T(psttc1) ) ;
+                    etThread.traceF( tinBaseP , T("wrote   ")+T(psttc1) ) ;
                 {
                 FORsTRINGSiN1( psttFile )
-                etThread.boxPutUniqueF( tinP , psttFile , tListSubscriptionFileLong , WS( rec ) ) ; ___( psttFile ) ;
+                etThread.boxPutUniqueF( tinBaseP , psttFile , tListSubscriptionFileLong , WS( rec ) ) ; ___( psttFile ) ;
                 ZE( strokeS* , psttFile ) ;
 
                 }
@@ -109,11 +109,11 @@
             TN( tShort , "" ) ;
 
             }
-                if( !tHost.csF( tinP ) ) tHost = T("factories") ;
-                etThread.delF( tinP , psttHost ) ;
+                if( !tHost.csF( tinBaseP ) ) tHost = T("factories") ;
+                etThread.delF( tinBaseP , psttHost ) ;
                 else            tHost = T(psttHost) ;
-                if( !psttHost ) etThread.traceF( tinP , T("error: reverse DNS lookup on myself failed 105") ) ;
-                etThread.sockPsttHostF( tinP , psttHost ) ; ___( psttHost ) ;
+                if( !psttHost ) etThread.traceF( tinBaseP , T("error: reverse DNS lookup on myself failed 105") ) ;
+                etThread.sockPsttHostF( tinBaseP , psttHost ) ; ___( psttHost ) ;
                 ZE( strokeS* , psttHost ) ;
             {
             TN( tHost , "" ) ;
@@ -145,45 +145,45 @@
             rec << (countT)timeN1                     ; //ADDED IN FORMAT 5
             rec << (countT)7                          ; // IDfORMAT
             rec << finger                             ;
-            soulC rec( tinP , TAG( TAGiDnULL ) ) ;
+            soulC rec( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            if( !tZipUse.csF( tinP ) ) tZipUse = tValueAddressCity ;
+            if( !tZipUse.csF( tinBaseP ) ) tZipUse = tValueAddressCity ;
             TN( tZipUse , (strokeS*)tValueAddressZip ) ;
 
-            etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
 
             }
                 secret = ru ;
-                ranUniC ru( tinP , (measure04T)MAXcOUNTT + 1 ) ;
+                ranUniC ru( tinBaseP , (measure04T)MAXcOUNTT + 1 ) ;
             {
             if( !bDelete )
             ZE( countT , secret ) ;
 
             TN( tIdSubscriber , "" ) ; tIdSubscriber = TF4((countT)idSubscriber,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e) ;
 
-            count04T idSubscriber = bDelete ? 0 : etThread.etherDispenseSerialNumberF( tinP , T(bSandbox?"////"postCRAFTWORKfACTORY"/d/tmp/idSubscriberLath":"////"postCRAFTWORKfACTORY"/d/ideafarm.home.101/ephemeral/backed.up.daily/domains/com/ideafarm/wo.o.s.table/idSubscriberLath") ) ;
+            count04T idSubscriber = bDelete ? 0 : etThread.etherDispenseSerialNumberF( tinBaseP , T(bSandbox?"////"postCRAFTWORKfACTORY"/d/tmp/idSubscriberLath":"////"postCRAFTWORKfACTORY"/d/ideafarm.home.101/ephemeral/backed.up.daily/domains/com/ideafarm/wo.o.s.table/idSubscriberLath") ) ;
             // SO THIS IS NOT A SPF EVEN THOUGH IT REQUIRES factory1, SINCE IT WILL BLOCK UNTIL IT SUCCEEDS
             // THIS WILL BLOCK UNTIL IT CAN OPEN THE SERIAL NUMBER FILE, WHICH MIGHT TAKE A TICK IF factory1 IS REBOOTING
 
             boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
-            etThread.traceF( tinP , T("stripe subscription [tAction]: ")+tAction ) ;
+            etThread.traceF( tinBaseP , T("stripe subscription [tAction]: ")+tAction ) ;
 
             TN( tAction , bDelete ? "unregister" : "register" ) ;
-            boolT bDelete = !etThread.strCompareF( tinP , tValueTransType , T("subscr_cancel") ) ;
+            boolT bDelete = !etThread.strCompareF( tinBaseP , tValueTransType , T("subscr_cancel") ) ;
 
             putNegAM( *(countT*)&finger , FINGERnEG_WOtABLEcONFIRMEDeMAIL ) ;
             ZE( countT , finger ) ;
         {
         )
             )
-               || !etThread.strCompareF( tinP , tValueTransType  , T("subscr_cancel") )
-                  !etThread.strCompareF( tinP , tValueTransType  , T("subscr_signup") )
+               || !etThread.strCompareF( tinBaseP , tValueTransType  , T("subscr_cancel") )
+                  !etThread.strCompareF( tinBaseP , tValueTransType  , T("subscr_signup") )
             (
             &&
-            !etThread.strCompareF( tinP , tValueItemNumber , T("20200604") )
+            !etThread.strCompareF( tinBaseP , tValueItemNumber , T("20200604") )
         (
         if
 
@@ -240,20 +240,20 @@
                     }
                         }
                             }
-                                sessionsP.baton.ungrabF( tinP ) ;
+                                sessionsP.baton.ungrabF( tinBaseP ) ;
                                 }
-                                    if( idAcc == session.getIdAccountF( tinP ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_FULLhEADER ) ;
+                                    if( idAcc == session.getIdAccountF( tinBaseP ) ) session.privilegesF( tinBaseP , session.privilegesF( tinBaseP ) | flSESSIONpRIVILEGE_FULLhEADER ) ;
                                     sessionC& session = *(sessionC*)(countT)sessionsP.swSession ;
-                                    sessionsP.nnLever_peer = *(nicNameC*)sessionsP.swSession.leverF( tinP , idf ) ;
+                                    sessionsP.nnLever_peer = *(nicNameC*)sessionsP.swSession.leverF( tinBaseP , idf ) ;
                                 {
                                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                countT cFlavors = sessionsP.swSession.cFlavorsF( tinP ) ;
-                                sessionsP.baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                countT cFlavors = sessionsP.swSession.cFlavorsF( tinBaseP ) ;
+                                sessionsP.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                             {
 
                             }
-                                etThread.delF( tinP , psttEmail ) ;
-                                etThread.boxPutF( tinP , T("//smtp/" ifcEMAIL_AUTOrESPONDERbANKtELLER "/")+T(psttEmail) , tSay , tSay.csF( tinP ) ) ;
+                                etThread.delF( tinBaseP , psttEmail ) ;
+                                etThread.boxPutF( tinBaseP , T("//smtp/" ifcEMAIL_AUTOrESPONDERbANKtELLER "/")+T(psttEmail) , tSay , tSay.csF( tinBaseP ) ) ;
 
                                 ) ;
 
@@ -270,14 +270,14 @@
                                 countT dollars = moneyT1 / 100 ;
                                 countT cents   = moneyT1 % 100 ;
 
-                                queryEmailFromIdAccountF( tinP , psttEmail , idAccCommission ) ; ___( psttEmail ) ;
+                                queryEmailFromIdAccountF( tinBaseP , psttEmail , idAccCommission ) ; ___( psttEmail ) ;
                                 ZE( strokeS* , psttEmail ) ;
                             {
                             if( idAccCommission )
 
                             }
-                                etThread.delF( tinP , psttEmail ) ;
-                                etThread.boxPutF( tinP , T("//smtp/" ifcEMAIL_AUTOrESPONDERbANKtELLER "/")+T(psttEmail) , tSay , tSay.csF( tinP ) ) ;
+                                etThread.delF( tinBaseP , psttEmail ) ;
+                                etThread.boxPutF( tinBaseP , T("//smtp/" ifcEMAIL_AUTOrESPONDERbANKtELLER "/")+T(psttEmail) , tSay , tSay.csF( tinBaseP ) ) ;
 
                                 ) ;
 
@@ -299,29 +299,29 @@
 
                                 TN( tSay , "" ) ; tSay = T(
 
-                                queryEmailFromIdAccountF( tinP , psttEmail , idAcc ) ; ___( psttEmail ) ;
+                                queryEmailFromIdAccountF( tinBaseP , psttEmail , idAcc ) ; ___( psttEmail ) ;
                                 ZE( strokeS* , psttEmail ) ;
                             {
 
-                            { depositS info( tinP , 1/*idAccBucketOwner*/ , 1/*idBucket*/ , 1/*idProduct*/ , idAcc/*Depositor*/ , 0/*pczNote*/ , timeN1 , timeN2 , 1/*idDeposit*/ , idAccCommission , moneyT1 , moneyT2 ) ; }
+                            { depositS info( tinBaseP , 1/*idAccBucketOwner*/ , 1/*idBucket*/ , 1/*idProduct*/ , idAcc/*Depositor*/ , 0/*pczNote*/ , timeN1 , timeN2 , 1/*idDeposit*/ , idAccCommission , moneyT1 , moneyT2 ) ; }
                             count8S c8n( 6 , 7 , 8 , 9 ) ;
 
                             //U::CONoUTrAW7( "deposit: [moneyT1,idAcc,idAccCommission]: " , moneyT1 , " " , idAcc , " " , idAccCommission , "\r\n" ) ;
                         
-                            etThread.osTimeNowUniqueF( tinP , timeN1 , timeN2 ) ;
+                            etThread.osTimeNowUniqueF( tinBaseP , timeN1 , timeN2 ) ;
                             ZE( sCountT , timeN2 ) ;
                             ZE( countT  , timeN1 ) ;
             
-                            else                        etThread.osTimeSubtractF( tinP , moneyT1 , moneyT2 , - cMoneyIn , 0 ) ;
+                            else                        etThread.osTimeSubtractF( tinBaseP , moneyT1 , moneyT2 , - cMoneyIn , 0 ) ;
                             if( (sCountT)cMoneyIn > 0 ) moneyT1 = cMoneyIn ;
                             ZE( sCountT , moneyT2 ) ;
                             ZE( countT  , moneyT1 ) ;
                         {
 
                         }
-                            etThread.delF( tinP , pstt1w ) ;
+                            etThread.delF( tinBaseP , pstt1w ) ;
                             }
-                                etThread.delF( tinP , pstt2w ) ;
+                                etThread.delF( tinBaseP , pstt2w ) ;
                                 }
 
 
@@ -329,12 +329,12 @@
                                     }
                                         }
                                             break ;
-                                            if( !etThread.strCompareF( tinP , psttc2 , tCustomKeyIdAccCommission ) ) idArm = 1 ;
+                                            if( !etThread.strCompareF( tinBaseP , psttc2 , tCustomKeyIdAccCommission ) ) idArm = 1 ;
                                         {
                                         default :
                                         }
                                             break ;
-                                            idAccCommission = etThread.strDigitsToSCountF( tinP , psttc2 , 36 ) ;
+                                            idAccCommission = etThread.strDigitsToSCountF( tinBaseP , psttc2 , 36 ) ;
                                         {
                                         case 1 :
                                     {
@@ -342,18 +342,18 @@
                                 {
                                 FORsTRINGSiN2( pstt2w )
                                 ZE( countT , idArm ) ;
-                                etThread.strWordsOldF( tinP , pstt2w , psttc1 , sttq , T(TbLACK)+T(":") ) ; ___( pstt2w ) ;
+                                etThread.strWordsOldF( tinBaseP , pstt2w , psttc1 , sttq , T(TbLACK)+T(":") ) ; ___( pstt2w ) ;
                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                 ZE( strokeS* , pstt2w ) ;
                             {
                             FORsTRINGSiN1( pstt1w )
-                            etThread.strWordsOldF( tinP , pstt1w , tValueStripeCustom , sttq , T(TbLACK)+T(";") ) ; ___( pstt1w ) ;
+                            etThread.strWordsOldF( tinBaseP , pstt1w , tValueStripeCustom , sttq , T(TbLACK)+T(";") ) ; ___( pstt1w ) ;
                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                             ZE( strokeS* , pstt1w ) ;
 
                             TN( tCustomKeyIdAccCommission , "idAccCommission" ) ;
                         {
-                        if( tValueStripeCustom.csF( tinP ) )
+                        if( tValueStripeCustom.csF( tinBaseP ) )
                         ZE( countT , idAccCommission ) ;
 
                     {
@@ -361,13 +361,13 @@
         
                     countT cMoneyIn = cMoneyGross - cMoneyFee ;
 
-                    countT cMoneyFee   = cMoneyF( tinP , etThread , tValueStripePaymentFee   ) ;
-                    countT cMoneyGross = cMoneyF( tinP , etThread , tValueStripePaymentGross ) ;
+                    countT cMoneyFee   = cMoneyF( tinBaseP , etThread , tValueStripePaymentFee   ) ;
+                    countT cMoneyGross = cMoneyF( tinBaseP , etThread , tValueStripePaymentGross ) ;
                 {
                 )
                     )
-                        !etThread.strCompareF( tinP , tValueStripePaymentStatus , T("Refunded" ) )
-                        !etThread.strCompareF( tinP , tValueStripePaymentStatus , T("Completed") ) ||
+                        !etThread.strCompareF( tinBaseP , tValueStripePaymentStatus , T("Refunded" ) )
+                        !etThread.strCompareF( tinBaseP , tValueStripePaymentStatus , T("Completed") ) ||
                     (
                     !POOP &&
                 (
@@ -377,8 +377,8 @@
                     }
                         }
                             //U::CONoUTrAW( T("updating account description NEW [")+*pptKey[offo]+T("]: \"")+T(pstto)+T("\"\r\n") ) ;
-                            if( pptValue[ offo ]->csF( tinP ) ) { etThread.strMakeF( tinP , LF , pstto , *pptValue[ offo ] ) ; ___( pstto ) ; }
-                            if( pstto ) { PUSE( tinP , *(byteT**)&pstto ) ; }
+                            if( pptValue[ offo ]->csF( tinBaseP ) ) { etThread.strMakeF( tinBaseP , LF , pstto , *pptValue[ offo ] ) ; ___( pstto ) ; }
+                            if( pstto ) { PUSE( tinBaseP , *(byteT**)&pstto ) ; }
                             //U::CONoUTrAW( T("updating account description OLD [")+*pptKey[offo]+T("]: \"")+T(pstto)+T("\"\r\n") ) ;
                             strokeS*& pstto = *pppstto[ offo ] ;
                         {
@@ -419,28 +419,28 @@
 
                     if( F(info.flagsThis1) & flACCOUNT1_FYIdOESnOTeXIST ) info.flagsMode = fliACCOUNTmODE_LISTmEdIRECTORY | fliACCOUNTmODE_OWNERcONFIRMED ;
 
-                    accountS info( tinP , etThread , idAcc , flACCOUNT1_SET , flACCOUNT2_QUERYfLAGSmODE | flACCOUNT2_QUERYzIPaT ) ; //MUST QUERY FOR ALL FIELDS THAT ARE CAPTURED FROM ACCOUNT OWNER OR FROM ANOTHER SOURCE OTHER THAN STRIPE
+                    accountS info( tinBaseP , etThread , idAcc , flACCOUNT1_SET , flACCOUNT2_QUERYfLAGSmODE | flACCOUNT2_QUERYzIPaT ) ; //MUST QUERY FOR ALL FIELDS THAT ARE CAPTURED FROM ACCOUNT OWNER OR FROM ANOTHER SOURCE OTHER THAN STRIPE
                 {
             {
             if( idAcc )
 
-            const countT idAcc = queryIdAccountFromEmailF( tinP , tValueStripePayerEmail ) ;
+            const countT idAcc = queryIdAccountFromEmailF( tinBaseP , tValueStripePayerEmail ) ;
 
         #if defined( NEVERdEFINED )
         //U:: 20120905: COMMENTED OUT TO BRING UP HTTP SERVER WITH NO DATABASE FUNCTIONALITY; ALL DATABASE FUNCTIONALITY CODE NEEDS TO BE MIGRATED TO THE NEW LIST SUPPORT IN poolC
 
-        const countT idTest = !tValueIdTest.csF( tinP ) ? 0 : etThread.strDigitsToSCountF( tinP , tValueIdTest ) ;
+        const countT idTest = !tValueIdTest.csF( tinBaseP ) ? 0 : etThread.strDigitsToSCountF( tinBaseP , tValueIdTest ) ;
 
         }
             }
-                if( !etThread.strCompareF( tinP , psttLeverKVP , *pptKey[ offk ] ) ) *pptValue[ offk ] = T((strokeS*)(countT)swKVP) ;
+                if( !etThread.strCompareF( tinBaseP , psttLeverKVP , *pptKey[ offk ] ) ) *pptValue[ offk ] = T((strokeS*)(countT)swKVP) ;
             {
             for( countT offk = 0 ; offk < sizeof pptKey / sizeof pptKey[ 0 ] ; offk ++ )
 
-            psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+            psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+        countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
 
         } ;
             &tValueItemNumber                    ,
@@ -600,12 +600,12 @@
             if( POOP ) POOPR
 
             }
-                etThread.delF( tinP , psttBuffer ) ;
+                etThread.delF( tinBaseP , psttBuffer ) ;
                 if( psttBuffer && psttBuffer->idAdam ) tValidationReply += T(psttBuffer) ;
 
                 }
-                    ++ s ; etThread.osSleepF( tinP , TOCK ) ;
-                    etThread.traceF( tinP , TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": napping because did not receive a valid reply from www.stripe.com to confirm that the ipn is valid") ) ;
+                    ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
+                    etThread.traceF( tinBaseP , TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": napping because did not receive a valid reply from www.stripe.com to confirm that the ipn is valid") ) ;
                 {
                 if( !bGot && cTries )
 
@@ -613,7 +613,7 @@
 
                 bGot = 1 ;
                 bValid = ostVerdict == 'V' ;
-                etThread.traceF( tinP , T("verdict:    ")+T(postVerdict) ) ;
+                etThread.traceF( tinBaseP , T("verdict:    ")+T(postVerdict) ) ;
                 osTextT postVerdict[ 2 ] = { ostVerdict , 0 } ;
 
                 }
@@ -640,22 +640,22 @@
                         if( bArmed )
 
                         }
-                            etThread.strFuseF( tinP , psttBuffer , T(post2) ) ;
+                            etThread.strFuseF( tinBaseP , psttBuffer , T(post2) ) ;
                             LOGrAW( post2 ) ;                                       //U:: THIS IS REDUNDANT AND SHOULD BE REMOVED
                             osTextT post2[] = { ostNow , 0 } ;
                         {
 
-                        if( !psttBuffer ) { etThread.strMakeF( tinP , LF , psttBuffer , 0 , TUCK << 2 ) ; ___( psttBuffer ) ; }
+                        if( !psttBuffer ) { etThread.strMakeF( tinBaseP , LF , psttBuffer , 0 , TUCK << 2 ) ; ___( psttBuffer ) ; }
 
                         }
-                            etThread.delF( tinP , psttBuffer ) ;
+                            etThread.delF( tinBaseP , psttBuffer ) ;
                             tValidationReply += T(psttBuffer) ;
                         {
                         if( psttBuffer && !psttBuffer[ 2 ].idAdam )
 
                         osTextT ostNow = post5[ ( cIn - 1 ) % sizeof post5 ] ;
 
-                        sock.readF( tinP , post5 + ( cIn ++ ) % sizeof post5 , 1 ) ;
+                        sock.readF( tinBaseP , post5 + ( cIn ++ ) % sizeof post5 , 1 ) ;
                     {
                     while( !POOP )
                     ZE( countT , cIn ) ;
@@ -667,15 +667,15 @@
                 ZE( strokeS* , psttBuffer ) ;
                 tValidationReply = T("") ;
 
-                sock.writeF( tinP , (osTextT*)tValidationRequest , tValidationRequest.csF( tinP ) ) ;
-                sock.connectF( tinP , 443 , nnStripe ) ;
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+                sock.writeF( tinBaseP , (osTextT*)tValidationRequest , tValidationRequest.csF( tinBaseP ) ) ;
+                sock.connectF( tinBaseP , 443 , nnStripe ) ;
+                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
             {
             if( nnStripe ) while( !bGot && cTries -- )
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             countT cTries = TUCK >> 4 ;
 
-            nicNameC nnStripe = socketC::nicNameIF( tinP , *tinP.pEtScratch , T(bSandbox?"www.sandbox.stripe.com":"www.stripe.com") ) ;
+            nicNameC nnStripe = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , T(bSandbox?"www.sandbox.stripe.com":"www.stripe.com") ) ;
         
             SCOOPS
         {
@@ -684,7 +684,7 @@
         }
             tValidationRequest = tSay1+TF4(costBodyAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tSay2+tSayCmd+tSayBody ;
 
-            countT costBodyAll = tSayCmd.csF( tinP ) + tSayBody.csF( tinP ) ;
+            countT costBodyAll = tSayCmd.csF( tinBaseP ) + tSayBody.csF( tinBaseP ) ;
 
             TN( tSayBody , postBodyP ) ;
             TN( tSayCmd , "cmd=_notify-validate&" ) ;
@@ -710,26 +710,26 @@
 #if defined( NEVERdEFINED )
 
         }
-            etThread.traceF( tinP , T("!exception / could not parse stripe notice [postBodyP]:\r\n")+T(postBodyP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-            etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nCould not parse. [tBody]:\r\n")+T(postBodyP)+T("\r\n") ) ;
+            etThread.traceF( tinBaseP , T("!exception / could not parse stripe notice [postBodyP]:\r\n")+T(postBodyP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nCould not parse. [tBody]:\r\n")+T(postBodyP)+T("\r\n") ) ;
         {
         else
         }
             }
-                etThread.delF( tinP , pstto ) ;
-                etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/")+tValueEmail /* + T("///bcc@ideafarm.com") */ , T(pstto) ) ;
+                etThread.delF( tinBaseP , pstto ) ;
+                etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/")+tValueEmail /* + T("///bcc@ideafarm.com") */ , T(pstto) ) ;
 
-                etThread.delF( tinP , psttKey2 ) ;
-                etThread.delF( tinP , psttKey1 ) ;
+                etThread.delF( tinBaseP , psttKey2 ) ;
+                etThread.delF( tinBaseP , psttKey1 ) ;
 
-                etThread.strFuseF( tinP , pstto , T(posto4) ) ;
-                etThread.strFuseF( tinP , pstto , psttKey2 ) ;
-                etThread.strFuseF( tinP , pstto , T(posto3) ) ;
-                etThread.strFuseF( tinP , pstto , psttKey1 ) ;
-                etThread.strFuseF( tinP , pstto , T(posto2) ) ;
-                etThread.strFuseF( tinP , pstto , TF2(idgWight&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                etThread.strFuseF( tinP , pstto , T(posto1) ) ;
-                etThread.strMakeF( tinP , LF , pstto , 0 , TUCK << 4 ) ; ___( pstto ) ;
+                etThread.strFuseF( tinBaseP , pstto , T(posto4) ) ;
+                etThread.strFuseF( tinBaseP , pstto , psttKey2 ) ;
+                etThread.strFuseF( tinBaseP , pstto , T(posto3) ) ;
+                etThread.strFuseF( tinBaseP , pstto , psttKey1 ) ;
+                etThread.strFuseF( tinBaseP , pstto , T(posto2) ) ;
+                etThread.strFuseF( tinBaseP , pstto , TF2(idgWight&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.strFuseF( tinBaseP , pstto , T(posto1) ) ;
+                etThread.strMakeF( tinBaseP , LF , pstto , 0 , TUCK << 4 ) ; ___( pstto ) ;
                 ZE( strokeS* , pstto ) ;
 
                 ;
@@ -790,41 +790,41 @@
 
                 //U: NOTIFY THE PURCHASER OF THESE PUBLIC KEYS HERE ; ONCE I DELETE THESE BLOBS, THERE IS NO WAY TO RECOVER THEM (THEY ARE NOT STORED ANYWHERE)
 
-                etThread.traceF( tinP , T("[idjWightIdg]:    ")+TF2(idgWight&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.traceF( tinBaseP , T("[idjWightIdg]:    ")+TF2(idgWight&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                etThread.delF( tinP , pbPublicKey2 ) ;
-                etThread.strEncodeBlobToRFC4648F( tinP , psttKey2 , pbPublicKey2 , cbPublicKey2 ) ; ___( psttKey2 ) ;
+                etThread.delF( tinBaseP , pbPublicKey2 ) ;
+                etThread.strEncodeBlobToRFC4648F( tinBaseP , psttKey2 , pbPublicKey2 , cbPublicKey2 ) ; ___( psttKey2 ) ;
                 ZE( strokeS* , psttKey2 ) ;
 
-                etThread.delF( tinP , pbPublicKey1 ) ;
-                etThread.strEncodeBlobToRFC4648F( tinP , psttKey1 , pbPublicKey1 , cbPublicKey1 ) ; ___( psttKey1 ) ;
+                etThread.delF( tinBaseP , pbPublicKey1 ) ;
+                etThread.strEncodeBlobToRFC4648F( tinBaseP , psttKey1 , pbPublicKey1 , cbPublicKey1 ) ; ___( psttKey1 ) ;
                 ZE( strokeS* , psttKey1 ) ;
 
-                etThread.ifcCreateNewWightF( tinP , idgWight , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
+                etThread.ifcCreateNewWightF( tinBaseP , idgWight , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
                 ZE( countT , cbPublicKey2  ) ;
                 ZE( byteT* , pbPublicKey2  ) ;
                 ZE( countT , cbPublicKey1  ) ;
                 ZE( byteT* , pbPublicKey1  ) ;
                 ZE( countT , idgWight ) ;
 
-                etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment for wight creation received from [email]:    ")+tValueEmail+T("\r\n") ) ;
+                etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment for wight creation received from [email]:    ")+tValueEmail+T("\r\n") ) ;
             {
             else
             }
-                etThread.delF( tinP , pstto ) ;
-                etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/")+tValueEmail /* + T("///bcc@ideafarm.com") */ , T(pstto) ) ;
+                etThread.delF( tinBaseP , pstto ) ;
+                etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/")+tValueEmail /* + T("///bcc@ideafarm.com") */ , T(pstto) ) ;
 
-                etThread.delF( tinP , psttKey2 ) ;
-                etThread.delF( tinP , psttKey1 ) ;
+                etThread.delF( tinBaseP , psttKey2 ) ;
+                etThread.delF( tinBaseP , psttKey1 ) ;
 
-                etThread.strFuseF( tinP , pstto , T(posto4) ) ;
-                etThread.strFuseF( tinP , pstto , psttKey2 ) ;
-                etThread.strFuseF( tinP , pstto , T(posto3) ) ;
-                etThread.strFuseF( tinP , pstto , psttKey1 ) ;
-                etThread.strFuseF( tinP , pstto , T(posto2) ) ;
-                etThread.strFuseF( tinP , pstto , TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                etThread.strFuseF( tinP , pstto , T(posto1) ) ;
-                etThread.strMakeF( tinP , LF , pstto , 0 , TUCK << 4 ) ; ___( pstto ) ;
+                etThread.strFuseF( tinBaseP , pstto , T(posto4) ) ;
+                etThread.strFuseF( tinBaseP , pstto , psttKey2 ) ;
+                etThread.strFuseF( tinBaseP , pstto , T(posto3) ) ;
+                etThread.strFuseF( tinBaseP , pstto , psttKey1 ) ;
+                etThread.strFuseF( tinBaseP , pstto , T(posto2) ) ;
+                etThread.strFuseF( tinBaseP , pstto , TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.strFuseF( tinBaseP , pstto , T(posto1) ) ;
+                etThread.strMakeF( tinBaseP , LF , pstto , 0 , TUCK << 4 ) ; ___( pstto ) ;
                 ZE( strokeS* , pstto ) ;
 
                 ;
@@ -888,44 +888,44 @@
 
                 //U: NOTIFY THE PURCHASER OF THESE PUBLIC KEYS HERE ; ONCE I DELETE THESE BLOBS, THERE IS NO WAY TO RECOVER THEM (THEY ARE NOT STORED ANYWHERE)
 
-                etThread.traceF( tinP , T("[idjHomeIdg]:    ")+TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.traceF( tinBaseP , T("[idjHomeIdg]:    ")+TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                etThread.delF( tinP , pbPublicKey2 ) ;
-                etThread.strEncodeBlobToRFC4648F( tinP , psttKey2 , pbPublicKey2 , cbPublicKey2 ) ; ___( psttKey2 ) ;
+                etThread.delF( tinBaseP , pbPublicKey2 ) ;
+                etThread.strEncodeBlobToRFC4648F( tinBaseP , psttKey2 , pbPublicKey2 , cbPublicKey2 ) ; ___( psttKey2 ) ;
                 ZE( strokeS* , psttKey2 ) ;
 
-                etThread.delF( tinP , pbPublicKey1 ) ;
-                etThread.strEncodeBlobToRFC4648F( tinP , psttKey1 , pbPublicKey1 , cbPublicKey1 ) ; ___( psttKey1 ) ;
+                etThread.delF( tinBaseP , pbPublicKey1 ) ;
+                etThread.strEncodeBlobToRFC4648F( tinBaseP , psttKey1 , pbPublicKey1 , cbPublicKey1 ) ; ___( psttKey1 ) ;
                 ZE( strokeS* , psttKey1 ) ;
 
-                etThread.ifcCreateNewHomeF( tinP , idgHome , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
+                etThread.ifcCreateNewHomeF( tinBaseP , idgHome , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
                 ZE( countT , cbPublicKey2  ) ;
                 ZE( byteT* , pbPublicKey2  ) ;
                 ZE( countT , cbPublicKey1  ) ;
                 ZE( byteT* , pbPublicKey1  ) ;
                 ZE( countT , idgHome ) ;
 
-                etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment for home activation received from [email]:    ")+tValueEmail+T("\r\n") ) ;
+                etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment for home activation received from [email]:    ")+tValueEmail+T("\r\n") ) ;
             {
             if( bHome )
 
-            boolT bHome = !etThread.strCompareF( tinP , tValueAmount , T("100") ) ;     //U:: 20240215@2015: THIS IS A WORKAROUND ; AWAITING ADVICE FROM STRIPE REGARDING HOW TO IDENTIFY THE PRODUCT PURCHASED
+            boolT bHome = !etThread.strCompareF( tinBaseP , tValueAmount , T("100") ) ;     //U:: 20240215@2015: THIS IS A WORKAROUND ; AWAITING ADVICE FROM STRIPE REGARDING HOW TO IDENTIFY THE PRODUCT PURCHASED
         {
         )
-            && !etThread.strCompareF( tinP , tValueStatus , T("succeeded") )
-            && !etThread.strCompareF( tinP , tValueObject , T("charge") )
-            && !etThread.strCompareF( tinP , tValuePaid , T("true") )
-            && !etThread.strCompareF( tinP , tValueCaptured , T("true") )
-            && !etThread.strCompareF( tinP , tValueDescriptor , T("IDEAFARM.COM") )
+            && !etThread.strCompareF( tinBaseP , tValueStatus , T("succeeded") )
+            && !etThread.strCompareF( tinBaseP , tValueObject , T("charge") )
+            && !etThread.strCompareF( tinBaseP , tValuePaid , T("true") )
+            && !etThread.strCompareF( tinBaseP , tValueCaptured , T("true") )
+            && !etThread.strCompareF( tinBaseP , tValueDescriptor , T("IDEAFARM.COM") )
             )
-                !etThread.strCompareF( tinP , tValueAmount , T("200") )
+                !etThread.strCompareF( tinBaseP , tValueAmount , T("200") )
                 ||
-                !etThread.strCompareF( tinP , tValueAmount , T("100") )
+                !etThread.strCompareF( tinBaseP , tValueAmount , T("100") )
             (
             &&
-            && !etThread.strCompareF( tinP , tValueAmount , tValueAmountCaptured )
-            && !etThread.strCompareF( tinP , tValueType , T("charge.succeeded") )
-               !etThread.strCompareF( tinP , tValueVersion , T("2023-10-16") )
+            && !etThread.strCompareF( tinBaseP , tValueAmount , tValueAmountCaptured )
+            && !etThread.strCompareF( tinBaseP , tValueType , T("charge.succeeded") )
+               !etThread.strCompareF( tinBaseP , tValueVersion , T("2023-10-16") )
         (
         if
         
@@ -933,14 +933,14 @@
         
         }
             }
-                etThread.delF( tinP , psttValue ) ;
+                etThread.delF( tinBaseP , psttValue ) ;
         
                 }
                     }
-                        etThread.traceF( tinP , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tinBaseP , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         *pptValue[ offe ] = T(psttValue) ;
                     {
-                    if( !etThread.strCompareF( tinP , psttPath , *pptPath[ offe ] ) )
+                    if( !etThread.strCompareF( tinBaseP , psttPath , *pptPath[ offe ] ) )
                 {
                 for( countT offe = 0 ; offe < cPaths ; offe ++ )
         
@@ -948,16 +948,16 @@
                 countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                 countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
         
-                etThread.traceF( tinP , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etThread.traceF( tinP , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                etThread.traceF( tinBaseP , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                etThread.traceF( tinBaseP , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
         
                 strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                psttPath = (strokeS*)pSwPathValue->leverF( tinP , idf ) ;
+                psttPath = (strokeS*)pSwPathValue->leverF( tinBaseP , idf ) ;
         
                 _IO_
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = pSwPathValue->cFlavorsF( tinP ) ;
+            countT cFlavors = pSwPathValue->cFlavorsF( tinBaseP ) ;
         {
         if( !POOP )
         
@@ -1030,13 +1030,13 @@
         TN( tValueVersion        , "" ) ;
         
         __Z( pSwPathValue ) ;
-        etThread.strParseJsonF( tinP , pSwPathValue , psttPath , (osTextT*)postBodyP , flSTACKc_null ) ;
+        etThread.strParseJsonF( tinBaseP , pSwPathValue , psttPath , (osTextT*)postBodyP , flSTACKc_null ) ;
         ZE( switchC* , pSwPathValue ) ;
         ZE( strokeS* , psttPath     ) ;
 
-        etThread.traceF( tinP , T("\r\n---- postBodyP (END) -------------------------------------------------------------------\r\n") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.traceF( tinP , T(postBodyP)                                                                                          , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.traceF( tinP , T("\r\n---- postBodyP (BEGIN) -----------------------------------------------------------------\r\n") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.traceF( tinBaseP , T("\r\n---- postBodyP (END) -------------------------------------------------------------------\r\n") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.traceF( tinBaseP , T(postBodyP)                                                                                          , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.traceF( tinBaseP , T("\r\n---- postBodyP (BEGIN) -----------------------------------------------------------------\r\n") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
         //THIS WORKS IN FIREFOX BROWSER: https://www.sandbox.stripe.com:443/cgi-bin/webscr?cmd=_notify-validate&mc_gross=1.00&protection_eligibility=Eligible&address_status=confirmed&payer_id=4QLHUR4EYW37J&address_street=1+Main+St&payment_date=15%3A55%3A04+Jun+04%2C+2020+PDT&payment_status=Completed&charset=windows-1252&address_zip=95131&first_name=John&mc_fee=0.33&address_country_code=US&address_name=John+Doe&notify_version=3.9&subscr_id=I-DEKU4NNTHS0H&payer_status=verified&business=sb-znjve1276155%40business.example.com&address_country=United+States&address_city=San+Jose&verify_sign=AS.sXmO3SZlbZsuBgmx57wrfjxyDAk855hu6vdRmhFRd0mqr2l3hMU7l&payer_email=sb-prtxq883780%40personal.example.com&txn_id=5W609239EF681420H&payment_type=instant&btn_id=4125335&last_name=Doe&address_state=CA&receiver_email=sb-znjve1276155%40business.example.com&payment_fee=0.33&receiver_id=755UKLGFJ8XU2&txn_type=subscr_payment&item_name=Wo'O's+Table+Registration+and+Subscription&mc_currency=USD&item_number=20200604&residence_country=US&test_ipn=1&transaction_subject=Wo'O's+Table+Registration+and+Subscription&payment_gross=1.00&ipn_track_id=5075e5b427054 HTTP/1.1
         //OLD FORMAT: GET /cgi-bin/webscr?cmd=_notify-validate&mc_gross=1.00&protection_eligibility=Eligible&address_status=confirmed&payer_id=4QLHUR4EYW37J&address_street=1+Main+St&payment_date=17%3A04%3A06+Jun+04%2C+2020+PDT&payment_status=Completed&charset=windows-1252&address_zip=95131&first_name=John&mc_fee=0.33&address_country_code=US&address_name=John+Doe&notify_version=3.9&subscr_id=I-1CXF383WH8P0&payer_status=verified&business=sb-znjve1276155%40business.example.com&address_country=United+States&address_city=San+Jose&verify_sign=AEHpL6M1JS9Z4r02TsvVIey5ocFqAgLcANkEe9kVFcJG4kqTWCtTJprq&payer_email=sb-prtxq883780%40personal.example.com&txn_id=1XX85736SF014420R&payment_type=instant&btn_id=4125335&last_name=Doe&address_state=CA&receiver_email=sb-znjve1276155%40business.example.com&payment_fee=0.33&receiver_id=755UKLGFJ8XU2&txn_type=subscr_payment&item_name=Wo%27O%27s+Table+Registration+and+Subscription&mc_currency=USD&item_number=20200604&residence_country=US&test_ipn=1&transaction_subject=Wo%27O%27s+Table+Registration+and+Subscription&payment_gross=1.00&ipn_track_id=92fb2ec1f693b HTTP/1.1
@@ -1048,7 +1048,7 @@
     ZE( boolT , bGot ) ;
     ZE( boolT , bValid ) ;
 {
-/*1*/voidT noteFromStripeCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT noteFromStripeCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

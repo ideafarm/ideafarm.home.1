@@ -9,13 +9,13 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
-etThread.winSetTitleF( tinP , T("Done!") ) ;
+etThread.winSetTitleF( tinBaseP , T("Done!") ) ;
 
 CONoUTrAW5( "" , cDirs , " " , cFiles , "\r\n" ) ;
 
-etThread.diskWalkGatherF( tinP , cDirs , cFiles , ether , psttTo , psttFrom , myCBF , 0 ) ;
+etThread.diskWalkGatherF( tinBaseP , cDirs , cFiles , ether , psttTo , psttFrom , myCBF , 0 ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
 
@@ -36,17 +36,17 @@ TODO
     if( bDoIt )
 
     ;
-        : !thirdC::c_strcmpIF( tinP , postNameP + costName - 0x4 , ".msv" ) /*&& !thirdC::c_strstrIF( tinP , postNameP , "milpitas.mayor" )*/
+        : !thirdC::c_strcmpIF( tinBaseP , postNameP + costName - 0x4 , ".msv" ) /*&& !thirdC::c_strstrIF( tinBaseP , postNameP , "milpitas.mayor" )*/
         ? 0
     boolT  bDoIt = costName < 4
 
-    //boolT  bDoIt = !!thirdC::c_strstrIF( tinP , postNameP , ".bmp." ) ;
+    //boolT  bDoIt = !!thirdC::c_strstrIF( tinBaseP , postNameP , ".bmp." ) ;
 
-    countT costName = thirdC::c_strlenIF( tinP , postNameP ) ;
+    countT costName = thirdC::c_strlenIF( tinBaseP , postNameP ) ;
 
-    thirdC::c_strlwrIF( tinP , (osTextT*)postNameP ) ;
+    thirdC::c_strlwrIF( tinBaseP , (osTextT*)postNameP ) ;
 {
-boolT myCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
+boolT myCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOWtEXT( "tool.gather.files" )/*1*/
 /**/

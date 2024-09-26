@@ -9,12 +9,12 @@
 
 }
 
-    tinP.pag5->frPaper.grab.ungrabF( tinP ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
 
     }
         if( cTraceOn == 1 && sttP.idCaste == scOld_DEBUG && !bRetainTrace ) cTraceOn = 0 ;
 
-        if( cTraceOn && sttP.idCaste != sc_cADAM && processGlobal2I.ostLathLog != '\n' ) { LOGrAW( "                " ) ; winPulp.logStrokeF( tinP , sttP ) ; LOGrAW( "\r\n" ) ; }
+        if( cTraceOn && sttP.idCaste != sc_cADAM && processGlobal2I.ostLathLog != '\n' ) { LOGrAW( "                " ) ; winPulp.logStrokeF( tinBaseP , sttP ) ; LOGrAW( "\r\n" ) ; }
 
         }
             }
@@ -39,7 +39,7 @@
                 }
                     break ;
                     }
-                        ether.delF( tinP , pcElts ) ;
+                        ether.delF( tinBaseP , pcElts ) ;
 
                         }
                             if( cTraceOn ) { TN( tSay , "" ) ; tSay = T("there are ")+TF1(winPulp.stqr_notes)+T(" notes after i pushed ")+TF1(cElts+1) ; LOGrAW( tSay ) ; }
@@ -65,28 +65,28 @@
                         pcElts[ 0 ] = sttP.idAdam ;
                     {
                     if( pcElts )
-                    ether.newF( tinP , LF , pcElts , 1 + sttP.idAdam ) ; ___( pcElts ) ;
+                    ether.newF( tinBaseP , LF , pcElts , 1 + sttP.idAdam ) ; ___( pcElts ) ;
                     ZE( countT* , pcElts ) ;
                 {
                 case scOld_cCALCpUSHrAMlAYER : //U:: allocates idAdam countT objects, accessed using 1-based indexing; index 0 contains number of elements allocated
                 }
                     break ;
-                    backScratchBitmapPopF( tinP , pulpP , sttP.idAdam ) ;
+                    backScratchBitmapPopF( tinBaseP , pulpP , sttP.idAdam ) ;
                 {
                 case scOld_cSCRATCHbITMAPpOP :
                 }
                     break ;
-                    backDrawOnNullDeviceF( tinP , pulpP ) ;
+                    backDrawOnNullDeviceF( tinBaseP , pulpP ) ;
                 {
                 case scOld_DRAWoNnULLdEVICE :
                 }
                     break ;
-                    backDrawOnScratchDeviceF( tinP , pulpP ) ;
+                    backDrawOnScratchDeviceF( tinBaseP , pulpP ) ;
                 {
                 case scOld_DRAWoNsCRATCHdEVICE :
                 }
                     break ;
-                    backDrawOnNormalDeviceF( tinP , pulpP ) ;
+                    backDrawOnNormalDeviceF( tinBaseP , pulpP ) ;
                 {
                 case scOld_DRAWoNnORMALdEVICE :
                 }
@@ -105,7 +105,7 @@
                     break ;
                     }
                         }
-                            thirdC::winBitBltIF( tinP , ifcIDtYPEpAINT_XOR , *winPulp.pHndDrawBitmap , bitmap , cCols , cRows , mIdColOrigin + winPulp.mIdColNow , mIdRowOrigin + winPulp.mIdRowNow , 1.0 , 1.0 ) ; //THIS LINE MIGHT HIT THE ROW ABOVE AND/OR THE COL TO THE RIGHT OF THE CURRENT STROKING FRAME, BECAUSE THE RENDERED STROKING FRAMES CAN VARY IN SIZE DUE TO ROUNDING
+                            thirdC::winBitBltIF( tinBaseP , ifcIDtYPEpAINT_XOR , *winPulp.pHndDrawBitmap , bitmap , cCols , cRows , mIdColOrigin + winPulp.mIdColNow , mIdRowOrigin + winPulp.mIdRowNow , 1.0 , 1.0 ) ; //THIS LINE MIGHT HIT THE ROW ABOVE AND/OR THE COL TO THE RIGHT OF THE CURRENT STROKING FRAME, BECAUSE THE RENDERED STROKING FRAMES CAN VARY IN SIZE DUE TO ROUNDING
                 
                             countT cRows = ((HANDLEaPPnOTEScOUNTcLASS&)(handleC&)bitmap).c2 ;
                             countT cCols = ((HANDLEaPPnOTEScOUNTcLASS&)(handleC&)bitmap).c1 ;
@@ -141,13 +141,13 @@
                     break ;
 
                     }
-                        thirdC::winBitBltIF( tinP , ifcIDtYPEpAINT_OPAQUE , bitmap , *winPulp.pHndDrawBitmap , cCols , cRows , 1.0 , 1.0 , mColDevice , mRowDevice ) ;
+                        thirdC::winBitBltIF( tinBaseP , ifcIDtYPEpAINT_OPAQUE , bitmap , *winPulp.pHndDrawBitmap , cCols , cRows , 1.0 , 1.0 , mColDevice , mRowDevice ) ;
                         const measureT mRowDevice = mIdRowOrigin + idRowFrom ;
                         const measureT mColDevice = mIdColOrigin + idColFrom ;
                         bitmapOldC& bitmap = *(bitmapOldC*)&(*pStq)[ 1 ] ;
                 
-                        else                                      new( 0 , tinP , (byteT*)&(*pStq)[ 1 ] , sizeof( bitmapOldC ) ) bitmapOldC( tinP , ether , hDrawWindow , cCols , cRows ) ;
-                        if( F(flagsd) & flDRAW_MONOCHROMEbITMAP ) new( 0 , tinP , (byteT*)&(*pStq)[ 1 ] , sizeof( bitmapOldC ) ) bitmapOldC( tinP , ether               , cCols , cRows ) ;
+                        else                                      new( 0 , tinBaseP , (byteT*)&(*pStq)[ 1 ] , sizeof( bitmapOldC ) ) bitmapOldC( tinBaseP , ether , hDrawWindow , cCols , cRows ) ;
+                        if( F(flagsd) & flDRAW_MONOCHROMEbITMAP ) new( 0 , tinBaseP , (byteT*)&(*pStq)[ 1 ] , sizeof( bitmapOldC ) ) bitmapOldC( tinBaseP , ether               , cCols , cRows ) ;
                 
                         *pStq << (byteT*)0 ;
                 
@@ -194,21 +194,21 @@
                 case scOld_PELSpUSH :
                 }
                     break ;
-                    tinP.pag1->_pulpOldC_.flagsMode &= ~( F(flPAPERmODEi_SUPPRESStABfRESH) ) ;
-                    winPulp.stqr_flagsModeI_ << tinP.pag1->_pulpOldC_.flagsMode ;
+                    ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode &= ~( F(flPAPERmODEi_SUPPRESStABfRESH) ) ;
+                    winPulp.stqr_flagsModeI_ << ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode ;
                 {
                 case scOld_PUSHtABfRESHoN :
                 }
                     break ;
-                    tinP.pag1->_pulpOldC_.flagsMode |= flPAPERmODEi_SUPPRESStABfRESH ;
-                    winPulp.stqr_flagsModeI_ << tinP.pag1->_pulpOldC_.flagsMode ;
+                    ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode |= flPAPERmODEi_SUPPRESStABfRESH ;
+                    winPulp.stqr_flagsModeI_ << ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode ;
                 {
                 case scOld_PUSHtABfRESHoFF :
                 }
                     break ;
                     }
-                        winPulp.stqr_flagsModeI_ >> tinP.pag1->_pulpOldC_.flagsMode ;
-                        tinP.pag1->_pulpOldC_.flagsMode = 0 ;
+                        winPulp.stqr_flagsModeI_ >> ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode ;
+                        ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode = 0 ;
                     {
                     if( winPulp.stqr_flagsModeI_ )
                 {
@@ -296,7 +296,7 @@
                 case scOld_TRACEoN :
                 }
                     break ;
-                    popPaperDrawOverrideF( tinP , pulpP , F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ) ;
+                    popPaperDrawOverrideF( tinBaseP , pulpP , F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ) ;
                 {
                 case scOld_POPpAPERoVERRIDE :
                 }
@@ -308,7 +308,7 @@
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , DeleteObject( HPEN( c3c.c2 ) ) )
                             if( oshOldVerify != c3c.c2 ) { BLAMMO ; } //U::O: COMMENT THIS OUT IN PRODUCTION
-                            countT oshOldVerify = tinP.brcRaw ;
+                            countT oshOldVerify = ((tinNormalS&)tinBaseP).brcRaw ;
                             BOSdOnOTtEST( WHATgbo , SelectObject( (HDC)winPulp.pHndDrawBitmap->osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , HPEN( c3c.c1 ) ) )
                         {
                         if( !( F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ) )
@@ -348,7 +348,7 @@
                 }
                     break ;
                     if( cTraceOn ) cTraceOn -- ;
-                    renderF( tinP , pulpP , psttw , phCloneP ) ;
+                    renderF( tinBaseP , pulpP , psttw , phCloneP ) ;
                     if( cTraceOn ) cTraceOn ++ ;
 
                     psttw[ CSpREFIX ] = S3(mCols,scOld_mmMOVEpEL,mRows) ;
@@ -386,7 +386,7 @@
                 }
                     break ;
                     if( cTraceOn ) cTraceOn -- ;
-                    renderF( tinP , pulpP , psttw , phCloneP ) ;
+                    renderF( tinBaseP , pulpP , psttw , phCloneP ) ;
                     if( cTraceOn ) cTraceOn ++ ;
 
                     psttw[ CSpREFIX ] = S3(mCols,scOld_mmMOVEpEL,mRows) ;
@@ -443,7 +443,7 @@
                 case scOld_PUSHrIPPLESoNLYoN :
                 }
                     break ;
-                    winPulp.cacheF( tinP , scOld_PEEwHILEmOVINGoN ) ;
+                    winPulp.cacheF( tinBaseP , scOld_PEEwHILEmOVINGoN ) ;
                     else                                      sfd.bPeeWhileMoving -- ;
                     if( sttP.idCaste == scOld_PEEwHILEmOVINGoN ) sfd.bPeeWhileMoving ++ ;
                     strokingFrameS& sfd = *(strokingFrameS*)&winPulp.stqr_strokingFrame[ 2 + winPulp.rCache.offFrame + winPulp.rCache.offFrameWrap ] ;
@@ -471,12 +471,12 @@
                 }
                     break ;
                     }
-                        winPulp.positionPaperBackF( tinP ) ;
-                        winPulp.cacheF( tinP , scOld_POPfRAME ) ;
+                        winPulp.positionPaperBackF( tinBaseP ) ;
+                        winPulp.cacheF( tinBaseP , scOld_POPfRAME ) ;
         
                         //}
                         //    LOGrAW( tSay ) ;
-                        //    TN( tSay , "" ) ; tSay = TP(tinP.postThreadName,0x10)+T(" new:")+TF1(winPulp.stqr_strokingFrame)+T(": POPPED TO FRAME AT COL ")+TF1(sf.mIdCol)+T("\r\n") ;
+                        //    TN( tSay , "" ) ; tSay = TP(((tinNormalS&)tinBaseP).postThreadName,0x10)+T(" new:")+TF1(winPulp.stqr_strokingFrame)+T(": POPPED TO FRAME AT COL ")+TF1(sf.mIdCol)+T("\r\n") ;
                         //    strokingFrameS& sf  = *(strokingFrameS*)&winPulp.stqr_strokingFrame[ 1 + winPulp.rCache.offFrame ] ;
                         //{
                         //if( bLog3302e )
@@ -511,12 +511,12 @@
                 case scOld_PUSHoVERRIDEcOLrOW :
                 }
                     break ;
-                    winPulp.stqr_strokeOverrideIdPlate.purgeF( tinP ) ;
-                    winPulp.stqr_strokeOverride.purgeF( tinP ) ;
+                    winPulp.stqr_strokeOverrideIdPlate.purgeF( tinBaseP ) ;
+                    winPulp.stqr_strokeOverride.purgeF( tinBaseP ) ;
                 {
                 case scOld_RENDERsTROKEoVERRIDEpURGE :
-                case scOld_RESTORE                   : { winPulp.snapF( tinP , ether , 1 ) ; break ; }
-                case scOld_SNAP                      : { winPulp.snapF( tinP , ether ) ; break ; }
+                case scOld_RESTORE                   : { winPulp.snapF( tinBaseP , ether , 1 ) ; break ; }
+                case scOld_SNAP                      : { winPulp.snapF( tinBaseP , ether ) ; break ; }
                 }
                     break ;
 
@@ -564,15 +564,15 @@
                 }
                     break ;
                     }
-                        ((thirdC&)ether).winSetPaintTypeF( tinP , *winPulp.pHndDrawBitmap  , winPulp.rCache.idTypePaint ) ;
+                        ((thirdC&)ether).winSetPaintTypeF( tinBaseP , *winPulp.pHndDrawBitmap  , winPulp.rCache.idTypePaint ) ;
                     {
                     if( !( F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ) )
-                    popF( tinP , winPulp.stqr_idTypePaint , scOld_POPiDtYPEpAINT , 0 , winPulp ) ;
+                    popF( tinBaseP , winPulp.stqr_idTypePaint , scOld_POPiDtYPEpAINT , 0 , winPulp ) ;
                 {
                 case scOld_POPiDtYPEpAINT :
                 }
                     break ;
-                    popF( tinP , winPulp.stqr_idObject , scOld_POPiDoBJECT , 0 , winPulp ) ;
+                    popF( tinBaseP , winPulp.stqr_idObject , scOld_POPiDoBJECT , 0 , winPulp ) ;
                     countT idObjectOld = winPulp.rCache.idObject ;
                 {
                 case scOld_POPiDoBJECT :
@@ -716,12 +716,12 @@
                             }
                                 break ;
                                 }
-                                    case scOld_ccCALCaTAN : { *(measureT*)&cValue = thirdC::mathAtanIF( tinP , *(measureT*)&cOp1 , *(measureT*)&cOp2 ) ; break ; }
-                                    case scOld_ccCALCsQRT : { *(measureT*)&cValue = thirdC::mathSqrtIF( tinP , *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCsIN  : { *(measureT*)&cValue = thirdC::mathSinIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCcOS  : { *(measureT*)&cValue = thirdC::mathCosIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCeXP  : { *(measureT*)&cValue = thirdC::mathExpIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALClOG  : { *(measureT*)&cValue = thirdC::mathLog2IF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCaTAN : { *(measureT*)&cValue = thirdC::mathAtanIF( tinBaseP , *(measureT*)&cOp1 , *(measureT*)&cOp2 ) ; break ; }
+                                    case scOld_ccCALCsQRT : { *(measureT*)&cValue = thirdC::mathSqrtIF( tinBaseP , *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCsIN  : { *(measureT*)&cValue = thirdC::mathSinIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCcOS  : { *(measureT*)&cValue = thirdC::mathCosIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCeXP  : { *(measureT*)&cValue = thirdC::mathExpIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALClOG  : { *(measureT*)&cValue = thirdC::mathLog2IF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
                                     case scOld_ccCALCmOD  : { *(measureT*)&cValue = (countT)*(measureT*)&cOp1 % (countT)*(measureT*)&cOp2 ; break ; }
                                     case scOld_ccCALCdIV  : { *(measureT*)&cValue = *(measureT*)&cOp1 / *(measureT*)&cOp2 ; break ; }
                                     case scOld_ccCALCmUL  : { *(measureT*)&cValue = *(measureT*)&cOp1 * *(measureT*)&cOp2 ; break ; }
@@ -734,12 +734,12 @@
                             }
                                 break ;
                                 }
-                                    case scOld_ccCALCaTAN : { *(measureT*)&cValue = thirdC::mathAtanIF( tinP , *(measureT*)&cOp1 , cOp2 ) ; break ; }
-                                    case scOld_ccCALCsQRT : { *(measureT*)&cValue = thirdC::mathSqrtIF( tinP , *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCsIN  : { *(measureT*)&cValue = thirdC::mathSinIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCcOS  : { *(measureT*)&cValue = thirdC::mathCosIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCeXP  : { *(measureT*)&cValue = thirdC::mathExpIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALClOG  : { *(measureT*)&cValue = thirdC::mathLog2IF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCaTAN : { *(measureT*)&cValue = thirdC::mathAtanIF( tinBaseP , *(measureT*)&cOp1 , cOp2 ) ; break ; }
+                                    case scOld_ccCALCsQRT : { *(measureT*)&cValue = thirdC::mathSqrtIF( tinBaseP , *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCsIN  : { *(measureT*)&cValue = thirdC::mathSinIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCcOS  : { *(measureT*)&cValue = thirdC::mathCosIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCeXP  : { *(measureT*)&cValue = thirdC::mathExpIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALClOG  : { *(measureT*)&cValue = thirdC::mathLog2IF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
                                     case scOld_ccCALCmOD  : { *(measureT*)&cValue = (countT)*(measureT*)&cOp1 % cOp2 ; break ; }
                                     case scOld_ccCALCdIV  : { *(measureT*)&cValue = *(measureT*)&cOp1 / cOp2 ; break ; }
                                     case scOld_ccCALCmUL  : { *(measureT*)&cValue = *(measureT*)&cOp1 * cOp2 ; break ; }
@@ -752,12 +752,12 @@
                             }
                                 break ;
                                 }
-                                    case scOld_ccCALCaTAN : { *(measureT*)&cValue = thirdC::mathAtanIF( tinP , cOp1 , *(measureT*)&cOp2 ) ; break ; }
-                                    case scOld_ccCALCsQRT : { *(measureT*)&cValue = thirdC::mathSqrtIF( tinP , cOp1 ) ; break ; }
-                                    case scOld_ccCALCsIN  : { *(measureT*)&cValue = thirdC::mathSinIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALCcOS  : { *(measureT*)&cValue = thirdC::mathCosIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALCeXP  : { *(measureT*)&cValue = thirdC::mathExpIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALClOG  : { *(measureT*)&cValue = thirdC::mathLog2IF( tinP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCaTAN : { *(measureT*)&cValue = thirdC::mathAtanIF( tinBaseP , cOp1 , *(measureT*)&cOp2 ) ; break ; }
+                                    case scOld_ccCALCsQRT : { *(measureT*)&cValue = thirdC::mathSqrtIF( tinBaseP , cOp1 ) ; break ; }
+                                    case scOld_ccCALCsIN  : { *(measureT*)&cValue = thirdC::mathSinIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCcOS  : { *(measureT*)&cValue = thirdC::mathCosIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCeXP  : { *(measureT*)&cValue = thirdC::mathExpIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALClOG  : { *(measureT*)&cValue = thirdC::mathLog2IF( tinBaseP ,  cOp1 ) ; break ; }
                                     case scOld_ccCALCmOD  : { *(measureT*)&cValue = cOp1 % (countT)*(measureT*)&cOp2 ; break ; }
                                     case scOld_ccCALCdIV  : { *(measureT*)&cValue = cOp1 / *(measureT*)&cOp2 ; break ; }
                                     case scOld_ccCALCmUL  : { *(measureT*)&cValue = cOp1 * *(measureT*)&cOp2 ; break ; }
@@ -770,12 +770,12 @@
                             }
                                 break ;
                                 }
-                                    case scOld_ccCALCaTAN : { *(measureT*)&cValue = thirdC::mathAtanIF( tinP , cOp1 , cOp2 ) ; break ; }
-                                    case scOld_ccCALCsQRT : { *(measureT*)&cValue = thirdC::mathSqrtIF( tinP , cOp1 ) ; break ; }
-                                    case scOld_ccCALCsIN  : { *(measureT*)&cValue = thirdC::mathSinIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALCcOS  : { *(measureT*)&cValue = thirdC::mathCosIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALCeXP  : { *(measureT*)&cValue = thirdC::mathExpIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALClOG  : { *(measureT*)&cValue = thirdC::mathLog2IF( tinP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCaTAN : { *(measureT*)&cValue = thirdC::mathAtanIF( tinBaseP , cOp1 , cOp2 ) ; break ; }
+                                    case scOld_ccCALCsQRT : { *(measureT*)&cValue = thirdC::mathSqrtIF( tinBaseP , cOp1 ) ; break ; }
+                                    case scOld_ccCALCsIN  : { *(measureT*)&cValue = thirdC::mathSinIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCcOS  : { *(measureT*)&cValue = thirdC::mathCosIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCeXP  : { *(measureT*)&cValue = thirdC::mathExpIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALClOG  : { *(measureT*)&cValue = thirdC::mathLog2IF( tinBaseP ,  cOp1 ) ; break ; }
                                     case scOld_ccCALCmOD  : { *(measureT*)&cValue = cOp1 % cOp2 ; break ; }
                                     case scOld_ccCALCdIV  : { *(measureT*)&cValue = cOp1 / cOp2 ; break ; }
                                     case scOld_ccCALCmUL  : { *(measureT*)&cValue = cOp1 * cOp2 ; break ; }
@@ -788,12 +788,12 @@
                             }
                                 break ;
                                 }
-                                    case scOld_ccCALCaTAN : { cValue = thirdC::mathAtanIF( tinP , *(measureT*)&cOp1 , *(measureT*)&cOp2 ) ; break ; }
-                                    case scOld_ccCALCsQRT : { cValue = thirdC::mathSqrtIF( tinP , *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCsIN  : { cValue = thirdC::mathSinIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCcOS  : { cValue = thirdC::mathCosIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCeXP  : { cValue = thirdC::mathExpIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALClOG  : { cValue = thirdC::mathLog2IF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCaTAN : { cValue = thirdC::mathAtanIF( tinBaseP , *(measureT*)&cOp1 , *(measureT*)&cOp2 ) ; break ; }
+                                    case scOld_ccCALCsQRT : { cValue = thirdC::mathSqrtIF( tinBaseP , *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCsIN  : { cValue = thirdC::mathSinIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCcOS  : { cValue = thirdC::mathCosIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCeXP  : { cValue = thirdC::mathExpIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALClOG  : { cValue = thirdC::mathLog2IF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
                                     case scOld_ccCALCmOD  : { cValue = (countT)*(measureT*)&cOp1 % (countT)*(measureT*)&cOp2 ; break ; }
                                     case scOld_ccCALCdIV  : { cValue = *(measureT*)&cOp1 / *(measureT*)&cOp2 ; break ; }
                                     case scOld_ccCALCmUL  : { cValue = *(measureT*)&cOp1 * *(measureT*)&cOp2 ; break ; }
@@ -806,12 +806,12 @@
                             }
                                 break ;
                                 }
-                                    case scOld_ccCALCaTAN : { cValue = thirdC::mathAtanIF( tinP , *(measureT*)&cOp1 , cOp2 ) ; break ; }
-                                    case scOld_ccCALCsQRT : { cValue = thirdC::mathSqrtIF( tinP , *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCsIN  : { cValue = thirdC::mathSinIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCcOS  : { cValue = thirdC::mathCosIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALCeXP  : { cValue = thirdC::mathExpIF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
-                                    case scOld_ccCALClOG  : { cValue = thirdC::mathLog2IF( tinP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCaTAN : { cValue = thirdC::mathAtanIF( tinBaseP , *(measureT*)&cOp1 , cOp2 ) ; break ; }
+                                    case scOld_ccCALCsQRT : { cValue = thirdC::mathSqrtIF( tinBaseP , *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCsIN  : { cValue = thirdC::mathSinIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCcOS  : { cValue = thirdC::mathCosIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALCeXP  : { cValue = thirdC::mathExpIF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
+                                    case scOld_ccCALClOG  : { cValue = thirdC::mathLog2IF( tinBaseP ,  *(measureT*)&cOp1 ) ; break ; }
                                     case scOld_ccCALCmOD  : { cValue = (countT)*(measureT*)&cOp1 % cOp2 ; break ; }
                                     case scOld_ccCALCdIV  : { cValue = *(measureT*)&cOp1 / cOp2 ; break ; }
                                     case scOld_ccCALCmUL  : { cValue = *(measureT*)&cOp1 * cOp2 ; break ; }
@@ -824,12 +824,12 @@
                             }
                                 break ;
                                 }
-                                    case scOld_ccCALCaTAN : { cValue = thirdC::mathAtanIF( tinP , cOp1 , *(measureT*)&cOp2 ) ; break ; }
-                                    case scOld_ccCALCsQRT : { cValue = thirdC::mathSqrtIF( tinP , cOp1 ) ; break ; }
-                                    case scOld_ccCALCsIN  : { cValue = thirdC::mathSinIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALCcOS  : { cValue = thirdC::mathCosIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALCeXP  : { cValue = thirdC::mathExpIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALClOG  : { cValue = thirdC::mathLog2IF( tinP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCaTAN : { cValue = thirdC::mathAtanIF( tinBaseP , cOp1 , *(measureT*)&cOp2 ) ; break ; }
+                                    case scOld_ccCALCsQRT : { cValue = thirdC::mathSqrtIF( tinBaseP , cOp1 ) ; break ; }
+                                    case scOld_ccCALCsIN  : { cValue = thirdC::mathSinIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCcOS  : { cValue = thirdC::mathCosIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCeXP  : { cValue = thirdC::mathExpIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALClOG  : { cValue = thirdC::mathLog2IF( tinBaseP ,  cOp1 ) ; break ; }
                                     case scOld_ccCALCmOD  : { cValue = cOp1 % (countT)*(measureT*)&cOp2 ; break ; }
                                     case scOld_ccCALCdIV  : { cValue = cOp1 / *(measureT*)&cOp2 ; break ; }
                                     case scOld_ccCALCmUL  : { cValue = cOp1 * *(measureT*)&cOp2 ; break ; }
@@ -842,12 +842,12 @@
                             }
                                 break ;
                                 }
-                                    case scOld_ccCALCaTAN : { cValue = thirdC::mathAtanIF( tinP , cOp1 , cOp2 ) ; break ; }
-                                    case scOld_ccCALCsQRT : { cValue = thirdC::mathSqrtIF( tinP , cOp1 ) ; break ; }
-                                    case scOld_ccCALCsIN  : { cValue = thirdC::mathSinIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALCcOS  : { cValue = thirdC::mathCosIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALCeXP  : { cValue = thirdC::mathExpIF( tinP ,  cOp1 ) ; break ; }
-                                    case scOld_ccCALClOG  : { cValue = thirdC::mathLog2IF( tinP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCaTAN : { cValue = thirdC::mathAtanIF( tinBaseP , cOp1 , cOp2 ) ; break ; }
+                                    case scOld_ccCALCsQRT : { cValue = thirdC::mathSqrtIF( tinBaseP , cOp1 ) ; break ; }
+                                    case scOld_ccCALCsIN  : { cValue = thirdC::mathSinIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCcOS  : { cValue = thirdC::mathCosIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALCeXP  : { cValue = thirdC::mathExpIF( tinBaseP ,  cOp1 ) ; break ; }
+                                    case scOld_ccCALClOG  : { cValue = thirdC::mathLog2IF( tinBaseP ,  cOp1 ) ; break ; }
                                     case scOld_ccCALCmOD  : { cValue = cOp1 % cOp2 ; break ; }
                                     case scOld_ccCALCdIV  : { cValue = cOp1 / cOp2 ; break ; }
                                     case scOld_ccCALCmUL  : { cValue = cOp1 * cOp2 ; break ; }
@@ -915,25 +915,25 @@
 
                 }
                     break ;
-                    backScratchBitmapMonochromePushF( tinP , pulpP , cCols , cRows ) ;
+                    backScratchBitmapMonochromePushF( tinBaseP , pulpP , cCols , cRows ) ;
                     //LOGrAWtID4( "scOld_ccSCRATCHbITMAPpUSH (cCols,cRows): " , cCols , " " , cRows )
 
                     countT cRows = sttw.cNote ;
                     countT cCols = sttw.idAdam ;
 
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
                 {
                 case scOld_ccSCRATCHbITMAPmONOCHROMEpUSH :
                 }
                     break ;
-                    backScratchBitmapPushF( tinP , pulpP , cCols , cRows ) ;
+                    backScratchBitmapPushF( tinBaseP , pulpP , cCols , cRows ) ;
                     //LOGrAWtID4( "scOld_ccSCRATCHbITMAPpUSH (cCols,cRows): " , cCols , " " , cRows )
 
                     countT cRows = sttw.cNote ;
                     countT cCols = sttw.idAdam ;
 
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
                 {
                 case scOld_ccSCRATCHbITMAPpUSH :
@@ -941,7 +941,7 @@
                     break ;
 
                     }
-                        thirdC::winFloodIF( tinP , *winPulp.pHndDrawBitmap , mIdColOrigin + winPulp.mIdColNow , mIdRowOrigin + winPulp.mIdRowNow , rgbTest , winPulp.colorF() , flagsf ) ;
+                        thirdC::winFloodIF( tinBaseP , *winPulp.pHndDrawBitmap , mIdColOrigin + winPulp.mIdColNow , mIdRowOrigin + winPulp.mIdRowNow , rgbTest , winPulp.colorF() , flagsf ) ;
                     {
                     if( !( F(flagsf) & flDRAW_SUPPRESSpELcOLORcHANGES ) )
 
@@ -956,10 +956,10 @@
                 }
                     break ;
                     }
-                        else winPulp.stAnimateCbfStrokes.sinkF( tinP , countTC() , sttP.idAdam , flSTACKsINK_UNIQUE ) ;
+                        else winPulp.stAnimateCbfStrokes.sinkF( tinBaseP , countTC() , sttP.idAdam , flSTACKsINK_UNIQUE ) ;
                         }
-                            winPulp.stAnimateCbfStrokes.extractF( 0 , tinP ) ;
-                            (*(animateCBFT)sttP.idAdam)( tinP , ether  , 0 , tinP.pag1->_pulpOldC_.cAnimateArg ) ;
+                            winPulp.stAnimateCbfStrokes.extractF( 0 , tinBaseP ) ;
+                            (*(animateCBFT)sttP.idAdam)( tinBaseP , ether  , 0 , ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.cAnimateArg ) ;
                         {
                         if( sttP.idAdam && winPulp.stAnimateCbfStrokes( sttP.idAdam ) )
                     {
@@ -1107,7 +1107,7 @@
         
                     musy1 = ( musy1 + 1.0 ) / 2.0 ;
                     musx1 = ( musx1 + 1.0 ) / 2.0 ;
-                    countT cCorners = usF( tinP , musx1 , musy1 , mAngle ) ;
+                    countT cCorners = usF( tinBaseP , musx1 , musy1 , mAngle ) ;
                     ZE( measureT , musy1 ) ;
                     ZE( measureT , musx1 ) ;
         
@@ -1131,9 +1131,9 @@
                         if( !bExpand ) pmt = pmts = pmtExpandRef ;
         
                         }
-                            winPulp.positionStrokingFrameIfF( tinP ) ;
+                            winPulp.positionStrokingFrameIfF( tinBaseP ) ;
                             }
-                                thirdC::winMoveIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
+                                thirdC::winMoveIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
                                 const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                                 const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                             {
@@ -1172,9 +1172,9 @@
         
                                 }
                                     if( winPulp.rCache.pmrb ) for( countT off = 0 ; off <= winPulp.rCache.cBits ; off ++ ) winPulp.rCache.pmrb[ off ] = pmt[1] + (measureT)off / (measureT)winPulp.rCache.cBits * pmt[5] ;
-                                    ether.newF( tinP , LF , winPulp.rCache.pmrb , 1 + winPulp.rCache.cBits ) ; ___( winPulp.rCache.pmrb ) ;
+                                    ether.newF( tinBaseP , LF , winPulp.rCache.pmrb , 1 + winPulp.rCache.cBits ) ; ___( winPulp.rCache.pmrb ) ;
                                     winPulp.rCache.cBits = cBits ;
-                                    ether.delF( tinP , winPulp.rCache.pmrb ) ;
+                                    ether.delF( tinBaseP , winPulp.rCache.pmrb ) ;
                                 {
                                 if( cBits != winPulp.rCache.cBits )
                                 countT cBits = 1 + ( sttP.idAdam >> 0x10 & 0xf ) ;
@@ -1496,9 +1496,9 @@
                                     }
                                         break ;
         
-                                        winPulp.positionStrokingFrameIfF( tinP ) ;
+                                        winPulp.positionStrokingFrameIfF( tinBaseP ) ;
                                         }
-                                            thirdC::winMoveIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
+                                            thirdC::winMoveIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
                                             const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                                             const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                                         {
@@ -1517,9 +1517,9 @@
                                     }
                                         break ;
         
-                                        winPulp.positionStrokingFrameIfF( tinP ) ;
+                                        winPulp.positionStrokingFrameIfF( tinBaseP ) ;
                                         }
-                                            thirdC::winMoveIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
+                                            thirdC::winMoveIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
                                             const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                                             const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                                         {
@@ -1644,7 +1644,7 @@
 
 
                                         }
-                                            moveOrLineTransformedF( tinP , winPulp ) ;
+                                            moveOrLineTransformedF( tinBaseP , winPulp ) ;
                                             winPulp.idLineType = 0 ;
                                             winPulp.mIdRowNow  = (pmt[1]) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr ;
                                             winPulp.mIdColNow  = (pmt[1]) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc ;
@@ -1698,7 +1698,7 @@
                         {
                         switch( sttP.idAdam & 0xff000000 )
                         //else                     { LOGrAW( T("sc_cALPHABET1: '")+sttP+T("' (")+TF1(sttP.idAdam)+T(")\r\n") ) ; }
-                        if( cTraceOn ) { TN( tSay , "" ) ; tSay = T("'")+sttP+T("' \"")+T(processGlobal4I.mapTool(sttP.idToolF(tinP)))+T("\"") ; LOGrAW( tSay ) ; }
+                        if( cTraceOn ) { TN( tSay , "" ) ; tSay = T("'")+sttP+T("' \"")+T(processGlobal4I.mapTool(sttP.idToolF(tinBaseP)))+T("\"") ; LOGrAW( tSay ) ; }
                         boolT bUseSavedPosition = 1 ;
         
                         if( !bExpand ) pmt = pmts = pmtRef ;
@@ -1735,9 +1735,9 @@
                     if( winPulp.rCache.mCol > 0.5 && winPulp.rCache.mRow > 0.5 )
         
                     }
-                        winPulp.positionStrokingFrameIfF( tinP ) ;
+                        winPulp.positionStrokingFrameIfF( tinBaseP ) ;
                         }
-                            thirdC::winMoveIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
+                            thirdC::winMoveIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
                             const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                             const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                         {
@@ -1745,7 +1745,7 @@
                         if( winPulp.rCache.bPeeWhileMoving ) winPulp.newWaterF( winPulp.mIdColNow , winPulp.mIdRowNow ) ;
                     {
                     if( bMove )
-                    if( tinP.pag1->_etherC_.pIfcRenderingHandlerF ) bMove = (*tinP.pag1->_etherC_.pIfcRenderingHandlerF)( tinP , ether , *this  , tinP.pag1->_etherC_.cIfcRenderingHandlerInfo ) ;
+                    if( ((tinNormalS&)tinBaseP).pag1->_etherC_.pIfcRenderingHandlerF ) bMove = (*((tinNormalS&)tinBaseP).pag1->_etherC_.pIfcRenderingHandlerF)( tinBaseP , ether , *this  , ((tinNormalS&)tinBaseP).pag1->_etherC_.cIfcRenderingHandlerInfo ) ;
                     ZE( boolT , bMove ) ;
         
                     //U::VALIDATE WHEN PUSHED
@@ -1757,21 +1757,21 @@
                     break ;
 
                     }
-                        if( sad.pStrike && !( F(rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_ABSENT ) ) sad.doF( tinP , ether , ifcIDtYPEsTROKEcALLbACK_WAKE , idEvent , 0 , phCloneP ) ;
+                        if( sad.pStrike && !( F(rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_ABSENT ) ) sad.doF( tinBaseP , ether , ifcIDtYPEsTROKEcALLbACK_WAKE , idEvent , 0 , phCloneP ) ;
                 
                         if( cTraceOn ) cTraceOn -- ;
-                        sad.doF( tinP , ether , ifcIDtYPEsTROKEcALLbACK_STRIKE , idEvent , count2S( (countT)&winPulp.paper , (countT)&sttP ) , phCloneP ) ;
-                        backNotifyBeforeSadamF( tinP , pulpP , sttP , F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ) ;
-                        const countT idEvent = 1 + incv02AM( tinP.pag1->idEventSadamsLath ) ;
+                        sad.doF( tinBaseP , ether , ifcIDtYPEsTROKEcALLbACK_STRIKE , idEvent , count2S( (countT)&winPulp.paper , (countT)&sttP ) , phCloneP ) ;
+                        backNotifyBeforeSadamF( tinBaseP , pulpP , sttP , F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ) ;
+                        const countT idEvent = 1 + incv02AM( ((tinNormalS&)tinBaseP).pag1->idEventSadamsLath ) ;
                         if( cTraceOn ) cTraceOn ++ ;
                         if( cTraceOn ) { LOGrAW3( "[idAdam]:" , sttP.idAdam , "\r\n" ) ; }
             
                         if( features.fc.idAdam != sttP.idAdam ) { BLAMMO ; }
                         featuresS& features = *(featuresS*)&(const featuresS&)sad ;
-                        sadamC& sad = (*pSadams)( tinP , sttP.idAdam , phCloneP ) ;
+                        sadamC& sad = (*pSadams)( tinBaseP , sttP.idAdam , phCloneP ) ;
                     {
                     if( pSadams )
-                    sadamsC* pSadams = sadamsC::pSadamsIF( tinP ) ;
+                    sadamsC* pSadams = sadamsC::pSadamsIF( tinBaseP ) ;
 
                     //CODEsYNC: DUPLICATED CODE 1020187 10301bf
                     //   ... UPDATE wP
@@ -1790,8 +1790,8 @@
                     //{
                     //if( sttP.idCaste == scOld_mmFRAMEcELLS )
         
-                    winPulp.positionStrokingFrameIfF( tinP ) ;
-                    winPulp.cacheF( tinP , scOld_mmFRAME ) ;
+                    winPulp.positionStrokingFrameIfF( tinBaseP ) ;
+                    winPulp.cacheF( tinBaseP , scOld_mmFRAME ) ;
                     winPulp.stqr_strokingFrame << (byteT*)&sfn ;
                     strokingFrameS sfn( sf.flags , sf.cStrokingFramesPadRight , sf.cStrokingFramesPadUp , winPulp.mIdColNow , winPulp.mIdRowNow , mIdColTo - winPulp.mIdColNow + 1 , mIdRowTo - winPulp.mIdRowNow + 1 ) ;
         
@@ -1824,7 +1824,7 @@
                     //measureT mIdColTo = sf.mIdCol - 1.0 + sf.mCols ;
                     strokingFrameS& sf = *(strokingFrameS*)&winPulp.stqr_strokingFrame[ 1 + winPulp.rCache.offFrame ] ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
 
                     }
@@ -1848,7 +1848,7 @@
                         c5p.c1 = (countT)osh ; //U::MIGRATE TO count5S ELIMINATING c1
                 
                         BOSdOnOTtEST( WHATgbo , ExtSelectClipRgn( (HDC)winPulp.pHndDrawBitmap->osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , osh , RGN_AND ) )
-                        HRGN osh = (HRGN)tinP.brcRaw ;
+                        HRGN osh = (HRGN)((tinNormalS&)tinBaseP).brcRaw ;
                         BOSpOOP
                         BOS( WHATgbo , BOSoK , CreateRectRgnIndirect( &info ) )
                     
@@ -1877,7 +1877,7 @@
                     const measureT mIdRowFrom = winPulp.mIdRowNow ;
                     const measureT mIdColFrom = winPulp.mIdColNow ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
                     //U::SUPPORT COMPLEX CLIP REGIONS (MULTIPLE CLIP STROKES)
                 {
@@ -1888,7 +1888,7 @@
                 case scOld_mmCLIP :
                 }
                     break ;
-                    if( !( F(flagsd) & flDRAW_SUPPRESSpELcOLORcHANGES ) ) thirdC::winRectangleIF( tinP , *winPulp.pHndDrawBitmap , mIdColOrigin + mIdColFrom , mIdRowOrigin + mIdRowFrom , mIdColOrigin + mIdColTo , mIdRowOrigin + mIdRowTo , flagsd ) ;
+                    if( !( F(flagsd) & flDRAW_SUPPRESSpELcOLORcHANGES ) ) thirdC::winRectangleIF( tinBaseP , *winPulp.pHndDrawBitmap , mIdColOrigin + mIdColFrom , mIdRowOrigin + mIdRowFrom , mIdColOrigin + mIdColTo , mIdRowOrigin + mIdRowTo , flagsd ) ;
                     flagsT flagsd = F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ;
 
                     winPulp.newWaterF( mIdColTo , mIdRowTo ) ;
@@ -1900,7 +1900,7 @@
                     const measureT mIdRowFrom = winPulp.mIdRowNow ;
                     const measureT mIdColFrom = winPulp.mIdColNow ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
                 {
                 case scOld_mmRECTANGLEcELLS :
@@ -1910,7 +1910,7 @@
                 case scOld_mmRECTANGLE :
                 }
                     break ;
-                    if( !( F(flagsd) & flDRAW_SUPPRESSpELcOLORcHANGES ) ) thirdC::winArcIF( tinP , *winPulp.pHndDrawBitmap , mIdColOrigin + mIdColFrom , mIdRowOrigin + mIdRowFrom , mIdColOrigin + mIdColTo , mIdRowOrigin + mIdRowTo , flagsd ) ;
+                    if( !( F(flagsd) & flDRAW_SUPPRESSpELcOLORcHANGES ) ) thirdC::winArcIF( tinBaseP , *winPulp.pHndDrawBitmap , mIdColOrigin + mIdColFrom , mIdRowOrigin + mIdRowFrom , mIdColOrigin + mIdColTo , mIdRowOrigin + mIdRowTo , flagsd ) ;
                     flagsT flagsd = F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ;
 
                     winPulp.newWaterF( mIdColTo , mIdRowTo ) ;
@@ -1922,7 +1922,7 @@
                     const measureT mIdRowFrom = winPulp.mIdRowNow ;
                     const measureT mIdColFrom = winPulp.mIdColNow ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
                 {
                 case scOld_mmELLIPSEcELLS :
@@ -1932,11 +1932,11 @@
                 case scOld_mmELLIPSE :
                 }
                     break ;
-                    winPulp.positionStrokingFrameIfF( tinP ) ;
+                    winPulp.positionStrokingFrameIfF( tinBaseP ) ;
 
                     }
                         }
-                            thirdC::winLineIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice , winPulp.colorF() , flagsl ) ;
+                            thirdC::winLineIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice , winPulp.colorF() , flagsl ) ;
                             const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                             const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                         {
@@ -1956,7 +1956,7 @@
                     const measureT mIdRowFrom = winPulp.mIdRowNow ;
                     const measureT mIdColFrom = winPulp.mIdColNow ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
                 {
                 case scOld_mmLINEeNDcELLS :
@@ -1966,11 +1966,11 @@
                 case scOld_mmLINEeND :
                 }
                     break ;
-                    winPulp.positionStrokingFrameIfF( tinP ) ;
+                    winPulp.positionStrokingFrameIfF( tinBaseP ) ;
 
                     }
                         }
-                            thirdC::winLineIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice , winPulp.colorF() , flagsl ) ;
+                            thirdC::winLineIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice , winPulp.colorF() , flagsl ) ;
                             const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                             const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                         {
@@ -1990,7 +1990,7 @@
                     const measureT mIdRowFrom = winPulp.mIdRowNow ;
                     const measureT mIdColFrom = winPulp.mIdColNow ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
 
                     }
@@ -2017,9 +2017,9 @@
                     {
                     if( F(winPulp.flagsRender) & flPAPERrENDER_NOTES )
 
-                    winPulp.positionStrokingFrameIfF( tinP ) ;
+                    winPulp.positionStrokingFrameIfF( tinBaseP ) ;
                     }
-                        thirdC::winMoveIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
+                        thirdC::winMoveIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
                         const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                         const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                     {
@@ -2030,7 +2030,7 @@
 
                     //LOGrAWtID6( "scOld_mmMOVE (bDebugOn,idCol,idRow): " , bDebugOn , " " , R( winPulp.mIdColNow ) , " " , R( winPulp.mIdRowNow ) ) ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
 
 
@@ -2057,7 +2057,7 @@
                 }
                     break ;
 
-                    winPulp.positionStrokingFrameIfF( tinP ) ;
+                    winPulp.positionStrokingFrameIfF( tinBaseP ) ;
 
                     winPulp.mIdColNow += cCol ;
                     winPulp.newWaterF( mIdColHigh , mIdRowHigh ) ;
@@ -2065,7 +2065,7 @@
                     measureT mIdRowHigh = winPulp.mIdRowNow + cRow - 1 ;
                     measureT mIdColHigh = winPulp.mIdColNow + cCol - 1 ;
                     }
-                        ((thirdC&)ether).winDrawTextF( tinP , *winPulp.pHndDrawBitmap  , cCol , cRow , mIdColOrigin + winPulp.mIdColNow , mIdRowOrigin + winPulp.mIdRowNow , post2 , 1 , F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ) ;
+                        ((thirdC&)ether).winDrawTextF( tinBaseP , *winPulp.pHndDrawBitmap  , cCol , cRow , mIdColOrigin + winPulp.mIdColNow , mIdRowOrigin + winPulp.mIdRowNow , post2 , 1 , F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ) ;
                         osTextT post2[] = { (osTextT)sttP.idAdam , 0 } ;
                     {
                     ZE( countT , cRow ) ;
@@ -2080,9 +2080,9 @@
                         }
                             break ;
         
-                            winPulp.positionStrokingFrameIfF( tinP ) ;
+                            winPulp.positionStrokingFrameIfF( tinBaseP ) ;
                             }
-                                thirdC::winMoveIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
+                                thirdC::winMoveIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
                                 const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                                 const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                             {
@@ -2099,9 +2099,9 @@
                         }
                             break ;
         
-                            winPulp.positionStrokingFrameIfF( tinP ) ;
+                            winPulp.positionStrokingFrameIfF( tinBaseP ) ;
                             }
-                                thirdC::winMoveIF( tinP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
+                                thirdC::winMoveIF( tinBaseP , *winPulp.pHndDrawBitmap , mColDevice , mRowDevice ) ;
                                 const measureT mRowDevice = mIdRowOrigin + winPulp.mIdRowNow ;
                                 const measureT mColDevice = mIdColOrigin + winPulp.mIdColNow ;
                             {
@@ -2120,28 +2120,28 @@
                     break ;
         
                     }
-                        if( psttv ) wrapRenderF( tinP , psttv , phCloneP ) ;
+                        if( psttv ) wrapRenderF( tinBaseP , psttv , phCloneP ) ;
                         strokeS* psttv = (strokeS*)winPulp.stqr_paperVars[ cVars + 1 - idv ] ;
                     {
                     if( idv && idv <= cVars )
                     countT cVars = winPulp.stqr_paperVars ;
-                    if( idv && winPulp.ppVarsHandlerF && *winPulp.ppVarsHandlerF ) (**winPulp.ppVarsHandlerF)( tinP , ether , winPulp.stqr_paperVars , 0 , idv , ifcIDrEASONeVALUATINGfACEvARS_RENDER , ( winPulp.pVarsHandlerFIArg ? *winPulp.pVarsHandlerFIArg : 0 ) ) ;
+                    if( idv && winPulp.ppVarsHandlerF && *winPulp.ppVarsHandlerF ) (**winPulp.ppVarsHandlerF)( tinBaseP , ether , winPulp.stqr_paperVars , 0 , idv , ifcIDrEASONeVALUATINGfACEvARS_RENDER , ( winPulp.pVarsHandlerFIArg ? *winPulp.pVarsHandlerFIArg : 0 ) ) ;
                     countT idv = sttP.idAdam ;
                 {
                 case scOld_cIDvARIABLE :
                 }
                     break ;
 
-                    pushPaperDrawOverrideF( tinP , pulpP , sttw.idAdam , F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ) ;
+                    pushPaperDrawOverrideF( tinBaseP , pulpP , sttw.idAdam , F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ? flDRAW_SUPPRESSpELcOLORcHANGES : flDRAW_null ) ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
                 {
                 case scOld_cPUSHpAPERoVERRIDE :
                 }
                     break ;
-                    if( !( F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ) ) ((thirdC&)ether).winSetPaintTypeF( tinP , *winPulp.pHndDrawBitmap  , winPulp.rCache.idTypePaint ) ;
-                    pushF( tinP , winPulp.stqr_idTypePaint , sttP , scOld_cPUSHiDtYPEpAINT , winPulp ) ;
+                    if( !( F(winPulp.flagsMode) & flPULPmODE_SUPPRESSpELcOLORcHANGES ) ) ((thirdC&)ether).winSetPaintTypeF( tinBaseP , *winPulp.pHndDrawBitmap  , winPulp.rCache.idTypePaint ) ;
+                    pushF( tinBaseP , winPulp.stqr_idTypePaint , sttP , scOld_cPUSHiDtYPEpAINT , winPulp ) ;
                 {
                 case scOld_cPUSHiDtYPEpAINT :
                 }
@@ -2151,14 +2151,14 @@
         
                     }
                         c3c.c2 = (countT)oshPen ;
-                        c3c.c1 = tinP.brcRaw ;
+                        c3c.c1 = ((tinNormalS&)tinBaseP).brcRaw ;
                         BOSdOnOTtEST( WHATgbo , SelectObject( (HDC)winPulp.pHndDrawBitmap->osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) , oshPen ) )
                         if( c3c.c1 || c3c.c2 ) { BLAMMO ; } //U::O: COMMENT OUT IN PRODUCTION
                     
-                        HPEN oshPen = (HPEN)tinP.brcRaw ;
+                        HPEN oshPen = (HPEN)((tinNormalS&)tinBaseP).brcRaw ;
                         BOSpOOP
                         BOS( WHATgbo , BOSoK , CreatePen( PS_SOLID , 1 , PALETTERGB( rgb & 0xff , rgb >> 8 & 0xff , rgb >> 0x10 & 0xff ) ) )
-                        //HPEN oshPen = (HPEN)tinP.brcRaw ;
+                        //HPEN oshPen = (HPEN)((tinNormalS&)tinBaseP).brcRaw ;
                         //BOSpOOP
                         //BOS( WHATgbo , BOSoK , CreatePen( PS_SOLID , 1 , rgb ) )
                     {
@@ -2168,14 +2168,14 @@
                     count3S c3c( 0 , 0 , rgb ) ;
                     countT rgb = sttw.idAdam ;
         
-                    winPulp.overrideF( tinP , sttw ) ;
+                    winPulp.overrideF( tinBaseP , sttw ) ;
                     strokeS sttw = sttP ; //O: AVOID MAKING THIS COPY (NEEDED ONLY IF OVERRIDING)
                 {
                 case scOld_cPUSHcOLOR :
                 }
                     break ;
         
-                    winPulp.cacheF( tinP , 0 ) ; //WHEN winPulp.cacheF OBEYS ITS PARAMETER, CALL IT OO TIMES, WO'CE FOR EACH STACK
+                    winPulp.cacheF( tinBaseP , 0 ) ; //WHEN winPulp.cacheF OBEYS ITS PARAMETER, CALL IT OO TIMES, WO'CE FOR EACH STACK
                     winPulp.stqr_mRowScale << mRowScale ;
                     winPulp.stqr_mColScale << mColScale ;
         
@@ -2186,8 +2186,8 @@
                 case scOld_mmRENDERsCALErATIOpUSH :
                 }
                     break ;
-                    winPulp.positionPaperBackF( tinP ) ;
-                    winPulp.cacheF( tinP , scOld_ccFRAMEfORsADAMfRAMES ) ;
+                    winPulp.positionPaperBackF( tinBaseP ) ;
+                    winPulp.cacheF( tinBaseP , scOld_ccFRAMEfORsADAMfRAMES ) ;
                     winPulp.stqr_strokingFrame << (byteT*)&sfn ;
                     strokingFrameS sfn( sf.flags , sf.cStrokingFramesPadRight , sf.cStrokingFramesPadUp , winPulp.mIdColNow + mColNeeded , winPulp.mIdRowNow + mRowNeeded , sf.mCols - 2 * mColNeeded , sf.mRows - 2 * mRowNeeded ) ;
         
@@ -2198,7 +2198,7 @@
                 case scOld_ccFRAMEfORsADAMfRAMES :
                 }
                     break ;
-                    winPulp.cacheF( tinP , scOld_mmPADfORsADAMfRAMES ) ;
+                    winPulp.cacheF( tinBaseP , scOld_mmPADfORsADAMfRAMES ) ;
                     sf.cStrokingFramesPadUp    = sfd.cStrokingFramesPadUp    = *(measureT*)&sttP.cNote ;
                     sf.cStrokingFramesPadRight = sfd.cStrokingFramesPadRight = *(measureT*)&sttP.idAdam ;
                     strokingFrameS& sf  = *(strokingFrameS*)&winPulp.stqr_strokingFrame[ 1 + winPulp.rCache.offFrame ] ; //BECAUSE INHERITED
@@ -2207,7 +2207,7 @@
                 case scOld_mmPADfORsADAMfRAMES :
                 }
                     break ;
-                    pushF( tinP , winPulp.stqr_idObject , sttP , scOld_cPUSHiDoBJECT , winPulp ) ;
+                    pushF( tinBaseP , winPulp.stqr_idObject , sttP , scOld_cPUSHiDoBJECT , winPulp ) ;
                 {
                 case scOld_cPUSHiDoBJECT :
                 DUP( scOld_cDUPlEFTwATER                   , winPulp.stqr_mIdColLowWater         )
@@ -2487,7 +2487,7 @@
     {
     for( countT idAdam = 1 ; idAdam <= psttP->idAdam ; idAdam ++ )
 
-    tinP.pag5->frPaper.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     static boolT bDebugOn ;
 
     countT idIn = 1 + incv02AM( idInLath ) ;
@@ -2495,15 +2495,15 @@
     winPulpOldC& winPulp = *(winPulpOldC*)&pulpP ;
 
 {
-/*1*/voidT windowOldC::renderF( tinS& tinP , pulpOldC& pulpP , const strokeS* const psttP , const handleC* const phCloneP )/*1*/
+/*1*/voidT windowOldC::renderF( tinBaseS& tinBaseP , pulpOldC& pulpP , const strokeS* const psttP , const handleC* const phCloneP )/*1*/
 
     }
         LOGrAW( tSay ) ;                                                                                                                                        \
                                                                                                                                                                 \
         ;                                                                                                                                                       \
                                                                                                                                                                 \
-            : /*TF3((countT)&pulpP,flFORMAT_null,LW)+T(" ")+TF3(idIn,flFORMAT_null,LW)+T(backIdTypeF()==ifcIDtYPEpAPERbACK_eyeOldC?" eye   ":"       ")*//*+(idPaperDrawDefault?TF3(idPaperDrawDefault,flFORMAT_null,LW+1):TP("",LW+1))*//*+TF3(papers.idPaperF(papers.selectF(tinP,ifcIDcMDpAPERsELECT_QUERYsHOW)),flFORMAT_null,LW+1)+TF3(papers.idPaperF(papers.selectF(tinP,ifcIDcMDpAPERsELECT_QUERYrENDER)),flFORMAT_null,LW+1)*//*+(pPaperDrawDefault?TF3((countT)pPaperDrawDefault,flFORMAT_null,LW+1):TP("",LW+1))*//*+TF3((countT)&papers.selectF(tinP,ifcIDcMDpAPERsELECT_QUERYsHOW),flFORMAT_null,LW+1)+TF3((countT)&papers.selectF(tinP,ifcIDcMDpAPERsELECT_QUERYrENDER),flFORMAT_null,LW+1)+TF3(winPulp.rCache.mPadRight,flFORMAT_null,LW)+T(" ")+*/TF3(R(winPulp.mIdColNow),flFORMAT_null,LW)+T(" ")+TF3(R(winPulp.mIdRowNow),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdCol),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdRow),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdCol-(measureT)1+sf.mCols),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdRow-(measureT)1+sf.mRows),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mCols),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mRows),flFORMAT_null,LW)/*+T(" ")+TP(tinP.postThreadName,0xa)*/+tPadNest+TP(processGlobal4I.mapCaste(sttP.idCaste),costm-tPadNest.csF(tinP)-0xd)+T(" ")+TF3(winPulp.flagsMode,flFORMAT_UNSIGNED,LW)+T(" | ") \
-            ? /*TF3((countT)&pulpP,flFORMAT_null,LW)+T(" ")+TF3(idIn,flFORMAT_null,LW)+T(backIdTypeF()==ifcIDtYPEpAPERbACK_eyeOldC?" eye   ":"       ")*//*+(idPaperDrawDefault?TF3(idPaperDrawDefault,flFORMAT_null,LW+1):TP("",LW+1))*//*+TF3(papers.idPaperF(papers.selectF(tinP,ifcIDcMDpAPERsELECT_QUERYsHOW)),flFORMAT_null,LW+1)+TF3(papers.idPaperF(papers.selectF(tinP,ifcIDcMDpAPERsELECT_QUERYrENDER)),flFORMAT_null,LW+1)*//*+(pPaperDrawDefault?TF3((countT)pPaperDrawDefault,flFORMAT_null,LW+1):TP("",LW+1))*//*+TF3((countT)&papers.selectF(tinP,ifcIDcMDpAPERsELECT_QUERYsHOW),flFORMAT_null,LW+1)+TF3((countT)&papers.selectF(tinP,ifcIDcMDpAPERsELECT_QUERYrENDER),flFORMAT_null,LW+1)+TF3(winPulp.rCache.mPadRight,flFORMAT_null,LW)+T(" ")+*/TP("",2*LW+2)                                                                                      +TF3(R(sf.mIdCol),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdRow),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdCol-(measureT)1+sf.mCols),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdRow-(measureT)1+sf.mRows),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mCols),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mRows),flFORMAT_null,LW)/*+T(" ")+TP(tinP.postThreadName,0xa)*/+tPadNest+TP(processGlobal4I.mapCaste(sttP.idCaste),costm-tPadNest.csF(tinP)-0xd)+T(" ")+TF3(winPulp.flagsMode,flFORMAT_UNSIGNED,LW)+T(" | ") \
+            : /*TF3((countT)&pulpP,flFORMAT_null,LW)+T(" ")+TF3(idIn,flFORMAT_null,LW)+T(backIdTypeF()==ifcIDtYPEpAPERbACK_eyeOldC?" eye   ":"       ")*//*+(idPaperDrawDefault?TF3(idPaperDrawDefault,flFORMAT_null,LW+1):TP("",LW+1))*//*+TF3(papers.idPaperF(papers.selectF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYsHOW)),flFORMAT_null,LW+1)+TF3(papers.idPaperF(papers.selectF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYrENDER)),flFORMAT_null,LW+1)*//*+(pPaperDrawDefault?TF3((countT)pPaperDrawDefault,flFORMAT_null,LW+1):TP("",LW+1))*//*+TF3((countT)&papers.selectF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYsHOW),flFORMAT_null,LW+1)+TF3((countT)&papers.selectF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYrENDER),flFORMAT_null,LW+1)+TF3(winPulp.rCache.mPadRight,flFORMAT_null,LW)+T(" ")+*/TF3(R(winPulp.mIdColNow),flFORMAT_null,LW)+T(" ")+TF3(R(winPulp.mIdRowNow),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdCol),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdRow),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdCol-(measureT)1+sf.mCols),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdRow-(measureT)1+sf.mRows),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mCols),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mRows),flFORMAT_null,LW)/*+T(" ")+TP(((tinNormalS&)tinBaseP).postThreadName,0xa)*/+tPadNest+TP(processGlobal4I.mapCaste(sttP.idCaste),costm-tPadNest.csF(tinBaseP)-0xd)+T(" ")+TF3(winPulp.flagsMode,flFORMAT_UNSIGNED,LW)+T(" | ") \
+            ? /*TF3((countT)&pulpP,flFORMAT_null,LW)+T(" ")+TF3(idIn,flFORMAT_null,LW)+T(backIdTypeF()==ifcIDtYPEpAPERbACK_eyeOldC?" eye   ":"       ")*//*+(idPaperDrawDefault?TF3(idPaperDrawDefault,flFORMAT_null,LW+1):TP("",LW+1))*//*+TF3(papers.idPaperF(papers.selectF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYsHOW)),flFORMAT_null,LW+1)+TF3(papers.idPaperF(papers.selectF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYrENDER)),flFORMAT_null,LW+1)*//*+(pPaperDrawDefault?TF3((countT)pPaperDrawDefault,flFORMAT_null,LW+1):TP("",LW+1))*//*+TF3((countT)&papers.selectF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYsHOW),flFORMAT_null,LW+1)+TF3((countT)&papers.selectF(tinBaseP,ifcIDcMDpAPERsELECT_QUERYrENDER),flFORMAT_null,LW+1)+TF3(winPulp.rCache.mPadRight,flFORMAT_null,LW)+T(" ")+*/TP("",2*LW+2)                                                                                      +TF3(R(sf.mIdCol),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdRow),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdCol-(measureT)1+sf.mCols),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mIdRow-(measureT)1+sf.mRows),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mCols),flFORMAT_null,LW)+T(" ")+TF3(R(sf.mRows),flFORMAT_null,LW)/*+T(" ")+TP(((tinNormalS&)tinBaseP).postThreadName,0xa)*/+tPadNest+TP(processGlobal4I.mapCaste(sttP.idCaste),costm-tPadNest.csF(tinBaseP)-0xd)+T(" ")+TF3(winPulp.flagsMode,flFORMAT_UNSIGNED,LW)+T(" | ") \
                                                                                                                                                                 \
         TN( tSay , "" ) ; tSay = winPulp.mIdColNow == sf.mIdCol && winPulp.mIdRowNow == sf.mIdRow                                                               \
                                                                                                                                                                 \
@@ -2562,7 +2562,7 @@ boolT bLog3302e = 1 ; //FOR DEBUGGING CONVENIENCE; SET TO 0 IN PRODUCTION
 
     }
         break ;                                                   \
-        popF( tinP , staqP , caseP , cbP , winPulp ) ;            \
+        popF( tinBaseP , staqP , caseP , cbP , winPulp ) ;            \
     {                                                             \
     case caseP :                                                  \
                                                                   \
@@ -2570,7 +2570,7 @@ boolT bLog3302e = 1 ; //FOR DEBUGGING CONVENIENCE; SET TO 0 IN PRODUCTION
 
     }
         break ;                                                   \
-        popF( tinP , staqP , caseP , 0 , winPulp ) ;              \
+        popF( tinBaseP , staqP , caseP , 0 , winPulp ) ;              \
     {                                                             \
     case caseP :                                                  \
                                                                   \
@@ -2578,7 +2578,7 @@ boolT bLog3302e = 1 ; //FOR DEBUGGING CONVENIENCE; SET TO 0 IN PRODUCTION
 
     }
         break ;                                                   \
-        duplicateF( tinP , staqP , sttP , caseP , winPulp ) ;     \
+        duplicateF( tinBaseP , staqP , sttP , caseP , winPulp ) ;     \
     {                                                             \
     case caseP :                                                  \
                                                                   \
@@ -2586,19 +2586,19 @@ boolT bLog3302e = 1 ; //FOR DEBUGGING CONVENIENCE; SET TO 0 IN PRODUCTION
 
     }
         break ;                                                   \
-        pushF( tinP , staqP , sttP , caseP , winPulp ) ;          \
+        pushF( tinBaseP , staqP , sttP , caseP , winPulp ) ;          \
     {                                                             \
     case caseP :                                                  \
                                                                   \
 #define PUSH(caseP,staqP)                                         \
 
-#define LE4(cP,rP,cAdjP,rAdjP) { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; mIdColWork = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc + (cAdjP) ; mIdRowWork = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr + (rAdjP) ; winPulp.mIdColNow = mIdColWork ; winPulp.mIdRowNow = mIdRowWork ; winPulp.idLineType = 2 ; moveOrLineTransformedF( tinP , winPulp ) ; }
-#define L4(cP,rP,cAdjP,rAdjP)  { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; mIdColWork = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc + (cAdjP) ; mIdRowWork = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr + (rAdjP) ; winPulp.mIdColNow = mIdColWork ; winPulp.mIdRowNow = mIdRowWork ; winPulp.idLineType = 1 ; moveOrLineTransformedF( tinP , winPulp ) ; }
-#define M4(cP,rP,cAdjP,rAdjP)  { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; winPulp.mIdColNow  = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc + (cAdjP) ; winPulp.mIdRowNow  = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr + (rAdjP) ; winPulp.idLineType = 0 ; moveOrLineTransformedF( tinP , winPulp ) ; }
+#define LE4(cP,rP,cAdjP,rAdjP) { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; mIdColWork = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc + (cAdjP) ; mIdRowWork = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr + (rAdjP) ; winPulp.mIdColNow = mIdColWork ; winPulp.mIdRowNow = mIdRowWork ; winPulp.idLineType = 2 ; moveOrLineTransformedF( tinBaseP , winPulp ) ; }
+#define L4(cP,rP,cAdjP,rAdjP)  { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; mIdColWork = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc + (cAdjP) ; mIdRowWork = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr + (rAdjP) ; winPulp.mIdColNow = mIdColWork ; winPulp.mIdRowNow = mIdRowWork ; winPulp.idLineType = 1 ; moveOrLineTransformedF( tinBaseP , winPulp ) ; }
+#define M4(cP,rP,cAdjP,rAdjP)  { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; winPulp.mIdColNow  = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc + (cAdjP) ; winPulp.mIdRowNow  = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr + (rAdjP) ; winPulp.idLineType = 0 ; moveOrLineTransformedF( tinBaseP , winPulp ) ; }
 
-#define LE2(cP,rP) { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; mIdColWork = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc ; mIdRowWork = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr ; winPulp.mIdColNow = mIdColWork ; winPulp.mIdRowNow = mIdRowWork ; winPulp.idLineType = 2 ; moveOrLineTransformedF( tinP , winPulp ) ; }
-#define L2(cP,rP)  { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; mIdColWork = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc ; mIdRowWork = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr ; winPulp.mIdColNow = mIdColWork ; winPulp.mIdRowNow = mIdRowWork ; winPulp.idLineType = 1 ; moveOrLineTransformedF( tinP , winPulp ) ; }
-#define M2(cP,rP)  { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; winPulp.mIdColNow  = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc ; winPulp.mIdRowNow  = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr ; winPulp.idLineType = 0 ; moveOrLineTransformedF( tinP , winPulp ) ; }
+#define LE2(cP,rP) { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; mIdColWork = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc ; mIdRowWork = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr ; winPulp.mIdColNow = mIdColWork ; winPulp.mIdRowNow = mIdRowWork ; winPulp.idLineType = 2 ; moveOrLineTransformedF( tinBaseP , winPulp ) ; }
+#define L2(cP,rP)  { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; mIdColWork = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc ; mIdRowWork = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr ; winPulp.mIdColNow = mIdColWork ; winPulp.mIdRowNow = mIdRowWork ; winPulp.idLineType = 1 ; moveOrLineTransformedF( tinBaseP , winPulp ) ; }
+#define M2(cP,rP)  { winPulp.mIdColLag = winPulp.mIdColNow ; winPulp.mIdRowLag = winPulp.mIdRowNow ; winPulp.mIdColNow  = (cP) * ( winPulp.rCache.msAc - 1.0 ) + winPulp.rCache.msBc ; winPulp.mIdRowNow  = (rP) * ( winPulp.rCache.msAr - 1.0 ) + winPulp.rCache.msBr ; winPulp.idLineType = 0 ; moveOrLineTransformedF( tinBaseP , winPulp ) ; }
 
 const measureT* pmts = pmtExpandRef ;
 const measureT* pmt  = pmtExpandRef ;

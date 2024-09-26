@@ -11,21 +11,21 @@
     _OUTbATONsTACKc_
 
     }
-        if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNdELpLATE ) pSgnEvent->giveF( tinP ) ;
+        if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNdELpLATE ) pSgnEvent->giveF( tinBaseP ) ;
 
         }
-            third.delF( tinP , (byteT*&)ppc ) ;
+            third.delF( tinBaseP , (byteT*&)ppc ) ;
             _IO_
         {
         else
         }
-            pXray->freeF( tinP , idSave == - 1 ) ;
+            pXray->freeF( tinBaseP , idSave == - 1 ) ;
             _IO_
         {
         if( F(flags) & flSTACKc_XRAY )
 
         }
-            newTabsIfF( tinP , ppc , 1 ) ;
+            newTabsIfF( tinBaseP , ppc , 1 ) ;
             _IO_
         {
 
@@ -54,7 +54,7 @@
                 }
                     break ;
                     else         {  __1 } //U: SUPPORT VARIABLE LENGTH (LENGTH PREFIXED) BLOBS
-                    if( cbData ) third.c_memcpyIF( tinP , pbP , PLATE_byteT_PTR(  ppc ) , cbData ) ;
+                    if( cbData ) third.c_memcpyIF( tinBaseP , pbP , PLATE_byteT_PTR(  ppc ) , cbData ) ;
                 {
                 case ifcSTACKtYPE_BLOB :
             {
@@ -64,13 +64,13 @@
         if( pbP )
 
         }
-            adjustRefsF( tinP , idP , ifcIDaCTIONsTACKaDJUSTrEFS_DELETED ) ;
+            adjustRefsF( tinBaseP , idP , ifcIDaCTIONsTACKaDJUSTrEFS_DELETED ) ;
             _IO_
         {
         _IO_
     {
     if( idP )
-    plateS* ppc = pPlateF( tinP , idP ) ;
+    plateS* ppc = pPlateF( tinBaseP , idP ) ;
     countT idSave = idP ;
 
     LATHrEF
@@ -96,7 +96,7 @@
 
     SCOOP
 {
-/*1*/voidT stackC::extractF( byteT* const pbP , tinS& tinP , countT idP )/*1*/
+/*1*/voidT stackC::extractF( byteT* const pbP , tinBaseS& tinBaseP , countT idP )/*1*/
 
 /**/
 */

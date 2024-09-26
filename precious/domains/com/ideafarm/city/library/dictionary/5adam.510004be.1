@@ -11,11 +11,11 @@ REST
 
 }
     }
-        *tinP.zEtScratch = 0 ;
+        *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
 
         }
             DEL( pso ) ;
-            sol.acceptF( tinP , pso , idPortPeer , nnPeer , bRefuse ) ; ___( pso ) ;
+            sol.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ; ___( pso ) ;
             ZE( countT , idPortPeer ) ;
             nicNameC nnPeer ;
             ZE( socketC* , pso ) ;
@@ -26,16 +26,16 @@ REST
         ZE( countT , cAccepted ) ;
 
         }   
-            sol.listenF( tinP ) ;
-            sol.bindF( tinP , 0x1234 ) ;
+            sol.listenF( tinBaseP ) ;
+            sol.bindF( tinBaseP , 0x1234 ) ;
         {
         if( !ether && !etThread )
 
-        socketC sol( tinP , *tinP.zEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sol( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
     {
     while( !ether && !etThread )
 
-    stateS state( tinP , etThread ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO

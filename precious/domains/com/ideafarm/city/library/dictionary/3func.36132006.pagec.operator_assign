@@ -10,15 +10,15 @@
 }
     return *this ;
 
-    books.unlockF( tinP ) ;
+    books.unlockF( tinBaseP ) ;
 
-    setF( tinP , pageP.books , pageP.pcRef , pageP.pbz , pageP.cbz , pageP.flags ) ;
+    setF( tinBaseP , pageP.books , pageP.pcRef , pageP.pbz , pageP.cbz , pageP.flags ) ;
 
-    resetF( tinP ) ;
+    resetF( tinBaseP ) ;
 
-    validateIF( tinP , books , pageP.books , pageP.pbz ) ;
+    validateIF( tinBaseP , books , pageP.books , pageP.pbz ) ;
 
-    books.lockF( tinP , TAG( TAGiDnULL ) ) ;
+    books.lockF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     SCOOP
     TINSL

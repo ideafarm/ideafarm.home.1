@@ -11,16 +11,16 @@
     //sP << idSlideLath ; // 5 <= idFormat <= 7
     //sP << idAdLath ;    // 5 <= idFormat <= 7
 
-    swIdDispenser.ungrabF( tinP ) ;
+    swIdDispenser.ungrabF( tinBaseP ) ;
     }
         sP << (countT)swIdDispenser ;
         sP << cLeverIdDispenser ;
-        cLeverIdDispenser = swIdDispenser.leverF( tinP , idf ) ;
+        cLeverIdDispenser = swIdDispenser.leverF( tinBaseP , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
     sP << cFlavors ;
-    countT cFlavors = swIdDispenser.cFlavorsF( tinP ) ;
-    swIdDispenser.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    countT cFlavors = swIdDispenser.cFlavorsF( tinBaseP ) ;
+    swIdDispenser.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     // idFormat >= 8
 
     sP << cTouch ; //idFormat >= 4

@@ -11,12 +11,12 @@
                         : IDiMPOTENCErAW                                    \
                         ? 1                                                 \
                     : !IDiMPOTENCErAW                                       \
-                    ? tinP.brcQuery                                         \
+                    ? ((tinNormalS&)tinBaseP).brcQuery                                         \
                 : IDiMPOTENCErAW > ifcIDiMPOTENCEbASEeRRORcODE_max          \
-                ? tinP.brcQuery                                             \
+                ? ((tinNormalS&)tinBaseP).brcQuery                                             \
             : IDiMPOTENCErAW < ifcIDiMPOTENCEbASEeRRORcODE_min              \
             ? 0                                                             \
-        !tinP.bosFail                                                       \
+        !((tinNormalS&)tinBaseP).bosFail                                                       \
     (                                                                       \
                                                                             \
 #define IDiMPOTENCEuSE                                                      \

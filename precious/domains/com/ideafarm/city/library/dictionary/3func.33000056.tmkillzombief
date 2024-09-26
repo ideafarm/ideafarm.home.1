@@ -11,19 +11,19 @@ DONE( tmKillZombieF )
 
 }
     TELL( "tmKillZombieF: cleaning up" )
-    sgnDone.giveF( tinP ) ;
+    sgnDone.giveF( tinBaseP ) ;
 
     }
         if( POOP ) POOPR
         }
-            thScratch.s_cancelF( tinP , handle ) ;
+            thScratch.s_cancelF( tinBaseP , handle ) ;
             bKilled = 1 ;
             //CONoUTrAW3( "tmKillZombieF killing after time " , time1 , "\r\n" ) ; //U::
             //CONoUTrAW("tmKillZombieF: TIMEOUT\r\n") ;
         {
-        if( !thScratch.s_bCanWriteF( tinP , handle , time1 , time2 ) )
+        if( !thScratch.s_bCanWriteF( tinBaseP , handle , time1 , time2 ) )
     
-        thirdC& thScratch = *tinP.pEtScratch ;
+        thirdC& thScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
         SCOOPS
     {
     IFsCRATCH

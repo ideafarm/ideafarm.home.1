@@ -8,11 +8,11 @@
 
 
 }
-    stAss.ungrabF( tinP ) ;
+    stAss.ungrabF( tinBaseP ) ;
 
     }
         }
-            vieweeP.sayCheeseF( tinP , pbav , cbView , *this ) ;
+            vieweeP.sayCheeseF( tinBaseP , pbav , cbView , *this ) ;
             if( pd->isValidF() ) { DELzOMBIE( pd ) ; } //A:ASSUME: PLATE IMAGE IS INITALIZED TO ZES SO WILL CONTAIN THE EXPECTED VALUE FOR assViewC::finger IFF A VALID IMAGE HAS BEEN CT'D
             assViewC* pd = (assViewC*)pbav ;
             byteT* pbav = (byteT*)( &stAss[ ids ] + 1 ) ;
@@ -22,18 +22,18 @@
     if( ids )
     boolT ids = stAss( (byteT*)&c_pAss , subtractAssBlobsF ) ;
 
-    stAss.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    stAss.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     countT c_pAss = (countT)&vieweeP ;
     _IO_
 {
-/*1*/voidT associateC::takeMyPictureF( tinS& tinP , associateC& vieweeP )/*1*/
+/*1*/voidT associateC::takeMyPictureF( tinBaseS& tinBaseP , associateC& vieweeP )/*1*/
 
 /**/
 */
   the associateC who has changed
  vieweeP
- tinP
+ tinBaseP
 parameters
 i am called by an associate that has changed to notify that *this (the viewer) has a stale view of the caller (the viewee)
 /*

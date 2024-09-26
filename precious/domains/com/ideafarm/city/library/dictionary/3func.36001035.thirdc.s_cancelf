@@ -8,16 +8,16 @@
 
 
 }
-    if( tinP.pEther ) tinP.pEther->traceF( tinP , T("s_cancelF / cancelled  a socket") ) ;
+    if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("s_cancelF / cancelled  a socket") ) ;
 
     #endif
 
             }
-                if( tinP.brcRaw != WSAENOTSOCK ) { __( tinP.brcRaw - WSAENOTCONN ) ; }
+                if( ((tinNormalS&)tinBaseP).brcRaw != WSAENOTSOCK ) { __( ((tinNormalS&)tinBaseP).brcRaw - WSAENOTCONN ) ; }
                 BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
             {
-            if( tinP.brcRaw == SOCKET_ERROR )
-            __( tinP.brcRaw && tinP.brcRaw != SOCKET_ERROR ) ;
+            if( ((tinNormalS&)tinBaseP).brcRaw == SOCKET_ERROR )
+            __( ((tinNormalS&)tinBaseP).brcRaw && ((tinNormalS&)tinBaseP).brcRaw != SOCKET_ERROR ) ;
             BOSdOnOTtEST( WHATgbo , shutdown( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , 2 ) )
  
     #elif defined( __NT__ )
@@ -29,12 +29,12 @@
     #ifdef __OS2__
 
     else              { BLAMMO ; }
-    if( tinP.pEther ) tinP.pEther->traceF( tinP , T("s_cancelF / cancelling a socket") ) ;
+    if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("s_cancelF / cancelling a socket") ) ;
     //U:: TO FIND A BUG
 
     //}
-    //    dosTellMonitorIF( tinP , tellC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEtELLsYS_LOG , ostoe , ostoe.costF() + 1 ) , ifcIDbOOKStELL_SYS ) ;
-    //    OStEXTV( ostoe , "!tinS, s_cancelF: cancelling a socket" )
+    //    dosTellMonitorIF( tinBaseP , tellC( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEtELLsYS_LOG , ostoe , ostoe.costF() + 1 ) , ifcIDbOOKStELL_SYS ) ;
+    //    OStEXTV( ostoe , "!tinNormalS, s_cancelF: cancelling a socket" )
     //{
 
     _IO_
@@ -48,7 +48,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT thirdC::s_cancelF( tinS& tinP , const handleC& handleP )/*1*/
+/**//*1*/voidT thirdC::s_cancelF( tinBaseS& tinBaseP , const handleC& handleP )/*1*/
 */
   must not be 0
  handleP

@@ -12,22 +12,22 @@
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
-        { puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinP , *(byteT**)&pczWalk ) ; }
+        { puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinBaseP , *(byteT**)&pczWalk ) ; }
 
         POPtINaRGS
-        flagsRC |= walkIF( tinP , pczWalk , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
-        tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] = (countT)&flagsRC ;
-        tinP.ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
-        tinP.ta.pushed.u.listWalk.util.pcP[ 0 ] = cDoomed ;
-        tinP.ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-        tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteListCBF ;
+        flagsRC |= walkIF( tinBaseP , pczWalk , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] = (countT)&flagsRC ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = cDoomed ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteListCBF ;
         PUSHtINaRGS
 
         }
             pczWalk[ ccWalk ] = 0 ;
-            thirdC::c_memcpyIF( tinP , (byteT*)pczWalk , (byteT*)pczNameP , sizeof( countT ) * ccWalk ) ;
-            PUSE.newF( tinP , LF , *(byteT**)&pczWalk , sizeof( countT ) * ( ccWalk + 1 ) ) ; ___( pczWalk ) ;
-            puseC puseat( tinP , ifcIDpOOL_ADAMtEMP ) ;
+            thirdC::c_memcpyIF( tinBaseP , (byteT*)pczWalk , (byteT*)pczNameP , sizeof( countT ) * ccWalk ) ;
+            PUSE.newF( tinBaseP , LF , *(byteT**)&pczWalk , sizeof( countT ) * ( ccWalk + 1 ) ) ; ___( pczWalk ) ;
+            puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
 
             ;
                 : ( cDoomed = pczNameP[ ccKeep ] , ccKeep )
@@ -35,7 +35,7 @@
             ccWalk = !ccKeep
             ZE( countT , ccWalk ) ;
             countT ccKeep = ccName - 1 ;
-            countT ccName = thirdC::c_strlenIF( tinP , pczNameP ) ;
+            countT ccName = thirdC::c_strlenIF( tinBaseP , pczNameP ) ;
         {
         ZE( countT  , cDoomed ) ;
         ZE( countT* , pczWalk ) ;
@@ -51,15 +51,15 @@
         listingC* pd = &APT( listingC , aptRoot ) ;
         aptC& aptRoot = PUSE.aptListRootF() ;
 
-        deleteIF( tinP , pcz1 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
-        deleteIF( tinP , pcz2 , flLISTdELETE_null , idGrabLayerP ) ;
-        deleteIF( tinP , pcz3 , flLISTdELETE_null , idGrabLayerP ) ;
-        deleteIF( tinP , pcz4 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
-        deleteIF( tinP , pcz5 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
-        deleteIF( tinP , pcz6 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
-        deleteIF( tinP , pcz7 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
-        deleteIF( tinP , pcz8 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
-        deleteIF( tinP , pcza , flLISTdELETE_null , idGrabLayerP ) ;
+        deleteIF( tinBaseP , pcz1 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
+        deleteIF( tinBaseP , pcz2 , flLISTdELETE_null , idGrabLayerP ) ;
+        deleteIF( tinBaseP , pcz3 , flLISTdELETE_null , idGrabLayerP ) ;
+        deleteIF( tinBaseP , pcz4 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
+        deleteIF( tinBaseP , pcz5 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
+        deleteIF( tinBaseP , pcz6 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
+        deleteIF( tinBaseP , pcz7 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
+        deleteIF( tinBaseP , pcz8 , flLISTdELETE_null , idGrabLayerP ) ;    //20180507@1727: ADDED WITHOUT ANALYSIS
+        deleteIF( tinBaseP , pcza , flLISTdELETE_null , idGrabLayerP ) ;
         countT pcz1[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM1     , 0 } ;
         countT pcz2[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM2     , 0 } ;
         countT pcz3[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3     , 0 } ;
@@ -73,7 +73,7 @@
     if( !pczNameP[ 1 ] )
 
     }
-        deleteIF( tinP , pcza , flLISTdELETE_null , idGrabLayerP ) ;       // THIS IS BECAUSE DELETING AN APPLICATION DATUM WILL UNINDEX IT, AND THE DICTIONARY MUST EXIST DURING UNINDEXING
+        deleteIF( tinBaseP , pcza , flLISTdELETE_null , idGrabLayerP ) ;       // THIS IS BECAUSE DELETING AN APPLICATION DATUM WILL UNINDEX IT, AND THE DICTIONARY MUST EXIST DURING UNINDEXING
         countT pcza[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , 0 } ; // THE APPLICATION LIST MUST BE DELETED BEFORE EITHER THE DICTIONARY OR THE INDEX IS DELETED
     {
     )
@@ -91,7 +91,7 @@
     (
     if
 
-    grabitC grabitx( tinP , TAG( TAGiDnULL ) ) ;
+    grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     _IO_
@@ -108,7 +108,7 @@
 
     flagsT flagsRC = flLISTwALKrETURNcODE_null ;
 {
-/*1*/flagsT listC::deleteIF( tinS& tinP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT listC::deleteIF( tinBaseS& tinBaseP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
 
 /**/
 */

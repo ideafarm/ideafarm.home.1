@@ -9,28 +9,28 @@
                             
 REST
 
-etThread.delF( tinP , postw ) ;
+etThread.delF( tinBaseP , postw ) ;
 CONoUTrAW( "\"\r\n" ) ;
 CONoUTrAW( postw ) ;
 CONoUTrAW( "[postw]: \"" ) ;
-etThread.delF( tinP , psttw ) ;
-etThread.strMakeF( tinP , LF , postw , psttw ) ; ___( postw ) ;
+etThread.delF( tinBaseP , psttw ) ;
+etThread.strMakeF( tinBaseP , LF , postw , psttw ) ; ___( postw ) ;
 ZE( osTextT* , postw ) ;
 
 sOut >> psttw ;
 
-byteT* pbf = sOut.pbFieldF( tinP , idTypef , flagsf , cbf , 1 ) ;
+byteT* pbf = sOut.pbFieldF( tinBaseP , idTypef , flagsf , cbf , 1 ) ;
 ZE( countT , cbf     ) ;
 ZE( flagsT , flagsf  ) ;
 ZE( countT , idTypef ) ;
 
-etThread.delF( tinP , psttw ) ;
+etThread.delF( tinBaseP , psttw ) ;
 
 sOut << psttw ;
 
-soulC sOut( tinP , TAG( TAGiDnULL ) ) ;
+soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.strMakeFromOsTextF( tinP , psttw , "abcd" ) ; ___( psttw ) ;
+etThread.strMakeFromOsTextF( tinBaseP , psttw , "abcd" ) ; ___( psttw ) ;
 ZE( strokeS* , psttw ) ;
 
 TODO

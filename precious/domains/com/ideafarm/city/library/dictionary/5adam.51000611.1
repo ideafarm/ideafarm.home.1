@@ -9,16 +9,16 @@
                             
 REST
 
-//++ s ; etThread.osSleepF( tinP , TOCK << 8 ) ;
-//sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+//++ s ; etThread.osSleepF( tinBaseP , TOCK << 8 ) ;
+//sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
 WAITuNTILaLMOSTaLONE( 0 )
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
  
     etThread.osThreadF( TaRG1( tmGorillaWriteF ) , idGorillaWrite , (countT)&poolLog ) ;
 for( countT idGorillaWrite = 1 ; idGorillaWrite <= TUCK >> 6 ; idGorillaWrite ++ )
  
-poolC poolLog( tinP , TAG( TAGiDnULL ) , "log.adam" , sizeof( countT ) , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
+poolC poolLog( tinBaseP , TAG( TAGiDnULL ) , "log.adam" , sizeof( countT ) , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
 
 TODO
 
@@ -29,14 +29,14 @@ DONE( tmGorillaWriteF )
     CONoUTrAW3( "gorilla " , idGorillaWriteP , " gasp!\r\n" ) ;
 
     }
-        //++ s ; ether.osSleepF( tinP , idCycle < 0x10 ? TOCK : TOCK << 4 ) ;
-        //++ s ; ether.osSleepF( tinP , TOCK << 8 ) ;
-        //sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        //++ s ; ether.osSleepF( tinBaseP , idCycle < 0x10 ? TOCK : TOCK << 4 ) ;
+        //++ s ; ether.osSleepF( tinBaseP , TOCK << 8 ) ;
+        //sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         THREADmODE3rESTORE
         }
-            //{ recordC list( tinP , count4S( LISTnAMEsYS_ROOTaPPLICATION ) ) ; list.chatterF( tinP ) ; }
-            //{ puseC puseht( tinP , ifcIDpOOL_HOMEtEMP ) ; recordC list( tinP , count4S( LISTnAMEsYS_ROOTsYSTEM3 ) ) ; list.chatterF( tinP ) ; }
+            //{ recordC list( tinBaseP , count4S( LISTnAMEsYS_ROOTaPPLICATION ) ) ; list.chatterF( tinBaseP ) ; }
+            //{ puseC puseht( tinBaseP , ifcIDpOOL_HOMEtEMP ) ; recordC list( tinBaseP , count4S( LISTnAMEsYS_ROOTsYSTEM3 ) ) ; list.chatterF( tinBaseP ) ; }
 
             entry << _fe_pushC( postMyNickName ) ;
             entry << *pczfNickName ;
@@ -47,16 +47,16 @@ DONE( tmGorillaWriteF )
             entry << _fe_pushC( timeN1 ) ;
             entry << *pczfTime ;
         
-            recordC entry( tinP , count5S( LISTnAMEsYS_ROOTaPPLICATION , PUSE.dispenseUniqueListNameF() ) ) ;
+            recordC entry( tinBaseP , count5S( LISTnAMEsYS_ROOTaPPLICATION , PUSE.dispenseUniqueListNameF() ) ) ;
         
-            listC::dictionaryReplaceOsTextIF( tinP , pczfNickName ) ;
-            listC::dictionaryReplaceOsTextIF( tinP , pczfDate ) ;
-            listC::dictionaryReplaceOsTextIF( tinP , pczfTime ) ;
+            listC::dictionaryReplaceOsTextIF( tinBaseP , pczfNickName ) ;
+            listC::dictionaryReplaceOsTextIF( tinBaseP , pczfDate ) ;
+            listC::dictionaryReplaceOsTextIF( tinBaseP , pczfTime ) ;
             countT pczfNickName[] = { (countT)"nickname" , 0 } ;
             countT pczfDate[] = { (countT)"date" , 0 } ;
             countT pczfTime[] = { (countT)"time" , 0 } ;
             
-            puseC puseLog( tinP , poolLogP ) ;
+            puseC puseLog( tinBaseP , poolLogP ) ;
         {
         THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
         
@@ -75,7 +75,7 @@ DONE( tmGorillaWriteF )
         //osTextT* postMyNickName = ppostMyNickName[ ( idCycle - 1 ) % ( sizeof ppostMyNickName / sizeof ppostMyNickName[ 0 ] ) ] ;
         //osTextT* postMyNickName = ppostMyNickName[ timeN1 % ( sizeof ppostMyNickName / sizeof ppostMyNickName[ 0 ] ) ] ;
         
-        etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+        etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
 

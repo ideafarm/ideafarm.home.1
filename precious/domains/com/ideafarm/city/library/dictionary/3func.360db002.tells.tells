@@ -22,21 +22,21 @@ finger2( 0 )
 cbNote( cbNoteP ) ,
 idType( idTypeP ) ,
 flags( flTELLc_null ) ,
-osPid( osPidIF( tinP ) ) ,
+osPid( osPidIF( tinBaseP ) ) ,
 osTid( osTidIF() ) ,
 ipMe( 0 ) ,
 bIda( 0 ) ,
-idPhase3Talking( tinP.idPhase3 ) ,
-idPhase2Talking( tinP.idPhase2 ) ,
-idThread( tinP.monitor.idThread ) ,
-idAdam( !tinP.pag1 ? 0 : tinP.pag1->idAdam ) ,
+idPhase3Talking( ((tinNormalS&)tinBaseP).idPhase3 ) ,
+idPhase2Talking( ((tinNormalS&)tinBaseP).idPhase2 ) ,
+idThread( ((tinNormalS&)tinBaseP).monitor.idThread ) ,
+idAdam( !((tinNormalS&)tinBaseP).pag1 ? 0 : ((tinNormalS&)tinBaseP).pag1->idAdam ) ,
 idAdamRoot( processGlobal1I.idAdamRoot ) ,
-idCell( !tinP.pag1 ? 0 : tinP.pag1->idCell ) ,
+idCell( !((tinNormalS&)tinBaseP).pag1 ? 0 : ((tinNormalS&)tinBaseP).pag1->idCell ) ,
 idiFileTalking( idiFileCtP ) ,
 idLineTalking( idLineCtP ) ,
-idTell( ( putNegAM( finger1 , FINGERnEG_TELEMETRY1 ) , !tinP.pag1 ? 0 : 1 + incv02AM( tinP.pag1->idTellLath ) ) ) ,
+idTell( ( putNegAM( finger1 , FINGERnEG_TELEMETRY1 ) , !((tinNormalS&)tinBaseP).pag1 ? 0 : 1 + incv02AM( ((tinNormalS&)tinBaseP).pag1->idTellLath ) ) ) ,
 finger1( 0 ) ,
-/*1*/tellS::tellS( tinS& tinP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const countT cbNoteP ) :/*1*/
+/*1*/tellS::tellS( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const countT cbNoteP ) :/*1*/
 
 /**/
 

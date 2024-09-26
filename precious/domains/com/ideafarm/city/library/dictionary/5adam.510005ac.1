@@ -13,15 +13,15 @@ CONoUTrAW( T("done per time: ")+TF1(cDonePerTime)+T("\r\n") ) ;
 countT cDonePerTime = TICK / timeB1 ;
 
 CONoUTrAW( TT(timeB1,timeB2)+T("\r\n") ) ;
-etThread.osTimeSubtractF( tinP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
-etThread.osTimeNowF( tinP , timeB1 , timeB2 ) ;
+etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
 ZE( sCountT , timeB2 ) ;
 ZE( countT , timeB1 ) ;
 
 while( cToDo -- ) addLockAM( cSum , cDelta ) ;
 //while( cToDo -- ) addAM( cSum , cDelta ) ;
 
-etThread.osTimeNowF( tinP , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
 ZE( sCountT , timeA2 ) ;
 ZE( countT , timeA1 ) ;
 

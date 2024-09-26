@@ -12,9 +12,9 @@ REST
 }
     bArm = 1 ;    
 
-    //etThread.traceF( tinP , T("[cNapping1,cNapping2]: ")+TF2(cNapping1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(cNapping2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etThread.traceF( tinBaseP , T("[cNapping1,cNapping2]: ")+TF2(cNapping1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(cNapping2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-    etThread.traceF( tinP , TF3(++icCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T("speed [mean,cDoneNew,time1E,cDonePerTime,cDone1,cDone2]: ")+TF3(mean,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDoneNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(time1E,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDonePerTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDone1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tDot+TF3(cDone2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
+    etThread.traceF( tinBaseP , TF3(++icCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T("speed [mean,cDoneNew,time1E,cDonePerTime,cDone1,cDone2]: ")+TF3(mean,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDoneNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(time1E,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDonePerTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDone1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tDot+TF3(cDone2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
 
     mean /= cGot ;
     for( countT offi = 0 ; offi < cGot ; offi ++ ) mean += pcDonePerTime[ offi ] ;
@@ -30,7 +30,7 @@ REST
 
     countT cDonePerTime = cDoneNew /** TUCK*/ / time1E ; // REALLY PER TUCK, NOT PER TIME, DUE TO "* TUCK"
 
-    etThread.osTimeSubtractF( tinP , time1E , time2E , time1LathSave , time2LathSave ) ;
+    etThread.osTimeSubtractF( tinBaseP , time1E , time2E , time1LathSave , time2LathSave ) ;
 
     cDone1Lag = cDone1Snap ;
     countT cDoneNew = cDone1Snap - cDone1Lag ;
@@ -40,7 +40,7 @@ REST
 
     time2Lath = time2E ;
     time1Lath = time1E ;
-    etThread.osTimeNowF( tinP , time1E , time2E ) ;
+    etThread.osTimeNowF( tinBaseP , time1E , time2E ) ;
     ZE( sCountT , time2E ) ;
     ZE( countT  , time1E ) ;
 
@@ -48,8 +48,8 @@ REST
     countT  time1LathSave = time1Lath ;
 
     }
-        ++ s ; ether.osSleepF( tinP , TOCK << 0 ) ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tinBaseP , TOCK << 0 ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
 {
 while( !ether )
@@ -61,29 +61,29 @@ countT pcDonePerTime[ 0x10 ] ;
 cDone2Lag = cDone2 ;
 cDone1Lag = cDone1 ;
 
-etThread.osTimeNowF( tinP , time1Lath , time2Lath ) ;
+etThread.osTimeNowF( tinBaseP , time1Lath , time2Lath ) ;
 ZE( sCountT , time2Lath ) ;
 ZE( countT  , time1Lath ) ;
 TN( tDot , "." ) ;
 TN( tb , " " ) ;
 
-//etherC::loafIF( tinP ) ;
-//etThread.traceF( tinP , T("ok") ) ;
+//etherC::loafIF( tinBaseP ) ;
+//etThread.traceF( tinBaseP , T("ok") ) ;
 
-//etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
+//etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
 
 //WAITuNTILaLMOSTaLONE( 2 )
 
 while( cDo -- ) etThread.osThreadF( TaRG1( tmGorilla5F ) /*, (countT)&grabFoo*/ ) ;
 
-//etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cDo ) ;
+//etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cDo ) ;
 //countT cDo = 12 ;
 countT cDo = 2 ;
 //countT cDo = 1 ;
 
-//grabC grabFoo( tinP , TAG( TAGiDnULL ) ) ;
+//grabC grabFoo( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.traceF( tinP , T("[offo,bitsReally]: ")+TF2(idBit-ifcIDgRABITbIT_00,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(bitsReally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tinBaseP , T("[offo,bitsReally]: ")+TF2(idBit-ifcIDgRABITbIT_00,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(bitsReally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 bitsReally = 0 ;
 
 TODO
@@ -93,32 +93,32 @@ DONE( tmGorilla999F )
 }
     inc02AM( cDone1 ) ;
 
-    //tinP.cYield = 0 ;
-    //thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 ) ;
-    //tinP.cYield = 0 ;
+    //((tinNormalS&)tinBaseP).cYield = 0 ;
+    //thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) , 0 ) ;
+    //((tinNormalS&)tinBaseP).cYield = 0 ;
 
-    //gg.ungrabF( tinP ) ;
+    //gg.ungrabF( tinBaseP ) ;
 
-    //tinP.cYield = 0 ;
-    //thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 ) ;
-    //tinP.cYield = 0 ;
+    //((tinNormalS&)tinBaseP).cYield = 0 ;
+    //thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) , 0 ) ;
+    //((tinNormalS&)tinBaseP).cYield = 0 ;
 
-    //gg.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    //gg.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     //}
     //    }
     //        dec02AM( cNapping2 ) ;
-    //        ++ s ; ether.osSleepF( tinP , TICK ) ;
+    //        ++ s ; ether.osSleepF( tinBaseP , TICK ) ;
     //        inc02AM( cNapping2 ) ;
     //
-    //        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    //        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     //    {
     //    if( bDoze )
     //
-    //    etThread.traceF( tinP , TF2(tinP.monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bDoze?" uh oh: will sleep for tick":"") ) ;
+    //    etThread.traceF( tinBaseP , TF2(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bDoze?" uh oh: will sleep for tick":"") ) ;
     //
-    //                  idtLath =  tinP.monitor.idThread ;
-    //    boolT bDoze = idtLath == tinP.monitor.idThread ;
+    //                  idtLath =  ((tinNormalS&)tinBaseP).monitor.idThread ;
+    //    boolT bDoze = idtLath == ((tinNormalS&)tinBaseP).monitor.idThread ;
     //
     //    static countT idtLath ;
     //{
@@ -127,10 +127,10 @@ DONE( tmGorilla999F )
 
     //}
     //    dec02AM( cNapping1 ) ;
-    //    ++ s ; ether.osSleepF( tinP , TOCK ) ;
+    //    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
     //    inc02AM( cNapping1 ) ;
     //
-    //    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     //{
     //if( setIfEqualsAM( bArm , 0 , 1 ) )
 {
@@ -138,16 +138,16 @@ while( !ether )
 countT idCycle ;
 TN( tb , " " ) ;
 
-//grabitC gg( tinP , TAG( TAGiDnULL ) , bb , ifcIDgRABITbIT_00 , 0 , 0 , flGRABITc_SUPPRESScTdT , TUCK , ifcIDgRABlAYER_7BASEmISC1 ) ;
+//grabitC gg( tinBaseP , TAG( TAGiDnULL ) , bb , ifcIDgRABITbIT_00 , 0 , 0 , flGRABITc_SUPPRESScTdT , TUCK , ifcIDgRABlAYER_7BASEmISC1 ) ;
 
 TASK( tmGorilla999F )
 
 DONE( tmGorilla6F )
 }
     }
-        grabFooP.ungrabF( tinP ) ;
+        grabFooP.ungrabF( tinBaseP ) ;
         inc02AM( cDone1 ) ;
-        grabFooP.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        grabFooP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         idCycle ++ ;
     {
     while( !ether )
@@ -161,25 +161,25 @@ TASK( tmGorilla6F )             // SPEED:
 
 DONE( tmGorilla5F )
 
-//etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
+//etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
 
-//etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_UNWATCH ) ;
+//etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
 }
-    gg.ungrabF( tinP ) ;
+    gg.ungrabF( tinBaseP ) ;
     inc02AM( cDone1 ) ;
-    gg.grabF( tinP , TAG( TAGiDnULL ) ) ;
+    gg.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     idCycle ++ ;
 {
 while( !ether /*&& cDo --*/ )
 countT cDo = TOCK << 2 ;
-//etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_WATCH ) ;
+//etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;
 countT idCycle ;
 TN( tb , " " ) ;
 
 gNewC   gg ;
-//grabitC gg( tinP , TAG( TAGiDnULL ) , bb , idBit , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_SUPPRESScTdT , TUCK , ifcIDgRABlAYER_7BASEmISC1 ) ;
+//grabitC gg( tinBaseP , TAG( TAGiDnULL ) , bb , idBit , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_SUPPRESScTdT , TUCK , ifcIDgRABlAYER_7BASEmISC1 ) ;
 
-//etThread.etherWhereF( tinP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
+//etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
 
 TASK( tmGorilla5F )             // SPEED: 3
 
@@ -187,7 +187,7 @@ DONE( tmGorilla4F )
 
 }
     if( !was1 ) { BLAMMO ; }
-    countT was1 = btrKeyedAM( &bb , keyIdThread , 0 , tinP.monitor.idThread ) ;
+    countT was1 = btrKeyedAM( &bb , keyIdThread , 0 , ((tinNormalS&)tinBaseP).monitor.idThread ) ;
 
     cDone1 ++ ;
     //inc02AM( cDone1 ) ;
@@ -195,7 +195,7 @@ DONE( tmGorilla4F )
     }
         OSsLEEPf( 0 ) ;
     {
-    while( btsKeyedAM( &bb , keyIdThread , 0 , tinP.monitor.idThread ) )
+    while( btsKeyedAM( &bb , keyIdThread , 0 , ((tinNormalS&)tinBaseP).monitor.idThread ) )
     idCycle ++ ;
 {
 while( !ether )
@@ -237,39 +237,39 @@ DONE( tmGorilla1F )
     if( !was1 ) { BLAMMO ; }
     countT was1 = btrAM( &bb , 0 ) ;
 
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinBaseP).cYield = 0 ;
     }
-        thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 ) ;
+        thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) , 0 ) ;
     {
     while( btsAM( &bb , 0 ) )
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinBaseP).cYield = 0 ;
 
-    if( !( idCycle % TICK ) ) etThread.traceF( tinP , TF2(tinP.monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    if( !( idCycle % TICK ) ) etThread.traceF( tinBaseP , TF2(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     idCycle ++ ;
 {
 while( !ether )
 countT idCycle ;
 TN( tb , " " ) ;
 
-thirdC::dosPriorityIF( tinP , ifcTHREADpRIORITY_SPINLOCK ) ;
+thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
 TASK( tmGorilla1F )
 
 }
     if( !was1 ) { BLAMMO ; }
     countT was1 = btrAM( &bb , 0 ) ;
 {
-voidT gNewC::ungrabF( tinS& tinP )
+voidT gNewC::ungrabF( tinBaseS& tinBaseP )
 
 }
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinBaseP).cYield = 0 ;
     }
-        //thirdC::osThreadYieldIF( tinP , TAG( TAGiDnULL ) , 0 ) ;
+        //thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) , 0 ) ;
         OSsLEEPf( 0 ) ; //U:: TO FIND A BUG
     {
     while( btsAM( &bb , 0 ) )
-    tinP.cYield = 0 ;
+    ((tinNormalS&)tinBaseP).cYield = 0 ;
 {
-voidT gNewC::grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )
+voidT gNewC::grabF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )
 
 }
 {
@@ -281,8 +281,8 @@ gNewC::~gNewC( voidT )
 
 ;
 }
-    voidT ungrabF( tinS& tinP ) ;
-    voidT grabF( tinS& tinP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;
+    voidT ungrabF( tinBaseS& tinBaseP ) ;
+    voidT grabF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;
     gNewC( voidT ) ;
     ~gNewC( voidT ) ;
 

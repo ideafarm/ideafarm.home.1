@@ -11,47 +11,47 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        tinP.pag3->_socketC_.grab.ungrabF( tinP ) ;
-        pOdometer->cbWrite += tinP.odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += tinP.odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*tinP.pag3->_socketC_.pSwOdometer ;
-        tinP.pag3->_socketC_.nnLever = nnPeer ;
-        tinP.pag3->_socketC_.grab.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
+        pOdometer->cbWrite += ((tinNormalS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tinNormalS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
+        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        bRead.ungrabF( tinP ) ;
+        bRead.ungrabF( tinBaseP ) ;
     
         if( idleTimeAllowedRead ) FRESHtIMEaTOMIC( *pEther , timeLathRead.time1 , timeLathRead.time2 )
     
-        if( !psttP ) { pEther->strMakeF( tinP , LF , psttP , T("") ) ; ___( psttP ) ; }
+        if( !psttP ) { pEther->strMakeF( tinBaseP , LF , psttP , T("") ) ; ___( psttP ) ; }
     
-        pEther->delF( tinP , psttDelimiter ) ;    
+        pEther->delF( tinBaseP , psttDelimiter ) ;    
         }
             }
-                pEther->delF( tinP , psttl ) ;
-                pEther->strFuseF( tinP , psttP , tCRLF ) ; ___( psttP ) ;
-                pEther->strFuseF( tinP , psttP , psttl , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ csttEstimateP ) ; ___( psttP ) ;
+                pEther->delF( tinBaseP , psttl ) ;
+                pEther->strFuseF( tinBaseP , psttP , tCRLF ) ; ___( psttP ) ;
+                pEther->strFuseF( tinBaseP , psttP , psttl , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ csttEstimateP ) ; ___( psttP ) ;
             {
             else
             }
                 break ;
-                pEther->delF( tinP , psttl ) ;
+                pEther->delF( tinBaseP , psttl ) ;
             {
-            if( !pEther->strCompareF( tinP , psttl , psttDelimiter ) )
-            readWoLineF( tinP , psttl , csttEstimateP ) ; ___( psttl ) ;
+            if( !pEther->strCompareF( tinBaseP , psttl , psttDelimiter ) )
+            readWoLineF( tinBaseP , psttl , csttEstimateP ) ; ___( psttl ) ;
             ZE( strokeS* , psttl ) ;
         {
         while( !*pEther )
         TN( tCRLF , "\r\n" ) ;
     
         if( !csttEstimateP ) csttEstimateP = 0x100 ;
-        else                 { pEther->strMakeF( tinP , LF , psttDelimiter , T("")          ) ; ___( psttDelimiter ) ; }
-        if( psttDelimiterP ) { pEther->strMakeF( tinP , LF , psttDelimiter , psttDelimiterP ) ; ___( psttDelimiter ) ; }
+        else                 { pEther->strMakeF( tinBaseP , LF , psttDelimiter , T("")          ) ; ___( psttDelimiter ) ; }
+        if( psttDelimiterP ) { pEther->strMakeF( tinBaseP , LF , psttDelimiter , psttDelimiterP ) ; ___( psttDelimiter ) ; }
         ZE( strokeS* , psttDelimiter ) ;
         _IO_
-        bRead.grabF( tinP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = tinP.odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = tinP.odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinBaseP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinBaseP).odoSockCbRead  ;
     
         }
             }
@@ -65,7 +65,7 @@
     {
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/voidT socketC::readWoMultilineF( tinS& tinP , strokeS*& psttP , const strokeS* const psttDelimiterP , countT csttEstimateP )/*1*/
+/*1*/voidT socketC::readWoMultilineF( tinBaseS& tinBaseP , strokeS*& psttP , const strokeS* const psttDelimiterP , countT csttEstimateP )/*1*/
 
 /**/
 */

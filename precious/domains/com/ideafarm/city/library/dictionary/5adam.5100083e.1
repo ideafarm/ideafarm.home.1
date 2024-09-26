@@ -9,19 +9,19 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.osSuspendF( tinP , 0 , 0 , nicNameC() ) ;
-etThread.traceF( tinP , T("ok") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.osSuspendF( tinBaseP , 0 , 0 , nicNameC() ) ;
+etThread.traceF( tinBaseP , T("ok") ) ;
 
 }
-    etThread.diskWalkF( tinP , cDirs , cFiles , T("///e/ideafarm.archives/wo.ideafarm/") , ether , flDISKwALK_null , walkCBF , pcArg , 0 , 0 ) ;
+    etThread.diskWalkF( tinBaseP , cDirs , cFiles , T("///e/ideafarm.archives/wo.ideafarm/") , ether , flDISKwALK_null , walkCBF , pcArg , 0 , 0 ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs  ) ;
 
     countT  pcArg[] = { (countT)&foSizesFile , (countT)&foSizesDay , (countT)&idFile , (countT)&c2CbUsedDay , (countT)&tDay , (countT)&tb4 , (countT)&tcr , (countT)&tAmp } ;
 
-    fileC   foSizesDay(  tinP , (strokeS*)T("///d/tmp/archive.file.sizes.day.ttt")  , ifcOPENaCCESS_W , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
-    fileC   foSizesFile( tinP , (strokeS*)T("///d/tmp/archive.file.sizes.file.ttt") , ifcOPENaCCESS_W , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+    fileC   foSizesDay(  tinBaseP , (strokeS*)T("///d/tmp/archive.file.sizes.day.ttt")  , ifcOPENaCCESS_W , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+    fileC   foSizesFile( tinBaseP , (strokeS*)T("///d/tmp/archive.file.sizes.file.ttt") , ifcOPENaCCESS_W , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
     count2S c2CbUsedDay ;
     TN( tDay , "" ) ;
     ZE( countT , idFile ) ;
@@ -39,8 +39,8 @@ TODO
         }
             DEL( pInfo ) ;
             }
-                etThread.fileWriteF( tinP , foSizesFileP , tOutFile , tOutFile.csF( tinP ) ) ;
-                if( !( ++ idFileP % TUCK ) ) etThread.traceF( tinP , TF3(idFileP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+tLong ) ;
+                etThread.fileWriteF( tinBaseP , foSizesFileP , tOutFile , tOutFile.csF( tinBaseP ) ) ;
+                if( !( ++ idFileP % TUCK ) ) etThread.traceF( tinBaseP , TF3(idFileP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+tLong ) ;
 
                 TN( tOutFile , "" ) ; tOutFile = TTF(pInfo->cbUsed,pInfo->cbUsedHigh)+tb4P+tLong+tcrP ;
 
@@ -50,46 +50,46 @@ TODO
                 count2S c2Was    = c2CbUsedDayP      ;
             {
             if( pInfo )
-            etThread.diskFileQueryF( tinP , pInfo , fia ) ;
-            fileC fia( tinP , (strokeS*)tLong , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+            etThread.diskFileQueryF( tinBaseP , pInfo , fia ) ;
+            fileC fia( tinBaseP , (strokeS*)tLong , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
             ZE( infoFileS* , pInfo ) ;
 
             }
                 }
-                    etThread.delF( tinP , psttDay ) ;
+                    etThread.delF( tinBaseP , psttDay ) ;
                     }
                         }
                             c2CbUsedDayP = count2S() ;
-                            //etThread.traceF( tinP , tDayP ) ;
+                            //etThread.traceF( tinBaseP , tDayP ) ;
                             tDayP = T(psttDay) ;
 
-                            etThread.fileWriteF( tinP , foSizesDayP , tOutDay , tOutDay.csF( tinP ) ) ;
+                            etThread.fileWriteF( tinBaseP , foSizesDayP , tOutDay , tOutDay.csF( tinBaseP ) ) ;
                             TN( tOutDay , "" ) ; tOutDay = TTF(c2CbUsedDayP.c1,c2CbUsedDayP.c2)+tb4P+tDayP+tcrP ;
                         {
                         //CS:DUPLICATEcODE
 
                         bNewDay = 1 ;                                   //A:ASSUME: FILES ARE PRESENTED TO ME SORTED BY NAME ; NTFS DOES NOT ALWAYS DO THIS, SO MY OUTPUT WILL ONLY BE APPROXIMATELY CORRECT FOR THE DAY SIZES
                     {
-                    if( etThread.strCompareF( tinP , tDayP , psttDay ) )
-                    etThread.strSubstringF( tinP , psttDay , idf , idl , psttzLong , 0 ) ; ___( psttDay ) ;
+                    if( etThread.strCompareF( tinBaseP , tDayP , psttDay ) )
+                    etThread.strSubstringF( tinBaseP , psttDay , idf , idl , psttzLong , 0 ) ; ___( psttDay ) ;
                     ZE( strokeS* , psttDay ) ;
 
                     countT idl = idHit - 1 ;
                     countT idf = 1 ;
                 {
                 if( idHit )
-                countT idHit = etThread.strIdF( tinP , tAmpP , psttzLong , 1 ) ;
+                countT idHit = etThread.strIdF( tinBaseP , tAmpP , psttzLong , 1 ) ;
             {
             ZE( boolT , bNewDay ) ;
         {
         if( !bDir )
         boolT bDir = psttzLong[ CSpREFIX - 1 + psttzLong->idAdam ].idAdam == '/' ;
 
-        //etThread.traceF( tinP , tLong ) ;
+        //etThread.traceF( tinBaseP , tLong ) ;
 
         const strokeS* const psttzLong = tLong ;
         TN( tLong , iffn ) ;
-        ifFileNameC iffn( tinP , etThread , postNameP ) ;
+        ifFileNameC iffn( tinBaseP , etThread , postNameP ) ;
 
         _IO_
     {
@@ -97,10 +97,10 @@ TODO
     }
         }
             c2CbUsedDayP = count2S() ;
-            //etThread.traceF( tinP , tDayP ) ;
+            //etThread.traceF( tinBaseP , tDayP ) ;
             tDayP = T("") ;
 
-            etThread.fileWriteF( tinP , foSizesDayP , tOutDay , tOutDay.csF( tinP ) ) ;
+            etThread.fileWriteF( tinBaseP , foSizesDayP , tOutDay , tOutDay.csF( tinBaseP ) ) ;
             TN( tOutDay , "" ) ; tOutDay = TTF(c2CbUsedDayP.c1,c2CbUsedDayP.c2)+tb4P+tDayP+tcrP ;
         {
         //CS:DUPLICATEcODE
@@ -115,11 +115,11 @@ TODO
     countT&  idFileP      =  *(countT*)pcArgP[ 2 ] ;
     fileC&   foSizesDayP  =   *(fileC*)pcArgP[ 1 ] ;
     fileC&   foSizesFileP =   *(fileC*)pcArgP[ 0 ] ;
-    etherC&  etThread     =   *tinP.pEther ;
+    etherC&  etThread     =   *((tinNormalS&)tinBaseP).pEther ;
 
     _IO_
 {
-boolT walkCBF( tinS& tinP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT walkCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.report.archive.file.sizes.to.readable.files.by.file.or.by.day" )/*1*/
 /**/

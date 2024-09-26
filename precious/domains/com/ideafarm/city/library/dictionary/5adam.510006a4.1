@@ -9,24 +9,24 @@
 
 REST
 
-etherC::loafIF( tinP ) ;
-etThread.traceF( tinP , T("loafing") ) ;
+etherC::loafIF( tinBaseP ) ;
+etThread.traceF( tinBaseP , T("loafing") ) ;
 
 while( ~hFind && !ether ) ;
 }
     DEL( pInfo ) ;
     }
-        etThread.delF( tinP , psttShort ) ;
-        etThread.delF( tinP , psttDadFile ) ;
+        etThread.delF( tinBaseP , psttShort ) ;
+        etThread.delF( tinBaseP , psttDadFile ) ;
 
         }
             }
-                etThread.delF( tinP , pbBufferDad ) ;
-                etThread.delF( tinP , pbBufferMe  ) ;
+                etThread.delF( tinBaseP , pbBufferDad ) ;
+                etThread.delF( tinBaseP , pbBufferMe  ) ;
 
                 }
-                    else         etThread.diskFileOrDirDeleteF( tinP , pInfo->psttIfoName ) ;
-                    if( !bSame ) etThread.traceF( tinP , tDistinct ) ;
+                    else         etThread.diskFileOrDirDeleteF( tinBaseP , pInfo->psttIfoName ) ;
+                    if( !bSame ) etThread.traceF( tinBaseP , tDistinct ) ;
 
                     }
                         }
@@ -34,17 +34,17 @@ while( ~hFind && !ether ) ;
                                 break ;
                                 bSame = 0 ;
                             {
-                            if( etThread.memCompareF( tinP , pbBufferMe , pbBufferDad , cbBite ) )
+                            if( etThread.memCompareF( tinBaseP , pbBufferMe , pbBufferDad , cbBite ) )
 
                             __( cbActual != cbBite ) ;
-                            etThread.fileReadF( tinP , pbBufferDad , cbActual , hDad ) ;
+                            etThread.fileReadF( tinBaseP , pbBufferDad , cbActual , hDad ) ;
                             cbActual = cbBite ;
 
                             __( cbActual != cbBite ) ;
-                            etThread.fileReadF( tinP , pbBufferMe  , cbActual , hMe ) ;
+                            etThread.fileReadF( tinBaseP , pbBufferMe  , cbActual , hMe ) ;
                             countT cbActual = cbBite ;
 
-                            etThread.traceF( tinP , TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tc+TF2(cbDoHigh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tInspecting ) ;
+                            etThread.traceF( tinBaseP , TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tc+TF2(cbDoHigh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tInspecting ) ;
 
                             if( was < cbDo ) cbDoHigh -- ;
                             cbDo -= cbBite ;
@@ -61,52 +61,52 @@ while( ~hFind && !ether ) ;
                         countT cbDoHigh = pInfo->cbUsedHigh ;
                         countT cbDo     = pInfo->cbUsed     ;
 
-                        etThread.fileOpenF( tinP , hMe , countTC() , pInfo->psttIfoName ) ;
-                        handleC hMe( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                        etThread.fileOpenF( tinBaseP , hMe , countTC() , pInfo->psttIfoName ) ;
+                        handleC hMe( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
                     {
                     boolT bSame = 1 ;
                 {
                 if( pbBufferMe && pbBufferDad )
 
-                etThread.newF( tinP , LF , pbBufferDad , cbBuffer ) ; ___( pbBufferDad ) ;
-                etThread.newF( tinP , LF , pbBufferMe  , cbBuffer ) ; ___( pbBufferMe  ) ;
+                etThread.newF( tinBaseP , LF , pbBufferDad , cbBuffer ) ; ___( pbBufferDad ) ;
+                etThread.newF( tinBaseP , LF , pbBufferMe  , cbBuffer ) ; ___( pbBufferMe  ) ;
                 const countT cbBuffer = pInfo->cbUsed < TICK << 2 ? pInfo->cbUsed : TICK << 2 ;
                 ZE( byteT* , pbBufferDad ) ;
                 ZE( byteT* , pbBufferMe  ) ;
             {
             if( pInfoDad && pInfoDad->cbUsed == pInfo->cbUsed && pInfoDad->cbUsedHigh == pInfo->cbUsedHigh )
-            etThread.diskFileQueryF( tinP , pInfoDad , hDad ) ;
+            etThread.diskFileQueryF( tinBaseP , pInfoDad , hDad ) ;
             ZE( infoFileS* , pInfoDad ) ;
 
-            etThread.fileOpenF( tinP , hDad , countTC() , psttDadFile ) ;
-            handleC hDad( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+            etThread.fileOpenF( tinBaseP , hDad , countTC() , psttDadFile ) ;
+            handleC hDad( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
-            etThread.traceF( tinP , tInspecting ) ;
+            etThread.traceF( tinBaseP , tInspecting ) ;
         {
         else
-        if( !etThread.diskFileExistsF( tinP , psttDadFile ) ) etThread.diskMoveFileOrDirF( tinP , psttDadFile , pInfo->psttIfoName ) ;
+        if( !etThread.diskFileExistsF( tinBaseP , psttDadFile ) ) etThread.diskMoveFileOrDirF( tinBaseP , psttDadFile , pInfo->psttIfoName ) ;
 
         }
-            etThread.delF( tinP , psttMeFile ) ;
-            etThread.delF( tinP , psttPathDad ) ;
+            etThread.delF( tinBaseP , psttMeFile ) ;
+            etThread.delF( tinBaseP , psttPathDad ) ;
 
             }
-                etThread.delF( tinP , psttMe ) ;
+                etThread.delF( tinBaseP , psttMe ) ;
 
-                etThread.strFuseF( tinP , psttDadFile , psttShort ) ;
-                etThread.strMakeF( tinP , LF , psttDadFile , psttPathDad , psttShort->idAdam ) ; ___( psttDadFile ) ;
+                etThread.strFuseF( tinBaseP , psttDadFile , psttShort ) ;
+                etThread.strMakeF( tinBaseP , LF , psttDadFile , psttPathDad , psttShort->idAdam ) ; ___( psttDadFile ) ;
 
-                etThread.traceF( tinP , TF2(pInfo->cbUsed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tc+TF2(pInfo->cbUsedHigh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttShort) ) ;
+                etThread.traceF( tinBaseP , TF2(pInfo->cbUsed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tc+TF2(pInfo->cbUsedHigh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttShort) ) ;
 
                 ___( psttShort  ) ;
                 ___( psttMe ) ;
-                etThread.strBisectF( tinP , psttMe , psttShort , psttMeFile , tSlash , -1 ) ;
+                etThread.strBisectF( tinBaseP , psttMe , psttShort , psttMeFile , tSlash , -1 ) ;
                 ZE( strokeS* , psttMe ) ;
             {
 
             ___( psttMeFile  ) ;
             ___( psttPathDad ) ;
-            etThread.strBisectF( tinP , psttPathDad , psttMeFile , pInfo->psttIfoName , tSlash , -2 , flSTRbISECT_APPENDdELIMITER ) ;
+            etThread.strBisectF( tinBaseP , psttPathDad , psttMeFile , pInfo->psttIfoName , tSlash , -2 , flSTRbISECT_APPENDdELIMITER ) ;
             ZE( strokeS* , psttMeFile ) ;
             ZE( strokeS* , psttPathDad ) ;
         {
@@ -114,18 +114,18 @@ while( ~hFind && !ether ) ;
         ZE( strokeS* , psttDadFile ) ;
     {
     )
-        !etThread.strIdF( tinP , tSlashDotDotSlash , pInfo->psttIfoName )
+        !etThread.strIdF( tinBaseP , tSlashDotDotSlash , pInfo->psttIfoName )
         &&
-        !etThread.strIdF( tinP , tSlashDotSlash , pInfo->psttIfoName )
+        !etThread.strIdF( tinBaseP , tSlashDotSlash , pInfo->psttIfoName )
         &&
         pInfo
     (
     if
-    etThread.diskFindFileOrDirOldF( tinP , pInfo , hFind , tLike ) ; ___( pInfo ) ;
+    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ; ___( pInfo ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 TN( tc                , ":" ) ;
 TN( tb4               , "    " ) ;
 TN( tDistinct         , "distinct" ) ;

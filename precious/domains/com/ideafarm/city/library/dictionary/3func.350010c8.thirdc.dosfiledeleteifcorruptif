@@ -8,13 +8,13 @@
 
 
 }
-    if( !bFoundAfter && cDeleted && cFound == cDeleted ) pThird->dosDeleteIF( tinP , postP ) ; // AT LEAST ONE WRITER DIED AND THERE IS NO LIVING PROCESS WRITING THE FILE
+    if( !bFoundAfter && cDeleted && cFound == cDeleted ) pThird->dosDeleteIF( tinBaseP , postP ) ; // AT LEAST ONE WRITER DIED AND THERE IS NO LIVING PROCESS WRITING THE FILE
 
     }
         }
             DEL( pInfo ) ;
             if( pInfo ) bFoundAfter = 1 ;
-            pThird->dosFindFileOrDirPrivateF( tinP , pInfo , hFind , ostoLike ) ; ___( pInfo ) ;
+            pThird->dosFindFileOrDirPrivateF( tinBaseP , pInfo , hFind , ostoLike ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         if( !POOP )
@@ -25,17 +25,17 @@
             }
                 else        thp = 0 ;
                 if( !POOP ) cDeleted ++ ;
-                thp.dosDeleteIF( tinP , pInfo->postOsName , 1 ) ;
+                thp.dosDeleteIF( tinBaseP , pInfo->postOsName , 1 ) ;
 
-                thirdC thp( tinP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;
+                thirdC thp( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;
                 cFound ++ ;
             {
             if( pInfo )
-            pThird->dosFindFileOrDirPrivateF( tinP , pInfo , hFind , ostoLike ) ; ___( pInfo ) ;
+            pThird->dosFindFileOrDirPrivateF( tinBaseP , pInfo , hFind , ostoLike ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         do
-        handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+        handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
         OStEXTAK( ostoLike , ".!writing.*" )
         OStEXTA( ostoLike , postP )
@@ -55,9 +55,9 @@
     {
     IFbEcAREFUL    
 
-    thirdC* pThird = tinP.pEther ? &(thirdC&)*tinP.pEther : 0 ;  //U:: 20200815@1708: DESIGN ERROR: CAN CAUSE WRONG poopC TO BECOME IMPOTENT
+    thirdC* pThird = ((tinNormalS&)tinBaseP).pEther ? &(thirdC&)*((tinNormalS&)tinBaseP).pEther : 0 ;  //U:: 20200815@1708: DESIGN ERROR: CAN CAUSE WRONG poopC TO BECOME IMPOTENT
 {
-/*1*/voidT thirdC::dosFileDeleteIfCorruptIF( tinS& tinP , const osTextT* const postP )/*1*/
+/*1*/voidT thirdC::dosFileDeleteIfCorruptIF( tinBaseS& tinBaseP , const osTextT* const postP )/*1*/
 
 // BETTER WORKAROUND: DO NOT CALL ME AT ALL
 // WORKAROUND: PUT A NAP INTO THE WATCHER

@@ -11,14 +11,14 @@
     putNegAM( *(countT*)&third.fingerprint , FINGERnEG_THIRDczOMBIE ) ;
 
     }
-        tinP.pag1->_thirdC_.pThPrime = 0 ;
+        ((tinNormalS&)tinBaseP).pag1->_thirdC_.pThPrime = 0 ;
 
-        DEL( tinP.pag1->_thirdC_.pThLongLasting ) ;
-        DELzOMBIE( tinP.pag1->_thirdC_.phCritSec ) ;
+        DEL( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting ) ;
+        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->_thirdC_.phCritSec ) ;
 
         }
             DEL( pswd ) ;
-            tinP.pag4->_thirdC_grab_lOsTid.ungrabF( tinP ) ;
+            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
             }
                 }
                     osh = 0 ;
@@ -28,20 +28,20 @@
                 {
                 if( osh )
                 countT& osh = *pswd ;
-                tinP.pag1->_thirdC_.lOsTid = pswd->leverF( tinP , idf ) ;
+                ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid = pswd->leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = pswd->cFlavorsF( tinP ) ;
-            tinP.pag4->_thirdC_grab_lOsTid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            countT cFlavors = pswd->cFlavorsF( tinBaseP ) ;
+            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            tinP.pag1->_thirdC_.pSwThreadHandle = 0 ; //GRAB WILL USE ME IF I AM NOT ZE
-            switchC* pswd = tinP.pag1->_thirdC_.pSwThreadHandle ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = 0 ; //GRAB WILL USE ME IF I AM NOT ZE
+            switchC* pswd = ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ;
         {
-        if( tinP.pag1->_thirdC_.pSwThreadHandle )
+        if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle )
 
         }
             DEL( pswd ) ;
-            tinP.pag4->_thirdC_grab_lOsPid.ungrabF( tinP ) ;
+            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
             }
                 }
                     osh = 0 ;
@@ -51,30 +51,30 @@
                 {
                 if( osh )
                 countT& osh = *pswd ;
-                tinP.pag1->_thirdC_.lOsPid = pswd->leverF( tinP , idf ) ;
+                ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsPid = pswd->leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = pswd->cFlavorsF( tinP ) ;
-            tinP.pag4->_thirdC_grab_lOsPid.grabF( tinP , TAG( TAGiDnULL ) ) ;
+            countT cFlavors = pswd->cFlavorsF( tinBaseP ) ;
+            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            tinP.pag1->_thirdC_.pSwProcessHandle = 0 ; //GRAB WILL USE ME IF I AM NOT ZE
-            switchC* pswd = tinP.pag1->_thirdC_.pSwProcessHandle ;
+            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle = 0 ; //GRAB WILL USE ME IF I AM NOT ZE
+            switchC* pswd = ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ;
         {
-        if( tinP.pag1->_thirdC_.pSwProcessHandle )
+        if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle )
 
-        DEL( tinP.pag1->_thirdC_.pSwKillSocket ) ; //ASSUME: s_shutdown1F HAS BEEN CALLED
-        DEL( tinP.pag1->_thirdC_.pStkTasksWhenQuitting ) ;
-        DEL( tinP.pag1->_thirdC_.pStk_pThird ) ;
+        DEL( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwKillSocket ) ; //ASSUME: s_shutdown1F HAS BEEN CALLED
+        DEL( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting ) ;
+        DEL( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pStk_pThird ) ;
         THREADmODE4rESTORE
-        DEL( tinP.pag1->_thirdC_.pSwFileOpen ) ;
+        DEL( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwFileOpen ) ;
         THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP )     // THIS IS NEEDED BECAUSE pSwFileOpen WILL ALLOCATE FROM POOL, WHICH WOULD CAUSE NONMONOTONIC GRAB
     {
-    if( tinP.pag1->_thirdC_.pThPrime == &third )
+    if( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pThPrime == &third )
     TINSL
 
     }
         third.thirdDiscardTinF() ;
-        thirdC::dosCloseThreadResourcesIF( tinP ) ;
+        thirdC::dosCloseThreadResourcesIF( tinBaseP ) ;
         TINSL
     {
     if( F(third.flagsMode) & flTHIRDmODE_TINoWNER )

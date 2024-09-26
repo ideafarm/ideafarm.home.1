@@ -10,13 +10,13 @@
 REST
 
 }
-    etThread.loafIF( tinP ) ;
-    etThread.osThreadF( tinP , countTC() , tmGorillaF ) ;
+    etThread.loafIF( tinBaseP ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF ) ;
 
-    //{ countT idAdam = 0x40104b8 ; etThread.ifcHireF( tinP , T("g orilla.http.ideafarm.2") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
+    //{ countT idAdam = 0x40104b8 ; etThread.ifcHireF( tinBaseP , T("g orilla.http.ideafarm.2") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
     TELL( "hiring 8b4" )
 
-    stateS state( tinP , etThread ) ;
+    stateS state( tinBaseP , etThread ) ;
 {
 
 TODO
@@ -25,18 +25,18 @@ DONE( tmGorillaF )
 
 }
     //}
-    //    ++ s ; ether.osSleepF( tinP , TUCK * 0x20 ) ;
-    //    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    //    ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x20 ) ;
+    //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     //{
     CONoUT( TF1(++idTrial)+tb+TF1(cBad)+T("\r\n") ) ;
 
     }
         cBad ++ ;
-        *tinP.zEtScratch = 0 ;
+        *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
     {
-    if( *tinP.zEtScratch || cbHome != cbHomeWoth )
+    if( *((tinNormalS&)tinBaseP).zEtScratch || cbHome != cbHomeWoth )
     if( !cbHomeWoth  ) cbHomeWoth  = cbHome ;   
-    { ZE( byteT* , pbHome  ) ; tinP.zEtScratch->boxGetShadowF( tinP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; tinP.zEtScratch->delF( tinP , pbHome  ) ; }
+    { ZE( byteT* , pbHome  ) ; ((tinNormalS&)tinBaseP).zEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pbHome  ) ; }
     ZE( countT , cbHome ) ;
 {
 while( !etThread && !ether )
@@ -48,7 +48,7 @@ TN( tb , " " ) ;
 TN( tHome  , "127.1.1.1//http//" ) ;
 
 THREADmODE2oN( flTHREADmODE2_QUIETiMPOTENCE )
-//etThread.osThreadSwitchingDesireF( tinP , ifcTHREADpRIORITY_LAZIEST ) ;
+//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
 
 TASK( tmGorillaF )
 

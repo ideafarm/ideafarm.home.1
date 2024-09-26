@@ -10,11 +10,11 @@
 }
     return 0 ;
 
-    if( vt.pSadamCBF ) (*vt.pSadamCBF)( tinP , etherP , idTypeCallP , idEventP , pcNotes , sadamP ) ;
+    if( vt.pSadamCBF ) (*vt.pSadamCBF)( tinBaseP , etherP , idTypeCallP , idEventP , pcNotes , sadamP ) ;
 
     else { BLAMMO ; }
     }
-        thirdC::c_memcpyIF( tinP , (byteT*)( pcNotes + 3 ) , (byteT*)( pcNotesP + 2 ) , sizeof( countT ) * ( pcNotesP[ 1 ] + 1 ) ) ;
+        thirdC::c_memcpyIF( tinBaseP , (byteT*)( pcNotes + 3 ) , (byteT*)( pcNotesP + 2 ) , sizeof( countT ) * ( pcNotesP[ 1 ] + 1 ) ) ;
         pcNotes[ 2 ] = vt.cArg ;
         pcNotes[ 1 ] = pcNotesP[ 1 ] + 1 ;
         pcNotes[ 0 ] = 1 ;
@@ -33,7 +33,7 @@
 
     _IO_
 {
-/*1*/boolT _export _vtCBF( tinS& tinP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamC& sadamP )/*1*/
+/*1*/boolT _export _vtCBF( tinBaseS& tinBaseP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamC& sadamP )/*1*/
 
 /**/
 */

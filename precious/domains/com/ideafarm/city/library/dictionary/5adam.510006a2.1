@@ -9,21 +9,21 @@
 
 REST
 
-//etherC::loafIF( tinP ) ;
+//etherC::loafIF( tinBaseP ) ;
 
 countT foo = 2 ;
 
 }
-    etThread.delF( tinP , psttOutI ) ;
+    etThread.delF( tinBaseP , psttOutI ) ;
 
-    etThread.boxPutF( tinP , T("///d/tmp/out.i.ttt") , postOutI , costOutI ) ;
-    countT costOutI = etThread.strMakeF( tinP , LF , postOutI , psttOutI ) ; ___( postOutI ) ;
+    etThread.boxPutF( tinBaseP , T("///d/tmp/out.i.ttt") , postOutI , costOutI ) ;
+    countT costOutI = etThread.strMakeF( tinBaseP , LF , postOutI , psttOutI ) ; ___( postOutI ) ;
     ZE( osTextT* , postOutI ) ;
 
     }
-        etThread.delF( tinP , psttLine ) ;
-        etThread.strFuseF( tinP , psttOutI , tcr ) ;
-        etThread.strFuseF( tinP , psttOutI , psttLine ) ;
+        etThread.delF( tinBaseP , psttLine ) ;
+        etThread.strFuseF( tinBaseP , psttOutI , tcr ) ;
+        etThread.strFuseF( tinBaseP , psttOutI , psttLine ) ;
         st_pstt_driveI >> psttLine ;
         ZE( strokeS* , psttLine ) ;
     {
@@ -31,21 +31,21 @@ countT foo = 2 ;
 
     TN( tcr , "\r\n" ) ;
 
-    etThread.strMakeF( tinP , LF , psttOutI , 0 , st_pstt_driveI * TUCK ) ; ___( psttOutI ) ;
+    etThread.strMakeF( tinBaseP , LF , psttOutI , 0 , st_pstt_driveI * TUCK ) ; ___( psttOutI ) ;
     ZE( strokeS* , psttOutI ) ;
 {
 
 }
-    etThread.delF( tinP , psttOutA ) ;
+    etThread.delF( tinBaseP , psttOutA ) ;
 
-    etThread.boxPutF( tinP , T("///d/tmp/out.a.ttt") , postOutA , costOutA ) ;
-    countT costOutA = etThread.strMakeF( tinP , LF , postOutA , psttOutA ) ; ___( postOutA ) ;
+    etThread.boxPutF( tinBaseP , T("///d/tmp/out.a.ttt") , postOutA , costOutA ) ;
+    countT costOutA = etThread.strMakeF( tinBaseP , LF , postOutA , psttOutA ) ; ___( postOutA ) ;
     ZE( osTextT* , postOutA ) ;
 
     }
-        etThread.delF( tinP , psttLine ) ;
-        etThread.strFuseF( tinP , psttOutA , tcr ) ;
-        etThread.strFuseF( tinP , psttOutA , psttLine ) ;
+        etThread.delF( tinBaseP , psttLine ) ;
+        etThread.strFuseF( tinBaseP , psttOutA , tcr ) ;
+        etThread.strFuseF( tinBaseP , psttOutA , psttLine ) ;
         st_pstt_driveA >> psttLine ;
         ZE( strokeS* , psttLine ) ;
     {
@@ -53,34 +53,34 @@ countT foo = 2 ;
 
     TN( tcr , "\r\n" ) ;
 
-    etThread.strMakeF( tinP , LF , psttOutA , 0 , st_pstt_driveA * TUCK ) ; ___( psttOutA ) ;
+    etThread.strMakeF( tinBaseP , LF , psttOutA , 0 , st_pstt_driveA * TUCK ) ; ___( psttOutA ) ;
     ZE( strokeS* , psttOutA ) ;
 {
 
-etThread.delF( tinP , pstti ) ;
+etThread.delF( tinBaseP , pstti ) ;
 }
     }
-        etThread.delF( tinP , psttIt ) ;
-        etThread.delF( tinP , psttAt ) ;
+        etThread.delF( tinBaseP , psttIt ) ;
+        etThread.delF( tinBaseP , psttAt ) ;
         }
             }
-                st_pstt_driveI >> psttd ; etThread.delF( tinP , psttd ) ;
-                st_pstt_driveA >> psttd ; etThread.delF( tinP , psttd ) ;
+                st_pstt_driveI >> psttd ; etThread.delF( tinBaseP , psttd ) ;
+                st_pstt_driveA >> psttd ; etThread.delF( tinBaseP , psttd ) ;
                 ZE( strokeS* , psttd ) ;
             {
             if( !sgnAI )
 
-            sCountT sgnAI = etThread.strCompareF( tinP , psttAt , psttIt ) ;
+            sCountT sgnAI = etThread.strCompareF( tinBaseP , psttAt , psttIt ) ;
         {
         if( psttAt && psttIt )
 
         }
-            etThread.strSubstringF( tinP , psttIt , idf2 , sttq , psttzDriveI , psttI , 1 ) ; ___( psttIt ) ;
+            etThread.strSubstringF( tinBaseP , psttIt , idf2 , sttq , psttzDriveI , psttI , 1 ) ; ___( psttIt ) ;
             idf2 = 1 ;
         {
         if( psttI )
         }
-            etThread.strSubstringF( tinP , psttAt , idf2 , sttq , psttzDriveA , psttA , 1 ) ; ___( psttAt ) ;
+            etThread.strSubstringF( tinBaseP , psttAt , idf2 , sttq , psttzDriveA , psttA , 1 ) ; ___( psttAt ) ;
             idf2 = 1 ;
         {
         if( psttA )
@@ -95,10 +95,10 @@ etThread.delF( tinP , pstti ) ;
     stUse << psttLine ;
     stackC& stUse = !bDriveI ? st_pstt_driveA : st_pstt_driveI ;
 
-    boolT bDriveI = etThread.strIdF( tinP , psttzDriveI , psttLine , 1 ) ;
+    boolT bDriveI = etThread.strIdF( tinBaseP , psttzDriveI , psttLine , 1 ) ;
 
-    //etThread.traceF( tinP , psttLine ) ;
-    etThread.strSubstringF( tinP , psttLine , idf , sttq , psttzCRLF , pstti , 1 ) ; ___( psttLine ) ;
+    //etThread.traceF( tinBaseP , psttLine ) ;
+    etThread.strSubstringF( tinBaseP , psttLine , idf , sttq , psttzCRLF , pstti , 1 ) ; ___( psttLine ) ;
     ZE( strokeS* , psttLine ) ;
 
     CONoUTrAW3( "\r" , idf , "" ) ;
@@ -108,8 +108,8 @@ ZE( countT , idl ) ;
 countT idf = 1 ;
 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 
-stackC st_pstt_driveI( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
-stackC st_pstt_driveA( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC st_pstt_driveI( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC st_pstt_driveA( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 
 const strokeS* psttzDriveI = tDriveI ;
 TN( tDriveI , "[drive I]" ) ;
@@ -122,11 +122,11 @@ TN( tCRLF , "\r\n" ) ;
 
 CONoUTrAW3( "\r\n" , pstti->idAdam , "\r\n" ) ;
 
-etThread.delF( tinP , posti ) ;
-etThread.strMakeFromOsTextF( tinP , pstti , posti ) ; ___( pstti ) ;
+etThread.delF( tinBaseP , posti ) ;
+etThread.strMakeFromOsTextF( tinBaseP , pstti , posti ) ; ___( pstti ) ;
 ZE( strokeS* , pstti ) ;
 
-etThread.boxGetShadowF( tinP, posti , costi , T("///d/tmp/sor") ) ; ___( posti ) ;
+etThread.boxGetShadowF( tinBaseP, posti , costi , T("///d/tmp/sor") ) ; ___( posti ) ;
 ZE( countT   , costi ) ;
 ZE( osTextT* , posti ) ;
 

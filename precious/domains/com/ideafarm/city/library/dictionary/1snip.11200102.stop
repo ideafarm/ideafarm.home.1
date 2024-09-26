@@ -7,11 +7,11 @@
 //
 
 
-#define STOP ( F(tinP.flagsThreadMode2) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE && thirdC::thPrimeIF( tinP ) )
+#define STOP ( F(((tinNormalS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE && thirdC::thPrimeIF( tinBaseP ) )
 
 //IF THAT EVER BECOMES A PROBLEM, JUST PUT IN THE TEST FOR EXISTENCE AND ENSURE THAT thPrime CANNOT BE DESTRUCTED AFTER THE TEST AND BEFORE THE QUERY
 //THIS WILL BLOCK FOREVER (REALLY STOP!) IF USED VERY EARLY OR VERY LATE
-//OPTIMIZATION: REMOVED: " && thirdC::thPrimeExistsIF( tinP )"
+//OPTIMIZATION: REMOVED: " && thirdC::thPrimeExistsIF( tinBaseP )"
 
 /**/
 /*1*//*STOP*//*1*/

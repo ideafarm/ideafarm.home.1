@@ -8,7 +8,7 @@
 
 
 }
-    etThread.traceF( tinP , T("noteFromPaypalCBF [bGot,bValid]:    ")+TF2(bGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bValid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tinBaseP , T("noteFromPaypalCBF [bGot,bValid]:    ")+TF2(bGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bValid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //}
     //    }
@@ -19,10 +19,10 @@
     //        tKey   = T(psttLeverKVP) ;
     //
     //        strokeS* psttv = (strokeS*)(countT)swKVP ;
-    //        psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+    //        psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
     //    {
     //    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    //    countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+    //    countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
     //    TN( tValue , "" ) ;
     //    TN( tKey   , "" ) ;
     //{
@@ -36,7 +36,7 @@
         }
             THREADmODE2rESTORE
 
-            etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
+            etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
 
             ;
                 : tValuePaypalPayerEmail
@@ -78,25 +78,25 @@
 
             TN( tBody ,
 
-            textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
+            textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinBaseP , TAG( TAGiDnULL ) ) ;
 
             }
-                etThread.delF( tinP , psttFile ) ;
+                etThread.delF( tinBaseP , psttFile ) ;
                 }
                     }
-                        etThread.delF( tinP , psttShort ) ;
-                        etThread.delF( tinP , psttnu ) ;
+                        etThread.delF( tinBaseP , psttShort ) ;
+                        etThread.delF( tinBaseP , psttnu ) ;
                         tShort = T(psttShort) ;
-                        etThread.strBisectF( tinP , psttnu , psttShort , psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                        etThread.strBisectF( tinBaseP , psttnu , psttShort , psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                         ZE( strokeS* , psttShort ) ;
                         ZE( strokeS* , psttnu ) ;
                     {
-                    if( !tShort.csF( tinP ) )
+                    if( !tShort.csF( tinBaseP ) )
 
-                    etThread.traceF( tinP , T("wrote   ")+T(psttc1) ) ;
+                    etThread.traceF( tinBaseP , T("wrote   ")+T(psttc1) ) ;
                 {
                 FORsTRINGSiN1( psttFile )
-                etThread.boxPutUniqueF( tinP , psttFile , tListSubscriptionFileLong , WS( rec ) ) ; ___( psttFile ) ;
+                etThread.boxPutUniqueF( tinBaseP , psttFile , tListSubscriptionFileLong , WS( rec ) ) ; ___( psttFile ) ;
                 ZE( strokeS* , psttFile ) ;
 
                 }
@@ -108,11 +108,11 @@
             TN( tShort , "" ) ;
 
             }
-                if( !tHost.csF( tinP ) ) tHost = T("factories") ;
-                etThread.delF( tinP , psttHost ) ;
+                if( !tHost.csF( tinBaseP ) ) tHost = T("factories") ;
+                etThread.delF( tinBaseP , psttHost ) ;
                 else            tHost = T(psttHost) ;
-                if( !psttHost ) etThread.traceF( tinP , T("error: reverse DNS lookup on myself failed 105") ) ;
-                etThread.sockPsttHostF( tinP , psttHost ) ; ___( psttHost ) ;
+                if( !psttHost ) etThread.traceF( tinBaseP , T("error: reverse DNS lookup on myself failed 105") ) ;
+                etThread.sockPsttHostF( tinBaseP , psttHost ) ; ___( psttHost ) ;
                 ZE( strokeS* , psttHost ) ;
             {
             TN( tHost , "" ) ;
@@ -144,45 +144,45 @@
             rec << (countT)timeN1                     ; //ADDED IN FORMAT 5
             rec << (countT)7                          ; // IDfORMAT
             rec << finger                             ;
-            soulC rec( tinP , TAG( TAGiDnULL ) ) ;
+            soulC rec( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            if( !tZipUse.csF( tinP ) ) tZipUse = tValueAddressCity ;
+            if( !tZipUse.csF( tinBaseP ) ) tZipUse = tValueAddressCity ;
             TN( tZipUse , (strokeS*)tValueAddressZip ) ;
 
-            etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+            etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
 
             }
                 secret = ru ;
-                ranUniC ru( tinP , (measure04T)MAXcOUNTT + 1 ) ;
+                ranUniC ru( tinBaseP , (measure04T)MAXcOUNTT + 1 ) ;
             {
             if( !bDelete )
             ZE( countT , secret ) ;
 
             TN( tIdSubscriber , "" ) ; tIdSubscriber = TF4((countT)idSubscriber,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e) ;
 
-            count04T idSubscriber = bDelete ? 0 : etThread.etherDispenseSerialNumberF( tinP , T(bSandbox?"////"postCRAFTWORKfACTORY"/d/tmp/idSubscriberLath":"////"postCRAFTWORKfACTORY"/d/ideafarm.home.101/ephemeral/backed.up.daily/domains/com/ideafarm/wo.o.s.table/idSubscriberLath") ) ;
+            count04T idSubscriber = bDelete ? 0 : etThread.etherDispenseSerialNumberF( tinBaseP , T(bSandbox?"////"postCRAFTWORKfACTORY"/d/tmp/idSubscriberLath":"////"postCRAFTWORKfACTORY"/d/ideafarm.home.101/ephemeral/backed.up.daily/domains/com/ideafarm/wo.o.s.table/idSubscriberLath") ) ;
             // SO THIS IS NOT A SPF EVEN THOUGH IT REQUIRES factory1, SINCE IT WILL BLOCK UNTIL IT SUCCEEDS
             // THIS WILL BLOCK UNTIL IT CAN OPEN THE SERIAL NUMBER FILE, WHICH MIGHT TAKE A TICK IF factory1 IS REBOOTING
 
             boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
-            etThread.traceF( tinP , T("paypal subscription [tAction]: ")+tAction ) ;
+            etThread.traceF( tinBaseP , T("paypal subscription [tAction]: ")+tAction ) ;
 
             TN( tAction , bDelete ? "unregister" : "register" ) ;
-            boolT bDelete = !etThread.strCompareF( tinP , tValueTransType , T("subscr_cancel") ) ;
+            boolT bDelete = !etThread.strCompareF( tinBaseP , tValueTransType , T("subscr_cancel") ) ;
 
             putNegAM( *(countT*)&finger , FINGERnEG_WOtABLEcONFIRMEDeMAIL ) ;
             ZE( countT , finger ) ;
         {
         )
             )
-               || !etThread.strCompareF( tinP , tValueTransType  , T("subscr_cancel") )
-                  !etThread.strCompareF( tinP , tValueTransType  , T("subscr_signup") )
+               || !etThread.strCompareF( tinBaseP , tValueTransType  , T("subscr_cancel") )
+                  !etThread.strCompareF( tinBaseP , tValueTransType  , T("subscr_signup") )
             (
             &&
-            !etThread.strCompareF( tinP , tValueItemNumber , T("20200604") )
+            !etThread.strCompareF( tinBaseP , tValueItemNumber , T("20200604") )
         (
         if
 
@@ -239,20 +239,20 @@
                     }
                         }
                             }
-                                sessionsP.baton.ungrabF( tinP ) ;
+                                sessionsP.baton.ungrabF( tinBaseP ) ;
                                 }
-                                    if( idAcc == session.getIdAccountF( tinP ) ) session.privilegesF( tinP , session.privilegesF( tinP ) | flSESSIONpRIVILEGE_FULLhEADER ) ;
+                                    if( idAcc == session.getIdAccountF( tinBaseP ) ) session.privilegesF( tinBaseP , session.privilegesF( tinBaseP ) | flSESSIONpRIVILEGE_FULLhEADER ) ;
                                     sessionC& session = *(sessionC*)(countT)sessionsP.swSession ;
-                                    sessionsP.nnLever_peer = *(nicNameC*)sessionsP.swSession.leverF( tinP , idf ) ;
+                                    sessionsP.nnLever_peer = *(nicNameC*)sessionsP.swSession.leverF( tinBaseP , idf ) ;
                                 {
                                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                                countT cFlavors = sessionsP.swSession.cFlavorsF( tinP ) ;
-                                sessionsP.baton.grabF( tinP , TAG( TAGiDnULL ) ) ;
+                                countT cFlavors = sessionsP.swSession.cFlavorsF( tinBaseP ) ;
+                                sessionsP.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                             {
 
                             }
-                                etThread.delF( tinP , psttEmail ) ;
-                                etThread.boxPutF( tinP , T("//smtp/" ifcEMAIL_AUTOrESPONDERbANKtELLER "/")+T(psttEmail) , tSay , tSay.csF( tinP ) ) ;
+                                etThread.delF( tinBaseP , psttEmail ) ;
+                                etThread.boxPutF( tinBaseP , T("//smtp/" ifcEMAIL_AUTOrESPONDERbANKtELLER "/")+T(psttEmail) , tSay , tSay.csF( tinBaseP ) ) ;
 
                                 ) ;
 
@@ -269,14 +269,14 @@
                                 countT dollars = moneyT1 / 100 ;
                                 countT cents   = moneyT1 % 100 ;
 
-                                queryEmailFromIdAccountF( tinP , psttEmail , idAccCommission ) ; ___( psttEmail ) ;
+                                queryEmailFromIdAccountF( tinBaseP , psttEmail , idAccCommission ) ; ___( psttEmail ) ;
                                 ZE( strokeS* , psttEmail ) ;
                             {
                             if( idAccCommission )
 
                             }
-                                etThread.delF( tinP , psttEmail ) ;
-                                etThread.boxPutF( tinP , T("//smtp/" ifcEMAIL_AUTOrESPONDERbANKtELLER "/")+T(psttEmail) , tSay , tSay.csF( tinP ) ) ;
+                                etThread.delF( tinBaseP , psttEmail ) ;
+                                etThread.boxPutF( tinBaseP , T("//smtp/" ifcEMAIL_AUTOrESPONDERbANKtELLER "/")+T(psttEmail) , tSay , tSay.csF( tinBaseP ) ) ;
 
                                 ) ;
 
@@ -298,29 +298,29 @@
 
                                 TN( tSay , "" ) ; tSay = T(
 
-                                queryEmailFromIdAccountF( tinP , psttEmail , idAcc ) ; ___( psttEmail ) ;
+                                queryEmailFromIdAccountF( tinBaseP , psttEmail , idAcc ) ; ___( psttEmail ) ;
                                 ZE( strokeS* , psttEmail ) ;
                             {
 
-                            { depositS info( tinP , 1/*idAccBucketOwner*/ , 1/*idBucket*/ , 1/*idProduct*/ , idAcc/*Depositor*/ , 0/*pczNote*/ , timeN1 , timeN2 , 1/*idDeposit*/ , idAccCommission , moneyT1 , moneyT2 ) ; }
+                            { depositS info( tinBaseP , 1/*idAccBucketOwner*/ , 1/*idBucket*/ , 1/*idProduct*/ , idAcc/*Depositor*/ , 0/*pczNote*/ , timeN1 , timeN2 , 1/*idDeposit*/ , idAccCommission , moneyT1 , moneyT2 ) ; }
                             count8S c8n( 6 , 7 , 8 , 9 ) ;
 
                             //U::CONoUTrAW7( "deposit: [moneyT1,idAcc,idAccCommission]: " , moneyT1 , " " , idAcc , " " , idAccCommission , "\r\n" ) ;
                         
-                            etThread.osTimeNowUniqueF( tinP , timeN1 , timeN2 ) ;
+                            etThread.osTimeNowUniqueF( tinBaseP , timeN1 , timeN2 ) ;
                             ZE( sCountT , timeN2 ) ;
                             ZE( countT  , timeN1 ) ;
             
-                            else                        etThread.osTimeSubtractF( tinP , moneyT1 , moneyT2 , - cMoneyIn , 0 ) ;
+                            else                        etThread.osTimeSubtractF( tinBaseP , moneyT1 , moneyT2 , - cMoneyIn , 0 ) ;
                             if( (sCountT)cMoneyIn > 0 ) moneyT1 = cMoneyIn ;
                             ZE( sCountT , moneyT2 ) ;
                             ZE( countT  , moneyT1 ) ;
                         {
 
                         }
-                            etThread.delF( tinP , pstt1w ) ;
+                            etThread.delF( tinBaseP , pstt1w ) ;
                             }
-                                etThread.delF( tinP , pstt2w ) ;
+                                etThread.delF( tinBaseP , pstt2w ) ;
                                 }
 
 
@@ -328,12 +328,12 @@
                                     }
                                         }
                                             break ;
-                                            if( !etThread.strCompareF( tinP , psttc2 , tCustomKeyIdAccCommission ) ) idArm = 1 ;
+                                            if( !etThread.strCompareF( tinBaseP , psttc2 , tCustomKeyIdAccCommission ) ) idArm = 1 ;
                                         {
                                         default :
                                         }
                                             break ;
-                                            idAccCommission = etThread.strDigitsToSCountF( tinP , psttc2 , 36 ) ;
+                                            idAccCommission = etThread.strDigitsToSCountF( tinBaseP , psttc2 , 36 ) ;
                                         {
                                         case 1 :
                                     {
@@ -341,18 +341,18 @@
                                 {
                                 FORsTRINGSiN2( pstt2w )
                                 ZE( countT , idArm ) ;
-                                etThread.strWordsOldF( tinP , pstt2w , psttc1 , sttq , T(TbLACK)+T(":") ) ; ___( pstt2w ) ;
+                                etThread.strWordsOldF( tinBaseP , pstt2w , psttc1 , sttq , T(TbLACK)+T(":") ) ; ___( pstt2w ) ;
                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                 ZE( strokeS* , pstt2w ) ;
                             {
                             FORsTRINGSiN1( pstt1w )
-                            etThread.strWordsOldF( tinP , pstt1w , tValuePaypalCustom , sttq , T(TbLACK)+T(";") ) ; ___( pstt1w ) ;
+                            etThread.strWordsOldF( tinBaseP , pstt1w , tValuePaypalCustom , sttq , T(TbLACK)+T(";") ) ; ___( pstt1w ) ;
                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                             ZE( strokeS* , pstt1w ) ;
 
                             TN( tCustomKeyIdAccCommission , "idAccCommission" ) ;
                         {
-                        if( tValuePaypalCustom.csF( tinP ) )
+                        if( tValuePaypalCustom.csF( tinBaseP ) )
                         ZE( countT , idAccCommission ) ;
 
                     {
@@ -360,13 +360,13 @@
         
                     countT cMoneyIn = cMoneyGross - cMoneyFee ;
 
-                    countT cMoneyFee   = cMoneyF( tinP , etThread , tValuePaypalPaymentFee   ) ;
-                    countT cMoneyGross = cMoneyF( tinP , etThread , tValuePaypalPaymentGross ) ;
+                    countT cMoneyFee   = cMoneyF( tinBaseP , etThread , tValuePaypalPaymentFee   ) ;
+                    countT cMoneyGross = cMoneyF( tinBaseP , etThread , tValuePaypalPaymentGross ) ;
                 {
                 )
                     )
-                        !etThread.strCompareF( tinP , tValuePaypalPaymentStatus , T("Refunded" ) )
-                        !etThread.strCompareF( tinP , tValuePaypalPaymentStatus , T("Completed") ) ||
+                        !etThread.strCompareF( tinBaseP , tValuePaypalPaymentStatus , T("Refunded" ) )
+                        !etThread.strCompareF( tinBaseP , tValuePaypalPaymentStatus , T("Completed") ) ||
                     (
                     !POOP &&
                 (
@@ -376,8 +376,8 @@
                     }
                         }
                             //U::CONoUTrAW( T("updating account description NEW [")+*pptKey[offo]+T("]: \"")+T(pstto)+T("\"\r\n") ) ;
-                            if( pptValue[ offo ]->csF( tinP ) ) { etThread.strMakeF( tinP , LF , pstto , *pptValue[ offo ] ) ; ___( pstto ) ; }
-                            if( pstto ) { PUSE( tinP , *(byteT**)&pstto ) ; }
+                            if( pptValue[ offo ]->csF( tinBaseP ) ) { etThread.strMakeF( tinBaseP , LF , pstto , *pptValue[ offo ] ) ; ___( pstto ) ; }
+                            if( pstto ) { PUSE( tinBaseP , *(byteT**)&pstto ) ; }
                             //U::CONoUTrAW( T("updating account description OLD [")+*pptKey[offo]+T("]: \"")+T(pstto)+T("\"\r\n") ) ;
                             strokeS*& pstto = *pppstto[ offo ] ;
                         {
@@ -418,28 +418,28 @@
 
                     if( F(info.flagsThis1) & flACCOUNT1_FYIdOESnOTeXIST ) info.flagsMode = fliACCOUNTmODE_LISTmEdIRECTORY | fliACCOUNTmODE_OWNERcONFIRMED ;
 
-                    accountS info( tinP , etThread , idAcc , flACCOUNT1_SET , flACCOUNT2_QUERYfLAGSmODE | flACCOUNT2_QUERYzIPaT ) ; //MUST QUERY FOR ALL FIELDS THAT ARE CAPTURED FROM ACCOUNT OWNER OR FROM ANOTHER SOURCE OTHER THAN PAYPAL
+                    accountS info( tinBaseP , etThread , idAcc , flACCOUNT1_SET , flACCOUNT2_QUERYfLAGSmODE | flACCOUNT2_QUERYzIPaT ) ; //MUST QUERY FOR ALL FIELDS THAT ARE CAPTURED FROM ACCOUNT OWNER OR FROM ANOTHER SOURCE OTHER THAN PAYPAL
                 {
             {
             if( idAcc )
 
-            const countT idAcc = queryIdAccountFromEmailF( tinP , tValuePaypalPayerEmail ) ;
+            const countT idAcc = queryIdAccountFromEmailF( tinBaseP , tValuePaypalPayerEmail ) ;
 
         #if defined( NEVERdEFINED )
         //U:: 20120905: COMMENTED OUT TO BRING UP HTTP SERVER WITH NO DATABASE FUNCTIONALITY; ALL DATABASE FUNCTIONALITY CODE NEEDS TO BE MIGRATED TO THE NEW LIST SUPPORT IN poolC
 
-        const countT idTest = !tValueIdTest.csF( tinP ) ? 0 : etThread.strDigitsToSCountF( tinP , tValueIdTest ) ;
+        const countT idTest = !tValueIdTest.csF( tinBaseP ) ? 0 : etThread.strDigitsToSCountF( tinBaseP , tValueIdTest ) ;
 
         }
             }
-                if( !etThread.strCompareF( tinP , psttLeverKVP , *pptKey[ offk ] ) ) *pptValue[ offk ] = T((strokeS*)(countT)swKVP) ;
+                if( !etThread.strCompareF( tinBaseP , psttLeverKVP , *pptKey[ offk ] ) ) *pptValue[ offk ] = T((strokeS*)(countT)swKVP) ;
             {
             for( countT offk = 0 ; offk < sizeof pptKey / sizeof pptKey[ 0 ] ; offk ++ )
 
-            psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+            psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+        countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
 
         } ;
             &tValueItemNumber                    ,
@@ -596,12 +596,12 @@
             if( POOP ) POOPR
 
             }
-                etThread.delF( tinP , psttBuffer ) ;
+                etThread.delF( tinBaseP , psttBuffer ) ;
                 if( psttBuffer && psttBuffer->idAdam ) tValidationReply += T(psttBuffer) ;
 
                 }
-                    ++ s ; etThread.osSleepF( tinP , TOCK ) ;
-                    etThread.traceF( tinP , TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": napping because did not receive a valid reply from www.paypal.com to confirm that the ipn is valid") ) ;
+                    ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
+                    etThread.traceF( tinBaseP , TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": napping because did not receive a valid reply from www.paypal.com to confirm that the ipn is valid") ) ;
                 {
                 if( !bGot && cTries )
 
@@ -609,7 +609,7 @@
 
                 bGot = 1 ;
                 bValid = ostVerdict == 'V' ;
-                etThread.traceF( tinP , T("verdict:    ")+T(postVerdict) ) ;
+                etThread.traceF( tinBaseP , T("verdict:    ")+T(postVerdict) ) ;
                 osTextT postVerdict[ 2 ] = { ostVerdict , 0 } ;
 
                 }
@@ -636,22 +636,22 @@
                         if( bArmed )
 
                         }
-                            etThread.strFuseF( tinP , psttBuffer , T(post2) ) ;
+                            etThread.strFuseF( tinBaseP , psttBuffer , T(post2) ) ;
                             LOGrAW( post2 ) ;                                       //U:: THIS IS REDUNDANT AND SHOULD BE REMOVED
                             osTextT post2[] = { ostNow , 0 } ;
                         {
 
-                        if( !psttBuffer ) { etThread.strMakeF( tinP , LF , psttBuffer , 0 , TUCK << 2 ) ; ___( psttBuffer ) ; }
+                        if( !psttBuffer ) { etThread.strMakeF( tinBaseP , LF , psttBuffer , 0 , TUCK << 2 ) ; ___( psttBuffer ) ; }
 
                         }
-                            etThread.delF( tinP , psttBuffer ) ;
+                            etThread.delF( tinBaseP , psttBuffer ) ;
                             tValidationReply += T(psttBuffer) ;
                         {
                         if( psttBuffer && !psttBuffer[ 2 ].idAdam )
 
                         osTextT ostNow = post5[ ( cIn - 1 ) % sizeof post5 ] ;
 
-                        sock.readF( tinP , post5 + ( cIn ++ ) % sizeof post5 , 1 ) ;
+                        sock.readF( tinBaseP , post5 + ( cIn ++ ) % sizeof post5 , 1 ) ;
                     {
                     while( !POOP )
                     ZE( countT , cIn ) ;
@@ -663,15 +663,15 @@
                 ZE( strokeS* , psttBuffer ) ;
                 tValidationReply = T("") ;
 
-                sock.writeF( tinP , (osTextT*)tValidationRequest , tValidationRequest.csF( tinP ) ) ;
-                sock.connectF( tinP , 443 , nnPayPal ) ;
-                socketC sock( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+                sock.writeF( tinBaseP , (osTextT*)tValidationRequest , tValidationRequest.csF( tinBaseP ) ) ;
+                sock.connectF( tinBaseP , 443 , nnPayPal ) ;
+                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
             {
             if( nnPayPal ) while( !bGot && cTries -- )
-            sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             countT cTries = TUCK >> 4 ;
 
-            nicNameC nnPayPal = socketC::nicNameIF( tinP , *tinP.pEtScratch , T(bSandbox?"www.sandbox.paypal.com":"www.paypal.com") ) ;
+            nicNameC nnPayPal = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , T(bSandbox?"www.sandbox.paypal.com":"www.paypal.com") ) ;
         
             SCOOPS
         {
@@ -680,7 +680,7 @@
         }
             tValidationRequest = tSay1+TF4(costBodyAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tSay2+tSayCmd+tSayBody ;
 
-            countT costBodyAll = tSayCmd.csF( tinP ) + tSayBody.csF( tinP ) ;
+            countT costBodyAll = tSayCmd.csF( tinBaseP ) + tSayBody.csF( tinBaseP ) ;
 
             TN( tSayBody , postBodyP ) ;
             TN( tSayCmd , "cmd=_notify-validate&" ) ;
@@ -718,7 +718,7 @@
     ZE( boolT , bGot ) ;
     ZE( boolT , bValid ) ;
 {
-/*1*/voidT noteFromPaypalCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT noteFromPaypalCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

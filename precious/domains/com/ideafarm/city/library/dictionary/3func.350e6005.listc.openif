@@ -14,8 +14,8 @@
     }
         }
             }
-                ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
-                if( tinP.pEther ) tinP.pEther->traceF( tinP , T("listC::openIF / napping before retrying") ) ;
+                ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
+                if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("listC::openIF / napping before retrying") ) ;
             {
             else if( !hListP )
                  if( !bRetry ) break ;
@@ -32,8 +32,8 @@
 
             }
                 //CONoUTrAW( "\r\n" ) ;
-                //CONoUTrAW( tinP.pPoolUse->postNameF( tinP ) ) ;
-                //CONoUTrAW5( "opened list [pPoolUse,pList]: " , tinP.pPoolUse , " " , pList , " " ) ; //U::
+                //CONoUTrAW( ((tinNormalS&)tinBaseP).pPoolUse->postNameF( tinBaseP ) ) ;
+                //CONoUTrAW5( "opened list [pPoolUse,pList]: " , ((tinNormalS&)tinBaseP).pPoolUse , " " , pList , " " ) ; //U::
 
                 hListP.osF( ifcIDtYPEhANDLE_LISTING , (countT)pList ) ;
                 if( !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
@@ -55,26 +55,26 @@
                 if( pList && !( pList->flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
 
                 POPtINaRGS
-                pList = (listC*)tinP.ta.pushed.u.listWalk.util.pcP[ 2 ] ;
+                pList = (listC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] ;
                 if( F(flagsWalk) & flLISTwALKrETURNcODE_NEWlISTING ) flagsRC &= ~( F(flLISToPENrETURNcODE_LISTeXISTED) ) ;
-                flagsT flagsWalk = pList->walkF( tinP , idGrabLayerP ) ;
-                tinP.ta.pushed.u.listWalk.util.pcP[ 2 ]               = 0 ;
-                tinP.ta.pushed.u.listWalk.util.pcP[ 1 ]               = flagsP & flagsMask ;
-                tinP.ta.pushed.u.listWalk.util.pcP[ 0 ]               = pczKidP[ offn ] ;
-                tinP.ta.pushed.u.listWalk.cbf.ppPreallocatedListsP    = ppPreallocatedListsP ;
-                tinP.ta.pushed.u.listWalk.walk.pHandleHiP             = ppHand[ 1 ] ;
-                tinP.ta.pushed.u.listWalk.walk.pHandleLoP             = ppHand[ 0 ] ;
-                tinP.ta.pushed.u.listWalk.walk.pOffWothP              = &offWoth ;
-                tinP.ta.pushed.u.listWalk.walk.pHandleRootP           = &hListDadP ;
+                flagsT flagsWalk = pList->walkF( tinBaseP , idGrabLayerP ) ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ]               = 0 ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ]               = flagsP & flagsMask ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]               = pczKidP[ offn ] ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.ppPreallocatedListsP    = ppPreallocatedListsP ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleHiP             = ppHand[ 1 ] ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleLoP             = ppHand[ 0 ] ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pOffWothP              = &offWoth ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleRootP           = &hListDadP ;
 
-                tinP.ta.retained.u.listWalk.util.pcP[ 4 ]             = bOfSet ;
+                ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 4 ]             = bOfSet ;
 
                 ;
                     : flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK
                     ? flLISTwALK_CALLERgRABBEDrOOT | flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK | flLISTwALK_RETAINrOOT
-                tinP.ta.pushed.u.listWalk.walk.flagsWalkP = !offn && F(flagsP) & flLISToPEN_RETAINrOOT
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = !offn && F(flagsP) & flLISToPEN_RETAINrOOT
 
-                tinP.ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkAttachListIfCBF ;
+                ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkAttachListIfCBF ;
                 PUSHtINaRGS
 
                 if( !pczKidP[ offn + 1 ] ) flagsMask = - 1 ;
@@ -85,8 +85,8 @@
             flagsRC |= flLISToPENrETURNcODE_LISTeXISTED ;
 
             ZE( countT , offWoth ) ;
-            ppHand[ 1 ] = new( 0 , tinP , pbHi , SIZEOF_handleC ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-            ppHand[ 0 ] = new( 0 , tinP , pbLo , SIZEOF_handleC ) handleC( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            ppHand[ 1 ] = new( 0 , tinBaseP , pbHi , SIZEOF_handleC ) handleC( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            ppHand[ 0 ] = new( 0 , tinBaseP , pbLo , SIZEOF_handleC ) handleC( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
             handleC* ppHand[ 2 ] ;
 
             byteT* const pbHi = pbBoth + SIZEOF_handleC ;
@@ -114,11 +114,11 @@
             //{
             //U::TO FIND A BUG
 
-            if( bRetry ) PUSE.refresh_ppSlots_F( tinP ) ;
+            if( bRetry ) PUSE.refresh_ppSlots_F( tinBaseP ) ;
         {
         while( !hListP )
         boolT bRetry = F(flagsP) & flLISToPEN_REFRESHaNDrETRYfOREVER ;
-        sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
@@ -147,7 +147,7 @@
 
     flagsT flagsRC = flLISToPENrETURNcODE_null ;
 {
-/*1*/flagsT listC::openIF( tinS& tinP , handleC& hListP , handleC& hListDadP , const countT* const pczKidP , const flagsT flagsP , const countT idGrabLayerP , listC** const ppPreallocatedListsP )/*1*/
+/*1*/flagsT listC::openIF( tinBaseS& tinBaseP , handleC& hListP , handleC& hListDadP , const countT* const pczKidP , const flagsT flagsP , const countT idGrabLayerP , listC** const ppPreallocatedListsP )/*1*/
 
 //CS:CODEsYNCH: PSEUDODUPLICATE: 350e6005 35159005
 
@@ -166,7 +166,7 @@
   this handle will remain open until after i return
   open handle to a listC in the current pool
  hListFromP
- tinP
+ tinBaseP
 arguments
 i open the specified listC object, creating all specified dad lists in the current pool that do not exist
 /*

@@ -11,13 +11,13 @@
 
 REST
 
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
 
 }
-    etThread.strokeF( tinP , T("for lever ")+TF1(lever)+T(", the test value was found at position ")+TF1(ids)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("for lever ")+TF1(lever)+T(", the test value was found at position ")+TF1(ids)+T("\r\n") ) ;
     ids = sws( tTest ) ;
 
     TN( tTest , "three" ) ;
@@ -25,10 +25,10 @@ etThread.strokeF( tinP , T("\r\n\r\npress the enter key") ) ;
 for( lever = 1 ; lever <= 4 ; lever ++ )
 
 }
-    ids = 0 ; sws.sinkF( tinP , ids , t4 ) ;
-    ids = 0 ; sws.sinkF( tinP , ids , t3 ) ;
-    ids = 0 ; sws.sinkF( tinP , ids , t2 ) ;
-    ids = 0 ; sws.sinkF( tinP , ids , t1 ) ;
+    ids = 0 ; sws.sinkF( tinBaseP , ids , t4 ) ;
+    ids = 0 ; sws.sinkF( tinBaseP , ids , t3 ) ;
+    ids = 0 ; sws.sinkF( tinBaseP , ids , t2 ) ;
+    ids = 0 ; sws.sinkF( tinBaseP , ids , t1 ) ;
 {
 for( lever = 1 ; lever <= 4 ; lever ++ )
 ZE( countT , ids ) ;
@@ -38,7 +38,7 @@ TN( t3 , "three" ) ;
 TN( t2 , "two" ) ;
 TN( t1 , "one" ) ;
 
-switchStackC sws( tinP , ether , TAG( TAGiDnULL ) , flSTACKc_null , lever ) ;
+switchStackC sws( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , lever ) ;
 ZE( countT , lever ) ;
 
 TODO

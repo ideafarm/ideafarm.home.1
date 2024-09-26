@@ -10,45 +10,45 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinP , TOCK ) ;
-etThread.strokeF( tinP , T("ok\r\n") ) ;
-etThread.batonCloseF( tinP , handle ) ;
+etThread.osSleepF( tinBaseP , TOCK ) ;
+etThread.strokeF( tinBaseP , T("ok\r\n") ) ;
+etThread.batonCloseF( tinBaseP , handle ) ;
 
-sgn4.waitF( tinP ) ;
-sgn3.waitF( tinP ) ;
-sgn2.waitF( tinP ) ;
-sgn1.waitF( tinP ) ;
+sgn4.waitF( tinBaseP ) ;
+sgn3.waitF( tinBaseP ) ;
+sgn2.waitF( tinBaseP ) ;
+sgn1.waitF( tinBaseP ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , &sgn4 , flTHREADlAUNCH_null , 0 , 0 , handle , 4 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , &sgn3 , flTHREADlAUNCH_null , 0 , 0 , handle , 3 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , &sgn2 , flTHREADlAUNCH_null , 0 , 0 , handle , 2 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , &sgn1 , flTHREADlAUNCH_null , 0 , 0 , handle , 1 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sgn4 , flTHREADlAUNCH_null , 0 , 0 , handle , 4 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sgn3 , flTHREADlAUNCH_null , 0 , 0 , handle , 3 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sgn2 , flTHREADlAUNCH_null , 0 , 0 , handle , 2 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sgn1 , flTHREADlAUNCH_null , 0 , 0 , handle , 1 ) ; }
 
-signC sgn4(  tinP , TAG( TAGiDnULL ) ) ;
-signC sgn3(  tinP , TAG( TAGiDnULL ) ) ;
-signC sgn2(  tinP , TAG( TAGiDnULL ) ) ;
-signC sgn1(  tinP , TAG( TAGiDnULL ) ) ;
+signC sgn4(  tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgn3(  tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgn2(  tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgn1(  tinBaseP , TAG( TAGiDnULL ) ) ;
 
-etThread.batonOpenF( tinP , handle , bCreator ) ;
+etThread.batonOpenF( tinBaseP , handle , bCreator ) ;
 ZE( boolT , bCreator ) ;
-handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) ;
+handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) ;
 
 TODO
 
 DONE( tmF )
 
-etThread.batonLetGoF( tinP , handle ) ;
+etThread.batonLetGoF( tinBaseP , handle ) ;
 
 }
-    etThread.osSleepF( tinP , TUCK * 64 ) ;
-    etThread.strokeF( tinP , TF1(id) ) ;
+    etThread.osSleepF( tinBaseP , TUCK * 64 ) ;
+    etThread.strokeF( tinBaseP , TF1(id) ) ;
 {
 while( cTries -- )
 countT cTries = 8 ;
 
-etThread.batonGrabF( tinP , handle ) ;
+etThread.batonGrabF( tinBaseP , handle ) ;
 
 const countT id     = pTaskP ? pTaskP->c2 : 0 ;
 const countT handle = pTaskP ? pTaskP->c1 : 0 ;

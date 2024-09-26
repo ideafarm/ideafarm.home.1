@@ -16,7 +16,7 @@
             if( bQuit ) pbi = 0 ;
 
             }
-                ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
+                ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
             {
             while( !*(countT*)pbi && !bQuit )                                                       // NAP UNTIL THE SLOT'S WRITING HAS BEEN COMPLETED ; IF MULTIPLE READERS, THE LUCKY READER WILL PROCEED AND THE OTHERS WILL BLOCK HERE UNTIL THEIR SLOTS HAVE BEEN WRITTEN
 
@@ -34,16 +34,16 @@
         if( !bQuit && cRead < cWriteEnd )
 
         }
-            ++ s ; thirdC::dosSleepWinkIF( tinP ) ;
+            ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
         {
         while( cRead == cWriteEnd && !bQuit && !( F(flagsP) & flFUNNELhORNcrEAD_NOwAIT ) )          // NAP UNTIL EXIST UNREAD SLOTS ; MULTIPLE READERS MIGHT BE RELEASED HERE
     {
     for(;;)
 
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;                                                           // THE RACE COMMENTS HERE ASSUME A SINGLE WRITE HAS OCCURED
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;                                                           // THE RACE COMMENTS HERE ASSUME A SINGLE WRITE HAS OCCURED
     ZE( const byteT* , pbi ) ;                                                                      // IF MULTIPLE READERS, THEY ARE RACING HERE
 {
-/*1*/const byteT* funnelHornC::readF( tinS& tinP , const flagsT flagsP )/*1*/
+/*1*/const byteT* funnelHornC::readF( tinBaseS& tinBaseP , const flagsT flagsP )/*1*/
 
 /**/
 */

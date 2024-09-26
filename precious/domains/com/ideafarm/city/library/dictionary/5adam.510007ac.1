@@ -9,7 +9,7 @@
                             
 REST
 
-etherC::loafIF( tinP ) ;
+etherC::loafIF( tinBaseP ) ;
 
 etThread.osThreadF( TaRG1( tmSayF ) ) ;
 
@@ -21,10 +21,10 @@ TODO
 DONE( tmHearF )
 
 }
-    etThread.delF( tinP , posti ) ;
-    etThread.traceF( tinP , T("called readF [nnHe,idpHe,posti]:    ")+T(nnHe)+T("    ")+TF2(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(posti) ) ;
-    socki.readF( tinP , posti , costi , idpHe , nnHe , 0 , 0 ) ; ___( posti ) ;
-    etThread.traceF( tinP , T("calling readF") ) ;
+    etThread.delF( tinBaseP , posti ) ;
+    etThread.traceF( tinBaseP , T("called readF [nnHe,idpHe,posti]:    ")+T(nnHe)+T("    ")+TF2(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(posti) ) ;
+    socki.readF( tinBaseP , posti , costi , idpHe , nnHe , 0 , 0 ) ; ___( posti ) ;
+    etThread.traceF( tinBaseP , T("calling readF") ) ;
     ZE( countT , idpHe ) ;
     nicNameC nnHe ;
     ZE( countT   , costi ) ;
@@ -32,26 +32,26 @@ DONE( tmHearF )
 {
 while( !POOP && !ether )
 
-countT idpMe = socki.bindF( tinP , 12345 , nnAny , 1 , 0 ) ;
-socketC socki( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postADDRgROUP) , 0 , 0 , 0 , 0 , 0 ) ;
+countT idpMe = socki.bindF( tinBaseP , 12345 , nnAny , 1 , 0 ) ;
+socketC socki( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postADDRgROUP) , 0 , 0 , 0 , 0 , 0 ) ;
 
-nicNameC nnAny = socketC::nicNameIF( tinP , etThread , T("::") ) ;
+nicNameC nnAny = socketC::nicNameIF( tinBaseP , etThread , T("::") ) ;
 
 TASK( tmHearF )
 
 DONE( tmSayF )
 
-etThread.traceF( tinP , T("wrote 1") ) ;
-socko.writeF( tinP , 12345 , nicNameC() , tSay , tSay.csF( tinP ) ) ;
-etThread.traceF( tinP , T("writing 1") ) ;
+etThread.traceF( tinBaseP , T("wrote 1") ) ;
+socko.writeF( tinBaseP , 12345 , nicNameC() , tSay , tSay.csF( tinBaseP ) ) ;
+etThread.traceF( tinBaseP , T("writing 1") ) ;
 
 TN( tSay , "Hello, Jesus!" ) ;
 
-socketC socko( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postADDRgROUP) , 0 , 0 , 0 , 0 , 0 ) ;
+socketC socko( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postADDRgROUP) , 0 , 0 , 0 , 0 , 0 ) ;
 
 }
-    ++ s ; ether.osSleepF( tinP , TOCK << 2 ) ;
-    sleepC s( tinP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
 
 TASK( tmSayF )

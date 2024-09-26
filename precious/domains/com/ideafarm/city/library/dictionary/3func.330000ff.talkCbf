@@ -11,9 +11,9 @@
     }
         }
             DEL( prPosts ) ;
-            if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+            if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-            etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+            etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
             ZE( pbRefC* , prPosts ) ;
 
             ) ;
@@ -29,7 +29,7 @@
             TN( tQuery , bSecretIsOK ? "?secretisok=yes&badge=" : "?secretisok=no" ) ;
         {
 
-        if( !tTopic.csF( tinP ) ) tTopic = T("Open!") ;
+        if( !tTopic.csF( tinBaseP ) ) tTopic = T("Open!") ;
 
         /***************************************************************************************************/
         /***************************************************************************************************/
@@ -45,24 +45,24 @@
             }
                 break ;
 
-                etThread.delF( tinP , psttShort ) ;
+                etThread.delF( tinBaseP , psttShort ) ;
 
                 }
                     if( POOP ) POOPR
 
                     }
                         }
-                            etThread.traceF( tinP , T("talkCBF: file error: unexpected contents [filename]:    ")+T(psttShort) ) ;
+                            etThread.traceF( tinBaseP , T("talkCBF: file error: unexpected contents [filename]:    ")+T(psttShort) ) ;
                             POOPRqUIET
                         {
                         if( POOP )
 
-                        etThread.delF( tinP , psttValueTopic ) ;
+                        etThread.delF( tinBaseP , psttValueTopic ) ;
                         tTopic = T(psttValueTopic) ;
                         newTopic >> psttValueTopic ; ___( psttValueTopic ) ;
                         ZE( strokeS* , psttValueTopic ) ;
 
-                        etThread.delF( tinP , psttTimeForeign ) ;
+                        etThread.delF( tinBaseP , psttTimeForeign ) ;
                         newTopic >> psttTimeForeign ; ___( psttTimeForeign ) ;
                         ZE( strokeS* , psttTimeForeign ) ;
 
@@ -81,8 +81,8 @@
                     else
                     if( POOP ) { POOPRqUIET }
 
-                    tinP.pEtScratch->boxGetShadowF( tinP , newTopic , tListNewTopicFileLong ) ;
-                    soulC newTopic( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , newTopic , tListNewTopicFileLong ) ;
+                    soulC newTopic( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
                     SCOOPS
                 {
@@ -106,13 +106,13 @@
                     }
                         DEL( pInfo ) ;
                         }
-                            if( !ids ) etThread.delF( tinP , psttShort ) ;
-                            stNewTopicFileShort.sinkF( tinP , ids , psttShort , flSTACKsINK_UNIQUE ) ;
+                            if( !ids ) etThread.delF( tinBaseP , psttShort ) ;
+                            stNewTopicFileShort.sinkF( tinBaseP , ids , psttShort , flSTACKsINK_UNIQUE ) ;
                             ZE( countT , ids ) ;
 
                             }
-                                etThread.delF( tinP , psttnu ) ;
-                                etThread.strBisectF( tinP , psttnu , psttShort , pInfo->psttIfoName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                etThread.delF( tinBaseP , psttnu ) ;
+                                etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                                 ZE( strokeS* , psttnu ) ;
                             {
                             ZE( strokeS* , psttShort ) ;
@@ -127,18 +127,18 @@
                         }
                             }
                                 break ;
-                                etThread.traceF( tinP , T("disk or file error 126") ) ;
+                                etThread.traceF( tinBaseP , T("disk or file error 126") ) ;
                                 POOPR
                             {
                             if( POOP )
-                            tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , psttc1 , &pat ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , psttc1 , &pat ) ;
                             SCOOPS
                         {
                         IFsCRATCH
                         ZE( infoFileS* , pInfo ) ;
                     {
                     do
-                    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                 {
                 FORsTRINGSiN1( (strokeS*)tListNewTopicPath )
 
@@ -148,10 +148,10 @@
                 {
                 TlIST( tListNewTopicPath ) ;
 
-                patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                 TN( tPattern , "" ) ; tPattern = T("newTopic")+T(bSandbox?".sandbox.*":".live.*") ;
             {
-            stackC stNewTopicFileShort( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 ) ;
+            stackC stNewTopicFileShort( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 ) ;
         {
         TN( tTopic , "" ) ;
 
@@ -168,9 +168,9 @@
         }
             }
                 DEL( prPosts ) ;
-                if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
 
                 ) ;
 
@@ -278,9 +278,9 @@
 
             }
                 DEL( prPosts ) ;
-                if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
                 ZE( pbRefC* , prPosts ) ;
 
                 ) ;
@@ -321,7 +321,7 @@
             /****                                                                                           ****/
             /***************************************************************************************************/
 
-            //etThread.traceF( tinP , T(bTopicIsFresh?"set TOPIC IS FRESH":"SET TOPIC IS *** NOT *** FRESH") ) ;
+            //etThread.traceF( tinBaseP , T(bTopicIsFresh?"set TOPIC IS FRESH":"SET TOPIC IS *** NOT *** FRESH") ) ;
 
             }
                 }
@@ -331,9 +331,9 @@
                         }
                             if( !timeE2 && timeE1 < TICK ) bTopicIsFresh = 1 ;
 
-                            //etThread.traceF( tinP , T("age: ")+TT(timeE1,timeE2) ) ;
-                            etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , pInfo->timeCreated1 , pInfo->timeCreated2 ) ;
-                            etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+                            //etThread.traceF( tinBaseP , T("age: ")+TT(timeE1,timeE2) ) ;
+                            etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , pInfo->timeCreated1 , pInfo->timeCreated2 ) ;
+                            etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
                             ZE( sCountT , timeE2 ) ;
                             ZE( countT , timeE1 ) ;
                         {
@@ -347,18 +347,18 @@
                         }
                             }
                                 break ;
-                                etThread.traceF( tinP , T("disk or file error 334") ) ;
+                                etThread.traceF( tinBaseP , T("disk or file error 334") ) ;
                                 POOPR
                             {
                             if( POOP )
-                            tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , psttc1 , &pat ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , psttc1 , &pat ) ;
                             SCOOPS
                         {
                         IFsCRATCH
                         ZE( infoFileS* , pInfo ) ;
                     {
                     do
-                    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
                     if( bTopicIsFresh ) break ;
                 {
@@ -370,7 +370,7 @@
                 {
                 TlIST( tListSaidPath ) ;
 
-                patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                 TN( tPattern , "" ) ; tPattern = T("said.table")+T(bSandbox?".sandbox.*":".live.*") ;
             {
 
@@ -382,9 +382,9 @@
 
             }
                 DEL( prPosts ) ;
-                if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
 
                 ) ;
 
@@ -428,9 +428,9 @@
         }
             }
                 DEL( prPosts ) ;
-                if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
 
                 ) ;
 
@@ -479,9 +479,9 @@
 
             }
                 DEL( prPosts ) ;
-                if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
 
                 ) ;
 
@@ -524,22 +524,22 @@
                     THREADmODE2rESTORE
 
                     }
-                        etThread.delF( tinP , psttFile ) ;
+                        etThread.delF( tinBaseP , psttFile ) ;
                         }
                             }
-                                etThread.delF( tinP , psttShort ) ;
-                                etThread.delF( tinP , psttnu ) ;
+                                etThread.delF( tinBaseP , psttShort ) ;
+                                etThread.delF( tinBaseP , psttnu ) ;
                                 tShort = T(psttShort) ;
-                                etThread.strBisectF( tinP , psttnu , psttShort , psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                etThread.strBisectF( tinBaseP , psttnu , psttShort , psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                                 ZE( strokeS* , psttShort ) ;
                                 ZE( strokeS* , psttnu ) ;
                             {
-                            if( !tShort.csF( tinP ) )
+                            if( !tShort.csF( tinBaseP ) )
 
-                            //etThread.traceF( tinP , T("wrote   ")+T(psttFile) ) ;
+                            //etThread.traceF( tinBaseP , T("wrote   ")+T(psttFile) ) ;
                         {
                         FORsTRINGSiN1( psttFile )
-                        etThread.boxPutUniqueF( tinP , psttFile , tListSaidAnonFileLong , WS( said ) ) ; ___( psttFile ) ;
+                        etThread.boxPutUniqueF( tinBaseP , psttFile , tListSaidAnonFileLong , WS( said ) ) ; ___( psttFile ) ;
                         ZE( strokeS* , psttFile ) ;
 
                         }
@@ -551,11 +551,11 @@
                     TN( tShort , "" ) ;                                                                                                                 // said.anon.table.sandbox.000b418c.c3aab58a.326b92eb.86800000.44d30000.5639f662.0.0.factory 1
 
                     }
-                        if( !tHost.csF( tinP ) ) tHost = T("factories") ;
-                        etThread.delF( tinP , psttHost ) ;
+                        if( !tHost.csF( tinBaseP ) ) tHost = T("factories") ;
+                        etThread.delF( tinBaseP , psttHost ) ;
                         else            tHost = T(psttHost) ;
-                        if( !psttHost ) etThread.traceF( tinP , T("error: reverse DNS lookup on myself failed 493") ) ;
-                        etThread.sockPsttHostF( tinP , psttHost ) ; ___( psttHost ) ;
+                        if( !psttHost ) etThread.traceF( tinBaseP , T("error: reverse DNS lookup on myself failed 493") ) ;
+                        etThread.sockPsttHostF( tinBaseP , psttHost ) ; ___( psttHost ) ;
                         ZE( strokeS* , psttHost ) ;
                     {
                     TN( tHost , "" ) ;
@@ -570,35 +570,35 @@
                     said << timeN1 ;
                     said << (countT)1 ;             // IDfORMAT
                     said << finger ;
-                    soulC said( tinP , TAG( TAGiDnULL ) ) ;
+                    soulC said( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                     putNegAM( *(countT*)&finger , FINGERnEG_WOtABLEsAIDaNON ) ;
                     ZE( countT , finger ) ;
 
-                    textC tTimeForeign( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
+                    textC tTimeForeign( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT , timeN1 ) ;
 
                     }
-                        etThread.delF( tinP , psttClean ) ;
+                        etThread.delF( tinBaseP , psttClean ) ;
                         tSpeechClean = T(psttClean) ;
 
-                        etThread.delF( tinP , psttRaw ) ;
-                        etThread.strReplaceAnyF( tinP , psttClean , psttRaw , T("<>") , tDot ) ; ___( psttClean ) ;
+                        etThread.delF( tinBaseP , psttRaw ) ;
+                        etThread.strReplaceAnyF( tinBaseP , psttClean , psttRaw , T("<>") , tDot ) ; ___( psttClean ) ;
                         ZE( strokeS* , psttClean ) ;
 
-                        etThread.strMakeF( tinP , LF , psttRaw , tValueSpeechAnon ) ; ___( psttRaw ) ;
+                        etThread.strMakeF( tinBaseP , LF , psttRaw , tValueSpeechAnon ) ; ___( psttRaw ) ;
                         ZE( strokeS* , psttRaw ) ;
                     {
                     TN( tSpeechClean , "" ) ;                //SANITIZE THE SPEECH TO SUPPRESS ALL HTML
 
                     }
                         DEL( prPosts ) ;
-                        if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                        if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                        etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                        etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
                         ZE( pbRefC* , prPosts ) ;
 
                         ) ;
@@ -615,9 +615,9 @@
                 else
                 }
                     DEL( prPosts ) ;
-                    if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                    if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                    etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                    etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
                     ZE( pbRefC* , prPosts ) ;
 
                     ) ;
@@ -641,9 +641,9 @@
                 else if( bBlocked3 )
                 }
                     DEL( prPosts ) ;
-                    if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                    if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                    etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                    etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
                     ZE( pbRefC* , prPosts ) ;
 
                     ) ;
@@ -682,18 +682,18 @@
                                 }
                                     }
                                         break ;
-                                        etThread.traceF( tinP , T("disk or file error 656") ) ;
+                                        etThread.traceF( tinBaseP , T("disk or file error 656") ) ;
                                         POOPR
                                     {
                                     if( POOP )
-                                    tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , psttc1 ) ;
+                                    ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , psttc1 ) ;
                                     SCOOPS
                                 {
                                 IFsCRATCH
                                 ZE( infoFileS* , pInfo ) ;
                             {
                             do
-                            handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                            handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                             ZE( countT , cFiles ) ;
 
                             if( bBlocked3 ) break ;
@@ -717,24 +717,24 @@
                                 }
                                     }
                                         break ;
-                                        etThread.traceF( tinP , T("disk or file error 681") ) ;
+                                        etThread.traceF( tinBaseP , T("disk or file error 681") ) ;
                                         POOPR
                                     {
                                     if( POOP )
-                                    tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , psttc1 , &pat ) ;
+                                    ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , psttc1 , &pat ) ;
                                     SCOOPS
                                 {
                                 IFsCRATCH
                                 ZE( infoFileS* , pInfo ) ;
                             {
                             do
-                            handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                            handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
                             if( bBlocked2 ) break ;
                         {
                         FORsTRINGSiN1( (strokeS*)tListSaidAnonPath )
 
-                        patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                        patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                         TN( tPattern , "" ) ; tPattern += T("said.anon.table")+T(bSandbox?".sandbox.":".live.")+T("????????.????????.????????.????????.????????.")+T(nnPeerP)+T(".*") ;
 
                         // said.anon.table.sandbox.????????.????????.????????.????????.????????.nnPeerP .*") ;
@@ -750,7 +750,7 @@
                 ZE( boolT , bBlocked3 ) ;
                 ZE( boolT , bBlocked2 ) ;
             {
-            if( tValueSpeechAnon.csF( tinP ) )
+            if( tValueSpeechAnon.csF( tinBaseP ) )
 
             /***************************************************************************************************/
             /****                                                                                           ****/
@@ -760,9 +760,9 @@
 
             }
                 DEL( prPosts ) ;
-                if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
 
                 ) ;
 
@@ -805,7 +805,7 @@
                 }
                     THREADmODE2rESTORE
 
-                    etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
+                    etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
 
                     ;
                         : tLoginPaypalPayerEmail
@@ -827,22 +827,22 @@
                     TN( tBody ,
 
                     }
-                        etThread.delF( tinP , psttFile ) ;
+                        etThread.delF( tinBaseP , psttFile ) ;
                         }
                             }
-                                etThread.delF( tinP , psttShort ) ;
-                                etThread.delF( tinP , psttnu ) ;
+                                etThread.delF( tinBaseP , psttShort ) ;
+                                etThread.delF( tinBaseP , psttnu ) ;
                                 tShort = T(psttShort) ;
-                                etThread.strBisectF( tinP , psttnu , psttShort , psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                etThread.strBisectF( tinBaseP , psttnu , psttShort , psttFile , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                                 ZE( strokeS* , psttShort ) ;
                                 ZE( strokeS* , psttnu ) ;
                             {
-                            if( !tShort.csF( tinP ) )
+                            if( !tShort.csF( tinBaseP ) )
 
-                            //etThread.traceF( tinP , T("wrote   ")+T(psttFile) ) ;
+                            //etThread.traceF( tinBaseP , T("wrote   ")+T(psttFile) ) ;
                         {
                         FORsTRINGSiN1( psttFile )
-                        etThread.boxPutUniqueF( tinP , psttFile , tListPTopicFileLong , WS( said ) ) ; ___( psttFile ) ;
+                        etThread.boxPutUniqueF( tinBaseP , psttFile , tListPTopicFileLong , WS( said ) ) ; ___( psttFile ) ;
                         ZE( strokeS* , psttFile ) ;
 
                         }
@@ -854,11 +854,11 @@
                     TN( tShort , "" ) ;
 
                     }
-                        if( !tHost.csF( tinP ) ) tHost = T("factories") ;
-                        etThread.delF( tinP , psttHost ) ;
+                        if( !tHost.csF( tinBaseP ) ) tHost = T("factories") ;
+                        etThread.delF( tinBaseP , psttHost ) ;
                         else            tHost = T(psttHost) ;
-                        if( !psttHost ) etThread.traceF( tinP , T("error: reverse DNS lookup on myself failed 691") ) ;
-                        etThread.sockPsttHostF( tinP , psttHost ) ; ___( psttHost ) ;
+                        if( !psttHost ) etThread.traceF( tinBaseP , T("error: reverse DNS lookup on myself failed 691") ) ;
+                        etThread.sockPsttHostF( tinBaseP , psttHost ) ; ___( psttHost ) ;
                         ZE( strokeS* , psttHost ) ;
                     {
                     TN( tHost , "" ) ;
@@ -888,36 +888,36 @@
                     said << timeN1 ;
                     said << (countT)4 ;             // IDfORMAT
                     said << finger ;
-                    soulC said( tinP , TAG( TAGiDnULL ) ) ;
+                    soulC said( tinBaseP , TAG( TAGiDnULL ) ) ;
                     TN( tFlags , "" ) ;
 
                     putNegAM( *(countT*)&finger , FINGERnEG_WOtABLEsAIDtOPIC ) ;
                     ZE( countT , finger ) ;
 
-                    textC tTimeForeign( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
+                    textC tTimeForeign( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT , timeN1 ) ;
 
                     }
-                        etThread.delF( tinP , psttClean ) ;
+                        etThread.delF( tinBaseP , psttClean ) ;
                         tProposedTopicClean = T(psttClean) ;
 
-                        etThread.delF( tinP , psttRaw ) ;
-                        etThread.strReplaceAnyF( tinP , psttClean , psttRaw , T("<>") , tDot ) ; ___( psttClean ) ;
+                        etThread.delF( tinBaseP , psttRaw ) ;
+                        etThread.strReplaceAnyF( tinBaseP , psttClean , psttRaw , T("<>") , tDot ) ; ___( psttClean ) ;
                         ZE( strokeS* , psttClean ) ;
 
-                        etThread.strMakeF( tinP , LF , psttRaw , tValueProposedTopic ) ; ___( psttRaw ) ;
+                        etThread.strMakeF( tinBaseP , LF , psttRaw , tValueProposedTopic ) ; ___( psttRaw ) ;
                         ZE( strokeS* , psttRaw ) ;
                     {
                     TN( tProposedTopicClean , "" ) ;                //SANITIZE THE SPEECH TO SUPPRESS ALL HTML
                 {
-                else if( tValueProposedTopic.csF( tinP ) && etThread.strCompareF( tinP , tTopicGuide , tValueProposedTopic ) )
+                else if( tValueProposedTopic.csF( tinBaseP ) && etThread.strCompareF( tinBaseP , tTopicGuide , tValueProposedTopic ) )
                 }
                     THREADmODE2rESTORE
 
-                    etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
+                    etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
 
                     ;
                         : tLoginPaypalPayerEmail
@@ -941,20 +941,20 @@
                     }
                         }
                             }
-                                etThread.delF( tinP , psttFile ) ;
-                                etThread.delF( tinP , psttShort ) ;
-                                etThread.delF( tinP , psttnu ) ;
+                                etThread.delF( tinBaseP , psttFile ) ;
+                                etThread.delF( tinBaseP , psttShort ) ;
+                                etThread.delF( tinBaseP , psttnu ) ;
                                 tShort = T(psttShort) ;
-                                etThread.strBisectF( tinP , psttnu , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                etThread.strBisectF( tinBaseP , psttnu , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                                 ZE( strokeS* , psttShort ) ;
                                 ZE( strokeS* , psttnu ) ;
                             {
-                            if( !tShort.csF( tinP ) )
+                            if( !tShort.csF( tinBaseP ) )
 
-                            //etThread.traceF( tinP , T("wrote   ")+T(psttFile) ) ;
+                            //etThread.traceF( tinBaseP , T("wrote   ")+T(psttFile) ) ;
                         {
                         FORsTRINGSiN1( psttFile )
-                        etThread.boxPutUniqueF( tinP , psttFile , tListSaidFileLong , WS( said ) ) ; ___( psttFile ) ;
+                        etThread.boxPutUniqueF( tinBaseP , psttFile , tListSaidFileLong , WS( said ) ) ; ___( psttFile ) ;
                         ZE( strokeS* , psttFile ) ;
 
                         }
@@ -966,11 +966,11 @@
                     TN( tShort , "" ) ;
 
                     }
-                        if( !tHost.csF( tinP ) ) tHost = T("factories") ;
-                        etThread.delF( tinP , psttHost ) ;
+                        if( !tHost.csF( tinBaseP ) ) tHost = T("factories") ;
+                        etThread.delF( tinBaseP , psttHost ) ;
                         else            tHost = T(psttHost) ;
-                        if( !psttHost ) etThread.traceF( tinP , T("error: reverse DNS lookup on myself failed 792") ) ;
-                        etThread.sockPsttHostF( tinP , psttHost ) ; ___( psttHost ) ;
+                        if( !psttHost ) etThread.traceF( tinBaseP , T("error: reverse DNS lookup on myself failed 792") ) ;
+                        etThread.sockPsttHostF( tinBaseP , psttHost ) ; ___( psttHost ) ;
                         ZE( strokeS* , psttHost ) ;
                     {
                     TN( tHost , "" ) ;
@@ -1000,39 +1000,39 @@
                     said << timeN1 ;
                     said << (countT)4 ;             // IDfORMAT
                     said << finger ;
-                    soulC said( tinP , etThread , TAG( TAGiDnULL ) ) ;
+                    soulC said( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
                     TN( tFlags , "" ) ;
 
                     putNegAM( *(countT*)&finger , FINGERnEG_WOtABLEsAID ) ;
                     ZE( countT , finger ) ;
 
-                    textC tTimeForeign( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
+                    textC tTimeForeign( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT , timeN1 ) ;
 
                     }
-                        etThread.delF( tinP , psttClean ) ;
+                        etThread.delF( tinBaseP , psttClean ) ;
                         tSpeechClean = T(psttClean) ;
 
-                        etThread.delF( tinP , psttRaw ) ;
-                        etThread.strReplaceAnyF( tinP , psttClean , psttRaw , T("<>") , tDot ) ; ___( psttClean ) ;
+                        etThread.delF( tinBaseP , psttRaw ) ;
+                        etThread.strReplaceAnyF( tinBaseP , psttClean , psttRaw , T("<>") , tDot ) ; ___( psttClean ) ;
                         ZE( strokeS* , psttClean ) ;
 
-                        etThread.strMakeF( tinP , LF , psttRaw , tValueSpeech ) ; ___( psttRaw ) ;
+                        etThread.strMakeF( tinBaseP , LF , psttRaw , tValueSpeech ) ; ___( psttRaw ) ;
                         ZE( strokeS* , psttRaw ) ;
                     {
                     TN( tSpeechClean , "" ) ;                //SANITIZE THE SPEECH TO SUPPRESS ALL HTML
                 {
-                else if( tValueSpeech.csF( tinP ) )
+                else if( tValueSpeech.csF( tinBaseP ) )
                 }
-                    etThread.delF( tinP , psttFile ) ;
+                    etThread.delF( tinBaseP , psttFile ) ;
                     //}
-                    //    etThread.traceF( tinP , T("wrote   ")+T(psttFile) ) ;
+                    //    etThread.traceF( tinBaseP , T("wrote   ")+T(psttFile) ) ;
                     //{
                     //FORsTRINGSiN1( psttFile )
-                    etThread.boxPutUniqueF( tinP , psttFile , tListBlockedFileLong , tBlocked , tBlocked.csF( tinP ) ) ; ___( psttFile ) ;
+                    etThread.boxPutUniqueF( tinBaseP , psttFile , tListBlockedFileLong , tBlocked , tBlocked.csF( tinBaseP ) ) ; ___( psttFile ) ;
                     ZE( strokeS* , psttFile ) ;
                     TN( tBlocked , "blocked" ) ;
 
@@ -1043,10 +1043,10 @@
                     TlIST( tListBlockedFileLong ) ;
 
                     DEL( prPosts ) ;
-                    if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                    if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                    etThread.traceF( tinP , T("set error message: secret is wrong") ) ;
-                    etThread.strMakeF( tinP , LF , prPosts , T("<span style=\"color:red\">The secret \"")+tValueSecret+T("\" is wrong.  Your IP address is now blocked for a TICK (about 6 foreign minutes).</span>") , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                    etThread.traceF( tinBaseP , T("set error message: secret is wrong") ) ;
+                    etThread.strMakeF( tinBaseP , LF , prPosts , T("<span style=\"color:red\">The secret \"")+tValueSecret+T("\" is wrong.  Your IP address is now blocked for a TICK (about 6 foreign minutes).</span>") , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
                     ZE( pbRefC* , prPosts ) ;
                 {
                 if( !bSecretIsOK )
@@ -1076,9 +1076,9 @@
 
         }
             DEL( prPosts ) ;
-            if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+            if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-            etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+            etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
             ZE( pbRefC* , prPosts ) ;
 
             ) ;
@@ -1117,9 +1117,9 @@
 
         }
             DEL( prPosts ) ;
-            if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+            if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-            etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+            etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
             ZE( pbRefC* , prPosts ) ;
 
             ) ;
@@ -1181,7 +1181,7 @@
 
         }
             }
-                etThread.traceF( tinP , T("disk or file error 985") ) ;
+                etThread.traceF( tinBaseP , T("disk or file error 985") ) ;
                 POOPR
             {
             if( POOP )
@@ -1189,11 +1189,11 @@
             }
                 }
                     }
-                        etThread.delF( tinP , psttShort ) ;
+                        etThread.delF( tinBaseP , psttShort ) ;
 
                         DEL( prPosts ) ;
-                        if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
-                        etThread.strMakeF( tinP , LF , prPosts , T("<p>\r\n")+tOut+T("\r\n") , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                        if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
+                        etThread.strMakeF( tinBaseP , LF , prPosts , T("<p>\r\n")+tOut+T("\r\n") , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
                         ZE( pbRefC* , prPosts ) ;
 
                         ) ;
@@ -1221,7 +1221,7 @@
                         }
                             }
                                 }
-                                    etThread.traceF( tinP , T("talkCBF: file error: unexpected contents [filename]:    ")+T(psttShort) ) ;
+                                    etThread.traceF( tinBaseP , T("talkCBF: file error: unexpected contents [filename]:    ")+T(psttShort) ) ;
                                     POOPRqUIET
                                 {
                                 if( POOP )
@@ -1229,16 +1229,16 @@
                                 said >> nnPeer ;
                                 nicNameC nnPeer ;
 
-                                etThread.delF( tinP , psttSpeechClean ) ;
+                                etThread.delF( tinBaseP , psttSpeechClean ) ;
                                 tLoginSpeech = T(psttSpeechClean) ;
                                 said >> psttSpeechClean ; ___( psttSpeechClean ) ;
                                 ZE( strokeS* , psttSpeechClean ) ;
 
-                                etThread.delF( tinP , psttValueSpeech ) ;
+                                etThread.delF( tinBaseP , psttValueSpeech ) ;
                                 said >> psttValueSpeech ; ___( psttValueSpeech ) ;
                                 ZE( strokeS* , psttValueSpeech ) ;
 
-                                etThread.delF( tinP , psttTimeForeign ) ;
+                                etThread.delF( tinBaseP , psttTimeForeign ) ;
                                 tLoginTimeForeign = T(psttTimeForeign) ;
                                 said >> psttTimeForeign ; ___( psttTimeForeign ) ;
                                 ZE( strokeS* , psttTimeForeign ) ;
@@ -1258,8 +1258,8 @@
                             else
                             if( POOP ) { POOPRqUIET }
 
-                            tinP.pEtScratch->boxGetShadowF( tinP , said , tListSaidAnonFileLong ) ;
-                            soulC said( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , said , tListSaidAnonFileLong ) ;
+                            soulC said( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                         {
                         IFsCRATCH
                         TN( tLoginSpeech , "" ) ;
@@ -1278,9 +1278,9 @@
 
                     }
                         DEL( prPosts ) ;
-                        if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                        if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-                        etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                        etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
                         ZE( pbRefC* , prPosts ) ;
 
                         ) ;
@@ -1307,9 +1307,9 @@
                 else
                 }
                     //DEL( prPosts ) ;
-                    //if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+                    //if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
                     //
-                    //etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+                    //etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
                     //ZE( pbRefC* , prPosts ) ;
                     //
                     //TN( tSay , "<p>\r\nNo anonymous posts are awaiting certification.\r\n" ) ;
@@ -1325,13 +1325,13 @@
                     }
                         DEL( pInfo ) ;
                         }
-                            if( !ids ) etThread.delF( tinP , psttShort ) ;
-                            stSaidAnonFileShort.sinkF( tinP , ids , psttShort , flSTACKsINK_UNIQUE ) ;
+                            if( !ids ) etThread.delF( tinBaseP , psttShort ) ;
+                            stSaidAnonFileShort.sinkF( tinBaseP , ids , psttShort , flSTACKsINK_UNIQUE ) ;
                             ZE( countT , ids ) ;
 
                             }
-                                etThread.delF( tinP , psttnu ) ;
-                                etThread.strBisectF( tinP , psttnu , psttShort , pInfo->psttIfoName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                etThread.delF( tinBaseP , psttnu ) ;
+                                etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                                 ZE( strokeS* , psttnu ) ;
                             {
                             ZE( strokeS* , psttShort ) ;
@@ -1346,18 +1346,18 @@
                         }
                             }
                                 break ;
-                                etThread.traceF( tinP , T("disk or file error 1294") ) ;
+                                etThread.traceF( tinBaseP , T("disk or file error 1294") ) ;
                                 POOPR
                             {
                             if( POOP )
-                            tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , psttc1 , &pat ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , psttc1 , &pat ) ;
                             SCOOPS
                         {
                         IFsCRATCH
                         ZE( infoFileS* , pInfo ) ;
                     {
                     do
-                    handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                 {
                 FORsTRINGSiN1( (strokeS*)tListSaidAnonPath )
 
@@ -1367,10 +1367,10 @@
                 {
                 TlIST( tListSaidAnonPath ) ;
 
-                patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                 TN( tPattern , "" ) ; tPattern = T("said.anon.table")+T(bSandbox?".sandbox.*":".live.*") ;
             {
-            stackC stSaidAnonFileShort( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 ) ;
+            stackC stSaidAnonFileShort( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKrEVERSE , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 ) ;
         {
         if( bSecretIsOK )
         ZE( boolT , bTopicIsFresh ) ;
@@ -1387,9 +1387,9 @@
 
         }
             DEL( prPosts ) ;
-            if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+            if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-            etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+            etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
             ZE( pbRefC* , prPosts ) ;
 
             ) ;
@@ -1413,9 +1413,9 @@
 
         }
             DEL( prPosts ) ;
-            if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+            if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-            etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+            etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
             ZE( pbRefC* , prPosts ) ;
 
             ) ;
@@ -1440,7 +1440,7 @@
                 }
                     THREADmODE2rESTORE
 
-                    etThread.boxPutF( tinP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
+                    etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/b42/smtp/")+tHost+T("@ideafarm.com/")+tToUse+T("//wo@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
                     //U:: DO THIS ASYNCHRONOUSLY SO FAILURE IS HANDLED GRACEFULLY
 
                     ;
@@ -1463,23 +1463,23 @@
                     TN( tBody ,
 
                     }
-                        etThread.delF( tinP , psttFile ) ;
+                        etThread.delF( tinBaseP , psttFile ) ;
 
                         }
                             }
-                                etThread.delF( tinP , psttShort ) ;
-                                etThread.delF( tinP , psttnu ) ;
+                                etThread.delF( tinBaseP , psttShort ) ;
+                                etThread.delF( tinBaseP , psttnu ) ;
                                 tShort = T(psttShort) ;
-                                etThread.strBisectF( tinP , psttnu , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                etThread.strBisectF( tinBaseP , psttnu , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                                 ZE( strokeS* , psttShort ) ;
                                 ZE( strokeS* , psttnu ) ;
                             {
-                            if( !tShort.csF( tinP ) )
+                            if( !tShort.csF( tinBaseP ) )
 
-                            //etThread.traceF( tinP , T("wrote   ")+T(psttc1) ) ;
+                            //etThread.traceF( tinBaseP , T("wrote   ")+T(psttc1) ) ;
                         {
                         FORsTRINGSiN1( psttFile )
-                        etThread.boxPutUniqueF( tinP , psttFile , tListSaidFileLong , WS( said ) ) ; ___( psttFile ) ;
+                        etThread.boxPutUniqueF( tinBaseP , psttFile , tListSaidFileLong , WS( said ) ) ; ___( psttFile ) ;
                         ZE( strokeS* , psttFile ) ;
  
                         }
@@ -1491,11 +1491,11 @@
                     TN( tShort , "" ) ;
 
                     }
-                        if( !tHost.csF( tinP ) ) tHost = T("factories") ;
-                        etThread.delF( tinP , psttHost ) ;
+                        if( !tHost.csF( tinBaseP ) ) tHost = T("factories") ;
+                        etThread.delF( tinBaseP , psttHost ) ;
                         else            tHost = T(psttHost) ;
-                        if( !psttHost ) etThread.traceF( tinP , T("error: reverse DNS lookup on myself failed 1241") ) ;
-                        etThread.sockPsttHostF( tinP , psttHost ) ; ___( psttHost ) ;
+                        if( !psttHost ) etThread.traceF( tinBaseP , T("error: reverse DNS lookup on myself failed 1241") ) ;
+                        etThread.sockPsttHostF( tinBaseP , psttHost ) ; ___( psttHost ) ;
                         ZE( strokeS* , psttHost ) ;
                     {
                     TN( tHost , "" ) ;
@@ -1525,40 +1525,40 @@
                     said << timeN1 ;
                     said << (countT)4 ;             // IDfORMAT
                     said << finger ;
-                    soulC said( tinP , TAG( TAGiDnULL ) ) ;
+                    soulC said( tinBaseP , TAG( TAGiDnULL ) ) ;
 
                     putNegAM( *(countT*)&finger , FINGERnEG_WOtABLEsAID ) ;
                     ZE( countT , finger ) ;
 
-                    textC tTimeForeign( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinP , TAG( TAGiDnULL ) ) ;
+                    textC tTimeForeign( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinBaseP , TAG( TAGiDnULL ) ) ;
 
-                    etThread.osTimeNowF( tinP , timeN1 , timeN2 ) ;
+                    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
                     ZE( countT , timeN1 ) ;
                 {
-                if( tLoginSpeechAnonClean.csF( tinP ) )
+                if( tLoginSpeechAnonClean.csF( tinBaseP ) )
 
                 }
                     }
                         }
-                            etThread.traceF( tinP , T("talkCBF: file error: unexpected contents [tValueFilenameSpeechAnon]:    ")+tValueFilenameSpeechAnon ) ;
+                            etThread.traceF( tinBaseP , T("talkCBF: file error: unexpected contents [tValueFilenameSpeechAnon]:    ")+tValueFilenameSpeechAnon ) ;
                             POOPRqUIET
                         {
                         if( POOP )
 
                         rec >> nnPeerAnon ;
 
-                        etThread.delF( tinP , psttSpeechClean ) ;
+                        etThread.delF( tinBaseP , psttSpeechClean ) ;
                         tLoginSpeechAnonClean = T(psttSpeechClean) ;
                         rec >> psttSpeechClean ; ___( psttSpeechClean ) ;
                         ZE( strokeS* , psttSpeechClean ) ;
 
-                        etThread.delF( tinP , psttValueSpeech ) ;
+                        etThread.delF( tinBaseP , psttValueSpeech ) ;
                         tLoginSpeechAnon = T(psttValueSpeech) ;
                         rec >> psttValueSpeech ; ___( psttValueSpeech ) ;
                         ZE( strokeS* , psttValueSpeech ) ;
 
-                        etThread.delF( tinP , psttTimeForeign ) ;
+                        etThread.delF( tinBaseP , psttTimeForeign ) ;
                         rec >> psttTimeForeign ; ___( psttTimeForeign ) ;
                         ZE( strokeS* , psttTimeForeign ) ;
 
@@ -1576,7 +1576,7 @@
                     {
                     else
                     if( POOP ) { POOPRqUIET }
-                    tinP.pEtScratch->boxGetF( tinP , rec , tListSaidAnonFileLong , 1 , 1 ) ;
+                    ((tinNormalS&)tinBaseP).pEtScratch->boxGetF( tinBaseP , rec , tListSaidAnonFileLong , 1 , 1 ) ;
 
                     }
                         TlISTlOAD( tListSaidAnonFileLong , meP.tListFactoryF() , tSuffix ) ;
@@ -1584,14 +1584,14 @@
                     {
                     TlIST( tListSaidAnonFileLong ) ;
 
-                    soulC rec( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                    soulC rec( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 {
                 IFsCRATCH
                 nicNameC nnPeerAnon ;
                 TN( tLoginSpeechAnonClean , "" ) ;
                 TN( tLoginSpeechAnon      , "" ) ;
             {
-            if( tValueFilenameSpeechAnon.csF( tinP ) )
+            if( tValueFilenameSpeechAnon.csF( tinBaseP ) )
         {
         if( bSecretIsOK )
 
@@ -1607,12 +1607,12 @@
 
         }
             }
-                etThread.traceF( tinP , T("talkCBF / secret is ok [badge]:    ")+tBadge ) ;
+                etThread.traceF( tinBaseP , T("talkCBF / secret is ok [badge]:    ")+tBadge ) ;
                 }
                     tBadge = TF2(badge,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
                     while( !bOk ) ;
                     }
-                        bOk = meP.createBadgeF( tinP , badge , nnPeerP ) ;
+                        bOk = meP.createBadgeF( tinBaseP , badge , nnPeerP ) ;
                         badge = meP.ruF() * (measure04T)MAXcOUNTT ;
                     {
                     do
@@ -1625,7 +1625,7 @@
             {
             else
             }
-                etThread.traceF( tinP , T("secret is wrong") ) ;
+                etThread.traceF( tinBaseP , T("secret is wrong") ) ;
 
                 tLoginAddressStatus      = tn ;
                 tLoginAddressZip         =
@@ -1654,64 +1654,64 @@
 
                             }
                                 }
-                                    etThread.traceF( tinP , T("file error: unexpected file contents [filename]:    ")+T(pInfo->psttIfoName) ) ;
+                                    etThread.traceF( tinBaseP , T("file error: unexpected file contents [filename]:    ")+T(pInfo->psttIfoName) ) ;
                                     POOPRqUIET
                                 {
                                 if( POOP )
 
-                                etThread.delF( tinP , psttValueAddressStatus ) ;
+                                etThread.delF( tinBaseP , psttValueAddressStatus ) ;
                                 tLoginAddressStatus = bOn ? T(psttValueAddressStatus) : tn ;
                                 rec >> psttValueAddressStatus ; ___( psttValueAddressStatus ) ;
                                 ZE( strokeS* , psttValueAddressStatus ) ;
 
-                                etThread.delF( tinP , psttValueAddressZip ) ;
+                                etThread.delF( tinBaseP , psttValueAddressZip ) ;
                                 tLoginAddressZip = bOn ? T(psttValueAddressZip) : tn ;
                                 rec >> psttValueAddressZip ; ___( psttValueAddressZip ) ;
                                 ZE( strokeS* , psttValueAddressZip ) ;
 
-                                etThread.delF( tinP , psttValueAddressCountry ) ;
+                                etThread.delF( tinBaseP , psttValueAddressCountry ) ;
                                 tLoginAddressCountry = bOn ? T(psttValueAddressCountry) : tn ;
                                 rec >> psttValueAddressCountry ; ___( psttValueAddressCountry ) ;
                                 ZE( strokeS* , psttValueAddressCountry ) ;
 
-                                etThread.delF( tinP , psttValueAddressCountryCode ) ;
+                                etThread.delF( tinBaseP , psttValueAddressCountryCode ) ;
                                 tLoginAddressCountryCode = bOn ? T(psttValueAddressCountryCode) : tn ;
                                 rec >> psttValueAddressCountryCode ; ___( psttValueAddressCountryCode ) ;
                                 ZE( strokeS* , psttValueAddressCountryCode ) ;
 
-                                etThread.delF( tinP , psttValueAddressState ) ;
+                                etThread.delF( tinBaseP , psttValueAddressState ) ;
                                 tLoginAddressState = bOn ? T(psttValueAddressState) : tn ;
                                 rec >> psttValueAddressState ; ___( psttValueAddressState ) ;
                                 ZE( strokeS* , psttValueAddressState ) ;
 
-                                etThread.delF( tinP , psttValueAddressCity ) ;
+                                etThread.delF( tinBaseP , psttValueAddressCity ) ;
                                 tLoginAddressCity = bOn ? T(psttValueAddressCity) : tn ;
                                 rec >> psttValueAddressCity ; ___( psttValueAddressCity ) ;
                                 ZE( strokeS* , psttValueAddressCity ) ;
 
-                                etThread.delF( tinP , psttValueAddressStreet ) ;
+                                etThread.delF( tinBaseP , psttValueAddressStreet ) ;
                                 tLoginAddressStreet = bOn ? T(psttValueAddressStreet) : tn ;
                                 rec >> psttValueAddressStreet ; ___( psttValueAddressStreet ) ;
                                 ZE( strokeS* , psttValueAddressStreet ) ;
 
-                                etThread.delF( tinP , psttValueAddressName ) ;
+                                etThread.delF( tinBaseP , psttValueAddressName ) ;
                                 tLoginAddressName = T(psttValueAddressName) ;
 
                                 rec >> psttValueAddressName ; ___( psttValueAddressName ) ;
                                 ZE( strokeS* , psttValueAddressName ) ;
 
-                                etThread.delF( tinP , psttValueLastName ) ;
+                                etThread.delF( tinBaseP , psttValueLastName ) ;
                                 tLoginLastName = bOn ? T(psttValueLastName) : tn ;
                                 rec >> psttValueLastName ; ___( psttValueLastName ) ;
                                 ZE( strokeS* , psttValueLastName ) ;
 
-                                etThread.delF( tinP , psttValueFirstName ) ;
+                                etThread.delF( tinBaseP , psttValueFirstName ) ;
                                 tLoginFirstName = bOn ? T(psttValueFirstName) : tn ;
                                 rec >> psttValueFirstName ; ___( psttValueFirstName ) ;
                                 ZE( strokeS* , psttValueFirstName ) ;
 
                                 }
-                                    if( bOn ) etThread.traceF( tinP , T(bSecretIsOK?"secret is aok [secretTry]:    ":"secret is NOT ok [secretTry]:    ")+TF4(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e)+T("    ")+TF4(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e) ) ;
+                                    if( bOn ) etThread.traceF( tinBaseP , T(bSecretIsOK?"secret is aok [secretTry]:    ":"secret is NOT ok [secretTry]:    ")+TF4(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e)+T("    ")+TF4(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e) ) ;
                                     bSecretIsOK = !bOn ? 0 : secretTry == secret ;
                                 {
                                 if( subscriberIdTry == idSubscriber )
@@ -1719,47 +1719,47 @@
                                 rec >> secret ;
                                 ZE( countT , secret ) ;
 
-                                //etThread.traceF( tinP , T("[tLoginIdSubscriber0]:    ")+tLoginIdSubscriber0 ) ;
+                                //etThread.traceF( tinBaseP , T("[tLoginIdSubscriber0]:    ")+tLoginIdSubscriber0 ) ;
 
                                 tLoginIdSubscriber0 = bOn ? TF4(((countT*)&idSubscriber)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e) : tn ;
                                 rec >> ((countT*)&idSubscriber)[ 1 ] ;
                                 rec >> ((countT*)&idSubscriber)[ 0 ] ;
                                 ZE( count04T , idSubscriber ) ;
 
-                                etThread.delF( tinP , psttValueTransId ) ;
+                                etThread.delF( tinBaseP , psttValueTransId ) ;
                                 rec >> psttValueTransId ; ___( psttValueTransId ) ;
                                 ZE( strokeS* , psttValueTransId ) ;
 
-                                etThread.delF( tinP , psttValueTransType ) ;
+                                etThread.delF( tinBaseP , psttValueTransType ) ;
                                 rec >> psttValueTransType ; ___( psttValueTransType ) ;
                                 ZE( strokeS* , psttValueTransType ) ;
 
-                                etThread.delF( tinP , psttValueRewardBox ) ;
+                                etThread.delF( tinBaseP , psttValueRewardBox ) ;
                                 rec >> psttValueRewardBox ; ___( psttValueRewardBox ) ;
                                 ZE( strokeS* , psttValueRewardBox ) ;
 
-                                etThread.delF( tinP , psttValueRewardBoxHidden ) ;
+                                etThread.delF( tinBaseP , psttValueRewardBoxHidden ) ;
                                 rec >> psttValueRewardBoxHidden ; ___( psttValueRewardBoxHidden ) ;
                                 ZE( strokeS* , psttValueRewardBoxHidden ) ;
 
-                                etThread.delF( tinP , psttZipUse ) ;
+                                etThread.delF( tinBaseP , psttZipUse ) ;
                                 tLoginZipUse = bOn ? T(psttZipUse) : tn ;
                                 rec >> psttZipUse ; ___( psttZipUse ) ;
                                 ZE( strokeS* , psttZipUse ) ;
 
-                                etThread.delF( tinP , psttValuePaypalPayerEmail ) ;
+                                etThread.delF( tinBaseP , psttValuePaypalPayerEmail ) ;
                                 tLoginPaypalPayerEmail = bOn ? T(psttValuePaypalPayerEmail) : tn ;
                                 rec >> psttValuePaypalPayerEmail ; ___( psttValuePaypalPayerEmail ) ;
                                 ZE( strokeS* , psttValuePaypalPayerEmail ) ;
 
-                                etThread.delF( tinP , psttNnPeer ) ;
+                                etThread.delF( tinBaseP , psttNnPeer ) ;
                                 tLoginNnPeer = bOn ? T(psttNnPeer) : tn ;
                                 rec >> psttNnPeer ; ___( psttNnPeer ) ;
                                 ZE( strokeS* , psttNnPeer ) ;
 
-                                etThread.delF( tinP , psttAction ) ;
-                                boolT bOn = !etThread.strCompareF( tinP , psttAction , tRegister ) ;
-                                etThread.traceF( tinP , T("action: ")+T(psttAction) ) ;
+                                etThread.delF( tinBaseP , psttAction ) ;
+                                boolT bOn = !etThread.strCompareF( tinBaseP , psttAction , tRegister ) ;
+                                etThread.traceF( tinBaseP , T("action: ")+T(psttAction) ) ;
                                 rec >> psttAction ; ___( psttAction ) ;
                                 ZE( strokeS* , psttAction ) ;
 
@@ -1777,48 +1777,48 @@
                             {
                             else
                             }
-                                etThread.traceF( tinP , T("   file error: could not get shadow [filename]:    ")+T(pInfo->psttIfoName) ) ;
+                                etThread.traceF( tinBaseP , T("   file error: could not get shadow [filename]:    ")+T(pInfo->psttIfoName) ) ;
                                 POOPRqUIET
                             {
                             if( POOP )
 
-                            tinP.pEtScratch->boxGetShadowF( tinP , rec , pInfo->psttIfoName ) ;
-                            soulC rec( tinP , *tinP.pEtScratch , TAG( TAGiDnULL ) ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , rec , pInfo->psttIfoName ) ;
+                            soulC rec( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
                             SCOOPS
                         {
                         IFsCRATCH
 
-                        etThread.traceF( tinP , T("  found 1:    ")+T(fn) ) ;
-                        fileNameC fn( tinP , etThread , pInfo->psttIfoName ) ;
+                        etThread.traceF( tinBaseP , T("  found 1:    ")+T(fn) ) ;
+                        fileNameC fn( tinBaseP , etThread , pInfo->psttIfoName ) ;
                     {
                     else
                     }
                         break ;
                         DEL( pInfo ) ;
-                        etThread.traceF( tinP , T("  no more files in this folder:    ")+T(psttc1) ) ;
+                        etThread.traceF( tinBaseP , T("  no more files in this folder:    ")+T(psttc1) ) ;
                     {
                     if( !pInfo || !pInfo->psttIfoName )
 
                     }
                         }
                             break ;
-                            etThread.traceF( tinP , T("disk or file error 1714") ) ;
+                            etThread.traceF( tinBaseP , T("disk or file error 1714") ) ;
                             POOPR
                         {
                         if( POOP )
-                        tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , psttc1 , &pat ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , psttc1 , &pat ) ;
                         SCOOPS
                     {
                     IFsCRATCH
                     ZE( infoFileS* , pInfo ) ;
 
-                    etThread.traceF( tinP , T(" inspecting folder:    ")+T(psttc1) ) ;
+                    etThread.traceF( tinBaseP , T(" inspecting folder:    ")+T(psttc1) ) ;
 
                     if( bSecretIsOK ) break ;  //U:: THIS WILL GIVE FALSE "OK" IF THE CURRENT PATH DOES NOT CONTAIN ALL RECORDS FOR THIS ID ; THE CURE FOR THIS WOULD BE TO HEAL THE SUBSCRIPTION PATHS
                 {
                 do
-                handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
                 if( bSecretIsOK ) break ;  //U:: THIS WILL GIVE FALSE "OK" IF THE CURRENT PATH DOES NOT CONTAIN ALL RECORDS FOR THIS ID ; THE CURE FOR THIS WOULD BE TO HEAL THE SUBSCRIPTION PATHS
             {
@@ -1830,15 +1830,15 @@
             {
             TlIST( tListPathSubscriptions ) ;
 
-            patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+            patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
             TN( tRegister , "register" ) ;
             TN( tPattern , "subscription.table.live.*" ) ;
             TN( tn , "" ) ;
 
-            etThread.traceF( tinP , T("[tValueSubscriberId,tValueSecret]:    ")+tb4+tValueSubscriberId+tb4+tValueSecret ) ;
+            etThread.traceF( tinBaseP , T("[tValueSubscriberId,tValueSecret]:    ")+tb4+tValueSubscriberId+tb4+tValueSecret ) ;
             TN( tb4 , "    " ) ;
         {
-        if( tValueSubscriberId.csF( tinP ) && tValueSecret.csF( tinP ) )
+        if( tValueSubscriberId.csF( tinBaseP ) && tValueSecret.csF( tinBaseP ) )
         TN( tLoginAddressStatus      , "" ) ;
         TN( tLoginAddressZip         , "" ) ;
         TN( tLoginAddressCountry     , "" ) ;
@@ -1869,32 +1869,32 @@
 
         TN( tTopicGuide , "short & neutral" ) ;
 
-        countT   secretTry       = etThread.strDigitsToSCountF( tinP , tValueSecret       , 0x3e ) ;
-        count04T subscriberIdTry = etThread.strDigitsToSCountF( tinP , tValueSubscriberId , 0x3e ) ; //U:: THIS WILL ONLY WORK IF THE ID IS <= MAXCOUNTT
+        countT   secretTry       = etThread.strDigitsToSCountF( tinBaseP , tValueSecret       , 0x3e ) ;
+        count04T subscriberIdTry = etThread.strDigitsToSCountF( tinBaseP , tValueSubscriberId , 0x3e ) ; //U:: THIS WILL ONLY WORK IF THE ID IS <= MAXCOUNTT
 
-        //etThread.traceF( tinP , tKeySpeech            +T(":    ")+tValueSpeech       ) ;
+        //etThread.traceF( tinBaseP , tKeySpeech            +T(":    ")+tValueSpeech       ) ;
 
         }
             }
-                if( !etThread.strCompareF( tinP , psttLeverKVP , *pptKey[ offk ] ) ) *pptValue[ offk ] = T((strokeS*)(countT)swKVP) ;
+                if( !etThread.strCompareF( tinBaseP , psttLeverKVP , *pptKey[ offk ] ) ) *pptValue[ offk ] = T((strokeS*)(countT)swKVP) ;
             {
             for( countT offk = 0 ; offk < sizeof pptKey / sizeof pptKey[ 0 ] ; offk ++ )
 
             //}
             //    DEL( prPosts ) ;
-            //    if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
-            //    etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+            //    if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
+            //    etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
             //
-            //    etThread.traceF( tinP , tSay ) ;
+            //    etThread.traceF( tinBaseP , tSay ) ;
             //    TN( tSay , "" ) ; tSay = T("<p>\r\n")+T(psttLeverKVP)+T(":    ")+T((strokeS*)(countT)swKVP) ;
             //
             //    ZE( pbRefC* , prPosts ) ;
             //{
 
-            psttLeverKVP = (strokeS*)swKVP.leverF( tinP , idf ) ;
+            psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swKVP.cFlavorsF( tinP ) ;
+        countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
 
         } ;
             &tValueFilenameSpeechAnon  ,
@@ -1949,9 +1949,9 @@
     else
     }
         DEL( prPosts ) ;
-        if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+        if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-        etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+        etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
         ZE( pbRefC* , prPosts ) ;
 
         ) ;
@@ -1981,16 +1981,16 @@
                     }
                         }
                             if( POOP ) { POOPRqUIET }
-                            tinP.pEtScratch->diskFileOrDirDeleteF( tinP , pInfo->psttIfoName , flFILEoRdIRdELETE_null , 1 ) ;
+                            ((tinNormalS&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , pInfo->psttIfoName , flFILEoRdIRdELETE_null , 1 ) ;
                             SCOOPS
                         {
                         IFsCRATCH
                     {
                     if( timeE2 || timeE1 > TICK )
 
-                    //etThread.traceF( tinP , T("age: ")+TT(timeE1,timeE2) ) ;
-                    etThread.osTimeSubtractF( tinP , timeE1 , timeE2 , pInfo->timeCreated1 , pInfo->timeCreated2 ) ;
-                    etThread.osTimeNowF( tinP , timeE1 , timeE2 ) ;
+                    //etThread.traceF( tinBaseP , T("age: ")+TT(timeE1,timeE2) ) ;
+                    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , pInfo->timeCreated1 , pInfo->timeCreated2 ) ;
+                    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
                     ZE( sCountT , timeE2 ) ;
                     ZE( countT , timeE1 ) ;
                 {
@@ -2004,18 +2004,18 @@
                 }
                     }
                         break ;
-                        etThread.traceF( tinP , T("disk or file error 1633") ) ;
+                        etThread.traceF( tinBaseP , T("disk or file error 1633") ) ;
                         POOPR
                     {
                     if( POOP )
-                    tinP.pEtScratch->diskFindFileOrDirF( tinP , pInfo , hFind , psttc1 , &pat ) ;
+                    ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , psttc1 , &pat ) ;
                     SCOOPS
                 {
                 IFsCRATCH
                 ZE( infoFileS* , pInfo ) ;
             {
             do
-            handleC hFind( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
             if( bBlocked ) break ;
         {
@@ -2027,34 +2027,34 @@
         {
         TlIST( tListPathBlocked ) ;
 
-        patternC pat( tinP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+        patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
         TN( tPattern , "blocked.ip." ) ; tPattern += T(nnPeerP)+T(".*") ;
     {
     ZE( boolT , bBlocked ) ;
 
-    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_BODYrAWbEGIN ) ;
-    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW5hEADeND ) ;
-    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW4sCRIPTeND ) ;
-    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW3sCRIPTbEGIN ) ;
-    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW2aFTERtITLE ) ;
+    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_BODYrAWbEGIN ) ;
+    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW5hEADeND ) ;
+    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW4sCRIPTeND ) ;
+    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW3sCRIPTbEGIN ) ;
+    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW2aFTERtITLE ) ;
     }
         DEL( prPosts ) ;
-        if( prPosts ) meP.pushSnipF( tinP , stBodyP , *prPosts ) ;
+        if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
 
-        etThread.strMakeF( tinP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+        etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
         ZE( pbRefC* , prPosts ) ;
 
         TN( tSay , "Wo'O's Table (tm)\r\n" ) ;
     {
-    meP.pushSnipF( tinP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW1bEFOREtITLE ) ;
+    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HEADrAW1bEFOREtITLE ) ;
 
     TN( tDot , "." ) ;
 
-    //if( psttKVReportP && psttKVReportP->idAdam ) etThread.traceF( tinP , psttKVReportP ) ;
+    //if( psttKVReportP && psttKVReportP->idAdam ) etThread.traceF( tinBaseP , psttKVReportP ) ;
 
     _IO_
 {
-/*1*/voidT talkCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT talkCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

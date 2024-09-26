@@ -8,20 +8,20 @@
 
 
 }
-    delF( tinP , psttd1 ) ;
+    delF( tinBaseP , psttd1 ) ;
 
     }
-        idClassP = strDigitsToSCountF( tinP , psttd1 ) ;
+        idClassP = strDigitsToSCountF( tinBaseP , psttd1 ) ;
     {
     if( psttP )
 
     }
         }
-            delF( tinP , psttP ) ;
+            delF( tinBaseP , psttP ) ;
             ___( psttP ) ;
         {
         if( psttP && !idFirstP && psttBigP->idAdam - ( idfs - 1 ) - psttP->idAdam - 4 > psttd1->idAdam )
-        strSubstringF( tinP , psttP , idFirstP , sttQuoteP , T("/*")+T(psttd1)+T("*/") , psttBigP , csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;
+        strSubstringF( tinBaseP , psttP , idFirstP , sttQuoteP , T("/*")+T(psttd1)+T("*/") , psttBigP , csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;
         const countT idfs = idFirstP ;
     {
     if( psttd1 && idFirstP )
@@ -29,7 +29,7 @@
     // psttd1 NOW CONTAINS THE DELIMITER, AND idFirstP POINTS TO THE STROKE FOLLOWING ITS FIRST OCCURANCE
     }
         }
-            if( !cDigits || off < cDigits ) delF( tinP , psttd1 ) ;
+            if( !cDigits || off < cDigits ) delF( tinBaseP , psttd1 ) ;
             }
                 break ;
                 if( ( psttd1[ CSpREFIX + off ] >= '0' && psttd1[ CSpREFIX + off ] <= '9' ) || ( psttd1[ CSpREFIX + off ] >= 'a' && psttd1[ CSpREFIX + off ] <= 'f' ) ) continue ;
@@ -40,10 +40,10 @@
         {
         if( psttd1 )
 
-        if( !idFirstP ) delF( tinP , psttd1 ) ;
-        if( idFirstP ) { strSubstringF( tinP , psttd1 , idFirstP , sttQuoteP , T("*/") ,psttBigP ) ; ___( psttd1 ) ; }
-        delF( tinP , psttd1 ) ;
-        strSubstringF( tinP , psttd1 , idFirstP , sttQuoteP , T("/*") ,psttBigP ) ; ___( psttd1 ) ;
+        if( !idFirstP ) delF( tinBaseP , psttd1 ) ;
+        if( idFirstP ) { strSubstringF( tinBaseP , psttd1 , idFirstP , sttQuoteP , T("*/") ,psttBigP ) ; ___( psttd1 ) ; }
+        delF( tinBaseP , psttd1 ) ;
+        strSubstringF( tinBaseP , psttd1 , idFirstP , sttQuoteP , T("/*") ,psttBigP ) ; ___( psttd1 ) ;
     {
     while( idFirstP && !psttd1 )
     ZE( strokeS* , psttd1 ) ;
@@ -61,7 +61,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::strSubstringDelimitedF( tinS& tinP , strokeS*& psttP , countT& idClassP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* const psttBigP , const countT csttExtraP )/*1*/
+/**//*1*/voidT etherC::strSubstringDelimitedF( tinBaseS& tinBaseP , strokeS*& psttP , countT& idClassP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* const psttBigP , const countT csttExtraP )/*1*/
 */
  csttExtraP
    each occurance of "/" "*" must be followed by "*" "/"

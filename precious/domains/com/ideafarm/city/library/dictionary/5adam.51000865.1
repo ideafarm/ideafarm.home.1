@@ -10,9 +10,9 @@
 
     REST
 
-    sgnDone_tmWorkF.waitF( tinP ) ;
+    sgnDone_tmWorkF.waitF( tinBaseP ) ;
     etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TOCK << 2 ) ) ;
-    signC sgnDone_tmWorkF( tinP , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmWorkF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     TODO
 
@@ -20,8 +20,8 @@
 
     REST
 
-    etherC::loafIF( tinP ) ;
-    etThread.traceF( tinP , T("ok") ) ;
+    etherC::loafIF( tinBaseP ) ;
+    etThread.traceF( tinBaseP , T("ok") ) ;
 
     }
         if( pbTock[ 0 ] ) ;
@@ -35,8 +35,8 @@
 
 DONE( tmWorkF )
 }
-    etherC::loafIF( tinP ) ;
-    etThread.traceF( tinP , T("ok") ) ;
+    etherC::loafIF( tinBaseP ) ;
+    etThread.traceF( tinBaseP , T("ok") ) ;
 
     }
         if( pbTock[ 0 ] ) ;

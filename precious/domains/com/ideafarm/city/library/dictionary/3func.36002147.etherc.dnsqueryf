@@ -8,14 +8,14 @@
 
 
 }
-    delF( tinP , pbReply ) ;
-    delF( tinP , pbnu ) ;
-    if( pbReply ) dnsParseF( tinP , pbnu , cbnu , stsQueriesNU , stsRepliesP , pbReply , cbReply ) ;
-    stackC stsQueriesNU( tinP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
+    delF( tinBaseP , pbReply ) ;
+    delF( tinBaseP , pbnu ) ;
+    if( pbReply ) dnsParseF( tinBaseP , pbnu , cbnu , stsQueriesNU , stsRepliesP , pbReply , cbReply ) ;
+    stackC stsQueriesNU( tinBaseP , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
     ZE( countT , cbnu ) ;
     ZE( byteT* , pbnu ) ;
 
-    dnsQueryF( tinP , pbReply , cbReply , psttDomainP , idTypeP , time1P , time2P ) ; ___( pbReply ) ;
+    dnsQueryF( tinBaseP , pbReply , cbReply , psttDomainP , idTypeP , time1P , time2P ) ; ___( pbReply ) ;
     ZE( countT , cbReply ) ;
     ZE( byteT* , pbReply ) ;
 
@@ -24,13 +24,13 @@
     }
         __Z( idTypeP ) ;
         __Z( psttDomainP ) ;
-        __( stsRepliesP.idTypeF( tinP ) - ifcSTACKtYPE_PTR_soulC ) ;
+        __( stsRepliesP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_soulC ) ;
         __( stsRepliesP ) ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::dnsQueryF( tinS& tinP , stackC& stsRepliesP , const strokeS* const psttDomainP , const countT idTypeP , const countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT etherC::dnsQueryF( tinBaseS& tinBaseP , stackC& stsRepliesP , const strokeS* const psttDomainP , const countT idTypeP , const countT time1P , const sCountT time2P )/*1*/
 
 /**/
 */
@@ -39,7 +39,7 @@
  idTypeP
  psttDomainP
  stsRepliesP
- tinP
+ tinBaseP
 arguments
 if time1P and time2P are 0 then i will block until i either receive a reply or asynch impotence occurs
 the caller must test whether stsRepliesP contains any plates to determine whether i failed to receive an answer

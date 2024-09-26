@@ -10,22 +10,22 @@
 REST
 
 }
-    if( !( F(napDebug.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napDebug.formattingIsDoneF( tinP ) ;
-    napkinC napDebug( tinP , LF , (byteT*)bits , NAPnAME , 0 , 1 , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
-    bitsC bits( tinP , CbITSlIFI , 0 , 1 ) ;
+    if( !( F(napDebug.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napDebug.formattingIsDoneF( tinBaseP ) ;
+    napkinC napDebug( tinBaseP , LF , (byteT*)bits , NAPnAME , 0 , 1 , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
+    bitsC bits( tinBaseP , CbITSlIFI , 0 , 1 ) ;
 
-    ether.osSleepF( tinP , TOCK ) ;
-    etThread.osThreadF( tinP , countTC() , tmNullF ) ;
+    ether.osSleepF( tinBaseP , TOCK ) ;
+    etThread.osThreadF( tinBaseP , countTC() , tmNullF ) ;
 {
 
 TODO
 
 DONE( tmNullF )
 }
-    ether.osSleepF( tinP , TICK ) ;
-    if( !( F(napDebug.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napDebug.formattingIsDoneF( tinP ) ;
-    napkinC napDebug( tinP , LF , (byteT*)bits , NAPnAME , 0 , 1 , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
-    bitsC bits( tinP , CbITSlIFI , 0 , 1 ) ;
+    ether.osSleepF( tinBaseP , TICK ) ;
+    if( !( F(napDebug.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) napDebug.formattingIsDoneF( tinBaseP ) ;
+    napkinC napDebug( tinBaseP , LF , (byteT*)bits , NAPnAME , 0 , 1 , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
+    bitsC bits( tinBaseP , CbITSlIFI , 0 , 1 ) ;
 {
 TASK( tmNullF )
 

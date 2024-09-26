@@ -12,7 +12,7 @@
 
     //if( pTallyP ) { LOGrAW5( "spaceF [cGlyph,cPoint]: " , pTallyP->cGlyph , " " , pTallyP->cPoint , "\r\n" ) ; }
 
-    if( pSpaceP && pSpaceFromPaperEpilogCBF ) (*pSpaceFromPaperEpilogCBF)( tinP , rgbOverride , rgbP , cArg ) ;
+    if( pSpaceP && pSpaceFromPaperEpilogCBF ) (*pSpaceFromPaperEpilogCBF)( tinBaseP , rgbOverride , rgbP , cArg ) ;
 
     }
         }
@@ -149,11 +149,11 @@
         pTallyP->cPoint = 0 ;
         pTallyP->cGlyph = paperP.cGlyph ;
 
-        if( F(flagsP) &flSURFcsPACE_NEWcYCLE && pSpaceFromPaperPrologCBF ) (*pSpaceFromPaperPrologCBF)( tinP , cArg ) ;
+        if( F(flagsP) &flSURFcsPACE_NEWcYCLE && pSpaceFromPaperPrologCBF ) (*pSpaceFromPaperPrologCBF)( tinBaseP , cArg ) ;
     {
     if( pTallyP )
 {
-/*1*/countT surfC::spaceF( tinS& tinP , spaceS* const pSpaceP , glyphTallyS* const pTallyP , const paperS& paperP , const countT rgbP , const flagsT flagsP , const measureT m01StepP ) const/*1*/
+/*1*/countT surfC::spaceF( tinBaseS& tinBaseP , spaceS* const pSpaceP , glyphTallyS* const pTallyP , const paperS& paperP , const countT rgbP , const flagsT flagsP , const measureT m01StepP ) const/*1*/
 
 /**/
 */

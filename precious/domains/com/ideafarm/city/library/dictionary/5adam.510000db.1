@@ -10,23 +10,23 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinP , TOCK ) ;
-etThread.strokeF( tinP , T("ok\r\n") ) ;
+etThread.osSleepF( tinBaseP , TOCK ) ;
+etThread.strokeF( tinBaseP , T("ok\r\n") ) ;
 
-third.dosDeleteDirF( tinP , DIR1 ) ;
-third.dosDeleteDirF( tinP , DIR2 ) ;
-third.dosDeleteIF( tinP , FILE2 ) ;
+third.dosDeleteDirF( tinBaseP , DIR1 ) ;
+third.dosDeleteDirF( tinBaseP , DIR2 ) ;
+third.dosDeleteIF( tinBaseP , FILE2 ) ;
 
-third.dosMoveF( tinP , FILE2 , FILE1 ) ;
+third.dosMoveF( tinBaseP , FILE2 , FILE1 ) ;
 
-third.dosOpenF( tinP , handle , idResult , FILE1 , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeF ) ;
+third.dosOpenF( tinBaseP , handle , idResult , FILE1 , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeF ) ;
 ZE( countT , idResult ) ;
-handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
-third.dosCreateDirF( tinP , DIR2 ) ;
-third.dosCreateDirF( tinP , DIR1 ) ;
+third.dosCreateDirF( tinBaseP , DIR2 ) ;
+third.dosCreateDirF( tinBaseP , DIR1 ) ;
 
 thirdC& third = ether ;
 

@@ -9,16 +9,16 @@
 
 }
     }
-        third.c_memcpyIF( tinP , post , ostot , ostot.costF() + 1 ) ;
-        third.newF( tinP , LF , post , ostot.costF() + 1 ) ; ___( post ) ;
+        third.c_memcpyIF( tinBaseP , post , ostot , ostot.costF() + 1 ) ;
+        third.newF( tinBaseP , LF , post , ostot.costF() + 1 ) ; ___( post ) ;
 
         //U::MAKES 620 STOP AFTER MAKING WOTH HOVER FILE: if( postP[ strlen( postP ) - 1 ] == '/' ) ostot.truncateF( ostot.costF() - 1 ) ; //20120319: ENABLED THIS
 
         #endif
-            if( bBaton ) third.c_zReplaceIF( tinP , (osTextT*)(const osTextT*)ostot , '\\' , '$' ) ;
+            if( bBaton ) third.c_zReplaceIF( tinBaseP , (osTextT*)(const osTextT*)ostot , '\\' , '$' ) ;
         #if defined( __NT__ )
-        third.c_zReplaceIF( tinP , (osTextT*)(const osTextT*)ostot , '/' , '\\' ) ;
-        //CONJ: DON'T REALLY NEED THIS (I HOPE): while( third.c_strstrIF( tinP , post , "//" ) ) { third.c_zReplaceF( tinP , post , "//" , "/$/" ) ; ___( post ) ; }
+        third.c_zReplaceIF( tinBaseP , (osTextT*)(const osTextT*)ostot , '/' , '\\' ) ;
+        //CONJ: DON'T REALLY NEED THIS (I HOPE): while( third.c_strstrIF( tinBaseP , post , "//" ) ) { third.c_zReplaceF( tinBaseP , post , "//" , "/$/" ) ; ___( post ) ; }
 
         }
             OStEXTA( ostot  , postP + 5 ) ;
@@ -65,8 +65,8 @@
              if( bHose  ) { __( !postP[ 6 ] ) ; }
         boolT bNetbios = 1 ;
         boolT bShort = postP[ 0 ] != '/' ;
-        boolT bBaton = postP == third.c_strstrIF( tinP , postP , "/baton/" ) ;
-        boolT bHose  = postP == third.c_strstrIF( tinP , postP , "/hose/" ) ;
+        boolT bBaton = postP == third.c_strstrIF( tinBaseP , postP , "/baton/" ) ;
+        boolT bHose  = postP == third.c_strstrIF( tinBaseP , postP , "/hose/" ) ;
     {
     if( postP )
     _IO_
@@ -74,9 +74,9 @@
     }
         if( third ) return ;
         __NZ( bFail ) ;
-            etherC::etRockIF( tinP ).traceF( tinP , T("osFileNameC bad parameter [postP]: ")+T(postP) ) ;
-        if( bFail && tinP.pEther )
-        boolT bFail = postP[ 1 ] == ':' || thirdC::c_strstrIF( tinP , postP , "\\" ) ;
+            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("osFileNameC bad parameter [postP]: ")+T(postP) ) ;
+        if( bFail && ((tinNormalS&)tinBaseP).pEther )
+        boolT bFail = postP[ 1 ] == ':' || thirdC::c_strstrIF( tinBaseP , postP , "\\" ) ;
         if( third ) return ;
         __Z( *postP ) ;
         if( third ) return ;
@@ -87,7 +87,7 @@
 {
 third( thirdP )
 post( 0 ) ,
-/*1*/osFileNameC::osFileNameC( tinS& tinP , thirdC& thirdP , const osTextT* const postP )/*1*/ :
+/*1*/osFileNameC::osFileNameC( tinBaseS& tinBaseP , thirdC& thirdP , const osTextT* const postP )/*1*/ :
 
 /**/
 */

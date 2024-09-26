@@ -16,12 +16,12 @@
                     if( !idHit || idFirstP > ccBig ) idFirstP  = 0 ;_WQ
 
                     }
-                        while( idFirstP <= ccBig &&  strIdF( tinP , psttBigP[ CSpREFIX - 1 + idFirstP ] , psttSmall ) ) idFirstP ++ ;_WQ
+                        while( idFirstP <= ccBig &&  strIdF( tinBaseP , psttBigP[ CSpREFIX - 1 + idFirstP ] , psttSmall ) ) idFirstP ++ ;_WQ
                         idFirstP = idHit + 1 ;_WQ
                     {
                     else
                     }
-                        while( idFirstP <= ccBig && !strIdF( tinP , psttBigP[ CSpREFIX - 1 + idFirstP ] , psttSmall ) ) idFirstP ++ ;_WQ
+                        while( idFirstP <= ccBig && !strIdF( tinBaseP , psttBigP[ CSpREFIX - 1 + idFirstP ] , psttSmall ) ) idFirstP ++ ;_WQ
                         idFirstP = idHit + 1 ;_WQ
                     {
                     else if( bNot )
@@ -34,11 +34,11 @@
                         //U:: 20230615@2227: MAKE THIS USE OF bEscaped OPTIONAL TO AVOID BREAKING EXISTING CALLING CODE; THIS WAS ADDED W/O ANALYSIS AND W/O REGRESSION TESTING TO GET strIdMatchingF TO WORK WITH SOIL KT BODY INPUT THAT CONTAINS E.G. "\{"
 
                         ;_WQ
-                            :  strIdF( tinP , psttBigP[ CSpREFIX - 1 + idHit ] , psttSmall )
-                            ? !strIdF( tinP , psttBigP[ CSpREFIX - 1 + idHit ] , psttSmall )
+                            :  strIdF( tinBaseP , psttBigP[ CSpREFIX - 1 + idHit ] , psttSmall )
+                            ? !strIdF( tinBaseP , psttBigP[ CSpREFIX - 1 + idHit ] , psttSmall )
                         boolT bHit = bNot
 
-                        if( bUseQuotes ) bInQuote = strIsInQuoteF( tinP , sttQuoteP , idHit , psttBigP ) ;_WQ
+                        if( bUseQuotes ) bInQuote = strIsInQuoteF( tinBaseP , sttQuoteP , idHit , psttBigP ) ;_WQ
                         ZE( boolT , bInQuote ) ;_WQ
                     {
                     for( idHit = idFirstP ; idHit <= ccBig ; idHit ++ )
@@ -56,7 +56,7 @@
         SETpREFIX( (strokeS*)psttOneNull , 1 , 0 ) ;_WQ
         const strokeS psttOneNull[] = { strokeS() , strokeS() , strokeS() , strokeS() } ;_WQ
     {
-    STRiDrECURSE( strIdAnyF( tinP , pstMatchP , flagsMatchP , idf , sttQuoteP , psttSmallP , psttBigP , idLastP , 1 , flagsP ) )
+    STRiDrECURSE( strIdAnyF( tinBaseP , pstMatchP , flagsMatchP , idf , sttQuoteP , psttSmallP , psttBigP , idLastP , 1 , flagsP ) )
 
     const boolT bNot = F(flagsP) & flSTRiDaNY_NOT ;_WQ
 
@@ -65,7 +65,7 @@
     }
         if( POOP ) return 0 ;
         }
-            __( F( pstMatchP->flagsF( tinP ) ) & flSTACKc_FIFO ) ; // IF FIFO THEN WILL CONTAIN INCORRECT CONTENTS
+            __( F( pstMatchP->flagsF( tinBaseP ) ) & flSTACKc_FIFO ) ; // IF FIFO THEN WILL CONTAIN INCORRECT CONTENTS
         {
         if( pstMatchP )
         __( psttSmallP && psttSmallP->idCaste != sc_PREFIXlENGTH ) ;_WQ
@@ -83,7 +83,7 @@
     const boolT bUseQuotes = sttQuoteP.idCaste != sc_IGNOREqUOTES ;_WQ
     SCOOP
 {
-/*1*/countT etherC::strIdAnyF( tinS& tinP , stackC* const pstMatchP , const flagsT flagsMatchP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* psttSmallP , const strokeS* psttBigP , const countT idLastP , sCountT idP , const flagsT flagsP )/*1*/
+/*1*/countT etherC::strIdAnyF( tinBaseS& tinBaseP , stackC* const pstMatchP , const flagsT flagsMatchP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* psttSmallP , const strokeS* psttBigP , const countT idLastP , sCountT idP , const flagsT flagsP )/*1*/
 
 /**/
 */

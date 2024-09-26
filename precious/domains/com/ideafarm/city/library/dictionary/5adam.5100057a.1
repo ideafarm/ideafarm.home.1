@@ -11,7 +11,7 @@ REST
 
 }
     }
-        etThread.delF( tinP , pbi ) ;
+        etThread.delF( tinBaseP , pbi ) ;
         }
             }
                 }
@@ -19,7 +19,7 @@ REST
                         }
                             }
                                 break ;
-                                sCatch.writeF( tinP , idPort , nicName , posto , sizeof posto ) ;
+                                sCatch.writeF( tinBaseP , idPort , nicName , posto , sizeof posto ) ;
                 
                                 ;
                 
@@ -36,7 +36,7 @@ REST
                 case 1 : //CURRENT idFormat
                 }
                     break ;
-                    sCatch.writeF( tinP , idPort , nicName , posto , sizeof posto ) ;
+                    sCatch.writeF( tinBaseP , idPort , nicName , posto , sizeof posto ) ;
     
                     ;
     
@@ -52,17 +52,17 @@ REST
         {
         if( !ether && pbi && cbi )
     
-        sCatch.readF( tinP , pbi , cbi , idPort , nicName ) ; ___( pbi ) ;
+        sCatch.readF( tinBaseP , pbi , cbi , idPort , nicName ) ; ___( pbi ) ;
         nicNameC nicName ;
         ZE( countT , idPort ) ;
         ZE( countT , cbi ) ;
         ZE( byteT* , pbi ) ;
     {
     while( !etThread && !ether )
-    sCatch.bindF( tinP , ifcIDpORT_DOOR ) ;
-    socketC sCatch( tinP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    sCatch.bindF( tinBaseP , ifcIDpORT_DOOR ) ;
+    socketC sCatch( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-    httpServerC server( tinP , arg1 , arg2 ) ;
+    httpServerC server( tinBaseP , arg1 , arg2 ) ;
     arg2.pHttpRawCommandServerCBF        = httpRawCommandServerCBF ;
     arg2.pHttpFreshenCacheCBF            = httpFreshenCacheCBF ;
     arg2.pHttpLoadContentDynamicF        = httpLoadContentDynamicCBF ;
@@ -81,7 +81,7 @@ TODO
         }
             }
                 break ;
-                sockP.writeF( tinP , postReply , sizeof postReply - 1 ) ;
+                sockP.writeF( tinBaseP , postReply , sizeof postReply - 1 ) ;
 
                 ;
         
@@ -98,7 +98,7 @@ TODO
             }
                 break ;
                 bQuit = 1 ;
-                sockP.writeF( tinP , postReply , sizeof postReply - 1 ) ;
+                sockP.writeF( tinBaseP , postReply , sizeof postReply - 1 ) ;
 
                 ;
         
@@ -110,7 +110,7 @@ TODO
             case 'q' :
             }
                 break ;
-                sockP.writeF( tinP , postReply , sizeof postReply - 1 ) ;
+                sockP.writeF( tinBaseP , postReply , sizeof postReply - 1 ) ;
 
                 ;
         
@@ -135,11 +135,11 @@ TODO
             case 'a' :
         {
         switch( bIn )
-        sockP.readF( tinP , &bIn , 1 ) ; //IF CLIENT IS GONE THEN POOP AND bIn REMAINS 0
+        sockP.readF( tinBaseP , &bIn , 1 ) ; //IF CLIENT IS GONE THEN POOP AND bIn REMAINS 0
         bIn = 0 ;
 
         }
-            sockP.writeF( tinP , postOldCmdBanner , sizeof postOldCmdBanner - 1 ) ;
+            sockP.writeF( tinBaseP , postOldCmdBanner , sizeof postOldCmdBanner - 1 ) ;
     
             ;
     
@@ -172,11 +172,11 @@ TODO
 
     time1idleTimeoutWriteP = time1idleTimeoutReadP = TICK * 0x8 ; //CS:CODEsYNC: 0850104 0850104
 {
-voidT httpRawCommandServerCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , countT& cArgP , socketC& sockP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP , sessionsC& sessionsP , nicNameC& nnPeerP , const countT idEscapedP )
+voidT httpRawCommandServerCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , countT& cArgP , socketC& sockP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP , sessionsC& sessionsP , nicNameC& nnPeerP , const countT idEscapedP )
 
 }
     }
-        meP.storeReplyF( tinP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T("Door <> IPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System") , T("Well Known System Port 902/tcp: ideafarm-door") , T("Well Known System Port 902/tcp: ideafarm-door.  Serving humans and automata worldwide.") , T("Serving Humans and Automata Worldwide...") , T("") , 0 , t1 ) ;
+        meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T("Door <> IPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System") , T("Well Known System Port 902/tcp: ideafarm-door") , T("Well Known System Port 902/tcp: ideafarm-door.  Serving humans and automata worldwide.") , T("Serving Humans and Automata Worldwide...") , T("") , 0 , t1 ) ;
 
         ) ;
 
@@ -253,19 +253,19 @@ voidT httpRawCommandServerCBF( tinS& tinP , etherC& etThread , const boolT& bQui
         TN( t1 ,
     {
 {
-voidT httpLoadContentStaticCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
+voidT httpLoadContentStaticCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
 
 }
-    meP.storeReplyF( tinP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/menuofreports.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T("Menu of Reports") , T("The following server reports are available") , T("The following server reports are available") , T("Check it out!...") , T("") , menuOfReportsCBF ) ;
-    meP.storeReplyF( tinP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/nobot/report3.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(POSTtITLErEPORT3) , T("All comment forms on file") , T("All comment forms on file") , T("Compliments and constructive criticism...") , T("") , report3CBF ) ;
-    meP.storeReplyF( tinP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/nobot/report2.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(POSTtITLErEPORT2) , T("All emailzip forms on file") , T("All emailzip forms on file") , T("Welcome to the village fire...") , T("") , report2CBF ) ;
-    meP.storeReplyF( tinP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/nobot/report1.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(POSTtITLErEPORT1) , T("These sessions closed in the current strong") , T("These sessions closed in the current strong") , T("Visitors this strong...") , T("") , report1CBF ) ;
+    meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/menuofreports.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T("Menu of Reports") , T("The following server reports are available") , T("The following server reports are available") , T("Check it out!...") , T("") , menuOfReportsCBF ) ;
+    meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/nobot/report3.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(POSTtITLErEPORT3) , T("All comment forms on file") , T("All comment forms on file") , T("Compliments and constructive criticism...") , T("") , report3CBF ) ;
+    meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/nobot/report2.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(POSTtITLErEPORT2) , T("All emailzip forms on file") , T("All emailzip forms on file") , T("Welcome to the village fire...") , T("") , report2CBF ) ;
+    meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/nobot/report1.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(POSTtITLErEPORT1) , T("These sessions closed in the current strong") , T("These sessions closed in the current strong") , T("Visitors this strong...") , T("") , report1CBF ) ;
 {
-voidT httpLoadContentDynamicCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
+voidT httpLoadContentDynamicCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
 
 }
 {
-voidT httpFreshenCacheCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , countT& cArgP , const boolT bCleanupP )
+voidT httpFreshenCacheCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , countT& cArgP , const boolT bCleanupP )
 
 }
     stBodyP << (countT)posts ;
@@ -273,7 +273,7 @@ voidT httpFreshenCacheCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP ,
     
         tContent
     
-    etThread.strMakeF( tinP , LF , posts , 
+    etThread.strMakeF( tinBaseP , LF , posts , 
     ZE( osTextT* , posts ) ;
 
     }
@@ -301,11 +301,11 @@ voidT httpFreshenCacheCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP ,
     
         tContent =
     {
-    if( !( F(session.privilegesF(tinP)) & flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ) )
+    if( !( F(session.privilegesF(tinBaseP)) & flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ) )
     TN( tContent , "" ) ;
-    sessionC& session = sessionsP( tinP , nnPeerP ) ;
+    sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-voidT menuOfReportsCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT menuOfReportsCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 }
     stBodyP << (countT)posts ;
@@ -313,7 +313,7 @@ voidT menuOfReportsCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , ht
     
         tContent
     
-    etThread.strMakeF( tinP , LF , posts , 
+    etThread.strMakeF( tinBaseP , LF , posts , 
     ZE( osTextT* , posts ) ;
 
     }
@@ -330,28 +330,28 @@ voidT menuOfReportsCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , ht
                 while( sws_pDatum )
     
                 tContent += TF2(((datumPeanutC*)pDatumLever)->idAdamF(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tsp+T(((datumPeanutC*)pDatumLever)->psttUrlF())+tpa ;
-                pDatumLever = (datumPeanutC*)sws_pDatum.leverF( tinP , idf ) ;
+                pDatumLever = (datumPeanutC*)sws_pDatum.leverF( tinBaseP , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
             TN( tpa , "\r\n\r\n" ) ;
             TN( tcr , "\r\n" ) ;
             TN( tsp , " " ) ;
-            countT cFlavors = sws_pDatum.cFlavorsF( tinP ) ;
+            countT cFlavors = sws_pDatum.cFlavorsF( tinBaseP ) ;
     
             }
-                etThread.delF( tinP , pstt1m ) ;
+                etThread.delF( tinBaseP , pstt1m ) ;
                 }
-                    etThread.delF( tinP , psttShort ) ;
-                    etThread.delF( tinP , psttDirOld ) ;
-                    etThread.delF( tinP , psttDirNew ) ;
+                    etThread.delF( tinBaseP , psttShort ) ;
+                    etThread.delF( tinBaseP , psttDirOld ) ;
+                    etThread.delF( tinBaseP , psttDirNew ) ;
                     }
                         }
                             }
                                 datumPeanutC::setModeF() ;
-                                sws_pDatum.sinkF( tinP , countTC() , pDatum ) ;
+                                sws_pDatum.sinkF( tinBaseP , countTC() , pDatum ) ;
                                 datumPeanutC::setModeF( 1 ) ;
                                 pDatumLever = pDatum ;
-                                datumPeanutC* pDatum = new( 0 , tinP , LF ) datumPeanutC( tinP , etThread , sIn ) ; ___( pDatum ) ;
+                                datumPeanutC* pDatum = new( 0 , tinBaseP , LF ) datumPeanutC( tinBaseP , etThread , sIn ) ; ___( pDatum ) ;
                             {
                             else
                             }
@@ -360,18 +360,18 @@ voidT menuOfReportsCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , ht
                             {
                             if( POOP )
                             
-                            etThread.boxGetShadowF( tinP , sIn , tAllNew ) ;
-                            soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                            etThread.boxGetShadowF( tinBaseP , sIn , tAllNew ) ;
+                            soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
                         {
                         else
                         if( POOP ) { POOPR ; }
-                        tinP.pEtScratch->diskMoveFileOrDirF( tinP , tAllNew , T(psttDirOld)+tShort ) ;
+                        ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tAllNew , T(psttDirOld)+tShort ) ;
                         TN( tAllNew , "" ) ; tAllNew = T(psttDirNew)+tShort ;
                         TN( tShort , "" ) ; tShort = T(psttShort) ;
                     {
                     if( psttDirNew && psttDirOld && psttShort )
-                    etThread.strReplaceF( tinP , psttDirNew , psttDirOld , tOldDir , tNewDir ) ; ___( psttDirNew ) ;
-                    etThread.strBisectF( tinP , psttDirOld , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttDirOld ) ; ___( psttShort ) ;
+                    etThread.strReplaceF( tinBaseP , psttDirNew , psttDirOld , tOldDir , tNewDir ) ; ___( psttDirNew ) ;
+                    etThread.strBisectF( tinBaseP , psttDirOld , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttDirOld ) ; ___( psttShort ) ;
                     ZE( strokeS* , psttShort ) ;
                     ZE( strokeS* , psttDirOld ) ;
                     ZE( strokeS* , psttDirNew ) ;
@@ -379,12 +379,12 @@ voidT menuOfReportsCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , ht
                     if( bQuitP ) break ;
                 {
                 FORsTRINGSiN1( pstt1m )
-                etThread.boxMenuF( tinP , soul , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF2(ifcIDaDAM_ROOTfORMdATAeATER,flFORMAT_NObIGITvALUES)+T("/arc/form.peanut*") , 0 , TUCK ) ; ___( pstt1m ) ;
+                etThread.boxMenuF( tinBaseP , soul , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF2(ifcIDaDAM_ROOTfORMdATAeATER,flFORMAT_NObIGITvALUES)+T("/arc/form.peanut*") , 0 , TUCK ) ; ___( pstt1m ) ;
                 TN( tNewDir , "/arc.seen/" ) ;
                 TN( tOldDir , "/arc/" ) ;
                 ZE( strokeS* , pstt1m ) ;
             {
-            switchStackC sws_pDatum( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pDatumLever , flSTACKc_null , ifcSTACKtYPE_PTR_plateC ) ;
+            switchStackC sws_pDatum( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pDatumLever , flSTACKc_null , ifcSTACKtYPE_PTR_plateC ) ;
             ZE( plateC* , pDatumLever ) ;
     
             tContent = T("<SPAN STYLE=\"font-family: monospace\"><PRE>") ;
@@ -401,11 +401,11 @@ voidT menuOfReportsCBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , ht
     
         tContent =
     {
-    if( !( F(session.privilegesF(tinP)) & flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ) )
+    if( !( F(session.privilegesF(tinBaseP)) & flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ) )
     TN( tContent , "" ) ;
-    sessionC& session = sessionsP( tinP , nnPeerP ) ;
+    sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-voidT report3CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT report3CBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 }
     stBodyP << (countT)posts ;
@@ -413,7 +413,7 @@ voidT report3CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
     
         tContent
     
-    etThread.strMakeF( tinP , LF , posts , 
+    etThread.strMakeF( tinBaseP , LF , posts , 
     ZE( osTextT* , posts ) ;
 
     }
@@ -432,7 +432,7 @@ voidT report3CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
             datumEmailZipC::setModeF() ;
             stackC& std = sws_pDatum ;
             datumEmailZipC::setModeF( idMODEeMAILzIPsORT_ZIP ) ;
-            pDatumLever = (datumEmailZipC*)sws_pDatum.leverF( tinP , idf ) ;
+            pDatumLever = (datumEmailZipC*)sws_pDatum.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
         TN( tcppa , ")\r\n\r\n" ) ;
@@ -440,18 +440,18 @@ voidT report3CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
         TN( tcr , "\r\n" ) ;
         TN( tspop , " (" ) ;
         TN( tsp , " " ) ;
-        countT cFlavors = sws_pDatum.cFlavorsF( tinP ) ;
+        countT cFlavors = sws_pDatum.cFlavorsF( tinBaseP ) ;
 
         }
-            etThread.delF( tinP , pstt1m ) ;
+            etThread.delF( tinBaseP , pstt1m ) ;
             }
                 }
-                    std.sinkF( tinP , countTC() , pDatum ) ;
+                    std.sinkF( tinBaseP , countTC() , pDatum ) ;
                     datumEmailZipC::setModeF() ;
                     stackC& std = sws_pDatum ;
                     datumEmailZipC::setModeF( idMODEeMAILzIPsORT_ZIP ) ;
                     pDatumLever = pDatum ;
-                    datumEmailZipC* pDatum = new( 0 , tinP , LF ) datumEmailZipC( tinP , etThread , sIn ) ; ___( pDatum ) ;
+                    datumEmailZipC* pDatum = new( 0 , tinBaseP , LF ) datumEmailZipC( tinBaseP , etThread , sIn ) ; ___( pDatum ) ;
                 {
                 else
                 }
@@ -460,16 +460,16 @@ voidT report3CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
                 {
                 if( POOP )
                 
-                etThread.boxGetShadowF( tinP , sIn , psttc1 ) ;
-                soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                etThread.boxGetShadowF( tinBaseP , sIn , psttc1 ) ;
+                soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
                 if( bQuitP ) break ;
             {
             FORsTRINGSiN1( pstt1m )
-            etThread.boxMenuF( tinP , soul , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF2(ifcIDaDAM_ROOTfORMdATAeATER,flFORMAT_NObIGITvALUES)+T("/arc/form.emailzip*") , 0 , TUCK ) ; ___( pstt1m ) ;
+            etThread.boxMenuF( tinBaseP , soul , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF2(ifcIDaDAM_ROOTfORMdATAeATER,flFORMAT_NObIGITvALUES)+T("/arc/form.emailzip*") , 0 , TUCK ) ; ___( pstt1m ) ;
             ZE( strokeS* , pstt1m ) ;
         {
-        switchStackC sws_pDatum( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pDatumLever , flSTACKc_null , ifcSTACKtYPE_PTR_plateC ) ;
+        switchStackC sws_pDatum( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pDatumLever , flSTACKc_null , ifcSTACKtYPE_PTR_plateC ) ;
         ZE( plateC* , pDatumLever ) ;
 
         tContent = T("<SPAN STYLE=\"font-family: monospace\"><PRE>") ;
@@ -484,11 +484,11 @@ voidT report3CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
     
         tContent =
     {
-    if( !( F(session.privilegesF(tinP)) & flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ) )
+    if( !( F(session.privilegesF(tinBaseP)) & flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ) )
     TN( tContent , "" ) ;
-    sessionC& session = sessionsP( tinP , nnPeerP ) ;
+    sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-voidT report2CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT report2CBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 }
     stBodyP << (countT)posts ;
@@ -496,7 +496,7 @@ voidT report2CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
     
         tContent
     
-    etThread.strMakeF( tinP , LF , posts , 
+    etThread.strMakeF( tinBaseP , LF , posts , 
     ZE( osTextT* , posts ) ;
 
     }
@@ -513,22 +513,22 @@ voidT report2CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
 
             tContent += T((const strokeS*)all)+tbr ;
             all += sws_pDatum ;
-            datumSessionC all( tinP ) ;
+            datumSessionC all( tinBaseP ) ;
 
-            pDatumLever = (datumSessionC*)sws_pDatum.leverF( tinP , idf ) ;
+            pDatumLever = (datumSessionC*)sws_pDatum.leverF( tinBaseP , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
         TN( tbr , "<BR>" ) ;
         TN( tsp , " " ) ;
-        countT cFlavors = sws_pDatum.cFlavorsF( tinP ) ;
+        countT cFlavors = sws_pDatum.cFlavorsF( tinBaseP ) ;
 
         }
-            etThread.delF( tinP , pstt1m ) ;
+            etThread.delF( tinBaseP , pstt1m ) ;
             }
                 }
-                    sws_pDatum.sinkF( tinP , countTC() , pDatum ) ;
+                    sws_pDatum.sinkF( tinBaseP , countTC() , pDatum ) ;
                     pDatumLever = pDatum ;
-                    datumSessionC* pDatum = new( 0 , tinP , LF ) datumSessionC( tinP , etThread , sIn ) ; ___( pDatum ) ;
+                    datumSessionC* pDatum = new( 0 , tinBaseP , LF ) datumSessionC( tinBaseP , etThread , sIn ) ; ___( pDatum ) ;
                 {
                 else
                 }
@@ -537,16 +537,16 @@ voidT report2CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
                 {
                 if( POOP )
                 
-                etThread.boxGetShadowF( tinP , sIn , psttc1 ) ;
-                soulC sIn( tinP , TAG( TAGiDnULL ) ) ;
+                etThread.boxGetShadowF( tinBaseP , sIn , psttc1 ) ;
+                soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
                 if( bQuitP ) break ;
             {
             FORsTRINGSiN1( pstt1m )
-            etThread.boxMenuF( tinP , 0 , T("///ideafarm/ephemeral/domains/com/ideafarm/ipdos/sessions/session.*") , 0 , TUCK ) ; ___( pstt1m ) ;
+            etThread.boxMenuF( tinBaseP , 0 , T("///ideafarm/ephemeral/domains/com/ideafarm/ipdos/sessions/session.*") , 0 , TUCK ) ; ___( pstt1m ) ;
             ZE( strokeS* , pstt1m ) ;
         {
-        switchStackC sws_pDatum( tinP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pDatumLever , flSTACKc_null , ifcSTACKtYPE_PTR_plateC ) ;
+        switchStackC sws_pDatum( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pDatumLever , flSTACKc_null , ifcSTACKtYPE_PTR_plateC ) ;
         ZE( plateC* , pDatumLever ) ;
 
         //tContent = T("<SPAN STYLE=\"font-family: monospace; font-size: x-small\"><PRE>") ;
@@ -562,11 +562,11 @@ voidT report2CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServ
     
         tContent =
     {
-    if( !( F(session.privilegesF(tinP)) & flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ) )
+    if( !( F(session.privilegesF(tinBaseP)) & flSESSIONpRIVILEGE_VIEWsERVERrEPORTS ) )
     TN( tContent , "" ) ;
-    sessionC& session = sessionsP( tinP , nnPeerP ) ;
+    sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-voidT report1CBF( tinS& tinP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT report1CBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 #define POSTtITLErEPORT3 "Peanut Gallery"
 #define POSTtITLErEPORT2 "Emailzip Forms On File"

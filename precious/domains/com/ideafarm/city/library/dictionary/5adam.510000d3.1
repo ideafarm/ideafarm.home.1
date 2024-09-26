@@ -10,32 +10,32 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinP , TOCK ) ;
+etThread.osSleepF( tinBaseP , TOCK ) ;
 
-etThread.strokeF( tinP , T("my wait is over; the other thread posted the event semaphore\r\n") ) ;
-third.dosCloseEventSemF( tinP , handle ) ;
-third.dosWaitEventSemF( tinP , handle ) ;
-etThread.strokeF( tinP , T("i am about to wait on the event semaphore\r\n") ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , handle ) ; }
+etThread.strokeF( tinBaseP , T("my wait is over; the other thread posted the event semaphore\r\n") ) ;
+third.dosCloseEventSemF( tinBaseP , handle ) ;
+third.dosWaitEventSemF( tinBaseP , handle ) ;
+etThread.strokeF( tinBaseP , T("i am about to wait on the event semaphore\r\n") ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , handle ) ; }
 
-third.dosResetEventSemF( tinP , handle ) ;
-etThread.strokeF( tinP , T("my wait is over; the other thread posted the event semaphore\r\n") ) ;
-third.dosWaitEventSemF( tinP , handle ) ;
-etThread.strokeF( tinP , T("i am about to wait on the event semaphore\r\n") ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , handle ) ; }
+third.dosResetEventSemF( tinBaseP , handle ) ;
+etThread.strokeF( tinBaseP , T("my wait is over; the other thread posted the event semaphore\r\n") ) ;
+third.dosWaitEventSemF( tinBaseP , handle ) ;
+etThread.strokeF( tinBaseP , T("i am about to wait on the event semaphore\r\n") ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , handle ) ; }
 
-third.dosOpenEventSemF( tinP , handle ) ;
-handleC handle( tinP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ;
+third.dosOpenEventSemF( tinBaseP , handle ) ;
+handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_EVENTsEMAPHORE ) ;
 
 thirdC& third = ether ;
 
 TODO
 
 DONE( tmF )
-third.dosPostEventSemF( tinP , pTaskP ? pTaskP->c1 : 0 ) ;
-etThread.osSleepF( tinP , TOCK * 4 ) ;
+third.dosPostEventSemF( tinBaseP , pTaskP ? pTaskP->c1 : 0 ) ;
+etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
 thirdC& third = ether ;
 TASK( tmF )
 
