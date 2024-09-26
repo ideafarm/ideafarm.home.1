@@ -285,10 +285,13 @@
             static countT idInLath ;
 
             if( pbEbp <  tinP.pbThreadStackLowest ) tinP.pbThreadStackLowest = pbEbp ;
-            //if( pbEbp >= tinP.pbThreadStackEnd    ) { BLAMMO ; }
-            //if( pbEbp <  tinP.pbThreadStackStart  ) { BLAMMO ; }
+
+            if( tinP.pbThreadStackEnd   && pbEbp >= tinP.pbThreadStackEnd    ) { BLAMMO ; }
+            if( tinP.pbThreadStackStart && pbEbp <  tinP.pbThreadStackStart  ) { BLAMMO ; }
+
             const byteT* pbEbp = (const byteT*)ebpAM() ;
         {
+        if( tinP.idTinNamed != ifcIDtINnAMED_tinHeartI && tinP.idTinNamed != ifcIDtINnAMED_tinBreakI )
 
 //}
 //    tinP.pc Utility[ 1 ] ++ ;

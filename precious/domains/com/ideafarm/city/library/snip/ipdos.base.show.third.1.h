@@ -7105,7 +7105,7 @@ to use this, the object must be of a class that provides operator byteT* which r
 
 /*1*//*IFbEcAREFUL*//*1*/
 
-#define IFbEcAREFUL if( tinP.pag1->_thirdC_.bCareful )
+#define IFbEcAREFUL if( !tinP.pag1 || tinP.pag1->_thirdC_.bCareful )
 
 //U:: THIS FAILS BECAUSE SOME FUNCTIONS MUST NOT CT _IO_
 //U:: #define IFbEcAREFUL _IO1_(1) if( tinP.pag1->_thirdC_.bCareful )

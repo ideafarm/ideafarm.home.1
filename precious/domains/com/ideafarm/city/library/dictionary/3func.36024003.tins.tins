@@ -111,11 +111,6 @@
                         // EXAMPLE: tinS [osPid,osTid,idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    12308_9    8168_9    00000000    00004000    000a0000_    000e0000_
                         //          123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0
                         //          0              1               2               3               4               5               6               7               8               9               a               b               c               d               e               f               0
-
-                        *(countT*)&pbThreadStackEnd   = (countT)info.BaseAddress + info.RegionSize ;
-                        *(countT*)&pbThreadStackStart = (countT)info.AllocationBase ;
-                        VirtualQuery( (byteT*)ebpP , &info , sizeof info ) ;
-                        MEMORY_BASIC_INFORMATION info ;
                     {
                     if( idTinNamed == ifcIDtINnAMED_tinInPoolMain || this == &tinSelfOrElderP )
 
@@ -154,6 +149,15 @@
         
             TINSL
     
+            }
+                *(countT*)&pbThreadStackEnd   = (countT)info.BaseAddress + info.RegionSize ;
+                *(countT*)&pbThreadStackStart = (countT)info.AllocationBase ;
+                VirtualQuery( (byteT*)ebpP , &info , sizeof info ) ;
+                MEMORY_BASIC_INFORMATION info ;
+                //CONoUTrAW3( "\r\ntinS / setting [pbThreadStackStart,pbThreadStackEnd] / [idTinNamed]:    " , idTinNamed , "\r\n" ) ;
+            {
+            if( !pbThreadStackStart )
+
             }
                 thirdC::c_strncpyIF( tinP , postTell , "tinS::tinS: my image is now valid by raw construction" , sizeof postTell ) ;
                 putNegAM( fingerprint , FINGERnEG_TINs ) ; //MY IMAGE IS NOW COMPLETELY VALID
@@ -370,7 +374,7 @@ cRain( 0 ) ,
 time2( 0 ) ,
 time1( 0 ) ,
 osPid( osPidIF( tinSelfOrElderP ) ) ,
-osTid( ( putNegAM( fingerprint , FINGERnEG_TINszOMBIE ) , ( this == &processGlobal6I.tinBreak || this == &processGlobal5I.tinHeart ) ? 0 : osTidIF() ) ) ,
+osTid( ( this == &processGlobal6I.tinBreak || this == &processGlobal5I.tinHeart ) ? 0 : osTidIF() ) ,
 idDesireSetBySelfProcess( 0 ) ,
 idDesireSetBySelf( 0 ) ,
 fingerprint( 0 ) ,
@@ -405,7 +409,14 @@ tally( tinSelfOrElderP ) ,
 top_pTinMainI_
 idTypeTin( ifcIDtYPEtIN_NORMAL ) ,
 idTin( 1 + incv02AM( processGlobal2I._tinS_idTinLath ) ) ,
-idSerial( 0 ) ,
+) ,
+    )
+        0
+        ,
+        putNegAM( fingerprint , FINGERnEG_TINszOMBIE )
+    (
+(
+idSerial
 /*1*/tinS::tinS( tinS& tinSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tinS* const pTinDadP , const osTextT* const postThreadNameP , const flagsT flagsP , const countT idTinNamedP , byteT* const pbTlsP , const countT cbTlsP )/*1*/ :
 
 // "tinSelfOrElderP": USUALLY SO, BUT NOT ALWAYS (AN EXCEPTION TIN WILL BE, YOU GUESSED IT, AN EXCEPTION (S))
