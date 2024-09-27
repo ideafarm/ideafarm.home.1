@@ -9,7 +9,31 @@
 
 ;
 }
-        tinBaseS( countT idTypeTinP ) ;
+        tinBaseS( tinBaseS& tinBaseSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , countT idTypeTinP , tinBaseS* const pTinBaseDadP , const flagsT flagsP , const countT idTinNamedP ) ;
+
+        signC*                  pSgnUtility ;                       /*F*/
+        const countT            idiFileCt ;                         /*C*/
+        const countT            idLineCt ;                          /*C*/
+        flagsT                  flags ;                             /*D*/
+    public :
+        // tinBaseS*                ppTinKid[ ClOWtHREADS ] ;           /*B*/ //U::TEMPORARY, TO DEBUG PROBLEM WITH pTinKid pTinBro LIST
+        // tinBaseS*                pTinKid ;                           /*B*/
+        // tinBaseS*                pTinBro ;                           /*B*/
+        // tinBaseS* const          pTinBaseDad ;                           /*B*/
+        // countT               idDesireSetBySelf_cGrab_pTinKid ;   /*C*/
+        // countT               cGrab_pTinKid ;                     /*C*/
+        grabC                   grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
+        tinBaseS* const             pTinOld ;                           /*B*/
+    protected :
+        const countT            idTinNamed ;                        /*C*/
+        jotC*                   ppJot[ CsLOTSjOTrEGISTRY ] ;        /*J*/      // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
+        scoopC*                 pScoops ;
+        scoopC*                 pScoopEtThread ;
+        const poopC*            pPoop ;                             //INITIALIZED TO &poop BEFORE poop IS CONSTRUCTED (THIS IS OK)
+    public :
+        poopC                   poop ;                              //MUST BE CT EARLY, BEFORE POOP MACRO IS INVOKED DURING tinNormalS CONSTRUCTION
+    protected :
+        topC                     top_pTinMainI_ ;
 
         const countT             idTin ;                            /*C*/
         const countT             idTypeTin ;

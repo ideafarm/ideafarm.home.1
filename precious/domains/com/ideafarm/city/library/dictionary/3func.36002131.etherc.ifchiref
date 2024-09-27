@@ -108,7 +108,7 @@
                         if
             
                         //flagsP |= flHIRE_DISPLAYtEXT ;    // DISABLE IN PRODUCTION.
-                        //flagsP |= flHIRE_DEBUG       ;    // DISABLE IN PRODUCTION.  ENABLE TO ALWAYS HIRE USING wdw
+                        flagsP |= flHIRE_DEBUG       ;    // DISABLE IN PRODUCTION.  ENABLE TO ALWAYS HIRE USING wdw
             
                         else if( !strCompareF( tinBaseP , tDisplay , T("none"   ) ) ) flagsP |= flHIRE_DISPLAYnONE     ;
                         else if( !strCompareF( tinBaseP , tDisplay , T("text"   ) ) ) flagsP |= flHIRE_DISPLAYtEXT     ;
@@ -158,7 +158,7 @@
     ZE( countT , osPid       ) ;
     ZE( countT , osTid       ) ;
 
-    //flagsP |= flHIRE_DEBUG ; //TO FIND A BUG
+    flagsP |= flHIRE_DEBUG ; //TO FIND A BUG
 
     if( !idAdamP ) idAdamP = ((tinNormalS&)tinBaseP).pag1->idAdam ;
 

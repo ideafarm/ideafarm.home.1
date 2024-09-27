@@ -27505,7 +27505,31 @@ struct bookMarkOldS
         const countT             idTypeTin ;
         const countT             idTin ;                            /*C*/
 
-        tinBaseS( countT idTypeTinP ) ;
+        topC                     top_pTinMainI_ ;
+    protected :
+        poopC                   poop ;                              //MUST BE CT EARLY, BEFORE POOP MACRO IS INVOKED DURING tinNormalS CONSTRUCTION
+    public :
+        const poopC*            pPoop ;                             //INITIALIZED TO &poop BEFORE poop IS CONSTRUCTED (THIS IS OK)
+        scoopC*                 pScoopEtThread ;
+        scoopC*                 pScoops ;
+        jotC*                   ppJot[ CsLOTSjOTrEGISTRY ] ;        /*J*/      // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
+        const countT            idTinNamed ;                        /*C*/
+    protected :
+        tinBaseS* const             pTinOld ;                           /*B*/
+        grabC                   grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
+        // countT               cGrab_pTinKid ;                     /*C*/
+        // countT               idDesireSetBySelf_cGrab_pTinKid ;   /*C*/
+        // tinBaseS* const          pTinBaseDad ;                           /*B*/
+        // tinBaseS*                pTinBro ;                           /*B*/
+        // tinBaseS*                pTinKid ;                           /*B*/
+        // tinBaseS*                ppTinKid[ ClOWtHREADS ] ;           /*B*/ //U::TEMPORARY, TO DEBUG PROBLEM WITH pTinKid pTinBro LIST
+    public :
+        flagsT                  flags ;                             /*D*/
+        const countT            idLineCt ;                          /*C*/
+        const countT            idiFileCt ;                         /*C*/
+        signC*                  pSgnUtility ;                       /*F*/
+
+        tinBaseS( tinBaseS& tinBaseSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , countT idTypeTinP , tinBaseS* const pTinBaseDadP , const flagsT flagsP , const countT idTinNamedP ) ;
 }
 ;
 
@@ -27517,7 +27541,6 @@ struct bookMarkOldS
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tinNormalS : 1snip.15000026.tins BEGIN
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -27547,29 +27570,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
     // INSTANCE MEMBERS PREFIX (NOT SLOSHED (COPIED) DURING CT OF A REPLACEMENT INSTANCE FOR A THREAD (E.G. THE SUCCESSIVE CT ON THREAD 1 OF: ifcIDtINnAMED_tinNormalVeryVeryEarlyLateMainI ifcIDtINnAMED_tinNormalVeryEarlyLateMainI ifcIDtINnAMED_tinEarlyLateMain ifcIDtINnAMED_tinInPoolMain)
 
-        topC                     top_pTinMainI_ ;
-    private :
-        poopC                   poop ;                              //MUST BE CT EARLY, BEFORE POOP MACRO IS INVOKED DURING tinNormalS CONSTRUCTION
-    public :
-        const poopC*            pPoop ;                             //INITIALIZED TO &poop BEFORE poop IS CONSTRUCTED (THIS IS OK)
-        scoopC*                 pScoopEtThread ;
-        scoopC*                 pScoops ;
-        jotC*                   ppJot[ CsLOTSjOTrEGISTRY ] ;        /*J*/      // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
-        const countT            idTinNamed ;                        /*C*/
-    private :
-        tinBaseS* const             pTinOld ;                           /*B*/
-        grabC                   grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
-        // countT               cGrab_pTinKid ;                     /*C*/
-        // countT               idDesireSetBySelf_cGrab_pTinKid ;   /*C*/
-        // tinBaseS* const          pTinBaseDad ;                           /*B*/
-        // tinBaseS*                pTinBro ;                           /*B*/
-        // tinBaseS*                pTinKid ;                           /*B*/
-        // tinBaseS*                ppTinKid[ ClOWtHREADS ] ;           /*B*/ //U::TEMPORARY, TO DEBUG PROBLEM WITH pTinKid pTinBro LIST
-    public :
-        flagsT                  flags ;                             /*D*/
-        const countT            idLineCt ;                          /*C*/
-        const countT            idiFileCt ;                         /*C*/
-        signC*                  pSgnUtility ;                       /*F*/
 
     #define CBtINpREFIX ( 3 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + /*J*/ sizeof ppJot + /*A*/1 * sizeof( grabC ) + /*B*/( 1 /*+ 3 + ClOWtHREADS*/ ) * sizeof( tinBaseS* ) + /*C*/4 * sizeof( countT ) + /*D*/sizeof( flagsT ) + /*F*/sizeof( signC* ) )
     #define CBtINsUFFIX ( 0 )

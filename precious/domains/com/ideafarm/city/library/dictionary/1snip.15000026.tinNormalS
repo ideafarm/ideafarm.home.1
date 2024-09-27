@@ -198,29 +198,6 @@
     #define CBtINsUFFIX ( 0 )
     #define CBtINpREFIX ( 3 * sizeof( countT ) + sizeof( topC ) + sizeof( poopC ) + sizeof( poopC* ) + 2 * sizeof( scoopC* ) + /*J*/ sizeof ppJot + /*A*/1 * sizeof( grabC ) + /*B*/( 1 /*+ 3 + ClOWtHREADS*/ ) * sizeof( tinBaseS* ) + /*C*/4 * sizeof( countT ) + /*D*/sizeof( flagsT ) + /*F*/sizeof( signC* ) )
 
-        signC*                  pSgnUtility ;                       /*F*/
-        const countT            idiFileCt ;                         /*C*/
-        const countT            idLineCt ;                          /*C*/
-        flagsT                  flags ;                             /*D*/
-    public :
-        // tinBaseS*                ppTinKid[ ClOWtHREADS ] ;           /*B*/ //U::TEMPORARY, TO DEBUG PROBLEM WITH pTinKid pTinBro LIST
-        // tinBaseS*                pTinKid ;                           /*B*/
-        // tinBaseS*                pTinBro ;                           /*B*/
-        // tinBaseS* const          pTinBaseDad ;                           /*B*/
-        // countT               idDesireSetBySelf_cGrab_pTinKid ;   /*C*/
-        // countT               cGrab_pTinKid ;                     /*C*/
-        grabC                   grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
-        tinBaseS* const             pTinOld ;                           /*B*/
-    private :
-        const countT            idTinNamed ;                        /*C*/
-        jotC*                   ppJot[ CsLOTSjOTrEGISTRY ] ;        /*J*/      // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
-        scoopC*                 pScoops ;
-        scoopC*                 pScoopEtThread ;
-        const poopC*            pPoop ;                             //INITIALIZED TO &poop BEFORE poop IS CONSTRUCTED (THIS IS OK)
-    public :
-        poopC                   poop ;                              //MUST BE CT EARLY, BEFORE POOP MACRO IS INVOKED DURING tinNormalS CONSTRUCTION
-    private :
-        topC                     top_pTinMainI_ ;
 
     // INSTANCE MEMBERS PREFIX (NOT SLOSHED (COPIED) DURING CT OF A REPLACEMENT INSTANCE FOR A THREAD (E.G. THE SUCCESSIVE CT ON THREAD 1 OF: ifcIDtINnAMED_tinNormalVeryVeryEarlyLateMainI ifcIDtINnAMED_tinNormalVeryEarlyLateMainI ifcIDtINnAMED_tinEarlyLateMain ifcIDtINnAMED_tinInPoolMain)
 
