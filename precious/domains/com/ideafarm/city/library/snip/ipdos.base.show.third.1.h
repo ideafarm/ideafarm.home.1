@@ -534,7 +534,7 @@ it is illegal to refer to this symbol in the definition of an adam
         mainS* const& pmp = pMainParametersP ;                                                                                                                                  \
         if( pmp )                                                                                                                                                               \
         {                                                                                                                                                                       \
-            tinBaseS& tinBaseP = pmp->tin ;                                                                                                                                             \
+            tinBaseS& tinBaseP = pmp->tinBase ;                                                                                                                                             \
             _IO_                                                                                                                                                                \
             TELL( "MAINF/+" ) ;                                                                                                                                                 \
             thirdC::osTraceWrongNodeIF( tinBaseP , (byteT*)mainF , "mainF" ) ;                                                                                                      \

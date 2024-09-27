@@ -104,21 +104,21 @@ DONE( tmConsoleF )
                                         {
                                         else
                                         if( !bOk || getNegAM( pCopyGrab->finger ) != FINGERnEG_GRABc ) pCopyGrab = 0 ;
-                                        thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopyGrab , sizeof( grabC ) , bOk , (voidT*)pCopyTin->pPanLifiRecurseGrabbedLevel[ off ] , info.osPid ) ;
+                                        thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopyGrab , sizeof( grabC ) , bOk , (voidT*)((tinNormalS*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ off ] , info.osPid ) ;
                                         ZE( boolT , bOk ) ;
                                         grabC* pCopyGrab = (grabC*)pbCopyGrab ;
                                         byteT pbCopyGrab[ sizeof( grabC ) ] ;
                                     {
-                                    if( pCopyTin->pPanLifiRecurseGrabbedLevel[ off ] )
+                                    if( ((tinNormalS*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ off ] )
                                 {                                                                                                                              //U::BUG: SHOULD BE off += 5?
-                                for( countT off = 0 ; off < sizeof pCopyTin->pPanLifiRecurseGrabbedLevel / sizeof pCopyTin->pPanLifiRecurseGrabbedLevel[ 0 ] ; off ++ ) //U::OBSOLETED BY MIGRATION TO pPanLifiRecurseGrabbedLevel; SEE tmReportF
+                                for( countT off = 0 ; off < sizeof ((tinNormalS*)pCopyTin)->pPanLifiRecurseGrabbedLevel / sizeof ((tinNormalS*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ 0 ] ; off ++ ) //U::OBSOLETED BY MIGRATION TO pPanLifiRecurseGrabbedLevel; SEE tmReportF
     
                                 etThread.strFuseF( tinBaseP , psttr , tcr ) ;
     
                                 ) ;
                                     
-                                    +top+TF2(pCopyTin->monitor.pPanLifiGrabbing[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcp
-                                    tb+TF2(pCopyTin->monitor.pPanLifiGrabbing[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)
+                                    +top+TF2(((tinNormalS*)pCopyTin)->monitor.pPanLifiGrabbing[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcp
+                                    tb+TF2(((tinNormalS*)pCopyTin)->monitor.pPanLifiGrabbing[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)
                                     
                                 etThread.strFuseF( tinBaseP , psttr ,
     
@@ -129,7 +129,7 @@ DONE( tmConsoleF )
                             
                                 etThread.strFuseF( tinBaseP , psttr , 
                             {
-                            if( pCopyTin && pCopyTin->monitor.pPanLifiGrabbing[ 0 ] )
+                            if( pCopyTin && ((tinNormalS*)pCopyTin)->monitor.pPanLifiGrabbing[ 0 ] )
     
                             }
                                 if( !bOk || getNegAM( pc2[ 0 ] ) != FINGERnEG_TINs || info.idSerial != pc2[ 1 ] ) pCopyTin = 0 ;
@@ -138,7 +138,7 @@ DONE( tmConsoleF )
                                 countT pc2[ 2 ] ; //CODE SYNC: ad40104 003002a: fingerprint idSerial MUST BE AT OFFSETS 0 4
                             {
                             else
-                            if( !bOk || getNegAM( pCopyTin->fingerprint ) != FINGERnEG_TINs || info.idSerial != pCopyTin->idSerial ) pCopyTin = 0 ;
+                            if( !bOk || getNegAM( ((tinNormalS*)pCopyTin)->fingerprint ) != FINGERnEG_TINs || info.idSerial != ((tinNormalS*)pCopyTin)->idSerial ) pCopyTin = 0 ;
                             thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopyTin , sizeof( tinNormalS ) , bOk , (voidT*)info.ip , info.osPid ) ;
                             ZE( boolT , bOk ) ;
                             tinBaseS* pCopyTin = (tinBaseS*)pbCopyTin ;
