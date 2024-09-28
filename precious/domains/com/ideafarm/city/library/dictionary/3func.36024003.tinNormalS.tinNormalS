@@ -228,17 +228,18 @@
             {
             else
             }
-                if( ((tinNormalS*)pTinOld)->pPoop != &((tinNormalS*)pTinOld)->poop ) { BLAMMO ; }
+                if( pTinNormalPrior->pPoop != &pTinNormalPrior->poop ) { BLAMMO ; }
         
                 thirdC::c_strncpyIF( postTell , "tinNormalS::tinNormalS: my image is now valid by copying my elder" , sizeof postTell ) ;
 
-                if( thirdC::c_memcpyWithCallBackIF( (byteT*)this + CBtINpREFIX , (byteT*)&tinBaseSelfOrElderP + CBtINpREFIX , sizeof( tinNormalS ) - CBtINpREFIX - CBtINsUFFIX , ctTellCopyDoneF , (countT)this ) ) { BLAMMO ; } //CODE SYNC: 003002a 12f0002 12f0003
+                if( thirdC::c_memcpyWithCallBackIF( (byteT*)this + sizeof( tinBaseS ) , (byteT*)pTinNormalPrior + sizeof( tinBaseS ) , sizeof( tinNormalS ) - sizeof( tinBaseS ) , ctTellCopyDoneF , (countT)this ) ) { BLAMMO ; } //CODE SYNC: 003002a 12f0002 12f0003
 
-                putNegAM( ((tinNormalS&)tinBaseSelfOrElderP).fingerprint , FINGERnEG_TINszOMBIE ) ; //FROM NOW UNTIL I REGISTER MYSELF, MONITOR WILL NOT BE ABLE TO SEE A tinNormalS FOR THIS THREAD
-                if( getNegAM( ((tinNormalS&)tinBaseSelfOrElderP).fingerprint ) != FINGERnEG_TINs ) BLAMMO ;
+                putNegAM(     pTinBasePrior->fingerprint   ,  FINGERnEG_TINszOMBIE ) ; //FROM NOW UNTIL I REGISTER MYSELF, MONITOR WILL NOT BE ABLE TO SEE A tinNormalS FOR THIS THREAD
+                if( getNegAM( pTinBasePrior->fingerprint ) != FINGERnEG_TINs       ) BLAMMO ;
 
-                //SAYnAME( " tinNormalS/ " ) CONoUTrAW( " copying from " ) ; CONoUTrAW( NAME( ((tinNormalS&)tinBaseSelfOrElderP).idTinNamed ) ) ; CONoUTrAW( "\r\n" ) ;
-                *(tinBaseS**)&pTinOld = &tinBaseSelfOrElderP ;
+                //SAYnAME( " tinNormalS/ " ) CONoUTrAW( " copying from " ) ; CONoUTrAW( NAME( pTinBasePrior->idTinNamed ) ) ; CONoUTrAW( "\r\n" ) ;
+                tinNormalS*   pTinNormalPrior = (tinNormalS*)&tinBaseSelfOrElderP ;
+                *(tinBaseS**)&pTinBasePrior   =              &tinBaseSelfOrElderP ;
             {
             if( !( F(flags) & flTINs_NOeLDER ) )
         
@@ -368,6 +369,8 @@ pag3( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag3 : ( idTinNamedP == ifcIDt
 pag2( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag2 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag2 : &rootAdamGlobal2I ) ) ,
 pag1( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag1 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag1 : &rootAdamGlobal1I ) ) ,
 tally( tinBaseSelfOrElderP ) ,
+pScoops( 0 ) ,
+pScoopEtThread( 0 ) ,
 tinBaseS( tinBaseSelfOrElderP , idLineCtP , idiFileCtP , pbBitsCtP , ifcIDtYPEtIN_NORMAL , pTinBaseDadP , flagsP , idTinNamedP ) ,
 /*1*/tinNormalS::tinNormalS( tinBaseS& tinBaseSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tinBaseS* const pTinBaseDadP , const osTextT* const postThreadNameP , const flagsT flagsP , const countT idTinNamedP , byteT* const pbTlsP , const countT cbTlsP )/*1*/ :
 

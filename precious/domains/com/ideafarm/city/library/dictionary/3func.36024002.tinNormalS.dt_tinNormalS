@@ -103,20 +103,22 @@
         }
             thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER ) ;
         {
-        if( pTinF() != pTinOld )
+        if( pTinF() != pTinBasePrior )
+
+        //putNegAM(     pTinBasePrior->fingerprint   ,  FINGERnEG_TINs       ) ;          // FROM NOW UNTIL I AM COMPETELY DT, GLASS2 WILL SEE OO INSTANCES OF tinNormalS FOR THIS THREAD
+        //if( getNegAM( pTinBasePrior->fingerprint ) != FINGERnEG_TINszOMBIE ) BLAMMO ;
+        //THIS IS DONE WITHIN dtTellCopyDoneF
 
         }
             thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED ) ;
             CONoUTrAW( "\r\n" ) ; //CODE SYNC: 003002a 12f0002 12f0003
         {
-        if( thirdC::c_memcpyWithCallBackIF( (byteT*)pTinOld + CBtINpREFIX , (byteT*)this + CBtINpREFIX , sizeof( tinNormalS ) - CBtINpREFIX - CBtINsUFFIX , dtTellCopyDoneF , (countT)this ) )
+        if( thirdC::c_memcpyWithCallBackIF( (byteT*)pTinBasePrior + sizeof( tinBaseS ) , (byteT*)this + sizeof( tinBaseS ) , sizeof( tinNormalS ) - sizeof( tinBaseS ) , dtTellCopyDoneF , (countT)this ) )
 
-        }
-            //SAYnAME( "~tinNormalS/ " ) CONoUTrAW( "copying to " ) ; CONoUTrAW( NAME( pTinOld->idTinNamed ) ) ; ; CONoUTrAW( "\r\n" ) ;
-            TINSL
-        {
+        //SAYnAME( "~tinNormalS/ " ) CONoUTrAW( "copying to " ) ; CONoUTrAW( NAME( pTinBasePrior->idTinNamed ) ) ; ; CONoUTrAW( "\r\n" ) ;
+        TINSL       // I CANNOT USE MYSELF BECAUSE I MIGHT BE tinHeart OR tinBreak
     {
-    if( pTinOld )
+    if( pTinBasePrior )
 
     }
         DEL( pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
