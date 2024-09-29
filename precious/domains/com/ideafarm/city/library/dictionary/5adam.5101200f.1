@@ -9,20 +9,74 @@
 
 REST
 
+#endif
+
+thirdC::third_flagsModeProcess2I_IF() &= ~( F(flMODEpROCESS2_SUPPRESSiNoUTfRAMEc) ) ;
+etThread.traceF( tinBaseP , T("i've been fired") ) ;
+
 etherC::loafIF( tinBaseP ) ;
-etThread.osThreadF( TaRG1( tmFooF ) ) ;
+
+//etherC::etherFireGroupIF( tinBaseP ) ; //U:: TO FIND A BUG
+
+//thirdC::ctrlCIF( tinBaseP ) ;
+
+etThread.traceF( tinBaseP , T("ok") ) ;
+
+}
+    etThread.traceMemoryGrainRptF( tinBaseP ) ;
+
+    etThread.traceF( tinBaseP , T("all are ready now") ) ;
+    }
+        ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+        etThread.traceF( tinBaseP , T("[pending]:    ")+TF2(CwORKERS-cReady,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    {
+    while( cReady < CwORKERS )
+
+    cAlive = 0 ;
+    etThread.traceF( tinBaseP , T("all are alive now") ) ;
+    }
+        ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+        etThread.traceF( tinBaseP , T("[pending]:    ")+TF2(CwORKERS-cAlive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    {
+    while( cAlive < CwORKERS )
+    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+
+    THREADmODE2rESTORE
+    }
+        etThread.osThreadF( tinBaseP , countTC() , tmWorkF , 0 , &cAlive , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT | flTHREADlAUNCH_NOtINiNpOOL , CBsTACKmIN << 0 , 0 , (countT)&cReady ) ;
+    {
+    while( cDo -- )
+    THREADmODE2oN( flTHREADmODE2_SUPPRESStELLmONITOR )
+    countT cDo = CwORKERS ;
+    ZE( countT , cReady ) ;
+    ZE( countT , cAlive ) ;
+{
+if( !ether )
+
+thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ;
+
+#if defined( NEVERdEFINED )
 
 TODO
 
-DONE( tmFooF )
-}
-    CONoUTrAW3( "[ebp]:    " , ebpMe , "\r\n" ) ;
-    countT ebpMe = ebpAM() ;
-{
-if( pTaskP )
-TASK( tmFooF )
 
-/*1*/WAKEsHOWtEXT( "example.other.3func.36002065.etherc.osthreadf.launching.many.threads" )/*1*/
+DONEnOeTHERS( tmWorkF )
+
+THREADmODE4rESTORE
+}
+    etherC::loafIF( tinBaseP ) ;
+    inc02AM( cReadyP ) ;
+
+    countT& cReadyP = *(countT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 )
+THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL ) ;
+
+TASKnOeTHERS( tmWorkF )
+
+#define CwORKERS ( 1 )
+
+/*1*/WAKEsHOWtEXT( "baseline.869.example.other.3func.36002065.etherc.osthreadf.launching.many.threads" )/*1*/
 /**/
 */
 /*

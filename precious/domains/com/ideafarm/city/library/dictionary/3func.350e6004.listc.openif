@@ -9,6 +9,7 @@
 
 }
     return flagsRC ;
+    //CONoUTrAW( "openIF / ----\r\n" ) ;
 
     THREADmODE2rESTORE
     }
@@ -24,7 +25,12 @@
                 ((tinNormalS&)tinBaseP).tlsDelF( LF , *(byteT**)&ppPreallocatedLists ) ;
 
                 THREADmODE3rESTORE
-                while( *ppc ) { DEL( *( ppc ++ ) ) ; }
+                }
+                    ppc ++ ;
+                    DEL( *ppc ) ;                                                                               // THE ++ OPERATOR CANNOT BE USED IN THE ARGUMENT BECAUSE DEL EVALUATES ITS PARAMETER MULTIPLE TIMES
+                    //CONoUTrAW3( "\r\n------------------------ [pPre      ]:    " , *ppc , "    deleted" ) ;
+                {
+                while( *ppc )
                 THREADmODE3oN( flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc ) ;
                 listC** ppc = ppPreallocatedLists ;
             {
@@ -103,6 +109,8 @@
                             THREADmODE3rESTORE
                             //THREADmODE4rESTORE
 
+                            //CONoUTrAW5( "\r\n++++++++++++++++++++++++ [pPre,idNew]:    " , pPre , "    " , 1 + incv02AM( idNewLath ) , "" ) ;
+
                             ___( pPre ) ;
                             ;
                                 : new( 0 , tinBaseP , LF ) listC(      tinBaseP , LISTnAMEsYS_PREALLOCATED , flLISTINGc_DOnOTrEGISTERiNtIN )
@@ -119,10 +127,10 @@
                 {
                 if( !POOP )
 
+                thirdC::c_memsetIF( tinBaseP , (byteT*)ppPreallocatedLists , cbaPre ) ;
                 __Z( ppPreallocatedLists ) ;
-
-                ppPreallocatedLists = (listC**)((tinNormalS&)tinBaseP).tlsNewF( LF , ( ccName + 1 ) * sizeof( listC* ) ) ;
-
+                ppPreallocatedLists = (listC**)((tinNormalS&)tinBaseP).tlsNewF( LF , cbaPre ) ;
+                countT cbaPre = ( ccName + 1 ) * sizeof( listC* ) ;
                 countT ccName = thirdC::c_strlenIF( tinBaseP , pczNameP ) ;
             {
             else if( !( F(flagsP) & flLISToPEN_IFeXISTS ) )
@@ -145,6 +153,9 @@
 
     LNV( pczNameP )
 
+
+static countT idNewLath ;
+
     _IO_
 
     }
@@ -163,6 +174,7 @@
     const flagsT flagsPoolFormat = PUSE.flagsPoolFormatF() ;
 
     flagsT flagsRC = flLISToPENrETURNcODE_null ;
+    //CONoUTrAW( "openIF / +++\r\n" ) ;
 {
 /*1*/flagsT listC::openIF( tinBaseS& tinBaseP , handleC& hListP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
 
