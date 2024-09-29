@@ -1,4 +1,6 @@
 
+#define CtHREADSmAX ( 0x1063 )
+
 #define ifcIDtYPEtIN_NORMAL                         1
 #define ifcIDtYPEtIN_TINY                           2
 
@@ -16766,7 +16768,8 @@ after i return, that countT object will contain 1
 #define flMODEpROCESS2_SUPPRESSiNoUTfRAMEc             0xe0000844
 #define flMODEpROCESS2_EXITcODEiMPOTENCE               0xe0001044
 #define flMODEpROCESS2_CHATTERtHREADcTdT               0xe0002044
-#define flMODEpROCESS2_FANCY                           0xe0004044
+#define flMODEpROCESS2_CHATTERtHREADsTACK              0xe0004044
+#define flMODEpROCESS2_FANCY                           0xe0008044
 /*3*/
 #define flMODEpROCESS2_null    0xe0000044
 
