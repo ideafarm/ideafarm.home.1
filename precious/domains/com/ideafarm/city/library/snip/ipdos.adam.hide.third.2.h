@@ -27683,18 +27683,16 @@ it is illegal to modify any member other than pc Utility in the definition of an
 /*@@ */ zapC                    zap_pPanLifiRecurseGrabbedLevel_ ;
 
 
-/*@@@*/ osTextT                 postPad1[ sizeof( countT ) - 1 ] ;
-/*@@@*/ osTextT                 postTell[ COSTmAXtELL + 1 ] ;
-/*@@@*/ osTextT                 postTellWait[ COSTmAXtELL + 1 ] ;
-/*@@@*/ osTextT                 postTellIf[ COSTmAXtELL + 1 ] ;
-/*@@@*/ osTextT                 postThreadName[ COSTmAXtHREADnAME + 1 ] ;
-/*@@@*/ osTextT                 postPad2[ sizeof( countT ) - 1 ] ;
-/*@@@*/ ranUniC                 ranUni ;
-/*@@@*/ tinArgS                 ta ;
+/*@@@*/ osTextT                 postTell[         COSTmAXtELL         + 1 ] ;
+/*@@@*/ osTextT                 postTellWait[     COSTmAXtELL         + 1 ] ;
+/*@@@*/ osTextT                 postTellIf[       COSTmAXtELL         + 1 ] ;
+/*@@@*/ osTextT                 postThreadName[   COSTmAXtHREADnAME   + 1 ] ;
 /*@@@*/ const byteT*            ppbGrabitRecurse[ CmAXgRABITrECURSEiNtINs ] ;
 /*@@@*/ countT                  pcGrabitOsTid[    CmAXgRABITrECURSEiNtINs ] ;
 /*@@@*/ countT                  pcGrabitRecurse[  CmAXgRABITrECURSEiNtINs ] ;
-/*@@@*/ bookMarkS               pBookMark[ CbOOKmARK ] ;                // USED BY pageC TO REGISTER A PENDING SMART POINTER ; INCREASE THE NUMBER
+/*@@@*/ bookMarkS               pBookMark[        CbOOKmARK               ] ;                // USED BY pageC TO REGISTER A PENDING SMART POINTER ; INCREASE THE NUMBER
+/*@@@*/ ranUniC                 ranUni ;
+/*@@@*/ tinArgS                 ta ;
 
 
         /* birth , death */

@@ -253,22 +253,14 @@
             idDesireSetBySelf = thirdC::dosPriorityIF( tinBaseSelfOrElderP ) ;
         {
 
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)postPad2                    , sizeof postPad2                    ) ;
-
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)postThreadName              , sizeof postThreadName              ) ;
-
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)postPad1                    , sizeof postPad1                    ) ;
-
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pPanLifiRecurseGrabbedLevel , sizeof pPanLifiRecurseGrabbedLevel ) ;
-
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pBookMark                   , sizeof pBookMark                   ) ;
-
-        else                                            thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppJot                           , sizeof ppJot ) ;
-        if( F(flags) & flTINs_INHERITjOTrEGISTRATIONS ) thirdC::c_memcpyIF( tinBaseSelfOrElderP , (byteT*)ppJot , (byteT*)((tinNormalS*)pTinBaseDadP)->ppJot , sizeof ppJot ) ;
-
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitRecurse             , sizeof pcGrabitRecurse             ) ;
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitOsTid               , sizeof pcGrabitOsTid               ) ;
-        thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppbGrabitRecurse            , sizeof ppbGrabitRecurse            ) ;
+        else                                                 thirdC::c_memcpyIF( tinBaseSelfOrElderP , (byteT*)ppJot                       , (byteT*)((tinNormalS*)pTinBaseDadP)->ppJot , sizeof ppJot                       ) ;
+        if( !( F(flags) & flTINs_INHERITjOTrEGISTRATIONS ) ) thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppJot                                                                    , sizeof ppJot                       ) ;
+                                                             thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)postThreadName                                                           , sizeof postThreadName              ) ;
+                                                             thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pPanLifiRecurseGrabbedLevel                                              , sizeof pPanLifiRecurseGrabbedLevel ) ;
+                                                             thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pBookMark                                                                , sizeof pBookMark                   ) ;
+                                                             thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitRecurse                                                          , sizeof pcGrabitRecurse             ) ;
+                                                             thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitOsTid                                                            , sizeof pcGrabitOsTid               ) ;
+                                                             thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppbGrabitRecurse                                                         , sizeof ppbGrabitRecurse            ) ;
     
         //SAYnAME( " tinNormalS/+\r\n" )
 

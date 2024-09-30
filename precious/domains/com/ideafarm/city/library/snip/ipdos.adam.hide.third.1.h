@@ -1,5 +1,5 @@
 
-#define CtHREADSmAX ( 0x1063 )
+#define CtHREADSmAX ( 0x107d )
 
 #define ifcIDtYPEtIN_NORMAL                         1
 #define ifcIDtYPEtIN_TINY                           2
@@ -8307,7 +8307,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 // (COSTmAXtHREADnAME + 1) MUST BE A MULTIPLE OF sizeof( countT ) SO THAT tinNormalS, MEMBERS ARE ALIGNED
 
-#define COSTmAXtHREADnAME 0xff
+#define COSTmAXtHREADnAME 0x1f
 
 
 //
@@ -12608,7 +12608,7 @@ these values are used in the foreign domain name system
 /**/
 // ( COSTmAXtELL + 1 ) MUST BE MULTIPLE OF sizeof( countT ) SO THAT tinNormalS, MEMBERS ARE ALIGNED
 
-#define COSTmAXtELL 0x7f
+#define COSTmAXtELL 0x3f
 
 
 //
@@ -51309,7 +51309,7 @@ examples
 /**/
 /*1*//*CbOOKmARK*//*1*/
 
-#define CbOOKmARK ( TUCK << 0 )
+#define CbOOKmARK ( TUCK >> 5 )
 
 
 //

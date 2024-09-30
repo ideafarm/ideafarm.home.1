@@ -281,15 +281,8 @@
             //    countT cbStackAll  = ((tinNormalS&)tinBaseP).pbThreadStackEnd - ((tinNormalS&)tinBaseP).pbThreadStackStart ;
             //{
             //if( !( idIn % TICK ) && ((tinNormalS&)tinBaseP).pbThreadStackStart && ((tinNormalS&)tinBaseP).pbThreadStackEnd >= ((tinNormalS&)tinBaseP).pbThreadStackStart )
-            countT idIn = ++ idInLath ; // COLLISIONS CAN OCCUR SINCE NOT USING incv02AM() (FOR SPEED)
-            static countT idInLath ;
-
-            if( pbEbp <  ((tinNormalS&)tinBaseP).pbThreadStackLowest ) ((tinNormalS&)tinBaseP).pbThreadStackLowest = pbEbp ;
-
-            if( ((tinNormalS&)tinBaseP).pbThreadStackEnd   && pbEbp >= ((tinNormalS&)tinBaseP).pbThreadStackEnd    ) { BLAMMO ; }
-            if( ((tinNormalS&)tinBaseP).pbThreadStackStart && pbEbp <  ((tinNormalS&)tinBaseP).pbThreadStackStart  ) { BLAMMO ; }
-
-            const byteT* pbEbp = (const byteT*)ebpAM() ;
+            //countT idIn = ++ idInLath ; // COLLISIONS CAN OCCUR SINCE NOT USING incv02AM() (FOR SPEED)
+            //static countT idInLath ;
         {
         if( ((tinNormalS&)tinBaseP).idTinNamed != ifcIDtINnAMED_tinHeartI && ((tinNormalS&)tinBaseP).idTinNamed != ifcIDtINnAMED_tinBreakI )
 
@@ -308,6 +301,16 @@
         ((tinNormalS&)tinBaseP).pInOutFrame = this ;
     {
     if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ) )
+
+    }
+        if( pbEbp <  ((tinNormalS&)tinBaseP).pbThreadStackLowest ) ((tinNormalS&)tinBaseP).pbThreadStackLowest = pbEbp ;
+
+        if( ((tinNormalS&)tinBaseP).pbThreadStackEnd   && pbEbp >= ((tinNormalS&)tinBaseP).pbThreadStackEnd    ) { BLAMMO ; }
+        if( ((tinNormalS&)tinBaseP).pbThreadStackStart && pbEbp <  ((tinNormalS&)tinBaseP).pbThreadStackStart  ) { BLAMMO ; }
+
+        const byteT* pbEbp = (const byteT*)ebpAM() ;
+    {
+    if( ((tinNormalS&)tinBaseP).idTinNamed != ifcIDtINnAMED_tinHeartI && ((tinNormalS&)tinBaseP).idTinNamed != ifcIDtINnAMED_tinBreakI )
 {
 //INTENTIONALLY UNINITIALIZED FOR SPEED: say.cCpuCycles4
 //INTENTIONALLY UNINITIALIZED FOR SPEED: say.cCpuCycles3
