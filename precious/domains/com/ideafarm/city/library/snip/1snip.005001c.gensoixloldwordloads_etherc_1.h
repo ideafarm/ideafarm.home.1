@@ -1,409 +1,409 @@
 {
-    TN( tNameSoixlOld , "etherBeImpotentF_3" ) ;
+    TN( tNameSoixlOld , "etherBeImpotentF_o3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherBeImpotentF_3_GF ;
+    *_pSwSoixlOldApi = (countT)etherBeImpotentF_o3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "etherBlammoF_" ) ;
+    TN( tNameSoixlOld , "etherBlammoF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherBlammoF__GF ;
+    *_pSwSoixlOldApi = (countT)etherBlammoF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "etherParameterF_4@" ) ;
+    TN( tNameSoixlOld , "etherParameterF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherParameterF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)etherParameterF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "etherScanProcessParametersF_" ) ;
+    TN( tNameSoixlOld , "etherScanProcessParametersF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherScanProcessParametersF__GF ;
+    *_pSwSoixlOldApi = (countT)etherScanProcessParametersF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "etherTestF_" ) ;
+    TN( tNameSoixlOld , "etherTestF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherTestF__GF ;
+    *_pSwSoixlOldApi = (countT)etherTestF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "etherUidF_4@" ) ;
+    TN( tNameSoixlOld , "etherUidF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherUidF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)etherUidF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ether_pstt1_processParametersI_F_" ) ;
+    TN( tNameSoixlOld , "ether_pstt1_processParametersI_F_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ether_pstt1_processParametersI_F__GF ;
+    *_pSwSoixlOldApi = (countT)ether_pstt1_processParametersI_F_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ether_psttEarlyFolder_F_" ) ;
+    TN( tNameSoixlOld , "ether_psttEarlyFolder_F_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ether_psttEarlyFolder_F__GF ;
+    *_pSwSoixlOldApi = (countT)ether_psttEarlyFolder_F_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ether_idCitizenHirerI_F_" ) ;
+    TN( tNameSoixlOld , "ether_idCitizenHirerI_F_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ether_idCitizenHirerI_F__GF ;
+    *_pSwSoixlOldApi = (countT)ether_idCitizenHirerI_F_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "etherWhereF_373" ) ;
+    TN( tNameSoixlOld , "etherWhereF_o373" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)etherWhereF_373_GF ;
+    *_pSwSoixlOldApi = (countT)etherWhereF_o373_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "poolNewF_331@3" ) ;
+    TN( tNameSoixlOld , "poolNewF_o331@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)poolNewF_331P3_GF ;
+    *_pSwSoixlOldApi = (countT)poolNewF_o331P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "delF_1@" ) ;
+    TN( tNameSoixlOld , "delF_o1@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)delF_1P_GF ;
+    *_pSwSoixlOldApi = (countT)delF_o1P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "delF_4@" ) ;
+    TN( tNameSoixlOld , "delF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)delF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)delF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "newF_331@3" ) ;
+    TN( tNameSoixlOld , "newF_o331@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)newF_331P3_GF ;
+    *_pSwSoixlOldApi = (countT)newF_o331P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "newF_334@3" ) ;
+    TN( tNameSoixlOld , "newF_o334@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)newF_334P3_GF ;
+    *_pSwSoixlOldApi = (countT)newF_o334P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "batonGrabF_b" ) ;
+    TN( tNameSoixlOld , "batonGrabF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)batonGrabF_b_GF ;
+    *_pSwSoixlOldApi = (countT)batonGrabF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "batonLetGoF_b" ) ;
+    TN( tNameSoixlOld , "batonLetGoF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)batonLetGoF_b_GF ;
+    *_pSwSoixlOldApi = (countT)batonLetGoF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "batonOpenF_b64@" ) ;
+    TN( tNameSoixlOld , "batonOpenF_ob64@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)batonOpenF_b64P_GF ;
+    *_pSwSoixlOldApi = (countT)batonOpenF_ob64P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxGetGenerationF_1@34@4@33337" ) ;
+    TN( tNameSoixlOld , "boxGetGenerationF_o1@34@4@33337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxGetGenerationF_1P34P4P33337_GF ;
+    *_pSwSoixlOldApi = (countT)boxGetGenerationF_o1P34P4P33337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxGetShadowGenerationF_1@34@4@3337" ) ;
+    TN( tNameSoixlOld , "boxGetShadowGenerationF_o1@34@4@3337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxGetShadowGenerationF_1P34P4P3337_GF ;
+    *_pSwSoixlOldApi = (countT)boxGetShadowGenerationF_o1P34P4P3337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxMailGetF_4@4@3" ) ;
+    TN( tNameSoixlOld , "boxMailGetF_o4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxMailGetF_4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)boxMailGetF_o4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxPourF_4@4@4@33" ) ;
+    TN( tNameSoixlOld , "boxPourF_o4@4@4@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxPourF_4P4P4P33_GF ;
+    *_pSwSoixlOldApi = (countT)boxPourF_o4P4P4P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxPourF_4@4@33" ) ;
+    TN( tNameSoixlOld , "boxPourF_o4@4@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxPourF_4P4P33_GF ;
+    *_pSwSoixlOldApi = (countT)boxPourF_o4P4P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxPutGenerationF_4@4@31@337" ) ;
+    TN( tNameSoixlOld , "boxPutGenerationF_o4@4@31@337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxPutGenerationF_4P4P31P337_GF ;
+    *_pSwSoixlOldApi = (countT)boxPutGenerationF_o4P4P31P337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxPutHtmlF_64@4@4@4@4@3" ) ;
+    TN( tNameSoixlOld , "boxPutHtmlF_o64@4@4@4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxPutHtmlF_64P4P4P4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)boxPutHtmlF_o64P4P4P4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxPutHtmlFromKnowledgeTreeBaseF_64@4@4@4@4@33" ) ;
+    TN( tNameSoixlOld , "boxPutHtmlFromKnowledgeTreeBaseF_o64@4@4@4@4@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxPutHtmlFromKnowledgeTreeBaseF_64P4P4P4P4P33_GF ;
+    *_pSwSoixlOldApi = (countT)boxPutHtmlFromKnowledgeTreeBaseF_o64P4P4P4P4P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxPutUniqueF_4@4@1@337" ) ;
+    TN( tNameSoixlOld , "boxPutUniqueF_o4@4@1@337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxPutUniqueF_4P4P1P337_GF ;
+    *_pSwSoixlOldApi = (countT)boxPutUniqueF_o4P4P1P337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxServerF_36" ) ;
+    TN( tNameSoixlOld , "boxServerF_o36" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxServerF_36_GF ;
+    *_pSwSoixlOldApi = (countT)boxServerF_o36_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "boxZapF_4@3" ) ;
+    TN( tNameSoixlOld , "boxZapF_o4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)boxZapF_4P3_GF ;
+    *_pSwSoixlOldApi = (countT)boxZapF_o4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskFileOrDirDeleteF_4@73" ) ;
+    TN( tNameSoixlOld , "diskFileOrDirDeleteF_o4@73" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskFileOrDirDeleteF_4P73_GF ;
+    *_pSwSoixlOldApi = (countT)diskFileOrDirDeleteF_o4P73_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskFileExistsF_4@" ) ;
+    TN( tNameSoixlOld , "diskFileExistsF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskFileExistsF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskFileExistsF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskCopyFileF_4@4@3" ) ;
+    TN( tNameSoixlOld , "diskCopyFileF_o4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskCopyFileF_4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)diskCopyFileF_o4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskMoveFileOrDirF_4@4@37" ) ;
+    TN( tNameSoixlOld , "diskMoveFileOrDirF_o4@4@37" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskMoveFileOrDirF_4P4P37_GF ;
+    *_pSwSoixlOldApi = (countT)diskMoveFileOrDirF_o4P4P37_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskMoveFileOrDirUniqueF_4@4@4@34@6" ) ;
+    TN( tNameSoixlOld , "diskMoveFileOrDirUniqueF_o4@4@4@34@6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskMoveFileOrDirUniqueF_4P4P4P34P6_GF ;
+    *_pSwSoixlOldApi = (countT)diskMoveFileOrDirUniqueF_o4P4P4P34P6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskFilePourF_4@4@4@" ) ;
+    TN( tNameSoixlOld , "diskFilePourF_o4@4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskFilePourF_4P4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskFilePourF_o4P4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskFileQueryAttrF_4@" ) ;
+    TN( tNameSoixlOld , "diskFileQueryAttrF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskFileQueryAttrF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskFileQueryAttrF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskFileRefreshF_4@4@4@4@" ) ;
+    TN( tNameSoixlOld , "diskFileRefreshF_o4@4@4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskFileRefreshF_4P4P4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskFileRefreshF_o4P4P4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskFileSetAttrF_4@77" ) ;
+    TN( tNameSoixlOld , "diskFileSetAttrF_o4@77" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskFileSetAttrF_4P77_GF ;
+    *_pSwSoixlOldApi = (countT)diskFileSetAttrF_o4P77_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskChooseSiteF_4@4@4@" ) ;
+    TN( tNameSoixlOld , "diskChooseSiteF_o4@4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskChooseSiteF_4P4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskChooseSiteF_o4P4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskFindMostFreeSpaceF_4@" ) ;
+    TN( tNameSoixlOld , "diskFindMostFreeSpaceF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskFindMostFreeSpaceF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskFindMostFreeSpaceF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskGetHoverF_4@" ) ;
+    TN( tNameSoixlOld , "diskGetHoverF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskGetHoverF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskGetHoverF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskHoverF_4@" ) ;
+    TN( tNameSoixlOld , "diskHoverF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskHoverF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskHoverF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskIdF_4@" ) ;
+    TN( tNameSoixlOld , "diskIdF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskIdF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskIdF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskMakeDirF_4@" ) ;
+    TN( tNameSoixlOld , "diskMakeDirF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskMakeDirF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskMakeDirF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskMakeDirIfNeededF_4@" ) ;
+    TN( tNameSoixlOld , "diskMakeDirIfNeededF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskMakeDirIfNeededF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskMakeDirIfNeededF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskMakeDirStupidlyF_4@" ) ;
+    TN( tNameSoixlOld , "diskMakeDirStupidlyF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskMakeDirStupidlyF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskMakeDirStupidlyF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskMapFileNameF_4@4@" ) ;
+    TN( tNameSoixlOld , "diskMapFileNameF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskMapFileNameF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskMapFileNameF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskMapFileNameHoverF_4@4@3" ) ;
+    TN( tNameSoixlOld , "diskMapFileNameHoverF_o4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskMapFileNameHoverF_4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)diskMapFileNameHoverF_o4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskSelectF_4@" ) ;
+    TN( tNameSoixlOld , "diskSelectF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskSelectF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)diskSelectF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskWaitDirF_b64@7" ) ;
+    TN( tNameSoixlOld , "diskWaitDirF_ob64@7" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskWaitDirF_b64P7_GF ;
+    *_pSwSoixlOldApi = (countT)diskWaitDirF_ob64P7_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskZipOldF_4@4@7" ) ;
+    TN( tNameSoixlOld , "diskZipOldF_o4@4@7" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskZipOldF_4P4P7_GF ;
+    *_pSwSoixlOldApi = (countT)diskZipOldF_o4P4P7_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
@@ -415,1602 +415,1602 @@
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskZipF_4@4@4@4@4@4@3" ) ;
+    TN( tNameSoixlOld , "diskZipF_o4@4@4@4@4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskZipF_4P4P4P4P4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)diskZipF_o4P4P4P4P4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskUnzipF_4@74@4@4@4@4@3" ) ;
+    TN( tNameSoixlOld , "diskUnzipF_o4@74@4@4@4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskUnzipF_4P74P4P4P4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)diskUnzipF_o4P74P4P4P4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskUnzipOldF_4@4@4@7" ) ;
+    TN( tNameSoixlOld , "diskUnzipOldF_o4@4@4@7" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskUnzipOldF_4P4P4P7_GF ;
+    *_pSwSoixlOldApi = (countT)diskUnzipOldF_o4P4P4P7_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "diskRenameToHashF_4@7" ) ;
+    TN( tNameSoixlOld , "diskRenameToHashF_o4@7" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)diskRenameToHashF_4P7_GF ;
+    *_pSwSoixlOldApi = (countT)diskRenameToHashF_o4P7_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "dllNameF_4@b" ) ;
+    TN( tNameSoixlOld , "dllNameF_o4@b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)dllNameF_4Pb_GF ;
+    *_pSwSoixlOldApi = (countT)dllNameF_o4Pb_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "dllOpenF_b4@3" ) ;
+    TN( tNameSoixlOld , "dllOpenF_ob4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)dllOpenF_b4P3_GF ;
+    *_pSwSoixlOldApi = (countT)dllOpenF_ob4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "dnsNicNamesF_4@4@3" ) ;
+    TN( tNameSoixlOld , "dnsNicNamesF_o4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)dnsNicNamesF_4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)dnsNicNamesF_o4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "dnsFormatQueryF_1@34@3" ) ;
+    TN( tNameSoixlOld , "dnsFormatQueryF_o1@34@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)dnsFormatQueryF_1P34P3_GF ;
+    *_pSwSoixlOldApi = (countT)dnsFormatQueryF_o1P34P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "emailFactoryReportF_4@4@" ) ;
+    TN( tNameSoixlOld , "emailFactoryReportF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)emailFactoryReportF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)emailFactoryReportF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strokeF_4@" ) ;
+    TN( tNameSoixlOld , "strokeF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strokeF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)strokeF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "paperTitleF_4@" ) ;
+    TN( tNameSoixlOld , "paperTitleF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)paperTitleF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)paperTitleF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileOpenF_b34@33737733" ) ;
+    TN( tNameSoixlOld , "fileOpenF_ob34@33737733" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileOpenF_b34P33737733_GF ;
+    *_pSwSoixlOldApi = (countT)fileOpenF_ob34P33737733_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileHoseConnectF_b" ) ;
+    TN( tNameSoixlOld , "fileHoseConnectF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileHoseConnectF_b_GF ;
+    *_pSwSoixlOldApi = (countT)fileHoseConnectF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileHoseCreateF_b4@" ) ;
+    TN( tNameSoixlOld , "fileHoseCreateF_ob4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileHoseCreateF_b4P_GF ;
+    *_pSwSoixlOldApi = (countT)fileHoseCreateF_ob4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileHoseDisconnectF_b" ) ;
+    TN( tNameSoixlOld , "fileHoseDisconnectF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileHoseDisconnectF_b_GF ;
+    *_pSwSoixlOldApi = (countT)fileHoseDisconnectF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileReadF_1@3b6" ) ;
+    TN( tNameSoixlOld , "fileReadF_o1@3b6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileReadF_1P3b6_GF ;
+    *_pSwSoixlOldApi = (countT)fileReadF_o1P3b6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileSetPtrF_b7count2S" ) ;
+    TN( tNameSoixlOld , "fileSetPtrF_ob7count2S" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileSetPtrF_b7count2S_GF ;
+    *_pSwSoixlOldApi = (countT)fileSetPtrF_ob7count2S_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileWriteF_b1@3" ) ;
+    TN( tNameSoixlOld , "fileWriteF_ob1@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileWriteF_b1P3_GF ;
+    *_pSwSoixlOldApi = (countT)fileWriteF_ob1P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "fileTimestampsF_4@" ) ;
+    TN( tNameSoixlOld , "fileTimestampsF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)fileTimestampsF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)fileTimestampsF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "memCopyF_1@1@3" ) ;
+    TN( tNameSoixlOld , "memCopyF_o1@1@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)memCopyF_1P1P3_GF ;
+    *_pSwSoixlOldApi = (countT)memCopyF_o1P1P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "memOpenSharedF_b74@b@33" ) ;
+    TN( tNameSoixlOld , "memOpenSharedF_ob74@b@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)memOpenSharedF_b74PbP33_GF ;
+    *_pSwSoixlOldApi = (countT)memOpenSharedF_ob74PbP33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "memReplaceF_1@31@1@3" ) ;
+    TN( tNameSoixlOld , "memReplaceF_o1@31@1@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)memReplaceF_1P31P1P3_GF ;
+    *_pSwSoixlOldApi = (countT)memReplaceF_o1P31P1P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "memSetF_1@31" ) ;
+    TN( tNameSoixlOld , "memSetF_o1@31" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)memSetF_1P31_GF ;
+    *_pSwSoixlOldApi = (countT)memSetF_o1P31_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcCellHostsF_33" ) ;
+    TN( tNameSoixlOld , "ifcCellHostsF_o33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcCellHostsF_33_GF ;
+    *_pSwSoixlOldApi = (countT)ifcCellHostsF_o33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcDatumF_2@33" ) ;
+    TN( tNameSoixlOld , "ifcDatumF_o2@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcDatumF_2P33_GF ;
+    *_pSwSoixlOldApi = (countT)ifcDatumF_o2P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcExternalEmailFromIdCitizenF_4@3" ) ;
+    TN( tNameSoixlOld , "ifcExternalEmailFromIdCitizenF_o4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcExternalEmailFromIdCitizenF_4P3_GF ;
+    *_pSwSoixlOldApi = (countT)ifcExternalEmailFromIdCitizenF_o4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcIdCitizenFromExternalEmailF_4@" ) ;
+    TN( tNameSoixlOld , "ifcIdCitizenFromExternalEmailF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcIdCitizenFromExternalEmailF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)ifcIdCitizenFromExternalEmailF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcNicknameFromIdCitizenF_4@3" ) ;
+    TN( tNameSoixlOld , "ifcNicknameFromIdCitizenF_o4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcNicknameFromIdCitizenF_4P3_GF ;
+    *_pSwSoixlOldApi = (countT)ifcNicknameFromIdCitizenF_o4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcPortAuthorityF_" ) ;
+    TN( tNameSoixlOld , "ifcPortAuthorityF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcPortAuthorityF__GF ;
+    *_pSwSoixlOldApi = (countT)ifcPortAuthorityF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcPortDelF_" ) ;
+    TN( tNameSoixlOld , "ifcPortDelF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcPortDelF__GF ;
+    *_pSwSoixlOldApi = (countT)ifcPortDelF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcPortNewF_33" ) ;
+    TN( tNameSoixlOld , "ifcPortNewF_o33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcPortNewF_33_GF ;
+    *_pSwSoixlOldApi = (countT)ifcPortNewF_o33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcPortNewIdMiscF_" ) ;
+    TN( tNameSoixlOld , "ifcPortNewIdMiscF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcPortNewIdMiscF__GF ;
+    *_pSwSoixlOldApi = (countT)ifcPortNewIdMiscF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcPortNewProcessF_" ) ;
+    TN( tNameSoixlOld , "ifcPortNewProcessF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcPortNewProcessF__GF ;
+    *_pSwSoixlOldApi = (countT)ifcPortNewProcessF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcPutHostLogEntryF_4@4@" ) ;
+    TN( tNameSoixlOld , "ifcPutHostLogEntryF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcPutHostLogEntryF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)ifcPutHostLogEntryF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcPutHostLogEntryF_4@" ) ;
+    TN( tNameSoixlOld , "ifcPutHostLogEntryF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcPutHostLogEntryF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)ifcPutHostLogEntryF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcIsSpammerF_4@d" ) ;
+    TN( tNameSoixlOld , "ifcIsSpammerF_o4@d" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcIsSpammerF_4Pd_GF ;
+    *_pSwSoixlOldApi = (countT)ifcIsSpammerF_o4Pd_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcIsSpammerF_d" ) ;
+    TN( tNameSoixlOld , "ifcIsSpammerF_od" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcIsSpammerF_d_GF ;
+    *_pSwSoixlOldApi = (countT)ifcIsSpammerF_od_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcMonitorQueryOldF_1@33" ) ;
+    TN( tNameSoixlOld , "ifcMonitorQueryOldF_o1@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcMonitorQueryOldF_1P33_GF ;
+    *_pSwSoixlOldApi = (countT)ifcMonitorQueryOldF_o1P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcQueryHandlesF_4@3d" ) ;
+    TN( tNameSoixlOld , "ifcQueryHandlesF_o4@3d" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcQueryHandlesF_4P3d_GF ;
+    *_pSwSoixlOldApi = (countT)ifcQueryHandlesF_o4P3d_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcGetNextSerialNumberF_2@" ) ;
+    TN( tNameSoixlOld , "ifcGetNextSerialNumberF_o2@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcGetNextSerialNumberF_2P_GF ;
+    *_pSwSoixlOldApi = (countT)ifcGetNextSerialNumberF_o2P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcIdCopyF_33" ) ;
+    TN( tNameSoixlOld , "ifcIdCopyF_o33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcIdCopyF_33_GF ;
+    *_pSwSoixlOldApi = (countT)ifcIdCopyF_o33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcCreateNewHomeF_31@31@3" ) ;
+    TN( tNameSoixlOld , "ifcCreateNewHomeF_o31@31@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcCreateNewHomeF_31P31P3_GF ;
+    *_pSwSoixlOldApi = (countT)ifcCreateNewHomeF_o31P31P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcCreateNewWightF_31@31@3" ) ;
+    TN( tNameSoixlOld , "ifcCreateNewWightF_o31@31@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcCreateNewWightF_31P31P3_GF ;
+    *_pSwSoixlOldApi = (countT)ifcCreateNewWightF_o31P31P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcSortaF_61@33337" ) ;
+    TN( tNameSoixlOld , "ifcSortaF_o61@33337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcSortaF_61P33337_GF ;
+    *_pSwSoixlOldApi = (countT)ifcSortaF_o61P33337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "querySettingF_4@4@" ) ;
+    TN( tNameSoixlOld , "querySettingF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)querySettingF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)querySettingF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osClipboardFlavorsF_" ) ;
+    TN( tNameSoixlOld , "osClipboardFlavorsF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osClipboardFlavorsF__GF ;
+    *_pSwSoixlOldApi = (countT)osClipboardFlavorsF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osClipboardGrabF_" ) ;
+    TN( tNameSoixlOld , "osClipboardGrabF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osClipboardGrabF__GF ;
+    *_pSwSoixlOldApi = (countT)osClipboardGrabF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osClipboardLetGoF_" ) ;
+    TN( tNameSoixlOld , "osClipboardLetGoF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osClipboardLetGoF__GF ;
+    *_pSwSoixlOldApi = (countT)osClipboardLetGoF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osClipboardReadF_4@" ) ;
+    TN( tNameSoixlOld , "osClipboardReadF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osClipboardReadF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)osClipboardReadF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osClipboardWriteF_4@" ) ;
+    TN( tNameSoixlOld , "osClipboardWriteF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osClipboardWriteF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)osClipboardWriteF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osDoNothingF_" ) ;
+    TN( tNameSoixlOld , "osDoNothingF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osDoNothingF__GF ;
+    *_pSwSoixlOldApi = (countT)osDoNothingF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osDoNothingLoopF_33" ) ;
+    TN( tNameSoixlOld , "osDoNothingLoopF_o33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osDoNothingLoopF_33_GF ;
+    *_pSwSoixlOldApi = (countT)osDoNothingLoopF_o33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osDriverF_3" ) ;
+    TN( tNameSoixlOld , "osDriverF_o3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osDriverF_3_GF ;
+    *_pSwSoixlOldApi = (countT)osDriverF_o3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osDriverNameFromMasterF_4@3" ) ;
+    TN( tNameSoixlOld , "osDriverNameFromMasterF_o4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osDriverNameFromMasterF_4P3_GF ;
+    *_pSwSoixlOldApi = (countT)osDriverNameFromMasterF_o4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "homeOsDriverNameF_4@" ) ;
+    TN( tNameSoixlOld , "homeOsDriverNameF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)homeOsDriverNameF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)homeOsDriverNameF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osDriverRemoveOldF_3" ) ;
+    TN( tNameSoixlOld , "osDriverRemoveOldF_o3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osDriverRemoveOldF_3_GF ;
+    *_pSwSoixlOldApi = (countT)osDriverRemoveOldF_o3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osDriverParseNameF_3334@" ) ;
+    TN( tNameSoixlOld , "osDriverParseNameF_o3334@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osDriverParseNameF_3334P_GF ;
+    *_pSwSoixlOldApi = (countT)osDriverParseNameF_o3334P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osEditF_4@6" ) ;
+    TN( tNameSoixlOld , "osEditF_o4@6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osEditF_4P6_GF ;
+    *_pSwSoixlOldApi = (countT)osEditF_o4P6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osEditorF_4@" ) ;
+    TN( tNameSoixlOld , "osEditorF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osEditorF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)osEditorF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osHttpViewF_4@6" ) ;
+    TN( tNameSoixlOld , "osHttpViewF_o4@6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osHttpViewF_4P6_GF ;
+    *_pSwSoixlOldApi = (countT)osHttpViewF_o4P6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osHttpViewerF_4@" ) ;
+    TN( tNameSoixlOld , "osHttpViewerF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osHttpViewerF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)osHttpViewerF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osEnvironmentVariableF_4@4@" ) ;
+    TN( tNameSoixlOld , "osEnvironmentVariableF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osEnvironmentVariableF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)osEnvironmentVariableF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osFireF_6d" ) ;
+    TN( tNameSoixlOld , "osFireF_o6d" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osFireF_6d_GF ;
+    *_pSwSoixlOldApi = (countT)osFireF_o6d_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osSuspendF_66d" ) ;
+    TN( tNameSoixlOld , "osSuspendF_o66d" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osSuspendF_66d_GF ;
+    *_pSwSoixlOldApi = (countT)osSuspendF_o66d_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osMakeHoverFileF_36" ) ;
+    TN( tNameSoixlOld , "osMakeHoverFileF_o36" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osMakeHoverFileF_36_GF ;
+    *_pSwSoixlOldApi = (countT)osMakeHoverFileF_o36_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osMessageBoxF_4@4@77" ) ;
+    TN( tNameSoixlOld , "osMessageBoxF_o4@4@77" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osMessageBoxF_4P4P77_GF ;
+    *_pSwSoixlOldApi = (countT)osMessageBoxF_o4P4P77_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessF_333334@7b@b@b@" ) ;
+    TN( tNameSoixlOld , "osProcessF_o333334@7b@b@b@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessF_333334P7bPbPbP_GF ;
+    *_pSwSoixlOldApi = (countT)osProcessF_o333334P7bPbPbP_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessF_33334@4@7b@b@b@" ) ;
+    TN( tNameSoixlOld , "osProcessF_o33334@4@7b@b@b@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessF_33334P4P7bPbPbP_GF ;
+    *_pSwSoixlOldApi = (countT)osProcessF_o33334P4P7bPbPbP_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessF_3334@7b@b@b@" ) ;
+    TN( tNameSoixlOld , "osProcessF_o3334@7b@b@b@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessF_3334P7bPbPbP_GF ;
+    *_pSwSoixlOldApi = (countT)osProcessF_o3334P7bPbPbP_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessF_334@4@7b@b@b@" ) ;
+    TN( tNameSoixlOld , "osProcessF_o334@4@7b@b@b@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessF_334P4P7bPbPbP_GF ;
+    *_pSwSoixlOldApi = (countT)osProcessF_o334P4P7bPbPbP_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessForwardSignalsToMe_offF_" ) ;
+    TN( tNameSoixlOld , "osProcessForwardSignalsToMe_offF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessForwardSignalsToMe_offF__GF ;
+    *_pSwSoixlOldApi = (countT)osProcessForwardSignalsToMe_offF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessForwardSignalsToMe_onF_" ) ;
+    TN( tNameSoixlOld , "osProcessForwardSignalsToMe_onF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessForwardSignalsToMe_onF__GF ;
+    *_pSwSoixlOldApi = (countT)osProcessForwardSignalsToMe_onF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessIdF_" ) ;
+    TN( tNameSoixlOld , "osProcessIdF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessIdF__GF ;
+    *_pSwSoixlOldApi = (countT)osProcessIdF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessInterruptF_3" ) ;
+    TN( tNameSoixlOld , "osProcessInterruptF_o3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessInterruptF_3_GF ;
+    *_pSwSoixlOldApi = (countT)osProcessInterruptF_o3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessKillF_3" ) ;
+    TN( tNameSoixlOld , "osProcessKillF_o3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessKillF_3_GF ;
+    *_pSwSoixlOldApi = (countT)osProcessKillF_o3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osProcessWaitF_3333" ) ;
+    TN( tNameSoixlOld , "osProcessWaitF_o3333" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osProcessWaitF_3333_GF ;
+    *_pSwSoixlOldApi = (countT)osProcessWaitF_o3333_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osSessionF_333334@33337" ) ;
+    TN( tNameSoixlOld , "osSessionF_o333334@33337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osSessionF_333334P33337_GF ;
+    *_pSwSoixlOldApi = (countT)osSessionF_o333334P33337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osSessionF_33334@4@33337" ) ;
+    TN( tNameSoixlOld , "osSessionF_o33334@4@33337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osSessionF_33334P4P33337_GF ;
+    *_pSwSoixlOldApi = (countT)osSessionF_o33334P4P33337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osSessionF_3334@33337" ) ;
+    TN( tNameSoixlOld , "osSessionF_o3334@33337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osSessionF_3334P33337_GF ;
+    *_pSwSoixlOldApi = (countT)osSessionF_o3334P33337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osSessionF_334@4@33337" ) ;
+    TN( tNameSoixlOld , "osSessionF_o334@4@33337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osSessionF_334P4P33337_GF ;
+    *_pSwSoixlOldApi = (countT)osSessionF_o334P4P33337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osSleepF_337" ) ;
+    TN( tNameSoixlOld , "osSleepF_o337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osSleepF_337_GF ;
+    *_pSwSoixlOldApi = (countT)osSleepF_o337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osThreadIdF_" ) ;
+    TN( tNameSoixlOld , "osThreadIdF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osThreadIdF__GF ;
+    *_pSwSoixlOldApi = (countT)osThreadIdF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osThreadSwitchingOffF_" ) ;
+    TN( tNameSoixlOld , "osThreadSwitchingOffF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osThreadSwitchingOffF__GF ;
+    *_pSwSoixlOldApi = (countT)osThreadSwitchingOffF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osThreadSwitchingOnF_" ) ;
+    TN( tNameSoixlOld , "osThreadSwitchingOnF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osThreadSwitchingOnF__GF ;
+    *_pSwSoixlOldApi = (countT)osThreadSwitchingOnF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "osTimeSetF_" ) ;
+    TN( tNameSoixlOld , "osTimeSetF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)osTimeSetF__GF ;
+    *_pSwSoixlOldApi = (countT)osTimeSetF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "reportProcessNamePidF_4@4@4@4@" ) ;
+    TN( tNameSoixlOld , "reportProcessNamePidF_o4@4@4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)reportProcessNamePidF_4P4P4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)reportProcessNamePidF_o4P4P4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_setupF_" ) ;
+    TN( tNameSoixlOld , "openSslTls_setupF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_setupF__GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_setupF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_shutdownF_" ) ;
+    TN( tNameSoixlOld , "openSslTls_shutdownF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_shutdownF__GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_shutdownF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_getContextF_b4@4@" ) ;
+    TN( tNameSoixlOld , "openSslTls_getContextF_ob4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_getContextF_b4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_getContextF_ob4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_getWrapperF_bb" ) ;
+    TN( tNameSoixlOld , "openSslTls_getWrapperF_obb" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_getWrapperF_bb_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_getWrapperF_obb_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_wrapSocketF_bb" ) ;
+    TN( tNameSoixlOld , "openSslTls_wrapSocketF_obb" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_wrapSocketF_bb_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_wrapSocketF_obb_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_shakeHandsAsClientF_b" ) ;
+    TN( tNameSoixlOld , "openSslTls_shakeHandsAsClientF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_shakeHandsAsClientF_b_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_shakeHandsAsClientF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_shakeHandsAsServerF_b" ) ;
+    TN( tNameSoixlOld , "openSslTls_shakeHandsAsServerF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_shakeHandsAsServerF_b_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_shakeHandsAsServerF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_writeF_b1@3" ) ;
+    TN( tNameSoixlOld , "openSslTls_writeF_ob1@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_writeF_b1P3_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_writeF_ob1P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_readF_1@3b" ) ;
+    TN( tNameSoixlOld , "openSslTls_readF_o1@3b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_readF_1P3b_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_readF_o1P3b_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_peekF_1@3b" ) ;
+    TN( tNameSoixlOld , "openSslTls_peekF_o1@3b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_peekF_1P3b_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_peekF_o1P3b_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "openSslTls_waveByeF_b" ) ;
+    TN( tNameSoixlOld , "openSslTls_waveByeF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)openSslTls_waveByeF_b_GF ;
+    *_pSwSoixlOldApi = (countT)openSslTls_waveByeF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockBindF_b3d3" ) ;
+    TN( tNameSoixlOld , "sockBindF_ob3d3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockBindF_b3d3_GF ;
+    *_pSwSoixlOldApi = (countT)sockBindF_ob3d3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockCancelF_b" ) ;
+    TN( tNameSoixlOld , "sockCancelF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockCancelF_b_GF ;
+    *_pSwSoixlOldApi = (countT)sockCancelF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockOptionBroadcastF_b6" ) ;
+    TN( tNameSoixlOld , "sockOptionBroadcastF_ob6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockOptionBroadcastF_b6_GF ;
+    *_pSwSoixlOldApi = (countT)sockOptionBroadcastF_ob6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockOptionLingerF_b3" ) ;
+    TN( tNameSoixlOld , "sockOptionLingerF_ob3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockOptionLingerF_b3_GF ;
+    *_pSwSoixlOldApi = (countT)sockOptionLingerF_ob3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockOptionReuseAddressF_b6" ) ;
+    TN( tNameSoixlOld , "sockOptionReuseAddressF_ob6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockOptionReuseAddressF_b6_GF ;
+    *_pSwSoixlOldApi = (countT)sockOptionReuseAddressF_ob6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockOptionSendNowF_b6" ) ;
+    TN( tNameSoixlOld , "sockOptionSendNowF_ob6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockOptionSendNowF_b6_GF ;
+    *_pSwSoixlOldApi = (countT)sockOptionSendNowF_ob6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockOptionDualStackF_b" ) ;
+    TN( tNameSoixlOld , "sockOptionDualStackF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockOptionDualStackF_b_GF ;
+    *_pSwSoixlOldApi = (countT)sockOptionDualStackF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockOptionMulticastF_b4@" ) ;
+    TN( tNameSoixlOld , "sockOptionMulticastF_ob4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockOptionMulticastF_b4P_GF ;
+    *_pSwSoixlOldApi = (countT)sockOptionMulticastF_ob4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "socksSetupF_" ) ;
+    TN( tNameSoixlOld , "socksSetupF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)socksSetupF__GF ;
+    *_pSwSoixlOldApi = (countT)socksSetupF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "socksShutdownF_" ) ;
+    TN( tNameSoixlOld , "socksShutdownF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)socksShutdownF__GF ;
+    *_pSwSoixlOldApi = (countT)socksShutdownF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockF_b6b@" ) ;
+    TN( tNameSoixlOld , "sockF_ob6b@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockF_b6bP_GF ;
+    *_pSwSoixlOldApi = (countT)sockF_ob6bP_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "chokeAttackerF_b33" ) ;
+    TN( tNameSoixlOld , "chokeAttackerF_ob33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)chokeAttackerF_b33_GF ;
+    *_pSwSoixlOldApi = (countT)chokeAttackerF_ob33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockAcceptF_b3db6b@" ) ;
+    TN( tNameSoixlOld , "sockAcceptF_ob3db6b@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockAcceptF_b3db6bP_GF ;
+    *_pSwSoixlOldApi = (countT)sockAcceptF_ob3db6bP_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockListenF_b" ) ;
+    TN( tNameSoixlOld , "sockListenF_ob" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockListenF_b_GF ;
+    *_pSwSoixlOldApi = (countT)sockListenF_ob_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockMyNameF_3db" ) ;
+    TN( tNameSoixlOld , "sockMyNameF_o3db" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockMyNameF_3db_GF ;
+    *_pSwSoixlOldApi = (countT)sockMyNameF_o3db_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockPeerNameF_3db" ) ;
+    TN( tNameSoixlOld , "sockPeerNameF_o3db" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockPeerNameF_3db_GF ;
+    *_pSwSoixlOldApi = (countT)sockPeerNameF_o3db_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockReadF_61@3b3" ) ;
+    TN( tNameSoixlOld , "sockReadF_o61@3b3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockReadF_61P3b3_GF ;
+    *_pSwSoixlOldApi = (countT)sockReadF_o61P3b3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockWriteF_b1@33" ) ;
+    TN( tNameSoixlOld , "sockWriteF_ob1@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockWriteF_b1P33_GF ;
+    *_pSwSoixlOldApi = (countT)sockWriteF_ob1P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockWriteF_b3d1@33" ) ;
+    TN( tNameSoixlOld , "sockWriteF_ob3d1@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockWriteF_b3d1P33_GF ;
+    *_pSwSoixlOldApi = (countT)sockWriteF_ob3d1P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockWriteQuitF_3d" ) ;
+    TN( tNameSoixlOld , "sockWriteQuitF_o3d" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockWriteQuitF_3d_GF ;
+    *_pSwSoixlOldApi = (countT)sockWriteQuitF_o3d_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockWriteQuitF_34@" ) ;
+    TN( tNameSoixlOld , "sockWriteQuitF_o34@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockWriteQuitF_34P_GF ;
+    *_pSwSoixlOldApi = (countT)sockWriteQuitF_o34P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockFtpServerF_" ) ;
+    TN( tNameSoixlOld , "sockFtpServerF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockFtpServerF__GF ;
+    *_pSwSoixlOldApi = (countT)sockFtpServerF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockNicNameF_4@" ) ;
+    TN( tNameSoixlOld , "sockNicNameF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockNicNameF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)sockNicNameF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sockPsttHostF_4@d" ) ;
+    TN( tNameSoixlOld , "sockPsttHostF_o4@d" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockPsttHostF_4Pd_GF ;
+    *_pSwSoixlOldApi = (countT)sockPsttHostF_o4Pd_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strAbridgeF_4@4@4@" ) ;
+    TN( tNameSoixlOld , "strAbridgeF_o4@4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strAbridgeF_4P4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strAbridgeF_o4P4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strAsciiCodeTableF_4@" ) ;
+    TN( tNameSoixlOld , "strAsciiCodeTableF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strAsciiCodeTableF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)strAsciiCodeTableF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strBadCodeLineF_4@4@" ) ;
+    TN( tNameSoixlOld , "strBadCodeLineF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strBadCodeLineF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strBadCodeLineF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strClockF_4@333333334@" ) ;
+    TN( tNameSoixlOld , "strClockF_o4@333333334@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strClockF_4P333333334P_GF ;
+    *_pSwSoixlOldApi = (countT)strClockF_o4P333333334P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strConvertToLowerCaseF_4@" ) ;
+    TN( tNameSoixlOld , "strConvertToLowerCaseF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strConvertToLowerCaseF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)strConvertToLowerCaseF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strConvertToLowerCaseF_4@4@" ) ;
+    TN( tNameSoixlOld , "strConvertToLowerCaseF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strConvertToLowerCaseF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strConvertToLowerCaseF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strConvertToOtherCaseF_4@" ) ;
+    TN( tNameSoixlOld , "strConvertToOtherCaseF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strConvertToOtherCaseF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)strConvertToOtherCaseF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strConvertToOtherCaseF_4@4@" ) ;
+    TN( tNameSoixlOld , "strConvertToOtherCaseF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strConvertToOtherCaseF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strConvertToOtherCaseF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strConvertToUpperCaseF_4@" ) ;
+    TN( tNameSoixlOld , "strConvertToUpperCaseF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strConvertToUpperCaseF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)strConvertToUpperCaseF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strConvertToUpperCaseF_4@4@" ) ;
+    TN( tNameSoixlOld , "strConvertToUpperCaseF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strConvertToUpperCaseF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strConvertToUpperCaseF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strDeleteF_4@33" ) ;
+    TN( tNameSoixlOld , "strDeleteF_o4@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strDeleteF_4P33_GF ;
+    *_pSwSoixlOldApi = (countT)strDeleteF_o4P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strDigitsToNicNameF_4@36" ) ;
+    TN( tNameSoixlOld , "strDigitsToNicNameF_o4@36" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strDigitsToNicNameF_4P36_GF ;
+    *_pSwSoixlOldApi = (countT)strDigitsToNicNameF_o4P36_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strDigitsToMeasureF_4@36" ) ;
+    TN( tNameSoixlOld , "strDigitsToMeasureF_o4@36" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strDigitsToMeasureF_4P36_GF ;
+    *_pSwSoixlOldApi = (countT)strDigitsToMeasureF_o4P36_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strEvaluateF_4@34@" ) ;
+    TN( tNameSoixlOld , "strEvaluateF_o4@34@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strEvaluateF_4P34P_GF ;
+    *_pSwSoixlOldApi = (countT)strEvaluateF_o4P34P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strEvaluateFormat01F_4@34@" ) ;
+    TN( tNameSoixlOld , "strEvaluateFormat01F_o4@34@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strEvaluateFormat01F_4P34P_GF ;
+    *_pSwSoixlOldApi = (countT)strEvaluateFormat01F_o4P34P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strFromIdPortNicNameF_4@3d" ) ;
+    TN( tNameSoixlOld , "strFromIdPortNicNameF_o4@3d" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strFromIdPortNicNameF_4P3d_GF ;
+    *_pSwSoixlOldApi = (countT)strFromIdPortNicNameF_o4P3d_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strFromProcessF_4@4@4@4@4@" ) ;
+    TN( tNameSoixlOld , "strFromProcessF_o4@4@4@4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strFromProcessF_4P4P4P4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strFromProcessF_o4P4P4P4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strFromUrlF_4@4@" ) ;
+    TN( tNameSoixlOld , "strFromUrlF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strFromUrlF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strFromUrlF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strFromJsonF_4@4@" ) ;
+    TN( tNameSoixlOld , "strFromJsonF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strFromJsonF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strFromJsonF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strFromIdJotF_4@33" ) ;
+    TN( tNameSoixlOld , "strFromIdJotF_o4@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strFromIdJotF_4P33_GF ;
+    *_pSwSoixlOldApi = (countT)strFromIdJotF_o4P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strFuseSeparateF_4@4@33h@grabC@3" ) ;
+    TN( tNameSoixlOld , "strFuseSeparateF_o4@4@33h@grabC@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strFuseSeparateF_4P4P33hPgrabCP3_GF ;
+    *_pSwSoixlOldApi = (countT)strFuseSeparateF_o4P4P33hPgrabCP3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strKTTrimF_4@4@33" ) ;
+    TN( tNameSoixlOld , "strKTTrimF_o4@4@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strKTTrimF_4P4P33_GF ;
+    *_pSwSoixlOldApi = (countT)strKTTrimF_o4P4P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strIdLathExpressionF_4@3" ) ;
+    TN( tNameSoixlOld , "strIdLathExpressionF_o4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strIdLathExpressionF_4P3_GF ;
+    *_pSwSoixlOldApi = (countT)strIdLathExpressionF_o4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strIndentF_4@4@3" ) ;
+    TN( tNameSoixlOld , "strIndentF_o4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strIndentF_4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)strIndentF_o4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strInsertF_4@34@3" ) ;
+    TN( tNameSoixlOld , "strInsertF_o4@34@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strInsertF_4P34P3_GF ;
+    *_pSwSoixlOldApi = (countT)strInsertF_o4P34P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strInsertF_4@4@4@73" ) ;
+    TN( tNameSoixlOld , "strInsertF_o4@4@4@73" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strInsertF_4P4P4P73_GF ;
+    *_pSwSoixlOldApi = (countT)strInsertF_o4P4P4P73_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strIsDigitsF_4@3" ) ;
+    TN( tNameSoixlOld , "strIsDigitsF_o4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strIsDigitsF_4P3_GF ;
+    *_pSwSoixlOldApi = (countT)strIsDigitsF_o4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strBodyLengthF_2@" ) ;
+    TN( tNameSoixlOld , "strBodyLengthF_o2@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strBodyLengthF_2P_GF ;
+    *_pSwSoixlOldApi = (countT)strBodyLengthF_o2P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strCLinesF_4@4@6" ) ;
+    TN( tNameSoixlOld , "strCLinesF_o4@4@6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strCLinesF_4P4P6_GF ;
+    *_pSwSoixlOldApi = (countT)strCLinesF_o4P4P6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strMakeFromOsTextF_4@2@33" ) ;
+    TN( tNameSoixlOld , "strMakeFromOsTextF_o4@2@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strMakeFromOsTextF_4P2P33_GF ;
+    *_pSwSoixlOldApi = (countT)strMakeFromOsTextF_o4P2P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strMakeF_33pbRefC@4@37" ) ;
+    TN( tNameSoixlOld , "strMakeF_o33pbRefC@4@37" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strMakeF_33pbRefCP4P37_GF ;
+    *_pSwSoixlOldApi = (countT)strMakeF_o33pbRefCP4P37_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strMakeF_332@4@373" ) ;
+    TN( tNameSoixlOld , "strMakeF_o332@4@373" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strMakeF_332P4P373_GF ;
+    *_pSwSoixlOldApi = (countT)strMakeF_o332P4P373_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strMakeF_334@4@3" ) ;
+    TN( tNameSoixlOld , "strMakeF_o334@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strMakeF_334P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)strMakeF_o334P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strRemoveBlankLinesF_4@4@4@4@" ) ;
+    TN( tNameSoixlOld , "strRemoveBlankLinesF_o4@4@4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strRemoveBlankLinesF_4P4P4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strRemoveBlankLinesF_o4P4P4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strReplaceF_4@4@4@4@37" ) ;
+    TN( tNameSoixlOld , "strReplaceF_o4@4@4@4@37" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strReplaceF_4P4P4P4P37_GF ;
+    *_pSwSoixlOldApi = (countT)strReplaceF_o4P4P4P4P37_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strReplaceF_4@4@337" ) ;
+    TN( tNameSoixlOld , "strReplaceF_o4@4@337" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strReplaceF_4P4P337_GF ;
+    *_pSwSoixlOldApi = (countT)strReplaceF_o4P4P337_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strReplaceAnyF_4@4@4@4@37" ) ;
+    TN( tNameSoixlOld , "strReplaceAnyF_o4@4@4@4@37" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strReplaceAnyF_4P4P4P4P37_GF ;
+    *_pSwSoixlOldApi = (countT)strReplaceAnyF_o4P4P4P4P37_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strReplaceAutomaticallyF_4@4@33" ) ;
+    TN( tNameSoixlOld , "strReplaceAutomaticallyF_o4@4@33" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strReplaceAutomaticallyF_4P4P33_GF ;
+    *_pSwSoixlOldApi = (countT)strReplaceAutomaticallyF_o4P4P33_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strReverseF_4@4@4@h@grabC@3" ) ;
+    TN( tNameSoixlOld , "strReverseF_o4@4@4@h@grabC@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strReverseF_4P4P4PhPgrabCP3_GF ;
+    *_pSwSoixlOldApi = (countT)strReverseF_o4P4P4PhPgrabCP3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strRulerF_4@3" ) ;
+    TN( tNameSoixlOld , "strRulerF_o4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strRulerF_4P3_GF ;
+    *_pSwSoixlOldApi = (countT)strRulerF_o4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strSubstringF_4@334@3" ) ;
+    TN( tNameSoixlOld , "strSubstringF_o4@334@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strSubstringF_4P334P3_GF ;
+    *_pSwSoixlOldApi = (countT)strSubstringF_o4P334P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strGetMimeHeaderF_4@4@" ) ;
+    TN( tNameSoixlOld , "strGetMimeHeaderF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strGetMimeHeaderF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strGetMimeHeaderF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strGetMimeBodyF_4@4@" ) ;
+    TN( tNameSoixlOld , "strGetMimeBodyF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strGetMimeBodyF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strGetMimeBodyF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strSubstringMimeHeaderF_4@4@4@3" ) ;
+    TN( tNameSoixlOld , "strSubstringMimeHeaderF_o4@4@4@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strSubstringMimeHeaderF_4P4P4P3_GF ;
+    *_pSwSoixlOldApi = (countT)strSubstringMimeHeaderF_o4P4P4P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strToHtmlF_4@4@" ) ;
+    TN( tNameSoixlOld , "strToHtmlF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strToHtmlF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strToHtmlF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strToUrlF_4@4@7" ) ;
+    TN( tNameSoixlOld , "strToUrlF_o4@4@7" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strToUrlF_4P4P7_GF ;
+    *_pSwSoixlOldApi = (countT)strToUrlF_o4P4P7_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strToFileNameF_4@4@" ) ;
+    TN( tNameSoixlOld , "strToFileNameF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strToFileNameF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strToFileNameF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strUniqueF_4@" ) ;
+    TN( tNameSoixlOld , "strUniqueF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strUniqueF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)strUniqueF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strUrlDecodeF_4@4@" ) ;
+    TN( tNameSoixlOld , "strUrlDecodeF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strUrlDecodeF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strUrlDecodeF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strUrlDecodeF_4@" ) ;
+    TN( tNameSoixlOld , "strUrlDecodeF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strUrlDecodeF_4P_GF ;
+    *_pSwSoixlOldApi = (countT)strUrlDecodeF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strUrlNameF_4@4@" ) ;
+    TN( tNameSoixlOld , "strUrlNameF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strUrlNameF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strUrlNameF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strUrlSchemeF_4@4@" ) ;
+    TN( tNameSoixlOld , "strUrlSchemeF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strUrlSchemeF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strUrlSchemeF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strEncode_01F_1@1@3" ) ;
+    TN( tNameSoixlOld , "strEncode_01F_o1@1@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strEncode_01F_1P1P3_GF ;
+    *_pSwSoixlOldApi = (countT)strEncode_01F_o1P1P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strEncodeF_1@4@1@31@" ) ;
+    TN( tNameSoixlOld , "strEncodeF_o1@4@1@31@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strEncodeF_1P4P1P31P_GF ;
+    *_pSwSoixlOldApi = (countT)strEncodeF_o1P4P1P31P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strDecodeF_4@1@" ) ;
+    TN( tNameSoixlOld , "strDecodeF_o4@1@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strDecodeF_4P1P_GF ;
+    *_pSwSoixlOldApi = (countT)strDecodeF_o4P1P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strBisectF_4@4@4@4@373" ) ;
+    TN( tNameSoixlOld , "strBisectF_o4@4@4@4@373" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strBisectF_4P4P4P4P373_GF ;
+    *_pSwSoixlOldApi = (countT)strBisectF_o4P4P4P4P373_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strFileMatchF_4@4@" ) ;
+    TN( tNameSoixlOld , "strFileMatchF_o4@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strFileMatchF_4P4P_GF ;
+    *_pSwSoixlOldApi = (countT)strFileMatchF_o4P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strEncodeBlobToRFC4648F_4@1@3" ) ;
+    TN( tNameSoixlOld , "strEncodeBlobToRFC4648F_o4@1@3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strEncodeBlobToRFC4648F_4P1P3_GF ;
+    *_pSwSoixlOldApi = (countT)strEncodeBlobToRFC4648F_o4P1P3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "strDecodeBlobFromRFC4648F_1@34@" ) ;
+    TN( tNameSoixlOld , "strDecodeBlobFromRFC4648F_o1@34@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)strDecodeBlobFromRFC4648F_1P34P_GF ;
+    *_pSwSoixlOldApi = (countT)strDecodeBlobFromRFC4648F_o1P34P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "sssTestF_64@4@334@4@" ) ;
+    TN( tNameSoixlOld , "sssTestF_o64@4@334@4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sssTestF_64P4P334P4P_GF ;
+    *_pSwSoixlOldApi = (countT)sssTestF_o64P4P334P4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "winAppendTitleF_4@b" ) ;
+    TN( tNameSoixlOld , "winAppendTitleF_o4@b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)winAppendTitleF_4Pb_GF ;
+    *_pSwSoixlOldApi = (countT)winAppendTitleF_o4Pb_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "winPostMessageAfterNapF_3b333" ) ;
+    TN( tNameSoixlOld , "winPostMessageAfterNapF_o3b333" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)winPostMessageAfterNapF_3b333_GF ;
+    *_pSwSoixlOldApi = (countT)winPostMessageAfterNapF_o3b333_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "winSetTitleF_4@b" ) ;
+    TN( tNameSoixlOld , "winSetTitleF_o4@b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)winSetTitleF_4Pb_GF ;
+    *_pSwSoixlOldApi = (countT)winSetTitleF_o4Pb_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "cioSetupF_" ) ;
+    TN( tNameSoixlOld , "cioSetupF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)cioSetupF__GF ;
+    *_pSwSoixlOldApi = (countT)cioSetupF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "cioSetQuitF_6" ) ;
+    TN( tNameSoixlOld , "cioSetQuitF_o6" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)cioSetQuitF_6_GF ;
+    *_pSwSoixlOldApi = (countT)cioSetQuitF_o6_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "cioSetArgF_3" ) ;
+    TN( tNameSoixlOld , "cioSetArgF_o3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)cioSetArgF_3_GF ;
+    *_pSwSoixlOldApi = (countT)cioSetArgF_o3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "traceF_4@73" ) ;
+    TN( tNameSoixlOld , "traceF_o4@73" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)traceF_4P73_GF ;
+    *_pSwSoixlOldApi = (countT)traceF_o4P73_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "tracePoolTalliesF_" ) ;
+    TN( tNameSoixlOld , "tracePoolTalliesF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)tracePoolTalliesF__GF ;
+    *_pSwSoixlOldApi = (countT)tracePoolTalliesF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "traceMemoryGrainRptF_" ) ;
+    TN( tNameSoixlOld , "traceMemoryGrainRptF_o" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)traceMemoryGrainRptF__GF ;
+    *_pSwSoixlOldApi = (countT)traceMemoryGrainRptF_o_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushWritePrivateKeyToFileF_4@b" ) ;
+    TN( tNameSoixlOld , "hushWritePrivateKeyToFileF_o4@b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushWritePrivateKeyToFileF_4Pb_GF ;
+    *_pSwSoixlOldApi = (countT)hushWritePrivateKeyToFileF_o4Pb_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushWritePublicKeyToFileF_4@b" ) ;
+    TN( tNameSoixlOld , "hushWritePublicKeyToFileF_o4@b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushWritePublicKeyToFileF_4Pb_GF ;
+    *_pSwSoixlOldApi = (countT)hushWritePublicKeyToFileF_o4Pb_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushGetPublicKeyF_1@3b" ) ;
+    TN( tNameSoixlOld , "hushGetPublicKeyF_o1@3b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushGetPublicKeyF_1P3b_GF ;
+    *_pSwSoixlOldApi = (countT)hushGetPublicKeyF_o1P3b_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushGetPrivateKeyF_1@3b" ) ;
+    TN( tNameSoixlOld , "hushGetPrivateKeyF_o1@3b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushGetPrivateKeyF_1P3b_GF ;
+    *_pSwSoixlOldApi = (countT)hushGetPrivateKeyF_o1P3b_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushReadPrivateKeyFromFileF_b4@" ) ;
+    TN( tNameSoixlOld , "hushReadPrivateKeyFromFileF_ob4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushReadPrivateKeyFromFileF_b4P_GF ;
+    *_pSwSoixlOldApi = (countT)hushReadPrivateKeyFromFileF_ob4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushReadPublicKeyFromFileF_b4@" ) ;
+    TN( tNameSoixlOld , "hushReadPublicKeyFromFileF_ob4@" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushReadPublicKeyFromFileF_b4P_GF ;
+    *_pSwSoixlOldApi = (countT)hushReadPublicKeyFromFileF_ob4P_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushEncryptF_1@31@31@31@3b" ) ;
+    TN( tNameSoixlOld , "hushEncryptF_o1@31@31@31@3b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushEncryptF_1P31P31P31P3b_GF ;
+    *_pSwSoixlOldApi = (countT)hushEncryptF_o1P31P31P31P3b_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushDecryptF_1@31@31@31@3b" ) ;
+    TN( tNameSoixlOld , "hushDecryptF_o1@31@31@31@3b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushDecryptF_1P31P31P31P3b_GF ;
+    *_pSwSoixlOldApi = (countT)hushDecryptF_o1P31P31P31P3b_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushMakeKeyPairF_b3" ) ;
+    TN( tNameSoixlOld , "hushMakeKeyPairF_ob3" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushMakeKeyPairF_b3_GF ;
+    *_pSwSoixlOldApi = (countT)hushMakeKeyPairF_ob3_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }
 {
-    TN( tNameSoixlOld , "hushWothNonceF_6333b" ) ;
+    TN( tNameSoixlOld , "hushWothNonceF_o6333b" ) ;
     _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)hushWothNonceF_6333b_GF ;
+    *_pSwSoixlOldApi = (countT)hushWothNonceF_o6333b_GF ;
     _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
 }

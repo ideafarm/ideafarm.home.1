@@ -305,6 +305,7 @@
 "tlsStackFrameLocationS" , "tlsStackFrameLocationS" ,
 "tinTallyS" , "tinTallyS" ,
 "o" , "tinNormalS" ,
+"o" , "tinBaseS" ,
 "timeZoneSpecS" , "timeZoneSpecS" ,
 "timeS" , "timeS" ,
 "thugC" , "thugC" ,

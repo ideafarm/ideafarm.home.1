@@ -7,15 +7,16 @@
 //
 
 
-    else { BLAMMO ; }
-    else if( ((tinNormalS&)tinBaseP).ta.grab_inUseType == idTypeP ) ((tinNormalS&)tinBaseP).ta.grab_cRecurse ++ ;                             \
-    }                                                                                                   \
-        ((tinNormalS&)tinBaseP).ta.grab_inUseType = idTypeP ;                                                              \
-        if( ((tinNormalS&)tinBaseP).ta.grab_cRecurse ) { BLAMMO ; }                                                        \
-    {                                                                                                   \
-    if( !((tinNormalS&)tinBaseP).ta.grab_inUseType )                                                                       \
-                                                                                                        \
-#define GRABtINaRGS(idTypeP)                                                                            \
+    else                                                            { BLAMMOiD( 0x33333333 ) ; }
+    else if( ((tinNormalS&)tinBaseP).ta.grab_inUseType == idTypeP ) ((tinNormalS&)tinBaseP).ta.grab_cRecurse ++ ;   \
+    }                                                                                                               \
+        ((tinNormalS&)tinBaseP).ta.grab_inUseType = idTypeP ;                                                       \
+        if( ((tinNormalS&)tinBaseP).ta.grab_cRecurse              ) { BLAMMOiD( 0x22222222 ) ; }                    \
+    {                                                                                                               \
+    else if( !((tinNormalS&)tinBaseP).ta.grab_inUseType           )                                                 \
+         if( tinBaseP.idTypeTin != ifcIDtYPEtIN_FULL              ) { BLAMMOiD( 0x11111111 ) ; }                    \
+                                                                                                                    \
+#define GRABtINaRGS(idTypeP)                                                                                        \
 
 /*1*//*GRABtINaRGS(idTypeP)*//*1*/
 /**/
@@ -28,4 +29,3 @@
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
